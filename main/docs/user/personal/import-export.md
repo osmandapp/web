@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 The **Import** and **Export** tools in OsmAnd allow you to manage your data. You can move your profiles, favorites, tracks and other settings using a special format through the apps on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.
 
-:::note
+:::note Large size
 *If the size of your selected data is significant, it will take some time for the application to prepare the OSF file.*
 :::
 
@@ -27,7 +27,7 @@ The *Import* and *Export* allows you to save data from generated **OSF files** o
 
 **Data types** available for import/export:
 
-- **Settings:**  
+- **Settings:**
         [*Profiles*](../personal/profiles.md#actions), &nbsp;[*OsmAnd/General Settings*](../personal/global-settings.md), &nbsp;[*Colors*](../personal/color-palette-schemes.md), &nbsp;[*Quick action*](../widgets/quick-action.md), &nbsp;[*POI Type*](../map/point-layers-on-map.md#poi-types), &nbsp;[*Avoid road*](../map/map-context-menu.md#avoid-road).
 - **My Places:**  
         [*Favorites*](../personal/favorites.md#export--import), &nbsp;[*Tracks*](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[*OSM notes*, *OSM edits*](../plugins/osm-editing.md#create--modify-poi), &nbsp;[*A/V notes*](../plugins/audio-video-notes.md), &nbsp;[*Map markers*](../personal/markers.md), &nbsp;[*Markers history*, *Search history*, *Navigation history*](../personal/global-settings.md#history), &nbsp;*Itinerary*.
@@ -100,7 +100,7 @@ Opens and restores *OSF* files. Tap an *OSF* file in the file manager on your de
 
 ## Preventing Data Loss
 
-In the Android and iOS versions of OsmAnd, if you completely **uninstall** the app or select **Clear Data** on your device in the Settings menu Application information, the data folder will also be deleted from the device's file manager. If you do not take precautions, this will result in the **loss of all downloaded maps for OsmAnd data, as well as all saved Favorites, GPX tracks, and other data.**  
+In the Android and iOS versions of OsmAnd, if you completely **uninstall** the app or select **Clear Data** on your device in the Settings menu Application information, the data folder will also be deleted from the device's file manager. If you do not take precautions, this will result in the **loss of all downloaded maps for OsmAnd data, as well as all saved Favorites, GPX tracks, and other data.**
 
 There are two ways to save your data before reinstalling the OsmAnd app:
 

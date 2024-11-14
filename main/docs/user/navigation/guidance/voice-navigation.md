@@ -31,7 +31,7 @@ Voice prompts also work while your device screen is turned off, so you can use t
 
 
 
-## Required Setup Parameters Voice Prompts
+## Setup Voice Prompts
 
 OsmAnd offers different types of voice prompt settings to help you follow your route. To set up voice prompts, you need to go to the appropriate section of the application.  
 
@@ -66,9 +66,9 @@ Read more about under what conditions, when, and which voice prompts are activat
 </Tabs>  
 
 1. **[Language](#voice-prompt-language)**. Select your preferred language and type.
-2. **Announcement**. Allows you to configure the following types of prompts: 
+2. **Announcement**. Allows you to configure the following types of prompts:
     - *Street names (TTS), Exit numbers, Traffic warnings, Pedestrian crosswalks* and *Tunnels.*
-    - *[Speed cameras](#speed-cameras)*. 
+    - *[Speed cameras](#speed-cameras)*.
     - Also configure the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)** to use with announcements.
 3. **User points**:
     - Enable voice prompts for the pre-set and added [Waypoints](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi). While driving, the selected points will be announced when you approach or pass them.
@@ -77,6 +77,7 @@ Read more about under what conditions, when, and which voice prompts are activat
 | :- | :- | :- |
 | Approaching  | **60 s:**<br/>Driving: 750 m<br/>Cycling: 167 m<br/>Walking: 67 m  |  No more than 1 point at a time |
 | Passing | **15 s:**<br/>Driving: 188 m<br/>Cycling: 42 m<br/>Walking: 17 m | No more than 3 points at a time |
+
 4. [**Speed limit**](#speed-limit):
     - *Announce when exceeded* (on/off):
     - *Speed limit tolerance*.
@@ -118,7 +119,6 @@ In some countries or regions, using speed camera warning applications is illegal
 </TabItem>
 
 </Tabs>  
-
 
 The *Speed limit* option allows OsmAnd to announce when the current speed exceeds the set speed limit. The application takes data about maximum speed limits on roads from OpenStreetMap.
 

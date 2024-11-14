@@ -446,3 +446,4 @@ If you have multiple widgets selected â€” *Duration*, *Uphill*, or *Downhill* â€
 - [Recorded Tracks Have Gaps](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps)
 
 > *This article was last updated in November 2024*
+
