@@ -33,6 +33,9 @@ export default function TravelLayer() {
             }
         } else {
             let routes = [];
+            if (!ctx.searchTravelRoutes.res.features) {
+                return;
+            }
             ctx.searchTravelRoutes.res.features.forEach((route) => {
                 if (!route.properties.geo) {
                     return;
