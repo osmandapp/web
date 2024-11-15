@@ -73,7 +73,7 @@ export default function TravelMenu() {
             if (act.length === 0) {
                 act.push({
                     id: 'nospeed',
-                    label: 'No speed',
+                    label: 'Unidentified tracks',
                     type: 'nospeed',
                 });
             }
