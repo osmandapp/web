@@ -16,6 +16,7 @@ module.exports = function (app) {
     let heightmap = localProxy;
     let mapapi = localProxy;
     let routing = localProxy;
+    let search = localProxy;
     let weather = localProxy;
     let others = localProxy;
     let osmgpx = localProxy;
@@ -27,6 +28,7 @@ module.exports = function (app) {
         heightmap = testProxy;
         mapapi = testProxy;
         routing = testProxy;
+        search = testProxy;
         weather = testProxy;
         others = testProxy;
         osmgpx = testProxy;
@@ -38,6 +40,7 @@ module.exports = function (app) {
         tile = maptileProxy;
         heightmap = maptileProxy;
         routing = maptileProxy;
+        search = maptileProxy;
         weather = maptileProxy;
         mapapi = mainProxy;
         others = mainProxy;
@@ -49,10 +52,10 @@ module.exports = function (app) {
     app.use('/tile/', tile);
     app.use('/heightmap/', heightmap);
     app.use('/mapapi/', mapapi);
+    app.use('/search/', search);
     app.use('/routing/', routing);
     app.use('/weather-api/', weather);
     app.use('/osmgpx/', osmgpx);
     // app.use('/weather/', weather); // defined-by-env
-    // app.use('/search/', others); // actually /routing/search
     app.use('/online-routing-providers.json', others); // osrm-providers
 };

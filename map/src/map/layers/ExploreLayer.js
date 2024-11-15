@@ -85,7 +85,7 @@ export default function ExploreLayer() {
     useEffect(() => {
         const item = ctx.searchSettings.getPoi;
         async function getWikiPoi() {
-            const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi-by-osmid`, {
+            const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-osmid`, {
                 apiCache: true,
                 params: {
                     lat: item.geometry.coordinates[1],
@@ -191,7 +191,7 @@ export default function ExploreLayer() {
             setLoadingContextMenu(true);
             const bbox = map.getBounds();
             const api = settings?.useWikiImages ? API_GET_IMGS : API_GET_OBJS;
-            const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/${api}`, {
+            const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/${api}`, {
                 apiCache: true,
                 params: {
                     northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
