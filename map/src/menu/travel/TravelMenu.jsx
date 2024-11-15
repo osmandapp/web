@@ -199,7 +199,7 @@ export default function TravelMenu() {
                     </Box>
                     {loadingResult && <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />}
                     {travelResult &&
-                        (travelResult?.features.length > 0 ? (
+                        (travelResult?.features?.length > 0 ? (
                             <>
                                 <Typography variant="body2" sx={{ mt: 2, ml: 2 }}>
                                     Results: {travelResult?.features?.length || 0}
