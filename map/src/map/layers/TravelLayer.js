@@ -69,7 +69,7 @@ export default function TravelLayer() {
         if (!route) {
             return;
         }
-        const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/osmgpx/get-osm-route`, {
+        const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-osm-route`, {
             apiCache: true,
             params: {
                 id,
@@ -132,7 +132,7 @@ export default function TravelLayer() {
 
         const { activity, year } = ctx.searchTravelRoutes;
 
-        const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/osmgpx/get-routes-list`, {
+        const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-routes-list`, {
             apiCache: true,
             params: {
                 activity: activity,
