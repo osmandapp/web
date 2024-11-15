@@ -5,6 +5,7 @@ import { apiGet } from '../../util/HttpApi';
 import L from 'leaflet';
 import { ZOOM_TO_MAP } from './SearchLayer';
 import { ALL_YEARS } from '../../menu/travel/TravelMenu';
+import { addDistance } from '../../manager/track/TracksManager';
 
 export default function TravelLayer() {
     const ctx = useContext(AppContext);
@@ -73,6 +74,8 @@ export default function TravelLayer() {
         });
         if (response && response.data) {
             route.track = response.data;
+            const track = route.track['gpx_data'];
+            addDistance(track);
             ctx.setCurrentObjectType(OBJECT_TYPE_TRAVEL);
             const file = {
                 id: route.properties.id,
@@ -81,7 +84,7 @@ export default function TravelLayer() {
                 date: route.properties.date,
                 user: route.properties.user,
                 type: 'GPX',
-                ...route.track['gpx_data'],
+                ...track,
             };
             ctx.setSelectedGpxFile(file);
             ctx.setUpdateInfoBlock(true);

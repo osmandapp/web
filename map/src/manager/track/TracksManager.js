@@ -361,7 +361,7 @@ export function equalsPoints(arr1, arr2) {
     return arr1?.length === arr2?.length && JSON.stringify(arr1) === JSON.stringify(arr2);
 }
 
-function addDistance(track) {
+export function addDistance(track) {
     if (track.points && track.points.length > 0) {
         addDistanceToPoints(track.points);
     }
