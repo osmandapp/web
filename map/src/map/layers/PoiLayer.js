@@ -195,19 +195,15 @@ export default function PoiLayer() {
             prevSearchRes: prevSearchRes,
             prevSearchCategory: prevSearchCategory,
         };
-        let response = await apiPost(
-            `${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi`,
-            searchData,
-            {
-                params: {
-                    locale: i18n.language,
-                    lat: map.getCenter().lat,
-                    lon: map.getCenter().lng,
-                },
-                apiCache: true,
-                signal: controller.signal,
-            }
-        );
+        let response = await apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-poi`, searchData, {
+            params: {
+                locale: i18n.language,
+                lat: map.getCenter().lat,
+                lon: map.getCenter().lng,
+            },
+            apiCache: true,
+            signal: controller.signal,
+        });
         if (response?.data) {
             return response.data;
         } else {

@@ -61,7 +61,7 @@ async function getPoiCategories() {
     ) {
         return categories; // thoroughly verified categories from localStorage
     } else {
-        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi-categories`, {
+        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-categories`, {
             apiCache: true,
             params: {
                 locale: i18n.language,
@@ -79,7 +79,7 @@ async function getTopPoiFilters() {
     if (filters?.length > 0) {
         return filters;
     } else {
-        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-top-filters`);
+        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-top-filters`);
         if (response.data) {
             localStorage.setItem(TOP_POI_FILTERS, JSON.stringify(response.data));
             return response.data;
@@ -88,7 +88,7 @@ async function getTopPoiFilters() {
 }
 
 async function searchPoiCategories(search) {
-    let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi-categories`, {
+    let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-poi-categories`, {
         apiCache: true,
         params: {
             search: search,

@@ -17,7 +17,7 @@ export async function fetchPhotoProperties(photo) {
     const lang = i18n.language;
     try {
         // Parse image info
-        const parseResponse = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/parse-image-info`, {
+        const parseResponse = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/parse-image-info`, {
             params: {
                 lang: lang,
                 pageId: photo.properties.mediaId,

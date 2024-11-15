@@ -57,6 +57,5 @@ module.exports = function (app) {
     app.use('/weather-api/', weather);
     app.use('/osmgpx/', osmgpx);
     // app.use('/weather/', weather); // defined-by-env
-    // app.use('/search/', others); // actually /routing/search
     app.use('/online-routing-providers.json', others); // osrm-providers
 };
