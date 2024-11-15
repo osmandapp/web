@@ -41,6 +41,7 @@ module.exports = function (app) {
         weather = maptileProxy;
         mapapi = mainProxy;
         others = mainProxy;
+        // TODO switch to mainProxy later
         osmgpx = testProxy;
     }
 

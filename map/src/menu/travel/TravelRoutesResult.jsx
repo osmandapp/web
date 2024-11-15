@@ -11,7 +11,7 @@ const TravelRoute = ({ route }) => {
     const ctx = useContext(AppContext);
 
     function openRouteInfo(route) {
-        ctx.setSelectedRoute({ route, show: true });
+        ctx.setSelectedTravelRoute({ route, show: true });
     }
 
     function countPoints(route) {
@@ -34,10 +34,10 @@ const TravelRoute = ({ route }) => {
                         openRouteInfo(route);
                     }}
                     onMouseEnter={() => {
-                        ctx.setSelectedRoute({ route, hover: true });
+                        ctx.setSelectedTravelRoute({ route, hover: true });
                     }}
                     onMouseLeave={() => {
-                        ctx.setSelectedRoute({ route, hover: false });
+                        ctx.setSelectedTravelRoute({ route, hover: false });
                     }}
                 >
                     <ListItemIcon className={styles.icon}>

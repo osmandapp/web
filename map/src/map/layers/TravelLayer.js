@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import AppContext, { OBJECT_TRAVEL } from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_TRAVEL } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { apiGet } from '../../util/HttpApi';
 import L from 'leaflet';
@@ -15,6 +15,7 @@ export default function TravelLayer() {
 
     const ROUTE_COLOR = '#666666';
     const SELECTED_ROUTE_COLOR = '#f8931d';
+    const ROUTE_WIDTH = 3;
 
     useEffect(() => {
         if (!ctx.searchTravelRoutes) {
@@ -44,12 +45,12 @@ export default function TravelLayer() {
                     }
                     const polyline = new L.Polyline(segment, {
                         color: ROUTE_COLOR,
-                        weight: 3,
+                        weight: ROUTE_WIDTH,
                         id: route.properties.id,
                     });
                     polyline.on('click', (e) => openInfoBlock(e.target.options.id));
-                    polyline.on('mouseover', () => ctx.setSelectedRoute({ route, hover: true }));
-                    polyline.on('mouseout', () => ctx.setSelectedRoute({ route, hover: false }));
+                    polyline.on('mouseover', () => ctx.setSelectedTravelRoute({ route, hover: true }));
+                    polyline.on('mouseout', () => ctx.setSelectedTravelRoute({ route, hover: false }));
                     routes.push(polyline);
                 });
             });
@@ -72,7 +73,7 @@ export default function TravelLayer() {
         });
         if (response && response.data) {
             route.track = response.data;
-            ctx.setCurrentObjectType(OBJECT_TRAVEL);
+            ctx.setCurrentObjectType(OBJECT_TYPE_TRAVEL);
             const file = {
                 id: route.properties.id,
                 name: route.properties.name,
@@ -88,32 +89,33 @@ export default function TravelLayer() {
     }
 
     useEffect(() => {
-        if (ctx.selectedRoute?.show) {
-            const start = ctx.selectedRoute.route.properties?.geo[0][0];
+        if (ctx.selectedTravelRoute?.show) {
+            const start = ctx.selectedTravelRoute.route.properties?.geo[0][0];
             if (!start) {
                 return; // no route
             }
             map.setView([start.latitude, start.longitude], ZOOM_TO_MAP);
-            openInfoBlock(ctx.selectedRoute.route.properties.id).then();
-        } else if (ctx.selectedRoute?.hover !== undefined) {
-            const id = ctx.selectedRoute.route.properties.id;
-            let layer = travelRoutes?.getLayers().find((layer) => layer.options.id === id);
-            if (layer) {
-                layer.setStyle({
-                    color: ctx.selectedRoute.hover ? SELECTED_ROUTE_COLOR : ROUTE_COLOR,
-                    weight: 3,
-                });
-                layer.bringToFront();
-                if (id !== selectedRouteId) {
-                    let layer = travelRoutes?.getLayers().find((layer) => layer.options.id === selectedRouteId);
-                    if (layer) {
-                        layer.setStyle({ color: ROUTE_COLOR, weight: 3 });
+            openInfoBlock(ctx.selectedTravelRoute.route.properties.id).then();
+        } else if (ctx.selectedTravelRoute?.hover !== undefined) {
+            const id = ctx.selectedTravelRoute.route.properties.id;
+            travelRoutes?.getLayers().forEach((layer) => {
+                if (layer.options.id === id) {
+                    layer.setStyle({
+                        color: ctx.selectedTravelRoute.hover ? SELECTED_ROUTE_COLOR : ROUTE_COLOR,
+                        weight: ROUTE_WIDTH,
+                    });
+                    layer.bringToFront();
+                    if (id !== selectedRouteId) {
+                        let layer = travelRoutes?.getLayers().find((layer) => layer.options.id === selectedRouteId);
+                        if (layer) {
+                            layer.setStyle({ color: ROUTE_COLOR, weight: ROUTE_WIDTH });
+                        }
+                        setSelectedRouteId(id);
                     }
-                    setSelectedRouteId(id);
                 }
-            }
+            });
         }
-    }, [ctx.selectedRoute]);
+    }, [ctx.selectedTravelRoute]);
 
     async function getRoutesList() {
         const bounds = map.getBounds();

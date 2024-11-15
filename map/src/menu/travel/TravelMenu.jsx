@@ -29,6 +29,7 @@ export default function TravelMenu() {
 
     const DEFAULT_ACTIVITY = 'hiking';
     const DEFAULT_YEAR = new Date().getFullYear();
+    const MIN_YEAR = 2005;
 
     const [selectedActivityType, setSelectedActivityType] = useState(DEFAULT_ACTIVITY);
     const [selectedYear, setSelectedYear] = useState(DEFAULT_YEAR);
@@ -60,8 +61,8 @@ export default function TravelMenu() {
     // Create years array
     const years = [
         { id: ALL_YEARS, label: capitalize(ALL_YEARS) },
-        ...Array.from({ length: 20 }, (_, i) => {
-            const year = new Date().getFullYear() - i;
+        ...Array.from({ length: new Date().getFullYear() - MIN_YEAR + 1 }, (_, i) => {
+            const year = MIN_YEAR + i;
             return { id: year, label: `${year}` };
         }),
     ];
@@ -71,9 +72,9 @@ export default function TravelMenu() {
         return activities?.groups.reduce((act, group) => {
             if (act.length === 0) {
                 act.push({
-                    id: 'osmand',
-                    label: 'Osmand',
-                    type: 'osmand',
+                    id: 'nospeed',
+                    label: 'No speed',
+                    type: 'nospeed',
                 });
             }
             act.push({
