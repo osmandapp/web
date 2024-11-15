@@ -468,7 +468,7 @@ export const downloadGpx = async (track) => {
 };
 
 export const downloadTravelGpx = async (track) => {
-    const urlFile = `${process.env.REACT_APP_USER_API_SITE}/osmgpx/get-original-file`;
+    const urlFile = `${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-original-file`;
     const qs = `?id=${track.id}`;
     const oneGpxFile = {
         url: urlFile + qs,
