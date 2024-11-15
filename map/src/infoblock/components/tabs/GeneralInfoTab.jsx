@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Box, Button, Divider } from '@mui/material';
-import AppContext, { isLocalTrack, isRouteTrack } from '../../../context/AppContext';
+import AppContext, { isLocalTrack, isRouteTrack, isTravelTrack } from '../../../context/AppContext';
 import { Download } from '@mui/icons-material';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
 import GeneralInfo from '../track/GeneralInfo';
 import TracksManager, {
     downloadGpx,
+    downloadTravelGpx,
     getGpxFileFromTrackData,
     hasSegments,
     isEmptyTrack,
@@ -97,6 +98,8 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                             onClick={() => {
                                 if (isLocalTrack(ctx) || isRouteTrack(ctx)) {
                                     downloadCurrentGpx(ctx);
+                                } else if (isTravelTrack(ctx)) {
+                                    downloadTravelGpx(ctx.selectedGpxFile);
                                 } else {
                                     downloadGpx(ctx.selectedGpxFile);
                                 }
@@ -107,9 +110,9 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                         </Button>
                     </>
                 )}
-                <Divider sx={{ mt: 2, mb: 2 }} />
-                {isRouteTrack(ctx) === false && (
+                {isRouteTrack(ctx) === false && isTravelTrack(ctx) === false && (
                     <>
+                        <Divider sx={{ mt: 2, mb: 2 }} />
                         <Button
                             id="se-infoblock-button-close-track"
                             variant="contained"

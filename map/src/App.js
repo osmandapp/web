@@ -21,6 +21,7 @@ import {
     WEATHER_URL,
     EXPLORE_URL,
     OLD_LOGIN_URL,
+    TRAVEL_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -32,6 +33,7 @@ import TracksMenu from './menu/tracks/TracksMenu';
 import SettingsMenu from './menu/settings/SettingsMenu';
 import ConfigureMap from './menu/configuremap/ConfigureMap';
 import LoginMenu from './menu/login/LoginMenu';
+import TravelMenu from './menu/travel/TravelMenu';
 
 export let globalNavigate = () => null;
 
@@ -63,6 +65,7 @@ const App = () => {
                         <Route path={FAVORITES_URL} element={<FavoritesMenu />}></Route>
                         <Route path={NAVIGATE_URL} element={<RouteMenu />}></Route>
                         <Route path={PLANROUTE_URL} element={<PlanRouteMenu />}></Route>
+                        <Route path={TRAVEL_URL} element={<TravelMenu />}></Route>
                         <Route path={SETTINGS_URL} element={<SettingsMenu />}></Route>
                     </Route>
                 </Routes>
