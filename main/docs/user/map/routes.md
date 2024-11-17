@@ -17,18 +17,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-OsmAnd has many powerful features for displaying different [routes](#type-of-routes) on the map. By default these routes are part of [vector maps](./vector-maps.md#routes) (OpenStreetMap data), however similar functionality is provided by [tracks](./tracks/index.md) which could be created with [Plan a Route](../plan-route/create-route.md), imported as [GPX tracks](#save-as-a-track), recorded with the [Trip Recording plugin](../plugins/trip-recording.md).
+OsmAnd has many powerful features for displaying different [routes](#type-of-routes) on the map. By default, these routes are part of [vector maps](./vector-maps.md#routes) (OpenStreetMap data), however similar functionality is provided by [tracks](./tracks/index.md) which could be created with [Plan a Route](../plan-route/create-route.md), imported as [GPX tracks](#save-as-a-track), recorded with the [Trip Recording plugin](../plugins/trip-recording.md).
 
 
 ## Type of Routes
 
-Routes represent different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Tapping **the shield icon with a route number or route flag** on the map will open a context menu which provides additional information about the route and allows to use it as part of navigation.
+Routes represent different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Tapping **the shield icon with a route number or route flag** on the map will open a context menu that provides additional information about the route and allows using it as part of navigation.
 
-You can configure filtering of some route types in [Configure Map](../map/configure-map-menu.md) menu.
+You can configure the filtering of some route types in the [Configure Map](../map/configure-map-menu.md) menu.
 
 ### Cycle routes
 
-[Cycle routes](https://wiki.openstreetmap.org/wiki/Cycle_routes) are present as three types: *local* (lcn), *regional* (rcn), *national* (ncn), *international* (icn). Also cycle routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). You can choose how to assign color to the route segments:
+[Cycle routes](https://wiki.openstreetmap.org/wiki/Cycle_routes) are present in three types: *local* (lcn), *regional* (rcn), *national* (ncn), *international* (icn). Also, cycle routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). You can choose how to assign color to the route segments:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -41,17 +41,17 @@ You can find more information in the [Map Legend](../map-legend/index.md) articl
 
 ### Mountain bike routes
 
-MTB routes have specific mapping in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) and could be selected separately from cycling routes.
+MTB routes have a specific mapping in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) and could be selected separately from cycling routes.
 
-- ***<Translate android="true" ids="mtb_scale"/>***.  Shows trails according to MTB scale. You can find more information in the [Map Legend](../map-legend/index.md) article.  
-![Map routes - mtb trails](@site/static/img/map/map-routes-mtb-trails.png)  
+- ***<Translate android="true" ids="mtb_scale"/>***.  Shows trails according to the MTB scale. You can find more information in the [Map Legend](../map-legend/index.md) article.  
+![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***.  Show MTB trails accorgind International Mountain Bicycling Association [MTB IMBA](https://www.imba.com/). More information in the article [Map legend](../map-legend/index.md).  
-![Map routes - mtb trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
+- ***<Translate android="true" ids="mtb_imba"/>***.  Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../map-legend/index.md).  
+![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ### Hiking / Walking routes
 
-[Hinking routes](https://wiki.openstreetmap.org/wiki/Walking_Routes) are present as three types: *local* (lwn), *regional* (rwn), *national* (nwn), *international* (iwn). Also walking routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd doesn't separate walking and hiking routes and combines them into 1 group. You can choose how to assign color to the route segments:
+[Hiking routes](https://wiki.openstreetmap.org/wiki/Walking_Routes) are present in three types: *local* (lwn), *regional* (rwn), *national* (nwn), *international* (iwn). Also, walking routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd doesn't separate walking and hiking routes and combines them into 1 group. You can choose how to assign color to the route segments:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Colors routes according to their individual [local color](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (if available in OpenStreetMap) and the tourist shield symbol.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
@@ -67,14 +67,14 @@ MTB routes have specific mapping in [OpenStreetMap](https://wiki.openstreetmap.o
 
 The **Dirt Bike Trails** feature allows you to display dirt bike-specific routes on the map based on the `dirtbike:scale` tag. This scale highlights trails suitable for dirt biking, with a colored overlay showing difficulty levels.  
 
-You can activate this feature in *Menu → Configure map → Routes → Dirt bike routes*. The system functions similarly to the MTB scale, offering a visual representation of routes tailored to dirt biking. More about the [dirtbike tag can be found here](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
+You can activate this feature in *Menu → Configure map → Routes → Dirt bike routes*. The system functions similarly to the MTB scale, offering a visual representation of routes tailored to dirt biking — more about the [‘dirtbike’ tag can be found here](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
 
 ### Hiking Trails Difficulty Grade
 
-Some road segments could be part of many routes but they could be individually colored to represent difficulty for the segment in mountainous areas. Currently OsmAnd supports Italian and Swiss classifications, each of them has a specific list of equipment requirements to access this segment.  
+Some road segments could be part of many routes, but they could be individually colored to represent difficulty for the segment in mountainous areas. Currently, OsmAnd supports Italian and Swiss classifications, and each has a specific list of equipment requirements to access this segment.  
 
 1. [*SAC scale*](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
 2. [*CAI scale*](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
@@ -83,7 +83,7 @@ Some road segments could be part of many routes but they could be individually c
 
 ### Ski routes
 
-Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typically these routes could be used with [*Winter and Ski*](../map/vector-maps.md#winter-and-ski) map style with all visible [Pistes](https://wiki.openstreetmap.org/wiki/Pistes).  
+Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typically, these routes could be used with [*Winter and Ski*](../map/vector-maps.md#winter-and-ski) map style with all visible [Pistes](https://wiki.openstreetmap.org/wiki/Pistes).  
 
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
@@ -101,7 +101,7 @@ Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/
 
 ### Running routes
 
-[Running routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) in OpenStreetMap are used for named, numbered, or otherwise marked running routes used primarily for athletics.
+[Running routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) in OpenStreetMap are used for named, numbered, or otherwise marked running routes primarily for athletics.
 
 ![Fitness routes](@site/static/img/map/fitness_1.png)
 
@@ -115,11 +115,11 @@ A [fitness trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)
 
 <InfoAndroidOnly />
 
-Travel routes is part of custom files - [Travelbook](../plan-route/travel-guides.md)  (.travel.obf). These travelbooks could be generated from [user routes](https://osmand.net/blog/routes#generated-travel-routes) or could be part of extra [Plugins](../plugins/index.md).
-
 ![Travel routes](@site/static/img/map/travel_route_2.png)  ![Travel routes](@site/static/img/map/travel_routes.png)
 
-You can configure to display specific ***Travelbooks*** or specific type of ***Tracks*** or display tracks as Points or display ***Point groups*** (for example for Wikivoyage travelbooks). Read more information about [Travel guides](../plan-route/travel-guides.md).
+Travel routes are part of custom [Travel book](../plan-route/travel-guides.md) (.travel.obf) files, which can be generated from the [user's routes](https://osmand.net/blog/routes#generated-travel-routes) or be part of additional [plugins](../plugins/index.md).  
+
+You can customize the display of certain ***Travelbooks*** and types of ***tracks***, display tracks as points, or ***Point groups*** (for example for Wikivoyage travel books). Learn more about [Travel guides here](../plan-route/travel-guides.md).
 
 
 ## Display Routes on the Map
@@ -171,13 +171,13 @@ To get full route information and elevation data, tap the *route icon (shield)* 
 
 </Tabs>  
 
-Following information will be visible in context menu:
+The following information will be visible in the context menu:
 
 - **Route info**: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
 - **General**: Size, Location, Created on.
-- **Additional Info**: Type of activity.
-- **[Elevation info](../navigation/setup/route-details.md#elevation-info)**
-- **[Analyze Track on Map](../map/tracks/index.md#analyze-track-on-map)**
+- **Additional Info**. Displays type of activity.
+- [Elevation info](../navigation/setup/route-details.md#elevation-info). Displays information about the elevation data on the route.
+- [Analyze Track on Map](../map/tracks/index.md#analyze-track-on-map). Displays detailed analysis of track data using graphs and maps.
 
 ### Save as a Track
 
@@ -216,4 +216,4 @@ You can configure to switch on and off routes via [Quick action](../widgets/quic
 - [Public transport](./public-transport.md)
 - [Navigation route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 
-> *This article was last updated in August 2024*
+> *This article was last updated in November 2024*

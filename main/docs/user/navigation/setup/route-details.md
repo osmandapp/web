@@ -30,7 +30,7 @@ OsmAnd allows you to find the best route and explore its details. The app provid
 
 <TabItem value="ios" label="iOS">
 
-![Route details iOS](@site/static/img/navigation/route/route_detail_overview_ios.png)
+![Route details iOS](@site/static/img/navigation/route/route_detail_overview_3_ios.png)
 
 </TabItem>
 
@@ -149,7 +149,7 @@ The [graphs](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visu
 
 <TabItem value="ios" label="iOS">
 
-![Route details iOS](@site/static/img/navigation/route/navigation_route_ios_analiz.png)
+![Route details iOS](@site/static/img/navigation/route/navigation_route_analiz_ios.png)
 
 </TabItem>
 
@@ -313,13 +313,13 @@ The ability **to print** or **save** turn-by-turn information **in PDF format** 
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_share_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_share.png)
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
 
 </TabItem>
 

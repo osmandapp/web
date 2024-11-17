@@ -124,7 +124,7 @@ When you select a track on the map or open the [track context menu](./track-cont
 
 *Tap the track → Track tab → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_1_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -150,7 +150,7 @@ This tool provides a detailed analysis of [track](../../map/tracks/track-context
 
 <TabItem value="ios" label="iOS">
 
-![Track menu analyze on map](@site/static/img/personal/tracks/track_follow_my_location_1_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_follow_my_location_2_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
 
 </TabItem>
 
