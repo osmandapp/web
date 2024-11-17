@@ -117,8 +117,15 @@ export async function waitByRemoved(by) {
     if (found && found.length > 0) {
         return await driver.wait(
             new Condition('waitByRemoved' + by.value, async () => {
-                const found = await driver.findElements(by);
-                return !found || found.length === 0;
+                try {
+                    const found = await driver.findElements(by);
+                    return !found || found.length === 0;
+                } catch (e) {
+                    if (isStaleError(e)) {
+                        return true; // stale - success
+                    }
+                    throw e;
+                }
             }),
             HIDDEN_TIMEOUT
         );
