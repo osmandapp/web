@@ -16,8 +16,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The **Trip Recording plugin** is an essential tool for capturing your routes, movements, and workouts. This feature not only enables you to record your trips but also allows for easy reuse, modification, updating, and sharing of your tracks with others.
-With the *Trip Recording plugin*, you can create new tracks, display recorded ones directly on the map, and manage existing records. It offers valuable insights into your trips, such as speed, elevation changes, and terrain details. Whether you are navigating or simply moving through an area, the plugin continuously records your route, enabling detailed post-trip analysis and sharing.
+The **Trip Recording plugin** is an essential tool for capturing your routes, movements, and workouts. This feature not only enables you to record your trips but also allows for easy reuse, modification, updating, and sharing of your tracks with others.  
+
+With the *Trip Recording plugin*, you can create new tracks, display recorded ones directly on the map, and manage existing records. It offers valuable insights into your trips, such as speed, elevation changes, terrain details, and data from external sensors. Whether you are navigating or just getting around, the plugin continuously records your route, allowing for detailed analysis and sharing after your trip.
 
 <Tabs groupId="operating-systems">
 
@@ -112,7 +113,7 @@ While track recording is active, a notification badge will appear on the corner 
 
 For *Stop / Save / Pause*:
 
-- To stop the recording, tap the corresponding button in the [Distance/Start-Stop widget](#distance-start-stop) widget dialog box.
+- To stop the recording, tap the corresponding button in the [Distance/Start-Stop widget](#distance-start-stop) dialog box.
 - In the *Android version*, you can stop recording by tapping the *Trip recording* main menu item.
 - To stop or save a recording track, go to *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>* *→* [*<Translate android="true" ids="shared_string_gpx_files"/> tab*](../personal/myplaces.md#tracks) and tap the appropriate button in the **Currently recording track** field.
 - Use the [Quick Action](../widgets/quick-action.md#add-and-delete-actions) buttons to save, pause, start a new segment, or finish recording a trip. Go to *Menu → Configure screen → Custom buttons → Quick action → Add action → [My Places](../widgets/quick-action.md#my-places)* and add one or more quick action buttons.
@@ -125,7 +126,7 @@ For *Stop / Save / Pause*:
 
 <TabItem value="android" label="Android">
 
-![overview](@site/static/img/plugins/trip-recording/overview-2.png)
+![overview](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png)  ![overview](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
@@ -142,8 +143,8 @@ In OsmAnd, the **Android** and **iOS** versions handle the track recording inter
 As you record a track, dynamic graphs are generated, providing real-time visual data about your journey. These graphs can reflect information for the entire route or just for a selected segment, depending on your zoom level.  
 Here is what you can find on them:
 
-- **Data values**. Located on the right side for *Android* and the left for *iOS*, you will see the **highest, average, and lowest values** displayed clearly for easy reference.
-- **Tabs for key information**: *Overview* displays total distance and speed; *Altitude* shows elevation changes and the grade of the terrain; *Speed* provides the current speed at each point.
+- **Data values**. On the right side of the graph are the **highest**, **lowest**, and **average** values for the visible section of the track.
+- **Graphs for key information**. *Overview* displays total distance and speed; *Altitude* shows elevation changes and the grade of the terrain; *Speed* provides the current speed at each point.
 
 For a more detailed view, you can **scale the graph**:
 
@@ -152,7 +153,7 @@ For a more detailed view, you can **scale the graph**:
 
 | |  
 | ------------- |
-|***Overview***. This tab presents a comprehensive graph showcasing speed and altitude variations along the track, along with essential track details. The information displayed includes: *Distance*, *Time Span*, *Start Time*, and *End Time*. Below, you can see how this appears on both Android and iOS versions. |
+|***Overview***. This tab presents a comprehensive graph showcasing speed and altitude variations along the track and essential track details. The information displayed includes: *Distance*, *Time Span*, *Start Time*, and *End Time*. Below, you can see how this appears on Android and iOS versions. |
 | ![data](@site/static/img/plugins/trip-recording/tr_rec_ave-2.png)  ![data](@site/static/img/plugins/trip-recording/tr_rec_ave-ios.png) |
 | ***Altitude***. This tab focuses on the elevation profile of your recorded track, providing insights into altitude changes and terrain grades. Key metrics include: *Average Altitude*, *Altitude Range*, *Uphill*, and *Downhill*. The graphs below illustrate the differences between the Android and iOS interfaces. |
 | ![data](@site/static/img/plugins/trip-recording/tr_rec_alt-2.png)  ![data](@site/static/img/plugins/trip-recording/tr_rec_alt-ios.png) |
@@ -213,7 +214,7 @@ OsmAnd captures your journey in a structured [GPX file](https://en.wikipedia.org
 | **`trkpt`** | **Track Point** represents a specific geographical location detected during your activity. Each track point includes latitude and longitude coordinates, forming the basis of your recorded path. |
 | **`trkseg`**  | **Track Segment** groups together consecutive track points, separated by breaks in activity, such as pauses or stops. This helps distinguish continuous movement from idle periods within a single recording.  |
 | **`lat`** | **Latitude** indicates the north-south position of a point on the Earth's surface. It is one-half of the coordinate pair used to pinpoint your exact location.   |
-| **`lon`** | **Longitude** specifies the east-west position, complementing latitude to locate a point on the globe accurately. Together, latitude and longitude define your precise geographical position.    |
+| **`lon`** | **Longitude** specifies the east-west position, complementing latitude, to accurately locate a point on the globe. Together, latitude and longitude define your precise geographical position.    |
 | **`ele`** | **Elevation** measures the height of a track point above sea level, recorded in meters. This can be useful for tracking altitude changes during your activities, such as hikes or bike rides.    |
 | **`time`** | **Timestamp** records the exact date and time when a track point is logged. This allows you to track the duration and timing of your activity with precision.    |
 | **`hdop`** | **Horizontal Dilution of Precision (HDOP)** is a measure of GPS accuracy, reflecting the potential error in location due to the positions of the satellites. Unlike the standard HDOP, OsmAnd GPX tracks use this value to represent horizontal accuracy in meters. Please note that this implementation differs from typical HDOP standards. [Learn more](https://github.com/osmandapp/Osmand/issues/3445).   |
@@ -232,8 +233,8 @@ Before you start tracking your trips, you need to properly configure the **Trip 
 
 - **Profile-specific settings**. Each profile in the app can have its own unique Trip Recording settings. This allows you to precisely customize the recording behavior based on your activity, such as driving, cycling, or even Nordic walking, which might require different configurations.
 - **Customize recording parameters**. The recording settings can vary depending on how you move. For example, driving long distances might call for a lower recording frequency, while hiking or walking could benefit from more frequent updates.
-- **Precise location data**. To make sure your recordings are smooth and usable later, you may tweak how location points are captured. This could include adjusting the recording frequency, the format of your data (like the number of points per distance unit), or spacing between recorded points.
-- **Global settings**. Trip Recording settings are configured per profile, which you can manage in the app’s global [settings](../personal/global-settings.md). Before you customize the Trip Recording plugin, first select the profile you want to configure from the [profiles](../personal/profiles.md) section. From there, navigate to the profile’s settings to access the Trip Recording options.
+- **Precise location data**. To ensure that your recordings are smooth and usable for future use, you can customize the way you capture location points. This could include adjusting the recording frequency, the format of your data (like the number of points per distance unit), or spacing between recorded points.
+- **Global settings**. Trip Recording settings are configured per profile, which you can manage in the app’s global [settings](../personal/global-settings.md). Before you customize the Trip Recording plugin, select the profile you want to configure from the [profiles](../personal/profiles.md) section. From there, navigate to the profile’s settings to access the Trip Recording options.
 
 
 <Tabs groupId="operating-systems">
@@ -254,7 +255,7 @@ Before you start tracking your trips, you need to properly configure the **Trip 
 
 | Parameter | Description |
 |---|---|
-| **Battery optimization dialogue** (*Android*) | Opens the [Android battery optimization settings](#battery-optimization). Tap *Don't ask anymore* if you do not want to be prompted again. |
+| **Battery optimization dialogue** (*Android*) | Opens the [Android battery optimization settings](#battery-optimization). Tap the *Don't ask anymore* if you do not want to be prompted again. |
 | **Show start dialog** (*Android*) | Enables a dialog where you can configure settings before starting recording. If disabled, the recording starts automatically. |
 | **Auto-record track during navigation** | Automatically records the track during navigation and saves it in the *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>* tab.<br />*Note*: Track recording consumes battery and continues running in the background, even if the screen is off. |
 | **General logging interval** | Defines how often location points are recorded. The default is 5 seconds. It is enabled with the *Trip recording widget*. |
@@ -266,7 +267,7 @@ Before you start tracking your trips, you need to properly configure the **Trip 
 | **Include heading** | Records the heading (direction of movement) for each point in the GPX file. The heading is the direction the device is facing, which can differ from the movement direction due to external factors like wind or skidding. |
 | **External sensors** | Data from [external sensors](../plugins/external-sensors.md#trip-recording) such as *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, or *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* is logged to the GPX file. *Distance* data is not recorded on Android or iOS. Displayed only when the [External Sensors plugin](../plugins/external-sensors.md) is enabled. |
 | **Activity** (*Android*) | The option allows you to pre-select an [activity type](../map/tracks/track-context-menu.md#track-information-activity) for a profile, which is then automatically applied to all recorded tracks. |
-| **Record vehicle metrics** (*Android*) | Data from [OBD-II scanner](../plugins/vehicle-metrics.md#trip-recording) is logged to the GPX file. Displayed only when the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md) is enabled. Note: only metrics which were added [to widgets](../plugins/vehicle-metrics.md#widgets) can be recorded to GPX file. |
+| **Record vehicle metrics** (*Android*) | Data from [OBD-II scanner](../plugins/vehicle-metrics.md#trip-recording) is logged to the GPX file. Displayed only when the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md) is enabled. Note: only metrics that were added [to widgets](../plugins/vehicle-metrics.md#widgets) can be recorded to the GPX file. |
 | **Track storage folder** (*Android*) | Defines where in *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* tab recorded tracks are stored. Options include storing all tracks in the Rec folder or organizing them by month, such as Rec/yyyyy-mm. |
 | **Notification** | Controls the display of a [trip recording](#notifications) system notification in the notification area of the device that allows you to start recording trips. |
 | **Online tracking** (*Android*) | Allows real-time tracking of your location by sending recorded points to a specified URL. The tracking interval determines how often points are sent, and the time buffer stores points when there’s no Internet connection.<details><summary>*Remark*</summary>If this option is enabled, and track recording is in progress, the Distance/Start-Stop (REC) widget turns **green** instead of **red**, indicating that each recorded point is being transmitted to a specified URL. The **Web address** field allows you to input the URL using the following parameter format:<ul><li>`lat={0}`: Latitude</li><li>`lon={1}`: Longitude</li><li>`timestamp={2}`: Timestamp (Unix time)</li><li>`hdop={3}`: Horizontal dilution of precision</li><li>`altitude={4}`: Altitude</li><li>`speed={5}`: Speed</li><li>`bearing={6}`: Bearing (direction of movement)</li><li>`eta={7}`: Estimated time of arrival (Unix time)</li><li>`etfa={8}`: Estimated time to the first intermediate point or finish point (Unix time)</li><li>`eda={9}`: Estimated distance to arrival or a marker (in meters)</li><li>`edfa={10}`: Estimated distance to the first intermediate point or finish point (in meters)</li></ul>You can set the **Tracking Interval** to specify how often location points are sent, with options ranging from 0 seconds to 5 minutes. Additionally, the **Time Buffer** parameter determines how long location points are stored if there is no Internet connection, ensuring data is saved and transmitted when the connection is restored.</details> |
@@ -361,7 +362,7 @@ To start using *Trip recording widgets*, you need to make all the following sett
 
 The [Trip Recording widget](../widgets/info-widgets.md#trip-recording-widgets) provides an easy way to monitor your recording status and quickly access recording settings and details. This widget is automatically added to your screen when the Trip Recording plugin is enabled.
 
-To customize your interface, you can add or remove the Trip Recording widget, along with [other widgets](../plugins/trip-recording#duration-uphill-downhill), through the Configure Screen menu.
+To customize your interface, you can add or remove the Trip Recording widget and [other widgets](../plugins/trip-recording#duration-uphill-downhill) through the Configure Screen menu.
 
 
 ### Distance (Start-Stop)
