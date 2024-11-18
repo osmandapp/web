@@ -30,7 +30,7 @@ The *Track context menu* provides information about the *[Track](../../personal/
 
 <TabItem value="ios" label="iOS">
 
-![Overview track context menu iOS](@site/static/img/personal/tracks/track_context_overview_ios_1.png)
+![Overview track context menu iOS](@site/static/img/personal/tracks/track_context_overview_2_ios.png)
 
 </TabItem>
 
@@ -120,32 +120,32 @@ In case your track was created in OsmAnd or any other tracking app (so its point
 
 Menu *Options* allows manipulation with the chosen track.  
 
-- **<Translate android="true" ids="shared_string_show_on_map"/>** - shows or not the track on the map.
-- **<Translate android="true" ids="shared_string_appearance"/>** - opens [Appearance menu](../tracks/appearance.md) for the track.
-- **<Translate android="true" ids="follow_track"/>** (*Android*) or **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) - starts navigation by [follow track option](../../navigation/setup/gpx-navigation.md).
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. Shows or not the track on the map.
+- **<Translate android="true" ids="shared_string_appearance"/>**. Opens [Appearance menu](../tracks/appearance.md) for the track.
+- **<Translate android="true" ids="follow_track"/>** (*Android*) or **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*). Starts navigation by [follow track option](../../navigation/setup/gpx-navigation.md).
 
 
-- **<Translate android="true" ids="join_segments"/>** (*Android*) - allows joining gaps of the track.
-- **<Translate android="true" ids="analyze_on_map"/>** - opens [Analyze on map function](../index.md#analyze-track-on-map).
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android*) - analyzes the track by time or distance [intervals](./track-context-menu.md#split-interval).
+- **<Translate android="true" ids="join_segments"/>** (*Android*). Allows joining gaps of the track.
+- **<Translate android="true" ids="analyze_on_map"/>**. Opens [Analyze on map function](../index.md#analyze-track-on-map).
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android*). Analyzes the track by time or distance [intervals](./track-context-menu.md#split-interval).
 
 
-- **<Translate android="true" ids="shared_string_share"/>** - exports the selected track.
-- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [uploads](../../plugins/osm-editing.md#how-to-upload-gpx-track) the selected track to OpenStreetMap.
+- **<Translate android="true" ids="shared_string_share"/>**. Exports the selected track.
+- **<Translate android="true" ids="upload_to_openstreetmap"/>**. [Uploads](../../plugins/osm-editing.md#how-to-upload-gpx-track) the selected track to OpenStreetMap.
 
 
-- **<Translate android="true" ids="edit_track"/>** - opens the chosen track in [Plan route tool](../../plan-route/create-route.md).
-- **Duplicate track** (*iOS*) - allows you to make and save a copy of the track.
-- **<Translate android="true" ids="rename_track"/>** - changes track name.
-- **<Translate android="true" ids="change_folder"/>** - selects a folder and add a new one for the chosen track.
+- **<Translate android="true" ids="edit_track"/>**. Opens the chosen track in [Plan route tool](../../plan-route/create-route.md).
+- **Duplicate track** (*iOS*). Allows you to make and save a copy of the track.
+- **<Translate android="true" ids="rename_track"/>**. Changes track name.
+- **<Translate android="true" ids="change_folder"/>**. Selects a folder and add a new one for the chosen track.
 
 
-- **<Translate android="true" ids="shared_string_gps_filter"/>** (*Android*) - allows [filtering points of the track](#gps-filter).
-- **<Translate android="true" ids="altitude_correction"/>** (*Android*) - to [receive elevation data](#calculate-missing-elevation), attach your track to the roads or calculate it offline (needed [Terrain maps](../../plugins/topography.md#download-maps)).
-- **<Translate android="true" ids="simulate_your_location"/>** (*Android*) - [simulates your position](../../plugins/development.md#gpx-track-simulation) using a GPX track.
+- **<Translate android="true" ids="shared_string_gps_filter"/>** (*Android*). Allows [filtering points of the track](#gps-filter).
+- **<Translate android="true" ids="altitude_correction"/>** (*Android*). To [receive elevation data](#calculate-missing-elevation), attach your track to the roads or calculate it offline (needed [Terrain maps](../../plugins/topography.md#download-maps)).
+- **<Translate android="true" ids="simulate_your_location"/>** (*Android*). [Simulates your position](../../plugins/development.md#gpx-track-simulation) using a GPX track.
 
 
-- **<Translate android="true" ids="shared_string_delete"/>** - delete the track.
+- **<Translate android="true" ids="shared_string_delete"/>**. Deletes the track.
 
 
 ### Description and Info
@@ -659,7 +659,7 @@ In this menu, you can change some parameters of your track such as *Smoothing*, 
 
 ### Statistics
 
-![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_android.png)
+![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
 
 The Statistics tab displays information about the **modified** track, meaning the track without filtered values. It is displayed in the statistics blocks and graph data.
   
