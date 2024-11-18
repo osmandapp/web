@@ -110,8 +110,9 @@ export async function waitBy(by, { optional = false, idle = false } = {}) {
   Note:
   The function first checks if the element exists on the page. If it does, it waits until the element is removed.
   If the element is not found initially, the function returns true immediately, indicating that the element has been removed.
-  The function uses a predefined timeout (HIDDEN_TIMEOUT) for waiting. If the element is not removed within this timeout, the function will throw an error. */
-export async function waitByRemoved(by) {
+ * @param allowHidden
+ The function uses a predefined timeout (HIDDEN_TIMEOUT) for waiting. If the element is not removed within this timeout, the function will throw an error. */
+export async function waitByRemoved(by, allowHidden = false) {
     await actionIdleWait();
     const found = await driver.findElements(by);
     if (found && found.length > 0) {
@@ -122,11 +123,13 @@ export async function waitByRemoved(by) {
                     if (!found || found.length === 0) {
                         return true;
                     }
-                    const element = found[0];
-                    return (
-                        (await element.getCssValue('display')) === 'none' ||
-                        (await element.getCssValue('visibility')) === 'hidden'
-                    );
+                    if (allowHidden) {
+                        const element = found[0];
+                        return (
+                            (await element.getCssValue('display')) === 'none' ||
+                            (await element.getCssValue('visibility')) === 'hidden'
+                        );
+                    }
                 } catch (e) {
                     if (isStaleError(e)) {
                         return true; // stale - success
@@ -134,6 +137,7 @@ export async function waitByRemoved(by) {
                     if (isNotInteractableError(e)) {
                         return false;
                     }
+                    console.error(`Error in waitByRemoved for element: ${by.value}`, e);
                     throw e;
                 }
             }),
