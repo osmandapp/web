@@ -80,7 +80,7 @@ export default function SearchLayer() {
                 setSelectedCategory(category);
             } else {
                 if (ctx.searchQuery.latlng) {
-                    searchByWord(searchData.query, ctx.searchQuery.latlng).then();
+                    searchByWord(searchData.query, ctx.searchQuery.latlng, ctx.searchQuery.baseSearch).then();
                 } else {
                     console.debug('SearchLayer: search query without latlng');
                 }
@@ -118,7 +118,7 @@ export default function SearchLayer() {
         }
     }, [ctx.zoomToMapObj]);
 
-    async function searchByWord(query, latlng) {
+    async function searchByWord(query, latlng, baseSearch) {
         let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
             apiCache: true,
             params: {
@@ -126,12 +126,15 @@ export default function SearchLayer() {
                 lon: latlng.lng,
                 text: query,
                 locale: i18n.language,
+                baseSearch,
             },
         });
         if (response.ok) {
             let data = await response.json();
             data = filterDuplicates(data);
             ctx.setSearchResult(data);
+        } else {
+            ctx.setSearchResult(null);
         }
     }
 

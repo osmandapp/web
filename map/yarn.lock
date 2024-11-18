@@ -8614,13 +8614,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"geo-coordinates-parser@npm:^1.7.3":
-  version: 1.7.3
-  resolution: "geo-coordinates-parser@npm:1.7.3"
-  checksum: 27aafe42f5b42e013b7ab49f47ef6f1949c6b423a201c98b539a077755477f7a030b7da870cf0c294c6da8bc51b920c2eb3bb3b978d76b02aed6f6b087494513
-  languageName: node
-  linkType: hard
-
 "get-caller-file@npm:^2.0.5":
   version: 2.0.5
   resolution: "get-caller-file@npm:2.0.5"
@@ -12705,7 +12698,6 @@ __metadata:
     eslint-config-prettier: ^8.8.0
     eslint-plugin-prettier: ^5.0.0
     eslint-plugin-react: ^7.32.2
-    geo-coordinates-parser: ^1.7.3
     html-react-parser: ^5.1.10
     http-proxy-middleware: ^2.0.6
     i18next: ^23.7.16
