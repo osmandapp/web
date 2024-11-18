@@ -206,6 +206,9 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                                 size="small"
                                 aria-label="Small"
                                 valueLabelDisplay="off"
+                                sx={{
+                                    color: '#237BFF',
+                                }}
                             />
                         )}
                     </Box>
