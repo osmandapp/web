@@ -130,6 +130,7 @@ export async function waitByRemoved(by, allowHidden = false) {
                             (await element.getCssValue('visibility')) === 'hidden'
                         );
                     }
+                    return false;
                 } catch (e) {
                     if (isStaleError(e)) {
                         return true; // stale - success
