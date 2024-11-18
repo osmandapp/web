@@ -31,7 +31,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
     const { t } = useTranslation();
 
     const [openMenu, setOpenMenu] = useState(false);
-    const [value, setValue] = useState(ctx.heightmap?.opacity * 100);
+    const [value, setValue] = useState((ctx.heightmap?.opacity ?? 1) * 100);
 
     const OPACITY_HEIGHTMAP = 'opacity_heightmap';
 
@@ -186,7 +186,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                 }
             />
             {ctx.heightmap?.key ? (
-                <>
+                <Box sx={{ mt: '16px' }}>
                     <SubTitle title={'shared_string_appearance'} />
                     <Box sx={{ m: 2 }}>
                         <div
@@ -209,7 +209,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                             />
                         )}
                     </Box>
-                </>
+                </Box>
             ) : (
                 <Box sx={{ mx: 2 }}>
                     <Typography className={styles.terrainInfo}>
