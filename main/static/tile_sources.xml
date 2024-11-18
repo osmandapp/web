@@ -65,7 +65,9 @@
    <tile_source name="🚂 OpenRailwayMap signalling" url_template="https://a.tiles.openrailwaymap.org/signals/{0}/{1}/{2}.png" ext=".png" min_zoom="4" max_zoom="19" tile_size="512" img_density="16" avg_img_size="32000"/>
 
   <!-- Genshtab maps-->
+  <!-- Does not work for OsmAnd app, but for nakarte web works
   <tile_source name="🗺 Topomapper 1km" url_template="https://proxy.nakarte.me/http/88.99.52.155/tmg/{0}/{1}/{2}" ext=".jpg" min_zoom="5" max_zoom="17" tile_size="256" img_density="16" avg_img_size="18000"/>
+  -->
 
    <!-- GeoVelo.fr -->
    <tile_source name="🚴 GeoVelo" url_template="https://tiles4.geovelo.fr/raster/facilities/{0}/{1}/{2}.png" ext=".png" min_zoom="2" max_zoom="16" tile_size="256" img_density="8" avg_img_size="10000"/>
