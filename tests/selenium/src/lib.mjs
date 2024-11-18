@@ -119,10 +119,20 @@ export async function waitByRemoved(by) {
             new Condition('waitByRemoved' + by.value, async () => {
                 try {
                     const found = await driver.findElements(by);
-                    return !found || found.length === 0;
+                    if (!found || found.length === 0) {
+                        return true;
+                    }
+                    const element = found[0];
+                    return (
+                        (await element.getCssValue('display')) === 'none' ||
+                        (await element.getCssValue('visibility')) === 'hidden'
+                    );
                 } catch (e) {
                     if (isStaleError(e)) {
                         return true; // stale - success
+                    }
+                    if (isNotInteractableError(e)) {
+                        return false;
                     }
                     throw e;
                 }
