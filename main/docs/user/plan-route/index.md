@@ -34,4 +34,4 @@ Guides will help you see all the interesting places on the map and learn about t
 
 ## [Coordinate Input](./coordinate-input.md)
 
-Description of a simple and fast tool for creating points by specifying geographic coordinates.  
+Description of a simple and fast tool for creating points by specifying geographic coordinates.
