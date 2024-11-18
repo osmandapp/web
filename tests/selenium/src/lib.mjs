@@ -122,7 +122,7 @@ export async function waitByRemoved(by) {
                     return !found || found.length === 0;
                 } catch (e) {
                     if (isStaleError(e)) {
-                        return true; // stale - success
+                        return false; // stale - try again till timeout
                     }
                     throw e;
                 }
