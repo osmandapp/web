@@ -134,10 +134,10 @@ export async function waitByRemoved(by, allowHidden = false) {
                     if (isStaleError(e)) {
                         return true; // stale - success
                     }
+                    console.error(`Error in waitByRemoved for element: ${by.value}`, e);
                     if (isNotInteractableError(e)) {
                         return false;
                     }
-                    console.error(`Error in waitByRemoved for element: ${by.value}`, e);
                     throw e;
                 }
             }),
