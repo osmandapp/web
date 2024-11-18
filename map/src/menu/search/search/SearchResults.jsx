@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import CustomInput from './CustomInput';
 import { formattingPoiType, getCatPoiIconName, getSearchResultIcon } from '../../../manager/PoiManager';
@@ -17,12 +17,14 @@ import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import { getDistance } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
-import { convert } from 'geo-coordinates-parser';
 import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
+import useHashParams from '../../../util/hooks/useHashParams';
 
 export const SEARCH_RESULT_TYPE_POI = 'POI';
 export const SEARCH_RESULT_TYPE_POI_CATEGORY = 'POI_TYPE';
 export const ZOOM_ERROR = 'Please zoom in closer';
+const MIN_SEARCH_ZOOM = 8;
+const EMPTY_SEARCH_RESULT = 'empty';
 
 export function searchByCategory(value, ctx) {
     const preparedValue = {
@@ -46,17 +48,18 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const [errorZoom, setErrorZoom] = useState(null);
     const currentLoc = useGeoLocation(ctx);
 
+    const { zoom } = useHashParams();
+
     useEffect(() => {
-        let timer;
-        if (!result) {
-            timer = setTimeout(() => {
-                setShowEmptySearch(true);
-            }, 500);
+        ctx.setProcessingSearch(false);
+        if (!result || result === EMPTY_SEARCH_RESULT) {
+            if (showEmptySearch) return;
+            setShowEmptySearch(true);
+            checkZoomError();
+            setResult(null);
         } else {
             setShowEmptySearch(false);
         }
-
-        return () => clearTimeout(timer);
     }, [result]);
 
     useEffect(() => {
@@ -65,72 +68,100 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         }
     }, [value?.query]);
 
-    useEffect(() => {
-        if (!currentLoc) return;
+    const calculateIcons = async (features, ctx) => {
+        const promises = features?.map(async (f) => {
+            if (!f?.properties) return;
+            const props = f.properties;
+            const type = props['web_type'];
+            if (type === SEARCH_RESULT_TYPE_POI || type === SEARCH_RESULT_TYPE_POI_CATEGORY) {
+                const iconName = getCatPoiIconName(props);
+                f.icon = await getSearchResultIcon({ result: iconName, ctx });
+            } else {
+                f.icon = await getSearchResultIcon({
+                    result: SEARCH_ICON_MAP_OBJ,
+                    ctx,
+                    iconUrl: SEARCH_ICON_MAP_OBJ_URL,
+                });
+            }
+        });
+        await Promise.all(promises);
+    };
+
+    const memoizedResult = useMemo(() => {
+        if (!currentLoc) return null;
         const loc = getLoc();
 
-        if (loc) {
-            const features = ctx.searchResult?.features;
-            if (!features || features.length === 0) {
-                setResult(null);
+        if (!loc) return null;
+
+        const features = ctx.searchResult?.features;
+        if (!features) {
+            return null;
+        }
+
+        if (features.length === 0) {
+            return EMPTY_SEARCH_RESULT;
+        }
+
+        return features.map((f) => {
+            const lat = f?.geometry?.coordinates[1];
+            const lon = f?.geometry?.coordinates[0];
+            if (!lat || !lon) return f;
+            return {
+                ...f,
+                locDist: lon === 0 && lat === 0 ? null : getDistance(loc.lat, loc.lng, lat, lon),
+            };
+        });
+    }, [currentLoc, ctx.searchResult]);
+
+    useEffect(() => {
+        const updateIcons = async () => {
+            if (!memoizedResult) return;
+            if (memoizedResult === EMPTY_SEARCH_RESULT) {
+                setResult(EMPTY_SEARCH_RESULT);
                 return;
             }
 
-            const arrWithDist = features.map((f) => {
-                const lat = f?.geometry?.coordinates[1];
-                const lon = f?.geometry?.coordinates[0];
-                if (!lat || !lon) return f;
-                return {
-                    ...f,
-                    locDist: lon === 0 && lat === 0 ? null : getDistance(loc.lat, loc.lng, lat, lon),
-                };
-            });
-
-            if (arrWithDist) {
-                if (!features[0].icon) {
-                    calculateIcons(arrWithDist, ctx).then(() => {
-                        ctx.setProcessingSearch(false);
-                        setResult({ features: arrWithDist });
-                    });
-                } else {
-                    ctx.setProcessingSearch(false);
-                    setResult({ features: arrWithDist });
-                }
-            } else {
-                setResult(null);
-                ctx.setProcessingSearch(false);
+            if (!memoizedResult[0]?.icon) {
+                await calculateIcons(memoizedResult, ctx);
             }
-        }
-    }, [currentLoc, ctx.searchResult]);
+            setResult({ features: memoizedResult });
+        };
+
+        updateIcons().then();
+    }, [memoizedResult]);
 
     useEffect(() => {
         if (locReady) {
             if (value) {
-                try {
-                    convert(value.query);
-                } catch {
-                    let hash = window.location.hash;
-                    if (!hash) {
-                        setErrorZoom(ZOOM_ERROR);
-                        setResult(null);
-                        return;
-                    }
-                    let arr = hash.split('/');
-                    if (parseInt(arr[0].substring(1)) < 7) {
-                        setErrorZoom(ZOOM_ERROR);
-                        setResult(null);
-                        return;
-                    }
-                }
                 ctx.setProcessingSearch(true);
-                if (value.type === SEARCH_TYPE_CATEGORY) {
-                    searchByCategory(value, ctx);
+                if (zoom < MIN_SEARCH_ZOOM) {
+                    if (value.type === SEARCH_TYPE_CATEGORY) {
+                        setResult(null);
+                        setErrorZoom(ZOOM_ERROR);
+                        ctx.setProcessingSearch(false);
+                    } else {
+                        useBaseSearch(value);
+                    }
                 } else {
-                    searchByWord(value);
+                    if (value.type === SEARCH_TYPE_CATEGORY) {
+                        searchByCategory(value, ctx);
+                    } else {
+                        searchByWord(value);
+                    }
                 }
             }
         }
     }, [locReady, value]);
+
+    function useBaseSearch(value) {
+        searchByWord(value, true);
+    }
+
+    function checkZoomError() {
+        if (zoom < MIN_SEARCH_ZOOM) {
+            setErrorZoom(ZOOM_ERROR);
+        }
+    }
 
     function getLoc() {
         let loc = null;
@@ -155,7 +186,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         }
     }, [ctx.searchResult]);
 
-    function searchByWord(value) {
+    function searchByWord(value, baseSearch = false) {
         const loc = getLoc();
 
         if (!loc) return;
@@ -163,6 +194,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         ctx.setSearchQuery({
             search: value,
             latlng: { lat: loc.lat, lng: loc.lng },
+            baseSearch,
         });
     }
 
@@ -173,25 +205,6 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         ctx.setSearchQuery(null);
     }
 
-    const calculateIcons = async (features, ctx) => {
-        const promises = features?.map(async (f) => {
-            if (!f?.properties) return;
-            const props = f.properties;
-            const type = props['web_type'];
-            if (type === SEARCH_RESULT_TYPE_POI || type === SEARCH_RESULT_TYPE_POI_CATEGORY) {
-                const iconName = getCatPoiIconName(props);
-                f.icon = await getSearchResultIcon({ result: iconName, ctx });
-            } else {
-                f.icon = await getSearchResultIcon({
-                    result: SEARCH_ICON_MAP_OBJ,
-                    ctx,
-                    iconUrl: SEARCH_ICON_MAP_OBJ_URL,
-                });
-            }
-        });
-        await Promise.all(promises);
-    };
-
     return (
         <>
             <CustomInput
@@ -201,7 +214,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             />
             {ctx.processingSearch && <Loading />}
             {!ctx.processingSearch &&
-                (!result && showEmptySearch ? (
+                (showEmptySearch ? (
                     <EmptySearch message={errorZoom} />
                 ) : (
                     <Box sx={{ overflowY: 'auto' }} id={'se-search-results'}>
