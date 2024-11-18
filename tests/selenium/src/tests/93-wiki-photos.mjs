@@ -35,10 +35,10 @@ export default async function test() {
     await clickBy(By.id('se-next-photo'));
     await waitBy(By.id('se-photo-modal-62534415'));
 
-    await matchInnerTextBy(By.id('se-photo-date'), 'Date: 2 July 2017');
-    await matchInnerTextBy(By.id('se-photo-author'), 'Author: Ralf Roletschek');
-    await matchInnerTextBy(By.id('se-photo-license'), 'License: GFDL-1.2');
-    await matchInnerTextBy(By.id('se-photo-description'), 'Description: Maidan Nezalezhnosti in Kiew');
+    await matchInnerTextBy(By.id('se-photo-date'), 'Date: 3 April 2008');
+    await matchInnerTextBy(By.id('se-photo-author'), 'Nick Black');
+    await matchInnerTextBy(By.id('se-photo-license'), 'CC-BY-2.0');
+    await matchInnerTextBy(By.id('se-photo-description'), 'Communist Demonstation in Kiev');
 
     await clickBy(By.id('se-close-photo'));
     await waitByRemoved(By.id('se-photo-modal-62534415'));

@@ -119,7 +119,7 @@ export default function SearchLayer() {
     }, [ctx.zoomToMapObj]);
 
     async function searchByWord(query, latlng) {
-        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search`, {
+        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
             apiCache: true,
             params: {
                 lat: latlng.lat,

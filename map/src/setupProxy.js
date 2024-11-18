@@ -16,8 +16,10 @@ module.exports = function (app) {
     let heightmap = localProxy;
     let mapapi = localProxy;
     let routing = localProxy;
+    let search = localProxy;
     let weather = localProxy;
     let others = localProxy;
+    let osmgpx = localProxy;
 
     // yarn start (test)
     if (process.env.NODE_ENV === 'development' && !process.env.USE_LOCAL_API) {
@@ -26,8 +28,10 @@ module.exports = function (app) {
         heightmap = testProxy;
         mapapi = testProxy;
         routing = testProxy;
+        search = testProxy;
         weather = testProxy;
         others = testProxy;
+        osmgpx = testProxy;
     }
 
     // yarn start:fallback (prod)
@@ -36,18 +40,22 @@ module.exports = function (app) {
         tile = maptileProxy;
         heightmap = maptileProxy;
         routing = maptileProxy;
+        search = maptileProxy;
         weather = maptileProxy;
         mapapi = mainProxy;
         others = mainProxy;
+        // TODO switch to mainProxy later
+        osmgpx = testProxy;
     }
 
     app.use('/gpx/', gpx);
     app.use('/tile/', tile);
     app.use('/heightmap/', heightmap);
     app.use('/mapapi/', mapapi);
+    app.use('/search/', search);
     app.use('/routing/', routing);
     app.use('/weather-api/', weather);
+    app.use('/osmgpx/', osmgpx);
     // app.use('/weather/', weather); // defined-by-env
-    // app.use('/search/', others); // actually /routing/search
     app.use('/online-routing-providers.json', others); // osrm-providers
 };

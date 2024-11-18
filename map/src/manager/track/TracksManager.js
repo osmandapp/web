@@ -361,7 +361,7 @@ export function equalsPoints(arr1, arr2) {
     return arr1?.length === arr2?.length && JSON.stringify(arr1) === JSON.stringify(arr2);
 }
 
-function addDistance(track) {
+export function addDistance(track) {
     if (track.points && track.points.length > 0) {
         addDistanceToPoints(track.points);
     }
@@ -455,6 +455,23 @@ export const downloadGpx = async (track) => {
         url: urlFile + qs,
         clienttimems: track.clienttimems,
         updatetimems: track.updatetimems,
+        name: track.name,
+        type: 'GPX',
+    };
+    const data = await Utils.getFileData(oneGpxFile);
+    if (data) {
+        const url = document.createElement('a');
+        url.href = URL.createObjectURL(new Blob([data]));
+        url.download = `${TracksManager.prepareName(track.name)}.gpx`;
+        url.click();
+    }
+};
+
+export const downloadTravelGpx = async (track) => {
+    const urlFile = `${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-original-file`;
+    const qs = `?id=${track.id}`;
+    const oneGpxFile = {
+        url: urlFile + qs,
         name: track.name,
         type: 'GPX',
     };

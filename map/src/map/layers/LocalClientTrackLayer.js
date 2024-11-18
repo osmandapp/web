@@ -176,8 +176,10 @@ export default function LocalClientTrackLayer() {
                 wpts: ctxTrack.wpts,
                 trackLayers: ctxTrack.layers,
             });
-            ctxTrack.layers.options = { ...ctxTrack.layers.options, type: LOCAL_TRACKS_LAYERS_ID };
-            saveChanges(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers);
+            if (ctxTrack.layers) {
+                ctxTrack.layers.options = { ...ctxTrack.layers.options, type: LOCAL_TRACKS_LAYERS_ID };
+                saveChanges(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers);
+            }
 
             setPrevZoom(zoom);
             setMove(false);

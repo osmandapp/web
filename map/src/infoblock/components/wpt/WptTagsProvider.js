@@ -597,7 +597,7 @@ async function getWikipediaContent(tag) {
     if (!wikiData) {
         return null;
     }
-    let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-wiki-content`, {
+    let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/get-wiki-content`, {
         apiCache: true,
         params: {
             title: wikiData.title,
@@ -616,7 +616,7 @@ async function getWikivoyageContent(link) {
     if (!wikivoyageData) {
         return null;
     }
-    let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-wikivoyage-content`, {
+    let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/get-wikivoyage-content`, {
         apiCache: true,
         params: {
             title: wikivoyageData.title,

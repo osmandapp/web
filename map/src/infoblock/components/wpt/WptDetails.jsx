@@ -498,7 +498,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     async function getPoiAddress(wpt) {
-        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi-address`, {
+        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-address`, {
             apiCache: true,
             params: {
                 lat: wpt.latlon.lat,
@@ -516,7 +516,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     async function getWikiPhotos(wpt) {
-        let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-wiki-photos`, {
+        let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/get-wiki-photos`, {
             apiCache: true,
             params: {
                 id: wpt.id,
@@ -532,7 +532,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     async function getPoiPhotos(wpt) {
-        let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-poi-photos`, {
+        let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/get-poi-photos`, {
             apiCache: true,
             params: {
                 article: wpt.wikidata,

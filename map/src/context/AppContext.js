@@ -28,6 +28,7 @@ export const OBJECT_EXPLORE = 'explore';
 export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
+export const OBJECT_TYPE_TRAVEL = 'travel';
 
 export const defaultConfigureMapStateValues = {
     showFavorites: true,
@@ -39,7 +40,8 @@ export const defaultConfigureMapStateValues = {
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
 export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
 export const isRouteTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_TRACK;
-export const isTrack = (ctx) => isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx);
+export const isTravelTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_TRAVEL;
+export const isTrack = (ctx) => isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx) || isTravelTrack(ctx);
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -289,6 +291,10 @@ export const AppContextProvider = (props) => {
     const [searchResult, setSearchResult] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
     const [zoomToMapObj, setZoomToMapObj] = useState(false);
+    // travel
+    const [travelFilter, setTravelFilter] = useState(null);
+    const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
+    const [selectedTravelRoute, setSelectedTravelRoute] = useState(null);
 
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -666,6 +672,12 @@ export const AppContextProvider = (props) => {
                 setLoginError,
                 favLoading,
                 setFavLoading,
+                searchTravelRoutes,
+                setSearchTravelRoutes,
+                selectedTravelRoute,
+                setSelectedTravelRoute,
+                travelFilter,
+                setTravelFilter,
             }}
         >
             {props.children}
