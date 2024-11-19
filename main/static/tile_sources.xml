@@ -129,12 +129,15 @@
    <!--
    <tile_source name="🇳🇴 ⚓ Kartverket Nautical (NO)" url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset=utm33n&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>   -->
 
-   <tile_source name="🇳🇴 ⚓ Kartverket Nautical (NO)"
+<tile_source name="🇳🇴 ⚓ Kartverket Nautical (NO)"
              url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset=utm33n&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}"
              ext=".png"
              min_zoom="5"
              max_zoom="19"
-             tile_size="256"/>
+             zoom_offset="2"
+             tile_size="256"
+             img_density="16"/>
+
 
 
 
