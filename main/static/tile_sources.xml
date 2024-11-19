@@ -204,8 +204,8 @@
   <tile_source name="🇫🇷 OSM FR" url_template="https://a.tile.openstreetmap.fr/osmfr/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
 
    <!-- Spain maps-->
-   <tile_source name="🇪🇸 Base IGN (ES)" url_template="https://tms-ign-base.idee.es/1.0.0/IGNBaseTodo/{0}/{1}/{2}.jpeg" ext=".jpg" min_zoom="2" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000  inverted_y="true"/> 
-   <tile_source name="🇪🇸 Topo IGN (ES)" url_template="https://tms-mapa-raster.ign.es/1.0.0/mapa-raster/{0}/{1}/{2}.jpeg" ext=".jpg" min_zoom="2" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000  inverted_y="true"/>
+   <tile_source name="🇪🇸 Base IGN (ES)" url_template="https://tms-ign-base.idee.es/1.0.0/IGNBaseTodo/{0}/{1}/{2}.jpeg" ext=".jpg" min_zoom="2" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"  inverted_y="true"/> 
+   <tile_source name="🇪🇸 Topo IGN (ES)" url_template="https://tms-mapa-raster.ign.es/1.0.0/mapa-raster/{0}/{1}/{2}.jpeg" ext=".jpg" min_zoom="2" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"  inverted_y="true"/>
    <tile_source name="🇪🇸 🛰 PNOA IGN (ES)" url_template="https://tms-pnoa-ma.idee.es/1.0.0/pnoa-ma/{0}/{1}/{2}.jpeg" ext=".jpg" min_zoom="2" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"  inverted_y="true"/>
 
    <!-- Swiss maps-->
