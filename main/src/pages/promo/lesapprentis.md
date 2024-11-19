@@ -28,7 +28,7 @@ OsmAnd et ["Les Apprentis Voyageurs"](https://lesapprentisvoyageurs.fr/) vous pr
 
 1. **Saisissez votre e-mail** pour l'inscription :
 
-<RegisterUserPromoBlock  promoKey='greg3'/>
+<RegisterUserPromoBlock  promoKey='greg4'/>
 
 <p> </p>
 
@@ -55,7 +55,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='greg3'/>
+<RegisterUserPromoBlock  promoKey='greg4'/>
 
 <p> </p>
 
