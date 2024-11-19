@@ -35,8 +35,9 @@ import SubTitle from '../components/SubTitle';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
 import capitalize from 'lodash/capitalize';
 import TerrainConfig from './TerrainConfig';
-import ButtonPro from '../../frame/components/ButtonPro';
+import ButtonPro from '../../frame/components/pro/ButtonPro';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
+import TopographyProFeatures from '../../frame/components/pro/TopographyProFeatures';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -211,7 +212,15 @@ export default function ConfigureMap() {
                                     </ListItemText>
                                 </MenuItem>
                                 <Divider className={styles.dividerItem} />
-                                <MenuItem divider className={styles.item} onClick={() => setOpenTerrainConfig(true)}>
+                                <MenuItem
+                                    divider
+                                    className={styles.item}
+                                    onClick={() => {
+                                        if (!showProButton) {
+                                            setOpenTerrainConfig(true);
+                                        }
+                                    }}
+                                >
                                     <ListItemIcon className={setIconStyles(ctx.configureMapState.terrain?.key)}>
                                         <TerrainIcon />
                                     </ListItemIcon>
@@ -227,7 +236,7 @@ export default function ConfigureMap() {
                                                 {t('shared_string_terrain')}
                                             </Typography>
                                             {showProButton ? (
-                                                <ButtonPro />
+                                                <ButtonPro type={<TopographyProFeatures />} />
                                             ) : (
                                                 <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
                                                     {capitalize(
