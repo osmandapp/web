@@ -18,6 +18,26 @@ Direct links to free OsmAnd versions.
 
 ## Version 4 
 
+### Version 4.9
+Release date: 11/2024
+* Added a full-screen gallery viewer for Wikimedia images
+* Introduced a new plugin "Vehicle Metrics" to monitor vehicle performance using the OBD-II protocol
+* Added the ability to assign activities to tracks and filter them accordingly
+* Implemented new quick actions for trip recording and touchscreen lock
+* Introduced customizable map button appearance and a precise grid
+* Added a context menu and a "Reset average speed" action to widgets
+* Added new route layer "Dirt Bike trails"
+* Fixed "Auto-record track during navigation" 
+* Fixed issue with fliped coordinates in RTL 
+* Fixed missed sensor data for currently recording track 
+* Added information about surrounding areas for the selected point
+* Added quick action to control visibility of OSM Edits
+* Separated visibility parameters for Terrain colorization options
+* Added a tappable icon to display access or other road or path attributes
+
+<DownloadRelease blog="osmand-android-4-9-released" release="net.osmand-4.9.7.apk" />
+
+
 ### Version 4.8
 Release date: 08/2024
 * New terrain colorization option "Altitude"
