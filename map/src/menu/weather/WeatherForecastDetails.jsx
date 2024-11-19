@@ -282,7 +282,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
             <TopWeatherInfo loadingLocation={loadingLocation} weatherLoc={weatherLoc} />
             <Box className={styles.forecastButtonBox}>
                 {ctx.weatherLayers[ctx.weatherType].map((item, index) => (
-                    <ForecastButtonItem item={item} index={index} key={index} />
+                    <ForecastButtonItem item={item} index={index} key={item.id || item.name} />
                 ))}
             </Box>
             {ctx.forecastLoading ? (
@@ -302,7 +302,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                     >
                         {currentWeatherType !== null &&
                             Object.entries(forecastPreparedData).map(([key, value], index) => (
-                                <ForecastWeekItem day={key} data={value} key={index} index={index} />
+                                <ForecastWeekItem day={key} data={value} key={key} index={index} />
                             ))}
                     </Box>
                 </>

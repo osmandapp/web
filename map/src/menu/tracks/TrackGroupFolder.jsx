@@ -23,8 +23,9 @@ export default function TrackGroupFolder({ folder }) {
         if (ctx.tracksGroups) {
             let found = findGroupByName(ctx.tracksGroups, group.fullName);
             if (ctx.openGroups && ctx.openGroups.length > 0) {
-                ctx.openGroups[ctx.openGroups.length - 1] = found;
-                ctx.setOpenGroups([...ctx.openGroups]);
+                const updatedOpenGroups = [...ctx.openGroups];
+                updatedOpenGroups[updatedOpenGroups.length - 1] = found;
+                ctx.setOpenGroups(updatedOpenGroups);
                 if (folder) {
                     setGroup({ ...found });
                 }
@@ -78,7 +79,7 @@ export default function TrackGroupFolder({ folder }) {
         const listGroups = sortGroups?.length > 0 ? sortGroups : group.subfolders;
         if (listGroups && listGroups.length > 0) {
             listGroups.map((g, index) => {
-                items.push(<CloudTrackGroup key={g.name + index} index={index} group={g} />);
+                items.push(<CloudTrackGroup key={g.name} index={index} group={g} />);
             });
             return items;
         }

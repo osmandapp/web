@@ -113,7 +113,7 @@ export default function SettingsMenu() {
                 if (transLang) {
                     res.push(
                         <MenuItem
-                            key={lang + index}
+                            key={lang}
                             onClick={async () => {
                                 await i18n.changeLanguage(lang).then(() => {
                                     setCurrentLang(t(`lang_${i18n.language}`));

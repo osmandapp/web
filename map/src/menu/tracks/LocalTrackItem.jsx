@@ -31,9 +31,12 @@ export default function LocalTrackItem({ track }) {
     function cleanSelectedTrackIfNeed() {
         if (isAlreadyEdit()) {
             if (ctx.createTrack) {
-                ctx.createTrack.enable = false; // stop-editor
-                ctx.createTrack.clear = true;
-                ctx.setCreateTrack({ ...ctx.createTrack });
+                const updatedTrack = {
+                    ...ctx.createTrack,
+                    enable: false, // stop-editor
+                    clear: true,
+                };
+                ctx.setCreateTrack(updatedTrack);
             }
         }
     }
