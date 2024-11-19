@@ -397,8 +397,10 @@ export const AppContextProvider = (props) => {
 
     const [selectedSort, setSelectedSort] = useState({});
 
+    const [openProFeatures, setOpenProFeatures] = useState(null);
+
     function getConfigureMap() {
-        const TIME_UPDATE_CONFIGURE_MAP = 1730683492000;
+        const TIME_UPDATE_CONFIGURE_MAP = 1731935733868;
         let savedConfigureMap = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
         if (savedConfigureMap) {
             savedConfigureMap = JSON.parse(savedConfigureMap);
@@ -678,6 +680,8 @@ export const AppContextProvider = (props) => {
                 setSelectedTravelRoute,
                 travelFilter,
                 setTravelFilter,
+                openProFeatures,
+                setOpenProFeatures,
             }}
         >
             {props.children}

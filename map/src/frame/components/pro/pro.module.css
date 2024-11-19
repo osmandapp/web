@@ -1,0 +1,109 @@
+.mainInfo {
+    padding: 0px 16px 16px 16px !important;
+}
+.titleBox {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    align-self: stretch !important;
+}
+.titleIcon {
+    display: flex !important;
+    padding: 10px !important;
+    align-items: center !important;
+    border-radius: 9px !important;
+    background: #f2f2f2 !important;
+}
+.titleText {
+    display: flex !important;
+    height: 48px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    flex: 1 0 0 !important;
+    color: var(--text-primary) !important;
+    font-family: Roboto !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+}
+.text1 {
+    color: var(--text-primary) !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+.text2 {
+    color: var(--text-secondary) !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+.appBar {
+    display: flex !important;
+    height: 56px !important;
+    padding: 8px !important;
+    align-items: center !important;
+    gap: 16px !important;
+    flex-shrink: 0 !important;
+    align-self: stretch !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+}
+.closeIcon {
+    fill: var(--svg-icon-color) !important;
+    padding: 8px;
+    &:hover {
+        fill: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
+    margin-right: auto !important;
+}
+.body {
+    display: flex !important;
+    padding: 16px 16px 0px 16px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+}
+.bodyInfo {
+    display: flex !important;
+    padding: 13px 16px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    align-self: stretch !important;
+    border-radius: 3px !important;
+    border: 2px solid #e8e8e8 !important;
+}
+.bodyIcon {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+}
+.proButton {
+    width: 70px !important;
+    height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 3px !important;
+    padding: 16px !important;
+    box-shadow: none !important;
+    background: rgba(87, 20, 204, 0.2) !important;
+}
+
+.proButton:hover {
+    background-color: rgba(87, 20, 204, 0.3) !important;
+}
+.proButtonLogos {
+    display: flex;
+    padding: 4px 6px 4px 3px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
