@@ -108,7 +108,7 @@ export default function TracksMenu() {
                                 (sortGroups.length > 0 ? sortGroups : ctx.tracksGroups)
                                     .filter((g) => g.name !== DEFAULT_GROUP_NAME)
                                     .map((group, index) => {
-                                        return <CloudTrackGroup key={group.name + index} index={index} group={group} />;
+                                        return <CloudTrackGroup key={group.name} index={index} group={group} />;
                                     })}
                             {ctx.trackLoading?.length > 0 &&
                                 ctx.trackLoading.map((lt) => {

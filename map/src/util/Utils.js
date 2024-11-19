@@ -197,12 +197,9 @@ export function prepareFileName(filename, isFavoriteGroup = false) {
 
     const newlineRe = /\n/g;
     // Note: It is allowed to use / in favorite file names
-    // eslint-disable-next-line no-useless-escape
     const illegalRe = isFavoriteGroup ? /[\?<>\\:\*\|"]/g : /[\/\?<>\\:\*\|"]/g;
-    // eslint-disable-next-line no-control-regex
     const controlRe = /[\x00-\x1f\x80-\x9f]/g;
     const reservedRe = /^\.+$/;
-    // eslint-disable-next-line no-useless-escape
     const unixRe = /[\`\'\$\{\}\[\]\(\)]/g;
     const windowsReservedRe = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$/i;
     const spacesRe = / +/g;

@@ -140,7 +140,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                         setErrorZoom(ZOOM_ERROR);
                         ctx.setProcessingSearch(false);
                     } else {
-                        useBaseSearch(value);
+                        performBaseSearch(value);
                     }
                 } else {
                     if (value.type === SEARCH_TYPE_CATEGORY) {
@@ -153,7 +153,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         }
     }, [locReady, value]);
 
-    function useBaseSearch(value) {
+    function performBaseSearch(value) {
         searchByWord(value, true);
     }
 

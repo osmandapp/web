@@ -104,7 +104,7 @@ export default function DayCardsCarousel() {
                     return (
                         <ListItemButton
                             id={'se-weather-day-item-' + index}
-                            key={index}
+                            key={key}
                             className={setDayStyles(currentDay)}
                             onClick={() => {
                                 const alignedStep = getAlignedStep({ direction: 0, weatherDate: currentDay, ctx });
