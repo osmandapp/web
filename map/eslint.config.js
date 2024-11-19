@@ -36,7 +36,7 @@ export default [
             'react/jsx-no-target-blank': 'warn',
             'react-compiler/react-compiler': 'off',
             'react-hooks/exhaustive-deps': 'off',
-            "react/no-array-index-key": "off",
+            'react/no-array-index-key': 'off',
         },
         settings: {
             react: {
