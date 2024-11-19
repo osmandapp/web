@@ -130,7 +130,8 @@
    <tile_source name="🇳🇴 ⚓ Kartverket Nautical (NO)" url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset=utm33n&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>   -->
 
    <tile_source name="🇳🇴 ⚓ Kartverket Nautical (NO)"
-             url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset=utm33n&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}"
+             url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset=WebMercatorQuad&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}"
+
              ext=".png"
              min_zoom="5"
              max_zoom="19"
@@ -140,34 +141,13 @@
              avg_img_size="18000"/>
 
 <tile_source name="🇳🇴 ⚓ Kartverket Nautical (NO) 1"
-             url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset=utm33n&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}"
+             url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset=WebMercatorQuad&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}"
              ext=".png"
              min_zoom="5"
              max_zoom="19"
              tile_size="256"
              img_density="1"
              avg_img_size="18000"/>
-
-<tile_source name="🇳🇴 ⚓ Kartverket Nautical (NO)  2"
-             url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset=utm33n&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}"
-             ext=".png"
-             min_zoom="5"
-             max_zoom="19"
-             zoom_offset="-1"
-             tile_size="256"
-             img_density="1"
-             avg_img_size="18000"/>
-
-<tile_source name="🇳🇴 ⚓ Kartverket Nautical (NO) 3"
-             url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset=utm33n&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}"
-             ext=".png"
-             min_zoom="8"
-             max_zoom="17"
-             zoom_offset="0"
-             tile_size="256"
-             img_density="16"
-             avg_img_size="18000"/>
-
 
 
    <tile_source name="🇳🇴 🛰 Kartverket Orthophoto (NO)" url_template="https://gatekeeper1.geonorge.no/BaatGatekeeper/gk/gk.nib_utm33_wmts_v2?&amp;gkt=D435FC171E8FA0CFDF57207DF5202FF99440E10A8276E6CB86F26777CB4A480643556557B0B5C2FF895790F982B9CB962DD857DEC12A11E68D018F0853CD0DA1&amp;layer=Nibcache_UTM33_EUREF89&amp;style=default&amp;tilematrixset=default028mm&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/>
