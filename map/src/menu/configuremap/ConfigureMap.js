@@ -86,9 +86,6 @@ export default function ConfigureMap() {
     }
 
     function showProButton() {
-        if (!ctx.loginUser) {
-            return true;
-        }
         return ctx.accountInfo?.account === FREE_ACCOUNT;
     }
 
@@ -216,7 +213,7 @@ export default function ConfigureMap() {
                                     divider
                                     className={styles.item}
                                     onClick={() => {
-                                        if (!showProButton) {
+                                        if (!showProButton()) {
                                             setOpenTerrainConfig(true);
                                         }
                                     }}
@@ -235,7 +232,7 @@ export default function ConfigureMap() {
                                             <Typography variant="inherit" noWrap>
                                                 {t('shared_string_terrain')}
                                             </Typography>
-                                            {showProButton ? (
+                                            {showProButton() ? (
                                                 <ButtonPro type={<TopographyProFeatures />} />
                                             ) : (
                                                 <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
