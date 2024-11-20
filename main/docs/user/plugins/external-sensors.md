@@ -38,7 +38,7 @@ To start using data from external sensors, you need to make the following settin
 
 **4.** [Add **External sensors widgets**](#widgets) to the screen (not required).
 
-**5.** [Use the tips for **ANT+ connect**](https://www.thisisant.com/consumer/ant-101/ant-in-phones) to set up this type of sensors.
+**5.** [Use the tips for **ANT+ connect**](https://www.thisisant.com/consumer/ant-101/ant-in-phones) to set up these types of sensors.
 
 **6.** **Enable** Bluetooth on your device to connect external **BLE sensors**.
 
@@ -109,10 +109,10 @@ With the plugin for each external sensor available to the OsmAnd application, yo
 
 1. All previously added sensors are divided into two lists: **Connected** and **Disconnected**.
 2. Each sensor in the list has a menu with settings:
-    - **Disconnect** or **Connect** the sensor depending on its current state.
-    - **Settings**. Opens a separate sensor screen with additional information on sensor type, battery level, data received, and settings for renaming, *forget sensor*, and for specifying wheel circumference. The sensor screen can be opened simply by tapping the field with the sensor name in the list.
-    - **Rename**. Allows you to set your own name for the sensor.
-    - **Forget**. The sensor will be removed from the list, but it can be paired again.
+    - **Disconnect** or **Connect** the sensor, depending on its current state.
+    - **Settings**. Opens a separate sensor screen with additional information on sensor type, battery level, data received, and settings for renaming, *forget sensor*, and specifying wheel circumference. The sensor screen can be opened simply by tapping the field with the sensor name in the list.
+    - **Rename**. Allows you to set your name for the sensor.
+    - **Forget**. The sensor will be removed from the list but can be paired again.
 
 - When the battery level of the paired sensor becomes less than 15%, a pop-up notification appears on the screen.
 
@@ -144,11 +144,11 @@ Data from connected external sensors can be added to the GPX file using the [Tri
 - Settings for sensors are only available if the External Sensors plugin is enabled.
 - To use data from external sensors, go to *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
 - A list of available sensors for each data type is always available, regardless of whether any sensor is connected.
-- If none of the sensor types are paired, you can use the [*Pair new sensor*](#pair-new-sensor) button in the Trip recording plugin *Settings* menu.
+- If none of the sensor types are paired, use the [*Pair new sensor*](#pair-new-sensor) button in the Trip recording plugin *Settings* menu.
 - OsmAnd records data from selected sensors to the [track](../plugins/trip-recording.md#recorded-gpx-file) while recording a trip.
 
 :::note
-OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file) with such *tag names* for external sensors, with which your file can be easily read by the sports applications you use.  For example Strava or Runkeeper.
+OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file) with such *tag names* for external sensors, with which your file can be easily read by the sports applications you use. For example, Strava or Runkeeper.
 :::
 
 
@@ -158,13 +158,13 @@ OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file
 
 <TabItem value="android" label="Android">
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_andr.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_2_andr.png)
+![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_andr.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_ios.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_2_ios.png)
+![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_ios.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_ios.png)
 
 </TabItem>
 
@@ -197,9 +197,9 @@ OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*,
 
 </Tabs>
 
-The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widgets) is automatically added to the list of widgets when you enable the External Sensors plugin. Before you start your trip, make sure that the widgets are on the screen, and if not, add them using the [Configure Screen](../widgets/configure-screen.md) menu. External Sensors widgets help you track data from your external sensors in real the time.  
+The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widgets) is automatically added to the list of widgets when you enable the External Sensors plugin. Before you start your trip, make sure that the widgets are on the screen, and if not, add them using the [Configure Screen](../widgets/configure-screen.md) menu. External Sensor widgets help you track data from your external sensors in real-time.  
 
-1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>**. The heart rate sensor can transmit your heart rate in real time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts.
+1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>**. The heart rate sensor can transmit your heart rate in real-time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts.
 2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*). Your bike's power sensors measure the power you exert when you pedal. This allows you to analyze and optimize your workouts to improve efficiency and performance.
 3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>**. Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>**. Speed sensors provide information about your current speed while cycling.
@@ -228,7 +228,7 @@ The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widget
 
 </Tabs>
 
-By default the widget shows the first currently connected sensor of this type. If you want to choose different, you need to choose manually from connected sensors list.
+By default, the widget shows the first currently connected sensor of this type. If you want to choose different, you need to choose manually from the connected sensors list.
 
 
 ## Related Articles
