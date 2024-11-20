@@ -28,8 +28,10 @@ const PointsTab = ({ width }) => {
     const [openPointAlert, setOpenPointAlert] = useState(true);
 
     function showPointOnMap(point) {
-        ctx.selectedGpxFile.showPoint = point;
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+        ctx.setSelectedGpxFile((prevState) => ({
+            ...prevState,
+            showPoint: point,
+        }));
     }
 
     const onDragEnd = useCallback(
@@ -64,15 +66,14 @@ const PointsTab = ({ width }) => {
             text: 'Delete all track points?',
             callback: () => {
                 if (ctx.selectedGpxFile) {
-                    if (ctx.selectedGpxFile.points) {
-                        ctx.selectedGpxFile.points = [];
-                    }
-                    if (ctx.selectedGpxFile.tracks) {
-                        ctx.selectedGpxFile.tracks = [];
-                    }
-                    ctx.selectedGpxFile.updateLayers = true;
-                    ctx.selectedGpxFile.analysis = null;
-                    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                    const updatedSelectedGpxFile = {
+                        ...ctx.selectedGpxFile,
+                        points: [],
+                        tracks: [],
+                        updateLayers: true,
+                        analysis: null,
+                    };
+                    ctx.setSelectedGpxFile(updatedSelectedGpxFile);
                 }
             },
         });

@@ -23,7 +23,7 @@ const TRACKS = [
         gpx: 'test-track-trkpt.gpx',
         strings: [
             'Points: 1460',
-            'Distance: 25.5 km',
+            'Distance: 25.6 km',
             '195 / 216 / 257 m', // ele
         ],
     },
@@ -41,7 +41,7 @@ const TRACKS = [
         gpx: 'test-routed-osmand.gpx',
         strings: [
             'Points: 16',
-            'Distance: 151.9 km',
+            'Distance: 152.1 km',
             '312 / 884 / 1731 m', // ele
             /Path.*?: 20.96 km/s, // Waytypes stats
             /Gravel.*?: 16.00 km/s, // Surfaces stats

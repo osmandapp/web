@@ -35,6 +35,7 @@ These manuals, available in multiple languages, often provide unique insights, t
 | French  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
 | Italian | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
 | Dutch | OsmAnd Handleiding 2021. | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf)   |
+| Dutch | OsmAnd Nederlandse instructie. | [Nederlandse instructie](https://docs.google.com/document/d/1JdyVswTcfrpVmflLZ_WBKEhmndlJBl57qPuAWFv5Pqg/edit?usp=drivesdk)   |
 | Dutch | Filmpjes zijn door mij gemaakt met korte en duidelijke uitleg over de werking van Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
 | Русский  | Навигация для бездорожья, экспедиций, воды (и не только)! OsmAnd! – пора сменить олдскульный Ozi-к, не теряя генштаба, спутника, openstreetmap, и прочих прелестей! Инструкция, Руководство и Фишки!  |  [Drive2](https://www.drive2.ru/l/533880791202005393/) |
 

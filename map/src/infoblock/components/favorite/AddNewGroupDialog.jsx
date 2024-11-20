@@ -50,12 +50,15 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
 
     function saveTrackWptGroup() {
         let pointsGroups = createGroup();
-        if (!ctx.selectedGpxFile.pointsGroups) {
-            ctx.selectedGpxFile.pointsGroups = {};
-        }
-        ctx.selectedGpxFile.pointsGroups[groupName] = pointsGroups[groupName];
-        setFavoriteGroup(ctx.selectedGpxFile.pointsGroups[groupName]);
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+        const updatedSelectedGpxFile = {
+            ...ctx.selectedGpxFile,
+            pointsGroups: {
+                ...ctx.selectedGpxFile.pointsGroups,
+                [groupName]: pointsGroups[groupName],
+            },
+        };
+        setFavoriteGroup(updatedSelectedGpxFile.pointsGroups[groupName]);
+        ctx.setSelectedGpxFile(updatedSelectedGpxFile);
         setDialogOpen(false);
     }
 

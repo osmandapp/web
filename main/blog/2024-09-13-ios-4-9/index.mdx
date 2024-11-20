@@ -62,16 +62,19 @@ We are pleased to introduce a new [brand search](https://osmand.net/docs/user/se
 
 Whether you are interested to find your favorite coffee shop, hotel, or reliable supermarket, this update makes discovering nearby locations from your favorite brands easier. Enjoy a personalized and efficient search and optimize your travels with OsmAnd.
 
+![Brand name iOS](./img/brand.png)
 
 ## Redesign Graphs
 
 Elevation graphs have been redesigned to prevent overlapping labels.
 
+![Graph iOS](./img/graph.png)
 
 ## Total Track Statistics
 
 The [overall statistics](https://osmand.net/docs/user/personal/tracks/manage-tracks#folder-statistics) are now displayed at the bottom of the list in each of the track folders.
 
+![Track stats iOS](./img/track_stats.png)
 
 ## Updates for Map Mode Menu
 
@@ -100,22 +103,49 @@ The update includes:
   Status: *Off*, &nbsp;*Resting position*, &nbsp;*Navigation position*, &nbsp;*Rest & navigation position*.  
 
 
-##  Quick Action Update
+##  Quick Action Updates
 
-![Widget page](./img/conf_screen_display_position_ios.png)
+### Location position screen
+
 
 Added the ability to create a Quick Action button to change the [Location position on screen](https://osmand.net/docs/user/widgets/quick-action#settings). The setting allows you to enable or disable the display of the previously selected My Location cursor position on the map.
 
+_Menu → Configure screen → Custom buttons → + → Add button → Add action → Settings → Location position on screen_
+
+![Widget page](./img/conf_screen_display_position_ios.png)
+
+### Switch between Terrain styles
+
+In this release, we have added the ability to switch between terrain color palettes, similar to switching between layers. This can be done using the Quick Actions tool.
+
+_Menu → Configure screen → Custom buttons → + → Add button → Add action → Configure map → Terrain color scheme_
 
 ## CarPlay improvements
 
-Resolved an issue that caused the main navigation widget to not refresh after a route recalculation, and fixed the size of the arrows in the next turn widget.
+<!--
+Resolved an issue that caused the main navigation widget to not refresh after a route recalculation, and fixed the size of the arrows in the next turn widget. -->
 
+- Switch [Navigation to first Car profile](https://github.com/osmandapp/OsmAnd-iOS/issues/3957) when connected to CarPlay,
+- [Opening hours for POIs](https://github.com/osmandapp/OsmAnd-iOS/issues/3961),
+
+## Downloading dialog
+
+New Downloading dialog was added for Maps & Resources and Context menus, First start screen.
+
+![Downloading dialog iOS](./img/downloading.png)
+
+## Show along the route
 
 ## Optional Updates
 
+- fixed bug with a [small arrow](https://github.com/osmandapp/OsmAnd-iOS/issues/3964) in Second next turn widget - CarPlay,
+- fixed [wrong speedometer height](https://github.com/osmandapp/OsmAnd-iOS/issues/3958) - CarPlay,
+- fixed bug with [visible track](https://github.com/osmandapp/OsmAnd-iOS/issues/3982) in My Places after removing,
+- fixed bug with [copy coordinates](https://github.com/osmandapp/OsmAnd-iOS/issues/4045),
+- renamed "Difficulty classification" > ["Hiking trails difficulty grade"](https://osmand.net/docs/user/map/routes#hiking-trails-difficulty-grade).
+
 - Fixed a bug that caused POI category to be missing in the context menu. 
-- Fixed a problem with automatic language detection of voice prompts. 
+- Fixed a problem with [automatic language detection](https://github.com/osmandapp/OsmAnd-iOS/issues/3727) of voice prompts. 
 - Fixed a crash in boat profile route parameters.
 
 
@@ -123,9 +153,10 @@ Resolved an issue that caused the main navigation widget to not refresh after a 
 
 If you have suggestions for improving the iOS version of the app, please get in touch with us. We appreciate and welcome your contribution to the further development of OsmAnd.
 
-
 - **Follow**: <LinksSocial/>  
 
 - **Join**: <LinksTelegram/>  
 
-- **Get**: &nbsp;<AppleStore/>
+- **Get**: 
+
+&nbsp;<AppleStore/>

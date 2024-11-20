@@ -16,7 +16,8 @@ import { useWeatherLocationChange } from '../../util/hooks/useWeatherLocationCha
 export default function Weather() {
     const ctx = useContext(AppContext);
 
-    const currentLoc = ctx.openMenu?.latlng ?? useGeoLocation(ctx, false);
+    const location = useGeoLocation(ctx, false);
+    const currentLoc = ctx.openMenu?.latlng ?? location;
     const hash = window.location.hash;
     const debouncerTimer = useRef(0);
     const [delayedHash, setDelayedHash] = useState(hash);

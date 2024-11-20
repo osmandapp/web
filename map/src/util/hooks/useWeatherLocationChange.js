@@ -93,7 +93,7 @@ export const useWeatherLocationChange = ({
                 address: response.data.cityLocalNames,
             };
             // add address to local storage
-            let savedWeatherLoc = useSavedWeatherLoc();
+            let savedWeatherLoc = loadSavedWeatherLoc();
             if (savedWeatherLoc) {
                 savedWeatherLoc.address = obj.address;
                 localStorage.setItem(LOCAL_STORAGE_WEATHER_LOC, JSON.stringify(savedWeatherLoc));
@@ -105,7 +105,7 @@ export const useWeatherLocationChange = ({
         return null;
     };
 
-    function useSavedWeatherLoc() {
+    function loadSavedWeatherLoc() {
         let savedWeatherLoc = localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC);
         if (savedWeatherLoc) {
             savedWeatherLoc = JSON.parse(savedWeatherLoc);

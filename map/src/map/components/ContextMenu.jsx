@@ -121,14 +121,18 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     }
 
     function addFavorite(latlng) {
-        ctx.addFavorite.location = latlng;
-        ctx.setAddFavorite({ ...ctx.addFavorite });
+        ctx.setAddFavorite((prevState) => ({
+            ...prevState,
+            location: latlng,
+        }));
     }
 
     function addWpt(latlng) {
-        ctx.addFavorite.location = latlng;
-        ctx.addFavorite.editTrack = true;
-        ctx.setAddFavorite({ ...ctx.addFavorite });
+        ctx.setAddFavorite((prevState) => ({
+            ...prevState,
+            location: latlng,
+            editTrack: true,
+        }));
     }
 
     function formattingRegions(regions) {

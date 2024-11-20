@@ -99,14 +99,13 @@ List of vehicle metrics:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
 
-Data from a connected OBD-II sensor can be added to the GPX file using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).  
-
-- only metrics which were added [to widgets](#widgets) can be recorded to GPX file.
-  
+Next, you need to select parameters to be recorded in the GPX file. Data from a connected OBD-II sensor can be added to the GPX file using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).  
 
 :::note
 OsmAnd uses custom tag names for vehicle metrics in [**track recording**](../plugins/trip-recording.md#recorded-gpx-file), such as `vm_eotemp` (Engine Oil Temperature), `vm_fpress` (Fuel Pressure), and `vm_espeed` (Engine Speed).
 :::
+
+![OBD recording](@site/static/img/plugins/obd/obd_recording.png) ![OBD recording](@site/static/img/plugins/obd/obd_recording_1.png)
 
 
 ## Widgets

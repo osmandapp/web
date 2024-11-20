@@ -24,8 +24,14 @@ export default function FavoriteGroup({ index, group }) {
 
     useEffect(() => {
         if (ctx.favorites.mapObjs[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
-            ctx.selectedGpxFile.file.markers = ctx.favorites.mapObjs[group.name].markers;
-            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+            const updatedFile = {
+                ...ctx.selectedGpxFile.file,
+                markers: ctx.favorites.mapObjs[group.name].markers,
+            };
+            ctx.setSelectedGpxFile({
+                ...ctx.selectedGpxFile,
+                file: updatedFile,
+            });
         }
     }, [ctx.favorites]);
 
