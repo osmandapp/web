@@ -23,7 +23,9 @@ export default function TravelLayer() {
             return;
         }
         if (ctx.searchTravelRoutes.clear) {
-            map.removeLayer(travelRoutes);
+            if (travelRoutes) {
+                map.removeLayer(travelRoutes);
+            }
             return;
         }
         if (!ctx.searchTravelRoutes.res) {
