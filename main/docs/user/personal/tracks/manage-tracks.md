@@ -122,7 +122,7 @@ The menu provides the following actions:
 - [**Open**](../../map/tracks/index.md#configure-map) (*iOS*). This setting is available in the Configure Map menu. Located in the *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*, it allows you to access the [context menu of the selected track](../../map/tracks/track-context-menu.md) when tapped.
 - **Appearance** (*iOS*). Customize the [appearance of tracks](../../map/tracks/appearance.md) to suit your preferences.
 - **Navigation** (*iOS*). Initiates [navigation](../../navigation/setup/gpx-navigation.md) along the selected track.
-- **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyze on map](../../navigation/setup/route-details.md#analyse-on-map) tool within Route Details for further analysis.
+- **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyze on map](../../navigation/setup/route-details.md#analyze-on-map) tool within Route Details for further analysis.
 - **Share**. Enables sharing of the selected track with others.
 - **Upload modifications to OSM** (*iOS*). [Upload the changes](../../plugins/osm-editing.md#gps-track) you have made to the track directly to *OpenStreetMap*.
 - **Edit** (*iOS*). Use the [Plan a route](../../plan-route/create-route.md#modify-gpx-track) tool for making modifications to the track.

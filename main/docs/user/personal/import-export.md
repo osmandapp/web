@@ -48,7 +48,7 @@ The *Import* and *Export* allows you to save data from generated **OSF files** o
 
 </TabItem>
 
-<TabItem value="ios" label="iOS"> 
+<TabItem value="ios" label="iOS">
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
@@ -81,7 +81,7 @@ All the data you have configured and created can be exported using the ***Export
 
 | |
 | --- | --- | --- |
-| ![Profiles Actions Import iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) | ![Profiles Actions Import 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) | ![Profiles Actions Import 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) | 
+| ![Profiles Actions Import iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) | ![Profiles Actions Import 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) | ![Profiles Actions Import 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) |
 
 </TabItem>
 

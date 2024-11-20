@@ -159,7 +159,7 @@ Next, activate the *<Translate android="true" ids="radius_ruler_item"/>* setting
 </Tabs>
 
 
-To enhance the visible range of the *Radius Ruler*, tap on [the location button](../map/interact-with-map.md#my-location--zoom) and then [adjust the map's tilt to switch to 3D view](../map/interact-with-map.md#gestures). This perspective allows you to better visualize distances and relationships between points on the map.
+To enhance the visible range of the *Radius Ruler*, tap on [the location button](../map/interact-with-map.md#my-location-and-zoom) and then [adjust the map's tilt to switch to 3D view](../map/interact-with-map.md#gestures). This perspective allows you to better visualize distances and relationships between points on the map.
 
 
 ### Video Guides

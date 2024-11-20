@@ -264,7 +264,7 @@ The **Other** section offers additional profile settings, allowing you to custom
 
 - *[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices)* (*Android* and *iOS*). Allow you to add other devices, such as <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>, or <Translate android="true" ids="sett_parrot_ext_input"/>, to control the OsmAnd program using the existing buttons.  
 
-- *<Translate android="true" ids="use_volume_buttons_as_zoom"/> (Android)*. Allows to use or not volume buttons of a device as [zoom](../map/interact-with-map.md#my-location--zoom).
+- *<Translate android="true" ids="use_volume_buttons_as_zoom"/> (Android)*. Allows to use or not volume buttons of a device as [zoom](../map/interact-with-map.md#my-location-and-zoom).
 - *[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (Android)*. Allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
 - *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (Android)*. Allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothening rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
 - *<Translate android="true" ids="tap_on_map_to_hide_interface"/> (Android)*. Tapping an empty space on the map hides the control buttons and widgets.

@@ -55,7 +55,7 @@ To use the offline navigation, you first need to [download maps](../../start-wit
     - Wait until the route is calculated. After that, you will be able to obtain additional information about your route in *[Details section](./route-details.md#overview)*.
     - You can switch between different [routing types](./../routing/osmand-routing.md#routing-types) (profiles) to get the best result.
     - Add [intermediate destinations](#intermediate-destinations) (optional).
-    - You can also change the departure point from the [current location](../../map/interact-with-map#my-location--zoom) to the required one.
+    - You can also change the departure point from the [current location](../../map/interact-with-map#my-location-and-zoom) to the required one.
 3. Additional [*Navigation settings*](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
 4. [Start](#start--stop-navigation) navigation or at first [simulate navigation](#simulated-navigation) (with this function you can test your route before actually traveling along it).
 5. While on the route you can [*Pause/Resume*](#pause--resume-navigation) navigation and [*Stop*](#start--stop-navigation) it.
@@ -91,7 +91,7 @@ There are 3 ways to reach the navigation menu:
 
 </Tabs>
 
-- *<Translate android="true" ids="shared_string_my_location"/>*. Allows you to select the starting location of the route. The default is [*My Current location*](../../map/interact-with-map.md#my-location--zoom), but you can set a different value.
+- *<Translate android="true" ids="shared_string_my_location"/>*. Allows you to select the starting location of the route. The default is [*My Current location*](../../map/interact-with-map.md#my-location-and-zoom), but you can set a different value.
 - *<Translate android="true" ids="add_destination_point"/>*. Use to [set your destination point](#set-target-point).
 - &#43; &nbsp; *Add*. Allows you to add [intermediate points](../../widgets/nav-widgets.md#intermediate-destination) for navigation.
 - &#8595;&#8593; &nbsp; *Swap*. Allows you to swap the *Start* and *Finish* points.

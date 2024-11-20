@@ -173,7 +173,7 @@ When BRouter is configured, we can compare the pre-calculation speed of the BRou
 
 ### Other Routing Settings
 
-- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigation → Settings*, [image](../routing/online-routing.md#online-routing-setting)). If this option is enabled, OsmAnd adds two segments to the calculated Brouter track: one from *[My location](../../map/interact-with-map.md#my-location--zoom)* to the starting point of the track and another from the end of the track to the finish point of your route. This option is active if the distance to or from the track exceeds 60 meters.
+- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigation → Settings*, [image](../routing/online-routing.md#online-routing-setting)). If this option is enabled, OsmAnd adds two segments to the calculated Brouter track: one from *[My location](../../map/interact-with-map.md#my-location-and-zoom)* to the starting point of the track and another from the end of the track to the finish point of your route. This option is active if the distance to or from the track exceeds 60 meters.
 
 - In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
 

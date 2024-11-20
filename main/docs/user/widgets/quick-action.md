@@ -245,7 +245,7 @@ A message will guide you when locking and unlocking the screen.
 | Move <br/> [**Map up**](../map/interact-with-map.md) | When tapped, the map screen moves up. |
 | Move <br/> [**Map to the left**](../map/interact-with-map.md) | When you tap button map screen moves to the left. |
 | Move <br/> [**Map to the right**](../map/interact-with-map.md) | With a quick action button you can move the map to the right. |
-| Move <br/> [**To My location**](../map/interact-with-map.md#my-location--zoom) | Moves the map to the *My location* position. |
+| Move <br/> [**To My location**](../map/interact-with-map.md#my-location-and-zoom) | Moves the map to the *My location* position. |
 
 
 ### My Places

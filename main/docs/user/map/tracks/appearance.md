@@ -38,7 +38,7 @@ Track Appearance is a customizable option in the OsmAnd app that allows you to p
 
 ## Appearance
 
-:::tip note
+:::tip purchases
 Some settings you can use only with *OsmAnd Pro* or *Maps+*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> and <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Free and Paid features.
 :::
 
@@ -68,7 +68,7 @@ Select the interval at which distance or time stamps are displayed on the track.
 
 ![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
-Allows you to select whether or not to show the start and end icons of track segments.  
+Allows you to select whether to show the start and end icons of track segments.  
 
 ### Color
 
@@ -93,7 +93,7 @@ You can customize the appearance of the track in several menus of the applicatio
 - [*Navigation settings → Customize route line*](../../navigation/guidance/navigation-settings.md#customize-route-line).
 - [*My Places → Tracks tab → any folder → Default appearance*](../../personal/tracks/manage-tracks.md#folder-menu).
 
-With the *Width setting* you can choose the thickness of the track line based on the width of the road or intersection with other tracks, or for example if you want to highlight a track on the map by importance.  
+With the *Width setting* you can choose the thickness of the track line based on the width of the road or intersection with other tracks, or for example, if you want to highlight a track on the map by importance.  
 
 - **Thin, Medium,** and **Bold** are lines whose width is fixed and preset by the OsmAnd application.
 - In the **Custom** setting you can set the required line width with a slider, from 1 to 24.
@@ -135,10 +135,10 @@ The **3D Track** feature generates a three-dimensional visualization by integrat
 </Tabs>
 
 
-- **Wall height**. You can visualize a 3D track by altitude and other available data within the track or by fixed altitude.
+- **Wall height**. You can visualize a 3D track by altitude and other available data within the track, or by fixed altitude.
    - **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Altitude*, &nbsp;*Speed*, &nbsp;*Fixed Height*. 3D Sensor data: &nbsp;*Heart Rate*, &nbsp;*Bicycle Cadence*, &nbsp;*Bicycle Power*, &nbsp;*Temperature*, &nbsp;*Bicycle Speed*.
-   - **<Translate android="true" ids="vertical_exaggeration"/>**. If Visualized by *Altitude* or *Speed*, you can scale 3D data to get a more prominent visualization for the 3D track in the range of *None* to *x3.0*.
-   - **<Translate android="true" ids="wall_height"/>**. If Visualized by *Fixed Height*, set the fixed height for the 3D track by defining its elevation on the map in the range of *None* to *2000 m*.
+   - **<Translate android="true" ids="vertical_exaggeration"/>**. If visualized by *Altitude* or *Speed*, you can scale 3D data to get a more prominent visualization for the 3D track in the range of *None* to *x3.0*.
+   - **<Translate android="true" ids="wall_height"/>**. If visualized by *Fixed Height*, set the fixed height for the 3D track by defining its elevation on the map in the range of *None* to *2000 m*.
    - You can combine it with [3D Relief](../../plugins/topography.md#3d-relief). If the source of the 3D data is not altitude, the 3D representation will be a combination of relief altitude and the selected data, such as speed or heart rate.
 - **<Translate android="true" ids="wall_color"/>**. The wall color can be configured to align with the 3D data visualization or set to a different color to represent an additional data dimension.
     - Options include: *None*, &nbsp;*Solid*, &nbsp;*Downward Gradient*, &nbsp;*Upward Gradient*, &nbsp;*Altitude*, &nbsp;*Slope*, &nbsp;*Speed*.
@@ -146,16 +146,16 @@ The **3D Track** feature generates a three-dimensional visualization by integrat
 - **<Translate android="true" ids="track_line"/>**. A line can be added to the top or bottom of the 3D track to enhance visual clarity. The color of the [track line](#color) is fully configurable, allowing for customization based on visualization preferences or data analysis needs.  
     - Options include: *Top*, &nbsp;*Bottom*, &nbsp;*Top and bottom*.
 
-The **Android version** of the app requires the map rendering engine [Version 2 (OpenGl)](../../personal/global-settings.md#map-rendering-engine) to be enabled to use 3D track visualization.
+The **Android version** of the app requires the map rendering engine [Version 2 (OpenGL)](../../personal/global-settings.md#map-rendering-engine) to be enabled to use 3D track visualization.
 
 
 ### Use Cases
 
 The 3D track feature is highly beneficial for activities like paragliding, where visualizing your flight path can offer deeper insights. By rendering the track in 3D, you can leverage features such as **Wall Height** and **Wall Color** to extract valuable visual information for analysis.
 
-1. *Visualize by Speed with 3D*. One common use case is utilizing 3D tracks to visualize speed variations. This allows you to pinpoint specific sections of the track where you slowed down or sped up. With Wall Color based on the Slope, you can also observe how the terrain, particularly hills and inclines, impacted your speed. This combination of speed and slope visualization provides a detailed understanding of performance throughout the activity.
+1. *Visualize by Speed with 3D*. One common use case is utilizing 3D tracks to visualize speed variations. This allows you to pinpoint specific sections of the track where you slowed down or sped up. With Wall Color based on the Slope, you can observe how the terrain, particularly hills and inclines, impacted your speed. This combination of speed and slope visualization provides a detailed understanding of performance throughout the activity.
 
-2. *Visualize by Heart sensor with 3D Relief*. Another insightful application is combining heart rate sensor data with 3D relief maps. This allows you to map heart rate fluctuations directly onto the terrain, giving you a comprehensive view of how altitude changes may have influenced your physical effort. The 3D relief feature, which exaggerates the altitude, works independently from the 3D track view. Two vertical exaggeration parameters can be adjusted to better understand the correlation between heart rate and terrain elevation.
+2. *Visualize by Heart sensor with 3D Relief*. Another insightful application is combining heart rate sensor data with 3D relief maps. This allows you to map heart rate fluctuations directly onto the terrain, giving you a comprehensive view of how altitude changes may have influenced your physical effort. The 3D relief feature, which exaggerates the altitude, works independently of the 3D track view. Two vertical exaggeration parameters can be adjusted to better understand the correlation between heart rate and terrain elevation.
 
 3. *Visualize Track height and Slope color line on a flat earth view*. When visualizing altitude data, using a flat earth view is recommended to avoid issues like GPS errors, which might cause sections of the track to appear underground. In this scenario, slope changes can be visualized separately along the track line, while Wall Color utilized to represent altitude. This method ensures that even with potential data inaccuracies, you still receive a clear and accurate visualization of slope and elevation.
 

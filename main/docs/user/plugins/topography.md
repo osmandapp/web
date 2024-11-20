@@ -163,7 +163,7 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 **Appearance settings**:
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. Toggle on/off whether to display or hide Contour Lines on the map.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Minimum and maximum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines are visible on the map.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Minimum and maximum [zoom level](../map/interact-with-map.md#my-location-and-zoom) at which Contour lines are visible on the map.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Selection of the color by which Сontour lines are displayed on the map.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Selection of width options for displaying  Contour lines on the map.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Selection of options for the density of Contour lines displayed on the map: Low, Medium, High. At higher densities, the map is loaded more slowly.
