@@ -101,7 +101,7 @@ const FavoriteLayer = () => {
         // created favorites markers and move them to ctx.favorites for adding to map
         if (ctx.updateMarkers) {
             ctx.setFavorites(() => {
-                let favoritesGroups = ctx.updateMarkers;
+                let favoritesGroups = { ...ctx.updateMarkers };
                 favoritesGroups.mapObjs = Object.keys(favoritesGroups.mapObjs).reduce((group, key) => {
                     const file = favoritesGroups.mapObjs[key];
                     if (!file.markers) {

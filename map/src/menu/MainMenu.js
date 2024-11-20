@@ -74,6 +74,7 @@ import SearchMenu from './search/SearchMenu';
 import LoginButton from './login/LoginButton';
 import LoginMenu from './login/LoginMenu';
 import TravelMenu from './travel/TravelMenu';
+import ProFeatures from '../frame/components/pro/ProFeatures';
 
 export default function MainMenu({
     size,
@@ -574,9 +575,15 @@ export default function MainMenu({
                 <Toolbar sx={{ mb: '-3px' }} />
                 {!isOpenSubMenu() && (
                     <>
+                        {/*add pro features*/}
+                        {ctx.openProFeatures && <ProFeatures />}
+                        {/*add login menu items*/}
                         {ctx.openLoginMenu && <LoginMenu />}
                         {/*add main menu items*/}
-                        {_.isEmpty(ctx.openGroups) && !ctx.openVisibleMenu && !ctx.openLoginMenu && <Outlet />}
+                        {_.isEmpty(ctx.openGroups) &&
+                            !ctx.openVisibleMenu &&
+                            !ctx.openLoginMenu &&
+                            !ctx.openProFeatures && <Outlet />}
                         {/*add track groups*/}
                         {ctx.openGroups.length > 0 && getGroup()}
                         {ctx.openVisibleMenu && (

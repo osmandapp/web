@@ -53,8 +53,7 @@ export default function FavoriteGroupUploader({ children }) {
 
     useEffect(() => {
         if (importFavoriteGroup) {
-            let track = importFile.track;
-            track.name = importFile.name;
+            const track = { ...importFile.track, name: importFile.name };
             const selected = true;
             mutateUploadedFiles((o) => (o[importFile.name] = { track, selected }));
         }

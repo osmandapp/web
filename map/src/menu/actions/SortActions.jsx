@@ -242,20 +242,21 @@ const SortActions = forwardRef(
         };
 
         function setSelectedSort(method) {
+            let updatedSelectedSort = { ...ctx.selectedSort };
             if (trackGroup) {
-                if (!ctx.selectedSort.tracks) {
-                    ctx.selectedSort.tracks = {};
+                if (!updatedSelectedSort.tracks) {
+                    updatedSelectedSort.tracks = {};
                 }
-                ctx.selectedSort.tracks[trackGroup.fullName] = method;
+                updatedSelectedSort.tracks[trackGroup.fullName] = method;
             } else if (favoriteGroup) {
-                if (!ctx.selectedSort.favorites) {
-                    ctx.selectedSort.favorites = {};
+                if (!updatedSelectedSort.favorites) {
+                    updatedSelectedSort.favorites = {};
                 }
-                ctx.selectedSort.favorites[
+                updatedSelectedSort.favorites[
                     favoriteGroup === DEFAULT_FAV_GROUP_NAME ? DEFAULT_FAV_GROUP_NAME : favoriteGroup.name
                 ] = method;
             }
-            ctx.setSelectedSort({ ...ctx.selectedSort });
+            ctx.setSelectedSort(updatedSelectedSort);
         }
 
         return (

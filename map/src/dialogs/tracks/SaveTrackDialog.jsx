@@ -58,8 +58,11 @@ export default function SaveTrackDialog() {
                 ctx.routeObject.setOption('route.map.conceal', true);
             }
         }
-        ctx.selectedGpxFile.save = false;
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+        const updatedSelectedGpxFile = {
+            ...ctx.selectedGpxFile,
+            save: false,
+        };
+        ctx.setSelectedGpxFile(updatedSelectedGpxFile);
     };
 
     const getFolderName = (folder) => {

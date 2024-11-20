@@ -98,7 +98,7 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
             <Divider />
             {ctx.weatherLayers &&
                 ctx.weatherLayers[ctx.weatherType].map((item, index) => (
-                    <ForecastItem item={item} index={index} key={index} />
+                    <ForecastItem item={item} index={index} key={item.id || item.name} />
                 ))}
             <Divider sx={{ mt: '0px !important' }} />
         </>

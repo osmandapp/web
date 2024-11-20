@@ -519,7 +519,6 @@ Widgets refer to [Vehicle Metrics plugin](../plugins/vehicle-metrics.md#widgets)
 - Widgets can be added even if there is no OBD-II scanner connected.
 - All added widgets are visible even if no OBD-II scanner is connected.
 - If a scanner has not been added or you need to edit the widget, tap the required widget field in the list and then on *Settings*, or directly on the *Settings icon* in the list.
-- The data displayed in widgets can be recorded using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings). Note: only metrics which were added to widgets can be recorded to GPX file.  
 
 | | |
 |:------------|:------------|

@@ -27,8 +27,10 @@ export default function WptDetailsButtons({ wpt, isDetails }) {
                                 if (wpt.type.isWpt) {
                                     TracksManager.handleEditCloudTrack(ctx).then((openEditState) => {
                                         if (openEditState) {
-                                            ctx.addFavorite.editTrack = true;
-                                            ctx.setAddFavorite({ ...ctx.addFavorite });
+                                            ctx.setAddFavorite((prevState) => ({
+                                                ...prevState,
+                                                editTrack: true,
+                                            }));
                                             setEditWptDialogOpen(true);
                                         }
                                     });
@@ -49,8 +51,10 @@ export default function WptDetailsButtons({ wpt, isDetails }) {
                                 if (wpt.type.isWpt) {
                                     TracksManager.handleEditCloudTrack(ctx).then((openEditState) => {
                                         if (openEditState) {
-                                            ctx.addFavorite.editTrack = true;
-                                            ctx.setAddFavorite({ ...ctx.addFavorite });
+                                            ctx.setAddFavorite((prevState) => ({
+                                                ...prevState,
+                                                editTrack: true,
+                                            }));
                                             setDeleteWptDialogOpen(true);
                                         }
                                     });
