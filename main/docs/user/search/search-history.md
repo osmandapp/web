@@ -49,7 +49,7 @@ The search history serves to provide relevant information about your previous ac
 
 - *Quick access to frequently visited places*. If you visit certain places frequently, such as your home, work, or favorite places, Search History saves those places, providing quick access to them.  
 
-- *Track previous trips*. The search history can be useful for tracking previous trips and routes. You can track routes you have taken before or [plan your next route](../plan-route/create-route.md) based on previous ones.  
+- *Track previous trips*. The search history can be useful for tracking previous trips and routes. You can track routes you have taken before, or [plan your next route](../plan-route/create-route.md) based on previous ones.  
 
 - *Search for places over a certain period of time*. For the Android app, you need to use a long tap, then find the month in which you made the trip, exit the delete menu and set the name in the search field. For the iOS app, the search history list is already divided into blocks by month.
 
@@ -77,15 +77,15 @@ The search history serves to provide relevant information about your previous ac
 Each field in the Search History list contains some of the **information** available to the application.
 
 - An icon that identifies the type or category of the found object.
-- The object name, location, address, or type query. For tracks information about the distance, number of waypoints, and time is displayed.
-- Distance from the your current location to the point and direction by compass.
+- The object name, location, address, or type query. For tracks, information about the distance, number of waypoints, and time is displayed.
+- Distance from your current location to the point and direction by compass.
 
 
 ### Order of Items
 
 - **Recent Items**. The most recent requests or locations are displayed at the top of the list. This allows quick access to recently used items.
 - **Chronological order**. Items in the Search History list are arranged in chronological order, starting with the oldest or earliest entries and ending with the most recent or latest. Old items gradually move down the list as new entries are added, unless old items in the search history have been used, in which case they will be moved to the top of the list.
-- In iOS the list is sorted by month.
+- In iOS, the list is sorted by month.
 
 ### Type of Objects
 
@@ -97,7 +97,7 @@ The following **types of objects** get into the Search History list:
 
 ## Actions
 
-In the Search History tool, you can [delete](#delete) unnecessary queries, all at once or by individual items. You can use History [export](#export-and-share). The Android app provides an additional action of [sharing](#share-android) search items as a [*gpx*](../../technical/osmand-file-formats/osmand-gpx.md) file.  
+In the Search History tool, you can [delete](#delete) unnecessary queries, all at once or by individual items. You can use History [export](#export-and-share). The Android app provides an additional action of [sharing](#share-android) search items as a [*GPX*](../../technical/osmand-file-formats/osmand-gpx.md) file.  
 
 You can **disable or enable** the display of the entire search history. In this case, the queries are not deleted from the device. In Android, the switch is located on the main screen of the tool on the [History tab](#overview). In iOS, it is located in *Menu → Settings → OsmAnd Settings → History → Search History*.
 
@@ -155,7 +155,7 @@ You need to **long tap any of the query items in the list** to open the Delete s
 There are several available options to export the search history. All files are exported in *osf* (OsmAnd settings File) format.  
 
 1. *Menu → Settings → OsmAnd settings → History → Search history*.  
-    Export is available using the OsmAnd settings menu. For Android, following this path takes you to the delete screen where [Share history](#share-android) is available. In the case of iOS, you can select individual items or the entire history on the screen, and after tapping the *Export* button, go to *Local Backup* menu.
+    Export is available using the OsmAnd settings menu. For Android, following this path takes you to the delete screen, where [Share history](#share-android) is available. In the case of iOS, you can select individual items or the entire history on the screen, and after tapping the *Export* button, go to *Local Backup* menu.
 
 2. *Menu → Settings → OsmAnd settings → History → Actions → Back up as file* (Android).  
     *Menu → Settings → OsmAnd settings → History → Actions → Export* (iOS).  

@@ -22,7 +22,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 The search bar allows you to enter keywords related to the places you are interested in. The POI search also presents a convenient list sorted by [category](#poi-search-by-categories) to help you quickly find what you are looking for, and the [filter](#save-new-custom-filters) allows you to select specific POI characteristics to display only relevant results.  
 
-[Custom Search](#custom-poi-search) enhances search functionality by allowing you to select categories and subcategories of Points of Interest (POIs). You can save created filters for future use, making it easier to quickly locate POIs that meet specific criteria or preferences. For more details, refer to the section on saving custom filters [here](#save-new-custom-filters).
+[Custom Search](#custom-poi-search) enhances search functionality by allowing you to select categories and subcategories of Points of Interest (POIs). You can save created filters for future use, making it easier to quickly locate POIs that meet specific criteria or preferences. For more details, refer to the section on saving custom filters [here](#save-new-custom-filters).  
+
 OsmAnd provides several ways to get to the Search tool where the **Categories search** section is located.
 
 - The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use), where you can find the *Categories* tab.
@@ -66,6 +67,8 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 - **Brand search:**
     - When entering a business venue or brand name (such as Audi, Starbucks, or Aldi), the list of search results is ordered with priority by POI name and sorted by distance from the corresponding location.
 
+    - The name of the locality is displayed alongside each search result to help you identify the right location among others at a similar distance from you.
+
     - This type of search is convenient to use if a retail outlet specializes in selling goods or services of one brand or if the brand itself is better known and more recognizable than the name or category of the POI.
 
     - To perform a search, the tag “brand” and brand names must be added to the POI description.
@@ -105,7 +108,7 @@ How it works:
 - *Category Selection.* You select the POI category you are interested in, such as restaurants, hotels, stores, and others, from a suggested list of categories.
 - *Characteristic Filters.* After selecting a POI category, the application shows additional characteristics that can be used to refine the search. For example, for the Restaurants category, you can select filters such as cuisine type (Italian, Chinese, etc.), price range, rating, and parking availability.
 - *Applying Filters.* You select the required values in the filters, and then the application applies these filters to the search results to show only those properties that match the specified characteristics.
-- *Displaying results.* After applying filters, the application displays a list of POIs matching the category and characteristics set. The results are presented as a list with some information about each POI.
+- *Displaying results.* After applying filters, the application displays a list of POIs matching the category and characteristics set. The results are presented as a list with brief information about each POI.
 
 Benefits:
 
