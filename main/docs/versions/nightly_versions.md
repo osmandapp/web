@@ -26,7 +26,7 @@ OsmAnd-default.apk — nightly version of OsmAnd free.
 
 ## iOS
 ### TestFlight
-iOS beta builds (TestFlight) are usually provided weekly. They don't have a description and could have continuous versioning. They are supposed to be stable and ready to use.
+iOS beta (TestFlight) builds are usually provided weekly. They don't have a description and could have continuous versioning. They are supposed to be stable and ready to use.
 
 <div>
   <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Join TestFlight</a>
