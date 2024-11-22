@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # Beta & Nightly builds
 
-OsmAnd produces every day multiple Ready-To-Use builds which allows keep track of new features and participate in OsmAnd contributions (translation process).
+OsmAnd produces multiple Ready-To-Use builds every day, allowing you to keep track of new features and participate in OsmAnd contributions.
 
 ## Android
 ### Google Play Beta builds
-You can participate in testing OsmAnd beta build thru Google Play. 
+You can participate in testing OsmAnd beta builds thru Google Play. 
 
 <div class="button-row">
   <a class="button button--active" href="https://play.google.com/apps/testing/net.osmand.plus">OsmAnd+</a>
@@ -26,7 +26,7 @@ OsmAnd-default.apk — nightly version of OsmAnd free.
 
 ## iOS
 ### TestFlight
-iOS beta builds(TestFlight) usually are provided weekly (after team sprint demo). They don't have description and could have continuous versioning. They supposed to be stable and ready to use.
+iOS beta builds (TestFlight) are usually provided weekly. They don't have a description and could have continuous versioning. They are supposed to be stable and ready to use.
 
 <div>
   <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Join TestFlight</a>
