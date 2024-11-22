@@ -28,7 +28,7 @@ Release date: 11/2024
 * Added a context menu and a "Reset average speed" action to widgets
 * Added new route layer "Dirt Bike trails"
 * Fixed "Auto-record track during navigation" 
-* Fixed issue with fliped coordinates in RTL 
+* Fixed issue with flipped coordinates in RTL 
 * Fixed missed sensor data for currently recording track 
 * Added information about surrounding areas for the selected point
 * Added quick action to control visibility of OSM Edits
