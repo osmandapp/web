@@ -26,11 +26,11 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 Hurry up! This offer is only available until **December 01 (23:00 CET)**.  
 <!-- To get, go to *OsmAnd app → Menu → Settings → Purchases*. -->
 
-- **OsmAnd Pro** [Android](../../../docs/user/purchases/android.md#pro-features) / [iOS](../../../docs/user/purchases/ios.md#pro-features) annual subscription for the first year costs only <s>€29.99</s> **€14.99** (just €1.25 per month).
+- **OsmAnd Pro** [Android](https://osmand.net/docs/user/purchases/android#pro-features) / [iOS](https://osmand.net/docs/user/purchases/ios#pro-features) annual subscription for the first year costs only <s>€29.99</s> **€14.99** (just €1.25 per month).
 
-- **OsmAnd Maps+** [Android](../../../docs/user/purchases/android.md#free-and-paid-features) / [iOS](../../../docs/user/purchases/ios.md#free-and-paid-features) annual subscription cost only <s>€9.99</s> **€4.99**  (just 0.42€ per month).
+- **OsmAnd Maps+** [Android](https://osmand.net/docs/user/purchases/android#free-and-paid-features) / [iOS](https://osmand.net/docs/user/purchases/ios#free-and-paid-features) annual subscription cost only <s>€9.99</s> **€4.99**  (just 0.42€ per month).
 
-- **Maps+ in-app** and **OsmAnd+** [Android](../../../docs/user/purchases/android.md#prices) / [iOS](../../../docs/user/purchases/ios.md#prices) cost only <s>€39.99</s> **€19.99** (unlimited).
+- **Maps+ in-app** and **OsmAnd+** [Android](https://osmand.net/docs/user/purchases/android#prices) / [iOS](https://osmand.net/docs/user/purchases/ios#prices) cost only <s>€39.99</s> **€19.99** (unlimited).
 
 <br/>
 
@@ -57,7 +57,8 @@ Hurry up! This offer is only available until **December 01 (23:00 CET)**.
 | ![BlackFriday](@site/static/img/promo/blackfriday/feature_3d.png) | **3D Relief and Topography**.<br/>Deepen your connection to the landscapes you explore. |
 | ![BlackFriday](@site/static/img/promo/blackfriday/feature_weather.png) | **Weather Forecast**.<br/>Stay ready with local weather updates for your adventures. |
 | ![BlackFriday](@site/static/img/promo/blackfriday/feature_cloud.png) | **Cross-Platform OsmAnd Cloud**.<br/>Save your data for quick access on all devices. |
-|To get, go to *OsmAnd app → Menu → Settings → Purchases*. | Explore all the features available with a subscription or purchase here: [Android](../../../docs/user/purchases/android.md) and [iOS](../../../docs/user/purchases/ios.md). |
+|To get, go to *OsmAnd app → Menu → Settings → Purchases*. | Explore all the features available with a subscription or purchase here: [Android](https://osmand.net/docs/user/purchases/android) and [iOS](https://osmand.net/docs/user/purchases/ios). |
+
 
 
 <!--
@@ -77,9 +78,8 @@ Stay ready with local weather updates for your adventures.
 Save your data for quick access on all devices.  
     ![BlackFriday](@site/static/img/promo/blackfriday/feature_cloud.png)
 
-- Explore all the features available with a subscription or purchase here: [Android](../../../docs/user/purchases/android.md) and [iOS](../../../docs/user/purchases/ios.md).
+- Explore all the features available with a subscription or purchase here: [Android](https://osmand.net/docs/user/purchases/android) and [iOS](https://osmand.net/docs/user/purchases/ios).
 -->
-
 
 ### Get Involved
 
