@@ -110,6 +110,7 @@ The table below details the features included in both the free and paid packages
 | [Export GPX tracks](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
 | [Import GPX/KML tracks](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Plan a route tool](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
+| [Vehicle Metrics Widgets](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets for free**</summary><ul><li>*Vehicle speed*</li><li>*Engine speed*</li></ul></details> | **-** | ✔ |
 | [Map markers tool](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ |
 | [SQLitedb Map](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
@@ -140,7 +141,7 @@ The **Pro** subscription currently has the following features:
 | [3D Relief](../plugins/topography.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
 | [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
-| [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Connect OBD-II scanner to display vehicle data in OsmAnd and store the information in track recordings  |
+| [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Allows you to connect an OBD-II scanner to display detailed vehicle data in the OsmAnd app and store the information in track records.  |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | Shows your location on the Elevation graph of the navigation route with additional info.  |
 | [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Allows you to find out the elevation of the current map center above sea level.  |

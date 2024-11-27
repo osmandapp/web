@@ -38,18 +38,18 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 -->
 
-• Modified compass behavior: a single tap rotates the map to North, while a double tap switches the orientation 
-• Added search functionality for the most popular brand names 
-• Improved graph appearance: Y-axis labels no longer overlap with the graph 
-• Added total track statistics to each folder's footer 
-• Grouped all tags with translations into a single item in the context menu 
-• Fixed an issue where the POI category was missing from the context menu 
-• Fixed an issue with the auto-detection of the voice prompt language 
-• Fixed crash in Boat profile Route parameters 
-• CarPlay improvements: resolved an issue where the main navigation widget didn't update after route recalculations, and fixed the size of the arrows in the next turn widget 
-• Introduced a Map mode parameter that now follows the App theme 
-• Improved UI for selection of location icon, added options to disable location radius and view angle 
-• Add quick action to change "Location position on screen"
+- Modified compass behavior: a single tap rotates the map to North, while a double tap switches the orientation.  
+- Added search functionality for the most popular brand names.  
+- Improved graph appearance: Y-axis labels no longer overlap with the graph.  
+- Added total track statistics to each folder's footer.  
+- Grouped all tags with translations into a single item in the context menu.  
+- Fixed an issue where the POI category was missing from the context menu.  
+- Fixed an issue with the auto-detection of the voice prompt language.  
+- Fixed crash in Boat profile Route parameters.  
+- CarPlay improvements: resolved an issue where the main navigation widget didn't update after route recalculations, and fixed the size of the arrows in the next turn widget.  
+- Introduced a Map mode parameter that now follows the App theme.  
+- Improved UI for selection of location icon, added options to disable location radius and view angle.  
+- Add quick action to change "Location position on screen".
 
 
 ## New Compass Behavior
@@ -69,19 +69,19 @@ We are pleased to introduce a new [brand search](../user/search/search-poi.md#ho
 
 Whether you are interested to find your favorite coffee shop, hotel, or reliable supermarket, this update makes discovering nearby locations from your favorite brands easier. Enjoy a personalized and efficient search and optimize your travels with OsmAnd.
 
-![Brand name iOS](../../blog/2024-09-13-ios-4-9/img/brand.png)
+
 
 ## Redesign Graphs
 
 Elevation graphs have been redesigned to prevent overlapping labels.
 
-![Graph iOS](../../blog/2024-09-13-ios-4-9/img/graph.png)
+
 
 ## Total Track Statistics
 
 The [overall statistics](../user/personal/tracks/manage-tracks.md#folder-statistics) are now displayed at the bottom of the list in each of the track folders.
 
-![Track stats iOS](../../blog/2024-09-13-ios-4-9/img/track_stats.png)
+
 
 ## Updates for Map Mode Menu
 
@@ -118,7 +118,7 @@ Added the ability to create a Quick Action button to change the [Location positi
 
 _Menu → Configure screen → Custom buttons → + → Add button → Add action → Settings → Location position on screen_
 
-![Widget page](../../blog/2024-09-13-ios-4-9/img/conf_screen_display_position_ios.png)
+
 
 ### Switch between Terrain styles
 
@@ -138,7 +138,7 @@ Resolved an issue that caused the main navigation widget to not refresh after a 
 
 New Downloading dialog was added for Maps & Resources and Context menus, First start screen.
 
-![Downloading dialog iOS](../../blog/2024-09-13-ios-4-9/img/downloading.png)
+
 
 
 ## Optional Updates

@@ -510,15 +510,18 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 
 <InfoAndroidOnly />
 
+:::note
+To add Vehicle Metrics Widgets to the map screen, enable the OsmAnd [**Vehicle Metrics plugin**](../plugins/vehicle-metrics.md).
+:::
+
 ![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_1.png)
 
+The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md#widgets). You can use them to view information from a connected OBD-II scanner, such as (*13 metrics*): **Intake Temperature**,&nbsp; **Ambient Temperature**,&nbsp; **Coolant Temperature**,&nbsp; **Engine Oil Temperature**,&nbsp; **Engine Speed** (*free*),&nbsp; **Engine Runtime**,&nbsp; **Calculated Engine Load**,&nbsp; **Fuel Pressure**,&nbsp; **Fuel Consumption**,&nbsp; **Remaining Fuel**,&nbsp; **Battery Level**,&nbsp; **Vehicle Speed** (*free*), and **Throttle Position**.  
 
-Widgets refer to [Vehicle Metrics plugin](../plugins/vehicle-metrics.md#widgets). You can use them to view brief information from your OBD-II scanner, such as: Intake Temperature, Ambient Temperature, Coolant Temperature, Engine Oil Temperature, Engine Speed, Engine Runtime, Calculated Engine Load, Fuel Pressure, Fuel Consumption, Remaining Fuel, Battery Level, Vehicle Speed, Throttle Position.  
-
-- To add Vehicle Metrics widgets to the map screen, [enable](../plugins/index.md#enable--disable) **OsmAnd External sensors plugin**.
-- Widgets can be added even if there is no OBD-II scanner connected.
-- All added widgets are visible even if no OBD-II scanner is connected.
-- If a scanner has not been added or you need to edit the widget, tap the required widget field in the list and then on *Settings*, or directly on the *Settings icon* in the list.
+- To add vehicle metrics widgets to the map screen, [enable](../plugins/index.md#enable--disable) **Vehicle Metrics plugin**.
+- You can add widgets even if no OBD-II scanner is connected.
+- All added widgets are visible whether an OBD-II scanner is connected or not.
+- To edit a widget, tap the widget added to the panel, then tap *Settings*, or directly tap the *Settings icon* in the widget field.
 
 | | |
 |:------------|:------------|
