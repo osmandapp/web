@@ -15,26 +15,42 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 
-
-
 ![BlackFriday](@site/static/img/promo/blackfriday/black_friday_main.png)
 
 ## Black Friday offer has landed!
 
-### Prices
+### Why buying
 
-Hurry up! This offer is only available until **December 01 (23:00 CET)**.  
-<!-- To get, go to *OsmAnd app → Menu → Settings → Purchases*. -->
+|   |   |   |
+| :------------- | :------------- | :------------- |
+| **OsmAnd Maps+** <br/> [Android](https://osmand.net/docs/user/purchases/android#free-and-paid-features) / [iOS](https://osmand.net/docs/user/purchases/ios#free-and-paid-features)  | ![BlackFriday](@site/static/img/promo/blackfriday/maps_plus.png) | For those ready to commit to better maps, <br/> Maps+ offers a more immersive adventure experience. <br/> With fewer limits and richer visualization, <br/> it unlocks a whole new level. |
+| **OsmAnd+** <br/> [Android](https://osmand.net/docs/user/purchases/android#prices) | ![BlackFriday](@site/static/img/promo/blackfriday/osmand_plus.png) | For Android users only! <br/> Similar to Maps+ but offered as a standalone application, which you can add to the Family Library on Google Play. <br/><br/> ... and having OsmAnd+ just feels more premium. |
+| **OsmAnd Pro** <br/> [Android](https://osmand.net/docs/user/purchases/android#pro-features) / [iOS](https://osmand.net/docs/user/purchases/ios#pro-features) | ![BlackFriday](@site/static/img/promo/blackfriday/3d_terrain_osmand.png) | A truly professional tool trusted by those who <br/> depend on navigation for their lives. <br/> Experience the app's full potential, <br/> covering everything you've ever dreamed of. |
 
+### How much
+
+:::danger Offer is limited
+*Hurry up! This offer is only available until* **December 01 (23:00 CET).**
+:::
+
+|    | OsmAnd Free   | **OsmAnd+** /<br/> **Maps+** In-App | **Maps+** Subscription | **OsmAnd Pro** |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (12 Months) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | <s>$29.99</s> **$14.99**|
+
+<!--
 - **OsmAnd Pro** [Android](https://osmand.net/docs/user/purchases/android#pro-features) / [iOS](https://osmand.net/docs/user/purchases/ios#pro-features) annual subscription for the first year costs only <s>€29.99</s> **€14.99** (just €1.25 per month).
 
 - **OsmAnd Maps+** [Android](https://osmand.net/docs/user/purchases/android#free-and-paid-features) / [iOS](https://osmand.net/docs/user/purchases/ios#free-and-paid-features) annual subscription cost only <s>€9.99</s> **€4.99**  (just 0.42€ per month).
 
 - **Maps+ in-app** and **OsmAnd+** [Android](https://osmand.net/docs/user/purchases/android#prices) / [iOS](https://osmand.net/docs/user/purchases/ios#prices) cost only <s>€39.99</s> **€19.99** (unlimited).
+-->
 
 <br/>
 
-### Buy in Stores
+### Available at
 
 <AllStores/>
 
@@ -49,41 +65,29 @@ Hurry up! This offer is only available until **December 01 (23:00 CET)**.
 
 <br/>
 
-### Unlock Premium features
+### How to buy
 
-|   |   |
-| :------------- | :------------- |
-| ![BlackFriday](@site/static/img/promo/blackfriday/feature_download.png) | **Unlimited Map Downloads**.<br/>Worldwide maps in your pocket – no internet required. |
-| ![BlackFriday](@site/static/img/promo/blackfriday/feature_3d.png) | **3D Relief and Topography**.<br/>Deepen your connection to the landscapes you explore. |
-| ![BlackFriday](@site/static/img/promo/blackfriday/feature_weather.png) | **Weather Forecast**.<br/>Stay ready with local weather updates for your adventures. |
-| ![BlackFriday](@site/static/img/promo/blackfriday/feature_cloud.png) | **Cross-Platform OsmAnd Cloud**.<br/>Save your data for quick access on all devices. |
-|To get, go to *OsmAnd app → Menu → Settings → Purchases*. | Explore all the features available with a subscription or purchase here: [Android](https://osmand.net/docs/user/purchases/android) and [iOS](https://osmand.net/docs/user/purchases/ios). |
+![BlackFriday](@site/static/img/promo/blackfriday/how_to_buy.png)
 
+- ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** and **OsmAnd+**  
 
+    *Maps+* subscription / in-app plan. Here you can choose annual subscription:
 
-<!--
-- **Unlimited Map Downloads**.  
-Worldwide maps in your pocket – no internet required.  
-    ![BlackFriday](@site/static/img/promo/blackfriday/feature_download.png)
+    *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tap the list of Maps+ features → Continue with Maps+*
 
-- **3D Relief and Topography**.  
-Deepen your connection to the landscapes you explore.  
-    ![BlackFriday](@site/static/img/promo/blackfriday/feature_3d.png)
+- ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro**  
 
-- **Weather Forecast**.  
-Stay ready with local weather updates for your adventures.  
-    ![BlackFriday](@site/static/img/promo/blackfriday/feature_weather.png)
+    *OsmAnd Pro* subscription plan. Here you can choose annual subscription:
 
-- **Cross-Platform OsmAnd Cloud**.  
-Save your data for quick access on all devices.  
-    ![BlackFriday](@site/static/img/promo/blackfriday/feature_cloud.png)
+    *<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → Continue with OsmAnd Pro*
 
-- Explore all the features available with a subscription or purchase here: [Android](https://osmand.net/docs/user/purchases/android) and [iOS](https://osmand.net/docs/user/purchases/ios).
--->
+    or  
+
+    *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro*
+
+<br/>
 
 ### Get Involved
-
-Enhance every step of your journey with premium features, no matter your skill level. Plan, visualize, and improve! Discover how your outdoor adventures can be transformed with OsmAnd.
 
 - **Follow**: <LinksSocial/>  
 
