@@ -20,6 +20,8 @@ import {
 import { CategoryIcon } from '../menu/configuremap/PoiCategoriesConfig';
 import React from 'react';
 import i18n from '../i18n';
+import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
+import { SEARCH_ICON_BRAND } from './SearchManager';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -268,6 +270,9 @@ export async function getCategoryIcon(category) {
 
 export async function getSearchResultIcon({ result, ctx, isCategory = false, iconUrl = null }) {
     const name = isCategory ? PoiManager.preparePoiFilterIcon(result) : result;
+    if (result === SEARCH_ICON_BRAND) {
+        iconUrl = SEARCH_ICON_BRAND_URL;
+    }
     let svgData;
     if (iconUrl) {
         if (ctx.poiIconCache?.[name]) {

@@ -11,6 +11,7 @@ import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
 import i18n from 'i18next';
 
 export const WIKI_IMAGE_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
+export const SEARCH_ICON_BRAND = 'brand';
 
 export async function fetchPhotoProperties(photo) {
     const imageTitle = getPhotoTitle(photo);
