@@ -21,11 +21,11 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 ### Why buying
 
-|   |   |   |
-| :------------- | :------------- | :------------- |
-| **OsmAnd Maps+** <br/> [Android](https://osmand.net/docs/user/purchases/android#free-and-paid-features) / [iOS](https://osmand.net/docs/user/purchases/ios#free-and-paid-features)  | ![BlackFriday](@site/static/img/promo/blackfriday/maps_plus.png) | For those ready to commit to better maps, <br/> Maps+ offers a more immersive adventure experience. <br/> With fewer limits and richer visualization, <br/> it unlocks a whole new level. |
-| **OsmAnd+** <br/> [Android](https://osmand.net/docs/user/purchases/android#prices) | ![BlackFriday](@site/static/img/promo/blackfriday/osmand_plus.png) | For Android users only! <br/> Similar to Maps+ but offered as a standalone application, which you can add to the Family Library on Google Play. <br/><br/> ... and having OsmAnd+ just feels more premium. |
-| **OsmAnd Pro** <br/> [Android](https://osmand.net/docs/user/purchases/android#pro-features) / [iOS](https://osmand.net/docs/user/purchases/ios#pro-features) | ![BlackFriday](@site/static/img/promo/blackfriday/3d_terrain_osmand.png) | A truly professional tool trusted by those who <br/> depend on navigation for their lives. <br/> Experience the app's full potential, <br/> covering everything you've ever dreamed of. |
+|   |   | 
+| :--- | :------------- |
+| **OsmAnd Maps+** <br/> [Android](https://osmand.net/docs/user/purchases/android#freeand-paid-features) / [iOS](https://osmand.net/docs/user/purchases/ios#free-and-paid-features)  | ![BlackFriday](@site/static/img/promo/blackfriday/maps_plus.png) <br/> For those ready to commit to better maps, <br/> Maps+ offers a more immersive adventure experience. <br/> With fewer limits and richer visualization, <br/> it unlocks a whole new level. |
+| **OsmAnd+** <br/> [Android](https://osmand.net/docs/user/purchases/android#prices) | ![BlackFriday](@site/static/img/promo/blackfriday/osmand_plus.png)  <br/> For Android users only! <br/> Similar to Maps+ but offered as a standalone application, which you can add to the Family Library on Google Play. <br/><br/> ... and having OsmAnd+ just feels more premium. |
+| **OsmAnd Pro** <br/> [Android](https://osmand.net/docs/user/purchases/android#pro-features) / [iOS](https://osmand.net/docs/user/purchases/ios#pro-features) | ![BlackFriday](@site/static/img/promo/blackfriday/3d_terrain_osmand.png)  <br/> A truly professional tool trusted by those who <br/> depend on navigation for their lives. <br/> Experience the app's full potential, <br/> covering everything you've ever dreamed of. |
 
 ### How much
 
