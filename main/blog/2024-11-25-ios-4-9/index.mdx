@@ -35,34 +35,28 @@ Happy exploring!
 
 - [Updated Compass Behavior](#new-compass-behavior). Modified the interaction with the compass button. <!-- Now a single tap turns the map to the North, and a double tap switches the map orientation. -->
 - [Search by Brand Name](#search-by-brand-names). Now you can search for POIs using popular brand names.
-- [Redesigned Graphs Improved](#redesign-graphs). Improved appearance, preventing Y-axis label overlap with the graph. 
-- [Folder statistics tracks](#total-track-statistics). The overall statistics are now displayed at the bottom of the list in each of the track folders.
+- [Widget Context menu](#widget-context-menu) for widgets,
+- [Redesigned Graphs Improved](#redesign-graphs). Improved appearance, preventing Y-axis label overlap with the graph.
+- [Track menu updates](#track-menu-updates)
+  - [Folder statistics tracks](#total-tracks-statistics). The overall statistics are now displayed at the bottom of the list in each of the track folders.
+  - [Track filters](#tracks-filters-for-search) for quick search.
+  - [Sort subfolders](#sort-subfolders) allows to sort all folders and tracks in the present folder.
 - [Map mode follows app theme](#updates-for-map-mode-menu). Introduced a new map mode parameter that now corresponds to the app's light or dark theme settings.
 - [Grouped tags with translations](#grouped-tags). All tag translations are now conveniently grouped in the context menu.
+- [Polygon information](#nearby-areas) is available on the Map Context menu by a long tap on the map or a single tap a POI.
 - [Location icon appearance](#profile-appearance-redesign). Improved the appearance of my location icon and added new visual elements to the settings.
-- [Quick Action feature](#quick-action-update). Added the ability to change the *Location position on screen* with a new quick action.
+- [Quick Action feature](#quick-action-updates). Added the ability to change the *Location position on screen* with a new quick action.
 - [CarPlay improvements](#carplay-improvements). Resolved issues with navigation widget updates. <!--Resolved issues with navigation widget updates after recalculations and adjusted arrow sizes in the turn widget.-->
+- [Downloading maps dialog](#downloading-dialog) was updated.
+- [Shlow along the route](#show-along-the-route) option for Navigation.
 - [Optional updates](#optional-updates). Additional updates and refinement for this release.
-
-
-• Modified compass behavior: a single tap rotates the map to North, while a double tap switches the orientation 
-• Added search functionality for the most popular brand names 
-• Improved graph appearance: Y-axis labels no longer overlap with the graph 
-• Added total track statistics to each folder's footer 
-• Grouped all tags with translations into a single item in the context menu 
-• Fixed an issue where the POI category was missing from the context menu 
-• Fixed an issue with the auto-detection of the voice prompt language 
-• Fixed crash in Boat profile Route parameters 
-• CarPlay improvements: resolved an issue where the main navigation widget didn't update after route recalculations, and fixed the size of the arrows in the next turn widget 
-• Introduced a Map mode parameter that now follows the App theme 
-• Improved UI for selection of location icon, added options to disable location radius and view angle 
-• Add quick action to change "Location position on screen"
-
 
 
 ## New Compass Behavior
 
 The compass button has been updated to provide more intuitive and user-friendly functionality. These improvements make the compass easier to use, help you navigate better, and optimize map orientation control during navigation.
+
+Map rotation North fixed for  **North is up** compass position.
 
 [Compass button](https://osmand.net/docs/user/map/interact-with-map/#map-orientation-and-compass): 
 
@@ -79,26 +73,58 @@ Whether you are interested to find your favorite coffee shop, hotel, or reliable
 
 ![Brand name iOS](./img/brand.png)
 
+
+## Widget Context menu
+
+The [Widget Context](https://osmand.net/docs/user/widgets/configure-screen/#panel-widgets-settings) menu allows you to manage and configure widgets directly from the map screen, providing a quick way to organize panels. You can access this menu by **_long tapping_** on any widget to customize the layout of widgets without leaving the map.
+
+![Widget Context menu iOS](./img/track_context_menu.png)
+
 ## Redesign Graphs
 
-Elevation graphs have been redesigned to prevent overlapping labels.
+Elevation graphs have been redesigned:  Y-axis labels no longer overlap with the graph. 
 
 ![Graph iOS](./img/graph.png)
 
-## Total Track Statistics
+## Track Menu Updates
 
-The [overall statistics](https://osmand.net/docs/user/personal/tracks/manage-tracks#folder-statistics) are now displayed at the bottom of the list in each of the track folders.
+### Total Tracks Statistics
+
+The [overall tracks statistics](https://osmand.net/docs/user/personal/tracks/manage-tracks#folder-statistics) are now displayed in folder footer: `Tracks – 4, distance – 246.6 km, uphill – 325 m, downhill – 456 m, duration – 08:50:35, Total size – 14 MB.`
 
 ![Track stats iOS](./img/track_stats.png)
+
+### Tracks Filters for Search
+
+Added [the filtering in the Tracks tab](https://osmand.net/docs/user/personal/tracks/smart-folder/#search-filter), which is done by searching by several criteria, such as duration, length. 
+
+![Track filters iOS](./img/track_filters.png)
+
+### Sort Subfolders 
+
+Added action that allows [to sort all folders and tracks](https://osmand.net/docs/user/personal/tracks/manage-tracks#folder-actions) in the present folder.
+
+![Track filters iOS](./img/subfolders_ios.png) ![Track filters iOS](./img/subfolders_1_ios.png)
 
 ## Updates for Map Mode Menu
 
 Added the new [Map mode](https://osmand.net/docs/user/map/vector-maps#map-mode). The map is displayed in light or dark theme according to the mode selected from the list of suggested ones.
 
+![Map mode iOS](https://osmand.net/assets/images/map_mode_4-9_ios-ca48bf82a5918214a8819924e38cdb72.png)
 
 ## Grouped Tags
 
-POI's tag with any traslations have a single item on the [Context menu](https://osmand.net/docs/user/map/map-context-menu#details).
+Grouped all POI tags with translations into a single item on the [Context menu](https://osmand.net/docs/user/map/map-context-menu#details) for: `name`, `alt name`, `old name`. 
+
+## Nearby Areas
+
+These updates enhance **Polygon Information** by making data about surrounding areas accessible from the [Map Context menu](https://osmand.net/docs/user/map/map-context-menu/#details) in OsmAnd.
+
+Now, after _a long tap_ on the map or _a single tap_ a POI, you can view detailed information on nearby polygons, including type and name, sorted by size from smallest to largest. This feature is helpful for quickly identifying geographic or administrative areas within your location.
+
+_Map context menu → Details → Within_
+
+![Within iOS](./img/within_ios.png)
 
 
 ## Profile Appearance Redesign
@@ -135,13 +161,27 @@ In this release, we have added the ability to switch between terrain color palet
 
 _Menu → Configure screen → Custom buttons → + → Add button → Add action → Configure map → Terrain color scheme_
 
+### Touch Screen Lock
+
+We have added a Touch screen lock feature, similar to Garmin devices, allowing you to lock your screen while navigating, preventing accidental taps.
+
+This option can be accessed using the Custom buttons:
+_Menu → Configure screen → Custom buttons → + → Add acton → Inteface → Lock screen_
+
+![Lock screen](./img/lock_screen_ios.png)
+
 ## CarPlay improvements
 
 <!--
 Resolved an issue that caused the main navigation widget to not refresh after a route recalculation, and fixed the size of the arrows in the next turn widget. -->
 
 - Switch [Navigation to first Car profile](https://github.com/osmandapp/OsmAnd-iOS/issues/3957) when connected to CarPlay,
-- [Opening hours for POIs](https://github.com/osmandapp/OsmAnd-iOS/issues/3961),
+- [Opening hours for POIs](https://github.com/osmandapp/OsmAnd-iOS/issues/3961) was fixed,
+- Resolved an issue where [the main navigation widget didn't update](https://github.com/osmandapp/OsmAnd-iOS/issues/3963) after route recalculations,
+- Moved "Animate own position" setting from Navigation settings to [General settings](https://osmand.net/docs/user/personal/profiles#other),
+- Fixed bug with a [small arrow](https://github.com/osmandapp/OsmAnd-iOS/issues/3964) in Second next turn widget - CarPlay,
+- Fixed [wrong speedometer height](https://github.com/osmandapp/OsmAnd-iOS/issues/3958).
+
 
 ## Downloading dialog
 
@@ -149,23 +189,35 @@ New Downloading dialog was added for Maps & Resources and Context menus, First s
 
 ![Downloading dialog iOS](./img/downloading.png)
 
-## Show along the route
+## Show Along the Route
 
-## Optional Updates
+[_"Show along the route"_](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#view-and-select-points) option was added as separate item to the Settings menu of Naviation:
 
-- fixed bug with a [small arrow](https://github.com/osmandapp/OsmAnd-iOS/issues/3964) in Second next turn widget - CarPlay,
-- fixed [wrong speedometer height](https://github.com/osmandapp/OsmAnd-iOS/issues/3958) - CarPlay,
-- fixed bug with [visible track](https://github.com/osmandapp/OsmAnd-iOS/issues/3982) in My Places after removing,
-- fixed bug with [copy coordinates](https://github.com/osmandapp/OsmAnd-iOS/issues/4045),
-- renamed "Difficulty classification" > ["Hiking trails difficulty grade"](https://osmand.net/docs/user/map/routes#hiking-trails-difficulty-grade).
-- Fixed a bug that caused POI category to be missing in the context menu. 
-- Fixed a problem with [automatic language detection](https://github.com/osmandapp/OsmAnd-iOS/issues/3727) of voice prompts. 
-- Fixed a crash in boat profile route parameters.
+_Menu → Navigation → Settings → Show along the route_
+
+
+
+## More
+
+- Renamed "Difficulty classification" > ["Hiking trails difficulty grade"](https://osmand.net/docs/user/map/routes#hiking-trails-difficulty-grade).
 - Added [dark icon](https://github.com/osmandapp/OsmAnd-iOS/issues/3893) for iOS 18,
 - [Hazmat parameters](https://github.com/osmandapp/OsmAnd-iOS/issues/3992) as one list,
+- Added [Dirt bike trails](https://osmand.net/docs/user/map/routes#dirt-bike-trails) in Configure map,
+- Added [Map Scale mode](https://github.com/osmandapp/OsmAnd-iOS/issues/3967) for [Zoom level](https://osmand.net/docs/user/plugins/development#zoom-level) widget,
+- Fixed a bug with [visible track](https://github.com/osmandapp/OsmAnd-iOS/issues/3982) in My Places after removing,
+- Fixed a bug with [a missing track name](https://github.com/osmandapp/OsmAnd-iOS/issues/4123) for routes,
+- Fixed a bug with [copy coordinates](https://github.com/osmandapp/OsmAnd-iOS/issues/4045),
+- Fixed a problem with [automatic language detection](https://github.com/osmandapp/OsmAnd-iOS/issues/3727) of voice prompts. 
+- Fixed a bug with [a location marker of GPX track](https://github.com/osmandapp/OsmAnd-iOS/issues/4033) using Analyze on map,
+- Fixed a bug [with not saving widget size](https://github.com/osmandapp/OsmAnd-iOS/issues/4137),
+- Fixed a bug with [white position icon](https://github.com/osmandapp/OsmAnd-iOS/issues/3927),
+- Fixed [attributes for Sun Position](https://github.com/osmandapp/OsmAnd-iOS/issues/4105) widget,
+- Fixed a crash [in boat profile](https://github.com/osmandapp/OsmAnd-iOS/issues/3972) route parameters,
+- Fixed wrong [uphill calculation](https://github.com/osmandapp/OsmAnd-iOS/issues/3865),
+- Fixed a bug that caused POI category to be missing in the context menu. 
 
 
-## Engage with OsmAnd: Share, Suggest, and Connect
+______________________
 
 If you have suggestions for improving the iOS version of the app, please get in touch with us. We appreciate and welcome your contribution to the further development of OsmAnd.
 
