@@ -3,6 +3,7 @@ import {
     AppBar,
     Box,
     CircularProgress,
+    Divider,
     IconButton,
     ListItemText,
     MenuItem,
@@ -136,7 +137,12 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                             {ctx.processHeightmaps && <CircularProgress size={16} sx={{ ml: 1 }} />}
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
+                            <Typography
+                                variant="body2"
+                                className={styles.poiCategoriesInfo}
+                                noWrap
+                                onClick={() => setOpenMenu(true)}
+                            >
                                 {capitalize(ctx.configureMapState.terrain?.key ?? ctx.configureMapState.terrain)}
                             </Typography>
                             <ExpandMore
@@ -186,7 +192,8 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                 }
             />
             {ctx.heightmap?.key ? (
-                <Box sx={{ mt: '16px' }}>
+                <Box>
+                    <Divider className={styles.terrainDivider} />
                     <SubTitle title={'shared_string_appearance'} />
                     <Box sx={{ m: 2 }}>
                         <div
