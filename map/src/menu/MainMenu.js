@@ -106,6 +106,14 @@ export default function MainMenu({
 
     const navigate = useNavigate();
 
+    function closeSubPages() {
+        ctx.setOpenGroups([]);
+        ctx.setOpenVisibleMenu(false);
+        ctx.setOpenProFeatures(null);
+        ctx.setSelectedWpt(null);
+        ctx.setLoadingContextMenu(false);
+    }
+
     useEffect(() => {
         if (!menuInfo) {
             const item = items.find((item) => item.url === location.pathname);
@@ -117,9 +125,7 @@ export default function MainMenu({
         if (location.pathname === MAIN_URL_WITH_SLASH) {
             ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
         }
-        // close all sub pages
-        ctx.setOpenGroups([]);
-        ctx.setOpenVisibleMenu(false);
+        closeSubPages();
         const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
         const openCloudTrackAfterSave =
             ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
@@ -310,10 +316,7 @@ export default function MainMenu({
     }
 
     function selectMenu({ item }) {
-        ctx.setOpenGroups([]);
-        ctx.setSelectedWpt(null);
-        ctx.setOpenVisibleMenu(false);
-        ctx.setLoadingContextMenu(false);
+        closeSubPages();
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
