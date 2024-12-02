@@ -248,6 +248,8 @@ Example
 
 ### Tracks Search 
 
+Use route_id vs osm_id. Suggestion: differentiate OSM objects and other objects by prefix "OSM-...".
+
 - ...
 
 ### Waypoints Search 
