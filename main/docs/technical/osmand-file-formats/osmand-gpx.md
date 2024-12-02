@@ -236,25 +236,31 @@ Example
     </gpxtpx:TrackPointExtension>
 </extensions>
 ```
+- ...
 
-- gpx_icon - ...
-- gpx_width - ...
+### General Track info
+
+|Name|OBF name| Spec and Purpose|
+|:--------|:---------------|:---------------|
+| ele, lat, lon | Map section: ele_graph, start_ele. POI calculated: uphill, downhill, distance, max_ele, min_ele, start_ele, finish_ele  | To restore inforrmation about altitude |
+| speed, lat, lon | POI calculated: avg_speed, ...  | To restore general information about speed |
 
 
 ### Tracks Search 
 
-- gpx_icon - ...
-- gpx_width - ...
+- ...
+
+### Waypoints Search 
+
+- ...
 
 ### Route Context menu 
 
-- gpx_icon - ...
-- gpx_width - ...
+- Description (POI section)
+- Custom extension tags are not supported yet (POI section)
 
 
 ### Waypoint Context menu 
 
-- gpx_icon - ...
-- gpx_width - ...
-
-
+- Description (POI section)
+- Custom extension tags are not supported yet (POI section)
