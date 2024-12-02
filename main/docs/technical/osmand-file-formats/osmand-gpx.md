@@ -201,7 +201,7 @@ Increased compatibility of OsmAnd tracks with **Strava and Garmin Basecamp**. *T
 </extensions>
 ```
 
-## GPX Extensions for OsmAnd Maps
+## GPX Collection in OsmAnd Binary Format (OBF)
 
 It's possible to convert multiple GPX files into OsmAnd Maps (.obf), so this collection could contain thousands GPX tracks and work flawlessly. 
 Specific features such as special icons on the map, track lines appearance, search functionality are supported via GPX extensions tags.
