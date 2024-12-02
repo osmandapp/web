@@ -118,7 +118,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                     )}
                 </Toolbar>
             </AppBar>
-            <MenuItem className={styles.item}>
+            <MenuItem className={styles.item} onClick={() => setOpenMenu(true)}>
                 <ListItemText>
                     <div
                         style={{
@@ -137,19 +137,10 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                             {ctx.processHeightmaps && <CircularProgress size={16} sx={{ ml: 1 }} />}
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <Typography
-                                variant="body2"
-                                className={styles.poiCategoriesInfo}
-                                noWrap
-                                onClick={() => setOpenMenu(true)}
-                            >
+                            <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
                                 {capitalize(ctx.configureMapState.terrain?.key ?? ctx.configureMapState.terrain)}
                             </Typography>
-                            <ExpandMore
-                                sx={{ color: 'var(--text-secondary)', ml: 1 }}
-                                ref={anchorEl}
-                                onClick={() => setOpenMenu(true)}
-                            />
+                            <ExpandMore sx={{ color: 'var(--text-secondary)', ml: 1 }} ref={anchorEl} />
                         </div>
                     </div>
                 </ListItemText>
