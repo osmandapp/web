@@ -45,10 +45,10 @@ Quick Action widget is an interactive user interface element that provides fast 
 
 </Tabs>
 
-To use the Quick Action button you need to enable this widget first.  
+To use the Quick Action button, you have to enable this widget first.  
 
 <!--
-- To open the Quick action menu just tap the button.
+- To open the Quick action menu, just tap the button.
 - By default, the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to any part of the screen by long tapping it. -->
 
 
@@ -76,7 +76,7 @@ To use the Quick Action button you need to enable this widget first.
 
 All actions are organized in the **Add Action** menu and grouped by type. A complete list of actions and their descriptions can be found in the [Action types](#action-types) section.
 
-You can assign one or more [actions](#action-types) to the quick action button. There are 2 ways to add actions.
+You can assign one or more [actions](#action-types) to the quick action button. There are two ways to add actions.
 
 - **In the Configure screen**. Select a button from the list, and tap the&nbsp;  "**＋**"  &nbsp;button. You need to select the [action type](#action-types) first, and then change its name and [parameters](#actions-in-loop).
 - **In the quick action button panel**. Tap the *Quick Action button* on the map screen. At the end of the list, on the latest screen in the panel, is the "**＋**"  &nbsp;*Add Action* box. Tap it and select an action from the [list of types](#action-types).
@@ -85,7 +85,7 @@ You can assign one or more [actions](#action-types) to the quick action button. 
 :::note
 
 - Each action must have a unique name.
-- Screens 1, 2, and others are created automatically when the number of actions in the list increases to 6 items.
+- The screens, labeled numerically as Screen 1, Screen 2, etc., are created automatically when the number of actions in the list increases to 6 items.
 
 :::
 
@@ -108,16 +108,24 @@ You can assign one or more [actions](#action-types) to the quick action button. 
 
 </Tabs>
 
-The actions assigned to a button are divided into Screens. These screens, 1, 2, and others are created automatically when the number of actions in the list increases to **6 items**. You can group the actions in an order that is convenient for you. To change the order of items, you need to:
+The actions assigned to a quick action button are grouped into screens. These groups of actions are opened when you tap that button on the map. New screens are automatically created when the list of actions exceeds *6 items*. You can rearrange actions to suit your preferences by following these steps:  
 
-- **Android**. *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Hold & Drag*  
-    Select an up or down action using the icon (*three vertical lines*) in the list.
+**For Android**.
 
-- **Android**. Open *Quick action menu → long tap Add action → Hold & Drag*  
-    Select an up or down action using the icon (*three vertical lines*) in the list.
+1. Via configure screen:
 
-- **iOS**. *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Tap Edit (Pencil icon) → Hold & Drag*  
-     Select an up or down action using the icon (*three vertical lines*) in the list *→ Done*.
+    - Go to *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*.
+    - Use *Hold & Drag* on the two vertical lines icon to rearrange actions.
+
+2. Via quick action menu:
+
+    - Open the quick action menu, then long tap *Add Action*.
+    - Use *Hold & Drag* on the two vertical lines icon to rearrange actions.  
+
+**For iOS**.
+
+- Navigate to *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
+- Tap *Edit* (pencil icon), then *Hold & Drag* on the three vertical lines icon to rearrange actions.
 
 #### Actions in Loop
 
@@ -128,12 +136,12 @@ For some actions, you can assign a list of layers that will change in a circle w
 The button allows you to assign a single layer or a list of layers that change circularly when tapped or with an interim dialog.
 
 - **Show an interim dialog**. Displays a dialog with a list of maps.
-- **Do not show an interim dialog**. The map sources change in a defined order..
+- **Do not show an interim dialog**. The map sources change in a defined order.
 
 
 ### Change Position on the Map
 
-When enabled, the *Quick Action* widget initially appears in the lower right corner of the screen, positioned just above the zoom buttons. This widget allows you to perform a variety of custom actions directly from the map. You can move it to any part of the screen by performing a long tap and dragging it to your preferred location.
+The *Quick Action* widget appears at the bottom corner of the map screen when you first enable it. You can move the widget to any part of the screen by holding and dragging.
 
 - **Initial appearance**. By default, the quick action widget is placed in the lower right corner of the map interface.
 
@@ -192,12 +200,33 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 
 ### Touch Screen Lock
 
-To prevent accidental taps or interactions during navigation, use the **Touch Screen Lock** feature. When the screen is locked, you need to tap the on-screen button to unlock it. If the lock is activated using an external button, such as *Volume Down*, press that button or tap the on-screen button to unlock. This feature is particularly useful in activities like cycling or hiking, where unintentional touches can disrupt navigation. To set up:
+<Tabs groupId="operating-systems">
 
-1. Go to *Menu → Configure screen → Custom buttons*.
-2. Tap *+ → Add action → Interface → Touch Screen Lock*.
+<TabItem value="android" label="Android">
 
-A message will guide you when locking and unlocking the screen.
+![Quick action button Touch Screen Lock Android](@site/static/img/widgets/qa_touch_lock_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Quick action button Touch Screen Lock iOS](@site/static/img/widgets/qa_touch_lock_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Use the **Touch Screen Lock** feature to avoid accidental taps during navigation. This is especially helpful for activities like cycling or hiking, where unintentional touches might disrupt your route.
+
+**Unlocking**.  
+Tap the on-screen button, or, if the lock is activated, via an external button (e.g., Volume Down), press the external button and tap the on-screen button.  
+
+**Setup**.
+
+- Navigate to *Menu → Configure screen → Custom buttons*.
+- Select *+ → Add action → Interface → Touch Screen Lock*.
+
+Clear on-screen messages will guide you when locking or unlocking the screen.
 
 
 ## Action Types
@@ -213,15 +242,15 @@ A message will guide you when locking and unlocking the screen.
 | Open <br/> [**Weather screen**](../plugins/weather.md) <br /> *Android only* | Opens the [*Weather* forecast screen](../plugins/weather.md#weather-forecast-screen) with the detailed information. |
 | Show / Hide <br/> [**Favourites**](../personal/favorites.md#view-on-the-map) | Show or hide the favourite points on the map. |
 | Show / Hide <br/> [**Tracks**](../personal/tracks/manage-tracks.md#show-tracks-on-map) | Show or hide the last visible tracks on the map. |
-| Show / Hide <br/> [**POIs**](../map/point-layers-on-map.md#points-of-interest-poi) | Enable or disable the display of POI layers with selected categories on the map.<br/>You can select multiple POI categories. The action replaces the POI categories from Configure Map selected without using Quick Actions.  |
+| Show / Hide <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-poi) | Enable or disable the display of POI layers with selected categories on the map.<br/>You can select multiple POI categories. The action replaces the POI categories from the Configure Map selected without using Quick Actions.  |
 | Change <br/> [**Map mode**](../map/vector-maps.md#map-mode) | Quick access to switch between day and night modes. |
-| Change <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | The button allows you to assign a single map source or a list of source that change circularly when tapped or with an interim dialog. <br/> - *Show an interim dialog*. Displays a dialog with a list of maps. <br/> - *Do not show an interim dialog*. The map sources change in a defined order. <br/> - *Displayed Name* - *Map source* >. ">" after the map name indicates which map source is currently selected. <br/> - *Displayed Name* - > *Next map source*. ">" before the map name indicates what the next selected map source is if the action is executed. <br/> - *Note*. To change map sources in OsmAnd, you can either set up single quick action that allows you to switch between multiple map sources, or create several separate quick actions, each for a specific map source. |
-| Show / Hide <br /> [**Public transport**](../map/vector-maps.md#transport) | Enable or disable the public transport map layer <br /> - *Transport type*. On the first tap, you can select one or multiple transport types, including: *Transport stops*, *Bus, trolleybus, and shuttle routes*, *Tram and train routes*, *Subway routes*. |
-| Change <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Create a list of map sources as a map overlay and cycle through them. <br /> - *Note*. To change map overlays in OsmAnd, you can either set up single quick action that allows you to switch between multiple map overlays, or create several separate quick actions, each for a specific map overlay. |
-| Change <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Create a list of map sources as a map underlay and cycle through them. <br /> - *Note*. To change map overlays in OsmAnd, you can either set up single quick action that allows you to switch between multiple map underlays, or create several separate quick actions, each for a specific map underlay.  |
-| Change <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> - *Note*. To change map styles in OsmAnd, you can either set up single quick action that allows you to switch between multiple map overlays, or create several separate quick actions, each for a specific map style. |
+| Change <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | The button allows you to assign a single map source or a list of source that change circularly when tapped or with an interim dialog. <br/> - *Show an interim dialog*. Displays a dialog with a list of maps. <br/> - *Do not show an interim dialog*. The map sources change in a defined order. <br/> - *Displayed Name* - *Map source* >. ">" after the map name indicates which map source is currently selected. <br/> - *Displayed Name* - > *Next map source*. ">" before the map name indicates what the next selected map source will be if the action is executed. <br/> - *Note*. To change map sources in OsmAnd, you can either set up a single quick action that allows you to switch between multiple map sources, or create several separate quick actions, each for a specific map source. |
+| Show / Hide <br /> [**Public transport**](../map/vector-maps.md#transport) | Enable or disable the public transport map layer <br /> - *Transport type*. On the first tap, you can select one or multiple transport types, including *Transport stops*, *Bus, trolleybus, and shuttle routes*, *Tram and train routes*, *Subway routes*. |
+| Change <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Create a list of map sources as a map overlay and cycle through them. <br /> - *Note*. To change map overlays in OsmAnd, you can either set up a single quick action that allows you to switch between multiple map overlays, or create several separate quick actions, each for a specific map overlay. |
+| Change <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Create a list of map sources as a map underlay and cycle through them. <br /> - *Note*. To change map overlays in OsmAnd, you can either set up a single quick action that allows you to switch between multiple map underlays, or create several separate quick actions, each for a specific map underlay.  |
+| Change <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> - *Note*. To change map styles in OsmAnd, you can either set up a single quick action that allows you to switch between multiple map overlays, or create several separate quick actions, each for a specific map style. |
 | Show / Hide <br/> [**Mapillary layer**](../plugins/mapillary.md) | Allows you to view map layers with street-level imagery provided by Mapillary. |
-| Show / Hide <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | You can select to display or hide all OSM notes on the map with a single tap the button. |
+| Show / Hide <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | You can select to display or hide all OSM notes on the map with a single tap of the button. |
 
 
 ### Interface
@@ -231,7 +260,7 @@ A message will guide you when locking and unlocking the screen.
 | Navigate <br/> **Previous screen** | A toggle to navigate to the previous screen. |
 | Show / Hide <br/> [**Navigation view**](../navigation/setup/route-navigation.md) | Toggles visibility of the navigation screen view. |
 | Show / Hide <br/> [**Search view**](../search/search-all.md) | Opens or closes the search view. |
-| Show / Hide <br/> [**Side menu**](../start-with/main-menu.md) | Toggles visibility of the main side menu for accessing core features. |
+| Show / Hide <br/> [**Side menu**](../start-with/main-menu.md) | Toggles the visibility of the main side menu for accessing core features. |
 | Turn On / Off <br/> [**Touch screen lock**](#touch-screen-lock) | Activates or deactivates touch screen locking to avoid unintended screen interactions. |
 
 
@@ -240,12 +269,12 @@ A message will guide you when locking and unlocking the screen.
 | Action | Description |
 |:-------------|:-------------|
 | Map <br/> [**Zoom in**](../map/interact-with-map.md) | Zooming in the map with simultaneously increasing the amount of data displayed. |
-| Map <br/> [**Zoom out**](../map/interact-with-map.md) | Downscaling the map. It is convenient to use with [Developer widget - Zoom level](../widgets/info-widgets.md#developer-widgets). |
+| Map <br/> [**Zoom out**](../map/interact-with-map.md) | Down scaling the map. It is convenient to use with [Developer widget - Zoom level](../widgets/info-widgets.md#developer-widgets). |
 | Move <br/> [**Map down**](../map/interact-with-map.md) | You can use the quick action button to move the map down.  |
 | Move <br/> [**Map up**](../map/interact-with-map.md) | When tapped, the map screen moves up. |
-| Move <br/> [**Map to the left**](../map/interact-with-map.md) | When you tap button map screen moves to the left. |
-| Move <br/> [**Map to the right**](../map/interact-with-map.md) | With a quick action button you can move the map to the right. |
-| Move <br/> [**To My location**](../map/interact-with-map.md#my-location-and-zoom) | Moves the map to the *My location* position. |
+| Move <br/> [**Map to the left**](../map/interact-with-map.md) | When you tap the button, the map screen moves to the left. |
+| Move <br/> [**Map to the right**](../map/interact-with-map.md) | With a quick action button, you can move the map to the right. |
+| Move <br/> [**To My location**](../map/interact-with-map.md#my-location-and-zoom) | Moves the map to *My location* position. |
 
 
 ### My Places
@@ -263,7 +292,7 @@ A message will guide you when locking and unlocking the screen.
 | Add <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-poi) | Adds POI to a selected (center) map location map (same as context menu action). <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *POI Type* (optional). Preselects the OSM POI type. <br /> - *Tag/Value* (multiple). Adds [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / values |
 | Add <br/> [**OSM Note**](../plugins/osm-editing.md#create--modify-osm-note) | Adds an [OSM note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Message*. Adds a default message to the note. |
 | Add <br/> [**Media notes**](../plugins/audio-video-notes.md) | Starts audio / photo / video note recording for a selected (center) map location. |
-| Create <br/> [**New route**](../plan-route/create-route.md) <br /> *Android only* | Opens the [Plan a route](../plan-route/create-route.md) tool and creats a route for thea selected (central) location on the map. |
+| Create <br/> [**New route**](../plan-route/create-route.md) <br /> *Android only* | Opens the [Plan a route](../plan-route/create-route.md) tool and creates a route for the selected (central) location on the map. |
 
 
 ### Navigation
@@ -313,4 +342,4 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 
-> *This article was last updated in October 2024*
+> *This article was last updated in December 2024*
