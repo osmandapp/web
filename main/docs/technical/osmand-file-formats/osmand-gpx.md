@@ -201,3 +201,58 @@ Increased compatibility of OsmAnd tracks with **Strava and Garmin Basecamp**. *T
 </extensions>
 ```
 
+## GPX Extensions for OsmAnd Maps
+
+It's possible to convert multiple GPX files into OsmAnd Maps (.obf), so this collection could contain thousands GPX tracks and work flawlessly. 
+Specific features such as special icons on the map, track lines appearance, search functionality are supported via GPX extensions tags.
+
+### Map line display
+
+Example 
+```xml
+<extensions>
+    <gpxtpx:TrackPointExtension>
+        <gpxtpx:hr>107</gpxtpx:hr>
+        <gpxtpx:wtemp>107</gpxtpx:wtemp>
+        <gpxtpx:cad>107</gpxtpx:cad>
+    </gpxtpx:TrackPointExtension>
+</extensions>
+```
+
+- gpx_icon - ...
+- gpx_width - ...
+
+### Map waypoints display
+
+Example 
+```xml
+<extensions>
+    <gpxtpx:TrackPointExtension>
+        <gpxtpx:hr>107</gpxtpx:hr>
+        <gpxtpx:wtemp>107</gpxtpx:wtemp>
+        <gpxtpx:cad>107</gpxtpx:cad>
+    </gpxtpx:TrackPointExtension>
+</extensions>
+```
+
+- gpx_icon - ...
+- gpx_width - ...
+
+
+### Tracks Search 
+
+- gpx_icon - ...
+- gpx_width - ...
+
+### Route Context menu 
+
+- gpx_icon - ...
+- gpx_width - ...
+
+
+### Waypoint Context menu 
+
+- gpx_icon - ...
+- gpx_width - ...
+
+
