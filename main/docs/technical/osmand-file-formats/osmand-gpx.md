@@ -208,19 +208,21 @@ Specific features such as special icons on the map, track lines appearance, sear
 
 ### Map line display
 
-Example 
+Example (to do). 
+To be supported: color could be defined on trkseg, trk, metadata. 
 ```xml
-<extensions>
-    <gpxtpx:TrackPointExtension>
-        <gpxtpx:hr>107</gpxtpx:hr>
-        <gpxtpx:wtemp>107</gpxtpx:wtemp>
-        <gpxtpx:cad>107</gpxtpx:cad>
-    </gpxtpx:TrackPointExtension>
-</extensions>
+<trk>
+  <extensions>
+    <osmand:color></<osmand:color>
+  </extensions>
+</trk>
 ```
-
-- gpx_icon - ...
-- gpx_width - ...
+|Name|OBF name| Spec and Purpose|
+|:--------|:---------------|:---------------|
+| color | color | Color track is converted to predefined list (link) of colors | 
+| osmand:width | gpx_width | Width track to be displayed (converted to thin/thick/bold/medium), by default medium if not parsed | 
+| shield_bg, shield_fg, shield_fg2, shield_text, shield_textcolor  | - | Displays shields similar to OSMC (link) symbols in OsmAnd  | 
+| osmand:use_osmc_colors | use_osmc_colors | Now modifies color, width - displays transparent colors and different width. To be replaced with color / width? |
 
 ### Map waypoints display
 
