@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 sidebar_label: Map
 title: Map on the Website
 ---
@@ -26,8 +26,6 @@ The *[osmand.net/map](https://osmand.net/map/)* site is currently being develope
 
 We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
-
-## Authorization
 
 ## Map Context Menu
 
@@ -58,7 +56,17 @@ The [Weather plugin](../plugins/weather.md) is a paid feature of the OsmAnd app.
 
 ## Configure map
 
-### POI overlay
+The Configure Map menu allows you to manage the display settings for map data, such as POI layers, Favorites, tracks, and terrain.
+
+To open this menu, click the button in the top left corner or access it through the Menu. The menu has settings:
+- [POI overlay...](#poi-overlay-section) - allows to choose and show needed POI categories on the map.
+- [Favorites](#favorites-section) - switch on/off favorites on the map.
+- [Tracks](#tracks-section) - contains GPX tracks visible on the map.
+- [Terrain](#terrain-section) - allow to switch on/off terrain color scheme on the map.
+
+![POIs menu](@site/static/img/web/configure_map_web.png)
+
+### POI overlay section
 
 To show POIs on the map:
 
@@ -68,95 +76,25 @@ Or you can use the ["Search" section](web-search.md) for finding needed place.
 
 ![POIs menu](@site/static/img/web/poi_menu.png)
 
+### Favorites section
 
-### Tracks
+By one click you can switch on/off favorites on the map, but only favorites which have ["Show on map" enabled](./web-userdata#favorites-on-the-web).
+
+
+### Tracks section
+
+Contains list of user's [GPX tracks visible on the map](./web-userdata#visible-on-the-map).
+
+![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
+
+### Terrain section
 
 It's a paid feature <ProFeature/>. At first you need to loggin your OsmAnd Pro:
 
-![Track loggin](@site/static/img/web/track_loggin.png)
+Here you can choose color scheme for terrain: Hillshade, Slope and Height. Set visibility of chosen terrain layer from 0% to 100%.
 
-For Track section:
+![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
 
-- Show tracks from [OsmAnd Cloud](#users-tracks-pro).
-- Adding tracks on the map (**Visible on map** folder).
-- Looking all tracks info and graph
-- Modify tracks and add it to Cloud.
-- Download and delete tracks.
-- Create new folders or delete it.
-- Download folders as OSF or OBF collection.
-
-
-#### Visible on the Map
-
-Here there is a list of visible tracks on the map.
-
-_Switch on/off_ tracks for showing or not its on the map.
-
-![Visible on the map](@site/static/img/web/visible.png)
-
-
-#### Track folder menu
-
-Click to the *Tree points* **⋮** button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
-
- - Download as OSF.
- - Download as OBF Collection:
-  You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
-
-    -  [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
-
-  You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
-
-    -  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
-
-  Also You can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
-
-- _Rename_ chosen folder.
-- _Delete_ chosen folder.
-
-![Track folder menu](@site/static/img/web/collection.png)
-
-
-#### Cloud Tracks
-
-GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only for **Pro users** <ProFeature/> and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users (who can download their data even after their Pro subscription has expired).
-
-The following features are available after choosin cloud track:
-
-- Information screens:
-  - *Information* - displaying track data.
-  - *Elevation* - graph of elevation.
-  - *Speed* - speed graph.
-  - *Slope* - slope graph.
-  - *Settings* - list of navigation profiles for the *Create route* tool.  
-
-- Action buttons:
-  - *Edit track* - adding cloud track to local for editing (_Edit locality_ button on the panel).
-  - *Download GPX* - downloads the track to the PC.
-  - *Recalculate* Elevation (Satellite) - displays the elevation graph of the selected track.
-  - *Delete Track* - deletes the track.
-  - *Close track* - close the track.
-
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
-
-
-### Favorites
-
-After registering an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), the user's Favorites are displayed in the Favorites menu.  
-The following actions are available:
-
-- *Show on map* - show favorites points from the chosen folder on the map.
-- *Rename* - name and description of favorite folder.
-- *Download* - download the chosen favorite folder.
-- *Delete* - delete the chosen favorite folder.
-
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
-
-#### Add / Edit Favorite
-
-[To add](../personal/favorites.md#edit) a new favorite point, right-click on the screen. To start editing, click on the favorite point, the edit menu screen looks the same as [the menu in OsmAnd app](../personal/favorites.md#create).  
-
-![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
 
 
 <!--
