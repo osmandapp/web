@@ -111,6 +111,12 @@ export default function SearchLayer() {
         }
     }, [zoom, move]);
 
+    useEffect(() => {
+        if (ctx.zoomToMapObj) {
+            map.setView([ctx.zoomToMapObj.lat, ctx.zoomToMapObj.lon], ZOOM_TO_MAP);
+        }
+    }, [ctx.zoomToMapObj]);
+
     async function searchByWord(query, latlng, baseSearch) {
         let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
             apiCache: true,
