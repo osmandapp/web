@@ -111,12 +111,14 @@ org.gradle.caching=true
   Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Select as target your device or as one of iOS simulators. But don't use default 'Any iOS Device (arm64)'. Build the project (play button).
 11. Troubleshooting - cleaning tamp files.
   - In case of build errors you can press in Xcode: ```Product -> Clean build folder```
-  - Close Xcode.  Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists).
+  - Close Xcode.
+  - Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists).
   - Go to folded ```core/external/qtbase-ios/``` and delete all folders starting with ```upstream```.
   - Delete Xcode DerivedData folder: ``` rm -rf ~/Library/Developer/Xcode/DerivedData ```
   - Check that all repositories are up to date and on correct branches.
   - Restart your computer. (Yes, it can help).
-  - Then run `$ ./prepare.sh` and try to build the project again.
+  - Then run `$ ./prepare.sh`
+  - Open XCode and try to build the project again.
   
 12. Troubleshooting (m1 mac)
   - In case of ```ld: library not found for -lOsmAndCore_static_standalone```:
