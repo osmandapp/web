@@ -109,7 +109,7 @@ org.gradle.caching=true
 9. Open `osmand.xcworkspace` in Xcode
 10. First build.
   Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Select as target your device or as one of iOS simulators. But don't use default 'Any iOS Device (arm64)'. Build the project (play button).
-11. Troubleshooting - cleaning tamp files.
+11. Troubleshooting - cleaning temp files.
   - In case of build errors you can press in Xcode: ```Product -> Clean build folder```
   - Close Xcode.
   - Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists).
@@ -124,7 +124,7 @@ org.gradle.caching=true
   - In case of ```ld: library not found for -lOsmAndCore_static_standalone```:
   - Project Navigator -> OsmAnd_projects -> OsmAnd_projects (in Project/Targets list) -> Build settings -> All -> Architectures -> Excluded Architectures -> Debug
   - Add string field of type ```Any IOS Simulator SDK``` with value ```arm64```. (you will need to add it after each prepare.sh run)
-  - Build project. In case of errors, make all instructions from ```11. Troubleshooting - cleaning tamp files.``` and ```prepare.sh``` once again.
+  - Build project. In case of errors, make all instructions from ```11. Troubleshooting - cleaning temp files.``` and ```prepare.sh``` once again.
 
 13. Kotlin debug addon (optional)
 ```
