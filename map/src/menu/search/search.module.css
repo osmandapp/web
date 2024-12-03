@@ -334,6 +334,7 @@
 .categoryItemIcon {
     text-align: center !important;
     justify-content: center !important;
+    fill: #f8931d !important;
 }
 .gridItem {
     display: flex !important;

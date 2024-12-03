@@ -67,7 +67,8 @@ export default function SearchLayer() {
     useSelectedPoiMarker(
         ctx,
         ctx.selectedPoiId?.type === SEARCH_LAYER_ID ? findFeatureGroupById(map, SEARCH_LAYER_ID)?.getLayers() : null,
-        SEARCH_LAYER_ID
+        SEARCH_LAYER_ID,
+        map
     );
 
     useEffect(() => {
@@ -112,9 +113,7 @@ export default function SearchLayer() {
 
     useEffect(() => {
         if (ctx.zoomToMapObj) {
-            const lat = ctx.zoomToMapObj.geometry.coordinates[1];
-            const lon = ctx.zoomToMapObj.geometry.coordinates[0];
-            map.setView([lat, lon], ZOOM_TO_MAP);
+            map.setView([ctx.zoomToMapObj.lat, ctx.zoomToMapObj.lon], ZOOM_TO_MAP);
         }
     }, [ctx.zoomToMapObj]);
 
@@ -274,8 +273,7 @@ export default function SearchLayer() {
                 pointerStyle: styles.hoverPointer,
             });
         });
-
-        const layers = [...mainMarkersLayers, simpleMarkersArr];
+        const layers = [...mainMarkersLayers, ...simpleMarkersArr.getLayers()];
 
         if (layers.length) {
             return L.featureGroup(layers, {

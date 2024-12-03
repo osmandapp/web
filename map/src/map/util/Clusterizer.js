@@ -1,6 +1,7 @@
 import L from 'leaflet';
 import styles from '../../menu/search/search.module.css';
 import { getPointLatLon } from './TrackLayerProvider';
+import { getObjIdSearch } from '../layers/SearchLayer';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
 
@@ -256,12 +257,12 @@ export function createSecondaryMarker(obj) {
     return L.circleMarker(latlng, {
         ...obj.properties,
         id: obj.properties.id,
+        idObj: getObjIdSearch(obj),
         fillOpacity: 0.9,
         radius: 5,
         color: '#ffffff',
         fillColor: '#fe8800',
         weight: 1,
-        zIndex: 1000,
     });
 }
 

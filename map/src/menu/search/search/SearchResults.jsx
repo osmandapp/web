@@ -19,6 +19,8 @@ import { getDistance } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
 import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 import useHashParams from '../../../util/hooks/useHashParams';
+import { CATEGORY_ICON } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { SEARCH_ICON_BRAND } from '../../../manager/SearchManager';
 
 export const SEARCH_RESULT_TYPE_POI = 'POI';
 export const SEARCH_RESULT_TYPE_POI_CATEGORY = 'POI_TYPE';
@@ -74,6 +76,10 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             const props = f.properties;
             const type = props['web_type'];
             if (type === SEARCH_RESULT_TYPE_POI || type === SEARCH_RESULT_TYPE_POI_CATEGORY) {
+                if (props[CATEGORY_ICON] === SEARCH_ICON_BRAND) {
+                    f.icon = await getSearchResultIcon({ result: SEARCH_ICON_BRAND, ctx });
+                    return;
+                }
                 const iconName = getCatPoiIconName(props);
                 f.icon = await getSearchResultIcon({ result: iconName, ctx });
             } else {
@@ -225,7 +231,10 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                                     key={index}
                                     item={item}
                                     index={index}
-                                    typeItem={value?.type === SEARCH_TYPE_CATEGORY ? POI_LAYER_ID : SEARCH_LAYER_ID}
+                                    typeItem={
+                                        ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY ? POI_LAYER_ID : SEARCH_LAYER_ID
+                                    }
+                                    searchValue={value}
                                     setSearchValue={setSearchValue}
                                 />
                             ))}

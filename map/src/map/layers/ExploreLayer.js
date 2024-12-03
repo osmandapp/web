@@ -59,7 +59,8 @@ export default function ExploreLayer() {
         mainIconsLayerRef.current && otherIconsLayerRef.current
             ? [...mainIconsLayerRef.current.getLayers(), ...otherIconsLayerRef.current.getLayers()]
             : null,
-        EXPLORE_LAYER_ID
+        EXPLORE_LAYER_ID,
+        map
     );
 
     function closeModal() {

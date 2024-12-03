@@ -289,6 +289,7 @@ export const AppContextProvider = (props) => {
     const searchPointerRef = useRef(null);
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);
+    const [selectedSearchMarker, setSelectedSearchMarker] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
     const [zoomToMapObj, setZoomToMapObj] = useState(false);
     // travel
@@ -660,8 +661,6 @@ export const AppContextProvider = (props) => {
                 setCategoryIcons,
                 searchResult,
                 setSearchResult,
-                zoomToMapObj,
-                setZoomToMapObj,
                 processingSearch,
                 setProcessingSearch,
                 searchTooltipRef,
@@ -682,6 +681,10 @@ export const AppContextProvider = (props) => {
                 setTravelFilter,
                 openProFeatures,
                 setOpenProFeatures,
+                selectedSearchMarker,
+                setSelectedSearchMarker,
+                zoomToMapObj,
+                setZoomToMapObj,
             }}
         >
             {props.children}
