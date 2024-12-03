@@ -274,8 +274,7 @@ export default function SearchLayer() {
                 pointerStyle: styles.hoverPointer,
             });
         });
-
-        const layers = [...mainMarkersLayers, simpleMarkersArr];
+        const layers = [...mainMarkersLayers, ...simpleMarkersArr.getLayers()];
 
         if (layers.length) {
             return L.featureGroup(layers, {

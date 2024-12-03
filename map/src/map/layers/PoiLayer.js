@@ -101,7 +101,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
         });
     });
 
-    const layers = [...mainMarkersLayers, simpleMarkersArr];
+    const layers = [...mainMarkersLayers, ...simpleMarkersArr.getLayers()];
 
     if (layers.length) {
         return L.featureGroup(layers, {
