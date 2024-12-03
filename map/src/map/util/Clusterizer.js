@@ -263,7 +263,6 @@ export function createSecondaryMarker(obj) {
         color: '#ffffff',
         fillColor: '#fe8800',
         weight: 1,
-        zIndex: 1000,
     });
 }
 

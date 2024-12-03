@@ -460,7 +460,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     function returnToSearch() {
         setShowInfoBlock(false);
-        ctx.setCurrentObjectType(OBJECT_SEARCH);
     }
 
     function closeOnlyFavDetails() {

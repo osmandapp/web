@@ -67,7 +67,8 @@ export default function SearchLayer() {
     useSelectedPoiMarker(
         ctx,
         ctx.selectedPoiId?.type === SEARCH_LAYER_ID ? findFeatureGroupById(map, SEARCH_LAYER_ID)?.getLayers() : null,
-        SEARCH_LAYER_ID
+        SEARCH_LAYER_ID,
+        map
     );
 
     useEffect(() => {
@@ -109,14 +110,6 @@ export default function SearchLayer() {
             updateAsyncLayers().then();
         }
     }, [zoom, move]);
-
-    useEffect(() => {
-        if (ctx.zoomToMapObj) {
-            const lat = ctx.zoomToMapObj.geometry.coordinates[1];
-            const lon = ctx.zoomToMapObj.geometry.coordinates[0];
-            map.setView([lat, lon], ZOOM_TO_MAP);
-        }
-    }, [ctx.zoomToMapObj]);
 
     async function searchByWord(query, latlng, baseSearch) {
         let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {

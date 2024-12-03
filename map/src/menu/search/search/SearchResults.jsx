@@ -231,7 +231,10 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                                     key={index}
                                     item={item}
                                     index={index}
-                                    typeItem={value?.type === SEARCH_TYPE_CATEGORY ? POI_LAYER_ID : SEARCH_LAYER_ID}
+                                    typeItem={
+                                        ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY ? POI_LAYER_ID : SEARCH_LAYER_ID
+                                    }
+                                    searchValue={value}
                                     setSearchValue={setSearchValue}
                                 />
                             ))}
