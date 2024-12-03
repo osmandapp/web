@@ -18,6 +18,7 @@ import {
     SEPARATOR,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
+import { LatLng } from 'leaflet';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -115,6 +116,11 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
         if (item.locDist) {
             // click on item
             ctx.setZoomToMapObj(item);
+            const poi = {
+                options: item.properties,
+                latlng: new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]),
+            };
+            ctx.setSelectedWpt({ poi });
         } else {
             // click on category
             const category = item.properties['web_keyName'];
