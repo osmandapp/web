@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 sidebar_label:  OsmAnd Cloud
 title: OsmAnd Cloud on the Website
 ---
