@@ -56,16 +56,20 @@ The [Weather plugin](../plugins/weather.md) is a paid feature of the OsmAnd app.
 ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
 
 
-## POIs on the Map
+## Configure map
+
+### POI overlay
 
 To show POIs on the map:
 
-*Configure map menu or 🔍 Search icon to open the search tab → choose categories*. Read more about this feature on the ["Search" section](web-search.md).
+*Configure map menu → POI overlay...*. Here you can choose catergories for showing its on the map.
+
+Or you can use the ["Search" section](web-search.md) for finding needed place.
 
 ![POIs menu](@site/static/img/web/poi_menu.png)
 
 
-## Tracks
+### Tracks
 
 It's a paid feature <ProFeature/>. At first you need to loggin your OsmAnd Pro:
 
@@ -82,7 +86,7 @@ For Track section:
 - Download folders as OSF or OBF collection.
 
 
-### Visible on the Map
+#### Visible on the Map
 
 Here there is a list of visible tracks on the map.
 
@@ -91,7 +95,7 @@ _Switch on/off_ tracks for showing or not its on the map.
 ![Visible on the map](@site/static/img/web/visible.png)
 
 
-### Track folder menu
+#### Track folder menu
 
 Click to the *Tree points* **⋮** button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
 
@@ -113,7 +117,7 @@ Click to the *Tree points* **⋮** button for open *Track Folder* menu. Here you
 ![Track folder menu](@site/static/img/web/collection.png)
 
 
-### Cloud Tracks
+#### Cloud Tracks
 
 GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only for **Pro users** <ProFeature/> and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users (who can download their data even after their Pro subscription has expired).
 
@@ -136,7 +140,7 @@ The following features are available after choosin cloud track:
 ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
 
 
-## Favorites
+### Favorites
 
 After registering an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), the user's Favorites are displayed in the Favorites menu.  
 The following actions are available:
@@ -148,7 +152,7 @@ The following actions are available:
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
 
-### Add / Edit Favorite
+#### Add / Edit Favorite
 
 [To add](../personal/favorites.md#edit) a new favorite point, right-click on the screen. To start editing, click on the favorite point, the edit menu screen looks the same as [the menu in OsmAnd app](../personal/favorites.md#create).  
 

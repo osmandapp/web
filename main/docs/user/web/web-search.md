@@ -20,13 +20,49 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Write your request for searching and showing on the map.
+The search menu you find on the side panel or on the left corner 🔍 of the map. It contains:
+- Search line,
+- Categories menu,
+- Explore menu.
 
 ![Search menu](@site/static/img/web/search.png)
 
-Click to the POI for open [POI Contex Menu](#poi-context-menu) with tags info.
+
+## Search line
+
+Write your request to the Search line and tap to the POI for open [POI Contex Menu](#poi-context-menu) with tags info.
 
 ![Context Menu POI](@site/static/img/web/context_menu_poi.png)
+
+
+Tapping to the chosen POI on the map opens POI Context menu with next data and links:
+- Name and icon
+- Distance and direction from your location to POI
+- Location
+- [Photo Gallery](#photo-gallery)
+- Object data: contacts, social media links, wikipedia links, description, inscription.. 
+- OSM ID
+- Coordinates
+
+![Context Menu POI](@site/static/img/web/context_menu_poi_1.png)
+
+## Categories
+
+Choose and show on the map one POI categories. You can choose it from 6 most popular. Or click to "_Show all_" for openning all POIs list.
+
+![Categories POI](@site/static/img/web/categories_poi.png)
+
+Tapping to the chosen POI on the map opens POI Context menu with next data and links:
+- Name and icon
+- Distance and direction from your location to POI
+- Location
+- [Photo Gallery](#photo-gallery)
+- Object data: contacts, social media links, wikipedia links, description, inscription.. 
+- OSM ID
+- Coordinates
+
+![Context Menu POI](@site/static/img/web/categories_poi_1.png)
+
 
 ## Explore the Map Menu
 
