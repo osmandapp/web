@@ -25,7 +25,7 @@ This section explains how to log in and sign up at [www.osmand.net/map](https://
 
 This section details additional map data such as Favorites, Personal Tracks, and Weather Layers.
 
-### [User Data](./web-userdata.md)
+### [User Data](./web-userdata.mdx)
 
 GPX tracks and Favorites of user on the map.
 

@@ -78,12 +78,12 @@ Or you can use the ["Search" section](web-search.md) for finding needed place.
 
 ### Favorites section
 
-By one click you can switch on/off favorites on the map, but only favorites which have ["Show on map" enabled](./web-userdata.md#favorites-on-the-web).
+By one click you can switch on/off favorites on the map, but only favorites which have ["Show on map" enabled](../web/web-userdata.mdx##favorites-on-the-web).
 
 
 ### Tracks section
 
-Contains list of user's [GPX tracks visible on the map](./web-userdata.md#visible-on-the-map).
+Contains list of user's [GPX tracks visible on the map](../web/web-userdata.mdx#visible-on-the-map).
 
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
