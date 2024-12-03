@@ -90,15 +90,21 @@ org.gradle.caching=true
   $ sudo xcodebuild -license accept
   $ sudo xcode-select --switch /Library/Developer/CommandLineTools
   ```
-  
+
   Solution 2: check if xcrun is available: ``` /usr/bin/xcrun -find xcrun ```. If you've got: ``` xcrun: error: unable to find utility "xcrun", not a developer tool or in PATH ```. Then open Xcode > Preferences > Locations and in field "Command Line Tools" select your command line tools "Xcode XX.X" And run `$ ./prepare.sh` again.
-  
-  Solution 3: If you've got error like this: ``` CMake Error at CMakeLists.txt:1 (cmake_minimum_required): CMake 3.21.2 or higher is required.  You are running version 3.11.2 ```. Then download dmg installer from CMake web site and perfom manual instalation. And run `$ ./prepare.sh` again.
+
+  Solution 3: Error: `CMake Error ... iphoneos is not an iOS SDK`.
+  ```
+  $ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+  $ sudo xcodebuild -license accept
+  ```
+
+  Solution 4: If you've got error like this: ``` CMake Error at CMakeLists.txt:1 (cmake_minimum_required): CMake 3.21.2 or higher is required.  You are running version 3.11.2 ```. Then download dmg installer from CMake web site and perfom manual instalation. And run `$ ./prepare.sh` again.
   ```
   https://cmake.org/download/
   ```
 
-  Solution 4: If you've got error like this: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Go to folded ```core/external/qtbase-ios/``` and delete all folders starting with ```upstream```.  And run `$ ./prepare.sh` again.
+  Solution 5: If you've got error like this: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Go to folded ```core/external/qtbase-ios/``` and delete all folders starting with ```upstream```.  And run `$ ./prepare.sh` again.
   
   
 9. Open `osmand.xcworkspace` in Xcode
