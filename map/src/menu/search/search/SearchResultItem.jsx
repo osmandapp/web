@@ -111,6 +111,30 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
             ? `se-search-result-${item.properties['web_name']}`
             : 'se-search-result-item';
 
+    function clickHandler() {
+        if (item.locDist) {
+            // click on item
+            ctx.setZoomToMapObj(item);
+        } else {
+            // click on category
+            const category = item.properties['web_keyName'];
+            if (category) {
+                setSearchValue({
+                    query: getFirstSubstring(t(`poi_${category}`)),
+                    key: category,
+                    type: SEARCH_TYPE_CATEGORY,
+                });
+            } else {
+                // search by brand
+                setSearchValue({
+                    query: item.properties['web_name'],
+                    key: item.properties['web_name'],
+                    type: SEARCH_TYPE_CATEGORY,
+                });
+            }
+        }
+    }
+
     return (
         <div ref={ref}>
             {!inView ? (
@@ -122,18 +146,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                         className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
-                        onClick={() => {
-                            if (item.locDist) {
-                                ctx.setZoomToMapObj(item);
-                            } else {
-                                const category = item.properties['web_keyName'];
-                                setSearchValue({
-                                    query: getFirstSubstring(t(`poi_${category}`)),
-                                    key: category,
-                                    type: SEARCH_TYPE_CATEGORY,
-                                });
-                            }
-                        }}
+                        onClick={clickHandler}
                     >
                         <ListItemText>
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
