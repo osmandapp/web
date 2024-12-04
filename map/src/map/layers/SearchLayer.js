@@ -129,32 +129,11 @@ export default function SearchLayer() {
             },
         });
         if (response.ok) {
-            let data = await response.json();
-            data = filterDuplicates(data);
+            const data = await response.json();
             ctx.setSearchResult(data);
         } else {
             ctx.setSearchResult(null);
         }
-    }
-
-    function filterDuplicates(data) {
-        const seen = new Set();
-        data.features = data.features.filter((feature) => {
-            if (!feature) {
-                return false;
-            }
-            const id = getObjIdSearch(feature);
-            const name = feature.properties[POI_NAME] ?? feature.properties[CATEGORY_NAME];
-            const uniqueKey = `${id}-${name}`;
-
-            if (seen.has(uniqueKey)) {
-                return false;
-            } else {
-                seen.add(uniqueKey);
-                return true;
-            }
-        });
-        return data;
     }
 
     function removeOldSearchLayer() {
