@@ -30,7 +30,7 @@ All created audio and video notes compose the Record layer. When enabled on the 
 
 The audio/video notes are provided with the Audio/video notes plugin, and require the following setup:
 
-1. Enable the [Audio/video notes plugin](../plugins/index.md#enable--disable) in the Plugins section of the main menu.  
+1. Enable the [Audio/video notes plugin](../plugins/index.md#enable--disable) in the Plugins section of the *Main Menu*.  
 2. Add a [widget](../widgets/info-widgets.md#-audio-video-notes-widget) to the map screen for the most convenient use.
 3. Customize the [recording settings](#plugin-settings) for each profile, if necessary.  
 

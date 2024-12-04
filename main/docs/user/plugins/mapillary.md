@@ -24,7 +24,7 @@ To get around faster, in OsmAnd you can use street-level views of your routes or
 
 To display street-level images on the OsmAnd map, you need to make the following settings:
 
-1. Enable the [Mapillary plugin](../plugins/#enable--disable) in the *Plugins* section of the main menu.
+1. Enable the [Mapillary plugin](../plugins/#enable--disable) in the *Plugins* section of the *Main Menu*.
 2. Display the [Street-level imagery](#enable-layer) on the map for the required profile in the Configure map menu.
 
 

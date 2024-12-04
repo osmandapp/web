@@ -95,7 +95,7 @@ The cross-platform capability allows you to use OsmAnd Pro on all platforms *([A
 
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file.png)  
 
-Choose needed files for downloading, ZIP or OSF format of downloaded files and click *DOWNLOAD BACKUP* button:
+Choose needed files for downloading, `.zip` or `.osf` format of downloaded files and click *DOWNLOAD BACKUP* button:
 
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_1.png)  
 

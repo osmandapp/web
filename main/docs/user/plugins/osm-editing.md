@@ -134,7 +134,7 @@ The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you
 
 </Tabs>
 
-You can enable or disable as a separate layer the display of OSM modifications such as *OSM notes* (online), *OSM edits*, *Fixme tags*, *Note tags*, *Icons at low zooms*, in the [Configure map](../map/configure-map-menu.md) section of the main menu.  
+You can enable or disable as a separate layer the display of OSM modifications such as *OSM notes* (online), *OSM edits*, *Fixme tags*, *Note tags*, *Icons at low zooms*, in the [Configure map](../map/configure-map-menu.md) section of the *Main Menu*.  
 
 
 ## Create / Modify POI  

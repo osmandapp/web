@@ -95,8 +95,8 @@ Only the OsmAnd development plugin and the OSM editing plugin change settings fo
 
 Most plugins provide specific profile or global settings, which can be accessed via:
 
-- *Main menu → Plugins → Plugin name → Settings (&#x2699 for ios)* or  
-- *Main menu → Settings → Profile → [Plugin settings](../personal/profiles.md#plugin-settings)*.  
+- *Main Menu → Plugins → Plugin name → Settings (&#x2699 for ios)* or  
+- *Main Menu → Settings → Profile → [Plugin settings](../personal/profiles.md#plugin-settings)*.  
 
 <Tabs groupId="operating-systems">
 

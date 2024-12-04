@@ -152,7 +152,7 @@ You need to **long tap any of the query items in the list** to open the Delete s
 
 </Tabs>
 
-There are several available options to export the search history. All files are exported in *osf* (OsmAnd settings File) format.  
+There are several available options to export the search history. All files are exported in `.osf` (OsmAnd settings File) format.  
 
 1. *Menu → Settings → OsmAnd settings → History → Search history*.  
     Export is available using the OsmAnd settings menu. For Android, following this path takes you to the delete screen, where [Share history](#share-android) is available. In the case of iOS, you can select individual items or the entire history on the screen, and after tapping the *Export* button, go to *Local Backup* menu.

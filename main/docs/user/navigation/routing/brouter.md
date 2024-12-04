@@ -78,7 +78,7 @@ Follow this guide to installing and configuring the third-party *BRouter Offline
 
 **Note** that you will have to repeat this step periodically, whenever you want to have an updated version of the OSM data used for the routing.
 
-**3.** Once this is done, start again the BRouter app and choose the "BRouter App" entry on the main menu. Choose a routing profile depending on your mode of travel. It could be biking, moped, hiking, or trekking. A list of available profiles for download in *brf* format can be found [here](http://brouter.de/brouter/profiles2/). Or you can try using the routing profile in [BRouter-online](http://brouter.de/brouter-web/).
+**3.** Once this is done, start again the BRouter app and choose the "BRouter App" entry on the *Main Menu*. Choose a routing profile depending on your mode of travel. It could be biking, moped, hiking, or trekking. A list of available profiles for download in *brf* format can be found [here](http://brouter.de/brouter/profiles2/). Or you can try using the routing profile in [BRouter-online](http://brouter.de/brouter-web/).
 Click "Service-Mode". Then, tick the boxes for the routing modes you want to use this profile for. You can use two different profiles per transportation mode, which will be mapped to the "shortest" and "fastest" presets (these are just labelling) in OsmAnd.
 
 <table class="blogimage">

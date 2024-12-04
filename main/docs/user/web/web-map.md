@@ -79,7 +79,7 @@ For Track section:
 - Modify tracks and add it to Cloud.
 - Download and delete tracks.
 - Create new folders or delete it.
-- Download folders as OSF or OBF collection.
+- Download folders as `.osf` or `.obf` collection.
 
 
 ### Visible on the Map
@@ -95,11 +95,11 @@ _Switch on/off_ tracks for showing or not its on the map.
 
 Click to the *Tree points* **⋮** button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
 
- - Download as OSF.
+ - Download as `.osf`.
  - Download as OBF Collection:
   You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
 
-    -  [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
+    - [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
 
   You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
 

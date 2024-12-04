@@ -108,7 +108,7 @@ We recommend that you grant OsmAnd permission to receive information about the p
 
 </Tabs>
 
-The OsmAnd app works with different types of maps, but it can only function fully with downloaded offline maps, so after the *<Translate android="true" ids="get_started"/>* screen you are prompted to [*download map*](../start-with/download-maps.md#first-screen) of your region. You can choose a different region, restore from [OsmAnd Cloud](../personal/osmand-cloud.md), or skip this step and download maps later.  
+The OsmAnd app works with different types of maps, but it can only function fully with downloaded offline maps, so after the *<Translate android="true" ids="get_started"/>* screen you are prompted to [*download map*](../start-with/download-maps.md#initial-setup-screen) of your region. You can choose a different region, restore from [OsmAnd Cloud](../personal/osmand-cloud.md), or skip this step and download maps later.  
 For other map download options available, see the [*article Download maps*](../start-with/download-maps.md).
 
 :::note
@@ -147,7 +147,7 @@ On some Android devices (Xiaomi with Muiu 14), there is no option to set app lan
 
 ### How to manage your settings
 
-You could manage application settings as [Global settings](../personal/global-settings.md) or as [Profile configuration](../personal/profiles.md) via [main menu](../start-with/main-menu.md). Application comes with a predefined list of profiles that could be modified later. Each profile could be considered as a customized map application for specific purposes. By default profiles are being served only as different navigation modes.
+You could manage application settings as [Global settings](../personal/global-settings.md) or as [Profile configuration](../personal/profiles.md) via [*Main Menu*](../start-with/main-menu.md). Application comes with a predefined list of profiles that could be modified later. Each profile could be considered as a customized map application for specific purposes. By default profiles are being served only as different navigation modes.
 
 <Tabs groupId="operating-systems">
 
@@ -173,7 +173,7 @@ You could manage application settings as [Global settings](../personal/global-se
 
 [Plugins](../plugins/index.md#configure-a-plugin) greatly extend application functionality. Almost all plugins have their own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and [Settings](../plugins/#plugin-settings).  
 
-You can enable / disable plugins via [main menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-a-plugin).  
+You can enable / disable plugins via [*Main Menu*](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-a-plugin).  
 
 <Tabs groupId="operating-systems">
 

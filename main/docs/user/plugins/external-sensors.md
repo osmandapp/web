@@ -32,7 +32,7 @@ To start using data from external sensors, you need to make the following settin
 
 **1.** [Purchase **OsmAnd Pro subscription**](../purchases/).  
 
-**2.** [Enable](../plugins/#enable--disable) the External Sensors plugin in the Plugins section of the main menu.  
+**2.** [Enable](../plugins/#enable--disable) the External Sensors plugin in the Plugins section of the *Main Menu*.  
 
 **3.** [Perform the **sensor settings**](#sensors-settings) adjustment.
 

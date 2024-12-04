@@ -192,7 +192,7 @@ If there is no data collected on the selected date, a special notification will 
 
 To view the [widget](../widgets/info-widgets.md#tracker-widget-android), you need to first enable the OsmAnd Tracker plugin. After that, a widget with the word *Start* will appear in the upper right corner of the OsmAnd screen.  
 
-To disable it, you can go to *General menu → Configure screen*.
+To disable it, you can go to *Main Menu → Configure screen*.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_widget_1.png)   ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_widget_2.png)
 

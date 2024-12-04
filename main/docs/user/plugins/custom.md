@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-In the OsmAnd application, you can create many customizations and export them to a `.osf file`. After adding a description, image, and icon, these customizations become a completely independent plugin. This plugin may include:
+In the OsmAnd application, you can create many customizations and export them to a `.osf` file. After adding a description, image, and icon, these customizations become a completely independent plugin. This plugin may include:
 
 - All [Profile Settings](../personal/profiles.md) with a new profile.
 - Specific set of quick actions and menu layouts for *Drawer* and *Context menu*.
@@ -28,13 +28,13 @@ In the OsmAnd application, you can create many customizations and export them to
 
 ![Custom package](@site/static/img/plugins/custom/1.jpg)
 
-The *OSF file* is a renamed *zip file* containing JSON files and folders. As an example, you can download our prepared files from [Google Drive](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) or a ready-made plugin from this [link](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe).  
+The `.osf` *file* is a renamed .`.zip` *file* containing `.json` files and folders. As an example, you can download our prepared files from [Google Drive](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) or a ready-made plugin from this [link](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe).  
 
-You can modify JSON files using OsmAnd's *items.json* file, which contains commands for importing JSON files, OBF files, icons, and more.
+You can modify `.json` files using OsmAnd's *items.json* file, which contains commands for importing `.json` files, `.obf` files, icons, and more.
 
 You may need to read:
 
-- About [JSON format](https://en.wikipedia.org/wiki/JSON).
+- About [`.json` format](https://en.wikipedia.org/wiki/JSON).
 - About [txt editors](https://en.wikipedia.org/wiki/List_of_text_editors), with which you can open and edit files in JSON format.
 - About [Sublime Text editor](https://en.wikipedia.org/wiki/Sublime_Text), which is used in OsmAnd as a reference.
 - You can check your code in [JSON Editor Online](https://jsoneditoronline.org/).

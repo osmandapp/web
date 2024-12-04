@@ -149,9 +149,9 @@ When you select a road to avoid using *map context menu* or *Avoid roads menu*, 
 
 </Tabs>
 
-Depending on your device settings and available applications, your whole list of roads to avoid or just one of them can be [exported](../../personal/import-export.md#export) as an .osf file to a different locations. Select the roads you want to export in the suggested list.
+Depending on your device settings and available applications, your whole list of roads to avoid or just one of them can be [exported](../../personal/import-export.md#export) as an `.osf` file to a different locations. Select the roads you want to export in the suggested list.
 
-You can [import](../../personal/import-export.md#import) roads to avoid during route calculation from other sources in .osf file format.  Also, it can be done using *Import option* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). You can choose to import all data or only few roads to avoid (marking a road with a tick in the list).  
+You can [import](../../personal/import-export.md#import) roads to avoid during route calculation from other sources in `.osf` file format.  Also, it can be done using *Import option* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). You can choose to import all data or only few roads to avoid (marking a road with a tick in the list).  
 
 <Tabs groupId="operating-systems">
 

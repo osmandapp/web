@@ -17,13 +17,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 The **Import** and **Export** tools in OsmAnd allow you to manage your data. You can move your profiles, favorites, tracks and other settings using a special format through the apps on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.
 
 :::note Large size
-*If the size of your selected data is significant, it will take some time for the application to prepare the OSF file.*
+*If the size of your selected data is significant, it will take some time for the application to prepare the `.osf` file.*
 :::
 
 
 ## Export / Import data
 
-The *Import* and *Export* allows you to save data from generated **OSF files** or use [online sources](../map/raster-maps.md), making it possible to restore information after reinstallation.
+The *Import* and *Export* allows you to save data from generated `.osf` **files** or use [online sources](../map/raster-maps.md), making it possible to restore information after reinstallation.
 
 **Data types** available for import/export:
 
@@ -57,7 +57,7 @@ The *Import* and *Export* allows you to save data from generated **OSF files** o
 
 </Tabs>
 
-All the data you have configured and created can be exported using the ***Export menu***. The menu consists of three groups: **Settings**, **My Places**, and **Resources**, which contain all available file folders. In each folder, you can select the files you want to export, one at a time or all at once. **All exported files are saved in OSF format**.  
+All the data you have configured and created can be exported using the ***Export menu***. The menu consists of three groups: **Settings**, **My Places**, and **Resources**, which contain all available file folders. In each folder, you can select the files you want to export, one at a time or all at once. **All exported files are saved in `.osf` format**.  
 
 
 ### Import
@@ -86,7 +86,7 @@ All the data you have configured and created can be exported using the ***Export
 
 </Tabs>
 
-Opens and restores *OSF* files. Tap an *OSF* file in the file manager on your device or use the action button.
+Opens and restores `.osf` files. Tap the file in the device's file manager or use the action button.
 
 - *Some items already exist*. You can use this feature to save both files or replace all of them.
 - *Restart*. After importing the files, the application must be restarted.
@@ -104,7 +104,7 @@ In the Android and iOS versions of OsmAnd, if you completely **uninstall** the a
 There are two ways to save your data before reinstalling the OsmAnd app:
 
 - Use [*OsmAnd Cloud*](#osmand-cloud). You can back up your data using OsmAnd features such as [*OsmAnd Start*](../personal/osmand-cloud.md#osmand-start), as a free version, or [*OsmAnd Pro*](../purchases/index.md), a paid subscription with more features.
-- [Export *OSF* file](#export) with your data. Copy the *OSF* file to a folder on your device or OsmAnd Cloud. After reinstalling OsmAnd, [import this *OSF* file](#import) to the OsmAnd app.
+- [Export .osf file](#export) with your data. Copy the `.osf` file to a folder on your device or OsmAnd Cloud. After reinstalling OsmAnd, [import this `.osf` file](#import) to the OsmAnd app.
 
 
 ## Related Articles

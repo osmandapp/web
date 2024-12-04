@@ -252,7 +252,7 @@ Actions:
 - **Show all tracks on the map** (*Android only*). Shows all tracks in the folder on the map. It is not recommended, if there are a lot of tracks, the device may freeze.
 - **Edit name** (*Android*) / **Rename** (*iOS*). Changing the folder name.
 - [*Change default appearance*](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*). You can change the appearance of all tracks in a folder.
-- [*Export*](../../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder as an [OSF file](../../personal/import-export.md#export).
+- [*Export*](../../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder as an [`.osf` file](../../personal/import-export.md#export).
 - [**Move**](#track-folder). You can move the selected folder to another existing folder or create a new one.
 - [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible.
 
@@ -407,7 +407,7 @@ There are several ways to export one or more track files to any messenger, email
 2. By *My Places menu → Tracks → Folder / Track menu*.
     - For [**single track export**](#track-menu), select the track to import as is.
     - For [**multi-track export**](#track-folder), select the required folder.
-3. By [*Local backup file*](../../personal/import-export.md#export-to-file). Exporting GPX tracks as OSF files.
+3. By [*Local backup file*](../../personal/import-export.md#export-to-file). Exporting GPX tracks as `.osf` files.
 
 
 ## Related Articles

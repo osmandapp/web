@@ -40,7 +40,7 @@ Parking spot on the map and notification in the calendar is provided by the Park
 
 To use a parking spot on the map, you need to make the following settings:
 
-1. Enable the [Parking position plugin](../plugins/index.md#enable--disable) in the Plugins section of the main menu.  
+1. Enable the [Parking position plugin](../plugins/index.md#enable--disable) in the Plugins section of the *Main Menu*.  
 2. Add a [parking spot](#set-a-spot) on the map.
 3. If needed, add the [Parking widget](#parking-widget) to the screen.  
 

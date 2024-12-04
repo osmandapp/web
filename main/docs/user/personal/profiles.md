@@ -459,7 +459,7 @@ With the UI customization feature, you can adjust the number of items in actions
 ![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
 
 - **Main visible items**. In the Customise UI section, you can reorder hide, and restore items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android).
-- **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the main menu in the drawer. All your changes are instantly undone.  
+- **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the *Main Menu* in the drawer. All your changes are instantly undone.  
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can duplicate the element arrangement from another OsmAnd profile to this one.
 
 ### Configuring the Map
@@ -476,14 +476,14 @@ With the UI customization feature, you can adjust the number of items in actions
 ![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
 - **Map context menu**.  In this part of the Customise UI section, you can reorder or hide items from the [map context menu](../map/map-context-menu.md).  
-- **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the main menu in the drawer. All your changes are instantly undone.
+- **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the *Main Menu* in the drawer. All your changes are instantly undone.
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can duplicate the element arrangement from another OsmAnd profile to this one.
 
 
 ## Plugin Settings
 
 :::caution Access to plugin settings
-To access the plugin's settings, you must first [**enable the plugin**](../plugins/index.md#enable--disable) in the *Plugin section of the main menu*.
+To access the plugin's settings, you must first [**enable the plugin**](../plugins/index.md#enable--disable) in the *Plugin section of the *Main Menu**.
 :::
 
 <Tabs groupId="operating-systems">
@@ -548,7 +548,7 @@ Plugins unlock additional features of the application and can be either [paid or
 
 Actions with selected profile:  
 
-- [Export profile](https://osmand.net/docs/user/personal/import-export#export). You can export all settings of the selected profile in OSF format.
+- [Export profile](https://osmand.net/docs/user/personal/import-export#export). You can export all settings of the selected profile in `.osf` format.
 - **Copy from another profile.** Copies all settings from another existing profile in your OsmAnd application.
 - **Reset to default.** Returns all settings to the initial state.
 - **Delete profile**:

@@ -15,9 +15,9 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Overview
 
-**Main menu** is a primary list of options available to use in the application. It provides quick access to the profile configuration, global settings, search, personal data, navigation and other features.
+**Main Menu** is a primary list of options available to use in the application. It provides quick access to the profile configuration, global settings, search, personal data, navigation and other features.
 
-The [Main menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located on the left bottom corner of the Map screen. In navigation mode this button is not visible by default. It appears after a short tap the map.
+The [*Main Menu*](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located on the left bottom corner of the Map screen. In navigation mode this button is not visible by default. It appears after a short tap the map.
 
 <Tabs groupId="operating-systems">
 
@@ -59,7 +59,7 @@ The [Main menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located o
 
 ### Active Profile (Android)
 
-Main menu provides quick access to switch and [customize profile](../personal/profiles.md). Main purpose of profiles to have different application look & fill for navigation. Though you could use it to customize screen & widgets and switch profiles for different view purposes. All [settings](../personal/profiles.md) are configured separately for each profile.
+*Main Menu* provides quick access to switch and [customize profile](../personal/profiles.md). Main purpose of profiles to have different application look & fill for navigation. Though you could use it to customize screen & widgets and switch profiles for different view purposes. All [settings](../personal/profiles.md) are configured separately for each profile.
 
 ![profile_menu](@site/static/img/menu/profile_menu.png)
 
@@ -74,7 +74,7 @@ In this menu you can **switch** active profile, **configure** (change settings) 
 
 - This menu allows you to change the order, hide or show items from the [Drawer](../personal/profiles.md#drawer), copy a list of items from another profile and reset the default settings.  
 
-- The *Minus* button deletes an item from the main menu in the drawer and moves it to the *Hidden* section. The *Move* button changes the position of the selected item in the list.  
+- The *Minus* button deletes an item from the *Main Menu* in the drawer and moves it to the *Hidden* section. The *Move* button changes the position of the selected item in the list.  
 
 - Items moved to the *Hidden* section are not displayed in the Drawer menu, but all options, settings, or plugins from this list continue to work. You can restore items by tapping the green button to the left of their names.  
     ![Drawer menu hidden items ](@site/static/img/settings/drawer_menu_hidden_items.png)
