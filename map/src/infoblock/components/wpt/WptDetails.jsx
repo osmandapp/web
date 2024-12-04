@@ -175,36 +175,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         const fetchWpt = async () => {
             let result = null;
             const type = getWptType(ctx.selectedWpt);
-            if (type?.isPoi) {
-                const currentPoi = ctx.selectedWpt.poi;
-                const { options: poiOptions, latlng } = currentPoi;
-                const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
-                const wikiCommons = getWikiCommons(poiOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]);
-                let photos = null;
-                if (wikiCommons?.files) {
-                    photos = {
-                        type: 'FeatureCollection',
-                        features: wikiCommons.files,
-                    };
-                }
-                const selectedType = poiOptions[AMENITY_PREFIX + SUBTYPE] ?? poiOptions[TYPE_OSM_VALUE];
-                const pType = translateWithSplit(t, POI_PREFIX + selectedType);
-                result = {
-                    type: type,
-                    poiType: pType,
-                    name: poiOptions.title ?? pType,
-                    latlon: { lat: latlng.lat, lon: latlng.lng },
-                    background: DEFAULT_POI_SHAPE,
-                    color: DEFAULT_POI_COLOR,
-                    icon: poiOptions[FINAL_POI_ICON_NAME],
-                    tags: tags,
-                    osmUrl: poiOptions[POI_OSM_URL],
-                    wikidata: poiOptions[OSM_PREFIX + WIKIDATA],
-                    wikimediaCommons: wikiCommons?.categories,
-                    wikipedia: getWikipedia(poiOptions[OSM_PREFIX + WIKIPEDIA]),
-                    photos: photos,
-                };
-            } else if (type?.isWikiPoi) {
+            if (type?.isWikiPoi) {
                 setLoading(true);
                 const currentPoi = ctx.selectedWpt.poi;
                 const wikiObj = ctx.searchSettings.getPoi;
@@ -233,7 +204,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 if (currentWpt) {
                     result = await getDataFromWpt(type, ctx.selectedWpt, currentWpt);
                 }
-            } else if (type?.isSearch) {
+            } else if (type?.isSearch || type?.isPoi) {
                 const currentPoi = ctx.selectedWpt.poi;
                 const { options: objOptions, latlng } = currentPoi;
                 const { name, objType } = getPropsFromSearchResultItem(objOptions, t);
@@ -694,7 +665,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         if (!name) {
             name = wpt.poiType ? getFirstSubstring(wpt.poiType) : 'No name';
         }
-        if (wpt.type?.isPoi || wpt.type?.isWikiPoi || (wpt.type?.isSearch && wpt.osmUrl)) {
+        if (wpt.osmUrl) {
             return (
                 <Typography className={styles.name}>
                     <Link href={wpt.osmUrl} target="_blank" underline="none">
