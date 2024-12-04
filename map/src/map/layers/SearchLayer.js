@@ -67,7 +67,8 @@ export default function SearchLayer() {
     useSelectedPoiMarker(
         ctx,
         ctx.selectedPoiId?.type === SEARCH_LAYER_ID ? findFeatureGroupById(map, SEARCH_LAYER_ID)?.getLayers() : null,
-        SEARCH_LAYER_ID
+        SEARCH_LAYER_ID,
+        map
     );
 
     useEffect(() => {
@@ -112,9 +113,7 @@ export default function SearchLayer() {
 
     useEffect(() => {
         if (ctx.zoomToMapObj) {
-            const lat = ctx.zoomToMapObj.geometry.coordinates[1];
-            const lon = ctx.zoomToMapObj.geometry.coordinates[0];
-            map.setView([lat, lon], ZOOM_TO_MAP);
+            map.setView([ctx.zoomToMapObj.lat, ctx.zoomToMapObj.lon], ZOOM_TO_MAP);
         }
     }, [ctx.zoomToMapObj]);
 
@@ -130,32 +129,11 @@ export default function SearchLayer() {
             },
         });
         if (response.ok) {
-            let data = await response.json();
-            data = filterDuplicates(data);
+            const data = await response.json();
             ctx.setSearchResult(data);
         } else {
             ctx.setSearchResult(null);
         }
-    }
-
-    function filterDuplicates(data) {
-        const seen = new Set();
-        data.features = data.features.filter((feature) => {
-            if (!feature) {
-                return false;
-            }
-            const id = getObjIdSearch(feature);
-            const name = feature.properties[POI_NAME] ?? feature.properties[CATEGORY_NAME];
-            const uniqueKey = `${id}-${name}`;
-
-            if (seen.has(uniqueKey)) {
-                return false;
-            } else {
-                seen.add(uniqueKey);
-                return true;
-            }
-        });
-        return data;
     }
 
     function removeOldSearchLayer() {
@@ -274,8 +252,7 @@ export default function SearchLayer() {
                 pointerStyle: styles.hoverPointer,
             });
         });
-
-        const layers = [...mainMarkersLayers, simpleMarkersArr];
+        const layers = [...mainMarkersLayers, ...simpleMarkersArr.getLayers()];
 
         if (layers.length) {
             return L.featureGroup(layers, {

@@ -101,7 +101,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
         });
     });
 
-    const layers = [...mainMarkersLayers, simpleMarkersArr];
+    const layers = [...mainMarkersLayers, ...simpleMarkersArr.getLayers()];
 
     if (layers.length) {
         return L.featureGroup(layers, {
@@ -161,7 +161,8 @@ export default function PoiLayer() {
     useSelectedPoiMarker(
         ctx,
         ctx.selectedPoiId?.type === POI_LAYER_ID ? poiList?.layer?.getLayers() : null,
-        POI_LAYER_ID
+        POI_LAYER_ID,
+        map
     );
 
     async function getPoi(controller, showPoiCategories, bbox, savedBbox) {

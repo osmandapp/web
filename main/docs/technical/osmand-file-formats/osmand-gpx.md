@@ -201,3 +201,68 @@ Increased compatibility of OsmAnd tracks with **Strava and Garmin Basecamp**. *T
 </extensions>
 ```
 
+## GPX Collection in OsmAnd Binary Format (OBF)
+
+It's possible to convert multiple GPX files into OsmAnd Maps (.obf), so this collection could contain thousands GPX tracks and work flawlessly. 
+Specific features such as special icons on the map, track lines appearance, search functionality are supported via GPX extensions tags.
+
+### Map line display
+
+Example (to do). 
+To be supported: color could be defined on trkseg, trk, metadata. 
+```xml
+<trk>
+  <extensions>
+    <osmand:color></<osmand:color>
+  </extensions>
+</trk>
+```
+|Name|OBF name| Spec and Purpose|
+|:--------|:---------------|:---------------|
+| color | color | Color track is converted to predefined list (link) of colors | 
+| osmand:width | gpx_width | Width track to be displayed (converted to thin/thick/bold/medium), by default medium if not parsed | 
+| shield_bg, shield_fg, shield_fg2, shield_text, shield_textcolor  | - | Displays shields similar to OSMC (link) symbols in OsmAnd  | 
+| osmand:use_osmc_colors | use_osmc_colors | Now modifies color, width - displays transparent colors and different width. To be replaced with color / width? |
+
+### Map waypoints display
+
+Example 
+```xml
+<extensions>
+    <gpxtpx:TrackPointExtension>
+        <gpxtpx:hr>107</gpxtpx:hr>
+        <gpxtpx:wtemp>107</gpxtpx:wtemp>
+        <gpxtpx:cad>107</gpxtpx:cad>
+    </gpxtpx:TrackPointExtension>
+</extensions>
+```
+- ...
+
+### General Track info
+
+|Name|OBF name| Spec and Purpose|
+|:--------|:---------------|:---------------|
+| ele, lat, lon | Map section: ele_graph, start_ele. POI calculated: uphill, downhill, distance, max_ele, min_ele, start_ele, finish_ele  | To restore inforrmation about altitude |
+| speed, lat, lon | POI calculated: avg_speed, ...  | To restore general information about speed |
+
+
+### Tracks Search 
+
+Use route_id vs osm_id. Suggestion: differentiate OSM objects and other objects by prefix "OSM-...".
+
+- ...
+
+### Waypoints Search 
+
+- ...
+
+### Route Context menu 
+
+- Description (POI section)
+- Custom extension tags are not supported yet (POI section)
+
+
+### Waypoint Context menu 
+
+- Description (POI section)
+- Custom extension tags are not supported yet (POI section)

@@ -6,7 +6,7 @@ import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import _ from 'lodash';
 import { formattingPoiType } from '../../../manager/PoiManager';
-import AppContext from '../../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { SEARCH_RESULT_TYPE_POI, SEARCH_RESULT_TYPE_POI_CATEGORY } from './SearchResults';
 import { getObjIdSearch, SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 import {
@@ -18,6 +18,8 @@ import {
     SEPARATOR,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
+import { LatLng } from 'leaflet';
+import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -58,7 +60,7 @@ export function getPropsFromSearchResultItem(props, t) {
     return { name, type };
 }
 
-export default function SearchResultItem({ item, setSearchValue, typeItem }) {
+export default function SearchResultItem({ item, searchValue, setSearchValue, typeItem }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -71,16 +73,20 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
 
     function handleMouseEnter() {
         if (itemId !== null) {
-            ctx.setSelectedPoiId({ id: itemId, show: true, type: typeItem });
+            setSelectedPoint({ show: true });
         }
         setIsHovered(true);
     }
 
     function handleMouseLeave() {
         if (itemId !== null) {
-            ctx.setSelectedPoiId({ id: itemId, show: false, type: typeItem });
+            setSelectedPoint({ show: false });
         }
         setIsHovered(false);
+    }
+
+    function setSelectedPoint({ show }) {
+        ctx.setSelectedPoiId({ id: itemId, show, type: typeItem, obj: item, prev: ctx.selectedPoiId });
     }
 
     useEffect(() => {
@@ -111,6 +117,36 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
             ? `se-search-result-${item.properties['web_name']}`
             : 'se-search-result-item';
 
+    function clickHandler() {
+        if (item.locDist) {
+            // click on item
+            ctx.setCurrentObjectType(POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
+            const poi = {
+                options: item.properties,
+                latlng: new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]),
+            };
+            ctx.setSelectedWpt({ poi });
+            setSelectedPoint({ show: false });
+        } else {
+            // click on category
+            const category = item.properties['web_keyName'];
+            if (category) {
+                setSearchValue({
+                    query: getFirstSubstring(t(`poi_${category}`)),
+                    key: category,
+                    type: SEARCH_TYPE_CATEGORY,
+                });
+            } else {
+                // search by brand
+                setSearchValue({
+                    query: item.properties['web_name'],
+                    key: item.properties['web_name'],
+                    type: SEARCH_TYPE_CATEGORY,
+                });
+            }
+        }
+    }
+
     return (
         <div ref={ref}>
             {!inView ? (
@@ -122,18 +158,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                         className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
-                        onClick={() => {
-                            if (item.locDist) {
-                                ctx.setZoomToMapObj(item);
-                            } else {
-                                const category = item.properties['web_keyName'];
-                                setSearchValue({
-                                    query: getFirstSubstring(t(`poi_${category}`)),
-                                    key: category,
-                                    type: SEARCH_TYPE_CATEGORY,
-                                });
-                            }
-                        }}
+                        onClick={clickHandler}
                     >
                         <ListItemText>
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />

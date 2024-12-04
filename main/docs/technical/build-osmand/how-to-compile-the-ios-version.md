@@ -90,35 +90,49 @@ org.gradle.caching=true
   $ sudo xcodebuild -license accept
   $ sudo xcode-select --switch /Library/Developer/CommandLineTools
   ```
-  
+
   Solution 2: check if xcrun is available: ``` /usr/bin/xcrun -find xcrun ```. If you've got: ``` xcrun: error: unable to find utility "xcrun", not a developer tool or in PATH ```. Then open Xcode > Preferences > Locations and in field "Command Line Tools" select your command line tools "Xcode XX.X" And run `$ ./prepare.sh` again.
-  
-  Solution 3: If you've got error like this: ``` CMake Error at CMakeLists.txt:1 (cmake_minimum_required): CMake 3.21.2 or higher is required.  You are running version 3.11.2 ```. Then download dmg installer from CMake web site and perfom manual instalation. And run `$ ./prepare.sh` again.
+
+  Solution 3: Error: `CMake Error ... iphoneos is not an iOS SDK`.
+  ```
+  $ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+  ```
+
+  Solution 4: If you've got error like this: ``` CMake Error at CMakeLists.txt:1 (cmake_minimum_required): CMake 3.21.2 or higher is required.  You are running version 3.11.2 ```. Then download dmg installer from CMake web site and perfom manual instalation. And run `$ ./prepare.sh` again.
   ```
   https://cmake.org/download/
   ```
 
-  Solution 4: If you've got error like this: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Go to folded ```core/external/qtbase-ios/``` and delete all folders starting with ```upstream```.  And run `$ ./prepare.sh` again.
+  Solution 5: If you've got error like this: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Go to folded ```core/external/qtbase-ios/``` and delete all folders starting with ```upstream```.  And run `$ ./prepare.sh` again.
   
   
 9. Open `osmand.xcworkspace` in Xcode
 10. First build.
   Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Select as target your device or as one of iOS simulators. But don't use default 'Any iOS Device (arm64)'. Build the project (play button).
-11. Troubleshooting.
+11. Troubleshooting - cleaning temp files.
   - In case of build errors you can press in Xcode: ```Product -> Clean build folder```
-  - Close Xcode.  Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists).
+  - Close Xcode.
+  - Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists).
+  - Go to folded ```core/external/qtbase-ios/``` and delete all folders starting with ```upstream```.
   - Delete Xcode DerivedData folder: ``` rm -rf ~/Library/Developer/Xcode/DerivedData ```
   - Check that all repositories are up to date and on correct branches.
   - Restart your computer. (Yes, it can help).
-  - Then run `$ ./prepare.sh` and try to build the project again.
+  - Then run `$ ./prepare.sh`
+  - Open XCode and try to build the project again.
   
 12. Troubleshooting (m1 mac)
   - In case of ```ld: library not found for -lOsmAndCore_static_standalone```:
   - Project Navigator -> OsmAnd_projects -> OsmAnd_projects (in Project/Targets list) -> Build settings -> All -> Architectures -> Excluded Architectures -> Debug
   - Add string field of type ```Any IOS Simulator SDK``` with value ```arm64```. (you will need to add it after each prepare.sh run)
-  - Build project. In case of errors, delete folders ```Baked``` and ```Binaries``` and run ```prepare.sh``` once again.
+  - Build project. In case of errors, make all instructions from ```11. Troubleshooting - cleaning temp files.``` and ```prepare.sh``` once again.
 
-13. Debug Qt (optional). If you want to see Qt values in debug mode run this:
+13. Kotlin debug addon (optional)
+```
+$ brew install xcode-kotlin
+$ xcode-kotlin sync
+```
+
+15. Qt debug addon (optional). If you want to see Qt values in debug mode run this:
   ```
 $ mkdir -p ~/qtlldb
 $ git clone https://github.com/gbooker/lldb-qt-formatters ~/qtlldb

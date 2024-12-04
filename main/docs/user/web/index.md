@@ -21,13 +21,17 @@ In this section you find description of our [Web Map service](https://osmand.net
 
 This section explains how to log in and sign up at [www.osmand.net/map](https://osmand.net/map/) and highlights the benefits users receive after registering.
 
-### [Plan Route](./planner.md)
-
-This section provides information on planning routes or creating navigation using different profiles.
-
 ### [Map](./web-map.md)
 
 This section details additional map data such as Favorites, Personal Tracks, and Weather Layers.
+
+### [User Data](./web-userdata.mdx)
+
+GPX tracks and Favorites of user on the map.
+
+### [Plan Route](./planner.md)
+
+This section provides information on planning routes or creating navigation using different profiles.
 
 ### [Search](./web-search.md)
 
