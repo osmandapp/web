@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Map
-title: Map on the Website
+title: Global Map on the Website
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,9 +17,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-
-## Overview
-
 :::info
 The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
 **Therefore, the layout and operation of some functions on the site may be different from those described in this article.**
@@ -27,31 +24,48 @@ The *[osmand.net/map](https://osmand.net/map/)* site is currently being develope
 We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
 
+
+## Overview
+
+The OsmAnd web map is a global map based on [OpenStreetMap (OSM)](https://www.openstreetmap.org/) data. It allows users to view their own data, such as tracks and favorites, create navigation routes for any profile, and access additional features like weather, public GPX tracks, POIs, and Wikimedia images. Explore and customize your data experience directly in your browser.
+
+![OsmAnd Web all](@site/static/img/web/web_map_all.png)
+
+
 ## Map Context Menu
 
 For opening it right click anywhere on the map. This menu includes the following actions:
 
-- **Where am I** – a quick search for your current location on the map.
-- **Open weather** – opens the Weather menu.
-- **Create new route** – opens the Plan a route tool with the selected location.
-- **Add Favorite** – allow you mark and set a point of interest as a favorite for easy access.
-- **Directions from** – sets the start of navigation from the selected point.
-- **Directions to** – sets directions to the selected point.
-- **Cope coordinates** – allows you to copy the coordinates for external use.
-- **Add pin** – allows you to place a pin to mark a location on the map.
-- **Show regions** – displays the regions associated with the selected point.
+- **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
+- **Open weather** – Access the [Weather menu](#weather) to view weather details.
+- **Create new route** – Opens the ["Plan a route" tool](../web/planner.md#create-track-and-local) with the selected location as the starting or destination point.
+- **Add Favorite** –  Allows you to create and save a [favorite](../web/web-userdata.mdx#add--edit-favorite) at any point on the map for easy access.
+- **Directions from** –  Sets the selected point as the [starting location](../web/planner.md#navigation-route) for navigation.
+- **Directions to** – Sets the selected point as the [destination for navigation](../web/planner.md#navigation-route).
+- **Copy coordinates** – Copies the coordinates of the selected point for external use.
+- **Add pin** – Places a pin to mark a location on the map. ([Example](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
+- **Show regions** – Displays the regions associated with the selected location.
 
 ![Map Context menu](@site/static/img/web/map_context_menu.png)
 
 
 ## Weather
 
-The [Weather plugin](../plugins/weather.md) is a paid feature of the OsmAnd app. For the web version, Weather is a free feature with such capabilities as:
+Weather on the OsmAnd web is available from two forecast sources: GFS (default) and ECMWF. To switch the forecast source, click the umbrella button in the weather menu.
 
-- Enable weather layers on the map: *Temperature, Pressure, Wind, Cloud cover and Precipitation* using the menu on the left or right.
-- Enable the display of the weather forecast for the day or week (the forecast step is 3 hours).  
+- View weather forecasts for the day or week, with a 3-hour forecast step.
+
+
+The Weather menu displays your coordinates, current weather data (temperature, precipitation, wind, air pressure, and cloud cover) for the current time and date or a selected time. You can adjust the date and time using the time tool in the weather menu.
+
+To view weather layers on the map, use the layers button to select which layers (Temperature, Pressure, Wind, Cloud Cover, or Precipitation) to display on the map:
+- Enable weather layers on the map, including *Temperature, Pressure, Wind, Cloud cover and Precipitation* using the menu on the left or right.
 
 ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
+
+Click on the forecast data in the menu to view the 7-day forecast (in both graph and list format) for your location.
+
+![OsmAnd Web Weather](@site/static/img/web/web_7day.png)
 
 
 ## Configure map
