@@ -118,7 +118,7 @@ export default function SearchResultItem({ item, searchValue, setSearchValue, ty
             : 'se-search-result-item';
 
     function clickHandler() {
-        if (item.locDist) {
+        if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {
             // click on item
             ctx.setCurrentObjectType(POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
             const poi = {
