@@ -117,7 +117,7 @@ OsmAnd uses custom tag names for vehicle metrics in [**track recording**](../plu
 
 ## Widgets
 
-*Menu → Configure screen → Widgets → Left/Right/Top/Bottom panels → [Vehicle Metrics](../widgets/info-widgets.md#vehicle-metrics-widgets)*
+*Menu → Configure screen → Widgets → Choose a panel → [Vehicle Metrics](../widgets/info-widgets.md#vehicle-metrics-widgets)*
 
 | | |
 |--|--|
@@ -130,7 +130,7 @@ List of availabe widgets is [here](#metrics-list) (except "VIN").
 
 ### Widgets Settings
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="obd_widget_group"/> → ⚙️ or <Translate android="true" ids="shared_string_settings"/>*
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="obd_widget_group"/> → ⚙️ or <Translate android="true" ids="shared_string_settings"/>*
 
 Some Vehicle Metrics widgets offer a display mode option:
 

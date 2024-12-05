@@ -39,7 +39,7 @@ You can also select to display one or two markers. Read more about widget settin
 
 | | |
 |------------|------------|
-| Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_markers_bar"/>* |
+| Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_markers_bar"/>* |
 | By tapping | The visible part of the map shifts to the marker location. |
 | Long tap + move | To measure the distance and see the direction from a particular point on the map to the tracked marker, you need to make a long tap and immediately slightly move the map position (the context menu should not appear). |
 | Approach marker | In case your location is within a small radius of the map marker (**< 50 m**), in the widget field you can see a checkmark button to quickly delete the map marker (mark as passed). The checked marker is replaced by the next marker in the list of markers.  |
@@ -54,7 +54,7 @@ You can also select to display one or two markers. Read more about widget settin
 
 | | |
 |------------|------------|
-| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_markers_bar"/>*|
+| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_markers_bar"/>*|
 | By tapping | The visible part of the map shifts to the marker location. |
 | By tapping | Changing between "Distance" / "Estimated time of arrival" (Switch mode). |
 | Approach marker | In case your location is within a small radius of the map marker (**< 50 m**), in the widget field you can see a checkmark button to quickly delete the map marker (mark as passed). The checked marker is replaced by the next marker in the list of markers.  |
@@ -103,7 +103,7 @@ You can also select to display one or two markers. Read more about widget settin
 
 | | |
 |------------|------------|
-| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_markers_bar"/>*  |
+| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_markers_bar"/>*  |
 | By tapping | The visible part of the map shifts to the marker location. |
 | By tapping | Changing between "Distance" / "Estimated time of arrival" (Switch mode). |
 | Distance format  | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
