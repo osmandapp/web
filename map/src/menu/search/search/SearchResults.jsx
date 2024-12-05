@@ -1,16 +1,11 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import CustomInput from './CustomInput';
-import { formattingPoiType, getCatPoiIconName, getSearchResultIcon } from '../../../manager/PoiManager';
+import PoiManager, { formattingPoiType, getCatPoiIconName, getSearchResultIcon } from '../../../manager/PoiManager';
 import SearchResultItem from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
-import {
-    SEARCH_ICON_MAP_OBJ,
-    SEARCH_ICON_MAP_OBJ_URL,
-    SEARCH_LAYER_ID,
-    SEARCH_TYPE_CATEGORY,
-} from '../../../map/layers/SearchLayer';
+import { iconPathMap, SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
@@ -19,11 +14,17 @@ import { getDistance } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
 import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 import useHashParams from '../../../util/hooks/useHashParams';
-import { CATEGORY_ICON } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { SEARCH_ICON_BRAND } from '../../../manager/SearchManager';
+import {
+    CATEGORY_ICON,
+    CATEGORY_TYPE,
+    FINAL_POI_ICON_NAME,
+    ICON_KEY_NAME,
+    POI_ICON_NAME,
+    TYPE_OSM_TAG,
+    TYPE_OSM_VALUE,
+} from '../../../infoblock/components/wpt/WptTagsProvider';
+import { getIconByType, SEARCH_ICON_BRAND } from '../../../manager/SearchManager';
 
-export const SEARCH_RESULT_TYPE_POI = 'POI';
-export const SEARCH_RESULT_TYPE_POI_CATEGORY = 'POI_TYPE';
 export const ZOOM_ERROR = 'Please zoom in closer';
 const MIN_SEARCH_ZOOM = 8;
 const EMPTY_SEARCH_RESULT = 'empty';
@@ -74,20 +75,28 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         const promises = features?.map(async (f) => {
             if (!f?.properties) return;
             const props = f.properties;
-            const type = props['web_type'];
-            if (type === SEARCH_RESULT_TYPE_POI || type === SEARCH_RESULT_TYPE_POI_CATEGORY) {
+            const type = props[CATEGORY_TYPE];
+            if (type === searchTypeMap.POI_TYPE || type === searchTypeMap.POI) {
                 if (props[CATEGORY_ICON] === SEARCH_ICON_BRAND) {
                     f.icon = await getSearchResultIcon({ result: SEARCH_ICON_BRAND, ctx });
                     return;
                 }
                 const iconName = getCatPoiIconName(props);
                 f.icon = await getSearchResultIcon({ result: iconName, ctx });
-            } else {
-                f.icon = await getSearchResultIcon({
-                    result: SEARCH_ICON_MAP_OBJ,
-                    ctx,
-                    iconUrl: SEARCH_ICON_MAP_OBJ_URL,
+                f.properties[FINAL_POI_ICON_NAME] = PoiManager.getIconNameForPoiType({
+                    iconKeyName: f.properties[ICON_KEY_NAME],
+                    typeOsmTag: f.properties[TYPE_OSM_TAG],
+                    typeOsmValue: f.properties[TYPE_OSM_VALUE],
+                    iconName: f.properties[POI_ICON_NAME],
                 });
+            } else {
+                const finalIconName = await getIconByType(type);
+                f.icon = await getSearchResultIcon({
+                    result: finalIconName,
+                    ctx,
+                    iconUrl: iconPathMap[finalIconName],
+                });
+                f.properties[FINAL_POI_ICON_NAME] = finalIconName;
             }
         });
         await Promise.all(promises);
@@ -234,7 +243,6 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                                     typeItem={
                                         ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY ? POI_LAYER_ID : SEARCH_LAYER_ID
                                     }
-                                    searchValue={value}
                                     setSearchValue={setSearchValue}
                                 />
                             ))}

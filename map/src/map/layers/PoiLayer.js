@@ -48,12 +48,14 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
 
     const mainMarkersLayers = await Promise.all(
         mainMarkers?.map(async (poi) => {
-            const finalIconName = PoiManager.getIconNameForPoiType({
-                iconKeyName: poi.properties[ICON_KEY_NAME],
-                typeOsmTag: poi.properties[TYPE_OSM_TAG],
-                typeOsmValue: poi.properties[TYPE_OSM_VALUE],
-                iconName: poi.properties[POI_ICON_NAME],
-            });
+            const finalIconName =
+                poi.properties[FINAL_POI_ICON_NAME] ??
+                PoiManager.getIconNameForPoiType({
+                    iconKeyName: poi.properties[ICON_KEY_NAME],
+                    typeOsmTag: poi.properties[TYPE_OSM_TAG],
+                    typeOsmValue: poi.properties[TYPE_OSM_VALUE],
+                    iconName: poi.properties[POI_ICON_NAME],
+                });
             const icon = await getPoiIcon(poi, innerCache, finalIconName);
             const coord = poi.geometry.coordinates;
             return new L.Marker(new L.LatLng(coord[1], coord[0]), {
@@ -80,7 +82,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
             marker,
             setSelectedId: ctx.setSelectedPoiId,
             mainStyle: true,
-            text: marker.options['web_poi_name'],
+            text: marker.options[POI_NAME],
             latlng: marker._latlng,
             iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
             map,
@@ -93,7 +95,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
         createHoverMarker({
             marker,
             setSelectedId: ctx.setSelectedPoiId,
-            text: marker.options['web_poi_name'],
+            text: marker.options[POI_NAME],
             latlng: marker._latlng,
             map,
             ctx,
