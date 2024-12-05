@@ -9,6 +9,7 @@ import _ from 'lodash';
 import { formattingPoiType } from './PoiManager';
 import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
 import i18n from 'i18next';
+import { SEARCH_ICON_MAP_OBJ, typeIconMap } from '../map/layers/SearchLayer';
 
 export const WIKI_IMAGE_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
 export const SEARCH_ICON_BRAND = 'brand';
@@ -51,6 +52,10 @@ export async function fetchPhotoProperties(photo) {
         console.error('Failed to fetch photo properties:', error);
         return photo;
     }
+}
+
+export function getIconByType(type) {
+    return typeIconMap[type] ?? SEARCH_ICON_MAP_OBJ;
 }
 
 /**

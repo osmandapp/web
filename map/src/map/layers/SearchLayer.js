@@ -13,6 +13,7 @@ import { getPoiIcon } from './PoiLayer';
 import L from 'leaflet';
 import {
     CATEGORY_NAME,
+    CATEGORY_TYPE,
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
     POI_ICON_NAME,
@@ -27,12 +28,36 @@ import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../uti
 import styles from '../../menu/search/search.module.css';
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import { getIconByType } from '../../manager/SearchManager';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
-export const SEARCH_ICON_MAP_OBJ = 'address';
-export const SEARCH_ICON_MAP_OBJ_URL = '/map/images/map_icons/ic_action_marker_dark.svg';
+
+export const SEARCH_ICON_MAP_OBJ = 'location';
+export const SEARCH_ICON_MAP_BUILDING = 'house';
+export const SEARCH_ICON_MAP_STREET = 'street';
+
 export const ZOOM_TO_MAP = 17;
+
+export const searchTypeMap = {
+    LOCATION: 'LOCATION',
+    HOUSE: 'HOUSE',
+    STREET: 'STREET',
+    POI: 'POI',
+    POI_TYPE: 'POI_TYPE',
+};
+
+export const iconPathMap = {
+    [SEARCH_ICON_MAP_OBJ]: '/map/images/map_icons/ic_action_marker_dark.svg',
+    [SEARCH_ICON_MAP_BUILDING]: '/map/images/map_icons/ic_action_building.svg',
+    [SEARCH_ICON_MAP_STREET]: '/map/images/map_icons/ic_action_street_name.svg',
+};
+
+export const typeIconMap = {
+    [searchTypeMap.LOCATION]: SEARCH_ICON_MAP_OBJ,
+    [searchTypeMap.HOUSE]: SEARCH_ICON_MAP_BUILDING,
+    [searchTypeMap.STREET]: SEARCH_ICON_MAP_STREET,
+};
 
 export function findFeatureGroupById(map, id) {
     let foundGroup = null;
@@ -191,20 +216,22 @@ export default function SearchLayer() {
 
         const mainMarkersLayers = await Promise.all(
             mainMarkers.map(async (obj) => {
-                const objType = obj.properties['web_type'];
-                let title = obj.properties['web_name'];
-                let finalIconName;
+                const objType = obj.properties[CATEGORY_TYPE];
+                let title = obj.properties[CATEGORY_NAME];
+                let finalIconName = obj.properties[FINAL_POI_ICON_NAME] ?? null;
                 let icon;
-                if (objType === 'POI') {
-                    finalIconName = PoiManager.getIconNameForPoiType({
-                        iconKeyName: obj.properties[ICON_KEY_NAME],
-                        typeOsmTag: obj.properties[TYPE_OSM_TAG],
-                        typeOsmValue: obj.properties[TYPE_OSM_VALUE],
-                        iconName: obj.properties[POI_ICON_NAME],
-                    });
+                if (objType === searchTypeMap.POI) {
+                    finalIconName =
+                        finalIconName ??
+                        PoiManager.getIconNameForPoiType({
+                            iconKeyName: obj.properties[ICON_KEY_NAME],
+                            typeOsmTag: obj.properties[TYPE_OSM_TAG],
+                            typeOsmValue: obj.properties[TYPE_OSM_VALUE],
+                            iconName: obj.properties[POI_ICON_NAME],
+                        });
                     icon = await getPoiIcon(obj, innerCache, finalIconName);
                 } else {
-                    finalIconName = SEARCH_ICON_MAP_OBJ;
+                    finalIconName = getIconByType(objType);
                     icon = await getSearchIcon(obj, innerCache, finalIconName);
                 }
                 const coord = obj.geometry.coordinates;
@@ -232,7 +259,7 @@ export default function SearchLayer() {
                 marker,
                 setSelectedId: ctx.setSelectedPoiId,
                 mainStyle: true,
-                text: marker.options['web_poi_name'] ?? marker.options['web_name'],
+                text: marker.options[POI_NAME] ?? marker.options[CATEGORY_NAME],
                 latlng: marker._latlng,
                 iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
                 map,
@@ -245,7 +272,7 @@ export default function SearchLayer() {
             createHoverMarker({
                 marker,
                 setSelectedId: ctx.setSelectedPoiId,
-                text: marker.options['web_poi_name'] ?? marker.options['web_name'],
+                text: marker.options[POI_NAME] ?? marker.options[CATEGORY_NAME],
                 latlng: marker._latlng,
                 map,
                 ctx,
@@ -268,12 +295,13 @@ export default function SearchLayer() {
         if (cache[finalIconName]) {
             svgData = cache[finalIconName];
         } else {
-            if (finalIconName === SEARCH_ICON_MAP_OBJ) {
-                const response = await fetch(SEARCH_ICON_MAP_OBJ_URL);
+            const svgIconPath = iconPathMap[finalIconName];
+            if (svgIconPath) {
+                const response = await fetch(svgIconPath);
                 svgData = await response.text();
                 ctx.setPoiIconCache((prevState) => ({
                     ...prevState,
-                    [SEARCH_ICON_MAP_OBJ]: svgData,
+                    [finalIconName]: svgData,
                 }));
             }
         }

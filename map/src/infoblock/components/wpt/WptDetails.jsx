@@ -82,14 +82,14 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
-import { SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
+import { iconPathMap, SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
 import capitalize from 'lodash/capitalize';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
-    const iconSvg = icon === SEARCH_ICON_MAP_OBJ ? ctx.poiIconCache[SEARCH_ICON_MAP_OBJ] : null;
+    const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
     let coloredSvg = null;
     if (iconSvg) {
-        changeIconColor(iconSvg, DEFAULT_ICON_COLOR);
+        coloredSvg = changeIconColor(iconSvg, DEFAULT_ICON_COLOR);
     }
 
     const iconHtml = createPoiIcon({
