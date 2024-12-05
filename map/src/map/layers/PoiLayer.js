@@ -71,7 +71,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
     let simpleMarkersArr = new L.FeatureGroup();
 
     for (const place of secondaryMarkers) {
-        const circle = createSecondaryMarker(place);
+        const circle = await createSecondaryMarker(place);
         if (circle) {
             simpleMarkersArr.addLayer(circle);
         }
