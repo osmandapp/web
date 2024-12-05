@@ -54,7 +54,7 @@ export async function fetchPhotoProperties(photo) {
     }
 }
 
-export async function getIconByType(type) {
+export function getIconByType(type) {
     return typeIconMap[type] ?? SEARCH_ICON_MAP_OBJ;
 }
 

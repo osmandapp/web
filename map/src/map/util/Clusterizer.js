@@ -259,7 +259,7 @@ function createOtherMarkersArr({
     return secondaryMarkers;
 }
 
-export async function createSecondaryMarker(obj) {
+export function createSecondaryMarker(obj) {
     if (!obj.geometry || !obj.properties) {
         return null;
     }
@@ -275,7 +275,7 @@ export async function createSecondaryMarker(obj) {
                 iconName: obj.properties[POI_ICON_NAME],
             });
         } else {
-            finalIconName = await getIconByType(obj.properties[CATEGORY_TYPE]);
+            finalIconName = getIconByType(obj.properties[CATEGORY_TYPE]);
         }
     }
 

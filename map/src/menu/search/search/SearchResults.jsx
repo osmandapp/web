@@ -90,7 +90,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                     iconName: f.properties[POI_ICON_NAME],
                 });
             } else {
-                const finalIconName = await getIconByType(type);
+                const finalIconName = getIconByType(type);
                 f.icon = await getSearchResultIcon({
                     result: finalIconName,
                     ctx,

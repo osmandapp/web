@@ -231,7 +231,7 @@ export default function SearchLayer() {
                         });
                     icon = await getPoiIcon(obj, innerCache, finalIconName);
                 } else {
-                    finalIconName = await getIconByType(objType);
+                    finalIconName = getIconByType(objType);
                     icon = await getSearchIcon(obj, innerCache, finalIconName);
                 }
                 const coord = obj.geometry.coordinates;
@@ -248,7 +248,7 @@ export default function SearchLayer() {
         let simpleMarkersArr = new L.FeatureGroup();
 
         for (const place of secondaryMarkers) {
-            const circle = await createSecondaryMarker(place);
+            const circle = createSecondaryMarker(place);
             if (circle) {
                 simpleMarkersArr.addLayer(circle);
             }
