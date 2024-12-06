@@ -27,7 +27,7 @@ Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../ma
 
 ## Download
 
-Start loading maps from the [#initial setup screen](initial-setup-screen), or go to the main *side menu* *→* [Maps & Resources](#maps-and-resources) and select the required maps from the general list, or [select a region](#select-on-the-map) directly on the map by tapping the region you need.
+Start loading maps from the [initial setup screen](#initial-setup-screen), or go to the main *side menu* *→* [Maps & Resources](#maps-and-resources) and select the required maps from the general list, or [select a region](#select-on-the-map) directly on the map by tapping the region you need.
 
 
 ### Initial Setup Screen
