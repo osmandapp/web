@@ -7,8 +7,7 @@ import { useTranslation } from 'react-i18next';
 import _ from 'lodash';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import { SEARCH_RESULT_TYPE_POI, SEARCH_RESULT_TYPE_POI_CATEGORY } from './SearchResults';
-import { getObjIdSearch, SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
+import { getObjIdSearch, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
 import {
     CATEGORY_NAME,
     CATEGORY_TYPE,
@@ -34,7 +33,7 @@ export function preparedType(type, t) {
 
 export function getPropsFromSearchResultItem(props, t) {
     let type, name;
-    if (props[CATEGORY_TYPE] === SEARCH_RESULT_TYPE_POI) {
+    if (props[CATEGORY_TYPE] === searchTypeMap.POI) {
         name = props[POI_NAME];
         type = props[POI_SUBTYPE] ?? props[POI_TYPE];
         if (name === '') {
@@ -44,7 +43,7 @@ export function getPropsFromSearchResultItem(props, t) {
         type = preparedType(type, t);
     } else {
         name = props[CATEGORY_NAME];
-        if (props[CATEGORY_TYPE] === SEARCH_RESULT_TYPE_POI_CATEGORY) {
+        if (props[CATEGORY_TYPE] === searchTypeMap.POI_TYPE) {
             type = getPoiParentCategory(props, t);
         } else {
             type = props[CATEGORY_TYPE]?.toLowerCase();
@@ -60,7 +59,7 @@ export function getPropsFromSearchResultItem(props, t) {
     return { name, type };
 }
 
-export default function SearchResultItem({ item, searchValue, setSearchValue, typeItem }) {
+export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -113,12 +112,12 @@ export default function SearchResultItem({ item, searchValue, setSearchValue, ty
     }
 
     const id =
-        item.properties['web_type'] === SEARCH_RESULT_TYPE_POI_CATEGORY
-            ? `se-search-result-${item.properties['web_name']}`
+        item.properties[CATEGORY_TYPE] === searchTypeMap.POI_TYPE
+            ? `se-search-result-${item.properties[CATEGORY_NAME]}`
             : 'se-search-result-item';
 
     function clickHandler() {
-        if (item.locDist) {
+        if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {
             // click on item
             ctx.setCurrentObjectType(POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
             const poi = {
@@ -139,8 +138,8 @@ export default function SearchResultItem({ item, searchValue, setSearchValue, ty
             } else {
                 // search by brand
                 setSearchValue({
-                    query: item.properties['web_name'],
-                    key: item.properties['web_name'],
+                    query: item.properties[CATEGORY_NAME],
+                    key: item.properties[CATEGORY_NAME],
                     type: SEARCH_TYPE_CATEGORY,
                 });
             }

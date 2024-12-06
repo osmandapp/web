@@ -2,6 +2,8 @@ import { ListItemText, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import contextMenuStyles from '../../../styles/ContextMenuStyles';
 import AppContext from '../../../../context/AppContext';
+import { getPropsFromSearchResultItem } from '../../../../menu/search/search/SearchResultItem';
+import { useTranslation } from 'react-i18next';
 
 export default function FavoriteName({
     favoriteName,
@@ -13,6 +15,8 @@ export default function FavoriteName({
 }) {
     const menuStyles = contextMenuStyles();
     const ctx = useContext(AppContext);
+
+    const { t } = useTranslation();
 
     const [nameAlreadyExist, setNameAlreadyExist] = useState(false);
     const [favNames, setFavNames] = useState([]);
@@ -57,7 +61,9 @@ export default function FavoriteName({
 
     useEffect(() => {
         if (ctx.selectedWpt?.poi) {
-            setFavoriteName(ctx.selectedWpt.poi?.options?.title);
+            const { options: objOptions } = ctx.selectedWpt.poi;
+            const { name } = getPropsFromSearchResultItem(objOptions, t);
+            setFavoriteName(name);
         }
     }, [ctx.selectedWpt]);
 

@@ -1,7 +1,17 @@
 import L from 'leaflet';
 import styles from '../../menu/search/search.module.css';
 import { getPointLatLon } from './TrackLayerProvider';
-import { getObjIdSearch } from '../layers/SearchLayer';
+import { getObjIdSearch, searchTypeMap } from '../layers/SearchLayer';
+import {
+    CATEGORY_TYPE,
+    FINAL_POI_ICON_NAME,
+    ICON_KEY_NAME,
+    POI_ICON_NAME,
+    TYPE_OSM_TAG,
+    TYPE_OSM_VALUE,
+} from '../../infoblock/components/wpt/WptTagsProvider';
+import PoiManager from '../../manager/PoiManager';
+import { getIconByType } from '../../manager/SearchManager';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
 
@@ -254,10 +264,26 @@ export function createSecondaryMarker(obj) {
         return null;
     }
     const latlng = L.latLng(obj.geometry.coordinates[1], obj.geometry.coordinates[0]);
+
+    let finalIconName = obj.properties[FINAL_POI_ICON_NAME];
+    if (!finalIconName) {
+        if (searchTypeMap.POI === obj.properties[CATEGORY_TYPE]) {
+            finalIconName = PoiManager.getIconNameForPoiType({
+                iconKeyName: obj.properties[ICON_KEY_NAME],
+                typeOsmTag: obj.properties[TYPE_OSM_TAG],
+                typeOsmValue: obj.properties[TYPE_OSM_VALUE],
+                iconName: obj.properties[POI_ICON_NAME],
+            });
+        } else {
+            finalIconName = getIconByType(obj.properties[CATEGORY_TYPE]);
+        }
+    }
+
     return L.circleMarker(latlng, {
         ...obj.properties,
         id: obj.properties.id,
         idObj: getObjIdSearch(obj),
+        [FINAL_POI_ICON_NAME]: finalIconName,
         fillOpacity: 0.9,
         radius: 5,
         color: '#ffffff',

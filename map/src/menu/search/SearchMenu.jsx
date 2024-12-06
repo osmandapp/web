@@ -47,10 +47,6 @@ export default function SearchMenu() {
     const { t } = useTranslation();
 
     useEffect(() => {
-        ctx.setCurrentObjectType(OBJECT_SEARCH);
-    }, []);
-
-    useEffect(() => {
         if (ctx.categoryIcons) {
             setSearchCategoriesIcons((prevIcons) => ({
                 ...prevIcons,
