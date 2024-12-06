@@ -95,8 +95,8 @@ Only the OsmAnd development plugin and the OSM editing plugin change settings fo
 
 Most plugins provide specific profile or global settings, which can be accessed via:
 
-- *Main menu → Plugins → Plugin name → Settings (&#x2699 for ios)* or  
-- *Main menu → Settings → Profile → [Plugin settings](../personal/profiles.md#plugin-settings)*.  
+- *Main Menu → Plugins → Plugin name → Settings (&#x2699 for ios)* or  
+- *Main Menu → Settings → Profile → [Plugin settings](../personal/profiles.md#plugin-settings)*.  
 
 <Tabs groupId="operating-systems">
 
@@ -161,7 +161,7 @@ Nautical map view provides detailed graphical representation of oceans, seas, co
 
 ### [Ski Map View](./ski-maps.md)
 
-Ski map view uses winter colors, shows downhill or cross-country pistes, cable cars, chairlifts, and other facilities and services, which can be used to navigate recreation areas, ski resorts and terrain parks.
+Ski Map View shows winter colors and pistes downhill or cross-country, as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.
 
 ### [Audio/Video Notes](./audio-video-notes.md)
 

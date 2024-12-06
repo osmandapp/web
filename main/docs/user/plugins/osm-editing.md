@@ -134,7 +134,7 @@ The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you
 
 </Tabs>
 
-You can enable or disable as a separate layer the display of OSM modifications such as *OSM notes* (online), *OSM edits*, *Fixme tags*, *Note tags*, *Icons at low zooms*, in the [Configure map](../map/configure-map-menu.md) section of the main menu.  
+You can enable or disable as a separate layer the display of OSM modifications such as *OSM notes* (online), *OSM edits*, *Fixme tags*, *Note tags*, *Icons at low zooms*, in the [Configure map](../map/configure-map-menu.md) section of the *Main Menu*.  
 
 
 ## Create / Modify POI  
@@ -260,7 +260,7 @@ Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) 
 To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks), follow the steps below::  
 
 - Find the required track in [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](../personal/tracks/manage-tracks.md).  
-- Tap the three-dot menu next to the track name and select *Export*.
+- Tap the *three-dot menu* next to the track name and select *Export*.
 
 **Settings:**
 

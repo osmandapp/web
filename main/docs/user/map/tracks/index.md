@@ -24,7 +24,7 @@ OsmAnd has many powerful features to display various routes on the map. Routes c
 
 [Tracks (GPX)](#display-tracks-on-the-map) - recorded or planned trip saved in [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). This kind of route could be imported from the external source, created in the application, or recorded by the user. GPX could contain one of 3 different types of data, or all of them:
 
-- Track as a line (***Geometry***). The file has a ```<trkpt>``` points array, each point has the location and optionally time, speed, altitude, and other attributes. These tracks are displayed on the map as solid lines.
+- Track as a line (***Geometry***). The file has a ```<trkpt>``` points array, each point has the location and optional time, speed, altitude, and other attributes. These tracks are displayed on the map as solid lines.
 - Track as a route (***Route***). The file has a ```<rtept>``` points array, each point described as an intermediate point of the route. It depends on how points within a route should be connected, either as small route segments or via a straight line. These tracks are displayed on the map as dashed lines.
 - Waypoints (***Points***). The file has ```<wpt>``` points with attributes. Waypoints are displayed as circular points on the map. You can tap them to get additional information.
 
@@ -83,7 +83,7 @@ The *Configure Map* option enables you to quickly manage the display of all rece
 
 In [My Places *→* Tracks tab](../../personal/tracks/manage-tracks.md#manage-tracks) to display the track on the map, you need to:
 
-- *Android* - tap the three-dot menu in the field with the required track.
+- *Android* - tap the *three-dot menu* in the field with the required track.
 - *iOS* - long tap the required track in the list.
 
 

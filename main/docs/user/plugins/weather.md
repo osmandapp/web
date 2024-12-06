@@ -32,7 +32,7 @@ The following settings are *required* to display the Weather on the OsmAnd map:
 
 **1.** [Purchase **OsmAnd Pro subscription**](../purchases/).
 
-**2.** [Enable](../plugins/#enable--disable) the Weather plugin in the *Plugins* section of the main menu.
+**2.** [Enable](../plugins/#enable--disable) the Weather plugin in the *Plugins* section of the *Main Menu*.
 
 **3.** [Select the **units of measurement**](#weather-settings) for the weather occurrences.
 
@@ -110,16 +110,16 @@ In this menu, you can change the **visibility** and [settings](#weather-settings
 
 <TabItem value="android" label="Android">  
 
-- *Main menu → Plugins → Weather → Settings* 
-- *Main menu → Settings → Profile → Plugin settings → Weather*
+- *Main Menu → Plugins → Weather → Settings*
+- *Main Menu → Settings → Profile → Plugin settings → Weather*
 
 ![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS"> 
+<TabItem value="ios" label="iOS">
 
-- *Main menu → Settings → Profile → Plugins → Weather*
+- *Main Menu → Settings → Profile → Plugins → Weather*
 
 ![Weather Settings iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
 
@@ -178,7 +178,7 @@ To get comprehensive weather information, you can use the map layers separately 
 
 ![QA Weather layers](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
 
-To switch the visibility of weather layers, you can use the *Quick Action* buttons on the map screen. The general settings for showing or hiding layers can be found in the separate [Weather section](#weather-forecast-screen) of the main menu. In the [Quick Action](../widgets/quick-action.md#configure-map) article, you will find a list of the layers available for display. If you need quick access to this map configuration, use the *Custom Button* tool.
+To switch the visibility of weather layers, you can use the *Quick Action* buttons on the map screen. The general settings for showing or hiding layers can be found in the separate [Weather section](#weather-forecast-screen) of the *Main Menu*. In the [Quick Action](../widgets/quick-action.md#configure-map) article, you will find a list of the layers available for display. If you need quick access to this map configuration, use the *Custom Button* tool.
 
 - Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
 - Add one or more QA buttons to change the visibility of a particular weather layer.
@@ -237,7 +237,7 @@ OsmAnd generates a new forecast every 6 hours.
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="shared_string_weather"/>*
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="shared_string_weather"/>*
 
 ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
@@ -245,7 +245,7 @@ OsmAnd generates a new forecast every 6 hours.
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="shared_string_weather"/>*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="shared_string_weather"/>*
 
 ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
@@ -256,7 +256,7 @@ OsmAnd generates a new forecast every 6 hours.
 [Weather widgets](../widgets/info-widgets.md#weather-widgets) such as Temperature, Air Pressure, Wind, Cloud, and Precipitation show the current weather data for the **central point on the map**.
 
 - Weather widgets are only displayed when the [Weather screen](#weather-forecast-screen) is turned on.
-- To activate weather widgets, select the *Configure screen* main menu item, the panel on which to place them, and the required widgets from the list.
+- To activate weather widgets, select the *Configure screen* Main Menu item, the panel on which to place them, and the required widgets from the list.
 
 
 ## Related Articles

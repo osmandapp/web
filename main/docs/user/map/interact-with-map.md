@@ -186,7 +186,7 @@ Creates a smooth map panning effect versus the *[My Position](../personal/profil
 
 External input device buttons provide a convenient and efficient way to interact with the map and the OsmAnd application interface.  They are located on external devices, such as **Bluetooth or other types of keyboards**, **specialized buttons on vehicle navigation devices**, or [WunderLINQ](https://blackboxembedded.com/) and [Parrot](https://www.parrot.com/en) controllers.  
 
-One of the main functions of buttons on external input devices is to zoom in and out of the map. They also allow you to navigate the map and change its orientation without having to tap and gesture on the screen. Buttons on external input devices support many other functions, such as opening the main menu.
+One of the main functions of buttons on external input devices is to zoom in and out of the map. They also allow you to navigate the map and change its orientation without having to tap and gesture on the screen. Buttons on external input devices support many other functions, such as opening the *Main Menu*.
 
 :::note
 The keyboard remains functional even when the *External input devices* option is turned off, and *None* is selected.

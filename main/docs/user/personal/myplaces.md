@@ -40,11 +40,11 @@ My Places is the central hub of the OsmAnd application for managing and customiz
 </Tabs>
 
 [***Import and export data***](../personal/import-export.md).  
-All data stored in the *My Places* menu can be moved using a special OSF format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.  
+All data stored in the *My Places* menu can be moved using a special `.osf` format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.  
 **Go to** *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* section and select whether to export or import data. If you select *export*, you will need to expand *My Places group* and check the required data.
 
 [***Maps & Resources***](../personal/maps-resources.md).  
-*Maps & Resources* main menu item of the OsmAnd application provides access to data management from the *My Places* section. The [*Local*](../personal/maps-resources.md#local) tab shows you how much space is occupied by all existing OsmAnd data on your device, and the *My Places* section is in particular. You can use it to get detailed information about your data and access to manage it. The section can only contain items for which data has been downloaded.  
+*Maps & Resources* *Main Menu* item of the OsmAnd application provides access to data management from the *My Places* section. The [*Local*](../personal/maps-resources.md#local) tab shows you how much space is occupied by all existing OsmAnd data on your device, and the *My Places* section is in particular. You can use it to get detailed information about your data and access to manage it. The section can only contain items for which data has been downloaded.  
 **Go to** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Check and manage your data.
 
 
@@ -132,7 +132,7 @@ OsmAnd has various features for creating, saving, and displaying [*tracks*](../p
 - **Tracks tab**. All tracks ever recorded, created, or imported are automatically displayed in the *My Places* folder in the *Tracks* tab. They are organized by folder or displayed in a list below them.
 - **Create a track**. You can create a new track by starting a record in the Tracks tab or using the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and [Widgets](../widgets/info-widgets.md#trip-recording-widgets).
 - **Manage**. After recording and saving, you can manage all existing tracks:
-    - Using the three-dot menu for [folders](../personal/tracks/manage-tracks.md#folder-menu).
+    - Using the *three-dot menu* for [folders](../personal/tracks/manage-tracks.md#folder-menu).
     - Using [single track](../personal/tracks/manage-tracks.md#single-track-menu) menu.
     - You can use the [Filter](../personal/tracks/smart-folder.md#filter) track management tool, which helps you organize and manage all the tracks on your device, and create more detailed and customizable track searches based on various parameters.
     - A customized set of filters can be saved as a new [Smart folder](../personal/tracks/smart-folder.md#smart-folder), a special type of folder that provides automated features for organizing and managing tracks.

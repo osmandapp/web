@@ -59,7 +59,7 @@ The **Configure map** button provides access to the [Configure Map menu](../map/
 
 ![Main menu button](@site/static/img/widgets/main_menu_button.png)
 
-The [**Main menu**](../start-with/main-menu.md) button opens the general menu, granting access to [all application features](../start-with/main-menu.md). In navigation mode, this button is hidden by default and becomes visible after a short tap the map.
+The [**Main Menu**](../start-with/main-menu.md) button opens the general menu, granting access to [all application features](../start-with/main-menu.md). In navigation mode, this button is hidden by default and becomes visible after a short tap the map.
 
 
 ## Search

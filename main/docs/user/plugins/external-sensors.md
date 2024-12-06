@@ -30,19 +30,13 @@ The OsmAnd External sensors plugin accesses external sensors and can read data s
 
 To start using data from external sensors, you need to make the following settings:  
 
-**1.** [Purchase **OsmAnd Pro subscription**](../purchases/).  
-
-**2.** [Enable](../plugins/#enable--disable) the External Sensors plugin in the Plugins section of the main menu.  
-
-**3.** [Perform the **sensor settings**](#sensors-settings) adjustment.
-
-**4.** [Add **External sensors widgets**](#widgets) to the screen (not required).
-
-**5.** [Use the tips for **ANT+ connect**](https://www.thisisant.com/consumer/ant-101/ant-in-phones) to set up these types of sensors.
-
-**6.** **Enable** Bluetooth on your device to connect external **BLE sensors**.
-
-**7.** [Record](#trip-recording) sensor data to a track using the **Trip recording plugin**.
+1. [Purchase](../purchases/) an **OsmAnd Pro subscription**.  
+2. [Enable](../plugins/#enable--disable) the External Sensors plugin in the Plugins section of the *Main Menu*.
+3. **Turn on** Bluetooth on your device to connect external **BLE sensors**.
+4. [Configure](#sensor-settings) the **sensor settings**.
+5. [Add](#widgets) **External sensors widgets** to the screen (optional).
+6. [Use the tips](https://www.thisisant.com/consumer/ant-101/ant-in-phones) for **ANT+ connect** to set up these types of sensors.
+7. [Use](#trip-recording) the **Trip recording plugin** to record sensor data.
 
 
 ### Pair New Sensor
@@ -77,7 +71,7 @@ Use the *Pair new sensor* button to connect new sensors.
 - **There is no Bicycle power in iOS** because Ant+ sensors are not supported.
 
 
-### Sensors Settings
+## Sensor Settings
 
 <Tabs groupId="operating-systems">
 
@@ -181,7 +175,7 @@ OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*,
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="external_sensor_widgets"/>*
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="external_sensor_widgets"/>*
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
 
@@ -189,7 +183,7 @@ OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*,
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="external_sensor_widgets"/>*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="external_sensor_widgets"/>*
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_2_ios.png)  
 
@@ -212,7 +206,7 @@ The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widget
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="external_sensor_widgets"/> → ⚙️ or <Translate android="true" ids="shared_string_settings"/>*
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="external_sensor_widgets"/> → ⚙️ or <Translate android="true" ids="shared_string_settings"/>*
 
 ![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-android.png)
 
@@ -220,7 +214,7 @@ The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widget
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → External sensor → Settings*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → External sensor → Settings*
 
  ![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 

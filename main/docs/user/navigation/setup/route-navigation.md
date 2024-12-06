@@ -73,7 +73,7 @@ There are 3 ways to reach the navigation menu:
 
 - The [*Navigation button*](../../widgets/map-buttons.md#directions) on the map screen.  
 - *Direction to/from* in a [*map context menu*](../../map/map-context-menu.md#directions-to--from).  
-- Navigation section in the [*Main menu*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
+- Navigation section in the [*Main Menu*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
 <Tabs groupId="operating-systems">
 

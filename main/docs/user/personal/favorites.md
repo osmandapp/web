@@ -413,7 +413,7 @@ Tap the **Three-dot menu** (*Android*) or the **Edit** button (*pencil icon on i
 
 After each edit to Favorites, OsmAnd creates a backup file. You can find these backup files using a file manager. On *Android*, use a third-party file manager app. On *iOS*, access them using the *Files* app.  
 
-***On Android***, you can export Favorites backup files using the Export function. The resulting **.osf** file can be saved to the device's internal memory, uploaded to cloud storage, or shared with other OsmAnd users via messaging apps. To export a backup, go to *<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>*.  
+***On Android***, you can export Favorites backup files using the Export function. The resulting `.osf` file can be saved to the device's internal memory, uploaded to cloud storage, or shared with other OsmAnd users via messaging apps. To export a backup, go to *<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>*.  
 
 :::caution
 In the latest versions of ***Android***, access to system directories is limited. However, after extracting the favorites file from the archive, it remains possible to forward it to messengers or cloud services, etc.  

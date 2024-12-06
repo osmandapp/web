@@ -449,7 +449,7 @@ When you tap the *Add Waypoint* button, the Creation point screen opens (this sc
 
 </Tabs>
 
-The three-dot button (**&#8285;**) opens the waypoint *Group menu*.
+The *three-dot menu* ( &#8285; ) opens the waypoint *Group menu*.
 
 **Actions:**
 

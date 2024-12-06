@@ -55,8 +55,8 @@ When setup is complete, you can make new records, display and manage tracks on t
 With the Trip Recording plugin in OsmAnd, you can easily start recording your track using a variety of convenient options. Here’s how you can begin your journey:
 
 - Activate recording using the [Distance/Start-Stop widget](#distance-start-stop).
-- Select the **Trip recording** option from the main menu (*Android only*): *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
-- Tap the **<Translate android="true" ids="start_recording"/>** button located in the [My Places](../personal/myplaces.md#tracks) section of the main menu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
+- Select the **Trip recording** option from the *Main Menu* (*Android only*): *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
+- Tap the **<Translate android="true" ids="start_recording"/>** button located in the [My Places](../personal/myplaces.md#tracks) section of the *Main Menu*: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
 - Use the [Quick Action](../widgets/quick-action.md#add-and-delete-actions) buttons to start recording a trip. To do this, go to *Menu → Configure screen → Custom buttons → Quick action → Add action → My Places* and choose [Start / Pause: Trip recording](../widgets/quick-action.md#my-places).
 - Use the system [notification](#notifications) in the notification area of your device (*Android only*).
 - Use the [application launcher](#launcher-android) to start recording (*Android only*).  
@@ -118,7 +118,7 @@ For *Stop / Save / Pause*:
 
 - To **stop** the recording, tap the corresponding button in the [Distance/Start-Stop widget](#distance-start-stop) dialog box.
 
-- In the *Android version*, you can **stop** recording by tapping the *Trip recording* main menu item.
+- In the *Android version*, you can **stop** recording by tapping the *Trip recording* Main Menu item.
 
 - To **stop or save** a recording track, go to *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>* *→* [*<Translate android="true" ids="shared_string_gpx_files"/> tab*](../personal/myplaces.md#tracks) and tap the appropriate button in the *Currently recording track* field.
 
@@ -361,7 +361,7 @@ To start using *Trip recording widgets*, you need to make all the following sett
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_monitoring"/>*
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
 ![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
 
@@ -369,7 +369,7 @@ To start using *Trip recording widgets*, you need to make all the following sett
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_monitoring"/>*  
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
 ![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
 

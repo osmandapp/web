@@ -24,7 +24,7 @@ To get around faster, in OsmAnd you can use street-level views of your routes or
 
 To display street-level images on the OsmAnd map, you need to make the following settings:
 
-1. Enable the [Mapillary plugin](../plugins/#enable--disable) in the *Plugins* section of the main menu.
+1. Enable the [Mapillary plugin](../plugins/#enable--disable) in the *Plugins* section of the *Main Menu*.
 2. Display the [Street-level imagery](#enable-layer) on the map for the required profile in the Configure map menu.
 
 
@@ -158,7 +158,7 @@ To add photos, you need to register in the [Mapillary app](https://www.mapillary
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="mapillary"/>*
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="mapillary"/>*
 
 ![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png)  ![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
 
@@ -166,7 +166,7 @@ To add photos, you need to register in the [Mapillary app](https://www.mapillary
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="mapillary"/>*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="mapillary"/>*
 
 ![Mapillary plugin Map Context menu iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
 

@@ -43,7 +43,7 @@ Public transport routing is in the testing phase. For now, you can build and vie
 
 ## How to Use
 
-To start navigating around the city by public transport, use [the navigation button](../../widgets/map-buttons.md#directions) on the map screen or select the navigation option in the main menu.  
+To start navigating around the city by public transport, use [the navigation button](../../widgets/map-buttons.md#directions) on the map screen or select the navigation option in the *Main Menu*.  
 
 **1.** You need to choose *Public transport navigation profile*, start and destination points.  
 

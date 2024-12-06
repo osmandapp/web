@@ -39,7 +39,7 @@ Brief information is provided by Wikipedia POIs (an abbreviation for "[point of 
 
 To display Wikipedia data on the map, you need to make the following settings:
 
-1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Wikipedia plugin in the Plugins section of the main menu.
+1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Wikipedia plugin in the Plugins section of the *Main Menu*.
 2. Download the [Wikipedia packages](#download-wikipedia-packages) for the required regions.  
 3. Display the [Wikipedia POIs](#display-wikipedia-on-the-map) on the map for the required profile.  
 4. Configure preferred [languages](#set-preferred-language) to read articles.
@@ -49,7 +49,7 @@ To display Wikipedia data on the map, you need to make the following settings:
 
 Wikipedia data is available for each geographic region. If it is loaded for one region and not loaded for another, in the first case you can work with Wikipedia information when viewing the region on a map, and in the other case, the region will not have any Wikipedia information. Once loaded, Wikipedia data becomes available in general, as well as offline.
 
-To download the Wikipedia data for a region, go to the [available packages for download in the main menu](../start-with/download-maps.md#download---main-menu), find the needed region, and open it. The Wikipedia data will be among other packages.
+To download the Wikipedia data for a region, go to the [available packages for download in the *Main Menu*](../start-with/download-maps.md#download---main-menu), find the needed region, and open it. The Wikipedia data will be among other packages.
 
 You can open Wikipedia data to download by region as follows:
 

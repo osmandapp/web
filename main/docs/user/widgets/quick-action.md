@@ -193,7 +193,7 @@ All available [actions](#action-types) are identical to those that can be applie
 
 ![Quick action button appearance](@site/static/img/widgets/qa_button_appearance_andr.png)
 
-You can modify the appearance of Quick Action buttons through the three-dot menu: *Menu → Configure screen → Custom buttons → Quick action → three-dot menu → Appearance*. This setting provides options to personalize the button's size, shape, icon, and background opacity, offering greater control over how the buttons look on your screen.  
+You can modify the appearance of Quick Action buttons through: *Menu → Configure screen → Custom buttons → Quick action → three-dot menu → Appearance*. This setting provides options to personalize the button's size, shape, icon, and background opacity, offering greater control over how the buttons look on your screen.  
 
 For detailed customization settings, refer to the [Configure Screen](../widgets/configure-screen.md#button-appearance) article, where you can learn how to fine-tune each button's appearance to match your preferences.
 

@@ -162,8 +162,8 @@ You can import and export all available default and custom color palettes using 
 
 - Open the main *Menu*, *Settings*, scroll down to the **Import/export** (*Android*) or **Local Backup** (*iOS*) section, and select the required action.
 - Select one or more items from the *Color* list or the *Select All* option.
-- All exported files are saved in *OSF* format.
-- If the size of your selected data is significant, it will take some time for the application to prepare the *OSF* file.
+- All exported files are saved in *.osf* format.
+- If the size of your selected data is significant, it will take some time for the application to prepare the *.osf* file.
 - View [*Import / Export*](../personal/import-export.md) article for more detailed information.
 
 

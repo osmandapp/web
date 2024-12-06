@@ -16,7 +16,7 @@ Map context menu provides information of selected object on the map and allows t
 
 ## [Configure Map](./configure-map-menu.md)
 
-The Configure map menu is an important item on OsmAnd's main menu where you can customize the map display to suit your needs. You can highlight your favorite points, navigation markers, or special points of interest on the map; display specific routes or third-party GPX files; overlay terrain information, satellite imagery, or any other available bitmap images; display public transportation information; and change the map style.
+The Configure map menu is an important item on OsmAnd's *Main Menu* where you can customize the map display to suit your needs. You can highlight your favorite points, navigation markers, or special points of interest on the map; display specific routes or third-party GPX files; overlay terrain information, satellite imagery, or any other available bitmap images; display public transportation information; and change the map style.
 
 ## [Vector Maps (Map Styles)](./vector-maps.md)
 

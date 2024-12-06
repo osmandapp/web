@@ -113,7 +113,7 @@ All tracks ever recorded, created, or imported are automatically displayed in th
 
 Each track, like folders, comes with its own menu, allowing you to manage tracks efficiently. Here's how to access it:
 
-- *Android* - tap the three-dot menu in the field with the required track.
+- *Android* - tap the *three-dot menu* in the field with the required track.
 - *iOS* - long tap the required track in the list.
 
 The menu provides the following actions:
@@ -243,7 +243,7 @@ Sort menu:
 
 To open the folder menu, you need to:
 
-- *Android* - tap the three-dot menu in the field with the required folder.
+- *Android* - tap the *three-dot menu* in the field with the required folder.
 - *iOS* - to make a long tap the field of the folder.
 
 Actions:
@@ -252,7 +252,7 @@ Actions:
 - **Show all tracks on the map** (*Android only*). Shows all tracks in the folder on the map. It is not recommended, if there are a lot of tracks, the device may freeze.
 - **Edit name** (*Android*) / **Rename** (*iOS*). Changing the folder name.
 - [*Change default appearance*](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*). You can change the appearance of all tracks in a folder.
-- [*Export*](../../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder as an [OSF file](../../personal/import-export.md#export).
+- [*Export*](../../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder as an [`.osf` file](../../personal/import-export.md#export).
 - [**Move**](#track-folder). You can move the selected folder to another existing folder or create a new one.
 - [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible.
 
@@ -343,7 +343,7 @@ At the bottom of the list in the *Tracks* tab, and below the list of tracks **in
 
 You can delete a folder with all the tracks it contains. To do this:
 
-- Tap the three-dot menu of the folder you want to delete.
+- Tap the *three-dot menu* of the folder you want to delete.
 - At the bottom of the menu, find the Delete Folder option.
 - **NOTE** that this action is irreversible.
 
@@ -407,7 +407,7 @@ There are several ways to export one or more track files to any messenger, email
 2. By *My Places menu → Tracks → Folder / Track menu*.
     - For [**single track export**](#track-menu), select the track to import as is.
     - For [**multi-track export**](#track-folder), select the required folder.
-3. By [*Local backup file*](../../personal/import-export.md#export-to-file). Exporting GPX tracks as OSF files.
+3. By [*Local backup file*](../../personal/import-export.md#export-to-file). Exporting GPX tracks as `.osf` files.
 
 
 ## Related Articles

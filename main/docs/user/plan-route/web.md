@@ -63,7 +63,7 @@ The cross-platform capability allows you to use OsmAnd Pro on all platforms *([A
 
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file.png)  
 
-Choose needed files for downloading, ZIP or OSF format of downloaded files and click *DOWNLOAD BACKUP* button:
+Choose needed files for downloading, `.zip` or `.osf` format of downloaded files and click *DOWNLOAD BACKUP* button:
 
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_1.png)  
 
@@ -95,7 +95,7 @@ For Track section:
 - Modify tracks and add it to Cloud.
 - Download and delete tracks.
 - Create new folders or delete it.
-- Download folders as OSF or OBF collection.
+- Download folders as `.osf` or `.obf` collection.
 
 
 ### Visible on the map

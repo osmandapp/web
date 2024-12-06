@@ -20,17 +20,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Uploading maps to the OsmAnd app is a key step to ensure smooth operation and use of offline navigation. Without offline maps, the app cannot function fully. Downloading maps gives you access to maps of different regions, allowing you to navigate without an Internet connection.  
 
-You have two *main* ways to download maps: **1)** [view the list of regions in the main menu](#maps-and-resources), or **2)** [select the required region directly on the map](#select-on-the-map). This gives you the flexibility to select the regions you want and ensures that the maps will fit your plans.  
+You have two *main* ways to download maps: **1)** [view the list of regions in the *Main Menu*](#maps-and-resources), or **2)** [select the required region directly on the map](#select-on-the-map). This gives you the flexibility to select the regions you want and ensures that the maps will fit your plans.  
 
 Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../map/raster-maps.md), it is recommended to start working with vector maps offline. This type of map (read more about [Map OsmAnd types](../personal/maps-resources.md#map-types) here) ensures reliable operation of all key functions of the application, including [Search](../search/index.md), [Navigation](../navigation/index.md), and [Context menu](../map/map-context-menu.md). This is especially important if your travels include trips to remote locations or places with limited internet access.
 
 
 ## Download
 
-You can start loading maps from the [first screen](#first-screen), or go to the main menu *→* [Maps & Resources](#maps-and-resources) and select the required maps from the general list, or [select a region](#select-on-the-map) directly on the map by tapping the region you need.
+Start loading maps from the [initial setup screen](initial-setup-screen), or go to the main *side menu* *→* [Maps & Resources](#maps-and-resources) and select the required maps from the general list, or [select a region](#select-on-the-map) directly on the map by tapping the region you need.
 
 
-### First Screen
+### Initial Setup Screen
 
 <Tabs groupId="operating-systems">
 
@@ -48,11 +48,12 @@ You can start loading maps from the [first screen](#first-screen), or go to the 
 
 </Tabs>
 
-When you first launch the application, you will be prompted to download a map based on your current Internet location. You can skip this step, as you immediately access local maps corresponding to your location.  
+Upon launching the application for the first time, you are prompted to download a map tailored to your current location, determined by your Internet connection. This step is optional, allowing you to skip the download and proceed directly to the local maps interface for your region.  
 
-If you are using a VPN, OsmAnd can offer you a regional map, giving you the option to choose a different map than your actual geography.  
+If you are using a VPN, OsmAnd may suggest a map based on the VPN’s virtual location. In such cases, you can manually select a map that better aligns with your actual geographic region.  
 
-**Three-dot menu** in the upper right corner of the screen.
+
+#### Three-dot menu
 
 <Tabs groupId="operating-systems">
 
@@ -70,12 +71,15 @@ If you are using a VPN, OsmAnd can offer you a regional map, giving you the opti
 
 </Tabs>
 
-- *Location menu.*  
-    - *Select a different region.* Opens the [Download Maps](#maps-and-resources) menu.
-    - *Allow us to determine your location.* [Requests permission](../start-with/first-steps.md#permission-to-access-the-location) to access the location, and find the required map using this data.
-- *Other menu.*
-    - *Restore from OsmAnd Cloud.* Opens the [OsmAnd Cloud](../personal/osmand-cloud.md) main screen or login screen. This is useful if you have reinstalled the app or want to restore the previous user experience without re-selecting regions and settings.
-    - *Restore from file.* Opens the device's file manager to select and import an OSF file.  
+**Location menu:**
+
+- *Select a different region.* Opens the [Download Maps](#maps-and-resources) menu.
+- *Allow us to determine your location.* [Requests permission](../start-with/first-steps.md#permission-to-access-the-location) to access the location, and find the required map using this data.
+
+**Other menu:**
+
+- *Restore from OsmAnd Cloud.* Opens the [OsmAnd Cloud](../personal/osmand-cloud.md) main screen or login screen. This is useful if you have reinstalled the app or want to restore the previous user experience without re-selecting regions and settings.
+- *Restore from file.* Opens the device's file manager to select and import an `.osf` file.  
 
 
 ### Maps and Resources
@@ -100,22 +104,27 @@ If you are using a VPN, OsmAnd can offer you a regional map, giving you the opti
 
 </Tabs>
 
-The [*Maps & Resources*](../personal/maps-resources.md) displays:
+The [Maps & Resources](../personal/maps-resources.md) screen provides access to the following sections:
 
-- Downloads section with [all existing OsmAnd map types](../personal/maps-resources.md#map-types).
-- [Local section](../personal/maps-resources.md#local) with all your map data.
-- [Updates section](../personal/maps-resources.md#updates).
+- [Downloads](../personal/maps-resources.md#downloads). Offers a comprehensive selection of [OsmAnd map types](../personal/maps-resources.md#map-types).
+- [Local](../personal/maps-resources.md#local). Displays all map data currently stored on your device, including custom and imported resources.
+- [Updates](../personal/maps-resources.md#updates). Enables you to refresh maps monthly to keep your data current.
 
-To download a specific type of map of the country or region you need:
+#### Downloading Maps
 
-- First tap the folder with the region, such as Africa, Europe, or other.
-- Tap the one you need in the list of regions that opens.
-- The next screen shows a list of all map types that can be downloaded.
+To download a specific map type for a country or region:
+
+- Navigate to the folder for the required region, such as Africa, Europe, or another continent.
+- Select your preferred country or region from the list.
+- On the next screen, review and choose from the available map types for that area.
 
 You can find information about other types of maps in the [Downloads](../personal/maps-resources.md#downloads) section of the **Maps** article.
 
-:::tip NOTE
-OsmAnd has a small world map built in. You do not need to download large maps of any region if you do not use them. If you need a map covering the whole planet, including major cities, roads, and rivers, you can download the **Detailed World Map**.
+:::tip World Map Options
+
+- OsmAnd includes a lightweight **Mini World Map** by default, which allows basic navigation without downloading additional data.
+- For a more comprehensive view, download the **Detailed World Map**, featuring global coverage with major cities, roads, rivers, and other geographical details.
+
 :::
 
 ### Select on the map
@@ -138,9 +147,9 @@ OsmAnd has a small world map built in. You do not need to download large maps of
 
 One way to download a map is to zoom out on the world map and briefly tap to select a region to download. This area will be highlighted in yellow, and a panel will appear at the bottom with the name of the region and a suggestion to download it or select other maps.  
 
-**Note**  
-On the small screen, the map selected for downloading will be highlighted in yellow, maps that have already been downloaded will be highlighted in green, and deactivated maps will be highlighted in orange. **Deactivated** maps are bypassed to speed up the program in case you have a lot of loaded maps.  
-
+:::tip Map color  
+On the small screen, the map selected for downloading will be highlighted in yellow, maps that have already been downloaded will be highlighted in green, and deactivated maps will be highlighted in orange. **Deactivated** maps are bypassed to speed up the program in case you have a lot of loaded maps.
+:::
 
 ### Search
 
@@ -162,8 +171,8 @@ On the small screen, the map selected for downloading will be highlighted in yel
 
 Search makes it easy to find a specific map or region, providing a convenient and quick way to download the data you need. You can find and download the map using the [search function](../search/index.md).
 
-- To start a search, begin typing the name of a country or region in the search field. A list of map files will start to appear.
-- In case you don't have the Standard map of some region, there will be a Download icon next to it, if the map is downloaded it will be green, and with a menu, the others will be gray.
+- Start a search by entering the name of a country or region in the search field. Then select the required map from the list that appears.
+- Maps available for download are displayed in gray with a download icon, downloaded maps have a green color and a menu button.
 - Tap the name of the required result and the Regionwide map list will open.
 - Select [map types](../personal/maps-resources.md#map-types): *Standard map, Road-only map, Contour lines, Wikipedia*.
 
