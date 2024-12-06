@@ -28,7 +28,7 @@ To activate special features for developers and testers:
 
 1. [Enable](../plugins/index.md#enable--disable) OsmAnd development plugin in the Plugins section of the *Main Menu*.
 2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).  
-3. Enable [developer widgets](#widgets) if necessary.  
+3. Enable **developer widgets** if necessary.  
 
 
 ## Plugin Settings
@@ -46,7 +46,7 @@ Use one of the following paths to open the plugin settings:
 
 <TabItem value="android" label="Android">  
 
-![Development Settings Android](@site/static/img/plugins/development/development_android_settings_1.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_android_settings_2.png)
+![Development Settings Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_settings_2_andr.png)
 
 </TabItem>
 
@@ -61,11 +61,11 @@ Use one of the following paths to open the plugin settings:
 
 ### Terrain
 
-**Android:**  
+*Android:*  
 
 - **Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite.md/) for hillshade and slope**. Load old format raster maps.
 
-**iOS:**  
+*iOS:*  
 
 - **Test heightmap.**
 - **Use 3D relief heightmaps.**
@@ -74,24 +74,20 @@ Use one of the following paths to open the plugin settings:
 - **Generate hillshade raster maps from 3D maps.**
 
 
-### Troubleshotting
+### Troubleshotting  
 
-**Android:**  
-
-- **Simulate your position**. [Simulate](#gpx-track-simulation) your position using a recorded GPX track.  
-- **Rendering debug info**. Display the rendering performance (only available for version 1 rendering engine).  
-- **Logcat buffer**. Check and share detailed logs of the app.  
-- **<Translate android="true" ids="write_bearing"/>**. <Translate android="true" ids="write_bearing_description"/>. Bearing is the compass direction from your current position to your intended destination. Affects *[track recording](../plugins/trip-recording.md)*.  
-- **<Translate android="true" ids="write_heading"/>**. <Translate android="true" ids="write_heading_description"/>. Heading is the compass direction from your current position towards true north. This option is enabled by default. Affects *[track recording](../plugins/trip-recording.md)*.  
-
-**iOS:**
-
-- **Simulate your position**. [Simulate](#gpx-track-simulation) your position using a recorded GPX track.  
+- **Simulate your position** (*Android* / *iOS*). [Simulate](#gpx-track-simulation) the location and movement using a GPX track.
+- **Simulate obd data** (*Android*). Allows simulation of [OBD scanner](./vehicle-metrics.md) usage.
+- **Rendering debug info** (*Android*). Display the rendering performance (only available for version 1 rendering engine).  
+- **Logcat buffer** (*Android*). Check and share detailed logs of the app.  
+- **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Bearing is the compass direction from your current position to your intended destination. Affects *[track recording](../plugins/trip-recording.md)*.  
+- **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Heading is the compass direction from your current position towards true north. This option is enabled by default. Affects *[track recording](../plugins/trip-recording.md)*.
 
 
 ### Application Testing
 
-<InfoAndroidOnly/>  
+:::caution Android only
+:::
 
 - **Simulate first app start**. Sets the flag indicating first app startup, keeps all other settings unchanged.  
 - **Test voice prompts**. Select a voice and test by playing announcements.  
@@ -101,7 +97,8 @@ Use one of the following paths to open the plugin settings:
 
 ### Internal Algorithms
 
-<InfoAndroidOnly/>
+:::caution Android only
+:::
 
 - **Safe mode**. Run the app in (slower) safe mode.  
 - **Safe GPX approximation**. Perform the GPX approximation using slower Android instead of native code.  
@@ -109,26 +106,22 @@ Use one of the following paths to open the plugin settings:
 
 ### Memory Settings
 
-<InfoAndroidOnly/>  
+:::caution Android only
+:::  
 
 - **Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes. You can use this option if the [Standard routing A*](../navigation/guidance/navigation-settings.md#development-settings) is selected in the *Navigation settings*.
 
-**Calculation of extra-long routes:**
+***Calculation of extra-long routes:***
 
 - Higher memory allocation may impact the performance of other apps.
 - [Calculation of 50 km routes for pedestrians](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
 
 
-## Widgets  
+## Map Rendering FPS Widget
 
 :::info  Important
 OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
-:::  
-
-You can use OsmAnd developer [Widgets](../widgets/info-widgets.md#developer-widgets) to get information about zoom level, map rendering speed, elevation of the map center above sea level, distance to map center, camera elevation and incline.  
-
-
-### FPS Widget
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -150,10 +143,14 @@ You can use OsmAnd developer [Widgets](../widgets/info-widgets.md#developer-widg
 
 </Tabs>  
 
-The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map and map elements are displayed and refreshed. The numeric value is indicated in frames per second (FPS).
+The [FPS Widget](../widgets/info-widgets.md#map-rendering-fps) shows how fast the map and map elements are displayed and refreshed. The numeric value is indicated in frames per second (FPS).
 
 
 ## Camera Position Widgets
+
+:::info  Important
+OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -231,31 +228,22 @@ The Camera Elevation widget shows the camera elevation above the surface level. 
 
 <TabItem value="android" label="Android">  
 
-![Zoom level widget Android 1](@site/static/img/plugins/development/developer_widg_zoom_1.png) ![Zoom level widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
+![Zoom level widget Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Zoom level widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Zoom level widget ios 1](@site/static/img/plugins/development/developer_widg_zoom_ios_1.png) ![Zoom level widget ios 2](@site/static/img/plugins/development/developer_widg_zoom_ios_2.png)  
+![Zoom level widget ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Zoom level widget ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-**Android:**  
+The widget has two views that are switched by tapping it:  
 
-*Widget has two views:*  
-
-- **<Translate android="true" ids="map_widget_zoom_level"/>**. Shows the current map zoom level
-- **<Translate android="true" ids="map_widget_map_scale"/>**. Shows the current map scale. The map scale is the relationship between a distance on a map and the corresponding distance on the earth. The example: 1:50,000.  
-
-Switch the mode by tapping on the widget.
-
-**iOS:**  
-
-The Zoom level widget represents the current map zoom level.
-
+- **<Translate android="true" ids="map_widget_zoom_level"/>**. Shows the current map zoom level.
+- **<Translate android="true" ids="map_widget_map_scale"/>**. Shows the current ratio between a distance on a map and the corresponding distance on the earth. Examples: "1 : 3 000", "1 : 3,3 M" "1: 340 K".  
 
 :::note
 
