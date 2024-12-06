@@ -139,7 +139,7 @@ OsmAnd provides convenient track management tools. One of them is filtering in t
 
 To create a smart folder, follow these steps:
 
-1. Tap the three-dot menu icon in the upper right corner of the screen in the *Tracks* tab.
+1. Tap the *three-dot menu* icon in the upper right corner of the screen in the *Tracks* tab.
 2. Select the *Add smart folder* option from the menu that appears after tapping the icon.
 3. Set the parameters of the smart folder:
    - **Name the folder** (Enter a new name) for identification.
@@ -155,7 +155,7 @@ After completing these steps, the Smart Folder will automatically collect and di
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)  
 
 
-Once created, the Smart folder is displayed with a special icon in the folder list in the Tracks tab. To manage it, tap the three-dot menu in the folder field or enter it and select the top right icon.
+Once created, the Smart folder is displayed with a special icon in the folder list in the Tracks tab. To manage it, tap the *three-dot menu* in the folder field or enter it and select the top right icon.
 
 - **Details**. Opens the entire list of tracks in this folder.
 - **Show all tracks on the map**. If there are many tracks in a folder, it is not recommended to map them all, it may take a long time.

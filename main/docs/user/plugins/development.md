@@ -39,7 +39,7 @@ OsmAnd development plugin settings are global and apply to all profiles.
 
 Use one of the following paths to open the plugin settings:  
 
-- *Main Menu → Plugins → OsmAnd development → Settings*. 
+- *Main Menu → Plugins → OsmAnd development → Settings*.
 - *Main Menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
 
 <Tabs groupId="operating-systems">

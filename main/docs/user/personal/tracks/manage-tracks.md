@@ -113,7 +113,7 @@ All tracks ever recorded, created, or imported are automatically displayed in th
 
 Each track, like folders, comes with its own menu, allowing you to manage tracks efficiently. Here's how to access it:
 
-- *Android* - tap the three-dot menu in the field with the required track.
+- *Android* - tap the *three-dot menu* in the field with the required track.
 - *iOS* - long tap the required track in the list.
 
 The menu provides the following actions:
@@ -243,7 +243,7 @@ Sort menu:
 
 To open the folder menu, you need to:
 
-- *Android* - tap the three-dot menu in the field with the required folder.
+- *Android* - tap the *three-dot menu* in the field with the required folder.
 - *iOS* - to make a long tap the field of the folder.
 
 Actions:
@@ -343,7 +343,7 @@ At the bottom of the list in the *Tracks* tab, and below the list of tracks **in
 
 You can delete a folder with all the tracks it contains. To do this:
 
-- Tap the three-dot menu of the folder you want to delete.
+- Tap the *three-dot menu* of the folder you want to delete.
 - At the bottom of the menu, find the Delete Folder option.
 - **NOTE** that this action is irreversible.
 

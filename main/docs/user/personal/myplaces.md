@@ -132,7 +132,7 @@ OsmAnd has various features for creating, saving, and displaying [*tracks*](../p
 - **Tracks tab**. All tracks ever recorded, created, or imported are automatically displayed in the *My Places* folder in the *Tracks* tab. They are organized by folder or displayed in a list below them.
 - **Create a track**. You can create a new track by starting a record in the Tracks tab or using the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and [Widgets](../widgets/info-widgets.md#trip-recording-widgets).
 - **Manage**. After recording and saving, you can manage all existing tracks:
-    - Using the three-dot menu for [folders](../personal/tracks/manage-tracks.md#folder-menu).
+    - Using the *three-dot menu* for [folders](../personal/tracks/manage-tracks.md#folder-menu).
     - Using [single track](../personal/tracks/manage-tracks.md#single-track-menu) menu.
     - You can use the [Filter](../personal/tracks/smart-folder.md#filter) track management tool, which helps you organize and manage all the tracks on your device, and create more detailed and customizable track searches based on various parameters.
     - A customized set of filters can be saved as a new [Smart folder](../personal/tracks/smart-folder.md#smart-folder), a special type of folder that provides automated features for organizing and managing tracks.

@@ -30,19 +30,13 @@ The OsmAnd External sensors plugin accesses external sensors and can read data s
 
 To start using data from external sensors, you need to make the following settings:  
 
-**1.** [Purchase **OsmAnd Pro subscription**](../purchases/).  
-
-**2.** [Enable](../plugins/#enable--disable) the External Sensors plugin in the Plugins section of the *Main Menu*.  
-
-**3.** [Perform the **sensor settings**](#sensors-settings) adjustment.
-
-**4.** [Add **External sensors widgets**](#widgets) to the screen (not required).
-
-**5.** [Use the tips for **ANT+ connect**](https://www.thisisant.com/consumer/ant-101/ant-in-phones) to set up these types of sensors.
-
-**6.** **Enable** Bluetooth on your device to connect external **BLE sensors**.
-
-**7.** [Record](#trip-recording) sensor data to a track using the **Trip recording plugin**.
+1. [Purchase](../purchases/) an **OsmAnd Pro subscription**.  
+2. [Enable](../plugins/#enable--disable) the External Sensors plugin in the Plugins section of the *Main Menu*.
+3. **Turn on** Bluetooth on your device to connect external **BLE sensors**.
+4. [Configure](#sensor-settings) the **sensor settings**.
+5. [Add](#widgets) **External sensors widgets** to the screen (optional).
+6. [Use the tips](https://www.thisisant.com/consumer/ant-101/ant-in-phones) for **ANT+ connect** to set up these types of sensors.
+7. [Use](#trip-recording) the **Trip recording plugin** to record sensor data.
 
 
 ### Pair New Sensor
@@ -77,7 +71,7 @@ Use the *Pair new sensor* button to connect new sensors.
 - **There is no Bicycle power in iOS** because Ant+ sensors are not supported.
 
 
-### Sensors Settings
+## Sensor Settings
 
 <Tabs groupId="operating-systems">
 

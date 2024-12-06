@@ -209,7 +209,7 @@ Tap any item in the **Local** tab to open its detailed list. At the top of this 
 
 ![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
 
-Each item in the list offers a three-dot menu with options:
+Each item in the list offers a *three-dot menu* with options:
 
 - **Info**. View detailed information on the *[data item](#local-data-item-overview)*.
 - **Export**. Save data to a file via *Settings → Export to File*.

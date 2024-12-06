@@ -161,7 +161,7 @@ Nautical map view provides detailed graphical representation of oceans, seas, co
 
 ### [Ski Map View](./ski-maps.md)
 
-Ski map view uses winter colors, shows downhill or cross-country pistes, cable cars, chairlifts, and other facilities and services, which can be used to navigate recreation areas, ski resorts and terrain parks.
+Ski Map View shows winter colors and pistes downhill or cross-country, as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.
 
 ### [Audio/Video Notes](./audio-video-notes.md)
 
