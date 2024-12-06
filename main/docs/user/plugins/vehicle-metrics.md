@@ -22,24 +22,26 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 The Vehicle Metrics plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
 :::
 
-The **Vehicle Metrics plugin** allows users to read, record, and display real-time vehicle data on their screen using the OBD-II protocol. It offers insights into key engine metrics, fuel efficiency, speed, and other essential performance indicators, enabling users to monitor their vehicle’s health directly from their device.
+<InfoAndroidOnly/>
 
-|  |  |
-|--|--|
-|![OBD overview](@site/static/img/plugins/obd/obd_overview_1.png)|![OBD settings](@site/static/img/plugins/obd/obd_overview_2.png)|
+The **Vehicle Metrics plugin** enables real-time vehicle data monitoring via the OBD-II protocol. Users can track essential metrics such as engine performance, fuel efficiency, and speed, allowing for proactive vehicle maintenance and troubleshooting.  
 
+OBD-II scanners are integral to modern automotive diagnostics. With real-time data streaming, users gain instantaneous insights into vehicle systems, facilitating preventive maintenance and reducing repair costs. These tools are vital for both personal use and professional automotive services.
+
+![OBD settings](@site/static/img/plugins/obd/obd_overview_2.png)
 
 
 ## Required Setup Parameters
 
-<InfoAndroidOnly/>
+To use data from an OBD-II scanner:
 
-To begin using data from your OBD-II scanner, follow these steps:
-
-1. [Enable](../plugins/index.md#enable--disable) the Vehicle Metrics plugin in the Plugins section of the *Main Menu*.
-2. Connect the OBD-II scanner to your vehicle's OBD-II port.
-3. (Optional) Add [Vehicle Metrics widgets](#widgets) to your screen for quick access to data.
-4. To record Vehicle Metrics data as part of a track, use the [Trip recording plugin](#trip-recording).
+1. [Purchase](../purchases/) an **OsmAnd Pro subscription**. (*Vehicle speed* and *Engine speed* are free.)  
+2. [Enable](../plugins/index.md#enable--disable) the Vehicle Metrics plugin in the Plugins section of the *Main Menu*.
+3. **Turn on** Bluetooth on your device.
+4. [Connect](#pair-odb-ii-scanner) the OBD-II scanner to your vehicle's port.
+5. [Configure](#scanner-settings) the **scanner settings**.
+6. [Add](#widgets) **Vehicle Metrics widgets** to for on-screen data (optional).
+7. [Use](#trip-recording)the **Trip recording plugin** to record vehicle data.
 
 
 ### Pair ODB-II Scanner
@@ -48,57 +50,57 @@ To begin using data from your OBD-II scanner, follow these steps:
 |--|--|
 |![OBD connection](@site/static/img/plugins/obd/obd_connect.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_2.png)|
 
-**Ensure the OBD-II scanner is connected to your vehicle.**
+Connect the scanner to your vehicle’s port and pair it through the app:
 
-Navigate to the Vehicle Metrics menu or Vehicle Plugin settings to add the OBD-II device:
+- Navigate to *Menu → Plugins → Vehicle Metrics → Settings → Connect* or **+**.
+- If Vehicle Metrics is in the *Main Menu*:  *Menu → Vehicle Metrics → Settings → Connect* or **+**.
 
-- *Menu → Plugins → Vehicle Metrics → Settings → Connect* or **+**
-- *Menu → Vehicle Metrics → Settings → Connect* or **+** (if you have added this section to the *Main Menu*)
-
-Select the OBD-II device from the list and connect to it.
+Choose your OBD-II device from the list and establish the connection.
 
 
-### Settings
+## Scanner Settings
 
-*Menu → Plugins → Vehicle Metrics → OBD → Three dots*
+*Menu → Plugins → Vehicle Metrics → OBD → three-dot menu*
 
 |  |  |
 |--|--|
 |![OBD settings](@site/static/img/plugins/obd/obd_settings.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_1.png)|
 
-- **Connect / Disconnect**. Connects or disconnects the OBD-II sensor.
-- **Settings**. Opens the OBD-II settings screen, where you can connect or disconnect from the OBD-II sensor and view all available vehicle parameters.
-- **Rename**. Allows you to rename the sensor.
-- **Forget**. Removes the previously added OBD-II sensor from the list.
+- **Connect / Disconnect**. Establishes or terminates the connection with the OBD-II sensor.
+- **Settings**. Opens the OBD-II settings screen, allowing connection management and access to available vehicle parameters.
+- **Rename**. Lets you assign a custom name to the sensor for easier identification.
+- **Forget**. Removes the previously paired OBD-II sensor from the list, requiring re-pairing if needed later.
 
 
-### Metrics List
+## Metrics List
+
+Metrics are categorized for clarity. Advanced diagnostic tools enable preventive maintenance by interpreting these parameters:
 
 *Temperature:*
 
-- **Intake Temperature**. Displays the temperature of the air entering the engine intake manifold.
-- **Ambient Temperature**. Displays the temperature outside the vehicle.
-- **Coolant Temperature**. Displays the temperature of the engine’s coolant.
-- **Engine Oil Temperature**. Displays the temperature of the engine oil.
+- **Intake Temperature**. Displays the temperature of the air entering the intake manifold.
+- **Ambient Temperature**. Monitors external conditions.
+- **Coolant Temperature**. Tracks engine cooling efficiency.
+- **Engine Oil Temperature**. Displays oil condition during operation.
 
 *Engine:*
 
-- **Engine Speed**. Displays the vehicle's tachometer RPM via the OBD sensor.
-- **Engine Runtime**. Indicates how long the engine has been running since it was started.
-- **Calculated Engine Load**. Displays the percentage of the engine’s available power being used at a given moment.
+- **Engine Speed**. Monitors engine revolutions per minute (RPM).
+- **Engine Runtime**. Tracks engine operation time.
+- **Calculated Engine Load**. Indicates engine workload percentage.
 
 *Fuel:*
 
-- **Fuel Pressure**. Indicates the pressure within the fuel system.
-- **Fuel Consumption**. Displays the vehicle's fuel consumption rate based on calculations.
-- **Remaining Fuel**. Indicates the vehicle's fuel level via the OBD sensor.
+- **Fuel Pressure**. Indicates the fuel system pressure.
+- **Fuel Consumption**. Calculates the vehicle's fuel consumption.
+- **Remaining Fuel**. Indicates the fuel level in the vehicle.
 
 *Other:*
 
 - **Battery Level**. Indicates the voltage level of the vehicle's battery.
-- **Vehicle Speed**. Displays speed from the Vehicle Speed Sensor (VSS).
-- **Throttle Position**. Displays the angle of the throttle plate in the throttle body.  
-  **VIN**. A 17-character identifier (digits and capital letters) unique to the vehicle.
+- **Vehicle Speed**. Displays Vehicle Speed Sensor (VSS) data.
+- **Throttle Position**. Determines engine air intake via throttle plate angle.  
+  **VIN**. Displays the vehicle's 17-character identification number.
 
 
 ## Trip Recording
@@ -109,33 +111,37 @@ Select the OBD-II device from the list and connect to it.
 |--|--|
 |![OBD recording](@site/static/img/plugins/obd/obd_recording.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_1.png)|
 
-Next, you need to select parameters to be recorded in the GPX file. Data from a connected OBD-II sensor can be added to the GPX file using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).  
+To include OBD-II data in a GPX file, you need to select the desired parameters for recording using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings). This allows you to analyze vehicle metrics alongside your trip data.
 
-**Tags**  
-OsmAnd uses custom tag names for vehicle metrics in [**track recording**](../plugins/trip-recording.md#recorded-gpx-file), such as `vm_eotemp` (Engine Oil Temperature), `vm_fpress` (Fuel Pressure), and `vm_espeed` (Engine Speed).
+#### Tags
+
+OsmAnd applies custom tag names for vehicle metrics in the [GPX file](../plugins/trip-recording.md#recorded-gpx-file). For example:
+
+- `vm_eotemp`: Engine Oil Temperature.
+- `vm_fpress`: Fuel Pressure.
+- `vm_espeed`: Engine Speed.
+
+These tags make it easier to identify and utilize specific vehicle data when reviewing the recorded GPX file.
 
 
 ## Widgets
 
-*Menu → Configure screen → Widgets → Choose a panel → [Vehicle Metrics](../widgets/info-widgets.md#vehicle-metrics-widgets)*
+*Menu → Configure screen → Widgets → Choose a panel → Vehicle Metrics*
 
 | | |
 |--|--|
 |![OBD settings](@site/static/img/plugins/obd/obd_widget_1.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget.png)|
 
-List of availabe widgets is [here](#metrics-list) (except "VIN").
+The [Vehicle Metrics widgets](../widgets/info-widgets.md#vehicle-metrics-widgets) are automatically included when you enable the plugin. If they do not visible, you can manually add them via the [Configure Screen](../widgets/configure-screen.md) menu.
 
-[Vehicle Metrics widgets](../widgets/info-widgets.md#vehicle-metrics-widgets) is automatically added to the widget list when you enable the Vehicle Metrics plugin. Before starting your trip, ensure these widgets are visible on your screen. If they are not, add them through the [Configure Screen](../widgets/configure-screen.md) menu. Vehicle Metrics widgets provide real-time tracking of data from your connected OBD-II sensor, allowing you to monitor essential metrics seamlessly during your journey.
+### Widget Settings
 
+The widgets display key data from your connected OBD-II device in real time, such as speed, engine metrics, and fuel consumption. Ensure they are visible before starting your trip to track metrics seamlessly.
 
-### Widgets Settings
+Some widgets offer display mode options:
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="obd_widget_group"/> → ⚙️ or <Translate android="true" ids="shared_string_settings"/>*
-
-Some Vehicle Metrics widgets offer a display mode option:
-
-- **Instant**. Displays current, real-time parameters.
-- **Average**. Displays averaged data over a selected interval (from 15 seconds to 60 minutes).
+- **Instant**. Displays real-time data for the selected metric.
+- **Average**. Displays averaged values over a configurable time interval (15 seconds to 60 minutes).
 
 
 ## Related articles
