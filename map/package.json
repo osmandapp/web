@@ -72,7 +72,7 @@
         "eject": "react-scripts eject",
         "postinstall": "patch-package",
         "generate-resources": "node src/resources/scripts/generate-resources.mjs",
-        "lint": "eslint src/**/*.js src/**/*.jsx src/**/*.mjs src/resources/scripts/*.mjs --config ./eslint.config.js",
+        "lint": "eslint src/**/*.js src/**/*.jsx src/**/*.mjs src/resources/scripts/*.mjs --config eslint.config.js",
         "format": "prettier --write './**/*.{js,jsx,mjs,ts,tsx,css}' --config ./.prettierrc"
     },
     "browserslist": {

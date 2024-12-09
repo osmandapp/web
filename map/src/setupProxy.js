@@ -20,6 +20,7 @@ module.exports = function (app) {
     let weather = localProxy;
     let others = localProxy;
     let osmgpx = localProxy;
+    let share = localProxy;
 
     // yarn start (test)
     if (process.env.NODE_ENV === 'development' && !process.env.USE_LOCAL_API) {
@@ -32,6 +33,7 @@ module.exports = function (app) {
         weather = testProxy;
         others = testProxy;
         osmgpx = testProxy;
+        share = testProxy;
     }
 
     // yarn start:fallback (prod)
@@ -46,6 +48,7 @@ module.exports = function (app) {
         others = mainProxy;
         // TODO switch to mainProxy later
         osmgpx = testProxy;
+        share = mainProxy;
     }
 
     app.use('/gpx/', gpx);
@@ -58,4 +61,5 @@ module.exports = function (app) {
     app.use('/osmgpx/', osmgpx);
     // app.use('/weather/', weather); // defined-by-env
     app.use('/online-routing-providers.json', others); // osrm-providers
+    app.use('/share/', share);
 };

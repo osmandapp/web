@@ -1,4 +1,4 @@
-import Utils, { quickNaNfix } from '../../util/Utils';
+import Utils, { quickNaNfix, toHHMMSS } from '../../util/Utils';
 import FavoritesManager from '../FavoritesManager';
 import _, { isEmpty } from 'lodash';
 import { apiGet, apiPost } from '../../util/HttpApi';
@@ -184,7 +184,7 @@ function createName(ctx) {
     return name;
 }
 
-function getFileName(currentFile) {
+export function getFileName(currentFile) {
     let file = Object.assign('', currentFile);
     return prepareName(file.name, file.local);
 }
@@ -1373,9 +1373,36 @@ export function getAllVisibleFiles(ctx) {
     return files;
 }
 
+export function setTrackIconStyles(ctx, file, styles) {
+    let res = [];
+    if (ctx.gpxFiles[file.name]?.url && ctx.gpxFiles[file.name]?.showOnMap) {
+        res.push(styles.visibleIcon);
+    } else {
+        res.push(styles.icon);
+    }
+    return res.join(' ');
+}
+
+const DEFAULT_DIST = 0;
+const DEFAULT_TIME = '0:00';
+
+export function getDist(file) {
+    let f = getAnalysisData(file);
+    return f?.totalDistance ? (f?.totalDistance / 1000).toFixed(2) : DEFAULT_DIST;
+}
+
+export function getTime(file) {
+    let f = getAnalysisData(file);
+    return f?.timeMoving ? toHHMMSS(f?.timeMoving) : DEFAULT_TIME;
+}
+
+export function getWptPoints(file) {
+    let f = getAnalysisData(file);
+    return f?.wptPoints ? f?.wptPoints : null;
+}
+
 const TracksManager = {
     loadTracks,
-    getFileName,
     prepareName,
     getTrackData,
     handleEditCloudTrack,

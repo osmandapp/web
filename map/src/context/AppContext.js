@@ -296,6 +296,8 @@ export const AppContextProvider = (props) => {
     const [travelFilter, setTravelFilter] = useState(null);
     const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
     const [selectedTravelRoute, setSelectedTravelRoute] = useState(null);
+    // share
+    const [shareFile, setShareFile] = useState(null);
 
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -685,6 +687,8 @@ export const AppContextProvider = (props) => {
                 setSelectedSearchMarker,
                 zoomToMapObj,
                 setZoomToMapObj,
+                shareFile,
+                setShareFile,
             }}
         >
             {props.children}
