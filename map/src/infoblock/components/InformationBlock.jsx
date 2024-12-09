@@ -17,6 +17,7 @@ import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WeatherForecastDetails from '../../menu/weather/WeatherForecastDetails';
 import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
+import ShareFileMenu from '../../menu/share/ShareFileMenu';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -47,6 +48,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     const [openWeatherForecastDetails, setOpenWeatherForecastDetails] = useState(false);
     const [openWptDetails, setOpenWptDetails] = useState(false);
     const [openWptTab, setOpenWptTab] = useState(false);
+    const [openShareFile, setOpenShareFile] = useState(false);
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -147,6 +149,15 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     }, [ctx.selectedWpt]);
 
     useEffect(() => {
+        if (ctx.shareFile) {
+            setShowInfoBlock(true);
+            setOpenShareFile(true);
+        } else {
+            setOpenShareFile(false);
+        }
+    }, [ctx.shareFile]);
+
+    useEffect(() => {
         if (!ctx.loginUser) {
             setShowInfoBlock(false);
             setOpenWptDetails(false);
@@ -195,7 +206,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     }
 
     function hasOldTabs() {
-        return !openWeatherForecastDetails && !openWptDetails;
+        return !openWeatherForecastDetails && !openWptDetails && !openShareFile;
     }
 
     return (
@@ -215,6 +226,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                 setShowInfoBlock={setShowInfoBlock}
                             />
                         ))}
+                    {openShareFile && <ShareFileMenu setShowInfoBlock={setShowInfoBlock} />}
                     {hasOldTabs() && (
                         <Box anchor={'right'} sx={{ height: 'auto', width: getWidth(), overflowX: 'hidden' }}>
                             <div id="se-infoblock-all">
