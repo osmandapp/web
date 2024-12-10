@@ -14,6 +14,7 @@ import {
     Typography,
 } from '@mui/material';
 import styles from './configuremap.module.css';
+import gStyles from '../gstylesmenu.module.css';
 import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
@@ -184,7 +185,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
             />
             {ctx.heightmap?.key ? (
                 <Box>
-                    <Divider className={styles.terrainDivider} />
+                    <Divider className={gStyles.thickDivider} />
                     <SubTitle title={'shared_string_appearance'} />
                     <Box sx={{ m: 2 }}>
                         <div
