@@ -14,7 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Overview
 
-The map can display points such as [Favorites](#favorites), [Points of Interest](#points-of-interest-poi), [Markers](#markers), [Wikipedia](#-wikipedia), [Search results](#search-results-poi), [Audio and Video notes](#-audio--video-points-android), and [OSM editing](#-osm-edit-points).
+The map can display points such as [Favorites](#favorites), [Points of Interest](#points-of-interest-pois), [Markers](#markers), [Wikipedia](#-wikipedia), [Search results](#search-results-poi), [Audio and Video notes](#-audio--video-points-android), and [OSM editing](#-osm-edit-points).
 
 
 ## Favorites
@@ -71,7 +71,7 @@ In the Android version of OsmAnd, you can display only certain group favorites o
 By default, Favorites and points of interest (POI) are displayed without names, so as not to clutter up the map with text. You can enable names in the Configure map menu.  
 
 
-## Points of Interest (POI)
+## Points of Interest (POIs)
 
 Enable or disable points of interest of **selected** type on the map:
 
@@ -80,7 +80,7 @@ Enable or disable points of interest of **selected** type on the map:
 
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)  
 
-[Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Points_of_interest) are specific points highlighted with an icon on the map. They represent interesting or useful places and objects and are a part of [Vector Maps](../map/vector-maps.md). The most notable POI are displayed on the map automatically. However, you can select a specific type of POI (i.e. Restaurants) and they all will be highlighted on the map within an **orange circle** (from Zoom level 9). You can find detailed information about the point of interest in the [Context menu](../map/map-context-menu.md) that appears on a [short tap](../map/map-context-menu.md#select-an-object-short-tap) on the point.  
+[Points of interest (POIs)](https://wiki.openstreetmap.org/wiki/Points_of_interest) are specific points highlighted with an icon on the map. They represent interesting or useful places and objects and are a part of [Vector Maps](../map/vector-maps.md). The most notable POIs are displayed on the map automatically. However, you can select a specific type of POIs (i.e. Restaurants) and they all will be highlighted on the map within an **orange circle** (from Zoom level 9). You can find detailed information about the point of interest in the [Context menu](../map/map-context-menu.md) that appears on a [short tap](../map/map-context-menu.md#select-an-object-short-tap) on the point.  
 
 
 ### POI Types
@@ -133,9 +133,9 @@ Track points (waypoints) are part of Track (GPX) files. These points are display
 
 ![POI search](@site/static/img/map/poi_search.png) ![POI search result](@site/static/img/map/poi_search_result.png)
 
-Search results could be displayed on the map as a special POI layer. During the search, tap a special row (**<Translate android="true" ids="shared_string_show_on_map"/>**) to display POI on the map.  
+Search results could be displayed on the map as a special POIs layer. During the search, tap a special row (**<Translate android="true" ids="shared_string_show_on_map"/>**) to display POIs on the map.  
 
-To switch off POI, hit **X** in the top right corner.  
+To switch off POIs, hit **X** in the top right corner.  
 
 Read more about [search](../search/index.md).
 
@@ -172,7 +172,7 @@ Enable or disable Wikipedia articles on the map and filter by language:
 
 ![Wikipedia on map](@site/static/img/map/map-wikipedia-on-map.png) ![Wikipedia language - iOS](@site/static/img/map/map-wikipedia-language-ios.png)  
 
-OsmAnd has special Points of Interest indicated with the “W” logo and Wikipedia articles attached to points. These points could be displayed exactly as any other POI type via Search or <Translate android="true" ids="configure_map"/> → <Translate android="true" ids="layer_poi"/>. However, there is a special way to filter Wikipedia articles by **available languages**.  
+OsmAnd has special Points of Interest indicated with the “W” logo and Wikipedia articles attached to points. These points could be displayed exactly as any other POIs type via Search or <Translate android="true" ids="configure_map"/> → <Translate android="true" ids="layer_poi"/>. However, there is a special way to filter Wikipedia articles by **available languages**.  
 
 [Read more](../plugins/wikipedia.md) how to download and use the Wikipedia feature in OsmAnd.
 
@@ -220,11 +220,11 @@ Requires [OSM Editing plugin](../plugins/osm-editing.md#how-to-report-a-mistake)
 
 ## Points Along the Route
 
-Waypoints, POI, Favorite points, and Audio/video notes all refer to the concept of saving locations and routes in [GPX (GPS Exchange Format)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). You can use [the same tags](../map/tracks/track-context-menu.md#display-custom-gpx-tags) to describe and edit them.  
+Waypoints, POIs, Favorite points, and Audio/video notes all refer to the concept of saving locations and routes in [GPX (GPS Exchange Format)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). You can use [the same tags](../map/tracks/track-context-menu.md#display-custom-gpx-tags) to describe and edit them.  
 
 [*Waypoints*](#track-waypoints) are individual points on a map or route. They can be used to mark certain places that may be important for navigating or recording your travels. For example, you can create a waypoint on the map to indicate an important intersection or change of direction.  
 
-[*Points of interest(POI)*](#points-of-interest-poi) are places of special interest to users. These can be landmarks, restaurants, hotels, gas stations, and other places of interest that you may want to note or visit.  
+[*Points of interest(POIs)*](#points-of-interest-pois) are places of special interest to users. These can be landmarks, restaurants, hotels, gas stations, and other places of interest that you may want to note or visit.  
 
 [*Favorite points*](#favorites) are places users find particularly important or interesting and save to their list of favorite places. Places can include any location you may want to find and return to later.
 

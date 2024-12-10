@@ -38,7 +38,7 @@ The map context menu provides information about the selected object on the map. 
 
 </Tabs>
 
-The context menu appears when you **single tap** a marked object on the map. This context menu displays essential information about the selected object, including its name, icon (as represented on the map), address, distance, and direction from your current position. Users can select various types of map objects, such as *POI*, *Favorites*, *transportation stops*, *Markers*, or other *map objects*.
+The context menu appears when you **single tap** a marked object on the map. This context menu displays essential information about the selected object, including its name, icon (as represented on the map), address, distance, and direction from your current position. Users can select various types of map objects, such as *POIs*, *Favorites*, *transportation stops*, *Markers*, or other *map objects*.
 
 By tapping on icons for *Barrier*, *Steps*, or *Gate*, the context menu reveals additional details, including the name (POI type) and address associated with these features, or displays object type, if a name is not available.
 
@@ -125,7 +125,7 @@ This panel includes additional information about the object. This info could be 
 - [Alternative names](#alternative-names)
 - [Coordinates](../map/map-context-menu.md#coordinates)
 - [Nearby Wikipedia articles](../map/map-context-menu.md#nearby-pois-wikipedia)
-- [Nearby POI](../map/map-context-menu.md#nearby-pois-wikipedia)
+- [Nearby POIs](../map/map-context-menu.md#nearby-pois-wikipedia)
 - [Public Transport routes (on transport stops)](../map/map-context-menu.md#public-transport-routes)
 - [Favorites / Track Points from the same group](../map/map-context-menu.md#favorites--track-points-from-the-group)
 - [OpenStreetMap link](../map/map-context-menu.md#openstreetmap-link)
@@ -158,7 +158,7 @@ This panel includes additional information about the object. This info could be 
 
 </Tabs>
 
-OsmAnd displays **additional POI names** in the *map context menu*, showing first the name in the [display language](../personal/global-settings.md#display-language) or from the system's preferred language list. If more translations are available, they are grouped into specific tags like *name, brand, operator,* or *nearby POI*.
+OsmAnd displays **additional POI names** in the *map context menu*, showing first the name in the [display language](../personal/global-settings.md#display-language) or from the system's preferred language list. If more translations are available, they are grouped into specific tags like *name, brand, operator,* or *nearby POIs*.
 
 - Any additional translations are available via a drop-down list.
 - Names are categorized into groups such as the *list of names in other languages*, *Regional*, *Local*, *National*, *International*, *Short*, *Old*, *Official*, and *Alternative* names.
@@ -184,13 +184,13 @@ In the context menu, you can find [geographical coordinates](../search/search-co
 OsmAnd Web Link can be automatically recognized by OsmAnd (example: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Both OsmAnd and [OpenStreetMap links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) are opened on corresponding sites with a pin mark to the place of interest.  
 
 
-### Nearby POI / Wikipedia
+### Nearby POIs / Wikipedia
 
 ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
 
-These sections display nearby [Wikipedia articles](../plugins/wikipedia.md) or [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois-on-the-map) with *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to display and [search](../search/search-poi.md) all other POI & Wikipedia articles.
+These sections display nearby [Wikipedia articles](../plugins/wikipedia.md) or [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois-on-the-map) with *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to display and [search](../search/search-poi.md) all other POIs & Wikipedia articles.
 
-Tap *Nearby POI / Wikipedia articles* opens a points list (Wikipedia and POI). A tap to one of these points from a point list moves the map to this point (POI or Wikipedia) with the opening point map context menu.
+Tap *Nearby POIs / Wikipedia articles* opens a points list (POIs or Wikipedia). A tap to one of these points from a point list moves the map to this point (POIs or Wikipedia) with the opening point map context menu.
 
 **NOTE**. [<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia).
 
@@ -655,7 +655,7 @@ Requires [Trip recording plugin](../plugins/trip-recording.md).
 
 </Tabs>
 
-With OSM Editing plugin, you can create and modify most of the POI present on [OpenStreetMap](https://www.openstreetmap.org/).
+With OSM Editing plugin, you can create and modify most of the POIs present on [OpenStreetMap](https://www.openstreetmap.org/).
 
 - &nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [creates a new POI](../plugins/osm-editing.md#how-to-add-poi) at selected location.
 - &nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [modifies selected POI](../plugins/osm-editing.md#how-to-modify-poi).

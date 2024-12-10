@@ -4,23 +4,21 @@ sidebar_position: 5
 
 # Calculation of uphill / downhill / slope
 
-OsmAnd uses different algorithms to calculate **slope** and **uphill** based on SRTM satellite data which is embedded in offline maps 
-and based on Recorded GPX tracks.
+OsmAnd uses different algorithms to calculate **slope** and **uphill** based on SRTM satellite data which is embedded in offline maps and based on Recorded GPX tracks.
 
 Main goal to calculate **uphill** is to provide relevant information how much **extra energy** is spent on going up, obviously it depends
-on multiple factors like vehicle or way of transporting, surface, weight of the person and others. 
+on multiple factors like vehicle or way of transporting, surface, weight of the person and others.
 So in the end **uphill** should be a parameter taken into account by Elevation based routing, to produce energy-efficient routing.
 
 Main goal to calculate **slope** is to have visual indication which steep roads needs to be avoided.
 
 
-## Uphill / downhill 
+## Uphill / Downhill
 
-There are lots of issues to calculate **uphill** cause there is no standard and cause it depends on way of transportation and 
-many other parameters, it's hard to provide reasonable control to user so it's not too complicated. Usually uphill is compared to other programs
-but there is no program that has a golden standard. 
+There are lots of issues to calculate **uphill** cause there is no standard and cause it depends on way of transportation and many other parameters, it's hard to provide reasonable control to user so it's not too complicated. Usually uphill is compared to other programs but there is no program that has a golden standard.
 
-OsmAnd uses 3 steps algorithm: 
+OsmAnd uses 3 steps algorithm:
+
 - Filter noisy data. 
 - Find local extremums (minimums and maximums).
 - Calculate sum of differences between min and max.
@@ -84,7 +82,8 @@ More examples will be added.
 
 ## Altitude SRTM correction
 
-There are 2 alternatives that's possible to use in OsmAnd to get altitude correction. 
+There are 2 alternatives that's possible to use in OsmAnd to get altitude correction.
+
 1. Open track in OsmAnd Android and find, *Edit Track → Options → Altiude Correction* 
 1.1 **Online**  will process track via OsmAnd server and data.
 1.2 **Offline**  will process track on device if 3D geotifs files are downloaded.
