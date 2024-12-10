@@ -68,7 +68,7 @@ This setting provides a smooth animation of the *[My Position](../../personal/pr
 
 ## Show Points Along the Route
 
-The *Show along the route* setting allows you to configure additional route parameters and is required for the operation of widgets such as the [Street name](../../widgets/nav-widgets.md/#street-name) and the [Alert widget](../../widgets/nav-widgets.md#alert-widget). Options include displaying [**POIs**](#points-of-interest-poi) and [**My Favourites**](#my-favorites) along the route or using them as an addition to those already configured for the profile, as well as displaying a complete list of [**Traffic warnings**](#traffic-warnings) along the route.  
+The *Show along the route* setting allows you to configure additional route parameters and is required for the operation of widgets such as the [Street name](../../widgets/nav-widgets.md/#street-name) and the [Alert widget](../../widgets/nav-widgets.md#alert-widget). Options include displaying [**POIs**](#points-of-interest-pois) and [**My Favourites**](#my-favorites) along the route or using them as an addition to those already configured for the profile, as well as displaying a complete list of [**Traffic warnings**](#traffic-warnings) along the route.  
 
 - The ability to set different distances (up to 5 km, or 3.11 miles, depending on the [unit of length](../../personal/profiles.md#units--formats) you set) from the route to nearby points is useful when using routing types such as [Straight Line](../routing/straight-line-routing.md) or [Direct-to-point](../routing/direct-to-point-routing.md).
 - For the *Show along the route* setting, it is recommended to use [Voice prompts](../guidance/voice-navigation.md) for navigation.
@@ -100,7 +100,7 @@ The *Show along the route* setting allows you to configure additional route para
 In the *Navigation section*, when creating a route, you can set the types of points that will be displayed on the map along the route.
 
 
-### Points of Interest (POI)
+### Points of Interest (POIs)
 
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)
 

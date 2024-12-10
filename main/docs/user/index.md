@@ -42,11 +42,11 @@ OsmAnd app is available for Android and iOS systems. There is a great variety of
 
 ### [Search](./search/index.md)
 
-The tool provides the searching features for any use-cases: address search, POi search, custom search, history search, coordinate search.
+The tool provides the searching features for any use-cases: address search, POI search, custom search, history search, coordinate search.
 
 ### [Web Route Planner](./web/index.md)
 
-OsmAnd Web Source provides a wide range of map features, a navigation service, and synchronization with OsmAnd Cloud. This allows users to access detailed maps, navigate routes, and keep their data synchronized across devices. 
+OsmAnd Web Source provides a wide range of map features, a navigation service, and synchronization with OsmAnd Cloud. This allows users to access detailed maps, navigate routes, and keep their data synchronized across devices.
 
 ### [Troubleshooting](./troubleshooting/index.md)
 
