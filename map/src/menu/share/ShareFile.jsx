@@ -1,40 +1,28 @@
-import {
-    AppBar,
-    Box,
-    Button,
-    Divider,
-    IconButton,
-    ToggleButton,
-    ToggleButtonGroup,
-    Toolbar,
-    Typography,
-} from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import React, { useContext, useEffect, useState } from 'react';
 import { apiGet } from '../../util/HttpApi';
-import {
-    APPROVED_ACCESS_TYPE,
-    BLOCKED_ACCESS_TYPE,
-    PENDING_ACCESS_TYPE,
-    REQUEST_ACCESS_TYPE,
-    sendRequest,
-} from '../../manager/ShareManager';
+import { BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE, REQUEST_ACCESS_TYPE, sendRequest } from '../../manager/ShareManager';
 import headerStyles from '../trackfavmenu.module.css';
 import styles from './share.module.css';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_SHARE_FILE } from '../../context/AppContext';
 import RequestAccessError from './errors/RequestAccessError';
 import PendingAccessError from './errors/PendingAccessError';
 import BlockedAccessError from './errors/BlockedAccessError';
+import { quickNaNfix } from '../../util/Utils';
+import { addDistance } from '../../manager/track/TracksManager';
+import GeneralInfoTab from '../../infoblock/components/tabs/GeneralInfoTab';
+import { GPX, MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
 export default function ShareFile() {
     const ctx = useContext(AppContext);
-
     const { uuid } = useParams();
 
     const [requestTypeAccess, setRequestTypeAccess] = useState(false);
     const [pendingTypeAccess, setPendingTypeAccess] = useState(false);
     const [blockedTypeAccess, setBlockedTypeAccess] = useState(false);
+    const [showFile, setShowFile] = useState(false);
 
     useEffect(() => {
         async function fetchFile() {
@@ -42,16 +30,27 @@ export default function ShareFile() {
             if (res.ok) {
                 const text = await res.text();
                 try {
-                    const jsonData = JSON.parse(text);
+                    const jsonData = JSON.parse(quickNaNfix(text));
                     if (jsonData) {
-                        console.log('JSON Response:', jsonData);
+                        if (jsonData.type === GPX) {
+                            const track = jsonData.gpx_data;
+                            addDistance(track);
+                            const file = {
+                                name: jsonData.name,
+                                type: jsonData.type,
+                                ...track,
+                            };
+                            ctx.setCurrentObjectType(OBJECT_TYPE_SHARE_FILE);
+                            ctx.setSelectedGpxFile(file);
+                            setShowFile(true);
+                        }
                     }
                 } catch (error) {
-                    if (text === REQUEST_ACCESS_TYPE) {
+                    if (text.toLowerCase() === REQUEST_ACCESS_TYPE) {
                         setRequestTypeAccess(true);
-                    } else if (text === PENDING_ACCESS_TYPE) {
+                    } else if (text.toLowerCase() === PENDING_ACCESS_TYPE) {
                         setPendingTypeAccess(true);
-                    } else if (text === BLOCKED_ACCESS_TYPE) {
+                    } else if (text.toLowerCase() === BLOCKED_ACCESS_TYPE) {
                         setBlockedTypeAccess(true);
                     }
                 }
@@ -60,7 +59,11 @@ export default function ShareFile() {
         fetchFile().then();
     }, [uuid]);
 
-    function closeMenu() {}
+    function closeMenu() {
+        ctx.setCurrentObjectType(null);
+        ctx.setSelectedGpxFile({});
+        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+    }
 
     async function sendAccessRequest() {
         const res = await sendRequest(uuid);
@@ -82,10 +85,15 @@ export default function ShareFile() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Box>
+            <Box sx={{ px: 2, mt: 1, overflowX: 'hidden' }}>
                 {requestTypeAccess && <RequestAccessError sendRequest={sendAccessRequest} />}
                 {pendingTypeAccess && <PendingAccessError />}
                 {blockedTypeAccess && <BlockedAccessError />}
+                {showFile && (
+                    <Box>
+                        <GeneralInfoTab key="general" />
+                    </Box>
+                )}
             </Box>
         </>
     );

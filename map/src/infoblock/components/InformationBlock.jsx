@@ -237,7 +237,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                             />
                         ))}
                     {openShareFileMenu && <ShareFileMenu setShowInfoBlock={setShowInfoBlock} />}
-                    {openShareFileItem && <ShareFile setShowInfoBlock={setShowInfoBlock} />}
+                    {openShareFileItem && <ShareFile />}
                     {hasOldTabs() && (
                         <Box anchor={'right'} sx={{ height: 'auto', width: getWidth(), overflowX: 'hidden' }}>
                             <div id="se-infoblock-all">

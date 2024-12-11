@@ -25,6 +25,7 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_POI,
     OBJECT_TYPE_WEATHER,
+    OBJECT_TYPE_SHARE_FILE,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -287,7 +288,11 @@ export default function MainMenu({
             setSelectedType(currentMenu.type);
             ctx.setPrevPageUrl({ url: location, active: false });
         } else {
-            if (ctx.currentObjectType !== OBJECT_EXPLORE && ctx.currentObjectType !== OBJECT_TYPE_POI) {
+            if (
+                ctx.currentObjectType !== OBJECT_EXPLORE &&
+                ctx.currentObjectType !== OBJECT_TYPE_POI &&
+                ctx.currentObjectType !== OBJECT_TYPE_SHARE_FILE
+            ) {
                 setOpenMainMenu(true);
             }
         }
