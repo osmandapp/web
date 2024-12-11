@@ -14,7 +14,7 @@ import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
 import { duplicateTrack } from '../../manager/track/SaveTrackManager';
 import { useTranslation } from 'react-i18next';
-import { openShareFileMenu } from '../../manager/ShareManager';
+import { getShareFileInfo } from '../../manager/ShareManager';
 
 const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref) => {
     const ctx = useContext(AppContext);
@@ -111,7 +111,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                     <MenuItem
                         id={'se-share-track'}
                         className={styles.action}
-                        onClick={() => openShareFileMenu({ file: track, ctx })}
+                        onClick={() => getShareFileInfo({ file: track, ctx })}
                     >
                         <ListItemIcon className={styles.iconAction}>
                             <ShareIcon />

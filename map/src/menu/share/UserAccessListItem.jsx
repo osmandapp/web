@@ -1,16 +1,67 @@
 import { useInView } from 'react-intersection-observer';
-import React, { useMemo, useRef, useState } from 'react';
-import { IconButton, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
+import React, { useContext, useMemo, useRef, useState } from 'react';
+import { Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import trackStyles from '../trackfavmenu.module.css';
+import styles from './share.module.css';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import { ReactComponent as UserIcon } from '../../assets/icons//ic_action_user.svg';
+import { ReactComponent as ActionDoneIcon } from '../../assets/icons/ic_action_done.svg';
+import { ReactComponent as ActionRemoveIcon } from '../../assets/icons/ic_action_remove_dark.svg';
+import { format } from 'date-fns';
+import * as locales from 'date-fns/locale';
+import i18n from 'i18next';
+import AppContext from '../../context/AppContext';
+import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../../manager/ShareManager';
 
-export default function UserAccessListItem({ userName, type }) {
+export default function UserAccessListItem({
+    index,
+    showOwner,
+    type,
+    user,
+    userList,
+    emptyBlockedTab,
+    setForcedUpdate,
+}) {
+    const ctx = useContext(AppContext);
+
     const { ref, inView } = useInView();
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const anchorEl = useRef(null);
+
+    const name = showOwner ? ctx.shareFile.sharedObj.owner : user.name;
+    const userInfo = showOwner ? 'Owner' : formatRequestedDateWithDateFns(user.requestDate);
+
+    function formatRequestedDateWithDateFns(date) {
+        const locale = locales[i18n.language] || locales.enUS;
+        return `Requested: ${format(date, 'd MMM yyyy', { locale })}`;
+    }
+
+    function approveRequest() {
+        userList.splice(userList.indexOf(user), 1);
+        ctx.setUpdatedRequestList((prev) => [
+            ...prev,
+            {
+                id: user.id,
+                type: APPROVED_ACCESS_TYPE,
+            },
+        ]);
+    }
+
+    function blockRequest() {
+        userList.splice(userList.indexOf(user), 1);
+        if (emptyBlockedTab) {
+            setForcedUpdate(true);
+        }
+        ctx.setUpdatedRequestList((prev) => [
+            ...prev,
+            {
+                id: user.id,
+                type: BLOCKED_ACCESS_TYPE,
+            },
+        ]);
+    }
 
     return useMemo(
         () => (
@@ -18,30 +69,54 @@ export default function UserAccessListItem({ userName, type }) {
                 {!inView ? (
                     <Skeleton variant="rectangular" width="100%" height={50} />
                 ) : (
-                    <MenuItem className={trackStyles.item} disableRipple>
-                        <ListItemIcon className={trackStyles.icon}>
-                            <UserIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <MenuItemWithLines name={userName} maxLines={2} />
-                            <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
-                                {type}
-                            </Typography>
-                        </ListItemText>
-                        <div>
-                            <IconButton
-                                className={trackStyles.sortIcon}
-                                onMouseEnter={() => setHoverIconInfo(true)}
-                                onMouseLeave={() => setHoverIconInfo(false)}
-                                ref={anchorEl}
-                            >
-                                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                            </IconButton>
-                        </div>
-                    </MenuItem>
+                    <div>
+                        <MenuItem className={trackStyles.item} disableRipple>
+                            <ListItemIcon className={trackStyles.icon}>
+                                <UserIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <MenuItemWithLines name={name} maxLines={2} />
+                                <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
+                                    {userInfo}
+                                </Typography>
+                            </ListItemText>
+                            {type === APPROVED_ACCESS_TYPE && (
+                                <IconButton
+                                    className={trackStyles.sortIcon}
+                                    onMouseEnter={() => setHoverIconInfo(true)}
+                                    onMouseLeave={() => setHoverIconInfo(false)}
+                                    ref={anchorEl}
+                                >
+                                    {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                                </IconButton>
+                            )}
+                            {type === PENDING_ACCESS_TYPE && (
+                                <div>
+                                    <IconButton className={styles.approveBtn} onClick={approveRequest}>
+                                        <ActionDoneIcon />
+                                    </IconButton>
+                                    <IconButton className={styles.blockBtn} onClick={blockRequest}>
+                                        <ActionRemoveIcon />
+                                    </IconButton>
+                                </div>
+                            )}
+                            {type === BLOCKED_ACCESS_TYPE && (
+                                <div>
+                                    <IconButton className={styles.approveBtn} onClick={approveRequest}>
+                                        <ActionDoneIcon />
+                                    </IconButton>
+                                    <IconButton className={styles.blockBtn} disabled={true}>
+                                        <ActionRemoveIcon />
+                                    </IconButton>
+                                </div>
+                            )}
+                        </MenuItem>
+                        {showOwner && userList?.length !== 0 && <Divider className={styles.dividerItem} />}
+                        {!showOwner && index !== userList?.length - 1 && <Divider className={styles.dividerItem} />}
+                    </div>
                 )}
             </div>
         ),
-        [inView, userName, hoverIconInfo]
+        [inView, hoverIconInfo, type, name, userInfo]
     );
 }

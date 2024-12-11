@@ -21,3 +21,5 @@ export const TRAVEL_URL = 'travel/';
 export const OLD_LOGIN_URL = 'dialog-account/';
 export const LOGIN_URL = 'account/';
 export const DELETE_ACCOUNT_URL = 'delete-account/';
+export const SHARE_FILE_URL = 'share/join/:uuid';
+export const SHARE_FILE_MAIN_URL = 'share/join/';

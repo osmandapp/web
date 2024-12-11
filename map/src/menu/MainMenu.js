@@ -67,6 +67,7 @@ import {
     TRACKS_URL,
     WEATHER_URL,
     TRAVEL_URL,
+    SHARE_FILE_MAIN_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -75,6 +76,7 @@ import LoginButton from './login/LoginButton';
 import LoginMenu from './login/LoginMenu';
 import TravelMenu from './travel/TravelMenu';
 import ProFeatures from '../frame/components/pro/ProFeatures';
+import { updateUserRequests } from '../manager/ShareManager';
 
 export default function MainMenu({
     size,
@@ -131,6 +133,11 @@ export default function MainMenu({
             ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
         const openFavorite =
             !!ctx.selectedGpxFile?.markerCurrent && location.pathname === MAIN_URL_WITH_SLASH + FAVORITES_URL;
+        const openShareFile = location.pathname.includes(SHARE_FILE_MAIN_URL);
+        if (openShareFile) {
+            setShowInfoBlock(true);
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
+        }
         if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite) {
             setShowInfoBlock(false);
         }
@@ -240,6 +247,13 @@ export default function MainMenu({
             ctx.setOpenVisibleMenu(false);
         }
     }, [menuInfo]);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            updateUserRequests(ctx).then();
+        }, 10000);
+        return () => clearInterval(intervalId);
+    }, []);
 
     //open main menu if currentObjectType was changed
     useEffect(() => {

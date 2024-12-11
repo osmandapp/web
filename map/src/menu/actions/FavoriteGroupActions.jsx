@@ -12,7 +12,7 @@ import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
 import AppContext from '../../context/AppContext';
 import { updateAllFavorites, updateFavoriteGroups } from '../../manager/FavoritesManager';
 import { useTranslation } from 'react-i18next';
-import { openShareFileMenu } from '../../manager/ShareManager';
+import { getShareFileInfo } from '../../manager/ShareManager';
 
 const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const ctx = useContext(AppContext);
@@ -111,7 +111,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                     <MenuItem
                         id={'se-share-favorite-folder'}
                         className={styles.action}
-                        onClick={() => openShareFileMenu({ file: group, ctx })}
+                        onClick={() => getShareFileInfo({ file: group, ctx })}
                     >
                         <ListItemIcon className={styles.iconAction}>
                             <ShareIcon />

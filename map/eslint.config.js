@@ -1,9 +1,9 @@
-const reactPlugin = require('eslint-plugin-react');
-const reactHooksPlugin = require('eslint-plugin-react-hooks');
-const prettierPlugin = require('eslint-plugin-prettier');
-const reactCompiler = require('eslint-plugin-react-compiler');
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import prettierPlugin from 'eslint-plugin-prettier';
+import reactCompiler from 'eslint-plugin-react-compiler';
 
-module.exports = [
+export default [
     {
         files: ['**/*.js', '**/*.jsx', '**/*.mjs', 'src/resources/scripts/*.mjs'],
         languageOptions: {

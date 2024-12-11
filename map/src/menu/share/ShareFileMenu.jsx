@@ -25,11 +25,15 @@ import ShareType from './ShareType';
 import SubTitle from '../components/SubTitle';
 import UserAccessList from './UserAccessList';
 import MenuItemWithLines from '../components/MenuItemWithLines';
-import { generateLink } from '../../manager/ShareManager';
-
-export const APPROVED_ACCESS_TYPE = 'approved';
-export const PENDING_ACCESS_TYPE = 'pending';
-export const BLOCKED_ACCESS_TYPE = 'blocked';
+import {
+    APPROVED_ACCESS_TYPE,
+    APPROVED_ACCESS_TYPE_SERVER,
+    BLOCKED_ACCESS_TYPE,
+    generateLink,
+    PENDING_ACCESS_TYPE,
+    updateUserRequests,
+} from '../../manager/ShareManager';
+import { MAIN_URL_WITH_SLASH, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
 
 export default function ShareFileMenu({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -55,6 +59,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
     const [link, setLink] = useState('Tap Generate link to start share this file.');
     const [generatedUuid, setGeneratedUuid] = useState(null);
     const [selectedShareType, setSelectedShareType] = useState(shareTypes.private);
+    const [forcedUpdate, setForcedUpdate] = useState(false);
 
     const userAccess = {
         [APPROVED_ACCESS_TYPE]: {
@@ -79,6 +84,16 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
     }, [ctx.shareFile, generatedUuid]);
 
     useEffect(() => {
+        updateUserRequests(ctx).then();
+    }, [selectedAccessTab, selectedShareType]);
+
+    useEffect(() => {
+        if (forcedUpdate) {
+            updateUserRequests(ctx).then(() => setForcedUpdate(false));
+        }
+    }, [forcedUpdate]);
+
+    useEffect(() => {
         if (ctx.shareFile?.sharedObj?.file?.accessRecords) {
             const groupedUsers = {
                 [APPROVED_ACCESS_TYPE]: [],
@@ -87,21 +102,21 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
             };
 
             ctx.shareFile.sharedObj.file.accessRecords.forEach((user) => {
-                if (user.access === APPROVED_ACCESS_TYPE) {
+                const userAccess = user.access.toLowerCase();
+                if (APPROVED_ACCESS_TYPE_SERVER.includes(userAccess.toLowerCase())) {
                     groupedUsers[APPROVED_ACCESS_TYPE].push(user);
-                } else if (user.access === PENDING_ACCESS_TYPE) {
+                } else if (userAccess === PENDING_ACCESS_TYPE.toLowerCase()) {
                     groupedUsers[PENDING_ACCESS_TYPE].push(user);
-                } else if (user.access === BLOCKED_ACCESS_TYPE) {
+                } else if (userAccess === BLOCKED_ACCESS_TYPE.toLowerCase()) {
                     groupedUsers[BLOCKED_ACCESS_TYPE].push(user);
                 }
             });
-
             setUserGroups(groupedUsers);
         }
     }, [ctx.shareFile]);
 
     function createLink(uuid) {
-        return `${window.location.origin}/share/join/${uuid}`;
+        return `${window.location.origin}${MAIN_URL_WITH_SLASH}${SHARE_FILE_MAIN_URL}${uuid}`;
     }
 
     async function generateNewLink() {
@@ -172,10 +187,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                             <ToggleButton value={APPROVED_ACCESS_TYPE}>
                                 {userAccess[APPROVED_ACCESS_TYPE].name}
                             </ToggleButton>
-                            <ToggleButton
-                                disabled={userGroups?.[PENDING_ACCESS_TYPE]?.length === 0}
-                                value={PENDING_ACCESS_TYPE}
-                            >
+                            <ToggleButton value={PENDING_ACCESS_TYPE}>
                                 {userAccess[PENDING_ACCESS_TYPE].name}
                             </ToggleButton>
                             <ToggleButton
@@ -187,7 +199,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                         </ToggleButtonGroup>
                     </Box>
                     <Box>
-                        <UserAccessList type={selectedAccessTab} users={userGroups} />
+                        <UserAccessList type={selectedAccessTab} users={userGroups} setForcedUpdate={setForcedUpdate} />
                     </Box>
                 </Box>
                 <Divider className={gStyles.thickDivider} />
