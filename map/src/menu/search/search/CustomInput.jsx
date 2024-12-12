@@ -25,7 +25,12 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
     useEffect(() => {
         if (!isInitialRender) {
             if (value === EMPTY_SEARCH) {
-                ctx.setSearchResult(null);
+                ctx.setSearchResult((prevResult) => {
+                    return {
+                        ...prevResult,
+                        features: [],
+                    };
+                });
                 setSearchValue(null);
             }
         } else {

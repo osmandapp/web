@@ -262,16 +262,15 @@ export default function PoiLayer() {
                                 setBbox(bbox);
                                 setPrevCategoriesCount(showPoiCategories.length);
                                 setUseLimit(res.useLimit);
-                                ctx.setProcessingSearch(false);
                             }
                         }
                         if (res.mapLimitExceeded) {
                             setAddAlert(true);
                         }
                     } else {
-                        ctx.setProcessingSearch(false);
                         setPoiList(null);
                     }
+                    ctx.setProcessingSearch(false);
                 });
             },
             1000
@@ -368,8 +367,8 @@ export default function PoiLayer() {
             }
             if (poiList?.layer && !map.hasLayer(poiList?.layer)) {
                 poiList?.layer.addTo(map).on('click', onClick);
-                addToSearchRes(poiList);
             }
+            addToSearchRes(poiList);
             setMove(false);
         }
     }, [poiList, ctx.processingSearch]);
