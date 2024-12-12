@@ -125,7 +125,6 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                 latlng: new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]),
             };
             ctx.setSelectedWpt({ poi });
-            setSelectedPoint({ show: false });
         } else {
             // click on category
             const category = item.properties['web_keyName'];

@@ -418,6 +418,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     function closeDetails() {
         if (wpt?.type?.isPoi || wpt?.type?.isSearch) {
+            if (ctx.selectedPoiId) {
+                ctx.setSelectedPoiId((prev) => {
+                    return { ...prev, show: false };
+                });
+            }
             isDetails ? returnToSearch() : closeHeader({ ctx });
         } else if (wpt?.type?.isWpt) {
             isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
