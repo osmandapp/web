@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_EXPLORE, OBJECT_SEARCH } from '../../context/AppContext';
+import AppContext, { OBJECT_EXPLORE } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { apiGet } from '../../util/HttpApi';
 import { WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
@@ -303,7 +303,7 @@ export default function ExploreLayer() {
     useEffect(() => {
         const abortController = new AbortController();
 
-        if (ctx.currentObjectType === OBJECT_SEARCH && !ctx.searchSettings.showOnMainSearch) {
+        if (ctx.currentObjectType !== OBJECT_EXPLORE && !ctx.searchSettings.showOnMainSearch) {
             abortController.abort();
             return;
         }
@@ -392,10 +392,7 @@ export default function ExploreLayer() {
                         simpleMarkersArr.addLayer(circle);
                     }
 
-                    if (
-                        ctx.currentObjectType === OBJECT_EXPLORE ||
-                        (ctx.currentObjectType === OBJECT_SEARCH && ctx.searchSettings.showOnMainSearch)
-                    ) {
+                    if (ctx.currentObjectType === OBJECT_EXPLORE || ctx.searchSettings.showOnMainSearch) {
                         otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
                         mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
                         updateMarkerZIndex(mainIconsLayerRef.current, 2000);

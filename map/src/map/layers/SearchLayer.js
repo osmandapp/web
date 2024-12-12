@@ -159,6 +159,7 @@ export default function SearchLayer() {
         } else {
             ctx.setSearchResult(null);
         }
+        ctx.setProcessingSearch(false);
     }
 
     function removeOldSearchLayer() {
