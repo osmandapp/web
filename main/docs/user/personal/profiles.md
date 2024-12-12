@@ -153,7 +153,7 @@ This section contains settings for the application theme and compass button, map
 
 <TabItem value="android" label="Android">
 
-![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/profile_gs_unitsformats_android.png)
+![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/profiles_units_formats_andr.png)
 
 </TabItem>
 
@@ -199,7 +199,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 
 |  |  |  |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="driving_region"/>** | <Translate android="true" ids="shared_string_automatic"/> | According to the device location. |
+| **<Translate android="true" ids="driving_region"/>** | <Translate android="true" ids="shared_string_automatic"/> | <ul><li>According to the device location</li></ul> |
 |            | <Translate android="true" ids="driving_region_europe_asia"/>   | <ul><li><Translate android="true" ids="right_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |            | <Translate android="true" ids="driving_region_us"/>   |  <ul><li><Translate android="true" ids="right_side_navigation"/></li><li><Translate android="true" ids="si_mi_feet"/></li></ul>  |
 |            | <Translate android="true" ids="driving_region_canada"/>   | <ul><li><Translate android="true" ids="right_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
@@ -207,13 +207,13 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 |            | <Translate android="true" ids="driving_region_japan"/>   | <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
 |            | <Translate android="true" ids="driving_region_india"/>   | <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
-|  |  |
+|  |  |  |
 | **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m |
-|  |  |
+|  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Example: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Example: 50°7.393′ 19°55.941′ (Lat Long)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Example: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
@@ -226,14 +226,17 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Degrees 180° | All angular values have readings from 0° to 180° and from 0° to -180°.  |
 |          | Degrees 360° | All angular values have readings from 0° to 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | All angular values have [milliradian value](https://en.wikipedia.org/wiki/Milliradian).  |
-|  |  |
+|  |  |  |
 | **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
 |          | <Translate android="true" ids="si_m_s"/> | 30 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
-|  |  |
+|  |  |  |
+| **<Translate android="true" ids="unit_of_volume"/>** (*Android*) | <Translate android="true" ids="litres"/> | Europe, Aisa, Latin America, Canada, Japan, India, Australia |
+|  | <Translate android="true" ids="imperial_gallons"/> | UK and similar |
+|  | <Translate android="true" ids="us_gallons"/> | United States |
 | **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *For precise measurements*, choose how distance information is displayed in the navigation widgets, such as the distance to a point, the next turn, or a specific lane. |
 |          | <Translate android="true" ids="round_up"/> | *For better readability*, the numbers displayed in the navigation widgets (distance to a point, next turn, or lane) will be rounded down to have fewer digits. <br/> For examples: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
 
@@ -459,7 +462,7 @@ With the UI customization feature, you can adjust the number of items in actions
 ![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
 
 - **Main visible items**. In the Customise UI section, you can reorder hide, and restore items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android).
-- **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the *Main Menu* in the drawer. All your changes are instantly undone.  
+- **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the main menu in the drawer. All your changes are instantly undone.  
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can duplicate the element arrangement from another OsmAnd profile to this one.
 
 ### Configuring the Map
@@ -476,14 +479,14 @@ With the UI customization feature, you can adjust the number of items in actions
 ![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
 - **Map context menu**.  In this part of the Customise UI section, you can reorder or hide items from the [map context menu](../map/map-context-menu.md).  
-- **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the *Main Menu* in the drawer. All your changes are instantly undone.
+- **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the main menu in the drawer. All your changes are instantly undone.
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can duplicate the element arrangement from another OsmAnd profile to this one.
 
 
 ## Plugin Settings
 
 :::caution Access to plugin settings
-To access the plugin's settings, you must first [**enable the plugin**](../plugins/index.md#enable--disable) in the *Plugin section of the *Main Menu**.
+To access the plugin's settings, you must first [**enable the plugin**](../plugins/index.md#enable--disable) in the *Plugin section of the main menu*.
 :::
 
 <Tabs groupId="operating-systems">
@@ -548,7 +551,7 @@ Plugins unlock additional features of the application and can be either [paid or
 
 Actions with selected profile:  
 
-- [Export profile](https://osmand.net/docs/user/personal/import-export#export). You can export all settings of the selected profile in `.osf` format.
+- [Export profile](https://osmand.net/docs/user/personal/import-export#export). You can export all settings of the selected profile in OSF format.
 - **Copy from another profile.** Copies all settings from another existing profile in your OsmAnd application.
 - **Reset to default.** Returns all settings to the initial state.
 - **Delete profile**:

@@ -38,7 +38,7 @@ For the plugin to work, you need to go to Accessibility from the settings item o
 
 - The full **list of TalkBack gestures** can be viewed [here](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
 
-- All of the [OsmAnd gestures](../map/interact-with-map#gestures) that are used to interact with the maps built into the app will also be available.
+- All [OsmAnd gestures](../map/interact-with-map#gestures) used to interact with maps built into the app will also be available.
 
 - All sound and haptic functions The OsmAnd app accessibility plugin remain running in the background when the screen is turned off or locked.  
 
@@ -51,7 +51,6 @@ For the plugin to work, you need to go to Accessibility from the settings item o
    - **Double tap** to switch map orientation is not available in Accessibility mode.
 
 
-
 ### How To Use (iOS)
 
 The iOS version of the OsmAnd app does not include an Accessibility plugin. However, the accessibility settings configured on your device will also work in the app.
@@ -60,7 +59,7 @@ The iOS version of the OsmAnd app does not include an Accessibility plugin. Howe
 
 - On the iOS system, you can use a VoiceOver gesture-based screen reader. For a full list of VoiceOver gestures on iPhone, click [here](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios). To see lists of gestures and settings for other devices, follow this [link](https://support.apple.com/accessibility).
 
-- All of the [OsmAnd gestures](../map/interact-with-map#gestures) that are used to interact with the maps built into the app will also be available.  
+- All [OsmAnd gestures](../map/interact-with-map#gestures) used to interact with the maps built into the app will also be available.  
 
 
 ## Required Setup Parameters

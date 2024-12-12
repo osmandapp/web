@@ -72,7 +72,7 @@ Special attributes are `<renderingAttribute >` that are not used by selectors bu
 | `defaultColor` | Default color to fill the map (switches night / day mode) |
 | `shadowRendering` | Internal how to render shadow with Skia |
 ||| 
-| `routeInfo_*` | Example: `routeInfo_surface`, `routeInfo_roadClass` are used to produce classes of roads to be displayed in the legend of the route. | 
+| `routeInfo_*` | Example: `routeInfo_surface`, `routeInfo_roadClass` produce classes of roads to be displayed in the legend of the route. | 
 |||
 | `polygonMinSizeToDisplay` | Internals how to render small lines and small polygons | 
 | `roadDensityZoomTile` | Internals how to render small lines and small polygons |
