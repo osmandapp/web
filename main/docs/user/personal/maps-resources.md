@@ -151,7 +151,7 @@ To download a map:
 - [**Travel guides (Wikivoyage)**](../plan-route/travel-guides.md) ([*paid feature*](../purchases/index.md)). Vector maps with a collection of articles in HTML format and additionally GPX files.
 - **Other maps**. Maps that cannot be assigned to the current map hierarchy because they are not supported or will be available in future versions.
 - [**Voice prompts**](../navigation/guidance/voice-navigation.md) (*Android only*). Voice packs for voicing navigation prompts.
-- [**Map fonts**](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files are used to display text on the map.
+- [**Map fonts**](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files  display text on the map.
 
 #### World Maps
 
