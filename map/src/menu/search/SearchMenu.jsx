@@ -44,10 +44,6 @@ export default function SearchMenu() {
 
     const { zoom } = useHashParams();
 
-    useEffect(() => {
-        ctx.setCurrentObjectType(OBJECT_SEARCH);
-    }, []);
-
     const { t } = useTranslation();
 
     useEffect(() => {

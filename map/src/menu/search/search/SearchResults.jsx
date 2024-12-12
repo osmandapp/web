@@ -213,6 +213,10 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         ctx.setSearchQuery(null);
     }
 
+    function resulNotPrepared() {
+        return !ctx.processingSearch && !result;
+    }
+
     return (
         <>
             <CustomInput
@@ -220,7 +224,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                 setSearchValue={setSearchValue}
                 defaultSearchValue={value?.query}
             />
-            {ctx.processingSearch && <Loading />}
+            {(ctx.processingSearch || resulNotPrepared()) && <Loading />}
             {!ctx.processingSearch &&
                 (result === EMPTY_SEARCH_RESULT ? (
                     <EmptySearch message={errorZoom} />
