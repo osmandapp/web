@@ -715,7 +715,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             {wpt?.category && <WptCategory />}
                             <div className={styles.location}>
                                 {wpt.latlon && currentLoc && <WptLoc wpt={wpt} location={currentLoc} />}
-                                {wpt.type?.isPoi && (
+                                {(wpt.type?.isPoi || wpt.type?.isSearch) && (
                                     <>
                                         <Tooltip
                                             title={t('shared_string_add_to_favorites')}
