@@ -30,7 +30,6 @@ import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_acti
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as FavoritesIcon } from '../../../assets/menu/ic_action_favorite.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
-import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
 import {
     cleanHtml,
     DEFAULT_ICON_COLOR,
@@ -49,14 +48,11 @@ import FavoritesManager, {
 import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider, {
-    AMENITY_PREFIX,
     FINAL_POI_ICON_NAME,
     openWikivoyageContent,
     OSM_PREFIX,
     POI_OSM_URL,
     POI_PREFIX,
-    SUBTYPE,
-    TYPE_OSM_VALUE,
     WIKIDATA,
     WIKIMEDIA_COMMONS,
     WIKIPEDIA,
@@ -600,16 +596,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         {locDist(wpt, location) ?? 'No distance'}
                     </Typography>
                 </ListItemText>
-                <ListItemIcon sx={{ minWidth: 'auto', fill: color }} onClick={zoomTo}>
-                    <SearchIcon />
-                </ListItemIcon>
             </Box>
         );
     };
-
-    function zoomTo() {
-        ctx.setZoomToMapObj(wpt.latlon);
-    }
 
     const WikiVoyageLinks = ({ wvLinks }) => {
         const [open, setOpen] = useState(false);
