@@ -53,10 +53,10 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const { zoom } = useHashParams();
 
     useEffect(() => {
-        if (!result) {
+        if (result === EMPTY_SEARCH_RESULT) {
             checkZoomError();
         }
-    }, [result]);
+    }, [zoom]);
 
     useEffect(() => {
         if (value?.query) {
