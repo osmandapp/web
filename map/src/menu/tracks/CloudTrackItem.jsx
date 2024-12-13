@@ -17,6 +17,7 @@ import TrackInfo from './TrackInfo';
 import TracksManager, {
     getDist,
     getFileName,
+    getShare,
     getTime,
     getWptPoints,
     isEmptyTrack,
@@ -34,6 +35,7 @@ import MenuItemWithLines from '../components/MenuItemWithLines';
 import { closeTrack } from '../../manager/track/DeleteTrackManager';
 import { isVisibleTrack, updateVisibleCache } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
+import FileShareIcon from '../share/FileShareIcon.jsx';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem }) {
     const ctx = useContext(AppContext);
@@ -57,6 +59,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const dist = getDist(file);
     const time = getTime(file);
     const wptPoints = getWptPoints(file);
+    const share = getShare(file);
 
     async function processDisplayTrack({ visible, setLoading, showOnMap = true, showInfo = false }) {
         checkedSwitch = !checkedSwitch;
@@ -232,6 +235,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                             <ListItemText>
                                 <MenuItemWithLines name={trackName} maxLines={2} />
                                 <Typography variant="body2" className={styles.groupInfo} noWrap>
+                                    {share && <FileShareIcon />}
                                     {dist && `${dist} km`}
                                     {' · '}
                                     {time && `${time}`}

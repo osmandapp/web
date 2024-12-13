@@ -12,6 +12,8 @@ import FavoriteGroupActions from '../actions/FavoriteGroupActions';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
+import FileShareIcon from '../share/FileShareIcon.jsx';
+import { getShare } from '../../manager/track/TracksManager';
 
 export default function FavoriteGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -21,6 +23,7 @@ export default function FavoriteGroup({ index, group }) {
     const [processDownload, setProcessDownload] = useState(false);
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const anchorEl = useRef(null);
+    const share = getShare(group.file);
 
     useEffect(() => {
         if (ctx.favorites.mapObjs[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
@@ -66,6 +69,7 @@ export default function FavoriteGroup({ index, group }) {
                 <ListItemText>
                     <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
+                        {share && <FileShareIcon />}
                         {`${getLocalizedTimeUpdate(group.clienttimems)}, ${getSize()}`}
                     </Typography>
                 </ListItemText>

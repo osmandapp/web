@@ -1401,6 +1401,10 @@ export function getWptPoints(file) {
     return f?.wptPoints ? f?.wptPoints : null;
 }
 
+export function getShare(file) {
+    return file?.details?.share;
+}
+
 const TracksManager = {
     loadTracks,
     prepareName,

@@ -111,7 +111,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                     <MenuItem
                         id={'se-share-favorite-folder'}
                         className={styles.action}
-                        onClick={() => getShareFileInfo({ file: group, ctx })}
+                        onClick={() => getShareFileInfo({ file: group.file, ctx })}
                     >
                         <ListItemIcon className={styles.iconAction}>
                             <ShareIcon />
