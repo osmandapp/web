@@ -190,10 +190,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                             <ToggleButton value={PENDING_ACCESS_TYPE}>
                                 {userAccess[PENDING_ACCESS_TYPE].name}
                             </ToggleButton>
-                            <ToggleButton
-                                disabled={userGroups?.[BLOCKED_ACCESS_TYPE]?.length === 0}
-                                value={BLOCKED_ACCESS_TYPE}
-                            >
+                            <ToggleButton value={BLOCKED_ACCESS_TYPE}>
                                 {userAccess[BLOCKED_ACCESS_TYPE].name}
                             </ToggleButton>
                         </ToggleButtonGroup>
