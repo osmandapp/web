@@ -79,3 +79,21 @@ export async function updateUserRequests(ctx) {
         }
     }
 }
+
+export async function changeShareTypeFile(file, ctx) {
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/share/change-share-type`, {
+        params: {
+            filePath: file.filepath,
+        },
+    });
+    if (res.ok) {
+        const updatedFile = await res.json();
+        ctx.setShareFile((prev) => ({
+            ...prev,
+            sharedObj: {
+                ...prev.sharedObj,
+                file: updatedFile,
+            },
+        }));
+    }
+}

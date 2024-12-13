@@ -29,11 +29,13 @@ import {
     APPROVED_ACCESS_TYPE,
     APPROVED_ACCESS_TYPE_SERVER,
     BLOCKED_ACCESS_TYPE,
+    changeShareTypeFile,
     generateLink,
     PENDING_ACCESS_TYPE,
     updateUserRequests,
 } from '../../manager/ShareManager';
 import { MAIN_URL_WITH_SLASH, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
+import PublicAccessList from './PublicAccessList';
 
 export default function ShareFileMenu({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -42,12 +44,14 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
     const shareTypes = {
         public: {
             key: 'public',
+            isPublic: true,
             name: 'Anyone',
             icon: <ShareTypePublicIcon />,
             info: 'Anyone with the link can access the file',
         },
         private: {
             key: 'private',
+            isPublic: false,
             name: 'Request Only',
             icon: <ShareTypePrivateIcon />,
             info: 'Users need to request access, which you can approve or deny',
@@ -58,7 +62,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
     const [userGroups, setUserGroups] = useState({});
     const [link, setLink] = useState('Tap Generate link to start share this file.');
     const [generatedUuid, setGeneratedUuid] = useState(null);
-    const [selectedShareType, setSelectedShareType] = useState(shareTypes.private);
+    const [selectedShareType, setSelectedShareType] = useState(initialShareType());
     const [forcedUpdate, setForcedUpdate] = useState(false);
 
     const userAccess = {
@@ -82,6 +86,12 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
             setLink(createLink(uuid));
         }
     }, [ctx.shareFile, generatedUuid]);
+
+    useEffect(() => {
+        if (ctx.shareFile?.sharedObj?.file.publicAccess !== selectedShareType.isPublic) {
+            changeShareTypeFile(ctx.shareFile.sharedObj.file, ctx).then();
+        }
+    }, [selectedShareType]);
 
     useEffect(() => {
         updateUserRequests(ctx).then();
@@ -114,6 +124,14 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
             setUserGroups(groupedUsers);
         }
     }, [ctx.shareFile]);
+
+    function initialShareType() {
+        if (ctx.shareFile?.sharedObj?.file.publicAccess) {
+            return shareTypes.public;
+        } else {
+            return shareTypes.private;
+        }
+    }
 
     function createLink(uuid) {
         return `${window.location.origin}${MAIN_URL_WITH_SLASH}${SHARE_FILE_MAIN_URL}${uuid}`;
@@ -176,28 +194,37 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                 <Divider className={gStyles.thickDivider} />
                 <Box>
                     <SubTitle title={'Users'} hasTranslation={false} />
-                    <Box sx={{ mx: 2 }}>
-                        <ToggleButtonGroup
-                            fullWidth
-                            color="primary"
-                            value={selectedAccessTab}
-                            exclusive
-                            onChange={handleAccessTab}
-                        >
-                            <ToggleButton value={APPROVED_ACCESS_TYPE}>
-                                {userAccess[APPROVED_ACCESS_TYPE].name}
-                            </ToggleButton>
-                            <ToggleButton value={PENDING_ACCESS_TYPE}>
-                                {userAccess[PENDING_ACCESS_TYPE].name}
-                            </ToggleButton>
-                            <ToggleButton value={BLOCKED_ACCESS_TYPE}>
-                                {userAccess[BLOCKED_ACCESS_TYPE].name}
-                            </ToggleButton>
-                        </ToggleButtonGroup>
-                    </Box>
-                    <Box>
-                        <UserAccessList type={selectedAccessTab} users={userGroups} setForcedUpdate={setForcedUpdate} />
-                    </Box>
+                    {selectedShareType.key === shareTypes.private.key && (
+                        <Box sx={{ mx: 2 }}>
+                            <ToggleButtonGroup
+                                fullWidth
+                                color="primary"
+                                value={selectedAccessTab}
+                                exclusive
+                                onChange={handleAccessTab}
+                            >
+                                <ToggleButton value={APPROVED_ACCESS_TYPE}>
+                                    {userAccess[APPROVED_ACCESS_TYPE].name}
+                                </ToggleButton>
+                                <ToggleButton value={PENDING_ACCESS_TYPE}>
+                                    {userAccess[PENDING_ACCESS_TYPE].name}
+                                </ToggleButton>
+                                <ToggleButton value={BLOCKED_ACCESS_TYPE}>
+                                    {userAccess[BLOCKED_ACCESS_TYPE].name}
+                                </ToggleButton>
+                            </ToggleButtonGroup>
+                        </Box>
+                    )}
+                    {selectedShareType.key === shareTypes.private.key && (
+                        <Box>
+                            <UserAccessList
+                                type={selectedAccessTab}
+                                users={userGroups}
+                                setForcedUpdate={setForcedUpdate}
+                            />
+                        </Box>
+                    )}
+                    {selectedShareType.key === shareTypes.public.key && <PublicAccessList />}
                 </Box>
                 <Divider className={gStyles.thickDivider} />
                 <Box sx={{ mx: 2 }}>

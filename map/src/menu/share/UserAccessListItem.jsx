@@ -9,6 +9,7 @@ import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_
 import { ReactComponent as UserIcon } from '../../assets/icons//ic_action_user.svg';
 import { ReactComponent as ActionDoneIcon } from '../../assets/icons/ic_action_done.svg';
 import { ReactComponent as ActionRemoveIcon } from '../../assets/icons/ic_action_remove_dark.svg';
+import { ReactComponent as AnyoneIcon } from '../../assets/icons/ic_world_globe_dark.svg';
 import { format } from 'date-fns';
 import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
@@ -23,6 +24,7 @@ export default function UserAccessListItem({
     userList,
     emptyBlockedTab,
     setForcedUpdate,
+    anyone = false,
 }) {
     const ctx = useContext(AppContext);
 
@@ -30,8 +32,28 @@ export default function UserAccessListItem({
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const anchorEl = useRef(null);
 
-    const name = showOwner ? ctx.shareFile.sharedObj.owner : user.name;
-    const userInfo = showOwner ? 'Owner' : formatRequestedDateWithDateFns(user.requestDate);
+    const name = getName();
+    const userInfo = getInfo();
+
+    function getName() {
+        if (showOwner) {
+            return ctx.shareFile.sharedObj.owner;
+        } else if (anyone) {
+            return 'Anyone';
+        } else {
+            return user?.name;
+        }
+    }
+
+    function getInfo() {
+        if (showOwner) {
+            return 'Owner';
+        } else if (anyone) {
+            return 'Anyone with the link can access the file';
+        } else {
+            return formatRequestedDateWithDateFns(user?.requestDate);
+        }
+    }
 
     function formatRequestedDateWithDateFns(date) {
         const locale = locales[i18n.language] || locales.enUS;
@@ -39,6 +61,9 @@ export default function UserAccessListItem({
     }
 
     function approveRequest() {
+        if (!user) {
+            return;
+        }
         userList.splice(userList.indexOf(user), 1);
         ctx.setUpdatedRequestList((prev) => [
             ...prev,
@@ -50,6 +75,9 @@ export default function UserAccessListItem({
     }
 
     function blockRequest() {
+        if (!user) {
+            return;
+        }
         userList.splice(userList.indexOf(user), 1);
         if (emptyBlockedTab) {
             setForcedUpdate(true);
@@ -72,7 +100,7 @@ export default function UserAccessListItem({
                     <div>
                         <MenuItem className={trackStyles.item} disableRipple>
                             <ListItemIcon className={trackStyles.icon}>
-                                <UserIcon />
+                                {anyone ? <AnyoneIcon /> : <UserIcon />}
                             </ListItemIcon>
                             <ListItemText>
                                 <MenuItemWithLines name={name} maxLines={2} />
