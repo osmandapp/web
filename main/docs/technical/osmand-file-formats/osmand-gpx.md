@@ -7,8 +7,11 @@ sidebar_position: 2
 The OsmAnd's GPX file format conforms to the GPX 1.1 specification with additional data written as extensions. There are several sections of such data:
 
 ## Track appearance
-The following parameters are used to customize the appearance of a track on the map. They are used inside the "gpx" tag and apply to all tracks contained in the gpx.
+
+The following parameters customize the appearance of a track on the map. They are used inside the "gpx" tag and apply to all tracks contained in the gpx.
+
 #### Parameters
+
 |Name|Spec and Purpose|
 |:--------|:---------------|
 |[show_arrows]|Bool. "true" or "false". Show / hide arrows along the path line.|
@@ -18,6 +21,7 @@ The following parameters are used to customize the appearance of a track on the 
 |[split_interval]|Double. Split interval for a track. Distance (meters), time (seconds).|
 
 #### Example:
+
 ```xml
 <gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
 ...
@@ -30,12 +34,16 @@ The following parameters are used to customize the appearance of a track on the 
   </extensions>
 </gpx>
 ```
+
 ## Details of a track point (trkpt)
+
 Written to a gpx file while recording a track.
+
 * **speed** (meters per second)
 * **heading** (0-359 degrees)
 
 #### Example:
+
 ```xml
   <trkpt lat="52.397799" lon="4.575998">
     <ele>203</ele>
@@ -93,6 +101,7 @@ A gpx file may contain several routes. Each of them is contained in a specific s
   </rtept>
 </rte>
 ```
+
 #### Important properties:
 
 * **trkpt_idx** of first **rtept** in **trkseg** is 0. So, if there are two **trkseg**s, there will be two **rtept**s with **trkpt_idx** = 0
@@ -112,6 +121,7 @@ A gpx file may contain several routes. Each of them is contained in a specific s
   - rtepts - amount of **rtept**s owned by **trkseg**  
 
 #### Example:
+
 ```xml
 <gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
@@ -208,8 +218,9 @@ Specific features such as special icons on the map, track lines appearance, sear
 
 ### Map line display
 
-Example (to do). 
-To be supported: color could be defined on trkseg, trk, metadata. 
+Example (to do).
+To be supported: color could be defined on trkseg, trk, metadata.
+
 ```xml
 <trk>
   <extensions>
@@ -217,6 +228,7 @@ To be supported: color could be defined on trkseg, trk, metadata.
   </extensions>
 </trk>
 ```
+
 |Name|OBF name| Spec and Purpose|
 |:--------|:---------------|:---------------|
 | color | color | Color track is converted to predefined list (link) of colors | 
@@ -226,7 +238,7 @@ To be supported: color could be defined on trkseg, trk, metadata.
 
 ### Map waypoints display
 
-Example 
+Example
 ```xml
 <extensions>
     <gpxtpx:TrackPointExtension>
@@ -238,7 +250,7 @@ Example
 ```
 - ...
 
-### General Track info
+### General Track Info
 
 |Name|OBF name| Spec and Purpose|
 |:--------|:---------------|:---------------|
@@ -246,23 +258,23 @@ Example
 | speed, lat, lon | POI calculated: avg_speed, ...  | To restore general information about speed |
 
 
-### Tracks Search 
+### Tracks Search
 
 Use route_id vs osm_id. Suggestion: differentiate OSM objects and other objects by prefix "OSM-...".
 
 - ...
 
-### Waypoints Search 
+### Waypoints Search
 
 - ...
 
-### Route Context menu 
+### Route Context menu
 
 - Description (POI section)
 - Custom extension tags are not supported yet (POI section)
 
 
-### Waypoint Context menu 
+### Waypoint Context menu
 
 - Description (POI section)
 - Custom extension tags are not supported yet (POI section)

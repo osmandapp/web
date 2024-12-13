@@ -268,9 +268,9 @@ export default function PoiLayer() {
                             setAddAlert(true);
                         }
                     } else {
-                        ctx.setProcessingSearch(false);
                         setPoiList(null);
                     }
+                    ctx.setProcessingSearch(false);
                 });
             },
             1000
@@ -282,7 +282,7 @@ export default function PoiLayer() {
             ctx.setSearchResult((prevResult) => {
                 return {
                     ...prevResult,
-                    features: poiList?.listFeatures?.features,
+                    features: !poiList ? [] : poiList?.listFeatures?.features,
                 };
             });
         }
@@ -359,16 +359,19 @@ export default function PoiLayer() {
         }
     }, [zoom, move, ctx.showPoiCategories]);
 
+    // add search result to the map and to the left panel
     useEffect(() => {
-        if (poiList?.layer && !map.hasLayer(poiList?.layer)) {
-            poiList?.layer.addTo(map).on('click', onClick);
+        if (!ctx.processingSearch) {
+            if (poiList?.prevLayer) {
+                map.removeLayer(poiList?.prevLayer);
+            }
+            if (poiList?.layer && !map.hasLayer(poiList?.layer)) {
+                poiList?.layer.addTo(map).on('click', onClick);
+            }
+            addToSearchRes(poiList);
+            setMove(false);
         }
-        if (poiList?.prevLayer) {
-            map.removeLayer(poiList?.prevLayer);
-        }
-        addToSearchRes(poiList);
-        setMove(false);
-    }, [poiList]);
+    }, [poiList, ctx.processingSearch]);
 
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);

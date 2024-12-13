@@ -178,7 +178,7 @@ Tracks can also be selected directly on the vehicle screen in *CarPlay*. They ar
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-search(1).png)  
 
-Going to **Search** gives you quick access to a list of recent [destination history](#history). Similarly with the [Navigation menu](../navigation/setup/route-navigation.md#navigation-menu), where all OsmAnd destination methods such as an address, POI, or coordinates are collected.  
+Going to **Search** gives you quick access to a list of recent [destination history](#history). Similarly with the [Navigation menu](../navigation/setup/route-navigation.md#navigation-menu), where all OsmAnd destination methods such as an address, POIs, or coordinates are collected.  
 
 You can use the *Search tool* to find the required place on the map for route planning from any available search category.
 

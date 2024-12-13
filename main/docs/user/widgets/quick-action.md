@@ -198,37 +198,6 @@ You can modify the appearance of Quick Action buttons through: *Menu → Configu
 For detailed customization settings, refer to the [Configure Screen](../widgets/configure-screen.md#button-appearance) article, where you can learn how to fine-tune each button's appearance to match your preferences.
 
 
-### Touch Screen Lock
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Quick action button Touch Screen Lock Android](@site/static/img/widgets/qa_touch_lock_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Quick action button Touch Screen Lock iOS](@site/static/img/widgets/qa_touch_lock_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Use the **Touch Screen Lock** feature to avoid accidental taps during navigation. This is especially helpful for activities like cycling or hiking, where unintentional touches might disrupt your route.
-
-**Unlocking**.  
-Tap the on-screen button, or, if the lock is activated, via an external button (e.g., Volume Down), press the external button and tap the on-screen button.  
-
-**Setup**.
-
-- Navigate to *Menu → Configure screen → Custom buttons*.
-- Select *+ → Add action → Interface → Touch Screen Lock*.
-
-Clear on-screen messages will guide you when locking or unlocking the screen.
-
-
 ## Action Types
 
 ### Configure Map
@@ -261,7 +230,7 @@ Clear on-screen messages will guide you when locking or unlocking the screen.
 | Show / Hide <br/> [**Navigation view**](../navigation/setup/route-navigation.md) | Toggles visibility of the navigation screen view. |
 | Show / Hide <br/> [**Search view**](../search/search-all.md) | Opens or closes the search view. |
 | Show / Hide <br/> [**Side menu**](../start-with/main-menu.md) | Toggles the visibility of the main side menu for accessing core features. |
-| Turn On / Off <br/> [**Touch screen lock**](#touch-screen-lock) | Activates or deactivates touch screen locking to avoid unintended screen interactions. |
+| Turn On / Off <br/> [**Touch screen lock**](../map/interact-with-map.md#touch-screen-lock) | Activates or deactivates touch screen locking to avoid unintended screen interactions. |
 
 
 ### Map Interactions

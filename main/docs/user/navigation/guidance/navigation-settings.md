@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-For successful navigation, it's important to properly configure the appropriate settings according to your needs how you travel - by car, on foot, on horseback or on skis. This article describes the basic route parametrs, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), [Animation of your own position](#animate-own-position), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
+For successful navigation, it's important to properly configure the appropriate settings according to your needs and how you travel - by car, on foot, on horseback, or skis. This article describes the basic route parameters, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), [Animation of your own position](#animate-own-position), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
 
 <Tabs groupId="operating-systems">
 
@@ -43,12 +43,12 @@ There are three ways to access the Navigation settings menu.
 
 - Go to the main *Menu → Settings*, select the required *Profile*, and tap *Navigation settings*.
 
-- Tap the *Navigation* icon on the map screen, than select the *Settings icon → Navigation settings*.
+- Tap the *Navigation* icon on the map screen, then select the *Settings icon → Navigation settings*.
 
 - Go to the main *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.  
 
 :::info
-The default *Browse map* profile has no settings for navigation.  
+The default *Browse map* profile has no navigation settings.  
 :::
 
 
@@ -70,13 +70,13 @@ The default *Browse map* profile has no settings for navigation.
 
 </Tabs>  
 
-Navigation is an important part of a trip, and choosing *the right type* of navigation can make your journey much easier. Choosing the type of navigation can depend on how you travel and whether you have an Internet connection.  
+Navigation is an important part of a trip, and choosing *the right type* of navigation can make your journey much easier. The type of navigation you choose can depend on how you travel and whether you have an Internet connection.  
 
 - **Online navigation**
-    Mainly uses a special routing system or website that allows the OsmAnd app to plot a route based on current information and other factors. You can read about how to choose the best route online in the article [*Online routing*](../routing/online-routing.md). This navigation type is only available for *Android version* of the app.  
+    It mainly uses a special routing system or website that allows the OsmAnd app to plot a route based on current information and other factors. You can read about how to choose the best route online in the article [*Online routing*](../routing/online-routing.md). This navigation type is only available for the *Android version* of the app.  
 
 - **Offline navigation**
-It does not require internet access and offers a wider selection of [navigation types](../routing/osmand-routing.md#routing-types) that can be used to calculate a route. Among them, there are such as *bicycle, boat, car, on foot, ski*, and *straight line*. There are currently 13 basic types of routing, as well as an external [BRouter](../routing/brouter.md) routing type that provides additional routing opportunities.  
+It does not require internet access and offers a wider selection of [navigation types](../routing/osmand-routing.md#routing-types) that can be used to calculate a route. Among them are *bicycle, boat, car, on foot, ski*, and *straight line*. There are currently 13 basic types of routing, as well as an external [BRouter](../routing/brouter.md) routing type that provides additional routing opportunities.  
 
 The navigation type determines which rules are used to calculate routes. If you need a specific type of navigation, you can **import your own modified *XML* routing file**. Read more about routing rules on our [GitHub page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). And there is a separate article about XML format and how to use it, [Map Rendering style](../../../technical/osmand-file-formats/osmand-rendering-style.md), which can help you in creating a route file.  
 
@@ -127,12 +127,12 @@ All route parameters are described in detail in the corresponding sections of th
 
 </Tabs>  
 
-The **Recalculation route** parameter is a setting that allows you to automatically change the suggested route if you deviate from it or if you drive in the opposite direction. In both cases, this setting helps you maintain your direction of travel and get to your destination without wasting time manually searching for a new route.  
+The **Route Calculation** parameter automatically changes the calculated route when you deviate from it or drive in the opposite direction. In both cases, this setting helps you maintain your direction of travel and get to your destination without wasting time manually searching for a new route.  
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/> in case of deviation*  | <Translate android="true" ids="recalculate_route_distance_promo"/>  | If [Voice prompts](../guidance/voice-navigation.md#voice-settings) are turned on, OsmAnd announces, that route is being recalculated. |
-|  *Recalculate route in case of reverse direction*  | Your route will be recalculated if you move to the starting point.  |  When the setting is turned off, the movement to the starting point will not be considered as a deviation from the path (if it is performed along the calculated route).  |
+| *<Translate android="true" ids="route_recalculation_dist_title"/> in case of deviation*  | <Translate android="true" ids="recalculate_route_distance_promo"/>  | If [Voice prompts](../guidance/voice-navigation.md#voice-settings) are turned on, OsmAnd announces, that the route is being recalculated. |
+|  *Recalculate route in case of reverse direction*  | Your route will be recalculated if you move to the starting point.  |  With this setting turned off, movement to the starting point is not considered a deviation from the path (as long as it follows the calculated route).  |
 
 
 ### Development Settings
@@ -157,14 +157,14 @@ The **Recalculation route** parameter is a setting that allows you to automatica
 
 </Tabs>  
 
-The parameters in the **Development** section are mainly for advanced users, and are only available when the [*OsmAnd development plugin*](../../plugins/development.md) is enabled.  
+The parameters in the **Development** section are mainly for advanced users and are only available when the [*OsmAnd development plugin*](../../plugins/development.md) is enabled.  
 
 | Parameter | Description | Note |
 |:------------|:---------------|
-| *Routing type* (Android) / *Routing algorithm* (iOS) | <ul><li>**A*** 2-phase (Android) / **A*** (iOS) adds an extra phase to the default algorithm to improve the quality of the calculated route. This option can be useful for finding routes in large and complex road networks, although the route calculation may take longer.</li><li>**A* classic** (Android) / **Highway hierarchies** (iOS) optimises route planning by favoring main roads and motorways, minimizing the number of turns and junctions on the route. Particularly effective over long distances.</li><li>**HH (Highway Hierarchies) x Java** (Android only) is based on the implementation of hierarchical data structures to optimize pathfinding on a map, taking into account runtime constraints and device resource consumption, and is realised on the Java platform.</li><li>**HH (Highway Hierarchies) x C++** (Android only) is an algorithm that uses the C++ programming language to efficiently process road network data and build optimal routes using hierarchical data structures. It is optimised for fast processing of large amounts of data and is particularly effective for navigating maps with a large number of road networks.</li></ul> |  
-| *GPX approximation* (*Android only*)  | <ul><li>**Routing-based** GPX approximation in **C++ and Java** uses route data to approximate GPS track with existing road routes, which improves track accuracy and reduces track size.</li><li>**Geometry-based** GPX approximations in **C++ and Java** work based on geometric principles to quickly and accurately approximate GPS track, allowing efficient processing of large amounts of data.</li></ul> |
-| *Autozoom* | <ul><li>**Discrete** allows you to zoom in on the map to a specific level of detail measured in a few discrete steps.</li><li>**Smooth** provides a gradual change in map scale with smooth animation effects without jerks or jumps.</li></ul> |
-| *<Translate android="true" ids="use_live_routing"/>* (*Android only*)  | Allows to use [OsmAnd Live updates](../../personal/maps-resources.md#osmand-live) while routing. Note, that we recommend to use this option for testing purposes only.  |
+| *Routing type* (*Android*) / *Routing algorithm* (*iOS*) | <ul><li>**A*** 2-phase (*Android*) / **A*** (*iOS*) adds an extra phase to the default algorithm to improve the quality of the calculated route. This option can be useful for finding routes in large and complex road networks, but route calculation may take longer.</li><li>**A* classic** (*Android*) / **Highway hierarchies** (*iOS*) optimize route planning by favoring main roads and motorways, minimizing the number of turns and junctions on the route. Particularly effective over long distances.</li><li>**HH (Highway Hierarchies) x Java** (*Android only*) is based on the implementation of hierarchical data structures to optimize pathfinding on a map, taking into account runtime constraints and device resource consumption, and is realized on the Java platform.</li><li>**HH (Highway Hierarchies) x C++** (*Android only*) is an algorithm that uses the C++ programming language to efficiently process road network data and build optimal routes using hierarchical data structures. It is optimized for fast processing of large amounts of data and is particularly effective for navigating maps with many road networks.</li></ul> |  
+| *GPX approximation* (*Android only*)  | <ul><li>**Routing-based** GPX approximation in **C++ and Java** uses route data to approximate GPS tracks with existing road routes, which improves track accuracy and reduces track size.</li><li>**Geometry-based** GPX approximations in **C++ and Java** work based on geometric principles to quickly and accurately approximate GPS tracks, allowing efficient processing of large amounts of data.</li></ul> |
+| *Auto zoom* | <ul><li>**Discrete** allows you to zoom in on the map to a specific level of detail measured in a few discrete steps.</li><li>**Smooth** provides a gradual change in map scale with smooth animation effects without jerks or jumps.</li></ul> |
+| *<Translate android="true" ids="use_live_routing"/>* (*Android only*)  | Use [OsmAnd Live updates](../../personal/maps-resources.md#osmand-live) while routing. Note, that we recommend using this option for testing purposes only.  |
 
 <!--
 | Parameter | Description | Note |
@@ -199,11 +199,11 @@ The parameters in the **Development** section are mainly for advanced users, and
 
 </Tabs>
 
-A detailed description of the voice prompts settings is written in the first part of the article *[Voice prompts / Notifications](./voice-navigation.md)*.  
+The first part of the *[Voice Prompts / Notifications](./voice-navigation.md)* article describes how to set up voice prompts in detail.  
 
 Audio instructions during navigation help you as a driver or pedestrian get to your destination while [navigating a selected route](../setup/route-navigation.md). They contain information about turns, driving directions, road signs, distances to your destination, and other factors that may affect your navigation.  
 
-If you select a track as your destination point, you have to use the [Attach to the roads](../setup/gpx-navigation.md#attach-to-roads) option for the voice prompts to work correctly.
+If you select a track as your destination point, you need to use the [Attach to the roads](../setup/gpx-navigation.md#attach-to-roads) option for the voice prompts to work correctly.
 
 *Voice prompts* allow you to focus on the road and not be distracted by the map or navigation device. They also improve driving safety, reduce the time it takes to navigate unfamiliar terrain, and can be useful for different [types of routes](../routing/osmand-routing.md#routing-types).
 
@@ -242,7 +242,7 @@ You can ***select which alerts*** you want to see on the app screen while naviga
 - **Speed limit** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Speed_limits)). In the Screen alerts setting, the *Speed limit* is only displayed on the screen with *Traffic warnings* turned on. If you want to see speed limits during navigation without other warnings, use the [widget](../../widgets/nav-widgets.md#speed-limit).
 - **Traffic warnings** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Additional information can be found in the article [Map screen during navigation](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
 - **Pedestrian crosswalks** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
-- **Speed cameras** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). For more information about the Speed cameras setting in OsmAnd, read [Alert Types](../../widgets/nav-widgets.md#alert-types) and the article *Global settings*, section [Legal](../../personal/global-settings.md#legal).
+- **Speed cameras** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). For more information about the Speed camera setting in OsmAnd, read [Alert Types](../../widgets/nav-widgets.md#alert-types) and the article *Global settings*, section [Legal](../../personal/global-settings.md#legal).
 - **Tunnels** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
 
 :::note
@@ -270,9 +270,9 @@ The types of warnings have a different visual appearance, which depends on the t
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)
 
-The **map is used during navigation** to determine your location, plan your route, and land orientation. During navigation, you can view the map with *auto-center*, move it around, and *zoom in and out* to see the required area. The map can also display markers indicating points of interest, routes, weather conditions, road signs, and other objects that can help you navigate. The map can be updated in *real-time* and displays *up-to-date information* that can affect route planning.
+The **map is used during navigation** to determine your location, plan your route, and land orientation. During navigation, you can view the map with *auto-center*, move it around, and *zoom in and out* to see the required area. The map can also display markers indicating points of interest, routes, weather conditions, road signs, and other objects to help you navigate. The map can be updated in *real-time* and displays *up-to-date information* that can affect route planning.
 
-You can find out how the map behavior changes during navigation in OsmAnd app in the article [Map screen during navigation](../guidance/map-during-navigation.md).  
+You can learn how the behavior of the map changes during navigation in the article [Map screen during navigation](../guidance/map-during-navigation.md).  
 
 
 ## Animate Own Position
@@ -281,8 +281,8 @@ You can find out how the map behavior changes during navigation in OsmAnd app in
 
 This setting is available in different places in the OsmAnd app.
 
-- *Android* version. It is located in the [Other](../../personal/profiles.md#other) section of the *General Settings* menu.
-- *iOS* version/ It is located in [Navigation settings](../../personal/profiles.md#navigation-settings).
+- *Android* version. It is in the [Other](../../personal/profiles.md#other) section of the *General Settings* menu.
+- *iOS* version. It is located in [Navigation settings](../../personal/profiles.md#navigation-settings).
 - For more details see *Map screen during navigation* article, section [Animate own position](../../navigation/guidance/map-during-navigation.md#animate-own-position).  
 
 
@@ -308,7 +308,7 @@ This setting is available in different places in the OsmAnd app.
 
 </Tabs>  
 
-With the **Customise Route Line** setting you can choose the appearance of the route line that will be visible on the map during navigation. You can choose the *color*, the *width of the line*, and the display of the *turn arrows* on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Map screen during navigation* in the section [*Route line appearance*](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
+With the **Customize Route Line** setting, you can choose the appearance of the route line that will be visible on the map during navigation. You can choose the *color*, the *width of the line*, and the display of the *turn arrows* on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Map screen during navigation* in the section [*Route line appearance*](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
 
 
 ## Vehicle Parameters
@@ -319,7 +319,7 @@ With the **Customise Route Line** setting you can choose the appearance of the r
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
 </TabItem>
 
@@ -337,7 +337,8 @@ For optimal route calculation in OsmAnd, you should consider the following vehic
 
 1. Set the [*Default Speed* or *Road Speeds*](#default-speed--road-speeds), as the [minimum and maximum speed](#road-speeds) of the vehicle. This will help the application determine the time required to complete the route and allow it to choose the best route, considering the speed limits on different road segments.
 2. Specify the [*type*](#fuel-used-by-motor) of fuel used by the motor. This will allow the app to estimate CO2 emissions.
-3. Define the [*size and weight parameters*](#size-parameters) of your vihicle, which can help the app to calculate the optimal route and avoid obtacles on the road due to restrictions.
+3. Enter the [*capacity of your tank*](#fuel-tank-capacity) (*Android*) to accurately track your fuel level and consumption.
+4. Define [*size and weight parameters*](#size-parameters) of your vehicle, which can help the app calculate the optimal route and avoid obstacles on the road due to restrictions.
 
 Correctly setting the parameters in the OsmAnd app will help you avoid problems when navigating a route, choose the most suitable one according to the type of vehicle and road restrictions, and calculate the time for your trip.
 
@@ -361,13 +362,13 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 </Tabs>  
 
 For all types of navigation the minimum and maximum allowable speed, both by default and by road, can be different, according to certain values ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) and restrictions for vehicles. The speed is also set in certain increments to make the application settings maximum usable. For the *Walking*, *Horseback riding* and *Cycling* profiles, in small increments equivalent to 0.1 km/h ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h.  
-Speed settings are used to determine when [voice announcements](../guidance/voice-navigation.md) are activated.
+Speed settings determine when [voice announcements](../guidance/voice-navigation.md) are activated.
 
 These parameters are used as speed to estimate the [arrival time](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed cannot be determined from map data:
 
 - for the selected profile;
 - if the used roads have no speed limits, which can also affect the routing;
-- if user generated or imported tracks are selected.
+- if user-generated or imported tracks are selected.
 
 
 #### Default Speed
@@ -428,12 +429,38 @@ CO2 is a gas that is produced when fuel is burned in an engine. The amount of CO
 
 - Internal combustion engines, such as ***petrol*** and ***diesel*** engines, calculate CO2 emissions based on the amount of fuel burned during combustion. In general, petrol engines emit less CO2 than diesel engines due to more efficient combustion.
 - Liquefied ***natural gas (LPG)*** and ***compressed natural gas (CNG)*** are also used to run internal combustion engines. They are considered more environmentally friendly than petrol or diesel because they emit less CO2 when burned.
-- When ***electric*** motors are used, there are no CO2 emissions directly at the point of use. However, electricity can be produced from sources such as gas, coal or nuclear fuel, resulting in CO2 emissions during the electricity production phase.
+- When ***electric*** motors are used, there are no CO2 emissions directly at the point of use. However, electricity can be produced from sources such as gas, coal, or nuclear fuel, resulting in CO2 emissions during the electricity production phase.
 - ***Hybrid*** cars use both internal combustion engines and electric motors. CO2 emissions depend on which type of engine is used at the time.  
 
 :::note
 The *Fuel used by motor* setting is only available in navigation types such as *[Car, Motorcycle, and Truck](../../navigation/routing/car-based-routing.md)*.
 :::
+
+
+### Fuel tank capacity
+
+<InfoAndroidOnly/>
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
+
+The **Fuel tank capacity** parameter allows you to track your vehicle's fuel level and consumption more accurately by providing the total volume of your tank. The unit of measurement for fuel capacity is determined by the settings configured in *Menu → Configure profile → General settings → Units & Formats → Unit of volume*. For detailed guidance on setting Units & Formats, refer to the [Profile (Settings)](https://osmand.net/docs/user/personal/profiles#units--formats) article.
+
+OsmAnd supports the following units for capacity:
+
+- Gallons - **gal**. This abbreviation is used to represent both **Imperial gallons** and **US gallons**, depending on your selected unit preferences.
+- Liters - **l**. The metric unit for capacity.
+
+#### Applicability
+
+The **Fuel tank capacity** setting is only available in vehicle-based navigation. For navigation types such as *Bicycle*, *Horseback riding*, *On foot*, and *Ski*, this parameter is not displayed in the Vehicle Parameters.
+
+By entering the exact capacity of your fuel tank, the app can provide a more tailored experience, including:
+
+- Precise tracking of remaining fuel based on your consumption.
+- Enhanced route planning with fuel stops optimized according to your tank size.
+
+To ensure accurate calculations and navigation suggestions, verify that your selected unit matches your tank’s measurement standard.
+
 
 ### Size Parameters
 
@@ -463,37 +490,36 @@ Vehicle parameters affect navigation and route construction because they determi
 - The vehicle parameters can be set manually.
 - If you manually select the vehicle measurement parameter, the application will offer you the closest value from the ready-made list. This is necessary to avoid errors and build the route more correctly.
 - You can choose vehicle parameters from a ready-made list of sizes.
-- Do not set the size, *None*, means that no restrictions on the selected parameter will be applied.  
+- Do not set the size, *None*, which means that no restrictions on the selected parameter will be applied.  
 
 #### Limits
 
-**1.** [**<Translate android="true" ids="routing_attr_weight_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> The Weight parametr is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).  
+**1.** [**<Translate android="true" ids="routing_attr_weight_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> The Weight parameter is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
 
-**2.**  [**<Translate android="true" ids="routing_attr_height_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> The Height parametr is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
+**2.**  [**<Translate android="true" ids="routing_attr_height_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> The Height parameter is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
 
-**3.** [**<Translate android="true" ids="routing_attr_length_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> The Length parametr is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).  
+**3.** [**<Translate android="true" ids="routing_attr_length_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> The Length parameter is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
 
-**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> The Width parametr is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
+**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> The Width parameter is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
-
 Limits on vehicle parameters can be important for navigation and road safety. Some of these restrictions may include:  
 
 1. Restrictions on vehicles moving in certain urban areas.  
-2. Restrictions on the movement of vehicles on certain sections of road, such as where there are bridges, tunnels with limited space, low elevation overpasses, complex turns, or other structures.  
+2. Restrictions on vehicle movement on specific sections of road, such as where there are bridges, tunnels with limited space, low elevation overpasses, complex turns, or other structures.  
 3. Weight limits per vehicle axle can be especially important for trucks.
 4. Restrictions for vehicles moving in certain conditions, such as high temperatures, wet or snowy roads, at night, or in weather conditions with limited visibility.
 
-All of these restrictions can be important for navigation and should be considered when planning a route. If a vehicle's exceeds the limits, it may result in road safety, infrastructure damage, accidents fines, and other legal consequences. Therefore, drivers should carefully examine the route and make sure that the height of their vehicle meets the limits.  
+These restrictions can be important for navigation and should be considered when planning a route. If a vehicle exceeds the limits, it may result in road safety, infrastructure damage, accident fines, and other legal consequences. Therefore, drivers should carefully examine the route and make sure that the height of their vehicle meets the limits.  
 
 
 ## Detailed Track Guidance
@@ -508,7 +534,7 @@ With the [*Navigation by track*](../setup/gpx-navigation.md) option, when the re
 
 - **<Translate android="true" ids="ask_every_time"/>** (*by default*). The *Attach to the roads* button will appear in the [*Route Details*](../setup/route-details.md) section after each *navigation by track* calculation.
 
-- **<Translate android="true" ids="shared_string_always"/>**. The road attachment process will be automatically performed for each route when using the *navigation by track* option.
+- **<Translate android="true" ids="shared_string_always"/>**. The road attachment process will be automatically performed for each route using the *navigation by track* option.
 
 
 ## Related Articles
@@ -523,4 +549,4 @@ With the [*Navigation by track*](../setup/gpx-navigation.md) option, when the re
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in August 2024*
+> *This article was last updated in December 2024*

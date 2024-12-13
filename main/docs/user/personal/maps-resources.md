@@ -129,11 +129,15 @@ The **Download** tab lets you download various map types from OsmAnd servers, re
 To download a map:
 
 - Open the **Download** tab, locate the required section, and tap the relevant folder to see available maps.
+
 - **Available maps** display a download icon.
+
 - **Downloaded maps** show a green icon with a menu button:  
     *Android*: Three-dot menu.  
     *iOS*: Info (I) icon.
+
 - **Maps in the process of loading** have an icon visualizing this. To cancel the download, tap the icon. To view the list of maps in the download queue and cancel the downloads, tap the Download bar in the Device memory info area of the Downloads and Updates tabs.
+
 - In the **Free version**, maps unavailable for download show a [GET](../purchases/index.md) icon, linking to the purchase page.
 
 *The downloads tab consists of map groups:*
@@ -147,7 +151,7 @@ To download a map:
 - [**Travel guides (Wikivoyage)**](../plan-route/travel-guides.md) ([*paid feature*](../purchases/index.md)). Vector maps with a collection of articles in HTML format and additionally GPX files.
 - **Other maps**. Maps that cannot be assigned to the current map hierarchy because they are not supported or will be available in future versions.
 - [**Voice prompts**](../navigation/guidance/voice-navigation.md) (*Android only*). Voice packs for voicing navigation prompts.
-- [**Map fonts**](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files are used to display text on the map.
+- [**Map fonts**](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files  display text on the map.
 
 #### World Maps
 

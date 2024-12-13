@@ -260,7 +260,7 @@ function createOtherMarkersArr({
 }
 
 export function createSecondaryMarker(obj) {
-    if (!obj.geometry || !obj.properties) {
+    if (!obj?.geometry || !obj?.properties) {
         return null;
     }
     const latlng = L.latLng(obj.geometry.coordinates[1], obj.geometry.coordinates[0]);

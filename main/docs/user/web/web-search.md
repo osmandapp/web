@@ -22,14 +22,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 The **Search menu** can be accessed from the side panel or the **left corner 🔍** of the map. It contains:
 
-- [**Search Line**](#search-line): Enter keywords to search for specific locations or points of interest.  
+- [**Search Bar**](#search-bar): Enter keywords to search for specific locations or points of interest.  
 - [**Categories Section**](#categories): Browse through categorized options for easier POI searches.  
 - [**Explore Section**](#explore): Discover nearby places and areas of interest with photos.
 
 ![Search menu](@site/static/img/web/search.png)
 
 
-## Search line
+## Search Bar
 
 Tap the **🔍 button** to start searching. Enter your query in the **Search Line** and tap a POI to open the [**POI Context Menu**](#poi-context-menu), where you can view tags information.
 

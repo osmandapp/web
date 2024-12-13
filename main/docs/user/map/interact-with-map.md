@@ -156,6 +156,37 @@ You can not change the Camera tilt when the old [map rendering engine](../person
 :::
 
 
+## Touch Screen Lock
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Quick action button Touch Screen Lock Android](@site/static/img/widgets/qa_touch_lock_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Quick action button Touch Screen Lock iOS](@site/static/img/widgets/qa_touch_lock_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Use the **Touch Screen Lock** feature to avoid accidental taps during navigation. This is especially helpful for activities like cycling or hiking, where unintentional touches might disrupt your route.
+
+**Unlocking**.  
+Tap the on-screen button, or, if the lock is activated, via an external button (e.g., Volume Down), press the external button and tap the on-screen button.  
+
+**Setup**.
+
+- Navigate to *Menu → Configure screen → Custom buttons*.
+- Select *+ → Add action → Interface → Touch Screen Lock*.
+
+Clear on-screen messages will guide you when locking or unlocking the screen.
+
+
 ## Settings
 
 ### Extra Compass Settings  
@@ -299,4 +330,4 @@ You can delete multiple unnecessary actions using the **Edit button** (*pencil-s
 - [Public transport](./public-transport.md)
 
 
-> *This article was last updated in October 2024*
+> *This article was last updated in December 2024*

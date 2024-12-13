@@ -28,7 +28,7 @@ Raster maps is an extensive addition to the offline OpenStreetMap Vector maps th
 
 ## [Points on the Map](./point-layers-on-map.md)
 
-On map you could display points such as Favorites, POI, Markers, Wikipedia, Search results, Audio Video Notes, OSM Edits and others.
+On map you could display points such as Favorites, POIs, Markers, Wikipedia, Search results, Audio Video Notes, OSM Edits and others.
 
 ## [Tracks](./tracks)
 

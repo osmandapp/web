@@ -47,23 +47,16 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const [result, setResult] = useState(null);
     const hash = window.location.hash;
     const [locReady, setLocReady] = useState(false);
-    const [showEmptySearch, setShowEmptySearch] = useState(false);
     const [errorZoom, setErrorZoom] = useState(null);
     const currentLoc = useGeoLocation(ctx);
 
     const { zoom } = useHashParams();
 
     useEffect(() => {
-        ctx.setProcessingSearch(false);
-        if (!result || result === EMPTY_SEARCH_RESULT) {
-            if (showEmptySearch) return;
-            setShowEmptySearch(true);
+        if (result === EMPTY_SEARCH_RESULT) {
             checkZoomError();
-            setResult(null);
-        } else {
-            setShowEmptySearch(false);
         }
-    }, [result]);
+    }, [zoom]);
 
     useEffect(() => {
         if (value?.query) {
@@ -196,7 +189,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     }, []);
 
     useEffect(() => {
-        if (!ctx.searchResult) {
+        if (!ctx.searchResult && result !== null) {
             setResult(null);
         }
     }, [ctx.searchResult]);
@@ -220,6 +213,10 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         ctx.setSearchQuery(null);
     }
 
+    function resulNotPrepared() {
+        return !ctx.processingSearch && !result;
+    }
+
     return (
         <>
             <CustomInput
@@ -227,9 +224,9 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                 setSearchValue={setSearchValue}
                 defaultSearchValue={value?.query}
             />
-            {ctx.processingSearch && <Loading />}
+            {(ctx.processingSearch || resulNotPrepared()) && <Loading />}
             {!ctx.processingSearch &&
-                (showEmptySearch ? (
+                (result === EMPTY_SEARCH_RESULT ? (
                     <EmptySearch message={errorZoom} />
                 ) : (
                     <Box sx={{ overflowY: 'auto' }} id={'se-search-results'}>

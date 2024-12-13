@@ -292,7 +292,11 @@ export const AppContextProvider = (props) => {
     const [searchResult, setSearchResult] = useState(null);
     const [selectedSearchMarker, setSelectedSearchMarker] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
-    const [zoomToMapObj, setZoomToMapObj] = useState(false);
+    const [zoomToMapObj, setZoomToMapObj] = useState({
+        obj: null,
+        zoom: 17,
+        animateDist: 1000000,
+    });
     // travel
     const [travelFilter, setTravelFilter] = useState(null);
     const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
