@@ -10,7 +10,7 @@ import PoiManager, {
 } from '../../manager/PoiManager';
 import { useMap } from 'react-leaflet';
 import { getPoiIcon } from './PoiLayer';
-import L from 'leaflet';
+import L, { LatLng } from 'leaflet';
 import {
     CATEGORY_NAME,
     CATEGORY_TYPE,
@@ -137,8 +137,19 @@ export default function SearchLayer() {
     }, [zoom, move]);
 
     useEffect(() => {
-        if (ctx.zoomToMapObj) {
-            map.setView([ctx.zoomToMapObj.lat, ctx.zoomToMapObj.lon], ZOOM_TO_MAP);
+        if (ctx.zoomToMapObj.obj !== null) {
+            const { obj: item, animateDist: dist, zoom: z } = ctx.zoomToMapObj;
+            const mapBounds = map.getBounds();
+            const pointLatLng = new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]);
+            const mapCenter = map.getCenter();
+            if (!mapBounds.contains(pointLatLng)) {
+                const distance = mapCenter.distanceTo(pointLatLng);
+                if (distance > dist) {
+                    map.setView(pointLatLng, Math.max(map.getZoom(), z), { animate: false });
+                } else {
+                    map.setView(pointLatLng, Math.max(map.getZoom(), z), { animate: true });
+                }
+            }
         }
     }, [ctx.zoomToMapObj]);
 
