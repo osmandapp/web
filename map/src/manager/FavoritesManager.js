@@ -169,16 +169,11 @@ function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = n
         if (currentGroup) {
             color = currentGroup.color;
         }
-    } else if (gpxFile) {
-        const currentGroup =
-            gpxFile?.pointsGroups && !_.isEmpty(gpxFile?.pointsGroups) && gpxFile.pointsGroups[groupName];
+    } else if (gpxFile || favoritesGroup) {
+        const file = gpxFile || favoritesGroup;
+        const currentGroup = file?.pointsGroups && !_.isEmpty(file?.pointsGroups) && file.pointsGroups[groupName];
         if (currentGroup) {
             color = currentGroup.color;
-        }
-    } else if (favoritesGroup) {
-        const currentGroup = favoritesGroup?.groups?.find((g) => g.name === groupName);
-        if (currentGroup && currentGroup.pointsGroups[groupName]) {
-            color = currentGroup.pointsGroups[groupName].color;
         }
     }
     if (color) {
@@ -503,6 +498,12 @@ export function updateFavoriteGroups({
 
 export function getColorLocation(location) {
     return location === LOCATION_UNAVAILABLE ? '#ff8800' : '#237bff';
+}
+
+export function getSize(group, t) {
+    return FavoritesManager.getGroupSize(group) > 0
+        ? `${FavoritesManager.getGroupSize(group)} ${t('shared_string_gpx_points').toLowerCase()}`
+        : 'empty';
 }
 
 const FavoritesManager = {

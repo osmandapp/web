@@ -6,6 +6,7 @@ export const HEADER_SIZE = '60px';
 export const INSTALL_BANNER_SIZE = '60px';
 
 export const GPX = 'GPX';
+export const FAVOURITES = 'FAVOURITES';
 
 export const MAIN_PAGE_TYPE = 'main';
 export const MAIN_URL = '/map';

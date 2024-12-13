@@ -1,7 +1,7 @@
 import { CircularProgress, Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import FavoritesManager from '../../manager/FavoritesManager';
+import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
 import styles from '../trackfavmenu.module.css';
 import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
@@ -38,12 +38,6 @@ export default function FavoriteGroup({ index, group }) {
         }
     }, [ctx.favorites]);
 
-    function getSize() {
-        return FavoritesManager.getGroupSize(group) > 0
-            ? `${FavoritesManager.getGroupSize(group)} ${t('shared_string_gpx_points').toLowerCase()}`
-            : 'empty';
-    }
-
     return (
         <>
             <MenuItem
@@ -62,15 +56,22 @@ export default function FavoriteGroup({ index, group }) {
                         <FolderHiddenIcon id={'se-fav-menu-icon-hidden-' + group.name} />
                     ) : (
                         <FolderIcon
-                            style={{ fill: group.name && FavoritesManager.getColorGroup(ctx, group.name, false) }}
+                            style={{
+                                fill:
+                                    group.name &&
+                                    FavoritesManager.getColorGroup({
+                                        favoritesGroup: group,
+                                        groupName: group.name,
+                                    }),
+                            }}
                         />
                     )}
                 </ListItemIcon>
                 <ListItemText>
                     <MenuItemWithLines name={group.name} maxLines={2} />
-                    <Typography variant="body2" className={styles.groupInfo} noWrap>
+                    <Typography variant="body2" component="div" className={styles.groupInfo} noWrap>
                         {share && <FileShareIcon />}
-                        {`${getLocalizedTimeUpdate(group.clienttimems)}, ${getSize()}`}
+                        {`${getLocalizedTimeUpdate(group.clienttimems)}, ${getSize(group, t)}`}
                     </Typography>
                 </ListItemText>
                 <IconButton

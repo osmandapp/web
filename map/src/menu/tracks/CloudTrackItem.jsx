@@ -234,7 +234,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                             </ListItemIcon>
                             <ListItemText>
                                 <MenuItemWithLines name={trackName} maxLines={2} />
-                                <Typography variant="body2" className={styles.groupInfo} noWrap>
+                                <Typography component="div" variant="body2" className={styles.groupInfo} noWrap>
                                     {share && <FileShareIcon />}
                                     {dist && `${dist} km`}
                                     {' · '}

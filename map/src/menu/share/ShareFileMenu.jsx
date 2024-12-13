@@ -167,7 +167,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                 </Toolbar>
             </AppBar>
             <Box>
-                <ShareFileItem file={ctx.shareFile.mainFile} />
+                <ShareFileItem file={ctx.shareFile.mainFile} type={ctx.shareFile.sharedObj.file.type} />
                 <ShareType
                     selectedShareType={selectedShareType}
                     setSelectedShareType={setSelectedShareType}
