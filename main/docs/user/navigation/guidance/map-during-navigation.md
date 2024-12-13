@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-This article describes how to configure the appearance of the map during navigation. This includes features such as [animated location changes](#animate-own-position), displaying [POIs along the route](#show-points-along-the-route), using [screen alerts](#screen-alerts), [route line appearance](#route-line-appearance) including color, width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
+This article describes how to configure the appearance of the map during navigation. This includes features such as displaying [POIs along the route](#show-points-along-the-route), using [screen alerts](#screen-alerts), [route line appearance](#route-line-appearance) including color, width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
 
 
 ## Map During Navigation
@@ -52,18 +52,6 @@ During navigation, the map's appearance adjusts based on the selected navigation
 | *<Translate android="true" ids="auto_zoom_map"/>*  |  Automatically scale the map according to your speed, as long as the map is synchronized with your current position. | *Value:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 5 m. |
 | *<Translate android="true" ids="snap_to_road"/>*  | The current position icon will be associated with the current navigation route.  | You can turn this option off, but then all road-related options, such as lane display, will also not be visible during navigation.  |
 | *<Translate android="true" ids="approximate_bearing"/>* | Determines bearing based on the navigation route you are following.  | The setting is only visible when the [OsmAnd development plugin](../../plugins/development.md) is enabled. <br /> These settings should be enabled if the orientation of the directional map is flipped or jiggles when using [Android Auto](../auto-car.md#issues).   |
-
-
-### Animate Own Position
-
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,routing_settings,routing_settings_2,animate_my_location"/>*  
-
-This setting provides a smooth animation of the *[My Position](../../personal/profiles.md#profile-appearance)* point moving on the map during navigation.
-
-- Note that the animation takes about 1 second, which creates a slight delay when *My Position* is displayed on the map relative to your location.
-- For *Android*, this item is located in the *[Other](../../personal/profiles.md#other)* section of the General Settings menu.
-- Turning this item on can cause a pronounced delay in some circumstances, disable it if you experience such issues.
 
 
 ## Show Points Along the Route

@@ -274,18 +274,6 @@ The **map is used during navigation** to determine your location, plan your rout
 
 You can learn how the behavior of the map changes during navigation in the article [Map screen during navigation](../guidance/map-during-navigation.md).  
 
-
-## Animate Own Position
-
-![Navigation Settings Android](@site/static/img/navigation/navigaton_settings_animate-own-position_ios.png)
-
-This setting is available in different places in the OsmAnd app.
-
-- *Android* version. It is in the [Other](../../personal/profiles.md#other) section of the *General Settings* menu.
-- *iOS* version. It is located in [Navigation settings](../../personal/profiles.md#navigation-settings).
-- For more details see *Map screen during navigation* article, section [Animate own position](../../navigation/guidance/map-during-navigation.md#animate-own-position).  
-
-
 ## Customize Route Line
 
 <Tabs groupId="operating-systems">
