@@ -68,6 +68,7 @@ Use one of the following paths to open the plugin settings:
 
 - **Simulate your position** (*Android* / *iOS*). [Simulate](#gpx-track-simulation) the location and movement using a GPX track.
 - **Battery saving mode** (*Android* / *iOS*). This setting reduces [the screen refresh rate](#map-rendering-fps-widget) by 20 fps, helping to conserve battery power during app usage.
+- **Location interpolation percentage** (*Android*): Sets the percentage of location interpolation during route navigation. This parameter reduces the lag of your location position on the map during animation.
 - **Use 3D location position icons** (*iOS*). Enables selecting a 3D icon for the [My Location icon](../personal/profiles.md#my-location-appearance).
 - **Simulate obd data** (*Android*). Allows simulation of [OBD scanner](./vehicle-metrics.md) usage.
 - **Perfomance debug info** (*Android*). Display the rendering and navigation performance. 
