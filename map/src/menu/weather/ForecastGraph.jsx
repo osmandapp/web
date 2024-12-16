@@ -2,6 +2,8 @@ import { Chart } from 'react-chartjs-2';
 import GraphManager from '../../manager/GraphManager';
 import { Box } from '@mui/material';
 import React, { useRef } from 'react';
+import * as locales from 'date-fns/locale';
+import { format } from 'date-fns';
 import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 import {
@@ -83,10 +85,9 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
                 display: true,
                 ticks: {
                     callback: function (value, index) {
+                        const locale = locales[i18n.language] || locales.enUS;
                         const date = new Date(Object.keys(data)[index]);
-                        return date
-                            .toLocaleDateString(i18n.language, { day: '2-digit', month: '2-digit' })
-                            .replace(/\//g, '.');
+                        return format(date, 'dd.MM', { locale });
                     },
                     font: {
                         size: 9,
