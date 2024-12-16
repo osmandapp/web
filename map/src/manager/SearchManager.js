@@ -12,7 +12,7 @@ import i18n from 'i18next';
 import { SEARCH_ICON_MAP_OBJ, typeIconMap } from '../map/layers/SearchLayer';
 
 export const WIKI_IMAGE_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
-export const SEARCH_ICON_BRAND = 'brand';
+export const SEARCH_BRAND = 'brand';
 
 export async function fetchPhotoProperties(photo) {
     const imageTitle = getPhotoTitle(photo);
@@ -107,6 +107,14 @@ export function addWikiPlacesDefaultFilters(ctx, mainSearch = false, selectedFil
 
 export function getPoiParentCategory(props, t) {
     let type = props[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
+    const brandRes = parseBrandTag(type);
+    if (brandRes.brand === SEARCH_BRAND) {
+        let brandType = _.capitalize(formattingPoiType(t(`poi_${brandRes.brand}`)));
+        if (brandRes.lang) {
+            brandType += ' (' + t(`lang_${brandRes.lang}`).toLowerCase() + ')';
+        }
+        return brandType;
+    }
     if (type) {
         type = _.capitalize(formattingPoiType(t(`poi_${type}`)));
     } else {
@@ -129,6 +137,11 @@ export function getPoiParentCategory(props, t) {
         }
     }
     return type && type !== 'undefined' && type !== '' ? type : null;
+}
+
+export function parseBrandTag(tag) {
+    const [brand, lang] = tag.split(':');
+    return { brand, lang };
 }
 
 export function getPhotoTitle(photo) {
