@@ -117,15 +117,18 @@ Use one of the following paths to open the plugin settings:
 :::caution Android only
 :::  
 
-- **Allocated memory**.
-- **Total native memory**.
-- **A-GPS info**.
-- **Day/night info**.
-- **Energy statistics (average 1 / 5 / 15 minutes)**.
-- **Rendering statistics (average 1 / 5 / 15 minutes)**.
-  
-Button:  
-- **Reset plugin setting to default**:
+- **Allocated memory**: Displays the allocated system memory for the OsmAnd app.  
+- **Total native memory**: Displays the total native memory allocated by the app, including proportional memory.  
+- **A-GPS info**: Indicates when A-GPS data was last downloaded.  
+- **Day/night info**: Shows today's sunrise and sunset times.  
+- **Energy statistics (average 1 / 5 / 15 minutes)**: Displays battery level per minute (%) and average energy consumption (mAh) over 1, 5, and 15-minute intervals.  
+- **Rendering statistics (average 1 / 5 / 15 minutes)**: Shows rendering statistics, including FPS for the last 1k frames, CPU (tiles), CPU (idle time), and CPU (waits) averages over 1, 5, and 15-minute intervals.  
+
+**Button:**  
+- **Reset plugin settings to default**: Resets all plugin settings to their default values.
+
+
+![Development Settings Android](@site/static/img/plugins/development/devplugin_stat_and.png) 
 
 ## Map Rendering FPS Widget
 
