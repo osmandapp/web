@@ -13,7 +13,8 @@ import BlockedAccessError from './errors/BlockedAccessError';
 import { quickNaNfix } from '../../util/Utils';
 import { addDistance } from '../../manager/track/TracksManager';
 import GeneralInfoTab from '../../infoblock/components/tabs/GeneralInfoTab';
-import { GPX, MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import { FILE_WAS_DELETED, GPX, MENU_INFO_CLOSE_SIZE, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
+import NotAvailableError from './errors/NotAvailableError';
 
 export default function ShareFile() {
     const ctx = useContext(AppContext);
@@ -22,11 +23,12 @@ export default function ShareFile() {
     const [requestTypeAccess, setRequestTypeAccess] = useState(false);
     const [pendingTypeAccess, setPendingTypeAccess] = useState(false);
     const [blockedTypeAccess, setBlockedTypeAccess] = useState(false);
+    const [notAvailable, setNotAvailable] = useState(false);
     const [showFile, setShowFile] = useState(false);
 
     useEffect(() => {
         async function fetchFile() {
-            const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/share/join/${uuid}`, {});
+            const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/${SHARE_FILE_MAIN_URL}${uuid}`, {});
             if (res.ok) {
                 const text = await res.text();
                 try {
@@ -46,12 +48,15 @@ export default function ShareFile() {
                         }
                     }
                 } catch (error) {
-                    if (text.toLowerCase() === REQUEST_ACCESS_TYPE) {
-                        setRequestTypeAccess(true);
-                    } else if (text.toLowerCase() === PENDING_ACCESS_TYPE) {
-                        setPendingTypeAccess(true);
-                    } else if (text.toLowerCase() === BLOCKED_ACCESS_TYPE) {
-                        setBlockedTypeAccess(true);
+                    const textLower = text.toLowerCase();
+                    const accessTypeHandlers = {
+                        [REQUEST_ACCESS_TYPE]: () => setRequestTypeAccess(true),
+                        [PENDING_ACCESS_TYPE]: () => setPendingTypeAccess(true),
+                        [BLOCKED_ACCESS_TYPE]: () => setBlockedTypeAccess(true),
+                        [FILE_WAS_DELETED]: () => setNotAvailable(true),
+                    };
+                    if (accessTypeHandlers[textLower]) {
+                        accessTypeHandlers[textLower]();
                     }
                 }
             }
@@ -89,6 +94,7 @@ export default function ShareFile() {
                 {requestTypeAccess && <RequestAccessError sendRequest={sendAccessRequest} />}
                 {pendingTypeAccess && <PendingAccessError />}
                 {blockedTypeAccess && <BlockedAccessError />}
+                {notAvailable && <NotAvailableError />}
                 {showFile && (
                     <Box>
                         <GeneralInfoTab key="general" />

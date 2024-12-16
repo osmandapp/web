@@ -17,7 +17,12 @@ export default function PendingAccessError() {
                 <ListItemText disableTypography={true} className={styles.text}>
                     You need to wait until the file owner approves your request.
                 </ListItemText>
-                <Button component="span" className={buttonStyles.blueButton} disabled={true}>
+                <Button
+                    component="span"
+                    sx={{ color: '#727272 !important' }}
+                    className={buttonStyles.blueButton}
+                    disabled={true}
+                >
                     Request access
                 </Button>
             </Box>

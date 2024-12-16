@@ -8,6 +8,8 @@ export const INSTALL_BANNER_SIZE = '60px';
 export const GPX = 'GPX';
 export const FAVOURITES = 'FAVOURITES';
 
+export const FILE_WAS_DELETED = 'file was deleted';
+
 export const MAIN_PAGE_TYPE = 'main';
 export const MAIN_URL = '/map';
 export const MAIN_URL_WITH_SLASH = '/map/';
