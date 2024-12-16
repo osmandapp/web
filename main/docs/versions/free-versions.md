@@ -35,7 +35,7 @@ Release date: 11/2024
 * Separated visibility parameters for Terrain colorization options
 * Added a tappable icon to display access or other road or path attributes
 
-<DownloadRelease blog="osmand-android-4-9-released" release="net.osmand-4.9.7.apk" />
+<DownloadRelease blog="osmand-android-4-9-released" release="net.osmand-4.9.10.apk" />
 
 
 ### Version 4.8

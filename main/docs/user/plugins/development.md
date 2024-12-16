@@ -61,25 +61,19 @@ Use one of the following paths to open the plugin settings:
 
 ### Terrain
 
-*Android:*  
-
-- **Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite.md/) for hillshade and slope**. Load old format raster maps.
-
-*iOS:*  
-
-- **Test heightmap.**
-- **Use 3D relief heightmaps.**
-- **Disable vertex hillshade in 3D.**
-- **Generate slope raster maps from 3D maps.**
-- **Generate hillshade raster maps from 3D maps.**
+- **Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite.md/) for hillshade and slope** (*Android*). Load old format raster maps.
 
 
 ### Troubleshotting  
 
 - **Simulate your position** (*Android* / *iOS*). [Simulate](#gpx-track-simulation) the location and movement using a GPX track.
+- **Battery saving mode** (*Android* / *iOS*). This setting reduces [the screen refresh rate](#map-rendering-fps-widget) by 20 fps, helping to conserve battery power during app usage.
+- **Use 3D location position icons** (*iOS*). Enables selecting a 3D icon for the [My Location icon](../personal/profiles.md#my-location-appearance).
 - **Simulate obd data** (*Android*). Allows simulation of [OBD scanner](./vehicle-metrics.md) usage.
-- **Rendering debug info** (*Android*). Display the rendering performance (only available for version 1 rendering engine).  
+- **Perfomance debug info** (*Android*). Display the rendering and navigation performance. 
+- **Disable map layers** (*Android*). Disable all map layers above the vector map (restart required).
 - **Logcat buffer** (*Android*). Check and share detailed logs of the app.  
+- **Show toast about pressed key** (*Android*). Show toast bout pressed key.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Bearing is the compass direction from your current position to your intended destination. Affects *[track recording](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Heading is the compass direction from your current position towards true north. This option is enabled by default. Affects *[track recording](../plugins/trip-recording.md)*.
 
@@ -93,6 +87,8 @@ Use one of the following paths to open the plugin settings:
 - **Test voice prompts**. Select a voice and test by playing announcements.  
 - **Transparent status bar**. The map becomes visible under the status bar.  
 - **Show free version banner**. Display the free version banner even in the paid version.  
+- **Show debug information**. Display graphical info about placement of each map text.
+- **Allow display on top**. Allow displaying map texts on top of each other.
 
 
 ### Internal Algorithms
@@ -101,7 +97,6 @@ Use one of the following paths to open the plugin settings:
 :::
 
 - **Safe mode**. Run the app in (slower) safe mode.  
-- **Safe GPX approximation**. Perform the GPX approximation using slower Android instead of native code.  
 
 
 ### Memory Settings
@@ -116,6 +111,21 @@ Use one of the following paths to open the plugin settings:
 - Higher memory allocation may impact the performance of other apps.
 - [Calculation of 50 km routes for pedestrians](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
 
+
+### Info and Statistics
+
+:::caution Android only
+:::  
+
+- **Allocated memory**.
+- **Total native memory**.
+- **A-GPS info**.
+- **Day/night info**.
+- **Energy statistics (average 1 / 5 / 15 minutes)**.
+- **Rendering statistics (average 1 / 5 / 15 minutes)**.
+  
+Button:  
+- **Reset plugin setting to default**:
 
 ## Map Rendering FPS Widget
 
