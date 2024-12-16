@@ -23,7 +23,7 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getIconByType, SEARCH_ICON_BRAND } from '../../../manager/SearchManager';
+import { getIconByType, parseBrandTag, SEARCH_BRAND } from '../../../manager/SearchManager';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 const MIN_SEARCH_ZOOM = 8;
@@ -70,8 +70,9 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             const props = f.properties;
             const type = props[CATEGORY_TYPE];
             if (type === searchTypeMap.POI_TYPE || type === searchTypeMap.POI) {
-                if (props[CATEGORY_ICON] === SEARCH_ICON_BRAND) {
-                    f.icon = await getSearchResultIcon({ result: SEARCH_ICON_BRAND, ctx });
+                const brandRes = parseBrandTag(props[CATEGORY_ICON]);
+                if (brandRes.brand === SEARCH_BRAND) {
+                    f.icon = await getSearchResultIcon({ result: SEARCH_BRAND, ctx });
                     return;
                 }
                 const iconName = getCatPoiIconName(props);
