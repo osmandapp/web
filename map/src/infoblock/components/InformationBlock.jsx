@@ -219,6 +219,11 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
         return !openWeatherForecastDetails && !openWptDetails && !openShareFileMenu;
     }
 
+    function isOpenMainFavShareFile() {
+        const isCloseFavItemDetails = !ctx.selectedGpxFile?.markerCurrent;
+        return openShareFileItem && isCloseFavItemDetails;
+    }
+
     return (
         <>
             {showInfoBlock && (
@@ -237,7 +242,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                             />
                         ))}
                     {openShareFileMenu && <ShareFileMenu setShowInfoBlock={setShowInfoBlock} />}
-                    {openShareFileItem && <ShareFile />}
+                    {isOpenMainFavShareFile() && <ShareFile />}
                     {hasOldTabs() && (
                         <Box anchor={'right'} sx={{ height: 'auto', width: getWidth(), overflowX: 'hidden' }}>
                             <div id="se-infoblock-all">

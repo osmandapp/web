@@ -1,6 +1,6 @@
 import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { apiGet } from '../../util/HttpApi';
 import { BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE, REQUEST_ACCESS_TYPE, sendRequest } from '../../manager/ShareManager';
 import headerStyles from '../trackfavmenu.module.css';
@@ -13,18 +13,36 @@ import BlockedAccessError from './errors/BlockedAccessError';
 import { quickNaNfix } from '../../util/Utils';
 import { addDistance } from '../../manager/track/TracksManager';
 import GeneralInfoTab from '../../infoblock/components/tabs/GeneralInfoTab';
-import { FILE_WAS_DELETED, GPX, MENU_INFO_CLOSE_SIZE, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
+import {
+    FAVOURITES,
+    FILE_WAS_DELETED,
+    GPX,
+    MENU_INFO_CLOSE_SIZE,
+    SHARE_FILE_MAIN_URL,
+} from '../../manager/GlobalManager';
 import NotAvailableError from './errors/NotAvailableError';
+import { getFavMenuListByLayers, LOCATION_UNAVAILABLE, prepareFavGroupName } from '../../manager/FavoritesManager';
+import FavoriteItem from '../favorite/FavoriteItem';
+import { useGeoLocation } from '../../util/hooks/useGeoLocation';
+import { getCenterMapLoc } from '../../manager/MapManager';
+import SubTitle from '../components/SubTitle';
 
 export default function ShareFile() {
     const ctx = useContext(AppContext);
     const { uuid } = useParams();
 
+    const hash = window.location.hash;
+
     const [requestTypeAccess, setRequestTypeAccess] = useState(false);
     const [pendingTypeAccess, setPendingTypeAccess] = useState(false);
     const [blockedTypeAccess, setBlockedTypeAccess] = useState(false);
     const [notAvailable, setNotAvailable] = useState(false);
+
     const [showFile, setShowFile] = useState(false);
+    const [showFavorite, setShowFavorite] = useState(false);
+    const [fileRes, setFileRes] = useState(null);
+
+    const currentLoc = useGeoLocation(ctx);
 
     useEffect(() => {
         async function fetchFile() {
@@ -33,19 +51,12 @@ export default function ShareFile() {
                 const text = await res.text();
                 try {
                     const jsonData = JSON.parse(quickNaNfix(text));
-                    if (jsonData) {
-                        if (jsonData.type === GPX) {
-                            const track = jsonData.gpx_data;
-                            addDistance(track);
-                            const file = {
-                                name: jsonData.name,
-                                type: jsonData.type,
-                                ...track,
-                            };
-                            ctx.setCurrentObjectType(OBJECT_TYPE_SHARE_FILE);
-                            ctx.setSelectedGpxFile(file);
-                            setShowFile(true);
-                        }
+                    if (jsonData.gpx_data) {
+                        setFileRes({
+                            type: jsonData.type,
+                            name: jsonData.name,
+                            data: jsonData.gpx_data,
+                        });
                     }
                 } catch (error) {
                     const textLower = text.toLowerCase();
@@ -64,9 +75,34 @@ export default function ShareFile() {
         fetchFile().then();
     }, [uuid]);
 
+    useEffect(() => {
+        if (!fileRes) return;
+
+        ctx.setCurrentObjectType(OBJECT_TYPE_SHARE_FILE);
+
+        if (fileRes.type === GPX) {
+            setShowFile(true);
+            const track = fileRes.data;
+            addDistance(track);
+            ctx.setSelectedGpxFile({
+                name: fileRes.name,
+                type: fileRes.type,
+                ...track,
+            });
+        } else if (fileRes.type === FAVOURITES) {
+            setShowFavorite(true);
+            ctx.setSelectedGpxFile({
+                fileName: fileRes.name,
+                type: fileRes.type,
+                ...fileRes.data,
+            });
+        }
+    }, [fileRes]);
+
     function closeMenu() {
         ctx.setCurrentObjectType(null);
         ctx.setSelectedGpxFile({});
+        ctx.setShareFileMarkers(null);
         ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
     }
 
@@ -77,6 +113,28 @@ export default function ShareFile() {
             setPendingTypeAccess(true);
         }
     }
+
+    const favItems = useMemo(() => {
+        const layers = ctx.shareFileMarkers?.getLayers();
+        if (layers?.length > 0 && ctx.selectedGpxFile?.wpts) {
+            const loc = currentLoc && currentLoc !== LOCATION_UNAVAILABLE ? currentLoc : getCenterMapLoc(hash);
+            const markerList = getFavMenuListByLayers(layers, ctx.selectedGpxFile.wpts, loc);
+            const items = [];
+            markerList.map((m, index) => {
+                items.push(
+                    <FavoriteItem
+                        key={m + index}
+                        marker={m}
+                        group={ctx.selectedGpxFile}
+                        currentLoc={currentLoc}
+                        share={true}
+                    />
+                );
+            });
+            return items;
+        }
+        return null;
+    }, [ctx.shareFileMarkers, currentLoc]);
 
     return (
         <>
@@ -90,17 +148,25 @@ export default function ShareFile() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Box sx={{ px: 2, mt: 1, overflowX: 'hidden' }}>
-                {requestTypeAccess && <RequestAccessError sendRequest={sendAccessRequest} />}
-                {pendingTypeAccess && <PendingAccessError />}
-                {blockedTypeAccess && <BlockedAccessError />}
-                {notAvailable && <NotAvailableError />}
-                {showFile && (
-                    <Box>
-                        <GeneralInfoTab key="general" />
-                    </Box>
-                )}
-            </Box>
+            {!showFavorite && (
+                <Box sx={{ px: 2, mt: 1, overflowX: 'hidden' }}>
+                    {requestTypeAccess && <RequestAccessError sendRequest={sendAccessRequest} />}
+                    {pendingTypeAccess && <PendingAccessError />}
+                    {blockedTypeAccess && <BlockedAccessError />}
+                    {notAvailable && <NotAvailableError />}
+                    {showFile && (
+                        <Box>
+                            <GeneralInfoTab key="general" />
+                        </Box>
+                    )}
+                </Box>
+            )}
+            {showFavorite && (
+                <Box>
+                    <SubTitle title={prepareFavGroupName(fileRes.name)} />
+                    {favItems}
+                </Box>
+            )}
         </>
     );
 }

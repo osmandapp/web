@@ -16,7 +16,13 @@ import {
 } from '@mui/material';
 import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { isTrack, OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
+import AppContext, {
+    isTrack,
+    OBJECT_SEARCH,
+    OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_POI,
+    OBJECT_TYPE_SHARE_FILE,
+} from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { closeHeader } from '../../../menu/actions/HeaderHelper';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
@@ -194,9 +200,10 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 };
             } else if (type?.isWpt) {
                 result = await getDataFromWpt(type, ctx.selectedWpt);
-            } else if (type?.isFav) {
+            } else if (type?.isFav || type?.isShareFav) {
                 let markerName = ctx.selectedWpt.markerCurrent.title;
-                let currentWpt = ctx.selectedWpt.file.wpts.find((p) => p.name === markerName);
+                const wpts = ctx.selectedWpt.file?.wpts ?? ctx.selectedWpt.wpts;
+                let currentWpt = wpts.find((p) => p.name === markerName);
                 if (currentWpt) {
                     result = await getDataFromWpt(type, ctx.selectedWpt, currentWpt);
                 }
@@ -409,6 +416,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             isWikiPoi: wpt?.wikidata,
             isWpt: isTrack(ctx) && (wpt?.trackWpt || wpt?.trackWptItem),
             isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && wpt?.markerCurrent,
+            isShareFav: ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE && wpt?.markerCurrent,
         };
     }
 
@@ -427,6 +435,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         } else if (wpt?.type?.isWikiPoi) {
             setShowInfoBlock(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
+        } else if (wpt?.type?.isShareFav) {
+            ctx.setSelectedGpxFile((prev) => ({ ...prev, markerCurrent: null, favItem: false, name: null }));
+            setShowInfoBlock(false);
         }
         ctx.setSelectedWpt(null);
     }
@@ -519,6 +530,10 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         }
     }
 
+    function showEditButtons() {
+        return !wpt.type?.isWikiPoi && !wpt.type?.isSearch && !wpt?.type?.isShareFav;
+    }
+
     const Header = () => {
         return (
             <AppBar position="static" className={headerStyles.appbar}>
@@ -551,12 +566,21 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 </ListItemIcon>
                 <Box>
                     <Typography className={styles.wptCategoryText} noWrap>
-                        {`${wpt.category ? wpt.category : 'Favorites'} (${wpt.file?.wpts?.length})`}
+                        {getWptGroup(wpt)}
                     </Typography>
                 </Box>
             </Box>
         );
     };
+
+    function getWptGroup(wpt) {
+        let groupStr = wpt.category ?? 'Favorites';
+        const groupLength = wpt.file ? wpt.file.wpts.length : wpt?.wpts?.length;
+        if (groupLength) {
+            groupStr += ` (${groupLength})`;
+        }
+        return groupStr;
+    }
 
     const WptAddress = () => {
         return (
@@ -727,9 +751,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
                                 <CircularProgress sx={{ ml: 2 }} size={19} />
                             ) : null}
-                            {!wpt.type?.isWikiPoi && !wpt.type?.isSearch && (
-                                <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
-                            )}
+                            {showEditButtons() && <WptDetailsButtons wpt={wpt} isDetails={isDetails} />}
                             {wpt?.wikiDesc && (
                                 <>
                                     <Divider sx={{ mt: 2 }} />
