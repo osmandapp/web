@@ -31,6 +31,8 @@ export default function ShareFile() {
     const ctx = useContext(AppContext);
     const { uuid } = useParams();
 
+    const [userName, setUserName] = useState(null);
+
     const hash = window.location.hash;
 
     const [requestTypeAccess, setRequestTypeAccess] = useState(false);
@@ -43,6 +45,12 @@ export default function ShareFile() {
     const [fileRes, setFileRes] = useState(null);
 
     const currentLoc = useGeoLocation(ctx);
+
+    useEffect(() => {
+        if (ctx.accountInfo?.nickname) {
+            setUserName(ctx.accountInfo.nickname);
+        }
+    }, [ctx.accountInfo]);
 
     useEffect(() => {
         async function fetchFile() {
@@ -107,7 +115,7 @@ export default function ShareFile() {
     }
 
     async function sendAccessRequest() {
-        const res = await sendRequest(uuid);
+        const res = await sendRequest(uuid, userName);
         if (res) {
             setRequestTypeAccess(false);
             setPendingTypeAccess(true);
@@ -150,7 +158,13 @@ export default function ShareFile() {
             </AppBar>
             {!showFavorite && (
                 <Box sx={{ px: 2, mt: 1, overflowX: 'hidden' }}>
-                    {requestTypeAccess && <RequestAccessError sendRequest={sendAccessRequest} />}
+                    {requestTypeAccess && (
+                        <RequestAccessError
+                            sendRequest={sendAccessRequest}
+                            userName={userName}
+                            setUserName={setUserName}
+                        />
+                    )}
                     {pendingTypeAccess && <PendingAccessError />}
                     {blockedTypeAccess && <BlockedAccessError />}
                     {notAvailable && <NotAvailableError />}

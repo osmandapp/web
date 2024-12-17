@@ -38,10 +38,11 @@ export async function generateLink({ file, publicAccess }) {
     }
 }
 
-export async function sendRequest(uuid) {
+export async function sendRequest(uuid, userName) {
     const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/share/request-access`, {
         params: {
             uuid,
+            nickname: userName,
         },
     });
     return res.ok;
