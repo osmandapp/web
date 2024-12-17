@@ -17,20 +17,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-OsmAnd allows you to find the best route and explore its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), and [turn information](#turn-by-turn-information). You can also [analyze](#analyze-on-map) the route on the map, find out information about track segments, [print](#print) the route plan, [save](#share--export-actions) the route, and share it with others. With this functionality, you will always know the route details and can plan your trip more efficiently.  
+OsmAnd allows you to find the best route and explore its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), [CO2 footprint data](#distance--time--co2),and [turn information](#turn-by-turn-information). You can also [analyze](#analyze-on-map) the route on the map, find out information about track segments, [print](#print) the route plan, [save](#share--export-actions) the route, and share it with others. With this functionality, you will always know the route details and can plan your trip more efficiently.  
 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Route details Android](@site/static/img/navigation/route/route_detail_overview_andr.png)  
+![Route details Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route details iOS](@site/static/img/navigation/route/route_detail_overview_3_ios.png)
+![Route details iOS](@site/static/img/navigation/route/route_detail_overview_4_ios.png)
 
 </TabItem>
 
@@ -55,7 +55,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 <TabItem value="android" label="Android">
 
-![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_andr.png)    ![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_andr2.png)
+![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_2_andr.png)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 </Tabs>
 
-- The ***Total distance*** is calculated between all route segments, including intermediate points in the selected [units](../../personal/profiles.md#units--formats).
+- ***Total distance*** is calculated between all route segments, including intermediate points in the selected [units](../../personal/profiles.md#units--formats).
 
 - ***Estimated travel time*** is calculated as the total of times on each segment and time penalties on specific points. Each navigation profile has different rules for calculating speed on a segment and which penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example, car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, and aircraft profiles use *default* speed from [Navigation Settings](../guidance/navigation-settings.md#default-speed--road-speeds).
 
