@@ -19,7 +19,7 @@ export default function UserAccessList({ type, users, setForcedUpdate }) {
         <Box
             minWidth={ctx.infoBlockWidth}
             maxWidth={ctx.infoBlockWidth}
-            sx={{ overflow: 'auto', overflowX: 'hidden', maxHeight: '250px' }}
+            sx={{ overflow: 'auto', overflowX: 'hidden', maxHeight: '225px' }}
         >
             {showOwner && <UserAccessListItem showOwner={true} type={type} userList={users} />}
             {emptyDataMsg && (
