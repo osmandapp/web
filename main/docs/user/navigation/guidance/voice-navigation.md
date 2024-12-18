@@ -125,6 +125,12 @@ The *Speed limit* option allows OsmAnd to announce when the current speed exceed
 - *Announce when exceeded*:  
     - *Speed limit tolerance*.  
         Select an allowable speed deviation, on the screenshot between -10 km/h and +20 km/h (the speed is displayed in the *Units of speed* you set), from the [maximum legal speed limit](https://wiki.openstreetmap.org/wiki/Key:maxspeed) on the current road. When the selected speed limit tolerance is exceeded, a voice prompt is activated.  
+- *Voice prompt timing* has three Timing rules:
+    -  Initial Warning: The app waits 5 seconds after detecting speeding before issuing the first voice alert.
+    -  Repeat Announcement Delay: If speeding continues, the next warning is delayed for 120 seconds, preventing frequent notifications.
+    -  Timer Reset: If the vehicle stays within the speed limit for 30 seconds, the timer resets, and the next speeding event triggers a new 5-second countdown.
+
+
 
 For [**Speedometer** widget](../../widgets/info-widgets.md#speedometer) in the app and for [Android Auto](../../navigation/auto-car.md#speedometer), [CarPlay](../../navigation/car-play.md#speedometer), this *Speed limit tolerance* setting affect the speed displayed in *Speed limit warning*.
 

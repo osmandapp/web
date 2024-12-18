@@ -68,6 +68,7 @@ Use one of the following paths to open the plugin settings:
 
 - **Simulate your position** (*Android* / *iOS*). [Simulate](#gpx-track-simulation) the location and movement using a GPX track.
 - **Battery saving mode** (*Android* / *iOS*). This setting reduces [the screen refresh rate](#map-rendering-fps-widget) by 20 fps, helping to conserve battery power during app usage.
+- **Location interpolation percentage** (*Android*): Sets the percentage of location interpolation during route navigation. This parameter reduces the lag of your location position on the map during animation.
 - **Use 3D location position icons** (*iOS*). Enables selecting a 3D icon for the [My Location icon](../personal/profiles.md#my-location-appearance).
 - **Simulate obd data** (*Android*). Allows simulation of [OBD scanner](./vehicle-metrics.md) usage.
 - **Perfomance debug info** (*Android*). Display the rendering and navigation performance. 
@@ -117,15 +118,18 @@ Use one of the following paths to open the plugin settings:
 :::caution Android only
 :::  
 
-- **Allocated memory**.
-- **Total native memory**.
-- **A-GPS info**.
-- **Day/night info**.
-- **Energy statistics (average 1 / 5 / 15 minutes)**.
-- **Rendering statistics (average 1 / 5 / 15 minutes)**.
-  
-Button:  
-- **Reset plugin setting to default**:
+- **Allocated memory**: Displays the allocated system memory for the OsmAnd app.  
+- **Total native memory**: Displays the total native memory allocated by the app, including proportional memory.  
+- **A-GPS info**: Indicates when A-GPS data was last downloaded.  
+- **Day/night info**: Shows today's sunrise and sunset times.  
+- **Energy statistics (average 1 / 5 / 15 minutes)**: Displays battery level per minute (%) and average energy consumption (mAh) over 1, 5, and 15-minute intervals.  
+- **Rendering statistics (average 1 / 5 / 15 minutes)**: Shows rendering statistics, including FPS for the last 1k frames, CPU (tiles), CPU (idle time), and CPU (waits) averages over 1, 5, and 15-minute intervals.  
+
+**Button:**  
+- **Reset plugin settings to default**: Resets all plugin settings to their default values.
+
+
+![Development Settings Android](@site/static/img/plugins/development/devplugin_stat_and.png) 
 
 ## Map Rendering FPS Widget
 
