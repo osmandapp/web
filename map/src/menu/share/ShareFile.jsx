@@ -31,7 +31,7 @@ export default function ShareFile() {
     const ctx = useContext(AppContext);
     const { uuid } = useParams();
 
-    const [userName, setUserName] = useState(null);
+    const [userName, setUserName] = useState('');
 
     const hash = window.location.hash;
 
