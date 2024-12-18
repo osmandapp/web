@@ -1,4 +1,7 @@
 import { apiGet, apiPost } from '../util/HttpApi';
+import { quickNaNfix } from '../util/Utils';
+import { FILE_WAS_DELETED } from './GlobalManager';
+import { getShare } from './track/TracksManager';
 
 export const REQUEST_ACCESS_TYPE = 'request';
 export const APPROVED_ACCESS_TYPE = 'approved';
@@ -7,6 +10,14 @@ export const PENDING_ACCESS_TYPE = 'pending';
 export const BLOCKED_ACCESS_TYPE = 'blocked';
 
 export async function getShareFileInfo({ file, ctx }) {
+    //get share file info only if file is shared
+    if (!getShare(file, ctx)) {
+        ctx.setShareFile({
+            mainFile: file,
+            sharedObj: null,
+        });
+        return;
+    }
     const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/share/get-share-file-info`, {
         params: {
             fileName: file.name,
@@ -81,20 +92,34 @@ export async function updateUserRequests(ctx) {
     }
 }
 
-export async function changeShareTypeFile(file, ctx) {
+export async function changeShareTypeFile({ file, shareType, ctx }) {
     const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/share/change-share-type`, {
         params: {
-            filePath: file.filepath,
+            filePath: file.name,
+            fileType: file.type,
+            shareType: shareType,
+            createIfNotExists: true,
         },
     });
     if (res.ok) {
-        const updatedFile = await res.json();
-        ctx.setShareFile((prev) => ({
-            ...prev,
-            sharedObj: {
-                ...prev.sharedObj,
-                file: updatedFile,
-            },
-        }));
+        const text = await res.text();
+        try {
+            const updatedFile = JSON.parse(quickNaNfix(text));
+            ctx.setShareFile((prev) => ({
+                ...prev,
+                sharedObj: {
+                    ...prev.sharedObj,
+                    file: updatedFile,
+                },
+            }));
+        } catch (error) {
+            const textLower = text.toLowerCase();
+            if (textLower === FILE_WAS_DELETED) {
+                ctx.setShareFile({
+                    mainFile: file,
+                    sharedObj: null,
+                });
+            }
+        }
     }
 }

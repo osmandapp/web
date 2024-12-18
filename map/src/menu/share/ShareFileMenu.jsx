@@ -13,7 +13,8 @@ import {
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as ShareLinkIcon } from '../../assets/icons/ic_action_link.svg';
-import { ReactComponent as ShareTypePrivateIcon } from '../../assets/icons/ic_action_lock_open.svg';
+import { ReactComponent as ShareTypePrivateIcon } from '../../assets/icons/ic_action_lock.svg';
+import { ReactComponent as ShareTypeAccessIcon } from '../../assets/icons/ic_action_lock_open.svg';
 import { ReactComponent as ShareTypePublicIcon } from '../../assets/icons/ic_action_global_share.svg';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
@@ -23,7 +24,7 @@ import buttonStyles from '../login/login.module.css';
 import ShareFileItem from './ShareFileItem';
 import ShareType from './ShareType';
 import SubTitle from '../components/SubTitle';
-import UserAccessList from './UserAccessList';
+import UserAccessList from './access/UserAccessList';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import {
     APPROVED_ACCESS_TYPE,
@@ -35,7 +36,8 @@ import {
     updateUserRequests,
 } from '../../manager/ShareManager';
 import { MAIN_URL_WITH_SLASH, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
-import PublicAccessList from './PublicAccessList';
+import PublicAccessList from './access/PublicAccessList';
+import PrivateAccessList from './access/PrivateAccessList';
 
 export default function ShareFileMenu({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -49,18 +51,25 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
             icon: <ShareTypePublicIcon />,
             info: 'Anyone with the link can access the file',
         },
+        request: {
+            key: 'request',
+            isPublic: false,
+            name: 'Request Only',
+            icon: <ShareTypeAccessIcon />,
+            info: 'Users need to request access, which you can approve or deny',
+        },
         private: {
             key: 'private',
             isPublic: false,
-            name: 'Request Only',
+            name: 'Private',
             icon: <ShareTypePrivateIcon />,
-            info: 'Users need to request access, which you can approve or deny',
+            info: 'Only you can access the file',
         },
     };
 
     const [selectedAccessTab, setSelectedAccessTab] = useState(APPROVED_ACCESS_TYPE);
     const [userGroups, setUserGroups] = useState({});
-    const [link, setLink] = useState('Tap Generate link to start share this file.');
+    const [link, setLink] = useState(null);
     const [generatedUuid, setGeneratedUuid] = useState(null);
     const [selectedShareType, setSelectedShareType] = useState(initialShareType());
     const [forcedUpdate, setForcedUpdate] = useState(false);
@@ -81,29 +90,10 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
     };
 
     useEffect(() => {
-        const uuid = generatedUuid ?? ctx.shareFile?.sharedObj?.file?.uuid;
-        if (uuid) {
-            setLink(createLink(uuid));
+        if (ctx.shareFile && !ctx.shareFile.sharedObj) {
+            // private file without users
+            return;
         }
-    }, [ctx.shareFile, generatedUuid]);
-
-    useEffect(() => {
-        if (ctx.shareFile?.sharedObj?.file.publicAccess !== selectedShareType.isPublic) {
-            changeShareTypeFile(ctx.shareFile.sharedObj.file, ctx).then();
-        }
-    }, [selectedShareType]);
-
-    useEffect(() => {
-        updateUserRequests(ctx).then();
-    }, [selectedAccessTab, selectedShareType]);
-
-    useEffect(() => {
-        if (forcedUpdate) {
-            updateUserRequests(ctx).then(() => setForcedUpdate(false));
-        }
-    }, [forcedUpdate]);
-
-    useEffect(() => {
         if (ctx.shareFile?.sharedObj?.file?.accessRecords) {
             const groupedUsers = {
                 [APPROVED_ACCESS_TYPE]: [],
@@ -125,12 +115,66 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
         }
     }, [ctx.shareFile]);
 
-    function initialShareType() {
-        if (ctx.shareFile?.sharedObj?.file.publicAccess) {
-            return shareTypes.public;
+    useEffect(() => {
+        const uuid = generatedUuid ?? ctx.shareFile?.sharedObj?.file?.uuid;
+        if (uuid) {
+            setLink(createLink(uuid));
         } else {
+            if (selectedShareType.key === shareTypes.private.key) {
+                setLink('Update access settings to generate a link.');
+            } else {
+                setLink('Tap Generate link to start share this file.');
+            }
+        }
+    }, [ctx.shareFile, generatedUuid]);
+
+    useEffect(() => {
+        ctx.setShareFilesCache((prev) => {
+            return {
+                ...prev,
+                [ctx.shareFile.mainFile.id]: selectedShareType.key,
+            };
+        });
+        const privateFile = ctx.shareFile && !ctx.shareFile.sharedObj;
+        const publicFile = ctx.shareFile?.sharedObj?.file.publicAccess;
+
+        // private -> create new share file with selected type
+        if (privateFile && selectedShareType.key !== shareTypes.private.key) {
+            changeShareTypeFile({ file: ctx.shareFile.mainFile, shareType: selectedShareType.key, ctx }).then();
+            return;
+        }
+        // public -> request
+        if (publicFile && selectedShareType.key === shareTypes.request.key) {
+            changeShareTypeFile({ file: ctx.shareFile.mainFile, shareType: selectedShareType.key, ctx }).then();
+            return;
+        }
+        // request -> public
+        if (!privateFile && selectedShareType.key === shareTypes.public.key) {
+            changeShareTypeFile({ file: ctx.shareFile.mainFile, shareType: selectedShareType.key, ctx }).then();
+        }
+        if (selectedShareType.key === shareTypes.private.key) {
+            // process this case in DeleteShareFileDialog
+        }
+    }, [selectedShareType]);
+
+    useEffect(() => {
+        updateUserRequests(ctx).then();
+    }, [selectedAccessTab, selectedShareType]);
+
+    useEffect(() => {
+        if (forcedUpdate) {
+            updateUserRequests(ctx).then(() => setForcedUpdate(false));
+        }
+    }, [forcedUpdate]);
+
+    function initialShareType() {
+        if (ctx.shareFile && !ctx.shareFile.sharedObj) {
             return shareTypes.private;
         }
+        if (ctx.shareFile?.sharedObj?.file.publicAccess) {
+            return shareTypes.public;
+        }
+        return shareTypes.request;
     }
 
     function createLink(uuid) {
@@ -185,7 +229,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                 </Toolbar>
             </AppBar>
             <Box>
-                <ShareFileItem file={ctx.shareFile.mainFile} type={ctx.shareFile.sharedObj.file.type} />
+                <ShareFileItem file={ctx.shareFile.mainFile} type={ctx.shareFile.mainFile.type} />
                 <ShareType
                     selectedShareType={selectedShareType}
                     setSelectedShareType={setSelectedShareType}
@@ -194,7 +238,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                 <Divider className={gStyles.thickDivider} />
                 <Box>
                     <SubTitle title={'Users'} hasTranslation={false} />
-                    {selectedShareType.key === shareTypes.private.key && (
+                    {selectedShareType.key === shareTypes.request.key && (
                         <Box sx={{ mx: 2 }}>
                             <ToggleButtonGroup
                                 fullWidth
@@ -215,7 +259,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                             </ToggleButtonGroup>
                         </Box>
                     )}
-                    {selectedShareType.key === shareTypes.private.key && (
+                    {selectedShareType.key === shareTypes.request.key && (
                         <Box>
                             <UserAccessList
                                 type={selectedAccessTab}
@@ -225,6 +269,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                         </Box>
                     )}
                     {selectedShareType.key === shareTypes.public.key && <PublicAccessList />}
+                    {selectedShareType.key === shareTypes.private.key && <PrivateAccessList />}
                 </Box>
                 <Divider className={gStyles.thickDivider} />
                 <Box sx={{ mx: 2 }}>
@@ -236,7 +281,13 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                             Copy link
                         </Button>
                     ) : (
-                        <Button component="span" className={buttonStyles.blueButton} onClick={generateNewLink}>
+                        <Button
+                            component="span"
+                            className={buttonStyles.blueButton}
+                            onClick={generateNewLink}
+                            disabled={selectedShareType.key === shareTypes.private.key}
+                            sx={{ color: selectedShareType.key === shareTypes.private.key && '#727272 !important' }}
+                        >
                             Generate link
                         </Button>
                     )}

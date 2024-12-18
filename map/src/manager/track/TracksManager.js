@@ -1401,7 +1401,10 @@ export function getWptPoints(file) {
     return f?.wptPoints ? f?.wptPoints : null;
 }
 
-export function getShare(file) {
+export function getShare(file, ctx) {
+    if (ctx.shareFilesCache[file.id]) {
+        return ctx.shareFilesCache[file.id] !== 'private';
+    }
     return file?.details?.share;
 }
 

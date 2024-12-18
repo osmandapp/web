@@ -23,7 +23,7 @@ export default function FavoriteGroup({ index, group }) {
     const [processDownload, setProcessDownload] = useState(false);
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const anchorEl = useRef(null);
-    const share = getShare(group.file);
+    const share = getShare(group.file, ctx);
 
     useEffect(() => {
         if (ctx.favorites.mapObjs[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {

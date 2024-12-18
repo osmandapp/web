@@ -1,11 +1,11 @@
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext from '../../../context/AppContext';
 import UserAccessListItem from './UserAccessListItem';
-import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../../manager/ShareManager';
-import styles from './share.module.css';
-import MenuItemWithLines from '../components/MenuItemWithLines';
-import { ReactComponent as ShareIcon } from '../../assets/icons/ic_group.svg';
+import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../../../manager/ShareManager';
+import styles from '../share.module.css';
+import MenuItemWithLines from '../../components/MenuItemWithLines';
+import { ReactComponent as ShareIcon } from '../../../assets/icons/ic_group.svg';
 
 export default function UserAccessList({ type, users, setForcedUpdate }) {
     const ctx = useContext(AppContext);

@@ -59,8 +59,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const dist = getDist(file);
     const time = getTime(file);
     const wptPoints = getWptPoints(file);
-    const share = getShare(file);
-
+    const share = getShare(file, ctx);
     async function processDisplayTrack({ visible, setLoading, showOnMap = true, showInfo = false }) {
         checkedSwitch = !checkedSwitch;
         if (!showInfo) {

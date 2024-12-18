@@ -305,6 +305,7 @@ export const AppContextProvider = (props) => {
     const [shareFile, setShareFile] = useState(null);
     const [updatedRequestList, setUpdatedRequestList] = useState([]);
     const [shareFileMarkers, setShareFileMarkers] = useState(null);
+    const [shareFilesCache, setShareFilesCache] = useState({});
 
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -700,6 +701,8 @@ export const AppContextProvider = (props) => {
                 setUpdatedRequestList,
                 shareFileMarkers,
                 setShareFileMarkers,
+                shareFilesCache,
+                setShareFilesCache,
             }}
         >
             {props.children}

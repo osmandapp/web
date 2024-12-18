@@ -1,20 +1,20 @@
 import { useInView } from 'react-intersection-observer';
 import React, { useContext, useMemo, useRef, useState } from 'react';
 import { Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
-import trackStyles from '../trackfavmenu.module.css';
-import styles from './share.module.css';
-import MenuItemWithLines from '../components/MenuItemWithLines';
-import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
-import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
-import { ReactComponent as UserIcon } from '../../assets/icons//ic_action_user.svg';
-import { ReactComponent as ActionDoneIcon } from '../../assets/icons/ic_action_done.svg';
-import { ReactComponent as ActionRemoveIcon } from '../../assets/icons/ic_action_remove_dark.svg';
-import { ReactComponent as AnyoneIcon } from '../../assets/icons/ic_world_globe_dark.svg';
+import trackStyles from '../../trackfavmenu.module.css';
+import styles from '../share.module.css';
+import MenuItemWithLines from '../../components/MenuItemWithLines';
+import { ReactComponent as MenuIcon } from '../../../assets/icons/ic_overflow_menu_white.svg';
+import { ReactComponent as MenuIconHover } from '../../../assets/icons/ic_overflow_menu_with_background.svg';
+import { ReactComponent as UserIcon } from '../../../assets/icons/ic_action_user.svg';
+import { ReactComponent as ActionDoneIcon } from '../../../assets/icons/ic_action_done.svg';
+import { ReactComponent as ActionRemoveIcon } from '../../../assets/icons/ic_action_remove_dark.svg';
+import { ReactComponent as AnyoneIcon } from '../../../assets/icons/ic_world_globe_dark.svg';
 import { format } from 'date-fns';
 import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
-import AppContext from '../../context/AppContext';
-import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../../manager/ShareManager';
+import AppContext from '../../../context/AppContext';
+import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../../../manager/ShareManager';
 
 export default function UserAccessListItem({
     index,
@@ -37,7 +37,7 @@ export default function UserAccessListItem({
 
     function getName() {
         if (showOwner) {
-            return ctx.shareFile.sharedObj.owner;
+            return ctx.accountInfo?.nickname;
         } else if (anyone) {
             return 'Anyone';
         } else {
