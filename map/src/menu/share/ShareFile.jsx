@@ -47,9 +47,7 @@ export default function ShareFile() {
     const currentLoc = useGeoLocation(ctx);
 
     useEffect(() => {
-        if (ctx.accountInfo?.nickname) {
-            setUserName(ctx.accountInfo.nickname);
-        }
+        setUserName(ctx.accountInfo?.nickname ?? '');
     }, [ctx.accountInfo]);
 
     useEffect(() => {

@@ -37,7 +37,7 @@ export default function UserAccessListItem({
 
     function getName() {
         if (showOwner) {
-            return ctx.accountInfo?.nickname;
+            return ctx.accountInfo?.nickname ?? ctx.loginUser;
         } else if (anyone) {
             return 'Anyone';
         } else {
