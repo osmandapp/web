@@ -5,12 +5,14 @@ import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsa
 import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as ShowOnMapIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
+import { ReactComponent as ShareIcon } from '../../assets/icons/ic_group.svg';
 import Utils from '../../util/Utils';
 import RenameFavDialog from '../../dialogs/favorites/RenameFavDialog';
 import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
 import AppContext from '../../context/AppContext';
 import { updateAllFavorites, updateFavoriteGroups } from '../../manager/FavoritesManager';
 import { useTranslation } from 'react-i18next';
+import { getShareFileInfo } from '../../manager/ShareManager';
 
 const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const ctx = useContext(AppContext);
@@ -106,6 +108,20 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
+                    <MenuItem
+                        id={'se-share-favorite-folder'}
+                        className={styles.action}
+                        onClick={() => getShareFileInfo({ file: group.file, ctx })}
+                    >
+                        <ListItemIcon className={styles.iconAction}>
+                            <ShareIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                                {t('shared_string_share')}
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
                     <MenuItem
                         className={styles.action}
                         onClick={() => {

@@ -1,6 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Box, Button, Divider } from '@mui/material';
-import AppContext, { isLocalTrack, isRouteTrack, isTravelTrack } from '../../../context/AppContext';
+import AppContext, {
+    isLocalTrack,
+    isRouteTrack,
+    isTravelTrack,
+    OBJECT_TYPE_SHARE_FILE,
+} from '../../../context/AppContext';
 import { Download } from '@mui/icons-material';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
@@ -87,7 +92,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                     </>
                 )}
                 {hasSegments(ctx.selectedGpxFile) && <GpxGraphProvider width={ctx.infoBlockWidth} />}
-                {isEmptyTrack(ctx.selectedGpxFile) === false && (
+                {isEmptyTrack(ctx.selectedGpxFile) === false && ctx.currentObjectType !== OBJECT_TYPE_SHARE_FILE && (
                     <>
                         <Divider sx={{ mt: '3px', mb: '12px' }} />
                         <Button
@@ -110,31 +115,33 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                         </Button>
                     </>
                 )}
-                {isRouteTrack(ctx) === false && isTravelTrack(ctx) === false && (
-                    <>
-                        <Divider sx={{ mt: 2, mb: 2 }} />
-                        <Button
-                            id="se-infoblock-button-close-track"
-                            variant="contained"
-                            sx={{ ml: '-0.5px !important' }}
-                            className={styles.button}
-                            onClick={() => setShowInfoBlock(false)}
-                        >
-                            Close Track
-                        </Button>
-                        <Button
-                            id="se-infoblock-button-delete-track"
-                            variant="contained"
-                            sx={{ backgroundColor: '#ff595e !important' }}
-                            className={styles.button}
-                            onClick={() => {
-                                setOpenDeleteDialog(true);
-                            }}
-                        >
-                            {ctx.createTrack?.cloudAutoSave ? 'Discard changes' : 'Delete Track'}
-                        </Button>
-                    </>
-                )}
+                {isRouteTrack(ctx) === false &&
+                    isTravelTrack(ctx) === false &&
+                    ctx.currentObjectType !== OBJECT_TYPE_SHARE_FILE && (
+                        <>
+                            <Divider sx={{ mt: 2, mb: 2 }} />
+                            <Button
+                                id="se-infoblock-button-close-track"
+                                variant="contained"
+                                sx={{ ml: '-0.5px !important' }}
+                                className={styles.button}
+                                onClick={() => setShowInfoBlock(false)}
+                            >
+                                Close Track
+                            </Button>
+                            <Button
+                                id="se-infoblock-button-delete-track"
+                                variant="contained"
+                                sx={{ backgroundColor: '#ff595e !important' }}
+                                className={styles.button}
+                                onClick={() => {
+                                    setOpenDeleteDialog(true);
+                                }}
+                            >
+                                {ctx.createTrack?.cloudAutoSave ? 'Discard changes' : 'Delete Track'}
+                            </Button>
+                        </>
+                    )}
             </Box>
             {openDeleteDialog && (
                 <DeleteTrackDialog
