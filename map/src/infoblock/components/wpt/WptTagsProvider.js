@@ -19,6 +19,7 @@ import { changeIconColor } from '../../../map/markers/MarkerOptions';
 import { createPoiCache, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 import { apiGet } from '../../../util/HttpApi';
+import { parseTagWithLang } from '../../../manager/SearchManager';
 
 export const DEFAULT_TAG_ICON_SIZE = 24;
 export const DEFAULT_TAG_ICON_COLOR = '#727272';
@@ -271,7 +272,7 @@ async function getWptTags(obj, type, ctx) {
                                 isWikipediaLink = false;
                             } else if (key === 'addr:housename' || key === 'whitewater:rapid_name') {
                                 tagObj.icon = <PoiNameIcon />;
-                            } else if (key === 'operator' || key === 'brand') {
+                            } else if (key.startsWith('operator') || key.startsWith('brand')) {
                                 tagObj.icon = <BrandIcon />;
                             } else if (key === 'internet_access_fee_yes') {
                                 tagObj.icon = <InternetIcon />;
@@ -280,7 +281,12 @@ async function getWptTags(obj, type, ctx) {
                                 const svgData = await getSvgIcon({ value: prepValue, ctx });
                                 tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
                             } else {
-                                const svgData = await getSvgIcon({ key, value, ctx });
+                                const tagWithLang = parseTagWithLang(key);
+                                let preparedKey = key;
+                                if (tagWithLang.lang) {
+                                    preparedKey = tagWithLang.key;
+                                }
+                                const svgData = await getSvgIcon({ preparedKey, value, ctx });
                                 tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
                             }
                     }
@@ -314,8 +320,29 @@ async function getWptTags(obj, type, ctx) {
     }
 
     res = res.filter((t) => !t.key.startsWith(WEB_PREFIX));
-
+    res = mergeTagsWithLang(res);
     return { res, id, type: typeTag, subtype: subtypeTag };
+}
+
+function mergeTagsWithLang(tags) {
+    tags.forEach((tag) => {
+        if (tag.key.includes(':')) {
+            const arr = tag.key.split(':');
+            tag.key = arr[0];
+            tag.lang = arr[1];
+        }
+    });
+    let tagsWithLang = tags.filter((tag) => tag.lang);
+    tagsWithLang.forEach((tag) => {
+        if (tags.includes(tag)) {
+            const sameTags = tags.filter((t) => t.key === tag.key && t !== tag);
+            if (sameTags) {
+                tag.otherLangs = sameTags;
+                tags = tags.filter((t) => !sameTags.includes(t));
+            }
+        }
+    });
+    return tags;
 }
 
 export async function addPoiTypeTag({

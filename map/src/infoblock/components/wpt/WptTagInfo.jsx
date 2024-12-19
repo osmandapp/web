@@ -18,6 +18,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     const [open, setOpen] = useState(false);
     const [openMoreDialog, setOpenMoreDialog] = useState(null);
     const [tagList, setTagList] = useState(null);
+    const [newTag, setNewTag] = useState(null);
     const [hover, setHover] = useState(false);
 
     function handleCopy(value) {
@@ -30,6 +31,38 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             if (items.length > 1) {
                 setTagList(items);
             }
+        }
+        if (tag?.otherLangs) {
+            const currentLanguage = i18n.language;
+            if (tag.lang === currentLanguage) {
+                setTagList(tag.otherLangs);
+                return;
+            }
+            let newTag;
+            let ind = tag.otherLangs.findIndex((item) => item.lang === currentLanguage);
+            let tagWithoutLangInd = tag.otherLangs.findIndex((item) => !item.lang);
+            if (ind > -1) {
+                newTag = tag.otherLangs[ind];
+                if (tagWithoutLangInd > -1) {
+                    newTag.otherLangs = tag.otherLangs.filter(
+                        (_, index) => index !== ind && index !== tagWithoutLangInd
+                    );
+                    newTag.otherLangs.unshift(tag.otherLangs[tagWithoutLangInd], tag);
+                } else {
+                    newTag.otherLangs = tag.otherLangs.filter((_, index) => index !== ind);
+                    newTag.otherLangs.unshift(tag);
+                }
+            } else {
+                if (tagWithoutLangInd > -1) {
+                    newTag = tag.otherLangs[tagWithoutLangInd];
+                    newTag.otherLangs = [
+                        ...tag.otherLangs.slice(0, tagWithoutLangInd),
+                        ...tag.otherLangs.slice(tagWithoutLangInd + 1),
+                    ];
+                }
+            }
+            setNewTag(newTag);
+            setTagList(newTag.otherLangs);
         }
     }, [tag]);
 
@@ -116,6 +149,18 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     }
 
     function getTranslation(key, value) {
+        if (key.includes(':')) {
+            const arr = key.split(':');
+            const t = arr[0];
+            const lang = arr[1];
+            if (i18n.exists('lang_' + lang) && i18n.exists(t)) {
+                return (
+                    capitalize(translateWithSplit(i18n.t, t)) +
+                    ': ' +
+                    capitalize(translateWithSplit(i18n.t, 'lang_' + lang))
+                );
+            }
+        }
         if (i18n.exists(key)) {
             return capitalize(translateWithSplit(i18n.t, key));
         }
@@ -123,7 +168,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     }
 
     function getValue(tag) {
-        const value = prepareValueFromList(tag);
+        let value = prepareValueFromList(tag);
         if (tag.collapsable) {
             const items = tag.value.split(SEPARATOR);
 
@@ -138,6 +183,25 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                         <MenuItemWithLines name={value} maxLines={1} className={styles.tagName} />
                     </ListItemText>
                     {items.length > 1 && (
+                        <IconButton onClick={() => setOpen(!open)}>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>
+                    )}
+                </>
+            );
+        } else if (tag.otherLangs) {
+            const mainTag = newTag ?? tag;
+            const listTags = tagList ?? mainTag.otherLangs;
+            value = prepareValueFromList(mainTag);
+            return (
+                <>
+                    <ListItemText onClick={() => setOpen(!open)}>
+                        <MenuItemWithLines
+                            name={getTranslation(`${POI_PREFIX}${mainTag.textPrefix}`, mainTag.textPrefix)}
+                            maxLines={2}
+                            className={styles.tagPrefix}
+                        />
+                        <MenuItemWithLines name={value} maxLines={1} className={styles.tagName} />
+                    </ListItemText>
+                    {listTags.length > 1 && (
                         <IconButton onClick={() => setOpen(!open)}>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>
                     )}
                 </>
@@ -220,13 +284,36 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             )}
             {tagList && (
                 <Collapse in={open} timeout="auto" unmountOnExit>
-                    {tagList.map((item, index) => (
-                        <MenuItem disableRipple key={index} divider className={styles.tagList}>
-                            <Typography key={index} className={styles.tagName}>
-                                {translateWithSplit(t, `${POI_PREFIX}${item}`)}
-                            </Typography>
-                        </MenuItem>
-                    ))}
+                    {tagList.map((item, index) =>
+                        typeof item === 'string' ? (
+                            <MenuItem disableRipple key={index} divider className={styles.tagList}>
+                                <Typography key={index} className={styles.tagName}>
+                                    {translateWithSplit(t, `${POI_PREFIX}${item}`)}
+                                </Typography>
+                            </MenuItem>
+                        ) : (
+                            <MenuItem
+                                key={index}
+                                style={{ userSelect: 'text' }}
+                                disableRipple={!(tag.key === WIKIPEDIA && ctx.develFeatures)}
+                                className={styles.tagItem}
+                                divider
+                            >
+                                <ListItemText>
+                                    <MenuItemWithLines
+                                        name={getTranslation(`${POI_PREFIX}${item.textPrefix}`, item.textPrefix)}
+                                        maxLines={2}
+                                        className={styles.tagPrefix}
+                                    />
+                                    <MenuItemWithLines
+                                        name={prepareValueFromList(item)}
+                                        maxLines={1}
+                                        className={styles.tagName}
+                                    />
+                                </ListItemText>
+                            </MenuItem>
+                        )
+                    )}
                 </Collapse>
             )}
             {openMoreDialog && (
