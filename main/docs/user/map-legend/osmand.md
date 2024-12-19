@@ -43,6 +43,7 @@ import TabItem from '@theme/TabItem';
 
 ## Routes
 <img src={require('@site/static/img/map-legend/osmand-routes.png').default} alt="OsmAnd Map style" />
+<img src={require('@site/static/img/map-legend/osmand-routes-dirtbike.png').default} alt="OsmAnd Map style" />
 
 ## Via ferrata
 <img src={require('@site/static/img/map-legend/osmand-via-ferrata.png').default} alt="OsmAnd Map style" />

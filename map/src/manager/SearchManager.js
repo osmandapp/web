@@ -107,15 +107,15 @@ export function addWikiPlacesDefaultFilters(ctx, mainSearch = false, selectedFil
 
 export function getPoiParentCategory(props, t) {
     let type = props[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
-    const brandRes = parseBrandTag(type);
-    if (brandRes.brand === SEARCH_BRAND) {
-        let brandType = _.capitalize(formattingPoiType(t(`poi_${brandRes.brand}`)));
-        if (brandRes.lang) {
-            brandType += ' (' + t(`lang_${brandRes.lang}`).toLowerCase() + ')';
-        }
-        return brandType;
-    }
     if (type) {
+        const brandRes = parseBrandTag(type);
+        if (brandRes.brand === SEARCH_BRAND) {
+            let brandType = _.capitalize(formattingPoiType(t(`poi_${brandRes.brand}`)));
+            if (brandRes.lang) {
+                brandType += ' (' + t(`lang_${brandRes.lang}`).toLowerCase() + ')';
+            }
+            return brandType;
+        }
         type = _.capitalize(formattingPoiType(t(`poi_${type}`)));
     } else {
         const filter = props[WEB_POI_FILTER_NAME];
