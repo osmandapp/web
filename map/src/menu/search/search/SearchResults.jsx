@@ -50,6 +50,8 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const [errorZoom, setErrorZoom] = useState(null);
     const currentLoc = useGeoLocation(ctx);
 
+    const iconCache = new WeakMap();
+
     const { zoom } = useHashParams();
 
     useEffect(() => {
@@ -123,17 +125,20 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     }, [currentLoc, ctx.searchResult]);
 
     useEffect(() => {
+        if (!memoizedResult) return;
+        if (memoizedResult === EMPTY_SEARCH_RESULT) {
+            setResult(EMPTY_SEARCH_RESULT);
+            return;
+        }
         const updateIcons = async () => {
-            if (!memoizedResult) return;
-            if (memoizedResult === EMPTY_SEARCH_RESULT) {
-                setResult(EMPTY_SEARCH_RESULT);
+            if (iconCache.has(memoizedResult)) {
+                setResult({ features: iconCache.get(memoizedResult) });
                 return;
             }
-
-            if (!memoizedResult[0]?.icon) {
-                await calculateIcons(memoizedResult, ctx);
-            }
-            setResult({ features: memoizedResult });
+            const resultWithIcons = [...memoizedResult];
+            await calculateIcons(resultWithIcons, ctx);
+            iconCache.set(memoizedResult, resultWithIcons);
+            setResult({ features: resultWithIcons });
         };
 
         updateIcons().then();
