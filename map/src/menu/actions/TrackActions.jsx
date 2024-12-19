@@ -7,12 +7,14 @@ import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_
 import { ReactComponent as DuplicateIcon } from '../../assets/icons/ic_action_copy.svg';
 import { ReactComponent as MakeTrackVisible } from '../../assets/icons/ic_action_show_outlined.svg';
 import { ReactComponent as HideTrackVisible } from '../../assets/icons/ic_action_hide_outlined.svg';
+import { ReactComponent as ShareIcon } from '../../assets/icons/ic_group.svg';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
 import TracksManager, { downloadGpx } from '../../manager/track/TracksManager';
 import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
 import { duplicateTrack } from '../../manager/track/SaveTrackManager';
 import { useTranslation } from 'react-i18next';
+import { getShareFileInfo } from '../../manager/ShareManager';
 
 const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref) => {
     const ctx = useContext(AppContext);
@@ -70,34 +72,10 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
         );
     };
 
-    // const ShowOnMapAction = () => {
-    //     return (
-    //         <MenuItem
-    //             id="se-show-on-map-action"
-    //             className={styles.action}
-    //             onClick={() => {
-    //                 setZoomToTrack(true);
-    //                 setOpenActions(false);
-    //             }}
-    //         >
-    //             <ListItemIcon className={styles.iconAction}>
-    //                 <ShowOnMapIcon />
-    //             </ListItemIcon>
-    //             <ListItemText>
-    //                 <Typography variant="inherit" className={styles.actionName} noWrap>
-    //                     {t('shared_string_show_on_map')}
-    //                 </Typography>
-    //             </ListItemText>
-    //         </MenuItem>
-    //     );
-    // };
-
     return (
         <>
             <Box ref={ref}>
                 <Paper id="se-track-actions" className={styles.actions}>
-                    {/*<ShowOnMapAction />*/}
-                    {/*<Divider className={styles.dividerActions} />*/}
                     <MakeTrackVisibleAction />
                     <Divider className={styles.dividerActions} />
                     <MenuItem
@@ -130,6 +108,20 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
+                    <MenuItem
+                        id={'se-share-track'}
+                        className={styles.action}
+                        onClick={() => getShareFileInfo({ file: track, ctx })}
+                    >
+                        <ListItemIcon className={styles.iconAction}>
+                            <ShareIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                                {t('shared_string_share')}
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
                     <MenuItem
                         className={styles.action}
                         onClick={() => {

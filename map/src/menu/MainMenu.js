@@ -25,6 +25,7 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_POI,
     OBJECT_TYPE_WEATHER,
+    OBJECT_TYPE_SHARE_FILE,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -67,6 +68,7 @@ import {
     TRACKS_URL,
     WEATHER_URL,
     TRAVEL_URL,
+    SHARE_FILE_MAIN_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -75,6 +77,7 @@ import LoginButton from './login/LoginButton';
 import LoginMenu from './login/LoginMenu';
 import TravelMenu from './travel/TravelMenu';
 import ProFeatures from '../frame/components/pro/ProFeatures';
+import { updateUserRequests } from '../manager/ShareManager';
 
 export default function MainMenu({
     size,
@@ -131,6 +134,11 @@ export default function MainMenu({
             ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
         const openFavorite =
             !!ctx.selectedGpxFile?.markerCurrent && location.pathname === MAIN_URL_WITH_SLASH + FAVORITES_URL;
+        const openShareFile = location.pathname.includes(SHARE_FILE_MAIN_URL);
+        if (openShareFile) {
+            setShowInfoBlock(true);
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
+        }
         if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite) {
             setShowInfoBlock(false);
         }
@@ -241,6 +249,13 @@ export default function MainMenu({
         }
     }, [menuInfo]);
 
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            updateUserRequests(ctx).then();
+        }, 10000);
+        return () => clearInterval(intervalId);
+    }, []);
+
     //open main menu if currentObjectType was changed
     useEffect(() => {
         if (ctx.currentObjectType) {
@@ -273,7 +288,11 @@ export default function MainMenu({
             setSelectedType(currentMenu.type);
             ctx.setPrevPageUrl({ url: location, active: false });
         } else {
-            if (ctx.currentObjectType !== OBJECT_EXPLORE && ctx.currentObjectType !== OBJECT_TYPE_POI) {
+            if (
+                ctx.currentObjectType !== OBJECT_EXPLORE &&
+                ctx.currentObjectType !== OBJECT_TYPE_POI &&
+                ctx.currentObjectType !== OBJECT_TYPE_SHARE_FILE
+            ) {
                 setOpenMainMenu(true);
             }
         }

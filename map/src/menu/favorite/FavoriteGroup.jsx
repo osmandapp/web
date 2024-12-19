@@ -1,7 +1,7 @@
 import { CircularProgress, Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import FavoritesManager from '../../manager/FavoritesManager';
+import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
 import styles from '../trackfavmenu.module.css';
 import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
@@ -12,6 +12,8 @@ import FavoriteGroupActions from '../actions/FavoriteGroupActions';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
+import FileShareIcon from '../share/FileShareIcon.jsx';
+import { getShare } from '../../manager/track/TracksManager';
 
 export default function FavoriteGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -21,6 +23,7 @@ export default function FavoriteGroup({ index, group }) {
     const [processDownload, setProcessDownload] = useState(false);
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const anchorEl = useRef(null);
+    const share = getShare(group.file, ctx);
 
     useEffect(() => {
         if (ctx.favorites.mapObjs[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
@@ -34,12 +37,6 @@ export default function FavoriteGroup({ index, group }) {
             });
         }
     }, [ctx.favorites]);
-
-    function getSize() {
-        return FavoritesManager.getGroupSize(group) > 0
-            ? `${FavoritesManager.getGroupSize(group)} ${t('shared_string_gpx_points').toLowerCase()}`
-            : 'empty';
-    }
 
     return (
         <>
@@ -59,14 +56,22 @@ export default function FavoriteGroup({ index, group }) {
                         <FolderHiddenIcon id={'se-fav-menu-icon-hidden-' + group.name} />
                     ) : (
                         <FolderIcon
-                            style={{ fill: group.name && FavoritesManager.getColorGroup(ctx, group.name, false) }}
+                            style={{
+                                fill:
+                                    group.name &&
+                                    FavoritesManager.getColorGroup({
+                                        favoritesGroup: group,
+                                        groupName: group.name,
+                                    }),
+                            }}
                         />
                     )}
                 </ListItemIcon>
                 <ListItemText>
                     <MenuItemWithLines name={group.name} maxLines={2} />
-                    <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {`${getLocalizedTimeUpdate(group.clienttimems)}, ${getSize()}`}
+                    <Typography variant="body2" component="div" className={styles.groupInfo} noWrap>
+                        {share && <FileShareIcon />}
+                        {`${getLocalizedTimeUpdate(group.clienttimems)}, ${getSize(group, t)}`}
                     </Typography>
                 </ListItemText>
                 <IconButton
