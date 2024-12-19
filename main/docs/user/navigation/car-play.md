@@ -25,6 +25,7 @@ To use *CarPlay* on your vehicle screen, follow these steps:
 2. [Connect your device](https://support.apple.com/en-gb/HT203412) to your vehicle multimedia system using a USB port or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use *CarPlay* on your device.
 3. Once connected, the *CarPlay interface* will automatically appear on your vehicle screen with all available apps. If the *CarPlay home screen* does not appear, select the *CarPlay logo* on the vehicle display.  
 
+**_Note_**: CarPlay is not a direct mirror of the OsmAnd mobile app. It features a simplified interface focused on essential navigation functions to ensure safe driving. Some advanced features may not be supported due to platform limitations.
 
 ### Connection Screen
 

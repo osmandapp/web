@@ -26,6 +26,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - If you have purchased [OsmAnd Pro](../purchases/android.md#osmand-pro) from the [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd), you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) in the [OsmAnd Free version](https://play.google.com/store/apps/details?id=net.osmand) app downloaded from the Google Play store.
 - After this activation, you can use the Android Auto function for which you purchased a subscription to OsmAnd Pro in another app store.
 
+**_Note_**: Android Auto is not a direct mirror of the OsmAnd mobile app. It features a simplified interface focused on essential navigation functions to ensure safe driving. Some advanced features may not be supported due to platform limitations.
+
+
 
 ### Connection Screen
 
