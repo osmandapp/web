@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-For successful navigation, it's important to properly configure the appropriate settings according to your needs and how you travel - by car, on foot, on horseback, or skis. This article describes the basic route parameters, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), [Animation of your own position](#animate-own-position), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
+For successful navigation, it's important to properly configure the appropriate settings according to your needs and how you travel - by car, on foot, on horseback, or skis. This article describes the basic route parameters, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, [Fuel tank capacity](#fuel-tank-capacity), and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
 
 <Tabs groupId="operating-systems">
 
@@ -331,6 +331,119 @@ For optimal route calculation in OsmAnd, you should consider the following vehic
 Correctly setting the parameters in the OsmAnd app will help you avoid problems when navigating a route, choose the most suitable one according to the type of vehicle and road restrictions, and calculate the time for your trip.
 
 
+### Size Parameters
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Vehicle parameters affect navigation and route construction because they determine the availability of roads, bridges, ferries, dams, and other infrastructure. If the height, width, length, or weight of a vehicle exceeds the permissible values for certain road sections, the OsmAnd navigation system will find an alternative route to avoid obstacles along the way.  
+
+- The units of measurement will correspond to the settings selected in *General settings → [Units & formats](../../personal/profiles.md#units--formats)*.
+- The vehicle parameters can be set manually.
+- If you manually select the vehicle measurement parameter, the application will offer you the closest value from the ready-made list. This is necessary to avoid errors and build the route more correctly.
+- You can choose vehicle parameters from a ready-made list of sizes.
+- Do not set the size, *None*, which means that no restrictions on the selected parameter will be applied.  
+
+#### Limits
+
+**1.** [**<Translate android="true" ids="routing_attr_weight_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> The Weight parameter is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).  
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
+
+**2.**  [**<Translate android="true" ids="routing_attr_height_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> The Height parameter is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
+
+**3.** [**<Translate android="true" ids="routing_attr_length_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> The Length parameter is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).  
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
+
+**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> The Width parameter is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+Limits on vehicle parameters can be important for navigation and road safety. Some of these restrictions may include:  
+
+1. Restrictions on vehicles moving in certain urban areas.  
+2. Restrictions on vehicle movement on specific sections of road, such as where there are bridges, tunnels with limited space, low elevation overpasses, complex turns, or other structures.  
+3. Weight limits per vehicle axle can be especially important for trucks.
+4. Restrictions for vehicles moving in certain conditions, such as high temperatures, wet or snowy roads, at night, or in weather conditions with limited visibility.
+
+These restrictions can be important for navigation and should be considered when planning a route. If a vehicle exceeds the limits, it may result in road safety, infrastructure damage, accident fines, and other legal consequences. Therefore, drivers should carefully examine the route and make sure that the height of their vehicle meets the limits.
+
+
+### Fuel parameters
+
+#### Fuel Used by Motor
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+If you select the engine type in the vehicle parameters, the [***CO2 footprint data***](../../navigation/setup/route-details.md#elevation-info) will be displayed above the graph in [Route Details](../setup/route-details.md).
+Available six fuel types: ***Petrol, Diesel, LPG, CNG, Electric,*** and ***Hybrid***.  
+
+**Applicability:**
+
+The **Fuel used by motor** setting is only available in vehicle-based navigation such as *[Car, Motorcycle, and Truck](../../navigation/routing/car-based-routing.md)*.
+
+
+#### Fuel tank capacity
+
+<InfoAndroidOnly/>
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
+
+The **Fuel tank capacity** parameter allows you to track your vehicle's fuel level and consumption more accurately by providing the total volume of your tank. The unit of measurement for fuel capacity is determined by the settings configured in *Menu → Configure profile → General settings → Units & Formats → Unit of volume*. For detailed guidance on setting Units & Formats, refer to the [Profile (Settings)](https://osmand.net/docs/user/personal/profiles#units--formats) article.
+
+OsmAnd supports the following units for capacity:
+
+- Gallons - **gal**. This abbreviation is used to represent both **Imperial gallons** and **US gallons**, depending on your selected unit preferences.
+- Liters - **l**. The metric unit for capacity.
+
+**Applicability:**
+
+The **Fuel tank capacity** setting is only available in vehicle-based navigation. For navigation types such as *Bicycle*, *Horseback riding*, *On foot*, and *Ski*, this parameter is not displayed in the Vehicle Parameters.
+
+By entering the exact capacity of your fuel tank, the app can provide a more tailored experience, including:
+
+- Precise tracking of remaining fuel based on your consumption.
+- Enhanced route planning with fuel stops optimized according to your tank size.
+
+To ensure accurate calculations and navigation suggestions, verify that your selected unit matches your tank’s measurement standard.
+
+
 ### Default Speed / Road Speeds
 
 <Tabs groupId="operating-systems">
@@ -390,124 +503,6 @@ These settings in iOS are available in *Menu → Settings → app profile → Na
     The setting sets the minimum driving speed for all road types on the route. It increases the priority for roads with a recommended speed lower than the minimum speed.  
 - **Maximum speed**  
     The setting sets the maximum driving speed and decreases the priority for roads with a possible speed higher than the maximum.
-
-
-### Fuel Used by Motor
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-If you select the engine type in the vehicle parameters, the [***CO2 footprint data***](../../navigation/setup/route-details.md#elevation-info) will be displayed above the graph in [Route Details](../setup/route-details.md).
-Available six fuel types: ***Petrol, Diesel, LPG, CNG, Electric, Hybrid***.  
-
-CO2 is a gas that is produced when fuel is burned in an engine. The amount of CO2 emitted by an engine depends on the type of fuel and its combustion efficiency.  
-
-- Internal combustion engines, such as ***petrol*** and ***diesel*** engines, calculate CO2 emissions based on the amount of fuel burned during combustion. In general, petrol engines emit less CO2 than diesel engines due to more efficient combustion.
-- Liquefied ***natural gas (LPG)*** and ***compressed natural gas (CNG)*** are also used to run internal combustion engines. They are considered more environmentally friendly than petrol or diesel because they emit less CO2 when burned.
-- When ***electric*** motors are used, there are no CO2 emissions directly at the point of use. However, electricity can be produced from sources such as gas, coal, or nuclear fuel, resulting in CO2 emissions during the electricity production phase.
-- ***Hybrid*** cars use both internal combustion engines and electric motors. CO2 emissions depend on which type of engine is used at the time.  
-
-:::note
-The *Fuel used by motor* setting is only available in navigation types such as *[Car, Motorcycle, and Truck](../../navigation/routing/car-based-routing.md)*.
-:::
-
-
-### Fuel tank capacity
-
-<InfoAndroidOnly/>
-
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
-
-The **Fuel tank capacity** parameter allows you to track your vehicle's fuel level and consumption more accurately by providing the total volume of your tank. The unit of measurement for fuel capacity is determined by the settings configured in *Menu → Configure profile → General settings → Units & Formats → Unit of volume*. For detailed guidance on setting Units & Formats, refer to the [Profile (Settings)](https://osmand.net/docs/user/personal/profiles#units--formats) article.
-
-OsmAnd supports the following units for capacity:
-
-- Gallons - **gal**. This abbreviation is used to represent both **Imperial gallons** and **US gallons**, depending on your selected unit preferences.
-- Liters - **l**. The metric unit for capacity.
-
-#### Applicability
-
-The **Fuel tank capacity** setting is only available in vehicle-based navigation. For navigation types such as *Bicycle*, *Horseback riding*, *On foot*, and *Ski*, this parameter is not displayed in the Vehicle Parameters.
-
-By entering the exact capacity of your fuel tank, the app can provide a more tailored experience, including:
-
-- Precise tracking of remaining fuel based on your consumption.
-- Enhanced route planning with fuel stops optimized according to your tank size.
-
-To ensure accurate calculations and navigation suggestions, verify that your selected unit matches your tank’s measurement standard.
-
-
-### Size Parameters
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
-
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
-
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Vehicle parameters affect navigation and route construction because they determine the availability of roads, bridges, ferries, dams, and other infrastructure. If the height, width, length, or weight of a vehicle exceeds the permissible values for certain road sections, the OsmAnd navigation system will find an alternative route to avoid obstacles along the way.  
-
-- The units of measurement will correspond to the settings selected in *General settings → [Units & formats](../../personal/profiles.md#units--formats)*.
-- The vehicle parameters can be set manually.
-- If you manually select the vehicle measurement parameter, the application will offer you the closest value from the ready-made list. This is necessary to avoid errors and build the route more correctly.
-- You can choose vehicle parameters from a ready-made list of sizes.
-- Do not set the size, *None*, which means that no restrictions on the selected parameter will be applied.  
-
-#### Limits
-
-**1.** [**<Translate android="true" ids="routing_attr_weight_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> The Weight parameter is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).  
-
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
-
-**2.**  [**<Translate android="true" ids="routing_attr_height_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> The Height parameter is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
-
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
-
-**3.** [**<Translate android="true" ids="routing_attr_length_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> The Length parameter is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).  
-
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
-
-**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> The Width parameter is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
-
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
-
-Limits on vehicle parameters can be important for navigation and road safety. Some of these restrictions may include:  
-
-1. Restrictions on vehicles moving in certain urban areas.  
-2. Restrictions on vehicle movement on specific sections of road, such as where there are bridges, tunnels with limited space, low elevation overpasses, complex turns, or other structures.  
-3. Weight limits per vehicle axle can be especially important for trucks.
-4. Restrictions for vehicles moving in certain conditions, such as high temperatures, wet or snowy roads, at night, or in weather conditions with limited visibility.
-
-These restrictions can be important for navigation and should be considered when planning a route. If a vehicle exceeds the limits, it may result in road safety, infrastructure damage, accident fines, and other legal consequences. Therefore, drivers should carefully examine the route and make sure that the height of their vehicle meets the limits.  
 
 
 ## Detailed Track Guidance

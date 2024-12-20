@@ -108,9 +108,9 @@ export function addWikiPlacesDefaultFilters(ctx, mainSearch = false, selectedFil
 export function getPoiParentCategory(props, t) {
     let type = props[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
     if (type) {
-        const brandRes = parseBrandTag(type);
-        if (brandRes.brand === SEARCH_BRAND) {
-            let brandType = _.capitalize(formattingPoiType(t(`poi_${brandRes.brand}`)));
+        const brandRes = parseTagWithLang(type);
+        if (brandRes.key === SEARCH_BRAND) {
+            let brandType = _.capitalize(formattingPoiType(t(`poi_${brandRes.key}`)));
             if (brandRes.lang) {
                 brandType += ' (' + t(`lang_${brandRes.lang}`).toLowerCase() + ')';
             }
@@ -139,9 +139,9 @@ export function getPoiParentCategory(props, t) {
     return type && type !== 'undefined' && type !== '' ? type : null;
 }
 
-export function parseBrandTag(tag) {
-    const [brand, lang] = tag.split(':');
-    return { brand, lang };
+export function parseTagWithLang(tag) {
+    const [key, lang] = tag.split(':');
+    return { key, lang };
 }
 
 export function getPhotoTitle(photo) {

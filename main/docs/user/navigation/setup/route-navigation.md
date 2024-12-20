@@ -255,7 +255,7 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 </Tabs>
 
 Once start and end points are selected, the app will create a route between them using an active profile.
-Once start and end points are selected, the app will create a route between them using an active profile. [The App profile](../../personal/profiles.md) and [widgets](../../widgets/index.md) set will only switch once you click the *Start* button of navigation.
+Once start and end points are selected, the app will create a route between them using an active profile. [The App profile](../../personal/profiles.md) and [widgets](../../widgets/index.md) set will only switch once you tap the *Start* button of navigation.
 
 - To begin navigation, you should tap the **Start** button.
 - To stop navigation mode, tap the *[Navigation](../../widgets/map-buttons.md#directions)* button at the bottom of the screen, than choose **Dismiss** (*Android*) or **Cansel** (*iOS*) and confirm your choice.

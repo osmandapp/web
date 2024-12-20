@@ -17,10 +17,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Voice prompt and text notification features help follow a [calculated route](../setup/route-navigation.md) comfortably and, most importantly, safely.
+OsmAnd’s voice navigation feature provides real-time spoken instructions and alerts that help you stay informed and safe while on the move. You can tailor the guidance to your preferences and needs. To do so, select a suitable voice profile, either a [Text-to-Speech (TTS) engine](#tts-text-to-speech) that can dynamically announce street names, distances, and speed limits, or a [pre-recorded voice](#recorded-voice-prompts) offering concise instructions.  
 
-Voice prompts also work while your device screen is turned off, so you can use them to [reduce battery consumption](#screen-control). Similarly, while following an OsmAnd navigation, you can use other apps.  
+In addition to turn-by-turn directions, OsmAnd’s voice navigation can notify you about upcoming points of interest, changes in traffic conditions, and when you exceed a preset speed limit. To learn more about customizing these alerts, see [Announcement time settings](#announcement-time) and [Speed Limit warnings](#speed-limit).  
 
+With the right combination of voice options, alert settings, and device sound adjustments, you will receive timely and clear navigation information throughout your route.
 
 :::note
 
@@ -30,15 +31,15 @@ Voice prompts also work while your device screen is turned off, so you can use t
 :::  
 
 
+## Setting Up Voice Prompts
 
-## Setup Voice Prompts
+OsmAnd provides various options for controlling voice prompts so you can follow your route with convenience. To configure these settings, begin in the appropriate application sections.  
 
-OsmAnd offers different types of voice prompt settings to help you follow your route. To set up voice prompts, you need to go to the appropriate section of the application.  
+- Activate voice prompts from the [Navigation](../guidance/navigation-settings.md) section by tapping **Settings**. You can also enable and configure voice prompts through *Configure Profile*, and *Navigation settings*.
+- Turn voice prompts on or off using *Menu → Navigation →* tap *Sound button*,
+    or *Menu → Navigation →* Settings button *→ Sound →* toggle on/off.
 
-- You can activate voice prompts in the [Navigation](../guidance/navigation-settings.md) section by tapping Settings. You can also enable and configure voice prompts in Configure Profile, and Navigation settings.
-- You can turn the sound for voice prompts On or Off in *Menu → Navigation → "On/Off" button* or *Menu → Navigation → "Settings" icon → Sound*.
-
-Read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../../technical/algorithms/voice-prompt-triggering.md) documentation.  
+For more information on how and when voice prompts are triggered, consult the [Navigation Voice Prompt Triggering](../../../technical/algorithms/voice-prompt-triggering.md) documentation.  
 
 
 ### Voice Settings
@@ -65,32 +66,43 @@ Read more about under what conditions, when, and which voice prompts are activat
 
 </Tabs>  
 
-1. **[Language](#voice-prompt-language)**. Select your preferred language and type.
-2. **Announcement**. Allows you to configure the following types of prompts:
-    - *Street names (TTS), Exit numbers, Traffic warnings, Pedestrian crosswalks* and *Tunnels.*
-    - *[Speed cameras](#speed-cameras)*.
-    - Also configure the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)** to use with announcements.
-3. **User points**:
-    - Enable voice prompts for the pre-set and added [Waypoints](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi). While driving, the selected points will be announced when you approach or pass them.
+**[Language](#voice-prompt-language)**. Select your preferred language and type.
+
+**Announcement**. Allows you to configure the following types of prompts:
+
+- *Street names (TTS), Exit numbers, Traffic warnings, Pedestrian crosswalks* and *Tunnels.*
+- *[Speed cameras](#speed-cameras)*.
+- Also configure the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)** to use with announcements.
+
+**User points**:
+
+- Enable voice prompts for the pre-set and added [Waypoints](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi). While driving, the selected points will be announced when you approach or pass them.
 
 | Prompt Type | Lead Time [s]:<br/>Corresponding<br/>Lead Distance @ Default Speed [m] | Limit |
 | :- | :- | :- |
 | Approaching  | **60 s:**<br/>Driving: 750 m<br/>Cycling: 167 m<br/>Walking: 67 m  |  No more than 1 point at a time |
 | Passing | **15 s:**<br/>Driving: 188 m<br/>Cycling: 42 m<br/>Walking: 17 m | No more than 3 points at a time |
 
-4. [**Speed limit**](#speed-limit):
-    - *Announce when exceeded* (on/off):
-    - *Speed limit tolerance*.
-5. **Other**:
-    - *Announce GPS signal loss and recovery*. OsmAnd announces if the GPS signal on the device is lost.  
-    - *Announce route recalculation*. OsmAnd reports route recalculation in case of a [deviation or movement in the reverse direction](./navigation-settings.md#recalculate-route).
-    - *Announce deviation from the route*. You receive information about deviations from the route according to the [set parameters](./navigation-settings.md#recalculate-route).
-6. **Options**:
-    - *Repeat navigation instructions*. Allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../../widgets/nav-widgets.md#next-turns) on the application screen.
-    - *[Announcement time](#announcement-time)*.  
-7. **Output** (*Android only*):
-    - *[Voice guidance output](#voice-guidance-output)*.
-    - *Pause music* - voice prompts stop music playback for a while.
+[**Speed limit**](#speed-limit):
+
+- *Announce when exceeded*.
+- *Speed limit tolerance*.
+
+**Other**:
+
+- *Announce GPS signal loss and recovery*. OsmAnd announces if the GPS signal on the device is lost.  
+- *Announce route recalculation*. OsmAnd reports route recalculation in case of a [deviation or movement in the reverse direction](./navigation-settings.md#recalculate-route).
+- *Announce deviation from the route*. You receive information about deviations from the route according to the [set parameters](./navigation-settings.md#recalculate-route).
+
+**Options**:
+
+- *Repeat navigation instructions*. Allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../../widgets/nav-widgets.md#next-turns) on the application screen.
+- *[Announcement time](#announcement-time)*.
+
+**Output** (*Android only*):
+
+- *[Voice guidance output](#voice-guidance-output)*.
+- *Pause music*. Voice prompts stop music playback for a while.
 
 
 ### Speed Cameras
@@ -120,19 +132,19 @@ In some countries or regions, using speed camera warning applications is illegal
 
 </Tabs>  
 
-The *Speed limit* option allows OsmAnd to announce when the current speed exceeds the set speed limit. The application takes data about maximum speed limits on roads from OpenStreetMap.
+The **Speed limit** option allows OsmAnd to inform you when your current speed exceeds a specified threshold. Data on maximum legal speed limits is sourced from OpenStreetMap.
 
-- *Announce when exceeded*:  
-    - *Speed limit tolerance*.  
-        Select an allowable speed deviation, on the screenshot between -10 km/h and +20 km/h (the speed is displayed in the *Units of speed* you set), from the [maximum legal speed limit](https://wiki.openstreetmap.org/wiki/Key:maxspeed) on the current road. When the selected speed limit tolerance is exceeded, a voice prompt is activated.  
-- *Voice prompt timing* has three Timing rules:
-    -  Initial Warning: The app waits 5 seconds after detecting speeding before issuing the first voice alert.
-    -  Repeat Announcement Delay: If speeding continues, the next warning is delayed for 120 seconds, preventing frequent notifications.
-    -  Timer Reset: If the vehicle stays within the speed limit for 30 seconds, the timer resets, and the next speeding event triggers a new 5-second countdown.
+**Announce when exceeded**  
+*Speed limit tolerance* lets you select an allowable deviation (e.g., -10 km/h to +20 km/h) from the [legal maximum speed limit](https://wiki.openstreetmap.org/wiki/Key:maxspeed) on the current road. When your speed exceeds this tolerance, OsmAnd issues a voice prompt.  
 
+**Speed limits tolerance** uses three timing rules:
 
+- *Initial warning*. Detecting that you exceed the speed limit, OsmAnd waits 5 seconds before issuing the first voice warning.
+- *Repeat announcement delay*. If you continue speeding, the next warning is delayed for 120 seconds to prevent overly frequent notifications.
+- *Timer reset*. The timer resets if you stay within the legal limit for 30 seconds. Any further speeding will again wait 5 seconds before the next warning sounds.
 
-For [**Speedometer** widget](../../widgets/info-widgets.md#speedometer) in the app and for [Android Auto](../../navigation/auto-car.md#speedometer), [CarPlay](../../navigation/car-play.md#speedometer), this *Speed limit tolerance* setting affect the speed displayed in *Speed limit warning*.
+This **Speed limit tolerance** setting affects the speed displayed in the *warning* part of the [Speedometer widget](../../widgets/info-widgets.md#speedometer) in the OsmAnd app, [Android Auto](../../navigation/auto-car.md#speedometer), and [CarPlay](../../navigation/car-play.md#speedometer).
+
 
 ### Announcement Time
 
@@ -161,17 +173,17 @@ To avoid playing audio in the same output stream at the same time, the audio foc
 **Testing of voice prompts** is possible only for the Android version of the application. Enable the *OsmAnd development plugin* and run [Simulate Navigation](../../navigation//setup/route-navigation.md#simulated-navigation) or use [Test voice prompts](../../plugins/development.md#application-testing).
 
 
-### Common Problems
-<!-- 
-Troubleshooting  
-Fixes issues with voice prompts -->
+### Troubleshooting Audio Issues
 
-When using voice prompts, you may have issues with their playback. Here are some solutions to fix these issues.  
+If you are not hearing **voice prompts** or [speed limit warnings](#speed-limit):
 
-1. Make sure that the volume of your device is on and not off. Once you start navigating, increase the volume.
-2. Make sure that the sound is turned on during navigation.  You can turn the sound on or off in *Menu → Navigation →* On/Off button or *Menu → Navigation → Settings icon → Sound*.  
-3. Select which [speakers](#voice-guidance-output) to use.
-4. Check which [voice guidance](#voice-prompt-language) are selected.
+- Ensure your device volume is on and turned up.
+- Confirm that sound is enabled during navigation: *Menu → Navigation → On/Off sound button* or *Menu → Navigation → Settings button → Sound* for detailed audio configuration.  
+- Select which [speakers](#voice-guidance-output) to use.
+- Check which [voice guidance](#voice-prompt-language) is selected, and make sure you have a TTS or recorded voice capable of announcing speed limit warnings.
+- Verify that audio isn’t routed to an unintended output device (e.g., a disconnected Bluetooth headset).  
+
+For additional troubleshooting steps, refer to the [navigation troubleshooting guide](../../troubleshooting/navigation.md#voice-navigation).
 
 
 ## TTS (Text-to-Speech)
@@ -354,4 +366,4 @@ Select screen wake-up options and ensure OsmAnd remains in the foreground when t
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in October 2024*
+> *This article was last updated in December 2024*
