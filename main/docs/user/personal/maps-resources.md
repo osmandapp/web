@@ -276,7 +276,7 @@ The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update a
 
 ### Extra Maps
 
-OsmAnd supports the transfer of profile-specific settings and data, including rendering files, fonts, routes, maps, and custom plugins. Create a custom map folder by using a `.osf` plugin file (a compressed `.zip` format).
+OsmAnd supports the transfer of profile-specific settings and data, including rendering files, fonts, routes, maps, and custom plugins. Create a custom map folder using a `.osf` plugin file (a compressed `.zip` format).
 
 To import a file:
 

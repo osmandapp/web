@@ -153,7 +153,7 @@ Configuring the appearance of map markers is available in both the Android and i
 |  <Translate android="true" ids="show_arrows_on_the_map"/> |  Indicates the direction to the tracked marker (one or two) as an arrow on the map. If the marker is in the visible part of the map, no arrow is displayed. |
 | <Translate android="true" ids="show_guide_line"/> | Shows the direction, as a dashed line, from a particular point on the map to the tracked marker in a straight line.  |
 | <Translate android="true" ids="one_tap_active"/> |  With a one-tap the required marker on the map, this marker moves to the top of the list of active Map markers without opening the Context menu. |  
-| <Translate android="true" ids="keep_passed_markers"/> | Markers added as a group of Favourites or GPX waypoints marked Passed will remain on the map. If the group is not active, the markers will disappear from the map. |
+| <Translate android="true" ids="keep_passed_markers"/> | Markers added as a group of Favorites or GPX waypoints marked Passed will remain on the map. If the group is not active, the markers will disappear from the map. |
 
 </TabItem>
 

@@ -36,7 +36,7 @@ There are 2 typical accuracy issues leading to a *messy* recorded track.
 
 Actions you can perform:
 
-- You can avoid such problems by using **Pause** to interrupt recording under such conditions.
+- You can avoid such problems using **Pause** to interrupt recording under such conditions.
 - It is also possible to edit a track later and remove *"noisy"* points.
 - Or you can use the *Trip recording Plugin* settings to filter *"noisy"* points already while recording, based on your **experience** and **recording device**. You can filter out points by various criteria:
   - Points with low or zero speed.

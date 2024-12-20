@@ -151,7 +151,7 @@ In the iOS version of OsmAnd, *Appearance on Map* is also a setting for displayi
 - **Arrows on the map**. Indicates the direction to the tracked marker (one or two) as an arrow on the map. If the marker is in the visible part of the map, no arrow is displayed.  
 - **Direction line**. Shows the direction, as a dashed line, from a particular point on the map to the tracked marker in a straight line.  
 - ***One tap*** active (*for Android*). With a one-tap the required marker on the map, this marker moves to the top of the list of active Map markers without opening the Context menu.  
-- **Keep passed markers on the map** *(for Android)*. Markers added as a group of Favourites or GPX waypoints marked Passed will remain on the map. If the group is not active, the markers will disappear from the map.
+- **Keep passed markers on the map** *(for Android)*. Markers added as a group of Favorites or GPX waypoints marked Passed will remain on the map. If the group is not active, the markers will disappear from the map.
 
 
 ## Plan Route for Markers

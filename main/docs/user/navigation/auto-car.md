@@ -90,7 +90,7 @@ In order for OsmAnd to work in Android Auto, you must [connect](#connection-scre
 You cannot select a profile directly in *Android Auto* on the vehicle screen.  
 If you already have a profile selected on your device that corresponds to the type of vehicle, such as *Driving*, *Truck*, *Car*, *Motorcycle*, *Moped*, **the app will automatically activate** the appropriate profile when you connect to Android Auto. For example, if you have a *Truck* profile as selected and your device connects to *Android Auto*, the app will activate that profile.
 
-If you do not have any *Driving* profile selected on your device that corresponds to your vehicle type, then OsmAnd will automatically switch to the *Driving* profile. This is done to provide basic navigation and to prevent possible problems caused by using the wrong profile for a specific vehicle type.
+If you do not have any *Driving* profile selected on your device that corresponds to your vehicle type, then OsmAnd will automatically switch to the *Driving* profile. This is done to provide basic navigation and to prevent possible problems caused using the wrong profile for a specific vehicle type.
 
 **Why it's important**
 

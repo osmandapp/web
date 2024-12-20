@@ -190,7 +190,7 @@ In the Options menu, you can choose whether or not to save images in the viewed 
 
 </Tabs>
 
-You can open an article from the suggested options on the *[Explore tab](#explore-and-bookmark)* or by using the *[Search](#search)* option. 
+You can open an article from the suggested options on the *[Explore tab](#explore-and-bookmark)* or using the *[Search](#search)* option. 
 If you have added touristic attractions called *[Points](#points)* to the OsmAnd map from *Travel guide article*, you can also open the article using *Read full* button in the [description section](../map/tracks/track-context-menu.md#description-and-info) of the waypoint.  
 
 The following controls are located at the top of the screen:
