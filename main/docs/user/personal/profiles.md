@@ -97,7 +97,7 @@ This section contains all settings related to appearance, navigation options, ma
 
 </Tabs>
 
-OsmAnd allows you [to back up](../personal/osmand-cloud.md#osmand-start) your application profile settings to OsmAnd Cloud, ensuring that your configurations are securely stored and easily restored across Android, iOS, and Web versions. This backup feature protects your settings in case of device failure or app reinstallation. You can benefit from this special plan by using [OsmAnd Start](../personal/osmand-cloud.md#osmand-start).  
+OsmAnd allows you [to back up](../personal/osmand-cloud.md#osmand-start) your application profile settings to OsmAnd Cloud, ensuring that your configurations are securely stored and easily restored across Android, iOS, and Web versions. This backup feature protects your settings in case of device failure or app reinstallation. You can benefit from this special plan using [OsmAnd Start](../personal/osmand-cloud.md#osmand-start).  
 
 You must have an [OsmAnd Cloud](../personal/osmand-cloud.md#login) account to use the *Free Settings Backup*. If you have an *OsmAnd Pro* subscription or an active *OsmAnd Cloud* account, the promotion banner will not be displayed.
 
@@ -132,7 +132,7 @@ This section contains settings for the application theme and compass button, map
   - *<Translate android="true" ids="dark_theme"/> theme*
   - *<Translate android="true" ids="light_theme"/> theme*
   - *<Translate android="true" ids="system_default_theme"/>*  
-      Applies the system theme. By default and for all new users, the map style corresponds to the light or dark theme selected in your device's system settings.
+      Applies the system theme. By default, and for all new users, the map style corresponds to the light or dark theme selected in your device's system settings.
 - **<Translate android="true" ids="rotate_map_to"/>**. Allows you to choose [the map orientation mode](../map/interact-with-map.md#map-orientation-modes) for the selected profile.
   - *<Translate android="true" ids="rotate_map_manual_opt"/>*
   - *<Translate android="true" ids="rotate_map_bearing_opt"/>*
@@ -144,7 +144,7 @@ This section contains settings for the application theme and compass button, map
   - *<Translate android="true" ids="map_orientation_landscape"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
-- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.  
+- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android only*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.  
 
 
 ### Units & Formats
@@ -165,7 +165,7 @@ This section contains settings for the application theme and compass button, map
 
 </Tabs>
 
-In the **Units and Formats** section, you can adjust measurement units and formats to align with your personal preferences and regional standards, ensuring all data is displayed most conveniently and familiarly.
+In the **Units and Formats** section, you can adjust measurement units and formats to align with your personal preferences and regional standards, ensuring all data is displayed conveniently and familiarly.
 
 
 <!--
@@ -222,7 +222,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Example:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) represents area 9m x 14m)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Android version only) | Example: 2 215 227.87, 830 915.9 ([Swiss coordinate system](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Android version only) | Example: 4 215 227.87, 1 830 915.9 ([Swiss coordinate system](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
-|  |  |
+|  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Degrees 180° | All angular values have readings from 0° to 180° and from 0° to -180°.  |
 |          | Degrees 360° | All angular values have readings from 0° to 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | All angular values have [milliradian value](https://en.wikipedia.org/wiki/Milliradian).  |
@@ -234,7 +234,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** (*Android*) | <Translate android="true" ids="litres"/> | Europe, Aisa, Latin America, Canada, Japan, India, Australia |
+| **<Translate android="true" ids="unit_of_volume"/>** (*Android only*) | <Translate android="true" ids="litres"/> | Europe, Aisa, Latin America, Canada, Japan, India, Australia |
 |  | <Translate android="true" ids="imperial_gallons"/> | UK and similar |
 |  | <Translate android="true" ids="us_gallons"/> | United States |
 | **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *For precise measurements*, choose how distance information is displayed in the navigation widgets, such as the distance to a point, the next turn, or a specific lane. |
@@ -265,14 +265,14 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 
 The **Other** section offers additional profile settings, allowing you to customize buttons and input devices, enable or disable animation in navigation mode, and toggle features like full-screen mode, the magnetic sensor, and the Kalman filter. Note that some options may not be available on iOS.
 
-- *[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices)* (*Android* and *iOS*). Allow you to add other devices, such as <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>, or <Translate android="true" ids="sett_parrot_ext_input"/>, to control the OsmAnd program using the existing buttons.  
+- *[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices)*. Allow you to add other devices, such as <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>, or <Translate android="true" ids="sett_parrot_ext_input"/>, to control the OsmAnd program using the existing buttons.  
 
-- *<Translate android="true" ids="use_volume_buttons_as_zoom"/> (Android)*. Allows to use or not volume buttons of a device as [zoom](../map/interact-with-map.md#my-location-and-zoom).
-- *[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (Android)*. Allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
-- *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (Android)*. Allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothening rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
-- *<Translate android="true" ids="tap_on_map_to_hide_interface"/> (Android)*. Tapping an empty space on the map hides the control buttons and widgets.
-- *[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (Android)*. Allows to switch on/off animation for navigation mode.
-- *[<Translate android="true" ids="animate_my_location"/>](../navigation/guidance/map-during-navigation.md#animate-my-location-android-animate-own-position) (Android and iOS)*. <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the *[My location](../map/interact-with-map.md#my-location-and-zoom)* position to display on the map relative to your location.  
+- *<Translate android="true" ids="use_volume_buttons_as_zoom"/> (Android only)*. Select whether to use the device's volume buttons as a [zoom](../map/interact-with-map.md#my-location-and-zoom).
+- *[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (Android)*. Select whether you will use the [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) to smooth the rotation of the map with a slower rotation animation. This introduces a small delay (< 1 second) till.
+- *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (Android)*. Select whether you will use the [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to smooth the rotation of the map with a slower rotation animation. This introduces a small delay (< 1 second) till.
+- *<Translate android="true" ids="tap_on_map_to_hide_interface"/> (Android only)*. Tapping an empty space on the map hides the control buttons and widgets.
+- *[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (Android only)*. Switch the animation for the navigation mode on or off.
+- *[<Translate android="true" ids="animate_my_location"/>](../navigation/guidance/map-during-navigation.md#animate-my-location-android-animate-own-position)*. <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the *[My location](../map/interact-with-map.md#my-location-and-zoom)* position to display on the map relative to your location.  
 
 
 ## Navigation Settings
@@ -304,9 +304,9 @@ We recommend you read the information in the article [Navigation Settings](../na
 - [Screen alerts](../navigation/guidance/navigation-settings.md#screen-alerts). This navigation setting allows you to enable the Alerts Widget and select which alerts you want to see on the app screen while navigating.
 - [Voice prompts](../navigation/guidance/navigation-settings.md#voice-prompts). Audio instructions during navigation help you as a driver or pedestrian get to your destination while navigating a selected route.
 - [Vehicle parameters](../navigation/guidance/navigation-settings.md#vehicle-parameters). Allows you to select the correct parameter settings to help you avoid problems when navigating a route.
-- [Customise route line](../navigation/guidance/navigation-settings.md#customize-route-line). With this setting, you can choose the appearance of the route line that will be visible on the map during navigation.
+- [Customize route line](../navigation/guidance/navigation-settings.md#customize-route-line). With this setting, you can choose the appearance of the route line that will be visible on the map during navigation.
 - [Map during navigation](../navigation/guidance/navigation-settings.md#map-during-navigation). The map is used during navigation to determine your location, plan your route, and land orientation.
-- [Animate own position](../navigation/guidance/navigation-settings.md#animate-own-position) (*for iOS is available in this menu*). This setting provides a smooth animation of the My Position point moving on the map during navigation. For ***Android***, this item is located in the [Other](#other) section of the *General Settings* menu.
+- [Animate own position](../navigation/guidance/navigation-settings.md#animate-own-position) (*for iOS, is available in this menu*). This setting provides a smooth animation of the My Position point moving on the map during navigation. For ***Android***, this item is located in the [Other](#other) section of the *General Settings* menu.
 - [Detailed track guidance](../navigation/guidance/navigation-settings.md). Allows you to match your route to nearby roads to enhance turn-by-turn instructions. Available settings: *Ask every time* or *Always*.
 
 :::info
@@ -418,15 +418,15 @@ The **Profile appearance** settings allow you to customize your profile's name a
 
 </Tabs>
 
-The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the operating system when it provides a location update with a speed greater than 0  speed.
+The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appearance** settings allow you to customize how your location is displayed on the map, both stationary and in motion. Motion is detected by the operating system when it provides a location update with a speed greater than 0 speed.
 
-- **Additional options**. You can control how certain location-related visual elements appear on the map and apply them separately or both for the Resting and Navigation positions below the *my location* icon.
+- **Additional options**. You can control how location-related visual elements appear on the map and apply them separately or both for the Resting and Navigation positions below the *my location* icon.
 
   - **<Translate android="true" ids="view_angle"/>**. Displays a cone-shaped area that shows the direction you are currently facing.
   - **<Translate android="true" ids="location_radius"/>**. Shows a circular area around your icon, representing the accuracy of your current location.
 
 <!--
-**3D location icon**. You can select the appearance of your location icon in 3D or 2D, depending on the map rendering version you are using. *Map rendering* (*Android*). 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine). If you are using [map rendering Version 1](../personal/global-settings.md#map-rendering-engine), the icons will appear in 2D.
+**3D location icon**. You can select the appearance of your location icon in 3D or 2D, depending on the map rendering version you are using. *Map rendering* (*Android*). 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine). If you use [map rendering Version 1](../personal/global-settings.md#map-rendering-engine), the icons will appear in 2D.
 
 ![My location Appearance](@site/static/img/personal/profiles/location_appearance_3d_icons.png)
 -->
@@ -434,7 +434,7 @@ The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appear
 - **Custom 3D Icons**. If you want to further personalize your map experience, you can create your own 3D icons and add them to the app. To do this, follow the steps below:
 
   - Create a custom 3D model in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
-  - [Create a custom plugin](../plugins/custom.md) by using [pluging example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) and include your 3D icons with the following paths:
+  - [Create a custom plugin](../plugins/custom.md) by using [plugin example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) and include your 3D icons with the following paths:
     - `..osmand/models/icon_folder_name/custom_3d_file.mtl`
     - `..osmand/models/icon_folder_name/custom_3d_file.obj`
   - Alternatively, directly copy the custom 3D files to the OsmAnd folder with the paths above.
@@ -461,7 +461,7 @@ With the UI customization feature, you can adjust the number of items in actions
 
 ![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
 
-- **Main visible items**. In the Customise UI section, you can reorder hide, and restore items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android).
+- **Main visible items**. In the Customize UI section, you can reorder hide, and restore items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android).
 - **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the main menu in the drawer. All your changes are instantly undone.  
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can duplicate the element arrangement from another OsmAnd profile to this one.
 
@@ -469,7 +469,7 @@ With the UI customization feature, you can adjust the number of items in actions
 
 ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
 
-- **Configure map menu**. In this part of the Customise UI section, you can reorder or hide items from the [Configure map](../map/configure-map-menu.md).  
+- **Configure map menu**. In this part of the Customize UI section, you can reorder or hide items from the [Configure map](../map/configure-map-menu.md).  
 - **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the Configure map menu. All your changes are instantly undone.  
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can duplicate the element arrangement from another OsmAnd profile to this one.
 
@@ -478,7 +478,7 @@ With the UI customization feature, you can adjust the number of items in actions
 
 ![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
-- **Map context menu**.  In this part of the Customise UI section, you can reorder or hide items from the [map context menu](../map/map-context-menu.md).  
+- **Map context menu**.  In this part of the Customize UI section, you can reorder or hide items from the [map context menu](../map/map-context-menu.md).  
 - **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the main menu in the drawer. All your changes are instantly undone.
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can duplicate the element arrangement from another OsmAnd profile to this one.
 
@@ -528,7 +528,7 @@ Plugins unlock additional features of the application and can be either [paid or
 
   > ***Changing the settings of the OsmAnd development plugin affects all profiles.***
 
-- **Wikipedia**. This menu opens *[Wikipedia plugin settings](../plugins/wikipedia.md#wikipedia-settings)*. You can select the language in which articles will be displayed and choose whether or not to download images from Wikipedia. Having Wikipedia on your trip enhances your experience by providing information about the places you visit. It works offline and displays relevant Wikipedia articles directly on the map related to points of interest.
+- **Wikipedia**. This menu opens *[Wikipedia plugin settings](../plugins/wikipedia.md#wikipedia-settings)*. You can select the language in which articles will be displayed and choose whether to download images from Wikipedia. Having Wikipedia on your trip enhances your experience by providing information about the places you visit. It works offline and displays relevant Wikipedia articles directly on the map related to points of interest.
 
 
 ## Actions
@@ -557,7 +557,7 @@ Actions with selected profile:
 - **Delete profile**:
     - This action is available only for *Android* and only for a *Custom profile*.
     - Default profiles cannot be deleted.
-    - To add a profile go to *Menu → Settings → App profiles → + New profile*.
+    - To add a profile, go to *Menu → Settings → App profiles → + New profile*.
 
 
 ## Related Articles
@@ -566,4 +566,4 @@ Actions with selected profile:
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in October 2024*
+> *This article was last updated in December 2024*
