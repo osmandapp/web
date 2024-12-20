@@ -257,12 +257,10 @@ export default function MainMenu({
             updateUserRequests(ctx).then();
         };
 
-        const interval = setInterval(() => {
-            debouncer(updateRequests, timerRef, 3000);
-        }, 1000);
+        debouncer(updateRequests, timerRef, 3000);
 
-        return () => clearInterval(interval);
-    }, [ctx]);
+        return () => clearTimeout(timerRef.current);
+    }, [ctx.updatedRequestList]);
 
     //open main menu if currentObjectType was changed
     useEffect(() => {
