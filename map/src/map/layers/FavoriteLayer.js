@@ -24,6 +24,15 @@ export function restoreOriginalIcon(layer) {
     }
 }
 
+export function filterPointsInBounds(points, map) {
+    const mapBounds = map.getBounds();
+
+    return points.filter((point) => {
+        const pointLatLng = L.latLng(point.lat, point.lon);
+        return mapBounds.contains(pointLatLng);
+    });
+}
+
 export function processMarkers({ layer, markerLatLng, mainMarkers, secondaryMarkers, mainLayers, secondaryLayers }) {
     if (!layer.options.originalIcon) {
         layer.options.originalIcon = layer.options.icon;
@@ -202,15 +211,6 @@ const FavoriteLayer = () => {
                 file.markersOnMap = res;
             }
         }
-    }
-
-    function filterPointsInBounds(points, map) {
-        const mapBounds = map.getBounds();
-
-        return points.filter((point) => {
-            const pointLatLng = L.latLng(point.lat, point.lon);
-            return mapBounds.contains(pointLatLng);
-        });
     }
 
     // add markers on map or remove markers from map

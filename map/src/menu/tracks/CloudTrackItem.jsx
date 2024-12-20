@@ -12,9 +12,17 @@ import {
     Typography,
 } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import Utils, { toHHMMSS } from '../../util/Utils';
+import Utils from '../../util/Utils';
 import TrackInfo from './TrackInfo';
-import TracksManager, { getAnalysisData, isEmptyTrack } from '../../manager/track/TracksManager';
+import TracksManager, {
+    getDist,
+    getFileName,
+    getShare,
+    getTime,
+    getWptPoints,
+    isEmptyTrack,
+    setTrackIconStyles,
+} from '../../manager/track/TracksManager';
 import _, { isEmpty } from 'lodash';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
@@ -27,9 +35,7 @@ import MenuItemWithLines from '../components/MenuItemWithLines';
 import { closeTrack } from '../../manager/track/DeleteTrackManager';
 import { isVisibleTrack, updateVisibleCache } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
-
-const DEFAULT_DIST = 0;
-const DEFAULT_TIME = '0:00';
+import FileShareIcon from '../share/FileShareIcon.jsx';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem }) {
     const ctx = useContext(AppContext);
@@ -53,22 +59,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const dist = getDist(file);
     const time = getTime(file);
     const wptPoints = getWptPoints(file);
-
-    function getDist(file) {
-        let f = getAnalysisData(file);
-        return f?.totalDistance ? (f?.totalDistance / 1000).toFixed(2) : DEFAULT_DIST;
-    }
-
-    function getTime(file) {
-        let f = getAnalysisData(file);
-        return f?.timeMoving ? toHHMMSS(f?.timeMoving) : DEFAULT_TIME;
-    }
-
-    function getWptPoints(file) {
-        let f = getAnalysisData(file);
-        return f?.wptPoints ? f?.wptPoints : null;
-    }
-
+    const share = getShare(file, ctx);
     async function processDisplayTrack({ visible, setLoading, showOnMap = true, showInfo = false }) {
         checkedSwitch = !checkedSwitch;
         if (!showInfo) {
@@ -208,22 +199,12 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
         }
     }, [ctx.openedPopper]);
 
-    function setTrackIconStyles() {
-        let res = [];
-        if (ctx.gpxFiles[file.name]?.url && ctx.gpxFiles[file.name]?.showOnMap) {
-            res.push(styles.visibleIcon);
-        } else {
-            res.push(styles.icon);
-        }
-        return res.join(' ');
-    }
-
     function getCheckedSwitch() {
         return ctx.gpxFiles[file.name]?.url ? file?.showOnMap : false;
     }
 
     return useMemo(() => {
-        const trackName = TracksManager.getFileName(file);
+        const trackName = getFileName(file);
         return (
             <>
                 <div className={visible && styles.container}>
@@ -247,12 +228,13 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                                 }
                             }}
                         >
-                            <ListItemIcon className={setTrackIconStyles()}>
+                            <ListItemIcon className={setTrackIconStyles(ctx, file, styles)}>
                                 <TrackIcon />
                             </ListItemIcon>
                             <ListItemText>
                                 <MenuItemWithLines name={trackName} maxLines={2} />
-                                <Typography variant="body2" className={styles.groupInfo} noWrap>
+                                <Typography component="div" variant="body2" className={styles.groupInfo} noWrap>
+                                    {share && <FileShareIcon />}
                                     {dist && `${dist} km`}
                                     {' · '}
                                     {time && `${time}`}

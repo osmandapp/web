@@ -8,7 +8,7 @@ import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction
 import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../trackfavmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
-import { getColorLocation } from '../../manager/FavoritesManager';
+import { addShareFavoriteToMap, getColorLocation } from '../../manager/FavoritesManager';
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 
@@ -16,7 +16,7 @@ export const CustomIcon = ({ marker }) => {
     return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
 };
 
-export default function FavoriteItem({ marker, group, currentLoc }) {
+export default function FavoriteItem({ marker, group, currentLoc, share = false }) {
     const ctx = useContext(AppContext);
 
     const { ref, inView } = useInView();
@@ -93,7 +93,13 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                         <MenuItem
                             className={styles.item}
                             id={'se-fav-item-name-' + marker.title}
-                            onClick={() => addFavoriteToMap(marker)}
+                            onClick={() => {
+                                if (share) {
+                                    addShareFavoriteToMap(marker, ctx);
+                                } else {
+                                    addFavoriteToMap(marker);
+                                }
+                            }}
                         >
                             <ListItemIcon className={styles.icon}>
                                 <CustomIcon marker={marker} />
@@ -102,20 +108,22 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                                 <MenuItemWithLines name={marker.title} maxLines={2} />
                                 <FavInfo />
                             </ListItemText>
-                            <IconButton
-                                id={`se-actions-${marker.title}`}
-                                className={styles.sortIcon}
-                                onMouseEnter={() => setHoverIconInfo(true)}
-                                onMouseLeave={() => setHoverIconInfo(false)}
-                                onClick={(e) => {
-                                    setOpenActions(true);
-                                    ctx.setOpenedPopper(anchorEl);
-                                    e.stopPropagation();
-                                }}
-                                ref={anchorEl}
-                            >
-                                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                            </IconButton>
+                            {!share && (
+                                <IconButton
+                                    id={`se-actions-${marker.title}`}
+                                    className={styles.sortIcon}
+                                    onMouseEnter={() => setHoverIconInfo(true)}
+                                    onMouseLeave={() => setHoverIconInfo(false)}
+                                    onClick={(e) => {
+                                        setOpenActions(true);
+                                        ctx.setOpenedPopper(anchorEl);
+                                        e.stopPropagation();
+                                    }}
+                                    ref={anchorEl}
+                                >
+                                    {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                                </IconButton>
+                            )}
                         </MenuItem>
                     )}
                     <Divider className={styles.dividerItem} />

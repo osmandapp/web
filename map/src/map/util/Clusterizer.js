@@ -12,6 +12,9 @@ import {
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import PoiManager from '../../manager/PoiManager';
 import { getIconByType } from '../../manager/SearchManager';
+import { processMarkers } from '../layers/FavoriteLayer';
+import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
+import { updateMarkerZIndex } from '../layers/ExploreLayer';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
 
@@ -406,4 +409,47 @@ export function removeTooltip(map, tooltipRef) {
         map.removeLayer(tooltipRef.current);
         tooltipRef.current = null;
     }
+}
+
+export function addClusteredMarkersToMap({ map, markers, mainMarkers, secondaryMarkers, ctx, mapBounds, onClick }) {
+    const markersToAdd = [];
+    const mainLayers = [];
+    const secondaryLayers = [];
+    markers.eachLayer((layer) => {
+        const markerLatLng = layer.getLatLng();
+        if (!mapBounds.contains(markerLatLng)) {
+            return;
+        }
+        if (!layer.options.hasClickHandler) {
+            layer.on('click', onClick);
+            layer.options.hasClickHandler = true;
+        }
+        processMarkers({
+            layer,
+            markerLatLng,
+            mainMarkers,
+            secondaryMarkers,
+            mainLayers,
+            secondaryLayers,
+        });
+    });
+    markersToAdd.push(...mainLayers, ...secondaryLayers);
+    markersToAdd.forEach((marker) => {
+        createHoverMarker({
+            marker,
+            mainStyle: true,
+            text: marker.options['title'],
+            latlng: marker._latlng,
+            iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+            map,
+            ctx,
+        });
+    });
+    const mainLayersGroup = new L.FeatureGroup(mainLayers);
+    const secLayersGroup = new L.FeatureGroup(secondaryLayers);
+    const res = new L.LayerGroup([secLayersGroup, mainLayersGroup]);
+    res.addTo(map);
+    updateMarkerZIndex(mainLayersGroup, 2000);
+
+    return res;
 }

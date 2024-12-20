@@ -8,7 +8,7 @@ import CloudTrackItem from '../tracks/CloudTrackItem';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import EmptyVisible from '../errors/EmptyVisible';
 import { isEmpty } from 'lodash';
-import TracksManager, { DEFAULT_GROUP_NAME, getAllVisibleFiles } from '../../manager/track/TracksManager';
+import TracksManager, { DEFAULT_GROUP_NAME, getAllVisibleFiles, getFileName } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
 import { Button } from '@mui/material/';
 import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
@@ -88,7 +88,7 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
     const trackItems = useMemo(() => {
         const items = [];
         ctx.visibleTracks?.new?.map((file, index) => {
-            const trackName = TracksManager.getFileName(file);
+            const trackName = getFileName(file);
             const isLastItem = !isEmpty(ctx.visibleTracks?.new) ? index === ctx.visibleTracks?.new.length - 1 : false;
             if (file.filesize !== 0) {
                 items.push(
@@ -108,7 +108,7 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
     const trackItemsOld = useMemo(() => {
         const items = [];
         ctx.visibleTracks?.old.map((file, index) => {
-            const trackName = TracksManager.getFileName(file);
+            const trackName = getFileName(file);
             const isLastItem = !isEmpty(ctx.visibleTracks?.old) ? index === ctx.visibleTracks?.old.length - 1 : false;
             if (file.filesize !== 0) {
                 items.push(

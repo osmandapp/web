@@ -4,15 +4,12 @@ import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
-import FavoritesManager from '../../manager/FavoritesManager';
+import FavoritesManager, { addLocDist, getFavMenuListByLayers } from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
-import { getDistance } from '../../util/Utils';
 import Loading from '../errors/Loading';
-import { isEmpty } from 'lodash';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { doSort } from '../actions/SortActions';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
-import { changeIconSizeWpt, createPoiIcon, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
 import { getCenterMapLoc } from '../../manager/MapManager';
 import { FixedSizeList } from 'react-window';
 
@@ -49,22 +46,7 @@ export default function FavoriteGroupFolder({ folder }) {
         let markerList = [];
         if (ctx.favorites.mapObjs[group.name]?.markers) {
             let layers = ctx.favorites.mapObjs[group.name].markers._layers;
-            Object.values(layers).forEach((value) => {
-                const wpt = getWptByTitle(value.options.title, ctx.favorites.mapObjs[group.name].wpts);
-                const icon = createPoiIcon({
-                    point: wpt,
-                    color: wpt.color,
-                    background: wpt.background,
-                    hasBackgroundLight: false,
-                    icon: wpt.icon,
-                }).options.html;
-                let marker = {
-                    title: value.options.title,
-                    icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30),
-                    layer: value,
-                };
-                markerList.push(marker);
-            });
+            markerList = getFavMenuListByLayers(layers, ctx.favorites.mapObjs[group.name].wpts, currentLoc);
         }
         markerList = addLocDist({ location: currentLoc, markers: markerList });
 
@@ -81,10 +63,6 @@ export default function FavoriteGroupFolder({ folder }) {
         refMarkers.current = markerList;
     }, [ctx.favorites]);
 
-    function getWptByTitle(title, wpts) {
-        return wpts.find((wpt) => wpt.name === title);
-    }
-
     useEffect(() => {
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
             // update markers location
@@ -97,39 +75,6 @@ export default function FavoriteGroupFolder({ folder }) {
             setMarkers(updatedMarkers);
         }
     }, [currentLoc, delayedHash, refMarkers.current]);
-
-    function addLocDist({ location, markers = null, wpts = null }) {
-        let res = [];
-        if (location && location !== LOCATION_UNAVAILABLE) {
-            if (markers && markers.length > 0) {
-                markers.forEach((m) => {
-                    if (m?.layer?._latlng) {
-                        m.locDist = (
-                            getDistance(location.lat, location.lng, m?.layer?._latlng.lat, m?.layer?._latlng.lng) / 1000
-                        ).toFixed(0);
-                    }
-                    res.push(m);
-                });
-            } else if (wpts && wpts.length > 0) {
-                wpts.forEach((w) => {
-                    if (w.latlng) {
-                        w.locDist = (
-                            getDistance(location.lat, location.lng, w.latlng.lat, w.latlng.lng) / 1000
-                        ).toFixed(0);
-                    }
-                    res.push(w);
-                });
-            }
-        }
-        if (isEmpty(res)) {
-            if (markers) {
-                return markers;
-            } else if (wpts) {
-                return wpts;
-            }
-        }
-        return res;
-    }
 
     useEffect(() => {
         if (folder) {
