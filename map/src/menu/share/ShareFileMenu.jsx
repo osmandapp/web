@@ -139,11 +139,10 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
         const publicFile = ctx.shareFile?.sharedObj?.file.publicAccess;
         const newShareType = selectedShareType.key;
 
-        const shouldChangeShareType = (
+        const shouldChangeShareType =
             (privateFile && newShareType !== shareTypes.private.key) ||
             (publicFile && newShareType === shareTypes.request.key) ||
-            (!privateFile && newShareType === shareTypes.public.key)
-        );
+            (!privateFile && newShareType === shareTypes.public.key);
 
         if (shouldChangeShareType) {
             changeShareTypeFile({ file: ctx.shareFile.mainFile, shareType: newShareType, ctx }).then();

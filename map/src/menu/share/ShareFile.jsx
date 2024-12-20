@@ -26,6 +26,8 @@ import FavoriteItem from '../favorite/FavoriteItem';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../manager/MapManager';
 import SubTitle from '../components/SubTitle';
+import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
+import EmptyLogin from '../login/EmptyLogin';
 
 export default function ShareFile() {
     const ctx = useContext(AppContext);
@@ -39,6 +41,7 @@ export default function ShareFile() {
     const [pendingTypeAccess, setPendingTypeAccess] = useState(false);
     const [blockedTypeAccess, setBlockedTypeAccess] = useState(false);
     const [notAvailable, setNotAvailable] = useState(false);
+    const [onlyLoginAccess, setOnlyLoginAccess] = useState(false);
 
     const [showFile, setShowFile] = useState(false);
     const [showFavorite, setShowFavorite] = useState(false);
@@ -51,6 +54,10 @@ export default function ShareFile() {
     }, [ctx.accountInfo]);
 
     useEffect(() => {
+        if (!uuid) {
+            return;
+        }
+
         async function fetchFile() {
             const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/${SHARE_FILE_MAIN_URL}${uuid}`, {});
             if (res.ok) {
@@ -78,6 +85,12 @@ export default function ShareFile() {
                         console.log('Unknown share file response:', text);
                         setNotAvailable(true);
                     }
+                }
+            } else {
+                if (res.status === 401) {
+                    setOnlyLoginAccess(true);
+                } else {
+                    console.log('Error fetching share file:', res);
                 }
             }
         }
@@ -157,30 +170,36 @@ export default function ShareFile() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            {!showFavorite && (
-                <Box sx={{ px: 2, mt: 1, overflowX: 'hidden' }}>
-                    {requestTypeAccess && (
-                        <RequestAccessError
-                            sendRequest={sendAccessRequest}
-                            userName={userName}
-                            setUserName={setUserName}
-                        />
-                    )}
-                    {pendingTypeAccess && <PendingAccessError />}
-                    {blockedTypeAccess && <BlockedAccessError />}
-                    {notAvailable && <NotAvailableError />}
-                    {showFile && (
-                        <Box>
-                            <GeneralInfoTab key="general" />
+            {!onlyLoginAccess ? (
+                <>
+                    {!showFavorite && (
+                        <Box sx={{ px: 2, mt: 1, overflowX: 'hidden' }}>
+                            {requestTypeAccess && (
+                                <RequestAccessError
+                                    sendRequest={sendAccessRequest}
+                                    userName={userName}
+                                    setUserName={setUserName}
+                                />
+                            )}
+                            {pendingTypeAccess && <PendingAccessError />}
+                            {blockedTypeAccess && <BlockedAccessError />}
+                            {notAvailable && <NotAvailableError />}
+                            {showFile && (
+                                <Box>
+                                    <GeneralInfoTab key="general" />
+                                </Box>
+                            )}
                         </Box>
                     )}
-                </Box>
-            )}
-            {showFavorite && (
-                <Box>
-                    <SubTitle title={prepareFavGroupName(fileRes.name)} />
-                    {favItems}
-                </Box>
+                    {showFavorite && (
+                        <Box>
+                            <SubTitle title={prepareFavGroupName(fileRes.name)} />
+                            {favItems}
+                        </Box>
+                    )}
+                </>
+            ) : (
+                <EmptyLogin />
             )}
         </>
     );
