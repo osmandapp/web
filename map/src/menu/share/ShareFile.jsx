@@ -28,10 +28,13 @@ import { getCenterMapLoc } from '../../manager/MapManager';
 import SubTitle from '../components/SubTitle';
 import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 import EmptyLogin from '../login/EmptyLogin';
+import { useTranslation } from 'react-i18next';
 
 export default function ShareFile() {
     const ctx = useContext(AppContext);
     const { uuid } = useParams();
+
+    const { t } = useTranslation();
 
     const [userName, setUserName] = useState('');
 
@@ -166,7 +169,7 @@ export default function ShareFile() {
                         <CloseIcon />
                     </IconButton>
                     <Typography id="se-share-file" component="div" className={styles.title}>
-                        Share file
+                        {t('web:share_file')}
                     </Typography>
                 </Toolbar>
             </AppBar>

@@ -47,23 +47,23 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
         public: {
             key: 'public',
             isPublic: true,
-            name: 'Anyone',
+            name: t('web:share_type_public'),
             icon: <ShareTypePublicIcon />,
-            info: 'Anyone with the link can access the file',
+            info: t('web:share_type_public_desc'),
         },
         request: {
             key: 'request',
             isPublic: false,
-            name: 'Request Only',
+            name: t('web:share_type_request_only'),
             icon: <ShareTypeAccessIcon />,
-            info: 'Users need to request access, which you can approve or deny',
+            info: t('web:share_type_request_only_desc'),
         },
         private: {
             key: 'private',
             isPublic: false,
-            name: 'Private',
+            name: t('web:share_type_private'),
             icon: <ShareTypePrivateIcon />,
-            info: 'Only you can access the file',
+            info: t('web:share_type_private_desc'),
         },
     };
 
@@ -76,15 +76,15 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
 
     const userAccess = {
         [APPROVED_ACCESS_TYPE]: {
-            name: 'Approved',
+            name: t('web:access_type_approved'),
             type: 'READ',
         },
         [PENDING_ACCESS_TYPE]: {
-            name: 'Pending',
+            name: t('web:access_type_pending'),
             type: 'PENDING',
         },
         [BLOCKED_ACCESS_TYPE]: {
-            name: 'Blocked',
+            name: t('web:access_type_blocked'),
             type: 'BLOCKED',
         },
     };
@@ -121,9 +121,9 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
             setLink(createLink(uuid));
         } else {
             if (selectedShareType.key === shareTypes.private.key) {
-                setLink('Update access settings to generate a link.');
+                setLink(t('web:private_share_link_desc'));
             } else {
-                setLink('Tap Generate link to start share this file.');
+                setLink(t('web:generate_share_link_desc'));
             }
         }
     }, [ctx.shareFile, generatedUuid]);
@@ -211,7 +211,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                         <BackIcon />
                     </IconButton>
                     <Typography id="se-share-file-menu" component="div" className={styles.title}>
-                        Share this file
+                        {t('web:share_this_file')}
                     </Typography>
                     <IconButton
                         disabled={!ctx.shareFile?.sharedObj?.file?.uuid}
@@ -275,7 +275,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                     </Box>
                     {ctx.shareFile?.sharedObj?.file?.uuid || generatedUuid ? (
                         <Button component="span" className={buttonStyles.blueButton} onClick={copyLink}>
-                            Copy link
+                            {t('web:copy_link')}
                         </Button>
                     ) : (
                         <Button
@@ -285,7 +285,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                             disabled={selectedShareType.key === shareTypes.private.key}
                             sx={{ color: selectedShareType.key === shareTypes.private.key && '#727272 !important' }}
                         >
-                            Generate link
+                            {t('web:generate_link')}
                         </Button>
                     )}
                 </Box>

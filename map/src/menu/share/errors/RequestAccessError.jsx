@@ -3,9 +3,11 @@ import { Box, Button, Icon, ListItemText, TextField } from '@mui/material';
 import styles from '../../errors/errors.module.css';
 import { ReactComponent as AccessIcon } from '../../../assets/icons/ic_action_lock.svg';
 import buttonStyles from '../../login/login.module.css';
+import { useTranslation } from 'react-i18next';
 
 export default function RequestAccessError({ sendRequest, userName, setUserName }) {
     const [error, setError] = useState('');
+    const { t } = useTranslation();
 
     const validateNickname = (nickname) => {
         const MIN_LENGTH = 3;
@@ -45,11 +47,10 @@ export default function RequestAccessError({ sendRequest, userName, setUserName 
                 </Icon>
                 <Box className={styles.info}>
                     <ListItemText disableTypography={true} className={styles.title}>
-                        You don’t have access to this file
+                        {t('web:access_blocked')}
                     </ListItemText>
                     <ListItemText disableTypography={true} className={styles.text}>
-                        You need to create a username for your profile to request access to this file. It will be
-                        visible to the file owner.
+                        {t('web:access_blocked_desc')}
                     </ListItemText>
                 </Box>
             </Box>
@@ -73,7 +74,7 @@ export default function RequestAccessError({ sendRequest, userName, setUserName 
                 className={buttonStyles.blueButton}
                 onClick={handleRequest}
             >
-                Request access
+                {t('web:access_requested_btn')}
             </Button>
         </Box>
     );

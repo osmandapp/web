@@ -2,8 +2,11 @@ import { Box, Icon, ListItemText } from '@mui/material';
 import styles from '../../errors/errors.module.css';
 import React from 'react';
 import { ReactComponent as NotAvailableIcon } from '../../../assets/icons/ic_action_file_unknown.svg';
+import { useTranslation } from 'react-i18next';
 
 export default function NotAvailableError() {
+    const { t } = useTranslation();
+
     return (
         <Box className={styles.block}>
             <Icon className={styles.icon}>
@@ -11,10 +14,10 @@ export default function NotAvailableError() {
             </Icon>
             <Box className={styles.info}>
                 <ListItemText disableTypography={true} className={styles.title}>
-                    Not available
+                    {t('web:not_available')}
                 </ListItemText>
                 <ListItemText disableTypography={true} className={styles.text}>
-                    The file or folder is no longer available.
+                    {t('web:not_available_desc')}
                 </ListItemText>
             </Box>
         </Box>

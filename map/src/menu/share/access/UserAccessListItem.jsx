@@ -15,6 +15,7 @@ import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import AppContext from '../../../context/AppContext';
 import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../../../manager/ShareManager';
+import { useTranslation } from 'react-i18next';
 
 export default function UserAccessListItem({
     index,
@@ -28,6 +29,8 @@ export default function UserAccessListItem({
 }) {
     const ctx = useContext(AppContext);
 
+    const { t } = useTranslation();
+
     const { ref, inView } = useInView();
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const anchorEl = useRef(null);
@@ -39,7 +42,7 @@ export default function UserAccessListItem({
         if (showOwner) {
             return ctx.accountInfo?.nickname ?? ctx.loginUser;
         } else if (anyone) {
-            return 'Anyone';
+            return t('web:share_type_public');
         } else {
             return user?.name;
         }
@@ -47,9 +50,9 @@ export default function UserAccessListItem({
 
     function getInfo() {
         if (showOwner) {
-            return 'Owner';
+            return t('web:share_owner');
         } else if (anyone) {
-            return 'Anyone with the link can access the file';
+            return t('web:share_type_public_desc');
         } else {
             return formatRequestedDateWithDateFns(user?.requestDate);
         }

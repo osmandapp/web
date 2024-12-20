@@ -7,6 +7,7 @@ import { Button } from '@mui/material';
 import { changeShareTypeFile } from '../../manager/ShareManager';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
+import { useTranslation } from 'react-i18next';
 
 export default function DeleteShareFileDialog({
     dialogOpen,
@@ -16,6 +17,7 @@ export default function DeleteShareFileDialog({
     setSelectedShareType,
 }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const handleChangeType = async (type) => {
         await changeShareTypeFile({ file: ctx.shareFile.mainFile, shareType: type, ctx });
@@ -25,7 +27,7 @@ export default function DeleteShareFileDialog({
 
     return (
         <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
-            <DialogTitle>Change access</DialogTitle>
+            <DialogTitle>{t('web:change_access')}</DialogTitle>
             <DialogContent>
                 <DialogContentText>
                     Changing the status to <strong>Private</strong> will revoke access for all users.
@@ -39,10 +41,10 @@ export default function DeleteShareFileDialog({
                     <Button onClick={() => handleChangeType(shareTypes.request.key)}>{shareTypes.request.name}</Button>
                 )}
                 <Button onClick={() => setDialogOpen(false)} color="primary">
-                    Cancel
+                    {t('shared_string_cancel')}
                 </Button>
                 <Button onClick={() => handleChangeType(shareTypes.private.key)} color="primary">
-                    Apply
+                    {t('shared_string_apply')}
                 </Button>
             </DialogActions>
         </Dialog>

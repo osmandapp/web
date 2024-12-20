@@ -6,9 +6,12 @@ import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '
 import styles from '../share.module.css';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { ReactComponent as ShareIcon } from '../../../assets/icons/ic_group.svg';
+import { useTranslation } from 'react-i18next';
 
 export default function UserAccessList({ type, users, setForcedUpdate }) {
     const ctx = useContext(AppContext);
+
+    const { t } = useTranslation();
 
     const showOwner = type === APPROVED_ACCESS_TYPE;
     const currentUsers = users[type];
@@ -54,13 +57,13 @@ export default function UserAccessList({ type, users, setForcedUpdate }) {
                     <Box sx={{ ml: 8, mr: 2, mb: 2 }}>
                         {type === PENDING_ACCESS_TYPE ? (
                             <MenuItemWithLines
-                                name={'Users who send access requests for this file will appear here.'}
+                                name={t('web:empty_pending_share_list_desc')}
                                 maxLines={2}
                                 className={styles.shareTypeTextInfo}
                             />
                         ) : (
                             <MenuItemWithLines
-                                name={'You can block users from the Approved or Pending list.'}
+                                name={t('web:empty_blocked_share_list_desc')}
                                 maxLines={2}
                                 className={styles.shareTypeTextInfo}
                             />

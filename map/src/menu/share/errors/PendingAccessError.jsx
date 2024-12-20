@@ -3,8 +3,11 @@ import styles from '../../errors/errors.module.css';
 import buttonStyles from '../../login/login.module.css';
 import React from 'react';
 import { ReactComponent as AccessIcon } from '../../../assets/icons/ic_action_sand_clock.svg';
+import { useTranslation } from 'react-i18next';
 
 export default function PendingAccessError() {
+    const { t } = useTranslation();
+
     return (
         <Box>
             <Box className={styles.block}>
@@ -13,10 +16,10 @@ export default function PendingAccessError() {
                 </Icon>
                 <Box className={styles.info}>
                     <ListItemText disableTypography={true} className={styles.title}>
-                        Access requested
+                        {t('web:access_requested')}
                     </ListItemText>
                     <ListItemText disableTypography={true} className={styles.text}>
-                        You need to wait until the file owner approves your request.
+                        {t('web:access_requested_desc')}
                     </ListItemText>
                 </Box>
             </Box>
@@ -26,7 +29,7 @@ export default function PendingAccessError() {
                 className={buttonStyles.blueButton}
                 disabled={true}
             >
-                Request access
+                {t('web:access_requested_btn')}
             </Button>
         </Box>
     );
