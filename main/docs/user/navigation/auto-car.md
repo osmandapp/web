@@ -26,7 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - If you have purchased [OsmAnd Pro](../purchases/android.md#osmand-pro) from the [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd), you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) in the [OsmAnd Free version](https://play.google.com/store/apps/details?id=net.osmand) app downloaded from the Google Play store.
 - After this activation, you can use the Android Auto function for which you purchased a subscription to OsmAnd Pro in another app store.
 
-**_Note_**: Android Auto is not a direct mirror of the OsmAnd mobile app. It features a simplified interface focused on essential navigation functions to ensure safe driving. Some advanced features may not be supported due to platform limitations.
+***Note***: Android Auto is not a direct replication of the OsmAnd mobile app. It has a simplified interface, focusing on essential navigation functions to ensure safe driving. Some advanced features are not supported due to platform limitations.
 
 
 
@@ -92,7 +92,7 @@ If you already have a profile selected on your device that corresponds to the ty
 
 If you do not have any *Driving* profile selected on your device that corresponds to your vehicle type, then OsmAnd will automatically switch to the *Driving* profile. This is done to provide basic navigation and to prevent possible problems caused using the wrong profile for a specific vehicle type.
 
-**Why it's important**
+**Why it's important:**
 
 1. **Driving safety.** Different types of transportation require different information and settings when driving. For example, truck drivers may be limited in the height, weight, and width of their vehicles, so the *Truck* profile provides them with appropriate restrictions and guidelines. While bicyclists and motorcyclists need information about bike lanes and routes, without data for trucks.
 
