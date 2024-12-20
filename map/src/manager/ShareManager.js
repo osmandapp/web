@@ -119,6 +119,8 @@ export async function changeShareTypeFile({ file, shareType, ctx }) {
                     mainFile: file,
                     sharedObj: null,
                 });
+            } else {
+                console.log('Error parsing share file:', text);
             }
         }
     }

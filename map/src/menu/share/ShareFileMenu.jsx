@@ -137,21 +137,19 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
         });
         const privateFile = ctx.shareFile && !ctx.shareFile.sharedObj;
         const publicFile = ctx.shareFile?.sharedObj?.file.publicAccess;
+        const newShareType = selectedShareType.key;
 
-        // private -> create new share file with selected type
-        if (privateFile && selectedShareType.key !== shareTypes.private.key) {
-            changeShareTypeFile({ file: ctx.shareFile.mainFile, shareType: selectedShareType.key, ctx }).then();
+        const shouldChangeShareType = (
+            (privateFile && newShareType !== shareTypes.private.key) ||
+            (publicFile && newShareType === shareTypes.request.key) ||
+            (!privateFile && newShareType === shareTypes.public.key)
+        );
+
+        if (shouldChangeShareType) {
+            changeShareTypeFile({ file: ctx.shareFile.mainFile, shareType: newShareType, ctx }).then();
             return;
         }
-        // public -> request
-        if (publicFile && selectedShareType.key === shareTypes.request.key) {
-            changeShareTypeFile({ file: ctx.shareFile.mainFile, shareType: selectedShareType.key, ctx }).then();
-            return;
-        }
-        // request -> public
-        if (!privateFile && selectedShareType.key === shareTypes.public.key) {
-            changeShareTypeFile({ file: ctx.shareFile.mainFile, shareType: selectedShareType.key, ctx }).then();
-        }
+
         if (selectedShareType.key === shareTypes.private.key) {
             // process this case in DeleteShareFileDialog
         }

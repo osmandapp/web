@@ -74,6 +74,9 @@ export default function ShareFile() {
                     };
                     if (accessTypeHandlers[textLower]) {
                         accessTypeHandlers[textLower]();
+                    } else {
+                        console.log('Unknown share file response:', text);
+                        setNotAvailable(true);
                     }
                 }
             }

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import {
     Box,
     ClickAwayListener,
@@ -78,6 +78,7 @@ import LoginMenu from './login/LoginMenu';
 import TravelMenu from './travel/TravelMenu';
 import ProFeatures from '../frame/components/pro/ProFeatures';
 import { updateUserRequests } from '../manager/ShareManager';
+import { debouncer } from '../context/TracksRoutingCache';
 
 export default function MainMenu({
     size,
@@ -95,6 +96,8 @@ export default function MainMenu({
     const { t } = useTranslation();
     const location = useLocation();
     const [, height] = useWindowSize();
+
+    const timerRef = useRef(null);
 
     const [selectedType, setSelectedType] = useState(null);
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
@@ -250,11 +253,16 @@ export default function MainMenu({
     }, [menuInfo]);
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
+        const updateRequests = () => {
             updateUserRequests(ctx).then();
-        }, 10000);
-        return () => clearInterval(intervalId);
-    }, []);
+        };
+
+        const interval = setInterval(() => {
+            debouncer(updateRequests, timerRef, 3000);
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [ctx]);
 
     //open main menu if currentObjectType was changed
     useEffect(() => {
