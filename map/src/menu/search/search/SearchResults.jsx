@@ -23,7 +23,7 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getIconByType, parseBrandTag, SEARCH_BRAND } from '../../../manager/SearchManager';
+import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 const MIN_SEARCH_ZOOM = 8;
@@ -70,8 +70,8 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             const props = f.properties;
             const type = props[CATEGORY_TYPE];
             if (type === searchTypeMap.POI_TYPE || type === searchTypeMap.POI) {
-                const brandRes = parseBrandTag(props[CATEGORY_ICON]);
-                if (brandRes.brand === SEARCH_BRAND) {
+                const brandRes = parseTagWithLang(props[CATEGORY_ICON]);
+                if (brandRes.key === SEARCH_BRAND) {
                     f.icon = await getSearchResultIcon({ result: SEARCH_BRAND, ctx });
                     return;
                 }
@@ -123,17 +123,15 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     }, [currentLoc, ctx.searchResult]);
 
     useEffect(() => {
+        if (!memoizedResult) return;
+        if (memoizedResult === EMPTY_SEARCH_RESULT) {
+            setResult(EMPTY_SEARCH_RESULT);
+            return;
+        }
         const updateIcons = async () => {
-            if (!memoizedResult) return;
-            if (memoizedResult === EMPTY_SEARCH_RESULT) {
-                setResult(EMPTY_SEARCH_RESULT);
-                return;
-            }
-
-            if (!memoizedResult[0]?.icon) {
-                await calculateIcons(memoizedResult, ctx);
-            }
-            setResult({ features: memoizedResult });
+            const resultWithIcons = [...memoizedResult];
+            await calculateIcons(resultWithIcons, ctx);
+            setResult({ features: resultWithIcons });
         };
 
         updateIcons().then();
