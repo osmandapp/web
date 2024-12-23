@@ -19,6 +19,11 @@ const CustomTileLayer = forwardRef((props, ref) => {
     const rasterTileLayerRef = useRef(null);
     const dataLayersRef = useRef(null);
     const renderingTypeRef = useRef(ctx.renderingType);
+    const abortControllerRef = useRef(null);
+    const zoomLevelRef = useRef(map.getZoom());
+
+    const tileLayerCache = useRef(new Map());
+    const tileOnMapCache = useRef(new Set());
 
     useImperativeHandle(ref, () => ({
         getLeafletLayer: () => rasterTileLayerRef.current,
@@ -27,6 +32,38 @@ const CustomTileLayer = forwardRef((props, ref) => {
     useEffect(() => {
         renderingTypeRef.current = ctx.renderingType;
     }, [ctx.renderingType]);
+
+    useEffect(() => {
+        const handleZoomEnd = () => {
+            const currentZoom = map.getZoom();
+            if (zoomLevelRef.current !== currentZoom) {
+                zoomLevelRef.current = currentZoom;
+            }
+        };
+
+        const handleZoomStart = () => {
+            if (abortControllerRef.current) {
+                abortControllerRef.current.abort();
+                abortControllerRef.current = new AbortController();
+            }
+            tileOnMapCache.current.clear();
+        };
+
+        map.on('zoomstart', handleZoomStart);
+        map.on('zoomend', handleZoomEnd);
+
+        return () => {
+            map.off('zoomstart', handleZoomStart);
+            map.off('zoomend', handleZoomEnd);
+            if (abortControllerRef.current) {
+                abortControllerRef.current.abort();
+            }
+        };
+    }, [map]);
+
+    function generateTileKey(z, x, y) {
+        return `${z}-${x}-${y}`;
+    }
 
     async function prepareGeoJsonData(data) {
         const dataArray = data.features;
@@ -269,32 +306,38 @@ const CustomTileLayer = forwardRef((props, ref) => {
         return `#${red}${green}${blue}${alpha}`;
     }
 
-    function addGeoJsonLayer(geoJsonData) {
-        if (geoJsonData && map) {
-            return L.geoJson(geoJsonData, {
-                pointToLayer: function (feature, latlng) {
-                    const layers = [];
-
-                    if (feature.properties.text) {
-                        const textLayer = createTextLayerGroup(feature, latlng);
-                        layers.push(textLayer);
-                    }
-
-                    if (feature.properties.mainIcon) {
-                        const iconLayer = createIconLayerGroup(feature, latlng);
-                        layers.push(iconLayer);
-                    }
-
-                    // case road shield
-                    if (feature.properties.shieldRes) {
-                        const iconLayer = createShieldLayerGroup(feature, latlng);
-                        layers.push(iconLayer);
-                    }
-
-                    return L.layerGroup(layers);
-                },
-            }).addTo(map);
+    function addGeoJsonLayer(geoJsonData, z, x, y) {
+        const key = generateTileKey(z, x, y);
+        if (!geoJsonData) {
+            return null;
         }
+        const newLayer = L.geoJson(geoJsonData, {
+            pointToLayer: function (feature, latlng) {
+                const layers = [];
+
+                if (feature.properties.text) {
+                    const textLayer = createTextLayerGroup(feature, latlng);
+                    layers.push(textLayer);
+                }
+
+                if (feature.properties.mainIcon) {
+                    const iconLayer = createIconLayerGroup(feature, latlng);
+                    layers.push(iconLayer);
+                }
+
+                if (feature.properties.shieldRes) {
+                    const shieldLayer = createShieldLayerGroup(feature, latlng);
+                    layers.push(shieldLayer);
+                }
+
+                return L.layerGroup(layers);
+            },
+        });
+        if (zoomLevelRef.current === z) {
+            newLayer.addTo(map);
+        }
+        tileLayerCache.current.set(key, newLayer);
+        return newLayer;
     }
 
     function createShieldLayerGroup(feature, latlng) {
@@ -326,6 +369,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
     }
 
     useEffect(() => {
+        // get raster tile layer
         if (!rasterTileLayerRef.current) {
             rasterTileLayerRef.current = L.tileLayer(ctx.tileURL.url, props).addTo(map);
         } else {
@@ -336,6 +380,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
             dataLayersRef.current && dataLayersRef.current.rasterTileLayer !== rasterTileLayerRef.current;
         const noDataLayers = !renderingTypeRef.current && dataLayersRef?.current?.layers.length > 0;
 
+        //if raster tile changed or no data layers, remove data layers
         if (tileChanged || noDataLayers) {
             removeDataLayers(dataLayersRef.current.layers);
             dataLayersRef.current = { layers: [] };
@@ -352,9 +397,31 @@ const CustomTileLayer = forwardRef((props, ref) => {
             if (ctx.tileURL.infoUrl === undefined || !renderingTypeRef.current) return;
 
             const { z, x, y } = e.coords;
+            const key = generateTileKey(z, x, y);
+
+            // check if tile is already on map
+            if (tileOnMapCache.current.has(key)) {
+                return;
+            }
+            tileOnMapCache.current.add(key);
+
+            // check if tile data is already in cache
+            if (tileLayerCache.current.has(key)) {
+                const cachedLayer = tileLayerCache.current.get(key);
+                cachedLayer.addTo(map);
+                dataLayersRef.current.layers.push(cachedLayer);
+                dataLayersRef.current.rasterTileLayer = rasterTileLayerRef.current;
+                return;
+            }
 
             const geoJsonUrl = ctx.tileURL.infoUrl.replace('{z}', z).replace('{x}', x).replace('{y}', y);
-            const response = await apiGet(geoJsonUrl, { apiCache: true });
+            if (abortControllerRef?.current?.signal.aborted) {
+                return;
+            }
+            const response = await apiGet(geoJsonUrl, {
+                apiCache: true,
+                signal: abortControllerRef?.current?.signal,
+            });
             if (response.ok) {
                 const geoJsonData = await response.json();
                 const preparedGeoJsonData = await prepareGeoJsonData(geoJsonData);
@@ -364,7 +431,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
                             layers: [],
                         };
                     }
-                    dataLayersRef.current.layers.push(addGeoJsonLayer(preparedGeoJsonData));
+                    dataLayersRef.current.layers.push(addGeoJsonLayer(preparedGeoJsonData, z, x, y));
                     dataLayersRef.current.rasterTileLayer = rasterTileLayerRef.current;
                 }
             }
@@ -373,17 +440,25 @@ const CustomTileLayer = forwardRef((props, ref) => {
         map.on('click', onMapClick);
 
         return () => {
+            if (abortControllerRef.current) {
+                abortControllerRef.current.abort();
+            }
             map.off('click', onMapClick);
         };
     }, [ctx.tileURL.url, props, ctx.renderingType]);
 
-    const removeDataLayers = (dataLayers) => {
-        if (dataLayers.length > 0) {
-            dataLayers.forEach((layer) => {
-                map.removeLayer(layer);
-            });
-        }
-    };
+    const removeDataLayers = useCallback(
+        (dataLayers) => {
+            if (dataLayers && dataLayers.length > 0) {
+                dataLayers.forEach((layer) => {
+                    if (map.hasLayer(layer)) {
+                        map.removeLayer(layer);
+                    }
+                });
+            }
+        },
+        [map]
+    );
 
     useEffect(() => {
         return () => {
