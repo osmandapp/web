@@ -8,7 +8,7 @@ import { EMPTY_FILE_NAME, findGroupByName, updateLoadingTracks } from '../../man
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
 import TrackLoading from './TrackLoading';
-import { doSort } from '../actions/SortActions';
+import { allMethods, doSort } from '../actions/SortActions';
 import { isEmpty } from 'lodash';
 
 export default function TrackGroupFolder({ folder }) {
@@ -18,6 +18,8 @@ export default function TrackGroupFolder({ folder }) {
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
     const [, height] = useWindowSize();
+
+    const DEFAULT_SORT_METHOD = 'time';
 
     useEffect(() => {
         if (ctx.tracksGroups) {
@@ -41,15 +43,16 @@ export default function TrackGroupFolder({ folder }) {
         }
 
         // sort track group
-        if (ctx.selectedSort?.tracks && ctx.selectedSort.tracks[folder.fullName]) {
-            doSort({
-                method: ctx.selectedSort.tracks[folder.fullName],
-                setSortFiles,
-                setSortGroups,
-                files: group.groupFiles,
-                groups: group.subfolders,
-            });
-        }
+        doSort({
+            method:
+                ctx.selectedSort?.tracks && ctx.selectedSort.tracks[folder.fullName]
+                    ? ctx.selectedSort.tracks[folder.fullName]
+                    : DEFAULT_SORT_METHOD,
+            setSortFiles,
+            setSortGroups,
+            files: group.groupFiles,
+            groups: group.subfolders,
+        });
     }, [folder]);
 
     const trackItems = useMemo(() => {
