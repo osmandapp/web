@@ -140,7 +140,10 @@ export function getPoiParentCategory(props, t) {
 }
 
 export function parseTagWithLang(tag) {
-    const [key, lang] = tag.split(':');
+    if (typeof tag !== 'string' || !tag.includes(':')) {
+        return { key: tag, lang: null };
+    }
+    const [key, lang] = tag?.split(':');
     return { key, lang };
 }
 

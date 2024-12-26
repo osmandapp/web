@@ -390,7 +390,7 @@ In the [Last Sync](#last-sync) section from the drop-down menu, tap any item to 
 
 </Tabs>
 
-- **Local.** You can synchronize all local changes that are not present in the Cloud at once by using the *Upload All* button. Alternatively, you can select individual changes from the list and tap them to choose *Upload local version*.  
+- **Local.** You can synchronize all local changes that are not present in the Cloud at once using the *Upload All* button. Alternatively, you can select individual changes from the list and tap them to choose *Upload local version*.  
 Changes uploaded from the Local version to the Cloud are automatically removed from the *Changes → Local tab* after a certain period.  
 - **Cloud.** The Cloud tab displays a list of changes that can be downloaded to your device from the cloud storage. You can download all the changes at once using the button at the bottom of the screen, or separately.  
 

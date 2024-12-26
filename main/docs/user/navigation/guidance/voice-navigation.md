@@ -137,7 +137,7 @@ The **Speed limit** option allows OsmAnd to inform you when your current speed e
 **Announce when exceeded**  
 *Speed limit tolerance* lets you select an allowable deviation (e.g., -10 km/h to +20 km/h) from the [legal maximum speed limit](https://wiki.openstreetmap.org/wiki/Key:maxspeed) on the current road. When your speed exceeds this tolerance, OsmAnd issues a voice prompt.  
 
-**Speed limits tolerance** uses three timing rules:
+*Rules for activating voice prompts* when the speed limit is exceeded:
 
 - *Initial warning*. Detecting that you exceed the speed limit, OsmAnd waits 5 seconds before issuing the first voice warning.
 - *Repeat announcement delay*. If you continue speeding, the next warning is delayed for 120 seconds to prevent overly frequent notifications.
@@ -298,7 +298,7 @@ You can configure an OsmAnd profile to beep instead of speaking, in a similar wa
   
 *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*  
 
-- **Minimal**. Suitable for following a known route on foot with minimal distractions, this pattern will alert you when passing intermediate destinations, favourites and POIs, and when you have deviated from or returned to the route. It will not provide any audio warnings for turns.
+- **Minimal**. Suitable for following a known route on foot with minimal distractions, this pattern will alert you when passing intermediate destinations, favorites and POIs, and when you have deviated from or returned to the route. It will not provide any audio warnings for turns.
 - **Simple**. In addition to alerts for destinations, favorites, POIs, and others, the simple pattern alerts you with a longer beep when you need to turn.
 - **Complex**. Suitable for road cycling, the complex pattern uses beeps of different lengths and pitches to inform you about upcoming turns.
     - A low beep means left turn, while a high beep means right. A series of middle pitched beeps represents the exit to take on a roundabout (traffic circle). All three pitches in sequence represents a U-turn. In all these cases short beeps mean prepare to do something, while long beeps mean do something now.

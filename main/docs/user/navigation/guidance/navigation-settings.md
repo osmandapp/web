@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-For successful navigation, it's important to properly configure the appropriate settings according to your needs and how you travel - by car, on foot, on horseback, or skis. This article describes the basic route parameters, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, [Fuel tank capacity](#fuel-tank-capacity), and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
+For successful navigation, it's important to properly configure the appropriate settings according to your needs and how you travel - by car, on foot, on horseback, or on skis. This article describes the basic route parameters, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, [Fuel tank capacity](#fuel-tank-capacity), and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
 
 <Tabs groupId="operating-systems">
 
@@ -73,7 +73,7 @@ The default *Browse map* profile has no navigation settings.
 Navigation is an important part of a trip, and choosing *the right type* of navigation can make your journey much easier. The type of navigation you choose can depend on how you travel and whether you have an Internet connection.  
 
 - **Online navigation**
-    It mainly uses a special routing system or website that allows the OsmAnd app to plot a route based on current information and other factors. You can read about how to choose the best route online in the article [*Online routing*](../routing/online-routing.md). This navigation type is only available for the *Android version* of the app.  
+    It mainly uses a special routing system or website that allows the OsmAnd app to plot a route based on current information and other factors. You can read about choosing the best route online in the article [*Online routing*](../routing/online-routing.md). This navigation type is only available for the *Android version* of the app.  
 
 - **Offline navigation**
 It does not require internet access and offers a wider selection of [navigation types](../routing/osmand-routing.md#routing-types) that can be used to calculate a route. Among them are *bicycle, boat, car, on foot, ski*, and *straight line*. There are currently 13 basic types of routing, as well as an external [BRouter](../routing/brouter.md) routing type that provides additional routing opportunities.  
@@ -169,7 +169,7 @@ The parameters in the **Development** section are mainly for advanced users and 
 <!--
 | Parameter | Description | Note |
 |:------------|:---------------|
-| *<Translate android="true" ids="use_live_routing"/>*  | Allows to use [OsmAnd Live updates](../../personal/maps-resources.md#osmand-live) while routing. Note, that we recommend to use this option for testing purposes only. |   
+| *<Translate android="true" ids="use_live_routing"/>*  | Allows using [OsmAnd Live updates](../../personal/maps-resources.md#osmand-live) while routing. Note, that we recommend using this option for testing purposes only. |   
 | *<Translate android="true" ids="use_two_phase_routing"/>*  | Adds an extra phase to the default (A*) algorithm to improve the quality of the calculated route. This option may be useful for finding routes in large and complex road networks, although it may take more time for route calculation. |  
 | *<Translate android="true" ids="use_fast_recalculation"/>* | <Translate android="true" ids="use_fast_recalculation_desc"/>  |   
 -->
@@ -230,9 +230,9 @@ If you select a track as your destination point, you need to use the [Attach to 
 
 </Tabs>  
 
-The **Screen alert** navigation setting allows you to enable the [**Alerts Widget**](../../widgets/nav-widgets.md#alert-widget). *Details:*
+The **Screen alert** navigation setting enable the [**Alerts Widget**](../../widgets/nav-widgets.md#alert-widget). *Details:*
 
-- When you approach one of the supported types of obstacles on the road, notifications appear in the lower-left corner of the map.
+- When you approach one of the supported obstacles on the road, notifications appear in the lower-left corner of the map.
 - If you configure the [*voice and text prompts*](../../navigation/guidance/voice-navigation.md) available in the OsmAnd app, you'll have a more comfortable and safer trip.
 - The appearance and timing of the prompts depend on your speed settings. You can find them [here](../../../technical/algorithms/voice-prompt-triggering.md).  
 - The behavior of *Screen Alerts* is also affected by the [*Show points along the route*](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route) setting.
@@ -296,7 +296,7 @@ You can learn how the behavior of the map changes during navigation in the artic
 
 </Tabs>  
 
-With the **Customize Route Line** setting, you can choose the appearance of the route line that will be visible on the map during navigation. You can choose the *color*, the *width of the line*, and the display of the *turn arrows* on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Map screen during navigation* in the section [*Route line appearance*](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
+With the **Customize Route Line** setting, you can choose the appearance of the route line that will be visible on the map during navigation. You can select the *color*, the *width of the line*, and the display of the *turn arrows* on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Map screen during navigation* in the section [*Route line appearance*](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
 
 
 ## Vehicle Parameters
@@ -359,7 +359,7 @@ Vehicle parameters affect navigation and route construction because they determi
 - The vehicle parameters can be set manually.
 - If you manually select the vehicle measurement parameter, the application will offer you the closest value from the ready-made list. This is necessary to avoid errors and build the route more correctly.
 - You can choose vehicle parameters from a ready-made list of sizes.
-- Do not set the size, *None*, which means that no restrictions on the selected parameter will be applied.  
+- Do not set the size, *None*, meaning no restrictions on the selected parameter will be applied.  
 
 #### Limits
 
@@ -434,7 +434,7 @@ OsmAnd supports the following units for capacity:
 
 **Applicability:**
 
-The **Fuel tank capacity** setting is only available in vehicle-based navigation. For navigation types such as *Bicycle*, *Horseback riding*, *On foot*, and *Ski*, this parameter is not displayed in the Vehicle Parameters.
+The **Fuel tank capacity** setting is only available in vehicle-based navigation. For navigation types such as *Bicycle*, *Horseback riding*, *On foot*, and *Ski*, this parameter is not displayed in the Vehicle Parameters.
 
 By entering the exact capacity of your fuel tank, the app can provide a more tailored experience, including:
 

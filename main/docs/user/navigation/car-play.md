@@ -25,7 +25,7 @@ To use *CarPlay* on your vehicle screen, follow these steps:
 2. [Connect your device](https://support.apple.com/en-gb/HT203412) to your vehicle multimedia system using a USB port or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use *CarPlay* on your device.
 3. Once connected, the *CarPlay interface* will automatically appear on your vehicle screen with all available apps. If the *CarPlay home screen* does not appear, select the *CarPlay logo* on the vehicle display.  
 
-**_Note_**: CarPlay is not a direct mirror of the OsmAnd mobile app. It features a simplified interface focused on essential navigation functions to ensure safe driving. Some advanced features may not be supported due to platform limitations.
+***Note***: CarPlay is not a direct replication of the OsmAnd mobile app. It has a simplified interface, focusing on essential navigation functions to ensure safe driving. Some advanced features are not supported due to platform limitations.
 
 ### Connection Screen
 
@@ -75,7 +75,7 @@ To use the iOS version of the OsmAnd app in *CarPlay*, you have to purchase a [p
 6. Once you have completed your route, you can deactivate *CarPlay* by disconnecting the device from your vehicle multimedia system.
 
 :::note
-All categories for **route endpoint** selection, *[History](#history), [POIs](#poi-categories), [Markers](#map-markers), [Search](#search), [Favourites](#favorites), and [Tracks](#tracks)* may contain no more list items than your vehicle multimedia system provides. Typically in most vehicles, lists are dynamically limited to 12 or 24 items. This means that the list in *CarPlay* may not be complete. The total number of items and the actual number of items displayed is indicated under the folder name.
+All categories for **route endpoint** selection, *[History](#history), [POIs](#poi-categories), [Markers](#map-markers), [Search](#search), [Favorites](#favorites), and [Tracks](#tracks)* may contain no more list items than your vehicle multimedia system provides. Typically in most vehicles, lists are dynamically limited to 12 or 24 items. This means that the list in *CarPlay* may not be complete. The total number of items and the actual number of items displayed is indicated under the folder name.
 :::  
 
 

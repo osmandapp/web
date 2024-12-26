@@ -80,7 +80,7 @@ This feature is available for the iOS version of the OsmAnd app.
 
 ![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
-The [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) is used when connected to your vehicle's [CarPlay software](https://support.apple.com/en-gb/HT205634) and helps you make the most of the optimized version of the OsmAnd app by using the audio and video systems to display data on your phone.
+The [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) is used when connected to your vehicle's [CarPlay software](https://support.apple.com/en-gb/HT205634) and helps you make the most of the optimized version of the OsmAnd app using the audio and video systems to display data on your phone.
 
 
 ### Data Storage Folder
