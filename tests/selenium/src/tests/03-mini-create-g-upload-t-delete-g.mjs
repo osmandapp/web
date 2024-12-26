@@ -13,7 +13,7 @@ export default async function test() {
     await actionLogIn();
 
     const folder = 'upload track';
-    const trackName = 'test-routed-osrm';
+    const trackName = 'test-routed-osmand';
     const tracks = getFiles({ folder: 'gpx' });
 
     await clickBy(By.id('se-show-menu-tracks'));
