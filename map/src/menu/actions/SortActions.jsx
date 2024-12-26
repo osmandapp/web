@@ -25,10 +25,10 @@ function byAlpha(files, reverse) {
     });
 }
 
-export function byTime(files, reverse, isFavGroups = false) {
+export function byTime(files, reverse) {
     return [...files].sort((a, b) => {
-        const A = getGpxTime({ f: a, reverse, isFavGroups });
-        const B = getGpxTime({ f: b, reverse, isFavGroups });
+        const A = getGpxTime({ f: a, reverse });
+        const B = getGpxTime({ f: b, reverse });
         if (A === B) {
             return az(a.name, b.name);
         }
