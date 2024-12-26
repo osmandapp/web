@@ -318,7 +318,7 @@ export default function MainMenu({
     }
 
     function selectMenu({ item }) {
-        closeSubPages();
+        closeSubPages({});
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
