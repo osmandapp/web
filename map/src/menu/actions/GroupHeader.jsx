@@ -64,7 +64,7 @@ export default function GroupHeader({
             } else if (setSortGroups) {
                 const files = ctx.favorites.groups;
                 if (files) {
-                    setSortGroups(byTime(files, true));
+                    setSortGroups(byTime(files, true, true));
                 }
             }
         }

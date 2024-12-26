@@ -1249,18 +1249,27 @@ function evaluateMonthNames() {
     return monthNames;
 }
 
-export const getGpxTime = ({ f, reverse = false, creationTime = false }) => {
+export const getGpxTime = ({ f, reverse = false, creationTime = false, isFavGroups = false }) => {
     const raw = [];
     // fill in raw timestamps (unixtime * 1000), including undefined values
-    raw.push(f?.details?.metadata?.time);
-    raw.push(f?.metaData?.ext?.time);
-    raw.push(f?.ext?.time);
-    raw.push(f?.clienttimems);
-    raw.push(f?.file?.clienttimems);
-
-    if (!creationTime && !f?.clienttimems && !f?.file?.clienttimems) {
-        raw.push(f?.updatetimems);
-        raw.push(f?.file?.updatetimems);
+    if (creationTime) {
+        raw.push(f?.details?.metadata?.time); // gpx - meta (cloud track)
+        raw.push(f?.metaData?.ext?.time); // gpx - meta (local track)
+        raw.push(f?.clienttimems); // uploaded (cloud timestamp?)
+        raw.push(f?.file?.clienttimems); // uploaded for favorites group(cloud timestamp?)
+        raw.push(f?.ext?.time); // uploaded for favorites group(cloud timestamp?)
+    } else {
+        if (isFavGroups) {
+            raw.push(f?.clienttimems ?? f?.updatetimems);
+        } else {
+            raw.push(getAnalysisData(f)?.startTime); // cloud - stored analysis
+            raw.push(f?.details?.metadata?.time); // gpx - meta (cloud track)
+            raw.push(f?.metaData?.ext?.time); // gpx - meta (local track)
+            raw.push(f?.clienttimems); // uploaded (cloud timestamp?)
+            raw.push(f?.file?.clienttimems); // uploaded for favorites group(cloud timestamp?)
+            raw.push(f?.updatetimems); // updated (cloud timestamp?)
+            raw.push(f?.ext?.time); // updated for favorites group(cloud timestamp?)
+        }
     }
 
     // validate raw to avoid using illegal values
