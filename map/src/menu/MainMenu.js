@@ -106,11 +106,13 @@ export default function MainMenu({
 
     const navigate = useNavigate();
 
-    function closeSubPages() {
+    function closeSubPages({ wptDetails = true }) {
         ctx.setOpenGroups([]);
         ctx.setOpenVisibleMenu(false);
         ctx.setOpenProFeatures(null);
-        ctx.setSelectedWpt(null);
+        if (wptDetails) {
+            ctx.setSelectedWpt(null);
+        }
         ctx.setLoadingContextMenu(false);
     }
 
@@ -125,7 +127,7 @@ export default function MainMenu({
         if (location.pathname === MAIN_URL_WITH_SLASH) {
             ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
         }
-        closeSubPages();
+        closeSubPages({ wptDetails: false });
         const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
         const openCloudTrackAfterSave =
             ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
