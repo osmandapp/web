@@ -141,13 +141,13 @@ The button allows you to assign a single layer or a list of layers that change c
 
 ### Change Position on the Map
 
-The *Quick Action* widget appears at the bottom corner of the map screen when you first enable it. You can move the widget to any part of the screen by holding and dragging.
+The *Quick Action* widget appears at the bottom corner of the map screen when you first enable it. You can move the widget to any part of the screen by holding and dragging. For precise and accurate placement of buttons on the map screen, they are automatically aligned to the nearest invisible grid position when dragged.
 
 - **Initial appearance**. By default, the quick action widget is placed in the lower right corner of the map interface.
 
     ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png)
 
-- **Move the widget**. Long tap the widget and drag it to reposition it anywhere on the screen, allowing you to customize your map interface.
+- **Move the widget**. By long pressing and dragging the widget, you can reposition it on the screen, with automatic column and row alignment.  
 
     ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png)
 
