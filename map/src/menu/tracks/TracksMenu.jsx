@@ -16,6 +16,8 @@ import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map
 import { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 
+export const DEFAULT_SORT_METHOD = 'time';
+
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
 
@@ -30,13 +32,13 @@ export default function TracksMenu() {
         if (!isEmpty(ctx.tracksGroups)) {
             let defGroup = ctx.tracksGroups.find((g) => g.name === DEFAULT_GROUP_NAME);
             setDefaultGroup(defGroup ?? null);
-            // sort default track group
-            if (ctx.selectedSort?.tracks && ctx.selectedSort.tracks[DEFAULT_GROUP_NAME]) {
+
+            if (defGroup?.groupFiles && (defGroup?.groupFiles?.length > 1 || ctx.tracksGroups?.length > 1)) {
                 doSort({
-                    method: ctx.selectedSort.tracks[DEFAULT_GROUP_NAME],
+                    method: ctx.selectedSort?.tracks?.[DEFAULT_GROUP_NAME] ?? DEFAULT_SORT_METHOD,
                     setSortFiles,
                     setSortGroups,
-                    files: defGroup.groupFiles,
+                    files: defGroup?.groupFiles,
                     groups: ctx.tracksGroups,
                 });
             }

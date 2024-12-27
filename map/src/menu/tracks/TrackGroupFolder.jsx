@@ -10,6 +10,7 @@ import Empty from '../errors/Empty';
 import TrackLoading from './TrackLoading';
 import { allMethods, doSort } from '../actions/SortActions';
 import { isEmpty } from 'lodash';
+import { DEFAULT_SORT_METHOD } from './TracksMenu';
 
 export default function TrackGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -18,8 +19,6 @@ export default function TrackGroupFolder({ folder }) {
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
     const [, height] = useWindowSize();
-
-    const DEFAULT_SORT_METHOD = 'time';
 
     useEffect(() => {
         if (ctx.tracksGroups) {
@@ -42,17 +41,15 @@ export default function TrackGroupFolder({ folder }) {
             setSortGroups([]);
         }
 
-        // sort track group
-        doSort({
-            method:
-                ctx.selectedSort?.tracks && ctx.selectedSort.tracks[folder.fullName]
-                    ? ctx.selectedSort.tracks[folder.fullName]
-                    : DEFAULT_SORT_METHOD,
-            setSortFiles,
-            setSortGroups,
-            files: group.groupFiles,
-            groups: group.subfolders,
-        });
+        if (folder?.groupFiles?.length > 1 || folder?.subfolders?.length > 1) {
+            doSort({
+                method: ctx.selectedSort?.tracks?.[folder.fullName] ?? DEFAULT_SORT_METHOD,
+                setSortFiles,
+                setSortGroups,
+                files: folder.groupFiles,
+                groups: folder.subfolders,
+            });
+        }
     }, [folder]);
 
     const trackItems = useMemo(() => {

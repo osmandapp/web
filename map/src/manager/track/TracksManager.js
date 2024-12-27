@@ -1252,7 +1252,7 @@ function evaluateMonthNames() {
 export const getGpxTime = ({ f, reverse = false, creationTime = false }) => {
     const raw = [];
     // fill in raw timestamps (unixtime * 1000), including undefined values
-    raw.push(f?.details?.metadata?.time)
+    raw.push(f?.details?.metadata?.time);
     raw.push(f?.metaData?.ext?.time);
     raw.push(f?.ext?.time);
     raw.push(f?.clienttimems);

@@ -57,28 +57,28 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 ### Locked Map Rotation
 
-![North is up](../../blog/2024-11-25-ios-4-9/img/north_locked.png)
+![North is up](../../blog/2024-12-26-ios-4-9/img/north_locked.png)
 
 A much-requested feature, [locked map rotation](https://github.com/osmandapp/OsmAnd/issues/17561#issuecomment-1623105410), now ensures the map remains consistently oriented with North at the top when the compass is set to the [**North is up**](../user/widgets/map-buttons.md#map-orientation-modes) mode. In this configuration, map rotation is disabled, but you can still zoom in and out freely.
 
 
 ## Search by Brand Names
 
-![Brand name iOS](../../blog/2024-11-25-ios-4-9/img/brand.png)
+![Brand name iOS](../../blog/2024-12-26-ios-4-9/img/brand.png)
 
 The new [brand search](../user//search/search-poi.md#how-to-use) feature simplifies finding your favorite coffee shops, hotels, or trusted stores by allowing searches for POIs using brand names.
 
 
 ## Widget Context Menu
 
-![Widget Context menu iOS](../../blog/2024-11-25-ios-4-9/img/widget_context_menu.png)
+![Widget Context menu iOS](../../blog/2024-12-26-ios-4-9/img/widget_context_menu.png)
 
 *Long tap* on any widget on the map screen to open the [context menu](../user/widgets/configure-screen.md#panel-widgets-settings). This quick access will help you customize widget settings and change the layout.
 
 
 ## Redesigned Graphs
 
-![Graph iOS](../../blog/2024-11-25-ios-4-9/img/graph.png)
+![Graph iOS](../../blog/2024-12-26-ios-4-9/img/graph.png)
 
 The elevation graphs have been redesigned to improve clarity. The Y-axis labels have been repositioned to eliminate overlap with the graph lines, so that all data remains readable at a glance.
 
@@ -87,7 +87,7 @@ The elevation graphs have been redesigned to improve clarity. The Y-axis labels 
 
 ### Total Tracks Statistics
 
-![Track stats iOS](../../blog/2024-11-25-ios-4-9/img/track_stats.png)
+![Track stats iOS](../../blog/2024-12-26-ios-4-9/img/track_stats.png)
 
 You can now view comprehensive [tracks statistics](../user/personal/tracks/manage-tracks.md#folder-statistics) right at the bottom of each folder. These details include:
 
@@ -103,14 +103,14 @@ For example:
 
 ### Tracks Filters for Search
 
-![Track filters iOS](../../blog/2024-11-25-ios-4-9/img/track_filters.png)
+![Track filters iOS](../../blog/2024-12-26-ios-4-9/img/track_filters.png)
 
 Finding specific tracks is more convenient with the new [track filters](https://osmand.net/docs/user/personal/tracks/smart-folder/#search-filter). You can filter results based on criteria like duration and length, ensuring you locate the exact track you need.
 
 
 ### Sort Subfolders
 
-![Track filters iOS](../../blog/2024-11-25-ios-4-9/img/subfolders_ios.png) ![Track filters iOS](../../blog/2024-11-25-ios-4-9/img/subfolders_1_ios.png)
+![Track filters iOS](../../blog/2024-12-26-ios-4-9/img/subfolders_ios.png) ![Track filters iOS](../../blog/2024-12-26-ios-4-9/img/subfolders_1_ios.png)
 
 Improved sorting functionality in the [Tracks tab](https://osmand.net/docs/user/personal/tracks/manage-tracks#folder-actions), enables you to organize subfolders systematically. Sorting options make it effortless to navigate your tracks, whether grouped by activity, location, or other preferences.  
 
@@ -135,7 +135,7 @@ To streamline the [Context menu](../user/map/map-context-menu.md#details), all P
 
 *Map context menu → Details → Within*
 
-![Within iOS](../../blog/2024-11-25-ios-4-9/img/within_ios.png)
+![Within iOS](../../blog/2024-12-26-ios-4-9/img/within_ios.png)
 
 OsmAnd has enhanced **Polygon Information**, making geographic data even more accessible. From the [Map Context menu](../user/map/map-context-menu.md#details), you can view nearby polygons with detailed attributes.  
 
@@ -170,7 +170,7 @@ The [profile appearance](../user/personal/profiles.md#my-location-appearance) ha
 
 *Menu → Configure screen → Custom buttons → + → Add button → Add action → Settings → Location position on screen*
 
-![Widget page](../../blog/2024-11-25-ios-4-9/img/conf_screen_display_position_ios.png)
+![Widget page](../../blog/2024-12-26-ios-4-9/img/conf_screen_display_position_ios.png)
 
 A new Quick Action button allows changing the [Location position on screen](../user/widgets/quick-action.md#settings). You can enable or disable the display of the previously selected *My Location* cursor position on the map.
 
@@ -186,7 +186,7 @@ How to set it up:
 
 *Menu → Configure screen → Custom buttons → + → Add acton → Inteface → Lock screen*
 
-![Lock screen](../../blog/2024-11-25-ios-4-9/img/lock_screen_ios.png)
+![Lock screen](../../blog/2024-12-26-ios-4-9/img/lock_screen_ios.png)
 
 Added a [Touch Screen Lock](../user/map/interact-with-map#touch-screen-lock) option in the Quick Actions menu for locking and unlocking the map interface with ease.
 
@@ -206,7 +206,7 @@ This release brings several CarPlay enhancements:
 
 ## Downloading dialog
 
-![Downloading dialog iOS](../../blog/2024-11-25-ios-4-9/img/downloading.png)
+![Downloading dialog iOS](../../blog/2024-12-26-ios-4-9/img/downloading.png)
 
 The newly introduced downloading dialog for *Maps & Resources*, *Context menus*, and the *First start screen* improves user experience by streamlining these interactions.
 
