@@ -41,8 +41,8 @@ export default function HeaderMenu({ showInstallBanner }) {
             <Toolbar>
                 <IconButton
                     target="_blank"
-                    component={Link}
-                    to={'/'}
+                    component="a"
+                    href="/"
                     className={styles.menuItem}
                     sx={{ fontWeight: '700 !important', ml: -2, mt: -0.5, mr: -0.77 }}
                 >
@@ -52,8 +52,8 @@ export default function HeaderMenu({ showInstallBanner }) {
                 <Box className={styles.menu}>
                     {pages.map((page) => (
                         <Button
-                            component={Link}
-                            to={page.url}
+                            component="a"
+                            href={page.url}
                             key={page.name}
                             className={styles.menuItem}
                             sx={page.url === '/map' ? { color: '#237bff !important' } : { color: '#1c1e21 !important' }}
