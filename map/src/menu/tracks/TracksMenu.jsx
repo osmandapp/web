@@ -33,12 +33,12 @@ export default function TracksMenu() {
             let defGroup = ctx.tracksGroups.find((g) => g.name === DEFAULT_GROUP_NAME);
             setDefaultGroup(defGroup ?? null);
 
-            if (defGroup?.groupFiles?.length > 1 || ctx.tracksGroups?.length > 1) {
+            if (defGroup?.groupFiles && (defGroup?.groupFiles?.length > 1 || ctx.tracksGroups?.length > 1)) {
                 doSort({
                     method: ctx.selectedSort?.tracks?.[DEFAULT_GROUP_NAME] ?? DEFAULT_SORT_METHOD,
                     setSortFiles,
                     setSortGroups,
-                    files: defGroup.groupFiles,
+                    files: defGroup?.groupFiles,
                     groups: ctx.tracksGroups,
                 });
             }
