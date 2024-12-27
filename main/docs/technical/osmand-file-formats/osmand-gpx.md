@@ -4,7 +4,11 @@ sidebar_position: 2
 
 # OsmAnd GPX
 
-The OsmAnd's GPX file format conforms to the GPX 1.1 specification with additional data written as extensions. There are several sections of such data:
+The OsmAnd's GPX file format conforms to the GPX 1.1 specification with additional data written as extensions.
+
+OsmAnd uses XML namespace `osmand:` for all OsmAnd-specific tags.
+
+There are several sections of such data:
 
 ## Track appearance
 
@@ -12,27 +16,98 @@ The following parameters customize the appearance of a track on the map. They ar
 
 #### Parameters
 
-|Name|Spec and Purpose|
-|:--------|:---------------|
-|[show_arrows]|Bool. "true" or "false". Show / hide arrows along the path line.|
-|[width]|String. "thin", "medium", "bold" or number 1-24. Width of the track line on the map. The thin, medium, and bold are style depended values (should be defined as currentTrackWidth attribute).|
-|[color]|String. Hex value "#AARRGGBB" or "#RRGGBB". Color of a track line on the map.|
-|[split_type]|String. "no_split", "distance" or "time". Split type for a track.|
-|[split_interval]|Double. Split interval for a track. Distance (meters), time (seconds).|
+|Name| Spec and Purpose                                                                                                                                                                              |
+|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|[color]| String. Hex value "#AARRGGBB" or "#RRGGBB". Color of a track line on the map.                                                                                                                 |
+|[width]| String. "thin", "medium", "bold" or number 1-24. Width of the track line on the map. The thin, medium, and bold are style depended values (should be defined as currentTrackWidth attribute). |
+|[show_arrows]| Bool. "true" or "false". Show / hide arrows along the path line.                                                                                                                              |
+|[show_start_finish]| Bool. "true" or "false". Show / hide edges of segments.                                                                                                                                 |
+|[split_type]| String. "no_split", "distance" or "time". Split type for a track.                                                                                                                             |
+|[split_interval]| Double. Split interval for a track. Distance (meters), time (seconds).                                                                                                                        |
+|[line_3d_visualization_by_type]| TODO|
+|[line_3d_visualization_wall_color_type]| TODO|
+|[line_3d_visualization_position_type]| TODO|
+|[vertical_exaggeration_scale]| TODO|
+|[elevation_meters]| TODO|
+|[color_palette]| TODO|
+|[coloring_type]| TODO|
 
 #### Example:
 
 ```xml
-<gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<gpx version="1.1" creator="OsmAnd~ 5.0.0" xmlns="https://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx" xmlns:gpxtpx="https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd">
 ...
   <extensions>
-    <show_arrows>true</show_arrows>
-    <color>#4e4eff</color>
-    <split_type>distance</split_type>
-    <split_interval>2000.0</split_interval>
-    <width>bold</width>
+    <osmand:color>#4e4eff</osmand:color>
+    <osmand:width>bold</osmand:width>
+    <osmand:show_arrows>true</osmand:show_arrows>
+    <osmand:split_type>distance</osmand:split_type>
+    <osmand:split_interval>2000.0</osmand:split_interval>
   </extensions>
 </gpx>
+```
+
+## Track Activity type
+
+Track Activity Type was introduced in [OsmAnd 4.9](/blog/osmand-android-4-9-released/#gpx-track-activities).
+Supported activity types: [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json)
+
+Activity Types are identified by `id` and stored in the Metadata extensions:
+
+```xml
+  <metadata>
+    <extensions>
+      <osmand:activity>off_road_motorcycling_dirt_biking</osmand:activity>
+    </extensions>
+  </metadata>
+```
+
+## Track Point Groups
+
+TODO
+
+## HTML in description
+
+HTML-code is allowed in Metadata `<desc>` and Waypoint `<desc>` tags.
+
+Characters `<` `>` and `&` must be replaced with `&lt;` `&gt;` `&amp;` to avoid confusion with XML tags.
+
+```xml
+<metadata>
+  <desc>
+    &lt;p&gt;
+        First paragraph will be displayed as &lt;b&gt;brief&lt;/b&gt; description.
+        HTML-tags are stripped in brief description.
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;h3&gt;Second paragraph&lt;/h3&gt;
+      &lt;b&gt;Hello, world!&lt;/b&gt;&lt;br/&gt;
+      &lt;img src="..."/&gt;&lt;br/&gt;
+      &lt;a href="..."&gt;url&lt;/a&gt;&lt;br/&gt;
+      &lt;table&gt; ... &lt;/table&gt;
+    &lt;/p&gt;
+  </desc>
+</metadata>
+```
+
+## Link and Text tags (Link-as-Image)
+
+Link and Text tags are supported for Metadata, Author and Waypoint extensions.
+
+Visually, Link href may specify URL to be displayed as an image for Track / Waypoint.
+
+```xml
+<metadata>
+  <link href="https://osmand.net/img/logo.png">
+    <text>optional text</text>
+  </link>
+</metadata>
+```
+
+```xml
+<wpt>
+  <link href="https://osmand.net/img/logo.png" />
+</wpt>
 ```
 
 ## Details of a track point (trkpt)
@@ -203,11 +278,13 @@ Increased compatibility of OsmAnd tracks with **Strava and Garmin Basecamp**. *T
 
 ```xml
 <extensions>
-    <gpxtpx:TrackPointExtension>
-        <gpxtpx:hr>107</gpxtpx:hr>
-        <gpxtpx:wtemp>107</gpxtpx:wtemp>
-        <gpxtpx:cad>107</gpxtpx:cad>
-    </gpxtpx:TrackPointExtension>
+  <gpxtpx:TrackPointExtension>
+    <gpxtpx:hr>107</gpxtpx:hr>
+    <gpxtpx:cad>107</gpxtpx:cad>
+    <gpxtpx:atemp>107</gpxtpx:atemp>
+    <gpxtpx:wtemp>107</gpxtpx:wtemp>
+    <gpxtpx:power>107</gpxtpx:power>
+  </gpxtpx:TrackPointExtension>
 </extensions>
 ```
 
@@ -218,13 +295,13 @@ Specific features such as special icons on the map, track lines appearance, sear
 
 ### Map line display
 
-Example (to do).
+Example (TODO).
 To be supported: color could be defined on trkseg, trk, metadata.
 
 ```xml
 <trk>
   <extensions>
-    <osmand:color></<osmand:color>
+    <osmand:color></osmand:color>
   </extensions>
 </trk>
 ```
@@ -238,7 +315,7 @@ To be supported: color could be defined on trkseg, trk, metadata.
 
 ### Map waypoints display
 
-Example
+Example (TODO)
 ```xml
 <extensions>
     <gpxtpx:TrackPointExtension>
