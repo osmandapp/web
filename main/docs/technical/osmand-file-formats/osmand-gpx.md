@@ -332,43 +332,78 @@ OsmAnd Cloud users can convert GPX tracks into OBF file using [OsmAnd Web Map](/
 
 `Login` -> `Tracks` -> `Choose folder` -> `Menu (⋮)` -> `Download as OBF collection`
 
-Resultant file can be imported to OsmAnd (supported by OsmAnd Android 5.0)
+Resultant file can be imported to OsmAnd (supported by OsmAnd Android 5.0+)
 
-### Map line display
+### Map Line color / width
 
-Example (TODO).
-To be supported: color could be defined on trkseg, trk, metadata.
+| GPX tag                 | Default | Spec and Purpose                                     |
+|:------------------------|:--------|:-----------------------------------------------------|
+| color                   | red     | Color: hex or text (see supported colors)            |
+| colour                  | -       | Override `color` tag                                 |
+| displaycolor            | -       | Override `color` tag                                 |
+| shield_waycolor         | -       | Override `color` tag                                 |
+| translucent_line_colors | no      | Set to "yes" to use semi-transparent line colors     |
+| width                   | thin    | Width: "thin", "medium", "bold", 1-24 or "roadstyle" |
+
+Supported colors: black blue brown darkyellow gray green lightblue lightgreen orange purple red white yellow
+
+Example:
 
 ```xml
-<trk>
+<gpx>
+  <trk>
+    ...
+  </trk>
   <extensions>
-    <osmand:color></osmand:color>
+    <osmand:color>yellow</osmand:color>
+    <osmand:width>roadstyle</osmand:width>
+    <osmand:translucent_line_colors>yes</osmand:translucent_line_colors>
   </extensions>
-</trk>
+</gpx>
 ```
 
-|Name|OBF name| Spec and Purpose|
-|:--------|:---------------|:---------------|
-| color | color | Color track is converted to predefined list (link) of colors | 
-| osmand:width | gpx_width | Width track to be displayed (converted to thin/thick/bold/medium), by default medium if not parsed | 
-| shield_bg, shield_fg, shield_fg2, shield_text, shield_textcolor  | - | Displays shields similar to OSMC (link) symbols in OsmAnd  | 
-| osmand:use_osmc_colors | use_osmc_colors | Now modifies color, width - displays transparent colors and different width. To be replaced with color / width? |
+### Map Line icons (shields)
 
-### Map waypoints display
+Line shields might be used to display [OSMC-symbol-styled](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) icons over the Track Line.
 
-Example (TODO)
+Shield is a special set of icons (1 background and 0-2 foreground) with optional text displayed over icons.
+
+OsmAnd supports variety of the icons used by OSM `osmc:symbol` tag, as well as text / textcolor / waycolor elements.
+
+Shields might display a short text over icons. The text is taken from `shield_text` or `ref` tags.
+
+If shields icons are not specified, an auto-sized yellow-shield will be used by default.
+
+| GPX tag          | Spec and Purpose                                    |
+|:-----------------|:----------------------------------------------------|
+| shield_bg        | Shield background icon name                         |
+| shield_fg        | Shield foreground icon name                         |
+| shield_fg_2      | Second foreground icon (optional)                   |
+| shield_text      | Text to display over Shield (optional)              |
+| shield_textcolor | Color of the text over Shield (optional)            |
+| shield_waycolor  | Override standard `color` of the track (optional)   |
+| ref              | Might be used as text if no `shield_text` specified |
+
+Example:
+
 ```xml
-<extensions>
-    <gpxtpx:TrackPointExtension>
-        <gpxtpx:hr>107</gpxtpx:hr>
-        <gpxtpx:wtemp>107</gpxtpx:wtemp>
-        <gpxtpx:cad>107</gpxtpx:cad>
-    </gpxtpx:TrackPointExtension>
-</extensions>
+<gpx>
+  <trk>
+    ...
+  </trk>
+  <extensions>
+    <osmand:shield_text>Hi!</osmand:shield_text>
+    <osmand:shield_fg>osmc_red_dot</osmand:shield_fg>
+    <osmand:shield_bg>osmc_white_bg</osmand:shield_bg>
+    <osmand:shield_waycolor>red</osmand:shield_waycolor>
+    <osmand:shield_textcolor>black</osmand:shield_textcolor>
+  </extensions>
+</gpx>
 ```
-- ...
 
-### General Track Info
+### Map waypoints display TODO
+
+### General Track Info TODO
 
 |Name|OBF name| Spec and Purpose|
 |:--------|:---------------|:---------------|
@@ -376,23 +411,29 @@ Example (TODO)
 | speed, lat, lon | POI calculated: avg_speed, ...  | To restore general information about speed |
 
 
-### Tracks Search
+### Tracks Search TODO
 
 Use route_id vs osm_id. Suggestion: differentiate OSM objects and other objects by prefix "OSM-...".
 
-- ...
+### Waypoints Search TODO
 
-### Waypoints Search
-
-- ...
-
-### Route Context menu
+### Route Context menu TODO
 
 - Description (POI section)
 - Custom extension tags are not supported yet (POI section)
 
-
-### Waypoint Context menu
+### Waypoint Context menu TODO
 
 - Description (POI section)
 - Custom extension tags are not supported yet (POI section)
+
+### OBF tags (technical details)
+
+| OBF tag                | Spec and Purpose                                            |
+|:-----------------------|:------------------------------------------------------------|
+| track_color            | From shield_waycolor/color/colour/displaycolor             |
+| extensions_extra_tags | Extra tags for `<gpx><extension>` in JSON format            |
+| metadata_extra_tags | Extra tags for `<metadata><extension>` in JSON format       |
+| wpt_extra_tags         | Extra tags for each point `<wpt><extension>` in JSON format |
+
+TODO
