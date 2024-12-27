@@ -16,21 +16,21 @@ The following parameters customize the appearance of a track on the map. They ar
 
 #### Parameters
 
-|Name| Spec and Purpose                                                                                                                                                                              |
-|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|[color]| String. Hex value "#AARRGGBB" or "#RRGGBB". Color of a track line on the map.                                                                                                                 |
-|[width]| String. "thin", "medium", "bold" or number 1-24. Width of the track line on the map. The thin, medium, and bold are style depended values (should be defined as currentTrackWidth attribute). |
-|[show_arrows]| Bool. "true" or "false". Show / hide arrows along the path line.                                                                                                                              |
-|[show_start_finish]| Bool. "true" or "false". Show / hide edges of segments.                                                                                                                                 |
-|[split_type]| String. "no_split", "distance" or "time". Split type for a track.                                                                                                                             |
-|[split_interval]| Double. Split interval for a track. Distance (meters), time (seconds).                                                                                                                        |
-|[line_3d_visualization_by_type]| TODO|
-|[line_3d_visualization_wall_color_type]| TODO|
-|[line_3d_visualization_position_type]| TODO|
-|[vertical_exaggeration_scale]| TODO|
-|[elevation_meters]| TODO|
-|[color_palette]| TODO|
-|[coloring_type]| TODO|
+|Name| Spec and Purpose                                                                                                                                                                                                     |
+|:--------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|[color]| String. Hex value "#AARRGGBB" or "#RRGGBB". Color of a track line on the map.                                                                                                                                        |
+|[width]| String. "thin", "medium", "bold" or number 1-24. Width of the track line on the map. The thin, medium, and bold are style depended values (should be defined as currentTrackWidth attribute).                        |
+|[show_arrows]| Bool. "true" or "false". Show / hide arrows along the path line.                                                                                                                                                     |
+|[show_start_finish]| Bool. "true" or "false". Show / hide edges of segments.                                                                                                                                                              |
+|[split_type]| String. "no_split", "distance" or "time". Split type for a track.                                                                                                                                                    |
+|[split_interval]| Double. Split interval for a track. Distance (meters), time (seconds).                                                                                                                                               |
+|[line_3d_visualization_by_type]| String. "none", "altitude", "shared_string_speed", "map_widget_ant_heart_rate", "map_widget_ant_bicycle_cadence", "map_widget_ant_bicycle_power", "shared_string_temperature", "shared_string_speed", "fixed_height" |
+|[line_3d_visualization_wall_color_type]| String. "none", "solid", "downward_gradient", "upward_gradient", "altitude", "slope", "speed"                                                                                                                        |
+|[line_3d_visualization_position_type]| String. "top", "bottom", "top_bottom"                                                                                                                                                                                |
+|[vertical_exaggeration_scale]| Float. Multiplier to scale the value of line_3d_visualization_by_type. Default is 1.0                                                                                                                                |
+|[elevation_meters]| Float. Used with "fixed_height" in line_3d_visualization_by_type. Default is 1000                                                                                                                                    |
+|[color_palette]| TODO                                                                                                                                                                                                                 |
+|[coloring_type]| TODO                                                                                                                                                                                                                 |
 
 #### Example:
 
@@ -62,9 +62,33 @@ Activity Types are identified by `id` and stored in the Metadata extensions:
   </metadata>
 ```
 
-## Track Point Groups
+## Waypoints groups
 
-TODO
+Track Waypoints can be sorted into Points groups.
+`osmand:points_groups` located in main GPX extensions:
+
+```xml
+<gpx>
+  <wpt lat="1.234" lon="5.678">
+    <type>aqueduct</type>
+    <name>Look up to see the water</name>
+  </wpt>
+  <wpt lat="5.678" lon="1.234">
+    <type>castle</type>
+    <name>Beware of ghosts</name>
+  </wpt>
+  <wpt lat="66.666" lon="66.666">
+    <type>castle</type>
+    <name>The house of Beetlejuice</name>
+  </wpt>
+  <extensions>
+    <osmand:points_groups>
+      <group name="castle" color="#FF0000" icon="historic_castle" background="circle"/>
+      <group name="aqueduct" color="#0000FF" icon="bridge_structure_arch" background="circle"/>
+    </osmand:points_groups>
+  </extensions>
+</gpx>
+```
 
 ## HTML in description
 
@@ -90,9 +114,9 @@ Characters `<` `>` and `&` must be replaced with `&lt;` `&gt;` `&amp;` to avoid 
 </metadata>
 ```
 
-## Link and Text tags (Link-as-Image)
+## Link tag (Link-as-Image)
 
-Link and Text tags are supported for Metadata, Author and Waypoint extensions.
+Link and Text tags are supported in Metadata, Author and Waypoint extensions.
 
 Visually, Link href may specify URL to be displayed as an image for Track / Waypoint.
 
@@ -129,6 +153,22 @@ Written to a gpx file while recording a track.
       <speed>5.02</speed>
     </extensions>
   </trkpt>
+```
+
+## Tags name for sensor data
+
+Increased compatibility of OsmAnd tracks with **Strava and Garmin Basecamp**. *Temperature, Heart Rate, Bicycle Power, Bicycle Cadence, and Bicycle Speed* sensors are enrolled in the Garmin https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd extension scheme.
+
+```xml
+<extensions>
+  <gpxtpx:TrackPointExtension>
+    <gpxtpx:hr>107</gpxtpx:hr>
+    <gpxtpx:cad>107</gpxtpx:cad>
+    <gpxtpx:atemp>107</gpxtpx:atemp>
+    <gpxtpx:wtemp>107</gpxtpx:wtemp>
+    <gpxtpx:power>107</gpxtpx:power>
+  </gpxtpx:TrackPointExtension>
+</extensions>
 ```
 
 ## Calculated route(s)
@@ -272,26 +312,16 @@ A gpx file may contain several routes. Each of them is contained in a specific s
 </gpx>
 ```
 
-## Tags name for sensor data
-
-Increased compatibility of OsmAnd tracks with **Strava and Garmin Basecamp**. *Temperature, Heart Rate, Bicycle Power, Bicycle Cadence, and Bicycle Speed* sensors are enrolled in the Garmin https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd extension scheme.
-
-```xml
-<extensions>
-  <gpxtpx:TrackPointExtension>
-    <gpxtpx:hr>107</gpxtpx:hr>
-    <gpxtpx:cad>107</gpxtpx:cad>
-    <gpxtpx:atemp>107</gpxtpx:atemp>
-    <gpxtpx:wtemp>107</gpxtpx:wtemp>
-    <gpxtpx:power>107</gpxtpx:power>
-  </gpxtpx:TrackPointExtension>
-</extensions>
-```
-
-## GPX Collection in OsmAnd Binary Format (OBF)
+## GPX in OsmAnd Binary Format (OBF)
 
 It's possible to convert multiple GPX files into OsmAnd Maps (.obf), so this collection could contain thousands GPX tracks and work flawlessly. 
 Specific features such as special icons on the map, track lines appearance, search functionality are supported via GPX extensions tags.
+
+OsmAnd Cloud users can convert GPX tracks into OBF file using [OsmAnd Web Map](/map).
+
+`Login` -> `Tracks` -> `Choose folder` -> `Menu (⋮)` -> `Download as OBF collection`
+
+Resultant file can be imported to OsmAnd (supported by OsmAnd Android 5.0)
 
 ### Map line display
 
