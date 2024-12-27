@@ -12,7 +12,7 @@ import actionIdleWait from '../actions/actionIdleWait.mjs';
 export const UPLOAD_TRACK = 'upload track';
 
 export default async function test() {
-    const trackName = 'test-routed-osmand';
+    const trackName = 'test-routed-osrm';
     const tracks = getFiles({ folder: 'gpx' });
     const folder = UPLOAD_TRACK;
 
