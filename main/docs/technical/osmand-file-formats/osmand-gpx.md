@@ -29,8 +29,19 @@ The following parameters customize the appearance of a track on the map. They ar
 |[line_3d_visualization_position_type]| String. "top", "bottom", "top_bottom"                                                                                                                                                                                |
 |[vertical_exaggeration_scale]| Float. Multiplier to scale the value of line_3d_visualization_by_type. Default is 1.0                                                                                                                                |
 |[elevation_meters]| Float. Used with "fixed_height" in line_3d_visualization_by_type. Default is 1000                                                                                                                                    |
-|[color_palette]| TODO                                                                                                                                                                                                                 |
-|[coloring_type]| TODO                                                                                                                                                                                                                 |
+|[coloring_type]| String. "solid", "speed", "altitude", "slope", "routeInfo_roadClass", "routeInfo_surface", "routeInfo_smoothness"                                                                                                    |
+|[color_palette]| String. "default" or user-defined [(see color schemes)](/docs/user/personal/color-palette-schemes)                                                                                                                   |
+
+#### coloring_type in details
+| Type                 | Details                                          |
+|:---------------------|:-------------------------------------------------|
+| solid                | Solid-colored track according to tag `color`     |
+| speed                | Gradiently filled according to `trkpt` speed     |
+| altitude             | Gradiently filled according to `trkpt` elevation |
+| slope                | Gradiently filled according to `trkpt` slope     |
+| routeInfo_roadClass  | Color based on OSM road type                     |
+| routeInfo_surface    | Color based on OSM road surface                  |
+| routeInfo_smoothness | Color based on OSM road smoothness               |
 
 #### Example:
 
