@@ -15,6 +15,7 @@ import {
     Box,
     Grid,
     ButtonGroup,
+    Divider,
 } from '@mui/material';
 import AppContext, {
     isLocalTrack,
@@ -27,6 +28,8 @@ import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from './routemenu.module.css';
+import btn from './../login/login.module.css';
+import { apiPost } from '../../util/HttpApi';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -198,6 +201,17 @@ export default function RouteMenu() {
                 ctx.setSelectedGpxFile(track);
                 ctx.setUpdateInfoBlock(true);
             }
+        }
+    }
+
+    async function getTracksBySegment() {
+        const coordinates = routeObject.getRoute().features[0].geometry.coordinates;
+        const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-tracks-by-seg`, coordinates, {
+            apiCache: true,
+        });
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
         }
     }
 
@@ -408,7 +422,19 @@ export default function RouteMenu() {
                     </Button>
                 )}
             </ButtonGroup>
-            <MenuItem divider={true} />
+            <Divider sx={{ mt: '15px', mb: '12px' }} />
+            {ctx.develFeatures && (
+                <Box sx={{ mx: 2 }}>
+                    <Button
+                        variant="contained"
+                        component="span"
+                        className={btn.blueButton}
+                        onClick={getTracksBySegment}
+                    >
+                        Get tracks by segment
+                    </Button>
+                </Box>
+            )}
             {openSettings && <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenSettings} />}
         </>
     );
