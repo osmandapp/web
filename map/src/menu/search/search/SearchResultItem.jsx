@@ -11,12 +11,13 @@ import { getObjIdSearch, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../ma
 import {
     CATEGORY_NAME,
     CATEGORY_TYPE,
+    MAIN_CATEGORY_KEY_NAME,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
     SEPARATOR,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getPoiParentCategory } from '../../../manager/SearchManager';
+import { getPoiParentCategory, parseTagWithLang } from '../../../manager/SearchManager';
 import { LatLng } from 'leaflet';
 import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 
@@ -142,10 +143,17 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                 });
             } else {
                 // search by brand
+                let lang;
+                let type = item.properties[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
+                if (type) {
+                    const brandRes = parseTagWithLang(type);
+                    lang = brandRes.lang;
+                }
                 setSearchValue({
                     query: item.properties[CATEGORY_NAME],
                     key: item.properties[CATEGORY_NAME],
                     type: SEARCH_TYPE_CATEGORY,
+                    lang,
                 });
             }
         }
