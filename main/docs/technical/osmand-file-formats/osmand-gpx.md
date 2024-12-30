@@ -340,7 +340,7 @@ A gpx file may contain several routes. Each of them is contained in a specific s
 It's possible to convert multiple GPX files into OsmAnd Maps (.obf), so this collection could contain thousands GPX tracks and work flawlessly. 
 Specific features such as special icons on the map, track lines appearance, search functionality are supported via GPX extensions tags.
 
-OsmAnd Cloud users can convert GPX tracks into OBF file using [OsmAnd Web Map](/map).
+OsmAnd Cloud users can convert GPX tracks into OBF file using [OsmAnd Web Map](https://osmand.net/map).
 
 `Login` -> `Tracks` -> `Choose folder` -> `Menu (⋮)` -> `Download as OBF collection`
 
