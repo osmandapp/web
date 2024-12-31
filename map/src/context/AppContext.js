@@ -29,6 +29,7 @@ export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 export const OBJECT_TYPE_TRAVEL = 'travel';
+export const OBJECT_TYPE_SHARE_FILE = 'share_file';
 
 export const defaultConfigureMapStateValues = {
     showFavorites: true,
@@ -300,6 +301,11 @@ export const AppContextProvider = (props) => {
     const [travelFilter, setTravelFilter] = useState(null);
     const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
     const [selectedTravelRoute, setSelectedTravelRoute] = useState(null);
+    // share
+    const [shareFile, setShareFile] = useState(null);
+    const [updatedRequestList, setUpdatedRequestList] = useState([]);
+    const [shareFileMarkers, setShareFileMarkers] = useState(null);
+    const [shareFilesCache, setShareFilesCache] = useState({});
 
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -689,6 +695,14 @@ export const AppContextProvider = (props) => {
                 setSelectedSearchMarker,
                 zoomToMapObj,
                 setZoomToMapObj,
+                shareFile,
+                setShareFile,
+                updatedRequestList,
+                setUpdatedRequestList,
+                shareFileMarkers,
+                setShareFileMarkers,
+                shareFilesCache,
+                setShareFilesCache,
             }}
         >
             {props.children}

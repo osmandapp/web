@@ -1,5 +1,5 @@
 import { useInView } from 'react-intersection-observer';
-import TracksManager from '../../manager/track/TracksManager';
+import { getFileName } from '../../manager/track/TracksManager';
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
@@ -17,7 +17,7 @@ export default function ChangesItem({ item, changes, setChanges }) {
 
     // useInView hook from `react-intersection-observer` for lazy loading.
     const { ref, inView } = useInView();
-    const fileName = item.file ? TracksManager.getFileName(item.file) : null;
+    const fileName = item.file ? getFileName(item.file) : null;
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const anchorEl = useRef(null);
