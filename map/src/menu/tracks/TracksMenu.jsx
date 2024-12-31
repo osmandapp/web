@@ -27,6 +27,10 @@ export default function TracksMenu() {
     const [, height] = useWindowSize();
     const { t } = useTranslation();
 
+    // const sharedWithMe = useMemo(() => {
+    //
+    // }
+
     // get gpx files and create groups
     useEffect(() => {
         if (!isEmpty(ctx.tracksGroups)) {
