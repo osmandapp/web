@@ -205,7 +205,11 @@ export default function RouteMenu() {
     }
 
     async function getTracksBySegment() {
-        const coordinates = routeObject.getRoute().features[0].geometry.coordinates;
+        const startPoint = routeObject.getOption('route.points.start');
+        const finishPoint = routeObject.getOption('route.points.finish');
+        const coordinates = [startPoint, finishPoint].map((point) => {
+            return [point.lng, point.lat];
+        });
         const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-tracks-by-seg`, coordinates, {
             apiCache: true,
         });
