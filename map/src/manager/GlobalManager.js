@@ -5,6 +5,11 @@ export const MENU_INFO_CLOSE_SIZE = '0px';
 export const HEADER_SIZE = '60px';
 export const INSTALL_BANNER_SIZE = '60px';
 
+export const GPX = 'GPX';
+export const FAVOURITES = 'FAVOURITES';
+
+export const FILE_WAS_DELETED = 'file was deleted';
+
 export const MAIN_PAGE_TYPE = 'main';
 export const MAIN_URL = '/map';
 export const MAIN_URL_WITH_SLASH = '/map/';
@@ -21,3 +26,5 @@ export const TRAVEL_URL = 'travel/';
 export const OLD_LOGIN_URL = 'dialog-account/';
 export const LOGIN_URL = 'account/';
 export const DELETE_ACCOUNT_URL = 'delete-account/';
+export const SHARE_FILE_URL = 'share/join/:uuid';
+export const SHARE_FILE_MAIN_URL = 'share/join/';

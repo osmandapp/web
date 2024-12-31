@@ -22,6 +22,7 @@ import {
     EXPLORE_URL,
     OLD_LOGIN_URL,
     TRAVEL_URL,
+    SHARE_FILE_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -34,6 +35,7 @@ import SettingsMenu from './menu/settings/SettingsMenu';
 import ConfigureMap from './menu/configuremap/ConfigureMap';
 import LoginMenu from './menu/login/LoginMenu';
 import TravelMenu from './menu/travel/TravelMenu';
+import ShareFile from './menu/share/ShareFile';
 
 export let globalNavigate = () => null;
 
@@ -67,6 +69,7 @@ const App = () => {
                         <Route path={PLANROUTE_URL} element={<PlanRouteMenu />}></Route>
                         <Route path={TRAVEL_URL} element={<TravelMenu />}></Route>
                         <Route path={SETTINGS_URL} element={<SettingsMenu />}></Route>
+                        <Route path={SHARE_FILE_URL} element={<ShareFile />}></Route>
                     </Route>
                 </Routes>
             </BrowserRouter>
