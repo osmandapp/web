@@ -11,7 +11,7 @@ sidebar_position: 6
   $ xcode-select --install
   ```
   Or in case of errors try to download and install it from Apple site: <https://developer.apple.com/download/all/?q=xcode>.
-  
+
 4. Log in into Xcode account (optional)
   In case if you don't have Apple Developer account. Open Xcode and go to preferences (via top menu)
   ```
@@ -20,7 +20,7 @@ sidebar_position: 6
   Press `+` button. You can log in with your AppleID (login and password from your iOS/macOS devices). Follow Xcode instructions.
   For OsmAnd team members: send your AppleID login, so you will be added to to developers list. When you'll get email with invite message activate it.
   Close Xcode.
-  
+
 5. Install command-line tools- cmake, svn, cocoapods
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -44,7 +44,7 @@ sidebar_position: 6
 
 7. Create new text file. Or update if it exist.
   ```
-  $ mkdir ~/.gradle 
+  $ mkdir ~/.gradle
   $ nano ~/.gradle/gradle.properties
   ```
 
@@ -82,7 +82,7 @@ org.gradle.caching=true
   $ cd ios
   $ ./prepare.sh
   ```
-  
+
   Error: `Xcode not set up properly. You may need to confirm the license...`.
   Solution: switch XcodeCommandLineTools to Xcode app, confirm the license and switch it back.
   ```
@@ -104,8 +104,8 @@ org.gradle.caching=true
   ```
 
   Solution 5: If you've got error like this: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Go to folded ```core/external/qtbase-ios/``` and delete all folders starting with ```upstream```.  And run `$ ./prepare.sh` again.
-  
-  
+
+
 9. Open `osmand.xcworkspace` in Xcode
 10. First build.
   Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Select as target your device or as one of iOS simulators. But don't use default 'Any iOS Device (arm64)'. Build the project (play button).
@@ -119,7 +119,7 @@ org.gradle.caching=true
   - Restart your computer. (Yes, it can help).
   - Then run `$ ./prepare.sh`
   - Open XCode and try to build the project again.
-  
+
 12. Troubleshooting (m1 mac)
   - In case of ```ld: library not found for -lOsmAndCore_static_standalone```:
   - Project Navigator -> OsmAnd_projects -> OsmAnd_projects (in Project/Targets list) -> Build settings -> All -> Architectures -> Excluded Architectures -> Debug
@@ -129,6 +129,7 @@ org.gradle.caching=true
 13. Kotlin debug addon (optional)
 ```
 $ brew install xcode-kotlin
+$ xcode-kotlin install
 $ xcode-kotlin sync
 ```
 
