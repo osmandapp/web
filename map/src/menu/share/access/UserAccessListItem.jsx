@@ -146,7 +146,7 @@ export default function UserAccessListItem({
                                 </div>
                             )}
                         </MenuItem>
-                        {showOwner && userList?.length !== 0 && <Divider className={styles.dividerItem} />}
+                        {showOwner && userList && userList?.length !== 0 && <Divider className={styles.dividerItem} />}
                         {!showOwner && index !== userList?.length - 1 && <Divider className={styles.dividerItem} />}
                     </div>
                 )}

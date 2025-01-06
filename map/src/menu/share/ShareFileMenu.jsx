@@ -245,6 +245,16 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                         <Box sx={{ mx: 2 }}>
                             <ToggleButtonGroup
                                 fullWidth
+                                sx={{
+                                    height: '36px',
+                                    '& .MuiToggleButton-root': {
+                                        textTransform: 'none',
+                                        color: '#237BFF',
+                                    },
+                                    '& .Mui-selected': {
+                                        color: '#212121 !important',
+                                    },
+                                }}
                                 color="primary"
                                 value={selectedAccessTab}
                                 exclusive
