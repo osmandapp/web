@@ -15,7 +15,7 @@ export default function UserAccessList({ type, users, setForcedUpdate }) {
 
     const showOwner = type === APPROVED_ACCESS_TYPE;
     const currentUsers = users[type];
-    const emptyDataMsg = !showOwner && currentUsers?.length === 0;
+    const emptyDataMsg = !showOwner && (!currentUsers || currentUsers?.length === 0);
     const emptyBlockedTab = users[BLOCKED_ACCESS_TYPE]?.length === 0;
 
     return (
