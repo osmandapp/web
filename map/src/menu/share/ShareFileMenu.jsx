@@ -207,7 +207,13 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
         <>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton variant="contained" type="button" className={styles.appBarIcon} onClick={closeMenu}>
+                    <IconButton
+                        id={'se-close-share-menu'}
+                        variant="contained"
+                        type="button"
+                        className={styles.appBarIcon}
+                        onClick={closeMenu}
+                    >
                         <BackIcon />
                     </IconButton>
                     <Typography id="se-share-file-menu" component="div" className={styles.title}>
@@ -244,10 +250,10 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                                 exclusive
                                 onChange={handleAccessTab}
                             >
-                                <ToggleButton value={APPROVED_ACCESS_TYPE}>
+                                <ToggleButton id={'se-approved-tab'} value={APPROVED_ACCESS_TYPE}>
                                     {userAccess[APPROVED_ACCESS_TYPE].name}
                                 </ToggleButton>
-                                <ToggleButton value={PENDING_ACCESS_TYPE}>
+                                <ToggleButton id={'se-pending-tab'} value={PENDING_ACCESS_TYPE}>
                                     {userAccess[PENDING_ACCESS_TYPE].name}
                                 </ToggleButton>
                                 <ToggleButton value={BLOCKED_ACCESS_TYPE}>
@@ -270,15 +276,21 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                 </Box>
                 <Divider className={gStyles.thickDivider} />
                 <Box sx={{ mx: 2 }}>
-                    <Box sx={{ my: 2 }}>
+                    <Box id={'se-generated-link'} sx={{ my: 2 }}>
                         <MenuItemWithLines name={link} maxLines={2} className={styles.shareTypeTextInfo} />
                     </Box>
                     {ctx.shareFile?.sharedObj?.file?.uuid || generatedUuid ? (
-                        <Button component="span" className={buttonStyles.blueButton} onClick={copyLink}>
+                        <Button
+                            id={'se-copy-link'}
+                            component="span"
+                            className={buttonStyles.blueButton}
+                            onClick={copyLink}
+                        >
                             {t('web:copy_link')}
                         </Button>
                     ) : (
                         <Button
+                            id={'se-share-generate-link'}
                             component="span"
                             className={buttonStyles.blueButton}
                             onClick={generateNewLink}

@@ -26,7 +26,7 @@ export default function ShareFileItem({ file, type }) {
 
     return (
         <>
-            <MenuItem className={trackStyles.item}>
+            <MenuItem id={`se-share-file-item-${name}`} className={trackStyles.item}>
                 <ListItemIcon className={setTrackIconStyles(ctx, file, trackStyles)}>
                     {type === GPX && <TrackIcon />}
                     {type === FAVOURITES && (

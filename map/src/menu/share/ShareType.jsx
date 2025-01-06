@@ -13,7 +13,11 @@ export default function ShareType({ selectedShareType, setSelectedShareType, sha
 
     return (
         <>
-            <MenuItem className={styles.shareTypeSelect} onClick={() => setOpenShareTypesMenu(true)}>
+            <MenuItem
+                id={'se-share-type'}
+                className={styles.shareTypeSelect}
+                onClick={() => setOpenShareTypesMenu(true)}
+            >
                 <ListItemIcon className={styles.shareTypeIcon}>{selectedShareType.icon}</ListItemIcon>
                 <ListItemText>
                     <div
@@ -32,7 +36,12 @@ export default function ShareType({ selectedShareType, setSelectedShareType, sha
                             <Typography className={styles.shareTypeText}>Access</Typography>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <Typography variant="body2" className={styles.shareType} noWrap>
+                            <Typography
+                                id={`se-share-type-${selectedShareType.name}`}
+                                variant="body2"
+                                className={styles.shareType}
+                                noWrap
+                            >
                                 {selectedShareType.name}
                             </Typography>
                             <ExpandMore sx={{ color: 'var(--text-secondary)', ml: 1 }} ref={anchorEl} />
@@ -48,11 +57,12 @@ export default function ShareType({ selectedShareType, setSelectedShareType, sha
                 setOpen={setOpenShareTypesMenu}
                 anchorEl={anchorEl}
                 actions={
-                    <Box>
+                    <Box id={'se-actions-share-type'}>
                         <Paper>
                             {Object.values(shareTypes).map((item) => {
                                 return (
                                     <MenuItem
+                                        id={`se-share-type-${item.name}`}
                                         key={item.key}
                                         onClick={() => {
                                             if (item.key === shareTypes.private.key) {

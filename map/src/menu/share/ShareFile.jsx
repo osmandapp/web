@@ -165,7 +165,13 @@ export default function ShareFile() {
         <>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton variant="contained" type="button" className={styles.appBarIcon} onClick={closeMenu}>
+                    <IconButton
+                        id={'se-close-share-file'}
+                        variant="contained"
+                        type="button"
+                        className={styles.appBarIcon}
+                        onClick={closeMenu}
+                    >
                         <CloseIcon />
                     </IconButton>
                     <Typography id="se-share-file" component="div" className={styles.title}>

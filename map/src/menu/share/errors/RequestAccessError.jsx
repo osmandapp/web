@@ -40,7 +40,7 @@ export default function RequestAccessError({ sendRequest, userName, setUserName 
     };
 
     return (
-        <Box>
+        <Box id={'se-request-access-error'}>
             <Box className={styles.block}>
                 <Icon className={styles.icon}>
                     <AccessIcon className={styles.icon} />
@@ -68,6 +68,7 @@ export default function RequestAccessError({ sendRequest, userName, setUserName 
                 helperText={error}
             />
             <Button
+                id={'se-request-access-btn'}
                 sx={{ mt: '19px', color: !userName && '#727272 !important' }}
                 component="span"
                 disabled={!userName}

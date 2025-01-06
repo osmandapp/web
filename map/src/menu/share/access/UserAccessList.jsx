@@ -20,6 +20,7 @@ export default function UserAccessList({ type, users, setForcedUpdate }) {
 
     return (
         <Box
+            id={'se-user-access-list'}
             minWidth={ctx.infoBlockWidth}
             maxWidth={ctx.infoBlockWidth}
             sx={{ overflow: 'auto', overflowX: 'hidden', maxHeight: '225px' }}

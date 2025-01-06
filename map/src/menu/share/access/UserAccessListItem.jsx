@@ -101,7 +101,7 @@ export default function UserAccessListItem({
                     <Skeleton variant="rectangular" width="100%" height={50} />
                 ) : (
                     <div>
-                        <MenuItem className={trackStyles.item} disableRipple>
+                        <MenuItem id={`se-user-access-item-${name}`} className={trackStyles.item} disableRipple>
                             <ListItemIcon className={trackStyles.icon}>
                                 {anyone ? <AnyoneIcon /> : <UserIcon />}
                             </ListItemIcon>
@@ -123,7 +123,11 @@ export default function UserAccessListItem({
                             )}
                             {type === PENDING_ACCESS_TYPE && (
                                 <div>
-                                    <IconButton className={styles.approveBtn} onClick={approveRequest}>
+                                    <IconButton
+                                        id={'se-approve-access'}
+                                        className={styles.approveBtn}
+                                        onClick={approveRequest}
+                                    >
                                         <ActionDoneIcon />
                                     </IconButton>
                                     <IconButton className={styles.blockBtn} onClick={blockRequest}>

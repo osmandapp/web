@@ -3,7 +3,7 @@ import UserAccessListItem from './UserAccessListItem';
 
 export default function PrivateAccessList() {
     return (
-        <Box>
+        <Box id={'se-private-access-list'}>
             <UserAccessListItem showOwner={true} />
         </Box>
     );
