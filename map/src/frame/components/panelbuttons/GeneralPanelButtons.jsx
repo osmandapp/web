@@ -132,15 +132,18 @@ export default function GeneralPanelButtons({
                     flexDirection: useFlexButtons() && 'column',
                 }}
             >
-                {showInfoBlock && !ctx.selectedWpt && ctx.currentObjectType !== OBJECT_TYPE_WEATHER && (
-                    <PanelButtons
-                        orientation={orientation}
-                        tooltipOrientation={tooltipOrientation}
-                        setShowInfoBlock={setShowInfoBlock}
-                        clearState={clearState}
-                        bsize={BUTTON_SIZE}
-                    />
-                )}
+                {showInfoBlock &&
+                    !ctx.selectedWpt &&
+                    ctx.currentObjectType !== OBJECT_TYPE_WEATHER &&
+                    !ctx.shareFile && (
+                        <PanelButtons
+                            orientation={orientation}
+                            tooltipOrientation={tooltipOrientation}
+                            setShowInfoBlock={setShowInfoBlock}
+                            clearState={clearState}
+                            bsize={BUTTON_SIZE}
+                        />
+                    )}
                 {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
                 {ctx.pointContextMenu.element && <PointContextMenu anchorEl={ctx.pointContextMenu.element} />}
             </div>
