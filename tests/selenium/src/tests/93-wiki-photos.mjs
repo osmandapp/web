@@ -35,10 +35,13 @@ export default async function test() {
     await clickBy(By.id('se-next-photo'));
     await waitBy(By.id('se-photo-modal-62534415'));
 
-    await matchInnerTextBy(By.id('se-photo-date'), '30 July 2013');
-    await matchInnerTextBy(By.id('se-photo-author'), 'Haidamac');
+    await matchInnerTextBy(By.id('se-photo-date'), '25 September 2014');
+    await matchInnerTextBy(By.id('se-photo-author'), 'Quotsu');
     await matchInnerTextBy(By.id('se-photo-license'), 'SELF - CC-BY-SA-4.0');
-    await matchInnerTextBy(By.id('se-photo-description'), 'Монумент Независимости Украины, Киев');
+    await matchInnerTextBy(
+        By.id('se-photo-description'),
+        "Монумент Незалежності України - пам'ятник, присвячений незалежності України."
+    );
 
     await clickBy(By.id('se-close-photo'));
     await waitByRemoved(By.id('se-photo-modal-62534415'));
