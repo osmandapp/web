@@ -113,7 +113,7 @@ All tracks ever recorded, created, or imported are automatically displayed in th
 
 Each track, like folders, has a menu, allowing you to manage tracks efficiently. Here is how to access it:
 
-- *Android* - tap the *three-dot menu* in the field with the required track.
+- *Android* - tap the *three-dot menu* in the track field.
 - *iOS* - long tap the required track in the list.
 
 The menu provides the following actions:
@@ -209,13 +209,13 @@ Once you have made your choice, the following steps are provided:
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-OsmAnd offers an easy way to sort your tracks, helping you manage a large collection or quickly find specific features. To access the sort menu, tap **Sort by** at the top of the tracks list.
+OsmAnd offers an easy way to sort your tracks, helping you manage a large collection or quickly find specific features. To access the sort menu, tap **Sort by** at the top of the tracks list. If you want to sort [*subfolders*](#folder-actions), go to the three-dot menu within the selected folder.
 
 Sorting options:
 
@@ -247,22 +247,24 @@ Sorting options:
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-To open the folder menu, you need to:
+Track folder menu lets you view, rename, export, and manage folders.
 
-- *Android* - tap the *three-dot menu* in the field with the required folder.
-- *iOS* - long tap the field of the folder.
+How to open the folder menu:
+
+- *Android* - tap the *three-dot menu* in the folder field.
+- *iOS* - long tap the folder field.
 
 Actions:
 
-- **Name**. Displays the selected folder name, creation date, and the number of tracks it contains.
-- **Show all tracks on the map** (*Android only*). Shows all tracks in the folder on the map. It is not recommended, if there are a lot of tracks, the device may freeze.
-- **Edit name** (*Android*) / **Rename** (*iOS*). Changing the folder name.
-- [*Change default appearance*](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*). You can change the appearance of all tracks in a folder.
-- [*Export*](../../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder as an [`.osf` file](../../personal/import-export.md#export).
-- [**Move**](#track-folder). You can move the selected folder to another existing folder or create a new one.
-- [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible.
+- **Name**. Displays the folder name, creation date, and the number of tracks it contains.
+- **Show all tracks on the map** (*Android only*). Displays all tracks in the folder on the map. *NOTE: If there are many tracks, this may cause the device to freeze.*
+- **Edit name** (*Android*) / **Rename** (*iOS*). Allows you to rename the folder.
+- [*Change default appearance*](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*). Changes the display appearance of all tracks in the folder.
+- [*Export*](../../personal/import-export.md). Opens the *Menu → Settings → Actions* tab to export all tracks in the folder as an [`.osf` file](../../personal/import-export.md#export).
+- [**Move**](#track-folder). Allows you to move the folder to another existing folder or create a new one.
+- [*Delete folder*](#delete-folder). Deletes the folder after confirmation. ***NOTE: This action is irreversible.***
 
 
 ### Folder Statistics
@@ -363,33 +365,35 @@ Actions:
 
 You can delete a folder with all the tracks it contains. To do this:
 
-- Tap the *three-dot menu* of the folder you want to delete.
-- At the bottom of the menu, find the Delete Folder option.
-- ***NOTE*** that this action is irreversible.
+- Tap the *three-dot menu* in the folder field to delete.
+- At the bottom of the menu, find the **Delete Folder** option.
+- ***NOTE: This action is irreversible.***
 
 
 ## Import / Export Track
 
 ### Import
 
-There are two primary methods for importing a track file into OsmAnd:
+Import tool allows you to add tracks from external files for offline navigation and analysis. Methods for importing tracks:
 
-**Direct file import.**
+1. **Direct file import:**
 
-- You can import a track by directly tapping a GPX, KML, or KMZ file. This can be done from various sources such as messaging applications, email, Google Drive, or file managers.
-- When tapped, it is suggested that the file be opened in the OsmAnd app.
-- Once imported, the track is saved in the **Import** folder in the *My Places* menu.
-- The process follows: tap the required GPX file and then open it in the OsmAnd app.
+    - Tap a GPX, KML, or KMZ file from messaging apps, email, Google Drive, or file managers.
+    - Select Open in OsmAnd when prompted.
+    - The imported track is saved in the **Import** folder in the *My Places*.
+    - Steps: Tap the GPX file → Open in OsmAnd.
 
-**Import using the *My Places* menu.**
+2. **Import using the *My Places* menu:**
 
-- Tracks can be imported through the *My Places* menu in the OsmAnd app. Navigate to this menu and select the *Tracks* option to import your GPX files.
+    - Open the *My Places menu → Tracks*.
+    - Select the GPX file to import.
 
-- Additionally:
-    - For **single-track GPX files**, select the required file to import.
-    - For **multi-track GPX files**, you can save as a single GPX track or select specific tracks for import.
+    *Additional options:*
 
-***NOTE:*** Tracks manually added to the OsmAnd folder on your device are automatically imported without the need to restart the application.  
+    - **Single-track GPX files** - import the entire track directly.
+    - **Multi-track GPX files** - choose to import the single GPX file or select specific tracks.
+
+***NOTE:*** *Tracks manually added to the OsmAnd folder on your device are automatically imported without restarting the application.*  
 
 
 ### Export

@@ -17,19 +17,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-OsmAnd provides convenient track management tools. One of them is filtering in the *Tracks* tab, which is done by searching by several criteria, such as duration, length, or speed. The search filter can be saved as **Smart Folder**, then tracks will be automatically filtered in this folder.
+<InfoAndroidOnly/>
+
+OsmAnd has convenient and useful tools for managing your tracks. One of them is a tool for *Tracks* tab files filtering in the *My Places* menu, performed via search by criteria such as duration, length, or speed. Filtering tracks by required parameters can be saved as **Smart Folder**.
 
 
 ## Search Filter
 
-<InfoAndroidOnly/>
-
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
 
-
-- To access the Filter screen, tap the Search icon &#x1F50D;, in the *Sort by* row on the right, tap *Filter*.
+- To access the Filter screen, tap the Search icon &#x1F50D;, in the *Sort by* row on the right, tap the *Filter*.
 - After selecting the required filters, tap the Show button in the lower right corner of the screen. The number of filtered tracks is displayed in brackets.
-- You can clear all configured filters using the *Reset all* button.
+- Clear all configured filters using the *Reset all* button.
 - The configured filter set can be saved as a new *Smart folder* using the button in the upper right corner of the screen.
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)  
@@ -94,7 +93,7 @@ OsmAnd provides convenient track management tools. One of them is filtering in t
 
 - **Date of creation**
     - The *Date of creation* allows you to filter tracks by date.
-    - Specify the required time period to find tracks that were created then.
+    - Specify the required period to find tracks that were created then.
 
 - **Nearest cities**
     - The filter allows you to search for tracks that pass close to specific cities or settlements.
@@ -102,7 +101,7 @@ OsmAnd provides convenient track management tools. One of them is filtering in t
 
 - **Type of activity**
     - The *Type of activity* allows you to filter tracks by the [activities](../../map/tracks/track-context-menu.md#track-information-activity) contained in the stored GPX files.
-    - Specify the required activity type to find tracks with these parameter.
+    - Specify the required activity type to find tracks with these parameters.
 
 - **Country**
     - This filter allows you to search for tracks recorded in a specific country or region.
@@ -123,8 +122,6 @@ OsmAnd provides convenient track management tools. One of them is filtering in t
 
 
 ## Smart Folder
-
-<InfoAndroidOnly/>
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
 
