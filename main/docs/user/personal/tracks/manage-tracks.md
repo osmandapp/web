@@ -15,7 +15,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overview
 
 All tracks in OsmAnd are stored in a tab in the *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd processes the track file in [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format), but [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) & [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) can be imported and converted to GPX. Read more about different types of tracks in the article [Tracks on map](../../map/tracks/index.md#types-of-tracks).
@@ -119,7 +118,7 @@ Each track, like folders, has a menu, allowing you to manage tracks efficiently.
 The menu provides the following actions:
 
 - **Show/Hide on map**. Displays or hides the selected tracks on the map, visually representing their location.
-- [**Open**](../../map/tracks/index.md#configure-map) (*iOS*). This setting is available in the Configure Map menu. Located in the *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*, it allows you to access the [context menu of the selected track](../../map/tracks/track-context-menu.md) when tapped.
+- [Open](../../map/tracks/index.md#configure-map) (*iOS*). This setting is available in the Configure Map menu. Located in the *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*, it allows you to access the [context menu of the selected track](../../map/tracks/track-context-menu.md) when tapped.
 - **Appearance** (*iOS*). Customize the [appearance of tracks](../../map/tracks/appearance.md) to suit your preferences.
 - **Navigation** (*iOS*). Initiates [navigation](../../navigation/setup/gpx-navigation.md) along the selected track.
 - **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyze on map](../../navigation/setup/route-details.md#analyze-on-map) tool within Route Details for further analysis.
@@ -183,17 +182,11 @@ The **Select** menu item provides options for managing folders and tracks. This 
 Once you have made your choice, the following steps are provided:  
 
 - **Show on map**. With this feature, you can display the selected tracks on the map to better understand their location and relationship to each other.
-
 - **Share** (*Android*) / **Export** (*iOS*). If you want to share selected data with other users or save it to a cloud service, the *Share/Export* feature allows you to send tracks and folders using different sharing methods.
-
 - **Upload to OpenStreetMap**. You can submit selected tracks to OpenStreetMap, contributing to the development and improvement of the data.
-
 - **Move**. You can organize your data by moving selected tracks and folders to other folders.
-
-- [**Change activity**](../../map/tracks/track-context-menu.md#track-information-activity) (*Android only*). This action allows you to change the activity type, for example to *Car*, *Adventure Motorsport*, *Backpacking* or others, for the selected track.
-
-- [**Change appearance**](../../map/tracks/appearance.md) (*Android only*). This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
-
+- [Change activity](../../map/tracks/track-context-menu.md#track-information-activity) (*Android only*). This action allows you to change the activity type, for example to *Car*, *Adventure Motorsport*, *Backpacking* or others, for the selected track.
+- [Change appearance](../../map/tracks/appearance.md) (*Android only*). This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
 - **Delete**. If the selected tracks or folders are no longer needed, the Delete function allows you to delete them, with the app providing confirmation options to avoid accidental deletion.
 
 
@@ -215,9 +208,9 @@ Once you have made your choice, the following steps are provided:
 
 </Tabs>  
 
-OsmAnd offers an easy way to sort your tracks, helping you manage a large collection or quickly find specific features. To access the sort menu, tap **Sort by** at the top of the tracks list. If you want to sort [*subfolders*](#folder-actions), go to the three-dot menu within the selected folder.
+OsmAnd offers an easy way to sort your tracks, helping you manage a large collection or quickly find specific features. To access the sort menu, tap **Sort by** at the top of the tracks list.
 
-Sorting options:
+***Sorting options:***
 
 - **Nearest**. Shows tracks closest to your current location.
 - **Last modified**. Displays tracks sorted by their most recent modification date.
@@ -229,6 +222,26 @@ Sorting options:
 - **Shortest distance first**. Displays tracks sorted by length, with the shortest at the top.
 - **Longest duration first**. Sorts tracks by duration, placing the longest at the top.
 - **Shorted duration first**. Sorts tracks by duration, placing the shortest at the top.
+
+#### Sorting Subfolders
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+If you want to sort [*subfolders*](#folder-actions), go to the three-dot menu within the selected folder and select the required [options](#sort-by). The selected sorting option is applied not only to the current subfolder but also to all nesting folders and tracks at all levels. This ensures a consistent structure across your saved data.
 
 
 ## Track Folder
@@ -256,15 +269,15 @@ How to open the folder menu:
 - *Android* - tap the *three-dot menu* in the folder field.
 - *iOS* - long tap the folder field.
 
-Actions:
+***Actions with a folder:***
 
 - **Name**. Displays the folder name, creation date, and the number of tracks it contains.
 - **Show all tracks on the map** (*Android only*). Displays all tracks in the folder on the map. *NOTE: If there are many tracks, this may cause the device to freeze.*
 - **Edit name** (*Android*) / **Rename** (*iOS*). Allows you to rename the folder.
-- [*Change default appearance*](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*). Changes the display appearance of all tracks in the folder.
-- [*Export*](../../personal/import-export.md). Opens the *Menu → Settings → Actions* tab to export all tracks in the folder as an [`.osf` file](../../personal/import-export.md#export).
-- [**Move**](#track-folder). Allows you to move the folder to another existing folder or create a new one.
-- [*Delete folder*](#delete-folder). Deletes the folder after confirmation. ***NOTE: This action is irreversible.***
+- [Change default appearance](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*). Changes the display appearance of all tracks in the folder.
+- [Export](../../personal/import-export.md). Opens the *Menu → Settings → Actions* tab to export all tracks in the folder as an [`.osf` file](../../personal/import-export.md#export).
+- [Move](#track-folder). Allows you to move the folder to another existing folder or create a new one.
+- [Delete folder](#delete-folder). Deletes the folder after confirmation. ***NOTE: This action is irreversible.***
 
 
 ### Folder Statistics
@@ -298,6 +311,7 @@ At the bottom of the list in the *Tracks* tab, and below the list of tracks **in
 - *Sum of* **Duration** *time*. This displays the total time taken to complete all tracks in the selected folder.
 - *Total **Size** of downloaded files in MB*. The total downloaded file size in megabytes shows how much space all tracks in the selected folder take up on your device.
 
+
 ### Folder Actions
 
 <Tabs groupId="operating-systems">
@@ -328,17 +342,13 @@ How to open folder actions:
 - Navigate to the folder you want to manage.
 - Tap the *three-dot menu* in the upper-right corner to open the folder actions menu.
 
-Actions:
+***Actions in the folder menu:***
 
-- [**Select**](#selection-mode). Tap the required folders and tracks to apply actions from the menu in *selection mode*.
-
-- [**Sort subfolders**](#sort-by). Apply a sorting order (e.g., by name, date) to all subfolders and tracks at every level.
-
+- [Select](#selection-mode). Tap the required folders and tracks to apply actions from the menu in *selection mode*.
+- [Sort subfolders](#sort-by). Apply a sorting order (e.g., by name, date) to all subfolders and tracks at every level.
+- [Add smart folder](../tracks/smart-folder.md#create-smart-folder) (*Android only*). Automatically sort routes and tracks based on criteria you set.
+- [Import](#import). Upload GPX or other track files from your device to OsmAnd for offline use.
 - **Add new folder**. To organize your routes and tracks into logical categories, put them in different folders. This helps to structure your navigation information.
-
-- [**Add smart folder**](../tracks/smart-folder.md#create-smart-folder) (*Android only*). Automatically sort routes and tracks based on criteria you set.
-
-- [**Import**](#import). Upload GPX or other track files from your device to OsmAnd for offline use.
 
 
 ### Delete Folder
