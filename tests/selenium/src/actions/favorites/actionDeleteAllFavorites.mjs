@@ -1,6 +1,6 @@
 import { waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
-import { deleteFavGroup } from '../../util.mjs';
+import actionDeleteFavGroup from './actionDeleteFavGroup.mjs';
 
 const DEFAULT_FAV_GROUP = 'favorites';
 
@@ -15,11 +15,11 @@ export default async function test(favorites) {
         const shortFavGroupName = f.name?.replace('favorites-', '');
         exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
         if (exist) {
-            await deleteFavGroup(shortFavGroupName);
+            await actionDeleteFavGroup(shortFavGroupName);
         }
         exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`), { optional: true, idle: true });
         if (exist) {
-            await deleteFavGroup(`${shortFavGroupName}${suffix}`);
+            await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
         }
         if (exist) {
             prevName = shortFavGroupName;
@@ -28,7 +28,7 @@ export default async function test(favorites) {
     // delete default group
     exist = await waitBy(By.id(`se-menu-fav-${DEFAULT_FAV_GROUP}`), { optional: true, idle: true });
     if (exist) {
-        await deleteFavGroup(DEFAULT_FAV_GROUP);
+        await actionDeleteFavGroup(DEFAULT_FAV_GROUP);
     }
 
     await waitBy(By.id('se-empty-page'));

@@ -1,6 +1,6 @@
 import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../actions/login/actionLogIn.mjs';
-import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
+import { getFiles } from '../util.mjs';
 import { clickBy, enclose, enumerateIds, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
@@ -8,6 +8,8 @@ import actionRenameFavGroup from '../actions/favorites/actionRenameFavGroup.mjs'
 import actionIdleWait from '../actions/actionIdleWait.mjs';
 import actionOpenFavorites from '../actions/favorites/actionOpenFavorites.mjs';
 import actionDeleteAllFavorites from '../actions/favorites/actionDeleteAllFavorites.mjs';
+import actionDeleteFavGroup from '../actions/favorites/actionDeleteFavGroup.mjs';
+import actionsUploadFavorites from '../actions/favorites/actionsUploadFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -22,7 +24,7 @@ export default async function test() {
 
     const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`), { optional: true, idle: true });
     if (exist) {
-        await deleteFavGroup(`${shortFavGroupName}${suffix}`);
+        await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
     }
 
     await actionDeleteAllFavorites(favorites);
@@ -79,7 +81,7 @@ export default async function test() {
 
     await validateGroupOrder(favGroupsOldDateAfterRename);
 
-    await deleteFavGroup(`${shortFavGroupName}${suffix}`);
+    await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
     await actionDeleteAllFavorites(favorites);
 
     await actionFinish();
@@ -132,7 +134,7 @@ async function validateItemOrder(ids) {
 async function uploadFavGroup(favorites, upload = true) {
     for (const f of favorites) {
         if (upload) {
-            await uploadFavorites({ files: f.path });
+            await actionsUploadFavorites({ files: f.path });
         }
         const shortFavGroupName = f.name.split('-')[1];
         await actionIdleWait();

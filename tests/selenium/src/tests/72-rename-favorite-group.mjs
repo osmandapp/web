@@ -1,12 +1,14 @@
 import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../actions/login/actionLogIn.mjs';
-import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
+import { getFiles } from '../util.mjs';
 import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionRenameFavGroup from '../actions/favorites/actionRenameFavGroup.mjs';
 import actionOpenFavorites from '../actions/favorites/actionOpenFavorites.mjs';
 import actionDeleteAllFavorites from '../actions/favorites/actionDeleteAllFavorites.mjs';
+import actionDeleteFavGroup from '../actions/favorites/actionDeleteFavGroup.mjs';
+import actionsUploadFavorites from '../actions/favorites/actionsUploadFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -25,7 +27,7 @@ export default async function test() {
 
     // create folder
     await clickBy(By.id('se-import-fav-group'));
-    await uploadFavorites({ files: path });
+    await actionsUploadFavorites({ files: path });
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
 
     // delete duplicate old group when need
@@ -34,7 +36,7 @@ export default async function test() {
         idle: true,
     });
     if (existDuplicate) {
-        await deleteFavGroup(`${shortFavGroupName}${suffix}`);
+        await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
     }
 
     //rename folder
@@ -50,7 +52,7 @@ export default async function test() {
 
     await clickBy(By.id('se-rename-fav-cancel'));
 
-    await deleteFavGroup(`${shortFavGroupName}${suffix}`);
+    await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
     await waitBy(By.id('se-empty-page'));
 
     await actionFinish();
