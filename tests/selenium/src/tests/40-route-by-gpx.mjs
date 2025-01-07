@@ -5,7 +5,7 @@ import { By } from 'selenium-webdriver';
 
 import { enclose, waitBy, clickBy, matchTextBy, matchValueBy, navigateHash } from '../lib.mjs';
 
-import actionOpenMap from '../actions/actionOpenMap.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 
 const TEST_GPX_FILE = 'test-routed-osrm.gpx';
 const GO_CENTER_HASH = '#14/50.3837/30.4944';

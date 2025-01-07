@@ -1,4 +1,4 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionOpenDeleteAcc from '../actions/actionOpenDeleteAcc.mjs';
 import { clickBy, fillLoginData, waitBy, waitByRemoved } from '../lib.mjs';

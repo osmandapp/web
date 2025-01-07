@@ -1,10 +1,10 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionGetCountElements from '../actions/actionGetCountElements.mjs';
 import { clickBy, sendKeysBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
-import actionCheckPoi from '../actions/actionCheckPoi.mjs';
+import actionCheckPoi from '../actions/map/actionCheckPoi.mjs';
 
 export default async function test() {
     await actionOpenMap('#14/50.4432/30.4995');

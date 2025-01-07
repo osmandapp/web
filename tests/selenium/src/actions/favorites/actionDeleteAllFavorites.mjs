@@ -1,6 +1,6 @@
-import { waitBy, waitByRemoved } from '../lib.mjs';
+import { waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
-import { deleteFavGroup } from '../util.mjs';
+import { deleteFavGroup } from '../../util.mjs';
 
 const DEFAULT_FAV_GROUP = 'favorites';
 

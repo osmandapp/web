@@ -1,5 +1,5 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import { clickBy, enclose, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionPrepareFolder from '../actions/actionPrepareFolder.mjs';

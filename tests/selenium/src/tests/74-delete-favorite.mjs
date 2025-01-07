@@ -1,11 +1,11 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import { clickBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
-import actionDeleteAllFavorites from '../actions/actionDeleteAllFavorites.mjs';
+import actionOpenFavorites from '../actions/favorites/actionOpenFavorites.mjs';
+import actionDeleteAllFavorites from '../actions/favorites/actionDeleteAllFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();

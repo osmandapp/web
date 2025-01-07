@@ -1,10 +1,10 @@
 'use strict';
 
-import actionOpenMap from '../actions/actionOpenMap.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import { clickBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 import { getFiles, uploadCloudTracks } from '../util.mjs';

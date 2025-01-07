@@ -1,14 +1,14 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import { clickBy, getTextBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
-import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
+import actionImportCloudTrack from '../actions/tracks/actionImportCloudTrack.mjs';
 import actionCheckDisabled from '../actions/actionCheckDisabled.mjs';
 import { deleteTrack, getFiles, openShare } from '../util.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import { TEST_LOGIN2, TEST_PASSWORD2 } from '../options.mjs';
-import actionLogOut from '../actions/actionLogOut.mjs';
+import actionLogOut from '../actions/login/actionLogOut.mjs';
 
 export default async function test() {
     const trackName = 'test-routed-osrm';

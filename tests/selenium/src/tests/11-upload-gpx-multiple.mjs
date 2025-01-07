@@ -1,6 +1,6 @@
 'use strict';
 
-import actionOpenMap from '../actions/actionOpenMap.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionUploadGpx from '../actions/actionUploadGpx.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 
