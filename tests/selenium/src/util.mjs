@@ -71,3 +71,12 @@ export async function deleteFavGroup(name) {
     await waitByRemoved(By.id(`se-actions-${name}`));
     await actionIdleWait();
 }
+
+export async function openShare(name) {
+    await actionIdleWait();
+    await waitBy(By.id(`se-actions-${name}`));
+    await clickBy(By.id(`se-actions-${name}`));
+    await clickBy(By.id('se-share-track'));
+    await waitByRemoved(By.id(`se-actions-${name}`));
+    await actionIdleWait();
+}

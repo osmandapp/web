@@ -1,5 +1,5 @@
 import { useInView } from 'react-intersection-observer';
-import TracksManager from '../../manager/track/TracksManager';
+import { getFileName } from '../../manager/track/TracksManager';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import { formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
@@ -12,9 +12,8 @@ import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_
 import TrashActions from '../actions/TrashActions';
 
 export default function TrashItem({ item, changes, setChanges }) {
-    // useInView hook from `react-intersection-observer` for lazy loading.
     const { ref, inView } = useInView();
-    const fileName = item.file ? TracksManager.getFileName(item.file) : null;
+    const fileName = item.file ? getFileName(item.file) : null;
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const anchorEl = useRef(null);

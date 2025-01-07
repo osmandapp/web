@@ -22,6 +22,7 @@ import ExploreLayer from './layers/ExploreLayer';
 import SearchLayer from './layers/SearchLayer';
 import HeightmapLayer from './layers/HeightmapLayer';
 import TravelLayer from './layers/TravelLayer';
+import ShareFileLayer from './layers/ShareFileLayer';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -160,6 +161,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             {routersReady && <CloudTrackLayer />}
             {routersReady && <LocalClientTrackLayer />}
             {routersReady && <RouteLayer geocodingData={geocodingData} region={regionData} />}
+            <ShareFileLayer />
             <TravelLayer />
             <FavoriteLayer />
             <WeatherLayer />

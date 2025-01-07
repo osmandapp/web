@@ -23,7 +23,7 @@ function clickHandler({ ctx, file, layer }) {
     }
 }
 
-function addTrackToMap({ ctx, file, map, fit = false } = {}) {
+export function addTrackToMap({ ctx, file, map, fit = false } = {}) {
     let layer = TrackLayerProvider.createLayersByTrackData({ data: file, ctx, map });
     if (!layer) {
         return null;

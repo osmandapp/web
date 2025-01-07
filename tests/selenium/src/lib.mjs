@@ -284,7 +284,7 @@ const getValueBy = async (by) => await getAttributeBy(by, 'value');
 const getInnerHtmlBy = async (by) => await getAttributeBy(by, 'innerHTML');
 const getInnerTextBy = async (by) => await getAttributeBy(by, 'innerText');
 
-const getTextBy = async (by) =>
+export const getTextBy = async (by) =>
     await enclose(async () => (await (await waitBy(by)).getText()).toString(), { tag: 'getTextBy' });
 
 /**
