@@ -82,8 +82,8 @@ Following fields could be specified for a favorite point:
 
 - Unique **Name** per group is **required**.
 - **Address** and **description** are optional.
-- Existing [**Favorite group**](#manage-favorites) from the list or newly created.
-- Visual **icon**, **color**, **shape** are selected by default from [**group appearance**](#change-group-appearance).
+- Existing [Favorite group](#manage-favorites) from the list or newly created.
+- Visual **icon**, **color**, **shape** are selected by default from [group appearance](#change-group-appearance).
 but could be changed uniquely per a favorite point.
 
 

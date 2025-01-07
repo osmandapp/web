@@ -158,10 +158,10 @@ Once created, the Smart folder is displayed with a special icon in the folder li
 - **Show all tracks on the map**. If there are many tracks in a folder, it is not recommended to map them all, it may take a long time.
 - **Rename**. Changing the folder name.
 - **Refresh**. Allows you to update the track list.
-- [**Edit filter**](#search-filter). You can change the track filter settings for the current Smart folder.
-- [**Export**](../../personal/import-export.md). You will go to the *Menu → Settings → Actions* tab, where you can export all tracks from the smart folder.
+- [Edit filter](#search-filter). You can change the track filter settings for the current Smart folder.
+- [Export](../../personal/import-export.md). You will go to the *Menu → Settings → Actions* tab, where you can export all tracks from the smart folder.
 - **Delete folder**. You can only delete the Smart folder, not the tracks. A warning message will appear on the display. The deletion will be irreversible.  
-- [**Select**](./manage-tracks.md#selection-mode). Allows you to select all or only certain tracks for further interaction with them.
+- [Select](./manage-tracks.md#selection-mode). Allows you to select all or only certain tracks for further interaction with them.
 
 
 ## Related Articles

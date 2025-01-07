@@ -568,13 +568,13 @@ The **User guide** section of the Help menu is a complete manual that follows th
 
 Solutions and tips for solving common problems. If you have a specific question, please check [Troubleshooting](../troubleshooting/index.md) to have it answered.
 
-- [**Setup**](../troubleshooting/setup.md). When setting up an application, these are the issues that most often arise.
-- [**Maps & data**](../troubleshooting/maps-data.md). Issues related to maps, search and the rest of the data.
-- [**Navigation**](../troubleshooting/navigation.md). The most common issues that occur in navigation mode.
-- [**Track recording**](../troubleshooting/track-recording-issues.md). Common issues related to track recordingsuch as noises, gaps, and inaccuracies.
-- [**General**](../troubleshooting/general.md). Common issues associated to various OsmAnd features.
-- [**Crash logs**](../troubleshooting/crash-logs.md). How to send crash logs to the OsmAnd team.
-- [**Android Auto**](../troubleshooting/android_auto.md) (*only for Android*). Auto navigation problems.
+- [Setup](../troubleshooting/setup.md). When setting up an application, these are the issues that most often arise.
+- [Maps & data](../troubleshooting/maps-data.md). Issues related to maps, search and the rest of the data.
+- [Navigation](../troubleshooting/navigation.md). The most common issues that occur in navigation mode.
+- [Track recording](../troubleshooting/track-recording-issues.md). Common issues related to track recordingsuch as noises, gaps, and inaccuracies.
+- [General](../troubleshooting/general.md). Common issues associated to various OsmAnd features.
+- [Crash logs](../troubleshooting/crash-logs.md). How to send crash logs to the OsmAnd team.
+- [Android Auto](../troubleshooting/android_auto.md) (*only for Android*). Auto navigation problems.
 
 ### Contact Us
 
@@ -616,7 +616,7 @@ Gives you the opportunity to ask questions or make suggestions.
 
 - **Open issue on GitHub**. [Android version GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [iOS version GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): ask questions, write about bug and propose features.
 - **Send crash log** (*for Android*). Contains only information about crashes.
-- [**Send logcat log**](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [**Send log**](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Detailed log file.
+- [Send logcat log](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Send log](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Detailed log file.
 
 ### About OsmAnd
 
