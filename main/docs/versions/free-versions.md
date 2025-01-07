@@ -66,7 +66,7 @@ Release date: 04/2024
 * Unified UI for track selection 
 * OpenStreetMap login switched to OAuth 2.0
 
-<DownloadRelease blog="osmand-android-4-7-released" release="net.osmand-4.7.10.apk" />
+<DownloadRelease blog="osmand-android-4-7-released" release="net.osmand-4.7.17.apk" />
 
 ### Version 4.6 
 Release date: 12/2023
