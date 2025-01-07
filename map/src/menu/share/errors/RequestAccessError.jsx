@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Box, Button, Icon, ListItemText, TextField } from '@mui/material';
 import styles from '../../errors/errors.module.css';
 import { ReactComponent as AccessIcon } from '../../../assets/icons/ic_action_lock.svg';
@@ -8,6 +8,12 @@ import { useTranslation } from 'react-i18next';
 export default function RequestAccessError({ sendRequest, userName, setUserName }) {
     const [error, setError] = useState('');
     const { t } = useTranslation();
+
+    const [showNameField, setShowNameField] = useState(false);
+
+    useEffect(() => {
+        setShowNameField(userName === '');
+    }, [userName]);
 
     const validateNickname = (nickname) => {
         const MIN_LENGTH = 3;
@@ -54,22 +60,24 @@ export default function RequestAccessError({ sendRequest, userName, setUserName 
                     </ListItemText>
                 </Box>
             </Box>
-            <TextField
-                sx={{ mt: '-17px' }}
-                margin="dense"
-                onChange={handleChange}
-                id="username"
-                label={'User name'}
-                type="email"
-                fullWidth
-                variant="filled"
-                value={userName}
-                error={!!error}
-                helperText={error}
-            />
+            {showNameField && (
+                <TextField
+                    sx={{ mt: '-17px' }}
+                    margin="dense"
+                    onChange={handleChange}
+                    id="username"
+                    label={'User name'}
+                    type="email"
+                    fullWidth
+                    variant="filled"
+                    value={userName}
+                    error={!!error}
+                    helperText={error}
+                />
+            )}
             <Button
                 id={'se-request-access-btn'}
-                sx={{ mt: '19px', color: !userName && '#727272 !important' }}
+                sx={{ mt: showNameField ? '19px' : '-15px', color: !userName && '#727272 !important' }}
                 component="span"
                 disabled={!userName}
                 className={buttonStyles.blueButton}

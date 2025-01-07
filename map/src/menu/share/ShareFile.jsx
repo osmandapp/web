@@ -36,7 +36,7 @@ export default function ShareFile() {
 
     const { t } = useTranslation();
 
-    const [userName, setUserName] = useState('');
+    const [userName, setUserName] = useState(null);
 
     const hash = window.location.hash;
 
@@ -53,7 +53,9 @@ export default function ShareFile() {
     const currentLoc = useGeoLocation(ctx);
 
     useEffect(() => {
-        setUserName(ctx.accountInfo?.nickname ?? '');
+        if (ctx.loginState !== INIT_LOGIN_STATE && ctx.accountInfo) {
+            setUserName(ctx.accountInfo.nickname ?? '');
+        }
     }, [ctx.accountInfo]);
 
     useEffect(() => {
