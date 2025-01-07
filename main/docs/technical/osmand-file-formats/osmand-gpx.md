@@ -58,22 +58,13 @@ The following parameters customize the appearance of a track on the map. They ar
 </gpx>
 ```
 
-## Track Activity type
+## Waypoints icons
 
-Track Activity Type was introduced in [OsmAnd 4.9](/blog/osmand-android-4-9-released/#gpx-track-activities).
-Supported activity types: [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json)
-
-Activity Types are identified by `id` and stored in the Metadata extensions:
-
-#### Example:
-
-```xml
-  <metadata>
-    <extensions>
-      <osmand:activity>off_road_motorcycling_dirt_biking</osmand:activity>
-    </extensions>
-  </metadata>
-```
+| GPX tag    | Default | Purpose                                   |
+|:-----------|:--------|:---------------------------------------------------|
+| icon       | -       | Icon name |
+| color      | red     | Icon color: hex or text |
+| background | circle  | shape of the icon (circle, square, octagon)    |
 
 ## Waypoints groups
 
@@ -105,6 +96,23 @@ Point group name is stored in `<type>` tag inside `<wpt>`.
     </osmand:points_groups>
   </extensions>
 </gpx>
+```
+
+## Track Activity type
+
+Track Activity Type was introduced in [OsmAnd 4.9](/blog/osmand-android-4-9-released/#gpx-track-activities).
+Supported activity types: [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json)
+
+Activity Types are identified by `id` and stored in the Metadata extensions:
+
+#### Example:
+
+```xml
+  <metadata>
+    <extensions>
+      <osmand:activity>off_road_motorcycling_dirt_biking</osmand:activity>
+    </extensions>
+  </metadata>
 ```
 
 ## HTML in description
