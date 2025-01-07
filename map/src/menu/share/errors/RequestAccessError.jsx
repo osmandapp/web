@@ -4,16 +4,22 @@ import styles from '../../errors/errors.module.css';
 import { ReactComponent as AccessIcon } from '../../../assets/icons/ic_action_lock.svg';
 import buttonStyles from '../../login/login.module.css';
 import { useTranslation } from 'react-i18next';
+import AppContext from '../../../context/AppContext';
+import { INIT_LOGIN_STATE } from '../../../manager/LoginManager';
 
 export default function RequestAccessError({ sendRequest, userName, setUserName }) {
+    const ctx = useContext(AppContext);
+
     const [error, setError] = useState('');
     const { t } = useTranslation();
 
     const [showNameField, setShowNameField] = useState(false);
 
     useEffect(() => {
-        setShowNameField(userName === '');
-    }, [userName]);
+        if (ctx.loginState !== INIT_LOGIN_STATE && ctx.accountInfo) {
+            setShowNameField(!ctx.accountInfo.nickname);
+        }
+    }, [ctx.accountInfo]);
 
     const validateNickname = (nickname) => {
         const MIN_LENGTH = 3;
