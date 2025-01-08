@@ -149,21 +149,27 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             : null;
     }
 
-    function getTranslation(key, value) {
+    function getTranslation({ key, value, mainTag = true }) {
         if (key.includes(':')) {
             const arr = key.split(':');
             const t = arr[0];
             const lang = arr[1];
             if (i18n.exists('lang_' + lang) && i18n.exists(t)) {
-                return (
-                    capitalize(translateWithSplit(i18n.t, t)) +
-                    ': ' +
-                    capitalize(translateWithSplit(i18n.t, 'lang_' + lang))
-                );
+                if (mainTag) {
+                    return (
+                        capitalize(translateWithSplit(i18n.t, t)) +
+                        ': ' +
+                        capitalize(translateWithSplit(i18n.t, 'lang_' + lang))
+                    );
+                }
+                return capitalize(translateWithSplit(i18n.t, 'lang_' + lang));
             }
         }
         if (i18n.exists(key)) {
-            return capitalize(translateWithSplit(i18n.t, key));
+            if (mainTag) {
+                return capitalize(translateWithSplit(i18n.t, key));
+            }
+            return capitalize(translateWithSplit(i18n.t, 'web:lang_local'));
         }
         return capitalize(value);
     }
@@ -177,7 +183,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
                         <MenuItemWithLines
-                            name={getTranslation(`${POI_PREFIX}${tag.textPrefix}`, tag.textPrefix)}
+                            name={getTranslation({ key: `${POI_PREFIX}${tag.textPrefix}`, value: tag.textPrefix })}
                             maxLines={2}
                             className={styles.tagPrefix}
                         />
@@ -196,7 +202,10 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
                         <MenuItemWithLines
-                            name={getTranslation(`${POI_PREFIX}${mainTag.textPrefix}`, mainTag.textPrefix)}
+                            name={getTranslation({
+                                key: `${POI_PREFIX}${mainTag.textPrefix}`,
+                                value: mainTag.textPrefix,
+                            })}
                             maxLines={2}
                             className={styles.tagPrefix}
                         />
@@ -212,7 +221,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 <ListItemText onClick={() => openMoreInfoDialog(tag)}>
                     {showPrefix(tag) && (
                         <Typography className={styles.tagPrefix} noWrap>
-                            {getTranslation(`${POI_PREFIX}${tag.textPrefix}`, tag.textPrefix)}
+                            {getTranslation({ key: `${POI_PREFIX}${tag.textPrefix}`, value: tag.textPrefix })}
                         </Typography>
                     )}
                     <MenuItemWithLines
@@ -302,7 +311,11 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                             >
                                 <ListItemText>
                                     <MenuItemWithLines
-                                        name={getTranslation(`${POI_PREFIX}${item.textPrefix}`, item.textPrefix)}
+                                        name={getTranslation({
+                                            key: `${POI_PREFIX}${item.textPrefix}`,
+                                            value: item.textPrefix,
+                                            mainTag: false,
+                                        })}
                                         maxLines={2}
                                         className={styles.tagPrefix}
                                     />
