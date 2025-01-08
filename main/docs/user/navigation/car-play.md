@@ -202,7 +202,7 @@ In addition to the basic features of the OsmAnd app in *CarPlay* that provide co
 
 ### Voice Prompts
 
-Voice guidance for *CarPlay* is one of OsmAnd's most useful navigation features, providing real-time guidance and allowing the driver to stay focused on the road. Voice prompts clearly indicate turns, directions and other navigation instructions, providing a safer and more comfortable use of the navigation system.  
+Voice guidance for *CarPlay* is one of OsmAnd's most useful navigation features, providing real-time guidance and allowing the driver to stay focused on the road. Voice prompts clearly indicate turns, directions and other navigation instructions, ensuring a safer and more comfortable use of the navigation system.  
 
 To configure voice prompts according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device. To see recommended settings for *CarPlay*, go to the [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md) article.  
 

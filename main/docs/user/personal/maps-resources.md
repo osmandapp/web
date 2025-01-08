@@ -69,12 +69,12 @@ Downloading maps into the OsmAnd application is an important step that determine
 
 #### Paid Features for the Selected Location
 
-- [**Contour lines**](../plugins/topography.md#contour-lines). A map containing contour elevation lines to visualize the terrain.
-- [**Terrain map (Hillshade and Slope)**](../plugins/topography.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
-- [**Terrain map (3D)**](../plugins/topography.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
-- [**Wikipedia**](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about landmarks or additional information about places.
-- [**Weather forecast**](../plugins/weather.md). Weather information on a map for easy route planning.
-- [**Online raster maps**](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
+- [Contour lines](../plugins/topography.md#contour-lines). A map containing contour elevation lines to visualize the terrain.
+- [Terrain map (Hillshade and Slope)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
+- [Terrain map (3D)](../plugins/topography.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
+- [Wikipedia](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about landmarks or additional information about places.
+- [Weather forecast](../plugins/weather.md). Weather information on a map for easy route planning.
+- [Online raster maps](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
 
 #### World overview map
 
@@ -144,14 +144,14 @@ To download a map:
 
 - **Device memory info**. Visualize the amount of occupied and free space on your device.
 - **Map counter** (***Free version***). Displays how many maps you have left for download.
-- [**Extra maps**](#extra-maps). Displays the map data for the [Custom package](../plugins/custom.md).
+- [Extra maps](#extra-maps). Displays the map data for the [Custom package](../plugins/custom.md).
 - **Regions**. List by continent and world region: *Africa, Antarctica, Asia, Australia and Oceania, Central America, Europe, North America, Russia, and South America.*
-- [**World maps**](#world-maps). A list of maps of the entire world: *World altitude correction (Android only)*, *World overview map*, *All world (Weather forecast)*
-- [**Nautical maps**](../plugins/nautical-charts.md) ([*paid feature*](../purchases/index.md)). Vector maps with elevations as points or lines.
-- [**Travel guides (Wikivoyage)**](../plan-route/travel-guides.md) ([*paid feature*](../purchases/index.md)). Vector maps with a collection of articles in HTML format and additionally GPX files.
+- [World maps](#world-maps). A list of maps of the entire world: *World altitude correction (Android only)*, *World overview map*, *All world (Weather forecast)*
+- [Nautical maps](../plugins/nautical-charts.md) ([*paid feature*](../purchases/index.md)). Vector maps with elevations as points or lines.
+- [Travel guides (Wikivoyage)](../plan-route/travel-guides.md) ([*paid feature*](../purchases/index.md)). Vector maps with a collection of articles in HTML format and additionally GPX files.
 - **Other maps**. Maps that cannot be assigned to the current map hierarchy because they are not supported or will be available in future versions.
-- [**Voice prompts**](../navigation/guidance/voice-navigation.md) (*Android only*). Voice packs for voicing navigation prompts.
-- [**Map fonts**](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files  display text on the map.
+- [Voice prompts](../navigation/guidance/voice-navigation.md) (*Android only*). Voice packs for voicing navigation prompts.
+- [Map fonts](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files  display text on the map.
 
 #### World Maps
 
@@ -206,7 +206,7 @@ Tap any item in the **Local** tab to open its detailed list. At the top of this 
 - **Three-dot menu**:  
     ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
     ***Import***. Access the device's storage to import files.
-- [**Sorting option**](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
+- [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
 
 
 #### Menu for Items from the List
@@ -231,6 +231,7 @@ Additional options for maps:
 ![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
 
 When viewing a local data item, you see:
+
 - **Type**. The data type from the **Local** list.
 - **Created**. The date the item was added.
 - **Size**. The item’s size in MB.

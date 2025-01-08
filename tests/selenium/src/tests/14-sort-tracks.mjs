@@ -1,15 +1,15 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import { clickBy, enclose, enumerateIds, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { getFiles } from '../util.mjs';
-import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
-import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
+import actionImportCloudTrack from '../actions/tracks/actionImportCloudTrack.mjs';
+import actionCheckCloudTracks from '../actions/tracks/actionCheckCloudTracks.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
-import actionRenameTrack from '../actions/actionRenameTrack.mjs';
+import actionRenameTrack from '../actions/tracks/actionRenameTrack.mjs';
 
 export const UPLOAD_SORT = 'upload-sort';
 

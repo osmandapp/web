@@ -69,6 +69,7 @@ const MenuItemWithLines = forwardRef((props, ref) => {
                         id={'se-' + name}
                         onClick={handleExpandClick}
                         variant="inherit"
+                        sx={{ fontFamily: 'Roboto' }}
                         className={className ?? styles.groupName}
                     >
                         {name}

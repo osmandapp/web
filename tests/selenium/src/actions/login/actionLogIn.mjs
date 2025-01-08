@@ -2,8 +2,8 @@
 
 import { By } from 'selenium-webdriver';
 
-import { clickBy, waitBy, fillLoginData } from '../lib.mjs';
-import { TEST_LOGIN, TEST_PASSWORD } from '../options.mjs';
+import { clickBy, waitBy, fillLoginData } from '../../lib.mjs';
+import { TEST_LOGIN, TEST_PASSWORD } from '../../options.mjs';
 
 /**
  * Action: actionLogIn({ login, password })

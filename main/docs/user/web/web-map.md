@@ -37,8 +37,8 @@ The OsmAnd web map is a global map based on [OpenStreetMap (OSM)](https://www.op
 For opening it right click anywhere on the map. This menu includes the following actions:
 
 - **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
-- **Open weather** – Access the [Weather menu](#weather) to view weather details.
-- **Create new route** – Opens the ["Plan a route" tool](../web/planner.md#create-track-and-local) with the selected location as the starting or destination point.
+- **Open weather** – Access the [Weather menu](#weather-on-the-web) to view weather details.
+- **Create new route** – Opens the [*Plan a route* tool](../web/planner.md#create-track-and-local) with the selected location as the starting or destination point.
 - **Add Favorite** –  Allows you to create and save a [favorite](../web/web-userdata.mdx#add--edit-favorite) at any point on the map for easy access.
 - **Directions from** –  Sets the selected point as the [starting location](../web/planner.md#navigation-route) for navigation.
 - **Directions to** – Sets the selected point as the [destination for navigation](../web/planner.md#navigation-route).
@@ -58,40 +58,45 @@ The OsmAnd Web provides weather information from two forecast sources:
 
 To switch between these forecast sources, click the **umbrella button** in the Weather menu.
 
-**Features of the Weather Menu:**
+***Features of the weather menu:***  
 
-1. **Current Weather Data**: Displays your coordinates along with the following data:
-   - Temperature
-   - Precipitation
-   - Wind
-   - Air Pressure
-   - Cloud Cover
+- **Current Weather Data**: Displays your coordinates along with the following data:
 
-2. **Time Adjustment**: Modify the date and time using the **time tool** in the Weather menu to view weather for a specific moment.
+  - Temperature.
+  - Precipitation.
+  - Wind.
+  - Air Pressure.
+  - Cloud Cover.
 
-**Weather Layers on the Map**
+- **Time Adjustment**: Modify the date and time using the **time tool** in the Weather menu to view weather for a specific moment.
+
+***Weather layers on the map:***  
 
 - Use the **layers button** to select and enable weather layers such as:
-  - Temperature
-  - Pressure
-  - Wind
-  - Cloud Cover
-  - Precipitation
 
-**Viewing Forecasts**
+  - Temperature.
+  - Pressure.
+  - Wind.
+  - Cloud Cover.
+  - Precipitation.
+
+***Viewing forecasts:***  
 
 - Weather forecasts are available for the **7-day** forecast.
 - Forecast updates are provided in **3-hour steps** for detailed insights.
 
 To access or customize these features, use the menus on the left or right side of the interface.
 
-![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
+  ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
 
-**7-Day Forecast**: Click on the forecast data in the menu to view the **7-day forecast** for your location. The forecast is available in:
-   - **Graph format**  
-   - **List format**
+***7-Day Forecast***:  
 
-![OsmAnd Web Weather](@site/static/img/web/web_7day.png)
+Click on the forecast data in the menu to view the **7-day forecast** for your location. The forecast is available in:
+
+- **Graph format**  
+- **List format**
+
+  ![OsmAnd Web Weather](@site/static/img/web/web_7day.png)
 
 
 ## Configure Map Menu
@@ -99,12 +104,14 @@ To access or customize these features, use the menus on the left or right side o
 The Configure Map menu allows you to manage the display settings for map data, such as POI layers, Favorites, tracks, and terrain. Please log in to your OsmAnd account to use this menu section.
 
 To open this menu, click the button in the **top left corner** or access it through the **Menu**.
-- [POI overlay...](#poi-overlay-section):  Allows you to choose and show needed POI categories on the map.
-- [Favorites](#favorites-section):  Toggle the display of favorites on the map. 
-- [Tracks](#tracks-section):  Contains GPX tracks visible on the map.  
-- [Terrain](#terrain-section):  Enable or disable the terrain color scheme on the map.
+
+- [POI overlay...](#poi-overlay-section). Allows you to choose and show needed POI categories on the map.
+- [Favorites](#favorites-section). Toggle the display of favorites on the map.
+- [Tracks](#tracks-section). Contains GPX tracks visible on the map.  
+- [Terrain](#terrain-section). Enable or disable the terrain color scheme on the map.
 
 ![POIs menu](@site/static/img/web/configure_map_web.png)
+
 
 ### POI overlay section
 
@@ -116,9 +123,11 @@ Alternatively, you can use the [**Search section**](web-search.md) to find the d
 
 ![POIs menu](@site/static/img/web/poi_menu.png)
 
+
 ### Favorites Section
 
-With one click, you can toggle favorites on or off on the map. However, only favorites with [**"Show on map" enabled**](../web/web-userdata.mdx##favorites-on-the-web) will be displayed.
+With one click, you can toggle favorites on or off on the map. However, only favorites with [**Show on map enabled**](../web/web-userdata.mdx##favorites-on-the-web) will be displayed.
+
 
 ### Tracks section
 
@@ -139,12 +148,12 @@ Each track has a **Context Menu** (accessible via the ⋮ button) with the follo
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
 
-
 ### Terrain section
 
 The **Terrain** section is a paid feature <ProFeature/>. To use this feature, you must first log in to your OsmAnd Pro account.
 
 In this section, you can:
+
 - Choose a **color scheme** for terrain:
   - **Hillshade**
   - **Slope**
@@ -152,7 +161,6 @@ In this section, you can:
 - Adjust the visibility of the selected terrain layer from **0% to 100%**.
 
 ![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
-
 
 
 <!--
@@ -203,24 +211,24 @@ Depending on the specified parameters, URL strings can contain:
 - **profile**: navigation profile (e.g., car, bike).  
 - **zoom**: zoom level.
 
-4.  **Weather**&nbsp; – &nbsp;`osmand.net/map/weather`
+4. **Weather**&nbsp; – &nbsp;`osmand.net/map/weather`
 
 ***For example***, you can directly access the weather page with specified coordinates:  
     [`https://osmand.net/map/weather/#9/52.2394/21.0362`](https://osmand.net/map/weather/#9/52.2394/21.0362)
 
-5.  **Account**&nbsp; – &nbsp;`osmand.net/map/account`
+5. **Account**&nbsp; – &nbsp;`osmand.net/map/account`
 
-6.  **Configure Map**&nbsp; – &nbsp;`osmand.net/map/configure/`
+6. **Configure Map**&nbsp; – &nbsp;`osmand.net/map/configure/`
 
-7.  **Tracks**&nbsp; – &nbsp;`osmand.net/map/mydata/tracks`
+7. **Tracks**&nbsp; – &nbsp;`osmand.net/map/mydata/tracks`
 
-8.  **Favorites**&nbsp; – &nbsp;`osmand.net/map/mydata/favorites`
+8. **Favorites**&nbsp; – &nbsp;`osmand.net/map/mydata/favorites`
 
-9.  **Settings**&nbsp; – &nbsp;`osmand.net/map/settings`
+9. **Settings**&nbsp; – &nbsp;`osmand.net/map/settings`
 
-10.  **Plan a Route**&nbsp; - &nbsp;`osmand.net/map/plan`
+10. **Plan a Route**&nbsp; - &nbsp;`osmand.net/map/plan`
 
-11.  Direct link to the current [**Explore page**](#explore-map-menu)&nbsp; - &nbsp;`osmand.net/map/search`
+11. Direct link to the current [**Explore page**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
 
 
-> *This article was last updated in December 2024*
+> *This article was last updated in January 2025*

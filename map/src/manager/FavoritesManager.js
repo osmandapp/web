@@ -1,6 +1,11 @@
-import MarkerOptions, { getBackground } from '../map/markers/MarkerOptions';
-import Utils from '../util/Utils';
-import _ from 'lodash';
+import MarkerOptions, {
+    changeIconSizeWpt,
+    createPoiIcon,
+    getBackground,
+    removeShadowFromIconWpt,
+} from '../map/markers/MarkerOptions';
+import Utils, { getDistance } from '../util/Utils';
+import _, { isEmpty } from 'lodash';
 import { apiPost } from '../util/HttpApi';
 import { quickNaNfix } from '../util/Utils';
 import TracksManager from './track/TracksManager';
@@ -169,16 +174,11 @@ function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = n
         if (currentGroup) {
             color = currentGroup.color;
         }
-    } else if (gpxFile) {
-        const currentGroup =
-            gpxFile?.pointsGroups && !_.isEmpty(gpxFile?.pointsGroups) && gpxFile.pointsGroups[groupName];
+    } else if (gpxFile || favoritesGroup) {
+        const file = gpxFile || favoritesGroup;
+        const currentGroup = file?.pointsGroups && !_.isEmpty(file?.pointsGroups) && file.pointsGroups[groupName];
         if (currentGroup) {
             color = currentGroup.color;
-        }
-    } else if (favoritesGroup) {
-        const currentGroup = favoritesGroup?.groups?.find((g) => g.name === groupName);
-        if (currentGroup && currentGroup.pointsGroups[groupName]) {
-            color = currentGroup.pointsGroups[groupName].color;
         }
     }
     if (color) {
@@ -503,6 +503,78 @@ export function updateFavoriteGroups({
 
 export function getColorLocation(location) {
     return location === LOCATION_UNAVAILABLE ? '#ff8800' : '#237bff';
+}
+
+export function getSize(group, t) {
+    return FavoritesManager.getGroupSize(group) > 0
+        ? `${FavoritesManager.getGroupSize(group)} ${t('shared_string_gpx_points').toLowerCase()}`
+        : 'empty';
+}
+
+export function getFavMenuListByLayers(layers, wpts, currentLoc) {
+    let markerList = [];
+    Object.values(layers).forEach((value) => {
+        const wpt = getWptByTitle(value.options.title, wpts);
+        const icon = createPoiIcon({
+            point: wpt,
+            color: wpt.color,
+            background: wpt.background,
+            hasBackgroundLight: false,
+            icon: wpt.icon,
+        }).options.html;
+        let marker = {
+            title: value.options.title,
+            icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30),
+            layer: value,
+        };
+        markerList.push(marker);
+    });
+    return addLocDist({ location: currentLoc, markers: markerList });
+}
+
+export function getWptByTitle(title, wpts) {
+    return wpts.find((wpt) => wpt.name === title);
+}
+
+export function addLocDist({ location, markers = null, wpts = null }) {
+    let res = [];
+    if (location && location !== LOCATION_UNAVAILABLE) {
+        if (markers && markers.length > 0) {
+            markers.forEach((m) => {
+                if (m?.layer?._latlng) {
+                    m.locDist = (
+                        getDistance(location.lat, location.lng, m?.layer?._latlng.lat, m?.layer?._latlng.lng) / 1000
+                    ).toFixed(0);
+                }
+                res.push(m);
+            });
+        } else if (wpts && wpts.length > 0) {
+            wpts.forEach((w) => {
+                if (w.latlng) {
+                    w.locDist = (getDistance(location.lat, location.lng, w.latlng.lat, w.latlng.lng) / 1000).toFixed(0);
+                }
+                res.push(w);
+            });
+        }
+    }
+    if (isEmpty(res)) {
+        if (markers) {
+            return markers;
+        } else if (wpts) {
+            return wpts;
+        }
+    }
+    return res;
+}
+
+export function addShareFavoriteToMap(marker, ctx) {
+    const newSelectedGpxFile = ctx.selectedGpxFile;
+    newSelectedGpxFile.name = marker.title;
+    newSelectedGpxFile.zoom = true;
+    newSelectedGpxFile.markerCurrent = marker;
+    newSelectedGpxFile.favItem = true;
+    ctx.setSelectedGpxFile((prev) => ({ ...prev, ...newSelectedGpxFile }));
+    ctx.setSelectedWpt(newSelectedGpxFile);
 }
 
 const FavoritesManager = {

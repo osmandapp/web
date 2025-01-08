@@ -68,5 +68,6 @@
   "access_requested_btn": "Request access",
   "access_blocked": "You don’t have access to this file",
   "access_blocked_desc": "You need to create a username for your profile to request access to this file. It will be visible to the file owner.",
+  "lang_local": "Local",
   "shared_with_me": "Shared with Me"
 }

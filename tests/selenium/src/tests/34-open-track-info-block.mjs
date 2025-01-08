@@ -1,6 +1,6 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
-import actionAddOneTrack from '../actions/actionAddOneTrack.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
+import actionAddOneTrack from '../actions/tracks/actionAddOneTrack.mjs';
 import { checkElementByCss, clickBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';

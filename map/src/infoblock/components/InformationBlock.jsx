@@ -10,13 +10,15 @@ import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
 import _, { isEmpty } from 'lodash';
 import { hasSegmentTurns } from '../../manager/track/TracksManager';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import { MENU_INFO_CLOSE_SIZE, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import styles from '../../menu/trackfavmenu.module.css';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WeatherForecastDetails from '../../menu/weather/WeatherForecastDetails';
 import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
+import ShareFileMenu from '../../menu/share/ShareFileMenu';
+import ShareFile from '../../menu/share/ShareFile';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -47,6 +49,8 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     const [openWeatherForecastDetails, setOpenWeatherForecastDetails] = useState(false);
     const [openWptDetails, setOpenWptDetails] = useState(false);
     const [openWptTab, setOpenWptTab] = useState(false);
+    const [openShareFileMenu, setOpenShareFileMenu] = useState(false);
+    const [openShareFileItem, setOpenShareFileItem] = useState(false);
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -86,6 +90,14 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
         const px = parseFloat(width) || 0; // 100px -> 100, auto -> 0
         const padding = px || DRAWER_SIZE + Number(mainMenuSize.replace('px', '')) + 24; // always apply right padding on desktop
         ctx.mutateFitBoundsPadding((o) => (o.left = padding));
+    }, [showInfoBlock]);
+
+    useEffect(() => {
+        if (location.pathname.includes(SHARE_FILE_MAIN_URL)) {
+            setOpenShareFileItem(true);
+        } else {
+            setOpenShareFileItem(false);
+        }
     }, [showInfoBlock]);
 
     // detect leaving from Local Track Editor when another kind of object type is activated
@@ -147,6 +159,15 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     }, [ctx.selectedWpt]);
 
     useEffect(() => {
+        if (ctx.shareFile) {
+            setShowInfoBlock(true);
+            setOpenShareFileMenu(true);
+        } else {
+            setOpenShareFileMenu(false);
+        }
+    }, [ctx.shareFile]);
+
+    useEffect(() => {
         if (!ctx.loginUser) {
             setShowInfoBlock(false);
             setOpenWptDetails(false);
@@ -195,7 +216,12 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     }
 
     function hasOldTabs() {
-        return !openWeatherForecastDetails && !openWptDetails;
+        return !openWeatherForecastDetails && !openWptDetails && !openShareFileMenu;
+    }
+
+    function isOpenMainFavShareFile() {
+        const isCloseFavItemDetails = !ctx.selectedGpxFile?.markerCurrent;
+        return openShareFileItem && isCloseFavItemDetails;
     }
 
     return (
@@ -215,6 +241,8 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                 setShowInfoBlock={setShowInfoBlock}
                             />
                         ))}
+                    {openShareFileMenu && <ShareFileMenu setShowInfoBlock={setShowInfoBlock} />}
+                    {isOpenMainFavShareFile() && <ShareFile />}
                     {hasOldTabs() && (
                         <Box anchor={'right'} sx={{ height: 'auto', width: getWidth(), overflowX: 'hidden' }}>
                             <div id="se-infoblock-all">

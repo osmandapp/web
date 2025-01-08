@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
-import { Button } from '@mui/material';
+import { Button, Dialog } from '@mui/material';
 import AppContext, { isCloudTrack, isLocalTrack } from '../../context/AppContext';
 import TracksManager from '../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';

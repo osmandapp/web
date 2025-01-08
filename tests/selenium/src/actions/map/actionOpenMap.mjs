@@ -2,9 +2,9 @@
 
 import { until } from 'selenium-webdriver';
 
-import { driver, url, TIMEOUT_REQUIRED } from '../options.mjs';
+import { driver, url, TIMEOUT_REQUIRED } from '../../options.mjs';
 
-import actionIdleWait from './actionIdleWait.mjs';
+import actionIdleWait from '../actionIdleWait.mjs';
 
 /**
  * Action: actionOpenMap()

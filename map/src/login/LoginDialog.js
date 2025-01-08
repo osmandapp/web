@@ -62,7 +62,7 @@ export default function LoginDialog() {
 
     if (ctx.loginUser) {
         return (
-            <Dialog classes={{ paper: classes.paper }} open={true} onClose={handleClose}>
+            <Dialog id={'se-login-dialog'} classes={{ paper: classes.paper }} open={true} onClose={handleClose}>
                 <DialogTitle sx={{ color: '#f8931d' }} onClick={clickHandler}>
                     {ctx.loginUser} {ctx.develFeatures && ' :-)'}
                 </DialogTitle>
@@ -161,6 +161,7 @@ export default function LoginDialog() {
                         Close
                     </Button>
                     <Button
+                        id="se-logout-btn"
                         onClick={() =>
                             userLogout({
                                 ctx,
