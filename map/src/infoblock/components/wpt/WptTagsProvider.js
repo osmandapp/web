@@ -309,6 +309,11 @@ async function getWptTags(obj, type, ctx) {
                     tagObj.value = localizeWeekDays(tagObj.value);
                 }
 
+                if (tagObj.key.startsWith(POI_NAME)) {
+                    tagObj.key = tagObj.key.replace(POI_NAME, 'shared_string_name');
+                    tagObj.textPrefix = tagObj.key;
+                }
+
                 // add ele tag
 
                 res.push(tagObj);
@@ -582,7 +587,6 @@ function shouldSkipKey(key) {
         key === 'lang_yes' ||
         key === WIKIDATA ||
         key === WIKIMEDIA_COMMONS ||
-        key.startsWith('name:') ||
         key.includes(ROUTE)
     );
 }
