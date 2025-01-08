@@ -1,3 +1,9 @@
+---
+sidebar_position: 2
+---
+
+# OsmAnd GPX
+
 ## Overview
 
 The OsmAnd's GPX file format conforms to the GPX 1.1 specification, with additional data written as extensions.
@@ -557,3 +563,4 @@ Some GPX tags are used or stored indirectly in OBF files. See [OsmGpxWriteContex
 
 
 > *This article was last updated in January 2025*
+
