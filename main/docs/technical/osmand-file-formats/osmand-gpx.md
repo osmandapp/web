@@ -4,6 +4,88 @@ sidebar_position: 2
 
 # OsmAnd GPX
 
+
+## Introduction to OsmAnd GPX Format
+
+GPX (GPS Exchange Format) is an XML-based standard for storing GPS data like tracks, routes, and waypoints. OsmAnd supports GPX for importing, exporting, and customizing navigation routes. Using the `osmand:` XML namespace, OsmAnd extends the GPX 1.1 format with custom tags for enhanced track display, metadata, and visual settings.  
+
+This guide details GPX file structure in OsmAnd, key track and waypoint parameters, and examples of saving and displaying routes.
+
+
+## GPX File Structure
+
+The structure of GPX files in OsmAnd follows the standard XML-based format defined in GPX 1.1. It organizes data using hierarchical elements such as `<gpx>`, `<trk>` (track), `<rte>` (route), `<wpt>` (waypoint) and custom tags. This section describes the basic elements of a GPX file and extensions specific to OsmAnd.
+
+
+### Track Display Parameters
+
+
+
+
+
+
+
+
+### Example of Track Display Settings
+
+## Track Point Data
+
+### Track Point Parameters
+
+#### Speed
+
+#### Movement Direction
+
+### Example of Track Point Data  
+
+## Saving a Calculated Route  
+
+### GPX File Structure for Routes  
+
+#### Route Segments
+
+#### Segment Properties
+
+#### Route Waypoints
+
+### Example of a Route GPX File  
+
+## Additional OsmAnd Extensions in GPX
+
+### OsmAnd-Specific Tags
+
+### Compatibility with GPX 1.1
+
+## Conclusion
+
+### Benefits of Using GPX in OsmAnd
+
+### Recommendations for Users
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+____________
+
 ## Overview
 
 The OsmAnd's GPX file format conforms to the GPX 1.1 specification, with additional data written as extensions.
@@ -370,7 +452,7 @@ The resultant file can be imported to OsmAnd (supported by OsmAnd Android 5.0+)
 | translucent_line_colors | no      | Set to "yes" to use semi-transparent line colors     |
 | width                   | thin    | Width: "thin", "medium", "bold", 1-24 or "roadstyle" |
 
-Supported colors: black blue brown darkyellow gray green lightblue lightgreen orange purple red white yellow
+Supported colors: black, blue, brown, darkyellow, gray, green, lightblue, lightgreen, orange, purple, red, white, yellow.
 
 ***Example:***
 
@@ -441,7 +523,7 @@ If shield icons are not specified, an auto-sized yellow shield will be used by d
 
 Background=square will be displayed in red, background=octagon will be displayed as circle.
 
-Supported colors (background=circle): blue gray green light-blue light-green orange purple yellow
+Supported colors (background=circle): blue gray green lightblue lightgreen orange purple yellow
 
 In addition, [HTML-code](#html-in-description) in the description and [Link-as-Image](#link-tag-link-as-image) can be used to decorate waypoints as well as the track itself.
 
@@ -560,5 +642,6 @@ Some GPX tags are used or stored indirectly in OBF files. See [OsmGpxWriteContex
 | route_type             | Activity group ("id")                                                                           |
 | route_activity_type    | Activity type ("id")                                                                            |
 | route_track_point      | Waypoint POI-type                                                                               |
+-->
 
 > *This article was last updated in January 2025*
