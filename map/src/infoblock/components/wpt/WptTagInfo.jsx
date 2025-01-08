@@ -149,9 +149,10 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             : null;
     }
 
-    function getTranslation({ key, value, mainTag = true }) {
-        if (key.includes(':')) {
-            const arr = key.split(':');
+    function getTranslation({ key, mainTag = true }) {
+        const preparedKey = key.includes('shared_string_name') ? key : `${POI_PREFIX}${key}`;
+        if (preparedKey.includes(':')) {
+            const arr = preparedKey.split(':');
             const t = arr[0];
             const lang = arr[1];
             if (i18n.exists('lang_' + lang) && i18n.exists(t)) {
@@ -165,13 +166,13 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 return capitalize(translateWithSplit(i18n.t, 'lang_' + lang));
             }
         }
-        if (i18n.exists(key)) {
+        if (i18n.exists(preparedKey)) {
             if (mainTag) {
-                return capitalize(translateWithSplit(i18n.t, key));
+                return capitalize(translateWithSplit(i18n.t, preparedKey));
             }
             return capitalize(translateWithSplit(i18n.t, 'web:lang_local'));
         }
-        return capitalize(value);
+        return capitalize(key);
     }
 
     function getValue(tag) {
@@ -183,7 +184,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
                         <MenuItemWithLines
-                            name={getTranslation({ key: `${POI_PREFIX}${tag.textPrefix}`, value: tag.textPrefix })}
+                            name={getTranslation({ key: tag.textPrefix })}
                             maxLines={2}
                             className={styles.tagPrefix}
                         />
@@ -203,8 +204,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                     <ListItemText onClick={() => setOpen(!open)}>
                         <MenuItemWithLines
                             name={getTranslation({
-                                key: `${POI_PREFIX}${mainTag.textPrefix}`,
-                                value: mainTag.textPrefix,
+                                key: mainTag.textPrefix,
                             })}
                             maxLines={2}
                             className={styles.tagPrefix}
@@ -221,7 +221,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 <ListItemText onClick={() => openMoreInfoDialog(tag)}>
                     {showPrefix(tag) && (
                         <Typography className={styles.tagPrefix} noWrap>
-                            {getTranslation({ key: `${POI_PREFIX}${tag.textPrefix}`, value: tag.textPrefix })}
+                            {getTranslation({ key: tag.textPrefix })}
                         </Typography>
                     )}
                     <MenuItemWithLines
@@ -312,8 +312,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                                 <ListItemText>
                                     <MenuItemWithLines
                                         name={getTranslation({
-                                            key: `${POI_PREFIX}${item.textPrefix}`,
-                                            value: item.textPrefix,
+                                            key: item.textPrefix,
                                             mainTag: false,
                                         })}
                                         maxLines={2}
