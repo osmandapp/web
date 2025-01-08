@@ -1,4 +1,4 @@
-import { waitBy, waitByRemoved } from '../lib.mjs';
+import { waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 
 export default async function test({ hidden = false, classname }) {

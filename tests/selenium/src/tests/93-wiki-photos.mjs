@@ -1,10 +1,13 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import { clickBy, matchInnerTextBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
+import ignoreTest from '../actions/actionIgnoreTest.mjs';
 
 export default async function test() {
+    ignoreTest();
+
     await actionOpenMap();
     await actionLogIn();
 

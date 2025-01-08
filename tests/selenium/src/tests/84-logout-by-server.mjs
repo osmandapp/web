@@ -1,5 +1,5 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import ignoreTest from '../actions/actionIgnoreTest.mjs';
 import { driver } from '../options.mjs';

@@ -3,7 +3,7 @@
 import { By } from 'selenium-webdriver';
 import { enclose, clickBy, sendKeysBy, matchTextBy, navigateHash } from '../lib.mjs';
 
-import actionOpenMap from '../actions/actionOpenMap.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 

@@ -1,7 +1,7 @@
-import { clickBy, waitBy } from '../lib.mjs';
+import { clickBy, waitBy } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionImportCloudTrack from './actionImportCloudTrack.mjs';
-import { getFiles } from '../util.mjs';
+import { getFiles } from '../../util.mjs';
 
 export default async function test(trackName) {
     const tracks = getFiles({ folder: 'gpx' });

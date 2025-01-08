@@ -3,10 +3,10 @@
 import { By } from 'selenium-webdriver';
 import { enclose, clickBy, enumerateIds } from '../lib.mjs';
 
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionUploadGpx from '../actions/actionUploadGpx.mjs';
-import actionLocalToCloud from '../actions/actionLocalToCloud.mjs';
+import actionLocalToCloud from '../actions/tracks/actionLocalToCloud.mjs';
 
 const TRACK = 'test-routed-osrm';
 

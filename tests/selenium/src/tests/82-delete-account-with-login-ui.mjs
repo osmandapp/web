@@ -1,5 +1,5 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionOpenDeleteAcc from '../actions/actionOpenDeleteAcc.mjs';
 import { waitBy } from '../lib.mjs';

@@ -1,7 +1,7 @@
 'use strict';
 
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 
 import { TEST_LOGIN } from '../options.mjs';

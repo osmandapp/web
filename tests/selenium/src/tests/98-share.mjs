@@ -1,14 +1,15 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import { clickBy, getTextBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
-import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
+import actionImportCloudTrack from '../actions/tracks/actionImportCloudTrack.mjs';
 import actionCheckDisabled from '../actions/actionCheckDisabled.mjs';
-import { deleteTrack, getFiles, openShare } from '../util.mjs';
+import { deleteTrack, getFiles } from '../util.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import { TEST_LOGIN2, TEST_PASSWORD2 } from '../options.mjs';
-import actionLogOut from '../actions/actionLogOut.mjs';
+import actionLogOut from '../actions/login/actionLogOut.mjs';
+import actionOpenShare from '../actions/actionOpenShare.mjs';
 
 export default async function test() {
     const trackName = 'test-routed-osrm';
@@ -27,7 +28,7 @@ export default async function test() {
     }
     await actionImportCloudTrack(tracks, trackName);
 
-    await openShare(trackName);
+    await actionOpenShare(trackName);
 
     await waitBy(By.id('se-share-file-menu'));
     await waitBy(By.id(`se-share-file-item-${trackName}`));
@@ -70,7 +71,7 @@ export default async function test() {
 
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
-    await openShare(trackName);
+    await actionOpenShare(trackName);
     await clickBy(By.id('se-pending-tab'));
     await waitBy(By.id(`se-user-access-item-${userName}`));
     await clickBy(By.id('se-approve-access'));

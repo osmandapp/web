@@ -1,10 +1,10 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import { clickBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteTrack, getFiles } from '../util.mjs';
-import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
+import actionImportCloudTrack from '../actions/tracks/actionImportCloudTrack.mjs';
 import { readdirSync } from 'node:fs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
 import { UPLOAD_SORT } from './14-sort-tracks.mjs';

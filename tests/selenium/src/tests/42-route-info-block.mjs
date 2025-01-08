@@ -4,7 +4,7 @@ import { By } from 'selenium-webdriver';
 import { mobile } from '../options.mjs';
 import { enclose, clickBy, sendKeysBy, matchInnerTextBy, enumerateIds } from '../lib.mjs';
 
-import actionOpenMap from '../actions/actionOpenMap.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 const routes = [

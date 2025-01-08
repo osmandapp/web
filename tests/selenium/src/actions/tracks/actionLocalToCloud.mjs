@@ -2,7 +2,7 @@
 
 import { By } from 'selenium-webdriver';
 
-import { enclose, waitBy, clickBy, enumerateIds } from '../lib.mjs';
+import { enclose, waitBy, clickBy, enumerateIds } from '../../lib.mjs';
 
 /**
  * Action: actionLocalToCloud({mask = '*'})

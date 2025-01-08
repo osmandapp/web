@@ -1,4 +1,4 @@
-import { clickBy, enclose, waitBy, waitByRemoved } from '../lib.mjs';
+import { clickBy, enclose, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 
 export default async function test(shortFavGroupName, suffix) {

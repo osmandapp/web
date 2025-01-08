@@ -1,4 +1,4 @@
-import { waitBy } from '../lib.mjs';
+import { waitBy } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 
 export default async function test(tracks) {
