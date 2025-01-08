@@ -341,7 +341,7 @@ function mergeTagsWithLang(tags) {
     tagsWithLang.forEach((tag) => {
         if (tags.includes(tag)) {
             const sameTags = tags.filter((t) => t.key === tag.key && t !== tag);
-            if (sameTags) {
+            if (sameTags?.length > 0) {
                 tag.otherLangs = sameTags;
                 tags = tags.filter((t) => !sameTags.includes(t));
             }
