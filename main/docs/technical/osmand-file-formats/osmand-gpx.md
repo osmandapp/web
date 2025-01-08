@@ -4,6 +4,8 @@ sidebar_position: 2
 
 # OsmAnd GPX
 
+## Overview
+
 The OsmAnd's GPX file format conforms to the GPX 1.1 specification, with additional data written as extensions.
 
 OsmAnd uses XML namespace `osmand:` for all OsmAnd-specific tags.
