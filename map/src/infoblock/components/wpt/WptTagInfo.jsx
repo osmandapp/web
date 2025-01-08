@@ -59,6 +59,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                         ...tag.otherLangs.slice(0, tagWithoutLangInd),
                         ...tag.otherLangs.slice(tagWithoutLangInd + 1),
                     ];
+                    newTag.otherLangs.unshift(tag);
                 }
             }
             setNewTag(newTag);
@@ -201,7 +202,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                         />
                         <MenuItemWithLines name={value} maxLines={1} className={styles.tagName} />
                     </ListItemText>
-                    {listTags.length > 1 && (
+                    {listTags.length > 0 && (
                         <IconButton onClick={() => setOpen(!open)}>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>
                     )}
                 </>
