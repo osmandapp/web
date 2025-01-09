@@ -272,7 +272,7 @@ The **Other** section offers additional profile settings, allowing you to custom
 - *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (Android)*. Select whether you will use the [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to smooth the rotation of the map with a slower rotation animation. This introduces a small delay (< 1 second) till.
 - *<Translate android="true" ids="tap_on_map_to_hide_interface"/> (Android only)*. Tapping an empty space on the map hides the control buttons and widgets.
 - *[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (Android only)*. Switch the animation for the navigation mode on or off.
-- *[<Translate android="true" ids="animate_my_location"/>](../navigation/guidance/map-during-navigation.md#animate-my-location-android-animate-own-position)*. <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the *[My location](../map/interact-with-map.md#my-location-and-zoom)* position to display on the map relative to your location.  
+- *<Translate android="true" ids="animate_my_location"/>*. <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the *[My location](../map/interact-with-map.md#my-location-and-zoom)* position to display on the map relative to your location.  
 
 
 ## Navigation Settings
