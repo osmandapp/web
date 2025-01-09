@@ -18,35 +18,21 @@ This article outlines the structure of GPX files in OsmAnd, key parameters for t
 
 This section describes how OsmAnd displays tracks on the map and the customization options available to adjust their appearance. The parameters described below are applied within the `<gpx>` tag and affect all tracks included in a GPX file.
 
-| Tag Name | Description | Values/Example |
-|:--------|:---------|:----------|
-| `<osmand:color>` | Track line color.  | *String.* HEX color code `#RRGGBB` or `#AARRGGBB` <br/> *Example* <br/> `<osmand:color>#FF5733</osmand:color>` (orange) |
-| `<osmand:width>` | Track line thickness. | *String.* `“thin”`, `“medium"`, `“bold”` (defined by the `“currentTrackWidth”` attribute), or integer (1-24) <br/> *Example* <br/> `<osmand:width>4</osmand:width>` (4 pixels) |
-| `<osmand:show_arrows>` | Show direction arrows. | *Bool.* `"true"` / `"false"` <br/> *Example* <br/> `<osmand:show_arrows>true</osmand:show_arrows>` (arrows shown) |
-| `<osmand:show_start_finish>` | Show start and end markers. | *Bool.* `"true"` / `"false"` <br/> *Example* <br/> `<osmand:show_start_finish>true</osmand:show_start_finish>` (markers visible) |
-| `<osmand:split_type>` | Track segmentation type. | *String.* <br/> "no_split" / "distance" / "time" <br/> *Example* <br/> `<osmand:split_type>distance</osmand:split_type>` (segmentation by distance) |
-| `<osmand:split_interval>` | Segmentation interval. | *Double.* <br/> Integer (meters for "distance", seconds for "time") <br/> *Example* <br/> `<osmand:split_interval>500</osmand:split_interval>` (500 meters)  |
-| `<osmand:line_3d_visualization_by_type>` | 3D visualization type. | *String.* <br/> "none" / "altitude" / "shared_string_speed" / "map_widget_ant_heart_rate" / "map_widget_ant_bicycle_cadence" / "map_widget_ant_bicycle_power" / "shared_string_temperature" / "shared_string_speed" / "fixed_height" <br/> *Example* <br/>   |
-| `<osmand:line_3d_visualization_wall_color_type>`| 3D wall color type. | *String.* <br/> "none" / "solid" / "downward_gradient" / "upward_gradient" / "altitude" / "slope" / "speed" <br/> *Example* <br/>   |
-| `<osmand:line_3d_visualization_position_type>`| 3D visualization position. | *String.* <br/> `"top"`, `"bottom"`, `"top_bottom"` <br/> *Example* <br/> `<osmand:line_3d_visualization_position_type>top</osmand:line_3d_visualization_position_type>` (visualization at the top)  |
-| `<osmand:vertical_exaggeration_scale>`| Vertical exaggeration multiplier. | *Float.* <br/> Default: 1.0 <br/> for `line_3d_visualization_by_type`. <br/> *Example* <br/> `<osmand:vertical_exaggeration_scale>1.5</osmand:vertical_exaggeration_scale>` (exaggerates by 1.5x) |
-| `<osmand:elevation_meters>` | Fixed elevation (meters). | *Float.*  Default: 1000 <br/> for `line_3d_visualization_by_type="fixed_height"`. <br/> *Example* <br/> `<osmand:elevation_meters>2000</osmand:elevation_meters>` (sets elevation to 2000 meters) |
-| `<osmand:coloring_type>` | Coloring method. | *String.* `"solid"`, `"speed"`, `"altitude"`, `"slope"`, `"routeInfo_roadClass`, `"routeInfo_surface"`, `"routeInfo_smoothness"` <br/> *Example* <br/> `<osmand:coloring_type>speed</osmand:coloring_type>` (color gradient based on speed) |
-| `<osmand:color_palette>` | Color palette scheme. | *String.* `"default"` / [user-defined schemes](/docs/user/personal/color-palette-schemes) <br/> *Example* <br/> `<osmand:color_palette>default</osmand:color_palette>` (default color palette)  |
-
-
-### Coloring_type in Details
-
-| Type                 | Details                                          |
-|:---------------------|:-------------------------------------------------|
-| solid                | Solid-colored track according to tag `color`     |
-| speed                | Gradiently filled according to `trkpt` speed     |
-| altitude             | Gradiently filled according to `trkpt` elevation |
-| slope                | Gradiently filled according to `trkpt` slope     |
-| routeInfo_roadClass  | Color based on OSM road type                     |
-| routeInfo_surface    | Color based on OSM road surface                  |
-| routeInfo_smoothness | Color based on OSM road smoothness               |
-
+| Tag Name  | Description / Values |
+|:----------------------------------------|:---------|
+| `color`                                 | - Defines the color of the track line on the map.  <br/>  - *String:* HEX color code `#RRGGBB` or `#AARRGGBB` |
+| `width`                                 | - Specifies the width of the track line. <br/>  - *String:* `“thin”`, `“medium"`, `“bold”` (defined by the `“currentTrackWidth”` attribute), or integer (1-24) |
+| `show_arrows`                           | - Enables or disables direction arrows along the track. <br/> - *Bool:* `"true"` / `"false"` |
+| `show_start_finish`                     | - Shows or hides markers for the start and end of the track. <br/> - *Bool:* `"true"` / `"false"` |
+| `split_type`                            | - Specifies the type of segmentation for the track. <br/> - *String:* `"no_split"`, `"distance"`, `"time"` |
+| `split_interval`                        | - Sets the interval for track segmentation based on the selected type. <br/> - *Double:* Integer (meters for `"distance"`, seconds for `"time"`) |
+| `line_3d_visualization_by_type`         | - Specifies the type of 3D visualization for the track. <br/> - *String:* `"none"`, `"altitude"`, `"shared_string_speed"`, `"map_widget_ant_heart_rate"`, `"map_widget_ant_bicycle_cadence"`, `"map_widget_ant_bicycle_power"`, `"shared_string_temperature"`, `"shared_string_speed"`, `"fixed_height"` |
+| `line_3d_visualization_wall_color_type` | - Defines the wall color type for 3D visualization. <br/> - *String:* `"none"`, `"solid"`, `"downward_gradient"`, `"upward_gradient"`, `"altitude"`, `"slope"`, `"speed"` |
+| `line_3d_visualization_position_type`   | - Sets the position of the 3D visualization relative to the track. <br/> - *String:* `"top"`, `"bottom"`, `"top_bottom"`|
+| `vertical_exaggeration_scale`           | - Multiplier to scale the value of the `line_3d_visualization_by_type` attribute. <br/> - *Float:* Default: 1.0 |
+| `elevation_meters`                      | - Specifies a fixed elevation in meters for `"fixed_height"` in `line_3d_visualization_by_type`. <br/> - *Float:* Default: `1000` |
+| `coloring_type`                         | - Determines the coloring method for the track. <br/> - *String:* `"solid"`, `"speed"`, `"altitude"`, `"slope"`, `"routeInfo_roadClass`, `"routeInfo_surface"`, `"routeInfo_smoothness"` |
+| `color_palette`                         | - Specifies the color scheme for the track. <br/> - *String:* `"default"` / [user-defined schemes](/docs/user/personal/color-palette-schemes) |
 
 ***Example:***
 
@@ -63,23 +49,52 @@ This section describes how OsmAnd displays tracks on the map and the customizati
 </gpx>
 ```
 
-In this example, the track is displayed with a blue color (#4e4eff), a line width of bold, and segmentation based on 2000-meter intervals.
+### Coloring Type in Details
+
+The `coloring_type` tag in OsmAnd allows users to customize track coloring based on specific data attributes, providing a visual way to interpret key information along the track.
+
+| Type | Description | Use Case |
+|:-----------------------|:--------|:--------|
+| `solid`                | The entire track is displayed with a single, solid color specified by the `color` tag. | Use when a uniform color is needed for clear visibility. |
+| `speed`                | The track is colored in a gradient based on the speed values at each track point (`trkpt`). Higher speeds are represented by distinct colors. | Ideal for activities such as cycling or driving to visualize changes in speed. |
+| `altitude`             | The track is colored according to the elevation data at each `trkpt`. A gradient is applied, indicating different altitude ranges. | Useful for hiking or mountain routes to highlight altitude changes. |
+| `slope`                | The track is colored based on the incline/decline between consecutive track points. Positive gradients indicate uphill slopes, while negative gradients indicate downhill. | Suitable for cyclists or hikers analyzing track difficulty. |
+| `routeInfo_roadClass`  | Colors the track segments based on the OpenStreetMap (OSM) road classification (e.g., highway, residential street). | Helps distinguish between different road types when following a route. |
+| `routeInfo_surface`    | Colors the track segments based on the OSM surface type (e.g., paved, gravel, dirt). | Useful for determining track conditions during activities like off-roading. |
+| `routeInfo_smoothness` | Colors the track according to OSM smoothness ratings, indicating the roughness or smoothness of the path (e.g., excellent, bad). | Helpful for evaluating track navigability for specific vehicles. |
 
 
-## Waypoints Icons
+## Waypoints Customization
 
-| GPX tag    | Default | Purpose                                   |
-|:-----------|:--------|:---------------------------------------------------|
-| icon       | -       | Icon name |
-| color      | red     | Icon color: hex or text |
-| background | circle  | shape of the icon (circle, square, octagon)    |
+This section explains how OsmAnd allows customization of waypoints in GPX files by using icons, colors, and grouping.
 
-## Waypoints Groups
+### Waypoints Icons
 
-Track Waypoints can be sorted into Points groups.
+The following tags control the appearance of waypoint icons in OsmAnd:
 
-The point group name is stored in `<type>` tag inside `<wpt>`.
-`osmand:points_groups` is located in the main GPX extensions:
+| GPX tag    | Default | Purpose  |
+|:-------------|:----------|:-----------|
+| `icon`       | (none)    | Specifies the icon name for the waypoint (e.g., `historic_castle`). |
+| `color`      | `red`     | Sets the icon’s color using a HEX code (e.g., `#FF0000`) or color name (e.g., `blue`). |
+| `background` | `circle`  | Defines the icon's background shape. Possible values: `"circle"`, `"square"`, `"octagon"`. |
+
+***Example:***
+
+```xml
+<wpt lat="52.5163" lon="13.3779">
+  <name>Brandenburg Gate</name>
+  <icon>landmark_arch</icon>
+  <color>#FFD700</color>
+  <background>square</background>
+</wpt>
+```
+
+### Waypoints Groups
+
+Waypoints in OsmAnd can be sorted into groups based on their type. This grouping allows the user to organize multiple waypoints under specific categories, improving clarity and map readability.
+
+- **Point group definition.** The `<type>` tag inside the `<wpt>` element specifies the point's group (e.g., `"castle"`, `"aqueduct"`).
+- **Group configuration.** The `osmand:points_groups` extension in the `<gpx>` element defines the settings for each group, including the `name`, `color`, `icon`, and `background` for all waypoints in that group.
 
 ***Example:***
 
