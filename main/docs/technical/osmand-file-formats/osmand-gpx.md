@@ -7,114 +7,33 @@ sidebar_position: 2
 
 ## Introduction to OsmAnd GPX Format
 
-GPX (GPS Exchange Format) is an XML-based standard for storing GPS data like tracks, routes, and waypoints. OsmAnd supports GPX for importing, exporting, and customizing navigation routes. Using the `osmand:` XML namespace, OsmAnd extends the GPX 1.1 format with custom tags for enhanced track display, metadata, and visual settings.  
+GPX (GPS Exchange Format) is an XML-based format for storing GPS data such as tracks, routes, and waypoints. OsmAnd supports GPX for importing, exporting, and customizing tracks and routes for navigation.
 
-This guide details GPX file structure in OsmAnd, key track and waypoint parameters, and examples of saving and displaying routes.
+OsmAnd uses the `osmand:` XML namespace for all custom tags. These extensions store additional data, such as visual settings and route-specific attributes. The GPX file structure in OsmAnd follows the standard XML-based format defined in GPX 1.1. It organizes data using hierarchical elements such as `<gpx>`, `<trk>` (track), `<rte>` (route), and `<wpt>` (waypoint).
 
-
-## GPX File Structure
-
-The structure of GPX files in OsmAnd follows the standard XML-based format defined in GPX 1.1. It organizes data using hierarchical elements such as `<gpx>`, `<trk>` (track), `<rte>` (route), `<wpt>` (waypoint) and custom tags. This section describes the basic elements of a GPX file and extensions specific to OsmAnd.
+This article outlines the structure of GPX files in OsmAnd, key parameters for tracks and waypoints, and examples of saving and displaying calculated routes.
 
 
-### Track Display Parameters
+## Track Appearance Parameters
 
+This section describes how OsmAnd displays tracks on the map and the customization options available to adjust their appearance. The parameters described below are applied within the `<gpx>` tag and affect all tracks included in a GPX file.
 
+| Tag Name | Description | Values/Example |
+|:--------|:---------|:----------|
+| `<osmand:color>` | Track line color.  | *String.* HEX color code `#RRGGBB` or `#AARRGGBB` <br/> *Example* <br/> `<osmand:color>#FF5733</osmand:color>` (orange) |
+| `<osmand:width>` | Track line thickness. | *String.* `“thin”`, `“medium"`, `“bold”` (defined by the `“currentTrackWidth”` attribute), or integer (1-24) <br/> *Example* <br/> `<osmand:width>4</osmand:width>` (4 pixels) |
+| `<osmand:show_arrows>` | Show direction arrows. | *Bool.* `"true"` / `"false"` <br/> *Example* <br/> `<osmand:show_arrows>true</osmand:show_arrows>` (arrows shown) |
+| `<osmand:show_start_finish>` | Show start and end markers. | *Bool.* `"true"` / `"false"` <br/> *Example* <br/> `<osmand:show_start_finish>true</osmand:show_start_finish>` (markers visible) |
+| `<osmand:split_type>` | Track segmentation type. | *String.* <br/> "no_split" / "distance" / "time" <br/> *Example* <br/> `<osmand:split_type>distance</osmand:split_type>` (segmentation by distance) |
+| `<osmand:split_interval>` | Segmentation interval. | *Double.* <br/> Integer (meters for "distance", seconds for "time") <br/> *Example* <br/> `<osmand:split_interval>500</osmand:split_interval>` (500 meters)  |
+| `<osmand:line_3d_visualization_by_type>` | 3D visualization type. | *String.* <br/> "none" / "altitude" / "shared_string_speed" / "map_widget_ant_heart_rate" / "map_widget_ant_bicycle_cadence" / "map_widget_ant_bicycle_power" / "shared_string_temperature" / "shared_string_speed" / "fixed_height" <br/> *Example* <br/>   |
+| `<osmand:line_3d_visualization_wall_color_type>`| 3D wall color type. | *String.* <br/> "none" / "solid" / "downward_gradient" / "upward_gradient" / "altitude" / "slope" / "speed" <br/> *Example* <br/>   |
+| `<osmand:line_3d_visualization_position_type>`| 3D visualization position. | *String.* <br/> `"top"`, `"bottom"`, `"top_bottom"` <br/> *Example* <br/> `<osmand:line_3d_visualization_position_type>top</osmand:line_3d_visualization_position_type>` (visualization at the top)  |
+| `<osmand:vertical_exaggeration_scale>`| Vertical exaggeration multiplier. | *Float.* <br/> Default: 1.0 <br/> for `line_3d_visualization_by_type`. <br/> *Example* <br/> `<osmand:vertical_exaggeration_scale>1.5</osmand:vertical_exaggeration_scale>` (exaggerates by 1.5x) |
+| `<osmand:elevation_meters>` | Fixed elevation (meters). | *Float.*  Default: 1000 <br/> for `line_3d_visualization_by_type="fixed_height"`. <br/> *Example* <br/> `<osmand:elevation_meters>2000</osmand:elevation_meters>` (sets elevation to 2000 meters) |
+| `<osmand:coloring_type>` | Coloring method. | *String.* `"solid"`, `"speed"`, `"altitude"`, `"slope"`, `"routeInfo_roadClass`, `"routeInfo_surface"`, `"routeInfo_smoothness"` <br/> *Example* <br/> `<osmand:coloring_type>speed</osmand:coloring_type>` (color gradient based on speed) |
+| `<osmand:color_palette>` | Color palette scheme. | *String.* `"default"` / [user-defined schemes](/docs/user/personal/color-palette-schemes) <br/> *Example* <br/> `<osmand:color_palette>default</osmand:color_palette>` (default color palette)  |
 
-
-
-
-
-
-### Example of Track Display Settings
-
-## Track Point Data
-
-### Track Point Parameters
-
-#### Speed
-
-#### Movement Direction
-
-### Example of Track Point Data  
-
-## Saving a Calculated Route  
-
-### GPX File Structure for Routes  
-
-#### Route Segments
-
-#### Segment Properties
-
-#### Route Waypoints
-
-### Example of a Route GPX File  
-
-## Additional OsmAnd Extensions in GPX
-
-### OsmAnd-Specific Tags
-
-### Compatibility with GPX 1.1
-
-## Conclusion
-
-### Benefits of Using GPX in OsmAnd
-
-### Recommendations for Users
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-____________
-
-## Overview
-
-The OsmAnd's GPX file format conforms to the GPX 1.1 specification, with additional data written as extensions.
-
-OsmAnd uses XML namespace `osmand:` for all OsmAnd-specific tags.
-
-There are several sections of such data:
-
-## Track Appearance
-
-The following parameters customize the appearance of a track on the map. They are used inside the GPX tag and apply to all tracks contained in the GPX.
-
-### Parameters
-
-|Name| Spec and Purpose                                                                                                                                                                                                     |
-|:--------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|[color]| String. Hex value "#AARRGGBB" or "#RRGGBB". Color of a track line on the map.                                                                                                                                        |
-|[width]| String. "thin", "medium", "bold" or number 1-24. Width of the track line on the map. The thin, medium, and bold are style-dependent values (should be defined as currentTrackWidth attribute).                        |
-|[show_arrows]| Bool. "true" or "false". Show / Hide arrows along the path line.                                                                                                                                                     |
-|[show_start_finish]| Bool. "true" or "false". Show / Hide edges of segments.                                                                                                                                                              |
-|[split_type]| String. "no_split", "distance" or "time". Split type for a track.                                                                                                                                                    |
-|[split_interval]| Double. Split interval for a track. Distance (meters), time (seconds).                                                                                                                                               |
-|[line_3d_visualization_by_type]| String. "none", "altitude", "shared_string_speed", "map_widget_ant_heart_rate", "map_widget_ant_bicycle_cadence", "map_widget_ant_bicycle_power", "shared_string_temperature", "shared_string_speed", "fixed_height" |
-|[line_3d_visualization_wall_color_type]| String. "none", "solid", "downward_gradient", "upward_gradient", "altitude", "slope", "speed"                                                                                                                        |
-|[line_3d_visualization_position_type]| String. "top", "bottom", "top_bottom"                                                                                                                                                                                |
-|[vertical_exaggeration_scale]| Float. Multiplier to scale the value of line_3d_visualization_by_type. Default is 1.0                                                                                                                                |
-|[elevation_meters]| Float. Used with "fixed_height" in line_3d_visualization_by_type. Default is 1000                                                                                                                                    |
-|[coloring_type]| String. "solid", "speed", "altitude", "slope", "routeInfo_roadClass", "routeInfo_surface", "routeInfo_smoothness"                                                                                                    |
-|[color_palette]| String. "default" or user-defined [(see color schemes)](/docs/user/personal/color-palette-schemes)                                                                                                                   |
 
 ### Coloring_type in Details
 
@@ -127,6 +46,7 @@ The following parameters customize the appearance of a track on the map. They ar
 | routeInfo_roadClass  | Color based on OSM road type                     |
 | routeInfo_surface    | Color based on OSM road surface                  |
 | routeInfo_smoothness | Color based on OSM road smoothness               |
+
 
 ***Example:***
 
@@ -142,6 +62,9 @@ The following parameters customize the appearance of a track on the map. They ar
   </extensions>
 </gpx>
 ```
+
+In this example, the track is displayed with a blue color (#4e4eff), a line width of bold, and segmentation based on 2000-meter intervals.
+
 
 ## Waypoints Icons
 
