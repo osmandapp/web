@@ -4,24 +4,22 @@ sidebar_position: 6
 
 # How to Compile the iOS Version
 
-1. First setup the **[development environment](setup-the-dev-environment.md)**.
-2. Install Xcode from AppStore (Last tested 14.2)
-3. Install Xcode command-line tools
+1. Setup the **[development environment](setup-the-dev-environment.md)**
+2. Install Xcode from the App Store (the last tested version is `14.2`)
+3. Install Command Line Tools for Xcode
   ```
   $ xcode-select --install
   ```
-  Or in case of errors try to download and install it from Apple site: <https://developer.apple.com/download/all/?q=xcode>.
+  Or—in case of an error—try to download and install it from Apple's website: <https://developer.apple.com/download/all/?q=xcode>.
 
 4. Log in into Xcode account (optional)
-  In case if you don't have Apple Developer account. Open Xcode and go to preferences (via top menu)
-  ```
-  Preferences -> Accounts
-  ```
-  Press `+` button. You can log in with your AppleID (login and password from your iOS/macOS devices). Follow Xcode instructions.
-  For OsmAnd team members: send your AppleID login, so you will be added to to developers list. When you'll get email with invite message activate it.
-  Close Xcode.
+  In case you don't have Apple Developer account.
+  1. Open Xcode and go to _Preferences_ -> _Accounts_ (via the top menu)
+  2. Press the `+` button. You can log in with your Apple ID (login and password from your iOS/macOS devices). Follow Xcode instructions.
+  3. _For OsmAnd team members:_ send your Apple ID login, so you will be added to the list of developers. You'll get email with an invite message—activate it.
+  4. Close Xcode.
 
-5. Install command-line tools- cmake, svn, cocoapods
+5. Install command-line tools: `cmake`, `svn`, `cocoapods`
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   $ brew install svn
@@ -33,51 +31,53 @@ sidebar_position: 6
   # for m1
   $ brew install cocoapods
   ```
-6. Download and instal Java jdk 17
+
+6. Download and install Java JDK 17
   ```
-  # for intel
+  # For Intel-based Macs
   https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-x64_bin.dmg
 
-  # for m1
+  # For Apple silicon Macs
   https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-aarch64_bin.dmg
   ```
 
-7. Create new text file. Or update if it exist.
+7. Create a new text file or update if it exists
   ```
   $ mkdir ~/.gradle
   $ nano ~/.gradle/gradle.properties
   ```
 
-  Paste this content into it. Save file and restart computer.
+  1. Paste this content into it:
+    ```
+    ## Project-wide Gradle settings.
+    #
+    # For more details on how to configure your build environment visit
+    # http://www.gradle.org/docs/current/userguide/build_environment.html
+    #
+    # Specifies the JVM arguments used for the daemon process.
+    # The setting is particularly useful for tweaking memory settings.
+    # Default value: -Xmx10248m -XX:MaxMetaspaceSize=256m
+    # org.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
 
-```
-## Project-wide Gradle settings.
-#
-# For more details on how to configure your build environment visit
-# http://www.gradle.org/docs/current/userguide/build_environment.html
-#
-# Specifies the JVM arguments used for the daemon process.
-# The setting is particularly useful for tweaking memory settings.
-# Default value: -Xmx10248m -XX:MaxMetaspaceSize=256m
-# org.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+    org.gradle.daemon=true
 
-org.gradle.daemon=true
+    org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
 
-org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+    #
+    # When configured, Gradle will run in incubating parallel mode.
+    # This option should only be used with decoupled projects. More details, visit
+    # http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
 
-#
-# When configured, Gradle will run in incubating parallel mode.
-# This option should only be used with decoupled projects. More details, visit
-# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
+    org.gradle.parallel=true
+    org.gradle.caching=true
 
-org.gradle.parallel=true
-org.gradle.caching=true
+    #Fri Apr 08 18:47:31 EEST 2016
+    # android.useDeprecatedNdk=true
+    ```
+  2. Save the file
+  3. Restart the computer
 
-#Fri Apr 08 18:47:31 EEST 2016
-# android.useDeprecatedNdk=true
-```
-
-8. Run `prepare.sh` to compile Qt library and download external dependencies
+8. Run `prepare.sh` to compile the Qt library and download external dependencies
   ```
   $ cd ios
   $ ./prepare.sh
