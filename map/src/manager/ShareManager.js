@@ -3,6 +3,7 @@ import { quickNaNfix } from '../util/Utils';
 import { FILE_WAS_DELETED } from './GlobalManager';
 import { getShare } from './track/TracksManager';
 
+export const SHARE_TYPE = 'share';
 export const REQUEST_ACCESS_TYPE = 'request';
 export const APPROVED_ACCESS_TYPE = 'approved';
 export const APPROVED_ACCESS_TYPE_SERVER = ['read'];
@@ -124,4 +125,16 @@ export async function changeShareTypeFile({ file, shareType, ctx }) {
             }
         }
     }
+}
+
+export async function getShareWithMe({ type }) {
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/share/get-shared-with-me`, {
+        params: {
+            type,
+        },
+    });
+    if (res.ok) {
+        return await res.json();
+    }
+    return null;
 }

@@ -14,9 +14,9 @@ import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
 import { duplicateTrack } from '../../manager/track/SaveTrackManager';
 import { useTranslation } from 'react-i18next';
-import { getShareFileInfo } from '../../manager/ShareManager';
+import { getShareFileInfo, SHARE_TYPE } from '../../manager/ShareManager';
 
-const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref) => {
+const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smartf = null }, ref) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -31,6 +31,8 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
             setOpenActions(false);
         }
     }
+
+    const hidden = smartf?.type === SHARE_TYPE;
 
     const MakeTrackVisibleAction = () => {
         return ctx.gpxFiles[track.name]?.showOnMap ? (
@@ -78,21 +80,23 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                 <Paper id="se-track-actions" className={styles.actions}>
                     <MakeTrackVisibleAction />
                     <Divider className={styles.dividerActions} />
-                    <MenuItem
-                        id={'se-rename-cloud-track'}
-                        className={styles.action}
-                        onClick={() => setOpenRenameDialog(true)}
-                    >
-                        <ListItemIcon className={styles.iconAction}>
-                            <RenameIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
-                                {t('shared_string_rename')}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                    <Divider className={styles.dividerActions} />
+                    {!hidden && (
+                        <MenuItem
+                            id={'se-rename-cloud-track'}
+                            className={styles.action}
+                            onClick={() => setOpenRenameDialog(true)}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <RenameIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    {t('shared_string_rename')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {!hidden && <Divider className={styles.dividerActions} />}
                     <MenuItem
                         id={'se-duplicate-cloud-track'}
                         className={styles.action}
@@ -108,20 +112,22 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
-                    <MenuItem
-                        id={'se-share-track'}
-                        className={styles.action}
-                        onClick={() => getShareFileInfo({ file: track, ctx })}
-                    >
-                        <ListItemIcon className={styles.iconAction}>
-                            <ShareIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
-                                {t('shared_string_share')}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
+                    {!hidden && (
+                        <MenuItem
+                            id={'se-share-track'}
+                            className={styles.action}
+                            onClick={() => getShareFileInfo({ file: track, ctx })}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <ShareIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    {t('shared_string_share')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
                     <MenuItem
                         className={styles.action}
                         onClick={() => {
@@ -149,7 +155,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                {t('shared_string_delete')}
+                                {smartf ? t('shared_string_remove') : t('shared_string_delete')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>

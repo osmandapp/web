@@ -20,9 +20,11 @@ import IconButtonWithPermissions from '../../frame/components/IconButtonWithPerm
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from './HeaderHelper';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
+import { SHARE_TYPE } from '../../manager/ShareManager';
 
 export default function GroupHeader({
     type,
+    smartf = null,
     trackGroup = null,
     favoriteGroup = null,
     setSortGroups = null,
@@ -53,6 +55,8 @@ export default function GroupHeader({
             setSortName(allMethods['time'].name());
         }
     }, [ctx.selectedSort, trackGroup]);
+
+    const hiddenBtn = smartf?.type === SHARE_TYPE;
 
     useEffect(() => {
         if (favoriteGroup && !ctx.selectedSort) {
@@ -147,7 +151,7 @@ export default function GroupHeader({
                             </IconButton>
                         </span>
                     </Tooltip>
-                    {type === TRACKS_TYPE && (
+                    {type === TRACKS_TYPE && !hiddenBtn && (
                         <Tooltip key={'add_folder'} title={t('add_new_folder')} arrow placement="bottom-end">
                             <span>
                                 <IconButtonWithPermissions
@@ -162,7 +166,7 @@ export default function GroupHeader({
                             </span>
                         </Tooltip>
                     )}
-                    {type === TRACKS_TYPE && (
+                    {type === TRACKS_TYPE && !hiddenBtn && (
                         <Tooltip key={'import_track'} title={t('import_tracks')} arrow placement="bottom-end">
                             <span>
                                 <CloudGpxUploader folder={trackGroup ? trackGroup?.fullName : DEFAULT_GROUP_NAME}>
@@ -180,7 +184,7 @@ export default function GroupHeader({
                             </span>
                         </Tooltip>
                     )}
-                    {type === TRACKS_TYPE && (
+                    {type === TRACKS_TYPE && !hiddenBtn && (
                         <Tooltip
                             key={'create_new_route'}
                             title={t('plan_route_create_new_route')}

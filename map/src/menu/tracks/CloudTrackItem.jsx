@@ -37,7 +37,7 @@ import { isVisibleTrack, updateVisibleCache } from '../visibletracks/VisibleTrac
 import { useTranslation } from 'react-i18next';
 import FileShareIcon from '../share/FileShareIcon.jsx';
 
-export default function CloudTrackItem({ id = null, file, visible = null, isLastItem }) {
+export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -290,7 +290,12 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                     anchorEl={anchorEl}
                     setShowMenu={visible && setShowMenu}
                     actions={
-                        <TrackActions track={file} setDisplayTrack={setDisplayTrack} setOpenActions={setOpenActions} />
+                        <TrackActions
+                            track={file}
+                            setDisplayTrack={setDisplayTrack}
+                            setOpenActions={setOpenActions}
+                            smartf={smartf}
+                        />
                     }
                 />
                 {loadingTrack ? <LinearProgress /> : <></>}

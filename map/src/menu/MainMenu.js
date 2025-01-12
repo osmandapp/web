@@ -77,7 +77,7 @@ import LoginButton from './login/LoginButton';
 import LoginMenu from './login/LoginMenu';
 import TravelMenu from './travel/TravelMenu';
 import ProFeatures from '../frame/components/pro/ProFeatures';
-import { updateUserRequests } from '../manager/ShareManager';
+import { SHARE_TYPE, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 
 export default function MainMenu({
@@ -338,7 +338,11 @@ export default function MainMenu({
         if (selectedType === OBJECT_TYPE_FAVORITE) {
             return <FavoriteGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
         } else if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
-            return <TrackGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
+            const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
+            if (lastGroup?.type === SHARE_TYPE) {
+                return <TrackGroupFolder smartf={lastGroup} />;
+            }
+            return <TrackGroupFolder folder={lastGroup} />;
         }
     }
 

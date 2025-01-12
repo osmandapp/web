@@ -11,16 +11,17 @@ import {
 import styles from '../trackfavmenu.module.css';
 import MenuItemWithLines from './MenuItemWithLines';
 import ActionsMenu from '../actions/ActionsMenu';
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ReactComponent as ShareIcon } from '../../assets/icons/ic_action_folder_share.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import SmartFolderActions from '../actions/SmartFolderActions';
+import { SHARE_TYPE } from '../../manager/ShareManager';
 
 const types = {
-    share: {
+    [SHARE_TYPE]: {
         name: 'web:shared_with_me',
         icon: <ShareIcon />,
         subtypes: {
@@ -43,16 +44,26 @@ export default function SmartFolder({ type, subtype, files }) {
     const anchorEl = useRef(null);
 
     const folder = types[type] ?? types.share;
-    const group = folder.subtypes[subtype] ?? folder.subtypes.track;
+    const folderType = folder.subtypes[subtype] ?? folder.subtypes.track;
+
+    useEffect(() => {
+        if (!openActions) {
+            setTimeout(() => document.activeElement?.blur(), 0);
+        }
+    }, [openActions]);
+
+    function openFiles() {
+        ctx.setOpenGroups((prevState) => [...prevState, { files, type }]);
+    }
 
     return (
         <>
-            <MenuItem className={styles.group} key={'smartFolder' + type + index}>
+            <MenuItem onClick={openFiles} className={styles.group} key={'smartFolder' + type}>
                 <ListItemIcon className={styles.icon}>{folder.icon}</ListItemIcon>
                 <ListItemText>
                     <MenuItemWithLines name={t(folder.name)} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {`${t(group.substring)} ${files.length}`}
+                        {`${files.length} ${t(folderType.substring).toLowerCase()}`}
                     </Typography>
                 </ListItemText>
                 <Tooltip key={'action_menu_group'} title={'Menu'} arrow placement="bottom-end">
@@ -84,8 +95,9 @@ export default function SmartFolder({ type, subtype, files }) {
                 anchorEl={anchorEl}
                 actions={
                     <SmartFolderActions
+                        files={files}
                         folder={folder}
-                        group={group}
+                        folderType={folderType}
                         setOpenActions={setOpenActions}
                         setProcessDownload={setProcessDownload}
                     />
