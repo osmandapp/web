@@ -12,6 +12,8 @@ import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
 import { cloneDeep, isEmpty } from 'lodash';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
+import { getShareWithMe } from '../manager/ShareManager';
+import { FAVOURITES, GPX } from '../manager/GlobalManager';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -92,6 +94,16 @@ async function loadListFiles(
             }
         }
     }
+}
+
+async function loadShareFiles(setShareWithMeFiles) {
+    const tracks = await getShareWithMe({ type: GPX });
+    const favorites = await getShareWithMe({ type: FAVOURITES });
+    setShareWithMeFiles((prev) => ({
+        ...prev,
+        tracks: tracks.uniqueFiles,
+        favorites: favorites.uniqueFiles,
+    }));
 }
 
 async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
@@ -306,6 +318,7 @@ export const AppContextProvider = (props) => {
     const [updatedRequestList, setUpdatedRequestList] = useState([]);
     const [shareFileMarkers, setShareFileMarkers] = useState(null);
     const [shareFilesCache, setShareFilesCache] = useState({});
+    const [shareWithMeFiles, setShareWithMeFiles] = useState(null);
 
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -506,7 +519,9 @@ export const AppContextProvider = (props) => {
                 setUpdateMarkers,
                 setProcessingGroups,
                 setVisibleTracks
-            ).finally(() => setGpxLoading(false));
+            ).then(() => {
+                loadShareFiles(setShareWithMeFiles).finally(() => setGpxLoading(false));
+            });
         }
     }, [loginUser]);
 
@@ -703,6 +718,8 @@ export const AppContextProvider = (props) => {
                 setShareFileMarkers,
                 shareFilesCache,
                 setShareFilesCache,
+                shareWithMeFiles,
+                setShareWithMeFiles,
             }}
         >
             {props.children}

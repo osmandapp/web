@@ -15,9 +15,7 @@ import styles from '../trackfavmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
 import { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
-import { getShareWithMe } from '../../manager/ShareManager';
 import SmartFolder from '../components/SmartFolder';
-import { GPX } from '../../manager/GlobalManager';
 
 export const DEFAULT_SORT_METHOD = 'time';
 
@@ -28,7 +26,6 @@ export default function TracksMenu() {
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
     const [, height] = useWindowSize();
-    const [shareWithMeFiles, setShareWithMeFiles] = useState([]);
 
     const { t } = useTranslation();
 
@@ -48,10 +45,6 @@ export default function TracksMenu() {
                 });
             }
         }
-        //get share with me tracks
-        getShareWithMe({ type: GPX }).then((res) => {
-            setShareWithMeFiles(res.uniqueFiles);
-        });
     }, [ctx.tracksGroups]);
 
     const defaultGroupItems = useMemo(() => {
@@ -115,8 +108,8 @@ export default function TracksMenu() {
                                     </Typography>
                                 </ListItemText>
                             </MenuItem>
-                            {shareWithMeFiles.length > 0 && (
-                                <SmartFolder type={'share'} subtype={'track'} files={shareWithMeFiles} />
+                            {ctx.shareWithMeFiles?.tracks.length > 0 && (
+                                <SmartFolder type={'share'} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
                             )}
                             {ctx.tracksGroups &&
                                 (sortGroups.length > 0 ? sortGroups : ctx.tracksGroups)
