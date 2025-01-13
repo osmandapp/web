@@ -101,8 +101,8 @@ async function loadShareFiles(setShareWithMeFiles) {
     const favorites = await getShareWithMe({ type: FAVOURITES });
     setShareWithMeFiles((prev) => ({
         ...prev,
-        tracks: tracks.uniqueFiles,
-        favorites: favorites.uniqueFiles,
+        tracks: tracks?.uniqueFiles,
+        favorites: favorites?.uniqueFiles,
     }));
 }
 
@@ -520,7 +520,9 @@ export const AppContextProvider = (props) => {
                 setProcessingGroups,
                 setVisibleTracks
             ).then(() => {
-                loadShareFiles(setShareWithMeFiles).finally(() => setGpxLoading(false));
+                if (loginUser) {
+                    loadShareFiles(setShareWithMeFiles).finally(() => setGpxLoading(false));
+                }
             });
         }
     }, [loginUser]);

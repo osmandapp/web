@@ -42,7 +42,30 @@ const SmartFolderActions = forwardRef(({ files, folder, folderType, setOpenActio
     }
 
     async function downloadObf() {
-        //todo
+        setProcessDownload(true);
+
+        const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-obf`, [], {
+            params: {
+                shared: true,
+                sharedType: 'GPX',
+            },
+            responseType: 'blob',
+            throwErrors: true,
+        }).catch(() => {
+            setProcessDownload(false);
+            ctx.setTrackErrorMsg({
+                title: 'Get OBF error',
+                msg: "We couldn't download obf for Shared With Me folder. Please contact us at support@osmand.net",
+            });
+        });
+
+        if (res.status === 200) {
+            setProcessDownload(false);
+            const url = document.createElement('a');
+            url.href = URL.createObjectURL(res.data);
+            url.download = 'SharedWithMe.travel.obf';
+            url.click();
+        }
     }
 
     function showAll() {
