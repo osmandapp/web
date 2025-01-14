@@ -2560,7 +2560,7 @@
   "rendering_value_bicycle_name": "Bicycle",
   "rendering_value_translucent_lightgreen_name": "Translucent light green",
   "rendering_attr_contourLines_name": "Show contour lines",
-  "rendering_attr_showAccess_name": "Show access and toll restrictions",
+  "rendering_attr_showAccess_name": "Show access restrictions",
   "rendering_attr_surface_dirt_name": "Dirt",
   "routing_attr_piste_type_skitour_name": "Ski touring",
   "routing_attr_driving_style_prefer_unpaved_name": "Prefer unpaved roads",
@@ -3450,7 +3450,7 @@
   "avg_sensor_cadence": "Bicycle Cadence, average",
   "avg_sensor_heartrate": "Heart rate, average",
   "avg_sensor_speed": "Sensor speed, average",
-  "avg_sensor_temperature": "Temperature, averag",
+  "avg_sensor_temperature": "Temperature, average",
   "date_of_creation": "Date of creation",
   "discard_filter_changes_prompt": "Reset all filters?",
   "download_persian_voice_alert_descr_ios": "Settings -\u003e Accessibility -\u003e Spoken Content -\u003e Voices -\u003e Persian -\u003e Dariush",
@@ -3499,5 +3499,9 @@
   "shared_string_interface": "Interface",
   "shared_string_sorted_by": "is sorted by:",
   "shared_string_subfolders_in": "Subfolders in",
-  "sort_subfolders_tracks": "Sort subfolders"
+  "sort_subfolders_tracks": "Sort subfolders",
+  "rendering_attr_showClimbingRoutes_description": "Show climbing routes",
+  "rendering_attr_showClimbingRoutes_name": "Climbing routes",
+  "reset_average_speed": "Reset average speed",
+  "shared_string_estimated_time_span": "Estimated time span"
 }
