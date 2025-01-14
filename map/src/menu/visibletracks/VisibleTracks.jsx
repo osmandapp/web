@@ -13,6 +13,7 @@ import Empty from '../errors/Empty';
 import { Button } from '@mui/material/';
 import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
 import { useTranslation } from 'react-i18next';
+import { SHARE_TYPE } from '../../manager/ShareManager';
 
 export function getCountVisibleTracks(visibleTracks) {
     const oldSize = visibleTracks?.old?.length || 0;
@@ -25,15 +26,18 @@ export function isVisibleTrack(file) {
     return !!savedVisible?.open?.includes(file.name);
 }
 
-export function updateVisibleCache({ visible, file }) {
+export function updateVisibleCache({ visible, file, smartf = null }) {
     let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
     if (savedVisible && !savedVisible.open) {
         savedVisible.open = [];
     }
+    // always mark shared files in visible cache with SHARE_TYPE prefix
+    const fileName = smartf?.type === SHARE_TYPE ? SHARE_TYPE + '_' + file.name : file.name;
+
     if (visible) {
-        savedVisible.open.push(file.name);
+        savedVisible.open.push(fileName);
     } else {
-        const ind = savedVisible.open.findIndex((n) => n === file.name);
+        const ind = savedVisible.open.findIndex((n) => n === fileName);
         if (ind !== -1) {
             savedVisible.open.splice(ind, 1);
         }

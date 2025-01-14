@@ -44,7 +44,9 @@ export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL
 export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
 export const isRouteTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_TRACK;
 export const isTravelTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_TRAVEL;
-export const isTrack = (ctx) => isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx) || isTravelTrack(ctx);
+export const isShareTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE;
+export const isTrack = (ctx) =>
+    isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx) || isTravelTrack(ctx) || isShareTrack(ctx);
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -99,9 +101,17 @@ async function loadListFiles(
 async function loadShareFiles(setShareWithMeFiles) {
     const tracks = await getShareWithMe({ type: GPX });
     const favorites = await getShareWithMe({ type: FAVOURITES });
+    const preparedTracks =
+        tracks.length === 0
+            ? {}
+            : Object.fromEntries(
+                  getGpxFiles(tracks).map((t) => {
+                      return [t.name, t];
+                  })
+              );
     setShareWithMeFiles((prev) => ({
         ...prev,
-        tracks: tracks?.uniqueFiles,
+        tracks: preparedTracks,
         favorites: favorites?.uniqueFiles,
     }));
 }

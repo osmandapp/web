@@ -53,7 +53,7 @@ export default function SmartFolder({ type, subtype, files }) {
     }, [openActions]);
 
     function openFiles() {
-        ctx.setOpenGroups((prevState) => [...prevState, { files, type }]);
+        ctx.setOpenGroups((prevState) => [...prevState, { files: Object.values(files), type }]);
     }
 
     return (
@@ -63,7 +63,7 @@ export default function SmartFolder({ type, subtype, files }) {
                 <ListItemText>
                     <MenuItemWithLines name={t(folder.name)} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {`${files.length} ${t(folderType.substring).toLowerCase()}`}
+                        {`${Object.entries(files).length} ${t(folderType.substring).toLowerCase()}`}
                     </Typography>
                 </ListItemText>
                 <Tooltip key={'action_menu_group'} title={'Menu'} arrow placement="bottom-end">

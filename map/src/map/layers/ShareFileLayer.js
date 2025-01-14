@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import AppContext, { OBJECT_TYPE_SHARE_FILE } from '../../context/AppContext';
 import { addTrackToMap } from './CloudTrackLayer';
 import { useMap } from 'react-leaflet';
-import { FAVOURITES, GPX } from '../../manager/GlobalManager';
+import { FAVOURITES, GPX, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import { addClusteredMarkersToMap, clusterMarkers } from '../util/Clusterizer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
@@ -23,8 +23,9 @@ export default function ShareFileLayer() {
 
     const [currentShareFile, setCurrentShareFile] = useState(null);
 
+    // only for share file from url
     useEffect(() => {
-        if (ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE) {
+        if (ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE && location.pathname.includes(SHARE_FILE_MAIN_URL)) {
             if (ctx.selectedGpxFile?.type === GPX) {
                 const layer = addTrackToMap({ ctx, file: ctx.selectedGpxFile, map, fit: true });
                 if (layer) {

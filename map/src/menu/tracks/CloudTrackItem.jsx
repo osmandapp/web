@@ -1,4 +1,4 @@
-import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_SHARE_FILE } from '../../context/AppContext';
 import {
     Alert,
     Divider,
@@ -36,6 +36,7 @@ import { closeTrack } from '../../manager/track/DeleteTrackManager';
 import { isVisibleTrack, updateVisibleCache } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import FileShareIcon from '../share/FileShareIcon.jsx';
+import { SHARE_TYPE } from '../../manager/ShareManager';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -48,9 +49,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
-    const [openTrackInfo, setOpenTrackInfo] = useState(false);
     const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
-    const [zoomToTrack, setZoomToTrack] = useState(false);
     const anchorEl = useRef(null);
 
     let checkedSwitch = getCheckedSwitch();
@@ -60,10 +59,18 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const time = getTime(file);
     const wptPoints = getWptPoints(file);
     const share = getShare(file, ctx);
-    async function processDisplayTrack({ visible, setLoading, showOnMap = true, showInfo = false }) {
+
+    async function processDisplayTrack({
+        visible,
+        setLoading,
+        showOnMap = true,
+        showInfo = false,
+        zoomToTrack = false,
+        smartf = null,
+    }) {
         checkedSwitch = !checkedSwitch;
         if (!showInfo) {
-            updateVisibleCache({ visible: showOnMap, file });
+            updateVisibleCache({ visible: showOnMap, file, smartf });
         }
         if (!visible) {
             if (ctx.gpxFiles[file.name]?.url) {
@@ -71,20 +78,9 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
             }
             setLoading(false);
         } else {
-            await openTrack({ setProgressVisible: setLoading, showOnMap, showInfo });
+            await openTrack({ setProgressVisible: setLoading, showOnMap, showInfo, zoomToTrack, smartf });
         }
     }
-
-    useEffect(() => {
-        if (openTrackInfo) {
-            processDisplayTrack({
-                setLoading: setLoadingTrack,
-                visible: true,
-                showOnMap: true,
-                showInfo: true,
-            }).then();
-        }
-    }, [openTrackInfo]);
 
     useEffect(() => {
         if (displayTrack === true || displayTrack === false) {
@@ -93,30 +89,9 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
         }
     }, [displayTrack]);
 
-    useEffect(() => {
-        if (zoomToTrack) {
-            tempShowTrackOnMap();
-            setZoomToTrack(false);
-        }
-    }, [zoomToTrack]);
-
-    function tempShowTrackOnMap() {
-        if (!ctx.gpxFiles[file.name]?.url) {
-            openTrack({
-                setProgressVisible: setLoadingTrack,
-                showOnMap: false,
-                showInfo: true,
-                zoomToTrack: true,
-            }).then();
-        } else {
-            ctx.mutateGpxFiles((o) => (o[file.name].zoomToTrack = true));
-            showInfoBlock(true, file);
-        }
-    }
-
     function showInfoBlock(hasUrl, file) {
         ctx.setUpdateInfoBlock(true);
-        ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+        ctx.setCurrentObjectType(smartf?.type === SHARE_TYPE ? OBJECT_TYPE_SHARE_FILE : OBJECT_TYPE_CLOUD_TRACK);
         if (hasUrl) {
             ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoomToTrack: true, cloudRedrawWpts: true });
         } else {
@@ -124,7 +99,13 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
         }
     }
 
-    async function openTrack({ setProgressVisible, showOnMap = true, showInfo = false, zoomToTrack = false }) {
+    async function openTrack({
+        setProgressVisible,
+        showOnMap = true,
+        showInfo = false,
+        zoomToTrack = false,
+        smartf = null,
+    }) {
         // cleanup edited localTrack
         if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
             ctx.setCreateTrack({
@@ -134,17 +115,29 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                 },
             });
         }
+        const sharedFile = smartf?.type === SHARE_TYPE;
+        const files = sharedFile ? ctx.shareWithMeFiles.tracks : ctx.gpxFiles;
+        let newGpxFiles = Object.assign({}, sharedFile ? ctx.shareWithMeFiles.tracks : ctx.gpxFiles);
+
         // Watch out for file.url because this component was called using different data sources.
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
-        if (ctx.gpxFiles[file.name]?.url) {
+        if (files[file.name]?.url) {
             if (showOnMap || zoomToTrack) {
-                let newGpxFiles = Object.assign({}, ctx.gpxFiles);
                 if (!isEmpty(ctx.selectedGpxFile) && !isVisibleTrack(ctx.selectedGpxFile)) {
                     newGpxFiles[ctx.selectedGpxFile.name].url = null;
                 }
                 newGpxFiles[file.name].showOnMap = showOnMap;
                 newGpxFiles[file.name].zoomToTrack = zoomToTrack;
-                ctx.setGpxFiles({ ...newGpxFiles });
+                if (smartf) {
+                    if (sharedFile) {
+                        ctx.setShareWithMeFiles({
+                            ...ctx.shareWithMeFiles,
+                            tracks: newGpxFiles,
+                        });
+                    }
+                } else {
+                    ctx.setGpxFiles(newGpxFiles);
+                }
             }
             if (showInfo) {
                 showInfoBlock(true, file);
@@ -152,7 +145,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
         } else {
             setProgressVisible(true);
             const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
-            const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
+            const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
             const oneGpxFile = {
                 url: URL + qs,
                 clienttimems: file.clienttimems,
@@ -181,7 +174,19 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                 if (zoomToTrack) {
                     oneGpxFile.zoomToTrack = zoomToTrack;
                 }
-                ctx.mutateGpxFiles((o) => (o[file.name] = oneGpxFile));
+                if (smartf) {
+                    if (sharedFile) {
+                        ctx.setShareWithMeFiles({
+                            ...ctx.shareWithMeFiles,
+                            tracks: {
+                                ...ctx.shareWithMeFiles.tracks,
+                                [file.name]: oneGpxFile,
+                            },
+                        });
+                    }
+                } else {
+                    ctx.mutateGpxFiles((o) => (o[file.name] = oneGpxFile));
+                }
                 if (showInfo) {
                     showInfoBlock(false, oneGpxFile);
                 }
@@ -218,8 +223,14 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                             className={styles.item}
                             id={id ?? `se-cloud-track-${trackName}`}
                             onClick={() => {
-                                setOpenTrackInfo(true);
-                                setZoomToTrack(true);
+                                processDisplayTrack({
+                                    setLoading: setLoadingTrack,
+                                    visible: true,
+                                    showOnMap: true,
+                                    showInfo: true,
+                                    zoomToTrack: true,
+                                    smartf,
+                                }).then();
                             }}
                             onMouseEnter={() => visible && setShowMenu(true)}
                             onMouseLeave={() => {

@@ -108,7 +108,7 @@ export default function TracksMenu() {
                                     </Typography>
                                 </ListItemText>
                             </MenuItem>
-                            {ctx.shareWithMeFiles?.tracks.length > 0 && (
+                            {!isEmpty(ctx.shareWithMeFiles?.tracks) && (
                                 <SmartFolder type={'share'} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
                             )}
                             {ctx.tracksGroups &&

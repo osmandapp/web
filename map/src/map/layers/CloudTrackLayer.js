@@ -246,15 +246,12 @@ const CloudTrackLayer = () => {
         }
     }, [ctx.createTrack?.enable]); // think about dep on ctx.gpxFiles
 
-    useEffect(() => {
-        if (alreadyUpdate) {
-            // not to update after simplified layers
-            setAlreadyUpdate(false);
-            return;
-        }
+    // add or remove cloud tracks to/from map
+    const processFiles = (files, updateCtxFiles) => {
         let processed = 0;
-        const newGpxFiles = { ...ctx.gpxFiles } ?? {};
-        Object.values(newGpxFiles).forEach((file) => {
+        const newFiles = { ...files };
+
+        Object.values(newFiles).forEach((file) => {
             if (file.url && !file.gpx && (file.showOnMap || file.zoomToTrack)) {
                 processed++;
                 file.gpx = addTrackToMap({ ctx, file, map });
@@ -271,13 +268,33 @@ const CloudTrackLayer = () => {
                 file.showOnMap = false;
             } else if (file.delete) {
                 processed++;
-                delete newGpxFiles[file.name];
+                delete newFiles[file.name];
             }
         });
+
         if (processed > 0) {
-            ctx.setGpxFiles(newGpxFiles); // finally
+            updateCtxFiles(newFiles);
+        }
+    };
+
+    // process own cloud tracks
+    useEffect(() => {
+        if (ctx.gpxFiles) {
+            processFiles(ctx.gpxFiles, ctx.setGpxFiles);
         }
     }, [ctx.gpxFiles]);
+
+    // process shared with me cloud tracks
+    useEffect(() => {
+        if (ctx.shareWithMeFiles?.tracks) {
+            processFiles(ctx.shareWithMeFiles.tracks, (updatedTracks) => {
+                ctx.setShareWithMeFiles({
+                    ...ctx.shareWithMeFiles,
+                    tracks: updatedTracks,
+                });
+            });
+        }
+    }, [ctx.shareWithMeFiles?.tracks]);
 };
 
 export default CloudTrackLayer;
