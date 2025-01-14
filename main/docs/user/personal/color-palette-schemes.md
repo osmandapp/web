@@ -152,7 +152,7 @@ After moving this TXT file to *..Android/data/net.osmand/files/color-palete/heig
 
 </Tabs>
 
-**Quick Action** to change the palette for Terrain. Added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the *Quick Actions* tool.  
+**Quick Action** to change the palette for Terrain. Added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the [Quick Actions](../widgets/quick-action.md#configure-map) tool.  
 
 
 ### Import / Export Colors
