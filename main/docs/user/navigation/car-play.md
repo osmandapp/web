@@ -44,9 +44,9 @@ The OsmAnd app for CarPlay allows you to adjust the position of the current loca
 
 - Go to *Menu → Configure screen → Other → [Location position on screen](../widgets/configure-screen.md#display-position-location-position-on-screen)*.
 - Select your preferred placement:
-    - **Center (default)**. The indicator is placed in the center of the screen, suitable for standard navigation.
+    - **Automatic (default)**. The application automatically shifts the position of the indicator for navigation mode or free movement.
+    - **Center**. The indicator is placed in the center of the screen, suitable for standard navigation.
     - **Bottom**. The indicator is positioned closer to the bottom of the screen, making it easier to observe surrounding objects and complex intersections.
-    - **Automatic**. The application automatically shifts the position of the indicator for navigation mode or free movement.
 
 ### Interaction with the Map
 
