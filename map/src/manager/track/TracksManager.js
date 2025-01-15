@@ -1437,8 +1437,11 @@ export async function openTrackOnMap({
             if (!isEmpty(ctx.selectedGpxFile) && !isVisibleTrack(ctx.selectedGpxFile)) {
                 newGpxFiles[ctx.selectedGpxFile.name].url = null;
             }
-            newGpxFiles[file.name].showOnMap = showOnMap;
-            newGpxFiles[file.name].zoomToTrack = zoomToTrack;
+        }
+        newGpxFiles[file.name].showOnMap = showOnMap;
+        newGpxFiles[file.name].zoomToTrack = zoomToTrack;
+        if (!showOnMap) {
+            newGpxFiles[file.name].url = null;
         }
         if (showInfo) {
             showInfoBlock({ hasUrl: true, file, ctx, smartf });

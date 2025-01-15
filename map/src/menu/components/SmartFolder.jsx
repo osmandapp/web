@@ -40,6 +40,7 @@ export default function SmartFolder({ type, subtype, files }) {
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
     const [openActions, setOpenActions] = useState(false);
+    const [showAllTracks, setShowAllTracks] = useState(false);
 
     const anchorEl = useRef(null);
 
@@ -99,6 +100,8 @@ export default function SmartFolder({ type, subtype, files }) {
                         type={type}
                         setOpenActions={setOpenActions}
                         setProcessDownload={setProcessDownload}
+                        showAllTracks={showAllTracks}
+                        setShowAllTracks={setShowAllTracks}
                     />
                 }
             />

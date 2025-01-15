@@ -304,7 +304,10 @@ const CloudTrackLayer = () => {
             ctx.fitBoundsShareTracks.type === SHARE_FILE_TYPE &&
             !isEmpty(ctx.shareWithMeFiles?.tracks)
         ) {
-            map.fitBounds(getTracksArrBounds(Object.values(ctx.shareWithMeFiles.tracks)), fitBoundsOptions(ctx));
+            const bounds = getTracksArrBounds(Object.values(ctx.shareWithMeFiles.tracks));
+            if (bounds.length > 0) {
+                map.fitBounds(bounds, fitBoundsOptions(ctx));
+            }
             ctx.setFitBoundsShareTracks(null);
         }
     }, [ctx.fitBoundsShareTracks]);
