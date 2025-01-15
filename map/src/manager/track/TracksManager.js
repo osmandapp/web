@@ -456,9 +456,9 @@ export async function getGpxFileFromTrackData(file) {
     });
 }
 
-export const downloadGpx = async (track) => {
+export const downloadGpx = async (track, sharedFile) => {
     const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
-    const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}`;
+    const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}&shared=${sharedFile ? 'true' : 'false'}`;
     const oneGpxFile = {
         url: urlFile + qs,
         clienttimems: track.clienttimems,

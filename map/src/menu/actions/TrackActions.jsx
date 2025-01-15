@@ -131,7 +131,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
                     <MenuItem
                         className={styles.action}
                         onClick={() => {
-                            downloadGpx(track).then();
+                            downloadGpx(track, sharedFile).then();
                             setOpenActions(false);
                         }}
                     >
