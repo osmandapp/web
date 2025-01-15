@@ -98,7 +98,7 @@ async function loadListFiles(
     }
 }
 
-async function loadShareFiles(setShareWithMeFiles) {
+export async function loadShareFiles(setShareWithMeFiles) {
     const tracks = await getShareWithMe({ type: GPX });
     const favorites = await getShareWithMe({ type: FAVOURITES });
     const preparedTracks =

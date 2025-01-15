@@ -58,6 +58,12 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const wptPoints = getWptPoints(file);
     const share = getShare(file, ctx);
 
+    useEffect(() => {
+        if (!openActions) {
+            setTimeout(() => document.activeElement?.blur(), 0);
+        }
+    }, [openActions]);
+
     async function processDisplayTrack({
         visible,
         setLoading,

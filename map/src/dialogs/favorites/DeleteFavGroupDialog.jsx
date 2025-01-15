@@ -12,7 +12,7 @@ import { FAVORITE_FILE_TYPE } from '../../manager/FavoritesManager';
 export default function DeleteFavGroupDialog({ setOpenDialog, group, setOpenActions }) {
     const ctx = useContext(AppContext);
     async function deleteGroup() {
-        await deleteTrack(group.file, ctx, FAVORITE_FILE_TYPE);
+        await deleteTrack({ file: group.file, ctx, type: FAVORITE_FILE_TYPE });
         if (setOpenActions) {
             setOpenActions(false);
         }

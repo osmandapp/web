@@ -1,60 +1,83 @@
-import { isCloudTrack, isLocalTrack, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import { isCloudTrack, isLocalTrack, loadShareFiles, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import TracksManager, { findGroupByName, getAllVisibleFiles } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
 import { cloneDeep, isEmpty } from 'lodash';
 import { hideAllVisTracks } from '../../menu/visibletracks/VisibleTracks';
+import { deleteSharedWithMe } from '../ShareManager';
 
-export async function deleteTrack(file, ctx, type = 'GPX') {
+export async function deleteTrack({ file, ctx, shared = false, type = 'GPX' }) {
     if ((isCloudTrack(ctx) || file) && ctx.loginUser) {
         const trackName = file ? file?.name : ctx.selectedGpxFile?.name;
-        const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, '', {
-            params: {
-                name: trackName,
-                type: type,
-            },
-        });
-        if (response.status === 200) {
-            // delete track in ctx.gpxFiles (processed by CloudTrackLayer)
-            const name = trackName;
-            ctx.mutateGpxFiles((o) => {
-                if (o[name]) {
-                    o[name].url = null; // remove layer
-                    o[name].delete = true; // remove file
-                }
-            });
-
-            if (type === FAVORITE_FILE_TYPE) {
-                refreshGlobalFiles({ ctx, type: OBJECT_TYPE_FAVORITE }).then();
-            } else {
-                // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
-                deleteTracksFromGroups(trackName, ctx);
-
-                // delete track from ctx.openGroups
-                deleteTracksFromLastGroup(trackName, ctx);
-
-                // delete track from ctx.listFiles.uniqueFiles
-                // used to refresh list-files in TracksManager.saveTrack
-                ctx.setListFiles((o) => {
-                    const index = o.uniqueFiles.findIndex((file) => file.name === trackName);
-                    if (index !== -1) {
-                        o.uniqueFiles.splice(index, 1);
-                        o.uniqueFiles = [...o.uniqueFiles];
-                    }
-                    return { ...o };
-                });
-                // update gpxFiles
-                ctx.setGpxFiles((o) => {
-                    if (o[trackName]) {
-                        delete o[trackName];
-                    }
-                    return { ...o };
-                });
-            }
+        if (!trackName) {
+            return;
+        }
+        if (shared) {
+            await deleteSharedWithMeFile(trackName, type, ctx);
+        } else {
+            await deleteCloudFile(trackName, type, ctx);
         }
     } else if (isLocalTrack(ctx)) {
         TracksManager.deleteLocalTrack(ctx);
+    }
+}
+
+async function deleteSharedWithMeFile(name, type, ctx) {
+    const res = await deleteSharedWithMe(name, type);
+    if (!res) {
+        ctx.setTrackErrorMsg({
+            title: 'Delete error',
+            msg: 'We could not delete the file. Please try again later.',
+        });
+    } else {
+        deleteTracksFromLastGroup(name, ctx);
+        await loadShareFiles(ctx.setShareWithMeFiles);
+    }
+}
+
+async function deleteCloudFile(name, type, ctx) {
+    const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, '', {
+        params: {
+            name,
+            type: type,
+        },
+    });
+    if (response.status === 200) {
+        ctx.mutateGpxFiles((o) => {
+            if (o[name]) {
+                o[name].url = null;
+                o[name].delete = true; // remove file
+            }
+        });
+
+        if (type === FAVORITE_FILE_TYPE) {
+            refreshGlobalFiles({ ctx, type: OBJECT_TYPE_FAVORITE }).then();
+        } else {
+            // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
+            deleteTracksFromGroups(name, ctx);
+
+            // delete track from ctx.openGroups
+            deleteTracksFromLastGroup(name, ctx);
+
+            // delete track from ctx.listFiles.uniqueFiles
+            // used to refresh list-files in TracksManager.saveTrack
+            ctx.setListFiles((o) => {
+                const index = o.uniqueFiles.findIndex((file) => file.name === name);
+                if (index !== -1) {
+                    o.uniqueFiles.splice(index, 1);
+                    o.uniqueFiles = [...o.uniqueFiles];
+                }
+                return { ...o };
+            });
+
+            ctx.setGpxFiles((o) => {
+                if (o[name]) {
+                    delete o[name];
+                }
+                return { ...o };
+            });
+        }
     }
 }
 
@@ -135,15 +158,21 @@ function deleteTracksFromGroups(trackName, ctx) {
 function deleteTracksFromLastGroup(trackName, ctx) {
     if (ctx.openGroups.length > 0) {
         const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
-        const fileIndexInGroupFiles = lastGroup.groupFiles.findIndex((file) => file.name === trackName);
-        if (fileIndexInGroupFiles !== -1) {
-            lastGroup.groupFiles.splice(fileIndexInGroupFiles, 1);
-            lastGroup.realSize--;
+        if (lastGroup.groupFiles) {
+            const fileIndexInGroupFiles = lastGroup.groupFiles.findIndex((file) => file.name === trackName);
+            if (fileIndexInGroupFiles !== -1) {
+                lastGroup.groupFiles.splice(fileIndexInGroupFiles, 1);
+                lastGroup.realSize--;
+            }
         }
-        const fileIndexInFiles = lastGroup.files.findIndex((file) => file.name === trackName);
-        if (fileIndexInFiles !== -1) {
-            lastGroup.files.splice(fileIndexInFiles, 1);
+        if (lastGroup.files) {
+            const fileIndexInFiles = lastGroup.files.findIndex((file) => file.name === trackName);
+            if (fileIndexInFiles !== -1) {
+                lastGroup.files.splice(fileIndexInFiles, 1);
+            }
         }
+
+        // update tracksGroups and after update openGroups in TrackGroupFolder
         ctx.setTracksGroups([...ctx.tracksGroups]);
     }
 }

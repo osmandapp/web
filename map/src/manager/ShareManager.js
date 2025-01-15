@@ -139,3 +139,13 @@ export async function getShareWithMe({ type }) {
     }
     return null;
 }
+
+export async function deleteSharedWithMe(name, type) {
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/share/remove-shared-with-me-file`, {
+        params: {
+            name,
+            type,
+        },
+    });
+    return res.ok;
+}

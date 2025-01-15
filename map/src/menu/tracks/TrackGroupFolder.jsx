@@ -28,6 +28,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const [, height] = useWindowSize();
     const [processingGroup, setProcessingGroup] = useState(false);
 
+    // update group after changing or deleting inner tracks
     useEffect(() => {
         if (ctx.tracksGroups && folder) {
             let found = findGroupByName(ctx.tracksGroups, group.fullName);
@@ -55,7 +56,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                 }
             }
         }
-    }, [smartf]);
+    }, [smartf, ctx.tracksGroups]);
 
     useEffect(() => {
         if (folder) {

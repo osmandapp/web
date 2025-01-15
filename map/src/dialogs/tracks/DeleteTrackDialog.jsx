@@ -14,6 +14,7 @@ export default function DeleteTrackDialog({
     setShowInfoBlock = null,
     file = null,
     setOpenActions = null,
+    shared = false,
 }) {
     const ctx = useContext(AppContext);
 
@@ -55,22 +56,34 @@ export default function DeleteTrackDialog({
 
     const discard = !!ctx.createTrack?.cloudAutoSave;
 
+    const Description = () => {
+        if (shared) {
+            return (
+                <DialogContentText>
+                    {`Are you sure you want to delete "${getName()}" track from the shared files?`}
+                </DialogContentText>
+            );
+        }
+        return (
+            <DialogContentText>
+                {discard
+                    ? `Are you sure you want to discard local changes?`
+                    : `Are you sure you want to delete "${getName()}" track from the ${getPlace()}?`}
+            </DialogContentText>
+        );
+    };
     return (
         <Dialog open={true} onClose={toggleShowDialog}>
             <DialogTitle>{discard ? 'Discard changes' : 'Delete track'}</DialogTitle>
             <DialogContent>
-                <DialogContentText>
-                    {discard
-                        ? `Are you sure you want to discard local changes?`
-                        : `Are you sure you want to delete "${getName()}" track from the ${getPlace()}?`}
-                </DialogContentText>
+                <Description />
             </DialogContent>
             <DialogActions>
                 <Button onClick={toggleShowDialog}>Cancel</Button>
                 <Button
                     id={'se-delete-track-dialog'}
                     onClick={() => {
-                        deleteTrack(file, ctx).then();
+                        deleteTrack({ file, ctx, shared: true }).then();
                         cleanContextMenu();
                     }}
                 >

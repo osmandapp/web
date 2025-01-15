@@ -32,7 +32,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
         }
     }
 
-    const hidden = smartf?.type === SHARE_TYPE;
+    const sharedFile = smartf?.type === SHARE_TYPE;
 
     const MakeTrackVisibleAction = () => {
         return ctx.gpxFiles[track.name]?.showOnMap ? (
@@ -80,7 +80,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
                 <Paper id="se-track-actions" className={styles.actions}>
                     <MakeTrackVisibleAction />
                     <Divider className={styles.dividerActions} />
-                    {!hidden && (
+                    {!sharedFile && (
                         <MenuItem
                             id={'se-rename-cloud-track'}
                             className={styles.action}
@@ -96,7 +96,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
                             </ListItemText>
                         </MenuItem>
                     )}
-                    {!hidden && <Divider className={styles.dividerActions} />}
+                    {!sharedFile && <Divider className={styles.dividerActions} />}
                     <MenuItem
                         id={'se-duplicate-cloud-track'}
                         className={styles.action}
@@ -112,7 +112,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
-                    {!hidden && (
+                    {!sharedFile && (
                         <MenuItem
                             id={'se-share-track'}
                             className={styles.action}
@@ -155,7 +155,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                {smartf ? t('shared_string_remove') : t('shared_string_delete')}
+                                {sharedFile ? t('shared_string_remove') : t('shared_string_delete')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -167,6 +167,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
                     setDialogOpen={setOpenDeleteDialog}
                     file={track}
                     setOpenActions={setOpenActions}
+                    shared={sharedFile}
                 />
             )}
             {openRenameDialog && (
