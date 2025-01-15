@@ -6,11 +6,13 @@ import { ReactComponent as ShowIcon } from '../../assets/icons/ic_show_on_map_ou
 import { useTranslation } from 'react-i18next';
 import { apiPost } from '../../util/HttpApi';
 import AppContext from '../../context/AppContext';
+import { SHARE_FILE_TYPE, SHARE_TYPE } from '../../manager/ShareManager';
+import { FIT_BOUNDS_MAX_ZOOM, openTrackOnMap, updateTracks } from '../../manager/track/TracksManager';
+import { isEmpty } from 'lodash';
 
-const SmartFolderActions = forwardRef(({ files, folder, folderType, setOpenActions, setProcessDownload }, ref) => {
+const SmartFolderActions = forwardRef(({ files, type, setOpenActions, setProcessDownload }, ref) => {
     const { t } = useTranslation();
     const ctx = useContext(AppContext);
-
     async function downloadOsf() {
         setProcessDownload(true);
         const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup-folder`, [], {
@@ -68,8 +70,29 @@ const SmartFolderActions = forwardRef(({ files, folder, folderType, setOpenActio
         }
     }
 
-    function showAll() {
-        //todo
+    async function showAll() {
+        if (type === SHARE_TYPE) {
+            const promises = Object.values(files).map((file) =>
+                openTrackOnMap({
+                    file,
+                    showOnMap: true,
+                    showInfo: false,
+                    zoomToTrack: false,
+                    smartf: { type: SHARE_TYPE },
+                    ctx,
+                    returnOneTrack: true,
+                })
+            );
+            const resultsArray = await Promise.all(promises);
+            const results = Object.assign({}, ...resultsArray);
+            if (!isEmpty(results)) {
+                updateTracks(ctx, { type: SHARE_TYPE }, results);
+                ctx.setFitBoundsShareTracks({
+                    type: SHARE_FILE_TYPE,
+                    zoom: FIT_BOUNDS_MAX_ZOOM,
+                });
+            }
+        }
     }
 
     return (
@@ -80,7 +103,7 @@ const SmartFolderActions = forwardRef(({ files, folder, folderType, setOpenActio
                         disabled={files.realSize === 0}
                         className={styles.action}
                         onClick={() => {
-                            showAll();
+                            showAll().then();
                             setOpenActions(false);
                         }}
                     >

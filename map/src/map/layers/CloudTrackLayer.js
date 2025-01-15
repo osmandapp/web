@@ -2,13 +2,15 @@ import { useContext, useEffect, useState } from 'react';
 import AppContext, { isCloudTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer, WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
-import TracksManager, { fitBoundsOptions } from '../../manager/track/TracksManager';
+import TracksManager, { fitBoundsOptions, getTracksArrBounds } from '../../manager/track/TracksManager';
 import { useMutator } from '../../util/Utils';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { clusterMarkers } from '../util/Clusterizer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { processMarkers } from './FavoriteLayer';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import { isEmpty } from 'lodash';
+import { SHARE_FILE_TYPE } from '../../manager/ShareManager';
 
 function clickHandler({ ctx, file, layer }) {
     if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) {
@@ -295,6 +297,17 @@ const CloudTrackLayer = () => {
             });
         }
     }, [ctx.shareWithMeFiles?.tracks]);
+
+    useEffect(() => {
+        if (
+            ctx.fitBoundsShareTracks &&
+            ctx.fitBoundsShareTracks.type === SHARE_FILE_TYPE &&
+            !isEmpty(ctx.shareWithMeFiles?.tracks)
+        ) {
+            map.fitBounds(getTracksArrBounds(Object.values(ctx.shareWithMeFiles.tracks)), fitBoundsOptions(ctx));
+            ctx.setFitBoundsShareTracks(null);
+        }
+    }, [ctx.fitBoundsShareTracks]);
 };
 
 export default CloudTrackLayer;

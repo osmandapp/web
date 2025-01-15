@@ -1,4 +1,4 @@
-import AppContext, { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_SHARE_FILE } from '../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import {
     Alert,
     Divider,
@@ -12,18 +12,17 @@ import {
     Typography,
 } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import Utils from '../../util/Utils';
 import TrackInfo from './TrackInfo';
-import TracksManager, {
+import {
     getDist,
     getFileName,
     getShare,
     getTime,
     getWptPoints,
-    isEmptyTrack,
+    openTrackOnMap,
     setTrackIconStyles,
+    updateTracks,
 } from '../../manager/track/TracksManager';
-import _, { isEmpty } from 'lodash';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
@@ -33,10 +32,9 @@ import TrackActions from '../actions/TrackActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { closeTrack } from '../../manager/track/DeleteTrackManager';
-import { isVisibleTrack, updateVisibleCache } from '../visibletracks/VisibleTracks';
+import { updateVisibleCache } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import FileShareIcon from '../share/FileShareIcon.jsx';
-import { SHARE_TYPE } from '../../manager/ShareManager';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -78,7 +76,18 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
             }
             setLoading(false);
         } else {
-            await openTrack({ setProgressVisible: setLoading, showOnMap, showInfo, zoomToTrack, smartf });
+            await openTrackOnMap({
+                file,
+                setProgressVisible: setLoading,
+                showOnMap,
+                showInfo,
+                zoomToTrack,
+                smartf,
+                ctx,
+                setError,
+            }).then((newGpxFiles) => {
+                updateTracks(ctx, smartf, newGpxFiles);
+            });
         }
     }
 
@@ -88,114 +97,6 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
             setDisplayTrack(null);
         }
     }, [displayTrack]);
-
-    function showInfoBlock(hasUrl, file) {
-        ctx.setUpdateInfoBlock(true);
-        ctx.setCurrentObjectType(smartf?.type === SHARE_TYPE ? OBJECT_TYPE_SHARE_FILE : OBJECT_TYPE_CLOUD_TRACK);
-        if (hasUrl) {
-            ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoomToTrack: true, cloudRedrawWpts: true });
-        } else {
-            ctx.setSelectedGpxFile(Object.assign({}, file));
-        }
-    }
-
-    async function openTrack({
-        setProgressVisible,
-        showOnMap = true,
-        showInfo = false,
-        zoomToTrack = false,
-        smartf = null,
-    }) {
-        // cleanup edited localTrack
-        if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
-            ctx.setCreateTrack({
-                enable: false,
-                closePrev: {
-                    file: _.cloneDeep(ctx.selectedGpxFile),
-                },
-            });
-        }
-        const sharedFile = smartf?.type === SHARE_TYPE;
-        const files = sharedFile ? ctx.shareWithMeFiles.tracks : ctx.gpxFiles;
-        let newGpxFiles = Object.assign({}, sharedFile ? ctx.shareWithMeFiles.tracks : ctx.gpxFiles);
-
-        // Watch out for file.url because this component was called using different data sources.
-        // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
-        if (files[file.name]?.url) {
-            if (showOnMap || zoomToTrack) {
-                if (!isEmpty(ctx.selectedGpxFile) && !isVisibleTrack(ctx.selectedGpxFile)) {
-                    newGpxFiles[ctx.selectedGpxFile.name].url = null;
-                }
-                newGpxFiles[file.name].showOnMap = showOnMap;
-                newGpxFiles[file.name].zoomToTrack = zoomToTrack;
-                if (smartf) {
-                    if (sharedFile) {
-                        ctx.setShareWithMeFiles({
-                            ...ctx.shareWithMeFiles,
-                            tracks: newGpxFiles,
-                        });
-                    }
-                } else {
-                    ctx.setGpxFiles(newGpxFiles);
-                }
-            }
-            if (showInfo) {
-                showInfoBlock(true, file);
-            }
-        } else {
-            setProgressVisible(true);
-            const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
-            const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
-            const oneGpxFile = {
-                url: URL + qs,
-                clienttimems: file.clienttimems,
-                updatetimems: file.updatetimems,
-                name: file.name,
-                type: 'GPX',
-            };
-            const f = await Utils.getFileData(oneGpxFile);
-            const gpxfile = new File([f], file.name, {
-                type: 'text/plain',
-            });
-            const track = await TracksManager.getTrackData(gpxfile);
-            setProgressVisible(false);
-            if (!track) {
-                setError('Something went wrong!');
-            } else if (isEmptyTrack(track) === false) {
-                track.name = file.name;
-                Object.keys(track).forEach((t) => {
-                    oneGpxFile[t] = track[t];
-                });
-                oneGpxFile.analysis = TracksManager.prepareAnalysis(oneGpxFile.analysis);
-
-                if (showOnMap) {
-                    oneGpxFile.showOnMap = showOnMap;
-                }
-                if (zoomToTrack) {
-                    oneGpxFile.zoomToTrack = zoomToTrack;
-                }
-                if (smartf) {
-                    if (sharedFile) {
-                        ctx.setShareWithMeFiles({
-                            ...ctx.shareWithMeFiles,
-                            tracks: {
-                                ...ctx.shareWithMeFiles.tracks,
-                                [file.name]: oneGpxFile,
-                            },
-                        });
-                    }
-                } else {
-                    ctx.mutateGpxFiles((o) => (o[file.name] = oneGpxFile));
-                }
-                if (showInfo) {
-                    showInfoBlock(false, oneGpxFile);
-                }
-                setError('');
-            } else {
-                setError('Empty track is not supported!');
-            }
-        }
-    }
 
     useEffect(() => {
         if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {

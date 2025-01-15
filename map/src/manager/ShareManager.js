@@ -4,6 +4,7 @@ import { FILE_WAS_DELETED } from './GlobalManager';
 import { getShare } from './track/TracksManager';
 
 export const SHARE_TYPE = 'share';
+export const SHARE_FILE_TYPE = 'shared_with_me';
 export const REQUEST_ACCESS_TYPE = 'request';
 export const APPROVED_ACCESS_TYPE = 'approved';
 export const APPROVED_ACCESS_TYPE_SERVER = ['read'];

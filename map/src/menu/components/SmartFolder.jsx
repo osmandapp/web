@@ -96,8 +96,7 @@ export default function SmartFolder({ type, subtype, files }) {
                 actions={
                     <SmartFolderActions
                         files={files}
-                        folder={folder}
-                        folderType={folderType}
+                        type={type}
                         setOpenActions={setOpenActions}
                         setProcessDownload={setProcessDownload}
                     />

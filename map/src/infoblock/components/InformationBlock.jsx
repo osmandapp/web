@@ -82,7 +82,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                     ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].url = null));
                 }
                 // remove share file from visible tracks
-                if (ctx.shareWithMeFiles?.tracks) {
+                if (ctx.shareWithMeFiles?.tracks && ctx.shareWithMeFiles.tracks[ctx.selectedGpxFile.name]) {
                     ctx.setShareWithMeFiles({
                         ...ctx.shareWithMeFiles,
                         tracks: {
