@@ -12,9 +12,9 @@ import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
 import TracksManager, { downloadGpx } from '../../manager/track/TracksManager';
 import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
-import { duplicateTrack } from '../../manager/track/SaveTrackManager';
+import { createTrackFreeName, duplicateTrack, refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import { useTranslation } from 'react-i18next';
-import { getShareFileInfo, SHARE_TYPE } from '../../manager/ShareManager';
+import { getShareFileInfo, saveSharedFileToCloud, SHARE_TYPE } from '../../manager/ShareManager';
 
 const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smartf = null }, ref) => {
     const ctx = useContext(AppContext);
@@ -23,16 +23,24 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const { t } = useTranslation();
 
+    const sharedFile = smartf?.type === SHARE_TYPE;
+
     async function createDuplicateTrack() {
         const parts = track.name.split('/');
         const newName = parts.pop();
-        await duplicateTrack(track.name, parts.join('/'), TracksManager.prepareName(newName), ctx).then();
+        if (sharedFile) {
+            const fileName = createTrackFreeName(TracksManager.prepareName(newName), ctx.tracksGroups, null, '');
+            const saved = await saveSharedFileToCloud(track, fileName + '.gpx');
+            if (saved) {
+                await refreshGlobalFiles({ ctx });
+            }
+        } else {
+            await duplicateTrack(track.name, parts.join('/'), TracksManager.prepareName(newName), ctx).then();
+        }
         if (setOpenActions) {
             setOpenActions(false);
         }
     }
-
-    const sharedFile = smartf?.type === SHARE_TYPE;
 
     const MakeTrackVisibleAction = () => {
         return ctx.gpxFiles[track.name]?.showOnMap ? (

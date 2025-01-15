@@ -149,3 +149,14 @@ export async function deleteSharedWithMe(name, type) {
     });
     return res.ok;
 }
+
+export async function saveSharedFileToCloud(file, fileName) {
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/share/save-shared-file`, {
+        params: {
+            fileName: file.name,
+            fileType: file.type,
+            newName: fileName,
+        },
+    });
+    return res.ok;
+}

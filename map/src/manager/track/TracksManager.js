@@ -652,7 +652,13 @@ export function isTrackExists(name, folder, folderName, tracks) {
         tracks,
         folderName !== null ? folderName : folder?.title ? folder?.title : folder
     );
-    return foundFolder ? foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name) : false;
+    if (foundFolder) {
+        if (foundFolder.name === DEFAULT_GROUP_NAME) {
+            return foundFolder.files.some((f) => TracksManager.prepareName(f.name) === name);
+        }
+        return foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name);
+    }
+    return false;
 }
 
 function deleteLocalTrack(ctx) {
