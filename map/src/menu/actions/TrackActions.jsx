@@ -9,7 +9,7 @@ import { ReactComponent as MakeTrackVisible } from '../../assets/icons/ic_action
 import { ReactComponent as HideTrackVisible } from '../../assets/icons/ic_action_hide_outlined.svg';
 import { ReactComponent as ShareIcon } from '../../assets/icons/ic_group.svg';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
-import TracksManager, { downloadGpx } from '../../manager/track/TracksManager';
+import TracksManager, { DEFAULT_GROUP_NAME, downloadGpx } from '../../manager/track/TracksManager';
 import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
 import { createTrackFreeName, duplicateTrack, refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
@@ -29,7 +29,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
         const parts = track.name.split('/');
         const newName = parts.pop();
         if (sharedFile) {
-            const fileName = createTrackFreeName(TracksManager.prepareName(newName), ctx.tracksGroups, null, '');
+            const fileName = createTrackFreeName(TracksManager.prepareName(newName), ctx.tracksGroups, null, DEFAULT_GROUP_NAME);
             const saved = await saveSharedFileToCloud(track, fileName + '.gpx');
             if (saved) {
                 await refreshGlobalFiles({ ctx });
