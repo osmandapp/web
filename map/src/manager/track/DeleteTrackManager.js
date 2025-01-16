@@ -3,9 +3,10 @@ import { apiGet, apiPost } from '../../util/HttpApi';
 import TracksManager, { findGroupByName, getAllVisibleFiles } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
-import { cloneDeep, isEmpty } from 'lodash';
+import { isEmpty } from 'lodash';
 import { hideAllVisTracks } from '../../menu/visibletracks/VisibleTracks';
 import { deleteSharedWithMe } from '../ShareManager';
+import { GPX, updateFileStorage } from '../GlobalManager';
 
 export async function deleteTrack({ file, ctx, shared = false, type = 'GPX' }) {
     if ((isCloudTrack(ctx) || file) && ctx.loginUser) {
@@ -99,8 +100,9 @@ export async function deleteTrackFolder(folder, ctx) {
     }
 }
 
-export function closeTrack(ctx, file) {
-    ctx.mutateGpxFiles((o) => (o[file.name].url = null));
+export function closeTrack(ctx, file, smartf) {
+    const newFile = { ...file, url: null };
+    updateFileStorage({ ctx, smartf, type: GPX, file: newFile });
     if (ctx.selectedGpxFile?.name === file.name) {
         ctx.setCurrentObjectType(null);
     }
@@ -115,16 +117,54 @@ export function hideAllTracks(ctx) {
     }
 }
 
+// delete tracks from map using different sources (cloud, shared), clean local storage
 export function deleteTracksFromMap(ctx, files) {
     hideAllVisTracks();
-    let updatedGpxFiles = cloneDeep(ctx.gpxFiles);
+    let cloudFiles = [];
+    let sharedFiles = [];
     files.forEach((file) => {
-        updatedGpxFiles[file.name].url = null;
-        if (ctx.selectedGpxFile?.name === file.name) {
-            ctx.setCurrentObjectType(null);
+        if (file.url) {
+            if (file.sharedWithMe) {
+                sharedFiles.push(file);
+            } else {
+                cloudFiles.push(file);
+            }
+            if (ctx.selectedGpxFile?.name === file.name) {
+                ctx.setCurrentObjectType(null);
+            }
         }
     });
-    ctx.setGpxFiles({ ...updatedGpxFiles });
+    if (cloudFiles.length > 0) {
+        ctx.setGpxFiles((prevFiles) => ({
+            ...prevFiles,
+            ...cloudFiles.reduce((updatedFiles, file) => {
+                if (prevFiles[file.name]) {
+                    updatedFiles[file.name] = {
+                        ...prevFiles[file.name],
+                        url: null,
+                    };
+                }
+                return updatedFiles;
+            }, {}),
+        }));
+    }
+    if (sharedFiles.length > 0) {
+        ctx.setShareWithMeFiles((prevFiles) => ({
+            ...prevFiles,
+            tracks: {
+                ...prevFiles.tracks,
+                ...sharedFiles.reduce((updatedTracks, file) => {
+                    if (prevFiles.tracks[file.name]) {
+                        updatedTracks[file.name] = {
+                            ...prevFiles.tracks[file.name],
+                            url: null,
+                        };
+                    }
+                    return updatedTracks;
+                }, {}),
+            },
+        }));
+    }
 }
 
 function deleteTracksFromGroups(trackName, ctx) {

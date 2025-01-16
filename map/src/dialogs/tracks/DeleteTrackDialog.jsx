@@ -83,7 +83,7 @@ export default function DeleteTrackDialog({
                 <Button
                     id={'se-delete-track-dialog'}
                     onClick={() => {
-                        deleteTrack({ file, ctx, shared: true }).then();
+                        deleteTrack({ file, ctx, shared }).then();
                         cleanContextMenu();
                     }}
                 >

@@ -35,12 +35,15 @@ import { closeTrack } from '../../manager/track/DeleteTrackManager';
 import { updateVisibleCache } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import FileShareIcon from '../share/FileShareIcon.jsx';
+import { getFileStorage, GPX } from '../../manager/GlobalManager';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
     const [, , mobile] = useWindowSize();
+
+    const [fileStorage, setFileStorage] = useState(null);
 
     const [loadingTrack, setLoadingTrack] = useState(false);
     const [error, setError] = useState('');
@@ -50,7 +53,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
     const anchorEl = useRef(null);
 
-    let checkedSwitch = getCheckedSwitch();
+    let checkedSwitch = fileStorage?.[file.name]?.url ? fileStorage?.[file.name]?.showOnMap : false;
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
 
     const dist = getDist(file);
@@ -63,6 +66,11 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
             setTimeout(() => document.activeElement?.blur(), 0);
         }
     }, [openActions]);
+
+    useEffect(() => {
+        const storage = getFileStorage({ ctx, smartf, type: GPX });
+        setFileStorage(storage);
+    }, [ctx, smartf]);
 
     async function processDisplayTrack({
         visible,
@@ -77,8 +85,11 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
             updateVisibleCache({ visible: showOnMap, file, smartf });
         }
         if (!visible) {
-            if (ctx.gpxFiles[file.name]?.url) {
-                closeTrack(ctx, file);
+            if (fileStorage[file.name]?.url) {
+                closeTrack(ctx, fileStorage[file.name], smartf);
+                setFileStorage((prev) => {
+                    return prev ? { ...prev, [file.name]: { ...prev[file.name], url: null } } : prev;
+                });
             }
             setLoading(false);
         } else {
@@ -97,9 +108,15 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
         }
     }
 
+    // Display track on map (visible or not), add to visible cache
     useEffect(() => {
         if (displayTrack === true || displayTrack === false) {
-            processDisplayTrack({ setLoading: setLoadingTrack, showOnMap: displayTrack, visible: displayTrack }).then();
+            processDisplayTrack({
+                setLoading: setLoadingTrack,
+                showOnMap: displayTrack,
+                visible: displayTrack,
+                smartf,
+            }).then();
             setDisplayTrack(null);
         }
     }, [displayTrack]);
@@ -110,10 +127,6 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
             setShowMenu(false);
         }
     }, [ctx.openedPopper]);
-
-    function getCheckedSwitch() {
-        return ctx.gpxFiles[file.name]?.url ? file?.showOnMap : false;
-    }
 
     return useMemo(() => {
         const trackName = getFileName(file);
@@ -146,7 +159,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                                 }
                             }}
                         >
-                            <ListItemIcon className={setTrackIconStyles(ctx, file, styles)}>
+                            <ListItemIcon className={setTrackIconStyles({ file, styles, fileStorage })}>
                                 <TrackIcon />
                             </ListItemIcon>
                             <ListItemText>

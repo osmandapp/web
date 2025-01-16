@@ -17,6 +17,7 @@ import MarkerOptions from '../../map/markers/MarkerOptions';
 import anchorme from 'anchorme';
 import { SHARE_TYPE } from '../ShareManager';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
+import { getFileStorage, GPX } from '../GlobalManager';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const EMPTY_FILE_NAME = '__folder__.info';
@@ -1378,9 +1379,9 @@ export function getAllVisibleFiles(ctx) {
     return files;
 }
 
-export function setTrackIconStyles(ctx, file, styles) {
+export function setTrackIconStyles({ file, styles, fileStorage }) {
     let res = [];
-    if (ctx.gpxFiles[file.name]?.url && ctx.gpxFiles[file.name]?.showOnMap) {
+    if (fileStorage?.[file.name]?.url && fileStorage?.[file.name]?.showOnMap) {
         res.push(styles.visibleIcon);
     } else {
         res.push(styles.icon);
@@ -1434,8 +1435,8 @@ export async function openTrackOnMap({
         });
     }
     const sharedFile = smartf?.type === SHARE_TYPE;
-    const files = sharedFile ? ctx.shareWithMeFiles.tracks : ctx.gpxFiles;
-    let newGpxFiles = Object.assign({}, sharedFile ? ctx.shareWithMeFiles.tracks : ctx.gpxFiles);
+    const files = getFileStorage({ ctx, smartf, type: GPX });
+    let newGpxFiles = Object.assign({}, files);
 
     // check if file is already loaded
     if (files[file.name]?.url) {
@@ -1469,6 +1470,7 @@ export async function openTrackOnMap({
             clienttimems: file.clienttimems,
             updatetimems: file.updatetimems,
             name: file.name,
+            sharedWithMe: file.sharedWithMe,
             type: 'GPX',
         };
         const f = await Utils.getFileData(oneGpxFile);

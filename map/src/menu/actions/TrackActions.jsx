@@ -15,6 +15,7 @@ import AppContext from '../../context/AppContext';
 import { createTrackFreeName, duplicateTrack, refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import { useTranslation } from 'react-i18next';
 import { getShareFileInfo, saveSharedFileToCloud, SHARE_TYPE } from '../../manager/ShareManager';
+import { getFileStorage, GPX } from '../../manager/GlobalManager';
 
 const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smartf = null }, ref) => {
     const ctx = useContext(AppContext);
@@ -29,7 +30,12 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
         const parts = track.name.split('/');
         const newName = parts.pop();
         if (sharedFile) {
-            const fileName = createTrackFreeName(TracksManager.prepareName(newName), ctx.tracksGroups, null, DEFAULT_GROUP_NAME);
+            const fileName = createTrackFreeName(
+                TracksManager.prepareName(newName),
+                ctx.tracksGroups,
+                null,
+                DEFAULT_GROUP_NAME
+            );
             const saved = await saveSharedFileToCloud(track, fileName + '.gpx');
             if (saved) {
                 await refreshGlobalFiles({ ctx });
@@ -43,7 +49,9 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
     }
 
     const MakeTrackVisibleAction = () => {
-        return ctx.gpxFiles[track.name]?.showOnMap ? (
+        const files = getFileStorage({ ctx, smartf, type: GPX });
+
+        return files[track.name]?.showOnMap ? (
             <MenuItem
                 id="se-hide-track-action"
                 className={styles.action}

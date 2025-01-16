@@ -106,7 +106,7 @@ export async function loadShareFiles(setShareWithMeFiles) {
             ? {}
             : Object.fromEntries(
                   getGpxFiles(tracks).map((t) => {
-                      return [t.name, t];
+                      return [t.name, { ...t, sharedWithMe: true }];
                   })
               );
     setShareWithMeFiles((prev) => ({
