@@ -9,17 +9,17 @@ All information about creating, managing and organizing tracks and track folders
 
 ## [Smart Folder(filter)](./smart-folder.md)
 
-Easy way to create your virtual folders for tracks with any filters. 
+A simle way to create virtual folders for tracks with any filters.
 
 ## Read more
 
 ### [Types of tracks](../../map/tracks/index.md#types-of-tracks)
 
-Read about what's a track and different types of tracks.
+Read about what's a track and the different types of tracks.
 
 ### [Display tracks](../../map/tracks/index.md#display-tracks)
 
-How to display tracks and its options in OsmAnd.
+Read about how to display tracks and its options in OsmAnd.
 
 ### [Navigate by track](../../navigation/setup/gpx-navigation.md)
 
