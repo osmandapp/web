@@ -43,6 +43,9 @@ export default function TracksMenu() {
                     files: defGroup?.groupFiles,
                     groups: ctx.tracksGroups,
                 });
+            } else {
+                setSortFiles([]);
+                setSortGroups([]);
             }
         }
     }, [ctx.tracksGroups]);

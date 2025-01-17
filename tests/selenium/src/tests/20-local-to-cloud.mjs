@@ -7,6 +7,7 @@ import actionLocalToCloud from '../actions/tracks/actionLocalToCloud.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import { clickBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
+import { deleteTrack } from '../util.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -19,6 +20,8 @@ export default async function test() {
     await actionUploadGpx({ mask: 'test-track-wpt.gpx' });
     await clickBy(By.id('se-show-menu-planroute'));
     await actionLocalToCloud({ mask: '*mixed*' });
+
+    await deleteTrack('test-track-mixed');
 
     await actionFinish();
 }
