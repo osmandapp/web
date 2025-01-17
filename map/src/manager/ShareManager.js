@@ -141,9 +141,8 @@ export async function getShareWithMe({ type }) {
 }
 
 export async function deleteSharedWithMe(name, type) {
-    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/share/remove-shared-with-me-file`, {
+    const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/share/remove-shared-with-me-file`, name, {
         params: {
-            name,
             type,
         },
     });
@@ -151,11 +150,12 @@ export async function deleteSharedWithMe(name, type) {
 }
 
 export async function saveSharedFileToCloud(file, fileName) {
-    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/share/save-shared-file`, {
+    const originalName = file.name;
+    const newName = fileName;
+    const names = [originalName, newName];
+    const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/share/save-shared-file`, names, {
         params: {
-            fileName: file.name,
-            fileType: file.type,
-            newName: fileName,
+            type: file.type,
         },
     });
     return res.ok;
