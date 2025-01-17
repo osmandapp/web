@@ -205,8 +205,8 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Action | Description |
 |:-------------|:-------------|
 | Show / Hide <br/> [**Routes**](../map/vector-maps.md#routes) | You can select route types to enable or disable their display. <br/> Some routes have additional settings. By default, if you have not selected anything in the [Configure Map](../map/configure-map-menu.md) menu, the first route type from the list will be assigned, otherwise, a type of your choice will be assigned. You can read more in the [Routes](../map/routes.md) article. <br/> - ***Cycle routes***  &nbsp;(*Route*, *Node networks*) <br/> - ***Mountain bike routes***  &nbsp;(*MTB scale*, *IMBA*) <br/> - ***Hiking routes***  &nbsp;(*OSMC*, *Network affiliation*, *Node networks*) <br/> - ***Hiking trails difficulty grade***  &nbsp;(*SAC scale*, *CAI scale*) <br/> - ***Ski slopes*** <br/> - ***Horse routes*** <br/> - ***Whitewater sports*** <br/> - ***Running routes*** <br/> - ***Fitness trails*** <br/> - ***Travel routes***  &nbsp;(*Tracks*, *Travel books*, *Points*) <br/> |
-| Show / Hide <br/> [**Topography layers**](../plugins/topography.md#overview) | All topography data is presented as separate map layers. You can quickly switch the visibility of these layers with Quick Action. <br/> - ***Contour lines*** <br/> - ***Terrain***.  &nbsp;(*Depending on the layer selected in the [Configure Map](../map/configure-map-menu.md) menu*, *Hillshade*, *Slope*, or *Altitude* *will be displayed.*) |
-| Change <br/> [**Terrain color scheme**](../plugins/topography.md#color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
+| Show / Hide <br/> [**Topography layers**](../plugins/topography.md#overview) | All topography data is presented as separate map layers. You can quickly switch the visibility of these layers with Quick Action. <br/> - ***Contour lines*** <br/> - ***Terrain***  &nbsp;(*Depending on the layer selected in the [Configure Map](../map/configure-map-menu.md) menu*, *Hillshade*, *Slope*, or *Altitude* *will be displayed.*) |
+| Change <br/> [**Terrain color scheme**](../plugins/topography.md#modify-color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
 | Show / Hide <br/> [**Weather layers**](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action, you can get quick access to switch the visibility of these layers on the map. <br/> - ***Precipitation layer*** <br/> - ***Cloud layer*** <br/> - ***Pressure layer*** <br/> - ***Wind layer*** <br/> - ***Temperature layer*** |
 | Open <br/> [**Weather screen**](../plugins/weather.md) <br /> *Android only* | Opens the [*Weather* forecast screen](../plugins/weather.md#weather-forecast-screen) with the detailed information. |
 | Show / Hide <br/> [**Favorites**](../personal/favorites.md#view-on-the-map) | Show or hide the favourite points on the map. |
@@ -311,4 +311,4 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 
-> *This article was last updated in December 2024*
+> *This article was last updated in January 2025*

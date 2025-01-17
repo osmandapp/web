@@ -17,8 +17,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-:::caution Paid feature
-The Topography plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
+:::info Paid feature
+The Topography plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.
 :::
 
 Topography is an important feature of cartography that provides information to visually assess the terrain's relief.
@@ -155,19 +155,21 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 
 </Tabs>  
 
-[Contour lines](../map/vector-maps.md#-contour-lines) are a graphical representation of elevations on a map and are available as vector maps. They form lines corresponding to points with the same altitude, which form contours that allow you to determine in which direction and how much the surface slopes. Specific features:
+[Contour lines](../map/vector-maps.md#-contour-lines) are a graphical representation of elevations on a map and are available as vector maps. They form lines corresponding to points with the same altitude, which form contours that allow you to determine in which direction and how much the surface slopes.
 
-- When you use the [Map rendering engine](../personal/global-settings.md#map-rendering-engine) Version 2 (OpenGL), Contour lines are displayed in both 3D view and 3D relief mode.
-- When you use the Map rendering engine Version 1, if the map source is any tile map from the Internet, displaying Contour lines is not supported.  
+When using the [Map rendering engine](../personal/global-settings.md#map-rendering-engine):
+
+- **Version 2 (OpenGL)**. Contour lines are supported in both 3D view and 3D relief mode.
+- **Version 1**. Contour lines are not supported when using tile maps sourced from the Internet.
 
 **Appearance settings**:
 
-- *<Translate android="true" ids="download_srtm_maps"/>*. Toggle on/off whether to display or hide Contour Lines on the map.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Minimum and maximum [zoom level](../map/interact-with-map.md#my-location-and-zoom) at which Contour lines are visible on the map.
-- *<Translate android="true" ids="srtm_color_scheme"/>*. Selection of the color by which Сontour lines are displayed on the map.
-- *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Selection of width options for displaying  Contour lines on the map.
-- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Selection of options for the density of Contour lines displayed on the map: Low, Medium, High. At higher densities, the map is loaded more slowly.
-- *<Translate android="true" ids="maps_and_resources"/>*. Displays contour line maps for the selected area and nearby regions relative to the current map center, which can be downloaded.  
+- *<Translate android="true" ids="download_srtm_maps"/>*. Toggle contour lines on or off.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Define the [zoom levels](../map/interact-with-map.md#my-location-and-zoom) at which contour lines are visible.
+- *<Translate android="true" ids="srtm_color_scheme"/>*. Choose the color for displaying contour lines.
+- *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Adjust the width of contour lines.
+- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Select the density of contour lines (Low, Medium, High). Higher densities may affect loading speed.
+- *<Translate android="true" ids="maps_and_resources"/>*. View and download contour line maps for the current region and nearby areas.
 
 
 ## Terrain
@@ -234,10 +236,12 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 - *Altitude*. Altitude map colors each pixel according to calculated map height using the gradient from a defined color scheme. Usually, altitude schemes are very dependent on location. In mountain areas you would prefer to distribute colors to a wider altitude range and in flat areas, you would select a color scheme with a small range between min/max altitude.
 
+> *Please read the [Color Scheme](../personal/color-palette-schemes.md) article for more information.*
+
 
 ### Modify Color Scheme
 
-:::caution Paid feature
+:::info Paid feature
 *Modify Color Scheme* is an **OsmAnd Pro** paid feature for [iOS](../purchases/ios.md#pro-features) and [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
@@ -257,7 +261,13 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 </Tabs>
 
-This Pro feature allows you to select from a predefined list of color schemes or import custom schemes created on a PC. You can edit these palettes to personalize the appearance of maps and routes. Custom color palette files can be easily added to OsmAnd using the [import/export tool](../personal/import-export.md).
+*Modify Color Scheme feature* allows you to select a color scheme:
+
+- From a [predefined list](#default-color-scheme).
+- From color palette files that you have created on your computer. Custom files can be added to OsmAnd using the [import/export tool](../personal/import-export.md).
+
+You can [edit these palettes](../personal/color-palette-schemes.md#edit-palette-file) to personalize the appearance of maps and routes.
+
 
 ### Visibility
 
@@ -304,7 +314,7 @@ The main settings for *Show or Hide map types* are in the Topography section of 
 
 ## 3D Relief
 
-:::caution Pro feature
+:::info Pro feature
 3D Relief is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
 :::
 
@@ -430,4 +440,4 @@ OsmAnd allows you to combine multiple types of map layers for a more visual disp
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *This article was last updated in August 2024*
+> *This article was last updated in January 2025*
