@@ -335,14 +335,16 @@ export default function MainMenu({
     }
 
     function getGroup() {
-        if (selectedType === OBJECT_TYPE_FAVORITE) {
-            return <FavoriteGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
-        } else if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
-            const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
-            if (lastGroup?.type === SHARE_TYPE) {
-                return <TrackGroupFolder smartf={lastGroup} />;
+        if (ctx.openGroups?.length > 0) {
+            if (selectedType === OBJECT_TYPE_FAVORITE) {
+                return <FavoriteGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
+            } else if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
+                const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
+                if (lastGroup?.type === SHARE_TYPE) {
+                    return <TrackGroupFolder smartf={lastGroup} />;
+                }
+                return <TrackGroupFolder folder={lastGroup} />;
             }
-            return <TrackGroupFolder folder={lastGroup} />;
         }
     }
 

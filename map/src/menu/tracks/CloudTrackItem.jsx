@@ -53,7 +53,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
     const anchorEl = useRef(null);
 
-    let checkedSwitch = fileStorage?.[file.name]?.url ? fileStorage?.[file.name]?.showOnMap : false;
+    let checkedSwitch = fileStorage?.[file.name]?.url ? fileStorage[file.name]?.showOnMap : false;
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
 
     const dist = getDist(file);
@@ -70,7 +70,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     useEffect(() => {
         const storage = getFileStorage({ ctx, smartf, type: GPX });
         setFileStorage(storage);
-    }, [ctx, smartf]);
+    }, [smartf]);
 
     async function processDisplayTrack({
         visible,

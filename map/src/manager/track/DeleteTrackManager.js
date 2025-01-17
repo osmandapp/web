@@ -41,7 +41,7 @@ async function deleteCloudFile(name, type, ctx) {
     const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, '', {
         params: {
             name,
-            type: type,
+            type,
         },
     });
     if (response.status === 200) {

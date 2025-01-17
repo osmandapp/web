@@ -15,7 +15,7 @@ import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
 import { useTranslation } from 'react-i18next';
 import { SHARE_TYPE } from '../../manager/ShareManager';
 
-export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_';
+export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_visible_marker_';
 
 export function getCountVisibleTracks(visibleTracks) {
     const oldSize = visibleTracks?.old?.length || 0;
