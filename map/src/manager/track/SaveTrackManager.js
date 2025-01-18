@@ -157,23 +157,23 @@ export function saveTrackToLocalStorage({ ctx, track }) {
         ctx.setLocalTracks([...localTracks]); // instant call setState if you don't sure about parent
     }
 
-    let tracksSize;
-    let totalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY));
-    if (!totalSize) {
-        totalSize = 0;
-    }
+    const previousTotalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY)) || 0;
+
     compressFromJSON(prepareLocalTrack(track)).then((res) => {
-        tracksSize = res.length;
-        let oldSize = getOldSizeTrack(currentTrackIndex);
-        totalSize = totalSize - oldSize + tracksSize;
-        if (((oldSize === 0 && tracksSize + totalSize) || totalSize - oldSize + tracksSize) > 5000000) {
+        const trackNewSize = res.length;
+        const trackOldSize = getOldSizeTrack(currentTrackIndex) || 0;
+        const sizeDifference = trackNewSize - trackOldSize; // might be negative
+
+        const LOCAL_STORAGE_LIMIT = 5000000; // FF 10MB, others 5MB
+
+        if (previousTotalSize + sizeDifference > LOCAL_STORAGE_LIMIT) {
             ctx.setRoutingErrorMsg(
                 "Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes."
             );
         } else {
             // ctx.setRoutingErrorMsg(null); // don't reset error message here (lose previous message)
             localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex, res);
-            localStorage.setItem(DATA_SIZE_KEY, totalSize);
+            localStorage.setItem(DATA_SIZE_KEY, previousTotalSize + sizeDifference);
         }
     });
 }
