@@ -336,10 +336,16 @@ export default function MainMenu({
 
     function getGroup() {
         if (ctx.openGroups?.length > 0) {
+            const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
             if (selectedType === OBJECT_TYPE_FAVORITE) {
-                return <FavoriteGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
+                if (lastGroup?.type === SHARE_TYPE) {
+                    if (lastGroup?.files) {
+                        return <FavoriteGroupFolder smartf={lastGroup} />;
+                    }
+                    return <FavoriteGroupFolder folder={lastGroup.group} smartf={lastGroup} />;
+                }
+                return <FavoriteGroupFolder folder={lastGroup} />;
             } else if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
-                const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
                 if (lastGroup?.type === SHARE_TYPE) {
                     return <TrackGroupFolder smartf={lastGroup} />;
                 }

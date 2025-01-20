@@ -192,6 +192,7 @@ function createGroup(file) {
     let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
     const groupName = file.folder === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : file.folder;
     return {
+        sharedWithMe: file.sharedWithMe,
         name: file.folder,
         updatetimems: file.updatetimems,
         clienttimems: file.clienttimems,
@@ -438,9 +439,10 @@ async function createFavGroupObj(g, favGroups) {
 }
 
 function createFavGroupUrl(group) {
+    const sharedFile = group.sharedWithMe;
     return `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
         group.file.type
-    )}&name=${encodeURIComponent(group.file.name)}`;
+    )}&name=${encodeURIComponent(group.file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
 }
 
 export async function addOpenedFavoriteGroups(files, setFavorites, setUpdateMarkers, setProcessingGroups) {

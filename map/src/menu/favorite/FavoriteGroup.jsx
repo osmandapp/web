@@ -14,8 +14,9 @@ import { useTranslation } from 'react-i18next';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 import FileShareIcon from '../share/FileShareIcon.jsx';
 import { getShare } from '../../manager/track/TracksManager';
+import { SHARE_TYPE } from '../../manager/ShareManager';
 
-export default function FavoriteGroup({ index, group }) {
+export default function FavoriteGroup({ index, group, smartf = null }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -24,6 +25,8 @@ export default function FavoriteGroup({ index, group }) {
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const anchorEl = useRef(null);
     const share = getShare(group.file, ctx);
+
+    const sharedFile = smartf?.type === SHARE_TYPE;
 
     useEffect(() => {
         if (ctx.favorites.mapObjs[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
@@ -46,7 +49,11 @@ export default function FavoriteGroup({ index, group }) {
                 id={'se-menu-fav-' + group.name}
                 onClick={(e) => {
                     if (e.target !== 'path') {
-                        ctx.setOpenGroups((prevState) => [...prevState, group]);
+                        if (sharedFile) {
+                            ctx.setOpenGroups((prevState) => [...prevState, { group, type: smartf?.type }]);
+                        } else {
+                            ctx.setOpenGroups((prevState) => [...prevState, group]);
+                        }
                         ctx.setZoomToFavGroup(group.name);
                     }
                 }}
@@ -70,7 +77,7 @@ export default function FavoriteGroup({ index, group }) {
                 <ListItemText>
                     <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" component="div" className={styles.groupInfo} noWrap>
-                        {share && <FileShareIcon />}
+                        {share && !sharedFile && <FileShareIcon />}
                         {`${getLocalizedTimeUpdate(group.clienttimems)}, ${getSize(group, t)}`}
                     </Typography>
                 </ListItemText>
@@ -105,6 +112,7 @@ export default function FavoriteGroup({ index, group }) {
                         group={group}
                         setOpenActions={setOpenActions}
                         setProcessDownload={setProcessDownload}
+                        smartf={smartf}
                     />
                 }
             />

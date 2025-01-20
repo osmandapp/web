@@ -64,7 +64,8 @@ async function loadListFiles(
     setFavorites,
     setUpdateMarkers,
     setProcessingGroups,
-    setVisibleTracks
+    setVisibleTracks,
+    setShareWithMeFiles
 ) {
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {
@@ -81,15 +82,12 @@ async function loadListFiles(
                             res.totalUniqueZipSize += f.zipSize;
                         });
                         setListFiles(res);
-
+                        const favFiles = await loadShareFiles(setShareWithMeFiles);
+                        const ownFavorites = TracksManager.getFavoriteGroups(res);
+                        const allFavorites = [...ownFavorites, ...favFiles];
                         await Promise.all([
                             addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles, setVisibleTracks),
-                            addOpenedFavoriteGroups(
-                                TracksManager.getFavoriteGroups(res),
-                                setFavorites,
-                                setUpdateMarkers,
-                                setProcessingGroups
-                            ),
+                            addOpenedFavoriteGroups(allFavorites, setFavorites, setUpdateMarkers, setProcessingGroups),
                         ]);
                     }
                 });
@@ -114,6 +112,12 @@ export async function loadShareFiles(setShareWithMeFiles) {
         tracks: preparedTracks,
         favorites: favorites?.uniqueFiles,
     }));
+    return favorites?.uniqueFiles.map((f) => {
+        return {
+            ...f,
+            sharedWithMe: true,
+        };
+    });
 }
 
 async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
@@ -529,11 +533,10 @@ export const AppContextProvider = (props) => {
                 setFavorites,
                 setUpdateMarkers,
                 setProcessingGroups,
-                setVisibleTracks
+                setVisibleTracks,
+                setShareWithMeFiles
             ).then(() => {
-                if (loginUser) {
-                    loadShareFiles(setShareWithMeFiles).finally(() => setGpxLoading(false));
-                }
+                setGpxLoading(false);
             });
         }
     }, [loginUser]);

@@ -323,10 +323,10 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     function getDataFromWpt(type, selectedWpt, wptFromFile = null) {
         const currentWpt = wptFromFile ? wptFromFile : selectedWpt;
-
         return {
             type: type,
             file: selectedWpt.file,
+            sharedWithMe: selectedWpt.sharedWithMe,
             name: currentWpt.name,
             desc: currentWpt.desc,
             hidden: currentWpt.hidden,
@@ -542,7 +542,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     function showEditButtons() {
-        return !wpt.type?.isWikiPoi && !wpt.type?.isSearch && !wpt?.type?.isShareFav;
+        return (
+            !wpt.type?.isWikiPoi && !wpt.type?.isSearch && !wpt?.type?.isShareFav && wpt.type.isFav && !wpt.sharedWithMe
+        );
     }
 
     const Header = () => {

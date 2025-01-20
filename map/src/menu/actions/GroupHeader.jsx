@@ -211,7 +211,7 @@ export default function GroupHeader({
                             </span>
                         </Tooltip>
                     )}
-                    {type === FAVORITES_TYPE && (
+                    {type === FAVORITES_TYPE && !hiddenBtn && (
                         <Tooltip
                             key={'import_fav_group'}
                             title={t('web:import_favorite_groups')}
@@ -252,6 +252,7 @@ export default function GroupHeader({
                         setSortIcon={setSortIcon}
                         setSortName={setSortName}
                         markers={markers}
+                        smartf={smartf}
                     />
                 }
             />

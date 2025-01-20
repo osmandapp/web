@@ -19,6 +19,7 @@ import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import SmartFolderActions from '../actions/SmartFolderActions';
 import { SHARE_TYPE } from '../../manager/ShareManager';
+import FavoritesManager from '../../manager/FavoritesManager';
 
 const types = {
     [SHARE_TYPE]: {
@@ -28,7 +29,9 @@ const types = {
             track: {
                 substring: 'shared_string_tracks',
             },
-            favorite: {},
+            favorite: {
+                substring: 'shared_string_favorites',
+            },
         },
     },
 };
@@ -98,6 +101,7 @@ export default function SmartFolder({ type, subtype, files }) {
                     <SmartFolderActions
                         files={files}
                         type={type}
+                        subtype={subtype}
                         setOpenActions={setOpenActions}
                         setProcessDownload={setProcessDownload}
                         showAllTracks={showAllTracks}

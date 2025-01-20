@@ -17,6 +17,7 @@ import FavoriteShape from './structure/FavoriteShape';
 import FavoritesManager, {
     DEFAULT_FAV_GROUP_NAME,
     DEFAULT_GROUP_NAME_POINTS_GROUPS,
+    getFavGroupKey,
 } from '../../../manager/FavoritesManager';
 import FavoriteHelper from './FavoriteHelper';
 import TracksManager from '../../../manager/track/TracksManager';
@@ -244,13 +245,11 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
     }
 
     async function updateGroupMarkers(result, selectedGroup) {
-        if (!ctx.favorites.mapObjs[selectedGroup.name]) {
-            ctx.favorites.mapObjs[selectedGroup.name] = FavoriteHelper.createGroupObj(result, selectedGroup);
+        const key = getFavGroupKey(selectedGroup);
+        if (!ctx.favorites.mapObjs[key]) {
+            ctx.favorites.mapObjs[key] = FavoriteHelper.createGroupObj(result, selectedGroup);
         } else {
-            ctx.favorites.mapObjs[selectedGroup.name] = FavoriteHelper.updateGroupObj(
-                ctx.favorites.mapObjs[selectedGroup.name],
-                result
-            );
+            ctx.favorites.mapObjs[key] = FavoriteHelper.updateGroupObj(ctx.favorites.mapObjs[key], result);
         }
         ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, selectedGroup.name, result);
         FavoriteHelper.updateSelectedFile({
@@ -263,7 +262,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
         });
         ctx.setUpdateMarkers({ ...ctx.favorites });
         ctx.setFavorites({ ...ctx.favorites });
-        setFavoriteGroup(ctx.favorites.mapObjs[selectedGroup.name]);
+        setFavoriteGroup(ctx.favorites.mapObjs[key]);
     }
 
     const CloseDialog = (dialogOpen) => {

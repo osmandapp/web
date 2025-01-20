@@ -11,7 +11,7 @@ import { FIT_BOUNDS_MAX_ZOOM, openTrackOnMap, updateTracks } from '../../manager
 import { isEmpty } from 'lodash';
 
 const SmartFolderActions = forwardRef(
-    ({ files, type, setOpenActions, setProcessDownload, showAllTracks, setShowAllTracks }, ref) => {
+    ({ files, type, subtype, setOpenActions, setProcessDownload, showAllTracks, setShowAllTracks }, ref) => {
         const { t } = useTranslation();
         const ctx = useContext(AppContext);
 
@@ -102,26 +102,28 @@ const SmartFolderActions = forwardRef(
             <>
                 <Box ref={ref}>
                     <Paper id="se-smart-folder-actions" className={styles.actions}>
-                        <MenuItem
-                            disabled={files.realSize === 0}
-                            className={styles.action}
-                            onClick={() => {
-                                showAll({ show: !showAllTracks }).then();
-                                setOpenActions(false);
-                            }}
-                        >
-                            <ListItemIcon className={styles.iconAction}>
-                                <ShowIcon />
-                            </ListItemIcon>
-                            <ListItemText>
-                                <Typography variant="inherit" className={styles.actionName} noWrap>
-                                    {showAllTracks
-                                        ? t('web:hide_all_tracks_from_map')
-                                        : t('web:show_all_tracks_on_map')}
-                                </Typography>
-                            </ListItemText>
-                        </MenuItem>
-                        <Divider className={styles.dividerActions} />
+                        {subtype === 'track' && (
+                            <MenuItem
+                                disabled={files.realSize === 0}
+                                className={styles.action}
+                                onClick={() => {
+                                    showAll({ show: !showAllTracks }).then();
+                                    setOpenActions(false);
+                                }}
+                            >
+                                <ListItemIcon className={styles.iconAction}>
+                                    <ShowIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    <Typography variant="inherit" className={styles.actionName} noWrap>
+                                        {showAllTracks
+                                            ? t('web:hide_all_tracks_from_map')
+                                            : t('web:show_all_tracks_on_map')}
+                                    </Typography>
+                                </ListItemText>
+                            </MenuItem>
+                        )}
+                        {subtype === 'track' && <Divider className={styles.dividerActions} />}
                         <MenuItem
                             disabled={files.realSize === 0}
                             className={styles.action}

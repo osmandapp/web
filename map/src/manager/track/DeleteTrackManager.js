@@ -32,7 +32,7 @@ async function deleteSharedWithMeFile(name, type, ctx) {
             msg: 'We could not delete the file. Please try again later.',
         });
     } else {
-        deleteTracksFromLastGroup(name, ctx);
+        deleteTracksFromLastGroup(name, ctx, type === FAVORITE_FILE_TYPE);
         await loadShareFiles(ctx.setShareWithMeFiles);
     }
 }
@@ -195,9 +195,21 @@ function deleteTracksFromGroups(trackName, ctx) {
     }
 }
 
-function deleteTracksFromLastGroup(trackName, ctx) {
+function deleteTracksFromLastGroup(trackName, ctx, isFavorite = false) {
     if (ctx.openGroups.length > 0) {
         const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
+        if (isFavorite) {
+            const fileIndexInGroupFiles = lastGroup.files.findIndex((file) => file.file.name === trackName);
+            if (fileIndexInGroupFiles !== -1) {
+                lastGroup.files.splice(fileIndexInGroupFiles, 1);
+                ctx.setOpenGroups((prev) => {
+                    const updatedOpenGroups = [...prev];
+                    updatedOpenGroups[updatedOpenGroups.length - 1] = lastGroup;
+                    return updatedOpenGroups;
+                });
+                return;
+            }
+        }
         if (lastGroup.groupFiles) {
             const fileIndexInGroupFiles = lastGroup.groupFiles.findIndex((file) => file.name === trackName);
             if (fileIndexInGroupFiles !== -1) {
