@@ -137,6 +137,7 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                             open={openActions}
                             setOpen={setOpenActions}
                             anchorEl={anchorEl}
+                            favItems={true}
                             actions={
                                 <FavoriteItemActions marker={marker} group={group} setOpenActions={setOpenActions} />
                             }

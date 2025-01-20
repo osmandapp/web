@@ -130,7 +130,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null }) {
                 <FixedSizeList
                     height={height - 120}
                     itemCount={visibleMarkers.length}
-                    itemSize={80}
+                    itemSize={70}
                     width={ctx.infoBlockWidth}
                 >
                     {({ index, style }) => (
