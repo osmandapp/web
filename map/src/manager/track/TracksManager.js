@@ -379,6 +379,9 @@ export function addDistanceToPoints(points) {
     let distanceSegment = 0;
     let prevGapInd = 0;
     for (let point of points) {
+        if (point.distance) {
+            point.distance = parseFloat(point.distance.toFixed(2));
+        }
         if (point.geometry) {
             point.dist = 0;
 
@@ -402,8 +405,9 @@ export function addDistanceToPoints(points) {
 
             distanceTotal += point.dist;
             distanceSegment += point.dist;
-            point.distanceTotal = distanceTotal;
-            point.distanceSegment = distanceSegment;
+            point.dist = parseFloat(point.dist.toFixed(2));
+            point.distanceTotal = parseFloat(distanceTotal.toFixed(2));
+            point.distanceSegment = parseFloat(distanceSegment.toFixed(2));
             if (point.geometry[point.geometry.length - 1]?.profile === TracksManager.PROFILE_GAP) {
                 distanceSegment = 0;
             }
@@ -415,17 +419,18 @@ export function addDistanceToPoints(points) {
                     point.dist = Utils.getDistance(point.lat, point.lng, prevPoint.lat, prevPoint.lng);
                     distanceTotal += point.dist;
                     distanceSegment += point.dist;
-                    point.distanceTotal = distanceTotal;
-                    point.distanceSegment = distanceSegment;
+                    point.dist = parseFloat(point.dist.toFixed(2));
+                    point.distanceTotal = parseFloat(distanceTotal.toFixed(2));
+                    point.distanceSegment = parseFloat(distanceSegment.toFixed(2));
                 } else {
                     point.dist = 0;
-                    point.distanceTotal = distanceTotal;
-                    point.distanceSegment = distanceSegment;
+                    point.distanceTotal = parseFloat(distanceTotal.toFixed(2));
+                    point.distanceSegment = parseFloat(distanceSegment.toFixed(2));
                 }
             } else {
                 point.dist = 0;
                 point.distanceSegment = 0;
-                point.distanceTotal = distanceTotal;
+                point.distanceTotal = parseFloat(distanceTotal.toFixed(2));
             }
             if (point.profile === TracksManager.PROFILE_GAP) {
                 let segPoints = points.slice(prevGapInd, ind);
