@@ -1,10 +1,9 @@
-import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import TracksManager from '../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
-import { Button } from '@mui/material';
+import { Button, Dialog } from '@mui/material';
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import FavoritesManager from '../../manager/FavoritesManager';
@@ -57,25 +56,23 @@ export default function DeleteWptDialog({
     }
 
     async function deleteFavorite() {
-        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites.mapObjs[wpt.group.name].wpts;
+        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites.mapObjs[wpt.groupId].wpts;
         const groupName = useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category;
+        const id = useSelected ? ctx.selectedGpxFile.id : wpt.groupId;
         const groupFullName = useSelected ? ctx.selectedGpxFile.file.name : wpt.group.file.name;
         const currentWptName = useSelected ? ctx.selectedGpxFile.markerCurrent.title : wpt.name;
 
         for (let i = 0; i < arrWpt.length; i++) {
             if (arrWpt[i].name === currentWptName) {
-                let result = await FavoritesManager.deleteFavorite(
+                const result = await FavoritesManager.deleteFavorite(
                     arrWpt[i],
                     groupFullName,
-                    ctx.favorites.mapObjs[groupName].updatetimems
+                    ctx.favorites.mapObjs[id].updatetimems
                 );
                 //update favorites groups
                 if (result) {
-                    ctx.favorites.mapObjs[groupName] = FavoriteHelper.updateGroupObj(
-                        ctx.favorites.mapObjs[groupName],
-                        result
-                    );
-                    ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, groupName, result);
+                    ctx.favorites.mapObjs[id] = FavoriteHelper.updateGroupObj(ctx.favorites.mapObjs[id], result);
+                    ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, groupName, result, id);
                     useSelected &&
                         FavoriteHelper.updateSelectedFile({
                             ctx,

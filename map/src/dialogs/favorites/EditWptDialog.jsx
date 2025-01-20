@@ -130,20 +130,22 @@ export default function EditWptDialog({
     }
 
     async function saveFavorite() {
-        let selectedGroupName =
-            favoriteGroup === null ? (wpt.category ?? FavoritesManager.DEFAULT_GROUP_NAME) : favoriteGroup.name;
-        let currentWpt = getCurrentWpt(selectedGroupName);
-        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites.mapObjs[wpt.group.name].wpts;
+        const selectedGroupId = favoriteGroup !== null ? favoriteGroup.id : wpt.groupId;
+        const oldGroupId = useSelected ? ctx.selectedGpxFile.id : wpt.groupId;
 
-        let newGroup = ctx.favorites.groups.find((g) => g.name === selectedGroupName);
-        let oldGroup = ctx.favorites.groups.find(
-            (g) => g.name === (useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category)
-        );
-
-        const wptName = useSelected ? ctx.selectedGpxFile.name : wpt.name;
+        const selectedGroupName = favoriteGroup !== null ? favoriteGroup.name : wpt.category;
         const oldGroupName = useSelected ? ctx.selectedGpxFile.file.name : wpt.group.file.name;
 
-        let result = await FavoritesManager.updateFavorite(
+        const currentWpt = getCurrentWpt(selectedGroupName);
+
+        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites.mapObjs[selectedGroupId].wpts;
+
+        let newGroup = ctx.favorites.groups.find((g) => g.id === selectedGroupId);
+        let oldGroup = ctx.favorites.groups.find((g) => g.id === oldGroupId);
+
+        const wptName = useSelected ? ctx.selectedGpxFile.name : wpt.name;
+
+        const result = await FavoritesManager.updateFavorite(
             currentWpt,
             wptName,
             oldGroupName,
@@ -155,14 +157,13 @@ export default function EditWptDialog({
 
         //update favorites groups
         if (result) {
-            const oldGroupName = useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category;
             updateFavoriteGroups({
-                result: result,
-                selectedGroupName: selectedGroupName,
-                oldGroupName: oldGroupName,
-                ctx: ctx,
-                useSelected: useSelected,
-                favoriteName: favoriteName,
+                result,
+                selectedGroupId,
+                oldGroupId,
+                ctx,
+                useSelected,
+                favoriteName,
             });
             setEditFavoritesDialogOpen(false);
             if (setOpenActions) {
@@ -172,7 +173,7 @@ export default function EditWptDialog({
     }
 
     function getCurrentWpt(selectedGroupName) {
-        const group = useSelected ? ctx.selectedGpxFile.file : ctx.favorites.mapObjs[wpt.group.name];
+        const group = useSelected ? ctx.selectedGpxFile.file : ctx.favorites.mapObjs[wpt.group.id];
         let res = null;
         let wpts = group ? group.wpts : ctx.selectedGpxFile.wpts;
         if (wpts) {

@@ -1,10 +1,10 @@
 import L from 'leaflet';
-import FavoritesManager from '../../../manager/FavoritesManager';
 import { isEmpty } from 'lodash';
+import { getUniqFileId } from '../../../manager/GlobalManager';
+import FavoritesManager from '../../../manager/FavoritesManager';
 
-function updateSelectedFile({ ctx, favorites, result, favoriteName, groupName, deleted }) {
+function updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted }) {
     let newSelectedFile = Object.assign({}, ctx.selectedGpxFile);
-    let selectedGroup = favorites.groups.find((g) => g.name === groupName);
     newSelectedFile.file =
         selectedGroup.name !== ctx.selectedGpxFile?.nameGroup ? selectedGroup.file : ctx.selectedGpxFile?.file;
     newSelectedFile.name = favoriteName;
@@ -17,13 +17,14 @@ function updateSelectedFile({ ctx, favorites, result, favoriteName, groupName, d
             newSelectedFile.file[`${t}`] = result.data[t];
         });
     }
+    newSelectedFile.id = selectedGroup.id;
     updateMarker(newSelectedFile, deleted, favoriteName);
     ctx.setSelectedGpxFile(newSelectedFile);
     ctx.setSelectedWpt(newSelectedFile);
 }
 
-function updateSelectedGroup(favorites, selectedGroupName, result) {
-    let group = favorites.groups?.find((g) => g.name === selectedGroupName && result.data);
+function updateSelectedGroup(favorites, selectedGroupName, result, id) {
+    let group = favorites.groups?.find((g) => g.id === id && result.data);
     if (group) {
         updateGroupData(group, result);
     } else {
@@ -40,6 +41,7 @@ function updateSelectedGroup(favorites, selectedGroupName, result) {
             file: file,
             pointsGroups: result.data.pointsGroups,
             hidden: false,
+            id: getUniqFileId(file),
         };
         favorites.groups.push(newGroup);
     }
@@ -54,13 +56,14 @@ function updateGroupData(object, result) {
         file[d] = result.data[d];
     });
     object.file = file;
+    object.id = getUniqFileId(file);
 }
 
-function updateGroupAfterChange({ ctx, result, selectedGroupName, oldGroupName }) {
+function updateGroupAfterChange({ ctx, result, selectedGroupId, oldGroupId }) {
     let updatedGroups = [];
     ctx.favorites.groups.forEach((g) => {
         let newGroup;
-        if (g.name === oldGroupName && result.oldGroupResp?.data) {
+        if (g.id === oldGroupId && result.oldGroupResp?.data) {
             const file = updateFavFile(g, result.oldGroupResp);
             newGroup = createNewGroup({
                 g,
@@ -69,7 +72,7 @@ function updateGroupAfterChange({ ctx, result, selectedGroupName, oldGroupName }
                 clienttimems: result.oldGroupResp.clienttimems,
                 pointsGroups: result.oldGroupResp.data.pointsGroups,
             });
-        } else if (g.name === selectedGroupName && result.newGroupResp) {
+        } else if (g.id === selectedGroupId && result.newGroupResp) {
             const file = updateFavFile(g, result.newGroupResp);
             newGroup = createNewGroup({
                 g,
@@ -98,6 +101,7 @@ function updateFavFile(group, res) {
 
 function createNewGroup({ g, file, updatetimems, clienttimems, pointsGroups }) {
     let newGroup = {
+        id: getUniqFileId(file),
         name: g.name,
         updatetimems: updatetimems,
         clienttimems: clienttimems,
@@ -156,20 +160,6 @@ function createGroupObj(result, selectedGroup) {
     group.updatetimems = result.updatetimems;
 
     return group;
-}
-
-export function getFavGroupUpdateTimeByWpts(wpts) {
-    if (wpts) {
-        let maxTime = 0;
-        wpts.forEach((wpt) => {
-            if (wpt.ext && wpt.ext.time) {
-                const timeValue = parseInt(wpt.ext.time);
-                maxTime = Math.max(maxTime, timeValue);
-            }
-        });
-        return maxTime;
-    }
-    return null;
 }
 
 const FavoriteHelper = {

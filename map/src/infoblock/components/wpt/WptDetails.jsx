@@ -326,6 +326,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         return {
             type: type,
             file: selectedWpt.file,
+            groupId: selectedWpt.id,
             sharedWithMe: selectedWpt.sharedWithMe,
             name: currentWpt.name,
             desc: currentWpt.desc,

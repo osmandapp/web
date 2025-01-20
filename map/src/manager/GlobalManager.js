@@ -31,6 +31,10 @@ export const DELETE_ACCOUNT_URL = 'delete-account/';
 export const SHARE_FILE_URL = 'share/join/:uuid';
 export const SHARE_FILE_MAIN_URL = 'share/join/';
 
+export function getUniqFileId(file) {
+    return `_id_${file.name}_${file.userid}`;
+}
+
 export function getFileStorage({ ctx, smartf, type }) {
     if (type === GPX) {
         return smartf?.type === SHARE_TYPE ? ctx.shareWithMeFiles?.tracks : ctx.gpxFiles;

@@ -36,16 +36,17 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
             newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
         }
         let file;
-        Object.keys(ctx.favorites.mapObjs).forEach((favorite) => {
-            if (favorite === group.name) {
-                newSelectedGpxFile.nameGroup = favorite;
-                Object.values(ctx.favorites.mapObjs[favorite].markers._layers).forEach((m) => {
+        Object.keys(ctx.favorites.mapObjs).forEach((fileId) => {
+            if (fileId === group.id) {
+                newSelectedGpxFile.nameGroup = group.name;
+                Object.values(ctx.favorites.mapObjs[fileId].markers._layers).forEach((m) => {
                     if (m.options.title === marker.title) {
-                        file = ctx.favorites.mapObjs[favorite];
+                        file = ctx.favorites.mapObjs[fileId];
                     }
                 });
             }
         });
+        newSelectedGpxFile.id = group.id;
         newSelectedGpxFile.file = file;
         newSelectedGpxFile.sharedWithMe = sharedFile;
         newSelectedGpxFile.file.name = ctx.favorites.groups.find((g) => g.name === group.name).file.name;

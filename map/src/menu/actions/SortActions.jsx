@@ -11,7 +11,7 @@ import { ReactComponent as OldDateIcon } from '../../assets/icons/ic_action_sort
 import { ReactComponent as NearestIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import styles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
-import FavoritesManager, { DEFAULT_FAV_GROUP_NAME, getFavGroupKey } from '../../manager/FavoritesManager';
+import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import i18n from '../../i18n';
 import ActionItem from '../components/ActionItem';
 import { SHARE_TYPE } from '../../manager/ShareManager';
@@ -197,7 +197,7 @@ const SortActions = forwardRef(
             if (trackGroup) {
                 return trackGroup.groupFiles;
             } else if (favoriteGroup) {
-                return ctx.favorites.mapObjs[favoriteGroup.name]?.wpts;
+                return ctx.favorites.mapObjs[favoriteGroup.id]?.wpts;
             }
             return null;
         };

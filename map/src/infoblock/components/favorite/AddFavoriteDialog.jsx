@@ -17,7 +17,6 @@ import FavoriteShape from './structure/FavoriteShape';
 import FavoritesManager, {
     DEFAULT_FAV_GROUP_NAME,
     DEFAULT_GROUP_NAME_POINTS_GROUPS,
-    getFavGroupKey,
 } from '../../../manager/FavoritesManager';
 import FavoriteHelper from './FavoriteHelper';
 import TracksManager from '../../../manager/track/TracksManager';
@@ -26,6 +25,7 @@ import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { saveTrackToLocalStorage } from '../../../manager/track/SaveTrackManager';
 import { FINAL_POI_ICON_NAME, TITLE, WEB_POI_PREFIX } from '../wpt/WptTagsProvider';
 import Dialog from '@mui/material/Dialog';
+import { getUniqFileId } from '../../../manager/GlobalManager';
 
 export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedPoi = null }) {
     const menuStyles = contextMenuStyles();
@@ -245,7 +245,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
     }
 
     async function updateGroupMarkers(result, selectedGroup) {
-        const key = getFavGroupKey(selectedGroup);
+        const key = getUniqFileId(selectedGroup);
         if (!ctx.favorites.mapObjs[key]) {
             ctx.favorites.mapObjs[key] = FavoriteHelper.createGroupObj(result, selectedGroup);
         } else {

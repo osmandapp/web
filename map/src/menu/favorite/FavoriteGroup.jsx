@@ -29,10 +29,10 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
     const sharedFile = smartf?.type === SHARE_TYPE;
 
     useEffect(() => {
-        if (ctx.favorites.mapObjs[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
+        if (ctx.favorites.mapObjs[group.id]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
             const updatedFile = {
                 ...ctx.selectedGpxFile.file,
-                markers: ctx.favorites.mapObjs[group.name].markers,
+                markers: ctx.favorites.mapObjs[group.id].markers,
             };
             ctx.setSelectedGpxFile({
                 ...ctx.selectedGpxFile,
@@ -45,8 +45,8 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
         <>
             <MenuItem
                 className={styles.group}
-                key={'group' + group.name + index}
-                id={'se-menu-fav-' + group.name}
+                key={'group' + group.id + index}
+                id={'se-menu-fav-' + group.id}
                 onClick={(e) => {
                     if (e.target !== 'path') {
                         if (sharedFile) {
@@ -54,7 +54,7 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
                         } else {
                             ctx.setOpenGroups((prevState) => [...prevState, group]);
                         }
-                        ctx.setZoomToFavGroup(group.name);
+                        ctx.setZoomToFavGroup(group.id);
                     }
                 }}
             >

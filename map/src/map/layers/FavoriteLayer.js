@@ -116,11 +116,12 @@ const FavoriteLayer = () => {
                     if (!file.markers) {
                         file.markers = TrackLayerProvider.createLayersByTrackData({
                             data: file,
+                            groupId: key,
                             ctx,
                             map,
                             type: FAVORITE_FILE_TYPE,
                         });
-                        if (ctx.selectedGpxFile?.markerCurrent && key === ctx.selectedGpxFile.nameGroup) {
+                        if (ctx.selectedGpxFile?.markerCurrent && key === ctx.selectedGpxFile.id) {
                             updateSelectedFavoriteOnMap(file);
                         }
                     }
@@ -299,7 +300,7 @@ const FavoriteLayer = () => {
             ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category
                 ? e.sourceTarget.options.category
                 : FavoritesManager.DEFAULT_GROUP_NAME;
-            ctx.selectedGpxFile.file = Object.assign({}, ctx.favorites.mapObjs[e.sourceTarget.options.category]);
+            ctx.selectedGpxFile.file = Object.assign({}, ctx.favorites.mapObjs[e.sourceTarget.options.groupId]);
             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
             ctx.setSelectedWpt(ctx.selectedGpxFile);
         },
