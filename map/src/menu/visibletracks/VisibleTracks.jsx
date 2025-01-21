@@ -34,7 +34,7 @@ export function updateVisibleCache({ visible, file, smartf = null }) {
         savedVisible.open = [];
     }
     // always mark shared files in visible cache with SHARE_TYPE prefix
-    const fileName = smartf?.type === SHARE_TYPE ? SHARE_TYPE + '_' + file.name : file.name;
+    const fileName = smartf?.type === SHARE_TYPE ? VISIBLE_SHARE_MARKER + file.name : file.name;
 
     if (visible) {
         savedVisible.open.push(fileName);
@@ -71,7 +71,8 @@ export function addCloseTracksToRecently(ctx) {
 
         ctx.visibleTracks.new?.forEach((t) => {
             const sharedFile = t.sharedWithMe;
-            const fileName = sharedFile ? SHARE_TYPE + '_' + t.name : t.name;
+
+            const fileName = sharedFile ? VISIBLE_SHARE_MARKER + t.name : t.name;
             if (savedVisible.open && savedVisible.open.includes(fileName)) {
                 newVisFiles.new.push(t);
                 newVisFilesNames.new.push(fileName);

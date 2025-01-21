@@ -70,7 +70,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     useEffect(() => {
         const storage = getFileStorage({ ctx, smartf, type: GPX });
         setFileStorage(storage);
-    }, [smartf]);
+    }, [ctx, smartf]);
 
     async function processDisplayTrack({
         visible,
