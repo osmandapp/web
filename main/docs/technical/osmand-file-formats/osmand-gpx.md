@@ -582,4 +582,6 @@ Some GPX tags are used or stored indirectly in OBF files. See [OsmGpxWriteContex
 | route_track_point      | Waypoint POI-type                                                                               |
 -->
 
+
 > *This article was last updated in January 2025*
+

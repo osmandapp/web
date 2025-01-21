@@ -31,4 +31,10 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ## What's new
 
-We are going to write about the latest OsmAnd updates soon.
+1. new configure map (road classes) + legend 
+2. new route preparation / map details
+3. smartwatches (Garmin) 
+4. autosync (OsmAnd Cloud)
+5. main navigation widget (Full version)
+6. explore places (Wikidata on the map)
+7. delete large map files (replace with UI feature) 

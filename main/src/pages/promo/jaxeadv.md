@@ -1,5 +1,5 @@
 ---
-title: OsmAnd Pro for Backdrop Splitboarding
+title: OsmAnd Pro JaxeADV
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,22 +14,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 
-![index](@site/static/img/promo/backdrop/backdrop.png)
+![index](@site/static/img/promo/jaxeadv/jaxeadv.png)
 
 
-**OsmAnd Pro for Backdrop Splitboarding**
+**OsmAnd Pro for "JaxeADV"**
 
-Hello, fans of winter activities!
+Hello funs of two wheels!
 
-OsmAnd and [Backdrop Splitboarding](https://www.backdropjournal.com/) introduce and present you OsmAnd Pro subscriptions for 1 year. 
-
+OsmAnd and ["JaxeADV"](https://jaxeadv.com/) introduce and present you OsmAnd Pro subscriptions for 1 year. 
 You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
 
 **Your steps**:
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='backdrop5'/>
+<RegisterUserPromoBlock  promoKey='jaxeadv'/>
 
 <p> </p>
 
@@ -37,16 +36,8 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
 
-_Backdrop Splitboarding_ links: [Website](https://www.backdropjournal.com/), [Instagram](https://www.instagram.com/backdropsplitboarding/)
+"JaxeADV" links: [WEB](https://jaxeadv.com/), [Instagram](https://www.instagram.com/jaxeadv), [Youtube](https://www.youtube.com/@jaxeadv2615/featured), [Facebook](https://www.facebook.com/jaxeadv)
 ________________________________
-
-**Ski Map View** shows winter colors and pistes downhill or cross-country, as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.
-
-[Here](https://osmand.net/docs/user/plugins/ski-maps) you can read more about the OsmAnd Ski map view plugin.
-
-![Ski plugin](@site/static/img/promo/backdrop/skiplugin.png)
-_______________________________
-
 
 <SotmScreenshots />
 _________________________________
@@ -54,4 +45,3 @@ _________________________________
 
 <LinksSocial/>
 <LinksTelegram/>
-
