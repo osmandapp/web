@@ -86,7 +86,7 @@ export async function updateUserRequests(ctx) {
             ctx.setShareFile((prev) => ({
                 ...prev,
                 sharedObj: {
-                    ...prev.sharedObj,
+                    ...prev?.sharedObj,
                     file: updatedFile,
                 },
             }));
