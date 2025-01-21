@@ -110,7 +110,7 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                                 <CustomIcon marker={marker} />
                             </ListItemIcon>
                             <ListItemText>
-                                <MenuItemWithLines name={marker.title} maxLines={2} />
+                                <MenuItemWithLines name={marker.title} maxLines={1} />
                                 <FavInfo />
                             </ListItemText>
                             {!share && !sharedFile && (
