@@ -464,7 +464,7 @@ export async function addOpenedFavoriteGroups(files, setFavorites, setUpdateMark
 export function updateFavoriteGroups({
     result,
     selectedGroupId,
-    oldGroupId,
+    oldGroupId = null,
     ctx,
     useSelected = false,
     favoriteName = null,

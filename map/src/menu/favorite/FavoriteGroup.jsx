@@ -46,7 +46,7 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
             <MenuItem
                 className={styles.group}
                 key={'group' + group.id + index}
-                id={'se-menu-fav-' + group.id}
+                id={'se-menu-fav-' + group.name}
                 onClick={(e) => {
                     if (e.target !== 'path') {
                         if (sharedFile) {

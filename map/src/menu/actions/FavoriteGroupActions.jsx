@@ -32,7 +32,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
     }
 
     async function updateGroup(group, hidden) {
-        let groupObj = ctx.favorites.mapObjs[group.name];
+        let groupObj = ctx.favorites.mapObjs[group.id];
         let data = [];
         groupObj.wpts.forEach((wpt) => {
             const newHiddenValue = !hidden;
@@ -45,8 +45,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
         if (result) {
             updateFavoriteGroups({
                 result,
-                selectedGroupName: group.name,
-                oldGroupName: null,
+                selectedGroupId: group.id,
                 ctx,
             });
         }
