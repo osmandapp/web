@@ -30,6 +30,7 @@ export default async function test() {
 
     await waitBy(By.id(`se-cloud-track-${trackName} - 1`));
     await deleteTrack(`${trackName} - 1`);
+    await deleteTrack(trackName);
 
     await actionFinish();
 }

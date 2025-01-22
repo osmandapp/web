@@ -11,9 +11,10 @@ import { ReactComponent as OldDateIcon } from '../../assets/icons/ic_action_sort
 import { ReactComponent as NearestIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import styles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
-import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
+import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import i18n from '../../i18n';
 import ActionItem from '../components/ActionItem';
+import { SHARE_TYPE } from '../../manager/ShareManager';
 
 const az = (a, b) => (a > b) - (a < b);
 
@@ -183,6 +184,7 @@ const SortActions = forwardRef(
             setSortIcon = null,
             setSortName = null,
             markers = null,
+            smartf = null,
         },
         ref
     ) => {
@@ -195,7 +197,7 @@ const SortActions = forwardRef(
             if (trackGroup) {
                 return trackGroup.groupFiles;
             } else if (favoriteGroup) {
-                return ctx.favorites.mapObjs[favoriteGroup.name]?.wpts;
+                return ctx.favorites.mapObjs[favoriteGroup.id]?.wpts;
             }
             return null;
         };
@@ -204,6 +206,14 @@ const SortActions = forwardRef(
             if (trackGroup) {
                 return trackGroup.subfolders;
             } else if (favoriteGroup) {
+                if (smartf?.type === SHARE_TYPE) {
+                    let groups = [];
+                    ctx.shareWithMeFiles.favorites.forEach((file) => {
+                        const favGroup = FavoritesManager.createGroup(file);
+                        groups.push(favGroup);
+                    });
+                    return groups;
+                }
                 return ctx.favorites.groups;
             }
             return null;

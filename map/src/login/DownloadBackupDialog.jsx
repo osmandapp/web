@@ -289,7 +289,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                 let name = resp.headers['content-disposition'].split('filename=')[1];
                 const url = document.createElement('a');
                 url.href = URL.createObjectURL(new Blob([resp.data], { type: 'octet/stream' }));
-                url.download = `${name}`;
+                url.download = name;
                 url.click();
             }
         }

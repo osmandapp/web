@@ -3,12 +3,21 @@ import FavoritesManager from '../FavoritesManager';
 import _, { isEmpty } from 'lodash';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../../util/GzipBase64.mjs';
-import { isCloudTrack, isRouteTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
+import {
+    isCloudTrack,
+    isRouteTrack,
+    OBJECT_TYPE_CLOUD_TRACK,
+    OBJECT_TYPE_LOCAL_TRACK,
+    OBJECT_TYPE_SHARE_FILE,
+} from '../../context/AppContext';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import { saveTrackToLocal } from './SaveTrackManager';
 import L from 'leaflet';
 import MarkerOptions from '../../map/markers/MarkerOptions';
 import anchorme from 'anchorme';
+import { SHARE_TYPE } from '../ShareManager';
+import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
+import { getFileStorage, GPX } from '../GlobalManager';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const EMPTY_FILE_NAME = '__folder__.info';
@@ -27,7 +36,7 @@ const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
 const AUTO_SRTM_MAX_POINTS = 10000; // don't overload Auto-SRTM API with huge OSRM tracks
 const AUTO_SRTM_MIN_BAD_POINTS_PERCENT = 10; // limit by % of no-elevation points (type=osmand might have up to 10%)
-const FIT_BOUNDS_MAX_ZOOM = 17;
+export const FIT_BOUNDS_MAX_ZOOM = 17;
 export const DEFAULT_GROUP_NAME = '';
 
 export function fitBoundsOptions(ctx) {
@@ -453,9 +462,9 @@ export async function getGpxFileFromTrackData(file) {
     });
 }
 
-export const downloadGpx = async (track) => {
+export const downloadGpx = async (track, sharedFile) => {
     const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
-    const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}`;
+    const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}&shared=${sharedFile ? 'true' : 'false'}`;
     const oneGpxFile = {
         url: urlFile + qs,
         clienttimems: track.clienttimems,
@@ -649,7 +658,13 @@ export function isTrackExists(name, folder, folderName, tracks) {
         tracks,
         folderName !== null ? folderName : folder?.title ? folder?.title : folder
     );
-    return foundFolder ? foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name) : false;
+    if (foundFolder) {
+        if (foundFolder.name === DEFAULT_GROUP_NAME) {
+            return foundFolder.files.some((f) => TracksManager.prepareName(f.name) === name);
+        }
+        return foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name);
+    }
+    return false;
 }
 
 function deleteLocalTrack(ctx) {
@@ -1369,9 +1384,9 @@ export function getAllVisibleFiles(ctx) {
     return files;
 }
 
-export function setTrackIconStyles(ctx, file, styles) {
+export function setTrackIconStyles({ file, styles, fileStorage }) {
     let res = [];
-    if (ctx.gpxFiles[file.name]?.url && ctx.gpxFiles[file.name]?.showOnMap) {
+    if (fileStorage?.[file.name]?.url && fileStorage?.[file.name]?.showOnMap) {
         res.push(styles.visibleIcon);
     } else {
         res.push(styles.icon);
@@ -1402,6 +1417,153 @@ export function getShare(file, ctx) {
         return ctx.shareFilesCache[file.id] !== 'private';
     }
     return file?.details?.share;
+}
+
+export async function openTrackOnMap({
+    file,
+    setProgressVisible = null,
+    showOnMap = true,
+    showInfo = false,
+    zoomToTrack = false,
+    smartf = null,
+    ctx,
+    setError = null,
+    returnOneTrack = false,
+}) {
+    // cleanup edited localTrack
+    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
+        ctx.setCreateTrack({
+            enable: false,
+            closePrev: {
+                file: _.cloneDeep(ctx.selectedGpxFile),
+            },
+        });
+    }
+    const sharedFile = smartf?.type === SHARE_TYPE;
+    const files = getFileStorage({ ctx, smartf, type: GPX });
+    let newGpxFiles = Object.assign({}, files);
+
+    // check if file is already loaded
+    if (files[file.name]?.url) {
+        if (showOnMap || zoomToTrack) {
+            if (!isEmpty(ctx.selectedGpxFile) && !isVisibleTrack(ctx.selectedGpxFile)) {
+                newGpxFiles[ctx.selectedGpxFile.name].url = null;
+            }
+        }
+        newGpxFiles[file.name].showOnMap = showOnMap;
+        newGpxFiles[file.name].zoomToTrack = zoomToTrack;
+        if (!showOnMap) {
+            newGpxFiles[file.name].url = null;
+        }
+        if (showInfo) {
+            showInfoBlock({ hasUrl: true, file, ctx, smartf });
+        }
+        if (returnOneTrack) {
+            return {
+                [file.name]: newGpxFiles[file.name],
+            };
+        }
+    } else {
+        // load file
+        if (setProgressVisible) {
+            setProgressVisible(true);
+        }
+        const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
+        const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
+        const oneGpxFile = {
+            url: URL + qs,
+            clienttimems: file.clienttimems,
+            updatetimems: file.updatetimems,
+            name: file.name,
+            sharedWithMe: file.sharedWithMe,
+            type: 'GPX',
+        };
+        const f = await Utils.getFileData(oneGpxFile);
+        const gpxfile = new File([f], file.name, {
+            type: 'text/plain',
+        });
+        const track = await TracksManager.getTrackData(gpxfile);
+        if (setProgressVisible) {
+            setProgressVisible(false);
+        }
+        if (!track) {
+            if (setError) {
+                setError('Something went wrong!');
+            }
+        } else if (isEmptyTrack(track) === false) {
+            track.name = file.name;
+            Object.keys(track).forEach((t) => {
+                oneGpxFile[t] = track[t];
+            });
+            oneGpxFile.analysis = TracksManager.prepareAnalysis(oneGpxFile.analysis);
+
+            if (showOnMap) {
+                oneGpxFile.showOnMap = showOnMap;
+            }
+            if (zoomToTrack) {
+                oneGpxFile.zoomToTrack = zoomToTrack;
+            }
+            newGpxFiles[file.name] = oneGpxFile;
+            if (showInfo) {
+                showInfoBlock({ hasUrl: false, file: oneGpxFile, ctx, smartf });
+            }
+            if (setError) {
+                setError('');
+            }
+            if (returnOneTrack) {
+                return {
+                    [file.name]: oneGpxFile,
+                };
+            }
+        } else {
+            if (setError) {
+                setError('Empty track is not supported!');
+            }
+        }
+    }
+    return newGpxFiles;
+}
+
+export function updateTracks(ctx, smartf, newTracks) {
+    if (smartf) {
+        if (smartf?.type === SHARE_TYPE) {
+            ctx.setShareWithMeFiles({
+                ...ctx.shareWithMeFiles,
+                tracks: newTracks,
+            });
+        }
+    } else {
+        ctx.setGpxFiles(newTracks);
+    }
+}
+
+function showInfoBlock({ hasUrl, file, ctx, smartf }) {
+    ctx.setUpdateInfoBlock(true);
+    let allFiles;
+    if (smartf?.type === SHARE_TYPE) {
+        allFiles = ctx.shareWithMeFiles.tracks;
+        ctx.setCurrentObjectType(OBJECT_TYPE_SHARE_FILE);
+    }
+    if (!smartf) {
+        //default case for cloud tracks
+        allFiles = ctx.gpxFiles;
+        ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+    }
+    if (hasUrl) {
+        ctx.setSelectedGpxFile({ ...allFiles[file.name], zoomToTrack: true, cloudRedrawWpts: true });
+    } else {
+        ctx.setSelectedGpxFile(Object.assign({}, file));
+    }
+}
+
+export function getTracksArrBounds(files) {
+    let bounds = [];
+    files.forEach((file) => {
+        if (file.showOnMap) {
+            bounds.push(file.gpx.getBounds());
+        }
+    });
+    return bounds;
 }
 
 const TracksManager = {

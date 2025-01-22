@@ -81,6 +81,19 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                 if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
                     ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].url = null));
                 }
+                // remove share file from visible tracks
+                if (ctx.shareWithMeFiles?.tracks && ctx.shareWithMeFiles.tracks[ctx.selectedGpxFile.name]) {
+                    ctx.setShareWithMeFiles({
+                        ...ctx.shareWithMeFiles,
+                        tracks: {
+                            ...ctx.shareWithMeFiles.tracks,
+                            [ctx.selectedGpxFile.name]: {
+                                ...ctx.shareWithMeFiles.tracks[ctx.selectedGpxFile.name],
+                                url: null,
+                            },
+                        },
+                    });
+                }
             }
         }
     }, [showInfoBlock]);
@@ -135,7 +148,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                     setShowInfoBlock(true);
                 } else if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                     // don't display InfoBlock in Navigation menu until details requested
-                } else if (ctx.selectedGpxFile && isTrack(ctx)) {
+                } else if (ctx.selectedGpxFile && isTrack(ctx) && !openShareFileItem) {
                     // finally assume that default selectedGpxFile is a track
                     tObj = new TrackTabList().create(ctx, setShowInfoBlock);
                 }

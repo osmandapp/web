@@ -14,6 +14,9 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
 
     let groupList = FavoritesManager.orderList(_.values(groups), defaultGroup);
 
+    // filter shared groups
+    groupList = groupList.filter((group) => !group.sharedWithMe);
+
     const FavoriteGroupItem = (group) => {
         let g = group.pointsGroups
             ? group.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? '' : group.name]

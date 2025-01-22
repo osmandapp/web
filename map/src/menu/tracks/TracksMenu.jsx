@@ -15,6 +15,7 @@ import styles from '../trackfavmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
 import { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
+import SmartFolder from '../components/SmartFolder';
 
 export const DEFAULT_SORT_METHOD = 'time';
 
@@ -24,8 +25,14 @@ export default function TracksMenu() {
     const [defaultGroup, setDefaultGroup] = useState(null);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
+    const [hasFiles, setHasFiles] = useState(false);
     const [, height] = useWindowSize();
+
     const { t } = useTranslation();
+
+    useEffect(() => {
+        setHasFiles(ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 || !isEmpty(ctx.shareWithMeFiles?.tracks));
+    }, [ctx.tracksGroups, defaultGroup, ctx.shareWithMeFiles]);
 
     // get gpx files and create groups
     useEffect(() => {
@@ -41,6 +48,9 @@ export default function TracksMenu() {
                     files: defGroup?.groupFiles,
                     groups: ctx.tracksGroups,
                 });
+            } else {
+                setSortFiles([]);
+                setSortGroups([]);
             }
         }
     }, [ctx.tracksGroups]);
@@ -77,7 +87,7 @@ export default function TracksMenu() {
                 <Loading />
             ) : (
                 <>
-                    {ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 ? (
+                    {hasFiles ? (
                         <Box
                             id={'se-track-menu'}
                             minWidth={ctx.infoBlockWidth}
@@ -106,6 +116,9 @@ export default function TracksMenu() {
                                     </Typography>
                                 </ListItemText>
                             </MenuItem>
+                            {!isEmpty(ctx.shareWithMeFiles?.tracks) && (
+                                <SmartFolder type={'share'} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
+                            )}
                             {ctx.tracksGroups &&
                                 (sortGroups.length > 0 ? sortGroups : ctx.tracksGroups)
                                     .filter((g) => g.name !== DEFAULT_GROUP_NAME)

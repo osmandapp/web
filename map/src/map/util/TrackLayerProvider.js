@@ -17,7 +17,7 @@ export const WPT_SIMPLIFY_THRESHOLD = 500;
 export const POINTS_SIMPLIFY_THRESHOLD = 1000;
 export const POINTS_SIMPLIFY_ZOOM_THRESHOLD = 17;
 
-function createLayersByTrackData({ data, ctx, map, type = GPX_FILE_TYPE, simplifyWpts = false }) {
+function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE, simplifyWpts = false }) {
     let layers = [];
     data.tracks?.forEach((track) => {
         if (track.points?.length > 0) {
@@ -25,7 +25,7 @@ function createLayersByTrackData({ data, ctx, map, type = GPX_FILE_TYPE, simplif
             addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
         }
     });
-    parseWpt({ points: data.wpts, layers, ctx, data, map, simplify: simplifyWpts });
+    parseWpt({ points: data.wpts, layers, ctx, data, map, simplify: simplifyWpts, groupId });
 
     if (layers.length > 0) {
         let layersGroup = new L.FeatureGroup(layers);
@@ -204,7 +204,7 @@ export function getPointLatLon(point) {
     return lat && lon ? { lat: lat, lon: lon } : null;
 }
 
-function parseWpt({ points, layers, ctx = null, data = null, map = null, simplify = false }) {
+function parseWpt({ points, layers, ctx = null, data = null, map = null, simplify = false, groupId = null }) {
     const zoom = map.getZoom();
     const lat = map.getCenter().lat;
     const clusters = simplify
@@ -237,6 +237,7 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null, simplif
                 opt.title = point.name;
             }
             opt.category = point.category ? point.category : 'favorites';
+            opt.groupId = groupId;
             if (point.desc) {
                 opt.desc = point.desc;
             }

@@ -22,7 +22,11 @@ export default function FavoriteName({
     const [favNames, setFavNames] = useState([]);
 
     useEffect(() => {
-        let group = ctx.favorites?.mapObjs?.[!favoriteGroup ? favorite?.category : favoriteGroup.name];
+        const id = favoriteGroup?.id ?? favorite?.group?.id;
+        if (!id) {
+            return;
+        }
+        let group = ctx.favorites?.mapObjs?.[id];
         let names = [];
         group &&
             group.wpts.forEach((wpt) => {
