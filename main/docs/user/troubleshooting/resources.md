@@ -102,6 +102,7 @@ The default [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/mast
 | OsmAndRailwayStyles | Offline map styles focused on railways, using a color scheme similar to [OpenRailwayMap](https://www.openrailwaymap.org/). |[OsmAndRailwayStyles GitHub](https://github.com/fuzzysolutions/OsmAndRailwayStyles)|
 | Highlighted Admin Boundaries | The map rendering style is based on the OsmAnd default, with more highlighted Administrative Boundaries for improved visibility. |[Highlighted Admin Boundaries](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
 | Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) is a cycling-focused map style, highlighting cycle lanes (in red), cycle routes (blue dashed), cycle paths (red dashed), and roads with limited vehicle traffic, such as bicycle streets (solid red borders).  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
+| Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) is a map style by Holder Tamm that allows you to choose whether to hide certain objects or not.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 
 
 ## Custom Offline Maps
