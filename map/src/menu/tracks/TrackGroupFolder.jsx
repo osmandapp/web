@@ -128,7 +128,12 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
 
     return (
         <>
-            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+            <Box
+                id={`se-tracks-folder`}
+                minWidth={ctx.infoBlockWidth}
+                maxWidth={ctx.infoBlockWidth}
+                sx={{ overflow: 'hidden' }}
+            >
                 {group && (
                     <GroupHeader
                         type="tracks"

@@ -62,7 +62,12 @@ export default function SmartFolder({ type, subtype, files }) {
 
     return (
         <>
-            <MenuItem onClick={openFiles} className={styles.group} key={'smartFolder' + type}>
+            <MenuItem
+                id={`se-smart-folder-${type}-${subtype}`}
+                onClick={openFiles}
+                className={styles.group}
+                key={'smartFolder' + type}
+            >
                 <ListItemIcon className={styles.icon}>{folder.icon}</ListItemIcon>
                 <ListItemText>
                     <MenuItemWithLines name={t(folder.name)} maxLines={2} />

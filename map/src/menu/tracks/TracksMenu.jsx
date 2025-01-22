@@ -25,9 +25,14 @@ export default function TracksMenu() {
     const [defaultGroup, setDefaultGroup] = useState(null);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
+    const [hasFiles, setHasFiles] = useState(false);
     const [, height] = useWindowSize();
 
     const { t } = useTranslation();
+
+    useEffect(() => {
+        setHasFiles(ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 || !isEmpty(ctx.shareWithMeFiles?.tracks));
+    }, [ctx.tracksGroups, defaultGroup, ctx.shareWithMeFiles]);
 
     // get gpx files and create groups
     useEffect(() => {
@@ -82,7 +87,7 @@ export default function TracksMenu() {
                 <Loading />
             ) : (
                 <>
-                    {ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 ? (
+                    {hasFiles ? (
                         <Box
                             id={'se-track-menu'}
                             minWidth={ctx.infoBlockWidth}
