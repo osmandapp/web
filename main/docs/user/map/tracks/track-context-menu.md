@@ -94,7 +94,7 @@ In case your track was created in OsmAnd or any other tracking app (so its point
 </Tabs>
 
 - **Show / hide** buttons. Allows you to enable or disable the track display on the map.
-- [**Appearance**](./appearance.md). Used to customize the appearance of your track.
+- [Appearance](./appearance.md). Used to customize the appearance of your track.
 - **Edit track** (*Android*). Opens the track in [*Plan a route tool*](../../plan-route/create-route.md).
 - **Export** (*iOS*). Allows [to export a track](../../personal/tracks/manage-tracks.md#export).
 - **Directions**. Opens the track in *[Navigation](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.

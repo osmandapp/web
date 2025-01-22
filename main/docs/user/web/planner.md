@@ -20,70 +20,107 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
+The OsmAnd Web Route Planner allows you to create navigation routes, plan tracks, and manage local files directly from your browser. This web tool is useful for creating detailed travel routes that you can sync to your app or share with others.
+
 
 ## Navigation Route
 
-- To start building a navigation route, right-click to add the *Navigate from*,  *Navigate to* and *Navigate via* points.
+To create a navigation route, follow these steps:
 
-- After adding the start and end points, we get the route.
+- **Right-click** on the map to add waypoints:
 
-- In the Route block you can move the start and end points, edit them and change the type of route.
+  - *Navigate from*. Set the starting point.
+  - *Navigate to*. Set the destination.
+  - *Navigate via*. Add intermediate points if needed.
 
-![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
+- After setting the start and end points, the route will be displayed on the map.
 
-- choose *Route profile* for changing navigation routing type:
+- In the **Route** block:
 
-![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
+  - Move the start and end points if needed.
+  - Edit the waypoints and choose the desired route type (e.g., car, bicycle, walking).
 
-- click to Orange circles on Navigation route for look at instructions:
+  ![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
 
-![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
+- Select the appropriate **Route Profile** for different navigation options.
 
-- copy URL for sending the navigation route. Example: [https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+  ![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
 
+- Click on the orange circles along the route to view detailed navigation instructions.
 
-## Create Track and Local
+  ![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
 
-A web version of the [**Plan route**](../plan-route/create-route.md) tool, similar to the OsmAnd app, is currently being developed. To go to create a route, *Right-click → Create new Route*.  Or you can use the *Create track* button on the *Local* menu(right side: *Pencil* and *Upload* buttons).
-
-Here you can select a navigation profile to build a section of the route (New segments) or for all route (All segments), add waypoints, save the route and view information about it.  
-
-![OsmAnd Web Create Track](@site/static/img/web/create_route.png)
-
-You can view any actions and display track information in the [Track section](#tracks) of this article.
-
-Actions for Local:
-
-- *Import Track* - any user can download any GPX file at [*osmand.net/map*](https://osmand.net/map) to *Local* section.  
-- Create track.
-
-![OsmAnd Web Create Track](@site/static/img/web/create_route_2.png)
-
-Local track menu and Edit has 3 panels: Info, Track, Waypoints, Turns.
-
-*Info* actions and data:
-
-  - *Save to Cloud*.
-  - *Add description*.
-  - *Rename* a track.
-  - *Recalculate* - Add elevation data for the selected track.
-  - *Elevation*: elevation graph.
-  - *Speed*: speed graph.  
-  - *Slope*: slope graph.  
-  - *Road details* - Road type, Surface, Steepness, Surface firmness, Piste.
-  - *Download GPX* button (Pro feature).
-  - *Close Track* the track.
-  - *Delete Track* - Delete the track.
-
-![OsmAnd Web Create Track](@site/static/img/web/create_route_3.png)
+- To share the route, copy the URL. Example: [https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
 
 
-*Track section* contains track points. Here you can delete it or change order.
-*Waypoints* menu contains track waypoints. Here you can show or not it on the map, and delete waypoints.
+## Create Track and Local Files
 
-*Turns* menu contains info about segments turns.
-
-![OsmAnd Web Create Track](@site/static/img/web/create_route_1.png)
+OsmAnd Web's [**Plan route**](../plan-route/create-route.md) tool allows you to create and edit tracks similarly to the mobile app. Here's how you can create and manage tracks:
 
 
-> *This article was last updated in September 2024*
+***Creating a new route:***
+
+- *Right-click* on the map and select **Create New Route**.
+- Alternatively, use the **Create Track** button in the *Local* menu (located on the right side with the *Pencil* and *Upload* buttons).
+
+
+***Managing tracks:***
+
+- **Select Navigation Profile**. Choose a profile (e.g., hiking, driving) for specific route sections (*New segments*) or for the entire route (*All segments*).
+- **Add Waypoints**. Click on the map to add new points.
+- **Save the Route**. Save your route for future use.
+- **View Route Details**. Access detailed track information, including length, duration, and terrain.
+  ![OsmAnd Web Create Track](@site/static/img/web/create_route.png)
+
+
+***Importing and creating tracks:***
+
+- **Import Track**. You can upload any GPX file to the **Local** section by visiting [osmand.net/map](https://osmand.net/map).
+- **Create Track**. Manually create a new track by selecting waypoints.
+  ![OsmAnd Web Create Track](@site/static/img/web/create_route_2.png)
+
+
+***Local track actions and information:***
+
+The **Local Track** menu provides three panels for editing: **Info**, **Track**, and **Waypoints**.
+
+**Info Panel**:
+
+- *Save to Cloud*. Save your track to OsmAnd Cloud for cross-device access.
+- *Add description*. Add notes about the track.
+- *Rename*. Change the track name.
+- *Recalculate*. Add or update elevation data.
+- *Elevation*. View the elevation profile.
+- *Speed graph*. Display speed data across the track.
+- *Slope graph*. Show slope changes along the route.  
+- *Road details*. View detailed information such as road type, surface, and steepness.
+- *Download GPX*. Export the track as a GPX file ([Pro feature](../purchases/index.md)).
+- *Close Track*. Close the track editing view.
+- *Delete Track*. Permanently delete the track.
+  ![OsmAnd Web Create Track](@site/static/img/web/create_route_3.png)
+
+**Track Panel**:
+
+- View and edit track points.
+- Reorder or delete points as needed.
+
+**Waypoints Panel**:
+
+- View and manage track waypoints.
+- Toggle the visibility of waypoints on the map.
+- Delete waypoints individually if necessary.
+
+**Turns Panel**:
+
+- View detailed information about turns along the track.
+
+  ![OsmAnd Web Create Track](@site/static/img/web/create_route_1.png)
+
+
+***Additional features:***
+
+- **Sync with app**. Save routes to OsmAnd Cloud and access them on your mobile app.
+- **Custom route profiles**. Adjust profiles to suit different activities, such as cycling or hiking.
+- **Shareable routes**. Copy and share route URLs for collaborative planning.
+
+> *This article was last updated in January 2025*

@@ -4,11 +4,12 @@ import { By } from 'selenium-webdriver';
 import { mobile } from '../options.mjs';
 import { clickBy, enclose, enumerateIds, matchInnerTextBy, waitByRemoved } from '../lib.mjs';
 
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionUploadGpx from '../actions/actionUploadGpx.mjs';
-import actionLocalToCloud from '../actions/actionLocalToCloud.mjs';
+import actionLocalToCloud from '../actions/tracks/actionLocalToCloud.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
+import { deleteTrack } from '../util.mjs';
 
 const TRACKS = [
     {
@@ -93,6 +94,8 @@ export default async function test() {
         await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
         await validateInfoBlockStrings(strings, gpx);
         await validateInfoBlockButtons(cloudTrackButtons);
+        await clickBy(By.id('se-button-back'));
+        await deleteTrack(name);
     }
 }
 

@@ -25,7 +25,9 @@ To use *CarPlay* on your vehicle screen, follow these steps:
 2. [Connect your device](https://support.apple.com/en-gb/HT203412) to your vehicle multimedia system using a USB port or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use *CarPlay* on your device.
 3. Once connected, the *CarPlay interface* will automatically appear on your vehicle screen with all available apps. If the *CarPlay home screen* does not appear, select the *CarPlay logo* on the vehicle display.  
 
-***Note***: CarPlay is not a direct replication of the OsmAnd mobile app. It has a simplified interface, focusing on essential navigation functions to ensure safe driving. Some advanced features are not supported due to platform limitations.
+#### CarPlay Interface
+
+CarPlay is **not a direct replication** of the OsmAnd mobile app. It has a simplified interface, focusing on essential navigation functions to ensure safe driving. Some advanced features are not supported due to platform limitations.
 
 ### Connection Screen
 
@@ -33,6 +35,18 @@ To use *CarPlay* on your vehicle screen, follow these steps:
 
 While your device is connected to *CarPlay*, the map on the app screen is locked for security purposes.
 
+
+### Location Position in CarPlay
+
+The OsmAnd app for CarPlay allows you to adjust the position of the current location indicator on the screen to avoid overlapping the route and other important map details.
+
+**How to change the indicator position:**
+
+- Go to *Menu → Configure screen → Other → [Location position on screen](../widgets/configure-screen.md#display-position-location-position-on-screen)*.
+- Select your preferred placement:
+    - **Automatic (default)**. The application automatically shifts the position of the indicator for navigation mode or free movement.
+    - **Center**. The indicator is placed in the center of the screen, suitable for standard navigation.
+    - **Bottom**. The indicator is positioned closer to the bottom of the screen, making it easier to observe surrounding objects and complex intersections.
 
 ### Interaction with the Map
 
@@ -202,7 +216,7 @@ In addition to the basic features of the OsmAnd app in *CarPlay* that provide co
 
 ### Voice Prompts
 
-Voice guidance for *CarPlay* is one of OsmAnd's most useful navigation features, providing real-time guidance and allowing the driver to stay focused on the road. Voice prompts clearly indicate turns, directions and other navigation instructions, providing a safer and more comfortable use of the navigation system.  
+Voice guidance for *CarPlay* is one of OsmAnd's most useful navigation features, providing real-time guidance and allowing the driver to stay focused on the road. Voice prompts clearly indicate turns, directions and other navigation instructions, ensuring a safer and more comfortable use of the navigation system.  
 
 To configure voice prompts according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device. To see recommended settings for *CarPlay*, go to the [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md) article.  
 

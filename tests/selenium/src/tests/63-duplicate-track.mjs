@@ -1,8 +1,8 @@
 import { clickBy, waitBy } from '../lib.mjs';
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import { By } from 'selenium-webdriver';
-import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
+import actionImportCloudTrack from '../actions/tracks/actionImportCloudTrack.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import { deleteTrack, getFiles } from '../util.mjs';
 
@@ -30,6 +30,7 @@ export default async function test() {
 
     await waitBy(By.id(`se-cloud-track-${trackName} - 1`));
     await deleteTrack(`${trackName} - 1`);
+    await deleteTrack(trackName);
 
     await actionFinish();
 }

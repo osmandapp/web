@@ -17,9 +17,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-In the **Maps and Resources** section, you can manage *Online* and *Offline* maps, and other resources used in OsmAnd. For example, you can download, delete, rename, clear cache, update and check size, and perform some other actions.
+In the **Maps and Resources** section, you can manage *Online* and *Offline* maps, and other resources used in OsmAnd. For example, you can download, delete, rename, clear cache, update and check size, and perform different actions.
 
-OsmAnd operates with two types of maps: [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md). All maps and resources are stored in the [Local](#local) tab. Available map types can be downloaded from the [Downloads](#downloads) tab. On the [Updates](#updates) tab, you can download maps that are available for updates and use [Live updates](#osmand-live). You can also access the [Extra map](#extra-maps) feature to create your map types.
+OsmAnd operates with two types of maps: [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md). The [Local](#local) tab stores all maps and resources. Available map types can be downloaded from the [Downloads](#downloads) tab. On the [Updates](#updates) tab, you can download maps that are available for updates and use [Live updates](#osmand-live). You can also access the [Extra map](#extra-maps) feature to create your map types.
 
 <Tabs groupId="operating-systems">
 
@@ -69,12 +69,12 @@ Downloading maps into the OsmAnd application is an important step that determine
 
 #### Paid Features for the Selected Location
 
-- [**Contour lines**](../plugins/topography.md#contour-lines). A map containing contour elevation lines to visualize the terrain.
-- [**Terrain map (Hillshade and Slope)**](../plugins/topography.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
-- [**Terrain map (3D)**](../plugins/topography.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
-- [**Wikipedia**](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about landmarks or additional information about places.
-- [**Weather forecast**](../plugins/weather.md). Weather information on a map for easy route planning.
-- [**Online raster maps**](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
+- [Contour lines](../plugins/topography.md#contour-lines). A map containing contour elevation lines to visualize the terrain.
+- [Terrain map (Hillshade and Slope)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
+- [Terrain map (3D)](../plugins/topography.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
+- [Wikipedia](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about landmarks or additional information about places.
+- [Weather forecast](../plugins/weather.md). Weather information on a map for easy route planning.
+- [Online raster maps](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
 
 #### World overview map
 
@@ -82,22 +82,22 @@ Versions of OsmAnd up to 3.8 offer to download a world map so you can view it on
 
 #### Bulk map loading
 
-For countries consisting of **multiple region maps**, you can use bulk map download. Maps available for this type of download are displayed with double download arrow icons and a label with the number of regions inside (*e.g. All Regions: 7*).
+For countries consisting of **multiple region maps**, you can use bulk map download. Maps available for this type of download are displayed with a double download arrow icons and a label with the number of regions inside (*e.g. All Regions: 7*).
 
 
 ## Maps & Resources
 
 The **Maps & Resources** *Main Menu* section of the OsmAnd app provides access to manage maps and other important data.
 
-- The [*Download*](#downloads) maps tab allows you to download maps for offline use, ensuring accessibility in the absence of the internet.  
+- The [*Download*](#downloads) maps tab allows you to download maps for offline use, ensuring their availability without the internet.  
 - In the [*Local*](#local) maps tab, you can find and manage detailed information about maps and places, including favorites, tracks, OSM notes, and other items you have on your device.  
 - The [*Updates*](#updates) tab allows users to get information about available updates to maps and other resources, ensuring that the data is up-to-date and accurate.
 
-*General actions you can do in Maps & Resources*:
+***General actions you can do in Maps & Resources***:
 
 - **Refresh**. Reloads the list of available maps from the OsmAnd server.  
-- **Search**. Allows you to search for maps by **country**, **province**, or major **city**.  
-- **Device memory**. Allows you to see on the indicator how much memory is available for download and how many maps can be downloaded for free. Depending on the tab, sometimes slightly different data is displayed.  
+- **Search**. Search for maps by **country**, **province**, or major **city**.  
+- **Device memory**. Shows on the indicator how much memory is available for download and how many maps can be downloaded for free. Depending on the tab, sometimes slightly different data is displayed.  
 - **Map counter** (*Free version* is only visible if you don't have a [subscription](../purchases/index.md)). The indicator with dividers shows how many maps you have left to download out of the *7 available*.  
     **NOTE** *that monthly map updates count as one more map download and are subtracted from the available number of free map downloads.*
 
@@ -126,32 +126,28 @@ The **Maps & Resources** *Main Menu* section of the OsmAnd app provides access t
 
 The **Download** tab lets you download various map types from OsmAnd servers, requiring an active Internet connection.
 
-To download a map:
+***To download a map:***
 
 - Open the **Download** tab, locate the required section, and tap the relevant folder to see available maps.
-
 - **Available maps** display a download icon.
-
 - **Downloaded maps** show a green icon with a menu button:  
     *Android*: Three-dot menu.  
     *iOS*: Info (I) icon.
-
 - **Maps in the process of loading** have an icon visualizing this. To cancel the download, tap the icon. To view the list of maps in the download queue and cancel the downloads, tap the Download bar in the Device memory info area of the Downloads and Updates tabs.
-
 - In the **Free version**, maps unavailable for download show a [GET](../purchases/index.md) icon, linking to the purchase page.
 
-*The downloads tab consists of map groups:*
+***The downloads tab consists of map groups:***
 
 - **Device memory info**. Visualize the amount of occupied and free space on your device.
 - **Map counter** (***Free version***). Displays how many maps you have left for download.
-- [**Extra maps**](#extra-maps). Displays the map data for the [Custom package](../plugins/custom.md).
+- [Extra maps](#extra-maps). Displays the map data for the [Custom package](../plugins/custom.md).
 - **Regions**. List by continent and world region: *Africa, Antarctica, Asia, Australia and Oceania, Central America, Europe, North America, Russia, and South America.*
-- [**World maps**](#world-maps). A list of maps of the entire world: *World altitude correction (Android only)*, *World overview map*, *All world (Weather forecast)*
-- [**Nautical maps**](../plugins/nautical-charts.md) ([*paid feature*](../purchases/index.md)). Vector maps with elevations as points or lines.
-- [**Travel guides (Wikivoyage)**](../plan-route/travel-guides.md) ([*paid feature*](../purchases/index.md)). Vector maps with a collection of articles in HTML format and additionally GPX files.
+- [World maps](#world-maps). A list of maps of the entire world: *World altitude correction (Android only)*, *World overview map*, *All world (Weather forecast)*
+- [Nautical maps](../plugins/nautical-charts.md) ([*paid feature*](../purchases/index.md)). Vector maps with elevations as points or lines.
+- [Travel guides (Wikivoyage)](../plan-route/travel-guides.md) ([*paid feature*](../purchases/index.md)). Vector maps with a collection of articles in HTML format and additionally GPX files.
 - **Other maps**. Maps that cannot be assigned to the current map hierarchy because they are not supported or will be available in future versions.
-- [**Voice prompts**](../navigation/guidance/voice-navigation.md) (*Android only*). Voice packs for voicing navigation prompts.
-- [**Map fonts**](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files  display text on the map.
+- [Voice prompts](../navigation/guidance/voice-navigation.md) (*Android only*). Voice packs for voicing navigation prompts.
+- [Map fonts](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files display text on the map.
 
 #### World Maps
 
@@ -188,9 +184,14 @@ Information about *maps menu* and *actions* can be found in the article [Downloa
 
 The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
 
-- **Resources** (*blue*). Includes maps ([*Standard*](../map/vector-maps.md), &nbsp;[*Nautical*](../plugins/nautical-charts.md), &nbsp;[*Topography*](../plugins/topography.md), &nbsp;[*Weather*](../plugins/weather.md)), &nbsp;*[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md)*, &nbsp;[*Live updates*](../personal/maps-resources.md#osmand-live), &nbsp;*Road only*,  &nbsp;[*Map sources*](../map/raster-maps.md), &nbsp;[*Rendering styles*](../map/vector-maps.md#default-map-styles), &nbsp;*Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache*.  
-- **My Places** (*yellow*). Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.
-- **Settings** (*green*). Includes [Profiles](../personal/profiles.md) and *Other* app configurations.
+- ***Resources*** (*blue*).  
+    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#osmand-live), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
+
+- ***My Places*** (*yellow*).  
+    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
+
+- ***Settings*** (*green*).  
+    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
 
 
 #### Viewing Data
@@ -200,13 +201,13 @@ The Local tab provides an overview of the storage usage for all OsmAnd data on y
 
 Tap any item in the **Local** tab to open its detailed list. At the top of this list, a visual panel displays how much space the selected data type occupies relative to the total OsmAnd storage.
 
-*Available actions:*
+***Available actions:***
 
 - **Search**. Find specific data by name within the selected folder.
 - **Three-dot menu**:  
     ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
     ***Import***. Access the device's storage to import files.
-- [**Sorting option**](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
+- [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
 
 
 #### Menu for Items from the List
@@ -218,24 +219,25 @@ Each item in the list offers a *three-dot menu* with options:
 - **Info**. View detailed information on the *[data item](#local-data-item-overview)*.
 - **Export**. Save data to a file via *Settings → Export to File*.
 
-Additional options for maps:
+***Additional options for maps:***
 
 - **Deactivate**. Disable vector maps without deleting them. They remain stored but are not used for navigation, search, or routing. Reduces the load on the device and speeds up OsmAnd.
 - **Update**. Download the latest version of the map.
 - **Rename**. Customize the map’s name for better identification.
 - **Remove**. Delete the map from your device.
-- **Edit** (for Online Maps). Modify the online map configuration..
+- **Edit** (for Online Maps). Modify the online map configuration.
 
 #### Local Data Item Overview
 
 ![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
 
 When viewing a local data item, you see:
+
 - **Type**. The data type from the **Local** list.
 - **Created**. The date the item was added.
-- **Size**. The item’s size in MB.
+- **Size**. The item’s size is in MB.
 
-Available **Actions** depends on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
+Available **Actions** depend on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
 
 #### Sorting Options
 
@@ -376,4 +378,4 @@ Maintain at least [**30 edits**](https://github.com/osmandapp/OsmAnd/blob/master
 - [Profiles (Settings)](./profiles.md)
 - [Import / Export](../personal/import-export.md)
 
-> *This article was last updated in December 2024*
+> *This article was last updated in January 2025*

@@ -65,7 +65,13 @@ const MenuItemWithLines = forwardRef((props, ref) => {
         <>
             <div style={titleStyle} ref={ref} {...otherProps}>
                 {name ? (
-                    <Typography onClick={handleExpandClick} variant="inherit" className={className ?? styles.groupName}>
+                    <Typography
+                        id={'se-' + name}
+                        onClick={handleExpandClick}
+                        variant="inherit"
+                        sx={{ fontFamily: 'Roboto' }}
+                        className={className ?? styles.groupName}
+                    >
                         {name}
                     </Typography>
                 ) : (

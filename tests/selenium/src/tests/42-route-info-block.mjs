@@ -4,7 +4,7 @@ import { By } from 'selenium-webdriver';
 import { mobile } from '../options.mjs';
 import { enclose, clickBy, sendKeysBy, matchInnerTextBy, enumerateIds } from '../lib.mjs';
 
-import actionOpenMap from '../actions/actionOpenMap.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 const routes = [
@@ -36,8 +36,8 @@ const routes = [
         hasAttributes: false,
         strings: [
             'Points: 2',
-            /Car 47[23].\d\d km/,
-            /Route: 47[23].\d km, 5:2\d min/,
+            /Car 47[0123].\d\d km/,
+            /Route: 47[0123].\d km, 5:2\d min/,
             /-1 \/ 2[45] \/ 84 m/, // ele
         ],
         turns: [

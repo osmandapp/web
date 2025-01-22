@@ -1,13 +1,15 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
-import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
+import { getFiles } from '../util.mjs';
 import { clickBy, enclose, enumerateIds, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
-import actionRenameFavGroup from '../actions/actionRenameFavGroup.mjs';
+import actionRenameFavGroup from '../actions/favorites/actionRenameFavGroup.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
-import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
-import actionDeleteAllFavorites from '../actions/actionDeleteAllFavorites.mjs';
+import actionOpenFavorites from '../actions/favorites/actionOpenFavorites.mjs';
+import actionDeleteAllFavorites from '../actions/favorites/actionDeleteAllFavorites.mjs';
+import actionDeleteFavGroup from '../actions/favorites/actionDeleteFavGroup.mjs';
+import actionUploadFavGroup from '../actions/favorites/actionUploadFavGroup.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -22,37 +24,37 @@ export default async function test() {
 
     const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`), { optional: true, idle: true });
     if (exist) {
-        await deleteFavGroup(`${shortFavGroupName}${suffix}`);
+        await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
     }
 
     await actionDeleteAllFavorites(favorites);
 
-    await uploadFavGroup(favorites);
+    await actionUploadFavGroup(favorites);
 
     // check group sort
     await validateGroupOrder(favGroupsLastModified);
     await clickBy(By.id('se-sort-button-time'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-az'));
-    await uploadFavGroup(favorites, false);
+    await actionUploadFavGroup(favorites, false);
     await validateGroupOrder(favGroupsAZ);
     await waitBy(By.id('se-sort-button-az'));
     await clickBy(By.id('se-sort-button-az'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-za'));
-    await uploadFavGroup(favorites, false);
+    await actionUploadFavGroup(favorites, false);
     await validateGroupOrder(favGroupsZA);
     await waitBy(By.id('se-sort-button-za'));
     await clickBy(By.id('se-sort-button-za'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-newDate'));
-    await uploadFavGroup(favorites, false);
+    await actionUploadFavGroup(favorites, false);
     await validateGroupOrder(favGroupsNewDate);
     await waitBy(By.id('se-sort-button-newDate'));
     await clickBy(By.id('se-sort-button-newDate'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-oldDate'));
-    await uploadFavGroup(favorites, false);
+    await actionUploadFavGroup(favorites, false);
     await validateGroupOrder(favGroupsOldDate);
 
     // check item sort by time
@@ -79,7 +81,7 @@ export default async function test() {
 
     await validateGroupOrder(favGroupsOldDateAfterRename);
 
-    await deleteFavGroup(`${shortFavGroupName}${suffix}`);
+    await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
     await actionDeleteAllFavorites(favorites);
 
     await actionFinish();
@@ -127,15 +129,4 @@ async function validateItemOrder(ids) {
         },
         { tag: 'validateFavItemsSort' }
     );
-}
-
-async function uploadFavGroup(favorites, upload = true) {
-    for (const f of favorites) {
-        if (upload) {
-            await uploadFavorites({ files: f.path });
-        }
-        const shortFavGroupName = f.name.split('-')[1];
-        await actionIdleWait();
-        await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
-    }
 }

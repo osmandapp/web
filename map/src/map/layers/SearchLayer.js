@@ -102,7 +102,7 @@ export default function SearchLayer() {
             const searchData = ctx.searchQuery.search;
             if (ctx.searchQuery.type === SEARCH_TYPE_CATEGORY) {
                 const category = PoiManager.formattingPoiFilter(searchData?.query, true);
-                searchByCategory(category, searchData.key);
+                searchByCategory(category, searchData.key, ctx.searchQuery.lang);
                 setSelectedCategory(category);
             } else {
                 if (ctx.searchQuery.latlng) {
@@ -326,8 +326,8 @@ export default function SearchLayer() {
         return L.divIcon({ html: iconHtml });
     }
 
-    function searchByCategory(category, key) {
-        const newCategory = { key, category };
+    function searchByCategory(category, key, catLang) {
+        const newCategory = { key, category, lang: catLang };
         ctx.setShowPoiCategories([newCategory]);
     }
 

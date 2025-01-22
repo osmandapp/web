@@ -7,31 +7,51 @@ import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_
 import { ReactComponent as DuplicateIcon } from '../../assets/icons/ic_action_copy.svg';
 import { ReactComponent as MakeTrackVisible } from '../../assets/icons/ic_action_show_outlined.svg';
 import { ReactComponent as HideTrackVisible } from '../../assets/icons/ic_action_hide_outlined.svg';
+import { ReactComponent as ShareIcon } from '../../assets/icons/ic_group.svg';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
-import TracksManager, { downloadGpx } from '../../manager/track/TracksManager';
+import TracksManager, { DEFAULT_GROUP_NAME, downloadGpx } from '../../manager/track/TracksManager';
 import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
-import { duplicateTrack } from '../../manager/track/SaveTrackManager';
+import { createTrackFreeName, duplicateTrack, refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import { useTranslation } from 'react-i18next';
+import { getShareFileInfo, saveSharedFileToCloud, SHARE_TYPE } from '../../manager/ShareManager';
+import { getFileStorage, GPX } from '../../manager/GlobalManager';
 
-const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref) => {
+const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smartf = null }, ref) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const { t } = useTranslation();
 
+    const sharedFile = smartf?.type === SHARE_TYPE;
+
     async function createDuplicateTrack() {
         const parts = track.name.split('/');
         const newName = parts.pop();
-        await duplicateTrack(track.name, parts.join('/'), TracksManager.prepareName(newName), ctx).then();
+        if (sharedFile) {
+            const fileName = createTrackFreeName(
+                TracksManager.prepareName(newName),
+                ctx.tracksGroups,
+                null,
+                DEFAULT_GROUP_NAME
+            );
+            const saved = await saveSharedFileToCloud(track, fileName + '.gpx');
+            if (saved) {
+                await refreshGlobalFiles({ ctx });
+            }
+        } else {
+            await duplicateTrack(track.name, parts.join('/'), TracksManager.prepareName(newName), ctx).then();
+        }
         if (setOpenActions) {
             setOpenActions(false);
         }
     }
 
     const MakeTrackVisibleAction = () => {
-        return ctx.gpxFiles[track.name]?.showOnMap ? (
+        const files = getFileStorage({ ctx, smartf, type: GPX });
+
+        return files[track.name]?.showOnMap ? (
             <MenuItem
                 id="se-hide-track-action"
                 className={styles.action}
@@ -70,51 +90,29 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
         );
     };
 
-    // const ShowOnMapAction = () => {
-    //     return (
-    //         <MenuItem
-    //             id="se-show-on-map-action"
-    //             className={styles.action}
-    //             onClick={() => {
-    //                 setZoomToTrack(true);
-    //                 setOpenActions(false);
-    //             }}
-    //         >
-    //             <ListItemIcon className={styles.iconAction}>
-    //                 <ShowOnMapIcon />
-    //             </ListItemIcon>
-    //             <ListItemText>
-    //                 <Typography variant="inherit" className={styles.actionName} noWrap>
-    //                     {t('shared_string_show_on_map')}
-    //                 </Typography>
-    //             </ListItemText>
-    //         </MenuItem>
-    //     );
-    // };
-
     return (
         <>
             <Box ref={ref}>
                 <Paper id="se-track-actions" className={styles.actions}>
-                    {/*<ShowOnMapAction />*/}
-                    {/*<Divider className={styles.dividerActions} />*/}
                     <MakeTrackVisibleAction />
                     <Divider className={styles.dividerActions} />
-                    <MenuItem
-                        id={'se-rename-cloud-track'}
-                        className={styles.action}
-                        onClick={() => setOpenRenameDialog(true)}
-                    >
-                        <ListItemIcon className={styles.iconAction}>
-                            <RenameIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
-                                {t('shared_string_rename')}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                    <Divider className={styles.dividerActions} />
+                    {!sharedFile && (
+                        <MenuItem
+                            id={'se-rename-cloud-track'}
+                            className={styles.action}
+                            onClick={() => setOpenRenameDialog(true)}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <RenameIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    {t('shared_string_rename')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {!sharedFile && <Divider className={styles.dividerActions} />}
                     <MenuItem
                         id={'se-duplicate-cloud-track'}
                         className={styles.action}
@@ -130,10 +128,26 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
+                    {!sharedFile && (
+                        <MenuItem
+                            id={'se-share-track'}
+                            className={styles.action}
+                            onClick={() => getShareFileInfo({ file: track, ctx })}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <ShareIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    {t('shared_string_share')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
                     <MenuItem
                         className={styles.action}
                         onClick={() => {
-                            downloadGpx(track).then();
+                            downloadGpx(track, sharedFile).then();
                             setOpenActions(false);
                         }}
                     >
@@ -157,7 +171,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                {t('shared_string_delete')}
+                                {sharedFile ? t('shared_string_remove') : t('shared_string_delete')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -169,6 +183,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                     setDialogOpen={setOpenDeleteDialog}
                     file={track}
                     setOpenActions={setOpenActions}
+                    shared={sharedFile}
                 />
             )}
             {openRenameDialog && (

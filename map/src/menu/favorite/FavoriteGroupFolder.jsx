@@ -4,23 +4,27 @@ import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
-import FavoritesManager from '../../manager/FavoritesManager';
+import FavoritesManager, {
+    addLocDist,
+    DEFAULT_FAV_GROUP_NAME,
+    getFavMenuListByLayers,
+} from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
-import { getDistance } from '../../util/Utils';
 import Loading from '../errors/Loading';
-import { isEmpty } from 'lodash';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
-import { doSort } from '../actions/SortActions';
+import { byTime, doSort } from '../actions/SortActions';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
-import { changeIconSizeWpt, createPoiIcon, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
 import { getCenterMapLoc } from '../../manager/MapManager';
 import { FixedSizeList } from 'react-window';
+import FavoriteGroup from './FavoriteGroup';
 
-export default function FavoriteGroupFolder({ folder }) {
+export default function FavoriteGroupFolder({ folder, smartf = null }) {
     const ctx = useContext(AppContext);
 
     const [group, setGroup] = useState(folder);
     const [sortFiles, setSortFiles] = useState([]);
+    const [sortGroups, setSortGroups] = useState([]);
+    const [enableGroups, setEnableGroups] = useState([]);
     const [, height] = useWindowSize();
     const [markers, setMarkers] = useState([]);
     const currentLoc = useGeoLocation(ctx);
@@ -46,44 +50,52 @@ export default function FavoriteGroupFolder({ folder }) {
 
     // get markers
     useEffect(() => {
+        if (!group) {
+            return;
+        }
         let markerList = [];
-        if (ctx.favorites.mapObjs[group.name]?.markers) {
-            let layers = ctx.favorites.mapObjs[group.name].markers._layers;
-            Object.values(layers).forEach((value) => {
-                const wpt = getWptByTitle(value.options.title, ctx.favorites.mapObjs[group.name].wpts);
-                const icon = createPoiIcon({
-                    point: wpt,
-                    color: wpt.color,
-                    background: wpt.background,
-                    hasBackgroundLight: false,
-                    icon: wpt.icon,
-                }).options.html;
-                let marker = {
-                    title: value.options.title,
-                    icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30),
-                    layer: value,
-                };
-                markerList.push(marker);
-            });
+        if (ctx.favorites.mapObjs[group.id]?.markers) {
+            let layers = ctx.favorites.mapObjs[group.id].markers._layers;
+            markerList = getFavMenuListByLayers(layers, ctx.favorites.mapObjs[group.id].wpts, currentLoc);
         }
         markerList = addLocDist({ location: currentLoc, markers: markerList });
-
-        if (ctx.selectedSort?.favorites && ctx.selectedSort.favorites[group.name]) {
+        if (ctx.selectedSort?.favorites && ctx.selectedSort.favorites[group.id]) {
             doSort({
-                method: ctx.selectedSort.favorites[group.name],
+                method: ctx.selectedSort.favorites[group.id],
                 setSortFiles,
                 markers: markerList,
-                files: ctx.favorites.mapObjs[group.name]?.wpts,
+                files: ctx.favorites.mapObjs[group.id]?.wpts,
                 favoriteGroup: group,
             });
         }
         setMarkers([...markerList]);
         refMarkers.current = markerList;
-    }, [ctx.favorites]);
+    }, [group, ctx.favorites]);
 
-    function getWptByTitle(title, wpts) {
-        return wpts.find((wpt) => wpt.name === title);
-    }
+    const groupItems = useMemo(() => {
+        const items = [];
+        let groups = null;
+        if (sortGroups && sortGroups.length > 0) {
+            groups = sortGroups;
+        } else if (smartf?.files?.length > 0) {
+            groups = byTime(smartf.files, true, true);
+        }
+        if (groups) {
+            groups.map((g, index) => {
+                items.push(
+                    <FavoriteGroup
+                        key={g + index}
+                        index={index}
+                        group={g}
+                        enableGroups={enableGroups}
+                        setEnableGroups={setEnableGroups}
+                        smartf={smartf}
+                    />
+                );
+            });
+        }
+        return items;
+    }, [smartf, sortGroups, ctx.openGroups]);
 
     useEffect(() => {
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
@@ -92,44 +104,11 @@ export default function FavoriteGroupFolder({ folder }) {
                 const updatedMarkers = addLocDist({ location: currentLoc, markers: refMarkers.current });
                 setMarkers(updatedMarkers);
             }
-        } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE && refMarkers.current.length > 0) {
+        } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE && refMarkers.current?.length > 0) {
             const updatedMarkers = addLocDist({ location: getCenterMapLoc(hash), markers: refMarkers.current });
             setMarkers(updatedMarkers);
         }
     }, [currentLoc, delayedHash, refMarkers.current]);
-
-    function addLocDist({ location, markers = null, wpts = null }) {
-        let res = [];
-        if (location && location !== LOCATION_UNAVAILABLE) {
-            if (markers && markers.length > 0) {
-                markers.forEach((m) => {
-                    if (m?.layer?._latlng) {
-                        m.locDist = (
-                            getDistance(location.lat, location.lng, m?.layer?._latlng.lat, m?.layer?._latlng.lng) / 1000
-                        ).toFixed(0);
-                    }
-                    res.push(m);
-                });
-            } else if (wpts && wpts.length > 0) {
-                wpts.forEach((w) => {
-                    if (w.latlng) {
-                        w.locDist = (
-                            getDistance(location.lat, location.lng, w.latlng.lat, w.latlng.lng) / 1000
-                        ).toFixed(0);
-                    }
-                    res.push(w);
-                });
-            }
-        }
-        if (isEmpty(res)) {
-            if (markers) {
-                return markers;
-            } else if (wpts) {
-                return wpts;
-            }
-        }
-        return res;
-    }
 
     useEffect(() => {
         if (folder) {
@@ -151,7 +130,7 @@ export default function FavoriteGroupFolder({ folder }) {
                 <FixedSizeList
                     height={height - 120}
                     itemCount={visibleMarkers.length}
-                    itemSize={80}
+                    itemSize={70}
                     width={ctx.infoBlockWidth}
                 >
                     {({ index, style }) => (
@@ -161,6 +140,7 @@ export default function FavoriteGroupFolder({ folder }) {
                                 marker={visibleMarkers[index]}
                                 group={group}
                                 currentLoc={currentLoc}
+                                smartf={smartf}
                             />
                         </div>
                     )}
@@ -191,28 +171,45 @@ export default function FavoriteGroupFolder({ folder }) {
     return (
         <>
             <Box
-                id={'se-opened-fav-group-' + group.name}
+                id={'se-opened-fav-group-' + group?.name}
                 minWidth={ctx.infoBlockWidth}
                 maxWidth={ctx.infoBlockWidth}
                 sx={{ overflow: 'hidden' }}
             >
-                <GroupHeader type="favorites" favoriteGroup={group} setSortFiles={setSortFiles} markers={markers} />
+                {smartf && !folder ? (
+                    <GroupHeader
+                        type="favorites"
+                        smartf={smartf}
+                        favoriteGroup={DEFAULT_FAV_GROUP_NAME}
+                        setSortGroups={setSortGroups}
+                    />
+                ) : (
+                    <GroupHeader
+                        smartf={smartf}
+                        type="favorites"
+                        favoriteGroup={group}
+                        setSortFiles={setSortFiles}
+                        markers={markers}
+                    />
+                )}
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
                     sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
                 >
-                    {FavoritesManager.getGroupSize(folder) === 0 ? (
-                        <Empty
-                            title={'Empty group'}
-                            text={"This group doesn't have any wpt yet. You can add them using map."}
-                            menu={OBJECT_TYPE_FAVORITE}
-                        />
-                    ) : favItems ? (
-                        favItems
-                    ) : (
-                        <Loading />
-                    )}
+                    {groupItems}
+                    {folder &&
+                        (FavoritesManager.getGroupSize(folder) === 0 ? (
+                            <Empty
+                                title={'Empty group'}
+                                text={"This group doesn't have any wpt yet. You can add them using map."}
+                                menu={OBJECT_TYPE_FAVORITE}
+                            />
+                        ) : favItems ? (
+                            favItems
+                        ) : (
+                            <Loading />
+                        ))}
                 </Box>
             </Box>
             {ctx.favorites?.groups?.length === 0 && (

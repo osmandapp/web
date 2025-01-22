@@ -1,10 +1,11 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
-import { getFiles, uploadFavorites } from '../util.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
+import { getFiles } from '../util.mjs';
 import { clickBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
-import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
+import actionOpenFavorites from '../actions/favorites/actionOpenFavorites.mjs';
+import actionsUploadFavorites from '../actions/favorites/actionsUploadFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -23,7 +24,7 @@ export default async function test() {
         const { path } = favorites.find((t) => t.name === favGroupName);
         // create folder
         await clickBy(By.id('se-import-fav-group'));
-        await uploadFavorites({ files: path });
+        await actionsUploadFavorites({ files: path });
         await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
     }
     // open group

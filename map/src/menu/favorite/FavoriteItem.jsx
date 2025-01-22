@@ -8,15 +8,16 @@ import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction
 import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../trackfavmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
-import { getColorLocation } from '../../manager/FavoritesManager';
+import { addShareFavoriteToMap, getColorLocation } from '../../manager/FavoritesManager';
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import MenuItemWithLines from '../components/MenuItemWithLines';
+import { SHARE_TYPE } from '../../manager/ShareManager';
 
 export const CustomIcon = ({ marker }) => {
     return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
 };
 
-export default function FavoriteItem({ marker, group, currentLoc }) {
+export default function FavoriteItem({ marker, group, currentLoc, share = false, smartf = null }) {
     const ctx = useContext(AppContext);
 
     const { ref, inView } = useInView();
@@ -24,6 +25,8 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const anchorEl = useRef(null);
+
+    const sharedFile = smartf?.type === SHARE_TYPE;
 
     function addFavoriteToMap(marker) {
         ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
@@ -33,17 +36,19 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
             newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
         }
         let file;
-        Object.keys(ctx.favorites.mapObjs).forEach((favorite) => {
-            if (favorite === group.name) {
-                newSelectedGpxFile.nameGroup = favorite;
-                Object.values(ctx.favorites.mapObjs[favorite].markers._layers).forEach((m) => {
+        Object.keys(ctx.favorites.mapObjs).forEach((fileId) => {
+            if (fileId === group.id) {
+                newSelectedGpxFile.nameGroup = group.name;
+                Object.values(ctx.favorites.mapObjs[fileId].markers._layers).forEach((m) => {
                     if (m.options.title === marker.title) {
-                        file = ctx.favorites.mapObjs[favorite];
+                        file = ctx.favorites.mapObjs[fileId];
                     }
                 });
             }
         });
+        newSelectedGpxFile.id = group.id;
         newSelectedGpxFile.file = file;
+        newSelectedGpxFile.sharedWithMe = sharedFile;
         newSelectedGpxFile.file.name = ctx.favorites.groups.find((g) => g.name === group.name).file.name;
         newSelectedGpxFile.name = marker.title;
         newSelectedGpxFile.zoom = true;
@@ -93,29 +98,37 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                         <MenuItem
                             className={styles.item}
                             id={'se-fav-item-name-' + marker.title}
-                            onClick={() => addFavoriteToMap(marker)}
+                            onClick={() => {
+                                if (share) {
+                                    addShareFavoriteToMap(marker, ctx);
+                                } else {
+                                    addFavoriteToMap(marker);
+                                }
+                            }}
                         >
                             <ListItemIcon className={styles.icon}>
                                 <CustomIcon marker={marker} />
                             </ListItemIcon>
                             <ListItemText>
-                                <MenuItemWithLines name={marker.title} maxLines={2} />
+                                <MenuItemWithLines name={marker.title} maxLines={1} />
                                 <FavInfo />
                             </ListItemText>
-                            <IconButton
-                                id={`se-actions-${marker.title}`}
-                                className={styles.sortIcon}
-                                onMouseEnter={() => setHoverIconInfo(true)}
-                                onMouseLeave={() => setHoverIconInfo(false)}
-                                onClick={(e) => {
-                                    setOpenActions(true);
-                                    ctx.setOpenedPopper(anchorEl);
-                                    e.stopPropagation();
-                                }}
-                                ref={anchorEl}
-                            >
-                                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                            </IconButton>
+                            {!share && !sharedFile && (
+                                <IconButton
+                                    id={`se-actions-${marker.title}`}
+                                    className={styles.sortIcon}
+                                    onMouseEnter={() => setHoverIconInfo(true)}
+                                    onMouseLeave={() => setHoverIconInfo(false)}
+                                    onClick={(e) => {
+                                        setOpenActions(true);
+                                        ctx.setOpenedPopper(anchorEl);
+                                        e.stopPropagation();
+                                    }}
+                                    ref={anchorEl}
+                                >
+                                    {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                                </IconButton>
+                            )}
                         </MenuItem>
                     )}
                     <Divider className={styles.dividerItem} />
@@ -124,6 +137,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                             open={openActions}
                             setOpen={setOpenActions}
                             anchorEl={anchorEl}
+                            favItems={true}
                             actions={
                                 <FavoriteItemActions marker={marker} group={group} setOpenActions={setOpenActions} />
                             }

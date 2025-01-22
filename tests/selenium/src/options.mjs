@@ -6,6 +6,8 @@ import { Options } from 'selenium-webdriver/chrome.js'; // ServiceBuilder for lo
 
 export const TEST_LOGIN = 'osmand@grr.la';
 export const TEST_PASSWORD = '0xDEADBEEF';
+export const TEST_LOGIN2 = 'osmandtest2@gmail.com';
+export const TEST_PASSWORD2 = 'osmandTest2osmandTest2';
 
 export const TIMEOUT_OPTIONAL = 1000; // optional element timeout and driver.implicitlyWait() (1s)
 export let TIMEOUT_REQUIRED = 45 * 1000; // required element timeout (waitBy / clickBy / enclose) (45s)

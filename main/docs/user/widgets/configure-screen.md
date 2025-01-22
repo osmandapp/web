@@ -86,29 +86,29 @@ To arrange widgets on the app screen, use panels. Panels enable you to place wid
 
 </Tabs>
 
-1. [Route maneuvers](../widgets/nav-widgets.md#next-turns) (*only for Left/Right panel*). This set of *navigational* widgets is activated during navigation and they display information about the distance to the next maneuver.  
+1. [Route maneuvers](../widgets/nav-widgets.md#next-turns) (*only for Left/Right panel*). This set of *navigational* widgets is activated during navigation, and they display information about the distance to the next maneuver.  
     3 widgets are included: *Next turn*, *Next turn (small)*, *Second next turn*.
 
 2. [Navigation point](../widgets/nav-widgets.md#navigation-points). A set of *navigation widgets* shows the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
     4 widgets are included: [Distance to destination](../widgets/nav-widgets.md#distance-to-destination), [Distance to intermediate](../widgets/nav-widgets.md#distance-to-intermediate), [Time to intermediate](../widgets/nav-widgets.md#time-to-intermediate), [Time to destination](../widgets/nav-widgets.md#time-to-destination).
 
-3. [Map markers](../widgets/markers.md). A set of widgets shows the distance or estimated time of arrival (ETA) for the first two markers in the list of map markers. show special points marked as flags on the map.  2 widgets are included: *First marker*, *Second marker*.
+3. [Map markers](../widgets/markers.md). A set of widgets shows the distance or estimated time of arrival (ETA) for the first two markers in the list of map markers. Show special points marked as flags on the map.  2 widgets are included: *First marker*, *Second marker*.
 
 4. [Bearing](../widgets/nav-widgets.md#bearing). This set of *navigational* widgets shows the absolute or relative bearing to a target in angular units (in 180 degrees, 360 degrees, or milliradians mode).  
     3 widgets are included: *Relative bearing*, *Magnetic bearing*, *True bearing*.
 
-5. [Current Speed](../widgets/info-widgets.md#speed). *Informational* widget shows the current speed detected by the GPS sensor.  
+5. [Current Speed](../widgets/info-widgets.md#speed). An *informational* widget shows the current speed detected by the GPS sensor.  
 
-6. [Average speed](../widgets/info-widgets.md#average-speed-widget). *Informational* widget shows the average speed of the current trip.  
+6. [Average speed](../widgets/info-widgets.md#average-speed-widget). An *informational* widget shows the average speed of the current trip.  
 
 7. [Speed limit](../widgets/nav-widgets.md#speed-limit). A set of *informational* widgets displays the speed limit on the current road you are traveling on.
 
 8. [Altitude](../widgets/info-widgets.md#altitude-widgets). A set of *informational* widgets displays the altitude above sea level for the current geolocation or the altitude above sea level for the current map center.  
     2 widgets are included: *Altitude: current location*, *Elevation: map center*.
 
-9. [Current time](../widgets/info-widgets.md#current-time). *Informational* widget displays the current time taken from your device.  
+9. [Current time](../widgets/info-widgets.md#current-time). An *informational* widget displays the current time taken from your device.  
 
-10. [Battery level](../widgets/info-widgets.md#battery-level). *Informational* widget shows battery level of your device.  
+10. [Battery level](../widgets/info-widgets.md#battery-level). An *informational* widget shows battery level of your device.  
 
 11. [Radius ruler](../widgets/info-widgets.md#radius-ruler). The widget displays on a map the distance between the user's location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).  
 
@@ -120,16 +120,16 @@ To arrange widgets on the app screen, use panels. Panels enable you to place wid
 
 14. [OsmAnd Tracker status](../widgets/info-widgets.md#-tracker-widget). This *informational* widget is used to quickly access the [OsmAnd Tracker application](https://play.google.com/store/apps/details?id=net.osmand.telegram) to share your location with other users.  
 
-15. [GPS info (*Android only*)](../widgets/info-widgets.md#gps-info). *Informational* widget shows the number of satellites the device is currently detecting and using.  
+15. [GPS info (*Android only*)](../widgets/info-widgets.md#gps-info). An *informational* widget shows the number of satellites the device is currently detecting and using.  
 
 16. [Developer widgets (from *OsmAnd development plugin*)](../widgets/info-widgets.md#developer-widgets). A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt and available RAM on your device.  
     5 widgets are included: *Map rendering FPS*, *Camera tilt*, *Camera elevation*, *Zoom level*, *Distance from camera to target*, *Available RAM*.  
 
-17. [Mapillary (from *Mapillary plugin*)](../widgets/info-widgets.md#mapillary-widget). *Informational* widget provides quick access to the Mapillary app to add street images.  
+17. [Mapillary (from *Mapillary plugin*)](../widgets/info-widgets.md#mapillary-widget). An *informational* widget provides quick access to the Mapillary app to add street images.  
 
-18. [Parking (from *Parking position plugin*)](../widgets/info-widgets.md#parking-widget). *Informational* widget shows the distance from the center of the screen to the parking location.  
+18. [Parking (from *Parking position plugin*)](../widgets/info-widgets.md#parking-widget). An *informational* widget shows the distance from the center of the screen to the parking location.  
 
-19. [Wheather (from *Weather plugin*)](../widgets/info-widgets.md#weather-widgets). A set of *informational* widgets displays detailed weather data.  
+19. [Whether (from *Weather plugin*)](../widgets/info-widgets.md#weather-widgets). A set of *informational* widgets displays detailed weather data.  
     5 widgets are included: *Temperature*, *Air Pressure*, *Wind*, *Cloud*, *Precipitation*.  
 20. [Trip recording (from *Trip recording plugin*)](../widgets/info-widgets.md#trip-recording-widgets). A set of *informational* widgets provides quick access to start and stop track recording.  
     4 widgets are included: *Distance*, *Duration*, *Uphill*, *Downhill*.  
@@ -172,13 +172,13 @@ Types of widgets are available for Top / Bottom panels:
 2. [Coordinates widgets](../widgets/info-widgets#coordinates-widget). This set of *informational* widgets displays the geographic coordinates of the current geolocation.  
     2 widgets are included: *Coordinates: map center*, *Coordinates: current location*.  
 
-3. [Street name](../widgets/nav-widgets#street-name). *Navigational* widget shows the current street name with a straight arrow or the next street name with an arrow pointing to an upcoming turn.  
+3. [Street name](../widgets/nav-widgets#street-name). A *navigational* widget shows the current street name with a straight arrow or the next street name with an arrow pointing to an upcoming turn.  
 
 4. [Lanes](../widgets/nav-widgets#lanes). *Navigational* widget shows the current road lanes layout and highlights lanes for traffic with active navigation.  
 5. [Map markers bar](../widgets/markers.md#configure-marker-widgets-android). The widget displays the distance and direction to the next Map marker from your current location.  
     The widget can be configured to show 1 or 2 markers.  
 
-6. [Elevation profile (*Android only*)](../widgets/nav-widgets#elevation-widget). *Navigational* widget shows the elevation and slope profile of the current route.  
+6. [Elevation profile (*Android only*)](../widgets/nav-widgets#elevation-widget). A *navigational* widget shows the elevation and slope profile of the current route.  
       ![elevation profile](@site/static/img/widgets/elevation_prof_and.png)
 
 
@@ -286,22 +286,34 @@ Widgets in the right and left panels can be grouped into **Pages**. To do this, 
 
 ### Widget Context Menu
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
 
 ![Widget dublicate](@site/static/img/widgets/widget_context_menu_andr.png)
 
-The **widget context menu** allows you to manage and configure widgets directly from the map screen, providing *a quick way to organize panels*. You can access this menu by ***long tapping*** on any widget to customize the layout of widgets without leaving the map.
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Widget dublicate](@site/static/img/widgets/widget_context_menu_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+The **widget context menu** allows you to manage and configure widgets directly from the map screen, providing *a quick way to organize panels*. Access it by ***long tapping*** on any widget to customize the layout of widgets without leaving the map.
 
 - **Managing** widgets on **Top and Bottom** panels.  
-    *Add widget to the Right* / *Add widget to the Left*. Select one of these options to add a new widget next to an existing one. After selecting the required widget from the [*Available widgets*](#widgets-for-all-panels) list, it will be placed either to the right or left of the current widget, depending on your choice.
+    *Add widget to the Right* / *Add widget to the Left*. Select a position for the new widget relative to an existing one. After choosing from the [*Available widgets*](#widgets-for-all-panels) list, the widget will appear in the specified location.
 
 - **Managing** widgets on **Left and Right** panels.  
-    *Add widget Above* / *Add widget Below*. Select one of these options to place the new widget above or below the current one. Available widgets will be displayed for selection, and the selected one will be added to the specified position.
+    *Add widget Above* / *Add widget Below*. Select whether to position the new widget above or below the current one. Tap the required widget in the list to add it to the selected position.
 
 - **General actions for all panels**.
-    - *Settings* (*displayed if the widget has settings*). Access the settings for the selected widget to customize its appearance or behavior.
-    - *Reset average speed* (*additional settings for the [Average Speed](../widgets/info-widgets.md#average-speed) information widget*). A long tap on the widget instantly resets the average speed value during a trip.
-    - *Delete*. Remove the selected widget from the panel. A confirmation message will appear to verify that you want to proceed with the deletion.
+    - *Settings*. Open the widget’s settings (if available) to customize its appearance or behavior.
+    - *Reset average speed*. For the [Average Speed](../widgets/info-widgets.md#average-speed) widget, a long tap instantly resets the speed value during a trip.
+    - *Delete*. Remove the widget from the panel. A confirmation prompt ensures the action is intentional.
 
 
 ### Copies of Widgets
@@ -410,7 +422,7 @@ To remove or delete a widget from the application screen, you need to select the
 
 ![Button Appearance](@site/static/img/widgets/button_appearance_settings_andr.png)
 
-The *Button appearance* feature enables you fully customize the look of buttons on your map interface. These customization options are available for both *Quick Action (Custom buttons)* and *Default buttons*, providing comprehensive control over the map interface's appearance and allowing precise adjustments to button design.
+The *Button appearance* feature enables you to fully customize the look of buttons on your map interface. These customization options are available for both *Quick Action (Custom buttons)* and *Default buttons*, providing comprehensive control over the map interface's appearance and allowing precise adjustments to button design.
 
 *Customization Options*:
 
@@ -442,9 +454,9 @@ The *Button appearance* feature enables you fully customize the look of buttons 
 
 </Tabs>
 
-- [**<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>**](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [**Distance by tap**](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
-- [**Speedometer**](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.
+- [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
+- [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
+- [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.
 
 
 ### Display Position (Location position on screen)
@@ -467,7 +479,7 @@ The *Button appearance* feature enables you fully customize the look of buttons 
 
 > *Location position on screen* is the name of this setting in the iOS version of OsmAnd.  
 
-Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location-and-zoom)* on the Osmand map. There are three options available:  
+Allows you to set the placement of the cursor to *[My location](../map/interact-with-map.md#my-location-and-zoom)* on the OsmAnd map. There are three options available:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. The cursor is always positioned in the center of the screen.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is useful during navigation.
@@ -503,7 +515,7 @@ Access to additional actions in the Configure screen are:
 
 Available actions:
 
-- **Reset to default**. This feature allows you to reset all settings to default values if you want to start over or use only the preset ones when starting OsmAnd.
+- **Reset to default**. This feature allows you to reset all settings to default values if you want to start over, or use only the preset ones when starting OsmAnd.
 - **Copy from another profile**. This feature allows you to quickly import settings from another profile, select the required ones from the list, and copy.
 
 
@@ -540,4 +552,4 @@ Available actions:
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in September 2024*
+> *This article was last updated in January 2025*

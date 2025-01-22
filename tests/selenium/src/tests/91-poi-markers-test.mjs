@@ -1,7 +1,7 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
-import actionLogIn from '../actions/actionLogIn.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
+import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import actionCheckPoi from '../actions/actionCheckPoi.mjs';
+import actionCheckPoi from '../actions/map/actionCheckPoi.mjs';
 import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 

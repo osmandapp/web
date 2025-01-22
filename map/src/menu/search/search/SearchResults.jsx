@@ -38,6 +38,7 @@ export function searchByCategory(value, ctx) {
     ctx.setSearchQuery({
         search: preparedValue,
         type: SEARCH_TYPE_CATEGORY,
+        lang: value.lang,
     });
 }
 

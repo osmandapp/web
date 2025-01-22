@@ -1,4 +1,4 @@
-import actionOpenMap from '../actions/actionOpenMap.mjs';
+import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import { clickBy, matchTextBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionUploadGpx from '../actions/actionUploadGpx.mjs';
