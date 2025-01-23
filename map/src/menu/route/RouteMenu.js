@@ -30,6 +30,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import styles from './routemenu.module.css';
 import btn from './../login/login.module.css';
 import { apiPost } from '../../util/HttpApi';
+import { quickNaNfix } from '../../util/Utils';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -214,7 +215,8 @@ export default function RouteMenu() {
             apiCache: true,
         });
         if (response.ok) {
-            const data = await response.json();
+            const text = await response.text();
+            const data = JSON.parse(quickNaNfix(text));
             console.log(data);
         }
     }
