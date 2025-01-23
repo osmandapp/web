@@ -25,6 +25,7 @@ import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { saveTrackToLocalStorage } from '../../../manager/track/SaveTrackManager';
 import { FINAL_POI_ICON_NAME, TITLE, WEB_POI_PREFIX } from '../wpt/WptTagsProvider';
 import Dialog from '@mui/material/Dialog';
+import { getUniqFileId } from '../../../manager/GlobalManager';
 
 export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedPoi = null }) {
     const menuStyles = contextMenuStyles();
@@ -244,13 +245,11 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
     }
 
     async function updateGroupMarkers(result, selectedGroup) {
-        if (!ctx.favorites.mapObjs[selectedGroup.name]) {
-            ctx.favorites.mapObjs[selectedGroup.name] = FavoriteHelper.createGroupObj(result, selectedGroup);
+        const key = getUniqFileId(selectedGroup);
+        if (!ctx.favorites.mapObjs[key]) {
+            ctx.favorites.mapObjs[key] = FavoriteHelper.createGroupObj(result, selectedGroup);
         } else {
-            ctx.favorites.mapObjs[selectedGroup.name] = FavoriteHelper.updateGroupObj(
-                ctx.favorites.mapObjs[selectedGroup.name],
-                result
-            );
+            ctx.favorites.mapObjs[key] = FavoriteHelper.updateGroupObj(ctx.favorites.mapObjs[key], result);
         }
         ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, selectedGroup.name, result);
         FavoriteHelper.updateSelectedFile({
@@ -263,7 +262,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
         });
         ctx.setUpdateMarkers({ ...ctx.favorites });
         ctx.setFavorites({ ...ctx.favorites });
-        setFavoriteGroup(ctx.favorites.mapObjs[selectedGroup.name]);
+        setFavoriteGroup(ctx.favorites.mapObjs[key]);
     }
 
     const CloseDialog = (dialogOpen) => {

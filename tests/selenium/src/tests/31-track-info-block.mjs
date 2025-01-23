@@ -9,6 +9,7 @@ import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionUploadGpx from '../actions/actionUploadGpx.mjs';
 import actionLocalToCloud from '../actions/tracks/actionLocalToCloud.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
+import { deleteTrack } from '../util.mjs';
 
 const TRACKS = [
     {
@@ -93,6 +94,8 @@ export default async function test() {
         await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
         await validateInfoBlockStrings(strings, gpx);
         await validateInfoBlockButtons(cloudTrackButtons);
+        await clickBy(By.id('se-button-back'));
+        await deleteTrack(name);
     }
 }
 

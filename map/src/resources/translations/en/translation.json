@@ -5242,5 +5242,6 @@
   "srtm_plugin_name": "Topography",
   "purchases_feature_desc_terrain": "Terrain contour lines, grayscale hillshade and color scale slope indication, to show peaks and lowlands.",
   "you_can_get_feature_as_part_of_pattern": "Get “%1$s” as part of the %2$s plan. Comparison:",
-  "shared_string_share": "Share"
+  "shared_string_share": "Share",
+  "shared_string_remove": "Remove"
 }

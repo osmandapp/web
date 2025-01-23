@@ -89,7 +89,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
     }
 
     function isFolderExist(name) {
-        return getParentFolder(group).subfolders.some((f) => f.name === name);
+        return getParentFolder(group)?.subfolders.some((f) => f.name === name);
     }
 
     function getParentFolder(folder) {

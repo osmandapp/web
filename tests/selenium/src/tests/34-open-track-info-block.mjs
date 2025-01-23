@@ -12,6 +12,10 @@ export default async function test() {
 
     const trackName = 'test-routed-osrm';
 
+    const existResult = await waitBy(By.id(`se-cloud-track-${trackName}`), { optional: true, idle: true });
+    if (existResult) {
+        await deleteTrack(`${trackName}`);
+    }
     await actionAddOneTrack(trackName);
 
     await clickBy(By.id(`se-cloud-track-${trackName}`));

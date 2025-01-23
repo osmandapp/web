@@ -9,6 +9,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { isEmpty } from 'lodash';
 import Loading from '../errors/Loading';
 import { byTime, doSort } from '../actions/SortActions';
+import SmartFolder from '../components/SmartFolder';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -16,6 +17,8 @@ export default function FavoritesMenu() {
     const [enableGroups, setEnableGroups] = useState([]);
     const [, height] = useWindowSize();
     const [sortGroups, setSortGroups] = useState([]);
+
+    const sharedFiles = ctx.favorites?.groups?.filter((g) => g.sharedWithMe);
 
     // get list of favorites groups
     const groupItems = useMemo(() => {
@@ -27,6 +30,8 @@ export default function FavoritesMenu() {
             groups = byTime(ctx.favorites.groups, true, true);
         }
         if (groups) {
+            // remove shared with me groups from main list
+            groups = groups.filter((g) => !g.sharedWithMe);
             groups.map((g, index) => {
                 items.push(
                     <FavoriteGroup
@@ -64,6 +69,7 @@ export default function FavoritesMenu() {
                     />
                 )}
                 {ctx.favLoading && <LinearProgress />}
+                {!isEmpty(sharedFiles) && <SmartFolder type={'share'} subtype={'favorite'} files={sharedFiles} />}
                 {ctx.gpxLoading || ctx.processingGroups ? (
                     <Loading />
                 ) : !isEmpty(ctx.favorites) && ctx.favorites?.groups?.length > 0 ? (

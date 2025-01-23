@@ -23,7 +23,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import _, { isEmpty } from 'lodash';
 import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
-import { addCloseTracksToRecently } from '../../menu/visibletracks/VisibleTracks';
+import { addCloseTracksToRecently, VISIBLE_SHARE_MARKER } from '../../menu/visibletracks/VisibleTracks';
 import PhotosModal from '../../menu/search/explore/PhotosModal';
 import InstallBanner from './InstallBanner';
 import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
@@ -99,80 +99,146 @@ const GlobalFrame = () => {
     useEffect(() => {
         if (!isEmpty(ctx.gpxFiles)) {
             let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
-
-            let oldFiles = [];
-            savedVisible.old.forEach((name) => {
-                const file = ctx.gpxFiles[name];
-                if (file) {
-                    oldFiles.push(file);
-                }
-            });
-            // don't update old files, update only new ones
-            let newVisFiles = {
-                old: oldFiles,
-                new: [],
-            };
-            // for localStorage
-            let newVisFilesNames = {
-                old: savedVisible ? savedVisible.old : [],
-                new: [],
-                open: savedVisible ? savedVisible.open : [],
-            };
-
-            Object.values(ctx.gpxFiles).forEach((f) => {
-                if (
-                    (savedVisible.open.includes(f.name) && !isOldVisibleTrack(savedVisible, f)) ||
-                    isNewVisibleTrack(savedVisible, f)
-                ) {
-                    if (isNewVisibleTrack(savedVisible, f)) {
-                        const ind = savedVisible.new.findIndex((n) => n === f.name);
-                        if (ind !== -1 && !newVisFiles.new[ind]) {
-                            // If the new array at the index is empty, simply assign the current element
-                            newVisFiles.new[ind] = f;
-                            newVisFilesNames.new[ind] = f.name;
-                        } else {
-                            // Otherwise, find the next available index and assign the element
-                            let nextFreeIndex = newVisFiles.new.findIndex((el) => !el);
-                            if (nextFreeIndex === -1) {
-                                // If no free indexes are found, append to the end of the array
-                                newVisFiles.new.push(f);
-                                newVisFilesNames.new.push(f.name);
-                            } else {
-                                // Assign the element to the next free index
-                                newVisFiles.new[nextFreeIndex] = f;
-                                newVisFilesNames.new[nextFreeIndex] = f.name;
-                            }
-                        }
-                    } else {
-                        // If it's not a new visible track, simply push the element to both arrays
-                        newVisFiles.new.push(f);
-                        newVisFilesNames.new.push(f.name);
-                    }
-                } else {
-                    if (isOldVisibleTrack(savedVisible, f)) {
-                        if (savedVisible.open.includes(f.name)) {
-                            newVisFiles.new.push(f);
-                            newVisFilesNames.new.push(f.name);
-                            const ind = savedVisible.old.findIndex((n) => n === f.name);
-                            if (ind !== -1) {
-                                savedVisible.old.splice(ind, 1);
-                            }
-                        }
-                    }
-                }
-            });
-            // save updated names to localStorage
-            localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
-            // save updated visible tracks
-            ctx.setVisibleTracks({ ...newVisFiles });
+            const { newVisFiles, newVisFilesNames } = processTracks(ctx.gpxFiles, savedVisible);
+            mergeVisibleTracks(savedVisible, newVisFiles, newVisFilesNames, false);
         } else {
-            let newVisFiles = {
-                old: [],
-                new: [],
-            };
-            ctx.setVisibleTracks({ ...newVisFiles });
+            if (isEmpty(ctx.shareWithMeFiles?.tracks)) {
+                let newVisFiles = {
+                    old: [],
+                    new: [],
+                };
+                ctx.setVisibleTracks({ ...newVisFiles });
+            }
         }
     }, [ctx.gpxFiles]);
+
+    useEffect(() => {
+        if (!isEmpty(ctx.shareWithMeFiles?.tracks)) {
+            let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+            const { newVisFiles, newVisFilesNames } = processTracks(
+                ctx.shareWithMeFiles.tracks,
+                savedVisible,
+                VISIBLE_SHARE_MARKER
+            );
+            mergeVisibleTracks(savedVisible, newVisFiles, newVisFilesNames, true);
+        } else {
+            if (isEmpty(ctx.gpxFiles)) {
+                let newVisFiles = {
+                    old: [],
+                    new: [],
+                };
+                ctx.setVisibleTracks({ ...newVisFiles });
+            }
+        }
+    }, [ctx.shareWithMeFiles]);
+
+    function mergeVisibleTracks(savedVisible, newVisFiles, newVisFilesNames, shared) {
+        const filterCondition = (name) =>
+            shared ? !name.startsWith(VISIBLE_SHARE_MARKER) : name.startsWith(VISIBLE_SHARE_MARKER);
+
+        // get other track names and add them to the visible tracks with the same order
+        const otherTrackNames = {
+            old: savedVisible.old.filter(filterCondition),
+            new: savedVisible.new.filter(filterCondition),
+            open: savedVisible.open.filter(filterCondition),
+        };
+
+        const mergedVisFilesNames = {
+            old: [...new Set([...newVisFilesNames.old, ...otherTrackNames.old].filter(Boolean))],
+            new: [...new Set([...newVisFilesNames.new, ...otherTrackNames.new].filter(Boolean))],
+            open: [...new Set([...newVisFilesNames.open, ...otherTrackNames.open].filter(Boolean))],
+        };
+
+        localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(mergedVisFilesNames));
+
+        // merge visible tracks with the same order (save the order of the other tracks)
+        const mergedVisFiles = {
+            old: [
+                ...newVisFiles.old.filter(
+                    (track) => !ctx.visibleTracks?.old.some((existing) => existing.name === track.name)
+                ),
+                ...(ctx.visibleTracks?.old.filter(
+                    (track) => !newVisFiles.new.some((newTrack) => newTrack.name === track.name)
+                ) || []),
+            ],
+            new: [
+                ...newVisFiles.new.filter(
+                    (track) => !ctx.visibleTracks?.new.some((existing) => existing.name === track.name)
+                ),
+                ...(ctx.visibleTracks?.new || []),
+            ],
+        };
+
+        ctx.setVisibleTracks(mergedVisFiles);
+    }
+
+    const processTracks = (files, savedVisible, prefix = '') => {
+        let oldFiles = [];
+        savedVisible.old.forEach((name) => {
+            const fileName = name.startsWith(prefix) ? name.slice(prefix.length) : name;
+            const file = files[fileName];
+            if (file) {
+                oldFiles.push(file);
+            }
+        });
+        // don't update old files, update only new ones
+        let newVisFiles = {
+            old: oldFiles,
+            new: [],
+        };
+        // for localStorage
+        let newVisFilesNames = {
+            old: savedVisible ? savedVisible.old : [],
+            new: [],
+            open: savedVisible ? savedVisible.open : [],
+        };
+
+        Object.values(files).forEach((f) => {
+            const fileName = `${prefix}${f.name}`;
+            if (
+                (savedVisible.open.includes(fileName) && !isOldVisibleTrack(savedVisible, f, prefix)) ||
+                isNewVisibleTrack(savedVisible, f, prefix)
+            ) {
+                if (isNewVisibleTrack(savedVisible, f, prefix)) {
+                    const ind = savedVisible.new.findIndex((n) => n === fileName);
+                    if (ind !== -1 && !newVisFiles.new[ind]) {
+                        // If the new array at the index is empty, simply assign the current element
+                        newVisFiles.new[ind] = f;
+                        newVisFilesNames.new[ind] = fileName;
+                    } else {
+                        // Otherwise, find the next available index and assign the element
+                        let nextFreeIndex = newVisFiles.new.findIndex((el) => !el);
+                        if (nextFreeIndex === -1) {
+                            // If no free indexes are found, append to the end of the array
+                            newVisFiles.new.push(f);
+                            newVisFilesNames.new.push(fileName);
+                        } else {
+                            // Assign the element to the next free index
+                            newVisFiles.new[nextFreeIndex] = f;
+                            newVisFilesNames.new[nextFreeIndex] = fileName;
+                        }
+                    }
+                } else {
+                    // If it's not a new visible track, simply push the element to both arrays
+                    newVisFiles.new.push(f);
+                    newVisFilesNames.new.push(fileName);
+                }
+            } else {
+                if (isOldVisibleTrack(savedVisible, f, prefix)) {
+                    if (savedVisible.open.includes(fileName)) {
+                        newVisFiles.new.push(f);
+                        newVisFilesNames.new.push(fileName);
+                        const ind = savedVisible.old.findIndex((n) => n === fileName);
+                        if (ind !== -1) {
+                            savedVisible.old.splice(ind, 1);
+                        }
+                    }
+                }
+            }
+        });
+
+        return { newVisFiles, newVisFilesNames };
+    };
 
     useEffect(() => {
         if (ctx.openVisibleMenu) {
@@ -203,12 +269,12 @@ const GlobalFrame = () => {
         }
     }, [ctx.listFiles]);
 
-    function isOldVisibleTrack(names, file) {
-        return names.old.some((n) => n === file.name);
+    function isOldVisibleTrack(names, file, prefix = '') {
+        return names.old.some((n) => n === `${prefix}${file.name}`);
     }
 
-    function isNewVisibleTrack(names, file) {
-        return names.new.some((n) => n === file.name);
+    function isNewVisibleTrack(names, file, prefix = '') {
+        return names.new.some((n) => n === `${prefix}${file.name}`);
     }
 
     return (
