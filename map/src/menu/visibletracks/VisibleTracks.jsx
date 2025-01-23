@@ -13,6 +13,9 @@ import Empty from '../errors/Empty';
 import { Button } from '@mui/material/';
 import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
 import { useTranslation } from 'react-i18next';
+import { SHARE_TYPE } from '../../manager/ShareManager';
+
+export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_visible_marker_';
 
 export function getCountVisibleTracks(visibleTracks) {
     const oldSize = visibleTracks?.old?.length || 0;
@@ -25,15 +28,18 @@ export function isVisibleTrack(file) {
     return !!savedVisible?.open?.includes(file.name);
 }
 
-export function updateVisibleCache({ visible, file }) {
+export function updateVisibleCache({ visible, file, smartf = null }) {
     let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
     if (savedVisible && !savedVisible.open) {
         savedVisible.open = [];
     }
+    // always mark shared files in visible cache with SHARE_TYPE prefix
+    const fileName = smartf?.type === SHARE_TYPE ? VISIBLE_SHARE_MARKER + file.name : file.name;
+
     if (visible) {
-        savedVisible.open.push(file.name);
+        savedVisible.open.push(fileName);
     } else {
-        const ind = savedVisible.open.findIndex((n) => n === file.name);
+        const ind = savedVisible.open.findIndex((n) => n === fileName);
         if (ind !== -1) {
             savedVisible.open.splice(ind, 1);
         }
@@ -64,13 +70,16 @@ export function addCloseTracksToRecently(ctx) {
         };
 
         ctx.visibleTracks.new?.forEach((t) => {
-            if (savedVisible.open && savedVisible.open.includes(t.name)) {
+            const sharedFile = t.sharedWithMe;
+
+            const fileName = sharedFile ? VISIBLE_SHARE_MARKER + t.name : t.name;
+            if (savedVisible.open && savedVisible.open.includes(fileName)) {
                 newVisFiles.new.push(t);
-                newVisFilesNames.new.push(t.name);
-                newVisFilesNames.open.push(t.name);
+                newVisFilesNames.new.push(fileName);
+                newVisFilesNames.open.push(fileName);
             } else {
                 newVisFiles.old.unshift(t);
-                newVisFilesNames.old.unshift(t.name);
+                newVisFilesNames.old.unshift(fileName);
             }
         });
 
@@ -89,6 +98,7 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
         const items = [];
         ctx.visibleTracks?.new?.map((file, index) => {
             const trackName = getFileName(file);
+            const smartf = file.sharedWithMe ? { type: SHARE_TYPE } : null;
             const isLastItem = !isEmpty(ctx.visibleTracks?.new) ? index === ctx.visibleTracks?.new.length - 1 : false;
             if (file.filesize !== 0) {
                 items.push(
@@ -98,6 +108,7 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
                         file={file}
                         visible={true}
                         isLastItem={isLastItem}
+                        smartf={smartf}
                     />
                 );
             }
@@ -109,6 +120,7 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
         const items = [];
         ctx.visibleTracks?.old.map((file, index) => {
             const trackName = getFileName(file);
+            const smartf = file.sharedWithMe ? { type: SHARE_TYPE } : null;
             const isLastItem = !isEmpty(ctx.visibleTracks?.old) ? index === ctx.visibleTracks?.old.length - 1 : false;
             if (file.filesize !== 0) {
                 items.push(
@@ -118,6 +130,7 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
                         file={file}
                         visible={true}
                         isLastItem={isLastItem}
+                        smartf={smartf}
                     />
                 );
             }
@@ -133,13 +146,17 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
         if (!isEmpty(ctx.listFiles)) {
             return ctx.listFiles.uniqueFiles.some((f) => f.type === 'GPX');
         }
+        if (!isEmpty(ctx.shareWithMeFiles?.tracks)) {
+            return ctx.shareWithMeFiles.tracks?.length > 0;
+        }
         return false;
     }
 
     function allVisibleTracksHidden() {
         let files = getAllVisibleFiles(ctx);
         if (files.length > 0) {
-            return !files.some((f) => ctx.gpxFiles[f.name]?.url !== null && f.showOnMap);
+            const visibleCloudTracks = files.some((f) => f.url !== null && f.showOnMap);
+            return !visibleCloudTracks;
         }
         return true;
     }

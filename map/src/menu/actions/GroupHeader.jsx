@@ -20,9 +20,11 @@ import IconButtonWithPermissions from '../../frame/components/IconButtonWithPerm
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from './HeaderHelper';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
+import { SHARE_TYPE } from '../../manager/ShareManager';
 
 export default function GroupHeader({
     type,
+    smartf = null,
     trackGroup = null,
     favoriteGroup = null,
     setSortGroups = null,
@@ -54,10 +56,12 @@ export default function GroupHeader({
         }
     }, [ctx.selectedSort, trackGroup]);
 
+    const hiddenBtn = smartf?.type === SHARE_TYPE;
+
     useEffect(() => {
         if (favoriteGroup && !ctx.selectedSort) {
             if (setSortFiles) {
-                const files = ctx.favorites.mapObjs[favoriteGroup.name]?.wpts;
+                const files = ctx.favorites.mapObjs[favoriteGroup.id]?.wpts;
                 if (files) {
                     setSortFiles(byTime(files, true));
                 }
@@ -147,7 +151,7 @@ export default function GroupHeader({
                             </IconButton>
                         </span>
                     </Tooltip>
-                    {type === TRACKS_TYPE && (
+                    {type === TRACKS_TYPE && !hiddenBtn && (
                         <Tooltip key={'add_folder'} title={t('add_new_folder')} arrow placement="bottom-end">
                             <span>
                                 <IconButtonWithPermissions
@@ -162,7 +166,7 @@ export default function GroupHeader({
                             </span>
                         </Tooltip>
                     )}
-                    {type === TRACKS_TYPE && (
+                    {type === TRACKS_TYPE && !hiddenBtn && (
                         <Tooltip key={'import_track'} title={t('import_tracks')} arrow placement="bottom-end">
                             <span>
                                 <CloudGpxUploader folder={trackGroup ? trackGroup?.fullName : DEFAULT_GROUP_NAME}>
@@ -180,7 +184,7 @@ export default function GroupHeader({
                             </span>
                         </Tooltip>
                     )}
-                    {type === TRACKS_TYPE && (
+                    {type === TRACKS_TYPE && !hiddenBtn && (
                         <Tooltip
                             key={'create_new_route'}
                             title={t('plan_route_create_new_route')}
@@ -207,7 +211,7 @@ export default function GroupHeader({
                             </span>
                         </Tooltip>
                     )}
-                    {type === FAVORITES_TYPE && (
+                    {type === FAVORITES_TYPE && !hiddenBtn && (
                         <Tooltip
                             key={'import_fav_group'}
                             title={t('web:import_favorite_groups')}
@@ -248,6 +252,7 @@ export default function GroupHeader({
                         setSortIcon={setSortIcon}
                         setSortName={setSortName}
                         markers={markers}
+                        smartf={smartf}
                     />
                 }
             />

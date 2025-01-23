@@ -8,11 +8,12 @@ import React, { useContext } from 'react';
 import { deleteTrack } from '../../manager/track/DeleteTrackManager';
 import AppContext from '../../context/AppContext';
 import { FAVORITE_FILE_TYPE } from '../../manager/FavoritesManager';
+import DialogContentText from '@mui/material/DialogContentText';
 
-export default function DeleteFavGroupDialog({ setOpenDialog, group, setOpenActions }) {
+export default function DeleteFavGroupDialog({ setOpenDialog, group, setOpenActions, shared }) {
     const ctx = useContext(AppContext);
     async function deleteGroup() {
-        await deleteTrack(group.file, ctx, FAVORITE_FILE_TYPE);
+        await deleteTrack({ file: group.file, ctx, type: FAVORITE_FILE_TYPE, shared });
         if (setOpenActions) {
             setOpenActions(false);
         }
@@ -25,6 +26,17 @@ export default function DeleteFavGroupDialog({ setOpenDialog, group, setOpenActi
         }
     }
 
+    const Description = () => {
+        if (shared) {
+            return (
+                <DialogContentText>
+                    {`This will delete "${group?.name}" shared group with all favorites from shared files.`}
+                </DialogContentText>
+            );
+        }
+        return <DialogContentText>{`This will delete "${group?.name}" group with all favorites.`}</DialogContentText>;
+    };
+
     return (
         <Dialog
             id="se-delete-fav-group-dialog"
@@ -34,7 +46,7 @@ export default function DeleteFavGroupDialog({ setOpenDialog, group, setOpenActi
         >
             <DialogTitle className={dialogStyles.title}>Delete group</DialogTitle>
             <DialogContent className={dialogStyles.content}>
-                {`This will delete "${group?.name}" group with all favorites.`}
+                <Description />
             </DialogContent>
             <DialogActions>
                 <Button className={dialogStyles.button} onClick={closeDialogs}>

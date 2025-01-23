@@ -12,6 +12,8 @@ import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
 import { cloneDeep, isEmpty } from 'lodash';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
+import { getShareWithMe } from '../manager/ShareManager';
+import { FAVOURITES, GPX } from '../manager/GlobalManager';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -42,7 +44,9 @@ export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL
 export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
 export const isRouteTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_TRACK;
 export const isTravelTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_TRAVEL;
-export const isTrack = (ctx) => isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx) || isTravelTrack(ctx);
+export const isShareTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE;
+export const isTrack = (ctx) =>
+    isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx) || isTravelTrack(ctx) || isShareTrack(ctx);
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -60,7 +64,8 @@ async function loadListFiles(
     setFavorites,
     setUpdateMarkers,
     setProcessingGroups,
-    setVisibleTracks
+    setVisibleTracks,
+    setShareWithMeFiles
 ) {
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {
@@ -77,21 +82,42 @@ async function loadListFiles(
                             res.totalUniqueZipSize += f.zipSize;
                         });
                         setListFiles(res);
-
+                        const favFiles = await loadShareFiles(setShareWithMeFiles);
+                        const ownFavorites = TracksManager.getFavoriteGroups(res);
+                        const allFavorites = [...ownFavorites, ...favFiles];
                         await Promise.all([
                             addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles, setVisibleTracks),
-                            addOpenedFavoriteGroups(
-                                TracksManager.getFavoriteGroups(res),
-                                setFavorites,
-                                setUpdateMarkers,
-                                setProcessingGroups
-                            ),
+                            addOpenedFavoriteGroups(allFavorites, setFavorites, setUpdateMarkers, setProcessingGroups),
                         ]);
                     }
                 });
             }
         }
     }
+}
+
+export async function loadShareFiles(setShareWithMeFiles) {
+    const tracks = await getShareWithMe({ type: GPX });
+    const favorites = await getShareWithMe({ type: FAVOURITES });
+    const preparedTracks =
+        tracks.length === 0
+            ? {}
+            : Object.fromEntries(
+                  getGpxFiles(tracks).map((t) => {
+                      return [t.name, { ...t, sharedWithMe: true }];
+                  })
+              );
+    setShareWithMeFiles((prev) => ({
+        ...prev,
+        tracks: preparedTracks,
+        favorites: favorites?.uniqueFiles,
+    }));
+    return favorites?.uniqueFiles.map((f) => {
+        return {
+            ...f,
+            sharedWithMe: true,
+        };
+    });
 }
 
 async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
@@ -306,6 +332,8 @@ export const AppContextProvider = (props) => {
     const [updatedRequestList, setUpdatedRequestList] = useState([]);
     const [shareFileMarkers, setShareFileMarkers] = useState(null);
     const [shareFilesCache, setShareFilesCache] = useState({});
+    const [shareWithMeFiles, setShareWithMeFiles] = useState(null);
+    const [fitBoundsShareTracks, setFitBoundsShareTracks] = useState(null);
 
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -505,8 +533,11 @@ export const AppContextProvider = (props) => {
                 setFavorites,
                 setUpdateMarkers,
                 setProcessingGroups,
-                setVisibleTracks
-            ).finally(() => setGpxLoading(false));
+                setVisibleTracks,
+                setShareWithMeFiles
+            ).then(() => {
+                setGpxLoading(false);
+            });
         }
     }, [loginUser]);
 
@@ -703,6 +734,10 @@ export const AppContextProvider = (props) => {
                 setShareFileMarkers,
                 shareFilesCache,
                 setShareFilesCache,
+                shareWithMeFiles,
+                setShareWithMeFiles,
+                fitBoundsShareTracks,
+                setFitBoundsShareTracks,
             }}
         >
             {props.children}

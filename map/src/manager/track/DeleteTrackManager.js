@@ -1,60 +1,84 @@
-import { isCloudTrack, isLocalTrack, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import { isCloudTrack, isLocalTrack, loadShareFiles, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import TracksManager, { findGroupByName, getAllVisibleFiles } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
-import { cloneDeep, isEmpty } from 'lodash';
+import { isEmpty } from 'lodash';
 import { hideAllVisTracks } from '../../menu/visibletracks/VisibleTracks';
+import { deleteSharedWithMe } from '../ShareManager';
+import { GPX, updateFileStorage } from '../GlobalManager';
 
-export async function deleteTrack(file, ctx, type = 'GPX') {
+export async function deleteTrack({ file, ctx, shared = false, type = 'GPX' }) {
     if ((isCloudTrack(ctx) || file) && ctx.loginUser) {
         const trackName = file ? file?.name : ctx.selectedGpxFile?.name;
-        const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, '', {
-            params: {
-                name: trackName,
-                type: type,
-            },
-        });
-        if (response.status === 200) {
-            // delete track in ctx.gpxFiles (processed by CloudTrackLayer)
-            const name = trackName;
-            ctx.mutateGpxFiles((o) => {
-                if (o[name]) {
-                    o[name].url = null; // remove layer
-                    o[name].delete = true; // remove file
-                }
-            });
-
-            if (type === FAVORITE_FILE_TYPE) {
-                refreshGlobalFiles({ ctx, type: OBJECT_TYPE_FAVORITE }).then();
-            } else {
-                // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
-                deleteTracksFromGroups(trackName, ctx);
-
-                // delete track from ctx.openGroups
-                deleteTracksFromLastGroup(trackName, ctx);
-
-                // delete track from ctx.listFiles.uniqueFiles
-                // used to refresh list-files in TracksManager.saveTrack
-                ctx.setListFiles((o) => {
-                    const index = o.uniqueFiles.findIndex((file) => file.name === trackName);
-                    if (index !== -1) {
-                        o.uniqueFiles.splice(index, 1);
-                        o.uniqueFiles = [...o.uniqueFiles];
-                    }
-                    return { ...o };
-                });
-                // update gpxFiles
-                ctx.setGpxFiles((o) => {
-                    if (o[trackName]) {
-                        delete o[trackName];
-                    }
-                    return { ...o };
-                });
-            }
+        if (!trackName) {
+            return;
+        }
+        if (shared) {
+            await deleteSharedWithMeFile(trackName, type, ctx);
+        } else {
+            await deleteCloudFile(trackName, type, ctx);
         }
     } else if (isLocalTrack(ctx)) {
         TracksManager.deleteLocalTrack(ctx);
+    }
+}
+
+async function deleteSharedWithMeFile(name, type, ctx) {
+    const res = await deleteSharedWithMe(name, type);
+    if (!res) {
+        ctx.setTrackErrorMsg({
+            title: 'Delete error',
+            msg: 'We could not delete the file. Please try again later.',
+        });
+    } else {
+        deleteTracksFromLastGroup(name, ctx, type === FAVORITE_FILE_TYPE);
+        await loadShareFiles(ctx.setShareWithMeFiles);
+    }
+}
+
+async function deleteCloudFile(name, type, ctx) {
+    const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, '', {
+        params: {
+            name,
+            type,
+        },
+    });
+    if (response.status === 200) {
+        ctx.mutateGpxFiles((o) => {
+            if (o[name]) {
+                o[name].url = null;
+                o[name].delete = true; // remove file
+            }
+        });
+
+        if (type === FAVORITE_FILE_TYPE) {
+            refreshGlobalFiles({ ctx, type: OBJECT_TYPE_FAVORITE }).then();
+        } else {
+            // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
+            deleteTracksFromGroups(name, ctx);
+
+            // delete track from ctx.openGroups
+            deleteTracksFromLastGroup(name, ctx);
+
+            // delete track from ctx.listFiles.uniqueFiles
+            // used to refresh list-files in TracksManager.saveTrack
+            ctx.setListFiles((o) => {
+                const index = o.uniqueFiles.findIndex((file) => file.name === name);
+                if (index !== -1) {
+                    o.uniqueFiles.splice(index, 1);
+                    o.uniqueFiles = [...o.uniqueFiles];
+                }
+                return { ...o };
+            });
+
+            ctx.setGpxFiles((o) => {
+                if (o[name]) {
+                    delete o[name];
+                }
+                return { ...o };
+            });
+        }
     }
 }
 
@@ -76,8 +100,9 @@ export async function deleteTrackFolder(folder, ctx) {
     }
 }
 
-export function closeTrack(ctx, file) {
-    ctx.mutateGpxFiles((o) => (o[file.name].url = null));
+export function closeTrack(ctx, file, smartf) {
+    const newFile = { ...file, url: null };
+    updateFileStorage({ ctx, smartf, type: GPX, file: newFile });
     if (ctx.selectedGpxFile?.name === file.name) {
         ctx.setCurrentObjectType(null);
     }
@@ -92,16 +117,54 @@ export function hideAllTracks(ctx) {
     }
 }
 
+// delete tracks from map using different sources (cloud, shared), clean local storage
 export function deleteTracksFromMap(ctx, files) {
     hideAllVisTracks();
-    let updatedGpxFiles = cloneDeep(ctx.gpxFiles);
+    let cloudFiles = [];
+    let sharedFiles = [];
     files.forEach((file) => {
-        updatedGpxFiles[file.name].url = null;
-        if (ctx.selectedGpxFile?.name === file.name) {
-            ctx.setCurrentObjectType(null);
+        if (file.url) {
+            if (file.sharedWithMe) {
+                sharedFiles.push(file);
+            } else {
+                cloudFiles.push(file);
+            }
+            if (ctx.selectedGpxFile?.name === file.name) {
+                ctx.setCurrentObjectType(null);
+            }
         }
     });
-    ctx.setGpxFiles({ ...updatedGpxFiles });
+    if (cloudFiles.length > 0) {
+        ctx.setGpxFiles((prevFiles) => ({
+            ...prevFiles,
+            ...cloudFiles.reduce((updatedFiles, file) => {
+                if (prevFiles[file.name]) {
+                    updatedFiles[file.name] = {
+                        ...prevFiles[file.name],
+                        url: null,
+                    };
+                }
+                return updatedFiles;
+            }, {}),
+        }));
+    }
+    if (sharedFiles.length > 0) {
+        ctx.setShareWithMeFiles((prevFiles) => ({
+            ...prevFiles,
+            tracks: {
+                ...prevFiles.tracks,
+                ...sharedFiles.reduce((updatedTracks, file) => {
+                    if (prevFiles.tracks[file.name]) {
+                        updatedTracks[file.name] = {
+                            ...prevFiles.tracks[file.name],
+                            url: null,
+                        };
+                    }
+                    return updatedTracks;
+                }, {}),
+            },
+        }));
+    }
 }
 
 function deleteTracksFromGroups(trackName, ctx) {
@@ -132,18 +195,36 @@ function deleteTracksFromGroups(trackName, ctx) {
     }
 }
 
-function deleteTracksFromLastGroup(trackName, ctx) {
+function deleteTracksFromLastGroup(trackName, ctx, isFavorite = false) {
     if (ctx.openGroups.length > 0) {
         const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
-        const fileIndexInGroupFiles = lastGroup.groupFiles.findIndex((file) => file.name === trackName);
-        if (fileIndexInGroupFiles !== -1) {
-            lastGroup.groupFiles.splice(fileIndexInGroupFiles, 1);
-            lastGroup.realSize--;
+        if (isFavorite) {
+            const fileIndexInGroupFiles = lastGroup.files.findIndex((file) => file.file.name === trackName);
+            if (fileIndexInGroupFiles !== -1) {
+                lastGroup.files.splice(fileIndexInGroupFiles, 1);
+                ctx.setOpenGroups((prev) => {
+                    const updatedOpenGroups = [...prev];
+                    updatedOpenGroups[updatedOpenGroups.length - 1] = lastGroup;
+                    return updatedOpenGroups;
+                });
+                return;
+            }
         }
-        const fileIndexInFiles = lastGroup.files.findIndex((file) => file.name === trackName);
-        if (fileIndexInFiles !== -1) {
-            lastGroup.files.splice(fileIndexInFiles, 1);
+        if (lastGroup.groupFiles) {
+            const fileIndexInGroupFiles = lastGroup.groupFiles.findIndex((file) => file.name === trackName);
+            if (fileIndexInGroupFiles !== -1) {
+                lastGroup.groupFiles.splice(fileIndexInGroupFiles, 1);
+                lastGroup.realSize--;
+            }
         }
+        if (lastGroup.files) {
+            const fileIndexInFiles = lastGroup.files.findIndex((file) => file.name === trackName);
+            if (fileIndexInFiles !== -1) {
+                lastGroup.files.splice(fileIndexInFiles, 1);
+            }
+        }
+
+        // update tracksGroups and after update openGroups in TrackGroupFolder
         ctx.setTracksGroups([...ctx.tracksGroups]);
     }
 }

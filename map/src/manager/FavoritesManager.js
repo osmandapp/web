@@ -13,6 +13,7 @@ import { refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_TYPE_FAVORITE } from '../context/AppContext';
 import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
 import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
+import { getUniqFileId } from './GlobalManager';
 
 export const FAVORITE_FILE_TYPE = 'FAVOURITES';
 export const DEFAULT_FAV_GROUP_NAME = 'favorites';
@@ -192,6 +193,8 @@ function createGroup(file) {
     let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
     const groupName = file.folder === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : file.folder;
     return {
+        id: getUniqFileId(file),
+        sharedWithMe: file.sharedWithMe,
         name: file.folder,
         updatetimems: file.updatetimems,
         clienttimems: file.clienttimems,
@@ -306,11 +309,11 @@ export async function updateFavGroups(listFiles, ctx) {
         for (const favFile of files) {
             let group = FavoritesManager.createGroup(favFile);
             newFavoritesFiles.groups.push(group);
-            if (ctx.favorites.mapObjs[favFile.folder]) {
-                if (favFile.updatetimems !== ctx.favorites.mapObjs[favFile.folder].updatetimems) {
+            if (ctx.favorites.mapObjs[group.id]) {
+                if (favFile.updatetimems !== ctx.favorites.mapObjs[group.id].updatetimems) {
                     newFavoritesFiles = await createFavGroupObj(group, newFavoritesFiles);
                 } else {
-                    newFavoritesFiles.mapObjs[favFile.folder] = ctx.favorites.mapObjs[favFile.folder];
+                    newFavoritesFiles.mapObjs[group.id] = ctx.favorites.mapObjs[group.id];
                 }
             } else {
                 newFavoritesFiles = await createFavGroupObj(group, newFavoritesFiles);
@@ -358,16 +361,14 @@ export async function addFavGroupsToMap(favGroups) {
             newSavedFavGroups = {};
         }
 
-        const key = getFavGroupKey(g);
-
         if (savedFavGroups) {
-            newFavGroups = savedFavGroups[key]
-                ? addExistFavGroup(savedFavGroups[key], g, favGroups)
+            newFavGroups = savedFavGroups[g.id]
+                ? addExistFavGroup(savedFavGroups[g.id], g, favGroups)
                 : await createFavGroupObj(g, newFavGroups);
         } else {
             newFavGroups = await createFavGroupObj(g, newFavGroups);
         }
-        newSavedFavGroups[key] = newFavGroups.mapObjs[g.name];
+        newSavedFavGroups[g.id] = newFavGroups.mapObjs[g.id];
     });
 
     // Wait for all promises to resolve.
@@ -384,9 +385,9 @@ export async function addFavGroupsToMap(favGroups) {
 }
 
 function addExistFavGroup(obj, g, favGroups) {
-    favGroups.mapObjs[g.name] = obj;
+    favGroups.mapObjs[g.id] = obj;
     let ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
-    favGroups.groups[ind].pointsGroups = favGroups.mapObjs[g.name].pointsGroups;
+    favGroups.groups[ind].pointsGroups = favGroups.mapObjs[g.id].pointsGroups;
 
     return favGroups;
 }
@@ -410,7 +411,7 @@ async function createFavGroupObj(g, favGroups) {
     }
 
     // Create a new entry in the mapObjs property with details from the provided group data.
-    favGroups.mapObjs[g.name] = {
+    favGroups.mapObjs[g.id] = {
         url: url,
         clienttimems: g.file.clienttimems,
         updatetimems: g.file.updatetimems,
@@ -418,7 +419,7 @@ async function createFavGroupObj(g, favGroups) {
         hidden: g.hidden,
     };
     // If file data is available, process and update the favorite groups.
-    let resData = await Utils.getFileData(favGroups.mapObjs[g.name]);
+    let resData = await Utils.getFileData(favGroups.mapObjs[g.id]);
     if (resData) {
         const favoriteFile = new File([resData], g.file.name, {
             type: 'text/plain',
@@ -431,16 +432,17 @@ async function createFavGroupObj(g, favGroups) {
             favGroups.groups[ind].pointsGroups = favorites.pointsGroups;
         }
         Object.keys(favorites).forEach((t) => {
-            favGroups.mapObjs[g.name][`${t}`] = favorites[t];
+            favGroups.mapObjs[g.id][`${t}`] = favorites[t];
         });
     }
     return favGroups;
 }
 
 function createFavGroupUrl(group) {
+    const sharedFile = group.sharedWithMe;
     return `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
         group.file.type
-    )}&name=${encodeURIComponent(group.file.name)}`;
+    )}&name=${encodeURIComponent(group.file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
 }
 
 export async function addOpenedFavoriteGroups(files, setFavorites, setUpdateMarkers, setProcessingGroups) {
@@ -461,8 +463,8 @@ export async function addOpenedFavoriteGroups(files, setFavorites, setUpdateMark
 
 export function updateFavoriteGroups({
     result,
-    selectedGroupName,
-    oldGroupName,
+    selectedGroupId,
+    oldGroupId = null,
     ctx,
     useSelected = false,
     favoriteName = null,
@@ -470,31 +472,31 @@ export function updateFavoriteGroups({
     ctx.favorites.groups = FavoriteHelper.updateGroupAfterChange({
         ctx,
         result,
-        selectedGroupName,
-        oldGroupName,
+        selectedGroupId,
+        oldGroupId,
     });
-    let selectedGroup = ctx.favorites.groups.find((g) => g.name === selectedGroupName);
+    const selectedGroup = ctx.favorites.groups.find((g) => g.id === selectedGroupId);
+
     if (result.oldGroupResp) {
-        ctx.favorites.mapObjs[oldGroupName] = FavoriteHelper.updateGroupObj(
-            ctx.favorites.mapObjs[oldGroupName],
+        ctx.favorites.mapObjs[oldGroupId] = FavoriteHelper.updateGroupObj(
+            ctx.favorites.mapObjs[oldGroupId],
             result.oldGroupResp
         );
     }
-    if (!ctx.favorites.mapObjs[selectedGroupName]) {
-        ctx.favorites.mapObjs[selectedGroupName] = FavoriteHelper.createGroupObj(result.newGroupResp, selectedGroup);
+    if (!ctx.favorites.mapObjs[selectedGroupId]) {
+        ctx.favorites.mapObjs[selectedGroupId] = FavoriteHelper.createGroupObj(result.newGroupResp, selectedGroup);
     } else {
-        ctx.favorites.mapObjs[selectedGroupName] = FavoriteHelper.updateGroupObj(
-            ctx.favorites.mapObjs[selectedGroupName],
+        ctx.favorites.mapObjs[selectedGroupId] = FavoriteHelper.updateGroupObj(
+            ctx.favorites.mapObjs[selectedGroupId],
             result.newGroupResp
         );
     }
     if (useSelected && favoriteName) {
         FavoriteHelper.updateSelectedFile({
             ctx,
-            favorites: ctx.favorites,
             result: null,
             favoriteName,
-            groupName: selectedGroupName,
+            selectedGroup,
             deleted: false,
         });
     }

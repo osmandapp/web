@@ -2,7 +2,7 @@ import { ClickAwayListener, Popover } from '@mui/material';
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 
-export default function ActionsMenu({ open, setOpen, anchorEl, setShowMenu = null, actions = null }) {
+export default function ActionsMenu({ open, setOpen, anchorEl, favItems = false, setShowMenu = null, actions = null }) {
     const ctx = useContext(AppContext);
 
     return (
@@ -16,7 +16,7 @@ export default function ActionsMenu({ open, setOpen, anchorEl, setShowMenu = nul
                     vertical: 'top',
                     horizontal: 'right',
                 }}
-                sx={{ ml: '8px' }}
+                sx={{ ml: favItems ? '-60px' : '8px', mt: favItems && '-120px' }}
                 open={open}
                 anchorEl={anchorEl?.current}
                 disablePortal={true}
