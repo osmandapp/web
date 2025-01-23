@@ -245,19 +245,23 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
     }
 
     async function updateGroupMarkers(result, selectedGroup) {
-        const key = getUniqFileId(selectedGroup);
+        const key = selectedGroup.id ?? getUniqFileId(selectedGroup.file);
         if (!ctx.favorites.mapObjs[key]) {
             ctx.favorites.mapObjs[key] = FavoriteHelper.createGroupObj(result, selectedGroup);
         } else {
             ctx.favorites.mapObjs[key] = FavoriteHelper.updateGroupObj(ctx.favorites.mapObjs[key], result);
         }
-        ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, selectedGroup.name, result);
+        ctx.favorites = FavoriteHelper.updateSelectedGroup({
+            favorites: ctx.favorites,
+            selectedGroupName: selectedGroup.name,
+            result,
+            id: key,
+        });
         FavoriteHelper.updateSelectedFile({
             ctx,
-            favorites: ctx.favorites,
             result,
             favoriteName,
-            groupName: selectedGroup.name,
+            selectedGroup,
             deleted: false,
         });
         ctx.setUpdateMarkers({ ...ctx.favorites });
