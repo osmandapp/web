@@ -301,6 +301,7 @@ const FavoriteLayer = () => {
                 ? e.sourceTarget.options.category
                 : FavoritesManager.DEFAULT_GROUP_NAME;
             ctx.selectedGpxFile.file = Object.assign({}, ctx.favorites.mapObjs[e.sourceTarget.options.groupId]);
+            ctx.selectedGpxFile.id = e.sourceTarget.options.groupId;
             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
             ctx.setSelectedWpt(ctx.selectedGpxFile);
         },

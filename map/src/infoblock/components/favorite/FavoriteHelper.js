@@ -6,7 +6,7 @@ import FavoritesManager from '../../../manager/FavoritesManager';
 function updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted }) {
     let newSelectedFile = Object.assign({}, ctx.selectedGpxFile);
     newSelectedFile.file =
-        selectedGroup.name !== ctx.selectedGpxFile?.nameGroup ? selectedGroup.file : ctx.selectedGpxFile?.file;
+        selectedGroup.id !== ctx.selectedGpxFile?.id ? selectedGroup.file : ctx.selectedGpxFile?.file;
     newSelectedFile.name = favoriteName;
     newSelectedFile.nameGroup = selectedGroup.name;
     newSelectedFile.editFavorite = true;
@@ -23,10 +23,11 @@ function updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted 
     ctx.setSelectedWpt(newSelectedFile);
 }
 
-function updateSelectedGroup(favorites, selectedGroupName, result, id) {
+function updateSelectedGroup({ favorites, selectedGroupName, result, id }) {
     let group = favorites.groups?.find((g) => g.id === id && result.data);
     if (group) {
-        updateGroupData(group, result);
+        group = updateGroupData(group, result);
+        favorites.groups = favorites.groups.map((g) => (g.id === id ? group : g));
     } else {
         let file = {};
         Object.keys(result.data).forEach((d) => {
@@ -38,7 +39,8 @@ function updateSelectedGroup(favorites, selectedGroupName, result, id) {
         let newGroup = {
             name: file.folder,
             updatetimems: result.updatetimems,
-            file: file,
+            clienttimems: result.clienttimems,
+            file,
             pointsGroups: result.data.pointsGroups,
             hidden: false,
             id: getUniqFileId(file),
@@ -57,6 +59,7 @@ function updateGroupData(object, result) {
     });
     object.file = file;
     object.id = getUniqFileId(file);
+    return object;
 }
 
 function updateGroupAfterChange({ ctx, result, selectedGroupId, oldGroupId }) {
