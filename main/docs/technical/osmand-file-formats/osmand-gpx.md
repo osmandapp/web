@@ -5,7 +5,7 @@ sidebar_position: 2
 # OsmAnd GPX
 
 
-## Introduction to OsmAnd GPX Format
+## Introduction
 
 GPX (GPS Exchange Format) is an XML-based format for storing GPS data such as tracks, routes, and waypoints. OsmAnd supports GPX for importing, exporting, and customizing tracks and routes for navigation.
 
@@ -49,7 +49,7 @@ This section describes how OsmAnd displays tracks on the map and the customizati
 </gpx>
 ```
 
-### Coloring Type in Details
+### Tag 'coloring_type'
 
 The `coloring_type` tag in OsmAnd allows users to customize track coloring based on specific data attributes, providing a visual way to interpret key information along the track.
 
@@ -123,10 +123,10 @@ Waypoints in OsmAnd can be sorted into groups based on their type. This grouping
 
 ## Track Activity Type
 
-Track Activity Type was introduced in [OsmAnd 4.9](/blog/osmand-android-4-9-released/#gpx-track-activities).
-Supported activity types: [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json)
+Starting with OsmAnd [version 4.9](/blog/osmand-android-4-9-released/#gpx-track-activities), you can classify your tracks by activity type for further analysis and organization in folders.
 
-Activity Types are identified by `id` and stored in the Metadata extensions:
+The list of supported activity types is available in the [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json) file. Each activity is identified by its unique `id` and stored within the `<metadata>` extensions of the GPX file.
+
 
 ***Example:***
 
@@ -140,58 +140,68 @@ Activity Types are identified by `id` and stored in the Metadata extensions:
 
 ## HTML in Description
 
-HTML code is allowed in Metadata `<desc>` and Waypoint `<desc>` tags.
+HTML tags can be used within the `<desc>` tags in the `<metadata>` or `<wpt>` elements to provide formatted descriptions for tracks or waypoints.  
 
-Characters `<` `>` and `&` must be replaced with `&lt;` `&gt;` `&amp;` to avoid confusion with XML tags.
+To avoid conflicts with XML syntax, replace special characters as follows:  
+
+- `<` *→* `&lt;`
+- `>` *→* `&gt;`
+- `&` *→* `&amp;`
 
 ***Example:***
 
 ```xml
 <metadata>
   <desc>
+    &lt;p&gt;This is a &lt;b&gt;bold&lt;/b&gt; example.&lt;/p&gt;
     &lt;p&gt;
-        The first paragraph will be displayed as &lt;b&gt;brief&lt;/b&gt; description.
-        HTML tags are stripped in brief descriptions.
-    &lt;/p&gt;
-    &lt;p&gt;
-      &lt;h3&gt;Second paragraph&lt;/h3&gt;
-      &lt;b&gt;Hello, world!&lt;/b&gt;&lt;br/&gt;
-      &lt;img src="..."/&gt;&lt;br/&gt;
-      &lt;a href="..."&gt;url&lt;/a&gt;&lt;br/&gt;
-      &lt;table&gt; ... &lt;/table&gt;
+      &lt;h3&gt;Waypoint Information&lt;/h3&gt;
+      &lt;a href="https://osmand.net"&gt;Visit OsmAnd&lt;/a&gt;&lt;br/&gt;
+      &lt;img src="https://osmand.net/img/logo.png" /&gt;
     &lt;/p&gt;
   </desc>
 </metadata>
 ```
 
+***Important Notes***
+
+- OsmAnd removes all HTML tags when generating brief descriptions, leaving plain text.
+- You can use tags like `<b>`, `<i>`, `<p>`, `<br/>`, `<a>`, `<img>`, and more for customization.
+
+
 ## Link Tag (Link-as-Image)
 
-Link and Text tags are supported in Metadata, Author, and Waypoint extensions.
+The `<link>` tag is used to associate URLs with metadata, author information, or waypoints in OsmAnd GPX files. This tag can also display an image when the URL points to an image file.
 
-Visually, Link href may specify the URL to be displayed as the image for Track / Waypoint.
-
-***Examples:***
+***Examples (Metadata link with image):***
 
 ```xml
 <metadata>
   <link href="https://osmand.net/img/logo.png">
-    <text>optional text</text>
+    <text>OsmAnd Logo</text>
   </link>
 </metadata>
 ```
 
+***Examples (Waypoint link with image):***
+
 ```xml
-<wpt>
-  <link href="https://osmand.net/img/logo.png" />
+<wpt lat="52.5163" lon="13.3779">
+  <link href="https://osmand.net/img/landmark.png" />
 </wpt>
 ```
 
+
 ## Details of a Track Point (trkpt)
 
-Write to a GPX file while recording a track.
+Each `<trkpt>` (track point) in the GPX file can include additional attributes to capture data such as speed, heading, and elevation.  
 
-* **speed** (meters per second)
-* **heading** (0-359 degrees)
+*Supported attributes:*
+
+- **speed** - speed at the track point (in meters per second).
+- **heading** - direction of movement (0-359 degrees).
+- **ele** - elevation above sea level (in meters).
+- **time** - timestamp for the track point.
 
 ***Example:***
 
@@ -209,33 +219,62 @@ Write to a GPX file while recording a track.
 
 ## Tags Name for Sensor Data
 
-Increased compatibility of OsmAnd tracks with **Strava and Garmin Basecamp**. *Temperature, Heart Rate, Bicycle Power, Bicycle Cadence, and Bicycle Speed* sensors are enrolled in the Garmin https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd extension scheme.
+You can enrich your tracks with data from fitness sensors, such as heart rate monitors or temperature sensors. OsmAnd uses Garmin’s [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd) schema to store this data, making it compatible with platforms like **Strava** and **Garmin Basecamp**.
+
+*Supported Sensor Data Tags:*
+
+- **hr** - heart rate (in beats per minute).
+- **cad** - bicycle cadence (in revolutions per minute).
+- **atemp** - ambient temperature (in degrees Celsius).
+- **power** - bicycle power output (in watts).
 
 ***Example:***
 
 ```xml
 <extensions>
   <gpxtpx:TrackPointExtension>
-    <gpxtpx:hr>107</gpxtpx:hr>
-    <gpxtpx:cad>107</gpxtpx:cad>
-    <gpxtpx:atemp>107</gpxtpx:atemp>
-    <gpxtpx:wtemp>107</gpxtpx:wtemp>
-    <gpxtpx:power>107</gpxtpx:power>
+    <gpxtpx:hr>145</gpxtpx:hr>
+    <gpxtpx:cad>80</gpxtpx:cad>
+    <gpxtpx:atemp>22</gpxtpx:atemp>
+    <gpxtpx:power>250</gpxtpx:power>
   </gpxtpx:TrackPointExtension>
 </extensions>
 ```
 
-## Calculated Route(s)
+## Calculated Routes
 
-This data contains all details of a route built with **OsmAnd** (route segments, turns, road names, road types, restrictions, etc.). The route can be completely restored as if just built, even in the absence of the respective offline maps.
+With OsmAnd, you can export detailed calculated routes, including all essential data such as route segments, turns, road names, road types, and restrictions. This functionality ensures the route can be fully restored as if it were freshly built, even without access to the respective offline maps.  
 
-A GPX file may contain several routes. Each of them is contained in a specific segment under **trkseg** / **extensions**. A GPX file is saved in this form when exporting a constructed route or when saving a track that consists of several separate segments via the [**Plan a route**](../../user/plan-route/create-route.md) functionality.
+***GPX File Structure for Calculated Routes***  
 
-[**Plan a route**](../../user/plan-route/create-route.md) also adds one (or several, in accordance with the number of contained separate segments / tracks) **rte** blocks to the gpx file, containing route key points (**rtept**).
+A GPX file may contain multiple calculated routes. Each route is divided into segments within the `<trkseg>` tags. These segments include detailed metadata under the `<extensions>` tag, enabling full reconstruction of the route. Additionally, the `<rte>` block stores key points of the route, which are used for visualization and analysis.  
 
-***Gpx structure:***
+The GPX file is saved in this form when you export a built route or when you save a track consisting of several individual segments using the [Plan a route](../../user/plan-route/create-route.md) feature.
 
-```xml
+
+***GPX Structure Explanation***
+
+1. **Track segment.**
+
+    - The `<trk>` element is the root for a track. It contains the overall track data.
+    - The `<trkseg>` element represents a segment of the track, which consists of a series of track points. Each track point contains geographical coordinates and may have additional metadata, like elevation or time. The order of these track points indicates the sequence and the *length* of the route segments.
+
+2. **Extensions.** Within the `<trkseg>`, the `<extensions>` element provides additional information not covered by the standard GPX schema. This includes:
+
+    - *Route segments*. Defined within the `<route>` element, which lists individual segments summarized in the overall route.
+    - *Types of Segments*. The `<types>` section specifies the characteristics of each segment in the route. This data is taken from offline maps during the initial route creation.
+
+3. **Route Points**
+
+    - The <rte> element encapsulates the entire route, which may include multiple route points.
+    - The <rtept> element represents individual route points. Like track points, these are linked to the route and can include parameters for key points. If a route point is not the first or last, it shares the same data as the corresponding track point that has the same index.
+
+4. 
+
+
+
+<!--
+xml
 <trk>
   <trkseg>
     // List of segment points. The order of the points corresponds to the order and length of the route segments (<route><segment length="x" ... />).
@@ -269,7 +308,7 @@ A GPX file may contain several routes. Each of them is contained in a specific s
     </extensions>
   </rtept>
 </rte>
-```
+-->
 
 ### Important Properties
 
@@ -580,7 +619,7 @@ Some GPX tags are used or stored indirectly in OBF files. See [OsmGpxWriteContex
 | route_type             | Activity group ("id")                                                                           |
 | route_activity_type    | Activity type ("id")                                                                            |
 | route_track_point      | Waypoint POI-type                                                                               |
--->
+
 
 
 > *This article was last updated in January 2025*
