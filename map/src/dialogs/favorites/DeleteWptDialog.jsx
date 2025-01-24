@@ -61,25 +61,29 @@ export default function DeleteWptDialog({
         const id = useSelected ? ctx.selectedGpxFile.id : wpt.groupId;
         const groupFullName = useSelected ? ctx.selectedGpxFile.file.name : wpt.group.file.name;
         const currentWptName = useSelected ? ctx.selectedGpxFile.markerCurrent.title : wpt.name;
-
+        const selectedGroup = useSelected ? ctx.selectedGpxFile : ctx.favorites.groups.find((g) => g.id === id);
         for (let i = 0; i < arrWpt.length; i++) {
             if (arrWpt[i].name === currentWptName) {
                 const result = await FavoritesManager.deleteFavorite(
                     arrWpt[i],
                     groupFullName,
-                    ctx.favorites.mapObjs[id].updatetimems
+                    selectedGroup.file.updatetimems
                 );
                 //update favorites groups
                 if (result) {
                     ctx.favorites.mapObjs[id] = FavoriteHelper.updateGroupObj(ctx.favorites.mapObjs[id], result);
-                    ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, groupName, result, id);
+                    ctx.favorites = FavoriteHelper.updateSelectedGroup({
+                        favorites: ctx.favorites,
+                        selectedGroupName: groupName,
+                        result,
+                        id,
+                    });
                     useSelected &&
                         FavoriteHelper.updateSelectedFile({
                             ctx,
-                            favorites: ctx.favorites,
                             result,
                             favoriteName: ctx.selectedGpxFile.markerCurrent.title,
-                            groupName: ctx.selectedGpxFile.nameGroup,
+                            selectedGroup,
                             deleted: true,
                         });
                     ctx.setUpdateMarkers({ ...ctx.favorites });

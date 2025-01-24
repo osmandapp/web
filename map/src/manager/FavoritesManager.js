@@ -361,14 +361,17 @@ export async function addFavGroupsToMap(favGroups) {
             newSavedFavGroups = {};
         }
 
+        // unique key for each group with updatetime, to avoid overwriting the same group
+        const key = getFavGroupKey(g);
+
         if (savedFavGroups) {
-            newFavGroups = savedFavGroups[g.id]
-                ? addExistFavGroup(savedFavGroups[g.id], g, favGroups)
+            newFavGroups = savedFavGroups[key]
+                ? addExistFavGroup(savedFavGroups[key], g, favGroups)
                 : await createFavGroupObj(g, newFavGroups);
         } else {
             newFavGroups = await createFavGroupObj(g, newFavGroups);
         }
-        newSavedFavGroups[g.id] = newFavGroups.mapObjs[g.id];
+        newSavedFavGroups[key] = newFavGroups.mapObjs[g.id];
     });
 
     // Wait for all promises to resolve.
@@ -393,7 +396,7 @@ function addExistFavGroup(obj, g, favGroups) {
 }
 
 export function getFavGroupKey(g) {
-    return g.name + '/' + g.updatetimems;
+    return g.id + '/' + g.updatetimems;
 }
 
 /**
