@@ -153,6 +153,7 @@ export default function TrackSelect({ setTracksFolders }) {
                                 },
                                 PaperProps: {
                                     style: {
+                                        marginTop: '8px',
                                         maxWidth: '360px',
                                         maxHeight: height / 2,
                                     },
