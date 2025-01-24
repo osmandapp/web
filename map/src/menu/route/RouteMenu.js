@@ -205,22 +205,6 @@ export default function RouteMenu() {
         }
     }
 
-    async function getTracksBySegment() {
-        const startPoint = routeObject.getOption('route.points.start');
-        const finishPoint = routeObject.getOption('route.points.finish');
-        const coordinates = [startPoint, finishPoint].map((point) => {
-            return [point.lng, point.lat];
-        });
-        const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-tracks-by-seg`, coordinates, {
-            apiCache: true,
-        });
-        if (response.ok) {
-            const text = await response.text();
-            const data = JSON.parse(quickNaNfix(text));
-            console.log(data);
-        }
-    }
-
     return (
         <>
             <MenuItem key="routeprofile" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
@@ -428,19 +412,6 @@ export default function RouteMenu() {
                     </Button>
                 )}
             </ButtonGroup>
-            <Divider sx={{ mt: '15px', mb: '12px' }} />
-            {ctx.develFeatures && (
-                <Box sx={{ mx: 2 }}>
-                    <Button
-                        variant="contained"
-                        component="span"
-                        className={btn.blueButton}
-                        onClick={getTracksBySegment}
-                    >
-                        Get tracks by segment
-                    </Button>
-                </Box>
-            )}
             {openSettings && <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenSettings} />}
         </>
     );

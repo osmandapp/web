@@ -24,6 +24,7 @@ export const FAVORITES_URL = 'mydata/favorites/';
 export const NAVIGATE_URL = 'navigate/';
 export const PLANROUTE_URL = 'plan/';
 export const SETTINGS_URL = 'settings/';
+export const TRACK_ANALYZER_URL = 'track-analyzer/';
 export const TRAVEL_URL = 'travel/';
 export const OLD_LOGIN_URL = 'dialog-account/';
 export const LOGIN_URL = 'account/';

@@ -1,0 +1,16 @@
+.tracksSelectItem {
+    padding: 12px 12px !important;
+    gap: 16px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+}
+.icon {
+    fill: #727272 !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+}
+.iconSelected {
+    fill: #237bff !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+}

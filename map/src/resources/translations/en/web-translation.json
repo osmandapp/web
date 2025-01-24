@@ -71,5 +71,6 @@
   "lang_local": "Local",
   "shared_with_me": "Shared with Me",
   "show_all_tracks_on_map": "Show all tracks on map",
-  "hide_all_tracks_from_map": "Hide all tracks from map"
+  "hide_all_tracks_from_map": "Hide all tracks from map",
+  "tracks_analyzer": "Tracks analyzer"
 }

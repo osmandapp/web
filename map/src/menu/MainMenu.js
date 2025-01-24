@@ -26,6 +26,7 @@ import AppContext, {
     OBJECT_TYPE_POI,
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_SHARE_FILE,
+    OBJECT_TRACK_ANALYZER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -40,6 +41,7 @@ import { ReactComponent as NavigationIcon } from '../assets/menu/ic_action_navig
 import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_route.svg';
 import { ReactComponent as ConfigureMapIcon } from '../assets/icons/ic_map_configure_map.svg';
 import { ReactComponent as SettingsIcon } from '../assets/icons/ic_action_settings_outlined.svg';
+import { ReactComponent as TrackAnalyzerIcon } from '../assets/icons/ic_action_tool.svg';
 import { ReactComponent as TravelIcon } from '../assets/icons/ic_action_activity.svg';
 import { ReactComponent as SearchIcon } from '../assets/icons/ic_action_search_dark.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
@@ -69,6 +71,7 @@ import {
     WEATHER_URL,
     TRAVEL_URL,
     SHARE_FILE_MAIN_URL,
+    TRACK_ANALYZER_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -79,6 +82,7 @@ import TravelMenu from './travel/TravelMenu';
 import ProFeatures from '../frame/components/pro/ProFeatures';
 import { SHARE_TYPE, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
+import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 
 export default function MainMenu({
     size,
@@ -234,6 +238,15 @@ export default function MainMenu({
             show: true,
             id: 'se-show-menu-settings',
             url: MAIN_URL_WITH_SLASH + SETTINGS_URL,
+        },
+        {
+            name: t('web:tracks_analyzer'),
+            icon: TrackAnalyzerIcon,
+            component: <TrackAnalyzerMenu />,
+            type: OBJECT_TRACK_ANALYZER,
+            show: true,
+            id: 'se-show-menu-track-analyzer',
+            url: MAIN_URL_WITH_SLASH + TRACK_ANALYZER_URL,
         },
     ];
 
