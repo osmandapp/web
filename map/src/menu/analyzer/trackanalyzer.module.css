@@ -14,3 +14,12 @@
     min-width: 24px !important;
     max-width: 24px !important;
 }
+.pointInput {
+    padding-right: 0px !important;
+    height: 56px !important;
+}
+.divider {
+    margin-left: 55px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}

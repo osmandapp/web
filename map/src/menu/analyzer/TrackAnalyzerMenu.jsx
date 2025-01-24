@@ -1,5 +1,5 @@
 import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import EmptyLogin from '../login/EmptyLogin';
@@ -12,6 +12,7 @@ import headerStyles from '../trackfavmenu.module.css';
 import { useTranslation } from 'react-i18next';
 import { apiPost } from '../../util/HttpApi';
 import { quickNaNfix } from '../../util/Utils';
+import { getPointsForAnalysis } from './util/PointsManager';
 
 export const ALL_GROUP_MARKER = '_all_';
 
@@ -23,21 +24,57 @@ export default function TrackAnalyzerMenu() {
 
     const [startPoint, setStartPoint] = useState(null);
     const [finishPoint, setFinishPoint] = useState(null);
+    const [startAnalysis, setStartAnalysis] = useState(false);
     const [tracksFolders, setTracksFolders] = useState(null);
-    const [segmentStat, setSegmentStat] = useState(null);
+
+    useEffect(() => {
+        if (!startAnalysis || !tracksFolders || tracksFolders.length === 0) {
+            return;
+        }
+
+        if (!startPoint && !finishPoint) {
+            return;
+        }
+        getTracksBySegment().then((res) => {
+            console.log(res);
+        });
+    }, [startAnalysis, tracksFolders]);
 
     async function getTracksBySegment() {
-        const coordinates = [startPoint, finishPoint].map((point) => {
-            return [point.lng, point.lat];
+        const coordinates = getPointsForAnalysis({
+            startPoint,
+            finishPoint,
         });
-        const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-tracks-by-seg`, coordinates, {
+        if (!coordinates) {
+            return;
+        }
+        const folders = tracksFolders?.includes(ALL_GROUP_MARKER) ? null : removeNestedFolders(tracksFolders);
+
+        const request = {
+            points: coordinates,
+            folders,
+        };
+        const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-tracks-by-seg`, request, {
             apiCache: true,
         });
         if (response.ok) {
             const text = await response.text();
-            const data = JSON.parse(quickNaNfix(text));
-            console.log(data);
+            return JSON.parse(quickNaNfix(text));
         }
+    }
+
+    function removeNestedFolders(folders) {
+        if (!folders) return null;
+
+        const uniqueFolders = new Set(folders);
+        for (const folder of folders) {
+            uniqueFolders.forEach((parentFolder) => {
+                if (folder !== parentFolder && folder.startsWith(parentFolder + '/')) {
+                    uniqueFolders.delete(folder);
+                }
+            });
+        }
+        return Array.from(uniqueFolders);
     }
 
     return (
@@ -62,8 +99,10 @@ export default function TrackAnalyzerMenu() {
                     </AppBar>
                     <Box>
                         <TracksSelect setTracksFolders={setTracksFolders} />
-                        <PointField name={'start'} setPoint={setStartPoint} />
-                        <PointField name={'finish'} setPoint={setFinishPoint} />
+                        <Box sx={{ mx: 2, my: 2 }}>
+                            <PointField name={'start'} setPoint={setStartPoint} setStartAnalysis={setStartAnalysis} />
+                            <PointField name={'finish'} setPoint={setFinishPoint} setStartAnalysis={setStartAnalysis} />
+                        </Box>
                         <TrackAnalyzerTips />
                     </Box>
                     <Box

@@ -185,7 +185,13 @@ export default function TrackSelect({ setTracksFolders }) {
                                 </MenuItem>
                                 {groups.map((folder) => (
                                     <MenuItem className={styles.tracksSelectItem} key={folder.title}>
-                                        <ListItemIcon className={styles.icon}>
+                                        <ListItemIcon
+                                            className={
+                                                selectedGroupsNames.includes(folder.title)
+                                                    ? styles.iconSelected
+                                                    : styles.icon
+                                            }
+                                        >
                                             <FolderIcon />
                                         </ListItemIcon>
                                         <ListItemText>
