@@ -396,7 +396,7 @@ function addExistFavGroup(obj, g, favGroups) {
 }
 
 export function getFavGroupKey(g) {
-    return g.name + '/' + g.updatetimems;
+    return g.id + '/' + g.updatetimems;
 }
 
 /**
