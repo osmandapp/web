@@ -58,4 +58,4 @@ You can also use just `git` and checkout the following `git` repositories to the
     ```
 
 
-You might not need all repositories to get `tools`, `android` or `ios` working, just the ones described in the [`OsmAnd-manifest`](https://github.com/osmandapp/OsmAnd-manifest) `.xml` files.
+You might not need all repositories to get `tools`, `android` or `ios` working, just the ones described in the [`repo` configurations'](https://github.com/osmandapp/OsmAnd-manifest) XML files.
