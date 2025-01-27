@@ -9,6 +9,7 @@ import { readdirSync } from 'node:fs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
 import { UPLOAD_SORT } from './14-sort-tracks.mjs';
 import { UPLOAD_TRACK } from './13-uploud-track-to-cloud.mjs';
+import actionDeleteTracksByPattern from '../actions/tracks/actionDeleteTracksByPattern.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -20,10 +21,11 @@ export default async function test() {
     const tracks = getFiles({ folder: 'gpx' });
     const trackName = 'test-routed-osrm';
 
-    const exist = await waitBy(By.id(`se-cloud-track-${trackName}`), { optional: true, idle: true });
-    if (!exist) {
-        await actionImportCloudTrack(tracks, trackName);
+    for (const track of tracks) {
+        await actionDeleteTracksByPattern(track.name);
     }
+
+    await actionImportCloudTrack(tracks, trackName);
 
     // delete track
     await deleteTrack(trackName);
