@@ -439,6 +439,8 @@ export const AppContextProvider = (props) => {
 
     const [openProFeatures, setOpenProFeatures] = useState(null);
 
+    const [trackAnalyzer, setTrackAnalyzer] = useState(null);
+
     function getConfigureMap() {
         const TIME_UPDATE_CONFIGURE_MAP = 1731935733868;
         let savedConfigureMap = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
@@ -739,6 +741,8 @@ export const AppContextProvider = (props) => {
                 setShareWithMeFiles,
                 fitBoundsShareTracks,
                 setFitBoundsShareTracks,
+                trackAnalyzer,
+                setTrackAnalyzer,
             }}
         >
             {props.children}

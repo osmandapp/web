@@ -268,6 +268,12 @@ export default function MainMenu({
     }, [menuInfo]);
 
     useEffect(() => {
+        if (selectedType === OBJECT_TRACK_ANALYZER) {
+            ctx.setCurrentObjectType(OBJECT_TRACK_ANALYZER);
+        }
+    }, [selectedType]);
+
+    useEffect(() => {
         const updateRequests = () => {
             updateUserRequests(ctx).then();
         };

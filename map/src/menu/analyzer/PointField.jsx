@@ -4,16 +4,27 @@ import { ReactComponent as PointAIcon } from '../../assets/icons/ic_action_point
 import { ReactComponent as PointBIcon } from '../../assets/icons/ic_action_point_b.svg';
 import { useEffect, useState } from 'react';
 import styles from './trackanalyzer.module.css';
+import { formatLatLon } from '../route/RouteMenu';
+import { parseCoordinate } from './util/PointsManager';
 
 const START_POINT = 'start';
 const FINISH_POINT = 'finish';
 
-export default function PointField({ name, setPoint, setStartAnalysis }) {
+export default function PointField({ name, point, setPoint, setStartAnalysis }) {
     const [pointValue, setPointValue] = useState('');
 
     useEffect(() => {
-        setPoint(pointValue === '' ? null : pointValue);
+        setPoint(pointValue === '' ? null : parseCoordinate(pointValue));
     }, [pointValue]);
+
+    useEffect(() => {
+        if (point) {
+            if (typeof point === 'object') {
+                point = formatLatLon(point);
+            }
+            setPointValue(point);
+        }
+    }, [point]);
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {

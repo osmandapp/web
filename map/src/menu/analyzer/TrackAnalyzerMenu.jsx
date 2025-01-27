@@ -27,6 +27,46 @@ export default function TrackAnalyzerMenu() {
     const [startAnalysis, setStartAnalysis] = useState(false);
     const [tracksFolders, setTracksFolders] = useState(null);
 
+    // map -> menu
+    useEffect(() => {
+        if (ctx.trackAnalyzer) {
+            let start;
+            let finish;
+            if (ctx.trackAnalyzer.start !== startPoint) {
+                start = ctx.trackAnalyzer.start;
+                setStartPoint(start);
+            }
+            if (ctx.trackAnalyzer.finish !== finishPoint) {
+                finish = ctx.trackAnalyzer.finish;
+                setFinishPoint(finish);
+            }
+
+            if (start || finish) {
+                setStartAnalysis(true);
+            }
+        }
+    }, [ctx.trackAnalyzer]);
+
+    //menu -> map
+    useEffect(() => {
+        if (!ctx.trackAnalyzer && (startPoint || finishPoint)) {
+            ctx.setTrackAnalyzer({
+                start: startPoint,
+                finish: finishPoint,
+            });
+            return;
+        }
+        if (ctx.trackAnalyzer) {
+            if (ctx.trackAnalyzer.start !== startPoint || ctx.trackAnalyzer.finish !== finishPoint) {
+                ctx.setTrackAnalyzer({
+                    ...ctx.trackAnalyzer,
+                    start: startPoint,
+                    finish: finishPoint,
+                });
+            }
+        }
+    }, [startPoint, finishPoint]);
+
     useEffect(() => {
         if (!startAnalysis || !tracksFolders || tracksFolders.length === 0) {
             return;
@@ -35,8 +75,9 @@ export default function TrackAnalyzerMenu() {
         if (!startPoint && !finishPoint) {
             return;
         }
+
         getTracksBySegment().then((res) => {
-            console.log(res);
+            setStartAnalysis(false);
         });
     }, [startAnalysis, tracksFolders]);
 
@@ -100,8 +141,18 @@ export default function TrackAnalyzerMenu() {
                     <Box>
                         <TracksSelect setTracksFolders={setTracksFolders} />
                         <Box sx={{ mx: 2, my: 2 }}>
-                            <PointField name={'start'} setPoint={setStartPoint} setStartAnalysis={setStartAnalysis} />
-                            <PointField name={'finish'} setPoint={setFinishPoint} setStartAnalysis={setStartAnalysis} />
+                            <PointField
+                                name={'start'}
+                                point={startPoint}
+                                setPoint={setStartPoint}
+                                setStartAnalysis={setStartAnalysis}
+                            />
+                            <PointField
+                                name={'finish'}
+                                point={finishPoint}
+                                setPoint={setFinishPoint}
+                                setStartAnalysis={setStartAnalysis}
+                            />
                         </Box>
                         <TrackAnalyzerTips />
                     </Box>

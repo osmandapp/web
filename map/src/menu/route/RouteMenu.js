@@ -74,7 +74,7 @@ export function formatRouteInfo(props) {
     return <span id="se-route-info">{res}</span>;
 }
 
-function formatLatLon(pnt) {
+export function formatLatLon(pnt) {
     if (!pnt) {
         return '';
     }

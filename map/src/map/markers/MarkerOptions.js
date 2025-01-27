@@ -59,6 +59,16 @@ const options = {
         iconSize: [60, 60],
         clickable: false,
     }),
+    trackAnalyzerPointA: L.icon({
+        iconUrl: '/map/images/map_icons/ic_action_point_a_colored.svg',
+        iconSize: [30, 30],
+        clickable: false,
+    }),
+    trackAnalyzerPointB: L.icon({
+        iconUrl: '/map/images/map_icons/ic_action_point_b_colored.svg',
+        iconSize: [30, 30],
+        clickable: false,
+    }),
 };
 
 export function createPoiIcon({
