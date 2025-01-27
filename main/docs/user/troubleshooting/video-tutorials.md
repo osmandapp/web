@@ -45,7 +45,7 @@ Here are some highlighted examples from our video collection. These videos provi
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/QXEnPR-oQSE" title="Previewing Elevation: OsmAnd for Android &amp; iOS (versions 4.5)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Englishh: Full tutorial
+### English: Full tutorial
 
 - **Video**: _OsmAnd Trekking, travel Offline Trails📱_
 - From [LoHike](https://www.youtube.com/@lohike4083)
