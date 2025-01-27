@@ -410,9 +410,9 @@ A gpx file may contain several routes. Each of them is contained in a specific s
 </gpx>
 ```
 
-## GPX to OBF Conversion
+## GPX Collections in OBF
 
-OsmAnd allows you to convert multiple GPX files into a single OBF file. This enables the storage of thousands of GPX tracks in a compact, optimized format while maintaining features like special map icons, track appearance customization, and search functionality.
+OsmAnd allows you to convert multiple GPX files into a single OBF file. This enables the storage of thousands of GPX tracks in a compact, optimized format while maintaining features like special map icons, track appearance customization, and search functionality. This avoids a limit of local large GPX files which typically can't handle > 500 K points in total however some features of GPX tracks might be missing comparing displaying OBF file.
 
 Steps to convert GPX to OBF:  
 
@@ -420,10 +420,6 @@ Steps to convert GPX to OBF:
 
 - The resulting `<.obf>` file can be imported into OsmAnd (requires OsmAnd Android 5.0+).
 
-
-## OBF Track Customization
-
-OsmAnd offers several ways to customize the visual appearance of tracks when converting GPX to OBF. This includes options for line colors, widths, shields, and waypoint icons.
 
 ### Track Line Style
 
@@ -460,7 +456,7 @@ Customize track lines with the following tags:
 </gpx>
 ```
 
-### Line Shields
+### Track Line Shields
 
 Shields are icons or symbols displayed along the track line. OsmAnd supports [OSMC-symbol-style](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) shields, which may include:
 
@@ -499,7 +495,7 @@ If no shield properties are defined, OsmAnd uses an auto-sized yellow shield for
 </gpx>
 ```
 
-### Waypoint Display
+### Waypoints Display
 
 Waypoint icons can be customized with the following tags:
 
@@ -535,11 +531,8 @@ Waypoint icons can be customized with the following tags:
 </wpt>
 ```
 
-## OBF Search and Analytics
 
-Converted OBF files provide reliable search capabilities, allowing you to find tracks and waypoints by metadata and extensions.
-
-### Name and Reference Search
+### Search by Name and Refs 
 
 Tracks and waypoints can be located using a variety of GPX tags.
 
@@ -570,7 +563,7 @@ Tracks and waypoints can be located using a variety of GPX tags.
 </gpx>
 ```
 
-### Activity Search
+### Search by activity type
 
 OsmAnd organizes tracks in OBF files into **Activity Groups** and **Activity Types**. These classifications help you filter tracks as POIs or create activity-based search filters.  
 
@@ -608,7 +601,7 @@ How activity types work:
     </gpx>
     ```
 
-### OBF Analytics Tags
+### Search information Tags
 
 OBF files automatically generate and store critical track statistics and analytics.
 
@@ -623,7 +616,7 @@ OBF files automatically generate and store critical track statistics and analyti
 | `time_moving`, `time_moving_no_gaps`  | Total moving time, with and without accounting for gaps. |
 
 
-### OBF Internal Tags
+### Internal Tags
 
 OBF files also use internal tags to manage metadata, provide additional search capabilities, and connect tracks to other map features. Some tags are directly derived from GPX extensions, while others store supplemental or preprocessed data.
 
