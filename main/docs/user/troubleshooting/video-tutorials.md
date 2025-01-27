@@ -45,6 +45,14 @@ Here are some highlighted examples from our video collection. These videos provi
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/QXEnPR-oQSE" title="Previewing Elevation: OsmAnd for Android &amp; iOS (versions 4.5)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+### Englishh: Full tutorial
+
+- **Video**: _OsmAnd Trekking, travel Offline Trails📱_
+- From [LoHike](https://www.youtube.com/@lohike4083)
+
+<iframe width="770" height="433" src="https://www.youtube.com/embed/U1g0A5ZyVHQ" title="⛰️ Best Hiking App❗️OsmAnd Trekking, travel Offline Trails📱" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 ### French: Creating GPX Tracks
 
 - **Video**: _Tutoriel Osmand: Comment créer directement une trace GPX avec Osmand_  
