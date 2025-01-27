@@ -4,13 +4,21 @@ import actionAddOneTrack from '../actions/tracks/actionAddOneTrack.mjs';
 import { clickBy, waitBy, waitByRemoved, checkElementByCss } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
-import { deleteTrack } from '../util.mjs';
+import { deleteTrack, getFiles } from '../util.mjs';
+import actionDeleteTracksByPattern from '../actions/tracks/actionDeleteTracksByPattern.mjs';
 
 export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
     const trackName = 'test-routed-osrm';
+
+    await clickBy(By.id('se-show-main-menu'), { optional: true });
+    await clickBy(By.id('se-show-menu-tracks'));
+
+    for (const track of getFiles({ folder: 'gpx' })) {
+        await actionDeleteTracksByPattern(track.name);
+    }
 
     await actionAddOneTrack(trackName);
 

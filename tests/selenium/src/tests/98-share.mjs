@@ -13,6 +13,7 @@ import actionOpenShare from '../actions/actionOpenShare.mjs';
 import actionDeleteAllFavorites from '../actions/favorites/actionDeleteAllFavorites.mjs';
 import actionOpenFavorites from '../actions/favorites/actionOpenFavorites.mjs';
 import actionUploadFavGroup from '../actions/favorites/actionUploadFavGroup.mjs';
+import actionDeleteTracksByPattern from '../actions/tracks/actionDeleteTracksByPattern.mjs';
 
 export default async function test() {
     const tracks = getFiles({ folder: 'gpx' });
@@ -38,14 +39,10 @@ export default async function test() {
     await clickBy(By.id('se-show-menu-tracks'));
 
     // prepared tracks
-    let exist = await waitBy(By.id(`se-cloud-track-${trackName}`), { optional: true, idle: true });
-    if (exist) {
-        await deleteTrack(trackName);
+    for (const track of tracks) {
+        await actionDeleteTracksByPattern(track.name);
     }
-    exist = await waitBy(By.id(`se-cloud-track-${trackName2}`), { optional: true, idle: true });
-    if (exist) {
-        await deleteTrack(trackName2);
-    }
+
     await actionImportCloudTrack(tracks, trackName);
     await actionImportCloudTrack(tracks, trackName2);
 
