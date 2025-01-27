@@ -80,6 +80,13 @@ export default function GroupHeader({
     }
 
     function getTitle() {
+        if (smartf?.type === SHARE_TYPE) {
+            return (
+                <Typography component="div" className={styles.title}>
+                    {t('web:shared_with_me')}
+                </Typography>
+            );
+        }
         if (type === TRACKS_TYPE) {
             return (
                 <Typography id="se-cloud-name-track" component="div" className={styles.title}>
