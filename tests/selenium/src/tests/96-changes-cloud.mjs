@@ -5,6 +5,7 @@ import { By } from 'selenium-webdriver';
 import actionImportCloudTrack from '../actions/tracks/actionImportCloudTrack.mjs';
 import { deleteTrack, getFiles } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
+import actionDeleteTracksByPattern from '../actions/tracks/actionDeleteTracksByPattern.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -16,9 +17,8 @@ export default async function test() {
     const tracks = getFiles({ folder: 'gpx' });
     const trackName = 'test-routed-osrm';
 
-    const exist = await waitBy(By.id(`se-cloud-track-${trackName}`), { optional: true, idle: true });
-    if (exist) {
-        await deleteTrack(trackName);
+    for (const track of tracks) {
+        await actionDeleteTracksByPattern(track.name);
     }
     // create track
     await actionImportCloudTrack(tracks, trackName);
