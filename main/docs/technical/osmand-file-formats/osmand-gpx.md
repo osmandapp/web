@@ -271,7 +271,7 @@ Each `<trkpt>` (track point) in the GPX file can include additional attributes t
 
 ## Calculated route(s)
 
-This data contains all details of a route built with **OsmAnd** (route segments, turns, road names, road types, restrictions, etc.). The route can be completely restored as if just built, even in the absence of the respective offline maps.
+In **OsmAnd** you can can calculate route and save all data in GPX, so later all features navigation will be available as running GPX navigation, so **OsmAnd** gpx will contain route segments, turns, road names, road types, restrictions, etc.. The route can be completely restored as if just built, even in the absence of the respective offline maps.
 
 A gpx file may contain several routes. Each of them is contained in a specific segment under **trkseg** / **extensions**. A gpx file is saved in this form when exporting a constructed route or when saving a track that consists of several separate segments via the [**Plan a route**](../../user/plan-route/create-route.md) functionality.
 
