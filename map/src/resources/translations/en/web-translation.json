@@ -72,5 +72,12 @@
   "shared_with_me": "Shared with Me",
   "show_all_tracks_on_map": "Show all tracks on map",
   "hide_all_tracks_from_map": "Hide all tracks from map",
-  "tracks_analyzer": "Tracks analyzer"
+  "tracks_analyzer": "Tracks analyzer",
+  "h": "h",
+  "avg_speed": "Avg. speed",
+  "moving_time": "Time in motion",
+  "max_altitude": "Max. altitude",
+  "avg_altitude": "Avg. altitude",
+  "min_altitude": "Min. altitude",
+  "length": "Length"
 }

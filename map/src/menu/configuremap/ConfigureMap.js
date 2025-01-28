@@ -12,7 +12,6 @@ import {
     AppBar,
     Toolbar,
     Tooltip,
-    Divider,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
@@ -38,6 +37,7 @@ import TerrainConfig from './TerrainConfig';
 import ButtonPro from '../../frame/components/pro/ButtonPro';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import TopographyProFeatures from '../../frame/components/pro/TopographyProFeatures';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -159,7 +159,7 @@ export default function ConfigureMap() {
                                         </div>
                                     </ListItemText>
                                 </MenuItem>
-                                <Divider className={styles.dividerItem} />
+                                <DividerWithMargin margin={'64px'} />
                                 <MenuItem className={styles.item} onClick={handleFavoritesSwitchChange}>
                                     <ListItemIcon className={setIconStyles(ctx.configureMapState.showFavorites)}>
                                         <StarIcon />
@@ -184,7 +184,7 @@ export default function ConfigureMap() {
                                         </div>
                                     </ListItemText>
                                 </MenuItem>
-                                <Divider className={styles.dividerItem} />
+                                <DividerWithMargin margin={'64px'} />
                                 <MenuItem className={styles.item} onClick={() => ctx.setOpenVisibleMenu(true)}>
                                     <ListItemIcon className={styles.iconEnabled}>
                                         <TracksIcon />
@@ -208,7 +208,7 @@ export default function ConfigureMap() {
                                         </div>
                                     </ListItemText>
                                 </MenuItem>
-                                <Divider className={styles.dividerItem} />
+                                <DividerWithMargin margin={'64px'} />
                                 <MenuItem
                                     divider
                                     className={styles.item}

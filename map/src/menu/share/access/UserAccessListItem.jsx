@@ -1,6 +1,6 @@
 import { useInView } from 'react-intersection-observer';
 import React, { useContext, useMemo, useRef, useState } from 'react';
-import { Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
+import { IconButton, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import trackStyles from '../../trackfavmenu.module.css';
 import styles from '../share.module.css';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
@@ -16,6 +16,7 @@ import i18n from 'i18next';
 import AppContext from '../../../context/AppContext';
 import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../../../manager/ShareManager';
 import { useTranslation } from 'react-i18next';
+import DividerWithMargin from '../../components/dividers/DividerWithMargin';
 
 export default function UserAccessListItem({
     index,
@@ -146,8 +147,8 @@ export default function UserAccessListItem({
                                 </div>
                             )}
                         </MenuItem>
-                        {showOwner && userList && userList?.length !== 0 && <Divider className={styles.dividerItem} />}
-                        {!showOwner && index !== userList?.length - 1 && <Divider className={styles.dividerItem} />}
+                        {showOwner && userList && userList?.length !== 0 && <DividerWithMargin margin={'64px'} />}
+                        {!showOwner && index !== userList?.length - 1 && <DividerWithMargin margin={'64px'} />}
                     </div>
                 )}
             </div>

@@ -1,4 +1,4 @@
-import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography, Skeleton, Divider } from '@mui/material';
+import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography, Skeleton } from '@mui/material';
 import React, { useContext, useMemo, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
@@ -12,6 +12,7 @@ import { addShareFavoriteToMap, getColorLocation } from '../../manager/Favorites
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { SHARE_TYPE } from '../../manager/ShareManager';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
 
 export const CustomIcon = ({ marker }) => {
     return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
@@ -131,7 +132,7 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                             )}
                         </MenuItem>
                     )}
-                    <Divider className={styles.dividerItem} />
+                    <DividerWithMargin margin={'64px'} />
                     {inView && (
                         <ActionsMenu
                             open={openActions}

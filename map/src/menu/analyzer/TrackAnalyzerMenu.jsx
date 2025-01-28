@@ -13,8 +13,11 @@ import { useTranslation } from 'react-i18next';
 import { apiPost } from '../../util/HttpApi';
 import { quickNaNfix } from '../../util/Utils';
 import { getPointsForAnalysis } from './util/PointsManager';
+import TrackSegmentStat from './TrackSegmentStat';
+import ThickDivider from '../components/dividers/ThickDivider';
 
 export const ALL_GROUP_MARKER = '_all_';
+export const MAIN_BLOCK_SIZE = 340;
 
 export default function TrackAnalyzerMenu() {
     const ctx = useContext(AppContext);
@@ -26,6 +29,7 @@ export default function TrackAnalyzerMenu() {
     const [finishPoint, setFinishPoint] = useState(null);
     const [startAnalysis, setStartAnalysis] = useState(false);
     const [tracksFolders, setTracksFolders] = useState(null);
+    const [analyseResult, setAnalyseResult] = useState(null);
 
     // map -> menu
     useEffect(() => {
@@ -77,6 +81,9 @@ export default function TrackAnalyzerMenu() {
         }
 
         getTracksBySegment().then((res) => {
+            if (res) {
+                setAnalyseResult(res);
+            }
             setStartAnalysis(false);
         });
     }, [startAnalysis, tracksFolders]);
@@ -156,6 +163,12 @@ export default function TrackAnalyzerMenu() {
                         </Box>
                         <TrackAnalyzerTips />
                     </Box>
+                    {analyseResult !== null && (
+                        <>
+                            <ThickDivider />
+                            <TrackSegmentStat analyseResult={analyseResult} height={height} />
+                        </>
+                    )}
                     <Box
                         minWidth={ctx.infoBlockWidth}
                         maxWidth={ctx.infoBlockWidth}

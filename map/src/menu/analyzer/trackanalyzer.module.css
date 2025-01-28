@@ -18,8 +18,29 @@
     padding-right: 0px !important;
     height: 56px !important;
 }
-.divider {
-    margin-left: 55px !important;
-    margin-bottom: 0px !important;
-    margin-top: 0px !important;
+.statItem {
+    gap: 16px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+}
+.statItemValue {
+    color: var(--text-primary) !important;
+    text-align: right !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: 'Roboto Mono' !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: -0.16px !important;
+}
+.statItemValue2 {
+    color: var(--text-secondary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: 'Roboto Mono' !important;
+    font-size: 12px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: -0.12px !important;
 }

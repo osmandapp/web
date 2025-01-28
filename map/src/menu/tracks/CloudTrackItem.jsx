@@ -1,7 +1,6 @@
 import AppContext from '../../context/AppContext';
 import {
     Alert,
-    Divider,
     IconButton,
     LinearProgress,
     ListItemIcon,
@@ -36,6 +35,7 @@ import { updateVisibleCache } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import FileShareIcon from '../share/FileShareIcon.jsx';
 import { getFileStorage, GPX } from '../../manager/GlobalManager';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -214,7 +214,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                         </MenuItem>
                     </Tooltip>
                 </div>
-                {(!visible || !isLastItem) && <Divider className={styles.dividerItem} />}
+                {(!visible || !isLastItem) && <DividerWithMargin margin={'64px'} />}
                 <ActionsMenu
                     open={openActions}
                     setOpen={setOpenActions}

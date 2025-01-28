@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { DEFAULT_GROUP_NAME, getAllGroupNames } from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
 import {

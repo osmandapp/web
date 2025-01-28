@@ -31,11 +31,6 @@
 .lang {
     color: var(--text-secondary) !important;
 }
-.dividerItem {
-    margin-left: 64px !important;
-    margin-bottom: 0px !important;
-    margin-top: 0px !important;
-}
 .menuButtonContainer {
     position: absolute;
     top: 50%;

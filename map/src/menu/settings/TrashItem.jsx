@@ -10,6 +10,7 @@ import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import TrashActions from '../actions/TrashActions';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
 
 export default function TrashItem({ item, changes, setChanges }) {
     const { ref, inView } = useInView();
@@ -73,7 +74,7 @@ export default function TrashItem({ item, changes, setChanges }) {
                                             </IconButton>
                                         </div>
                                     </MenuItem>
-                                    {!item.isLast && <Divider className={styles.dividerItem} />}
+                                    {!item.isLast && <DividerWithMargin margin={'64px'} />}
                                 </div>
                             )}
                             <ActionsMenu

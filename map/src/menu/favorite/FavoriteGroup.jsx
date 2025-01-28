@@ -1,4 +1,4 @@
-import { CircularProgress, Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { CircularProgress, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
@@ -15,6 +15,7 @@ import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 import FileShareIcon from '../share/FileShareIcon.jsx';
 import { getShare } from '../../manager/track/TracksManager';
 import { SHARE_TYPE } from '../../manager/ShareManager';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
 
 export default function FavoriteGroup({ index, group, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -102,7 +103,7 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
                     )}
                 </IconButton>
             </MenuItem>
-            <Divider className={styles.dividerItem} />
+            <DividerWithMargin margin={'64px'} />
             <ActionsMenu
                 open={openActions}
                 setOpen={setOpenActions}

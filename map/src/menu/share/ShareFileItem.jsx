@@ -1,4 +1,4 @@
-import { Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import trackStyles from '../trackfavmenu.module.css';
 import { getDist, getFileName, getTime, getWptPoints, setTrackIconStyles } from '../../manager/track/TracksManager';
 import MenuItemWithLines from '../components/MenuItemWithLines';
@@ -12,6 +12,7 @@ import { FAVOURITES, GPX } from '../../manager/GlobalManager';
 import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 import { useTranslation } from 'react-i18next';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
 
 export default function ShareFileItem({ file, type }) {
     const ctx = useContext(AppContext);
@@ -68,7 +69,7 @@ export default function ShareFileItem({ file, type }) {
                     <TrackInfoIcon />
                 </IconButton>
             </MenuItem>
-            <Divider className={trackStyles.dividerItem} />
+            <DividerWithMargin margin={'64px'} />
         </>
     );
 }

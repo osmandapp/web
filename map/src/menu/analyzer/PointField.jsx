@@ -1,11 +1,12 @@
 import { TextField } from '@mui/material/';
-import { Box, Divider, InputAdornment } from '@mui/material';
+import { Box, InputAdornment } from '@mui/material';
 import { ReactComponent as PointAIcon } from '../../assets/icons/ic_action_point_a.svg';
 import { ReactComponent as PointBIcon } from '../../assets/icons/ic_action_point_b.svg';
 import { useEffect, useState } from 'react';
 import styles from './trackanalyzer.module.css';
 import { formatLatLon } from '../route/RouteMenu';
 import { parseCoordinate } from './util/PointsManager';
+import SimpleDivider from '../components/dividers/SimpleDivider';
 
 const START_POINT = 'start';
 const FINISH_POINT = 'finish';
@@ -71,7 +72,7 @@ export default function PointField({ name, point, setPoint, setStartAnalysis }) 
                     },
                 }}
             ></TextField>
-            {name === START_POINT && <Divider className={styles.divider} />}
+            {name === START_POINT && <SimpleDivider />}
         </Box>
     );
 }

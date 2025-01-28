@@ -1,4 +1,4 @@
-import { CircularProgress, Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { CircularProgress, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
@@ -11,6 +11,7 @@ import MenuItemWithLines from '../components/MenuItemWithLines';
 import { Tooltip } from '@mui/material/';
 import { useTranslation } from 'react-i18next';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -71,7 +72,7 @@ export default function CloudTrackGroup({ index, group }) {
                     </IconButton>
                 </Tooltip>
             </MenuItem>
-            <Divider className={styles.dividerItem} />
+            <DividerWithMargin margin={'64px'} />
             <ActionsMenu
                 open={openActions}
                 setOpen={setOpenActions}

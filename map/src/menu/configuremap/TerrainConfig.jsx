@@ -3,7 +3,6 @@ import {
     AppBar,
     Box,
     CircularProgress,
-    Divider,
     IconButton,
     ListItemText,
     MenuItem,
@@ -25,6 +24,7 @@ import SubTitle from '../components/SubTitle';
 import ActionsMenu from '../actions/ActionsMenu';
 import capitalize from 'lodash/capitalize';
 import { cloneDeep } from 'lodash';
+import ThickDivider from '../components/dividers/ThickDivider';
 
 export const NO_HEIGHTMAP = 'none';
 
@@ -185,7 +185,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
             />
             {ctx.heightmap?.key ? (
                 <Box>
-                    <Divider className={gStyles.thickDivider} />
+                    <ThickDivider />
                     <SubTitle title={'shared_string_appearance'} />
                     <Box sx={{ m: 2 }}>
                         <div
