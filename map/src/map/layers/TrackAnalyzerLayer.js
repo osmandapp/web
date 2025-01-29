@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { Marker, GeoJSON } from 'react-leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
@@ -6,10 +6,10 @@ import { LatLng } from 'leaflet';
 
 export default function TrackAnalyzerLayer() {
     const ctx = useContext(AppContext);
+    const geoJsonRef = useRef(null);
 
     const [startPoint, setStartPoint] = useState(null);
     const [finishPoint, setFinishPoint] = useState(null);
-    const [geoJsonSegments, setGeoJsonSegments] = useState([]);
 
     // menu -> map
     useEffect(() => {
@@ -40,9 +40,15 @@ export default function TrackAnalyzerLayer() {
                     },
                 }));
             });
-            setGeoJsonSegments(geoJsonFeatures);
+            if (geoJsonRef.current) {
+                geoJsonRef.current.clearLayers();
+                geoJsonRef.current.addData({
+                    type: 'FeatureCollection',
+                    features: geoJsonFeatures,
+                });
+            }
         }
-    }, [ctx.trackAnalyzer?.segments]);
+    }, [ctx.trackAnalyzer?.segmentsUpdateDate]);
 
     // map -> menu
     useEffect(() => {
@@ -99,16 +105,11 @@ export default function TrackAnalyzerLayer() {
                     }}
                 />
             )}
-            {geoJsonSegments.length > 0 && (
-                <GeoJSON
-                    key={'track-analyzer-segments'}
-                    data={{
-                        type: 'FeatureCollection',
-                        features: geoJsonSegments,
-                    }}
-                    onEachFeature={onEachFeature}
-                />
-            )}
+            <GeoJSON
+                ref={geoJsonRef}
+                data={{ type: 'FeatureCollection', features: [] }}
+                onEachFeature={onEachFeature}
+            />
         </>
     );
 }

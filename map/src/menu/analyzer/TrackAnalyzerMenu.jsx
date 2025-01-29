@@ -97,6 +97,7 @@ export default function TrackAnalyzerMenu() {
                 ...ctx.trackAnalyzer,
                 start: startPoint,
                 finish: finishPoint,
+                segmentsUpdateDate: new Date().getMilliseconds(),
                 segments: analyseResult.segments,
             });
         }
