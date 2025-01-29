@@ -207,7 +207,7 @@ export default function TrackAnalyzerMenu() {
                                 setStartAnalysis={setStartAnalysis}
                             />
                         </Box>
-                        <TrackAnalyzerTips />
+                        {analyseResult === null && <TrackAnalyzerTips />}
                     </Box>
                     {analyseResult !== null && (
                         <>
