@@ -13,8 +13,9 @@ import {
     Typography,
 } from '@mui/material';
 import styles from './trackanalyzer.module.css';
-import { ReactComponent as AllTracksIcon } from '../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
+import { ReactComponent as SubFolderIcon } from '../../assets/icons/ic_action_folder_open.svg';
+import { ReactComponent as AllTracksIcon } from '../../assets/icons/ic_action_group_select_all.svg';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ALL_GROUP_MARKER } from './TrackAnalyzerMenu';
 import { useTranslation } from 'react-i18next';
@@ -193,7 +194,7 @@ export default function TrackSelect({ setTracksFolders }) {
                                                     : styles.icon
                                             }
                                         >
-                                            <FolderIcon />
+                                            {folder.title.includes('/') ? <SubFolderIcon /> : <FolderIcon />}
                                         </ListItemIcon>
                                         <ListItemText>
                                             <div
