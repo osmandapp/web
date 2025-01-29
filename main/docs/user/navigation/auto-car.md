@@ -98,7 +98,7 @@ If you do not have any *Driving* profile selected on your device that correspond
 
 2. **Utility and Efficiency.** Navigation should be customized to meet the needs of a particular mode of transportation. This allows users to reduce the time it takes to find optimal routes and avoid unnecessary traffic restrictions.
 
-3. **Error avoidance.** Switching to the *Driving* profile when there is no specific profile for the selected mode of transportation provides the user with constant access to the minimum necessary settings and information, thus avoiding possible errors and misunderstandings while driving.  
+3. **Error avoidance.** Switching to the *Driving* profile when there is no specific profile for the selected mode of transportation provides you with constant access to the minimum necessary settings and information, thus avoiding possible errors and misunderstandings while driving.  
 
 
 ## Destination Points
@@ -161,7 +161,7 @@ To build a route to a POI in Android Auto, follow these steps:
     </tr>
 </table>  
 
-*Favorites* is one of the functions of OsmAnd that allows the user to make a kind of bookmarks (notes) on the map. While using Android Auto you cannot add or modify Favorites, only use existing ones. The list of [*Favorites*](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, add the necessary places in the favorites before connecting the device to your vehicle multimedia system.  
+*Favorites* is one of the functions of OsmAnd that allows you to make a kind of bookmarks (notes) on the map. While using Android Auto you cannot add or modify Favorites, only use existing ones. The list of [*Favorites*](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, add the necessary places in the favorites before connecting the device to your vehicle multimedia system.  
 
 To create a route to a favorite point in Android Auto, follow the steps below:  
 
@@ -210,7 +210,7 @@ The Favorites and Tracks categories have a special *Last Modified* folder. Since
 
 ## Navigation Features
 
-In addition to the basic features of the OsmAnd app in Android Auto that provide convenient navigation in your vehicle, there are a number of additional features that enhance the user experience and make navigation more personalized, comfortable, and efficient.  
+In addition to the basic features of the OsmAnd app in Android Auto that provide convenient navigation in your vehicle, there are a number of additional features that enhance your experience and make navigation more personalized, comfortable, and efficient.  
 
 
 ### Next Turn & Route Info

@@ -16,7 +16,7 @@ The *Maps & Resources* menu allows you to do basic operations over online and of
 
 ## [Profiles (Settings)](./profiles.md)
 
-Each *profile* is available for full customization. Each profile can become a separate application for the needs of the user.
+Each *profile* is available for full customization. Each profile can become a separate application for your needs.
 
 ## [Color Palette Schemes](./color-palette-schemes.md)
 

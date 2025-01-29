@@ -26,7 +26,7 @@ This article describes how to configure the appearance of the map during navigat
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
 
 ![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_andr.png)
 
@@ -34,7 +34,7 @@ This article describes how to configure the appearance of the map during navigat
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
 ![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_ios.png)
 
@@ -69,7 +69,7 @@ The *Show along the route* setting allows you to configure additional route para
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>*
 
 ![points along the route](@site/static/img/navigation/show-points-along-4-andr.png)
 
@@ -77,7 +77,7 @@ The *Show along the route* setting allows you to configure additional route para
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>* *→ Show along the route*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>* *→ Show along the route*
 
 ![points along the route](@site/static/img/navigation/show-points-along-4-ios.png)  
 
@@ -135,13 +135,13 @@ The list contains all previously added [*Favorite*](../../personal/favorites.md#
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 </TabItem>
 
@@ -158,7 +158,7 @@ The list contains all previously added [*Favorite*](../../personal/favorites.md#
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
 
 ![Navigation route Android](@site/static/img/navigation/route/route_line_appearance_andr.png)  
 
@@ -166,7 +166,7 @@ The list contains all previously added [*Favorite*](../../personal/favorites.md#
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
 ![Navigation route Android](@site/static/img/navigation/route/RLApp_iOS.png)
 

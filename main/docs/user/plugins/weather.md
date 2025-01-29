@@ -57,7 +57,7 @@ The Weather plugin is only available with Map rendering engine [Version 2](../pe
 
 <TabItem value="android" label="Android">
 
-*Enabled plugin → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
+Go to: *Android* *Enabled plugin → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
 ![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
 
@@ -65,7 +65,7 @@ The Weather plugin is only available with Map rendering engine [Version 2](../pe
 
 <TabItem value="ios" label="iOS">
 
-*Enabled plugin → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
+Go to: *iOS* *Enabled plugin → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
 ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
 
@@ -83,7 +83,7 @@ At the bottom of the screen is the *weather toolbar*. You can use the day button
 
 <TabItem value="android" label="Android">
 
-*Enabled plugin → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
+Go to: *Android* *Enabled plugin → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
 ![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
@@ -91,7 +91,7 @@ At the bottom of the screen is the *weather toolbar*. You can use the day button
 
 <TabItem value="ios" label="iOS">
 
-*Enabled plugin → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
+Go to: *iOS* *Enabled plugin → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
 ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
@@ -237,7 +237,7 @@ OsmAnd generates a new forecast every 6 hours.
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="shared_string_weather"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="shared_string_weather"/>*
 
 ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
@@ -245,7 +245,7 @@ OsmAnd generates a new forecast every 6 hours.
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="shared_string_weather"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="shared_string_weather"/>*
 
 ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 

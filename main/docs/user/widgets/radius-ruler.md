@@ -56,7 +56,7 @@ As you zoom in or out, the *Ruler* dynamically adjusts, allowing you to visually
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
 
 ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
 
@@ -64,7 +64,7 @@ As you zoom in or out, the *Ruler* dynamically adjusts, allowing you to visually
 
 <TabItem value="ios" label="iOS">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
+Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
 
 <table class="blogimage">
     <tr>
@@ -121,7 +121,7 @@ You may also notice a **blue triangle** that indicates the compass direction. Th
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,always_center_position_on_map"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,always_center_position_on_map"/>*
 
 ![Display position Android](@site/static/img/widgets/radius_ruler_display_position_android.png) ![Radius ruler downward](@site/static/img/widgets/radius_ruler_downward_android.png)
 
@@ -129,7 +129,7 @@ You may also notice a **blue triangle** that indicates the compass direction. Th
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,selected_profile,general_settings_2,always_center_position_on_map"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,selected_profile,general_settings_2,always_center_position_on_map"/>*
 
 ![Display position Android](@site/static/img/widgets/radius_ruler_display_position_ios.png) ![Radius ruler downward](@site/static/img/widgets/radius_ruler_downward_ios.png)
 

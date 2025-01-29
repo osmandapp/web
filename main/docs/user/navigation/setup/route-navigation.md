@@ -389,7 +389,7 @@ When a navigation route is built, you can start simulating navigation using the 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699*
+Go to: *Android* *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699*
 
 ![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_andr_2.png)
 
@@ -397,7 +397,7 @@ When a navigation route is built, you can start simulating navigation using the 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699*
+Go to: *iOS* *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699*
 
 ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
 

@@ -39,15 +39,19 @@ A route consists of a set of segments between specified points. The segments can
 
 ## Main Use Cases
 
-<Tabs groupId="operating-systems"><TabItem value="android" label="Android">
+<Tabs groupId="operating-systems">
 
-*<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
+<TabItem value="android" label="Android">
+
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
 
 ![Plan a route android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
-</TabItem><TabItem value="ios" label="iOS">
+</TabItem>
 
-*<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
+<TabItem value="ios" label="iOS">
+
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
 
 ![Plan a route ios](@site/static/img/plan-route/plan-route-menu-ios.png)
 
@@ -71,13 +75,13 @@ You can **zoom in and out** for easy placement of points when creating or editin
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,plan_a_route,plan_route_open_existing_track"/> / <Translate android="true" ids="plan_route_import_track"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,plan_a_route,plan_route_open_existing_track"/> / <Translate android="true" ids="plan_route_import_track"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_open_existing_track"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_open_existing_track"/>*
 
 </TabItem>
 

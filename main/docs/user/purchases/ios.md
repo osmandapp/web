@@ -149,7 +149,7 @@ or
 
 ## Legacy Subscriptions (prior 4.0)
 
-New subscriptions became active from OsmAnd 4.3 (December 2022). All earlier subscriptions are legacy and technically equal to "Maps subscription", though legacy subscriptions are entitled for Hourly Map updates. Users can't buy legacy subscriptions but old subscriptions are automatically renewed until the user unsubscribes (the price for them might change in the future).
+New subscriptions became active from OsmAnd 4.3 (December 2022). All earlier subscriptions are legacy and technically equal to "Maps subscription", though legacy subscriptions are entitled for Hourly Map updates. Users can't buy legacy subscriptions but old subscriptions are automatically renewed until you unsubscribes (the price for them might change in the future).
 
 
 ## Restore Purchases

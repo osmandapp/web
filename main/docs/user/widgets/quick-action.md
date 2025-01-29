@@ -29,7 +29,7 @@ Quick Action widget is an interactive user interface element that provides fast 
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
 
 ![Quick action widget_android](@site/static/img/widgets/quick_action_widget_android.png)
 
@@ -37,7 +37,7 @@ Quick Action widget is an interactive user interface element that provides fast 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
 
 ![Quick action widget_ios](@site/static/img/widgets/quick_action_widget_ios.png)
 
@@ -58,7 +58,7 @@ To use the Quick Action button, you have to enable this widget first.
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Tap Delete (Bin icon on the right top corner) → Select actions*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Tap Delete (Bin icon on the right top corner) → Select actions*
 
 ![Quick action widget_android_add](@site/static/img/widgets/quick_action_widget_andr.png)  ![Custom button Android](@site/static/img/widgets/add_action_screen_andr.png)
 
@@ -66,7 +66,7 @@ To use the Quick Action button, you have to enable this widget first.
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Tap Edit (Pencil icon on the right top corner) → Select actions*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Tap Edit (Pencil icon on the right top corner) → Select actions*
 
 ![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Custom button Android](@site/static/img/widgets/add_action_screen_ios.png)
 
@@ -166,7 +166,7 @@ The *Quick Action* widget appears at the bottom corner of the map screen when yo
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate android="true" ids="add_button"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate android="true" ids="add_button"/>*  
 
 ![Custom button Android](@site/static/img/widgets/custom_button_andr.png)  
 
@@ -174,7 +174,7 @@ The *Quick Action* widget appears at the bottom corner of the map screen when yo
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
 
 ![Custom button Android](@site/static/img/widgets/custom_button_ios.png)  
 

@@ -192,7 +192,7 @@ or
 
 ## Legacy Subscriptions (prior 4.0)
 
-New subscriptions start with OsmAnd version 4.0 (August 2021). All previous subscriptions are obsolete and technically equate to a *Map Subscription*, although older subscriptions are eligible for hourly map updates. Users cannot buy old subscriptions, but old subscriptions are automatically renewed until the user unsubscribes (the price may change in the future).
+New subscriptions start with OsmAnd version 4.0 (August 2021). All previous subscriptions are obsolete and technically equate to a *Map Subscription*, although older subscriptions are eligible for hourly map updates. Users cannot buy old subscriptions, but old subscriptions are automatically renewed until you unsubscribes (the price may change in the future).
 
 
 ## Restore Purchases

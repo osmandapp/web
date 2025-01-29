@@ -41,7 +41,7 @@ The *Import* and *Export* allows you to save data from generated `.osf` **files*
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
 ![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
 
@@ -49,7 +49,7 @@ The *Import* and *Export* allows you to save data from generated `.osf` **files*
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
 ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
 
@@ -66,7 +66,7 @@ All the data you have configured and created can be exported using the ***Export
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*  
 
 | |
 | --- | --- | --- |
@@ -76,7 +76,7 @@ All the data you have configured and created can be exported using the ***Export
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*  
 
 | |
 | --- | --- | --- |

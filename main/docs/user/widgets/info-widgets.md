@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Information widgets are needed for quick access to information important to the user. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to the user's specific requirements, enabling their visibility on the application screen or disabling them if necessary.
+Information widgets are needed for quick access to information important you. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to your specific requirements, enabling their visibility on the application screen or disabling them if necessary.
 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
@@ -577,7 +577,9 @@ To add Parking widgets to the map screen, enable the OsmAnd [**Parking position 
 
 ![Parking widget](@site/static/img/plugins/parking/parking_widget.png)  
 
-This is a Parking plugin widget that shows the distance from the center of the screen to the parking location.
+The Parking plugin widget shows the distance from the center of the screen to the parking location. To set a parking spot on the map, zoom in to the required level, then long tap on the place on the map to open the context menu. Follow [these settings](../plugins/parking.md#set-a-spot).  
+
+**Note:** The Parking Widget will only appear if a parking position has been added to the map. Without a saved parking position, the widget will not be visible.
 
 | | |
 |:------------|:------------|

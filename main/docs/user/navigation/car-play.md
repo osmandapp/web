@@ -162,7 +162,7 @@ To build a route to a *POI* in *CarPlay*, follow these steps:
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  
 
-**Favorites** is one of the features of OsmAnd that allows the user to make a kind of notes on the map.
+**Favorites** is one of the features of OsmAnd that allows you to make a kind of notes on the map.
 
 - While using *CarPlay* you cannot add or modify *Favorites*, only use existing ones.
 - The list of [*Favorites*](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*.
@@ -211,7 +211,7 @@ The *Favorites* and *Tracks* categories have a special **Last Modified** folder.
 
 ## Additional Features
 
-In addition to the basic features of the OsmAnd app in *CarPlay* that provide convenient navigation in your vehicle, there are a number of additional features that enhance the user experience and make navigation more personalized, comfortable, and efficient.  
+In addition to the basic features of the OsmAnd app in *CarPlay* that provide convenient navigation in your vehicle, there are a number of additional features that enhance your experience and make navigation more personalized, comfortable, and efficient.  
 
 
 ### Voice Prompts

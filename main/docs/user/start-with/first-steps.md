@@ -124,7 +124,7 @@ The *Display language option* is used to change the language of the entire app, 
 
 <TabItem value="android" label="Android">
 
-*Android Settings → Apps → OsmAnd → Language*
+Go to: *Android* *Settings → Apps → OsmAnd → Language*
 
 ![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
 
@@ -132,7 +132,7 @@ The *Display language option* is used to change the language of the entire app, 
 
 <TabItem value="ios" label="iOS">
 
-*iOS Settings → OsmAnd Maps → Language*
+Go to: *iOS* *Settings → OsmAnd Maps → Language*
 
 ![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
 

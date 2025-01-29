@@ -317,7 +317,7 @@ If [Notification](#recording-settings) is enabled in the plugin settings, trip r
 
 **Important note**.
 
-This behavior is required by Android for any foreground service, like trip recording, to remain visible to the user.
+This behavior is required by Android for any foreground service, like trip recording, to remain visible to you.
 
 - If the notification is removed, Android will automatically stop the recording. You can use the [*Prevent standalone logging*](#recording-settings) setting.
 - The **Notification** setting in OsmAnd affects whether the notification bar shows a shortcut to start a recording when no recording is active. It does **not** control the visibility of the notification during an active recording.
@@ -361,7 +361,7 @@ To start using *Trip recording widgets*, you need to make all the following sett
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
 ![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
 
@@ -369,7 +369,7 @@ To start using *Trip recording widgets*, you need to make all the following sett
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
 ![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
 
@@ -450,7 +450,7 @@ If you have multiple widgets selected — *Duration*, *Uphill*, or *Downhill* �
 - [Track Context menu](../map/tracks/track-context-menu.md)
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
 
-### Troubleshooting
+### Common Issues and Solutions
 
 - [Recorded Tracks are Noisy](../troubleshooting/track-recording-issues.md#recorded-tracks-are-noisy)
 - [Recorded Tracks Have Gaps](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps)

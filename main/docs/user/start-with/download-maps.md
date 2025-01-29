@@ -88,7 +88,7 @@ If you are using a VPN, OsmAnd may suggest a map based on the VPN’s virtual lo
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
 ![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)  
 
@@ -96,7 +96,7 @@ If you are using a VPN, OsmAnd may suggest a map based on the VPN’s virtual lo
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ![Download map menu general iOS](@site/static/img/personal/maps/download_menu_ios.png)
 

@@ -191,7 +191,7 @@ A filter can consist of quite a number of items, the presence of which depends o
  13. **<Translate android="true" ids="poi_filter_parking"/>**. [Parking](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) includes facilities used by the public, customers, or other authorized users to park vehicles such as cars and trucks, commonly known as a car park (British English) or parking lot (American English).  
         Includes *34* types of filters.
 
- 14. **Personal transport**. All [types of vehicles](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) may be in the possession of the user.  
+ 14. **Personal transport**. All [types of vehicles](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) may be in the possession of you.  
         Includes *38* types of filters.
 
  15. **<Translate android="true" ids="poi_filter_public_transport"/>**. It is a transportation system designed to carry people for public purposes, accessible to all residents and visitors to a city or region.  
@@ -270,7 +270,7 @@ Online Search includes the following features:
 Use of Online Search:
 
 - Online search ensures that data is up-to-date and updates are available, as the service is constantly updated and uses open data sources.
-- It provides a wide coverage of places and objects, allowing the user to find places of interest in different regions of the world.
+- It provides a wide coverage of places and objects, allowing you to find places of interest in different regions of the world.
 - Online searches are real-time, providing quick access to search results.
 - Useful in cities and on highways with good Internet coverage.
 - Online search is convenient to use if there are no maps of the region and if it is impossible to download them.

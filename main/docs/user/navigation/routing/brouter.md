@@ -23,9 +23,9 @@ The third-party routing algorithm BRouter is only available for the Android vers
 
 *BRouter* is a third-party routing algorithm that can be used in the OsmAnd app for [offline navigation mode](../guidance/navigation-settings.md#navigation-type). It is designed to optimize a route based on different parameters, such as time, distance, or vehicle type.
 
-[BRouter](http://brouter.de/) uses OpenStreetMap data to create a route and then adjusts it based on specified parameters. It uses pre-calculated routes to quickly build a route offline. It also allows the user to customize routing profiles, which are defined by a set of parameters to account for various factors in route selection. The [BRouter readme.txt](http://brouter.de/brouter/readme.txt) file explains in more detail how to install and use the program.
+[BRouter](http://brouter.de/) uses OpenStreetMap data to create a route and then adjusts it based on specified parameters. It uses pre-calculated routes to quickly build a route offline. It also allows you to customize routing profiles, which are defined by a set of parameters to account for various factors in route selection. The [BRouter readme.txt](http://brouter.de/brouter/readme.txt) file explains in more detail how to install and use the program.
 
-OsmAnd provides the user with the ability to select routes with BRouter and configure routing profiles to better define the route according to the user's needs.  
+OsmAnd provides you with the ability to select routes with BRouter and configure routing profiles to better define the route according to your needs.  
 
 For more information you can visit official [Brouter website](http://www.brouter.de/brouter/algorithm.html).  
 
@@ -118,7 +118,7 @@ The BRouter app should be launched before OsmAnd for this specific entry to appe
 
 ## OsmAnd Version 4.7.1
 
-From version 4.7.1 upwards Osmand supports the profile parameter for mapping: Since Osmand version 3, many profiles can be defined in Osmand and the user can easily switch between these profiles. A new profile should be created, for example by copying the existing *Cycling* profile and giving it a new name in the format Brouter[fastbike]. You can use any of the exisiting BRouter profiles in the name that are installed on your device. All the profile files have a naming format of 'xxxxxxx.brf'. Or you could create a new profile of your own, like, 'myprofile.brf'.
+From version 4.7.1 upwards Osmand supports the profile parameter for mapping: Since Osmand version 3, many profiles can be defined in Osmand and you can easily switch between these profiles. A new profile should be created, for example by copying the existing *Cycling* profile and giving it a new name in the format Brouter[fastbike]. You can use any of the exisiting BRouter profiles in the name that are installed on your device. All the profile files have a naming format of 'xxxxxxx.brf'. Or you could create a new profile of your own, like, 'myprofile.brf'.
 
 The naming convention in the OsmAnd profile is important as the BRouter profile included in that profile establishes the actual bridge between OsmAnd and BRouter.
 
@@ -129,7 +129,7 @@ Then the profile "mystring" will be used in the Brouter-app. This new mapping re
 
 ### Examples: Osmand-profile name Brouter-app
 
-```
+```xml
 Brouter[trekking] "trekking" profile will be used file: trekking.brf
 Brouter[fastbike] "fastbike" profile will be used file: fastbike.brf
 ....

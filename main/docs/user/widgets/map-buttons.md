@@ -77,7 +77,7 @@ The Compass button indicates the orientation of the map on your device screen. F
 ### Map Orientation Modes
 
 - ![Compass](@site/static/img/widgets/map_butt_manually_ios.png)  
-**Manually rotated**. In this mode, you can manually rotate the map with a [two-pointer gesture (two-finger touch and rotate)](../map/interact-with-map.md#gestures) according to your preference. The orientation of the map does not depend on the direction of travel or the compass of the device but is determined by the user. The manual rotation mode is set by default.
+**Manually rotated**. In this mode, you can manually rotate the map with a [two-pointer gesture (two-finger touch and rotate)](../map/interact-with-map.md#gestures) according to your preference. The orientation of the map does not depend on the direction of travel or the compass of the device but is determined by you. The manual rotation mode is set by default.
 
 - ![Compass](@site/static/img/widgets/map_butt_movem_dir_ios.png)  
 **Movement direction**. In this mode, the map is oriented according to the direction of your movement known from GPS data. For example, if you turn to the right, the map also rotates so that the right side of the screen corresponds to the direction of movement. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).
@@ -105,7 +105,7 @@ The compass button provides multiple actions to control map orientation:
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/map_butt_compass_widg_andr.png)
 
@@ -113,7 +113,7 @@ The compass button provides multiple actions to control map orientation:
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/map_butt_compass_widg_ios.png)
 
@@ -134,7 +134,7 @@ The compass icon on the button always points to the North. You can select how th
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
 
 ![3D mode](@site/static/img/widgets/map_butt_3D_mode_andr.png)
 
@@ -142,7 +142,7 @@ The compass icon on the button always points to the North. You can select how th
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
+Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
 
 ![3D mode](@site/static/img/widgets/map_butt_3D_mode_ios.png)
 
@@ -164,7 +164,7 @@ The compass icon on the button always points to the North. You can select how th
 
 4. **Button position**. The position of the button on the map on the application screen is saved separately for each profile.
 
-5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/topography.md#configure-map-view) for the selected region to improve the user experience.
+5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/topography.md#configure-map-view) for the selected region.
 
 
 ## Custom Buttons

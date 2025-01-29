@@ -25,7 +25,7 @@ All widgets are [profile-dependent](../personal/profiles.md), so changes to one 
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
@@ -33,7 +33,7 @@ All widgets are [profile-dependent](../personal/profiles.md), so changes to one 
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)
 
@@ -48,7 +48,7 @@ All widgets are [profile-dependent](../personal/profiles.md), so changes to one 
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
 ![Configure screen](@site/static/img/widgets/configure_screen_andr.png)
 
@@ -56,7 +56,7 @@ All widgets are [profile-dependent](../personal/profiles.md), so changes to one 
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
+Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
 ![Configure screen](@site/static/img/widgets/configure_screen_ios.png)
 
@@ -110,7 +110,7 @@ To arrange widgets on the app screen, use panels. Panels enable you to place wid
 
 10. [Battery level](../widgets/info-widgets.md#battery-level). An *informational* widget shows battery level of your device.  
 
-11. [Radius ruler](../widgets/info-widgets.md#radius-ruler). The widget displays on a map the distance between the user's location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).  
+11. [Radius ruler](../widgets/info-widgets.md#radius-ruler). The widget displays on a map the distance between your location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).  
 
 12. [Glide ratio](../widgets/info-widgets.md#glide-ratio). The widgets show the glide ratio to the target and the average glide ratio for the current flight.  
     2 widgets are included: *Glide ratio to target*, *Average glide ratio*.
@@ -148,7 +148,7 @@ To arrange widgets on the app screen, use panels. Panels enable you to place wid
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Top / Bottom panel*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Top / Bottom panel*  
 
 ![top panel](@site/static/img/widgets/top_bottom_panel_1_andr.png)
 
@@ -156,7 +156,7 @@ To arrange widgets on the app screen, use panels. Panels enable you to place wid
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Top / Bottom panel*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Top / Bottom panel*
 
 ![top panel](@site/static/img/widgets/top_bottom_panel_1_ios.png)
 
@@ -239,7 +239,7 @@ To change the widget size and icon visibility:
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left / Right panel*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left / Right panel*  
 
 ![Configure screen](@site/static/img/widgets/configure_screen_left_right_andr.png) ![Configure screen](@site/static/img/widgets/configure_screen_left_right_2_andr.png)
 
@@ -247,7 +247,7 @@ To change the widget size and icon visibility:
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left / Right panel*  
+Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left / Right panel*  
 
 ![Configure screen](@site/static/img/widgets/configure_screen_left_right_ios.png)
 
@@ -263,7 +263,7 @@ The OsmAnd app allows you to place [widgets from the table](#widgets-for-all-pan
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Edit → Add page*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Edit → Add page*  
 
 ![Widget page](@site/static/img/widgets/widget_page_1_andr.png) ![Widget page](@site/static/img/widgets/widget_page_2_andr.png)
 
@@ -271,7 +271,7 @@ The OsmAnd app allows you to place [widgets from the table](#widgets-for-all-pan
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Edit → Add page*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Edit → Add page*
 
 ![Widget page](@site/static/img/widgets/widget_page_1_ios.png) ![Widget page](@site/static/img/widgets/widget_page_2_ios.png)  
 
@@ -349,7 +349,7 @@ To remove or delete a widget from the application screen, you need to select the
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Widget page](@site/static/img/widgets/conf_screen_buttons_andr.png)
 
@@ -357,7 +357,7 @@ To remove or delete a widget from the application screen, you need to select the
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Widget page](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
 
@@ -373,7 +373,7 @@ To remove or delete a widget from the application screen, you need to select the
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Widget page](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
 
@@ -381,7 +381,7 @@ To remove or delete a widget from the application screen, you need to select the
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Widget page](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
 
@@ -438,7 +438,7 @@ The *Button appearance* feature enables you to fully customize the look of butto
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
 
 ![Widget page](@site/static/img/widgets/conf_screen_other_andr.png)  
 
@@ -446,7 +446,7 @@ The *Button appearance* feature enables you to fully customize the look of butto
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Other*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Other*
 
 ![Widget page](@site/static/img/widgets/conf_screen_other_ios.png)
 
@@ -492,7 +492,7 @@ Allows you to set the placement of the cursor to *[My location](../map/interact-
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*  
 
 ![Widget page](@site/static/img/widgets/widget_actions_andr.png)
 
@@ -500,7 +500,7 @@ Allows you to set the placement of the cursor to *[My location](../map/interact-
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Any panel*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Any panel*
 
 ![Widget page](@site/static/img/widgets/widget_actions_ios.png)  
 

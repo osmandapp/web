@@ -183,7 +183,7 @@ If data is present, you can select one of the following types:
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
 
 ![Navigation route Android](@site/static/img/navigation/route/route_details_attributes_andr.png)
 
@@ -191,7 +191,7 @@ If data is present, you can select one of the following types:
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> tab*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> tab*
 
 ![Navigation route iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
 

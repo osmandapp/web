@@ -41,7 +41,7 @@ OsmAnd offers a variety of default profiles tailored for different activities, i
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
 ![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
 
@@ -81,7 +81,7 @@ This section contains all settings related to appearance, navigation options, ma
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile"/>*
 
 ![Favorites folder functions android](@site/static/img/personal/profile_settings_free_backup_andr.png)
 
@@ -89,7 +89,7 @@ This section contains all settings related to appearance, navigation options, ma
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
 ![Favorites actions ios](@site/static/img/personal/profile_settings_free_backup_ios.png)
 
@@ -112,7 +112,7 @@ This section contains settings for the application theme and compass button, map
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
 
 ![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_2_andr.png)
 
@@ -120,7 +120,7 @@ This section contains settings for the application theme and compass button, map
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
 
@@ -247,7 +247,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
 ![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_gs_other_android.png)
 
@@ -255,7 +255,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
 
 ![Profiles General Settings Other iOS](@site/static/img/personal/profiles/profile_other_1_ios.png)  
 
@@ -281,7 +281,7 @@ The **Other** section offers additional profile settings, allowing you to custom
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
@@ -289,7 +289,7 @@ The **Other** section offers additional profile settings, allowing you to custom
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_overview_ios.png)
 
@@ -329,7 +329,7 @@ There are no navigation settings in the *Browse map* profile.
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,configure_map"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,configure_map"/>*  
 
 ![Profiles Configure map Settings iOS](@site/static/img/personal/profiles/profile_configure_map_ios.png)
 
@@ -351,8 +351,8 @@ The [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.
 
 <TabItem value="android" label="Android">  
 
-- *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-- *Menu → Settings → App Profile → Configure screen*
+- Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+- Go to: *Android* *Menu → Settings → App Profile → Configure screen*
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
@@ -360,7 +360,7 @@ The [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)
 
@@ -377,7 +377,7 @@ The [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-s
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
 ![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
 
@@ -385,7 +385,7 @@ The [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-s
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
 ![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
 
@@ -402,7 +402,7 @@ The **Profile appearance** settings allow you to customize your profile's name a
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
 ![My location Appearance](@site/static/img/personal/profiles/location_appearance_andr.png)
 
@@ -410,7 +410,7 @@ The **Profile appearance** settings allow you to customize your profile's name a
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
 ![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios.png)
 
@@ -493,7 +493,7 @@ To access the plugin's settings, you must first [**enable the plugin**](../plugi
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugin_settings"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugin_settings"/>*  
 
 ![Profile Settings Plugins Android](@site/static/img/personal/profiles/profile_plugins_1_andr.png)
 
@@ -501,7 +501,7 @@ To access the plugin's settings, you must first [**enable the plugin**](../plugi
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group"/>*
 
 ![Profile Settings Plugins iOS](@site/static/img/personal/profiles/profile_plugins_1_ios.png)
 

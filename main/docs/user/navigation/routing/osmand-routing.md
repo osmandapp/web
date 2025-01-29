@@ -88,7 +88,7 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 
 <TabItem value="android" label="Android">  
 
-*Navigation button → Settings → Avoid roads...*
+Go to: *Android* Navigation button → Settings → Avoid roads...*
 
 ![Avoid road menu Android](@site/static/img/navigation/routing/avoid_roads_menu_andr_2.png)
 
@@ -96,7 +96,7 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 
 <TabItem value="ios" label="iOS">
 
-*Navigation button → Settings → Avoid roads*
+Go to: *iOS* *Navigation button → Settings → Avoid roads*
 
 ![Avoid road menu iOS](@site/static/img/navigation/routing/avoid_roads_menu_ios_2.png)
 
@@ -133,7 +133,7 @@ When you select a road to avoid using *map context menu* or *Avoid roads menu*, 
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
 
 ![Avoid road on the map export Android 1](@site/static/img/navigation/routing/avoid_roads_export_andr_1.png) ![Avoid road on the map export Android 2](@site/static/img/navigation/routing/avoid_roads_export_andr_2.png)
 
@@ -141,7 +141,7 @@ When you select a road to avoid using *map context menu* or *Avoid roads menu*, 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
 
 ![Avoid road on the map export iOS 1](@site/static/img/navigation/routing/avoid_roads_export_ios_1.png) ![Avoid road on the map export iOS 2](@site/static/img/navigation/routing/avoid_roads_export_ios_2.png)
 
