@@ -90,6 +90,18 @@ export default function TrackAnalyzerMenu() {
         });
     }, [startAnalysis, tracksFolders]);
 
+    // segments -> map
+    useEffect(() => {
+        if (analyseResult) {
+            ctx.setTrackAnalyzer({
+                ...ctx.trackAnalyzer,
+                start: startPoint,
+                finish: finishPoint,
+                segments: analyseResult.segments,
+            });
+        }
+    }, [analyseResult]);
+
     async function getTracksBySegment() {
         const coordinates = getPointsForAnalysis({
             startPoint,

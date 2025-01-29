@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import { Marker } from 'react-leaflet';
+import { Marker, GeoJSON } from 'react-leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
 import { LatLng } from 'leaflet';
 
@@ -9,6 +9,7 @@ export default function TrackAnalyzerLayer() {
 
     const [startPoint, setStartPoint] = useState(null);
     const [finishPoint, setFinishPoint] = useState(null);
+    const [geoJsonSegments, setGeoJsonSegments] = useState([]);
 
     // menu -> map
     useEffect(() => {
@@ -20,7 +21,28 @@ export default function TrackAnalyzerLayer() {
                 setFinishPoint(ctx.trackAnalyzer.finish);
             }
         }
-    }, [ctx.trackAnalyzer]);
+    }, [ctx.trackAnalyzer?.start, ctx.trackAnalyzer?.finish]);
+
+    useEffect(() => {
+        if (ctx.trackAnalyzer?.segments) {
+            const segmentsMap = ctx.trackAnalyzer.segments;
+            const geoJsonFeatures = Object.keys(segmentsMap).flatMap((key) => {
+                const segments = segmentsMap[key];
+                return segments.map((segment) => ({
+                    type: 'Feature',
+                    properties: {
+                        color: segment.color || '#227bff',
+                        name: segment.name,
+                    },
+                    geometry: {
+                        type: 'LineString',
+                        coordinates: segment.points.map((point) => [point.lon, point.lat]),
+                    },
+                }));
+            });
+            setGeoJsonSegments(geoJsonFeatures);
+        }
+    }, [ctx.trackAnalyzer?.segments]);
 
     // map -> menu
     useEffect(() => {
@@ -45,6 +67,14 @@ export default function TrackAnalyzerLayer() {
         setPoint(new LatLng(lat, lng));
     };
 
+    const onEachFeature = (feature, layer) => {
+        layer.setStyle({
+            color: feature.properties.color,
+            weight: 10,
+            opacity: 0.6,
+        });
+    };
+
     return (
         <>
             {startPoint && (
@@ -67,6 +97,16 @@ export default function TrackAnalyzerLayer() {
                     eventHandlers={{
                         dragend: (e) => handleMarkerDragEnd(e, setFinishPoint),
                     }}
+                />
+            )}
+            {geoJsonSegments.length > 0 && (
+                <GeoJSON
+                    key={'track-analyzer-segments'}
+                    data={{
+                        type: 'FeatureCollection',
+                        features: geoJsonSegments,
+                    }}
+                    onEachFeature={onEachFeature}
                 />
             )}
         </>
