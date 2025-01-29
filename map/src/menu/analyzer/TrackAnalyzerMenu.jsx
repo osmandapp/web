@@ -62,6 +62,18 @@ export default function TrackAnalyzerMenu() {
             return;
         }
         if (ctx.trackAnalyzer) {
+            // clear segments without points from map
+            if (!startPoint || !finishPoint) {
+                ctx.setTrackAnalyzer({
+                    ...ctx.trackAnalyzer,
+                    start: startPoint,
+                    finish: finishPoint,
+                    segments: null,
+                    segmentsUpdateDate: new Date().getMilliseconds(),
+                });
+                return;
+            }
+            // update points
             if (ctx.trackAnalyzer.start !== startPoint || ctx.trackAnalyzer.finish !== finishPoint) {
                 ctx.setTrackAnalyzer({
                     ...ctx.trackAnalyzer,
@@ -72,23 +84,35 @@ export default function TrackAnalyzerMenu() {
         }
     }, [startPoint, finishPoint]);
 
-    useEffect(() => {
-        if (!startAnalysis || !tracksFolders || tracksFolders.length === 0) {
-            return;
-        }
-
+    function isAnalysisReady() {
+        let isReady = true;
+        // check point
         if (!startPoint && !finishPoint) {
+            isReady = false;
+        }
+        // check tracks
+        if (!tracksFolders || tracksFolders.length === 0) {
+            isReady = false;
+        }
+        if (!isReady && analyseResult) {
+            setAnalyseResult(null);
+        }
+        return isReady;
+    }
+
+    useEffect(() => {
+        if (!isAnalysisReady()) {
             return;
         }
 
         getTracksBySegment().then((res) => {
-            if (res) {
+            if (res?.files?.length > 0) {
                 addColorsToSegments(res);
-                setAnalyseResult(res);
+                setAnalyseResult({ ...res });
             }
             setStartAnalysis(false);
         });
-    }, [startAnalysis, tracksFolders]);
+    }, [startAnalysis, tracksFolders, startPoint, finishPoint]);
 
     // segments -> map
     useEffect(() => {
@@ -99,6 +123,13 @@ export default function TrackAnalyzerMenu() {
                 finish: finishPoint,
                 segmentsUpdateDate: new Date().getMilliseconds(),
                 segments: analyseResult.segments,
+            });
+        } else {
+            // clear segments from map
+            ctx.setTrackAnalyzer({
+                ...ctx.trackAnalyzer,
+                segmentsUpdateDate: new Date().getMilliseconds(),
+                segments: null,
             });
         }
     }, [analyseResult]);

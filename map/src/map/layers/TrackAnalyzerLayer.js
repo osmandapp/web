@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TRACK_ANALYZER } from '../../context/AppContext';
 import { Marker, GeoJSON } from 'react-leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
 import { LatLng } from 'leaflet';
@@ -47,8 +47,30 @@ export default function TrackAnalyzerLayer() {
                     features: geoJsonFeatures,
                 });
             }
+        } else {
+            if (geoJsonRef?.current) {
+                geoJsonRef.current.clearLayers();
+            }
         }
     }, [ctx.trackAnalyzer?.segmentsUpdateDate]);
+
+    useEffect(() => {
+        if (!ctx.trackAnalyzer && (startPoint || finishPoint)) {
+            // clear points
+            setStartPoint(null);
+            setFinishPoint(null);
+            // clear geojson
+            if (geoJsonRef.current) {
+                geoJsonRef.current.clearLayers();
+            }
+        }
+    }, [ctx.trackAnalyzer]);
+
+    useEffect(() => {
+        if (ctx.currentObjectType !== OBJECT_TRACK_ANALYZER && ctx.trackAnalyzer) {
+            ctx.setTrackAnalyzer(null);
+        }
+    }, [ctx.currentObjectType]);
 
     // map -> menu
     useEffect(() => {
