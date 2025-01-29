@@ -9,6 +9,10 @@
     min-width: 24px !important;
     max-width: 24px !important;
 }
+.segmentIcon {
+    min-width: 24px !important;
+    max-width: 24px !important;
+}
 .iconSelected {
     fill: #237bff !important;
     min-width: 24px !important;

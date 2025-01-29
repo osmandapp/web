@@ -144,12 +144,13 @@ export default function TrackSegmentStat({ analyseResult, height }) {
                 segments.map((segment, index) => {
                     const stats = analyseResult.trackAnalysis[trackName]?.[index];
                     const isFirstSegment = trackIndex === 0 && index === 0;
+                    const color = segment.color;
 
                     return (
                         <Box key={`${trackName}-${index}`}>
                             {!isFirstSegment && <ThickDivider />}
                             <MenuItem className={styles.tracksSelectItem}>
-                                <ListItemIcon className={styles.icon}>
+                                <ListItemIcon sx={{ fill: color }} className={styles.segmentIcon}>
                                     <SegmentIcon />
                                 </ListItemIcon>
                                 <ListItemText>

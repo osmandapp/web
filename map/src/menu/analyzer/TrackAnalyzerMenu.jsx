@@ -15,6 +15,7 @@ import { quickNaNfix } from '../../util/Utils';
 import { getPointsForAnalysis } from './util/PointsManager';
 import TrackSegmentStat from './TrackSegmentStat';
 import ThickDivider from '../components/dividers/ThickDivider';
+import { addColorsToSegments } from './util/SegmentColorizer';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
@@ -82,6 +83,7 @@ export default function TrackAnalyzerMenu() {
 
         getTracksBySegment().then((res) => {
             if (res) {
+                addColorsToSegments(res);
                 setAnalyseResult(res);
             }
             setStartAnalysis(false);
