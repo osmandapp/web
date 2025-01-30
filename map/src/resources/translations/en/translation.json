@@ -5251,5 +5251,7 @@
   "km_h": "km/h",
   "shared_string_uphill": "Uphill",
   "shared_string_downhill": "Downhill",
-  "duration": "Duration"
+  "duration": "Duration",
+  "sort_duration_descending": "Longest duration first",
+  "sort_duration_ascending": "Shortest duration first"
 }

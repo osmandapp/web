@@ -9,6 +9,8 @@ import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as NewDateIcon } from '../../assets/icons/ic_action_sort_date_1.svg';
 import { ReactComponent as OldDateIcon } from '../../assets/icons/ic_action_sort_date_31.svg';
 import { ReactComponent as NearestIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
+import { ReactComponent as LongDurationIcon } from '../../assets/icons/ic_action_sort_duration_long_to_short.svg';
+import { ReactComponent as ShortDurationIcon } from '../../assets/icons/ic_action_sort_duration_short_to_long.svg';
 import styles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
 import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
@@ -42,6 +44,17 @@ function byDistance(files, reverse) {
     return [...files].sort((a, b) => {
         const A = getAnalysisData(a)?.totalDistance ?? 0;
         const B = getAnalysisData(b)?.totalDistance ?? 0;
+        if (A === B) {
+            return az(a.name, b.name);
+        }
+        return reverse ? B - A : A - B;
+    });
+}
+
+function byDuration(files, reverse) {
+    return [...files].sort((a, b) => {
+        const A = getAnalysisData(a)?.duration ?? 0;
+        const B = getAnalysisData(b)?.duration ?? 0;
         if (A === B) {
             return az(a.name, b.name);
         }
@@ -151,6 +164,18 @@ export const allMethods = {
         callback: byCreationTime,
         icon: <OldDateIcon />,
         name: () => i18n?.t('sort_date_descending'),
+    },
+    longestDuration: {
+        reverse: true,
+        callback: byDuration,
+        icon: <LongDurationIcon />,
+        name: () => i18n?.t('sort_duration_descending'),
+    },
+    shortestDuration: {
+        reverse: false,
+        callback: byDuration,
+        icon: <ShortDurationIcon />,
+        name: () => i18n?.t('sort_duration_ascending'),
     },
 };
 
@@ -364,6 +389,29 @@ const SortActions = forwardRef(
                                         value="oldDate"
                                         control={<Radio className={styles.control} size="small" />}
                                         label={<ActionItem item={allMethods.oldDate} />}
+                                    />
+                                </>
+                            )}
+                            {customGroup && (
+                                <>
+                                    <Divider className={styles.dividerActions} />
+                                    <FormControlLabel
+                                        id={'se-sort-longest-duration'}
+                                        className={styles.controlLabel}
+                                        disableTypography={true}
+                                        labelPlacement="start"
+                                        value="longestDuration"
+                                        control={<Radio className={styles.control} size="small" />}
+                                        label={<ActionItem item={allMethods.longestDuration} />}
+                                    />
+                                    <FormControlLabel
+                                        id={'se-sort-shortest-duration'}
+                                        className={styles.controlLabel}
+                                        disableTypography={true}
+                                        labelPlacement="start"
+                                        value="shortestDuration"
+                                        control={<Radio className={styles.control} size="small" />}
+                                        label={<ActionItem item={allMethods.shortestDuration} />}
                                     />
                                 </>
                             )}
