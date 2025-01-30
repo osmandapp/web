@@ -32,8 +32,14 @@ export default function TrackAnalyzerMenu() {
     const [startAnalysis, setStartAnalysis] = useState(false);
     const [tracksFolders, setTracksFolders] = useState(null);
     const [analyseResult, setAnalyseResult] = useState(null);
-    const [sortTracks, setSortTracks] = useState([]);
-    const [tracksResult, setTracksResult] = useState(null);
+    const [sortedSegments, setSortedSegments] = useState([]);
+    const [segmentsResult, setSegmentsResult] = useState(null);
+
+    useEffect(() => {
+        if (segmentsResult) {
+            setSortedSegments(segmentsResult.files);
+        }
+    }, [segmentsResult]);
 
     // map -> menu
     useEffect(() => {
@@ -111,6 +117,7 @@ export default function TrackAnalyzerMenu() {
         getTracksBySegment().then((res) => {
             if (res?.files?.length > 0) {
                 addColorsToSegments(res);
+                prepareSegmentsForSort(res);
                 setAnalyseResult({ ...res });
             }
             setStartAnalysis(false);
@@ -120,8 +127,11 @@ export default function TrackAnalyzerMenu() {
     // segments -> map
     useEffect(() => {
         if (analyseResult) {
-            setTracksResult({
-                files: analyseResult.files,
+            setSegmentsResult((prep) => {
+                return {
+                    ...prep,
+                    files: Object.values(analyseResult.segments).flat(),
+                };
             });
             ctx.setTrackAnalyzer({
                 ...ctx.trackAnalyzer,
@@ -139,6 +149,40 @@ export default function TrackAnalyzerMenu() {
             });
         }
     }, [analyseResult]);
+
+    function prepareSegmentsForSort(analyseResult) {
+        Object.keys(analyseResult.segments).forEach((segmentName) => {
+            const segmentArray = analyseResult.segments[segmentName];
+            const trackAnalysisArray = analyseResult.trackAnalysis[segmentName];
+            const fileData = analyseResult.files[segmentName];
+
+            if (
+                Array.isArray(segmentArray) &&
+                Array.isArray(trackAnalysisArray) &&
+                segmentArray.length === trackAnalysisArray.length
+            ) {
+                segmentArray.forEach((segment, index) => {
+                    segment.trackInd = index;
+                    segment.allInd = segmentArray.length;
+                    if (trackAnalysisArray[index]?.totalDist !== undefined) {
+                        segment.totalDistance = trackAnalysisArray[index].totalDist;
+                    }
+                    if (trackAnalysisArray[index]?.duration !== undefined) {
+                        segment.duration = trackAnalysisArray[index].duration;
+                    }
+                    if (fileData) {
+                        Object.keys(fileData).forEach((key) => {
+                            if (!(key in segment)) {
+                                segment[key] = fileData[key];
+                            }
+                        });
+                    }
+                    // copy all stats to segment
+                    segment.stats = trackAnalysisArray[index];
+                });
+            }
+        });
+    }
 
     async function getTracksBySegment() {
         const coordinates = getPointsForAnalysis({
@@ -197,8 +241,8 @@ export default function TrackAnalyzerMenu() {
                             </Typography>
                             <SortFilesButton
                                 type={TRACK_FILE_TYPE}
-                                customGroup={tracksResult}
-                                setSortFiles={setSortTracks}
+                                customGroup={segmentsResult}
+                                setSortFiles={setSortedSegments}
                             />
                         </Toolbar>
                     </AppBar>
@@ -223,7 +267,7 @@ export default function TrackAnalyzerMenu() {
                     {analyseResult !== null && (
                         <>
                             <ThickDivider />
-                            <TrackSegmentStat analyseResult={analyseResult} height={height} sortTracks={sortTracks} />
+                            <TrackSegmentStat height={height} sortedSegments={sortedSegments} />
                         </>
                     )}
                     <Box
