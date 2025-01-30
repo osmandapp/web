@@ -435,6 +435,7 @@ export const AppContextProvider = (props) => {
 
     const [configureMapState, setConfigureMapState] = useState(getConfigureMap);
 
+    // tracks:{"": 'za', new!!!: 'za'}
     const [selectedSort, setSelectedSort] = useState({});
 
     const [openProFeatures, setOpenProFeatures] = useState(null);

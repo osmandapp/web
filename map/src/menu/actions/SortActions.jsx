@@ -15,6 +15,7 @@ import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/Favorite
 import i18n from '../../i18n';
 import ActionItem from '../components/ActionItem';
 import { SHARE_TYPE } from '../../manager/ShareManager';
+import { getSelectedSort } from '../components/SortFilesButton';
 
 const az = (a, b) => (a > b) - (a < b);
 
@@ -162,22 +163,13 @@ const defaultMethod = () => {
     return Object.keys(allMethods)[0];
 };
 
-export function getSelectedSort({ trackGroup = null, favoriteGroup = null, ctx, defaultMethod = null }) {
-    if (trackGroup && ctx.selectedSort?.tracks) {
-        return ctx.selectedSort.tracks[trackGroup.fullName];
-    } else if (favoriteGroup && ctx.selectedSort?.favorites) {
-        return ctx.selectedSort.favorites[
-            favoriteGroup === DEFAULT_FAV_GROUP_NAME ? DEFAULT_FAV_GROUP_NAME : favoriteGroup.name
-        ];
-    }
-    return defaultMethod;
-}
-
 const SortActions = forwardRef(
     (
         {
             trackGroup = null,
             favoriteGroup = null,
+            customGroup = null,
+            customGroupType = null,
             setSortFiles = null,
             setSortGroups = null,
             setOpenSort = null,
@@ -190,7 +182,14 @@ const SortActions = forwardRef(
     ) => {
         const ctx = useContext(AppContext);
         const [currentMethod, setCurrentMethod] = useState(
-            getSelectedSort({ trackGroup, favoriteGroup, ctx, defaultMethod: defaultMethod() }) || defaultMethod()
+            getSelectedSort({
+                trackGroup,
+                favoriteGroup,
+                customGroup,
+                customGroupType,
+                ctx,
+                defaultMethod: defaultMethod(),
+            }) || defaultMethod()
         );
 
         const files = () => {
@@ -198,6 +197,8 @@ const SortActions = forwardRef(
                 return trackGroup.groupFiles;
             } else if (favoriteGroup) {
                 return ctx.favorites.mapObjs[favoriteGroup.id]?.wpts;
+            } else if (customGroup) {
+                return customGroup.files;
             }
             return null;
         };
@@ -265,6 +266,11 @@ const SortActions = forwardRef(
                 updatedSelectedSort.favorites[
                     favoriteGroup === DEFAULT_FAV_GROUP_NAME ? DEFAULT_FAV_GROUP_NAME : favoriteGroup.name
                 ] = method;
+            } else if (customGroup) {
+                if (!updatedSelectedSort.custom) {
+                    updatedSelectedSort.custom = {};
+                }
+                updatedSelectedSort.custom[customGroupType] = method;
             }
             ctx.setSelectedSort(updatedSelectedSort);
         }
@@ -315,7 +321,7 @@ const SortActions = forwardRef(
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<ActionItem item={allMethods.za} />}
                             />
-                            {trackGroup && (
+                            {(trackGroup || customGroup) && (
                                 <>
                                     <Divider className={styles.dividerActions} />
                                     <FormControlLabel

@@ -1,8 +1,7 @@
 import { AppBar, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
@@ -12,8 +11,7 @@ import styles from '../trackfavmenu.module.css';
 import TracksManager, { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import AddFolderDialog from '../../dialogs/tracks/AddFolderDialog';
-import SortActions, { allMethods, byTime, getSelectedSort } from './SortActions';
-import SortMenu from './SortMenu';
+import { byTime } from './SortActions';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import FavoriteGroupUploader from '../../frame/components/util/FavoriteGroupUploader';
 import IconButtonWithPermissions from '../../frame/components/IconButtonWithPermissions';
@@ -21,6 +19,7 @@ import { useTranslation } from 'react-i18next';
 import { closeHeader } from './HeaderHelper';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import { SHARE_TYPE } from '../../manager/ShareManager';
+import SortFilesButton from '../components/SortFilesButton';
 
 export default function GroupHeader({
     type,
@@ -39,22 +38,6 @@ export default function GroupHeader({
     const { t } = useTranslation();
 
     const [openAddFolderDialog, setOpenAddFolderDialog] = useState(false);
-    const [openSort, setOpenSort] = useState(false);
-    const [sortName, setSortName] = useState(t('sort_last_modified'));
-    const [sortIcon, setSortIcon] = useState(<TimeIcon />);
-    const anchorEl = useRef(null);
-
-    const sortType = getSelectedSort({ trackGroup, favoriteGroup, ctx });
-    const currentSortType = sortType ? sortType : 'time';
-    useEffect(() => {
-        if (sortType) {
-            setSortIcon(allMethods[sortType].icon);
-            setSortName(allMethods[sortType].name());
-        } else {
-            setSortIcon(allMethods['time'].icon);
-            setSortName(allMethods['time'].name());
-        }
-    }, [ctx.selectedSort, trackGroup]);
 
     const hiddenBtn = smartf?.type === SHARE_TYPE;
 
@@ -106,17 +89,6 @@ export default function GroupHeader({
         }
     }
 
-    function disableSort() {
-        if (ctx.loginUser) {
-            if (type === TRACKS_TYPE) {
-                return !trackGroup || trackGroup.files?.length === 0;
-            } else if (type === FAVORITES_TYPE) {
-                return ctx.favorites.groups?.length === 0;
-            }
-        }
-        return true;
-    }
-
     return (
         <>
             <AppBar position="static" className={styles.appbar}>
@@ -143,21 +115,15 @@ export default function GroupHeader({
                         </IconButton>
                     )}
                     {getTitle()}
-                    <Tooltip key={'sort_tracks'} title={`${t('sort_by')}: ${sortName}`} arrow placement="bottom-end">
-                        <span>
-                            <IconButton
-                                id={`se-sort-button-${currentSortType}`}
-                                variant="contained"
-                                type="button"
-                                className={styles.appBarIcon}
-                                onClick={() => setOpenSort(true)}
-                                ref={anchorEl}
-                                disabled={disableSort()}
-                            >
-                                {sortIcon}
-                            </IconButton>
-                        </span>
-                    </Tooltip>
+                    <SortFilesButton
+                        type={type}
+                        trackGroup={trackGroup}
+                        favoriteGroup={favoriteGroup}
+                        setSortGroups={setSortGroups}
+                        setSortFiles={setSortFiles}
+                        markers={markers}
+                        smartf={smartf}
+                    />
                     {type === TRACKS_TYPE && !hiddenBtn && (
                         <Tooltip key={'add_folder'} title={t('add_new_folder')} arrow placement="bottom-end">
                             <span>
@@ -245,24 +211,6 @@ export default function GroupHeader({
             {openAddFolderDialog && (
                 <AddFolderDialog trackGroup={trackGroup} setOpenAddFolderDialog={setOpenAddFolderDialog} />
             )}
-            <SortMenu
-                openSort={openSort}
-                setOpenSort={setOpenSort}
-                anchorEl={anchorEl}
-                actions={
-                    <SortActions
-                        trackGroup={trackGroup}
-                        favoriteGroup={favoriteGroup}
-                        setSortFiles={setSortFiles}
-                        setSortGroups={setSortGroups}
-                        setOpenSort={setOpenSort}
-                        setSortIcon={setSortIcon}
-                        setSortName={setSortName}
-                        markers={markers}
-                        smartf={smartf}
-                    />
-                }
-            />
         </>
     );
 }

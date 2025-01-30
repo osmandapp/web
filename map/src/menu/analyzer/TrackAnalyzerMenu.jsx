@@ -16,6 +16,7 @@ import { getPointsForAnalysis } from './util/PointsManager';
 import TrackSegmentStat from './TrackSegmentStat';
 import ThickDivider from '../components/dividers/ThickDivider';
 import { addColorsToSegments } from './util/SegmentColorizer';
+import SortFilesButton, { TRACK_FILE_TYPE } from '../components/SortFilesButton';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
@@ -31,6 +32,8 @@ export default function TrackAnalyzerMenu() {
     const [startAnalysis, setStartAnalysis] = useState(false);
     const [tracksFolders, setTracksFolders] = useState(null);
     const [analyseResult, setAnalyseResult] = useState(null);
+    const [sortTracks, setSortTracks] = useState([]);
+    const [tracksResult, setTracksResult] = useState(null);
 
     // map -> menu
     useEffect(() => {
@@ -117,6 +120,9 @@ export default function TrackAnalyzerMenu() {
     // segments -> map
     useEffect(() => {
         if (analyseResult) {
+            setTracksResult({
+                files: analyseResult.files,
+            });
             ctx.setTrackAnalyzer({
                 ...ctx.trackAnalyzer,
                 start: startPoint,
@@ -189,6 +195,11 @@ export default function TrackAnalyzerMenu() {
                             <Typography id="se-track-analyzer-menu" component="div" className={headerStyles.title}>
                                 {t('web:tracks_analyzer')}
                             </Typography>
+                            <SortFilesButton
+                                type={TRACK_FILE_TYPE}
+                                customGroup={tracksResult}
+                                setSortFiles={setSortTracks}
+                            />
                         </Toolbar>
                     </AppBar>
                     <Box>
@@ -212,7 +223,7 @@ export default function TrackAnalyzerMenu() {
                     {analyseResult !== null && (
                         <>
                             <ThickDivider />
-                            <TrackSegmentStat analyseResult={analyseResult} height={height} />
+                            <TrackSegmentStat analyseResult={analyseResult} height={height} sortTracks={sortTracks} />
                         </>
                     )}
                     <Box

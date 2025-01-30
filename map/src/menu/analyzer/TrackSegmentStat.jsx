@@ -1,6 +1,6 @@
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import styles from './trackanalyzer.module.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ReactComponent as SegmentIcon } from '../../assets/icons/ic_action_gpx_width_bold.svg';
 import { ReactComponent as MaxSpeedIcon } from '../../assets/icons/ic_action_max_speed_16.svg';
 import { ReactComponent as AvgSpeedIcon } from '../../assets/icons/ic_action_speed_16.svg';
@@ -22,9 +22,29 @@ import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import { MAIN_BLOCK_SIZE } from './TrackAnalyzerMenu';
 import { useTranslation } from 'react-i18next';
+import { isEmpty } from 'lodash';
 
-export default function TrackSegmentStat({ analyseResult, height }) {
+export default function TrackSegmentStat({ analyseResult, height, sortTracks }) {
     const { t } = useTranslation();
+    const [sortedSegments, setSortedSegments] = useState(null);
+
+    // sort segments by track name
+    useEffect(() => {
+        if (analyseResult && analyseResult.segments && analyseResult.files) {
+            if (sortTracks && !isEmpty(sortTracks)) {
+                const sortedSegments = sortTracks.reduce((acc, file) => {
+                    if (analyseResult.segments[file.name]) {
+                        acc[file.name] = analyseResult.segments[file.name];
+                    }
+                    return acc;
+                }, {});
+
+                setSortedSegments(sortedSegments);
+            } else {
+                setSortedSegments(analyseResult.segments);
+            }
+        }
+    }, [analyseResult, sortTracks]);
 
     const formatDate = (timestamp) => {
         const locale = locales[i18n.language] || locales.enUS;
@@ -140,31 +160,55 @@ export default function TrackSegmentStat({ analyseResult, height }) {
 
     return (
         <Box sx={{ maxHeight: `${height - MAIN_BLOCK_SIZE}px`, overflowY: 'auto' }}>
-            {Object.entries(analyseResult.segments).map(([trackName, segments], trackIndex) =>
-                segments.map((segment, index) => {
-                    const stats = analyseResult.trackAnalysis[trackName]?.[index];
-                    const isFirstSegment = trackIndex === 0 && index === 0;
-                    const color = segment.color;
+            {sortedSegments &&
+                Object.entries(sortedSegments).map(([trackName, segments], trackIndex) =>
+                    segments.map((segment, index) => {
+                        const stats = analyseResult.trackAnalysis[trackName]?.[index];
+                        const isFirstSegment = trackIndex === 0 && index === 0;
+                        const color = segment.color;
 
-                    return (
-                        <Box key={`${trackName}-${index}`}>
-                            {!isFirstSegment && <ThickDivider />}
-                            <MenuItem className={styles.tracksSelectItem}>
-                                <ListItemIcon sx={{ fill: color }} className={styles.segmentIcon}>
-                                    <SegmentIcon />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <Typography variant="inherit" noWrap>
-                                        {segment.name} {segments.length > 1 ? `(${index + 1}/${segments.length})` : ''}
-                                    </Typography>
-                                </ListItemText>
-                            </MenuItem>
-                            <SimpleDivider />
-                            {Statistics(stats)}
-                        </Box>
-                    );
-                })
-            )}
+                        return (
+                            <Box key={`${trackName}-${index}`}>
+                                {!isFirstSegment && <ThickDivider />}
+                                <MenuItem className={styles.tracksSelectItem}>
+                                    <ListItemIcon sx={{ fill: color }} className={styles.segmentIcon}>
+                                        <SegmentIcon />
+                                    </ListItemIcon>
+                                    <ListItemText>
+                                        <Typography
+                                            variant="inherit"
+                                            noWrap
+                                            sx={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                overflow: 'hidden',
+                                                whiteSpace: 'nowrap',
+                                            }}
+                                        >
+                                            <Box
+                                                component="span"
+                                                sx={{
+                                                    overflow: 'hidden',
+                                                    textOverflow: 'ellipsis',
+                                                    whiteSpace: 'nowrap',
+                                                    flexGrow: 1,
+                                                    minWidth: 0,
+                                                }}
+                                            >
+                                                {segment.name}
+                                            </Box>
+                                            <Box component="span" sx={{ flexShrink: 0, marginLeft: '4px' }}>
+                                                {segments.length > 1 ? `(${index + 1}/${segments.length})` : ''}
+                                            </Box>
+                                        </Typography>
+                                    </ListItemText>
+                                </MenuItem>
+                                <SimpleDivider />
+                                {Statistics(stats)}
+                            </Box>
+                        );
+                    })
+                )}
         </Box>
     );
 }
