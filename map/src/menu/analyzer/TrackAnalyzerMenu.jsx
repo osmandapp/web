@@ -36,9 +36,7 @@ export default function TrackAnalyzerMenu() {
     const [segmentsResult, setSegmentsResult] = useState(null);
 
     useEffect(() => {
-        if (segmentsResult) {
-            setSortedSegments(segmentsResult.files);
-        }
+        setSortedSegments(segmentsResult ? segmentsResult.files : []);
     }, [segmentsResult]);
 
     // map -> menu
@@ -147,6 +145,7 @@ export default function TrackAnalyzerMenu() {
                 segmentsUpdateDate: new Date().getMilliseconds(),
                 segments: null,
             });
+            setSegmentsResult(null);
         }
     }, [analyseResult]);
 

@@ -344,7 +344,7 @@ const SortActions = forwardRef(
                                     />
                                 </>
                             )}
-                            {favoriteGroup && !setSortFiles && (
+                            {((favoriteGroup && !setSortFiles) || customGroup) && (
                                 <>
                                     <Divider className={styles.dividerActions} />
                                     <FormControlLabel
