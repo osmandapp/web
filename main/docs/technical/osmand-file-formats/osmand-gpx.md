@@ -267,114 +267,96 @@ Each `<trkpt>` (track point) in the GPX file can include additional attributes t
   </trkpt>
 ```
 
-## Calculated Routes
-
-### Calculated Route Structure
-
-With OsmAnd, you can export detailed calculated routes, including all essential data such as route segments, turns, road names, road types, and restrictions. This functionality ensures the route can be fully restored as if it were freshly built, even without access to the respective offline maps.  
-
-***GPX file structure for calculated routes***  
-
-A GPX file may contain multiple calculated routes. Each route is divided into segments within the `<trkseg>` tags. These segments include detailed metadata under the `<extensions>` tag, enabling full reconstruction of the route. Additionally, the `<rte>` block stores key points of the route, which are used for visualization and analysis.  
-
-The GPX file is saved in this form when you export a built route or when you save a track consisting of several individual segments using the [Plan a route](../../user/plan-route/create-route.md) feature.
 
 
-***GPX structure explanation***
+## Calculated route(s)
 
-1. **Track segment.**
+In **OsmAnd** you can can calculate route and save all data in GPX, so later all features navigation will be available as running GPX navigation, so **OsmAnd** gpx will contain route segments, turns, road names, road types, restrictions, etc.. The route can be completely restored as if just built, even in the absence of the respective offline maps.
 
-    - The `<trk>` element is the root for a track. It contains the overall track data.
-    - The `<trkseg>` element represents a segment of the track, which consists of a series of track points. Each track point contains geographical coordinates and may have additional metadata, like elevation or time. The order of these track points indicates the sequence and the *length* of the route segments.
+A gpx file may contain several routes. Each of them is contained in a specific segment under **trkseg** / **extensions**. A gpx file is saved in this form when exporting a constructed route or when saving a track that consists of several separate segments via the [**Plan a route**](../../user/plan-route/create-route.md) functionality.
 
-2. **Extensions.** Within the `<trkseg>`, the `<extensions>` element provides additional information not covered by the standard GPX schema. This includes:
+[**Plan a route**](../../user/plan-route/create-route.md) also adds one (or several, in accordance with the number of contained separate segments / tracks) **rte** blocks to the gpx file, containing route key points (**rtept**).
 
-    - *Route segments*. Defined within the `<route>` element, which lists individual segments summarized in the overall route.
-    - *Types of Segments*. The `<types>` section specifies the characteristics of each segment in the route. This data is taken from offline maps during the initial route creation.
-
-3. **Route Points.**
-
-    - The `<rte>` element encapsulates the entire route, which may include multiple route points.
-    - The `<rtept>` element represents individual route points. Like track points, these are linked to the route and can include parameters for key points. If a route point is not the first or last, it shares the same data as the corresponding track point that has the same index.
-
-4. **Route Point Extensions.** Each route point has an `<extensions>` section that contains:
-
-    - *Profile*. Indicates the type of activity associated with the next segment (such as car, bicycle, or pedestrian).
-    - *Track Point Index*. This index refers to the corresponding track point in the GPX segment, which relates to the first calculated point of the route segment.
-
-
-### Segments Properties
-
-This section explains key properties of segments in OsmAnd GPX files, focusing on how track points (`<trkpt>`) and route points (`<rtept>`) are structured and interconnected.
-
-1. **Track point indexing (`<trkpt_idx>`).**
-
-    - The first `<trkpt>` in a track segment (`<trkseg>`) always has an index `trkpt_idx = 0`.  
-      *Example:*  
-      For two `<trkseg>` segments, each will have a starting `<rtept>` with `trkpt_idx = 0`.
-
-    - The last `<trkpt>` in a track segment has an index equal to the total number of `<trkpt>` elements in the segment minus 1.  
-      *Example:*  
-      If a `<trkseg>` contains 12 `<trkpt>` elements, the last `<rtept>` will have `trkpt_idx = 11`.
-
-2. **Segment overlap.**
-
-    - **Overlapping segments**. Neighboring route segments `<segment>` share the same `<trkpt>` at their boundary.  
-      *Example:*  
-      The end of one `<segment>` and the start of the next are represented by the same `<trkpt>`.  
-  
-    - **Non-Overlapping segments**. If a route point `<rtept>` exists between two segments, the boundary `<trkpt>` values will not overlap. However, these points will share identical latitude, longitude, and other parameters.
-
-3. **Detecting overlaps.** You can identify whether segments overlap using the `length` and `startTrkptIdx` attributes:
-
-    - **Non-Overlapping**. The sum of `startTrkptIdx` and `length` of the previous `<segment>` equals the `startTrkptIdx` of the next `<segment>`.
-  
-    - **Overlapping**. The sum is less by 1, indicating overlap.
-
-4. **Straight route segments.** Straight route segments are represented with `id="-1"` and occur in two scenarios:
-
-    - When creating a **multiprofile route**, where the user selects a straight-line segment.  
-
-    - When a waypoint `<rtept>` is placed too far from the nearest road, causing OsmAnd to connect the point to the road with a straight line.
-
-5. **Calculating track points (`<trkpt>`) in a segment.** The total number of `<trkpt>` in a `<trkseg>` can be calculated as:  
-
-    ```xml
-    trkpts = length - (segments - 1) + (rtepts - 2)
-    ```
-
-    *Where:*
-
-    - `trkpts` - total number of `<trkpt>` elements in the segment.  
-    - `length` - sum of all `length` values of the route `<segment>` elements inside the `<trkseg>`.  
-    - `segments` - number of route `<segment>` elements in the `<trkseg>`.  
-    - `rtepts` - number of `<rtept>` elements associated with the `<trkseg>`.
-
-
-***Summary table of key properties:***
-
-| Property                 | Description         |
-|------------------------------|-------------------------|
-| **First `<trkpt>` index**    | Always `trkpt_idx = 0`. |
-| **Last `<trkpt>` index**     | Total number of `<trkpt>` elements in `<trkseg>` minus 1. |
-| **Overlapping segments**     | End of one `<segment>` shares the same `<trkpt>` as the start of the next. |
-| **Non-Overlapping segments** | Boundary `<trkpt>` values differ but share identical lat/lon values. |
-| **Straight segments**        | Marked with `id="-1"` for multiprofile routes or distant waypoints. |
-| **Track point formula**      | Use the provided formula to calculate the total number of `<trkpt>` in a segment. |
-
-
-***Example:***
+#### Gpx structure:
 
 ```xml
-<gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1">
+<trk>
+  <trkseg>
+    // List of segment points. The order of the points corresponds to the order and length of the route segments (<route><segment length="x" ... />).
+    // The value of the "length" attribute corresponds to the number of points in this segment of the route.
+    <trkpt ... ></trkpt>
+    <extensions>
+      // List of route segments
+      <route>
+        <segment ... />
+      </route>
+      // Properties of segments included in the route.
+      // This data is taken from offline maps during the initial construction of a route.
+      <types>
+        <type ... />
+      </types>
+    </extensions>
+  </trkseg>
+</trk>
+
+// List of intermediate route points. If there are multiple routes, the order of the rte list matches the order of the route segments.
+<rte>
+  <rtept ... />
+    // For routes built with the "Plan route", the parameters of key points are saved.
+    // If rtept is not first and last, before it (with the same idx) trkpt will be with the same data.
+    <extensions>
+      // Route profile type for next segment (car, bicycle, pedestrian, etc.).
+      <profile>...</profile>
+      // The index of the point in the gpx segment that corresponds to the first point of the calculated route for this segment.
+      // If rtept is not first and last, before it (with the same idx) trkpt will be with the same data.
+      <trkpt_idx>...</trkpt_idx>
+    </extensions>
+  </rtept>
+</rte>
+```
+
+#### Important properties:
+
+* **trkpt_idx** of first **rtept** in **trkseg** is 0. So, if there are two **trkseg**s, there will be two **rtept**s with **trkpt_idx** = 0
+* **trkpt_idx** of last **rtept** in **trkseg** is equal to number of **trkpt**s in **trkseg** minus 1. For example, if **trkseg** has 12 **trkpt**s, **trkpt_idx** of last **rtept** should be 11
+* Neighbouring route **segments** of are overlapping: the end of previous **segment** and start of next **segment** is the one and same **trkpt**.
+* There is exception when neighbouring route **segments** don't overlap (don't share the same **trkpt**). It happens when there is **rtept** "between" route **segment**s. End of previous route **segment** is one **trkpt**, and start of next route **segment** is another **rtept**. But these two **trkpt**s are totally equal by lat, lon and other params.
+* Route **segment** overlapping can be detected via **length** and **startTrkptIdx** (the latter is used only for convenience of human reading):
+  - If sum of **startTrkptIdx** and **length** of prevous route **segment** equals **startTrkptIdx** of next route **segment**, route **segment**s are not overlapping
+  - If sum is less by one, then route **segment**s are overlapping
+* There can be straight route **segment**s. They are marked with **id="-1"**. They can appear in two cases:
+  - It is multiprofile route, and user selected straight line
+  - User placed **rtept** too far away from closest road, so osmand made straight line between **rtept** and road
+* trkpts = length - (segments - 1) + (rtepts - 2), where:
+  - trkpts - amount of **trkpt**s inside **trkseg**
+  - length - sum of all **length**s of route **segment**s inside **trkseg**
+  - segments - amount of route **segment**s inside **trkseg**
+  - rtepts - amount of **rtept**s owned by **trkseg**  
+
+#### Example:
+
+```xml
+<gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Fri 06 Nov 2020</name>
+  </metadata>
   <trk>
-    <name>Sample Route</name>
+    <name>Fri 06 Nov 2020</name>
     <trkseg>
       <trkpt lat="52.3639849" lon="4.8900533">
         <ele>0.801</ele>
       </trkpt>
       <trkpt lat="52.3636917" lon="4.8922849">
         <ele>0.998</ele>
+      </trkpt>
+      <trkpt lat="52.3636885" lon="4.892309">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="52.3636426" lon="4.8922902">
+        <ele>0.963</ele>
+      </trkpt>
+      <trkpt lat="52.363564" lon="4.8922607">
+        <ele>0.899</ele>
       </trkpt>
 
       ....
@@ -383,24 +365,39 @@ This section explains key properties of segments in OsmAnd GPX files, focusing o
         <route>
           <segment id="7372058" length="3" segmentTime="178.44" speed="1.11" turnType="C" types="0,1,2,3,4,5,6" names="57" />
           <segment id="334164679" length="5" segmentTime="86.11" speed="1.11" turnType="TR" turnAngle="91.88" types="7,8,0,9,10,11,12,13,6" pointTypes=";;14,15;16,17,18;" names="58" />
+          <segment id="334603581" length="6" segmentTime="75.5" speed="1.11" types="19,20,21,7,8,0,22,9,10,11,12,13,23,6" pointTypes=";14;16,24;16,24;14;" names="58" />
+          <segment id="446707354" length="3" segmentTime="8.32" speed="1.11" turnType="TSLL" turnAngle="-25.44" types="19,25,21,7,8,22,9,1,11,12,13,6" names="58" />
+          ...
         </route>
         <types>
           <type t="lit" v="yes" />
           <type t="oneway" v="yes" />
           <type t="highway" v="unclassified" />
           <type t="surface" v="paving_stones" />
+          <type t="maxspeed" v="30" />
+          ...
         </types>
       </extensions>
     </trkseg>
   </trk>
-
-  ....
 
   <rte>
     <rtept lat="52.3639945" lon="4.8900532">
       <extensions>
         <profile>pedestrian</profile>
         <trkpt_idx>0</trkpt_idx>
+      </extensions>
+    </rtept>
+    <rtept lat="52.3612797" lon="4.8911677">
+      <extensions>
+        <profile>pedestrian</profile>
+        <trkpt_idx>24</trkpt_idx>
+      </extensions>
+    </rtept>
+    <rtept lat="52.356996" lon="4.8912071">
+      <extensions>
+        <profile>pedestrian</profile>
+        <trkpt_idx>89</trkpt_idx>
       </extensions>
     </rtept>
     <rtept lat="52.3542374" lon="4.8947024">
@@ -413,9 +410,9 @@ This section explains key properties of segments in OsmAnd GPX files, focusing o
 </gpx>
 ```
 
-## GPX to OBF Conversion
+## GPX Collections in OBF
 
-OsmAnd allows you to convert multiple GPX files into a single OBF file. This enables the storage of thousands of GPX tracks in a compact, optimized format while maintaining features like special map icons, track appearance customization, and search functionality.
+OsmAnd allows you to convert multiple GPX files into a single OBF file. This enables the storage of thousands of GPX tracks in a compact, optimized format while maintaining features like special map icons, track appearance customization, and search functionality. This avoids a limit of local large GPX files which typically can't handle > 500 K points in total however some features of GPX tracks might be missing comparing displaying OBF file.
 
 Steps to convert GPX to OBF:  
 
@@ -423,10 +420,6 @@ Steps to convert GPX to OBF:
 
 - The resulting `<.obf>` file can be imported into OsmAnd (requires OsmAnd Android 5.0+).
 
-
-## OBF Track Customization
-
-OsmAnd offers several ways to customize the visual appearance of tracks when converting GPX to OBF. This includes options for line colors, widths, shields, and waypoint icons.
 
 ### Track Line Style
 
@@ -463,7 +456,7 @@ Customize track lines with the following tags:
 </gpx>
 ```
 
-### Line Shields
+### Track Line Shields
 
 Shields are icons or symbols displayed along the track line. OsmAnd supports [OSMC-symbol-style](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) shields, which may include:
 
@@ -502,7 +495,7 @@ If no shield properties are defined, OsmAnd uses an auto-sized yellow shield for
 </gpx>
 ```
 
-### Waypoint Display
+### Waypoints Display
 
 Waypoint icons can be customized with the following tags:
 
@@ -538,11 +531,8 @@ Waypoint icons can be customized with the following tags:
 </wpt>
 ```
 
-## OBF Search and Analytics
 
-Converted OBF files provide reliable search capabilities, allowing you to find tracks and waypoints by metadata and extensions.
-
-### Name and Reference Search
+### Search by Name and Refs 
 
 Tracks and waypoints can be located using a variety of GPX tags.
 
@@ -573,7 +563,7 @@ Tracks and waypoints can be located using a variety of GPX tags.
 </gpx>
 ```
 
-### Activity Search
+### Search by activity type
 
 OsmAnd organizes tracks in OBF files into **Activity Groups** and **Activity Types**. These classifications help you filter tracks as POIs or create activity-based search filters.  
 
@@ -611,7 +601,7 @@ How activity types work:
     </gpx>
     ```
 
-### OBF Analytics Tags
+### Search information Tags
 
 OBF files automatically generate and store critical track statistics and analytics.
 
@@ -626,7 +616,7 @@ OBF files automatically generate and store critical track statistics and analyti
 | `time_moving`, `time_moving_no_gaps`  | Total moving time, with and without accounting for gaps. |
 
 
-### OBF Internal Tags
+### Internal Tags
 
 OBF files also use internal tags to manage metadata, provide additional search capabilities, and connect tracks to other map features. Some tags are directly derived from GPX extensions, while others store supplemental or preprocessed data.
 

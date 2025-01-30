@@ -240,7 +240,9 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                                     <ListItemIcon className={styles.contextMenuIcon}>
                                         <FavoriteAddIcon />
                                     </ListItemIcon>
-                                    <ListItemText className={styles.contextMenuItemText}>Add Wpt</ListItemText>
+                                    <ListItemText className={styles.contextMenuItemText}>
+                                        {t('add_waypoint')}
+                                    </ListItemText>
                                 </MenuItem>
                                 <Divider className={styles.dividerMenu} />
                             </>
