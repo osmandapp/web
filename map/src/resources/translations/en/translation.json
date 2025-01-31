@@ -5253,5 +5253,6 @@
   "shared_string_downhill": "Downhill",
   "duration": "Duration",
   "sort_duration_descending": "Longest duration first",
-  "sort_duration_ascending": "Shortest duration first"
+  "sort_duration_ascending": "Shortest duration first",
+  "shared_string_open_track": "Open track"
 }

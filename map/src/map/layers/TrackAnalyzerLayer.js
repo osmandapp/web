@@ -28,17 +28,22 @@ export default function TrackAnalyzerLayer() {
             const segmentsMap = ctx.trackAnalyzer.segments;
             const geoJsonFeatures = Object.keys(segmentsMap).flatMap((key) => {
                 const segments = segmentsMap[key];
-                return segments.map((segment) => ({
-                    type: 'Feature',
-                    properties: {
-                        color: segment.color || '#227bff',
-                        name: segment.name,
-                    },
-                    geometry: {
-                        type: 'LineString',
-                        coordinates: segment.points.map((point) => [point.lon, point.lat]),
-                    },
-                }));
+                if (!segments) {
+                    return [];
+                }
+                return segments
+                    .filter((segment) => !ctx.excludedSegments.has(`${segment.name} ${segment.trackInd}`))
+                    .map((segment) => ({
+                        type: 'Feature',
+                        properties: {
+                            color: segment.color || '#227bff',
+                            name: segment.name,
+                        },
+                        geometry: {
+                            type: 'LineString',
+                            coordinates: segment.points.map((point) => [point.lon, point.lat]),
+                        },
+                    }));
             });
             if (geoJsonRef.current) {
                 geoJsonRef.current.clearLayers();
@@ -52,7 +57,7 @@ export default function TrackAnalyzerLayer() {
                 geoJsonRef.current.clearLayers();
             }
         }
-    }, [ctx.trackAnalyzer?.segmentsUpdateDate]);
+    }, [ctx.trackAnalyzer?.segmentsUpdateDate, ctx.excludedSegments]);
 
     useEffect(() => {
         if (!ctx.trackAnalyzer && (startPoint || finishPoint)) {

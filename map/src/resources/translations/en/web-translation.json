@@ -79,5 +79,6 @@
   "max_altitude": "Max. altitude",
   "avg_altitude": "Avg. altitude",
   "min_altitude": "Min. altitude",
-  "length": "Length"
+  "length": "Length",
+  "exclude": "Exclude"
 }

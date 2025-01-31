@@ -440,7 +440,9 @@ export const AppContextProvider = (props) => {
 
     const [openProFeatures, setOpenProFeatures] = useState(null);
 
+    // track analyzer
     const [trackAnalyzer, setTrackAnalyzer] = useState(null);
+    const [excludedSegments, setExcludedSegments] = useState(new Set());
 
     function getConfigureMap() {
         const TIME_UPDATE_CONFIGURE_MAP = 1731935733868;
@@ -744,6 +746,8 @@ export const AppContextProvider = (props) => {
                 setFitBoundsShareTracks,
                 trackAnalyzer,
                 setTrackAnalyzer,
+                excludedSegments,
+                setExcludedSegments,
             }}
         >
             {props.children}

@@ -1,7 +1,6 @@
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import styles from './trackanalyzer.module.css';
-import React, { useEffect, useState } from 'react';
-import { ReactComponent as SegmentIcon } from '../../assets/icons/ic_action_gpx_width_bold.svg';
+import React, { useEffect, useMemo, useState } from 'react';
 import { ReactComponent as MaxSpeedIcon } from '../../assets/icons/ic_action_max_speed_16.svg';
 import { ReactComponent as AvgSpeedIcon } from '../../assets/icons/ic_action_speed_16.svg';
 import { ReactComponent as MinSpeedIcon } from '../../assets/icons/ic_action_min_speed_16.svg';
@@ -16,12 +15,12 @@ import { ReactComponent as TimeMovingIcon } from '../../assets/icons/ic_action_t
 import { ReactComponent as DistanceIcon } from '../../assets/icons/ic_action_length_16.svg';
 import SimpleDivider from '../components/dividers/SimpleDivider';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
-import ThickDivider from '../components/dividers/ThickDivider';
 import { format } from 'date-fns';
 import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import { MAIN_BLOCK_SIZE } from './TrackAnalyzerMenu';
 import { useTranslation } from 'react-i18next';
+import TrackSegmentItem from './TrackSegmentItem';
 
 export const getSpeedStats = (stats, t) => [
     { icon: <MaxSpeedIcon />, label: t('shared_string_max_speed'), ...formatValue(stats.maxSpeed, t('km_h')) },
@@ -68,8 +67,7 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
 
         setFilteredStats(
             sortedSegments.map((segment) => ({
-                name: segment.name,
-                color: segment.color,
+                ...segment,
                 stats: {
                     speed: getSpeedStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
                     altitude: getAltitudeStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
@@ -126,55 +124,22 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
         );
     };
 
-    return (
-        <Box sx={{ maxHeight: `${height - MAIN_BLOCK_SIZE}px`, overflowY: 'auto' }}>
-            {filteredStats &&
-                filteredStats.map((segment, index) => {
-                    const stats = segment.stats;
-                    const isFirstSegment = index === 0;
-                    const color = segment.color;
-
-                    return (
-                        <Box key={`${segment.name}-${index}`}>
-                            {!isFirstSegment && <ThickDivider />}
-                            <MenuItem className={styles.tracksSelectItem}>
-                                <ListItemIcon sx={{ fill: color }} className={styles.segmentIcon}>
-                                    <SegmentIcon />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <Typography
-                                        variant="inherit"
-                                        noWrap
-                                        sx={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            overflow: 'hidden',
-                                            whiteSpace: 'nowrap',
-                                        }}
-                                    >
-                                        <Box
-                                            component="span"
-                                            sx={{
-                                                overflow: 'hidden',
-                                                textOverflow: 'ellipsis',
-                                                whiteSpace: 'nowrap',
-                                                flexGrow: 1,
-                                                minWidth: 0,
-                                            }}
-                                        >
-                                            {segment.name}
-                                        </Box>
-                                        <Box component="span" sx={{ flexShrink: 0, marginLeft: '4px' }}>
-                                            {segment.allInd > 1 ? `(${segment.trackInd + 1}/${segment.allInd})` : ''}
-                                        </Box>
-                                    </Typography>
-                                </ListItemText>
-                            </MenuItem>
-                            <SimpleDivider />
-                            {Statistics(stats)}
-                        </Box>
-                    );
-                })}
-        </Box>
+    return useMemo(
+        () => (
+            <Box sx={{ maxHeight: `${height - MAIN_BLOCK_SIZE}px`, overflowY: 'auto' }}>
+                {filteredStats?.map((segment, index) => (
+                    <Box key={index}>
+                        <TrackSegmentItem
+                            segment={segment}
+                            index={index}
+                            filteredStats={filteredStats}
+                            setFilteredStats={setFilteredStats}
+                        />
+                        {Statistics(segment.stats)}
+                    </Box>
+                ))}
+            </Box>
+        ),
+        [filteredStats, height]
     );
 }
