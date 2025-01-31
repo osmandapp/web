@@ -17,7 +17,7 @@ import { getPointsForAnalysis } from './util/PointsManager';
 import TrackSegmentStat from './TrackSegmentStat';
 import ThickDivider from '../components/dividers/ThickDivider';
 import { addColorsToSegments } from './util/SegmentColorizer';
-import SortFilesButton, { TRACK_FILE_TYPE } from '../components/SortFilesButton';
+import SortFilesButton, { TRACK_FILE_TYPE } from '../components/buttons/SortFilesButton';
 import ActionsMenu from '../actions/ActionsMenu';
 import SegmentParamsFilter from './SegmentParamsFilter';
 

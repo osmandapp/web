@@ -1,12 +1,12 @@
 import { IconButton, Tooltip } from '@mui/material';
-import styles from '../trackfavmenu.module.css';
+import styles from '../../trackfavmenu.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import SortActions, { allMethods } from '../actions/SortActions';
-import AppContext from '../../context/AppContext';
-import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
-import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
-import SortMenu from '../actions/SortMenu';
+import SortActions, { allMethods } from '../../actions/SortActions';
+import AppContext from '../../../context/AppContext';
+import { DEFAULT_FAV_GROUP_NAME } from '../../../manager/FavoritesManager';
+import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time.svg';
+import SortMenu from '../../actions/SortMenu';
 
 export const TRACK_FILE_TYPE = 'tracks';
 export const FAVORITE_FILE_TYPE = 'favorites';

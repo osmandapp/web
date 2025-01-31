@@ -1,12 +1,10 @@
-import { CircularProgress, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
 import styles from '../trackfavmenu.module.css';
 import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
-import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
-import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import { ReactComponent as FolderHiddenIcon } from '../../assets/icons/ic_action_folder_hidden.svg';
 import FavoriteGroupActions from '../actions/FavoriteGroupActions';
 import MenuItemWithLines from '../components/MenuItemWithLines';
@@ -16,6 +14,7 @@ import FileShareIcon from '../share/FileShareIcon.jsx';
 import { getShare } from '../../manager/track/TracksManager';
 import { SHARE_TYPE } from '../../manager/ShareManager';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
 
 export default function FavoriteGroup({ index, group, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -23,7 +22,6 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
 
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
-    const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const anchorEl = useRef(null);
     const share = getShare(group.file, ctx);
 
@@ -82,26 +80,14 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
                         {`${getLocalizedTimeUpdate(group.clienttimems)}, ${getSize(group, t)}`}
                     </Typography>
                 </ListItemText>
-                <IconButton
-                    className={styles.sortIcon}
+                <ThreeDotsButton
+                    name={'action_menu_group'}
+                    tip={'shared_string_menu'}
                     id={`se-folder-actions-button-${group.name}`}
-                    onMouseEnter={() => setHoverIconInfo(true)}
-                    onMouseLeave={() => setHoverIconInfo(false)}
-                    onClick={(e) => {
-                        setOpenActions(true);
-                        ctx.setOpenedPopper(anchorEl);
-                        e.stopPropagation();
-                    }}
-                    ref={anchorEl}
-                >
-                    {processDownload ? (
-                        <CircularProgress id={'se-progress'} size={24} />
-                    ) : hoverIconInfo ? (
-                        <MenuIconHover />
-                    ) : (
-                        <MenuIcon />
-                    )}
-                </IconButton>
+                    setOpenActions={setOpenActions}
+                    anchorEl={anchorEl}
+                    processDownload={processDownload}
+                />
             </MenuItem>
             <DividerWithMargin margin={'64px'} />
             <ActionsMenu

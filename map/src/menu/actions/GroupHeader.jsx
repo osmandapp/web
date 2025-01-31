@@ -19,7 +19,7 @@ import { useTranslation } from 'react-i18next';
 import { closeHeader } from './HeaderHelper';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import { SHARE_TYPE } from '../../manager/ShareManager';
-import SortFilesButton from '../components/SortFilesButton';
+import SortFilesButton from '../components/buttons/SortFilesButton';
 
 export default function GroupHeader({
     type,

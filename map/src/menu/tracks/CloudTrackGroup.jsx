@@ -1,23 +1,20 @@
-import { CircularProgress, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
-import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
-import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import styles from '../trackfavmenu.module.css';
 import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemWithLines from '../components/MenuItemWithLines';
-import { Tooltip } from '@mui/material/';
 import { useTranslation } from 'react-i18next';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
     const anchorEl = useRef(null);
@@ -49,28 +46,14 @@ export default function CloudTrackGroup({ index, group }) {
                         {`${getLocalizedTimeUpdate(group.lastModifiedData)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`}
                     </Typography>
                 </ListItemText>
-                <Tooltip key={'action_menu_group'} title={'Menu'} arrow placement="bottom-end">
-                    <IconButton
-                        id={`se-folder-actions-button-${group.name}`}
-                        className={styles.sortIcon}
-                        onMouseEnter={() => setHoverIconInfo(true)}
-                        onMouseLeave={() => setHoverIconInfo(false)}
-                        onClick={(e) => {
-                            setOpenActions(true);
-                            ctx.setOpenedPopper(anchorEl);
-                            e.stopPropagation();
-                        }}
-                        ref={anchorEl}
-                    >
-                        {processDownload ? (
-                            <CircularProgress size={24} />
-                        ) : hoverIconInfo ? (
-                            <MenuIconHover />
-                        ) : (
-                            <MenuIcon />
-                        )}
-                    </IconButton>
-                </Tooltip>
+                <ThreeDotsButton
+                    name={'action_menu_group'}
+                    tip={'shared_string_menu'}
+                    id={`se-folder-actions-button-${group.name}`}
+                    setOpenActions={setOpenActions}
+                    anchorEl={anchorEl}
+                    processDownload={processDownload}
+                />
             </MenuItem>
             <DividerWithMargin margin={'64px'} />
             <ActionsMenu
