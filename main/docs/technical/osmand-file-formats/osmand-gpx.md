@@ -180,11 +180,16 @@ To avoid conflicts with XML syntax, replace special characters as follows:
 ```xml
 <metadata>
   <desc>
-    &lt;p&gt;This is a &lt;b&gt;bold&lt;/b&gt; example.&lt;/p&gt;
     &lt;p&gt;
-      &lt;h3&gt;Waypoint Information&lt;/h3&gt;
-      &lt;a href="https://osmand.net"&gt;Visit OsmAnd&lt;/a&gt;&lt;br/&gt;
-      &lt;img src="https://osmand.net/img/logo.png" /&gt;
+        The first paragraph will be displayed as &lt;b&gt;brief&lt;/b&gt; description.
+        HTML tags are stripped in brief descriptions.
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;h3&gt;Second paragraph&lt;/h3&gt;
+        &lt;b&gt;Hello, world!&lt;/b&gt;&lt;br/&gt;
+        &lt;img src="..."/&gt;&lt;br/&gt;
+        &lt;a href="..."&gt;url&lt;/a&gt;&lt;br/&gt;
+        &lt;table&gt; ... &lt;/table&gt;
     &lt;/p&gt;
   </desc>
 </metadata>
@@ -214,7 +219,7 @@ Use `<link>` tag to associate URLs with metadata, author information, or waypoin
 
 ```xml
 <wpt lat="52.5163" lon="13.3779">
-  <link href="https://osmand.net/img/landmark.png" />
+  <link href="https://osmand.net/img/logo.png" />
 </wpt>
 ```
 
@@ -468,15 +473,15 @@ If no shield properties are defined, OsmAnd uses an auto-sized yellow shield for
 
 ***Tags for shields:***
 
-| GPX tag            | Purpose |
-|:-------------------|:----------------------------------------------------|
-| `shield_bg`        | Defines the background icon for the shield. |
-| `shield_fg`        | Specifies the first foreground icon (e.g., an arrow or dot). |
-| `shield_fg_2`      | Specifies the second foreground icon (optional). |
-| `shield_text`      | Sets the text to be displayed over the shield (e.g., route name or ID). |
-| `shield_textcolor` | Determines the color of the shield text (optional). |
-| `shield_waycolor`  | Overrides the standard track color for the shield’s line (optional). |
-| `ref`              | Used as fallback text if `shield_text` is not provided. |
+| GPX tag            | Purpose                                                                |
+|:-------------------|:-----------------------------------------------------------------------|
+| `shield_bg`        | Defines the background icon for the shield.                            |
+| `shield_fg`        | Specifies the first foreground icon (e.g., an arrow or dot).           |
+| `shield_fg_2`      | Specifies the second foreground icon (optional).                       |
+| `shield_text`      | Sets the short text to be displayed over the shield (e.g., route ref). |
+| `shield_textcolor` | Determines the color of the shield text (optional).                    |
+| `shield_waycolor`  | Overrides the standard track color for the shield’s line (optional).   |
+| `ref`              | Used as fallback text if `shield_text` is not provided.                |
 
 ***Example:***
 
@@ -486,7 +491,7 @@ If no shield properties are defined, OsmAnd uses an auto-sized yellow shield for
     <name>Sample Route</name>
   </trk>
   <extensions>
-    <osmand:shield_text>Trail A</osmand:shield_text>
+    <osmand:shield_text>ABC</osmand:shield_text>
     <osmand:shield_fg>osmc_red_dot</osmand:shield_fg>
     <osmand:shield_bg>osmc_white_bg</osmand:shield_bg>
     <osmand:shield_waycolor>red</osmand:shield_waycolor>
@@ -511,7 +516,7 @@ Waypoint icons can be customized with the following tags:
 - `square` - displays the icon with a square background, defaulting to red if no color is specified.
 - `octagon` - treated as a circular background in OsmAnd.
 
-**Supported colors for**`background=circle`: blue, gray, green, lightblue, lightgreen, orange, purple, yellow.
+**Supported colors for** `background=circle`: blue, gray, green, lightblue, lightgreen, orange, purple, yellow.
 
 ***Enhancements with additional elements:***
 
@@ -536,13 +541,13 @@ Waypoint icons can be customized with the following tags:
 
 Tracks and waypoints can be located using a variety of GPX tags.
 
-| GPX tag       | Location               | Purpose                   |
-|:--------------|:-----------------------|:--------------------------|
-| `<name>`      | `<metadata>`           | The primary name of the GPX track.  |
-| `ref`         | GPX `<extensions>`     | A short identifier, often derived from the OSM `ref` tag. |
-| `shield_text` | GPX `<extensions>`     | Text displayed on shields (can also be used with `ref`). |
-| `name_-_lang` | GPX/WPT `<extensions>` | Localized name using `lang` (e.g., `name_-_en` for English). |
-| `<name>`      | `<wpt>`                | The name of the waypoint. |
+| GPX tag       | Location               | Purpose                                                                     |
+|:--------------|:-----------------------|:----------------------------------------------------------------------------|
+| `<name>`      | `<metadata>`           | The primary name of the GPX track.                                          |
+| `ref`         | GPX `<extensions>`     | A short identifier, often derived from the OSM `ref` tag.                   |
+| `shield_text` | GPX `<extensions>`     | Text displayed on shields (can also be used with `ref`).                    |
+| `name_-_lang` | GPX/WPT `<extensions>` | Localized `name:lang` (e.g., `name_-_en` for English, replace `:` -> `_-_`) |
+| `<name>`      | `<wpt>`                | The name of the waypoint.                                                   |
 
 ***Example:***
 
@@ -573,10 +578,10 @@ How activity types work:
 - OsmAnd uses `osmand:activity` or `osmand:route` tags to classify activities in GPX files.
 
 
-| GPX tag           | Location | Purpose |
-|:------------------|:---------|:--------|
-| `osmand:activity` | `<metadata>` | Main OsmAnd tag to store the activity type (by ID) |
-| `osmand:route`    | GPX `<extensions>` | Alternative method to define the activity type (by OSM conventions). |
+| GPX tag           | Location | Purpose                                          |
+|:------------------|:---------|:-------------------------------------------------|
+| `osmand:activity` | `<metadata>` | Main OsmAnd tag to store the Activity type (ID). |
+| `osmand:route`    | GPX `<extensions>` | Alternative OSM-way to define the Activity type. |
 
 
 ***Examples of organizing tracks by activity type:***
@@ -605,39 +610,33 @@ How activity types work:
 
 OBF files automatically generate and store critical track statistics and analytics.
 
-| OBF tag                               | Purpose  |
-|:--------------------------------------|:---------|
-| `distance`                            | Total distance covered by all track segments. |
-| `start_ele`, `ele_graph`              | Elevation data from GPX, wrapped in a compact binary array. |
-| `min_ele`, `avg_ele`, `max_ele`       |  Minimum, average, and maximum elevation analytics. |
-| `diff_ele_up`, `diff_ele_down`        | Total elevation gain and loss across the track. |
+| OBF tag                               | Purpose                                                               |
+|:--------------------------------------|:----------------------------------------------------------------------|
+| `distance`                            | Total distance covered by all track segments.                         |
+| `start_ele`, `ele_graph`              | Elevation data from GPX, wrapped in a compact binary array.           |
+| `min_ele`, `avg_ele`, `max_ele`       | Minimum, average, and maximum elevation analytics.                    |
+| `diff_ele_up`, `diff_ele_down`        | Total elevation gain and loss across the track.                       |
 | `max_speed`, `avg_speed`, `min_speed` | Track speed analytics, including maximum, average, and minimum speed. |
-| `time_span`, `time_span_no_gaps`      | Total time for the track, with and without accounting for gaps. |
-| `time_moving`, `time_moving_no_gaps`  | Total moving time, with and without accounting for gaps. |
-
+| `time_span`, `time_span_no_gaps`      | Total time for the track, with and without accounting for gaps.       |
+| `time_moving`, `time_moving_no_gaps`  | Total moving time, with and without accounting for gaps.              |
 
 ### Internal Tags
 
-OBF files also use internal tags to manage metadata, provide additional search capabilities, and connect tracks to other map features. Some tags are directly derived from GPX extensions, while others store supplemental or preprocessed data.
+Some GPX tags are used or stored indirectly in OBF files. See [OsmGpxWriteContext.java](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/obf/OsmGpxWriteContext.java) for details of the implementation.
 
-| OBF tag                      | Purpose |
-|:-----------------------------|:--------|
-| `route_id`                   | A unique identifier for the GPX file, linking track and POI data (e.g., `OSM12345`). |
-| `track_color`                | Generated track color derived from `shield_waycolor`, `color`, or `displaycolor`. |
-| `route_radius`               | Specifies the default radius for searching parts of the track within the POI section. |
-| `filename`                   | Stores arbitrary extra tags from `<gpx><extension>` in JSON format. |
-| `extensions_extra_tags`      | Extra arbitrary tags for `<gpx><extension>` in JSON format                                      |
-| `metadata_extra_tags`        | Stores arbitrary extra tags from `<metadata><extension>` in JSON format. |
-| `wpt_extra_tags`             | Stores arbitrary extra tags for each `<wpt><extension>` in JSON format. |
-| `name`, `ref`, `description` | Localizable and searchable attributes marked with `lang="true"` for multilingual support. |
-| `route_name`                 | The route name, used for internal searches (`searchPoiByName`). |
-| `route_type`                 | Activity group identifier (`id`) to categorize the track. |
-| `route_activity_type`        | Specific activity type identifier (`id`) for the track. |
-| `route_track_point`          | Waypoint POI-type, linking track points to points of interest. |
-
-***Implementation note:***
-
-Some tags are processed internally within the OsmAnd framework and may not directly appear in GPX files. For details about their implementation, refer to the [OsmGpxWriteContext.java](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/obf/OsmGpxWriteContext.java).
-
+| OBF tag                      | Purpose                                                                                                    |
+|:-----------------------------|:-----------------------------------------------------------------------------------------------------------|
+| `route_id`                   | A unique identifier for the GPX file, linking Map and POI data (format: `/[A-Z]+[0-9]+/` e.g. `OSM12345`). |
+| `track_color`                | Map section track color derived from `shield_waycolor`, `color`, `colour`, or `displaycolor`               |
+| `route_radius`               | Specifies the default radius for searching parts of the track within the POI section.                      |
+| `filename`                   | The name of the original GPX file used to generate this track.                                             |
+| `extensions_extra_tags`      | Arbitrary extra tags for `<gpx><extensions>` in JSON format.                                               |
+| `metadata_extra_tags`        | Arbitrary extra tags for `<metadata><extensions>` in JSON format.                                          |
+| `wpt_extra_tags`             | Arbitrary extra tags for waypoints `<wpt><extensions>` in JSON format.                                     |
+| `name`, `ref`, `description` | Localizable and searchable attributes (`lang="true"` in POI types)                                         |
+| `route_name`                 | The route name, used by internal `searchPoiByName`.                                                        |
+| `route_type`                 | Activity group identifier (`id`) derived from `poi/activities.json`                                        |
+| `route_activity_type`        | Activity type (within the group) identifier (`id`) derived from `poi/activities.json`                      |                                                                          
+| `route_track_point`          | Waypoints from GPX file use this type in POI data.                                                         |
 
 > *This article was last updated in January 2025*
