@@ -337,7 +337,8 @@ OsmAnd provides you with a choice of services to determine your location. It is 
 
 - Please note that the backup size is restricted to *25MB*.
 
-- To find the backup files, use the Android file manager: *Android → data → net.osmand → files → backup*.  
+- To find the backup files, use a third-party file manager app.  
+    *NOTE: You can find the backup files using the Android file manager: Android → data → net.osmand → files → backup, but be aware that in recent versions of Android, access to system directories is limited.*  
 
 **If you are using [*OsmAnd Cloud*](../personal/osmand-cloud.md), it's recommended to deactivate this default backup option to prevent any confusion during reinstallation.**
 

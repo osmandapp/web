@@ -88,7 +88,7 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* Navigation button → Settings → Avoid roads...*
+Go to: *Android* *Navigation button → Settings → Avoid roads...*
 
 ![Avoid road menu Android](@site/static/img/navigation/routing/avoid_roads_menu_andr_2.png)
 

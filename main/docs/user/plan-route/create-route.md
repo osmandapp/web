@@ -87,7 +87,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,plan_route,plan_rout
 
 </Tabs>  
 
-*Plan a route* tool allows modifying existing GPX track as well as an [imported track](../personal/tracks/manage-tracks.md#import). However in case you need to exclude large amount of points based on generic criterias, [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter) might be a more suitable tool.
+*Plan a route* tool allows modifying existing GPX track as well as an [imported track](../personal/tracks/manage-tracks.md#import). However, in case you need to exclude large amount of points based on generic criteria, [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter) might be a more suitable tool.
 
 
 ### Distance Measurement
@@ -137,15 +137,15 @@ If [*Elevation data*](../map/tracks/track-context-menu.md#calculating-missing-el
 
 **Attach to roads** allows attaching a recorded or an imported track to the roads from OsmAnd offline maps to get additional information:
 
-- Correct turn information for [*Navigate by track*](../navigation/setup/gpx-navigation.md#how-to-follow-the-track) (especially roundabouts).
-- Street names and lane information
-- Elevation data
-- [Road attributes](../navigation/setup/route-details.md#road-attributes)
+- Correct turn information for [Navigate by track](../navigation/setup/gpx-navigation.md#how-to-follow-the-track) (especially at roundabouts).
+- Street names and lane information.
+- Elevation data.
+- [Road attributes](../navigation/setup/route-details.md#road-attributes).
 
-You can select a threshold value for the distance that simplified track points can be from the original track points.
+You can select a [threshold value](../navigation/setup/gpx-navigation.md#attach-to-the-roads) for the distance that simplified track points can be from the original track points.
 
-:::note
-If you open a track and see the ***undefined*** profile icon, that means you can select whether to attach the track to roads or simply connect points with a straight line and treat it as a recorded track.
+:::note Unspecified profile icon
+If you select a track and the ***unspecified*** profile icon ("?") is displayed next to the *Settings* icon, tap on it to choose whether to attach the track to roads or just connect the points with a straight line and treat it as a recorded track.
 :::
 
 
@@ -179,7 +179,7 @@ You can also **Undo**/**Redo** every action you made in the plan route.
 
 Added points in the editor could be connected as a straight line or as a route between points of a selected profile. *Route between points* can be accessed in several ways:
 
-1. From the *Options* menu*→* *Route between points*.
+1. From the *Options* menu *→* *Route between points*.
 2. Tap the *profile icon* in the bottom left corner of the map screen. Not on the top icon, will open the Configure Map menu.
 3. In the *[Point Context menu](#point-context-menu) → Change route type before/after*.  
 
@@ -376,4 +376,6 @@ When calculating a route for navigation in *Plan a route*, you can find out addi
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
 - [Trip recording](../plugins/trip-recording.md)
 
-> *This article was last updated in November 2024*
+> *This article was last updated in January 2025*
+
+

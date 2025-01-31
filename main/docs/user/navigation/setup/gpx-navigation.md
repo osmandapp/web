@@ -39,12 +39,12 @@ The *Navigation by track* option can also be used in the everyday life. You can 
 
 ## Select the Track
 
-Before using the *Navigation by track* option you need to [display track on the map](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd supports track as a line (**Geometry**) and track as a route (**Route**) or combination of them (**OsmAnd** by [Plan route](../../plan-route/create-route.md)). If you have track as a collection **Waypoints**, you can use [Markers navigation](./markers-navigation.md).
+Before using the *Navigation by track* option, you need to [display the track on the map](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd supports track as a line (**Geometry**) and track as a route (**Route**) or combination of them (**OsmAnd** by [Plan route](../../plan-route/create-route.md)). If you have a track as a collection **Waypoints**, you can use [Markers navigation](./markers-navigation.md).
 
 
 - **Geometry** track will have very basic navigation by default and won't provide accurate turns, street names and turn lanes. To get missing information, you need to use [Attach to the roads](#attach-to-the-roads) tool.
-- **Route** track will calculate route between route points by selected profile. Basically all route points will be considered as intermediate points. If you route consists > 50 points, it's very likely that it's misconfigured **Geometry** track.
-- **OsmAnd** track consists of both geometry and route parts and it's suitable to provide exactly same guidance as navigation by default. These tracks are produced by [Plan route](../../plan-route/create-route.md) or [Web version](../../plan-route/web.md). It's possible to resave this track to **Geometry** only track as [**Simplified**](../../plan-route/create-route.md#save-route) to be used in 3rd party programs.
+- **Route** track will calculate route between route points by selected profile. Basically, all route points will be considered as intermediate points. If you route consists > 50 points, it's very likely that it's misconfigured **Geometry** track.
+- **OsmAnd** track consists of both geometry and route parts, and it's suitable to provide exactly the same guidance as navigation by default. These tracks are produced by [Plan route](../../plan-route/create-route.md) or [Web version](../../plan-route/web.md). It's possible to resave this track to **Geometry** only track as [**Simplified**](../../plan-route/create-route.md#save-route) to be used in 3rd party programs.
 
 
 ### Start GPX Navigation
@@ -65,7 +65,7 @@ Before using the *Navigation by track* option you need to [display track on the 
 
 </Tabs>
 
-Navigation on a track can be started using the quick action button in the [track context menu](../../map/tracks/track-context-menu.md#quick-actions) (opened by selecting one of the [highlighted tracks](./route-navigation.md#history-of-previous-routes) on the map or by tapping a track file in the [My Places](../../personal/myplaces.md) section of the *Main Menu*) or from the navigation menu, which is opened by tapping:
+Navigation on a track can be started using the quick action button in the [track context menu](../../map/tracks/track-context-menu.md#quick-actions) (opened by selecting one of the [highlighted tracks](./route-navigation.md#history-of-previous-routes) on the map, or by tapping a track file in the [My Places](../../personal/myplaces.md) section of the *Main Menu*) or from the navigation menu, which is opened by tapping:
 
 - [*Navigation button*](../../widgets/map-buttons.md#directions) on the map screen.  
 - *Navigation section* in the *Main Menu* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
@@ -89,7 +89,7 @@ Navigation on a track can be started using the quick action button in the [track
 
 </Tabs>
 
-For navigation, if the selected track consists of multiple segments or tracks, you can select either a specific segment or the entire gpx track file. When **[importing](../../personal/tracks/manage-tracks.md#import)** you can choose whether to save it in a single file or in multiple files.
+For navigation, if the selected track consists of multiple segments or tracks, you can select either a specific segment or the entire GPX track file. When **[importing](../../personal/tracks/manage-tracks.md#import)** you can choose whether to save it in a single file or in multiple files.
 
 
 ### Follow Track options
@@ -117,9 +117,9 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_navigation,shared_string_
 </Tabs>
 
 - ***Edit*** (*pencil icon* next to the track name). Opens the track in the [*Plan a route*](../../plan-route/create-route.md) tool.
-- ***<Translate android="true" ids="select_another_track"/>***. Allows you to select a different GPX file for navigation.
+- ***<Translate android="true" ids="select_another_track"/>***. Select a different GPX file for navigation.
 - ***<Translate android="true" ids="gpx_option_reverse_route"/>***. If this setting is enabled, the direction of movement along the track is reversed.
-- ***<Translate android="true" ids="attach_to_the_roads"/>***. Allows to [Attach track to the roads](#attach-to-the-roads).
+- ***<Translate android="true" ids="attach_to_the_roads"/>***. Configures [attaching a track to the roads](#attach-to-the-roads).
 - ***<Translate android="true" ids="pass_whole_track_descr"/>*** (*Android*) / ***<Translate ios="true" ids="point_to_navigate"/>*** (*iOS*). You can select how to navigate from my location to the track:
 to the *<Translate android="true" ids="start_of_the_track"/>* or to the *<Translate android="true" ids="nearest_point"/>* on the track.
 - Choose **Navigation type** for the first and last segment: either build a [*straight line*](../routing/straight-line-routing.md) or use the [*routing type*](../routing/osmand-routing.md#routing-types) from the current profile.
@@ -143,15 +143,20 @@ to the *<Translate android="true" ids="start_of_the_track"/>* or to the *<Transl
 
 </Tabs>
 
-You can find the **Attach to the roads** option in the *[Follow track menu](#follow-track-options)*. If you select **Attach to the roads**, the [Plan a route](../../plan-route/create-route.md#attach-track-to-roads) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the **chosen profile** and ***threshold distance***. After attaching a track to roads, you get more accurate route information in the [**route details** section](../setup/route-details.md), and [**voice instructions**](#guidance) become more detailed.
+You can find the **Attach to the roads** option in the [Follow track menu](#follow-track-options). If you select **Attach to the roads**, the [Plan a route](../../plan-route/create-route.md#attach-track-to-roads) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the **chosen profile** and ***threshold distance***. After attaching a track to roads, you get more accurate route information in the [**route details** section](../setup/route-details.md), and [**voice instructions**](#guidance) become more detailed.
 
-- *Threshold distance* (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road to attach the track to the road.
-- *When you change the profile*, OsmAnd automatically reattaches your track to the allowed for this profile roads. If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **Apply** is active, and the track can be used for navigation.
+- **Threshold distance** (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road to attach the track to the road.
+- **When you change the profile**, OsmAnd automatically reattaches your track to the allowed for this profile roads. If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **Apply** is active, and the track can be used for navigation.
 
-:::note Automatic attach to the roads
+#### Automatic attachment to the roads
 
-For the Android version, *Attach to the roads* runs automatically once track is selected for navigation. You can change it and get more information in the [***Navigation Settings***](../guidance/navigation-settings.md#detailed-track-guidance).
-:::
+Routes are automatically snapped to roads when you use the *Plan a Route* tool.
+
+- When selecting waypoints, the route will automatically align with the nearest available road (except for [straight line](../../navigation/routing/straight-line-routing.md) and [direct-to-point](../../navigation/routing/direct-to-point-routing.md)).
+- If no roads are detected (e.g., in off-road environments), the route may follow straight-line segments instead.
+- You can review or adjust the route manually by dragging waypoints to different locations.
+
+For the *Android* version, the *Attach to the roads* runs **automatically** once track is selected for navigation. You can change it. To get more information check [Detailed Track Guidance](../guidance/navigation-settings.md#detailed-track-guidance) in *Navigation Settings* article.
 
 
 ## Points
@@ -164,7 +169,7 @@ In the [Follow track menu](#follow-track-options), you can choose whether you wa
 
 ### Waypoints
 
-If track has waypoints, you can use [Show along the road](../guidance/map-during-navigation.md#show-points-along-the-route) and [Voice guidance](../guidance/voice-navigation.md#voice-settings) to get notified about Points of Interests. You can add **Waypoints** to an existing track via **[Context menu](../../map/map-context-menu.md#-add--edit--track-waypoint)**, track need to be visible on the map.
+If the track has waypoints, you can use [Show along the road](../guidance/map-during-navigation.md#show-points-along-the-route) and [Voice guidance](../guidance/voice-navigation.md#voice-settings) to get notified about Points of Interests. You can add **Waypoints** to an existing track via **[Context menu](../../map/map-context-menu.md#-add--edit--track-waypoint)**, track need to be visible on the map.
 
 ### Intermediate Points
 
@@ -189,4 +194,4 @@ During navigation, you can use various options such as zooming in or out, pannin
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in August 2024*
+> *This article was last updated in January 2025*

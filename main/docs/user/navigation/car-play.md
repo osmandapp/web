@@ -27,18 +27,18 @@ To use *CarPlay* on your vehicle screen, follow these steps:
 
 #### CarPlay Interface
 
-CarPlay is **not a direct replication** of the OsmAnd mobile app. It has a simplified interface, focusing on essential navigation functions to ensure safe driving. Some advanced features are not supported due to platform limitations.
+*CarPlay* is **not a direct replication** of the OsmAnd mobile app. It has a simplified interface, focusing on essential navigation functions to ensure safe driving. Some advanced features are not supported due to platform limitations.
 
 ### Connection Screen
 
 ![CarPlay](@site/static/img/navigation/auto-car/car_play_connect_screen.png)
 
-While your device is connected to *CarPlay*, the map on the app screen is locked for security purposes.
+While your device is connected to *CarPlay*, the map on the app screen is locked. This is an intentional security feature to ensure that navigation is controlled exclusively from the car display, minimizing distractions while driving. Check the [common questions](#common-issues-and-solutions) about the connection screen.
 
 
 ### Location Position in CarPlay
 
-The OsmAnd app for CarPlay allows you to adjust the position of the current location indicator on the screen to avoid overlapping the route and other important map details.
+The OsmAnd app for *CarPlay* allows you to adjust the position of the current location indicator on the screen to avoid overlapping the route and other important map details.
 
 **How to change the indicator position:**
 
@@ -89,7 +89,7 @@ To use the iOS version of the OsmAnd app in *CarPlay*, you have to purchase a [p
 6. Once you have completed your route, you can deactivate *CarPlay* by disconnecting the device from your vehicle multimedia system.
 
 :::note
-All categories for **route endpoint** selection, *[History](#history), [POIs](#poi-categories), [Markers](#map-markers), [Search](#search), [Favorites](#favorites), and [Tracks](#tracks)* may contain no more list items than your vehicle multimedia system provides. Typically in most vehicles, lists are dynamically limited to 12 or 24 items. This means that the list in *CarPlay* may not be complete. The total number of items and the actual number of items displayed is indicated under the folder name.
+All categories for **route endpoint** selection, *[History](#history), [POIs](#poi-categories), [Markers](#map-markers), [Search](#search), [Favorites](#favorites), and [Tracks](#tracks)* may contain no more list items than your vehicle multimedia system provides. Typically, in most vehicles, lists are dynamically limited to 12 or 24 items. This means that the list in *CarPlay* may not be complete. The total number of items and the actual number of items displayed is indicated under the folder name.
 :::  
 
 
@@ -116,7 +116,7 @@ You can select previously preset and added [POIs](../map/point-layers-on-map.md#
 
 1. If you want a particular location on the map as an endpoint, select the appropriate category of points from the list, [POIs](#poi-categories), [Favorites](#favorites), or [Map Markers](#map-markers).  
   
-    - All categories can contain no more list items than are provided by your vehicle multimedia system. This means that the list in *CarPlay* could be incomplete and all other folders are only available in the OsmAnd app on your device.
+    - All categories can contain no more list items than are provided by your vehicle multimedia system. This means that the list in *CarPlay* could be incomplete, and all other folders are only available in the OsmAnd app on your device.
     - The [Last modified](#folder-last-modified) folder contains a list of recent destinations, sorted by date added or changed.
     - The list of all other folders is sorted by the most recent update, new folders are at the top of the list. It is not possible to change their order manually.
     - The list of points within folders is sorted by the distance to them, starting with the nearest. Each point has a name or coordinates, a shaped icon (color and icon set by default or chosen by you in the OsmAnd application), and the distance from the point of the current location to it.
@@ -153,7 +153,7 @@ In the **History category**, you can select a destination from a list of endpoin
 To build a route to a *POI* in *CarPlay*, follow these steps:
 
 1. Select the needed *POI* from the list of available categories, or enter the name of the POI using [Search](#search).
-2. OsmAnd calculates the route and displays it on the *CarPlay screen*. Tap **Start** button to start navigating to that location.
+2. OsmAnd calculates the route and displays it on the *CarPlay screen*. Tap the **Start** button to start navigating to that location.
 3. Depending on your OsmAnd app settings and your vehicle, you may receive [voice prompts](#voice-prompts) to guide you to your destination.
 4. When you arrive at the location, the app will notify you that you have reached the *POI*.
 
@@ -164,7 +164,7 @@ To build a route to a *POI* in *CarPlay*, follow these steps:
 
 **Favorites** is one of the features of OsmAnd that allows you to make a kind of notes on the map.
 
-- While using *CarPlay* you cannot add or modify *Favorites*, only use existing ones.
+- While using *CarPlay*, you cannot add or modify *Favorites*, only use existing ones.
 - The list of [*Favorites*](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*.
 - If you want to use them for navigation, configure everything you need before connecting the device to your vehicle multimedia system.  
 
@@ -184,7 +184,7 @@ To build a route to a *POI* in *CarPlay*, follow these steps:
 
 To build a route to a destination, you can select an existing track available in the OsmAnd app. The track can be [*downloaded*](../personal/tracks/manage-tracks.md#import) in advance, used as [*recorded*](../plugins/trip-recording.md) or created in [*Plan a route*](../plan-route/create-route.md).  
 
-From the list of tracks in *Menu → My Places → [Tracks](../personal/tracks/manage-tracks.md)*, select the required one before connecting to the vehicle multimedia system, and the route will either build up to the start of the track or display the current direction along the track.  
+From the list of tracks in the *Menu → My Places → [Tracks](../personal/tracks/manage-tracks.md)*, select the required one before connecting to the vehicle multimedia system, and the route will either build up to the start of the track or display the current direction along the track.  
 
 Tracks can also be selected directly on the vehicle screen in *CarPlay*. They are organized in folders you have created, and for easy and quick access to recently opened tracks, there is a special folder [*Last modified*](#folder-last-modified).
 
@@ -277,7 +277,7 @@ The OsmAnd app can be opened and used to navigate in *CarPlay* on the vehicle mu
 
 ## Volume Control Issue
 
-Sometimes *CarPlay* doesn't connect, or you just can't hear anything even though it's connected. Other times the OsmAnd app doesn't open properly in *CarPlay*. Possible solutions:  
+Sometimes *CarPlay* doesn't connect, or you just can't hear anything even though it's connected. Other times, the OsmAnd app doesn't open properly in *CarPlay*. Possible solutions:  
 
 1. In most cases, all **signals** remain at constant full volume, separate from the audio playback settings at the same time. To change the volume of the OsmAnd navigation prompts when using *CarPlay*, go to *Setup → Voice → Voice volume* on the vehicle multimedia system screen.  
 2. Restart the device.
@@ -296,5 +296,15 @@ Sometimes *CarPlay* doesn't connect, or you just can't hear anything even though
 - [Profiles (Settings)](../personal/profiles.md)
 - [Import / Export](../personal/import-export.md)
 
-> *This article was last updated in June 2024*
+### Common Issues and Solutions
 
+1. Common questions about the connection screen:
+    - *Why can’t I control the app from my phone when connected to CarPlay?*  
+        For safety reasons, the OsmAnd app screen on your phone is locked while connected to CarPlay. You can interact with the app only through the car display.
+    - *Can I disable the locked screen and use the app on my phone?*  
+        No, CarPlay enforces this restriction to prevent distractions while driving.
+    - *What should I do if my phone and car display seem disconnected?*  
+        Ensure your device is properly connected via USB or Bluetooth.  
+        Restart your car’s infotainment system and the OsmAnd app if the connection is unstable.
+
+> *This article was last updated in January 2025*
