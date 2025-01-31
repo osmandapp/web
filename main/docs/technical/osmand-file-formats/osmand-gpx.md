@@ -87,6 +87,12 @@ The `<coloring_type>` tag in OsmAnd allows users to customize track coloring bas
 | `<routeInfo_surface>`    | Colors the track segments based on the OSM surface type (e.g., paved, gravel, dirt). | Useful for determining track conditions during activities like off-roading. |
 | `<routeInfo_smoothness>` | Colors the track according to OSM smoothness ratings, indicating the roughness or smoothness of the path (e.g., excellent, bad). | Helpful for evaluating track navigability for specific vehicles. |
 
+### GPX tags in UI
+
+GPX extensions tags displayed at the bottom of Track context menu.
+Both `<metadata>` and `<gpx>` `<extensions>` are listed.
+Appearance tags are excluded from the listing.
+Supported since OsmAnd Android 5.0.
 
 ## Waypoints Customization
 
