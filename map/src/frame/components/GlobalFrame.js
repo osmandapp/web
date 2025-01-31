@@ -173,6 +173,11 @@ const GlobalFrame = () => {
     }
 
     const processTracks = (files, savedVisible, prefix = '') => {
+        // filter out empty values
+        Object.keys(savedVisible).forEach((key) => {
+            savedVisible[key] = (savedVisible[key] || []).filter(Boolean);
+        });
+
         let oldFiles = [];
         savedVisible.old.forEach((name) => {
             const fileName = name.startsWith(prefix) ? name.slice(prefix.length) : name;
@@ -194,6 +199,9 @@ const GlobalFrame = () => {
         };
 
         Object.values(files).forEach((f) => {
+            if (!f || !f.name) {
+                return;
+            }
             const fileName = `${prefix}${f.name}`;
             if (
                 (savedVisible.open.includes(fileName) && !isOldVisibleTrack(savedVisible, f, prefix)) ||
