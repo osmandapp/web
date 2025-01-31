@@ -1,6 +1,6 @@
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import styles from './trackanalyzer.module.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ReactComponent as SegmentIcon } from '../../assets/icons/ic_action_gpx_width_bold.svg';
 import { ReactComponent as MaxSpeedIcon } from '../../assets/icons/ic_action_max_speed_16.svg';
 import { ReactComponent as AvgSpeedIcon } from '../../assets/icons/ic_action_speed_16.svg';
@@ -23,8 +23,61 @@ import i18n from 'i18next';
 import { MAIN_BLOCK_SIZE } from './TrackAnalyzerMenu';
 import { useTranslation } from 'react-i18next';
 
-export default function TrackSegmentStat({ height, sortedSegments }) {
+export const getSpeedStats = (stats, t) => [
+    { icon: <MaxSpeedIcon />, label: t('shared_string_max_speed'), value: stats.maxSpeed?.toFixed(1), unit: t('km_h') },
+    { icon: <AvgSpeedIcon />, label: t('web:avg_speed'), value: stats.avgSpeed?.toFixed(1), unit: t('km_h') },
+    { icon: <MinSpeedIcon />, label: t('shared_string_min_speed'), value: stats.minSpeed, unit: t('km_h') },
+];
+
+export const getAltitudeStats = (stats, t) => [
+    { icon: <MaxAltitudeIcon />, label: t('web:max_altitude'), value: stats.maxElevation, unit: t('m') },
+    {
+        icon: <AvgAltitudeIcon />,
+        label: t('web:avg_altitude'),
+        value: stats.avgElevation?.toFixed(1),
+        unit: t('m'),
+    },
+    { icon: <MinAltitudeIcon />, label: t('web:min_altitude'), value: stats.minElevation, unit: t('m') },
+    {
+        icon: <UphillIcon />,
+        label: t('shared_string_uphill'),
+        value: stats.diffElevationUp?.toFixed(1),
+        unit: t('m'),
+    },
+    {
+        icon: <DownhillIcon />,
+        label: t('shared_string_downhill'),
+        value: stats.diffElevationDown?.toFixed(1),
+        unit: t('m'),
+    },
+];
+
+export const getOtherStats = (stats, t, formatDate) => [
+    { icon: <DateIcon />, label: t('shared_string_date'), value: formatDate(stats.date) },
+    {
+        icon: <TimeDurationIcon />,
+        label: t('duration'),
+        value: (stats.duration / 3600000)?.toFixed(2),
+        unit: t('web:h'),
+    },
+    {
+        icon: <TimeMovingIcon />,
+        label: t('web:moving_time'),
+        value: (stats.timeMoving / 3600000)?.toFixed(2),
+        unit: t('web:h'),
+    },
+    {
+        icon: <DistanceIcon />,
+        label: t('web:length'),
+        value: (stats.totalDist / 1000)?.toFixed(2),
+        unit: t('km'),
+    },
+];
+
+export default function TrackSegmentStat({ height, sortedSegments, activeSegmentParams }) {
     const { t } = useTranslation();
+
+    const [filteredStats, setFilteredStats] = useState([]);
 
     const formatDate = (timestamp) => {
         const locale = locales[i18n.language] || locales.enUS;
@@ -35,64 +88,24 @@ export default function TrackSegmentStat({ height, sortedSegments }) {
         return format(date, 'dd.MM.yyyy', { locale });
     };
 
+    useEffect(() => {
+        if (!sortedSegments) return;
+
+        setFilteredStats(
+            sortedSegments.map((segment) => ({
+                name: segment.name,
+                color: segment.color,
+                stats: {
+                    speed: getSpeedStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
+                    altitude: getAltitudeStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
+                    other: getOtherStats(segment.stats, t, formatDate).filter((s) => activeSegmentParams.has(s.label)),
+                },
+            }))
+        );
+    }, [sortedSegments, activeSegmentParams]);
+
     const Statistics = (stats) => {
         if (!stats) return null;
-
-        const speedStats = [
-            {
-                icon: <MaxSpeedIcon />,
-                label: t('shared_string_max_speed'),
-                value: stats.maxSpeed.toFixed(1),
-                unit: t('km_h'),
-            },
-            { icon: <AvgSpeedIcon />, label: t('web:avg_speed'), value: stats.avgSpeed.toFixed(1), unit: t('km_h') },
-            { icon: <MinSpeedIcon />, label: t('shared_string_min_speed'), value: stats.minSpeed, unit: t('km_h') },
-        ];
-
-        const altitudeStats = [
-            { icon: <MaxAltitudeIcon />, label: t('web:max_altitude'), value: stats.maxElevation, unit: t('m') },
-            {
-                icon: <AvgAltitudeIcon />,
-                label: t('web:avg_altitude'),
-                value: stats.avgElevation.toFixed(1),
-                unit: t('m'),
-            },
-            { icon: <MinAltitudeIcon />, label: t('web:min_altitude'), value: stats.minElevation, unit: t('m') },
-            {
-                icon: <UphillIcon />,
-                label: t('shared_string_uphill'),
-                value: stats.diffElevationUp.toFixed(1),
-                unit: t('m'),
-            },
-            {
-                icon: <DownhillIcon />,
-                label: t('shared_string_downhill'),
-                value: stats.diffElevationDown.toFixed(1),
-                unit: t('m'),
-            },
-        ];
-
-        const otherStats = [
-            { icon: <DateIcon />, label: t('shared_string_date'), value: formatDate(stats.date) },
-            {
-                icon: <TimeDurationIcon />,
-                label: t('duration'),
-                value: (stats.duration / 3600000).toFixed(2),
-                unit: t('web:h'),
-            },
-            {
-                icon: <TimeMovingIcon />,
-                label: t('web:moving_time'),
-                value: (stats.timeMoving / 3600000).toFixed(2),
-                unit: t('web:h'),
-            },
-            {
-                icon: <DistanceIcon />,
-                label: t('web:length'),
-                value: (stats.totalDist / 1000).toFixed(2),
-                unit: t('km'),
-            },
-        ];
 
         const StatItems = (items, isLastGroup) => (
             <Box>
@@ -131,17 +144,17 @@ export default function TrackSegmentStat({ height, sortedSegments }) {
 
         return (
             <Box>
-                {StatItems(speedStats, false)}
-                {StatItems(altitudeStats, false)}
-                {StatItems(otherStats, true)}
+                {StatItems(stats.speed)}
+                {StatItems(stats.altitude)}
+                {StatItems(stats.other)}
             </Box>
         );
     };
 
     return (
         <Box sx={{ maxHeight: `${height - MAIN_BLOCK_SIZE}px`, overflowY: 'auto' }}>
-            {sortedSegments &&
-                sortedSegments.map((segment, index) => {
+            {filteredStats &&
+                filteredStats.map((segment, index) => {
                     const stats = segment.stats;
                     const isFirstSegment = index === 0;
                     const color = segment.color;

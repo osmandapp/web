@@ -1,7 +1,8 @@
-import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
-import React, { useContext, useEffect, useState } from 'react';
+import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
 import EmptyLogin from '../login/EmptyLogin';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import TracksSelect from './TracksSelect';
@@ -17,6 +18,8 @@ import TrackSegmentStat from './TrackSegmentStat';
 import ThickDivider from '../components/dividers/ThickDivider';
 import { addColorsToSegments } from './util/SegmentColorizer';
 import SortFilesButton, { TRACK_FILE_TYPE } from '../components/SortFilesButton';
+import ActionsMenu from '../actions/ActionsMenu';
+import SegmentParamsFilter from './SegmentParamsFilter';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
@@ -26,6 +29,7 @@ export default function TrackAnalyzerMenu() {
 
     const [, height] = useWindowSize();
     const { t } = useTranslation();
+    const anchorEl = useRef(null);
 
     const [startPoint, setStartPoint] = useState(null);
     const [finishPoint, setFinishPoint] = useState(null);
@@ -34,6 +38,10 @@ export default function TrackAnalyzerMenu() {
     const [analyseResult, setAnalyseResult] = useState(null);
     const [sortedSegments, setSortedSegments] = useState([]);
     const [segmentsResult, setSegmentsResult] = useState(null);
+
+    const [activeSegmentParams, setActiveSegmentParams] = useState(new Set());
+
+    const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
 
     useEffect(() => {
         setSortedSegments(segmentsResult ? segmentsResult.files : []);
@@ -243,6 +251,25 @@ export default function TrackAnalyzerMenu() {
                                 customGroup={segmentsResult}
                                 setSortFiles={setSortedSegments}
                             />
+                            <Tooltip
+                                key={'track_segments_filters'}
+                                title={t('shared_string_filters')}
+                                arrow
+                                placement="bottom-end"
+                            >
+                                <span>
+                                    <IconButton
+                                        component="span"
+                                        variant="contained"
+                                        type="button"
+                                        ref={anchorEl}
+                                        className={headerStyles.appBarIcon}
+                                        onClick={() => setOpenFiltersDialog(true)}
+                                    >
+                                        <FilterIcon />
+                                    </IconButton>
+                                </span>
+                            </Tooltip>
                         </Toolbar>
                     </AppBar>
                     <Box>
@@ -266,7 +293,11 @@ export default function TrackAnalyzerMenu() {
                     {analyseResult !== null && (
                         <>
                             <ThickDivider />
-                            <TrackSegmentStat height={height} sortedSegments={sortedSegments} />
+                            <TrackSegmentStat
+                                height={height}
+                                sortedSegments={sortedSegments}
+                                activeSegmentParams={activeSegmentParams}
+                            />
                         </>
                     )}
                     <Box
@@ -278,6 +309,17 @@ export default function TrackAnalyzerMenu() {
                             maxHeight: `${height - 300}px`,
                         }}
                     ></Box>
+                    <ActionsMenu
+                        open={openFiltersDialog}
+                        setOpen={setOpenFiltersDialog}
+                        anchorEl={anchorEl}
+                        actions={
+                            <SegmentParamsFilter
+                                activeSegmentParams={activeSegmentParams}
+                                setActiveSegmentParams={setActiveSegmentParams}
+                            />
+                        }
+                    />
                 </Box>
             ) : (
                 <EmptyLogin />
