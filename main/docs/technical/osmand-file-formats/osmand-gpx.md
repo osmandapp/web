@@ -628,7 +628,7 @@ OBF files automatically generate and store critical track statistics and analyti
 
 ### Internal Tags
 
-Some GPX tags are used or stored indirectly in OBF files. See [OsmGpxWriteContext.java](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/obf/OsmGpxWriteContext.java) for details of the implementation.
+Some GPX tags are used or stored indirectly in OBF files. Refer to [OsmGpxWriteContext.java](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/obf/OsmGpxWriteContext.java) for details on the implementation.
 
 | OBF tag                      | Purpose                                                                                                    |
 |:-----------------------------|:-----------------------------------------------------------------------------------------------------------|
