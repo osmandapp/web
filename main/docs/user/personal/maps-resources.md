@@ -378,4 +378,10 @@ Maintain at least [**30 edits**](https://github.com/osmandapp/OsmAnd/blob/master
 - [Profiles (Settings)](./profiles.md)
 - [Import / Export](../personal/import-export.md)
 
+### Common Issues and Solutions
+
+- Voice Navigation. [(check)](../troubleshooting/navigation.md#voice-navigation)
+- How to delete search history. [(check)](../troubleshooting/general.md#how-to-delete-search-history)
+- For additional troubleshooting, visit: [Maps & Data](../troubleshooting/maps-data.md)
+
 > *This article was last updated in January 2025*

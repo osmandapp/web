@@ -120,12 +120,20 @@ To download a specific map type for a country or region:
 
 You can find information about other types of maps in the [Downloads](../personal/maps-resources.md#downloads) section of the **Maps** article.
 
-:::tip World Map Options
+### World Map Options
 
-- OsmAnd includes a lightweight **Mini World Map** by default, which allows basic navigation without downloading additional data.
-- For a more comprehensive view, download the **Detailed World Map**, featuring global coverage with major cities, roads, rivers, and other geographical details.
+OsmAnd includes two world map options:  
 
-:::
+1. **Mini World Map** (pre-installed). A lightweight map that enables basic navigation and provides an overview of the world.  
+2. **Detailed World Map** (downloadable). A global map featuring major cities, roads, rivers, and other geographical features.
+
+***Important notes:***
+
+- The **Detailed World Map does not replace individual country or region maps.** It is useful for an overview but does not contain the same level of detail as regional maps.  
+- If you need detailed navigation, **download specific country or region maps manually** via *Menu → Maps & Resources → Download Maps.*
+- Users with **OsmAnd Pro or Maps+** can download an **unlimited number of maps** but must still download each region separately.  
+- **There is no single option to download all world maps at once.**
+
 
 ### Select on the map
 
@@ -176,4 +184,4 @@ Search makes it easy to find a specific map or region, providing a convenient an
 - Tap the name of the required result and the Regionwide map list will open.
 - Select [map types](../personal/maps-resources.md#map-types): *Standard map, Road-only map, Contour lines, Wikipedia*.
 
-> *This article was last updated in November 2024*
+> *This article was last updated in January 2025*
