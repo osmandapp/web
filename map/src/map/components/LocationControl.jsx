@@ -1,7 +1,7 @@
 import L from 'leaflet';
 
 import { useMap } from 'react-leaflet';
-import React, { useRef, useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useRef, useState, useEffect, useMemo, useCallback, useContext } from 'react';
 
 import { Paper, Tooltip, IconButton, CircularProgress, SvgIcon } from '@mui/material';
 import { ReactComponent as LocationIcon } from '../../assets/icons/ic_map_get_location.svg';
@@ -10,6 +10,7 @@ import { ReactComponent as LocationOffIcon } from '../../assets/icons/ic_action_
 import { apiGet } from '../../util/HttpApi';
 import styles from '../map.module.css';
 import { POSITION_CLASSES, TOOLTIP_PLACEMENT } from '../util/MapStylesManager';
+import AppContext from '../../context/AppContext';
 
 const flyZoom = 9;
 const locationZoom = 17;
@@ -58,6 +59,7 @@ const circleStyle = {
 };
 
 export const LocationControl = ({ position = 'bottomright' } = {}) => {
+    const ctx = useContext(AppContext);
     const map = useMap();
     const element = useRef();
 
@@ -196,7 +198,7 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
                     float: 'none',
                     marginRight: '60px',
                     padding: '8px',
-                    marginBottom: '12px',
+                    marginBottom: ctx.globalGraph?.show ? `${ctx.globalGraph.size + 12}px` : '12px',
                 }}
             >
                 {control}

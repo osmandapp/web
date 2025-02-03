@@ -13,7 +13,7 @@ import { cloneDeep, isEmpty } from 'lodash';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { getShareWithMe } from '../manager/ShareManager';
-import { FAVOURITES, GPX } from '../manager/GlobalManager';
+import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX } from '../manager/GlobalManager';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -444,6 +444,12 @@ export const AppContextProvider = (props) => {
     const [trackAnalyzer, setTrackAnalyzer] = useState(null);
     const [excludedSegments, setExcludedSegments] = useState(new Set());
 
+    // global graph
+    const [globalGraph, setGlobalGraph] = useState({
+        show: false,
+        size: GLOBAL_GRAPH_HEIGHT_SIZE,
+    });
+
     function getConfigureMap() {
         const TIME_UPDATE_CONFIGURE_MAP = 1731935733868;
         let savedConfigureMap = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
@@ -748,6 +754,8 @@ export const AppContextProvider = (props) => {
                 setTrackAnalyzer,
                 excludedSegments,
                 setExcludedSegments,
+                globalGraph,
+                setGlobalGraph,
             }}
         >
             {props.children}

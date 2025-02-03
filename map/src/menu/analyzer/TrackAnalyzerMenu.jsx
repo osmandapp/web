@@ -20,6 +20,7 @@ import { addColorsToSegments } from './util/SegmentColorizer';
 import SortFilesButton, { TRACK_FILE_TYPE } from '../components/buttons/SortFilesButton';
 import ActionsMenu from '../actions/ActionsMenu';
 import SegmentParamsFilter from './SegmentParamsFilter';
+import { TYPE_ANALYZER } from '../../frame/components/graph/GlobalGraph';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
@@ -133,9 +134,9 @@ export default function TrackAnalyzerMenu() {
     // segments -> map
     useEffect(() => {
         if (analyseResult) {
-            setSegmentsResult((prep) => {
+            setSegmentsResult((prev) => {
                 return {
-                    ...prep,
+                    ...prev,
                     files: Object.values(analyseResult.segments).flat(),
                 };
             });
@@ -146,6 +147,13 @@ export default function TrackAnalyzerMenu() {
                 segmentsUpdateDate: new Date().getMilliseconds(),
                 segments: analyseResult.segments,
             });
+            ctx.setGlobalGraph((prev) => {
+                return {
+                    ...prev,
+                    show: true,
+                    type: TYPE_ANALYZER,
+                };
+            });
         } else {
             // clear segments from map
             ctx.setTrackAnalyzer({
@@ -154,6 +162,13 @@ export default function TrackAnalyzerMenu() {
                 segments: null,
             });
             setSegmentsResult(null);
+            ctx.setGlobalGraph((prev) => {
+                return {
+                    ...prev,
+                    show: false,
+                    type: null,
+                };
+            });
         }
     }, [analyseResult]);
 

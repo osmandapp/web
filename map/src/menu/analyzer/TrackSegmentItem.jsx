@@ -7,6 +7,7 @@ import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
 import ActionsMenu from '../actions/ActionsMenu';
 import SegmentActions from '../actions/SegmentActions';
 import styles from './trackanalyzer.module.css';
+import SegmentName from './SegmentName';
 
 export default function TrackSegmentItem({ segment, index, filteredStats, setFilteredStats }) {
     const anchorEl = useRef(null);
@@ -30,21 +31,7 @@ export default function TrackSegmentItem({ segment, index, filteredStats, setFil
                             whiteSpace: 'nowrap',
                         }}
                     >
-                        <Box
-                            component="span"
-                            sx={{
-                                overflow: 'hidden',
-                                textOverflow: 'ellipsis',
-                                whiteSpace: 'nowrap',
-                                flexGrow: 1,
-                                minWidth: 0,
-                            }}
-                        >
-                            {segment.name}
-                        </Box>
-                        <Box component="span" sx={{ flexShrink: 0, marginLeft: '4px' }}>
-                            {segment.allInd > 1 ? `(${segment.trackInd + 1}/${segment.allInd})` : ''}
-                        </Box>
+                        <SegmentName segment={segment} />
                         <ThreeDotsButton
                             name={'action_menu_group'}
                             tip={'shared_string_menu'}

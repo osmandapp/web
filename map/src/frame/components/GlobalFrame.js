@@ -27,6 +27,7 @@ import { addCloseTracksToRecently, VISIBLE_SHARE_MARKER } from '../../menu/visib
 import PhotosModal from '../../menu/search/explore/PhotosModal';
 import InstallBanner from './InstallBanner';
 import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
+import GlobalGraph from './graph/GlobalGraph';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -41,11 +42,11 @@ const GlobalFrame = () => {
     const location = useLocation();
     const [showInstallBanner, setShowInstallBanner] = useState(false);
 
-    const MAIN_MENU_SIZE = openMainMenu ? MAIN_MENU_OPEN_SIZE : MAIN_MENU_MIN_SIZE;
+    const MAIN_MENU_SIZE = openMainMenu ? `${MAIN_MENU_OPEN_SIZE}px` : `${MAIN_MENU_MIN_SIZE}px`;
     const MENU_INFO_SIZE =
-        menuInfo || ctx.openLoginMenu || ctx.infoBlockWidth === MENU_INFO_OPEN_SIZE
-            ? MENU_INFO_OPEN_SIZE
-            : MENU_INFO_CLOSE_SIZE;
+        menuInfo || ctx.openLoginMenu || ctx.infoBlockWidth === `${MENU_INFO_OPEN_SIZE}px`
+            ? `${MENU_INFO_OPEN_SIZE}px`
+            : `${MENU_INFO_CLOSE_SIZE}px`;
 
     // check configure map state
     useEffect(() => {
@@ -59,7 +60,7 @@ const GlobalFrame = () => {
 
     useEffect(() => {
         if (menuInfo) {
-            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
+            ctx.setInfoBlockWidth(`${MENU_INFO_OPEN_SIZE}px`);
         }
     }, [menuInfo]);
 
@@ -76,7 +77,7 @@ const GlobalFrame = () => {
     }, [height, width]);
 
     useEffect(() => {
-        if (ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) {
+        if (ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
             setShowInfoBlock(false);
             if (menuInfo !== null) {
                 setMenuInfo(null);
@@ -296,10 +297,11 @@ const GlobalFrame = () => {
                 }}
             >
                 <GlobalConfirmationDialog />
-                <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE} menuInfoWidth={MENU_INFO_SIZE} />
+                <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'} menuInfoWidth={MENU_INFO_SIZE} />
+                {ctx.globalGraph?.show && <GlobalGraph type={ctx.globalGraph.type} />}
                 <GlobalAlert width={width} />
                 <GeneralPanelButtons
-                    mainMenuWidth={MAIN_MENU_MIN_SIZE}
+                    mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'}
                     menuInfoWidth={MENU_INFO_SIZE}
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}

@@ -46,7 +46,7 @@ export default function SettingsMenu() {
     const [, height] = useWindowSize();
 
     function close() {
-        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+        ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
         ctx.setCurrentObjectType(null);
     }
 

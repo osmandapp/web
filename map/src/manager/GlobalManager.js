@@ -1,11 +1,13 @@
 import { SHARE_TYPE } from './ShareManager';
 
-export const MAIN_MENU_MIN_SIZE = '64px';
-export const MAIN_MENU_OPEN_SIZE = '240px';
-export const MENU_INFO_OPEN_SIZE = '360px';
-export const MENU_INFO_CLOSE_SIZE = '0px';
-export const HEADER_SIZE = '60px';
-export const INSTALL_BANNER_SIZE = '60px';
+// px
+export const MAIN_MENU_MIN_SIZE = 64;
+export const MAIN_MENU_OPEN_SIZE = 240;
+export const MENU_INFO_OPEN_SIZE = 360;
+export const MENU_INFO_CLOSE_SIZE = 0;
+export const HEADER_SIZE = 60;
+export const INSTALL_BANNER_SIZE = 60;
+export const GLOBAL_GRAPH_HEIGHT_SIZE = 200;
 
 export const GPX = 'GPX';
 export const FAVOURITES = 'FAVOURITES';

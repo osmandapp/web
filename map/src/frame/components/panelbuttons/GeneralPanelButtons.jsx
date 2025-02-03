@@ -33,9 +33,8 @@ export default function GeneralPanelButtons({
     const tooltipOrientation = getTooltipOrientation();
 
     const GPS_CONTROL_HEIGHT = 70 + 40; // margin + button
-    const HEADER_SIZE_PX = parseInt(HEADER_SIZE);
-    const INSTALL_BANNER_SIZE_PX = showInstallBanner ? parseInt(INSTALL_BANNER_SIZE) : 0;
-    const HEADER_HEIGHT = HEADER_SIZE_PX + INSTALL_BANNER_SIZE_PX + 1;
+    const INSTALL_BANNER_SIZE_PX = showInstallBanner ? INSTALL_BANNER_SIZE : 0;
+    const HEADER_HEIGHT = HEADER_SIZE + INSTALL_BANNER_SIZE_PX + 1;
     const BUTTON_SIZE = 41;
 
     function getButtonOrientation() {
@@ -125,7 +124,8 @@ export default function GeneralPanelButtons({
                     top: `${HEADER_HEIGHT + 100}px`,
                     bottom: useFlexButtons() && `${HEADER_HEIGHT}px`,
                     zIndex: 1000,
-                    position: window.innerWidth > MENU_INFO_OPEN_SIZE + MAIN_MENU_MIN_SIZE ? 'absolute' : 'fixed',
+                    position:
+                        window.innerWidth > `${MENU_INFO_OPEN_SIZE + MAIN_MENU_MIN_SIZE}px` ? 'absolute' : 'fixed',
                     display: 'flex',
                     height: useFlexButtons() && height - 2 * HEADER_HEIGHT - GPS_CONTROL_HEIGHT,
                     alignItems: useFlexButtons() && 'center',

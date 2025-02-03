@@ -91,7 +91,11 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
             <>
                 <div ref={ref}>
                     {inView || (
-                        <Skeleton variant="rectangular" width={MENU_INFO_OPEN_SIZE} height={'var(--menu-item-size)'} />
+                        <Skeleton
+                            variant="rectangular"
+                            width={MENU_INFO_OPEN_SIZE + 'px'}
+                            height={'var(--menu-item-size)'}
+                        />
                     )}
                     {inView && (
                         <MenuItem

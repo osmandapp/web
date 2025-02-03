@@ -224,7 +224,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
         if (showInfoBlock) {
             return `${DRAWER_SIZE + 24}px`;
         } else {
-            return MENU_INFO_CLOSE_SIZE;
+            return `${MENU_INFO_CLOSE_SIZE}px`;
         }
     }
 

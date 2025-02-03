@@ -130,7 +130,7 @@ export default function ShareFile() {
         ctx.setCurrentObjectType(null);
         ctx.setSelectedGpxFile({});
         ctx.setShareFileMarkers(null);
-        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+        ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
     }
 
     async function sendAccessRequest() {

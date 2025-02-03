@@ -130,12 +130,12 @@ export default function MainMenu({
         if (!menuInfo) {
             const item = items.find((item) => item.url === location.pathname);
             if (item) {
-                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
+                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
                 selectMenu({ item, openFromUrl: true });
             }
         }
         if (location.pathname === MAIN_URL_WITH_SLASH) {
-            ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+            ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
         }
         closeSubPages({ wptDetails: false });
         const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
@@ -146,7 +146,7 @@ export default function MainMenu({
         const openShareFile = location.pathname.includes(SHARE_FILE_MAIN_URL);
         if (openShareFile) {
             setShowInfoBlock(true);
-            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
         }
         if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite) {
             setShowInfoBlock(false);
@@ -383,7 +383,7 @@ export default function MainMenu({
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;
             if (!menu) {
-                ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+                ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
             }
             setMenuInfo(menu?.component);
             setSelectedType(menu?.type);
@@ -516,12 +516,14 @@ export default function MainMenu({
                         sx: {
                             boxSizing: 'border-box',
                             width: size,
-                            mt: showInstallBanner && INSTALL_BANNER_SIZE,
-                            height: showInstallBanner ? `calc(${height}px - ${INSTALL_BANNER_SIZE})` : '100%',
+                            mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
+                            height: showInstallBanner ? `calc(${height}px - ${INSTALL_BANNER_SIZE}px)` : '100%',
                             overflow: 'hidden',
                             zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
                             borderRight:
-                                ((!menuInfo && !ctx.openLoginMenu && ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) ||
+                                ((!menuInfo &&
+                                    !ctx.openLoginMenu &&
+                                    ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) ||
                                     (menuInfo && openMainMenu)) &&
                                 'none !important',
                             boxShadow:
@@ -624,7 +626,7 @@ export default function MainMenu({
                     sx: {
                         width: infoSize,
                         ml: '64px',
-                        mt: showInstallBanner && INSTALL_BANNER_SIZE,
+                        mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
                         boxShadow: 'none',
                         zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
                     },

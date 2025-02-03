@@ -43,6 +43,88 @@ const useStyles = makeStyles({
     },
 });
 
+export const getGraphData = ({
+    trackData = null,
+    segmentData = null,
+    ctx,
+    hasEle = false,
+    hasSrtm = false,
+    hasSpeed = false,
+}) => {
+    const pointsArr = trackData ? trackData.data : segmentData ? segmentData.points : [];
+    if (!_.isEmpty(pointsArr)) {
+        let elevation = hasEle ? 'ele' : null;
+        let elevationSRTM = hasSrtm ? 'srtmEle' : null;
+        let points = _.cloneDeep(pointsArr);
+        let result = [];
+        let minEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
+        let maxEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
+        let minSpeed = hasSpeed ? 0 : null;
+        let maxSpeed = hasSpeed ? 0 : null;
+        let sumDist = 0;
+        points.forEach((point) => {
+            let ele;
+            let eleSRTM;
+            let speed;
+            if (elevation) {
+                ele = TracksManager.getEle(point, elevation, points)?.toFixed(2);
+                if (ele !== undefined) {
+                    ele = Math.round(ele * 10) / 10;
+                    minEle = minEle === TracksManager.NAN_MARKER ? ele : Math.min(ele, minEle);
+                    maxEle = maxEle === TracksManager.NAN_MARKER ? ele : Math.max(ele, maxEle);
+                }
+            }
+            if (elevationSRTM) {
+                eleSRTM = TracksManager.getEle(point, elevationSRTM, points)?.toFixed(2);
+                if (eleSRTM && !elevation) {
+                    eleSRTM = Math.round(eleSRTM * 10) / 10;
+                    minEle = Math.min(eleSRTM, minEle);
+                    maxEle = Math.max(eleSRTM, maxEle);
+                }
+            }
+            if (hasSpeed) {
+                speed = _.cloneDeep(
+                    point.speed ? point.speed : point.ext?.speed ? point.ext?.speed : point.ext?.extensions?.speed
+                );
+                if (speed) {
+                    speed = ((Math.round(speed * 10) / 10) * 3.6).toFixed(2);
+                    minSpeed = Math.min(speed, minSpeed);
+                    maxSpeed = Math.max(speed, maxSpeed);
+                }
+            }
+
+            if (trackData) {
+                // get-analysis might make point.distance inaccurate, so use "total" first
+                if (point.distanceTotal > 0 || point.distanceSegment > 0 || point.ext?.distance > 0) {
+                    sumDist = point.distanceTotal || point.distanceSegment || point.ext?.distance;
+                } else if (point.distance || point.distance === 0) {
+                    sumDist += point.distance;
+                }
+            } else if (segmentData) {
+                sumDist = point.distance;
+            }
+
+            result.push({
+                [DISTANCE]: Math.round(sumDist) / 1000,
+                [ELEVATION]: ele,
+                [ELEVATION_SRTM]: eleSRTM,
+                [SPEED]: speed,
+            });
+        });
+
+        const newSlopes = getSlopes(result, ctx, sumDist);
+        return {
+            res: result,
+            minEle,
+            maxEle,
+            minSpeed,
+            maxSpeed,
+            slopes: newSlopes,
+        };
+    }
+    return null;
+};
+
 const GpxGraphProvider = ({ width }) => {
     const ctx = useContext(AppContext);
     const classes = useStyles();
@@ -136,83 +218,17 @@ const GpxGraphProvider = ({ width }) => {
     }, [data]);
 
     const mainGraphData = useMemo(() => {
-        if (!_.isEmpty(data?.data)) {
-            let elevation = data.ele ? 'ele' : null;
-            let elevationSRTM = data.srtm ? 'srtmEle' : null;
-            let points = _.cloneDeep(data.data);
-            let result = [];
-            let minEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
-            let maxEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
-            let minSpeed = data.speed ? 0 : null;
-            let maxSpeed = data.speed ? 0 : null;
-            let sumDist = 0;
-            points.forEach((point) => {
-                let ele;
-                let eleSRTM;
-                let speed;
-                if (elevation) {
-                    ele = TracksManager.getEle(point, elevation, points)?.toFixed(2);
-                    if (ele !== undefined) {
-                        ele = Math.round(ele * 10) / 10;
-                        if (minEle === TracksManager.NAN_MARKER) {
-                            minEle = ele;
-                        } else {
-                            minEle = Math.min(ele, minEle);
-                        }
-
-                        if (maxEle === TracksManager.NAN_MARKER) {
-                            maxEle = ele;
-                        } else {
-                            maxEle = Math.max(ele, maxEle);
-                        }
-                    }
-                }
-                if (elevationSRTM) {
-                    eleSRTM = TracksManager.getEle(point, elevationSRTM, points)?.toFixed(2);
-                    if (eleSRTM && !elevation) {
-                        eleSRTM = Math.round(eleSRTM * 10) / 10;
-                        minEle = Math.min(eleSRTM, minEle);
-                        maxEle = Math.max(eleSRTM, maxEle);
-                    }
-                }
-                if (data.speed) {
-                    speed = _.cloneDeep(
-                        point.speed ? point.speed : point.ext?.speed ? point.ext?.speed : point.ext?.extensions?.speed
-                    );
-                    if (speed) {
-                        speed = ((Math.round(speed * 10) / 10) * 3.6).toFixed(2);
-                        minSpeed = Math.min(speed, minSpeed);
-                        maxSpeed = Math.max(speed, maxSpeed);
-                    }
-                }
-
-                // get-analysis might make point.distance inaccurate, so use "total" first
-                if (point.distanceTotal > 0 || point.distanceSegment > 0 || point.ext?.distance > 0) {
-                    sumDist = point.distanceTotal || point.distanceSegment || point.ext?.distance;
-                } else if (point.distance || point.distance === 0) {
-                    sumDist += point.distance;
-                }
-
-                let dataTab = {
-                    [DISTANCE]: Math.round(sumDist) / 1000,
-                    [ELEVATION]: ele,
-                    [ELEVATION_SRTM]: eleSRTM,
-                    [SPEED]: speed,
-                };
-                result.push(dataTab);
-            });
-
-            const newSlopes = getSlopes(result, ctx, sumDist);
-            setSlopes(newSlopes);
-            return {
-                res: result,
-                minEle: minEle,
-                maxEle: maxEle,
-                minSpeed: minSpeed,
-                maxSpeed: maxSpeed,
-                slopes: newSlopes,
-            };
+        const graphData = getGraphData({
+            trackData: data,
+            ctx,
+            hasEle: data?.ele,
+            hasSrtm: data?.srtm,
+            hasSpeed: data?.speed,
+        });
+        if (graphData) {
+            setSlopes(graphData.slopes);
         }
+        return graphData;
     }, [data]);
 
     const attrGraphData = useMemo(() => {

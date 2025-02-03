@@ -21,7 +21,7 @@ import { ReactComponent as CoordinatesIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as AddPinIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_world_globe.svg';
 import { useTranslation } from 'react-i18next';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { GLOBAL_GRAPH_HEIGHT_SIZE, LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
@@ -39,7 +39,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         event.originalEvent.preventDefault();
         setMenuPosition({
             mouseX: event.originalEvent.clientX + 5,
-            mouseY: event.originalEvent.clientY + 5,
+            mouseY: event.originalEvent.clientY + 5 - (ctx.globalGraph?.show ? `${GLOBAL_GRAPH_HEIGHT_SIZE}px` : 0),
         });
         setClickLatLng(event.latlng);
         setOpen(true);

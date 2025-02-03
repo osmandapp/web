@@ -45,7 +45,7 @@ export default function DeleteWptDialog({
             deleteFavorite().then(() => {
                 ctx.setSelectedWpt(null);
                 if (!isDetails) {
-                    ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+                    ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
                 }
             });
         }

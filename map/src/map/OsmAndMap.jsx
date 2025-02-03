@@ -33,6 +33,9 @@ const useStyles = makeStyles(() => ({
         '& .leaflet-control-layers': {
             border: '0px !important',
         },
+        '& .leaflet-bottom .leaflet-control-zoom': {
+            bottom: props.globalGraph?.show ? `${props.globalGraph.size}px` : '0px',
+        },
         '& .leaflet-control-scale': {
             marginLeft:
                 props.width < 750 || props.width - props.marginLeft < 500
@@ -40,12 +43,13 @@ const useStyles = makeStyles(() => ({
                     : `${props.marginLeft}px`,
             display: props.width > 750 && props.width - props.marginLeft > 500 ? 'inline-block' : 'flex',
             float: 'none',
-            marginBottom: '20px',
+            marginBottom: props.globalGraph?.show ? `${props.globalGraph.size + 20}px` : '20px',
         },
         '& .leaflet-control-attribution': {
             left: `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0)}px`,
             marginLeft: '20px',
             borderRadius: '4px !important',
+            marginBottom: props.globalGraph?.show ? `${props.globalGraph.size + 20}px` : '20px',
         },
         '& .leaflet-control-layers-toggle': {
             width: '0px !important',
@@ -90,7 +94,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const menuMargin = parseFloat(menuInfoWidth) !== 0 ? parseFloat(menuInfoWidth) - 100 : 0;
     const attributionSize = 300;
     const marginLeft = width / 2 - attributionSize + menuMargin;
-    const classes = useStyles({ mainMenuWidth, menuInfoWidth, marginLeft, width });
+    const classes = useStyles({ mainMenuWidth, menuInfoWidth, marginLeft, width, globalGraph: ctx.globalGraph });
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {

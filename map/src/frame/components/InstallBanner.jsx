@@ -31,14 +31,14 @@ export default function InstallBanner({ showInstallBanner }) {
                 zIndex: 1400,
                 width: width,
                 maxWidth: width,
-                maxHeight: INSTALL_BANNER_SIZE,
+                maxHeight: `${INSTALL_BANNER_SIZE}px`,
                 background: '#ffffff',
                 boxShadow: '0px 0px 0px 0px, 0px 1px 1px 0px rgba(0, 0, 0, 0.15) !important',
             }}
         >
             <Box
                 sx={{
-                    height: INSTALL_BANNER_SIZE,
+                    height: `${INSTALL_BANNER_SIZE}px`,
                     minWidth: width - 32,
                     backgroundColor: '#fff',
                     color: isIos ? '#000' : '#fff',

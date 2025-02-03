@@ -71,9 +71,17 @@ export default function TrackAnalyzerLayer() {
         }
     }, [ctx.trackAnalyzer]);
 
+    // close track analyzer
     useEffect(() => {
         if (ctx.currentObjectType !== OBJECT_TRACK_ANALYZER && ctx.trackAnalyzer) {
             ctx.setTrackAnalyzer(null);
+            ctx.setGlobalGraph((prev) => {
+                return {
+                    ...prev,
+                    show: false,
+                    type: null,
+                };
+            });
         }
     }, [ctx.currentObjectType]);
 

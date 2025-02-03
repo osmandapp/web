@@ -35,7 +35,7 @@ export default function HeaderMenu({ showInstallBanner }) {
                 zIndex: 1300,
                 height: HEADER_SIZE,
                 background: '#ffffff',
-                mt: showInstallBanner && INSTALL_BANNER_SIZE,
+                mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
             }}
         >
             <Toolbar>
