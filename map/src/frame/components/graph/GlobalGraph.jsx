@@ -1,5 +1,5 @@
 import { GLOBAL_GRAPH_HEIGHT_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE } from '../../../manager/GlobalManager';
-import { Box, Divider, Drawer, FormControl, IconButton, MenuItem, Select, Typography } from '@mui/material';
+import { Box, Divider, Drawer, IconButton, Typography } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import { Chart } from 'react-chartjs-2';
@@ -21,12 +21,15 @@ import styles from '../frame.module.css';
 import SegmentSelector from './SegmentSelector';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
+import YAxisSelector from './YAxisSelector';
 
 const Z_INDEX_GRAPH = 1000;
 const MIN_GRAPH_HEIGHT = 34;
+const INNER_GRAPH_HEIGHT = 150;
+const INFO_BLOCK_WIDTH = 200;
 export const TYPE_ANALYZER = 'analyzer';
 
-const Y_AXIS_OPTIONS = [
+export const Y_AXIS_OPTIONS = [
     { value: 'altitude', label: 'Altitude' },
     { value: 'slope', label: 'Slope' },
     { value: 'speed', label: 'Speed' },
@@ -202,42 +205,22 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                 {!collapsed && (
                     <Box sx={{ display: 'flex', height: '100%' }}>
                         <Box className={styles.graphSelector}>
-                            <SegmentSelector
-                                currentGraph={currentGraph}
-                                segmentVisibility={segmentVisibility}
-                                toggleSegmentVisibility={toggleSegmentVisibility}
-                            />
-                            <FormControl fullWidth>
-                                <Select
-                                    variant="filled"
-                                    sx={{
-                                        '& .MuiFilledInput-input': {
-                                            p: '8px 4px 8px 12px',
-                                        },
-                                        '&::before': {
-                                            borderBottom: 'none',
-                                        },
-                                        '&::after': {
-                                            borderBottom: 'none',
-                                        },
-                                        '&:hover:not(.Mui-disabled)::before': {
-                                            borderBottom: 'none',
-                                        },
-                                    }}
-                                    labelId="y-axis-select-label"
-                                    value={yAxisOption}
-                                    onChange={(e) => setYAxisOption(e.target.value)}
-                                >
-                                    {Y_AXIS_OPTIONS.map((option) => (
-                                        <MenuItem key={option.value} value={option.value}>
-                                            {option.label}
-                                        </MenuItem>
-                                    ))}
-                                </Select>
-                            </FormControl>
+                            {type === TYPE_ANALYZER && (
+                                <SegmentSelector
+                                    currentGraph={currentGraph}
+                                    segmentVisibility={segmentVisibility}
+                                    toggleSegmentVisibility={toggleSegmentVisibility}
+                                />
+                            )}
+                            <YAxisSelector yAxisOption={yAxisOption} setYAxisOption={setYAxisOption} />
                         </Box>
                         <Box sx={{ flex: 1, padding: '10px' }}>
-                            <Box sx={{ width: width - MENU_INFO_OPEN_SIZE + MAIN_MENU_MIN_SIZE - 320, height: 150 }}>
+                            <Box
+                                sx={{
+                                    width: width - MENU_INFO_OPEN_SIZE - MAIN_MENU_MIN_SIZE - INFO_BLOCK_WIDTH - 10,
+                                    height: INNER_GRAPH_HEIGHT,
+                                }}
+                            >
                                 <Chart type="line" ref={chartRef} data={graphData} options={options} />
                             </Box>
                         </Box>

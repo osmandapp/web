@@ -83,6 +83,7 @@
     align-items: flex-start !important;
     gap: 16px !important;
     width: 150px !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
 }
 .graphIcon {
     fill: var(--svg-icon-color) !important;
