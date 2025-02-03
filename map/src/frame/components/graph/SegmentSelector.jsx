@@ -34,7 +34,6 @@ export default function SegmentSelector({ currentGraph, segmentVisibility, toggl
                     },
                 }}
                 MenuProps={{
-                    getContentAnchorEl: null,
                     anchorOrigin: {
                         vertical: 'bottom',
                         horizontal: 'left',
@@ -43,6 +42,7 @@ export default function SegmentSelector({ currentGraph, segmentVisibility, toggl
                         vertical: 'top',
                         horizontal: 'left',
                     },
+                    disablePortal: true,
                     PaperProps: {
                         sx: {
                             maxHeight: 400,
