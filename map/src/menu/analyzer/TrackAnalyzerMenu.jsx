@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 import { apiPost } from '../../util/HttpApi';
 import { quickNaNfix } from '../../util/Utils';
 import { getPointsForAnalysis } from './util/PointsManager';
-import TrackSegmentStat from './TrackSegmentStat';
+import TrackSegmentStat, { getAltitudeStats, getOtherStats, getSpeedStats } from './TrackSegmentStat';
 import ThickDivider from '../components/dividers/ThickDivider';
 import { addColorsToSegments } from './util/SegmentColorizer';
 import SortFilesButton, { TRACK_FILE_TYPE } from '../components/buttons/SortFilesButton';
@@ -40,9 +40,15 @@ export default function TrackAnalyzerMenu() {
     const [sortedSegments, setSortedSegments] = useState([]);
     const [segmentsResult, setSegmentsResult] = useState(null);
 
-    const [activeSegmentParams, setActiveSegmentParams] = useState(new Set());
-
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
+
+    const speedStats = getSpeedStats({}, t);
+    const altitudeStats = getAltitudeStats({}, t);
+    const otherStats = getOtherStats({}, t, (x) => x);
+
+    const allStats = [...speedStats, ...altitudeStats, ...otherStats];
+
+    const [activeSegmentParams, setActiveSegmentParams] = useState(new Set(allStats.map((stat) => stat.label)));
 
     useEffect(() => {
         setSortedSegments(segmentsResult ? segmentsResult.files : []);
@@ -246,7 +252,16 @@ export default function TrackAnalyzerMenu() {
     return (
         <>
             {ctx.loginUser ? (
-                <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                <Box
+                    minWidth={ctx.infoBlockWidth}
+                    maxWidth={ctx.infoBlockWidth}
+                    sx={{
+                        overflow: 'hidden',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '100vh',
+                    }}
+                >
                     <AppBar position="static" className={headerStyles.appbar}>
                         <Toolbar className={headerStyles.toolbar}>
                             <IconButton
@@ -315,21 +330,17 @@ export default function TrackAnalyzerMenu() {
                             />
                         </>
                     )}
-                    <Box
-                        minWidth={ctx.infoBlockWidth}
-                        maxWidth={ctx.infoBlockWidth}
-                        sx={{
-                            overflowX: 'hidden !important',
-                            overflowY: 'auto !important',
-                            maxHeight: `${height - 300}px`,
-                        }}
-                    ></Box>
+                    <Box sx={{ backgroundColor: '#f0f0f0', flexGrow: 1 }}></Box>
                     <ActionsMenu
                         open={openFiltersDialog}
                         setOpen={setOpenFiltersDialog}
                         anchorEl={anchorEl}
                         actions={
                             <SegmentParamsFilter
+                                allStats={allStats}
+                                speedStats={speedStats}
+                                altitudeStats={altitudeStats}
+                                otherStats={otherStats}
                                 activeSegmentParams={activeSegmentParams}
                                 setActiveSegmentParams={setActiveSegmentParams}
                             />

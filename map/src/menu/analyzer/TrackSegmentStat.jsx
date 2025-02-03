@@ -66,14 +66,28 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
         if (!sortedSegments) return;
 
         setFilteredStats(
-            sortedSegments.map((segment) => ({
-                ...segment,
-                stats: {
+            sortedSegments.map((segment) => {
+                const stats = {
                     speed: getSpeedStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
                     altitude: getAltitudeStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
                     other: getOtherStats(segment.stats, t, formatDate).filter((s) => activeSegmentParams.has(s.label)),
-                },
-            }))
+                };
+
+                let lastGroup = null;
+                Object.keys(stats).forEach((key) => {
+                    if (stats[key].length > 0) {
+                        lastGroup = key;
+                    }
+                });
+
+                return {
+                    ...segment,
+                    stats: {
+                        ...stats,
+                        isLastGroup: lastGroup,
+                    },
+                };
+            })
         );
     }, [sortedSegments, activeSegmentParams]);
 
@@ -111,15 +125,15 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
                         {index < items.length - 1 && <DividerWithMargin dashed={true} />}
                     </Box>
                 ))}
-                {!isLastGroup && <SimpleDivider />}
+                {stats.isLastGroup && !isLastGroup && <SimpleDivider />}
             </Box>
         );
 
         return (
             <Box>
-                {StatItems(stats.speed)}
-                {StatItems(stats.altitude)}
-                {StatItems(stats.other)}
+                {StatItems(stats.speed, stats.isLastGroup === 'speed')}
+                {StatItems(stats.altitude, stats.isLastGroup === 'altitude')}
+                {StatItems(stats.other, stats.isLastGroup === 'other')}
             </Box>
         );
     };

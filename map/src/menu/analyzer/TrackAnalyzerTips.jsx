@@ -44,7 +44,6 @@ export default function TrackAnalyzerTips() {
                         </Typography>
                     </ListItemText>
                 </MenuItem>
-                <ThickDivider />
             </Box>
         </>
     );
