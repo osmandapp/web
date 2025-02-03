@@ -136,7 +136,7 @@ _OsmAnd app → Menú → Configuración → Compras → Restaurar compras_
     </tr>
 </table> 
 
-1. ¡Disfruta de todas las funciones de [OsmAnd Pro](https://osmand.net/docs/user/purchases/android#pro-features)!
+5. ¡Disfruta de todas las funciones de [OsmAnd Pro](https://osmand.net/docs/user/purchases/android#pro-features)!
 
 :::tip Note
 Lee la información completa sobre compatibilidad entre plataformas e inicio de sesión [aquí](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform).
@@ -304,7 +304,7 @@ _OsmAnd app Menu > Settings > OsmAnd Cloud > I already have an account_
 </table> 
 
 
-1. После этого, вы получите **четырех-значный код** на вашу электронную почту для воода.
+3. После этого, вы получите **четырех-значный код** на вашу электронную почту для воода.
 
 ![Confirmation](@site/static/img/promo/advportal/confirmation_3.png)
 
