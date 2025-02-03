@@ -53,8 +53,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
     };
 
     const [yAxisOption, setYAxisOption] = useState('altitude');
-
-    const currentGraph = GRAPH_TYPES[type];
+    const [currentGraph, setCurrentGraph] = useState(GRAPH_TYPES[type]);
 
     useEffect(() => {
         ctx.setGlobalGraph((prev) => ({
@@ -63,7 +62,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
         }));
     }, [collapsed]);
 
-    const [segmentVisibility, setSegmentVisibility] = useState(() => {
+    function initVisibility() {
         if (type === TYPE_ANALYZER) {
             const initialVisibility = {};
             Object.entries(currentGraph.object).forEach(([trackName, trackSegments]) => {
@@ -72,7 +71,20 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
             return initialVisibility;
         }
         return {};
-    });
+    }
+
+    const [segmentVisibility, setSegmentVisibility] = useState(initVisibility);
+
+    // update graph data when new segments are loaded
+    useEffect(() => {
+        setSegmentVisibility(initVisibility);
+    }, [currentGraph.object]);
+
+    useEffect(() => {
+        if (type === TYPE_ANALYZER && currentGraph.object !== ctx.trackAnalyzer?.segments) {
+            setCurrentGraph(GRAPH_TYPES[type]);
+        }
+    }, [ctx.trackAnalyzer?.segments]);
 
     const toggleSegmentVisibility = (trackName, index) => {
         setSegmentVisibility((prev) => ({

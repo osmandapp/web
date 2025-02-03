@@ -22,14 +22,18 @@ export function getPointsForAnalysis({ startPoint, finishPoint }) {
 }
 
 export function parseCoordinate(coord) {
-    if (!isValidCoordinate(coord)) {
-        return null;
-    }
-    const [lat, lon] = coord.split(',').map(Number);
-    return new LatLng(lat, lon);
+    if (!coord) return null;
+
+    // try to parse coordinate in format "lat, lon" or "lat lon"
+    const parts = coord.trim().split(/[, ]+/);
+    if (parts.length !== 2) return null;
+
+    const [lat, lon] = parts;
+    return isValidCoordinate(lat, lon) ? new LatLng(parseFloat(lat), parseFloat(lon)) : null;
 }
 
-function isValidCoordinate(coord) {
-    const [lat, lon] = coord.split(',').map(Number);
-    return !isNaN(lat) && !isNaN(lon) && lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180;
+function isValidCoordinate(lat, lon) {
+    const latNum = parseFloat(lat);
+    const lonNum = parseFloat(lon);
+    return !isNaN(latNum) && !isNaN(lonNum) && latNum >= -90 && latNum <= 90 && lonNum >= -180 && lonNum <= 180;
 }

@@ -15,7 +15,9 @@ export default function PointField({ name, point, setPoint, setStartAnalysis }) 
     const [pointValue, setPointValue] = useState('');
 
     useEffect(() => {
-        setPoint(pointValue === '' ? null : parseCoordinate(pointValue));
+        if (pointValue === '') {
+            setPoint(null);
+        }
     }, [pointValue]);
 
     useEffect(() => {
@@ -28,9 +30,15 @@ export default function PointField({ name, point, setPoint, setStartAnalysis }) 
     }, [point]);
 
     const handleKeyPress = (e) => {
-        if (e.key === 'Enter') {
-            if (pointValue !== '') {
-                setStartAnalysis(true);
+        if (e.key === 'Enter' && pointValue !== '') {
+            setStartAnalysis(true);
+            //validate point only after pressing enter
+            setPoint(pointValue === '' ? null : parseCoordinate(pointValue));
+        } else if (e.key === 'Backspace' && pointValue.length > 0) {
+            const input = e.target;
+            if (input.selectionStart === input.selectionEnd && input.selectionStart === pointValue.length) {
+                setPointValue('');
+                e.preventDefault();
             }
         }
     };
