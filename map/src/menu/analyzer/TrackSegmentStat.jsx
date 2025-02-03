@@ -125,7 +125,7 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
                         {index < items.length - 1 && <DividerWithMargin dashed={true} />}
                     </Box>
                 ))}
-                {stats.isLastGroup && !isLastGroup && <SimpleDivider />}
+                {stats.isLastGroup && !isLastGroup && items.length !== 0 && <SimpleDivider />}
             </Box>
         );
 
