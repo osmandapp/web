@@ -1,5 +1,4 @@
-import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import styles from './trackanalyzer.module.css';
+import { Box } from '@mui/material';
 import React, { useEffect, useMemo, useState } from 'react';
 import { ReactComponent as MaxSpeedIcon } from '../../assets/icons/ic_action_max_speed_16.svg';
 import { ReactComponent as AvgSpeedIcon } from '../../assets/icons/ic_action_speed_16.svg';
@@ -13,8 +12,6 @@ import { ReactComponent as DateIcon } from '../../assets/icons/ic_action_calenda
 import { ReactComponent as TimeDurationIcon } from '../../assets/icons/ic_action_time_span_16.svg';
 import { ReactComponent as TimeMovingIcon } from '../../assets/icons/ic_action_time_span_16.svg';
 import { ReactComponent as DistanceIcon } from '../../assets/icons/ic_action_length_16.svg';
-import SimpleDivider from '../components/dividers/SimpleDivider';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
 import { format } from 'date-fns';
 import * as locales from 'date-fns/locale';
 import i18n from 'i18next';

@@ -132,6 +132,7 @@ export default function TrackAnalyzerMenu() {
                 addColorsToSegments(res);
                 prepareSegmentsForSort(res);
                 setAnalyseResult({ ...res });
+                ctx.setExcludedSegments(new Set());
             }
             setStartAnalysis(false);
         });

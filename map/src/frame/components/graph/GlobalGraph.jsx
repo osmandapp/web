@@ -81,10 +81,25 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
     }, [currentGraph.object]);
 
     useEffect(() => {
-        if (type === TYPE_ANALYZER && currentGraph.object !== ctx.trackAnalyzer?.segments) {
-            setCurrentGraph(GRAPH_TYPES[type]);
+        if (type === TYPE_ANALYZER) {
+            const filteredSegments = Object.entries(ctx.trackAnalyzer?.segments || {}).reduce(
+                (acc, [trackName, trackSegments]) => {
+                    const filtered = trackSegments.filter(
+                        (segment) => !ctx.excludedSegments.has(`${segment.name} ${segment.trackInd}`)
+                    );
+                    if (filtered.length > 0) {
+                        acc[trackName] = filtered;
+                    }
+                    return acc;
+                },
+                {}
+            );
+
+            if (JSON.stringify(filteredSegments) !== JSON.stringify(currentGraph.object)) {
+                setCurrentGraph({ ...GRAPH_TYPES[type], object: filteredSegments });
+            }
         }
-    }, [ctx.trackAnalyzer?.segments]);
+    }, [ctx.trackAnalyzer?.segments, ctx.excludedSegments]);
 
     const toggleSegmentVisibility = (trackName, index) => {
         setSegmentVisibility((prev) => ({
