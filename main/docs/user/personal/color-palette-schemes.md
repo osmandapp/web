@@ -31,7 +31,7 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps-res
 
 <TabItem value="android" label="Android">
 
-*Menu → Maps & Resources → Local → Colors*
+Go to: *Android* *Menu → Maps & Resources → Local → Colors*
 
 ![Palettes](@site/static/img/personal/color-schemes/colors.png)
 
@@ -39,7 +39,7 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps-res
 
 <TabItem value="ios" label="iOS">
 
-*Menu → Maps & Resources → Local → Colors*
+Go to: *iOS* *Menu → Maps & Resources → Local → Colors*
 
 ![Color palette](@site/static/img/personal/color-schemes/color_palette_ios.png)
 
@@ -112,7 +112,7 @@ You can edit palettes to personalize the look for maps, and routes. Own color pa
 
 Each line represents a numerical value (for the color palette, it's an index) and RGB color. For example:
 
-```
+```xml
 # TXT file named *height_altitude_0-200.txt*
 # 0 - 90 degree RGBA
 0,46,185,0,191
@@ -136,7 +136,7 @@ After moving this TXT file to *..Android/data/net.osmand/files/color-palete/heig
 
 <TabItem value="android" label="Android">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → Topography → Change Terrain color scheme*
+Go to: *Android* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → Topography → Change Terrain color scheme*
 
 ![Color Scheme](@site/static/img/widgets/color_scheme.png)
 
@@ -144,7 +144,7 @@ After moving this TXT file to *..Android/data/net.osmand/files/color-palete/heig
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → Topography → Change Terrain color scheme*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → Topography → Change Terrain color scheme*
 
 ![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
 
@@ -161,7 +161,7 @@ After moving this TXT file to *..Android/data/net.osmand/files/color-palete/heig
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
 ![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
@@ -169,7 +169,7 @@ After moving this TXT file to *..Android/data/net.osmand/files/color-palete/heig
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
 ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 

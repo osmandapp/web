@@ -117,7 +117,7 @@ With the plugin for each external sensor available to the OsmAnd application, yo
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
 ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
 
@@ -125,7 +125,7 @@ With the plugin for each external sensor available to the OsmAnd application, yo
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
 ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)  
 
@@ -175,7 +175,7 @@ OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*,
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="external_sensor_widgets"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="external_sensor_widgets"/>*
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
 
@@ -183,7 +183,7 @@ OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*,
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="external_sensor_widgets"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="external_sensor_widgets"/>*
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_2_ios.png)  
 
@@ -206,7 +206,7 @@ The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widget
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="external_sensor_widgets"/> → ⚙️ or <Translate android="true" ids="shared_string_settings"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="external_sensor_widgets"/> → ⚙️ or <Translate android="true" ids="shared_string_settings"/>*
 
 ![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-android.png)
 
@@ -214,7 +214,7 @@ The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widget
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → External sensor → Settings*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → External sensor → Settings*
 
  ![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 

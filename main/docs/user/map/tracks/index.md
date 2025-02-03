@@ -22,7 +22,7 @@ OsmAnd has many powerful features to display various routes on the map. Routes c
 
 ## Types of Tracks
 
-[Tracks (GPX)](#display-tracks-on-the-map) - recorded or planned trip saved in [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). This kind of route could be imported from the external source, created in the application, or recorded by the user. GPX could contain one of 3 different types of data, or all of them:
+[Tracks (GPX)](#display-tracks-on-the-map) - recorded or planned trip saved in [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). This kind of route could be imported from the external source, created in the application, or recorded by you. GPX could contain one of 3 different types of data, or all of them:
 
 - Track as a line (***Geometry***). The file has a ```<trkpt>``` points array, each point has the location and optional time, speed, altitude, and other attributes. These tracks are displayed on the map as solid lines.
 - Track as a route (***Route***). The file has a ```<rtept>``` points array, each point described as an intermediate point of the route. It depends on how points within a route should be connected, either as small route segments or via a straight line. These tracks are displayed on the map as dashed lines.
@@ -41,7 +41,7 @@ You can manage track visibility by choosing which ones to display or hide from s
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
 ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
 
@@ -49,7 +49,7 @@ You can manage track visibility by choosing which ones to display or hide from s
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
 ![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
 
@@ -65,7 +65,7 @@ The *Configure Map* option enables you to quickly manage the display of all rece
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -73,7 +73,7 @@ The *Configure Map* option enables you to quickly manage the display of all rece
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long tap the chosen GPX track → Show on map*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long tap the chosen GPX track → Show on map*
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
@@ -114,7 +114,7 @@ When you select a track on the map or open the [track context menu](./track-cont
 
 <TabItem value="android" label="Android">
 
-*Tap the track → Track tab → <Translate android="true" ids="analyze_on_map"/>*  
+Go to: *Android* *Tap the track → Track tab → <Translate android="true" ids="analyze_on_map"/>*  
 
 ![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
@@ -122,7 +122,7 @@ When you select a track on the map or open the [track context menu](./track-cont
 
 <TabItem value="ios" label="iOS">
 
-*Tap the track → Track tab → <Translate ios="true" ids="analyze_on_map"/>*  
+Go to: *iOS* *Tap the track → Track tab → <Translate ios="true" ids="analyze_on_map"/>*  
 
 ![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 

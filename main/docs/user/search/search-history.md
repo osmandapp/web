@@ -136,7 +136,7 @@ You need to **long tap any of the query items in the list** to open the Delete s
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
 ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)  
 
@@ -144,7 +144,7 @@ You need to **long tap any of the query items in the list** to open the Delete s
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+Go to: *iOS* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
 ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png)  
 

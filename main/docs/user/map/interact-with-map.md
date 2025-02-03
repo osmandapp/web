@@ -77,7 +77,7 @@ The *Map Magnifier* is a tool that enhances the map's visibility, similar to a m
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
 
 ![Compass widget](@site/static/img/map/map_orientation_mode_2_andr.png)  
   
@@ -85,7 +85,7 @@ The *Map Magnifier* is a tool that enhances the map's visibility, similar to a m
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
 
 ![Compass widget](@site/static/img/map/map_orientation_mode_ios.png)  
 
@@ -102,7 +102,7 @@ The *Map Magnifier* is a tool that enhances the map's visibility, similar to a m
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/compass_widget.png)
   
@@ -110,7 +110,7 @@ The *Map Magnifier* is a tool that enhances the map's visibility, similar to a m
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/compass_widget.png)
 
@@ -229,7 +229,7 @@ The keyboard remains functional even when the *External input devices* option is
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 ![External devices](@site/static/img/map/external_menu_android.png) ![External devices](@site/static/img/map/external_types_android.png)
 
@@ -237,7 +237,7 @@ The keyboard remains functional even when the *External input devices* option is
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
 ![External devices](@site/static/img/map/external_types_ios.png)
 

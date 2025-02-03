@@ -131,7 +131,7 @@ With one click, you can toggle favorites on or off on the map. However, only fav
 
 ### Tracks section
 
-This section contains a list of the user's [**GPX tracks visible on the map**](../web/web-userdata.mdx#visible-on-the-map) and **Recently Visible** tracks.
+This section contains a list of your [**GPX tracks visible on the map**](../web/web-userdata.mdx#visible-on-the-map) and **Recently Visible** tracks.
 
 - You can toggle tracks on or off directly.  
 - Switch tracks on or off from the **Recently Visible** list.  

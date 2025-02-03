@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
 
 ![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_1_andr.png)  ![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_2_andr.png)
 
@@ -32,7 +32,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
 
 ![Profiles General Settings iOS](@site/static/img/personal/profiles/general_settings_1_ios.png)
 
@@ -64,7 +64,7 @@ This section contains the basic OsmAnd settings, such as selecting a [profile](#
 
 </Tabs>
 
-OsmAnd uses the default profile, *Browse map*, as the first profile for new users, and if this profile has been selected by the user, it will be used each time the application is restarted. You can select any profile from the default list, including *Last used* and *Browse map*.
+OsmAnd uses the default profile, *Browse map*, as the first profile for new users, and if this profile has been selected by you, it will be used each time the application is restarted. You can select any profile from the default list, including *Last used* and *Browse map*.
 
 - **<Translate android="true" ids="shared_string_last_used"/>**. Allows you to select the profile that was used last.
 - **<Translate android="true" ids="settings_preset"/>**. You select the profile to be used when starting OsmAnd. It can be changed in the application [settings](../personal/profiles.md).  
@@ -89,7 +89,7 @@ The [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.m
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
 
 ![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
@@ -111,13 +111,13 @@ New storage access guidelines have been implemented in Android versions 11-12. S
 
 <TabItem value="ios" label="iOS">
 
-*iOS device → Settings → General → iPhone storage → OsmAnd Maps*  
+Go to: *iOS* *iOS device → Settings → General → iPhone storage → OsmAnd Maps*  
 
 ![General Settings storage iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)  
 
 OsmAnd files are visible in the [*Files*](https://apps.apple.com/us/app/files/id1232058109) application. You can access all OsmAnd files: [tracks](../personal/tracks/manage-tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). To do this follow the following path:  
 
-*Files → On My Phone → OsmAnd Maps*
+Go to: *iOS* *Files → On My Phone → OsmAnd Maps*
 
 <!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
@@ -176,7 +176,7 @@ More information can be found in [*OsmAnd Privacy and Security Policy*](../../le
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
 
 ![General Settings Analytics Android](@site/static/img/personal/profiles/general_settings_analitics_andr.png)  
 
@@ -184,7 +184,7 @@ More information can be found in [*OsmAnd Privacy and Security Policy*](../../le
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,send_anonymous_data"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,send_anonymous_data"/>*
 
 ![General Settings Send anonymous data iOS](@site/static/img/personal/profiles/general_settings_send_anonymous_data_ios.png)
 
@@ -220,7 +220,7 @@ A **UUID** (*Unique User Identifier*) is generated for each installation of the 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
 ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png) ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_new_2.png)
 
@@ -228,7 +228,7 @@ A **UUID** (*Unique User Identifier*) is generated for each installation of the 
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
 ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png) ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
 
@@ -337,7 +337,8 @@ OsmAnd provides you with a choice of services to determine your location. It is 
 
 - Please note that the backup size is restricted to *25MB*.
 
-- To find the backup files, use the Android file manager: *Android → data → net.osmand → files → backup*.  
+- To find the backup files, use a third-party file manager app.  
+    *NOTE: You can find the backup files using the Android file manager: Android → data → net.osmand → files → backup, but be aware that in recent versions of Android, access to system directories is limited.*  
 
 **If you are using [*OsmAnd Cloud*](../personal/osmand-cloud.md), it's recommended to deactivate this default backup option to prevent any confusion during reinstallation.**
 
@@ -353,7 +354,7 @@ OsmAnd can [warn you about speed cameras](../navigation/guidance/navigation-sett
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
 ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_andr.png)   ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_andr.png)
 
@@ -361,7 +362,7 @@ OsmAnd can [warn you about speed cameras](../navigation/guidance/navigation-sett
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
 ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
 

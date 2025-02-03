@@ -375,12 +375,12 @@ The simulated navigation option allows users to test and preview a navigation ro
 
 </Tabs>
 
-When a navigation route is built, you can start simulating navigation using the *<Translate android="true" ids="simulate_navigation"/>* option.  
+When a navigation route is built, you can start simulating navigation using the **<Translate android="true" ids="simulate_navigation"/>** option.  
 
-- In the *[Navigation menu](#navigation-menu)* go to *<Translate android="true" ids="shared_string_settings,simulate_navigation"/>*.
+- In the [Navigation menu](#navigation-menu) go to *<Translate android="true" ids="shared_string_settings,simulate_navigation"/>*.
 - Toggle the switch to enable the option.
-- Tapping the *[Start navigation](#start--stop-navigation)* button starts the simulation.
-- To stop the navigation simulation, tap *[Dismiss](#start--stop-navigation)* (Android), or *[Cancel](#start--stop-navigation)* (iOS).
+- Tapping the [Start navigation](#start--stop-navigation) button starts the simulation.
+- To stop the navigation simulation, tap [Dismiss](#start--stop-navigation) (*Android*), or [Cancel](#start--stop-navigation) (*iOS*).
 
 
 #### Simulation Settings
@@ -389,7 +389,7 @@ When a navigation route is built, you can start simulating navigation using the 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699*
+Go to: *Android* *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →*  &#x2699
 
 ![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_andr_2.png)
 
@@ -397,7 +397,7 @@ When a navigation route is built, you can start simulating navigation using the 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699*
+Go to: *iOS* *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →*  &#x2699
 
 ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
 
@@ -413,14 +413,14 @@ When a navigation route is built, you can start simulating navigation using the 
     - Additional penalties will be applied at traffic lights, stop signs, and other similar obstacles.
 
 
-## Troubleshouting
+## Common Issues and Solutions
 
 If you encounter difficulties when creating a route, refer to the troubleshooting instructions in the *[special documentation section](../../troubleshooting/navigation.md)*. There you can find information about:
 
-- The possible causes of *[slow route calculation](../../troubleshooting/navigation.md#route-calculation-is-slow)*.
-- What to do if the route length *[exceeds 250 kilometers](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km)*.
-- What to do if the suggested *[route seems incorrect](../../troubleshooting/navigation.md#the-calculated-route-does-not-seem-correct)*.
-- How to solve the situation when navigation is not possible due to *[the lack of necessary maps](#maps-missing-or-not-synchronized)*.
+1. The possible causes of slow route calculation. [(check)](../../troubleshooting/navigation.md#route-calculation-is-slow).
+2. What to do if the route length exceeds 250 kilometers. [(check)](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km).
+3. What to do if the suggested route seems incorrect. [(check)](../../troubleshooting/navigation.md#the-calculated-route-does-not-seem-correct).
+4. How to solve the situation when navigation is not possible due to the lack of necessary maps. [(check)](#maps-missing-or-not-synchronized).
 
 ### Maps Missing or Not Synchronized
 

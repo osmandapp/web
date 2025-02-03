@@ -25,7 +25,7 @@ OsmAnd operates with two types of maps: [Vector maps](../map/vector-maps.md) and
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,maps_and_resources"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources"/>*
 
 ![Maps menu Android](@site/static/img/personal/maps/maps_overview_1_andr.png)
 
@@ -33,7 +33,7 @@ OsmAnd operates with two types of maps: [Vector maps](../map/vector-maps.md) and
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ![Maps menu iOS](@site/static/img/personal/maps/maps_overview_ios.png)
 
@@ -108,7 +108,7 @@ The **Maps & Resources** *Main Menu* section of the OsmAnd app provides access t
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
 ![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)  
 
@@ -116,7 +116,7 @@ The **Maps & Resources** *Main Menu* section of the OsmAnd app provides access t
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ![Download map menu general iOS](@site/static/img/personal/maps/download_menu_ios.png)
 
@@ -166,7 +166,7 @@ Information about *maps menu* and *actions* can be found in the article [Downloa
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*
 
 ![Local tab Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Local tab Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
 
@@ -174,7 +174,7 @@ Information about *maps menu* and *actions* can be found in the article [Downloa
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
 
 ![Local tab menu iOS](@site/static/img/personal/maps/local_tab_ios.png)
 
@@ -257,7 +257,7 @@ Use sorting options to organize map data:
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
 ![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png)
 
@@ -265,7 +265,7 @@ Use sorting options to organize map data:
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
 ![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios.png)
 
@@ -299,7 +299,7 @@ OsmAnd Live is a paid feature.
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*  
 
 ![Maps menu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Maps menu OsmAnd live edit Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 
@@ -307,7 +307,7 @@ OsmAnd Live is a paid feature.
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
 ![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 
@@ -377,5 +377,11 @@ Maintain at least [**30 edits**](https://github.com/osmandapp/OsmAnd/blob/master
 
 - [Profiles (Settings)](./profiles.md)
 - [Import / Export](../personal/import-export.md)
+
+### Common Issues and Solutions
+
+- Voice Navigation. [(check)](../troubleshooting/navigation.md#voice-navigation)
+- How to delete search history. [(check)](../troubleshooting/general.md#how-to-delete-search-history)
+- For additional troubleshooting, visit: [Maps & Data](../troubleshooting/maps-data.md)
 
 > *This article was last updated in January 2025*

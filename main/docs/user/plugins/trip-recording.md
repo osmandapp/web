@@ -225,20 +225,20 @@ OsmAnd captures your journey in a structured [GPX file](https://en.wikipedia.org
 
 | Parameter  | Description |
 |-----------------|----------------|
-| **`trkpt`** | **Track Point** represents a specific geographical location detected during your activity. Each track point includes latitude and longitude coordinates, forming the basis of your recorded path. |
-| **`trkseg`**  | **Track Segment** groups together consecutive track points, separated by breaks in activity, such as pauses or stops. This helps distinguish continuous movement from idle periods within a single recording.  |
-| **`lat`** | **Latitude** indicates the north-south position of a point on the Earth's surface. It is one-half of the coordinate pair used to pinpoint your exact location.   |
-| **`lon`** | **Longitude** specifies the east-west position, complementing latitude, to accurately locate a point on the globe. Together, latitude and longitude define your precise geographical position.    |
-| **`ele`** | **Elevation** measures the height of a track point above sea level, recorded in meters. This can be useful for tracking altitude changes during your activities, such as hikes or bike rides.    |
-| **`time`** | **Timestamp** records the exact date and time when a track point is logged. This allows you to track the duration and timing of your activity with precision.    |
-| **`hdop`** | **Horizontal Dilution of Precision (HDOP)** is a measure of GPS accuracy, reflecting the potential error in location due to the positions of the satellites. Unlike the standard HDOP, OsmAnd GPX tracks use this value to represent horizontal accuracy in meters. Please note that this implementation differs from typical HDOP standards. [Learn more](https://github.com/osmandapp/Osmand/issues/3445).   |
-| **`speed`** | **Speed** records your rate of movement in meters per second. It provides insight into your pace during various segments of your activity.  |
-| **`heading`**  | **Heading** indicates the direction in which your vehicle or device's front is pointed, measured in degrees. It's distinct from the course, which is the actual path of movement. Differences can occur due to external factors like wind, currents, or road conditions. [More on heading](https://en.wikipedia.org/wiki/Heading_(navigation)).  |
-| **`speed_sensor`** | **Speed** from [external sensors](../plugins/external-sensors.md) captures data from connected sensors, providing more precise speed information, especially useful when cycling. For more details, refer to the [GPX file format documentation](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
-| **`cadence`** | **Cadence** measures the number of pedal revolutions per minute, recorded using [external sensors](../plugins/external-sensors.md). This is particularly useful for cyclists aiming to monitor and optimize their pedaling efficiency. [Read more](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
-| **`power`** | **Bicycle Power** quantifies the power generated while pedaling, captured from [external sensors](../plugins/external-sensors.md). It's an essential metric for serious cyclists who want to gauge their performance. [Learn more](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
-| **`atemp`** | **Air Temperature** records the ambient air temperature during your activity, measured using [external sensors](../plugins/external-sensors.md). Note that water temperature is not supported. [Details here](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
-| **`hr`** | **Heart Rate** monitors your heartbeats per minute, using data from connected [sensors](../plugins/external-sensors.md). This information can be vital for tracking your cardiovascular performance during workouts. [Find out more](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| `trkpt` | **Track Point** represents a specific geographical location detected during your activity. Each track point includes latitude and longitude coordinates, forming the basis of your recorded path. |
+| `trkseg`  | **Track Segment** groups together consecutive track points, separated by breaks in activity, such as pauses or stops. This helps distinguish continuous movement from idle periods within a single recording.  |
+| `lat` | **Latitude** indicates the north-south position of a point on the Earth's surface. It is one-half of the coordinate pair used to pinpoint your exact location.   |
+| `lon` | **Longitude** specifies the east-west position, complementing latitude, to accurately locate a point on the globe. Together, latitude and longitude define your precise geographical position.    |
+| `ele` | **Elevation** measures the height of a track point above sea level, recorded in meters. This can be useful for tracking altitude changes during your activities, such as hikes or bike rides.    |
+| `time` | **Timestamp** records the exact date and time when a track point is logged. This allows you to track the duration and timing of your activity with precision.    |
+| `hdop` | **Horizontal Dilution of Precision (HDOP)** is a measure of GPS accuracy, reflecting the potential error in location due to the positions of the satellites. Unlike the standard HDOP, OsmAnd GPX tracks use this value to represent horizontal accuracy in meters. Please note that this implementation differs from typical HDOP standards. [Learn more](https://github.com/osmandapp/Osmand/issues/3445).   |
+| `speed` | **Speed** records your rate of movement in meters per second. It provides insight into your pace during various segments of your activity.  |
+| `heading`  | **Heading** indicates the direction in which your vehicle or device's front is pointed, measured in degrees. It's distinct from the course, which is the actual path of movement. Differences can occur due to external factors like wind, currents, or road conditions. [More on heading](https://en.wikipedia.org/wiki/Heading_(navigation)).  |
+| `speed_sensor` | **Speed** from [external sensors](../plugins/external-sensors.md) captures data from connected sensors, providing more precise speed information, especially useful when cycling. For more details, refer to the [GPX file format documentation](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| `cadence` | **Cadence** measures the number of pedal revolutions per minute, recorded using [external sensors](../plugins/external-sensors.md). This is particularly useful for cyclists aiming to monitor and optimize their pedaling efficiency. [Read more](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| `power` | **Bicycle Power** quantifies the power generated while pedaling, captured from [external sensors](../plugins/external-sensors.md). It's an essential metric for serious cyclists who want to gauge their performance. [Learn more](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
+| `atemp` | **Air Temperature** records the ambient air temperature during your activity, measured using [external sensors](../plugins/external-sensors.md). Note that water temperature is not supported. [Details here](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
+| `hr` | **Heart Rate** monitors your heartbeats per minute, using data from connected [sensors](../plugins/external-sensors.md). This information can be vital for tracking your cardiovascular performance during workouts. [Find out more](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
 
 
 ## Recording Settings
@@ -301,7 +301,7 @@ Before you start tracking your trips, you need to properly configure the **Trip 
 
 This feature allows you to manage battery optimization settings for OsmAnd to ensure uninterrupted access to your location, even when the app runs in the background during navigation or track recording.
 
-- **Battery optimization settings**. Opens Android settings, where you can modify battery-saving preferences for OsmAnd.
+- **Battery optimization settings**. Opens Android settings, where you can modify battery-saving preferences for OsmAnd. [More details here](../troubleshooting/general.md#optimizing-battery-consumption).
 - **Don't ask anymore**. Dismisses the dialog box permanently, so it will not appear again.
 - **Close**. Temporarily closes the dialog box, which will appear again the next time battery optimization needs attention.
 
@@ -317,7 +317,7 @@ If [Notification](#recording-settings) is enabled in the plugin settings, trip r
 
 **Important note**.
 
-This behavior is required by Android for any foreground service, like trip recording, to remain visible to the user.
+This behavior is required by Android for any foreground service, like trip recording, to remain visible to you.
 
 - If the notification is removed, Android will automatically stop the recording. You can use the [*Prevent standalone logging*](#recording-settings) setting.
 - The **Notification** setting in OsmAnd affects whether the notification bar shows a shortcut to start a recording when no recording is active. It does **not** control the visibility of the notification during an active recording.
@@ -361,7 +361,7 @@ To start using *Trip recording widgets*, you need to make all the following sett
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
 ![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
 
@@ -369,7 +369,7 @@ To start using *Trip recording widgets*, you need to make all the following sett
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
 ![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
 
@@ -450,9 +450,24 @@ If you have multiple widgets selected — *Duration*, *Uphill*, or *Downhill* �
 - [Track Context menu](../map/tracks/track-context-menu.md)
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
 
-### Troubleshooting
+### Common Issues and Solutions
 
-- [Recorded Tracks are Noisy](../troubleshooting/track-recording-issues.md#recorded-tracks-are-noisy)
-- [Recorded Tracks Have Gaps](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps)
+- Trip Recording does not start.
+    - Ensure the **Trip Recording plugin** is enabled: *Menu → Plugins → Trip Recording → Enable*.
+    - Check that the settings are correct: *Menu → Configure Profile → Plugin Settings → Trip Recording*.
+    - If recording still doesn’t start, restart the app and try again.
 
-> *This article was last updated in November 2024*
+- Trip Recording stops unexpectedly.
+    - Check if the your *device’s battery optimization settings* are stopping the recording. Some devices may pause background activity to save power. Go to *Device Settings → Battery*.
+
+- Recorded distance does not match actual distance.
+    - Verify that GPS is enabled and has an active signal.  
+    - Reduce GPS accuracy threshold: *Menu → Configure Profile → Trip Recording → Minimum Accuracy*.
+
+- Recorded Tracks are Noisy. [(check)](../troubleshooting/track-recording-issues.md#recorded-tracks-are-noisy).
+- Recorded Tracks Have Gaps. [(check)](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps)
+- How to Track Traveled Distance. [(check)](../troubleshooting/track-recording-issues.md#how-to-track-traveled-distance)
+
+For additional troubleshooting, visit: [Track Recording Troubleshooting](https://osmand.net/docs/user/troubleshooting/track-recording-issues).
+
+> *This article was last updated in January 2025*

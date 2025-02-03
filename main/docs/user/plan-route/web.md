@@ -19,21 +19,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::info
 The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
-**Therefore, the layout and operation of some functions on the site may be different from those described in this article.**   
+**Therefore, the layout and operation of some functions on the site may be different from those described in this article.**
 
 We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
 
 The following features are available for users of the Free version of OsmAnd and for users with the [Pro](../purchases/android.md#osmand-pro) version <ProFeature/>:  
 
-Features | Versions
+| Features | Versions |
 |--- |--- |
 | [OsmAnd Pro sync](#osmand-pro-sync) | <ProFeature/> |
 | [Weather](#weather) | Free |
 | [Tracks](#weather) | <ProFeature/> |
 | [Favorites](#farorites-pro) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> | 
 | [Navigation Route](#navigation-route) | Free |
-| [Create track](#create-track-pro) | Free |   
+| [Create track](#create-track-pro) | Free |
 
 
 ![View OsmAnd Web](@site/static/img/web/web.png)
@@ -41,17 +41,17 @@ Features | Versions
 
 ## OsmAnd Pro and OsmAnd Start sync
 
-- **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#cross-platform) paid subscription. 
+- **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#cross-platform) paid subscription.
 - **OsmAnd Start** is a [free OsmAnd Cloud registration](https://osmand.net/blog/start).
 
 The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
 
-1. Subscribe to _OsmAnd Pro_. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
-2. How to create _OsmAnd Start_ account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
+1. Subscribe to *OsmAnd Pro*. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
+2. How to create *OsmAnd Start* account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
 3. Register your [Pro or Start account](../troubleshooting/setup.md#cross-platform) on the OsmAnd server inside OsmAnd app.
 4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
 
-- Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).   
+- Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).  
 
 ![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)  
 
@@ -69,13 +69,14 @@ Choose needed files for downloading, `.zip` or `.osf` format of downloaded files
 
 There is also a button to *logout* of the account.  
 
-- _LOGOUT_, _DELETE YOUR ACCOUNT_ or _Change email_ you find on the login field too. For opening _DELETE YOUR ACCOUNT_ or _Change email_ you need to click _Dangerous area_.
+- *LOGOUT*, *DELETE YOUR ACCOUNT* or *Change email* you find on the login field too. For opening *DELETE YOUR ACCOUNT* or *Change email* you need to click *Dangerous area*.
 
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_2.png)  
 
 ## Weather
 
 The [Weather plugin](../plugins/weather.md) is a paid feature of the OsmAnd app. For the web version, Weather is a free feature with such capabilities as:
+
 - Enable weather layers on the map: *Temperature, Pressure, Wind, Cloud cover and Precipitation* using the menu on the left or right.
 - Enable the display of the weather forecast for the day or week (the forecast step is 3 hours).  
 
@@ -89,8 +90,9 @@ It's a paid feature <ProFeature/>. At first you need to loggin your OsmAnd Pro:
 ![Track loggin](@site/static/img/web/track_loggin.png)
 
 For Track section:
+
 - Show tracks from [OsmAnd Cloud](#users-tracks-pro).
-- Adding tracks on the map (_"Visible on map"_ folder).
+- Adding tracks on the map (*Visible on map* folder).
 - Looking all tracks info and graph
 - Modify tracks and add it to Cloud.
 - Download and delete tracks.
@@ -109,18 +111,19 @@ Switch on / off tracks for showing or not its on the map.
 
 ### Track folder menu
 
-Click to the _Tree points_ ⋮ button for open _Track Folder_ menu. Here you can Download all tracks from chosen folder as:
+Click to the *Tree points* ⋮ button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
+
 - Download as OSF
 - Download as OBF Collection:
   You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
 
-  [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
+    [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
 
-  You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
+You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
 
   [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
 
-  Also You can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
+Also You can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
 
 - Rename chosen folder.
 - Delete chosen folder.
@@ -141,7 +144,7 @@ The following features are available after choosin cloud track:
   - *Settings* - list of navigation profiles for the *Create route* tool.  
 
 - Action buttons:
-  - *Edit track* - adding cloud track to local for editing (_Edit locality_ button on the panel).
+  - *Edit track* - adding cloud track to local for editing (*Edit locality* button on the panel).
   - *Download GPX* - downloads the track to the PC.
   - *Recalculate* Elevation (Satellite) - displays the elevation graph of the selected track.
   - *Delete Track* - deletes the track.
@@ -152,13 +155,13 @@ The following features are available after choosin cloud track:
 
 ## Favorites
 
-After registering an OsmAnd Pro or OsmAnd Start, the user's Favorites are displayed in the Favorites menu.  
+After registering an OsmAnd Pro or OsmAnd Start, your Favorites are displayed in the Favorites menu.  
 The following actions are available:
 
-- _Show on map_ - show favorites points from the chosen folder on the map.
-- _Rename_ - name and description of favorite folder.
-- _Download_ - download the chosen favorite folder.
-- _Delete_ - delete the chosen favorite folder.
+- *Show on map* - show favorites points from the chosen folder on the map.
+- *Rename* - name and description of favorite folder.
+- *Download* - download the chosen favorite folder.
+- *Delete* - delete the chosen favorite folder.
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
 
@@ -194,7 +197,7 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
 
-- choose _Route profile_ for changing navigation routing type:
+- choose *Route profile* for changing navigation routing type:
 
 ![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
 
@@ -206,7 +209,7 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ## Create track and Local
 
-A web version of the ["Plan route"](../plan-route/create-route.md) tool, similar to the OsmAnd app, is currently being developed. To go to create a route, *Right-click → Create new Route*.  Or you can use the *Create track* button on the _Local_ menu(right side: *Pencil* and *Upload* buttons).
+A web version of the ["Plan route"](../plan-route/create-route.md) tool, similar to the OsmAnd app, is currently being developed. To go to create a route, *Right-click → Create new Route*.  Or you can use the *Create track* button on the *Local* menu(right side: *Pencil* and *Upload* buttons).
 
 Here you can select a navigation profile to build a section of the route (New segments) or for all route (All segments), add waypoints, save the route and view information about it.  
 
@@ -215,17 +218,19 @@ Here you can select a navigation profile to build a section of the route (New se
 You can view any actions and display track information in the [Track section](#tracks) of this article.
 
 Actions for Local:
-- _Import Track_ - any user can download any GPX file at [*osmand.net/map*](https://osmand.net/map) to _Local_ section.  
+
+- *Import Track* - any user can download any GPX file at [*osmand.net/map*](https://osmand.net/map) to *Local* section.  
 - Create track.
 
 ![OsmAnd Web Create Track](@site/static/img/web/create_route_2.png)
 
 Local track menu and Edit has 3 panels: Info, Track, Waypoints, Turns.
 
-_Info_ actions and data:
-  - _Save to Cloud_.
-  - _Add description_.
-  - _Rename_ a track.
+*Info* actions and data:
+
+  - *Save to Cloud*.
+  - *Add description*.
+  - *Rename* a track.
   - *recalculate* - Add elevation data for the selected track.
   - *Elevation*: elevation graph.
   - *Speed*: speed graph.  
@@ -233,21 +238,21 @@ _Info_ actions and data:
   - *Road details* - Road type, Surface, Steepness, Surface firmness, Piste.
   - *Download GPX* button (Pro feature).
   - *Close Track* the track.
-  - *Delete Track* - Delete the track. 
+  - *Delete Track* - Delete the track.
 
 ![OsmAnd Web Create Track](@site/static/img/web/create_route_3.png)
 
 
-_Track section_ contains track points. Here you can delete it or change order.
-_Waypoints_ menu contains track waypoints. Here you can show or not it on the map, and delete waypoints.
+*Track section* contains track points. Here you can delete it or change order.
+*Waypoints* menu contains track waypoints. Here you can show or not it on the map, and delete waypoints.
 
-_Turns_ menu contains info about segments turns.
+*Turns* menu contains info about segments turns.
 
 ![OsmAnd Web Create Track](@site/static/img/web/create_route_1.png)
 
 ## POIs on the map
 
-Click to _POI_ button on the side panel. _Show POI_ menu: here you can choose POIs or search POI category for showing its on the map
+Click to *POI* button on the side panel. *Show POI* menu: here you can choose POIs or search POI category for showing its on the map
 
 ![POIs menu](@site/static/img/web/poi_menu.png)
 
@@ -265,21 +270,21 @@ These address strings can be copied and transferred using any data transfer medi
 
 1. **URL with a pin on the map:**
 
-  https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
+    https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
+    ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
 
 2. **URL without a pin on the map:**
 
-  https://osmand.net/map/#9/52.3924/6.3116
+    https://osmand.net/map/#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
+    ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
 
 3. **URL with navigation:**
 
-  https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
+    https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
+    ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
 
 Depending on the specified parameters, URL strings may contain:
 
@@ -295,4 +300,4 @@ Depending on the specified parameters, URL strings may contain:
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in July 2024*
+> *This article was last updated in January 2025*

@@ -63,10 +63,12 @@ Online maps in OsmAnd are composed of raster data, which consists of pixels (als
 
 ## How to Use Raster Maps
 
-1. **Enable plugin**.
-    - For *iOS*, this feature works by default.
-    - For *Android*, to use raster maps in OsmAnd you need to enable [Online maps plugin](../plugins/online-map.md). Follow these steps: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*  
-2. **Change layer parameters**. To improve the visibility and mix of raster map layers, you can adjust the layer transparency using the screen slider. Additionally, you can modify the vector map style by hiding polygons, making the underlay layers more visible. This is especially useful when viewing satellite imagery.
+**Enable plugin**.
+
+- **iOS**. For *iOS*, this feature works by default.
+- **Android**. For *Android*, to use raster maps in OsmAnd you need to enable [Online maps plugin](../plugins/online-map.md). Follow these steps: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
+
+**Change layer parameters**. To improve the visibility and mix of raster map layers, you can adjust the layer transparency using the screen slider. Additionally, you can modify the vector map style by hiding polygons, making the underlay layers more visible. This is especially useful when viewing satellite imagery.
 
 
 ## Select Raster Maps
@@ -100,7 +102,7 @@ You can also adjust the transparency of the base map to blend it with your layer
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
 
 ![Show maps](@site/static/img/plugins/online-maps/map_source.png)
 
@@ -108,7 +110,7 @@ You can also adjust the transparency of the base map to blend it with your layer
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type"/>*  
 
 ![Show maps](@site/static/img/plugins/online-maps/map_type.png)
 
@@ -125,7 +127,7 @@ You can choose a map style from the list or [add](#add-new-online-raster-map-sou
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
 ![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
 
@@ -133,7 +135,7 @@ You can choose a map style from the list or [add](#add-new-online-raster-map-sou
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
 ![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
 
@@ -156,7 +158,7 @@ You can choose a map style from the list or [add](#add-new-online-raster-map-sou
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
 ![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.png)
 
@@ -164,7 +166,7 @@ You can choose a map style from the list or [add](#add-new-online-raster-map-sou
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
 ![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
 
@@ -215,13 +217,13 @@ The difference of relief display on the map when applying these settings is desc
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
+Go to: *Android* *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
+Go to: *iOS* *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
 
 </TabItem>
 
@@ -271,13 +273,13 @@ Here are the main methods how for adding a new raster map source which is not de
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,add_online_source"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,add_online_source"/>*
 
 </TabItem>
 
@@ -393,13 +395,13 @@ For the maps to automatically update the tiles after a while, you can set an [*E
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit"/>*
 
 </TabItem>
 

@@ -141,7 +141,7 @@ The **Route Calculation** parameter automatically changes the calculated route w
 
 <TabItem value="android" label="Android">
 
-*Menu → Settings → app profile → Navigation settings → Route parameters → Development*
+Go to: *Android* *Menu → Settings → app profile → Navigation settings → Route parameters → Development*
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_development_1_andr.png)
 
@@ -149,7 +149,7 @@ The **Route Calculation** parameter automatically changes the calculated route w
 
 <TabItem value="ios" label="iOS">
 
-*Menu → Settings → app profile → Navigation settings → Route parameters → Development*
+Go to: *iOS* *Menu → Settings → app profile → Navigation settings → Route parameters → Development*
 
 ![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_development_1_ios.png)
 
@@ -214,7 +214,7 @@ If you select a track as your destination point, you need to use the [Attach to 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_andr.png)
 
@@ -222,7 +222,7 @@ If you select a track as your destination point, you need to use the [Attach to 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
 
@@ -256,13 +256,13 @@ The types of warnings have a different visual appearance, which depends on the t
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
 </TabItem>
 
@@ -280,7 +280,7 @@ You can learn how the behavior of the map changes during navigation in the artic
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
+Go to: *Android* *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_andr.png)
 
@@ -288,7 +288,7 @@ You can learn how the behavior of the map changes during navigation in the artic
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_ios.png)
 
@@ -305,7 +305,7 @@ With the **Customize Route Line** setting, you can choose the appearance of the 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
@@ -313,7 +313,7 @@ With the **Customize Route Line** setting, you can choose the appearance of the 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
@@ -337,7 +337,7 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
 
@@ -345,7 +345,7 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
@@ -513,9 +513,9 @@ These settings in iOS are available in *Menu → Settings → app profile → Na
 
 ![Attach to the roads 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png)    ![Navigation Settings Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
 
-With the [*Navigation by track*](../setup/gpx-navigation.md) option, when the required track is selected as a destination point, you can use the [*Attach to the roads*](../setup/gpx-navigation.md#attach-to-the-roads) setting in the [*Follow track*](../setup/gpx-navigation.md#how-to-follow-the-track) menu. There are two ways to use this setting:
+With the [Navigation by track](../setup/gpx-navigation.md) option, when the required track is selected as a destination point, you can use the [Attach to the roads](../setup/gpx-navigation.md#attach-to-the-roads) setting in the [Follow track](../setup/gpx-navigation.md#how-to-follow-the-track) menu. There are two ways to use this setting:
 
-- **<Translate android="true" ids="ask_every_time"/>** (*by default*). The *Attach to the roads* button will appear in the [*Route Details*](../setup/route-details.md) section after each *navigation by track* calculation.
+- **<Translate android="true" ids="ask_every_time"/>** (*by default*). The *Attach to the roads* button will appear in the [Route Details](../setup/route-details.md) section after each *navigation by track* calculation.
 
 - **<Translate android="true" ids="shared_string_always"/>**. The road attachment process will be automatically performed for each route using the *navigation by track* option.
 

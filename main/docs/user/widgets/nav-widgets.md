@@ -21,7 +21,7 @@ Navigational widgets are enabled during navigation to display information such a
 ![Navigational widgets all](@site/static/img/widgets/navigational_widgets_all.png)
 
 
-## Active and passive navigation
+## Active and Passive Navigation
 
 Navigational widgets are mostly used with **active** or **passive** navigation with navigational profiles, so they are not available in the **Browse Map** profile.
 
@@ -30,7 +30,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 **Passive** navigation doesn't require a destination point set and works automatically once you switch to any navigational profile, for example, 'Driving'. In that case, the application will try to determine which road you are following and display extra information about it i.e. name, lane info, max speed available. Please note that this approach is quite unreliable and doesn't support all features.
 
 
-## Elevation widget
+## Elevation Widget
 
 <InfoAndroidOnly/>  
 
@@ -47,13 +47,13 @@ The Elevation widget shows a graph with the elevation and slope of your navigati
 ![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 
 
-#### Interactions with the graph
+#### Interactions With the Graph
 
 - *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
 - *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
 
 
-#### What's in
+#### What's In
 
 When you select a route and press the **Start** button, the map opens with your current location, the route on it, and the widget at the bottom of the screen. On the widget, you can see the graph and information about *Uphill*, *Downhill*, *Grade*, distance, altitude, and slope angle. You can select the *optimal scale* and see all possible obstacles on your route.  
 
@@ -78,7 +78,7 @@ When you select a route and press the **Start** button, the map opens with your 
 |![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)|
 
 
-## Bearing widget  
+## Bearing Widget  
   
 Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course) or, *Magnetic* (according to the compass). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you. The cardinal points are the four main directions of the compass. They are North (*N* - 0° or 360°), East (*E* - 90°), South (*S* - 180°), and west (*W* - 270°).  
 
@@ -109,7 +109,7 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 |  | **iOS:** You can change the data display format for angular units: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |  
 
 
-#### How it works
+#### How It Works
 
 To display the bearing, a **target point** must be selected. If a **destination** point (or the **first intermediate point**, if there is one) is selected for navigation, it will be used as the target point. Otherwise, the **topmost selected marker** will be used.  
 
@@ -119,7 +119,7 @@ To display the bearing, a **target point** must be selected. If a **destination*
 
 - [True bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) is expressed as the horizontal angle between the geographic meridian and a line on Earth. Specifically, **true point bearing** is the angle measured in degrees clockwise from the True North line. OsmAnd software will show you the true bearing and heading in our user-friendly interface, making it easy for you to make the right decision early on.
 
-### Navigation along the rhumb line
+### Navigation Along the Rhumb Line
 
 - **Relative bearing**. If you stick to a relative bearing of 0 degrees and move forward, you will arrive at the destination point, but not by the shortest route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ).
 - **Magnetic bearing**. If you align the compass on your boat/vehicle with the widget value and head forward, you will arrive at your destination, but not by the shortest route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ).
@@ -129,11 +129,11 @@ To display the bearing, a **target point** must be selected. If a **destination*
 <!-- By tapping : Changes between  Relative bearing or Magnetic bearing (with "M") -->
 
 
-## Navigation points
+## Navigation Points
 
 *Navigation point* widgets show the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
 
-### Distance to destination
+### Distance to Destination
 
 ![Destination widget](@site/static/img/widgets/destination_widget.png)  
 
@@ -146,7 +146,7 @@ The widget displays the distance left to the last destination point when followi
 | By tapping | Moves the map to the destination point. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
-### Distance to intermediate
+### Distance to Intermediate
 
 ![Intermediate destination widget](@site/static/img/widgets/intermediate_destination_widget.png)
 
@@ -159,7 +159,7 @@ The widget shows the distance to the first intermediate point along the calculat
 | By tapping | **One intermediate point** - move the map to the intermediate point. <br /> **Two or more intermediate points** - opens Destinations list menu. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
-### Time to intermediate
+### Time to Intermediate
 
 <Tabs groupId="operating-systems">
 
@@ -187,7 +187,7 @@ The widget shows the *Arrival time* or *Time to go* to the first intermediate po
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### Time to destination
+### Time to Destination
 
 <Tabs groupId="operating-systems">
 
@@ -215,11 +215,17 @@ The widget shows the *Arrival time* or *Time to go* to the last destination poin
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |  
 
 
-## Speed limit
-
-The widget displays the speed limit on the current road you are traveling on. It works in passive and active navigation mode. Data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+## Speed Limit
 
 ![Speed limit widget](@site/static/img/widgets/speed_limit_widget_2.png)
+
+The *Speed Limit* widget displays the current speed limit based on the map data for your route.
+
+- Data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+- Widget works in passive and active navigation mode.
+- If speed limit data is unavailable for a specific road or area, *the widget will not appear*.
+
+*NOTE:* Ensure your [maps are up-to-date](../personal/maps-resources.md#updates) and that you have downloaded all necessary regional data to access the latest speed limit information.
 
 | |
 |:------------|:------------|
@@ -229,7 +235,7 @@ The widget displays the speed limit on the current road you are traveling on. It
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## Route maneuvers
+## Route Maneuvers
 
 ![Next turns widget](@site/static/img/widgets/next_turns_widget.png)
 
@@ -243,7 +249,7 @@ This set of navigational widgets is activated during navigation and displays inf
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### Next turn
+### Next Turn
 
 ![Next turns widget](@site/static/img/widgets/next_turns_widgets_andr.png)
 
@@ -254,7 +260,7 @@ This set of navigational widgets is activated during navigation and displays inf
 - **Second next turn**. The widget shows information about the next *Next Turn* after the first one, which is activated if the turn is in approach distance.
 
 
-### Displayed time on widgets
+### Displayed Time on Widgets
 
 The table shows the approximate times for activating the prompts, read more in the [technical documentation](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) or in the article [Voice prompts](../navigation/guidance/voice-navigation.md). The color of the arrows indicates the remaining time to make the maneuver. The appearance of the arrows can be used if you do not want to use voice prompts.
 
@@ -286,7 +292,7 @@ Displays a widget by approach time settings. Lanes color is associated with [voi
 | By tapping | No changes |
 
 
-## Alert widget
+## Alert Widget
 
 ![Alert information widgets](@site/static/img/widgets/alert_information_widget.png)
 
@@ -314,7 +320,7 @@ Alert types have a different visual design, which depends on the **<Translate an
 | *<Translate android="true" ids="show_traffic_warnings"/>* | [Traffic calming](https://en.wikipedia.org/wiki/Traffic_calming) uses physical design and other measures to improve safety for motorists, pedestrians and cyclists. | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_traffic_calming.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_traffic_calming_us.png)|
 | *<Translate android="true" ids="show_pedestrian_warnings"/>* | [A pedestrian crossing](https://en.wikipedia.org/wiki/Pedestrian_crossing) (primarily British English) or crosswalk is a place designated for pedestrians to cross a road, street, or avenue. OsmAnd shows the alert of the uncontrolled pedestrian crossing.  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_pedestrian.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_pedestrian_us.png) |
 | *<Translate android="true" ids="traffic_warning_speed_limit"/>* | In most countries, the [Road speed limits](https://en.wikipedia.org/wiki/Speed_limit) set the legal maximum, middle, or minimum speed at which road vehicles may travel on a given stretch of road. In OsmAnd the alert is shown when you exceed the speed. You can set parameters of speed exceeding (0, 5, 10.. km/h). ![Alert ex_speed widgets](@site/static/img/widgets/ex_warning_speed.png)  | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) ![Alert speed_limit_ca widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alert speed_limit_us widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
-| *<Translate android="true" ids="show_tunnels"/>* | A tunnel is an underground passageway, esp cars that pass under a mountain, river, or a congested urban area. In OsmAnd the alert *Tunnels* has information about tunnel length. If you are in a tunnel it shows distance to the end of the tunnel.   ![Alert ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Alert warnings_tunnel widgets](@site/static/img/widgets/warnings_tunnel.png)  ![Alert warnings_tunnel_us widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
+| *<Translate android="true" ids="show_tunnels"/>* | A tunnel is an underground passageway, passing under a mountain, river, or a congested urban area. In OsmAnd the alert *Tunnels* has information about tunnel length. If you are in a tunnel it shows distance to the end of the tunnel.   ![Alert ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Alert warnings_tunnel widgets](@site/static/img/widgets/warnings_tunnel.png)  ![Alert warnings_tunnel_us widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
 | *<Translate android="true" ids="show_cameras"/>* | [Traffic enforcement cameras](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) and [speed cameras](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) record traffic offenses, including speeding, running red lights, and other types of illegal behavior. <br />**NOTE:** Speed camera alerts are prohibited or illegal in some countries. To completely [remove speed cameras](../personal/global-settings.md#legal) from OsmAnd, go to main *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
 | *<Translate android="true" ids="traffic_warning_stop"/>* | [A stop sign](https://en.wikipedia.org/wiki/Stop_sign) is a traffic sign designed to notify drivers that they must come to a complete stop and make sure the intersection is safely clear of vehicles and pedestrians before continuing past the sign.  | ![Alert stop widgets](@site/static/img/widgets/warnings_stop.png) |
 | *<Translate android="true" ids="show_railway_warnings"/>* |This warning means that there is a [railway crossing](https://en.wikipedia.org/wiki/Crossbuck) ahead. | ![Alert warnings_railways widgets](@site/static/img/widgets/warnings_railways.png) ![Alert warnings_railways_ca widgets](@site/static/img/widgets/warnings_railways_ca.png)  ![Alert warnings_railways_us widgets](@site/static/img/widgets/warnings_railways_us.png)  |
@@ -323,7 +329,7 @@ Alert types have a different visual design, which depends on the **<Translate an
 | *<Translate android="true" ids="traffic_warning_payment"/>* | This warning indicates that a toll booth for a toll road is ahead.   ![Alert toll_booth widgets](@site/static/img/widgets/ex_toll_booth.png) | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) |
 
 
-## Street name
+## Street Name
 
 The Street name widget shows **the current street name** with a straight arrow or **the next street name** with the maneuver to be performed. The street name usually consists of a highway shield, a [name](https://wiki.openstreetmap.org/wiki/Key:name), a [ref](https://wiki.openstreetmap.org/wiki/Key:ref), an [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), and a [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), similar to the voice prompt [*Turn in X m*](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 

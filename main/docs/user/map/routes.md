@@ -128,7 +128,7 @@ You can customize the display of certain ***Travelbooks*** and types of ***track
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
 
@@ -136,7 +136,7 @@ You can customize the display of certain ***Travelbooks*** and types of ***track
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 

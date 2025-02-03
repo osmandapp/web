@@ -19,10 +19,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 OsmAnd is designed to support OpenStreetMap (OSM) and prioritizes this path as much as possible. Additionally, there are licensing restrictions that do not allow OsmAnd to be distributed with Google Maps data.
 
-### Is there a way to display contour lines in feet instead of meters?
-
-Yes, contour lines can be displayed in feet instead of meters. Before downloading the Contour line data, choose between Feet or Meters: [read more about it here](../../user/plugins/topography.md#choose-meters-or-feet).
-
 ### Maps slowly loading on Android 11, 12 (SD card)
 
 Due to the new [storage access rules introduced in Android 11 and 12](https://www.androidauthority.com/android-12-privacy-features-1225859/), users may experience slower performance when accessing maps stored on SD cards. These changes can also cause visibility and access restrictions for files in SD card folders. More discussions and technical insights can be found on the following links: [Reddit discussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
@@ -113,6 +109,23 @@ To resolve the issue of slow map rendering, especially when using offline vector
 6. **Use offline maps only.** Online maps, especially when not downloaded in advance, can slow down map loading. Switch to using only offline maps for smoother performance.
 
 These changes should reduce the time it takes to render maps, especially during navigation. For more detailed configuration options, refer to the [Map Settings Guide](https://osmand.net/docs/user/map/interact-with-map#settings).
+
+
+## Contour Lines
+
+### Is there a way to display contour lines in feet instead of meters?
+
+Yes, contour lines can be displayed in feet instead of meters. Before downloading the Contour line data, choose between Feet or Meters: [read more about it here](../../user/plugins/topography.md#contour-lines-meters-or-feet).
+
+### Contour Lines, Elevation data or 3D Relief are not displayed
+
+- Verify if the correct region's data has been downloaded. Go to ***Menu → Maps & Resources → Downloads → Your Region***. [How to download maps](../start-with/first-steps.md#how-to-download-maps).
+- Check that the [plugin](../plugins/topography.md#required-setup-parameters) is enabled and visible in ***Menu → Plugins → Topography***.
+- Check that the items in the Topography section are enabled in ***Menu → Configure Map → Topography → Contour lines / Terrain / 3D Relief***.
+- Check your purchases: [Android](../purchases/android.md#free-and-paid-features) / [iOS](../purchases/ios.md#free-and-paid-features).
+- Update the app to the latest version.
+- Delete and redownload the required maps to ensure no corrupted files.
+- Restart OsmAnd to refresh settings and data.
 
 
 ## Search

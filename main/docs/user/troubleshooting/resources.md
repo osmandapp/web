@@ -20,27 +20,6 @@ OsmAnd is a powerful app with a wide user base, and beyond its official document
 This article collects links to custom user manuals, social media groups, plugins, map styles, and more. Explore these resources to expand your knowledge, customize your OsmAnd experience, and connect with other users.
 
 
-## Custom Manuals
-
-OsmAnd's official documentation is thorough, but the community has also produced an array of custom manuals to help users with specific features and use cases.  
-
-These manuals, available in multiple languages, often provide unique insights, tips, and tricks that might not be covered in the official guides. These resources are convenient additions to the official [OsmAnd User Guide](https://osmand.net/docs/user/), offering more information about the app's features.
-
-| Language | Description | Link |
-| :-- | :-- | :-- |
-| Spanish  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
-| Spanish  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
-| Czech   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
-| French  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
-| Italian | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
-| Dutch | OsmAnd Handleiding 2021. | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf)   |
-| Dutch | OsmAnd Nederlandse instructie. | [Nederlandse instructie](https://docs.google.com/document/d/1JdyVswTcfrpVmflLZ_WBKEhmndlJBl57qPuAWFv5Pqg/edit?usp=drivesdk)   |
-| Dutch | Filmpjes zijn door mij gemaakt met korte en duidelijke uitleg over de werking van Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
-| Deutsch | Osmand Anleitung: Kostenlose Karten- und Navigations App  |  [Rudis Smartphone Tipps](https://www.smartphone-tipp.de/apps/anleitung-osmand/) |
-| Русский  | Навигация для бездорожья, экспедиций, воды (и не только)! OsmAnd! – пора сменить олдскульный Ozi-к, не теряя генштаба, спутника, openstreetmap, и прочих прелестей! Инструкция, Руководство и Фишки!  |  [Drive2](https://www.drive2.ru/l/533880791202005393/) |
-
-
 ## Social Media Groups
 
 To connect with other OsmAnd users, ask questions, and share your experience, join one of the many social media groups dedicated to the app. These groups are vibrant communities where users can exchange tips, discuss features, and seek advice.
@@ -72,8 +51,30 @@ The list below provides converters for various data types supported by OsmAnd, a
 | GPX to KML | Tool to convert OsmAnd *GPX* files to *KML* format, preserving icons. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX to OsmAnd | Python script to convert iOverlander *GPX* files exported to OsmAnd with icons. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 
+## Custom Resources
 
-## Custom Plugins
+### Manuals
+
+OsmAnd's official documentation is thorough, but the community has also produced an array of custom manuals to help users with specific features and use cases.  
+
+These manuals, available in multiple languages, often provide unique insights, tips, and tricks that might not be covered in the official guides. These resources are convenient additions to the official [OsmAnd User Guide](https://osmand.net/docs/user/), offering more information about the app's features.
+
+| Language | Description | Link |
+| :-- | :-- | :-- |
+| Spanish  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
+| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Spanish  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
+| Czech   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
+| French  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
+| Italian | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
+| Dutch | OsmAnd Handleiding 2021. | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf)   |
+| Dutch | OsmAnd Nederlandse instructie. | [Nederlandse instructie](https://docs.google.com/document/d/1JdyVswTcfrpVmflLZ_WBKEhmndlJBl57qPuAWFv5Pqg/edit?usp=drivesdk)   |
+| Dutch | Filmpjes zijn door mij gemaakt met korte en duidelijke uitleg over de werking van Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
+| Deutsch | Osmand Anleitung: Kostenlose Karten- und Navigations App  |  [Rudis Smartphone Tipps](https://www.smartphone-tipp.de/apps/anleitung-osmand/) |
+| Русский  | Навигация для бездорожья, экспедиций, воды (и не только)! OsmAnd! – пора сменить олдскульный Ozi-к, не теряя генштаба, спутника, openstreetmap, и прочих прелестей! Инструкция, Руководство и Фишки!  |  [Drive2](https://www.drive2.ru/l/533880791202005393/) |
+
+
+### Plugins
 
 The following is a list of [custom plugins](../plugins/custom.md) developed by the OsmAnd team and its user community, offering enhanced functionality for specific use cases.
 
@@ -89,7 +90,7 @@ The following is a list of [custom plugins](../plugins/custom.md) developed by t
 | Outdoor Explorer  |  This plugin includes a lightweight map style that improves the visibility of unpaved roads and trails in OsmAnd.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
 
-## Custom Map Styles
+### Map Styles
 
 The default [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml) (Map Style) file [can be modified](../../technical/osmand-file-formats/osmand-rendering-style.md) to suit individual preferences. The following is a table of map styles suggested by users.
 
@@ -105,7 +106,7 @@ The default [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/mast
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) is a map style by Holder Tamm that allows you to choose whether to hide certain objects or not.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 
 
-## Custom Offline Maps
+### Offline Maps
 
 Custom vector maps (OBF files) generated by users.
 
@@ -115,7 +116,7 @@ Custom vector maps (OBF files) generated by users.
 | UMP PL | [UMP-pcPL](https://ump.waw.pl/) - an alternative map of Poland. |[UMP-PL plugin](https://github.com/mariush444/Osmand-tools/blob/main/UMP-PL-OsmAnd_v4_plugin.osf)|
 
 
-## Custom Online Maps Collection
+### Online Maps Collection
 
 The following table lists various online map sources prepared by users, offering access to specialized map data from different geographical regions and services.
 

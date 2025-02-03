@@ -53,7 +53,7 @@ The following setting makes the OsmAnd Ski Map appear on the screen:
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*  
 
 ![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles-2.png) ![Ski maps plugin map style Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android-2.png)
 
@@ -61,7 +61,7 @@ The following setting makes the OsmAnd Ski Map appear on the screen:
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
 
 ![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![Ski maps plugin map style iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
 
@@ -76,7 +76,7 @@ Winter and Ski map style highlights trails, ski touring routes, sledding trails 
 3. Scroll down to Map style/Map type, open it, and check the **Winter and Ski**.
 
 :::tip configurations
-The Skiing profile is designed for use in combination with the Winter and Ski styles. However, the navigation type for each specific profile can be changed and set individually, so the final configuration of the profile, map style, and navigation completely depends on the user settings.
+The Skiing profile is designed for use in combination with the Winter and Ski styles. However, the navigation type for each specific profile can be changed and set individually, so the final configuration of the profile, map style, and navigation completely depends on your settings.
 :::
 
 
@@ -121,7 +121,7 @@ The Ski Map Viewer plugin is a separate application, and disabling its display d
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![Nautical depth contours in Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
@@ -129,7 +129,7 @@ The Ski Map Viewer plugin is a separate application, and disabling its display d
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
 ![Depth contours in iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
 
@@ -194,7 +194,7 @@ Piste types such as *Hiking Trails* or *Sledging Trails* can be used for skiing 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details,rendering_attr_pisteGrooming_name"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details,rendering_attr_pisteGrooming_name"/>*
 
 ![Enable grooming in Android](@site/static/img/plugins/ski-maps/and_enable_grooming.png) ![Grooming displayed in Android](@site/static/img/plugins/ski-maps/and_yes_grooming.png)
 
@@ -202,7 +202,7 @@ Piste types such as *Hiking Trails* or *Sledging Trails* can be used for skiing 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_details,rendering_attr_pisteGrooming_name"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_details,rendering_attr_pisteGrooming_name"/>*
 
 ![Enable grooming in iOS](@site/static/img/plugins/ski-maps/ios_details_grooming.png) ![Grooming displayed in iOS](@site/static/img/plugins/ski-maps/ios_grooming_enabled.png)
 
@@ -219,7 +219,7 @@ Special machines groom the tracks to prepare them for the appropriate activity, 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
 
 ![Routes disabled in Android](@site/static/img/plugins/ski-maps/and_no_routes.png) ![Routes enabled in Android](@site/static/img/plugins/ski-maps/and_yes_routes.png)
 
@@ -227,7 +227,7 @@ Special machines groom the tracks to prepare them for the appropriate activity, 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
 
 ![Routes disabled in iOS](@site/static/img/plugins/ski-maps/ios_no_routes.png) ![Routes enabled in iOS](@site/static/img/plugins/ski-maps/ios_yes_routes.png)
 

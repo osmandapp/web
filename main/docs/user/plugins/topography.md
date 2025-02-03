@@ -38,13 +38,17 @@ The Topography plugin provides access to the following map types:
 
 <TabItem value="android" label="Android">
 
-![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png)
+| Contour Lines | Hillshade | Slope |
+|:---|:---|:---|
+| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png)
+| Contour Lines | Hillshade | Slope |
+|:---|:---|:---|
+| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -89,7 +93,7 @@ For stable work and to save resources, you can download a map not of the entire 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
 ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
@@ -97,7 +101,7 @@ For stable work and to save resources, you can download a map not of the entire 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
 ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
@@ -139,7 +143,7 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
 ![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
@@ -147,7 +151,7 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Contour lines*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Contour lines*
 
 ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
@@ -178,7 +182,7 @@ When using the [Map rendering engine](../personal/global-settings.md#map-renderi
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
 ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
@@ -186,7 +190,7 @@ When using the [Map rendering engine](../personal/global-settings.md#map-renderi
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
 ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
 
@@ -294,10 +298,12 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
 
 **Hillshade** and **Slope** are displayed and adjusted in any selected [Map rendering engine](../personal/global-settings.md#map-rendering-engine).
 
-- If you use the *Map rendering engine Version 1*, you need to use the normal [downloading](../start-with/download-maps.md) of Hillshade and Slope raster maps.
-- If you use the *Map rendering engine Version 2 (OpenGL)*:
+1. If you use the **Map rendering engine Version 1**, you need to use the normal [downloading](../start-with/download-maps.md) of Hillshade and Slope raster maps.
+
+2. If you use the **Map rendering engine Version 2 (OpenGL)**:
     - You can continue to use the normal Hillshade and Slope raster map download type. However, to do so, you'll need to activate the [*OsmAnd development plugin*](../plugins/development.md) and enable the [*Use raster SQLite format for hillshade and slope*](../plugins/development.md#terrain) setting.
-    - Alternatively, you can use the *Terrain Map (3D)* download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
+
+    - Alternatively, you can use the [Terrain Map (3D)](../personal/maps-resources.md#paid-features-for-the-selected-location) download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
 
 
 ### Quick Actions
@@ -322,7 +328,7 @@ The main settings for *Show or Hide map types* are in the Topography section of 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
 ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
 
@@ -330,7 +336,7 @@ The main settings for *Show or Hide map types* are in the Topography section of 
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
 ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
 
@@ -338,16 +344,17 @@ The main settings for *Show or Hide map types* are in the Topography section of 
 
 </Tabs>  
 
-The 3D Relief feature produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](../map/vector-maps.md) or any  [raster maps](../map/raster-maps.md#select-raster-maps) as a [Map Source](../map/raster-maps.md#main) or as an [Underlay/Overlay](../map/raster-maps.md#overlay-layer).  
+The 3D Relief feature produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](../map/vector-maps.md) or any  [raster maps](../map/raster-maps.md#select-raster-maps) as a [Map Source](../map/raster-maps.md#main) or as an [Underlay/Overlay](../map/raster-maps.md#overlay-layer).
 
-Follow the steps below to display 3D Relief on the OsmAnd map:
+***How to display 3D Relief on the map.***
 
-- Purchase OsmAnd Pro subscription for [iOS](../purchases/ios.md#pro-features) or [Android](../purchases/android.md#pro-features).
+- Purchase **OsmAnd Pro** subscription for [iOS](../purchases/ios.md#pro-features) or [Android](../purchases/android.md#pro-features).
+
 - Go to [*<Translate Android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md):
     - **Android**: scroll to *<Translate android="true" ids="srtm_plugin_name"/> section → <Translate android="true" ids="relief_3d"/>*.
     - **iOS**: scroll to *<Translate ios="true" ids="srtm_plugin_name"/> section → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*.
-- Download the [Terrain map (3D)](#3d-relief-maps) of the regions, if necessary.
 
+- Download the [Terrain map (3D)](#3d-relief-maps) of the regions, if necessary.
 
 <Tabs groupId="operating-systems">
 
@@ -376,7 +383,7 @@ Follow the steps below to display 3D Relief on the OsmAnd map:
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Vertical exaggeration*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Vertical exaggeration*
 
 ![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
@@ -384,7 +391,7 @@ Follow the steps below to display 3D Relief on the OsmAnd map:
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Vertical exaggeration*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Vertical exaggeration*
 
 ![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
@@ -439,5 +446,15 @@ OsmAnd allows you to combine multiple types of map layers for a more visual disp
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+
+### Common Issues and Solutions
+
+<!-- Troubleshooting Steps-->
+
+1. How to restore the Topography (formerly Contour lines) plugin purchase. [(check)](../troubleshooting/setup.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
+2. Contour Lines, Elevation data or 3D Relief are not displayed. [(check)](../troubleshooting/setup.md#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
+3. The map automatically switches to 3D mode during navigation:  
+    - Ensure the **3D Mode** button is disabled in the **Menu → Configure Screen → Buttons → Default Buttons**.  
+    - Check if any Terrain features are enabled in **Menu → Configure Map → Topography** that may trigger a 3D effect.
 
 > *This article was last updated in January 2025*

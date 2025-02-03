@@ -127,7 +127,7 @@ History is a list of all deactivated (passed) markers. From this list it's possi
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
 
 ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)  
 
@@ -135,7 +135,7 @@ History is a list of all deactivated (passed) markers. From this list it's possi
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
 
 ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
 

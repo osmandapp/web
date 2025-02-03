@@ -134,13 +134,13 @@ Some related font issues have been documented on GitHub: [3911](https://github.c
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
+Go to: *Android* *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
+Go to: *iOS* *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
 
 </TabItem>
 
@@ -159,7 +159,7 @@ Contour lines are compatible with all map styles and can be customized through t
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
 ![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
 
@@ -167,7 +167,7 @@ Contour lines are compatible with all map styles and can be customized through t
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
 ![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
 
@@ -184,7 +184,7 @@ Nautical depth contour lines represent areas of equal depth, helping visualize u
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
 ![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
 
@@ -192,7 +192,7 @@ Nautical depth contour lines represent areas of equal depth, helping visualize u
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
 ![show-borders-ios](@site/static/img/map/show-borders-ios.png)
 
@@ -217,7 +217,7 @@ When the *Show borders of downloaded maps* feature is enabled, downloaded maps a
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_mode"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_mode"/>*  
 
 ![Map Mode](@site/static/img/map/map_mode_andr.png)
 
@@ -225,7 +225,7 @@ When the *Show borders of downloaded maps* feature is enabled, downloaded maps a
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_mode"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_mode"/>*
 
 ![Map Mode](@site/static/img/map/map_mode_4-9_ios.png)
 
@@ -252,7 +252,7 @@ The map can be displayed in a light or dark theme based on the mode selected fro
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details"/>*
 
 </TabItem>
 
@@ -319,13 +319,13 @@ The map can be displayed in a light or dark theme based on the mode selected fro
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 </TabItem>
 
@@ -342,13 +342,13 @@ A route is a path that is predetermined and needs to be followed to reach a spec
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,icon_group_transport"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,icon_group_transport"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_transport"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_transport"/>*
 
 </TabItem>
 
@@ -374,13 +374,13 @@ When navigating through cities, you need a more contrasting view of public trans
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
 
 </TabItem>
 
@@ -405,13 +405,13 @@ To improve map visibility, you might need to hide certain objects. For example, 
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
 
 </TabItem>
 
@@ -443,13 +443,13 @@ Special settings for roads, where you can change the colors to match the road at
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
 
 </TabItem>
 
@@ -501,13 +501,13 @@ If the names on the map are not translated into the required language by the OSM
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
 
 </TabItem>
 

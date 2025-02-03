@@ -93,10 +93,10 @@ In case your track was created in OsmAnd or any other tracking app (so its point
 
 </Tabs>
 
-- **Show / hide** buttons. Allows you to enable or disable the track display on the map.
-- [Appearance](./appearance.md). Used to customize the appearance of your track.
+- **Show / hide** buttons. Changes the visibility of the track on the map.
+- [Appearance](./appearance.md). Customize the appearance of your track.
 - **Edit track** (*Android*). Opens the track in [*Plan a route tool*](../../plan-route/create-route.md).
-- **Export** (*iOS*). Allows [to export a track](../../personal/tracks/manage-tracks.md#export).
+- **Export** (*iOS*). Allows you [to export a track](../../personal/tracks/manage-tracks.md#export).
 - **Directions**. Opens the track in *[Navigation](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.
 
 
@@ -120,14 +120,14 @@ In case your track was created in OsmAnd or any other tracking app (so its point
 
 Menu *Options* allows manipulation with the chosen track.  
 
-- **<Translate android="true" ids="shared_string_show_on_map"/>**. Shows or not the track on the map.
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. Customizes the visibility of the track on the map.
 - **<Translate android="true" ids="shared_string_appearance"/>**. Opens [Appearance menu](../tracks/appearance.md) for the track.
 - **<Translate android="true" ids="follow_track"/>** (*Android*) or **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*). Starts navigation by [follow track option](../../navigation/setup/gpx-navigation.md).
 
 
 - **<Translate android="true" ids="join_segments"/>** (*Android*). Allows joining gaps of the track.
 - **<Translate android="true" ids="analyze_on_map"/>**. Opens [Analyze on map function](../index.md#analyze-track-on-map).
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android*). Analyzes the track by time or distance [intervals](./track-context-menu.md#split-interval).
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android*). Analyze the track by time or distance [intervals](./track-context-menu.md#split-interval).
 
 
 - **<Translate android="true" ids="shared_string_share"/>**. Exports the selected track.
@@ -137,7 +137,7 @@ Menu *Options* allows manipulation with the chosen track.
 - **<Translate android="true" ids="edit_track"/>**. Opens the chosen track in [Plan route tool](../../plan-route/create-route.md).
 - **Duplicate track** (*iOS*). Allows you to make and save a copy of the track.
 - **<Translate android="true" ids="rename_track"/>**. Changes track name.
-- **<Translate android="true" ids="change_folder"/>**. Selects a folder and add a new one for the chosen track.
+- **<Translate android="true" ids="change_folder"/>**. Select a folder and add a new one for the chosen track.
 
 
 - **<Translate android="true" ids="shared_string_gps_filter"/>** (*Android*). Allows [filtering points of the track](#gps-filter).
@@ -228,7 +228,7 @@ This section of the *Overview* tab displays ***tag data*** and ***all general in
 
 The *Activity* feature in OsmAnd allows you to tag recorded GPX tracks with specific activities for further analysis and organization in folders.
 
-- [Activity tags for GPX tracks](../../plugins/trip-recording.md#recording-settings). When recording a GPX track, you can assign an activity type. This activity tagging helps you to categorize tracks initially.
+- [Activity tags for GPX tracks](../../plugins/trip-recording.md#recording-settings). When recording a GPX track, you can assign an activity type. This activity tagging helps you initially categorize tracks.
 - [Activity filter](../../personal/tracks/smart-folder.md#search-filter). You can filter the recorded GPX tracks by activity, which allows you to focus on finding specific types of recordings, such as all biking or hiking tracks.
 - [Manage activity types](../../personal/tracks/manage-tracks.md#selection-mode). You can change the activity type for selected folders or tracks using the selection mode in the Tracks tab of the My Places menu.
 - **Activity list**. The activity categories and groups are defined in OsmAnd's resources. For developers and contributors, the activity list is maintained in a structured format at [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), which details the available activity groups and types.
@@ -306,7 +306,7 @@ The **Speed** graph displays metrics such as:
 
 - *<Translate android="true" ids="average_speed"/>*. Indicates the average speed during the trip.
 - *<Translate android="true" ids="max_speed"/>*. Shows the maximum speed during the trip.
-- *<Translate android="true" ids="moving_time"/>*. Shows the total time during trip in motion only.
+- *<Translate android="true" ids="moving_time"/>*. Shows the total time during the trip in motion only.
 - *<Translate android="true" ids="distance_moving"/>*. Indicates the adjusted distance of the trip.
 
 
@@ -338,7 +338,7 @@ The **Altitude** graph displays metrics such as:
 **Get elevation data.**  
 If there is *no elevation information* on the route, you can add it in the following ways:
 
-- *Calculate elevation button → [Use nearby roads](../../plan-route/create-route.md#use-nearby-roads)*. Utilizes an offline map to find nearby roads and elevation data. Allows you to customize the geometry of the track.
+- *Calculate elevation button → [Use nearby roads](../../plan-route/create-route.md#use-nearby-roads)*. Utilizes an offline map to find nearby roads and elevation data. It allows you to customize the geometry of the track.
 - [*Use Terrain maps*](#calculate-missing-elevation). Utilizes terrain maps to obtain elevation data. The track geometry remains unchanged.
 
 
@@ -355,11 +355,11 @@ This feature allows you to calculate the elevation profile for GPX track offline
 1. Download [Terrain maps (3D)](../../plugins/topography.md#download-maps) for the required region.
 2. If the track does not contain any altitude data, go to the track context menu (*Track context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
 
-  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
+    ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
 3. If you are creating a route with the [*Plan a route*](../../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
     - Tap *Get elevation data*, then select *Use Terrain maps*.
-    - After the calculation, you will get a complete Altitude/Slope graph of your route based on terrain data.  
+    - After the calculation, you will get your route's complete Altitude/Slope graph based on terrain data.  
 
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
 
@@ -454,11 +454,11 @@ The *three-dot menu* ( &#8285; ) opens the waypoint *Group menu*.
 **Actions:**
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>**. Allows you to display or not display group waypoints on the map. Or you can use [the screen button](#points--waypoints) to display or omit group waypoints on the map.
-- **<Translate android="true" ids="shared_string_rename"/>**. Allows you to change the name of the group.
-- **<Translate android="true" ids="change_color"/>**. Allows you to change the color for group waypoints.
-- **<Translate android="true" ids="copy_to_map_markers"/>** (*Android only*). Allows you to move group waypoints to [Map markers](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android only*). Allows you to move group waypoints to [Favorites](../../personal/favorites.md).
-- **<Translate android="true" ids="shared_string_delete"/>**. Allows you to delete group waypoints.
+- **<Translate android="true" ids="shared_string_rename"/>**. Change the name of the group.
+- **<Translate android="true" ids="change_color"/>**. Change the color for group waypoints.
+- **<Translate android="true" ids="copy_to_map_markers"/>** (*Android only*). Move group waypoints to [Map markers](../../personal/markers.md).
+- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android only*). Move group waypoints to [Favorites](../../personal/favorites.md).
+- **<Translate android="true" ids="shared_string_delete"/>**. Delete group waypoints.
 
 
 ### Waypoint Groups

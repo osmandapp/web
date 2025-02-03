@@ -23,7 +23,7 @@ The map can display points such as [Favorites](#favorites), [Points of Interest]
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
 
 ![Favotires layer Android](@site/static/img/map/favorites_layer.png)  
 
@@ -31,7 +31,7 @@ The map can display points such as [Favorites](#favorites), [Points of Interest]
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
 
 ![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)  
 
@@ -52,7 +52,7 @@ In the Android version of OsmAnd, you can display only certain group favorites o
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
 
 ![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png)  
 
@@ -60,7 +60,7 @@ In the Android version of OsmAnd, you can display only certain group favorites o
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
 
 ![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png)  
 

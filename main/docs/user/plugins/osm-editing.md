@@ -118,7 +118,7 @@ The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
 
 ![OSM editing layer Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM editing layer Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
@@ -126,7 +126,7 @@ The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
 
 ![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
@@ -192,7 +192,7 @@ Remember that when adding unsupported POI types, it is important to make sure th
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
 ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
 
@@ -200,7 +200,7 @@ Remember that when adding unsupported POI types, it is important to make sure th
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
 
 ![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 
@@ -265,7 +265,7 @@ To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks)
 **Settings:**
 
 - **<Translate android="true" ids="shared_string_description"/>**. Allows you to add a description to the track. The description applies to all selected tracks. If you enter nothing in the field, the track names for each separate track are used as descriptions.  
-- **<Translate android="true" ids="gpx_tags_txt"/>**. This item in the settings section allows you to add tags to identify the track. The default tag is "osmand", the user can enter additional tags separated by commas.  
+- **<Translate android="true" ids="gpx_tags_txt"/>**. This item in the settings section allows you to add tags to identify the track. The default tag is "osmand", you can enter additional tags separated by commas.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Track visibility for OSM users:  
    - *Public* means that the track is publicly available and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are unavailable through the public GPS API and track points are not ordered chronologically.
    - *Identifiable* means that the track will be publicly displayed in your GPS track points and public GPS track lists, which means other users will be able to download the raw track and associate it with your username. Public timestamped track points data from the GPS API passed through the track points API will link to your original track page.

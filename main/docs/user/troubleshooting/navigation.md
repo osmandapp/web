@@ -68,31 +68,56 @@ Currently, OsmAnd can only make use of the elements that consists of a single no
 
 ## Voice Navigation
 
-### Why should I use a TTS voice, not a recorded voice
+### Why should I use a TTS voice instead of a recorded voice?
 
-**Text-to-Speech (TTS)** voices synthesize prompts from any specified text "on the fly," allowing them to pronounce dynamic information such as street names, place names, and highway numbers. In contrast, **recorded voices** are limited to playing combinations of pre-recorded snippets and cannot pronounce specific names or numbers.
+**Text-to-Speech (TTS)** voices generate spoken prompts dynamically, allowing them to pronounce street names, place names, and highway numbers. In contrast, **recorded voices** are limited to pre-recorded phrases and cannot pronounce specific names or numbers.
 
-For this reason, we recommend using a **TTS voice** in OsmAnd, as it offers more flexibility and is regularly updated by developers to include the latest features.
+*Advantages of TTS over recorded voices:*
 
-To use TTS, your device must have a TTS engine installed. Many systems come with a TTS engine pre-installed, but they can also be added manually if needed. You can find a [list of supported TTS engines and languages for Android here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+- Pronounces street names and dynamic information.
+- Regularly updated with new features.
+- Offers better flexibility for navigation.
 
-For detailed instructions on setting up and adjusting Voice Prompts, refer to the [Voice Navigation Setup Guide](../navigation/guidance/voice-navigation.md).
+To use TTS in OsmAnd, your device must have a **TTS engine** installed. Many devices come with a pre-installed TTS engine, but additional ones can be manually installed if needed. [List of supported TTS engines and languages for Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
+For detailed instructions on setting up and adjusting Voice Prompts, refer to: [Voice Navigation Setup Guide](../navigation/guidance/voice-navigation.md).
 
-### TTS does not function properly
+### TTS does not function properly? Follow these steps to fix it
 
-*Text-to-Speech (TTS)* issues will usually have to be fixed in your **Android configuration and settings**, not within the OsmAnd app.
+Issues with **Text-to-Speech (TTS)** are typically related to **Android system settings**, not the OsmAnd app itself.  
 
-To use TTS, your device needs to have TTS engine installed. Select or install a TTS engine via your **Android device settings**. Often, one TTS engine is already pre-installed on each device (e.g. google, Samsung, Pico), but another engine can be installed if needed. [Here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/) is a compilation of supported engines and languages for Android.
+1. Ensure a TTS engine is installed.
 
-A TTS engine often supports several languages, so one must be selected to be used. Also, to improve the voice quality: Some TTS engines come pre-installed with only a set of basic-quality pronunciation packages, and then facilitate downloading higher quality voices per language language.
+    - Open *Device Settings → Language & Input → Text-to-Speech Options*.
+    - Check if a **TTS engine** is installed (e.g., Google TTS, Samsung TTS, Pico).
+    - If no engine is installed, select *“Install more…”* and download a compatible one.
+    - [List of supported TTS engines and languages.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
 
-If you have issues with the TTS voice guidance:
+2. Verify TTS language settings.
 
-- First check if you have a TTS engine installed on your Android device which supports the language you want (i.e. offers it for selection in its options). To do this, find and select the language you want in the Android (not OsmAnd) settings, often located under "Language and Input / Text-to-speech options".
-- Then use the test button usually provided there to "Listen to an example". You should hear a test announcement in the correct language and pronunciation.
-- Once this works, finally go to OsmAnd's [General settings / Voice guidance and there select the corresponding TTS language](../navigation/guidance/voice-navigation.md#settings-of-voice-prompts).  
-  - Please note that the language list OsmAnd initially displays can be extended by tapping the "Install more..." option.
+    - Select the language you want to use in *Android Settings → Text-to-Speech Options*.
+    - Tap *“Listen to an example”* to test if the TTS engine is working.
+    - If you don’t hear anything, update or reinstall the TTS engine.
+
+3. Adjust OsmAnd voice navigation settings.
+
+    - Open *OsmAnd → Menu → Configure Profile → Navigation Settings → Voice Prompts*.
+    - Select a compatible *Language → TTS*.
+    - Test the voice prompts by navigating to *Menu → Plugins → Enable OsmAnd Development → Settings → Test Voice Prompts*.
+
+#### Additional Steps
+
+- *Update Google TTS*. Open Google Play Store, search for **Google Text-to-Speech**, and update it.  
+- *Simulate Navigation*. Tap *Navigation button → Settings → Simulate Navigation* to check if voice guidance plays.  
+- *Reinstall OsmAnd*:  
+   1. **Back up settings:** *Menu → Settings → Export to File*.  
+   2. Uninstall OsmAnd, then reinstall it from the app store.  
+   3. Restore settings: *Menu → Settings → Import File*.
+
+For additional troubleshooting, visit:
+
+- [Voice Navigation Guide](../navigation/guidance/voice-navigation.md)  
+- [Import/Export Settings](../personal/import-export.md)  
 
 
 ## Other

@@ -170,10 +170,16 @@ To avoid playing audio in the same output stream at the same time, the audio foc
 
 ### Testing of Voice Prompts
 
-**Testing of voice prompts** is possible only for the Android version of the application. Enable the *OsmAnd development plugin* and run [Simulate Navigation](../../navigation//setup/route-navigation.md#simulated-navigation) or use [Test voice prompts](../../plugins/development.md#application-testing).
+You can test the voice prompts with:
+
+- [Simulate Navigation](../../navigation//setup/route-navigation.md#simulated-navigation). Set a route and start the simulation: *Navigation menu → Settings → Simulate navigation*.
+- [Test voice prompts](../../plugins/development.md#application-testing) (*Android only*). Use the *Development plugin* to test voice prompts:
+    - Go to *Menu → Plugins → Enable OsmAnd Development*.
+    - Go to *Settings → Test voice prompts*.
+    - Select a language and check if the system plays the prompts correctly.
 
 
-### Troubleshooting Audio Issues
+### Solving Audio Issues
 
 If you are not hearing **voice prompts** or [speed limit warnings](#speed-limit):
 
@@ -198,7 +204,7 @@ To configure the TTS of your device:
 - Find the *Language & Keyboard* section, *Text-to-speech*, or similar.
 - Select, activate, or install it, then configure it to support your preferred language, which may just be a setting or require you to download an additional file.  
 
-Check if TTS works properly in Android using the *Listen to example* or a similar test button. You can also check if the voice prompts are selected correctly in OsmAnd, to do this, enable the OsmAnd Development plugin and then go to *Settings → Plugins → OsmAnd Development → Voice Prompts Test*.
+Check if TTS works properly in Android using the *Listen to example* or a similar test button. You can also check if the voice prompts are selected correctly in OsmAnd, to do this, enable the OsmAnd Development plugin and then go to *Settings → Plugins → OsmAnd Development → [Test voice prompts](../../plugins/development.md#application-testing)*.
 
 Additional information can be found in the [Troubleshooting](../../troubleshooting/navigation.md#voice-navigation) section.  
 
@@ -208,7 +214,7 @@ Additional information can be found in the [Troubleshooting](../../troubleshooti
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
 
 ![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-tts.png)  ![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-recorded.png)  
 
@@ -216,7 +222,7 @@ Additional information can be found in the [Troubleshooting](../../troubleshooti
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
 
 ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
 
@@ -366,4 +372,11 @@ Select screen wake-up options and ensure OsmAnd remains in the foreground when t
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in December 2024*
+### Common Issues and Solutions
+
+1. Audio Issues. [(check)](#solving-audio-issues)
+2. Testing of Voice Prompts. [(check)](#testing-of-voice-prompts)
+3. Why should I use a TTS voice instead of a recorded voice? [(check)](../../troubleshooting/navigation.md#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice)
+4. TTS does not function properly? Follow these steps to fix it. [(check)](../../troubleshooting/navigation.md#tts-does-not-function-properly-follow-these-steps-to-fix-it)
+
+> *This article was last updated in January 2025*

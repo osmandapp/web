@@ -53,7 +53,7 @@ Straight line routing is linked to *Aircraft profile*. By default, this profile 
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="recalc_angle_dialog_title"/>* |  <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/>  </summary>![Straight line recalculation Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details>  | When the angle between the calculated route and actual geolocation is higher than the one set by the user, the shortest path from your current position to the calculated route will be built. In other words, OsmAnd will calculate an additional route segment to the previously calculated route. |  
+| *<Translate android="true" ids="recalc_angle_dialog_title"/>* |  <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/>  </summary>![Straight line recalculation Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details>  | When the angle between the calculated route and actual geolocation is higher than the one set by you, the shortest path from your current position to the calculated route will be built. In other words, OsmAnd will calculate an additional route segment to the previously calculated route. |  
 
 
 ## Other Routing Settings

@@ -20,21 +20,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
-[**Android Auto**](https://www.android.com/auto) is software developed by Google that allows users to connect their Android devices to compatible vehicle multimedia systems. Android Auto provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.  
+[**Android Auto**](https://www.android.com/auto) is software developed by Google that allows users to connect their Android devices to compatible vehicle multimedia systems. *Android Auto* provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.  
 
-- Android Auto function is only supported when using the OsmAnd app available in the [Google Play store](https://play.google.com/store/apps/dev?id=8483587772816822023).
-- If you have purchased [OsmAnd Pro](../purchases/android.md#osmand-pro) from the [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd), you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) in the [OsmAnd Free version](https://play.google.com/store/apps/details?id=net.osmand) app downloaded from the Google Play store.
-- After this activation, you can use the Android Auto function for which you purchased a subscription to OsmAnd Pro in another app store.
+- *Android Auto* function is only supported when using the OsmAnd app available in the [Google Play Store](https://play.google.com/store/apps/dev?id=8483587772816822023).
+- If you have purchased [OsmAnd Pro](../purchases/android.md#osmand-pro) from the [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd), you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) in the [OsmAnd Free version](https://play.google.com/store/apps/details?id=net.osmand) app downloaded from the Google Play Store.
+- After this activation, you can use the *Android Auto* function, for which you purchased a subscription to OsmAnd Pro in another app store.
 
-***Note***: Android Auto is not a direct replication of the OsmAnd mobile app. It has a simplified interface, focusing on essential navigation functions to ensure safe driving. Some advanced features are not supported due to platform limitations.
-
+***Note***: *Android Auto* is not a direct replication of the OsmAnd mobile app. It has a simplified interface, focusing on essential navigation functions to ensure safe driving. Some advanced features are not supported due to platform limitations.
 
 
 ### Connection Screen
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)  
 
-While your device is connected to Android Auto, the map on the app screen is locked for security purposes.  
+While your device is connected to *Android Auto*, the map on the app screen is locked. This is an intentional security feature to ensure that navigation is controlled exclusively from the car display, minimizing distractions while driving. Check the [common questions](#common-issues-and-solutions) about the connection screen.
 
 
 ### Landing Screen
@@ -56,10 +55,10 @@ When you open the application, a list of categories is displayed. For easy navig
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_interaction_2.png)
 
-Android Auto displays the OsmAnd interface adapted to the vehicle multimedia system screen. Interaction with the map is limited to buttons such as:  
+*Android Auto* displays the OsmAnd interface adapted to the vehicle multimedia system screen. Interaction with the map is limited to buttons such as:  
 
 - [*OsmAnd menu*](#destination-points). Contains a list of available options for assigning a route endpoint or a free ride.
-- [*Settings*](#voice-prompts). This button is responsible for access to turn *voice promts* on or off when you are navigating the selected route.
+- [*Settings*](#voice-prompts). This button is responsible for access to turn *voice prompts* on or off when you are navigating the selected route.
 - [*Search*](#search). Tapping the button opens a screen with access to the search functions.
 - [*My Location*](../widgets/map-buttons.md#my-location-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
 - [*Zoom*](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map.
@@ -70,17 +69,17 @@ Android Auto displays the OsmAnd interface adapted to the vehicle multimedia sys
 
 ### Start Navigation
 
-In order for OsmAnd to work in Android Auto, you must [connect](#connection-screen) your Android device to your vehicle multimedia system. The Android operating system must be updated to version 6.0 or higher.
+In order for OsmAnd to work in *Android Auto*, you must [connect](#connection-screen) your Android device to your vehicle multimedia system. The Android operating system must be updated to version 6.0 or higher.
 
 - To find out how to connect and set up your device, visit the [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en) websites.  
 
-- Not all vehicles support device connection capability. Check the [list for Android Auto](https://www.android.com/auto/compatibility/#compatibility-vehicles).  
+- Not all vehicles support device connection capability. Check the [list for *Android Auto*](https://www.android.com/auto/compatibility/#compatibility-vehicles).  
 
 - You need to purchase a **paid version** of the app or take out a [subscription](../purchases/android.md#free-and-paid-features). Check your current subscription here *Menu → Settings → Purchases*.  
 
-- Android Auto uses the first [OsmAnd Driving profile](#profile-first) in the Profiles list for navigation. Set the preferred profile to first, except for the *Browse map* profile, it is not read by Android Auto. To do this, go to OsmAnd *Menu → Settings → App profiles → Edit profile list* → move your [**Driving**](#profile-first) profile to the first place or after the *Browse map* profile.  
+- *Android Auto* uses the first [OsmAnd Driving profile](#profile-first) in the Profiles list for navigation. Set the preferred profile to first, except for the *Browse map* profile, it is not read by *Android Auto*. To do this, go to OsmAnd *Menu → Settings → App profiles → Edit profile list* → move your [**Driving**](#profile-first) profile to the first place or after the *Browse map* profile.  
 
-- It is important to remember that Android Auto is a data-intensive application, including mobile data, and the quality of the system may depend on the quality of your connection and the speed of your Internet access.
+- It is important to remember that *Android Auto* is a data-intensive application, including mobile data, and the quality of the system may depend on the quality of your connection and the speed of your Internet access.
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_start_navigation.png)  
 
@@ -88,7 +87,7 @@ In order for OsmAnd to work in Android Auto, you must [connect](#connection-scre
 ### Profile First
 
 You cannot select a profile directly in *Android Auto* on the vehicle screen.  
-If you already have a profile selected on your device that corresponds to the type of vehicle, such as *Driving*, *Truck*, *Car*, *Motorcycle*, *Moped*, **the app will automatically activate** the appropriate profile when you connect to Android Auto. For example, if you have a *Truck* profile as selected and your device connects to *Android Auto*, the app will activate that profile.
+If you already have a profile selected on your device that corresponds to the type of vehicle, such as *Driving*, *Truck*, *Car*, *Motorcycle*, *Moped*, **the app will automatically activate** the appropriate profile when you connect to Android Auto. For example, if you have a *Truck* profile as selected and your device connects to **Android Auto**, the app will activate that profile.
 
 If you do not have any *Driving* profile selected on your device that corresponds to your vehicle type, then OsmAnd will automatically switch to the *Driving* profile. This is done to provide basic navigation and to prevent possible problems caused using the wrong profile for a specific vehicle type.
 
@@ -98,7 +97,7 @@ If you do not have any *Driving* profile selected on your device that correspond
 
 2. **Utility and Efficiency.** Navigation should be customized to meet the needs of a particular mode of transportation. This allows users to reduce the time it takes to find optimal routes and avoid unnecessary traffic restrictions.
 
-3. **Error avoidance.** Switching to the *Driving* profile when there is no specific profile for the selected mode of transportation provides the user with constant access to the minimum necessary settings and information, thus avoiding possible errors and misunderstandings while driving.  
+3. **Error avoidance.** Switching to the *Driving* profile when there is no specific profile for the selected mode of transportation provides you with constant access to the minimum necessary settings and information, thus avoiding possible errors and misunderstandings while driving.  
 
 
 ## Destination Points
@@ -109,7 +108,7 @@ You can select previously preset and added [POIs](../map/point-layers-on-map.md#
 
 1. If you want a particular location on the map as an endpoint, select the appropriate category of points from the list, [POIs](#poi-categories), [Favorites](#favorites), or [Map Markers](#map-markers).  
   
-    - All categories can contain no more list items than are provided by your vehicle multimedia system. This means that the list in Android Auto could be incomplete and all other folders are only available in the OsmAnd app on your device.
+    - All categories can contain no more list items than are provided by your vehicle multimedia system. This means that the list in *Android Auto* could be incomplete, and all other folders are only available in the OsmAnd app on your device.
     - The [Last modified](#folder-last-modified) folder contains a list of recent destinations, sorted by date added or changed.
     - The list of all other folders is sorted by the most recent update, new folders are at the top of the list. It is not possible to change their order manually.
     - The list of points within folders is sorted by the distance to them, starting with the nearest. Each point has a name or coordinates, a shaped icon (color and icon set by default or chosen by you in the OsmAnd application), and the distance from the point of the current location to it.  
@@ -143,12 +142,12 @@ In the History category, you can select a destination from a list of endpoints. 
 
 POIs (Points of Interest) are a type of points that identify places or objects on the map that are important or of interest to users. They are highlighted by special icons provided in the [OsmAnd settings](../map/point-layers-on-map.md#poi-types) and sorted into groups.  
 
-To build a route to a POI in Android Auto, follow these steps:
+To build a route to a POI in *Android Auto*, follow these steps:
 
 1. Select the needed POI from the list of available categories, or enter the name of the POI using [Search](#search).
 2. Tapping on a category opens the following screen with a list of POIs.
 3. Tapping an item in the list opens the navigation screen.
-4. OsmAnd calculates the route and displays it on the Android Auto screen. Tap **Start** button to start navigating to that location.
+4. OsmAnd calculates the route and displays it on the *Android Auto* screen. Tap **Start** button to start navigating to that location.
 5. Depending on your OsmAnd app [settings](../navigation/guidance/navigation-settings.md) and your vehicle, you may receive [voice prompts](#voice-prompts) to guide you to a destination.  
 
 
@@ -161,9 +160,9 @@ To build a route to a POI in Android Auto, follow these steps:
     </tr>
 </table>  
 
-*Favorites* is one of the functions of OsmAnd that allows the user to make a kind of bookmarks (notes) on the map. While using Android Auto you cannot add or modify Favorites, only use existing ones. The list of [*Favorites*](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, add the necessary places in the favorites before connecting the device to your vehicle multimedia system.  
+*Favorites* is one of the functions of OsmAnd that allows you to make a kind of bookmarks (notes) on the map. While using *Android Auto*, you cannot add or modify Favorites, only use existing ones. The list of [*Favorites*](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, add the necessary places in the favorites before connecting the device to your vehicle multimedia system.  
 
-To create a route to a favorite point in Android Auto, follow the steps below:  
+To create a route to a favorite point in *Android Auto*, follow the steps below:  
 
 1. Tapping a folder opens the next screen with a list of favorite folders.
 2. Tapping an item in the list opens the navigation.
@@ -182,9 +181,9 @@ To define your final destination as a Map Marker, you first need to create the r
 
 To build a route to a destination, you can select an existing track available in the OsmAnd app. The track can be [*downloaded*](../personal/tracks/manage-tracks.md#import) in advance, used as [*recorded*](../plugins/trip-recording.md) or created in [*Plan a route*](../plan-route/create-route.md).  
 
-From the list of tracks in *Menu → My Places → [Tracks](../personal/tracks/manage-tracks.md)*, select the required one before connecting to the vehicle multimedia system, and the route will either build up to the start of the track or display the current direction along the track.
+From the list of tracks in the *Menu → My Places → [Tracks](../personal/tracks/manage-tracks.md)*, select the required one before connecting to the vehicle multimedia system, and the route will either build up to the start of the track or display the current direction along the track.
 
-Tracks can also be selected directly on the vehicle screen in Android Auto. They are organized in folders you have created, and for easy and quick access to recently opened tracks, there is a special folder [*Last modified*](#folder-last-modified).  
+Tracks can also be selected directly on the vehicle screen in *Android Auto*. They are organized in folders you have created, and for easy and quick access to recently opened tracks, there is a special folder [*Last modified*](#folder-last-modified).  
 
 
 ### Search
@@ -196,7 +195,7 @@ Going to Search gives you quick access to a list of recent [destination history]
 You can use the Search tool to find the required place on the map for route planning from any available search category.
 
 - [Address](../search/search-address.md) - start typing the address in the search field.
-- [POI](../search/search-poi.md) and [Custom POI](../search/search-poi.md)- the list of nearby similar names will also display POIs or their categories.
+- [POI](../search/search-poi.md) and [Custom POI](../search/search-poi.md) - the list of nearby similar names will also display POIs or their categories.
 - [Coordinates search](../search/search-address#coordinates-search) - enter the coordinates to find the point on the map.  
 
 
@@ -210,14 +209,14 @@ The Favorites and Tracks categories have a special *Last Modified* folder. Since
 
 ## Navigation Features
 
-In addition to the basic features of the OsmAnd app in Android Auto that provide convenient navigation in your vehicle, there are a number of additional features that enhance the user experience and make navigation more personalized, comfortable, and efficient.  
+In addition to the basic features of the OsmAnd app in *Android Auto* that provide convenient navigation in your vehicle, there are a number of additional features that enhance your experience and make navigation more personalized, comfortable, and efficient.  
 
 
 ### Next Turn & Route Info
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_alert_widget.png)
 
-Next turn widget displays distance and type about [next turn maneuvre](../widgets/nav-widgets.md#next-turn) and [street name](../widgets/nav-widgets.md#street-name).
+Next turn widget displays distance and type about [next turn maneuver](../widgets/nav-widgets.md#next-turn) and [street name](../widgets/nav-widgets.md#street-name).
 
 Route information consists of [estimated time of travel](../widgets/nav-widgets.md#time-to-destination),
 [estimate time of arrival](../widgets/nav-widgets.md#time-to-destination) and [distance to travel](../widgets/nav-widgets.md#distance-to-destination).
@@ -228,7 +227,7 @@ Route information consists of [estimated time of travel](../widgets/nav-widgets.
 This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**.
 
 - The types of alerts have different appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*.
-- In Android Auto it is not possible to set the display of alerts, you need to configure the widget in the application before starting the navigation and connecting your device to the vehicle.
+- In *Android Auto* it is not possible to set the display of alerts, you need to configure the widget in the application before starting the navigation and connecting your device to the vehicle.
 - For a detailed description of the alert types, see [this article](../widgets/nav-widgets.md#alert-types).
 - To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).  
 
@@ -248,11 +247,11 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance_3d_2.png)
 
-The OsmAnd app allows you to use the 3D map view on the Android Auto screen to display your route and navigation.
+The OsmAnd app allows you to use the 3D map view on the *Android Auto* screen to display your route and navigation.
 
 - To enable this feature, you need to select [Map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
 - Open the main *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* directly in the OsmAnd app.
-- After configuring the settings, the **3D button** will be displayed on the Android Auto screen when the category list for destinations is closed.
+- After configuring the settings, the **3D button** will be displayed on the *Android Auto* screen when the category list for destinations is closed.
 - You can switch between 3D / 2D map modes by tapping this button.
 
 
@@ -260,9 +259,9 @@ The OsmAnd app allows you to use the 3D map view on the Android Auto screen to d
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
 
-Voice prompts are one of the most useful features of OsmAnd while navigating for Android Auto, giving you real-time guidance and allowing the driver to stay focused on the road. Voice prompts provide clear instructions on turns, directions, and other navigation instructions, providing a safer and more comfortable use of the navigation system.  
+Voice prompts are one of the most useful features of OsmAnd while navigating for *Android Auto*, giving you real-time guidance and allowing the driver to stay focused on the road. Voice prompts provide clear instructions on turns, directions, and other navigation instructions, providing a safer and more comfortable use of the navigation system.  
 
-To configure [voice prompts](../navigation/guidance/voice-navigation.md) according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device. In Android Auto, only the setting to turn all selected voice prompts off or on at the same time is available.  
+To configure [voice prompts](../navigation/guidance/voice-navigation.md) according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device. In *Android Auto*, only the setting to turn all selected voice prompts off or on at the same time is available.  
 
 
 ### Map Mode
@@ -274,12 +273,11 @@ To configure [voice prompts](../navigation/guidance/voice-navigation.md) accordi
     </tr>
 </table>
 
-Android Auto and OsmAnd offer the ability to adjust the map to match lighting conditions. In *Day map mode*, the color scheme remains bright and contrasting, making it easier to read even in bright sunlight. In *Night mode*, the maps become darker, which helps the driver navigate better in the dark.  
+*Android Auto* and OsmAnd offer the ability to adjust the map to match lighting conditions. In *Day map mode*, the color scheme remains bright and contrasting, making it easier to read even in bright sunlight. In *Night mode*, the maps become darker, which helps the driver navigate better in the dark.  
 
-OsmAnd has [map mode](../map/vector-maps.md#map-mode) options, but when you use the app in Android Auto, these options are ignored. Instead, the mode you selected in the Android Auto system settings for maps is used.
+OsmAnd has [map mode](../map/vector-maps.md#map-mode) options, but when you use the app in *Android Auto*, these options are ignored. Instead, the mode you selected in the *Android Auto* system settings for maps is used.
 
-- You can choose to always display the map in Day mode.
-- You can select Night mode.
+- Select Day mode or Night mode to keep the map display unchanged.
 - If you want the map display mode to switch depending on the time of day, select Automatic mode.  
 
 <!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
@@ -289,7 +287,7 @@ OsmAnd has [map mode](../map/vector-maps.md#map-mode) options, but when you use 
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_map_split_screen.png)
 
-The OsmAnd app can be opened and used to navigate in Android Auto on the vehicle multimedia system screen simultaneously with music, message or other notification apps. Setting up the split-screen display on a phone connected to Android Auto or on the screen in your vehicle system.  
+The OsmAnd app can be opened and used to navigate in *Android Auto* on the vehicle multimedia system screen simultaneously with music, message or other notification apps. Setting up the split-screen display on a phone connected to *Android Auto* or on the screen in your vehicle system.  
 
 1. From Home screen, tap Apps.
 2. Tap Settings.
@@ -297,13 +295,19 @@ The OsmAnd app can be opened and used to navigate in Android Auto on the vehicle
 4. Return to the home screen.  
 
 
-## Issues
+## Common Issues and Solutions
 
-1. [Map orientation issue](../troubleshooting/android_auto.md#map-orientation-issue)
+1. Map orientation issue. [(check)](../troubleshooting/android_auto.md#map-orientation-issue)
+2. Volume control issue. [(check)](../troubleshooting/android_auto.md#volume-control-issue)
+3. Location delays (ANR crashes). [(check)](../troubleshooting/android_auto.md#location-delays-anr-crashes)
+4. Common questions about the connection screen:
+    - *Why can’t I control the app from my phone when connected to Android Auto?*  
+        For safety reasons, the OsmAnd app screen on your phone is locked while connected to Android Auto. You can interact with the app only through the car display.
+    - *Can I disable the locked screen and use the app on my phone?*  
+        No, Android Auto enforces this restriction to prevent distractions while driving.
+    - *What should I do if my phone and car display seem disconnected?*  
+        Ensure your device is properly connected via USB or Bluetooth.  
+        Restart your car’s infotainment system and the OsmAnd app if the connection is unstable.
 
-2. [Volume control issue](../troubleshooting/android_auto.md#volume-control-issue)
 
-3. [Location delays (ANR crashes)](../troubleshooting/android_auto.md#location-delays-anr-crashes)
-
-
-> *This article was last updated in May 2024*
+> *This article was last updated in January 2025*

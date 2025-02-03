@@ -36,7 +36,7 @@ When using Direct-to-point and Boat navigation types, you will need [Depth conto
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings"/> → any profile → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings"/> → any profile → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*
 
 ![Direct-to-point routing settings](@site/static/img/navigation/routing/direct_to_point_routing_3_andr.png)
 
@@ -44,7 +44,7 @@ When using Direct-to-point and Boat navigation types, you will need [Depth conto
 
 <TabItem value="ios" label="iOS">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings"/> → any profile → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*
+Go to: *iOS* *<Translate android="true" ids="shared_string_menu,shared_string_settings"/> → any profile → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*
 
 ![Direct-to-point routing settings iOS](@site/static/img/navigation/routing/direct_to_point_ios.png)  
 

@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Favorites is one of the OsmAnd's features, that allows the user to make a kind of bookmarks (notes) on the map. By default, they are displayed in the form of yellow stars, though the app provides ample opportunities to customize Favorites using any colour, shape, and icon. They are grouped into a separate map layer, that become visible from the 6th zoom level.  
+Favorites is one of the OsmAnd's features, that allows you to make a kind of bookmarks (notes) on the map. By default, they are displayed in the form of yellow stars, though the app provides ample opportunities to customize Favorites using any colour, shape, and icon. They are grouped into a separate map layer, that become visible from the 6th zoom level.  
 
 <Tabs groupId="operating-systems">
 
@@ -118,7 +118,7 @@ To edit a favorite point, [tap](../map/map-context-menu.md#select-an-object-shor
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![My places favorites android](@site/static/img/personal/favorite_icon_andr.png)
 
@@ -126,7 +126,7 @@ To edit a favorite point, [tap](../map/map-context-menu.md#select-an-object-shor
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
 ![my_places_ios](@site/static/img/personal/favorite_icon_1_ios.png)
 
@@ -149,7 +149,7 @@ To edit a favorite point, [tap](../map/map-context-menu.md#select-an-object-shor
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![My places favorites android](@site/static/img/personal/my_places_android.png)
 
@@ -157,7 +157,7 @@ To edit a favorite point, [tap](../map/map-context-menu.md#select-an-object-shor
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
 ![my_places_ios](@site/static/img/personal/my_places_ios.png)
 
@@ -235,7 +235,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-*Three-dot menu → Change default appearance*
+Go to: *Android* *Three-dot menu → Change default appearance*
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
 
@@ -243,7 +243,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="ios" label="iOS">
 
-*Long tap folder → Change appearance*
+Go to: *iOS* *Long tap folder → Change appearance*
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_2_ios.png)
 
@@ -286,7 +286,7 @@ OsmAnd offers various options for [backing up](./import-export.md) important dat
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_andr.png)
 
@@ -294,7 +294,7 @@ OsmAnd offers various options for [backing up](./import-export.md) important dat
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
 ![Favorites actions ios](@site/static/img/personal/favorites_free_backup_2_ios.png)
 
@@ -317,7 +317,7 @@ OsmAnd offers various options for [backing up](./import-export.md) important dat
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
 
@@ -325,7 +325,7 @@ OsmAnd offers various options for [backing up](./import-export.md) important dat
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
 ![Favorites actions ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
@@ -395,7 +395,7 @@ Tap the **Three-dot menu** (*Android*) or the **Edit** button (*pencil icon on i
 
 <TabItem value="android" label="Android">
 
-*Android → data → net.osmand → files → backup*
+Go to: *Android* *Android → data → net.osmand → files → backup*
 
 ![Favorites backup export Android](@site/static/img/personal/favorites_backup_export_andr.png)  ![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
 
@@ -403,7 +403,7 @@ Tap the **Three-dot menu** (*Android*) or the **Edit** button (*pencil icon on i
 
 <TabItem value="ios" label="iOS">
 
-*Files → On my iPhone → OsmAnd Maps → favourites_backup*
+Go to: *iOS* *Files → On my iPhone → OsmAnd Maps → favourites_backup*
 
 ![Favorites autobackup ios](@site/static/img/personal/favorites_autobackup.png)  
 
@@ -413,7 +413,7 @@ Tap the **Three-dot menu** (*Android*) or the **Edit** button (*pencil icon on i
 
 After each edit to Favorites, OsmAnd creates a backup file. You can find these backup files using a file manager. On *Android*, use a third-party file manager app. On *iOS*, access them using the *Files* app.  
 
-***On Android***, you can export Favorites backup files using the Export function. The resulting `.osf` file can be saved to the device's internal memory, uploaded to cloud storage, or shared with other OsmAnd users via messaging apps. To export a backup, go to *<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>*.  
+***On Android***, you can export Favorites backup files using the Export function. The resulting `.osf` file can be saved to the device's internal memory, uploaded to cloud storage, or shared with other OsmAnd users via messaging apps. To export a backup, go to OsmAnd *<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>*.  
 
 :::caution
 In the latest versions of ***Android***, access to system directories is limited. However, after extracting the favorites file from the archive, it remains possible to forward it to messengers or cloud services, etc.  

@@ -95,6 +95,11 @@ Some of these settings interact, so be accurate. The best search for the above s
 - *Device care / Battery / More battery settings*
 
 
+## How to Track Traveled Distance
+
+OsmAnd does not have a special widget similar to an odometer, you can use the [Trip Recording plugin](../plugins/trip-recording.md#new-track-recording) to track your traveled distance and reset it when needed.  
+
+
 ## OsmAnd 3.9: Altitude issues when using Google Play Services
 
 Google Play has changed its policy, and to comply, OsmAnd, as of version 3.9 (excluding Nightly, F-Droid, Huawei, and Amazon builds) is required to use Google Play Services to obtain location fixes while running in the background (that is, in Android terminology, as a foreground service with a visible system notification).

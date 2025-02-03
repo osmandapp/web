@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Your audio and video recordings can be useful in the future, such as memories of where you've been. They are available in the [My Places](../personal/myplaces.md) menu and are visible when the Audio/Video Notes plugin is enabled.
 
-The Audio/Video Notes plugin extends OsmAnd's functionality by allowing the user to create their own notes in various formats, such as photos, video, or audio, and associate them with their geographic location or current location. You can make recordings only when the plugin is on, using the [Audio/Video Notes widget](../widgets/info-widgets.md#-audio-video-notes-widget) and/or the [map context menu](../map/map-context-menu.md#-audiovideo-note). The received data is automatically saved in [My Places](../personal/myplaces.md), from where it can be conveniently managed and shared.  
+The Audio/Video Notes plugin extends OsmAnd's functionality by allowing you to create their own notes in various formats, such as photos, video, or audio, and associate them with their geographic location or current location. You can make recordings only when the plugin is on, using the [Audio/Video Notes widget](../widgets/info-widgets.md#-audio-video-notes-widget) and/or the [map context menu](../map/map-context-menu.md#-audiovideo-note). The received data is automatically saved in [My Places](../personal/myplaces.md), from where it can be conveniently managed and shared.  
 
 All created audio and video notes compose the Record layer. When enabled on the map, it changes the view of the recorded data and there are more settings to manage the recordings. In the Record layer, audio and video notes are placed as POIs on the map, thus creating a user narrative visible only to the device owner.  
 
@@ -170,7 +170,7 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 
 ![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
-The [Audio/Video Notes widget](../widgets/info-widgets.md#audiovideo-notes-widget) creates notes, photos, audio, and video files and links them to the user's current position. The widget has several options that can be set as the default action performed by the widget when the screen is touched.  
+The [Audio/Video Notes widget](../widgets/info-widgets.md#audiovideo-notes-widget) creates notes, photos, audio, and video files and links them to your current position. The widget has several options that can be set as the default action performed by the widget when the screen is touched.  
 
 Adding a widget to the screen is necessary if you prefer to avoid searching for geolocation on the map and link notes to your current default location. To add or customize a widget, follow the steps below:  
 
@@ -235,7 +235,7 @@ Use the [*Recording*](../map/point-layers-on-map#-audio--video-points-android) m
 A waypoint is created when an audio, video, or photo note is added to a track. Waypoints exist within a track. If a track is visible, its waypoints are also visible. Thus, these notes can be visible on the map all at once or only on a specific visible track. In the latter case, the notes are displayed as waypoints of the track.
 
 :::note
-If a track is exported, the waypoints cannot be viewed, or played, because audio/video/photo notes are stored on the device only, and available only to the user of that device.
+If a track is exported, the waypoints cannot be viewed, or played, because audio/video/photo notes are stored on the device only, and available only to you of that device.
 :::
 
 
@@ -245,7 +245,7 @@ If a track is exported, the waypoints cannot be viewed, or played, because audio
 
 There are two ways to create a waypoint: automatically and manually.
 
-1. **Automatically**, a waypoint is created, in case the user takes an audio/video/photo note when the [Trip recording](../plugins/trip-recording) is in progress, regardless of the geolocation if it is tied to the current position or any place, and thus, regardless of the means used for that: if it is the [Widget](../widgets/info-widgets#-audio-video-notes-widget-android), or the [Context menu](../map/map-context-menu#-audiovideo-note-android).
+1. **Automatically**, a waypoint is created, in case you takes an audio/video/photo note when the [Trip recording](../plugins/trip-recording) is in progress, regardless of the geolocation if it is tied to the current position or any place, and thus, regardless of the means used for that: if it is the [Widget](../widgets/info-widgets#-audio-video-notes-widget-android), or the [Context menu](../map/map-context-menu#-audiovideo-note-android).
 
     All waypoints added automatically get an automatically assigned name. The name is created, according to the format specified below for an audio/video/photo file, and has a [shortlink](https://wiki.openstreetmap.org/wiki/Shortlink). The example of the waypoints in the figure above shows automatically and manually created waypoints, where the first four were created automatically, and the last one - manually.
 
@@ -254,7 +254,7 @@ There are two ways to create a waypoint: automatically and manually.
     - Select the required audio/video/photo note on the map.
     - Tap **Actions**, and then tap **Add track**.
     - Select the track to which you intend to add a waypoint.
-    - The *<Translate android="true" ids="quick_action_add_gpx"/>* dialog opens, and allows the user to set some properties, such as the name to the waypoint, an icon, color, and others. Once done, tap **Save**.
+    - The *<Translate android="true" ids="quick_action_add_gpx"/>* dialog opens, and allows you to set some properties, such as the name to the waypoint, an icon, color, and others. Once done, tap **Save**.
 
 :::info note
 You can specify names for each waypoint created manually.
