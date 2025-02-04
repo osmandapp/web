@@ -141,9 +141,11 @@ OsmAnd Pro is the best choice for users who want to get the full functionality a
 
 - How to restore a purchase from Google Play, Amazon, Huawei.
 - Step-by-step instructions:
-    1. Make sure you are logged into the same account.
-    2. Go to Menu → Settings → Purchases → Restore.
-    3. Update the application, clear the cache.
+
+    - 1 Make sure you are logged into the same account.
+    - 2 Go to Menu → Settings → Purchases → Restore.
+    - 3 Update the application, clear the cache.
+
 - Restore OsmAnd Pro via OsmAnd Cloud.
 
 
