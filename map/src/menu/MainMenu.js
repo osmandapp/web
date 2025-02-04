@@ -517,7 +517,7 @@ export default function MainMenu({
                             boxSizing: 'border-box',
                             width: size,
                             mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
-                            height: showInstallBanner ? `calc(${height}px - ${INSTALL_BANNER_SIZE}px)` : '100%',
+                            height: showInstallBanner ? `${height - INSTALL_BANNER_SIZE}px` : '100%',
                             overflow: 'hidden',
                             zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
                             borderRight:

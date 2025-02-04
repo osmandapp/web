@@ -124,8 +124,7 @@ export default function GeneralPanelButtons({
                     top: `${HEADER_HEIGHT + 100}px`,
                     bottom: useFlexButtons() && `${HEADER_HEIGHT}px`,
                     zIndex: 1000,
-                    position:
-                        window.innerWidth > `${MENU_INFO_OPEN_SIZE + MAIN_MENU_MIN_SIZE}px` ? 'absolute' : 'fixed',
+                    position: window.innerWidth > MENU_INFO_OPEN_SIZE + MAIN_MENU_MIN_SIZE ? 'absolute' : 'fixed',
                     display: 'flex',
                     height: useFlexButtons() && height - 2 * HEADER_HEIGHT - GPS_CONTROL_HEIGHT,
                     alignItems: useFlexButtons() && 'center',
