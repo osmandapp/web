@@ -1,13 +1,4 @@
-import {
-    CircularProgress,
-    Divider,
-    IconButton,
-    ListItemIcon,
-    ListItemText,
-    MenuItem,
-    Tooltip,
-    Typography,
-} from '@mui/material';
+import { CircularProgress, IconButton, ListItemIcon, ListItemText, MenuItem, Tooltip, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import MenuItemWithLines from './MenuItemWithLines';
 import ActionsMenu from '../actions/ActionsMenu';
@@ -19,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import SmartFolderActions from '../actions/SmartFolderActions';
 import { SHARE_TYPE } from '../../manager/ShareManager';
-import FavoritesManager from '../../manager/FavoritesManager';
+import DividerWithMargin from './dividers/DividerWithMargin';
 
 const types = {
     [SHARE_TYPE]: {
@@ -97,7 +88,7 @@ export default function SmartFolder({ type, subtype, files }) {
                     </IconButton>
                 </Tooltip>
             </MenuItem>
-            <Divider className={styles.dividerItem} />
+            <DividerWithMargin margin={'64px'} />
             <ActionsMenu
                 open={openActions}
                 setOpen={setOpenActions}

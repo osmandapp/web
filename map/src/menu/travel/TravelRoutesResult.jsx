@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
 import AppContext from '../../context/AppContext';
 import styles from '../trackfavmenu.module.css';
-import { Divider, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
+import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useInView } from 'react-intersection-observer';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
 
 const TravelRoute = ({ route }) => {
     const { ref, inView } = useInView();
@@ -54,7 +55,7 @@ const TravelRoute = ({ route }) => {
                     </ListItemText>
                 </MenuItem>
             )}
-            <Divider className={styles.dividerItem} />
+            <DividerWithMargin margin={'64px'} />
         </div>
     );
 };

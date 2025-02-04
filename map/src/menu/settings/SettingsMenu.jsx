@@ -1,7 +1,6 @@
 import {
     AppBar,
     ClickAwayListener,
-    Divider,
     IconButton,
     ListItemIcon,
     ListItemText,
@@ -29,6 +28,7 @@ import * as locales from 'date-fns/locale';
 import { format } from 'date-fns';
 import i18n from '../../i18n';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
 
 export function getLocalizedTimeUpdate(time) {
     const locale = locales[i18n.language] || locales.enUS;
@@ -46,7 +46,7 @@ export default function SettingsMenu() {
     const [, height] = useWindowSize();
 
     function close() {
-        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+        ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
         ctx.setCurrentObjectType(null);
     }
 
@@ -195,7 +195,7 @@ export default function SettingsMenu() {
                             </Typography>
                         </ListItemText>
                     </MenuItem>
-                    <Divider className={styles.dividerItem} />
+                    <DividerWithMargin margin={'64px'} />
                     <MenuItem
                         id={'se-cloud_trash'}
                         divider

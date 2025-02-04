@@ -5,7 +5,7 @@ export function closeHeader({ ctx, setShowInfoBlock = null }) {
     if (setShowInfoBlock) {
         setShowInfoBlock(false);
     } else {
-        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+        ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
     }
     if (ctx.currentObjectType === OBJECT_TYPE_FAVORITE) {
         ctx.setSelectedGpxFile({});

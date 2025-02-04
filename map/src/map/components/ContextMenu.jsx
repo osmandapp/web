@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TRACK_ANALYZER } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import TracksManager from '../../manager/track/TracksManager';
@@ -21,7 +21,7 @@ import { ReactComponent as CoordinatesIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as AddPinIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_world_globe.svg';
 import { useTranslation } from 'react-i18next';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { GLOBAL_GRAPH_HEIGHT_SIZE, LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
@@ -39,7 +39,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         event.originalEvent.preventDefault();
         setMenuPosition({
             mouseX: event.originalEvent.clientX + 5,
-            mouseY: event.originalEvent.clientY + 5,
+            mouseY: event.originalEvent.clientY + 5 - (ctx.globalGraph?.show ? `${GLOBAL_GRAPH_HEIGHT_SIZE}px` : 0),
         });
         setClickLatLng(event.latlng);
         setOpen(true);
@@ -147,6 +147,10 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         ctx.setOpenMenu({ id: 'se-show-menu-weather', latlng: latlng });
     }
 
+    const showMenuItem = () => {
+        return ctx.currentObjectType !== OBJECT_TRACK_ANALYZER;
+    };
+
     return (
         <>
             <div
@@ -211,18 +215,20 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                         </MenuItem>
                         <Divider className={styles.dividerMenu} />
                         {/*Create new route */}
-                        <MenuItem
-                            id={'se-create-route-action'}
-                            className={styles.contextMenuItem}
-                            onClick={() => handleMenuItemClick((latlng) => TracksManager.createTrack(ctx, latlng))}
-                        >
-                            <ListItemIcon className={styles.contextMenuIcon}>
-                                <PlanRouteIcon />
-                            </ListItemIcon>
-                            <ListItemText className={styles.contextMenuItemText}>
-                                {t('plan_route_create_new_route')}
-                            </ListItemText>
-                        </MenuItem>
+                        {showMenuItem() && (
+                            <MenuItem
+                                id={'se-create-route-action'}
+                                className={styles.contextMenuItem}
+                                onClick={() => handleMenuItemClick((latlng) => TracksManager.createTrack(ctx, latlng))}
+                            >
+                                <ListItemIcon className={styles.contextMenuIcon}>
+                                    <PlanRouteIcon />
+                                </ListItemIcon>
+                                <ListItemText className={styles.contextMenuItemText}>
+                                    {t('plan_route_create_new_route')}
+                                </ListItemText>
+                            </MenuItem>
+                        )}
                         {/*Add wpt */}
                         {ctx.createTrack?.enable && (
                             <>
@@ -242,34 +248,44 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                             </>
                         )}
                         {/*Add favorite */}
-                        <MenuItem
-                            id={'se-add-favorite-action'}
-                            className={styles.contextMenuItem}
-                            onClick={() => handleMenuItemClick(addFavorite)}
-                        >
-                            <ListItemIcon className={styles.contextMenuIcon}>
-                                <FavoriteAddIcon />
-                            </ListItemIcon>
-                            <ListItemText className={styles.contextMenuItemText}>
-                                {t('favourites_context_menu_add')}
-                            </ListItemText>
-                        </MenuItem>
-                        <Divider className={styles.dividerMenu} />
+                        {showMenuItem() && (
+                            <MenuItem
+                                id={'se-add-favorite-action'}
+                                className={styles.contextMenuItem}
+                                onClick={() => handleMenuItemClick(addFavorite)}
+                            >
+                                <ListItemIcon className={styles.contextMenuIcon}>
+                                    <FavoriteAddIcon />
+                                </ListItemIcon>
+                                <ListItemText className={styles.contextMenuItemText}>
+                                    {t('favourites_context_menu_add')}
+                                </ListItemText>
+                            </MenuItem>
+                        )}
+                        {showMenuItem() && <Divider className={styles.dividerMenu} />}
                         {/*Direction from */}
                         <MenuItem
                             id={'se-direction-action-from'}
                             className={styles.contextMenuItem}
                             onClick={() =>
-                                handleMenuItemClick((latlng) =>
-                                    navigateSetStartOrFinish({ latlng, target: 'route.points.start' })
-                                )
+                                handleMenuItemClick((latlng) => {
+                                    if (ctx.currentObjectType === OBJECT_TRACK_ANALYZER) {
+                                        ctx.setTrackAnalyzer((prev) => {
+                                            return { ...prev, start: latlng };
+                                        });
+                                    } else {
+                                        navigateSetStartOrFinish({ latlng, target: 'route.points.start' });
+                                    }
+                                })
                             }
                         >
                             <ListItemIcon className={styles.contextMenuIcon}>
                                 <RouteFromIcon />
                             </ListItemIcon>
                             <ListItemText className={styles.contextMenuItemText}>
-                                {t('context_menu_item_directions_from')}
+                                {ctx.currentObjectType === OBJECT_TRACK_ANALYZER
+                                    ? 'Point A'
+                                    : t('context_menu_item_directions_from')}
                             </ListItemText>
                         </MenuItem>
                         {/*Direction via */}
@@ -294,16 +310,24 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                             id={'se-direction-action-to'}
                             className={styles.contextMenuItem}
                             onClick={() =>
-                                handleMenuItemClick((latlng) =>
-                                    navigateSetStartOrFinish({ latlng, target: 'route.points.finish' })
-                                )
+                                handleMenuItemClick((latlng) => {
+                                    if (ctx.currentObjectType === OBJECT_TRACK_ANALYZER) {
+                                        ctx.setTrackAnalyzer((prev) => {
+                                            return { ...prev, finish: latlng };
+                                        });
+                                    } else {
+                                        navigateSetStartOrFinish({ latlng, target: 'route.points.finish' });
+                                    }
+                                })
                             }
                         >
                             <ListItemIcon className={styles.contextMenuIcon}>
                                 <RouteToIcon />
                             </ListItemIcon>
                             <ListItemText className={styles.contextMenuItemText}>
-                                {t('context_menu_item_directions_to')}
+                                {ctx.currentObjectType === OBJECT_TRACK_ANALYZER
+                                    ? 'Point B'
+                                    : t('context_menu_item_directions_to')}
                             </ListItemText>
                         </MenuItem>
                         <Divider className={styles.dividerMenu} />
@@ -319,16 +343,18 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                         </MenuItem>
                         <Divider className={styles.dividerMenu} />
                         {/*Add pin */}
-                        <MenuItem
-                            id={'se-add-pin-action'}
-                            className={styles.contextMenuItem}
-                            onClick={() => handleMenuItemClick((latlng) => ctx.setPinPoint(latlng))}
-                        >
-                            <ListItemIcon className={styles.contextMenuIcon}>
-                                <AddPinIcon />
-                            </ListItemIcon>
-                            <ListItemText className={styles.contextMenuItemText}>Add pin</ListItemText>
-                        </MenuItem>
+                        {showMenuItem() && (
+                            <MenuItem
+                                id={'se-add-pin-action'}
+                                className={styles.contextMenuItem}
+                                onClick={() => handleMenuItemClick((latlng) => ctx.setPinPoint(latlng))}
+                            >
+                                <ListItemIcon className={styles.contextMenuIcon}>
+                                    <AddPinIcon />
+                                </ListItemIcon>
+                                <ListItemText className={styles.contextMenuItemText}>Add pin</ListItemText>
+                            </MenuItem>
+                        )}
                         {/*Show regions */}
                         <MenuItem
                             id={'se-show-regions-action'}

@@ -58,3 +58,44 @@
     color: var(--text-secondary) !important;
     font-size: 14px !important;
 }
+.graphTitle {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.16px !important;
+}
+.graphTitleBox {
+    display: flex !important;
+    padding: 0px 16px 0px 16px !important;
+    align-items: center !important;
+    gap: 6px !important;
+    align-self: stretch !important;
+}
+.graphSelector {
+    display: flex !important;
+    padding: 16px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    width: 150px !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+.graphIcon {
+    fill: var(--svg-icon-color) !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+}
+.graphSelectorItem {
+    display: flex !important;
+    padding: 8px 0px 8px 0px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    flex: 1 0 0 !important;
+    align-self: stretch !important;
+}

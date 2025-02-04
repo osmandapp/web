@@ -3,7 +3,12 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Alert, Autocomplete, Button, createFilterOptions, LinearProgress, TextField } from '@mui/material';
 import AppContext, { isRouteTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
-import TracksManager, { DEFAULT_GROUP_NAME, isTrackExists, validName } from '../../manager/track/TracksManager';
+import TracksManager, {
+    DEFAULT_GROUP_NAME,
+    getAllGroupNames,
+    isTrackExists,
+    validName,
+} from '../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import { prepareFileName } from '../../util/Utils';
@@ -27,26 +32,6 @@ export default function SaveTrackDialog() {
         return ctx.selectedGpxFile.originalName
             ? TracksManager.getGroup(ctx.selectedGpxFile.originalName, false)
             : DEFAULT_GROUP_NAME;
-    }
-
-    function getAllGroupNames(groups, parentName = '') {
-        const groupTitles = [];
-
-        groups.forEach((group) => {
-            if (group.fullName === DEFAULT_GROUP_NAME) {
-                // skip default folder
-                return;
-            }
-            const groupName = parentName ? `${parentName}/${group.name}` : group.name;
-            groupTitles.push({ title: groupName });
-
-            if (group.subfolders) {
-                const subGroupTitles = getAllGroupNames(group.subfolders, groupName);
-                groupTitles.push(...subGroupTitles);
-            }
-        });
-
-        return groupTitles;
     }
 
     const closeDialog = ({ uploaded }) => {

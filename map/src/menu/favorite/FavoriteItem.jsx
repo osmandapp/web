@@ -1,9 +1,7 @@
-import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography, Skeleton, Divider } from '@mui/material';
+import { ListItemIcon, ListItemText, MenuItem, Typography, Skeleton } from '@mui/material';
 import React, { useContext, useMemo, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
-import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction_arrow_16.svg';
 import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../trackfavmenu.module.css';
@@ -12,6 +10,8 @@ import { addShareFavoriteToMap, getColorLocation } from '../../manager/Favorites
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { SHARE_TYPE } from '../../manager/ShareManager';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
 
 export const CustomIcon = ({ marker }) => {
     return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
@@ -22,7 +22,6 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
 
     const { ref, inView } = useInView();
 
-    const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const anchorEl = useRef(null);
 
@@ -92,7 +91,11 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
             <>
                 <div ref={ref}>
                     {inView || (
-                        <Skeleton variant="rectangular" width={MENU_INFO_OPEN_SIZE} height={'var(--menu-item-size)'} />
+                        <Skeleton
+                            variant="rectangular"
+                            width={MENU_INFO_OPEN_SIZE + 'px'}
+                            height={'var(--menu-item-size)'}
+                        />
                     )}
                     {inView && (
                         <MenuItem
@@ -114,24 +117,17 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                                 <FavInfo />
                             </ListItemText>
                             {!share && !sharedFile && (
-                                <IconButton
+                                <ThreeDotsButton
+                                    name={'action_menu_group'}
+                                    tip={'shared_string_menu'}
                                     id={`se-actions-${marker.title}`}
-                                    className={styles.sortIcon}
-                                    onMouseEnter={() => setHoverIconInfo(true)}
-                                    onMouseLeave={() => setHoverIconInfo(false)}
-                                    onClick={(e) => {
-                                        setOpenActions(true);
-                                        ctx.setOpenedPopper(anchorEl);
-                                        e.stopPropagation();
-                                    }}
-                                    ref={anchorEl}
-                                >
-                                    {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                                </IconButton>
+                                    setOpenActions={setOpenActions}
+                                    anchorEl={anchorEl}
+                                />
                             )}
                         </MenuItem>
                     )}
-                    <Divider className={styles.dividerItem} />
+                    <DividerWithMargin margin={'64px'} />
                     {inView && (
                         <ActionsMenu
                             open={openActions}
@@ -146,5 +142,5 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                 </div>
             </>
         );
-    }, [inView, marker, marker.locDist, openActions, hoverIconInfo, ctx.openedPopper]);
+    }, [inView, marker, marker.locDist, openActions, ctx.openedPopper]);
 }

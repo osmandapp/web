@@ -1566,6 +1566,26 @@ export function getTracksArrBounds(files) {
     return bounds;
 }
 
+export function getAllGroupNames(groups, parentName = '') {
+    const groupTitles = [];
+
+    groups.forEach((group) => {
+        if (group.fullName === DEFAULT_GROUP_NAME) {
+            // skip default folder
+            return;
+        }
+        const groupName = parentName ? `${parentName}/${group.name}` : group.name;
+        groupTitles.push({ title: groupName, size: group.files.length });
+
+        if (group.subfolders) {
+            const subGroupTitles = getAllGroupNames(group.subfolders, groupName);
+            groupTitles.push(...subGroupTitles);
+        }
+    });
+
+    return groupTitles;
+}
+
 const TracksManager = {
     loadTracks,
     prepareName,

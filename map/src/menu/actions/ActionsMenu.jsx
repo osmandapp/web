@@ -21,7 +21,7 @@ export default function ActionsMenu({ open, setOpen, anchorEl, favItems = false,
                 anchorEl={anchorEl?.current}
                 disablePortal={true}
                 PaperProps={{
-                    style: { maxHeight: 500, overflow: 'auto' },
+                    style: { maxHeight: 550, overflow: 'auto' },
                 }}
             >
                 <ClickAwayListener

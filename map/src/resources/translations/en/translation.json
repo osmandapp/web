@@ -5244,5 +5244,18 @@
   "purchases_feature_desc_terrain": "Terrain contour lines, grayscale hillshade and color scale slope indication, to show peaks and lowlands.",
   "you_can_get_feature_as_part_of_pattern": "Get “%1$s” as part of the %2$s plan. Comparison:",
   "shared_string_share": "Share",
-  "shared_string_remove": "Remove"
+  "shared_string_remove": "Remove",
+  "shared_string_all_tracks": "All tracks",
+  "shared_string_max_speed": "Max. speed",
+  "shared_string_min_speed": "Min. speed",
+  "km_h": "km/h",
+  "shared_string_uphill": "Uphill",
+  "shared_string_downhill": "Downhill",
+  "duration": "Duration",
+  "sort_duration_descending": "Longest duration first",
+  "sort_duration_ascending": "Shortest duration first",
+  "shared_string_open_track": "Open track",
+  "altitude": "Altitude",
+  "shared_string_slope": "Slope",
+  "shared_string_speed": "Speed"
 }

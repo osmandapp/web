@@ -13,7 +13,7 @@ import { isEmpty } from 'lodash';
 import { SHARE_FILE_TYPE } from '../../manager/ShareManager';
 
 function clickHandler({ ctx, file, layer }) {
-    if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) {
+    if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
         ctx.setSelectedGpxFile({ ...file, cloudRedrawWpts: true });
         ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);

@@ -1,8 +1,6 @@
 import AppContext from '../../context/AppContext';
 import {
     Alert,
-    Divider,
-    IconButton,
     LinearProgress,
     ListItemIcon,
     ListItemText,
@@ -25,17 +23,17 @@ import {
 } from '../../manager/track/TracksManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
-import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
-import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import styles from '../trackfavmenu.module.css';
 import TrackActions from '../actions/TrackActions';
-import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { closeTrack } from '../../manager/track/DeleteTrackManager';
 import { updateVisibleCache } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import FileShareIcon from '../share/FileShareIcon.jsx';
 import { getFileStorage, GPX } from '../../manager/GlobalManager';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
+import ActionsMenu from '../actions/ActionsMenu';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -47,7 +45,6 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
 
     const [loadingTrack, setLoadingTrack] = useState(false);
     const [error, setError] = useState('');
-    const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
@@ -174,28 +171,13 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                             </ListItemText>
                             {(!visible || showMenu) && (
                                 <div className={visible && styles.menuButtonContainer}>
-                                    <Tooltip
-                                        key={'action_menu_track'}
-                                        title={t('shared_string_menu')}
-                                        arrow
-                                        placement="bottom-end"
-                                    >
-                                        <IconButton
-                                            id={`se-actions-${trackName}`}
-                                            // style={{ display: showMenu ? 'block' : 'none' }}
-                                            className={styles.sortIcon}
-                                            onMouseEnter={() => setHoverIconInfo(true)}
-                                            onMouseLeave={() => setHoverIconInfo(false)}
-                                            onClick={(e) => {
-                                                setOpenActions(true);
-                                                ctx.setOpenedPopper(anchorEl);
-                                                e.stopPropagation();
-                                            }}
-                                            ref={anchorEl}
-                                        >
-                                            {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                                        </IconButton>
-                                    </Tooltip>
+                                    <ThreeDotsButton
+                                        name={'action_menu_track'}
+                                        tip={'shared_string_menu'}
+                                        id={`se-actions-${trackName}`}
+                                        setOpenActions={setOpenActions}
+                                        anchorEl={anchorEl}
+                                    />
                                 </div>
                             )}
                             {visible && (
@@ -214,7 +196,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                         </MenuItem>
                     </Tooltip>
                 </div>
-                {(!visible || !isLastItem) && <Divider className={styles.dividerItem} />}
+                {(!visible || !isLastItem) && <DividerWithMargin margin={'64px'} />}
                 <ActionsMenu
                     open={openActions}
                     setOpen={setOpenActions}
@@ -243,7 +225,6 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
         file,
         loadingTrack,
         error,
-        hoverIconInfo,
         openActions,
         showMenu,
         checkedSwitch,

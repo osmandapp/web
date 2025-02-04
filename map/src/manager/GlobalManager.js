@@ -1,11 +1,13 @@
 import { SHARE_TYPE } from './ShareManager';
 
-export const MAIN_MENU_MIN_SIZE = '64px';
-export const MAIN_MENU_OPEN_SIZE = '240px';
-export const MENU_INFO_OPEN_SIZE = '360px';
-export const MENU_INFO_CLOSE_SIZE = '0px';
-export const HEADER_SIZE = '60px';
-export const INSTALL_BANNER_SIZE = '60px';
+// px
+export const MAIN_MENU_MIN_SIZE = 64;
+export const MAIN_MENU_OPEN_SIZE = 240;
+export const MENU_INFO_OPEN_SIZE = 360;
+export const MENU_INFO_CLOSE_SIZE = 0;
+export const HEADER_SIZE = 60;
+export const INSTALL_BANNER_SIZE = 60;
+export const GLOBAL_GRAPH_HEIGHT_SIZE = 200;
 
 export const GPX = 'GPX';
 export const FAVOURITES = 'FAVOURITES';
@@ -24,6 +26,7 @@ export const FAVORITES_URL = 'mydata/favorites/';
 export const NAVIGATE_URL = 'navigate/';
 export const PLANROUTE_URL = 'plan/';
 export const SETTINGS_URL = 'settings/';
+export const TRACK_ANALYZER_URL = 'track-analyzer/';
 export const TRAVEL_URL = 'travel/';
 export const OLD_LOGIN_URL = 'dialog-account/';
 export const LOGIN_URL = 'account/';

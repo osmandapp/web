@@ -11,7 +11,7 @@ export default function GlobalAlert({ width }) {
 
     return (
         ctx.routingErrorMsg && (
-            <Box className={styles.alert} sx={{ mt: HEADER_SIZE, ml: `${width - ALERT_SIZE - 20}px` }}>
+            <Box className={styles.alert} sx={{ mt: `${HEADER_SIZE}px`, ml: `${width - ALERT_SIZE - 20}px` }}>
                 <Box className={styles.alertBox}>
                     <Typography className={styles.alertText}>{ctx.routingErrorMsg}</Typography>
                     <IconButton className={styles.alertButton} onClick={() => ctx.setRoutingErrorMsg(null)}>

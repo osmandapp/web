@@ -355,11 +355,6 @@
     gap: 24px !important;
     min-height: 48px !important;
 }
-.divider {
-    margin-left: 16px !important;
-    margin-bottom: 0px !important;
-    margin-top: 0px !important;
-}
 .metadata {
     color: white !important;
     font-family: Roboto !important;

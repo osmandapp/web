@@ -1,0 +1,9 @@
+.divider {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
+.thickDivider {
+    background-color: #f0f0f0 !important;
+    color: #f0f0f0 !important;
+    border-bottom-color: #f0f0f0 !important;
+}

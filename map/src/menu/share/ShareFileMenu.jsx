@@ -19,7 +19,6 @@ import { ReactComponent as ShareTypePublicIcon } from '../../assets/icons/ic_act
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import styles from './share.module.css';
-import gStyles from '../gstylesmenu.module.css';
 import buttonStyles from '../login/login.module.css';
 import ShareFileItem from './ShareFileItem';
 import ShareType from './ShareType';
@@ -38,6 +37,7 @@ import {
 import { MAIN_URL_WITH_SLASH, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
 import PublicAccessList from './access/PublicAccessList';
 import PrivateAccessList from './access/PrivateAccessList';
+import ThickDivider from '../components/dividers/ThickDivider';
 
 export default function ShareFileMenu({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -238,7 +238,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                     setSelectedShareType={setSelectedShareType}
                     shareTypes={shareTypes}
                 />
-                <Divider className={gStyles.thickDivider} />
+                <ThickDivider />
                 <Box>
                     <SubTitle title={'Users'} hasTranslation={false} />
                     {selectedShareType.key === shareTypes.request.key && (
@@ -284,7 +284,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
                     {selectedShareType.key === shareTypes.public.key && <PublicAccessList />}
                     {selectedShareType.key === shareTypes.private.key && <PrivateAccessList />}
                 </Box>
-                <Divider className={gStyles.thickDivider} />
+                <ThickDivider />
                 <Box sx={{ mx: 2 }}>
                     <Box id={'se-generated-link'} sx={{ my: 2 }}>
                         <MenuItemWithLines name={link} maxLines={2} className={styles.shareTypeTextInfo} />

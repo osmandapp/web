@@ -13,7 +13,7 @@ import { cloneDeep, isEmpty } from 'lodash';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { getShareWithMe } from '../manager/ShareManager';
-import { FAVOURITES, GPX } from '../manager/GlobalManager';
+import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX } from '../manager/GlobalManager';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -29,6 +29,7 @@ export const OBJECT_CONFIGURE_MAP = 'configure_map';
 export const OBJECT_EXPLORE = 'explore';
 export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
+export const OBJECT_TRACK_ANALYZER = 'track_analyzer';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
@@ -430,13 +431,24 @@ export const AppContextProvider = (props) => {
     });
 
     const [develFeatures, setDevelFeatures] = useState(process.env.REACT_APP_DEVEL_FEATURES === 'yes');
-    const [infoBlockWidth, setInfoBlockWidth] = useState(0);
+    const [infoBlockWidth, setInfoBlockWidth] = useState('0');
 
     const [configureMapState, setConfigureMapState] = useState(getConfigureMap);
 
+    // ex. tracks:{"": 'za', new!!!: 'za'}
     const [selectedSort, setSelectedSort] = useState({});
 
     const [openProFeatures, setOpenProFeatures] = useState(null);
+
+    // track analyzer
+    const [trackAnalyzer, setTrackAnalyzer] = useState(null);
+    const [excludedSegments, setExcludedSegments] = useState(new Set());
+
+    // global graph
+    const [globalGraph, setGlobalGraph] = useState({
+        show: false,
+        size: GLOBAL_GRAPH_HEIGHT_SIZE,
+    });
 
     function getConfigureMap() {
         const TIME_UPDATE_CONFIGURE_MAP = 1731935733868;
@@ -738,6 +750,12 @@ export const AppContextProvider = (props) => {
                 setShareWithMeFiles,
                 fitBoundsShareTracks,
                 setFitBoundsShareTracks,
+                trackAnalyzer,
+                setTrackAnalyzer,
+                excludedSegments,
+                setExcludedSegments,
+                globalGraph,
+                setGlobalGraph,
             }}
         >
             {props.children}

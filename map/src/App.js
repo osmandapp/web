@@ -23,6 +23,7 @@ import {
     OLD_LOGIN_URL,
     TRAVEL_URL,
     SHARE_FILE_URL,
+    TRACK_ANALYZER_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -36,6 +37,7 @@ import ConfigureMap from './menu/configuremap/ConfigureMap';
 import LoginMenu from './menu/login/LoginMenu';
 import TravelMenu from './menu/travel/TravelMenu';
 import ShareFile from './menu/share/ShareFile';
+import TrackAnalyzerMenu from './menu/analyzer/TrackAnalyzerMenu';
 
 export let globalNavigate = () => null;
 
@@ -70,6 +72,7 @@ const App = () => {
                         <Route path={TRAVEL_URL} element={<TravelMenu />}></Route>
                         <Route path={SETTINGS_URL} element={<SettingsMenu />}></Route>
                         <Route path={SHARE_FILE_URL} element={<ShareFile />}></Route>
+                        <Route path={TRACK_ANALYZER_URL} element={<TrackAnalyzerMenu />}></Route>
                     </Route>
                 </Routes>
             </BrowserRouter>

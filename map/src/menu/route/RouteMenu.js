@@ -15,6 +15,7 @@ import {
     Box,
     Grid,
     ButtonGroup,
+    Divider,
 } from '@mui/material';
 import AppContext, {
     isLocalTrack,
@@ -27,6 +28,9 @@ import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from './routemenu.module.css';
+import btn from './../login/login.module.css';
+import { apiPost } from '../../util/HttpApi';
+import { quickNaNfix } from '../../util/Utils';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -70,7 +74,7 @@ export function formatRouteInfo(props) {
     return <span id="se-route-info">{res}</span>;
 }
 
-function formatLatLon(pnt) {
+export function formatLatLon(pnt) {
     if (!pnt) {
         return '';
     }
@@ -408,7 +412,6 @@ export default function RouteMenu() {
                     </Button>
                 )}
             </ButtonGroup>
-            <MenuItem divider={true} />
             {openSettings && <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenSettings} />}
         </>
     );

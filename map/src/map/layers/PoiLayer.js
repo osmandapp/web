@@ -380,7 +380,7 @@ export default function PoiLayer() {
 
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
-        ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
+        ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
         const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,

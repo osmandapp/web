@@ -26,6 +26,7 @@ import AppContext, {
     OBJECT_TYPE_POI,
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_SHARE_FILE,
+    OBJECT_TRACK_ANALYZER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -40,6 +41,7 @@ import { ReactComponent as NavigationIcon } from '../assets/menu/ic_action_navig
 import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_route.svg';
 import { ReactComponent as ConfigureMapIcon } from '../assets/icons/ic_map_configure_map.svg';
 import { ReactComponent as SettingsIcon } from '../assets/icons/ic_action_settings_outlined.svg';
+import { ReactComponent as TrackAnalyzerIcon } from '../assets/icons/ic_action_tool.svg';
 import { ReactComponent as TravelIcon } from '../assets/icons/ic_action_activity.svg';
 import { ReactComponent as SearchIcon } from '../assets/icons/ic_action_search_dark.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
@@ -69,6 +71,7 @@ import {
     WEATHER_URL,
     TRAVEL_URL,
     SHARE_FILE_MAIN_URL,
+    TRACK_ANALYZER_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -79,6 +82,7 @@ import TravelMenu from './travel/TravelMenu';
 import ProFeatures from '../frame/components/pro/ProFeatures';
 import { SHARE_TYPE, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
+import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 
 export default function MainMenu({
     size,
@@ -126,12 +130,12 @@ export default function MainMenu({
         if (!menuInfo) {
             const item = items.find((item) => item.url === location.pathname);
             if (item) {
-                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
+                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
                 selectMenu({ item, openFromUrl: true });
             }
         }
         if (location.pathname === MAIN_URL_WITH_SLASH) {
-            ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+            ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
         }
         closeSubPages({ wptDetails: false });
         const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
@@ -142,7 +146,7 @@ export default function MainMenu({
         const openShareFile = location.pathname.includes(SHARE_FILE_MAIN_URL);
         if (openShareFile) {
             setShowInfoBlock(true);
-            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
         }
         if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite) {
             setShowInfoBlock(false);
@@ -235,6 +239,15 @@ export default function MainMenu({
             id: 'se-show-menu-settings',
             url: MAIN_URL_WITH_SLASH + SETTINGS_URL,
         },
+        {
+            name: t('web:tracks_analyzer'),
+            icon: TrackAnalyzerIcon,
+            component: <TrackAnalyzerMenu />,
+            type: OBJECT_TRACK_ANALYZER,
+            show: true,
+            id: 'se-show-menu-track-analyzer',
+            url: MAIN_URL_WITH_SLASH + TRACK_ANALYZER_URL,
+        },
     ];
 
     useEffect(() => {
@@ -253,6 +266,12 @@ export default function MainMenu({
             ctx.setOpenVisibleMenu(false);
         }
     }, [menuInfo]);
+
+    useEffect(() => {
+        if (selectedType === OBJECT_TRACK_ANALYZER) {
+            ctx.setCurrentObjectType(OBJECT_TRACK_ANALYZER);
+        }
+    }, [selectedType]);
 
     useEffect(() => {
         const updateRequests = () => {
@@ -364,7 +383,7 @@ export default function MainMenu({
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;
             if (!menu) {
-                ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+                ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
             }
             setMenuInfo(menu?.component);
             setSelectedType(menu?.type);
@@ -497,12 +516,14 @@ export default function MainMenu({
                         sx: {
                             boxSizing: 'border-box',
                             width: size,
-                            mt: showInstallBanner && INSTALL_BANNER_SIZE,
-                            height: showInstallBanner ? `calc(${height}px - ${INSTALL_BANNER_SIZE})` : '100%',
+                            mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
+                            height: showInstallBanner ? `${height - INSTALL_BANNER_SIZE}px` : '100%',
                             overflow: 'hidden',
                             zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
                             borderRight:
-                                ((!menuInfo && !ctx.openLoginMenu && ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) ||
+                                ((!menuInfo &&
+                                    !ctx.openLoginMenu &&
+                                    ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) ||
                                     (menuInfo && openMainMenu)) &&
                                 'none !important',
                             boxShadow:
@@ -605,7 +626,7 @@ export default function MainMenu({
                     sx: {
                         width: infoSize,
                         ml: '64px',
-                        mt: showInstallBanner && INSTALL_BANNER_SIZE,
+                        mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
                         boxShadow: 'none',
                         zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
                     },

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Divider, ListItemIcon, ListItemText, MenuItem, Skeleton } from '@mui/material';
+import { ListItemIcon, ListItemText, MenuItem, Skeleton } from '@mui/material';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
@@ -20,6 +20,7 @@ import {
 import { getPoiParentCategory, parseTagWithLang } from '../../../manager/SearchManager';
 import { LatLng } from 'leaflet';
 import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
+import DividerWithMargin from '../../components/dividers/DividerWithMargin';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -184,7 +185,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                         </ListItemText>
                         <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
                     </MenuItem>
-                    <Divider className={styles.divider} />
+                    <DividerWithMargin margin={'16px'} />
                 </div>
             )}
         </div>
