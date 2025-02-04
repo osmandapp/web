@@ -431,7 +431,7 @@ export const AppContextProvider = (props) => {
     });
 
     const [develFeatures, setDevelFeatures] = useState(process.env.REACT_APP_DEVEL_FEATURES === 'yes');
-    const [infoBlockWidth, setInfoBlockWidth] = useState('0px');
+    const [infoBlockWidth, setInfoBlockWidth] = useState('0');
 
     const [configureMapState, setConfigureMapState] = useState(getConfigureMap);
 
