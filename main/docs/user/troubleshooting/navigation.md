@@ -110,9 +110,9 @@ Issues with **Text-to-Speech (TTS)** are typically related to **Android system s
 - *Update Google TTS*. Open Google Play Store, search for **Google Text-to-Speech**, and update it.  
 - *Simulate Navigation*. Tap *Navigation button → Settings → Simulate Navigation* to check if voice guidance plays.  
 - *Reinstall OsmAnd*:  
-   1. **Back up settings:** *Menu → Settings → Export to File*.  
-   2. Uninstall OsmAnd, then reinstall it from the app store.  
-   3. Restore settings: *Menu → Settings → Import File*.
+   - **Back up settings:** *Menu → Settings → Export to File*.  
+   - Uninstall OsmAnd, then reinstall it from the app store.  
+   - Restore settings: *Menu → Settings → Import File*.
 
 For additional troubleshooting, visit:
 
