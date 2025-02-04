@@ -5254,5 +5254,8 @@
   "duration": "Duration",
   "sort_duration_descending": "Longest duration first",
   "sort_duration_ascending": "Shortest duration first",
-  "shared_string_open_track": "Open track"
+  "shared_string_open_track": "Open track",
+  "altitude": "Altitude",
+  "shared_string_slope": "Slope",
+  "shared_string_speed": "Speed"
 }

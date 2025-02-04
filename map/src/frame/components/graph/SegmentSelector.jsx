@@ -9,11 +9,9 @@ import DividerWithMargin from '../../../menu/components/dividers/DividerWithMarg
 export default function SegmentSelector({ currentGraph, segmentVisibility, toggleSegmentVisibility }) {
     const [open, setOpen] = useState(false);
 
-    const visibleCount = Object.values(segmentVisibility)
-        .flat()
-        .filter((visible) => visible).length;
-
-    const totalCount = Object.values(segmentVisibility).flat().length;
+    const flattenedVisibility = Object.values(segmentVisibility).flat();
+    const visibleCount = flattenedVisibility.filter((visible) => visible).length;
+    const totalCount = flattenedVisibility.length;
 
     return (
         <FormControl fullWidth>

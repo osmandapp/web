@@ -35,8 +35,12 @@ export const getAltitudeStats = (stats, t) => [
 
 export const getOtherStats = (stats, t, formatDate) => [
     { icon: <DateIcon />, label: t('shared_string_date'), value: formatDate(stats.date) },
-    { icon: <TimeDurationIcon />, label: t('duration'), ...formatValue(stats.duration, t('web:h'), 3600000) },
-    { icon: <TimeMovingIcon />, label: t('web:moving_time'), ...formatValue(stats.timeMoving, t('web:h'), 3600000) },
+    { icon: <TimeDurationIcon />, label: t('duration'), ...formatValue(stats.duration, t('web:hours'), 3600000) },
+    {
+        icon: <TimeMovingIcon />,
+        label: t('web:moving_time'),
+        ...formatValue(stats.timeMoving, t('web:hours'), 3600000),
+    },
     { icon: <DistanceIcon />, label: t('web:length'), ...formatValue(stats.totalDist, t('km'), 1000) },
 ];
 
@@ -54,7 +58,7 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
         const locale = locales[i18n.language] || locales.enUS;
         const date = new Date(parseInt(timestamp, 10));
         if (isNaN(date)) {
-            return timestamp;
+            return 'NaN';
         }
         return format(date, 'dd.MM.yyyy', { locale });
     };

@@ -29,13 +29,13 @@ const INNER_GRAPH_HEIGHT = 150;
 const INFO_BLOCK_WIDTH = 200;
 export const TYPE_ANALYZER = 'analyzer';
 
-export const Y_AXIS_OPTIONS = [
-    { value: 'altitude', label: 'Altitude' },
-    { value: 'slope', label: 'Slope' },
-    { value: 'speed', label: 'Speed' },
-];
-
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineController, LineElement, Title, Tooltip, Legend);
+
+export const Y_AXIS_OPTIONS = (t) => [
+    { value: 'altitude', label: t('altitude') },
+    { value: 'slope', label: t('shared_string_slope') },
+    { value: 'speed', label: t('shared_string_speed') },
+];
 
 export default function GlobalGraph({ type = TYPE_ANALYZER }) {
     const ctx = useContext(AppContext);
@@ -54,6 +54,8 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
 
     const [yAxisOption, setYAxisOption] = useState('altitude');
     const [currentGraph, setCurrentGraph] = useState(GRAPH_TYPES[type]);
+    const prevSegmentsRef = useRef(currentGraph.object);
+    const [segmentVisibility, setSegmentVisibility] = useState({});
 
     useEffect(() => {
         ctx.setGlobalGraph((prev) => ({
@@ -62,23 +64,23 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
         }));
     }, [collapsed]);
 
-    function initVisibility() {
-        if (type === TYPE_ANALYZER) {
-            const initialVisibility = {};
-            Object.entries(currentGraph.object).forEach(([trackName, trackSegments]) => {
-                initialVisibility[trackName] = trackSegments.map(() => true);
-            });
-            return initialVisibility;
-        }
-        return {};
-    }
-
-    const [segmentVisibility, setSegmentVisibility] = useState(initVisibility);
-
     // update graph data when new segments are loaded
     useEffect(() => {
-        setSegmentVisibility(initVisibility);
-    }, [currentGraph.object]);
+        setSegmentVisibility((prev) => {
+            if (type !== TYPE_ANALYZER) return prev;
+
+            const initialVisibility = {};
+            Object.entries(currentGraph.object).forEach(([trackName, trackSegments]) => {
+                if (!prev[trackName]) {
+                    initialVisibility[trackName] = trackSegments.map(() => true); // all segments are visible by default
+                } else {
+                    initialVisibility[trackName] = prev[trackName]; // keep the visibility of segments
+                }
+            });
+
+            return initialVisibility;
+        });
+    }, [currentGraph.object, type]);
 
     useEffect(() => {
         if (type === TYPE_ANALYZER) {
@@ -94,9 +96,9 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                 },
                 {}
             );
-
-            if (JSON.stringify(filteredSegments) !== JSON.stringify(currentGraph.object)) {
+            if (prevSegmentsRef.current !== filteredSegments) {
                 setCurrentGraph({ ...GRAPH_TYPES[type], object: filteredSegments });
+                prevSegmentsRef.current = filteredSegments;
             }
         }
     }, [ctx.trackAnalyzer?.segments, ctx.excludedSegments]);
@@ -107,20 +109,6 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
             [trackName]: prev[trackName].map((visible, i) => (i === index ? !visible : visible)),
         }));
     };
-
-    useEffect(() => {
-        if (type === TYPE_ANALYZER) {
-            const initialVisibility = {};
-            Object.entries(currentGraph.object).forEach(([trackName, trackSegments]) => {
-                if (!segmentVisibility[trackName]) {
-                    initialVisibility[trackName] = trackSegments.map(() => true); // all segments are visible by default
-                } else {
-                    initialVisibility[trackName] = segmentVisibility[trackName]; // keep the visibility of segments
-                }
-            });
-            setSegmentVisibility((prev) => ({ ...prev, ...initialVisibility }));
-        }
-    }, [currentGraph.object]);
 
     const graphData = useMemo(() => {
         const datasets = [];

@@ -4,6 +4,8 @@ import { Marker, GeoJSON } from 'react-leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
 import { LatLng } from 'leaflet';
 
+const DEFAULT_SEGMENT_COLOR = '#227bff';
+
 export default function TrackAnalyzerLayer() {
     const ctx = useContext(AppContext);
     const geoJsonRef = useRef(null);
@@ -36,7 +38,7 @@ export default function TrackAnalyzerLayer() {
                     .map((segment) => ({
                         type: 'Feature',
                         properties: {
-                            color: segment.color || '#227bff',
+                            color: segment.color || DEFAULT_SEGMENT_COLOR,
                             name: segment.name,
                         },
                         geometry: {

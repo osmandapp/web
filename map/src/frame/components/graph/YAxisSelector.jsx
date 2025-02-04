@@ -1,8 +1,11 @@
 import { FormControl, MenuItem, Select } from '@mui/material';
 import React from 'react';
 import { Y_AXIS_OPTIONS } from './GlobalGraph';
+import { useTranslation } from 'react-i18next';
 
 export default function YAxisSelector({ yAxisOption, setYAxisOption }) {
+    const { t } = useTranslation();
+
     return (
         <FormControl fullWidth>
             <Select
@@ -25,7 +28,7 @@ export default function YAxisSelector({ yAxisOption, setYAxisOption }) {
                 value={yAxisOption}
                 onChange={(e) => setYAxisOption(e.target.value)}
             >
-                {Y_AXIS_OPTIONS.map((option) => (
+                {Y_AXIS_OPTIONS(t).map((option) => (
                     <MenuItem key={option.value} value={option.value}>
                         {option.label}
                     </MenuItem>

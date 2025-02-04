@@ -431,11 +431,11 @@ export const AppContextProvider = (props) => {
     });
 
     const [develFeatures, setDevelFeatures] = useState(process.env.REACT_APP_DEVEL_FEATURES === 'yes');
-    const [infoBlockWidth, setInfoBlockWidth] = useState(0);
+    const [infoBlockWidth, setInfoBlockWidth] = useState('0px');
 
     const [configureMapState, setConfigureMapState] = useState(getConfigureMap);
 
-    // tracks:{"": 'za', new!!!: 'za'}
+    // ex. tracks:{"": 'za', new!!!: 'za'}
     const [selectedSort, setSelectedSort] = useState({});
 
     const [openProFeatures, setOpenProFeatures] = useState(null);

@@ -73,7 +73,7 @@
   "show_all_tracks_on_map": "Show all tracks on map",
   "hide_all_tracks_from_map": "Hide all tracks from map",
   "tracks_analyzer": "Tracks analyzer",
-  "h": "h",
+  "hours": "h",
   "avg_speed": "Avg. speed",
   "moving_time": "Time in motion",
   "max_altitude": "Max. altitude",
