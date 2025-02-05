@@ -4,7 +4,7 @@ import actionDeleteFavGroup from './actionDeleteFavGroup.mjs';
 
 const DEFAULT_FAV_GROUP = 'favorites';
 
-export default async function test(favorites) {
+export default async function test(favorites, other = null) {
     let prevName = '';
     let exist;
     const suffix = '-renamed';
@@ -29,6 +29,13 @@ export default async function test(favorites) {
     exist = await waitBy(By.id(`se-menu-fav-${DEFAULT_FAV_GROUP}`), { optional: true, idle: true });
     if (exist) {
         await actionDeleteFavGroup(DEFAULT_FAV_GROUP);
+    }
+    // delete other group
+    if (other) {
+        exist = await waitBy(By.id(`se-menu-fav-${other}`), { optional: true, idle: true });
+        if (exist) {
+            await actionDeleteFavGroup(other);
+        }
     }
 
     await waitBy(By.id('se-empty-page'));

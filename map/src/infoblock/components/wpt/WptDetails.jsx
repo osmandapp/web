@@ -553,6 +553,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton
+                        id={'se-close-wpt-details'}
                         variant="contained"
                         type="button"
                         className={styles.closeIcon}
@@ -579,7 +580,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     <Folder fontSize="small" />
                 </ListItemIcon>
                 <Box>
-                    <Typography className={styles.wptCategoryText} noWrap>
+                    <Typography id={'se-wpt-group'} className={styles.wptCategoryText} noWrap>
                         {getWptGroup(wpt)}
                     </Typography>
                 </Box>
@@ -603,7 +604,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     <LocationOn fontSize="small" />
                 </ListItemIcon>
                 <ListItemText>
-                    <Typography className={styles.wptCategoryText}>{wpt.address}</Typography>
+                    <Typography id={'se-wpt-address'} className={styles.wptCategoryText}>
+                        {wpt.address}
+                    </Typography>
                 </ListItemText>
             </Box>
         );
@@ -777,7 +780,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                         </ListItemText>
                                     </MenuItem>
                                     <div className={styles.descTextBlock}>
-                                        <Typography className={styles.descText}>
+                                        <Typography id={'se-wpt-desc'} className={styles.descText}>
                                             {parse(cleanHtml(wpt?.wikiDesc || EMPTY_STRING))}
                                         </Typography>
                                     </div>

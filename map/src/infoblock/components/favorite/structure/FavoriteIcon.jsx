@@ -38,6 +38,7 @@ export default function FavoriteIcon({
                     return (
                         <ListItem key={index} sx={{ maxWidth: 50, maxHeight: 50 }} component="div" disablePadding>
                             <ListItemButton
+                                id={`se-favorite-icon-${index}`}
                                 sx={{ maxWidth: 50, maxHeight: 50, top: -10 }}
                                 selected={favoriteIcon === icon || (!selectFavoriteIcon && icon === defaultIcon)}
                                 onClick={() => {
@@ -80,9 +81,9 @@ export default function FavoriteIcon({
     list =
         tabs &&
         list.concat(
-            Object.keys(tabs).map((item) => {
+            Object.keys(tabs).map((item, index) => {
                 if (item !== currentIconCategories && item !== FavoritesManager.DEFAULT_TAB_ICONS) {
-                    return <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item} />;
+                    return <Tab id={`se-tab-${index}`} value={tabs[item].key + ''} label={item} key={'tab:' + item} />;
                 }
                 return null;
             })

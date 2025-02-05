@@ -1,4 +1,4 @@
-import { Button, Grid, IconButton, ListItemText } from '@mui/material';
+import { Button, Grid, IconButton, ListItemText, Dialog, LinearProgress } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
@@ -24,7 +24,6 @@ import { apiGet } from '../../../util/HttpApi';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { saveTrackToLocalStorage } from '../../../manager/track/SaveTrackManager';
 import { FINAL_POI_ICON_NAME, TITLE, WEB_POI_PREFIX } from '../wpt/WptTagsProvider';
-import Dialog from '@mui/material/Dialog';
 import { getUniqFileId } from '../../../manager/GlobalManager';
 
 export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedPoi = null }) {
@@ -43,6 +42,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
     const [favoriteShape, setFavoriteShape] = useState(MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE);
     const [currentIconCategories, setCurrentIconCategories] = useState(null);
     const [errorName, setErrorName] = useState(false);
+    const [process, setProcess] = useState(false);
     const [width] = useWindowSize();
     const widthDialog = width / 2 < 450 ? width * 0.75 : 450;
     const [latLon, setLatLon] = useState(null);
@@ -81,8 +81,10 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
     }
 
     async function save() {
+        setProcess(true);
         if (ctx.addFavorite.editTrack) {
             saveTrackWpt();
+            setProcess(false);
         } else {
             const saved = await saveFavorite();
             if (saved) {
@@ -91,6 +93,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
                     ctx.setUpdateInfoBlock(true);
                 }
                 await updateGroupMarkers(saved.res, saved.selectedGroup);
+                setProcess(false);
                 closeDialog();
             }
         }
@@ -181,10 +184,8 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
     }
 
     async function saveFavorite() {
-        let selectedGroup =
-            favoriteGroup === null
-                ? ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME)
-                : favoriteGroup;
+        const gName = favoriteGroup === null ? FavoritesManager.DEFAULT_GROUP_NAME : favoriteGroup.name;
+        let selectedGroup = ctx.favorites.groups?.find((g) => g.name === gName);
         if (!selectedGroup) {
             selectedGroup = {
                 name: FavoritesManager.DEFAULT_GROUP_NAME,
@@ -308,6 +309,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
 
     return (
         <Dialog open={dialogOpen}>
+            {process ? <LinearProgress /> : <></>}
             <Grid container spacing={2}>
                 <Grid className={menuStyles.name} item xs={11} sx={{ mb: -3 }}>
                     <DialogTitle>{getTitleDialog()}</DialogTitle>
@@ -326,7 +328,11 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
                 />
                 {!addAddress && (
                     <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
-                        <IconButton sx={{ mt: -1 }} onClick={() => setAddAddress(true)}>
+                        <IconButton
+                            id={'se-add-fav-add-address-btn'}
+                            sx={{ mt: -1 }}
+                            onClick={() => setAddAddress(true)}
+                        >
                             <Add />
                         </IconButton>
                         Add address
@@ -342,7 +348,11 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
                 )}
                 {!addDescription && (
                     <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
-                        <IconButton sx={{ mt: -1 }} onClick={() => setAddDescription(true)}>
+                        <IconButton
+                            id={'se-add-fav-add-desc-btn'}
+                            sx={{ mt: -1 }}
+                            onClick={() => setAddDescription(true)}
+                        >
                             <Add />
                         </IconButton>
                         Add description
@@ -398,7 +408,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
                 />
             </DialogContent>
             <DialogActions>
-                <Button disabled={errorName || groupHasSameWpt()} onClick={() => save()}>
+                <Button id={'se-add-fav-btn'} disabled={errorName || groupHasSameWpt()} onClick={() => save()}>
                     Save
                 </Button>
             </DialogActions>

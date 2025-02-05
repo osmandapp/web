@@ -1,8 +1,7 @@
-import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import dialogStyles from '../dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
-import { Button } from '@mui/material';
+import { Button, Dialog } from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext } from 'react';
 import { deleteTrack } from '../../manager/track/DeleteTrackManager';

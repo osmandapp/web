@@ -1,5 +1,4 @@
-import { Dialog } from '@material-ui/core';
-import { Box, Button, Grid, IconButton, ListItemText, Typography } from '@mui/material';
+import { Box, Button, Grid, IconButton, LinearProgress, ListItemText, Typography, Dialog } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
@@ -26,6 +25,7 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
     const [groupColor, setGroupColor] = useState(MarkerOptions.DEFAULT_WPT_COLOR);
     const [groupShape, setGroupShape] = useState(MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE);
     const [errorName, setErrorName] = useState(false);
+    const [process, setProcess] = useState(false);
 
     useEffect(() => {
         getIconCategories().then();
@@ -41,6 +41,7 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
     }
 
     async function save() {
+        setProcess(true);
         if (ctx.addFavorite.editTrack) {
             saveTrackWptGroup();
         } else {
@@ -59,6 +60,7 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
         };
         setFavoriteGroup(updatedSelectedGpxFile.pointsGroups[groupName]);
         ctx.setSelectedGpxFile(updatedSelectedGpxFile);
+        setProcess(false);
         setDialogOpen(false);
     }
 
@@ -69,6 +71,7 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
         const group = await saveFavoriteGroup(data, groupName, ctx);
         if (group) {
             setFavoriteGroup(group);
+            setProcess(false);
             setDialogOpen(false);
         }
     }
@@ -94,7 +97,8 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
     };
 
     return (
-        <Dialog open={dialogOpen}>
+        <Dialog id={'se-add-new-fav-group-dialog'} open={dialogOpen}>
+            {process ? <LinearProgress /> : <></>}
             <Grid container spacing={2}>
                 <Grid className={menuStyles.name} item xs={11} sx={{ mb: -3 }}>
                     <DialogTitle>Add new category</DialogTitle>
@@ -109,6 +113,7 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
                     setFavoriteName={setGroupName}
                     favoriteGroup={null}
                     setErrorName={setErrorName}
+                    isGroupName={true}
                 />
                 <hr />
                 <Box
@@ -152,7 +157,7 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
                 />
             </DialogContent>
             <DialogActions>
-                <Button disabled={errorName} onClick={() => save()}>
+                <Button id={'se-add-new-fav-group-btn'} disabled={errorName} onClick={() => save()}>
                     Save
                 </Button>
             </DialogActions>

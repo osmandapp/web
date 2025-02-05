@@ -24,6 +24,7 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
     const [processDownload, setProcessDownload] = useState(false);
     const anchorEl = useRef(null);
     const share = getShare(group.file, ctx);
+    const groupSize = getSize(group, t);
 
     const sharedFile = smartf?.type === SHARE_TYPE;
 
@@ -73,11 +74,11 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
                         />
                     )}
                 </ListItemIcon>
-                <ListItemText>
+                <ListItemText id={`se-fav-group-size-${groupSize}`}>
                     <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" component="div" className={styles.groupInfo} noWrap>
                         {share && !sharedFile && <FileShareIcon />}
-                        {`${getLocalizedTimeUpdate(group.clienttimems)}, ${getSize(group, t)}`}
+                        {`${getLocalizedTimeUpdate(group.clienttimems)}, ${groupSize}`}
                     </Typography>
                 </ListItemText>
                 <ThreeDotsButton

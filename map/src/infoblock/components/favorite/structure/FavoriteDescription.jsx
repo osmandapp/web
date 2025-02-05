@@ -10,7 +10,7 @@ export default function FavoriteDescription({ favoriteDescription, setFavoriteDe
         <ListItemText sx={{ maxWidth: `${widthDialog}px`, mt: 3 }}>
             <TextField
                 className={menuStyles.favouriteLineInfo}
-                id="desc"
+                id="se-edit-fav-dialog-desc"
                 label="Description"
                 fullWidth
                 onChange={(e) => setFavoriteDescription(e.target.value)}
