@@ -166,6 +166,7 @@ export default function GroupHeader({
                         >
                             <span>
                                 <IconButton
+                                    id={'se-create-new-route'}
                                     variant="contained"
                                     type="button"
                                     className={styles.appBarIcon}
