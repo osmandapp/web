@@ -3,8 +3,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import TracksManager from '../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
-import { Button, Dialog } from '@mui/material';
-import React, { useContext } from 'react';
+import { Button, Dialog, LinearProgress } from '@mui/material';
+import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import FavoritesManager from '../../manager/FavoritesManager';
 import FavoriteHelper from '../../infoblock/components/favorite/FavoriteHelper';
@@ -22,12 +22,14 @@ export default function DeleteWptDialog({
     const ctx = useContext(AppContext);
 
     const useSelected = !isEmpty(ctx.selectedGpxFile) && ctx.selectedGpxFile.markerCurrent;
+    const [process, setProcess] = useState(false);
 
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
     };
 
     async function deleteWpt() {
+        setProcess(true);
         //delete wpt from track
         if (ctx.addFavorite.editTrack) {
             if (ctx.selectedWpt) {
@@ -39,6 +41,7 @@ export default function DeleteWptDialog({
                 if (!isDetails) {
                     ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: true });
                 }
+                closeDialog();
             }
         } else {
             //delete favorite point from group
@@ -47,8 +50,13 @@ export default function DeleteWptDialog({
                 if (!isDetails) {
                     ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
                 }
+                closeDialog();
             });
         }
+    }
+
+    function closeDialog() {
+        setProcess(false);
         setDialogOpen(false);
         if (setOpenActions) {
             setOpenActions(false);
@@ -113,6 +121,7 @@ export default function DeleteWptDialog({
 
     return (
         <Dialog id="se-delete-fav-dialog" open={true} onClose={toggleShowDialog} onClick={(e) => e.stopPropagation()}>
+            {process ? <LinearProgress /> : <></>}
             <DialogTitle>{getTitleDialog()}</DialogTitle>
             <DialogContent>
                 <DialogContentText>{getQuestionDialog()}</DialogContentText>

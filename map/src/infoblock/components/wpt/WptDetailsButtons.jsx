@@ -22,6 +22,7 @@ export default function WptDetailsButtons({ wpt, isDetails }) {
                 {!wpt.type?.isPoi && (
                     <Tooltip title={t('shared_string_edit')} arrow placement="bottom">
                         <IconButton
+                            id={'se-edit-fav-item'}
                             className={styles.wptActionsButtons}
                             onClick={() => {
                                 if (wpt.type.isWpt) {
@@ -46,6 +47,7 @@ export default function WptDetailsButtons({ wpt, isDetails }) {
                 {!wpt.type?.isPoi && (
                     <Tooltip title={t('shared_string_delete')} arrow placement="bottom">
                         <IconButton
+                            id={'se-delete-fav-item'}
                             className={styles.wptActionsButtons}
                             onClick={() => {
                                 if (wpt.type.isWpt) {

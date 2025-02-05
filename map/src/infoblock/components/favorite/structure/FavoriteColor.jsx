@@ -23,7 +23,7 @@ export default function FavoriteColor({ favoriteColor, setFavoriteColor, default
             >
                 {prepareColors.map((color, index) => {
                     return (
-                        <ListItem key={index} component="div" disablePadding>
+                        <ListItem id={`se-select-fav-color-${index}`} key={index} component="div" disablePadding>
                             <ListItemButton
                                 selected={favoriteColor === color || (!selectFavoriteColor && color === defaultColor)}
                                 onClick={() => {

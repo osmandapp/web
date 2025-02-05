@@ -25,6 +25,7 @@ export default function FavoriteShape({ color, favoriteShape, setFavoriteShape, 
                     return (
                         <ListItem style={{ maxWidth: 71 }} component="div" key={index} disablePadding>
                             <ListItemButton
+                                id={`se-favorite-shape-${index}`}
                                 sx={{ maxHeight: 50 }}
                                 selected={
                                     favoriteShape === shape[0] ||

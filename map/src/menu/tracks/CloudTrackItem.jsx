@@ -161,7 +161,13 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                             </ListItemIcon>
                             <ListItemText>
                                 <MenuItemWithLines name={trackName} maxLines={2} />
-                                <Typography component="div" variant="body2" className={styles.groupInfo} noWrap>
+                                <Typography
+                                    id={`se-cloud-t-info-${trackName}`}
+                                    component="div"
+                                    variant="body2"
+                                    className={styles.groupInfo}
+                                    noWrap
+                                >
                                     {share && <FileShareIcon />}
                                     {dist && `${dist} km`}
                                     {' · '}

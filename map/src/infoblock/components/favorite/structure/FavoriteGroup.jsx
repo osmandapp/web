@@ -79,6 +79,7 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
                         <Grid container>
                             <Grid item container xs={10} sx={{ mt: -0.5 }}>
                                 <IconButton
+                                    id={'se-add-new-fav-group'}
                                     variant="contained"
                                     type="button"
                                     onClick={() => setAddGroupDialogOpen(true)}
@@ -102,7 +103,7 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
 
     function selectGroup(group) {
         let defaultGroupName = ctx.addFavorite.editTrack && defaultGroup === null ? '' : defaultGroup;
-        return favoriteGroup === group || (favoriteGroup === null && group.name === defaultGroupName);
+        return favoriteGroup?.name === group?.name || (favoriteGroup === null && group.name === defaultGroupName);
     }
 
     return (

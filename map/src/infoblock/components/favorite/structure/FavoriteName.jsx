@@ -12,6 +12,7 @@ export default function FavoriteName({
     favorite,
     setErrorName,
     widthDialog,
+    isGroupName = false,
 }) {
     const menuStyles = contextMenuStyles();
     const ctx = useContext(AppContext);
@@ -75,7 +76,7 @@ export default function FavoriteName({
         <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
             <TextField
                 className={menuStyles.favouriteLineInfo}
-                id="name"
+                id={isGroupName ? 'se-fav-group-name-input' : 'se-fav-name-input'}
                 label="Name"
                 fullWidth
                 onChange={(e) => setFavoriteName(e.target.value)}

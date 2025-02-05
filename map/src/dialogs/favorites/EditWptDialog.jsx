@@ -1,4 +1,4 @@
-import { Button, Grid, IconButton } from '@mui/material';
+import { Button, Grid, IconButton, LinearProgress, Dialog } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
@@ -18,7 +18,6 @@ import FavoritesManager, { updateFavoriteGroups } from '../../manager/FavoritesM
 import { apiGet } from '../../util/HttpApi';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { isEmpty } from 'lodash';
-import Dialog from '@mui/material/Dialog';
 import { ADDRESS_NOT_FOUND } from '../../infoblock/components/wpt/WptDetails';
 
 export default function EditWptDialog({
@@ -42,6 +41,7 @@ export default function EditWptDialog({
     const [favoriteIconCategories, setFavoriteIconCategories] = useState(null);
     const [currentIconCategories, setCurrentIconCategories] = useState(null);
     const [errorName, setErrorName] = useState(false);
+    const [process, setProcess] = useState(false);
     const [width] = useWindowSize();
     const widthDialog = width / 2 < 450 ? width * 0.75 : 450;
 
@@ -72,6 +72,7 @@ export default function EditWptDialog({
     }
 
     async function save() {
+        setProcess(true);
         if (wpt) {
             if (ctx.addFavorite.editTrack) {
                 saveTrackWpt();
@@ -122,6 +123,7 @@ export default function EditWptDialog({
         };
         ctx.setSelectedWpt(updatedWpt);
         ctx.setPointContextMenu({});
+        setProcess(false);
         setEditFavoritesDialogOpen(false);
     }
 
@@ -165,6 +167,7 @@ export default function EditWptDialog({
                 useSelected,
                 favoriteName,
             });
+            setProcess(false);
             setEditFavoritesDialogOpen(false);
             if (setOpenActions) {
                 setOpenActions(false);
@@ -219,6 +222,7 @@ export default function EditWptDialog({
 
     return (
         <Dialog id="se-edit-fav-dialog" open={true} onClick={(e) => e.stopPropagation()}>
+            {process ? <LinearProgress /> : <></>}
             <Grid container spacing={2}>
                 <Grid className={menuStyles.name} item xs={11} sx={{ mb: -3 }}>
                     <DialogTitle>{getTitleDialog()}</DialogTitle>

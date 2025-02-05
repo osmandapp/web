@@ -143,7 +143,11 @@ export default function SaveTrackDialog() {
 
     return (
         <div>
-            <Dialog open={true} onClose={() => cloudAutoSave === false && closeDialog({ uploaded: false })}>
+            <Dialog
+                id={'se-save-track-dialog'}
+                open={true}
+                onClose={() => cloudAutoSave === false && closeDialog({ uploaded: false })}
+            >
                 {process ? <LinearProgress /> : <></>}
                 {cloudAutoSave && <DialogContent>Uploading to cloud...</DialogContent>}
                 {cloudAutoSave === false && (
@@ -181,7 +185,7 @@ export default function SaveTrackDialog() {
                                     setFileName(e.target.value);
                                 }}
                                 label="Name"
-                                id="fileName"
+                                id="se-save-track-name"
                                 type="fileName"
                                 fullWidth
                                 error={fileName === ''}
