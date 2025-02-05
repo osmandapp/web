@@ -1,6 +1,6 @@
 import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../actions/login/actionLogIn.mjs';
-import { clickBy, clickOnMapCenter, waitBy } from '../lib.mjs';
+import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import setView from '../actions/setView.mjs';
