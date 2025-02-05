@@ -709,7 +709,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 </Typography>
             );
         } else {
-            return <Typography className={styles.name}>{wpt.name ?? 'No name'}</Typography>;
+            return (
+                <Typography id={'se-wpt-name'} className={styles.name}>
+                    {wpt.name ?? 'No name'}
+                </Typography>
+            );
         }
     };
 

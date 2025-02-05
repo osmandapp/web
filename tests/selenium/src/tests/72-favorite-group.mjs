@@ -21,8 +21,8 @@ export default async function test() {
     const favorites = getFiles({ folder: 'favorites' });
     const { path } = favorites.find((t) => t.name === favGroupName);
 
+    // prepare
     await actionOpenFavorites();
-
     await actionDeleteAllFavorites(favorites);
 
     // create folder
