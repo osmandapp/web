@@ -43,7 +43,7 @@ export default async function test() {
     await clickBy(By.id('se-button-back'));
 
     await waitBy(By.id('se-' + trackName));
-    await matchTextBy(By.id('se-cloud-track-info-' + trackName), '0 · 0:00 · 1');
+    await matchTextBy(By.id('se-cloud-t-info-' + trackName), '0 · 0:00 · 1');
     await deleteTrack(trackName);
 
     await actionFinish();

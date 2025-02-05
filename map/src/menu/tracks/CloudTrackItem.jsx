@@ -162,7 +162,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                             <ListItemText>
                                 <MenuItemWithLines name={trackName} maxLines={2} />
                                 <Typography
-                                    id={`se-cloud-track-info-${trackName}`}
+                                    id={`se-cloud-t-info-${trackName}`}
                                     component="div"
                                     variant="body2"
                                     className={styles.groupInfo}
