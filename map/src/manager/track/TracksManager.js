@@ -2,7 +2,6 @@ import Utils, { quickNaNfix, toHHMMSS } from '../../util/Utils';
 import FavoritesManager from '../FavoritesManager';
 import _, { isEmpty } from 'lodash';
 import { apiGet, apiPost } from '../../util/HttpApi';
-import { compressFromJSON, decompressToJSON } from '../../util/GzipBase64.mjs';
 import {
     isCloudTrack,
     isRouteTrack,
@@ -30,9 +29,7 @@ export const NAN_MARKER = 99999;
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
 const CHANGE_PROFILE_ALL = 'all';
-export const LOCAL_COMPRESSED_TRACK_KEY = 'localTrack_';
-export const DATA_SIZE_KEY = 'dataSize';
-const TRACK_VISIBLE_FLAG = 'visible';
+export const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
 const AUTO_SRTM_MAX_POINTS = 10000; // don't overload Auto-SRTM API with huge OSRM tracks
 const AUTO_SRTM_MIN_BAD_POINTS_PERCENT = 10; // limit by % of no-elevation points (type=osmand might have up to 10%)
@@ -45,91 +42,6 @@ export function fitBoundsOptions(ctx) {
         paddingTopLeft: [ctx.fitBoundsPadding.left, ctx.fitBoundsPadding.top],
         paddingBottomRight: [ctx.fitBoundsPadding.right, ctx.fitBoundsPadding.bottom],
     };
-}
-
-async function loadTracks(setLoading) {
-    let localTracks = [];
-    let names = Object.keys(localStorage);
-    setLoading(true);
-    for (let name of names) {
-        if (name.includes(LOCAL_COMPRESSED_TRACK_KEY)) {
-            let ind = name.split('_')[1];
-            try {
-                const json = await decompressToJSON(localStorage.getItem(name));
-                if (json) {
-                    fixNanEleWpt(json);
-                    localTracks[ind] = json;
-                } else {
-                    console.error('loadTracks empty track: ' + name);
-                    localStorage.removeItem(name);
-                }
-            } catch {
-                console.error('loadTracks JSON/decompress error: ' + name);
-                localStorage.removeItem(name);
-            }
-        }
-    }
-
-    localTracks = fixLocalTracks(localTracks); // fix holes
-    localTracks = openVisibleTracks(localTracks); // mark visible
-
-    setLoading(false);
-    return localTracks;
-}
-
-function fixNanEleWpt(obj) {
-    obj.wpts?.forEach((wpt) => {
-        if (wpt?.ele === NAN_MARKER) {
-            wpt.ele = null;
-        }
-        if (wpt?.ext?.ele === NAN_MARKER) {
-            wpt.ext.ele = null;
-        }
-    });
-}
-
-function fixLocalTracks(localTracks) {
-    if (localTracks && localTracks.length !== Object.keys(localTracks).length) {
-        console.error('loadTracks localTrack_0 (hole) localTrack_X workaround');
-        const fixTracks = [];
-        localTracks.forEach((t) => fixTracks.push(t));
-        updateLocalTracks(fixTracks).then();
-        localTracks = fixTracks;
-    }
-    return localTracks;
-}
-
-function openVisibleTracks(localTracks) {
-    let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
-    if (savedVisible?.local) {
-        for (const local of savedVisible.local) {
-            for (let f of localTracks) {
-                if (f.name === local.name) {
-                    if (Date.now() - local.addTime < HOURS_24_MS) {
-                        addDistance(f); // recalc-distance-local-visible
-                        f.selected = true;
-                    } else {
-                        f.selected = false;
-                    }
-                }
-            }
-        }
-    }
-    return localTracks;
-}
-
-async function updateLocalTracks(tracks) {
-    deleteLocalTracks();
-    let totalSize = 0;
-    for (let track of tracks) {
-        let res = await compressFromJSON(prepareLocalTrack(track));
-        if (res) {
-            localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + _.indexOf(tracks, track), res);
-            let tracksSize = res.length;
-            totalSize += tracksSize;
-            localStorage.setItem(DATA_SIZE_KEY, totalSize);
-        }
-    }
 }
 
 export function prepareLocalTrack(track) {
@@ -158,15 +70,6 @@ function prepareAnalysis(analysis) {
     newAnalysis.srtmAnalysis = false;
     newAnalysis.isSrtmApplied = false; // additionally this flag is absent after GET_ANALYSIS request
     return newAnalysis;
-}
-
-function deleteLocalTracks() {
-    let keys = Object.keys(localStorage);
-    for (let k of keys) {
-        if (k.includes(LOCAL_COMPRESSED_TRACK_KEY)) {
-            localStorage.removeItem(k);
-        }
-    }
 }
 
 function createName(ctx) {
@@ -665,32 +568,6 @@ export function isTrackExists(name, folder, folderName, tracks) {
         return foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name);
     }
     return false;
-}
-
-function deleteLocalTrack(ctx) {
-    const currentTrackIndex = ctx.localTracks.findIndex((t) => t.name === ctx.selectedGpxFile.name);
-    if (currentTrackIndex !== -1) {
-        localStorage.removeItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex);
-        ctx.localTracks.splice(currentTrackIndex, 1);
-        if (ctx.localTracks.length > 0) {
-            updateLocalTracks(ctx.localTracks);
-        } else {
-            localStorage.removeItem(DATA_SIZE_KEY);
-        }
-        ctx.setLocalTracks([...ctx.localTracks]);
-    } else {
-        // console.debug('deleteLocalTrack unable to find track');
-    }
-}
-
-export function clearAllLocalTracks(ctx) {
-    if (ctx.localTracks.find((t) => t.name === ctx.selectedGpxFile.name)) {
-        ctx.setSelectedGpxFile({});
-    }
-    ctx.setLocalTracks([]);
-    localStorage.removeItem(DATA_SIZE_KEY);
-    localStorage.removeItem(TRACK_VISIBLE_FLAG);
-    deleteLocalTracks(); // delete from localStorage
 }
 
 function formatRouteMode({ profile = 'car', params, includeFalse = false }) {
@@ -1587,7 +1464,6 @@ export function getAllGroupNames(groups, parentName = '') {
 }
 
 const TracksManager = {
-    loadTracks,
     prepareName,
     getTrackData,
     handleEditCloudTrack,
@@ -1595,7 +1471,6 @@ const TracksManager = {
     getEditablePoints,
     updateGapProfileOneSegment,
     getEle,
-    deleteLocalTrack,
     createName,
     getTrackWithAnalysis,
     prepareTrack,
@@ -1621,7 +1496,6 @@ const TracksManager = {
     CHANGE_PROFILE_BEFORE: CHANGE_PROFILE_BEFORE,
     CHANGE_PROFILE_AFTER: CHANGE_PROFILE_AFTER,
     CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL,
-    TRACK_VISIBLE_FLAG: TRACK_VISIBLE_FLAG,
 };
 
 export default TracksManager;

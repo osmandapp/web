@@ -8,7 +8,12 @@ import CloudTrackItem from '../tracks/CloudTrackItem';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import EmptyVisible from '../errors/EmptyVisible';
 import { isEmpty } from 'lodash';
-import TracksManager, { DEFAULT_GROUP_NAME, getAllVisibleFiles, getFileName } from '../../manager/track/TracksManager';
+import TracksManager, {
+    DEFAULT_GROUP_NAME,
+    getAllVisibleFiles,
+    getFileName,
+    TRACK_VISIBLE_FLAG,
+} from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
 import { Button } from '@mui/material/';
 import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
@@ -24,12 +29,12 @@ export function getCountVisibleTracks(visibleTracks) {
 }
 
 export function isVisibleTrack(file) {
-    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+    let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
     return !!savedVisible?.open?.includes(file.name);
 }
 
 export function updateVisibleCache({ visible, file, smartf = null }) {
-    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+    let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
     if (savedVisible && !savedVisible.open) {
         savedVisible.open = [];
     }
@@ -44,20 +49,20 @@ export function updateVisibleCache({ visible, file, smartf = null }) {
             savedVisible.open.splice(ind, 1);
         }
     }
-    localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
+    localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
 }
 
 export function hideAllVisTracks() {
-    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+    let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
     if (savedVisible) {
         savedVisible.open = [];
     }
-    localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
+    localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
 }
 
 export function addCloseTracksToRecently(ctx) {
     if (!isEmpty(ctx.visibleTracks)) {
-        let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+        let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
         let newVisFiles = {
             old: ctx.visibleTracks.old,
             new: [],
@@ -83,7 +88,7 @@ export function addCloseTracksToRecently(ctx) {
             }
         });
 
-        localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
+        localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
         ctx.setVisibleTracks({ ...newVisFiles });
     }
 }

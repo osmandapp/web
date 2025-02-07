@@ -22,9 +22,9 @@ import FavoriteHelper from './FavoriteHelper';
 import TracksManager from '../../../manager/track/TracksManager';
 import { apiGet } from '../../../util/HttpApi';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
-import { saveTrackToLocalStorage } from '../../../manager/track/SaveTrackManager';
 import { FINAL_POI_ICON_NAME, TITLE, WEB_POI_PREFIX } from '../wpt/WptTagsProvider';
 import { getUniqFileId } from '../../../manager/GlobalManager';
+import { saveTrackToLocalStorage } from '../../../menu/tracks/util/LocalTrackStorage';
 
 export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedPoi = null }) {
     const menuStyles = contextMenuStyles();

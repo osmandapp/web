@@ -3,22 +3,20 @@ import FavoritesManager, { updateFavGroups } from '../FavoritesManager';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import TracksManager, {
     createTrackGroups,
-    DATA_SIZE_KEY,
     isTrackExists,
     isEmptyTrack,
-    LOCAL_COMPRESSED_TRACK_KEY,
-    prepareLocalTrack,
     getGpxFiles,
     DEFAULT_GROUP_NAME,
     GPX_FILE_TYPE,
     getGpxFileFromTrackData,
     EMPTY_FILE_NAME,
+    TRACK_VISIBLE_FLAG,
 } from './TracksManager';
 import _, { cloneDeep } from 'lodash';
-import { compressFromJSON } from '../../util/GzipBase64.mjs';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import Utils from '../../util/Utils';
 import { updateSortList } from '../../menu/actions/SortActions';
+import { deleteLocalTrack, saveTrackToLocalStorage } from '../../menu/tracks/util/LocalTrackStorage';
 
 export function saveTrackToLocal({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
@@ -112,7 +110,7 @@ export async function saveTrackToCloud({
                 if (open) {
                     downloadAfterUpload(ctx, downloadFile, true).then();
                 }
-                TracksManager.deleteLocalTrack(ctx);
+                deleteLocalTrack(ctx);
                 refreshGlobalFiles({ ctx, currentFileName: params.name }).then();
                 return true;
             }
@@ -145,37 +143,6 @@ export function createTrackFreeName(name, otherTracks, folder = null, folderName
     if (occupied) {
         throw new Error('TracksManager addTrack() too many same-tracks');
     }
-}
-
-export function saveTrackToLocalStorage({ ctx, track }) {
-    const localTracks = ctx.localTracks;
-
-    let currentTrackIndex = localTracks.findIndex((t) => t.name === track.name);
-
-    if (currentTrackIndex === -1) {
-        currentTrackIndex = localTracks.push(track) - 1; // mutate state, get new index
-        ctx.setLocalTracks([...localTracks]); // instant call setState if you don't sure about parent
-    }
-
-    const previousTotalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY)) || 0;
-
-    compressFromJSON(prepareLocalTrack(track)).then((res) => {
-        const trackNewSize = res.length;
-        const trackOldSize = getOldSizeTrack(currentTrackIndex) || 0;
-        const sizeDifference = trackNewSize - trackOldSize; // might be negative
-
-        const LOCAL_STORAGE_LIMIT = 5000000; // FF 10MB, others 5MB
-
-        if (previousTotalSize + sizeDifference > LOCAL_STORAGE_LIMIT) {
-            ctx.setRoutingErrorMsg(
-                "Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes."
-            );
-        } else {
-            // ctx.setRoutingErrorMsg(null); // don't reset error message here (lose previous message)
-            localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex, res);
-            localStorage.setItem(DATA_SIZE_KEY, previousTotalSize + sizeDifference);
-        }
-    });
 }
 
 export async function renameTrack(oldName, folder, newName, ctx) {
@@ -246,7 +213,7 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
 }
 
 export function updateVisibleTracks(oldN, newN) {
-    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+    let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
     if (savedVisible) {
         const newInd = savedVisible.new?.findIndex((n) => n === oldN);
         let oldInd;
@@ -264,7 +231,7 @@ export function updateVisibleTracks(oldN, newN) {
                 savedVisible.open[openInd] = newN;
             }
         }
-        localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
+        localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
     }
 }
 
@@ -359,16 +326,6 @@ export async function refreshGlobalFiles({ ctx, oldName = null, currentFileName 
             ctx.setTracksGroups(updatedTrackGroups);
         }
     }
-}
-
-function getOldSizeTrack(currentTrackIndex) {
-    if (currentTrackIndex !== -1) {
-        let old = localStorage.getItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex);
-        if (old) {
-            return old.length;
-        }
-    }
-    return 0;
 }
 
 // after success upload from Local to Cloud

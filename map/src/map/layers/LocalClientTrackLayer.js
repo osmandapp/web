@@ -21,8 +21,8 @@ import TracksRoutingCache, {
     requestAnalytics,
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
-import { saveTrackToLocalStorage } from '../../manager/track/SaveTrackManager';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import { saveTrackToLocalStorage } from '../../menu/tracks/util/LocalTrackStorage';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
