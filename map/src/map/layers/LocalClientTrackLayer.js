@@ -174,7 +174,7 @@ export default function LocalClientTrackLayer() {
     }, [ctxTrack]);
 
     useEffect(() => {
-        const needUpdate = move || zoom !== prevZoom;
+        const needUpdate = (move || zoom !== prevZoom) && ctx.selectedGpxFile.wpts?.length > 100 && ctx.selectedGpxFile.points?.length > 100;
         if (needUpdate && ctx.createTrack?.enable && ctxTrack) {
             ctxTrack.layers = updateLayers({
                 points: ctxTrack.points,
