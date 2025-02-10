@@ -374,16 +374,6 @@ export default function LocalClientTrackLayer() {
         ctx.setSelectedGpxFile(track);
     }
 
-    function saveLocal() {
-        if (ctx.localTracks.length > 0) {
-            // localTracks exist: do update/append into localStorage
-            saveTrackToLocalStorage({ ctx, track: ctx.selectedGpxFile });
-        } else {
-            // localTracks empty: add gpx as 1st track (points and/or wpts are included)
-            createLocalTrack(ctxTrack, ctxTrack.points, ctxTrack.wpts);
-        }
-    }
-
     function checkZoom() {
         if (ctxTrack.selected && ctxTrack.zoom) {
             // local-track-zoom
