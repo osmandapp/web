@@ -198,9 +198,9 @@ function createRoutingKey(startPoint, endPoint, geoProfile) {
     }
 
     const ll = `startLat=${startPoint?.lat},startLng=${startPoint?.lng},endLat=${endPoint?.lat},endLng=${endPoint?.lng},`;
-    const geo = JSON.stringify(geoProfile); // include all of type/router/profile/params
+    const geo = JSON.stringify(geoProfile.key);
 
-    return ll + geo; // Reminder: to keep property creation order, keys must be String
+    return ll + geo;
 }
 
 function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {

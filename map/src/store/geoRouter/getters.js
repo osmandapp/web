@@ -74,6 +74,7 @@ export function getProfile({ type = this.type, router = this.router, profile = t
 export function getGeoProfile(geoProfile) {
     const { type, router, profile, params } = this.getProfile(geoProfile);
     return {
+        key: type + '_' + router + '_' + profile,
         type,
         router,
         profile,

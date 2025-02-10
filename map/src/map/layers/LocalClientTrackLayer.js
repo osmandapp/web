@@ -759,6 +759,7 @@ export default function LocalClientTrackLayer() {
             deleteOld: false,
             trackLayers: new L.FeatureGroup(),
         });
+        ctxTrack.layers.addTo(map);
         ctxTrack.points = points;
 
         ctxTrack.newPoint = points[points.length - 1];
