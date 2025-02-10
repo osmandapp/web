@@ -179,8 +179,11 @@ export default function LocalClientTrackLayer() {
                         createLocalTrack({ ctx, map, file: ctx.selectedGpxFile });
                     }
                 }
-                checkZoom();
-                checkUpdateLayers();
+                if (ctxTrack?.updateLayers) {
+                    checkUpdateLayers();
+                } else {
+                    checkZoom();
+                }
             }
         }
     }, [ctxTrack]);
@@ -459,22 +462,20 @@ export default function LocalClientTrackLayer() {
     }
 
     function checkUpdateLayers() {
-        if (ctxTrack?.updateLayers) {
-            ctxTrack.updateLayers = false;
-            if (!ctxTrack.layers) {
-                ctxTrack.layers = new L.FeatureGroup();
-            }
-            ctxTrack.layers = updateLayers({
-                map,
-                ctx,
-                localLayers,
-                ctxTrack,
-                points: ctxTrack.points,
-                wpts: ctxTrack.wpts,
-                trackLayers: ctxTrack.layers,
-            });
-            saveChanges(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers);
+        ctxTrack.updateLayers = false;
+        if (!ctxTrack.layers) {
+            ctxTrack.layers = new L.FeatureGroup();
         }
+        ctxTrack.layers = updateLayers({
+            map,
+            ctx,
+            localLayers,
+            ctxTrack,
+            points: ctxTrack.points,
+            wpts: ctxTrack.wpts,
+            trackLayers: ctxTrack.layers,
+        });
+        saveChanges(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers);
     }
 
     function updateTrackOnMap(track, active) {
@@ -607,20 +608,23 @@ export default function LocalClientTrackLayer() {
     }
 
     function saveChanges(points, wpts, layers, res) {
+        let track = ctxTrack;
         if (res) {
-            ctxTrack = res;
+            track = res;
             if (layers) {
-                ctxTrack.layers = layers;
+                track.layers = layers;
             }
         } else {
-            ctxTrack.points = points;
-            ctxTrack.wpts = wpts;
-            ctxTrack.layers = layers;
+            track.points = points;
+            track.wpts = wpts;
+            track.layers = layers;
         }
-        TracksManager.addDistance(ctxTrack); // recalc-distance-local-save
-        addRegisteredLayers(ctxTrack.layers, setRegisteredLayers);
-        ctxTrack.zoom = false;
-        ctx.setSelectedGpxFile({ ...ctxTrack });
+        TracksManager.addDistance(track);
+        track.zoom = false;
+
+        addRegisteredLayers(track.layers, setRegisteredLayers);
+
+        ctx.setSelectedGpxFile({ ...track });
     }
 
     function setupClickOnMap() {
