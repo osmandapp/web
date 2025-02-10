@@ -67,6 +67,10 @@ export default function LocalClientTrackLayer() {
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
+    useEffect(() => {
+        map.spin(ctx.processingSaveTrack, { color: '#1976d2' });
+    }, [ctx.processingSaveTrack]);
+
     let ctxTrack = ctx.selectedGpxFile;
 
     const geoRouter = ctx.trackRouter;

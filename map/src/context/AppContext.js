@@ -275,6 +275,8 @@ const AppContext = React.createContext();
 export const AppContextProvider = (props) => {
     seleniumUpdateActivity();
 
+    const [processingSaveTrack, setProcessingSaveTrack] = useState(false);
+
     const [globalConfirmation, setGlobalConfirmation] = useState(null);
     const [fitBoundsPadding, mutateFitBoundsPadding] = useMutator({ left: 0, top: 0, right: 0, bottom: 0 });
 
@@ -757,6 +759,8 @@ export const AppContextProvider = (props) => {
                 setExcludedSegments,
                 globalGraph,
                 setGlobalGraph,
+                processingSaveTrack,
+                setProcessingSaveTrack,
             }}
         >
             {props.children}

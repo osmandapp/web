@@ -371,6 +371,7 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
         newGpxFiles[file.name].showOnMap = showOnMap;
         ctx.setGpxFiles(newGpxFiles);
         ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
+        ctx.setProcessingSaveTrack(false);
     }
 }
 
