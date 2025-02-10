@@ -768,6 +768,7 @@ export default function LocalClientTrackLayer() {
             ctxTrack,
             points,
             wpts: ctxTrack.wpts,
+            deleteOld: false,
             trackLayers: new L.FeatureGroup(),
         });
         layers.addTo(map);
@@ -782,8 +783,6 @@ export default function LocalClientTrackLayer() {
         } else {
             geoRouter.onGeoProfile({ profile: TracksManager.PROFILE_LINE });
         }
-        // ctx.addFavorite.editTrack = true;
-        // ctx.setAddFavorite({...ctx.addFavorite});
 
         ctx.setSelectedGpxFile({ ...ctxTrack });
 
