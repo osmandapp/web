@@ -23,6 +23,7 @@ import TracksRoutingCache, {
 } from '../../context/TracksRoutingCache';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 import { saveTrackToLocalStorage } from '../../menu/tracks/util/LocalTrackStorage';
+import { isNewTrack, trackWasChanged } from '../util/LocalTrackHelper';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -158,9 +159,13 @@ export default function LocalClientTrackLayer() {
             } else if (ctxTrack.refreshAnalytics) {
                 refreshAnalytics();
             } else {
-                // checkDeleteSelected();
-                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
-                    saveLocal();
+                if (ctx.createTrack?.enable && isEmptyTrack(ctx.selectedGpxFile) === false) {
+                    if (trackWasChanged(ctx.localTracks, ctx.selectedGpxFile)) {
+                        saveTrackToLocalStorage({ ctx, track: ctx.selectedGpxFile });
+                    }
+                    if (isNewTrack(ctx.localTracks, ctx.selectedGpxFile)) {
+                        createLocalTrack(ctx.selectedGpxFile, ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts);
+                    }
                 }
                 checkZoom();
                 checkUpdateLayers();
@@ -251,7 +256,7 @@ export default function LocalClientTrackLayer() {
 
         // Update the localLayers state after cleaning up
         setLocalLayers({ ...localLayers });
-    }, [ctx.localTracks, !!ctx.createTrack]);
+    }, [ctx.localTracks]);
 
     /*
         Track Editor state life cycle:
