@@ -14,10 +14,8 @@ import EditableMarker from '../util/creator/EditableMarker';
 import { effectDebouncer } from '../../util/Utils';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 import TracksRoutingCache, {
-    debouncer,
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
-    GET_ANALYSIS_DEBOUNCE_MS,
     requestAnalytics,
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
@@ -551,16 +549,6 @@ export default function LocalClientTrackLayer() {
             layers.addLayer(polyline);
         }
 
-        const analysis = () => {
-            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, points).then(
-                (res) => {
-                    if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
-                }
-            );
-        };
-
-        debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
-
         // saveChanges does useful job, but setSelectedGpxFile() is double-called (later, by parent)
         saveChanges(null, null, null, ctxTrack);
     }
@@ -761,7 +749,7 @@ export default function LocalClientTrackLayer() {
             ctxTrack = currentTrack;
         }
         let points = TracksManager.getEditablePoints(ctxTrack);
-        let layers = updateLayers({
+        ctxTrack.layers = updateLayers({
             map,
             ctx,
             localLayers,
@@ -771,8 +759,6 @@ export default function LocalClientTrackLayer() {
             deleteOld: false,
             trackLayers: new L.FeatureGroup(),
         });
-        layers.addTo(map);
-        ctxTrack.layers = layers;
         ctxTrack.points = points;
 
         ctxTrack.newPoint = points[points.length - 1];

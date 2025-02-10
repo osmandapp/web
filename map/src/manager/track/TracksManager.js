@@ -412,9 +412,20 @@ export function updateMetadata({ file, name = null }) {
 }
 
 function prepareTrackData({ file, getAnalysis = false }) {
+    let points = file.points;
+    points = points.map((point) => {
+        return {
+            lat: point.lat,
+            lng: point.lng,
+            ele: point.ele,
+            profile: point.profile,
+            geometry: point.geometry,
+        };
+    });
+
     // add updated points to track
-    if (file.tracks && file.tracks[0] && validateRoutePoints(file.points)) {
-        file.tracks[0].points = file.points;
+    if (file.tracks && file.tracks[0] && validateRoutePoints(points)) {
+        file.tracks[0].points = points;
     }
 
     // add metaData name if it isn't exist
