@@ -19,11 +19,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Introduction
 
-OsmAnd continues to enhance its navigation capabilities with the introduction of new fast and offline routing features. This latest update promises quicker route calculations and improved efficiency, all without needing an internet connection, making it ideal for travelers who rely on precise, reliable navigation anytime, anywhere.
+OsmAnd is introducing Fast Routing HH, a significant upgrade to its navigation system, designed to provide quicker, more efficient, and offline-friendly routing for users worldwide. This enhancement improves route calculation speed while maintaining OsmAnd’s core values of privacy, offline functionality, and customizability.
 
 <!--truncate-->
 
-## Routing types (algorithms)
+## What is Fast Routing HH?
+
+Fast Routing HH is a new routing engine built into OsmAnd, leveraging advanced algorithms to deliver faster route calculations. It replaces the previous routing method with a more optimized and scalable approach, significantly improving the app’s performance in generating navigation routes.
 
 - Describe the various [routing types](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings) available in OsmAnd (e.g., car, bike, pedestrian).
 - Explain how different routing types cater to different user needs.
@@ -31,17 +33,42 @@ OsmAnd continues to enhance its navigation capabilities with the introduction of
 
 ## Advantages of the New Fast Offline Routing
 
+- Faster Route Calculation: Routes are generated in a fraction of the time compared to the previous engine.
+- Efficient Performance: Improved handling of complex road networks, especially in urban areas.
+- Offline-Friendly: Fully functional without an internet connection, ensuring reliable navigation anywhere.
+- Optimized for Large Maps: Better scalability for extensive regions and detailed mapping data.
+
 - Speed Improvements: Explain how the new routing algorithm reduces calculation time.
 - Efficiency: Discuss improvements in route accuracy and optimization for various travel modes.
 - Battery and Data Usage: Highlight the benefits of reduced battery consumption and no need for a data connection.
 - User Experience: Describe how these enhancements improve the overall navigation experience.
 
+<!--
 ## Technical Details of the New Fast Offline Routing
 
 - Algorithm Improvements: Outline the technical changes or new algorithms used in fast offline routing.
 - Data Handling: Discuss how map data is processed and stored to optimize performance.
 - Memory and Processing Requirements: Explain the technical requirements for the device (e.g., memory usage, processing power).
 - Integration with Existing Features: How the new routing works with other OsmAnd features, like turn-by-turn navigation and route customization.
+-->
+
+## How Does It Work?
+
+OsmAnd uses HH routing for fast offline routing. Each month, we generate special routing data for offline maps, typically available by the 5th of each month. Once added to our maps, users can update their data to access the latest improvements.
+
+### Checkpoints and Routing Optimization
+
+Fast Routing HH optimizes navigation by using checkpoints, which act as predefined waypoints in the routing network:
+
+- Checkpoints are key navigation points, such as city exits and major road intersections.
+- Routing is calculated from checkpoint to checkpoint, reducing the number of route computations required.
+- This method is more efficient than traditional Graph-based routing, which requires analyzing numerous potential paths.
+- The entire system operates offline, leveraging OsmAnd OBF-maps.
+
+### Important Note for Users
+
+For accurate and seamless route calculations, users must ensure their maps are from the same update cycle. Using outdated maps can lead to inconsistencies in navigation. Please update your maps regularly to the latest version.
+
 
 ## Limitations of the New Offline Routing
 
@@ -49,6 +76,16 @@ OsmAnd continues to enhance its navigation capabilities with the introduction of
 - Accuracy in Remote Areas: Mention potential challenges with routing in less-mapped or complex areas.
 - Device Compatibility: Discuss which devices or OS versions fully support the new feature.
 - Complex Routing Scenarios: Outline any limitations when handling complex routes (e.g., long-distance, multi-point routing).
+
+## Examples 
+
+_I propose to make experiment with the same route for profiles (calculation time)_
+
+| HH Routing | Traditional Routing |
+|------------|----------------------|
+| Faster route calculation (time) | Slower route generation (time) |
+| GIF | GIF |
+
 
 ## Conclusion
 
