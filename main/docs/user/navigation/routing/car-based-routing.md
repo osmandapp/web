@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Car-based routing is designed to help drivers navigate efficiently, safely, and comfortably, by providing tailored directions that take into account the unique needs and preferences of each driver. Proper routing settings can help drivers save time, and fuel, and avoid hazards on the road. The fastest routing is offered by default.
+Car-based routing is designed to help drivers navigate the roads efficiently, safely, and comfortably, by providing customized directions tailored to each driver's unique needs and preferences. Proper routing settings can help drivers save time and fuel, and avoid hazards on the road. The fastest routing is offered by default.
 
 :::info
 The routing mechanism for motorized ground vehicles differs only in a few settings. The common parameters are described in the [Car](#route-parameters---car) section of this article. [Truck](#route-parameters---truck) and [Motorcycle](#route-parameters---motorcycle) have their own particularities.  
@@ -102,7 +102,7 @@ Motorcycle routing is the process of creating a route specifically optimized for
 
 ## Other Routing Settings
 
-- The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
+- The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 
 - In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
 
