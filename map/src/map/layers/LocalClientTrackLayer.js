@@ -565,7 +565,7 @@ export default function LocalClientTrackLayer() {
         let firstP = points[0];
         firstP.geometry = [];
         firstP.profile = TracksManager.PROFILE_LINE;
-        firstP.geoProfile = geoRouter.getGeoProfile({ profile: TracksManager.PROFILE_LINE });
+        firstP.geoProfile = geoRouter.getShortGeoProfile({ profile: TracksManager.PROFILE_LINE });
         return [firstP, prevPoint];
     }
 
@@ -676,7 +676,7 @@ export default function LocalClientTrackLayer() {
             ctx.setSelectedGpxFile({ ...ctxTrack });
             TracksManager.updateState(ctx);
         } else {
-            let newPoint = createNewPoint({ ctx, e, geoProfile: geoRouter.getGeoProfile() });
+            let newPoint = createNewPoint({ ctx, e, geoProfile: geoRouter.getShortGeoProfile() });
             let points = ctxTrack.points;
             let layers = ctxTrack.layers;
             let prevPoint = ctxTrack.prevPoint;
@@ -690,7 +690,9 @@ export default function LocalClientTrackLayer() {
                         prevPoint = getPrevPoint(points);
                         if (!prevPoint.profile) {
                             prevPoint.profile = TracksManager.PROFILE_LINE;
-                            prevPoint.geoProfile = geoRouter.getGeoProfile({ profile: TracksManager.PROFILE_LINE });
+                            prevPoint.geoProfile = geoRouter.getShortGeoProfile({
+                                profile: TracksManager.PROFILE_LINE,
+                            });
                         }
                         prevPoint.profile = newPoint.profile;
                         prevPoint.geoProfile = newPoint.geoProfile;

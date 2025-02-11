@@ -82,6 +82,27 @@ export function getGeoProfile(geoProfile) {
     };
 }
 
+export function getShortGeoProfile(geoProfile) {
+    const { type, router, profile, params } = this.getProfile(geoProfile);
+    return {
+        key: type + '_' + router + '_' + profile,
+        type,
+        router,
+        profile,
+        params: params ? prepareParams(params) : {},
+    };
+}
+
+function prepareParams(params) {
+    return Object.keys(params).map((key) => {
+        const p = params[key];
+        return {
+            key: p.key,
+            value: p.value,
+        };
+    });
+}
+
 /**
  * @return [{ key, name, color, icon, type, router, profile }]
  */
