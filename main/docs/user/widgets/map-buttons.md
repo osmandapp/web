@@ -28,7 +28,7 @@ Use these buttons to control how the map is displayed on the screen of your devi
 
 - **My Location**. Shows whether the center of the map is synchronized with your device's current geolocation.
 - **Zoom**. Allows you to adjust the map's zoom level to provide more or less details.
-If you would like more information on using these buttons, you can see the article [Interact with map](../map/interact-with-map.md#my-location-and-zoom).
+If you want more information on using these buttons, you can see the article [Interact with map](../map/interact-with-map.md#my-location-and-zoom).
 
 
 ## Directions
@@ -44,7 +44,7 @@ The **Directions** button is essential for route planning and navigation:
 Indicative states of the *Directions* button:
 
 - The *gray default icon* indicates that the route has not been created yet. Tapping this icon opens the [route setup](../navigation/setup/route-navigation.md) functionality.
-- The *blue default icon* indicates that a route has been built but navigation has not started yet. Tapping this icon opens the [route setup](../navigation/setup/route-navigation.md#start--stop-navigation) functionality.
+- The *blue default icon* indicates the route is built, but navigation has not started yet. Tapping this icon opens the [route setup](../navigation/setup/route-navigation.md#start--stop-navigation) functionality.
 - The *blue arrow icon* indicates that navigation is active. Tapping this icon opens the [details of the current route](../navigation/setup/route-details.md).
 
 
@@ -52,7 +52,7 @@ Indicative states of the *Directions* button:
 
 ![Configure Map](@site/static/img/widgets/configure_map.png)
 
-The **Configure map** button provides access to the [Configure Map menu](../map/configure-map-menu.md). The icon also reflects the [Current app profile](../personal/profiles.md), allowing you to quickly identify and switch between different profiles.
+The **Configure map** button provides access to the [Configure Map menu](../map/configure-map-menu.md). The icon also reflects the [Current app profile](../personal/profiles.md), allowing you to identify and switch between different profiles.
 
 
 ## Main Menu
@@ -83,10 +83,10 @@ The Compass button indicates the orientation of the map on your device screen. F
 **Movement direction**. In this mode, the map is oriented according to the direction of your movement known from GPS data. For example, if you turn to the right, the map also rotates so that the right side of the screen corresponds to the direction of movement. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).
 
 - ![Compass](@site/static/img/widgets/map_butt_compas_dir_ios.png)  
-**Compass direction**. The icon on the button points to the actual North, and the map moves according to the compass orientation of your device. This way, the north of the map corresponds to the real north and you can see the orientation of the map relative to the surrounding terrain. Your device should be in the most horizontal position possible. If your device does not have a compass sensor, the orientation of the map remains unchanged.
+**Compass direction**. The icon on the button points to the actual North, and the map moves according to the compass orientation of your device. This way, the north of the map corresponds to the real north, and you can see the orientation of the map relative to the surrounding terrain. Your device should be in the most horizontal position possible. If your device does not have a compass sensor, the orientation of the map remains unchanged.
 
 - ![Compass](@site/static/img/widgets/map_butt_north_up_ios.png)  
-**North is up**. In this mode, the map is fixed (with a hard lock) in the North direction, which is the top edge of your device. Regardless of the direction in which you move the device, the map remains static and you can see your position related to your surroundings. The map has no automatic or manual rotation.
+**North is up**. In this mode, the map is fixed (with a hard lock) in the North direction, which is the top edge of your device. Regardless of the direction the device is moving, the map remains static, and you can see your position related to your surroundings. The map has no automatic or manual rotation.
 
 ### Compass Tapping Behavior
 
@@ -96,7 +96,7 @@ The compass button provides multiple actions to control map orientation:
 
 - **Double tap**. To quickly switch between map orientation modes, such as following the GPS direction or rotating with the device, *double tap* the [Compass button](../widgets/map-buttons.md#compass) (when [visible](../widgets/map-buttons.md#display-options)).
 
-- **Long tap**. With a *long tap* the [Compass button](../widgets/map-buttons.md#compass) (when [visible](../widgets/map-buttons.md#display-options)) you can open a list of all map oriention modes and select the required one. This list can also be opened in the [Profile settings](../personal/profiles.md#appearance).
+- **Long tap**. With a *long tap* the [Compass button](../widgets/map-buttons.md#compass) (when [visible](../widgets/map-buttons.md#display-options)) you can open a list of all map orientation modes and select the required one. This list can also be opened in the [Profile settings](../personal/profiles.md#appearance).
 
 
 ### Display Options
@@ -124,7 +124,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 The compass icon on the button always points to the North. You can select how the compass button is displayed on the screen.
 
 - **Always visible**. The button does not disappear from the screen.
-- **Always hidden**. In this case, you cannot quickly change the orientation of the map, but the button will not take up space on the screen.
+- **Always hidden**. In this case, you cannot quickly change the map orientation, but the button will not take up space on the screen.
 - **Visible if the map is rotated**. The button is not visible while the compass is pointing North at the top edge of your device.  
 
 
@@ -150,7 +150,7 @@ Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 </Tabs>  
 
-- *<Translate android="true" ids="shared_string_hidden"/>*. If this mode is selected for a button, you have to use a gesture to change the map view. Tap the map with two fingers and move them up and down to adjust the map's tilt.  
+- *<Translate android="true" ids="shared_string_hidden"/>*. If this mode is selected for a button, you need to use a gesture to change the map view. Tap the map with two fingers and move them up and down to adjust the map's tilt.  
 - *<Translate android="true" ids="shared_string_visible"/>*. The button is always displayed on the map screen.
 - *<Translate android="true" ids="visible_in_3d_mode"/>*. The button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.  
 
@@ -162,24 +162,30 @@ Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 3. **Moving**. You can place the button anywhere on the screen of your device. To do this, hold down the button and without taking your finger off, drag it to the required place.
 
-4. **Button position**. The position of the button on the map on the application screen is saved separately for each profile.
+4. **Button position**. The button position on the map on the application screen is saved separately for each profile.
 
 5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/topography.md#configure-map-view) for the selected region.
 
 
 ## Custom Buttons
 
-[Quick action widget](./quick-action.md) is a configurable button with various action types that could be assigned to it. It is also possible to have multiple [Custom buttons](./quick-action.md#custom-buttons).
+[Quick action widget](./quick-action.md) is a configurable button with various action types that could be assigned. It is also possible to have multiple [Custom buttons](./quick-action.md#custom-buttons).
 
 
 ## Map Button Appearance
 
 <InfoAndroidOnly/>
 
-Customizing the appearance of buttons allows you to adjust the size, shape, icon, and background opacity for both [Quick Action (Custom buttons)](../widgets/quick-action.md#button-appearance) and [Default buttons](../widgets/configure-screen.md#button-appearance). This flexibility lets you personalize the interface to suit your preferences and improve usability. These options are available via the following menus:
+| Default buttons | Custom buttons |
+| :--- | :--- |
+| ![Map Button Appearance](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![Map Button Appearance](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
+
+Setting for the map button appearance are available via the following menus:
 
 - *Menu → Configure screen → Buttons → Default buttons*
 - *Menu → Configure screen → Custom buttons → Quick action → three-dot menu → Appearance*
+
+Customizing the appearance of buttons allows you to adjust the size, shape, icon, and background opacity for both [Quick Action (Custom buttons)](../widgets/quick-action.md#button-appearance) and [Default buttons](../widgets/configure-screen.md#button-appearance). This flexibility lets you personalize the interface to suit your preferences and improve usability.
 
 
 ## Related Articles
@@ -191,4 +197,4 @@ Customizing the appearance of buttons allows you to adjust the size, shape, icon
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in October 2024*
+> *This article was last updated in February 2025*

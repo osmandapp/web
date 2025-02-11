@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Information widgets are needed for quick access to information important you. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to your specific requirements, enabling their visibility on the application screen or disabling them if necessary.
+Information widgets are needed for quick access to information important to you. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to your specific requirements, enabling their visibility on the application screen or disabling them if necessary.
 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
@@ -81,8 +81,7 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 
 </Tabs>
 
-You can use the widget to find out the elevation of the current map center above sea level.
-[Terrain map (Hillshade and Slope)](../plugins/topography.md#download-maps) of the required area is needed to display information in the **Elevation: map center widget**.  
+You can use the widget to find out the elevation of the current map center above sea level. A [Terrain map (Hillshade and Slope)](../plugins/topography.md#download-maps) of the required area is needed to display information in the **Elevation: map center widget**.  
 
 | | |
 |:------------|:------------|
@@ -105,7 +104,7 @@ This widget displays the current time taken from your device.
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="map_widget_plain_time"/>* |
 | By tapping | No changes |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
-| Format | Time & Format is configured by device settings. |
+| Format | Device settings configure Time & Format. |
 
 
 ## Current Speed
@@ -141,16 +140,16 @@ The widget shows the current speed detected by the GPS sensor.
 
 </Tabs>  
 
-This widget shows your average speed for a selected time interval and does not require any other features such as track recording or navigation. You can easily use it to check if your average speed is in line with highway speed limits or record your average speed for the last 5-15 minutes of cycling.  
+This widget shows your average speed for a selected time interval and does not require other features such as track recording or navigation. You can easily use it to check if your average speed is in line with highway speed limits, or record your average speed for the last 5–15 minutes of cycling.  
 
-Tap the Average Speed widget *Settings* button (*Android*) or tap the added widget field (*iOS*) to select the time interval and the stop on/off option.  
+Tap the Average Speed widget *Settings* button (*Android*) or the added widget field (*iOS*) to select the time interval and the stop on/off option.  
 
 **Time interval**  
 The average speed is calculated for a given time interval according to your selection. Thus, you can set the average speed calculation interval from 15 seconds to 60 minutes. In general, the average speed is taken from the recorded GPS points: ```Average Speed = AVERAGE(GPS_LOCATION.speed)```.  
 
 **Take stops into account**  
 ***Off*** *setting*. A long stop will also add zeros to the average speed calculation, which can significantly change the overall value.
-***On*** *setting*. If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This allows your average speed to not change much when you stop, for example at a traffic light or want to take a break from cycling.
+***On*** *setting*. If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This ensures that your average speed won't change much when you stop at a stoplight or want to take a break from cycling.
 
 **Reset average speed (*Android*)**  
 You can reset the current average speed value using two methods:
@@ -207,13 +206,13 @@ After resetting, the average speed will be calculated from the beginning, starti
 
 </Tabs>  
 
-Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-panels) provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you assess the efficiency of your descent or ascent when navigating to a specific location ([Map marker](../personal/markers.md) position). It calculates the glide ratio as the ratio of the distance to the difference in altitude between your current position and your intended destination. You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
+The [simple](../widgets/configure-screen.md#widgets-for-all-panels) *Glide Ratio* widgets provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you evaluate the efficiency of your descent or ascent when navigating to a specific location ([marker](../personal/markers.md) position on the map). It calculates the glide ratio as the ratio of distance to the difference in altitude between your current position and your intended destination. You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
 
 **Widgets use:**
 
 - *Planning soaring flights.* For soaring pilots, the *Glide ratio to the target* widget becomes an indispensable tool when planning and executing soaring flights. Pilots can estimate how far they can fly to their target given the current conditions and the required glide ratio.
-- *Optimize climbs and descents.* The average glide ratio allows pilots to optimize climbs and descents based on current conditions. Pilots can choose the optimal timing for climbs to maximize flight time or for descents to reach a target point.
+- *Optimize climbs and descents.* The average glide ratio allows pilots to optimize climbs and descents based on current conditions. Pilots can choose the optimal timing for climbs to maximize flight time, or for descents to reach a target point.
 - *Reacting to changing conditions.* The widget provides continuous glide ratio updates, allowing pilots to react instantly to changes in atmospheric conditions or routes. They can adjust their flight plan to ensure safety and efficiency.
 - *Maximum use of horizontal distance.* Knowing the glide ratio allows pilots to maximize the use of horizontal distance to move to the target, which is especially important when planning long flights.
 - *Risk reduction*. The *Glide ratio to the target* widget helps pilots avoid situations where reaching the target becomes impossible due to insufficient glide ratio. This helps to reduce risks and improve flight safety.
@@ -227,10 +226,10 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 
 **Rounding/Formatting:**
 
-- Value **<= 0.1**:  
+- Value **≤ 0.1**:  
   - "0.05" is displayed as "0".
 - Value **> 0.1 and < 100**:  
-  - for example, "50.7643" is displayed as "50.8:1.".
+  - for example, "50.7643" is displayed as "50.8:1".
 - Value **> 100:**  
   - "102.35" is displayed as "102:1."
 
@@ -251,7 +250,7 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 ### Average Glide Ratio
 
 - **Average glide ratio** shows the average glide ratio for a specified time interval.
-- **Average vertical speed** indicates the rate at which an object ascends or descends over some time. For evaluation take into account only the first and last point in time interval. You can set the time interval for this widget from 15 seconds to 60 minutes. The [Map marker](../personal/markers.md) should be used as the target point.
+- **Average vertical speed** indicates the rate at which an object ascends or descends over a while. Only the first and last points of the time interval are considered for evaluation. You can set the time interval for this widget from 15 seconds to 60 minutes. You should use the [Map marker](../personal/markers.md) as the target point.
 
 | | |
 |:------------|:------------|
@@ -265,7 +264,10 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 
 ![Battery level widget](@site/static/img/widgets/battery_level_widget.png)  
 
-This widget shows the battery level of your device.
+The **Battery Level** widget displays your device's battery percentage right on the map screen and updates automatically at least once a minute.
+
+- In **iOS 17 and later**, due to **privacy restrictions**, battery level data is only available in 5% increments (e.g., 35%, 60%, or 85%). This is a system limitation imposed by Apple.
+- On **Android** devices, the widget displays the exact battery percentage as reported by the system, without rounding.
 
 | | |
 |:------------|:------------|
@@ -276,13 +278,6 @@ This widget shows the battery level of your device.
 
 
 ## Coordinates Widget
-
-OsmAnd offers two types of coordinate widgets:
-
-- **Coordinates: map center** - shows the geographic coordinates of the current map center.
-- **Coordinates: current location** - shows the geographic coordinates of current geolocation.
-
-Coordinates widgets are displayed at the top of the screen. Icons with a green background show the latitude and longitude of the point in the center of the visible part of the map, and those with a blue background show the coordinates of your current location. Information about supported *Сoordinates formats* can be found in the *[Search coordinates article](../search/search-coordinates.md#coordinate-format)*.
 
 <Tabs groupId="operating-systems">
 
@@ -299,6 +294,13 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 </TabItem>
 
 </Tabs>
+
+OsmAnd offers two types of coordinate widgets:
+
+- **Coordinates: map center** - shows the geographic coordinates of the current map center.
+- **Coordinates: current location** - shows the geographic coordinates of current geolocation.
+
+Coordinates widgets are displayed at the top of the screen. Icons with a green background show the latitude and longitude of the point in the center of the visible part of the map, and those with a blue background show the coordinates of your current location. Information about supported *Coordinates formats* can be found in the *[Search coordinates article](../search/search-coordinates.md#coordinate-format)*.
 
 | | |
 |:------------|:------------|
@@ -418,7 +420,7 @@ The Radius Ruler widget shows the distance between your location and the center 
 **Speedometer widget** is a graphical display of the current vehicle speed based on *data received from the GPS*. It allows you to monitor in real-time the compliance between your speed and the allowable speed limit. The allowable speed limit is provided by [*OpenStreetMap data*](https://wiki.openstreetmap.org/wiki/Key:maxspeed) for a particular road section and OsmAnd [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.  
 
 - In the *Speedometer settings*, you can select the size (**Height**) of the widget on the application screen as, *Small*, *Medium* or *Large*.
-- You can specify when to receive a **Speed limit warning** selecting *Always* or *When exceeded*.
+- You can specify when to receive a **Speed limit warning,** selecting *Always* or *When exceeded*.
 
 <table class="blogimage">
     <tr>
@@ -753,4 +755,5 @@ The **Available RAM** widget is a tool for monitoring your device's memory usage
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in December 2024*
+> *This article was last updated in February 2025*
+

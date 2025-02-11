@@ -76,13 +76,9 @@ Downloading maps into the OsmAnd application is an important step that determine
 - [Weather forecast](../plugins/weather.md). Weather information on a map for easy route planning.
 - [Online raster maps](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
 
-#### World overview map
+#### World Overview Map
 
 Versions of OsmAnd up to 3.8 offer to download a world map so you can view it on a planetary scale. In newer versions of OsmAnd, a lightweight *Mini World Map* is bundled with the application. The app lets you download a larger overview world map with more detailed information.
-
-#### Bulk map loading
-
-For countries consisting of **multiple region maps**, you can use bulk map download. Maps available for this type of download are displayed with a double download arrow icons and a label with the number of regions inside (*e.g. All Regions: 7*).
 
 
 ## Maps & Resources
@@ -98,8 +94,11 @@ The **Maps & Resources** *Main Menu* section of the OsmAnd app provides access t
 - **Refresh**. Reloads the list of available maps from the OsmAnd server.  
 - **Search**. Search for maps by **country**, **province**, or major **city**.  
 - **Device memory**. Shows on the indicator how much memory is available for download and how many maps can be downloaded for free. Depending on the tab, sometimes slightly different data is displayed.  
-- **Map counter** (*Free version* is only visible if you don't have a [subscription](../purchases/index.md)). The indicator with dividers shows how many maps you have left to download out of the *7 available*.  
-    **NOTE** *that monthly map updates count as one more map download and are subtracted from the available number of free map downloads.*
+- **Map counter** (*Free version* is only visible if you don't have a [subscription](../purchases/index.md)). The indicator with dividers shows how many maps you have left to download out of the *7 available*.
+
+:::info monthly map updates
+Please note that monthly map updates are considered another map download and are substracted from the available number of free map downloads.
+:::
 
 
 ### Downloads
@@ -110,7 +109,7 @@ The **Maps & Resources** *Main Menu* section of the OsmAnd app provides access t
 
 Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
-![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)  
+![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)
 
 </TabItem>
 
@@ -128,13 +127,17 @@ The **Download** tab lets you download various map types from OsmAnd servers, re
 
 ***To download a map:***
 
-- Open the **Download** tab, locate the required section, and tap the relevant folder to see available maps.
-- **Available maps** display a download icon.
+- **Open the Download** tab, locate the required section, and tap the relevant folder to see available maps.
+
+- **Available maps** display download icons, for a single map or for [multiple maps](#multiple-map-loading).
+
 - **Downloaded maps** show a green icon with a menu button:  
-    *Android*: Three-dot menu.  
-    *iOS*: Info (I) icon.
+    - *Android*: Three-dot menu.  
+    - *iOS*: Info (I) icon.
+
 - **Maps in the process of loading** have an icon visualizing this. To cancel the download, tap the icon. To view the list of maps in the download queue and cancel the downloads, tap the Download bar in the Device memory info area of the Downloads and Updates tabs.
-- In the **Free version**, maps unavailable for download show a [GET](../purchases/index.md) icon, linking to the purchase page.
+
+- **In the Free version**, maps unavailable for download show a [GET](../purchases/index.md) icon, linking to the purchase page.
 
 ***The downloads tab consists of map groups:***
 
@@ -158,6 +161,27 @@ In the Download Maps menu, there is a **World Maps** section that provides acces
 - **All world (Weather forecast)**. Allows you to download a map with weather information.
 
 Information about *maps menu* and *actions* can be found in the article [Download maps](../start-with/download-maps.md).
+
+
+#### Multiple Map Loading
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Download map menu general Android](@site/static/img/personal/maps/multiple_maps_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Download map menu general iOS](@site/static/img/personal/maps/multiple_maps_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+For countries consisting of **multiple region maps**, you can use bulk loading of multiple maps. Maps available for this type of download are displayed with a double download arrow icons and a label with the number of regions inside (e.g. Contour lines / All Regions: 10). You get to choose how many maps to download.
 
 
 ### Local
@@ -226,6 +250,19 @@ Each item in the list offers a *three-dot menu* with options:
 - **Rename**. Customize the map’s name for better identification.
 - **Remove**. Delete the map from your device.
 - **Edit** (for Online Maps). Modify the online map configuration.
+
+#### Map source items menu
+
+![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
+
+Each item in the [Map source](../map/raster-maps.md) list provides settings for managing online raster map stored on your device. Open the *three-dot menu* to access the available actions:
+
+- [Info](#local-data-item-overview). Displays general details about the selected map source, including format and last update date.  
+- **Calculate Size**. Estimates the storage occupied by the cached tiles of this map source. If the cache exceeds *50MB*, the size can be displayed as *≥50MB* instead of an exact number.
+- **Clear All Tiles**. Deletes all cached tiles for the selected map source, freeing up storage while keeping the map source available for future use.  
+- **Export**. Saves the selected map source configuration for backup or sharing.  
+- **Remove**. Deletes the selected map source. This action does not affect downloaded offline maps but clears the associated cache.
+
 
 #### Local Data Item Overview
 
@@ -384,4 +421,4 @@ Maintain at least [**30 edits**](https://github.com/osmandapp/OsmAnd/blob/master
 - How to delete search history. [(check)](../troubleshooting/general.md#how-to-delete-search-history)
 - For additional troubleshooting, visit: [Maps & Data](../troubleshooting/maps-data.md)
 
-> *This article was last updated in January 2025*
+> *This article was last updated in February 2025*

@@ -131,17 +131,47 @@ To display the bearing, a **target point** must be selected. If a **destination*
 
 ## Navigation Points
 
-*Navigation point* widgets show the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
+<!--
+*Navigation point* widgets group is enabled during navigation to display information such as distance, arrival or left time, next turns, bearing, current street name, lanes information, max speed, approaching alerts, POIs, waypoints.
+-->
+
+The *Navigation point* widgets group shows the remaining distance to your destination, the intermediate point, the arrival time at the intermediate point or travel time for the calculated route, and the estimated time of arrival.
+
+### Route Information
+
+<InfoAndroidOnly />
+
+![Destination widget](@site/static/img/widgets/route_information_widget.png)  
+
+The *Route Information* widget provides real-time data about the ongoing navigation route and a quick way [to manage an active route](../navigation/setup/route-navigation.md#start--stop-navigation). It helps to keep track of key route details and allows you to stop or resume the current navigation session with minimal interaction.
+
+**Displayed information:**
+
+- **Estimated arrival time (ETA)**. Shows the expected arrival time at the final destination.
+- **Remaining travel time**. Displays the estimated time left to reach the destination.
+- **Distance to destination**. Indicates the total remaining distance to the final destination and distances to intermediate points.
+
+**Settings menu**.  
+Select a *Default View* to prioritize one of the following values: *Estimated arrival time*, *Time to go*, *Distance*.
+
+> NOTE: The widget is visible only during navigation.
+
+| | |
+|:------------|:------------|
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
+| By tapping | Tap the button with arrow to open [Start/Stop Navigation panel](../navigation/setup/route-navigation.md#start--stop-navigation) |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats"/>* |
 
 ### Distance to Destination
 
 ![Destination widget](@site/static/img/widgets/destination_widget.png)  
 
-The widget displays the distance left to the last destination point when following a calculated route.  
+The widget displays the distance remaining to the last destination point when following a calculated route.  
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → All panels → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
 |  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
 | By tapping | Moves the map to the destination point. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
@@ -150,7 +180,7 @@ The widget displays the distance left to the last destination point when followi
 
 ![Intermediate destination widget](@site/static/img/widgets/intermediate_destination_widget.png)
 
-The widget shows the distance to the first intermediate point along the calculated route. After passing intermediate points, the space will be updated to the next intermediate point. If there are no intermediate points, the widget is not displayed.  
+The widget shows the distance to the first intermediate point along the calculated route. After passing intermediate points, the space will be updated to the next intermediate point. If there are no intermediate points, the widget is not displayed.
 
 | | |
 |:------------|:------------|
@@ -177,7 +207,7 @@ The widget shows the distance to the first intermediate point along the calculat
 
 </Tabs>  
 
-The widget shows the *Arrival time* or *Time to go* to the first intermediate point. During navigation, the time is constantly updated, and as soon as an intermediate point is passed, the time will be updated to the next one.  For example, if you stop navigation, the *Time to go* will remain unchanged and the *Arrival Time* will be equal to the *Time to go* plus the *Current Time*.
+The widget shows the *Arrival time* or *Time to go* to the first intermediate point. During navigation, the time is constantly updated, and as soon as an intermediate point is passed, the time will be updated to the next waypoint. For example, if you stop navigation, the *Time to go* will remain unchanged and the *Arrival Time* will be equal to the *Time to go* plus the *Current Time*.
 
 | | |
 |:------------|:------------|
@@ -205,7 +235,7 @@ The widget shows the *Arrival time* or *Time to go* to the first intermediate po
 
 </Tabs>
 
-The widget shows the *Arrival time* or *Time to go* to the last destination point. The time is constantly updated during navigation and is equal to the route time from your current location.  
+The widget displays the *Arrival time* or *Time to go* to the last destination point. The time is constantly updated during navigation and is equal to the route time from your current location.  
 
 | | |
 |:------------|:------------|
@@ -225,7 +255,7 @@ The *Speed Limit* widget displays the current speed limit based on the map data 
 - Widget works in passive and active navigation modes.
 - If speed limit data is unavailable for a specific road or area, *the widget will not appear*.
 
-*NOTE:* Ensure your [maps are up-to-date](../personal/maps-resources.md#updates) and that you have downloaded all necessary regional data to access the latest speed limit information.
+> NOTE: Ensure your [maps are up-to-date](../personal/maps-resources.md#updates) and that you have downloaded all necessary regional data to access the latest speed limit information.
 
 | |
 |:------------|:------------|

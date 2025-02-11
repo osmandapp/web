@@ -26,7 +26,7 @@ A point on a line is a virtual point the distance from which to the destination 
 ## Route Parameters - Direct-to-Point
 
 *Direct-to-point* routing type is not linked to any profile and can be used with different ones.
-This type of routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-details.md) section is empty).  
+This type of routing does not consider any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-details.md) section is empty).  
 
 :::note
 When using Direct-to-point and Boat navigation types, you will need [Depth contours data](../../plugins/nautical-charts.md#nautical-map-style), which can be enabled and set in *Configure map*.

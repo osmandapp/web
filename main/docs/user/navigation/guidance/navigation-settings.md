@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-For successful navigation, it's important to properly configure the appropriate settings according to your needs and how you travel - by car, on foot, on horseback, or on skis. This article describes the basic route parameters, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, [Fuel tank capacity](#fuel-tank-capacity), and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
+For successful navigation, it's important to properly configure the appropriate settings according to your needs and how you travel - by car, on foot, on horseback, or skis. This article describes the basic route parameters, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, [Fuel tank capacity](#fuel-tank-capacity), and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
 
 <Tabs groupId="operating-systems">
 
@@ -479,6 +479,12 @@ The **Default speed** is the preset movement speed. It is used to calculate the 
 
 #### Road Speeds
 
+<InfoAndroidOnly />
+
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
+
+
+<!--
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -498,6 +504,8 @@ The **Default speed** is the preset movement speed. It is used to calculate the 
 :::note
 These settings in iOS are available in *Menu → Settings → app profile → Navigation settings → Route parameters → Road speeds*.
 :::
+
+-->
 
 - **Minimum speed**  
     The setting sets the minimum driving speed for all road types on the route. It increases the priority for roads with a recommended speed lower than the minimum speed.  
@@ -532,4 +540,4 @@ With the [Navigation by track](../setup/gpx-navigation.md) option, when the requ
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in December 2024*
+> *This article was last updated in February 2025*

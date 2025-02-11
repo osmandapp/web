@@ -21,7 +21,7 @@ Unlike traditional routing algorithms that use roads, trails, or predefined rout
 
 <!-- ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png)  -->
 
-- *Straight line* routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests.
+- The *Straight line* routing does not consider any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests.
 - It does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-details.md) section is empty).
 
 ![Straight-line Navigation type Android](@site/static/img/navigation/routing/straight_line_routing_andr.png)

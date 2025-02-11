@@ -86,7 +86,7 @@ These routing types for the boat profile can be activated using the following pa
 When using Direct-to-point and Boat navigation types, you will need [Depth contours data](../../plugins/nautical-charts.md#nautical-map-style), which can be enabled and set in *Configure map*.
 :::
 
-The [Direct-to-point routing type](./direct-to-point-routing.md) can be used with the boat profile when you want to navigate your boat in open water without following any specific route or waterway. This routing type allows you to set a destination point and OsmAnd will calculate a direct path to that point from your current location. This type of routing doesn't take into account the characteristics of your boat such as minimum and maximum speeds, height and width. Your route will not be recalculated in case of deviation.
+The [Direct-to-point routing type](./direct-to-point-routing.md) can be used with the boat profile when you want to navigate your boat in open water without following any specific route or waterway. This routing type allows you to set a destination point and OsmAnd will calculate a direct path to that point from your current location. This type of routing doesn't consider the characteristics of your boat such as minimum and maximum speeds, height and width. Your route will not be recalculated in case of deviation.
 
 ![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 
@@ -100,7 +100,7 @@ The [Straight line routing type](./straight-line-routing) can be used with the b
 
 ## Other Routing Settings
 
-- The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
+- The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 
 - In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
 
