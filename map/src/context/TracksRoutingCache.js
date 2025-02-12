@@ -25,7 +25,9 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
                 ctx.trackRouter.updateRouteBetweenPoints(ctx, startPoint, endPoint, geoProfile).then(
                     (result) => {
                         setStartedRouterJobs((x) => x - 1);
-                        updateTrackRouteTypes(result, ctx);
+                        if (result) {
+                            updateTrackRouteTypes(result, ctx);
+                        }
                         ctx.mutateRoutingCache((o) => o[key] && (o[key].geometry = result));
                     },
                     (error) => {

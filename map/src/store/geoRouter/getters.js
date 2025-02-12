@@ -93,7 +93,7 @@ export function getShortGeoProfile(geoProfile) {
     };
 }
 
-function prepareParams(params) {
+export function prepareParams(params) {
     return Object.keys(params).map((key) => {
         const p = params[key];
         return {

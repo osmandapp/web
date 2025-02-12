@@ -1,4 +1,5 @@
 import TracksManager from '../../manager/track/TracksManager';
+import { prepareParams } from './getters';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
@@ -62,6 +63,7 @@ export function onGeoProfile({ type = null, router = null, profile = null, param
         type = geoProfile.type ?? type;
         router = geoProfile.router ?? router;
         profile = geoProfile.profile ?? profile;
+        params = geoProfile.params ? prepareParams(geoProfile.params) : prepareParams(params);
     }
 
     const picked = this.pickTypeRouterProfile({ type, router, profile });
