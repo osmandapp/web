@@ -174,7 +174,7 @@ export default function LocalClientTrackLayer() {
                 refreshAnalytics();
             } else {
                 if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
-                    if (trackWasChanged(ctx.localTracks, ctxTrack)) {
+                    if (ctx.localTracks.length > 0) {
                         saveTrackToLocalStorage({ ctx, track: ctxTrack });
                     }
                     if (isNewTrack(ctx.localTracks, ctxTrack)) {
@@ -464,20 +464,22 @@ export default function LocalClientTrackLayer() {
     }
 
     function checkUpdateLayers() {
-        ctxTrack.updateLayers = false;
-        if (!ctxTrack.layers) {
-            ctxTrack.layers = new L.FeatureGroup();
+        if (ctxTrack?.updateLayers) {
+            ctxTrack.updateLayers = false;
+            if (!ctxTrack.layers) {
+                ctxTrack.layers = new L.FeatureGroup();
+            }
+            ctxTrack.layers = updateLayers({
+                map,
+                ctx,
+                localLayers,
+                ctxTrack,
+                points: ctxTrack.points,
+                wpts: ctxTrack.wpts,
+                trackLayers: ctxTrack.layers,
+            });
+            saveChanges(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers);
         }
-        ctxTrack.layers = updateLayers({
-            map,
-            ctx,
-            localLayers,
-            ctxTrack,
-            points: ctxTrack.points,
-            wpts: ctxTrack.wpts,
-            trackLayers: ctxTrack.layers,
-        });
-        saveChanges(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers);
     }
 
     function updateTrackOnMap(track, active) {
@@ -762,10 +764,8 @@ export default function LocalClientTrackLayer() {
             ctxTrack,
             points,
             wpts: ctxTrack.wpts,
-            deleteOld: false,
             trackLayers: new L.FeatureGroup(),
         });
-        ctxTrack.layers.addTo(map);
         ctxTrack.points = points;
 
         ctxTrack.newPoint = points[points.length - 1];
