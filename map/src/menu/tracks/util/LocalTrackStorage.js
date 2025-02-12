@@ -1,4 +1,3 @@
-import { compressFromJSON, decompressToJSON } from '../../../util/GzipBase64.mjs';
 import { addDistance, NAN_MARKER, prepareLocalTrack, TRACK_VISIBLE_FLAG } from '../../../manager/track/TracksManager';
 import _ from 'lodash';
 
@@ -114,7 +113,7 @@ export async function loadLocalTracksFromStorage(setLoading) {
         request.onsuccess = async function () {
             for (let record of request.result) {
                 try {
-                    const json = await decompressToJSON(record.data);
+                    const json = record.data;
                     if (json) {
                         fixNanEleWpt(json);
                         localTracks[record.id] = json;
@@ -150,14 +149,13 @@ export function saveTrackToLocalStorage({ ctx, track }) {
         ctx.setLocalTracks([...localTracks]);
     }
 
-    compressFromJSON(prepareLocalTrack(track)).then((res) => {
-        saveTrackToDB(currentTrackIndex, res).then();
-    });
+    const res = prepareLocalTrack(track);
+    saveTrackToDB(currentTrackIndex, res).then();
 }
 
 async function updateStoredLocalTracks(tracks) {
     for (let track of tracks) {
-        let res = await compressFromJSON(prepareLocalTrack(track));
+        let res = prepareLocalTrack(track);
         if (res) {
             await deleteAllTracksFromDB();
             await saveTrackToDB(_.indexOf(tracks, track), res);
