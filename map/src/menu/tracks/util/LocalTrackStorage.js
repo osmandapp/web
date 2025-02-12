@@ -127,7 +127,7 @@ export async function loadLocalTracksFromStorage(setLoading) {
                     await deleteTrackFromDB(record.id);
                 }
             }
-            localTracks = fixLocalTracks(localTracks); // fix holes
+            //localTracks = fixLocalTracks(localTracks); // fix holes
             localTracks = openVisibleTracks(localTracks); // mark visible
             setLoading(false);
             resolve(localTracks);
@@ -150,14 +150,18 @@ export function saveTrackToLocalStorage({ ctx, track }) {
     }
 
     const res = prepareLocalTrack(track);
-    saveTrackToDB(currentTrackIndex, res).then();
+    saveTrackToDB(currentTrackIndex, res)
+        .then()
+        .catch(() =>
+            ctx.setRoutingErrorMsg('⚠️ Failed to save the local track. Please check your storage space or try again.')
+        );
 }
 
 async function updateStoredLocalTracks(tracks) {
+    await deleteAllTracksFromDB();
     for (let track of tracks) {
         let res = prepareLocalTrack(track);
         if (res) {
-            await deleteAllTracksFromDB();
             await saveTrackToDB(_.indexOf(tracks, track), res);
         }
     }
