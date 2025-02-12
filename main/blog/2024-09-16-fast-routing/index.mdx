@@ -1,6 +1,6 @@
 ---
 slug: fast-routing
-title: Discover OsmAnd’s New Fast and Offline Routing (draft)
+title: "Optimizing Offline Navigation: HH vs. Traditional Routing (draft)"
 authors: eugene
 tags: [ios, android]
 unlisted: true
@@ -17,31 +17,26 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-## Introduction
 
-OsmAnd is introducing Fast Routing HH, a significant upgrade to its navigation system, designed to provide quicker, more efficient, and offline-friendly routing for users worldwide. This enhancement improves route calculation speed while maintaining OsmAnd’s core values of privacy, offline functionality, and customizability.
+## Integration of Highway Hierarchy (HH) routing in OsmAnd
+
+In today's fast-paced world, efficient navigation is paramount, especially for those who prefer offline solutions. OsmAnd continually strives to enhance user experience by implementing advanced routing algorithms. One such innovation is the integration of the Highway Hierarchy (HH) routing algorithm, designed to provide fast and accurate route calculations, even without an internet connection.
 
 <!--truncate-->
 
-## What is Fast Routing HH?
+## What is fast HH routing
 
-Fast Routing HH is a new routing engine built into OsmAnd, leveraging advanced algorithms to deliver faster route calculations. It replaces the previous routing method with a more optimized and scalable approach, significantly improving the app’s performance in generating navigation routes.
+The HH routing algorithm is a method that streamlines route calculations by organizing roads into a hierarchy based on their significance. **Primary and arterial roads are prioritized over local streets**, allowing the algorithm to compute routes more efficiently by focusing on the most critical segments of the network.  
 
-- Describe the various [routing types](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings) available in OsmAnd (e.g., car, bike, pedestrian).
-- Explain how different routing types cater to different user needs.
-- Introduce the new fast offline routing feature, distinguishing it from the existing options.
+This hierarchical approach reduces computational complexity, resulting in faster route planning. This is particularly beneficial for offline navigation where processing resources are limited.
 
-## Advantages of the New Fast Offline Routing
 
-- Faster Route Calculation: Routes are generated in a fraction of the time compared to the previous engine.
-- Efficient Performance: Improved handling of complex road networks, especially in urban areas.
-- Offline-Friendly: Fully functional without an internet connection, ensuring reliable navigation anywhere.
-- Optimized for Large Maps: Better scalability for extensive regions and detailed mapping data.
+## Implementation of HH Routing
 
-- Speed Improvements: Explain how the new routing algorithm reduces calculation time.
-- Efficiency: Discuss improvements in route accuracy and optimization for various travel modes.
-- Battery and Data Usage: Highlight the benefits of reduced battery consumption and no need for a data connection.
-- User Experience: Describe how these enhancements improve the overall navigation experience.
+OsmAnd has integrated HH routing into its offline navigation system to enhance performance. Each month, the OsmAnd team generates about 5 specialized routing data, which is then incorporated into the offline OBF maps. You can access these updates by refreshing maps.  
+
+A critical component of this system is the use of control points. These are **strategically selected locations on the map, such as city exits or primary intersections**, that serve as *key nodes* in the routing process. The HH algorithm simplifies the pathfinding process by calculating routes from one control point to another, enabling fast route determination.
+
 
 <!--
 ## Technical Details of the New Fast Offline Routing
@@ -52,49 +47,69 @@ Fast Routing HH is a new routing engine built into OsmAnd, leveraging advanced a
 - Integration with Existing Features: How the new routing works with other OsmAnd features, like turn-by-turn navigation and route customization.
 -->
 
-## How Does It Work?
 
-OsmAnd uses HH routing for fast offline routing. Each month, we generate special routing data for offline maps, typically available by the 5th of each month. Once added to our maps, users can update their data to access the latest improvements.
+## Advantages of HH Routing
 
-### Checkpoints and Routing Optimization
+The implementation of HH routing in OsmAnd offers several notable benefits:
 
-Fast Routing HH optimizes navigation by using checkpoints, which act as predefined waypoints in the routing network:
+- **Speed**. The algorithm reduces route calculation time by focusing on primary roads and using control points, providing fast navigation guidance.
 
-- Checkpoints are key navigation points, such as city exits and major road intersections.
-- Routing is calculated from checkpoint to checkpoint, reducing the number of route computations required.
-- This method is more efficient than traditional Graph-based routing, which requires analyzing numerous potential paths.
-- The entire system operates offline, leveraging OsmAnd OBF-maps.
+- **Accuracy**. The hierarchical structure ensures that the most appropriate and practical routes are selected, enhancing the overall navigation accuracy.
 
-### Important Note for Users
+- **Resource optimization**. HH routing minimizes the computational load on devices, which is particularly advantageous for offline scenarios where processing power and storage may be constrained.
 
-For accurate and seamless route calculations, users must ensure their maps are from the same update cycle. Using outdated maps can lead to inconsistencies in navigation. Please update your maps regularly to the latest version.
+In contrast to traditional graph routing methods that evaluate numerous possible paths, HH routing streamlines the process by concentrating on essential routes.
 
 
-## Limitations of the New Offline Routing
+## Update Maps for Optimal HH Routing
 
-- Coverage: Describe any geographical or map data limitations.
-- Accuracy in Remote Areas: Mention potential challenges with routing in less-mapped or complex areas.
-- Device Compatibility: Discuss which devices or OS versions fully support the new feature.
-- Complex Routing Scenarios: Outline any limitations when handling complex routes (e.g., long-distance, multi-point routing).
+To take full advantage of HH routing, it is important to keep your offline maps up to date. OsmAnd releases updated routing data at the beginning of each month.
 
-## Examples 
+- To [update your maps](https://osmand.net/docs/user/personal/maps-resources#updates), go to *Menu → Maps & Resources → Updates*.
+- To [select routing type](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings), go to *Menu → Settings → app profile → Navigation settings → Route parameters → Development → Routing type (Android) / Routing algorithm (iOS)*
 
-_I propose to make experiment with the same route for profiles (calculation time)_
 
-Start point - [48.73829 13.41383](https://osmand.net/map/?pin=48.738262,13.413754#18/48.73823/13.41362)
+## Example
 
-Finish point - [47.94505 7.73573](https://osmand.net/map/?pin=47.945066,7.735711#19/47.94500/7.73592)
+To better understand the efficiency of **HH x C++ Fast Routing** compared to **Traditional A* 2-phase Routing**, let’s experiment using the same route across both profiles.
 
-OsmAnd Web - [navigation route](https://osmand.net/map/navigate/?start=48.738290,13.413830&end=47.945050,7.735730&profile=car#7/48.611/11.530)
+***Test route:***
+
+- **Start:** [48.73829, 13.41383](https://osmand.net/map/?pin=48.738262,13.413754#18/48.73823/13.41362)
+- **Finish:** [47.94505, 7.73573](https://osmand.net/map/?pin=47.945066,7.735711#19/47.94500/7.73592)
+- **OsmAnd Web Preview:** [View Route](https://osmand.net/map/navigate/?start=48.738290,13.413830&end=47.945050,7.735730&profile=car#7/48.611/11.530)
 
 | [HH x C++ Fast Routing](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings) | [Traditional Routing A*2-phase](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings)  |
 |------------|----------------------|
 | Calculation time: **13 sec**| Calculation time: **36 sec** |
 | ![HH example](./img/hh.gif) | ![A2 example](./img/a2.gif) |
 
+***Key takeaways:***
+
+- **HH x C++ Fast Routing** significantly **reduces calculation time** compared to traditional A* 2-phase routing.
+- **More efficient route computation** enables a faster and smoother navigation, especially when dealing with long-distance routes.
+- **Recommended for users** who prioritize speed in offline routing scenarios.
+
+*For optimal performance, always **update your offline maps** to ensure the most efficient route calculations.*
+
 
 ## Conclusion
 
-The new fast offline routing in OsmAnd marks a significant step forward in delivering efficient and reliable navigation without the need for internet connectivity. By leveraging advanced algorithms and optimized data processing, OsmAnd offers users a faster and more seamless routing experience, making it the go-to choice for navigating diverse environments. Try out these new features and experience the enhanced performance firsthand, and stay tuned for more updates as OsmAnd continues to evolve.
+OsmAnd's integration of the Highway Hierarchy routing algorithm marks a significant advancement in offline navigation. By prioritizing primary roads and utilizing control points, HH routing offers you faster and more accurate route calculations. To experience these benefits fully, you are encouraged to update their maps regularly and engage with the OsmAnd community for feedback and support.
 
-## Related articles
+<br/>
+
+_________________
+
+<br/>
+
+
+Please feel free to contact us. We appreciate and welcome every contribution you make to the further development of OsmAnd.
+
+- **Follow**: <LinksSocial/>  
+
+- **Join**: <LinksTelegram/>  
+
+- **Get**: &nbsp;<AndroidStore/>  
+
+    <AppleStore/>
