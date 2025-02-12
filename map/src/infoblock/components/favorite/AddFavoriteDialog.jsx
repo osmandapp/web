@@ -159,6 +159,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
             }
             ctx.localTracks[ind].wpts = ctx.selectedGpxFile.wpts;
             ctx.localTracks[ind].pointsGroups = ctx.selectedGpxFile.pointsGroups;
+            ctx.localTracks[ind].routeTypes = ctx.selectedGpxFile.routeTypes;
         } else {
             TracksManager.prepareTrack(ctx.selectedGpxFile);
             ctx.localTracks.push(ctx.selectedGpxFile);

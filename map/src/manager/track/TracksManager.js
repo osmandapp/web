@@ -59,6 +59,7 @@ export function prepareLocalTrack(track) {
         selected: false,
         originalName: prepareTrack.originalName,
         hasGeo: prepareTrack.hasGeo,
+        routeTypes: prepareTrack.routeTypes,
     };
 }
 
@@ -243,13 +244,14 @@ export function getTrackPoints(track) {
     return points;
 }
 
+// Create an array of points that contains references to the points in tracks
 function getEditablePoints(track) {
     let points = [];
     if (track.tracks) {
         track.tracks.forEach((track) => {
-            track.points?.forEach((point) => {
-                points.push(point);
-            });
+            if (track.points) {
+                points = points.concat(track.points);
+            }
         });
     }
     return points;
@@ -354,8 +356,8 @@ export function addDistanceToPoints(points) {
     }
 }
 
-export async function getGpxFileFromTrackData(file) {
-    let trackData = prepareTrackData({ file });
+export async function getGpxFileFromTrackData(file, routeTypes) {
+    const trackData = prepareTrackData({ file, routeTypes });
 
     return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData, {
         apiCache: true,
@@ -411,7 +413,7 @@ export function updateMetadata({ file, name = null }) {
     return file;
 }
 
-function prepareTrackData({ file, getAnalysis = false }) {
+function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
     // add updated points to track
     let points = file.points;
     if (file.tracks && file.tracks[0] && validateRoutePoints(points)) {
@@ -442,6 +444,7 @@ function prepareTrackData({ file, getAnalysis = false }) {
         pointsGroups: file.pointsGroups,
         ext: file.ext,
         analysis: getAnalysis ? file.analysis : null,
+        routeTypes,
     };
 }
 
@@ -887,8 +890,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         cloneFile.tracks[0].points = points;
     }
 
-    const postData = prepareTrackData({ file: cloneFile, getAnalysis: true });
-
+    const postData = prepareTrackData({ file: cloneFile, routeTypes: cloneFile.routeTypes, getAnalysis: true });
     // time vs better cache
     let saveStartTime = null;
     let saveEndTime = null;

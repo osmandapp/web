@@ -27,6 +27,7 @@ export function initNewSelectedTrack({ ctx, map, geoRouter, selectedGpxFile, set
             : null,
         updateLayers: !!newPoint,
         addPoint: !!newPoint,
+        routeTypes: [],
     };
 
     if (newPoint) {

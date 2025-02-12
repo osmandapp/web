@@ -68,13 +68,14 @@ export async function saveTrackToCloud({
     open = true,
 }) {
     const trackData = gpxFile ?? ctx.selectedGpxFile?.file ?? ctx.selectedGpxFile;
+    const routeTypes = ctx.selectedGpxFile.routeTypes;
     const currentFile = await getFile(trackData);
     async function getFile(trackData) {
         if (uploadedFile) {
             return uploadedFile;
         }
         if (trackData) {
-            return await getGpxFileFromTrackData(trackData);
+            return await getGpxFileFromTrackData(trackData, routeTypes);
         }
         return null;
     }

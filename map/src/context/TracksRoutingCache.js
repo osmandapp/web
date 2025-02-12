@@ -23,9 +23,10 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
 
             Promise.resolve(
                 ctx.trackRouter.updateRouteBetweenPoints(ctx, startPoint, endPoint, geoProfile).then(
-                    (success) => {
+                    (result) => {
                         setStartedRouterJobs((x) => x - 1);
-                        ctx.mutateRoutingCache((o) => o[key] && (o[key].geometry = success));
+                        updateTrackRouteTypes(result, ctx);
+                        ctx.mutateRoutingCache((o) => o[key] && (o[key].geometry = result));
                     },
                     (error) => {
                         // keep busy=true till next init
@@ -47,6 +48,85 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
 
     ctx.setProcessRouting(false); // all done but a few Promises might still be active
     return false;
+}
+
+function updateTrackRouteTypes(newGeo, ctx) {
+    const updatedTypes = processGeometryPoints(newGeo, ctx.selectedGpxFile.routeTypes ?? []);
+    ctx.setSelectedGpxFile((prev) => {
+        return { ...prev, routeTypes: updatedTypes };
+    });
+}
+
+function processGeometryPoints(result, routeTypes) {
+    let segmentRouteTypes = null;
+    result.forEach((point) => {
+        if (point.segment) {
+            const segment = point.segment;
+
+            segmentRouteTypes = segmentRouteTypes || segment.routeTypes;
+
+            const segmentTypes = segment.ext.types ?? null;
+            const segmentPointTypes = segment.ext.pointTypes ?? null;
+            const segmentNames = segment.ext.names ?? null;
+
+            let updatedSegmentRouteTypes = new Map();
+            segmentRouteTypes.map((type, oldIndex) => {
+                let newIndex;
+                const existingTypeIndex = routeTypes.findIndex(
+                    (globalType) => globalType.tag === type.tag && globalType.value === type.value
+                );
+                if (existingTypeIndex !== -1) {
+                    newIndex = existingTypeIndex;
+                } else {
+                    routeTypes.push(type);
+                    newIndex = routeTypes.length - 1;
+                }
+                updatedSegmentRouteTypes.set(oldIndex, newIndex);
+            });
+
+            if (segmentTypes) {
+                segment.ext.types = updateIndexes(segmentTypes, updatedSegmentRouteTypes);
+            }
+            if (segmentPointTypes) {
+                segment.ext.pointTypes = updateIndexes(segmentPointTypes, updatedSegmentRouteTypes);
+            }
+            if (segmentNames) {
+                segment.ext.names = updateIndexes(segmentNames, updatedSegmentRouteTypes);
+            }
+
+            delete segment.routeTypes;
+        }
+    });
+    return routeTypes;
+}
+
+function updateIndexes(value, updatedSegmentRouteTypes) {
+    let updatedValue = '';
+    let currentNumber = '';
+    for (let i = 0; i < value.length; i++) {
+        const char = value[i];
+
+        if (char === ',' || char === ';') {
+            if (currentNumber) {
+                const oldIndex = parseInt(currentNumber, 10);
+                const newIndex = updatedSegmentRouteTypes.has(oldIndex)
+                    ? updatedSegmentRouteTypes.get(oldIndex)
+                    : oldIndex;
+                updatedValue += newIndex;
+                currentNumber = '';
+            }
+            updatedValue += char;
+        } else {
+            currentNumber += char;
+        }
+    }
+
+    if (currentNumber) {
+        const oldIndex = parseInt(currentNumber, 10);
+        const newIndex = updatedSegmentRouteTypes.has(oldIndex) ? updatedSegmentRouteTypes.get(oldIndex) : oldIndex;
+        updatedValue += newIndex;
+    }
+    return updatedValue;
 }
 
 export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, debouncerTimer }) {

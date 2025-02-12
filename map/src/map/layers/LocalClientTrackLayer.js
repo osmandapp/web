@@ -173,12 +173,12 @@ export default function LocalClientTrackLayer() {
             } else if (ctxTrack.refreshAnalytics) {
                 refreshAnalytics();
             } else {
-                if (ctx.createTrack?.enable && isEmptyTrack(ctx.selectedGpxFile) === false) {
-                    if (trackWasChanged(ctx.localTracks, ctx.selectedGpxFile)) {
-                        saveTrackToLocalStorage({ ctx, track: ctx.selectedGpxFile });
+                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
+                    if (trackWasChanged(ctx.localTracks, ctxTrack)) {
+                        saveTrackToLocalStorage({ ctx, track: ctxTrack });
                     }
-                    if (isNewTrack(ctx.localTracks, ctx.selectedGpxFile)) {
-                        createLocalTrack({ ctx, map, file: ctx.selectedGpxFile });
+                    if (isNewTrack(ctx.localTracks, ctxTrack)) {
+                        createLocalTrack({ ctx, map, file: ctxTrack });
                     }
                 }
                 if (ctxTrack?.updateLayers) {
@@ -754,7 +754,7 @@ export default function LocalClientTrackLayer() {
         if (currentTrack) {
             ctxTrack = currentTrack;
         }
-        let points = TracksManager.getEditablePoints(ctxTrack);
+        const points = TracksManager.getEditablePoints(ctxTrack);
         ctxTrack.layers = updateLayers({
             map,
             ctx,

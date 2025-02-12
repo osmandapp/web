@@ -338,7 +338,7 @@ export const AppContextProvider = (props) => {
     const [shareFilesCache, setShareFilesCache] = useState({});
     const [shareWithMeFiles, setShareWithMeFiles] = useState(null);
     const [fitBoundsShareTracks, setFitBoundsShareTracks] = useState(null);
-
+    // selected track
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
 
