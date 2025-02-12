@@ -32,7 +32,7 @@ const useStyles = makeStyles({
 });
 
 export const downloadCurrentGpx = async (ctx) => {
-    const gpx = await getGpxFileFromTrackData(ctx.selectedGpxFile);
+    const gpx = await getGpxFileFromTrackData(ctx.selectedGpxFile, ctx.selectedGpxFile.routeTypes);
     if (gpx) {
         const data = gpx.data;
         const url = document.createElement('a');

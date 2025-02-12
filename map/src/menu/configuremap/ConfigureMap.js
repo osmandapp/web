@@ -29,7 +29,7 @@ import EmptyLogin from '../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
 import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
-import TracksManager from '../../manager/track/TracksManager';
+import TracksManager, { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import SubTitle from '../components/SubTitle';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
 import capitalize from 'lodash/capitalize';
@@ -69,7 +69,7 @@ export default function ConfigureMap() {
     }
 
     useEffect(() => {
-        let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+        let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
         setOpenedTracks(savedVisible?.open?.length);
     }, [ctx.gpxFiles, ctx.visibleTracks]);
 

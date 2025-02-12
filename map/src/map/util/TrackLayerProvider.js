@@ -2,7 +2,7 @@ import L from 'leaflet';
 import MarkerOptions, { createPoiIcon, DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import _ from 'lodash';
 import TracksManager, { GPX_FILE_TYPE, isProtectedSegment } from '../../manager/track/TracksManager';
-import EditablePolyline from './EditablePolyline';
+import EditablePolyline from './creator/EditablePolyline';
 import { clusterMarkers, createHoverMarker } from './Clusterizer';
 import Utils from '../../util/Utils';
 

@@ -7,6 +7,7 @@ import { isEmpty } from 'lodash';
 import { hideAllVisTracks } from '../../menu/visibletracks/VisibleTracks';
 import { deleteSharedWithMe } from '../ShareManager';
 import { GPX, updateFileStorage } from '../GlobalManager';
+import { deleteLocalTrack } from '../../menu/tracks/util/LocalTrackStorage';
 
 export async function deleteTrack({ file, ctx, shared = false, type = 'GPX' }) {
     if ((isCloudTrack(ctx) || file) && ctx.loginUser) {
@@ -20,7 +21,7 @@ export async function deleteTrack({ file, ctx, shared = false, type = 'GPX' }) {
             await deleteCloudFile(trackName, type, ctx);
         }
     } else if (isLocalTrack(ctx)) {
-        TracksManager.deleteLocalTrack(ctx);
+        deleteLocalTrack(ctx);
     }
 }
 

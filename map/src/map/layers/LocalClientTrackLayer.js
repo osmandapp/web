@@ -8,10 +8,10 @@ import TrackLayerProvider, {
     WPT_SIMPLIFY_THRESHOLD,
 } from '../util/TrackLayerProvider';
 import TracksManager, { fitBoundsOptions, isEmptyTrack } from '../../manager/track/TracksManager';
-import _, { isEmpty } from 'lodash';
-import EditablePolyline from '../util/EditablePolyline';
-import EditableMarker from '../util/EditableMarker';
-import { effectDebouncer, useMutator } from '../../util/Utils';
+import _ from 'lodash';
+import EditablePolyline from '../util/creator/EditablePolyline';
+import EditableMarker from '../util/creator/EditableMarker';
+import { effectDebouncer } from '../../util/Utils';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 import TracksRoutingCache, {
     debouncer,
@@ -21,19 +21,26 @@ import TracksRoutingCache, {
     requestAnalytics,
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
-import { saveTrackToLocalStorage } from '../../manager/track/SaveTrackManager';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import { saveTrackToLocalStorage } from '../../menu/tracks/util/LocalTrackStorage';
+import { createLocalTrack, createNewPoint, initNewSelectedTrack, isNewTrack } from '../util/creator/LocalTrackHelper';
+import {
+    addRegisteredLayers,
+    clearAllRegisteredLayers,
+    createFirstLayers,
+    deleteOldLayers,
+    updateLayers,
+} from '../util/creator/LocalTrackLayerHelper';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
+export const LOCAL_TRACKS_LAYERS_ID = 'localTracksLayers';
 
 export default function LocalClientTrackLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
 
-    const LOCAL_TRACKS_LAYERS_ID = 'localTracksLayers';
-
-    const [registeredLayers, mutateRegisteredLayers] = useMutator({});
+    const [registeredLayers, setRegisteredLayers] = useState({});
 
     const [localLayers, setLocalLayers] = useState({});
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
@@ -55,6 +62,10 @@ export default function LocalClientTrackLayer() {
     const [move, setMove] = useState(false);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
+
+    useEffect(() => {
+        map.spin(ctx.processingSaveTrack, { color: '#1976d2' });
+    }, [ctx.processingSaveTrack]);
 
     let ctxTrack = ctx.selectedGpxFile;
 
@@ -158,20 +169,34 @@ export default function LocalClientTrackLayer() {
             } else if (ctxTrack.refreshAnalytics) {
                 refreshAnalytics();
             } else {
-                // checkDeleteSelected();
                 if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
-                    saveLocal();
+                    if (ctx.localTracks.length > 0) {
+                        saveTrackToLocalStorage({ ctx, track: ctxTrack });
+                    }
+                    if (isNewTrack(ctx.localTracks, ctxTrack)) {
+                        createLocalTrack({ ctx, map, file: ctxTrack });
+                    }
                 }
-                checkZoom();
-                checkUpdateLayers();
+                if (ctxTrack?.updateLayers) {
+                    checkUpdateLayers();
+                } else {
+                    checkZoom();
+                }
             }
         }
     }, [ctxTrack]);
 
     useEffect(() => {
-        const needUpdate = move || zoom !== prevZoom;
+        const needUpdate =
+            (move || zoom !== prevZoom) &&
+            ctx.selectedGpxFile.wpts?.length > 100 &&
+            ctx.selectedGpxFile.points?.length > 100;
         if (needUpdate && ctx.createTrack?.enable && ctxTrack) {
             ctxTrack.layers = updateLayers({
+                map,
+                ctx,
+                localLayers,
+                ctxTrack,
                 points: ctxTrack.points,
                 wpts: ctxTrack.wpts,
                 trackLayers: ctxTrack.layers,
@@ -271,12 +296,12 @@ export default function LocalClientTrackLayer() {
     */
     useEffect(() => {
         if (ctx.createTrack === null) {
-            clearAllRegisteredLayers(); // reset
+            clearAllRegisteredLayers(map, setRegisteredLayers);
         }
         if (ctx.createTrack?.closePrev && !_.isEmpty(ctx.createTrack.closePrev.file)) {
             clearCreateLayers(ctx.createTrack.closePrev.file.layers);
             saveResult(ctx.createTrack.closePrev.file, true);
-            clearAllRegisteredLayers(); // reset
+            clearAllRegisteredLayers(map, setRegisteredLayers);
             delete ctx.createTrack.closePrev;
             ctx.setCreateTrack({ ...ctx.createTrack }); // closePrev, not always stop-editor
         }
@@ -284,16 +309,22 @@ export default function LocalClientTrackLayer() {
             if (ctx.createTrack.edit) {
                 editCurrentTrack();
             } else {
-                deleteOldLayers();
+                deleteOldLayers(ctxTrack?.layers, map);
                 ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
-                initNewTrack();
+                initNewSelectedTrack({
+                    ctx,
+                    map,
+                    geoRouter,
+                    selectedGpxFile: ctxTrack,
+                    setRegisteredLayers,
+                });
             }
         } else if (ctx.createTrack?.enable === false) {
             if (ctx.createTrack.clear) {
                 clearCreateLayers(ctxTrack.layers); // track-closed (edited, by Visible switch)
-                clearAllRegisteredLayers(); // reset
+                clearAllRegisteredLayers(map, setRegisteredLayers);
             } else {
-                clearAllRegisteredLayers(); // reset+cleanup track-closed (edited, by Close button)
+                clearAllRegisteredLayers(map, setRegisteredLayers); // reset+cleanup track-closed (edited, by Close button)
             }
             let savedFile;
             if (ctx.createTrack.deletePrev && ctxTrack.prevState) {
@@ -369,19 +400,8 @@ export default function LocalClientTrackLayer() {
         ctx.setSelectedGpxFile(track);
     }
 
-    function saveLocal() {
-        if (ctx.localTracks.length > 0) {
-            // localTracks exist: do update/append into localStorage
-            saveTrackToLocalStorage({ ctx, track: ctx.selectedGpxFile });
-        } else {
-            // localTracks empty: add gpx as 1st track (points and/or wpts are included)
-            createLocalTrack(ctxTrack, ctxTrack.points, ctxTrack.wpts);
-        }
-    }
-
     function checkZoom() {
         if (ctxTrack.selected && ctxTrack.zoom) {
-            // local-track-zoom
             showSelectedTrackOnMap();
         } else if (ctxTrack.showPoint) {
             TracksManager.showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker);
@@ -446,6 +466,10 @@ export default function LocalClientTrackLayer() {
                 ctxTrack.layers = new L.FeatureGroup();
             }
             ctxTrack.layers = updateLayers({
+                map,
+                ctx,
+                localLayers,
+                ctxTrack,
                 points: ctxTrack.points,
                 wpts: ctxTrack.wpts,
                 trackLayers: ctxTrack.layers,
@@ -461,10 +485,6 @@ export default function LocalClientTrackLayer() {
         });
         delete localLayers[track.name];
         addTrackToMap(track, false, active);
-    }
-
-    function isEqualPoints(point1, point2) {
-        return point1.lat === point2.lat && point1.lng === point2.lng;
     }
 
     // get-routing
@@ -553,7 +573,7 @@ export default function LocalClientTrackLayer() {
         let firstP = points[0];
         firstP.geometry = [];
         firstP.profile = TracksManager.PROFILE_LINE;
-        firstP.geoProfile = geoRouter.getGeoProfile({ profile: TracksManager.PROFILE_LINE });
+        firstP.geoProfile = geoRouter.getShortGeoProfile({ profile: TracksManager.PROFILE_LINE });
         return [firstP, prevPoint];
     }
 
@@ -561,32 +581,6 @@ export default function LocalClientTrackLayer() {
         let marker = new EditableMarker(map, ctx, newPoint, null, track).create();
         marker.addTo(map);
         layers.addLayer(marker);
-    }
-
-    function createLocalTrack(file, points = [], wpts = []) {
-        TracksManager.prepareTrack(file);
-
-        file.tracks = [{ points, wpts }];
-        file.layers = TrackLayerProvider.createLayersByTrackData({
-            data: file,
-            ctx,
-            map,
-            simplifyWpts: file?.wpts?.length >= WPT_SIMPLIFY_THRESHOLD,
-        });
-
-        ctx.localTracks.push(file);
-        ctx.setLocalTracks([...ctx.localTracks]);
-    }
-
-    function createFirstLayers(newPoint) {
-        const marker = new EditableMarker(map, ctx, newPoint, null, ctxTrack).create();
-        const layers = new L.FeatureGroup().addLayer(marker);
-
-        // register both
-        addRegisteredLayers(marker);
-        addRegisteredLayers(layers);
-
-        return layers;
     }
 
     function deleteInfo(points) {
@@ -614,118 +608,23 @@ export default function LocalClientTrackLayer() {
     }
 
     function saveChanges(points, wpts, layers, res) {
+        let track = ctxTrack;
         if (res) {
-            ctxTrack = res;
+            track = res;
             if (layers) {
-                ctxTrack.layers = layers;
+                track.layers = layers;
             }
         } else {
-            ctxTrack.points = points;
-            ctxTrack.wpts = wpts;
-            ctxTrack.layers = layers;
+            track.points = points;
+            track.wpts = wpts;
+            track.layers = layers;
         }
-        TracksManager.addDistance(ctxTrack); // recalc-distance-local-save
-        addRegisteredLayers(ctxTrack.layers);
-        ctxTrack.zoom = false;
-        ctx.setSelectedGpxFile({ ...ctxTrack });
-    }
+        TracksManager.addDistance(track);
+        track.zoom = false;
 
-    function addRegisteredLayers(layer) {
-        if (layer) {
-            const id = layer._leaflet_id || 'unknown';
-            mutateRegisteredLayers((o) => (o[id] = _.cloneDeep(layer)));
-        }
-    }
+        addRegisteredLayers(track.layers, setRegisteredLayers);
 
-    function clearAllRegisteredLayers() {
-        for (let id in registeredLayers) {
-            const layer = registeredLayers[id];
-            if (map.hasLayer(layer)) {
-                map.removeLayer(layer);
-            }
-            mutateRegisteredLayers((o) => delete o[id]);
-        }
-    }
-
-    function isTempLayer(layer) {
-        return layer.options.name === TEMP_LAYER_FLAG;
-    }
-
-    function updateLayers({ points, wpts, trackLayers, deleteOld = true, removeBounds = true }) {
-        if (trackLayers) {
-            let layers = [];
-            if (points?.length > 0) {
-                TrackLayerProvider.parsePoints({ map, ctx, points, layers, draggable: true });
-            }
-            if (wpts?.length > 0) {
-                TrackLayerProvider.parseWpt({
-                    points: wpts,
-                    layers,
-                    map,
-                    ctx,
-                    simplify: wpts?.length >= WPT_SIMPLIFY_THRESHOLD,
-                });
-            }
-            layers = createEditableLayers(layers);
-            if (deleteOld) {
-                map.eachLayer((layer) => {
-                    // cleanup old layers
-                    if (layer.options?.type === LOCAL_TRACKS_LAYERS_ID) {
-                        map.removeLayer(layer);
-                    }
-                    if (removeBounds && layer._bounds) {
-                        map.removeLayer(layer);
-                    }
-                    const innerLayers = layer._layers;
-                    // cleanup empty layers
-                    if (innerLayers !== undefined && isEmpty(innerLayers)) {
-                        map.removeLayer(layer);
-                    }
-                });
-                trackLayers.eachLayer((layer) => {
-                    if (
-                        !isTempLayer(layer) ||
-                        (isTempLayer(layer) && !points.find((p) => isEqualPoints(p, layer.point)))
-                    ) {
-                        trackLayers.removeLayer(layer); // cleanup sub-layers
-                    }
-                });
-            }
-            layers.forEach((layer) => {
-                trackLayers.addLayer(layer);
-            });
-            if (deleteOld) {
-                trackLayers.options = { ...trackLayers.options, type: LOCAL_TRACKS_LAYERS_ID };
-                trackLayers.addTo(map);
-
-                // add active tracks to map for visibility during editing
-                if (!isEmpty(localLayers)) {
-                    for (let l in localLayers) {
-                        if (localLayers[l].active && ctxTrack.name !== l) {
-                            let layer = localLayers[l].layer;
-                            layer.options = { ...layer.options, type: LOCAL_TRACKS_LAYERS_ID };
-                            map.addLayer(layer);
-                        }
-                    }
-                }
-            }
-            return trackLayers;
-        }
-    }
-
-    // change layers view->editable
-    function createEditableLayers(layers) {
-        let res = [];
-        layers.forEach((layer) => {
-            if (layer instanceof L.Marker) {
-                let editableMarker = new EditableMarker(map, ctx, null, layer, ctxTrack).create(); // re-create
-                res.push(editableMarker);
-            } else if (layer instanceof L.Polyline) {
-                let editablePolyline = new EditablePolyline(map, ctx, null, layer, ctxTrack).create(); // re-create
-                res.push(editablePolyline);
-            }
-        });
-        return res;
+        ctx.setSelectedGpxFile({ ...track });
     }
 
     function setupClickOnMap() {
@@ -760,7 +659,15 @@ export default function LocalClientTrackLayer() {
 
             createPointOnMap(addNewPoint, layers, ctxTrack);
 
-            ctxTrack.layers = updateLayers({ points, wpts: ctxTrack.wpts, trackLayers: layers });
+            ctxTrack.layers = updateLayers({
+                map,
+                ctx,
+                localLayers,
+                ctxTrack,
+                points,
+                wpts: ctxTrack.wpts,
+                trackLayers: layers,
+            });
 
             ctx.setSelectedGpxFile({ ...ctxTrack });
             TracksManager.updateState(ctx);
@@ -777,7 +684,7 @@ export default function LocalClientTrackLayer() {
             ctx.setSelectedGpxFile({ ...ctxTrack });
             TracksManager.updateState(ctx);
         } else {
-            let newPoint = createNewPoint(e, geoRouter.getGeoProfile());
+            let newPoint = createNewPoint({ ctx, e, geoProfile: geoRouter.getShortGeoProfile() });
             let points = ctxTrack.points;
             let layers = ctxTrack.layers;
             let prevPoint = ctxTrack.prevPoint;
@@ -791,7 +698,9 @@ export default function LocalClientTrackLayer() {
                         prevPoint = getPrevPoint(points);
                         if (!prevPoint.profile) {
                             prevPoint.profile = TracksManager.PROFILE_LINE;
-                            prevPoint.geoProfile = geoRouter.getGeoProfile({ profile: TracksManager.PROFILE_LINE });
+                            prevPoint.geoProfile = geoRouter.getShortGeoProfile({
+                                profile: TracksManager.PROFILE_LINE,
+                            });
                         }
                         prevPoint.profile = newPoint.profile;
                         prevPoint.geoProfile = newPoint.geoProfile;
@@ -809,12 +718,16 @@ export default function LocalClientTrackLayer() {
                             TracksRoutingCache.addRoutingToCache(prevPoint, newPoint, tempLine, ctx);
                         }
                     } else {
-                        layers = createFirstLayers(newPoint);
+                        layers = createFirstLayers({ map, ctx, track: ctxTrack, newPoint, setRegisteredLayers });
                     }
                     ctxTrack.newPoint = newPoint;
                     ctxTrack.points = points;
                     createPointOnMap(newPoint, layers, ctxTrack);
                     ctxTrack.layers = updateLayers({
+                        map,
+                        ctx,
+                        localLayers,
+                        ctxTrack,
                         points,
                         wpts: ctxTrack.wpts,
                         trackLayers: layers,
@@ -836,58 +749,29 @@ export default function LocalClientTrackLayer() {
     }
 
     function isNewPoint(track, newPoint) {
-        return !track.points.find((p) => isEqualPoints(p, newPoint));
-    }
-
-    function createNewPoint(e, geoProfile = geoRouter.getGeoProfile()) {
-        return {
-            lat: e ? e.latlng.lat : ctx.createTrack.latlng.lat,
-            lng: e ? e.latlng.lng : ctx.createTrack.latlng.lng,
-            ele: TracksManager.NAN_MARKER,
-            profile: geoProfile.profile, // required by get-analisys
-            geoProfile: geoProfile,
-            geometry: [],
-        };
-    }
-
-    function initNewTrack() {
-        ctxTrack = {};
-
-        ctxTrack.name = TracksManager.createName(ctx);
-        ctxTrack.tracks = TracksManager.createGpxTracks();
-        ctxTrack.pointsGroups = {};
-        ctxTrack.points = [];
-        if (ctx.createTrack.latlng) {
-            createPointFromMap();
-        }
-        ctx.setSelectedGpxFile({ ...ctxTrack });
-    }
-
-    function createPointFromMap() {
-        const newPoint = createNewPoint();
-        ctxTrack.newPoint = newPoint;
-        ctxTrack.points.push(newPoint);
-        createLocalTrack(ctxTrack, ctxTrack.points);
-        ctxTrack.layers = createFirstLayers(newPoint);
-        ctxTrack.updateLayers = true;
-        ctxTrack.addPoint = true;
-        ctx.setUpdateInfoBlock(true);
-
-        TracksManager.updateState(ctx);
+        return !track.points.find((p) => TracksManager.isEqualPoints(p, newPoint));
     }
 
     function editCurrentTrack() {
         if (localLayers[ctxTrack.name]) {
             map.removeLayer(localLayers[ctxTrack.name]?.layer);
         }
-        deleteOldLayers();
+        deleteOldLayers(ctxTrack?.layers, map);
 
         let currentTrack = ctx.localTracks.find((t) => t.name === ctxTrack.name);
         if (currentTrack) {
             ctxTrack = currentTrack;
         }
-        let points = TracksManager.getEditablePoints(ctxTrack);
-        ctxTrack.layers = getLayersBySelectedTrack(points, ctxTrack.wpts);
+        const points = TracksManager.getEditablePoints(ctxTrack);
+        ctxTrack.layers = updateLayers({
+            map,
+            ctx,
+            localLayers,
+            ctxTrack,
+            points,
+            wpts: ctxTrack.wpts,
+            trackLayers: new L.FeatureGroup(),
+        });
         ctxTrack.points = points;
 
         ctxTrack.newPoint = points[points.length - 1];
@@ -898,27 +782,12 @@ export default function LocalClientTrackLayer() {
         } else {
             geoRouter.onGeoProfile({ profile: TracksManager.PROFILE_LINE });
         }
-        // ctx.addFavorite.editTrack = true;
-        // ctx.setAddFavorite({...ctx.addFavorite});
 
         ctx.setSelectedGpxFile({ ...ctxTrack });
 
-        addRegisteredLayers(ctxTrack.layers);
+        addRegisteredLayers(ctxTrack.layers, setRegisteredLayers);
 
         TracksManager.updateState(ctx);
-    }
-
-    function getLayersBySelectedTrack(points, wpts) {
-        let layers = new L.FeatureGroup();
-        layers = updateLayers({ points, wpts, trackLayers: layers });
-        layers.addTo(map);
-        return layers;
-    }
-
-    function deleteOldLayers() {
-        if (ctxTrack?.layers) {
-            map.removeLayer(ctxTrack?.layers);
-        }
     }
 
     function trackWithoutRouting(points) {

@@ -1,15 +1,15 @@
 import L from 'leaflet';
-import TrackLayerProvider from './TrackLayerProvider';
-import MarkerOptions from '../markers/MarkerOptions';
+import TrackLayerProvider from '../TrackLayerProvider';
+import MarkerOptions from '../../markers/MarkerOptions';
 import GeometryUtil from 'leaflet-geometryutil';
 import _ from 'lodash';
 import TracksManager, {
     isPointUnrouted,
     isProtectedSegment,
     splitProtectedSegment,
-} from '../../manager/track/TracksManager';
+} from '../../../manager/track/TracksManager';
 import EditableMarker from './EditableMarker';
-import TracksRoutingCache from '../../context/TracksRoutingCache';
+import TracksRoutingCache from '../../../context/TracksRoutingCache';
 
 export default class EditablePolyline {
     currentPolyline;

@@ -73,6 +73,7 @@ export default function SaveTrackDialog() {
         }
         if (validName(preparedName)) {
             setProcess(true);
+            ctx.setProcessingSaveTrack(true);
             if (!isTrackExists(preparedName, folder, null, ctx.tracksGroups)) {
                 const uploaded = !!(await saveTrackToCloud({
                     ctx,
@@ -85,6 +86,7 @@ export default function SaveTrackDialog() {
                 setExistTrack(true);
             }
         } else {
+            ctx.setProcessingSaveTrack(false);
             setError(true);
         }
     }
