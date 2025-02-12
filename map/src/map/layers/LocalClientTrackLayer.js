@@ -14,20 +14,16 @@ import EditableMarker from '../util/creator/EditableMarker';
 import { effectDebouncer } from '../../util/Utils';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 import TracksRoutingCache, {
+    debouncer,
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
+    GET_ANALYSIS_DEBOUNCE_MS,
     requestAnalytics,
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 import { saveTrackToLocalStorage } from '../../menu/tracks/util/LocalTrackStorage';
-import {
-    createLocalTrack,
-    createNewPoint,
-    initNewSelectedTrack,
-    isNewTrack,
-    trackWasChanged,
-} from '../util/creator/LocalTrackHelper';
+import { createLocalTrack, createNewPoint, initNewSelectedTrack, isNewTrack } from '../util/creator/LocalTrackHelper';
 import {
     addRegisteredLayers,
     clearAllRegisteredLayers,
@@ -280,7 +276,7 @@ export default function LocalClientTrackLayer() {
 
         // Update the localLayers state after cleaning up
         setLocalLayers({ ...localLayers });
-    }, [ctx.localTracks]);
+    }, [ctx.localTracks, !!ctx.createTrack]);
 
     /*
         Track Editor state life cycle:
@@ -554,6 +550,16 @@ export default function LocalClientTrackLayer() {
             });
             layers.addLayer(polyline);
         }
+
+        const analysis = () => {
+            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, points).then(
+                (res) => {
+                    if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
+                }
+            );
+        };
+
+        debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
 
         // saveChanges does useful job, but setSelectedGpxFile() is double-called (later, by parent)
         saveChanges(null, null, null, ctxTrack);
