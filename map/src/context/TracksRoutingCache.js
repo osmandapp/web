@@ -258,7 +258,7 @@ function createRoutingKey(startPoint, endPoint, geoProfile) {
     }
 
     const ll = `startLat=${startPoint?.lat},startLng=${startPoint?.lng},endLat=${endPoint?.lat},endLng=${endPoint?.lng},`;
-    const geo = JSON.stringify(geoProfile.key);
+    const geo = geoProfile.key;
 
     return ll + geo;
 }
