@@ -101,32 +101,10 @@ function processGeometryPoints(result, routeTypes) {
 }
 
 function updateIndexes(value, updatedSegmentRouteTypes) {
-    let updatedValue = '';
-    let currentNumber = '';
-    for (let i = 0; i < value.length; i++) {
-        const char = value[i];
-
-        if (char === ',' || char === ';') {
-            if (currentNumber) {
-                const oldIndex = parseInt(currentNumber, 10);
-                const newIndex = updatedSegmentRouteTypes.has(oldIndex)
-                    ? updatedSegmentRouteTypes.get(oldIndex)
-                    : oldIndex;
-                updatedValue += newIndex;
-                currentNumber = '';
-            }
-            updatedValue += char;
-        } else {
-            currentNumber += char;
-        }
-    }
-
-    if (currentNumber) {
-        const oldIndex = parseInt(currentNumber, 10);
-        const newIndex = updatedSegmentRouteTypes.has(oldIndex) ? updatedSegmentRouteTypes.get(oldIndex) : oldIndex;
-        updatedValue += newIndex;
-    }
-    return updatedValue;
+    return value.replace(/\d+/g, (match) => {
+        const index = parseInt(match, 10);
+        return updatedSegmentRouteTypes.has(index) ? updatedSegmentRouteTypes.get(index) : index;
+    });
 }
 
 export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, debouncerTimer }) {
