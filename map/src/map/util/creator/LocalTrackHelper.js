@@ -13,7 +13,7 @@ export function isNewTrack(localTracks, track) {
 export function initNewSelectedTrack({ ctx, map, geoRouter, selectedGpxFile, setRegisteredLayers }) {
     let newPoint;
     if (ctx.createTrack.latlng) {
-        newPoint = createNewPoint({ ctx, geoProfile: geoRouter.getProfile() });
+        newPoint = createNewPoint({ ctx, geoProfile: geoRouter.getShortGeoProfile() });
     }
 
     const track = {
