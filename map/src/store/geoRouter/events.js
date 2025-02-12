@@ -63,7 +63,9 @@ export function onGeoProfile({ type = null, router = null, profile = null, param
         type = geoProfile.type ?? type;
         router = geoProfile.router ?? router;
         profile = geoProfile.profile ?? profile;
-        params = geoProfile.params ? prepareParams(geoProfile.params) : prepareParams(params);
+
+        const currentParams = geoProfile.params ?? params;
+        params = currentParams ? prepareParams(currentParams) : null;
     }
 
     const picked = this.pickTypeRouterProfile({ type, router, profile });
