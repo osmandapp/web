@@ -132,6 +132,7 @@ const GpxGraphProvider = ({ width }) => {
     const [data, setData] = useState(null);
     const [showData, setShowData] = useState(null);
     const [roadPoints, setRoadPoints] = useState(null);
+    const [routeTypes, setRouteTypes] = useState(null);
     const [slopes, setSlopes] = useState(null);
 
     const attributesTags = [
@@ -169,6 +170,7 @@ const GpxGraphProvider = ({ width }) => {
             let trackData = {};
             let points = getTrackPoints(ctx.selectedGpxFile);
             getRoadPoints(points);
+            setRouteTypes(ctx.selectedGpxFile.routeTypes);
             if (!_.isEmpty(points) && (isSrtmAppeared(trackData, ctx) || !equalsPoints(points, data?.data))) {
                 if (ctx.selectedGpxFile.analysis?.hasElevationData) {
                     trackData.ele = true;
@@ -238,7 +240,6 @@ const GpxGraphProvider = ({ width }) => {
             let prevSegPoint;
             roadPoints.forEach((p) => {
                 if (p.segment && p.segment.ext.types) {
-                    const routeTypes = p.segment.routeTypes;
                     let seg = _.cloneDeep(p);
                     seg.ind = _.indexOf(roadPoints, p);
                     seg.distance = prevSegPoint
@@ -257,7 +258,7 @@ const GpxGraphProvider = ({ width }) => {
             });
             return generateDataSets(segments, roadPoints, attributesTags, slopes);
         }
-    }, [roadPoints, slopes]);
+    }, [roadPoints, routeTypes, slopes]);
 
     function getTags(type, seg) {
         attributesTags.forEach((a) => {

@@ -74,11 +74,33 @@ export function getProfile({ type = this.type, router = this.router, profile = t
 export function getGeoProfile(geoProfile) {
     const { type, router, profile, params } = this.getProfile(geoProfile);
     return {
+        cacheKey: type + '_' + router + '_' + profile + '_' + JSON.stringify(prepareParams(params)),
         type,
         router,
         profile,
         params: params ?? {},
     };
+}
+
+export function getShortGeoProfile(geoProfile) {
+    const { type, router, profile, params } = this.getProfile(geoProfile);
+    return {
+        cacheKey: type + '_' + router + '_' + profile + '_' + JSON.stringify(prepareParams(params)),
+        type,
+        router,
+        profile,
+        params: params ? prepareParams(params) : {},
+    };
+}
+
+export function prepareParams(params) {
+    return Object.keys(params).map((key) => {
+        const p = params[key];
+        return {
+            key: p.key,
+            value: p.value,
+        };
+    });
 }
 
 /**
