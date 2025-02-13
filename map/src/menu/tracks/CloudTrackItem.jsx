@@ -17,17 +17,14 @@ import {
     getShare,
     getTime,
     getWptPoints,
-    openTrackOnMap,
+    processDisplayTrack,
     setTrackIconStyles,
-    updateTracks,
 } from '../../manager/track/TracksManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
 import styles from '../trackfavmenu.module.css';
 import TrackActions from '../actions/TrackActions';
 import MenuItemWithLines from '../components/MenuItemWithLines';
-import { closeTrack } from '../../manager/track/DeleteTrackManager';
-import { updateVisibleCache } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import FileShareIcon from '../share/FileShareIcon.jsx';
 import { getFileStorage, GPX } from '../../manager/GlobalManager';
@@ -69,50 +66,20 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
         setFileStorage(storage);
     }, [ctx, smartf]);
 
-    async function processDisplayTrack({
-        visible,
-        setLoading,
-        showOnMap = true,
-        showInfo = false,
-        zoomToTrack = false,
-        smartf = null,
-    }) {
-        checkedSwitch = !checkedSwitch;
-        if (!showInfo) {
-            updateVisibleCache({ visible: showOnMap, file, smartf });
-        }
-        if (!visible) {
-            if (fileStorage[file.name]?.url) {
-                closeTrack(ctx, fileStorage[file.name], smartf);
-                setFileStorage((prev) => {
-                    return prev ? { ...prev, [file.name]: { ...prev[file.name], url: null } } : prev;
-                });
-            }
-            setLoading(false);
-        } else {
-            await openTrackOnMap({
-                file,
-                setProgressVisible: setLoading,
-                showOnMap,
-                showInfo,
-                zoomToTrack,
-                smartf,
-                ctx,
-                setError,
-            }).then((newGpxFiles) => {
-                updateTracks(ctx, smartf, newGpxFiles);
-            });
-        }
-    }
-
     // Display track on map (visible or not), add to visible cache
     useEffect(() => {
         if (displayTrack === true || displayTrack === false) {
+            checkedSwitch = !checkedSwitch;
             processDisplayTrack({
                 setLoading: setLoadingTrack,
                 showOnMap: displayTrack,
                 visible: displayTrack,
                 smartf,
+                file,
+                ctx,
+                setError,
+                fileStorage,
+                setFileStorage,
             }).then();
             setDisplayTrack(null);
         }
@@ -140,6 +107,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                             className={styles.item}
                             id={id ?? `se-cloud-track-${trackName}`}
                             onClick={() => {
+                                checkedSwitch = !checkedSwitch;
                                 processDisplayTrack({
                                     setLoading: setLoadingTrack,
                                     visible: true,
@@ -147,6 +115,11 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                                     showInfo: true,
                                     zoomToTrack: true,
                                     smartf,
+                                    file,
+                                    ctx,
+                                    setError,
+                                    fileStorage,
+                                    setFileStorage,
                                 }).then();
                             }}
                             onMouseEnter={() => visible && setShowMenu(true)}

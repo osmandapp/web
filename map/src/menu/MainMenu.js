@@ -31,7 +31,7 @@ import AppContext, {
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
 import RouteMenu from './route/RouteMenu';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import PlanRouteMenu from './planroute/PlanRouteMenu';
 import { ReactComponent as FavoritesIcon } from '../assets/menu/ic_action_favorite.svg';
@@ -48,7 +48,7 @@ import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
 import TrackGroupFolder from './tracks/TrackGroupFolder';
-import _ from 'lodash';
+import _, { isEmpty } from 'lodash';
 import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
 import VisibleTracks from './visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
@@ -72,6 +72,7 @@ import {
     TRAVEL_URL,
     SHARE_FILE_MAIN_URL,
     TRACK_ANALYZER_URL,
+    INFO_MENU_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -83,6 +84,7 @@ import ProFeatures from '../frame/components/pro/ProFeatures';
 import { SHARE_TYPE, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
+import { processDisplayTrack } from '../manager/track/TracksManager';
 
 export default function MainMenu({
     size,
@@ -100,6 +102,7 @@ export default function MainMenu({
     const { t } = useTranslation();
     const location = useLocation();
     const [, height] = useWindowSize();
+    const { filename } = useParams();
 
     const timerRef = useRef(null);
 
@@ -127,6 +130,33 @@ export default function MainMenu({
     }
 
     useEffect(() => {
+        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles) {
+            // open track from the URL first time
+            if (filename && isEmpty(ctx.selectedGpxFile)) {
+                const file = ctx.listFiles.uniqueFiles.find((file) => file.name === atob(filename));
+                if (!file) {
+                    return;
+                }
+                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+                processDisplayTrack({
+                    visible: true,
+                    showOnMap: true,
+                    showInfo: true,
+                    zoomToTrack: true,
+                    file,
+                    ctx,
+                    fileStorage: ctx.gpxFiles,
+                    setFileStorage: ctx.setGpxFiles,
+                }).then();
+            }
+        }
+    }, [location.pathname, ctx.listFiles.uniqueFiles]);
+
+    useEffect(() => {
+        if (returnToTrackMenuAfterInfoBlock()) {
+            return;
+        }
+
         if (!menuInfo) {
             const item = items.find((item) => item.url === location.pathname);
             if (item) {
@@ -137,21 +167,31 @@ export default function MainMenu({
         if (location.pathname === MAIN_URL_WITH_SLASH) {
             ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
         }
+
         closeSubPages({ wptDetails: false });
+        openShareFileByLink();
+
         const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
         const openCloudTrackAfterSave =
             ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
         const openFavorite =
             !!ctx.selectedGpxFile?.markerCurrent && location.pathname === MAIN_URL_WITH_SLASH + FAVORITES_URL;
+        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite) {
+            setShowInfoBlock(false);
+        }
+    }, [location.pathname]);
+
+    function returnToTrackMenuAfterInfoBlock() {
+        return location.pathname.includes(INFO_MENU_URL) || ctx.openGroups.length > 0;
+    }
+
+    function openShareFileByLink() {
         const openShareFile = location.pathname.includes(SHARE_FILE_MAIN_URL);
         if (openShareFile) {
             setShowInfoBlock(true);
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
         }
-        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite) {
-            setShowInfoBlock(false);
-        }
-    }, [location.pathname]);
+    }
 
     const handleClickAway = () => {
         setOpenMainMenu(false);
@@ -444,6 +484,13 @@ export default function MainMenu({
     useEffect(() => {
         const currentMenu = items.find((item) => isSelectedMenuItem(item));
         if (currentMenu && menuInfo) {
+            if (currentMenu.type === OBJECT_TYPE_CLOUD_TRACK) {
+                // not to navigate to the track menu if the track info is opened
+                const currentUrl = window.location.href;
+                if (currentUrl.includes(INFO_MENU_URL)) {
+                    return;
+                }
+            }
             // navigate to the current menu
             navigateToUrl({ menu: currentMenu });
         } else if (location.pathname === MAIN_URL_WITH_SLASH && location.search === '') {

@@ -24,6 +24,7 @@ import {
     TRAVEL_URL,
     SHARE_FILE_URL,
     TRACK_ANALYZER_URL,
+    INFO_MENU_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -38,6 +39,7 @@ import LoginMenu from './menu/login/LoginMenu';
 import TravelMenu from './menu/travel/TravelMenu';
 import ShareFile from './menu/share/ShareFile';
 import TrackAnalyzerMenu from './menu/analyzer/TrackAnalyzerMenu';
+import InformationBlock from './infoblock/components/InformationBlock';
 
 export let globalNavigate = () => null;
 
@@ -65,7 +67,9 @@ const App = () => {
                         <Route path={EXPLORE_URL} element={<ExploreMenu />}></Route>
                         <Route path={CONFIGURE_URL} element={<ConfigureMap />}></Route>
                         <Route path={WEATHER_URL} element={<Weather />}></Route>
-                        <Route path={TRACKS_URL} element={<TracksMenu />}></Route>
+                        <Route path={TRACKS_URL} element={<TracksMenu />}>
+                            <Route path={INFO_MENU_URL + ':filename'} element={<InformationBlock />} />
+                        </Route>
                         <Route path={FAVORITES_URL} element={<FavoritesMenu />}></Route>
                         <Route path={NAVIGATE_URL} element={<RouteMenu />}></Route>
                         <Route path={PLANROUTE_URL} element={<PlanRouteMenu />}></Route>

@@ -15,8 +15,9 @@ import L from 'leaflet';
 import MarkerOptions from '../../map/markers/MarkerOptions';
 import anchorme from 'anchorme';
 import { SHARE_TYPE } from '../ShareManager';
-import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
+import { isVisibleTrack, updateVisibleCache } from '../../menu/visibletracks/VisibleTracks';
 import { getFileStorage, GPX } from '../GlobalManager';
+import { closeTrack } from './DeleteTrackManager';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const EMPTY_FILE_NAME = '__folder__.info';
@@ -1473,6 +1474,48 @@ export function getAllGroupNames(groups, parentName = '') {
     });
 
     return groupTitles;
+}
+
+export async function processDisplayTrack({
+    visible,
+    setLoading = null,
+    showOnMap = true,
+    showInfo = false,
+    zoomToTrack = false,
+    smartf = null,
+    file,
+    ctx,
+    setError = null,
+    fileStorage,
+    setFileStorage,
+}) {
+    if (!showInfo) {
+        updateVisibleCache({ visible: showOnMap, file, smartf });
+    }
+    if (!visible) {
+        if (fileStorage[file.name]?.url) {
+            closeTrack(ctx, fileStorage[file.name], smartf);
+            setFileStorage((prev) => {
+                return prev ? { ...prev, [file.name]: { ...prev[file.name], url: null } } : prev;
+            });
+        }
+        if (setLoading) {
+            setLoading(false);
+        }
+    } else {
+        await openTrackOnMap({
+            file,
+            setProgressVisible: setLoading,
+            showOnMap,
+            showInfo,
+            zoomToTrack,
+            smartf,
+            ctx,
+            setError,
+        }).then((newGpxFiles) => {
+            updateTracks(ctx, smartf, newGpxFiles);
+        });
+    }
 }
 
 const TracksManager = {

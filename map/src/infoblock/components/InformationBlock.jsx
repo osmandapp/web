@@ -4,13 +4,20 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_WEATHER,
     isTrack,
+    isCloudTrack,
 } from '../../context/AppContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
 import _, { isEmpty } from 'lodash';
 import { hasSegmentTurns } from '../../manager/track/TracksManager';
-import { MENU_INFO_CLOSE_SIZE, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
+import {
+    INFO_MENU_URL,
+    MAIN_URL_WITH_SLASH,
+    MENU_INFO_CLOSE_SIZE,
+    SHARE_FILE_MAIN_URL,
+    TRACKS_URL,
+} from '../../manager/GlobalManager';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import styles from '../../menu/trackfavmenu.module.css';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
@@ -19,6 +26,7 @@ import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
 import ShareFileMenu from '../../menu/share/ShareFileMenu';
 import ShareFile from '../../menu/share/ShareFile';
+import { useNavigate } from 'react-router-dom';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -42,6 +50,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     const DRAWER_SIZE = 360;
 
     const ctx = useContext(AppContext);
+    const navigate = useNavigate();
 
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
@@ -51,6 +60,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     const [openWptTab, setOpenWptTab] = useState(false);
     const [openShareFileMenu, setOpenShareFileMenu] = useState(false);
     const [openShareFileItem, setOpenShareFileItem] = useState(false);
+    const [trackName, setTrackName] = useState(false);
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -94,6 +104,11 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                         },
                     });
                 }
+                ctx.setSelectedGpxFile({});
+            }
+            if (location.pathname.includes(INFO_MENU_URL) && trackName) {
+                setTrackName(null);
+                navigate(MAIN_URL_WITH_SLASH + TRACKS_URL);
             }
         }
     }, [showInfoBlock]);
@@ -112,6 +127,15 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
             setOpenShareFileItem(false);
         }
     }, [showInfoBlock]);
+
+    // update URL for info track menu
+    useEffect(() => {
+        if (trackName) {
+            navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(btoa(trackName)), {
+                replace: true,
+            });
+        }
+    }, [trackName, navigate]);
 
     // detect leaving from Local Track Editor when another kind of object type is activated
     useEffect(() => {
@@ -151,6 +175,10 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                 } else if (ctx.selectedGpxFile && isTrack(ctx) && !openShareFileItem) {
                     // finally assume that default selectedGpxFile is a track
                     tObj = new TrackTabList().create(ctx, setShowInfoBlock);
+                    if (isCloudTrack(ctx)) {
+                        // set track identification for URL
+                        setTrackName(ctx.selectedGpxFile.name);
+                    }
                 }
                 if (tObj) {
                     setShowInfoBlock(true);

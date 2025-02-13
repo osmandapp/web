@@ -1,15 +1,5 @@
 import headerStyles from '../trackfavmenu.module.css';
-import {
-    AppBar,
-    Box,
-    Button,
-    Divider,
-    IconButton,
-    ToggleButton,
-    ToggleButtonGroup,
-    Toolbar,
-    Typography,
-} from '@mui/material';
+import { AppBar, Box, Button, IconButton, ToggleButton, ToggleButtonGroup, Toolbar, Typography } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as ShareLinkIcon } from '../../assets/icons/ic_action_link.svg';
