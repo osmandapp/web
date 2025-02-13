@@ -31,7 +31,7 @@ Altitude widgets display the height above the sea level of the current geolocati
 ### Altitude: Current Location  
   
 :::note  
-Altitude can not be displayed correctly on some Android devices. To resolve this problem, download an altitude correction map: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.  
+On some Android devices, the altitude can display inaccurately. To solve this problem, download a map with altitude correction: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.  
 :::
 
 <Tabs groupId="operating-systems">
