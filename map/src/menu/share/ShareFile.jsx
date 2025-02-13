@@ -87,7 +87,6 @@ export default function ShareFile() {
                     if (accessTypeHandlers[textLower]) {
                         accessTypeHandlers[textLower]();
                     } else {
-                        console.log('Unknown share file response:', text);
                         setNotAvailable(true);
                     }
                 }
@@ -95,7 +94,7 @@ export default function ShareFile() {
                 if (res.status === 401) {
                     setOnlyLoginAccess(true);
                 } else {
-                    console.log('Error fetching share file:', res);
+                    setNotAvailable(true);
                 }
             }
         }

@@ -44,12 +44,12 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
     const { t } = useTranslation();
 
     const shareTypes = {
-        public: {
-            key: 'public',
-            isPublic: true,
-            name: t('web:share_type_public'),
-            icon: <ShareTypePublicIcon />,
-            info: t('web:share_type_public_desc'),
+        private: {
+            key: 'private',
+            isPublic: false,
+            name: t('web:share_type_private'),
+            icon: <ShareTypePrivateIcon />,
+            info: t('web:share_type_private_desc'),
         },
         request: {
             key: 'request',
@@ -58,12 +58,12 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
             icon: <ShareTypeAccessIcon />,
             info: t('web:share_type_request_only_desc'),
         },
-        private: {
-            key: 'private',
-            isPublic: false,
-            name: t('web:share_type_private'),
-            icon: <ShareTypePrivateIcon />,
-            info: t('web:share_type_private_desc'),
+        public: {
+            key: 'public',
+            isPublic: true,
+            name: t('web:share_type_public'),
+            icon: <ShareTypePublicIcon />,
+            info: t('web:share_type_public_desc'),
         },
     };
 
