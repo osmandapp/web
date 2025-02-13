@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import TracksManager from '../manager/track/TracksManager';
-import EditablePolyline from '../map/util/EditablePolyline';
+import EditablePolyline from '../map/util/creator/EditablePolyline';
 
 const MAX_STARTED_ROUTER_JOBS = 6;
 export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
@@ -23,9 +23,12 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
 
             Promise.resolve(
                 ctx.trackRouter.updateRouteBetweenPoints(ctx, startPoint, endPoint, geoProfile).then(
-                    (success) => {
+                    (result) => {
                         setStartedRouterJobs((x) => x - 1);
-                        ctx.mutateRoutingCache((o) => o[key] && (o[key].geometry = success));
+                        if (result) {
+                            updateTrackRouteTypes(result, ctx);
+                        }
+                        ctx.mutateRoutingCache((o) => o[key] && (o[key].geometry = result));
                     },
                     (error) => {
                         // keep busy=true till next init
@@ -47,6 +50,63 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
 
     ctx.setProcessRouting(false); // all done but a few Promises might still be active
     return false;
+}
+
+function updateTrackRouteTypes(newGeo, ctx) {
+    const updatedTypes = processGeometryPoints(newGeo, ctx.selectedGpxFile.routeTypes ?? []);
+    ctx.setSelectedGpxFile((prev) => {
+        return { ...prev, routeTypes: updatedTypes };
+    });
+}
+
+function processGeometryPoints(result, routeTypes) {
+    let segmentRouteTypes = null;
+    result.forEach((point) => {
+        if (point.segment) {
+            const segment = point.segment;
+
+            segmentRouteTypes = segmentRouteTypes || segment.routeTypes;
+
+            const segmentTypes = segment.ext.types ?? null;
+            const segmentPointTypes = segment.ext.pointTypes ?? null;
+            const segmentNames = segment.ext.names ?? null;
+
+            let updatedSegmentRouteTypes = new Map();
+            segmentRouteTypes.map((type, oldIndex) => {
+                let newIndex;
+                const existingTypeIndex = routeTypes.findIndex(
+                    (globalType) => globalType.tag === type.tag && globalType.value === type.value
+                );
+                if (existingTypeIndex !== -1) {
+                    newIndex = existingTypeIndex;
+                } else {
+                    routeTypes.push(type);
+                    newIndex = routeTypes.length - 1;
+                }
+                updatedSegmentRouteTypes.set(oldIndex, newIndex);
+            });
+
+            if (segmentTypes) {
+                segment.ext.types = updateIndexes(segmentTypes, updatedSegmentRouteTypes);
+            }
+            if (segmentPointTypes) {
+                segment.ext.pointTypes = updateIndexes(segmentPointTypes, updatedSegmentRouteTypes);
+            }
+            if (segmentNames) {
+                segment.ext.names = updateIndexes(segmentNames, updatedSegmentRouteTypes);
+            }
+
+            delete segment.routeTypes;
+        }
+    });
+    return routeTypes;
+}
+
+function updateIndexes(value, updatedSegmentRouteTypes) {
+    return value.replace(/\d+/g, (match) => {
+        const index = parseInt(match, 10);
+        return updatedSegmentRouteTypes.has(index) ? updatedSegmentRouteTypes.get(index) : index;
+    });
 }
 
 export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, debouncerTimer }) {
@@ -198,9 +258,9 @@ function createRoutingKey(startPoint, endPoint, geoProfile) {
     }
 
     const ll = `startLat=${startPoint?.lat},startLng=${startPoint?.lng},endLat=${endPoint?.lat},endLng=${endPoint?.lng},`;
-    const geo = JSON.stringify(geoProfile); // include all of type/router/profile/params
+    const geo = geoProfile.cacheKey;
 
-    return ll + geo; // Reminder: to keep property creation order, keys must be String
+    return ll + geo;
 }
 
 function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
