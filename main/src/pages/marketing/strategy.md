@@ -19,7 +19,6 @@ Identify and segment the target audience to tailor marketing efforts effectively
   - **Route Recording and Analysis**: Tools for recording, analyzing, and sharing routes and activities (e.g., hiking, cycling, or driving).
   - **External Device Integration**: Support for connecting external devices (e.g., GPS trackers, heart rate monitors) to enhance data collection and analysis during activities.
   - **Customization**: Fully customizable maps, navigation profiles, and interface to suit individual needs and preferences.
-
 - **Secondary Audience**: Developers, tech enthusiasts, and privacy-conscious users who value open-source software.
 - **Tertiary Audience**: Businesses and organizations requiring custom mapping solutions.
 - **OpenStreetMap Community**: Active mappers, contributors, and enthusiasts who use tools like **OsmAnd Live** for real-time map updates and contributions. This group is crucial for promoting community-driven mapping and collaboration.
@@ -171,6 +170,8 @@ Highlight OsmAnd’s key features to differentiate it from competitors:
 
 ---
 
+## 4. Monetization
+
 - **Freemium Model**:
   - Offer a **free version** with essential features, including:
     - **Offline maps and navigation**.
@@ -182,12 +183,28 @@ Highlight OsmAnd’s key features to differentiate it from competitors:
     - Exclusive features for power users.
 - **In-App Purchases**:
   - Sell **map updates**, and other Maps+ features for users who prefer one-time purchases.
+
+
+ ### B2C Sales:
+- **Sales and Promotions**:
+  - Run **sales campaigns** (e.g., Black Friday, New Year) promoted via **social media**, **email newsletters**, and **push notifications**.
+  - Use **regional pricing** to make OsmAnd Pro accessible to users in different countries.
+- **Direct Sales**:
+  - Offer **direct purchases** through the OsmAnd website using a trusted payment provider, in addition to app store sales (Google Play, Apple App Store, Amazon, Huawei).
+- **Paywalls and Push Notifications**:
+  - Encourage free users to upgrade to OsmAnd Pro by showcasing premium features through **paywalls** and **targeted push notifications**.
+- **Competitor Price Analysis**:
+  - Regularly check and analyze competitors’ pricing to ensure OsmAnd remains competitive and attractive to users.
+
+### B2B Sales:
 - **Enterprise Solutions**:
-  - Offer **customized mapping solutions** for businesses and organizations.
-  - Pricing and proposals for **B2B clients** are always handled on a **case-by-case basis**.
-- **Core Philosophy**:
-  - Ensure that **essential features** like offline maps and navigation remain **free for all users**.
-  - Provide a wide range of **free tools** to support users’ needs while offering premium features for those who want more advanced functionality.
+  - Provide **customized mapping solutions** for businesses and organizations.
+  - Work closely with partners to ensure **fair pricing**, **timely delivery**, and **high-quality solutions**.
+  - Tailor proposals to meet the specific needs of each client, ensuring mutual satisfaction.
+
+### Core Philosophy:
+- Ensure that **essential features** like offline maps and navigation remain **free for all users**.
+- Provide a wide range of **free tools** to support users’ needs while offering premium features for those who want more advanced functionality. 
 
 ---
 
