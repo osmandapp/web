@@ -5,7 +5,7 @@ title: Marketing strategy
 
 # Marketing Strategy
 
-This marketing strategy aligns with [OsmAnd's mission](../../../docs/hiring/mission.md) to **"provide open, customizable, and privacy-respecting mapping and navigation tools for everyone, everywhere."** By focusing on OsmAnd's unique strengths and values, this plan aims to grow the user base while staying true to the company's core principles.
+This marketing strategy aligns with [OsmAnd's mission](https://osmand.net/docs/hiring/mission) to **"provide open, customizable, and privacy-respecting mapping and navigation tools for everyone, everywhere."** By focusing on OsmAnd's unique strengths and values, this plan aims to grow the user base while staying true to the company's core principles.
 
 ---
 
