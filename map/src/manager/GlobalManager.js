@@ -34,6 +34,7 @@ export const DELETE_ACCOUNT_URL = 'delete-account/';
 export const SHARE_FILE_URL = 'share/join/:uuid';
 export const SHARE_FILE_MAIN_URL = 'share/join/';
 export const INFO_MENU_URL = 'info/';
+export const SHARE_MENU_URL = 'share/';
 
 export function getUniqFileId(file) {
     return `_id_${file.name}_${file.userid}`;

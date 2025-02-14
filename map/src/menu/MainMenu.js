@@ -73,6 +73,7 @@ import {
     SHARE_FILE_MAIN_URL,
     TRACK_ANALYZER_URL,
     INFO_MENU_URL,
+    SHARE_MENU_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -81,7 +82,7 @@ import LoginButton from './login/LoginButton';
 import LoginMenu from './login/LoginMenu';
 import TravelMenu from './travel/TravelMenu';
 import ProFeatures from '../frame/components/pro/ProFeatures';
-import { SHARE_TYPE, updateUserRequests } from '../manager/ShareManager';
+import { getShareFileInfo, SHARE_TYPE, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
@@ -129,28 +130,37 @@ export default function MainMenu({
         ctx.setLoadingContextMenu(false);
     }
 
+    // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {
-        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles) {
-            // open track from the URL first time
+        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles && ctx.favorites?.groups) {
             if (filename && isEmpty(ctx.selectedGpxFile)) {
                 const file = ctx.listFiles.uniqueFiles.find((file) => file.name === atob(filename));
                 if (!file) {
                     return;
                 }
                 ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
-                processDisplayTrack({
-                    visible: true,
-                    showOnMap: true,
-                    showInfo: true,
-                    zoomToTrack: true,
-                    file,
-                    ctx,
-                    fileStorage: ctx.gpxFiles,
-                    setFileStorage: ctx.setGpxFiles,
-                }).then();
+
+                if (location.pathname.includes(SHARE_MENU_URL)) {
+                    // open share menu
+                    if (!ctx.shareFile) {
+                        getShareFileInfo({ file, ctx }).then();
+                    }
+                } else {
+                    // open track info
+                    processDisplayTrack({
+                        visible: true,
+                        showOnMap: true,
+                        showInfo: true,
+                        zoomToTrack: true,
+                        file,
+                        ctx,
+                        fileStorage: ctx.gpxFiles,
+                        setFileStorage: ctx.setGpxFiles,
+                    }).then();
+                }
             }
         }
-    }, [location.pathname, ctx.listFiles.uniqueFiles]);
+    }, [location.pathname, ctx.listFiles.uniqueFiles, ctx.favorites?.groups]);
 
     useEffect(() => {
         if (returnToTrackMenuAfterInfoBlock()) {
@@ -354,14 +364,6 @@ export default function MainMenu({
             setMenuInfo(currentMenu.component);
             setSelectedType(currentMenu.type);
             ctx.setPrevPageUrl({ url: location, active: false });
-        } else {
-            if (
-                ctx.currentObjectType !== OBJECT_EXPLORE &&
-                ctx.currentObjectType !== OBJECT_TYPE_POI &&
-                ctx.currentObjectType !== OBJECT_TYPE_SHARE_FILE
-            ) {
-                setOpenMainMenu(true);
-            }
         }
     }
 

@@ -12,10 +12,13 @@ import TrackTabList from './tabs/TrackTabList';
 import _, { isEmpty } from 'lodash';
 import { hasSegmentTurns } from '../../manager/track/TracksManager';
 import {
+    FAVORITES_URL,
+    FAVOURITES,
     INFO_MENU_URL,
     MAIN_URL_WITH_SLASH,
     MENU_INFO_CLOSE_SIZE,
     SHARE_FILE_MAIN_URL,
+    SHARE_MENU_URL,
     TRACKS_URL,
 } from '../../manager/GlobalManager';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
@@ -60,7 +63,8 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     const [openWptTab, setOpenWptTab] = useState(false);
     const [openShareFileMenu, setOpenShareFileMenu] = useState(false);
     const [openShareFileItem, setOpenShareFileItem] = useState(false);
-    const [trackName, setTrackName] = useState(false);
+    const [trackName, setTrackName] = useState(null);
+    const [trackType, setTrackType] = useState(null);
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -106,10 +110,6 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                 }
                 ctx.setSelectedGpxFile({});
             }
-            if (location.pathname.includes(INFO_MENU_URL) && trackName) {
-                setTrackName(null);
-                navigate(MAIN_URL_WITH_SLASH + TRACKS_URL);
-            }
         }
     }, [showInfoBlock]);
 
@@ -130,12 +130,12 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
 
     // update URL for info track menu
     useEffect(() => {
-        if (trackName) {
+        if (trackName && !ctx.shareFile) {
             navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(btoa(trackName)), {
                 replace: true,
             });
         }
-    }, [trackName, navigate]);
+    }, [trackName]);
 
     // detect leaving from Local Track Editor when another kind of object type is activated
     useEffect(() => {
@@ -178,6 +178,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                     if (isCloudTrack(ctx)) {
                         // set track identification for URL
                         setTrackName(ctx.selectedGpxFile.name);
+                        setTrackType(TRACKS_URL);
                     }
                 }
                 if (tObj) {
@@ -199,10 +200,23 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
         }
     }, [ctx.selectedWpt]);
 
+    // share file menu
     useEffect(() => {
-        if (ctx.shareFile) {
-            setShowInfoBlock(true);
+        if (ctx.shareFile && ctx.shareFile.mainFile.name) {
             setOpenShareFileMenu(true);
+            if (!showInfoBlock) {
+                setShowInfoBlock(true);
+            }
+            const name = ctx.shareFile.mainFile.name;
+            const typeUrl = ctx.shareFile.mainFile.type === FAVOURITES ? FAVORITES_URL : TRACKS_URL;
+            setTrackName(name);
+            setTrackType(typeUrl);
+            navigate(
+                MAIN_URL_WITH_SLASH + typeUrl + INFO_MENU_URL + encodeURIComponent(btoa(name)) + '/' + SHARE_MENU_URL,
+                {
+                    replace: true,
+                }
+            );
         } else {
             setOpenShareFileMenu(false);
         }
@@ -299,6 +313,11 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                     onClick={() => {
                                         setShowInfoBlock(false);
                                         ctx.setCurrentObjectType(null);
+                                        if (trackName) {
+                                            // back to prev url
+                                            setTrackName(null);
+                                            navigate(MAIN_URL_WITH_SLASH + trackType);
+                                        }
                                     }}
                                 >
                                     <BackIcon />
