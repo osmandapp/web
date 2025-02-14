@@ -110,6 +110,8 @@ export default function MainMenu({
     const [selectedType, setSelectedType] = useState(null);
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
 
+    const [savePrevState, setSavePrevState] = useState(false);
+
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
     const Z_INDEX_OPEN_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK + 1;
@@ -163,10 +165,10 @@ export default function MainMenu({
     }, [location.pathname, ctx.listFiles.uniqueFiles, ctx.favorites?.groups]);
 
     useEffect(() => {
-        if (returnToTrackMenuAfterInfoBlock()) {
+        if (location.pathname.includes(INFO_MENU_URL) || savePrevState) {
+            setSavePrevState(false);
             return;
         }
-
         if (!menuInfo) {
             const item = items.find((item) => item.url === location.pathname);
             if (item) {
@@ -190,10 +192,6 @@ export default function MainMenu({
             setShowInfoBlock(false);
         }
     }, [location.pathname]);
-
-    function returnToTrackMenuAfterInfoBlock() {
-        return location.pathname.includes(INFO_MENU_URL) || ctx.openGroups.length > 0;
-    }
 
     function openShareFileByLink() {
         const openShareFile = location.pathname.includes(SHARE_FILE_MAIN_URL);
@@ -708,6 +706,7 @@ export default function MainMenu({
                     setShowInfoBlock={setShowInfoBlock}
                     setClearState={setClearState}
                     mainMenuSize={size}
+                    setSavePrevState={setSavePrevState}
                 />
                 {openCloudSettings && <CloudSettings setOpenCloudSettings={setOpenCloudSettings} />}
             </Drawer>

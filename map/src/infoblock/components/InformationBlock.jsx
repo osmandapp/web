@@ -49,7 +49,13 @@ const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     return null;
 };
 
-export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setClearState, mainMenuSize }) {
+export default function InformationBlock({
+    showInfoBlock,
+    setShowInfoBlock,
+    setClearState,
+    mainMenuSize,
+    setSavePrevState,
+}) {
     const DRAWER_SIZE = 360;
 
     const ctx = useContext(AppContext);
@@ -65,6 +71,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     const [openShareFileItem, setOpenShareFileItem] = useState(false);
     const [trackName, setTrackName] = useState(null);
     const [trackType, setTrackType] = useState(null);
+    const [closeShareMenu, setCloseShareMenu] = useState(false);
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -82,6 +89,15 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
             window.addEventListener('keydown', escapePointMenu);
         }
     }, [ctx.pointContextMenu]);
+
+    useEffect(() => {
+        if (closeShareMenu) {
+            setCloseShareMenu(false);
+            setTrackName(null);
+            setSavePrevState(true);
+            navigate(MAIN_URL_WITH_SLASH + trackType);
+        }
+    }, [closeShareMenu]);
 
     useEffect(() => {
         if (!showInfoBlock) {
@@ -296,7 +312,9 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                 setShowInfoBlock={setShowInfoBlock}
                             />
                         ))}
-                    {openShareFileMenu && <ShareFileMenu setShowInfoBlock={setShowInfoBlock} />}
+                    {openShareFileMenu && (
+                        <ShareFileMenu setShowInfoBlock={setShowInfoBlock} setCloseShareMenu={setCloseShareMenu} />
+                    )}
                     {isOpenMainFavShareFile() && <ShareFile />}
                     {hasOldTabs() && (
                         <Box anchor={'right'} sx={{ height: 'auto', width: getWidth(), overflowX: 'hidden' }}>
@@ -316,6 +334,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                         if (trackName) {
                                             // back to prev url
                                             setTrackName(null);
+                                            setSavePrevState(true);
                                             navigate(MAIN_URL_WITH_SLASH + trackType);
                                         }
                                     }}

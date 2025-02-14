@@ -29,7 +29,7 @@ import PublicAccessList from './access/PublicAccessList';
 import PrivateAccessList from './access/PrivateAccessList';
 import ThickDivider from '../components/dividers/ThickDivider';
 
-export default function ShareFileMenu({ setShowInfoBlock }) {
+export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -185,6 +185,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
     function closeMenu() {
         ctx.setShareFile(null);
         setShowInfoBlock(false);
+        setCloseShareMenu(true);
     }
 
     const handleAccessTab = (event, newAccessTab) => {
