@@ -14,7 +14,6 @@ import {
 import { Menu } from '@mui/icons-material';
 import AppContext, {
     OBJECT_CONFIGURE_MAP,
-    OBJECT_EXPLORE,
     OBJECT_GLOBAL_SETTINGS,
     OBJECT_SEARCH,
     OBJECT_TYPE_TRAVEL,
@@ -23,9 +22,7 @@ import AppContext, {
     OBJECT_TYPE_LOCAL_TRACK,
     OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_NAVIGATION_TRACK,
-    OBJECT_TYPE_POI,
     OBJECT_TYPE_WEATHER,
-    OBJECT_TYPE_SHARE_FILE,
     OBJECT_TRACK_ANALYZER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
@@ -170,11 +167,7 @@ export default function MainMenu({
             return;
         }
         if (!menuInfo) {
-            const item = items.find((item) => item.url === location.pathname);
-            if (item) {
-                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
-                selectMenu({ item, openFromUrl: true });
-            }
+            selectMenuByUrl();
         }
         if (location.pathname === MAIN_URL_WITH_SLASH) {
             ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
@@ -192,6 +185,15 @@ export default function MainMenu({
             setShowInfoBlock(false);
         }
     }, [location.pathname]);
+
+    function selectMenuByUrl() {
+        const item = items.find((item) => item.url === location.pathname);
+        if (item) {
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+            return selectMenu({ item, openFromUrl: true });
+        }
+        return null;
+    }
 
     function openShareFileByLink() {
         const openShareFile = location.pathname.includes(SHARE_FILE_MAIN_URL);
@@ -395,8 +397,12 @@ export default function MainMenu({
 
     function getGroup() {
         if (ctx.openGroups?.length > 0) {
+            let type = selectedType;
+            if (!type) {
+                type = selectMenuByUrl();
+            }
             const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
-            if (selectedType === OBJECT_TYPE_FAVORITE) {
+            if (type === OBJECT_TYPE_FAVORITE) {
                 if (lastGroup?.type === SHARE_TYPE) {
                     if (lastGroup?.files) {
                         return <FavoriteGroupFolder smartf={lastGroup} />;
@@ -404,7 +410,7 @@ export default function MainMenu({
                     return <FavoriteGroupFolder folder={lastGroup.group} smartf={lastGroup} />;
                 }
                 return <FavoriteGroupFolder folder={lastGroup} />;
-            } else if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
+            } else if (type === OBJECT_TYPE_CLOUD_TRACK) {
                 if (lastGroup?.type === SHARE_TYPE) {
                     return <TrackGroupFolder smartf={lastGroup} />;
                 }
@@ -415,6 +421,7 @@ export default function MainMenu({
 
     function selectMenu({ item }) {
         closeSubPages({});
+        let currentType;
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
@@ -426,18 +433,20 @@ export default function MainMenu({
                 ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
             }
             setMenuInfo(menu?.component);
-            setSelectedType(menu?.type);
+            currentType = menu?.type;
             ctx.setCurrentObjectType(null);
         } else {
             // select first menu
             setMenuInfo(item.component);
-            setSelectedType(item.type);
+            currentType = item.type;
             setOpenMainMenu(false);
             if (item.type === OBJECT_CONFIGURE_MAP) {
                 ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
             }
         }
         ctx.setPrevPageUrl({ url: location, active: false });
+        setSelectedType(currentType);
+        return currentType;
     }
 
     useEffect(() => {
