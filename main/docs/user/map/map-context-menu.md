@@ -67,6 +67,8 @@ The selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.op
 
 A context menu will appear when you hold at any point on the Map with a **long tap**. In this case, context menu provides you the information of geographical point address, distance and direction from your current position.
 
+> **NOTE**. *A long tap on a building number highlights its outline and opens the map context menu.*
+
 
 ### Select Route
 
@@ -115,7 +117,7 @@ To hide the context menu:
 
 </Tabs>
 
-To gain more details about the object, you need to tap the *Details* button in the Context menu or move the panel up.
+To gain more details about the object, you need to tap the **Details** button in the Context menu or move the panel up.
 
 
 ### Object Info
@@ -270,16 +272,28 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 </Tabs>
 
-- In the **Online photos** (*Android*) section of the map context menu, you can access photos of objects from [Wikimedia](https://www.wikimedia.org/), which offers media tagged with *"image"* or *"wikimedia"* from OpenStreetMap.
+**Online photos.**  
+In the **Online photos** (*Android*) section of the map context menu, you can access photos of objects from [Wikimedia](https://www.wikimedia.org/), which offers media tagged with *"image"* or *"wikimedia"* from OpenStreetMap.
 
-    - With the *View all* button, the gallery opens in a full-screen view, allowing you to swipe through all images related to the selected location. Tapping a photo opens it in full screen mode with access to action such as *Share*, *Details*, *Open in browser*, and *Download*. You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.  
+- Tap the **View All** button to open the gallery in full screen mode. There you can swipe through all the images related to the selected location.
 
-- In the **Images nearby** (*iOS*) section in the map context menu provides access to photos of Points of Interest from sources like [Wikimedia](https://www.wikimedia.org/) and [Mapillary](../plugins/mapillary.md). Mapillary offers nearby street-level images, while Wikimedia provides media tagged with *"image"* or *"wikimedia"* from OpenStreetMap. You can contribute your photos using the *Add Photos* button.
+- Tap a photo to access actions such as *Share*, *Details*, *Open in browser*, and *Download*.
 
-- **Street-level imagery** (*Android*) integrates Mapillary’s extensive collection of real-world street views. You can access nearby, sequentially captured images of streets and paths. Also, Mapillary provides street-level images directly on the map view. You can read more in the article [Mapillary plugin](https://osmand.net/docs/user/plugins/mapillary).
+- You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.  
 
-    - With *Add photos* button, you can share your own street-level imagery via Mapillary.
-    - Use *Explore* button to open Mapillary view with photos.
+**Images nearby.**  
+*Images nearby* (*iOS*) section provides access to photos of points of interest from sources such as [Wikimedia](https://www.wikimedia.org/) and [Mapillary](../plugins/mapillary.md).
+
+- Mapillary offers nearby street-level images, while Wikimedia provides media tagged with *"image"* or *"wikimedia"* from OpenStreetMap.
+
+- You can contribute your photos using the *Add Photos* button.  
+
+**Street-level imagery.**  
+*Street-level imagery* (*Android*) integrates Mapillary’s extensive collection of real-world street views. You can access nearby, sequentially captured images of streets and paths. Also, Mapillary provides street-level images directly on the map view. You can read more in the article [Mapillary plugin](https://osmand.net/docs/user/plugins/mapillary).
+
+- With *Add photos* button, you can share your own street-level imagery via Mapillary.
+
+- Use *Explore* button to open Mapillary view with photos.
 
 
 ### * Audio/Video Note
@@ -288,9 +302,7 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 ![Image list](@site/static/img/map/image_list_android.png) ![Video list](@site/static/img/map/video_list_android.png)
 
-You can find additional information about [Audio / Video notes](../plugins/audio-video-notes.md) in Details Menu and buttons (Delete, Play, Show) in Context menu.
-
-For Image notes in the Details Menu, an image is displayed; when you tap the image, it opens in the editor. There is information about the date and the time when the note was made. In the Context menu, there are *Show* and *Delete* buttons to open an image in the editor or delete it.  
+[Audio / Video notes](../plugins/audio-video-notes.md) information such as date, coordinates, preview and others are available in the **Details** menu. You can open the notes in secondary software by tapping the **Play / Show** button in the context menu of the note.
 
 
 ## Actions
@@ -541,10 +553,12 @@ Read more about [*Plan a route* tool](../plan-route/create-route.md).
 
 </Tabs>
 
-To update or download online maps (tiles) at a specific location, you can use the context menu of the object:  
-**Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *update*, go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
-**iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* and *<Translate ios="true" ids="update_tile"/>*.  
-Please refer to [full instruction](../map/raster-maps.md#download--update-tiles).  
+To update or download online maps (tiles) at a specific location, you can use the context menu of the object:
+
+- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Update*, go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
+- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* and *<Translate ios="true" ids="update_tile"/>*.  
+
+Please read the [full instruction](../map/raster-maps.md#download--update-tiles).  
 
 
 ### Update / Download Vector Maps
@@ -571,12 +585,16 @@ Please refer to [full instruction](../map/raster-maps.md#download--update-tiles)
 
 In case there is no offline map present at the selected location, for example map object menu was opened via Search or via specific Favorite, then the smallest possible offline map will be suggested to [download](../start-with/download-maps.md#download---map-context-menu).  
 
-**iOS**: If you already have [downloaded](../start-with/download-maps.md) OsmAnd maps (vector or terrain), it is possible to updated them via context menu. You will need to select the region on the map first - tap any location on worldwide zoom 3-7.  
+**iOS**. If you already have [downloaded](../map/map-context-menu.md) OsmAnd maps (vector or terrain), it is possible to updated them via context menu. You will need to select the region on the map first - tap any location on worldwide zoom 3-7.  
 
-**NOTE**: if you have opened context menu for map region (region is highlighted), you will be able to see *<Translate android="true" ids="rendering_category_details"/>* about it: type and size of an available map, link to a Wikipedia page, language, population and other.
+> **NOTE**. If you have opened context menu for map region (region is highlighted), you will be able to see *<Translate android="true" ids="rendering_category_details"/>* about it: type and size of an available map, link to a Wikipedia page, language, population and other.
 
 
 ### * Add / Delete Parking point
+
+:::note
+To add add/delete parking points, enable the OsmAnd [**Parking position plugin**](../plugins/parking.md).
+:::  
 
 <Tabs groupId="operating-systems">
 
@@ -600,10 +618,12 @@ In case there is no offline map present at the selected location, for example ma
 
 Any selected location on the map could be marked as [a parking position](../plugins/parking.md). To delete parking position, you can open the context menu associated with parking location.
 
-Requires [Parking position plugin](../plugins/parking.md).
-
 
 ### * Add / Edit Track waypoint
+
+:::note
+To add add/edit track points, enable the OsmAnd [**Trip recording plugin**](../plugins/trip-recording.md).
+:::  
 
 <Tabs groupId="operating-systems">
 
@@ -634,10 +654,12 @@ You can add waypoints to a recorded track or to the current track recording usin
 - [Fill in](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) the required data and save the waypoint.
 - You can configure the [Quick Actions](../widgets/quick-action.md) by adding a waypoint to the *Add track waypoint*.
 
-Requires [Trip recording plugin](../plugins/trip-recording.md).
-
 
 ### * Create / Modify POI
+
+:::note
+To add create/modify POIs, enable the OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md).
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -660,10 +682,12 @@ With OSM Editing plugin, you can create and modify most of the POIs present on [
 - &nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [creates a new POI](../plugins/osm-editing.md#how-to-add-poi) at selected location.
 - &nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [modifies selected POI](../plugins/osm-editing.md#how-to-modify-poi).
 
-Requires [OSM Editing plugin](../plugins/osm-editing.md).
-
 
 ### * Open OSM Note
+
+:::note
+To add open OSM note, enable the OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md).
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -687,31 +711,37 @@ Requires [OSM Editing plugin](../plugins/osm-editing.md).
 
 You can [report](../plugins/osm-editing.md#how-to-report-a-mistake) map data errors at specific location to [OpenStreetMap community](https://wiki.openstreetmap.org/wiki/Join_the_community). Please follow [guidelines](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) and add proper comments to an issue.
 
-Requires [OSM Editing plugin](../plugins/osm-editing.md).
-
 
 ### * Comment / Close OSM Note
+
+:::note
+To comment/close OSM note, enable the OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md).
+:::
 
 ![Comment OSM Note Android](@site/static/img/map/action_comment_note_android.png) ![Reopen OSM Note Android](@site/static/img/map/action_reopen_note_android.png)
 
 You can [comment](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes), [resolve](https://wiki.openstreetmap.org/wiki/Notes#Resolving_notes) and reopen
 OpenStreetMap Notes via object's context menu.
 
-Requires [OSM Editing plugin](../plugins/osm-editing.md).
-
 
 ### * Upload POI / OSM Note
+
+:::note
+To upload POI / OSM note, enable the OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md).
+:::
 
 ![Upload POI Android](@site/static/img/map/action_poi_upload_android.png) ![Upload OSM Note Android](@site/static/img/map/action_note_upload_android.png)
 
 In case you use *Offline mode* to add / edit POI or OSM Note, you will need to upload the changes to OpenStreetMap. By default, *Offline mode* is on to avoid accidental changes of public database. You can upload or delete change via created object context menu.
 
-Requires [OSM Editing plugin](../plugins/osm-editing.md).
-
 
 ### * Record AV Note
 
 <InfoAndroidOnly />
+
+:::note
+To record audio/video notes, enable the OsmAnd [**Audio/Video Notes plugin**](../plugins/audio-video-notes.md).
+:::
 
 ![Action Audio-Video Android](@site/static/img/map/action_av_note_android.png)
 
@@ -720,8 +750,6 @@ Records or takes a media note at a selected point on the map.
 - &nbsp;<Translate android="true" ids="recording_context_menu_arecord"/> - makes a [audio note](../map/point-layers-on-map.md#-audio--video-points-android) on selected point (creates new point on the overlay with audio icon).
 - &nbsp;<Translate android="true" ids="recording_context_menu_vrecord"/> - makes a [video note](../map/point-layers-on-map.md#-audio--video-points-android) on selected point (creates new point on the overlay with video icon).
 - &nbsp;<Translate android="true" ids="recording_context_menu_precord"/> - makes a [photo point](../map/point-layers-on-map.md#-audio--video-points-android) on the map.
-
-Requires [Audio / Video note plugin](../plugins/audio-video-notes.md).
 
 
 ## Customize
@@ -754,4 +782,4 @@ Available types of actions:
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in October 2024*
+> *This article was last updated in February 2025*

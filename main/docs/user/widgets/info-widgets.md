@@ -140,24 +140,27 @@ The widget shows the current speed detected by the GPS sensor.
 
 </Tabs>  
 
-This widget shows your average speed for a selected time interval and does not require other features such as track recording or navigation. You can easily use it to check if your average speed is in line with highway speed limits, or record your average speed for the last 5–15 minutes of cycling.  
+The **Average Speed** widget calculates and displays your average speed over a selected time interval without requiring navigation or track recording. It is useful for monitoring speed compliance on highways or tracking average speed over the last few minutes of cycling.
 
-Tap the Average Speed widget *Settings* button (*Android*) or the added widget field (*iOS*) to select the time interval and the stop on/off option.  
+**Configuring the widget.**
+
+To adjust settings, tap the **Settings** button (*Android*) or the **widget field** (*iOS*). Available options include:
 
 **Time interval**  
-The average speed is calculated for a given time interval according to your selection. Thus, you can set the average speed calculation interval from 15 seconds to 60 minutes. In general, the average speed is taken from the recorded GPS points: ```Average Speed = AVERAGE(GPS_LOCATION.speed)```.  
+The average speed is calculated based on the selected time interval, which can range from **15 seconds to 60 minutes**. The calculation is based on GPS data using the formula:  
+`Average Speed = AVERAGE(GPS_LOCATION.speed)`.
 
 **Take stops into account**  
-***Off*** *setting*. A long stop will also add zeros to the average speed calculation, which can significantly change the overall value.
-***On*** *setting*. If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This ensures that your average speed won't change much when you stop at a stoplight or want to take a break from cycling.
+**Enabled**. If the recorded speed is below 1 unit per hour, it is ignored, preventing unnecessary drops in average speed when stopping at traffic lights or taking short breaks.  
+**Disabled**. Stops are included in the calculation, meaning long pauses will reduce the overall average speed.
 
-**Reset average speed (*Android*)**  
-You can reset the current average speed value using two methods:
+**Reset average speed**  
+You can reset the average speed calculation in two ways:
 
-1. Long tap on the widget, which opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu), and select *Reset average speed*.
-2. Access the reset option from the widget **Settings** within the [Configure Screen menu](../widgets/configure-screen.md#settings).
+1. Long tap the widget to open the [Context menu](../widgets/configure-screen.md#widget-context-menu), and select *Reset average speed*.
+2. Open the *widget settings* via the [Configure Screen menu](../widgets/configure-screen.md#settings) and select the reset option.
 
-After resetting, the average speed will be calculated from the beginning, starting with the new GPS data. This feature is particularly useful for short-term measurements, such as monitoring speed in areas with an average speed enforcement camera, ensuring accurate real-time metrics from the moment of reset.
+After reset, the average speed is recalculated from the new GPS data. This feature is useful for real-time speed monitoring, such as tracking speed in areas with **average speed enforcement cameras**.
 
 <Tabs groupId="operating-systems">
 
@@ -180,7 +183,7 @@ After resetting, the average speed will be calculated from the beginning, starti
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_average_speed"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="map_widget_average_speed"/>* |
 | By tapping | No changes |
-| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) Can be used to reset average speed (*Android*). |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) Can be used to reset average speed. |
 
 
 ## Glide Ratio
