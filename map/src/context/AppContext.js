@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useCookie from 'react-use-cookie';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
-import TracksManager, { getGpxFiles } from '../manager/track/TracksManager';
+import TracksManager, { getGpxFiles, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
 import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
 import { apiGet } from '../util/HttpApi';
@@ -14,6 +14,7 @@ import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { getShareWithMe } from '../manager/ShareManager';
 import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX } from '../manager/GlobalManager';
+import { loadLocalTracksFromStorage } from '../menu/tracks/util/LocalTrackStorage';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -125,7 +126,7 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
     const promises = [];
     const newGpxFiles = Object.assign({}, gpxFiles);
 
-    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+    let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
 
     let newVisFiles = {
         old: [],
@@ -212,7 +213,7 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
         setVisibleTracks(newVisFiles);
     });
 
-    localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
+    localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
 }
 
 async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo) {
@@ -273,6 +274,8 @@ const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
     seleniumUpdateActivity();
+
+    const [processingSaveTrack, setProcessingSaveTrack] = useState(false);
 
     const [globalConfirmation, setGlobalConfirmation] = useState(null);
     const [fitBoundsPadding, mutateFitBoundsPadding] = useMutator({ left: 0, top: 0, right: 0, bottom: 0 });
@@ -335,7 +338,7 @@ export const AppContextProvider = (props) => {
     const [shareFilesCache, setShareFilesCache] = useState({});
     const [shareWithMeFiles, setShareWithMeFiles] = useState(null);
     const [fitBoundsShareTracks, setFitBoundsShareTracks] = useState(null);
-
+    // selected track
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
 
@@ -475,7 +478,7 @@ export const AppContextProvider = (props) => {
     }, [wantDeleteAcc]);
 
     useEffect(() => {
-        TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
+        loadLocalTracksFromStorage(setLocalTracksLoading).then((tracks) => {
             setLocalTracks(tracks);
         });
     }, []);
@@ -756,6 +759,8 @@ export const AppContextProvider = (props) => {
                 setExcludedSegments,
                 globalGraph,
                 setGlobalGraph,
+                processingSaveTrack,
+                setProcessingSaveTrack,
             }}
         >
             {props.children}
