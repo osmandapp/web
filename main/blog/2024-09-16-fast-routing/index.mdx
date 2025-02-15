@@ -1,6 +1,6 @@
 ---
 slug: fast-routing
-title: "Optimizing Offline Navigation: HH vs. Traditional Routing (draft)"
+title: "HH Offline Navigation Optimization vs. Traditional Routing (draft)"
 authors: eugene
 tags: [ios, android]
 unlisted: true
@@ -57,11 +57,11 @@ To understand the efficiency of Highway Hierarchy (HH) routing in OsmAnd, it is 
 
 ### How HH Routing differs from Graph-Based Routing
 
-**Traditional Graph-Based Routing (A, Dijkstra's Algorithm, etc.)**
+**Traditional Graph-Based Routing (A*, Dijkstra's Algorithm, etc.)**
 
 Graph-based routing treats every road segment equally, performing exhaustive searches to find the shortest path. This approach is highly accurate but requires significant processing power. OsmAnd still supports graph-based routing options, such as:
 
-- **A* 2-phase**. Traditional A** search with heuristics to speed up calculations.
+- **A* 2-phase**. Traditional A* search with heuristics to speed up calculations.
 - **A* Classic**. A variation that improves efficiency by incorporating road hierarchy data.
 
 These algorithms work well for small-scale maps but become increasingly slow when handling large geographical areas.
