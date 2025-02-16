@@ -34,7 +34,6 @@ import ActionsMenu from '../actions/ActionsMenu';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
     const ctx = useContext(AppContext);
-    const { t } = useTranslation();
 
     const [, , mobile] = useWindowSize();
 
@@ -47,7 +46,8 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
     const anchorEl = useRef(null);
 
-    let checkedSwitch = fileStorage?.[file.name]?.url ? fileStorage[file.name]?.showOnMap : false;
+    const [checkedSwitch, setCheckedSwitch] = useState(false);
+
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
 
     const dist = getDist(file);
@@ -62,6 +62,14 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     }, [openActions]);
 
     useEffect(() => {
+        if (fileStorage?.[file.name]?.url) {
+            setCheckedSwitch(fileStorage[file.name].showOnMap);
+        } else {
+            setCheckedSwitch(false);
+        }
+    }, [fileStorage?.[file.name]]);
+
+    useEffect(() => {
         const storage = getFileStorage({ ctx, smartf, type: GPX });
         setFileStorage(storage);
     }, [ctx, smartf]);
@@ -69,7 +77,6 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     // Display track on map (visible or not), add to visible cache
     useEffect(() => {
         if (displayTrack === true || displayTrack === false) {
-            checkedSwitch = !checkedSwitch;
             processDisplayTrack({
                 setLoading: setLoadingTrack,
                 showOnMap: displayTrack,
@@ -107,7 +114,6 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                             className={styles.item}
                             id={id ?? `se-cloud-track-${trackName}`}
                             onClick={() => {
-                                checkedSwitch = !checkedSwitch;
                                 processDisplayTrack({
                                     setLoading: setLoadingTrack,
                                     visible: true,
