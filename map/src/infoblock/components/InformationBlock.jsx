@@ -30,7 +30,7 @@ import WptPhotoList from './wpt/WptPhotoList';
 import ShareFileMenu from '../../menu/share/ShareFileMenu';
 import ShareFile from '../../menu/share/ShareFile';
 import { useNavigate } from 'react-router-dom';
-import { compressFromString } from '../../util/GzipBase64.mjs';
+import { encodeString } from '../../util/Utils';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -148,10 +148,8 @@ export default function InformationBlock({
     // update URL for info track menu
     useEffect(() => {
         if (trackName && !ctx.shareFile) {
-            compressFromString(trackName).then((compressedTrackName) => {
-                navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(compressedTrackName), {
-                    replace: true,
-                });
+            navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(encodeString(trackName)), {
+                replace: true,
             });
         }
     }, [trackName]);
@@ -230,19 +228,18 @@ export default function InformationBlock({
             const typeUrl = ctx.shareFile.mainFile.type === FAVOURITES ? FAVORITES_URL : TRACKS_URL;
             setTrackName(name);
             setTrackType(typeUrl);
-            compressFromString(name).then((compressedName) => {
-                navigate(
-                    MAIN_URL_WITH_SLASH +
-                        typeUrl +
-                        INFO_MENU_URL +
-                        encodeURIComponent(compressedName) +
-                        '/' +
-                        SHARE_MENU_URL,
-                    {
-                        replace: true,
-                    }
-                );
-            });
+
+            navigate(
+                MAIN_URL_WITH_SLASH +
+                    typeUrl +
+                    INFO_MENU_URL +
+                    encodeURIComponent(encodeString(name)) +
+                    '/' +
+                    SHARE_MENU_URL,
+                {
+                    replace: true,
+                }
+            );
         } else {
             setOpenShareFileMenu(false);
         }

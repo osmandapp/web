@@ -72,7 +72,7 @@ import {
     INFO_MENU_URL,
     SHARE_MENU_URL,
 } from '../manager/GlobalManager';
-import { createUrlParams } from '../util/Utils';
+import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import SearchMenu from './search/SearchMenu';
 import LoginButton from './login/LoginButton';
@@ -83,7 +83,6 @@ import { getShareFileInfo, SHARE_TYPE, updateUserRequests } from '../manager/Sha
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
-import { decompressToString } from '../util/GzipBase64.mjs';
 
 export default function MainMenu({
     size,
@@ -134,32 +133,30 @@ export default function MainMenu({
     useEffect(() => {
         if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles && ctx.favorites?.groups) {
             if (filename && isEmpty(ctx.selectedGpxFile)) {
-                decompressToString(filename).then((decodedFilename) => {
-                    const file = ctx.listFiles.uniqueFiles.find((file) => file.name === decodedFilename);
-                    if (!file) {
-                        return;
-                    }
-                    ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+                const file = ctx.listFiles.uniqueFiles.find((file) => file.name === decodeString(filename));
+                if (!file) {
+                    return;
+                }
+                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
 
-                    if (location.pathname.includes(SHARE_MENU_URL)) {
-                        // open share menu
-                        if (!ctx.shareFile) {
-                            getShareFileInfo({ file, ctx }).then();
-                        }
-                    } else {
-                        // open track info
-                        processDisplayTrack({
-                            visible: true,
-                            showOnMap: true,
-                            showInfo: true,
-                            zoomToTrack: true,
-                            file,
-                            ctx,
-                            fileStorage: ctx.gpxFiles,
-                            setFileStorage: ctx.setGpxFiles,
-                        }).then();
+                if (location.pathname.includes(SHARE_MENU_URL)) {
+                    // open share menu
+                    if (!ctx.shareFile) {
+                        getShareFileInfo({ file, ctx }).then();
                     }
-                });
+                } else {
+                    // open track info
+                    processDisplayTrack({
+                        visible: true,
+                        showOnMap: true,
+                        showInfo: true,
+                        zoomToTrack: true,
+                        file,
+                        ctx,
+                        fileStorage: ctx.gpxFiles,
+                        setFileStorage: ctx.setGpxFiles,
+                    }).then();
+                }
             }
         }
     }, [location.pathname, ctx.listFiles.uniqueFiles, ctx.favorites?.groups]);
