@@ -108,7 +108,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null }) {
             const updatedMarkers = addLocDist({ location: getCenterMapLoc(hash), markers: refMarkers.current });
             setMarkers(updatedMarkers);
         }
-    }, [currentLoc, delayedHash, refMarkers.current]);
+    }, [currentLoc, refMarkers.current]);
 
     useEffect(() => {
         if (folder) {

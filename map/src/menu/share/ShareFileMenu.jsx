@@ -1,15 +1,5 @@
 import headerStyles from '../trackfavmenu.module.css';
-import {
-    AppBar,
-    Box,
-    Button,
-    Divider,
-    IconButton,
-    ToggleButton,
-    ToggleButtonGroup,
-    Toolbar,
-    Typography,
-} from '@mui/material';
+import { AppBar, Box, Button, IconButton, ToggleButton, ToggleButtonGroup, Toolbar, Typography } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as ShareLinkIcon } from '../../assets/icons/ic_action_link.svg';
@@ -39,17 +29,17 @@ import PublicAccessList from './access/PublicAccessList';
 import PrivateAccessList from './access/PrivateAccessList';
 import ThickDivider from '../components/dividers/ThickDivider';
 
-export default function ShareFileMenu({ setShowInfoBlock }) {
+export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
     const shareTypes = {
-        public: {
-            key: 'public',
-            isPublic: true,
-            name: t('web:share_type_public'),
-            icon: <ShareTypePublicIcon />,
-            info: t('web:share_type_public_desc'),
+        private: {
+            key: 'private',
+            isPublic: false,
+            name: t('web:share_type_private'),
+            icon: <ShareTypePrivateIcon />,
+            info: t('web:share_type_private_desc'),
         },
         request: {
             key: 'request',
@@ -58,12 +48,12 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
             icon: <ShareTypeAccessIcon />,
             info: t('web:share_type_request_only_desc'),
         },
-        private: {
-            key: 'private',
-            isPublic: false,
-            name: t('web:share_type_private'),
-            icon: <ShareTypePrivateIcon />,
-            info: t('web:share_type_private_desc'),
+        public: {
+            key: 'public',
+            isPublic: true,
+            name: t('web:share_type_public'),
+            icon: <ShareTypePublicIcon />,
+            info: t('web:share_type_public_desc'),
         },
     };
 
@@ -195,6 +185,7 @@ export default function ShareFileMenu({ setShowInfoBlock }) {
     function closeMenu() {
         ctx.setShareFile(null);
         setShowInfoBlock(false);
+        setCloseShareMenu(true);
     }
 
     const handleAccessTab = (event, newAccessTab) => {

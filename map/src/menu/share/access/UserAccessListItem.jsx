@@ -95,6 +95,14 @@ export default function UserAccessListItem({
         ]);
     }
 
+    function showOwnerDivider() {
+        return showOwner && userList?.length > 0;
+    }
+
+    function showDivider() {
+        return !showOwner && !anyone && index !== userList?.length - 1;
+    }
+
     return useMemo(
         () => (
             <div ref={ref}>
@@ -147,8 +155,8 @@ export default function UserAccessListItem({
                                 </div>
                             )}
                         </MenuItem>
-                        {showOwner && userList && userList?.length !== 0 && <DividerWithMargin margin={'64px'} />}
-                        {!showOwner && index !== userList?.length - 1 && <DividerWithMargin margin={'64px'} />}
+                        {showOwnerDivider() && <DividerWithMargin margin={'64px'} />}
+                        {showDivider() && <DividerWithMargin margin={'64px'} />}
                     </div>
                 )}
             </div>

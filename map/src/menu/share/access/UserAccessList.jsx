@@ -7,6 +7,7 @@ import styles from '../share.module.css';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { ReactComponent as ShareIcon } from '../../../assets/icons/ic_group.svg';
 import { useTranslation } from 'react-i18next';
+import DividerWithMargin from '../../components/dividers/DividerWithMargin';
 
 export default function UserAccessList({ type, users, setForcedUpdate }) {
     const ctx = useContext(AppContext);
@@ -25,7 +26,7 @@ export default function UserAccessList({ type, users, setForcedUpdate }) {
             maxWidth={ctx.infoBlockWidth}
             sx={{ overflow: 'auto', overflowX: 'hidden', maxHeight: '225px' }}
         >
-            {showOwner && <UserAccessListItem showOwner={true} type={type} userList={users} />}
+            {showOwner && <UserAccessListItem showOwner={true} type={type} userList={users[APPROVED_ACCESS_TYPE]} />}
             {emptyDataMsg && (
                 <Box>
                     <MenuItem className={styles.shareTypeSelect}>

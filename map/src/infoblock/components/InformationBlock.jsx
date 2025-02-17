@@ -4,13 +4,23 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_WEATHER,
     isTrack,
+    isCloudTrack,
 } from '../../context/AppContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
 import _, { isEmpty } from 'lodash';
 import { hasSegmentTurns } from '../../manager/track/TracksManager';
-import { MENU_INFO_CLOSE_SIZE, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
+import {
+    FAVORITES_URL,
+    FAVOURITES,
+    INFO_MENU_URL,
+    MAIN_URL_WITH_SLASH,
+    MENU_INFO_CLOSE_SIZE,
+    SHARE_FILE_MAIN_URL,
+    SHARE_MENU_URL,
+    TRACKS_URL,
+} from '../../manager/GlobalManager';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import styles from '../../menu/trackfavmenu.module.css';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
@@ -19,6 +29,8 @@ import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
 import ShareFileMenu from '../../menu/share/ShareFileMenu';
 import ShareFile from '../../menu/share/ShareFile';
+import { useNavigate } from 'react-router-dom';
+import { encodeString } from '../../util/Utils';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -38,10 +50,17 @@ const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     return null;
 };
 
-export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setClearState, mainMenuSize }) {
+export default function InformationBlock({
+    showInfoBlock,
+    setShowInfoBlock,
+    setClearState,
+    mainMenuSize,
+    setSavePrevState,
+}) {
     const DRAWER_SIZE = 360;
 
     const ctx = useContext(AppContext);
+    const navigate = useNavigate();
 
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
@@ -51,6 +70,9 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     const [openWptTab, setOpenWptTab] = useState(false);
     const [openShareFileMenu, setOpenShareFileMenu] = useState(false);
     const [openShareFileItem, setOpenShareFileItem] = useState(false);
+    const [trackName, setTrackName] = useState(null);
+    const [trackType, setTrackType] = useState(null);
+    const [closeShareMenu, setCloseShareMenu] = useState(false);
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -68,6 +90,15 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
             window.addEventListener('keydown', escapePointMenu);
         }
     }, [ctx.pointContextMenu]);
+
+    useEffect(() => {
+        if (closeShareMenu) {
+            setCloseShareMenu(false);
+            setTrackName(null);
+            setSavePrevState(true);
+            navigate(MAIN_URL_WITH_SLASH + trackType);
+        }
+    }, [closeShareMenu]);
 
     useEffect(() => {
         if (!showInfoBlock) {
@@ -94,6 +125,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                         },
                     });
                 }
+                ctx.setSelectedGpxFile({});
             }
         }
     }, [showInfoBlock]);
@@ -112,6 +144,15 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
             setOpenShareFileItem(false);
         }
     }, [showInfoBlock]);
+
+    // update URL for info track menu
+    useEffect(() => {
+        if (trackName && !ctx.shareFile) {
+            navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(encodeString(trackName)), {
+                replace: true,
+            });
+        }
+    }, [trackName]);
 
     // detect leaving from Local Track Editor when another kind of object type is activated
     useEffect(() => {
@@ -151,6 +192,11 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                 } else if (ctx.selectedGpxFile && isTrack(ctx) && !openShareFileItem) {
                     // finally assume that default selectedGpxFile is a track
                     tObj = new TrackTabList().create(ctx, setShowInfoBlock);
+                    if (isCloudTrack(ctx)) {
+                        // set track identification for URL
+                        setTrackName(ctx.selectedGpxFile.name);
+                        setTrackType(TRACKS_URL);
+                    }
                 }
                 if (tObj) {
                     setShowInfoBlock(true);
@@ -171,10 +217,29 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
         }
     }, [ctx.selectedWpt]);
 
+    // share file menu
     useEffect(() => {
-        if (ctx.shareFile) {
-            setShowInfoBlock(true);
+        if (ctx.shareFile && ctx.shareFile.mainFile.name) {
             setOpenShareFileMenu(true);
+            if (!showInfoBlock) {
+                setShowInfoBlock(true);
+            }
+            const name = ctx.shareFile.mainFile.name;
+            const typeUrl = ctx.shareFile.mainFile.type === FAVOURITES ? FAVORITES_URL : TRACKS_URL;
+            setTrackName(name);
+            setTrackType(typeUrl);
+
+            navigate(
+                MAIN_URL_WITH_SLASH +
+                    typeUrl +
+                    INFO_MENU_URL +
+                    encodeURIComponent(encodeString(name)) +
+                    '/' +
+                    SHARE_MENU_URL,
+                {
+                    replace: true,
+                }
+            );
         } else {
             setOpenShareFileMenu(false);
         }
@@ -254,7 +319,9 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                 setShowInfoBlock={setShowInfoBlock}
                             />
                         ))}
-                    {openShareFileMenu && <ShareFileMenu setShowInfoBlock={setShowInfoBlock} />}
+                    {openShareFileMenu && (
+                        <ShareFileMenu setShowInfoBlock={setShowInfoBlock} setCloseShareMenu={setCloseShareMenu} />
+                    )}
                     {isOpenMainFavShareFile() && <ShareFile />}
                     {hasOldTabs() && (
                         <Box anchor={'right'} sx={{ height: 'auto', width: getWidth(), overflowX: 'hidden' }}>
@@ -271,6 +338,12 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                     onClick={() => {
                                         setShowInfoBlock(false);
                                         ctx.setCurrentObjectType(null);
+                                        if (trackName) {
+                                            // back to prev url
+                                            setTrackName(null);
+                                            setSavePrevState(true);
+                                            navigate(MAIN_URL_WITH_SLASH + trackType);
+                                        }
                                     }}
                                 >
                                     <BackIcon />
