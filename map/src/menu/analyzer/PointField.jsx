@@ -21,6 +21,12 @@ export default function PointField({ name, point, setPoint, setStartAnalysis }) 
     }, [pointValue]);
 
     useEffect(() => {
+        if (!point) {
+            setPointValue('');
+        }
+    }, [point]);
+
+    useEffect(() => {
         if (point) {
             if (typeof point === 'object') {
                 point = formatLatLon(point);

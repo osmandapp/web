@@ -22,7 +22,7 @@ import { useTranslation } from 'react-i18next';
 
 const DEFAULT_GROUP_MARKER = '_default_';
 
-export default function TrackSelect({ setTracksFolders }) {
+export default function TrackSelect({ tracksFolders, setTracksFolders }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -38,6 +38,13 @@ export default function TrackSelect({ setTracksFolders }) {
         const defaultGroup = getDefaultGroup(ctx.tracksGroups);
         setGroups(defaultGroup ? [defaultGroup, ...folders] : folders);
     }, [ctx.tracksGroups]);
+
+    useEffect(() => {
+        if (!tracksFolders) {
+            setSelectedGroupsNames([]);
+            setSelectAll(false);
+        }
+    }, [tracksFolders]);
 
     const handleSelectAll = (checked) => {
         setSelectAll(checked);

@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Box, Button, CircularProgress, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
@@ -21,6 +21,8 @@ import SortFilesButton, { TRACK_FILE_TYPE } from '../components/buttons/SortFile
 import ActionsMenu from '../actions/ActionsMenu';
 import SegmentParamsFilter from './SegmentParamsFilter';
 import { TYPE_ANALYZER } from '../../frame/components/graph/GlobalGraph';
+import styles from './trackanalyzer.module.css';
+import loginStyles from '../login/login.module.css';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
@@ -39,6 +41,7 @@ export default function TrackAnalyzerMenu() {
     const [analyseResult, setAnalyseResult] = useState(null);
     const [sortedSegments, setSortedSegments] = useState([]);
     const [segmentsResult, setSegmentsResult] = useState(null);
+    const [processing, setProcessing] = useState(false);
 
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
 
@@ -126,7 +129,7 @@ export default function TrackAnalyzerMenu() {
         if (!isAnalysisReady()) {
             return;
         }
-
+        setProcessing(true);
         getTracksBySegment().then((res) => {
             if (res?.files?.length > 0) {
                 addColorsToSegments(res);
@@ -135,6 +138,7 @@ export default function TrackAnalyzerMenu() {
                 ctx.setExcludedSegments(new Set());
             }
             setStartAnalysis(false);
+            setProcessing(false);
         });
     }, [startAnalysis, tracksFolders, startPoint, finishPoint]);
 
@@ -162,22 +166,25 @@ export default function TrackAnalyzerMenu() {
                 };
             });
         } else {
-            // clear segments from map
-            ctx.setTrackAnalyzer({
-                ...ctx.trackAnalyzer,
-                segmentsUpdateDate: new Date().getMilliseconds(),
-                segments: null,
-            });
-            setSegmentsResult(null);
-            ctx.setGlobalGraph((prev) => {
-                return {
-                    ...prev,
-                    show: false,
-                    type: null,
-                };
-            });
+            clearSegmentsFromMap();
         }
     }, [analyseResult]);
+
+    function clearSegmentsFromMap() {
+        ctx.setTrackAnalyzer({
+            ...ctx.trackAnalyzer,
+            segmentsUpdateDate: new Date().getMilliseconds(),
+            segments: null,
+        });
+        setSegmentsResult(null);
+        ctx.setGlobalGraph((prev) => {
+            return {
+                ...prev,
+                show: false,
+                type: null,
+            };
+        });
+    }
 
     function prepareSegmentsForSort(analyseResult) {
         Object.keys(analyseResult.segments).forEach((segmentName) => {
@@ -250,6 +257,17 @@ export default function TrackAnalyzerMenu() {
         return Array.from(uniqueFolders);
     }
 
+    function stopAnalyzer() {
+        setProcessing(false);
+        setStartAnalysis(false);
+
+        setStartPoint(null);
+        setFinishPoint(null);
+        setTracksFolders(null);
+
+        clearSegmentsFromMap();
+    }
+
     return (
         <>
             {ctx.loginUser ? (
@@ -304,7 +322,7 @@ export default function TrackAnalyzerMenu() {
                         </Toolbar>
                     </AppBar>
                     <Box>
-                        <TracksSelect setTracksFolders={setTracksFolders} />
+                        <TracksSelect tracksFolders={tracksFolders} setTracksFolders={setTracksFolders} />
                         <Box sx={{ mx: 2, my: 2 }}>
                             <PointField
                                 name={'start'}
@@ -319,8 +337,24 @@ export default function TrackAnalyzerMenu() {
                                 setStartAnalysis={setStartAnalysis}
                             />
                         </Box>
-                        {analyseResult === null && <TrackAnalyzerTips />}
+                        {analyseResult === null && !processing && <TrackAnalyzerTips />}
                     </Box>
+                    {processing && (
+                        <Box className={styles.processingBlock}>
+                            <Box display="flex" gap={1}>
+                                <CircularProgress size={20} />
+                                <Typography sx={{ ml: 3 }}>{t('web:processing_track_analyzer')}</Typography>
+                            </Box>
+                            <Button
+                                className={loginStyles.button}
+                                sx={{ mt: 2, ml: '48px', mr: 2, maxWidth: '280px' }}
+                                onClick={stopAnalyzer}
+                            >
+                                Cancel
+                            </Button>
+                        </Box>
+                    )}
+                    <Box sx={{ backgroundColor: '#f0f0f0', flexGrow: 1 }}></Box>
                     {analyseResult !== null && (
                         <>
                             <ThickDivider />
@@ -331,7 +365,6 @@ export default function TrackAnalyzerMenu() {
                             />
                         </>
                     )}
-                    <Box sx={{ backgroundColor: '#f0f0f0', flexGrow: 1 }}></Box>
                     <ActionsMenu
                         open={openFiltersDialog}
                         setOpen={setOpenFiltersDialog}

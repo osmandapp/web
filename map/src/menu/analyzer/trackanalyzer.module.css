@@ -91,3 +91,9 @@
     min-width: 24px !important;
     fill: var(--selected-color) !important;
 }
+.processingBlock {
+    display: flex !important;
+    width: 360px !important;
+    padding: 24px 16px 16px 16px !important;
+    flex-direction: column !important;
+}

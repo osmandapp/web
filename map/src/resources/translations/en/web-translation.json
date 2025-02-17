@@ -80,5 +80,6 @@
   "avg_altitude": "Avg. altitude",
   "min_altitude": "Min. altitude",
   "length": "Length",
-  "exclude": "Exclude"
+  "exclude": "Exclude",
+  "processing_track_analyzer": "Processing track data..."
 }
