@@ -277,7 +277,7 @@ export default function MainMenu({
             icon: TravelIcon,
             component: <TravelMenu />,
             type: OBJECT_TYPE_TRAVEL,
-            show: true,
+            show: ctx.develFeatures,
             id: 'se-show-menu-travel',
             url: MAIN_URL_WITH_SLASH + TRAVEL_URL,
         },
