@@ -4,9 +4,9 @@ import loginStyles from '../login/login.module.css';
 import React from 'react';
 
 export default function ErrorBlock({ icon, text, desc = null, btnText, onClick, style = true }) {
-    const iconStyles = style ? styles.errorIcon : {};
-    const titleStyles = style ? styles.errorTitle : {};
-    const textStyles = style ? styles.errorText : {};
+    const iconStyles = style ? styles.errorIcon : undefined;
+    const titleStyles = style ? styles.errorTitle : undefined;
+    const textStyles = style ? styles.errorText : undefined;
 
     return (
         <Box className={styles.processingBlock}>

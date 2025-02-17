@@ -148,6 +148,12 @@ export default function TrackAnalyzerMenu() {
         });
     }, [startAnalysis, tracksFolders, startPoint, finishPoint]);
 
+    useEffect(() => {
+        if (emptySegResult) {
+            setAnalyseResult(null);
+        }
+    }, [emptySegResult]);
+
     // segments -> map
     useEffect(() => {
         if (analyseResult) {
