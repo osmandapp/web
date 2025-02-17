@@ -66,28 +66,69 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
     useEffect(() => {
         if (!sortedSegments) return;
 
-        setFilteredStats(
-            sortedSegments.map((segment) => {
-                const stats = {
-                    speed: getSpeedStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
-                    altitude: getAltitudeStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
-                    other: getOtherStats(segment.stats, t, formatDate).filter((s) => activeSegmentParams.has(s.label)),
-                };
+        const statsMap = {
+            speed: new Map(),
+            altitude: new Map(),
+            other: new Map(),
+        };
 
-                let lastGroup = null;
-                Object.keys(stats).forEach((key) => {
-                    if (stats[key].length > 0) {
-                        lastGroup = key;
+        // 1. Collect statistics, filtering only active parameters
+        const segmentStats = sortedSegments.map((segment) => {
+            const stats = {
+                speed: getSpeedStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
+                altitude: getAltitudeStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
+                other: getOtherStats(segment.stats, t, formatDate).filter((s) => activeSegmentParams.has(s.label)),
+            };
+
+            // Store only parameter values in statsMap
+            Object.keys(stats).forEach((category) => {
+                stats[category].forEach((stat) => {
+                    const value = Number(stat.value);
+                    if (!statsMap[category].has(stat.label)) {
+                        statsMap[category].set(stat.label, { values: [], stats: [] });
+                    }
+                    statsMap[category].get(stat.label).values.push(value);
+                    statsMap[category].get(stat.label).stats.push(stat); // Keep a direct reference to update later
+                });
+            });
+
+            return { ...segment, stats };
+        });
+        // 2. Determine min/max values while handling NaN properly
+        Object.keys(statsMap).forEach((category) => {
+            statsMap[category].forEach(({ values, stats }) => {
+                const numericValues = values.filter((v) => !isNaN(v));
+
+                if (numericValues.length === 0) {
+                    // If all values are NaN, no one gets isMin or isMax
+                    stats.forEach((stat) => {
+                        stat.isMax = false;
+                        stat.isMin = false;
+                    });
+                    return;
+                }
+
+                const min = Math.min(...numericValues);
+                const max = Math.max(...numericValues);
+
+                stats.forEach((stat) => {
+                    const value = Number(stat.value);
+                    if (isNaN(value)) {
+                        stat.isMax = false;
+                        stat.isMin = false;
+                    } else {
+                        stat.isMax = value === max;
+                        stat.isMin = value === min;
                     }
                 });
+            });
+        });
 
-                return {
-                    ...segment,
-                    stats: {
-                        ...stats,
-                        isLastGroup: lastGroup,
-                    },
-                };
+        // 3. Set isLastGroup and update state
+        setFilteredStats(
+            segmentStats.map((segment) => {
+                const lastGroup = Object.keys(segment.stats).findLast((key) => segment.stats[key].length > 0);
+                return { ...segment, stats: { ...segment.stats, isLastGroup: lastGroup } };
             })
         );
     }, [sortedSegments, activeSegmentParams]);
