@@ -6,8 +6,8 @@ import { ReactComponent as MinSpeedIcon } from '../../assets/icons/ic_action_min
 import { ReactComponent as MaxAltitudeIcon } from '../../assets/icons/ic_action_altitude_max_16.svg';
 import { ReactComponent as AvgAltitudeIcon } from '../../assets/icons/ic_action_altitude_average_16.svg';
 import { ReactComponent as MinAltitudeIcon } from '../../assets/icons/ic_action_altitude_min_16.svg';
-import { ReactComponent as UphillIcon } from '../../assets/icons/ic_action_altitude_min_16.svg';
-import { ReactComponent as DownhillIcon } from '../../assets/icons/ic_action_altitude_min_16.svg';
+import { ReactComponent as UphillIcon } from '../../assets/icons/ic_action_altitude_ascent_16.svg';
+import { ReactComponent as DownhillIcon } from '../../assets/icons/ic_action_altitude_descent_16.svg';
 import { ReactComponent as DateIcon } from '../../assets/icons/ic_action_calendar_16.svg';
 import { ReactComponent as TimeDurationIcon } from '../../assets/icons/ic_action_time_span_16.svg';
 import { ReactComponent as TimeMovingIcon } from '../../assets/icons/ic_action_time_span_16.svg';
