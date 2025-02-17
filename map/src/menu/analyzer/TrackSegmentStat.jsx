@@ -38,10 +38,10 @@ export const getOtherStats = (stats, t, formatDate) => [
     { icon: <TimeDurationIcon />, label: t('duration'), ...formatValue(stats.duration, t('web:hours'), 3600000) },
     {
         icon: <TimeMovingIcon />,
-        label: t('web:moving_time'),
+        label: t('moving_time'),
         ...formatValue(stats.timeMoving, t('web:hours'), 3600000),
     },
-    { icon: <DistanceIcon />, label: t('web:length'), ...formatValue(stats.totalDist, t('km'), 1000) },
+    { icon: <DistanceIcon />, label: t('shared_string_length'), ...formatValue(stats.totalDist, t('km'), 1000) },
 ];
 
 const formatValue = (value, unit = '', factor = 1) => {
