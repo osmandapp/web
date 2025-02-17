@@ -1,8 +1,9 @@
-import { AppBar, Box, Button, CircularProgress, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Box, CircularProgress, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
+import { ReactComponent as DesertIcon } from '../../assets/icons/ic_action_desert.svg';
 import EmptyLogin from '../login/EmptyLogin';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import TracksSelect from './TracksSelect';
@@ -21,8 +22,7 @@ import SortFilesButton, { TRACK_FILE_TYPE } from '../components/buttons/SortFile
 import ActionsMenu from '../actions/ActionsMenu';
 import SegmentParamsFilter from './SegmentParamsFilter';
 import { TYPE_ANALYZER } from '../../frame/components/graph/GlobalGraph';
-import styles from './trackanalyzer.module.css';
-import loginStyles from '../login/login.module.css';
+import ErrorBlock from './ErrorBlock';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
@@ -42,6 +42,7 @@ export default function TrackAnalyzerMenu() {
     const [sortedSegments, setSortedSegments] = useState([]);
     const [segmentsResult, setSegmentsResult] = useState(null);
     const [processing, setProcessing] = useState(false);
+    const [emptySegResult, setEmptySegResult] = useState(false);
 
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
 
@@ -130,12 +131,17 @@ export default function TrackAnalyzerMenu() {
             return;
         }
         setProcessing(true);
+        if (emptySegResult) {
+            setEmptySegResult(false);
+        }
         getTracksBySegment().then((res) => {
             if (res?.files?.length > 0) {
                 addColorsToSegments(res);
                 prepareSegmentsForSort(res);
                 setAnalyseResult({ ...res });
                 ctx.setExcludedSegments(new Set());
+            } else {
+                setEmptySegResult(true);
             }
             setStartAnalysis(false);
             setProcessing(false);
@@ -261,11 +267,15 @@ export default function TrackAnalyzerMenu() {
         setProcessing(false);
         setStartAnalysis(false);
 
-        setStartPoint(null);
-        setFinishPoint(null);
+        clearPoints();
         setTracksFolders(null);
 
         clearSegmentsFromMap();
+    }
+
+    function clearPoints() {
+        setStartPoint(null);
+        setFinishPoint(null);
     }
 
     return (
@@ -337,27 +347,30 @@ export default function TrackAnalyzerMenu() {
                                 setStartAnalysis={setStartAnalysis}
                             />
                         </Box>
-                        {analyseResult === null && !processing && <TrackAnalyzerTips />}
+                        {analyseResult === null && !processing && !emptySegResult && <TrackAnalyzerTips />}
                     </Box>
+                    <ThickDivider />
                     {processing && (
-                        <Box className={styles.processingBlock}>
-                            <Box display="flex" gap={1}>
-                                <CircularProgress size={20} />
-                                <Typography sx={{ ml: 3 }}>{t('web:processing_track_analyzer')}</Typography>
-                            </Box>
-                            <Button
-                                className={loginStyles.button}
-                                sx={{ mt: 2, ml: '48px', mr: 2, maxWidth: '280px' }}
-                                onClick={stopAnalyzer}
-                            >
-                                Cancel
-                            </Button>
-                        </Box>
+                        <ErrorBlock
+                            icon={<CircularProgress size={20} />}
+                            text={t('web:processing_track_analyzer')}
+                            onClick={stopAnalyzer}
+                            btnText={t('shared_string_cancel')}
+                            style={false}
+                        />
+                    )}
+                    {emptySegResult && (
+                        <ErrorBlock
+                            icon={<DesertIcon />}
+                            text={'No passing tracks'}
+                            onClick={clearPoints}
+                            desc={'None of the selected tracks pass through the selected points.'}
+                            btnText={'Clear points'}
+                        />
                     )}
                     <Box sx={{ backgroundColor: '#f0f0f0', flexGrow: 1 }}></Box>
                     {analyseResult !== null && (
                         <>
-                            <ThickDivider />
                             <TrackSegmentStat
                                 height={height}
                                 sortedSegments={sortedSegments}
