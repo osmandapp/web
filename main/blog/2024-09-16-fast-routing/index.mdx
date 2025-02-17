@@ -33,9 +33,9 @@ This hierarchical approach reduces the complexity of the calculations, resulting
 
 ## Implementation of HH Routing
 
-OsmAnd has integrated HH routing into its offline navigation system to enhance performance. Each month, the OsmAnd team generates about 5 specialized routing data, which is then incorporated into the offline OBF maps. You can access these updates by refreshing maps.  
+OsmAnd has integrated HH routing into its offline navigation system to enhance performance. Each month, the OsmAnd team generates specialized routing data, typically available by the 5th of the month, which is then incorporated into the offline OBF maps. You can access these updates by refreshing maps.  
 
-A critical component of this system is the use of control points. These are **strategically selected locations on the map, such as city exits or primary intersections**, that serve as *key nodes* in the routing process. The HH algorithm simplifies the pathfinding process by calculating routes from one control point to another, enabling fast route determination.
+A critical component of this system is the use of checkpoints. These are **strategically selected locations on the map, such as city exits or primary intersections**, that serve as *key nodes* in the routing process. The HH algorithm simplifies the pathfinding process by calculating routes from one control point to another, enabling fast route determination.
 
 
 ## Technical Aspects of HH Routing
@@ -44,16 +44,18 @@ To understand the efficiency of Highway Hierarchy (HH) routing in OsmAnd, it is 
 
 ### How OsmAnd Implements HH Routing  
 
-- Unlike server-based hierarchical routing, OsmAnd pre-calculates routing data to operate completely offline, eliminating the need for real-time Internet access.
+- OsmAnd pre-calculates routing data, allowing it to function entirely offline without requiring an internet connection.
 
-- Special control points (e.g., exits from major roads) reduce the number of calculations required for each route. As a result, OsmAnd does not calculate routes from all possible points, but only between key nodes, which greatly speeds up navigation. How it works:
-    - Routing calculations **begin at the nearest checkpoint** instead of computing every possible road segment.
-    - The **route is determined checkpoint-to-checkpoint**, reducing overall complexity.
-    - The system **quickly finds the most efficient route** using a hierarchy of roads rather than evaluating every small street.  
-    
-    *This method is especially effective for long-distance routes, where only a fraction of the entire network needs to be considered.*
+- Instead of evaluating all possible paths, HH routing calculates routes checkpoint-to-checkpoint (e.g., major intersections, highway exits, and city boundaries).
 
-- OsmAnd updates its routing data monthly, ensuring that the latest road network changes are reflected.
+- OsmAnd updates the routing data at the beginning of each month, ensuring that the latest road network changes are reflected.
+
+**Checkpoint-based routing process:**
+
+- **Starting** point selection - the algorithm finds the closest checkpoint to the user’s location.
+- Path calculation **between checkpoints** - instead of scanning the entire road network, OsmAnd prioritizes predefined road segments to connect these key points.
+- **Final destination** - the last section of the route is refined to reach the exact destination efficiently.
+
 
 ### How HH Routing differs from Graph-Based Routing
 
@@ -61,8 +63,8 @@ To understand the efficiency of Highway Hierarchy (HH) routing in OsmAnd, it is 
 
 Graph-based routing treats every road segment equally, performing exhaustive searches to find the shortest path. This approach is highly accurate but requires significant processing power. OsmAnd still supports graph-based routing options, such as:
 
-- **A* 2-phase**. Traditional A* search with heuristics to speed up calculations.
-- **A* Classic**. A variation that improves efficiency by incorporating road hierarchy data.
+- **A* 2-phase**. A heuristic-based pathfinding algorithm that improves standard A* search.
+- **A* Classic**. Incorporates hierarchical data to enhance efficiency.
 
 These algorithms work well for small-scale maps but become increasingly slow when handling large geographical areas.
 
@@ -74,17 +76,17 @@ HH routing overcomes the limitations of graph-based methods by pre-calculating a
 
 | Feature | Graph-Based Routing (A*) | HH Routing (OsmAnd) |  
 |---------|--------------------------|----------------------|  
-| **Calculation method** | Exhaustive search | Pre-calculated road hierarchy |  
-| **Speed** | Slower for long routes | Significantly faster |  
-| **Offline efficiency** | Heavy processing | Lightweight calculations |  
-| **Best use case** | Small areas, urban navigation | Long-distance, offline navigation |  
+| **Calculation approach** | Scans all possible paths | Uses predefined road hierarchy |
+| **Performance** | Slower for large distances | Optimized for long routes |
+| **Offline efficiency** | Requires heavy processing | Pre-calculated, lightweight |
+| **Use case** | Best for short-distance, urban trips | Ideal for long-distance and offline use |
  
 ### Variants of HH Routing
 
 OsmAnd provides several implementations of HH routing, each optimized for different device performance levels and navigation needs:
 
-- **HH (Highway Hierarchies) x Java**. Java-based implementation optimized for Android devices.
-- **HH (Highway Hierarchies) x C++**. A faster, more optimized version that improves route calculation speeds, particularly useful for larger maps and complex routes.
+- **HH (Highway Hierarchies) x Java**. Java-based implementation of Highway Hierarchy routing, offering good efficiency but higher memory consumption.
+- **HH (Highway Hierarchies) x C++**. A performance-optimized variant that reduces RAM usage and significantly speeds up route calculations, particularly useful for larger maps and complex routes.
 
 **Why use C++-based HH routing?**
 
@@ -94,11 +96,12 @@ OsmAnd provides several implementations of HH routing, each optimized for differ
 
 *For the best performance, OsmAnd recommends using HH x C++ routing when available.*
 
+
 ## Advantages of HH Routing
 
 The implementation of HH routing in OsmAnd offers several notable benefits:
 
-- **Speed**. The algorithm reduces route calculation time by focusing on primary roads and using control points, providing fast navigation guidance.
+- **Speed**. The algorithm reduces route calculation time by focusing on primary roads and using checkpoints, providing fast navigation guidance.
 
 - **Accuracy**. The hierarchical structure ensures that the most appropriate and practical routes are selected, enhancing the overall navigation accuracy.
 
@@ -141,7 +144,7 @@ To better understand the efficiency of **HH x C++ Fast Routing** compared to **T
 
 ## Conclusion
 
-OsmAnd's integration of the Highway Hierarchy routing algorithm marks a significant advancement in offline navigation. By prioritizing primary roads and utilizing control points, HH routing offers you faster and more accurate route calculations. To experience these benefits fully, you are encouraged to update their maps regularly and engage with the OsmAnd community for feedback and support.
+OsmAnd's integration of the Highway Hierarchy routing algorithm marks a significant advancement in offline navigation. By prioritizing primary roads and using checkpoints, HH routing offers you faster and more accurate route calculations. To experience these benefits fully, you are encouraged to update their maps regularly and engage with the OsmAnd community for feedback and support.
 
 <br/>
 
