@@ -133,7 +133,8 @@ export default function MainMenu({
     useEffect(() => {
         if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles && ctx.favorites?.groups) {
             if (filename && isEmpty(ctx.selectedGpxFile)) {
-                const file = ctx.listFiles.uniqueFiles.find((file) => file.name === decodeString(filename));
+                const decodeFilename = decodeString(filename);
+                const file = ctx.listFiles.uniqueFiles.find((file) => file.name === decodeFilename);
                 if (!file) {
                     return;
                 }
