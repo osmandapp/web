@@ -30,6 +30,7 @@ import {
     getURL,
     getGeoProfile,
     getColor,
+    getShortGeoProfile,
 } from './getters.js';
 
 // fallback
@@ -76,6 +77,7 @@ export class geoRouter {
     isParamsChanged = isParamsChanged;
     getURL = getURL;
     getGeoProfile = getGeoProfile;
+    getShortGeoProfile = getShortGeoProfile;
     getColor = getColor;
 
     // events()

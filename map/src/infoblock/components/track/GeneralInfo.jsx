@@ -39,8 +39,8 @@ import {
 import DescTrackDialog from '../../../dialogs/tracks/DescTrackDialog';
 import RouteIcon from '@mui/icons-material/Route';
 import { formatRouteInfo } from '../../../menu/route/RouteMenu';
-import { saveTrackToLocalStorage } from '../../../manager/track/SaveTrackManager';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
+import { saveTrackToLocalStorage } from '../../../menu/tracks/util/LocalTrackStorage';
 
 export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();

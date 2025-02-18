@@ -22,7 +22,7 @@ import dialogStyles from '../../dialogs/dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import _, { isEmpty } from 'lodash';
-import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
+import TracksManager, { createTrackGroups, getGpxFiles, TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import { addCloseTracksToRecently, VISIBLE_SHARE_MARKER } from '../../menu/visibletracks/VisibleTracks';
 import PhotosModal from '../../menu/search/explore/PhotosModal';
 import InstallBanner from './InstallBanner';
@@ -99,7 +99,7 @@ const GlobalFrame = () => {
     // add new files to visible tracks
     useEffect(() => {
         if (!isEmpty(ctx.gpxFiles)) {
-            let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+            let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
             const { newVisFiles, newVisFilesNames } = processTracks(ctx.gpxFiles, savedVisible);
             mergeVisibleTracks(savedVisible, newVisFiles, newVisFilesNames, false);
         } else {
@@ -115,7 +115,7 @@ const GlobalFrame = () => {
 
     useEffect(() => {
         if (!isEmpty(ctx.shareWithMeFiles?.tracks)) {
-            let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+            let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
             const { newVisFiles, newVisFilesNames } = processTracks(
                 ctx.shareWithMeFiles.tracks,
                 savedVisible,
@@ -150,7 +150,7 @@ const GlobalFrame = () => {
             open: [...new Set([...newVisFilesNames.open, ...otherTrackNames.open].filter(Boolean))],
         };
 
-        localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(mergedVisFilesNames));
+        localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(mergedVisFilesNames));
 
         // merge visible tracks with the same order (save the order of the other tracks)
         const mergedVisFiles = {
@@ -251,13 +251,13 @@ const GlobalFrame = () => {
 
     useEffect(() => {
         if (ctx.openVisibleMenu) {
-            let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+            let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
             let newVisFilesNames = {
                 old: savedVisible.old || [],
                 new: savedVisible.new || [],
                 open: savedVisible.open || [],
             };
-            localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
+            localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
         } else {
             if (!isEmpty(ctx.visibleTracks)) {
                 addCloseTracksToRecently(ctx);
