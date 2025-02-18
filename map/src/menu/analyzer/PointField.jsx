@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import styles from './trackanalyzer.module.css';
 import { formatLatLon } from '../route/RouteMenu';
 import { parseCoordinate } from './util/PointsManager';
-import SimpleDivider from '../components/dividers/SimpleDivider';
+import DividerWithMargin from '../components/dividers/DividerWithMargin';
 
 const START_POINT = 'start';
 const FINISH_POINT = 'finish';
@@ -68,7 +68,11 @@ export default function PointField({ name, point, setPoint, setStartAnalysis }) 
                 onKeyDown={(e) => handleKeyPress(e)}
                 InputProps={{
                     startAdornment: (
-                        <InputAdornment className={styles.icon} sx={{ my: 2 }} position="start">
+                        <InputAdornment
+                            className={pointValue ? styles.iconSelected : styles.icon}
+                            sx={{ my: 2 }}
+                            position="start"
+                        >
                             {name === START_POINT ? <PointAIcon /> : <PointBIcon />}
                         </InputAdornment>
                     ),
@@ -86,7 +90,7 @@ export default function PointField({ name, point, setPoint, setStartAnalysis }) 
                     },
                 }}
             ></TextField>
-            {name === START_POINT && <SimpleDivider />}
+            {name === START_POINT && <DividerWithMargin margin={'52px'} />}
         </Box>
     );
 }
