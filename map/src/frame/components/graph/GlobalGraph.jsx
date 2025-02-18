@@ -179,6 +179,16 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                         maxTicksLimit: 20,
                     },
                 },
+                y: {
+                    ticks: {
+                        callback: (value) => {
+                            if (yAxisOption === 'altitude') return `${value} ${t('m')}`;
+                            if (yAxisOption === 'speed') return `${value} ${t('m_s')}`;
+                            if (yAxisOption === 'slope') return `${value} %`;
+                            return value;
+                        },
+                    },
+                },
             },
             plugins: {
                 legend: {

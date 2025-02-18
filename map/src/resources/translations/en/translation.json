@@ -5259,5 +5259,6 @@
   "shared_string_slope": "Slope",
   "shared_string_speed": "Speed",
   "moving_time": "Time in motion",
-  "shared_string_length": "Length"
+  "shared_string_length": "Length",
+  "m_s": "m/s"
 }

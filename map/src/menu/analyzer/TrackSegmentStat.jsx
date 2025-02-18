@@ -20,9 +20,9 @@ import { useTranslation } from 'react-i18next';
 import TrackSegmentItem from './TrackSegmentItem';
 
 export const getSpeedStats = (stats, t) => [
-    { icon: <MaxSpeedIcon />, label: t('shared_string_max_speed'), ...formatValue(stats.maxSpeed, t('km_h')) },
-    { icon: <AvgSpeedIcon />, label: t('web:avg_speed'), ...formatValue(stats.avgSpeed, t('km_h')) },
-    { icon: <MinSpeedIcon />, label: t('shared_string_min_speed'), ...formatValue(stats.minSpeed, t('km_h')) },
+    { icon: <MaxSpeedIcon />, label: t('shared_string_max_speed'), ...formatValue(stats.maxSpeed, t('m_s')) },
+    { icon: <AvgSpeedIcon />, label: t('web:avg_speed'), ...formatValue(stats.avgSpeed, t('m_s')) },
+    { icon: <MinSpeedIcon />, label: t('shared_string_min_speed'), ...formatValue(stats.minSpeed, t('m_s')) },
 ];
 
 export const getAltitudeStats = (stats, t) => [
