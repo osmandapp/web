@@ -1,9 +1,10 @@
-import { AppBar, Box, CircularProgress, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Box, CircularProgress, Grid, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
 import { ReactComponent as DesertIcon } from '../../assets/icons/ic_action_desert.svg';
+import { ReactComponent as ChangePointsIcon } from '../../assets/icons/ic_action_change_navigation_points.svg';
 import EmptyLogin from '../login/EmptyLogin';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import TracksSelect from './TracksSelect';
@@ -198,6 +199,11 @@ export default function TrackAnalyzerMenu() {
         });
     }
 
+    function swapPoints() {
+        setStartPoint(finishPoint);
+        setFinishPoint(startPoint);
+    }
+
     function prepareSegmentsForSort(analyseResult) {
         Object.keys(analyseResult.segments).forEach((segmentName) => {
             const segmentArray = analyseResult.segments[segmentName];
@@ -339,20 +345,28 @@ export default function TrackAnalyzerMenu() {
                     </AppBar>
                     <Box>
                         <TracksSelect tracksFolders={tracksFolders} setTracksFolders={setTracksFolders} />
-                        <Box sx={{ mx: 2, my: 2 }}>
-                            <PointField
-                                name={'start'}
-                                point={startPoint}
-                                setPoint={setStartPoint}
-                                setStartAnalysis={setStartAnalysis}
-                            />
-                            <PointField
-                                name={'finish'}
-                                point={finishPoint}
-                                setPoint={setFinishPoint}
-                                setStartAnalysis={setStartAnalysis}
-                            />
-                        </Box>
+                        <Grid sx={{ mx: 2 }} container spacing={2}>
+                            <Grid xs={9} sx={{ my: 2 }}>
+                                <PointField
+                                    name={'start'}
+                                    point={startPoint}
+                                    setPoint={setStartPoint}
+                                    setStartAnalysis={setStartAnalysis}
+                                />
+                                <PointField
+                                    name={'finish'}
+                                    point={finishPoint}
+                                    setPoint={setFinishPoint}
+                                    setStartAnalysis={setStartAnalysis}
+                                />
+                            </Grid>
+                            <Grid sx={{ my: 4, ml: -1 }} item xs={3}>
+                                <IconButton onClick={swapPoints}>
+                                    <ChangePointsIcon />
+                                </IconButton>
+                            </Grid>
+                        </Grid>
+
                         {analyseResult === null && !processing && !emptySegResult && <TrackAnalyzerTips />}
                     </Box>
                     <ThickDivider />
