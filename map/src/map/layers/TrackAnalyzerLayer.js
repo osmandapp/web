@@ -129,10 +129,10 @@ export default function TrackAnalyzerLayer() {
         });
 
         layer.on('mouseout', (e) => {
-            // ignore if the mouse is over the layer - TODO test
-            // if (layer.getBounds().contains(e.latlng)) {
-            //     return;
-            // }
+            // ignore if the mouse is over the layer
+            if (layer.getBounds().contains(e.latlng)) {
+                 return;
+            }
             hoverTimeout.current = setTimeout(() => {
                 if (ctx.mapMarkerListener) {
                     ctx.mapMarkerListener(null);
