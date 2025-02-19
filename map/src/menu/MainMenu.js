@@ -14,7 +14,6 @@ import {
 import { Menu } from '@mui/icons-material';
 import AppContext, {
     OBJECT_CONFIGURE_MAP,
-    OBJECT_EXPLORE,
     OBJECT_GLOBAL_SETTINGS,
     OBJECT_SEARCH,
     OBJECT_TYPE_TRAVEL,
@@ -23,15 +22,13 @@ import AppContext, {
     OBJECT_TYPE_LOCAL_TRACK,
     OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_NAVIGATION_TRACK,
-    OBJECT_TYPE_POI,
     OBJECT_TYPE_WEATHER,
-    OBJECT_TYPE_SHARE_FILE,
     OBJECT_TRACK_ANALYZER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
 import RouteMenu from './route/RouteMenu';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import PlanRouteMenu from './planroute/PlanRouteMenu';
 import { ReactComponent as FavoritesIcon } from '../assets/menu/ic_action_favorite.svg';
@@ -48,7 +45,7 @@ import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
 import TrackGroupFolder from './tracks/TrackGroupFolder';
-import _ from 'lodash';
+import _, { isEmpty } from 'lodash';
 import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
 import VisibleTracks from './visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
@@ -72,17 +69,20 @@ import {
     TRAVEL_URL,
     SHARE_FILE_MAIN_URL,
     TRACK_ANALYZER_URL,
+    INFO_MENU_URL,
+    SHARE_MENU_URL,
 } from '../manager/GlobalManager';
-import { createUrlParams } from '../util/Utils';
+import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import SearchMenu from './search/SearchMenu';
 import LoginButton from './login/LoginButton';
 import LoginMenu from './login/LoginMenu';
 import TravelMenu from './travel/TravelMenu';
 import ProFeatures from '../frame/components/pro/ProFeatures';
-import { SHARE_TYPE, updateUserRequests } from '../manager/ShareManager';
+import { getShareFileInfo, SHARE_TYPE, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
+import { processDisplayTrack } from '../manager/track/TracksManager';
 
 export default function MainMenu({
     size,
@@ -100,11 +100,14 @@ export default function MainMenu({
     const { t } = useTranslation();
     const location = useLocation();
     const [, height] = useWindowSize();
+    const { filename } = useParams();
 
     const timerRef = useRef(null);
 
     const [selectedType, setSelectedType] = useState(null);
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
+
+    const [savePrevState, setSavePrevState] = useState(false);
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -126,32 +129,80 @@ export default function MainMenu({
         ctx.setLoadingContextMenu(false);
     }
 
+    // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {
-        if (!menuInfo) {
-            const item = items.find((item) => item.url === location.pathname);
-            if (item) {
+        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles && ctx.favorites?.groups) {
+            if (filename && isEmpty(ctx.selectedGpxFile)) {
+                const decodeFilename = decodeString(filename);
+                const file = ctx.listFiles.uniqueFiles.find((file) => file.name === decodeFilename);
+                if (!file) {
+                    return;
+                }
                 ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
-                selectMenu({ item, openFromUrl: true });
+
+                if (location.pathname.includes(SHARE_MENU_URL)) {
+                    // open share menu
+                    if (!ctx.shareFile) {
+                        getShareFileInfo({ file, ctx }).then();
+                    }
+                } else {
+                    // open track info
+                    processDisplayTrack({
+                        visible: true,
+                        showOnMap: true,
+                        showInfo: true,
+                        zoomToTrack: true,
+                        file,
+                        ctx,
+                        fileStorage: ctx.gpxFiles,
+                        setFileStorage: ctx.setGpxFiles,
+                    }).then();
+                }
             }
+        }
+    }, [location.pathname, ctx.listFiles.uniqueFiles, ctx.favorites?.groups]);
+
+    useEffect(() => {
+        if (location.pathname.includes(INFO_MENU_URL) || savePrevState) {
+            setSavePrevState(false);
+            return;
+        }
+        if (!menuInfo) {
+            selectMenuByUrl();
         }
         if (location.pathname === MAIN_URL_WITH_SLASH) {
             ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
         }
+
         closeSubPages({ wptDetails: false });
+        openShareFileByLink();
+
         const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
         const openCloudTrackAfterSave =
             ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
         const openFavorite =
             !!ctx.selectedGpxFile?.markerCurrent && location.pathname === MAIN_URL_WITH_SLASH + FAVORITES_URL;
+        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite) {
+            setShowInfoBlock(false);
+        }
+    }, [location.pathname]);
+
+    function selectMenuByUrl() {
+        const item = items.find((item) => item.url === location.pathname);
+        if (item) {
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+            return selectMenu({ item, openFromUrl: true });
+        }
+        return null;
+    }
+
+    function openShareFileByLink() {
         const openShareFile = location.pathname.includes(SHARE_FILE_MAIN_URL);
         if (openShareFile) {
             setShowInfoBlock(true);
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
         }
-        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite) {
-            setShowInfoBlock(false);
-        }
-    }, [location.pathname]);
+    }
 
     const handleClickAway = () => {
         setOpenMainMenu(false);
@@ -226,7 +277,7 @@ export default function MainMenu({
             icon: TravelIcon,
             component: <TravelMenu />,
             type: OBJECT_TYPE_TRAVEL,
-            show: true,
+            show: ctx.develFeatures,
             id: 'se-show-menu-travel',
             url: MAIN_URL_WITH_SLASH + TRAVEL_URL,
         },
@@ -314,14 +365,6 @@ export default function MainMenu({
             setMenuInfo(currentMenu.component);
             setSelectedType(currentMenu.type);
             ctx.setPrevPageUrl({ url: location, active: false });
-        } else {
-            if (
-                ctx.currentObjectType !== OBJECT_EXPLORE &&
-                ctx.currentObjectType !== OBJECT_TYPE_POI &&
-                ctx.currentObjectType !== OBJECT_TYPE_SHARE_FILE
-            ) {
-                setOpenMainMenu(true);
-            }
         }
     }
 
@@ -355,8 +398,12 @@ export default function MainMenu({
 
     function getGroup() {
         if (ctx.openGroups?.length > 0) {
+            let type = selectedType;
+            if (!type) {
+                type = selectMenuByUrl();
+            }
             const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
-            if (selectedType === OBJECT_TYPE_FAVORITE) {
+            if (type === OBJECT_TYPE_FAVORITE) {
                 if (lastGroup?.type === SHARE_TYPE) {
                     if (lastGroup?.files) {
                         return <FavoriteGroupFolder smartf={lastGroup} />;
@@ -364,7 +411,7 @@ export default function MainMenu({
                     return <FavoriteGroupFolder folder={lastGroup.group} smartf={lastGroup} />;
                 }
                 return <FavoriteGroupFolder folder={lastGroup} />;
-            } else if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
+            } else if (type === OBJECT_TYPE_CLOUD_TRACK) {
                 if (lastGroup?.type === SHARE_TYPE) {
                     return <TrackGroupFolder smartf={lastGroup} />;
                 }
@@ -375,6 +422,7 @@ export default function MainMenu({
 
     function selectMenu({ item }) {
         closeSubPages({});
+        let currentType;
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
@@ -386,18 +434,20 @@ export default function MainMenu({
                 ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
             }
             setMenuInfo(menu?.component);
-            setSelectedType(menu?.type);
+            currentType = menu?.type;
             ctx.setCurrentObjectType(null);
         } else {
             // select first menu
             setMenuInfo(item.component);
-            setSelectedType(item.type);
+            currentType = item.type;
             setOpenMainMenu(false);
             if (item.type === OBJECT_CONFIGURE_MAP) {
                 ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
             }
         }
         ctx.setPrevPageUrl({ url: location, active: false });
+        setSelectedType(currentType);
+        return currentType;
     }
 
     useEffect(() => {
@@ -444,6 +494,13 @@ export default function MainMenu({
     useEffect(() => {
         const currentMenu = items.find((item) => isSelectedMenuItem(item));
         if (currentMenu && menuInfo) {
+            if (currentMenu.type === OBJECT_TYPE_CLOUD_TRACK) {
+                // not to navigate to the track menu if the track info is opened
+                const currentUrl = window.location.href;
+                if (currentUrl.includes(INFO_MENU_URL)) {
+                    return;
+                }
+            }
             // navigate to the current menu
             navigateToUrl({ menu: currentMenu });
         } else if (location.pathname === MAIN_URL_WITH_SLASH && location.search === '') {
@@ -659,6 +716,7 @@ export default function MainMenu({
                     setShowInfoBlock={setShowInfoBlock}
                     setClearState={setClearState}
                     mainMenuSize={size}
+                    setSavePrevState={setSavePrevState}
                 />
                 {openCloudSettings && <CloudSettings setOpenCloudSettings={setOpenCloudSettings} />}
             </Drawer>

@@ -305,6 +305,16 @@ export function createUrlParams(params) {
     return pretty;
 }
 
+export function encodeString(str) {
+    const bytes = new TextEncoder().encode(str);
+    return btoa(String.fromCharCode(...bytes));
+}
+
+export function decodeString(str) {
+    const bytes = atob(str);
+    return new TextDecoder().decode(Uint8Array.from(bytes, (c) => c.charCodeAt(0)));
+}
+
 const Utils = {
     getFileData,
     getDistance,
