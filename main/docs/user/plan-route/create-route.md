@@ -135,7 +135,7 @@ If [*Elevation data*](../map/tracks/track-context-menu.md#calculating-missing-el
 
 </Tabs>  
 
-**Attach to roads** allows attaching a recorded or an imported track to the roads from OsmAnd offline maps to get additional information:
+**Attach to the roads** setting allows attaching a recorded or an imported track to the roads from OsmAnd offline maps to get additional information:
 
 - Correct turn information for [Navigate by track](../navigation/setup/gpx-navigation.md#how-to-follow-the-track) (especially at roundabouts).
 - Street names and lane information.
