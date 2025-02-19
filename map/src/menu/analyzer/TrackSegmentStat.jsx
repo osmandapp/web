@@ -9,6 +9,9 @@ import { ReactComponent as MinAltitudeIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as UphillIcon } from '../../assets/icons/ic_action_altitude_ascent_16.svg';
 import { ReactComponent as DownhillIcon } from '../../assets/icons/ic_action_altitude_descent_16.svg';
 import { ReactComponent as DateIcon } from '../../assets/icons/ic_action_calendar_16.svg';
+import { ReactComponent as TimeSpanIcon } from '../../assets/icons/ic_action_time_span_16.svg';
+import { ReactComponent as StartTimeIcon } from '../../assets/icons/ic_action_time_start_16.svg';
+import { ReactComponent as EndTimeIcon } from '../../assets/icons/ic_action_time_end_16.svg';
 import { ReactComponent as TimeDurationIcon } from '../../assets/icons/ic_action_time_span_16.svg';
 import { ReactComponent as TimeMovingIcon } from '../../assets/icons/ic_action_time_span_16.svg';
 import { ReactComponent as DistanceIcon } from '../../assets/icons/ic_action_length_16.svg';
@@ -35,18 +38,46 @@ export const getAltitudeStats = (stats, t) => [
 
 export const getOtherStats = (stats, t, formatDate) => [
     { icon: <DateIcon />, label: t('shared_string_date'), value: formatDate(stats.date) },
-    { icon: <TimeDurationIcon />, label: t('duration'), ...formatValue(stats.duration, t('web:hours'), 3600000) },
-    {
-        icon: <TimeMovingIcon />,
-        label: t('moving_time'),
-        ...formatValue(stats.timeMoving, t('web:hours'), 3600000),
-    },
+    { icon: <TimeSpanIcon />, label: t('shared_string_time_span'), ...formatTime(stats.timeSpan, t) },
+    { icon: <StartTimeIcon />, label: t('shared_string_start_time'), ...formatTime(stats.startTime, t) },
+    { icon: <EndTimeIcon />, label: t('shared_string_end_time'), ...formatTime(stats.endTime, t) },
+    { icon: <TimeDurationIcon />, label: t('duration'), ...formatTime(stats.duration, t) },
+    { icon: <TimeMovingIcon />, label: t('moving_time'), ...formatTime(stats.timeMoving, t) },
     { icon: <DistanceIcon />, label: t('shared_string_length'), ...formatValue(stats.totalDist, t('km'), 1000) },
 ];
 
+export const UNDEFINED_VALUE = 'NaN';
+
 const formatValue = (value, unit = '', factor = 1) => {
-    if (value === 'NaN') return { value: 'NaN', unit: '' };
+    if (value === UNDEFINED_VALUE) return { value: UNDEFINED_VALUE, unit: '' };
     return { value: (Number(value) / factor).toFixed(2), unit };
+};
+
+const formatTime = (value, t) => {
+    if (value === UNDEFINED_VALUE) return { value: UNDEFINED_VALUE, unit: '' };
+
+    const timestamp = Number(value);
+    if (timestamp > 10 ** 12) {
+        // (HH:mm:ss)
+        const date = new Date(timestamp);
+        return { value: date.toLocaleTimeString('en-GB', { hour12: false }), unit: '' };
+    }
+
+    const totalSeconds = Math.floor(Number(value) / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    const formattedTime = [
+        hours > 0 ? String(hours).padStart(2, '0') : '00',
+        String(minutes).padStart(2, '0'),
+        String(seconds).padStart(2, '0'),
+    ].join(':');
+
+    return {
+        value: formattedTime,
+        unit: hours > 0 ? ` ${t('web:hours')}` : ` ${t('web:short_min')}`,
+    };
 };
 
 export default function TrackSegmentStat({ height, sortedSegments, activeSegmentParams }) {
@@ -58,7 +89,7 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
         const locale = locales[i18n.language] || locales.enUS;
         const date = new Date(parseInt(timestamp, 10));
         if (isNaN(date)) {
-            return 'NaN';
+            return UNDEFINED_VALUE;
         }
         return format(date, 'dd.MM.yyyy', { locale });
     };
