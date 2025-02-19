@@ -40,8 +40,8 @@ const options = {
     endIcon: MarkerIcon({ bg: '#ff595e' }),
     pointerIcons: MarkerIcon({ bg: '#fec93b' }),
     pointerGraph: L.icon({
-        iconUrl: '/map/images/map_icons/circle_pointer.svg',
-        iconSize: [13, 13],
+        iconUrl: '/map/images/map_icons/circle.svg',
+        iconSize: [16, 16],
         clickable: false,
     }),
     route: L.icon({

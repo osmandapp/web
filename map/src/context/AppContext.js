@@ -446,6 +446,7 @@ export const AppContextProvider = (props) => {
     // track analyzer
     const [trackAnalyzer, setTrackAnalyzer] = useState(null);
     const [excludedSegments, setExcludedSegments] = useState(new Set());
+    const [graphHighlightedPoint, setGraphHighlightedPoint] = useState(null);
 
     // global graph
     const [globalGraph, setGlobalGraph] = useState({
@@ -761,6 +762,8 @@ export const AppContextProvider = (props) => {
                 setGlobalGraph,
                 processingSaveTrack,
                 setProcessingSaveTrack,
+                graphHighlightedPoint,
+                setGraphHighlightedPoint,
             }}
         >
             {props.children}

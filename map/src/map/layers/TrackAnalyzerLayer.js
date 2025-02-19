@@ -3,6 +3,7 @@ import AppContext, { OBJECT_TRACK_ANALYZER } from '../../context/AppContext';
 import { Marker, GeoJSON } from 'react-leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
 import { LatLng } from 'leaflet';
+import { getDistance } from '../../util/Utils';
 
 const DEFAULT_SEGMENT_COLOR = '#227bff';
 
@@ -12,6 +13,8 @@ export default function TrackAnalyzerLayer() {
 
     const [startPoint, setStartPoint] = useState(null);
     const [finishPoint, setFinishPoint] = useState(null);
+
+    const hoverTimeout = useRef(null);
 
     // menu -> map
     useEffect(() => {
@@ -40,6 +43,7 @@ export default function TrackAnalyzerLayer() {
                         properties: {
                             color: segment.color || DEFAULT_SEGMENT_COLOR,
                             name: segment.name,
+                            points: segment.points,
                         },
                         geometry: {
                             type: 'LineString',
@@ -116,6 +120,45 @@ export default function TrackAnalyzerLayer() {
             weight: 10,
             opacity: 0.6,
         });
+
+        layer.on('mousemove', (e) => {
+            const nearestPoint = findNearestPoint(e.latlng, feature.properties.points);
+            if (nearestPoint && nearestPoint.lat && nearestPoint.lon) {
+                ctx.mapMarkerListener(nearestPoint.lat, nearestPoint.lon);
+            }
+        });
+
+        layer.on('mouseout', (e) => {
+            // ignore if the mouse is over the layer
+            if (layer.getBounds().contains(e.latlng)) {
+                return;
+            }
+            hoverTimeout.current = setTimeout(() => {
+                if (ctx.mapMarkerListener) {
+                    ctx.mapMarkerListener(null);
+                }
+            }, 50);
+        });
+    };
+
+    const findNearestPoint = (mouseLatLng, points) => {
+        let minDist = Infinity;
+        let nearestPoint = null;
+
+        for (const point of points) {
+            if (!point.lat || !point.lon) {
+                continue;
+            }
+            if (point.lat === mouseLatLng.lat && point.lon === mouseLatLng.lng) {
+                return point;
+            }
+            const dist = getDistance(mouseLatLng.lat, mouseLatLng.lng, point.lat, point.lon);
+            if (dist < minDist) {
+                minDist = dist;
+                nearestPoint = point;
+            }
+        }
+        return nearestPoint;
     };
 
     return (

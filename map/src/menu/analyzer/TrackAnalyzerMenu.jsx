@@ -345,8 +345,8 @@ export default function TrackAnalyzerMenu() {
                     </AppBar>
                     <Box>
                         <TracksSelect tracksFolders={tracksFolders} setTracksFolders={setTracksFolders} />
-                        <Grid sx={{ mx: 2 }} container spacing={2}>
-                            <Grid xs={9} sx={{ my: 2 }}>
+                        <Grid sx={{ mx: 2, width: '95%' }} container spacing={2}>
+                            <Grid item sx={{ flexGrow: 1, mb: 2, ml: -2, mr: -1 }}>
                                 <PointField
                                     name={'start'}
                                     point={startPoint}
@@ -360,7 +360,7 @@ export default function TrackAnalyzerMenu() {
                                     setStartAnalysis={setStartAnalysis}
                                 />
                             </Grid>
-                            <Grid sx={{ my: 4, ml: -1 }} item xs={3}>
+                            <Grid item sx={{ mr: 1, my: 4 }}>
                                 <IconButton onClick={swapPoints}>
                                     <ChangePointsIcon />
                                 </IconButton>
