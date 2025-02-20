@@ -175,6 +175,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             return {
                 id: wikiObj?.properties.id,
                 type: type,
+                firstPhoto: wikiObj?.properties.photoTitle,
                 poiType: translateWithSplit(t, `${POI_PREFIX}${wikiObj.properties?.poisubtype}`),
                 name: wikiObj?.properties.wikiTitle,
                 latlon: { lat: coords[1], lon: coords[0] },
@@ -354,7 +355,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     function addFirstPhoto(wpt) {
-        const mainPhotoName = wpt.type.isWikiPoi?.properties?.photoTitle;
+        const mainPhotoName = wpt.firstPhoto;
         if (!mainPhotoName || mainPhotoName === EMPTY_STRING) {
             return wpt;
         }
