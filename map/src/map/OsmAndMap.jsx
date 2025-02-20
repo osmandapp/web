@@ -1,4 +1,4 @@
-import { useEffect, useRef, useContext, useState } from 'react';
+import React, { useEffect, useRef, useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { MapContainer, Marker, ScaleControl, AttributionControl, ZoomControl } from 'react-leaflet';
 import AppContext from '../context/AppContext';
@@ -67,15 +67,17 @@ const useStyles = makeStyles(() => ({
     }),
 }));
 
-const updateMarker = (lat, lng, setHoverPoint, hoverPointRef) => {
+const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     if (lat) {
         if (hoverPointRef.current) {
             hoverPointRef.current.setLatLng([lat, lng]);
         } else {
             setHoverPoint({ lat: lat, lng: lng });
         }
+        ctx.setGraphHighlightedPoint({ lat, lng });
     } else {
         setHoverPoint(null);
+        ctx.setGraphHighlightedPoint(null);
     }
 };
 
@@ -101,7 +103,9 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             const hash = new L.Hash(map);
             mapRef.current = map;
             if (!ctx.mapMarkerListener) {
-                ctx.setMapMarkerListener(() => (lat, lng) => updateMarker(lat, lng, setHoverPoint, hoverPointRef));
+                ctx.setMapMarkerListener(
+                    () => (lat, lng) => updateMarker({ lat, lng, setHoverPoint, hoverPointRef, ctx })
+                );
             }
             detectGeoByIp({ map, hash });
         }

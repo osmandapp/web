@@ -91,3 +91,33 @@
     min-width: 24px !important;
     fill: var(--selected-color) !important;
 }
+.processingBlock {
+    display: flex !important;
+    padding: 24px 16px 16px 16px !important;
+    flex-direction: column !important;
+}
+.errorTitle {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 120% !important;
+    letter-spacing: 0.16px !important;
+}
+.errorText {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.16px !important;
+}
+.errorIcon {
+    fill: var(--svg-icon-color) !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+}

@@ -22,6 +22,8 @@ import SegmentSelector from './SegmentSelector';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import YAxisSelector from './YAxisSelector';
+import { debounce } from 'lodash';
+import annotationsPlugin from 'chartjs-plugin-annotation';
 
 const Z_INDEX_GRAPH = 1000;
 const MIN_GRAPH_HEIGHT = 34;
@@ -29,7 +31,17 @@ const INNER_GRAPH_HEIGHT = 150;
 const INFO_BLOCK_WIDTH = 200;
 export const TYPE_ANALYZER = 'analyzer';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineController, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineController,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+    annotationsPlugin
+);
 
 export const Y_AXIS_OPTIONS = (t) => [
     { value: 'altitude', label: t('altitude') },
@@ -103,12 +115,49 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
         }
     }, [ctx.trackAnalyzer?.segments, ctx.excludedSegments]);
 
+    useEffect(() => {
+        if (ctx.graphHighlightedPoint && chartRef.current) {
+            const { lat, lng } = ctx.graphHighlightedPoint;
+
+            let closestPoint = null;
+            let datasetIndex = -1;
+            let pointIndex = -1;
+
+            // Find the closest point to the highlighted point
+            graphData.datasets.forEach((dataset, dIndex) => {
+                dataset.data.forEach((point, pIndex) => {
+                    const distance = Math.hypot(point.lat - lat, point.lng - lng);
+                    if (!closestPoint || distance < closestPoint.distance) {
+                        closestPoint = { ...point, distance };
+                        datasetIndex = dIndex;
+                        pointIndex = pIndex;
+                    }
+                });
+            });
+
+            // Highlight the closest point
+            if (closestPoint && datasetIndex !== -1 && pointIndex !== -1) {
+                chartRef.current.tooltip.setActiveElements([{ datasetIndex, index: pointIndex }], {
+                    x: closestPoint.x,
+                    y: closestPoint.y,
+                });
+                chartRef.current.update();
+            }
+        }
+    }, [ctx.graphHighlightedPoint]);
+
     const toggleSegmentVisibility = (trackName, index) => {
         setSegmentVisibility((prev) => ({
             ...prev,
             [trackName]: prev[trackName].map((visible, i) => (i === index ? !visible : visible)),
         }));
     };
+
+    function extractAndShorten(str) {
+        if (!str) return '';
+        const lastPart = str.split('/').pop();
+        return lastPart.length > 15 ? lastPart.slice(0, 15) + '...' : lastPart;
+    }
 
     const graphData = useMemo(() => {
         const datasets = [];
@@ -125,25 +174,31 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                         hasEle: true,
                         hasSpeed: true,
                     });
-
                     if (segmentData?.res?.length) {
-                        const distanceValues = segmentData.res.map((point) => parseFloat(point[DISTANCE]));
+                        const points = segmentData.res.map((point) => ({
+                            x: parseFloat(point[DISTANCE]),
+                            y:
+                                yAxisOption === 'altitude'
+                                    ? point[ELEVATION]
+                                    : yAxisOption === 'speed'
+                                      ? point[SPEED]
+                                      : point[SLOPE],
+                            lat: point.lat,
+                            lng: point.lon,
+                        }));
+
+                        const distanceValues = points.map((p) => p.x);
+                        const ind = trackSegments.length > 1 ? ` (${index + 1})` : '';
                         allDistances.push(...distanceValues);
+
                         datasets.push({
-                            label: `${trackName} - Segment ${index + 1}`,
-                            data: segmentData.res.map((point) => ({
-                                x: parseFloat(point[DISTANCE]),
-                                y:
-                                    yAxisOption === 'altitude'
-                                        ? point[ELEVATION]
-                                        : yAxisOption === 'speed'
-                                          ? point[SPEED]
-                                          : point[SLOPE],
-                            })),
+                            name: trackName,
+                            label: `${extractAndShorten(trackName)}${ind}`,
+                            data: points,
                             borderColor: segment.color,
                             backgroundColor: segment.color,
                             borderWidth: 2,
-                            pointRadius: 1,
+                            pointRadius: points.length < 200 ? 2 : 0,
                             fill: false,
                         });
                     }
@@ -154,9 +209,44 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
         return { datasets, allDistances };
     }, [currentGraph.object, yAxisOption, segmentVisibility]);
 
+    // fix tooltip for nearest points
+    useEffect(() => {
+        if (!chartRef.current) return;
+
+        const chart = chartRef.current;
+
+        chart.options.onHover = (event) => {
+            if (!chartRef.current) return;
+
+            const xValue = chart.scales.x.getValueForPixel(event.native.offsetX);
+            chart.options.plugins.annotation.annotations.crosshairLine.value = xValue;
+
+            const newActiveElements = [];
+
+            chart.data.datasets.forEach((dataset, datasetIndex) => {
+                dataset.data.forEach((point, index) => {
+                    if (Math.abs(point.x - xValue) < 0.001) {
+                        newActiveElements.push({ datasetIndex, index });
+                    }
+                });
+            });
+
+            if (newActiveElements.length > 0) {
+                chart.tooltip.setActiveElements(newActiveElements, {
+                    x: event.native.offsetX,
+                    y: event.native.offsetY,
+                });
+                chart.update('none');
+            }
+        };
+        chart.update();
+    }, [graphData, yAxisOption]);
+
     const options = useMemo(() => {
         const minX = graphData.allDistances.length > 0 ? Math.min(...graphData.allDistances) : 0;
         const maxX = graphData.allDistances.length > 0 ? Math.max(...graphData.allDistances) : 1;
+
+        const totalDistance = maxX - minX;
 
         return {
             responsive: true,
@@ -165,8 +255,8 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                 duration: 400,
             },
             interaction: {
+                mode: 'nearest',
                 intersect: false,
-                mode: 'index',
             },
             scales: {
                 x: {
@@ -174,15 +264,46 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                     min: minX,
                     max: maxX,
                     ticks: {
-                        callback: (value) => `${value.toFixed(1)} km`,
+                        callback: (value) => {
+                            return totalDistance < 1
+                                ? `${(value * 1000).toFixed(0)} ${t('m')}`
+                                : `${value.toFixed(2)} ${t('km')}`;
+                        },
                         autoSkip: true,
                         maxTicksLimit: 20,
+                    },
+                },
+                y: {
+                    ticks: {
+                        callback: (value) => {
+                            if (yAxisOption === 'altitude') return `${value} ${t('m')}`;
+                            if (yAxisOption === 'speed') return `${value} ${t('m_s')}`;
+                            if (yAxisOption === 'slope') return `${value} %`;
+                            return value;
+                        },
                     },
                 },
             },
             plugins: {
                 legend: {
                     display: false,
+                },
+                tooltip: {
+                    enabled: true,
+                    intersect: false,
+                },
+                annotation: {
+                    annotations: {
+                        crosshairLine: {
+                            type: 'line',
+                            mode: 'vertical',
+                            scaleID: 'x',
+                            value: null,
+                            borderColor: 'rgba(255, 0, 0, 0.8)',
+                            borderWidth: 1,
+                            borderDash: [4, 4],
+                        },
+                    },
                 },
             },
         };
@@ -191,6 +312,39 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
     const GraphName = () => {
         return <Typography className={styles.graphTitle}>{currentGraph.name}</Typography>;
     };
+
+    const onMouseMoveGraph = debounce((e, chartRef) => {
+        if (!chartRef) {
+            return;
+        }
+        const chart = chartRef.current;
+
+        if (ctx.mapMarkerListener && chart._active?.length > 0) {
+            // Get the mouse cursor position
+            const eventX = e.nativeEvent.offsetX;
+            // Search for the closest point to the mouse cursor
+            const selected = chart._active.reduce((closest, current) => {
+                const currentX = current.element.x;
+                return !closest || Math.abs(currentX - eventX) < Math.abs(closest.element.x - eventX)
+                    ? current
+                    : closest;
+            }, null);
+            if (selected) {
+                const { lat, lng } = selected.element.$context.raw;
+                if (lat !== undefined && lng !== undefined) {
+                    ctx.mapMarkerListener(lat, lng);
+                } else {
+                    hideSelectedPoint();
+                }
+            }
+        } else {
+            hideSelectedPoint();
+        }
+    }, 50);
+
+    function hideSelectedPoint() {
+        ctx.mapMarkerListener(null);
+    }
 
     return (
         <>
@@ -236,7 +390,14 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                                     height: INNER_GRAPH_HEIGHT,
                                 }}
                             >
-                                <Chart type="line" ref={chartRef} data={graphData} options={options} />
+                                <Chart
+                                    type="line"
+                                    ref={chartRef}
+                                    data={graphData}
+                                    options={options}
+                                    onMouseMove={(e) => onMouseMoveGraph(e, chartRef)}
+                                    onMouseLeave={() => hideSelectedPoint()}
+                                />
                             </Box>
                         </Box>
                     </Box>

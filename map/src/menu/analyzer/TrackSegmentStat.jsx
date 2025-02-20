@@ -6,9 +6,12 @@ import { ReactComponent as MinSpeedIcon } from '../../assets/icons/ic_action_min
 import { ReactComponent as MaxAltitudeIcon } from '../../assets/icons/ic_action_altitude_max_16.svg';
 import { ReactComponent as AvgAltitudeIcon } from '../../assets/icons/ic_action_altitude_average_16.svg';
 import { ReactComponent as MinAltitudeIcon } from '../../assets/icons/ic_action_altitude_min_16.svg';
-import { ReactComponent as UphillIcon } from '../../assets/icons/ic_action_altitude_min_16.svg';
-import { ReactComponent as DownhillIcon } from '../../assets/icons/ic_action_altitude_min_16.svg';
+import { ReactComponent as UphillIcon } from '../../assets/icons/ic_action_altitude_ascent_16.svg';
+import { ReactComponent as DownhillIcon } from '../../assets/icons/ic_action_altitude_descent_16.svg';
 import { ReactComponent as DateIcon } from '../../assets/icons/ic_action_calendar_16.svg';
+import { ReactComponent as TimeSpanIcon } from '../../assets/icons/ic_action_time_span_16.svg';
+import { ReactComponent as StartTimeIcon } from '../../assets/icons/ic_action_time_start_16.svg';
+import { ReactComponent as EndTimeIcon } from '../../assets/icons/ic_action_time_end_16.svg';
 import { ReactComponent as TimeDurationIcon } from '../../assets/icons/ic_action_time_span_16.svg';
 import { ReactComponent as TimeMovingIcon } from '../../assets/icons/ic_action_time_span_16.svg';
 import { ReactComponent as DistanceIcon } from '../../assets/icons/ic_action_length_16.svg';
@@ -20,9 +23,9 @@ import { useTranslation } from 'react-i18next';
 import TrackSegmentItem from './TrackSegmentItem';
 
 export const getSpeedStats = (stats, t) => [
-    { icon: <MaxSpeedIcon />, label: t('shared_string_max_speed'), ...formatValue(stats.maxSpeed, t('km_h')) },
-    { icon: <AvgSpeedIcon />, label: t('web:avg_speed'), ...formatValue(stats.avgSpeed, t('km_h')) },
-    { icon: <MinSpeedIcon />, label: t('shared_string_min_speed'), ...formatValue(stats.minSpeed, t('km_h')) },
+    { icon: <MaxSpeedIcon />, label: t('shared_string_max_speed'), ...formatValue(stats.maxSpeed, t('m_s')) },
+    { icon: <AvgSpeedIcon />, label: t('web:avg_speed'), ...formatValue(stats.avgSpeed, t('m_s')) },
+    { icon: <MinSpeedIcon />, label: t('shared_string_min_speed'), ...formatValue(stats.minSpeed, t('m_s')) },
 ];
 
 export const getAltitudeStats = (stats, t) => [
@@ -35,18 +38,53 @@ export const getAltitudeStats = (stats, t) => [
 
 export const getOtherStats = (stats, t, formatDate) => [
     { icon: <DateIcon />, label: t('shared_string_date'), value: formatDate(stats.date) },
-    { icon: <TimeDurationIcon />, label: t('duration'), ...formatValue(stats.duration, t('web:hours'), 3600000) },
-    {
-        icon: <TimeMovingIcon />,
-        label: t('web:moving_time'),
-        ...formatValue(stats.timeMoving, t('web:hours'), 3600000),
-    },
-    { icon: <DistanceIcon />, label: t('web:length'), ...formatValue(stats.totalDist, t('km'), 1000) },
+    { icon: <TimeSpanIcon />, label: t('shared_string_time_span'), ...formatTime(stats.timeSpan, t) },
+    { icon: <StartTimeIcon />, label: t('shared_string_start_time'), ...formatTimestamp(stats.startTime) },
+    { icon: <EndTimeIcon />, label: t('shared_string_end_time'), ...formatTimestamp(stats.endTime) },
+    { icon: <TimeDurationIcon />, label: t('duration'), ...formatTime(stats.duration, t) },
+    { icon: <TimeMovingIcon />, label: t('moving_time'), ...formatTime(stats.timeMoving, t) },
+    { icon: <DistanceIcon />, label: t('shared_string_length'), ...formatValue(stats.totalDist, t('km'), 1000) },
 ];
 
+export const UNDEFINED_VALUE = 'NaN';
+
 const formatValue = (value, unit = '', factor = 1) => {
-    if (value === 'NaN') return { value: 'NaN', unit: '' };
+    if (value === UNDEFINED_VALUE) return { value: UNDEFINED_VALUE, unit: '' };
     return { value: (Number(value) / factor).toFixed(2), unit };
+};
+
+const isTimestampInMilliseconds = (timestamp) => {
+    return timestamp >= 10 ** 12 && timestamp < 10 ** 15;
+};
+
+const formatTimestamp = (value) => {
+    if (value === UNDEFINED_VALUE) return { value: UNDEFINED_VALUE, unit: '' };
+    const timestamp = Number(value);
+    if (isTimestampInMilliseconds(timestamp)) {
+        const date = new Date(timestamp);
+        return { value: date.toLocaleTimeString('en-GB', { hour12: false }), unit: '' };
+    }
+    return timestamp;
+};
+
+const formatTime = (value, t) => {
+    if (value === UNDEFINED_VALUE) return { value: UNDEFINED_VALUE, unit: '' };
+
+    const totalSeconds = Math.round(Number(value) / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    const formattedTime = [
+        String(hours).padStart(2, '0'),
+        String(minutes).padStart(2, '0'),
+        String(seconds).padStart(2, '0'),
+    ].join(':');
+
+    return {
+        value: formattedTime,
+        unit: hours > 0 ? ` ${t('web:hours')}` : ` ${t('web:short_min')}`,
+    };
 };
 
 export default function TrackSegmentStat({ height, sortedSegments, activeSegmentParams }) {
@@ -58,7 +96,7 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
         const locale = locales[i18n.language] || locales.enUS;
         const date = new Date(parseInt(timestamp, 10));
         if (isNaN(date)) {
-            return 'NaN';
+            return UNDEFINED_VALUE;
         }
         return format(date, 'dd.MM.yyyy', { locale });
     };
@@ -66,28 +104,69 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
     useEffect(() => {
         if (!sortedSegments) return;
 
-        setFilteredStats(
-            sortedSegments.map((segment) => {
-                const stats = {
-                    speed: getSpeedStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
-                    altitude: getAltitudeStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
-                    other: getOtherStats(segment.stats, t, formatDate).filter((s) => activeSegmentParams.has(s.label)),
-                };
+        const statsMap = {
+            speed: new Map(),
+            altitude: new Map(),
+            other: new Map(),
+        };
 
-                let lastGroup = null;
-                Object.keys(stats).forEach((key) => {
-                    if (stats[key].length > 0) {
-                        lastGroup = key;
+        // 1. Collect statistics, filtering only active parameters
+        const segmentStats = sortedSegments.map((segment) => {
+            const stats = {
+                speed: getSpeedStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
+                altitude: getAltitudeStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
+                other: getOtherStats(segment.stats, t, formatDate).filter((s) => activeSegmentParams.has(s.label)),
+            };
+
+            // Store only parameter values in statsMap
+            Object.keys(stats).forEach((category) => {
+                stats[category].forEach((stat) => {
+                    const value = Number(stat.value);
+                    if (!statsMap[category].has(stat.label)) {
+                        statsMap[category].set(stat.label, { values: [], stats: [] });
+                    }
+                    statsMap[category].get(stat.label).values.push(value);
+                    statsMap[category].get(stat.label).stats.push(stat); // Keep a direct reference to update later
+                });
+            });
+
+            return { ...segment, stats };
+        });
+        // 2. Determine min/max values while handling NaN properly
+        Object.keys(statsMap).forEach((category) => {
+            statsMap[category].forEach(({ values, stats }) => {
+                const numericValues = values.filter((v) => !isNaN(v));
+
+                if (numericValues.length === 0) {
+                    // If all values are NaN, no one gets isMin or isMax
+                    stats.forEach((stat) => {
+                        stat.isMax = false;
+                        stat.isMin = false;
+                    });
+                    return;
+                }
+
+                const min = Math.min(...numericValues);
+                const max = Math.max(...numericValues);
+
+                stats.forEach((stat) => {
+                    const value = Number(stat.value);
+                    if (isNaN(value)) {
+                        stat.isMax = false;
+                        stat.isMin = false;
+                    } else {
+                        stat.isMax = value === max;
+                        stat.isMin = value === min;
                     }
                 });
+            });
+        });
 
-                return {
-                    ...segment,
-                    stats: {
-                        ...stats,
-                        isLastGroup: lastGroup,
-                    },
-                };
+        // 3. Set isLastGroup and update state
+        setFilteredStats(
+            segmentStats.map((segment) => {
+                const lastGroup = Object.keys(segment.stats).findLast((key) => segment.stats[key].length > 0);
+                return { ...segment, stats: { ...segment.stats, isLastGroup: lastGroup } };
             })
         );
     }, [sortedSegments, activeSegmentParams]);

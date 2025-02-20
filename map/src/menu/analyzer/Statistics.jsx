@@ -18,6 +18,12 @@ export default function Statistics({ stats }) {
                                         {item.label}
                                     </Typography>
                                     <Box display="flex" justifyContent="flex-end" alignItems="center">
+                                        {!(item.isMax && item.isMin) && // If both are true, show nothing
+                                            (item.isMax ? (
+                                                <Typography sx={{ mr: 0.5 }}>🏆</Typography>
+                                            ) : item.isMin ? (
+                                                <Typography sx={{ mr: 0.5 }}>🔻</Typography>
+                                            ) : null)}
                                         <Typography
                                             className={styles.statItemValue}
                                             noWrap

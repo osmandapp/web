@@ -109,6 +109,8 @@ export const getGraphData = ({
                 [ELEVATION]: ele,
                 [ELEVATION_SRTM]: eleSRTM,
                 [SPEED]: speed,
+                lat: point.lat,
+                lon: point.lon,
             });
         });
 

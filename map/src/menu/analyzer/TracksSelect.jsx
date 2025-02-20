@@ -19,16 +19,18 @@ import { ReactComponent as AllTracksIcon } from '../../assets/icons/ic_action_gr
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ALL_GROUP_MARKER } from './TrackAnalyzerMenu';
 import { useTranslation } from 'react-i18next';
+import { isEmpty } from 'lodash';
 
 const DEFAULT_GROUP_MARKER = '_default_';
 
-export default function TrackSelect({ setTracksFolders }) {
+export default function TrackSelect({ tracksFolders, setTracksFolders }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
     const [, height] = useWindowSize();
 
     const [groups, setGroups] = useState(null);
+    const [allGroups, setAllGroups] = useState(null);
 
     const [selectedGroupsNames, setSelectedGroupsNames] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
@@ -37,12 +39,31 @@ export default function TrackSelect({ setTracksFolders }) {
         const folders = getAllGroupNames(ctx.tracksGroups);
         const defaultGroup = getDefaultGroup(ctx.tracksGroups);
         setGroups(defaultGroup ? [defaultGroup, ...folders] : folders);
+        setAllGroups([DEFAULT_GROUP_MARKER, ...getAllGroupNames(ctx.tracksGroups).map((group) => group.title)]);
     }, [ctx.tracksGroups]);
+
+    useEffect(() => {
+        if (!tracksFolders) {
+            setSelectedGroupsNames([]);
+            setSelectAll(false);
+        }
+    }, [tracksFolders]);
+
+    useEffect(() => {
+        if (ctx.trackAnalyzer?.tracksFolders && isEmpty(setSelectedGroupsNames)) {
+            if (ctx.trackAnalyzer.tracksFolders.includes(ALL_GROUP_MARKER)) {
+                setSelectAll(true);
+                setSelectedGroupsNames(allGroups);
+            } else {
+                setSelectAll(false);
+                setSelectedGroupsNames(ctx.trackAnalyzer.tracksFolders);
+            }
+        }
+    }, [ctx.trackAnalyzer?.tracksFolders]);
 
     const handleSelectAll = (checked) => {
         setSelectAll(checked);
         if (checked) {
-            const allGroups = [DEFAULT_GROUP_MARKER, ...getAllGroupNames(ctx.tracksGroups).map((group) => group.title)];
             setSelectedGroupsNames(allGroups);
             setTracksFolders([ALL_GROUP_MARKER]);
         } else {

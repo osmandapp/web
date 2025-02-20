@@ -49,6 +49,7 @@ export const isTravelTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_TRAV
 export const isShareTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE;
 export const isTrack = (ctx) =>
     isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx) || isTravelTrack(ctx) || isShareTrack(ctx);
+export const isTrackAnalyzer = (ctx) => ctx.currentObjectType === OBJECT_TRACK_ANALYZER;
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -446,6 +447,8 @@ export const AppContextProvider = (props) => {
     // track analyzer
     const [trackAnalyzer, setTrackAnalyzer] = useState(null);
     const [excludedSegments, setExcludedSegments] = useState(new Set());
+    const [graphHighlightedPoint, setGraphHighlightedPoint] = useState(null);
+    const [sortedSegments, setSortedSegments] = useState(null);
 
     // global graph
     const [globalGraph, setGlobalGraph] = useState({
@@ -761,6 +764,10 @@ export const AppContextProvider = (props) => {
                 setGlobalGraph,
                 processingSaveTrack,
                 setProcessingSaveTrack,
+                graphHighlightedPoint,
+                setGraphHighlightedPoint,
+                sortedSegments,
+                setSortedSegments,
             }}
         >
             {props.children}

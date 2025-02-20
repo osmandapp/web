@@ -1,16 +1,47 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
 import { ReactComponent as ExcludeIcon } from '../../assets/icons/ic_action_list_exclude_item.svg';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
+import { processDisplayTrack } from '../../manager/track/TracksManager';
+import MakeTrackVisibleAction from './components/MakeTrackVisibleAction';
 
 const SegmentActions = forwardRef(({ filteredStats, setFilteredStats, selectedSegmentInd, setOpenActions }, ref) => {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    function openTrack() {}
+    const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
+
+    const file = ctx.listFiles.uniqueFiles.find((file) => file.name === filteredStats[selectedSegmentInd].name);
+
+    useEffect(() => {
+        if (displayTrack === true || displayTrack === false) {
+            processDisplayTrack({
+                showOnMap: displayTrack,
+                visible: displayTrack,
+                file,
+                ctx,
+                fileStorage: ctx.gpxFiles,
+                setFileStorage: ctx.setGpxFiles,
+            }).then();
+            setDisplayTrack(null);
+        }
+    }, [displayTrack]);
+
+    async function openTrack() {
+        processDisplayTrack({
+            visible: true,
+            showOnMap: true,
+            showInfo: true,
+            zoomToTrack: false,
+            file,
+            ctx,
+            fileStorage: ctx.gpxFiles,
+            setFileStorage: ctx.setGpxFiles,
+        }).then();
+    }
 
     function excludeSegment() {
         const excludedSegment = filteredStats[selectedSegmentInd];
@@ -37,6 +68,12 @@ const SegmentActions = forwardRef(({ filteredStats, setFilteredStats, selectedSe
                             </Typography>
                         </ListItemText>
                     </MenuItem>
+                    <MakeTrackVisibleAction
+                        ctx={ctx}
+                        track={file}
+                        setDisplayTrack={setDisplayTrack}
+                        setOpenActions={setOpenActions}
+                    />
                     <Divider className={styles.dividerActions} />
                     <MenuItem className={styles.action} onClick={excludeSegment}>
                         <ListItemIcon className={styles.iconAction}>
