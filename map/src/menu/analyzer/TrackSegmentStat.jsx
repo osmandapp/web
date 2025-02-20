@@ -53,11 +53,15 @@ const formatValue = (value, unit = '', factor = 1) => {
     return { value: (Number(value) / factor).toFixed(2), unit };
 };
 
+const isTimestampInMilliseconds = (timestamp) => {
+    return timestamp >= 10 ** 12 && timestamp < 10 ** 15;
+};
+
 const formatTime = (value, t) => {
     if (value === UNDEFINED_VALUE) return { value: UNDEFINED_VALUE, unit: '' };
 
     const timestamp = Number(value);
-    if (timestamp > 10 ** 12) {
+    if (isTimestampInMilliseconds(timestamp)) {
         // (HH:mm:ss)
         const date = new Date(timestamp);
         return { value: date.toLocaleTimeString('en-GB', { hour12: false }), unit: '' };
