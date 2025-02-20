@@ -5,6 +5,7 @@ import { apiGet, apiPost } from '../../util/HttpApi';
 import {
     isCloudTrack,
     isRouteTrack,
+    OBJECT_TRACK_ANALYZER,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_LOCAL_TRACK,
     OBJECT_TYPE_SHARE_FILE,
@@ -1437,7 +1438,11 @@ function showInfoBlock({ hasUrl, file, ctx, smartf }) {
     if (!smartf) {
         //default case for cloud tracks
         allFiles = ctx.gpxFiles;
-        ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+
+        // not set for track analyzer, because we need to keep the current object type
+        if (ctx.currentObjectType !== OBJECT_TRACK_ANALYZER) {
+            ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+        }
     }
     if (hasUrl) {
         ctx.setSelectedGpxFile({ ...allFiles[file.name], zoomToTrack: true, cloudRedrawWpts: true });

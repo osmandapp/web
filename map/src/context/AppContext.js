@@ -49,6 +49,7 @@ export const isTravelTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_TRAV
 export const isShareTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE;
 export const isTrack = (ctx) =>
     isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx) || isTravelTrack(ctx) || isShareTrack(ctx);
+export const isTrackAnalyzer = (ctx) => ctx.currentObjectType === OBJECT_TRACK_ANALYZER;
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',

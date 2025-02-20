@@ -163,7 +163,6 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                         hasEle: true,
                         hasSpeed: true,
                     });
-                    console.log(segmentData);
                     if (segmentData?.res?.length) {
                         const points = segmentData.res.map((point) => ({
                             x: parseFloat(point[DISTANCE]),
@@ -280,7 +279,6 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
         }
     }, 20);
 
-    
     function hideSelectedPoint() {
         ctx.mapMarkerListener(null);
     }

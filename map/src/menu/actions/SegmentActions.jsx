@@ -5,12 +5,25 @@ import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map
 import { ReactComponent as ExcludeIcon } from '../../assets/icons/ic_action_list_exclude_item.svg';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
+import { processDisplayTrack } from '../../manager/track/TracksManager';
 
 const SegmentActions = forwardRef(({ filteredStats, setFilteredStats, selectedSegmentInd, setOpenActions }, ref) => {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    function openTrack() {}
+    async function openTrack() {
+        const file = ctx.listFiles.uniqueFiles.find((file) => file.name === filteredStats[selectedSegmentInd].name);
+        processDisplayTrack({
+            visible: true,
+            showOnMap: true,
+            showInfo: true,
+            zoomToTrack: false,
+            file,
+            ctx,
+            fileStorage: ctx.gpxFiles,
+            setFileStorage: ctx.setGpxFiles,
+        }).then();
+    }
 
     function excludeSegment() {
         const excludedSegment = filteredStats[selectedSegmentInd];

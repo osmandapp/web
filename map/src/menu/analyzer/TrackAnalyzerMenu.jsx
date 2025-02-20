@@ -38,7 +38,7 @@ export default function TrackAnalyzerMenu() {
     const [startPoint, setStartPoint] = useState(null);
     const [finishPoint, setFinishPoint] = useState(null);
     const [startAnalysis, setStartAnalysis] = useState(false);
-    const [tracksFolders, setTracksFolders] = useState(null);
+    const [tracksFolders, setTracksFolders] = useState(ctx.trackAnalyzer?.tracksFolders || null);
     const [analyseResult, setAnalyseResult] = useState(null);
     const [sortedSegments, setSortedSegments] = useState([]);
     const [segmentsResult, setSegmentsResult] = useState(null);
@@ -85,6 +85,7 @@ export default function TrackAnalyzerMenu() {
             ctx.setTrackAnalyzer({
                 start: startPoint,
                 finish: finishPoint,
+                tracksFolders: tracksFolders,
             });
             return;
         }
@@ -168,6 +169,7 @@ export default function TrackAnalyzerMenu() {
                 ...ctx.trackAnalyzer,
                 start: startPoint,
                 finish: finishPoint,
+                tracksFolders,
                 segmentsUpdateDate: new Date().getMilliseconds(),
                 segments: analyseResult.segments,
             });
