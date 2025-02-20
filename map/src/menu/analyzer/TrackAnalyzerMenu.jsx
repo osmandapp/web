@@ -415,9 +415,9 @@ export default function TrackAnalyzerMenu() {
                     {emptySegResult && (
                         <ErrorBlock
                             icon={<DesertIcon />}
-                            text={'No passing tracks'}
+                            text={t('web:track_analyzer_empty_result_title')}
                             onClick={clearPoints}
-                            desc={'None of the selected tracks pass through the selected points.'}
+                            desc={t('web:track_analyzer_empty_result_desc')}
                             btnText={'Clear points'}
                         />
                     )}

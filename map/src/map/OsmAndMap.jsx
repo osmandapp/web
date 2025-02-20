@@ -67,7 +67,7 @@ const useStyles = makeStyles(() => ({
     }),
 }));
 
-const updateMarker = (lat, lng, setHoverPoint, hoverPointRef, ctx) => {
+const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     if (lat) {
         if (hoverPointRef.current) {
             hoverPointRef.current.setLatLng([lat, lng]);
@@ -103,7 +103,9 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             const hash = new L.Hash(map);
             mapRef.current = map;
             if (!ctx.mapMarkerListener) {
-                ctx.setMapMarkerListener(() => (lat, lng) => updateMarker(lat, lng, setHoverPoint, hoverPointRef, ctx));
+                ctx.setMapMarkerListener(
+                    () => (lat, lng) => updateMarker({ lat, lng, setHoverPoint, hoverPointRef, ctx })
+                );
             }
             detectGeoByIp({ map, hash });
         }

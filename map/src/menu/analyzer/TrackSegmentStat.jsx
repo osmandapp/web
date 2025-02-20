@@ -63,13 +63,13 @@ const formatTime = (value, t) => {
         return { value: date.toLocaleTimeString('en-GB', { hour12: false }), unit: '' };
     }
 
-    const totalSeconds = Math.floor(Number(value) / 1000);
+    const totalSeconds = Math.round(Number(value) / 1000);
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
 
     const formattedTime = [
-        hours > 0 ? String(hours).padStart(2, '0') : '00',
+        String(hours).padStart(2, '0'),
         String(minutes).padStart(2, '0'),
         String(seconds).padStart(2, '0'),
     ].join(':');

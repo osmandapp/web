@@ -82,5 +82,7 @@
   "length": "Length",
   "exclude": "Exclude",
   "processing_track_analyzer": "Processing track data...",
-  "short_min": "m"
+  "short_min": "m",
+  "track_analyzer_empty_result_desc": "None of the selected tracks pass through the selected points.",
+  "track_analyzer_empty_result_title": "No passing tracks"
 }
