@@ -30,7 +30,7 @@ export default function TrackSelect({ tracksFolders, setTracksFolders }) {
     const [, height] = useWindowSize();
 
     const [groups, setGroups] = useState(null);
-    const [allGroups, setAllGroups] = useState(null);
+    const [allGroups, setAllGroups] = useState([]);
 
     const [selectedGroupsNames, setSelectedGroupsNames] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
