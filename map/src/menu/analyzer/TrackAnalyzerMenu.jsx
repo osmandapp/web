@@ -44,6 +44,7 @@ export default function TrackAnalyzerMenu() {
     const [sortedSegments, setSortedSegments] = useState([]);
     const [segmentsResult, setSegmentsResult] = useState(null);
     const [processing, setProcessing] = useState(false);
+    const [showProcessing, setShowProcessing] = useState(false);
     const [emptySegResult, setEmptySegResult] = useState(false);
 
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
@@ -68,6 +69,22 @@ export default function TrackAnalyzerMenu() {
     useEffect(() => {
         saveToLocalStorage();
     }, [activeSegmentParams]);
+
+    useEffect(() => {
+        let timer;
+        if (processing) {
+            timer = setTimeout(() => setShowProcessing(true), 5000);
+        } else {
+            setShowProcessing(false);
+        }
+        return () => clearTimeout(timer);
+    }, [processing]);
+
+    useEffect(() => {
+        if (sortedSegments) {
+            ctx.setSortedSegments(sortedSegments);
+        }
+    }, [sortedSegments]);
 
     useEffect(() => {
         setSortedSegments(segmentsResult ? segmentsResult.files : []);
@@ -386,7 +403,7 @@ export default function TrackAnalyzerMenu() {
                         {analyseResult === null && !processing && !emptySegResult && <TrackAnalyzerTips />}
                     </Box>
                     <ThickDivider />
-                    {processing && (
+                    {showProcessing && (
                         <ErrorBlock
                             icon={<CircularProgress size={20} />}
                             text={t('web:processing_track_analyzer')}
