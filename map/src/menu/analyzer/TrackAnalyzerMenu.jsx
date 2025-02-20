@@ -27,6 +27,7 @@ import ErrorBlock from './ErrorBlock';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
+const SELECTED_FILTERS = 'selectedSegmentFilters';
 
 export default function TrackAnalyzerMenu() {
     const ctx = useContext(AppContext);
@@ -53,7 +54,20 @@ export default function TrackAnalyzerMenu() {
 
     const allStats = [...speedStats, ...altitudeStats, ...otherStats];
 
-    const [activeSegmentParams, setActiveSegmentParams] = useState(new Set(allStats.map((stat) => stat.label)));
+    const [activeSegmentParams, setActiveSegmentParams] = useState(getFromLocalStorage);
+
+    function getFromLocalStorage() {
+        const storedFilters = localStorage.getItem(SELECTED_FILTERS);
+        return storedFilters ? new Set(JSON.parse(storedFilters)) : new Set(allStats.map((stat) => stat.label));
+    }
+
+    function saveToLocalStorage() {
+        localStorage.setItem(SELECTED_FILTERS, JSON.stringify(Array.from(activeSegmentParams)));
+    }
+
+    useEffect(() => {
+        saveToLocalStorage();
+    }, [activeSegmentParams]);
 
     useEffect(() => {
         setSortedSegments(segmentsResult ? segmentsResult.files : []);
@@ -390,7 +404,6 @@ export default function TrackAnalyzerMenu() {
                             btnText={'Clear points'}
                         />
                     )}
-                    <Box sx={{ backgroundColor: '#f0f0f0', flexGrow: 1 }}></Box>
                     {analyseResult !== null && (
                         <>
                             <TrackSegmentStat
@@ -400,6 +413,7 @@ export default function TrackAnalyzerMenu() {
                             />
                         </>
                     )}
+                    <Box sx={{ backgroundColor: '#f0f0f0', flexGrow: 1 }}></Box>
                     <ActionsMenu
                         open={openFiltersDialog}
                         setOpen={setOpenFiltersDialog}
