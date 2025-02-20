@@ -21,7 +21,7 @@ export default function SegmentSelector({ currentGraph, segmentVisibility, toggl
         if (ctx.sortedSegments) {
             setSegments(
                 ctx.sortedSegments.reduce((acc, segment) => {
-                    const trackName = segment.trackName;
+                    const trackName = segment.name;
                     if (!acc[trackName]) {
                         acc[trackName] = [];
                     }
