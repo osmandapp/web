@@ -39,8 +39,8 @@ export const getAltitudeStats = (stats, t) => [
 export const getOtherStats = (stats, t, formatDate) => [
     { icon: <DateIcon />, label: t('shared_string_date'), value: formatDate(stats.date) },
     { icon: <TimeSpanIcon />, label: t('shared_string_time_span'), ...formatTime(stats.timeSpan, t) },
-    { icon: <StartTimeIcon />, label: t('shared_string_start_time'), ...formatTime(stats.startTime, t) },
-    { icon: <EndTimeIcon />, label: t('shared_string_end_time'), ...formatTime(stats.endTime, t) },
+    { icon: <StartTimeIcon />, label: t('shared_string_start_time'), ...formatTimestamp(stats.startTime) },
+    { icon: <EndTimeIcon />, label: t('shared_string_end_time'), ...formatTimestamp(stats.endTime) },
     { icon: <TimeDurationIcon />, label: t('duration'), ...formatTime(stats.duration, t) },
     { icon: <TimeMovingIcon />, label: t('moving_time'), ...formatTime(stats.timeMoving, t) },
     { icon: <DistanceIcon />, label: t('shared_string_length'), ...formatValue(stats.totalDist, t('km'), 1000) },
@@ -57,15 +57,18 @@ const isTimestampInMilliseconds = (timestamp) => {
     return timestamp >= 10 ** 12 && timestamp < 10 ** 15;
 };
 
-const formatTime = (value, t) => {
+const formatTimestamp = (value) => {
     if (value === UNDEFINED_VALUE) return { value: UNDEFINED_VALUE, unit: '' };
-
     const timestamp = Number(value);
     if (isTimestampInMilliseconds(timestamp)) {
-        // (HH:mm:ss)
         const date = new Date(timestamp);
         return { value: date.toLocaleTimeString('en-GB', { hour12: false }), unit: '' };
     }
+    return timestamp;
+};
+
+const formatTime = (value, t) => {
+    if (value === UNDEFINED_VALUE) return { value: UNDEFINED_VALUE, unit: '' };
 
     const totalSeconds = Math.round(Number(value) / 1000);
     const hours = Math.floor(totalSeconds / 3600);
