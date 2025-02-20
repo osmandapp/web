@@ -23,6 +23,7 @@ import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import YAxisSelector from './YAxisSelector';
 import { debounce } from 'lodash';
+import annotationsPlugin from 'chartjs-plugin-annotation';
 
 const Z_INDEX_GRAPH = 1000;
 const MIN_GRAPH_HEIGHT = 34;
@@ -30,7 +31,17 @@ const INNER_GRAPH_HEIGHT = 150;
 const INFO_BLOCK_WIDTH = 200;
 export const TYPE_ANALYZER = 'analyzer';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineController, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineController,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+    annotationsPlugin
+);
 
 export const Y_AXIS_OPTIONS = (t) => [
     { value: 'altitude', label: t('altitude') },
@@ -198,6 +209,39 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
         return { datasets, allDistances };
     }, [currentGraph.object, yAxisOption, segmentVisibility]);
 
+    // fix tooltip for nearest points
+    useEffect(() => {
+        if (!chartRef.current) return;
+
+        const chart = chartRef.current;
+
+        chart.options.onHover = (event) => {
+            if (!chartRef.current) return;
+
+            const xValue = chart.scales.x.getValueForPixel(event.native.offsetX);
+            chart.options.plugins.annotation.annotations.crosshairLine.value = xValue;
+
+            const newActiveElements = [];
+
+            chart.data.datasets.forEach((dataset, datasetIndex) => {
+                dataset.data.forEach((point, index) => {
+                    if (Math.abs(point.x - xValue) < 0.001) {
+                        newActiveElements.push({ datasetIndex, index });
+                    }
+                });
+            });
+
+            if (newActiveElements.length > 0) {
+                chart.tooltip.setActiveElements(newActiveElements, {
+                    x: event.native.offsetX,
+                    y: event.native.offsetY,
+                });
+                chart.update('none');
+            }
+        };
+        chart.update();
+    }, [graphData, yAxisOption]);
+
     const options = useMemo(() => {
         const minX = graphData.allDistances.length > 0 ? Math.min(...graphData.allDistances) : 0;
         const maxX = graphData.allDistances.length > 0 ? Math.max(...graphData.allDistances) : 1;
@@ -212,7 +256,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
             },
             interaction: {
                 mode: 'nearest',
-                intersect: true,
+                intersect: false,
             },
             scales: {
                 x: {
@@ -244,6 +288,23 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                 legend: {
                     display: false,
                 },
+                tooltip: {
+                    enabled: true,
+                    intersect: false,
+                },
+                annotation: {
+                    annotations: {
+                        crosshairLine: {
+                            type: 'line',
+                            mode: 'vertical',
+                            scaleID: 'x',
+                            value: null,
+                            borderColor: 'rgba(255, 0, 0, 0.8)',
+                            borderWidth: 1,
+                            borderDash: [4, 4],
+                        },
+                    },
+                },
             },
         };
     }, [graphData, yAxisOption]);
@@ -256,11 +317,13 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
         if (!chartRef) {
             return;
         }
-        if (ctx.mapMarkerListener && chartRef.current._active?.length > 0) {
+        const chart = chartRef.current;
+
+        if (ctx.mapMarkerListener && chart._active?.length > 0) {
             // Get the mouse cursor position
             const eventX = e.nativeEvent.offsetX;
             // Search for the closest point to the mouse cursor
-            const selected = chartRef.current._active.reduce((closest, current) => {
+            const selected = chart._active.reduce((closest, current) => {
                 const currentX = current.element.x;
                 return !closest || Math.abs(currentX - eventX) < Math.abs(closest.element.x - eventX)
                     ? current
@@ -277,7 +340,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
         } else {
             hideSelectedPoint();
         }
-    }, 20);
+    }, 50);
 
     function hideSelectedPoint() {
         ctx.mapMarkerListener(null);
