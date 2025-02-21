@@ -9,6 +9,8 @@ import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
 import {
+    ADDRESS_1,
+    ADDRESS_2,
     CATEGORY_NAME,
     CATEGORY_TYPE,
     MAIN_CATEGORY_KEY_NAME,
@@ -55,10 +57,13 @@ export function getPropsFromSearchResultItem(props, t) {
         }
     }
 
+    const addressParts = [props[ADDRESS_1], props[ADDRESS_2]].filter(Boolean);
+    const info = addressParts.length > 0 ? addressParts.join(', ') : undefined;
+
     name = getFirstSubstring(name);
     type = getFirstSubstring(type);
 
-    return { name, type };
+    return { name, type, info };
 }
 
 export default function SearchResultItem({ item, setSearchValue, typeItem }) {
@@ -67,7 +72,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     const { t } = useTranslation();
     const { ref, inView } = useInView();
 
-    const { name, distance, type, icon } = parseItem(item);
+    const { name, info, distance, type, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
 
     const itemId = getObjIdSearch(item);
@@ -175,6 +180,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                     >
                         <ListItemText>
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
+                            {info && <MenuItemWithLines className={styles.placeInfo} name={info} maxLines={2} />}
                             {(type || distance) && (
                                 <MenuItemWithLines
                                     name={`${type}${formatDistance(distance)}`}

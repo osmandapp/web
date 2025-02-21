@@ -72,6 +72,12 @@
     font-size: 14px !important;
     font-weight: 400 !important;
 }
+.placeInfo {
+    font-family: Roboto !important;
+    color: var(--text-secondary) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+}
 .explorePlaceTypes {
     margin-left: 8px !important;
     font-family: Roboto !important;

@@ -70,6 +70,8 @@ export const POI_ID = WEB_POI_PREFIX + 'id';
 // from PoiType object
 export const CATEGORY_NAME = WEB_PREFIX + 'name';
 export const CATEGORY_TYPE = WEB_PREFIX + 'type';
+export const ADDRESS_1 = WEB_PREFIX + 'address1';
+export const ADDRESS_2 = WEB_PREFIX + 'address2';
 export const CATEGORY_KEY_NAME = WEB_PREFIX + 'keyName';
 export const ICON_KEY_NAME = WEB_PREFIX + 'iconKeyName';
 export const TYPE_OSM_TAG = WEB_PREFIX + 'typeOsmTag';
