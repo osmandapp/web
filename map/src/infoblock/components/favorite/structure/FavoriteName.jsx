@@ -39,20 +39,25 @@ export default function FavoriteName({
                     names.push(wpt.name);
                 }
             });
+        validateName(favoriteName, names);
         setFavNames(names);
     }, [favoriteGroup]);
 
     useEffect(() => {
-        if (favNames.find((name) => name === favoriteName)) {
+        validateName(favoriteName, favNames);
+    }, [favoriteName]);
+
+    function validateName(name, otherNames) {
+        if (otherNames.find((n) => n === name)) {
             setNameAlreadyExist(true);
             setErrorName(true);
-        } else if (favoriteName === '' || !favoriteName.trim().length) {
+        } else if (name === '' || !name.trim().length) {
             setErrorName(true);
         } else {
             setNameAlreadyExist(false);
             setErrorName(false);
         }
-    }, [favoriteName]);
+    }
 
     function gerErrorText(favoriteName) {
         if (favoriteName === '') {
