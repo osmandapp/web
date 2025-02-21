@@ -48,15 +48,18 @@ export default function FavoriteName({
     }, [favoriteName]);
 
     function validateName(name, otherNames) {
-        if (otherNames.find((n) => n === name)) {
-            setNameAlreadyExist(true);
+        const trimmedName = name.trim();
+
+        if (!trimmedName) {
             setErrorName(true);
-        } else if (name === '' || !name.trim().length) {
-            setErrorName(true);
-        } else {
             setNameAlreadyExist(false);
-            setErrorName(false);
+            return;
         }
+
+        const nameExists = otherNames.some((n) => n.toLowerCase() === trimmedName.toLowerCase());
+
+        setNameAlreadyExist(nameExists);
+        setErrorName(nameExists);
     }
 
     function gerErrorText(favoriteName) {
