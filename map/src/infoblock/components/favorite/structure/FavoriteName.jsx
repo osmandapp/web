@@ -39,20 +39,28 @@ export default function FavoriteName({
                     names.push(wpt.name);
                 }
             });
+        validateName(favoriteName, names);
         setFavNames(names);
     }, [favoriteGroup]);
 
     useEffect(() => {
-        if (favNames.find((name) => name === favoriteName)) {
-            setNameAlreadyExist(true);
-            setErrorName(true);
-        } else if (favoriteName === '' || !favoriteName.trim().length) {
-            setErrorName(true);
-        } else {
-            setNameAlreadyExist(false);
-            setErrorName(false);
-        }
+        validateName(favoriteName, favNames);
     }, [favoriteName]);
+
+    function validateName(name, otherNames) {
+        const trimmedName = name.trim();
+
+        if (!trimmedName) {
+            setErrorName(true);
+            setNameAlreadyExist(false);
+            return;
+        }
+
+        const nameExists = otherNames.some((n) => n.toLowerCase() === trimmedName.toLowerCase());
+
+        setNameAlreadyExist(nameExists);
+        setErrorName(nameExists);
+    }
 
     function gerErrorText(favoriteName) {
         if (favoriteName === '') {

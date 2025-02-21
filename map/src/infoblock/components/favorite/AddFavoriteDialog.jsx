@@ -49,6 +49,10 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
 
     useEffect(() => {
         getIconCategories().then();
+        const defaultGroup = ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME);
+        if (defaultGroup) {
+            setFavoriteGroup(defaultGroup);
+        }
     }, [dialogOpen]);
 
     useEffect(() => {

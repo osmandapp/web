@@ -14,6 +14,7 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
 
     let groupList = FavoritesManager.orderList(_.values(groups), defaultGroup);
 
+    const defaultGroupName = ctx.addFavorite.editTrack && defaultGroup === null ? '' : defaultGroup;
     // filter shared groups
     groupList = groupList.filter((group) => !group.sharedWithMe);
 
@@ -102,7 +103,6 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
     };
 
     function selectGroup(group) {
-        let defaultGroupName = ctx.addFavorite.editTrack && defaultGroup === null ? '' : defaultGroup;
         return favoriteGroup?.name === group?.name || (favoriteGroup === null && group.name === defaultGroupName);
     }
 
