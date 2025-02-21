@@ -44,7 +44,7 @@ You can read about the differences between online routing engines in [OSMwiki](h
 
 ### Custom Online GPX Routing
 
-Online server builds a route using your starting point and destination. After receiving the track from the server, OsmaAnd creates a route using *[Attach to the road's](../setup/gpx-navigation.md#attach-to-roads)* function. So all needed routing information will be taken from our offline maps, and more precise guidance along the route will be provided.  
+Online server builds a route using your starting point and destination. After receiving the track from the server, OsmaAnd creates a route using *[Attach to the roads](../setup/gpx-navigation.md#attach-to-roads)* feature. So all needed routing information will be taken from our offline maps, and more precise guidance along the route will be provided.  
 
 ![Custom GPX routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_1.png) ![Custom GPX routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_2.png)
 
@@ -55,6 +55,6 @@ When online routing is selected for navigation, an additional option appears in 
 
 ![Settings Online routing Android](@site/static/img/navigation/routing/settings_online_routing_1.png)
 
-- *<Translate android="true" ids="calculate_osmand_route_without_internet"/>*  - allows to use OsmAnd offline routing, when online routing is selected in the navigation settings. This option may help if a route has already been built online, but then there was a deviation from the route and at the same time the internet connection was lost. In this case, offline routing will be used to return to the route, previousely calculated online.
+- *<Translate android="true" ids="calculate_osmand_route_without_internet"/>*  - Allows to use OsmAnd offline routing, when online routing is selected in the navigation settings. This option may help if a route has already been built online, but then there was a deviation from the route and at the same time the internet connection was lost. In this case, offline routing will be used to return to the route, previousely calculated online.
 
 > *This article was last updated in June 2024*

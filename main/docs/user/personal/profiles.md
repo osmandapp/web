@@ -249,7 +249,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 
 Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_gs_other_android.png)
+![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_general_settings_other_andr.png)
 
 </TabItem>
 
@@ -257,22 +257,27 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_pr
 
 Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
 
-![Profiles General Settings Other iOS](@site/static/img/personal/profiles/profile_other_1_ios.png)  
+![Profiles General Settings Other iOS](@site/static/img/personal/profiles/profile_general_settings_other_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-The **Other** section offers additional profile settings, allowing you to customize buttons and input devices, enable or disable animation in navigation mode, and toggle features like full-screen mode, the magnetic sensor, and the Kalman filter. Note that some options may not be available on iOS.
+The **Other** section provides additional profile settings to customize OsmAnd’s interface and input controls. These settings allow you to configure external devices, adjust animation preferences, and toggle fullscreen mode.
 
-- *[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices)*. Allow you to add other devices, such as <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>, or <Translate android="true" ids="sett_parrot_ext_input"/>, to control the OsmAnd program using the existing buttons.  
+- [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Connect external controllers such as *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>*, or *<Translate android="true" ids="sett_parrot_ext_input"/>* to operate OsmAnd using physical buttons.
 
-- *<Translate android="true" ids="use_volume_buttons_as_zoom"/> (Android only)*. Select whether to use the device's volume buttons as a [zoom](../map/interact-with-map.md#my-location-and-zoom).
-- *[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (Android)*. Select whether you will use the [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) to smooth the rotation of the map with a slower rotation animation. This introduces a small delay (< 1 second) till.
-- *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (Android)*. Select whether you will use the [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to smooth the rotation of the map with a slower rotation animation. This introduces a small delay (< 1 second) till.
-- *<Translate android="true" ids="tap_on_map_to_hide_interface"/> (Android only)*. Tapping an empty space on the map hides the control buttons and widgets.
-- *[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (Android only)*. Switch the animation for the navigation mode on or off.
-- *<Translate android="true" ids="animate_my_location"/>*. <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the *[My location](../map/interact-with-map.md#my-location-and-zoom)* position to display on the map relative to your location.  
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Android only*) – Enable or disable the ability to use your device’s volume buttons for [zooming](../map/interact-with-map.md#my-location-and-zoom) in and out on the map.
+
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Smooths map rotation with [gradual movement](https://en.wikipedia.org/wiki/Kalman_filter), reducing sudden position shifts. This introduces a small delay (*less than 1 second*).
+
+- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.
+
+- **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Android only*) – Tap an empty space on the map to hide control buttons and widgets, maximizing map visibility.
+
+- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*Android only*) – Disable animations in navigation mode for faster screen transitions.
+
+- **<Translate android="true" ids="animate_my_location"/>** – Enables smooth map panning while in motion, making navigation movements more fluid. This introduces a 1-second delay, causing a slight lag between actual movement and map [position](../map/interact-with-map.md#my-location-and-zoom) updates.
 
 
 ## Navigation Settings
@@ -291,23 +296,29 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_pr
 
 Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_overview_ios.png)
+![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_overview_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-We recommend you read the information in the article [Navigation Settings](../navigation/guidance/navigation-settings.md), where you can find the relevant settings of the OsmAnd application that can enhance your journey experience.
+For a detailed overview of navigation options, refer to the [Navigation Settings](../navigation/guidance/navigation-settings.md) article, which explains how to configure OsmAnd for an optimal navigation experience.
 
-- [Navigation type](../navigation/guidance/navigation-settings.md#navigation-type). Provides options to select the type of navigation based on your mode of travel and whether you have an internet connection.
-- [Route parameters](../navigation/guidance/navigation-settings.md#route-parameters). These settings determine how the app calculates routes to reach your destination.
-- [Screen alerts](../navigation/guidance/navigation-settings.md#screen-alerts). This navigation setting allows you to enable the Alerts Widget and select which alerts you want to see on the app screen while navigating.
-- [Voice prompts](../navigation/guidance/navigation-settings.md#voice-prompts). Audio instructions during navigation help you as a driver or pedestrian get to your destination while navigating a selected route.
-- [Vehicle parameters](../navigation/guidance/navigation-settings.md#vehicle-parameters). Allows you to select the correct parameter settings to help you avoid problems when navigating a route.
-- [Customize route line](../navigation/guidance/navigation-settings.md#customize-route-line). With this setting, you can choose the appearance of the route line that will be visible on the map during navigation.
-- [Map during navigation](../navigation/guidance/navigation-settings.md#map-during-navigation). The map is used during navigation to determine your location, plan your route, and land orientation.
-- [Animate own position](../navigation/guidance/navigation-settings.md#animate-own-position) (*for iOS, is available in this menu*). This setting provides a smooth animation of the My Position point moving on the map during navigation. For ***Android***, this item is located in the [Other](#other) section of the *General Settings* menu.
-- [Detailed track guidance](../navigation/guidance/navigation-settings.md). Allows you to match your route to nearby roads to enhance turn-by-turn instructions. Available settings: *Ask every time* or *Always*.
+- [Navigation type](../navigation/guidance/navigation-settings.md#navigation-type) - Choose the appropriate navigation mode based on your travel method and internet availability.
+
+- [Route parameters](../navigation/guidance/navigation-settings.md#route-parameters) - Define how OsmAnd calculates routes, including preferences for avoiding certain roads or selecting route types.
+
+- [Screen alerts](../navigation/guidance/navigation-settings.md#screen-alerts) - Enable the *Alerts Widget* to display real-time notifications for speed limits, turns, and other important road conditions.
+
+- [Voice prompts](../navigation/guidance/navigation-settings.md#voice-prompts) - Enable audio guidance to receive spoken navigation instructions while driving or walking along a selected route.
+
+- [Vehicle parameters](../navigation/guidance/navigation-settings.md#vehicle-parameters) – Configure vehicle-specific settings such as maximum speed and vehicle height to ensure accurate routing and avoid restricted roads.
+
+- [Customize route line](../navigation/guidance/navigation-settings.md#customize-route-line) – Adjust the color, width, and style of the route line displayed on the map for better visibility during navigation.
+
+- [Map during navigation](../navigation/guidance/navigation-settings.md#map-during-navigation) – View real-time positioning on the map, track progress along the route, and improve orientation using landmarks.
+
+- [Detailed track guidance](../navigation/guidance/navigation-settings.md) – Improve turn-by-turn navigation by aligning your route with mapped roads. Available settings: *Ask Every Time* or *Always*.
 
 :::info
 There are no navigation settings in the *Browse map* profile.  
@@ -337,12 +348,19 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-The [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) menu allows you to customize the map display settings for the selected profile, for example:
+The [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) menu allows you to customize the map display settings for the selected profile, enabling better visualization of key map elements.  
 
-- Highlight [Favorite points](../personal/favorites.md), [Navigation markers](../personal/markers.md), or special [Points of Interests](../map/point-layers-on-map.md#points-of-interest-poi) on the map.
-- Display specific routes or third-party GPX files.
-- [Overlay terrain information](../plugins/topography.md), satellite images, or any other available [raster maps](../map/raster-maps.md).
-- Display [public transport](../map/public-transport.md) information and [change the map style](../map/vector-maps.md#default-map-styles).
+With this menu, you can:
+
+- **Highlight important map elements**, including [Favorite points](../personal/favorites.md), [Navigation markers](../personal/markers.md), or special [Points of Interests](../map/point-layers-on-map.md#points-of-interest-poi) on the map.
+
+- **Display specific routes and GPX files**, including third-party tracks for navigation or analysis.
+
+- **Overlay additional map layers**, such as [terrain information](../plugins/topography.md), **satellite imagery**, or other available [raster maps](../map/raster-maps.md).
+
+- **Enable public transport visualization**, showing [routes and stops](../map/public-transport.md) for better trip planning.
+
+- **Adjust map appearance** by selecting a different [map style](../map/vector-maps.md#default-map-styles) to match your needs.
 
 
 ## Configure Screen
@@ -418,28 +436,39 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appearance** settings allow you to customize how your location is displayed on the map, both stationary and in motion. Motion is detected by the operating system when it provides a location update with a speed greater than 0 speed.
+The [**My location**](../map/interact-with-map.md#my-location-and-zoom) appearance settings allow you to customize how your location is displayed on the map, both while stationary and in motion. Motion is detected when the operating system receives a location update with a speed greater than **0 km/h**.  
 
-- **Additional options**. You can control how location-related visual elements appear on the map and apply them separately or both for the Resting and Navigation positions below the *my location* icon.
+#### Additional Options
 
-  - **<Translate android="true" ids="view_angle"/>**. Displays a cone-shaped area that shows the direction you are currently facing.
-  - **<Translate android="true" ids="location_radius"/>**. Shows a circular area around your icon, representing the accuracy of your current location.
+You can adjust location-related visual elements and apply them separately or together for **Resting** and **Navigation** positions below the *My Location* icon:
 
-<!--
-**3D location icon**. You can select the appearance of your location icon in 3D or 2D, depending on the map rendering version you are using. *Map rendering* (*Android*). 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine). If you use [map rendering Version 1](../personal/global-settings.md#map-rendering-engine), the icons will appear in 2D.
+- **<Translate android="true" ids="view_angle"/>** – Displays a **cone-shaped** area indicating the direction you are currently facing.  
+- **<Translate android="true" ids="location_radius"/>** – Shows a **circular area** around your icon, representing the accuracy of your current location.  
 
-![My location Appearance](@site/static/img/personal/profiles/location_appearance_3d_icons.png)
--->
+#### Custom 3D Icons
 
-- **Custom 3D Icons**. If you want to further personalize your map experience, you can create your own 3D icons and add them to the app. To do this, follow the steps below:
+For a more personalized experience, you can create and add **custom 3D icons** to OsmAnd.  
 
-  - Create a custom 3D model in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
-  - [Create a custom plugin](../plugins/custom.md) by using [plugin example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) and include your 3D icons with the following paths:
-    - `..osmand/models/icon_folder_name/custom_3d_file.mtl`
-    - `..osmand/models/icon_folder_name/custom_3d_file.obj`
-  - Alternatively, directly copy the custom 3D files to the OsmAnd folder with the paths above.
+To add a custom 3D location icon:
 
-- With the [map orientation modes](../widgets/map-buttons.md#compass), you can control the display of **My location** and the behavior of the map during navigation. If you find that the location icon jiggles or rotates even when you are stationary, switch the mode from the *Movement direction* ([Rotate map by bearing](../map/interact-with-map.md#rotate-map-by-bearing)) to another mode that is more appropriate for you, or use the settings in the *Options* section (*Menu → Settings → App profiles → Profile appearance → Options*). You can read more about *bearing* [here](../widgets/nav-widgets#bearing-widget).
+1. **Create a 3D model** in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
+
+2. **Integrate the model into OsmAnd:**  
+   - Create a [custom plugin](../plugins/custom.md) using the [plugin example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf).  
+   - Include your 3D icons with the following paths:  
+
+     `..osmand/models/icon_folder_name/custom_3d_file.mtl`  
+     `..osmand/models/icon_folder_name/custom_3d_file.obj`
+
+   - Alternatively, copy the **MTL and OBJ files** directly to the OsmAnd folder using the paths above.  
+
+#### Map Orientation Modes
+
+You can control how the **My Location** icon behaves using different [map orientation modes](../widgets/map-buttons.md#compass).  
+
+- If the location icon **jiggles or rotates** while stationary, switch from **Movement Direction Mode** ([Rotate Map by Bearing](../map/interact-with-map.md#rotate-map-by-bearing)) to another mode.  
+- Adjust additional settings in *Menu → Settings → App Profiles → Profile Appearance → Options*.
+- Learn more about bearing and direction tracking in the [Bearing Widget](../widgets/nav-widgets#bearing-widget) section.  
 
 
 ## UI Customization
@@ -461,26 +490,32 @@ With the UI customization feature, you can adjust the number of items in actions
 
 ![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
 
-- **Main visible items**. In the Customize UI section, you can reorder hide, and restore items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android).
-- **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the main menu in the drawer. All your changes are instantly undone.  
-- **<Translate android="true" ids="copy_from_other_profile"/>**. You can duplicate the element arrangement from another OsmAnd profile to this one.
+- **Main visible items** - In the *Customize UI* section, you can *reorder hide, and restore* items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android) to match your preferences.
+
+- **<Translate android="true" ids="reset_to_default"/>** - Restores the *original list of items* in the drawer, instantly undoing any customizations.
+
+- **<Translate android="true" ids="copy_from_other_profile"/>** - Allow you to copy the *drawer layout* from another OsmAnd profile to maintain a consistent setup across profiles.
 
 ### Configuring the Map
 
 ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
 
-- **Configure map menu**. In this part of the Customize UI section, you can reorder or hide items from the [Configure map](../map/configure-map-menu.md).  
-- **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the Configure map menu. All your changes are instantly undone.  
-- **<Translate android="true" ids="copy_from_other_profile"/>**. You can duplicate the element arrangement from another OsmAnd profile to this one.
+- **Configure map menu** - In the *Customize UI* section, you can *reorder or hide items* from the [Configure map](../map/configure-map-menu.md), allowing quick access to frequently used settings.
+
+- **<Translate android="true" ids="reset_to_default"/>** - Restores the *original item list* in the Configure map menu, removing any changes.
+
+- **<Translate android="true" ids="copy_from_other_profile"/>** - Copies the *Configure map menu layout* from another OsmAnd profile.
 
 
 ### Context Menu Actions
 
 ![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
-- **Map context menu**.  In this part of the Customize UI section, you can reorder or hide items from the [map context menu](../map/map-context-menu.md).  
-- **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the main menu in the drawer. All your changes are instantly undone.
-- **<Translate android="true" ids="copy_from_other_profile"/>**. You can duplicate the element arrangement from another OsmAnd profile to this one.
+- **Map context menu** - In the Customize UI section, you can reorder or hide items in the [map context menu](../map/map-context-menu.md) to optimize access to frequently used features.
+
+- **<Translate android="true" ids="reset_to_default"/>** – Restores the *default item list* in the map context menu, instantly reverting any modifications.
+
+- **<Translate android="true" ids="copy_from_other_profile"/>** – Copies the *context menu arrangement* from another OsmAnd profile to maintain consistency across different profiles.
 
 
 ## Plugin Settings
@@ -551,9 +586,12 @@ Plugins unlock additional features of the application and can be either [paid or
 
 Actions with selected profile:  
 
-- [Export profile](https://osmand.net/docs/user/personal/import-export#export). You can export all settings of the selected profile in OSF format.
-- **Copy from another profile.** Copies all settings from another existing profile in your OsmAnd application.
-- **Reset to default.** Returns all settings to the initial state.
+- [Export profile](https://osmand.net/docs/user/personal/import-export#export) - Export all settings of the selected profile in OSF format.
+
+- **Copy from another profile** - Copies all settings from another existing profile in your OsmAnd application.
+
+- **Reset to default** - Returns all settings to the initial state.
+
 - **Delete profile**:
     - This action is available only for *Android* and only for a *Custom profile*.
     - Default profiles cannot be deleted.
@@ -566,4 +604,4 @@ Actions with selected profile:
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in December 2024*
+> *This article was last updated in February 2025*

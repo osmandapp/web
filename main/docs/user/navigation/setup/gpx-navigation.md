@@ -43,7 +43,9 @@ Before using the *Navigation by track* option, you need to [display the track on
 
 
 - **Geometry** track will have very basic navigation by default and won't provide accurate turns, street names and turn lanes. To get missing information, you need to use [Attach to the roads](#attach-to-the-roads) tool.
+
 - **Route** track will calculate route between route points by selected profile. Basically, all route points will be considered as intermediate points. If you route consists > 50 points, it's very likely that it's misconfigured **Geometry** track.
+
 - **OsmAnd** track consists of both geometry and route parts, and it's suitable to provide exactly the same guidance as navigation by default. These tracks are produced by [Plan route](../../plan-route/create-route.md) or [Web version](../../plan-route/web.md). It's possible to resave this track to **Geometry** only track as [**Simplified**](../../plan-route/create-route.md#save-route) to be used in 3rd party programs.
 
 
@@ -143,20 +145,25 @@ to the *<Translate android="true" ids="start_of_the_track"/>* or to the *<Transl
 
 </Tabs>
 
-You can find the **Attach to the roads** option in the [Follow track menu](#follow-track-options). If you select **Attach to the roads**, the [Plan a route](../../plan-route/create-route.md#attach-track-to-roads) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the **chosen profile** and ***threshold distance***. After attaching a track to roads, you get more accurate route information in the [**route details** section](../setup/route-details.md), and [**voice instructions**](#guidance) become more detailed.
+The **Attach to the roads** option is available in the [Follow track](#follow-track-options) menu. When enabled, OsmAnd uses the [Plan a route](../../plan-route/create-route.md#attach-track-to-roads) tool to align the selected track with the nearest allowed roads based on the chosen **navigation profile** and ***threshold distance***. This improves route information in [route details](../setup/route-details.md) section and provides [detailed voice instructions](#guidance) during navigation.  
 
-- **Threshold distance** (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road to attach the track to the road.
-- **When you change the profile**, OsmAnd automatically reattaches your track to the allowed for this profile roads. If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **Apply** is active, and the track can be used for navigation.
+How it works:
 
-#### Automatic attachment to the roads
+- OsmAnd matches each track point to the **nearest road** within the set **threshold distance**.  
+- **Threshold distance** (default: **50 meters**) defines the maximum distance a GPS track point can be from a road to be attached to it.  
+- When switching between **navigation profiles**, the app **automatically reattaches the track** to roads allowed for the selected profile.  
+- If the track contains a large number of points, the attachment process may take some time. A **progress indicator** (*orange status line*) will display the ongoing attachment process.  
+- Once the attachment is complete, the **Apply** button becomes active, allowing the modified track to be used for navigation.
 
-Routes are automatically snapped to roads when you use the *Plan a Route* tool.
+#### Automatic Attachment to the Roads
 
-- When selecting waypoints, the route will automatically align with the nearest available road (except for [straight line](../../navigation/routing/straight-line-routing.md) and [direct-to-point](../../navigation/routing/direct-to-point-routing.md)).
-- If no roads are detected (e.g., in off-road environments), the route may follow straight-line segments instead.
-- You can review or adjust the route manually by dragging waypoints to different locations.
+OsmAnd automatically snaps routes to roads when using the *Plan a Route* tool:
 
-For the *Android* version, the *Attach to the roads* runs **automatically** once track is selected for navigation. You can change it. To get more information check [Detailed Track Guidance](../guidance/navigation-settings.md#detailed-track-guidance) in *Navigation Settings* article.
+- When selecting **waypoints**, the route automatically aligns with the nearest available road (*except for [Straight Line Routing](../../navigation/routing/straight-line-routing.md) and [Direct-to-Point Routing](../../navigation/routing/direct-to-point-routing.md)*).
+- If no roads are detected (e.g., in off-road environments), the route may follow **straight-line segments** instead.
+- The route can be **manually adjusted** by dragging waypoints to different locations.
+
+By default, the **Attach to the Roads** feature runs **automatically** when a track is selected for navigation. If needed, this setting can be adjusted. For more details, refer to [Detailed Track Guidance](../guidance/navigation-settings.md#detailed-track-guidance) in the *Navigation Settings* article.
 
 
 ## Points

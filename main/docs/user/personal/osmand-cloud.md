@@ -18,31 +18,36 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-:::tip subscribe
-&nbsp;<ProFeature/> To get all the benefits of OsmAnd Cloud, subscribe to OsmAnd Pro for [Android](../purchases/android.md#osmand-pro) or [iOS](../purchases/ios.md#osmand-pro).  
-:::
+:::tip subscribe  
+&nbsp;<ProFeature/> To access all features of OsmAnd Cloud, subscribe to **OsmAnd Pro** for [Android](../purchases/android.md#osmand-pro) or [iOS](../purchases/ios.md#osmand-pro).  
+:::  
 
-:::note cross-platform
-OsmAnd Cloud is a cloud storage service that is not associated with the Android or iOS versions of the app, or the Web platform.
-:::
+:::note cross-platform  
+OsmAnd Cloud is an independent cloud storage service and is *not tied* to a specific Android, iOS, or web platform version.  
+:::  
 
-OsmAnd Cloud is the resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make can be synchronized.
+OsmAnd Cloud allows you to **store and synchronize personal settings and application data** across multiple devices. You can access this data on any device where OsmAnd is installed, including the desktop app. All changes made within the app can be **synchronized across platforms**, ensuring seamless access to your saved data.
 
 
 ## Cross-Platform
 
-OsmAnd Cloud provides the ability to backup, restore and utilize data across Android, iOS devices and the [web version](../plan-route/web.md). Cloud's cross-platform capabilities allow you to transfer profile [settings](../personal/profiles.md), [tracks](../personal/tracks/manage-tracks.md), [favorites](../personal/favorites.md), [OSM Edits/Notes](../plugins/osm-editing.md) and more from one device to another. In the web version, you can plan a route and save it for later use on devices connected to OsmAnd Cloud.
+OsmAnd Cloud allows you to back up, restore, and sync your data across Android, iOS, and the [web version](../plan-route/web.md). With cross-platform capabilities, you can transfer **profile settings**, **tracks**, **favorites**, **OSM edits/notes**, and more between devices. Additionally, the **web version** enables you to plan routes and save them for later use on connected devices.  
 
-The cross-platform capability allows you to use OsmAnd on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
+OsmAnd supports **cross-platform usage** across *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* with the following steps:
 
-1. Subscribe to OsmAnd Pro. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
-2. You can can use a free cloud backup as part of the [*OsmAnd Start*](#osmand-start) plan, but only for favorites, settings and OSM edits/notes. The cloud storage will be 5 MB.
-3. Register your [account](#login) on the OsmAnd server.
-4. The registered email will be your login to activate OsmAnd Pro or OsmAnd Start on other platforms.  
+1. **Subscribe to OsmAnd Pro.**  
+   Learn more about purchasing for [Android](../purchases/android.md#how-to-buy) or [iOS](../purchases/ios.md#how-to-buy).
 
-:::note
-OsmAnd Pro is a subscription with all the features of OsmAnd and is **cross-platform**. This means that you can buy it in one store, for example for Android (Google Play, Amazon, Huawei AppGallery), and launch it on iOS. [Registered e-mail](#login) is your login for OsmAnd Pro activation.
-:::  
+2. **Use the free OsmAnd Start plan** for cloud backups of favorites, settings, and OSM edits/notes.  
+   The free storage limit is **5 MB**.
+
+3. **Register an [account](#login) on the OsmAnd server.**
+
+4. **Use the registered email** as your login to activate OsmAnd Pro or OsmAnd Start on other platforms.
+
+:::note  
+**OsmAnd Pro** is a cross-platform subscription that includes all OsmAnd features. You can purchase it in one store (e.g., Google Play, Amazon, Huawei AppGallery) and use it also on **iOS**. Your **[registered email](#login)** is your login for activating OsmAnd Pro across platforms.  
+:::
 
 
 ## Login
@@ -67,22 +72,28 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-To back up and restore data, you must be logged in.
+To back up and restore data, you must be logged into your OsmAnd Cloud account.  
 
-- To access OsmAnd Cloud registration or log in to your account, you need to have a [Pro](#cross-platform) or [OsmAnd Start](#osmand-start) subscription. You can check their status in the OsmAnd app *Menu→ Settings → Purchases*.  
-- **It is absolutely crucial that your Cloud account be registered on the device where the purchase was originally made.**
-- Enter your email address and tap the *Continue* button.  
-- A verification code will then be sent to your email address for confirmation.
-- To sign in to OsmAnd Cloud on other devices, use your Cloud account.
-- **Access for one more year after the subscription ends.** If you have an OsmAnd Pro subscription, access to your OsmAnd Cloud account is available for one more year after your subscription ends.
+- To register or log in, you need an active [OsmAnd Pro](#cross-platform) or [OsmAnd Start](#osmand-start) subscription. You can check your subscription status in the OsmAnd app:  
+  *Menu → Settings → Purchases*.
 
-:::tip
-If you have problems with the registration of your account:
+- Your Cloud account **must be registered on the device where the purchase was originally made**.
 
-- Check if you are registering on the device on which the purchase was made.
-- You need to have an active Internet connection.
+- *Login process*:  
+  - Enter your email address and tap **Continue**.  
+  - A verification code will be sent to your email for confirmation.
+  - Read [here](../troubleshooting/setup.md#verification-code-for-osmand-cloud-not-received) what to do if you don't receive a verification code.  
+  - Use this account to log into OsmAnd Cloud on other devices.
 
-:::  
+- If you have an **OsmAnd Pro** subscription, you can continue accessing your OsmAnd Cloud account for **one additional year** after your subscription expires.  
+
+:::tip Troubleshooting Login Issues
+If you experience issues during registration:
+
+- Ensure you are registering on the **same device** where the purchase was made.  
+- Check your **Internet connection** before trying again.
+
+:::
 
 
 ## OsmAnd Start
@@ -107,13 +118,15 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>  
 
-The OsmAnd Start plan offers a unique opportunity to access OsmAnd Cloud functionality completely free, allowing you to store and synchronize your Favorites, Settings, and OpenStreetMap (OSM) edits and notes. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
+The **OsmAnd Start** plan provides free access to **OsmAnd Cloud**, allowing you to store and synchronize your **Favorites, Settings, and OpenStreetMap (OSM) edits and notes**. This plan is available for users of [OsmAnd Free or Maps+](../purchases/index.md).  
 
-The OsmAnd Start plan includes features such as:
+Features included in OsmAnd Start:
 
-- [*Free Favorites Backup*](../personal/favorites.md#free-cloud-backup). You can store important locations and routes in your Favorites and access them from any device connected to your OsmAnd Cloud account.
-- [*Free Settings Backup*](../personal/profiles.md#free-cloud-backup). OsmAnd app settings can be saved to OsmAnd Cloud and restored to other devices, creating a unified and convenient workspace.
-- [*OSM edits/notes*](../plugins/osm-editing.md). You can create and edit OSM data, add notes, and participate in OpenStreetMap enhancements, saving all changes to OsmAnd Cloud.  
+- [Free Favorites Backup](../personal/favorites.md#free-cloud-backup) – Store important locations and routes in your Favorites and access them from any device connected to OsmAnd Cloud.  
+- [Free Settings Backup](../personal/profiles.md#free-cloud-backup) – Save your OsmAnd app settings to OsmAnd Cloud and restore them on other devices for a seamless experience.  
+- [OSM Edits/Notes](../plugins/osm-editing.md) – Contribute to OpenStreetMap by creating and editing map data, adding notes, and saving changes directly to OsmAnd Cloud.
+
+### How to Activate OsmAnd Start
 
 <Tabs groupId="operating-systems">
 
@@ -135,14 +148,18 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-You need to have an OsmAnd Cloud account to use the OsmAnd Start. If you have an account in *OsmAnd Pro* or an active account in OsmAnd Cloud, the subscription plan will not be available to you.
+**You need an OsmAnd Cloud account to use the OsmAnd Start**.
 
-To use OsmAnd Start, do the following steps:
+To use OsmAnd Start, follow these steps:
 
-- Go through the [registration step](#login).
-- Then go to the OsmAnd Purchases menu (*Menu → Settings → Purchases*).
-- Select the **OsmAnd Start** package.
-- Create a backup.
+- **Register for an OsmAnd Cloud account** - See the [Login](#login) section for instructions..
+- Open *Menu → Settings → Purchases*.
+- Select **OsmAnd Start** from the available options.
+- **Create a backup** to start storing your data in OsmAnd Cloud.
+
+:::note Subscription restrictions
+If you already have an **OsmAnd Pro** subscription or an **active OsmAnd Cloud account**, the **OsmAnd Start** plan will not be available.
+:::
 
 
 ## Last Sync
@@ -172,7 +189,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 - *Local changes*. Shows the total number of local changes not uploaded to the cloud.
 - *Cloud changes*. The total number of changes uploaded to the cloud from other devices since the last synchronization.
 - *Conflicts*. The total number of inconsistencies between local and cloud changes.
-- *Sync now*. Select this option to synchronize all selected data sections in the [settings](#settings) menu that you have changed on this device and in the cloud.  
+- *Sync now*. Select this option to synchronize all selected data sections in the [settings](#settings) menu you have changed on this device and in the cloud.  
 
 **Sync now** combines the *Upload all* and *Download all* buttons in the Changes menu, in the [Local and Cloud](#local-and-cloud) sections. **Conflicts** are not synchronized in this way.
 
@@ -201,7 +218,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 The **Trash** feature allows you to view and manage files that have been deleted from OsmAnd Cloud. It is designed to prevent accidental deletion of files, and irreversible loss of your data.
 
-- **View files**. *Trash* contains a list of all previously deleted files from the *Cloud Changes* folder. All files contain information about the date and time they were deleted. They are grouped by month and sorted in order from the most recently deleted to the oldest files remaining in the Trash.
+- **View files**. *Trash* lists all previously deleted files from the *Cloud Changes* folder. All files contain information about the date and time they were deleted. They are grouped by month and sorted in order from the most recently deleted to the oldest files remaining in the Trash.
 - **Empty Trash**.  
 
     ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)  
@@ -304,7 +321,7 @@ The **<Translate android="true" ids="backup_version_history"/>** (Android) / **<
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_9-1.png)
 
-This section contains information about which of your accounts is connected to OsmAnd Cloud and includes a logout button. To backup or restore data, you will need to log in again.
+This section contains information about which of your accounts is connected to OsmAnd Cloud and includes a logout button. To back up or restore data, you will need to log in again.
 
 
 ### Deletion Option
@@ -361,11 +378,13 @@ The actions you can do in the **Danger zone** section of the Settings menu are i
 
 </Tabs>  
 
-In the [Last Sync](#last-sync) section from the drop-down menu, tap any item to go to the Changes section. In this section, three tabs display all the changes available for editing. If the list is empty, it indicates that no changes have occurred since the last synchronization.
+In the [Last Sync](#last-sync) section of the drop-down menu, tap any item to open the Changes section. This section contains three tabs displaying all available changes for editing. If the list is empty, no changes have occurred since the last synchronization.
 
-- Each item in the Changes list contains information about the date and accurate time of the last synchronization. It also includes options for instantly downloading or uploading the corresponding version.
+- Each item in the **Changes** list includes the **date and exact time** of the last synchronization, along with options to download or upload the corresponding version instantly.
 
-- *Downloading changes from the cloud storage will override local changes*. Accordingly, uploaded local data removes changes in the cloud version.
+- **Downloading changes from cloud storage will override local changes**. Similarly, uploading local data removes the corresponding changes from the cloud version.
+
+- In each tab, data is **sorted by type and alphabetically** to help you quickly find specific items, especially when managing multiple files in OsmAnd Cloud.
 
 
 ### Local and Cloud
@@ -390,9 +409,11 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-- **Local.** You can synchronize all local changes that are not present in the Cloud at once using the *Upload All* button. Alternatively, you can select individual changes from the list and tap them to choose *Upload local version*.  
-Changes uploaded from the Local version to the Cloud are automatically removed from the *Changes → Local tab* after a certain period.  
-- **Cloud.** The Cloud tab displays a list of changes that can be downloaded to your device from the cloud storage. You can download all the changes at once using the button at the bottom of the screen, or separately.  
+- **Local** - You can synchronize all local changes that are not yet in the cloud by tapping **Upload All**. Alternatively, you can upload specific changes by selecting them from the list and choosing **Upload local version**.  
+
+    Changes that are successfully uploaded to the cloud are automatically removed from the *Changes → Local tab* after a set period.  
+
+- **Cloud** - The **Cloud** tab displays a list of changes available for download from cloud storage. You can download all changes at once using the button at the bottom of the screen or download them individually.  
 
 
 ### Conflicts
@@ -415,14 +436,19 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-*Conflicts* occur when the Local version and the version stored in the Cloud do not match.
+A **conflict** occurs when the **Local version** and the **Cloud version** of a file do not match.  
 
-- In this case, you can replace the data in the Cloud with Local changes or download the stored data to the device from the Cloud.
-- The resolved conflicts are removed from the list after processing, which usually does not take much time.
-- When you tap the selected file in the Conflicts folder, information about the Local and Cloud versions being synchronized is displayed. This information shows when the file was modified and when it was uploaded.
-- The actions **Upload local version** or **Download cloud version** are available to you.
+- You can either **replace the Cloud version** with local changes or **download the Cloud version** to your device.
+
+- When a conflict is resolved, it is automatically removed from the list. Processing usually takes only a few moments.
+
+- Tapping a file in the **Conflicts** folder displays details about the **Local** and **Cloud** versions, including the last modification and upload times.
+
+- You can choose one of the following actions:  
+  - **Upload Local Version** – Replaces the Cloud version with the local file.  
+  - **Download Cloud Version** – Replaces the local file with the Cloud version.
 
 
 <!--
@@ -447,4 +473,4 @@ If you have problems with the registration of your account:
 - [iOS Purchases](../purchases/ios.md)
 - [Maps & Resources](../personal/maps-resources.md)
 
-> *This article was last updated in September 2024*
+> *This article was last updated in February 2025*
