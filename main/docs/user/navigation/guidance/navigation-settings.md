@@ -515,17 +515,33 @@ These settings in iOS are available in *Menu → Settings → app profile → Na
 
 ## Detailed Track Guidance
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>*
+<TabItem value="android" label="Android">
+
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>*
 
 ![Attach to the roads 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png)    ![Navigation Settings Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
 
-With the [Navigation by track](../setup/gpx-navigation.md) option, when the required track is selected as a destination point, you can use the [Attach to the roads](../setup/gpx-navigation.md#attach-to-the-roads) setting in the [Follow track](../setup/gpx-navigation.md#how-to-follow-the-track) menu. There are two ways to use this setting:
+</TabItem>
 
-- **<Translate android="true" ids="ask_every_time"/>** (*by default*). The *Attach to the roads* button will appear in the [Route Details](../setup/route-details.md) section after each *navigation by track* calculation.
+<TabItem value="ios" label="iOS">
 
-- **<Translate android="true" ids="shared_string_always"/>**. The road attachment process will be automatically performed for each route using the *navigation by track* option.
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Detailed track guidance*
+
+![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_1_ios.png)   ![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+When using the [Navigation by track](../setup/gpx-navigation.md) option, selecting a track as the destination allows you to enable the [Attach to the roads](../setup/gpx-navigation.md#attach-to-the-roads) setting in the [Follow track](../setup/gpx-navigation.md#how-to-follow-the-track) menu. This feature helps align the track with existing roads for smoother navigation.  
+
+There are two ways to use this setting:
+
+- **<Translate android="true" ids="ask_every_time"/>** (*default settings*) – The *Attach to the roads* option will appear in the [Route Details](../setup/route-details.md) section each time a track-based route is calculated. This allows users to decide whether to apply road attachment for each navigation session.
+
+- **<Translate android="true" ids="shared_string_always"/>** – The road attachment process will be applied automatically for every *navigation by track* route without requiring manual confirmation.
 
 
 ## Related Articles

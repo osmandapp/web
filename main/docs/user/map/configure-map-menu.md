@@ -50,54 +50,55 @@ Sections **Routes and Map rendering**:
 The **<Translate android="true" ids="configure_map"/>** menu is divided into two categories:
 
 - [Map style parameters](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (or **<Translate ios="true" ids="map_widget_renderer"/>**) is a group of settings that allow you to change the way the main map is displayed.  
-- [Map layers](#map-layers). These layers allow you to place information on top of (or underneath) the main map layer, but do not change the display of the map itself.  
+- [Map layers](#map-layers). These layers allow you to place information on top of (or underneath) the main map layer but do not change the display of the map itself.  
 
 **Notes:**
 
 - To change the information on the screen (widgets, icons), you can make settings in the [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md).
-- The Configure map settings depend on your [profile](../personal/profiles.md).  
+- The Configure map settings depend on your [profile](../personal/profiles.md).
+- Pay attention - the Configure map menu **closes** when you tap the map field.
 
 ## Map Layers
 
-- [Vector Map Layer](../map/vector-maps.md) - displays all vector map information including OpenStreetMap, Contour lines, Nautical data.
-- [Map Raster sources](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer) - select underlay / main source / overlay map with transparency levels.
-- [Terrain](../plugins/topography.md#configure-map-view) - display slope / hillshade information, 3D Relief.
-- [Borders of downloaded maps](../map/vector-maps.md#show-borders) - display all borders of downloaded maps on the main map layer.
+- [Vector Map Layer](../map/vector-maps.md) - displays all vector map information including OpenStreetMap, Contour lines, and Nautical data.
+- [Map Raster sources](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer) - allows selecting underlay / main-source / overlay map with transparency levels.
+- [Terrain](../plugins/topography.md#configure-map-view) - displays slope / hillshade information, 3D Relief.
+- [Borders of downloaded maps](../map/vector-maps.md#show-borders) - displays all borders of downloaded maps on the main map layer.
 
 ## Map Data Layers
 
-   - [Favorites](../map/point-layers-on-map.md) - display favorites points.
-   - [POI](../map/point-layers-on-map.md) - display points of interests of selected categories.
-   - [Map markers](../map/point-layers-on-map.md) - display map markers.
-   - [Overlay labels](../map/point-layers-on-map.md) - show names of points, favorites on the map.
-   - [Transport](../map/vector-maps.md#transport) - show public transport stops.
-   - [Tracks](../map/tracks/index.md) - display imported, planned or recorded tracks over the map.
-   - [Street level imagery](../plugins/mapillary.md#viewing-images) - display points with available street-level imagery.
-   - [Travel guides](../plan-route/travel-guides.md) - display travel guides on the map.
-   - [Wikipedia](../plugins/wikipedia.md) - highlight wikipedia articles linked to the map.
-   - [Other plugin layers](../plugins/index.md#configure-a-plugin) - many plugins add own layers with extra information.
+   - [Favorites](../map/point-layers-on-map.md) - displays favorites points.
+   - [POI](../map/point-layers-on-map.md) - displays points of interests of selected categories.
+   - [Map markers](../map/point-layers-on-map.md) - displays map markers.
+   - [Overlay labels](../map/point-layers-on-map.md) - shows names of points, and favorites on the map.
+   - [Transport](../map/vector-maps.md#transport) - shows public transport stops.
+   - [Tracks](../map/tracks/index.md) - displays imported, planned, or recorded tracks over the map.
+   - [Street level imagery](../plugins/mapillary.md#viewing-images) - displays points with available street-level imagery.
+   - [Travel guides](../plan-route/travel-guides.md) - displays travel guides on the map.
+   - [Wikipedia](../plugins/wikipedia.md) - highlights Wikipedia articles linked to the map.
+   - [Other plugin layers](../plugins/index.md#configure-a-plugin) - many plugins add their layers with extra information.
 
 ## Map style parameters
 
-The map style parameters depend on the main map style displayed on the map. You can read more about this in the [Map Styles article](../map/vector-maps).
+The map style settings depend on the main map style displayed. You can read more about it in the [Map Styles article](../map/vector-maps).
 
-   - [Map style](../map/vector-maps.md#default-map-styles) - OsmAnd (City), Topo, Nautical, and others.
-   - [Map mode](../map/vector-maps.md#map-mode) - select to view and navigate how the map appears depending on the time of day.
-   - [Map magnifier](../map/vector-maps.md#map-magnifier) - to display the map in more or less detail.
-   - [Text size](../map/vector-maps.md#text-size) - allows you to increase or decrease the size of the text on the map.
-   - [Map language](../map/vector-maps.md#map-language) - select preferred language displayed on the map.
-   - [Details](../map/vector-maps.md#details) - select to highlight specific objects.
-   - [Hide](../map/vector-maps.md#hide) - hide specific objects.
-   - [Routes](../map/vector-maps.md#routes) - allows you to highlight specific routes and their symbols.  
+   - [Map style](../map/vector-maps.md#default-map-styles) - includes OsmAnd (City), Topo, Nautical, and others.
+   - [Map mode](../map/vector-maps.md#map-mode) - allows you to select the map view and navigation depending on the time of day.
+   - [Map magnifier](../map/vector-maps.md#map-magnifier) - allows changing the magnification of the map.
+   - [Text size](../map/vector-maps.md#text-size) - allows increasing or decreasing the text size on the map.
+   - [Map language](../map/vector-maps.md#map-language) - allows selecting the preferred language displayed on the map.
+   - [Details](../map/vector-maps.md#details) - shows specific objects.
+   - [Hide](../map/vector-maps.md#hide) - hides specific objects.
+   - [Routes](../map/vector-maps.md#routes) - allows highlighting routes and their symbols.  
 
 
 ## UI Customization (Android)
 
 For each selected profile in the Android system, you can change the order of the <Translate android="true" ids="configure_map"/> menu items, hide the items, reset the default settings, or copy them from another profile. This will help improve your interaction with the OsmAnd app.  
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
 
 ![Configure map items ](@site/static/img/settings/configure-screen-ui-customization.png)
 
 
-> *This article was last updated in August 2023*
+> *This article was last updated in February 2025*

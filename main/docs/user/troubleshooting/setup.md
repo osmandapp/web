@@ -106,6 +106,26 @@ Please note that other purchases, such as Maps+, cannot be transferred between b
 - Navigate to *OsmAnd Menu → Settings → Purchases → Restore purchases*
 
 
+## Verification Code for OsmAnd Cloud Not Received
+
+If you do not receive the **verification code** when creating an **OsmAnd Cloud** account, follow these steps to resolve the issue:  
+
+1. Check your email address.  
+    Ensure that you have entered the **correct email address**. The email should match the one used for purchasing **OsmAnd Pro** or registering your **OsmAnd Cloud** account.  
+
+2. Check spam folders.  
+    Sometimes, the verification email may be filtered as spam. Look for an email from **OsmAnd** in your **Spam**, **Junk**, or **Promotions** folders.  
+
+3. Wait for the code to arrive.  
+    In some cases, the activation code email may be **delayed**. Avoid **multiple activation attempts** within a short period, as this can cause additional delays.  
+
+4. Try resending the code.  
+    Return to the **OsmAnd Cloud login screen** and select **Resend Code** if available. Wait a few minutes before requesting another code.  
+
+5. Verify email server restrictions.  
+    If you are using a **corporate or custom email domain**, check with your **email provider** to ensure the email is not being blocked. Consider using a different email service (e.g., Gmail, Outlook) if issues persist.
+
+
 ## Import Files
 
 ### I have a GPX file, how do I import it into OsmAnd?
