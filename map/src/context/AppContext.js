@@ -481,6 +481,11 @@ export const AppContextProvider = (props) => {
     }, [wantDeleteAcc]);
 
     useEffect(() => {
+        Object.keys(localStorage).forEach((name) => {
+            if (name.includes('localTrack_')) {
+                localStorage.removeItem(name);
+            }
+        });
         loadLocalTracksFromStorage(setLocalTracksLoading).then((tracks) => {
             setLocalTracks(tracks);
         });
