@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 The map context menu provides information about the selected object on the map. You can also use it to create a route to the selected location. To open the context menu, first, find the required location on the map, then select the object with a short tap or long tap when selecting any precise point on the map.
 
 
-### Select an Object (single tap)
+### Select an Object (Single Tap)
 
 <Tabs groupId="operating-systems">
 
@@ -38,16 +38,18 @@ The map context menu provides information about the selected object on the map. 
 
 </Tabs>
 
-The context menu appears when you **single tap** a marked object on the map. This context menu displays essential information about the selected object, including its name, icon (as represented on the map), address, distance, and direction from your current position. Users can select various types of map objects, such as *POIs*, *Favorites*, *transportation stops*, *Markers*, or other *map objects*.
+The **context menu** appears when you **tap once** a marked object on the map. This context menu displays essential information about the selected object, including its *name, icon* (as represented on the map), *address, distance*, and *direction* from your current position.  
 
-By tapping on icons for *Barrier*, *Steps*, or *Gate*, the context menu reveals additional details, including the name (POI type) and address associated with these features, or displays object type, if a name is not available.
+You can select various types of map objects, such as *POIs*, *Favorites*, *Transportation stops*, *Markers*, or other *map objects*.
+
+For **linear objects**, such as *barriers, steps, gates, benches, slipways, weirs, bollard, or coupures*, the context menu displays additional details. These include the POI type and address associated with them, or the object type if no name is assigned.
 
 :::note
-The selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.openstreetmap.org/wiki/Node) or [**ways**](https://wiki.openstreetmap.org/wiki/Way).
+Selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.openstreetmap.org/wiki/Node) or [**ways**](https://wiki.openstreetmap.org/wiki/Way).
 :::
 
 
-### Select Any Point (long tap)
+### Select Any Point (Long Tap)
 
 <Tabs groupId="operating-systems">
 
@@ -65,9 +67,9 @@ The selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.op
 
 </Tabs>
 
-A context menu will appear when you hold at any point on the Map with a **long tap**. In this case, context menu provides you the information of geographical point address, distance and direction from your current position.
+When you **long tap** anywhere on the map, a **context menu** appears, providing information about the selected location. This includes the address, distance, and direction from your current position.
 
-> **NOTE**. *A long tap on a building number highlights its outline and opens the map context menu.*
+> **NOTE**. *Long tapping on a **building number** highlights its outline and opens the map context menu*
 
 
 ### Select Route
@@ -88,15 +90,15 @@ A context menu will appear when you hold at any point on the Map with a **long t
 
 </Tabs>
 
-A short tap on [GPX-track](../map/tracks/index.md) on the map opens the [Context track menu](../map/tracks/track-context-menu.md).
+Tapping a [GPX-track](../map/tracks/index.md) on the map opens the [track context menu](../map/tracks/track-context-menu.md), where you can access additional track-related options.
 
 
 ### Hide Context Menu
 
-To hide the context menu:
+To close the **context menu**:
 
-- Tap any empty space (to avoid opening the menu again) on the map.
-- Drag down by the top of menu.
+- Tap any *empty area* on the map to avoid reopening the menu.
+- Drag the menu *down* from the top.
 
 
 ## Details
@@ -117,29 +119,33 @@ To hide the context menu:
 
 </Tabs>
 
-To gain more details about the object, you need to tap the **Details** button in the Context menu or move the panel up.
+For more detailed information about an object, tap the **Details** button in the context menu or swipe the panel up to expand it.
 
 
 ### Object Info
 
-This panel includes additional information about the object. This info could be copied to the buffer by tap it. Additional information about the object includes:
+The **Object Info** panel provides additional details about the selected object. You can tap on any entry to copy the information to the clipboard.  
+
+Available details include:
 
 - [Alternative names](#alternative-names)
 - [Coordinates](../map/map-context-menu.md#coordinates)
 - [Nearby Wikipedia articles](../map/map-context-menu.md#nearby-pois-wikipedia)
 - [Nearby POIs](../map/map-context-menu.md#nearby-pois-wikipedia)
-- [Public Transport routes (on transport stops)](../map/map-context-menu.md#public-transport-routes)
+- [Public Transport routes](../map/map-context-menu.md#public-transport-routes) (for transport stops)
 - [Favorites / Track Points from the same group](../map/map-context-menu.md#favorites--track-points-from-the-group)
 - [OpenStreetMap link](../map/map-context-menu.md#openstreetmap-link)
 - [Article image / description](../map/map-context-menu.md#article-image--description)
 - [Online photos](../map/map-context-menu.md#online-photos)
-- [OpenStreetMap Details](https://wiki.openstreetmap.org/wiki/Map_features)
-    - [Website](https://wiki.openstreetmap.org/wiki/Key:website)
-    - [Phone number](https://wiki.openstreetmap.org/wiki/Key:contact)
-    - [Working hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
-    - [Fee](https://wiki.openstreetmap.org/wiki/Key:fee)
-    - [Accessibility](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-    - [Width](https://wiki.openstreetmap.org/wiki/Key:width) / [Height](https://wiki.openstreetmap.org/wiki/Key:height)
+
+Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstreetmap.org/wiki/Map_features), such as:
+
+- [Website](https://wiki.openstreetmap.org/wiki/Key:website)
+- [Phone number](https://wiki.openstreetmap.org/wiki/Key:contact)
+- [Working hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+- [Fee](https://wiki.openstreetmap.org/wiki/Key:fee)
+- [Accessibility](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
+- [Width](https://wiki.openstreetmap.org/wiki/Key:width) / [Height](https://wiki.openstreetmap.org/wiki/Key:height)
 
 
 ### Alternative Names
@@ -160,19 +166,56 @@ This panel includes additional information about the object. This info could be 
 
 </Tabs>
 
-OsmAnd displays **additional POI names** in the *map context menu*, showing first the name in the [display language](../personal/global-settings.md#display-language) or from the system's preferred language list. If more translations are available, they are grouped into specific tags like *name, brand, operator,* or *nearby POIs*.
+OsmAnd displays **additional POI names** in the *map context menu*, prioritizing the name in the [display language](../personal/global-settings.md#display-language) or the system's preferred language list. If multiple translations are available, they are grouped into categorized tags such as *name, brand, operator,* or *nearby POIs*.  
 
-- Any additional translations are available via a drop-down list.
-- Names are categorized into groups such as the *list of names in other languages*, *Regional*, *Local*, *National*, *International*, *Short*, *Old*, *Official*, and *Alternative* names.
-- Other categories include region-specific translation, or default settings.
-- If a specific translation is not available, OsmAnd defaults to the **local** option, ensuring consistency across multilingual regions.
+Features of alternative names display:
+
+- Additional translations can be accessed through a *drop-down list*.
+
+- Names are categorized into different groups such as the *list of names in other languages*, *Regional*, *Local*, *National*, *International*, *Short*, *Old*, *Official*, and *Alternative* names.
+
+- Other categories include *region-specific translation*, or *default settings*.
+
+- If a specific translation is *not available*, OsmAnd defaults to the **local** name to ensure accuracy and consistency across multilingual regions.
 
 
 ### Polygon Information
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
 ![Polygon Information Android](@site/static/img/map/polygon_information_andr.png)
 
-This feature provides detailed data on nearby polygons on the map. In the **Within** section, you can view a list of surrounding areas by polygon size, from smallest to largest. Each entry shows the type and name of the polygon, making it easy to identify geographic features or administrative boundaries within proximity.
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Polygon Information Android](@site/static/img/map/polygon_information_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+The **Polygon information** feature provides detailed data on nearby **polygons** displayed on the map. This includes geographic features, administrative boundaries, and other mapped areas.  
+
+**Within** section:
+
+- Displays a *list of surrounding polygons*, sorted *from smallest to largest* based on area size.
+
+- Each entry shows the *polygon type and name*, allowing for easy identification of regions and boundaries.
+
+Additional details:
+
+- When selecting a point on the map or a POI, the **polygon information** panel displays a list of all polygons that contain the selected location.
+
+- Entries in the list include *administrative divisions, land use areas, natural features, and other categorized regions*.
+
+- The panel allows users to *copy the polygon's name and details* for reference.
+
+- To view this information, go to *Map Context Menu → Details → Within*.
+
+This feature helps you understand your *current location* in relation to mapped administrative divisions, natural areas, or other important geographic features.
 
 
 ### Coordinates
@@ -194,7 +237,7 @@ These sections display nearby [Wikipedia articles](../plugins/wikipedia.md) or [
 
 Tap *Nearby POIs / Wikipedia articles* opens a points list (POIs or Wikipedia). A tap to one of these points from a point list moves the map to this point (POIs or Wikipedia) with the opening point map context menu.
 
-**NOTE**. [<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia).
+> **NOTE**. [<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia).
 
 
 ### Public Transport Routes
