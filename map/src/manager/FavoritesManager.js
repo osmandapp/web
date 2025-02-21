@@ -12,8 +12,8 @@ import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_TYPE_FAVORITE } from '../context/AppContext';
 import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
-import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
 import { getUniqFileId } from './GlobalManager';
+import { getFavoriteFromDB, saveFavoriteToDB } from '../context/FavoriteStorage';
 
 export const FAVORITE_FILE_TYPE = 'FAVOURITES';
 export const DEFAULT_FAV_GROUP_NAME = 'favorites';
@@ -24,7 +24,6 @@ const FAV_FILE_PREFIX = 'favorites-';
 export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 export const SUBFOLDER_PLACEHOLDER = '_%_';
-export const FAVORITE_STORAGE = 'favorites';
 const colors = [
     '#10c0f0',
     '#1010a0',
@@ -348,42 +347,23 @@ export function prepareIcon(value) {
  * @returns {Object} - The updated favorite groups.
  */
 export async function addFavGroupsToMap(favGroups) {
-    // Create a shallow copy of the input favorite groups.
     let newFavGroups = { ...favGroups };
 
-    // Retrieve saved favorite groups from local storage and decompress them.
-    const savedFavGroups = await decompressToJSON(localStorage.getItem(FAVORITE_STORAGE));
-    let newSavedFavGroups = null;
+    let newSavedFavGroups = {};
 
-    // Iterate through favorite group files. If a group exists in the cache, retrieve it; otherwise, make a server request and create a new group object.
     const promises = favGroups.groups.map(async (g) => {
-        if (!newSavedFavGroups) {
-            newSavedFavGroups = {};
-        }
-
-        // unique key for each group with updatetime, to avoid overwriting the same group
         const key = getFavGroupKey(g);
-
-        if (savedFavGroups) {
-            newFavGroups = savedFavGroups[key]
-                ? addExistFavGroup(savedFavGroups[key], g, favGroups)
-                : await createFavGroupObj(g, newFavGroups);
+        const cachedGroup = await getFavoriteFromDB(key);
+        if (cachedGroup) {
+            newFavGroups = addExistFavGroup(cachedGroup, g, favGroups);
         } else {
             newFavGroups = await createFavGroupObj(g, newFavGroups);
+            newSavedFavGroups[key] = newFavGroups.mapObjs[g.id];
+            await saveFavoriteToDB(key, newSavedFavGroups[key]);
         }
-        newSavedFavGroups[key] = newFavGroups.mapObjs[g.id];
     });
+    await Promise.all(promises);
 
-    // Wait for all promises to resolve.
-    const finished = await Promise.all(promises);
-
-    // Create a new cache with updated favorite group objects and save it to localStorage.
-    if (finished && newSavedFavGroups !== null) {
-        const res = await compressFromJSON(newSavedFavGroups);
-        localStorage.setItem(FAVORITE_STORAGE, res);
-    }
-
-    // Return the updated favorite groups.
     return newFavGroups;
 }
 
@@ -454,7 +434,7 @@ export async function addOpenedFavoriteGroups(files, setFavorites, setUpdateMark
     };
     files.forEach((file) => {
         setProcessingGroups(true);
-        let group = FavoritesManager.createGroup(file);
+        const group = FavoritesManager.createGroup(file);
         newFavoritesFiles.groups.push(group);
     });
     newFavoritesFiles.mapObjs = {};
@@ -600,7 +580,6 @@ const FavoritesManager = {
     FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,
     FAV_FILE_PREFIX: FAV_FILE_PREFIX,
     DEFAULT_GROUP_NAME_POINTS_GROUPS: DEFAULT_GROUP_NAME_POINTS_GROUPS,
-    FAVORITE_STORAGE: FAVORITE_STORAGE,
     colors: colors,
     shapes: shapes,
 };

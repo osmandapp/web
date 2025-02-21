@@ -4,7 +4,7 @@ import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import FavoritesManager, { FAVORITE_FILE_TYPE, FAVORITE_STORAGE } from '../../manager/FavoritesManager';
+import FavoritesManager, { FAVORITE_FILE_TYPE } from '../../manager/FavoritesManager';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import _, { isEmpty } from 'lodash';
 import { ZOOM_TO_MAP } from './SearchLayer';
@@ -15,6 +15,7 @@ import L from 'leaflet';
 import Utils from '../../util/Utils';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 import { updateMarkerZIndex } from './ExploreLayer';
+import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
 
 export function restoreOriginalIcon(layer) {
     if (layer.options.originalIcon) {
@@ -101,8 +102,7 @@ const FavoriteLayer = () => {
                     map.removeLayer(layer);
                 }
             });
-            // Clear the cache of favorites.
-            localStorage.removeItem(FAVORITE_STORAGE);
+            deleteAllFavoritesFromDB().then();
         }
     }, [ctx.loginUser]);
 

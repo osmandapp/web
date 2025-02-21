@@ -16,7 +16,7 @@ import _, { cloneDeep } from 'lodash';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import Utils from '../../util/Utils';
 import { updateSortList } from '../../menu/actions/SortActions';
-import { deleteLocalTrack, saveTrackToLocalStorage } from '../../menu/tracks/util/LocalTrackStorage';
+import { deleteLocalTrack, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
 
 export function saveTrackToLocal({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
