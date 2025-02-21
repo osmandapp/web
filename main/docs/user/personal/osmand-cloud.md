@@ -82,7 +82,7 @@ To back up and restore data, you must be logged into your OsmAnd Cloud account.
 - *Login process*:  
   - Enter your email address and tap **Continue**.  
   - A verification code will be sent to your email for confirmation.
-  - Read [here](../troubleshooting/setup.md#verification-code-for-osmand-cloud-not-received) what to do if you don't receive a verification code.  
+  - Read [here](../troubleshooting/purchases_payments.md#verification-code-for-osmand-cloud-not-received) what to do if you don't receive a verification code.  
   - Use this account to log into OsmAnd Cloud on other devices.
 
 - If you have an **OsmAnd Pro** subscription, you can continue accessing your OsmAnd Cloud account for **one additional year** after your subscription expires.  

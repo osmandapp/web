@@ -115,7 +115,7 @@ OsmAnd Pro is the ultimate in functionality and the best choice for users who wa
     - Access to the OsmAnd web version for trip planning.
 2. Hourly map updates
     - The latest changes to OpenStreetMap are right in your app.
-3.  Android Auto and CarPlay
+3. Android Auto and CarPlay
     - Easy navigation on the car screen.
 4. Full access to all OsmAnd plugins
     - Topography (3D Relief, contour lines, elevation profile).

@@ -451,7 +451,7 @@ OsmAnd allows you to combine multiple types of map layers for a more visual disp
 
 <!-- Troubleshooting Steps-->
 
-1. How to restore the Topography (formerly Contour lines) plugin purchase. [(check)](../troubleshooting/setup.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
+1. How to restore the Topography (formerly Contour lines) plugin purchase. [(check)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
 2. Contour Lines, Elevation data or 3D Relief are not displayed. [(check)](../troubleshooting/setup.md#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
 3. The map automatically switches to 3D mode during navigation:  
     - Ensure the **3D Mode** button is disabled in the **Menu → Configure Screen → Buttons → Default Buttons**.  

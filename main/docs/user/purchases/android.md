@@ -40,33 +40,21 @@ For Android devices, you can download the **Free** and **Paid** versions of the 
 
 ## Difference Between Purchases
 
-:::note Important
-***OsmAnd+*** and ***Maps+*** are completely identical in their feature sets.
-:::
+| Plan | Description | Availability | Notes |
+|------------|------------|------------|------------|
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | A **separate paid application** with the same features as Maps+. | Available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). | Can be added to the [Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en).  |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** for the free version of OsmAnd. Offers the same features and price as OsmAnd+. | Available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand) and [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | All features and pricing are identical to OsmAnd+. |
+| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, and *OSM editing/notes*. | Available for all users of the free version of OsmAnd. | Limited to cloud features for basic functionality. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks advanced features. | Available on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), and [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd). | OsmAnd Pro subscription is cross-platform. |
 
-#### OsmAnd+
 
-- ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** is a separate paid application available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). You can add it to [the Family Library in Google Play](https://support.google.com/googleplay/answer/7007852?hl=en).
-  
-#### Maps+
+### Important Notes
 
-- ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** is an in-app purchase or a subscription for OsmAnd free version on [Google Play](https://play.google.com/store/apps/details?id=net.osmand), [on Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). *All features and the price is the same as for OsmAnd+*.
+1. ***OsmAnd+*** and ***Maps+*** are completely identical in their feature sets.
 
-#### OsmAnd Start
+2. **Android Auto** is only supported for versions of OsmAnd downloaded from Google Play. It is not available for OsmAnd+ (purchased from Amazon) or Maps+ (from Huawei AppGallery).
 
-- This plan gives you free use of [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings* and *OSM editing/notes*.
-
-#### OsmAnd Pro
-
-- ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** is a subscription, available for OsmAnd applications on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), on [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), on [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).
-
-:::note Information
-
-- **Android Auto** only works with versions of the app from Google Play. Android Auto is not available for OsmAnd+, purchased from Amazon or Maps+ subscription from Huawei AppGallery.
-
-- **OsmAnd Pro subscription is a *cross-platform* purchase**. You can buy it from Amazon or Huawei AppGallery and then [restore (register your e-mail as Pro-account)](../personal/osmand-cloud.md#cross-platform) on OsmAnd from Google Play and vice versa.
-
-:::
+3. **OsmAnd Pro subscription is a *cross-platform* purchase**. You can purchase it from one store (e.g., Amazon or Huawei AppGallery) and restore them on another (e.g., Google Play) by [registering (restoring) your e-mail as Pro-account](../personal/osmand-cloud.md#cross-platform).
 
 
 ## Prices
