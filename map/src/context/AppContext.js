@@ -14,7 +14,7 @@ import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { getShareWithMe } from '../manager/ShareManager';
 import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX } from '../manager/GlobalManager';
-import { loadLocalTracksFromStorage } from '../menu/tracks/util/LocalTrackStorage';
+import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -482,7 +482,7 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         Object.keys(localStorage).forEach((name) => {
-            if (name.includes('localTrack_')) {
+            if (name.startsWith('localTrack_') || name.startsWith('favorites')) {
                 localStorage.removeItem(name);
             }
         });

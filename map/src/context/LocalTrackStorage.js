@@ -1,4 +1,4 @@
-import { addDistance, NAN_MARKER, prepareLocalTrack, TRACK_VISIBLE_FLAG } from '../../../manager/track/TracksManager';
+import { addDistance, NAN_MARKER, prepareLocalTrack, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
 import _ from 'lodash';
 
 const DB_NAME = 'TracksDB';

@@ -40,7 +40,7 @@ import DescTrackDialog from '../../../dialogs/tracks/DescTrackDialog';
 import RouteIcon from '@mui/icons-material/Route';
 import { formatRouteInfo } from '../../../menu/route/RouteMenu';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
-import { saveTrackToLocalStorage } from '../../../menu/tracks/util/LocalTrackStorage';
+import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 
 export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();

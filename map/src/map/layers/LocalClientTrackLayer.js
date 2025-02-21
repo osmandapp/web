@@ -22,7 +22,7 @@ import TracksRoutingCache, {
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
-import { saveTrackToLocalStorage } from '../../menu/tracks/util/LocalTrackStorage';
+import { saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
 import { createLocalTrack, createNewPoint, initNewSelectedTrack, isNewTrack } from '../util/creator/LocalTrackHelper';
 import {
     addRegisteredLayers,

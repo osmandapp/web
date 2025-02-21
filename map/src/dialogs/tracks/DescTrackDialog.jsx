@@ -14,7 +14,7 @@ import 'draft-js/dist/Draft.css';
 import _ from 'lodash';
 import contextMenuStyles from '../../infoblock/styles/ContextMenuStyles';
 import { AddPhotoAlternate } from '@mui/icons-material';
-import { saveTrackToLocalStorage } from '../../menu/tracks/util/LocalTrackStorage';
+import { saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
 
 export default function DescTrackDialog({ dialogOpen, setDialogOpen, desc }) {
     const ctx = useContext(AppContext);

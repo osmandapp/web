@@ -8,7 +8,7 @@ import TracksManager from '../../manager/track/TracksManager';
 import PopperMenu from './PopperMenu';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
-import { clearAllLocalTracks } from './util/LocalTrackStorage';
+import { clearAllLocalTracks } from '../../context/LocalTrackStorage';
 
 export default function LocalTrackGroup() {
     const styles = drawerStyles();
