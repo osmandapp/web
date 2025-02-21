@@ -5,6 +5,7 @@ import AppContext, {
     OBJECT_TYPE_WEATHER,
     isTrack,
     isCloudTrack,
+    isTrackAnalyzer,
 } from '../../context/AppContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
@@ -189,7 +190,7 @@ export default function InformationBlock({
                     setShowInfoBlock(true);
                 } else if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                     // don't display InfoBlock in Navigation menu until details requested
-                } else if (ctx.selectedGpxFile && isTrack(ctx) && !openShareFileItem) {
+                } else if (ctx.selectedGpxFile && (isTrack(ctx) || isTrackAnalyzer(ctx)) && !openShareFileItem) {
                     // finally assume that default selectedGpxFile is a track
                     tObj = new TrackTabList().create(ctx, setShowInfoBlock);
                     if (isCloudTrack(ctx)) {
@@ -337,7 +338,12 @@ export default function InformationBlock({
                                     sx={{ mx: '11px', my: '11px' }}
                                     onClick={() => {
                                         setShowInfoBlock(false);
-                                        ctx.setCurrentObjectType(null);
+
+                                        // not change object type if track analyzer is active, because return to prev menu
+                                        if (!isTrackAnalyzer(ctx)) {
+                                            ctx.setCurrentObjectType(null);
+                                        }
+
                                         if (trackName) {
                                             // back to prev url
                                             setTrackName(null);

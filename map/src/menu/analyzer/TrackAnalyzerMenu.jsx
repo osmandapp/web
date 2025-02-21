@@ -1,8 +1,10 @@
-import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Box, CircularProgress, Grid, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
+import { ReactComponent as DesertIcon } from '../../assets/icons/ic_action_desert.svg';
+import { ReactComponent as ChangePointsIcon } from '../../assets/icons/ic_action_change_navigation_points.svg';
 import EmptyLogin from '../login/EmptyLogin';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import TracksSelect from './TracksSelect';
@@ -21,9 +23,11 @@ import SortFilesButton, { TRACK_FILE_TYPE } from '../components/buttons/SortFile
 import ActionsMenu from '../actions/ActionsMenu';
 import SegmentParamsFilter from './SegmentParamsFilter';
 import { TYPE_ANALYZER } from '../../frame/components/graph/GlobalGraph';
+import ErrorBlock from './ErrorBlock';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
+const SELECTED_FILTERS = 'selectedSegmentFilters';
 
 export default function TrackAnalyzerMenu() {
     const ctx = useContext(AppContext);
@@ -35,10 +39,13 @@ export default function TrackAnalyzerMenu() {
     const [startPoint, setStartPoint] = useState(null);
     const [finishPoint, setFinishPoint] = useState(null);
     const [startAnalysis, setStartAnalysis] = useState(false);
-    const [tracksFolders, setTracksFolders] = useState(null);
+    const [tracksFolders, setTracksFolders] = useState(ctx.trackAnalyzer?.tracksFolders || null);
     const [analyseResult, setAnalyseResult] = useState(null);
     const [sortedSegments, setSortedSegments] = useState([]);
     const [segmentsResult, setSegmentsResult] = useState(null);
+    const [processing, setProcessing] = useState(false);
+    const [showProcessing, setShowProcessing] = useState(false);
+    const [emptySegResult, setEmptySegResult] = useState(false);
 
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
 
@@ -48,7 +55,36 @@ export default function TrackAnalyzerMenu() {
 
     const allStats = [...speedStats, ...altitudeStats, ...otherStats];
 
-    const [activeSegmentParams, setActiveSegmentParams] = useState(new Set(allStats.map((stat) => stat.label)));
+    const [activeSegmentParams, setActiveSegmentParams] = useState(getFromLocalStorage);
+
+    function getFromLocalStorage() {
+        const storedFilters = localStorage.getItem(SELECTED_FILTERS);
+        return storedFilters ? new Set(JSON.parse(storedFilters)) : new Set(allStats.map((stat) => stat.label));
+    }
+
+    function saveToLocalStorage() {
+        localStorage.setItem(SELECTED_FILTERS, JSON.stringify(Array.from(activeSegmentParams)));
+    }
+
+    useEffect(() => {
+        saveToLocalStorage();
+    }, [activeSegmentParams]);
+
+    useEffect(() => {
+        let timer;
+        if (processing) {
+            timer = setTimeout(() => setShowProcessing(true), 5000);
+        } else {
+            setShowProcessing(false);
+        }
+        return () => clearTimeout(timer);
+    }, [processing]);
+
+    useEffect(() => {
+        if (sortedSegments) {
+            ctx.setSortedSegments(sortedSegments);
+        }
+    }, [sortedSegments]);
 
     useEffect(() => {
         setSortedSegments(segmentsResult ? segmentsResult.files : []);
@@ -80,6 +116,7 @@ export default function TrackAnalyzerMenu() {
             ctx.setTrackAnalyzer({
                 start: startPoint,
                 finish: finishPoint,
+                tracksFolders: tracksFolders,
             });
             return;
         }
@@ -126,17 +163,29 @@ export default function TrackAnalyzerMenu() {
         if (!isAnalysisReady()) {
             return;
         }
-
+        setProcessing(true);
+        if (emptySegResult) {
+            setEmptySegResult(false);
+        }
         getTracksBySegment().then((res) => {
             if (res?.files?.length > 0) {
                 addColorsToSegments(res);
                 prepareSegmentsForSort(res);
                 setAnalyseResult({ ...res });
                 ctx.setExcludedSegments(new Set());
+            } else {
+                setEmptySegResult(true);
             }
             setStartAnalysis(false);
+            setProcessing(false);
         });
     }, [startAnalysis, tracksFolders, startPoint, finishPoint]);
+
+    useEffect(() => {
+        if (emptySegResult) {
+            setAnalyseResult(null);
+        }
+    }, [emptySegResult]);
 
     // segments -> map
     useEffect(() => {
@@ -151,6 +200,7 @@ export default function TrackAnalyzerMenu() {
                 ...ctx.trackAnalyzer,
                 start: startPoint,
                 finish: finishPoint,
+                tracksFolders,
                 segmentsUpdateDate: new Date().getMilliseconds(),
                 segments: analyseResult.segments,
             });
@@ -162,22 +212,30 @@ export default function TrackAnalyzerMenu() {
                 };
             });
         } else {
-            // clear segments from map
-            ctx.setTrackAnalyzer({
-                ...ctx.trackAnalyzer,
-                segmentsUpdateDate: new Date().getMilliseconds(),
-                segments: null,
-            });
-            setSegmentsResult(null);
-            ctx.setGlobalGraph((prev) => {
-                return {
-                    ...prev,
-                    show: false,
-                    type: null,
-                };
-            });
+            clearSegmentsFromMap();
         }
     }, [analyseResult]);
+
+    function clearSegmentsFromMap() {
+        ctx.setTrackAnalyzer({
+            ...ctx.trackAnalyzer,
+            segmentsUpdateDate: new Date().getMilliseconds(),
+            segments: null,
+        });
+        setSegmentsResult(null);
+        ctx.setGlobalGraph((prev) => {
+            return {
+                ...prev,
+                show: false,
+                type: null,
+            };
+        });
+    }
+
+    function swapPoints() {
+        setStartPoint(finishPoint);
+        setFinishPoint(startPoint);
+    }
 
     function prepareSegmentsForSort(analyseResult) {
         Object.keys(analyseResult.segments).forEach((segmentName) => {
@@ -250,6 +308,21 @@ export default function TrackAnalyzerMenu() {
         return Array.from(uniqueFolders);
     }
 
+    function stopAnalyzer() {
+        setProcessing(false);
+        setStartAnalysis(false);
+
+        clearPoints();
+        setTracksFolders(null);
+
+        clearSegmentsFromMap();
+    }
+
+    function clearPoints() {
+        setStartPoint(null);
+        setFinishPoint(null);
+    }
+
     return (
         <>
             {ctx.loginUser ? (
@@ -304,26 +377,52 @@ export default function TrackAnalyzerMenu() {
                         </Toolbar>
                     </AppBar>
                     <Box>
-                        <TracksSelect setTracksFolders={setTracksFolders} />
-                        <Box sx={{ mx: 2, my: 2 }}>
-                            <PointField
-                                name={'start'}
-                                point={startPoint}
-                                setPoint={setStartPoint}
-                                setStartAnalysis={setStartAnalysis}
-                            />
-                            <PointField
-                                name={'finish'}
-                                point={finishPoint}
-                                setPoint={setFinishPoint}
-                                setStartAnalysis={setStartAnalysis}
-                            />
-                        </Box>
-                        {analyseResult === null && <TrackAnalyzerTips />}
+                        <TracksSelect tracksFolders={tracksFolders} setTracksFolders={setTracksFolders} />
+                        <Grid sx={{ mx: 2, width: '95%' }} container spacing={2}>
+                            <Grid item sx={{ flexGrow: 1, mb: 2, ml: -2, mr: -1 }}>
+                                <PointField
+                                    name={'start'}
+                                    point={startPoint}
+                                    setPoint={setStartPoint}
+                                    setStartAnalysis={setStartAnalysis}
+                                />
+                                <PointField
+                                    name={'finish'}
+                                    point={finishPoint}
+                                    setPoint={setFinishPoint}
+                                    setStartAnalysis={setStartAnalysis}
+                                />
+                            </Grid>
+                            <Grid item sx={{ mr: 1, my: 4 }}>
+                                <IconButton onClick={swapPoints}>
+                                    <ChangePointsIcon />
+                                </IconButton>
+                            </Grid>
+                        </Grid>
+
+                        {analyseResult === null && !processing && !emptySegResult && <TrackAnalyzerTips />}
                     </Box>
+                    <ThickDivider />
+                    {showProcessing && (
+                        <ErrorBlock
+                            icon={<CircularProgress size={20} />}
+                            text={t('web:processing_track_analyzer')}
+                            onClick={stopAnalyzer}
+                            btnText={t('shared_string_cancel')}
+                            style={false}
+                        />
+                    )}
+                    {emptySegResult && (
+                        <ErrorBlock
+                            icon={<DesertIcon />}
+                            text={t('web:track_analyzer_empty_result_title')}
+                            onClick={clearPoints}
+                            desc={t('web:track_analyzer_empty_result_desc')}
+                            btnText={'Clear points'}
+                        />
+                    )}
                     {analyseResult !== null && (
                         <>
-                            <ThickDivider />
                             <TrackSegmentStat
                                 height={height}
                                 sortedSegments={sortedSegments}

@@ -5,8 +5,6 @@ import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsa
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
 import { ReactComponent as DuplicateIcon } from '../../assets/icons/ic_action_copy.svg';
-import { ReactComponent as MakeTrackVisible } from '../../assets/icons/ic_action_show_outlined.svg';
-import { ReactComponent as HideTrackVisible } from '../../assets/icons/ic_action_hide_outlined.svg';
 import { ReactComponent as ShareIcon } from '../../assets/icons/ic_group.svg';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
 import TracksManager, { DEFAULT_GROUP_NAME, downloadGpx } from '../../manager/track/TracksManager';
@@ -15,7 +13,7 @@ import AppContext from '../../context/AppContext';
 import { createTrackFreeName, duplicateTrack, refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import { useTranslation } from 'react-i18next';
 import { getShareFileInfo, saveSharedFileToCloud, SHARE_TYPE } from '../../manager/ShareManager';
-import { getFileStorage, GPX } from '../../manager/GlobalManager';
+import MakeTrackVisibleAction from './components/MakeTrackVisibleAction';
 
 const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smartf = null }, ref) => {
     const ctx = useContext(AppContext);
@@ -48,53 +46,17 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
         }
     }
 
-    const MakeTrackVisibleAction = () => {
-        const files = getFileStorage({ ctx, smartf, type: GPX });
-
-        return files[track.name]?.showOnMap ? (
-            <MenuItem
-                id="se-hide-track-action"
-                className={styles.action}
-                onClick={() => {
-                    setDisplayTrack(false);
-                    setOpenActions(false);
-                }}
-            >
-                <ListItemIcon className={styles.iconAction}>
-                    <HideTrackVisible />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography variant="inherit" className={styles.actionName} noWrap>
-                        Hide track
-                    </Typography>
-                </ListItemText>
-            </MenuItem>
-        ) : (
-            <MenuItem
-                id="se-show-track-action"
-                className={styles.action}
-                onClick={() => {
-                    setDisplayTrack(true);
-                    setOpenActions(false);
-                }}
-            >
-                <ListItemIcon className={styles.iconAction}>
-                    <MakeTrackVisible />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography variant="inherit" className={styles.actionName} noWrap>
-                        Make track visible
-                    </Typography>
-                </ListItemText>
-            </MenuItem>
-        );
-    };
-
     return (
         <>
             <Box ref={ref}>
                 <Paper id="se-track-actions" className={styles.actions}>
-                    <MakeTrackVisibleAction />
+                    <MakeTrackVisibleAction
+                        ctx={ctx}
+                        track={track}
+                        setDisplayTrack={setDisplayTrack}
+                        setOpenActions={setOpenActions}
+                        smartf={smartf}
+                    />
                     <Divider className={styles.dividerActions} />
                     {!sharedFile && (
                         <MenuItem

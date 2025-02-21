@@ -5257,5 +5257,11 @@
   "shared_string_open_track": "Open track",
   "altitude": "Altitude",
   "shared_string_slope": "Slope",
-  "shared_string_speed": "Speed"
+  "shared_string_speed": "Speed",
+  "moving_time": "Time in motion",
+  "shared_string_length": "Length",
+  "m_s": "m/s",
+  "shared_string_time_span": "Time span",
+  "shared_string_start_time": "Start time",
+  "shared_string_end_time": "End time"
 }
