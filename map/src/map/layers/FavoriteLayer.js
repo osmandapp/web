@@ -280,10 +280,6 @@ const FavoriteLayer = () => {
                 );
             }
         }
-
-        if (ctx.selectedGpxFile?.markerPrev && ctx.selectedGpxFile?.markerPrev.layer) {
-            map.removeLayer(ctx.selectedGpxFile.markerPrev.layer);
-        }
     }, [ctx.selectedGpxFile]);
 
     const onClick = useCallback(
