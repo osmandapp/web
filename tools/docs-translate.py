@@ -51,11 +51,15 @@ def add_translations_to_index(index, base_folder):
                     file_path = os.path.join(root, file)
                     relative_path = os.path.relpath(file_path, locale_folder)
                     relative_path = os.path.join("docs", relative_path)  # Match the main docs structure
+
+                    # If the original file exists in the index, add the translation
                     if relative_path in index:
                         file_hash = calculate_file_hash(file_path)
                         last_modified_date = get_last_modified_date(file_path)
+                        # Use the original file's hash if the translation hash is empty
+                        original_hash = index[relative_path]["hash"]
                         index[relative_path]["locales"][locale] = {
-                            "hash": file_hash,
+                            "hash": original_hash,
                             "lastModifiedDate": last_modified_date,
                         }
     return index
@@ -65,6 +69,13 @@ def save_index(index, output_file):
     with open(output_file, "w") as f:
         json.dump(index, f, indent=4)
 
+def load_existing_index(index_file):
+    """Load the existing index from a JSON file."""
+    if os.path.exists(index_file):
+        with open(index_file, "r") as f:
+            return json.load(f)
+    return {}
+
 def main():
     # Get the script's directory
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -73,10 +84,24 @@ def main():
     # Define the output file
     output_file = os.path.join(script_dir, ".content-index.json")
 
+    # Load the existing index (if it exists)
+    existing_index = load_existing_index(output_file)
+
     # Index the main docs folder
     index = index_folder(os.path.dirname(docs_folder), docs_folder)
+
     # Add translations from the i18n folder
     index = add_translations_to_index(index, os.path.dirname(docs_folder))
+
+    # Merge the existing index with the new one to preserve original hashes for translations
+    for file_path, data in existing_index.items():
+        if file_path in index:
+            for locale, locale_data in data.get("locales", {}).items():
+                if locale in index[file_path]["locales"]:
+                    # Preserve the original hash if the translation hash is empty
+                    if not index[file_path]["locales"][locale]["hash"]:
+                        index[file_path]["locales"][locale]["hash"] = locale_data["hash"]
+
     # Save the index to the output file
     save_index(index, output_file)
     print(f"Index saved to {output_file}")
