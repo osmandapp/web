@@ -16,6 +16,10 @@ const config = {
   organizationName: 'osmandapp', // Usually your GitHub org/user name.
   projectName: 'web', // Usually your repo name.
   staticDirectories: ['static', 'legacy-image-static'],
+  i18n: {
+    defaultLocale: 'en', // Your default language
+    locales: ['en', 'de'], // Add your supported languages
+  },
   presets: [
     [
       'classic',
@@ -25,6 +29,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
           sidebarItemsGenerator: require('./scripts/help-structure-generator.js'),
+          routeBasePath: '/',
         },
         blog: {
           showReadingTime: true,
@@ -86,11 +91,13 @@ const config = {
           { to: '/docs/user/purchases', label: '💳 Purchases', position: 'left' },
           { to: 'pathname:///map', target: '_self', label: '🌍 Map', position: 'left' },
           { to: '/docs/hiring', label: '🚵‍♂️ Join us', position: 'left' },
+          { type: 'localeDropdown', position: 'right',},
           {
             href: 'https://github.com/osmandapp/',
             label: 'GitHub',
             position: 'right',
           },
+          
         ],
       },
       footer: {

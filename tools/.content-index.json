@@ -1,0 +1,902 @@
+{
+    "docs/intro.md": {
+        "hash": "a9dcca0595da18ec6345",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {
+            "de": {
+                "hash": "a9dcca0595da18ec6345",
+                "lastModifiedDate": "23.02.2025"
+            }
+        }
+    },
+    "docs/build-it/index.md": {
+        "hash": "305634d87735d3c8941b",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/versions/nightly_versions.md": {
+        "hash": "c1271baece569eb9d127",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/versions/index.md": {
+        "hash": "6837f1f70d78284d1050",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/versions/free-versions.md": {
+        "hash": "31084f77b378f8461acb",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/versions/map-creator.md": {
+        "hash": "5ff83af60e0a328ebe59",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/versions/future-ios.md": {
+        "hash": "5d2a097cded21af6a4d9",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/versions/future-web.md": {
+        "hash": "46a91414d1c46278dabf",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/versions/future-android.md": {
+        "hash": "4facd46a50be7fd7123a",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/index.md": {
+        "hash": "b401b26ecfa8be13de9a",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/personal/markers.md": {
+        "hash": "523c7f3795e7154b7550",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/favorites.md": {
+        "hash": "60247165014024ba1892",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/global-settings.md": {
+        "hash": "9d1f36c20a1ef6a768bb",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/profiles.md": {
+        "hash": "cf6f0505d42b354ad06e",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/color-palette-schemes.md": {
+        "hash": "affed3264bde329ef034",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/myplaces.md": {
+        "hash": "1ec1cb3584babd6271bb",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/index.md": {
+        "hash": "fd649aa08e2a7b67c213",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/maps-resources.md": {
+        "hash": "1a3d3a105aa1fef7ce6d",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/osmand-cloud.md": {
+        "hash": "93e7f78a1a876d4c8715",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/import-export.md": {
+        "hash": "48c5963970efb4f80f07",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/tracks/smart-folder.md": {
+        "hash": "b614c3e442d06946724c",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/tracks/index.md": {
+        "hash": "385019eec0653d855025",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/personal/tracks/manage-tracks.md": {
+        "hash": "8fe3a9d1f57619f593a6",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/purchases/ios_new.md": {
+        "hash": "dc96625803f8570317ed",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/purchases/giveaway.md": {
+        "hash": "e7399b276394bbf8cfa5",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/purchases/android_new.md": {
+        "hash": "f24eb5055913fcd5f8be",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/purchases/android.md": {
+        "hash": "8aa6e91b8589532020cc",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/purchases/osmand_features_capabilities.md": {
+        "hash": "1cbb60feb8824fc06972",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/purchases/index.md": {
+        "hash": "f6126bd62f0c5cbf2840",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/purchases/ios.md": {
+        "hash": "0629fe31cd47fac1bbf0",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/start-with/first-steps.md": {
+        "hash": "6d69c24260cc8b5a3ae5",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/start-with/index.md": {
+        "hash": "f2bd885f1707ffb05700",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/start-with/download-maps.md": {
+        "hash": "9bc6633c41b5c936405f",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/start-with/main-menu.md": {
+        "hash": "b4d7c490700610f7e041",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/trip-recording.md": {
+        "hash": "102c4b072ff6eeb95cd2",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/nautical-charts.md": {
+        "hash": "8f3323299bb698694c8b",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/wikipedia.md": {
+        "hash": "3f25ccc58aec4123491d",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/plugins/accessibility.md": {
+        "hash": "cabad3d797079b133492",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/plugins/mapillary.md": {
+        "hash": "47d34a9acdfab5760a17",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/external-sensors.md": {
+        "hash": "0b2d5e11573f822b638e",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/topography.md": {
+        "hash": "c23f699f2f7b713e4e5c",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/index.md": {
+        "hash": "2ed18231cb5de5495764",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/custom.md": {
+        "hash": "a6c7862b9e92ed693f2f",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/plugins/osmand-tracker.md": {
+        "hash": "25863804831cd04b7ab6",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/plugins/parking.md": {
+        "hash": "ed8cb1fa695c9f338038",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/weather.md": {
+        "hash": "4444c1a3a03d58ced610",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/osm-editing.md": {
+        "hash": "c2ef45d7e6e2c89656b7",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/audio-video-notes.md": {
+        "hash": "871f670ad6359e5163a9",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/development.md": {
+        "hash": "bede4dfa88d70d0e4cc2",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/vehicle-metrics.md": {
+        "hash": "8ab4f24e8b23f5297b1b",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/plugins/ski-maps.md": {
+        "hash": "e91593f21edf10b5605c",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plugins/online-map.md": {
+        "hash": "6c2e979afe5befe07d65",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/web/web-map.md": {
+        "hash": "1e82de4705665055c70b",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/web/web-cloud.md": {
+        "hash": "964bdb6e3992c0d49e37",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/web/web-search.md": {
+        "hash": "8a9acf214e5e8d864457",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/web/index.md": {
+        "hash": "aefc71b70d83f97a2855",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/web/planner.md": {
+        "hash": "a2a262accd3811bed955",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/map-legend/ski-map.md": {
+        "hash": "d2e12f64e9dc7563b4d3",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/map-legend/index.md": {
+        "hash": "734bd44f821df16e6d31",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/map-legend/osmand.md": {
+        "hash": "6c61511fa3c80a55f3a7",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/map-legend/nautical-map.md": {
+        "hash": "d3eae4f91524ec12604a",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/navigation/auto-car.md": {
+        "hash": "a1503f27bdaa0c9d5f93",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/index.md": {
+        "hash": "8146a79fc59c05ed8341",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/navigation/car-play.md": {
+        "hash": "0bf3ea6d6f70b02f889f",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/guidance/navigation-settings.md": {
+        "hash": "b217c0ea227e2e0e7a5b",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/guidance/voice-navigation.md": {
+        "hash": "d4a656af21a121f51790",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/guidance/map-during-navigation.md": {
+        "hash": "bf746dee50473bf1af03",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/setup/gpx-navigation.md": {
+        "hash": "ae35949ec59918a0e6f9",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/setup/markers-navigation.md": {
+        "hash": "5bc231fb863bddd7e468",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/navigation/setup/route-navigation.md": {
+        "hash": "e6d4f661612ff90d11ca",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/setup/route-details.md": {
+        "hash": "96275cb1c51534a64e3f",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/public-transport-navigation.md": {
+        "hash": "969757f55ab9ffbdb171",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/boat-navigation.md": {
+        "hash": "7638ae16d73825a44cc1",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/train-routing.md": {
+        "hash": "3ce2ff0fbb5dbe576ca9",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/brouter.md": {
+        "hash": "c39cc307a75f042e634f",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/pedestrian-routing.md": {
+        "hash": "215edb405b81a26e330d",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/osmand-routing.md": {
+        "hash": "a0456f7807b286a49970",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/online-routing.md": {
+        "hash": "fa57ab972215025e5fb1",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/car-based-routing.md": {
+        "hash": "e388e53679b38bd7d464",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/horse-routing.md": {
+        "hash": "1665c55e017493cdde6d",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/ski-routing.md": {
+        "hash": "12c08264862142d90ac8",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/direct-to-point-routing.md": {
+        "hash": "d65a53d14521c22b838d",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/bicycle-based-routing.md": {
+        "hash": "95e4116aed0bcd3f568a",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/moped-routing.md": {
+        "hash": "b5b565357594a5c36843",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/navigation/routing/straight-line-routing.md": {
+        "hash": "f4e6d3414aa2134a9c33",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/resources.md": {
+        "hash": "18d75721df16f4dc3d59",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/setup.md": {
+        "hash": "86bae27848d5cb7dcbba",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/general.md": {
+        "hash": "dff2311be4c98f3c5db8",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/video-tutorials.md": {
+        "hash": "fd9c7b9af91f05ac8c17",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/navigation.md": {
+        "hash": "1eab1022b9132acffbea",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/purchases_payments.md": {
+        "hash": "6cee2243e4a61e60459c",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/track-recording-issues.md": {
+        "hash": "3d09579325c4db8653d1",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/crash-logs.md": {
+        "hash": "e2be860ee579d4628270",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/index.md": {
+        "hash": "08e10f7298e0df85f481",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/android_auto.md": {
+        "hash": "f27ec925ad20adebe5ef",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/web.md": {
+        "hash": "7e2020f99fc30afdb0d8",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/troubleshooting/maps-data.md": {
+        "hash": "43cefdbaa54a71da99b6",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/search/search-address.md": {
+        "hash": "f4928a0001751ff8837e",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/search/search-all.md": {
+        "hash": "49265b521f8143e45d94",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/search/index.md": {
+        "hash": "9add97d17e17fdfd9d06",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {
+            "de": {
+                "hash": "9add97d17e17fdfd9d06",
+                "lastModifiedDate": "23.02.2025"
+            }
+        }
+    },
+    "docs/user/search/search-poi.md": {
+        "hash": "7c58aaf9a9078cd92ce2",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/search/search-coordinates.md": {
+        "hash": "6c40c5d249fa84467518",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/search/search-history.md": {
+        "hash": "59ee79d4134d28a2449a",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/map/routes.md": {
+        "hash": "b09f090d89b1859b4b99",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/map/vector-maps.md": {
+        "hash": "dcb73dfaff5802710ee6",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/map/configure-map-menu.md": {
+        "hash": "5eb5b465b4eb96eb7e99",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/map/point-layers-on-map.md": {
+        "hash": "9ec3064d50d96db02097",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/map/map-context-menu.md": {
+        "hash": "766a4953a202d86f398a",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/map/index.md": {
+        "hash": "2f11eda07c4723c450c2",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/map/interact-with-map.md": {
+        "hash": "b7e8c167d35ca4ea33e4",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/map/public-transport.md": {
+        "hash": "723fafc011203dd95eb0",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/map/raster-maps.md": {
+        "hash": "d531c70c318b7808959f",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/map/tracks/tracks-article.md": {
+        "hash": "7c4f888d1d9a44557b23",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/map/tracks/appearance.md": {
+        "hash": "c688f21e059f722d5df0",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/map/tracks/track-context-menu.md": {
+        "hash": "d989ad3f86015004a7d7",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/map/tracks/index.md": {
+        "hash": "bcbd2a03d0e87a78aa38",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plan-route/create-route.md": {
+        "hash": "d18c0d459d73fc2ffad1",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plan-route/coordinate-input.md": {
+        "hash": "02070ab43ea9b25abbd4",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/plan-route/travel-guides.md": {
+        "hash": "0089a76498549bf697cb",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/plan-route/index.md": {
+        "hash": "9bbb748c17b8e94b63e7",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/user/plan-route/web.md": {
+        "hash": "98c9b79e636b2758284e",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/widgets/markers.md": {
+        "hash": "a29dfaf321cb480a9251",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/widgets/radius-ruler.md": {
+        "hash": "57f7eddecd994d751831",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/widgets/quick-action.md": {
+        "hash": "bf46a4f62e1552805708",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/widgets/index.md": {
+        "hash": "cd0c4e01c413f53037eb",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/user/widgets/info-widgets.md": {
+        "hash": "faae6eca8a8d3c5fc448",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/widgets/map-buttons.md": {
+        "hash": "8bb86eb06c056d26a31c",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/widgets/configure-screen.md": {
+        "hash": "6388caefb81a976ffcf3",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/user/widgets/nav-widgets.md": {
+        "hash": "dd8290621362094aeecc",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/hiring/mission.md": {
+        "hash": "4f8f9fff4e52bc37b8a9",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/hiring/opengl-vulkan-dev.md": {
+        "hash": "6f58287f11b26cc976b1",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/hiring/index.md": {
+        "hash": "6df5c04ce3ba053d4f65",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/hiring/ios-dev.md": {
+        "hash": "0f17bfc71a13df931871",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/hiring/android-dev.md": {
+        "hash": "17a93516455c2e961b4c",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/legal/license.md": {
+        "hash": "998d9d5496ea94317174",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/legal/terms-of-use.md": {
+        "hash": "e566e2f670692adf249d",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/legal/privacy-policy.md": {
+        "hash": "9999463fe742c6c3cb31",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/legal/index.md": {
+        "hash": "903c99ce17a9ba7f4d60",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/index.md": {
+        "hash": "7c30094c38d574216a5e",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/technical/map-creation/create-offline-maps-yourself.md": {
+        "hash": "d2986df74f6c0cf1ae9a",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/map-creation/how-to-inspect-an-obf.md": {
+        "hash": "cb35729257f395696a06",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/map-creation/create_travel_guide.md": {
+        "hash": "a2bbc84e1e28c66185aa",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/map-creation/index.md": {
+        "hash": "f910fc8e75f4b6d3a768",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/map-creation/creating-a-country-polygon.md": {
+        "hash": "00ee9f5a863279542f61",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/contributions/voice-prompts.md": {
+        "hash": "5dc9b0f9e8b0b7b896c9",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/contributions/translating-osmand.md": {
+        "hash": "0a5d34b67b627a721f98",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/contributions/debug-obf-routing-on-pc.md": {
+        "hash": "544205c4e382117a4274",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/contributions/index.md": {
+        "hash": "d2dacda1be2c6d0e6a39",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/contributions/creating-consistent-ux.md": {
+        "hash": "38df420cbbbaffcd366e",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/algorithms/map-rendering-layers.md": {
+        "hash": "8207e7076b3c2e07c645",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/technical/algorithms/calculate-uphill-slope.md": {
+        "hash": "6b397c1f51ad1e0ca5c6",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/technical/algorithms/osmand-intents.md": {
+        "hash": "f1dc528e0fd9e8df6a17",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/algorithms/voice-prompt-triggering.md": {
+        "hash": "12e4feb9919009388d67",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/algorithms/trace-address-search-issues.md": {
+        "hash": "a4675132e43bfc3a043d",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/algorithms/index.md": {
+        "hash": "71f05adcb01cfec7ee0f",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-file-formats/osmand-routing-xml.md": {
+        "hash": "772f63f07dc669d93414",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-file-formats/osmand-rendering-style.md": {
+        "hash": "452c47db0d1a33d9c0c7",
+        "lastModifiedDate": "15.12.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-file-formats/osmand-gpx.md": {
+        "hash": "ee67f1940b8608417135",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/technical/osmand-file-formats/index.md": {
+        "hash": "110a9dd44ee9135d017b",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/technical/osmand-file-formats/osmand-osf.md": {
+        "hash": "8b147f408f841ae4a500",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-file-formats/osmand-sqlite.md": {
+        "hash": "f12b6bb462acdb7e7cf4",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-file-formats/osmand-metainfo.md": {
+        "hash": "818a250f9c601d6c079c",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-file-formats/osmand-kml.md": {
+        "hash": "94c7ef67ae3d5b6ffb48",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-file-formats/osmand-obf.md": {
+        "hash": "413b72faf6a5404c8c01",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-api-sdk/navigate_map_activity.md": {
+        "hash": "bcef8d6957b880920244",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-api-sdk/full_map_activity.md": {
+        "hash": "1639a3d45d6955a24d20",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-api-sdk/index.md": {
+        "hash": "8966dda422b837a6c114",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-api-sdk/points_on_map_activity.md": {
+        "hash": "458bd607f28c74215dde",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-api-sdk/add_mapview.md": {
+        "hash": "08f7085f87ae92131ed1",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/osmand-api-sdk/simple_map_activity.md": {
+        "hash": "d44ba4a8567d0007b503",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/build-osmand/routing.md": {
+        "hash": "57485e178eb87cefaf01",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/build-osmand/how-to-compile-the-android-version.md": {
+        "hash": "87d758634ec521263449",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/build-osmand/how-to-compile-the-ios-version.md": {
+        "hash": "fd433273d6fd31ae35a1",
+        "lastModifiedDate": "18.02.2025",
+        "locales": {}
+    },
+    "docs/technical/build-osmand/setup-the-dev-environment.md": {
+        "hash": "98695c87cdb237bb2c0c",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/build-osmand/how-to-compile-mapcreator-and-tools.md": {
+        "hash": "64eabfe4fb90227539f3",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/build-osmand/rendering.md": {
+        "hash": "c7cb8ed7fe7dea70e85a",
+        "lastModifiedDate": "11.11.2024",
+        "locales": {}
+    },
+    "docs/technical/build-osmand/index.md": {
+        "hash": "6cf7710c7579e3329613",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    },
+    "docs/technical/build-osmand/osmand-builds.md": {
+        "hash": "4f0d52aefe4a0dab2d4f",
+        "lastModifiedDate": "31.10.2024",
+        "locales": {}
+    }
+}
