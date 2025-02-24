@@ -29,6 +29,7 @@ import SubTitle from '../components/SubTitle';
 import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 import EmptyLogin from '../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
+import Loading from '../errors/Loading';
 
 export default function ShareFile() {
     const ctx = useContext(AppContext);
@@ -45,6 +46,7 @@ export default function ShareFile() {
     const [blockedTypeAccess, setBlockedTypeAccess] = useState(false);
     const [notAvailable, setNotAvailable] = useState(false);
     const [onlyLoginAccess, setOnlyLoginAccess] = useState(false);
+    const [processingAccess, setProcessingAccess] = useState(false);
 
     const [showFile, setShowFile] = useState(false);
     const [showFavorite, setShowFavorite] = useState(false);
@@ -64,6 +66,7 @@ export default function ShareFile() {
         }
 
         async function fetchFile() {
+            setProcessingAccess(true);
             const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/${SHARE_FILE_MAIN_URL}${uuid}`, {});
             if (res.ok) {
                 const text = await res.text();
@@ -98,7 +101,7 @@ export default function ShareFile() {
                 }
             }
         }
-        fetchFile().then();
+        fetchFile().then(() => setProcessingAccess(false));
     }, [uuid]);
 
     useEffect(() => {
@@ -184,6 +187,7 @@ export default function ShareFile() {
                 <>
                     {!showFavorite && (
                         <Box sx={{ px: 2, mt: 1, overflowX: 'hidden' }}>
+                            {processingAccess && <Loading />}
                             {requestTypeAccess && (
                                 <RequestAccessError
                                     sendRequest={sendAccessRequest}
