@@ -38,23 +38,24 @@ For Android devices, you can download the **Free** and **Paid** versions of the 
 | ![Pro](@site/static/img/svg/pro_icon.svg) Subscription OsmAnd Pro | ✔ | ✔ | ✔ | OsmAnd / OsmAnd+ |
 
 
-## Difference Between Purchases
+### Difference Between Purchases (Android)
 
 | Plan | Description | Availability | Notes |
 |------------|------------|------------|------------|
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | A **separate paid application** with the same features as Maps+. | Available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). | Can be added to the [Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en).  |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** for the free version of OsmAnd. Offers the same features and price as OsmAnd+. | Available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand) and [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | All features and pricing are identical to OsmAnd+. |
-| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, and *OSM editing/notes*. | Available for all users of the free version of OsmAnd. | Limited to cloud features for basic functionality. |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks advanced features. | Available on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), and [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd). | OsmAnd Pro subscription is cross-platform. |
-
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | A **separate paid app** that includes advanced features. | Available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). | Can be added to the [Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en). |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** for the free OsmAnd app, unlocking the same features as OsmAnd+. | Available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand) and [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identical in features and pricing to OsmAnd+. |
+| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, and *OSM editing/notes*. | Available to all users of the free OsmAnd version. | Limited to basic cloud functionality. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks additional advanced features. | Available on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), and [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd). | Supports **cross-platform** access (see note below). |
 
 ### Important Notes
 
-1. ***OsmAnd+*** and ***Maps+*** are completely identical in their feature sets.
+1. **OsmAnd+** and **Maps+** offer the same features. The only difference is that OsmAnd+ is a **separate paid app**, while Maps+ is a **subscription or in-app purchase**.
 
-2. **Android Auto** is only supported for versions of OsmAnd downloaded from Google Play. It is not available for OsmAnd+ (purchased from Amazon) or Maps+ (from Huawei AppGallery).
+2. **Android Auto** is only supported for OsmAnd downloaded from **Google Play**. It is **not available** for OsmAnd+ (purchased from *Amazon*) or Maps+ (from *Huawei AppGallery*).
 
-3. **OsmAnd Pro subscription is a *cross-platform* purchase**. You can purchase it from one store (e.g., Amazon or Huawei AppGallery) and restore them on another (e.g., Google Play) by [registering (restoring) your e-mail as Pro-account](../personal/osmand-cloud.md#cross-platform).
+3. **OsmAnd Pro is a *cross-platform* subscription**. This means you can purchase it on one store (e.g., *Google Play, Amazon, Huawei AppGallery, AppStore, and osmand.net*) and restore it on another by [registering your email as a Pro account](../personal/osmand-cloud.md#cross-platform).
+
+4. You can add **Maps+ and OsmAnd+** to **[Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en)** to share the purchase with family members.  
 
 
 ## Prices

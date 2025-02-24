@@ -17,27 +17,21 @@ import Translate from '@site/src/components/Translate.js';
 You can download the app via this link - [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
-## Difference Between Purchases
+## Difference Between Purchases (iOS)
 
-#### Maps+
+| Plan | Description | Availability | Notes |
+|------------|------------|------------|------------|
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** that unlocks advanced features for the free OsmAnd app. | Available on [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Can be added to the [Apple Family Sharing](https://support.apple.com/en-us/HT201088). |
+| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, and *OSM editing/notes*. | Available for all users of the free version of OsmAnd. | Limited to cloud features for basic functionality. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks additional advanced features. | Available on [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Supports **cross-platform** access (see note below). |
 
-- ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) *Maps+* is an in-app purchase or a subscription for OsmAnd on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+### Important Notes  
 
-#### OsmAnd Start
+1. **Maps+** is a *premium upgrade* for the free version of OsmAnd, unlocking most features.
 
-- This plan gives you free use of [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for Favorites, Settings and OSM editing/notes.
+2. **OsmAnd Pro is a *cross-platform* subscription**. This means you can purchase it on one store (e.g., *AppStore, Google Play, and osmand.net*) and restore it on another by [registering your email as a Pro account](../personal/osmand-cloud.md#cross-platform).
 
-#### OsmAnd Pro
-
-- ![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* is a subscription, available for OsmAnd application on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
-
-You can add your purchases to [the Family Sharing - Apple](https://support.apple.com/en-us/HT201088).
-
-:::note cross-platform
-
-**OsmAnd Pro subscription is a *cross-platform* purchase**. It means that you can buy it in App Store and then [restore (register your e-mail as Pro-account)](../personal/osmand-cloud.md#cross-platform) on OsmAnd for [Android versions](../purchases/android.md), [OsmAnd.net](http://osmand.net/map) and vice versa.
-
-:::
+3. You can add **Maps+** to [Apple Family Sharing](https://support.apple.com/en-us/HT201088) to share the purchase with family members.  
 
 
 ## Prices
