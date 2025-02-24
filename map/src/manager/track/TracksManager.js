@@ -1367,6 +1367,7 @@ export async function openTrackOnMap({
             updatetimems: file.updatetimems,
             name: file.name,
             sharedWithMe: file.sharedWithMe,
+            details: file.details,
             type: 'GPX',
         };
         const f = await Utils.getFileData(oneGpxFile);

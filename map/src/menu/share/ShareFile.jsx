@@ -30,6 +30,7 @@ import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 import EmptyLogin from '../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import Loading from '../errors/Loading';
+import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 
 export default function ShareFile() {
     const ctx = useContext(AppContext);
@@ -101,7 +102,10 @@ export default function ShareFile() {
                 }
             }
         }
-        fetchFile().then(() => setProcessingAccess(false));
+        fetchFile().then(() => {
+            setProcessingAccess(false);
+            refreshGlobalFiles({ ctx }).then();
+        });
     }, [uuid]);
 
     useEffect(() => {
