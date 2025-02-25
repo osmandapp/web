@@ -306,13 +306,27 @@ export function createUrlParams(params) {
 }
 
 export function encodeString(str) {
-    const bytes = new TextEncoder().encode(str);
-    return btoa(String.fromCharCode(...bytes));
+    if (typeof str !== 'string') {
+        console.error('Invalid input to encodeString:', str);
+        return null;
+    }
+    try {
+        const bytes = new TextEncoder().encode(str);
+        return btoa(String.fromCharCode(...bytes));
+    } catch (error) {
+        console.error('Failed to encode string:', error);
+        return null;
+    }
 }
 
 export function decodeString(str) {
-    const bytes = atob(str);
-    return new TextDecoder().decode(Uint8Array.from(bytes, (c) => c.charCodeAt(0)));
+    try {
+        const bytes = atob(str);
+        return new TextDecoder().decode(Uint8Array.from(bytes, (c) => c.charCodeAt(0)));
+    } catch (error) {
+        console.error('Failed to decode string:', error);
+        return null;
+    }
 }
 
 const Utils = {
