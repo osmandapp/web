@@ -21,14 +21,36 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
     const { t } = useTranslation();
     const [isHovered, setIsHovered] = useState(false);
 
-    const name =
-        item.properties?.wikiTitle && item.properties?.wikiTitle !== ''
-            ? item.properties.wikiTitle
-            : getType(item.properties?.poisubtype);
+    const name = getWikiPlaceName(item.properties);
     const desc = item.properties?.wikiDesc ? parse(cleanHtml(item.properties?.wikiDesc)) : null;
     const imageTitle = getImgByProps(item.properties);
+    const type = getCategory(item.properties.categories);
     const poiType = item.properties?.poitype;
     const poiSubType = item.properties?.poisubtype;
+
+    function getWikiPlaceName(props) {
+        if (props?.wikiTitle && props?.wikiTitle !== '') {
+            return props.wikiTitle;
+        }
+        const type = getType(item.properties?.poisubtype);
+        if (type && type !== 'poi_undefined') {
+            return type;
+        }
+        return props.catTitle ?? '';
+    }
+
+    function getCategory(props) {
+        try {
+            const parsedArray = JSON.parse(props.properties.categories);
+            if (Array.isArray(parsedArray)) {
+                return parsedArray.length > 0 ? parsedArray.join(', ') : 'Other';
+            } else {
+                return 'Other';
+            }
+        } catch (e) {
+            return 'Other';
+        }
+    }
 
     function handleMouseEnter(item) {
         ctx.setSelectedPoiId({ id: item.properties.id, show: true, type: EXPLORE_LAYER_ID });
@@ -96,15 +118,19 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
                                         {desc && (
                                             <MenuItemWithLines className={styles.placeDesc} name={desc} maxLines={2} />
                                         )}
-                                        {poiType && poiSubType && (
+                                        {type && (
                                             <div style={{ display: 'flex', alignItems: 'center', marginTop: '6px' }}>
                                                 {typeIcon && (
                                                     <ListItemIcon className={styles.placeTypesIcon}>
                                                         {typeIcon}
                                                     </ListItemIcon>
                                                 )}
-                                                <Typography className={styles.explorePlaceTypes} noWrap>
-                                                    {`${getType(poiSubType)}, ${getType(poiType)}`}
+                                                <Typography
+                                                    className={styles.explorePlaceTypes}
+                                                    sx={{ pl: typeIcon ? '8px' : '0px' }}
+                                                    noWrap
+                                                >
+                                                    {type}
                                                 </Typography>
                                             </div>
                                         )}
