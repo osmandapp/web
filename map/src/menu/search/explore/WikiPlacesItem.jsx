@@ -24,7 +24,7 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
     const name = getWikiPlaceName(item.properties);
     const desc = item.properties?.wikiDesc ? parse(cleanHtml(item.properties?.wikiDesc)) : null;
     const imageTitle = getImgByProps(item.properties);
-    const type = getCategory(item.properties.categories);
+    const type = getCategory(item.properties);
     const poiType = item.properties?.poitype;
     const poiSubType = item.properties?.poisubtype;
 
@@ -32,7 +32,7 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
         if (props?.wikiTitle && props?.wikiTitle !== '') {
             return props.wikiTitle;
         }
-        const type = getType(item.properties?.poisubtype);
+        const type = getType(props?.poisubtype);
         if (type && type !== 'poi_undefined') {
             return type;
         }
@@ -41,12 +41,8 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
 
     function getCategory(props) {
         try {
-            const parsedArray = JSON.parse(props.properties.categories);
-            if (Array.isArray(parsedArray)) {
-                return parsedArray.length > 0 ? parsedArray.join(', ') : 'Other';
-            } else {
-                return 'Other';
-            }
+            const category = props.categories.replace(/^\[|\]$/g, '').trim();
+            return category.length > 0 ? category : 'Other';
         } catch (e) {
             return 'Other';
         }
