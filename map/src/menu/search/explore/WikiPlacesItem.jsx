@@ -9,7 +9,7 @@ import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { cleanHtml } from '../../../manager/PoiManager';
 import parse from 'html-react-parser';
-import { EXPLORE_LAYER_ID } from '../../../map/layers/ExploreLayer';
+import { EXPLORE_LAYER_ID, getImgByProps } from '../../../map/layers/ExploreLayer';
 
 export default function WikiPlacesItem({ item, index, lastIndex }) {
     const ctx = useContext(AppContext);
@@ -26,7 +26,7 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
             ? item.properties.wikiTitle
             : getType(item.properties?.poisubtype);
     const desc = item.properties?.wikiDesc ? parse(cleanHtml(item.properties?.wikiDesc)) : null;
-    const imageTitle = item.properties?.photoTitle;
+    const imageTitle = getImgByProps(item.properties);
     const poiType = item.properties?.poitype;
     const poiSubType = item.properties?.poisubtype;
 
