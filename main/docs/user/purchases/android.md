@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-## Install OsmAnd
+## Install OsmAnd (Android)
 
 For Android devices, you can download the **Free** and **Paid** versions of the application from the following markets:
 
@@ -37,15 +37,28 @@ For Android devices, you can download the **Free** and **Paid** versions of the 
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Subscription Maps+ | ✔ | ✔ | ✔| OsmAnd |
 | ![Pro](@site/static/img/svg/pro_icon.svg) Subscription OsmAnd Pro | ✔ | ✔ | ✔ | OsmAnd / OsmAnd+ |
 
+<!--
+### Types of subscriptions
+
+#### OsmAnd Start
+
+#### OsmAnd+
+
+#### Maps+
+
+#### OsmAnd Pro
+
+-->
+
 
 ### Difference Between Purchases (Android)
 
 | Plan | Description | Availability | Notes |
 |------------|------------|------------|------------|
+| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, and *OSM editing/notes*. | Available to all users of the free OsmAnd version. | Limited to basic cloud features and **5MB** storage. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | A **separate paid app** that includes advanced features. | Available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). | Can be added to the [Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en). |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** for the free OsmAnd app, unlocking the same features as OsmAnd+. | Available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand) and [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identical in features and pricing to OsmAnd+. |
-| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, and *OSM editing/notes*. | Available to all users of the free OsmAnd version. | Limited to basic cloud functionality. |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks additional advanced features. | Available on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), and [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd). | Supports **cross-platform** access (see note below). |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks additional advanced and [pro features](#pro-features). | Available on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), and [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd). | Supports **cross-platform** access (see note below). |
 
 ### Important Notes
 
@@ -70,7 +83,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 :::
 
 
-|    | OsmAnd Free   | [OsmAnd+](#osmand) /<br/> [Maps+](#maps) In-App | [Maps+](#maps) Subscription | [OsmAnd Pro](#osmand-pro) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
@@ -78,7 +91,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 -->
 
-|    | OsmAnd Free   | [OsmAnd+](#osmand) /<br/> [Maps+](#maps) In-App | [Maps+](#maps) Subscription | [OsmAnd Pro](#osmand-pro) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
@@ -92,7 +105,7 @@ The OsmAnd application offers a wide range of features and tools, with many avai
 
 The table below details the features included in both the free and paid packages of OsmAnd, along with their respective prices.
 
-|  | OsmAnd Free | [OsmAnd+](#osmand) <br/> [Maps+](#maps) (in&#8209;app & subscription) | [OsmAnd Pro](#osmand-pro) |
+|  | OsmAnd Free | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (in&#8209;app & subscription) | [OsmAnd Pro](#install-osmand-android) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -207,7 +220,7 @@ To restore the purchase, please check what OsmAnd plan you bought.
 
 ### Restore Subscription / In App
 
-**To restore your *in-app purchase* or *subscription* ([Maps+, Pro, OsmAnd Live](#difference-between-purchases)).**
+**To restore your *in-app purchase* or *subscription* ([Maps+, Pro, OsmAnd Live](#difference-between-purchases-android)).**
 
 - *Update Market app* (Google Play, Amazon, Huawei AppGallery).
 - *Log in* with **the same account** to the Market (Google Play, Amazon, Huawei AppGallery) that you have an OsmAnd purchase.

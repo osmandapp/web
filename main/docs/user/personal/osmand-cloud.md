@@ -118,7 +118,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>  
 
-The **OsmAnd Start** plan provides free access to **OsmAnd Cloud**, allowing you to store and synchronize your **Favorites, Settings, and OpenStreetMap (OSM) edits and notes**. This plan is available for users of [OsmAnd Free or Maps+](../purchases/index.md).  
+The **OsmAnd Start** plan provides free access to **OsmAnd Cloud** with limited basic features and 5MB storage to store and synchronize your **Favorites, Settings, and OpenStreetMap (OSM) edits and notes**. This plan is available for users of [OsmAnd Free or Maps+](../purchases/index.md).  
 
 Features included in OsmAnd Start:
 
