@@ -1,15 +1,10 @@
-[
-  "administrative",
-  "natural",
-  "tourism",
-  "man_made",
-  "transportation",
-  "education",
-  "entertainment",
-  "sport",
-  "healthcare",
-  "shop",
-  "office",
-  "sustenance",
-  "emergency"
-]
+{
+  "0": "All",
+  "1": "Cultural and historical heritage",
+  "2" : "Arts, Entertainment & Leisure",
+  "3" : "Nature & Outdoors",
+  "4" : "Food & Drink",
+  "5": "Utilities & Essential Services",
+  "6": "Administrative Divisions",
+  "7": "Other"
+}

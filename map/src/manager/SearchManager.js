@@ -1,5 +1,4 @@
 import { apiGet } from '../util/HttpApi';
-import filters from '../resources/wiki_data_filters.json';
 import {
     MAIN_CATEGORY_KEY_NAME,
     WEB_POI_ADDITIONAL_CATEGORY,
@@ -10,6 +9,7 @@ import { formattingPoiType } from './PoiManager';
 import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
 import i18n from 'i18next';
 import { SEARCH_ICON_MAP_OBJ, typeIconMap } from '../map/layers/SearchLayer';
+import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
 
 export const WIKI_IMAGE_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
 export const SEARCH_BRAND = 'brand';
@@ -95,8 +95,7 @@ export function getIconByType(type) {
  */
 
 export function addWikiPlacesDefaultFilters(ctx, mainSearch = false, selectedFilters = null) {
-    const OFFICE_FILTER = 'office';
-    const defaultFilters = selectedFilters ?? filters.filter((f) => f !== OFFICE_FILTER);
+    const defaultFilters = selectedFilters ?? DEFAULT_EXPLORE_POITYPES;
     ctx.setSearchSettings({
         ...ctx.searchSettings,
         selectedFilters: new Set(defaultFilters),

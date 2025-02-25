@@ -26,6 +26,13 @@ export function updateMarkerZIndex(layerGroup, zIndex) {
     });
 }
 
+export function getImgByProps(props) {
+    if (props.photoTitle && props.photoTitle !== '') {
+        return props.photoTitle;
+    }
+    return props.depTitle;
+}
+
 export default function ExploreLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
@@ -326,7 +333,7 @@ export default function ExploreLayer() {
                 const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
                 const imgTag = ctx.searchSettings.useWikiImages
                     ? place.properties.imageTitle
-                    : place.properties.photoTitle;
+                    : getImgByProps(place.properties);
                 const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}?width=200`;
                 const iconSize = [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE];
 

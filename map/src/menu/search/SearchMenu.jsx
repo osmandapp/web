@@ -24,7 +24,7 @@ import EmptyLogin from '../login/EmptyLogin';
 import useHashParams from '../../util/hooks/useHashParams';
 import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
 
-const DEFAULT_EXPLORE_POITYPES = ['tourism', 'leisure', 'entertainment'];
+export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
 export default function SearchMenu() {
     const ctx = useContext(AppContext);
