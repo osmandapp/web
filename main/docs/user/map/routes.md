@@ -28,7 +28,7 @@ You can configure the filtering of some route types in the [Configure Map](../ma
 
 ### Cycle routes
 
-[Cycle routes](https://wiki.openstreetmap.org/wiki/Cycle_routes) are present in three types: *local* (lcn), *regional* (rcn), *national* (ncn), *international* (icn). Also, cycle routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). You can choose how to assign color to the route segments:
+[Cycle routes](https://wiki.openstreetmap.org/wiki/Cycle_routes) are present in three types: *local* (`lcn`), *regional* (`rcn`), *national* (`ncn`), *international* (`icn`). Also, cycle routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). You can choose how to assign color to the route segments:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -43,7 +43,7 @@ You can find more information in the [Map Legend](../map-legend/index.md) articl
 
 MTB routes have a specific mapping in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) and could be selected separately from cycling routes.
 
-- ***<Translate android="true" ids="mtb_scale"/>***.  Shows trails according to the MTB scale. You can find more information in the [Map Legend](../map-legend/index.md) article.  
+- ***<Translate android="true" ids="mtb_scale"/>***.  Shows trails according to the MTB scale. More information is in the [Map Legend](../map-legend/index.md) article.  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
 - ***<Translate android="true" ids="mtb_imba"/>***.  Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../map-legend/index.md).  
@@ -51,7 +51,7 @@ MTB routes have a specific mapping in [OpenStreetMap](https://wiki.openstreetmap
 
 ### Hiking / Walking routes
 
-[Hiking routes](https://wiki.openstreetmap.org/wiki/Walking_Routes) are present in three types: *local* (lwn), *regional* (rwn), *national* (nwn), *international* (iwn). Also, walking routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd doesn't separate walking and hiking routes and combines them into 1 group. You can choose how to assign color to the route segments:
+[Hiking routes](https://wiki.openstreetmap.org/wiki/Walking_Routes) are present in three types: *local* (`lwn`), *regional* (`rwn`), *national* (`nwn`), *international* (`iwn`). Also, walking routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd doesn't separate walking and hiking routes and combines them into 1 group. You can choose how to assign color to the route segments:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Colors routes according to their individual [local color](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (if available in OpenStreetMap) and the tourist shield symbol.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
@@ -72,9 +72,30 @@ You can activate this feature in *Menu → Configure map → Routes → Dirt bik
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
 
+### Climbing Routes
+
+OsmAnd supports *climbing areas* (`climbing=area`) and *climbing crags* (`climbing=crag`), allowing you to find [rock climbing](https://wiki.openstreetmap.org/wiki/Climbing) locations directly on the map.
+
+- **Climbing areas** represent **larger zones** where multiple climbing routes exist.
+
+- **Climbing crags** refer to **specific rock formations** or walls suitable for climbing.
+
+- These locations include **detailed attributes** such as:
+
+    - *Climbing grade* (e.g., UIAA, French, YDS).
+    - *Rock type* (e.g., limestone, granite).
+    - *Route length* (in meters).
+    - *Climbing quality* (solid, loose, mixed).
+    - *Summit log availability*.
+
+To enable climbing locations on the map, go to: *Menu → Configure Map → Routes → Climbing Routes*.
+
+![Map routes - Climbing Routes](@site/static/img/map/map-routes-climbing-routes.png)
+
+
 ### Hiking Trails Difficulty Grade
 
-Some road segments could be part of many routes, but they could be individually colored to represent difficulty for the segment in mountainous areas. Currently, OsmAnd supports Italian and Swiss classifications, and each has a specific list of equipment requirements to access this segment.  
+Some road segments could be part of many routes, but they could be individually colored to represent the difficulty of the segment in mountainous areas. Currently, OsmAnd supports Italian and Swiss classifications, and each has a specific list of equipment requirements to access this segment.  
 
 1. [*SAC scale*](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
 2. [*CAI scale*](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
@@ -101,13 +122,13 @@ Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/
 
 ### Running routes
 
-[Running routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) in OpenStreetMap are used for named, numbered, or otherwise marked running routes primarily for athletics.
+[Running routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) in OpenStreetMap are used for named, numbered, or otherwise marked running routes, primarily for athletics.
 
 ![Fitness routes](@site/static/img/map/fitness_1.png)
 
 ### Fitness trails
 
-A [fitness trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) is a trail or path equipped with obstacles or stations along its length to exercise the human body for the purpose of improving health.  
+A [fitness trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) is a trail or path equipped with obstacles or stations along its length to exercise the human body to improve health.  
 
 ![Fitness routes](@site/static/img/map/fitness_route.png)
 
@@ -117,7 +138,7 @@ A [fitness trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)
 
 ![Travel routes](@site/static/img/map/travel_route_2.png)  ![Travel routes](@site/static/img/map/travel_routes.png)
 
-Travel routes are part of custom [Travel book](../plan-route/travel-guides.md) (.travel.obf) files, which can be generated from the [user's routes](https://osmand.net/blog/routes#generated-travel-routes) or be part of additional [plugins](../plugins/index.md).  
+Travel routes are part of custom [Travel book](../plan-route/travel-guides.md) (`travel.obf`) files, which can be generated from the [user's routes](https://osmand.net/blog/routes#generated-travel-routes) or be part of additional [plugins](../plugins/index.md).  
 
 You can customize the display of certain ***Travelbooks*** and types of ***tracks***, display tracks as points, or ***Point groups*** (for example for Wikivoyage travel books). Learn more about [Travel guides here](../plan-route/travel-guides.md).
 
@@ -153,7 +174,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 ### Route Info and Elevation
 
-To get full route information and elevation data, tap the *route icon (shield)* on the map. If you have already used the *Download button* in the [track context menu](../map/tracks/track-context-menu.md), tap the line of the required route on the map.  
+Tap the *route icon (shield)* on the map to get full route information and elevation data. If you have already used the *Download button* in the [track context menu](../map/tracks/track-context-menu.md), tap the line of the required route on the map.  
 
 <Tabs groupId="operating-systems">
 
@@ -216,4 +237,4 @@ You can configure to switch on and off routes via [Quick action](../widgets/quic
 - [Public transport](./public-transport.md)
 - [Navigation route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 
-> *This article was last updated in November 2024*
+> *This article was last updated in February 2025*

@@ -42,8 +42,6 @@ The **context menu** appears when you **tap once** a marked object on the map. T
 
 You can select various types of map objects, such as *POIs*, *Favorites*, *Transportation stops*, *Markers*, or other *map objects*.
 
-For **linear objects**, such as *barriers, steps, gates, benches, slipways, weirs, bollard, or coupures*, the context menu displays additional details. These include the POI type and address associated with them, or the object type if no name is assigned.
-
 :::note
 Selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.openstreetmap.org/wiki/Node) or [**ways**](https://wiki.openstreetmap.org/wiki/Way).
 :::
@@ -199,19 +197,19 @@ Features of alternative names display:
 
 The **Polygon information** feature provides detailed data on nearby **polygons** displayed on the map. This includes geographic features, administrative boundaries, and other mapped areas.  
 
-**Within** section:
+**Within section**:
 
 - Displays a *list of surrounding polygons*, sorted *from smallest to largest* based on area size.
 
 - Each entry shows the *polygon type and name*, allowing for easy identification of regions and boundaries.
 
-Additional details:
+**Additional details**:
 
 - When selecting a point on the map or a POI, the **polygon information** panel displays a list of all polygons that contain the selected location.
 
-- Entries in the list include *administrative divisions, land use areas, natural features, and other categorized regions*.
+- Entries in the list include **administrative divisions, land use areas, natural features, and other categorized regions**.
 
-- The panel allows users to *copy the polygon's name and details* for reference.
+- The panel allows users to **copy the polygon's name and details** for reference.
 
 - To view this information, go to *Map Context Menu → Details → Within*.
 
@@ -237,7 +235,7 @@ These sections display nearby [Wikipedia articles](../plugins/wikipedia.md) or [
 
 Tap *Nearby POIs / Wikipedia articles* opens a points list (POIs or Wikipedia). A tap to one of these points from a point list moves the map to this point (POIs or Wikipedia) with the opening point map context menu.
 
-> **NOTE**. [<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia).
+> **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia)*.
 
 
 ### Public Transport Routes
@@ -263,9 +261,23 @@ Shown info about Public transport routes for chosen transport stop. Information 
 
 ### Favorites / Track Points from the Group
 
+![Favorite list](@site/static/img/map/favorite_list_android.png) ![Favorite list full](@site/static/img/map/favorite_list_full_android.png)
+
 This is a list of all points in one group for a [Favorite](../map/point-layers-on-map.md#favorites-on-the-map) or Waypoint. By tapping, the entire list of points of one group expands, when tapping a point from the list, the map moves to the selected point.
 
-![Favorite list](@site/static/img/map/favorite_list_android.png) ![Favorite list full](@site/static/img/map/favorite_list_full_android.png)
+
+### Linear Object
+
+![Favorite list](@site/static/img/map/linear_object_andr.png)
+
+For **linear objects**, such as *barriers, steps, gates, benches, slipways, weirs, bollard, or coupures*, the context menu displays additional details. These include the POI type and address associated with them, or the object type if no name is assigned.
+
+
+### Climbing Area and Crag Details
+
+![Favorite list](@site/static/img/map/climbing_andr.png)
+
+When selecting a [climbing area or crag](../map/routes.md#climbing-routes), OsmAnd provides a detailed summary of the climbing location, including: name and location, climbing difficulty rating (UIAA, French, YDS, etc.), rock type, height and route length, climbing quality and surface conditions.
 
 
 ### Article Description
@@ -630,7 +642,7 @@ In case there is no offline map present at the selected location, for example ma
 
 **iOS**. If you already have [downloaded](../map/map-context-menu.md) OsmAnd maps (vector or terrain), it is possible to updated them via context menu. You will need to select the region on the map first - tap any location on worldwide zoom 3-7.  
 
-> **NOTE**. If you have opened context menu for map region (region is highlighted), you will be able to see *<Translate android="true" ids="rendering_category_details"/>* about it: type and size of an available map, link to a Wikipedia page, language, population and other.
+> **NOTE**. *If you have opened context menu for map region (region is highlighted), you will be able to see ***<Translate android="true" ids="rendering_category_details"/>*** about it: type and size of an available map, link to a Wikipedia page, language, population and other.*
 
 
 ### * Add / Delete Parking point
