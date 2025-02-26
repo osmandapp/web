@@ -61,6 +61,7 @@ Important information:
     - City, Street;
     - Street Intersections;
     - City;
+    - Tiger data;
     - Postal Code, House Number;
     - Postal Code, Street, House Number.
 - Search POI by name and by category with additional filters.
@@ -106,6 +107,10 @@ You can find the required location on the map from the list of points that appea
     - Addresses
     - Maps to download
 - If you enter a [brand name](../search/search-poi.md#how-to-use), the list will start with results by this name, sorted by closest distance.
+
+:::note TIGER data limitations in address searches
+OsmAnd uses [TIGER data] for US address information, but this dataset is **range-based** and does not contain precise house numbers. Some addresses may be missing or inaccurate.
+:::
 
 
 ### Search on the Map
