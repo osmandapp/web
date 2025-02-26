@@ -18,12 +18,8 @@ import parse from 'html-react-parser';
 import { EXPLORE_LAYER_ID, getImgByProps } from '../../../map/layers/ExploreLayer';
 
 export function getCategory(props) {
-    try {
-        const category = props.categories.replace(/^\[|\]$/g, '').trim();
-        return category.length > 0 ? category : 'Other';
-    } catch (e) {
-        return 'Other';
-    }
+    const category = props.categories?.replace(/^\[|\]$/g, '').trim();
+    return category?.length ? category : 'Other';
 }
 
 export default function WikiPlacesItem({ item, index, lastIndex }) {
@@ -49,7 +45,7 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
         if (type && type !== 'poi_undefined') {
             return type;
         }
-        return props.catTitle ?? '';
+        return props?.catTitle ?? '';
     }
 
     function handleMouseEnter(item) {

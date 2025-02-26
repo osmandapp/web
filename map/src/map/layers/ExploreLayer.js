@@ -27,10 +27,7 @@ export function updateMarkerZIndex(layerGroup, zIndex) {
 }
 
 export function getImgByProps(props) {
-    if (props.photoTitle && props.photoTitle !== '') {
-        return props.photoTitle;
-    }
-    return props.depTitle;
+    return props.photoTitle || props.depTitle;
 }
 
 export default function ExploreLayer() {
