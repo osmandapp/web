@@ -4,12 +4,23 @@ import { LinearProgress, ListItemIcon, ListItemText, MenuItem, Skeleton, Typogra
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { WIKI_IMAGE_BASE_URL } from '../../../manager/SearchManager';
 import styles from '../search.module.css';
-import { addPoiTypeTag, POI_PREFIX } from '../../../infoblock/components/wpt/WptTagsProvider';
+import {
+    addPoiTypeTag,
+    ICON_KEY_NAME,
+    POI_PREFIX,
+    TYPE_OSM_TAG,
+    TYPE_OSM_VALUE,
+} from '../../../infoblock/components/wpt/WptTagsProvider';
 import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import { cleanHtml } from '../../../manager/PoiManager';
+import { cleanHtml, getIconNameForPoiType } from '../../../manager/PoiManager';
 import parse from 'html-react-parser';
-import { EXPLORE_LAYER_ID } from '../../../map/layers/ExploreLayer';
+import { EXPLORE_LAYER_ID, getImgByProps } from '../../../map/layers/ExploreLayer';
+
+export function getCategory(props) {
+    const category = props.categories?.replace(/^\[|\]$/g, '').trim();
+    return category?.length ? category : 'Other';
+}
 
 export default function WikiPlacesItem({ item, index, lastIndex }) {
     const ctx = useContext(AppContext);
@@ -21,14 +32,21 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
     const { t } = useTranslation();
     const [isHovered, setIsHovered] = useState(false);
 
-    const name =
-        item.properties?.wikiTitle && item.properties?.wikiTitle !== ''
-            ? item.properties.wikiTitle
-            : getType(item.properties?.poisubtype);
+    const name = getWikiPlaceName(item.properties);
     const desc = item.properties?.wikiDesc ? parse(cleanHtml(item.properties?.wikiDesc)) : null;
-    const imageTitle = item.properties?.photoTitle;
-    const poiType = item.properties?.poitype;
-    const poiSubType = item.properties?.poisubtype;
+    const imageTitle = getImgByProps(item.properties);
+    const type = getCategory(item.properties);
+
+    function getWikiPlaceName(props) {
+        if (props?.wikiTitle && props?.wikiTitle !== '') {
+            return props.wikiTitle;
+        }
+        const type = getType(props?.poisubtype);
+        if (type && type !== 'poi_undefined') {
+            return type;
+        }
+        return props?.catTitle ?? '';
+    }
 
     function handleMouseEnter(item) {
         ctx.setSelectedPoiId({ id: item.properties.id, show: true, type: EXPLORE_LAYER_ID });
@@ -42,11 +60,23 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
 
     useEffect(() => {
         async function fetchData() {
-            const tagTypeObj = await addPoiTypeTag({ typeTag: poiType, subtypeTag: poiSubType, ctx, size: 16 });
+            const icon = getIconNameForPoiType({
+                iconKeyName: item.properties[ICON_KEY_NAME],
+                typeOsmTag: item.properties[TYPE_OSM_TAG],
+                typeOsmValue: item.properties[TYPE_OSM_VALUE],
+            });
+            const tagTypeObj = await addPoiTypeTag({
+                key: item.properties[TYPE_OSM_TAG],
+                value: item.properties[TYPE_OSM_VALUE],
+                icon,
+                ctx,
+                size: 16,
+            });
             setTypeIcon(tagTypeObj?.icon);
             const tagTypeObjEmptyImg = await addPoiTypeTag({
-                typeTag: poiType,
-                subtypeTag: poiSubType,
+                key: item.properties[TYPE_OSM_TAG],
+                value: item.properties[TYPE_OSM_VALUE],
+                icon,
                 ctx,
                 color: '#c0c0c0',
             });
@@ -96,15 +126,19 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
                                         {desc && (
                                             <MenuItemWithLines className={styles.placeDesc} name={desc} maxLines={2} />
                                         )}
-                                        {poiType && poiSubType && (
+                                        {type && (
                                             <div style={{ display: 'flex', alignItems: 'center', marginTop: '6px' }}>
                                                 {typeIcon && (
                                                     <ListItemIcon className={styles.placeTypesIcon}>
                                                         {typeIcon}
                                                     </ListItemIcon>
                                                 )}
-                                                <Typography className={styles.explorePlaceTypes} noWrap>
-                                                    {`${getType(poiSubType)}, ${getType(poiType)}`}
+                                                <Typography
+                                                    className={styles.explorePlaceTypes}
+                                                    sx={{ pl: typeIcon ? '5px' : '0px', mb: '3px' }}
+                                                    noWrap
+                                                >
+                                                    {type}
                                                 </Typography>
                                             </div>
                                         )}
