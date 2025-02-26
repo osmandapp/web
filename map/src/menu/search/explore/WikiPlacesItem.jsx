@@ -17,6 +17,15 @@ import { cleanHtml, getIconNameForPoiType } from '../../../manager/PoiManager';
 import parse from 'html-react-parser';
 import { EXPLORE_LAYER_ID, getImgByProps } from '../../../map/layers/ExploreLayer';
 
+export function getCategory(props) {
+    try {
+        const category = props.categories.replace(/^\[|\]$/g, '').trim();
+        return category.length > 0 ? category : 'Other';
+    } catch (e) {
+        return 'Other';
+    }
+}
+
 export default function WikiPlacesItem({ item, index, lastIndex }) {
     const ctx = useContext(AppContext);
 
@@ -41,15 +50,6 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
             return type;
         }
         return props.catTitle ?? '';
-    }
-
-    function getCategory(props) {
-        try {
-            const category = props.categories.replace(/^\[|\]$/g, '').trim();
-            return category.length > 0 ? category : 'Other';
-        } catch (e) {
-            return 'Other';
-        }
     }
 
     function handleMouseEnter(item) {

@@ -16,7 +16,7 @@ import * as locales from 'date-fns/locale';
 import { format, startOfWeek, addDays } from 'date-fns';
 import capitalize from 'lodash/capitalize';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
-import { createPoiCache, updatePoiCache } from '../../../manager/PoiManager';
+import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 import { apiGet } from '../../../util/HttpApi';
 import { parseTagWithLang } from '../../../manager/SearchManager';
@@ -200,8 +200,13 @@ async function getWptTags(obj, type, ctx) {
         let isWikipediaLink = false;
         let hasCuisine = false;
 
-        if (type.isFav || type.isWpt) {
-            let tagTypeObj = await addPoiTypeTag({ typeTag, subtypeTag, ctx });
+        if (type.isFav || type.isWpt || type.isWikiPoi) {
+            const icon = getIconNameForPoiType({
+                iconKeyName: tags[ICON_KEY_NAME],
+                typeOsmTag: tags[TYPE_OSM_TAG],
+                typeOsmValue: tags[TYPE_OSM_VALUE],
+            });
+            const tagTypeObj = await addPoiTypeTag({ key: tags[TYPE_OSM_TAG], value: tags[TYPE_OSM_VALUE], ctx, icon });
             if (tagTypeObj) {
                 res.push(tagTypeObj);
             }
