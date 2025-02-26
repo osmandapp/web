@@ -148,7 +148,7 @@ export async function getSvgIcon({ key = null, value = null, ctx, getPoiType = f
             poiIconCache: ctx.poiIconCache,
             icon,
         });
-        cacheValue = innerCache[`${key}_${value}`];
+        cacheValue = icon ? innerCache[icon] : innerCache[`${key}_${value}`];
     } else {
         const prepKey = key?.replace(COLLAPSABLE_PREFIX, '');
         innerCache = await createPoiCache({
@@ -353,24 +353,25 @@ function mergeTagsWithLang(tags) {
 }
 
 export async function addPoiTypeTag({
-    typeTag,
-    subtypeTag,
+    key,
+    value,
+    icon,
     ctx,
     size = DEFAULT_TAG_ICON_SIZE,
     color = DEFAULT_TAG_ICON_COLOR,
 }) {
-    if (!typeTag || !subtypeTag) {
+    if (!icon) {
         return null;
     }
     let tagObj = {};
-    let svgData = await getSvgIcon({ key: typeTag, value: subtypeTag, ctx, getPoiType: true });
+    let svgData = await getSvgIcon({ key, value, ctx, getPoiType: true, icon });
     if (!svgData) {
-        svgData = await getSvgIcon({ key: 'amenity', value: subtypeTag, ctx, getPoiType: true });
+        svgData = await getSvgIcon({ key: 'amenity', value, ctx, getPoiType: true, icon });
     }
     tagObj.icon = getIcon(svgData, size, color);
     tagObj.key = 'type';
-    tagObj.value = subtypeTag;
-    tagObj.textPrefix = subtypeTag;
+    tagObj.value = value;
+    tagObj.textPrefix = value;
 
     return tagObj;
 }
