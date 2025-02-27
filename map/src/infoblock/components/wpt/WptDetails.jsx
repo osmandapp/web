@@ -36,13 +36,7 @@ import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_acti
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as FavoritesIcon } from '../../../assets/menu/ic_action_favorite.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
-import {
-    cleanHtml,
-    DEFAULT_ICON_COLOR,
-    DEFAULT_POI_COLOR,
-    DEFAULT_POI_SHAPE,
-    translateWithSplit,
-} from '../../../manager/PoiManager';
+import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
     getColorLocation,
@@ -58,7 +52,6 @@ import WptTagsProvider, {
     openWikivoyageContent,
     OSM_PREFIX,
     POI_OSM_URL,
-    POI_PREFIX,
     WIKIDATA,
     WIKIMEDIA_COMMONS,
     WIKIPEDIA,
@@ -86,6 +79,7 @@ import DialogActions from '@mui/material/DialogActions';
 import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
 import { iconPathMap, SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
 import capitalize from 'lodash/capitalize';
+import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
@@ -172,11 +166,12 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             const currentPoi = ctx.selectedWpt.poi;
             const wikiObj = ctx.searchSettings.getPoi;
             const coords = wikiObj.geometry.coordinates;
+            const poiType = getCategory(wikiObj.properties);
             return {
                 id: wikiObj?.properties.id,
-                type: type,
+                type,
                 firstPhoto: wikiObj?.properties.photoTitle,
-                poiType: translateWithSplit(t, `${POI_PREFIX}${wikiObj.properties?.poisubtype}`),
+                poiType,
                 name: wikiObj?.properties.wikiTitle,
                 latlon: { lat: coords[1], lon: coords[0] },
                 wikiDesc: wikiObj?.properties.wikiDesc,
@@ -200,7 +195,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         } else if (type?.isSearch || type?.isPoi) {
             const currentPoi = ctx.selectedWpt.poi;
             const { options: objOptions, latlng } = currentPoi;
-            const { name, objType } = getPropsFromSearchResultItem(objOptions, t);
+            const { name, type: objType } = getPropsFromSearchResultItem(objOptions, t);
             const wikiCommons = getWikiCommons(objOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]);
             let photos = null;
             if (wikiCommons?.files) {
@@ -210,9 +205,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 };
             }
             return {
-                type: type,
+                type,
                 poiType: objType,
-                name: name,
+                name,
                 latlon: { lat: latlng.lat, lon: latlng.lng },
                 background: DEFAULT_POI_SHAPE,
                 color: DEFAULT_POI_COLOR,
@@ -222,7 +217,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 wikidata: objOptions[OSM_PREFIX + WIKIDATA],
                 wikimediaCommons: wikiCommons?.categories,
                 wikipedia: getWikipedia(objOptions[OSM_PREFIX + WIKIPEDIA]),
-                photos: photos,
+                photos,
             };
         }
         return null;
@@ -736,9 +731,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                     <MenuItemWithLines maxLines={3} className={styles.name}>
                                         <WptName />
                                     </MenuItemWithLines>
-                                    <Typography className={styles.type} noWrap>
-                                        {getObjType(wpt)}
-                                    </Typography>
+                                    <MenuItemWithLines className={styles.type} name={getObjType(wpt)} maxLines={2} />
                                 </div>
                                 {wpt.icon && (
                                     <WptIcon
