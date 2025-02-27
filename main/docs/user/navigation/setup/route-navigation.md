@@ -19,9 +19,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 The **Route preparation** feature in OsmAnd provides step-by-step navigation guidance for various [routing types](./../routing/osmand-routing.md#routing-types), including [driving](./../routing/car-based-routing.md), [walking](./../routing/pedestrian-routing.md), cycling, [horse riding](./../routing/horse-routing.md), and [skiing](./../routing/ski-routing.md). Users can customize navigation settings, add destinations, and optimize routes for efficiency.
 
 :::tip
+
 - **Offline navigation** is enabled by default. However, you can also use [online routing engines](./../routing/online-routing.md).
 
 - **OsmAnd requires permission** to access [precise location](../../start-with/first-steps.md#permission-to-access-the-location) for accurate navigation. Enable this in device settings if needed.
+
 :::
 
 <Tabs groupId="operating-systems">
