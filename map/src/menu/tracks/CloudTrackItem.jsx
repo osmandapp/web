@@ -52,6 +52,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
 
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
     const updateDetails = file?.details?.update;
+    const loadingError = file?.details?.error;
 
     const dist = getDist(file);
     const time = getTime(file);
@@ -155,6 +156,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                                     {time && ` · ${time}`}
                                     {wptPoints && ` · ${wptPoints}`}
                                     {updateDetails && ` · ${t('shared_string_loading')}...`}
+                                    {loadingError && ` · ${t('error_occurred_loading_gpx')}`}
                                 </Typography>
                             </ListItemText>
                             {(!visible || showMenu) && (
