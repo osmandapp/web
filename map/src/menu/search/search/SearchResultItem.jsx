@@ -37,7 +37,7 @@ export function preparedType(type, t) {
 
 export function getPropsFromSearchResultItem(props, t) {
     let type, name;
-    if (props[CATEGORY_TYPE] === searchTypeMap.POI) {
+    if (props[CATEGORY_TYPE] === searchTypeMap.POI || !props[CATEGORY_TYPE]) {
         name = props[POI_NAME];
         type = props[POI_SUBTYPE] ?? props[POI_TYPE];
         if (name === '') {
