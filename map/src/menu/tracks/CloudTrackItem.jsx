@@ -37,6 +37,8 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
 
     const [, , mobile] = useWindowSize();
 
+    const { t } = useTranslation();
+
     const [fileStorage, setFileStorage] = useState(null);
 
     const [loadingTrack, setLoadingTrack] = useState(false);
@@ -49,6 +51,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const [checkedSwitch, setCheckedSwitch] = useState(false);
 
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
+    const updateDetails = file?.details?.update;
 
     const dist = getDist(file);
     const time = getTime(file);
@@ -149,9 +152,9 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                                 >
                                     {share && <FileShareIcon />}
                                     {dist && `${dist} km`}
-                                    {' · '}
-                                    {time && `${time}`}
+                                    {time && ` · ${time}`}
                                     {wptPoints && ` · ${wptPoints}`}
+                                    {updateDetails && ` · ${t('shared_string_loading')}...`}
                                 </Typography>
                             </ListItemText>
                             {(!visible || showMenu) && (

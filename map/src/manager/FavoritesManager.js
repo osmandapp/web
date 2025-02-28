@@ -24,6 +24,10 @@ const FAV_FILE_PREFIX = 'favorites-';
 export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 export const SUBFOLDER_PLACEHOLDER = '_%_';
+
+export const HIDDEN_TRUE = 'true';
+export const HIDDEN_FALSE = 'false';
+
 const colors = [
     '#10c0f0',
     '#1010a0',
@@ -189,21 +193,24 @@ function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = n
 function createGroup(file) {
     file.preparedName = getGroupNameFromFile(file.name);
     file.folder = prepareFavGroupName(file.preparedName);
-    let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
-    const groupName = file.folder === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : file.folder;
     return {
         id: getUniqFileId(file),
         sharedWithMe: file.sharedWithMe,
         name: file.folder,
         updatetimems: file.updatetimems,
         clienttimems: file.clienttimems,
-        file: file,
-        pointsGroups: pointsGroups,
-        hidden:
-            pointsGroups[groupName].hidden !== undefined
-                ? pointsGroups[groupName].hidden
-                : isHidden(pointsGroups, groupName),
+        file,
     };
+}
+
+function getHidden(pointsGroups, groupName) {
+    if (pointsGroups && pointsGroups[groupName]) {
+        if (pointsGroups[groupName].ext.hidden !== undefined) {
+            return pointsGroups[groupName].ext.hidden;
+        }
+        return isHidden(pointsGroups, groupName);
+    }
+    return false;
 }
 
 export function getGroupNameForFile(groupName) {
@@ -369,8 +376,10 @@ export async function addFavGroupsToMap(favGroups) {
 
 function addExistFavGroup(obj, g, favGroups) {
     favGroups.mapObjs[g.id] = obj;
-    let ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
-    favGroups.groups[ind].pointsGroups = favGroups.mapObjs[g.id].pointsGroups;
+
+    const ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
+    favGroups.groups[ind].pointsGroups = obj.pointsGroups;
+    favGroups.groups[ind].hidden = getHidden(obj.pointsGroups, g.name) ? HIDDEN_TRUE : HIDDEN_FALSE;
 
     return favGroups;
 }
@@ -387,36 +396,37 @@ export function getFavGroupKey(g) {
  * @returns {Object} - The updated favorite groups with the new group object.
  */
 async function createFavGroupObj(g, favGroups) {
-    let url = createFavGroupUrl(g);
-
     if (!favGroups.mapObjs) {
         favGroups.mapObjs = {};
     }
-
     // Create a new entry in the mapObjs property with details from the provided group data.
     favGroups.mapObjs[g.id] = {
-        url: url,
+        url: createFavGroupUrl(g),
         clienttimems: g.file.clienttimems,
         updatetimems: g.file.updatetimems,
         name: g.file.name,
-        hidden: g.hidden,
     };
     // If file data is available, process and update the favorite groups.
-    let resData = await Utils.getFileData(favGroups.mapObjs[g.id]);
-    if (resData) {
-        const favoriteFile = new File([resData], g.file.name, {
+    const gpxFile = await Utils.getFileData(favGroups.mapObjs[g.id]);
+    if (gpxFile) {
+        const favoriteFile = new File([gpxFile], g.file.name, {
             type: 'text/plain',
         });
-        let ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
-        let favorites = await TracksManager.getTrackData(favoriteFile);
-        if (favorites) {
-            favorites.name = g.file.name;
-            // Update pointsGroups in favGroups.groups for the current group.
-            favGroups.groups[ind].pointsGroups = favorites.pointsGroups;
+        const ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
+        const favData = await TracksManager.getTrackData(favoriteFile);
+        if (favData) {
+            const pointsGroups = favData.pointsGroups;
+            favData.name = g.file.name;
+            favGroups.groups[ind].pointsGroups = pointsGroups;
+
+            Object.keys(favData).forEach((t) => {
+                favGroups.mapObjs[g.id][`${t}`] = favData[t];
+            });
+
+            const groupName =
+                g.file.folder === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : g.file.folder;
+            favGroups.groups[ind].hidden = getHidden(pointsGroups, groupName) ? HIDDEN_TRUE : HIDDEN_FALSE;
         }
-        Object.keys(favorites).forEach((t) => {
-            favGroups.mapObjs[g.id][`${t}`] = favorites[t];
-        });
     }
     return favGroups;
 }
@@ -428,7 +438,7 @@ function createFavGroupUrl(group) {
     )}&name=${encodeURIComponent(group.file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
 }
 
-export async function addOpenedFavoriteGroups(files, setFavorites, setUpdateMarkers, setProcessingGroups) {
+export async function addOpenedFavoriteGroups(files, setUpdateMarkers, setProcessingGroups) {
     let newFavoritesFiles = {
         groups: [],
     };
