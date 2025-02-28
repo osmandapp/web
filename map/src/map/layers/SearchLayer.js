@@ -191,7 +191,7 @@ export default function SearchLayer() {
                     removeCategory(category);
                 }
             } else {
-                if (ctx.searchResult?.features && ctx.searchQuery.type !== SEARCH_TYPE_CATEGORY) {
+                if (ctx.searchResult?.features && ctx.searchQuery?.type !== SEARCH_TYPE_CATEGORY) {
                     const layers = await createSearchLayer({
                         objList: ctx.searchResult?.features,
                     });
