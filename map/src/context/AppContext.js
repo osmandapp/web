@@ -4,7 +4,7 @@ import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import TracksManager, { getGpxFiles, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
 import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
-import { apiGet } from '../util/HttpApi';
+import { apiGet, apiPost } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
@@ -68,7 +68,8 @@ async function loadListFiles(
     setUpdateMarkers,
     setProcessingGroups,
     setVisibleTracks,
-    setShareWithMeFiles
+    setShareWithMeFiles,
+    setUpdateFiles
 ) {
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {
@@ -84,13 +85,24 @@ async function loadListFiles(
                         res.uniqueFiles.forEach((f) => {
                             res.totalUniqueZipSize += f.zipSize;
                         });
+                        const filesToUpdate = res.uniqueFiles
+                            .filter((f) => f.details && f.details.update)
+                            .map((f) => ({
+                                name: f.name,
+                                type: f.type,
+                                isError: f.error,
+                                time: f.details.updatetime,
+                            }));
+                        if (filesToUpdate.length > 0) {
+                            setUpdateFiles(filesToUpdate);
+                        }
                         setListFiles(res);
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
                         await Promise.all([
                             addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles, setVisibleTracks),
-                            addOpenedFavoriteGroups(allFavorites, setFavorites, setUpdateMarkers, setProcessingGroups),
+                            addOpenedFavoriteGroups(allFavorites, setUpdateMarkers, setProcessingGroups),
                         ]);
                     }
                 });
@@ -315,6 +327,7 @@ export const AppContextProvider = (props) => {
     const [loginError, setLoginError] = useState(null);
     // files
     const [listFiles, setListFiles] = useState({});
+    const [updateFiles, setUpdateFiles] = useState(null);
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
     // search
     const searchTooltipRef = useRef(null);
@@ -545,6 +558,38 @@ export const AppContextProvider = (props) => {
     }, [loginUser]);
 
     useEffect(() => {
+        const update = async () => {
+            if (updateFiles && !isEmpty(listFiles)) {
+                const response = await apiPost(
+                    `${process.env.REACT_APP_USER_API_SITE}/mapapi/refresh-list-files`,
+                    updateFiles
+                );
+
+                if (response.ok) {
+                    const updatedData = await response.json();
+                    setListFiles((prev) => {
+                        if (!prev.uniqueFiles) return prev;
+
+                        const updatedUniqueFiles = prev.uniqueFiles.map((file) => {
+                            const updatedFile = updatedData.find((f) => f.id === file.id);
+                            return updatedFile ? { ...file, details: updatedFile.details } : file;
+                        });
+
+                        return {
+                            ...prev,
+                            uniqueFiles: updatedUniqueFiles,
+                        };
+                    });
+                }
+            }
+        };
+
+        update().then(() => {
+            setUpdateFiles(null);
+        });
+    }, [updateFiles]);
+
+    useEffect(() => {
         if (loginUser !== INIT_LOGIN_STATE) {
             setGpxLoading(true);
             loadListFiles(
@@ -557,7 +602,8 @@ export const AppContextProvider = (props) => {
                 setUpdateMarkers,
                 setProcessingGroups,
                 setVisibleTracks,
-                setShareWithMeFiles
+                setShareWithMeFiles,
+                setUpdateFiles
             ).then(() => {
                 setGpxLoading(false);
             });
