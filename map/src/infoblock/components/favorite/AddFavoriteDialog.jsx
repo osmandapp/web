@@ -204,13 +204,17 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
         if (selectedGroup) {
             let ext = null;
             if (selectedPoi) {
-                const filteredOptions = Object.keys(selectedPoi.poi.options)
-                    .filter((opt) => !excludeTags(opt))
-                    .reduce((obj, key) => {
-                        obj[key] = selectedPoi.poi.options[key];
-                        return obj;
-                    }, {});
-                ext = { extensions: filteredOptions };
+                const poiData = selectedPoi.poi.options ?? selectedPoi.poi.properties;
+                if (poiData) {
+                    const filteredOptions = Object.entries(poiData)
+                        .filter(([key]) => !excludeTags(key))
+                        .reduce((obj, [key, value]) => {
+                            obj[key] = value;
+                            return obj;
+                        }, {});
+
+                    ext = { extensions: filteredOptions };
+                }
             }
             favorite = {
                 name: favoriteName,
