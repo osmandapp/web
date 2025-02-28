@@ -359,7 +359,7 @@ The **Alert widget** combines several types of alerts that are displayed in the 
 
 - You have the ability to turn alerts such as *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* and *<Translate android="true" ids="show_tunnels"/>* on and off. Other alerts are active by default if the widget is enabled.  
 
-- For the *Speed Limit* alert type, you can adjust the [*<Translate android="true" ids="speed_limit_exceed"/>*](../navigation/guidance/voice-navigation.md#speed-limit) value in the voice prompt settings to better match the vehicle speed and GPS speed.  
+- For the *Speed Limit* alert type, you can adjust the <Translate android="true" ids="speed_limit_exceed"/>](../navigation/guidance/voice-navigation.md#speed-limit) value in the voice prompt settings to better match the vehicle speed and GPS speed.  
 
 - Most alerts are displayed on the screen and announced by voice prompt for 15 seconds, as well as the trigger time for passing a Waypoint, Favorite Point, or POI. Read more [here](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
@@ -390,7 +390,7 @@ Alert types have a different visual design, which depends on the **<Translate an
 
 ## Street Name
 
-The Street name widget shows **the current street name** with a straight arrow, or **the next street name** with the maneuver to be performed. The street name usually consists of a highway shield, a [name](https://wiki.openstreetmap.org/wiki/Key:name), a [ref](https://wiki.openstreetmap.org/wiki/Key:ref), an [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), and a [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), similar to the voice prompt [*Turn in X m*](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+The Street name widget shows **the current street name** with a straight arrow, or **the next street name** with the maneuver to be performed. The street name usually consists of a highway shield, a [name](https://wiki.openstreetmap.org/wiki/Key:name), a [ref](https://wiki.openstreetmap.org/wiki/Key:ref), an [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), and a [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), similar to the voice prompt [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 - When driving along a street or highway, the widget shows the name or designation of the current street (road) with a blue arrow.
 

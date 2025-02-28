@@ -222,13 +222,13 @@ Requires [OSM Editing plugin](../plugins/osm-editing.md#how-to-report-a-mistake)
 
 Waypoints, POIs, Favorite points, and Audio/video notes all refer to the concept of saving locations and routes in [GPX (GPS Exchange Format)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). You can use [the same tags](../map/tracks/track-context-menu.md#display-custom-gpx-tags) to describe and edit them.  
 
-[*Waypoints*](#track-waypoints) are individual points on a map or route. They can be used to mark certain places that may be important for navigating or recording your travels. For example, you can create a waypoint on the map to indicate an important intersection or change of direction.  
+[Waypoints](#track-waypoints) are individual points on a map or route. They can be used to mark certain places that may be important for navigating or recording your travels. For example, you can create a waypoint on the map to indicate an important intersection or change of direction.  
 
-[*Points of interest(POIs)*](#points-of-interest-pois) are places of special interest to users. These can be landmarks, restaurants, hotels, gas stations, and other places of interest that you may want to note or visit.  
+[Points of interest(POIs)](#points-of-interest-pois) are places of special interest to users. These can be landmarks, restaurants, hotels, gas stations, and other places of interest that you may want to note or visit.  
 
-[*Favorite points*](#favorites) are places users find particularly important or interesting and save to their list of favorite places. Places can include any location you may want to find and return to later.
+[Favorite points](#favorites) are places users find particularly important or interesting and save to their list of favorite places. Places can include any location you may want to find and return to later.
 
-[*Audio/video notes*](#-audio--video-points-android). In GPX format, you can save audio and video recordings as waypoints. This allows you to associate media files to specific locations on the map or route.  
+[Audio/video notes](#-audio--video-points-android). In GPX format, you can save audio and video recordings as waypoints. This allows you to associate media files to specific locations on the map or route.  
 
 All of these point types can be saved in GPX format to provide you with location information and help with navigation and route planning. They serve different purposes, but the general idea is to store and transmit geographic information so you can use it in their navigation tasks.
 

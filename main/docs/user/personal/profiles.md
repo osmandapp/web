@@ -411,7 +411,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-The **Profile appearance** settings allow you to customize your profile's name and visual representation. You can also modify the appearance of [**My location**](#my-location-appearance) here. While the *profile name* must be unique, *icons* and *colors* can be the same across different profiles. These changes will be applied across various parts of the application, such as the [*Route preparation*](../navigation/setup/route-navigation.md) menu.
+The **Profile appearance** settings allow you to customize your profile's name and visual representation. You can also modify the appearance of [**My location**](#my-location-appearance) here. While the *profile name* must be unique, *icons* and *colors* can be the same across different profiles. These changes will be applied across various parts of the application, such as the [Route preparation](../navigation/setup/route-navigation.md) menu.
 
 
 ### My Location Appearance
@@ -476,14 +476,14 @@ You can control how the **My Location** icon behaves using different [map orient
 <InfoAndroidOnly />
 
 :::note For unused plugins
-To hide all control parameters of unused [*plugins*](../plugins/index.md#configure-a-plugin), disable them.
+To hide all control parameters of unused [plugins](../plugins/index.md#configure-a-plugin), disable them.
 :::
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
 
 ![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
 
-With the UI customization feature, you can adjust the number of items in actions such as [*<Translate android="true" ids="shared_string_drawer"/>*](../start-with/main-menu.md#customize-advanced-use-of-android), [*<Translate android="true" ids="configure_map"/>*](../map/configure-map-menu.md) and [*<Translate android="true" ids="context_menu_actions"/>*](../map/map-context-menu.md). Information about the number of added items out of all possible items can be found under the title of each feature.
+With the UI customization feature, you can adjust the number of items in actions such as [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android), [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) and [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md). Information about the number of added items out of all possible items can be found under the title of each feature.
 
 
 ### Drawer

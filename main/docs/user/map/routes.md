@@ -97,14 +97,14 @@ To enable climbing locations on the map, go to: *Menu → Configure Map → Rout
 
 Some road segments could be part of many routes, but they could be individually colored to represent the difficulty of the segment in mountainous areas. Currently, OsmAnd supports Italian and Swiss classifications, and each has a specific list of equipment requirements to access this segment.  
 
-1. [*SAC scale*](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
-2. [*CAI scale*](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
+1. [SAC scale](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
+2. [CAI scale](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 ![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)
 
 ### Ski routes
 
-Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typically, these routes could be used with [*Winter and Ski*](../map/vector-maps.md#winter-and-ski) map style with all visible [Pistes](https://wiki.openstreetmap.org/wiki/Pistes).  
+Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typically, these routes could be used with [Winter and Ski](../map/vector-maps.md#winter-and-ski) map style with all visible [Pistes](https://wiki.openstreetmap.org/wiki/Pistes).  
 
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
@@ -218,9 +218,9 @@ The following information will be visible in the context menu:
 
 </Tabs>  
 
-[*Hiking, Cycle, Travel, and other routes*](#type-of-routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [track context menu](../map/tracks/track-context-menu.md) of the route.  
+[Hiking, Cycle, Travel, and other routes](#type-of-routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [track context menu](../map/tracks/track-context-menu.md) of the route.  
 
-To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#track-actions) button panel where you will have access to track actions such as changing [*Appearance*](./tracks/appearance.md), [*Navigation*](../navigation/setup/route-navigation.md), or editing [*Plan a route*](../plan-route/create-route.md).
+To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#track-actions) button panel where you will have access to track actions such as changing [Appearance](./tracks/appearance.md), [Navigation](../navigation/setup/route-navigation.md), or editing [Plan a route](../plan-route/create-route.md).
 
 
 ### Quick Actions

@@ -57,12 +57,12 @@ When you open the application, a list of categories is displayed. For easy navig
 
 *Android Auto* displays the OsmAnd interface adapted to the vehicle multimedia system screen. Interaction with the map is limited to buttons such as:  
 
-- [*OsmAnd menu*](#destination-points). Contains a list of available options for assigning a route endpoint or a free ride.
-- [*Settings*](#voice-prompts). This button is responsible for access to turn *voice prompts* on or off when you are navigating the selected route.
-- [*Search*](#search). Tapping the button opens a screen with access to the search functions.
-- [*My Location*](../widgets/map-buttons.md#my-location-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
-- [*Zoom*](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map.
-- [*Compass*](../widgets/map-buttons.md#compass). Shows which of the four available map orientation modes on your device's screen is selected.
+- [OsmAnd menu](#destination-points). Contains a list of available options for assigning a route endpoint or a free ride.
+- [Settings](#voice-prompts). This button is responsible for access to turn *voice prompts* on or off when you are navigating the selected route.
+- [Search](#search). Tapping the button opens a screen with access to the search functions.
+- [My Location](../widgets/map-buttons.md#my-location-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
+- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map.
+- [Compass](../widgets/map-buttons.md#compass). Shows which of the four available map orientation modes on your device's screen is selected.
 
 
 ## Required Setup Parameters
@@ -120,7 +120,7 @@ You can select previously preset and added [POIs](../map/point-layers-on-map.md#
 4. Choose **Free ride** to take a journey without a specified endpoint.
 
 :::note
-While driving, selected points can be [*announced*](#voice-prompts) when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
+While driving, selected points can be [announced](#voice-prompts) when you approach or pass them. See the [Voice prompts](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
 :::  
 
 
@@ -128,7 +128,7 @@ While driving, selected points can be [*announced*](#voice-prompts) when you app
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)  
 
-In the History category, you can select a destination from a list of endpoints. They are sorted by most recent use, starting with the newest. This can be convenient for quick access to frequently used routes. To learn how to use or delete a destination, read the [*Search History*](../search/search-history.md) article.  
+In the History category, you can select a destination from a list of endpoints. They are sorted by most recent use, starting with the newest. This can be convenient for quick access to frequently used routes. To learn how to use or delete a destination, read the [Search History](../search/search-history.md) article.  
 
 
 ### POI Categories
@@ -160,7 +160,7 @@ To build a route to a POI in *Android Auto*, follow these steps:
     </tr>
 </table>  
 
-*Favorites* is one of the functions of OsmAnd that allows you to make a kind of bookmarks (notes) on the map. While using *Android Auto*, you cannot add or modify Favorites, only use existing ones. The list of [*Favorites*](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, add the necessary places in the favorites before connecting the device to your vehicle multimedia system.  
+*Favorites* is one of the functions of OsmAnd that allows you to make a kind of bookmarks (notes) on the map. While using *Android Auto*, you cannot add or modify Favorites, only use existing ones. The list of [Favorites](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, add the necessary places in the favorites before connecting the device to your vehicle multimedia system.  
 
 To create a route to a favorite point in *Android Auto*, follow the steps below:  
 
@@ -172,18 +172,18 @@ To create a route to a favorite point in *Android Auto*, follow the steps below:
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_markers_2.png)
 
-To define your final destination as a Map Marker, you first need to create the required number of markers in the OsmAnd app on your device before connecting it to the system. Markers need to be available in the *Menu → Map marker* list. This is described in more detail in the [*Markers*](../personal/markers.md) article.
+To define your final destination as a Map Marker, you first need to create the required number of markers in the OsmAnd app on your device before connecting it to the system. Markers need to be available in the *Menu → Map marker* list. This is described in more detail in the [Markers](../personal/markers.md) article.
 
 
 ### Tracks
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_tracks.png)  
 
-To build a route to a destination, you can select an existing track available in the OsmAnd app. The track can be [*downloaded*](../personal/tracks/manage-tracks.md#import) in advance, used as [*recorded*](../plugins/trip-recording.md) or created in [*Plan a route*](../plan-route/create-route.md).  
+To build a route to a destination, you can select an existing track available in the OsmAnd app. The track can be [downloaded](../personal/tracks/manage-tracks.md#import) in advance, used as [recorded](../plugins/trip-recording.md) or created in [Plan a route](../plan-route/create-route.md).  
 
 From the list of tracks in the *Menu → My Places → [Tracks](../personal/tracks/manage-tracks.md)*, select the required one before connecting to the vehicle multimedia system, and the route will either build up to the start of the track or display the current direction along the track.
 
-Tracks can also be selected directly on the vehicle screen in *Android Auto*. They are organized in folders you have created, and for easy and quick access to recently opened tracks, there is a special folder [*Last modified*](#folder-last-modified).  
+Tracks can also be selected directly on the vehicle screen in *Android Auto*. They are organized in folders you have created, and for easy and quick access to recently opened tracks, there is a special folder [Last modified](#folder-last-modified).  
 
 
 ### Search
@@ -240,7 +240,7 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 
 - The **Speedometer widget** is [*profile dependent*](../personal/profiles.md), so if you change the settings for one profile, they will not be applied to another.
 - There is no option to customize the display of the **Speedometer widget** directly in *Android Auto*, you need to configure it in OsmAnd app before starting navigation and connecting your device to the vehicle.
-- For more information on how to add and configure the *Speedometer* widget to the display, please read the [*Informational widgets article*](../widgets/info-widgets.md#speedometer).
+- For more information on how to add and configure the *Speedometer* widget to the display, please read the [Informational widgets article](../widgets/info-widgets.md#speedometer).
 
 
 ### Map Appearance (3D)

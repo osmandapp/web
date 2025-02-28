@@ -319,7 +319,7 @@ If [Notification](#recording-settings) is enabled in the plugin settings, trip r
 
 This behavior is required by Android for any foreground service, like trip recording, to remain visible to you.
 
-- If the notification is removed, Android will automatically stop the recording. You can use the [*Prevent standalone logging*](#recording-settings) setting.
+- If the notification is removed, Android will automatically stop the recording. You can use the [Prevent standalone logging](#recording-settings) setting.
 - The **Notification** setting in OsmAnd affects whether the notification bar shows a shortcut to start a recording when no recording is active. It does **not** control the visibility of the notification during an active recording.
 
 **Additional *Android* options**.

@@ -85,9 +85,9 @@ Versions of OsmAnd up to 3.8 offer to download a world map so you can view it on
 
 The **Maps & Resources** *Main Menu* section of the OsmAnd app provides access to manage maps and other important data.
 
-- The [*Download*](#downloads) maps tab allows you to download maps for offline use, ensuring their availability without the internet.  
-- In the [*Local*](#local) maps tab, you can find and manage detailed information about maps and places, including favorites, tracks, OSM notes, and other items you have on your device.  
-- The [*Updates*](#updates) tab allows users to get information about available updates to maps and other resources, ensuring that the data is up-to-date and accurate.
+- The [Download](#downloads) maps tab allows you to download maps for offline use, ensuring their availability without the internet.  
+- In the [Local](#local) maps tab, you can find and manage detailed information about maps and places, including favorites, tracks, OSM notes, and other items you have on your device.  
+- The [Updates](#updates) tab allows users to get information about available updates to maps and other resources, ensuring that the data is up-to-date and accurate.
 
 ***General actions you can do in Maps & Resources***:
 

@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-**Search** is a useful tool for quickly finding locations. You can use search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [*Address*](#search-address) allows you to enter the address you are looking for to get an exact location. [*Coordinates*](#search-coordinates)  search works with geographic coordinates such as latitude and longitude. With [*POI*](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. And search [*History*](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find places of interest nearby.
+**Search** is a useful tool for quickly finding locations. You can use search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you are looking for to get an exact location. [Coordinates](#search-coordinates)  search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. And search [History](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find places of interest nearby.
 
 
 ## How to Use
@@ -41,7 +41,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 You need to follow one of the steps to start your search:
 
-- Tap the [*Search button*](../widgets/map-buttons.md#search) on the map application screen and enter your query.
+- Tap the [Search button](../widgets/map-buttons.md#search) on the map application screen and enter your query.
 - Go to the main *Menu → Search → enter your search query*.
 - When preparing to start a route, tap [*Navigation → Set destination → Search field*](../navigation/setup/route-navigation.md#set-target-point) *→ search query*.  
 

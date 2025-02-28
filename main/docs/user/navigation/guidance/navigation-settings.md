@@ -73,7 +73,7 @@ The default *Browse map* profile has no navigation settings.
 Navigation is an important part of a trip, and choosing *the right type* of navigation can make your journey much easier. The type of navigation you choose can depend on how you travel and whether you have an Internet connection.  
 
 - **Online navigation**
-    It mainly uses a special routing system or website that allows the OsmAnd app to plot a route based on current information and other factors. You can read about choosing the best route online in the article [*Online routing*](../routing/online-routing.md). This navigation type is only available for the *Android version* of the app.  
+    It mainly uses a special routing system or website that allows the OsmAnd app to plot a route based on current information and other factors. You can read about choosing the best route online in the article [Online routing](../routing/online-routing.md). This navigation type is only available for the *Android version* of the app.  
 
 - **Offline navigation**
 It does not require internet access and offers a wider selection of [navigation types](../routing/osmand-routing.md#routing-types) that can be used to calculate a route. Among them are *bicycle, boat, car, on foot, ski*, and *straight line*. There are currently 13 basic types of routing, as well as an external [BRouter](../routing/brouter.md) routing type that provides additional routing opportunities.  
@@ -157,7 +157,7 @@ Go to: *iOS* *Menu → Settings → app profile → Navigation settings → Rout
 
 </Tabs>  
 
-The parameters in the **Development** section are mainly for advanced users and are only available when the [*OsmAnd development plugin*](../../plugins/development.md) is enabled.  
+The parameters in the **Development** section are mainly for advanced users and are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.  
 
 | Parameter | Description | Note |
 |:------------|:---------------|
@@ -235,15 +235,15 @@ The **Screen alert** navigation setting enable the [**Alerts Widget**](../../wid
 - When you approach one of the supported obstacles on the road, notifications appear in the lower-left corner of the map.
 - If you configure the [*voice and text prompts*](../../navigation/guidance/voice-navigation.md) available in the OsmAnd app, you'll have a more comfortable and safer trip.
 - The appearance and timing of the prompts depend on your speed settings. You can find them [here](../../../technical/algorithms/voice-prompt-triggering.md).  
-- The behavior of *Screen Alerts* is also affected by the [*Show points along the route*](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route) setting.
+- The behavior of *Screen Alerts* is also affected by the [Show points along the route](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route) setting.
 
 You can ***select which alerts*** you want to see on the app screen while navigating:
 
-- **Speed limit** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Speed_limits)). In the Screen alerts setting, the *Speed limit* is only displayed on the screen with *Traffic warnings* turned on. If you want to see speed limits during navigation without other warnings, use the [widget](../../widgets/nav-widgets.md#speed-limit).
-- **Traffic warnings** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Additional information can be found in the article [Map screen during navigation](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
-- **Pedestrian crosswalks** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
-- **Speed cameras** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). For more information about the Speed camera setting in OsmAnd, read [Alert Types](../../widgets/nav-widgets.md#alert-types) and the article *Global settings*, section [Legal](../../personal/global-settings.md#legal).
-- **Tunnels** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
+- **Speed limit** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Speed_limits)). In the Screen alerts setting, the *Speed limit* is only displayed on the screen with *Traffic warnings* turned on. If you want to see speed limits during navigation without other warnings, use the [widget](../../widgets/nav-widgets.md#speed-limit).
+- **Traffic warnings** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Additional information can be found in the article [Map screen during navigation](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
+- **Pedestrian crosswalks** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
+- **Speed cameras** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). For more information about the Speed camera setting in OsmAnd, read [Alert Types](../../widgets/nav-widgets.md#alert-types) and the article *Global settings*, section [Legal](../../personal/global-settings.md#legal).
+- **Tunnels** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
 
 :::note
 The types of warnings have a different visual appearance, which depends on the travel region. OsmAnd does not aim to present 100% identical road signs but points out some similarities.  
@@ -296,7 +296,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>  
 
-With the **Customize Route Line** setting, you can choose the appearance of the route line that will be visible on the map during navigation. You can select the *color*, the *width of the line*, and the display of the *turn arrows* on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Map screen during navigation* in the section [*Route line appearance*](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
+With the **Customize Route Line** setting, you can choose the appearance of the route line that will be visible on the map during navigation. You can select the *color*, the *width of the line*, and the display of the *turn arrows* on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Map screen during navigation* in the section [Route line appearance](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
 
 
 ## Vehicle Parameters

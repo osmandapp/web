@@ -127,7 +127,7 @@ In this menu, you can change the **visibility** and [settings](#weather-settings
 
 </Tabs>  
 
-It is important to decide in which units of measurement it is convenient for you to see the [*Weather data*](#weather-layers) on the map and in the [*Weather widgets*](#weather-widgets) section of the screen. You can choose appropriate units of measurement for each parameter or use default values (*iOS only*). In the iOS version of the OsmAnd app, you can also enable the offline forecast option to avoid using mobile traffic while traveling.  
+It is important to decide in which units of measurement it is convenient for you to see the [Weather data](#weather-layers) on the map and in the [Weather widgets](#weather-widgets) section of the screen. You can choose appropriate units of measurement for each parameter or use default values (*iOS only*). In the iOS version of the OsmAnd app, you can also enable the offline forecast option to avoid using mobile traffic while traveling.  
 
 :::note
 In the iOS version of OsmAnd, you can change measurement units and transparency level in the menu that opens after a long tap of the icon of the required map layer.  

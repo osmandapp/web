@@ -95,7 +95,7 @@ In case your track was created in OsmAnd or any other tracking app (so its point
 
 - **Show / hide** buttons. Changes the visibility of the track on the map.
 - [Appearance](./appearance.md). Customize the appearance of your track.
-- **Edit track** (*Android*). Opens the track in [*Plan a route tool*](../../plan-route/create-route.md).
+- **Edit track** (*Android*). Opens the track in [Plan a route tool](../../plan-route/create-route.md).
 - **Export** (*iOS*). Allows you [to export a track](../../personal/tracks/manage-tracks.md#export).
 - **Directions**. Opens the track in *[Navigation](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.
 
@@ -344,7 +344,7 @@ The **Altitude** graph displays metrics such as:
 If there is *no elevation information* on the route, you can add it in the following ways:
 
 - *Calculate elevation button → [Use nearby roads](../../plan-route/create-route.md#use-nearby-roads)*. Utilizes an offline map to find nearby roads and elevation data. It allows you to customize the geometry of the track.
-- [*Use Terrain maps*](#calculate-missing-elevation). Utilizes terrain maps to obtain elevation data. The track geometry remains unchanged.
+- [Use Terrain maps](#calculate-missing-elevation). Utilizes terrain maps to obtain elevation data. The track geometry remains unchanged.
 
 
 ### Calculate Missing Elevation
@@ -362,7 +362,7 @@ This feature allows you to calculate the elevation profile for GPX track offline
 
     ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. If you are creating a route with the [*Plan a route*](../../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
+3. If you are creating a route with the [Plan a route](../../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
     - Tap *Get elevation data*, then select *Use Terrain maps*.
     - After the calculation, you will get your route's complete Altitude/Slope graph based on terrain data.  
 
@@ -400,10 +400,10 @@ In this *Points* tab:
 Waypoints can be added to the currently recorded track or any track from your track collection [*My Places → Tracks list*](../../personal/tracks/manage-tracks.md):
 
 - Using the [map context menu](../../map/map-context-menu.md#-add--edit--track-waypoint). Waypoints are automatically displayed if the selected track is enabled on the map. To create a waypoint, use a [long tap](../../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. You can set information about the waypoint in the opened [map context menu](../../map/map-context-menu.md#-add--edit--track-waypoint).
-- Using [*Add Waypoint*](#points--waypoints) button of the track context menu.
-- You can also add a waypoint as a Quick action. Follow the [*Add track waypoint*](../../widgets/quick-action.md#create-items) to configure.
+- Using [Add Waypoint](#points--waypoints) button of the track context menu.
+- You can also add a waypoint as a Quick action. Follow the [Add track waypoint](../../widgets/quick-action.md#create-items) to configure.
 
-When you tap the *Add Waypoint* button, the Creation point screen opens (this screen is familiar with [*Favorite Context menu*](../../personal/favorites.md#favorite-context-menu)).
+When you tap the *Add Waypoint* button, the Creation point screen opens (this screen is familiar with [Favorite Context menu](../../personal/favorites.md#favorite-context-menu)).
 
 <Tabs groupId="operating-systems">
 

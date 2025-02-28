@@ -305,7 +305,7 @@ Widgets in the right and left panels can be grouped into **Pages**. To do this, 
 The **widget context menu** allows you to manage and configure widgets directly from the map screen, providing *a quick way to organize panels*. Access it by ***long tapping*** on any widget to customize the layout of widgets without leaving the map.
 
 - **Managing** widgets on **Top and Bottom** panels.  
-    *Add widget to the Right* / *Add widget to the Left*. Select a position for the new widget relative to an existing one. After choosing from the [*Available widgets*](#widgets-for-all-panels) list, the widget will appear in the specified location.
+    *Add widget to the Right* / *Add widget to the Left*. Select a position for the new widget relative to an existing one. After choosing from the [Available widgets](#widgets-for-all-panels) list, the widget will appear in the specified location.
 
 - **Managing** widgets on **Left and Right** panels.  
     *Add widget Above* / *Add widget Below*. Select whether to position the new widget above or below the current one. Tap the required widget in the list to add it to the selected position.
@@ -456,7 +456,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
 - [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
-- [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.
+- [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [Speed Limit Tolerance](../navigation/guidance/voice-navigation.md#speed-limit) setting.
 
 
 ### Display Position (Location position on screen)

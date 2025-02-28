@@ -142,7 +142,7 @@ Street search is performed in the locality where you are, or where you searched 
 
 - To use this type of search, tap **Search Street** (*Android*) or **Select Street** (*iOS*).
 - In the search field next to the city name, you can start typing the street name and the list will refine, giving you the most appropriate results.
-- In other items, the street search is the same as in [*Select City*](#select-city).
+- In other items, the street search is the same as in [Select City](#select-city).
 
 :::note Key & Value
 *Search streets* by [**addr:street=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)  

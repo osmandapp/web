@@ -587,7 +587,7 @@ Almost every created object by user is moveable i.e. Marker, Favorite, Created P
 
 You can start a route planning from a selected point via object context menu.
 
-Read more about [*Plan a route* tool](../plan-route/create-route.md).
+Read more about [Plan a route](../plan-route/create-route.md) tool.
 
 
 ### Update / Download Online Maps

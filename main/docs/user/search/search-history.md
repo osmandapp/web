@@ -97,7 +97,7 @@ The following **types of objects** get into the Search History list:
 
 ## Actions
 
-In the Search History tool, you can [delete](#delete) unnecessary queries, all at once or by individual items. You can use History [export](#export-and-share). The Android app provides an additional action of [sharing](#share-android) search items as a [*GPX*](../../technical/osmand-file-formats/osmand-gpx.md) file.  
+In the Search History tool, you can [delete](#delete) unnecessary queries, all at once or by individual items. You can use History [export](#export-and-share). The Android app provides an additional action of [sharing](#share-android) search items as a [GPX](../../technical/osmand-file-formats/osmand-gpx.md) file.  
 
 You can **disable or enable** the display of the entire search history. In this case, the queries are not deleted from the device. In Android, the switch is located on the main screen of the tool on the [History tab](#overview). In iOS, it is located in *Menu → Settings → OsmAnd Settings → History → Search History*.
 
@@ -175,7 +175,7 @@ Exporting items or the entire search history can be useful in the following case
 - *Backup*. You can back up your search history to save the information before deleting it and restoring it if necessary.
 - *Transferring to another device*. When you change devices, you can use the export function or the Cloud to transfer your search history to a new device without having to search and enter data again.
 - *Analyze and process data*.  You can export your search history for data analysis or use it in other applications.
-- [*Share*](#share-android) search history with other OsmAnd users.
+- [Share](#share-android) search history with other OsmAnd users.
 
 
 #### Share (Android)

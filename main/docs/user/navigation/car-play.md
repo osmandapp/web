@@ -54,8 +54,8 @@ The OsmAnd app for *CarPlay* allows you to adjust the position of the current lo
 
 *CarPlay* displays the OsmAnd interface adapted to the vehicle multimedia system screen. Interaction with the map is limited to:  
 
-- [*My Location*](../widgets/map-buttons.md#my-location-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
-- [*Zoom*](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map.
+- [My Location](../widgets/map-buttons.md#my-location-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
+- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map.
 
 
 ## Required Setup Parameters
@@ -64,7 +64,7 @@ The OsmAnd app for *CarPlay* allows you to adjust the position of the current lo
 
 - First, you need to select and configure the profile to be used when connecting to *CarPlay*. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles).  
     - A convenient profile for using *CarPlay* can be *Driving*, and the type of routing can be [Car routing](../navigation/routing/car-based-routing.md).
-    - OsmAnd has a separate item [*CarPlay Profile*](#carplay-profile) for quick access to the list of profiles available for connecting to *CarPlay*.
+    - OsmAnd has a separate item [CarPlay Profile](#carplay-profile) for quick access to the list of profiles available for connecting to *CarPlay*.
 - For OsmAnd to work, [connect your iOS device](#overview) to the vehicle multimedia system. To find out more about how to connect and set up your device, you can visit the [**CarPlay**](https://support.apple.com/en-us/HT205634) website.
 - You need to have one of [OsmAnd paid or subscription](../purchases/ios#free-and-paid-features). Check it here *Menu → Settings → Purchases*.
 - Once connected, you can set a destination and start OsmAnd navigation in *CarPlay*.  
@@ -124,7 +124,7 @@ You can select previously preset and added [POIs](../map/point-layers-on-map.md#
 3. Select [Search](#search) to enter a destination from the available search categories.
 
 :::note
-While driving, selected points can be [*announced*](#voice-prompts) when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
+While driving, selected points can be [announced](#voice-prompts) when you approach or pass them. See the [Voice prompts](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
 :::
 
 
@@ -164,8 +164,8 @@ To build a route to a *POI* in *CarPlay*, follow these steps:
 
 **Favorites** is one of the features of OsmAnd that allows you to make a kind of notes on the map.
 
-- While using *CarPlay*, you cannot add or modify *Favorites*, only use existing ones.
-- The list of [*Favorites*](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*.
+- While using **CarPlay**, you cannot add or modify *Favorites*, only use existing ones.
+- The list of [Favorites](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*.
 - If you want to use them for navigation, configure everything you need before connecting the device to your vehicle multimedia system.  
 
 
@@ -175,18 +175,18 @@ To build a route to a *POI* in *CarPlay*, follow these steps:
 
 - To define your final destination as a *Map marker*, you first need to create the required number of markers in the OsmAnd app on your device before connecting it to the vehicle multimedia system.
 - *Markers* need to be available in the *Menu → Map marker* list.
-- This is described in more detail in the [*Markers*](../personal/markers.md) article.  
+- This is described in more detail in the [Markers](../personal/markers.md) article.  
 
 
 ### Tracks
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
 
-To build a route to a destination, you can select an existing track available in the OsmAnd app. The track can be [*downloaded*](../personal/tracks/manage-tracks.md#import) in advance, used as [*recorded*](../plugins/trip-recording.md) or created in [*Plan a route*](../plan-route/create-route.md).  
+To build a route to a destination, you can select an existing track available in the OsmAnd app. The track can be [downloaded](../personal/tracks/manage-tracks.md#import) in advance, used as [recorded](../plugins/trip-recording.md) or created in [Plan a route](../plan-route/create-route.md).  
 
 From the list of tracks in the *Menu → My Places → [Tracks](../personal/tracks/manage-tracks.md)*, select the required one before connecting to the vehicle multimedia system, and the route will either build up to the start of the track or display the current direction along the track.  
 
-Tracks can also be selected directly on the vehicle screen in *CarPlay*. They are organized in folders you have created, and for easy and quick access to recently opened tracks, there is a special folder [*Last modified*](#folder-last-modified).
+Tracks can also be selected directly on the vehicle screen in *CarPlay*. They are organized in folders you have created, and for easy and quick access to recently opened tracks, there is a special folder [Last modified](#folder-last-modified).
 
 
 ### Search
@@ -252,7 +252,7 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 
 - The **Speedometer widget** is [*profile dependent*](../personal/profiles.md), so if you change the settings for one profile, they will not be applied to another.
 - There is no option to set the display of *Speedometer* directly in *CarPlay*. You need to configure it for selected [navigation profile](#carplay-profile) in the OsmAnd application before starting the navigation and connecting your device to the vehicle.
-- For more information on how to add and configure the *Speedometer* widget to the display, please read the [*Informational widgets article*](../widgets/info-widgets.md#speedometer).
+- For more information on how to add and configure the *Speedometer* widget to the display, please read the [Informational widgets article](../widgets/info-widgets.md#speedometer).
 
 
 ### Map Appearance (3D)

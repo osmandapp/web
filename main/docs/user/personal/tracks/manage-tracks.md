@@ -155,8 +155,8 @@ Tap the &#x1F50D; button at the top of the device screen to open the track list 
 Available:
 
 - Search by track name.
-- [*Sort by*](#sort-by) for better search if you can't remember the title.
-- [*Filter*](./smart-folder.md#search-filter) (*Android only*) if you need the specific characteristics of the track.
+- [Sort by](#sort-by) for better search if you can't remember the title.
+- [Filter](./smart-folder.md#search-filter) (*Android only*) if you need the specific characteristics of the track.
 
 
 ### Selection Mode
@@ -241,7 +241,7 @@ OsmAnd offers an easy way to sort your tracks, helping you manage a large collec
 
 </Tabs>
 
-If you want to sort [*subfolders*](#folder-actions), go to the three-dot menu within the selected folder and select the required [options](#sort-by). The selected sorting option is applied not only to the current subfolder but also to all nesting folders and tracks at all levels. This ensures a consistent structure across your saved data.
+If you want to sort [subfolders](#folder-actions), go to the three-dot menu within the selected folder and select the required [options](#sort-by). The selected sorting option is applied not only to the current subfolder but also to all nesting folders and tracks at all levels. This ensures a consistent structure across your saved data.
 
 
 ## Track Folder
@@ -451,7 +451,7 @@ There are several ways to export one or more track files to any messenger, email
     - To [**export a single track**](#track-menu), select the menu of the track.
     - To [**multi-track export**](#track-folder), select the menu of the required folder.
 
-3. By [*Local backup file*](../../personal/import-export.md#export-to-file). Exporting GPX tracks as `.osf` files.
+3. By [Local backup file](../../personal/import-export.md#export-to-file). Exporting GPX tracks as `.osf` files.
 
 
 ## Related Articles
