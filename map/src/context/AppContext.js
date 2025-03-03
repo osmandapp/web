@@ -85,23 +85,7 @@ async function loadListFiles(
                         res.uniqueFiles.forEach((f) => {
                             res.totalUniqueZipSize += f.zipSize;
                         });
-                        const filesToUpdate = res.uniqueFiles
-                            .filter(
-                                (f) =>
-                                    f.details &&
-                                    f.details.update &&
-                                    f.type === GPX &&
-                                    f.name.toLowerCase().endsWith('.gpx')
-                            )
-                            .map((f) => ({
-                                name: f.name,
-                                type: f.type,
-                                isError: !!f.details.error,
-                                time: f.details.updatetime,
-                            }));
-                        if (filesToUpdate.length > 0) {
-                            setUpdateFiles(filesToUpdate);
-                        }
+                        getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
                         setListFiles(res);
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
@@ -114,6 +98,20 @@ async function loadListFiles(
                 });
             }
         }
+    }
+}
+
+export function getFilesForUpdateDetails(files, setUpdateFiles) {
+    const filesToUpdate = files
+        .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith('.gpx'))
+        .map((f) => ({
+            name: f.name,
+            type: f.type,
+            isError: !!f.details.error,
+            time: f.details.updatetime,
+        }));
+    if (filesToUpdate.length > 0) {
+        setUpdateFiles(filesToUpdate);
     }
 }
 
@@ -573,6 +571,7 @@ export const AppContextProvider = (props) => {
 
                 if (response.ok) {
                     const updatedData = await response.json();
+                    console.log('Updated files:', updatedData);
                     setListFiles((prev) => {
                         if (!prev.uniqueFiles) return prev;
 
@@ -825,6 +824,8 @@ export const AppContextProvider = (props) => {
                 setGraphHighlightedPoint,
                 sortedSegments,
                 setSortedSegments,
+                updateFiles,
+                setUpdateFiles,
             }}
         >
             {props.children}

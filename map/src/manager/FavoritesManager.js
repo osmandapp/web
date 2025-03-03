@@ -307,21 +307,24 @@ function getGroupSize(group) {
 
 export async function updateFavGroups(listFiles, ctx) {
     if (!_.isEmpty(listFiles)) {
-        let files = TracksManager.getFavoriteGroups(listFiles);
+        const files = TracksManager.getFavoriteGroups(listFiles);
         let newFavoritesFiles = {
             groups: [],
             mapObjs: {},
         };
         for (const favFile of files) {
-            let group = FavoritesManager.createGroup(favFile);
-            newFavoritesFiles.groups.push(group);
-            if (ctx.favorites.mapObjs[group.id]) {
-                if (favFile.updatetimems !== ctx.favorites.mapObjs[group.id].updatetimems) {
+            const id = getUniqFileId(favFile);
+            const group = FavoritesManager.createGroup(favFile);
+            if (ctx.favorites.mapObjs[id]) {
+                if (favFile.updatetimems !== ctx.favorites.mapObjs[id].updatetimems) {
+                    newFavoritesFiles.groups.push(group);
                     newFavoritesFiles = await createFavGroupObj(group, newFavoritesFiles);
                 } else {
-                    newFavoritesFiles.mapObjs[group.id] = ctx.favorites.mapObjs[group.id];
+                    newFavoritesFiles.groups.push(ctx.favorites.groups.find((g) => g.id === id));
+                    newFavoritesFiles.mapObjs[id] = ctx.favorites.mapObjs[id];
                 }
             } else {
+                newFavoritesFiles.groups.push(group);
                 newFavoritesFiles = await createFavGroupObj(group, newFavoritesFiles);
             }
         }
