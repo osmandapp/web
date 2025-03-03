@@ -156,7 +156,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                                     {time && ` · ${time}`}
                                     {wptPoints && ` · ${wptPoints}`}
                                     {updateDetails && ` · ${t('shared_string_loading')}...`}
-                                    {loadingError && ` · ${t('error_occurred_loading_gpx')}`}
+                                    {loadingError && ` · Error`}
                                 </Typography>
                             </ListItemText>
                             {(!visible || showMenu) && (

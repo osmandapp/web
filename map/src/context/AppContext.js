@@ -86,11 +86,17 @@ async function loadListFiles(
                             res.totalUniqueZipSize += f.zipSize;
                         });
                         const filesToUpdate = res.uniqueFiles
-                            .filter((f) => f.details && f.details.update)
+                            .filter(
+                                (f) =>
+                                    f.details &&
+                                    f.details.update &&
+                                    f.type === GPX &&
+                                    f.name.toLowerCase().endsWith('.gpx')
+                            )
                             .map((f) => ({
                                 name: f.name,
                                 type: f.type,
-                                isError: f.error,
+                                isError: !!f.details.error,
                                 time: f.details.updatetime,
                             }));
                         if (filesToUpdate.length > 0) {
