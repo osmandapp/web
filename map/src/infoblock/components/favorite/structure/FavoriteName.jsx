@@ -74,7 +74,7 @@ export default function FavoriteName({
 
     useEffect(() => {
         if (ctx.selectedWpt?.poi) {
-            const { options: objOptions } = ctx.selectedWpt.poi;
+            const objOptions = ctx.selectedWpt.poi?.options ?? ctx.selectedWpt.poi?.properties;
             const { name } = getPropsFromSearchResultItem(objOptions, t);
             setFavoriteName(name);
         }

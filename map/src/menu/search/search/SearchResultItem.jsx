@@ -37,7 +37,7 @@ export function preparedType(type, t) {
 
 export function getPropsFromSearchResultItem(props, t) {
     let type, name;
-    if (props[CATEGORY_TYPE] === searchTypeMap.POI) {
+    if (props[CATEGORY_TYPE] === searchTypeMap.POI || !props[CATEGORY_TYPE]) {
         name = props[POI_NAME];
         type = props[POI_SUBTYPE] ?? props[POI_TYPE];
         if (name === '') {
@@ -110,7 +110,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
         return { ...res, icon, distance };
     }
 
-    function formatDistance(distance) {
+    function addDistance() {
         if (!distance) return '';
         if (distance < 1000) {
             return ` · ${distance.toFixed(0)} ${t('m')}`;
@@ -165,6 +165,14 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
         }
     }
 
+    function addInfo() {
+        return info ?? '';
+    }
+
+    function addType() {
+        return type ? `${info ? ' · ' : ''}${type}` : '';
+    }
+
     return (
         <div ref={ref}>
             {!inView ? (
@@ -180,10 +188,9 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                     >
                         <ListItemText>
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                            {info && <MenuItemWithLines className={styles.placeInfo} name={info} maxLines={2} />}
-                            {(type || distance) && (
+                            {(info || type || distance) && (
                                 <MenuItemWithLines
-                                    name={`${type}${formatDistance(distance)}`}
+                                    name={`${addInfo()}${addType()}${addDistance()}`}
                                     maxLines={4}
                                     className={styles.placeTypes}
                                 />
