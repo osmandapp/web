@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-**Search** is a useful tool for quickly finding locations. You can use search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you are looking for to get an exact location. [Coordinates](#search-coordinates)  search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. And search [History](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find places of interest nearby.
+**Search** is a useful tool for quickly finding locations. You can use Search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you want to get an exact location. [Coordinates](#search-coordinates) search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. Search [History](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find POIs nearby.
 
 
 ## How to Use
@@ -42,13 +42,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 You need to follow one of the steps to start your search:
 
 - Tap the [Search button](../widgets/map-buttons.md#search) on the map application screen and enter your query.
+
 - Go to the main *Menu → Search → enter your search query*.
+
 - When preparing to start a route, tap [*Navigation → Set destination → Search field*](../navigation/setup/route-navigation.md#set-target-point) *→ search query*.  
 
 
 Important information:
 
-- *Downloaded offline vector maps are required to search with OsmAnd*.
+- ***Downloaded offline vector maps are required to search with OsmAnd***.
+
 - Initially, **the search is based on the data located on the map in the visible area of the device screen**, but if nothing is found there, OsmAnd offers to increase the search radius.  
 
 ### Basic Queries
@@ -79,6 +82,25 @@ Important information:
 To avoid confusion, sometimes the key or value is surrounded by quotation marks: **key="value" or "key"="value"**. The quotation marks and equal sign are not part of the tag content.
 
 
+### Sorting Search Results
+
+OsmAnd automatically sorts search results by three main criteria:
+
+1. **Matching queries** — Results containing exact or partial matches to the words you entered are displayed higher.
+
+2. **Object type** - When sorting by name, cities, and streets are prioritized over POIs when displaying results.
+
+3. **Distance** - When results have similar matching criteria and object types, the results closest to the user's current location are shown first.
+
+***For example***, a search query *post office* will show the nearest post offices first, even if there are other items with similar names at a greater distance.  
+
+***Current limitations:***
+
+- There is no manual setting to change the sorting order of search results.
+- The sorting process is **automatically managed** by OsmAnd, based on the criteria listed above.
+- In cases where search results are too broad, OsmAnd can **limit the displayed results** to those with the highest word match accuracy.
+
+
 ### Full Text Search
 
 <Tabs groupId="operating-systems">
@@ -99,17 +121,19 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 You can find the required location on the map from the list of points that appear as you enter a query.
 
-- Start typing the name or address in the search bar.
-- As you type, the list displays the points closest to the query, in roughly this order:
+1. Start typing the name or address in the search bar.
+
+2. As you type, the list displays the points closest to the query, in roughly this order:
     - POI Categories
     - Favorites, POI, and Waypoints
     - Tracks
     - Addresses
     - Maps to download
-- If you enter a [brand name](../search/search-poi.md#how-to-use), the list will start with results by this name, sorted by closest distance.
+
+3. If you enter a [brand name](../search/search-poi.md#how-to-use), the list will start with results by this name, sorted by closest distance.
 
 :::note TIGER data limitations in address searches
-OsmAnd uses [TIGER data] for US address information, but this dataset is **range-based** and does not contain precise house numbers. Some addresses may be missing or inaccurate.
+OsmAnd uses [**TIGER data**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) for US address information, but this dataset is **range-based** and does not contain precise house numbers. Some addresses may be missing or inaccurate.
 :::
 
 
@@ -186,7 +210,7 @@ You can use the search in the vicinity of a specific location. To do this, selec
 
 </Tabs>
 
-You can use the **Search History** to search again for previously found places or addresses or frequently visited places without having to re-enter the query. More details can be found in the [Search History](./search-history.md) article.
+You can use the **Search History** to search again for previously found places, addresses, or frequently visited places without entering the query again.. More details can be found in the [Search History](./search-history.md) article.
 
 
 ## Search POI
@@ -209,8 +233,12 @@ You can use the **Search History** to search again for previously found places o
 
 The **Search POI** is a list, sorted by category, with which you can easily find places and services near your current location or a selected area on the map.
 
-- [**Custom POI search**](./search-poi.md#custom-poi-search) allows you to combine different POI categories to simplify and personalize your search, for example, if you need to find several types of services in a certain area or on a certain section of a route.
-- OsmAnd provides an [**Online search**](./search-poi.md#online-search) that works in real-time, giving you quick access to search results. It is convenient to use when maps of the region are unavailable, but a constant and stable Internet connection is required.
+- [Custom POI search](./search-poi.md#custom-poi-search) allows you to combine different POI categories to simplify and personalize your search.  
+For example, if you need to find several types of services in a certain area or on a certain section of a route.
+
+- OsmAnd provides an [Online search](./search-poi.md#online-search) that works in real-time, giving you quick access to search results.  
+It is convenient to use when maps of the region are unavailable, but a constant and stable Internet connection is required.
+
 - Read the [Search POI](./search-poi.md) article for more information.
 
 
@@ -242,4 +270,4 @@ Coordinate search provides an accurate location. You can enter precise coordinat
 - [Search POI](./search-poi.md)
 - [Search Coordinates](./search-coordinates.md)
 
-> *This article was last updated in November 2024*
+> *This article was last updated in February 2025*
