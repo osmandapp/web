@@ -264,7 +264,11 @@
 
 <tile_source name="🇳🇿 LINZ GeoTIFFs WMS" url_template="https://services1.arcgisonline.co.nz/arcgis/rest/services/LINZ/geotiffs/MapServer/WMSServer?service=WMS&amp;request=GetMap&amp;format=image/png&amp;transparent=true&amp;version=1.3.0&amp;layers=0&amp;crs=EPSG:3857&amp;width=256&amp;height=256&amp;bbox={bbox}" ext=".png" min_zoom="5" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/>
 
+<tile_source name="🇳🇿 New Zealand Imagery test" url_template="https://services1.arcgisonline.co.nz/arcgis/rest/services/Imagery/newzealand/MapServer/tile/{0}/{2}/{1}" ext="" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
 
+<tile_source name="🇳🇿 LINZ Topo test" url_template="https://services1.arcgisonline.co.nz/arcgis/rest/services/LINZ/geotiffs/MapServer/tile/{0}/{2}/{1}" ext="" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
+
+<tile_source name="🇳🇿 LINZ Topo WMS test" url_template="https://services1.arcgisonline.co.nz/arcgis/rest/services/LINZ/geotiffs/MapServer/WMSServer?service=WMS&amp;request=GetMap&amp;format=image/png&amp;transparent=true&amp;version=1.3.0&amp;layers=0&amp;crs=EPSG:3857&amp;width=256&amp;height=256&amp;bbox={bbox}" ext=".png" min_zoom="5" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/>
 
 
    <!-- UK maps-->
