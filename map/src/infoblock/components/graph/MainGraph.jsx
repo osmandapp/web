@@ -1,6 +1,6 @@
 import { Chart } from 'react-chartjs-2';
 import { Box, Slider, SliderThumb } from '@mui/material';
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import _ from 'lodash';
 import GraphManager, {
     cap,
@@ -33,7 +33,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import { getRelativePosition } from 'chart.js/helpers';
-import { seleniumUpdateActivity } from '../../../util/Utils';
 
 const useStyles = makeStyles({
     slider: {
@@ -92,15 +91,30 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
     const showY1 = showY1Scale();
     const showY2 = showY2Scale();
     const showSlope = showSlopeScale();
-    const handleRangeChange = (event, newValue) => {
-        setDistRangeValue(newValue);
-        if (showRange) {
-            ctx.setTrackRange({
-                range: newValue,
-                dist: [dataGraph[newValue[0]][xAxis], dataGraph[newValue[1]][xAxis]],
+
+    const [zoomLevel, setZoomLevel] = useState(1);
+
+    const GRAPH_SAMPLING_LIMIT = 500;
+    const distRangeRef = useRef([0, dataGraph.length - 1]);
+    const sliderStep = zoomLevel > 3 ? 1 : Math.max(1, Math.floor(dataGraph.length / GRAPH_SAMPLING_LIMIT));
+
+    const handleRangeChange = useCallback(
+        (event, newValue) => {
+            if (_.isEqual(distRangeRef.current, newValue)) return;
+
+            distRangeRef.current = newValue;
+            setDistRangeValue([...newValue]);
+
+            requestAnimationFrame(() => {
+                ctx.setTrackRange({
+                    range: distRangeRef.current,
+                    dist: [dataGraph[newValue[0]][xAxis], dataGraph[newValue[1]][xAxis]],
+                });
             });
-        }
-    };
+        },
+        [ctx, dataGraph, xAxis]
+    );
+
     useEffect(() => {
         if (data) {
             setSpeedData(showData[y2Axis] ? dataGraph.map((d) => ({ x: d[xAxis], y: parseFloat(d[y2Axis]) })) : null);
@@ -244,10 +258,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
             responsive: true,
             maintainAspectRatio: false,
             spanGaps: true,
-            animation: {
-                duration: 400,
-                onComplete: () => seleniumUpdateActivity(),
-            },
+            animation: false,
             interaction: {
                 intersect: false,
                 mode: getMode(),
@@ -328,7 +339,8 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                     displayColors: false,
                     callbacks: {
                         title: (context) => {
-                            return `${xAxis}: ${Number(context[0].label).toFixed(2)} km`;
+                            const xValue = context[0]?.parsed?.x;
+                            return `${xAxis}: ${xValue.toFixed(2)} km`;
                         },
                         label: (context) => {
                             let label = context.dataset.label || '';
@@ -400,6 +412,9 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                         },
                         mode: 'x',
                         speed: 100,
+                        onZoom: ({ chart }) => {
+                            setZoomLevel(chart.getZoomLevel());
+                        },
                     },
                     pan: {
                         enabled: true,
@@ -493,65 +508,68 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
         [dataGraph, ctx.trackRange, showData]
     );
 
-    const graphData = {
-        labels: dataGraph.map((d) => (d[xAxis] !== 0 ? d[xAxis].toFixed(1) : 0)),
-        datasets: [
-            {
-                label: y1Axis[0],
-                type: 'line',
-                data: eleData,
-                borderColor: 'rgb(242, 217, 131)',
-                backgroundColor: 'rgba(242, 217, 131, 0.46)',
-                borderWidth: 1,
-                min: minEle,
-                max: maxEle,
-                fill: true,
-                yAxisID: 'y1',
-                pointRadius: dataGraph.length < 66 ? 2 : 0,
-                order: 2,
-            },
-            {
-                label: y1Axis[1],
-                type: 'line',
-                data: eleSRTMData,
-                borderColor: 'rgba(169, 212, 129, 0.79)',
-                backgroundColor: 'rgba(169, 212, 129, 0.46)',
-                borderWidth: 1,
-                min: minEle,
-                max: maxEle,
-                fill: true,
-                yAxisID: 'y1',
-                pointRadius: 0,
-                order: 3,
-            },
-            {
-                label: y1Axis[2],
-                type: 'line',
-                data: slopeData,
-                borderColor: 'rgba(145, 217, 255, 0.80)',
-                backgroundColor: 'rgba(145, 217, 255, 0.46)',
-                borderWidth: 1,
-                min: slopes.min,
-                max: slopes.max,
-                fill: true,
-                yAxisID: 'y1Slope',
-                pointRadius: 0,
-                order: 0,
-            },
-            {
-                label: y2Axis,
-                type: 'line',
-                data: speedData,
-                borderColor: '#ff595e',
-                borderWidth: 1,
-                min: minSpeed,
-                max: maxSpeed,
-                yAxisID: 'y2',
-                pointRadius: 0,
-                order: 1,
-            },
-        ],
-    };
+    const graphData = useMemo(
+        () => ({
+            labels: dataGraph.filter((_, i) => i % sliderStep === 0).map((d) => d[xAxis].toFixed(1)),
+            datasets: [
+                {
+                    label: y1Axis[0],
+                    type: 'line',
+                    data: eleData?.filter((_, i) => i % sliderStep === 0),
+                    borderColor: 'rgb(242, 217, 131)',
+                    backgroundColor: 'rgba(242, 217, 131, 0.46)',
+                    borderWidth: 1,
+                    min: minEle,
+                    max: maxEle,
+                    fill: true,
+                    yAxisID: 'y1',
+                    pointRadius: dataGraph.length < 100 ? 2 : 0,
+                    order: 2,
+                },
+                {
+                    label: y1Axis[1],
+                    type: 'line',
+                    data: eleSRTMData?.filter((_, i) => i % sliderStep === 0),
+                    borderColor: 'rgba(169, 212, 129, 0.79)',
+                    backgroundColor: 'rgba(169, 212, 129, 0.46)',
+                    borderWidth: 1,
+                    min: minEle,
+                    max: maxEle,
+                    fill: true,
+                    yAxisID: 'y1',
+                    pointRadius: 0,
+                    order: 3,
+                },
+                {
+                    label: y1Axis[2],
+                    type: 'line',
+                    data: slopeData?.filter((_, i) => i % sliderStep === 0),
+                    borderColor: 'rgba(145, 217, 255, 0.80)',
+                    backgroundColor: 'rgba(145, 217, 255, 0.46)',
+                    borderWidth: 1,
+                    min: slopes.min,
+                    max: slopes.max,
+                    fill: true,
+                    yAxisID: 'y1Slope',
+                    pointRadius: 0,
+                    order: 0,
+                },
+                {
+                    label: y2Axis,
+                    type: 'line',
+                    data: speedData?.filter((_, i) => i % sliderStep === 0),
+                    borderColor: '#ff595e',
+                    borderWidth: 1,
+                    min: minSpeed,
+                    max: maxSpeed,
+                    yAxisID: 'y2',
+                    pointRadius: 0,
+                    order: 1,
+                },
+            ],
+        }),
+        [dataGraph, eleData, eleSRTMData, slopeData, speedData, sliderStep, xAxis]
+    );
 
     function ThumbComponent(props) {
         const { children, className, ...other } = props;
@@ -563,9 +581,9 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
         );
     }
 
-    function valueLabelFormat(value) {
-        return `${dataGraph[value][xAxis].toFixed(1)}  km`;
-    }
+    const valueLabelFormat = useMemo(() => {
+        return (value) => `${dataGraph[value][xAxis].toFixed(1)}  km`;
+    }, [dataGraph, xAxis]);
 
     function hideSelectedPoint() {
         ctx.mapMarkerListener(null);
@@ -593,7 +611,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                 value={distRangeValue}
                 onChange={handleRangeChange}
                 min={0}
-                step={1}
+                step={sliderStep}
                 max={dataGraph?.length - 1}
                 components={{ Thumb: ThumbComponent }}
             />
