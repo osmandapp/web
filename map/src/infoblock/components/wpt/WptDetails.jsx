@@ -80,6 +80,7 @@ import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/s
 import { iconPathMap, SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
 import capitalize from 'lodash/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
+import { LatLng } from 'leaflet';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
@@ -477,11 +478,14 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     const navigate = useNavigate();
     function addPointToFavorites() {
         if (ctx.loginUser) {
+            const location =
+                ctx.selectedWpt?.poi?.latlng ??
+                new LatLng(ctx.selectedWpt?.poi.geometry.coordinates[1], ctx.selectedWpt?.poi.geometry.coordinates[0]);
             ctx.setAddFavorite({
                 ...ctx.addFavorite,
                 poi: ctx.selectedWpt?.poi,
                 address: wpt.address,
-                location: ctx.selectedWpt?.poi?.latlng,
+                location,
             });
         } else {
             navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
@@ -713,6 +717,10 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         }
     };
 
+    function exploreObjWithPoi() {
+        return wpt?.type.isWikiPoi && ctx.selectedWpt.poi;
+    }
+
     return (
         <>
             {loading ? (
@@ -748,7 +756,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             {wpt?.category && <WptCategory />}
                             <div className={styles.location}>
                                 {wpt.latlon && currentLoc && <WptLoc wpt={wpt} location={currentLoc} />}
-                                {(wpt.type?.isPoi || wpt.type?.isSearch) && (
+                                {(wpt.type?.isPoi || wpt.type?.isSearch || exploreObjWithPoi()) && (
                                     <>
                                         <Tooltip
                                             title={t('shared_string_add_to_favorites')}

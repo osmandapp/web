@@ -5263,5 +5263,6 @@
   "m_s": "m/s",
   "shared_string_time_span": "Time span",
   "shared_string_start_time": "Start time",
-  "shared_string_end_time": "End time"
+  "shared_string_end_time": "End time",
+  "error_occurred_loading_gpx": "Could not load GPX."
 }

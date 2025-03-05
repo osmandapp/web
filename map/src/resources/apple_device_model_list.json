@@ -54,6 +54,10 @@
   "iPhone15,5": "iPhone 15 Plus",
   "iPhone16,1": "iPhone 15 Pro",
   "iPhone16,2": "iPhone 15 Pro Max",
+  "iPhone17,1": "iPhone 16 Pro",
+  "iPhone17,2": "iPhone 16 Pro Max",
+  "iPhone17,3": "iPhone 16",
+  "iPhone17,4": "iPhone 16 Plus",
   "iPad1,1": "iPad",
   "iPad2,1": "iPad 2",
   "iPad2,2": "iPad 2",
@@ -176,5 +180,8 @@
   "AudioAccessory1,2": "HomePod",
   "AudioAccessory5,1": "HomePod mini",
   "i386": "Simulator",
-  "x86_64": "Simulator"
+  "x86_64": "Simulator",
+  "Mac15,13": "MacBook Air (15-inch, M3, 2024)",
+  "Mac15,12": "MacBook Air (13-inch, M3, 2024)",
+  "MacBookAir10,1": "MacBook Air (M1, 2020)"
 }
