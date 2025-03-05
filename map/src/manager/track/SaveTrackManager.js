@@ -13,7 +13,12 @@ import TracksManager, {
     TRACK_VISIBLE_FLAG,
 } from './TracksManager';
 import _, { cloneDeep } from 'lodash';
-import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
+import {
+    getFilesForUpdateDetails,
+    OBJECT_TYPE_CLOUD_TRACK,
+    OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_LOCAL_TRACK,
+} from '../../context/AppContext';
 import Utils from '../../util/Utils';
 import { updateSortList } from '../../menu/actions/SortActions';
 import { deleteLocalTrack, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
@@ -310,6 +315,7 @@ export async function refreshGlobalFiles({ ctx, oldName = null, currentFileName 
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
         const resJson = await respGetFiles.json();
         if (resJson && resJson.uniqueFiles) {
+            getFilesForUpdateDetails(resJson.uniqueFiles, ctx.setUpdateFiles);
             ctx.setListFiles(resJson);
         }
         if (type === OBJECT_TYPE_FAVORITE) {

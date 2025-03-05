@@ -234,15 +234,25 @@ function hasGeo(track) {
 
 export function getTrackPoints(track) {
     let points = [];
+    let distanceOffset = 0; // Keeps track of the total distance across multiple tracks
+
+    const processTrackPoints = (trackPoints) => {
+        if (!trackPoints || trackPoints.length === 0) return [];
+
+        const subPoints = getAllPoints(trackPoints);
+        subPoints.forEach((point) => (point.distanceTotal += distanceOffset));
+
+        // Update the distance offset based on the last point
+        distanceOffset = subPoints[subPoints.length - 1].distanceTotal;
+        return subPoints;
+    };
+
     if (track.tracks) {
-        track.tracks.forEach((track) => {
-            if (track.points) {
-                points = getAllPoints(track.points);
-            }
-        });
-    } else if (track.points) {
-        points = getAllPoints(track.points);
+        track.tracks.forEach((subTrack) => points.push(...processTrackPoints(subTrack.points)));
     }
+
+    points.push(...processTrackPoints(track.points));
+
     return points;
 }
 

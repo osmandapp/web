@@ -25,13 +25,17 @@ export default function TracksMenu() {
     const [defaultGroup, setDefaultGroup] = useState(null);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
-    const [hasFiles, setHasFiles] = useState(false);
     const [, height] = useWindowSize();
 
     const { t } = useTranslation();
 
+    const checkHasFiles = () =>
+        ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 || !isEmpty(ctx.shareWithMeFiles?.tracks);
+
+    const [hasFiles, setHasFiles] = useState(checkHasFiles());
+
     useEffect(() => {
-        setHasFiles(ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 || !isEmpty(ctx.shareWithMeFiles?.tracks));
+        setHasFiles(checkHasFiles());
     }, [ctx.tracksGroups, defaultGroup, ctx.shareWithMeFiles]);
 
     // get gpx files and create groups
