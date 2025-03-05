@@ -272,7 +272,15 @@
 
 
    <!-- Canada maps-->
-   <tile_source name="🇨🇦 Quebec Government Map" url_template="https://geoegl.msp.gouv.qc.ca/carto/tms/1.0.0/carte_gouv_qc_public@EPSG_3857/{0}/{1}/{-2}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
+   <tile_source name="🇨🇦 Quebec Government Map" url_template="https://geoegl.msp.gouv.qc.ca/carto/tms/1.0.0/carte_gouv_qc_public@EPSG_3857/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
+
+   <tile_source name="Quebec Map Inverted Y" url_template="https://geoegl.msp.gouv.qc.ca/carto/tms/1.0.0/carte_gouv_qc_public@EPSG_3857/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000" inverted_y="true"/>
+
+   <tile_source name="Quebec Map YX" url_template="https://geoegl.msp.gouv.qc.ca/carto/tms/1.0.0/carte_gouv_qc_public@EPSG_3857/{0}/{2}/{1}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
+
+   <tile_source name="Quebec Map TMS" url_template="https://geoegl.msp.gouv.qc.ca/carto/tms/1.0.0/carte_gouv_qc_public@EPSG_3857/{0}/{1}/{-2}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
+
+
 
 
    <!-- UK maps-->
