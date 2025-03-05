@@ -270,6 +270,8 @@
 
 <tile_source name="🇳🇿 LINZ Topo WMS test" url_template="https://services1.arcgisonline.co.nz/arcgis/rest/services/LINZ/geotiffs/MapServer/WMSServer?service=WMS&amp;request=GetMap&amp;format=image/png&amp;transparent=true&amp;version=1.3.0&amp;layers=0&amp;crs=EPSG:3857&amp;width=256&amp;height=256&amp;bbox={bbox}" ext=".png" min_zoom="5" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/> -->
 
+<tile_source name="🇳🇿 LINZ GeoTIFFs WMS" url_template="https://services1.arcgisonline.co.nz/arcgis/rest/services/LINZ/geotiffs/MapServer/WMSServer?service=WMS&amp;request=GetMap&amp;format=image/png&amp;transparent=true&amp;version=1.3.0&amp;layers=0&amp;crs=EPSG:3857&amp;width=256&amp;height=256&amp;bbox={bbox}" ext="" min_zoom="5" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/>
+
 
    <!-- Canada maps-->
    <tile_source name="🇨🇦 Quebec Government Map" url_template="https://geoegl.msp.gouv.qc.ca/carto/tms/1.0.0/carte_gouv_qc_public@EPSG_3857/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000" inverted_y="true"/>
