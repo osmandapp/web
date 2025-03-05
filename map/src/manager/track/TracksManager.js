@@ -237,21 +237,27 @@ export function getTrackPoints(track) {
     let distanceOffset = 0; // Keeps track of the total distance across multiple tracks
 
     const processTrackPoints = (trackPoints) => {
-        if (!trackPoints || trackPoints.length === 0) return [];
+        if (!Array.isArray(trackPoints) || trackPoints.length === 0) return [];
 
         const subPoints = getAllPoints(trackPoints);
+        if (subPoints.length === 0) return [];
+
         subPoints.forEach((point) => (point.distanceTotal += distanceOffset));
 
         // Update the distance offset based on the last point
-        distanceOffset = subPoints[subPoints.length - 1].distanceTotal;
+        distanceOffset = subPoints[subPoints.length - 1]?.distanceTotal ?? distanceOffset;
         return subPoints;
     };
 
     if (track.tracks) {
-        track.tracks.forEach((subTrack) => points.push(...processTrackPoints(subTrack.points)));
+        track.tracks.forEach((subTrack) => {
+            if (Array.isArray(subTrack.points) && subTrack.points.length > 0) {
+                points.push(...processTrackPoints(subTrack.points));
+            }
+        });
+    } else if (track.points) {
+        points = getAllPoints(track.points);
     }
-
-    points.push(...processTrackPoints(track.points));
 
     return points;
 }
