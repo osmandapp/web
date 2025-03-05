@@ -686,7 +686,7 @@ export default function LocalClientTrackLayer() {
         } else {
             let newPoint = createNewPoint({ ctx, e, geoProfile: geoRouter.getShortGeoProfile() });
             let points = ctxTrack.points;
-            let layers = ctxTrack.layers;
+            let layers = ctxTrack.layers ?? new L.FeatureGroup();
             let prevPoint = ctxTrack.prevPoint;
             if (isNewPoint(ctxTrack, newPoint)) {
                 if (newPoint.profile !== TracksManager.PROFILE_LINE && trackWithoutRouting(points)) {
