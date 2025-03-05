@@ -240,7 +240,7 @@ export function getTrackPoints(track) {
         if (!trackPoints || trackPoints.length === 0) return [];
 
         const subPoints = getAllPoints(trackPoints);
-        subPoints.forEach(point => point.distanceTotal += distanceOffset);
+        subPoints.forEach((point) => (point.distanceTotal += distanceOffset));
 
         // Update the distance offset based on the last point
         distanceOffset = subPoints[subPoints.length - 1].distanceTotal;
@@ -248,7 +248,7 @@ export function getTrackPoints(track) {
     };
 
     if (track.tracks) {
-        track.tracks.forEach(subTrack => points.push(...processTrackPoints(subTrack.points)));
+        track.tracks.forEach((subTrack) => points.push(...processTrackPoints(subTrack.points)));
     }
 
     points.push(...processTrackPoints(track.points));

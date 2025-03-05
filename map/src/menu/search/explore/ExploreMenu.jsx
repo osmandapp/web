@@ -34,12 +34,13 @@ export default function ExploreMenu() {
     function close() {
         navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + window.location.hash);
         ctx.setLoadingContextMenu(false);
-        addWikiPlacesDefaultFilters(ctx, true);
     }
 
     useEffect(() => {
         ctx.setCurrentObjectType(OBJECT_EXPLORE);
-        addWikiPlacesDefaultFilters(ctx);
+        if (!ctx.searchSettings.selectedFilters) {
+            addWikiPlacesDefaultFilters(ctx);
+        }
         ctx.setLoadingContextMenu(true);
     }, []);
 
