@@ -571,7 +571,6 @@ export const AppContextProvider = (props) => {
 
                 if (response.ok) {
                     const updatedData = await response.json();
-                    console.log('Updated files:', updatedData);
                     setListFiles((prev) => {
                         if (!prev.uniqueFiles) return prev;
 
