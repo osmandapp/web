@@ -466,12 +466,13 @@ function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
     };
 }
 
-export function createTrackGroups(files) {
+export function createTrackGroups(files, isSmartf = false) {
     const trackGroups = [];
     const tracks = [];
 
     files.forEach((file) => {
-        const parts = file.name.split('/');
+        const name = isSmartf ? file.details.shareFileName : file.name;
+        const parts = name.split('/');
         const isFile = parts.length === 1;
 
         if (isFile) {
