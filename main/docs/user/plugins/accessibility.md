@@ -124,7 +124,7 @@ The Accessibility plugin offers various settings to personalize navigation and i
 
 ***Tips for optimized accessibility:***
 
-- **Screen reader** - Use TalkBack (Android) or VoiceOver (iOS) for enhanced map interaction.
+- **Screen reader** - Use TalkBack (*Android*) or VoiceOver (*iOS*) for enhanced map interaction.
 - **Audio navigation** - Enable auto-announce to receive voice directions while the screen is off.
 - **Haptic feedback** - Ideal for low-visibility environments or when audio guidances are impractical.
 

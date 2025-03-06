@@ -23,12 +23,47 @@ Navigational widgets are enabled during navigation to display information such a
 
 ## Active and Passive Navigation
 
+Navigational widgets in OsmAnd are designed to enhance both **active** and **passive** navigation modes. These widgets provide valuable information such as route directions, road details, and speed limits, depending on the selected **navigation profile**.  
+
+#### Active Navigation
+
+- **Requirements:**  
+  - Set a **destination**.  
+  - Calculate the **route** using the *Directions* feature.  
+  - **Start** navigation (voice guidance is optional).
+  - Available only when moving along the route.
+
+- **Supported widgets:**  
+  - All **navigational widgets** are available.  
+
+- **Key Benefits:**  
+  - Provides **turn-by-turn instructions**, **lane guidance**, and **ETA**.  
+  - Ensures accurate and dynamic updates during the trip.  
+
+#### Passive Navigation
+
+- **How it works:**  
+  - No destination is needed.  
+  - Works automatically when you select a **navigational profile** (e.g., *Driving*, *Cycling*).  
+
+- **Functionality:**  
+  - Attempts to determine the road you are following using GPS data.  
+  - Displays **basic road information**, such as [street name](#street-name), [lane information](#lanes), [maximum speed](#speed-limit).
+
+- **Limitations:**  
+  - Some advanced features may not function correctly without a set destination.  
+  - The information provided may not always be **precise**, especially on complex road networks.
+
+> **NOTE.** Keep in mind that the **Browse Map** profile does not support navigational widgets in either mode. Switch to a relevant **navigation profile** to enable these features.
+
+
+<!--
 Navigational widgets are mostly used with **active** or **passive** navigation with navigational profiles, so they are unavailable in the **Browse Map** profile.
 
 **Active** navigation requires setting a destination, calculating the route (Directions), and starting navigation (Go), not necessarily with voice guidance. All navigational widgets support that type of navigation.
 
 **Passive** navigation doesn't require a destination point set and works automatically once you switch to any navigational profile, for example, 'Driving'. In that case, the application will try to determine which road you are following and display extra information about it i.e. name, lane info, max speed available. Please note that this approach is unreliable and doesn't support all features.
-
+-->
 
 ## Elevation Widget
 
