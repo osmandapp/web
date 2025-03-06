@@ -420,7 +420,7 @@ The Radius Ruler widget shows the distance between your location and the center 
 
 </Tabs>
 
-**Speedometer widget** is a graphical display of the current vehicle speed based on *data received from the GPS*. It allows you to monitor in real-time the compliance between your speed and the allowable speed limit. The allowable speed limit is provided by [*OpenStreetMap data*](https://wiki.openstreetmap.org/wiki/Key:maxspeed) for a particular road section and OsmAnd [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.  
+**Speedometer widget** is a graphical display of the current vehicle speed based on *data received from the GPS*. It allows you to monitor in real-time the compliance between your speed and the allowable speed limit. The allowable speed limit is provided by [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed) for a particular road section and OsmAnd [Speed Limit Tolerance](../navigation/guidance/voice-navigation.md#speed-limit) setting.  
 
 - In the *Speedometer settings*, you can select the size (**Height**) of the widget on the application screen as, *Small*, *Medium* or *Large*.
 - You can specify when to receive a **Speed limit warning,** selecting *Always* or *When exceeded*.

@@ -164,17 +164,19 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-The OsmAnd app allows you to place widgets in the top or bottom and group them by rows.  
-Types of widgets are available for Top / Bottom panels:
+The **Top and Bottom panels** allow you to organize widgets in rows. You can add multiple rows, customize widget sizes, and manage the display.  
 
-1. [All widgets](#widgets-for-all-panels) from other panels.
+***Available widgets:***
+
+1. [All widgets](#widgets-for-all-panels). Any widget available for all panels.
 
 2. [Coordinates widgets](../widgets/info-widgets#coordinates-widget). This set of *informational* widgets displays the geographic coordinates of the current geolocation.  
     2 widgets are included: *Coordinates: map center*, *Coordinates: current location*.  
 
-3. [Street name](../widgets/nav-widgets#street-name). A *navigational* widget shows the current street name with a straight arrow or the next street name with an arrow pointing to an upcoming turn.  
+3. [Street Name](../widgets/nav-widgets#street-name). A *navigational* widget shows the current street name with a straight arrow or the next street name with an arrow pointing to an upcoming turn.  
 
 4. [Lanes](../widgets/nav-widgets#lanes). *Navigational* widget shows the current road lanes layout and highlights lanes for traffic with active navigation.  
+
 5. [Map markers bar](../widgets/markers.md#configure-marker-widgets-android). The widget displays the distance and direction to the next Map marker from your current location.  
     The widget can be configured to show 1 or 2 markers.  
 
@@ -186,19 +188,21 @@ Types of widgets are available for Top / Bottom panels:
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
 
-The *Top and Bottom panels* have **Row mode**, which allows you to add as many rows to the application screen as you need to place widgets on them.
+The **Row mode** feature allows you to add as many rows as needed to the top and bottom panels. You can display multiple widgets per row, enhancing the amount of visible information.
 
-How to do it:
+***How to configure rows:***
 
-- Add the required widgets from the list of *Available widgets*.
-- Tap the *Change order* button below the list of added widgets.
-- Find the *Add row* button at the bottom of the list.
-- Widgets can be moved between rows.
-- Tap the *Apply* button.
+- **Add widgets**. Select from the list of *Available widgets*.
+- **Change order.** Tap the *Change order* button to arrange widgets.
+- **Add rows.** Use the *Add row* button to create new rows for widgets.
+- **Move widgets**. Move widgets between rows.
+- **Apply changes.** Tap the *Apply* button to save the configuration.
 
-The mode allows you to add **more than one widget in a single row** on the top and bottom panels to display as much information as needed. Restrictions:
+#### Widget Types and Restrictions
 
-- A row can only contain one **Complex** widget having a unique display. These widgets include:
+The mode allows you to add **more than one widget in a single row** on the top and bottom panels to display as much information as needed.  
+
+- **Complex widgets**. Only one complex widget can be added per row. These include:
     - [Map markers bar (*Android only*)](../widgets/markers.md#configure-marker-widgets-android)
     - [Street name](../widgets/nav-widgets#street-name)
     - [Coordinates widgets](../widgets/info-widgets#coordinates-widget)
@@ -206,31 +210,7 @@ The mode allows you to add **more than one widget in a single row** on the top a
     - [Elevation profile (*Android only*)](../widgets/nav-widgets#elevation-widget)
     - [Route maneuvers](../widgets/nav-widgets.md#next-turns)
 
-- For all rest **Simple** widgets that only display information such as *Widget Name*, *Units of measurement*, *Value*, and *Icon*, there is an option to add several to one panel at once.
-
-### Settings
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
-
-**Change widget size.**  
-You can customize the size of *Simple* widgets in the Top and Bottom panels to fit your preference:
-
-- *Small*. This size is suitable for narrow widget displays, saving more screen space for maps and widgets on other panels, especially if you have a small device.
-- *Medium*. This is the default widget size. It provides a balance between information visibility and screen space usage.
-- *Large*. The size suits you if you need larger and more visual information in the widget.  
-
-**Hiding widget icons.**  
-If you prefer a cleaner look or need more space for useful information, you can hide the **Simple** widget icons located in the fields. This option helps improve visibility, especially when multiple widgets are displayed in the same *row*.
-
-**Individual size for different rows.**  
-You can customize the size of each widget individually by changing the size of the row it’s in. However, keep in mind that if multiple widgets share the same *row*, resizing one widget will apply the change to all widgets in that row and adjust the overall row size accordingly.
-
-To change the widget size and icon visibility:
-
-- Select a widget that you have already added to the panel.  
-- Tap the *Settings* icon on the right side of the widget field.
-- Tap the *Size* setting and select one of the available sizes.
-- Switch to the Off position, in the *Show icon* field.
+- **Simple widgets**. Multiple simple widgets can be added to a single row. These widgets could display *Name*, *Units of measurement*, *Value*, and *Icon*.
 
 
 ## Left and Right Panels
@@ -255,9 +235,9 @@ Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 </Tabs>
 
-The OsmAnd app allows you to place [widgets from the table](#widgets-for-all-panels) in sidebars and group them by pages.
+The OsmAnd app allows you to place [widgets for all panels](#widgets-for-all-panels) in the left and right panels and group them by [Pages](#pages). Widget [resizing customization](#widget-settings) is available for side widgets, the same as for widgets in the top and bottom panels.
 
-### Pages for Widgets
+### Pages
 
 <Tabs groupId="operating-systems">
 
@@ -279,10 +259,45 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-Widgets in the right and left panels can be grouped into **Pages**. To do this, select a panel, tap *Edit*, and then tap *Add Page*. This helps you interact with the map more easily and without distractions when navigating, as well as having multiple sets of widgets for different cases.
+Widgets in the right and left panels can be grouped into **Pages**. The **Pages mode** feature allows you to add 5 pages to the left and right panels.
+
+***How to configure rows:***
+
+- **Add a Page**. Navigate to the Left/Right Panel settings and tap *Edit → Add Page*.
+- **Organize widgets by Page**. This feature is helpful when different sets of widgets are needed for different tasks, such as navigating versus browsing the map.
+- Pages allow you to create **widget sets** for specific scenarios, improving workflow and reducing clutter.
 
 
-## Panel Widgets Settings
+## Widget Settings
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
+
+1. **Widget size options** (*for all panels*):  
+    You can customize the size of **Simple widgets** in the **Top, Bottom, Left, and Right panels**:
+
+    - **Small**. Ideal for compact displays, saving more screen space for maps.
+    - **Medium** (*default widget size*). Balances visibility and space usage.
+    - **Large**. Provides larger, more visible widget information.  
+
+2. **Hiding widget icons** (*for top and bottom panels*):
+
+    - Improves clarity and maximizes the space for important data.
+    - Especially useful when displaying many widgets on the same **row**.
+
+3. **Individual size for different rows** (*for top and bottom panels*):
+
+    - Widgets can be individually sized by adjusting the row size.
+    - **NOTE:** Changing the size of one widget in a row will resize all widgets in that row.
+
+4. **To change the widget size and icon visibility:**
+
+    - Select a widget that you have already added to the panel.  
+    - Tap the *Settings* icon on the right side of the widget field.
+    - Tap the *Size* setting and select one of the available sizes.
+    - Switch to the Off position, in the *Show icon* field.
+
+
+## Panels Customization
 
 ### Widget Context Menu
 
@@ -302,43 +317,71 @@ Widgets in the right and left panels can be grouped into **Pages**. To do this, 
 
 </Tabs>
 
-The **widget context menu** allows you to manage and configure widgets directly from the map screen, providing *a quick way to organize panels*. Access it by ***long tapping*** on any widget to customize the layout of widgets without leaving the map.
+The **widget context menu** provides a quick way to manage and configure widgets directly from the map screen. You can access it by ***long tapping*** any widget to customize the layout of widgets without leaving the map.
 
-- **Managing** widgets on **Top and Bottom** panels.  
-    *Add widget to the Right* / *Add widget to the Left*. Select a position for the new widget relative to an existing one. After choosing from the [*Available widgets*](#widgets-for-all-panels) list, the widget will appear in the specified location.
+#### Context Menu Actions
 
-- **Managing** widgets on **Left and Right** panels.  
-    *Add widget Above* / *Add widget Below*. Select whether to position the new widget above or below the current one. Tap the required widget in the list to add it to the selected position.
+**For Top and Bottom panels**  
 
-- **General actions for all panels**.
-    - *Settings*. Open the widget’s settings (if available) to customize its appearance or behavior.
-    - *Reset average speed*. For the [Average Speed](../widgets/info-widgets.md#average-speed) widget, a long tap instantly resets the speed value during a trip.
-    - *Delete*. Remove the widget from the panel. A confirmation prompt ensures the action is intentional.
+- *Add widget to the Right/Left:*
 
+    - Select a position for the new widget relative to the current one.
+    - Choose the widget from the [Available widgets](#widgets-for-all-panels) list.
+
+**For Left and Right panels**  
+
+- *Add widget Above/Below:*
+
+    - Select whether to position the new widget above or below the current widget.
+    - Tap the required widget in the list to add it to the specified position.
+
+**General actions for all panels**  
+
+- *Settings*.
+    - Access the widget’s settings (if available) to customize its appearance or behavior.
+
+- *Reset average speed*.
+    - Available for the [Average Speed](../widgets/info-widgets.md#average-speed) widget.
+    - Long tap to instantly reset the speed value during a trip.
+
+- *Delete*.
+    - Remove the widget from the panel.
+    - A confirmation prompt ensures the action is intentional.
 
 ### Copies of Widgets
 
-*OsmAnd menu → Configure screen → Widgets → Panel →* **Add** *chosen widget*  
+*OsmAnd menu → Configure screen → Widgets → Panel*  
 
 ![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
 
-**Copies** can be shown simultaneously for all panels, as well as for each page of the widget. To find the required options, follow the steps below:
+OsmAnd allows you to add multiple instances of the same widget to different panels or pages. This feature is particularly useful when you need consistent information across different views or profiles.  
 
-- Add the widget you need and tap it.
-- In the list of actions, select the *Duplicate* button.
-- Another option. Select the same widget in the *Available widgets* list and tap the *Add* button.
+***How to duplicate widgets:***
+
+- **Add the widget**. Navigate to: *OsmAnd menu → Configure screen → Widgets → Panel →* **Add** *widget*.
+- **Duplicate using the context menu**. Tap the widget and select **Duplicate** from the list of actions.
+- **Alternative method**. Select the same widget from the *Available widgets* list and tap *Add*.
 
 
 ### Move or Delete
 
-*OsmAnd menu → Configure screen → Widgets → Panel → **Add** chosen widget*  
+*OsmAnd menu → Configure screen → Widgets → Panel*  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)
 
-To remove or delete a widget from the application screen, you need to select the required panel and then press the **Edit** button.
+You can rearrange or remove widgets from the application screen using the **Edit** mode.  
 
-- To move a widget to the required location or page, long tap the icon on the right and select a position in the widget list.
-- To no longer see the widget, tap the minus icon to the left of its name.
+***How to move a widget:***
+
+- Go to: *OsmAnd Menu → Configure Screen → Widgets → Panel → Edit button*.
+- Long tap the **icon on the right** of the widget.
+- Drag it to the required position in the widget list.
+
+***How to delete a widget:***  
+
+- Follow the same steps as above.
+- Tap the **minus icon** to the left of the widget name.
+- Confirm the deletion when prompted.
 
 
 ## Buttons
@@ -424,7 +467,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 The *Button appearance* feature enables you to fully customize the look of buttons on your map interface. These customization options are available for both *Quick Action (Custom buttons)* and *Default buttons*, providing comprehensive control over the map interface's appearance and allowing precise adjustments to button design.
 
-*Customization Options*:
+***Customization options***:
 
 - **Icon**. Select from a list of icons that represent actions you’ve already added, making it easy to identify functions at a glance.
 - **Corner radius**. Adjust this setting to change the shape of the button, ranging from sharp, square corners to smooth, rounded edges.
@@ -456,7 +499,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
 - [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
-- [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.
+- [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [Speed Limit Tolerance](../navigation/guidance/voice-navigation.md#speed-limit) setting.
 
 
 ### Display Position (Location position on screen)

@@ -200,7 +200,7 @@ Adding a widget to the screen is necessary if you prefer to avoid searching for 
 
 ![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)  
 
-The options on the bottom bar can be used to manage the list of notes in [*My Places*](../personal/myplaces.md#audiovideo-notes) menu.
+The options on the bottom bar can be used to manage the list of notes in [My Places](../personal/myplaces.md#audiovideo-notes) menu.
 
 
 ### Share with GPX Waypoints
@@ -209,7 +209,7 @@ The options on the bottom bar can be used to manage the list of notes in [*My Pl
 
 ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
 
-You could share all Notes including [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) that has selected notes as waypoints on [*My Places*](../personal/myplaces.md#audiovideo-notes) screen by clicking on bottom menu button share. A checkbox will appear next to each note to select specific notes. There are two checkboxes above the notes: *A/V notes by date* to select all notes and the *Locations* checkbox. The *Locations* checkbox allows you to add a separate GPX file with coordinates and data.  
+You could share all Notes including [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) that has selected notes as waypoints on [My Places](../personal/myplaces.md#audiovideo-notes) screen by clicking on bottom menu button share. A checkbox will appear next to each note to select specific notes. There are two checkboxes above the notes: *A/V notes by date* to select all notes and the *Locations* checkbox. The *Locations* checkbox allows you to add a separate GPX file with coordinates and data.  
 
 Each note contains the time it was created, the amount of data, and if it is a record, the time of recording, and location data, you can add GPX data.  
 Supported file formats: audio - **3gp**, video - **mp4**, photo -**jpg**.
@@ -223,7 +223,7 @@ Supported file formats: audio - **3gp**, video - **mp4**, photo -**jpg**.
 
 Displayed on the map notes can tell your story, where you spotted signs, what door you needed to open, where the exit is, the optimal path, and more. You can show notes [one at a time](#show-on-the-map) or all at once.
 
-Use the [*Recording*](../map/point-layers-on-map#-audio--video-points-android) map layer to show or hide all notes. If you turn it on in the [Configure map](../map/configure-map-menu) menu, the Recording layer shows all notes on the map.
+Use the [Recording](../map/point-layers-on-map#-audio--video-points-android) map layer to show or hide all notes. If you turn it on in the [Configure map](../map/configure-map-menu) menu, the Recording layer shows all notes on the map.
 
 ![No notes on the map](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notes are on the map](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 

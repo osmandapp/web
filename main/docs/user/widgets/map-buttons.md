@@ -37,8 +37,8 @@ If you want more information on using these buttons, you can see the article [In
 
 The **Directions** button is essential for route planning and navigation:
 
-- [*Build a route*](../navigation/index.md). Use this button to create a route.
-- [*Start navigation*](../navigation/index.md). Initiate turn-by-turn navigation.
+- [Build a route](../navigation/index.md). Use this button to create a route.
+- [Start navigation](../navigation/index.md). Initiate turn-by-turn navigation.
 - In navigation mode, the *Directions* button is not visible by default but appears after a short tap the map.
 
 Indicative states of the *Directions* button:
@@ -71,7 +71,7 @@ The Search button offers quick access to the [search capabilities](../search/ind
 
 ## Compass
 
-The Compass button indicates the orientation of the map on your device screen. For additional information, refer to the [*Interact with map*](../map/interact-with-map.md#map-orientation--compass) article.
+The Compass button indicates the orientation of the map on your device screen. For additional information, refer to the [Interact with map](../map/interact-with-map.md#map-orientation--compass) article.
 
 
 ### Map Orientation Modes
@@ -80,7 +80,7 @@ The Compass button indicates the orientation of the map on your device screen. F
 **Manually rotated**. In this mode, you can manually rotate the map with a [two-pointer gesture (two-finger touch and rotate)](../map/interact-with-map.md#gestures) according to your preference. The orientation of the map does not depend on the direction of travel or the compass of the device but is determined by you. The manual rotation mode is set by default.
 
 - ![Compass](@site/static/img/widgets/map_butt_movem_dir_ios.png)  
-**Movement direction**. In this mode, the map is oriented according to the direction of your movement known from GPS data. For example, if you turn to the right, the map also rotates so that the right side of the screen corresponds to the direction of movement. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).
+**Movement direction**. In this mode, the map is oriented according to the direction of your movement known from GPS data. For example, if you turn to the right, the map also rotates so that the right side of the screen corresponds to the direction of movement. For details, go to [Rotate map by bearing](../map/interact-with-map#rotate-map-by-bearing).
 
 - ![Compass](@site/static/img/widgets/map_butt_compas_dir_ios.png)  
 **Compass direction**. The icon on the button points to the actual North, and the map moves according to the compass orientation of your device. This way, the north of the map corresponds to the real north, and you can see the orientation of the map relative to the surrounding terrain. Your device should be in the most horizontal position possible. If your device does not have a compass sensor, the orientation of the map remains unchanged.

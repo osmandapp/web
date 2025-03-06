@@ -18,6 +18,30 @@ import Translate from '@site/src/components/Translate.js';
 - **For Android**. Log in to the same app store account used for purchasing OsmAnd. Search for *OsmAnd+* or *OsmAnd Free* (for restoring *Maps+*, *OsmAnd Live*, or *OsmAnd Pro*) and install the app.
 No additional payment is required. If the paid features are not restored, go to your device's *Settings → Apps →* select the app store, clear the cache, restart your device, and try again. For further details, refer to [this article](../purchases/android.md#restore-purchases).
 
+## Cross-Platform Purchases
+
+**OsmAnd Pro** is a subscription that allows you to purchase OsmAnd on one platform and use **paid features** on other platforms simultaneously. For example, if you purchase it through one of the [Android](../purchases/android.md) stores (Google Play, Amazon, Huawei AppGallery), you can also use it on [iOS](../purchases/ios.md) and [Web](https://www.osmand.net/map).
+
+Please note that other purchases, such as Maps+, cannot be transferred between billing platforms, including between Google Play and Amazon on Android.
+
+**Steps to transfer license**:
+
+**1. Purchase**. After purchasing an OsmAnd Pro subscription, register your email on [OsmAnd Cloud](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro).
+
+- Navigate to *OsmAnd Menu → Settings → OsmAnd Cloud → Create new account*
+
+:::note
+***Registration must be done on the platform where the subscription was purchased.***
+:::
+
+**2. Link**. Link your purchase to another device.
+
+- Navigate to *OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
+
+**3. Activation**. Finally, activate the paid features.
+
+- Navigate to *OsmAnd Menu → Settings → Purchases → Restore purchases*
+
 
 ## How to Buy and Restore OsmAnd in the Huawei AppGallery without Huawei Mobile Services
 
@@ -68,31 +92,6 @@ You are allowed 5 free downloads on iOS or 7 on Android. Each download, whether 
 ## How can I get additional map downloads in OsmAnd Free?
 
 If you have used all 5 (iOS) or 7 (Android) free downloads, you can receive 3 extra downloads by *subscribing to the mailing list*. A banner with the subscription option will appear once all free downloads have been used.
-
-
-## Cross-Platform Purchases
-
-**OsmAnd Pro** is a subscription that allows you to purchase OsmAnd on one platform and use **paid features** on other platforms simultaneously. For example, if you purchase it through one of the [Android](../purchases/android.md) stores (Google Play, Amazon, Huawei AppGallery), you can also use it on [iOS](../purchases/ios.md) and [Web](https://www.osmand.net/map).
-
-Please note that other purchases, such as Maps+, cannot be transferred between billing platforms, including between Google Play and Amazon on Android.
-
-**Steps to transfer license**:
-
-**1. Purchase**. After purchasing an OsmAnd Pro subscription, register your email on [OsmAnd Cloud](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro).
-
-- Navigate to *OsmAnd Menu → Settings → OsmAnd Cloud → Create new account*
-
-:::note
-***Registration must be done on the platform where the subscription was purchased.***
-:::
-
-**2. Link**. Link your purchase to another device.
-
-- Navigate to *OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
-
-**3. Activation**. Finally, activate the paid features.
-
-- Navigate to *OsmAnd Menu → Settings → Purchases → Restore purchases*
 
 
 ## Verification Code for OsmAnd Cloud Not Received

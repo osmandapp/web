@@ -22,7 +22,7 @@ The Topography plugin is a [paid feature](../purchases/index.md) of the OsmAnd a
 :::
 
 Topography is an important feature of cartography that provides information to visually assess the terrain's relief.
-Topography information like [*Contour lines*](#contour-lines), [*Terrain*](#terrain) (*Hillshade* and *Slope*), and [*3D Relief*](#3d-relief) helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, or points of equal height.
+Topography information like [Contour lines](#contour-lines), [Terrain](#terrain) (*Hillshade* and *Slope*), and [3D Relief](#3d-relief) helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, or points of equal height.
 
 Each feature provided by this plugin is an independent map layer that, when enabled, can be displayed above or below the main map source depending on the [settings](../map/raster-maps.md#overlay-layer).  
 
@@ -71,10 +71,10 @@ For complete information, see the [License](https://github.com/osmandapp/OsmAnd/
 
 To display **Contour lines** and **Terrain (Hillshade, Slope)** data on the map:
 
-1. *Purchase*: [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/index.md#purchase)
-2. [*Enable*](../plugins/index.md#enable--disable) Topography plugin in the Plugins section of the *Main Menu*.
-3. [*Download*](#download-maps): Contour lines, Hillshade, Slope, or Terrain map (3D) maps.
-4. *Enable and adjust*: Contour lines, Hillshade, or Slope for the map view.
+1. **Purchase**: [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/index.md#purchase)
+2. [Enable](../plugins/index.md#enable--disable) Topography plugin in the Plugins section of the *Main Menu*.
+3. [Download](#download-maps): Contour lines, Hillshade, Slope, or Terrain map (3D) maps.
+4. **Enable and adjust**: Contour lines, Hillshade, or Slope for the map view.
 5. You can also watch [YouTube tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
 To display [**3D Relief**](#3d-relief) you need to purchase the *OsmAnd Pro* plan, including access to the Topography plugin.
@@ -301,7 +301,7 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
 1. If you use the **Map rendering engine Version 1**, you need to use the normal [downloading](../start-with/download-maps.md) of Hillshade and Slope raster maps.
 
 2. If you use the **Map rendering engine Version 2 (OpenGL)**:
-    - You can continue to use the normal Hillshade and Slope raster map download type. However, to do so, you'll need to activate the [*OsmAnd development plugin*](../plugins/development.md) and enable the [*Use raster SQLite format for hillshade and slope*](../plugins/development.md#terrain) setting.
+    - You can continue to use the normal Hillshade and Slope raster map download type. However, to do so, you'll need to activate the [OsmAnd development plugin](../plugins/development.md) and enable the [Use raster SQLite format for hillshade and slope](../plugins/development.md#terrain) setting.
 
     - Alternatively, you can use the [Terrain Map (3D)](../personal/maps-resources.md#paid-features-for-the-selected-location) download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
 
@@ -310,7 +310,7 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
 
 ![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-You can use the *Quick Action* buttons on the map screen to switch the visibility of [*Contour Lines*](#contour-lines), [*Terrain*](#terrain) layers, and [*Terrain color scheme*](#default-color-scheme). Depending on the layer selected in the Configure map menu, assigning a *Terrain* action to the button will display *Hillshade*, *Slope*, or *Altitude*.  
+You can use the *Quick Action* buttons on the map screen to switch the visibility of [Contour Lines](#contour-lines), [Terrain](#terrain) layers, and [Terrain color scheme](#default-color-scheme). Depending on the layer selected in the Configure map menu, assigning a *Terrain* action to the button will display *Hillshade*, *Slope*, or *Altitude*.  
 
 The main settings for *Show or Hide map types* are in the Topography section of the Configure Map menu. In the [Quick Action](../widgets/quick-action.md#configure-map) article, you can find a list of layers available for display. If you need quick access to this map configuration, use the *Custom Button* tool.
 

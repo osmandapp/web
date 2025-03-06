@@ -18,57 +18,75 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::caution Note
-This plugin is available only for the **Android version** of the OsmAnd app.  
-
-The **[iOS Version](#how-to-use-ios)** uses the basic accessibility features of the system.
+The Accessibility plugin is available only on the **Android version** of OsmAnd. The [iOS Version](#how-to-use-ios) relies on the system’s default accessibility settings.
 :::
 
-Makes device accessibility features directly available in OsmAnd. The plugin allows blind and visually impaired people to take full advantage of the OsmAnd app's features. Accessibility plugin makes it easy to set speech speed for text pronunciation, customize navigation, zoom controls, and automatic announcements. [Learn more](https://www.android.com/accessibility/) about Android accessibility features.
+Accessibility improves usability for blind and visually impaired users by integrating with [Android Accessibility](https://www.android.com/accessibility/) tools. The plugin offers **text-to-speech, gesture control, automatic announcements** and **haptic feedback** to make navigation more accessible. On iOS, OsmAnd utilizes Apple's built-in accessibility features such as VoiceOver.
 
 
 ### How To Use (Android)
 
-![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)  
+![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
-For the plugin to work, you need to go to Accessibility from the settings item on the app screen, or go directly through the system settings of the device, and select the required settings. To set individual parameters, [see here](#plugin-settings).  
+***Enable the Accessibility plugin:***  
 
-- After enabling the plugin and enabling the Android Accessibility settings for your device, the map's reaction to gestures will be changed.
+1. **Activate the plugin**: *Menu → Plugins → Accessibility → Enable*.
 
-- The Android’s TalkBack screen reader will tell you in which situations to apply which gesture.
+2. **Turn on accessibility mode**:  
+   - Navigate to *System Settings → Accessibility* on your Android device.
+   - Enable TalkBack or another screen reader.
 
-- The full **list of TalkBack gestures** can be viewed [here](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
+3. **Adjust plugin settings**:  
+   - Open [Accessibility settings](#plugin-settings) within the OsmAnd app.
+   - Configure features such as speech rate, auto-announce, and haptic feedback.
 
-- All [OsmAnd gestures](../map/interact-with-map#gestures) used to interact with maps built into the app will also be available.
+***Features and functionality:***
 
-- All sound and haptic functions The OsmAnd app accessibility plugin remain running in the background when the screen is turned off or locked.  
+- **Gesture controls**:
+   - Supports all standard [OsmAnd gestures](../map/interact-with-map#gestures).
+   - Adjusts gestures to align with Android's **TalkBack** instructions.
 
-- The following actions available by [tapping the compass button](../map/interact-with-map.md#map-orientation-and-compass):
+- **TalkBack integration**:
+   - The TalkBack screen reader offers audio guidance for navigation and menu interactions.
+   - Learn more about TalkBack gestures [here](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
 
-   - **Single tap**. Rotates the map to the North in main mode.  
-      *→*  &nbsp;This action corresponds to a **Double tap** in *TalkBack*.
-   - **Long tap**. Opens the bottom sheet with orientations in main mode.  
-      *→*  &nbsp;This action corresponds to a **Double tap and hold** in *TalkBack*.
-   - **Double tap** to switch map orientation is not available in Accessibility mode.
+- **Background operations**. Audio and haptic feedback continue even when the screen is off or locked.
+
+- **Compass button actions**:
+
+| Gesture | Action | TalkBack equivalent |
+|-----|-----|-----|
+| **Single tap** | Rotates map to **North** | **Double tap** |
+| **Long tap** | Opens the list of [map orientations](../map/interact-with-map.md#map-orientation-modes) | **Double tap and hold** |
+| **Double tap** | *Not available in Accessibility mode* | *Not supported* |
 
 
 ### How To Use (iOS)
 
-The iOS version of the OsmAnd app does not include an Accessibility plugin. However, the accessibility settings configured on your device will also work in the app.
+The iOS version of OsmAnd uses the system’s **built-in accessibility tools**.
 
-- You can read general information about Vision Accessibility iOS features [here](https://www.apple.com/accessibility/vision/).
+1. **Enable VoiceOver**:
+   - Go to *Settings → Accessibility → VoiceOver*.
+   - Configure **VoiceOver gestures** for use with OsmAnd.
 
-- On the iOS system, you can use a VoiceOver gesture-based screen reader. For a full list of VoiceOver gestures on iPhone, click [here](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios). To see lists of gestures and settings for other devices, follow this [link](https://support.apple.com/accessibility).
+2. **Supported features**:
+   - **Screen reader support** for map interactions.
+   - **Customizable gestures** through iOS settings.
+   - All standard [OsmAnd gestures](../map/interact-with-map#gestures) are available.
 
-- All [OsmAnd gestures](../map/interact-with-map#gestures) used to interact with the maps built into the app will also be available.  
+3. **Learn more**:
+   - Read about iOS Vision Accessibility features [here](https://www.apple.com/accessibility/vision/).
+   - Explore VoiceOver gestures for iPhone [here](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios).
 
 
 ## Required Setup Parameters
 
 To activate device's accessibility features in OsmAnd, you need to make the following settings:
 
-1. Enable the [Accessibility plugin](../plugins/index.md#enable--disable) in the Plugins section of the *Main Menu*.  
-2. Turn on accessibility mode on the Android system.
-3. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
+1. **Enable the** [Accessibility plugin](../plugins/index.md#enable--disable):  *Menu → Plugins → Accessibility → Enable*.  
+2. **Enable accessibility mode** on your device.
+3. Configure Accessibility plugin [settings](#plugin-settings).
+
 
 ## Plugin Settings
 
@@ -76,8 +94,19 @@ To activate device's accessibility features in OsmAnd, you need to make the foll
 
 ![Accessibility](@site/static/img/plugins/Accessibility/access_.png)  
 
-The Accessibility plugin settings allow you to configure the application in accordance to your individual needs. All settings relate to the navigation process and are set individually for each [profile](../personal/profiles.md).
+The Accessibility plugin offers various settings to personalize navigation and interaction for users with disabilities. These settings are applied per [profile](../personal/profiles.md) in OsmAnd.
 
+| Setting                   | Description |  
+|---------------------------|-------------|  
+| **Accessibility Mode**    | Enables *built-in OsmAnd features* or uses **system settings**. |  
+| **Speech Rate**           | Controls *text-to-speech speed*, ranging from **50% to 200%**. |  
+| [Smart Autoannounce](#smart-autoannounce-and-clockwise-directions)    | Provides *voice guidance* when deviating from the route. |  
+| **Autoannounce Period**   | Sets minimum time between announcements, from **5 seconds to 5 minutes**. |  
+| **Direction Style**       | Choose between *Sidewise (8 directions)* or [Clockwise](#smart-autoannounce-and-clockwise-directions) (12 directions)*. |  
+| **Audio Directions**      | Plays *audio guidances* indicating direction. |  
+| **Haptic Directions**     | Provides *vibration feedback* for turns and deviations.|  
+
+<!--
 - **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
 
 - **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
@@ -91,6 +120,24 @@ The Accessibility plugin settings allow you to configure the application in acco
 - **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
 
 - **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
+-->
+
+***Tips for optimized accessibility:***
+
+- **Screen reader** - Use TalkBack (*Android*) or VoiceOver (*iOS*) for enhanced map interaction.
+- **Audio navigation** - Enable auto-announce to receive voice directions while the screen is off.
+- **Haptic feedback** - Ideal for low-visibility environments or when audio guidances are impractical.
+
+
+#### Smart Autoannounce and Clockwise Directions
+
+The **Smart Autoannounce** feature provides *audio notifications* when you deviate from the planned route, while the **Clockwise Direction Style** offers *clock-face-based navigation guidances*. These features are designed to support visually impaired users who rely on *voice guidance*.  
+
+- If **TalkBack is not enabled**, both *Smart Autoannounce* and *Clockwise Directions* will only display *text notifications* on the screen.  
+
+- **Voice notifications** are activated only when *TalkBack* is enabled in the **device’s system settings**.  
+
+- Set the **Autoannounce Period** (e.g., *10 seconds*) to control the frequency of announcements.
 
 
 ## Related Articles
@@ -99,5 +146,4 @@ The Accessibility plugin settings allow you to configure the application in acco
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *This article was last updated in May 2023*
-
+> *This article was last updated in February 2025*

@@ -65,6 +65,15 @@ Search query list:
 - Additional information, such as the city's district.
 
 
+#### US Address Search and TIGER Data
+
+OsmAnd supports address searches using OpenStreetMap data, but in the United States, address search results may be incomplete due to the use of [TIGER data](https://wiki.openstreetmap.org/wiki/TIGER).  
+
+- **TIGER data provides address ranges, not exact locations**, this means that some house numbers may not be recognized.
+- **If an address is not found**, try searching *by street name* instead of a specific house number.
+- Use *alternative location identifiers*, such as nearby landmarks or ZIP codes, to refine your search results.  
+
+
 ### Supported formats
 
 See the [Search All](./search-all.md#basic-queries) article for a list of available queries and supported search formats.
@@ -133,7 +142,7 @@ Street search is performed in the locality where you are, or where you searched 
 
 - To use this type of search, tap **Search Street** (*Android*) or **Select Street** (*iOS*).
 - In the search field next to the city name, you can start typing the street name and the list will refine, giving you the most appropriate results.
-- In other items, the street search is the same as in [*Select City*](#select-city).
+- In other items, the street search is the same as in [Select City](#select-city).
 
 :::note Key & Value
 *Search streets* by [**addr:street=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)  

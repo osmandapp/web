@@ -28,11 +28,11 @@ The *Import* and *Export* allow you to save data from generated `.osf` **files**
 **Data types** available for import/export:
 
 - **Settings:**  
-        [*Profiles*](../personal/profiles.md#actions), &nbsp;[*OsmAnd/General Settings*](../personal/global-settings.md), &nbsp;[*Colors*](../personal/color-palette-schemes.md), &nbsp;[*Quick action*](../widgets/quick-action.md), &nbsp;[*POI Type*](../map/point-layers-on-map.md#poi-types), &nbsp;[*Avoid road*](../map/map-context-menu.md#avoid-road).
+        [Profiles](../personal/profiles.md#actions), &nbsp;[OsmAnd/General Settings](../personal/global-settings.md), &nbsp;[Colors](../personal/color-palette-schemes.md), &nbsp;[Quick action](../widgets/quick-action.md), &nbsp;[POI Type](../map/point-layers-on-map.md#poi-types), &nbsp;[Avoid road](../map/map-context-menu.md#avoid-road).
 - **My Places:**  
-        [*Favorites*](../personal/favorites.md#export--import), &nbsp;[*Tracks*](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[*OSM notes*, *OSM edits*](../plugins/osm-editing.md#create--modify-poi), &nbsp;[*A/V notes*](../plugins/audio-video-notes.md), &nbsp;[*Map markers*](../personal/markers.md), &nbsp;[*Markers history*, *Search history*, *Navigation history*](../personal/global-settings.md#history), &nbsp;*Itinerary*.
+        [Favorites](../personal/favorites.md#export--import), &nbsp;[Tracks](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM notes*, *OSM edits](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[Markers history*, *Search history*, *Navigation history](../personal/global-settings.md#history), &nbsp;*Itinerary*.
 - **Resources:**  
-        [*Rendering style*](../map/vector-maps.md#custom-map-style), &nbsp;[*Routing*](../navigation/routing/osmand-routing.md), &nbsp;[*Online routing engines*](../navigation/routing/online-routing.md), &nbsp;[*Map sources*, *Standard/Offline Maps*](../map/raster-maps.md), &nbsp;[*Wikipedia and Travel maps*](../plan-route/travel-guides.md), &nbsp;[*Nautical maps*](../plugins/nautical-charts.md), &nbsp;[*Road maps*](../map/vector-maps.md#road-style), &nbsp;[*Topography maps*](../plugins/topography.md), &nbsp;[*Voice prompts (TTS)*](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [*Voice prompts (recorded)*](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[*Favorites backup*](../personal/favorites.md#automatic-favorites-backup).
+        [Rendering style](../map/vector-maps.md#custom-map-style), &nbsp;[Routing](../navigation/routing/osmand-routing.md), &nbsp;[Online routing engines](../navigation/routing/online-routing.md), &nbsp;[Map sources*, *Standard/Offline Maps](../map/raster-maps.md), &nbsp;[Wikipedia and Travel maps](../plan-route/travel-guides.md), &nbsp;[Nautical maps](../plugins/nautical-charts.md), &nbsp;[Road maps](../map/vector-maps.md#road-style), &nbsp;[Topography maps](../plugins/topography.md), &nbsp;[Voice prompts (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Voice prompts (recorded)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favorites backup](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Export
@@ -103,7 +103,7 @@ In the *Android* and *iOS* versions of OsmAnd, if you completely **uninstall** t
 
 There are two ways to save your data before reinstalling the OsmAnd app:
 
-- Use [*OsmAnd Cloud*](#osmand-cloud). You can back up your data using OsmAnd features such as [*OsmAnd Start*](../personal/osmand-cloud.md#osmand-start), as a free version, or [*OsmAnd Pro*](../purchases/index.md), a paid subscription with more features.
+- Use [OsmAnd Cloud](#osmand-cloud). You can back up your data using OsmAnd features such as [OsmAnd Start](../personal/osmand-cloud.md#osmand-start), as a free version, or [OsmAnd Pro](../purchases/index.md), a paid subscription with more features.
 - [Export OSF file](#export) with your data. Copy the `.osf` file to a folder on your device or OsmAnd Cloud. After reinstalling OsmAnd, [import this `.osf` file](#import) to the OsmAnd app.
 
 

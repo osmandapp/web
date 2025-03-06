@@ -208,7 +208,7 @@ To get started with Hillshade and Slope you need to:
 |--------|---------|
 | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-The difference of relief display on the map when applying these settings is described in the **Topography** article in the corresponding section [*Hillshade and 3D Relief*](../plugins/topography.md#hillshade-and-3d-relief).
+The difference of relief display on the map when applying these settings is described in the **Topography** article in the corresponding section [Hillshade and 3D Relief](../plugins/topography.md#hillshade-and-3d-relief).
 
 
 ### Configure Display Options
@@ -245,7 +245,7 @@ You can customize the zoom level to display and the transparency for Hillshade a
 The [**3D Relief** feature](../plugins/topography.md#3d-relief) is a mapping technology that allows the visualization of terrain on a map using three-dimensional models. This feature adds elevation information to a normal two-dimensional map, which creates a 3D and depth effect and allows you to better visualize the terrain.  
 
 *To start using 3D Relief*:  
-You need to purchase [OsmAnd Pro purchase plan](../plugins/index.md#purchase), enable the [Topography plugin](../plugins/topography.md), and switch on the [*3D Relief*](../plugins/topography.md#3d-relief) item in *Menu →  Configure map*.
+You need to purchase [OsmAnd Pro purchase plan](../plugins/index.md#purchase), enable the [Topography plugin](../plugins/topography.md), and switch on the [3D Relief](../plugins/topography.md#3d-relief) item in *Menu →  Configure map*.
 
 
 *How the 3D Relief feature works*:  
@@ -350,7 +350,7 @@ To clear the map tile cache, you need to do the following:
 
 If you want to access raster maps offline, you may need to preload tiles. This can be done on your mobile device, but be aware that some services may block large packet downloads. You can also use the same feature to update already downloaded tiles for selected areas, otherwise, OsmAnd will continue to display tiles that are already stored in the cache.  
 
-For the maps to automatically update the tiles after a while, you can set an [*Expiry time*](#add-new-online-raster-map-source), then OsmAnd will reload the tiles as soon as they are displayed.  
+For the maps to automatically update the tiles after a while, you can set an [Expiry time](#add-new-online-raster-map-source), then OsmAnd will reload the tiles as soon as they are displayed.  
 
 <Tabs groupId="operating-systems">
 
@@ -382,9 +382,9 @@ For the maps to automatically update the tiles after a while, you can set an [*E
 
 </Tabs>
 
-- To download or update raster tiles, you need to select the source of the online map as the [Main map source](#select-raster-maps). You can also select online tiles separately for the [*Overlay*](#overlay-layer) map or for the [*Underlay*](#underlay-layer).
+- To download or update raster tiles, you need to select the source of the online map as the [Main map source](#select-raster-maps). You can also select online tiles separately for the [Overlay](#overlay-layer) map or for the [Underlay](#underlay-layer).
 
-- For the **Android** version of the OsmAnd app, you need to select an area according to the screen size of your device and make a long tap on the map. Then select [*Actions*](../map/map-context-menu.md#customize) in the map context menu and the *Download map* or *Update map* option. On the Download Map screen, make changes to the necessary settings and tap Download.  
+- For the **Android** version of the OsmAnd app, you need to select an area according to the screen size of your device and make a long tap on the map. Then select [Actions](../map/map-context-menu.md#customize) in the map context menu and the *Download map* or *Update map* option. On the Download Map screen, make changes to the necessary settings and tap Download.  
 
 - In the iOS version of the OsmAnd app, you need to long tap the map, then select *Actions* and the *Download map* or *Update map* option from the map context menu. On the Download Map screen, you can select the required area and modify the necessary settings. After you set all the parameters, you can see the number of tiles and the download size.
 

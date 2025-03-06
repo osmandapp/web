@@ -462,7 +462,7 @@ From the main screen:
 
 You can only delete categories that were created using filters or custom search.
 
-- Go to the [*Categories* tab](#poi-search-by-categories) and select the required one.
+- Go to the [Categories](#poi-search-by-categories) tab and select the required one.
 - In the field next to *Show on Map*, tap the icon representing the *filter*.
 - In the *Filters* menu, tap the *three-dot menu* ( &#8285; ) located in the upper right corner of the screen.
 - Select **Delete Filter**.

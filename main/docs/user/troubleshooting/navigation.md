@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 *Android*. OsmAnd uses two different **offline routing engines**: a *Java-based engine* and a *Native (C++) engine*.
 
-- The *Java-based engine* is used in [*Safe Mode*](../plugins/development.md#safe), but it is approximately 10 times slower than the native engine. It also has strict memory limitations, which can lead to errors such as *Not enough memory to compute*. If you encounter this issue, navigate to *Plugins → OsmAnd development → Settings →* [*Safe Mode*](../plugins/development.md#safe) and ensure this option is disabled.
+- The *Java-based engine* is used in [Safe Mode](../plugins/development.md#safe), but it is approximately 10 times slower than the native engine. It also has strict memory limitations, which can lead to errors such as *Not enough memory to compute*. If you encounter this issue, navigate to *Plugins → OsmAnd development → Settings →* [*Safe Mode*](../plugins/development.md#safe) and ensure this option is disabled.
 - The *Native (C++) engine* offers better performance, but its efficiency depends on your device’s memory and processor capabilities. Generally, native routing performs well for routes under 300 km, with route calculation times ranging from 15 seconds to 4 minutes. If the process takes longer than 4 minutes, it is advisable to stop, as the application may crash.
 
 

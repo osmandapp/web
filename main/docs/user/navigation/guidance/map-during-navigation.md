@@ -107,7 +107,7 @@ When you specify the display of certain POIs on the *Configure map*, they are al
 
 ### My Favorites
 
-The list contains all previously added [*Favorite*](../../personal/favorites.md#favorite-point) points near the route you have created. As with POIs, you can select the distance at which these points are located.  
+The list contains all previously added [Favorite](../../personal/favorites.md#favorite-point) points near the route you have created. As with POIs, you can select the distance at which these points are located.  
 
 - If you [turn off the display of Favorites on the map](../../map/configure-map-menu.md), they do not disappear from the list and continue to be displayed in the [widget](../../widgets/nav-widgets.md#street-name) and announced when you approach them.
 
@@ -122,7 +122,7 @@ The list contains all previously added [*Favorite*](../../personal/favorites.md#
 
 *Traffic warnings* are not displayed directly on the map like *POIs* or *My Favorites*.
 
-- **To enable** this option and see the warnings, you must first enable and configure the [*Alerts widget*](../../widgets/nav-widgets.md#alert-widget).
+- **To enable** this option and see the warnings, you must first enable and configure the [Alerts widget](../../widgets/nav-widgets.md#alert-widget).
 
 - The choice to display *Traffic warnings* along your route allows you to see the entire list just before you start your route, which is useful when planning your trip.
 

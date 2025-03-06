@@ -353,7 +353,7 @@ In some cases, OsmAnd's *[Bookmarks tab](#explore-and-bookmark)* will prompt you
 ![Travel guides download Wikipedia](@site/static/img/guides/travel_guides_wikipedia_download.png)
 
 :::info NOTE
-The [*Wikipedia plugin*](../plugins/wikipedia.md) is a [paid feature](../purchases/index.md) of the OsmAnd app.
+The [Wikipedia plugin](../plugins/wikipedia.md) is a [paid feature](../purchases/index.md) of the OsmAnd app.
 :::
 
 ## Related Articles

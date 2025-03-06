@@ -87,7 +87,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,plan_route,plan_rout
 
 </Tabs>  
 
-*Plan a route* tool allows modifying existing GPX track as well as an [imported track](../personal/tracks/manage-tracks.md#import). However, in case you need to exclude large amount of points based on generic criteria, [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter) might be a more suitable tool.
+*Plan a route* tool allows modifying existing GPX track as well as an [imported track](../personal/tracks/manage-tracks.md#import). However, in case you need to exclude large amount of points based on generic criteria, [<Translate android="true" ids="shared_string_gps_filter"/>](../map/tracks/track-context-menu.md#gps-filter) might be a more suitable tool.
 
 
 ### Distance Measurement
@@ -111,10 +111,10 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 
 ![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
 
-If [*Elevation data*](../map/tracks/track-context-menu.md#calculating-missing-elevation) is missing in an existing track, it's possible to add it using the following tools:
+If [Elevation data](../map/tracks/track-context-menu.md#calculating-missing-elevation) is missing in an existing track, it's possible to add it using the following tools:
 
-- [*Use nearby roads*](#attach-track-to-roads). This mode uses offline maps to find the nearest roads to build a track, so elevation data will be retrieved from attached roads. The geometry of the track can be adjusted.  
-- [*Use Terrain maps*](../map/tracks/track-context-menu.md#calculating-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitudes recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
+- [Use nearby roads](#attach-track-to-roads). This mode uses offline maps to find the nearest roads to build a track, so elevation data will be retrieved from attached roads. The geometry of the track can be adjusted.  
+- [Use Terrain maps](../map/tracks/track-context-menu.md#calculating-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitudes recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
 
 
 ### Attach Track to Roads
@@ -330,16 +330,16 @@ When saving a new track, you can select the ***Simplified*** track option to mak
 
 </Tabs>
 
-- [*<Translate android="true" ids="route_between_points"/>*](#route-between-points). Shows the selected application profile (default is a straight line). Tapping this action is the same as tapping the *Profile* button, which opens the application [profile menu](../personal/profiles.md).
-- *<Translate ios="true" ids="gpx_start_new_segment"/>* (*iOS*) or *<Translate android="true" ids="plan_route_add_new_segment"/>* (*Android*). Draws new route segments that do not connect to the previous segment.
-- [*<Translate android="true" ids="shared_string_save_changes"/>*](#save-route). If it is a new track without linking to the existing one, the *Save as new track* menu opens. When you add new segments to an opened or imported track, the notification about saving the GPS file to the storage appears, after which you can continue to create the next segment.
-- [*<Translate android="true" ids="save_as_new_track"/>*](#save-route). Saves your route like the GPX track.
-- [*<Translate android="true" ids="add_to_a_track"/>*](#save-route). Add your route to a track from your track folder and save the new track.
-- [*<Translate android="true" ids="shared_string_navigation"/>*](../navigation/setup/gpx-navigation.md). Starts navigation from your position to the finish point using a drawn route.
-- *<Translate android="true" ids="reverse_route"/>*. You swap the *Start* point of the route and the last added point. The route segment settings do not change when Reverse is applied.
-- [*<Translate android="true" ids="attach_to_the_roads"/>*](#attach-track-to-roads). Creates an approximate route. Each point on the track is matched to the nearest permitted road on the map according to the selected profile and threshold distance.
-- [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter) (Android only). You can filter out route points that do not match the selected routing type, delete unnecessary data, or correct inaccurate data. GPS filter will only work if the routing type is specified as *Straight Line*. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
-- [*<Translate android="true" ids="get_altitude_data"/>*](#get-elevation-data) (*Android only*). This option is only displayed in the menu if no elevation data is available. With this [option](#get-elevation-data), you can calculate altitude using *Terrain map data* or use data from downloaded maps to find the *nearby roads*.
+- [<Translate android="true" ids="route_between_points"/>](#route-between-points). Shows the selected application profile (default is a straight line). Tapping this action is the same as tapping the *Profile* button, which opens the application [profile menu](../personal/profiles.md).
+- **<Translate ios="true" ids="gpx_start_new_segment"/>** (*iOS*) or **<Translate android="true" ids="plan_route_add_new_segment"/>** (*Android*). Draws new route segments that do not connect to the previous segment.
+- [<Translate android="true" ids="shared_string_save_changes"/>](#save-route). If it is a new track without linking to the existing one, the *Save as new track* menu opens. When you add new segments to an opened or imported track, the notification about saving the GPS file to the storage appears, after which you can continue to create the next segment.
+- [<Translate android="true" ids="save_as_new_track"/>](#save-route). Saves your route like the GPX track.
+- [<Translate android="true" ids="add_to_a_track"/>](#save-route). Add your route to a track from your track folder and save the new track.
+- [<Translate android="true" ids="shared_string_navigation"/>](../navigation/setup/gpx-navigation.md). Starts navigation from your position to the finish point using a drawn route.
+- **<Translate android="true" ids="reverse_route"/>**. You swap the *Start* point of the route and the last added point. The route segment settings do not change when Reverse is applied.
+- [<Translate android="true" ids="attach_to_the_roads"/>](#attach-track-to-roads). Creates an approximate route. Each point on the track is matched to the nearest permitted road on the map according to the selected profile and threshold distance.
+- [<Translate android="true" ids="shared_string_gps_filter"/>](../map/tracks/track-context-menu.md#gps-filter) (Android only). You can filter out route points that do not match the selected routing type, delete unnecessary data, or correct inaccurate data. GPS filter will only work if the routing type is specified as *Straight Line*. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
+- [<Translate android="true" ids="get_altitude_data"/>](#get-elevation-data) (*Android only*). This option is only displayed in the menu if no elevation data is available. With this [option](#get-elevation-data), you can calculate altitude using *Terrain map data* or use data from downloaded maps to find the *nearby roads*.
 - ***<Translate android="true" ids="shared_string_clear_all"/>***. It archives completely all your actions. An "artifact" remains on the map - the dotted lines of the just cleared route. It disappears at the next, adding new points. You can cancel the Clear All function with the Return Action button. The feature does not affect the unchanged parts of the routes opened in the tool.
 
 ### Graph
@@ -362,10 +362,10 @@ When saving a new track, you can select the ***Simplified*** track option to mak
 
 During route planning, the [graph](../navigation/setup/route-details.md#elevation-graph) displays route altitude and slope percentage information, plus you can tap anywhere on the graph to display a pointer with particular data.  
 
-- For **Android**, the graph is displayed in the *Graph* tab when creating or opening a track, and when [*Navigation*](../navigation/setup/gpx-navigation.md) using *Plan a route*.
+- For **Android**, the graph is displayed in the *Graph* tab when creating or opening a track, and when [Navigation](../navigation/setup/gpx-navigation.md) using *Plan a route*.
 - For **iOS**, the graph is only available through the *[Options](#options) → Navigation* menu.
 
-When calculating a route for navigation in *Plan a route*, you can find out additional track information such as [*Elevation info*](../navigation/setup/route-details.md#elevation-info) and [*Road attributes*](../navigation/setup/route-details.md#road-attributes), and use the [*Analyze on map*](../navigation/setup/route-details.md#analyse-on-map) tool. Tap the *Details* button below the graph.  
+When calculating a route for navigation in *Plan a route*, you can find out additional track information such as [Elevation info](../navigation/setup/route-details.md#elevation-info) and [Road attributes](../navigation/setup/route-details.md#road-attributes), and use the [Analyze on map](../navigation/setup/route-details.md#analyse-on-map) tool. Tap the *Details* button below the graph.  
 
 
 ## Related Articles
