@@ -411,7 +411,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-The **Profile appearance** settings allow you to customize your profile's name and visual representation. You can also modify the appearance of [**My location**](#my-location-appearance) here. While the *profile name* must be unique, *icons* and *colors* can be the same across different profiles. These changes will be applied across various parts of the application, such as the [Route preparation](../navigation/setup/route-navigation.md) menu.
+The **Profile appearance** settings allow you to customize your profile's name and visual representation. You can also modify the appearance of [My Location](#my-location-appearance) here. While the *profile name* must be unique, *icons* and *colors* can be the same across different profiles. These changes will be applied across various parts of the application, such as the [Route preparation](../navigation/setup/route-navigation.md) menu.
 
 
 ### My Location Appearance
@@ -436,31 +436,32 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-The [**My location**](../map/interact-with-map.md#my-location-and-zoom) appearance settings allow you to customize how your location is displayed on the map, both while stationary and in motion. Motion is detected when the operating system receives a location update with a speed greater than **0 km/h**.  
+The **My Location appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the operating system when the device speed is **greater than zero**.
 
-#### Additional Options
+#### View Angle and Location Radius
 
-You can adjust location-related visual elements and apply them separately or together for **Resting** and **Navigation** positions below the *My Location* icon:
+You can customize the visual elements related to your location and apply them separately or together for **Resting** and **Navigation** positions. For both 2D and 3D modes, *View Angle* and *Location Radius* are displayed in the same color selected for the [navigation profile](#profile-appearance), directly below the [My Location](../map/interact-with-map.md#my-location-and-zoom) icon.
 
 - **<Translate android="true" ids="view_angle"/>** – Displays a **cone-shaped** area indicating the direction you are currently facing.  
-- **<Translate android="true" ids="location_radius"/>** – Shows a **circular area** around your icon, representing the accuracy of your current location.  
+- **<Translate android="true" ids="location_radius"/>** – Shows a **circular area** around your icon, representing the accuracy of your current location.
+
 
 #### Custom 3D Icons
 
 For a more personalized experience, you can create and add **custom 3D icons** to OsmAnd.  
 
-To add a custom 3D location icon:
+***How to add a custom 3D location icon:***
 
-1. **Create a 3D model** in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
+1. **Create a 3D model**. Design your icon in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
 
 2. **Integrate the model into OsmAnd:**  
-   - Create a [custom plugin](../plugins/custom.md) using the [plugin example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf).  
-   - Include your 3D icons with the following paths:  
+   - Develop a [custom plugin](../plugins/custom.md) using the provided [plugin example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf).  
+   - Place your 3D icon files in the following paths:  
 
      `..osmand/models/icon_folder_name/custom_3d_file.mtl`  
      `..osmand/models/icon_folder_name/custom_3d_file.obj`
 
-   - Alternatively, copy the **MTL and OBJ files** directly to the OsmAnd folder using the paths above.  
+   - Alternatively, copy the **MTL and OBJ files** directly into the OsmAnd folder using the same directory structure.  
 
 #### Map Orientation Modes
 
