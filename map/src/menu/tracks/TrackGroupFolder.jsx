@@ -44,7 +44,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     useEffect(() => {
         if (smartf) {
             setProcessingGroup(true);
-            const trackGroups = createTrackGroups(smartf.files);
+            const trackGroups = createTrackGroups(smartf.files, true);
             if (trackGroups.length > 0) {
                 let found = findGroupByName(trackGroups, DEFAULT_GROUP_NAME);
                 if (found) {
