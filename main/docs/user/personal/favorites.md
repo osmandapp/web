@@ -269,7 +269,7 @@ Use the  *three-dot menu* next to each folder to customize groups of favorite fo
 
 <TabItem value="android" label="Android">
 
-![Favorites folder functions android](@site/static/img/personal/favorite_add_new_group_andr.png)
+![Favorites folder functions android](@site/static/img/personal/favorite_change_appearance_andr.png)
 
 </TabItem>
 
@@ -285,7 +285,7 @@ Use the  *three-dot menu* next to each folder to customize groups of favorite fo
 
 - **Icon, color, shape** — Set a default style for all favorites in a group.
 - **Consistency** — New favorites added to the group inherit the default appearance automatically.
-- **Customization** — Override default settings for individual favorites if needed.
+- **Customization** — Override the default settings for existing points in the folder, new favorites only, or apply to all.
 
 
 ## Export / Import
