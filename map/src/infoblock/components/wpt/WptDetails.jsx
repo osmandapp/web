@@ -66,7 +66,7 @@ import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { useNavigate } from 'react-router-dom';
-import { apiGet } from '../../../util/HttpApi';
+import { apiGet, apiPost } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
 import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
@@ -197,14 +197,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             const currentPoi = ctx.selectedWpt.poi;
             const { options: objOptions, latlng } = currentPoi;
             const { name, type: objType } = getPropsFromSearchResultItem(objOptions, t);
-            const wikiCommons = getWikiCommons(objOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]);
-            let photos = null;
-            if (wikiCommons?.files) {
-                photos = {
-                    type: 'FeatureCollection',
-                    features: wikiCommons.files,
-                };
-            }
             return {
                 type,
                 poiType: objType,
@@ -215,10 +207,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 icon: objOptions[FINAL_POI_ICON_NAME],
                 tags: null,
                 osmUrl: objOptions[POI_OSM_URL],
-                wikidata: objOptions[OSM_PREFIX + WIKIDATA],
-                wikimediaCommons: wikiCommons?.categories,
                 wikipedia: getWikipedia(objOptions[OSM_PREFIX + WIKIPEDIA]),
-                photos,
             };
         }
         return null;
@@ -355,7 +344,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         if (!mainPhotoName || mainPhotoName === EMPTY_STRING) {
             return wpt;
         }
-        const mainPhoto = wpt.photos.features.find((photo) => photo.properties.imageTitle === mainPhotoName);
+        const mainPhoto = wpt.photos.features.find((photo) => photo.properties.imageTitle.endsWith(mainPhotoName));
         if (mainPhoto) {
             mainPhoto.properties.rowNum = 0;
             wpt.photos.features.unshift(mainPhoto);
@@ -377,43 +366,38 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         return wpt;
     }
 
+    function objWithPhotos(obj) {
+        return obj?.type?.isPoi || obj?.type?.isSearch || obj?.type?.isWikiPoi;
+    }
+
     useEffect(() => {
-        if ((wpt?.type?.isPoi || wpt?.type?.isSearch || wpt?.type?.isWikiPoi) && !isAddressAdded) {
+        if (objWithPhotos(wpt) && !isAddressAdded) {
             setIsAddressAdded(true);
-
-            let updatedWpt = { ...wpt };
-
-            // First, search for the address
             getPoiAddress(wpt).then((addressData) => {
-                updatedWpt.address = addressData ? addressData : ADDRESS_NOT_FOUND;
+                setWpt((prevWpt) => {
+                    if (prevWpt?.id !== wpt?.id) return prevWpt;
 
-                // After searching for the address, search for photos
-                if (!isPhotosAdded) {
-                    setIsPhotosAdded(true);
-                    if (wpt?.type?.isWikiPoi) {
-                        getWikiPhotos(wpt).then((photosData) => {
-                            if (photosData) {
-                                updatedWpt.photos = photosData;
-                                updatedWpt = addFirstPhoto(updatedWpt);
-                            }
-                            setWpt(updatedWpt);
-                        });
-                    } else if (wpt?.type?.isPoi || wpt?.type?.isSearch) {
-                        getPoiPhotos(wpt).then((photosData) => {
-                            if (photosData) {
-                                updatedWpt.photos = updatedWpt.photos
-                                    ? {
-                                          ...updatedWpt.photos,
-                                          features: [...updatedWpt.photos.features, ...photosData.features],
-                                      }
-                                    : photosData;
-                            }
-                            setWpt(updatedWpt);
-                        });
+                    let updatedWpt = { ...prevWpt, address: addressData ? addressData : ADDRESS_NOT_FOUND };
+
+                    if (!isPhotosAdded) {
+                        setIsPhotosAdded(true);
+                        if (objWithPhotos(prevWpt)) {
+                            getPhotos(prevWpt).then((photosData) => {
+                                setWpt((finalWpt) => {
+                                    if (finalWpt?.id !== prevWpt?.id) return finalWpt;
+
+                                    let newWpt = { ...finalWpt, photos: photosData || [] };
+                                    if (finalWpt?.type?.isWikiPoi) {
+                                        newWpt = addFirstPhoto(newWpt);
+                                    }
+                                    return newWpt;
+                                });
+                            });
+                        }
                     }
-                } else {
-                    setWpt(updatedWpt);
-                }
+
+                    return updatedWpt;
+                });
             });
         }
     }, [wpt, isAddressAdded, isPhotosAdded]);
@@ -510,30 +494,25 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         }
     }
 
-    async function getWikiPhotos(wpt) {
-        let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/get-wiki-photos`, {
-            apiCache: true,
-            params: {
-                id: wpt.id,
-                lat: wpt.latlon.lat,
-                lon: wpt.latlon.lon,
-            },
-        });
-        if (response && response.data) {
-            return response.data;
+    async function getPhotos(wpt) {
+        let tags;
+        const objTags = wpt.tags?.res;
+        const wikidataId = wpt.id;
+        if (!objTags && wikidataId) {
+            tags = {
+                wikidata: wikidataId,
+            };
         } else {
+            tags = Object.fromEntries(wpt.tags.res.map(({ key, value }) => [key, String(value)]));
+            if (!tags[WIKIDATA] && wikidataId) {
+                tags[WIKIDATA] = wikidataId;
+            }
+        }
+        if (!tags) {
             return null;
         }
-    }
-
-    async function getPoiPhotos(wpt) {
-        let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/get-poi-photos`, {
+        const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-poi-photos`, tags, {
             apiCache: true,
-            params: {
-                article: wpt.wikidata,
-                category: wpt.wikimediaCommons,
-                wiki: wpt.wikipedia,
-            },
         });
         if (response && response.data) {
             return response.data;
@@ -847,9 +826,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                     }}
                                 />
                             )}
-                            {wpt?.tags?.res?.map((t, index) => {
-                                return <WptTagInfo key={index} tag={t} setDevWikiContent={setDevWikiContent} />;
-                            })}
+                            {wpt?.tags?.res
+                                ?.filter((t) => t.key !== WIKIMEDIA_COMMONS && t.key !== WIKIDATA)
+                                .map((t, index) => (
+                                    <WptTagInfo key={index} tag={t} setDevWikiContent={setDevWikiContent} />
+                                ))}
                             {wpt.osmUrl && (
                                 <WptTagInfo
                                     key={'osm'}

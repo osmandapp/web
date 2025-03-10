@@ -593,8 +593,6 @@ function shouldSkipKey(key) {
         key === 'subway_region' ||
         key === 'note' ||
         key === 'lang_yes' ||
-        key === WIKIDATA ||
-        key === WIKIMEDIA_COMMONS ||
         key.includes(ROUTE)
     );
 }
