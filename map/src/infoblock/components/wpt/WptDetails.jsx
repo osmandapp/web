@@ -50,9 +50,13 @@ import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider, {
     filterTag,
     FINAL_POI_ICON_NAME,
-    IMAGE_OSM_TAG,
+    GRAPH_URL_ENDPOINT,
+    MAPILLARY_OSM_TAG,
     openWikivoyageContent,
     OSM_PREFIX,
+    otherImgTags,
+    PARAM_ACCESS_TOKEN,
+    PARAM_FIELDS,
     POI_OSM_URL,
     WIKIDATA,
     WIKIPEDIA,
@@ -523,30 +527,69 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             return null;
         }
 
-        const imgFeature = createOsmImg(tags);
-        if (imgFeature) {
-            result.features.push(imgFeature);
+        for (const tagKey of Object.keys(tags)) {
+            if (otherImgTags(tagKey)) {
+                let imgFeature;
+                if (tagKey === MAPILLARY_OSM_TAG) {
+                    const link = await getMapillaryLink(tags[MAPILLARY_OSM_TAG]);
+                    imgFeature = createTagImg({ tags, tagKey, link });
+                } else {
+                    imgFeature = createTagImg({ tags, tagKey });
+                }
+                if (imgFeature) {
+                    result.features.push(imgFeature);
+                }
+            }
         }
 
         return result;
     }
 
-    function createOsmImg(tags) {
-        const osmImg = tags[IMAGE_OSM_TAG];
-        if (osmImg) {
-            return {
-                type: 'Feature',
-                properties: {
-                    imageTitle: osmImg,
-                    osmTag: IMAGE_OSM_TAG,
-                    mediaId: 0,
-                    rowNum: 0,
-                },
-                geometry: {
-                    type: 'Point',
-                    coordinates: [wpt.latlon.lon, wpt.latlon.lat],
-                },
-            };
+    async function getMapillaryLink(tagValue) {
+        const url = `${GRAPH_URL_ENDPOINT}${tagValue}?${PARAM_ACCESS_TOKEN}&${PARAM_FIELDS}`;
+
+        return fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    return null;
+                }
+                return response.json();
+            })
+            .then((data) => findBestThumbnail(data))
+            .catch(() => {
+                return null;
+            });
+    }
+
+    function createTagImg({ tags, tagKey, link = null }) {
+        const tagValue = tags[tagKey];
+
+        if (!tagValue) return null;
+
+        return {
+            type: 'Feature',
+            properties: {
+                imageTitle: link ?? tagValue,
+                osmTag: tagKey,
+                mediaId: 0,
+                rowNum: 0,
+            },
+            geometry: {
+                type: 'Point',
+                coordinates: [wpt.latlon.lon, wpt.latlon.lat],
+            },
+        };
+    }
+
+    function findBestThumbnail(data) {
+        if (!data) return null;
+
+        if (data.thumb_1024_url) return data.thumb_1024_url;
+
+        for (const key in data) {
+            if (key.startsWith('thumb') && key.endsWith('url')) {
+                return data[key];
+            }
         }
         return null;
     }

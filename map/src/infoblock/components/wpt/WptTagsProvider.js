@@ -45,6 +45,7 @@ const WEBSITE = 'website';
 const CUISINE = 'cuisine';
 const ROUTE = 'route';
 export const IMAGE_OSM_TAG = 'image';
+export const MAPILLARY_OSM_TAG = 'mapillary';
 export const WIKIDATA = 'wikidata';
 export const WIKIMEDIA_COMMONS = 'wikimedia_commons';
 const INSTAGRAM = 'instagram';
@@ -81,6 +82,11 @@ export const CATEGORY_ICON = WEB_PREFIX + 'categoryIcon';
 export const MAIN_CATEGORY_KEY_NAME = WEB_PREFIX + 'categoryKeyName';
 export const WEB_POI_FILTER_NAME = WEB_PREFIX + 'poiFilterName';
 export const WEB_POI_ADDITIONAL_CATEGORY = WEB_PREFIX + 'poiAdditionalCategory';
+
+export const MAPILLARY_ACCESS_TOKEN = 'MLY|4444816185556934|29475a355616c979409a5adc377a00fa';
+export const GRAPH_URL_ENDPOINT = 'https://graph.mapillary.com/';
+export const PARAM_ACCESS_TOKEN = 'access_token=' + MAPILLARY_ACCESS_TOKEN;
+export const PARAM_FIELDS = 'fields=id,geometry,compass_angle,captured_at,camera_type,thumb_256_url,thumb_1024_url';
 
 export const TITLE = 'title';
 
@@ -677,8 +683,12 @@ function parseUrl(url, site) {
 }
 
 export function filterTag(tag) {
-    return tag.key !== WIKIMEDIA_COMMONS && tag.key !== WIKIDATA && tag.key !== IMAGE_OSM_TAG;
+    return tag.key !== WIKIMEDIA_COMMONS && tag.key !== WIKIDATA && otherImgTags(tag.key);
 }
+
+export const otherImgTags = (tag) => {
+    return tag === IMAGE_OSM_TAG || tag === MAPILLARY_OSM_TAG;
+};
 
 const WptTagsProvider = {
     getWptTags,

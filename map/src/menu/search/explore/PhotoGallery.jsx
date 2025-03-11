@@ -4,12 +4,12 @@ import { getPhotoTitle, WIKI_IMAGE_BASE_URL } from '../../../manager/SearchManag
 import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../../context/AppContext';
-import { IMAGE_OSM_TAG } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { IMAGE_OSM_TAG, otherImgTags } from '../../../infoblock/components/wpt/WptTagsProvider';
 import PhotoLink from './PhotoLink';
 
 export function getPhotoUrl(photo, size = 300) {
     const title = getPhotoTitle(photo);
-    if (photo.properties.osmTag === IMAGE_OSM_TAG) {
+    if (otherImgTags(photo.properties.osmTag)) {
         return title;
     }
     return `${WIKI_IMAGE_BASE_URL}${title}?width=${size}`;
@@ -51,7 +51,7 @@ export default function PhotoGallery({ photos }) {
     function filterPhotos(photos) {
         return photos.features
             .filter((photo) => {
-                if (photo?.properties?.osmTag === IMAGE_OSM_TAG) {
+                if (otherImgTags(photo?.properties?.osmTag)) {
                     return true;
                 }
                 const title = getPhotoTitle(photo);

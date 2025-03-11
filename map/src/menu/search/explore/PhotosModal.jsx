@@ -16,7 +16,7 @@ import i18n from 'i18next';
 import { getPhotoUrl } from './PhotoGallery';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
-import { IMAGE_OSM_TAG } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { otherImgTags } from '../../../infoblock/components/wpt/WptTagsProvider';
 
 export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
@@ -39,7 +39,7 @@ export default function PhotosModal({ photos }) {
             }
             setActiveStep(ctx.selectedPhotoInd);
             const currentPhoto = photos[ctx.selectedPhotoInd];
-            if (currentPhoto.properties.osmTag === IMAGE_OSM_TAG) {
+            if (otherImgTags(currentPhoto.properties.osmTag)) {
                 return;
             }
             fetchPhotoProperties(currentPhoto).then((photo) => {
