@@ -131,6 +131,7 @@ To better understand the efficiency of **HH x C++ Fast Routing** compared to **T
 
 ***Test route:***
 
+<!--
 - **Start:** [48.73829, 13.41383](https://osmand.net/map/?pin=48.738262,13.413754#18/48.73823/13.41362)
 - **Finish:** [47.94505, 7.73573](https://osmand.net/map/?pin=47.945066,7.735711#19/47.94500/7.73592)
 - **OsmAnd Web Preview:** [View Route](https://osmand.net/map/navigate/?start=48.738290,13.413830&end=47.945050,7.735730&profile=car#7/48.611/11.530)
@@ -139,6 +140,58 @@ To better understand the efficiency of **HH x C++ Fast Routing** compared to **T
 |------------|----------------------|
 | Calculation time: **13 sec**| Calculation time: **36 sec** |
 | ![HH example](./img/hh.gif) | ![A2 example](./img/a2.gif) |
+
+
+
+**_Baltimore to Atlanta_**: 
+- **Start:** [39.296098, -76.602457](https://osmand.net/map/?pin=48.738262,13.413754#18/48.73823/13.41362)
+- **Finish:** [33.751570, -84.410984](https://osmand.net/map/?pin=47.945066,7.735711#19/47.94500/7.73592)
+- **OsmAnd Web Preview:** [View Route](https://osmand.net/map/navigate/?start=39.296098,-76.602457&end=33.751570,-84.410984&profile=car#7/36.695/-82.227)
+
+| [HH x C++ Fast Routing](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings) | [Traditional Routing A*2-phase](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings)  |
+|------------|----------------------|
+| Calculation time: **29 sec**| Calculation time: **180 sec** |
+| ![HH example](./img/us_hh.gif) | ![A2 example](./img/us_a_2.gif) |
+
+**_Praha to Stuttgart_**:
+- **Start:** [50.099568, 14.400652](https://osmand.net/map/?pin=48.738262,13.413754#18/48.73823/13.41362)
+- **Finish:** [48.806807, 9.231252](https://osmand.net/map/?pin=47.945066,7.735711#19/47.94500/7.73592)
+- **OsmAnd Web Preview:** [View Route](https://osmand.net/map/navigate/?start=50.099570,14.400650&end=48.806810,9.231250&profile=car#8/49.490/10.857)
+
+| [HH x C++ Fast Routing](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings) | [Traditional Routing A*2-phase](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings)  |
+|------------|----------------------|
+| Calculation time: **15 sec**| Calculation time: **53 sec** |
+| ![HH example](./img/ps_hh.gif) | ![A2 example](./img/ps_a2.gif) |
+-->
+
+
+**_Baltimore to Atlanta_**: 
+- **Start:** [39.296098, -76.602457](https://osmand.net/map/?pin=48.738262,13.413754#18/48.73823/13.41362)
+- **Finish:** [33.751570, -84.410984](https://osmand.net/map/?pin=47.945066,7.735711#19/47.94500/7.73592)
+- **OsmAnd Web Preview:** [View Route](https://osmand.net/map/navigate/?start=39.296098,-76.602457&end=33.751570,-84.410984&profile=car#7/36.695/-82.227)
+
+|[HH x C++ Fast Routing](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings) |
+|:------------|
+| Calculation time: **29 sec**|
+| <iframe width="320" height="569" src="https://www.youtube.com/embed/xIFq9DtceaM" title="HH routing example: Baltimore to Atlanta" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> |
+[**Traditional Routing A*2-phase**](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings)  |
+|Calculation time: **180 sec** |
+|<iframe width="507" height="569" src="https://www.youtube.com/embed/J7kjeCbQef8" title="A2 routing example: Baltimore to Atlanta" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>|
+
+**_Praha to Stuttgart_**:
+- **Start:** [50.099568, 14.400652](https://osmand.net/map/?pin=48.738262,13.413754#18/48.73823/13.41362)
+- **Finish:** [48.806807, 9.231252](https://osmand.net/map/?pin=47.945066,7.735711#19/47.94500/7.73592)
+- **OsmAnd Web Preview:** [View Route](https://osmand.net/map/navigate/?start=50.099570,14.400650&end=48.806810,9.231250&profile=car#8/49.490/10.857)
+
+| [HH x C++ Fast Routing](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings) |
+|:------------|
+| Calculation time: **15 sec**| 
+|<iframe width="320" height="569" src="https://www.youtube.com/embed/r2rDHcO_4yE" title="HH routing example: Praha to Stuttgart" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> |
+|[**Traditional Routing A*2-phase**](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings)  |
+|Calculation time: **53 sec** |
+| <iframe width="320" height="569" src="https://www.youtube.com/embed/0BzE8tkC5ek" title="A2 routing example: Praha to Stuttgart" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> | 
+
+
 
 ***Key takeaways:***
 

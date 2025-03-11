@@ -633,16 +633,17 @@ Some GPX tags are used or stored indirectly in OBF files. Refer to [OsmGpxWriteC
 | OBF tag                      | Purpose                                                                                                    |
 |:-----------------------------|:-----------------------------------------------------------------------------------------------------------|
 | `route_id`                   | A unique identifier for the GPX file, linking Map and POI data (format: `/[A-Z]+[0-9]+/` e.g. `OSM12345`). |
-| `track_color`                | Map section track color derived from `shield_waycolor`, `color`, `colour`, or `displaycolor`               |
-| `route_radius`               | Specifies the default radius for searching parts of the track within the POI section.                      |
+| `route_type`                 | Activity group identifier (`id`) derived from `poi/activities.json`                                        |
+| `route_activity_type`        | Activity type (within the group) identifier (`id`) derived from `poi/activities.json`                      |
+| `name`, `ref`, `description` | Localizable and searchable attributes (`lang="true"` in POI types)                                         |
 | `filename`                   | The name of the original GPX file used to generate this track.                                             |
+| `track_color`                | Map section track color derived from `shield_waycolor`, `color`, `colour`, or `displaycolor`               |
 | `extensions_extra_tags`      | Arbitrary extra tags for `<gpx><extensions>` in JSON format.                                               |
 | `metadata_extra_tags`        | Arbitrary extra tags for `<metadata><extensions>` in JSON format.                                          |
 | `wpt_extra_tags`             | Arbitrary extra tags for waypoints `<wpt><extensions>` in JSON format.                                     |
-| `name`, `ref`, `description` | Localizable and searchable attributes (`lang="true"` in POI types)                                         |
-| `route_name`                 | The route name, used by internal `searchPoiByName`.                                                        |
-| `route_type`                 | Activity group identifier (`id`) derived from `poi/activities.json`                                        |
-| `route_activity_type`        | Activity type (within the group) identifier (`id`) derived from `poi/activities.json`                      |                                                                          
 | `route_track_point`          | Waypoints from GPX file use this type in POI data.                                                         |
+| `route_bbox_radius`          | Specifies the default radius for searching parts of the track within the POI section                       |
+| `route_shortlink_tiles`      | Specifies a comma-separated list of OSM Shortlink tiles to speed up reading geometry data (optional)       |
+| `route_name`                 | The route name, used by internal `searchPoiByName` (deprecated)                                            |
 
-> *This article was last updated in January 2025*
+> *This article was last updated in March 2025*
