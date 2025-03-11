@@ -3,7 +3,9 @@ import React, { useCallback, useContext, useEffect, useState, useRef } from 'rea
 import { ImageListItem, Skeleton } from '@mui/material';
 import AppContext from '../../../context/AppContext';
 import styles from '../search.module.css';
-import { getPhotoUrl } from './PhotoGallery';
+import { getPhotoUrl, hasExtension } from './PhotoGallery';
+import { IMAGE_OSM_TAG } from '../../../infoblock/components/wpt/WptTagsProvider';
+import PhotoLink from './PhotoLink';
 
 export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
     const ctx = useContext(AppContext);
@@ -15,6 +17,8 @@ export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
         threshold: 0.1,
     });
 
+    const defaultView = photo.properties.osmTag === IMAGE_OSM_TAG && !hasExtension(photo.properties.imageTitle);
+
     const handleMouseEnter = () => setIsHovered(true);
     const handleMouseLeave = () => setIsHovered(false);
 
@@ -24,6 +28,10 @@ export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
     };
 
     const handlePhotoClick = useCallback((index) => {
+        if (defaultView) {
+            window.open(photo.properties.imageTitle, '_blank', 'noopener,noreferrer');
+            return;
+        }
         ctx.setSelectedPhotoInd(index);
     }, []);
 
@@ -48,15 +56,23 @@ export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
             onMouseOver={handleMouseEnter}
             onMouseOut={handleMouseLeave}
         >
-            {!isLoaded && <Skeleton className={styles.skeleton} />}
-            {inView && (
-                <img
-                    src={getPhotoUrl(photo)}
-                    alt={photo.properties.imageTitle}
-                    className={styles.image}
-                    onLoad={() => handleImageLoad(index)}
-                />
-            )}
+            {!isLoaded && !defaultView && <Skeleton className={styles.skeleton} />}
+            {inView &&
+                (defaultView ? (
+                    <PhotoLink
+                        key={index + 1}
+                        size={'156px'}
+                        style={styles.linkImage}
+                        link={photo.properties.imageTitle}
+                    />
+                ) : (
+                    <img
+                        src={getPhotoUrl(photo)}
+                        alt={photo.properties.imageTitle}
+                        className={styles.image}
+                        onLoad={() => handleImageLoad(index)}
+                    />
+                ))}
             {(isSelected || isHovered) && <div className={styles.selectedImage} />}
         </ImageListItem>
     );

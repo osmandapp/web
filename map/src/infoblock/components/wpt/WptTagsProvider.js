@@ -44,6 +44,7 @@ const EMAIL = 'email';
 const WEBSITE = 'website';
 const CUISINE = 'cuisine';
 const ROUTE = 'route';
+export const IMAGE_OSM_TAG = 'image';
 export const WIKIDATA = 'wikidata';
 export const WIKIMEDIA_COMMONS = 'wikimedia_commons';
 const INSTAGRAM = 'instagram';
@@ -586,15 +587,7 @@ function getWikipediaURL(key, value) {
 }
 
 function shouldSkipKey(key) {
-    return (
-        key === 'idObj' ||
-        key === 'image' ||
-        key === 'mapillary' ||
-        key === 'subway_region' ||
-        key === 'note' ||
-        key === 'lang_yes' ||
-        key.includes(ROUTE)
-    );
+    return key === 'idObj' || key === 'subway_region' || key === 'note' || key === 'lang_yes' || key.includes(ROUTE);
 }
 
 export function openWikipediaContent(tag, setDevWikiContent) {
@@ -681,6 +674,10 @@ function parseUrl(url, site) {
     } else {
         return null;
     }
+}
+
+export function filterTag(tag) {
+    return tag.key !== WIKIMEDIA_COMMONS && tag.key !== WIKIDATA && tag.key !== IMAGE_OSM_TAG;
 }
 
 const WptTagsProvider = {

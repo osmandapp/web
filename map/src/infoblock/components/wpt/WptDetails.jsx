@@ -48,12 +48,13 @@ import FavoritesManager, {
 import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider, {
+    filterTag,
     FINAL_POI_ICON_NAME,
+    IMAGE_OSM_TAG,
     openWikivoyageContent,
     OSM_PREFIX,
     POI_OSM_URL,
     WIKIDATA,
-    WIKIMEDIA_COMMONS,
     WIKIPEDIA,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
@@ -514,11 +515,40 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-poi-photos`, tags, {
             apiCache: true,
         });
+
+        let result;
         if (response && response.data) {
-            return response.data;
+            result = response.data;
         } else {
             return null;
         }
+
+        const imgFeature = createOsmImg(tags);
+        if (imgFeature) {
+            result.features.push(imgFeature);
+        }
+
+        return result;
+    }
+
+    function createOsmImg(tags) {
+        const osmImg = tags[IMAGE_OSM_TAG];
+        if (osmImg) {
+            return {
+                type: 'Feature',
+                properties: {
+                    imageTitle: osmImg,
+                    osmTag: IMAGE_OSM_TAG,
+                    mediaId: 0,
+                    rowNum: 0,
+                },
+                geometry: {
+                    type: 'Point',
+                    coordinates: [wpt.latlon.lon, wpt.latlon.lat],
+                },
+            };
+        }
+        return null;
     }
 
     function showEditButtons() {
@@ -827,7 +857,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                 />
                             )}
                             {wpt?.tags?.res
-                                ?.filter((t) => t.key !== WIKIMEDIA_COMMONS && t.key !== WIKIDATA)
+                                ?.filter((t) => filterTag(t))
                                 .map((t, index) => (
                                     <WptTagInfo key={index} tag={t} setDevWikiContent={setDevWikiContent} />
                                 ))}
