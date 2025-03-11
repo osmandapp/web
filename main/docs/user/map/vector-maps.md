@@ -134,13 +134,13 @@ Some related font issues have been documented on GitHub: [3911](https://github.c
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
 
 </TabItem>
 

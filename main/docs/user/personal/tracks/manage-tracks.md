@@ -117,19 +117,31 @@ Each track, like folders, has a menu, allowing you to manage tracks efficiently.
 
 The menu provides the following actions:
 
-- **Show/Hide on map**. Displays or hides the selected tracks on the map, visually representing their location.
-- [Open](../../map/tracks/index.md#configure-map) (*iOS*). This setting is available in the Configure Map menu. Located in the *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*, it allows you to access the [context menu of the selected track](../../map/tracks/track-context-menu.md) when tapped.
-- **Appearance** (*iOS*). Customize the [appearance of tracks](../../map/tracks/appearance.md) to suit your preferences.
-- **Navigation** (*iOS*). Initiates [navigation](../../navigation/setup/gpx-navigation.md) along the selected track.
-- **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyze on map](../../navigation/setup/route-details.md#analyze-on-map) tool within Route Details for further analysis.
-- **Share**. Enables sharing of the selected track with others.
-- **Upload modifications to OSM** (*iOS*). [Upload the changes](../../plugins/osm-editing.md#gps-track) you have made to the track directly to *OpenStreetMap*.
-- **Edit** (*iOS*). Use the [Plan a route](../../plan-route/create-route.md#modify-gpx-track) tool to modify tracks.
-- **Duplicate** (*iOS*). Creates a copy of the selected track.
-- **Rename**. Change the name of the selected track for better organization.
-- **Move**. Allows you to relocate the selected track to a different folder.
-- **Export** (*Android*). Navigate to *Menu → Settings → Actions* tab to export all tracks from a folder.
-- **Delete**. Permanently remove the selected track that is no longer needed.
+- **Show/Hide on map** — Displays or hides the selected tracks on the map, visually representing their location.
+
+- [Open](../../map/tracks/index.md#configure-map) (*iOS*) — This setting is available in the Configure Map menu. Located in the *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*, it allows you to access the [context menu of the selected track](../../map/tracks/track-context-menu.md) when tapped.
+
+- **Appearance** (*iOS*) — Customize the [appearance of tracks](../../map/tracks/appearance.md) to suit your preferences.
+
+- **Navigation** (*iOS*) — Initiates [navigation](../../navigation/setup/gpx-navigation.md) along the selected track.
+
+- **Analyze on map** (*Android*) / **Analyze** (*iOS*) — Opens the [Analyze on map](../../navigation/setup/route-details.md#analyze-on-map) tool within Route Details for further analysis.
+
+- **Share** — Enables sharing of the selected track with others.
+
+- **Upload modifications to OSM** (*iOS*) — [Upload the changes](../../plugins/osm-editing.md#gps-track) you have made to the track directly to *OpenStreetMap*.
+
+- **Edit** (*iOS*) — Use the [Plan a route](../../plan-route/create-route.md#modify-gpx-track) tool to modify tracks.
+
+- **Duplicate** (*iOS*) — Creates a copy of the selected track.
+
+- **Rename** — Change the name of the selected track for better organization.
+
+- **Move** — Allows you to relocate the selected track to a different folder.
+
+- **Export** (*Android*) — Navigate to *Menu → Settings → Actions* tab to export all tracks from a folder.
+
+- **Delete** — Permanently remove the selected track that is no longer needed.
 
 
 ### Search
@@ -181,13 +193,19 @@ The **Select** menu item provides options for managing folders and tracks. This 
 
 Once you have made your choice, the following steps are provided:  
 
-- **Show on map**. With this feature, you can display the selected tracks on the map to better understand their location and relationship to each other.
-- **Share** (*Android*) / **Export** (*iOS*). If you want to share selected data with other users or save it to a cloud service, the *Share/Export* feature allows you to send tracks and folders using different sharing methods.
-- **Upload to OpenStreetMap**. You can submit selected tracks to OpenStreetMap, contributing to the development and improvement of the data.
-- **Move**. You can organize your data by moving selected tracks and folders to other folders.
-- [Change activity](../../map/tracks/track-context-menu.md#track-information-activity) (*Android only*). This action allows you to change the activity type, for example to *Car*, *Adventure Motorsport*, *Backpacking* or others, for the selected track.
-- [Change appearance](../../map/tracks/appearance.md) (*Android only*). This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
-- **Delete**. If the selected tracks or folders are no longer needed, the Delete function allows you to delete them, with the app providing confirmation options to avoid accidental deletion.
+- **Show on map** — With this feature, you can display the selected tracks on the map to better understand their location and relationship to each other.
+
+- **Share** (*Android*) / **Export** (*iOS*) — If you want to share selected data with other users or save it to a cloud service, the *Share/Export* feature allows you to send tracks and folders using different sharing methods.
+
+- **Upload to OpenStreetMap** — You can submit selected tracks to OpenStreetMap, contributing to the development and improvement of the data.
+
+- **Move** — You can organize your data by moving selected tracks and folders to other folders.
+
+- [Change activity](../../map/tracks/track-context-menu.md#track-information-activity) (*Android only*) — This action allows you to change the activity type, for example to *Car*, *Adventure Motorsport*, *Backpacking* or others, for the selected track.
+
+- [Change appearance](../../map/tracks/appearance.md) (*Android only*) — This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
+
+- **Delete** — If the selected tracks or folders are no longer needed, the Delete function allows you to delete them, with the app providing confirmation options to avoid accidental deletion.
 
 
 ### Sort by
@@ -212,16 +230,25 @@ OsmAnd offers an easy way to sort your tracks, helping you manage a large collec
 
 ***Sorting options:***
 
-- **Nearest**. Shows tracks closest to your current location.
-- **Last modified**. Displays tracks sorted by their most recent modification date.
-- **Name: A - Z**. Arranges tracks alphabetically from A to Z.
-- **Name: Z - A**. Arranges tracks alphabetically from Z to A.
-- **Newest date first**. Lists tracks by creation date, with the newest at the top.
-- **Oldest date first**. Lists tracks by creation date, with the oldest at the top.
-- **Longest distance first**. Displays tracks sorted by length, with the longest at the top.
-- **Shortest distance first**. Displays tracks sorted by length, with the shortest at the top.
-- **Longest duration first**. Sorts tracks by duration, placing the longest at the top.
-- **Shorted duration first**. Sorts tracks by duration, placing the shortest at the top.
+- **Nearest** — Shows tracks closest to your current location.
+
+- **Last modified** — Displays tracks sorted by their most recent modification date.
+
+- **Name: A - Z** — Arranges tracks alphabetically from A to Z.
+
+- **Name: Z - A** — Arranges tracks alphabetically from Z to A.
+
+- **Newest date first** — Lists tracks by creation date, with the newest at the top.
+
+- **Oldest date first** — Lists tracks by creation date, with the oldest at the top.
+
+- **Longest distance first** — Displays tracks sorted by length, with the longest at the top.
+
+- **Shortest distance first** — Displays tracks sorted by length, with the shortest at the top.
+
+- **Longest duration first** — Sorts tracks by duration, placing the longest at the top.
+
+- **Shorted duration first** — Sorts tracks by duration, placing the shortest at the top.
 
 #### Sorting Subfolders
 
@@ -241,7 +268,9 @@ OsmAnd offers an easy way to sort your tracks, helping you manage a large collec
 
 </Tabs>
 
-If you want to sort [subfolders](#folder-actions), go to the three-dot menu within the selected folder and select the required [options](#sort-by). The selected sorting option is applied not only to the current subfolder but also to all nesting folders and tracks at all levels. This ensures a consistent structure across your saved data.
+If you want to sort [subfolders](#folder-actions), go to the three-dot menu within the selected folder and select the required [options](#sort-by).  
+
+The selected sorting option is applied not only to the current subfolder but also to all nesting folders and tracks at all levels. This ensures a consistent structure across your saved data.
 
 
 ## Track Folder
@@ -271,13 +300,21 @@ How to open the folder menu:
 
 ***Actions with a folder:***
 
-- **Name**. Displays the folder name, creation date, and the number of tracks it contains.
-- **Show all tracks on the map** (*Android only*). Displays all tracks in the folder on the map. *NOTE: If there are many tracks, this may cause the device to freeze.*
-- **Edit name** (*Android*) / **Rename** (*iOS*). Allows you to rename the folder.
-- [Change default appearance](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*). Changes the display appearance of all tracks in the folder.
-- [Export](../../personal/import-export.md). Opens the *Menu → Settings → Actions* tab to export all tracks in the folder as an [`.osf` file](../../personal/import-export.md#export).
-- [Move](#track-folder). Allows you to move the folder to another existing folder or create a new one.
-- [Delete folder](#delete-folder). Deletes the folder after confirmation. ***NOTE: This action is irreversible.***
+- **Name** — Displays the folder name, creation date, and the number of tracks it contains.
+
+- **Show all tracks on the map** (*Android only*) — Displays all tracks in the folder on the map —  
+    *NOTE: If there are many tracks, this may cause the device to freeze.*
+
+- **Edit name** (*Android*) / **Rename** (*iOS*) — Allows you to rename the folder.
+
+- [Change default appearance](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*) — Changes the display appearance of all tracks in the folder.
+
+- [Export](../../personal/import-export.md) — Opens the *Menu → Settings → Actions* tab to export all tracks in the folder as an [`.osf` file](../../personal/import-export.md#export).
+
+- [Move](#track-folder) — Allows you to move the folder to another existing folder or create a new one.
+
+- [Delete folder](#delete-folder) — Deletes the folder after confirmation.  
+    ***NOTE: This action is irreversible.***
 
 
 ### Folder Statistics
@@ -304,12 +341,17 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 At the bottom of the list in the *Tracks* tab, and below the list of tracks **in each of your folders**, there is an information section that allows you to view the overall summary statistics for the tracks in the selected folder. All values are displayed in the [units](../../personal/profiles.md#units--formats) you have selected.
 
-- *Number of **Tracks** in the folder*. Displays the number of tracks contained in the selected folder.
-- *Total sum of* **Distances**. The total length of all tracks in the selected folder, measured in the units you have selected, is displayed.
-- *Sum of* **Uphills**. The data indicates the total vertical rise across all tracks in the selected folder.
-- *Sum of* **Downhills**. This parameter is the sum of vertical descents on all tracks in the selected folder.
-- *Sum of* **Duration** *time*. This displays the total time taken to complete all tracks in the selected folder.
-- *Total **Size** of downloaded files in MB*. The total downloaded file size in megabytes shows how much space all tracks in the selected folder take up on your device.
+- *Number of **Tracks** in the folder* — Displays the number of tracks contained in the selected folder.
+
+- *Total sum of* **Distances** — The total length of all tracks in the selected folder, measured in the units you have selected, is displayed.
+
+- *Sum of* **Uphills** — The data indicates the total vertical rise across all tracks in the selected folder.
+
+- *Sum of* **Downhills** — This parameter is the sum of vertical descents on all tracks in the selected folder.
+
+- *Sum of* **Duration** *time* — This displays the total time taken to complete all tracks in the selected folder.
+
+- *Total **Size** of downloaded files in MB* — The total downloaded file size in megabytes shows how much space all tracks in the selected folder take up on your device.
 
 
 ### Folder Actions
@@ -344,11 +386,15 @@ How to open folder actions:
 
 ***Actions in the folder menu:***
 
-- [Select](#selection-mode). Tap the required folders and tracks to apply actions from the menu in *selection mode*.
-- [Sort subfolders](#sort-by). Apply a sorting order (e.g., by name, date) to all subfolders and tracks at every level.
-- [Add smart folder](../tracks/smart-folder.md#create-smart-folder) (*Android only*). Automatically sort routes and tracks based on criteria you set.
-- [Import](#import). Upload GPX or other track files from your device to OsmAnd for offline use.
-- **Add new folder**. To organize your routes and tracks into logical categories, put them in different folders. This helps to structure your navigation information.
+- [Select](#selection-mode) — Tap the required folders and tracks to apply actions from the menu in *selection mode*.
+
+- [Sort subfolders](#sort-by) — Apply a sorting order (e.g., by name, date) to all subfolders and tracks at every level.
+
+- [Add smart folder](../tracks/smart-folder.md#how-to-create-smart-folder) — Automatically sort routes and tracks based on criteria you set.
+
+- [Import](#import) — Upload GPX or other track files from your device to OsmAnd for offline use.
+
+- **Add new folder** — To organize your routes and tracks into logical categories, put them in different folders. This helps to structure your navigation information.
 
 
 ### Delete Folder

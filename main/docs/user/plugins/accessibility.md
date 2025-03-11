@@ -40,6 +40,8 @@ Accessibility improves usability for blind and visually impaired users by integr
    - Open [Accessibility settings](#plugin-settings) within the OsmAnd app.
    - Configure features such as speech rate, auto-announce, and haptic feedback.
 
+<br/>
+
 ***Features and functionality:***
 
 - **Gesture controls**:
@@ -121,6 +123,8 @@ The Accessibility plugin offers various settings to personalize navigation and i
 
 - **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
 -->
+
+<br/>
 
 ***Tips for optimized accessibility:***
 
