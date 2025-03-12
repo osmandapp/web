@@ -644,6 +644,7 @@ Some GPX tags are used or stored indirectly in OBF files. Refer to [OsmGpxWriteC
 | `route_track_point`          | Waypoints from GPX file use this type in POI data.                                                         |
 | `route_bbox_radius`          | Specifies the default radius for searching parts of the track within the POI section                       |
 | `route_shortlink_tiles`      | Specifies a comma-separated list of OSM Shortlink tiles to speed up reading geometry data (optional)       |
+| `route_segment_index`        | Specifies an ordinal number of the geometry segment which is linked to this point (optional)               |
 | `route_name`                 | The route name, used by internal `searchPoiByName` (deprecated)                                            |
 
 > *This article was last updated in March 2025*
