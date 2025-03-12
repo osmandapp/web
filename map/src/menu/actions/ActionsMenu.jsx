@@ -19,7 +19,6 @@ export default function ActionsMenu({ open, setOpen, anchorEl, favItems = false,
                 sx={{ ml: favItems ? '-60px' : '8px', mt: favItems && '-120px' }}
                 open={open}
                 anchorEl={anchorEl?.current}
-                disablePortal={true}
                 PaperProps={{
                     style: { maxHeight: 550, overflow: 'auto' },
                 }}
