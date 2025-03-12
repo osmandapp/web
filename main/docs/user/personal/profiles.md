@@ -438,7 +438,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 The **My Location appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the operating system when the device speed is **greater than zero**.
 
-#### View Angle and Location Radius
+#### 1. View Angle and Location Radius
 
 You can customize the visual elements related to your location and apply them separately or together for **Resting** and **Navigation** positions. For both 2D and 3D modes, *View Angle* and *Location Radius* are displayed in the same color selected for the [navigation profile](#profile-appearance), directly below the [My Location](../map/interact-with-map.md#my-location-and-zoom) icon.
 
@@ -446,7 +446,7 @@ You can customize the visual elements related to your location and apply them se
 - **<Translate android="true" ids="location_radius"/>** – Shows a **circular area** around your icon, representing the accuracy of your current location.
 
 
-#### Custom 3D Icons
+#### 2. Custom 3D Icons
 
 For a more personalized experience, you can create and add **custom 3D icons** to OsmAnd.  
 
@@ -463,7 +463,7 @@ For a more personalized experience, you can create and add **custom 3D icons** t
 
    - Alternatively, copy the **MTL and OBJ files** directly into the OsmAnd folder using the same directory structure.  
 
-#### Map Orientation Modes
+#### 3. Map Orientation Modes
 
 You can control how the **My Location** icon behaves using different [map orientation modes](../widgets/map-buttons.md#compass).  
 

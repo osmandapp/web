@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Favorites is one of the OsmAnd's features, that allows you to make a kind of bookmarks (notes) on the map. By default, they are displayed in the form of yellow stars, though the app provides ample opportunities to customize Favorites using any colour, shape, and icon. They are grouped into a separate map layer, that become visible from the 6th zoom level.  
+**Favorites** OsmAnd's feature allows you to create bookmarks (notes) on the map. These favorite points are displayed as yellow stars by default, but you can fully customize them with different colors, shapes, and icons. Favorites are grouped into a dedicated map layer, which becomes visible from the *6th zoom level*.  
 
 <Tabs groupId="operating-systems">
 
@@ -54,7 +54,7 @@ Favorites is one of the OsmAnd's features, that allows you to make a kind of boo
 
 </Tabs>
 
-Favorites are grouped into one of the map layers. You can [show or hide](../map/point-layers-on-map.md#favorites) Favorites and their [names](../map/point-layers-on-map.md#favorite-and-poi-names) on the map. Favorite's [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group) opens when you select it on the map, where you can view detailed information about the selected point, and [edit or delete](../map/map-context-menu.md#add--edit-favorite) it.
+Favorites are part of a special map layer, and you can [show or hide](../map/point-layers-on-map.md#favorites) them along with their [names](../map/point-layers-on-map.md#favorite-and-poi-names) on the map. Tapping a favorite point opens the [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group), allowing you to view details and [edit or delete](../map/map-context-menu.md#add--edit-favorite) the point.
 
 
 ### Create
@@ -75,16 +75,20 @@ Favorites are grouped into one of the map layers. You can [show or hide](../map/
 
 </Tabs>
 
-To create a new Favorite point, you need to select a [POI](../map/point-layers-on-map.md#points-of-interest-poi) object with a short tap or a structure on the map with a long tap, and then select [Add (☆)](../map/map-context-menu.md#add--edit-favorite) from the [map context menu](../map/map-context-menu.md). If you select a point from OSM data, all information about that POI will be added to the newly selected point. You can also select any point on the map to add Favorite using [long tap](../map/map-context-menu.md#select-any-point-long-tap).
+To add a favorite point:
 
+1. Select a [POI](../map/point-layers-on-map.md#points-of-interest-poi) or a structure on the map.  
+    Short tap for a POI or long tap for a general map point.
+2. Select [Add (☆)](../map/map-context-menu.md#add--edit-favorite) from the map context menu.
 
-Following fields could be specified for a favorite point:
+When adding a point from OSM data, the relevant POI information is automatically included. You can also create a favorite by [long-tapping](../map/map-context-menu.md#select-any-point-long-tap) any map location.
 
-- Unique **Name** per group is **required**.
-- **Address** and **description** are optional.
-- Existing [Favorite group](#manage-favorites) from the list or newly created.
-- Visual **icon**, **color**, **shape** are selected by default from [group appearance](#change-group-appearance).
-but could be changed uniquely per a favorite point.
+***Fields for a Favorite point:***
+
+- **Name** — A unique name within the group (*Required*).
+- **Address** and **Description** (*Optional*).
+- **Group** — Select from an existing [Favorite group](#manage-favorites) or create a new one.
+- **Visual customization** — Icon, color, shape can either match the default [group appearance](#change-group-appearance) or be customized individually.
 
 
 ### Edit / Replace / Delete
@@ -105,14 +109,19 @@ but could be changed uniquely per a favorite point.
 
 </Tabs>
 
-To edit a favorite point, [tap](../map/map-context-menu.md#select-an-object-short-tap) it on the map or access it via [My Favorites](#manage-favorites), then select the **Edit favorite** button from the [*map context menu*](../map/map-context-menu.md#add--edit-favorite).
+To modify a favorite point:
 
-- You can edit all fields that were specified when **creating** the favorite point, such as name, icon, group, and more.
-- In this editor, there is a **Delete** button to remove the point from your list of Favorites. On *Android*, this option is also available in the upper right corner of the screen.
-- If you want to update the location of a specific Favorite, like *My parked car*, use the **Replace** option when creating a favorite point with a new location to assign it to the existing Favorite.
+1. [Tap](../map/map-context-menu.md#select-an-object-short-tap) the favorite on the map or go to [My Favorites](#manage-favorites).
+2. Choose **Edit favorite** from the [*map context menu*](../map/map-context-menu.md#add--edit-favorite).
+
+***Options available:***
+
+- **Edit details** — Name, icon, group, address, and description.
+- **Replace location** — Replace another point with this one. Useful for updating a specific point (e.g. *My parked car*) or creating a new one.
+- **Delete** — Remove the favorite using the delete option, accessible through the Edit menu or via the delete button on Android.
 
 
-### Favorite icons
+### Favorite Icons
 
 <Tabs groupId="operating-systems">
 
@@ -134,13 +143,13 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-- For *Android*, the list of icons consists of **all POI images** available in the OsmAnd app.
-- For *iOS*, **a special set** of the most suitable Favorite icons is compiled: *Default, Special, Amenity, Transport, Service, Symbols, Sport, Emergency, Travel, Nautical, Education, Industrial*.
+- **Android** — Offers the full set of POI icons available in OsmAnd.
+- **iOS** — Specially selected icon sets such as *Default, Special, Amenity, Transport, Service, Symbols, Sport, Emergency, Travel, Nautical, Education, Industrial*.
 
 
 ### Special Favorites (Personal)
 
-***Personal*** folder is dedicated to special *<Translate android="true" ids="favorite_home_category"/>* and *<Translate android="true" ids="work_button"/>* points from the [Navigation Context menu](../navigation/setup/route-navigation.md#select-starting-point). This folder does not have a *three-dot menu*,  as you cannot change its parameters.
+The *Personal folder* contains special points like **<Translate android="true" ids="favorite_home_category"/>** and **<Translate android="true" ids="work_button"/>**, often used in [navigation](../navigation/setup/route-navigation.md#select-starting-point). This folder does not have a *three-dot menu*, and its parameters cannot be changed.
 
 
 ## Manage Favorites
@@ -165,8 +174,10 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-Using **My Favorites**, you can search for a specific favorite or favorite group and perform bulk operations such as deleting or renaming them.
+The **My Favorites** section lets you:
 
+- [Search](#order--sorting--search) for specific favorites or groups.
+- [Bulk operations](#bulk-edit--delete) — Rename, move, or delete multiple favorites at once.
 
 ### Order / Sorting / Search
 
@@ -185,10 +196,8 @@ Using **My Favorites**, you can search for a specific favorite or favorite group
 
 </Tabs>
 
-Favorite folders and points are sorted alphabetically, with the [personal folder](../personal/favorites.md#special-favorites-personal) at the top. In the search list, *favorite points* are sorted by distance from the center of the map.  
-
-- *In the iOS version*, you can change the order of your favorite points by distance by tapping the Directions icon.
-- *In the Android version*, you need to access the Search menu. In the search list, *favorites* are sorted by distance from the previously visible map center. You can also search for favorites by name using [Global search](../search/search-all.md).
+- **Sorting** — Favorite folders and points are sorted alphabetically, with the [personal folder](../personal/favorites.md#special-favorites-personal) at the top.
+- **Searching** — Use [Global search](../search/search-all.md) to find favorites by name. Favorites are sorted by distance from the map's center.
 
 
 ### Bulk Edit / Delete
@@ -209,9 +218,9 @@ Favorite folders and points are sorted alphabetically, with the [personal folder
 
 </Tabs>
 
-To manage multiple favorites, tap the **Delete** icon (*bin icon on Android*) or the **Edit** button (*pencil icon on iOS*). This action allows you to select multiple individual favorites or entire folders containing them, enabling bulk edit options.  
-
-In both the Android and iOS apps, you will have the *Delete* option available. Additionally, for iOS, you can also access options such as *Move to a Favorite Group*, *Share*, and *Change Color* for enhanced organization and customization of your favorites.
+1. To manage multiple favorites, tap the **Delete** icon (*bin icon on Android*) or the **Edit** button (*pencil icon on iOS*).
+2. Select individual favorites or entire folders for bulk operations.
+3. **Options available** — *Delete* for Android and iOS, *Move to a Favorite Group*, *Share*, and *Change Color* for iOS.
 
 <!--
 ### Add Favorites to Map Markers
@@ -229,7 +238,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 -->
 
 
-### Favorite Group actions
+### Favorite Group Actions
 
 <Tabs groupId="operating-systems">
 
@@ -251,7 +260,7 @@ Go to: *iOS* *Long tap folder → Change appearance*
 
 </Tabs>
 
-Using the  *three-dot menu* next to each folder, you can customize groups of favorite folders. More details are described in the [My Places](../personal/myplaces.md#favorites) article.
+Use the  *three-dot menu* next to each folder to customize groups of favorite folders. More details are described in the [My Places](../personal/myplaces.md#favorites) article.
 
 
 ### Change Group Appearance
@@ -260,7 +269,7 @@ Using the  *three-dot menu* next to each folder, you can customize groups of fav
 
 <TabItem value="android" label="Android">
 
-![Favorites folder functions android](@site/static/img/personal/favorite_add_new_group_andr.png)
+![Favorites folder functions android](@site/static/img/personal/favorite_change_appearance_andr.png)
 
 </TabItem>
 
@@ -272,15 +281,23 @@ Using the  *three-dot menu* next to each folder, you can customize groups of fav
 
 </Tabs>
 
-*Change Group Appearance* allows you to change the **icon**, **color**, and **shape** for all favorites in a group and apply these settings to any new favorites added in the future. This feature greatly simplifies the process of organizing and adding new favorites.
+*Change Group Appearance* settings:
+
+- **Icon, color, shape** — Set a default style for all favorites in a group.
+- **Consistency** — New favorites added to the group inherit the default appearance automatically.
+- **Customization** — Override the default settings for existing points in the folder, new favorites only, or apply to all.
 
 
 ## Export / Import
 
-OsmAnd offers various options for [backing up](./import-export.md) important data and [restoring](./import-export.md#import) it later. Favorites can be saved as a separate file in internal or external storage, uploaded to [OsmAnd Cloud](../personal/osmand-cloud.md) (only if you have an [OsmAnd Pro or OsmAnd Start subscription](../purchases/index.md) and) or [sent](#automatic-favorites-backup) to friends using instant messaging apps.
+OsmAnd provides several methods to [back up](./import-export.md) and [restore](./import-export.md#import) favorites:
+
+- **Backup locations** — Local storage, [OsmAnd Cloud](../personal/osmand-cloud.md) (only with [OsmAnd Pro or OsmAnd Start subscription](../purchases/index.md)), or instant messaging apps.
+
+- **File format** — Favorites are saved as `.gpx` files (favorites.gpx).
 
 
-### Free Cloud backup
+### Free Cloud Backup
 
 <Tabs groupId="operating-systems">
 
@@ -302,7 +319,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-[Free Favorites Backup](../personal/osmand-cloud.md#osmand-start) is a special purchase plan that allows you to back up your favorite points (locations) for Android, iOS, or Web versions in the OsmAnd application and restore them from OsmAnd Cloud. This plan is available for users of [OsmAnd Free or Maps+](../purchases/index.md).  
+The [Free Favorites Backup](../personal/osmand-cloud.md#osmand-start) is a special purchase plan that allows you to back up your favorite points (locations) for **Android, iOS**, or **Web** versions in the OsmAnd application and restore them from OsmAnd Cloud. This plan is available for users of [OsmAnd Free or Maps+](../purchases/index.md).  
 
 *Free Favorites Backup* offers these benefits:
 
@@ -311,7 +328,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 - **Transfer favorite points**. Import your favorite points to a new device with *Free Favorites Backup* feature if you use OsmAnd across multiple devices.  
 
 
-#### Create a Backup
+#### How to Create a Backup
 
 <Tabs groupId="operating-systems">
 
@@ -384,9 +401,8 @@ You can export and import your favorites using the special buttons at the bottom
 
 </Tabs>
 
-Tap the **Three-dot menu** (*Android*) or the **Edit** button (*pencil icon on iOS*) to open the special features menu for a selected favorites folder. From this menu, choose the **Share** button to send the *Favorites.gpx* file to your device's memory or share it with friends via messaging apps.  
-
-*In the iOS*, you can also long tap the folder to open the context menu, then tap the **Share** button.
+- Tap the **Three-dot menu** (*Android*) or the **Edit** button (*pencil icon on iOS*) or **long tap** the folde (*iOS*) of the selected favorites folder.
+- Choose the **Share** button to send the *Favorites.gpx* file to your device's memory or share it via messaging apps.  
 
 
 ### Automatic Favorites Backup  
@@ -411,15 +427,20 @@ Go to: *iOS* *Files → On my iPhone → OsmAnd Maps → favourites_backup*
 
 </Tabs>
 
-After each edit to Favorites, OsmAnd creates a backup file. You can find these backup files using a file manager. On *Android*, use a third-party file manager app. On *iOS*, access them using the *Files* app.  
+OsmAnd creates a **backup file** each time favorites are edited.
 
-***On Android***, you can export Favorites backup files using the Export function. The resulting `.osf` file can be saved to the device's internal memory, uploaded to cloud storage, or shared with other OsmAnd users via messaging apps. To export a backup, go to OsmAnd *<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>*.  
+- **Android**: Backups are stored in *Android → data → net.osmand → files → backup*. Use a third-party file manager to access them.
+
+- **iOS**: Files are located in *Files → On my iPhone → OsmAnd Maps → favourites_backup*.
+
+**Manual backup export**  
+
+- Go to *<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>*.
+- Export the `.osf` file to local storage, cloud services, or share it directly.
 
 :::caution
 In the latest versions of ***Android***, access to system directories is limited. However, after extracting the favorites file from the archive, it remains possible to forward it to messengers or cloud services, etc.  
 :::
-
-
 
 
 ### Favorites in GPX File
@@ -455,4 +476,4 @@ All information about a Favourite is stored and described using tags. When creat
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in August 2024*
+> *This article was last updated in March 2025*

@@ -146,7 +146,7 @@ As for the starting point, you can choose your current location, the location of
 The most important thing to start navigation is to determine your destination. The destination point can be found using a [*Search*](../../search/index.md#overview) function, or simply on a map. You can also set target point in the [*Navigation menu*](#navigation-menu):  
 
 - **<Translate android="true" ids="search_button"/>** - Opens [the search menu](../../search/index.md).
-- **<Translate android="true" ids="shared_string_address"/>** - opens [address search menu](../../search/search-address.md).
+- **<Translate android="true" ids="shared_string_address"/>** - Opens [address search menu](../../search/search-address.md).
 - **<Translate android="true" ids="shared_string_select_on_map"/>** - Opens the map to choose a destination point by tapping on the map.
 - **<Translate android="true" ids="shared_string_favorites"/>** - Allows to use [Favorite](../../personal/favorites.md) as a destination.
 - **<Translate android="true" ids="shared_string_markers"/>** - Allows to choose one of the [Map markers](../../personal/markers.md) as a destination point.
