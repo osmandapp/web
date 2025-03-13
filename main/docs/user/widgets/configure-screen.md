@@ -319,8 +319,6 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
 
 The **widget context menu** provides a quick way to manage and configure widgets directly from the map screen. You can access it by ***long tapping*** any widget to customize the layout of widgets without leaving the map.
 
-#### Context Menu Actions
-
 **For Top and Bottom panels**  
 
 - *Add widget to the Right/Left:*
