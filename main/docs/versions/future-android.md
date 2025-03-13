@@ -40,7 +40,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 7. delete large map files (replace with UI feature)
 
 <!--
-## What's new blog
+What's new blog
 
 • New navigation widget combines turn arrow and navigation instructions — https://github.com/osmandapp/OsmAnd/issues/13271   , https://github.com/osmandapp/OsmAnd-Issues/issues/1893
 
