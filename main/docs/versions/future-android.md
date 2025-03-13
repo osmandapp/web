@@ -46,7 +46,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 • Current route info widget: displays ETA, arrival time, and distance — https://github.com/osmandapp/OsmAnd/issues/15479  
 
-• Ability to select widget size for left and right panels — https://github.com/osmandapp/OsmAnd/issues/21814  
+• Ability to select widget size for left and right panels — https://github.com/osmandapp/OsmAnd/issues/21814 , redesign of the widget configuration screen — https://github.com/osmandapp/OsmAnd-Issues/issues/2525
 
 • Reset action for the average speed widget — https://github.com/osmandapp/OsmAnd/issues/21850
 
@@ -54,7 +54,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 • Android Auto:
   - view ETA and distance to next waypoint; 
-  - city names now appear in search results;
+  - city names now appear in search results; https://github.com/osmandapp/OsmAnd-Issues/issues/2632
   - show full destination name on route preview card - https://github.com/osmandapp/OsmAnd/issues/21098
 
 
@@ -66,6 +66,8 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 • Clickable ski slopes, mtb trails - https://github.com/osmandapp/OsmAnd-Issues/issues/2846  
 
+• Added: Legend for routes (Configure map > Routes) - https://github.com/osmandapp/OsmAnd-Issues/issues/1249
+
 • AIS Vessel Tracking Plugin: for nautical navigation — https://github.com/osmandapp/OsmAnd/issues/21559 
 
 • Change UX for Intermediate destinations in Waypoints - https://github.com/osmandapp/OsmAnd/issues/21665
@@ -76,9 +78,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 • All OSM routes, now searchable! Hiking, cycling, MTB, and more - https://github.com/osmandapp/OsmAnd/issues/16808    
 
-• Discover top-ranked POIs with the new Explore mode — https://github.com/osmandapp/OsmAnd-Issues/issues/2662 
-
-
+• Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662 
 
 ___
 
@@ -115,5 +115,17 @@ We are excited to introduce a new set of route guidance widgets to the [Top/Bott
 
 ## Optional updates
 
--->
 
+## Fixed issues
+
+- Serbian Latin - https://github.com/osmandapp/OsmAnd/issues/21480
+- OsmAnd Cloud progress doesn't finish with 100% - https://github.com/osmandapp/OsmAnd/issues/21741
+- OsmAnd Cloud - cannot sync tracks (cloud>device) - https://github.com/osmandapp/OsmAnd/issues/22017
+- Hide standard buttons - https://github.com/osmandapp/OsmAnd/issues/21369
+- Quick action: Add track Waypoint bug - https://github.com/osmandapp/OsmAnd/issues/20102
+- Crash tapping a POI with picture https://github.com/osmandapp/OsmAnd/issues/22033
+- Avoid roads bug - https://github.com/osmandapp/OsmAnd/issues/21828
+- Smart folders issues - https://github.com/osmandapp/OsmAnd-Issues/issues/2904
+- Bug with Direct-to-point projection - https://github.com/osmandapp/OsmAnd/issues/21588
+
+-->
