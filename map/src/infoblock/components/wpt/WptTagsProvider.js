@@ -683,7 +683,7 @@ function parseUrl(url, site) {
 }
 
 export function filterTag(tag) {
-    return tag.key !== WIKIMEDIA_COMMONS && tag.key !== WIKIDATA && otherImgTags(tag.key);
+    return tag.key !== WIKIMEDIA_COMMONS && tag.key !== WIKIDATA && !otherImgTags(tag.key);
 }
 
 export const otherImgTags = (tag) => {
