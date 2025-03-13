@@ -5,7 +5,7 @@ import SimpleDivider from '../components/dividers/SimpleDivider';
 import React from 'react';
 
 export default function Statistics({ stats }) {
-    const StatItems = (items, isLastGroup) => (
+    const StatItems = (items, isLastGroup, name) => (
         <Box>
             {items.map((item, index) => (
                 <Box key={index}>
@@ -20,7 +20,11 @@ export default function Statistics({ stats }) {
                                     <Box display="flex" justifyContent="flex-end" alignItems="center">
                                         {!(item.isMax && item.isMin) && // If both are true, show nothing
                                             (item.isMax ? (
-                                                <Typography sx={{ mr: 0.5 }}>🏆</Typography>
+                                                name === 'other' ? (
+                                                    <Typography sx={{ mr: 0.5 }}>🔺</Typography>
+                                                ) : (
+                                                    <Typography sx={{ mr: 0.5 }}>🏆</Typography>
+                                                )
                                             ) : item.isMin ? (
                                                 <Typography sx={{ mr: 0.5 }}>🔻</Typography>
                                             ) : null)}
@@ -50,9 +54,9 @@ export default function Statistics({ stats }) {
         <>
             {stats && (
                 <Box>
-                    {StatItems(stats.speed, stats.isLastGroup === 'speed')}
-                    {StatItems(stats.altitude, stats.isLastGroup === 'altitude')}
-                    {StatItems(stats.other, stats.isLastGroup === 'other')}
+                    {StatItems(stats.speed, stats.isLastGroup === 'speed', 'speed')}
+                    {StatItems(stats.altitude, stats.isLastGroup === 'altitude', 'altitude')}
+                    {StatItems(stats.other, stats.isLastGroup === 'other', 'other')}
                 </Box>
             )}
         </>
