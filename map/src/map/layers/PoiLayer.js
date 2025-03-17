@@ -60,13 +60,19 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
                 });
             const icon = await getPoiIcon(poi, innerCache, finalIconName);
             const coord = poi.geometry.coordinates;
-            return new L.Marker(new L.LatLng(coord[1], coord[0]), {
+            const marker = new L.Marker(new L.LatLng(coord[1], coord[0]), {
                 ...poi.properties,
                 idObj: getObjIdSearch(poi),
                 name: poi.properties[POI_NAME],
                 icon: icon,
                 [FINAL_POI_ICON_NAME]: finalIconName,
             });
+
+            marker.on('add', function () {
+                marker.getElement().setAttribute('se-poi-name', poi.properties[POI_NAME]);
+            });
+
+            return marker;
         })
     );
 

@@ -512,7 +512,7 @@ export function getSize(group, t) {
 export function getFavMenuListByLayers(layers, wpts, currentLoc) {
     let markerList = [];
     Object.values(layers).forEach((value) => {
-        const wpt = getWptByTitle(value.options.title, wpts);
+        const wpt = getWptByTitle(value.options.name, wpts);
         const icon = createPoiIcon({
             point: wpt,
             color: wpt.color,
@@ -520,8 +520,8 @@ export function getFavMenuListByLayers(layers, wpts, currentLoc) {
             hasBackgroundLight: false,
             icon: wpt.icon,
         }).options.html;
-        let marker = {
-            title: value.options.title,
+        const marker = {
+            name: value.options.name,
             icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30),
             layer: value,
         };
