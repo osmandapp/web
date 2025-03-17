@@ -32,6 +32,8 @@ import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 
+// WARNING: Do not use the 'title' field in marker layers on the map.
+// See the 'parseWpt' function for more details.
 export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, type = OBJECT_TYPE_POI, map, zoom }) {
     const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
     updatePoiCache(ctx, innerCache);
@@ -61,7 +63,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
             return new L.Marker(new L.LatLng(coord[1], coord[0]), {
                 ...poi.properties,
                 idObj: getObjIdSearch(poi),
-                title: poi.properties[POI_NAME],
+                name: poi.properties[POI_NAME],
                 icon: icon,
                 [FINAL_POI_ICON_NAME]: finalIconName,
             });

@@ -567,7 +567,7 @@ export function addLocDist({ location, markers = null, wpts = null }) {
 
 export function addShareFavoriteToMap(marker, ctx) {
     const newSelectedGpxFile = ctx.selectedGpxFile;
-    newSelectedGpxFile.name = marker.title;
+    newSelectedGpxFile.name = marker.name;
     newSelectedGpxFile.zoom = true;
     newSelectedGpxFile.markerCurrent = marker;
     newSelectedGpxFile.favItem = true;
