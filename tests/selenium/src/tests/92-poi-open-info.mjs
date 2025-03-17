@@ -25,7 +25,7 @@ export default async function test() {
     await clickBy(By.id('se-select-categories'));
 
     await actionCheckPoi({ iconWpt, name: poiName });
-    await clickBy(By.xpath(`//*[@title='Mr Grill']`));
+    await clickBy(By.xpath(`//*[@se-poi-name='Mr Grill']`));
     await waitBy(By.id(`se-poi-infoblock-${poiName}`));
 
     await actionFinish();

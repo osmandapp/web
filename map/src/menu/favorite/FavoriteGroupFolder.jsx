@@ -136,7 +136,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null }) {
                     {({ index, style }) => (
                         <div style={style}>
                             <FavoriteItem
-                                key={visibleMarkers[index].title + index}
+                                key={visibleMarkers[index].name + index}
                                 marker={visibleMarkers[index]}
                                 group={group}
                                 currentLoc={currentLoc}
@@ -158,7 +158,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null }) {
     function getMarkersBySortFiles(wpts, markers) {
         let arr = [];
         for (const wpt of wpts) {
-            const marker = markers.find((m) => m.title === wpt.name);
+            const marker = markers.find((m) => m.name === wpt.name);
             if (marker) {
                 arr.push(marker);
             } else {

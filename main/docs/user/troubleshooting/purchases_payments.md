@@ -65,6 +65,12 @@ Please note that other purchases, such as Maps+, cannot be transferred between b
 - Restore purchases in the Huawei AppGallery.
 -->
 
+## What to Do After the Amazon Store Closes
+
+On August 20, 2025, Amazon will [close Amazon Appstore for Android devices](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program). How can you save your [OsmAnd purchases](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) made through the Amazon Appstore? 
+
+While we are developing a method to retain all your purchases, we will provide detailed instructions before the Amazon Appstore closes.
+
 ## How to restore the Topography (formerly Contour lines) plugin purchase
 
 To restore the [Topography plugin](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid):

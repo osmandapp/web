@@ -68,7 +68,7 @@ export default function DeleteWptDialog({
         const groupName = useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category;
         const id = useSelected ? ctx.selectedGpxFile.id : wpt.groupId;
         const groupFullName = useSelected ? ctx.selectedGpxFile.file.name : wpt.group.file.name;
-        const currentWptName = useSelected ? ctx.selectedGpxFile.markerCurrent.title : wpt.name;
+        const currentWptName = useSelected ? ctx.selectedGpxFile.markerCurrent.name : wpt.name;
         const selectedGroup = useSelected ? ctx.selectedGpxFile : ctx.favorites.groups.find((g) => g.id === id);
         for (let i = 0; i < arrWpt.length; i++) {
             if (arrWpt[i].name === currentWptName) {
@@ -90,7 +90,7 @@ export default function DeleteWptDialog({
                         FavoriteHelper.updateSelectedFile({
                             ctx,
                             result,
-                            favoriteName: ctx.selectedGpxFile.markerCurrent.title,
+                            favoriteName: ctx.selectedGpxFile.markerCurrent.name,
                             selectedGroup,
                             deleted: true,
                         });
@@ -115,7 +115,7 @@ export default function DeleteWptDialog({
         return ctx.addFavorite.editTrack
             ? `Are you sure you want to delete ${wpt.name}?`
             : `Are you sure you want to delete ${TracksManager.prepareName(
-                  useSelected ? ctx.selectedGpxFile.markerCurrent.title : wpt.name
+                  useSelected ? ctx.selectedGpxFile.markerCurrent.name : wpt.name
               )}?`;
     }
 
