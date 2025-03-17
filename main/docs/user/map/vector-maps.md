@@ -11,8 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Overview
@@ -207,6 +206,31 @@ By default, map borders will appear when you zoom in to level 7 and will disappe
 :::tip
 When the *Show borders of downloaded maps* feature is enabled, downloaded maps are colored *Green* in both the Android and iOS versions of OsmAnd. On Android, archived maps are shown in *Orange*. In iOS, maps that can be updated are also marked in *Orange*.
 :::
+
+
+## Coordinates Grid
+
+<InfoAndroidOnly />
+
+Go to: *Android* *Menu → Configure Map → Show → Coordinates Grid*  
+
+![Coordinates grid menu](@site/static/img/map/coordinates_grid_menu_andr.png)
+
+The **Coordinates Grid** feature allows you to overlay a grid on the map, displaying coordinate lines in a selected format. This feature is useful for precise location reference and geospatial navigation.
+
+Available coordinate formats:
+
+- **DD°MM′SS″** (Degrees, Minutes, Seconds)
+- **DD.DDDDD°** (Decimal Degrees)
+- **DD°MM.MMM′** (Degrees, Decimal Minutes)
+- **UTM** (Universal Transverse Mercator)
+
+Zoom level settings:
+
+- The grid lines appear based on the zoom level, between **4 – 19**.
+- The lines dynamically adjust coordinate divisions based on the zoom level.
+
+By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats).
 
 
 ## Configure Map Style

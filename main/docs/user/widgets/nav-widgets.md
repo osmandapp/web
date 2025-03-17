@@ -186,8 +186,10 @@ The *Route Information* widget provides real-time data about the ongoing navigat
 - **Remaining travel time**. Displays the estimated time left to reach the destination.
 - **Distance to destination**. Indicates the total remaining distance to the final destination and distances to intermediate points.
 
-**Settings menu**.  
-Select a *Default View* to prioritize one of the following values: *Estimated arrival time*, *Time to go*, *Distance*.
+**Settings menu**:
+
+- Select a **Default View** to prioritize one of the following values: *Estimated arrival time*, *Time to go*, *Distance*.
+- In **Display Priority**, select between *Destination first (default)* or *Intermediate first* to prioritize the most relevant route information.
 
 > NOTE: The widget is visible only during navigation.
 
