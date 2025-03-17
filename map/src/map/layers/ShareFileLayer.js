@@ -90,7 +90,7 @@ export default function ShareFileLayer() {
 
     const onClick = (e) => {
         const marker = {
-            title: e.sourceTarget.options.title,
+            name: e.sourceTarget.options.name,
             icon: e.sourceTarget.options.icon.options.html,
             layer: e.sourceTarget,
         };

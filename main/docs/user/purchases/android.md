@@ -19,8 +19,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 For Android devices, you can download the **Free** and **Paid** versions of the application from the following markets:
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
-- [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
+- [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) (NOTE: [it will be closed](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program) in August 20, 2025 - [troubleshooting section](../troubleshooting/purchases_payments.md#what-do-after-close-of-amazon-store))
 
 **Versions of the OsmAnd application:**
 

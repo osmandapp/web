@@ -265,6 +265,12 @@
     object-fit: cover !important;
     box-sizing: border-box !important;
 }
+.linkImage {
+    width: 156px !important;
+    height: 156px !important;
+    object-fit: cover !important;
+    box-sizing: border-box !important;
+}
 
 .selectedImage {
     position: absolute !important;
