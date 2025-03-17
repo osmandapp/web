@@ -421,7 +421,7 @@ export default function TrackAnalyzerMenu() {
                             btnText={'Clear points'}
                         />
                     )}
-                    {analyseResult !== null && (
+                    {analyseResult !== null && !showProcessing && (
                         <>
                             <TrackSegmentStat
                                 height={height}
