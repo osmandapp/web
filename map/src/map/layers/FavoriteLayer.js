@@ -192,7 +192,7 @@ const FavoriteLayer = () => {
                     createHoverMarker({
                         marker,
                         mainStyle: true,
-                        text: marker.options['title'],
+                        text: marker.options['name'],
                         latlng: marker._latlng,
                         iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
                         map,
@@ -288,11 +288,11 @@ const FavoriteLayer = () => {
             ctx.selectedGpxFile = {};
             ctx.selectedGpxFile.prevState = _.cloneDeep(selectedGpxFileRef.current);
             ctx.selectedGpxFile.markerCurrent = {
-                title: e.sourceTarget.options.title,
+                name: e.sourceTarget.options.name,
                 icon: e.sourceTarget.options.icon.options.html,
                 layer: e.sourceTarget,
             };
-            ctx.selectedGpxFile.name = ctx.selectedGpxFile.markerCurrent.title;
+            ctx.selectedGpxFile.name = ctx.selectedGpxFile.markerCurrent.name;
             ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category
                 ? e.sourceTarget.options.category
                 : FavoritesManager.DEFAULT_GROUP_NAME;
@@ -306,7 +306,7 @@ const FavoriteLayer = () => {
 
     function updateSelectedFavoriteOnMap(file) {
         Object.values(file?.markers._layers).forEach((marker) => {
-            if (marker.options.title === ctx.selectedGpxFile.markerCurrent.title) {
+            if (marker.options.name === ctx.selectedGpxFile.markerCurrent.name) {
                 ctx.selectedGpxFile.markerPrev = Object.assign({}, ctx.selectedGpxFile.markerCurrent);
                 ctx.selectedGpxFile.markerCurrent.layer = marker;
                 ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });

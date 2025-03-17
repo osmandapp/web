@@ -176,7 +176,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
     function excludeTags(tag) {
         return (
             tag.startsWith(WEB_POI_PREFIX) ||
-            tag === TITLE ||
+            tag === 'name' ||
             tag === 'icon' ||
             tag === 'color' ||
             tag === 'background' ||

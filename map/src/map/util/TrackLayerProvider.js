@@ -204,6 +204,10 @@ export function getPointLatLon(point) {
     return lat && lon ? { lat: lat, lon: lon } : null;
 }
 
+// WARNING: Do not use the 'title' field in marker layers on the map
+// When the 'title' attribute is set on a marker, Leaflet automatically creates a default tooltip
+// displaying the 'title' content. This tooltip is hardcoded and cannot be removed or modified
+// through typical methods.
 function parseWpt({ points, layers, ctx = null, data = null, map = null, simplify = false, groupId = null }) {
     const zoom = map.getZoom();
     const lat = map.getCenter().lat;
@@ -234,7 +238,7 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null, simplif
                 }
             }
             if (point.name) {
-                opt.title = point.name;
+                opt.name = point.name;
             }
             opt.category = point.category ? point.category : 'favorites';
             opt.groupId = groupId;
@@ -265,7 +269,7 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null, simplif
                 createHoverMarker({
                     marker,
                     mainStyle: true,
-                    text: marker.options['title'],
+                    text: marker.options['name'],
                     latlng: marker._latlng,
                     iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
                     map,

@@ -192,9 +192,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         } else if (type?.isWpt) {
             return getDataFromWpt(type, ctx.selectedWpt);
         } else if (type?.isFav || type?.isShareFav) {
-            let markerName = ctx.selectedWpt.markerCurrent.title;
+            const markerName = ctx.selectedWpt.markerCurrent.name;
             const wpts = ctx.selectedWpt.file?.wpts ?? ctx.selectedWpt.wpts;
-            let currentWpt = wpts.find((p) => p.name === markerName);
+            const currentWpt = wpts.find((p) => p.name === markerName);
             if (currentWpt) {
                 return getDataFromWpt(type, ctx.selectedWpt, currentWpt);
             }
@@ -227,7 +227,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             if (type?.isWpt) {
                 tags = await WptTagsProvider.getWptTags(ctx.selectedWpt, type, ctx);
             } else if (type?.isFav || type?.isShareFav) {
-                let markerName = ctx.selectedWpt.markerCurrent.title;
+                let markerName = ctx.selectedWpt.markerCurrent.name;
                 const wpts = ctx.selectedWpt.file?.wpts ?? ctx.selectedWpt.wpts;
                 let currentWpt = wpts.find((p) => p.name === markerName);
                 if (currentWpt) {

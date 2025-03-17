@@ -438,7 +438,7 @@ export function addClusteredMarkersToMap({ map, markers, mainMarkers, secondaryM
         createHoverMarker({
             marker,
             mainStyle: true,
-            text: marker.options['title'],
+            text: marker.options['name'] ?? marker.options['title'],
             latlng: marker._latlng,
             iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
             map,
