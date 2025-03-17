@@ -73,7 +73,7 @@ export default function TrackAnalyzerMenu() {
     useEffect(() => {
         let timer;
         if (processing) {
-            timer = setTimeout(() => setShowProcessing(true), 5000);
+            timer = setTimeout(() => setShowProcessing(true), analyseResult ? 1000 : 0);
         } else {
             setShowProcessing(false);
         }
