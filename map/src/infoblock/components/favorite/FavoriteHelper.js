@@ -126,11 +126,11 @@ function updateMarker(newSelectedFile, deleted, name) {
             newSelectedFile.markerPrev = newSelectedFile.markerCurrent;
             delete newSelectedFile.markerCurrent;
         } else {
-            newSelectedFile.markerCurrent.title = name;
+            newSelectedFile.markerCurrent.name = name;
         }
     } else {
         newSelectedFile.markerCurrent = {};
-        newSelectedFile.markerCurrent.title = name;
+        newSelectedFile.markerCurrent.name = name;
     }
 }
 

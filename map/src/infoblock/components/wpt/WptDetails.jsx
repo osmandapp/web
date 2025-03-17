@@ -48,12 +48,17 @@ import FavoritesManager, {
 import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider, {
+    filterTag,
     FINAL_POI_ICON_NAME,
+    GRAPH_URL_ENDPOINT,
+    MAPILLARY_OSM_TAG,
     openWikivoyageContent,
     OSM_PREFIX,
+    otherImgTags,
+    PARAM_ACCESS_TOKEN,
+    PARAM_FIELDS,
     POI_OSM_URL,
     WIKIDATA,
-    WIKIMEDIA_COMMONS,
     WIKIPEDIA,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
@@ -66,7 +71,7 @@ import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { useNavigate } from 'react-router-dom';
-import { apiGet } from '../../../util/HttpApi';
+import { apiGet, apiPost } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
 import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
@@ -187,9 +192,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         } else if (type?.isWpt) {
             return getDataFromWpt(type, ctx.selectedWpt);
         } else if (type?.isFav || type?.isShareFav) {
-            let markerName = ctx.selectedWpt.markerCurrent.title;
+            const markerName = ctx.selectedWpt.markerCurrent.name;
             const wpts = ctx.selectedWpt.file?.wpts ?? ctx.selectedWpt.wpts;
-            let currentWpt = wpts.find((p) => p.name === markerName);
+            const currentWpt = wpts.find((p) => p.name === markerName);
             if (currentWpt) {
                 return getDataFromWpt(type, ctx.selectedWpt, currentWpt);
             }
@@ -197,14 +202,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             const currentPoi = ctx.selectedWpt.poi;
             const { options: objOptions, latlng } = currentPoi;
             const { name, type: objType } = getPropsFromSearchResultItem(objOptions, t);
-            const wikiCommons = getWikiCommons(objOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]);
-            let photos = null;
-            if (wikiCommons?.files) {
-                photos = {
-                    type: 'FeatureCollection',
-                    features: wikiCommons.files,
-                };
-            }
             return {
                 type,
                 poiType: objType,
@@ -215,10 +212,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 icon: objOptions[FINAL_POI_ICON_NAME],
                 tags: null,
                 osmUrl: objOptions[POI_OSM_URL],
-                wikidata: objOptions[OSM_PREFIX + WIKIDATA],
-                wikimediaCommons: wikiCommons?.categories,
                 wikipedia: getWikipedia(objOptions[OSM_PREFIX + WIKIPEDIA]),
-                photos,
             };
         }
         return null;
@@ -233,7 +227,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             if (type?.isWpt) {
                 tags = await WptTagsProvider.getWptTags(ctx.selectedWpt, type, ctx);
             } else if (type?.isFav || type?.isShareFav) {
-                let markerName = ctx.selectedWpt.markerCurrent.title;
+                let markerName = ctx.selectedWpt.markerCurrent.name;
                 const wpts = ctx.selectedWpt.file?.wpts ?? ctx.selectedWpt.wpts;
                 let currentWpt = wpts.find((p) => p.name === markerName);
                 if (currentWpt) {
@@ -355,7 +349,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         if (!mainPhotoName || mainPhotoName === EMPTY_STRING) {
             return wpt;
         }
-        const mainPhoto = wpt.photos.features.find((photo) => photo.properties.imageTitle === mainPhotoName);
+        const mainPhoto = wpt.photos.features.find((photo) => photo.properties.imageTitle.endsWith(mainPhotoName));
         if (mainPhoto) {
             mainPhoto.properties.rowNum = 0;
             wpt.photos.features.unshift(mainPhoto);
@@ -377,43 +371,38 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         return wpt;
     }
 
+    function objWithPhotos(obj) {
+        return obj?.type?.isPoi || obj?.type?.isSearch || obj?.type?.isWikiPoi;
+    }
+
     useEffect(() => {
-        if ((wpt?.type?.isPoi || wpt?.type?.isSearch || wpt?.type?.isWikiPoi) && !isAddressAdded) {
+        if (objWithPhotos(wpt) && !isAddressAdded) {
             setIsAddressAdded(true);
-
-            let updatedWpt = { ...wpt };
-
-            // First, search for the address
             getPoiAddress(wpt).then((addressData) => {
-                updatedWpt.address = addressData ? addressData : ADDRESS_NOT_FOUND;
+                setWpt((prevWpt) => {
+                    if (prevWpt?.id !== wpt?.id) return prevWpt;
 
-                // After searching for the address, search for photos
-                if (!isPhotosAdded) {
-                    setIsPhotosAdded(true);
-                    if (wpt?.type?.isWikiPoi) {
-                        getWikiPhotos(wpt).then((photosData) => {
-                            if (photosData) {
-                                updatedWpt.photos = photosData;
-                                updatedWpt = addFirstPhoto(updatedWpt);
-                            }
-                            setWpt(updatedWpt);
-                        });
-                    } else if (wpt?.type?.isPoi || wpt?.type?.isSearch) {
-                        getPoiPhotos(wpt).then((photosData) => {
-                            if (photosData) {
-                                updatedWpt.photos = updatedWpt.photos
-                                    ? {
-                                          ...updatedWpt.photos,
-                                          features: [...updatedWpt.photos.features, ...photosData.features],
-                                      }
-                                    : photosData;
-                            }
-                            setWpt(updatedWpt);
-                        });
+                    let updatedWpt = { ...prevWpt, address: addressData ? addressData : ADDRESS_NOT_FOUND };
+
+                    if (!isPhotosAdded) {
+                        setIsPhotosAdded(true);
+                        if (objWithPhotos(prevWpt)) {
+                            getPhotos(prevWpt).then((photosData) => {
+                                setWpt((finalWpt) => {
+                                    if (finalWpt?.id !== prevWpt?.id) return finalWpt;
+
+                                    let newWpt = { ...finalWpt, photos: photosData || [] };
+                                    if (finalWpt?.type?.isWikiPoi) {
+                                        newWpt = addFirstPhoto(newWpt);
+                                    }
+                                    return newWpt;
+                                });
+                            });
+                        }
                     }
-                } else {
-                    setWpt(updatedWpt);
-                }
+
+                    return updatedWpt;
+                });
             });
         }
     }, [wpt, isAddressAdded, isPhotosAdded]);
@@ -510,36 +499,99 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         }
     }
 
-    async function getWikiPhotos(wpt) {
-        let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/get-wiki-photos`, {
+    async function getPhotos(wpt) {
+        let tags;
+        const objTags = wpt.tags?.res;
+        const wikidataId = wpt.id;
+        if (!objTags && wikidataId) {
+            tags = {
+                wikidata: wikidataId,
+            };
+        } else {
+            tags = Object.fromEntries(wpt.tags.res.map(({ key, value }) => [key, String(value)]));
+            if (!tags[WIKIDATA] && wikidataId) {
+                tags[WIKIDATA] = wikidataId;
+            }
+        }
+        if (!tags) {
+            return null;
+        }
+        const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-poi-photos`, tags, {
             apiCache: true,
-            params: {
-                id: wpt.id,
-                lat: wpt.latlon.lat,
-                lon: wpt.latlon.lon,
-            },
         });
+
+        let result;
         if (response && response.data) {
-            return response.data;
+            result = response.data;
         } else {
             return null;
         }
+
+        for (const tagKey of Object.keys(tags)) {
+            if (otherImgTags(tagKey)) {
+                let imgFeature;
+                if (tagKey === MAPILLARY_OSM_TAG) {
+                    const link = await getMapillaryLink(tags[MAPILLARY_OSM_TAG]);
+                    imgFeature = createTagImg({ tags, tagKey, link });
+                } else {
+                    imgFeature = createTagImg({ tags, tagKey });
+                }
+                if (imgFeature) {
+                    result.features.push(imgFeature);
+                }
+            }
+        }
+
+        return result;
     }
 
-    async function getPoiPhotos(wpt) {
-        let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/get-poi-photos`, {
-            apiCache: true,
-            params: {
-                article: wpt.wikidata,
-                category: wpt.wikimediaCommons,
-                wiki: wpt.wikipedia,
+    async function getMapillaryLink(tagValue) {
+        const url = `${GRAPH_URL_ENDPOINT}${tagValue}?${PARAM_ACCESS_TOKEN}&${PARAM_FIELDS}`;
+
+        return fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    return null;
+                }
+                return response.json();
+            })
+            .then((data) => findBestThumbnail(data))
+            .catch(() => {
+                return null;
+            });
+    }
+
+    function createTagImg({ tags, tagKey, link = null }) {
+        const tagValue = tags[tagKey];
+
+        if (!tagValue) return null;
+
+        return {
+            type: 'Feature',
+            properties: {
+                imageTitle: link ?? tagValue,
+                osmTag: tagKey,
+                mediaId: 0,
+                rowNum: 0,
             },
-        });
-        if (response && response.data) {
-            return response.data;
-        } else {
-            return null;
+            geometry: {
+                type: 'Point',
+                coordinates: [wpt.latlon.lon, wpt.latlon.lat],
+            },
+        };
+    }
+
+    function findBestThumbnail(data) {
+        if (!data) return null;
+
+        if (data.thumb_1024_url) return data.thumb_1024_url;
+
+        for (const key in data) {
+            if (key.startsWith('thumb') && key.endsWith('url')) {
+                return data[key];
+            }
         }
+        return null;
     }
 
     function showEditButtons() {
@@ -847,9 +899,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                     }}
                                 />
                             )}
-                            {wpt?.tags?.res?.map((t, index) => {
-                                return <WptTagInfo key={index} tag={t} setDevWikiContent={setDevWikiContent} />;
-                            })}
+                            {wpt?.tags?.res
+                                ?.filter((t) => filterTag(t))
+                                .map((t, index) => (
+                                    <WptTagInfo key={index} tag={t} setDevWikiContent={setDevWikiContent} />
+                                ))}
                             {wpt.osmUrl && (
                                 <WptTagInfo
                                     key={'osm'}

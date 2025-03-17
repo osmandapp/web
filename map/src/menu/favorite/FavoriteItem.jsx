@@ -39,7 +39,7 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
             if (fileId === group.id) {
                 newSelectedGpxFile.nameGroup = group.name;
                 Object.values(ctx.favorites.mapObjs[fileId].markers._layers).forEach((m) => {
-                    if (m.options.title === marker.title) {
+                    if (m.options.name === marker.name) {
                         file = ctx.favorites.mapObjs[fileId];
                     }
                 });
@@ -49,7 +49,7 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
         newSelectedGpxFile.file = file;
         newSelectedGpxFile.sharedWithMe = sharedFile;
         newSelectedGpxFile.file.name = ctx.favorites.groups.find((g) => g.name === group.name).file.name;
-        newSelectedGpxFile.name = marker.title;
+        newSelectedGpxFile.name = marker.name;
         newSelectedGpxFile.zoom = true;
         newSelectedGpxFile.prevState = ctx.selectedGpxFile;
         newSelectedGpxFile.favItem = true;
@@ -100,7 +100,7 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                     {inView && (
                         <MenuItem
                             className={styles.item}
-                            id={'se-fav-item-name-' + marker.title}
+                            id={'se-fav-item-name-' + marker.name}
                             onClick={() => {
                                 if (share) {
                                     addShareFavoriteToMap(marker, ctx);
@@ -113,14 +113,14 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                                 <CustomIcon marker={marker} />
                             </ListItemIcon>
                             <ListItemText>
-                                <MenuItemWithLines name={marker.title} maxLines={1} />
+                                <MenuItemWithLines name={marker.name} maxLines={1} />
                                 <FavInfo />
                             </ListItemText>
                             {!share && !sharedFile && (
                                 <ThreeDotsButton
                                     name={'action_menu_group'}
                                     tip={'shared_string_menu'}
-                                    id={`se-actions-${marker.title}`}
+                                    id={`se-actions-${marker.name}`}
                                     setOpenActions={setOpenActions}
                                     anchorEl={anchorEl}
                                 />

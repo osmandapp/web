@@ -24,7 +24,7 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
     const favorite = getFavorite();
 
     function getFavorite() {
-        const wptInd = ctx.favorites.mapObjs[group.id].wpts.findIndex((wpt) => wpt.name === marker.title);
+        const wptInd = ctx.favorites.mapObjs[group.id].wpts.findIndex((wpt) => wpt.name === marker.name);
         const wpt = ctx.favorites.mapObjs[group.id].wpts[wptInd];
         if (wpt) {
             return {

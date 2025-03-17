@@ -24,10 +24,10 @@ You can get OsmAnd for free by one of our regular giveaways. Read more how to re
 - **iOS.** All you have to do is enter the App store and install OsmAnd again. You can use it on as many devices as you want without the need to buy the app again. You may see the "Buy" button, but you won't have to pay: just press it to download the app without paying again.
 
 
-Get OsmAnd
-There are several ways to do that:
+**Get OsmAnd**
 
-OsmAnd+ on Google Play
-OsmAnd+ on Amazon
-OsmAnd Maps on Apple App Store
-OsmAnd on HUAWEI AppGallery
+There are several ways to do that:
+- OsmAnd+ on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
+- OsmAnd on [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
+- OsmAnd+ on [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) (NOTE: [it will be closed](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program) in August 20, 2025 - [troubleshooting section](../troubleshooting/purchases_payments.md#what-do-after-close-of-amazon-store))
+- OsmAnd Maps on [Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
