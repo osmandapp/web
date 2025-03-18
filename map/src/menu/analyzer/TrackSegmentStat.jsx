@@ -23,34 +23,100 @@ import { useTranslation } from 'react-i18next';
 import TrackSegmentItem from './TrackSegmentItem';
 
 export const getSpeedStats = (stats, t) => [
-    { icon: <MaxSpeedIcon />, label: t('shared_string_max_speed'), ...formatValue(stats.maxSpeed, t('m_s')) },
-    { icon: <AvgSpeedIcon />, label: t('web:avg_speed'), ...formatValue(stats.avgSpeed, t('m_s')) },
-    { icon: <MinSpeedIcon />, label: t('shared_string_min_speed'), ...formatValue(stats.minSpeed, t('m_s')) },
+    {
+        icon: <MaxSpeedIcon />,
+        label: t('shared_string_max_speed'),
+        rawValue: stats.maxSpeed,
+        ...formatValue(stats.maxSpeed, t('m_s')),
+    },
+    {
+        icon: <AvgSpeedIcon />,
+        label: t('web:avg_speed'),
+        rawValue: stats.avgSpeed,
+        ...formatValue(stats.avgSpeed, t('m_s')),
+    },
+    {
+        icon: <MinSpeedIcon />,
+        label: t('shared_string_min_speed'),
+        rawValue: stats.minSpeed,
+        ...formatValue(stats.minSpeed, t('m_s')),
+    },
 ];
 
 export const getAltitudeStats = (stats, t) => [
-    { icon: <MaxAltitudeIcon />, label: t('web:max_altitude'), ...formatValue(stats.maxElevation, t('m')) },
-    { icon: <AvgAltitudeIcon />, label: t('web:avg_altitude'), ...formatValue(stats.avgElevation, t('m')) },
-    { icon: <MinAltitudeIcon />, label: t('web:min_altitude'), ...formatValue(stats.minElevation, t('m')) },
-    { icon: <UphillIcon />, label: t('shared_string_uphill'), ...formatValue(stats.diffElevationUp, t('m')) },
-    { icon: <DownhillIcon />, label: t('shared_string_downhill'), ...formatValue(stats.diffElevationDown, t('m')) },
+    {
+        icon: <MaxAltitudeIcon />,
+        label: t('web:max_altitude'),
+        rawValue: stats.maxElevation,
+        ...formatValue(stats.maxElevation, t('m')),
+    },
+    {
+        icon: <AvgAltitudeIcon />,
+        label: t('web:avg_altitude'),
+        rawValue: stats.avgElevation,
+        ...formatValue(stats.avgElevation, t('m')),
+    },
+    {
+        icon: <MinAltitudeIcon />,
+        label: t('web:min_altitude'),
+        rawValue: stats.minElevation,
+        ...formatValue(stats.minElevation, t('m')),
+    },
+    {
+        icon: <UphillIcon />,
+        label: t('shared_string_uphill'),
+        rawValue: stats.diffElevationUp,
+        ...formatValue(stats.diffElevationUp, t('m')),
+    },
+    {
+        icon: <DownhillIcon />,
+        label: t('shared_string_downhill'),
+        rawValue: stats.diffElevationDown,
+        ...formatValue(stats.diffElevationDown, t('m')),
+    },
 ];
 
 export const getOtherStats = (stats, t, formatDate) => [
-    { icon: <DateIcon />, label: t('shared_string_date'), value: formatDate(stats.date) },
-    { icon: <TimeSpanIcon />, label: t('shared_string_time_span'), ...formatTime(stats.timeSpan, t) },
-    { icon: <StartTimeIcon />, label: t('shared_string_start_time'), ...formatTimestamp(stats.startTime) },
-    { icon: <EndTimeIcon />, label: t('shared_string_end_time'), ...formatTimestamp(stats.endTime) },
-    { icon: <TimeDurationIcon />, label: t('duration'), ...formatTime(stats.duration, t) },
-    { icon: <TimeMovingIcon />, label: t('moving_time'), ...formatTime(stats.timeMoving, t) },
-    { icon: <DistanceIcon />, label: t('shared_string_length'), ...formatValue(stats.totalDist, t('km'), 1000) },
+    { icon: <DateIcon />, label: t('shared_string_date'), rawValue: stats.date, value: formatDate(stats.date) },
+    {
+        icon: <TimeSpanIcon />,
+        label: t('shared_string_time_span'),
+        rawValue: stats.timeSpan,
+        ...formatTime(stats.timeSpan, t),
+    },
+    {
+        icon: <StartTimeIcon />,
+        label: t('shared_string_start_time'),
+        rawValue: stats.startTime,
+        ...formatTimestamp(stats.startTime),
+    },
+    {
+        icon: <EndTimeIcon />,
+        label: t('shared_string_end_time'),
+        rawValue: stats.endTime,
+        ...formatTimestamp(stats.endTime),
+    },
+    { icon: <TimeDurationIcon />, label: t('duration'), rawValue: stats.duration, ...formatTime(stats.duration, t) },
+    {
+        icon: <TimeMovingIcon />,
+        label: t('moving_time'),
+        rawValue: stats.timeMoving,
+        ...formatTime(stats.timeMoving, t),
+    },
+    {
+        icon: <DistanceIcon />,
+        label: t('shared_string_length'),
+        rawValue: stats.totalDist,
+        ...formatValue(stats.totalDist, t('km'), 1000),
+    },
 ];
 
 export const UNDEFINED_VALUE = 'NaN';
 
 const formatValue = (value, unit = '', factor = 1) => {
     if (value === UNDEFINED_VALUE) return { value: UNDEFINED_VALUE, unit: '' };
-    return { value: (Number(value) / factor).toFixed(2), unit };
+    const formattedValue = Number(value) / factor;
+    return { value: formattedValue % 1 === 0 ? formattedValue.toFixed(0) : formattedValue.toFixed(1), unit };
 };
 
 const isTimestampInMilliseconds = (timestamp) => {
@@ -121,7 +187,7 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
             // Store only parameter values in statsMap
             Object.keys(stats).forEach((category) => {
                 stats[category].forEach((stat) => {
-                    const value = Number(stat.value);
+                    const value = Number(stat.rawValue);
                     if (!statsMap[category].has(stat.label)) {
                         statsMap[category].set(stat.label, { values: [], stats: [] });
                     }
@@ -150,7 +216,7 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
                 const max = Math.max(...numericValues);
 
                 stats.forEach((stat) => {
-                    const value = Number(stat.value);
+                    const value = Number(stat.rawValue);
                     if (isNaN(value)) {
                         stat.isMax = false;
                         stat.isMin = false;
