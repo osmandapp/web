@@ -16,7 +16,6 @@ import AppContext from '../../context/AppContext';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import langList from '../../resources/translations/supportedLanguages.json';
 import enList from '../../resources/translations/en/translation.json';
-
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../assets/icons/ic_action_map_language.svg';
 import { ReactComponent as ChangesIcon } from '../../assets/icons/ic_action_history.svg';
@@ -29,6 +28,8 @@ import { format } from 'date-fns';
 import i18n from '../../i18n';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import UnitsMenu from './units/UnitsMenu';
+import SimpleDivider from '../components/dividers/SimpleDivider';
 
 export function getLocalizedTimeUpdate(time) {
     const locale = locales[i18n.language] || locales.enUS;
@@ -152,7 +153,7 @@ export default function SettingsMenu() {
                     {t('general_settings_2')}
                 </Typography>
             </MenuItem>
-            <MenuItem divider className={styles.item} onClick={selectLanguage}>
+            <MenuItem className={styles.item} onClick={selectLanguage}>
                 <ListItemIcon className={styles.icon}>
                     <DisplayLanguageIcon />
                 </ListItemIcon>
@@ -173,6 +174,9 @@ export default function SettingsMenu() {
                     </div>
                 </ListItemText>
             </MenuItem>
+            <DividerWithMargin margin={'64px'} />
+            <UnitsMenu />
+            <SimpleDivider />
             {ctx.loginUser && ctx.accountInfo?.account !== FREE_ACCOUNT && (
                 <>
                     <MenuItem className={styles.item}>

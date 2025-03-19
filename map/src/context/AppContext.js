@@ -15,6 +15,7 @@ import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { getShareWithMe } from '../manager/ShareManager';
 import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
+import { units } from '../menu/settings/units/UnitsMenu';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -303,6 +304,11 @@ export const AppContextProvider = (props) => {
     const [cloudSettings, setCloudSettings] = useState({
         changes: false,
         trash: false,
+    });
+
+    const [unitsSettings, setUnitsSettings] = useState({
+        length: units.length.defaultValue,
+        speed: units.speed.defaultValue,
     });
 
     //pages
@@ -825,6 +831,8 @@ export const AppContextProvider = (props) => {
                 setSortedSegments,
                 updateFiles,
                 setUpdateFiles,
+                unitsSettings,
+                setUnitsSettings,
             }}
         >
             {props.children}
