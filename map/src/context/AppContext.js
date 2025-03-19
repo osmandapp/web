@@ -33,6 +33,7 @@ export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const OBJECT_TRACK_ANALYZER = 'track_analyzer';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
+export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
 
@@ -306,10 +307,7 @@ export const AppContextProvider = (props) => {
         trash: false,
     });
 
-    const [unitsSettings, setUnitsSettings] = useState({
-        length: units.length.defaultValue,
-        speed: units.speed.defaultValue,
-    });
+    const [unitsSettings, setUnitsSettings] = useState(getUnitsSettings);
 
     //pages
     const [prevPageUrl, setPrevPageUrl] = useState(null);
@@ -493,6 +491,17 @@ export const AppContextProvider = (props) => {
             return savedConfigureMap;
         }
         return defaultConfigureMapStateValues;
+    }
+
+    function getUnitsSettings() {
+        const saved = localStorage.getItem(LOCAL_STORAGE_UNITS_SETTINGS);
+        if (saved) {
+            return JSON.parse(saved);
+        }
+        return {
+            length: units.length.defaultValue,
+            speed: units.speed.defaultValue,
+        };
     }
 
     useEffect(() => {

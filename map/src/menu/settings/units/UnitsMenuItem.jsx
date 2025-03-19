@@ -1,7 +1,7 @@
 import styles from '../settings.module.css';
 import { ClickAwayListener, ListItemIcon, ListItemText, MenuItem, Popover, Typography } from '@mui/material';
-import React, { useContext, useRef, useState } from 'react';
-import AppContext from '../../../context/AppContext';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import AppContext, { LOCAL_STORAGE_UNITS_SETTINGS } from '../../../context/AppContext';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import DividerWithMargin from '../../components/dividers/DividerWithMargin';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +15,10 @@ export default function UnitsMenuItem({ unit, isLastItem = false }) {
     const [, height] = useWindowSize();
     const [openList, setOpenList] = useState(false);
     const anchorEl = useRef(null);
+
+    useEffect(() => {
+        localStorage.setItem(LOCAL_STORAGE_UNITS_SETTINGS, JSON.stringify(ctx.unitsSettings));
+    }, [ctx.unitsSettings]);
 
     return (
         <>
