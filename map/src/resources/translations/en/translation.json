@@ -5276,5 +5276,12 @@
   "si_m_s": "Meters per second",
   "si_min_m": "Minutes per mile",
   "si_min_km": "Minutes per kilometer",
-  "si_nm_h": "Nautical miles per hour (knots)"
+  "si_nm_h": "Nautical miles per hour (knots)",
+  "mile_per_hour": "mph",
+  "min_mile": "min/m",
+  "min_km": "min/km",
+  "nm_h": "kn",
+  "foot": "ft",
+  "mile": "mi",
+  "nm": "nmi"
 }

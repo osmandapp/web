@@ -49,9 +49,9 @@ export default function TrackAnalyzerMenu() {
 
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
 
-    const speedStats = getSpeedStats({}, t);
-    const altitudeStats = getAltitudeStats({}, t);
-    const otherStats = getOtherStats({}, t, (x) => x);
+    const speedStats = getSpeedStats({}, t, ctx);
+    const altitudeStats = getAltitudeStats({}, t, ctx);
+    const otherStats = getOtherStats({}, t, (x) => x, ctx);
 
     const allStats = [...speedStats, ...altitudeStats, ...otherStats];
 
