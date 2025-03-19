@@ -19,8 +19,11 @@ export default function SegmentSelector({ currentGraph, segmentVisibility, toggl
 
     useEffect(() => {
         if (ctx.sortedSegments) {
+            const filtered = ctx.sortedSegments.filter(
+                (segment) => !ctx.excludedSegments.has(`${segment.name} ${segment.trackInd}`)
+            );
             setSegments(
-                ctx.sortedSegments.reduce((acc, segment) => {
+                filtered.reduce((acc, segment) => {
                     const trackName = segment.name;
                     if (!acc[trackName]) {
                         acc[trackName] = [];
@@ -30,7 +33,7 @@ export default function SegmentSelector({ currentGraph, segmentVisibility, toggl
                 }, {})
             );
         }
-    }, [ctx.sortedSegments]);
+    }, [ctx.sortedSegments, ctx.excludedSegments]);
 
     return (
         <FormControl fullWidth>
