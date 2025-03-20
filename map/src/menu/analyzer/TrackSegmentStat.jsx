@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { ReactComponent as MaxSpeedIcon } from '../../assets/icons/ic_action_max_speed_16.svg';
 import { ReactComponent as AvgSpeedIcon } from '../../assets/icons/ic_action_speed_16.svg';
 import { ReactComponent as MinSpeedIcon } from '../../assets/icons/ic_action_min_speed_16.svg';
@@ -21,62 +21,70 @@ import i18n from 'i18next';
 import { MAIN_BLOCK_SIZE } from './TrackAnalyzerMenu';
 import { useTranslation } from 'react-i18next';
 import TrackSegmentItem from './TrackSegmentItem';
+import {
+    convertMeters,
+    convertSpeedMS,
+    getLargeLengthUnit,
+    getSmallLengthUnit,
+    getSpeedUnit,
+} from '../settings/units/UnitsConverter';
+import AppContext from '../../context/AppContext';
 
-export const getSpeedStats = (stats, t) => [
+export const getSpeedStats = (stats, t, ctx) => [
     {
         icon: <MaxSpeedIcon />,
         label: t('shared_string_max_speed'),
         rawValue: stats.maxSpeed,
-        ...formatValue(stats.maxSpeed, t('m_s')),
+        ...formatValue(convertSpeedMS(stats.maxSpeed, ctx.unitsSettings.speed), t(getSpeedUnit(ctx))),
     },
     {
         icon: <AvgSpeedIcon />,
         label: t('web:avg_speed'),
         rawValue: stats.avgSpeed,
-        ...formatValue(stats.avgSpeed, t('m_s')),
+        ...formatValue(convertSpeedMS(stats.avgSpeed, ctx.unitsSettings.speed), t(getSpeedUnit(ctx))),
     },
     {
         icon: <MinSpeedIcon />,
         label: t('shared_string_min_speed'),
         rawValue: stats.minSpeed,
-        ...formatValue(stats.minSpeed, t('m_s')),
+        ...formatValue(convertSpeedMS(stats.minSpeed, ctx.unitsSettings.speed), t(getSpeedUnit(ctx))),
     },
 ];
 
-export const getAltitudeStats = (stats, t) => [
+export const getAltitudeStats = (stats, t, ctx) => [
     {
         icon: <MaxAltitudeIcon />,
         label: t('web:max_altitude'),
         rawValue: stats.maxElevation,
-        ...formatValue(stats.maxElevation, t('m')),
+        ...formatValue(convertMeters(stats.maxElevation, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
     },
     {
         icon: <AvgAltitudeIcon />,
         label: t('web:avg_altitude'),
         rawValue: stats.avgElevation,
-        ...formatValue(stats.avgElevation, t('m')),
+        ...formatValue(convertMeters(stats.avgElevation, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
     },
     {
         icon: <MinAltitudeIcon />,
         label: t('web:min_altitude'),
         rawValue: stats.minElevation,
-        ...formatValue(stats.minElevation, t('m')),
+        ...formatValue(convertMeters(stats.minElevation, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
     },
     {
         icon: <UphillIcon />,
         label: t('shared_string_uphill'),
         rawValue: stats.diffElevationUp,
-        ...formatValue(stats.diffElevationUp, t('m')),
+        ...formatValue(convertMeters(stats.diffElevationUp, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
     },
     {
         icon: <DownhillIcon />,
         label: t('shared_string_downhill'),
         rawValue: stats.diffElevationDown,
-        ...formatValue(stats.diffElevationDown, t('m')),
+        ...formatValue(convertMeters(stats.diffElevationDown, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
     },
 ];
 
-export const getOtherStats = (stats, t, formatDate) => [
+export const getOtherStats = (stats, t, formatDate, ctx) => [
     { icon: <DateIcon />, label: t('shared_string_date'), rawValue: stats.date, value: formatDate(stats.date) },
     {
         icon: <TimeSpanIcon />,
@@ -107,7 +115,7 @@ export const getOtherStats = (stats, t, formatDate) => [
         icon: <DistanceIcon />,
         label: t('shared_string_length'),
         rawValue: stats.totalDist,
-        ...formatValue(stats.totalDist, t('km'), 1000),
+        ...formatValue(convertMeters(stats.totalDist, ctx.unitsSettings.len), t(getLargeLengthUnit(ctx)), 1000),
     },
 ];
 
@@ -154,6 +162,8 @@ const formatTime = (value, t) => {
 };
 
 export default function TrackSegmentStat({ height, sortedSegments, activeSegmentParams }) {
+    const ctx = useContext(AppContext);
+
     const { t } = useTranslation();
 
     const [filteredStats, setFilteredStats] = useState([]);
@@ -179,9 +189,9 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
         // 1. Collect statistics, filtering only active parameters
         const segmentStats = sortedSegments.map((segment) => {
             const stats = {
-                speed: getSpeedStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
-                altitude: getAltitudeStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
-                other: getOtherStats(segment.stats, t, formatDate).filter((s) => activeSegmentParams.has(s.label)),
+                speed: getSpeedStats(segment.stats, t, ctx).filter((s) => activeSegmentParams.has(s.label)),
+                altitude: getAltitudeStats(segment.stats, t, ctx).filter((s) => activeSegmentParams.has(s.label)),
+                other: getOtherStats(segment.stats, t, formatDate, ctx).filter((s) => activeSegmentParams.has(s.label)),
             };
 
             // Store only parameter values in statsMap
