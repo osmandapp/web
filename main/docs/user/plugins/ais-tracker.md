@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Display [AIS](https://en.wikipedia.org/wiki/Automatic_identification_system) positions and information about surronding vessels. The AIS data is received via network from an external AIS receiver.
+Display [AIS](https://en.wikipedia.org/wiki/Automatic_identification_system) positions and information about surrounding vessels. The AIS data is received via network from an external AIS receiver.
 
 **DISCLAIMER**:
 This plugin is a hobby project and not designed for reliability and correctness. DO NOT rely upon this software in any way including for navigation and/or safety of life.
@@ -39,7 +39,7 @@ The typical range of terrestrial AIS reception is 15–20 nautical miles (28–3
 - Environmental conditions.
 - Interference from obstacles such as land or structures.
 
-If everythinkg connects right the next image will be on the map.
+If everything connects right the next image will be on the map.
 
 ![AIS vessel tracker](@site/static/img/plugins/ais/ais.png)
 
@@ -127,7 +127,7 @@ The _AIS vessel tracker_ plugin offers various settings to personalize navigatio
 | - Protocol for NMEA data reception |Choose protocol for NMEA data reception | `UDP/TCP` |
 | - IP address of NMEA data source| Define IP address of NMEA data source (if TCP is used) | `192.168.200.16` |
 | - TCP port of NMEA data source| Define TCP port number of the NMEA data source | `4001` |
-| - UDP port of local NMEA data receiver|Define UPD port where OsmAnd receives NMEA data | `10110` |
+| - UDP port of local NMEA data receiver|Define UDP port where OsmAnd receives NMEA data | `10110` |
 | **Timeout settings for AIS Signal reception**: | |  |
 | - Timeout for visibility when an object is lost |Set timeout values to identify lost AIS objects if no signal was received for a specific time.| `3, 5, 7, 10...20 min` |
 | - Timeout for ship visibility when no signal is received | Set timeout for ship visibility: After this time without signal reception, the ship symbol will change its state on screen: It will be crossed out.| `2, 3, 4, 5...15 min / Disabled` |
