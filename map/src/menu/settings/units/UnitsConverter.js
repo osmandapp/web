@@ -1,26 +1,21 @@
 import convert from 'convert-units';
 
-// Mapping of speed units used in the system.
-// - `default` stores values for translations and display purposes.
-// - `converter` stores the actual units used in calculations and unit conversion.
-
 export const speedUnitsMap = {
-    si_kmh: { default: 'km_h', converter: 'km/h' },
-    si_mph: { default: 'mile_per_hour' },
-    si_m_s: { default: 'm_s', converter: 'm/s' },
-    si_min_m: { default: 'min_mile' },
-    si_min_km: { default: 'min_km' },
-    si_nm_h: { default: 'nm_h', converter: 'knot' },
+    si_kmh: { native: 'km_h', converter: 'km/h' },
+    si_mph: { native: 'mile_per_hour' },
+    si_m_s: { native: 'm_s', converter: 'm/s' },
+    si_min_m: { native: 'min_mile' },
+    si_min_km: { native: 'min_km' },
+    si_nm_h: { native: 'nm_h', converter: 'knot' },
 };
 
-// - In `default`, the first value represents the smaller unit, and the second represents the larger unit.
 export const lengthUnitsMap = {
-    si_km_m: { default: ['m', 'km'], converter: ['m', 'km'] },
-    si_mi_feet: { default: ['foot', 'mile'], converter: ['ft', 'mi'] },
-    si_mi_meters: { default: ['m', 'mile'], converter: ['m', 'mi'] },
-    si_mi_yard: { default: ['yd', 'mile'], converter: ['yd', 'mi'] },
-    si_nm_mt: { default: ['m', 'nmi'], converter: ['m', 'nmi'] },
-    si_nm_ft: { default: ['foot', 'nmi'], converter: ['ft', 'nmi'] },
+    si_km_m: { native: { small: 'm', large: 'km' }, converter: { small: 'm', large: 'km' } },
+    si_mi_feet: { native: { small: 'foot', large: 'mile' }, converter: { small: 'ft', large: 'mi' } },
+    si_mi_meters: { native: { small: 'm', large: 'mile' }, converter: { small: 'm', large: 'mi' } },
+    si_mi_yard: { native: { small: 'yd', large: 'mile' }, converter: { small: 'yd', large: 'mi' } },
+    si_nm_mt: { native: { small: 'm', large: 'nmi' }, converter: { small: 'm', large: 'nmi' } },
+    si_nm_ft: { native: { small: 'foot', large: 'nmi' }, converter: { small: 'ft', large: 'nmi' } },
 };
 
 /**
@@ -31,7 +26,7 @@ export const lengthUnitsMap = {
  * @returns {number|null} - Converted speed value in the requested unit.
  * @throws {Error} - If the target unit is unsupported.
  */
-export function convertSpeed(value, toUnit) {
+export function convertSpeedMS(value, toUnit) {
     if (!value) {
         return null;
     }
@@ -71,15 +66,27 @@ export function convertSpeed(value, toUnit) {
  * @returns {number|null} - Converted length value in the requested unit.
  * @throws {Error} - If the target unit is unsupported.
  */
-export function convertLength(value, toUnit) {
+export function convertMeters(value, toUnit) {
     if (!value) {
         return null;
     }
 
-    const units = lengthUnitsMap[toUnit].converter;
+    const unit = lengthUnitsMap[toUnit].converter;
 
-    if (!units) {
+    if (!unit) {
         throw new Error(`Unsupported unit: ${toUnit}`);
     }
-    return convert(value).from('m').to(units[0]);
+    return convert(value).from('m').to(unit.small);
+}
+
+export function getSmallLengthUnit(ctx) {
+    return lengthUnitsMap[ctx.unitsSettings.len].native.small;
+}
+
+export function getLargeLengthUnit(ctx) {
+    return lengthUnitsMap[ctx.unitsSettings.len].native.large;
+}
+
+export function getSpeedUnit(ctx) {
+    return speedUnitsMap[ctx.unitsSettings.speed].native;
 }

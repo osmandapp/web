@@ -499,7 +499,7 @@ export const AppContextProvider = (props) => {
             return JSON.parse(saved);
         }
         return {
-            length: units.length.defaultValue,
+            len: units.len.defaultValue,
             speed: units.speed.defaultValue,
         };
     }

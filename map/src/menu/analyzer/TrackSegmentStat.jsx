@@ -21,7 +21,13 @@ import i18n from 'i18next';
 import { MAIN_BLOCK_SIZE } from './TrackAnalyzerMenu';
 import { useTranslation } from 'react-i18next';
 import TrackSegmentItem from './TrackSegmentItem';
-import { convertLength, convertSpeed, lengthUnitsMap, speedUnitsMap } from '../settings/units/UnitsConverter';
+import {
+    convertMeters,
+    convertSpeedMS,
+    getLargeLengthUnit,
+    getSmallLengthUnit,
+    getSpeedUnit,
+} from '../settings/units/UnitsConverter';
 import AppContext from '../../context/AppContext';
 
 export const getSpeedStats = (stats, t, ctx) => [
@@ -29,28 +35,19 @@ export const getSpeedStats = (stats, t, ctx) => [
         icon: <MaxSpeedIcon />,
         label: t('shared_string_max_speed'),
         rawValue: stats.maxSpeed,
-        ...formatValue(
-            convertSpeed(stats.maxSpeed, ctx.unitsSettings.speed),
-            t(speedUnitsMap[ctx.unitsSettings.speed].default)
-        ),
+        ...formatValue(convertSpeedMS(stats.maxSpeed, ctx.unitsSettings.speed), t(getSpeedUnit(ctx))),
     },
     {
         icon: <AvgSpeedIcon />,
         label: t('web:avg_speed'),
         rawValue: stats.avgSpeed,
-        ...formatValue(
-            convertSpeed(stats.avgSpeed, ctx.unitsSettings.speed),
-            t(speedUnitsMap[ctx.unitsSettings.speed].default)
-        ),
+        ...formatValue(convertSpeedMS(stats.avgSpeed, ctx.unitsSettings.speed), t(getSpeedUnit(ctx))),
     },
     {
         icon: <MinSpeedIcon />,
         label: t('shared_string_min_speed'),
         rawValue: stats.minSpeed,
-        ...formatValue(
-            convertSpeed(stats.minSpeed, ctx.unitsSettings.speed),
-            t(speedUnitsMap[ctx.unitsSettings.speed].default)
-        ),
+        ...formatValue(convertSpeedMS(stats.minSpeed, ctx.unitsSettings.speed), t(getSpeedUnit(ctx))),
     },
 ];
 
@@ -59,46 +56,31 @@ export const getAltitudeStats = (stats, t, ctx) => [
         icon: <MaxAltitudeIcon />,
         label: t('web:max_altitude'),
         rawValue: stats.maxElevation,
-        ...formatValue(
-            convertLength(stats.maxElevation, ctx.unitsSettings.length),
-            t(lengthUnitsMap[ctx.unitsSettings.length].default[0])
-        ),
+        ...formatValue(convertMeters(stats.maxElevation, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
     },
     {
         icon: <AvgAltitudeIcon />,
         label: t('web:avg_altitude'),
         rawValue: stats.avgElevation,
-        ...formatValue(
-            convertLength(stats.avgElevation, ctx.unitsSettings.length),
-            t(lengthUnitsMap[ctx.unitsSettings.length].default[0])
-        ),
+        ...formatValue(convertMeters(stats.avgElevation, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
     },
     {
         icon: <MinAltitudeIcon />,
         label: t('web:min_altitude'),
         rawValue: stats.minElevation,
-        ...formatValue(
-            convertLength(stats.minElevation, ctx.unitsSettings.length),
-            t(lengthUnitsMap[ctx.unitsSettings.length].default[0])
-        ),
+        ...formatValue(convertMeters(stats.minElevation, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
     },
     {
         icon: <UphillIcon />,
         label: t('shared_string_uphill'),
         rawValue: stats.diffElevationUp,
-        ...formatValue(
-            convertLength(stats.diffElevationUp, ctx.unitsSettings.length),
-            t(lengthUnitsMap[ctx.unitsSettings.length].default[0])
-        ),
+        ...formatValue(convertMeters(stats.diffElevationUp, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
     },
     {
         icon: <DownhillIcon />,
         label: t('shared_string_downhill'),
         rawValue: stats.diffElevationDown,
-        ...formatValue(
-            convertLength(stats.diffElevationDown, ctx.unitsSettings.length),
-            t(lengthUnitsMap[ctx.unitsSettings.length].default[0])
-        ),
+        ...formatValue(convertMeters(stats.diffElevationDown, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
     },
 ];
 
@@ -133,11 +115,7 @@ export const getOtherStats = (stats, t, formatDate, ctx) => [
         icon: <DistanceIcon />,
         label: t('shared_string_length'),
         rawValue: stats.totalDist,
-        ...formatValue(
-            convertLength(stats.totalDist, ctx.unitsSettings.length),
-            t(lengthUnitsMap[ctx.unitsSettings.length].default[1]),
-            1000
-        ),
+        ...formatValue(convertMeters(stats.totalDist, ctx.unitsSettings.len), t(getLargeLengthUnit(ctx)), 1000),
     },
 ];
 

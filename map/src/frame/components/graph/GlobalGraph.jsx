@@ -24,7 +24,10 @@ import { useTranslation } from 'react-i18next';
 import YAxisSelector from './YAxisSelector';
 import { debounce } from 'lodash';
 import annotationsPlugin from 'chartjs-plugin-annotation';
-import { lengthUnitsMap, speedUnitsMap } from '../../../menu/settings/units/UnitsConverter';
+import {
+    getLargeLengthUnit,
+    getSmallLengthUnit,
+} from '../../../menu/settings/units/UnitsConverter';
 
 const Z_INDEX_GRAPH = 1000;
 const MIN_GRAPH_HEIGHT = 34;
@@ -267,8 +270,8 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                     ticks: {
                         callback: (value) => {
                             return totalDistance < 1
-                                ? `${(value * 1000).toFixed(0)} ${t(lengthUnitsMap[ctx.unitsSettings.length].default[0])}`
-                                : `${value.toFixed(2)} ${t(lengthUnitsMap[ctx.unitsSettings.length].default[1])}`;
+                                ? `${(value * 1000).toFixed(0)} ${t(getSmallLengthUnit(ctx))}`
+                                : `${value.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`;
                         },
                         autoSkip: true,
                         maxTicksLimit: 20,
@@ -277,10 +280,8 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                 y: {
                     ticks: {
                         callback: (value) => {
-                            if (yAxisOption === 'altitude')
-                                return `${value} ${t(lengthUnitsMap[ctx.unitsSettings.length].default[0])}`;
-                            if (yAxisOption === 'speed')
-                                return `${value} ${t(speedUnitsMap[ctx.unitsSettings.speed].default)}`;
+                            if (yAxisOption === 'altitude') return `${value} ${t(getSmallLengthUnit(ctx))}`;
+                            if (yAxisOption === 'speed') return `${value} ${t(getLargeLengthUnit(ctx))}`;
                             if (yAxisOption === 'slope') return `${value} %`;
                             return value;
                         },

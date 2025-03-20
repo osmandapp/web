@@ -26,93 +26,30 @@ export default function UnitsSelectMenu({ unit, setOpenList }) {
 
     const UnitRadioMenu = () => {
         const keys = Object.keys(unit.list);
-        if (unit.type === 'length') {
-            return (
-                <>
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[0]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[0]]} />}
-                    />
-                    <Divider className={radioStyles.dividerActions} />
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[1]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[1]]} />}
-                    />
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[2]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[2]]} />}
-                    />
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[3]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[3]]} />}
-                    />
-                    <Divider className={radioStyles.dividerActions} />
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[4]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[4]]} />}
-                    />
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[5]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[5]]} />}
-                    />
-                </>
-            );
-        } else if (unit.type === 'speed') {
-            return (
-                <>
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[0]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[0]]} />}
-                    />
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[1]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[1]]} />}
-                    />
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[2]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[2]]} />}
-                    />
-                    <Divider className={radioStyles.dividerActions} />
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[3]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[3]]} />}
-                    />
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[4]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[4]]} />}
-                    />
-                    <Divider className={radioStyles.dividerActions} />
-                    <FormControlLabel
-                        className={radioStyles.controlLabel}
-                        value={keys[5]}
-                        control={<Radio />}
-                        label={<UnitRadioItem label={unit.list[keys[5]]} />}
-                    />
-                </>
-            );
-        }
+        const dividerIndexes = {
+            len: [1, 4],
+            speed: [3, 5],
+        };
+
+        if (!dividerIndexes[unit.type]) return null;
+
+        return (
+            <>
+                {keys.map((key, index) => (
+                    <React.Fragment key={key}>
+                        <FormControlLabel
+                            className={radioStyles.controlLabel}
+                            value={key}
+                            control={<Radio />}
+                            label={<UnitRadioItem label={unit.list[key]} />}
+                        />
+                        {dividerIndexes[unit.type].includes(index) && (
+                            <Divider className={radioStyles.dividerActions} />
+                        )}
+                    </React.Fragment>
+                ))}
+            </>
+        );
     };
 
     const UnitRadioItem = ({ label }) => {

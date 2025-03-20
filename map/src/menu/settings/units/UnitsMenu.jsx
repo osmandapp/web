@@ -5,8 +5,8 @@ import UnitsMenuItem from './UnitsMenuItem';
 import i18n from '../../../i18n';
 
 export const units = {
-    length: {
-        type: 'length',
+    len: {
+        type: 'len',
         title: 'Units of length',
         icon: <UnitsLengthIcon />,
         list: {
