@@ -131,16 +131,16 @@ Waypoints in OsmAnd can be sorted into groups based on their type. This grouping
 ```xml
 <gpx>
   <wpt lat="1.234" lon="5.678">
-    <type>aqueduct</type>
     <name>Look up to see the water</name>
+    <type>aqueduct</type>
   </wpt>
   <wpt lat="5.678" lon="1.234">
-    <type>castle</type>
     <name>Beware of ghosts</name>
+    <type>castle</type>
   </wpt>
   <wpt lat="66.666" lon="66.666">
-    <type>castle</type>
     <name>The house of Beetlejuice</name>
+    <type>castle</type>
   </wpt>
   <extensions>
     <osmand:points_groups>
@@ -173,9 +173,9 @@ The list of supported activity types is available in the [activities.json](https
 
 ### HTML in Descriptions
 
-HTML tags can be used within the `<desc>` tags in the `<metadata>` or `<wpt>` elements to provide formatted descriptions for tracks or waypoints.  
+HTML tags can be used within the `<desc>` tags in the `<metadata>` or `<wpt>` elements to provide formatted descriptions for tracks or waypoints.
 
-To avoid conflicts with XML syntax, replace special characters as follows:  
+To avoid conflicts with XML syntax, replace special characters as follows:
 
 - `<` *→* `&lt;`
 - `>` *→* `&gt;`
@@ -255,7 +255,7 @@ You can enrich your tracks with data from fitness sensors, such as heart rate mo
 
 ### Track Point Details
 
-Each `<trkpt>` (track point) in the GPX file can include additional attributes to capture data such as speed, heading, and elevation.  
+Each `<trkpt>` (track point) in the GPX file can include additional attributes to capture data such as speed, heading, and elevation.
 
 *Supported attributes:*
 
@@ -342,7 +342,7 @@ A gpx file may contain several routes. Each of them is contained in a specific s
   - trkpts - amount of **trkpt**s inside **trkseg**
   - length - sum of all **length**s of route **segment**s inside **trkseg**
   - segments - amount of route **segment**s inside **trkseg**
-  - rtepts - amount of **rtept**s owned by **trkseg**  
+  - rtepts - amount of **rtept**s owned by **trkseg**
 
 #### Example:
 
@@ -425,9 +425,9 @@ A gpx file may contain several routes. Each of them is contained in a specific s
 
 OsmAnd allows you to convert multiple GPX files into a single OBF file. This enables the storage of thousands of GPX tracks in a compact, optimized format while maintaining features like special map icons, track appearance customization, and search functionality. This avoids a limit of local large GPX files which typically can't handle > 500 K points in total however some features of GPX tracks might be missing comparing displaying OBF file.
 
-Steps to convert GPX to OBF:  
+Steps to convert GPX to OBF:
 
-- Log in to [OsmAnd Web Map](https://osmand.net/map) *→ Tracks → Select a folder → *Menu* (⋮) *→ Download as OBF collection*  
+- Log in to [OsmAnd Web Map](https://osmand.net/map) *→ Tracks → Select a folder → *Menu* (⋮) *→ Download as OBF collection*
 
 - The resulting `<.obf>` file can be imported into OsmAnd (requires OsmAnd Android 5.0+).
 
@@ -543,7 +543,7 @@ Waypoint icons can be customized with the following tags:
 ```
 
 
-### Search by Name and Refs 
+### Search by Name and Refs
 
 Tracks and waypoints can be located using a variety of GPX tags.
 
@@ -576,7 +576,7 @@ Tracks and waypoints can be located using a variety of GPX tags.
 
 ### Search by activity type
 
-OsmAnd organizes tracks in OBF files into **Activity Groups** and **Activity Types**. These classifications help you filter tracks as POIs or create activity-based search filters.  
+OsmAnd organizes tracks in OBF files into **Activity Groups** and **Activity Types**. These classifications help you filter tracks as POIs or create activity-based search filters.
 
 How activity types work:
 
