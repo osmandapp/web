@@ -44,6 +44,7 @@ export function getFavoriteFromDB(id) {
 export function saveFavoriteToDB(id, data) {
     return new Promise(async (resolve, reject) => {
         const db = await openDB();
+        await deleteOldFavVersions(db, id);
         const transaction = db.transaction(STORE_NAME, 'readwrite');
         const store = transaction.objectStore(STORE_NAME);
         const request = store.put({ id, data });
@@ -57,6 +58,28 @@ export function saveFavoriteToDB(id, data) {
             reject('Error saving favorite to DB');
         };
     });
+}
+
+async function deleteOldFavVersions(db, currentId) {
+    const transaction = db.transaction(STORE_NAME, 'readonly');
+    const store = transaction.objectStore(STORE_NAME);
+    const allKeysRequest = store.getAllKeys();
+
+    const allKeys = await new Promise((resolve, reject) => {
+        allKeysRequest.onsuccess = () => resolve(allKeysRequest.result);
+        allKeysRequest.onerror = () => reject('Error reading keys from DB');
+    });
+
+    const groupId = currentId.split('/')[0];
+    const keysToDelete = allKeys.filter((k) => k.startsWith(groupId + '/') && k !== currentId);
+
+    if (keysToDelete.length > 0) {
+        const deleteTx = db.transaction(STORE_NAME, 'readwrite');
+        const deleteStore = deleteTx.objectStore(STORE_NAME);
+        for (const key of keysToDelete) {
+            deleteStore.delete(key);
+        }
+    }
 }
 
 export function deleteFavoriteFromDB(id) {
