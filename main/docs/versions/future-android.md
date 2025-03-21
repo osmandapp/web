@@ -41,8 +41,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [Reset action for the Average speed widget](#reset-option-for-the-average-speed-widget)
 - [Added ability to change and set the default appearance for favorite groups](#flexible-appearance-settings-for-favorite-groups)
 - [Added Coordinates Grid with geographical coordinates](#coordinates-grid-overlay)
-- Add geographic grid - https://github.com/osmandapp/OsmAnd/issues/13271 
-- Added Hebrew TTS for navigation — https://github.com/osmandapp/OsmAnd/issues/21816 , https://github.com/osmandapp/OsmAnd-iOS/issues/4340, 
+- AIS Vessel Tracking Plugin: for nautical navigation — https://github.com/osmandapp/OsmAnd/issues/21559  
 - redesign of the widget configuration screen — https://github.com/osmandapp/OsmAnd-Issues/issues/2525
 
 
@@ -63,7 +62,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
   - show full destination name on route preview card - https://github.com/osmandapp/OsmAnd/issues/21098
 
 
-• AIS Vessel Tracking Plugin: for nautical navigation — https://github.com/osmandapp/OsmAnd/issues/21559  
+
 
 • !!! Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662 
 
@@ -235,8 +234,9 @@ ___
 
 ## Optional updates
 
+- Added [Hebrew TTS](https://osmand.net/docs/user/navigation/guidance/voice-navigation#voice-prompt-language) for navigation — https://github.com/osmandapp/OsmAnd/issues/21816 , https://github.com/osmandapp/OsmAnd-iOS/issues/4340, 
 
-## Fixed issues
+Fixed issues:
 
 - Serbian Latin - https://github.com/osmandapp/OsmAnd/issues/21480
 - OsmAnd Cloud progress doesn't finish with 100% - https://github.com/osmandapp/OsmAnd/issues/21741

@@ -194,19 +194,48 @@ For additional troubleshooting steps, refer to the [navigation troubleshooting g
 
 ## TTS (Text-to-Speech)
 
-TTS voices are the preferred voices to use in OsmAnd. They are bundled with the application but require the system to have a [Text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) installed. The engines are often included in Android and iOS or can be installed separately. A list of engines and supported languages for Android may be found here [List of languages with available TTS engines on Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+OsmAnd supports **Text-to-Speech (TTS)** voices, which provide dynamic and detailed voice guidance, including turn instructions, street names, and POI announcements. TTS voices are included in the application but require a [Text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) installed on the device.  
 
-To configure the TTS of your device:
+Most modern Android and iOS devices include a default TTS engine, but additional engines and languages may be installed separately.  
 
-- Go to your device settings,
-    - [Android](https://support.google.com/accessibility/android/answer/6006983)
-    - [iOS](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen)
-- Find the *Language & Keyboard* section, *Text-to-speech*, or similar.
-- Select, activate, or install it, then configure it to support your preferred language, which may just be a setting or require you to download an additional file.  
+For a list of **available TTS engines and supported languages** on Android, refer to:
+[List of languages with available TTS engines on Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
-Check if TTS works properly in Android using the *Listen to example* or a similar test button. You can also check if the voice prompts are selected correctly in OsmAnd, to do this, enable the OsmAnd Development plugin and then go to *Settings → Plugins → OsmAnd Development → [Test voice prompts](../../plugins/development.md#application-testing)*.
+***Configuring TTS on your device:***
 
-Additional information can be found in the [Troubleshooting](../../troubleshooting/navigation.md#voice-navigation) section.  
+**Android:**
+
+1. Open Settings.
+2. Navigate to *Accessibility → Text-to-Speech Output*.
+3. Select a **TTS engine** (Google TTS or another installed engine).
+4. Choose a **preferred language** (some may require additional downloads).
+5. Adjust speech rate, pitch, and playback speed as needed.
+6. Tap **Listen to Example** to test the voice output.
+
+For more details, refer to:  
+[Google Support – Android Text-to-Speech Settings](https://support.google.com/accessibility/android/answer/6006983).
+
+**iOS:**
+
+1. Open Settings.
+2. Go to *Accessibility → Spoken Content*.
+3. Tap **Voices** to select a preferred voice.
+4. Adjust **Speaking Rate**, **Pronunciations**, and other settings.
+5. Test the voice using **Speak Selection** or **Speak Screen**.
+
+For more details, refer to:  
+[Apple Support – iPhone Speech Settings](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen).
+
+***Testing Voice prompts:***
+
+To check if TTS is functioning properly within OsmAnd:
+
+- Enable the **Development Plugin**: *Menu → Settings → Plugins → OsmAnd Development*.
+- Open [Test voice prompts](../../plugins/development.md#application-testing): *Menu → Settings → Plugins → OsmAnd Development → Test Voice Prompts*.
+
+For troubleshooting, refer to:  
+[Troubleshooting voice navigation](../../troubleshooting/navigation.md#voice-navigation).
+
 
 ### Voice Prompt Language
 
@@ -228,29 +257,43 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-In OsmAnd you can select your preferred language and prompt style from the list:
+OsmAnd provides two types of voice prompts:
 
-- *<Translate android="true" ids="tts_title"/>*. The text-to-speech feature pronounces all types of instructions: street names, turn instructions, POI names, and more.
-- *<Translate android="true" ids="shared_string_recorded"/>* (*for Android*). The recorded voice sounds better than the technical voice, but can only speak pre-recorded phrases for turn instructions. It cannot announce street names or POIs.
+- **<Translate android="true" ids="tts_title"/>**
+    - Uses the device’s TTS engine to generate voice prompts dynamically.
+    - Reads street names, turn instructions, POI names, and other details.
+    - Supports multiple languages and pronunciation settings.
+    - Can be customized with speech rate, pitch, and pronunciation settings.
+
+- **<Translate android="true" ids="shared_string_recorded"/>** (*Android only*)
+    - Uses pre-recorded voice prompts for navigation.
+    - Sounds more natural than TTS but has limitations.
+    - Does not read street names or POI names
+    - Only provides basic turn instructions.
+
+> *TTS is recommended for detailed navigation guidance.*
+
+#### System-Level Voice Prompt Settings
+
+Voice prompt behavior, including *playback speed, pitch, and pauses*, can be adjusted only in the device’s system settings.
+
+**Android:**
+
+1. Open device *Settings → Accessibility → Text-to-speech output*.
+2. Choose your preferred TTS engine and language.
+3. Adjust speech rate, pitch, and playback speed.
+
+**iOS:**
+
+1. Open device *Settings → Accessibility → Spoken Content*.
+2. Adjust: language, voices, speaking rate, pronunciations.
+
+> *For additional voices, download language packs from system settings.*
 
 
-#### Voice Prompts Settings in the System Settings of Devices
-
-You can only change the voice type, playback speed, pitch, or pause in sentences in the system settings of the device.  
-
-- **Android:**
-    - Open your **device Settings**.
-    - Select *Accessibility*, then find *Text-to-speech* output.
-    - Choose your preferred engine, language, speech rate, and pitch.
-
-- **iOS:**
-    - Go to *device Settings → Accessibility*, then **Spoken Content**.
-    - Adjust any of the following: voices, language, speaking rate, pronunciations.
-
-
-#### List of Languages
+#### Available TTS Languages
 
 There are currently a total of 45 languages. Not all languages listed below may be supported by every TTS engine. See [here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
@@ -263,7 +306,7 @@ There are currently a total of 45 languages. Not all languages listed below may 
 | **E** | English, English(United Kingdom), Estonian |
 | **F** | Finnish, French |
 | **G** | German, German(casual), Greek, Guarani |
-| **H** | Hindi, Hungarian, Hungarian(formal) |
+| **H** | Hindi, Hungarian, Hungarian(formal), Hebrew |
 | **I** | Indonesian, Italian |
 | **J** | Japanese |
 | **K** | Korean  |
@@ -379,4 +422,4 @@ Select screen wake-up options and ensure OsmAnd remains in the foreground when t
 3. Why should I use a TTS voice instead of a recorded voice? [(check)](../../troubleshooting/navigation.md#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice)
 4. TTS does not function properly? Follow these steps to fix it. [(check)](../../troubleshooting/navigation.md#tts-does-not-function-properly-follow-these-steps-to-fix-it)
 
-> *This article was last updated in January 2025*
+> *This article was last updated in March 2025*

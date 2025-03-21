@@ -174,7 +174,9 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_p
 
 </Tabs>
 
-Nautical depth contour lines represent areas of equal depth, helping visualize underwater topography changes. This feature is available across all map styles and modes and can be adjusted with or without the Nautical map view plugin enabled. For further details about the Nautical map view, visit the [Nautical Map plugin page](../plugins/nautical-charts).
+Nautical depth contour lines represent areas of equal depth, helping visualize underwater topography changes. This feature is available across all map styles and modes and can be adjusted with or without the Nautical map view plugin enabled.  
+
+For further details about the Nautical map view, visit the [Nautical Map plugin page](../plugins/nautical-charts).
 
 
 ## Show Borders
@@ -203,8 +205,10 @@ This feature allows you to toggle the visibility of borders for previously downl
 
 By default, map borders will appear when you zoom in to level 7 and will disappear at zoom level 3 and below.
 
-:::tip
-When the *Show borders of downloaded maps* feature is enabled, downloaded maps are colored *Green* in both the Android and iOS versions of OsmAnd. On Android, archived maps are shown in *Orange*. In iOS, maps that can be updated are also marked in *Orange*.
+:::tip Color Show borders of downloaded maps
+When the *Show borders of downloaded maps* feature is enabled, downloaded maps are colored **Green** in both the Android and iOS versions of OsmAnd.  
+
+On Android, archived maps are shown in **Orange**. In iOS, maps that can be updated are also marked in **Orange**.
 :::
 
 
@@ -216,21 +220,45 @@ Go to: *Android* *Menu → Configure Map → Show → Coordinates Grid*
 
 ![Coordinates grid menu](@site/static/img/map/coordinates_grid_menu_andr.png)
 
-The **Coordinates Grid** feature allows you to overlay a grid on the map, displaying coordinate lines in a selected format. This feature is useful for precise location reference and geospatial navigation.
+The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation.
 
-Available coordinate formats:
+***Available coordinate formats:***
 
 - **DD°MM′SS″** (Degrees, Minutes, Seconds)
-- **DD.DDDDD°** (Decimal Degrees)
+- **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
 - **DD°MM.MMM′** (Degrees, Decimal Minutes)
-- **UTM** (Universal Transverse Mercator)
+- **MGRS** (Military Grid Reference System)
+- **UTM** (Universal Transverse Mercator - zone-based grid system)
 
-Zoom level settings:
+:::note
+
+1. *UTM grid limitations:*
+    - The minimum zoom level for displaying the UTM grid is 9.  
+    - Only one UTM zone is displayed at a time, as zones are separated by meridians every 6°.
+
+2. *WGS84 grid supports three different modes:* decimal degrees, degrees+minutes, and degrees+minutes+seconds.
+
+:::
+
+***Supported coordinate systems:***  
+
+OsmAnd supports multiple **base projections** for displaying geographic grid lines:  
+
+| **Projection**  | **EPSG Code** | **Description** |
+|----------------|-------------|----------------|
+| **WGS84**      | EPSG:4326   | Default latitude/longitude reference system, used globally. |
+| **Mercator**   | EPSG:3857   | Used for web-based mapping (Google Maps, OpenStreetMap, etc.). |
+| **UTM**        | EPSG:6387   | Divides the world into **60 zones** for accurate local positioning. |
+| **MGRS**       | -           | Military Grid Reference System (extension of UTM). |
+
+
+
+***Zoom level settings:***
 
 - The grid lines appear based on the zoom level, between **4 – 19**.
 - The lines dynamically adjust coordinate divisions based on the zoom level.
 
-By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats).
+**By default, the app uses the coordinate format selected in** [General settings](../personal/profiles.md#units--formats).
 
 
 ## Configure Map Style
@@ -564,5 +592,4 @@ If you have a personal or third-party custom map style created according to the 
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in October 2024*
-
+> *This article was last updated in March 2025*
