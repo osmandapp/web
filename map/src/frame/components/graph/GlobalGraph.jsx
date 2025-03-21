@@ -24,10 +24,7 @@ import { useTranslation } from 'react-i18next';
 import YAxisSelector from './YAxisSelector';
 import { debounce } from 'lodash';
 import annotationsPlugin from 'chartjs-plugin-annotation';
-import {
-    getLargeLengthUnit,
-    getSmallLengthUnit,
-} from '../../../menu/settings/units/UnitsConverter';
+import { getLargeLengthUnit, getSmallLengthUnit } from '../../../menu/settings/units/UnitsConverter';
 
 const Z_INDEX_GRAPH = 1000;
 const MIN_GRAPH_HEIGHT = 34;

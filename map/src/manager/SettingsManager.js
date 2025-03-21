@@ -1,6 +1,6 @@
 import Utils, { isToday, isYesterday, quickNaNfix } from '../util/Utils';
 import TracksManager, { GPX_FILE_TYPE } from './track/TracksManager';
-import { FAVORITE_FILE_TYPE, prepareFavGroupName } from './FavoritesManager';
+import { FAVORITE_FILE_TYPE, extractBaseFavFileName } from './FavoritesManager';
 import React from 'react';
 import { ReactComponent as TrackIcon } from '../assets/icons/ic_action_polygom_dark.svg';
 import { ReactComponent as FolderIcon } from '../assets/icons/ic_action_folder.svg';
@@ -40,7 +40,7 @@ export function getItemIcon(file) {
     if (file?.type === GPX_FILE_TYPE) {
         return <TrackIcon />;
     } else if (file?.type === FAVORITE_FILE_TYPE) {
-        const groupName = prepareFavGroupName(file.name);
+        const groupName = extractBaseFavFileName(file.name);
         const groups = file.details?.pointGroups ? JSON.parse(quickNaNfix(file.details?.pointGroups)) : null;
         if (!groups) {
             return <FolderIcon />;

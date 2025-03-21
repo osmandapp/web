@@ -197,7 +197,7 @@ export function prepareFileName(filename, isFavoriteGroup = false) {
 
     const newlineRe = /\n/g;
     // Note: It is allowed to use / in favorite file names
-    const illegalRe = isFavoriteGroup ? /[\?<>\\:\*\|"]/g : /[\/\?<>\\:\*\|"]/g;
+    const illegalRe = isFavoriteGroup ? /[\?<>\\\*\|"]/g : /[\/\?<>\\:\*\|"]/g;
     const controlRe = /[\x00-\x1f\x80-\x9f]/g;
     const reservedRe = /^\.+$/;
     const unixRe = /[\`\'\$\{\}\[\]\(\)]/g;

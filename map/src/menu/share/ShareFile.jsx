@@ -21,7 +21,7 @@ import {
     SHARE_FILE_MAIN_URL,
 } from '../../manager/GlobalManager';
 import NotAvailableError from './errors/NotAvailableError';
-import { getFavMenuListByLayers, LOCATION_UNAVAILABLE, prepareFavGroupName } from '../../manager/FavoritesManager';
+import { getFavMenuListByLayers, LOCATION_UNAVAILABLE, extractBaseFavFileName } from '../../manager/FavoritesManager';
 import FavoriteItem from '../favorite/FavoriteItem';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../manager/MapManager';
@@ -211,7 +211,7 @@ export default function ShareFile() {
                     )}
                     {showFavorite && (
                         <Box>
-                            <SubTitle title={prepareFavGroupName(fileRes.name)} />
+                            <SubTitle title={extractBaseFavFileName(fileRes.name)} />
                             {favItems}
                         </Box>
                     )}
