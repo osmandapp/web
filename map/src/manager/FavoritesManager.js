@@ -4,7 +4,7 @@ import MarkerOptions, {
     getBackground,
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
-import Utils, { getDistance } from '../util/Utils';
+import Utils, { getDistance, prepareFileName } from '../util/Utils';
 import _, { isEmpty } from 'lodash';
 import { apiPost } from '../util/HttpApi';
 import { quickNaNfix } from '../util/Utils';
@@ -23,7 +23,7 @@ const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
 const FAV_FILE_PREFIX = 'favorites-';
 export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
-export const SUBFOLDER_PLACEHOLDER = '_%_';
+export const FAVORITE_PLACEHOLDER = '_-_';
 
 export const HIDDEN_TRUE = 'true';
 export const HIDDEN_FALSE = 'false';
@@ -63,21 +63,21 @@ function getShapesSvg(color) {
 }
 
 async function addFavorite(data, fileName, updatetime) {
-    fileName = getGroupNameForFile(fileName);
-    let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
+    fileName = normalizeGroupNameForFile(fileName);
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
         params: {
             fileName: fileName,
             updatetime: updatetime,
         },
     });
     if (resp.data) {
-        let data = prepareTrackData(resp.data.details.trackData);
+        const data = prepareTrackData(resp.data.details.trackData);
         return new GroupResult(resp.data.clienttime, resp.data.updatetime, data);
     }
 }
 
 async function deleteFavorite(data, fileName, updatetime) {
-    fileName = getGroupNameForFile(fileName);
+    fileName = normalizeGroupNameForFile(fileName);
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/delete`, data, {
         params: {
             fileName: fileName,
@@ -91,8 +91,8 @@ async function deleteFavorite(data, fileName, updatetime) {
 }
 
 async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGroupUpdatetime, newGroupUpdatetime, ind) {
-    oldGroupName = getGroupNameForFile(oldGroupName);
-    newGroupName = getGroupNameForFile(newGroupName);
+    oldGroupName = normalizeGroupNameForFile(oldGroupName);
+    newGroupName = normalizeGroupNameForFile(newGroupName);
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update`, data, {
         params: {
             wptName: wptName,
@@ -191,8 +191,8 @@ function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = n
 }
 
 function createGroup(file) {
-    file.preparedName = getGroupNameFromFile(file.name);
-    file.folder = prepareFavGroupName(file.preparedName);
+    file.preparedName = prepareFileName(file.name, true);
+    file.folder = extractBaseFavFileName(file.preparedName);
     return {
         id: getUniqFileId(file),
         sharedWithMe: file.sharedWithMe,
@@ -213,30 +213,32 @@ function getHidden(pointsGroups, groupName) {
     return false;
 }
 
-export function getGroupNameForFile(groupName) {
-    if (groupName.includes('/')) {
-        return groupName.replace(/\//g, SUBFOLDER_PLACEHOLDER);
-    }
-    return groupName;
-}
-
-export function getGroupNameFromFile(fileName) {
-    if (fileName.includes(SUBFOLDER_PLACEHOLDER)) {
-        return fileName.replaceAll(SUBFOLDER_PLACEHOLDER, '/');
+function getFavGroupName(pointsGroups, fileName) {
+    const preparedFileName =
+        fileName === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : extractBaseFavFileName(fileName);
+    const groupName = Object.keys(pointsGroups).find(
+        (groupName) => normalizeGroupNameForFile(groupName) === preparedFileName
+    );
+    if (groupName && fileName !== DEFAULT_FAV_GROUP_NAME) {
+        return groupName;
     }
     return fileName;
 }
 
-export function prepareFavGroupName(name) {
+export function normalizeGroupNameForFile(groupName) {
+    return groupName.replaceAll(/[:/]/g, FAVORITE_PLACEHOLDER);
+}
+
+export function extractBaseFavFileName(name) {
     return name.replace(new RegExp(`^${FavoritesManager.FAV_FILE_PREFIX}`), '').replace(/\.gpx$/, '');
 }
 
 export async function saveFavoriteGroup(data, groupName, ctx) {
     if (data.pointsGroups[groupName]) {
-        groupName = getGroupNameForFile(groupName);
-        let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add-group`, data, {
+        groupName = normalizeGroupNameForFile(groupName);
+        const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add-group`, data, {
             params: {
-                groupName: groupName,
+                groupName,
             },
         });
         if (resp.data) {
@@ -383,6 +385,7 @@ function addExistFavGroup(obj, g, favGroups) {
     const ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
     favGroups.groups[ind].pointsGroups = obj.pointsGroups;
     favGroups.groups[ind].hidden = getHidden(obj.pointsGroups, g.name) ? HIDDEN_TRUE : HIDDEN_FALSE;
+    favGroups.groups[ind].name = obj.name;
 
     return favGroups;
 }
@@ -425,9 +428,9 @@ async function createFavGroupObj(g, favGroups) {
             Object.keys(favData).forEach((t) => {
                 favGroups.mapObjs[g.id][`${t}`] = favData[t];
             });
-
-            const groupName =
-                g.file.folder === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : g.file.folder;
+            const groupName = getFavGroupName(pointsGroups, g.file.folder);
+            favGroups.mapObjs[g.id].name = groupName;
+            favGroups.groups[ind].name = groupName;
             favGroups.groups[ind].hidden = getHidden(pointsGroups, groupName) ? HIDDEN_TRUE : HIDDEN_FALSE;
         }
     }

@@ -1,26 +1,21 @@
-import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import dialogStyles from '../dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
-import { Button, TextField } from '@mui/material';
+import { Button, TextField, Dialog } from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { prepareFileName } from '../../util/Utils';
 import { apiGet } from '../../util/HttpApi';
 import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
-import FavoritesManager, {
-    getGroupNameForFile,
-    getGroupNameFromFile,
-    prepareFavGroupName,
-} from '../../manager/FavoritesManager';
+import FavoritesManager, { normalizeGroupNameForFile, extractBaseFavFileName } from '../../manager/FavoritesManager';
 import { updateSortList } from '../../menu/actions/SortActions';
 
 export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }) {
     const ctx = useContext(AppContext);
 
     const [nameError, setNameError] = useState('');
-    const [name, setName] = useState(getGroupNameFromFile(prepareFavGroupName(group.file.name)));
+    const [name, setName] = useState(group.name);
 
     const renameError = {
         title: 'Rename error',
@@ -43,8 +38,8 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
 
     async function renameFavGroup(group, newName, ctx) {
         let newGroupName = FavoritesManager.FAV_FILE_PREFIX + newName + '.gpx';
-        const oldName = getGroupNameFromFile(prepareFavGroupName(group.file.name));
-        newGroupName = getGroupNameForFile(newGroupName);
+        const oldName = extractBaseFavFileName(group.name);
+        newGroupName = normalizeGroupNameForFile(newGroupName);
         if (newGroupName !== group.file.name) {
             const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/rename-fav-group`, {
                 params: {
