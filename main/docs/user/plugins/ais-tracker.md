@@ -1,5 +1,5 @@
 ---
-sidebar_position: 20
+sidebar_position: 2
 title:  AIS Vessel Tracker
 ---
 
@@ -13,73 +13,86 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<InfoIncompleteArticle/>
+
 <InfoAndroidOnly />
 
 ## Overview
 
-Display [AIS](https://en.wikipedia.org/wiki/Automatic_identification_system) positions and information about surrounding vessels. The AIS data is received via network from an external AIS receiver.
+The **AIS Vessel Tracker** plugin displays [Automatic Identification System (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) positions and detailed information about nearby vessels. The AIS data is received via a network connection from an external AIS receiver.
 
-**DISCLAIMER**:
-This plugin is a hobby project and not designed for reliability and correctness. DO NOT rely upon this software in any way including for navigation and/or safety of life.
+:::caution DISCLAIMER
+**This plugin is a hobby project and is not designed for reliability or accuracy. DO NOT rely on this software for navigation or safety of life.**
+:::
+
 
 ## Required Setup Parameters
 
 The ability to use Online maps is automatically enabled in iOS version of OsmAnd. To display Online maps in Android, you need to make the following settings:
 
 1. [Enable](../plugins/index.md#enable--disable) **AIS vessel tracker** plugin in the *Main Menu → Plugins → AIS vessel tracker*.
-2. Make the necessary settings in [AIS settings](../map/raster-maps.md#select-raster-maps): connection to AIS servers or to external AIS receiver. 
-3. Check that vessels show on the OsmAnd map.
+2. Configure the [AIS settings](../map/raster-maps.md#select-raster-maps)
+3. Configure an **AIS server connection** or connect an **external AIS receiver**.
+4. Check that vessels are displayed on the OsmAnd map.
 
 ## Vessels on the Map
 
-Limited AIS signal range – AIS operates on VHF frequencies (161.975 MHz and 162.025 MHz), which are restricted by line-of-sight propagation.
+AIS operates on *VHF frequencies* (161.975 MHz and 162.025 MHz) and has a limited signal range due to line-of-sight propagation.
 
-The typical range of terrestrial AIS reception is 15–20 nautical miles (28–37 km), depending on:
-- The height of the AIS antenna.
-- Environmental conditions.
-- Interference from obstacles such as land or structures.
+***Typical AIS reception range:***
 
-If everything connects right the next image will be on the map.
+- 15–20 nautical miles (28–37 km)
+- Depends on antenna height, environmental conditions, and obstacles
+
+***AIS display on the map:***
 
 ![AIS vessel tracker](@site/static/img/plugins/ais/ais.png)
 
-- Vessels should move based on their actual speed and course.
-- New ships may appear, and others may exit the visible range if they move out of the AIS receiver's coverage.
-- Clicking on a vessel should still open detailed information.
+When correctly set up, vessel positions will appear on the map. Key features:
+
+- Vessels move based on real-time speed and course.
+- New ships enter and exit the visible area dynamically.
+- Tapping a vessel opens detailed information.
+
+
+### AIS Vessel Information
 
 ![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png) ![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
 
-There is the next info on the Context menu.
+AIS vessels transmit three types of data:
 
-1. Static Information (Unchanging Data)  
-(Transmitted every **6 minutes** or upon request)  
-- **Ship Name** (if set)  
-- **MMSI (Maritime Mobile Service Identity)** – Unique **9-digit ship identifier**  
-- **IMO Number** (if available)  
-- **Call Sign**  
-- **Ship Type** (e.g., cargo, passenger, fishing vessel)  
-- **Ship Dimensions** (length and width)  
-- **AIS Antenna Position** (relative to the ship's hull)  
+1. Static Information (unchanging data).  
+    *Sent every **6 minutes** or upon request.*
 
-2. Dynamic Information (Real-Time Data)  
-(Transmitted at different frequencies, depending on ship speed and maneuvering)  
-- **Ship Coordinates (Latitude & Longitude)**  
-- **Course Over Ground (COG)**  
-- **Speed Over Ground (SOG)**  
-- **Heading (Direction the bow is pointing)**  
-- **Ship Status** (Underway, Anchored, Maneuvering, etc.)  
-- **Rate of Turn (ROT)** – Speed of course change  
-- **Last Update Time**  
+    - **Ship Name** (*if set*)  
+    - **MMSI (Maritime Mobile Service Identity)** (*Unique 9-digit ship identifier*)
+    - **IMO Number** (*if available*)  
+    - **Call Sign**  
+    - **Ship Type** (*e.g., Cargo, Passenger, Fishing Vessel*)  
+    - **Ship Dimensions** (*Length and Width*)  
+    - **AIS Antenna Position** (*Relative to the ship's hull*)  
 
-3. Voyage Information (Manually Set by Crew)  
-(Transmitted every **6 minutes**)  
-- **Destination Port**  
-- **Estimated Time of Arrival (ETA)**  
-- **Draught (Ship's water depth below surface)**  
-- **Cargo Type (if transmitted)**  
-- **Number of People on Board** (optional)  
+2. Dynamic Information (real-time data).  
+    *Sent at different intervals depending on speed and maneuvering.*
 
-### AIS Symbols Legend 
+    - **Ship Coordinates (Latitude & Longitude)**  
+    - **Course Over Ground (COG)**  
+    - **Speed Over Ground (SOG)**  
+    - **Heading** (*Direction the bow is pointing*)
+    - **Ship Status** (*Underway, Anchored, Maneuvering, etc.*)  
+    - **Rate of Turn (ROT)** (*Speed of course change*)  
+    - **Last Update Time**  
+
+3. Voyage Information (manually set by crew).  
+    *Sent every **6 minutes**, manually set by crew*
+
+    - **Destination Port**
+    - **Estimated Time of Arrival (ETA)**  
+    - **Draught** (*Ship's water depth below surface*)  
+    - **Cargo Type** (*if transmitted*)
+    - **Number of People on Board** (*optional*)  
+
+### AIS Symbols and Legends
 
 [Guidlines](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
@@ -119,9 +132,9 @@ There is the next info on the Context menu.
 
 ![AIS settings](@site/static/img/plugins/ais/ais_settings_2.png)  
 
-The _AIS vessel tracker_ plugin offers various settings to personalize navigation and interaction for users with disabilities. These settings are applied for all [profiles](../personal/profiles.md) in OsmAnd.
+The *AIS vessel tracker* plugin offers various settings to personalize navigation and interaction for users with disabilities. These settings are applied for all [profiles](../personal/profiles.md) in OsmAnd.
 
-| **Setting** |  **Description**  |**Example Value** |
+| Setting |  Description  | Example Value |
 |------------|------------------|-----------|
 | **IP address settings**: | | |
 | - Protocol for NMEA data reception |Choose protocol for NMEA data reception | `UDP/TCP` |
@@ -150,6 +163,7 @@ You can add AIS data from files to **simulate vessel positions** on the map with
 - Select one of the downloaded files.
 
 **3. View AIS vessels on the map:**
+
 - Open the **OsmAnd Map**.
 - Vessel icons will appear based on the simulated data.
 - Tap on a vessel icon to open its **information panel** in the **context menu**.

@@ -64,6 +64,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
 - [Map Raster sources](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer) - allows selecting underlay / main-source / overlay map with transparency levels.
 - [Terrain](../plugins/topography.md#configure-map-view) - displays slope / hillshade information, 3D Relief.
 - [Borders of downloaded maps](../map/vector-maps.md#show-borders) - displays all borders of downloaded maps on the main map layer.
+- [Coordinate grid](../map/vector-maps.md#coordinates-grid) - control the visibility of the coordinates grid on the map.
 
 ## Map Data Layers
 

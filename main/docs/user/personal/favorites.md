@@ -254,7 +254,7 @@ Go to: *Android* *Three-dot menu → Change default appearance*
 
 Go to: *iOS* *Long tap folder → Change appearance*
 
-![Favorites actions ios](@site/static/img/personal/favorites_actions_2_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 
 </TabItem>
 
@@ -275,7 +275,7 @@ Use the  *three-dot menu* next to each folder to customize groups of favorite fo
 
 <TabItem value="ios" label="iOS">
 
-![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 
 </TabItem>
 
@@ -395,7 +395,7 @@ You can export and import your favorites using the special buttons at the bottom
 
 <TabItem value="ios" label="iOS">
 
-![Favorites actions ios](@site/static/img/personal/favorites_actions_1_ios.png)   ![Favorites actions ios](@site/static/img/personal/favorites_actions_2_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorites_actions_1_ios.png)   ![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 
 </TabItem>
 

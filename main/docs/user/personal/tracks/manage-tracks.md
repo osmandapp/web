@@ -333,7 +333,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_strin
 
 Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/dashboard_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
 
 </TabItem>
 
@@ -362,7 +362,7 @@ At the bottom of the list in the *Tracks* tab, and below the list of tracks **in
 
 Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_2_andr.png)
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
 
 </TabItem>
 
@@ -370,7 +370,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_strin
 
 Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_3_ios.png)
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
 
 </TabItem>
 

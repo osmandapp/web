@@ -13,13 +13,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
-
-## Overview
-
 :::caution Note
 The Accessibility plugin is available only on the **Android version** of OsmAnd. The [iOS Version](#how-to-use-ios) relies on the system’s default accessibility settings.
 :::
+
+## Overview
 
 Accessibility improves usability for blind and visually impaired users by integrating with [Android Accessibility](https://www.android.com/accessibility/) tools. The plugin offers **text-to-speech, gesture control, automatic announcements** and **haptic feedback** to make navigation more accessible. On iOS, OsmAnd utilizes Apple's built-in accessibility features such as VoiceOver.
 
