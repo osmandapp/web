@@ -227,7 +227,7 @@ function getFavGroupName(pointsGroups, fileName) {
 }
 
 export function normalizeGroupNameForFile(groupName) {
-    return groupName.replaceAll(/[:/]/g, FAVORITE_PLACEHOLDER);
+    return groupName.replaceAll(/[:\/]/g, FAVORITE_PLACEHOLDER);
 }
 
 export function extractBaseFavFileName(name) {
