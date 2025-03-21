@@ -204,14 +204,22 @@ function createGroup(file) {
     };
 }
 
-function getHidden(pointsGroups, groupName) {
+function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
+    let hidden = false;
     if (pointsGroups && pointsGroups[groupName]) {
         if (pointsGroups[groupName].ext.hidden !== undefined) {
-            return pointsGroups[groupName].ext.hidden;
+            hidden = pointsGroups[groupName].ext.hidden;
+        } else {
+            hidden = isHidden(pointsGroups, groupName);
         }
-        return isHidden(pointsGroups, groupName);
     }
-    return false;
+    hidden = hidden ? HIDDEN_TRUE : HIDDEN_FALSE;
+    // for map
+    favArr.mapObjs[mapId].hidden = hidden;
+    // for menu
+    favArr.groups[menuId].hidden = hidden;
+
+    return favArr;
 }
 
 function getFavGroupName(pointsGroups, fileName) {
@@ -385,8 +393,15 @@ function addExistFavGroup(obj, g, favGroups) {
 
     const ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
     favGroups.groups[ind].pointsGroups = obj.pointsGroups;
-    favGroups.groups[ind].hidden = getHidden(obj.pointsGroups, g.name) ? HIDDEN_TRUE : HIDDEN_FALSE;
     favGroups.groups[ind].name = obj.name;
+
+    favGroups = addHidden({
+        pointsGroups: obj.pointsGroups,
+        groupName: g.name,
+        favArr: favGroups,
+        mapId: g.id,
+        menuId: ind,
+    });
 
     return favGroups;
 }
@@ -432,7 +447,13 @@ async function createFavGroupObj(g, favGroups) {
             const groupName = getFavGroupName(pointsGroups, g.file.folder);
             favGroups.mapObjs[g.id].name = groupName;
             favGroups.groups[ind].name = groupName;
-            favGroups.groups[ind].hidden = getHidden(pointsGroups, groupName) ? HIDDEN_TRUE : HIDDEN_FALSE;
+            favGroups = addHidden({
+                pointsGroups,
+                groupName,
+                favArr: favGroups,
+                mapId: g.id,
+                menuId: ind,
+            });
         }
     }
     return favGroups;
