@@ -1,14 +1,17 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_TRACK_ANALYZER } from '../../context/AppContext';
-import { Marker, GeoJSON } from 'react-leaflet';
+import { Marker, GeoJSON, useMap } from 'react-leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
 import { LatLng } from 'leaflet';
 import { getDistance } from '../../util/Utils';
+import { isEmpty } from 'lodash';
 
 const DEFAULT_SEGMENT_COLOR = '#227bff';
 
 export default function TrackAnalyzerLayer() {
     const ctx = useContext(AppContext);
+    const map = useMap();
+
     const geoJsonRef = useRef(null);
 
     const [startPoint, setStartPoint] = useState(null);
@@ -27,6 +30,29 @@ export default function TrackAnalyzerLayer() {
             }
         }
     }, [ctx.trackAnalyzer?.start, ctx.trackAnalyzer?.finish]);
+
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            const mousePosition = e.latlng;
+            if (
+                mousePosition &&
+                !isEmpty(geoJsonRef?.current?.getBounds()) &&
+                geoJsonRef.current.getBounds().contains(mousePosition)
+            ) {
+                return;
+            }
+
+            if (ctx.mapMarkerListener) {
+                ctx.mapMarkerListener(null);
+            }
+        };
+
+        map.on('mousemove', handleMouseMove);
+
+        return () => {
+            map.off('mousemove', handleMouseMove);
+        };
+    }, [geoJsonRef]);
 
     useEffect(() => {
         if (ctx.trackAnalyzer?.segments) {
@@ -126,18 +152,6 @@ export default function TrackAnalyzerLayer() {
             if (nearestPoint && nearestPoint.lat && nearestPoint.lon) {
                 ctx.mapMarkerListener(nearestPoint.lat, nearestPoint.lon);
             }
-        });
-
-        layer.on('mouseout', (e) => {
-            // ignore if the mouse is over the layer
-            if (layer.getBounds().contains(e.latlng)) {
-                return;
-            }
-            hoverTimeout.current = setTimeout(() => {
-                if (ctx.mapMarkerListener) {
-                    ctx.mapMarkerListener(null);
-                }
-            }, 50);
         });
     };
 

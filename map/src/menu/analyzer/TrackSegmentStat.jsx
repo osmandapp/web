@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { ReactComponent as MaxSpeedIcon } from '../../assets/icons/ic_action_max_speed_16.svg';
 import { ReactComponent as AvgSpeedIcon } from '../../assets/icons/ic_action_speed_16.svg';
 import { ReactComponent as MinSpeedIcon } from '../../assets/icons/ic_action_min_speed_16.svg';
@@ -21,36 +21,110 @@ import i18n from 'i18next';
 import { MAIN_BLOCK_SIZE } from './TrackAnalyzerMenu';
 import { useTranslation } from 'react-i18next';
 import TrackSegmentItem from './TrackSegmentItem';
+import {
+    convertMeters,
+    convertSpeedMS,
+    getLargeLengthUnit,
+    getSmallLengthUnit,
+    getSpeedUnit,
+} from '../settings/units/UnitsConverter';
+import AppContext from '../../context/AppContext';
 
-export const getSpeedStats = (stats, t) => [
-    { icon: <MaxSpeedIcon />, label: t('shared_string_max_speed'), ...formatValue(stats.maxSpeed, t('m_s')) },
-    { icon: <AvgSpeedIcon />, label: t('web:avg_speed'), ...formatValue(stats.avgSpeed, t('m_s')) },
-    { icon: <MinSpeedIcon />, label: t('shared_string_min_speed'), ...formatValue(stats.minSpeed, t('m_s')) },
+export const getSpeedStats = (stats, t, ctx) => [
+    {
+        icon: <MaxSpeedIcon />,
+        label: t('shared_string_max_speed'),
+        rawValue: stats.maxSpeed,
+        ...formatValue(convertSpeedMS(stats.maxSpeed, ctx.unitsSettings.speed), t(getSpeedUnit(ctx))),
+    },
+    {
+        icon: <AvgSpeedIcon />,
+        label: t('web:avg_speed'),
+        rawValue: stats.avgSpeed,
+        ...formatValue(convertSpeedMS(stats.avgSpeed, ctx.unitsSettings.speed), t(getSpeedUnit(ctx))),
+    },
+    {
+        icon: <MinSpeedIcon />,
+        label: t('shared_string_min_speed'),
+        rawValue: stats.minSpeed,
+        ...formatValue(convertSpeedMS(stats.minSpeed, ctx.unitsSettings.speed), t(getSpeedUnit(ctx))),
+    },
 ];
 
-export const getAltitudeStats = (stats, t) => [
-    { icon: <MaxAltitudeIcon />, label: t('web:max_altitude'), ...formatValue(stats.maxElevation, t('m')) },
-    { icon: <AvgAltitudeIcon />, label: t('web:avg_altitude'), ...formatValue(stats.avgElevation, t('m')) },
-    { icon: <MinAltitudeIcon />, label: t('web:min_altitude'), ...formatValue(stats.minElevation, t('m')) },
-    { icon: <UphillIcon />, label: t('shared_string_uphill'), ...formatValue(stats.diffElevationUp, t('m')) },
-    { icon: <DownhillIcon />, label: t('shared_string_downhill'), ...formatValue(stats.diffElevationDown, t('m')) },
+export const getAltitudeStats = (stats, t, ctx) => [
+    {
+        icon: <MaxAltitudeIcon />,
+        label: t('web:max_altitude'),
+        rawValue: stats.maxElevation,
+        ...formatValue(convertMeters(stats.maxElevation, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
+    },
+    {
+        icon: <AvgAltitudeIcon />,
+        label: t('web:avg_altitude'),
+        rawValue: stats.avgElevation,
+        ...formatValue(convertMeters(stats.avgElevation, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
+    },
+    {
+        icon: <MinAltitudeIcon />,
+        label: t('web:min_altitude'),
+        rawValue: stats.minElevation,
+        ...formatValue(convertMeters(stats.minElevation, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
+    },
+    {
+        icon: <UphillIcon />,
+        label: t('shared_string_uphill'),
+        rawValue: stats.diffElevationUp,
+        ...formatValue(convertMeters(stats.diffElevationUp, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
+    },
+    {
+        icon: <DownhillIcon />,
+        label: t('shared_string_downhill'),
+        rawValue: stats.diffElevationDown,
+        ...formatValue(convertMeters(stats.diffElevationDown, ctx.unitsSettings.len), t(getSmallLengthUnit(ctx))),
+    },
 ];
 
-export const getOtherStats = (stats, t, formatDate) => [
-    { icon: <DateIcon />, label: t('shared_string_date'), value: formatDate(stats.date) },
-    { icon: <TimeSpanIcon />, label: t('shared_string_time_span'), ...formatTime(stats.timeSpan, t) },
-    { icon: <StartTimeIcon />, label: t('shared_string_start_time'), ...formatTimestamp(stats.startTime) },
-    { icon: <EndTimeIcon />, label: t('shared_string_end_time'), ...formatTimestamp(stats.endTime) },
-    { icon: <TimeDurationIcon />, label: t('duration'), ...formatTime(stats.duration, t) },
-    { icon: <TimeMovingIcon />, label: t('moving_time'), ...formatTime(stats.timeMoving, t) },
-    { icon: <DistanceIcon />, label: t('shared_string_length'), ...formatValue(stats.totalDist, t('km'), 1000) },
+export const getOtherStats = (stats, t, formatDate, ctx) => [
+    { icon: <DateIcon />, label: t('shared_string_date'), rawValue: stats.date, value: formatDate(stats.date) },
+    {
+        icon: <TimeSpanIcon />,
+        label: t('shared_string_time_span'),
+        rawValue: stats.timeSpan,
+        ...formatTime(stats.timeSpan, t),
+    },
+    {
+        icon: <StartTimeIcon />,
+        label: t('shared_string_start_time'),
+        rawValue: stats.startTime,
+        ...formatTimestamp(stats.startTime),
+    },
+    {
+        icon: <EndTimeIcon />,
+        label: t('shared_string_end_time'),
+        rawValue: stats.endTime,
+        ...formatTimestamp(stats.endTime),
+    },
+    { icon: <TimeDurationIcon />, label: t('duration'), rawValue: stats.duration, ...formatTime(stats.duration, t) },
+    {
+        icon: <TimeMovingIcon />,
+        label: t('moving_time'),
+        rawValue: stats.timeMoving,
+        ...formatTime(stats.timeMoving, t),
+    },
+    {
+        icon: <DistanceIcon />,
+        label: t('shared_string_length'),
+        rawValue: stats.totalDist,
+        ...formatValue(convertMeters(stats.totalDist, ctx.unitsSettings.len), t(getLargeLengthUnit(ctx)), 1000),
+    },
 ];
 
 export const UNDEFINED_VALUE = 'NaN';
 
 const formatValue = (value, unit = '', factor = 1) => {
     if (value === UNDEFINED_VALUE) return { value: UNDEFINED_VALUE, unit: '' };
-    return { value: (Number(value) / factor).toFixed(2), unit };
+    const formattedValue = Number(value) / factor;
+    return { value: formattedValue % 1 === 0 ? formattedValue.toFixed(0) : formattedValue.toFixed(1), unit };
 };
 
 const isTimestampInMilliseconds = (timestamp) => {
@@ -88,6 +162,8 @@ const formatTime = (value, t) => {
 };
 
 export default function TrackSegmentStat({ height, sortedSegments, activeSegmentParams }) {
+    const ctx = useContext(AppContext);
+
     const { t } = useTranslation();
 
     const [filteredStats, setFilteredStats] = useState([]);
@@ -113,15 +189,15 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
         // 1. Collect statistics, filtering only active parameters
         const segmentStats = sortedSegments.map((segment) => {
             const stats = {
-                speed: getSpeedStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
-                altitude: getAltitudeStats(segment.stats, t).filter((s) => activeSegmentParams.has(s.label)),
-                other: getOtherStats(segment.stats, t, formatDate).filter((s) => activeSegmentParams.has(s.label)),
+                speed: getSpeedStats(segment.stats, t, ctx).filter((s) => activeSegmentParams.has(s.label)),
+                altitude: getAltitudeStats(segment.stats, t, ctx).filter((s) => activeSegmentParams.has(s.label)),
+                other: getOtherStats(segment.stats, t, formatDate, ctx).filter((s) => activeSegmentParams.has(s.label)),
             };
 
             // Store only parameter values in statsMap
             Object.keys(stats).forEach((category) => {
                 stats[category].forEach((stat) => {
-                    const value = Number(stat.value);
+                    const value = Number(stat.rawValue);
                     if (!statsMap[category].has(stat.label)) {
                         statsMap[category].set(stat.label, { values: [], stats: [] });
                     }
@@ -150,7 +226,7 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
                 const max = Math.max(...numericValues);
 
                 stats.forEach((stat) => {
-                    const value = Number(stat.value);
+                    const value = Number(stat.rawValue);
                     if (isNaN(value)) {
                         stat.isMax = false;
                         stat.isMin = false;

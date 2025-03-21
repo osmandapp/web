@@ -15,6 +15,7 @@ import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { getShareWithMe } from '../manager/ShareManager';
 import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
+import { units } from '../menu/settings/units/UnitsMenu';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -32,6 +33,7 @@ export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const OBJECT_TRACK_ANALYZER = 'track_analyzer';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
+export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
 
@@ -305,6 +307,8 @@ export const AppContextProvider = (props) => {
         trash: false,
     });
 
+    const [unitsSettings, setUnitsSettings] = useState(getUnitsSettings);
+
     //pages
     const [prevPageUrl, setPrevPageUrl] = useState(null);
     const [pageParams, setPageParams] = useState({});
@@ -487,6 +491,17 @@ export const AppContextProvider = (props) => {
             return savedConfigureMap;
         }
         return defaultConfigureMapStateValues;
+    }
+
+    function getUnitsSettings() {
+        const saved = localStorage.getItem(LOCAL_STORAGE_UNITS_SETTINGS);
+        if (saved) {
+            return JSON.parse(saved);
+        }
+        return {
+            len: units.len.defaultValue,
+            speed: units.speed.defaultValue,
+        };
     }
 
     useEffect(() => {
@@ -825,6 +840,8 @@ export const AppContextProvider = (props) => {
                 setSortedSegments,
                 updateFiles,
                 setUpdateFiles,
+                unitsSettings,
+                setUnitsSettings,
             }}
         >
             {props.children}
