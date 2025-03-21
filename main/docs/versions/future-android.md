@@ -31,6 +31,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ## What's new
 
+<!--
 - [New main navigation widget combines turn arrow and navigation instructions](#new-route-guidance-widget)
 - [Current route info widget: displays ETA, arrival time, and distance](#new-route-information-widget)
 - [Crags and climbing areas on the map](#climbing-areas-and-crags)
@@ -41,7 +42,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [Reset action for the Average speed widget](#reset-option-for-the-average-speed-widget)
 - [Added ability to change and set the default appearance for favorite groups](#flexible-appearance-settings-for-favorite-groups)
 - [Added Coordinates Grid with geographical coordinates](#coordinates-grid-overlay)
-- AIS Vessel Tracking Plugin: for nautical navigation — https://github.com/osmandapp/OsmAnd/issues/21559  
+- [AIS Vessel Tracking Plugin (nautical navigation)](#ais-vessel-tracking-plugin)
 - redesign of the widget configuration screen — https://github.com/osmandapp/OsmAnd-Issues/issues/2525
 
 
@@ -60,8 +61,6 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
   - view ETA and distance to next waypoint - https://github.com/osmandapp/OsmAnd/issues/19095 
   - ??? (city names now appear in search results; https://github.com/osmandapp/OsmAnd-Issues/issues/2632)
   - show full destination name on route preview card - https://github.com/osmandapp/OsmAnd/issues/21098
-
-
 
 
 • !!! Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662 
@@ -226,7 +225,24 @@ Key features:
 Find it in: *Menu → Configure Map → Show → Coordinates Grid*  
 
 Learn more:  
-[Coordinates Grid](https://osmand.net/docs/user/map/vector-maps#coordinates-grid)  
+[Coordinates Grid](https://osmand.net/docs/user/map/vector-maps#coordinates-grid)
+
+
+## AIS Vessel Tracking Plugin  
+
+The **AIS Vessel Tracker** plugin allows you to display **real-time AIS (Automatic Identification System) vessel positions** on the map. This feature is essential for maritime navigation, providing details about nearby ships, including their type, speed, and route.  
+
+Key features:
+
+- **Live vessel tracking** — Ships update based on *real-time speed and course*.  
+- **Detailed vessel info** — Tap on a vessel to see *ship name, MMSI, IMO number, type, dimensions, heading, speed, and ETA*.  
+- **Configurable AIS data sources** — Connect via *external AIS receivers* or *network-based AIS servers*.  
+- **AIS symbols and alerts** — Supports standard *AIS vessel icons, safety messages, and maneuvering indicators*.  
+
+Find it in: *Menu → Plugins → AIS Vessel Tracker*  
+
+Learn more:  
+[AIS Vessel Tracker Plugin](https://osmand.net/docs/user/plugins/ais-tracker)
 
 
 ___
@@ -248,3 +264,4 @@ Fixed issues:
 - Smart folders issues - https://github.com/osmandapp/OsmAnd-Issues/issues/2904
 - Bug with Direct-to-point projection - https://github.com/osmandapp/OsmAnd/issues/21588
 
+-->
