@@ -131,16 +131,16 @@ Waypoints in OsmAnd can be sorted into groups based on their type. This grouping
 ```xml
 <gpx>
   <wpt lat="1.234" lon="5.678">
-    <type>aqueduct</type>
     <name>Look up to see the water</name>
+    <type>aqueduct</type>
   </wpt>
   <wpt lat="5.678" lon="1.234">
-    <type>castle</type>
     <name>Beware of ghosts</name>
+    <type>castle</type>
   </wpt>
   <wpt lat="66.666" lon="66.666">
-    <type>castle</type>
     <name>The house of Beetlejuice</name>
+    <type>castle</type>
   </wpt>
   <extensions>
     <osmand:points_groups>
