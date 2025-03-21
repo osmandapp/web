@@ -31,8 +31,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ## What's new
 
-<!--
-- [New main navigation widget combines turn arrow and navigation instructions](#new-route-guidance-widget)
+- [New main navigation widget combines turn arrow and navigation instructions](#route-guidance-widget)
 - [Current route info widget: displays ETA, arrival time, and distance](#new-route-information-widget)
 - [Crags and climbing areas on the map](#climbing-areas-and-crags)
 - [Detailed information for linear objects](#detailed-information-for-linear-objects)
@@ -43,42 +42,38 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [Added ability to change and set the default appearance for favorite groups](#flexible-appearance-settings-for-favorite-groups)
 - [Added Coordinates Grid with geographical coordinates](#coordinates-grid-overlay)
 - [AIS Vessel Tracking Plugin (nautical navigation)](#ais-vessel-tracking-plugin)
-- redesign of the widget configuration screen — https://github.com/osmandapp/OsmAnd-Issues/issues/2525
 
 
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
 
-## What's new blog
 
-• Clickable ski slopes, mtb trails / Select ski slopes and MTB trails on the map for detailed information - https://github.com/osmandapp/OsmAnd-Issues/issues/2846  
+<!--
+
+first:
+
+- redesign of the widget configuration screen — https://github.com/osmandapp/OsmAnd-Issues/issues/2525
+- Clickable ski slopes, mtb trails / Select ski slopes and MTB trails on the map for detailed information - https://github.com/osmandapp/OsmAnd-Issues/issues/2846  
+- Prominent peaks are now discoverable via map and search - https://github.com/osmandapp/OsmAnd-Issues/issues/2844
+- Mountain peak heights in feet - https://github.com/osmandapp/OsmAnd/issues/7408
+- !!! Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662 
+
+second:
 
 • All OSM routes, now searchable! Hiking, cycling, MTB, and more - https://github.com/osmandapp/OsmAnd/issues/16808    
-
-<br/>
 
 • Android Auto:
 
   - view ETA and distance to next waypoint - https://github.com/osmandapp/OsmAnd/issues/19095 
-  - ??? (city names now appear in search results; https://github.com/osmandapp/OsmAnd-Issues/issues/2632)
   - show full destination name on route preview card - https://github.com/osmandapp/OsmAnd/issues/21098
-
-
-• !!! Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662 
-
-___
-
-• Prominent peaks are now discoverable via map and search - https://github.com/osmandapp/OsmAnd-Issues/issues/2844
-• Mountain peak heights in feet - https://github.com/osmandapp/OsmAnd/issues/7408
 
 ___
 
 • ?? Added: Legend for routes (Configure map > Routes) - https://github.com/osmandapp/OsmAnd-Issues/issues/1249
 
 
-<br/>
+-->
 
-
-## New Route Guidance Widget
+## Route Guidance Widget
 
 ![Route Guidance Widget](../../blog/2025-03-11-android-5-0/img/route_guidance_widget.png)
 
@@ -250,7 +245,7 @@ ___
 
 ## Optional updates
 
-- Added [Hebrew TTS](https://osmand.net/docs/user/navigation/guidance/voice-navigation#voice-prompt-language) for navigation — https://github.com/osmandapp/OsmAnd/issues/21816 , https://github.com/osmandapp/OsmAnd-iOS/issues/4340, 
+- Added [Hebrew TTS](https://osmand.net/docs/user/navigation/guidance/voice-navigation#voice-prompt-language) for navigation.
 
 Fixed issues:
 
@@ -264,4 +259,3 @@ Fixed issues:
 - Smart folders issues - https://github.com/osmandapp/OsmAnd-Issues/issues/2904
 - Bug with Direct-to-point projection - https://github.com/osmandapp/OsmAnd/issues/21588
 
--->
