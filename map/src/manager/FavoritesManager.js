@@ -110,6 +110,7 @@ export async function updateAllFavorites(group, data, hiddenChanged) {
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-all-favorites`, data, {
         params: {
             fileName: group.file.name,
+            groupName: group.name,
             updatetime: group.updatetimems,
             updateTimestamp: !hiddenChanged,
         },
