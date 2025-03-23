@@ -75,10 +75,10 @@ For Android devices, you can download the **Free** and **Paid** versions of the 
 
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
-
+<!--
 :::danger Seasonal Sale prices
 
-*Hurry up! This offer is only available until* **March 23 (23:00 CET)**.
+*Hurry up! This offer is only available until* **January 26 (23:00 CET)**.
 
 :::
 
@@ -89,15 +89,16 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+-->
 
-<!--
+
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
 | **Price (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
--->
+
 
 ### Free and Paid Features
 
@@ -141,7 +142,7 @@ The table below details the features included in both the free and paid packages
 #### ** Map updates
 
 [Free](../personal/maps-resources.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
-  
+
 #### *** Android Auto
 
 [Android Auto](https://www.android.com/auto/) feature works only for OsmAnd apps from [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023). If you buy OsmAnd Pro for OsmAnd from [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) for [OsmAnd Free from Google Play](https://play.google.com/store/apps/details?id=net.osmand). After that, you can have Android Auto function by OsmAnd Pro subscription bought from another app store.
