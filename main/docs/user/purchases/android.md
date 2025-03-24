@@ -78,7 +78,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 <!--
 :::danger Seasonal Sale prices
 
-*Hurry up! This offer is only available until* **January 26 (23:00 CET)**.
+*Hurry up! This offer is only available until* **March 23 (23:00 CET)**.
 
 :::
 
