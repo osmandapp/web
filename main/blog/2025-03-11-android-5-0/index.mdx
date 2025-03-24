@@ -26,24 +26,28 @@ Get the update today and explore the latest improvements to elevate your experie
 [🔄   **Get the Update Today!**](https://play.google.com/store/apps/dev?id=8483587772816822023)  
 
 
+![OsmAnd 5.0](./img/osmand_5.png)
+
 <!--truncate-->
 
 
 ## What's new
 
-- [New main navigation widget combines turn arrow and navigation instructions](#route-guidance-widget)
+- [Route maneuvers widget combines turn arrow and navigation instructions](#route-guidance-widget)
 - [Current route info widget: displays ETA, arrival time, and distance](#new-route-information-widget)
+- [New option to select widget size for left and right panels](#resizable-widgets-for-side-panels)
+- [Reset action for the Average speed widget](#reset-option-for-the-average-speed-widget)
+- Improved searching OSM routes and choosing it for navigation
 - [Crags and climbing areas on the map](#climbing-areas-and-crags)
 - [Detailed information for linear objects](#detailed-information-for-linear-objects)
 - [USA address search with TIGER data](#usa-address-search-with-tiger-data)
 - [Changing UX for Intermediate destinations in Waypoints](#interactions-with-intermediate-destinations)
-- [New option to select widget size for left and right panels](#resizable-widgets-for-side-panels)
-- [Reset action for the Average speed widget](#reset-option-for-the-average-speed-widget)
 - [Added ability to change and set the default appearance for favorite groups](#flexible-appearance-settings-for-favorite-groups)
 - [Added Coordinates Grid with geographical coordinates](#coordinates-grid-overlay)
 - [AIS Vessel Tracking Plugin (nautical navigation)](#ais-vessel-tracking-plugin)
-
-
+- [Android Auto improvements](#android-auto-improvements):
+  - View ETA and distance to next waypoint,
+  - Show full destination name on route preview card.
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
 
 <!--
@@ -70,11 +74,11 @@ second:
 <br/>
 
 
-## Route Guidance Widget
+## Route Maneuvers Widget
 
 ![Route Guidance Widget](../../blog/2025-03-11-android-5-0/img/route_guidance_widget.png)
 
-The new **Route Guidance widget** combines essential navigation details into a single, compact display, providing **real-time navigation instructions**, helping you stay on track throughout your journey. These widgets are **active during navigation**, ensuring you never miss a turn.  
+The **Route Maneuvers widget** combines essential navigation details into a single, compact display, providing **real-time navigation instructions**, helping you stay on track throughout your journey. These widgets are **active during navigation**, ensuring you never miss a turn.  
 
 Key improvements:
 
@@ -82,7 +86,7 @@ Key improvements:
 - **Available for top and bottom widget panels.**
 
 Find them in:  
-*Menu → Configure screen → **Top panel / Bottom panel** → Route guidance: Next turn, Second next turn, Lanes*
+*Menu → Configure screen → **Top panel / Bottom panel** → Route maneuvers: Next turn, Second next turn, Lanes*
 
 Learn more:  
 [Route Guidance Widget](https://osmand.net/docs/user/widgets/nav-widgets#route-guidance)
@@ -90,7 +94,7 @@ Learn more:
 
 ## New Route Information Widget
 
-![Route Guidance Widget](../../blog/2025-03-11-android-5-0/img/route_guidance_widget.png)
+![Route Guidance Widget](./img/route_info_widget.png)
 
 The **Route Information widget** provides a clear overview of your journey by displaying **ETA (Estimated Time of Arrival), remaining travel time, and distance to the destination** in a compact format. Designed for real-time navigation, it ensures you have the most relevant travel details at a glance.  
 
@@ -105,8 +109,57 @@ Find it in:
 *Menu → Configure screen → **Top panel / Bottom panel** → Route information*  
 
 Learn more:  
-[Navigation Points Widget](https://osmand.net/docs/user/widgets/nav-widgets#navigation-points)
-[Start/Stop Navigation Panel](https://osmand.net/docs/user/navigation/setup/route-navigation#start--stop-navigation)
+- [Navigation Points Widget](https://osmand.net/docs/user/widgets/nav-widgets#navigation-points)
+- [Start/Stop Navigation Panel](https://osmand.net/docs/user/navigation/setup/route-navigation#start--stop-navigation)
+
+
+## Resizable Widgets for Side Panels
+
+![Resizable Widgets for Side Panels](../../blog/2025-03-11-android-5-0/img/resizable_widgets_andr.png)
+
+You can now customize the **size of widgets** in the **left and right panels**, just like in the top and bottom ones. This update offers greater flexibility in **configuring the map screen**. Choose from **Small, Medium, or Large** sizes to customize your screen layout.
+
+Key improvements:
+
+- **Independent resizing** for left and right panels.  
+- **Consistent widget scaling** across all panel positions.  
+- **Optimized screen space** for navigation and stats.
+
+Learn more:  
+[Widget Settings](https://osmand.net/docs/user/widgets/configure-screen#widget-settings)
+
+
+## Reset Option for the Average Speed Widget
+
+![Reset Option for the Average Speed Widget](../../blog/2025-03-11-android-5-0/img/reset_average_speed.png)
+
+You can now **reset the average speed** directly from the *widget’s context menu*. This update adds a **Reset** action, allowing you to start fresh measurements without restarting navigation.  
+
+What’s new:
+
+- **Context menu option** to reset average speed.  
+- **Reset action added to widget settings** for quick access.  
+
+Learn more:  
+[Average Speed Widget](https://osmand.net/docs/user/widgets/info-widgets/#average-speed)
+
+
+## Added full search for OSM Routes
+
+For this release it's now possible to [search](https://osmand.net/docs/user/search/search-all#how-to-use) for all [OSM routes](https://osmand.net/docs/user/map/routes), including hiking, cycling, MTB, and more. This feature provides a comprehensive overview of available routes, helping you discover new paths and plan your adventures with ease.
+
+Just go to Search menu and start find the route you need, or you can choose needed search [categories](https://osmand.net/docs/user/search/search-poi#poi-search-by-categories) - Hikinkg, Cycling, MTB, etc.:
+
+_Search → Categories → Routes_
+
+And use Filters to find the route you need. On Search menu you find info about the route, like distance to the nearest point of the route, route distance, name and icon route.
+
+![Routes](./img/routes.png) ![Routes](./img/routes_1.png) 
+
+
+Next, tap to the route you need and choose _"Navigate"_ button to start [GPX track navigation](https://osmand.net/docs/user/navigation/setup/gpx-navigation) or download it to your device like [GPX file](https://osmand.net/docs/user/map/tracks/#overview).
+
+![Routes](./img/routes_2.png) ![Routes](./img/routes_3.png)
 
 
 ## Climbing Areas and Crags
@@ -167,36 +220,6 @@ Learn more:
 [Intermediate destinations – user guide](https://osmand.net/docs/user/navigation/setup/route-navigation#intermediate-destinations)
 
 
-## Resizable Widgets for Side Panels
-
-![Resizable Widgets for Side Panels](../../blog/2025-03-11-android-5-0/img/resizable_widgets_andr.png)
-
-You can now customize the **size of widgets** in the **left and right panels**, just like in the top and bottom ones. This update offers greater flexibility in **configuring the map screen**. Choose from **Small, Medium, or Large** sizes to customize your screen layout.
-
-Key improvements:
-
-- **Independent resizing** for left and right panels.  
-- **Consistent widget scaling** across all panel positions.  
-- **Optimized screen space** for navigation and stats.
-
-Learn more:  
-[Widget Settings](https://osmand.net/docs/user/widgets/configure-screen#widget-settings)
-
-
-## Reset Option for the Average Speed Widget
-
-![Reset Option for the Average Speed Widget](../../blog/2025-03-11-android-5-0/img/reset_average_speed.png)
-
-You can now **reset the average speed** directly from the *widget’s context menu*. This update adds a **Reset** action, allowing you to start fresh measurements without restarting navigation.  
-
-What’s new:
-
-- **Context menu option** to reset average speed.  
-- **Reset action added to widget settings** for quick access.  
-
-Learn more:  
-[Average Speed Widget](https://osmand.net/docs/user/widgets/info-widgets/#average-speed)
-
 
 ## Flexible Appearance Settings for Favorite Groups
 
@@ -243,6 +266,14 @@ Find it in: *Menu → Plugins → AIS Vessel Tracker*
 
 Learn more:  
 [AIS Vessel Tracker Plugin](https://osmand.net/docs/user/plugins/ais-tracker)
+
+
+## Android Auto Improvements
+
+Added enhancements for [**Android Auto**](https://osmand.net/docs/user/navigation/auto-car) users, including:
+- [**View ETA and distance to next waypoint**](https://osmand.net/docs/user/navigation/auto-car#eta-next-stop) — Displays *estimated time of arrival* and *distance to the next waypoint* on the Android Auto screen.
+- [**Show full destination name on route preview card**](https://osmand.net/docs/user/navigation/auto-car#start-navigation) — Provides a *complete destination name* for better route preview clarity.
+
 
 
 ___
