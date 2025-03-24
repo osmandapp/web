@@ -94,37 +94,41 @@ AIS vessels transmit three types of data:
 
 ### AIS Symbols and Legends
 
-[Guidlines](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
+[Guidelines for AIS Symbol Presentation](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
-| **Symbol** | **Description**        |
-|------------|------------------------|
-| **Vessel Types** | |
-| - Green Triangle | Cargo Ship |
-| - Blue Triangle | Passenger Ship |
-| - Black Triangle | Fishing Vessel |
-| - Yellow Triangle | Tugboat |
-| - Red Triangle | Tanker |
-| - White Triangle | Military Vessel |
-| - Orange Triangle | Special Craft (e.g., pilot, icebreaker) |
-| - Flashing Red Triangle | Vessel in Distress |
-| **Navigational Aids** |  |
-| - Green Buoy | Starboard marker (right-hand side of the channel) |
-| - Red Buoy | Port marker (left-hand side of the channel) |
-| - Anchor Symbol | Anchorage Area |
-| - Ship Symbol (SS) | Ferry or passenger terminal |
-| - Port Crane Symbol | Cargo Port |
-| - Black Circle | Offshore Platform |
-| **Status Indicators** |  |
-| - Solid Triangle | Moving Vessel |
-| - Hollow Triangle | Anchored or Moored |
-| - Rotating Arrow | Undergoing Maneuver |
-| - Red Flashing Icon | Emergency Alert |
-| - Orange Exclamation Mark | AIS Safety Message |
-| **Route and Speed Indicators** |  |
-| - Thin Blue Line | Planned Route |
-| - Dotted Line | Past Track |
-| - Clock Icon | Estimated Time of Arrival (ETA) |
-| - Wave Icon | Speed Over Water |
+| Symbols             | Description   |
+|---------------------|---------------|
+| | |
+| **Vessel Types Symbols** |    |
+| *Green triangle*    | Cargo ship    |
+| *Blue triangle*     | Passenger ship |
+| *Black triangle*    | Fishing vessel |
+| *Yellow triangle*   | Tugboat       |
+| *Red triangle*      | Tanker        |
+| *White triangle*    | Military vessel |
+| *Orange triangle*   | Special craft (e.g., pilot, icebreaker) |
+| *Flashing Red triangle* | Vessel in distress |
+| | |
+| **Navigational Aids Symbols** |    |
+| *Green Buoy*              | Starboard marker (right-hand side of the channel) |
+| *Red Buoy*                | Port marker (left-hand side of the channel) |
+| *Anchor symbol*           | Anchorage area |
+| *Ship symbol (SS)*        | Ferry or passenger terminal |
+| *Port Crane symbol*       | Cargo port |
+| *Black circle*            | Offshore platform |
+| | |
+| **Status Indicators** |    |
+| *Solid triangle*  | Moving vessel |
+| *Hollow triangle* | Anchored or Moored |
+| *Rotating arrow*  | Undergoing maneuver |
+| *Red Flashing icon* | Emergency alert |
+| *Orange Exclamation mark* | AIS safety message |
+| | |
+| **Route and Speed Indicators** |    |
+| *Thin Blue line*  | Planned route |
+| *Dotted line*     | Past track |
+| *Clock icon*      | Estimated time of arrival (ETA) |
+| *Wave icon*       | Speed over water |
 
 ## Plugin Settings
 
@@ -134,39 +138,39 @@ AIS vessels transmit three types of data:
 
 The *AIS vessel tracker* plugin offers various settings to personalize navigation and interaction for users with disabilities. These settings are applied for all [profiles](../personal/profiles.md) in OsmAnd.
 
-| Setting |  Description  | Example Value |
-|------------|------------------|-----------|
-| **IP address settings**: | | |
-| - Protocol for NMEA data reception |Choose protocol for NMEA data reception | `UDP/TCP` |
-| - IP address of NMEA data source| Define IP address of NMEA data source (if TCP is used) | `192.168.200.16` |
-| - TCP port of NMEA data source| Define TCP port number of the NMEA data source | `4001` |
-| - UDP port of local NMEA data receiver|Define UDP port where OsmAnd receives NMEA data | `10110` |
-| **Timeout settings for AIS Signal reception**: | |  |
-| - Timeout for visibility when an object is lost |Set timeout values to identify lost AIS objects if no signal was received for a specific time.| `3, 5, 7, 10...20 min` |
-| - Timeout for ship visibility when no signal is received | Set timeout for ship visibility: After this time without signal reception, the ship symbol will change its state on screen: It will be crossed out.| `2, 3, 4, 5...15 min / Disabled` |
-| **Settings related to CPA**:| | |
-| - Warning time to reach the Closest Point of Approach (CPA)|If the TCPA (time to reach the CPA with another vessel) is less than this value, the vessel is marked with red color. | `Disabled / 1, 5, 10, 20...60 min` |
-| - Warning distance for the Closest Point of Approach (CPA)|Vessels are marked with red color if the CPA is less than this value and the CPA is reached in the near future (see setting Warning time to reach the CPA) | `0.02, 0.05, 0.1..2 nautical miles` |
+| Setting |  Description  | Example  |
+|---------|---------------|----------|
+| | | |
+| **IP address settings** | | |
+| Protocol   | Choose protocol for receiving AIS data | `UDP/TCP` |
+| IP address | Define IP of AIS data source (if TCP is used) | `192.168.200.16` |
+| TCP port   | Define TCP port number for AIS data | `4001` |
+| UDP port   | Define UDP port for OsmAnd AIS reception  | `10110` |
+| | | |
+| **AIS Signal reception timeout** | |  |
+| Timeout for lost AIS objects     | Ships disappear if no signal received for a set time | `3 - 20 min` |
+| Timeout for ship visibility      | Ship icons will change state when no signal is received | `2 - 15 min / Disabled` |
+| | | |
+| **Closest Point of Approach (CPA) Alerts** | | |
+| CPA Warning Time | Vessel is marked red if time to CPA is below this limit | `1 - 60 min / Disabled` |
+| CPA Warning Distance | Vessel is marked red if distance to CPA is below this limit | `0.02 - 2 nautical miles` |
 
 
-### Simulation
+### AIS Simulation Mode
 
-You can add AIS data from files to **simulate vessel positions** on the map with [OsmAnd development plugin](../plugins/development.md).
+> *You can simulate AIS vessel positions using [OsmAnd Development plugin](../plugins/development.md).*
 
-**1. Download the following TXT files:**
-- [AIS Test 1](https://github.com/user-attachments/files/18689404/ais_test_1.txt)
-- [AIS Test 2](https://github.com/user-attachments/files/18689405/ais_test_2.txt)
-- [Single 3](https://github.com/user-attachments/files/18689403/333.txt)
+1. **Download AIS data text files**:
 
-**2. Load AIS data in OsmAnd:**
-- Go to *<Translate android="true" ids="shared_string_menu,plugins_menu_group,development,shared_string_settings,ais_load_data"/>*  
-- Select one of the downloaded files.
+    - [AIS Test 1](https://github.com/user-attachments/files/18689404/ais_test_1.txt)
+    - [AIS Test 2](https://github.com/user-attachments/files/18689405/ais_test_2.txt)
+    - [Single 3](https://github.com/user-attachments/files/18689403/333.txt)
 
-**3. View AIS vessels on the map:**
+2. **Load AIS data into OsmAnd**  
+Open *<Translate android="true" ids="shared_string_menu,plugins_menu_group,development,shared_string_settings,ais_load_data"/>* and select one of the downloaded files.
 
-- Open the **OsmAnd Map**.
-- Vessel icons will appear based on the simulated data.
-- Tap on a vessel icon to open its **information panel** in the **context menu**.
+3. **View AIS vessels on the map**  
+Vessel icons will appear based on the simulated data. Tap the vessel icon to view detailed information.
 
 
 ## Related Articles
