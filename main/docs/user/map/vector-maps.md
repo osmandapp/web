@@ -218,7 +218,7 @@ On Android, archived maps are shown in **Orange**. In iOS, maps that can be upda
 
 Go to: *Android* *Menu → Configure Map → Show → Coordinates Grid*  
 
-![Coordinates grid menu](@site/static/img/map/coordinates_grid_menu_andr.png)
+![Coordinates grid menu](@site/static/img/map/coordinates_grid_settings_andr.png)
 
 The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation.
 
@@ -255,7 +255,7 @@ OsmAnd supports multiple **base projections** for displaying geographic grid lin
 
 ***Zoom level settings:***
 
-- The grid lines appear based on the zoom level, between **4 – 19**.
+- The grid lines appear based on the zoom level, between **2 – 22**.
 - The lines dynamically adjust coordinate divisions based on the zoom level.
 
 **By default, the app uses the coordinate format selected in** [General settings](../personal/profiles.md#units--formats).
