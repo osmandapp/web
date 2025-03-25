@@ -708,7 +708,7 @@ export default function LocalClientTrackLayer() {
                             createNewRouteLine(prevPoint, newPoint, points, layers);
                         } else {
                             ctxTrack.hasGeo = true;
-                            let tempLine = TrackLayerProvider.createEditableTempLPolyline(
+                            const tempLine = TrackLayerProvider.createEditableTempLPolyline(
                                 prevPoint,
                                 newPoint,
                                 map,

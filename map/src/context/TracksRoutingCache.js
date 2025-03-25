@@ -183,7 +183,7 @@ function refreshTempLine({ ctx, geometry, track, tempLine, color }) {
     // don't destroy tempLine (empty geo)
     if (geometry && geometry.length > 0) {
         const polyline = new EditablePolyline(null, ctx, geometry, null, track).create(); // latlngs-only
-        tempLine.setStyle({ color, dashArray: null });
+        tempLine.setStyle({ color, dashArray: null, weight: 7 });
         tempLine.setLatLngs(polyline._latlngs);
         tempLine.options.name = undefined;
     } else {
