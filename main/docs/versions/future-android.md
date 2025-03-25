@@ -39,9 +39,12 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [Changing UX for Intermediate destinations in Waypoints](#interactions-with-intermediate-destinations)
 - [New option to select widget size for left and right panels](#resizable-widgets-for-side-panels)
 - [Reset action for the Average speed widget](#reset-option-for-the-average-speed-widget)
+- [Improved searching OSM routes and choosing it for navigation](#all-osm-routes--now-searchable)
 - [Added ability to change and set the default appearance for favorite groups](#flexible-appearance-settings-for-favorite-groups)
 - [Added Coordinates Grid with geographical coordinates](#coordinates-grid-overlay)
 - [AIS Vessel Tracking Plugin (nautical navigation)](#ais-vessel-tracking-plugin)
+- [Android Auto improvements](#android-auto-improvements)
+- [Mountain peak heights in feet](#mountain-peak-heights-in-feet)
 
 
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
@@ -54,19 +57,11 @@ first:
 - redesign of the widget configuration screen — https://github.com/osmandapp/OsmAnd-Issues/issues/2525
 - Clickable ski slopes, mtb trails / Select ski slopes and MTB trails on the map for detailed information - https://github.com/osmandapp/OsmAnd-Issues/issues/2846  
 - Prominent peaks are now discoverable via map and search - https://github.com/osmandapp/OsmAnd-Issues/issues/2844
-- Mountain peak heights in feet - https://github.com/osmandapp/OsmAnd/issues/7408
 - !!! Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662 
 
 second:
 
 • All OSM routes, now searchable! Hiking, cycling, MTB, and more - https://github.com/osmandapp/OsmAnd/issues/16808    
-
-• Android Auto:
-
-  - view ETA and distance to next waypoint - https://github.com/osmandapp/OsmAnd/issues/19095 
-  - show full destination name on route preview card - https://github.com/osmandapp/OsmAnd/issues/21098
-
-
 
 -->
 
@@ -90,11 +85,11 @@ Learn more:
 
 ## New Route Information Widget
 
-![Route Guidance Widget](../../blog/2025-03-11-android-5-0/img/route_guidance_widget.png)
+![Route Guidance Widget](../../blog/2025-03-11-android-5-0/img/route_info_widget.png)
 
 The **Route Information widget** provides a clear overview of your journey by displaying **ETA (Estimated Time of Arrival), remaining travel time, and distance to the destination** in a compact format. Designed for real-time navigation, it ensures you have the most relevant travel details at a glance.  
 
-Key improvements:
+Key features:
 
 - **Customizable display** — Choose between *Estimated arrival time, Time to go, or Distance* as the primary view in **Default view settings**.  
 - **Display priority settings** — Select between *Destination first (default)* or *Intermediate first* to prioritize the most relevant route information.  
@@ -107,6 +102,35 @@ Find it in:
 Learn more:  
 [Navigation Points Widget](https://osmand.net/docs/user/widgets/nav-widgets#navigation-points)
 [Start/Stop Navigation Panel](https://osmand.net/docs/user/navigation/setup/route-navigation#start--stop-navigation)
+
+
+## All OSM Routes – Now Searchable
+
+![Routes](../../blog/2025-03-11-android-5-0/img/routes.png)  ![Routes](../../blog/2025-03-11-android-5-0/img/routes_1.png)  
+
+You can now **search and navigate all OSM routes** directly in OsmAnd — including **hiking, cycling, mountain biking (MTB)**, and other recreational route types. This update greatly improves *route discovery*, allowing you to easily find and follow existing paths mapped in OpenStreetMap.  
+
+Key features:
+
+- **Search by route type and name** — Find routes by name or filter by categories like *Hiking, Cycling, MTB*, and more.  
+- **Route overview in search result** — See *route name, icon, total distance*, and *distance to the nearest point* before selecting it.  
+- **Start navigation or download GPX** — Tap a route to open it and either start navigation or *download it as a GPX file*.  
+
+How to use:
+
+- Go to *Menu → Search → Categories → Routes*  
+- Use filters to narrow down results by activity type  
+- Select a route *→* tap **Navigate** or **Download**  
+
+For more details, visit:  
+[How to Use Global Search](https://osmand.net/docs/user/search/search-all#how-to-use)  
+[OSM Routes Overview](https://osmand.net/docs/user/map/routes)  
+[POI Search by Categories](https://osmand.net/docs/user/search/search-poi#poi-search-by-categories)  
+[GPX Navigation](https://osmand.net/docs/user/navigation/setup/gpx-navigation)
+
+<!--
+![Routes](../../blog/2025-03-11-android-5-0/img/routes_2.png) ![Routes](../../blog/2025-03-11-android-5-0/img/routes_3.png)
+-->
 
 
 ## Climbing Areas and Crags
@@ -243,6 +267,39 @@ Find it in: *Menu → Plugins → AIS Vessel Tracker*
 
 Learn more:  
 [AIS Vessel Tracker Plugin](https://osmand.net/docs/user/plugins/ais-tracker)
+
+
+## Android Auto Improvements
+
+![Android Auto Improvements](../../blog/2025-03-11-android-5-0/img/aa_eta_names.png)
+
+Navigation with **Android Auto** is now more informative and route-aware, thanks to two key improvements.  
+
+What’s new:
+
+- **ETA and Distance to next waypoint** — During active navigation, the *estimated arrival time* and *distance are now shown for the next intermediate destination*, not just the final one. This helps you better track progress on multi-stop routes.  
+- **Full destination name on preview card** — When reviewing your route before starting, the *entire destination name* is now visible on the route preview card, ensuring clarity when selecting from saved or searched locations.  
+
+These updates improve *situational awareness and route transparency* when using OsmAnd with Android Auto.  
+
+Learn more:  
+[ETA to Next Stop](https://osmand.net/docs/user/navigation/auto-car#eta-next-stop)  
+[Start Navigation with Android Auto](https://osmand.net/docs/user/navigation/auto-car#start-navigation)
+
+
+## Mountain Peak Heights in Feet
+
+In this update, **mountain peak heights** are now displayed in **feet** for users who prefer *imperial units*. This improvement ensures elevation markers on the map align with your chosen *units of length* setting.
+
+Key improvements:
+
+- **Height display in feet** — Mountain peak elevations are now shown in feet as well.  
+- **Profile-dependent units** — The display of heights in *meters or feet* depends on the selected Units & Formats profile settings.
+
+This feature allows for a clearer and more accurate view of elevations when navigating mountainous areas, ensuring users in countries that use imperial units can easily understand peak heights.  
+
+Learn more:  
+[Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
 
 
 ___
