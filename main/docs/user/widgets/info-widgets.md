@@ -166,7 +166,7 @@ After reset, the average speed is recalculated from the new GPS data. This featu
 
 <TabItem value="android" label="Android">
 
-![Average speed](@site/static/img/widgets/average_speed_widget_2.png) ![Average speed](@site/static/img/widgets/average_speed_widget_3.png)  
+![Average speed](@site/static/img/widgets/average_speed_widget_4.png)  
 
 </TabItem>
 
@@ -758,5 +758,5 @@ The **Available RAM** widget is a tool for monitoring your device's memory usage
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in February 2025*
+> *This article was last updated in March 2025*
 
