@@ -17,8 +17,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-:::tip NOTE
- <ProFeature/> The Weather plugin is a paid feature of the OsmAnd app.  
+:::info Paid feature
+ <ProFeature/> The Weather plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
 :::
 
 The interactive weather map layers in the OsmAnd app allow you to monitor temperature, atmospheric pressure, cloud coverage, wind speed and precipitation in your city or any other location on an interactive global map. The Weather plugin provides hourly weather forecasts for 7 days ahead directly on the OsmAnd map. Weather information can also be downloaded for offline use.  

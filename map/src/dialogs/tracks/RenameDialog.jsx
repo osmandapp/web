@@ -8,7 +8,7 @@ import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { DEFAULT_GROUP_NAME, findGroupByName, prepareName } from '../../manager/track/TracksManager';
 import { renameFolder, renameTrack } from '../../manager/track/SaveTrackManager';
-import { prepareFileName } from '../../util/Utils';
+import { sanitizedFileName } from '../../util/Utils';
 import { useTranslation } from 'react-i18next';
 
 export default function RenameDialog({ setOpenDialog, track = null, group = null, setOpenActions }) {
@@ -27,7 +27,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
     };
 
     async function rename() {
-        const newName = prepareFileName(name);
+        const newName = sanitizedFileName(name);
         if (validationName(newName)) {
             if (track) {
                 let folder = groupByTrack.fullName === DEFAULT_GROUP_NAME ? '' : groupByTrack.fullName + '/';

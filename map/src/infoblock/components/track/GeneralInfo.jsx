@@ -9,7 +9,7 @@ import TracksManager, {
     prepareDesc,
     updateMetadata,
 } from '../../../manager/track/TracksManager';
-import { prepareFileName, toHHMMSS } from '../../../util/Utils';
+import { sanitizedFileName, toHHMMSS } from '../../../util/Utils';
 import {
     Box,
     Button,
@@ -234,7 +234,7 @@ export default function GeneralInfo({ width }) {
     function changeFileName(e) {
         if (e.key === 'Enter' || e.type === 'click') {
             const oldName = ctx.selectedGpxFile.name;
-            const newName = prepareFileName(fileName) || prepareFileName(oldName);
+            const newName = sanitizedFileName(fileName) || oldName;
 
             setFileName(newName); // update for next try
 

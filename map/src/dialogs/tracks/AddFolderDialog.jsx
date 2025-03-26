@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
-import { prepareFileName } from '../../util/Utils';
+import { sanitizedFileName } from '../../util/Utils';
 import { saveEmptyTrack } from '../../manager/track/SaveTrackManager';
 import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -40,7 +40,7 @@ export default function AddFolderDialog({ trackGroup, setOpenAddFolderDialog }) 
         } else {
             folderPart = `${trackGroup.fullName}/`;
         }
-        const newFolderName = `${folderPart}${prepareFileName(folderName)}`;
+        const newFolderName = `${folderPart}${sanitizedFileName(folderName)}`;
         saveEmptyTrack(newFolderName, ctx).then();
         setOpenAddFolderDialog(false);
     }

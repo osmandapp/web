@@ -33,45 +33,45 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 - [New main navigation widget combines turn arrow and navigation instructions](#route-guidance-widget)
 - [Current route info widget: displays ETA, arrival time, and distance](#new-route-information-widget)
-- [Crags and climbing areas on the map](#climbing-areas-and-crags)
-- [Detailed information for linear objects](#detailed-information-for-linear-objects)
+- [Redesigned the Configure screen for widgets](#redesigned-configure-screen)
+- [AIS Vessel Tracking plugin (nautical navigation)](#ais-vessel-tracking-plugin)
+- [Discover Top-Ranked POIs with the New Explore Mode](#explore-mode-discover-popular-places)
+- [Improved searching OSM routes and choosing it for navigation](#all-osm-routes--now-searchable)
 - [USA address search with TIGER data](#usa-address-search-with-tiger-data)
 - [Changing UX for Intermediate destinations in Waypoints](#interactions-with-intermediate-destinations)
 - [New option to select widget size for left and right panels](#resizable-widgets-for-side-panels)
 - [Reset action for the Average speed widget](#reset-option-for-the-average-speed-widget)
 - [Added ability to change and set the default appearance for favorite groups](#flexible-appearance-settings-for-favorite-groups)
 - [Added Coordinates Grid with geographical coordinates](#coordinates-grid-overlay)
-- [AIS Vessel Tracking Plugin (nautical navigation)](#ais-vessel-tracking-plugin)
+- [Android Auto improvements](#android-auto-improvements)
+- [Crags and climbing areas on the map](#climbing-areas-and-crags)
+- [Detailed information for linear objects](#detailed-information-for-linear-objects)
+- [Mountain peak heights in feet](#mountain-peak-heights-in-feet)
+- [Detailed information on Ski Slopes and MTB Trails](#ski-slopes-and-mtb-trails-information)
+- [Prominent peaks now discoverable via map and search](#prominent-peaks-now-discoverable)
 
 
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
 
 
 <!--
-
 first:
 
-- redesign of the widget configuration screen — https://github.com/osmandapp/OsmAnd-Issues/issues/2525
-- Clickable ski slopes, mtb trails / Select ski slopes and MTB trails on the map for detailed information - https://github.com/osmandapp/OsmAnd-Issues/issues/2846  
-- Prominent peaks are now discoverable via map and search - https://github.com/osmandapp/OsmAnd-Issues/issues/2844
-- Mountain peak heights in feet - https://github.com/osmandapp/OsmAnd/issues/7408
 - !!! Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662 
 
-second:
+- ??? Wikidata in map data (wikipedia maps) #2921 - https://github.com/osmandapp/OsmAnd-Issues/issues/2921
+
+second - add to docs:
 
 • All OSM routes, now searchable! Hiking, cycling, MTB, and more - https://github.com/osmandapp/OsmAnd/issues/16808    
-
-• Android Auto:
-
-  - view ETA and distance to next waypoint - https://github.com/osmandapp/OsmAnd/issues/19095 
-  - show full destination name on route preview card - https://github.com/osmandapp/OsmAnd/issues/21098
-
-___
-
-• ?? Added: Legend for routes (Configure map > Routes) - https://github.com/osmandapp/OsmAnd-Issues/issues/1249
-
+- Mountain peak heights in feet - https://github.com/osmandapp/OsmAnd/issues/7408
+- Clickable ski slopes, mtb trails / Select ski slopes and MTB trails on the map for detailed information - https://github.com/osmandapp/OsmAnd-Issues/issues/2846  
+- redesign of the widget configuration screen — https://github.com/osmandapp/OsmAnd-Issues/issues/2525
+- Prominent peaks are now discoverable via map and search - https://github.com/osmandapp/OsmAnd-Issues/issues/2844
 
 -->
+
+
 
 ## Route Guidance Widget
 
@@ -93,11 +93,11 @@ Learn more:
 
 ## New Route Information Widget
 
-![Route Guidance Widget](../../blog/2025-03-11-android-5-0/img/route_guidance_widget.png)
+![Route Guidance Widget](../../blog/2025-03-11-android-5-0/img/route_info_widget.png)
 
 The **Route Information widget** provides a clear overview of your journey by displaying **ETA (Estimated Time of Arrival), remaining travel time, and distance to the destination** in a compact format. Designed for real-time navigation, it ensures you have the most relevant travel details at a glance.  
 
-Key improvements:
+Key features:
 
 - **Customizable display** — Choose between *Estimated arrival time, Time to go, or Distance* as the primary view in **Default view settings**.  
 - **Display priority settings** — Select between *Destination first (default)* or *Intermediate first* to prioritize the most relevant route information.  
@@ -112,29 +112,92 @@ Learn more:
 [Start/Stop Navigation Panel](https://osmand.net/docs/user/navigation/setup/route-navigation#start--stop-navigation)
 
 
-## Climbing Areas and Crags
+## Redesigned Configure Screen
 
-![Map routes - Climbing Routes](../../blog/2025-03-11-android-5-0/img/map-routes-climbing-routes.png)
+![Configure Screen](../../blog/2025-03-11-android-5-0/img/config_screen_1.png)  ![Configure Screen](../../blog/2025-03-11-android-5-0/img/config_screen_2.png)  
 
-Now you can explore **climbing areas and crags** directly on the map. These locations appear as **POI markers**, providing essential details such as elevation, rock type, and the number of climbing routes.  
+The widget **Configure screen** has undergone a major redesign to enhance usability and streamline the process of adding, customizing, and organizing widgets.
 
-Use *Search → POI → Climbing* to quickly find climbing spots and plan your approach with OsmAnd’s navigation tools.  
+Key changes:
+
+- **Add widget screen**:
+   - Widgets and widget groups are **sorted alphabetically** (A-Z).  
+   - **Search** functionality works for both widget names and groups.
+- **Panels** — Removed *Available widgets* and *Actions* groups for a cleaner interface.
+- **Widget groups** - Removed group icon and Add button, widgets are added separately, improved widget list.
+- **Widget settings** - All widget settings are now grouped together for easier management.
+
+This redesign ensures a **consistent experience** across Android and iOS, allowing for seamless configuration and management of widgets.  
+
+Learn more:  
+[Widget Configure Screen](https://osmand.net/docs/user/widgets/configure-screen)
+
+
+## AIS Vessel Tracking Plugin
+
+![AIS vessel tracker](@site/static/img/plugins/ais/ais.png)
+
+The **AIS Vessel Tracker** plugin allows you to display **real-time AIS (Automatic Identification System) vessel positions** on the map. This feature is essential for maritime navigation, providing details about nearby ships, including their type, speed, and route.  
+
+Key features:
+
+- **Live vessel tracking** — Ships update based on *real-time speed and course*.  
+- **Detailed vessel info** — Tap on a vessel to see *ship name, MMSI, IMO number, type, dimensions, heading, speed, and ETA*.  
+- **Configurable AIS data sources** — Connect via *external AIS receivers* or *network-based AIS servers*.  
+- **AIS symbols and alerts** — Supports standard *AIS vessel icons, safety messages, and maneuvering indicators*.  
+
+Find it in: *Menu → Plugins → AIS Vessel Tracker*  
+
+Learn more:  
+[AIS Vessel Tracker Plugin](https://osmand.net/docs/user/plugins/ais-tracker)
+
+
+## Explore Mode: Discover Popular Places
+
+![Explore Mode](../../blog/2025-03-11-android-5-0/img/explore_search.png)
+
+The **Explore** mode has been introduced, replacing the *History* tab, making it easier than ever to discover *top-ranked points of interest (POIs)*. Now, you can explore nearby POIs, view their *photos* on the map, and easily access your *Recently visited* locations — all within the new **Explore** tab. This update makes finding interesting places faster and more convenient.
+
+Key features:
+
+- **Explore nearby POIs** — Discover *popular places* and *top-ranked POIs* with helpful *photos* displayed on the map and in the search results.
+- **Recently visited** - Access your *recently visited (history) places* within the **Explore** tab for quick navigation back to previously explored locations.
+- **Wikipedia integration** - *Wikipedia entries* are combined with POI details, allowing you to view detailed information, including photos and descriptions for each location.
+
+How to use:  
+Go to *Menu → Search → Explore* to start discovering nearby POIs and view your recently visited places.
+
+Learn more:  
+[Search All Locations](https://osmand.net/docs/user/search/search-all)
+
+
+## All OSM Routes – Now Searchable
+
+![Routes](../../blog/2025-03-11-android-5-0/img/routes.png)  ![Routes](../../blog/2025-03-11-android-5-0/img/routes_1.png)  
+
+You can now **search and navigate all OSM routes** directly in OsmAnd — including **hiking, cycling, mountain biking (MTB)**, and other recreational route types. This update greatly improves *route discovery*, allowing you to easily find and follow existing paths mapped in OpenStreetMap.  
+
+Key features:
+
+- **Search by route type and name** — Find routes by name or filter by categories like *Hiking, Cycling, MTB*, and more.  
+- **Route overview in search result** — See *route name, icon, total distance*, and *distance to the nearest point* before selecting it.  
+- **Start navigation or download GPX** — Tap a route to open it and either start navigation or *download it as a GPX file*.  
+
+How to use:
+
+- Go to *Menu → Search → Categories → Routes*  
+- Use filters to narrow down results by activity type  
+- Select a route *→* tap **Navigate** or **Download**  
 
 For more details, visit:  
-[Climbing routes on the map](https://osmand.net/docs/user/map/routes/#climbing-routes)  
-[Climbing area and crag details](https://osmand.net/docs/user/map/map-context-menu/#climbing-area-and-crag-details)
+[How to Use Global Search](https://osmand.net/docs/user/search/search-all#how-to-use)  
+[OSM Routes Overview](https://osmand.net/docs/user/map/routes)  
+[POI Search by Categories](https://osmand.net/docs/user/search/search-poi#poi-search-by-categories)  
+[GPX Navigation](https://osmand.net/docs/user/navigation/setup/gpx-navigation)
 
-
-## Detailed Information for Linear Objects
-
-![Barrier icons](../../blog/2025-03-11-android-5-0/img/icons.png)
-
-You can now interact with **barriers, steps, gates, benches, and other access-related icons** directly on the map. A simple tap on these objects opens a *context menu* with detailed information, such as the object type, name (if available), and address.  
-
-This improvement provides *quick access to navigation-relevant data*, helping you better understand path restrictions and road attributes at a glance.  
-
-Explore more:  
-[Linear object details in the Map Context Menu](https://osmand.net/docs/user/map/map-context-menu/#linear-object)
+<!--
+![Routes](../../blog/2025-03-11-android-5-0/img/routes_2.png) ![Routes](../../blog/2025-03-11-android-5-0/img/routes_3.png)
+-->
 
 
 ## USA Address Search with TIGER Data
@@ -156,6 +219,8 @@ Learn more:
 
 ## Interactions with Intermediate Destinations
 
+![Intermediate Destinations](../../blog/2025-03-11-android-5-0/img/navigation_interpoints_2_andr.png)
+
 Managing **intermediate destinations** in waypoints is now more convenient. The update refines the **selection and modification** process, making adjustments faster and more intuitive.  
 
 Key changes:
@@ -168,7 +233,9 @@ Learn more:
 [Intermediate destinations – user guide](https://osmand.net/docs/user/navigation/setup/route-navigation#intermediate-destinations)
 
 
-## Resizable Widgets for Side Panels  
+## Resizable Widgets for Side Panels
+
+![Resizable Widgets for Side Panels](../../blog/2025-03-11-android-5-0/img/resizable_widgets_andr.png)
 
 You can now customize the **size of widgets** in the **left and right panels**, just like in the top and bottom ones. This update offers greater flexibility in **configuring the map screen**. Choose from **Small, Medium, or Large** sizes to customize your screen layout.
 
@@ -209,12 +276,14 @@ Learn more:
 
 ## Coordinates Grid Overlay
 
+![Coordinates Grid Overlay](../../blog/2025-03-11-android-5-0/img/coordinates_grid_settings_andr.png)
+
 The **Coordinates Grid** feature allows you to overlay a grid with **geographical coordinates** on the map, providing a precise location reference for geospatial navigation.  
 
 Key features:
 
 - **Multiple coordinate formats** — Choose from DD°MM′SS″, DD.DDDDD°, DD°MM.MMM′, or `UTM`.  
-- **Adjustable zoom levels** — Grid lines appear dynamically between *zoom levels 4 – 19*, adapting to the map scale.  
+- **Adjustable zoom levels** — Grid lines appear dynamically between *zoom levels 2 – 22*, adapting to the map scale.  
 - Uses default coordinate settings from *Menu → Settings → App profiles → General settings → Units & formats*.  
 
 Find it in: *Menu → Configure Map → Show → Coordinates Grid*  
@@ -223,21 +292,82 @@ Learn more:
 [Coordinates Grid](https://osmand.net/docs/user/map/vector-maps#coordinates-grid)
 
 
-## AIS Vessel Tracking Plugin  
+## Android Auto Improvements
 
-The **AIS Vessel Tracker** plugin allows you to display **real-time AIS (Automatic Identification System) vessel positions** on the map. This feature is essential for maritime navigation, providing details about nearby ships, including their type, speed, and route.  
+![Android Auto Improvements](../../blog/2025-03-11-android-5-0/img/aa_eta_names.png)
 
-Key features:
+Navigation with **Android Auto** is now more informative and route-aware, thanks to two key improvements.  
 
-- **Live vessel tracking** — Ships update based on *real-time speed and course*.  
-- **Detailed vessel info** — Tap on a vessel to see *ship name, MMSI, IMO number, type, dimensions, heading, speed, and ETA*.  
-- **Configurable AIS data sources** — Connect via *external AIS receivers* or *network-based AIS servers*.  
-- **AIS symbols and alerts** — Supports standard *AIS vessel icons, safety messages, and maneuvering indicators*.  
+What’s new:
 
-Find it in: *Menu → Plugins → AIS Vessel Tracker*  
+- **ETA and Distance to next waypoint** — During active navigation, the *estimated arrival time* and *distance are now shown for the next intermediate destination*, not just the final one. This helps you better track progress on multi-stop routes.  
+- **Full destination name on preview field** — When reviewing your route before starting, the *entire destination name* is now visible on the route preview field, ensuring clarity when selecting from saved or searched locations.  
+
+These updates improve *situational awareness and route transparency* when using OsmAnd with Android Auto.  
 
 Learn more:  
-[AIS Vessel Tracker Plugin](https://osmand.net/docs/user/plugins/ais-tracker)
+[ETA to Next Stop](https://osmand.net/docs/user/navigation/auto-car#eta-next-stop)  
+[Start Navigation with Android Auto](https://osmand.net/docs/user/navigation/auto-car#start-navigation)
+
+
+## Climbing Areas and Crags
+
+![Map routes - Climbing Routes](../../blog/2025-03-11-android-5-0/img/map-routes-climbing-routes.png)
+
+Now you can explore **climbing areas and crags** directly on the map. These locations appear as **POI markers**, providing essential details such as elevation, rock type, and the number of climbing routes.  
+
+Use *Search → POI → Climbing* to quickly find climbing spots and plan your approach with OsmAnd’s navigation tools.  
+
+For more details, visit:  
+[Climbing routes on the map](https://osmand.net/docs/user/map/routes/#climbing-routes)  
+[Climbing area and crag details](https://osmand.net/docs/user/map/map-context-menu/#climbing-area-and-crag-details)
+
+
+## Detailed Information for Linear Objects
+
+![Barrier icons](../../blog/2025-03-11-android-5-0/img/icons.png)
+
+You can now interact with **barriers, steps, gates, benches, and other access-related icons** directly on the map. A simple tap on these objects opens a *context menu* with detailed information, such as the object type, name (if available), and address.  
+
+This improvement provides *quick access to navigation-relevant data*, helping you better understand path restrictions and road attributes at a glance.  
+
+Explore more:  
+[Linear object details in the Map Context Menu](https://osmand.net/docs/user/map/map-context-menu/#linear-object)
+
+
+## Mountain Peak Heights in Feet
+
+In this update, **mountain peak heights** are now displayed in **feet** for users who prefer *imperial units*. This improvement ensures elevation markers on the map align with your chosen *units of length* setting.
+
+Key improvements:
+
+- **Height display in feet** — Mountain peak elevations are now shown in feet as well.  
+- **Profile-dependent units** — The display of heights in *meters or feet* depends on the selected Units & Formats profile settings.
+
+This feature allows for a clearer and more accurate view of elevations when navigating mountainous areas, ensuring users in countries that use imperial units can easily understand peak heights.  
+
+Learn more:  
+[Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
+
+
+## Ski Slopes and MTB Trails Information
+
+You can now **select ski slopes and MTB trails directly on the map** to access more detailed information. This feature enhances the context menu with key data such as *difficulty level, trail length, terrain type*, and more, making it easier to plan your outdoor activities.
+
+Simply tap the *ski slopes* or *MTB routes* to quickly view information and get started with your adventure.
+
+Learn more:  
+[Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
+
+
+## Prominent Peaks Now Discoverable  
+
+You can now **discover prominent peaks** directly on the map and through search. This update adds [notable mountain peaks](https://en.wikipedia.org/wiki/Ultra-prominent_peak) to the basemap, allowing you to easily find their names, elevations, and additional details through the map's context menu or search functionality.
+
+Simply tap on the *peak icons* on the map, or use the *Search → Mountain Peaks* to quickly locate and explore key mountain summits.
+
+Learn more:  
+[Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
 
 
 ___

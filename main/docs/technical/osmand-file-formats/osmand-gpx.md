@@ -113,9 +113,11 @@ The following tags control the appearance of waypoint icons in OsmAnd:
 ```xml
 <wpt lat="52.5163" lon="13.3779">
   <name>Brandenburg Gate</name>
-  <icon>landmark_arch</icon>
-  <color>#FFD700</color>
-  <background>square</background>
+  <extensions>
+    <osmand:color>#FF5020</osmand:color>
+    <osmand:icon>city_gate</osmand:icon>
+    <osmand:background>square</osmand:background>
+  </extensions>
 </wpt>
 ```
 

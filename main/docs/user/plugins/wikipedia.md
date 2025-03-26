@@ -17,8 +17,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Overview
 
-:::tip NOTE
-The Wikipedia plugin is a paid feature of the OsmAnd app.  
+:::info Paid feature
+The Wikipedia plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
 :::
 
 Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles related to the points of interest directly on the map.  
