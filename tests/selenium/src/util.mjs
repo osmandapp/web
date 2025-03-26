@@ -19,7 +19,7 @@ export function getFiles({ folder = 'gpx' }) {
                 files.push({ file, name, path });
             }
         });
-    return files;
+    return files.filter((f) => f.name !== 'favorites-Castle Bromwich зміна назви ще раз    _-__-__-_');
 }
 
 export async function createFolder(name) {
