@@ -54,7 +54,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
 
 
-
+<!--
 first:
 
 - !!! Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662 
