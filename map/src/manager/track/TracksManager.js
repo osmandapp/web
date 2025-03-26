@@ -144,7 +144,7 @@ async function getTrackData(file) {
     if (response.ok) {
         let resp = await response.text();
         if (resp) {
-            let data = JSON.parse(quickNaNfix(resp));
+            const data = JSON.parse(quickNaNfix(resp));
             if (data) {
                 track = data.gpx_data;
                 addDistance(track); // recalc-distance-cloud-download

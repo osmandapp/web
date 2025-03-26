@@ -4,7 +4,7 @@ import MarkerOptions, {
     getBackground,
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
-import Utils, { getDistance, prepareFileName } from '../util/Utils';
+import Utils, { getDistance } from '../util/Utils';
 import _, { isEmpty } from 'lodash';
 import { apiPost } from '../util/HttpApi';
 import { quickNaNfix } from '../util/Utils';
@@ -192,8 +192,7 @@ function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = n
 }
 
 function createGroup(file) {
-    file.preparedName = prepareFileName(file.name, true);
-    file.folder = extractBaseFavFileName(file.preparedName);
+    file.folder = extractBaseFavFileName(file.name);
     return {
         id: getUniqFileId(file),
         sharedWithMe: file.sharedWithMe,
