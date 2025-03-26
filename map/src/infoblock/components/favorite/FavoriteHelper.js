@@ -15,7 +15,7 @@ function updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted 
         newSelectedFile.trackData.clienttimems = result.clienttimems;
         newSelectedFile.trackData.updatetimems = result.updatetimems;
         Object.keys(result.data).forEach((t) => {
-            newSelectedFile.trackData[`${t}`] = result.data[t];
+            newSelectedFile.trackData[t] = result.data[t];
         });
         newSelectedFile.file.updatetimems = result.updatetimems;
     }

@@ -13,9 +13,7 @@ export default function DeleteFavGroupDialog({ setOpenDialog, group, setOpenActi
     const ctx = useContext(AppContext);
     async function deleteGroup() {
         const mapObj = ctx.favorites.mapObjs[group.id];
-        await deleteTrack({ file: group.file, ctx, type: FAVORITE_FILE_TYPE, shared }).then(() =>
-            removeOldLayer(mapObj)
-        );
+        deleteTrack({ file: group.file, ctx, type: FAVORITE_FILE_TYPE, shared }).then(() => removeOldLayer(mapObj));
         if (setOpenActions) {
             setOpenActions(false);
         }
