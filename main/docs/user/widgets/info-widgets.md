@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Information widgets are needed for quick access to information important to you. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to your specific requirements, enabling their visibility on the application screen or disabling them if necessary.
+Informational widgets provide you with quick access to important data. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to your specific requirements, enabling their visibility on the application screen or disabling them if necessary.
 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
@@ -30,8 +30,11 @@ Altitude widgets display the height above the sea level of the current geolocati
 
 ### Altitude: Current Location  
   
-:::note  
-On some Android devices, the altitude can display inaccurately. To solve this problem, download a map with altitude correction: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.  
+:::note  Download World altitude correction
+On some Android devices, the altitude can display inaccurately. To solve this problem, download a map with altitude correction.
+
+- Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- For more details, visit [Maps & Resources](../personal/maps-resources.md#downloads).
 :::
 
 <Tabs groupId="operating-systems">
@@ -61,7 +64,7 @@ On some Android devices, the altitude can display inaccurately. To solve this pr
 
 ### Elevation: Map Center
 
-:::tip subscribe
+:::info Paid feature
 &nbsp;<ProFeature/> To get access to use the *Elevation: map center* widget, subscribe to OsmAnd Pro for [Android](../purchases/android.md#pro-features) or [iOS](../purchases/ios.md#pro-features).  
 :::
 
@@ -142,23 +145,27 @@ The widget shows the current speed detected by the GPS sensor.
 
 The **Average Speed** widget calculates and displays your average speed over a selected time interval without requiring navigation or track recording. It is useful for monitoring speed compliance on highways or tracking average speed over the last few minutes of cycling.
 
-**Configuring the widget.**
+1. ***Configuring the widget.***  
+   To adjust settings, tap the **Settings** button (*Android*) or the **widget field** (*iOS*). Available options include:
 
-To adjust settings, tap the **Settings** button (*Android*) or the **widget field** (*iOS*). Available options include:
+2. ***Time interval.***
 
-**Time interval**  
-The average speed is calculated based on the selected time interval, which can range from **15 seconds to 60 minutes**. The calculation is based on GPS data using the formula:  
-`Average Speed = AVERAGE(GPS_LOCATION.speed)`.
+   - The average speed is calculated based on the selected time interval, which can range from **15 seconds to 60 minutes**.  
 
-**Take stops into account**  
-**Enabled**. If the recorded speed is below 1 unit per hour, it is ignored, preventing unnecessary drops in average speed when stopping at traffic lights or taking short breaks.  
-**Disabled**. Stops are included in the calculation, meaning long pauses will reduce the overall average speed.
+   - The calculation is based on GPS data using the formula:  
+   `Average Speed = AVERAGE(GPS_LOCATION.speed)`.
 
-**Reset average speed**  
-You can reset the average speed calculation in two ways:
+3. ***Take stops into account.***
 
-1. Long tap the widget to open the [Context menu](../widgets/configure-screen.md#widget-context-menu), and select *Reset average speed*.
-2. Open the *widget settings* via the [Configure Screen menu](../widgets/configure-screen.md#settings) and select the reset option.
+   **Enabled** — If the recorded speed is below 1 unit per hour, it is ignored, preventing unnecessary drops in average speed when stopping at traffic lights or taking short breaks.  
+
+   **Disabled** — Stops are included in the calculation, meaning long pauses will reduce the overall average speed.
+
+4. ***Reset average speed.***
+   You can reset the average speed calculation in two ways:
+
+   - Long tap the widget to open the [Context menu](../widgets/configure-screen.md#widget-context-menu), and select *Reset average speed*.
+   - Open the *widget settings* via the [Configure Screen menu](../widgets/configure-screen.md#settings) and select the reset option.
 
 After reset, the average speed is recalculated from the new GPS data. This feature is useful for real-time speed monitoring, such as tracking speed in areas with **average speed enforcement cameras**.
 
@@ -183,7 +190,7 @@ After reset, the average speed is recalculated from the new GPS data. This featu
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_average_speed"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="map_widget_average_speed"/>* |
 | By tapping | No changes |
-| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) Can be used to reset average speed. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). <br/> Can be used to reset average speed. |
 
 
 ## Glide Ratio
@@ -194,7 +201,7 @@ After reset, the average speed is recalculated from the new GPS data. This featu
 
 |Widgets| Widgets on the screen|
 |:--------|:---------|
-|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_1.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
 
 </TabItem>
 

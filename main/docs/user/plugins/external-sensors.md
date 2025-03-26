@@ -17,8 +17,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-:::tip NOTE
-The External Sensors plugin is a [**paid feature**](../purchases/index.md) of the OsmAnd app.  
+:::info Paid feature
+The External Sensors plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
 :::
 
 The **External Sensors plugin** allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on [**ANT+**](https://en.wikipedia.org/wiki/ANT_(network)) and [**BLE (Bluetooth Low Energy)**](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) technologies and display this data using [widgets](#widgets) in the OsmAnd application. This managed network is capable of collecting, transmitting, and storing sensor data. *iPhones and iPads* do not have the hardware to receive ANT+ signals.

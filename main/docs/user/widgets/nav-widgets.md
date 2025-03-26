@@ -431,11 +431,11 @@ The Street name widget shows **the current street name** with a straight arrow, 
 
 - When driving along a street or highway, the widget shows the name or designation of the current street (road) with a blue arrow.
 
-![Street name POIs widget_2](@site/static/img/widgets/street_name_widget_2.png)
+  ![Street name POIs widget_2](@site/static/img/widgets/street_name_widget_2.png)
 
 - When you change direction, the widget shows the scheme of the maneuver and the name (designation) of the street (road) to which you need to turn.  
 
-![Street name POIs widget](@site/static/img/widgets/street_name_widget.png)
+  ![Street name POIs widget](@site/static/img/widgets/street_name_widget.png)
 
 | | |
 |:------------|:------------|
@@ -446,19 +446,36 @@ The Street name widget shows **the current street name** with a straight arrow, 
 
 ## Approach POIs/Favorites
 
-Approach POIs/Favorites/Waypoints widget is combined with [Street name](#street-name) and displays approaching and passing Points of interest, Waypoints of followed track, and Favorites along the route. It displays the name, the icon of the point, and 2 distances: route distance and deviation distance. **Route distance** (top) displays how much distance needs to be covered by the following route, **deviation distance** is a straight distance from the closest route point to the point itself.
+<Tabs groupId="operating-systems">
 
-**Android**:
+<TabItem value="android" label="Android">  
 
-![Street name POIs widget_android](@site/static/img/widgets/street_name_poi_widget_android.png)
+![Approach POIs/Favorites android](@site/static/img/widgets/street_name_poi_widget_android.png)
 
-**iOS**: besides the distance from the nearest route point, the side (left or right) of the route where the point is located is also shown.
+</TabItem>
 
-![Street name POIs widget_ios](@site/static/img/widgets/street_name_poi_widget_ios.png)
+<TabItem value="ios" label="iOS">  
 
-| |
+![Approach POIs/Favorites ios](@site/static/img/widgets/street_name_poi_widget_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**Approach POIs/Favorites/Waypoints** widget is combined with [Street name](#street-name) and displays approaching and passing Points of interest, Waypoints of followed track, and Favorites along the route.  
+
+It displays the **name**, the **icon of the point**, and 2 **distances**:
+
+- **Route distance** (top) displays how much distance needs to be covered by the following route.
+- **Deviation distance** is a straight distance from the closest route point to the point itself.
+
+**iOS** - In addition to the distance to the nearest waypoint, the side (left or right) of the route on which the waypoint is located is also displayed.
+
+| | |
 |:------------|:------------|
-| Enable  | *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* <br /> *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu"/> → Start navigation → pencil button* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu"/> → Start navigation → pencil button* |
+| By tapping | No changes |
 
 
 ## Related Articles
@@ -471,4 +488,4 @@ Approach POIs/Favorites/Waypoints widget is combined with [Street name](#street-
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in January 2025*
+> *This article was last updated in March 2025*

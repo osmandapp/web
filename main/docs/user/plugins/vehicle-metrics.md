@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-:::tip NOTE
+:::info Paid feature
 The Vehicle Metrics plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
 :::
 

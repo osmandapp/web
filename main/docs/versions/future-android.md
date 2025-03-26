@@ -32,32 +32,34 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 ## What's new
 
 - [New main navigation widget combines turn arrow and navigation instructions](#route-guidance-widget)
-- [Redesigned the Configure screen for widgets](#redesigned-the-configure-screen-for-widgets)
 - [Current route info widget: displays ETA, arrival time, and distance](#new-route-information-widget)
-- [Crags and climbing areas on the map](#climbing-areas-and-crags)
-- [Detailed information for linear objects](#detailed-information-for-linear-objects)
+- [Redesigned the Configure screen for widgets](#redesigned-configure-screen)
+- [AIS Vessel Tracking plugin (nautical navigation)](#ais-vessel-tracking-plugin)
+- [Discover Top-Ranked POIs with the New Explore Mode](#explore-mode-discover-popular-places)
+- [Improved searching OSM routes and choosing it for navigation](#all-osm-routes--now-searchable)
 - [USA address search with TIGER data](#usa-address-search-with-tiger-data)
 - [Changing UX for Intermediate destinations in Waypoints](#interactions-with-intermediate-destinations)
 - [New option to select widget size for left and right panels](#resizable-widgets-for-side-panels)
 - [Reset action for the Average speed widget](#reset-option-for-the-average-speed-widget)
-- [Improved searching OSM routes and choosing it for navigation](#all-osm-routes--now-searchable)
 - [Added ability to change and set the default appearance for favorite groups](#flexible-appearance-settings-for-favorite-groups)
 - [Added Coordinates Grid with geographical coordinates](#coordinates-grid-overlay)
-- [AIS Vessel Tracking Plugin (nautical navigation)](#ais-vessel-tracking-plugin)
 - [Android Auto improvements](#android-auto-improvements)
+- [Crags and climbing areas on the map](#climbing-areas-and-crags)
+- [Detailed information for linear objects](#detailed-information-for-linear-objects)
 - [Mountain peak heights in feet](#mountain-peak-heights-in-feet)
-- [Detailed information on Ski Slopes and MTB Trails](#detailed-information-on-ski-slopes-and-mtb-trails)
-- [Prominent peaks now discoverable via map and search](#prominent-peaks-now-discoverable-via-map-and-search)
+- [Detailed information on Ski Slopes and MTB Trails](#ski-slopes-and-mtb-trails-information)
+- [Prominent peaks now discoverable via map and search](#prominent-peaks-now-discoverable)
 
 
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
 
 
-<!--
 
 first:
 
 - !!! Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662 
+
+- ??? Wikidata in map data (wikipedia maps) #2921 - https://github.com/osmandapp/OsmAnd-Issues/issues/2921
 
 second - add to docs:
 
@@ -68,6 +70,8 @@ second - add to docs:
 - Prominent peaks are now discoverable via map and search - https://github.com/osmandapp/OsmAnd-Issues/issues/2844
 
 -->
+
+
 
 ## Route Guidance Widget
 
@@ -108,7 +112,7 @@ Learn more:
 [Start/Stop Navigation Panel](https://osmand.net/docs/user/navigation/setup/route-navigation#start--stop-navigation)
 
 
-## Redesigned the Configure Screen for Widgets
+## Redesigned Configure Screen
 
 ![Configure Screen](../../blog/2025-03-11-android-5-0/img/config_screen_1.png)  ![Configure Screen](../../blog/2025-03-11-android-5-0/img/config_screen_2.png)  
 
@@ -129,8 +133,6 @@ Learn more:
 [Widget Configure Screen](https://osmand.net/docs/user/widgets/configure-screen)
 
 
-
-
 ## AIS Vessel Tracking Plugin
 
 ![AIS vessel tracker](@site/static/img/plugins/ais/ais.png)
@@ -148,6 +150,25 @@ Find it in: *Menu → Plugins → AIS Vessel Tracker*
 
 Learn more:  
 [AIS Vessel Tracker Plugin](https://osmand.net/docs/user/plugins/ais-tracker)
+
+
+## Explore Mode: Discover Popular Places
+
+![Explore Mode](../../blog/2025-03-11-android-5-0/img/explore_search.png)
+
+The **Explore** mode has been introduced, replacing the *History* tab, making it easier than ever to discover *top-ranked points of interest (POIs)*. Now, you can explore nearby POIs, view their *photos* on the map, and easily access your *Recently visited* locations — all within the new **Explore** tab. This update makes finding interesting places faster and more convenient.
+
+Key features:
+
+- **Explore nearby POIs** — Discover *popular places* and *top-ranked POIs* with helpful *photos* displayed on the map and in the search results.
+- **Recently visited** - Access your *recently visited (history) places* within the **Explore** tab for quick navigation back to previously explored locations.
+- **Wikipedia integration** - *Wikipedia entries* are combined with POI details, allowing you to view detailed information, including photos and descriptions for each location.
+
+How to use:  
+Go to *Menu → Search → Explore* to start discovering nearby POIs and view your recently visited places.
+
+Learn more:  
+[Search All Locations](https://osmand.net/docs/user/search/search-all)
 
 
 ## All OSM Routes – Now Searchable
@@ -280,7 +301,7 @@ Navigation with **Android Auto** is now more informative and route-aware, thanks
 What’s new:
 
 - **ETA and Distance to next waypoint** — During active navigation, the *estimated arrival time* and *distance are now shown for the next intermediate destination*, not just the final one. This helps you better track progress on multi-stop routes.  
-- **Full destination name on preview card** — When reviewing your route before starting, the *entire destination name* is now visible on the route preview card, ensuring clarity when selecting from saved or searched locations.  
+- **Full destination name on preview field** — When reviewing your route before starting, the *entire destination name* is now visible on the route preview field, ensuring clarity when selecting from saved or searched locations.  
 
 These updates improve *situational awareness and route transparency* when using OsmAnd with Android Auto.  
 
@@ -329,7 +350,7 @@ Learn more:
 [Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
 
 
-## Detailed Information on Ski Slopes and MTB Trails
+## Ski Slopes and MTB Trails Information
 
 You can now **select ski slopes and MTB trails directly on the map** to access more detailed information. This feature enhances the context menu with key data such as *difficulty level, trail length, terrain type*, and more, making it easier to plan your outdoor activities.
 
@@ -339,7 +360,7 @@ Learn more:
 [Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
 
 
-## Prominent Peaks Now Discoverable via Map and Search  
+## Prominent Peaks Now Discoverable  
 
 You can now **discover prominent peaks** directly on the map and through search. This update adds [notable mountain peaks](https://en.wikipedia.org/wiki/Ultra-prominent_peak) to the basemap, allowing you to easily find their names, elevations, and additional details through the map's context menu or search functionality.
 
