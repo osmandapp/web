@@ -187,8 +187,8 @@ export function copyObj(obj) {
     return typeof obj === 'object' ? JSON.parse(JSON.stringify(obj)) : obj;
 }
 
-// remove dangerous filename parts
-export function prepareFileName(filename, isFavoriteGroup = false) {
+// Used ONLY when creating a new file
+export function sanitizedFileName(filename, isFavoriteGroup = false) {
     const truncate = (sanitized, length) => {
         const uint8Array = new TextEncoder().encode(sanitized);
         const truncated = uint8Array.slice(0, length);
