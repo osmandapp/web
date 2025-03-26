@@ -5,7 +5,7 @@ import { Button, TextField, Dialog } from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import { prepareFileName } from '../../util/Utils';
+import { sanitizedFileName } from '../../util/Utils';
 import { apiGet } from '../../util/HttpApi';
 import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import FavoritesManager, { normalizeGroupNameForFile, extractBaseFavFileName } from '../../manager/FavoritesManager';
@@ -23,7 +23,7 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
     };
 
     async function rename() {
-        const newName = prepareFileName(name, true);
+        const newName = sanitizedFileName(name, true);
         if (validationName(newName)) {
             if (group) {
                 await renameFavGroup(group, newName, ctx);

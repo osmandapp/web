@@ -11,7 +11,7 @@ import TracksManager, {
 } from '../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
-import { prepareFileName } from '../../util/Utils';
+import { sanitizedFileName } from '../../util/Utils';
 import { saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import Dialog from '@mui/material/Dialog';
 
@@ -19,7 +19,7 @@ export default function SaveTrackDialog() {
     const ctx = useContext(AppContext);
 
     const [folder, setFolder] = useState(getOldGroup);
-    const [fileName, setFileName] = useState(prepareFileName(ctx.selectedGpxFile.name));
+    const [fileName, setFileName] = useState(ctx.selectedGpxFile.name);
     const [error, setError] = useState(false);
     const [existError, setExistError] = useState(false);
     const [existTrack, setExistTrack] = useState(false);
@@ -67,7 +67,7 @@ export default function SaveTrackDialog() {
     const filter = createFilterOptions();
 
     async function saveTrack() {
-        const preparedName = prepareFileName(fileName);
+        const preparedName = sanitizedFileName(fileName);
         if (preparedName !== fileName) {
             setFileName(preparedName);
         }
@@ -92,7 +92,7 @@ export default function SaveTrackDialog() {
     }
 
     async function confirmedSaveTrack() {
-        const preparedName = prepareFileName(fileName);
+        const preparedName = sanitizedFileName(fileName);
         if (preparedName !== fileName) {
             setFileName(preparedName);
         }
