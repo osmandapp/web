@@ -57,6 +57,17 @@ export default async function test() {
     await actionOpenFavorites();
     await waitBy(By.id(`se-menu-fav-${favoriteGroupName}`));
     await waitBy(By.id('se-fav-group-size-1 points'));
+
+    // remove favorite from map
+    await clickBy(By.className('leaflet-marker-icon'));
+    await waitBy(By.id(`se-fav-item-info-${favoriteName}`));
+    await clickBy(By.id('se-delete-fav-item'));
+    await waitBy(By.id('se-delete-fav-dialog'));
+    await clickBy(By.id('se-delete-fav-dialog-submit'));
+    await waitByRemoved(By.className('leaflet-marker-icon'));
+    await waitByRemoved(By.id(`se-fav-item-info-${favoriteName}`));
+
+    await actionOpenFavorites();
     // clean up
     await actionDeleteFavGroup(favoriteGroupName);
     await waitBy(By.id('se-empty-page'));

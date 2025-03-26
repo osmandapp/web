@@ -4,18 +4,20 @@ import { getUniqFileId } from '../../../manager/GlobalManager';
 import FavoritesManager from '../../../manager/FavoritesManager';
 
 function updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted }) {
-    let newSelectedFile = Object.assign({}, ctx.selectedGpxFile);
+    const newSelectedFile = Object.assign({}, ctx.selectedGpxFile);
     newSelectedFile.file =
         selectedGroup.id !== ctx.selectedGpxFile?.id ? selectedGroup.file : ctx.selectedGpxFile?.file;
     newSelectedFile.name = favoriteName;
     newSelectedFile.nameGroup = selectedGroup.name;
     newSelectedFile.editFavorite = true;
     if (result) {
-        newSelectedFile.file.clienttimems = result.clienttimems;
-        newSelectedFile.file.updatetimems = result.updatetimems;
+        newSelectedFile.trackData = {};
+        newSelectedFile.trackData.clienttimems = result.clienttimems;
+        newSelectedFile.trackData.updatetimems = result.updatetimems;
         Object.keys(result.data).forEach((t) => {
-            newSelectedFile.file[`${t}`] = result.data[t];
+            newSelectedFile.trackData[`${t}`] = result.data[t];
         });
+        newSelectedFile.file.updatetimems = result.updatetimems;
     }
     newSelectedFile.id = selectedGroup.id;
     updateMarker(newSelectedFile, deleted, favoriteName);
@@ -29,14 +31,14 @@ function updateSelectedGroup({ favorites, selectedGroupName, result, id }) {
         group = updateGroupData(group, result);
         favorites.groups = favorites.groups.map((g) => (g.id === id ? group : g));
     } else {
-        let file = {};
-        Object.keys(result.data).forEach((d) => {
-            file[d] = result.data[d];
-        });
+        const file = {};
         file.folder = selectedGroupName;
+        file.clienttimems = result.clienttimems;
+        file.updatetimems = result.updatetimems;
         file.name = selectedGroupName + '.gpx';
         file.type = FavoritesManager.FAVORITE_FILE_TYPE;
-        let newGroup = {
+
+        const newGroup = {
             name: file.folder,
             updatetimems: result.updatetimems,
             clienttimems: result.clienttimems,
@@ -45,6 +47,10 @@ function updateSelectedGroup({ favorites, selectedGroupName, result, id }) {
             hidden: false,
             id: getUniqFileId(file),
         };
+        Object.keys(result.data).forEach((d) => {
+            newGroup[d] = result.data[d];
+        });
+
         favorites.groups.push(newGroup);
     }
     return favorites;
@@ -53,12 +59,15 @@ function updateSelectedGroup({ favorites, selectedGroupName, result, id }) {
 function updateGroupData(object, result) {
     object.updatetimems = result.updatetimems;
     object.pointsGroups = result.data.pointsGroups;
-    let file = Object.assign({}, object.file);
     Object.keys(result.data).forEach((d) => {
-        file[d] = result.data[d];
+        object[d] = result.data[d];
     });
+
+    const file = Object.assign({}, object.file);
+    file.updatetimems = result.updatetimems;
     object.file = file;
     object.id = getUniqFileId(file);
+
     return object;
 }
 

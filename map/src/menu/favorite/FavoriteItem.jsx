@@ -29,30 +29,32 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
 
     function addFavoriteToMap(marker) {
         ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
-        let newSelectedGpxFile = {};
+
+        const newSelectedGpxFile = {};
         newSelectedGpxFile.markerCurrent = marker;
         if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
             newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
         }
-        let file;
+        let trackData;
         Object.keys(ctx.favorites.mapObjs).forEach((fileId) => {
             if (fileId === group.id) {
                 newSelectedGpxFile.nameGroup = group.name;
                 Object.values(ctx.favorites.mapObjs[fileId].markers._layers).forEach((m) => {
                     if (m.options.name === marker.name) {
-                        file = ctx.favorites.mapObjs[fileId];
+                        trackData = ctx.favorites.mapObjs[fileId];
                     }
                 });
             }
         });
         newSelectedGpxFile.id = group.id;
-        newSelectedGpxFile.file = file;
+        newSelectedGpxFile.trackData = trackData;
         newSelectedGpxFile.sharedWithMe = sharedFile;
-        newSelectedGpxFile.file.name = ctx.favorites.groups.find((g) => g.name === group.name).file.name;
+        newSelectedGpxFile.file = ctx.favorites.groups.find((g) => g.name === group.name).file;
         newSelectedGpxFile.name = marker.name;
         newSelectedGpxFile.zoom = true;
         newSelectedGpxFile.prevState = ctx.selectedGpxFile;
         newSelectedGpxFile.favItem = true;
+
         ctx.setSelectedWpt(newSelectedGpxFile);
         ctx.setSelectedGpxFile(newSelectedGpxFile);
     }
