@@ -193,7 +193,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             return getDataFromWpt(type, ctx.selectedWpt);
         } else if (type?.isFav || type?.isShareFav) {
             const markerName = ctx.selectedWpt.markerCurrent.name;
-            const wpts = ctx.selectedWpt.file?.wpts ?? ctx.selectedWpt.wpts;
+            const wpts = ctx.selectedWpt.trackData?.wpts ?? ctx.selectedWpt.wpts;
             const currentWpt = wpts.find((p) => p.name === markerName);
             if (currentWpt) {
                 return getDataFromWpt(type, ctx.selectedWpt, currentWpt);
@@ -227,9 +227,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             if (type?.isWpt) {
                 tags = await WptTagsProvider.getWptTags(ctx.selectedWpt, type, ctx);
             } else if (type?.isFav || type?.isShareFav) {
-                let markerName = ctx.selectedWpt.markerCurrent.name;
-                const wpts = ctx.selectedWpt.file?.wpts ?? ctx.selectedWpt.wpts;
-                let currentWpt = wpts.find((p) => p.name === markerName);
+                const markerName = ctx.selectedWpt.markerCurrent.name;
+                const wpts = ctx.selectedWpt.trackData?.wpts ?? ctx.selectedWpt.wpts;
+                const currentWpt = wpts.find((p) => p.name === markerName);
                 if (currentWpt) {
                     tags = await WptTagsProvider.getWptTags(currentWpt, type, ctx);
                 }
@@ -317,8 +317,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         return {
             type: type,
             file: selectedWpt.file,
+            trackData: selectedWpt.trackData,
             groupId: selectedWpt.id,
-            sharedWithMe: selectedWpt.sharedWithMe,
+            sharedWithMe: selectedWpt.file.sharedWithMe,
             name: currentWpt.name,
             desc: currentWpt.desc,
             hidden: currentWpt.hidden,
@@ -642,7 +643,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     function getWptGroup(wpt) {
         let groupStr = wpt.category ?? 'Favorites';
-        const groupLength = wpt.file ? wpt.file.wpts.length : wpt?.wpts?.length;
+        const groupLength = wpt.trackData ? wpt.trackData.wpts.length : wpt?.wpts?.length;
         if (groupLength) {
             groupStr += ` (${groupLength})`;
         }

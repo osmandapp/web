@@ -64,12 +64,12 @@ export default function DeleteWptDialog({
     }
 
     async function deleteFavorite() {
-        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites.mapObjs[wpt.groupId].wpts;
+        const arrWpt = useSelected ? ctx.selectedGpxFile.trackData.wpts : ctx.favorites.mapObjs[wpt.groupId].wpts;
         const groupName = useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category;
         const id = useSelected ? ctx.selectedGpxFile.id : wpt.groupId;
         const groupFullName = useSelected ? ctx.selectedGpxFile.file.name : wpt.group.file.name;
         const currentWptName = useSelected ? ctx.selectedGpxFile.markerCurrent.name : wpt.name;
-        const selectedGroup = useSelected ? ctx.selectedGpxFile : ctx.favorites.groups.find((g) => g.id === id);
+        const selectedGroup = ctx.favorites.groups.find((g) => g.id === id);
         for (let i = 0; i < arrWpt.length; i++) {
             if (arrWpt[i].name === currentWptName) {
                 const result = await FavoritesManager.deleteFavorite(

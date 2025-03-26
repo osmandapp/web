@@ -16,6 +16,8 @@ export default async function test() {
     const favGroupName = 'favorites-shops';
     const shortFavGroupName = 'shops';
     const wptName = 'Test wpt';
+    const wptName2 = 'Test wpt 2';
+
     const suffix = '-edited';
 
     const favorites = getFiles({ folder: 'favorites' });
@@ -62,6 +64,14 @@ export default async function test() {
     await clickBy(By.id('se-delete-fav-dialog-submit'));
     await waitByRemoved(By.id(`se-actions-${wptName}${suffix}`));
     await waitByRemoved(By.id(`se-fav-item-name-${wptName}${suffix}`));
+
+    await clickBy(By.id(`se-actions-${wptName2}`));
+    await waitBy(By.id('se-fav-item-actions'));
+    await clickBy(By.id('se-delete-fav-item'));
+    await waitBy(By.id('se-delete-fav-dialog'));
+    await clickBy(By.id('se-delete-fav-dialog-submit'));
+    await waitByRemoved(By.id(`se-actions-${wptName2}`));
+    await waitByRemoved(By.id(`se-fav-item-name-${wptName}`));
 
     await clickBy(By.id('se-back-folder-button'));
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));

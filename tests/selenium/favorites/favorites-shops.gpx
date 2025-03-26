@@ -16,6 +16,18 @@
     </extensions>
   </wpt>
   <wpt lat="52.355944" lon="4.8947622">
+      <time>2023-04-01T08:12:01Z</time>
+      <name>Test wpt 2</name>
+      <type>shops</type>
+      <extensions>
+        <osmand:address>test address</osmand:address>
+        <osmand:icon>shop_department_store</osmand:icon>
+        <osmand:background>circle</osmand:background>
+        <osmand:amenity_origin>Amenity:Albert Cuyp market: shop:marketplace</osmand:amenity_origin>
+        <osmand:color>#b300ff</osmand:color>
+      </extensions>
+    </wpt>
+  <wpt lat="52.355944" lon="4.8947622">
     <time>2023-03-16T19:04:15Z</time>
     <name>Albert Cuypstraat (De Pijp) 187 second hand</name>
     <type>shops</type>

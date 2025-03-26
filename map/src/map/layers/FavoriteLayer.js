@@ -95,6 +95,13 @@ const FavoriteLayer = () => {
     }, [ctx.zoomToFavGroup]);
 
     useEffect(() => {
+        if (ctx.removeFavGroup) {
+            removeMarkersFromMap(ctx.removeFavGroup);
+            ctx.setRemoveFavGroup(null);
+        }
+    }, [ctx.removeFavGroup]);
+
+    useEffect(() => {
         if (!ctx.loginUser) {
             // If there is no logged-in user, remove all favorites layers.
             map.eachLayer((layer) => {
@@ -110,7 +117,7 @@ const FavoriteLayer = () => {
         // created favorites markers and move them to ctx.favorites for adding to map
         if (ctx.updateMarkers) {
             ctx.setFavorites(() => {
-                let favoritesGroups = { ...ctx.updateMarkers };
+                const favoritesGroups = { ...ctx.updateMarkers };
                 favoritesGroups.mapObjs = Object.keys(favoritesGroups.mapObjs).reduce((group, key) => {
                     const file = favoritesGroups.mapObjs[key];
                     if (!file.markers) {
@@ -211,6 +218,10 @@ const FavoriteLayer = () => {
                 updateMarkerZIndex(mainLayersGroup, 2000);
                 file.markersOnMap = res;
             }
+        } else {
+            if (file.markersOnMap) {
+                map.removeLayer(file.markersOnMap);
+            }
         }
     }
 
@@ -263,7 +274,7 @@ const FavoriteLayer = () => {
     useEffect(() => {
         if (ctx.selectedGpxFile?.markerCurrent?.layer) {
             // if the group is hidden, then only zoom to the group markers
-            if (ctx.configureMapState.showFavorites && ctx.selectedGpxFile.file.hidden !== 'true') {
+            if (ctx.configureMapState.showFavorites && ctx.selectedGpxFile?.trackData?.hidden !== 'true') {
                 if (!map.hasLayer(ctx.selectedGpxFile.markerCurrent.layer)) {
                     const layer = ctx.selectedGpxFile.markerCurrent.layer;
                     layer.addTo(map).on('click', onClick);
@@ -286,6 +297,11 @@ const FavoriteLayer = () => {
         (e) => {
             ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
             ctx.selectedGpxFile = {};
+            ctx.selectedGpxFile.trackData = { ...ctx.favorites.mapObjs[e.sourceTarget.options.groupId] };
+
+            const groupWithOriginalFile = ctx.favorites.groups?.find((g) => g.id === e.sourceTarget.options.groupId);
+            ctx.selectedGpxFile.file = groupWithOriginalFile.file;
+
             ctx.selectedGpxFile.prevState = _.cloneDeep(selectedGpxFileRef.current);
             ctx.selectedGpxFile.markerCurrent = {
                 name: e.sourceTarget.options.name,
@@ -296,8 +312,8 @@ const FavoriteLayer = () => {
             ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category
                 ? e.sourceTarget.options.category
                 : FavoritesManager.DEFAULT_GROUP_NAME;
-            ctx.selectedGpxFile.file = Object.assign({}, ctx.favorites.mapObjs[e.sourceTarget.options.groupId]);
             ctx.selectedGpxFile.id = e.sourceTarget.options.groupId;
+
             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
             ctx.setSelectedWpt(ctx.selectedGpxFile);
         },
