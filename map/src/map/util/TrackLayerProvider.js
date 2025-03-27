@@ -19,7 +19,7 @@ export const POINTS_SIMPLIFY_ZOOM_THRESHOLD = 17;
 
 function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE, simplifyWpts = false }) {
     const layers = [];
-    const trackApp = data.trackAppearance;
+    const trackAppearance = data.trackAppearance;
     data.tracks?.forEach((track) => {
         if (track.points?.length > 0) {
             const res = parsePoints({
@@ -28,9 +28,9 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
                 points: track.points,
                 layers,
                 hidden: true,
-                trackApp,
+                trackAppearance,
             });
-            if (trackApp?.showStartFinish !== false) {
+            if (trackAppearance?.showStartFinish !== false) {
                 addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
             }
         }
@@ -44,12 +44,22 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
     }
 }
 
-function parsePoints({ map, ctx, points, layers, draggable = false, hidden = false, trackApp = null }) {
+function parsePoints({ map, ctx, points, layers, draggable = false, hidden = false, trackAppearance = null }) {
     let coordsTrk = [];
     let coordsAll = [];
     points.forEach((point, index) => {
         if (point.geometry !== undefined && point.geometry !== null) {
-            coordsAll = drawRoutePoints({ map, points, point, coordsAll, layers, ctx, draggable, index, trackApp });
+            coordsAll = drawRoutePoints({
+                map,
+                points,
+                point,
+                coordsAll,
+                layers,
+                ctx,
+                draggable,
+                index,
+                trackAppearance,
+            });
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng));
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
@@ -114,7 +124,7 @@ function addStartEnd(points, layers, coordsTrk, coordsAll) {
     }
 }
 
-function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable, index, trackApp }) {
+function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable, index, trackAppearance }) {
     let coords = [];
 
     // draw tempLine for orphaned empty geo but not for gap
@@ -147,7 +157,7 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
         if (p.profile === TracksManager.PROFILE_GAP && coords.length > 0) {
             addStartEndGap(point, points, layers, draggable);
             coords.push(new L.LatLng(p.lat, p.lng));
-            layers.push(createPolyline({ coords, ctx, map, point, points, trackApp }));
+            layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance }));
             coordsAll = coordsAll.concat(Object.assign([], coords));
             coords = [];
         } else {
@@ -157,17 +167,17 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
 
     if (coords.length > 0) {
         coordsAll = coordsAll.concat(Object.assign([], coords));
-        layers.push(createPolyline({ coords, ctx, map, point, points, trackApp }));
+        layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance }));
     }
 
     return coordsAll;
 }
 
-function createPolyline({ coords, ctx, map, point, points, trackApp }) {
-    const color = trackApp?.color ?? ctx.trackRouter.getColor(getPointGeoProfile(point, points));
-    const width = trackApp?.width ?? 'medium';
+function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
+    const color = trackAppearance?.color ?? ctx.trackRouter.getColor(getPointGeoProfile(point, points));
+    const width = trackAppearance?.width ?? 'medium';
     const arrowSettings = {
-        show: trackApp?.showArrows,
+        show: trackAppearance?.showArrows,
         color: 'white',
     };
     const polyline = new L.Polyline(coords, {
@@ -266,22 +276,22 @@ function getPolylineWeight(width, zoom) {
         if (zoom <= 15) return 4;
         return 5;
     } else if (width === 'medium') {
-        if (zoom <= 10) return 2;
-        if (zoom <= 13) return 5;
-        if (zoom <= 15) return 6;
-        return 7;
+        getDefaultWeight(zoom);
     } else if (width === 'bold') {
         if (zoom <= 10) return 2;
         if (zoom <= 13) return 6;
         if (zoom <= 15) return 9;
         return 11;
     } else {
-        // default
-        if (zoom <= 10) return 2;
-        if (zoom <= 13) return 5;
-        if (zoom <= 15) return 6;
-        return 7;
+        getDefaultWeight(zoom);
     }
+}
+
+function getDefaultWeight(zoom) {
+    if (zoom <= 10) return 2;
+    if (zoom <= 13) return 5;
+    if (zoom <= 15) return 6;
+    return 7;
 }
 
 function getArrowStep(zoom) {
@@ -304,19 +314,20 @@ function getArrowWidth(width, zoom) {
     if (width === 'thin') {
         return 1;
     } else if (width === 'medium') {
-        if (zoom <= 13) return 1;
-        if (zoom <= 15) return 2;
-        return 2;
+        getDefaultArrowWidth(zoom);
     } else if (width === 'bold') {
         if (zoom <= 13) return 2;
         if (zoom <= 15) return 3;
         return 3;
     } else {
-        // default
-        if (zoom <= 13) return 1;
-        if (zoom <= 15) return 2;
-        return 2;
+        getDefaultArrowWidth(zoom);
     }
+}
+
+function getDefaultArrowWidth(zoom) {
+    if (zoom <= 13) return 1;
+    if (zoom <= 15) return 2;
+    return 2;
 }
 
 function addStartEndGap(point, allPoints, layers, editTrack) {
