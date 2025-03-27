@@ -54,6 +54,8 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 
 - **Point of Interest (POI) search:**
     - Allows you to search for nearby or specific categories of points of interest (POI) such as restaurants, hotels, gas stations, stores, and others.
+    
+    - Allows you to search [OSM routes](../map/routes.md). 
 
     - Filters and sorting results by category, distance, or rating are possible.
 
@@ -101,11 +103,11 @@ To accomplish some of these tasks (locate addresses, POI) you will need to have 
 
 </Tabs>
 
-The **POI Search by Categories** tool allows you to quickly find locations and objects of interest classified into different categories. Each POI category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics.
+The **POI Search by Categories** tool allows you to quickly find locations, OSM routes, and objects of interest classified into different categories. Each POI category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics.
 
 How it works:
 
-- *Category Selection.* You select the POI category you are interested in, such as restaurants, hotels, stores, and others, from a suggested list of categories.
+- *Category Selection.* You select the POI category you are interested in, such as restaurants, hotels, stores, OSM routes, and others, from a suggested list of categories.
 - *Characteristic Filters.* After selecting a POI category, the application shows additional characteristics that can be used to refine the search. For example, for the Restaurants category, you can select filters such as cuisine type (Italian, Chinese, etc.), price range, rating, and parking availability.
 - *Applying Filters.* You select the required values in the filters, and then the application applies these filters to the search results to show only those properties that match the specified characteristics.
 - *Displaying results.* After applying filters, the application displays a list of POIs matching the category and characteristics set. The results are presented as a list with brief information about each POI.
@@ -142,7 +144,7 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 </Tabs>
 
-You can use the **Filter** function to select the necessary characteristics for a POI, and the result is a list containing only the relevant objects. To use the filter:
+You can use the **Filter** function to select the necessary characteristics for a POI, OSM routes and the result is a list containing only the relevant objects. To use the filter:
 
 - Select the category you are interested in from the category list.
 - On the screen that opens, tap the icon that displays the filter. It is located below the input field, next to *Show on the map*.
@@ -197,8 +199,8 @@ A filter can consist of quite a number of items, the presence of which depends o
  15. **<Translate android="true" ids="poi_filter_public_transport"/>**. It is a transportation system designed to carry people for public purposes, accessible to all residents and visitors to a city or region.  
         Includes *9* types of filters.
 
- 16. **Routes**. These are defined paths or directions along which a vehicle or pedestrian travels, usually with precise instructions on how to follow them.
-        Includes *2* types of filters.
+ 16. **Routes**. These are defined [OSM Routes](../map/routes.md) for any activities like driving, cycling, motorcycling and others.   
+        Includes *14* types of filters: Checkpoint type, Cycling network node type, Hiking network node type, Routes network (cycling), Routes network (hiking), Route point category, Air Sports, Cycling, Driving, Foot, Motorcycling, Other routes, Water sports, Winter sports.
 
  17. **Sightseeing**. It is an activity in which people visit interesting places or sites to familiarize themselves with them and enjoy their beauty, history or significance.  
         Includes *8* types of filters.
