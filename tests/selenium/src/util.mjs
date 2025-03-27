@@ -5,7 +5,7 @@ import { readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import actionIdleWait from './actions/actionIdleWait.mjs';
 
-export function getFiles({ folder = 'gpx' }) {
+export function getFiles({ folder = 'gpx', filter = true }) {
     const files = [];
     // convert mask (support only * as wildcard, eg *wiki*.gpx)
     const regexp = '*.gpx'.replaceAll('.', '\\.').replaceAll('*', '.*');
@@ -19,7 +19,7 @@ export function getFiles({ folder = 'gpx' }) {
                 files.push({ file, name, path });
             }
         });
-    return files.filter((f) => f.name !== 'favorites-Castle Bromwich зміна назви ще раз    _-__-__-_');
+    return filter ? files.filter((f) => f.name !== 'favorites-Castle Bromwich зміна назви ще раз    _-__-__-_') : files;
 }
 
 export async function createFolder(name) {
