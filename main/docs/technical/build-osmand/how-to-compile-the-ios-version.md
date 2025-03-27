@@ -24,6 +24,15 @@ sidebar_position: 6
 5. Install command-line tools- cmake, svn, cocoapods
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # for intel
+  $ echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zshrc
+  $ eval "$(/usr/local/bin/brew shellenv)"
+
+  # for m1
+  $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+  $ eval "$(/opt/homebrew/bin/brew shellenv)"
+
   $ brew install svn
   $ brew install cmake # tested on 3.25.2, 3.19, 3.11
 
