@@ -17,12 +17,24 @@ export const WPT_SIMPLIFY_THRESHOLD = 500;
 export const POINTS_SIMPLIFY_THRESHOLD = 1000;
 export const POINTS_SIMPLIFY_ZOOM_THRESHOLD = 17;
 
+export const DEFAULT_TRACK_LINE_WEIGHT = 7;
+
 function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE, simplifyWpts = false }) {
-    let layers = [];
+    const layers = [];
+    const trackAppearance = data.trackAppearance;
     data.tracks?.forEach((track) => {
         if (track.points?.length > 0) {
-            let res = parsePoints({ map, ctx, points: track.points, layers, hidden: true });
-            addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
+            const res = parsePoints({
+                map,
+                ctx,
+                points: track.points,
+                layers,
+                hidden: true,
+                trackAppearance,
+            });
+            if (trackAppearance?.showStartFinish !== false) {
+                addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
+            }
         }
     });
     parseWpt({ points: data.wpts, layers, ctx, data, map, simplify: simplifyWpts, groupId });
@@ -34,12 +46,22 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
     }
 }
 
-function parsePoints({ map, ctx, points, layers, draggable = false, hidden = false }) {
+function parsePoints({ map, ctx, points, layers, draggable = false, hidden = false, trackAppearance = null }) {
     let coordsTrk = [];
     let coordsAll = [];
     points.forEach((point, index) => {
         if (point.geometry !== undefined && point.geometry !== null) {
-            coordsAll = drawRoutePoints({ map, points, point, coordsAll, layers, ctx, draggable, index });
+            coordsAll = drawRoutePoints({
+                map,
+                points,
+                point,
+                coordsAll,
+                layers,
+                ctx,
+                draggable,
+                index,
+                trackAppearance,
+            });
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng));
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
@@ -104,7 +126,7 @@ function addStartEnd(points, layers, coordsTrk, coordsAll) {
     }
 }
 
-function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable, index }) {
+function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable, index, trackAppearance }) {
     let coords = [];
 
     // draw tempLine for orphaned empty geo but not for gap
@@ -137,7 +159,7 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
         if (p.profile === TracksManager.PROFILE_GAP && coords.length > 0) {
             addStartEndGap(point, points, layers, draggable);
             coords.push(new L.LatLng(p.lat, p.lng));
-            layers.push(createPolyline(coords, ctx, point, points));
+            layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance }));
             coordsAll = coordsAll.concat(Object.assign([], coords));
             coords = [];
         } else {
@@ -147,20 +169,167 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
 
     if (coords.length > 0) {
         coordsAll = coordsAll.concat(Object.assign([], coords));
-        layers.push(createPolyline(coords, ctx, point, points));
+        layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance }));
     }
 
     return coordsAll;
 }
 
-function createPolyline(coords, ctx, point, points) {
-    let polyline = new L.Polyline(coords, getPolylineOpt());
-    if (ctx) {
-        polyline.setStyle({
-            color: ctx.trackRouter.getColor(getPointGeoProfile(point, points)),
+function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
+    const color = trackAppearance?.color ?? ctx.trackRouter.getColor(getPointGeoProfile(point, points));
+    const width = trackAppearance?.width ?? 'medium';
+    const arrowSettings = {
+        show: trackAppearance?.showArrows,
+        color: 'white',
+    };
+    const polyline = new L.Polyline(coords, {
+        color,
+        weight: getPolylineWeight(width, map.getZoom()),
+        ...(arrowSettings.show ? { renderer: L.svg() } : {}),
+    });
+
+    if (!arrowSettings.show) return polyline;
+
+    polyline.on('add', function () {
+        renderArrows({ polyline, lineWidth: width, coords, map, arrowSettings });
+
+        const updateStyle = () => {
+            const z = map.getZoom();
+            polyline.setStyle({
+                weight: getPolylineWeight(width, z),
+            });
+            renderArrows({ polyline, lineWidth: width, coords, map, arrowSettings });
+        };
+
+        map.on('zoomend moveend', updateStyle);
+
+        polyline.on('redraw-arrows', updateStyle);
+
+        polyline.on('remove', () => {
+            map.off('zoomend moveend', updateStyle);
+            const svg = polyline._renderer?._container;
+            if (svg) {
+                svg.querySelectorAll('.arrowhead').forEach((el) => el.remove());
+            }
         });
-    }
+    });
+
     return polyline;
+}
+
+function renderArrows({ polyline, lineWidth, coords, map, arrowSettings }) {
+    const step = getArrowStep(map.getZoom());
+    const size = getArrowSize(map.getZoom());
+    const width = getArrowWidth(lineWidth, map.getZoom());
+
+    const svg = polyline._renderer._container;
+
+    svg.querySelectorAll('.arrowhead').forEach((el) => el.remove());
+
+    const pixelPoints = coords.map((latlng) => map.latLngToLayerPoint(latlng));
+
+    const segments = [];
+    let totalLength = 0;
+    for (let i = 0; i < pixelPoints.length - 1; i++) {
+        const p1 = pixelPoints[i];
+        const p2 = pixelPoints[i + 1];
+        const dx = p2.x - p1.x;
+        const dy = p2.y - p1.y;
+        const length = Math.hypot(dx, dy);
+        segments.push({ p1, p2, length });
+        totalLength += length;
+    }
+
+    const count = Math.floor(totalLength / step);
+    for (let i = 1; i <= count; i++) {
+        const dist = i * step;
+        let acc = 0;
+        for (let seg of segments) {
+            if (acc + seg.length >= dist) {
+                const t = (dist - acc) / seg.length;
+                const x = seg.p1.x + (seg.p2.x - seg.p1.x) * t;
+                const y = seg.p1.y + (seg.p2.y - seg.p1.y) * t;
+                const angle = (Math.atan2(seg.p2.y - seg.p1.y, seg.p2.x - seg.p1.x) * 180) / Math.PI;
+
+                const aw = width;
+                const path = [`M ${-size} ${-aw}`, `L 0 0`, `L ${-size} ${aw}`, `L ${-size + 2} 0`, `Z`].join(' ');
+
+                const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                arrow.setAttribute('class', 'arrowhead');
+                arrow.setAttribute('d', path);
+                arrow.setAttribute('fill', arrowSettings.color);
+                arrow.setAttribute('transform', `translate(${x}, ${y}) rotate(${angle})`);
+                svg.appendChild(arrow);
+                break;
+            }
+            acc += seg.length;
+        }
+    }
+}
+
+function getPolylineWeight(width, zoom) {
+    if (typeof width === 'number') {
+        const scale = Math.min(1, zoom / 12);
+        return Math.max(1, Math.round(width * scale));
+    }
+    if (width === 'thin') {
+        if (zoom <= 10) return 2;
+        if (zoom <= 13) return 3;
+        if (zoom <= 15) return 4;
+        return 5;
+    } else if (width === 'medium') {
+        return getDefaultWeight(zoom);
+    } else if (width === 'bold') {
+        if (zoom <= 10) return 2;
+        if (zoom <= 13) return 6;
+        if (zoom <= 15) return 9;
+        return 11;
+    } else {
+        return getDefaultWeight(zoom);
+    }
+}
+
+function getDefaultWeight(zoom) {
+    if (zoom <= 10) return 2;
+    if (zoom <= 13) return 5;
+    if (zoom <= 15) return 6;
+    return 7;
+}
+
+function getArrowStep(zoom) {
+    if (zoom <= 13) return 10;
+    if (zoom <= 15) return 20;
+    return 30;
+}
+
+function getArrowSize(zoom) {
+    if (zoom <= 13) return 5;
+    if (zoom <= 15) return 8;
+    return 10;
+}
+
+function getArrowWidth(width, zoom) {
+    if (typeof width === 'number') {
+        const scale = Math.min(1, zoom / 12);
+        return Math.max(1, Math.round(width * 0.25 * scale));
+    }
+    if (width === 'thin') {
+        return 1;
+    } else if (width === 'medium') {
+        return getDefaultArrowWidth(zoom);
+    } else if (width === 'bold') {
+        if (zoom <= 13) return 2;
+        if (zoom <= 15) return 3;
+        return 3;
+    } else {
+        return getDefaultArrowWidth(zoom);
+    }
+}
+
+function getDefaultArrowWidth(zoom) {
+    if (zoom <= 13) return 1;
+    if (zoom <= 15) return 2;
+    return 2;
 }
 
 function addStartEndGap(point, allPoints, layers, editTrack) {
@@ -260,7 +429,7 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null, simplif
                 marker.on('click', (e) => {
                     const wpt = {
                         trackWpt: true,
-                        file: data,
+                        trackData: data,
                         ...e,
                         ...point,
                     };
