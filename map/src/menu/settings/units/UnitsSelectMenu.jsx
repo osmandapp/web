@@ -27,8 +27,8 @@ export default function UnitsSelectMenu({ unit, setOpenList }) {
     const UnitRadioMenu = () => {
         const keys = Object.keys(unit.list);
         const dividerIndexes = {
-            len: [1, 4],
-            speed: [3, 5],
+            len: [0, 3],
+            speed: [2, 4],
         };
 
         if (!dividerIndexes[unit.type]) return null;
