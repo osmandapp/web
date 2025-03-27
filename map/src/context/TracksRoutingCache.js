@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import TracksManager from '../manager/track/TracksManager';
 import EditablePolyline from '../map/util/creator/EditablePolyline';
+import { DEFAULT_TRACK_LINE_WEIGHT } from '../map/util/TrackLayerProvider';
 
 const MAX_STARTED_ROUTER_JOBS = 6;
 export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
@@ -183,7 +184,7 @@ function refreshTempLine({ ctx, geometry, track, tempLine, color }) {
     // don't destroy tempLine (empty geo)
     if (geometry && geometry.length > 0) {
         const polyline = new EditablePolyline(null, ctx, geometry, null, track).create(); // latlngs-only
-        tempLine.setStyle({ color, dashArray: null, weight: 7 });
+        tempLine.setStyle({ color, dashArray: null, weight: DEFAULT_TRACK_LINE_WEIGHT });
         tempLine.setLatLngs(polyline._latlngs);
         tempLine.options.name = undefined;
     } else {

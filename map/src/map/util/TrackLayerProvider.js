@@ -17,6 +17,8 @@ export const WPT_SIMPLIFY_THRESHOLD = 500;
 export const POINTS_SIMPLIFY_THRESHOLD = 1000;
 export const POINTS_SIMPLIFY_ZOOM_THRESHOLD = 17;
 
+export const DEFAULT_TRACK_LINE_WEIGHT = 7;
+
 function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE, simplifyWpts = false }) {
     const layers = [];
     const trackAppearance = data.trackAppearance;
