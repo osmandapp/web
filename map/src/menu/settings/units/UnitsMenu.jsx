@@ -7,7 +7,7 @@ import i18n from '../../../i18n';
 export const units = {
     len: {
         type: 'len',
-        title: 'Units of length',
+        title: i18n?.t('unit_of_length'),
         icon: <UnitsLengthIcon />,
         list: {
             si_km_m: i18n?.t('si_km_m'),
@@ -21,7 +21,7 @@ export const units = {
     },
     speed: {
         type: 'speed',
-        title: 'Unit of speed',
+        title: i18n?.t('default_speed_system'),
         icon: <UnitsSpeedIcon />,
         list: {
             si_kmh: i18n?.t('si_kmh'),
