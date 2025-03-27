@@ -2,12 +2,11 @@ import React from 'react';
 import { ReactComponent as UnitsLengthIcon } from '../../../assets/icons/ic_action_ruler_unit.svg';
 import { ReactComponent as UnitsSpeedIcon } from '../../../assets/icons/ic_action_speed.svg';
 import UnitsMenuItem from './UnitsMenuItem';
-import i18n from '../../../i18n';
 
 export const units = {
     len: {
         type: 'len',
-        title: i18n?.t('unit_of_length'),
+        title: 'unit_of_length',
         icon: <UnitsLengthIcon />,
         list: {
             si_km_m: 'si_km_m',
@@ -21,7 +20,7 @@ export const units = {
     },
     speed: {
         type: 'speed',
-        title: i18n?.t('default_speed_system'),
+        title: 'default_speed_system',
         icon: <UnitsSpeedIcon />,
         list: {
             si_kmh: 'si_kmh',
