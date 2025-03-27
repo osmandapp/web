@@ -278,14 +278,14 @@ function getPolylineWeight(width, zoom) {
         if (zoom <= 15) return 4;
         return 5;
     } else if (width === 'medium') {
-        getDefaultWeight(zoom);
+        return getDefaultWeight(zoom);
     } else if (width === 'bold') {
         if (zoom <= 10) return 2;
         if (zoom <= 13) return 6;
         if (zoom <= 15) return 9;
         return 11;
     } else {
-        getDefaultWeight(zoom);
+        return getDefaultWeight(zoom);
     }
 }
 
@@ -316,13 +316,13 @@ function getArrowWidth(width, zoom) {
     if (width === 'thin') {
         return 1;
     } else if (width === 'medium') {
-        getDefaultArrowWidth(zoom);
+        return getDefaultArrowWidth(zoom);
     } else if (width === 'bold') {
         if (zoom <= 13) return 2;
         if (zoom <= 15) return 3;
         return 3;
     } else {
-        getDefaultArrowWidth(zoom);
+        return getDefaultArrowWidth(zoom);
     }
 }
 
