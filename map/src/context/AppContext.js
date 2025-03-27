@@ -389,6 +389,7 @@ export const AppContextProvider = (props) => {
     });
     const [processingGroups, setProcessingGroups] = useState(false);
     const [favLoading, setFavLoading] = useState(false);
+    const [removeFavGroup, setRemoveFavGroup] = useState(null);
 
     const [localTracks, setLocalTracks] = useState([]);
     const [visibleTracks, setVisibleTracks] = useState({});
@@ -842,6 +843,8 @@ export const AppContextProvider = (props) => {
                 setUpdateFiles,
                 unitsSettings,
                 setUnitsSettings,
+                removeFavGroup,
+                setRemoveFavGroup,
             }}
         >
             {props.children}

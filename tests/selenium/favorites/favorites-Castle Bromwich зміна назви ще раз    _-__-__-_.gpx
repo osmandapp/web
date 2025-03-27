@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<gpx version="1.1" creator="OsmAnd~ 5.0.0#4768m" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx" xmlns:gpxtpx="https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name></name>
+  </metadata>
+  <wpt lat="52.506916" lon="-1.7860454">
+    <time>2025-01-19T14:11:03Z</time>
+    <name>Castle Bromwich</name>
+    <type>Castle Bromwich зміна назви ще раз    :::</type>
+    <extensions>
+      <osmand:address> Listelow Close, Castle Bromwich</osmand:address>
+      <osmand:color>#EECC22</osmand:color>
+      <osmand:icon>place_town</osmand:icon>
+    </extensions>
+  </wpt>
+  <wpt lat="52.506916" lon="-1.7860454">
+    <time>2025-01-19T14:11:03Z</time>
+    <name>Castle Bromwich</name>
+    <type>Castle Bromwich зміна назви ще раз    :::</type>
+    <extensions>
+      <osmand:address> Listelow Close, Castle Bromwich</osmand:address>
+      <osmand:color>#EECC22</osmand:color>
+      <osmand:icon>place_town</osmand:icon>
+    </extensions>
+  </wpt>
+  <extensions>
+    <osmand:points_groups>
+      <group name="Castle Bromwich зміна назви ще раз    :::" color="#88E030" icon="special_star" background="circle" />
+    </osmand:points_groups>
+  </extensions>
+</gpx>

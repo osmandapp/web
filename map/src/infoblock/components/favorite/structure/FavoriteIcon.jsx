@@ -112,8 +112,8 @@ export default function FavoriteIcon({
         );
 
     function getTabUsedIcons() {
-        let res = [];
-        let wpts = selectedGpxFile.file ? selectedGpxFile.file.wpts : selectedGpxFile.wpts;
+        const res = [];
+        const wpts = selectedGpxFile?.trackData?.wpts ?? selectedGpxFile.wpts;
         wpts.forEach((wpt) => {
             if (!res.some((icon) => icon === wpt.icon)) {
                 wpt.icon && res.push(wpt.icon);

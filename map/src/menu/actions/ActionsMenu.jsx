@@ -16,7 +16,7 @@ export default function ActionsMenu({ open, setOpen, anchorEl, favItems = false,
                     vertical: 'top',
                     horizontal: 'right',
                 }}
-                sx={{ ml: favItems ? '-60px' : '8px', mt: favItems && '-120px' }}
+                sx={{ ml: favItems ? '-8px' : '8px', mt: favItems && '-8px' }}
                 open={open}
                 anchorEl={anchorEl?.current}
                 PaperProps={{

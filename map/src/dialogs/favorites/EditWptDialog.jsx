@@ -118,7 +118,7 @@ export default function EditWptDialog({
 
         const updatedWpt = {
             trackWpt: true,
-            file: ctx.selectedGpxFile,
+            trackData: ctx.selectedGpxFile.trackData,
             ...newWpt,
         };
         ctx.setSelectedWpt(updatedWpt);
@@ -139,11 +139,10 @@ export default function EditWptDialog({
         const oldGroupName = useSelected ? ctx.selectedGpxFile.file.name : wpt.group.file.name;
 
         const currentWpt = getCurrentWpt(selectedGroupName);
+        const arrWpt = useSelected ? ctx.selectedGpxFile.trackData?.wpts : ctx.favorites.mapObjs[selectedGroupId].wpts;
 
-        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites.mapObjs[selectedGroupId].wpts;
-
-        let newGroup = ctx.favorites.groups.find((g) => g.id === selectedGroupId);
-        let oldGroup = ctx.favorites.groups.find((g) => g.id === oldGroupId);
+        const newGroup = ctx.favorites.groups.find((g) => g.id === selectedGroupId);
+        const oldGroup = ctx.favorites.groups.find((g) => g.id === oldGroupId);
 
         const wptName = useSelected ? ctx.selectedGpxFile.name : wpt.name;
 
@@ -176,9 +175,9 @@ export default function EditWptDialog({
     }
 
     function getCurrentWpt(selectedGroupName) {
-        const group = useSelected ? ctx.selectedGpxFile.file : ctx.favorites.mapObjs[wpt.group.id];
+        const group = useSelected ? ctx.selectedGpxFile.trackData : ctx.favorites.mapObjs[wpt.group.id];
         let res = null;
-        let wpts = group ? group.wpts : ctx.selectedGpxFile.wpts;
+        const wpts = group?.wpts ?? ctx.selectedGpxFile.wpts;
         if (wpts) {
             wpts.forEach((w) => {
                 if (w.name === wpt.name) {

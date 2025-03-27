@@ -12,10 +12,15 @@ import DialogContentText from '@mui/material/DialogContentText';
 export default function DeleteFavGroupDialog({ setOpenDialog, group, setOpenActions, shared }) {
     const ctx = useContext(AppContext);
     async function deleteGroup() {
-        await deleteTrack({ file: group.file, ctx, type: FAVORITE_FILE_TYPE, shared });
+        const mapObj = ctx.favorites.mapObjs[group.id];
+        deleteTrack({ file: group.file, ctx, type: FAVORITE_FILE_TYPE, shared }).then(() => removeOldLayer(mapObj));
         if (setOpenActions) {
             setOpenActions(false);
         }
+    }
+
+    function removeOldLayer(group) {
+        ctx.setRemoveFavGroup(group);
     }
 
     function closeDialogs() {
