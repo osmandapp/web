@@ -16,7 +16,7 @@ export default async function test() {
     const favGroupName = 'favorites-Castle Bromwich зміна назви ще раз    _-__-__-_';
     const shortFavGroupName = 'Castle Bromwich зміна назви ще раз    :::';
 
-    const favorites = getFiles({ folder: 'favorites' });
+    const favorites = getFiles({ folder: 'favorites', filter: false });
     const { path } = favorites.find((t) => t.name === favGroupName);
 
     // prepare
