@@ -40,7 +40,7 @@ export default function UnitsSelectMenu({ unit, setOpenList }) {
                         <FormControlLabel
                             className={radioStyles.controlLabel}
                             value={key}
-                            control={<Radio />}
+                            control={<Radio sx={{ mr: '-12px', ml: '5px' }} />}
                             label={<UnitRadioItem label={unit.list[key]} />}
                         />
                         {dividerIndexes[unit.type].includes(index) && (
