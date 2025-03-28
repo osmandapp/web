@@ -94,7 +94,7 @@ Learn more:
 
 ![Route Guidance Widget](../../blog/2025-03-11-android-5-0/img/route_info_widget_2.png)
 
-The **Route Information widget** provides a clear overview of your journey by displaying **ETA (Estimated Time of Arrival), remaining travel time, and distance to the destination** in a compact format. Designed for real-time navigation, it ensures you have the most relevant travel details at a glance.  
+The **Route Information widget** provides a clear overview of your journey by displaying *ETA (Estimated Time of Arrival), remaining travel time, and distance to the destination* in a compact format. Designed for real-time navigation, it ensures you have the most relevant travel details at a glance.  
 
 Key features:
 
@@ -198,7 +198,7 @@ Key features:
 How to use:
 
 - Enable the **Wikipedia plugin** to access wikidata on the map and its settings in the Configure map menu.
-- Go to **Menu → Configure map → Popular places (Wikipedia)** to adjust settings for image previews, language preferences, and data sources.
+- Go to *Menu → Configure map → Popular places (Wikipedia)* to adjust settings for image previews, language preferences, and data sources.
 
 Learn more:  
 [Wikipedia Plugin](https://osmand.net/docs/user/plugins/wikipedia)  
