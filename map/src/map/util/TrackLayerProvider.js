@@ -268,32 +268,30 @@ function renderArrows({ polyline, lineWidth, coords, map, arrowSettings }) {
 }
 
 function getPolylineWeight(width, zoom) {
-    if (typeof width === 'number') {
-        const scale = Math.min(1, zoom / 12);
-        return Math.max(1, Math.round(width * scale));
-    }
     if (width === 'thin') {
         if (zoom <= 10) return 2;
         if (zoom <= 13) return 3;
         if (zoom <= 15) return 4;
         return 5;
     } else if (width === 'medium') {
-        return getDefaultWeight(zoom);
+        if (zoom <= 10) return 2;
+        if (zoom <= 13) return 5;
+        if (zoom <= 15) return 6;
+        return 7;
     } else if (width === 'bold') {
         if (zoom <= 10) return 2;
         if (zoom <= 13) return 6;
         if (zoom <= 15) return 9;
         return 11;
     } else {
-        return getDefaultWeight(zoom);
+        return getWeightNumber(zoom, width);
     }
 }
 
-function getDefaultWeight(zoom) {
-    if (zoom <= 10) return 2;
-    if (zoom <= 13) return 5;
-    if (zoom <= 15) return 6;
-    return 7;
+function getWeightNumber(zoom, width) {
+    const scale = Math.min(1, zoom / 12);
+    const normalized = 24 / Math.max(1, Number(width));
+    return Math.max(1, Math.round(normalized * 1.5 * scale));
 }
 
 function getArrowStep(zoom) {
