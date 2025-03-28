@@ -33,6 +33,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import { getRelativePosition } from 'chart.js/helpers';
+import { getLargeLengthUnit, getSmallLengthUnit, getSpeedUnit } from '../../../menu/settings/units/UnitsConverter';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles({
     slider: {
@@ -67,6 +69,8 @@ ChartJS.register(
 export default function MainGraph({ data, attrGraphData, showData, setSelectedPoint, width }) {
     const ctx = useContext(AppContext);
     const styles = useStyles();
+
+    const { t } = useTranslation();
 
     const [speedData, setSpeedData] = useState(null);
     const [eleData, setEleData] = useState(null);
@@ -340,7 +344,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                     callbacks: {
                         title: (context) => {
                             const xValue = context[0]?.parsed?.x;
-                            return `${xAxis}: ${xValue.toFixed(2)} km`;
+                            return `${xAxis}: ${xValue.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`;
                         },
                         label: (context) => {
                             let label = context.dataset.label || '';
@@ -349,10 +353,10 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                             }
                             const dimension =
                                 context.dataset.yAxisID === 'y1'
-                                    ? 'm'
+                                    ? t(getSmallLengthUnit(ctx))
                                     : context.dataset.yAxisID === 'y1Slope'
                                       ? '%'
-                                      : 'km/h';
+                                      : t(getSpeedUnit(ctx));
                             if (context.parsed.y !== null) {
                                 label += `${context.parsed.y.toFixed(0)} ${dimension}`;
                             }
@@ -439,7 +443,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                     },
                     title: {
                         display: true,
-                        text: 'distance in km',
+                        text: `distance in ${t(getLargeLengthUnit(ctx))}`,
                         color: '#757575',
                         font: {
                             size: 10,
@@ -459,7 +463,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                         },
                         maxTicksLimit: 6,
                         callback: (val) => {
-                            return parseFloat(val.toFixed(2)) + ' m';
+                            return parseFloat(val.toFixed(2)) + ` ${t(getSmallLengthUnit(ctx))}`;
                         },
                     },
                 },
@@ -476,7 +480,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                         padding: -5,
                         maxTicksLimit: 6,
                         callback: (val) => {
-                            return val + ' km/h';
+                            return val + ` ${t(getSpeedUnit(ctx))}`;
                         },
                     },
                     grid: {
@@ -510,7 +514,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
 
     const graphData = useMemo(
         () => ({
-            labels: dataGraph.filter((_, i) => i % sliderStep === 0).map((d) => d[xAxis].toFixed(1)),
+            labels: dataGraph.filter((_, i) => i % sliderStep === 0).map((d) => d[xAxis]?.toFixed(1)),
             datasets: [
                 {
                     label: y1Axis[0],
@@ -582,7 +586,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
     }
 
     const valueLabelFormat = useMemo(() => {
-        return (value) => `${dataGraph[value][xAxis].toFixed(1)}  km`;
+        return (value) => `${dataGraph[value][xAxis].toFixed(1)}  ${t(getLargeLengthUnit(ctx))}`;
     }, [dataGraph, xAxis]);
 
     function hideSelectedPoint() {

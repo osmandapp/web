@@ -86,6 +86,7 @@ import { iconPathMap, SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLaye
 import capitalize from 'lodash/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import { LatLng } from 'leaflet';
+import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../../menu/settings/units/UnitsConverter';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
@@ -672,7 +673,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     location = getCenterMapLoc(delayedHash);
                 }
                 return (
-                    (getDistance(location.lat, location.lng, wpt.latlon.lat, wpt.latlon.lon) / 1000).toFixed(0) + ' km'
+                    convertMeters(
+                        getDistance(location.lat, location.lng, wpt.latlon.lat, wpt.latlon.lon),
+                        ctx.unitsSettings.len,
+                        LARGE_UNIT
+                    ).toFixed(0) + ` ${t(getLargeLengthUnit(ctx))}`
                 );
             }
             return null;

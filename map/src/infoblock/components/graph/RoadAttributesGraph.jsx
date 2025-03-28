@@ -8,11 +8,21 @@ import AppContext from '../../../context/AppContext';
 import { ExpandLess, ExpandMore, RadioButtonUnchecked } from '@mui/icons-material';
 import { cap, formattingSteepnessLabel, prepareType, STEEPNESS } from '../../../manager/GraphManager';
 import _ from 'lodash';
+import {
+    convertMeters,
+    getLargeLengthUnit,
+    getSmallLengthUnit,
+    LARGE_UNIT,
+} from '../../../menu/settings/units/UnitsConverter';
+import { useTranslation } from 'react-i18next';
 
 ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);
 
 export default function RoadAttributesGraph({ name, data, width, selectedPoint }) {
     const ctx = useContext(AppContext);
+
+    const { t } = useTranslation();
+
     const chartRef = useRef(null);
 
     const [open, setOpen] = useState(false);
@@ -46,7 +56,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                                 if (name === cap(STEEPNESS)) {
                                     label = formattingSteepnessLabel(label);
                                 }
-                                return `${cap(label)}: ${Number(context.dataset.data).toFixed(1)} km`;
+                                return `${cap(label)}: ${Number(context.dataset.data).toFixed(1)} ${t(getLargeLengthUnit(ctx))}`;
                             }
                         },
                     },
@@ -110,12 +120,12 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
     function prepareDistance(value) {
         if (value?.distance) {
             if (value.distance > 10) {
-                return `${(value.distance / 1000).toFixed(2)} km`;
+                return `${convertMeters(value.distance, ctx.unitsSettings.len, LARGE_UNIT)?.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`;
             } else {
-                return '< 10 m';
+                return `< ${convertMeters(10, ctx.unitsSettings.len)} ${t(getSmallLengthUnit(ctx))}`;
             }
         }
-        return '0 m';
+        return `0 ${t(getSmallLengthUnit(ctx))}`;
     }
 
     function onMouseMoveGraph(e, chartRef) {

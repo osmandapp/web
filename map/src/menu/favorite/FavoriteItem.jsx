@@ -12,6 +12,8 @@ import MenuItemWithLines from '../components/MenuItemWithLines';
 import { SHARE_TYPE } from '../../manager/ShareManager';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
 import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
+import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
+import { useTranslation } from 'react-i18next';
 
 export const CustomIcon = ({ marker }) => {
     return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
@@ -19,6 +21,8 @@ export const CustomIcon = ({ marker }) => {
 
 export default function FavoriteItem({ marker, group, currentLoc, share = false, smartf = null }) {
     const ctx = useContext(AppContext);
+
+    const { t } = useTranslation();
 
     const { ref, inView } = useInView();
 
@@ -73,7 +77,7 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                         className={styles.favLocationInfo}
                         sx={{ color: getColorLocation(currentLoc) }}
                     >
-                        {`${marker.locDist} km`}
+                        {`${convertMeters(marker.locDist, ctx.unitsSettings.len, LARGE_UNIT).toFixed(0)} ${t(getLargeLengthUnit(ctx))}`}
                     </Typography>
                 )}
                 <Typography id={'se-fav-item-address'} variant="body2" className={styles.groupInfo} noWrap>

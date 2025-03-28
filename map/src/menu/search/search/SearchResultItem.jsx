@@ -23,6 +23,7 @@ import { getPoiParentCategory, parseTagWithLang } from '../../../manager/SearchM
 import { LatLng } from 'leaflet';
 import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 import DividerWithMargin from '../../components/dividers/DividerWithMargin';
+import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -113,9 +114,9 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     function addDistance() {
         if (!distance) return '';
         if (distance < 1000) {
-            return ` · ${distance.toFixed(0)} ${t('m')}`;
+            return ` · ${convertMeters(distance, ctx.unitsSettings.len).toFixed(0)} ${t(getSmallLengthUnit(ctx))}`;
         }
-        return ` · ${(distance / 1000).toFixed(1)} ${t('km')}`;
+        return ` · ${convertMeters(distance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(1)} ${t(getLargeLengthUnit(ctx))}`;
     }
 
     const id =

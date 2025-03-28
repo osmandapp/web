@@ -33,7 +33,7 @@ export default function UnitsMenuItem({ unit, isLastItem = false }) {
                         }}
                     >
                         <Typography variant="inherit" noWrap>
-                            {unit.title}
+                            {t(unit.title)}
                         </Typography>
                         <Typography ref={anchorEl} variant="body2" className={styles.lang} noWrap>
                             {t(ctx.unitsSettings[unit.type])}
