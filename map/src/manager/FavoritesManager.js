@@ -564,8 +564,11 @@ export function addLocDist({ location, markers = null, wpts = null }) {
         if (markers && markers.length > 0) {
             markers.forEach((m) => {
                 if (m?.layer?._latlng) {
-                    m.locDist = (
-                        getDistance(location.lat, location.lng, m?.layer?._latlng.lat, m?.layer?._latlng.lng) / 1000
+                    m.locDist = getDistance(
+                        location.lat,
+                        location.lng,
+                        m.layer._latlng.lat,
+                        m.layer._latlng.lng
                     ).toFixed(0);
                 }
                 res.push(m);
@@ -573,7 +576,7 @@ export function addLocDist({ location, markers = null, wpts = null }) {
         } else if (wpts && wpts.length > 0) {
             wpts.forEach((w) => {
                 if (w.latlng) {
-                    w.locDist = (getDistance(location.lat, location.lng, w.latlng.lat, w.latlng.lng) / 1000).toFixed(0);
+                    w.locDist = getDistance(location.lat, location.lng, w.latlng.lat, w.latlng.lng).toFixed(0);
                 }
                 res.push(w);
             });

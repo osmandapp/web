@@ -5283,5 +5283,7 @@
   "nm_h": "kn",
   "foot": "ft",
   "mile": "mi",
-  "nm": "nmi"
+  "nm": "nmi",
+  "unit_of_length": "Units of length",
+  "default_speed_system": "Unit of speed"
 }

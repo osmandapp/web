@@ -69,6 +69,8 @@ When you open the application, a list of categories is displayed. For easy navig
 
 ### Start Navigation
 
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_start_navigation.png)
+
 In order for OsmAnd to work in *Android Auto*, you must [connect](#connection-screen) your Android device to your vehicle multimedia system. The Android operating system must be updated to version 6.0 or higher.
 
 - To find out how to connect and set up your device, visit the [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en) websites.  
@@ -80,9 +82,6 @@ In order for OsmAnd to work in *Android Auto*, you must [connect](#connection-sc
 - *Android Auto* uses the first [OsmAnd Driving profile](#profile-first) in the Profiles list for navigation. Set the preferred profile to first, except for the *Browse map* profile, it is not read by *Android Auto*. To do this, go to OsmAnd *Menu → Settings → App profiles → Edit profile list* → move your [**Driving**](#profile-first) profile to the first place or after the *Browse map* profile.  
 
 - It is important to remember that *Android Auto* is a data-intensive application, including mobile data, and the quality of the system may depend on the quality of your connection and the speed of your Internet access.
-
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_start_navigation.png)  
-
 
 ### Profile First
 

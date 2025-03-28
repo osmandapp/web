@@ -1306,8 +1306,8 @@ const DEFAULT_DIST = 0;
 const DEFAULT_TIME = '0:00';
 
 export function getDist(file) {
-    let f = getAnalysisData(file);
-    return f?.totalDistance ? (f?.totalDistance / 1000).toFixed(2) : DEFAULT_DIST;
+    const f = getAnalysisData(file);
+    return f?.totalDistance ?? DEFAULT_DIST;
 }
 
 export function getTime(file) {

@@ -223,10 +223,38 @@ The following information will be visible in the context menu:
 To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#track-actions) button panel where you will have access to track actions such as changing [Appearance](./tracks/appearance.md), [Navigation](../navigation/setup/route-navigation.md), or editing [Plan a route](../plan-route/create-route.md).
 
 
+<!--
+
+### Start Navigation
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Routes on the ground](@site/static/img/map/routes-4.png)   ![Routes on the ground](@site/static/img/map/routes-5.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Routes on the ground](@site/static/img/map/hiking.png)   ![Routes on the ground](@site/static/img/map/hiking_1.png)
+
+</TabItem>
+
+</Tabs>  
+
+[Hiking, Cycle, Travel, and other routes](#type-of-routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [track context menu](../map/tracks/track-context-menu.md) of the route.  
+
+-->
+
 ### Quick Actions
 
-You can configure to switch on and off routes via [Quick action](../widgets/quick-action.md#configure-map) widget.
+You can customize whether routes are switched on or off using the [Quick Action](../widgets/quick-action.md#configure-map) widget.
 
+
+## Routes Search
+
+You can find routes using the [Search function](../search/index.md). Just write the name or select **Routes** in the[Categories section](../search/search-poi.md#).
 
 ## Related Articles
 
@@ -237,4 +265,4 @@ You can configure to switch on and off routes via [Quick action](../widgets/quic
 - [Public transport](./public-transport.md)
 - [Navigation route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 
-> *This article was last updated in February 2025*
+> *This article was last updated in March 2025*

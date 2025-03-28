@@ -31,6 +31,7 @@ import { getFileStorage, GPX } from '../../manager/GlobalManager';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
 import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
 import ActionsMenu from '../actions/ActionsMenu';
+import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -152,7 +153,8 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                                     noWrap
                                 >
                                     {share && <FileShareIcon />}
-                                    {dist && `${dist} km`}
+                                    {dist &&
+                                        `${convertMeters(dist, ctx.unitsSettings.len, LARGE_UNIT)?.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`}
                                     {time && ` · ${time}`}
                                     {wptPoints && ` · ${wptPoints}`}
                                     {updateDetails && ` · ${t('shared_string_loading')}...`}

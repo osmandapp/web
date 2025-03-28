@@ -33,6 +33,7 @@ import {
     UNDEFINED_DATA,
     WINTER_ROAD,
 } from '../../../manager/GraphManager';
+import { convertMeters, LARGE_UNIT } from '../../../menu/settings/units/UnitsConverter';
 
 const useStyles = makeStyles({
     checkbox: {
@@ -105,7 +106,7 @@ export const getGraphData = ({
             }
 
             result.push({
-                [DISTANCE]: Math.round(sumDist) / 1000,
+                [DISTANCE]: convertMeters(sumDist, ctx.unitsSettings.len, LARGE_UNIT),
                 [ELEVATION]: ele,
                 [ELEVATION_SRTM]: eleSRTM,
                 [SPEED]: speed,
