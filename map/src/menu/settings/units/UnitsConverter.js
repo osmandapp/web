@@ -30,7 +30,7 @@ export const SMALL_UNIT = 'small';
  * @throws {Error} - If the target unit is unsupported.
  */
 export function convertSpeedMS(value, toUnit) {
-    if (value !== 0 && !value) {
+    if (!value && value !== 0) {
         return null;
     }
 
@@ -71,7 +71,7 @@ export function convertSpeedMS(value, toUnit) {
  * @throws {Error} - If the target unit is unsupported.
  */
 export function convertMeters(value, toUnit, type = SMALL_UNIT) {
-    if (value !== 0 && !value) {
+    if (!value && value !== 0) {
         return null;
     }
 

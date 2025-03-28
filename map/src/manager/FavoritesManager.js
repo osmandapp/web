@@ -567,8 +567,8 @@ export function addLocDist({ location, markers = null, wpts = null }) {
                     m.locDist = getDistance(
                         location.lat,
                         location.lng,
-                        m?.layer?._latlng.lat,
-                        m?.layer?._latlng.lng
+                        m.layer._latlng.lat,
+                        m.layer._latlng.lng
                     ).toFixed(0);
                 }
                 res.push(m);
