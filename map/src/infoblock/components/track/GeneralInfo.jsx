@@ -609,7 +609,7 @@ export default function GeneralInfo({ width }) {
                             </ListItemIcon>
                             <ListItemText>
                                 <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                    {formatRouteInfo(ctx.routeObject.getRouteProps())}
+                                    {formatRouteInfo(ctx.routeObject.getRouteProps(), ctx)}
                                 </Typography>
                             </ListItemText>
                         </MenuItem>

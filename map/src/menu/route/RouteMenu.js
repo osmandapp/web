@@ -28,9 +28,8 @@ import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from './routemenu.module.css';
-import btn from './../login/login.module.css';
-import { apiPost } from '../../util/HttpApi';
-import { quickNaNfix } from '../../util/Utils';
+import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
+import i18n from 'i18next';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -49,11 +48,11 @@ const useStyles = makeStyles({
     },
 });
 
-export function formatRouteInfo(props) {
-    let res = ['Route: '];
+export function formatRouteInfo(props, ctx) {
+    const res = ['Route: '];
     if (props?.overall?.distance) {
-        let dst = (props.overall.distance / 1000).toFixed(1);
-        res.push(<span key="info-dst">{dst + ' km'}</span>);
+        const dst = convertMeters(props.overall.distance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(1);
+        res.push(<span key="info-dst">{dst + ` ${i18n?.t(getLargeLengthUnit(ctx))}`}</span>);
         res.push(', ');
     }
     if (props?.overall?.time) {
@@ -242,7 +241,7 @@ export default function RouteMenu() {
             </MenuItem>
             {routeObject.getRouteProps() && (
                 <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
-                    <Typography>{formatRouteInfo(routeObject.getRouteProps())}</Typography>
+                    <Typography>{formatRouteInfo(routeObject.getRouteProps(), ctx)}</Typography>
                 </MenuItem>
             )}
             <MenuItem key="start" sx={{ ml: 1, mr: 2, mt: 1 }} className={classes.start} disableRipple={true}>
