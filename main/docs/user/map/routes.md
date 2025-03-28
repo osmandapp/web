@@ -249,12 +249,12 @@ To save the route as a *GPX file*, tap the **Save (Download)** button under [Inf
 
 ### Quick Actions
 
-You can configure to switch on and off routes via [Quick action](../widgets/quick-action.md#configure-map) widget.
+You can customize whether routes are switched on or off using the [Quick Action](../widgets/quick-action.md#configure-map) widget.
 
 
-## Search Routes
+## Routes Search
 
-You can find routes by using [Search function](../search/index.md). Just write name or choose "Routes" in [Categories section](../search/search-poi.md#)
+You can find routes using the [Search function](../search/index.md). Just write the name or select **Routes** in the[Categories section](../search/search-poi.md#).
 
 ## Related Articles
 
@@ -265,4 +265,4 @@ You can find routes by using [Search function](../search/index.md). Just write n
 - [Public transport](./public-transport.md)
 - [Navigation route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 
-> *This article was last updated in February 2025*
+> *This article was last updated in March 2025*

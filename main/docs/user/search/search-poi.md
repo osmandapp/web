@@ -18,11 +18,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-[OsmAnd Point of Interest](https://wiki.openstreetmap.org/wiki/Points_of_interest) (POI) functionality in OsmAnd provides accuracy, visibility, and convenience in finding interesting places and services near your current location or a selected area on the map.  
+[OsmAnd Point of Interest](https://wiki.openstreetmap.org/wiki/Points_of_interest) (POI) functionality in OsmAnd provides accuracy, visibility, and convenience in finding interesting places, routes and services near your current location or a selected area on the map.  
 
 The search bar allows you to enter keywords related to the places you are interested in. The POI search also presents a convenient list sorted by [category](#poi-search-by-categories) to help you quickly find what you are looking for, and the [filter](#save-new-custom-filters) allows you to select specific POI characteristics to display only relevant results.  
 
-[Custom Search](#custom-poi-search) enhances search functionality by allowing you to select categories and subcategories of Points of Interest (POIs). You can save created filters for future use, making it easier to quickly locate POIs that meet specific criteria or preferences. For more details, refer to the section on saving custom filters [here](#save-new-custom-filters).  
+[Custom Search](#custom-poi-search) enhances search functionality by allowing multiple category and subcategory choices. You can save created filters for future use, making it easier to quickly locate POIs that meet specific criteria or preferences. For more details, refer to the section on saving custom filters [here](#save-new-custom-filters).  
 
 OsmAnd provides several ways to get to the Search tool where the **Categories search** section is located.
 
@@ -53,9 +53,10 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 *All POI types in OsmAnd you can find here:* [gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).
 
 - **Point of Interest (POI) search:**
-    - Allows you to search for nearby or specific categories of points of interest (POI) such as restaurants, hotels, gas stations, stores, and others.
-    
-    - Allows you to search [OSM routes](../map/routes.md). 
+    - Allows you to search:
+       - for nearby or specific categories of points of interest (POI).
+       - for [OSM routes](../map/routes.md).
+       - for [Popular places (Wikipedia)](../map/map-context-menu.md#details).
 
     - Filters and sorting results by category, distance, or rating are possible.
 
@@ -73,7 +74,7 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 
     - This type of search is convenient to use if a retail outlet specializes in selling goods or services of one brand or if the brand itself is better known and more recognizable than the name or category of the POI.
 
-    - To perform a search, the tag “brand” and brand names must be added to the POI description.
+    - To perform a search, the tag `brand` and brand names must be added to the POI description.
 
     - Example of a car shop: *POI type* - Car dealer, *name* - Octo Automobile, [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) - Audi, BMW, Fiat, Jaguar, Land Rover.  
 
@@ -103,20 +104,20 @@ To accomplish some of these tasks (locate addresses, POI) you will need to have 
 
 </Tabs>
 
-The **POI Search by Categories** tool allows you to quickly find locations, OSM routes, and objects of interest classified into different categories. Each POI category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics.
+The **Search by Categories** tool allows you to quickly find objects, places, and routes classified into different categories. Each category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics.
 
 How it works:
 
-- *Category Selection.* You select the POI category you are interested in, such as restaurants, hotels, stores, OSM routes, and others, from a suggested list of categories.
-- *Characteristic Filters.* After selecting a POI category, the application shows additional characteristics that can be used to refine the search. For example, for the Restaurants category, you can select filters such as cuisine type (Italian, Chinese, etc.), price range, rating, and parking availability.
-- *Applying Filters.* You select the required values in the filters, and then the application applies these filters to the search results to show only those properties that match the specified characteristics.
-- *Displaying results.* After applying filters, the application displays a list of POIs matching the category and characteristics set. The results are presented as a list with brief information about each POI.
+- *Category Selection* - You select the category you are interested in, such as restaurants, hotels, stores, OSM routes, popular Wikipedia places and others, from a suggested list of categories.
+- *Characteristic Filters* - After selecting a category, the application shows additional characteristics that can be used to refine the search. For example, for the Restaurants category, you can select filters such as cuisine type (Italian, Chinese, etc.), price range, rating, and parking availability.
+- *Applying Filters* - You select the required values in the filters, and then the application applies these filters to the search results to show only those properties that match the specified characteristics.
+- *Displaying results* - After applying filters, the OsmAnd displays a list with brief information matching the category and characteristics set.
 
 Benefits:
 
-- *User Customization*. Feature filters allow you to customize searches to meet their specific needs and preferences.
-- *Refined results*. Filters help refine search results, making them more relevant and accurate.
-- *Multiple Categories*. The OpenStreetMap database has an extensive set of POI categories, allowing you to find sites of different types and categories.
+- *User Customization* - Feature filters allow you to customize searches to meet their specific needs and preferences.
+- *Refined results* - Filters help refine search results, making them more relevant and accurate.
+- *Multiple Categories* - The OpenStreetMap database has an extensive set of POI categories, allowing you to find sites of different types and categories.
 
 <!--
 POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
@@ -144,7 +145,7 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 </Tabs>
 
-You can use the **Filter** function to select the necessary characteristics for a POI, OSM routes and the result is a list containing only the relevant objects. To use the filter:
+With the **Filter** function, you can select the necessary characteristics and as a result get a list containing only relevant objects. To use the filter:
 
 - Select the category you are interested in from the category list.
 - On the screen that opens, tap the icon that displays the filter. It is located below the input field, next to *Show on the map*.
@@ -167,7 +168,7 @@ A filter can consist of quite a number of items, the presence of which depends o
         Includes *13* types of filters: **Bulk purchase** (has *2* values), **Cash withdrawal** (has *5* values), **Changing table** (has *3* values), **Coffee** (has *2* values), **Delivery** (has *1* value), **Diet** (has *8* values), **Ice cream** (has *1* value), **Organic products** (has *2* values), **Payment type** (more than *10* values), **Second Hand Filter** (has *2* values), **Self checkout** (has *2* values), **Wheelchair accessibility** (has *4* values), Open now / Open 24/7.
 
  5. **<Translate android="true" ids="poi_filter_emergency"/>**. [Emergency](https://wiki.openstreetmap.org/wiki/Key:emergency) includes facilities and locations associated with emergency services such as hospitals, police stations, fire stations, and first aid medical centers.  
-        Filters are not available.
+        Does not contain any filters.
 
  6. **Filling station**. A [fuel station](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), also known as a filling station, petrol station, gas station and petrol garage. It is the retail-type facility where motor vehicles can be refueled.  
         Includes *13* types of filters: **Car wash** (has *2* values), **Cash withdrawal** (has *5* values), **Compressed air** (has *1* values), **Fuel type (avia)** (has more than *20* values), **Fuel cards** (has *5* value), **Payment type** (has more than *20* values), **Self checkout** (has *2* value), **Snowmobile access** (has *3* values), **Rest room** (more than *1* values), **Vacuum cleaner** (has *1* values), **Automatic fuel dispenser** (has *1* values), **Wheelchair accessibility** (has *4* values), Open now / Open 24/7.  
@@ -184,7 +185,7 @@ A filter can consist of quite a number of items, the presence of which depends o
  10. **Leisure**. [Leisure](https://wiki.openstreetmap.org/wiki/Category:Leisure) includes various types of places and facilities for entertainment.  
         Includes *15* types of filters.
 
- 11. **Nautical**. Includes POIs related to Nautical types.
+ 11. **Nautical**. Includes POIs related to Nautical types.  
         Does not contain any filters.
 
  12. **<Translate android="true" ids="poi_filter_closest_poi"/>**. Includes POIs that are close to you.  
@@ -196,28 +197,31 @@ A filter can consist of quite a number of items, the presence of which depends o
  14. **Personal transport**. All [types of vehicles](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) may be in the possession of you.  
         Includes *38* types of filters.
 
- 15. **<Translate android="true" ids="poi_filter_public_transport"/>**. It is a transportation system designed to carry people for public purposes, accessible to all residents and visitors to a city or region.  
-        Includes *9* types of filters.
-
- 16. **Routes**. These are defined [OSM Routes](../map/routes.md) for any activities like driving, cycling, motorcycling and others.   
-        Includes *14* types of filters: Checkpoint type, Cycling network node type, Hiking network node type, Routes network (cycling), Routes network (hiking), Route point category, Air Sports, Cycling, Driving, Foot, Motorcycling, Other routes, Water sports, Winter sports.
-
- 17. **Sightseeing**. It is an activity in which people visit interesting places or sites to familiarize themselves with them and enjoy their beauty, history or significance.  
-        Includes *8* types of filters.
-
- 18. **Sport**. Includes areas for sports activities.
-        Includes *11* types of filters.
-
- 19. **Store**. [Store](https://wiki.openstreetmap.org/wiki/Key:shop) refers to a variety of establishments and businesses that offer various goods or services for sale, such as grocery stores, clothing stores, electronics stores, and others.  
-        Includes *36* types of filters.
-
- 20. **Tourism**. [Tourism](https://wiki.openstreetmap.org/wiki/Key:tourism) includes places and things of specific interest to tourists including places to see, places to stay, and things and places providing information and support to tourists.  
-        Includes *32* types of filters.
-
- 21. **Water**. Sources of [drinking water](https://wiki.openstreetmap.org/wiki/Key:drinking_water) created or arranged by man.  
+ 15. **Popular places (Wikipedia)**. To search in this category, you need to download the [Wikipedia map](../plugins/wikipedia.md#overview) of the region you are interested in.  
         Does not contain any filters.
 
- 22. **Wikipedia**. To search in this category, you need to download the [Wikipedia map](../plugins/wikipedia.md#overview) of the region you are interested in.  
+ 16. **Private access**.  
+        Includes *6* types of filters.
+
+ 17. **<Translate android="true" ids="poi_filter_public_transport"/>**. It is a transportation system designed to carry people for public purposes, accessible to all residents and visitors to a city or region.  
+        Includes *9* types of filters.
+
+ 18. **Routes**. Includes [OSM routes](../map/routes.md) for various types of activities.  
+        Includes *14* types of filters: **Checkpoint**, **Cycling network node**, **Hiking network node**, **Routes network (cycling)**, **Routes network (hiking)**, **Route point category**, **Air Sports**, **Cycling**, **Driving**, **Foot**, **Motorcycling**, **Other routes**, **Water sports**, **Winter sports**.
+
+ 19. **Sightseeing**. It is an activity in which people visit interesting places or sites to familiarize themselves with them and enjoy their beauty, history or significance.  
+        Includes *8* types of filters.
+
+ 20. **Sport**. Includes areas for sports activities.  
+        Includes *11* types of filters.
+
+ 21. **Store**. [Store](https://wiki.openstreetmap.org/wiki/Key:shop) refers to a variety of establishments and businesses that offer various goods or services for sale, such as grocery stores, clothing stores, electronics stores, and others.  
+        Includes *36* types of filters.
+
+ 22. **Tourism**. [Tourism](https://wiki.openstreetmap.org/wiki/Key:tourism) includes places and things of specific interest to tourists including places to see, places to stay, and things and places providing information and support to tourists.  
+        Includes *32* types of filters.
+
+ 23. **Water**. Sources of [drinking water](https://wiki.openstreetmap.org/wiki/Key:drinking_water) created or arranged by man.  
         Does not contain any filters.
 
 
@@ -264,10 +268,10 @@ Description and how to use:
 
 Online Search includes the following features:
 
-1. **Search by location**. You can enter the name of a city, street, neighborhood, or other location and OsmAnd will provide results matching the query.
-2. **Geocoding**. Online search converts your text queries into geographic coordinates, allowing precise location.
-3. **Reverse geocoding**. You can enter geographic coordinates and Search will return the corresponding location as a city name, street name, or place on the map.
-4. **Search by Points of Interest**. Allows you to search for different points by name or category.
+1. **Search by location** - You can enter the name of a city, street, neighborhood, or other location and OsmAnd will provide results matching the query.
+2. **Geocoding** - Online search converts your text queries into geographic coordinates, allowing precise location.
+3. **Reverse geocoding** - You can enter geographic coordinates and Search will return the corresponding location as a city name, street name, or place on the map.
+4. **Search by Points of Interest** - Allows you to search for different points by name or category.
 
 Use of Online Search:
 
@@ -331,8 +335,8 @@ To create custom filters for finding places on the map, select relevant categori
 
 - Each amenity category contains a list of available generic values for POI types.
 - You have the option to select or deselect them individually by tapping the field of the type you are interested in.
-- *Select all* - to do this, select the toggle button.
-- Refine the list by excluding unnecessary ones - start typing the suggested name in the *Search for POI types* field.  
+- *Select all* - To do this, select the toggle button.
+- Refine the list by excluding unnecessary ones - Start typing the suggested name in the *Search for POI types* field.  
 
 #### Categories and their Filters
 
@@ -367,21 +371,23 @@ To create custom filters for finding places on the map, select relevant categori
 
 15. **<Translate android="true" ids="amenity_type_office"/>**. Includes 39 types of filters.
 
-16. **Routes**. Includes 4 types: *Route Article, Route Article Point, Route track, Route Track Point*.  
+16. **Popular places (Wikipedia)**. Includes 1 type: *Wikipedia*.
 
-17. **Service**. Includes 111 types of filters.
+17. **Private access**. Does not include any filters.
 
-18. **<Translate android="true" ids="amenity_type_sport"/>**. Includes 119 types of filters.  
+18. **Routes**. Includes 15 types of filters.  
 
-19. **Store**. Includes 156 types of filters.  
+19. **Service**. Includes 111 types of filters.
 
-20. **<Translate android="true" ids="amenity_type_tourism"/>**. Includes 103 types of filters.
+20. **<Translate android="true" ids="amenity_type_sport"/>**. Includes 119 types of filters.  
 
-21. **<Translate android="true" ids="amenity_type_transportation"/>**. Includes 97 types of filters.  
+21. **Store**. Includes 156 types of filters.  
 
-22. **User defined**. Includes 1 type: *User Defined Other Postcode*.
+22. **<Translate android="true" ids="amenity_type_tourism"/>**. Includes 103 types of filters.
 
-23. **Wikipedia**. Includes 1 type: *Wikipedia*.  
+23. **Transportation**. Includes 97 types of filters.  
+
+24. **User defined**. Includes 1 type: *User Defined Other Postcode*.
 
 
 ### Save New Custom Filters
@@ -490,4 +496,4 @@ An additional option only for the iOS app is **Delete Custom Categories**.
 - [Search Coordinates](./search-coordinates.md)
 
 
-> *This article was last updated in October 2024*
+> *This article was last updated in March 2025*

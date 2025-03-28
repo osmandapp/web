@@ -68,7 +68,7 @@ Important information:
     - Postal Code, House Number;
     - Postal Code, Street, House Number.
 - Search POI by name and by category with additional filters.
-- Search OSM routes by name, by category with additional filters.
+- Search OSM routes by name and by category with additional filters.
 - Search by Favorites and Waypoints.
 - Search by tracks.
 - Search by business venues and brand names.
@@ -134,7 +134,7 @@ You can find the required location on the map from the list of points that appea
 3. If you enter a [brand name](../search/search-poi.md#how-to-use), the list will start with results by this name, sorted by closest distance.
 
 :::note TIGER data limitations in address searches
-OsmAnd uses [**TIGER data**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) for US address information (integrated into the US maps), but this dataset is **range-based** and does not contain precise house numbers. Some addresses may be missing or inaccurate.
+OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) into the US maps to provide information about US addresses. TIGER dataset is **range-based** and does not contain precise house numbers, so some addresses may be missing or inaccurate.
 :::
 
 
