@@ -63,6 +63,9 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 }
             }
             if (!newTag) {
+                if (tag?.otherLangs?.length) {
+                    setTagList(tag.otherLangs);
+                }
                 return;
             }
             setNewTag(newTag);
