@@ -18,6 +18,9 @@ export const lengthUnitsMap = {
     si_nm_ft: { native: { small: 'foot', large: 'nmi' }, converter: { small: 'ft', large: 'nmi' } },
 };
 
+export const LARGE_UNIT = 'large';
+export const SMALL_UNIT = 'small';
+
 /**
  * Converts speed from meters per second (m/s) to the specified target unit.
  *
@@ -27,7 +30,7 @@ export const lengthUnitsMap = {
  * @throws {Error} - If the target unit is unsupported.
  */
 export function convertSpeedMS(value, toUnit) {
-    if (!value) {
+    if (value !== 0 && !value) {
         return null;
     }
 
@@ -63,11 +66,12 @@ export function convertSpeedMS(value, toUnit) {
  *
  * @param {number} value - Length value in meters (m).
  * @param {string} toUnit - Target unit (one of the predefined keys in lengthUnitsMap).
+ * @param {string} type
  * @returns {number|null} - Converted length value in the requested unit.
  * @throws {Error} - If the target unit is unsupported.
  */
-export function convertMeters(value, toUnit) {
-    if (!value) {
+export function convertMeters(value, toUnit, type = SMALL_UNIT) {
+    if (value !== 0 && !value) {
         return null;
     }
 
@@ -76,7 +80,7 @@ export function convertMeters(value, toUnit) {
     if (!unit) {
         throw new Error(`Unsupported unit: ${toUnit}`);
     }
-    return convert(value).from('m').to(unit.small);
+    return convert(value).from('m').to(unit[type]);
 }
 
 export function getSmallLengthUnit(ctx) {

@@ -2,9 +2,13 @@ import React, { useContext } from 'react';
 import { toHHMMSS } from '../../util/Utils';
 import AppContext from '../../context/AppContext';
 import { getAnalysisData } from '../../manager/track/TracksManager';
+import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
+import { useTranslation } from 'react-i18next';
 
 export default function TrackInfo({ file }) {
     const ctx = useContext(AppContext);
+
+    const { t } = useTranslation();
 
     const item = file;
     let localLayer = ctx.gpxFiles[item.name];
@@ -32,7 +36,10 @@ export default function TrackInfo({ file }) {
             new Date(summary.endTime).toLocaleTimeString();
     }
     if (summary?.totalDistance > 0) {
-        distance = 'Distance: ' + (summary?.totalDistance / 1000).toFixed(1) + ' km';
+        distance =
+            'Distance: ' +
+            convertMeters(summary?.totalDistance, ctx.unitsSettings.len, LARGE_UNIT)?.toFixed(1) +
+            t(getLargeLengthUnit(ctx));
     }
     if (summary?.timeMoving) {
         timeMoving = 'Time moving: ' + toHHMMSS(summary?.timeMoving);

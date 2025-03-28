@@ -27,6 +27,7 @@ import {
     getLargeLengthUnit,
     getSmallLengthUnit,
     getSpeedUnit,
+    LARGE_UNIT,
 } from '../settings/units/UnitsConverter';
 import AppContext from '../../context/AppContext';
 
@@ -115,7 +116,7 @@ export const getOtherStats = (stats, t, formatDate, ctx) => [
         icon: <DistanceIcon />,
         label: t('shared_string_length'),
         rawValue: stats.totalDist,
-        ...formatValue(convertMeters(stats.totalDist, ctx.unitsSettings.len), t(getLargeLengthUnit(ctx)), 1000),
+        ...formatValue(convertMeters(stats.totalDist, ctx.unitsSettings.len, LARGE_UNIT), t(getLargeLengthUnit(ctx))),
     },
 ];
 

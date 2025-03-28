@@ -41,10 +41,21 @@ import RouteIcon from '@mui/icons-material/Route';
 import { formatRouteInfo } from '../../../menu/route/RouteMenu';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
+import {
+    convertMeters,
+    convertSpeedMS,
+    getLargeLengthUnit,
+    getSmallLengthUnit,
+    getSpeedUnit,
+    LARGE_UNIT,
+} from '../../../menu/settings/units/UnitsConverter';
+import { useTranslation } from 'react-i18next';
 
 export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
+
+    const { t } = useTranslation();
 
     const [enableEditName, setEnableEditName] = useState(false);
     const [fileName, setFileName] = useState((ctx.selectedGpxFile && ctx.selectedGpxFile.name) ?? '');
@@ -164,7 +175,7 @@ export default function GeneralInfo({ width }) {
 
     function getDistance(info) {
         if (info?.totalDistance) {
-            setDistance((info?.totalDistance / 1000).toFixed(1));
+            setDistance(info?.totalDistance);
         } else {
             setDistance(0);
         }
@@ -173,12 +184,13 @@ export default function GeneralInfo({ width }) {
     function getSRTMEle(track) {
         if (track?.analysis?.srtmAnalysis) {
             setElevationSRTM(
-                track.analysis.minElevationSrtm.toFixed(0) +
+                convertMeters(track.analysis.minElevationSrtm, ctx.unitsSettings.len)?.toFixed(0) +
                     ' / ' +
-                    track.analysis.avgElevationSrtm.toFixed(0) +
+                    convertMeters(track.analysis.avgElevationSrtm, ctx.unitsSettings.len)?.toFixed(0) +
                     ' / ' +
-                    track.analysis.maxElevationSrtm.toFixed(0) +
-                    ' m'
+                    convertMeters(track.analysis.maxElevationSrtm, ctx.unitsSettings.len)?.toFixed(0) +
+                    ' ' +
+                    t(getSmallLengthUnit(ctx))
             );
         } else {
             setElevationSRTM('');
@@ -195,7 +207,13 @@ export default function GeneralInfo({ width }) {
 
     function getUpDownHill(info) {
         if (info?.diffElevationUp != null && info?.diffElevationDown != null) {
-            setUpDownHill(info?.diffElevationUp.toFixed(0) + '/' + info?.diffElevationDown.toFixed(0) + ' m');
+            setUpDownHill(
+                convertMeters(info?.diffElevationUp, ctx.unitsSettings.len).toFixed(0) +
+                    '/' +
+                    convertMeters(info?.diffElevationDown, ctx.unitsSettings.len).toFixed(0) +
+                    ' ' +
+                    t(getSmallLengthUnit(ctx))
+            );
         } else {
             setUpDownHill('');
         }
@@ -204,12 +222,13 @@ export default function GeneralInfo({ width }) {
     function getElevation(info) {
         if (info?.hasElevationData && info.minElevation !== TracksManager.NAN_MARKER) {
             setElevation(
-                info.minElevation.toFixed(0) +
+                convertMeters(info.minElevation, ctx.unitsSettings.len)?.toFixed(0) +
                     ' / ' +
-                    info.avgElevation?.toFixed(0) +
+                    convertMeters(info.avgElevation, ctx.unitsSettings.len)?.toFixed(0) +
                     ' / ' +
-                    info.maxElevation.toFixed(0) +
-                    ' m'
+                    convertMeters(info.maxElevation, ctx.unitsSettings.len)?.toFixed(0) +
+                    ' ' +
+                    t(getSmallLengthUnit(ctx))
             );
         } else {
             setElevation('-');
@@ -219,12 +238,13 @@ export default function GeneralInfo({ width }) {
     function getSpeed(info) {
         if (info?.hasSpeedData) {
             setSpeed(
-                (info?.minSpeed * 3.6).toFixed(0) +
+                convertSpeedMS(info?.minSpeed, ctx.unitsSettings.speed)?.toFixed(0) +
                     ' / ' +
-                    (info?.avgSpeed * 3.6).toFixed(0) +
+                    convertSpeedMS(info?.avgSpeed, ctx.unitsSettings.speed)?.toFixed(0) +
                     ' / ' +
-                    (info?.maxSpeed * 3.6).toFixed(0) +
-                    ' km/h'
+                    convertSpeedMS(info?.maxSpeed, ctx.unitsSettings.speed)?.toFixed(0) +
+                    ' ' +
+                    t(getSpeedUnit(ctx))
             );
         } else {
             setSpeed('');
@@ -601,7 +621,7 @@ export default function GeneralInfo({ width }) {
                             </ListItemIcon>
                             <ListItemText>
                                 <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                    {`Distance: ${distance} km`}
+                                    {`Distance: ${convertMeters(distance, ctx.unitsSettings.len, LARGE_UNIT)?.toFixed(1)} ${t(getLargeLengthUnit(ctx))}`}
                                 </Typography>
                             </ListItemText>
                         </MenuItem>

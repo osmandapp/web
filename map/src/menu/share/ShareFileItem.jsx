@@ -13,6 +13,7 @@ import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 import { useTranslation } from 'react-i18next';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 
 export default function ShareFileItem({ file, type }) {
     const ctx = useContext(AppContext);
@@ -53,7 +54,8 @@ export default function ShareFileItem({ file, type }) {
                     <MenuItemWithLines name={name} maxLines={2} />
                     {type === GPX && (
                         <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
-                            {dist && `${dist} km`}
+                            {dist &&
+                                `${convertMeters(dist, ctx.unitsSettings.len, LARGE_UNIT)?.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`}
                             {' · '}
                             {time && `${time}`}
                             {wptPoints && ` · ${wptPoints}`}
