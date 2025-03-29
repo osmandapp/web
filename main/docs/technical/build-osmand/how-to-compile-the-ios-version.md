@@ -140,4 +140,7 @@ $ git clone https://github.com/gbooker/lldb-qt-formatters ~/qtlldb
 $ touch  ~/.lldbinit
 $ echo "command script import ~/qtlldb/both.py" >> ~/.lldbinit
   ```
+
+XCode 16+ does not load `~/.lldbinit` automatically, so set it up manually using `Product - Scheme - Edit scheme - Run - LLDB Init File` menu.
+
 After set this parameters reboot your computer.
