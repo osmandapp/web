@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Box, Button, Dialog } from '@mui/material';
+import { Alert, Box, Button, Dialog, Snackbar } from '@mui/material';
 import OsmAndMap from '../../map/OsmAndMap';
 import MainMenu from '../../menu/MainMenu';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ import GeneralPanelButtons from './panelbuttons/GeneralPanelButtons';
 import { GlobalConfirmationDialog } from '../../dialogs/GlobalConfirmationDialog';
 import HeaderMenu from './header/HeaderMenu';
 import {
+    HEADER_SIZE,
     MAIN_MENU_MIN_SIZE,
     MAIN_MENU_OPEN_SIZE,
     MAIN_PAGE_TYPE,
@@ -286,6 +287,11 @@ const GlobalFrame = () => {
         return names.new.some((n) => n === `${prefix}${file.name}`);
     }
 
+    const handleCloseNotification = (event, reason) => {
+        if (reason === 'clickaway') return;
+        ctx.setNotification(null);
+    };
+
     return (
         <Box sx={{ display: 'flex', maxHeight: `${height}px`, overflow: 'hidden' }}>
             <InstallBanner showInstallBanner={showInstallBanner} />
@@ -300,6 +306,15 @@ const GlobalFrame = () => {
                 <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'} menuInfoWidth={MENU_INFO_SIZE} />
                 {ctx.globalGraph?.show && <GlobalGraph type={ctx.globalGraph.type} />}
                 <GlobalAlert width={width} />
+                <Snackbar
+                    open={!!ctx.notification}
+                    autoHideDuration={3000}
+                    anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                    sx={{ mt: `${HEADER_SIZE}px` }}
+                    onClose={handleCloseNotification}
+                >
+                    <Alert severity={ctx.notification?.severity}>{ctx.notification?.text}</Alert>
+                </Snackbar>
                 <GeneralPanelButtons
                     mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'}
                     menuInfoWidth={MENU_INFO_SIZE}

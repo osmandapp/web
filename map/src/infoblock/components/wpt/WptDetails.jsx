@@ -46,7 +46,7 @@ import FavoritesManager, {
     prepareIcon,
 } from '../../../manager/FavoritesManager';
 import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
-import WptDetailsButtons from './WptDetailsButtons';
+import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
 import WptTagsProvider, {
     filterTag,
     FINAL_POI_ICON_NAME,
@@ -596,10 +596,8 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         return null;
     }
 
-    function showEditButtons() {
-        return (
-            !wpt.type?.isWikiPoi && !wpt.type?.isSearch && !wpt?.type?.isShareFav && wpt.type.isFav && !wpt.sharedWithMe
-        );
+    function showFavoriteActions() {
+        return wpt.type.isFav || wpt.type.isShareFav;
     }
 
     const Header = () => {
@@ -832,7 +830,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
                                 <CircularProgress sx={{ ml: 2 }} size={19} />
                             ) : null}
-                            {showEditButtons() && <WptDetailsButtons wpt={wpt} isDetails={isDetails} />}
+                            {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} isDetails={isDetails} />}
                             {wpt?.wikiDesc && (
                                 <>
                                     <Divider sx={{ mt: 2 }} />
