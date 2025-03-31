@@ -118,7 +118,7 @@ org.gradle.caching=true
 9. Open `osmand.xcworkspace` in Xcode
 10. First build.
   Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Select as target your device or as one of iOS simulators. But don't use default 'Any iOS Device (arm64)'. Build the project (play button).
-## Troubleshooting 
+## Troubleshooting
 ### Cleaning temp files.
   - In case of build errors you can press in Xcode: ```Product -> Clean build folder```
   - Close Xcode.
@@ -142,14 +142,18 @@ $ brew install xcode-kotlin
 $ xcode-kotlin install
 $ xcode-kotlin sync
 ```
+
+Refer to LLDB Init File section to finish Kotlin debug setup.
+
 ## Qt debug addon (optional). If you want to see Qt values in debug mode run this:
-  ```
+```
 $ mkdir -p ~/qtlldb
 $ git clone https://github.com/gbooker/lldb-qt-formatters ~/qtlldb
-$ touch  ~/.lldbinit
-$ echo "command script import ~/qtlldb/both.py" >> ~/.lldbinit
-  ```
-##  LLDB Init File
-XCode 16+ does not load `~/.lldbinit` automatically, so set it up manually using `Product - Scheme - Edit scheme - Run - LLDB Init File` menu.
+$ touch  ~/.lldbinit-Xcode
+$ echo "command script import ~/qtlldb/both.py" >> ~/.lldbinit-Xcode
+```
+
+##  LLDB Init File (optional)
+XCode 16+ does not load `~/.lldbinit-Xcode` automatically, so set it up manually using `Product - Scheme - Edit scheme - Run - LLDB Init File` menu.
 
 After set this parameters reboot your computer.
