@@ -309,8 +309,6 @@ export const AppContextProvider = (props) => {
 
     const [unitsSettings, setUnitsSettings] = useState(getUnitsSettings);
 
-    const [notification, setNotification] = useState(null);
-
     //pages
     const [prevPageUrl, setPrevPageUrl] = useState(null);
     const [pageParams, setPageParams] = useState({});
@@ -847,8 +845,6 @@ export const AppContextProvider = (props) => {
                 setUnitsSettings,
                 removeFavGroup,
                 setRemoveFavGroup,
-                notification,
-                setNotification,
             }}
         >
             {props.children}
