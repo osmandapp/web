@@ -21,9 +21,9 @@ export default function FavoriteActionsButtons({ wpt, isDetails }) {
     const [deleteWptDialogOpen, setDeleteWptDialogOpen] = useState(false);
 
     const isShare = wpt.type.isShareFav || wpt.sharedWithMe;
+    const [zoom, lat, lon] = (window.location.hash ?? '').replace('#', '').split('/');
 
     function shareFavorite() {
-        const [zoom, lat, lon] = (window.location.hash ?? '').replace('#', '').split('/');
         const host = window.location.host;
 
         if (!zoom || !lat || !lon) {
@@ -53,6 +53,15 @@ export default function FavoriteActionsButtons({ wpt, isDetails }) {
             .catch(() => {
                 ctx.setNotification({ text: 'Failed to copy favorite information', severity: 'error' });
             });
+    }
+
+    function directionFrom() {
+        if (lat && lon) {
+            ctx.routeObject.setOption('route.points.start', {
+                lat: Number(lat),
+                lng: Number(lon),
+            });
+        }
     }
 
     return (
@@ -106,7 +115,11 @@ export default function FavoriteActionsButtons({ wpt, isDetails }) {
                     </IconButton>
                 </Tooltip>
                 <Tooltip title={t('context_menu_item_directions_from')} arrow placement="bottom">
-                    <IconButton id={'se-direction-from-fav-item'} className={styles.wptActionsButtons}>
+                    <IconButton
+                        id={'se-direction-from-fav-item'}
+                        className={styles.wptActionsButtons}
+                        onClick={directionFrom}
+                    >
                         <DirectionFromIcon className={styles.wptActionButtonIcon} />
                     </IconButton>
                 </Tooltip>

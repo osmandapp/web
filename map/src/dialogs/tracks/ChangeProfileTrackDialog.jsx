@@ -11,7 +11,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { makeStyles } from '@material-ui/core/styles';
 import TrackLayerProvider from '../../map/util/TrackLayerProvider';
 import TracksRoutingCache from '../../context/TracksRoutingCache';
-import RouteProfileSettings from '../../menu/route/RouteProfileSettings';
+import RouteProfileSettings from '../../menu/navigate/RouteProfileSettings';
 import { Settings } from '@mui/icons-material';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 

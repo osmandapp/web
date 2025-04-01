@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
-import RenderingSettingsDialog from '../route/RenderingSettingsDialog';
+import RenderingSettingsDialog from '../navigate/RenderingSettingsDialog';
 import headerStyles from '../trackfavmenu.module.css';
 import styles from '../configuremap/configuremap.module.css';
 import { ReactComponent as StarIcon } from '../../assets/icons/ic_action_favorite.svg';
