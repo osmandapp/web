@@ -82,15 +82,7 @@ export default function FavoriteActionsButtons({ wpt, isDetails }) {
                             id={'se-edit-fav-item'}
                             className={styles.wptActionsButtons}
                             onClick={() => {
-                                TracksManager.handleEditCloudTrack(ctx).then((openEditState) => {
-                                    if (openEditState) {
-                                        ctx.setAddFavorite((prevState) => ({
-                                            ...prevState,
-                                            editTrack: true,
-                                        }));
-                                        setEditWptDialogOpen(true);
-                                    }
-                                });
+                                setEditWptDialogOpen(true);
                             }}
                         >
                             <EditIcon className={styles.wptActionButtonIcon} />
@@ -103,15 +95,7 @@ export default function FavoriteActionsButtons({ wpt, isDetails }) {
                             id={'se-delete-fav-item'}
                             className={styles.wptActionsButtons}
                             onClick={() => {
-                                TracksManager.handleEditCloudTrack(ctx).then((openEditState) => {
-                                    if (openEditState) {
-                                        ctx.setAddFavorite((prevState) => ({
-                                            ...prevState,
-                                            editTrack: true,
-                                        }));
-                                        setDeleteWptDialogOpen(true);
-                                    }
-                                });
+                                setDeleteWptDialogOpen(true);
                             }}
                         >
                             <DeleteIcon className={styles.wptActionButtonIcon} />
