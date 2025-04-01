@@ -64,6 +64,15 @@ export default function FavoriteActionsButtons({ wpt, isDetails }) {
         }
     }
 
+    function directionTo() {
+        if (lat && lon) {
+            ctx.routeObject.setOption('route.points.finish', {
+                lat: Number(lat),
+                lng: Number(lon),
+            });
+        }
+    }
+
     return (
         <>
             <Box className={styles.wptActionButtonContainer}>
@@ -124,7 +133,11 @@ export default function FavoriteActionsButtons({ wpt, isDetails }) {
                     </IconButton>
                 </Tooltip>
                 <Tooltip title={t('shared_string_navigation')} arrow placement="bottom">
-                    <IconButton id={'se-navigation-fav-item'} className={styles.wptActionsButtons}>
+                    <IconButton
+                        id={'se-navigation-fav-item'}
+                        className={styles.wptActionsButtons}
+                        onClick={directionTo}
+                    >
                         <NavigationIcon className={styles.wptActionButtonIcon} />
                     </IconButton>
                 </Tooltip>
