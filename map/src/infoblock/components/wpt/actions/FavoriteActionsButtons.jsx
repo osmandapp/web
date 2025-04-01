@@ -11,7 +11,7 @@ import { ReactComponent as NavigationIcon } from '../../../../assets/icons/ic_ac
 import AppContext from '../../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { ADDRESS_NOT_FOUND } from '../WptDetails';
-import { directionFrom, directionTo } from './locationActions';
+import { createShareLocations, directionFrom, directionTo } from './locationActions';
 
 export default function FavoriteActionsButtons({ wpt, isDetails }) {
     const ctx = useContext(AppContext);
@@ -21,20 +21,14 @@ export default function FavoriteActionsButtons({ wpt, isDetails }) {
     const [deleteWptDialogOpen, setDeleteWptDialogOpen] = useState(false);
 
     const isShare = wpt.type.isShareFav || wpt.sharedWithMe;
-    const [zoom, lat, lon] = (window.location.hash ?? '').replace('#', '').split('/');
 
     function shareFavorite() {
-        const host = window.location.host;
-
-        if (!zoom || !lat || !lon) {
+        const shareLinks = createShareLocations(wpt);
+        if (!shareLinks) {
             return;
         }
-
-        const roundedLat = Number(lat).toFixed(5);
-        const roundedLon = Number(lon).toFixed(5);
-
-        const geoLink = `geo:${roundedLat},${roundedLon}?z=${zoom}`;
-        const mapUrl = `https://${host}/map?pin=${roundedLat},${roundedLon}#${zoom}/${roundedLat}/${roundedLon}`;
+        const geoLink = shareLinks.geoLink;
+        const mapUrl = shareLinks.mapUrl;
 
         const name = wpt.name ? `${wpt.name}\n` : '';
         const folder = wpt.category ? `${wpt.category}\n` : '';

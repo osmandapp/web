@@ -7,7 +7,7 @@ import { ReactComponent as NavigationIcon } from '../../../../assets/icons/ic_ac
 import React, { useContext } from 'react';
 import AppContext from '../../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import { directionFrom, directionTo } from './locationActions';
+import { createShareLocations, directionFrom, directionTo } from './locationActions';
 import { ADDRESS_NOT_FOUND } from '../WptDetails';
 import { LatLng } from 'leaflet';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../../../manager/GlobalManager';
@@ -18,8 +18,6 @@ export default function PoiActionsButtons({ wpt }) {
     const { t } = useTranslation();
 
     const navigate = useNavigate();
-
-    const [zoom, lat, lon] = (window.location.hash ?? '').replace('#', '').split('/');
 
     const hasPoiTags = wpt.type.isPoi || wpt.type.isSearch || (wpt?.type.isWikiPoi && ctx.selectedWpt.poi);
 
@@ -40,17 +38,12 @@ export default function PoiActionsButtons({ wpt }) {
     }
 
     function sharePoi() {
-        const host = window.location.host;
-
-        if (!zoom || !lat || !lon) {
+        const shareLinks = createShareLocations(wpt);
+        if (!shareLinks) {
             return;
         }
-
-        const roundedLat = Number(lat).toFixed(5);
-        const roundedLon = Number(lon).toFixed(5);
-
-        const geoLink = `geo:${roundedLat},${roundedLon}?z=${zoom}`;
-        const mapUrl = `https://${host}/map?pin=${roundedLat},${roundedLon}#${zoom}/${roundedLat}/${roundedLon}`;
+        const geoLink = shareLinks.geoLink;
+        const mapUrl = shareLinks.mapUrl;
 
         const name = wpt.name ? `${wpt.name}\n` : '';
         const poiType = wpt.poiType ? `${wpt.poiType}\n` : '';
