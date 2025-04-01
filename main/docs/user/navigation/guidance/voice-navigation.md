@@ -317,6 +317,7 @@ There are currently a total of 45 languages. Not all languages listed below may 
 | **S** | Sardinian, Serbian (Cyrillic), Slovak, Slovenian, Spanish, Spanish (Argentina), Swahili, Swedish  |
 | **T** | Turkish  |
 | **U** | Ukrainian  |
+| **V** | Vietnamese  |
 
 
 ## Recorded Voice Prompts

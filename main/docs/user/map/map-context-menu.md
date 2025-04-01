@@ -40,11 +40,13 @@ The map context menu provides information about the selected object on the map. 
 
 The **context menu** appears when you **tap once** a marked object on the map. This context menu displays essential information about the selected object, including its *name, icon* (as represented on the map), *address, distance*, and *direction* from your current position.  
 
-You can select various types of map objects, such as *POIs*, *Favorites*, *Transportation stops*, *Markers*, or other *map objects*.
+You can select various types of map objects, such as *POIs*, *favorites*, *transportation stops*, *markers*, *mountain peaks*, or other *map objects*.
 
 :::note
 Selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.openstreetmap.org/wiki/Node) or [**ways**](https://wiki.openstreetmap.org/wiki/Way).
 :::
+
+> *The height of mountain peaks is displayed in meters or feet depending on the [units of length](../personal/profiles.md#units--formats) selected in the profile settings.*
 
 
 ### Select Any Point (Long Tap)
@@ -278,6 +280,19 @@ For **linear objects**, such as *barriers, steps, gates, benches, slipways, weir
 ![Favorite list](@site/static/img/map/climbing_andr.png)
 
 When selecting a [climbing area or crag](../map/routes.md#climbing-routes), OsmAnd provides a detailed summary of the climbing location, including: name and location, climbing difficulty rating (UIAA, French, YDS, etc.), rock type, height and route length, climbing quality and surface conditions.
+
+
+### Ski Slopes, MTB Routes, and Dirt Bike Trails
+
+![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb.png)  ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb_2.png)
+
+You can tap map elements such as **ski slopes**, **mountain bike (MTB) routes**, and **dirt bike trails** to open their context menu with detailed information. Available information includes: route or slope name (if available in OSM data), OSM object ID or relation ID, difficulty level, trail length, terrain type, and more.
+
+**Supported Tags:** `piste:type=*` (ski slopes), `route=mtb`, `route=atv` or `route=dirt_bike` (motorbike off-road trails)
+
+:::note
+Use the [Winter and Ski](../map/vector-maps.md#winter-and-ski) or [Offroad](../map/vector-maps.md#offroad) map styles for better visibility.
+:::
 
 
 ### Article Description
@@ -837,4 +852,4 @@ Available types of actions:
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in February 2025*
+> *This article was last updated in March 2025*

@@ -60,14 +60,9 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 <!--
 add to docs:
 
-• All OSM routes, now searchable! Hiking, cycling, MTB, and more - https://github.com/osmandapp/OsmAnd/issues/16808    
-
-- Mountain peak heights in feet - https://github.com/osmandapp/OsmAnd/issues/7408
-- Clickable ski slopes, mtb trails / Select ski slopes and MTB trails on the map for detailed information - https://github.com/osmandapp/OsmAnd-Issues/issues/2846  
 - redesign of the widget configuration screen — https://github.com/osmandapp/OsmAnd-Issues/issues/2525
-- Prominent peaks are now discoverable via map and search - https://github.com/osmandapp/OsmAnd-Issues/issues/2844
+- Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662
 - Wikidata in map data (wikipedia maps) #2921 - https://github.com/osmandapp/OsmAnd-Issues/issues/2921
-- Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662 
 
 -->
 

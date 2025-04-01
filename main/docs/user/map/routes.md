@@ -43,6 +43,13 @@ You can find more information in the [Map Legend](../map-legend/index.md) articl
 
 MTB routes have a specific mapping in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) and could be selected separately from cycling routes.
 
+<!--
+| | | |
+|------------|------------|------------|
+| ***<Translate android="true" ids="mtb_scale"/>*** | Shows trails according to the MTB scale. More information is in the [Map Legend](../map-legend/index.md) article. | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png) |
+| ***<Translate android="true" ids="mtb_imba"/>*** | Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../map-legend/index.md). | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png) |
+-->
+
 - ***<Translate android="true" ids="mtb_scale"/>***.  Shows trails according to the MTB scale. More information is in the [Map Legend](../map-legend/index.md) article.  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
@@ -65,14 +72,16 @@ MTB routes have a specific mapping in [OpenStreetMap](https://wiki.openstreetmap
 
 ### Dirt Bike Trails
 
+![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
+
 The **Dirt Bike Trails** feature allows you to display dirt bike-specific routes on the map based on the `dirtbike:scale` tag. This scale highlights trails suitable for dirt biking, with a colored overlay showing difficulty levels.  
 
-You can activate this feature in *Menu → Configure map → Routes → Dirt bike routes*. The system functions similarly to the MTB scale, offering a visual representation of routes tailored to dirt biking — more about the [‘dirtbike’ tag can be found here](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
-
-![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
+You can activate this feature in *Menu → Configure map → Routes → Dirt bike routes*. The system functions similarly to the MTB scale, offering a visual representation of routes tailored to dirt biking — more about the [`dirtbike` tag can be found here](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
 
 ### Climbing Routes
+
+![Map routes - Climbing Routes](@site/static/img/map/map-routes-climbing-routes.png)
 
 OsmAnd supports *climbing areas* (`climbing=area`) and *climbing crags* (`climbing=crag`), allowing you to find [rock climbing](https://wiki.openstreetmap.org/wiki/Climbing) locations directly on the map.
 
@@ -90,47 +99,51 @@ OsmAnd supports *climbing areas* (`climbing=area`) and *climbing crags* (`climbi
 
 To enable climbing locations on the map, go to: *Menu → Configure Map → Routes → Climbing Routes*.
 
-![Map routes - Climbing Routes](@site/static/img/map/map-routes-climbing-routes.png)
-
 
 ### Hiking Trails Difficulty Grade
+
+![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)
 
 Some road segments could be part of many routes, but they could be individually colored to represent the difficulty of the segment in mountainous areas. Currently, OsmAnd supports Italian and Swiss classifications, and each has a specific list of equipment requirements to access this segment.  
 
 1. [SAC scale](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
 2. [CAI scale](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
-![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)
 
 ### Ski routes
 
+![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
+
 Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typically, these routes could be used with [Winter and Ski](../map/vector-maps.md#winter-and-ski) map style with all visible [Pistes](https://wiki.openstreetmap.org/wiki/Pistes).  
 
-![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
 ### Horse routes
 
+![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
+
 [Horse routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) are displayed as color-indicated routes with symbols for horseback riding.  
 
-![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
 
 ### Whitewater sports
 
+![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
+
 [Whitewater routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) are shown together with access icons, danger zones for [whitewater tourism](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
 
-![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
 ### Running routes
 
+![Fitness routes](@site/static/img/map/fitness_1.png)
+
 [Running routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) in OpenStreetMap are used for named, numbered, or otherwise marked running routes, primarily for athletics.
 
-![Fitness routes](@site/static/img/map/fitness_1.png)
 
 ### Fitness trails
 
+![Fitness routes](@site/static/img/map/fitness_route.png)
+
 A [fitness trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) is a trail or path equipped with obstacles or stations along its length to exercise the human body to improve health.  
 
-![Fitness routes](@site/static/img/map/fitness_route.png)
 
 ### Travel routes
 
@@ -174,8 +187,6 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 ### Route Info and Elevation
 
-Tap the *route icon (shield)* on the map to get full route information and elevation data. If you have already used the *Download button* in the [track context menu](../map/tracks/track-context-menu.md), tap the line of the required route on the map.  
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -190,7 +201,9 @@ Tap the *route icon (shield)* on the map to get full route information and eleva
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
+
+Tap the *route icon (shield)* on the map to get full route information and elevation data. If you have already used the *Download button* in the [track context menu](../map/tracks/track-context-menu.md), tap the line of the required route on the map.  
 
 The following information will be visible in the context menu:
 
@@ -223,8 +236,6 @@ The following information will be visible in the context menu:
 To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#track-actions) button panel where you will have access to track actions such as changing [Appearance](./tracks/appearance.md), [Navigation](../navigation/setup/route-navigation.md), or editing [Plan a route](../plan-route/create-route.md).
 
 
-<!--
-
 ### Start Navigation
 
 <Tabs groupId="operating-systems">
@@ -245,7 +256,7 @@ To save the route as a *GPX file*, tap the **Save (Download)** button under [Inf
 
 [Hiking, Cycle, Travel, and other routes](#type-of-routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [track context menu](../map/tracks/track-context-menu.md) of the route.  
 
--->
+
 
 ### Quick Actions
 

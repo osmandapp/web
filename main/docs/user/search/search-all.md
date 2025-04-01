@@ -69,6 +69,7 @@ Important information:
     - Postal Code, Street, House Number.
 - Search POI by name and by category with additional filters.
 - Search OSM routes by name and by category with additional filters.
+- Search by most prominent peaks and volcanoes.
 - Search by Favorites and Waypoints.
 - Search by tracks.
 - Search by business venues and brand names.
