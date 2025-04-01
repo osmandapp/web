@@ -34,7 +34,6 @@ import { ReactComponent as OsmIcon } from '../../../assets/icons/ic_action_opens
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow_16.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
-import { ReactComponent as FavoritesIcon } from '../../../assets/menu/ic_action_favorite.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
@@ -70,13 +69,11 @@ import { getDistance } from '../../../util/Utils';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
-import { useNavigate } from 'react-router-dom';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
 import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
 import { Dialog } from '@material-ui/core';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
@@ -85,8 +82,8 @@ import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/s
 import { iconPathMap, SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
 import capitalize from 'lodash/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
-import { LatLng } from 'leaflet';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../../menu/settings/units/UnitsConverter';
+import PoiActionsButtons from './actions/PoiActionsButtons';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
@@ -466,22 +463,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         const locale = locales[i18n.language] || locales.enUS;
         return format(time, 'MMM dd, yyyy – HH:mm', { locale: locale }).replace(',', EMPTY_STRING);
     }
-    const navigate = useNavigate();
-    function addPointToFavorites() {
-        if (ctx.loginUser) {
-            const location =
-                ctx.selectedWpt?.poi?.latlng ??
-                new LatLng(ctx.selectedWpt?.poi.geometry.coordinates[1], ctx.selectedWpt?.poi.geometry.coordinates[0]);
-            ctx.setAddFavorite({
-                ...ctx.addFavorite,
-                poi: ctx.selectedWpt?.poi,
-                address: wpt.address,
-                location,
-            });
-        } else {
-            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
-        }
-    }
 
     async function getPoiAddress(wpt) {
         let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-address`, {
@@ -598,6 +579,10 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     function showFavoriteActions() {
         return wpt.type.isFav || wpt.type.isShareFav;
+    }
+
+    function showPoiActions() {
+        return wpt.type.isPoi || wpt.type.isWikiPoi || wpt?.type?.isSearch;
     }
 
     const Header = () => {
@@ -773,10 +758,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         }
     };
 
-    function exploreObjWithPoi() {
-        return wpt?.type.isWikiPoi && ctx.selectedWpt.poi;
-    }
-
     return (
         <>
             {loading ? (
@@ -810,27 +791,13 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                 )}
                             </Box>
                             {wpt?.category && <WptCategory />}
-                            <div className={styles.location}>
-                                {wpt.latlon && currentLoc && <WptLoc wpt={wpt} location={currentLoc} />}
-                                {(wpt.type?.isPoi || wpt.type?.isSearch || exploreObjWithPoi()) && (
-                                    <>
-                                        <Tooltip
-                                            title={t('shared_string_add_to_favorites')}
-                                            arrow
-                                            placement="bottom"
-                                            onClick={() => addPointToFavorites()}
-                                        >
-                                            <FavoritesIcon />
-                                        </Tooltip>
-                                    </>
-                                )}
-                            </div>
                             {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
                                 <WptAddress />
                             ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
                                 <CircularProgress sx={{ ml: 2 }} size={19} />
                             ) : null}
                             {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} isDetails={isDetails} />}
+                            {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
                             {wpt?.wikiDesc && (
                                 <>
                                     <Divider sx={{ mt: 2 }} />
@@ -859,7 +826,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                     </Button>
                                 </>
                             )}
-                            <Divider sx={{ mt: wpt.type?.isPoi ? '0px' : '16px' }} />
+                            <Divider sx={{ mt: '16px' }} />
                             {wpt.photos && <PhotoGallery photos={wpt.photos} />}
                             {wpt.wvLinks && <WikiVoyageLinks wvLinks={wpt.wvLinks} />}
                             {wpt.desc && (
