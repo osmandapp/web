@@ -58,11 +58,21 @@ export function getPropsFromSearchResultItem(props, t) {
         }
     }
 
-    const addressParts = [props[ADDRESS_1], props[ADDRESS_2]].filter(Boolean);
-    const info = addressParts.length > 0 ? addressParts.join(', ') : undefined;
-
     name = getFirstSubstring(name);
     type = getFirstSubstring(type);
+
+    const addressParts = [props[ADDRESS_1], props[ADDRESS_2]].filter(Boolean);
+    const info = getInfo();
+
+    function getInfo() {
+        if (addressParts.length > 0) {
+            if (type.toLowerCase() === searchTypeMap.STREET.toLowerCase()) {
+                return addressParts[0];
+            }
+            return addressParts.join(', ');
+        }
+        return undefined;
+    }
 
     return { name, type, info };
 }
@@ -171,7 +181,14 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     }
 
     function addType() {
-        return type ? `${info ? ' · ' : ''}${type}` : '';
+        if (
+            !type ||
+            type.toLowerCase() === searchTypeMap.STREET.toLowerCase() ||
+            type.toLowerCase() === searchTypeMap.HOUSE.toLowerCase()
+        ) {
+            return '';
+        }
+        return `${info ? ' · ' : ''}${type}`;
     }
 
     return (
