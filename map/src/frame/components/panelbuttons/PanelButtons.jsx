@@ -18,7 +18,7 @@ import useUndoRedo from '../../../infoblock/useUndoRedo';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import RouteIcon from '@mui/icons-material/Route';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
-import RouteProfileSettings from '../../../menu/route/RouteProfileSettings';
+import RouteProfileSettings from '../../../menu/navigate/RouteProfileSettings';
 import { downloadCurrentGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';
 
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {

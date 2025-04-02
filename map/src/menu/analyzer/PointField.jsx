@@ -4,7 +4,7 @@ import { ReactComponent as PointAIcon } from '../../assets/icons/ic_action_point
 import { ReactComponent as PointBIcon } from '../../assets/icons/ic_action_point_b.svg';
 import { useEffect, useState } from 'react';
 import styles from './trackanalyzer.module.css';
-import { formatLatLon } from '../route/RouteMenu';
+import { formatLatLon } from '../navigate/RouteMenu';
 import { parseCoordinate } from './util/PointsManager';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
 

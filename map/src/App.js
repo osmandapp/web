@@ -31,7 +31,7 @@ import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
 import Weather from './menu/weather/Weather';
 import FavoritesMenu from './menu/favorite/FavoritesMenu';
-import RouteMenu from './menu/route/RouteMenu';
+import RouteMenu from './menu/navigate/RouteMenu';
 import PlanRouteMenu from './menu/planroute/PlanRouteMenu';
 import TracksMenu from './menu/tracks/TracksMenu';
 import SettingsMenu from './menu/settings/SettingsMenu';

@@ -2,7 +2,7 @@ import { FormControl, InputLabel, MenuItem, IconButton, Select, Box } from '@mui
 import { Settings } from '@mui/icons-material';
 import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import RouteProfileSettings from '../../../menu/route/RouteProfileSettings';
+import RouteProfileSettings from '../../../menu/navigate/RouteProfileSettings';
 
 const useStyles = makeStyles({
     grid: {

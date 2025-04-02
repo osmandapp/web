@@ -92,11 +92,11 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
         } else {
             const saved = await saveFavorite();
             if (saved) {
-                if (!ctx.searchResult) {
+                await updateGroupMarkers(saved.res, saved.selectedGroup);
+                if (!ctx.searchResult && !ctx.selectedWpt?.poi && !ctx.selectedWpt?.wikidata) {
                     ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
                     ctx.setUpdateInfoBlock(true);
                 }
-                await updateGroupMarkers(saved.res, saved.selectedGroup);
                 setProcess(false);
                 closeDialog();
             }

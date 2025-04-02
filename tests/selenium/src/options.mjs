@@ -65,10 +65,32 @@ export function parseArgs() {
 
 function findTestsByMask(mask) {
     let found = 0;
-    const regexp = mask2regexp(mask);
-    readdirSync('src/tests/')
-        .sort()
-        .forEach((file) => file.match(/\.mjs$/) && file.match(regexp) && tests.push(file) && found++);
+
+    const rangeMatch = mask.match(/^(\d+)-(\d+)$/);
+    if (rangeMatch) {
+        const [_, from, to] = rangeMatch.map(Number);
+        readdirSync('src/tests/')
+            .sort()
+            .forEach((file) => {
+                if (!file.endsWith('.mjs')) return;
+                const nums = [...file.matchAll(/\d+/g)].map((m) => parseInt(m[0], 10));
+                if (nums.some((n) => n >= from && n <= to)) {
+                    tests.push(file);
+                    found++;
+                }
+            });
+    } else {
+        const regexp = mask2regexp(mask);
+        readdirSync('src/tests/')
+            .sort()
+            .forEach((file) => {
+                if (file.match(/\.mjs$/) && file.match(regexp)) {
+                    tests.push(file);
+                    found++;
+                }
+            });
+    }
+
     if (found === 0) {
         throw Error('test not found');
     }

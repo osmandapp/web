@@ -4,6 +4,9 @@ import { getUniqFileId } from '../../../manager/GlobalManager';
 import FavoritesManager from '../../../manager/FavoritesManager';
 
 function updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted }) {
+    if (ctx.selectedWpt?.poi || ctx.selectedWpt?.wikidata) {
+        return;
+    }
     const newSelectedFile = Object.assign({}, ctx.selectedGpxFile);
     newSelectedFile.file =
         selectedGroup.id !== ctx.selectedGpxFile?.id ? selectedGroup.file : ctx.selectedGpxFile?.file;

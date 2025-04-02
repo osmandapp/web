@@ -27,7 +27,7 @@ import AppContext, {
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
-import RouteMenu from './route/RouteMenu';
+import RouteMenu from './navigate/RouteMenu';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import PlanRouteMenu from './planroute/PlanRouteMenu';
