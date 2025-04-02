@@ -55,12 +55,12 @@ export default function PoiActionsButtons({ wpt }) {
             .writeText(shareText)
             .then(() => {
                 ctx.setNotification({
-                    text: 'Information about the selected favorite has been copied to clipboard',
+                    text: 'Information about the selected poi has been copied to clipboard',
                     severity: 'success',
                 });
             })
             .catch(() => {
-                ctx.setNotification({ text: 'Failed to copy favorite information', severity: 'error' });
+                ctx.setNotification({ text: 'Failed to copy poi information', severity: 'error' });
             });
     }
 
