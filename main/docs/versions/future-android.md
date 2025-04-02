@@ -385,7 +385,8 @@ Key features:
 - **Configurable AIS data sources** — Connect via *external AIS receivers* or *network-based AIS servers*.  
 - **AIS symbols and alerts** — Supports standard *AIS vessel icons, safety messages, and maneuvering indicators*.  
 
-Find it in: *Menu → Plugins → AIS Vessel Tracker*  
+Find it in:  
+*Menu → Plugins → AIS Vessel Tracker*  
 
 Learn more:  
 [AIS Vessel Tracker Plugin](https://osmand.net/docs/user/plugins/ais-tracker)

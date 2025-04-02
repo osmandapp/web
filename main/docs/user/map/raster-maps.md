@@ -384,7 +384,7 @@ For the maps to automatically update the tiles after a while, you can set an [Ex
 
 - To download or update raster tiles, you need to select the source of the online map as the [Main map source](#select-raster-maps). You can also select online tiles separately for the [Overlay](#overlay-layer) map or for the [Underlay](#underlay-layer).
 
-- For the **Android** version of the OsmAnd app, you need to select an area according to the screen size of your device and make a long tap on the map. Then select [Actions](../map/map-context-menu.md#customize) in the map context menu and the *Download map* or *Update map* option. On the Download Map screen, make changes to the necessary settings and tap Download.  
+- For the **Android** version of the OsmAnd app, you need to select an area according to the screen size of your device and make a long tap the map. Then select [Actions](../map/map-context-menu.md#customize) in the map context menu and the *Download map* or *Update map* option. On the Download Map screen, make changes to the necessary settings and tap Download.  
 
 - In the iOS version of the OsmAnd app, you need to long tap the map, then select *Actions* and the *Download map* or *Update map* option from the map context menu. On the Download Map screen, you can select the required area and modify the necessary settings. After you set all the parameters, you can see the number of tiles and the download size.
 

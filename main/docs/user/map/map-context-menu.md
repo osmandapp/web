@@ -69,7 +69,7 @@ Selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.openst
 
 When you **long tap** anywhere on the map, a **context menu** appears, providing information about the selected location. This includes the address, distance, and direction from your current position.
 
-> **NOTE**. *Long tapping on a **building number** highlights its outline and opens the map context menu*
+> **NOTE**. *Long tapping a **building number** highlights its outline and opens the map context menu*
 
 
 ### Select Route

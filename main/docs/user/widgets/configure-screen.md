@@ -593,4 +593,4 @@ Available actions:
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in January 2025*
+> *This article was last updated in April 2025*
