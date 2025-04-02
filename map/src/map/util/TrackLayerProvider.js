@@ -289,9 +289,9 @@ function getPolylineWeight(width, zoom) {
 }
 
 function getWeightNumber(zoom, width) {
-    const scale = Math.min(1, zoom / 12);
-    const normalized = 24 / Math.max(1, Number(width));
-    return Math.max(1, Math.round(normalized * 1.5 * scale));
+    const scale = Math.pow(Math.min(1, zoom / 12), 2);
+    const normalized = Math.max(1, Number(width));
+    return Math.max(1, Math.round(normalized * 0.7 * scale));
 }
 
 function getArrowStep(zoom) {
