@@ -68,7 +68,7 @@ function findTestsByMask(mask) {
 
     const rangeMatch = mask.match(/^(\d+)-(\d+)$/);
     if (rangeMatch) {
-        const [_, from, to] = rangeMatch.map(Number);
+        const [, from, to] = rangeMatch.map(Number);
         readdirSync('src/tests/')
             .sort()
             .forEach((file) => {
