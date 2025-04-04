@@ -13,17 +13,21 @@ import {
     ADDRESS_2,
     CATEGORY_NAME,
     CATEGORY_TYPE,
+    EN_NAME,
     MAIN_CATEGORY_KEY_NAME,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
     SEPARATOR,
+    TYPE,
+    WEB_PREFIX,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getPoiParentCategory, parseTagWithLang } from '../../../manager/SearchManager';
 import { LatLng } from 'leaflet';
 import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 import DividerWithMargin from '../../components/dividers/DividerWithMargin';
 import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
+import { apiGet } from '../../../util/HttpApi';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -134,14 +138,29 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
             ? `se-search-result-${item.properties[CATEGORY_NAME]}`
             : 'se-search-result-item';
 
-    function clickHandler() {
+    async function clickHandler() {
         if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {
-            // click on item
-            ctx.setCurrentObjectType(POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
+            const type = item.properties[WEB_PREFIX + TYPE];
+            let options;
+            if (type === searchTypeMap.CITY || type === searchTypeMap.TOWN || type === searchTypeMap.VILLAGE) {
+                const respPoi = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-name`, {
+                    apiCache: true,
+                    params: {
+                        lat: item.geometry.coordinates[1],
+                        lon: item.geometry.coordinates[0],
+                        enName: item.properties[WEB_PREFIX + EN_NAME],
+                    },
+                });
+                if (respPoi?.data) {
+                    options = respPoi.data.properties;
+                }
+            }
             const poi = {
-                options: item.properties,
+                options: options ?? item.properties,
                 latlng: new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]),
             };
+            // click on item
+            ctx.setCurrentObjectType(POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
             ctx.setSelectedWpt({ poi });
             ctx.setZoomToMapObj((prev) => {
                 return {
