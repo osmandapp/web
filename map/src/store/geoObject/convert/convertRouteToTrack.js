@@ -1,5 +1,6 @@
 import { getDistance } from '../../../util/Utils';
-import { isNonZeroEle, NAN_MARKER, PROFILE_LINE } from '../../../manager/track/TracksManager'; // jest: 99999, 'line'
+import { isNonZeroEle, NAN_MARKER, PROFILE_LINE } from '../../../manager/track/TracksManager';
+import { processGeometryPoints, updateTrackRouteTypes } from '../../../context/TracksRoutingCache'; // jest: 99999, 'line'
 
 export const defaultPointExtras = {
     srtmEle: null,
@@ -32,9 +33,7 @@ function getRouteGeometry(route) {
 
 export function convertRouteToTrack({ id, route, trackName, geoProfile, start, finish, viaPoints }) {
     const profile = geoProfile.profile ?? PROFILE_LINE;
-
-    const points = []; // track points/segments
-
+    const points = [];
     const routeGeometry = getRouteGeometry(route);
 
     if (routeGeometry.length === 0) {
@@ -60,8 +59,8 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
     viaPoints.forEach((via) => {
         let closest = null;
         let min = Infinity;
-        for (let i = 0; i < routeGeometry.length; i++) {
-            const geo = routeGeometry[i];
+        for (const element of routeGeometry) {
+            const geo = element;
             const dist = getDistance(via.lat, via.lng, geo.lat, geo.lng);
             if (dist < min) {
                 closest = geo;
@@ -75,14 +74,12 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
 
     // split by route points = N segments (gpx-rtept)
     let lastIndex = 0;
-    // console.log('map', theNearestMap);
     routeGeometry.forEach((geoLL, index) => {
         const routeLL = theNearestMap[llRoundedKey(geoLL)];
         if (routeLL) {
             const geometry = [];
             if (index !== lastIndex) {
                 for (let i = lastIndex; i <= index; i++) {
-                    // console.log('found', index, 'last', lastIndex, 'i', i);
                     const ele = routeGeometry[i].ele;
                     if (ele !== undefined) {
                         const thisPointExtras = {
@@ -108,9 +105,6 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
                 points.push({ ...routeLL, ...defaultPointExtras, profile, geoProfile, geometry });
             }
             lastIndex = index;
-            // console.log('done');
-        } else {
-            // console.log('skip-index', index);
         }
     });
 
@@ -119,7 +113,6 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
         points,
         name: trackName,
         tracks: [{ points }],
-        // metaData: { desc: trackDesc },
         analysis: createAnalysisFromRoute(points, route),
     };
 }
