@@ -71,6 +71,7 @@ Important information:
 - Search OSM routes by name and by category with additional filters.
 - Search by most prominent peaks and volcanoes.
 - Search by Favorites and Waypoints.
+- Search icons by POI subcategory names.
 - Search by tracks.
 - Search by business venues and brand names.
 - Online search (Nominatim).
@@ -272,4 +273,4 @@ Coordinate search provides an accurate location. You can enter precise coordinat
 - [Search POI](./search-poi.md)
 - [Search Coordinates](./search-coordinates.md)
 
-> *This article was last updated in February 2025*
+> *This article was last updated in April 2025*

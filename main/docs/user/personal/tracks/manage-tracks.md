@@ -183,7 +183,7 @@ Available:
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_ios.png)
+![My places tracks iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
 
 </TabItem>
 
@@ -203,7 +203,7 @@ Once you have made your choice, the following steps are provided:
 
 - [Change activity](../../map/tracks/track-context-menu.md#track-information-activity) (*Android only*) — This action allows you to change the activity type, for example to *Car*, *Adventure Motorsport*, *Backpacking* or others, for the selected track.
 
-- [Change appearance](../../map/tracks/appearance.md) (*Android only*) — This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
+- [Change appearance](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
 
 - **Delete** — If the selected tracks or folders are no longer needed, the Delete function allows you to delete them, with the app providing confirmation options to avoid accidental deletion.
 
@@ -508,4 +508,4 @@ There are several ways to export one or more track files to any messenger, email
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)
 - [Trip recording](../../plugins/trip-recording.md)
 
-> *This article was last updated in January 2025*
+> *This article was last updated in April 2025*

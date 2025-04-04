@@ -100,7 +100,7 @@ Select whether to split the interval on the track **by distance or by time**.
 
 Adds **arrow markers** along the track to indicate movement direction.
 
-### Show Start and Finish Icons
+### Start and Finish Icons
 
 ![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
@@ -108,7 +108,7 @@ Allows you to select whether to show the **start and finish icons** for track se
 
 ### Join Gaps
 
-Connects **track segments** that were interrupted due to GPS loss or a pause in recording. The J**<Translate android="true" ids="join_segments"/>** (*Android*) or **<Translate ios="true" ids="gpx_join_gaps"/>** (*iOS*) feature allows you to connect these gaps in the selected GPX track using straight lines.
+Connects **track segments** that were interrupted due to GPS loss or a pause in recording. The **<Translate android="true" ids="join_segments"/>** (*Android*) or **<Translate ios="true" ids="gpx_join_gaps"/>** (*iOS*) feature allows you to connect these gaps in the selected GPX track using straight lines.
 
 ### Reset to Original
 
@@ -139,7 +139,7 @@ Restores all **track appearance settings** to their default values.
 
 The **3D Track** feature generates a three-dimensional visualization by integrating elevation data into standard 2D tracks. This functionality creates a depth-enhanced representation, enabling precise analysis of the track concerning the terrain. By incorporating elevation details, the 3D track offers a more comprehensive view of the route's topography and geographical context.
 
-#### 3D Track Settings
+### 3D Track Settings
 
 **Wall height**  
 You can visualize a 3D track by altitude and other available data within the track, or by fixed altitude.
@@ -184,33 +184,52 @@ The 3D track feature is highly beneficial for activities like paragliding, where
 
 ## Change Appearance for Multiple Tracks
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems">
 
-![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)  
+<TabItem value="android" label="Android">
+
+![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_2_ios.png)
+
+</TabItem>
+
+</Tabs>  
 
 The [Tracks](../../personal/tracks/manage-tracks.md) tab automatically displays all tracks ever recorded, created, or imported. They are organized by folder or displayed as a list below them.  
 
-Modify multiple track appearances in *My Places → Tracks*.
+***Modify multiple track appearances in My Places → Tracks***:
 
 - **Change Default Appearance** - Applies settings to all tracks in a [folder](../../personal/tracks/manage-tracks.md#folder-menu).
 - **Reset to Original** - Restores individual track settings.
-- [Selection mode](../../personal/tracks/manage-tracks.md#selection-mode) - Changes the appearance of specific tracks in the selected folder or the entire list in the Tracks tab. Select the *three-dot menu* in the upper right corner of the Tracks tab screen and tap *Select*. Then tap the *three-dot menu* at the top of the screen and select *Change Appearance*.  
+- [Selection mode](../../personal/tracks/manage-tracks.md#selection-mode) - Changes the appearance of specific tracks in the selected folder or the entire list in the Tracks tab.
+    - Select the *three-dot menu* in the upper right corner of the Tracks tab and tap *Select*.
+    - Then tap the *three-dot menu* at the top of the screen and select *Change Appearance*.  
 
-Bulk appearance customization options:
+***Bulk appearance customization options:***
 
-- **Direction arrows** - Adds movement indicators.  
+- **Direction arrows** - Adds [movement indicators](#direction-arrows).  
     States: *Unchanged*, &nbsp;*Original*, &nbsp;*On*, &nbsp;*Off*.
 
-- **Show start and finish icons** - Displays markers for track start and end points.  
+- **Show start and finish icons** - [Displays markers](#start-and-finish-icons) for track start and end points.  
     States: *Unchanged*, &nbsp;*Original*, &nbsp;*On*, &nbsp;*Off*.
 
-- **Color** – Apply manual or data-based coloring.
+- **Color** – Apply manual or data-based [coloring](#color).
 
-- **Width** – Adjust the track line width using presets or manually.
+- **Width** – Adjust the [track line width](#width) using presets or manually.
 
-- **Split interval** – Set interval for distance/time markers.  
+- **Split interval** – [Set interval](#split-interval) for distance / time markers.  
     States: *Unchanged*, &nbsp;*Original*, &nbsp;*Select*: *Time* or *Distance*.
 
+***Original and Unchanged:***
+
+- **Original** - Restores the original parameters from the track file.
+
+- **Unchanged** - Keeps current settings during the editing session.
 
 ## Track Colors in GPX Files  
 
