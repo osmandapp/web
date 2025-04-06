@@ -185,6 +185,40 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,render
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 
+
+## Actions with Routes
+
+
+[Hiking, cycle, travel, and other routes](#type-of-routes) are available for selection on the map and are marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol), where applicable.
+
+When you tap a **route symbol** on the map:
+
+- A **list of nearby routes** at that location is displayed.
+- After selecting a route from the list, the [**track context menu**](../map/tracks/track-context-menu.md) for that route opens, showing detailed information and actions.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Route info](@site/static/img/map/routes_osm.png) ![Route info](@site/static/img/map/routes_osm_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Route info](@site/static/img/map/routes_osm_ios.png) ![Route info](@site/static/img/map/routes_osm_ios_1.png)
+
+</TabItem>
+
+</Tabs>
+
+In the **context menu**, you can:
+- View [additional information](#route-info-and-elevation) about the selected route,
+- [Save the route](#save-as-a-track) as a **GPX track**,
+- [Start navigation](#start-navigation) along the route.
+
+
+
 ### Route Info and Elevation
 
 <Tabs groupId="operating-systems">
@@ -203,15 +237,32 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 </Tabs>
 
-Tap the *route icon (shield)* on the map to get full route information and elevation data. If you have already used the *Download button* in the [track context menu](../map/tracks/track-context-menu.md), tap the line of the required route on the map.  
-
 The following information will be visible in the context menu:
 
 - **Route info**: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
 - **General**: Size, Location, Created on.
 - **Additional Info**. Displays type of activity.
+- action buttons: [Save as](#save-as-a-track) and [Start Navigation](#start-navigation).
 - [Elevation info](../navigation/setup/route-details.md#elevation-info). Displays information about the elevation data on the route.
 - [Analyze Track on Map](../map/tracks/index.md#analyze-track-on-map). Displays detailed analysis of track data using graphs and maps.
+
+To view the elevation, slope, or altitude details for a selected route, simply tap on any of the following values in the context menu: **Distance**, **Uphill**, **Downhill**, or **Altitude**.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Routes on the ground](@site/static/img/map/routes_osm_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Routes on the ground](@site/static/img/map/routes_osm_ios_2.png) 
+
+</TabItem>
+
+</Tabs>  
 
 ### Save as a Track
 
@@ -231,32 +282,33 @@ The following information will be visible in the context menu:
 
 </Tabs>  
 
-[Hiking, Cycle, Travel, and other routes](#type-of-routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [track context menu](../map/tracks/track-context-menu.md) of the route.  
 
 To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#track-actions) button panel where you will have access to track actions such as changing [Appearance](./tracks/appearance.md), [Navigation](../navigation/setup/route-navigation.md), or editing [Plan a route](../plan-route/create-route.md).
 
-<!--
+
 ### Start Navigation
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/routes-4.png)   ![Routes on the ground](@site/static/img/map/routes-5.png)
+![Routes on the ground](@site/static/img/map/routes_osm_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/hiking.png)   ![Routes on the ground](@site/static/img/map/hiking_1.png)
+![Routes on the ground](@site/static/img/map/routes_osm_ios_3.png)
 
 </TabItem>
 
 </Tabs>  
 
-[Hiking, Cycle, Travel, and other routes](#type-of-routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [track context menu](../map/tracks/track-context-menu.md) of the route.  
+To start navigation along the selected OSM route, tap the **Start Navigation** button in the [**Info panel**](../map/tracks/track-context-menu.md#info-panel).
 
--->
+This will launch the [**Navigation by track**](../navigation/setup/gpx-navigation.md) mode, allowing you to follow the route with voice guidance and navigation features.
+
+
 
 ### Quick Actions
 
