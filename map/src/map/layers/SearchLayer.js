@@ -45,6 +45,9 @@ export const searchTypeMap = {
     STREET: 'STREET',
     POI: 'POI',
     POI_TYPE: 'POI_TYPE',
+    CITY: 'CITY',
+    TOWN: 'TOWN',
+    VILLAGE: 'VILLAGE',
 };
 
 export const iconPathMap = {
