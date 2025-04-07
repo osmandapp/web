@@ -26,26 +26,25 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 ## What's new
 
-
 - Introduced Smart Folders for automatic track organization.
 - Added a full-screen gallery viewer for Wikimedia images.
 - Added support for Vietnamese and Hebrew Text-to-Speech (TTS) for navigation.
 - Added Quick Actions for controlling trip recording.
-- Added a "Detailed track guidance" option and an "Attach to the roads" suggestion dialog.
+- Added a *Detailed track guidance* option and an *Attach to the roads* suggestion dialog.
 - Made prominent peaks discoverable via map and search.
 - Added border highlighting for buildings and areas with detailed information.
 - Added an option to toggle visibility for separate favorite groups on the map.
 - Expanded icon options for Favorites by adding icons from all POI categories.
 - Added battery level display for external sensors.
 - Added an option to change the appearance of multiple tracks simultaneously.
-- Added a "Reset" action for the Average Speed widget.
+- Added a *Reset* action for the Average Speed widget.
 - CarPlay Search: Added the ability to select buildings.
 - Fixed the UTM coordinate input sequence.
 - Fixed an issue with track waypoint colors.
-- Fixed the missing "Download all" button for Terrain maps.
+- Fixed the missing *Download all* button for Terrain maps.
 - Fixed an issue where popular articles were sometimes missing in Travel Guides.
 
-<!-
+<!--
 
 - Grid for buttons
 - Connection OBD-II scanner
@@ -57,26 +56,51 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 - Added border highlighting fro buildings and ares with detailed information.
 - [Prominent peaks are now discoverable via map and search](#prominent-peaks-now-discoverable)
 - [Introduced Smart Folders for automatic track organization](#smart-folders-for-automatic-track-organization).
-- [Added a full-screen gallery viewer for Wikimedia images](#full-screen-wikimedia-gallery-viewer) - https://github.com/osmandapp/OsmAnd-iOS/issues/4062
 - [Discover Nearby Areas with OsmAnd Polygon Info](#polygon-selection-for-nearby-areas)
 - Added Quick Actions for controlling trip recording.
 - Added a "Detailed track guidance" option and an "Attach to the roads" suggestion dialog.
-- Added border highlighting for buildings and areas with detailed information.
 - [Added an option to toggle visibility for separate favorite groups on the map.](#flexible-appearance-settings-for-favorite-groups)
-- [Expanded icon options for Favorites by adding icons from all POI categories.](#expanded-icon-options-for-favorites) - https://github.com/osmandapp/OsmAnd-iOS/issues/3942
-- Added battery level display for external sensors. - https://github.com/osmandapp/OsmAnd-iOS/issues/4145
-- Added an option to change the appearance of multiple tracks simultaneously. - https://github.com/osmandapp/OsmAnd-iOS/issues/3687
+- [Expanded icon options for Favorites by adding icons from all POI categories.](#expanded-icon-options-for-favorites)
+- [Added battery level display for external sensors.](#battery-status-for-external-sensors)
+- [Added an option to change the appearance of multiple tracks simultaneously.](#change-appearance-for-multiple-tracks)
 - [Added a *Reset* action for the Average Speed widget](#reset-option-for-the-average-speed-widget)
-- CarPlay Search: Added the ability to select buildings. - https://github.com/osmandapp/OsmAnd-iOS/issues/3959
+- [CarPlay Search: Added the ability to select buildings.](#carplay-search-select-buildings)  
+
+
+- [Added a full-screen gallery viewer for Wikimedia images](#full-screen-wikimedia-gallery-viewer) - https://github.com/osmandapp/OsmAnd-iOS/issues/4062  
 
 
 To docs:  
 Expanded icon options for Favorites by adding icons from all POI categories - https://github.com/osmandapp/OsmAnd-iOS/issues/3942  
 CarPlay Search: Added the ability to select buildings. - https://github.com/osmandapp/OsmAnd-iOS/issues/3959   
+Added an option to change the appearance of multiple tracks simultaneously. - https://github.com/osmandapp/OsmAnd-iOS/issues/3687  
+Added battery level display for external sensors. - https://github.com/osmandapp/OsmAnd-iOS/issues/3953   / https://github.com/osmandapp/OsmAnd-iOS/issues/4145  
 
+
+## Battery Status for External Sensors
+
+![Battery Status for External Sensors](../../blog/2025-04-15-ios-5-0/img/battery_level_sensors_ios.png)
+
+In **OsmAnd 5.0**, you can now **view the battery level** of connected external sensors as a main value. This makes it easier to monitor their status and ensures optimal performance during use.
+
+Key features:
+
+- **Battery level display** — Check the **battery level** of all connected external sensors directly in the app.
+- **Real-time monitoring** — The battery status updates in real time, helping you manage sensor power effectively.
+
+How to use:
+
+- Go to *Menu → Plugins → External Sensors* to view connected sensors and their battery status.
+- Go to *Menu → Configure screen → Choose a panel → Add widget → External Sensors → Choose sensor → Settings → Show → Battery level*.
+- Long tap the widget on the map screen and select *Settings*.
+
+Learn more:  
+[External Sensors plugin](https://osmand.net/docs/user/plugins/external-sensors)
 
 
 ## Smart Folders for Automatic Track Organization
+
+![Smart Folders](../../blog/2025-04-15-ios-5-0/img/my_places_smart_folder_ios.png)
 
 In OsmAnd iOS 5.0, **Smart Folders** for tracks are now available, enhancing the way you organize your saved locations. This feature, previously available on Android, is designed to help you manage and automatically sort your tracks into folders based on predefined criteria.
 
@@ -109,16 +133,6 @@ Parameters you can modify for all selected tracks:
 
 Learn more:  
 [Track Appearance Settings](https://osmand.net/docs/user/map/tracks/appearance)
-
-
-## Full-Screen Wikimedia Gallery Viewer
-
-![Gallery](../../blog/2025-04-15-ios-5-0/img/gallery_ios.png)
-
-Introducing a full-screen gallery viewer for Wikimedia images.  
-
-Learn more:  
-[Map Context menu](https://osmand.net/docs/user/map/map-context-menu#online-photos).
 
 
 ## Expanded Icon Options for Favorites
@@ -209,6 +223,18 @@ Learn more:
 [Address Search Guide](https://osmand.net/docs/user/search/search-address)
 
 
+## Full-Screen Wikimedia Gallery Viewer
+
+![Gallery](../../blog/2025-04-15-ios-5-0/img/gallery_ios.png)
+
+
+Introducing a full-screen gallery viewer for Wikimedia images.  
+
+Learn more:  
+[Map Context menu](https://osmand.net/docs/user/map/map-context-menu#online-photos).
+
+
+
 ## Optional updates
 
 - Added support for [Vietnamese and Hebrew](https://osmand.net/docs/user/navigation/guidance/voice-navigation#voice-prompt-language) Text-to-Speech (TTS) for navigation.
@@ -217,5 +243,6 @@ Learn more:
   - An issue with track waypoint colors. - https://github.com/osmandapp/OsmAnd-iOS/issues/4293 
   - Fixed the missing "Download all" button for Terrain maps. - https://github.com/osmandapp/OsmAnd-iOS/issues/4155
   - An issue where popular articles were sometimes missing in Travel Guides. - https://github.com/osmandapp/OsmAnd-iOS/issues/4370
+  - The *Battery Level* widget is displayed incorrectly. - https://github.com/osmandapp/OsmAnd-iOS/issues/4145
 
 -->

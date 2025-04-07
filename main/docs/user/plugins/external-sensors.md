@@ -64,10 +64,14 @@ To start using data from external sensors, you need to make the following settin
 Use the *Pair new sensor* button to connect new sensors.  
 
 - You need Bluetooth turned on to search for sensors. If your Bluetooth is turned off, the app will prompt you to *Open settings* on your device.
+
 - To add new sensors, tap + for the required one in the list of found sensors.
+
 - A pop-up notification is displayed when a paired sensor is connected or disconnected.  
-- Not all devices support ANT+ (Android only). You can check if your device works with ANT+ by going [here](https://www.thisisant.com/consumer/ant-101/ant-in-phones).  
+- Not all devices support ANT+ (Android only). You can check if your device works with ANT+ by going [here](https://www.thisisant.com/consumer/ant-101/ant-in-phones).
+
 - Bicycle power in Android is only Ant+.
+
 - **There is no Bicycle power in iOS** because Ant+ sensors are not supported.
 
 
@@ -175,7 +179,7 @@ OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*,
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="external_sensor_widgets"/>*
+Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → Add widget → <Translate android="true" ids="external_sensor_widgets"/>*
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
 
@@ -183,7 +187,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_c
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="external_sensor_widgets"/>*
+Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → Add widget → <Translate ios="true" ids="external_sensors_plugin_name"/>*
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_2_ios.png)  
 

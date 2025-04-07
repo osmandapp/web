@@ -54,7 +54,7 @@ Navigational widgets in OsmAnd are designed to enhance both **active** and **pas
   - Some advanced features may not function correctly without a set destination.  
   - The information provided may not always be **precise**, especially on complex road networks.
 
-> **NOTE.** Keep in mind that the **Browse Map** profile does not support navigational widgets in either mode. Switch to a relevant **navigation profile** to enable these features.
+> **NOTE.** *Keep in mind that the **Browse Map** profile does not support navigational widgets in either mode. Switch to a relevant **navigation profile** to enable these features.*
 
 
 <!--
@@ -137,8 +137,8 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="shared_string_bearing"/>* |
-|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/>  → Choose a panel →  <Translate ios="true" ids="map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="shared_string_bearing"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>  → Choose a panel → Add widget →  <Translate ios="true" ids="shared_string_bearing"/>* |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 | Format | **Android:** You can change the data display format for angular units: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>* |
 |  | **iOS:** You can change the data display format for angular units: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |  
@@ -195,7 +195,7 @@ The *Route Information* widget provides real-time data about the ongoing navigat
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget →<Translate android="true" ids="map_widget_distance_to_destination"/>* |
 | By tapping | Tap the button with arrow to open [Start/Stop Navigation panel](../navigation/setup/route-navigation.md#start--stop-navigation) |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats"/>* |
@@ -208,8 +208,8 @@ The widget displays the distance remaining to the last destination point when fo
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
-|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
 | By tapping | Moves the map to the destination point. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -221,8 +221,8 @@ The widget shows the distance to the first intermediate point along the calculat
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → *<Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
-|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → *<Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
 | By tapping | **One intermediate point** - move the map to the intermediate point. <br /> **Two or more intermediate points** - opens Destinations list menu. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -248,8 +248,8 @@ The widget shows the *Arrival time* or *Time to go* to the first intermediate po
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -276,8 +276,8 @@ The widget displays the *Arrival time* or *Time to go* to the last destination p
 
 | | |
 |:------------|:------------|
-| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |  
 
@@ -296,8 +296,8 @@ The *Speed Limit* widget displays the current speed limit based on the map data 
 
 | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_max_speed"/>* |
-|  |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="map_widget_max_speed"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_max_speed"/>* |
+|  |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_max_speed"/>* |
 | By tapping | No changes |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -310,8 +310,8 @@ This set of navigational widgets is activated during navigation and displays inf
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *Menu → Configure screen → Left / Right panel → Next turn, Next turn (small), Second next turn*  |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left / Right panel → Next turn, Next turn (small), Second next turn* |
+| Enable | **Android:** *Menu → Configure screen → Left / Right panel → Add widget → Route Maneuvers → Next turn, Next turn (small), Second next turn*  |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Left / Right panel → Add widget → Route Maneuvers → Next turn, Next turn (small), Second next turn* |
 | By tapping | If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -328,8 +328,8 @@ The *Route Maneuvers* widgets contain information about:
 
 | | |
 |:------------|:------------|
-| Enable      | **Android:** *Menu → Configure screen → Left / Right panel → Next turn, Next turn (small), Second next turn*  |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left / Right panel → Next turn, Next turn (small), Second next turn* |
+| Enable      | **Android:** *Menu → Configure screen → Left / Right panel → Add widget → Next turn, Next turn (small), Second next turn*  |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Left / Right panel → Add widget → Next turn, Next turn (small), Second next turn* |
 | By tapping  | If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. |
 | Long tap    | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -353,8 +353,8 @@ The **Lanes** widget highlights the current lane when navigation is active and d
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="route_guidance"/> → <Translate android="true" ids="show_lanes"/>* |
-|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="show_lanes"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="route_guidance"/> → Add widget → <Translate android="true" ids="show_lanes"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → <Translate android="true" ids="show_lanes"/>* |
 | By tapping | No changes |
 
 ### Color Prompts for Lanes
@@ -383,7 +383,7 @@ The *Route Guidance* widgets contain information about:
 
 | | |
 |:------------|:------------|
-| Enable      | **Android:** *Menu → Configure screen → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Lane, Next turn, Second next turn*  |
+| Enable      | **Android:** *Menu → Configure screen → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → Lane, Next turn, Second next turn*  |
 | By tapping  | **Next turn**: If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. <br/> **Lane**: No changes. |
 | Long tap    | **Next turn**: Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Lane**: No changes. |
 
@@ -439,8 +439,8 @@ The Street name widget shows **the current street name** with a straight arrow, 
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="map_widget_top_text"/>* |
-|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="map_widget_top_text"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → <Translate android="true" ids="map_widget_top_text"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → <Translate android="true" ids="map_widget_top_text"/>* |
 | By tapping | No changes |
 
 
@@ -488,4 +488,4 @@ It displays the **name**, the **icon of the point**, and 2 **distances**:
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in March 2025*
+> *This article was last updated in April 2025*
