@@ -21,6 +21,8 @@ export default function FavoriteActionsButtons({ wpt, isDetails }) {
     const [deleteWptDialogOpen, setDeleteWptDialogOpen] = useState(false);
 
     const isShare = wpt.type.isShareFav || wpt.sharedWithMe;
+    const lat = wpt.latlon?.lat;
+    const lon = wpt.latlon?.lon;
 
     function shareFavorite() {
         const shareLinks = createShareLocations(wpt);
