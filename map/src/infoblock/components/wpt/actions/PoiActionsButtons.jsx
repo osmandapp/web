@@ -20,6 +20,8 @@ export default function PoiActionsButtons({ wpt }) {
     const navigate = useNavigate();
 
     const hasPoiTags = wpt.type.isPoi || wpt.type.isSearch || (wpt?.type.isWikiPoi && ctx.selectedWpt.poi);
+    const lat = wpt.latlon?.lat;
+    const lon = wpt.latlon?.lon;
 
     function addToFavorite() {
         if (ctx.loginUser) {
