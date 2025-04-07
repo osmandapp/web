@@ -150,6 +150,7 @@ Refer to LLDB Init File section to finish Kotlin debug setup.
 $ mkdir -p ~/qtlldb
 $ git clone https://github.com/gbooker/lldb-qt-formatters ~/qtlldb
 $ touch  ~/.lldbinit-Xcode
+$ echo "" >> ~/.lldbinit-Xcode
 $ echo "command script import ~/qtlldb/both.py" >> ~/.lldbinit-Xcode
 ```
 
