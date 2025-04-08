@@ -342,8 +342,9 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 </Tabs>
 
-**Online photos.**  
-In the **Online photos** (*Android*) section of the map context menu, you can access photos of objects from [Wikimedia](https://www.wikimedia.org/), which offers media tagged with *"image"* or *"wikimedia"* from OpenStreetMap.
+#### Online photos
+
+How to access:
 
 - Tap the **View All** button to open the gallery in full screen mode. There you can swipe through all the images related to the selected location.
 
@@ -351,19 +352,29 @@ In the **Online photos** (*Android*) section of the map context menu, you can ac
 
 - You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.  
 
-**Images nearby.**  
+In the **Online photos** section of the map context menu, you can access photos of objects from the [Wikimedia](https://www.wikimedia.org/), which offers media files tagged with `image` or `wikimedia` from OpenStreetMap.
+
+<!--
+Images nearby
+
+Details:
+
+- Mapillary offers nearby street-level images, while Wikimedia provides media tagged with `image` or `wikimedia`from OpenStreetMap.
+
+- You can contribute your photos using the *Add Photos* button.
+
 *Images nearby* (*iOS*) section provides access to photos of points of interest from sources such as [Wikimedia](https://www.wikimedia.org/) and [Mapillary](../plugins/mapillary.md).
+-->
 
-- Mapillary offers nearby street-level images, while Wikimedia provides media tagged with *"image"* or *"wikimedia"* from OpenStreetMap.
+#### Street-level Imagery
 
-- You can contribute your photos using the *Add Photos* button.  
-
-**Street-level imagery.**  
-*Street-level imagery* (*Android*) integrates Mapillary’s extensive collection of real-world street views. You can access nearby, sequentially captured images of streets and paths. Also, Mapillary provides street-level images directly on the map view. You can read more in the article [Mapillary plugin](https://osmand.net/docs/user/plugins/mapillary).
+Details:
 
 - With *Add photos* button, you can share your own street-level imagery via Mapillary.
 
 - Use *Explore* button to open Mapillary view with photos.
+
+*Street-level imagery* integrates Mapillary’s extensive collection of real-world street views. You can access nearby, sequentially captured images of streets and paths. Also, Mapillary provides street-level images directly on the map view. You can read more in the article [Mapillary plugin](../plugins/mapillary.md).
 
 
 ### * Audio/Video Note

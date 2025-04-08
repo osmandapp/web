@@ -53,7 +53,6 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 
 
-- Added border highlighting fro buildings and ares with detailed information.
 - [Prominent peaks are now discoverable via map and search](#prominent-peaks-now-discoverable)
 - [Introduced Smart Folders for automatic track organization](#smart-folders-for-automatic-track-organization).
 - [Discover Nearby Areas with OsmAnd Polygon Info](#polygon-selection-for-nearby-areas)
@@ -67,7 +66,10 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 - [CarPlay Search: Added the ability to select buildings.](#carplay-search-select-buildings)  
 
 
+
+- Redesigned image block and separate screen for all images.
 - [Added a full-screen gallery viewer for Wikimedia images](#full-screen-wikimedia-gallery-viewer) - https://github.com/osmandapp/OsmAnd-iOS/issues/4062  
+
 
 
 To docs:  
@@ -75,6 +77,24 @@ Expanded icon options for Favorites by adding icons from all POI categories - ht
 CarPlay Search: Added the ability to select buildings. - https://github.com/osmandapp/OsmAnd-iOS/issues/3959   
 Added an option to change the appearance of multiple tracks simultaneously. - https://github.com/osmandapp/OsmAnd-iOS/issues/3687  
 Added battery level display for external sensors. - https://github.com/osmandapp/OsmAnd-iOS/issues/3953   / https://github.com/osmandapp/OsmAnd-iOS/issues/4145  
+Added border highlighting fro buildings and ares with detailed information. - https://github.com/osmandapp/OsmAnd-iOS/issues/4164
+
+
+
+
+## Redesign Image Block in Context Menu
+
+## Wikimedia Gallery Viewer
+
+Full-Screen Wikimedia Gallery Viewer  
+
+![Gallery](../../blog/2025-04-15-ios-5-0/img/gallery_ios.png)
+
+
+Introducing a full-screen gallery viewer for Wikimedia images.  
+
+Learn more:  
+[Map Context menu](https://osmand.net/docs/user/map/map-context-menu#online-photos).
 
 
 ## Battery Status for External Sensors
@@ -223,17 +243,6 @@ Learn more:
 [Address Search Guide](https://osmand.net/docs/user/search/search-address)
 
 
-## Full-Screen Wikimedia Gallery Viewer
-
-![Gallery](../../blog/2025-04-15-ios-5-0/img/gallery_ios.png)
-
-
-Introducing a full-screen gallery viewer for Wikimedia images.  
-
-Learn more:  
-[Map Context menu](https://osmand.net/docs/user/map/map-context-menu#online-photos).
-
-
 
 ## Optional updates
 
@@ -241,8 +250,10 @@ Learn more:
 - Fixed issues:  
   - The UTM coordinate input sequence. - https://github.com/osmandapp/OsmAnd-iOS/issues/4333 
   - An issue with track waypoint colors. - https://github.com/osmandapp/OsmAnd-iOS/issues/4293 
-  - Fixed the missing "Download all" button for Terrain maps. - https://github.com/osmandapp/OsmAnd-iOS/issues/4155
+  - Fixed the missing *Download all* button for Terrain maps. - https://github.com/osmandapp/OsmAnd-iOS/issues/4155
   - An issue where popular articles were sometimes missing in Travel Guides. - https://github.com/osmandapp/OsmAnd-iOS/issues/4370
   - The *Battery Level* widget is displayed incorrectly. - https://github.com/osmandapp/OsmAnd-iOS/issues/4145
+  - Added border highlighting for buildings and ares with detailed information. - https://github.com/osmandapp/OsmAnd-iOS/issues/4164
+  - Car play issues with always returning to my location - https://github.com/osmandapp/OsmAnd-iOS/issues/4284
 
 -->

@@ -89,7 +89,7 @@ To display Mapillary street-level imagery on the map, you need to enable this la
 
 <TabItem value="android" label="Android">
 
-![Mapillary plugin filter Android](@site/static/img/plugins/mapillary/mapillary_plugin_filter_android.png)
+![Mapillary plugin filter Android](@site/static/img/plugins/mapillary/mapillary_config_map_filter_andr.png)
 
 </TabItem>
 
@@ -101,9 +101,9 @@ To display Mapillary street-level imagery on the map, you need to enable this la
 
 </Tabs>
 
-You can create a filter and select which photos you want to display on the map, for example, you can only view recent images or only 360 degrees images.  
+You can create a filter and select which photos to display on the map. For example, choose to view only recent images or only 360-degrees images.  
 
-*To access: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*→ &#8230;
+*To access: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
 :::note Tile cash
 If the selected images are not displayed, use **Reload** for the **Tile cache**.
