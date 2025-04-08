@@ -46,18 +46,9 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 <!--
 
-- Grid for buttons
-- Connection OBD-II scanner
-- Custom / standard button appearance
-- Autosync (sync Android changes in Cloud)
-
-
-
 - [Prominent peaks are now discoverable via map and search](#prominent-peaks-now-discoverable)
 - [Introduced Smart Folders for automatic track organization](#smart-folders-for-automatic-track-organization).
 - [Discover Nearby Areas with OsmAnd Polygon Info](#polygon-selection-for-nearby-areas)
-- Added Quick Actions for controlling trip recording.
-- Added a "Detailed track guidance" option and an "Attach to the roads" suggestion dialog.
 - [Added an option to toggle visibility for separate favorite groups on the map.](#flexible-appearance-settings-for-favorite-groups)
 - [Expanded icon options for Favorites by adding icons from all POI categories.](#expanded-icon-options-for-favorites)
 - [Added battery level display for external sensors.](#battery-status-for-external-sensors)
@@ -67,17 +58,21 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 
 
-- Redesigned image block and separate screen for all images.
-- [Added a full-screen gallery viewer for Wikimedia images](#full-screen-wikimedia-gallery-viewer) - https://github.com/osmandapp/OsmAnd-iOS/issues/4062  
-
+- Redesigned image block and separate screen for all images. - https://github.com/osmandapp/OsmAnd-iOS/issues/4062
+- Added a full-screen gallery viewer for Wikimedia images - https://github.com/osmandapp/OsmAnd-iOS/issues/4062  
+- Turn on / off favorites groups visibility - https://github.com/osmandapp/OsmAnd-iOS/issues/4307 
+- Close Configure Map after tap on map - https://github.com/osmandapp/OsmAnd-iOS/issues/4322 
+- Added Quick Actions for controlling trip recording. - https://github.com/osmandapp/OsmAnd-iOS/issues/4176
+- Added a "Detailed track guidance" option and an "Attach to the roads" suggestion dialog. - https://github.com/osmandapp/OsmAnd-iOS/issues/2132
 
 
 To docs:  
-Expanded icon options for Favorites by adding icons from all POI categories - https://github.com/osmandapp/OsmAnd-iOS/issues/3942  
-CarPlay Search: Added the ability to select buildings. - https://github.com/osmandapp/OsmAnd-iOS/issues/3959   
-Added an option to change the appearance of multiple tracks simultaneously. - https://github.com/osmandapp/OsmAnd-iOS/issues/3687  
-Added battery level display for external sensors. - https://github.com/osmandapp/OsmAnd-iOS/issues/3953   / https://github.com/osmandapp/OsmAnd-iOS/issues/4145  
-Added border highlighting fro buildings and ares with detailed information. - https://github.com/osmandapp/OsmAnd-iOS/issues/4164
+
+- Expanded icon options for Favorites by adding icons from all POI categories - https://github.com/osmandapp/OsmAnd-iOS/issues/3942  
+- CarPlay Search: Added the ability to select buildings. - https://github.com/osmandapp/OsmAnd-iOS/issues/3959   
+- Added an option to change the appearance of multiple tracks simultaneously. - https://github.com/osmandapp/OsmAnd-iOS/issues/3687  
+- Added battery level display for external sensors. - https://github.com/osmandapp/OsmAnd-iOS/issues/3953   / https://github.com/osmandapp/OsmAnd-iOS/issues/4145  
+- Added border highlighting fro buildings and ares with detailed information. - https://github.com/osmandapp/OsmAnd-iOS/issues/4164
 
 
 
