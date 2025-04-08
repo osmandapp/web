@@ -1,12 +1,21 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Button } from '@mui/material/';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from '../context/AppContext';
-import { Box, Divider, Link, ListItemText, MenuItem, Typography } from '@mui/material';
+import {
+    Box,
+    Checkbox,
+    Divider,
+    FormControlLabel,
+    Link,
+    ListItemText,
+    MenuItem,
+    Typography,
+    Button,
+} from '@mui/material';
 import DeleteAccountDialog from './DeleteAccountDialog';
 import AccountManager, { sendCode, userLogout } from '../manager/AccountManager';
 import ChangeEmailDialog from './ChangeEmailDialog';
@@ -15,6 +24,8 @@ import { useWindowSize } from '../util/hooks/useWindowSize';
 import { makeStyles } from '@material-ui/core/styles';
 import { FREE_ACCOUNT, getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
+import FastSpringPurchaseButton from './FastSpringPurchaseButton';
+import { purchases } from './FastSpringHelper';
 
 export default function LoginDialog() {
     const ctx = useContext(AppContext);
@@ -34,6 +45,18 @@ export default function LoginDialog() {
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [changeEmailFlag, setChangeEmailFlag] = useState(false);
     const [openDownloadBackupDialog, setOpenDownloadBackupDialog] = useState(false);
+
+    const [selectedProducts, setSelectedProducts] = useState([]);
+
+    const toggleProductSelection = (item) => {
+        setSelectedProducts((prevSelected) => {
+            if (prevSelected.includes(item)) {
+                return prevSelected.filter((product) => product !== item);
+            } else {
+                return [...prevSelected, item];
+            }
+        });
+    };
 
     const toggleOpenDangerousArea = () => {
         setOpenDangerousArea(!openDangerousArea);
@@ -144,6 +167,45 @@ export default function LoginDialog() {
                                         </MenuItem>
                                     </>
                                 )}
+                            </>
+                        )}
+                        {ctx.develFeatures && ctx.loginUser && (
+                            <>
+                                <Divider sx={{ mt: 1 }} />
+                                <Typography component={'span'} variant="h6" noWrap>
+                                    Subscriptions & Purchases:
+                                </Typography>
+                                <MenuItem sx={{ mt: -1 }}>
+                                    {purchases.products.map((item, index) => (
+                                        <FormControlLabel
+                                            key={item.key}
+                                            label={item.value}
+                                            control={
+                                                <Checkbox
+                                                    size="small"
+                                                    checked={selectedProducts.includes(item.key)}
+                                                    onChange={() => toggleProductSelection(item.key)}
+                                                />
+                                            }
+                                        />
+                                    ))}
+                                </MenuItem>
+                                <MenuItem sx={{ mt: -1 }}>
+                                    {purchases.subscriptions.map((item, index) => (
+                                        <FormControlLabel
+                                            key={item.key}
+                                            label={item.value}
+                                            control={
+                                                <Checkbox
+                                                    size="small"
+                                                    checked={selectedProducts.includes(item.key)}
+                                                    onChange={() => toggleProductSelection(item.key)}
+                                                />
+                                            }
+                                        />
+                                    ))}
+                                </MenuItem>
+                                <FastSpringPurchaseButton selectedProducts={selectedProducts} testMode={true} />
                             </>
                         )}
                     </DialogContentText>
