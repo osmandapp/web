@@ -486,7 +486,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 ### External Sensors Widgets
 
 :::note
-To add External Sensors widgets to the map screen, enable the OsmAnd [**External Sensors plugin**](../plugins/external-sensors.md.md).
+To add External Sensors widgets to the map screen, enable the OsmAnd [**External Sensors plugin**](../plugins/external-sensors.md).
 :::
 
 <Tabs groupId="operating-systems">
