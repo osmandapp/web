@@ -58,6 +58,7 @@ export const PROFILE_TYPE_EXTENSION = 'profile';
 export const ADDRESS_EXTENSION = 'address';
 export const AMENITY_ORIGIN_EXTENSION = 'amenity_origin';
 export const NAME = 'name';
+export const EN_NAME = 'en_name';
 export const ALT_NAME = 'osm_tag_alt_name';
 
 // from Amenity object

@@ -116,8 +116,21 @@ org.gradle.caching=true
 
 
 9. Open `osmand.xcworkspace` in Xcode
+
 10. First build.
   Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Select as target your device or as one of iOS simulators. But don't use default 'Any iOS Device (arm64)'. Build the project (play button).
+
+11. XCode Destinations and Sandbox
+
+ - Use "My Mac (Designed for iPad)" for day-to-day development (best performance)
+ - Use iPhone/iPad destinations for UI/UX development (slow on M-processors)
+
+ - MacOS might ask you to log in using Apple ID when OsmAnd is up and running
+ - Use your Sandbox Account as Apple ID to avoid repeated login requests
+ - Use OsmAnd Cloud with your Promo subscription to get unlimited maps
+
+ - Ask your Team Leader for Sandbox accounts and Promo subscriptions
+
 ## Troubleshooting
 ### Cleaning temp files.
   - In case of build errors you can press in Xcode: ```Product -> Clean build folder```
@@ -154,7 +167,7 @@ $ echo "" >> ~/.lldbinit-Xcode
 $ echo "command script import ~/qtlldb/both.py" >> ~/.lldbinit-Xcode
 ```
 
-##  LLDB Init File (optional)
+## LLDB Init File (optional)
 XCode 16+ does not load `~/.lldbinit-Xcode` automatically, so set it up manually using `Product - Scheme - Edit scheme - Run - LLDB Init File` menu.
 
 After set this parameters reboot your computer.
