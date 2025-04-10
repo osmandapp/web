@@ -404,5 +404,5 @@ Learn more:
   - [Crash](https://github.com/osmandapp/OsmAnd/issues/22033) when tapping a POI with an image.
   - [Incorrect behavior of Avoid roads](https://github.com/osmandapp/OsmAnd/issues/21828) after map update.
   - Smart Folder: Bugs and UI improvements.
-  - Bug with [Direct-to-point projection](https://github.com/osmandapp/OsmAnd/issues/21588) was fixed.
+  - Bug with [Direct-to-point projection](https://github.com/osmandapp/OsmAnd/issues/21588).
 

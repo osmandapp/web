@@ -250,10 +250,10 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 
 | Action | Description |
 |:-------------|:-------------|
-| Start / Pause <br/> [**Trip recording**](../plugins/trip-recording.md#new-track-recording) <br /> *Android only* | Begin a recording session of the current track or pause to temporarily stop without completing the trip. |
-| Start  <br/> [**New trip segment**](../plugins/trip-recording.md#overview-screen) <br /> *Android only* | Start a new segment of the trip without stopping the overall recording. |
-| Save <br/> [**Recorded Trip & Continue**](../plugins/trip-recording.md#current-track-recording) <br /> *Android only* | Save the current trip recording and continue recording without interruption. |
-| Finish <br/> [**Trip recording**](../plugins/trip-recording.md#current-track-recording) <br /> *Android only* | End the current trip recording session. |
+| Start / Pause <br/> [**Trip recording**](../plugins/trip-recording.md#new-track-recording) | Begin a recording session of the current track or pause to temporarily stop without completing the trip. |
+| Start  <br/> [**New trip segment**](../plugins/trip-recording.md#overview-screen) | Start a new segment of the trip without stopping the overall recording. |
+| Save <br/> [**Recorded Trip & Continue**](../plugins/trip-recording.md#current-track-recording) | Save the current trip recording and continue recording without interruption. |
+| Finish <br/> [**Trip recording**](../plugins/trip-recording.md#current-track-recording) | End the current trip recording session. |
 | Add <br/> [**Favorite**](../map/configure-map-menu.md#map-layers) | Adds a favorite to the selected (central) map location. <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Group*. Adds a favorite to the selected group. <br /> - *Color*. Adds a favorite with a preselected color <br /> - *Name*. Adds a favorite with the specified name prefix.  |
 | Add <br/> [**Track waypoint**](../map/point-layers-on-map.md#track-waypoints) | Adds a new Track waypoint to the [currently recording track](../plugins/trip-recording.md) or [any track in My Places](../personal/tracks/manage-tracks.md). <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Group*. Adds a favorite to the selected group. <br /> - *Color*. Adds a favorite with a preselected color <br /> - *Name*. Adds a favorite with the specified name prefix.  |
 | Add <br/> [**Map marker**](../map/configure-map-menu.md#map-layers) | Adds marker to a selected (center) map location. |
@@ -311,4 +311,4 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 
-> *This article was last updated in January 2025*
+> *This article was last updated in April 2025*
