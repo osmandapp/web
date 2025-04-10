@@ -246,7 +246,7 @@ The following information will be visible in the context menu:
 - [Elevation info](../navigation/setup/route-details.md#elevation-info). Displays information about the elevation data on the route.
 - [Analyze Track on Map](../map/tracks/index.md#analyze-track-on-map). Displays detailed analysis of track data using graphs and maps.
 
-To view the elevation, slope, or altitude details for a selected route, simply tap on any of the following values in the context menu: **Distance**, **Uphill**, **Downhill**, or **Altitude**.
+To view graph of the elevation, slope, or altitude details for a selected route, simply tap on any of the following values in the context menu: **Distance**, **Uphill**, **Downhill**, or **Altitude**.
 
 <Tabs groupId="operating-systems">
 
@@ -317,7 +317,62 @@ You can customize whether routes are switched on or off using the [Quick Action]
 
 ## Routes Search
 
-You can find routes using the [Search function](../search/index.md). Just write the name or select **Routes** in the[Categories section](../search/search-poi.md#).
+Find routes using the [Search function](../search/index.md) by name or by selecting "Routes" in the [Categories section](../search/search-poi.md#).
+
+To search, go to the _<Translate android="true" ids="search_button"/>_ menu or _<Translate android="true" ids="search_button,search_categories"/>_ and enter your activity.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Routes on the ground](@site/static/img/map/route_search.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Routes on the ground](@site/static/img/map/route_search_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+Navigate to _<Translate android="true" ids="search_button,search_categories,poi_routes"/>_ to find desired routes. Routes include name, activity type, length, location, and distance to the nearest point.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Routes on the ground](@site/static/img/map/route_search_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+Use filters button (top right corner) to display only the desired routes.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Routes on the ground](@site/static/img/map/route_search_2.png) ![Routes on the ground](@site/static/img/map/route_search_3.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Routes on the ground](@site/static/img/map/route_search_2_ios.png) ![Routes on the ground](@site/static/img/map/route_search_3_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
 
 ## Related Articles
 
