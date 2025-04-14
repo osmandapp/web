@@ -2,7 +2,6 @@ import React, { useCallback, useContext, useEffect, useRef, useState } from 'rea
 import AppContext, { OBJECT_EXPLORE } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { apiGet } from '../../util/HttpApi';
-import { WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
 import L from 'leaflet';
 import styles from '../../menu/search/search.module.css';
 import 'leaflet-spin';
@@ -14,6 +13,7 @@ import { areSetsEqual } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
 import { EXPLORE_BIG_ICON_SIZE, clusterMarkers, createHoverMarker, removeTooltip } from '../util/Clusterizer';
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
+import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
 export const EXPLORE_MIN_ZOOM = 6;
@@ -331,7 +331,7 @@ export default function ExploreLayer() {
                 const imgTag = ctx.searchSettings.useWikiImages
                     ? place.properties.imageTitle
                     : getImgByProps(place.properties);
-                const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}?width=200`;
+                const iconUrl = getPhotoUrl(imgTag, 200);
                 const iconSize = [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE];
 
                 return new Promise((resolve, reject) => {
@@ -472,7 +472,7 @@ export default function ExploreLayer() {
                         </IconButton>
                         <Box>
                             <img
-                                src={`${WIKI_IMAGE_BASE_URL}${selectedObj.properties.imageTitle}?width=300`}
+                                src={getPhotoUrl(selectedObj.properties.imageTitle, 300)}
                                 alt="Selected"
                             />
                         </Box>
