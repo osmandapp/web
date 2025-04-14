@@ -164,12 +164,30 @@ export default function LoginDialog() {
                                         </MenuItem>
                                         <MenuItem sx={{ mt: -1 }}>
                                             <ListItemText>
-                                                <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
+                                                <Typography
+                                                    component={'span'}
+                                                    sx={{
+                                                        ml: 1,
+                                                        color:
+                                                            ctx.accountInfo.valid === 'false' ? '#ff8d90' : undefined,
+                                                    }}
+                                                    variant="body2"
+                                                    noWrap
+                                                >
                                                     {`Expire time: ${ctx.accountInfo.expireTime}`}
                                                 </Typography>
                                             </ListItemText>
                                         </MenuItem>
                                     </>
+                                )}
+                                {ctx.accountInfo?.valid === 'false' && (
+                                    <MenuItem sx={{ mt: -1 }}>
+                                        <ListItemText>
+                                            <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
+                                                {`Valid: 😢 ${ctx.accountInfo.valid}`}
+                                            </Typography>
+                                        </ListItemText>
+                                    </MenuItem>
                                 )}
                             </>
                         )}
@@ -254,6 +272,7 @@ export default function LoginDialog() {
                                             control={
                                                 <Checkbox
                                                     size="small"
+                                                    disabled={item.type === 'pro' && ctx.accountInfo?.valid === 'true'}
                                                     checked={selectedProducts.includes(item.key)}
                                                     onChange={() => toggleProductSelection(item.key)}
                                                 />
@@ -261,7 +280,11 @@ export default function LoginDialog() {
                                         />
                                     ))}
                                 </MenuItem>
-                                <FastSpringPurchaseButton selectedProducts={selectedProducts} testMode={true} />
+                                <FastSpringPurchaseButton
+                                    selectedProducts={selectedProducts}
+                                    testMode={true}
+                                    ctx={ctx}
+                                />
                             </>
                         )}
                     </DialogContentText>
