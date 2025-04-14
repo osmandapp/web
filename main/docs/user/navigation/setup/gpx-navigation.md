@@ -118,11 +118,11 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_navigation,shared_string_
 
 </Tabs>
 
-- ***Edit*** (*pencil icon* next to the track name). Opens the track in the [*Plan a route*](../../plan-route/create-route.md) tool.
-- ***<Translate android="true" ids="select_another_track"/>***. Select a different GPX file for navigation.
-- ***<Translate android="true" ids="gpx_option_reverse_route"/>***. If this setting is enabled, the direction of movement along the track is reversed.
-- ***<Translate android="true" ids="attach_to_the_roads"/>***. Configures [attaching a track to the roads](#attach-to-the-roads).
-- ***<Translate android="true" ids="pass_whole_track_descr"/>*** (*Android*) / ***<Translate ios="true" ids="point_to_navigate"/>*** (*iOS*). You can select how to navigate from my location to the track:
+- **Edit** (*pencil icon* next to the track name) — Opens the track in the [*Plan a route*](../../plan-route/create-route.md) tool.
+- **<Translate android="true" ids="select_another_track"/>** — Select a different GPX file for navigation.
+- **<Translate android="true" ids="gpx_option_reverse_route"/>** — If this setting is enabled, the direction of movement along the track is reversed.
+- **<Translate android="true" ids="attach_to_the_roads"/>** — Configures [attaching a track to the roads](#attach-to-the-roads).
+- **<Translate android="true" ids="pass_whole_track_descr"/>** (*Android*) / **<Translate ios="true" ids="point_to_navigate"/>** (*iOS*) — You can select how to navigate from my location to the track:
 to the *<Translate android="true" ids="start_of_the_track"/>* or to the *<Translate android="true" ids="nearest_point"/>* on the track.
 - Choose **Navigation type** for the first and last segment: either build a [*straight line*](../routing/straight-line-routing.md) or use the [*routing type*](../routing/osmand-routing.md#routing-types) from the current profile.
 
@@ -145,25 +145,25 @@ to the *<Translate android="true" ids="start_of_the_track"/>* or to the *<Transl
 
 </Tabs>
 
-The **Attach to the roads** option is available in the [Follow track](#follow-track-options) menu. When enabled, OsmAnd uses the [Plan a route](../../plan-route/create-route.md#attach-track-to-roads) tool to align the selected track with the nearest allowed roads based on the chosen **navigation profile** and ***threshold distance***. This improves route information in [route details](../setup/route-details.md) section and provides [detailed voice instructions](#guidance) during navigation.  
+The **Attach to the roads** feature aligns your track with the nearest road for a more accurate navigation experience. Available in the [Follow track](#follow-track-options) menu, this feature ensures that your route follows the appropriate road network based on the selected *navigation profile* and **threshold distance**. This enhances both [route details](../setup/route-details.md) and [voice instructions](#guidance) during navigation.
 
-How it works:
+***How it works:***
 
-- OsmAnd matches each track point to the **nearest road** within the set **threshold distance**.  
-- **Threshold distance** (default: **50 meters**) defines the maximum distance a GPS track point can be from a road to be attached to it.  
-- When switching between **navigation profiles**, the app **automatically reattaches the track** to roads allowed for the selected profile.  
-- If the track contains a large number of points, the attachment process may take some time. A **progress indicator** (*orange status line*) will display the ongoing attachment process.  
-- Once the attachment is complete, the **Apply** button becomes active, allowing the modified track to be used for navigation.
+- OsmAnd matches each track point to the **nearest road** within the set **threshold distance** (default: **50 meters**).  
+- The **threshold distance** defines the maximum allowable distance between a GPS track point and a road for attachment.
+- **Automatic reattachment** — When switching **navigation profiles**, OsmAnd automatically reattaches the track to roads that are suitable for the new profile.
+- For large tracks with many points, the attachment process may take a little longer. You will see a **progress indicator** (*orange status line*) showing the attachment status.
+- After the attachment is complete, tap **Apply** to use the modified track for navigation.
 
 #### Automatic Attachment to the Roads
 
-OsmAnd automatically snaps routes to roads when using the *Plan a Route* tool:
+OsmAnd automatically snaps routes to roads when using the **Plan a Route** tool:
 
-- When selecting **waypoints**, the route automatically aligns with the nearest available road (*except for [Straight Line Routing](../../navigation/routing/straight-line-routing.md) and [Direct-to-Point Routing](../../navigation/routing/direct-to-point-routing.md)*).
-- If no roads are detected (e.g., in off-road environments), the route may follow **straight-line segments** instead.
-- The route can be **manually adjusted** by dragging waypoints to different locations.
+- **Waypoints** automatically align with the nearest available road (*except for [Straight Line Routing](../../navigation/routing/straight-line-routing.md) and [Direct-to-Point Routing](../../navigation/routing/direct-to-point-routing.md)*).
+- If no roads are detected (e.g., in off-road environments), the route will follow **straight-line segments**.
+- You can **manually adjust** the route by dragging waypoints to different locations.
 
-By default, the **Attach to the Roads** feature runs **automatically** when a track is selected for navigation. If needed, this setting can be adjusted. For more details, refer to [Detailed Track Guidance](../guidance/navigation-settings.md#detailed-track-guidance) in the *Navigation Settings* article.
+By default, the **Attach to the roads** feature runs **automatically** when a track is selected for navigation. You can change this setting as needed. For more details, refer to [Detailed Track Guidance](../guidance/navigation-settings.md#detailed-track-guidance) in the *Navigation Settings* article.
 
 
 ## Points
@@ -201,4 +201,4 @@ During navigation, you can use various options such as zooming in or out, pannin
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in January 2025*
+> *This article was last updated in April 2025*

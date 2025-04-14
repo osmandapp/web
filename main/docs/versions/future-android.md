@@ -33,38 +33,28 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ## What's new
 
-- [New main navigation widget combines turn arrow and navigation instructions](#route-maneuvers-widgets-set)
-- [Current route info widget: displays ETA, arrival time, and distance](#new-route-information-widget)
-- [Redesigned the Configure screen for widgets](#redesigned-configure-screen)
-- [New option to select widget size for left and right panels](#resizable-widgets-for-side-panels)
-- [Reset action for the Average speed widget](#reset-option-for-the-average-speed-widget)
-- [Discover Top-Ranked POIs with the New Explore Mode](#explore-mode-discover-popular-places)
-- [Wikidata Integration in Map Data (Popular Places - Wikipedia)](#popular-places-wikipedia)
-- [Improved searching OSM routes and choosing it for navigation](#all-osm-routes--now-searchable)
-- [Detailed information on Ski Slopes and MTB Trails](#ski-slopes-and-mtb-trails-information)
-- [Added Coordinates Grid with geographical coordinates](#coordinates-grid-overlay)
-- [Crags and climbing areas on the map](#climbing-areas-and-crags)
-- [Detailed information for linear objects](#detailed-information-for-linear-objects)
-- [Mountain peak heights in feet](#mountain-peak-heights-in-feet)
-- [Prominent peaks now discoverable via map and search](#prominent-peaks-now-discoverable)
-- [USA address search with TIGER data](#usa-address-search-with-tiger-data)
-- [Changing UX for Intermediate destinations in Waypoints](#interactions-with-intermediate-destinations)
-- [Added ability to change and set the default appearance for favorite groups](#flexible-appearance-settings-for-favorite-groups)
-- [Android Auto improvements](#android-auto-improvements)
-- [AIS Vessel Tracking plugin (nautical navigation)](#ais-vessel-tracking-plugin)
+- [The new main navigation widget](#route-maneuvers-widgets-set) combines turn arrows and navigation instructions.
+- [Current route information widget](#new-route-information-widget): displays ETA, arrival time, and distance.
+- [Redesigned the Configure screen for widgets.](#redesigned-configure-screen)
+- [New option to select widget size](#resizable-widgets-for-side-panels) for left and right panels.
+- [Reset action for the Average speed widget.](#reset-option-for-the-average-speed-widget)
+- [Discover top-ranked POIs](#explore-mode-discover-popular-places) with the New Explore Mode.
+- [Wikidata integration](#popular-places-wikipedia) into map data (Popular Places - Wikipedia).
+- [Improved OSM routes search](#all-osm-routes--now-searchable) and selection for navigation.
+- [Detailed information](#ski-slopes-and-mtb-trails-information) about ski slopes and MTB trails.
+- [Added a coordinates grid](#coordinates-grid-overlay) with geographical coordinates.
+- [Crags and climbing](#climbing-areas-and-crags) areas on the map.
+- [Detailed information for linear objects.](#detailed-information-for-linear-objects)
+- [Mountain peak heights in feet.](#mountain-peak-heights-in-feet)
+- [Prominent peaks](#prominent-peaks-now-discoverable) are now discoverable on the map and through search.
+- [US address search](#usa-address-search-with-tiger-data) using TIGER data.
+- [Changed UI](#interactions-with-intermediate-destinations) for intermediate destinations in Waypoints.
+- [Added ability to change and set](#flexible-appearance-settings-for-favorite-groups) the default appearance for favorite groups.
+- [Improvements for Android Auto.](#android-auto-improvements)
+- [AIS Vessel Tracking plugin (nautical navigation).](#ais-vessel-tracking-plugin)
 
 
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
-
-
-<!--
-add to docs:
-
-- redesign of the widget configuration screen — https://github.com/osmandapp/OsmAnd-Issues/issues/2525
-- Discover top-ranked POIs with the new Explore mode (Photos oh the map) — https://github.com/osmandapp/OsmAnd-Issues/issues/2662
-- Wikidata in map data (wikipedia maps) #2921 - https://github.com/osmandapp/OsmAnd-Issues/issues/2921
-
--->
 
 
 ## Route Maneuvers Widgets Set
@@ -130,7 +120,7 @@ Learn more:
 
 ![Resizable Widgets for Side Panels](../../blog/2025-03-11-android-5-0/img/resizable_widgets_andr.png)
 
-You can now customize the **size of widgets** in the **left and right panels**, just like in the top and bottom ones. This update offers greater flexibility in *configuring the map screen*. Choose from *small, medium*, or *large* sizes to customize your screen layout.
+You can now customize the **size of widgets** in the **left and right panels**, just as in the top and bottom ones. This update offers greater flexibility in *configuring the map screen*. Choose from *small, medium*, or *large* sizes to customize your screen layout.
 
 Key improvements:
 
@@ -208,7 +198,7 @@ You can now **search and navigate all OSM routes** directly in OsmAnd — includ
 
 Key features:
 
-- **Search by route type and name** — Find routes by name or filter by categories like *Hiking, Cycling, MTB*, and more.  
+- **Search by route type and name** — Find routes by name or use the filter by categories such as *Hiking, Cycling, MTB*, and more.  
 - **Route overview in search result** — See *route name, icon, total distance*, and *distance to the nearest point* before selecting it.  
 - **Start navigation or download GPX** — Tap a route to open it and either start navigation or *download it as a GPX file*.  
 

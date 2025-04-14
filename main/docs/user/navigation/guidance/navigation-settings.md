@@ -535,13 +535,15 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-When using the [Navigation by track](../setup/gpx-navigation.md) option, selecting a track as the destination allows you to enable the [Attach to the roads](../setup/gpx-navigation.md#attach-to-the-roads) setting in the [Follow track](../setup/gpx-navigation.md#how-to-follow-the-track) menu. This feature helps align the track with existing roads for smoother navigation.  
+The **Detailed track guidance** feature improves the accuracy of route navigation when using **track-based routes**. When you select a track as the destination, you can enable the [Attach to the roads](../setup/gpx-navigation.md#attach-to-the-roads) setting from the [Follow track](../setup/gpx-navigation.md#follow-track-options) menu. This ensures the track is aligned with existing roads for smoother, more precise navigation.
 
-There are two ways to use this setting:
+There are two options for using *Detailed track guidance*:
 
-- **<Translate android="true" ids="ask_every_time"/>** (*default settings*) – The *Attach to the roads* option will appear in the [Route Details](../setup/route-details.md) section each time a track-based route is calculated. This allows users to decide whether to apply road attachment for each navigation session.
+- **<Translate android="true" ids="ask_every_time"/>** (*default settings*) – The *Attach to the roads* option will appear in the [Route Details](../setup/route-details.md) section each time a track-based route is calculated. This allows you to decide whether to apply road attachment for each navigation session.
 
 - **<Translate android="true" ids="shared_string_always"/>** – The road attachment process will be applied automatically for every *navigation by track* route without requiring manual confirmation.
+
+For more information on using track-based navigation, visit [Navigation by Track](../setup/gpx-navigation.md).
 
 
 ## Related Articles
@@ -556,4 +558,4 @@ There are two ways to use this setting:
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in February 2025*
+> *This article was last updated in April 2025*
