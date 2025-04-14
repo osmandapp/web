@@ -11,7 +11,10 @@ import i18n from 'i18next';
 import { SEARCH_ICON_MAP_OBJ, typeIconMap } from '../map/layers/SearchLayer';
 import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
 
-export const WIKI_IMAGE_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
+export const USE_OSMAND_SERVER = true;
+export const OSMAND_WIKI_BASE_URL = 'https://data.osmand.net/wikimedia/images-1280/';
+export const COMMONS_WIKI_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
+
 export const SEARCH_BRAND = 'brand';
 
 export async function fetchPhotoProperties(photo) {
@@ -147,8 +150,12 @@ export function parseTagWithLang(tag) {
 }
 
 export function getPhotoTitle(photo) {
-    if (photo.properties.imageTitle.startsWith(WIKI_IMAGE_BASE_URL)) {
-        return photo.properties.imageTitle.substring(WIKI_IMAGE_BASE_URL.length);
+    const URL = photo.properties?.imageTitle ?? photo;
+    if (URL.startsWith(COMMONS_WIKI_BASE_URL)) {
+        return URL.substring(COMMONS_WIKI_BASE_URL.length);
     }
-    return photo.properties.imageTitle;
+    if (URL.startsWith(OSMAND_WIKI_BASE_URL)) {
+        return URL.substring(URL.lastIndexOf('/') + 1);
+    }
+    return URL;
 }

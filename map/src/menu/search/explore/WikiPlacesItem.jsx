@@ -2,7 +2,7 @@ import { useInView } from 'react-intersection-observer';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { LinearProgress, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
-import { WIKI_IMAGE_BASE_URL } from '../../../manager/SearchManager';
+import { getPhotoUrl } from './PhotoGallery';
 import styles from '../search.module.css';
 import {
     addPoiTypeTag,
@@ -146,7 +146,7 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
                                     {imageTitle && imageTitle !== '' ? (
                                         <ListItemIcon>
                                             <img
-                                                src={`${WIKI_IMAGE_BASE_URL}${imageTitle}?width=200`}
+                                                src={getPhotoUrl(imageTitle, 200)}
                                                 alt={name}
                                                 style={{ width: '66px', height: '66px', objectFit: 'cover' }}
                                             />

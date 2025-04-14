@@ -17,6 +17,7 @@ import { getPhotoUrl } from './PhotoGallery';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
 import { otherImgTags } from '../../../infoblock/components/wpt/WptTagsProvider';
+import md5 from 'blueimp-md5';
 
 export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
@@ -272,9 +273,8 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
     // Preload next 5 images if within range
     const shouldLoadImage = inView || (index >= activeStep && index < activeStep + 5);
 
-    function getHref() {
-        const title = getPhotoTitle(photo);
-        return `https://commons.wikimedia.org/wiki/File:${title}?width=1280`;
+    function getImageHref() {
+        return getPhotoUrl(photo, 1280); // return `https://commons.wikimedia.org/wiki/File:${title}?width=1280`;
     }
 
     return (
@@ -290,7 +290,7 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
         >
             {shouldLoadImage ? (
                 <a
-                    href={getHref()}
+                    href={getImageHref()}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
