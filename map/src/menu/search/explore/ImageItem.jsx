@@ -67,7 +67,7 @@ export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
                     />
                 ) : (
                     <img
-                        src={getPhotoUrl(photo)}
+                        src={getPhotoUrl({ photo })}
                         alt={photo.properties.imageTitle}
                         className={styles.image}
                         onLoad={() => handleImageLoad(index)}

@@ -274,7 +274,7 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
     const shouldLoadImage = inView || (index >= activeStep && index < activeStep + 5);
 
     function getImageHref() {
-        return getPhotoUrl(photo, 1280); // return `https://commons.wikimedia.org/wiki/File:${title}?width=1280`;
+        return getPhotoUrl({ photo, size: 1280 }); // return `https://commons.wikimedia.org/wiki/File:${title}?width=1280`;
     }
 
     return (
@@ -296,7 +296,7 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
                     style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                 >
                     <img
-                        src={getPhotoUrl(photo, 1280)}
+                        src={getPhotoUrl({ photo, size: 1280 })}
                         alt={`Photo ${index + 1}`}
                         style={{ width: '100%', height: getHeight() - MARGIN, objectFit: 'contain' }}
                     />

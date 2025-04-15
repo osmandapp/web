@@ -331,7 +331,7 @@ export default function ExploreLayer() {
                 const imgTag = ctx.searchSettings.useWikiImages
                     ? place.properties.imageTitle
                     : getImgByProps(place.properties);
-                const iconUrl = getPhotoUrl(imgTag, 200);
+                const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: 200 });
                 const iconSize = [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE];
 
                 return new Promise((resolve, reject) => {
@@ -471,10 +471,7 @@ export default function ExploreLayer() {
                             <CloseIcon />
                         </IconButton>
                         <Box>
-                            <img
-                                src={getPhotoUrl(selectedObj.properties.imageTitle, 300)}
-                                alt="Selected"
-                            />
+                            <img src={getPhotoUrl({ photo: selectedObj, size: 300 })} alt="Selected" />
                         </Box>
                         <Box sx={{ marginTop: 2 }}>
                             <Table size="small" aria-label="properties table">
