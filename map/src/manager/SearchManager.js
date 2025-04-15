@@ -17,7 +17,7 @@ export const COMMONS_WIKI_BASE_URL = 'https://commons.wikimedia.org/wiki/Special
 
 export const SEARCH_BRAND = 'brand';
 
-export async function fetchPhotoProperties(photo) {
+export async function fetchPhotoProperties(photo, signal) {
     const imageTitle = getPhotoTitle(photo);
     const lang = i18n.language;
     try {
@@ -29,6 +29,7 @@ export async function fetchPhotoProperties(photo) {
                 imageTitle: imageTitle,
             },
             apiCache: true,
+            signal,
             headers: {
                 'Content-Type': 'application/json',
             },
