@@ -1,6 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Box, Button, Divider, Grid, ListItemText, MenuItem, Typography } from '@mui/material';
-import { getPhotoTitle, USE_OSMAND_SERVER, OSMAND_WIKI_BASE_URL, COMMONS_WIKI_BASE_URL } from '../../../manager/SearchManager';
+import {
+    getPhotoTitle,
+    USE_OSMAND_SERVER,
+    OSMAND_WIKI_BASE_URL,
+    COMMONS_WIKI_BASE_URL,
+} from '../../../manager/SearchManager';
 import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../../context/AppContext';
@@ -8,14 +13,17 @@ import { IMAGE_OSM_TAG, otherImgTags } from '../../../infoblock/components/wpt/W
 import PhotoLink from './PhotoLink';
 import md5 from 'blueimp-md5';
 
-export function getPhotoUrl(photo, size = 300) {
-    const title = getPhotoTitle(photo);
-    if (otherImgTags(photo.properties?.osmTag)) {
+export function getPhotoUrl({ photo = null, photoTitle = null, size = 300 }) {
+    if (!photo && !photoTitle) {
+        return '';
+    }
+    const title = photoTitle ?? getPhotoTitle(photo);
+    if (photo && otherImgTags(photo.properties?.osmTag)) {
         return title;
     }
     if (USE_OSMAND_SERVER) {
         const hash = md5(title);
-        const hashPrefix = hash.substring(0, 1) + "/" + hash.substring(0, 2);
+        const hashPrefix = hash.substring(0, 1) + '/' + hash.substring(0, 2);
         return `${OSMAND_WIKI_BASE_URL}${hashPrefix}/${title}?width=${size}`;
     } else {
         return `${COMMONS_WIKI_BASE_URL}${title}?width=${size}`;
@@ -106,7 +114,7 @@ export default function PhotoGallery({ photos }) {
                                                 onLoad={handleImageLoad}
                                                 onError={() => handleImageError(index)}
                                                 onClick={() => handleImageClick(index)}
-                                                src={getPhotoUrl(photo)}
+                                                src={getPhotoUrl({ photo })}
                                                 alt={`Photo ${index + 1}`}
                                                 className={styles.mainPhotoGallery}
                                                 style={{
@@ -140,7 +148,7 @@ export default function PhotoGallery({ photos }) {
                                                     onLoad={handleImageLoad}
                                                     onError={() => handleImageError(index + 1)}
                                                     onClick={() => handleImageClick(index + 1)}
-                                                    src={getPhotoUrl(photo)}
+                                                    src={getPhotoUrl({ photo })}
                                                     alt={`Photo ${index + 2}`}
                                                     className={styles.littlePhotoGallery}
                                                     style={{
