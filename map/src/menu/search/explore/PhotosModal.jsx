@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { AppBar, Box, Button, Drawer, IconButton, Toolbar, Typography, Skeleton } from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
-import { fetchPhotoProperties, getPhotoTitle } from '../../../manager/SearchManager';
+import { fetchPhotoProperties } from '../../../manager/SearchManager';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as BackForward } from '../../../assets/icons/ic_arrow_forward.svg';
@@ -17,7 +17,7 @@ import { getPhotoUrl } from './PhotoGallery';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
 import { otherImgTags } from '../../../infoblock/components/wpt/WptTagsProvider';
-import md5 from 'blueimp-md5';
+import PropTypes from 'prop-types';
 
 export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
@@ -28,6 +28,8 @@ export default function PhotosModal({ photos }) {
     const [width, height] = useWindowSize();
     const [showInfo, setShowInfo] = useState(false);
     const [activePhoto, setActivePhoto] = useState(null);
+
+    const controllerRef = useRef(null);
 
     const HEADER_HEIGHT = 60;
     const LEFT_MARGIN = 423;
@@ -43,10 +45,16 @@ export default function PhotosModal({ photos }) {
             if (otherImgTags(currentPhoto.properties.osmTag)) {
                 return;
             }
-            fetchPhotoProperties(currentPhoto).then((photo) => {
-                if (hasFooterInfo(photo)) {
+
+            if (controllerRef.current) {
+                controllerRef.current.abort();
+            }
+            controllerRef.current = new AbortController();
+
+            fetchPhotoProperties(currentPhoto, controllerRef.current.signal).then((fetchedPhoto) => {
+                if (hasFooterInfo(fetchedPhoto)) {
                     setShowInfo(true);
-                    setActivePhoto(photo);
+                    setActivePhoto(fetchedPhoto);
                 } else {
                     setShowInfo(false);
                 }
@@ -274,7 +282,7 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
     const shouldLoadImage = inView || (index >= activeStep && index < activeStep + 5);
 
     function getImageHref() {
-        return getPhotoUrl({ photo, size: 1280 }); // return `https://commons.wikimedia.org/wiki/File:${title}?width=1280`;
+        return getPhotoUrl({ photo, size: 1280 });
     }
 
     return (
@@ -297,7 +305,7 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
                 >
                     <img
                         src={getPhotoUrl({ photo, size: 1280 })}
-                        alt={`Photo ${index + 1}`}
+                        alt={index + 1}
                         style={{ width: '100%', height: getHeight() - MARGIN, objectFit: 'contain' }}
                     />
                 </a>
@@ -307,3 +315,15 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
         </div>
     );
 }
+
+PhotosModal.propTypes = {
+    photos: PropTypes.array.isRequired,
+};
+
+PhotoItem.propTypes = {
+    photo: PropTypes.object.isRequired,
+    index: PropTypes.number.isRequired,
+    getWidth: PropTypes.func.isRequired,
+    getHeight: PropTypes.func.isRequired,
+    activeStep: PropTypes.number.isRequired,
+};
