@@ -32,7 +32,7 @@ OsmAnd i [Marcin z Motocyklem.net](https://motocyklem.net/) przedstawiają i pre
 
 <p> </p>
 
-1. **Pełna insrtrukcja** jest [tutaj](https://osmand.net/promo/manual#polska-wersija).
+1. **Pełna instrukcja** jest [tutaj](https://osmand.net/promo/manual#polska-wersija).
 
 
 OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności](https://osmand.net/docs/legal/privacy-policy) i [Regulaminem OsmAnd](https://osmand.net/docs/legal/terms-of-use).
