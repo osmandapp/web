@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { Button } from '@mui/material';
 import { isEmpty } from 'lodash';
 import PropTypes from 'prop-types';
+import { getAccountInfo } from '../manager/LoginManager';
 
-export default function FastSpringPurchaseButton({ selectedProducts, testMode = false }) {
+export default function FastSpringPurchaseButton({ selectedProducts, testMode = false, ctx }) {
     useEffect(() => {
         if (document.getElementById('fsc-api')) return;
 
@@ -15,10 +16,30 @@ export default function FastSpringPurchaseButton({ selectedProducts, testMode = 
             ? 'osmand.test.onfastspring.com/popup-osmand'
             : 'osmand.onfastspring.com/popup-osmand';
         script.setAttribute('data-storefront', storefront);
+        script.setAttribute('data-popup-webhook-received', 'onFSPopupClosed');
         script.onload = () => {
             testMode && console.log('✅ FastSpring script loaded.');
         };
         document.head.appendChild(script);
+
+        window.onFSPopupClosed = function (orderReference) {
+            if (window.fastspring && window.fastspring.builder) {
+                window.fastspring.builder.reset();
+            }
+            if (orderReference && orderReference.id) {
+                const tryUpdate = (attempt = 0) => {
+                    getAccountInfo(ctx.setAccountInfo).then((info) => {
+                        // check current subscription was updated successfully after two webhooks (subscription.activated and order.completed)
+                        if ((info?.valid === 'true' && info?.startTime && info?.expireTime) || attempt >= 5) {
+                            testMode && console.log('✅ Updated info after payment');
+                        } else {
+                            setTimeout(() => tryUpdate(attempt + 1), 3000);
+                        }
+                    });
+                };
+                tryUpdate();
+            }
+        };
     }, []);
 
     const handleClick = () => {
@@ -40,7 +61,6 @@ export default function FastSpringPurchaseButton({ selectedProducts, testMode = 
 
         if (window.fastspring && window.fastspring.builder) {
             window.fastspring.builder.push(s);
-            testMode && console.log('✅ Product added to cart, proceeding to checkout.');
         } else {
             testMode && alert('❌ FastSpring builder is not ready. Please try again in a moment.');
         }
@@ -52,4 +72,5 @@ export default function FastSpringPurchaseButton({ selectedProducts, testMode = 
 FastSpringPurchaseButton.propTypes = {
     selectedProducts: PropTypes.arrayOf(PropTypes.string).isRequired,
     testMode: PropTypes.bool,
+    ctx: PropTypes.object.isRequired,
 };

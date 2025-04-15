@@ -9,6 +9,7 @@ export const purchases = {
         {
             key: 'osmand-pro-annual',
             value: 'OsmAnd Pro Annual',
+            type: 'pro',
         },
     ],
 };
