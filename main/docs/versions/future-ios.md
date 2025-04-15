@@ -31,6 +31,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 - [Introduced Smart Folders](#smart-folders-for-automatic-track-organization) for automatic track organization.
 - [Redesigned the image block](#redesign-image-block-in-context-menu) in context menu.
 - [Added a full-screen gallery](#gallery-viewer-for-wikimedia-images) for viewing Wikimedia images.
+- [Discover nearby areas](#polygon-selection-for-nearby-areas) with OsmAnd polygon info.
 - [Added option to toggle](#toggle-visibility-for-favorite-groups) the visibility of individual favorite groups on the map.
 - [Flexible appearance](#flexible-appearance-settings-for-favorite-groups) settings for favorite groups.
 - [Expanded icon selection](#expanded-icon-options-for-favorites) options for favorites by adding all existing icons from all POI categories.
@@ -41,7 +42,6 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 - [Prominent peaks](#prominent-peaks-now-discoverable) are now discoverable on the map and in search.
 - [Added Quick Actions](#quick-actions-for-trip-recording) to manage trip recording.
 - [CarPlay address search](#improved-carplay-address-search-prioritization) has prioritized streets and buildings.
-- [Discover nearby areas](#polygon-selection-for-nearby-areas) with OsmAnd polygon info.
 - [Closing Configure Map](#closing-configure-map-after-tapping-the-map) menu after tapping the map.
 
 
@@ -52,11 +52,9 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 To docs ios:  
 
 - Expanded icon options for Favorites by adding icons from all POI categories - https://github.com/osmandapp/OsmAnd-iOS/issues/3942  
-- CarPlay Search: Added the ability to select buildings. - https://github.com/osmandapp/OsmAnd-iOS/issues/3959   
-- Added an option to change the appearance of multiple tracks simultaneously. - https://github.com/osmandapp/OsmAnd-iOS/issues/3687  
-- Added battery level display for external sensors. - https://github.com/osmandapp/OsmAnd-iOS/issues/3953   / https://github.com/osmandapp/OsmAnd-iOS/issues/4145  
-- Added border highlighting fro buildings and ares with detailed information. - https://github.com/osmandapp/OsmAnd-iOS/issues/4164
-- Added Quick Actions for controlling trip recording. - https://github.com/osmandapp/OsmAnd-iOS/issues/4176
+- Added battery level display for external sensors. - https://github.com/osmandapp/OsmAnd-iOS/issues/3953 
+
+
 - Redesigned image block and separate screen for all images. - https://github.com/osmandapp/OsmAnd-iOS/issues/4062
 - Added a full-screen gallery viewer for Wikimedia images - https://github.com/osmandapp/OsmAnd-iOS/issues/4062  
 
@@ -126,6 +124,26 @@ Tap a **POI** on the map with **Wikimedia images** available, then select the **
 
 Learn more:  
 [Map Context menu](https://osmand.net/docs/user/map/map-context-menu#online-photos).
+
+
+## Polygon Selection for Nearby Areas
+
+![Poligon info](../../blog/2025-04-15-ios-5-0/img/areas_info_ios.png)
+
+The **Polygon Information** feature has been enhanced in OsmAnd for iOS, providing easier access to data about surrounding areas directly from the map.  
+
+Now, with a **long tap** the map or a **single tap** a POI, you can access detailed information about nearby polygons. This feature makes it quick and convenient to identify geographic or administrative areas around you.  
+
+What’s new:
+
+- **View polygon details** — Easily access information about nearby areas from the map context menu, including their *type* and *name*.  
+- **Sorted by size** — Polygons are sorted by *size* from *smallest to largest* for better organization.
+
+To access:  
+*Map Context menu → Details → Within*.
+
+Learn more:  
+[Map Context menu - polygon information](https://osmand.net/docs/user/map/map-context-menu#polygon-information)
 
 
 ## Toggle Visibility for Favorite Groups
@@ -292,26 +310,6 @@ Key features:
 Learn more:  
 [CarPlay Search](https://osmand.net/docs/user/navigation/car-play#search)  
 [Address Search Guide](https://osmand.net/docs/user/search/search-address)
-
-
-## Polygon Selection for Nearby Areas
-
-![Poligon info](../../blog/2025-04-15-ios-5-0/img/areas_info_ios.png)
-
-The **Polygon Information** feature has been enhanced in OsmAnd for iOS, providing easier access to data about surrounding areas directly from the map.  
-
-Now, with a **long tap** the map or a **single tap** a POI, you can access detailed information about nearby polygons. This feature makes it quick and convenient to identify geographic or administrative areas around you.  
-
-What’s new:
-
-- **View polygon details** — Easily access information about nearby areas from the map context menu, including their *type* and *name*.  
-- **Sorted by size** — Polygons are sorted by *size* from *smallest to largest* for better organization.
-
-To access:  
-*Map Context menu → Details → Within*.
-
-Learn more:  
-[Map Context menu - polygon information](https://osmand.net/docs/user/map/map-context-menu#polygon-information)
 
 
 ## Closing Configure Map after Tapping the Map

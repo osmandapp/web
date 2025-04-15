@@ -397,13 +397,18 @@ In this *Points* tab:
 
 ### Add Waypoint to a Track
 
-Waypoints can be added to the currently recorded track or any track from your track collection [*My Places → Tracks list*](../../personal/tracks/manage-tracks.md):
+Waypoints can be added to the currently recorded track or to any track from [*My Places → Tracks list*](../../personal/tracks/manage-tracks.md):
 
-- Using the [map context menu](../../map/map-context-menu.md#-add--edit--track-waypoint). Waypoints are automatically displayed if the selected track is enabled on the map. To create a waypoint, use a [long tap](../../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. You can set information about the waypoint in the opened [map context menu](../../map/map-context-menu.md#-add--edit--track-waypoint).
-- Using [Add Waypoint](#points--waypoints) button of the track context menu.
-- You can also add a waypoint as a Quick action. Follow the [Add track waypoint](../../widgets/quick-action.md#create-items) to configure.
+- Use the [map context menu](../../map/map-context-menu.md#-add--edit--track-waypoint).
+  - Waypoints are automatically displayed if the selected track is enabled on the map.
+  - [Long tap](../../map/map-context-menu.md#select-any-point-long-tap) the map at any chosen location to create a waypoint.
+  - You can set information about the waypoint in the opened [map context menu](../../map/map-context-menu.md#-add--edit--track-waypoint).
 
-When you tap the *Add Waypoint* button, the Creation point screen opens (this screen is familiar with [Favorite Context menu](../../personal/favorites.md#favorite-context-menu)).
+- Use [Add Waypoint](#points--waypoints) button of the track context menu.
+
+- Add a waypoint as a [Quick action](../../widgets/quick-action.md#my-places) button.
+
+#### Create Waypoint
 
 <Tabs groupId="operating-systems">
 
@@ -421,15 +426,18 @@ When you tap the *Add Waypoint* button, the Creation point screen opens (this sc
 
 </Tabs>
 
-1. **Add** *Name* of the waypoint, *Address* of the selected location and *Description* for it, if you want.
+Tap the *Add Waypoint* button to open waypoint creation screen (this screen is familiar with [Favorite Context menu](../../personal/favorites.md#favorite-context-menu)).
+
+1. **Add** *Name* of the waypoint, *Address* of the selected location and *Description* for it (optional).
 2. **Select** Group.
 
-    - You can select previously created group categories or create a new one.
-    - You can create a name and an appearance for a new group (in the application, it is also called a *new category*) of waypoints. The icon, icon color, and shape will be used for all new waypoints added to the group.
+    - Select previously created group categories or create a new one.
+    - Create a name and appearance for the new waypoint group. This is also called *new category* in the application.
+    - The **icon**, **icon color**, and **shape** will be used for all new waypoints added to the group.
 
 3. **Appearance** setting:
 
-    - Select [**icon**](../../personal/favorites.md#favorite-icons) from the list.
+    - Select an [**icon**](../../personal/favorites.md#favorite-icons) from the list of all POI categories icons.
     - Select **Color** of the icon.
     - Then select the **Shape** of the icon: *Circle, Octagon, Square*.
 

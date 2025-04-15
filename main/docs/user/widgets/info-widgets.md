@@ -276,8 +276,9 @@ The [simple](../widgets/configure-screen.md#widgets-for-all-panels) *Glide Ratio
 
 The **Battery Level** widget displays your device's battery percentage right on the map screen and updates automatically at least once a minute.
 
-- In **iOS 17 and later**, due to **privacy restrictions**, battery level data is only available in 5% increments (e.g., 35%, 60%, or 85%). This is a system limitation imposed by Apple.
-- On **Android** devices, the widget displays the exact battery percentage as reported by the system, without rounding.
+- **iOS 17 and later** — Due to **privacy restrictions**, battery level data is only available in 5% increments (e.g., 35%, 60%, or 85%). This is a system limitation imposed by Apple.
+
+- **Android** devices — The widget displays the exact battery percentage as reported by the system, without rounding.
 
 | | |
 |:------------|:------------|

@@ -199,7 +199,14 @@ You can use the *Search tool* to find the required place on the map for route pl
 
 - [Address](../search/search-address.md). Start typing the address in the search field.
 - [POI](../search/search-poi.md) and [Custom POI](../search/search-poi.md). The list of nearby similar names will also display POIs or their categories.
-- [Coordinates search](../search/search-address#coordinates-search). Enter the coordinates to find the point on the map.  
+- [Coordinates search](../search/search-address#coordinates-search). Enter the coordinates to find the point on the map.
+
+#### Address Search Priorities
+
+The CarPlay search feature prioritizes streets and building numbers when **searching for addresses**.
+
+- Streets and building numbers are displayed first when you search for an address. This ensures that relevant address information is displayed before other locations such as roads or stations.
+- When you search for a city, the streets within the city are displayed first, followed by the building numbers on those streets.
 
 
 ### Folder Last Modified

@@ -202,15 +202,16 @@ The 3D track feature is highly beneficial for activities like paragliding, where
 
 The [Tracks](../../personal/tracks/manage-tracks.md) tab automatically displays all tracks ever recorded, created, or imported. They are organized by folder or displayed as a list below them.  
 
-***Modify multiple track appearances in My Places → Tracks***:
+Modify multiple track appearances in *My Places → Tracks*:
 
-- **Change Default Appearance** - Applies settings to all tracks in a [folder](../../personal/tracks/manage-tracks.md#folder-menu).
-- **Reset to Original** - Restores individual track settings.
+- **Change default appearance** - Applies settings to all tracks in a [folder](../../personal/tracks/manage-tracks.md#folder-menu).
+- **Reset to original** - Restores individual track settings.
+
 - [Selection mode](../../personal/tracks/manage-tracks.md#selection-mode) - Changes the appearance of specific tracks in the selected folder or the entire list in the Tracks tab.
     - Select the *three-dot menu* in the upper right corner of the Tracks tab and tap *Select*.
     - Then tap the *three-dot menu* at the top of the screen and select *Change Appearance*.  
 
-***Bulk appearance customization options:***
+Bulk appearance customization options:
 
 - **Direction arrows** - Adds [movement indicators](#direction-arrows).  
     States: *Unchanged*, &nbsp;*Original*, &nbsp;*On*, &nbsp;*Off*.
@@ -225,11 +226,12 @@ The [Tracks](../../personal/tracks/manage-tracks.md) tab automatically displays 
 - **Split interval** – [Set interval](#split-interval) for distance / time markers.  
     States: *Unchanged*, &nbsp;*Original*, &nbsp;*Select*: *Time* or *Distance*.
 
-***Original and Unchanged:***
+Original and unchanged:
 
 - **Original** - Restores the original parameters from the track file.
 
 - **Unchanged** - Keeps current settings during the editing session.
+
 
 ## Track Colors in GPX Files  
 

@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 The **Trip Recording plugin** is an essential tool for capturing your routes, movements, and workouts. This feature not only enables you to record your trips but also allows for easy reuse, modification, updating, and sharing of your tracks with others.  
 
-With the *Trip Recording plugin*, you can create new tracks, display recorded ones directly on the map, and manage existing records. It offers valuable insights into your trips, such as speed, elevation changes, terrain details, and data from external sensors. Whether you are navigating or just getting around, the plugin continuously records your route, allowing for detailed analysis and sharing after your trip.
+With the *Trip Recording plugin*, you can create new tracks, display recorded ones directly on the map, and manage existing records. It offers valuable insights into your trips, such as speed, elevation changes, terrain details, and data from external sensors. Plugin records your route, allowing for detailed analysis and sharing after your trip.
 
 <Tabs groupId="operating-systems">
 
@@ -42,10 +42,9 @@ With the *Trip Recording plugin*, you can create new tracks, display recorded on
 To start recording tracks, you need to make the following settings:
 
 1. [Enable](../plugins/index.md#enable--disable) the **Trip recording plugin**.  
-2. Configure [Trip recording](#recording-settings) settings for the required [profile](../personal/profiles.md).  
-3. Add [Trip recording widgets](#widgets) to the screen, if needed.
-
-When setup is complete, you can make new records, display and manage tracks on the map, change their [appearance](../map/tracks/appearance.md), edit the route, add waypoints, and others.
+2. [Configure](#recording-settings) the **recording settings** for the required [profile](../personal/profiles.md).  
+3. [Add](#widgets) **Trip recording widgets** to the screen (optional).
+4. [Manage](../map/tracks/appearance.md) tracks on the map (optional).
 
 
 ## New Track Recording
@@ -54,18 +53,26 @@ When setup is complete, you can make new records, display and manage tracks on t
 
 With the Trip Recording plugin in OsmAnd, you can easily start recording your track using a variety of convenient options. Here’s how you can begin your journey:
 
-- Activate recording using the [Distance/Start-Stop widget](#distance-start-stop).
-- Select the **Trip recording** option from the *Main Menu* (*Android only*): *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
-- Tap the **<Translate android="true" ids="start_recording"/>** button located in the [My Places](../personal/myplaces.md#tracks) section of the *Main Menu*: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
-- Use the [Quick Action](../widgets/quick-action.md#add-and-delete-actions) buttons to start recording a trip. To do this, go to *Menu → Configure screen → Custom buttons → Quick action → Add action → My Places* and choose [Start / Pause: Trip recording](../widgets/quick-action.md#my-places).
-- Use the system [notification](#notifications) in the notification area of your device (*Android only*).
-- Use the [application launcher](#launcher-android) to start recording (*Android only*).  
+- [Distance/Start-Stop widget](#distance-start-stop) — Use to activate recording.
+
+- [<Translate android="true" ids="start_recording"/>](../personal/myplaces.md#tracks) — Tap the button in the *Main <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
+
+- [Quick Action](../widgets/quick-action.md#add-and-delete-actions) buttons — To start recording a trip, go to *Menu → Configure screen → Custom buttons → Quick action → Add action → My Places* and choose [Start / Pause: Trip recording](../widgets/quick-action.md#my-places).
+
+- *Android only*:
+    - Go to *Main <Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
+
+    - [System notification](#notifications) — Use in the notification area of your device .
+
+    - [Application launcher](#launcher-android) — Use to start recording .  
 
 **Recommendations:**
 
-- For accurate track recording, ensure that OsmAnd has permission to access the [precise location](../start-with/first-steps.md#permission-to-access-the-location) of your device.
-- **Troubleshooting**. iOS devices may sometimes temporarily *suspend or stop apps* from running in the background, which could interrupt track recording. For more detailed troubleshooting tips, check out the [Track Recording issues](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps) section of the documentation.
-- Adjust the **Location Source** (*Android only*) settings in OsmAnd to choose the most suitable GPS provider for accurate recordings. [Learn more here](../personal/global-settings.md#location-source).
+- [Precise location](../start-with/first-steps.md#permission-to-access-the-location) — For accurate track recording, ensure that OsmAnd has this permission.
+
+- [Troubleshooting](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps) — **iOS devices** may sometimes temporarily **suspend or stop apps** from running in the background, which could interrupt track recording.
+
+- **Location Source** (*Android only*) — Adjust settings in OsmAnd to choose the most suitable GPS provider for accurate recordings. [Learn more here](../personal/global-settings.md#location-source).
 
 
 ### Start a Dialog
@@ -105,9 +112,11 @@ Start dialog opens, if the **<Translate ios="true" ids="track_interval_remember"
 
 You can quickly start a new track recording directly from your Android device's screen using the context menu of the OsmAnd app icon.
 
-- Perform a **long tap** on the OsmAnd app icon to open the context menu, where you can find the option to **Start Recording**.
-- Tapping the **Start Recording** option will launch the OsmAnd app with the [track recording settings](#overview-screen) displayed on the screen.
-- To add a shortcut for quicker access, **long tap** the **Start Recording** option in the app icon context menu, and it will create a dedicated icon on your home screen.
+- **Long tap** the OsmAnd app icon to open the context menu, where you can find the option to **Start Recording**.
+
+- Tap the **Start Recording** option to launch the OsmAnd app with the [track recording settings](#overview-screen) displayed on the screen.
+
+- **Long tap** the **Start Recording** option in the app icon context menu, to add a shortcut for quicker access.
 
 While track recording is active, a notification badge will appear on the corner of the OsmAnd app icon, indicating that the recording is in progress. For further details on managing this notification, see the [Notification](#notifications) section.
 
@@ -116,15 +125,15 @@ While track recording is active, a notification badge will appear on the corner 
 
 For *Stop / Save / Pause*:
 
-- To **stop** the recording, tap the corresponding button in the [Distance/Start-Stop widget](#distance-start-stop) dialog box.
+- To **Stop** the recording, tap the corresponding button in the [Distance/Start-Stop widget](#distance-start-stop) dialog box.
 
-- In the *Android version*, you can **stop** recording by tapping the *Trip recording* Main Menu item.
+- (*Android only*) To **Stop** the recording, tap the *Trip recording* Main Menu item.
 
-- To **stop or save** a recording track, go to *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>* *→* [*<Translate android="true" ids="shared_string_gpx_files"/> tab*](../personal/myplaces.md#tracks) and tap the appropriate button in the *Currently recording track* field.
+- To **Stop** or **Save** a recording track, go to *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>* *→* [*<Translate android="true" ids="shared_string_gpx_files"/> tab*](../personal/myplaces.md#tracks) and tap the appropriate button in the *Currently recording track* field.
 
-- Use the [Quick Action](../widgets/quick-action.md#add-and-delete-actions) buttons to **save, pause, start** a new segment, or finish recording a trip. Go to *Menu → Configure screen → Custom buttons → Quick action → Add action → [My Places](../widgets/quick-action.md#my-places)* and add one or more quick action buttons.
+- To **Save, Pause, Start** a new segment, or **Finish** recording, use the [Quick Action](../widgets/quick-action.md#add-and-delete-actions) buttons. Go to *Menu → Configure screen → Custom buttons → Quick action → Add action → [My Places](../widgets/quick-action.md#my-places)* and add one or more quick action buttons.
 
-- In the *Android version*, you can **pause or save** a recording track using the system [notification](#notifications) in the notification area of your device.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Android only*) To **Pause** or **Save** a recording track, use the system [notification](#notifications) in the notification area of your device.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Overview Screen
@@ -322,12 +331,12 @@ This behavior is required by Android for any foreground service, like trip recor
 - If the notification is removed, Android will automatically stop the recording. You can use the [Prevent standalone logging](#recording-settings) setting.
 - The **Notification** setting in OsmAnd affects whether the notification bar shows a shortcut to start a recording when no recording is active. It does **not** control the visibility of the notification during an active recording.
 
-**Additional *Android* options**.
+**Additional Android options**.
 
 ![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notification_andr.png)
 
-- In **Android settings** *→* **Notifications and status bar** *→* **Lock screen notifications**, you can remove OsmAnd from the app list to prevent notifications from appearing on the lock screen, avoiding accidental screen activation. This will not affect track recording. Notifications will still appear in the regular notification area.
-- **OsmAnd** may also appear under **Privacy** *→* **Special Permissions** *→* **Turn on screen**. If you want to prevent the screen from turning on when a notification appears, try removing OsmAnd from this list.
+- In ***Android settings → Notifications and status bar → Lock screen notifications***, you can remove OsmAnd from the app list to prevent notifications from appearing on the lock screen, avoiding accidental screen activation. This will not affect track recording. Notifications will still appear in the regular notification area.
+- **OsmAnd** may also appear under ***Privacy → Special Permissions → Turn on screen***. If you want to prevent the screen from turning on when a notification appears, try removing OsmAnd from this list.
 
 <!--
 - OsmAnd is not listed under **Privacy** *→* **Special Permissions** → **Alarms and reminders**.

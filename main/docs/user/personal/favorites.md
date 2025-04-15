@@ -137,14 +137,16 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_strin
 
 Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![my_places_ios](@site/static/img/personal/favorite_icon_1_ios.png)
+![my_places_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- **Android** — Offers the full set of POI icons available in OsmAnd.
-- **iOS** — Specially selected icon sets such as *Default, Special, Amenity, Transport, Service, Symbols, Sport, Emergency, Travel, Nautical, Education, Industrial*.
+A wide range of icons for POIs and waypoints is available in OsmAnd. You can:
+
+- Select an icon from the list of [POI categories](../search/search-poi.md#categories-and-their-filters).
+- Find a suitable icon using the [search option](../search/search-all.md#how-to-use).
 
 
 ### Special Favorites (Personal)
