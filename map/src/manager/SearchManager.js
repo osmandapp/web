@@ -11,7 +11,7 @@ import i18n from 'i18next';
 import { SEARCH_ICON_MAP_OBJ, typeIconMap } from '../map/layers/SearchLayer';
 import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
 
-export const USE_OSMAND_SERVER = false;
+export const USE_OSMAND_SERVER = true;
 export const OSMAND_WIKI_BASE_URL = 'https://data.osmand.net/wikimedia/images-1280/';
 export const COMMONS_WIKI_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
 
