@@ -168,7 +168,16 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
 
     return (
         <>
-            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+            <Box
+                minWidth={ctx.infoBlockWidth}
+                maxWidth={ctx.infoBlockWidth}
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height,
+                    overflow: 'hidden',
+                }}
+            >
                 <AppBar position="static" className={headerStyles.appbar}>
                     <Toolbar className={headerStyles.toolbar}>
                         <IconButton
@@ -202,12 +211,14 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
                     />
                 )}
                 {hasVisibleTracks() && (
-                    <>
-                        <Box
-                            minWidth={ctx.infoBlockWidth}
-                            maxWidth={ctx.infoBlockWidth}
-                            sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
-                        >
+                    <Box
+                        sx={{
+                            flex: 1,
+                            overflowY: 'auto',
+                            overflowX: 'hidden',
+                        }}
+                    >
+                        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
                             {trackItems}
                         </Box>
                         {trackItemsOld.length > 0 && (
@@ -218,20 +229,12 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
                                         {t('web:recently_visible')}
                                     </Typography>
                                 </MenuItem>
-                                <Box
-                                    minWidth={ctx.infoBlockWidth}
-                                    maxWidth={ctx.infoBlockWidth}
-                                    sx={{
-                                        overflowX: 'hidden',
-                                        overflowY: 'auto !important',
-                                        maxHeight: `${height - 120}px`,
-                                    }}
-                                >
+                                <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
                                     {trackItemsOld}
                                 </Box>
                             </>
                         )}
-                    </>
+                    </Box>
                 )}
                 {!hasVisibleTracks() && !hasTracks() && (
                     <Empty
