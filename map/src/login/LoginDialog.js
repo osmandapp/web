@@ -191,57 +191,66 @@ export default function LoginDialog() {
                                 )}
                             </>
                         )}
-                        <Accordion
-                            disableGutters
-                            elevation={0}
-                            square
-                            sx={{
-                                boxShadow: 'none',
-                                '&::before': { display: 'none' },
-                                border: 'none',
-                                margin: 0,
-                                mt: 1,
-                            }}
-                        >
-                            <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{ minHeight: 32 }}>
-                                <Typography
-                                    sx={{ ml: -1, color: '#237bff', textTransform: 'uppercase' }}
-                                    variant="subtitle2"
-                                    noWrap
-                                >
-                                    More info
-                                </Typography>
-                            </AccordionSummary>
-                            <AccordionDetails sx={{ p: 0 }}>
-                                {/* In-App Purchases */}
-                                {ctx.accountInfo?.inAppPurchases && (
-                                    <>
-                                        <Typography variant="subtitle1" sx={{ ml: 2, mt: 1 }}>
-                                            In-App Purchases:
-                                        </Typography>
-                                        {JSON.parse(ctx.accountInfo.inAppPurchases).map((item, idx) => (
-                                            <Typography key={`iap-${idx}`} variant="body2" sx={{ ml: 3, mb: 0.5 }}>
-                                                {`${item.valid ? '✅' : '❌'} ${item.sku} — ${item.purchaseTime}`}
+                        {(ctx.accountInfo?.inAppPurchases || ctx.accountInfo?.subscriptions) && (
+                            <Accordion
+                                disableGutters
+                                elevation={0}
+                                square
+                                sx={{
+                                    boxShadow: 'none',
+                                    '&::before': { display: 'none' },
+                                    border: 'none',
+                                    margin: 0,
+                                    mt: 1,
+                                }}
+                            >
+                                <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{ minHeight: 32 }}>
+                                    <Typography
+                                        sx={{ ml: -1, color: '#237bff', textTransform: 'uppercase' }}
+                                        variant="subtitle2"
+                                        noWrap
+                                    >
+                                        More info
+                                    </Typography>
+                                </AccordionSummary>
+                                <AccordionDetails sx={{ p: 0 }}>
+                                    {/* In-App Purchases */}
+                                    {ctx.accountInfo?.inAppPurchases && (
+                                        <>
+                                            <Typography variant="subtitle1" sx={{ ml: 2, mt: 1 }}>
+                                                In-App Purchases:
                                             </Typography>
-                                        ))}
-                                    </>
-                                )}
+                                            {JSON.parse(ctx.accountInfo.inAppPurchases).map((item, idx) => (
+                                                <Typography key={`iap-${idx}`} variant="body2" sx={{ ml: 3, mb: 0.5 }}>
+                                                    {`${item.valid ? '✅' : '❌'} ${item.sku}` +
+                                                        (item.purchaseTime ? ` → ${item.purchaseTime}` : '')}
+                                                </Typography>
+                                            ))}
+                                        </>
+                                    )}
 
-                                {/* Subscriptions */}
-                                {ctx.accountInfo?.subscriptions && (
-                                    <>
-                                        <Typography variant="subtitle1" sx={{ ml: 2, mt: 2 }}>
-                                            Subscriptions:
-                                        </Typography>
-                                        {JSON.parse(ctx.accountInfo.subscriptions).map((item, idx) => (
-                                            <Typography key={`sub-${idx}`} variant="body2" sx={{ ml: 3, mb: 0.5 }}>
-                                                {`${item.valid ? '✅' : '❌'} ${item.sku} — ${item.startTime} → ${item.expireTime}`}
+                                    {/* Subscriptions */}
+                                    {ctx.accountInfo?.subscriptions && (
+                                        <>
+                                            <Typography variant="subtitle1" sx={{ ml: 2, mt: 2 }}>
+                                                Subscriptions:
                                             </Typography>
-                                        ))}
-                                    </>
-                                )}
-                            </AccordionDetails>
-                        </Accordion>
+                                            {JSON.parse(ctx.accountInfo.subscriptions).map((item) => (
+                                                <Typography
+                                                    key={`${item.sku}-${item.startTime || Math.random()}`}
+                                                    variant="body2"
+                                                    sx={{ ml: 3, mb: 0.5 }}
+                                                >
+                                                    {`${item.valid ? '✅' : '❌'} ${item.sku}` +
+                                                        (item.startTime ? ` — ${item.startTime}` : '') +
+                                                        (item.expireTime ? ` → ${item.expireTime}` : '')}
+                                                </Typography>
+                                            ))}
+                                        </>
+                                    )}
+                                </AccordionDetails>
+                            </Accordion>
+                        )}
 
                         {ctx.develFeatures && ctx.loginUser && (
                             <>
