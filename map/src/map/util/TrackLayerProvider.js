@@ -184,7 +184,7 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
     };
     const polyline = new L.Polyline(coords, {
         color,
-        weight: getPolylineWeight(width, map.getZoom()),
+        weight: DEFAULT_TRACK_LINE_WEIGHT,
         ...(arrowSettings.show ? { renderer: L.svg() } : {}),
     });
 
