@@ -1526,6 +1526,8 @@ export async function processDisplayTrack({
             setLoading(false);
         }
     } else {
+        const storage = getFileStorage({ ctx, smartf, type: GPX });
+        clearZoomToTrackForOtherFiles({ currentFileName: file.name, storage });
         await openTrackOnMap({
             file,
             setProgressVisible: setLoading,
@@ -1539,6 +1541,18 @@ export async function processDisplayTrack({
             updateTracks(ctx, smartf, newGpxFiles);
         });
     }
+}
+
+/**
+ * Clears zoomToTrack flag for all other files except the currently selected one.
+ * Helps avoid multiple tracks being marked for zooming at the same time.
+ */
+export function clearZoomToTrackForOtherFiles({ currentFileName, storage }) {
+    Object.keys(storage).forEach((key) => {
+        if (key !== currentFileName && storage[key]?.zoomToTrack) {
+            storage[key].zoomToTrack = false;
+        }
+    });
 }
 
 const TracksManager = {
