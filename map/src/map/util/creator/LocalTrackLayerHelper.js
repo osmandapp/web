@@ -80,9 +80,10 @@ export function updateLayers({
                 if (layer.options?.type === LOCAL_TRACKS_LAYERS_ID) {
                     map.removeLayer(layer);
                 }
-                if (removeBounds && layer._bounds) {
-                    map.removeLayer(layer);
-                }
+                /* this code is commented out because it removes layers of visible tracks, but it's currently unclear why it was originally added.
+                 if (removeBounds && layer._bounds) {
+                     map.removeLayer(layer);
+                 }*/
                 const innerLayers = layer._layers;
                 // cleanup empty layers
                 if (innerLayers !== undefined && isEmpty(innerLayers)) {
