@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Web Route Planner
+unlisted: true
 ---
 
 import Tabs from '@theme/Tabs';

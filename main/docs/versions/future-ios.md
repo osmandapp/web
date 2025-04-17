@@ -51,7 +51,6 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 <!--
 To docs ios:  
 
-- Expanded icon options for Favorites by adding icons from all POI categories - https://github.com/osmandapp/OsmAnd-iOS/issues/3942  
 - Added battery level display for external sensors. - https://github.com/osmandapp/OsmAnd-iOS/issues/3953 
 
 
@@ -263,7 +262,7 @@ How to use:
 Go to *Menu → Settings → App profiles → Navigation settings → Detailed track guidance*.
 
 Learn more:  
-[Detailed Track Guidance](https://osmand.net/docs/user/navigation/setup/gpx-navigation#detailed-track-guidance)  
+[Detailed Track Guidance](https://osmand.net/docs/user/navigation/guidance/navigation-settings#detailed-track-guidance)  
 [Attach to the Roads](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-the-roads)
 
 

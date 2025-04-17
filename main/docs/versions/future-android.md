@@ -57,7 +57,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
 
 
-## Route Maneuvers Widgets Set
+## Route Guidance Widgets Set
 
 ![Route Guidance Widget](../../blog/2025-03-11-android-5-0/img/route_guidance_widget.png)
 
