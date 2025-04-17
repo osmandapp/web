@@ -29,6 +29,7 @@ import styles from '../../menu/search/search.module.css';
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
+import { showProcessingNotification } from '../../manager/GlobalManager';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -157,7 +158,8 @@ export default function SearchLayer() {
     }, [ctx.zoomToMapObj]);
 
     async function searchByWord(query, latlng, baseSearch) {
-        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
+        const notifyTimeout = showProcessingNotification(ctx);
+        const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
             apiCache: true,
             params: {
                 lat: latlng.lat,
@@ -173,6 +175,7 @@ export default function SearchLayer() {
         } else {
             ctx.setSearchResult(null);
         }
+        clearTimeout(notifyTimeout);
         ctx.setProcessingSearch(false);
     }
 

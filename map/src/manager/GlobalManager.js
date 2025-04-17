@@ -55,3 +55,16 @@ export function updateFileStorage({ ctx, smartf, type, file }) {
     }
     return null;
 }
+
+export function showProcessingNotification(
+    ctx,
+    message = "We're working hard to prepare maps for you! 💪🧭",
+    timeout = 3000
+) {
+    return setTimeout(() => {
+        ctx.setNotification({
+            text: message,
+            severity: 'info',
+        });
+    }, timeout);
+}

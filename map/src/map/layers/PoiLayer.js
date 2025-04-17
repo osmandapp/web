@@ -29,7 +29,7 @@ import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
-import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
+import { MENU_INFO_OPEN_SIZE, showProcessingNotification } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 
 // WARNING: Do not use the 'title' field in marker layers on the map.
@@ -254,8 +254,10 @@ export default function PoiLayer() {
             }) => {
                 map.spin(true, { color: '#1976d2' });
                 let bbox = map.getBounds();
+                const notifyTimeout = showProcessingNotification(ctx);
                 await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategoriesCount).then(async (res) => {
                     map.spin(false);
+                    clearTimeout(notifyTimeout);
                     if (res && !ignore) {
                         if (!res.alreadyFound) {
                             if (!res.mapLimitExceeded && res.features) {
