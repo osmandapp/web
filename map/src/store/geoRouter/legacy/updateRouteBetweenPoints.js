@@ -2,6 +2,7 @@ import { apiGet, apiPost } from '../../../util/HttpApi';
 import Utils, { quickNaNfix } from '../../../util/Utils';
 import TracksManager from '../../../manager/track/TracksManager';
 import { defaultPointExtras } from '../../geoObject/convert/convertRouteToTrack';
+import { showProcessingNotification } from '../../../manager/GlobalManager';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
@@ -116,7 +117,7 @@ async function updateRouteBetweenPointsLine({ start, end }) {
 
 async function updateRouteBetweenPointsOsmAnd({ ctx, start, end, geoProfile }) {
     const routeMode = TracksManager.formatRouteMode(geoProfile ?? this.getGeoProfile());
-
+    const notifyTimeout = showProcessingNotification(ctx);
     const result = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '', {
         apiCache: true,
         params: {
@@ -130,7 +131,7 @@ async function updateRouteBetweenPointsOsmAnd({ ctx, start, end, geoProfile }) {
             'Content-Type': 'application/json',
         },
     });
-
+    clearTimeout(notifyTimeout);
     if (result) {
         let data = result?.data; // points
         if (typeof result?.data === 'string') {
