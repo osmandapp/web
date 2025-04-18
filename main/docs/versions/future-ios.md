@@ -349,8 +349,8 @@ Learn more:
   - Using display or map language for [lang=true tags in context menu](https://github.com/osmandapp/OsmAnd-iOS/issues/4216).
   - [Custom button - underlay map](https://github.com/osmandapp/OsmAnd-iOS/issues/4394).
   - [Tunnel freezes](https://github.com/osmandapp/OsmAnd-iOS/issues/4401).
-  - [Replaceed `/` with `-` in favorites folders name](https://github.com/osmandapp/OsmAnd-iOS/issues/4403)
-  - [Direct-to-point routing](https://github.com/osmandapp/OsmAnd-iOS/issues/4226)/
+  - [Replaceed `/` with `-` in favorites folders name](https://github.com/osmandapp/OsmAnd-iOS/issues/4403).
+  - [Direct-to-point routing](https://github.com/osmandapp/OsmAnd-iOS/issues/4226).
   - Recalculate [route dialogue in CarPlay](https://github.com/osmandapp/OsmAnd-iOS/issues/4226).
   - [Marker for select GPX](https://github.com/osmandapp/OsmAnd-iOS/issues/4367).
   - [Export only settings](https://github.com/osmandapp/OsmAnd-iOS/issues/4405).
