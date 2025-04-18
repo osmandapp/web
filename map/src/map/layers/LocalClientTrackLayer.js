@@ -306,6 +306,7 @@ export default function LocalClientTrackLayer() {
             ctx.setCreateTrack({ ...ctx.createTrack }); // closePrev, not always stop-editor
         }
         if (ctx.createTrack?.enable && Object.keys(registeredLayers).length === 0) {
+            ctx.setSelectedWpt(null);
             if (ctx.createTrack.edit) {
                 editCurrentTrack();
             } else {
