@@ -10,6 +10,7 @@ import MoreInfoDialog from './MoreInfoDialog';
 import AppContext from '../../../context/AppContext';
 import capitalize from 'lodash/capitalize';
 import { translateWithSplit } from '../../../manager/PoiManager';
+import { getLanguageName } from '../../../util/LanguageDisplayName';
 
 export default function WptTagInfo({ tag = null, baseTag = null, copy = false, setDevWikiContent = null }) {
     const ctx = useContext(AppContext);
@@ -168,16 +169,10 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             const arr = preparedKey.split(':');
             const t = arr[0];
             const lang = arr[1];
-            if (i18n.exists('lang_' + lang) && i18n.exists(t)) {
-                if (mainTag) {
-                    return (
-                        capitalize(translateWithSplit(i18n.t, t)) +
-                        ': ' +
-                        capitalize(translateWithSplit(i18n.t, 'lang_' + lang))
-                    );
-                }
-                return capitalize(translateWithSplit(i18n.t, 'lang_' + lang));
+            if (mainTag) {
+                return capitalize(translateWithSplit(i18n.t, t)) + ': ' + capitalize(getLanguageName(lang));
             }
+            return capitalize(getLanguageName(lang));
         }
         if (i18n.exists(preparedKey)) {
             if (mainTag) {

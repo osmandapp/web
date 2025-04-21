@@ -13,6 +13,7 @@ import { ReactComponent as CuisineIcon } from '../../../assets/icons/ic_action_c
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_mail.svg';
 import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
+import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import * as locales from 'date-fns/locale';
 import { format, startOfWeek, addDays } from 'date-fns';
 import capitalize from 'lodash/capitalize';
@@ -296,13 +297,10 @@ async function getWptTags(obj, type, ctx) {
                                 const prepValue = value.replace(TYPE, '').replace('__', '_');
                                 const svgData = await getSvgIcon({ value: prepValue, ctx });
                                 tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
+                            } else if (parseTagWithLang(key).lang || key.includes('_name')) {
+                                tagObj.icon = <DisplayLanguageIcon />;
                             } else {
-                                const tagWithLang = parseTagWithLang(key);
-                                let preparedKey = key;
-                                if (tagWithLang.lang) {
-                                    preparedKey = tagWithLang.key;
-                                }
-                                const svgData = await getSvgIcon({ preparedKey, value, ctx });
+                                const svgData = await getSvgIcon({ key, value, ctx });
                                 tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
                             }
                     }
