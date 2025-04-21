@@ -88,6 +88,13 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 </Link>
             );
         }
+        if (tag.url) {
+            return (
+                <Link href={tag.url} target="_blank" rel="noopener noreferrer">
+                    {value}
+                </Link>
+            );
+        }
         if (tag.isUrl) {
             return (
                 <Link href={value} target="_blank" rel="noopener noreferrer">
