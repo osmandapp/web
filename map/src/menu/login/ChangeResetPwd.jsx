@@ -26,6 +26,7 @@ import loginStyles from './login.module.css';
 import { useNavigate } from 'react-router-dom';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { usePasswordValidation } from '../../util/hooks/usePasswordValidation';
+import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 
 export default function ChangeResetPwd() {
     const ctx = useContext(AppContext);
@@ -172,13 +173,11 @@ export default function ChangeResetPwd() {
                             />
                         </Box>
                         <Box sx={{ mt: 2 }}>
-                            <Button
+                            <PrimaryBtn
+                                action={sendVerificationCode}
                                 disabled={userEmail === ''}
-                                className={styles.primaryButton}
-                                onClick={sendVerificationCode}
-                            >
-                                {t('shared_string_continue')}
-                            </Button>
+                                text={t('shared_string_continue')}
+                            />
                         </Box>
                     </>
                 )}
@@ -256,18 +255,16 @@ export default function ChangeResetPwd() {
                             />
                         </Box>
                         <Box sx={{ mt: 2 }}>
-                            <Button
+                            <PrimaryBtn
+                                action={handleResetPassword}
                                 disabled={
                                     userPassword1 === EMPTY_INPUT ||
                                     userPassword2 === EMPTY_INPUT ||
                                     code === EMPTY_INPUT ||
                                     passwordError !== EMPTY_INPUT
                                 }
-                                className={styles.primaryButton}
-                                onClick={handleResetPassword}
-                            >
-                                {t('web:change_password_btn')}
-                            </Button>
+                                text={t('web:change_password_btn')}
+                            />
                         </Box>
                     </>
                 )}

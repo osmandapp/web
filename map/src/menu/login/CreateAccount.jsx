@@ -1,5 +1,5 @@
 import headerStyles from '../trackfavmenu.module.css';
-import { AppBar, Box, Button, IconButton, InputAdornment, Link, TextField, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, InputAdornment, Link, TextField, Toolbar, Typography } from '@mui/material';
 import styles from './login.module.css';
 import { closeLoginMenu, EMPTY_INPUT, ERROR_TOKEN, openLogin } from '../../manager/LoginManager';
 import { closeHeader } from '../actions/HeaderHelper';
@@ -15,6 +15,7 @@ import { usePasswordValidation } from '../../util/hooks/usePasswordValidation';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
 import BlueBtn from '../../frame/components/btns/BlueBtn';
+import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 
 export default function CreateAccount() {
     const ctx = useContext(AppContext);
@@ -226,18 +227,16 @@ export default function CreateAccount() {
                             />
                         </Box>
                         <Box sx={{ mt: 2 }}>
-                            <Button
+                            <PrimaryBtn
+                                action={createAccount}
                                 disabled={
                                     userPassword1 === EMPTY_INPUT ||
                                     userPassword2 === EMPTY_INPUT ||
                                     code === EMPTY_INPUT ||
                                     passwordError !== EMPTY_INPUT
                                 }
-                                className={styles.primaryButton}
-                                onClick={createAccount}
-                            >
-                                {t('web:create_account')}
-                            </Button>
+                                text={t('web:create_account')}
+                            />
                         </Box>
                     </>
                 )}
@@ -297,13 +296,11 @@ export default function CreateAccount() {
                             </Typography>
                         )}
                         <Box sx={{ mt: resendCode ? '15px' : '30px' }}>
-                            <Button
+                            <PrimaryBtn
+                                action={validateToken}
                                 disabled={code === EMPTY_INPUT}
-                                className={styles.primaryButton}
-                                onClick={validateToken}
-                            >
-                                {t('shared_string_continue')}
-                            </Button>
+                                text={t('shared_string_continue')}
+                            />
                         </Box>
                     </>
                 )}
@@ -334,13 +331,11 @@ export default function CreateAccount() {
                             )}
                         </Box>
                         <Box sx={{ mt: 2 }}>
-                            <Button
+                            <PrimaryBtn
+                                action={() => sendVerificationCode(true)}
                                 disabled={userEmail === EMPTY_INPUT}
-                                className={styles.primaryButton}
-                                onClick={() => sendVerificationCode(true)}
-                            >
-                                {t('shared_string_continue')}
-                            </Button>
+                                text={t('shared_string_continue')}
+                            />
                         </Box>
                     </>
                 )}
