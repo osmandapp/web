@@ -4512,13 +4512,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wikimedia/language-data@npm:^1.1.8":
-  version: 1.1.8
-  resolution: "@wikimedia/language-data@npm:1.1.8"
-  checksum: 5c288e58fccade9a51f944a0326e29073ac401296f93c9c0e73d008c666278bbb20679b92c0c2f9444a8d5125263eaf94755441cc6028f85e444d7f2ce43ef69
-  languageName: node
-  linkType: hard
-
 "@xtuc/ieee754@npm:^1.2.0":
   version: 1.2.0
   resolution: "@xtuc/ieee754@npm:1.2.0"
@@ -11797,13 +11790,6 @@ eslint-plugin-react-compiler@beta:
   languageName: node
   linkType: hard
 
-"langs@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "langs@npm:2.0.0"
-  checksum: fbf1eab19695727dc84cd2fbf296653aeb865fc4c029e901b7265d78993bcfe6227dfd58fa79d43dad624328836e4523ba4912440a75a99c012d1ea43be7c9f7
-  languageName: node
-  linkType: hard
-
 "language-subtag-registry@npm:^0.3.20":
   version: 0.3.23
   resolution: "language-subtag-registry@npm:0.3.23"
@@ -13148,7 +13134,6 @@ eslint-plugin-react-compiler@beta:
     "@testing-library/react": ^13.3.0
     "@testing-library/user-event": ^14.2.0
     "@types/leaflet.awesome-markers": ^2.0.25
-    "@wikimedia/language-data": ^1.1.8
     anchorme: ^3.0.5
     axios: ^0.27.2
     babel-jest: ^29.7.0
@@ -13176,7 +13161,6 @@ eslint-plugin-react-compiler@beta:
     ionicons: ^6.0.2
     jest: ^29.7.0
     jest-environment-jsdom: ^29.7.0
-    langs: ^2.0.0
     leaflet: ^1.9.3
     leaflet-contextmenu: ^1.4.0
     leaflet-geometryutil: ^0.10.1
