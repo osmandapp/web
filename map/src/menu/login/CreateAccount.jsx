@@ -13,6 +13,8 @@ import { useNavigate } from 'react-router-dom';
 import { formatString } from '../../manager/SettingsManager';
 import { usePasswordValidation } from '../../util/hooks/usePasswordValidation';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
+import BlueBtn from '../../frame/components/btns/BlueBtn';
 
 export default function CreateAccount() {
     const ctx = useContext(AppContext);
@@ -257,14 +259,12 @@ export default function CreateAccount() {
                                     value={userEmail}
                                     helperText={emailError ? emailError : t('web:resend_code_desc')}
                                 />
-                                <Button
-                                    sx={{ mb: 1.5, backgroundColor: '#DEEBFF !important' }}
-                                    className={styles.button}
-                                    component="span"
-                                    onClick={() => sendVerificationCode(resendEmail === userEmail)}
-                                >
-                                    {t('web:resend_btn')}
-                                </Button>
+                                <GrayBtnWithBlueHover
+                                    action={() => sendVerificationCode(resendEmail === userEmail)}
+                                    text={t('web:resend_btn')}
+                                    additionalStyle={{ mb: 1.5, backgroundColor: '#DEEBFF !important' }}
+                                    span={true}
+                                />
                             </Box>
                         ) : (
                             <Box className={codeError && styles.errorBack}>
@@ -325,14 +325,12 @@ export default function CreateAccount() {
                                 value={userEmail}
                             />
                             {emailError !== EMPTY_INPUT && emailError !== EMAIL_IS_NOT_VALID && (
-                                <Button
-                                    sx={{ mb: 1.5, mt: 0.5 }}
-                                    className={styles.blueButton}
-                                    component="span"
-                                    onClick={() => openLogin(ctx, navigate)}
-                                >
-                                    {t('web:login_btn')}
-                                </Button>
+                                <BlueBtn
+                                    action={() => openLogin(ctx, navigate)}
+                                    additionalStyle={{ mb: 1.5, mt: 0.5 }}
+                                    text={t('web:login_btn')}
+                                    span={true}
+                                />
                             )}
                         </Box>
                         <Box sx={{ mt: 2 }}>
