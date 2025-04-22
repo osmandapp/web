@@ -1,4 +1,4 @@
-import { Box, IconButton, Tooltip } from '@mui/material';
+import { Box } from '@mui/material';
 import styles from '../../../infoblock.module.css';
 import { ReactComponent as AddFavoriteIcon } from '../../../../assets/icons/ic_action_favorite_outlined.svg';
 import { ReactComponent as ShareIcon } from '../../../../assets/icons/ic_action_gshare_dark.svg';
@@ -12,6 +12,7 @@ import { ADDRESS_NOT_FOUND } from '../WptDetails';
 import { LatLng } from 'leaflet';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../../../manager/GlobalManager';
 import { useNavigate } from 'react-router-dom';
+import BlueBtn from '../../../../frame/components/btns/BlueBtn';
 
 export default function PoiActionsButtons({ wpt }) {
     const ctx = useContext(AppContext);
@@ -70,39 +71,35 @@ export default function PoiActionsButtons({ wpt }) {
         <>
             <Box className={styles.wptActionButtonContainer}>
                 {hasPoiTags && (
-                    <Tooltip title={t('favourites_context_menu_add')} arrow placement="bottom">
-                        <IconButton
-                            id={'se-add-poi-to-fav-item'}
-                            className={styles.wptActionsButtons}
-                            onClick={addToFavorite}
-                        >
-                            <AddFavoriteIcon className={styles.wptActionButtonIcon} />
-                        </IconButton>
-                    </Tooltip>
+                    <BlueBtn
+                        action={addToFavorite}
+                        id={'se-add-poi-to-fav-item'}
+                        icon={<AddFavoriteIcon className={styles.wptActionButtonIcon} />}
+                        tooltipTitle={t('favourites_context_menu_add')}
+                        additionalStyle={{ flex: 1 }}
+                    />
                 )}
-                <Tooltip title={t('shared_string_share')} arrow placement="bottom">
-                    <IconButton id={'se-share-fav-item'} className={styles.wptActionsButtons} onClick={sharePoi}>
-                        <ShareIcon className={styles.wptActionButtonIcon} />
-                    </IconButton>
-                </Tooltip>
-                <Tooltip title={t('context_menu_item_directions_from')} arrow placement="bottom">
-                    <IconButton
-                        id={'se-direction-from-fav-item'}
-                        className={styles.wptActionsButtons}
-                        onClick={() => directionFrom(lat, lon, ctx)}
-                    >
-                        <DirectionFromIcon className={styles.wptActionButtonIcon} />
-                    </IconButton>
-                </Tooltip>
-                <Tooltip title={t('shared_string_navigation')} arrow placement="bottom">
-                    <IconButton
-                        id={'se-navigation-fav-item'}
-                        className={styles.wptActionsButtons}
-                        onClick={() => directionTo(lat, lon, ctx)}
-                    >
-                        <NavigationIcon className={styles.wptActionButtonIcon} />
-                    </IconButton>
-                </Tooltip>
+                <BlueBtn
+                    action={sharePoi}
+                    id={'se-share-fav-item'}
+                    icon={<ShareIcon className={styles.wptActionButtonIcon} />}
+                    tooltipTitle={t('shared_string_share')}
+                    additionalStyle={{ flex: 1 }}
+                />
+                <BlueBtn
+                    action={() => directionFrom(lat, lon, ctx)}
+                    id={'se-direction-from-fav-item'}
+                    icon={<DirectionFromIcon className={styles.wptActionButtonIcon} />}
+                    tooltipTitle={t('context_menu_item_directions_from')}
+                    additionalStyle={{ flex: 1 }}
+                />
+                <BlueBtn
+                    action={() => directionTo(lat, lon, ctx)}
+                    id={'se-navigation-fav-item'}
+                    icon={<NavigationIcon className={styles.wptActionButtonIcon} />}
+                    tooltipTitle={t('shared_string_navigation')}
+                    additionalStyle={{ flex: 1 }}
+                />
             </Box>
         </>
     );

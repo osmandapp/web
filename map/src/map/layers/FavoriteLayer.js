@@ -331,7 +331,7 @@ const FavoriteLayer = () => {
     }
 
     useEffect(() => {
-        setOpenAddDialog((ctx.addFavorite.location && !openAddDialog) ?? false);
+        setOpenAddDialog((ctx.addFavorite.location && !ctx.addFavorite.poi && !openAddDialog) ?? false);
     }, [ctx.addFavorite]);
 
     function deleteMarkers(file) {

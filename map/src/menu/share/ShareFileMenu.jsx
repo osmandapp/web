@@ -1,5 +1,5 @@
 import headerStyles from '../trackfavmenu.module.css';
-import { AppBar, Box, Button, IconButton, ToggleButton, ToggleButtonGroup, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, ToggleButton, ToggleButtonGroup, Toolbar, Typography } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as ShareLinkIcon } from '../../assets/icons/ic_action_link.svg';
@@ -9,7 +9,6 @@ import { ReactComponent as ShareTypePublicIcon } from '../../assets/icons/ic_act
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import styles from './share.module.css';
-import buttonStyles from '../login/login.module.css';
 import ShareFileItem from './ShareFileItem';
 import ShareType from './ShareType';
 import SubTitle from '../components/SubTitle';
@@ -28,6 +27,7 @@ import { MAIN_URL_WITH_SLASH, SHARE_FILE_MAIN_URL } from '../../manager/GlobalMa
 import PublicAccessList from './access/PublicAccessList';
 import PrivateAccessList from './access/PrivateAccessList';
 import ThickDivider from '../components/dividers/ThickDivider';
+import BlueBtn from '../../frame/components/btns/BlueBtn';
 
 export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
     const ctx = useContext(AppContext);
@@ -281,25 +281,18 @@ export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
                         <MenuItemWithLines name={link} maxLines={2} className={styles.shareTypeTextInfo} />
                     </Box>
                     {ctx.shareFile?.sharedObj?.file?.uuid || generatedUuid ? (
-                        <Button
-                            id={'se-copy-link'}
-                            component="span"
-                            className={buttonStyles.blueButton}
-                            onClick={copyLink}
-                        >
-                            {t('web:copy_link')}
-                        </Button>
+                        <BlueBtn id={'se-copy-link'} action={copyLink} text={t('web:copy_link')} span={true} />
                     ) : (
-                        <Button
+                        <BlueBtn
                             id={'se-share-generate-link'}
-                            component="span"
-                            className={buttonStyles.blueButton}
-                            onClick={generateNewLink}
+                            action={generateNewLink}
+                            text={t('web:generate_link')}
+                            additionalStyle={{
+                                color: selectedShareType.key === shareTypes.private.key && '#727272 !important',
+                            }}
                             disabled={selectedShareType.key === shareTypes.private.key}
-                            sx={{ color: selectedShareType.key === shareTypes.private.key && '#727272 !important' }}
-                        >
-                            {t('web:generate_link')}
-                        </Button>
+                            span={true}
+                        />
                     )}
                 </Box>
             </Box>

@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Box, Button, Icon, ListItemText, TextField } from '@mui/material';
+import { Box, Icon, ListItemText, TextField } from '@mui/material';
 import styles from '../../errors/errors.module.css';
 import { ReactComponent as AccessIcon } from '../../../assets/icons/ic_action_lock.svg';
-import buttonStyles from '../../login/login.module.css';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../../context/AppContext';
 import { INIT_LOGIN_STATE } from '../../../manager/LoginManager';
+import BlueBtn from '../../../frame/components/btns/BlueBtn';
 
 export default function RequestAccessError({ sendRequest, userName, setUserName }) {
     const ctx = useContext(AppContext);
@@ -81,16 +81,14 @@ export default function RequestAccessError({ sendRequest, userName, setUserName 
                     helperText={error}
                 />
             )}
-            <Button
+            <BlueBtn
+                action={handleRequest}
                 id={'se-request-access-btn'}
-                sx={{ mt: showNameField ? '19px' : '-15px', color: !userName && '#727272 !important' }}
-                component="span"
+                text={t('web:access_requested_btn')}
+                additionalStyle={{ mt: showNameField ? '19px' : '-15px', color: !userName && '#727272 !important' }}
+                span={true}
                 disabled={!userName}
-                className={buttonStyles.blueButton}
-                onClick={handleRequest}
-            >
-                {t('web:access_requested_btn')}
-            </Button>
+            />
         </Box>
     );
 }

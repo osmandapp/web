@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, IconButton, Link, TextField, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, Link, TextField, Toolbar, Typography } from '@mui/material';
 import headerStyles from '../trackfavmenu.module.css';
 import styles from './login.module.css';
 import { closeHeader } from '../actions/HeaderHelper';
@@ -11,6 +11,8 @@ import { closeLoginMenu, createAccount, EMPTY_INPUT, ERROR_EMAIL, ERROR_PASSWORD
 import { useTranslation } from 'react-i18next';
 import { DELETE_ACCOUNT_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useNavigate } from 'react-router-dom';
+import BlueBtn from '../../frame/components/btns/BlueBtn';
+import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 
 export default function Login() {
     const ctx = useContext(AppContext);
@@ -137,14 +139,12 @@ export default function Login() {
                         value={userEmail}
                     />
                     {emailError !== EMPTY_INPUT && (
-                        <Button
-                            sx={{ mb: 1.5, mt: 0.5 }}
-                            className={styles.blueButton}
-                            component="span"
-                            onClick={() => createAccount(ctx)}
-                        >
-                            {t('web:create_account_btn')}
-                        </Button>
+                        <BlueBtn
+                            action={() => createAccount(ctx)}
+                            text={t('web:create_account_btn')}
+                            additionalStyle={{ mb: 1.5, mt: 0.5 }}
+                            span={true}
+                        />
                     )}
                 </Box>
                 <Box className={passwordError && styles.errorBack}>
@@ -168,14 +168,12 @@ export default function Login() {
                     </Link>
                 </Typography>
                 <Box sx={{ mt: 2 }}>
-                    <Button
-                        id="se-submit-login"
+                    <PrimaryBtn
+                        action={handleLogin}
+                        id={'se-submit-login'}
                         disabled={userPassword === EMPTY_INPUT || userEmail === EMPTY_INPUT}
-                        className={styles.primaryButton}
-                        onClick={handleLogin}
-                    >
-                        {t('shared_string_continue')}
-                    </Button>
+                        text={t('shared_string_continue')}
+                    />
                 </Box>
             </Box>
         </>

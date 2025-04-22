@@ -1,5 +1,5 @@
 import styles from '../../../infoblock.module.css';
-import { Box, IconButton, Tooltip } from '@mui/material';
+import { Box } from '@mui/material';
 import React, { useContext, useState } from 'react';
 import EditWptDialog from '../../../../dialogs/favorites/EditWptDialog';
 import DeleteWptDialog from '../../../../dialogs/favorites/DeleteWptDialog';
@@ -12,6 +12,7 @@ import AppContext from '../../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { ADDRESS_NOT_FOUND } from '../WptDetails';
 import { createShareLocations, directionFrom, directionTo } from './locationActions';
+import BlueBtn from '../../../../frame/components/btns/BlueBtn';
 
 export default function FavoriteActionsButtons({ wpt, isDetails }) {
     const ctx = useContext(AppContext);
@@ -55,54 +56,48 @@ export default function FavoriteActionsButtons({ wpt, isDetails }) {
         <>
             <Box className={styles.wptActionButtonContainer}>
                 {!isShare && (
-                    <Tooltip title={t('shared_string_edit')} arrow placement="bottom">
-                        <IconButton
-                            id={'se-edit-fav-item'}
-                            className={styles.wptActionsButtons}
-                            onClick={() => {
-                                setEditWptDialogOpen(true);
-                            }}
-                        >
-                            <EditIcon className={styles.wptActionButtonIcon} />
-                        </IconButton>
-                    </Tooltip>
+                    <BlueBtn
+                        action={() => {
+                            setEditWptDialogOpen(true);
+                        }}
+                        id={'se-edit-fav-item'}
+                        icon={<EditIcon className={styles.wptActionButtonIcon} />}
+                        tooltipTitle={t('shared_string_edit')}
+                        additionalStyle={{ flex: 1 }}
+                    />
                 )}
                 {!isShare && (
-                    <Tooltip title={t('shared_string_delete')} arrow placement="bottom">
-                        <IconButton
-                            id={'se-delete-fav-item'}
-                            className={styles.wptActionsButtons}
-                            onClick={() => {
-                                setDeleteWptDialogOpen(true);
-                            }}
-                        >
-                            <DeleteIcon className={styles.wptActionButtonIcon} />
-                        </IconButton>
-                    </Tooltip>
+                    <BlueBtn
+                        action={() => {
+                            setDeleteWptDialogOpen(true);
+                        }}
+                        id={'se-delete-fav-item'}
+                        icon={<DeleteIcon className={styles.wptActionButtonIcon} />}
+                        tooltipTitle={t('shared_string_delete')}
+                        additionalStyle={{ flex: 1 }}
+                    />
                 )}
-                <Tooltip title={t('shared_string_share')} arrow placement="bottom">
-                    <IconButton id={'se-share-fav-item'} className={styles.wptActionsButtons} onClick={shareFavorite}>
-                        <ShareIcon className={styles.wptActionButtonIcon} />
-                    </IconButton>
-                </Tooltip>
-                <Tooltip title={t('context_menu_item_directions_from')} arrow placement="bottom">
-                    <IconButton
-                        id={'se-direction-from-fav-item'}
-                        className={styles.wptActionsButtons}
-                        onClick={() => directionFrom(lat, lon, ctx)}
-                    >
-                        <DirectionFromIcon className={styles.wptActionButtonIcon} />
-                    </IconButton>
-                </Tooltip>
-                <Tooltip title={t('shared_string_navigation')} arrow placement="bottom">
-                    <IconButton
-                        id={'se-navigation-fav-item'}
-                        className={styles.wptActionsButtons}
-                        onClick={() => directionTo(lat, lon, ctx)}
-                    >
-                        <NavigationIcon className={styles.wptActionButtonIcon} />
-                    </IconButton>
-                </Tooltip>
+                <BlueBtn
+                    action={shareFavorite}
+                    id={'se-share-fav-item'}
+                    icon={<ShareIcon className={styles.wptActionButtonIcon} />}
+                    tooltipTitle={t('shared_string_share')}
+                    additionalStyle={{ flex: 1 }}
+                />
+                <BlueBtn
+                    action={() => directionFrom(lat, lon, ctx)}
+                    id={'se-direction-from-fav-item'}
+                    icon={<DirectionFromIcon className={styles.wptActionButtonIcon} />}
+                    tooltipTitle={t('context_menu_item_directions_from')}
+                    additionalStyle={{ flex: 1 }}
+                />
+                <BlueBtn
+                    action={() => directionTo(lat, lon, ctx)}
+                    id={'se-navigation-fav-item'}
+                    icon={<NavigationIcon className={styles.wptActionButtonIcon} />}
+                    tooltipTitle={t('shared_string_navigation')}
+                    additionalStyle={{ flex: 1 }}
+                />
             </Box>
             {editWptDialogOpen && (
                 <EditWptDialog
