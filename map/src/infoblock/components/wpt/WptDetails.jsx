@@ -317,7 +317,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             file: selectedWpt.file,
             trackData: selectedWpt.trackData,
             groupId: selectedWpt.id,
-            sharedWithMe: selectedWpt.file.sharedWithMe,
+            sharedWithMe: selectedWpt.file?.sharedWithMe,
             name: currentWpt.name,
             desc: currentWpt.desc,
             hidden: currentWpt.hidden,
