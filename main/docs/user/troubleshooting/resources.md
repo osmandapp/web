@@ -50,6 +50,7 @@ The list below provides converters for various data types supported by OsmAnd, a
 | GeoPDF/Tiff, ozi to OsmAnd | Conversion of geoPDF, geoTiff, and ozi map formats to OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
 | GPX to KML | Tool to convert OsmAnd *GPX* files to *KML* format, preserving icons. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX to OsmAnd | Python script to convert iOverlander *GPX* files exported to OsmAnd with icons. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
+| Topo map into printable| This is [a tool](https://github.com/acui/osmand_topo_map_generator) to generate a printablea tool to generate a printable topographic map by using screenshots from OsmAnd (https://osmand.net). The map uses the UTM grid and has declination information. It's to be used with a compass or a GPS device with UTM coordinates.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 
 ## Custom Resources
 
