@@ -161,9 +161,9 @@ You can leave notes and mark locations on the map in various forms, each serving
 
 - *[Audio/Video Notes](../plugins/audio-video-notes.md)*. These notes allow you to attach audio, video, or photo files to specific locations on the map. To enable, activate the Audio/Video Notes plugin in *OsmAnd menu → Plugins*. To add one, make a *long tap → Actions → choose the required file to attach*.
 
-- *[OSM Notes](https://www.facebook.com/watch/?v=673312246195291)*. These are reports you can create to highlight errors or missing information on OpenStreetMap. Enable the OSM editing plugin in the *OsmAnd menu → Plugins*. To add an OSM Note, make a *long tap → Actions → Add OSM note*.
+- *[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note)*. These are reports you can create to highlight errors or missing information on OpenStreetMap. Enable the OSM editing plugin in the *OsmAnd menu → Plugins*. To add an OSM Note, make a *long tap → Actions → Add OSM note*.
 
-- *[POIs (Points of Interest)](../search/index.md)*. These are predefined points from OpenStreetMap's data source, such as restaurants, parks, or landmarks. You can view POIs by enabling the POI overlay in the *Configure Map* menu or by selecting a category.
+- *[POIs (Points of Interest)](../map/point-layers-on-map.md#points-of-interest-pois)*. These are predefined points from OpenStreetMap's data source, such as restaurants, parks, or landmarks. You can view POIs by enabling the POI overlay in the *Configure Map* menu or by selecting a category.
 
 - *[Search](../search/index.md)*. You can also use the search function to find and mark places on the map.
 
