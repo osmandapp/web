@@ -44,7 +44,7 @@ You can read about the differences between online routing engines in [OSMwiki](h
 
 ### Custom Online GPX Routing
 
-Online server builds a route using your starting point and destination. After receiving the track from the server, OsmaAnd creates a route using *[Attach to the roads](../setup/gpx-navigation.md#attach-to-roads)* feature. So all needed routing information will be taken from our offline maps, and more precise guidance along the route will be provided.  
+Online server builds a route using your starting point and destination. After receiving the track from the server, OsmAnd creates a route using *[Attach to the roads](../setup/gpx-navigation.md#attach-to-roads)* feature. So all needed routing information will be taken from our offline maps, and more precise guidance along the route will be provided.  
 
 ![Custom GPX routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_1.png) ![Custom GPX routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_2.png)
 
