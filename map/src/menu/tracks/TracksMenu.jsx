@@ -41,26 +41,28 @@ export default function TracksMenu() {
     // get gpx files and create groups
     useEffect(() => {
         if (!isEmpty(ctx.tracksGroups)) {
-            let defGroup = ctx.tracksGroups.find((g) => g.name === DEFAULT_GROUP_NAME);
-            setDefaultGroup(defGroup ?? null);
-
-            if (defGroup?.groupFiles && (defGroup?.groupFiles?.length > 1 || ctx.tracksGroups?.length > 1)) {
-                doSort({
-                    method: ctx.selectedSort?.tracks?.[DEFAULT_GROUP_NAME] ?? DEFAULT_SORT_METHOD,
-                    setSortFiles,
-                    setSortGroups,
-                    files: defGroup?.groupFiles,
-                    groups: ctx.tracksGroups,
-                });
+            const defGroup = ctx.tracksGroups.find((g) => g.name === DEFAULT_GROUP_NAME);
+            const defaultGroupWithFolders = {
+                subfolders: ctx.tracksGroups,
+                groupFiles: [],
+            };
+            if (defGroup) {
+                setDefaultGroup({ ...defGroup, subfolders: ctx.tracksGroups });
             } else {
-                setSortFiles([]);
-                setSortGroups([]);
+                setDefaultGroup(defaultGroupWithFolders);
             }
+            doSort({
+                method: ctx.selectedSort?.tracks?.[DEFAULT_GROUP_NAME] ?? DEFAULT_SORT_METHOD,
+                setSortFiles,
+                setSortGroups,
+                files: defGroup ? defGroup.groupFiles : [],
+                groups: defaultGroupWithFolders,
+            });
         }
     }, [ctx.tracksGroups]);
 
     const defaultGroupItems = useMemo(() => {
-        if (defaultGroup) {
+        if (defaultGroup && defaultGroup.groupFiles) {
             const items = [];
             const listTracks = sortFiles.length > 0 ? sortFiles : defaultGroup.groupFiles;
             listTracks.map((file, index) => {
@@ -69,7 +71,7 @@ export default function TracksMenu() {
             });
             return items;
         }
-    }, [defaultGroup?.files, defaultGroup?.files.length, sortFiles]);
+    }, [defaultGroup?.files, defaultGroup?.files?.length, defaultGroup?.groupFiles, sortFiles]);
 
     useEffect(() => {
         if (defaultGroup) {

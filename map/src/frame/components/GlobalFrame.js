@@ -269,10 +269,8 @@ const GlobalFrame = () => {
     // create track groups
     useEffect(() => {
         if (!_.isEmpty(ctx.listFiles)) {
-            let files = getGpxFiles(ctx.listFiles);
-            //get groups
-            let trackGroups = createTrackGroups(files);
-
+            const files = getGpxFiles(ctx.listFiles);
+            const trackGroups = createTrackGroups(files);
             ctx.setTracksGroups(trackGroups);
         } else {
             ctx.setTracksGroups([]);
