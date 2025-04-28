@@ -29,7 +29,17 @@ function byAlpha(files, reverse) {
     });
 }
 
-export function byTime(files, reverse) {
+export function byTime(files, reverse, isGroup = false) {
+    if (isGroup) {
+        return [...files].sort((a, b) => {
+            const A = a.lastModifiedMs;
+            const B = b.lastModifiedMs;
+            if (A === B) {
+                return az(a.name, b.name);
+            }
+            return reverse ? B - A : A - B;
+        });
+    }
     return [...files].sort((a, b) => {
         const A = getGpxTime({ f: a, reverse });
         const B = getGpxTime({ f: b, reverse });
@@ -94,11 +104,13 @@ export function doSort({ method, setSortFiles, setSortGroups, markers, files, gr
             setSortFiles(allMethods[method].callback(files, allMethods[method].reverse));
         }
     }
-    if (setSortGroups && (method === 'az' || method === 'za' || favoriteGroup)) {
-        if (method === 'time') {
-            res = allMethods[method].callback(groups, allMethods[method].reverse, favoriteGroup !== null);
+    if (setSortGroups && groups?.length > 0) {
+        if (method === 'time' && !favoriteGroup) {
+            // sort by time for track groups
+            res = allMethods[method].callback(groups, allMethods[method].reverse, true);
             setSortGroups(res);
-        } else {
+        } else if (method === 'az' || method === 'za' || favoriteGroup) {
+            // sort by name for track groups or all types of favorites
             res = allMethods[method].callback(groups, allMethods[method].reverse);
             setSortGroups(res);
         }

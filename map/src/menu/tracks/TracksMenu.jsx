@@ -47,7 +47,7 @@ export default function TracksMenu() {
                 groupFiles: [],
             };
             if (defGroup) {
-                setDefaultGroup({ ...defGroup, subfolders: ctx.tracksGroups });
+                setDefaultGroup(defGroup);
             } else {
                 setDefaultGroup(defaultGroupWithFolders);
             }

@@ -1268,6 +1268,7 @@ export function getGpxFiles(listFiles) {
 }
 
 export function updateLoadingTracks(ctx, group) {
+    calculateLastModified(group);
     ctx.setTrackLoading([
         ...ctx.trackLoading.filter(
             (name) =>
