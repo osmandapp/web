@@ -55,7 +55,7 @@ The following profiles with their routing types are preset in OsmAnd: *Driving, 
 
 ## Customize Offline Routing
 
-You can also create your **[own routing.xml file](#customize-offline-routing)** or modify default **routing.xml** and use it for navigation (only for advanced OsmAnd users).
+You can also create your **own routing.xml file** or modify default **routing.xml** and use it for navigation (only for advanced OsmAnd users).
 
 - Copy the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file to your device. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. As an example, view the [routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file of the OsmAnd user.
 - After making the changes, the new *routing.xml* file can be added to OsmAnd by tapping it and selecting to open it in the OsmAnd app.
