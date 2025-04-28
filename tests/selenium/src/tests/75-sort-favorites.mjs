@@ -87,7 +87,7 @@ export default async function test() {
     await actionFinish();
 }
 
-const favGroupsLastModified = ['se-menu-fav-shops', 'se-menu-fav-ozoo', 'se-menu-fav-food'];
+const favGroupsLastModified = ['se-menu-fav-food', 'se-menu-fav-ozoo', 'se-menu-fav-shops'];
 
 const favGroupsAZ = ['se-menu-fav-food', 'se-menu-fav-ozoo', 'se-menu-fav-shops'];
 
