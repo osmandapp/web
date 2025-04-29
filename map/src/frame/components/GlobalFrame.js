@@ -42,10 +42,11 @@ const GlobalFrame = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [showInstallBanner, setShowInstallBanner] = useState(false);
+    const [openInfoDrawer, setOpenInfoDrawer] = useState(true);
 
     const MAIN_MENU_SIZE = openMainMenu ? `${MAIN_MENU_OPEN_SIZE}px` : `${MAIN_MENU_MIN_SIZE}px`;
     const MENU_INFO_SIZE =
-        menuInfo || ctx.openLoginMenu || ctx.infoBlockWidth === `${MENU_INFO_OPEN_SIZE}px`
+        (menuInfo || ctx.openLoginMenu || ctx.infoBlockWidth === `${MENU_INFO_OPEN_SIZE}px`) && openInfoDrawer
             ? `${MENU_INFO_OPEN_SIZE}px`
             : `${MENU_INFO_CLOSE_SIZE}px`;
 
@@ -335,6 +336,8 @@ const GlobalFrame = () => {
                 setShowInfoBlock={setShowInfoBlock}
                 setClearState={setClearState}
                 showInstallBanner={showInstallBanner}
+                openInfoDrawer={openInfoDrawer}
+                setOpenInfoDrawer={setOpenInfoDrawer}
             />
             <Dialog open={openErrorDialog} onClose={() => setOpenErrorDialog(false)}>
                 <DialogTitle className={dialogStyles.title}>{ctx.trackErrorMsg?.title}</DialogTitle>
