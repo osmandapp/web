@@ -14,7 +14,7 @@ import PoiManager from '../../manager/PoiManager';
 import { getIconByType } from '../../manager/SearchManager';
 import { processMarkers } from '../layers/FavoriteLayer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
-import { updateMarkerZIndex } from '../layers/ExploreLayer';
+import { getImgByProps, updateMarkerZIndex } from '../layers/ExploreLayer';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
 
@@ -65,7 +65,7 @@ export function clusterMarkers({
         };
     }
 
-    const mainMarkers = createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites);
+    const mainMarkers = createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites, isPoi);
 
     const secondaryMarkers = createOtherMarkersArr({
         clusters,
@@ -161,9 +161,15 @@ function clusterPlaces(places, zoom, isFavorites) {
     return clustered;
 }
 
-function createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites) {
+function createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites, isPoi) {
     const mainMarkers = [];
     if (useUniformMarkerPlacement) {
+        if (!isPoi && !isFavorites) {
+            // Remove images from clusters without icon
+            clusters = clusters.map((cluster) => cluster.filter((item) => getImgByProps(item.properties)));
+            // Remove empty clusters
+            clusters = clusters.filter((cluster) => cluster.length > 0);
+        }
         const firstItemsSorted = clusters.map((cluster) => cluster[0]).sort((a, b) => a.index - b.index);
         // Add first items to main markers for better visibility
         firstItemsSorted.forEach((item) => {
