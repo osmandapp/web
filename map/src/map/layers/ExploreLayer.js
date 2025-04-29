@@ -330,7 +330,7 @@ export default function ExploreLayer() {
                 const imgTag = ctx.searchSettings.useWikiImages
                     ? place.properties.imageTitle
                     : getImgByProps(place.properties);
-                const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: 200 });
+                const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: 160 });
                 const iconSize = [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE];
 
                 return new Promise((resolve, reject) => {
