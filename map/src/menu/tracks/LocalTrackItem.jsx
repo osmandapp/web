@@ -13,7 +13,7 @@ export default function LocalTrackItem({ track }) {
 
     const info = useMemo(() => <TrackInfo file={track} />, [track]);
 
-    const ref = ctx.localTracks.find((t) => t.name === track.name);
+    const ref = ctx.localTracks.find((t) => t?.name === track.name);
 
     if (!ref) {
         // console.debug('LocalTrackItem track not found (removed)', track.name);
