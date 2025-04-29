@@ -4,6 +4,7 @@ import {
     ClickAwayListener,
     Divider,
     Drawer,
+    IconButton,
     ListItemButton,
     ListItemIcon,
     ListItemText,
@@ -71,6 +72,7 @@ import {
     TRACK_ANALYZER_URL,
     INFO_MENU_URL,
     SHARE_MENU_URL,
+    MAIN_MENU_MIN_SIZE,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -83,6 +85,8 @@ import { getShareFileInfo, SHARE_TYPE, updateUserRequests } from '../manager/Sha
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 export default function MainMenu({
     size,
@@ -95,6 +99,8 @@ export default function MainMenu({
     setShowInfoBlock,
     setClearState,
     showInstallBanner,
+    openInfoDrawer,
+    setOpenInfoDrawer,
 }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
@@ -103,6 +109,8 @@ export default function MainMenu({
     const { filename } = useParams();
 
     const timerRef = useRef(null);
+
+    const [showDrawerBtn, setShowDrawerBtn] = useState(true);
 
     const [selectedType, setSelectedType] = useState(null);
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
@@ -522,6 +530,30 @@ export default function MainMenu({
         }
     }, [ctx.prevPageUrl]);
 
+    useEffect(() => {
+        if (
+            ctx.openProFeatures ||
+            ctx.openLoginMenu ||
+            ctx.openGroups.length > 0 ||
+            ctx.openVisibleMenu ||
+            openCloudSettings ||
+            showInfoBlock ||
+            menuInfo
+        ) {
+            setShowDrawerBtn(true);
+        } else {
+            setShowDrawerBtn(false);
+        }
+    }, [
+        ctx.openProFeatures,
+        ctx.openLoginMenu,
+        ctx.openGroups,
+        ctx.openVisibleMenu,
+        showInfoBlock,
+        openCloudSettings,
+        menuInfo,
+    ]);
+
     function navigateToUrl({ menu = null, isMain = false }) {
         if (isMain) {
             if (ctx.pageParams[MAIN_PAGE_TYPE] !== undefined) {
@@ -689,7 +721,7 @@ export default function MainMenu({
                     },
                 }}
                 sx={{ left: 'auto !important' }}
-                open={true}
+                open={openInfoDrawer}
                 hideBackdrop
             >
                 <Toolbar sx={{ mb: '-3px' }} />
@@ -720,6 +752,29 @@ export default function MainMenu({
                 />
                 {openCloudSettings && <CloudSettings setOpenCloudSettings={setOpenCloudSettings} />}
             </Drawer>
+            {showDrawerBtn && (
+                <IconButton
+                    onClick={() => setOpenInfoDrawer(!openInfoDrawer)}
+                    size="small"
+                    sx={{
+                        width: '20px',
+                        mt: `${height / 2}px`,
+                        ml: openInfoDrawer
+                            ? `${MENU_INFO_OPEN_SIZE + MAIN_MENU_MIN_SIZE + 10}px`
+                            : `${MENU_INFO_CLOSE_SIZE + MAIN_MENU_MIN_SIZE + 10}px`,
+                        transform: 'translate(-50%, -50%)',
+                        zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK - 1,
+                        backgroundColor: 'rgba(255,255,255,0.8)',
+                        '&:hover': {
+                            backgroundColor: 'background.paper',
+                        },
+                        boxShadow: 1,
+                        borderRadius: 1,
+                    }}
+                >
+                    {openInfoDrawer ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                </IconButton>
+            )}
         </Box>
     );
 }
