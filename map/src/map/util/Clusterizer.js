@@ -94,12 +94,13 @@ export function clusterMarkers({
 }
 
 function createExploreMarkersArr({ places, mainMinDistance, secondaryMinDistance, maxMainPlaces, maxSecondaryPlaces }) {
-    places.sort((a, b) => (a.rowNum ?? 0) - (b.rowNum ?? 0));
+    places.sort((a, b) => (a.properties.rowNum ?? 0) - (b.properties.rowNum ?? 0));
 
     const mainMarkers = [];
     for (const place of places) {
         if (
             mainMarkers.length <= maxMainPlaces &&
+            place.properties.rowNum < 100 &&
             canPlaceMarker({
                 place,
                 existingPlaces: mainMarkers,
