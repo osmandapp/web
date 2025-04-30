@@ -146,7 +146,7 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
                                     {imageTitle && imageTitle !== '' ? (
                                         <ListItemIcon>
                                             <img
-                                                src={getPhotoUrl({ photoTitle: imageTitle, size: 200 })}
+                                                src={getPhotoUrl({ photoTitle: imageTitle, size: 160 })}
                                                 alt={name}
                                                 style={{ width: '66px', height: '66px', objectFit: 'cover' }}
                                             />
