@@ -481,7 +481,7 @@ export default function ExploreLayer() {
                             <CloseIcon />
                         </IconButton>
                         <Box>
-                            <img src={getPhotoUrl({ photo: selectedObj, size: 300 })} alt="Selected" />
+                            <img src={getPhotoUrl({ photo: selectedObj })} alt="Selected" />
                         </Box>
                         <Box sx={{ marginTop: 2 }}>
                             <Table size="small" aria-label="properties table">
