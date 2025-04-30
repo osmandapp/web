@@ -431,6 +431,9 @@ export default function MainMenu({
     function selectMenu({ item }) {
         closeSubPages({});
         let currentType;
+        if (!openInfoDrawer) {
+            setOpenInfoDrawer(true);
+        }
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
@@ -711,6 +714,7 @@ export default function MainMenu({
             </ClickAwayListener>
             <Drawer
                 variant="persistent"
+                transitionDuration={0}
                 PaperProps={{
                     sx: {
                         width: infoSize,
