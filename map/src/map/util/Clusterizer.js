@@ -144,7 +144,7 @@ function getMaxMainPlaces(zoom, isPoi, isExplore) {
 
 function getMaxSecondaryPlaces(zoom, isExplore) {
     if (isExplore) {
-        return 100;
+        return 200;
     }
     if (zoom > 10) {
         return 200;
