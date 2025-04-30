@@ -68,7 +68,7 @@ For Android devices, you can download the **Free** and **Paid** versions of the 
 
 3. **OsmAnd Pro is a *cross-platform* subscription**. This means you can purchase it on one store (e.g., *Google Play, Amazon, Huawei AppGallery, AppStore, and osmand.net*) and restore it on another by [registering your email as a Pro account](../personal/osmand-cloud.md#cross-platform).
 
-4. You can add **Maps+ and OsmAnd+** to **[Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en)** to share the purchase with family members.  
+4. You can add **OsmAnd+** to **[Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en)** to share the purchase with family members.  
 
 
 ## Prices
