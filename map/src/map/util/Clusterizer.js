@@ -27,9 +27,10 @@ export function clusterMarkers({
     secondaryIconSize = 10,
     isPoi = false,
     isFavorites = false,
+    isExplore = false,
 }) {
-    const maxMainPlaces = getMaxMainPlaces(zoom, isPoi);
-    const maxSecondaryPlaces = getMaxSecondaryPlaces(zoom);
+    const maxMainPlaces = getMaxMainPlaces(zoom, isPoi, isExplore);
+    const maxSecondaryPlaces = getMaxSecondaryPlaces(zoom, isExplore);
     const useUniformMarkerPlacement = getUseUniformMarkerPlacement(zoom, isPoi, isFavorites);
 
     // Minimum distances between markers in meters
@@ -46,6 +47,16 @@ export function clusterMarkers({
         zoom,
         isPoi,
     });
+
+    if (isExplore) {
+        return createExploreMarkersArr({
+            places,
+            mainMinDistance,
+            secondaryMinDistance,
+            maxMainPlaces,
+            maxSecondaryPlaces,
+        });
+    }
 
     // Sort clusters by size
     const clusters = Object.values(clusterPlaces(places, zoom, isFavorites));
@@ -82,12 +93,63 @@ export function clusterMarkers({
     };
 }
 
-function getMaxMainPlaces(zoom, isPoi) {
-    return isPoi ? 2000 : 50;
+function createExploreMarkersArr({ places, mainMinDistance, secondaryMinDistance, maxMainPlaces, maxSecondaryPlaces }) {
+    places.sort((a, b) => (a.rowNum ?? 0) - (b.rowNum ?? 0));
+
+    const mainMarkers = [];
+    for (const place of places) {
+        if (
+            mainMarkers.length <= maxMainPlaces &&
+            canPlaceMarker({
+                place,
+                existingPlaces: mainMarkers,
+                minDistance: mainMinDistance,
+                isFav: false,
+            })
+        ) {
+            mainMarkers.push(place);
+        }
+    }
+
+    const secondaryMarkers = [];
+    for (const place of places) {
+        if (secondaryMarkers.length >= maxSecondaryPlaces || mainMarkers.includes(place)) continue;
+
+        if (
+            canPlaceMarker({
+                place,
+                existingPlaces: [...mainMarkers, ...secondaryMarkers],
+                minDistance: secondaryMinDistance,
+                isFav: false,
+            })
+        ) {
+            secondaryMarkers.push(place);
+        }
+    }
+
+    return {
+        mainMarkers,
+        secondaryMarkers,
+    };
 }
 
-function getMaxSecondaryPlaces(zoom) {
-    return zoom > 10 ? 200 : 900;
+function getMaxMainPlaces(zoom, isPoi, isExplore) {
+    if (isPoi) {
+        return 2000;
+    } else if (isExplore) {
+        return 20;
+    }
+    return 50;
+}
+
+function getMaxSecondaryPlaces(zoom, isExplore) {
+    if (isExplore) {
+        return 100;
+    }
+    if (zoom > 10) {
+        return 200;
+    }
+    return 900;
 }
 
 function getUseUniformMarkerPlacement(zoom, isPoi, isFavorites) {
