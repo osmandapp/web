@@ -431,15 +431,12 @@ export default function MainMenu({
     function selectMenu({ item }) {
         closeSubPages({});
         let currentType;
-        if (!openInfoDrawer) {
-            setOpenInfoDrawer(true);
-        }
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
-            const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
+            const updateMenu = !openInfoDrawer || !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;
             if (!menu) {
                 ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
@@ -455,6 +452,9 @@ export default function MainMenu({
             if (item.type === OBJECT_CONFIGURE_MAP) {
                 ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
             }
+        }
+        if (!openInfoDrawer) {
+            setOpenInfoDrawer(true);
         }
         ctx.setPrevPageUrl({ url: location, active: false });
         setSelectedType(currentType);
