@@ -11,9 +11,10 @@ import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
 import { areSetsEqual } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
-import { EXPLORE_BIG_ICON_SIZE, clusterMarkers, createHoverMarker, removeTooltip } from '../util/Clusterizer';
+import { clusterMarkers, createHoverMarker, EXPLORE_BIG_ICON_SIZE, removeTooltip } from '../util/Clusterizer';
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
+import { HEADER_SIZE, MAIN_MENU_MIN_SIZE } from '../../manager/GlobalManager';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
 export const EXPLORE_MIN_ZOOM = 6;
@@ -194,7 +195,7 @@ export default function ExploreLayer() {
                 return;
             }
             setLoadingContextMenu(true);
-            const bbox = map.getBounds();
+            const bbox = getVisibleBbox();
             const api = settings?.useWikiImages ? API_GET_IMGS : API_GET_OBJS;
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/${api}`, {
                 apiCache: true,
@@ -213,6 +214,16 @@ export default function ExploreLayer() {
             setLoadingContextMenu(false);
             removeTooltip(map, ctx.searchTooltipRef);
         }
+    }
+
+    function getVisibleBbox() {
+        const containerSize = map.getSize();
+        const menuOffset = parseInt(ctx.infoBlockWidth, 10) + MAIN_MENU_MIN_SIZE + 20;
+        const topPadding = HEADER_SIZE + 20;
+        const topLeft = map.containerPointToLatLng([menuOffset, topPadding]);
+        const bottomRight = map.containerPointToLatLng([containerSize.x, containerSize.y]);
+
+        return L.latLngBounds(topLeft, bottomRight);
     }
 
     function openInfo(feature) {
