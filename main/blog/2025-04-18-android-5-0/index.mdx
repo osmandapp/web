@@ -368,6 +368,8 @@ Learn more:
 
 The **AIS Vessel Tracker** plugin allows you to display **real-time AIS (Automatic Identification System) vessel positions** on the map. This feature is essential for maritime navigation, providing details about nearby ships, including their type, speed, and route.  
 
+*To use, configure an* ***AIS server connection*** *or connect an* ***external AIS receiver***.  
+
 Key features:
 
 - **Live vessel tracking** — Ships update based on *real-time speed and course*.  
