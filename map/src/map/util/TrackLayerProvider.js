@@ -21,7 +21,14 @@ export const DEFAULT_TRACK_LINE_WEIGHT = 7;
 
 function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE, simplifyWpts = false }) {
     const layers = [];
-    const trackAppearance = data.trackAppearance;
+    const trackAppearance = data?.info
+        ? {
+              color: data.info.color,
+              width: data.info.width,
+              showArrows: data.info.show_arrows,
+              showStartFinish: data.info.show_start_finish,
+          }
+        : data.trackAppearance;
     data.tracks?.forEach((track) => {
         if (track.points?.length > 0) {
             const res = parsePoints({

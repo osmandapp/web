@@ -11,6 +11,7 @@ import TracksManager, {
     getGpxFileFromTrackData,
     EMPTY_FILE_NAME,
     TRACK_VISIBLE_FLAG,
+    preparedGpxFile,
 } from './TracksManager';
 import _, { cloneDeep } from 'lodash';
 import {
@@ -351,16 +352,10 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
 
     ctx.setCreateTrack({ ...createState });
 
-    const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
-    const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
     const newGpxFiles = Object.assign({}, ctx.gpxFiles);
-    newGpxFiles[file.name] = {
-        url: URL + qs,
-        clienttimems: file.clienttimems,
-        updatetimems: file.updatetimems,
-        name: file.name,
-        type: 'GPX',
-    };
+
+    newGpxFiles[file.name] = preparedGpxFile({ file });
+
     const f = await Utils.getFileData(newGpxFiles[file.name]);
     const gpxfile = new File([f], file.name, {
         type: 'text/plain',
@@ -370,6 +365,7 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
         const type = OBJECT_TYPE_CLOUD_TRACK;
         ctx.setUpdateInfoBlock(true);
         ctx.setCurrentObjectType(type);
+        track.info = await Utils.getFileInfo(newGpxFiles[file.name]);
         track.name = file.name;
         Object.keys(track).forEach((t) => {
             newGpxFiles[file.name][t] = track[t];
