@@ -72,12 +72,7 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng));
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
-                let polyline = new L.Polyline(coordsTrk, getPolylineOpt(trackAppearance));
-                if (ctx) {
-                    polyline.setStyle({
-                        color: ctx.trackRouter.getColor(getPointGeoProfile(point, points)),
-                    });
-                }
+                let polyline = createPolyline({ coords: coordsTrk, ctx, map, point, points, trackAppearance });
                 addStartEndGap(point, points, layers, draggable);
                 layers.push(polyline);
                 coordsAll = coordsAll.concat(_.cloneDeep(coordsTrk));
@@ -110,12 +105,7 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
         });
     }
 
-    let endPolyline = new L.Polyline(coordsTrk, getPolylineOpt(trackAppearance));
-    if (ctx) {
-        endPolyline.setStyle({
-            color: trackAppearance?.color ?? ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE }),
-        });
-    }
+    const endPolyline = createPolyline({ coords: coordsTrk, ctx, map, point: null, points: null, trackAppearance });
     layers.push(endPolyline);
 
     return {
@@ -183,7 +173,11 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
 }
 
 function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
-    const color = trackAppearance?.color ?? ctx.trackRouter.getColor(getPointGeoProfile(point, points));
+    const defaultColor =
+        point && points
+            ? ctx.trackRouter.getColor(getPointGeoProfile(point, points))
+            : ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE });
+    const color = trackAppearance?.color ?? defaultColor;
     const width = trackAppearance?.width ?? 'medium';
     const arrowSettings = {
         show: trackAppearance?.showArrows,
@@ -191,7 +185,7 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
     };
     const polyline = new L.Polyline(coords, {
         color,
-        weight: DEFAULT_TRACK_LINE_WEIGHT,
+        weight: getPolylineWeight(width, map.getZoom()),
         ...(arrowSettings.show ? { renderer: L.svg() } : {}),
     });
 
