@@ -1377,17 +1377,7 @@ export async function openTrackOnMap({
         if (setProgressVisible) {
             setProgressVisible(true);
         }
-        const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
-        const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
-        const oneGpxFile = {
-            url: URL + qs,
-            clienttimems: file.clienttimems,
-            updatetimems: file.updatetimems,
-            name: file.name,
-            sharedWithMe: file.sharedWithMe,
-            details: file.details,
-            type: 'GPX',
-        };
+        const oneGpxFile = preparedGpxFile({ file, sharedFile });
         const f = await Utils.getFileData(oneGpxFile);
         const gpxfile = new File([f], file.name, {
             type: 'text/plain',
@@ -1401,6 +1391,7 @@ export async function openTrackOnMap({
                 setError('Something went wrong!');
             }
         } else if (isEmptyTrack(track) === false) {
+            track.info = await Utils.getFileInfo(oneGpxFile);
             track.name = file.name;
             Object.keys(track).forEach((t) => {
                 oneGpxFile[t] = track[t];
@@ -1432,6 +1423,22 @@ export async function openTrackOnMap({
         }
     }
     return newGpxFiles;
+}
+
+export function preparedGpxFile({ file, sharedFile = false }) {
+    const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
+    const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
+    const qsInfo = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name + '.info')}`;
+    return {
+        url: URL + qs,
+        infoUrl: URL + qsInfo,
+        clienttimems: file.clienttimems,
+        updatetimems: file.updatetimems,
+        name: file.name,
+        sharedWithMe: file.sharedWithMe,
+        details: file.details,
+        type: 'GPX',
+    };
 }
 
 export function updateTracks(ctx, smartf, newTracks) {
