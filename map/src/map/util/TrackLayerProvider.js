@@ -72,7 +72,7 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng));
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
-                let polyline = new L.Polyline(coordsTrk, getPolylineOpt());
+                let polyline = new L.Polyline(coordsTrk, getPolylineOpt(trackAppearance));
                 if (ctx) {
                     polyline.setStyle({
                         color: ctx.trackRouter.getColor(getPointGeoProfile(point, points)),
@@ -110,10 +110,10 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
         });
     }
 
-    let endPolyline = new L.Polyline(coordsTrk, getPolylineOpt());
+    let endPolyline = new L.Polyline(coordsTrk, getPolylineOpt(trackAppearance));
     if (ctx) {
         endPolyline.setStyle({
-            color: ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE }),
+            color: trackAppearance?.color ?? ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE }),
         });
     }
     layers.push(endPolyline);
@@ -495,9 +495,10 @@ function addStartEndMarkers(points, layers) {
     );
 }
 
-function getPolylineOpt() {
+function getPolylineOpt(trackAppearance) {
     return {
-        color: '#1976d2',
+        color: trackAppearance?.color ?? '#1976d2',
+        weight: trackAppearance?.width ?? DEFAULT_TRACK_LINE_WEIGHT,
     };
 }
 
