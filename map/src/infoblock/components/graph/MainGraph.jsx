@@ -121,14 +121,24 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
 
     useEffect(() => {
         if (data) {
-            setSpeedData(showData[y2Axis] ? dataGraph.map((d) => ({ x: d[xAxis], y: parseFloat(d[y2Axis]) })) : null);
+            setSpeedData(
+                showData[y2Axis]
+                    ? dataGraph.map((d, i) => ({ x: d[xAxis], y: parseFloat(d[y2Axis]), originalIndex: i }))
+                    : null
+            );
             setEleData(
-                showData[y1Axis[0]] ? dataGraph.map((d) => ({ x: d[xAxis], y: parseFloat(d[y1Axis[0]]) })) : null
+                showData[y1Axis[0]]
+                    ? dataGraph.map((d, i) => ({ x: d[xAxis], y: parseFloat(d[y1Axis[0]]), originalIndex: i }))
+                    : null
             );
             setEleSRTMData(
-                showData[y1Axis[1]] ? dataGraph.map((d) => ({ x: d[xAxis], y: parseFloat(d[y1Axis[1]]) })) : null
+                showData[y1Axis[1]]
+                    ? dataGraph.map((d, i) => ({ x: d[xAxis], y: parseFloat(d[y1Axis[1]]), originalIndex: i }))
+                    : null
             );
-            setSlopeData(showData[y1Axis[2]] ? slopes.map((d) => ({ x: d.dist, y: d.slope })) : null);
+            setSlopeData(
+                showData[y1Axis[2]] ? slopes.map((d, i) => ({ x: d.dist, y: d.slope, originalIndex: i })) : null
+            );
             if (showData[y1Axis[0]]) {
                 addMaxMinMarkers(y1Axis[0], minEle, maxEle);
             } else {
@@ -192,7 +202,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
             let selected = chartRef.current._active.find((data) => data.datasetIndex !== 2);
             if (selected) {
                 let pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
-                const ind = selected.element.$context.index;
+                const ind = selected.element.$context.raw.originalIndex;
                 // add marker to map
                 if (ind) {
                     const lat = Object.values(pointList)[ind].lat;
