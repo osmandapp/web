@@ -489,10 +489,9 @@ function addStartEndMarkers(points, layers) {
     );
 }
 
-function getPolylineOpt(trackAppearance) {
+function getPolylineOpt() {
     return {
-        color: trackAppearance?.color ?? '#1976d2',
-        weight: trackAppearance?.width ?? DEFAULT_TRACK_LINE_WEIGHT,
+        color: '#1976d2',
     };
 }
 
