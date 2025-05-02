@@ -89,7 +89,9 @@ async function getFileInfo(file) {
     let info;
     const response = await apiGet(file.infoUrl, {});
     if (response.ok) {
-        info = await response.json();
+        if (response.data?.length > 0) {
+            info = await response.json();
+        }
     }
     return info;
 }
