@@ -184,7 +184,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
                 minZoom={1}
                 maxZoom={20}
-                maxNativeZoom={20}
+                maxNativeZoom={19}
             />
             <HeightmapLayer />
             {hoverPoint && (
