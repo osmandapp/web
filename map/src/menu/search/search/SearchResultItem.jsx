@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { ListItemIcon, ListItemText, MenuItem, Skeleton } from '@mui/material';
+import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +8,7 @@ import _ from 'lodash';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow.svg';
 import {
     ADDRESS_1,
     ADDRESS_2,
@@ -130,9 +131,9 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     function addDistance() {
         if (!distance) return '';
         if (distance < 1000) {
-            return ` · ${convertMeters(distance, ctx.unitsSettings.len).toFixed(0)} ${t(getSmallLengthUnit(ctx))}`;
+            return `${convertMeters(distance, ctx.unitsSettings.len).toFixed(0)} ${t(getSmallLengthUnit(ctx))}`;
         }
-        return ` · ${convertMeters(distance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(1)} ${t(getLargeLengthUnit(ctx))}`;
+        return `${convertMeters(distance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(1)} ${t(getLargeLengthUnit(ctx))}`;
     }
 
     const id =
@@ -232,12 +233,28 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                     >
                         <ListItemText>
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                            {(info || type || distance) && (
+                            {(info || type) && (
                                 <MenuItemWithLines
-                                    name={`${addInfo()}${addType()}${addCity()}${addDistance()}`}
-                                    maxLines={4}
                                     className={styles.placeTypes}
-                                />
+                                    name={`${addInfo()}${addType()}${addCity()}`}
+                                    maxLines={4}
+                                >
+                                    {distance && (
+                                        <span style={{ display: 'inline-flex' }}>
+                                            <Typography className={styles.placeDistance}>{' · '}</Typography>
+                                            <ListItemIcon
+                                                sx={{
+                                                    fill: '#237bff',
+                                                    mr: -2.5,
+                                                    alignItems: 'center',
+                                                }}
+                                            >
+                                                <DirectionIcon />
+                                            </ListItemIcon>
+                                            <Typography className={styles.placeDistance}>{addDistance()}</Typography>
+                                        </span>
+                                    )}
+                                </MenuItemWithLines>
                             )}
                         </ListItemText>
                         <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
