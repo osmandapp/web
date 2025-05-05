@@ -13,6 +13,7 @@ import {
     ADDRESS_2,
     CATEGORY_NAME,
     CATEGORY_TYPE,
+    CITY,
     EN_NAME,
     MAIN_CATEGORY_KEY_NAME,
     POI_NAME,
@@ -41,7 +42,7 @@ export function preparedType(type, t) {
 }
 
 export function getPropsFromSearchResultItem(props, t) {
-    let type, name;
+    let type, name, city;
     if (props[CATEGORY_TYPE] === searchTypeMap.POI || !props[CATEGORY_TYPE]) {
         name = props[POI_NAME];
         type = props[POI_SUBTYPE] ?? props[POI_TYPE];
@@ -64,6 +65,7 @@ export function getPropsFromSearchResultItem(props, t) {
 
     name = getFirstSubstring(name);
     type = getFirstSubstring(type);
+    city = props[CITY];
 
     const addressParts = [props[ADDRESS_1], props[ADDRESS_2]].filter(Boolean);
     const info = getInfo();
@@ -78,7 +80,7 @@ export function getPropsFromSearchResultItem(props, t) {
         return undefined;
     }
 
-    return { name, type, info };
+    return { name, type, info, city };
 }
 
 export default function SearchResultItem({ item, setSearchValue, typeItem }) {
@@ -87,7 +89,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     const { t } = useTranslation();
     const { ref, inView } = useInView();
 
-    const { name, info, distance, type, icon } = parseItem(item);
+    const { name, info, distance, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
 
     const itemId = getObjIdSearch(item);
@@ -210,6 +212,11 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
         return `${info ? ' · ' : ''}${type}`;
     }
 
+    function addCity() {
+        if (!city) return '';
+        return ` · ${city}`;
+    }
+
     return (
         <div ref={ref}>
             {!inView ? (
@@ -227,7 +234,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
                             {(info || type || distance) && (
                                 <MenuItemWithLines
-                                    name={`${addInfo()}${addType()}${addDistance()}`}
+                                    name={`${addInfo()}${addType()}${addCity()}${addDistance()}`}
                                     maxLines={4}
                                     className={styles.placeTypes}
                                 />
