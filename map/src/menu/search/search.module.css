@@ -72,6 +72,12 @@
     font-size: 14px !important;
     font-weight: 400 !important;
 }
+.placeDistance {
+    font-family: Roboto !important;
+    color: #237bff !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
 .placeInfo {
     font-family: Roboto !important;
     color: var(--text-secondary) !important;

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { ListItemIcon, ListItemText, MenuItem, Skeleton } from '@mui/material';
+import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
@@ -8,11 +8,13 @@ import _ from 'lodash';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow.svg';
 import {
     ADDRESS_1,
     ADDRESS_2,
     CATEGORY_NAME,
     CATEGORY_TYPE,
+    CITY,
     EN_NAME,
     MAIN_CATEGORY_KEY_NAME,
     POI_NAME,
@@ -41,7 +43,7 @@ export function preparedType(type, t) {
 }
 
 export function getPropsFromSearchResultItem(props, t) {
-    let type, name;
+    let type, name, city;
     if (props[CATEGORY_TYPE] === searchTypeMap.POI || !props[CATEGORY_TYPE]) {
         name = props[POI_NAME];
         type = props[POI_SUBTYPE] ?? props[POI_TYPE];
@@ -64,6 +66,7 @@ export function getPropsFromSearchResultItem(props, t) {
 
     name = getFirstSubstring(name);
     type = getFirstSubstring(type);
+    city = props[CITY];
 
     const addressParts = [props[ADDRESS_1], props[ADDRESS_2]].filter(Boolean);
     const info = getInfo();
@@ -78,7 +81,7 @@ export function getPropsFromSearchResultItem(props, t) {
         return undefined;
     }
 
-    return { name, type, info };
+    return { name, type, info, city };
 }
 
 export default function SearchResultItem({ item, setSearchValue, typeItem }) {
@@ -87,7 +90,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     const { t } = useTranslation();
     const { ref, inView } = useInView();
 
-    const { name, info, distance, type, icon } = parseItem(item);
+    const { name, info, distance, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
 
     const itemId = getObjIdSearch(item);
@@ -128,9 +131,9 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     function addDistance() {
         if (!distance) return '';
         if (distance < 1000) {
-            return ` · ${convertMeters(distance, ctx.unitsSettings.len).toFixed(0)} ${t(getSmallLengthUnit(ctx))}`;
+            return `${convertMeters(distance, ctx.unitsSettings.len).toFixed(0)} ${t(getSmallLengthUnit(ctx))}`;
         }
-        return ` · ${convertMeters(distance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(1)} ${t(getLargeLengthUnit(ctx))}`;
+        return `${convertMeters(distance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(1)} ${t(getLargeLengthUnit(ctx))}`;
     }
 
     const id =
@@ -210,6 +213,11 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
         return `${info ? ' · ' : ''}${type}`;
     }
 
+    function addCity() {
+        if (!city) return '';
+        return ` · ${city}`;
+    }
+
     return (
         <div ref={ref}>
             {!inView ? (
@@ -225,12 +233,28 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                     >
                         <ListItemText>
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                            {(info || type || distance) && (
+                            {(info || type) && (
                                 <MenuItemWithLines
-                                    name={`${addInfo()}${addType()}${addDistance()}`}
-                                    maxLines={4}
                                     className={styles.placeTypes}
-                                />
+                                    name={`${addInfo()}${addType()}${addCity()}`}
+                                    maxLines={4}
+                                >
+                                    {distance && (
+                                        <span style={{ display: 'inline-flex' }}>
+                                            <Typography className={styles.placeDistance}>{' · '}</Typography>
+                                            <ListItemIcon
+                                                sx={{
+                                                    fill: '#237bff',
+                                                    mr: -2.5,
+                                                    alignItems: 'center',
+                                                }}
+                                            >
+                                                <DirectionIcon />
+                                            </ListItemIcon>
+                                            <Typography className={styles.placeDistance}>{addDistance()}</Typography>
+                                        </span>
+                                    )}
+                                </MenuItemWithLines>
                             )}
                         </ListItemText>
                         <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>

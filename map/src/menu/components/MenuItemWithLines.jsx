@@ -64,19 +64,19 @@ const MenuItemWithLines = forwardRef((props, ref) => {
     return (
         <>
             <div style={titleStyle} ref={ref} {...otherProps}>
-                {name ? (
+                {name && (
                     <Typography
                         id={'se-' + name}
                         onClick={handleExpandClick}
                         variant="inherit"
-                        sx={{ fontFamily: 'Roboto' }}
+                        component="span"
+                        sx={{ fontFamily: 'Roboto', display: 'inline' }}
                         className={className ?? styles.groupName}
                     >
                         {name}
                     </Typography>
-                ) : (
-                    children
                 )}
+                {children}
             </div>
             {showMore && (
                 <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>

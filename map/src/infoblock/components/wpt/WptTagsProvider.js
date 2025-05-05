@@ -75,6 +75,7 @@ export const POI_ID = WEB_POI_PREFIX + 'id';
 // from PoiType object
 export const CATEGORY_NAME = WEB_PREFIX + 'name';
 export const CATEGORY_TYPE = WEB_PREFIX + 'type';
+export const CITY = WEB_PREFIX + 'city';
 export const ADDRESS_1 = WEB_PREFIX + 'address1';
 export const ADDRESS_2 = WEB_PREFIX + 'address2';
 export const CATEGORY_KEY_NAME = WEB_PREFIX + 'keyName';
