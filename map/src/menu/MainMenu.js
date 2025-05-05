@@ -463,6 +463,9 @@ export default function MainMenu({
     useEffect(() => {
         const pinPoint = ctx.pinPoint;
         if (pinPoint) {
+            if (location.pathname.includes(NAVIGATE_URL) && !ctx.routeObject.isReady()) {
+                return;
+            }
             const pin = `${pinPoint.lat.toFixed(6)},${pinPoint.lng.toFixed(6)}`;
             const pretty = createUrlParams({ pin });
             const pageParams = { ...ctx.pageParams };
