@@ -31,19 +31,18 @@ Currently, the feature includes a focused subset of approximately **50,000 to 15
 
 You can learn more about how to use this feature in the rest of this guide or share your feedback through the [OsmAnd GitHub repository](https://github.com/osmandapp/OsmAnd).
 
+![Popular places](@site/static/img/map/popular_places/popular_places.png) 
 
 ## How to Use
 
 The Popular Places feature can be activated in two different sections of the app:
 
-Via Search:
-Go to Search → Categories → Popular Places to explore nearby landmarks and attractions.
-
-Via Configure Map:
+Via [**Configure Map**](#popular-places-wikipedia-menu):
 Enable the overlay via **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 → POIs will appear on the map with thumbnails from Wikidata (if available). You can choose between offline Wikipedia data and online data by adjusting the POI Source in the [Popular Places menu](#popular-places-wikipedia-menu).
 
-ß
+Via [**Search**](#explore-mode-by-search):
+Go to  *<Translate android="true" ids="map_widget_search,search_categories,popular_places_nearby"/>* to explore nearby landmarks and attractions.
 
 
 
@@ -51,24 +50,21 @@ Enable the overlay via **<Translate android="true" ids="android_button_seq"/>**:
 
 <InfoAndroidOnly/>
 
-Make sure the [Wikipedia Plugin](../plugins/wikipedia.md) is enabled: 
+The **Wikipedia POIs** feature is integrated under the new **Popular places (Wikipedia)** setting in the [Configure map menu](./configure-map-menu.md). This update provides expanded settings for Wikipedia content, giving you more control over your experience.
+
+At first, you can make sure the [Wikipedia Plugin](../plugins/wikipedia.md) is enabled, next go to: 
 
 **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
 ![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png) 
 
-The **Wikipedia POIs** feature is integrated under the new **Popular places (Wikipedia)** setting in the Configure map menu. This update provides expanded settings for Wikipedia content, giving you more control over your experience.
-
 Key features:
 
-- **Image previews** - You can now *view photos* for POIs directly on the map with the *Show image previews* setting.
-- **Offline and Online Mode** - View *Wikipedia POIs* without downloading the map data by using the online mode.
-
-How to use:
-
-- Enable the **Wikipedia plugin** to access wikidata on the map and its settings in the Configure map menu.
-- Go to *Menu → Configure map → Popular places (Wikipedia)* to adjust settings for image previews, language preferences, and data sources.
-
+- **<Translate android="true" ids="poi_osmwiki"/>** - Toggle the display of POIs with Wikipedia content directly on the map.
+- **<Translate android="true" ids="shared_string_language"/>** - Choose the language of Wikipedia articles and POI descriptions.
+- **POI Source** - Select whether to use offline Wikipedia data (requires article download) or online content.
+→ With _“Online only”_ you can view Wikipedia POIs and images without downloading map data.
+- **<Translate android="true" ids="show_image_previews"/>** - Enable this setting to display image thumbnails for POIs directly on the map, enhancing visual navigation.
 
 
 ### Explore Mode by Search
@@ -88,8 +84,9 @@ Key features:
 How to use:  
 Go to *Menu → Search → Explore* to start discovering nearby POIs and view your recently visited places.
 
+Note: To use Popular Places (Wikipedia) online without downloading articles, enable ["POI Source > Online Only"](#popular-places-wikipedia-menu).
 
-## Online Photos
+## Online Photos Menu
 
 <Tabs groupId="operating-systems">
 
@@ -107,7 +104,7 @@ Go to *Menu → Search → Explore* to start discovering nearby POIs and view yo
 
 </Tabs>
 
-## Actions With Photos
+### Actions With Photos
 
 How to access:
 
