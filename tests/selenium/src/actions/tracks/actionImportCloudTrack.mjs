@@ -13,17 +13,20 @@ export default async function test(tracks, trackName = null, newName = trackName
     }
 
     const { path } = tracks.find((t) => t.name === trackName);
+    let retries = 0;
+    const maxRetries = 3;
 
-    while (true) {
+    while (retries < maxRetries) {
         await actionUploadCloudTracks({ files: path });
         await clickBy(By.id('se-button-back'));
         await waitBy(By.id(`se-cloud-track-${newName}`));
 
         const elems = await driver.findElements(By.css(`[id^="se-cloud-track-${newName}"]`));
         if (elems.length <= 1) {
-            break;
+            return;
         }
-
+        console.log(`Duplicate detected, deletion attempt #${retries + 1}`);
         await actionDeleteTracksByPattern(newName);
+        retries++;
     }
 }
