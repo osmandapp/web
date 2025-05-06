@@ -173,6 +173,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             const poiType = getCategory(wikiObj.properties);
             return {
                 id: wikiObj?.properties.id,
+                elo: wikiObj?.properties.elo,
                 type,
                 firstPhoto: wikiObj?.properties.photoTitle,
                 poiType,
@@ -828,6 +829,16 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             )}
                             <Divider sx={{ mt: '16px' }} />
                             {wpt.photos && <PhotoGallery photos={wpt.photos} />}
+                            {wpt.elo && ctx.develFeatures && (
+                                <WptTagInfo
+                                    key={'elo'}
+                                    baseTag={{
+                                        icon: <InfoIcon />,
+                                        name: 'Elo',
+                                        value: Number(wpt.elo).toFixed(0),
+                                    }}
+                                />
+                            )}
                             {wpt.wvLinks && <WikiVoyageLinks wvLinks={wpt.wvLinks} />}
                             {wpt.desc && (
                                 <WptTagInfo
