@@ -177,7 +177,7 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
         point && points
             ? ctx.trackRouter.getColor(getPointGeoProfile(point, points))
             : ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE });
-    const color = trackAppearance?.color ?? defaultColor;
+    const color = trackAppearance?.color ? Utils.hexToRgba(trackAppearance.color) : defaultColor;
     const width = trackAppearance?.width ?? 'medium';
     const arrowSettings = {
         show: trackAppearance?.showArrows,
@@ -461,7 +461,7 @@ function getMarkerFromCluster(point, clusters, coords, opt, markerLayer) {
         return secLatLng.equals(coords);
     });
     if (isSecondaryMarker) {
-        const color = point.color ? Utils.hexToArgb(point.color) : DEFAULT_WPT_COLOR;
+        const color = point.color ? Utils.hexToRgba(point.color) : DEFAULT_WPT_COLOR;
         const customIcon = L.divIcon({
             className: 'custom-circle-icon',
             iconSize: [10, 10],

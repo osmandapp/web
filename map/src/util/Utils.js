@@ -129,7 +129,7 @@ function getPointsDist(list) {
     return list;
 }
 
-function hexToArgb(hex) {
+function hexToRgba(hex) {
     hex = hex.replace(/^#/, '');
     let alphaFromHex = 1;
 
@@ -346,7 +346,7 @@ const Utils = {
     getFileInfo,
     getDistance,
     getPointsDist,
-    hexToArgb,
+    hexToRgba,
 };
 
 export default Utils;
