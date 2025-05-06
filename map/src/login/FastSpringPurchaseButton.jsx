@@ -1,55 +1,25 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Button } from '@mui/material';
-import { isEmpty } from 'lodash';
 import PropTypes from 'prop-types';
 import { getAccountInfo } from '../manager/LoginManager';
 
 export default function FastSpringPurchaseButton({ selectedProducts, testMode = false, ctx }) {
-    useEffect(() => {
-        if (document.getElementById('fsc-api')) return;
+    const handleClick = () => {
+        // remove old script if exists
+        const old = document.getElementById('fsc-api');
+        if (old) old.remove();
+        delete window.fastspring;
 
+        // add new script
         const script = document.createElement('script');
         script.id = 'fsc-api';
         script.src = 'https://sbl.onfastspring.com/sbl/1.0.3/fastspring-builder.min.js';
         script.type = 'text/javascript';
-        const storefront = testMode
-            ? 'osmand.test.onfastspring.com/popup-osmand'
-            : 'osmand.onfastspring.com/popup-osmand';
-        script.setAttribute('data-storefront', storefront);
+        script.setAttribute('data-storefront', `osmand.test.onfastspring.com/popup-${testMode ? 'test-' : ''}osmand`);
         script.setAttribute('data-popup-webhook-received', 'onFSPopupClosed');
-        script.onload = () => {
-            testMode && console.log('✅ FastSpring script loaded.');
-        };
-        document.head.appendChild(script);
-
-        window.onFSPopupClosed = function (orderReference) {
-            if (window.fastspring && window.fastspring.builder) {
-                window.fastspring.builder.reset();
-            }
-            if (orderReference && orderReference.id) {
-                const tryUpdate = (attempt = 0) => {
-                    getAccountInfo(ctx.setAccountInfo).then((info) => {
-                        // check current subscription was updated successfully after two webhooks (subscription.activated and order.completed)
-                        if ((info?.valid === 'true' && info?.startTime && info?.expireTime) || attempt >= 5) {
-                            testMode && console.log('✅ Updated info after payment');
-                        } else {
-                            setTimeout(() => tryUpdate(attempt + 1), 3000);
-                        }
-                    });
-                };
-                tryUpdate();
-            }
-        };
-    }, []);
-
-    const handleClick = () => {
-        if (isEmpty(selectedProducts)) {
-            testMode && alert('❌ No products selected.');
-            return;
-        }
 
         const products = selectedProducts.map((id) => ({
-            path: id,
+            path: `${testMode ? 'test-' : ''}${id}`,
             quantity: 1,
         }));
 
@@ -59,14 +29,32 @@ export default function FastSpringPurchaseButton({ selectedProducts, testMode = 
             checkout: true,
         };
 
-        if (window.fastspring && window.fastspring.builder) {
+        script.onload = () => {
             window.fastspring.builder.push(s);
-        } else {
-            testMode && alert('❌ FastSpring builder is not ready. Please try again in a moment.');
-        }
+            window.onFSPopupClosed = function (orderReference) {
+                if (window.fastspring && window.fastspring.builder) {
+                    window.fastspring.builder.reset();
+                }
+                if (orderReference && orderReference.id) {
+                    const tryUpdate = (attempt = 0) => {
+                        getAccountInfo(ctx.setAccountInfo).then((info) => {
+                            // check current subscription was updated successfully
+                            if ((info?.valid === 'true' && info?.startTime && info?.expireTime) || attempt >= 5) {
+                                testMode && console.log('✅ Updated info after payment');
+                            } else {
+                                setTimeout(() => tryUpdate(attempt + 1), 3000);
+                            }
+                        });
+                    };
+                    tryUpdate();
+                }
+            };
+        };
+
+        document.head.appendChild(script);
     };
 
-    return <Button onClick={handleClick}>Pay Now</Button>;
+    return <Button onClick={handleClick}>{`${testMode ? 'Test ' : ''}Pay Now`}</Button>;
 }
 
 FastSpringPurchaseButton.propTypes = {
