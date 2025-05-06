@@ -24,7 +24,7 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
             : group;
         let colorGroup;
         if (g && g.color) {
-            colorGroup = Utils.hexToArgb(g.color);
+            colorGroup = Utils.hexToRgba(g.color);
         }
         let size = g && (g.groupSize ? g.groupSize : g.points?.length);
         return (

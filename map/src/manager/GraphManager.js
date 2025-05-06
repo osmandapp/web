@@ -81,7 +81,7 @@ function parseType(styles, tag, style = DEFAULT_STYLE) {
         }
         res[data.value ? data.value : attr] = {
             name: name,
-            color: Utils.hexToArgb(data.attrColorValue),
+            color: Utils.hexToRgba(data.attrColorValue),
         };
         if (data.value === 'road') {
             res[UNDEFINED_DATA] = res.road;

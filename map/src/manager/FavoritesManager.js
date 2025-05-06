@@ -187,7 +187,7 @@ function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = n
         }
     }
     if (color) {
-        return Utils.hexToArgb(color);
+        return Utils.hexToRgba(color);
     }
 }
 
