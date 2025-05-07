@@ -177,7 +177,10 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
         point && points
             ? ctx.trackRouter.getColor(getPointGeoProfile(point, points))
             : ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE });
-    const color = trackAppearance?.color ? Utils.hexToRgba(trackAppearance.color) : defaultColor;
+    const color =
+        trackAppearance?.color && typeof trackAppearance.color === 'string'
+            ? Utils.hexToRgba(trackAppearance.color)
+            : defaultColor;
     const width = trackAppearance?.width ?? 'medium';
     const arrowSettings = {
         show: trackAppearance?.showArrows,
