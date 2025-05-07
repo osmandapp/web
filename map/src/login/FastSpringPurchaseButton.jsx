@@ -16,7 +16,10 @@ export default function FastSpringPurchaseButton({ selectedProducts, testMode = 
         script.src = 'https://sbl.onfastspring.com/sbl/1.0.3/fastspring-builder.min.js';
         script.type = 'text/javascript';
         script.setAttribute('data-continuous', 'true');
-        script.setAttribute('data-storefront', `osmand.onfastspring.com/popup-${testMode ? 'test-' : ''}osmand`);
+        script.setAttribute(
+            'data-storefront',
+            `osmand.${testMode ? 'test.' : ''}onfastspring.com/popup-${testMode ? 'test-' : ''}osmand`
+        );
         script.setAttribute('data-popup-webhook-received', 'onFSPopupClosed');
 
         const products = selectedProducts.map((id) => ({
