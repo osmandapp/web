@@ -173,14 +173,17 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
 }
 
 function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
-    const defaultColor =
+    let color =
         point && points
             ? ctx.trackRouter.getColor(getPointGeoProfile(point, points))
             : ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE });
-    const color =
-        trackAppearance?.color && typeof trackAppearance.color === 'string'
-            ? Utils.hexToRgba(trackAppearance.color)
-            : defaultColor;
+    if (trackAppearance?.color) {
+        if (typeof trackAppearance.color === 'string') {
+            color = Utils.hexToRgba(trackAppearance.color);
+        } else if (typeof trackAppearance.color === 'number') {
+            color = Utils.numberToRgba(trackAppearance.color);
+        }
+    }
     const width = trackAppearance?.width ?? 'medium';
     const arrowSettings = {
         show: trackAppearance?.showArrows,
