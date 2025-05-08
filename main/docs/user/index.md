@@ -5,7 +5,7 @@ OsmAnd provides global offline map browsing and offline navigation with many spe
 
 ### [Begin with OsmAnd](./start-with/index.md)
 
-How to Get Started with the OsmAnd App and Download Maps. 
+How to Get Started with the OsmAnd App and Download Maps.
 
 ### [Map](./map/index.md)
 

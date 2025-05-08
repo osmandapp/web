@@ -21,11 +21,9 @@ No additional payment is required. If the paid features are not restored, go to 
 
 ## Cross-Platform Purchases
 
-Purchases made on one platform (Google Play, App Store, Huawei AppGallery, or OsmAnd.net) are **not interchangeable** by default. However, **OsmAnd Pro** and **Maps+** are cross-platform and can be used across Android and iOS **if linked to an OsmAnd Cloud account**.  
+**OsmAnd Pro** and **Maps+** (*All World Maps* for iOS) are **cross-platform subscriptions** available for Android and iOS starting with OsmAnd 5.0. For example, if you purchase a subscription through one of the Android stores (Google Play, Huawei AppGallery), you can also use it on iOS and on Web.
 
-- **OsmAnd Pro** is a **cross-platform subscription**, available for Android and iOS. It can be used on multiple devices and platforms if connected to the same OsmAnd Cloud account.
-
-- **Maps+ / All World Maps** for iOS are valid for cross-platform use even if they were purchased before OsmAnd Cloud support was introduced.
+- Cross-platform subscription can be used on multiple devices and platforms **if linked to the same OsmAnd Cloud account**.
 
 - One-time purchases such as **OsmAnd+** (Android) and store-specific purchases are not transferable between platforms.
 
@@ -36,28 +34,23 @@ Purchases made on one platform (Google Play, App Store, Huawei AppGallery, or Os
 - For more details, see: [Android purchases](../purchases/android.md), [iOS purchases](../purchases/ios.md), and [OsmAnd Map Portal](https://www.osmand.net/map).
 
 
-### Steps to transfer your license via OsmAnd Cloud
+### How to link your purchase to OsmAnd Cloud account
 
 1. If you **don’t have** an OsmAnd Cloud account:
 
     - Open the OsmAnd app on the device where you made the purchase.
     - Go to *Menu → Settings → OsmAnd Cloud*.
     - Tap **Create new account**.
-    - Your purchase will be linked to the new account automatically.  
-
-    <br/>
-
-    :::note
-    ***Registration must be done on the platform where the subscription was purchased.***
-    :::
+    - After creating the account, go to *OsmAnd Menu → Settings → Purchases*.
+    - Tap **Restore purchases** to link your purchase to a new account.
 
 2. If you **already have** an OsmAnd Cloud account:
 
     - Make sure you are logged into the OsmAnd Cloud account on the device where you made the purchase.  
     - Navigate to *OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
-    - The purchase will be synchronized with your account.
-    - To use it on another device, log into the same OsmAnd Cloud account in the OsmAnd app.
-    - Your purchase will be restored automatically. If this does not happen, go to  *OsmAnd Menu → Settings → Purchases → Restore purchases*
+    - After logging into your account, go to *OsmAnd Menu → Settings → Purchases*.
+    - Tap **Restore purchases** to synchronize the purchase with your account.
+
 
 > For more information, read [OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform) article.
 
