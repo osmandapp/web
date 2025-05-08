@@ -21,7 +21,7 @@ No additional payment is required. If the paid features are not restored, go to 
 
 ## Cross-Platform Purchases
 
-**OsmAnd Pro** and **Maps+** (*All World Maps* for iOS) are **cross-platform subscriptions** available for Android and iOS starting with OsmAnd 5.0. For example, if you purchase a subscription through one of the Android stores (Google Play, Huawei AppGallery), you can also use it on iOS and on Web.
+**OsmAnd Pro** and **Maps+** (*All World Maps* for iOS) are **cross-platform subscriptions** available for Android and iOS starting with OsmAnd 5.0. Cross-platform means that if you purchase a subscription, for example, in one of the Android stores (Google Play, Huawei AppGallery), you can also use it on iOS and in the web version.
 
 - Cross-platform subscription can be used on multiple devices and platforms **if linked to the same OsmAnd Cloud account**.
 
