@@ -41,9 +41,9 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 
 ### Important Notes  
 
-1. **Maps+** is a *premium upgrade* for the free version of OsmAnd, unlocking most features.
+1. **Maps+** is an *upgrade* for the free version of OsmAnd, unlocking most features.
 
-2. **OsmAnd Pro is a *cross-platform* subscription**. This means you can purchase it on one store (e.g., *AppStore, Google Play, and osmand.net*) and restore it on another by [registering your email as a Pro account](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro is a *cross-platform* subscription**. This means you can purchase it in one store (e.g., *AppStore, Google Play, and osmand.net*) and restore it in another by [linking your purchase with OsmAnd Cloud account](../personal/osmand-cloud.md#cross-platform).
 
 3. You can add **Maps+** to [Apple Family Sharing](https://support.apple.com/en-us/HT201088) to share the purchase with family members.  
 

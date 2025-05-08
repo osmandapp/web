@@ -102,7 +102,7 @@ OsmAnd does not have a special widget similar to an odometer, you can use the [T
 
 ## OsmAnd 3.9: Altitude issues when using Google Play Services
 
-Google Play has changed its policy, and to comply, OsmAnd, as of version 3.9 (excluding Nightly, F-Droid, Huawei, and Amazon builds) is required to use Google Play Services to obtain location fixes while running in the background (that is, in Android terminology, as a foreground service with a visible system notification).
+Google Play has changed its policy, and to comply, OsmAnd, as of version 3.9 (excluding Nightly, F-Droid, and Huawei builds) is required to use Google Play Services to obtain location fixes while running in the background (that is, in Android terminology, as a foreground service with a visible system notification).
 
 After this change, there seems to be an issue with altitude recording: Apparently, Google Play Services interpolates the altitude measurement very aggressively, see [GitHub issue #10864](https://github.com/osmandapp/OsmAnd/issues/10864). This issue affects Android 10, possibly not Android 11. The [issue](https://issuetracker.google.com/issues/180218747) has already been reported on Google's website, and will probably be fixed on 09-03-2021.  
 

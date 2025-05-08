@@ -41,7 +41,7 @@ Explore how to download maps, how to configure the application, how to use the m
 
 OsmAnd is a mobile application for Maps and Navigation available for **Android** and **iOS**. You can download it from the most popular markets.
 
-**Android markets**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8/ref=sr_1_3?dchild=1&keywords=osmand&qid=1616685559&sr=8-3).
+**Android markets**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand) and [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 
 <AndroidStore/>
 

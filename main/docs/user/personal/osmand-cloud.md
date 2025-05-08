@@ -46,7 +46,7 @@ OsmAnd supports **cross-platform usage** across *([Android](../purchases/android
 4. **Use the registered email** as your login to activate OsmAnd Pro or OsmAnd Start on other platforms.
 
 :::note  
-**OsmAnd Pro** is a cross-platform subscription that includes all OsmAnd features. You can purchase it in one store (e.g., Google Play, Amazon, Huawei AppGallery) and use it also on **iOS**. Your **[registered email](#login)** is your login for activating OsmAnd Pro across platforms.  
+**OsmAnd Pro** is a cross-platform subscription that includes all OsmAnd features. You can purchase it in one store (e.g., Google Play, Huawei AppGallery) and use it also on **iOS**. Your **[registered email](#login)** is your login for activating OsmAnd Pro across platforms.  
 :::
 
 

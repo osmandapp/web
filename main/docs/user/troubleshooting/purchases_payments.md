@@ -18,29 +18,48 @@ import Translate from '@site/src/components/Translate.js';
 - **For Android**. Log in to the same app store account used for purchasing OsmAnd. Search for *OsmAnd+* or *OsmAnd Free* (for restoring *Maps+*, *OsmAnd Live*, or *OsmAnd Pro*) and install the app.
 No additional payment is required. If the paid features are not restored, go to your device's *Settings → Apps →* select the app store, clear the cache, restart your device, and try again. For further details, refer to [this article](../purchases/android.md#restore-purchases).
 
+
 ## Cross-Platform Purchases
 
-**OsmAnd Pro** is a subscription that allows you to purchase OsmAnd on one platform and use **paid features** on other platforms simultaneously. For example, if you purchase it through one of the [Android](../purchases/android.md) stores (Google Play, Amazon, Huawei AppGallery), you can also use it on [iOS](../purchases/ios.md) and [Web](https://www.osmand.net/map).
+Purchases made on one platform (Google Play, App Store, Huawei AppGallery, or OsmAnd.net) are **not interchangeable** by default. However, **OsmAnd Pro** and **Maps+** are cross-platform and can be used across Android and iOS **if linked to an OsmAnd Cloud account**.  
 
-Please note that other purchases, such as Maps+, cannot be transferred between billing platforms, including between Google Play and Amazon on Android.
+- **OsmAnd Pro** is a **cross-platform subscription**, available for Android and iOS. It can be used on multiple devices and platforms if connected to the same OsmAnd Cloud account.
 
-**Steps to transfer license**:
+- **Maps+ / All World Maps** for iOS are valid for cross-platform use even if they were purchased before OsmAnd Cloud support was introduced.
 
-**1. Purchase**. After purchasing an OsmAnd Pro subscription, register your email on [OsmAnd Cloud](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro).
+- One-time purchases such as **OsmAnd+** (Android) and store-specific purchases are not transferable between platforms.
 
-- Navigate to *OsmAnd Menu → Settings → OsmAnd Cloud → Create new account*
+- You can use OsmAnd Pro on up to 6 devices, even if they run different operating systems.
 
-:::note
-***Registration must be done on the platform where the subscription was purchased.***
-:::
+- Always ensure you're using the same OsmAnd Cloud account across all devices to access your purchases.
 
-**2. Link**. Link your purchase to another device.
+- For more details, see: [Android purchases](../purchases/android.md), [iOS purchases](../purchases/ios.md), and [OsmAnd Map Portal](https://www.osmand.net/map).
 
-- Navigate to *OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
 
-**3. Activation**. Finally, activate the paid features.
+### Steps to transfer your license via OsmAnd Cloud
 
-- Navigate to *OsmAnd Menu → Settings → Purchases → Restore purchases*
+1. If you **don’t have** an OsmAnd Cloud account:
+
+    - Open the OsmAnd app on the device where you made the purchase.
+    - Go to *Menu → Settings → OsmAnd Cloud*.
+    - Tap **Create new account**.
+    - Your purchase will be linked to the new account automatically.  
+
+    <br/>
+
+    :::note
+    ***Registration must be done on the platform where the subscription was purchased.***
+    :::
+
+2. If you **already have** an OsmAnd Cloud account:
+
+    - Make sure you are logged into the OsmAnd Cloud account on the device where you made the purchase.  
+    - Navigate to *OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
+    - The purchase will be synchronized with your account.
+    - To use it on another device, log into the same OsmAnd Cloud account in the OsmAnd app.
+    - Your purchase will be restored automatically. If this does not happen, go to  *OsmAnd Menu → Settings → Purchases → Restore purchases*
+
+> For more information, read [OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform) article.
 
 
 ## How to Buy and Restore OsmAnd in the Huawei AppGallery without Huawei Mobile Services
@@ -65,11 +84,13 @@ Please note that other purchases, such as Maps+, cannot be transferred between b
 - Restore purchases in the Huawei AppGallery.
 -->
 
-## What to Do After the Amazon Store Closes
+## Amazon store is closing — what to do
 
-On August 20, 2025, Amazon will [close Amazon Appstore for Android devices](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program). How can you save your [OsmAnd purchases](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) made through the Amazon Appstore? 
+We are already developing a way to save all your purchases and will provide detailed instructions shortly.
 
-While we are developing a method to retain all your purchases, we will provide detailed instructions before the Amazon Appstore closes.
+- On August 20, 2025, Amazon will close the Amazon Appstore for Android devices — details [here](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program).
+- To learn how to save your OsmAnd purchases made through the Amazon Appstore, read [here](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).
+
 
 ## How to restore the Topography (formerly Contour lines) plugin purchase
 
@@ -127,7 +148,7 @@ If you do not receive the **verification code** when creating an **OsmAnd Cloud*
 - Payment Issues
 - Refund Policy
 - Step-by-step solutions to problems with purchases.
-- Instructions for clearing the cache of Google Play, Amazon, Huawei AppGallery.
+- Instructions for clearing the cache of Google Play, Huawei AppGallery.
 - What to do if the purchase does not appear or the transaction fails.
 - Purchase not showing up - recommendations on how to check your account and restore your purchases.
 - Payment issues - instructions for contacting Google Play Support in case of paymentissues.

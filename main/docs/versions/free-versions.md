@@ -10,7 +10,6 @@ import Download from '@site/src/components/buttons/Download.js';
 You can get the latest version of OsmAnd free from listed app stores.
 
 - Google Play — <a href="https://play.google.com/store/apps/details?id=net.osmand">**Get**</a>
-- Amazon AppStore — <a href="https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8">**Get**</a>
 - Huawei AppGallery — <a href="https://appgallery.huawei.com/#/app/C101486545">**Get**</a>
 
 <hr></hr>

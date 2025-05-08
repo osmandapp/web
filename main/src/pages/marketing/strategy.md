@@ -3,7 +3,7 @@ title: Marketing strategy
 ---
 
 
-# Marketing Strategy
+## Marketing Strategy
 
 This marketing strategy aligns with [OsmAnd's mission](https://osmand.net/docs/hiring/mission) to **"provide open, customizable, and privacy-respecting mapping and navigation tools for everyone, everywhere."** By focusing on OsmAnd's unique strengths and values, this plan aims to grow the user base while staying true to the company's core principles.
 
@@ -88,7 +88,8 @@ Highlight OsmAnd’s key features to differentiate it from competitors:
 
 ### C. Search Engine Optimization (SEO) & App Store Optimization (ASO)
 
-#### SEO for App Stores:
+#### SEO for App Stores
+
 - Optimize **full and short descriptions** for app stores (Google Play, Apple App Store, etc.) using **50+ keywords**.
 - Localize descriptions for **20+ languages** to reach a global audience.
 - Example keywords:
@@ -99,7 +100,8 @@ Highlight OsmAnd’s key features to differentiate it from competitors:
   - "Customizable offline maps"
   - "Hiking and cycling navigation app"
 
-#### ASO Best Practices:
+#### ASO Best Practices
+
 - Use **compelling app titles, descriptions, and screenshots** that highlight OsmAnd’s unique selling points (USPs):
   - Offline maps and navigation
   - Open-source and privacy-focused
@@ -184,27 +186,30 @@ Highlight OsmAnd’s key features to differentiate it from competitors:
 - **In-App Purchases**:
   - Sell **map updates**, and other Maps+ features for users who prefer one-time purchases.
 
+### B2C Sales
 
- ### B2C Sales:
 - **Sales and Promotions**:
   - Run **sales campaigns** (e.g., Black Friday, New Year) promoted via **social media**, **email newsletters**, and **push notifications**.
   - Use **regional pricing** to make OsmAnd Pro accessible to users in different countries.
 - **Direct Sales**:
-  - Offer **direct purchases** through the OsmAnd website using a trusted payment provider, in addition to app store sales (Google Play, Apple App Store, Amazon, Huawei).
+  - Offer **direct purchases** through the OsmAnd website using a trusted payment provider, in addition to app store sales (Google Play, Apple App Store, Huawei).
 - **Paywalls and Push Notifications**:
-  - Encourage free users to upgrade to OsmAnd Pro by showcasing premium features through **paywalls** and **targeted push notifications**.
+  - Encourage free users to upgrade to OsmAnd Pro by showcasing professional features through **paywalls** and **targeted push notifications**.
 - **Competitor Price Analysis**:
   - Regularly check and analyze competitors’ pricing to ensure OsmAnd remains competitive and attractive to users.
 
-### B2B Sales:
+### B2B Sales
+
 - **Enterprise Solutions**:
+
   - Provide **customized mapping solutions** for businesses and organizations.
   - Work closely with partners to ensure **fair pricing**, **timely delivery**, and **high-quality solutions**.
   - Tailor proposals to meet the specific needs of each client, ensuring mutual satisfaction.
 
-### Core Philosophy:
+### Core Philosophy
+
 - Ensure that **essential features** like offline maps and navigation remain **free for all users**.
-- Provide a wide range of **free tools** to support users’ needs while offering premium features for those who want more advanced functionality. 
+- Provide a wide range of **free tools** to support users’ needs while offering professional features for those who want more advanced functionality.
 
 ---
 
@@ -251,4 +256,4 @@ Track the success of the marketing strategy using the following metrics:
 <!--
 By leveraging OsmAnd’s unique features and targeting the right audience, this marketing strategy can help increase brand awareness, drive downloads, and build a loyal user base. -->
 
-**Last updated: February 14, 2025**
+> *Last updated: February 14, 2025*
