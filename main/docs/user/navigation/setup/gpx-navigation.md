@@ -46,7 +46,7 @@ Before using the *Navigation by track* option, you need to [display the track on
 
 - **Route** track will calculate route between route points by selected profile. Basically, all route points will be considered as intermediate points. If you route consists > 50 points, it's very likely that it's misconfigured **Geometry** track.
 
-- **OsmAnd** track consists of both geometry and route parts, and it's suitable to provide exactly the same guidance as navigation by default. These tracks are produced by [Plan route](../../plan-route/create-route.md) or [Web version](../../plan-route/web.md). It's possible to resave this track to **Geometry** only track as [**Simplified**](../../plan-route/create-route.md#save-route) to be used in 3rd party programs.
+- **OsmAnd** track consists of both geometry and route parts, and it's suitable to provide exactly the same guidance as navigation by default. These tracks are produced by [Plan route](../../plan-route/create-route.md) or [Web version](../../web/index.md). It's possible to resave this track to **Geometry** only track as [**Simplified**](../../plan-route/create-route.md#save-route) to be used in 3rd party programs.
 
 
 ### Start GPX Navigation
