@@ -70,7 +70,7 @@ import {
     SHARE_FILE_MAIN_URL,
     TRACK_ANALYZER_URL,
     INFO_MENU_URL,
-    SHARE_MENU_URL,
+    SHARE_MENU_URL, MAIN_URL, LOGIN_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -83,6 +83,7 @@ import { getShareFileInfo, SHARE_TYPE, updateUserRequests } from '../manager/Sha
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
+import {openLoginMenu} from "../manager/LoginManager";
 
 export default function MainMenu({
     size,
@@ -128,6 +129,12 @@ export default function MainMenu({
         }
         ctx.setLoadingContextMenu(false);
     }
+
+    useEffect(() => {
+        if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ctx.openLoginMenu && !ctx.loginUser) {
+            openLoginMenu(ctx, navigate);
+        }
+    }, [location.pathname, ctx, navigate]);
 
     // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {
