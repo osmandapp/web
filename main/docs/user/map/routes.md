@@ -162,7 +162,7 @@ You can customize the display of certain ***Travelbooks*** and types of ***track
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
 

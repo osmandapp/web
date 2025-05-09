@@ -135,7 +135,7 @@ The *Display language option* is used to change the language of the entire app, 
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *Settings → Apps → OsmAnd → Language*
+Go to: *Settings → Apps → OsmAnd → Language*
 
 ![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
 

@@ -121,7 +121,7 @@ With the plugin for each external sensor available to the OsmAnd application, yo
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
 ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
 
@@ -179,7 +179,7 @@ OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*,
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → Add widget → <Translate android="true" ids="external_sensor_widgets"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → Add widget → <Translate android="true" ids="external_sensor_widgets"/>*
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
 
@@ -210,7 +210,7 @@ The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widget
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="external_sensor_widgets"/> → ⚙️ or <Translate android="true" ids="shared_string_settings"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="external_sensor_widgets"/> → ⚙️ or <Translate android="true" ids="shared_string_settings"/>*
 
 ![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-android.png)
 

@@ -118,7 +118,7 @@ The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
 
 ![OSM editing layer Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM editing layer Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
@@ -192,7 +192,7 @@ Remember that when adding unsupported POI types, it is important to make sure th
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
 ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
 

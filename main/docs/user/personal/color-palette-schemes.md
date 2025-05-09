@@ -31,7 +31,7 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps-res
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *Menu → Maps & Resources → Local → Colors*
+Go to: *Menu → Maps & Resources → Local → Colors*
 
 ![Palettes](@site/static/img/personal/color-schemes/colors.png)
 
@@ -136,7 +136,7 @@ After moving this TXT file to *..Android/data/net.osmand/files/color-palete/heig
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → Topography → Change Terrain color scheme*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → Topography → Change Terrain color scheme*
 
 ![Color Scheme](@site/static/img/widgets/color_scheme.png)
 
@@ -161,7 +161,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
 ![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 

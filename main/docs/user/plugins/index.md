@@ -33,7 +33,7 @@ To access a plugin's functionality, it must first be [enabled](#enable--disable)
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable*
+Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable*
 
 ![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
 

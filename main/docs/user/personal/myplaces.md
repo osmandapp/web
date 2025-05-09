@@ -23,7 +23,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu"/> → My Places*  
+Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*  
 
 ![My Places android](@site/static/img/personal/my_places_android.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android.png)
 
@@ -122,7 +122,7 @@ For more detailed instructions, refer to the [Favorites](../personal/favorites.m
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -159,7 +159,7 @@ For comprehensive guidance, see the [Manage Tracks](../personal/tracks/manage-tr
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
 ![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
 

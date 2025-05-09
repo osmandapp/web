@@ -25,7 +25,7 @@ OsmAnd operates with two types of maps: [Vector maps](../map/vector-maps.md) and
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources"/>*
 
 ![Maps menu Android](@site/static/img/personal/maps/maps_overview_1_andr.png)
 
@@ -107,7 +107,7 @@ Please note that monthly map updates are considered another map download and are
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
 ![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)
 
@@ -190,7 +190,7 @@ For countries consisting of **multiple region maps**, you can use bulk loading o
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*
 
 ![Local tab Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Local tab Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
 
@@ -294,7 +294,7 @@ Use sorting options to organize map data:
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
 ![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png)
 
@@ -336,7 +336,7 @@ OsmAnd Live is a paid feature.
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*  
 
 ![Maps menu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Maps menu OsmAnd live edit Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 

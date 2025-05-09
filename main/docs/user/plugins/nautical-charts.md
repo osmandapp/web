@@ -65,7 +65,7 @@ The following setup makes the Nautical map show up on the screen:
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*  
 
 ![Nautical Map Type in Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
 
@@ -96,7 +96,7 @@ To change the current map style to Nautical, you need to make the following sett
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*  
 
 ![Nautical plugin maps view Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
 
@@ -148,7 +148,7 @@ Disabling the Nautical plugin does not remove loaded nautical data, so even if y
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
 
@@ -199,7 +199,7 @@ Depth point [packages](../start-with/download-maps.md#type-of-maps) are availabl
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*  
 
 ![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
 
@@ -231,7 +231,7 @@ You can help the OsmAnd app increase the Depth contours database by adding your 
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
 
 ![Seabed details](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
 

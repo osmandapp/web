@@ -43,7 +43,7 @@ A route consists of a set of segments between specified points. The segments can
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
 
 ![Plan a route android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
@@ -75,7 +75,7 @@ You can **zoom in and out** for easy placement of points when creating or editin
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,plan_a_route,plan_route_open_existing_track"/> / <Translate android="true" ids="plan_route_import_track"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,plan_a_route,plan_route_open_existing_track"/> / <Translate android="true" ids="plan_route_import_track"/>*
 
 </TabItem>
 

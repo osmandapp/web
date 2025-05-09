@@ -28,7 +28,7 @@ This feature allows you to quickly find specific tracks that match your requirem
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
 

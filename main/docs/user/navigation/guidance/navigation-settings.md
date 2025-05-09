@@ -141,7 +141,7 @@ The **Route Calculation** parameter automatically changes the calculated route w
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *Menu → Settings → app profile → Navigation settings → Route parameters → Development*
+Go to: *Menu → Settings → app profile → Navigation settings → Route parameters → Development*
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_development_1_andr.png)
 
@@ -214,7 +214,7 @@ If you select a track as your destination point, you need to use the [Attach to 
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_andr.png)
 
@@ -256,7 +256,7 @@ The types of warnings have a different visual appearance, which depends on the t
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
 
 </TabItem>
 
@@ -280,7 +280,7 @@ You can learn how the behavior of the map changes during navigation in the artic
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
+Go to: *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_andr.png)
 
@@ -305,7 +305,7 @@ With the **Customize Route Line** setting, you can choose the appearance of the 
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
@@ -337,7 +337,7 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
 
@@ -519,7 +519,7 @@ These settings in iOS are available in *Menu → Settings → app profile → Na
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>*
 
 ![Attach to the roads 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png)    ![Navigation Settings Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
 

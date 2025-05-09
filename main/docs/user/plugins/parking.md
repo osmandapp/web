@@ -206,7 +206,7 @@ The [Parking widget](../widgets/info-widgets.md#parking-widget) is added automat
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_parking"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_parking"/>*  
 
 ![Adding Parking widget in Android](@site/static/img/plugins/parking/and_adding_parking_widget-2.png)
 

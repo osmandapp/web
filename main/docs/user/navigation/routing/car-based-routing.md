@@ -32,7 +32,7 @@ Car routing is designed to help drivers find the most efficient and direct route
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
 ![Car routing settings Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
 
@@ -69,7 +69,7 @@ Truck routing is similar to car routing, but is designed specifically for driver
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
 ![Truck routing settings Android 2](@site/static/img/navigation/routing/routing_truck_andr.png)
 

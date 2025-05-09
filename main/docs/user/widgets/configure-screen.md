@@ -25,7 +25,7 @@ All widgets are [profile-dependent](../personal/profiles.md), so changes to one 
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
@@ -48,7 +48,7 @@ Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
 ![Configure screen](@site/static/img/widgets/configure_screen_andr.png)
 
@@ -148,7 +148,7 @@ To arrange widgets on the app screen, use panels. Panels enable you to place wid
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Top / Bottom panel*  
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Top / Bottom panel*  
 
 ![top panel](@site/static/img/widgets/top_bottom_panel_1_andr.png)
 
@@ -219,7 +219,7 @@ The mode allows you to add **more than one widget in a single row** on the top a
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left / Right panel*  
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left / Right panel*  
 
 ![Configure screen](@site/static/img/widgets/configure_screen_left_right_andr.png) ![Configure screen](@site/static/img/widgets/configure_screen_left_right_2_andr.png)
 
@@ -243,7 +243,7 @@ The OsmAnd app allows you to place [widgets for all panels](#widgets-for-all-pan
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Edit → Add page*  
+Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Edit → Add page*  
 
 ![Widget page](@site/static/img/widgets/widget_page_1_andr.png) ![Widget page](@site/static/img/widgets/widget_page_2_andr.png)
 
@@ -390,7 +390,7 @@ You can rearrange or remove widgets from the application screen using the **Edit
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Widget page](@site/static/img/widgets/conf_screen_buttons_andr.png)
 
@@ -414,7 +414,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Widget page](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
 
@@ -479,7 +479,7 @@ The *Button appearance* feature enables you to fully customize the look of butto
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
 
 ![Widget page](@site/static/img/widgets/conf_screen_other_andr.png)  
 
@@ -533,7 +533,7 @@ Allows you to set the placement of the cursor to *[My location](../map/interact-
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*  
 
 ![Widget page](@site/static/img/widgets/widget_actions_andr.png)
 
