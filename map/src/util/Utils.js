@@ -146,6 +146,20 @@ function hexToRgba(hex) {
     return `rgb(${red} ${green} ${blue}${alphaString})`;
 }
 
+function numberToRgba(argb) {
+    // >>> 0 turns it into an unsigned 32-bit (e.g. -15679248)
+    const u = argb >>> 0;
+    const a = (u >>> 24) & 0xff;
+    const r = (u >>> 16) & 0xff;
+    const g = (u >>> 8) & 0xff;
+    const b = u & 0xff;
+
+    const alpha = a / 255;
+    const alphaString = alpha === 1 ? '' : ` / ${(alpha * 100).toFixed(2)}%`;
+
+    return `rgb(${r} ${g} ${b}${alphaString})`;
+}
+
 export function formatMeters(m) {
     if (m < 1000) {
         const meters = Number(m).toFixed(0);
@@ -347,6 +361,7 @@ const Utils = {
     getDistance,
     getPointsDist,
     hexToRgba,
+    numberToRgba,
 };
 
 export default Utils;

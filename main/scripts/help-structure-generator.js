@@ -101,12 +101,18 @@ function readTitleAndOsFlags(file, id) {
   const input = fs.readFileSync(file, { encoding: "utf8" });
 
   const headings = input.split(/[\r\n]/).filter((l) => l.match(/^(title:|#) /));
-  const title = (headings && headings.length > 0 && headings[0]) ?? id;
 
   const flags = {
     android: undefined,
     ios: undefined,
   };
+
+  const hasHeadings = headings && headings.length > 0;
+  const title = hasHeadings ? headings[0] : id;
+
+  if (!hasHeadings) {
+    flags.android = flags.ios = false; // hide headless files on both platforms
+  }
 
   input.split(/[\r\n]/).forEach((l) => {
     const fields = l.match(/^(android|ios)\s*:\s*(true|false)/i);
