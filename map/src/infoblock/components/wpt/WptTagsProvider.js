@@ -498,7 +498,7 @@ function getSocialMediaUrl(key, value) {
         facebook: 'https://facebook.com/%s',
         vk: 'https://vk.com/%s',
         instagram: 'https://instagram.com/%s',
-        twitter: 'https://twitter.com/%s',
+        twitter: 'https://x.com/%s',
         ok: 'https://ok.ru/%s',
         telegram: 'https://t.me/%s',
         flickr: 'https://flickr.com/%s',
