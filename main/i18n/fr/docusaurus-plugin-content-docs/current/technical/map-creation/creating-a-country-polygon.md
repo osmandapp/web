@@ -1,4 +1,5 @@
 ---
+source-hash: 9d065c065c0e87a1e9538359d1a97dceaf1aad6dcb8f336a848ebfd40da3e26c 
 title: Créer un polygone de pays
 versions: '*'
 ---
@@ -88,4 +89,3 @@ $ osmconvert ile-de-france.osm.pbf -B=paris.poly --out-pbf > Paris.osm.pbf
 - Téléchargez l'application OsmAndMapCreator depuis [download.osmand.net/latest-night-build/](http://download.osmand.net/latest-night-build/ "https://download.osmand.net/latest-night-build/").
 - Créez votre carte OsmAnd obf à partir des données cartographiques Paris.osm.pbf à l'aide d'OsmAndMapCreator.
 
--- source-hash: blake2s: 9d065c065c0e87a1e9538359d1a97dceaf1aad6dcb8f336a848ebfd40da3e26c --

@@ -1,4 +1,5 @@
 ---
+source-hash: e58fa222f82f6ed33b67bf023d22d3845501e65c737b57294941465d7cfefb49 
 sidebar_position: 1
 title:  Premiers pas
 ---
@@ -671,4 +672,3 @@ OsmAnd n'a aucune autorisation requise sur la version iOS / Android.
 
 > *Cet article a été mis à jour pour la dernière fois en janvier 2025*
 
--- source-hash: blake2s: e58fa222f82f6ed33b67bf023d22d3845501e65c737b57294941465d7cfefb49 --

@@ -1,4 +1,5 @@
 ---
+source-hash: 1596c0b6840f2d0c57c8adaf497899cf60a733fb6b2b9339682ca3cf566e74ef 
 sidebar_position: 1
 label: Introduction
 title: Docs
@@ -38,4 +39,3 @@ Licence. Politique de confidentialité. Conditions d'utilisation.
 Nous recherchons toujours de nouveaux contributeurs qui peuvent rejoindre notre équipe internationale.
 
 
--- source-hash: blake2s: 1596c0b6840f2d0c57c8adaf497899cf60a733fb6b2b9339682ca3cf566e74ef --

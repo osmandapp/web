@@ -1,4 +1,5 @@
 ---
+source-hash: be49b4a60e72876482172f59eacf4e098c67fc1295f191b3660405d22c16bf5b 
 sidebar_position: 3
 title: Widgets d'information
 ---
@@ -781,4 +782,3 @@ Le widget **RAM disponible** est un outil pour surveiller l'utilisation de la m�
 
 > *Cet article a été mis à jour pour la dernière fois en avril 2025*
 
--- source-hash: blake2s: be49b4a60e72876482172f59eacf4e098c67fc1295f191b3660405d22c16bf5b --

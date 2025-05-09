@@ -1,4 +1,5 @@
 ---
+source-hash: 89e499909bbc779cd67dcba77868af8c03fa06282c37ac39b7cccd35351071df 
 sidebar_position: 5
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
@@ -114,4 +115,3 @@ Script de compilation :
 
 **[En savoir plus](../osmand-api-sdk/index.md)**.
 
--- source-hash: blake2s: 89e499909bbc779cd67dcba77868af8c03fa06282c37ac39b7cccd35351071df --

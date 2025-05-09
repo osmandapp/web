@@ -1,4 +1,5 @@
 ---
+source-hash: 4641e5340e3bce8596fbd9395ae773fc70448323bb664a6c260ca04505614ad5 
 sidebar_position: 6
 ---
 
@@ -106,4 +107,3 @@ Plus tard dans le style de sélection, vous pouvez spécifier quand ce sélecteu
 
 Donc, si l'utilisateur sélectionne `moreDetailed=true`, la valeur de sortie pour la densité sera `55`, et si `baseAppMode=pedestrian` (un autre paramètre), elle sera `40`, sinon 60.
 
--- source-hash: blake2s: 4641e5340e3bce8596fbd9395ae773fc70448323bb664a6c260ca04505614ad5 --

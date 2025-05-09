@@ -1,4 +1,5 @@
 ---
+source-hash: 730da9c7eb7dc95ccbea6a82bcaeea3a641beac9ec87680eb18fba206e560608 
 sidebar_position: 1
 title:  Configuration
 ---
@@ -134,4 +135,3 @@ Les paquets de cartes peuvent être enregistrés en deux formats : [SQLite et Me
 
 - **Pour iOS**. Téléchargez le fichier depuis iTunes ou une messagerie, puis ouvrez-le avec l'application OsmAnd. Le paquet de cartes sera automatiquement ajouté à votre liste de cartes en ligne.
 
--- source-hash: blake2s: 730da9c7eb7dc95ccbea6a82bcaeea3a641beac9ec87680eb18fba206e560608 --

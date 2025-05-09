@@ -1,4 +1,5 @@
 ---
+source-hash: bb374835b69b350dbf8b8ba9ee5bf88f9f663385cce72588065d6467df494d6f 
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -316,4 +317,3 @@ Parfois, *CarPlay* ne se connecte pas, ou vous n'entendez rien même s'il est co
 
 > *Cet article a été mis à jour pour la dernière fois en janvier 2025*
 
--- source-hash: blake2s: bb374835b69b350dbf8b8ba9ee5bf88f9f663385cce72588065d6467df494d6f --

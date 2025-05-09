@@ -1,4 +1,5 @@
 ---
+source-hash: e167b126937a524f9a0e73d64cbb2833cb68f3510c19c9c85d114073d6a73ecd 
 sidebar_position: 1
 title:  Achats Android
 ---
@@ -256,4 +257,3 @@ Vous pouvez acheter OsmAnd en utilisant des cartes cadeaux Google Play ou Amazon
 - [Guide détaillé sur l'achat de cartes cadeaux Google Play](https://support.google.com/googleplay/answer/3422734?hl=en).
 - [Cartes cadeaux Amazon](https://www.amazon.com/gift-cards/b?ie=UTF8&node=2238192011) et [instructions pour les échanger](https://www.amazon.com/gp/help/customer/display.html?nodeId=201357470).
 
--- source-hash: blake2s: e167b126937a524f9a0e73d64cbb2833cb68f3510c19c9c85d114073d6a73ecd --

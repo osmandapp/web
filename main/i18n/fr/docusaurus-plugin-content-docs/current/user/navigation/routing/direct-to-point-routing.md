@@ -1,4 +1,5 @@
 ---
+source-hash: 692d6bd8d626aeeb392e543280f0d2d29b59c90b1a5ff8048e85b3b23fc28d5d 
 sidebar_position: 9
 title:  Navigation point à point (Bateau)
 ---
@@ -65,4 +66,3 @@ Aller à : *iOS* *<Translate android="true" ids="shared_string_menu,shared_strin
 
 > *Cet article a été mis à jour pour la dernière fois en juin 2024*
 
--- source-hash: blake2s: 692d6bd8d626aeeb392e543280f0d2d29b59c90b1a5ff8048e85b3b23fc28d5d --

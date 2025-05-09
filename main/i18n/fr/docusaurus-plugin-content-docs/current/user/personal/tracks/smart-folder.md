@@ -1,4 +1,5 @@
 ---
+source-hash: 7c1cfba29519bc920e59ee85875b29e11b28becce28f84022cd2961167ea4775 
 sidebar_position: 3
 title: Dossier intelligent (Filtre)
 ---
@@ -216,4 +217,3 @@ Le **Dossier intelligent** est affiché avec une icône unique dans la liste des
 
 > *Cet article a été mis à jour pour la dernière fois en mars 2025*
 
--- source-hash: blake2s: 7c1cfba29519bc920e59ee85875b29e11b28becce28f84022cd2961167ea4775 --

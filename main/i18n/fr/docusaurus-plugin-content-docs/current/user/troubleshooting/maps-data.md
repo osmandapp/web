@@ -1,4 +1,5 @@
 ---
+source-hash: 98f91d7aaa1287cf14579ac5fae795476daa5d3150cfde50aefb005f1f5b0320 
 sidebar_position: 4
 title: Cartes et données
 ---
@@ -167,4 +168,3 @@ Vous pouvez laisser des notes et marquer des emplacements sur la carte sous diff
 
 - *[Recherche](../search/index.md)*. Vous pouvez également utiliser la fonction de recherche pour trouver et marquer des lieux sur la carte.
 
--- source-hash: blake2s: 98f91d7aaa1287cf14579ac5fae795476daa5d3150cfde50aefb005f1f5b0320 --

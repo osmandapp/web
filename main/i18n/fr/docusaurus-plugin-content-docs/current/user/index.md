@@ -1,4 +1,8 @@
+---
+source-hash: 631b468ad7f41b38d241d4252df60542d470b2452389a11bf631510ffcbf165f 
+---
 # Guide de l'utilisateurf
+
 
 OsmAnd fournit une navigation et une consultation de cartes hors ligne mondiales avec de nombreux outils spéciaux pour Android et iOS.
 
@@ -52,4 +56,3 @@ La source Web d'OsmAnd offre un large éventail de fonctionnalités cartographiq
 
 Solutions et astuces pour les problèmes fréquemment rencontrés.
 
--- source-hash: blake2s: 631b468ad7f41b38d241d4252df60542d470b2452389a11bf631510ffcbf165f --

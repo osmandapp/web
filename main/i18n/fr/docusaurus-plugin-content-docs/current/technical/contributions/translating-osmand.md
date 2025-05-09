@@ -1,4 +1,5 @@
 ---
+source-hash: eb996eb50219207babfcbec7d3dab37b65316b761bb67f351e5ac55dbadc49d9 
 sidebar_position: 3
 ---
 
@@ -39,4 +40,3 @@ Veuillez utiliser Weblate comme décrit ci-dessus, il vous montrera toutes les m
 > Merci,
 > Dr. Hardy Mueller
 
--- source-hash: blake2s: eb996eb50219207babfcbec7d3dab37b65316b761bb67f351e5ac55dbadc49d9 --

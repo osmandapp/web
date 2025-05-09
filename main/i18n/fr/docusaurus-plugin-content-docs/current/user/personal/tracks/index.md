@@ -1,4 +1,5 @@
 ---
+source-hash: 7fb9c0d88647a8a19661d5002f49ad325bd73a288a240351a64f3b5373ea50c1 
 title:  Traces
 sidebar_position: 8
 ---
@@ -25,4 +26,3 @@ En savoir plus sur la façon d'afficher les traces et ses options dans OsmAnd.
 
 En savoir plus sur la façon d'utiliser une trace dans la navigation.
 
--- source-hash: blake2s: 7fb9c0d88647a8a19661d5002f49ad325bd73a288a240351a64f3b5373ea50c1 --

@@ -1,4 +1,5 @@
 ---
+source-hash: 42f8980606e2b3873ccd20c12c3077f6295f1d8350be048b687eafba73334066 
 sidebar_position: 4
 title:  Package personnalisé
 ---
@@ -339,4 +340,3 @@ Vous pouvez jeter un œil à certains des plugins que les utilisateurs d'OsmAnd 
 
  > *Cet article a été mis à jour pour la dernière fois en juin 2024*
 
--- source-hash: blake2s: 42f8980606e2b3873ccd20c12c3077f6295f1d8350be048b687eafba73334066 --

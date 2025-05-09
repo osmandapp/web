@@ -1,4 +1,5 @@
 ---
+source-hash: 55ac224139d1741d022e6b3c340ebfba93e6ff5f22ec1b11c0a50fe419d4e875 
 sidebar_position: 4
 ---
 
@@ -51,4 +52,3 @@ Alarme rapprochée | **7 s :**<br/>Conduite : 88 m<br/>Cyclisme : 20 m<br/>March
 Annonce hors itinéraire | **20 s :**<br/>Conduite : 250 m<br/>Cyclisme : 56 m<br/>Marche : 22 m | | :heavy_check_mark: | Peut être désactivé |
 Signal GPS perdu | **20 s** | | | Est joué après que le signal GPS a été perdu pendant >= 20 s et que cela n'a pas été causé par une action de l'utilisateur. |
 
--- source-hash: blake2s: 55ac224139d1741d022e6b3c340ebfba93e6ff5f22ec1b11c0a50fe419d4e875 --

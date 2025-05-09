@@ -1,4 +1,5 @@
 ---
+source-hash: d7401847f14d989dc3a557980e53f56e4bcfbfcb41a23e936fd0ab0829f72726 
 sidebar_position: 4
 title:  Détails de l'itinéraire
 ---
@@ -346,4 +347,3 @@ La section de navigation Détails de l'itinéraire propose des options qui vous 
 
 > *Cet article a été mis à jour pour la dernière fois en novembre 2024*
 
--- source-hash: blake2s: d7401847f14d989dc3a557980e53f56e4bcfbfcb41a23e936fd0ab0829f72726 --

@@ -1,4 +1,5 @@
 ---
+source-hash: e982d5a8bfb803b0cd3a52913a80226aa1bf366f5d4af51485fb3cc8bc180f86 
 sidebar_position: 6
 title:  Widgets de marqueurs
 ---
@@ -182,4 +183,3 @@ Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,map_markers,shar
 
 > *Cet article a été mis à jour pour la dernière fois en octobre 2023*
 
--- source-hash: blake2s: e982d5a8bfb803b0cd3a52913a80226aa1bf366f5d4af51485fb3cc8bc180f86 --

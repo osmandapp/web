@@ -1,4 +1,5 @@
 ---
+source-hash: ae367abd5b8191abb769328342bc595d85c3b57b9e65a8d590ce7961374e5996 
 sidebar_position: 1
 title: Développeur OpenGL / Vulkan
 ---
@@ -41,4 +42,3 @@ OsmAnd recherche un développeur de logiciels open source passionné et enthousi
 - Travail stable dans une entreprise en développement dynamique
 - Développement entièrement open source (https://github.com/osmandapp/)
 
--- source-hash: blake2s: ae367abd5b8191abb769328342bc595d85c3b57b9e65a8d590ce7961374e5996 --

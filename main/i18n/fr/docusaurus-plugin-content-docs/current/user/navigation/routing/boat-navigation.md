@@ -1,4 +1,5 @@
 ---
+source-hash: 5e218cf447ce45e390fca96be7a7825e4dd65864a4114fdd1056e7673ec618bb 
 sidebar_position: 8
 title:  Itinéraire pour bateaux
 ---
@@ -112,4 +113,3 @@ Le [type d'itinéraire Ligne droite](./straight-line-routing) peut être utilis�
 
 > *Cet article a été mis à jour pour la dernière fois en juin 2024.*
 
--- source-hash: blake2s: 5e218cf447ce45e390fca96be7a7825e4dd65864a4114fdd1056e7673ec618bb --

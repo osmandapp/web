@@ -1,4 +1,5 @@
 ---
+source-hash: 13bde081753c0698efa132f289c9911bd66fbde0e5c5d99e1a03154d2c2283c8 
 sidebar_position: 2
 title: Général
 ---
@@ -115,4 +116,3 @@ Si vous rencontrez un problème où l'e-mail associé à votre achat OsmAnd Pro 
 
 7. **Se reconnecter ou utiliser le Web pour la gestion du compte**. Si vous rencontrez toujours des problèmes, essayez de vous déconnecter et de vous reconnecter pour actualiser la connexion de l'application à votre compte actuel. Si vous rencontrez des problèmes pour supprimer l'ancien compte dans l'application, envisagez de gérer votre compte via la version Web d'OsmAnd.
 
--- source-hash: blake2s: 13bde081753c0698efa132f289c9911bd66fbde0e5c5d99e1a03154d2c2283c8 --

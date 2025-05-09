@@ -1,4 +1,5 @@
 ---
+source-hash: 3fc1f09bdc2161e550f7558068e535f6d206f31a388e535b86a1710bc8413c06 
 sidebar_position: 9
 ---
 
@@ -29,4 +30,3 @@ Ce format est également utilisé par les fichiers Hillshade et Slope distribué
 
 La classe prenant en charge cela est SQLiteTileSource à ou près de [https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/resources/SQLiteTileSource.java#L36](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/resources/SQLiteTileSource.java#L36).
 
--- source-hash: blake2s: 3fc1f09bdc2161e550f7558068e535f6d206f31a388e535b86a1710bc8413c06 --

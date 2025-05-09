@@ -1,4 +1,5 @@
 ---
+source-hash: 551853d0584f91902301cf710aef255a66d074b9e41563ed9bd806fc0d3cc51b 
 sidebar_position: 1
 title:  Fonctionnalités et capacités d'OsmAnd
 unlisted: true
@@ -202,4 +203,3 @@ Tableau :
 Dans l'article sur les achats Android, un **tableau raccourci** restera avec un **lien vers cet article**.
 **Cet article** fournit un **aperçu détaillé des fonctionnalités** pour toutes les versions d'OsmAnd.
 
--- source-hash: blake2s: 551853d0584f91902301cf710aef255a66d074b9e41563ed9bd806fc0d3cc51b --

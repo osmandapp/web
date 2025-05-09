@@ -1,4 +1,5 @@
 ---
+source-hash: adea0cc432eae523210f4668a5a3850948d304c1e6afd0b9e70c0f0266ec8733 
 sidebar_position: 7
 title: Favoris
 ---
@@ -495,4 +496,3 @@ Toutes les informations sur un favori sont stockées et décrites à l'aide de b
 
 > *Cet article a été mis à jour pour la dernière fois en avril 2025*
 
--- source-hash: blake2s: adea0cc432eae523210f4668a5a3850948d304c1e6afd0b9e70c0f0266ec8733 --

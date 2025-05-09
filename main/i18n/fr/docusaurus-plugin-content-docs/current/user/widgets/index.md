@@ -1,4 +1,5 @@
 ---
+source-hash: e2cce3e6453b1d5f75264bcbe18643c37f876a658772285dcf33e288e3b83054 
 sidebar_position: 3
 ---
 
@@ -34,4 +35,3 @@ Les marqueurs de carte sont des points sélectionnés marqués sur la carte comm
 
 Le widget Action rapide est un bouton d'action rapide personnalisable sur la carte, avec lequel les actions sélectionnées sont disponibles *en seulement deux clics*.
 
--- source-hash: blake2s: e2cce3e6453b1d5f75264bcbe18643c37f876a658772285dcf33e288e3b83054 --

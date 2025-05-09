@@ -1,4 +1,5 @@
 ---
+source-hash: 1d9578202d2aac42373cc72aa3c9dc504d4fa30c02071abbabd105f85add5670 
 title: Créer des cartes raster et vectorielles hors ligne
 versions: '*'
 intro: Avec OsmAndMapCreator, il existe de nombreuses façons de créer et de personnaliser des cartes raster et vectorielles pour vos besoins.
@@ -298,4 +299,3 @@ modifiez-le pour qu'il contienne une balise 'amenity' supplémentaire, comme :
 
 Ensuite, convertissez le fichier à l'aide d'OsmAndMapCreator. Vous pouvez vérifier sur le site OSM quelles balises sont bonnes à utiliser et vous pouvez également vérifier quelles balises sont prises en charge par [OsmAnd](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/poi_types.xml).
 
--- source-hash: blake2s: 1d9578202d2aac42373cc72aa3c9dc504d4fa30c02071abbabd105f85add5670 --

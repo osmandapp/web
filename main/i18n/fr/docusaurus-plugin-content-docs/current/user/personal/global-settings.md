@@ -1,4 +1,5 @@
 ---
+source-hash: dac8a0af641732c1a9d3f6471ed10d2de62b880ae5382bb5cf92ddf2ff8c15c1 
 sidebar_position: 3
 title: Paramètres globaux
 ---
@@ -391,4 +392,3 @@ Lisez les alertes de radars sur votre itinéraire dans l'article Widgets de navi
 
 > *Cet article a été mis à jour pour la dernière fois en novembre 2024*
 
--- source-hash: blake2s: dac8a0af641732c1a9d3f6471ed10d2de62b880ae5382bb5cf92ddf2ff8c15c1 --

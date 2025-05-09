@@ -1,4 +1,5 @@
 ---
+source-hash: a46301bd164277ebcea71e71443d70f2630fddc873e56443bd8a84fdf64b51ac 
 sidebar_position: 6
 title:  Itinéraire de ski
 ---
@@ -79,4 +80,3 @@ Les paramètres d'*itinéraire de ski* permettent aux utilisateurs de planifier 
 
 > *Cet article a été mis à jour pour la dernière fois en juin 2024*
 
--- source-hash: blake2s: a46301bd164277ebcea71e71443d70f2630fddc873e56443bd8a84fdf64b51ac --

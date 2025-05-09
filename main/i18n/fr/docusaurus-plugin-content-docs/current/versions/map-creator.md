@@ -1,4 +1,5 @@
 ---
+source-hash: 322bed5228f03b725913eedc80cc97ee354f0ddd4424e7ad9d47914cf794c14f 
 sidebar_position: 3
 ---
 
@@ -10,4 +11,3 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <Download link="https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip"/>
 
--- source-hash: blake2s: 322bed5228f03b725913eedc80cc97ee354f0ddd4424e7ad9d47914cf794c14f --

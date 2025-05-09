@@ -1,4 +1,5 @@
 ---
+source-hash: 8ef0efacc81d5d4c468ed3af855cf75ce6d8060193c4a288414433afaa285f84 
 sidebar_position: 1
 title:  Préparation de l'itinéraire
 ---
@@ -484,4 +485,3 @@ Pour plus d'étapes de dépannage, consultez les [problèmes de navigation](../.
 
 > *Cet article a été mis à jour pour la dernière fois en février 2025*
 
--- source-hash: blake2s: 8ef0efacc81d5d4c468ed3af855cf75ce6d8060193c4a288414433afaa285f84 --

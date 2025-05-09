@@ -1,4 +1,5 @@
 ---
+source-hash: d41e36a24a3c9d90cabd8b9c4989e8ea49e1157b870506bf4a7edb33a6d2acab 
 sidebar_position: 4
 ---
 
@@ -37,4 +38,3 @@ Vous pouvez également utiliser simplement git et cloner les dépôts git suivan
 
 Vous n'aurez peut-être pas besoin de tous les dépôts pour faire fonctionner les outils / Android ou iOS. Vous pouvez toujours vérifier les branches correspondantes dans les [configurations repo](https://github.com/osmandapp/OsmAnd-manifest).
 
--- source-hash: blake2s: d41e36a24a3c9d90cabd8b9c4989e8ea49e1157b870506bf4a7edb33a6d2acab --

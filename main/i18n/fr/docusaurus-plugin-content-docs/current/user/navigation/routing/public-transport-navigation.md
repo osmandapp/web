@@ -1,4 +1,5 @@
 ---
+source-hash: 7351826c8fb4c60b25d85b76503d19be0d8c40372400b9f8e4bb8e6c1112825b 
 sidebar_position: 5
 title:  Itinéraire en transports en commun
 ---
@@ -129,4 +130,3 @@ OsmAnd utilise un nouveau schéma de transports en commun, également appelé Pu
 
 > *Cet article a été mis à jour pour la dernière fois en juin 2024.*
 
--- source-hash: blake2s: 7351826c8fb4c60b25d85b76503d19be0d8c40372400b9f8e4bb8e6c1112825b --

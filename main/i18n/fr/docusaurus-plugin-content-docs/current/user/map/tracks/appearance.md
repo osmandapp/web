@@ -1,4 +1,5 @@
 ---
+source-hash: d823d2049a36ba449750ff2d6d3df41eb3137345597f951f819a230b9f673b89 
 sidebar_position: 5
 title:  Apparence de la trace
 ---
@@ -296,4 +297,3 @@ Pour spécifier une couleur pour une trace, utilisez le format suivant :
 
 > *Cet article a été mis à jour pour la dernière fois en février 2025*
 
--- source-hash: blake2s: d823d2049a36ba449750ff2d6d3df41eb3137345597f951f819a230b9f673b89 --

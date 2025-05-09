@@ -1,4 +1,5 @@
 ---
+source-hash: 7ec976854d72132ff3169c6cdfaabf8fc35f8e6f0d70ffa042f077dc9c62fbda 
 sidebar_position: 3
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
@@ -96,4 +97,3 @@ Les points favoris sont affichés sur la carte
 	}
 ```
 
--- source-hash: blake2s: 7ec976854d72132ff3169c6cdfaabf8fc35f8e6f0d70ffa042f077dc9c62fbda --

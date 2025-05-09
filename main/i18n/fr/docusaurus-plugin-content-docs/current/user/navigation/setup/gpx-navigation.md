@@ -1,4 +1,5 @@
 ---
+source-hash: 19e2ac84ed94aeb607ddf5704cc2d8ed50aa84d0ea068f65bfada38f8b46b935 
 sidebar_position: 2
 title: Naviguer par trace
 ---
@@ -203,4 +204,3 @@ Pendant la navigation, vous pouvez utiliser diverses options telles que le zoom 
 
 > *Cet article a été mis à jour pour la dernière fois en avril 2025*
 
--- source-hash: blake2s: 19e2ac84ed94aeb607ddf5704cc2d8ed50aa84d0ea068f65bfada38f8b46b935 --

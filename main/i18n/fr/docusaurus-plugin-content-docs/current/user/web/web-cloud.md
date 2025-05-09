@@ -1,4 +1,5 @@
 ---
+source-hash: a65b84e286c45f4965a8c84bc5fd3d8bf1227aa836cd70a315a14ca548140473 
 sidebar_position: 2
 sidebar_label:  OsmAnd Cloud
 title: OsmAnd Cloud sur le site Web
@@ -128,4 +129,3 @@ In this section of the menu, you can change the map style. You can read more abo
 
 > *Cet article a été mis à jour pour la dernière fois en septembre 2024*
 
--- source-hash: blake2s: a65b84e286c45f4965a8c84bc5fd3d8bf1227aa836cd70a315a14ca548140473 --

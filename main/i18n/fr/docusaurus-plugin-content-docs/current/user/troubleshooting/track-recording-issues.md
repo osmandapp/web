@@ -1,4 +1,5 @@
 ---
+source-hash: 05cf80a4a56378d1f141f794a5c5bdb4fba55253038028ce75807fb27b47f6a4 
 sidebar_position: 6
 title: Enregistrement de trace
 ---
@@ -130,4 +131,3 @@ Atténuation : Nous n'utilisons maintenant *setRepeating()* que jusqu'à Android
 - **(B2) À partir d'Android 4.4, les systèmes limitent le nombre de fois où *setExact()* est exécuté de manière répétée** à, par exemple, une fois toutes les 5 ou même 15 minutes. (La valeur réelle semble très spécifique à l'appareil.)
 Aucune bonne solution trouvée pour l'instant. L'atténuation actuelle est que nous n'utilisons pas le réveil de l'Alarm Manager, mais maintenons le GPS toujours allumé pour l'enregistrement de trace en arrière-plan sur les appareils avec Android 5+ pour tous les intervalles d'enregistrement inférieurs à 5 minutes. Cela produit des traces fiables et précises au prix d'une utilisation plus élevée de la batterie. ([Problème #5632](https://github.com/osmandapp/Osmand/issues/5632))
 
--- source-hash: blake2s: 05cf80a4a56378d1f141f794a5c5bdb4fba55253038028ce75807fb27b47f6a4 --

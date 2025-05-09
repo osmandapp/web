@@ -1,4 +1,5 @@
 ---
+source-hash: 4bb43302236568281d23ca9e7cc98a6424244128acc46340d354ddfd49bf3b12 
 sidebar_position: 2
 title: Boutons de la carte
 ---
@@ -199,4 +200,3 @@ La personnalisation de l'apparence des boutons vous permet d'ajuster la taille, 
 
 > *Cet article a été mis à jour pour la dernière fois en février 2025*
 
--- source-hash: blake2s: 4bb43302236568281d23ca9e7cc98a6424244128acc46340d354ddfd49bf3b12 --

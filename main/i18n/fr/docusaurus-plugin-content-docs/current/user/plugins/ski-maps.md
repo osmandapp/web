@@ -1,4 +1,5 @@
 ---
+source-hash: fccc4f0b82cd7a8059506ee6822c44efb5a5fb40f5a970e22cc7ba49b9c68cdd 
 sidebar_position: 13
 title: Vue Carte de ski
 ---
@@ -277,4 +278,3 @@ Les deux options se trouvent dans le menu [Configurer la carte](../map/configure
 
 > *Cet article a été mis à jour pour la dernière fois en décembre 2024*
 
--- source-hash: blake2s: fccc4f0b82cd7a8059506ee6822c44efb5a5fb40f5a970e22cc7ba49b9c68cdd --

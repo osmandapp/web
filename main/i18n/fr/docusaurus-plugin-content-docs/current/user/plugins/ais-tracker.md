@@ -1,4 +1,5 @@
 ---
+source-hash: 8b41b51456a34be9bb72569dffa4c180ca9c78123be1ff71134bcfa41d8555de 
 sidebar_position: 2
 title:  Suivi de navires AIS
 ---
@@ -181,4 +182,3 @@ Les icônes des navires apparaîtront en fonction des données simulées. Appuye
 
 > *Cet article a été mis à jour pour la dernière fois en mars 2025*
 
--- source-hash: blake2s: 8b41b51456a34be9bb72569dffa4c180ca9c78123be1ff71134bcfa41d8555de --

@@ -1,4 +1,5 @@
 ---
+source-hash: c04b63d8552cf4b7ebb2ec995ac0ad4ccd60a6891c94da4652548bfd7a4713f9 
 sidebar_position: 2
 ---
 
@@ -10,4 +11,3 @@ Pour tester le style de rendu, vous pouvez utiliser OsmAnd Map Creator. Si vous 
 
 Tous les droits sur le style créé appartiennent à l'auteur, bien que ces droits ne puissent pas être appliqués aux fichiers exécutables d'OsmAnd.
 
--- source-hash: blake2s: c04b63d8552cf4b7ebb2ec995ac0ad4ccd60a6891c94da4652548bfd7a4713f9 --

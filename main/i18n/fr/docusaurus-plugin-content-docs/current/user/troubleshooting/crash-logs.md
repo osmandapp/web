@@ -1,4 +1,5 @@
 ---
+source-hash: c1401bc8f7b13e7e968f342c8c30e2d4d1c70d476fa3c10a616bc18a0c52e446 
 sidebar_position: 5
 title:  Journaux de plantage
 ---
@@ -135,4 +136,3 @@ Where you find files like  -->
 
 Pour plus de détails sur les rapports de bogue, consultez la [documentation Android](https://developer.android.com/studio/debug/bug-report).
 
--- source-hash: blake2s: c1401bc8f7b13e7e968f342c8c30e2d4d1c70d476fa3c10a616bc18a0c52e446 --

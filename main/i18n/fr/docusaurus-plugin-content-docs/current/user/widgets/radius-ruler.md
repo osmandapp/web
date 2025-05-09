@@ -1,4 +1,5 @@
 ---
+source-hash: 2f8a52c3e17f42ceaab4e1e315cea73c4e541309834445137714ad398079c897 
 sidebar_position: 5
 title:  Règle de rayon et règle
 ---
@@ -212,4 +213,3 @@ Pour mesurer la distance entre deux points, appuyez simultanément sur les deux 
 
 > *Cet article a été mis à jour pour la dernière fois en septembre 2024*
 
--- source-hash: blake2s: 2f8a52c3e17f42ceaab4e1e315cea73c4e541309834445137714ad398079c897 --

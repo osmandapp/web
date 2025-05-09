@@ -1,4 +1,5 @@
 ---
+source-hash: c36b99e0cc2e9439cdd717fc2086f3e511204bc69890a70336552456211f0dde 
 title:  Tracés
 sidebar_position: 2
 ---
@@ -177,4 +178,3 @@ Appuyez sur le bouton [Ma position](../../map/interact-with-map.md#my-location-a
 
 > *Cet article a été mis à jour pour la dernière fois en novembre 2024*
 
--- source-hash: blake2s: c36b99e0cc2e9439cdd717fc2086f3e511204bc69890a70336552456211f0dde --

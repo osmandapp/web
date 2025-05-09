@@ -1,4 +1,5 @@
 ---
+source-hash: ddab296472860e06131100c133eb27ef8be8a97881e8de1b322f68ded4c12898 
 sidebar_position: 4
 title: Navigation
 ---
@@ -50,4 +51,3 @@ Et aussi deux cas d'utilisation spéciaux de l'outil de navigation :
 - [Android Auto](./auto-car.md)
 - [CarPlay](./car-play.md)
 
--- source-hash: blake2s: ddab296472860e06131100c133eb27ef8be8a97881e8de1b322f68ded4c12898 --

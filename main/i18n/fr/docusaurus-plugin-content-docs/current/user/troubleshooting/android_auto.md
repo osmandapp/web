@@ -1,4 +1,5 @@
 ---
+source-hash: 8ceba594c80385b497a558e2b60474c77d5b2d7b01d707343a6463a144cb54fb 
 sidebar_position: 7
 title:  Android Auto
 ---
@@ -40,4 +41,3 @@ Dans la plupart des cas, tous les types de **signaux** restent à un volume cons
 
 Si cette méthode ne fonctionne pas, il existe une autre option. Pour régler le volume des notifications, vous devez activer Google Assistant pendant un appel. Maintenez enfoncé le bouton du volant qui active Google Assistant, et pendant l'appel, réglez le volume à l'aide du tableau de bord ou du volant.
 
--- source-hash: blake2s: 8ceba594c80385b497a558e2b60474c77d5b2d7b01d707343a6463a144cb54fb --

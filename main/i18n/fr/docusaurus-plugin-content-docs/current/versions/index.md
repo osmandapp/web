@@ -1,4 +1,8 @@
+---
+source-hash: 4b1e0a47223cac4b588c710c252f8745bda4760afac044028df61ca1d165fa5e 
+---
 # Versions
+
 
 ### [Versions gratuites - Android](/docs/versions/free-versions)
 
@@ -24,4 +28,3 @@ Informations sur la sortie de la prochaine version d'iOS, actuellement disponibl
 
 Informations sur la sortie de la prochaine version d'OsmAnd Web.
 
--- source-hash: blake2s: 4b1e0a47223cac4b588c710c252f8745bda4760afac044028df61ca1d165fa5e --

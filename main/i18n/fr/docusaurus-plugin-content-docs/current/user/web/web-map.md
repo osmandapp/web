@@ -1,4 +1,5 @@
 ---
+source-hash: 3e7c99d0fdc131a02cf2529fc0c253166246620219b07837a90709ed6869c355 
 sidebar_position: 3
 sidebar_label: Map
 title: Carte globale sur le site web
@@ -233,4 +234,3 @@ Selon les paramètres spécifiés, les chaînes d'URL peuvent contenir :
 
 > *Cet article a été mis à jour pour la dernière fois en janvier 2025*
 
--- source-hash: blake2s: 3e7c99d0fdc131a02cf2529fc0c253166246620219b07837a90709ed6869c355 --

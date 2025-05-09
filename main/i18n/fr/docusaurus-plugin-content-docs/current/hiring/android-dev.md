@@ -1,4 +1,5 @@
 ---
+source-hash: de2db8b811d2e8c67852a176c1a4c31bf3a2ebcf0244c505bec68f9416edf631 
 sidebar_position: 2
 title: Développeur Android
 ---
@@ -54,4 +55,3 @@ OsmAnd recherche un développeur de logiciels open source passionné et enthousi
 - Travail stable dans une entreprise en développement dynamique
 - Développement entièrement open source (https://github.com/osmandapp/)
 
--- source-hash: blake2s: de2db8b811d2e8c67852a176c1a4c31bf3a2ebcf0244c505bec68f9416edf631 --

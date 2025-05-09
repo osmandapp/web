@@ -1,4 +1,5 @@
 ---
+source-hash: 8477bbc2231f222356dd34a63b2a2b59fcf4964d45561f5f2b5ba7b8158ba02b 
 sidebar_position: 3
 title:  Saisie de coordonnées
 ---
@@ -105,4 +106,3 @@ Pour enregistrer vos points en tant que trace, appuyez sur le bouton *Retour* ( 
 Dans le menu contextuel, vous pouvez saisir votre propre nom de trace ou l'enregistrer par défaut. Appuyez sur <Translate android="true" ids="shared_string_save"/> pour enregistrer les points ajoutés en tant que nouvelle trace.
 Vous trouverez votre trace dans le [menu Mes lieux](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).
 
--- source-hash: blake2s: 8477bbc2231f222356dd34a63b2a2b59fcf4964d45561f5f2b5ba7b8158ba02b --

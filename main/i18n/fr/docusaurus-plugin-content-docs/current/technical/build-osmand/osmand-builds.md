@@ -1,4 +1,5 @@
 ---
+source-hash: 058f4c56a1a55a50f2014f512f6717b5a5705629606e507401f7dc709bab2300 
 sidebar_position: 2
 ---
 
@@ -57,4 +58,3 @@ Toutes les cartes/traces, etc. sont conservées en place sans modification penda
 
 Pour rejoindre les versions bêta de TestFlight, vous pouvez suivre le [lien](https://testflight.apple.com/join/7poGNCKy). Les versions iOS sont généralement fournies chaque semaine (après la démo de l'équipe). Elles n'ont pas de descriptions et peuvent avoir une numérotation continue. Elles sont censées être stables et prêtes à l'emploi.
 
--- source-hash: blake2s: 058f4c56a1a55a50f2014f512f6717b5a5705629606e507401f7dc709bab2300 --

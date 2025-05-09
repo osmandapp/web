@@ -1,4 +1,8 @@
+---
+source-hash: d373c89e0e7f09b0745b70d7d102618fd3ed2efcb2858f21231cf9a92d5a3011 
+---
 # API, SDK OsmAnd - Exemples
+
 Si vous souhaitez utiliser OsmAnd comme bibliothèque pour votre application, vous pouvez envisager de l'utiliser via le SDK ou via l'API. Actuellement, ces options ne sont disponibles que pour Android.
 
 Il existe 2 façons principales de réutiliser la puissance d'OsmAnd dans votre application :
@@ -54,4 +58,3 @@ Application de démonstration [OsmAnd-map-sample.apk](https://download.osmand.ne
 ## Licence
 Vous pouvez vérifier la [Licence d'OsmAnd](https://osmand.net/help-online/license) et la [version complète](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE).
 
--- source-hash: blake2s: d373c89e0e7f09b0745b70d7d102618fd3ed2efcb2858f21231cf9a92d5a3011 --

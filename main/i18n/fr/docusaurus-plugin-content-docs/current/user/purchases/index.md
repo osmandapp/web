@@ -1,4 +1,5 @@
 ---
+source-hash: f4077226de87d4875f407f35b19be597117ba5d10948e519c4553df76119f409 
 sidebar_position: 9
 ---
 
@@ -32,4 +33,3 @@ Il existe plusieurs façons de le faire :
 - OsmAnd+ sur [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) (NOTE : [il sera fermé](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program) le 20 août 2025 - [section de dépannage](../troubleshooting/purchases_payments.md#what-do-after-close-of-amazon-store))
 - OsmAnd Maps sur [Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
 
--- source-hash: blake2s: f4077226de87d4875f407f35b19be597117ba5d10948e519c4553df76119f409 --

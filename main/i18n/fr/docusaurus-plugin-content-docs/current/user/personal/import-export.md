@@ -1,4 +1,5 @@
 ---
+source-hash: 4e89165f3714c483b8f2287966c7141a4b553454ae048188129fa7a8386a191d 
 sidebar_position: 10
 title:  Import / Export
 ---
@@ -122,4 +123,3 @@ Il existe deux façons de sauvegarder vos données avant de réinstaller l'appli
 
 > *Cet article a été mis à jour pour la dernière fois en janvier 2025*
 
--- source-hash: blake2s: 4e89165f3714c483b8f2287966c7141a4b553454ae048188129fa7a8386a191d --

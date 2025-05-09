@@ -1,4 +1,5 @@
 ---
+source-hash: f029fc59051f735269a3ca9a391bdba257bd4be2965b95c7d33415d680b47cdc 
 sidebar_position: 7
 ---
 
@@ -35,4 +36,3 @@ Les guides vous aideront à voir tous les lieux intéressants sur la carte et à
 
 Description d'un outil simple et rapide pour créer des points en spécifiant des coordonnées géographiques.
 
--- source-hash: blake2s: f029fc59051f735269a3ca9a391bdba257bd4be2965b95c7d33415d680b47cdc --

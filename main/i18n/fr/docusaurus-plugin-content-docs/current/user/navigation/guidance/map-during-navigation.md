@@ -1,4 +1,5 @@
 ---
+source-hash: 723bea6cd577dc5206094ca8f58472018afc3847f542799bb26a1e7072f932b8 
 sidebar_position: 1
 title: Écran de carte pendant la navigation
 ---
@@ -258,4 +259,3 @@ Le paramètre Flèches de virage vous permet de sélectionner si les flèches de
 
 > *Cet article a été mis à jour pour la dernière fois en décembre 2024*
 
--- source-hash: blake2s: 723bea6cd577dc5206094ca8f58472018afc3847f542799bb26a1e7072f932b8 --

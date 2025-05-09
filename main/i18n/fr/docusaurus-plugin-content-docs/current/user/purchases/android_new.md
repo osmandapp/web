@@ -1,4 +1,5 @@
 ---
+source-hash: 5572a9df6e1e9e66bb42b362200436a14ca6945276b61f66693543584aff23aa 
 sidebar_position: 1
 title:  Test des achats Android
 unlisted: true
@@ -201,4 +202,3 @@ OsmAnd Pro est le meilleur choix pour les utilisateurs qui souhaitent obtenir to
 - Comment transférer OsmAnd+ vers un autre téléphone ?
 - Pourquoi l'achat n'apparaît-il pas après la réinstallation ?
 
--- source-hash: blake2s: 5572a9df6e1e9e66bb42b362200436a14ca6945276b61f66693543584aff23aa --

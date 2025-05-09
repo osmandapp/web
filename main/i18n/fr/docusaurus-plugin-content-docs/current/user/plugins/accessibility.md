@@ -1,4 +1,5 @@
 ---
+source-hash: ef076187adaf5fe09dde92daf9fc5289add73077321b0814c69ef7fda26712f6 
 sidebar_position: 1
 title: Accessibilité
 ---
@@ -150,4 +151,3 @@ La fonctionnalité **Annonce automatique intelligente** fournit des *notificatio
 
 > *Cet article a été mis à jour pour la dernière fois en février 2025*
 
--- source-hash: blake2s: ef076187adaf5fe09dde92daf9fc5289add73077321b0814c69ef7fda26712f6 --

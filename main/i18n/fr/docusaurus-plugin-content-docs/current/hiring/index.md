@@ -1,4 +1,5 @@
 ---
+source-hash: 4fccc220ed851165d483e184390735d6ea474cb8e8a14845ba2f0d1ab6469168 
 title: Rejoignez-nous
 ---
 Nous sommes toujours à la recherche de nouveaux contributeurs qui peuvent rejoindre notre équipe internationale. Veuillez consulter notre [Mission](./mission.md) pour voir si vous pouvez aider à rendre le monde meilleur.
@@ -15,4 +16,3 @@ Si vous êtes enthousiaste à propos d'OsmAnd mais que vous n'avez pas trouvé d
 
 Veuillez nous contacter à business@osmand.net !
 
--- source-hash: blake2s: 4fccc220ed851165d483e184390735d6ea474cb8e8a14845ba2f0d1ab6469168 --

@@ -1,4 +1,5 @@
 ---
+source-hash: bf477b5c51fa3ec565f5baf8ea320b686c94efbd733726311f72c57b036ce009 
 sidebar_position: 3
 title: Notes audio / vidéo
 ---
@@ -290,4 +291,3 @@ Pour tout visualiser plus tard, vous pouvez exporter la trace ainsi que tous les
 
 > *Cet article a été mis à jour pour la dernière fois en mai 2023*
 
--- source-hash: blake2s: bf477b5c51fa3ec565f5baf8ea320b686c94efbd733726311f72c57b036ce009 --

@@ -1,4 +1,5 @@
 ---
+source-hash: f16f3cb4ca518ab2a1eeab708ce436b8d0b7b195fb8144a44bcbb541a2e20de5 
 sidebar_position: 5
 sidebar_label: Planifier un itinéraire
 title: Planifier un itinéraire sur le site Web
@@ -125,4 +126,3 @@ Le menu **Trace locale** propose trois panneaux d'édition : **Info**, **Trace*
 
 > *Cet article a été mis à jour pour la dernière fois en janvier 2025*
 
--- source-hash: blake2s: f16f3cb4ca518ab2a1eeab708ce436b8d0b7b195fb8144a44bcbb541a2e20de5 --

@@ -1,4 +1,5 @@
 ---
+source-hash: a29650de82a89ec22c40a084beb888ce4118499172a22d048ef34587cea9c288 
 sidebar_position: 3
 title: Menu principal
 ---
@@ -81,4 +82,3 @@ Dans ce menu, vous pouvez **changer** le profil actif, **configurer** (modifier 
 
 > *Cet article a été mis à jour pour la dernière fois en juillet 2022*
 
--- source-hash: blake2s: a29650de82a89ec22c40a084beb888ce4118499172a22d048ef34587cea9c288 --

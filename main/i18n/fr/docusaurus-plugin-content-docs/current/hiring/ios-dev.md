@@ -1,4 +1,5 @@
 ---
+source-hash: 973bac51ced137fa141d71614aea207b77a075631ee152a34ecf9d4c5ee1c0c4 
 sidebar_position: 3
 title: Développeur iOS
 ---
@@ -50,4 +51,3 @@ Nous recherchons un développeur expérimenté et enthousiaste capable de faire 
 - Travail stable dans une entreprise en développement dynamique
 - Développement entièrement open source (https://github.com/osmandapp/)
 
--- source-hash: blake2s: 973bac51ced137fa141d71614aea207b77a075631ee152a34ecf9d4c5ee1c0c4 --

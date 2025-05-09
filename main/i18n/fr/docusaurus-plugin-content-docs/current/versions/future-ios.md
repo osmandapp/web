@@ -1,4 +1,5 @@
 ---
+source-hash: bf9f8cc2255be1b955c1bbd0295b32125e8dfe480f1b3ee0c0f673c8232b7e56 
 sidebar_position: 5
 ---
 
@@ -359,4 +360,3 @@ En savoir plus :
   - [Chaînes pour les données cartographiques américaines (Plugin Cartes américaines)](https://github.com/osmandapp/OsmAnd-iOS/issues/4334).
   - [Arrière-plan de superposition](https://github.com/osmandapp/OsmAnd-iOS/issues/4332).
 
--- source-hash: blake2s: bf9f8cc2255be1b955c1bbd0295b32125e8dfe480f1b3ee0c0f673c8232b7e56 --

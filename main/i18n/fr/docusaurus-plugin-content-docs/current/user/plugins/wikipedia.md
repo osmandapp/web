@@ -1,4 +1,5 @@
 ---
+source-hash: 306edf1bf41fb7c4db44d5598054ea29f394ffae9cff522f44b12eac70ed18b4 
 sidebar_position: 18
 title:  Wikipedia
 ---
@@ -275,4 +276,3 @@ Dans la version **iOS** de l'application, vous pouvez également accéder aux op
 
 > *Cet article a été mis à jour pour la dernière fois en octobre 2024*
 
--- source-hash: blake2s: 306edf1bf41fb7c4db44d5598054ea29f394ffae9cff522f44b12eac70ed18b4 --

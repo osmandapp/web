@@ -1,4 +1,5 @@
 ---
+source-hash: bc3484dbf3ffce9355c487f50f6e7e5305b4f3dee1bd37426e6767aee9446c38 
 title: Site Web
 ---
 
@@ -36,4 +37,3 @@ Cette section fournit des informations sur la planification d'itinéraires ou la
 
 Cette section explique comment trouver des points d'intérêt (POI) de différentes catégories sur la carte, effectuer une recherche classique et afficher des icônes de catégorie sur la carte.
 
--- source-hash: blake2s: bc3484dbf3ffce9355c487f50f6e7e5305b4f3dee1bd37426e6767aee9446c38 --

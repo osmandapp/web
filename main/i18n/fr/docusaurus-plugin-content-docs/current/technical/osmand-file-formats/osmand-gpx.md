@@ -1,4 +1,5 @@
 ---
+source-hash: ff79c4be7a2c3139f8aadb907d3059385f3620612ed413e6c1c52178ad119ec3 
 sidebar_position: 2
 ---
 
@@ -651,4 +652,3 @@ Certaines balises GPX sont utilisées ou stockées indirectement dans les fichie
 
 > *Cet article a été mis à jour pour la dernière fois en mars 2025*
 
--- source-hash: blake2s: ff79c4be7a2c3139f8aadb907d3059385f3620612ed413e6c1c52178ad119ec3 --

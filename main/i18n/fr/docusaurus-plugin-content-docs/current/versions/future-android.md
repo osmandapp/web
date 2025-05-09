@@ -1,4 +1,5 @@
 ---
+source-hash: 34b50f27eb26c813777b149a24388345f0c68d342d4a9318ddac22e473a62397 
 sidebar_position: 4
 ---
 
@@ -373,4 +374,3 @@ En savoir plus :
   - Dossier intelligent : corrections de bugs et améliorations de l'interface utilisateur.
   - Bug avec la [projection directe vers un point](https://github.com/osmandapp/OsmAnd/issues/21588).
 
--- source-hash: blake2s: 34b50f27eb26c813777b149a24388345f0c68d342d4a9318ddac22e473a62397 --

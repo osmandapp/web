@@ -1,4 +1,5 @@
 ---
+source-hash: 2fb897dc06184eb6668d655db9272507d80a43e8651d0398b5cf750ab25ea76a 
 sidebar_position: 5
 ---
 
@@ -144,4 +145,3 @@ D'autres couches peuvent être instanciées dans des plugins.
 | OARulerByTapControlLayer | 170 000     | Règle de distance |
 | OAContextMenuLayer       | 210 000     |                |
 
--- source-hash: blake2s: 2fb897dc06184eb6668d655db9272507d80a43e8651d0398b5cf750ab25ea76a --

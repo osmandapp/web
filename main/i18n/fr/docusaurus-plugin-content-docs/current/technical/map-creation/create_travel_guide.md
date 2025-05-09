@@ -1,4 +1,5 @@
 ---
+source-hash: 346688d99dd1a403908cdfe9ebddc651c126512fa9cca03eb6717a20e178207e 
 title: Créer un guide de voyage personnalisé
 versions: '*'
 ---
@@ -46,4 +47,3 @@ Votre fichier devrait être créé en quelques secondes. Par défaut, il sera no
 
 Après avoir démarré l'application, accédez au menu *[Guides de voyage](../../user/plan-route/travel-guides.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*). Utilisez la recherche pour afficher les nouveaux articles.
 
--- source-hash: blake2s: 346688d99dd1a403908cdfe9ebddc651c126512fa9cca03eb6717a20e178207e --

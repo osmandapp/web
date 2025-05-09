@@ -1,4 +1,5 @@
 ---
+source-hash: 0db426bf3863ed32bdabeb14e77d821e9cbf22f4a176cd185ee7046ff72ef040 
 sidebar_position: 4
 ---
 
@@ -53,4 +54,3 @@ Quelques conseils :
 - Il peut ensuite être utile de consulter les fichiers de configuration existants pour les langues grammaticalement plus complexes (par exemple, l'allemand, le tchèque ou le slovaque) afin d'examiner les solutions existantes pour la grammaire spéciale, l'ordre des mots, la formation des nombres, etc. Regardez particulièrement les langues similaires à la vôtre.
 - Vous pouvez tester votre propre fichier tts (ou vos améliorations aux fichiers existants) vous-même localement, avant une demande de tirage, placez-le simplement sur votre appareil avec la convention de fichier/dossier correcte.
 
--- source-hash: blake2s: 0db426bf3863ed32bdabeb14e77d821e9cbf22f4a176cd185ee7046ff72ef040 --

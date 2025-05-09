@@ -1,4 +1,5 @@
 ---
+source-hash: 9340a6e92573e690c7bdc8aacb32ea213625304ea83d0efd02682302d1cc11d0 
 sidebar_position: 16
 title:  Métriques du véhicule
 ---
@@ -152,4 +153,3 @@ Certains widgets offrent des options de mode d'affichage :
 
 > *Cet article a été mis à jour pour la dernière fois en décembre 2024*
 
--- source-hash: blake2s: 9340a6e92573e690c7bdc8aacb32ea213625304ea83d0efd02682302d1cc11d0 --

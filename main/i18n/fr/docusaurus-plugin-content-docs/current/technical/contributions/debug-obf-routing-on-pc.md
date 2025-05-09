@@ -1,4 +1,5 @@
 ---
+source-hash: 6a949aef99a936158bf3e97f9352bb4696f96c1a031b136a31e621ff280aa2f6 
 sidebar_position: 5
 ---
 
@@ -22,4 +23,3 @@ Trouver le nom du lieu auquel une rue est associée dans les cartes OBF hors lig
 - Si vous avez zoomé sur votre zone, faites un clic droit avec la souris sur la carte et choisissez "afficher l'adresse" dans le menu contextuel.
 - Normalement, tous les noms de rue devraient maintenant être affichés à partir du fichier OBF, ainsi que le nom du lieu auquel chaque rue est associée dans la recherche hors ligne d'OsmAnd.
 
--- source-hash: blake2s: 6a949aef99a936158bf3e97f9352bb4696f96c1a031b136a31e621ff280aa2f6 --

@@ -1,4 +1,5 @@
 ---
+source-hash: d835e634c90026418b561c2679f618c58012076cabb7fc146a6bc68e9fab4b7e 
 sidebar_position: 2
 title:  Guides de voyage
 ---
@@ -364,4 +365,3 @@ Le [plugin Wikipédia](../plugins/wikipedia.md) est une [fonctionnalité payante
 
 > *Cet article a été mis à jour pour la dernière fois en janvier 2025*
 
--- source-hash: blake2s: d835e634c90026418b561c2679f618c58012076cabb7fc146a6bc68e9fab4b7e --

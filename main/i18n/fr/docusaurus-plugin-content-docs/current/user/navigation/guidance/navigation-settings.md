@@ -1,4 +1,5 @@
 ---
+source-hash: f6964efd49993fe30aa05f9c925d2fbcb4f659670a2c723f0a5d8d12b13374cf 
 sidebar_position: 7
 title: Paramètres de navigation
 ---
@@ -560,4 +561,3 @@ Pour plus d'informations sur l'utilisation de la navigation basée sur les trace
 
 > *Cet article a été mis à jour pour la dernière fois en avril 2025*
 
--- source-hash: blake2s: f6964efd49993fe30aa05f9c925d2fbcb4f659670a2c723f0a5d8d12b13374cf --

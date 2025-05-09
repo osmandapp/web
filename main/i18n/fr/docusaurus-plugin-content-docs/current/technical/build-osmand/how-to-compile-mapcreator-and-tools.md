@@ -1,4 +1,5 @@
 ---
+source-hash: 7286d2161e67d694bf7579f2e1a3da2d61dab1b94dd48b3053e387b33c57e3e7 
 sidebar_position: 7
 ---
 
@@ -78,4 +79,3 @@ https://github.com/osmandapp/OsmAnd-core/blob/legacy_core/externals/jpeg/jconfig
     (cd "baked/amd64-linux-clang-release.make" && make -j4)
 ```
 
--- source-hash: blake2s: 7286d2161e67d694bf7579f2e1a3da2d61dab1b94dd48b3053e387b33c57e3e7 --

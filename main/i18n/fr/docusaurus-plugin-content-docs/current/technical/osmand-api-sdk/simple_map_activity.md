@@ -1,4 +1,5 @@
 ---
+source-hash: 247239c9a0199d09c7c1e3c126852d58b701aa5d264188aa982166f1a1c7013a 
 sidebar_position: 2
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
@@ -73,4 +74,3 @@ public class SimpleMapActivity extends AppCompatActivity {
 }
 ```
 
--- source-hash: blake2s: 247239c9a0199d09c7c1e3c126852d58b701aa5d264188aa982166f1a1c7013a --

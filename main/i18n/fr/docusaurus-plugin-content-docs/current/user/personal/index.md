@@ -1,4 +1,5 @@
 ---
+source-hash: e6e6ae38da35e21d6465fb2d781a25c6454487db866c3776815d9cd4b5ffba8e 
 sidebar_position: 1
 ---
 
@@ -46,4 +47,3 @@ L'*outil d'importation / exportation* dans OsmAnd vous permet de gérer vos donn
 
 *OsmAnd Cloud* est la ressource dont vous avez besoin pour enregistrer vos paramètres personnels et les données de l'application.
 
--- source-hash: blake2s: e6e6ae38da35e21d6465fb2d781a25c6454487db866c3776815d9cd4b5ffba8e --

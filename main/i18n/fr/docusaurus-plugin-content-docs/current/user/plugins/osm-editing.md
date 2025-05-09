@@ -1,4 +1,5 @@
 ---
+source-hash: a0aaab65c1318ea4a3721661a60b946da0afa23895e915cec4fec11e5cb007bf 
 sidebar_position: 9
 title:  Édition OpenStreetMap
 ---
@@ -290,4 +291,3 @@ Vous pouvez créer un fichier OBF avec [OsmAndMapCreator](../../technical/map-cr
 
 > *Cet article a été mis à jour pour la dernière fois en mai 2024*
 
--- source-hash: blake2s: a0aaab65c1318ea4a3721661a60b946da0afa23895e915cec4fec11e5cb007bf --

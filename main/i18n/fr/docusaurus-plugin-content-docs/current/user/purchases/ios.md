@@ -1,4 +1,5 @@
 ---
+source-hash: a00f6a9e498cc04762d6e553a64ca34b5105ec0423d27d0cbaf40b75749f1edb 
 sidebar_position: 2
 title: Achats iOS
 ---
@@ -197,4 +198,3 @@ Vous pouvez acheter OsmAnd en utilisant une carte cadeau App Store. Cette métho
 - [Guide détaillé sur l'achat de cartes cadeaux App Store](https://www.apple.com/shop/gift-cards).
 - [Instructions pour échanger votre carte cadeau App Store](https://support.apple.com/en-gb/HT201209).
 
--- source-hash: blake2s: a00f6a9e498cc04762d6e553a64ca34b5105ec0423d27d0cbaf40b75749f1edb --

@@ -1,4 +1,5 @@
 ---
+source-hash: b788e9b84503d9e132c23bceb2a7471491423b8001155ffe7ae9d56a2c614557 
 sidebar_position: 4
 title:  Widgets de navigation
 ---
@@ -490,4 +491,3 @@ Il affiche le **nom**, l'**icône du point** et 2 **distances** :
 
 > *Cet article a été mis à jour pour la dernière fois en avril 2025*
 
--- source-hash: blake2s: b788e9b84503d9e132c23bceb2a7471491423b8001155ffe7ae9d56a2c614557 --

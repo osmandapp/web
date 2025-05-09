@@ -1,4 +1,5 @@
 ---
+source-hash: 3b9e52018b1e2b66d2a9ad05e42687fa73264bf1bacc890c90012ec8357db7a2 
 sidebar_position: 3
 title: Navigation
 ---
@@ -126,4 +127,3 @@ Pour un dépannage supplémentaire, visitez :
 
 - [Le même problème](../troubleshooting/track-recording-issues.md#the-system-may-kill-background-apps-to-save-power) avec l'enregistrement de traces en arrière-plan.
 
--- source-hash: blake2s: 3b9e52018b1e2b66d2a9ad05e42687fa73264bf1bacc890c90012ec8357db7a2 --

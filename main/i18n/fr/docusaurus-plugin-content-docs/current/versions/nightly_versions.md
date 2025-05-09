@@ -1,4 +1,5 @@
 ---
+source-hash: b103ec03d1346af9d4eb23d38cf2c934e195168537f6f6e2e35083562868be22 
 sidebar_position: 1
 ---
 
@@ -32,4 +33,3 @@ Les versions bêta iOS (TestFlight) sont généralement fournies chaque semaine.
   <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Rejoindre TestFlight</a>
 </div>
 
--- source-hash: blake2s: b103ec03d1346af9d4eb23d38cf2c934e195168537f6f6e2e35083562868be22 --

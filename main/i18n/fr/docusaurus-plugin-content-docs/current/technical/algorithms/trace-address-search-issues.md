@@ -1,4 +1,5 @@
 ---
+source-hash: f63a2d083fe39882aaf9cfe50fe95e67872dae1da6d8801744282b7f8b17c272 
 sidebar_position: 3
 ---
 
@@ -161,4 +162,3 @@ Plusieurs facteurs affectent la précision des recherches d'adresses dans le sys
 
 - **Non-concordances de codes postaux**. Les limites dans TIGER peuvent être incorrectes, entraînant des affectations de codes postaux incorrectes.
 
--- source-hash: blake2s: f63a2d083fe39882aaf9cfe50fe95e67872dae1da6d8801744282b7f8b17c272 --

@@ -1,4 +1,5 @@
 ---
+source-hash: 8c5ae254ff458738a02bc05dabea45b233737610b3bb57f49508f333fe476c5e 
 sidebar_position: 0
 title:  À propos du routage OsmAnd
 ---
@@ -189,4 +190,3 @@ La **section Développement** des paramètres *Paramètres d'itinéraire* (*Menu
 
 > *Cet article a été mis à jour pour la dernière fois en juillet 2024*
 
--- source-hash: blake2s: 8c5ae254ff458738a02bc05dabea45b233737610b3bb57f49508f333fe476c5e --

@@ -1,4 +1,5 @@
 ---
+source-hash: 980ef74c38ad5733110caaa929a16d89190bc6182e14bd182e3b0ec846291ad9 
 sidebar_position: 7
 title:  Itinéraire ferroviaire
 ---
@@ -61,4 +62,3 @@ Le *routage ferroviaire* peut être configuré selon vos besoins dans la [sectio
 
 > *Cet article a été mis à jour pour la dernière fois en juin 2024*
 
--- source-hash: blake2s: 980ef74c38ad5733110caaa929a16d89190bc6182e14bd182e3b0ec846291ad9 --

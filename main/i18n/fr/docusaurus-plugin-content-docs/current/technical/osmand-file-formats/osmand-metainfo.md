@@ -1,4 +1,5 @@
 ---
+source-hash: 931025f9ae31034d0f706373cf4af6966db472e96f72e9ef7357826d859f3589 
 sidebar_position: 9
 ---
 
@@ -21,4 +22,3 @@ Le format Metainfo utilisé dans OsmAnd pour stocker les préférences des couch
 
 La classe prenant en charge cette source de tuiles se trouve à ou près de [View](https://github.com/osmandapp/Osmand/blob/master/OsmAnd-java/src/main/java/net/osmand/map/TileSourceManager.java#L28).
 
--- source-hash: blake2s: 931025f9ae31034d0f706373cf4af6966db472e96f72e9ef7357826d859f3589 --

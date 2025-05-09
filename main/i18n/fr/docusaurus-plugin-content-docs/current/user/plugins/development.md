@@ -1,4 +1,5 @@
 ---
+source-hash: 5845aab1bfe508dbab11fafce4027fe1158175acd04b09f86dc6b9443811d834 
 sidebar_position: 10
 title:  Développement OsmAnd
 ---
@@ -364,4 +365,3 @@ Pour arrêter la simulation du mouvement de votre appareil, revenez aux [paramè
 
 > *Cet article a été mis à jour pour la dernière fois en mai 2023*
 
--- source-hash: blake2s: 5845aab1bfe508dbab11fafce4027fe1158175acd04b09f86dc6b9443811d834 --

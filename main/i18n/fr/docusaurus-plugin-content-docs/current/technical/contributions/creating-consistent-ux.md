@@ -1,4 +1,5 @@
 ---
+source-hash: 888290085e58c614a95f55d9f75219cb7f1fdf72d0acd925ac6f33db40bf9003 
 sidebar_position: 2
 ---
 
@@ -36,4 +37,3 @@ Utilisez une seule expression pour une certaine fonctionnalité, ne mélangez pa
 
 * Une note sur le rendu : L'apparence cartographique de nos styles de cartes a été testée pour sa convivialité et sa visibilité à une multitude d'emplacements cartographiques, avec de nombreux appareils et technologies d'écran, et dans différentes conditions d'éclairage. Les "améliorations spontanées" du rendu sont presque toujours discutables, peuvent au moins nécessiter plus d'investigations et de tests que vous ne le pensez... :)
 
--- source-hash: blake2s: 888290085e58c614a95f55d9f75219cb7f1fdf72d0acd925ac6f33db40bf9003 --

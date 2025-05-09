@@ -1,4 +1,5 @@
 ---
+source-hash: 64f6ba33270669888360c16fcd3b8d4bf41161d02ddde07ef5793c0a6dfda96f 
 sidebar_position: 4
 title:  Menu contextuel de la trace
 ---
@@ -701,4 +702,3 @@ La liste des actions est disponible en bas de l'onglet **Filtre** ou **Statistiq
 
 > *Cet article a été mis à jour pour la dernière fois en novembre 2024*
 
--- source-hash: blake2s: 64f6ba33270669888360c16fcd3b8d4bf41161d02ddde07ef5793c0a6dfda96f --

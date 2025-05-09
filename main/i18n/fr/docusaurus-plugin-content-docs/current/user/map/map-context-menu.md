@@ -1,4 +1,5 @@
 ---
+source-hash: 1c5eaaa1b1ace2e24bb8b85799b0fcc37dd4575d3f7514a4913fb799b68ef7c8 
 sidebar_position: 3
 title: Menu contextuel de la carte
 ---
@@ -865,4 +866,3 @@ Types d'actions disponibles :
 
 > *Cet article a été mis à jour pour la dernière fois en avril 2025*
 
--- source-hash: blake2s: 1c5eaaa1b1ace2e24bb8b85799b0fcc37dd4575d3f7514a4913fb799b68ef7c8 --

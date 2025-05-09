@@ -1,4 +1,5 @@
 ---
+source-hash: 007fa637d76eede591d4847952ea2dafba5f47f9c3e9182ec321d34254691bbe 
 sidebar_position: 6
 title: Mes Lieux
 ---
@@ -271,4 +272,3 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 
 > *Cet article a été mis à jour pour la dernière fois en mars 2025*
 
--- source-hash: blake2s: 007fa637d76eede591d4847952ea2dafba5f47f9c3e9182ec321d34254691bbe --

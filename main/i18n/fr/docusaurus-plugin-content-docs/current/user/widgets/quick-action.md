@@ -1,4 +1,5 @@
 ---
+source-hash: f953b48d9c0d7991a8de80efdc7104d4b8ee996aea6dfedafb14348ff4309e96 
 sidebar_position: 7
 title:  Action rapide (Boutons personnalisés)
 ---
@@ -313,4 +314,3 @@ En utilisant la fonctionnalité de l'outil Action rapide, vous pouvez attribuer 
 
 > *Cet article a été mis à jour pour la dernière fois en avril 2025*
 
--- source-hash: blake2s: f953b48d9c0d7991a8de80efdc7104d4b8ee996aea6dfedafb14348ff4309e96 --

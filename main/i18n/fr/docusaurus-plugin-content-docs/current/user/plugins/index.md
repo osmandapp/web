@@ -1,4 +1,5 @@
 ---
+source-hash: 84fb66ff48bb4f351f2545ed052cb9c9ea00a33e0e158ade19da044e0aebce3a 
 sidebar_position: 18
 title:  Plugins
 ---
@@ -217,4 +218,3 @@ _______
 
 > *Cet article a été mis à jour pour la dernière fois en mars 2025*
 
--- source-hash: blake2s: 84fb66ff48bb4f351f2545ed052cb9c9ea00a33e0e158ade19da044e0aebce3a --

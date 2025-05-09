@@ -1,4 +1,5 @@
 ---
+source-hash: a286ca70a2bc99586c266a72c20921e2e0ca9bc8dd54748021c8ad6ca5897d8d 
 sidebar_position: 6
 title:  Invites vocales / Notifications
 ---
@@ -409,4 +410,3 @@ Sélectionnez les options de réveil de l'écran et assurez-vous qu'OsmAnd reste
 
 > *Cet article a été mis à jour pour la dernière fois en mars 2025*
 
--- source-hash: blake2s: a286ca70a2bc99586c266a72c20921e2e0ca9bc8dd54748021c8ad6ca5897d8d --

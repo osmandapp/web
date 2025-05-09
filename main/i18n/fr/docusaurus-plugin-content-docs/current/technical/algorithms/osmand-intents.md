@@ -1,4 +1,5 @@
 ---
+source-hash: 2faf1ad9efb6a34a2bd8a06bc868c52e7da50e5280c91419d6143b42cb5b72aa 
 sidebar_position: 2
 ---
 
@@ -72,4 +73,3 @@ Description de l'URL :
 * https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/util/GeoPointParserUtil.java
 * https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/test/java/net/osmand/util/GeoPointParserUtilTest.java
 
--- source-hash: blake2s: 2faf1ad9efb6a34a2bd8a06bc868c52e7da50e5280c91419d6143b42cb5b72aa --

@@ -1,4 +1,5 @@
 ---
+source-hash: 24f8d19052c4cd11242dec4db80529c93a2c381f5e0f3fda3c7f8573ee4760f8 
 sidebar_position: 15
 title: Enregistrement de trajets
 ---
@@ -481,4 +482,3 @@ Pour un dépannage supplémentaire, visitez : [Dépannage de l'enregistrement d
 
 > *Cet article a été mis à jour pour la dernière fois en janvier 2025*
 
--- source-hash: blake2s: 24f8d19052c4cd11242dec4db80529c93a2c381f5e0f3fda3c7f8573ee4760f8 --

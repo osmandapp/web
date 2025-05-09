@@ -1,4 +1,5 @@
 ---
+source-hash: 453612ac9c35a04b0ba11c79a1840bf0c5dafd10afc3461a8d8413fa9e514840 
 sidebar_position: 3
 title:  Historique de recherche
 ---
@@ -197,4 +198,3 @@ Sur l'écran de [suppression](#delete), sélectionnez les éléments requis dans
 
 > *Cet article a été mis à jour pour la dernière fois en juillet 2024*
 
--- source-hash: blake2s: 453612ac9c35a04b0ba11c79a1840bf0c5dafd10afc3461a8d8413fa9e514840 --

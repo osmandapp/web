@@ -1,4 +1,5 @@
 ---
+source-hash: e3aa95b847fca6a38a2084450352beb3869349ca6dc99925356bf3e8a5137635 
 sidebar_position: 9
 title: Android Auto
 ios: false
@@ -324,4 +325,3 @@ L'application OsmAnd peut être ouverte et utilisée pour naviguer dans *Android
 
 > *Cet article a été mis à jour pour la dernière fois en mars 2025*
 
--- source-hash: blake2s: e3aa95b847fca6a38a2084450352beb3869349ca6dc99925356bf3e8a5137635 --

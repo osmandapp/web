@@ -1,4 +1,5 @@
 ---
+source-hash: f32feca78e313d11b93558bf66db7d3e44bebccb9d28ea4762fca959f54b39bd 
 sidebar_position: 2
 title: Gérer les traces
 ---
@@ -510,4 +511,3 @@ Il existe plusieurs façons d'exporter un ou plusieurs fichiers de traces vers n
 
 > *Cet article a été mis à jour pour la dernière fois en avril 2025*
 
--- source-hash: blake2s: f32feca78e313d11b93558bf66db7d3e44bebccb9d28ea4762fca959f54b39bd --

@@ -1,4 +1,8 @@
+---
+source-hash: 3c97a7b3ea10158368841d5657e95a67addba27eb6f2f2edf98839e7190b45fc 
+---
 # Documentation technique
+
 
 La documentation technique représente des spécifications, des instructions ou des informations qui nécessitent soit un accès à un IDE, soit un niveau de compréhension technique.
 
@@ -22,4 +26,3 @@ Décrit différents algorithmes dans différents domaines et explique comment il
 
 Explique comment vous pouvez et devez contribuer à OsmAnd, OpenStreetMap ou à d'autres projets collaboratifs.
 
--- source-hash: blake2s: 3c97a7b3ea10158368841d5657e95a67addba27eb6f2f2edf98839e7190b45fc --

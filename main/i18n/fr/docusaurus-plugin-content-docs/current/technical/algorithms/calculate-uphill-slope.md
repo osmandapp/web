@@ -1,4 +1,5 @@
 ---
+source-hash: 48e505894a96c59679afafb50fc66400ba8958b131c56443e6315fa2398d6cc9 
 sidebar_position: 5
 ---
 
@@ -94,4 +95,3 @@ Le graphique vert est calculé différemment de la montée / descente et peut pr
 
 Pour calculer la pente, l'ensemble des données est divisé en étapes égales de 20 mètres. Pour chaque point de cette grille, l'altitude moyenne autour du point (rayon de 10 mètres) est calculée. Ensuite, la dérivée discrète est calculée en utilisant la [différence finie centrée](https://en.wikipedia.org/wiki/Finite_difference).
 
--- source-hash: blake2s: 48e505894a96c59679afafb50fc66400ba8958b131c56443e6315fa2398d6cc9 --

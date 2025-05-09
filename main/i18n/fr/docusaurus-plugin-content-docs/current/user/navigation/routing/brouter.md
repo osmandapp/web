@@ -1,4 +1,5 @@
 ---
+source-hash: 59d9a11d1fa0e8ee29659a85a1b8a197fa0d2e27c9582be7bcb51b1c4d44e029 
 sidebar_position: 12
 title: BRouter
 ---
@@ -181,4 +182,3 @@ Lorsque BRouter est configuré, nous pouvons comparer la vitesse de pré-calcul 
 
 > *Cet article a été mis à jour pour la dernière fois en juin 2024*
 
--- source-hash: blake2s: 59d9a11d1fa0e8ee29659a85a1b8a197fa0d2e27c9582be7bcb51b1c4d44e029 --

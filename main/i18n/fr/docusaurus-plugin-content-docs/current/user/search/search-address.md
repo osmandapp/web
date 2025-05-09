@@ -1,4 +1,5 @@
 ---
+source-hash: d1f02e3ebd63ba6825f67d95d6d384294de3e8d91b56a8211343e38131bc5536 
 sidebar_position: 2
 title: Rechercher une adresse
 ---
@@ -215,4 +216,3 @@ La [**recherche par coordonnées**](../search/search-coordinates.md) vous permet
 
 > *Cet article a été mis à jour pour la dernière fois en juillet 2024*
 
--- source-hash: blake2s: d1f02e3ebd63ba6825f67d95d6d384294de3e8d91b56a8211343e38131bc5536 --

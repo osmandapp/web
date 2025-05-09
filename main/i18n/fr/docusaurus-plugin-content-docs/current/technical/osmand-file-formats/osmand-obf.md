@@ -1,4 +1,5 @@
 ---
+source-hash: abda667c44ec505ff1c39f82c1ae71432c3462e6eb3b8363ff45abf1e78cd3f4 
 sidebar_position: 7
 ---
 
@@ -180,4 +181,3 @@ Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichier
 > écrire les codes postaux extraits et leurs rues
 >
 
--- source-hash: blake2s: abda667c44ec505ff1c39f82c1ae71432c3462e6eb3b8363ff45abf1e78cd3f4 --

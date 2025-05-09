@@ -1,4 +1,5 @@
 ---
+source-hash: aa40addf6503f2a62232139c48a2c15c3e10cc75c46124828533c07d410d00b2 
 sidebar_position: 7
 title:  Points sur la carte
 ---
@@ -241,4 +242,3 @@ Tous ces types de points peuvent être enregistrés au format GPX pour vous four
 
 > *Cet article a été mis à jour pour la dernière fois en novembre 2024*
 
--- source-hash: blake2s: aa40addf6503f2a62232139c48a2c15c3e10cc75c46124828533c07d410d00b2 --

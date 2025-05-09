@@ -1,4 +1,5 @@
 ---
+source-hash: 3c73f6d35d3497a8d646ecf3bc241fa47e067b1cbf601683230cf58e5cf9e2d2 
 sidebar_position: 3
 title: Naviguer par marqueurs
 ---
@@ -238,4 +239,3 @@ __
 
 > *Cet article a été mis à jour pour la dernière fois en juin 2024.*
 
--- source-hash: blake2s: 3c73f6d35d3497a8d646ecf3bc241fa47e067b1cbf601683230cf58e5cf9e2d2 --

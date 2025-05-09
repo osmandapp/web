@@ -1,4 +1,5 @@
 ---
+source-hash: 823be201d28d7cf02563c69576e6d1b0bf1fcaab04351ff63bb9a5c3e1e205b5 
 sidebar_position: 4
 title: Configurer la carte
 ---
@@ -103,4 +104,3 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configur
 
 > *Cet article a été mis à jour pour la dernière fois en février 2025*
 
--- source-hash: blake2s: 823be201d28d7cf02563c69576e6d1b0bf1fcaab04351ff63bb9a5c3e1e205b5 --

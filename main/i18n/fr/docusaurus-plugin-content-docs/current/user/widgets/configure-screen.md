@@ -1,4 +1,5 @@
 ---
+source-hash: 159bad4464e7d9152eaa66e894011054f73ebdc003564eb80e99d725d24fd269 
 sidebar_position: 1
 title: Configurer l'écran
 ---
@@ -595,4 +596,3 @@ Actions disponibles :
 
 > *Cet article a été mis à jour pour la dernière fois en avril 2025*
 
--- source-hash: blake2s: 159bad4464e7d9152eaa66e894011054f73ebdc003564eb80e99d725d24fd269 --

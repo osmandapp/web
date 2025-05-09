@@ -1,4 +1,5 @@
 ---
+source-hash: d107eb61e2e8b0514b612cc6c9dc97031286329bbf0e90b1644fc78f98488320 
 sidebar_position: 5
 title: Schémas de couleurs
 ---
@@ -194,4 +195,3 @@ Vous pouvez importer et exporter toutes les palettes de couleurs par défaut et 
 
 > *Cet article a été mis à jour pour la dernière fois en janvier 2025*
 
--- source-hash: blake2s: d107eb61e2e8b0514b612cc6c9dc97031286329bbf0e90b1644fc78f98488320 --

@@ -1,4 +1,5 @@
 ---
+source-hash: 5ab0885e9739fd3bdb3b73e463c7474bc8d4c75ab8349d6ad3c2b1e75234b5c5 
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -475,4 +476,3 @@ Si vous avez des problèmes avec l'enregistrement de votre compte :
 
 > *Cet article a été mis à jour pour la dernière fois en février 2025*
 
--- source-hash: blake2s: 5ab0885e9739fd3bdb3b73e463c7474bc8d4c75ab8349d6ad3c2b1e75234b5c5 --

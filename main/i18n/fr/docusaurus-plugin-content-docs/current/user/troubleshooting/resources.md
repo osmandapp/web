@@ -1,4 +1,5 @@
 ---
+source-hash: d120ad4e819bb09383fd65e910d653017723a57867f57b8be08907e15ad41dec 
 sidebar_position: 9
 title: Ressources et personnalisations
 ---
@@ -148,4 +149,3 @@ Si vous avez des suggestions pour de nouveaux styles de carte, des plugins, ou s
 
 - **Obtenez** : <AllStores/>
 
--- source-hash: blake2s: d120ad4e819bb09383fd65e910d653017723a57867f57b8be08907e15ad41dec --

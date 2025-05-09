@@ -1,4 +1,5 @@
 ---
+source-hash: d5cfab4861b9bd743d3f04bbd7ef92694768358602639508d75e0d21cfe0c9a9 
 sidebar_position: 11
 title:  Routage en ligne
 ---
@@ -59,4 +60,3 @@ Lorsque le routage en ligne est sélectionné pour la navigation, une option sup
 
 > *Cet article a été mis à jour pour la dernière fois en juin 2024*
 
--- source-hash: blake2s: d5cfab4861b9bd743d3f04bbd7ef92694768358602639508d75e0d21cfe0c9a9 --

@@ -1,4 +1,5 @@
 ---
+source-hash: c5d2c74396afa3fc93396962026809b093412269f5e87f0b9dea73e0cd88b9f2 
 sidebar_position: 4
 title:  Profils (Paramètres)
 ---
@@ -607,4 +608,3 @@ Actions avec le profil sélectionné :
 
 > *Cet article a été mis à jour pour la dernière fois en février 2025*
 
--- source-hash: blake2s: c5d2c74396afa3fc93396962026809b093412269f5e87f0b9dea73e0cd88b9f2 --

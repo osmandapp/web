@@ -1,4 +1,8 @@
+---
+source-hash: 0c835fc3f8b567fc6df56f473be99e6a506b3fcc7cb45e0770026172d8ddcb6d 
+---
 import Admonition from '@theme/Admonition';
+
 
 # Développer avec OsmAnd
 
@@ -74,4 +78,3 @@ En cas de question, n'hésitez pas à contacter <a class="mail-link" href="mailt
 
 Si vous n'êtes pas sûr du cas qui vous convient le mieux ou si vous souhaitez demander l'aide de développeurs expérimentés dans la construction d'applications intégrées à OsmAnd, n'hésitez pas à nous contacter à <a class="mail-link" href="mailto:business@osmand.net">business@osmand.net</a> !
 
--- source-hash: blake2s: 0c835fc3f8b567fc6df56f473be99e6a506b3fcc7cb45e0770026172d8ddcb6d --

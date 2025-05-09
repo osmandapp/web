@@ -1,4 +1,5 @@
 ---
+source-hash: 9e239a171f98e1feb2dcdc7c4681470e5d88a2e16191bb678032674412b2346a 
 sidebar_position: 1
 ---
 
@@ -9,4 +10,3 @@ sidebar_position: 1
 * [Créer un guide de voyage personnalisé](create_travel_guide.md)
 * [Créer un polygone de pays](./creating-a-country-polygon.md)
 
--- source-hash: blake2s: 9e239a171f98e1feb2dcdc7c4681470e5d88a2e16191bb678032674412b2346a --

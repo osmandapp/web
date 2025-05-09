@@ -1,4 +1,5 @@
 ---
+source-hash: 9afa560ce6ed0b0665c95e8b2678271fffd2ed0ebc1b27d11e54025ded55b5ca 
 sidebar_position: 5
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
@@ -43,4 +44,3 @@ Selon [le mode sélectionné (Moins vallonné, Plat, Vallonné)](../../user/navi
 |**_Plat_** (le plus long mais facile)            |              |     | 1:2 | 1:12| 1:30 | 1:50 | 1:74  |              | 1:5 | 1:10 | 1:17 | 1:25 | 1:40  |
 |**_Vallonné_** (plus difficile)                 |              | 1:61| 1:20| 1:7 | 1: 3 | 1:0.5| 1:0.3 |              |  1:5| 1:10 | 1:17 | 1:25 | 1:40  |
 
--- source-hash: blake2s: 9afa560ce6ed0b0665c95e8b2678271fffd2ed0ebc1b27d11e54025ded55b5ca --

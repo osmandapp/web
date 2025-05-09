@@ -1,4 +1,5 @@
 ---
+source-hash: 1d6bd17d52c161edca2e273f051b6bd8a7b7b5ae6ada849ab1465ad06e2e5d33 
 sidebar_position: 6
 title: Mapillary
 ---
@@ -185,4 +186,3 @@ Le [widget Mapillary](../widgets/info-widgets.md#mapillary-widget) est utilisé 
 
 > *Cet article a été mis à jour pour la dernière fois en octobre 2024*
 
--- source-hash: blake2s: 1d6bd17d52c161edca2e273f051b6bd8a7b7b5ae6ada849ab1465ad06e2e5d33 --

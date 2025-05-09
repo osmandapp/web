@@ -1,4 +1,5 @@
 ---
+source-hash: 6e40e88f620dd9f279094cb222bc4d39d3cadfb8c6d12ad827ddcfe86143832a 
 sidebar_position: 3
 ---
 
@@ -16,4 +17,3 @@ Dans certains cas, vous pourriez vouloir étendre ou ajuster l'expérience de ro
 
 Pour tester [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), vous pouvez utiliser [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). Pour tester routing.xml sur l'appareil, vous pouvez simplement remplacer le fichier routing.xml par défaut dans le dossier racine d'OsmAnd sur la carte SD.
 
--- source-hash: blake2s: 6e40e88f620dd9f279094cb222bc4d39d3cadfb8c6d12ad827ddcfe86143832a --

@@ -1,4 +1,5 @@
 ---
+source-hash: cdfab6e8f9b1f254d1aa7dab84ab7e20452f6ba634a6f7f4b0ecb2197c8d5f66 
 sidebar_position: 3
 ---
 
@@ -46,4 +47,3 @@ Vous êtes maintenant prêt à effectuer l'étape finale. La conversion sera eff
 
 Si tout est correct, vous trouverez My_places.obf dans votre dossier de travail. Téléchargez simplement ce fichier dans le dossier des tracés OsmAnd de vos appareils.
 
--- source-hash: blake2s: cdfab6e8f9b1f254d1aa7dab84ab7e20452f6ba634a6f7f4b0ecb2197c8d5f66 --

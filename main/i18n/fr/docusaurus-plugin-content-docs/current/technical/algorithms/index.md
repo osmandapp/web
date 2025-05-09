@@ -1,4 +1,5 @@
 ---
+source-hash: b0be7c0a58db8f02556916a33330ca4403cef05099caaabc1e208b929579022a 
 sidebar_position: 1
 ---
 
@@ -13,4 +14,3 @@ Descriptions fonctionnelles :
 * [Rendu de la carte : couches, texte, symboles, boutons et leur ordre](./map-rendering-layers.md)
 * [Calcul de la montée, de la descente et de la pente dans OsmAnd](./calculate-uphill-slope.md)
 
--- source-hash: blake2s: b0be7c0a58db8f02556916a33330ca4403cef05099caaabc1e208b929579022a --

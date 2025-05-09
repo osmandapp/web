@@ -1,4 +1,5 @@
 ---
+source-hash: c8e1d5a782e9041a7b0ad1447534b245ca9a057e0f06da1205a2b6ec39c42d55 
 sidebar_position: 2
 title:  Achats et paiements
 ---
@@ -148,4 +149,3 @@ Si vous ne recevez pas le **code de vérification** lors de la création d'un co
 - Where can I find my payment details?
 -->
 
--- source-hash: blake2s: c8e1d5a782e9041a7b0ad1447534b245ca9a057e0f06da1205a2b6ec39c42d55 --

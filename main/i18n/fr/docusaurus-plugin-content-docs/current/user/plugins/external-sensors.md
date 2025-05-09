@@ -1,4 +1,5 @@
 ---
+source-hash: e2062ab5afd4af6d729a2cfca37742ecad03ffd670f06c2c5c4655d5c2277911 
 sidebar_position: 5
 title:  Capteurs externes
 ---
@@ -237,4 +238,3 @@ Par défaut, le widget affiche le premier capteur de ce type actuellement connec
 
 > *Cet article a été mis à jour pour la dernière fois en novembre 2024*
 
--- source-hash: blake2s: e2062ab5afd4af6d729a2cfca37742ecad03ffd670f06c2c5c4655d5c2277911 --

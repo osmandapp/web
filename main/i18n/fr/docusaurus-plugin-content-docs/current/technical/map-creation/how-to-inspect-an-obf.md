@@ -1,4 +1,5 @@
 ---
+source-hash: b47a941f30ccaf72f33d334da6842984fd8a9e16da922b622f461196dd78dd9c 
 title: Comment inspecter un fichier binaire obf
 versions: '*'
 ---
@@ -19,4 +20,3 @@ Exemple et étape par étape pour les utilisateurs Windows :
 - essayer de charger ce fichier texte CSV (éventuellement très volumineux) dans n'importe quel éditeur ou programme capable de charger de très gros fichiers, comme Notepad++ ... ou essayer une importation dans n'importe quel programme de feuille de calcul comme Excel ou LibreOffice calc (choisir TAB comme séparateur de champ)
 - utiliser n'importe quelle fonction de recherche pour trouver des noms de lieux ou des noms de rues
 
--- source-hash: blake2s: b47a941f30ccaf72f33d334da6842984fd8a9e16da922b622f461196dd78dd9c --

@@ -1,4 +1,5 @@
 ---
+source-hash: fe5ee4191e3ef9fde0a236ce8645079c18b09fa7d43a50c60203208d2eac63c4 
 sidebar_position: 1
 ---
 
@@ -18,4 +19,3 @@ Le téléchargement de cartes est une action nécessaire pour utiliser la carte 
 
 Le *Menu principal* est une liste principale d'options disponibles dans l'application. Il permet un accès rapide à la configuration du profil, aux paramètres globaux, à la recherche, aux données personnelles, à la navigation et à d'autres fonctionnalités.
 
--- source-hash: blake2s: fe5ee4191e3ef9fde0a236ce8645079c18b09fa7d43a50c60203208d2eac63c4 --

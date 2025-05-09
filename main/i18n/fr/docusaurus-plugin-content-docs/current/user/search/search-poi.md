@@ -1,4 +1,5 @@
 ---
+source-hash: 8497b3586a4c810a03bd61a94848960cb481bb7fc36299e707807d33ceb82cb6 
 sidebar_position: 4
 title:  Rechercher des POI
 ---
@@ -498,4 +499,3 @@ Une option supplémentaire uniquement pour l'application iOS est **Supprimer les
 
 > *Cet article a été mis à jour pour la dernière fois en mars 2025*
 
--- source-hash: blake2s: 8497b3586a4c810a03bd61a94848960cb481bb7fc36299e707807d33ceb82cb6 --

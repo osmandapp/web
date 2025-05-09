@@ -1,4 +1,5 @@
 ---
+source-hash: e7a4aed0a5a25209b3c2755568f2a60c299215cedee0ffab97454dd2a969ee44 
 sidebar_position: 5
 title: Recherche
 ---
@@ -40,4 +41,3 @@ La recherche dans toutes les catégories de POI et la configuration d'une recher
 
 Dans cet article, vous apprendrez à rechercher les emplacements corrects à l'aide de coordonnées.
 
--- source-hash: blake2s: e7a4aed0a5a25209b3c2755568f2a60c299215cedee0ffab97454dd2a969ee44 --

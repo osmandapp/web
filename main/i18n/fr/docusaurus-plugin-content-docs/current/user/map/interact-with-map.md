@@ -1,4 +1,5 @@
 ---
+source-hash: 334d213f4d679a5cf35fd6764834e4d7aac116a97756e62b991c6212416a93e3 
 sidebar_position: 2
 title:  Interagir avec la carte
 ---
@@ -332,4 +333,3 @@ Vous pouvez supprimer plusieurs actions inutiles à l'aide du **bouton Modifier*
 
 > *Cet article a été mis à jour pour la dernière fois en décembre 2024*
 
--- source-hash: blake2s: 334d213f4d679a5cf35fd6764834e4d7aac116a97756e62b991c6212416a93e3 --

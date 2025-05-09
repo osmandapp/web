@@ -1,4 +1,5 @@
 ---
+source-hash: ddef7e04b364b0cfd91aec8b77e838c70373369b54210429bc261181e4cac9bd 
 sidebar_position: 1
 ---
 
@@ -42,4 +43,3 @@ Spécification du format SQLite d'OsmAnd.
 
 Paquets vocaux enregistrés et synthétisés par TTS qui créent des invites vocales de navigation.
 
--- source-hash: blake2s: ddef7e04b364b0cfd91aec8b77e838c70373369b54210429bc261181e4cac9bd --

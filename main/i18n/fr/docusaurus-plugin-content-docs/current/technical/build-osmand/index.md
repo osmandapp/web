@@ -1,4 +1,5 @@
 ---
+source-hash: efdccdf2022e01e0fe6a5885cea48df1507ba500ec2d610dc18c199a678b3d20 
 sidebar_position: 1
 ---
 
@@ -24,4 +25,3 @@ Vous pouvez vérifier la [licence d'OsmAnd](https://osmand.net/help-online/licen
 - Comment personnaliser le routage
 - Comment personnaliser le style de rendu
 
--- source-hash: blake2s: efdccdf2022e01e0fe6a5885cea48df1507ba500ec2d610dc18c199a678b3d20 --
