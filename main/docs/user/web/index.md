@@ -1,5 +1,5 @@
 ---
-title: Website
+title: Web Route Planner
 ---
 
 import Tabs from '@theme/Tabs';
