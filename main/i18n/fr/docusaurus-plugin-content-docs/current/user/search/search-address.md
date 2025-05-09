@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  Search Address
+title: Rechercher une adresse
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,18 +14,18 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-## Overview
+## Aperçu
 
-*OsmAnd Search by Address* is based on OpenStreetMap data and allows you to find location and directions to a specific address from a ready sorted list, as well as search by postal code or coordinates. This tool allows you to find the required addresses in a few taps, which reduces the search time and helps in case you don't remember the exact address.  
+*La recherche par adresse d'OsmAnd* est basée sur les données OpenStreetMap et vous permet de trouver un lieu et des directions vers une adresse spécifique à partir d'une liste triée, ainsi que de rechercher par code postal ou par coordonnées. Cet outil vous permet de trouver les adresses requises en quelques clics, ce qui réduit le temps de recherche et vous aide si vous ne vous souvenez pas de l'adresse exacte.
 
-OsmAnd provides several ways to get to the *Search tool* where the **Search Address** section is located.
+OsmAnd propose plusieurs façons d'accéder à l'*outil de recherche* où se trouve la section **Rechercher une adresse**.
 
-- The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#full-text-search), where you can find the *Address* tab.
-- Go to the main Android *Menu → Search → Address tab*.
-- When preparing to start a route, tap *Navigation → Set destination → Search field*.  
+- Le [bouton de recherche](../widgets/map-buttons.md#search) est toujours affiché sur la carte, et en appuyant dessus, vous accédez à l'[écran général](#full-text-search) de l'outil, où vous pouvez trouver l'onglet *Adresse*.
+- Accédez au *Menu* principal d'Android *→ Rechercher → onglet Adresse*.
+- Lorsque vous vous préparez à démarrer un itinéraire, appuyez sur *Navigation → Définir la destination → champ de recherche*.
 
 
-## Full text search
+## Recherche en texte intégral
 
 <Tabs groupId="operating-systems">
 
@@ -37,49 +37,49 @@ OsmAnd provides several ways to get to the *Search tool* where the **Search Addr
 
 <TabItem value="ios" label="iOS">
 
-![Search iOS](@site/static/img/search/street_search_ios.png)  
+![Search iOS](@site/static/img/search/street_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Search by Address simplifies the search and navigation process, ensures accuracy and usability, and reduces the time it takes to find the right address.  
+La recherche par adresse simplifie le processus de recherche et de navigation, garantit la précision et la convivialité, et réduit le temps nécessaire pour trouver la bonne adresse.
 
-- **To use the Search Address function,** you have to [download a map](../start-with/download-maps.md) of the required area first.
-- **The search is based on the data located in the visible area of the map** on the device screen. If you do not find anything, OsmAnd offers to increase the search radius.
-- The address information in OsmAnd contains all [OSM tag keys](https://wiki.openstreetmap.org/w/index.php?title=Key:addr).
-
-
-Search query list:
-
-**1.** The **order** of items in the list:
-
-- **Ordered by name**. Selecting *First specify city/town/locality* (Android) or *Select city* (iOS) will display a list that starts with unnamed items, if any, then numeric names followed by the names by letters.
-- **Ascending numerical order**. In the next search list, the house numbers are displayed in ascending order, after entering the city and street.
-
-**2.** Each field in the Address Search list contains **information** such as:
-
-- An icon that identifies the type of locality.
-- Part of an address, postal number, or coordinate area.
-- Distance from your current location or from the city center.
-- Additional information, such as the city's district.
+- **Pour utiliser la fonction de recherche d'adresse,** vous devez d'abord [télécharger une carte](../start-with/download-maps.md) de la zone requise.
+- **La recherche est basée sur les données situées dans la zone visible de la carte** sur l'écran de l'appareil. Si vous ne trouvez rien, OsmAnd propose d'augmenter le rayon de recherche.
+- Les informations d'adresse dans OsmAnd contiennent toutes les [clés de balise OSM](https://wiki.openstreetmap.org/w/index.php?title=Key:addr).
 
 
-#### US Address Search and TIGER Data
+Liste des requêtes de recherche :
 
-OsmAnd supports address searches using OpenStreetMap data, but in the United States, address search results may be incomplete due to the use of [TIGER data](https://wiki.openstreetmap.org/wiki/TIGER).  
+**1.** L'**ordre** des éléments dans la liste :
 
-- **TIGER data provides address ranges, not exact locations**, this means that some house numbers may not be recognized.
-- **If an address is not found**, try searching *by street name* instead of a specific house number.
-- Use *alternative location identifiers*, such as nearby landmarks or ZIP codes, to refine your search results.  
+- **Trié par nom**. La sélection de *Spécifier d'abord la ville/le village/la localité* (Android) ou *Sélectionner la ville* (iOS) affichera une liste qui commence par les éléments sans nom, le cas échéant, puis les noms numériques suivis des noms par lettres.
+- **Ordre numérique croissant**. Dans la liste de recherche suivante, les numéros de maison sont affichés par ordre croissant, après avoir entré la ville et la rue.
+
+**2.** Chaque champ de la liste de recherche d'adresses contient des **informations** telles que :
+
+- Une icône qui identifie le type de localité.
+- Une partie d'une adresse, un numéro postal ou une zone de coordonnées.
+- La distance par rapport à votre position actuelle ou par rapport au centre-ville.
+- Des informations supplémentaires, telles que le quartier de la ville.
 
 
-### Supported formats
+#### Recherche d'adresses aux États-Unis et données TIGER
 
-See the [Search All](./search-all.md#basic-queries) article for a list of available queries and supported search formats.
+OsmAnd prend en charge les recherches d'adresses à l'aide des données OpenStreetMap, mais aux États-Unis, les résultats de recherche d'adresses peuvent être incomplets en raison de l'utilisation des [données TIGER](https://wiki.openstreetmap.org/wiki/TIGER).
+
+- **Les données TIGER fournissent des plages d'adresses, pas des emplacements exacts**, ce qui signifie que certains numéros de maison peuvent ne pas être reconnus.
+- **Si une adresse n'est pas trouvée**, essayez de rechercher *par nom de rue* au lieu d'un numéro de maison spécifique.
+- Utilisez des *identifiants de localisation alternatifs*, tels que des points de repère à proximité ou des codes postaux, pour affiner vos résultats de recherche.
 
 
-## Select City
+### Formats pris en charge
+
+Consultez l'article [Rechercher tout](./search-all.md#basic-queries) pour une liste des requêtes disponibles et des formats de recherche pris en charge.
+
+
+## Sélectionner une ville
 
 <Tabs groupId="operating-systems">
 
@@ -97,30 +97,30 @@ See the [Search All](./search-all.md#basic-queries) article for a list of availa
 
 </Tabs>
 
-**Nearest cities**  
-    This **displays a small list of cities around your location** or the locality you specified for *Select street* or *Select city*. Each field contains an icon corresponding to the size of the city, the name of the city, the distance from you to its center, and for Android the compass direction.
+**Villes les plus proches**
+    Cela **affiche une petite liste de villes autour de votre position** ou de la localité que vous avez spécifiée pour *Sélectionner une rue* ou *Sélectionner une ville*. Chaque champ contient une icône correspondant à la taille de la ville, le nom de la ville, la distance entre vous et son centre, et pour Android la direction de la boussole.
 
-This way of searching makes it easy to find specific locations within a selected locality, providing a convenient way to find addresses accurately and quickly. You can start searching for the needed address by determining the locality.
+Cette façon de rechercher facilite la recherche d'emplacements spécifiques dans une localité sélectionnée, offrant un moyen pratique de trouver des adresses avec précision et rapidité. Vous pouvez commencer à rechercher l'adresse nécessaire en déterminant la localité.
 
-- To do this, tap **First specify city/town/locality** (Android) or **Select city** (iOS).
-- In the list that opens, select the required locality. [Here](#full-text-search) describes the order in which search queries are displayed and what information is available about each item.
-- On the next screen, you can either continue to refine the address or select the *Show on the map* button below the search entry field.
-- To specify your search, you can enter all or only part of the name of the city, town, or village where the address you are looking for is located. This allows you to narrow your search and get a more accurate list.
-- Tapping the last item in the address, house number, or intersection name, opens the [map context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.  
+- Pour ce faire, appuyez sur **Spécifier d'abord la ville/le village/la localité** (Android) ou **Sélectionner la ville** (iOS).
+- Dans la liste qui s'ouvre, sélectionnez la localité requise. [Ici](#full-text-search) décrit l'ordre dans lequel les requêtes de recherche sont affichées et les informations disponibles sur chaque élément.
+- Sur l'écran suivant, vous pouvez soit continuer à affiner l'adresse, soit sélectionner le bouton *Afficher sur la carte* sous le champ de saisie de la recherche.
+- Pour spécifier votre recherche, vous pouvez saisir tout ou partie du nom de la ville, du village ou du hameau où se trouve l'adresse que vous recherchez. Cela vous permet de restreindre votre recherche et d'obtenir une liste plus précise.
+- En appuyant sur le dernier élément de l'adresse, du numéro de maison ou du nom de l'intersection, le [menu contextuel de la carte](../map/map-context-menu.md#select-an-object-short-tap) de l'objet s'ouvre.
 
-**Searching by city offers the following benefits:**
+**La recherche par ville offre les avantages suivants :**
 
-- *Convenience*. Allows you to quickly select the required city from the list, and specify a certain street, house or intersection in the selected city without having to enter the full address. This saves time and simplifies the process of finding the right place.
-- *Precision.* You can select a city and street from the available options, avoiding errors when manually entering an address.
-- *Filtering.* The ability to select a specific house from the list makes it easier to accurately navigate to the required location, especially when the exact address is unknown.  
+- *Commodité*. Vous permet de sélectionner rapidement la ville requise dans la liste, et de spécifier une certaine rue, maison ou intersection dans la ville sélectionnée sans avoir à saisir l'adresse complète. Cela permet de gagner du temps et de simplifier le processus de recherche du bon endroit.
+- *Précision.* Vous pouvez sélectionner une ville et une rue parmi les options disponibles, évitant ainsi les erreurs lors de la saisie manuelle d'une adresse.
+- *Filtrage.* La possibilité de sélectionner une maison spécifique dans la liste facilite la navigation précise vers l'emplacement requis, surtout lorsque l'adresse exacte est inconnue.
 
-:::note Key & Value
-*City / Town / Village search* by [**addr:city/hamlet/town/village/suburb=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)  
-*Result*: displaying all objects with this name.
+:::note Clé & Valeur
+*Recherche de ville / village / hameau* par [**addr:city/hamlet/town/village/suburb=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)
+*Résultat* : affichage de tous les objets portant ce nom.
 :::
 
 
-## Select Street
+## Sélectionner une rue
 
 <Tabs groupId="operating-systems">
 
@@ -138,19 +138,19 @@ This way of searching makes it easy to find specific locations within a selected
 
 </Tabs>
 
-Street search is performed in the locality where you are, or where you searched before, or which is in the center of the visible map on the application screen.
+La recherche de rue est effectuée dans la localité où vous vous trouvez, ou où vous avez recherché auparavant, ou qui est au centre de la carte visible sur l'écran de l'application.
 
-- To use this type of search, tap **Search Street** (*Android*) or **Select Street** (*iOS*).
-- In the search field next to the city name, you can start typing the street name and the list will refine, giving you the most appropriate results.
-- In other items, the street search is the same as in [Select City](#select-city).
+- Pour utiliser ce type de recherche, appuyez sur **Rechercher une rue** (*Android*) ou **Sélectionner une rue** (*iOS*).
+- Dans le champ de recherche à côté du nom de la ville, vous pouvez commencer à taper le nom de la rue et la liste s'affinera, vous donnant les résultats les plus appropriés.
+- Dans les autres éléments, la recherche de rue est la même que dans [Sélectionner une ville](#select-city).
 
-:::note Key & Value
-*Search streets* by [**addr:street=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)  
-*Result*: all streets with this name are shown.
+:::note Clé & Valeur
+*Rechercher des rues* par [**addr:street=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)
+*Résultat* : toutes les rues portant ce nom sont affichées.
 :::
 
 
-## Postcode Search
+## Recherche par code postal
 
 <Tabs groupId="operating-systems">
 
@@ -168,24 +168,24 @@ Street search is performed in the locality where you are, or where you searched 
 
 </Tabs>
 
-**To use the *Postcode search*, you just need to enter the number**, which can consist even of a single digit, and the application offers a list of available relevant postcodes.
+**Pour utiliser la *recherche par code postal*, il vous suffit de saisir le numéro**, qui peut même être composé d'un seul chiffre, et l'application propose une liste des codes postaux pertinents disponibles.
 
-- Select the required code and tap it.
-- You can use the *Show *postcode number* on the map* feature. This opens a [map context menu](../map/map-context-menu.md#select-an-object-short-tap) with the selected postcode without any additional information about the location.
-- You can refine your search by this code by first selecting the required street from the list and then the number.
+- Sélectionnez le code requis et appuyez dessus.
+- Vous pouvez utiliser la fonction *Afficher le numéro de code postal sur la carte*. Cela ouvre un [menu contextuel de la carte](../map/map-context-menu.md#select-an-object-short-tap) avec le code postal sélectionné sans aucune information supplémentaire sur l'emplacement.
+- Vous pouvez affiner votre recherche par ce code en sélectionnant d'abord la rue requise dans la liste, puis le numéro.
 
-**Searching by postcode can be useful in the following cases:**
+**La recherche par code postal peut être utile dans les cas suivants :**
 
-- *Find addresses*. When you enter a postcode, OsmAnd identifies the corresponding area and suggests addresses in that area. This is especially useful if you know the postcode but do not know the exact address.
-- *Navigation precision*. In cases where the address is not certain, or where the street name may be repeated in different areas, using a postal code can provide the best route to a given address.
-- *Convenience and speed*. Searching by postcode allows you to find information quickly, especially if you know the postcode but are unsure of the address. Instead of entering the full address, you can enter just the code and get relevant results.  
+- *Trouver des adresses*. Lorsque vous saisissez un code postal, OsmAnd identifie la zone correspondante et suggère des adresses dans cette zone. Cela est particulièrement utile si vous connaissez le code postal mais ne connaissez pas l'adresse exacte.
+- *Précision de la navigation*. Dans les cas où l'adresse n'est pas certaine, ou lorsque le nom de la rue peut être répété dans différentes zones, l'utilisation d'un code postal peut fournir le meilleur itinéraire vers une adresse donnée.
+- *Commodité et rapidité*. La recherche par code postal vous permet de trouver rapidement des informations, surtout si vous connaissez le code postal mais n'êtes pas sûr de l'adresse. Au lieu de saisir l'adresse complète, vous pouvez saisir uniquement le code et obtenir des résultats pertinents.
 
 :::note
-For more information, read the **[United Kingdom Postcode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases)**.
+Pour plus d'informations, lisez les **[données de code postal du Royaume-Uni](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases)**.
 :::
 
 
-## Coordinates Search
+## Recherche par coordonnées
 
 <Tabs groupId="operating-systems">
 
@@ -203,14 +203,16 @@ For more information, read the **[United Kingdom Postcode data](https://github.c
 
 </Tabs>
 
-[**Coordinate Search**](../search/search-coordinates.md) allows you to specify geographic coordinates, such as latitude and longitude, to find a specific location. It provides accurate locations on a map in different [coordinate formats](../search/search-coordinates.md#coordinates-search) and allows you to get related information. This feature can be useful when you do not have an address or exact name of a location, and can make it easier to plan travel and navigate in unknown places.  
+La [**recherche par coordonnées**](../search/search-coordinates.md) vous permet de spécifier des coordonnées géographiques, telles que la latitude et la longitude, pour trouver un emplacement spécifique. Elle fournit des emplacements précis sur une carte dans différents [formats de coordonnées](../search/search-coordinates.md#coordinates-search) et vous permet d'obtenir des informations connexes. Cette fonctionnalité peut être utile lorsque vous n'avez pas d'adresse ou de nom exact d'un lieu, et peut faciliter la planification de voyages et la navigation dans des lieux inconnus.
 
 
-## Related Articles
+## Articles connexes
 
-- [Search All](./search-all.md)
-- [Search History](./search-history.md)
-- [Search POI](./search-poi.md)
-- [Search Coordinates](./search-coordinates.md)
+- [Rechercher tout](./search-all.md)
+- [Historique de recherche](./search-history.md)
+- [Rechercher des POI](./search-poi.md)
+- [Rechercher des coordonnées](./search-coordinates.md)
 
-> *This article was last updated in July 2024*
+> *Cet article a été mis à jour pour la dernière fois en juillet 2024*
+
+-- source-hash: blake2s: d1f02e3ebd63ba6825f67d95d6d384294de3e8d91b56a8211343e38131bc5536 --

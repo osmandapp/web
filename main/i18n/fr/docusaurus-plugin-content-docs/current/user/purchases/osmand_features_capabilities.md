@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title:  OsmAnd Features and Capabilities
+title:  Fonctionnalités et capacités d'OsmAnd
 unlisted: true
 ---
 
@@ -16,189 +16,190 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 
-## All Features and Capabilities
+## Toutes les fonctionnalités et capacités
 
-OsmAnd is **a powerful navigation and mapping app** that offers a wide range of offline and online features. This page provides a detailed overview of all available features in different versions of the app.
+OsmAnd est **une application de navigation et de cartographie puissante** qui offre un large éventail de fonctionnalités hors ligne et en ligne. Cette page fournit un aperçu détaillé de toutes les fonctionnalités disponibles dans les différentes versions de l'application.
 
 
 
 ## Navigation
 
-Core Navigation Features:
+Fonctionnalités de navigation principales :
 
-- Turn-by-turn navigation with voice prompts  
-- Automatic rerouting when deviating from the route  
-- Estimated time of arrival (ETA)  
-- Support for intermediate waypoints  
-- Lane guidance  
-- Speed limit warnings  
-- Traffic-aware route adjustments  
+- Navigation virage par virage avec invites vocales
+- Recalcul automatique de l'itinéraire en cas de déviation
+- Heure d'arrivée estimée (ETA)
+- Prise en charge des points de passage intermédiaires
+- Guidage de voie
+- Avertissements de limitation de vitesse
+- Ajustements d'itinéraire en fonction du trafic
 
-Supported Transportation Modes:
+Modes de transport pris en charge :
 
-- Car  
-- Bicycle  
-- Pedestrian  
-- Public transport  
-- Marine navigation  
-- Hiking  
+- Voiture
+- Vélo
+- Piéton
+- Transports en commun
+- Navigation maritime
+- Randonnée
 
-Table:
+Tableau :
 
-| Feature | OsmAnd Free | OsmAnd+ (Maps+) | OsmAnd Pro |
+| Fonctionnalité | OsmAnd Gratuit | OsmAnd+ (Maps+) | OsmAnd Pro |
 |---------|------------|----------------|------------|
-| Turn-by-turn navigation | ✔ | ✔ | ✔ |
-| Lane guidance | ✔ | ✔ | ✔ |
-| Intermediate waypoints | ✔ | ✔ | ✔ |
-| Traffic-aware rerouting | - | - | ✔ |
+| Navigation virage par virage | ✔ | ✔ | ✔ |
+| Guidage de voie | ✔ | ✔ | ✔ |
+| Points de passage intermédiaires | ✔ | ✔ | ✔ |
+| Recalcul d'itinéraire en fonction du trafic | - | - | ✔ |
 | Android Auto / CarPlay | - | ✔ | ✔ |
 
 
-## Maps and Rendering
+## Cartes et rendu
 
-Offline Maps and Updates:
+Cartes hors ligne et mises à jour :
 
-- Downloadable regional and country maps  
-- Monthly map updates  
-- Hourly updates via OsmAnd Live  
+- Cartes régionales et nationales téléchargeables
+- Mises à jour mensuelles des cartes
+- Mises à jour horaires via OsmAnd Live
 
-Supported Map Types:
+Types de cartes pris en charge :
 
-- Standard OpenStreetMap map  
-- Satellite maps (online)  
-- 3D Relief maps  
-- Contour lines (Topography)  
-- Nautical depths and hydrology  
+- Carte OpenStreetMap standard
+- Cartes satellites (en ligne)
+- Cartes en relief 3D
+- Courbes de niveau (Topographie)
+- Profondeurs nautiques et hydrologie
 
-Additional Layers:
+Couches supplémentaires :
 
-- Road surface and quality
-- Walking paths and bicycle routes  
-- Offline OpenStreetMap layers  
-- Dynamic weather layers  
+- Surface et qualité des routes
+- Sentiers pédestres et pistes cyclables
+- Couches OpenStreetMap hors ligne
+- Couches météorologiques dynamiques
 
-Table:
+Tableau :
 
-| Feature | OsmAnd Free | OsmAnd+ (Maps+) | OsmAnd Pro |
+| Fonctionnalité | OsmAnd Gratuit | OsmAnd+ (Maps+) | OsmAnd Pro |
 |---------|------------|----------------|------------|
-| Offline maps | ✔ | ✔ | ✔ |
-| Monthly map updates | ✔ | ✔ | ✔ |
-| Hourly updates (OsmAnd Live) | - | - | ✔ |
-| 3D Relief | - | - | ✔ |
+| Cartes hors ligne | ✔ | ✔ | ✔ |
+| Mises à jour mensuelles des cartes | ✔ | ✔ | ✔ |
+| Mises à jour horaires (OsmAnd Live) | - | - | ✔ |
+| Relief 3D | - | - | ✔ |
 
 
-## Search and POIs
+## Recherche et POI
 
-Types of Search:
+Types de recherche :
 
-- Address search  
-- POI search (restaurants, hotels, ATMs, etc.)  
-- Search by coordinates  
-- Category-based search  
-- Public transport search  
+- Recherche d'adresse
+- Recherche de POI (restaurants, hôtels, distributeurs automatiques, etc.)
+- Recherche par coordonnées
+- Recherche par catégorie
+- Recherche de transports en commun
 
-Table:
+Tableau :
 
-| Feature | OsmAnd Free | OsmAnd+ (Maps+) | OsmAnd Pro |
+| Fonctionnalité | OsmAnd Gratuit | OsmAnd+ (Maps+) | OsmAnd Pro |
 |---------|------------|----------------|------------|
-| Address search | ✔ | ✔ | ✔ |
-| POI search | ✔ | ✔ | ✔ |
-| Search by coordinates | ✔ | ✔ | ✔ |
-| Public transport search | - | ✔ | ✔ |
+| Recherche d'adresse | ✔ | ✔ | ✔ |
+| Recherche de POI | ✔ | ✔ | ✔ |
+| Recherche par coordonnées | ✔ | ✔ | ✔ |
+| Recherche de transports en commun | - | ✔ | ✔ |
 
 
-## Tracks and Routes
+## Traces et itinéraires
 
-- Track recording  
-- Saving custom routes  
-- GPX/KML import/export  
-- 3D track visualization  
-- Elevation profile analysis  
+- Enregistrement de traces
+- Enregistrement d'itinéraires personnalisés
+- Import/export GPX/KML
+- Visualisation de traces en 3D
+- Analyse de profil d'élévation
 
-Table:
+Tableau :
 
-| Feature | OsmAnd Free | OsmAnd+ (Maps+) | OsmAnd Pro |
+| Fonctionnalité | OsmAnd Gratuit | OsmAnd+ (Maps+) | OsmAnd Pro |
 |---------|------------|----------------|------------|
-| Track recording | ✔ | ✔ | ✔ |
-| GPX/KML import/export | ✔ | ✔ | ✔ |
-| 3D track visualization | - | ✔ | ✔ |
+| Enregistrement de traces | ✔ | ✔ | ✔ |
+| Import/export GPX/KML | ✔ | ✔ | ✔ |
+| Visualisation de traces en 3D | - | ✔ | ✔ |
 
 
-## Map Tools and Customization
+## Outils cartographiques et personnalisation
 
-- Distance measurement  
-- Compass display  
-- Custom map styles  
-- Routing preferences  
-- Road sign display  
+- Mesure de distance
+- Affichage de la boussole
+- Styles de carte personnalisés
+- Préférences de routage
+- Affichage des panneaux de signalisation
 
-Table:
+Tableau :
 
-| Feature | OsmAnd Free | OsmAnd+ (Maps+) | OsmAnd Pro |
+| Fonctionnalité | OsmAnd Gratuit | OsmAnd+ (Maps+) | OsmAnd Pro |
 |---------|------------|----------------|------------|
-| Distance measurement | ✔ | ✔ | ✔ |
-| Compass display | ✔ | ✔ | ✔ |
-| Custom map styles | ✔ | ✔ | ✔ |
+| Mesure de distance | ✔ | ✔ | ✔ |
+| Affichage de la boussole | ✔ | ✔ | ✔ |
+| Styles de carte personnalisés | ✔ | ✔ | ✔ |
 
 
 ## Plugins
 
-- OsmAnd Cloud (backup and synchronization)
-- Wikipedia Plugin
-- External Sensors
-- Topography  
-- OpenStreetMap Editing  
+- OsmAnd Cloud (sauvegarde et synchronisation)
+- Plugin Wikipédia
+- Capteurs externes
+- Topographie
+- Modification OpenStreetMap
 
-Table:
+Tableau :
 
-| Plugin | OsmAnd Free | OsmAnd+ (Maps+) | OsmAnd Pro |
+| Plugin | OsmAnd Gratuit | OsmAnd+ (Maps+) | OsmAnd Pro |
 |--------|------------|----------------|------------|
-| Wikipedia (offline) | - | ✔ | ✔ |
-| Wikivoyage (offline travel guides) | - | ✔ | ✔ |
-| External sensors (OBD-II, ANT+) | - | ✔ | ✔ |
+| Wikipédia (hors ligne) | - | ✔ | ✔ |
+| Wikivoyage (guides de voyage hors ligne) | - | ✔ | ✔ |
+| Capteurs externes (OBD-II, ANT+) | - | ✔ | ✔ |
 
 
-## Widgets and Additional Indicators
+## Widgets et indicateurs supplémentaires
 
-- Speed widget  
-- Altitude widget  
-- Compass widget  
-- Weather widget  
-- Track widget  
-- Route widget  
+- Widget de vitesse
+- Widget d'altitude
+- Widget de boussole
+- Widget météo
+- Widget de trace
+- Widget d'itinéraire
 - ...
 
-Table:
+Tableau :
 
-| Widget | OsmAnd Free | OsmAnd+ (Maps+) | OsmAnd Pro |
+| Widget | OsmAnd Gratuit | OsmAnd+ (Maps+) | OsmAnd Pro |
 |--------|------------|----------------|------------|
-| Speed widget | ✔ | ✔ | ✔ |
-| Altitude widget | ✔ | ✔ | ✔ |
-| Weather widget | - | ✔ | ✔ |
+| Widget de vitesse | ✔ | ✔ | ✔ |
+| Widget d'altitude | ✔ | ✔ | ✔ |
+| Widget météo | - | ✔ | ✔ |
 
 
-## User Profiles
+## Profils utilisateur
 
-- Car profile  
-- Bicycle profile  
-- Pedestrian profile  
-- Marine profile  
-- Hiking profile  
-- Custom profile configuration  
+- Profil voiture
+- Profil vélo
+- Profil piéton
+- Profil maritime
+- Profil randonnée
+- Configuration de profil personnalisé
 - ...
 
-Table:
+Tableau :
 
-| Profile | OsmAnd Free | OsmAnd+ (Maps+) | OsmAnd Pro |
+| Profil | OsmAnd Gratuit | OsmAnd+ (Maps+) | OsmAnd Pro |
 |---------|------------|----------------|------------|
-| Car | ✔ | ✔ | ✔ |
-| Bicycle | ✔ | ✔ | ✔ |
-| Marine | - | ✔ | ✔ |
+| Voiture | ✔ | ✔ | ✔ |
+| Vélo | ✔ | ✔ | ✔ |
+| Maritime | - | ✔ | ✔ |
 
 
 
-???? How to use this article
+???? Comment utiliser cet article
 
-In the Android Purchases article, a **shortened table** will remain with a **link to this article**.  
-**This article** provides a **detailed feature overview** for all OsmAnd versions.  
+Dans l'article sur les achats Android, un **tableau raccourci** restera avec un **lien vers cet article**.
+**Cet article** fournit un **aperçu détaillé des fonctionnalités** pour toutes les versions d'OsmAnd.
 
+-- source-hash: blake2s: 551853d0584f91902301cf710aef255a66d074b9e41563ed9bd806fc0d3cc51b --

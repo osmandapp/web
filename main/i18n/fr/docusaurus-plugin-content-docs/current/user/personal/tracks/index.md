@@ -1,26 +1,28 @@
 ---
-title:  Tracks
+title:  Traces
 sidebar_position: 8
 ---
 
-## [Manage Tracks](./manage-tracks.md)
+## [Gérer les traces](./manage-tracks.md)
 
-All information about creating, managing and organizing tracks and track folders.
+Toutes les informations sur la création, la gestion et l'organisation des traces et des dossiers de traces.
 
-## [Smart Folder(filter)](./smart-folder.md)
+## [Dossier intelligent (filtre)](./smart-folder.md)
 
-A simle way to create virtual folders for tracks with any filters.
+Un moyen simple de créer des dossiers virtuels pour les traces avec n'importe quel filtre.
 
-## Read more
+## En savoir plus
 
-### [Types of tracks](../../map/tracks/index.md#types-of-tracks)
+### [Types de traces](../../map/tracks/index.md#types-of-tracks)
 
-Read about what's a track and the different types of tracks.
+En savoir plus sur ce qu'est une trace et les différents types de traces.
 
-### [Display tracks](../../map/tracks/index.md#display-tracks)
+### [Afficher les traces](../../map/tracks/index.md#display-tracks)
 
-Read about how to display tracks and its options in OsmAnd.
+En savoir plus sur la façon d'afficher les traces et ses options dans OsmAnd.
 
-### [Navigate by track](../../navigation/setup/gpx-navigation.md)
+### [Naviguer par trace](../../navigation/setup/gpx-navigation.md)
 
-Read more about how to use track in navigation.
+En savoir plus sur la façon d'utiliser une trace dans la navigation.
+
+-- source-hash: blake2s: 7fb9c0d88647a8a19661d5002f49ad325bd73a288a240351a64f3b5373ea50c1 --

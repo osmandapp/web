@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Search
+title: Recherche
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,31 +11,33 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-### Overview
+### Vue d'ensemble
 
-**Search** is an important tool of OsmAnd that allows you to find required places, objects, or addresses. The available search options provide different ways to find objects. You can use search by address for precise navigation, search by POI categories to find the nearest objects, search by history for quick access to previous requests, and search by coordinates for precise location.
-
-
-### [Search All](./search-all.md)
-
-This article describes the main features and available options of the Search tool.
+La **Recherche** est un outil important d'OsmAnd qui vous permet de trouver les lieux, objets ou adresses requis. Les options de recherche disponibles offrent différentes façons de trouver des objets. Vous pouvez utiliser la recherche par adresse pour une navigation précise, la recherche par catégories de POI pour trouver les objets les plus proches, la recherche par historique pour un accès rapide aux requêtes précédentes, et la recherche par coordonnées pour une localisation précise.
 
 
-### [Search Address](./search-address.md)
+### [Rechercher tout](./search-all.md)
 
-The Search tool has options such as sequential search by address, with already prepared data for quick selection and search by postcode. These options are described in this article.
-
-
-### [Search History](./search-history.md)
-
-This article discusses the search capabilities of query history in detail.
+Cet article décrit les principales fonctionnalités et options disponibles de l'outil de recherche.
 
 
-### [Search POI](./search-poi.md)
+### [Rechercher une adresse](./search-address.md)
 
-Searching through all POI categories and setting up a custom POI search is described in this article.
+L'outil de recherche propose des options telles que la recherche séquentielle par adresse, avec des données déjà préparées pour une sélection rapide et la recherche par code postal. Ces options sont décrites dans cet article.
 
 
-### [Search Coordinates](./search-coordinates.md)
+### [Historique de recherche](./search-history.md)
 
-In this article, you will learn how to search for the correct locations using coordinates.
+Cet article traite en détail des capacités de recherche de l'historique des requêtes.
+
+
+### [Rechercher des POI](./search-poi.md)
+
+La recherche dans toutes les catégories de POI et la configuration d'une recherche de POI personnalisée sont décrites dans cet article.
+
+
+### [Rechercher des coordonnées](./search-coordinates.md)
+
+Dans cet article, vous apprendrez à rechercher les emplacements corrects à l'aide de coordonnées.
+
+-- source-hash: blake2s: e7a4aed0a5a25209b3c2755568f2a60c299215cedee0ffab97454dd2a969ee44 --

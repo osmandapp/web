@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-title:  Routes
+title:  Itinéraires
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,33 +15,33 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
-OsmAnd has many powerful features for displaying different [routes](#type-of-routes) on the map. By default, these routes are part of [vector maps](./vector-maps.md#routes) (OpenStreetMap data), however similar functionality is provided by [tracks](./tracks/index.md) which could be created with [Plan a Route](../plan-route/create-route.md), imported as [GPX tracks](#save-as-a-track), recorded with the [Trip Recording plugin](../plugins/trip-recording.md).
+OsmAnd dispose de nombreuses fonctionnalités puissantes pour afficher différents [itinéraires](#type-of-routes) sur la carte. Par défaut, ces itinéraires font partie des [cartes vectorielles](./vector-maps.md#routes) (données OpenStreetMap), mais une fonctionnalité similaire est fournie par les [traces](./tracks/index.md) qui peuvent être créées avec [Planifier un itinéraire](../plan-route/create-route.md), importées en tant que [traces GPX](#save-as-a-track), enregistrées avec le [plugin Enregistrement de trajet](../plugins/trip-recording.md).
 
 
-## Type of Routes
+## Type d'itinéraires
 
-Routes represent different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Tapping **the shield icon with a route number or route flag** on the map will open a context menu that provides additional information about the route and allows using it as part of navigation.
+Les itinéraires représentent différentes activités de plein air en utilisant les données d'[OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). En appuyant sur **l'icône de bouclier avec un numéro d'itinéraire ou un drapeau d'itinéraire** sur la carte, un menu contextuel s'ouvre, fournissant des informations supplémentaires sur l'itinéraire et permettant de l'utiliser dans le cadre de la navigation.
 
-You can configure the filtering of some route types in the [Configure Map](../map/configure-map-menu.md) menu.
+Vous pouvez configurer le filtrage de certains types d'itinéraires dans le menu [Configurer la carte](../map/configure-map-menu.md).
 
-### Cycle routes
+### Itinéraires cyclables
 
-[Cycle routes](https://wiki.openstreetmap.org/wiki/Cycle_routes) are present in three types: *local* (`lcn`), *regional* (`rcn`), *national* (`ncn`), *international* (`icn`). Also, cycle routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). You can choose how to assign color to the route segments:
+Les [itinéraires cyclables](https://wiki.openstreetmap.org/wiki/Cycle_routes) sont présents en trois types : *locaux* (`lcn`), *régionaux* (`rcn`), *nationaux* (`ncn`), *internationaux* (`icn`). De plus, les itinéraires cyclables peuvent faire partie de [réseaux de nœuds](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Vous pouvez choisir comment attribuer une couleur aux segments d'itinéraire :
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-You can find more information in the [Map Legend](../map-legend/index.md) article.
+Vous trouverez plus d'informations dans l'article [Légende de la carte](../map-legend/index.md).
 
 
-### Mountain bike routes
+### Itinéraires VTT
 
-MTB routes have a specific mapping in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) and could be selected separately from cycling routes.
+Les itinéraires VTT ont un mappage spécifique dans [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) et peuvent être sélectionnés séparément des itinéraires cyclables.
 
 <!--
 | | | |
@@ -50,119 +50,119 @@ MTB routes have a specific mapping in [OpenStreetMap](https://wiki.openstreetmap
 | ***<Translate android="true" ids="mtb_imba"/>*** | Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../map-legend/index.md). | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png) |
 -->
 
-- ***<Translate android="true" ids="mtb_scale"/>***.  Shows trails according to the MTB scale. More information is in the [Map Legend](../map-legend/index.md) article.  
+- ***<Translate android="true" ids="mtb_scale"/>***.  Affiche les sentiers selon l'échelle VTT. Plus d'informations sont disponibles dans l'article [Légende de la carte](../map-legend/index.md).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***.  Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***.  Affiche les sentiers VTT selon l'International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Plus d'informations sont disponibles dans l'article [Légende de la carte](../map-legend/index.md).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
-### Hiking / Walking routes
+### Itinéraires de randonnée / marche
 
-[Hiking routes](https://wiki.openstreetmap.org/wiki/Walking_Routes) are present in three types: *local* (`lwn`), *regional* (`rwn`), *national* (`nwn`), *international* (`iwn`). Also, walking routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd doesn't separate walking and hiking routes and combines them into 1 group. You can choose how to assign color to the route segments:
+Les [itinéraires de randonnée](https://wiki.openstreetmap.org/wiki/Walking_Routes) sont présents en trois types : *locaux* (`lwn`), *régionaux* (`rwn`), *nationaux* (`nwn`), *internationaux* (`iwn`). De plus, les itinéraires de marche peuvent faire partie de [réseaux de nœuds](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd ne sépare pas les itinéraires de marche et de randonnée et les combine en 1 groupe. Vous pouvez choisir comment attribuer une couleur aux segments d'itinéraire :
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Colors routes according to their individual [local color](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (if available in OpenStreetMap) and the tourist shield symbol.  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Colore les itinéraires selon leur [couleur locale](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) individuelle (si disponible dans OpenStreetMap) et le symbole de bouclier touristique.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  Colors by [network affiliation](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  Colore par [affiliation réseau](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
 ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  Colors routes according to the type of [node network](https://wiki.openstreetmap.org/wiki/Node_Networks) (international, regional, or local).  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  Colore les itinéraires selon le type de [réseau de nœuds](https://wiki.openstreetmap.org/wiki/Node_Networks) (international, régional ou local).  
 ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
 
 
-### Dirt Bike Trails
+### Sentiers de moto tout-terrain
 
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-The **Dirt Bike Trails** feature allows you to display dirt bike-specific routes on the map based on the `dirtbike:scale` tag. This scale highlights trails suitable for dirt biking, with a colored overlay showing difficulty levels.  
+La fonctionnalité **Sentiers de moto tout-terrain** vous permet d'afficher des itinéraires spécifiques aux motos tout-terrain sur la carte en fonction du tag `dirtbike:scale`. Cette échelle met en évidence les sentiers adaptés à la moto tout-terrain, avec une superposition colorée indiquant les niveaux de difficulté.
 
-You can activate this feature in *Menu → Configure map → Routes → Dirt bike routes*. The system functions similarly to the MTB scale, offering a visual representation of routes tailored to dirt biking — more about the [`dirtbike` tag can be found here](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
+Vous pouvez activer cette fonctionnalité dans *Menu → Configurer la carte → Itinéraires → Itinéraires de moto tout-terrain*. Le système fonctionne de manière similaire à l'échelle VTT, offrant une représentation visuelle des itinéraires adaptés à la moto tout-terrain — plus d'informations sur le tag [`dirtbike` peuvent être trouvées ici](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
 
-### Climbing Routes
+### Itinéraires d'escalade
 
 ![Map routes - Climbing Routes](@site/static/img/map/map-routes-climbing-routes.png)
 
-OsmAnd supports *climbing areas* (`climbing=area`) and *climbing crags* (`climbing=crag`), allowing you to find [rock climbing](https://wiki.openstreetmap.org/wiki/Climbing) locations directly on the map.
+OsmAnd prend en charge les *zones d'escalade* (`climbing=area`) et les *falaises d'escalade* (`climbing=crag`), vous permettant de trouver des sites d'[escalade](https://wiki.openstreetmap.org/wiki/Climbing) directement sur la carte.
 
-- **Climbing areas** represent **larger zones** where multiple climbing routes exist.
+- Les **zones d'escalade** représentent des **zones plus vastes** où existent plusieurs voies d'escalade.
 
-- **Climbing crags** refer to **specific rock formations** or walls suitable for climbing.
+- Les **falaises d'escalade** désignent des **formations rocheuses spécifiques** ou des parois adaptées à l'escalade.
 
-- These locations include **detailed attributes** such as:
+- Ces lieux incluent des **attributs détaillés** tels que :
 
-    - *Climbing grade* (e.g., UIAA, French, YDS).
-    - *Rock type* (e.g., limestone, granite).
-    - *Route length* (in meters).
-    - *Climbing quality* (solid, loose, mixed).
-    - *Summit log availability*.
+    - *Niveau d'escalade* (par exemple, UIAA, Français, YDS).
+    - *Type de roche* (par exemple, calcaire, granite).
+    - *Longueur de la voie* (en mètres).
+    - *Qualité de l'escalade* (solide, lâche, mixte).
+    - *Disponibilité du carnet de sommet*.
 
-To enable climbing locations on the map, go to: *Menu → Configure Map → Routes → Climbing Routes*.
+Pour activer les lieux d'escalade sur la carte, allez dans : *Menu → Configurer la carte → Itinéraires → Itinéraires d'escalade*.
 
 
-### Hiking Trails Difficulty Grade
+### Niveau de difficulté des sentiers de randonnée
 
 ![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)
 
-Some road segments could be part of many routes, but they could be individually colored to represent the difficulty of the segment in mountainous areas. Currently, OsmAnd supports Italian and Swiss classifications, and each has a specific list of equipment requirements to access this segment.  
+Certains segments de route peuvent faire partie de nombreux itinéraires, mais ils peuvent être colorés individuellement pour représenter la difficulté du segment dans les zones montagneuses. Actuellement, OsmAnd prend en charge les classifications italienne et suisse, et chacune a une liste spécifique d'équipements requis pour accéder à ce segment.
 
-1. [SAC scale](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
-2. [CAI scale](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
+1. [Échelle SAC](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
+2. [Échelle CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)
 
 
-### Ski routes
+### Itinéraires de ski
 
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typically, these routes could be used with [Winter and Ski](../map/vector-maps.md#winter-and-ski) map style with all visible [Pistes](https://wiki.openstreetmap.org/wiki/Pistes).  
+Les itinéraires de ski sont un groupe spécifique d'[itinéraires](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) dans OpenStreetMap. Typiquement, ces itinéraires peuvent être utilisés avec le style de carte [Hiver et ski](../map/vector-maps.md#winter-and-ski) avec toutes les [pistes](https://wiki.openstreetmap.org/wiki/Pistes) visibles.
 
 
-### Horse routes
+### Itinéraires équestres
 
 ![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
 
-[Horse routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) are displayed as color-indicated routes with symbols for horseback riding.  
+Les [itinéraires équestres](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) sont affichés comme des itinéraires colorés avec des symboles pour l'équitation.
 
 
-### Whitewater sports
+### Sports d'eau vive
 
 ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
-[Whitewater routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) are shown together with access icons, danger zones for [whitewater tourism](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+Les [itinéraires d'eau vive](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) sont affichés avec des icônes d'accès et des zones de danger pour le [tourisme en eau vive](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).
 
 
-### Running routes
+### Itinéraires de course à pied
 
 ![Fitness routes](@site/static/img/map/fitness_1.png)
 
-[Running routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) in OpenStreetMap are used for named, numbered, or otherwise marked running routes, primarily for athletics.
+Les [itinéraires de course à pied](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) dans OpenStreetMap sont utilisés pour les itinéraires de course à pied nommés, numérotés ou autrement marqués, principalement pour l'athlétisme.
 
 
-### Fitness trails
+### Parcours de santé
 
 ![Fitness routes](@site/static/img/map/fitness_route.png)
 
-A [fitness trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) is a trail or path equipped with obstacles or stations along its length to exercise the human body to improve health.  
+Un [parcours de santé](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) est un sentier ou un chemin équipé d'obstacles ou de stations le long de sa longueur pour exercer le corps humain afin d'améliorer la santé.
 
 
-### Travel routes
+### Itinéraires de voyage
 
 <InfoAndroidOnly />
 
 ![Travel routes](@site/static/img/map/travel_route_2.png)  ![Travel routes](@site/static/img/map/travel_routes.png)
 
-Travel routes are part of custom [Travel book](../plan-route/travel-guides.md) (`travel.obf`) files, which can be generated from the [user's routes](https://osmand.net/blog/routes#generated-travel-routes) or be part of additional [plugins](../plugins/index.md).  
+Les itinéraires de voyage font partie des fichiers [Carnet de voyage](../plan-route/travel-guides.md) (`travel.obf`) personnalisés, qui peuvent être générés à partir des [itinéraires de l'utilisateur](https://osmand.net/blog/routes#generated-travel-routes) ou faire partie de [plugins](../plugins/index.md) supplémentaires.
 
-You can customize the display of certain ***Travelbooks*** and types of ***tracks***, display tracks as points, or ***Point groups*** (for example for Wikivoyage travel books). Learn more about [Travel guides here](../plan-route/travel-guides.md).
+Vous pouvez personnaliser l'affichage de certains ***Carnets de voyage*** et types de ***traces***, afficher les traces sous forme de points, ou ***Groupes de points*** (par exemple pour les carnets de voyage Wikivoyage). Apprenez-en davantage sur les [Guides de voyage ici](../plan-route/travel-guides.md).
 
 
-## Display Routes on the Map
+## Afficher les itinéraires sur la carte
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Allez dans : *Android* *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
 
@@ -170,7 +170,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_ma
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Allez dans : *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
@@ -178,23 +178,23 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 </Tabs>
 
-- To display the required routes on the map, enable them in the *Routes list* of the [Configure Map](../map/configure-map-menu.md) menu.
-- OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-a-track), and if the visible set of routes is configured correctly, you can follow the color and icons.
-- You can create a track on top of the routes using the [Plan a Route](../plan-route/create-route.md) tool.  
+- Pour afficher les itinéraires requis sur la carte, activez-les dans la *Liste des itinéraires* du menu [Configurer la carte](../map/configure-map-menu.md).
+- OsmAnd peut mettre en évidence les [itinéraires présents sur OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Ils peuvent être sélectionnés en appuyant sur [le symbole sur l'itinéraire](#save-as-a-track), et si l'ensemble visible d'itinéraires est configuré correctement, vous pouvez suivre la couleur et les icônes.
+- Vous pouvez créer une trace par-dessus les itinéraires à l'aide de l'outil [Planifier un itinéraire](../plan-route/create-route.md).
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 
 
-## Actions with Routes
+## Actions avec les itinéraires
 
 
-[Hiking, cycle, travel, and other routes](#type-of-routes) are available for selection on the map and are marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol), where applicable.
+Les [itinéraires de randonnée, cyclables, de voyage et autres](#type-of-routes) sont disponibles pour sélection sur la carte et sont marqués par des [symboles OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol), le cas échéant.
 
-When you tap a **route symbol** on the map:
+Lorsque vous appuyez sur un **symbole d'itinéraire** sur la carte :
 
-- A **list of nearby routes** at that location is displayed.
-- After selecting a route from the list, the [**track context menu**](../map/tracks/track-context-menu.md) for that route opens, showing detailed information and actions.
+- Une **liste des itinéraires proches** à cet endroit est affichée.
+- Après avoir sélectionné un itinéraire dans la liste, le [**menu contextuel de la trace**](../map/tracks/track-context-menu.md) pour cet itinéraire s'ouvre, affichant des informations détaillées et des actions.
 
 <Tabs groupId="operating-systems">
 
@@ -212,14 +212,14 @@ When you tap a **route symbol** on the map:
 
 </Tabs>
 
-In the **context menu**, you can:
-- View [additional information](#route-info-and-elevation) about the selected route,
-- [Save the route](#save-as-a-track) as a **GPX track**,
-- [Start navigation](#start-navigation) along the route.
+Dans le **menu contextuel**, vous pouvez :
+- Afficher des [informations supplémentaires](#route-info-and-elevation) sur l'itinéraire sélectionné,
+- [Enregistrer l'itinéraire](#save-as-a-track) en tant que **trace GPX**,
+- [Démarrer la navigation](#start-navigation) le long de l'itinéraire.
 
 
 
-### Route Info and Elevation
+### Informations sur l'itinéraire et l'altitude
 
 <Tabs groupId="operating-systems">
 
@@ -237,56 +237,56 @@ In the **context menu**, you can:
 
 </Tabs>
 
-The following information will be visible in the context menu:
+Les informations suivantes seront visibles dans le menu contextuel :
 
-- **Route info**: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
-- **General**: Size, Location, Created on.
-- **Additional Info**. Displays type of activity.
-- action buttons: [Save as](#save-as-a-track) and [Start Navigation](#start-navigation).
-- [Elevation info](../navigation/setup/route-details.md#elevation-info). Displays information about the elevation data on the route.
-- [Analyze Track on Map](../map/tracks/index.md#analyze-track-on-map). Displays detailed analysis of track data using graphs and maps.
+- **Informations sur l'itinéraire** : Nom de l'itinéraire, lien OSM (plugin OSM Editing requis), Type, Description, Distance, Direction, Montée/Descente, Plage d'altitude, Réseau, Opérateur, État, Couleur, Aller-retour, Points de départ/arrivée, et plus encore.
+- **Général** : Taille, Emplacement, Créé le.
+- **Informations supplémentaires**. Affiche le type d'activité.
+- boutons d'action : [Enregistrer sous](#save-as-a-track) et [Démarrer la navigation](#start-navigation).
+- [Informations sur l'altitude](../navigation/setup/route-details.md#elevation-info). Affiche des informations sur les données d'altitude sur l'itinéraire.
+- [Analyser la trace sur la carte](../map/tracks/index.md#analyze-track-on-map). Affiche une analyse détaillée des données de trace à l'aide de graphiques et de cartes.
 
-To view graph of the elevation, slope, or altitude details for a selected route, simply tap on any of the following values in the context menu: **Distance**, **Uphill**, **Downhill**, or **Altitude**.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Routes on the ground](@site/static/img/map/routes_osm_2.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Routes on the ground](@site/static/img/map/routes_osm_ios_2.png) 
-
-</TabItem>
-
-</Tabs>  
-
-### Save as a Track
+Pour afficher le graphique de l'altitude, de la pente ou des détails d'altitude pour un itinéraire sélectionné, appuyez simplement sur l'une des valeurs suivantes dans le menu contextuel : **Distance**, **Montée**, **Descente** ou **Altitude**.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/routes-4.png)   ![Routes on the ground](@site/static/img/map/routes-5.png)
+![Routes on the ground](@site/static/img/map/routes_osm_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/hiking.png)   ![Routes on the ground](@site/static/img/map/hiking_1.png)
+![Routes on the ground](@site/static/img/map/routes_osm_ios_2.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
+
+### Enregistrer en tant que trace
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Routes on the ground](@site/static/img/map/routes-4.png) ![Routes on the ground](@site/static/img/map/routes-5.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Routes on the ground](@site/static/img/map/hiking.png) ![Routes on the ground](@site/static/img/map/hiking_1.png)
+
+</TabItem>
+
+</Tabs>
 
 
-To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#track-actions) button panel where you will have access to track actions such as changing [Appearance](./tracks/appearance.md), [Navigation](../navigation/setup/route-navigation.md), or editing [Plan a route](../plan-route/create-route.md).
+Pour enregistrer l'itinéraire en tant que *fichier GPX*, appuyez sur le bouton **Enregistrer (Télécharger)** sous le [panneau d'informations](../map/tracks/track-context-menu.md#info-panel). Cela ouvrira le panneau de boutons [Actions rapides](../map/tracks/track-context-menu.md#track-actions) où vous aurez accès aux actions de trace telles que la modification de l'[Apparence](./tracks/appearance.md), la [Navigation](../navigation/setup/route-navigation.md) ou l'édition de [Planifier un itinéraire](../plan-route/create-route.md).
 
 
-### Start Navigation
+### Démarrer la navigation
 
 <Tabs groupId="operating-systems">
 
@@ -302,24 +302,24 @@ To save the route as a *GPX file*, tap the **Save (Download)** button under [Inf
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-To start navigation along the selected OSM route, tap the **Start Navigation** button in the [**Info panel**](../map/tracks/track-context-menu.md#info-panel).
+Pour démarrer la navigation le long de l'itinéraire OSM sélectionné, appuyez sur le bouton **Démarrer la navigation** dans le [**panneau d'informations**](../map/tracks/track-context-menu.md#info-panel).
 
-This will launch the [**Navigation by track**](../navigation/setup/gpx-navigation.md) mode, allowing you to follow the route with voice guidance and navigation features.
-
-
-
-### Quick Actions
-
-You can customize whether routes are switched on or off using the [Quick Action](../widgets/quick-action.md#configure-map) widget.
+Cela lancera le mode [**Navigation par trace**](../navigation/setup/gpx-navigation.md), vous permettant de suivre l'itinéraire avec guidage vocal et fonctionnalités de navigation.
 
 
-## Routes Search
 
-Find routes using the [Search function](../search/index.md) by name or by selecting "Routes" in the [Categories section](../search/search-poi.md#).
+### Actions rapides
 
-To search, go to the _<Translate android="true" ids="search_button"/>_ menu or _<Translate android="true" ids="search_button,search_categories"/>_ and enter your activity.
+Vous pouvez personnaliser l'activation ou la désactivation des itinéraires à l'aide du widget [Action rapide](../widgets/quick-action.md#configure-map).
+
+
+## Recherche d'itinéraires
+
+Trouvez des itinéraires à l'aide de la [fonction de recherche](../search/index.md) par nom ou en sélectionnant "Itinéraires" dans la section [Catégories](../search/search-poi.md#).
+
+Pour rechercher, allez dans le menu _<Translate android="true" ids="search_button"/>_ ou _<Translate android="true" ids="search_button,search_categories"/>_ et entrez votre activité.
 
 <Tabs groupId="operating-systems">
 
@@ -335,9 +335,9 @@ To search, go to the _<Translate android="true" ids="search_button"/>_ menu or _
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-Navigate to _<Translate android="true" ids="search_button,search_categories,poi_routes"/>_ to find desired routes. Routes include name, activity type, length, location, and distance to the nearest point.
+Naviguez vers _<Translate android="true" ids="search_button,search_categories,poi_routes"/>_ pour trouver les itinéraires souhaités. Les itinéraires comprennent le nom, le type d'activité, la longueur, l'emplacement et la distance jusqu'au point le plus proche.
 
 <Tabs groupId="operating-systems">
 
@@ -353,9 +353,9 @@ Navigate to _<Translate android="true" ids="search_button,search_categories,poi_
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
-Use filters button (top right corner) to display only the desired routes.
+Utilisez le bouton filtres (coin supérieur droit) pour afficher uniquement les itinéraires souhaités.
 
 <Tabs groupId="operating-systems">
 
@@ -371,16 +371,18 @@ Use filters button (top right corner) to display only the desired routes.
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 
-## Related Articles
+## Articles connexes
 
-- [Map Context menu](./map-context-menu.md)
-- [Configure Map](./configure-map-menu.md)
-- [Tracks](./tracks/index.md)
-- [Tracks Context menu](./tracks/track-context-menu.md)
-- [Public transport](./public-transport.md)
-- [Navigation route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance)
+- [Menu contextuel de la carte](./map-context-menu.md)
+- [Configurer la carte](./configure-map-menu.md)
+- [Traces](./tracks/index.md)
+- [Menu contextuel des traces](./tracks/track-context-menu.md)
+- [Transports en commun](./public-transport.md)
+- [Apparence de la ligne d'itinéraire de navigation](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 
-> *This article was last updated in March 2025*
+> *Cet article a été mis à jour pour la dernière fois en mars 2025*
+
+-- source-hash: blake2s: 95d53cae2478e0ee3f93606944fa038bf55f33d2c6f4a58f5a1a4cd2606aef24 --

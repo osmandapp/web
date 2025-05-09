@@ -12,36 +12,36 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Aperçu
 
-The **Import** and **Export** tools in OsmAnd allow you to manage your data. You can move your profiles, favorites, tracks, and other settings using a special format through the apps on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.
+Les outils **Import** et **Export** d'OsmAnd vous permettent de gérer vos données. Vous pouvez déplacer vos profils, favoris, traces et autres paramètres en utilisant un format spécial via les applications sur votre appareil. Ce processus simplifie la sauvegarde et le transfert de données entre appareils et vous permet de les partager avec d'autres utilisateurs d'OsmAnd.
 
-:::note Large size
-*If the size of your selected data is significant, it will take time for the application to prepare the `.osf` file.*
+:::note Grande taille
+*Si la taille des données sélectionnées est importante, l'application mettra du temps à préparer le fichier `.osf`.*
 :::
 
 
-## Export / Import data
+## Exporter / Importer des données
 
-The *Import* and *Export* allow you to save data from generated `.osf` **files** or use [online sources](../map/raster-maps.md), making it possible to restore information after reinstallation.
+Les fonctions *Import* et *Export* vous permettent de sauvegarder des données à partir de **fichiers** `.osf` générés ou d'utiliser des [sources en ligne](../map/raster-maps.md), ce qui permet de restaurer les informations après une réinstallation.
 
-**Data types** available for import/export:
+**Types de données** disponibles pour l'import/export :
 
-- **Settings:**  
-        [Profiles](../personal/profiles.md#actions), &nbsp;[OsmAnd/General Settings](../personal/global-settings.md), &nbsp;[Colors](../personal/color-palette-schemes.md), &nbsp;[Quick action](../widgets/quick-action.md), &nbsp;[POI Type](../map/point-layers-on-map.md#poi-types), &nbsp;[Avoid road](../map/map-context-menu.md#avoid-road).
-- **My Places:**  
-        [Favorites](../personal/favorites.md#export--import), &nbsp;[Tracks](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM notes*, *OSM edits](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[Markers history*, *Search history*, *Navigation history](../personal/global-settings.md#history), &nbsp;*Itinerary*.
-- **Resources:**  
-        [Rendering style](../map/vector-maps.md#custom-map-style), &nbsp;[Routing](../navigation/routing/osmand-routing.md), &nbsp;[Online routing engines](../navigation/routing/online-routing.md), &nbsp;[Map sources*, *Standard/Offline Maps](../map/raster-maps.md), &nbsp;[Wikipedia and Travel maps](../plan-route/travel-guides.md), &nbsp;[Nautical maps](../plugins/nautical-charts.md), &nbsp;[Road maps](../map/vector-maps.md#road-style), &nbsp;[Topography maps](../plugins/topography.md), &nbsp;[Voice prompts (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Voice prompts (recorded)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favorites backup](../personal/favorites.md#automatic-favorites-backup).
+- **Paramètres :**  
+        [Profils](../personal/profiles.md#actions), &nbsp;[OsmAnd/Paramètres généraux](../personal/global-settings.md), &nbsp;[Couleurs](../personal/color-palette-schemes.md), &nbsp;[Action rapide](../widgets/quick-action.md), &nbsp;[Type de POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Éviter la route](../map/map-context-menu.md#avoid-road).
+- **Mes lieux :**  
+        [Favoris](../personal/favorites.md#export--import), &nbsp;[Traces](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notes OSM*, *Modifications OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notes A/V](../plugins/audio-video-notes.md), &nbsp;[Marqueurs de carte](../personal/markers.md), &nbsp;[Historique des marqueurs*, *Historique de recherche*, *Historique de navigation](../personal/global-settings.md#history), &nbsp;*Itinéraire*.
+- **Ressources :**  
+        [Style de rendu](../map/vector-maps.md#custom-map-style), &nbsp;[Routage](../navigation/routing/osmand-routing.md), &nbsp;[Moteurs de routage en ligne](../navigation/routing/online-routing.md), &nbsp;[Sources de carte*, *Cartes standard/hors ligne](../map/raster-maps.md), &nbsp;[Cartes Wikipédia et Voyage](../plan-route/travel-guides.md), &nbsp;[Cartes nautiques](../plugins/nautical-charts.md), &nbsp;[Cartes routières](../map/vector-maps.md#road-style), &nbsp;[Cartes topographiques](../plugins/topography.md), &nbsp;[Invites vocales (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Invites vocales (enregistrées)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Sauvegarde des favoris](../personal/favorites.md#automatic-favorites-backup).
 
 
-### Export
+### Exporter
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
 ![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
 
@@ -49,7 +49,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_strin
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
 ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
 
@@ -57,16 +57,16 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-All the data you have configured and created can be exported using the ***Export menu***. The menu consists of three groups: **Settings**, **My Places**, and **Resources**, which contain all available file folders. You can select the files you want to export in each folder, one at a time or all at once. **All exported files are saved in `.osf` format**.  
+Toutes les données que vous avez configurées et créées peuvent être exportées à l'aide du ***menu Exporter***. Le menu se compose de trois groupes : **Paramètres**, **Mes lieux** et **Ressources**, qui contiennent tous les dossiers de fichiers disponibles. Vous pouvez sélectionner les fichiers que vous souhaitez exporter dans chaque dossier, un par un ou tous en même temps. **Tous les fichiers exportés sont enregistrés au format `.osf`**.  
 
 
-### Import
+### Importer
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*  
 
 | |
 | --- | --- | --- |
@@ -76,7 +76,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_strin
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*  
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*  
 
 | |
 | --- | --- | --- |
@@ -86,38 +86,40 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-Opens and restores `.osf` files. Tap the file in the device's file manager or use the action button.
+Ouvre et restaure les fichiers `.osf`. Appuyez sur le fichier dans le gestionnaire de fichiers de l'appareil ou utilisez le bouton d'action.
 
-- *Some items already exist*. You can use this feature to save both files or replace all of them.
-- *Restart*. After importing the files, the application must be restarted.
+- *Certains éléments existent déjà*. Vous pouvez utiliser cette fonctionnalité pour enregistrer les deux fichiers ou les remplacer tous.
+- *Redémarrer*. Après l'importation des fichiers, l'application doit être redémarrée.
 
 
 ### OsmAnd Cloud
 
-[OsmAnd Cloud](../personal/osmand-cloud.md) is the alternative resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make can be synchronized.
+[OsmAnd Cloud](../personal/osmand-cloud.md) est la ressource alternative dont vous avez besoin pour enregistrer vos paramètres personnels et les données de l'application. Vous pouvez utiliser ces données sur n'importe quel appareil disponible pour installer l'application OsmAnd ou lors de l'utilisation de l'application de bureau. Toutes les modifications que vous apportez peuvent être synchronisées.
 
 
-## Preventing Data Loss
+## Prévention de la perte de données
 
-In the *Android* and *iOS* versions of OsmAnd, if you completely **uninstall** the app or select **Clear Data** on your device in the Settings menu Application information, the data folder will also be deleted from the device's file manager. If you do not take precautions, this will result in **losing all downloaded maps for OsmAnd data, all saved Favorites, GPX tracks, Voice prompts (TTS), and [other data](#export--import-data).**
+Dans les versions *Android* et *iOS* d'OsmAnd, si vous **désinstallez** complètement l'application ou sélectionnez **Effacer les données** sur votre appareil dans le menu Paramètres Informations sur l'application, le dossier de données sera également supprimé du gestionnaire de fichiers de l'appareil. Si vous ne prenez pas de précautions, cela entraînera la **perte de toutes les cartes téléchargées pour les données OsmAnd, de tous les favoris enregistrés, des traces GPX, des invites vocales (TTS) et [d'autres données](#export--import-data).**
 
-There are two ways to save your data before reinstalling the OsmAnd app:
+Il existe deux façons de sauvegarder vos données avant de réinstaller l'application OsmAnd :
 
-- Use [OsmAnd Cloud](#osmand-cloud). You can back up your data using OsmAnd features such as [OsmAnd Start](../personal/osmand-cloud.md#osmand-start), as a free version, or [OsmAnd Pro](../purchases/index.md), a paid subscription with more features.
-- [Export OSF file](#export) with your data. Copy the `.osf` file to a folder on your device or OsmAnd Cloud. After reinstalling OsmAnd, [import this `.osf` file](#import) to the OsmAnd app.
+- Utiliser [OsmAnd Cloud](#osmand-cloud). Vous pouvez sauvegarder vos données à l'aide des fonctionnalités d'OsmAnd telles que [OsmAnd Start](../personal/osmand-cloud.md#osmand-start), en version gratuite, ou [OsmAnd Pro](../purchases/index.md), un abonnement payant avec plus de fonctionnalités.
+- [Exporter un fichier OSF](#export) avec vos données. Copiez le fichier `.osf` dans un dossier de votre appareil ou dans OsmAnd Cloud. Après avoir réinstallé OsmAnd, [importez ce fichier `.osf`](#import) dans l'application OsmAnd.
 
 
-## Related Articles
+## Articles connexes
 
-- [Profiles (Settings)](./profiles.md)
-- [Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)
-- [Search History](../search/search-history.md#export-and-share)
-- [Color Palette Schemes](../personal/color-palette-schemes.md)
+- [Profils (Paramètres)](./profiles.md)
+- [Gérer les traces](../personal/tracks/manage-tracks.md#import--export-track)
+- [Historique de recherche](../search/search-history.md#export-and-share)
+- [Schémas de palette de couleurs](../personal/color-palette-schemes.md)
 
-### Common Issues and Solutions
+### Problèmes courants et solutions
 
-1. How to transfer Favorites and Tracks to a new device. [(check)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
-2. I have a GPX file, how do I import it into OsmAnd? [(check)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
-3. Deleting map data after the app update (if “Multiuser Storage 1” is selected). [(check)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)
+1. Comment transférer des favoris et des traces vers un nouvel appareil. [(vérifier)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
+2. J'ai un fichier GPX, comment l'importer dans OsmAnd ? [(vérifier)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
+3. Suppression des données cartographiques après la mise à jour de l'application (si « Stockage multi-utilisateur 1 » est sélectionné). [(vérifier)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)
 
-> *This article was last updated in January 2025*
+> *Cet article a été mis à jour pour la dernière fois en janvier 2025*
+
+-- source-hash: blake2s: 4e89165f3714c483b8f2287966c7141a4b553454ae048188129fa7a8386a191d --

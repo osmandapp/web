@@ -2,11 +2,13 @@
 sidebar_position: 1
 ---
 
-# Contributions are welcome!
+# Les contributions sont les bienvenues !
 
-You can also use OsmAnd's functionality and plugins to directly contribute data to collaborative projects like OpenStreetMap, Wikipedia, WikiVoyage, Mapillary.
+Vous pouvez également utiliser les fonctionnalités et les plugins d'OsmAnd pour contribuer directement des données à des projets collaboratifs tels qu'OpenStreetMap, Wikipedia, WikiVoyage, Mapillary.
 
-* [Creating a Consistent User Experience](./creating-consistent-ux.md)
-* [How to Translate OsmAnd](./translating-osmand.md)
-* [Navigation Voice Prompts](./voice-prompts.md)
-* [Debug OBF Routing on a PC](./debug-obf-routing-on-pc.md)
+* [Créer une expérience utilisateur cohérente](./creating-consistent-ux.md)
+* [Comment traduire OsmAnd](./translating-osmand.md)
+* [Invites vocales de navigation](./voice-prompts.md)
+* [Déboguer le routage OBF sur un PC](./debug-obf-routing-on-pc.md)
+
+-- source-hash: blake2s: 33d2abf25b4c0482f32421f782fb9fddc1b05b1ff6d34f3f242bb656fcf36cef --

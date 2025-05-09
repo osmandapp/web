@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title:  Route Details
+title:  Détails de l'itinéraire
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,236 +15,236 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
-OsmAnd allows you to find the best route and explore its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), [CO2 footprint data](#distance--time--co2),and [turn information](#turn-by-turn-information). You can also [analyze](#analyze-on-map) the route on the map, find out information about track segments, [print](#print) the route plan, [save](#share--export-actions) the route, and share it with others. With this functionality, you will always know the route details and can plan your trip more efficiently.  
+OsmAnd vous permet de trouver le meilleur itinéraire et d'en explorer les détails. L'application fournit des informations détaillées sur l'itinéraire, telles que la distance, le [temps de trajet](#distance--time--co2), le [type de surface](#road-attributes), les [différences d'altitude](#elevation-info), les [données d'empreinte carbone](#distance--time--co2) et les [informations de virage](#turn-by-turn-information). Vous pouvez également [analyser](#analyze-on-map) l'itinéraire sur la carte, obtenir des informations sur les segments de piste, [imprimer](#print) le plan d'itinéraire, [enregistrer](#share--export-actions) l'itinéraire et le partager avec d'autres. Grâce à cette fonctionnalité, vous connaîtrez toujours les détails de l'itinéraire et pourrez planifier votre voyage plus efficacement.
 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Route details Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)  
+![Détails de l'itinéraire Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route details iOS](@site/static/img/navigation/route/route_detail_overview_4_ios.png)
+![Détails de l'itinéraire iOS](@site/static/img/navigation/route/route_detail_overview_4_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-### How to Access
+### Comment y accéder
 
-After calculating a route in the [Navigation menu](./route-navigation.md#start--stop-navigation), you have access to "Details" about that route. This information is useful to use before starting a trip to improve route planning or to check information about the road ahead while driving.  
-There are three ways to access the *Route Details menu*.  
+Après avoir calculé un itinéraire dans le [menu Navigation](./route-navigation.md#start--stop-navigation), vous avez accès aux "Détails" de cet itinéraire. Ces informations sont utiles avant de commencer un voyage pour améliorer la planification de l'itinéraire ou pour vérifier les informations sur la route à venir pendant la conduite.
+Il existe trois façons d'accéder au *menu Détails de l'itinéraire*.
 
-1. Go to the main *Menu → Navigation*, set the route, and tap the *Details* button.
-2. Tap the *Navigation* icon on the map screen, set the route, and tap the *Details* button.
-3. Go to the *My Places* menu, tap any available track in the list *Menu → My Places → Tracks*, select the *Navigation* icon in the track context menu in the *Overview* and tap *Details*.  
+1. Allez dans le *Menu principal → Navigation*, définissez l'itinéraire et appuyez sur le bouton *Détails*.
+2. Appuyez sur l'icône *Navigation* sur l'écran de la carte, définissez l'itinéraire et appuyez sur le bouton *Détails*.
+3. Allez dans le menu *Mes lieux*, appuyez sur n'importe quelle piste disponible dans la liste *Menu → Mes lieux → Pistes*, sélectionnez l'icône *Navigation* dans le menu contextuel de la piste dans l'*Aperçu* et appuyez sur *Détails*.
 
-Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../../navigation/routing/osmand-routing.md#routing-types), some route details may not be displayed. In addition, the route details depend highly on the *OpenStreetMap data coverage*.
+Selon les [paramètres de profil](../../personal/profiles.md) sélectionnés et le [type de routage](../../navigation/routing/osmand-routing.md#routing-types) sélectionné, certains détails de l'itinéraire peuvent ne pas être affichés. De plus, les détails de l'itinéraire dépendent fortement de la *couverture des données OpenStreetMap*.
 
 
-## Distance / Time / CO2
+## Distance / Temps / CO2
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_2_andr.png)
+![Détails de l'itinéraire](@site/static/img/navigation/route/route_details_distance-time-CO2_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/route_details_distance-time-CO2_2_ios.png)
+![Itinéraire de navigation iOS](@site/static/img/navigation/route/route_details_distance-time-CO2_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- ***Total distance*** is calculated between all route segments, including intermediate points in the selected [units](../../personal/profiles.md#units--formats).
+- La ***distance totale*** est calculée entre tous les segments de l'itinéraire, y compris les points intermédiaires dans les [unités](../../personal/profiles.md#units--formats) sélectionnées.
 
-- ***Estimated travel time*** is calculated as the total of times on each segment and time penalties on specific points. Each navigation profile has different rules for calculating speed on a segment and which penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example, car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, and aircraft profiles use *default* speed from [Navigation Settings](../guidance/navigation-settings.md#default-speed--road-speeds).
+- Le ***temps de trajet estimé*** est calculé comme la somme des temps sur chaque segment et des pénalités de temps sur des points spécifiques. Chaque profil de navigation a des règles différentes pour calculer la vitesse sur un segment et les pénalités à inclure (configurées dans [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). Par exemple, les profils de voiture et de vélo prennent la vitesse moyenne par segment à partir des données OpenStreetMap, mais les profils de piéton, de bateau et d'avion utilisent la vitesse *par défaut* des [Paramètres de navigation](../guidance/navigation-settings.md#default-speed--road-speeds).
 
-- ***Estimated arrival time*** is calculated as a time from now in Local time of the origin using *Estimated travel time*.
+- L'***heure d'arrivée estimée*** est calculée à partir de maintenant en heure locale de l'origine en utilisant le *temps de trajet estimé*.
 
-- ***CO2 footprint data*** estimates roughly how much CO2 will be produced while following the route. You need to configure the [Fuel engine type](../guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get a more accurate approximation.
+- Les ***données d'empreinte carbone*** estiment approximativement la quantité de CO2 qui sera produite en suivant l'itinéraire. Vous devez configurer le [type de moteur de carburant](../guidance/navigation-settings.md#fuel-used-by-motor) dans les paramètres du véhicule pour obtenir une approximation plus précise.
 
 
-## Elevation Info
+## Informations d'altitude
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Route details](@site/static/img/navigation/route/route_details_info-block_andr.png)
+![Détails de l'itinéraire](@site/static/img/navigation/route/route_details_info-block_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/route_details_info-block_ios.png)
+![Itinéraire de navigation iOS](@site/static/img/navigation/route/route_details_info-block_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Elevation information** is provided in all OsmAnd offline route profiles, except for profiles that use [Straight line navigation](../routing/straight-line-routing.md). The elevation data is part of the OsmAnd Offline Maps and is calculated based on [Public SRTM sources](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission).
+Les **informations d'altitude** sont fournies dans tous les profils d'itinéraire hors ligne d'OsmAnd, à l'exception des profils qui utilisent la [navigation en ligne droite](../routing/straight-line-routing.md). Les données d'altitude font partie des cartes hors ligne d'OsmAnd et sont calculées sur la base de [sources SRTM publiques](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission).
 
-- *Altitude range*. Displays minimum / maximum elevation on the route.
-- *Average altitude*. Displays weighted average elevation on the route.
-- *Uphill / downhill*. Displays the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope. The grade shows the maximum road slope in percent from your location point to the end of the visible graph, or for the selected section of the route without the location point visible on the screen.
-
-
-***A license for DEM data used by OsmAnd for terrain detection***  
-The altitude data on the map (between 70 degrees north latitude and 70 degrees south latitude) were obtained from measurements made as a part of the *Shuttle Radar Topography Mission (SRTM)*. It utilized the *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, the primary imaging tool in *NASA's Earth Observation System*. For complete information, see the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
+- *Plage d'altitude*. Affiche l'altitude minimale / maximale sur l'itinéraire.
+- *Altitude moyenne*. Affiche l'altitude moyenne pondérée sur l'itinéraire.
+- *Montée / descente*. Affiche le rapport du chemin à l'horizontale, où zéro indique l'horizontalité et le nombre de degrés indique un degré de pente plus élevé ou plus raide. La pente indique la pente maximale de la route en pourcentage de votre point de localisation à la fin du graphique visible, ou pour la section sélectionnée de l'itinéraire sans le point de localisation visible à l'écran.
 
 
-<details><summary>DEM (DSM) data</summary>
-   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
+***Une licence pour les données DEM utilisées par OsmAnd pour la détection du terrain***
+Les données d'altitude sur la carte (entre 70 degrés de latitude nord et 70 degrés de latitude sud) ont été obtenues à partir de mesures effectuées dans le cadre de la *Shuttle Radar Topography Mission (SRTM)*. Elle a utilisé l'*Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, le principal outil d'imagerie du *Earth Observation System de la NASA*. Pour des informations complètes, voir la [Licence](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
+
+
+<details><summary>Données DEM (DSM)</summary>
+   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Les données originales utilisées pour ce produit ont été fournies par AW3D de la JAXA.<br/>
  - <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
  - <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
- - <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).</details>
+ - <a href="https://sonny.4lima.de">Modèles numériques de terrain LiDAR de Sonny en Europe</a> (DTM).</details>
 
 
-### Elevation Graph
+### Graphique d'altitude
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Route details](@site/static/img/navigation/route/route_details_el_graph_andr.png)
+![Détails de l'itinéraire](@site/static/img/navigation/route/route_details_el_graph_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/route_details_el_graph_ios.png)
+![Itinéraire de navigation iOS](@site/static/img/navigation/route/route_details_el_graph_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-The [graphs](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visually display information about the altitude and slope of your navigation route and your current position on this graph with the current altitude and slope. The graph is plotted on two axes. The X-axis is the distance on your route. The first Y-axis is the altitude above sea level, the value of which depends on the terrain, and the second Y-axis is the approximated [slope](https://en.wikipedia.org/wiki/Grade_(slope)). You can view the elevation graph for the entire route or only for a selected interval by scaling the graph.  
+Les [graphiques](../../map/tracks/track-context-menu.md#altitude--speed-graphs) affichent visuellement des informations sur l'altitude et la pente de votre itinéraire de navigation et votre position actuelle sur ce graphique avec l'altitude et la pente actuelles. Le graphique est tracé sur deux axes. L'axe des X est la distance sur votre itinéraire. Le premier axe des Y est l'altitude au-dessus du niveau de la mer, dont la valeur dépend du terrain, et le second axe des Y est la [pente](https://en.wikipedia.org/wiki/Grade_(slope)) approximative. Vous pouvez afficher le graphique d'altitude pour l'ensemble de l'itinéraire ou seulement pour un intervalle sélectionné en mettant à l'échelle le graphique.
 
-- ***Zoom in/out***. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movements](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location. *Such manipulations also refer to the visual block of information in the [Road Attributes](#road-attributes) block.*  
+- ***Zoom avant/arrière***. Par défaut, le graphique affiche l'itinéraire de la position actuelle à votre point de destination. Vous pouvez utiliser les [mouvements à deux doigts](../../map/interact-with-map.md#gestures) pour zoomer et dézoomer afin d'obtenir une vue plus détaillée. Vous pouvez également déplacer le graphique vers la droite, vers l'avant sur l'itinéraire et vers l'arrière jusqu'à la position actuelle. *Ces manipulations se réfèrent également au bloc visuel d'informations dans le bloc [Attributs de la route](#road-attributes).*
 
-- ***Location Pin***. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with altitude and slope percent will appear.  
-
-
-## Analyze on Map
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Route details Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Route details iOS](@site/static/img/navigation/route/navigation_route_analiz_ios.png)
-
-</TabItem>
-
-</Tabs>  
-
-**Analyze on map** tool is similar to the tool for viewing [track details](../../map/tracks/index.md#analyze-track-on-map) on the map. It allows you to view and visually interact with various graphs and see the selected point on the map.
-
-If data is present, you can select one of the following types:
-
-- *Y-axis*:
-   - [*Altitude*](../../map/tracks/track-context-menu.md#altitude). This is the [process](https://wiki.openstreetmap.org/wiki/Altitude) of obtaining height above a fixed level.
-   - [*Slope*](https://wiki.openstreetmap.org/wiki/Key:incline). The [slope of the landform](https://en.wikipedia.org/wiki/Grade_(slope)) means the tangent of the angle of inclination of the surface to the horizontal.
-   - [*Speed*](../../map/tracks/track-context-menu.md#speed). Speed values when driving on a track.
-   - Graphs with two types of data: &nbsp;*Altitude/Slope*, &nbsp;*Altitude/Speed*, &nbsp;*Slope/Speed*, &nbsp;*Animated zoom/Speed*.
-- *X-axis*:
-   - *Distance*. You can view route data that relates to the length of the route.
-   - *Time*. You can view route data that relates to the time calculated for that route
-   - *Time of day*. You can view route data at certain times of the day.
+- ***Épingle de localisation***. Si vous souhaitez voir les informations à un point particulier de votre itinéraire, vous pouvez appuyer n'importe où sur le graphique et un pointeur avec l'altitude et le pourcentage de pente apparaîtra.
 
 
-### Type of Interactions
-
-- *Tap and Slide*. Tap the graph to display information about the track point and the movement along it. The graph highlights the location of the point on the map and displays information about it on the ruler.
-- *Scale*. Scale graph by [two fingers gesture](../../map/interact-with-map.md#gestures).
-- *Follow My location* (*Android only*). You can tap [My Location](../../map/interact-with-map.md#my-location-and-zoom) to synchronize the map view and graph with your location. As you move, the graph will shift from left to right, displaying information ahead of your path.  
-
-
-## Road Attributes
+## Analyser sur la carte
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
-
-![Navigation route Android](@site/static/img/navigation/route/route_details_attributes_andr.png)
+![Détails de l'itinéraire Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> tab*
-
-![Navigation route iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
+![Détails de l'itinéraire iOS](@site/static/img/navigation/route/navigation_route_analiz_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Road attributes are accessible in the [Route Details](#how-to-access) and display segment-related information from OpenStreetMap and Elevation data. The color indication is related to how specific attributes are rendered on the map (see [Map legend](../../map-legend/osmand.md#surface-smoothness)). The bar graphs are also interactive, and it's possible to see information at a specific location by tapping on the graph.
+L'outil **Analyser sur la carte** est similaire à l'outil de visualisation des [détails de la piste](../../map/tracks/index.md#analyze-track-on-map) sur la carte. Il vous permet de visualiser et d'interagir visuellement avec divers graphiques et de voir le point sélectionné sur la carte.
 
-- [**Road type**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). The type of road is determined based on its functional purpose and characteristics, such as the number of lanes, speed limits, load capacity, the presence of pedestrian and bicycle paths, roadsides, and other parameters. Different types of roads may have different restrictions and traffic rules.  
+Si des données sont présentes, vous pouvez sélectionner l'un des types suivants :
 
-   For example, main [highways](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) usually have a high-speed limit and can be divided into lanes, and [local roads](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) can have a low-speed limit and one lane in each direction.  
-
-- [**Surface**](https://wiki.openstreetmap.org/wiki/Key:surface). Road surfaces are the top layer of pavement that comes into contact with the wheels of vehicles. They can be of different types depending on their properties and functional purpose.  
-
-   For example, [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) pavement provides good traction and noise insulation, and [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) pavement is more durable and has a greater load capacity. Other materials such as gravel, crushed stone, wood boards, and others can also be utilized to create a road surface.  
-
-- [**Steepness**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). This is a measurement of the angle of the slope of the road, expressed as a percentage. It indicates how steeply the road is sloped up or down relative to the horizon, and it is calculated by measuring the vertical change in road elevation by the horizontal distance and multiplying the resulting value by 100%.  
-
-   For example, if the steepness of the road is 10%, that means for every 100 meters of horizontal distance along the road, you are going up or down 10 meters. The steepness of the road can affect your vehicle's speed, braking, fuel consumption, and driving safety, especially on slippery roads in the winter.  
-
-- [**Surface firmness**](https://wiki.openstreetmap.org/wiki/Key:tracktype). The road surface can recover from deformation or load. The higher the surface firmness, the less chance of damage to the vehicle and the more comfortable the road will be. Surface firmness can also affect vehicle speed and fuel consumption.  
-
-- [**Slope**](https://wiki.openstreetmap.org/wiki/Key:incline).  Indicates what percentage of slopes there are on your route.
-
-- [**Smoothness**](https://wiki.openstreetmap.org/wiki/Key:smoothness). Applicable for all types of paths and areas, such as highways, parking lots, beaches, and trails, and indicates the usability of the route. It gives you information that you can drive without significant risk of damage, such as vehicle undercarriage, or injury, such as a fall.  
-
-- [**Winter and ice roads**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Shows the color scheme of the route according to the classification of [winter roads](../../map/vector-maps.md#winter-and-ski).  
-
-- [**Difficulty of horse trails**](https://wiki.openstreetmap.org/wiki/Riding). This road attribute indicates the difficulty of the route while riding a horse. Suitable for [Horseback routing](../../navigation/routing/horse-routing.md).  
+- *Axe Y* :
+   - [*Altitude*](../../map/tracks/track-context-menu.md#altitude). Il s'agit du [processus](https://wiki.openstreetmap.org/wiki/Altitude) d'obtention de la hauteur au-dessus d'un niveau fixe.
+   - [*Pente*](https://wiki.openstreetmap.org/wiki/Key:incline). La [pente du relief](https://en.wikipedia.org/wiki/Grade_(slope)) signifie la tangente de l'angle d'inclinaison de la surface par rapport à l'horizontale.
+   - [*Vitesse*](../../map/tracks/track-context-menu.md#speed). Valeurs de vitesse lors de la conduite sur une piste.
+   - Graphiques avec deux types de données : &nbsp;*Altitude/Pente*, &nbsp;*Altitude/Vitesse*, &nbsp;*Pente/Vitesse*, &nbsp;*Zoom animé/Vitesse*.
+- *Axe X* :
+   - *Distance*. Vous pouvez afficher les données d'itinéraire qui se rapportent à la longueur de l'itinéraire.
+   - *Temps*. Vous pouvez afficher les données d'itinéraire qui se rapportent au temps calculé pour cet itinéraire.
+   - *Heure de la journée*. Vous pouvez afficher les données d'itinéraire à certaines heures de la journée.
 
 
-## Turn-by-Turn Information
+### Type d'interactions
+
+- *Appuyer et glisser*. Appuyez sur le graphique pour afficher des informations sur le point de la piste et le mouvement le long de celle-ci. Le graphique met en évidence l'emplacement du point sur la carte et affiche des informations à son sujet sur la règle.
+- *Échelle*. Mettez à l'échelle le graphique par [geste à deux doigts](../../map/interact-with-map.md#gestures).
+- *Suivre ma position* (*Android uniquement*). Vous pouvez appuyer sur [Ma position](../../map/interact-with-map.md#my-location-and-zoom) pour synchroniser la vue de la carte et le graphique avec votre position. Au fur et à mesure que vous vous déplacez, le graphique se déplacera de gauche à droite, affichant des informations devant votre chemin.
+
+
+## Attributs de la route
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png)
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
+
+![Itinéraire de navigation Android](@site/static/img/navigation/route/route_details_attributes_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> onglet*
+
+![Itinéraire de navigation iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Turn-by-turn information provides detailed [instructions](#instructions) on how to navigate a route. In addition to the *Details* menu, it is also displayed in the [*Route maneuvers*](../../widgets/nav-widgets.md#route-maneuvers) and [*Lanes*](../../widgets/nav-widgets.md#lanes) widgets. This information helps you to better navigate your route and allows you to plan ahead.
+Les attributs de la route sont accessibles dans les [Détails de l'itinéraire](#how-to-access) et affichent des informations relatives aux segments provenant d'OpenStreetMap et des données d'altitude. L'indication de couleur est liée à la façon dont les attributs spécifiques sont rendus sur la carte (voir [Légende de la carte](../../map-legend/osmand.md#surface-smoothness)). Les graphiques à barres sont également interactifs, et il est possible de voir des informations à un endroit spécifique en appuyant sur le graphique.
 
-Tap a specific section of the route in the list to view detailed information or make changes as required. The map enlarges and a [Context menu](../../map/map-context-menu.md) opens.
+- [**Type de route**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). Le type de route est déterminé en fonction de sa fonction et de ses caractéristiques, telles que le nombre de voies, les limitations de vitesse, la capacité de charge, la présence de pistes piétonnes et cyclables, les accotements et d'autres paramètres. Différents types de routes peuvent avoir des restrictions et des règles de circulation différentes.
+
+   Par exemple, les principales [autoroutes](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) ont généralement une limitation de vitesse élevée et peuvent être divisées en voies, et les [routes locales](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) peuvent avoir une limitation de vitesse basse et une voie dans chaque direction.
+
+- [**Surface**](https://wiki.openstreetmap.org/wiki/Key:surface). Les surfaces routières sont la couche supérieure de chaussée qui entre en contact avec les roues des véhicules. Elles peuvent être de différents types selon leurs propriétés et leur fonction.
+
+   Par exemple, la chaussée en [asphalte](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) offre une bonne adhérence et une bonne isolation phonique, et la chaussée en [béton](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) est plus durable et a une plus grande capacité de charge. D'autres matériaux tels que le gravier, la pierre concassée, les planches de bois et autres peuvent également être utilisés pour créer une surface routière.
+
+- [**Pente**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). Il s'agit d'une mesure de l'angle de la pente de la route, exprimée en pourcentage. Elle indique à quel point la route est inclinée vers le haut ou vers le bas par rapport à l'horizon, et elle est calculée en mesurant le changement vertical de l'altitude de la route par la distance horizontale et en multipliant la valeur résultante par 100 %.
+
+   Par exemple, si la pente de la route est de 10 %, cela signifie que pour chaque 100 mètres de distance horizontale le long de la route, vous montez ou descendez de 10 mètres. La pente de la route peut affecter la vitesse de votre véhicule, le freinage, la consommation de carburant et la sécurité de conduite, en particulier sur les routes glissantes en hiver.
+
+- [**Fermeté de la surface**](https://wiki.openstreetmap.org/wiki/Key:tracktype). La surface de la route peut se remettre de la déformation ou de la charge. Plus la fermeté de la surface est élevée, moins il y a de risques de dommages au véhicule et plus la route sera confortable. La fermeté de la surface peut également affecter la vitesse du véhicule et la consommation de carburant.
+
+- [**Inclinaison**](https://wiki.openstreetmap.org/wiki/Key:incline). Indique le pourcentage de pentes sur votre itinéraire.
+
+- [**Lissé**](https://wiki.openstreetmap.org/wiki/Key:smoothness). Applicable à tous les types de chemins et de zones, tels que les autoroutes, les parkings, les plages et les sentiers, et indique la praticabilité de l'itinéraire. Il vous donne des informations indiquant que vous pouvez conduire sans risque significatif de dommages, tels que le dessous du véhicule, ou de blessures, telles qu'une chute.
+
+- [**Routes d'hiver et de glace**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Affiche la palette de couleurs de l'itinéraire selon la classification des [routes d'hiver](../../map/vector-maps.md#winter-and-ski).
+
+- [**Difficulté des sentiers équestres**](https://wiki.openstreetmap.org/wiki/Riding). Cet attribut de route indique la difficulté de l'itinéraire lors d'une randonnée à cheval. Convient pour le [routage équestre](../../navigation/routing/horse-routing.md).
+
+
+## Informations virage par virage
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Itinéraire de navigation Android](@site/static/img/navigation/route/navigation_route_android_turn.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Itinéraire de navigation Android](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Les informations virage par virage fournissent des [instructions](#instructions) détaillées sur la façon de naviguer sur un itinéraire. En plus du menu *Détails*, elles sont également affichées dans les widgets [*Manœuvres d'itinéraire*](../../widgets/nav-widgets.md#route-maneuvers) et [*Voies*](../../widgets/nav-widgets.md#lanes). Ces informations vous aident à mieux naviguer sur votre itinéraire et vous permettent de planifier à l'avance.
+
+Appuyez sur une section spécifique de l'itinéraire dans la liste pour afficher des informations détaillées ou apporter les modifications nécessaires. La carte s'agrandit et un [menu contextuel](../../map/map-context-menu.md) s'ouvre.
 
 
 ### Instructions
@@ -253,95 +253,97 @@ Tap a specific section of the route in the list to view detailed information or 
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_turn_andr.png)
+![Itinéraire de navigation Android](@site/static/img/navigation/route/navigation_turn_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Itinéraire de navigation Android](@site/static/img/navigation/route/navigation_turn_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Instructions include information about moving along the route, such as:
+Les instructions comprennent des informations sur le déplacement le long de l'itinéraire, telles que :
 
-- The [*next turn arrow*](../../widgets/nav-widgets.md#next-turn) and *its direction*.
-- *Distance to maneuver*.
-- A description of *what to do*, which includes the *name of the street or trail*.
-- *Total distance* and *time of the route*.
-- *[Lanes](../../widgets/nav-widgets.md#lanes) layout* for the current road.
-- [*Road side indicator*](#roadside-indicator) (*iOS only*).
+- La [*flèche du prochain virage*](../../widgets/nav-widgets.md#next-turn) et *sa direction*.
+- *Distance jusqu'à la manœuvre*.
+- Une description de *ce qu'il faut faire*, qui comprend le *nom de la rue ou du sentier*.
+- *Distance totale* et *temps de l'itinéraire*.
+- Disposition des [*voies*](../../widgets/nav-widgets.md#lanes) pour la route actuelle.
+- [*Indicateur de côté de route*](#roadside-indicator) (*iOS uniquement*).
 
 
-### Roadside Indicator
+### Indicateur de côté de route
 
-:::caution iOS only
-This type of instruction is currently *not available for the Android* version of the OsmAnd app.
+:::caution iOS uniquement
+Ce type d'instruction n'est actuellement *pas disponible pour la version Android* de l'application OsmAnd.
 :::
 
-![Side indication](@site/static/img/navigation/route/side_indication.png)
+![Indication latérale](@site/static/img/navigation/route/side_indication.png)
 
-In the instruction list, the **roadside indicator** shows which direction from your current location and direction of movement to your final point is your destination, this can be left, right, and straight ahead.  
+Dans la liste d'instructions, l'**indicateur de côté de route** indique la direction par rapport à votre position actuelle et à votre direction de déplacement vers votre point final, cela peut être à gauche, à droite et tout droit.
 
-The angle between your destination (*[Bearing](https://en.wikipedia.org/w/index.php?title=Bearing_(navigation)&oldformat=true) from the latest point*) and the last segment (*Bearing to the latest 2 points of the route*) is measured, divided into 3 sectors of 120 degrees, and the result is that you can see in which direction your destination is.
+L'angle entre votre destination (*[Cap](https://en.wikipedia.org/w/index.php?title=Bearing_(navigation)&oldformat=true) depuis le dernier point*) et le dernier segment (*Cap vers les 2 derniers points de l'itinéraire*) est mesuré, divisé en 3 secteurs de 120 degrés, et le résultat est que vous pouvez voir dans quelle direction se trouve votre destination.
 
-- `-60 °`&nbsp; &nbsp; &nbsp; to &nbsp; &nbsp;`60 °`&nbsp; &nbsp; &nbsp; - marked as **straight ahead**.
-- `-180 °`&nbsp; &nbsp; to &nbsp; &nbsp;`-60 °`&nbsp; &nbsp; - marked as **left** side.
-- `60 °`&nbsp; &nbsp; &nbsp; &nbsp; to &nbsp; &nbsp;`180 °`&nbsp; &nbsp; - marked as **right** side.
+- `-60 °`&nbsp; &nbsp; &nbsp; à &nbsp; &nbsp;`60 °`&nbsp; &nbsp; &nbsp; - marqué comme **tout droit**.
+- `-180 °`&nbsp; &nbsp; à &nbsp; &nbsp;`-60 °`&nbsp; &nbsp; - marqué comme côté **gauche**.
+- `60 °`&nbsp; &nbsp; &nbsp; &nbsp; à &nbsp; &nbsp;`180 °`&nbsp; &nbsp; - marqué comme côté **droit**.
 
 
-### Print
+### Imprimer
 
 <InfoAndroidOnly/>
 
-![route details](@site/static/img/navigation/route/route_details_print-2.png)  
+![détails de l'itinéraire](@site/static/img/navigation/route/route_details_print-2.png)
 
-The **Print** feature of a turn-by-turn route description can be useful if you prefer to have a physical copy of your route description instead of using electronic devices, or if you do not have access to navigation apps or GPS navigators, no Internet access, or if you need information for other people traveling with you.
+La fonction **Imprimer** d'une description d'itinéraire virage par virage peut être utile si vous préférez avoir une copie physique de votre description d'itinéraire au lieu d'utiliser des appareils électroniques, ou si vous n'avez pas accès aux applications de navigation ou aux navigateurs GPS, pas d'accès à Internet, ou si vous avez besoin d'informations pour d'autres personnes voyageant avec vous.
 
-A printed route description provides detailed *turn-by-turn instructions* on how to navigate your route, including the distance to the next turn, driving direction, and street or trail names, as well as distance and travel time information.  
+Une description d'itinéraire imprimée fournit des *instructions détaillées virage par virage* sur la façon de naviguer sur votre itinéraire, y compris la distance jusqu'au prochain virage, la direction de conduite et les noms de rues ou de sentiers, ainsi que des informations sur la distance et le temps de trajet.
 
-This information can be useful when you are planning a trip and want to estimate the time and distance between different points on the route and determine the expected time of arrival.
+Ces informations peuvent être utiles lorsque vous planifiez un voyage et que vous souhaitez estimer le temps et la distance entre différents points de l'itinéraire et déterminer l'heure d'arrivée prévue.
 
-The ability **to print** or **save** turn-by-turn information **in PDF format** is especially useful when traveling long distances or in unfamiliar places when you need to have a more detailed idea of the route and the time it takes to get there.
+La possibilité **d'imprimer** ou **d'enregistrer** les informations virage par virage **au format PDF** est particulièrement utile lors de longs trajets ou dans des endroits inconnus lorsque vous avez besoin d'avoir une idée plus détaillée de l'itinéraire et du temps qu'il faut pour y arriver.
 
 
-## Share / Export (Actions)
+## Partager / Exporter (Actions)
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_share_andr.png)
+![Itinéraire de navigation Android](@site/static/img/navigation/route/navigation_route_share_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
+![Itinéraire de navigation iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-The Route Details navigation section has options that allow you to perform certain actions with the route information.  
+La section de navigation Détails de l'itinéraire propose des options qui vous permettent d'effectuer certaines actions avec les informations de l'itinéraire.
 
-- [**Print**](#print). Allows you to print or save turn-by-turn route information.
-- **Export/Save**. Allows you to save the route information **as a new track** for later offline use. The exported track contains all information about road attributes and turn instructions. So, [navigation by this track](./gpx-navigation.md) should provide all features as navigation by the route.
-- **Share**. Shares an exported track or a link to the route which could be opened on another device with OsmAnd.
+- [**Imprimer**](#print). Vous permet d'imprimer ou d'enregistrer les informations d'itinéraire virage par virage.
+- **Exporter/Enregistrer**. Vous permet d'enregistrer les informations de l'itinéraire **en tant que nouvelle piste** pour une utilisation hors ligne ultérieure. La piste exportée contient toutes les informations sur les attributs de la route et les instructions de virage. Ainsi, la [navigation par cette piste](./gpx-navigation.md) devrait fournir toutes les fonctionnalités de la navigation par l'itinéraire.
+- **Partager**. Partage une piste exportée ou un lien vers l'itinéraire qui pourrait être ouvert sur un autre appareil avec OsmAnd.
 
 
-## Related Articles
+## Articles connexes
 
-- [Route parameters](../routing/osmand-routing.md#routing-types)
-- [Route preparation](./route-navigation.md)
-- [Navigation by track](./gpx-navigation.md)
-- [Navigation by markers](./markers-navigation.md)
-- [Navigation settings](../guidance/navigation-settings.md)
-- [Map screen during navigation](../guidance/map-during-navigation.md)
-- [Voice prompts / Notifications](../guidance/voice-navigation.md)
+- [Paramètres d'itinéraire](../routing/osmand-routing.md#routing-types)
+- [Préparation de l'itinéraire](./route-navigation.md)
+- [Navigation par piste](./gpx-navigation.md)
+- [Navigation par marqueurs](./markers-navigation.md)
+- [Paramètres de navigation](../guidance/navigation-settings.md)
+- [Écran de la carte pendant la navigation](../guidance/map-during-navigation.md)
+- [Invites vocales / Notifications](../guidance/voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in November 2024*
+> *Cet article a été mis à jour pour la dernière fois en novembre 2024*
+
+-- source-hash: blake2s: d7401847f14d989dc3a557980e53f56e4bcfbfcb41a23e936fd0ab0829f72726 --

@@ -2,36 +2,38 @@
 sidebar_position: 2
 ---
 
-# Creating a Consistent User Experience
+# Créer une expérience utilisateur cohérente
 
-Usability of our complex features is decisively enhanced by wording and good translations, and as much consistency as possible. It is worth thinking about many expressions or sentences for a little while. :)
+La convivialité de nos fonctionnalités complexes est considérablement améliorée par le choix des mots, de bonnes traductions et autant de cohérence que possible. Il vaut la peine de réfléchir un peu à de nombreuses expressions ou phrases. :)
 
-Please note the following:
+Veuillez noter ce qui suit :
 
-## 1. Consistent Wording
+## 1. Cohérence du vocabulaire
 
-Use only **one expression** for a certain feature, do not mix two possible expressions. Examples:
+Utilisez une seule expression pour une certaine fonctionnalité, ne mélangez pas deux expressions possibles. Exemples :
 
-* Check for existing expressions and re-use them in new strings
-* Use _"navigation"_, not _"routing"_, throughout.
-* Use _"tracking"_, not _"monitoring"_
-* We use _"position"_ for where you are, while _"location"_ refers to arbitrary points
-* We use _"destination"_, not _"target"_
-* We use _"speed"_, not _"velocity"_
-* Know the difference between _"elevation"_ and _"altitude"_
-* It is _"OsmAnd"_ now, not _"Osmand"_  :)
+* Vérifiez les expressions existantes et réutilisez-les dans de nouvelles chaînes de caractères.
+* Utilisez "navigation", pas "routage", partout.
+* Utilisez "suivi", pas "surveillance".
+* Nous utilisons "position" pour l'endroit où vous vous trouvez, tandis que "localisation" fait référence à des points arbitraires.
+* Nous utilisons "destination", pas "cible".
+* Nous utilisons "vitesse", pas "vélocité".
+* Connaissez la différence entre "élévation" et "altitude".
+* C'est "OsmAnd" maintenant, pas "Osmand" :)
 
-## 2. Authoring Text
+## 2. Rédaction de texte
 
-* Please try to re-use existing string constants as much as possible, it is good for memory and performance.
-* For highly re-usable strings 'XXX' we often have a `shared_string_XXX`
-* Strings are often re-used! When changing existing strings, please double-check with _all_ their occurrences in the code
-* Unnecessary text clutters screens without helping much. Please be short and precise, only add words which convey _necessary_ information.
-* Please double-check the appearance of wording in the app, in particular on low-density devices. Too many line breaks, cut-off text or blown-up menu buttons may make a screen or dialog unusable.
-* In some cases there are conventions, which may be worth checking, rather than "inventing something". So if 99% of commercial navigation systems in your language announce "you have reached your destination", then using "you have arrived at where you wanted to go" may not be the best of choices... :)
-* Clearly mark all features which require Internet access with the expression "online".
-* The base language for OsmAnd is American English. There is a translation folder for British English for all expressions and spelling that differs.
+* Veuillez essayer de réutiliser autant que possible les constantes de chaîne de caractères existantes, c'est bon pour la mémoire et les performances.
+* Pour les chaînes de caractères hautement réutilisables 'XXX', nous avons souvent un `shared_string_XXX`.
+* Les chaînes de caractères sont souvent réutilisées ! Lorsque vous modifiez des chaînes de caractères existantes, veuillez vérifier toutes leurs occurrences dans le code.
+* Le texte inutile encombre les écrans sans beaucoup aider. Veuillez être bref et précis, n'ajoutez que des mots qui transmettent des informations nécessaires.
+* Veuillez vérifier l'apparence du texte dans l'application, en particulier sur les appareils à faible densité. Trop de sauts de ligne, de texte coupé ou de boutons de menu agrandis peuvent rendre un écran ou un dialogue inutilisable.
+* Dans certains cas, il existe des conventions qu'il peut être utile de vérifier plutôt que d'"inventer quelque chose". Ainsi, si 99 % des systèmes de navigation commerciaux dans votre langue annoncent "vous avez atteint votre destination", l'utilisation de "vous êtes arrivé là où vous vouliez aller" n'est peut-être pas le meilleur choix... :)
+* Marquez clairement toutes les fonctionnalités qui nécessitent un accès à Internet avec l'expression "en ligne".
+* La langue de base pour OsmAnd est l'anglais américain. Il existe un dossier de traduction pour l'anglais britannique pour toutes les expressions et l'orthographe qui diffèrent.
 
-## 3. Rendering
+## 3. Rendu
 
-* A note about rendering: The map appearance of our Maps styles has been tested for usabilityand visibility at a multitude of map locations, with many devices and screen technologies, and under different light conditions. _"Spontaneous improvements"_ to the renderer are almost always questionable, may at least require more investigation and testing than you may think... :)
+* Une note sur le rendu : L'apparence cartographique de nos styles de cartes a été testée pour sa convivialité et sa visibilité à une multitude d'emplacements cartographiques, avec de nombreux appareils et technologies d'écran, et dans différentes conditions d'éclairage. Les "améliorations spontanées" du rendu sont presque toujours discutables, peuvent au moins nécessiter plus d'investigations et de tests que vous ne le pensez... :)
+
+-- source-hash: blake2s: 888290085e58c614a95f55d9f75219cb7f1fdf72d0acd925ac6f33db40bf9003 --

@@ -2,9 +2,11 @@
 sidebar_position: 1
 ---
 
-# Map Creation
+# Création de cartes
 
-* [How to inspect an obf](./how-to-inspect-an-obf.md)
-* [Creating offline maps yourself](./create-offline-maps-yourself.md) - With OsmAndMapCreator there are many ways how to create and customize Raster & Vector maps for your needs.
-* [Create custom Travel Guide](create_travel_guide.md)
-* [Creating a country polygon](./creating-a-country-polygon.md)
+* [Comment inspecter un obf](./how-to-inspect-an-obf.md)
+* [Créer vous-même des cartes hors ligne](./create-offline-maps-yourself.md) - Avec OsmAndMapCreator, il existe de nombreuses façons de créer et de personnaliser des cartes Raster et Vectorielles selon vos besoins.
+* [Créer un guide de voyage personnalisé](create_travel_guide.md)
+* [Créer un polygone de pays](./creating-a-country-polygon.md)
+
+-- source-hash: blake2s: 9e239a171f98e1feb2dcdc7c4681470e5d88a2e16191bb678032674412b2346a --

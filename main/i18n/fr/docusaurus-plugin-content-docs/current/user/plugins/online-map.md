@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title:  Online Maps
+title: Cartes en ligne
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,93 +13,95 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Aperçu
 
-OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source, beginning with the satellite or hiking routes view and ending with very specific data, such as the location of fire hydrants. You can also change the main source of the map from vector maps to online tiles.
-
-
-## Required Setup Parameters
-
-The ability to use Online maps is automatically enabled in iOS version of OsmAnd. To display Online maps in Android, you need to make the following settings:
-
-1. [Enable](../plugins/index.md#enable--disable) **Online Maps** plugin in the *Main Menu → Plugins → Online Maps*.
-2. Make the necessary settings in [Map source](../map/raster-maps.md#select-raster-maps) section of the Configure map menu.
-3. Set the *Map Source*, *Overlay* and *Underlay* map. Select your preferred satellite map provider.
-4. Download selected [Online map](#how-to-prepare-raster-maps) if needed.
+Les cartes en ligne OsmAnd sont un ajout étendu à la base de données OpenStreetMap déjà présente dans l'application. Avec ce plugin, vous pouvez ajouter des couches à votre carte avec des informations provenant d'une source différente, en commençant par la vue satellite ou les itinéraires de randonnée et en terminant par des données très spécifiques, telles que l'emplacement des bouches d'incendie. Vous pouvez également changer la source principale de la carte, passant des cartes vectorielles aux tuiles en ligne.
 
 
-## Use Raster Maps on Device
+## Paramètres de configuration requis
 
-You can find detailed information about visualizing and customizing raster maps in the article [Raster Maps](../map/raster-maps.md). How to use:
+La possibilité d'utiliser les cartes en ligne est automatiquement activée dans la version iOS d'OsmAnd. Pour afficher les cartes en ligne dans Android, vous devez effectuer les réglages suivants :
 
-1. [Select](../map/raster-maps.md#select-raster-maps) the raster map as a *Main*, *Underlay*, or *Overlay* layer.
-    - [Change](../map/raster-maps.md#how-to-use-raster-maps) layer parameters (transparency).
+1. [Activer](../plugins/index.md#enable--disable) le plugin **Cartes en ligne** dans le *Menu principal → Plugins → Cartes en ligne*.
+2. Effectuez les réglages nécessaires dans la section [Source de la carte](../map/raster-maps.md#select-raster-maps) du menu Configurer la carte.
+3. Définissez la *Source de la carte*, la carte *Superposition* et la carte *Sous-couche*. Sélectionnez votre fournisseur de carte satellite préféré.
+4. Téléchargez la [carte en ligne](#how-to-prepare-raster-maps) sélectionnée si nécessaire.
 
-2. [Prepare / copy](../map/raster-maps.md#prepare--copy-raster-maps-to-device) raster maps to device.
-    - [Add new online raster map source](../map/raster-maps.md#add-new-online-raster-map-source)
-    - [Add Magic URL](../map/raster-maps.md#magic-url-to-install-map-source) to install map source.
 
-3. [Manage](../map/raster-maps.md#manage-raster-maps) raster maps.
-    - [Download / update tiles](../map/raster-maps.md#download--update-tiles).
-    - [Change](../map/raster-maps.md#change-raster-map-parameters) raster map parameters.
+## Utiliser les cartes raster sur l'appareil
+
+Vous trouverez des informations détaillées sur la visualisation et la personnalisation des cartes raster dans l'article [Cartes raster](../map/raster-maps.md). Comment utiliser :
+
+1. [Sélectionnez](../map/raster-maps.md#select-raster-maps) la carte raster comme couche *Principale*, *Sous-couche* ou *Superposition*.
+    - [Modifiez](../map/raster-maps.md#how-to-use-raster-maps) les paramètres de la couche (transparence).
+
+2. [Préparez / copiez](../map/raster-maps.md#prepare--copy-raster-maps-to-device) les cartes raster sur l'appareil.
+    - [Ajoutez une nouvelle source de carte raster en ligne](../map/raster-maps.md#add-new-online-raster-map-source)
+    - [Ajoutez une URL magique](../map/raster-maps.md#magic-url-to-install-map-source) pour installer la source de la carte.
+
+3. [Gérez](../map/raster-maps.md#manage-raster-maps) les cartes raster.
+    - [Téléchargez / mettez à jour les tuiles](../map/raster-maps.md#download--update-tiles).
+    - [Modifiez](../map/raster-maps.md#change-raster-map-parameters) les paramètres de la carte raster.
 
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
+Allez dans : *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Configurer la sous-couche / superposition Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
+Allez dans : *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Configurer la sous-couche / superposition iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## How to Prepare Raster Maps
+## Comment préparer les cartes raster
 
 :::info
-Main article to prepare maps [read here](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Article principal pour préparer les cartes [lire ici](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Despite the plugin being called *Online Maps*, you can use the maps without internet connection as well. You just need to save the parts of maps (often called tiles) to use them later. To do that, download a specific [Map Creator tool](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) developed by OsmAnd team.
+Bien que le plugin s'appelle *Cartes en ligne*, vous pouvez également utiliser les cartes sans connexion Internet. Il vous suffit d'enregistrer les parties des cartes (souvent appelées tuiles) pour les utiliser plus tard. Pour ce faire, téléchargez un [outil de création de cartes](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) spécifique développé par l'équipe OsmAnd.
 
-Select the area you need to download, click on the Preload area, then set the smallest and the largest zoom levels you want to display and download the tiles.
-For <b>Android version</b> you can copy them to your phone's <i>osmand/tiles/*tile type*</i> folder. You'll also need to open the <i>Configure map-. Overlay map</i> and choose OsmAnd online tiles.
+Sélectionnez la zone que vous souhaitez télécharger, cliquez sur Précharger la zone, puis définissez les niveaux de zoom les plus petits et les plus grands que vous souhaitez afficher et téléchargez les tuiles.
+Pour la **version Android**, vous pouvez les copier dans le dossier *osmand/tiles/*type de tuile** de votre téléphone. Vous devrez également ouvrir *Configurer la carte - Carte de superposition* et choisir les tuiles en ligne OsmAnd.
 
-For <b>iOS version</b> you can choose SQ Lite file in your phone (any messenger or dropbox), OsmAnd will suggest to add it. You'll also need to open <i>Map → Overlay / Underlay or Map type</i> and choose new map source.
+Pour la **version iOS**, vous pouvez choisir un fichier SQ Lite sur votre téléphone (n'importe quel messager ou dropbox), OsmAnd vous proposera de l'ajouter. Vous devrez également ouvrir *Carte → Superposition / Sous-couche ou Type de carte* et choisir une nouvelle source de carte.
 
-How to add SQ Lite file in Android and iOS version of OsmAnd you can read in <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis project</b></a>.
-
-
-Online tiles can be helpful when you need just a small section of the map or a specific type of it to use in the limited area, but don't want to download the whole region. They can come in handy in endless situations.
-
-![Online Maps](@site/static/img/plugins/online-maps/map_creator.jpg)
-
-![Online Maps](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
+Comment ajouter un fichier SQ Lite dans les versions Android et iOS d'OsmAnd, vous pouvez le lire dans le projet <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis</b></a>.
 
 
-## Related Articles
+Les tuiles en ligne peuvent être utiles lorsque vous n'avez besoin que d'une petite section de la carte ou d'un type spécifique de celle-ci à utiliser dans une zone limitée, mais que vous ne souhaitez pas télécharger toute la région. Elles peuvent être utiles dans d'innombrables situations.
 
-- [Interact with Map](../../user/map/interact-with-map.md)
-- [Global Settings](../../user/personal/global-settings.md)
-- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+![Cartes en ligne](@site/static/img/plugins/online-maps/map_creator.jpg)
 
-### Common Issues and Solutions
+![Cartes en ligne](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
 
-1. Online Maps do not appear in the Map Source menu:  
-  
-    - Verify that the Online Maps plugin is enabled: *Menu → Plugins → Online Maps*.  
-    - Ensure you have an active internet connection to access satellite imagery.  
-    - Check if the selected Online Map is downloaded or requires [additional settings](../map/raster-maps.md#select-raster-maps).
 
-> *This article was last updated in January 2025*
+## Articles connexes
+
+- [Interagir avec la carte](../../user/map/interact-with-map.md)
+- [Paramètres globaux](../../user/personal/global-settings.md)
+- [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
+
+### Problèmes courants et solutions
+
+1. Les cartes en ligne n'apparaissent pas dans le menu Source de la carte :
+
+    - Vérifiez que le plugin Cartes en ligne est activé : *Menu → Plugins → Cartes en ligne*.
+    - Assurez-vous d'avoir une connexion Internet active pour accéder aux images satellite.
+    - Vérifiez si la carte en ligne sélectionnée est téléchargée ou nécessite des [paramètres supplémentaires](../map/raster-maps.md#select-raster-maps).
+
+> *Cet article a été mis à jour pour la dernière fois en janvier 2025*
+
+-- source-hash: blake2s: 5a3f3834077053237c208a2135b98338c7ae2332b45f58d8fbaa13fb60c35525 --

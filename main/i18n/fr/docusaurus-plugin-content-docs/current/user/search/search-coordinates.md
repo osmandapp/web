@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  Search Coordinates
+title:  Rechercher des coordonnées
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,18 +13,18 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Aperçu
 
-**OsmAnd Coordinate search** allows you to find a specific location by latitude and longitude. This type of search helps to identify a location accurately. It is especially useful for areas that do not have precise addresses, or for specific geographic tasks such as creating geo-fences or precise positioning in open space.
+La **recherche de coordonnées OsmAnd** vous permet de trouver un lieu spécifique par sa latitude et sa longitude. Ce type de recherche permet d'identifier un lieu avec précision. Elle est particulièrement utile pour les zones qui n'ont pas d'adresses précises, ou pour des tâches géographiques spécifiques telles que la création de géo-clôtures ou le positionnement précis en espace ouvert.
 
-OsmAnd provides several ways to get to the *Search tool → [Address search tab](../search/search-address.md)*, where the **Coordinates search** is located.
+OsmAnd propose plusieurs façons d'accéder à l'*outil de recherche → [onglet de recherche d'adresses](../search/search-address.md)*, où se trouve la **recherche de coordonnées**.
 
-- The [Search button](../widgets/map-buttons.md#search) on the map application screen.
-- Go to the main Android *Menu → Search → Address tab → Coordinates Search*.
-- When preparing to start a route, tap *Navigation → Set destination → Search field → Address tab → Coordinates Search*.  
+- Le [bouton de recherche](../widgets/map-buttons.md#search) sur l'écran de l'application cartographique.
+- Accédez au *Menu Android principal → Rechercher → onglet Adresse → Recherche de coordonnées*.
+- Lorsque vous vous préparez à démarrer un itinéraire, appuyez sur *Navigation → Définir la destination → Champ de recherche → onglet Adresse → Recherche de coordonnées*.
 
 
-## How to Use
+## Comment utiliser
 
 <Tabs groupId="operating-systems">
 
@@ -42,114 +42,116 @@ OsmAnd provides several ways to get to the *Search tool → [Address search tab]
 
 </Tabs>
 
-Coordinates can be entered in any available format, but the found location is displayed in the format specified in *Configure profile → General settings → Units & formats*.
+Les coordonnées peuvent être saisies dans n'importe quel format disponible, mais le lieu trouvé est affiché dans le format spécifié dans *Configurer le profil → Paramètres généraux → Unités et formats*.
 
-- To use the coordinates search, you can type them in each corresponding field individually, or paste previously copied coordinates into the search field or enter them in it. The application prompts you to select a suitable location.
-- Coordinate Search automatically converts one coordinate format to another when the specified format is changed in the field with their list.
-- Tap the suggested location and the [map context menu](../map/map-context-menu.md#select-any-point-long-tap) opens.
-- More information can be found here [Geographical coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system).
-
-
-**Scope of the coordinate search function**:
-
-- *Precise location*. Coordinate search provides an accurate location. You can enter precise coordinates obtained, for example, from other sources such as a map, GPS device, or online services.
-- *Places without an address*. Coordinates are particularly useful when it comes to places that do not have an exact address, or when the address is unknown. For example, it may be a remote area, a point on the sea, or a mountain peak. By entering coordinates, you can find and navigate to such locations without having to know the address.
-- *Location sharing*. Searching by coordinates provides a convenient way to enter information. You can enter coordinates manually or copy them from other sources. This can be useful when sharing locations with others or using previously obtained coordinates.
+- Pour utiliser la recherche de coordonnées, vous pouvez les saisir individuellement dans chaque champ correspondant, ou coller des coordonnées précédemment copiées dans le champ de recherche ou les y saisir. L'application vous invite à sélectionner un lieu approprié.
+- La recherche de coordonnées convertit automatiquement un format de coordonnées en un autre lorsque le format spécifié est modifié dans le champ avec leur liste.
+- Appuyez sur le lieu suggéré et le [menu contextuel de la carte](../map/map-context-menu.md#select-any-point-long-tap) s'ouvre.
+- Vous trouverez plus d'informations ici [Coordonnées géographiques](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_coordonn%C3%A9es_g%C3%A9ographiques).
 
 
-## Coordinate Format
+**Portée de la fonction de recherche de coordonnées** :
 
-There are several ways to enter coordinates for the search. To use each of them, it is very important to follow the input rules, otherwise the application will not be able to find the location.
-
-1. **<Translate android="true" ids="navigate_point_format_D"/>**  
-
-    ![Search Coordinates Android](@site/static/img/search/coordinates_search_degrees_andr.png)  
-
-    **Decimal coordinates (degrees)**. In this format, latitude and longitude coordinates are written in decimal format, for example, 52.37022° latitude and 4.89517° longitude for Amsterdam. This input method is easy to use and is the most common. You can read more about Decimal coordinates format [here](https://en.wikipedia.org/wiki/Decimal_degrees).  
-
-    - *Input rules*. Latitude and longitude coordinates are written in decimal format, where latitude ranges from -90 to 90 and longitude ranges from -180 to 180.
-    - *Most commonly used*. Decimal coordinates are widely used in navigation applications, GPS devices, web maps, and other geo-positioning services.  
-
-2. **<Translate android="true" ids="navigate_point_format_DM"/>**  
-
-    ![Search Coordinates Android](@site/static/img/search/coordinates_search_DM_andr.png)  
-
-    **Degrees and Minutes(DM)**. In this format, latitude and longitude coordinates are recorded using degrees and minutes. For example, 37:46.29 latitude and -122:25.10 longitude for San Francisco. This format may be less accurate and may take longer to enter.
-    - *Input rules*. Latitude and longitude coordinates are written in a format that uses degrees (:) and minutes (:).
-    - *Most commonly used*. The DM format is often found in marine navigation, aviation, astronomy, and topographic mapping systems.
-
-3. **<Translate android="true" ids="navigate_point_format_DMS"/>**  
-
-    ![Search Coordinates Android](@site/static/img/search/coordinates_search_DMS_andr.png)  
-
-    **Degrees, Minutes and Seconds (DMS)**. The DMS coordinate format records geographic coordinates where values are given in degrees, minutes, and seconds. Degrees (DDD) can take values from 0 to 180 for longitude and 0 to 90 for latitude. Positive values indicate east longitude and north latitude, and negative values indicate west longitude and south latitude. Minutes (MM) can take values from 0 to 59. Seconds (SS.S) represent the decimal fraction of a second and can also range from 0 to 59.9.
-    - *Input rules*. Latitude and longitude coordinates are written in a format that uses degrees (:), minutes (:) and seconds (.).
-    - *Most commonly used*. The DMS format is widely used in geodesy, navigation applications, cartography, astronomy, and other fields where a more detailed expression of location coordinates is required.
-
-4. **<Translate android="true" ids="navigate_point_format_utm"/>**  
-
-    ![Search Coordinates Android](@site/static/img/search/coordinates_search_UTM_andr.png)  
-
-    **UTM (Universal Transversal Mercator System)**. In this format, coordinates are specified using UTM zone, East and North directions. For example, for Amsterdam, the coordinates might be approximately as follows: zone 31, East direction 581000, North direction 5809000. Entering coordinates in UTM format may require some familiarity with the system and be more complex than other formats, but it provides good accuracy and meets global geo-positioning standards. You can read more about the UTM format [here](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system).
-    - *Input Rules*. Coordinates are recorded in a format that uses the UTM zone and Eastern and Northern offsets.
-    - *Most commonly used*. UTM format is often used in surveying, mapping, and geographic information systems for measurement and navigation.
-
-5. **<Translate android="true" ids="navigate_point_format_olc"/>**  ((OLC) - 9F2X4WFJ+7W (Open Location Code represents area 9m x 14m))  
-
-    ![Search Coordinates Android](@site/static/img/search/coordinates_search_OLC_andr.png)  
-
-    **Open Location Code (OLC)**, also known as **Plus Code**, is a global location coding system. It is a combination of letters and numbers to indicate the latitude and longitude of any location on the planet. Example of an OLC code for Amsterdam: 9F3WCVWG+FP. In this example, "9F3WCVWG" indicates a coarse grid, and "+FP" specifies a location within that area. Read more [here](https://en.wikipedia.org/wiki/Open_Location_Code).
-    - *Input Rules*.  
-        - The OLC code consists of 4 to 14 characters, which can be letters from "C" to "Z" (except for "I" and "O") and numbers from "2" to "9".
-        - The code begins with a global prefix that indicates a continent or area.
-        - This is followed by groups of characters that are separated by dots. Each group represents a narrower area.
-        - To clarify the location, letters and digits are supplemented by other characters in the OLC code.  
-    - *Most commonly used*. OLC is often used in areas where precise addresses are not available or are difficult to determine, such as remote areas, deserts, or oceans. It is also widely used in applications and services related to geo-positioning, delivery, emergency services, and other areas where precise location is required without the use of traditional addresses.  
-
-6. **<Translate android="true" ids="navigate_point_mgrs"/>**  
-
-    ![Search Coordinates Android](@site/static/img/search/coordinates_search_MGRS_andr.png)  
-
-    **MGRS (Military Grid Reference System)**. This is a coordinate system often used in military applications. It is based on the UTM system and is supplemented with an additional grid of squares. An example of coordinates in MGRS format for a location in Australia can be as follows: 55HBE1234567890. In this example, "55H" represents the MGRS zone and "BE" represents the square in which the location is located. "123456" represents the eastward offset and "7890" represents the northward offset within that square. MGRS are widely used in areas requiring high accuracy and geo-referencing. They are particularly useful in environments where addresses may not be clear or available, such as military operations or expeditions in remote areas. You can read more about the MGRS format [here](https://en.wikipedia.org/wiki/Military_Grid_Reference_System).  
-    - *Input rules*. The coordinates consist of an MGRS zone, a square, and two more digits indicating east and north offsets.
-    - *Most commonly used*. The MGRS format is widely used in military navigation and communications, and can also be useful for outdoor enthusiasts and hikers.
-
-7. **Swiss Grid** (CH1903) and **Swiss Grid** (CH1903+)  
-
-    ![Search Coordinates Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
-
-    **Swiss coordinate system**. Swiss Grid (CH1903) and Swiss Grid (CH1903+) are coordinate systems widely used in Switzerland for positioning. Both formats are based on the CH1903 system, which was introduced in 1903 and is based on the projection of the Swiss International Grid. Example coordinates in Swiss Grid (CH1903) format — Eastern: 600000; Northern: 200000. In Swiss Grid (CH1903+) format — Eastern: 600300; Northern: 200400. You can read more about the Swiss Grid geographic coordinate system [here](https://en.wikipedia.org/wiki/Swiss_coordinate_system).  
-    - *Input rules*.  
-        - Coordinates in CH1903 format consist of two components: Eastern and Northern.
-        - Eastern is in meters from a point called the Lucerne Axis (zero Eastern).
-        - Northern is given in meters from the equator.
-        - The CH1903+ format uses the same input rules as CH1903, but with more precise values.
-        - CH1903+ includes corrections to account for shifts in coordinates caused by changes in tectonic movements in Switzerland.
-    - *Most commonly used*. The Swiss Grid (CH1903) and Swiss Grid (CH1903+) formats are used in Switzerland for geodetic measurements, cartography, geographic information systems, and construction and engineering. These formats provide a local coordinate system specific to Switzerland.
+- *Localisation précise*. La recherche de coordonnées fournit une localisation précise. Vous pouvez saisir des coordonnées précises obtenues, par exemple, à partir d'autres sources telles qu'une carte, un appareil GPS ou des services en ligne.
+- *Lieux sans adresse*. Les coordonnées sont particulièrement utiles lorsqu'il s'agit de lieux qui n'ont pas d'adresse exacte, ou lorsque l'adresse est inconnue. Par exemple, il peut s'agir d'une zone isolée, d'un point en mer ou d'un sommet de montagne. En saisissant les coordonnées, vous pouvez trouver et naviguer vers de tels lieux sans avoir à connaître l'adresse.
+- *Partage de localisation*. La recherche par coordonnées offre un moyen pratique de saisir des informations. Vous pouvez saisir les coordonnées manuellement ou les copier à partir d'autres sources. Cela peut être utile pour partager des lieux avec d'autres personnes ou pour utiliser des coordonnées précédemment obtenues.
 
 
-> For each profile separately you can set a different coordinate format. To do this, go to *General settings → [Coordinate format](../personal/profiles.md#units--formats)*.
+## Format des coordonnées
+
+Il existe plusieurs façons de saisir les coordonnées pour la recherche. Pour utiliser chacune d'elles, il est très important de respecter les règles de saisie, sinon l'application ne pourra pas trouver le lieu.
+
+1. **<Translate android="true" ids="navigate_point_format_D"/>**
+
+    ![Search Coordinates Android](@site/static/img/search/coordinates_search_degrees_andr.png)
+
+    **Coordonnées décimales (degrés)**. Dans ce format, les coordonnées de latitude et de longitude sont écrites au format décimal, par exemple, 52.37022° de latitude et 4.89517° de longitude pour Amsterdam. Cette méthode de saisie est facile à utiliser et est la plus courante. Vous pouvez en savoir plus sur le format des coordonnées décimales [ici](https://fr.wikipedia.org/wiki/Degr%C3%A9_d%C3%A9cimal).
+
+    - *Règles de saisie*. Les coordonnées de latitude et de longitude sont écrites au format décimal, où la latitude varie de -90 à 90 et la longitude de -180 à 180.
+    - *Le plus couramment utilisé*. Les coordonnées décimales sont largement utilisées dans les applications de navigation, les appareils GPS, les cartes Web et autres services de géolocalisation.
+
+2. **<Translate android="true" ids="navigate_point_format_DM"/>**
+
+    ![Search Coordinates Android](@site/static/img/search/coordinates_search_DM_andr.png)
+
+    **Degrés et minutes (DM)**. Dans ce format, les coordonnées de latitude et de longitude sont enregistrées en utilisant des degrés et des minutes. Par exemple, 37:46.29 de latitude et -122:25.10 de longitude pour San Francisco. Ce format peut être moins précis et prendre plus de temps à saisir.
+    - *Règles de saisie*. Les coordonnées de latitude et de longitude sont écrites dans un format qui utilise des degrés (:) et des minutes (:).
+    - *Le plus couramment utilisé*. Le format DM se trouve souvent dans les systèmes de navigation maritime, d'aviation, d'astronomie et de cartographie topographique.
+
+3. **<Translate android="true" ids="navigate_point_format_DMS"/>**
+
+    ![Search Coordinates Android](@site/static/img/search/coordinates_search_DMS_andr.png)
+
+    **Degrés, minutes et secondes (DMS)**. Le format de coordonnées DMS enregistre les coordonnées géographiques où les valeurs sont données en degrés, minutes et secondes. Les degrés (DDD) peuvent prendre des valeurs de 0 à 180 pour la longitude et de 0 à 90 pour la latitude. Les valeurs positives indiquent la longitude est et la latitude nord, et les valeurs négatives indiquent la longitude ouest et la latitude sud. Les minutes (MM) peuvent prendre des valeurs de 0 à 59. Les secondes (SS.S) représentent la fraction décimale d'une seconde et peuvent également varier de 0 à 59.9.
+    - *Règles de saisie*. Les coordonnées de latitude et de longitude sont écrites dans un format qui utilise des degrés (:), des minutes (:) et des secondes (.).
+    - *Le plus couramment utilisé*. Le format DMS est largement utilisé en géodésie, dans les applications de navigation, en cartographie, en astronomie et dans d'autres domaines où une expression plus détaillée des coordonnées de localisation est requise.
+
+4. **<Translate android="true" ids="navigate_point_format_utm"/>**
+
+    ![Search Coordinates Android](@site/static/img/search/coordinates_search_UTM_andr.png)
+
+    **UTM (Système de Mercator Transverse Universel)**. Dans ce format, les coordonnées sont spécifiées en utilisant la zone UTM, les directions Est et Nord. Par exemple, pour Amsterdam, les coordonnées pourraient être approximativement les suivantes : zone 31, direction Est 581000, direction Nord 5809000. La saisie de coordonnées au format UTM peut nécessiter une certaine familiarité avec le système et être plus complexe que d'autres formats, mais elle offre une bonne précision et répond aux normes mondiales de géolocalisation. Vous pouvez en savoir plus sur le format UTM [ici](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_coordonn%C3%A9es_universelles_de_Mercator).
+    - *Règles de saisie*. Les coordonnées sont enregistrées dans un format qui utilise la zone UTM et les décalages Est et Nord.
+    - *Le plus couramment utilisé*. Le format UTM est souvent utilisé en topographie, en cartographie et dans les systèmes d'information géographique pour la mesure et la navigation.
+
+5. **<Translate android="true" ids="navigate_point_format_olc"/>** ((OLC) - 9F2X4WFJ+7W (Open Location Code représente une zone de 9m x 14m))
+
+    ![Search Coordinates Android](@site/static/img/search/coordinates_search_OLC_andr.png)
+
+    **Open Location Code (OLC)**, également connu sous le nom de **Plus Code**, est un système de codage de localisation mondial. C'est une combinaison de lettres et de chiffres pour indiquer la latitude et la longitude de n'importe quel lieu sur la planète. Exemple d'un code OLC pour Amsterdam : 9F3WCVWG+FP. Dans cet exemple, "9F3WCVWG" indique une grille grossière, et "+FP" spécifie un lieu dans cette zone. En savoir plus [ici](https://fr.wikipedia.org/wiki/Open_Location_Code).
+    - *Règles de saisie*.
+        - Le code OLC se compose de 4 à 14 caractères, qui peuvent être des lettres de "C" à "Z" (sauf "I" et "O") et des chiffres de "2" à "9".
+        - Le code commence par un préfixe global qui indique un continent ou une zone.
+        - Il est suivi de groupes de caractères séparés par des points. Chaque groupe représente une zone plus étroite.
+        - Pour clarifier la localisation, les lettres et les chiffres sont complétés par d'autres caractères dans le code OLC.
+    - *Le plus couramment utilisé*. L'OLC est souvent utilisé dans les zones où les adresses précises ne sont pas disponibles ou sont difficiles à déterminer, comme les zones isolées, les déserts ou les océans. Il est également largement utilisé dans les applications et services liés à la géolocalisation, à la livraison, aux services d'urgence et à d'autres domaines où une localisation précise est requise sans l'utilisation d'adresses traditionnelles.
+
+6. **<Translate android="true" ids="navigate_point_mgrs"/>**
+
+    ![Search Coordinates Android](@site/static/img/search/coordinates_search_MGRS_andr.png)
+
+    **MGRS (Military Grid Reference System)**. Il s'agit d'un système de coordonnées souvent utilisé dans les applications militaires. Il est basé sur le système UTM et est complété par une grille de carrés supplémentaire. Un exemple de coordonnées au format MGRS pour un lieu en Australie peut être le suivant : 55HBE1234567890. Dans cet exemple, "55H" représente la zone MGRS et "BE" représente le carré dans lequel se trouve le lieu. "123456" représente le décalage vers l'est et "7890" représente le décalage vers le nord dans ce carré. Les MGRS sont largement utilisés dans les zones nécessitant une grande précision et un géoréférencement. Ils sont particulièrement utiles dans les environnements où les adresses peuvent ne pas être claires ou disponibles, comme les opérations militaires ou les expéditions dans des zones isolées. Vous pouvez en savoir plus sur le format MGRS [ici](https://fr.wikipedia.org/wiki/Military_Grid_Reference_System).
+    - *Règles de saisie*. Les coordonnées se composent d'une zone MGRS, d'un carré et de deux chiffres supplémentaires indiquant les décalages est et nord.
+    - *Le plus couramment utilisé*. Le format MGRS est largement utilisé dans la navigation et les communications militaires, et peut également être utile pour les amateurs de plein air et les randonneurs.
+
+7. **Swiss Grid** (CH1903) et **Swiss Grid** (CH1903+)
+
+    ![Search Coordinates Android](@site/static/img/search/coordinates_search_Swiss_andr.png)
+
+    **Système de coordonnées suisse**. Swiss Grid (CH1903) et Swiss Grid (CH1903+) sont des systèmes de coordonnées largement utilisés en Suisse pour le positionnement. Les deux formats sont basés sur le système CH1903, qui a été introduit en 1903 et est basé sur la projection de la grille internationale suisse. Exemple de coordonnées au format Swiss Grid (CH1903) — Est : 600000 ; Nord : 200000. Au format Swiss Grid (CH1903+) — Est : 600300 ; Nord : 200400. Vous pouvez en savoir plus sur le système de coordonnées géographiques Swiss Grid [ici](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_coordonn%C3%A9es_suisse).
+    - *Règles de saisie*.
+        - Les coordonnées au format CH1903 se composent de deux composantes : Est et Nord.
+        - L'Est est en mètres à partir d'un point appelé l'axe de Lucerne (Est zéro).
+        - Le Nord est donné en mètres à partir de l'équateur.
+        - Le format CH1903+ utilise les mêmes règles de saisie que CH1903, mais avec des valeurs plus précises.
+        - CH1903+ inclut des corrections pour tenir compte des décalages de coordonnées causés par les mouvements tectoniques en Suisse.
+    - *Le plus couramment utilisé*. Les formats Swiss Grid (CH1903) et Swiss Grid (CH1903+) sont utilisés en Suisse pour les mesures géodésiques, la cartographie, les systèmes d'information géographique, la construction et l'ingénierie. Ces formats fournissent un système de coordonnées local spécifique à la Suisse.
+
+
+> Pour chaque profil séparément, vous pouvez définir un format de coordonnées différent. Pour ce faire, accédez à *Paramètres généraux → [Format des coordonnées](../personal/profiles.md#units--formats)*.
 
 
 <!--
 
-## Troubleshooting
+## Dépannage
 
-https://github.com/osmandapp/OsmAnd/issues/14081  
+https://github.com/osmandapp/OsmAnd/issues/14081
 
-https://github.com/osmandapp/OsmAnd/issues/16114  
+https://github.com/osmandapp/OsmAnd/issues/16114
 
-https://github.com/osmandapp/OsmAnd/issues/14081  
+https://github.com/osmandapp/OsmAnd/issues/14081
 
 -->
 
 
-## Related Articles
+## Articles connexes
 
-- [Search All](./search-all.md)
-- [Search Address](./search-address.md)
-- [Search History](./search-history.md)
-- [Search POI](./search-poi.md)
+- [Rechercher tout](./search-all.md)
+- [Rechercher une adresse](./search-address.md)
+- [Historique de recherche](./search-history.md)
+- [Rechercher un POI](./search-poi.md)
 
 
-> *This article was last updated in July 2024*
+> *Cet article a été mis à jour pour la dernière fois en juillet 2024*
+
+-- source-hash: blake2s: beb3001afc73937354c791aa076fe74ce23f3c47ee85862e71d1d6c1b84ce666 --

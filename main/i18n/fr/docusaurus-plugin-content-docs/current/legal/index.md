@@ -1,13 +1,15 @@
-# Legal
+# Mentions légales
 
-### [License](./license.md)
+### [Licence](./license.md)
 
-OsmAnd License.
+Licence OsmAnd.
 
-### [Privacy Policy](./privacy-policy.md)
+### [Politique de confidentialité](./privacy-policy.md)
 
-OsmAnd Privacy Policy.
+Politique de confidentialité d'OsmAnd.
 
-### [Terms of Use](./terms-of-use.md)
+### [Conditions d'utilisation](./terms-of-use.md)
 
-OsmAnd Terms of Use.
+Conditions d'utilisation d'OsmAnd.
+
+-- source-hash: blake2s: 2042eb8bed1deb4a9569b18baef10033cddc25a6fee71d89caaf73fdb9d6dce8 --

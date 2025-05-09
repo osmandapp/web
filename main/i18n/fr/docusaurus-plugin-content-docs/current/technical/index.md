@@ -1,24 +1,25 @@
-# Technical documentation
+# Documentation technique
 
-Technical documentation represents specifications, instructions or an information that requires either an IDE access or an technical level of understanding.
+La documentation technique représente des spécifications, des instructions ou des informations qui nécessitent soit un accès à un IDE, soit un niveau de compréhension technique.
 
-### [OsmAnd File Formats](./osmand-file-formats/index.md)
+### [Formats de fichiers OsmAnd](./osmand-file-formats/index.md)
 
-Documentation of files supported by OsmAnd.
+Documentation des fichiers pris en charge par OsmAnd.
 
-### [Map Creation](./map-creation/index.md)
+### [Création de cartes](./map-creation/index.md)
 
-How OsmAnd offline map data is created and how you can produce customized map files.
+Comment les données de carte hors ligne d'OsmAnd sont créées et comment vous pouvez produire des fichiers de carte personnalisés.
 
-### [Build OsmAnd, Tools and SDK & API Samples](./build-osmand/index.md)
+### [Construire OsmAnd, outils et exemples SDK & API](./build-osmand/index.md)
 
-In case you want to reuse OsmAnd's code, create a sample app using OsmAnd's API or setup full development environment, this section will guide you through the process.
+Si vous souhaitez réutiliser le code d'OsmAnd, créer une application exemple à l'aide de l'API d'OsmAnd ou configurer un environnement de développement complet, cette section vous guidera tout au long du processus.
 
-### [Algorithms, Testing, Internals](./algorithms/index.md)
+### [Algorithmes, tests, internes](./algorithms/index.md)
 
-Describes different algorithms in different areas and explains how they works and what triggers certain behavior.
+Décrit différents algorithmes dans différents domaines et explique comment ils fonctionnent et ce qui déclenche certains comportements.
 
-### [Contributions are welcome!](./contributions/index.md)
+### [Les contributions sont les bienvenues !](./contributions/index.md)
 
-Explains how you can and should contribute to OsmAnd, OpenStreetMap or other collaborative projects.
+Explique comment vous pouvez et devez contribuer à OsmAnd, OpenStreetMap ou à d'autres projets collaboratifs.
 
+-- source-hash: blake2s: 3c97a7b3ea10158368841d5657e95a67addba27eb6f2f2edf98839e7190b45fc --

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Giveaway
+title:  Cadeau
 ---
 
 import Tabs from '@theme/Tabs';
@@ -12,12 +12,14 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-You can get OsmAnd for free by one of our regular giveaways. Read more how to register and participate.
+Vous pouvez obtenir OsmAnd gratuitement grâce à l'un de nos cadeaux réguliers. Lisez la suite pour savoir comment vous inscrire et participer.
 
-We know that not everyone is able to purchase OsmAnd on Google Play / App Store due to various reasons, but many of you would still like to support the application using it and spreading it around the world. We are proud of our community, so we have decided to give away OsmAnd licenses for free as a reward for your support. The number of promocodes we can provide is limited, so we will choose the winners based on the results of a small game that we have organized to make the whole process more entertaining.
+Nous savons que tout le monde n'est pas en mesure d'acheter OsmAnd sur Google Play / App Store pour diverses raisons, mais beaucoup d'entre vous aimeraient quand même soutenir l'application en l'utilisant et en la diffusant dans le monde entier. Nous sommes fiers de notre communauté, c'est pourquoi nous avons décidé d'offrir gratuitement des licences OsmAnd en récompense de votre soutien. Le nombre de codes promotionnels que nous pouvons fournir est limité, nous choisirons donc les gagnants en fonction des résultats d'un petit jeu que nous avons organisé pour rendre l'ensemble du processus plus divertissant.
 
-**Useful links**: 
-- [View OsmAnd Giveaway results & winners](https://osmand.net/giveaway/)
-- [Participate in OsmAnd Giveaway](https://osmand.net/giveaway/)
-- [Redeem promocode Android](https://support.google.com/googleplay/answer/3422659?hl)
-- [Redeem promocode iOS](https://support.apple.com/en-gb/HT201209)
+**Liens utiles** :
+- [Voir les résultats et les gagnants du cadeau OsmAnd](https://osmand.net/giveaway/)
+- [Participer au cadeau OsmAnd](https://osmand.net/giveaway/)
+- [Échanger un code promotionnel Android](https://support.google.com/googleplay/answer/3422659?hl)
+- [Échanger un code promotionnel iOS](https://support.apple.com/en-gb/HT201209)
+
+-- source-hash: blake2s: 875b898778c887083add4eb60003df59ca527310067dcfbe538da5723289c381 --

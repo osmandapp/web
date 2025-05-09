@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title:  Train routing
+title:  Itinéraire ferroviaire
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,48 +15,50 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview
+## Aperçu
 
 :::note
-By default, *Train profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+Par défaut, le *profil Train* est désactivé. Pour utiliser ce profil pour le routage, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-*Train routing* in OsmAnd provides users with possibility to use railroad lines for navigation as if they were driving a train like a car. This option can be useful, for example, for hiking when no other roads are available. In other cases it's better to use *[Public transport routing](./public-transport-navigation.md)*.  
+Le *routage ferroviaire* dans OsmAnd offre aux utilisateurs la possibilité d'utiliser les lignes de chemin de fer pour la navigation comme s'ils conduisaient un train comme une voiture. Cette option peut être utile, par exemple, pour la randonnée lorsqu'aucune autre route n'est disponible. Dans d'autres cas, il est préférable d'utiliser le *[routage des transports en commun](./public-transport-navigation.md)*.
 
 ![Map transport tram](@site/static/img/navigation/routing/train_routing_overview.png)
 
 
-## Route Parameters - Train
+## Paramètres d'itinéraire - Train
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Train routing settings Android](@site/static/img/navigation/routing/train_routing_andr.png)  
+![Train routing settings Android](@site/static/img/navigation/routing/train_routing_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Train routing settings iOS](@site/static/img/navigation/routing/train_routing_ios.png)  
+![Train routing settings iOS](@site/static/img/navigation/routing/train_routing_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-*Train routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
+Le *routage ferroviaire* peut être configuré selon vos besoins dans la [section Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des paramètres de navigation.
 
 
-## Other Routing Settings
+## Autres paramètres de routage
 
-- The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
+- L'algorithme de routage peut également prendre en compte les limitations temporaires spécifiées dans OpenStreetMap. Cela peut être fait en utilisant l'option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Notez que dans certains cas, les informations d'OSM peuvent être obsolètes.
 
-- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
+- Dans la [*section Recalculer l'itinéraire*](../../navigation/guidance/navigation-settings.md#recalculate-route) des *Paramètres d'itinéraire*, vous pouvez activer et ajuster les options de recalcul de l'itinéraire.
 
-- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+- Dans la [*section Développement*](../guidance/navigation-settings.md#development-settings) des *Paramètres d'itinéraire*, vous pouvez essayer de nouvelles fonctionnalités de routage qui sont actuellement en phase de test. Notez que ces paramètres ne sont disponibles que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé.
 
-- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). These settings can also be set for *Direct-to-point* routing. It is used to calculate Estimated Time of Arrival.
+- Le paramètre *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* dans la version *iOS* d'OsmAnd se trouve dans *Paramètres de navigation → Paramètres d'itinéraire* (pour *Android*, dans *Paramètres du véhicule → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Ces paramètres peuvent également être définis pour le routage *Direct-to-point*. Il est utilisé pour calculer l'heure d'arrivée estimée.
 
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
+- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. La configuration correcte des paramètres vous aidera à éviter les problèmes lors de la création d'un itinéraire. Vous pouvez sélectionner l'itinéraire le plus approprié en fonction du type de véhicule et des restrictions routières, ainsi que calculer le temps de trajet.
 
-> *This article was last updated in June 2024*
+> *Cet article a été mis à jour pour la dernière fois en juin 2024*
+
+-- source-hash: blake2s: 980ef74c38ad5733110caaa929a16d89190bc6182e14bd182e3b0ec846291ad9 --

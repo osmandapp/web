@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title:  Android Purchases
+title:  Achats Android
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,28 +14,28 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-## Install OsmAnd (Android)
+## Installer OsmAnd (Android)
 
-For Android devices, you can download the **Free** and **Paid** versions of the application from the following markets:
+Pour les appareils Android, vous pouvez télécharger les versions **gratuite** et **payante** de l'application à partir des marchés suivants :
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) (NOTE: [it will be closed](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program) in August 20, 2025 - [troubleshooting section](../troubleshooting/purchases_payments.md#what-do-after-close-of-amazon-store))
+- [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) (NOTE : [il sera fermé](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program) le 20 août 2025 - [section de dépannage](../troubleshooting/purchases_payments.md#what-do-after-close-of-amazon-store))
 
-**Versions of the OsmAnd application:**
+**Versions de l'application OsmAnd :**
 
-|  App  | Google Play | Amazon | Huawei AppGallery | Free / Paid |
+|  App  | Google Play | Amazon | Huawei AppGallery | Gratuit / Payant |
 | :------------- | :------------- | :------------- | :------------- | :------------- |
-| ![Maps+](@site/static/img/svg/osmand_maps.svg) OsmAnd  | ✔ &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[Install](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8) | ✔ &nbsp;&nbsp;[Install](https://appgallery.huawei.com/#/app/C101486545) | Free |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand.plus) |  ✔  &nbsp;&nbsp;[Install](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC/) | **-** | Paid |
+| ![Maps+](@site/static/img/svg/osmand_maps.svg) OsmAnd  | ✔ &nbsp;&nbsp;[Installer](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[Installer](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8) | ✔ &nbsp;&nbsp;[Installer](https://appgallery.huawei.com/#/app/C101486545) | Gratuit |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+  | ✔  &nbsp;&nbsp;[Installer](https://play.google.com/store/apps/details?id=net.osmand.plus) |  ✔  &nbsp;&nbsp;[Installer](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC/) | **-** | Payant |
 
-**Types of purchases:**
+**Types d'achats :**
 
-| Purchase  | Google Play  | Amazon | Huawei AppGallery | App |
+| Achat  | Google Play  | Amazon | Huawei AppGallery | App |
 | :------------- | :------------- | :------------- | :------------- | :------------- |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) In-app Maps+ | ✔ | ✔ | ✔ | OsmAnd |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Subscription Maps+ | ✔ | ✔ | ✔| OsmAnd |
-| ![Pro](@site/static/img/svg/pro_icon.svg) Subscription OsmAnd Pro | ✔ | ✔ | ✔ | OsmAnd / OsmAnd+ |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Maps+ intégré | ✔ | ✔ | ✔ | OsmAnd |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Abonnement Maps+ | ✔ | ✔ | ✔| OsmAnd |
+| ![Pro](@site/static/img/svg/pro_icon.svg) Abonnement OsmAnd Pro | ✔ | ✔ | ✔ | OsmAnd / OsmAnd+ |
 
 <!--
 ### Types of subscriptions
@@ -51,29 +51,29 @@ For Android devices, you can download the **Free** and **Paid** versions of the 
 -->
 
 
-### Difference Between Purchases (Android)
+### Différence entre les achats (Android)
 
-| Plan | Description | Availability | Notes |
+| Plan | Description | Disponibilité | Notes |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, and *OSM editing/notes*. | Available to all users of the free OsmAnd version. | Limited to basic cloud features and **5MB** storage. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | A **separate paid app** that includes advanced features. | Available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). | Can be added to the [Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en). |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** for the free OsmAnd app, unlocking the same features as OsmAnd+. | Available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand) and [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identical in features and pricing to OsmAnd+. |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks additional advanced and [pro features](#pro-features). | Available on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), and [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd). | Supports **cross-platform** access (see note below). |
+| **OsmAnd Start** | Un **plan gratuit** qui donne accès à [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) pour les *Favoris*, les *Paramètres* et l'*édition/notes OSM*. | Disponible pour tous les utilisateurs de la version gratuite d'OsmAnd. | Limité aux fonctionnalités de base du cloud et à **5 Mo** de stockage. |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | Une **application payante distincte** qui inclut des fonctionnalités avancées. | Disponible sur [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) et [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). | Peut être ajoutée à la [Bibliothèque familiale Google Play](https://support.google.com/googleplay/answer/7007852?hl=en). |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **achat intégré** ou un **abonnement** pour l'application gratuite OsmAnd, débloquant les mêmes fonctionnalités qu'OsmAnd+. | Disponible sur [Google Play](https://play.google.com/store/apps/details?id=net.osmand) et [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identique en termes de fonctionnalités et de prix à OsmAnd+. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan d'abonnement** qui débloque des fonctionnalités avancées et [pro supplémentaires](#pro-features). | Disponible sur [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545) et [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd). | Prend en charge l'accès **multiplateforme** (voir la note ci-dessous). |
 
-### Important Notes
+### Notes importantes
 
-1. **OsmAnd+** and **Maps+** offer the same features. The only difference is that OsmAnd+ is a **separate paid app**, while Maps+ is a **subscription or in-app purchase**.
+1. **OsmAnd+** et **Maps+** offrent les mêmes fonctionnalités. La seule différence est qu'OsmAnd+ est une **application payante distincte**, tandis que Maps+ est un **abonnement ou un achat intégré**.
 
-2. **Android Auto** is only supported for OsmAnd downloaded from **Google Play**. It is **not available** for OsmAnd+ (purchased from *Amazon*) or Maps+ (from *Huawei AppGallery*).
+2. **Android Auto** n'est pris en charge que pour OsmAnd téléchargé depuis **Google Play**. Il n'est **pas disponible** pour OsmAnd+ (acheté sur *Amazon*) ou Maps+ (depuis *Huawei AppGallery*).
 
-3. **OsmAnd Pro is a *cross-platform* subscription**. This means you can purchase it on one store (e.g., *Google Play, Amazon, Huawei AppGallery, AppStore, and osmand.net*) and restore it on another by [registering your email as a Pro account](../personal/osmand-cloud.md#cross-platform).
+3. **OsmAnd Pro est un abonnement *multiplateforme***. Cela signifie que vous pouvez l'acheter sur un magasin (par exemple, *Google Play, Amazon, Huawei AppGallery, AppStore et osmand.net*) et le restaurer sur un autre en [enregistrant votre e-mail en tant que compte Pro](../personal/osmand-cloud.md#cross-platform).
 
-4. You can add **Maps+ and OsmAnd+** to **[Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en)** to share the purchase with family members.  
+4. Vous pouvez ajouter **Maps+ et OsmAnd+** à la **[Bibliothèque familiale Google Play](https://support.google.com/googleplay/answer/7007852?hl=en)** pour partager l'achat avec les membres de la famille.
 
 
-## Prices
+## Prix
 
-In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
+Dans la liste, vous trouverez des informations sur les prix des produits OsmAnd pour les régions des États-Unis et de l'Europe. Pour les autres régions, les prix sont équivalents dans les devises locales.
 
 <!--
 :::danger Seasonal Sale prices
@@ -92,166 +92,168 @@ In the list, there is information about prices of OsmAnd product for the US and 
 -->
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
-| **Price (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
+| **Type d'achat** | **Gratuit** | **Achat unique** (à vie) | **Abonnement** (12 mois) | **Abonnement** (1 mois / 12 mois) |
+| **Prix (EUR)** | 0 € | 39,99 € | 9,99 € | 2,99 € / 29,99 € |
+| **Prix (USD)** | 0 $ | 39,99 $ | 9,99 $ | 2,99 $ / 29,99 $ |
 
 
-### Free and Paid Features
+### Fonctionnalités gratuites et payantes
 
-The OsmAnd application offers a wide range of features and tools, with many available at no cost.  
+L'application OsmAnd offre un large éventail de fonctionnalités et d'outils, dont beaucoup sont disponibles gratuitement.
 
-The table below details the features included in both the free and paid packages of OsmAnd, along with their respective prices.
+Le tableau ci-dessous détaille les fonctionnalités incluses dans les forfaits gratuits et payants d'OsmAnd, ainsi que leurs prix respectifs.
 
-|  | OsmAnd Free | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (in&#8209;app & subscription) | [OsmAnd Pro](#install-osmand-android) |
+|  | OsmAnd Gratuit | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (intégré et abonnement) | [OsmAnd Pro](#install-osmand-android) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
-| [Access without advertising](#free-and-paid-features) | Ad-free | Ad-free | Ad-free |
+| [Accès sans publicité](#free-and-paid-features) | Sans publicité | Sans publicité | Sans publicité |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
-| [All Pro Features](#pro-features) | **-** | **-** | ✔ |
-| [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
-| [Unlimited map downloads](../start-with/download-maps.md) | <details><summary>**7 map downloads**</summary>  - Map download or update is meant only download-update of a country (region) map. <br/> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 7 possibilities to download. </details> | ✔ | ✔ |
-| [Monthly map updates](../personal/maps-resources.md#update-maps)<br/>Once a month (with 2 days delay) | <details><summary>**7 map downloads**</summary> Map update counts as download.</details> | ✔ | ✔ |
-| [Hourly map updates](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-** | ✔ |
+| [Toutes les fonctionnalités Pro](#pro-features) | **-** | **-** | ✔ |
+| [Relief 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
+| [Téléchargements de cartes illimités](../start-with/download-maps.md) | <details><summary>**7 téléchargements de cartes**</summary>  - Le téléchargement ou la mise à jour d'une carte ne concerne que le téléchargement-mise à jour d'une carte de pays (région). <br/> - La **carte d'aperçu du monde**, la **correction d'altitude du monde**, les **polices de carte** et les **invites vocales** ne sont pas comptées comme 7 possibilités de téléchargement. </details> | ✔ | ✔ |
+| [Mises à jour mensuelles des cartes](../personal/maps-resources.md#update-maps)<br/>Une fois par mois (avec 2 jours de délai) | <details><summary>**7 téléchargements de cartes**</summary> La mise à jour de la carte compte comme un téléchargement.</details> | ✔ | ✔ |
+| [Mises à jour horaires des cartes](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 heure de délai) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
-| [External sensors support](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
-| [Topography data](../plugins/topography.md#setup)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
-| [3D track visualization](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
-| [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
-| [Offline Wikipedia](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
-| [Offline Wikivoyage - Travel guides](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
-| [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
-| [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [Export GPX tracks](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
-| [Import GPX/KML tracks](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
-| [Plan a route tool](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
-| [Vehicle Metrics Widgets](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets for free**</summary><ul><li>*Vehicle speed*</li><li>*Engine speed*</li></ul></details> | <details><summary>**2 widgets for free**</summary><ul><li>*Vehicle speed*</li><li>*Engine speed*</li></ul></details> | ✔ |
-| [Map markers tool](../personal/markers.md) | ✔ | ✔ | ✔ |
-| [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [SQLitedb Map](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
-| [Favorite points](../map/point-layers-on-map.md)<br/>bookmarks and waypoints | ✔ | ✔ | ✔ |
-| [Audio/pic/video points](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
-| [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
-| [Export / Import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
+| [Prise en charge des capteurs externes](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Données topographiques](../plugins/topography.md#setup)<br/>(Courbes de niveau et Terrain) | **-** | ✔ | ✔ |
+| [Visualisation de piste 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Profondeurs nautiques](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
+| [Wikipédia hors ligne](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
+| [Wikivoyage hors ligne - Guides de voyage](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Navigation hors ligne et en ligne](../navigation/index.md)<br/>avec indications virage par virage | ✔ | ✔ | ✔ |
+| [Recherche instantanée hors ligne](../search/index.md) | ✔ | ✔ | ✔ |
+| [Enregistrement de trajet](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
+| [Exporter des pistes GPX](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
+| [Importer des pistes GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Outil de planification d'itinéraire](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
+| [Widgets de métriques de véhicule](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets gratuits**</summary><ul><li>*Vitesse du véhicule*</li><li>*Régime moteur*</li></ul></details> | <details><summary>**2 widgets gratuits**</summary><ul><li>*Vitesse du véhicule*</li><li>*Régime moteur*</li></ul></details> | ✔ |
+| [Outil de marqueurs de carte](../personal/markers.md) | ✔ | ✔ | ✔ |
+| [Sources de cartes en ligne](../plugins/online-map.md) | ✔ | ✔ | ✔ |
+| [Carte SQLitedb](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Points favoris](../map/point-layers-on-map.md)<br/>signets et points de passage | ✔ | ✔ | ✔ |
+| [Points audio/photo/vidéo](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
+| [Traqueur GPS en ligne OsmAnd](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
+| [Exporter / Importer un profil d'application](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
-#### ** Map updates
+#### ** Mises à jour des cartes
 
-[Free](../personal/maps-resources.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
+[Gratuit](../personal/maps-resources.md#free-for-osm-mappers). Les mises à jour en direct et les téléchargements de cartes illimités sont disponibles pour les Mappeurs OSM.
 
 #### *** Android Auto
 
-[Android Auto](https://www.android.com/auto/) feature works only for OsmAnd apps from [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023). If you buy OsmAnd Pro for OsmAnd from [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) for [OsmAnd Free from Google Play](https://play.google.com/store/apps/details?id=net.osmand). After that, you can have Android Auto function by OsmAnd Pro subscription bought from another app store.
+La fonctionnalité [Android Auto](https://www.android.com/auto/) ne fonctionne que pour les applications OsmAnd de [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023). Si vous achetez OsmAnd Pro pour OsmAnd sur l'[Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd), vous pouvez l'[activer](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) pour [OsmAnd Gratuit de Google Play](https://play.google.com/store/apps/details?id=net.osmand). Après cela, vous pouvez avoir la fonction Android Auto grâce à l'abonnement OsmAnd Pro acheté sur un autre magasin d'applications.
 
 
-### Pro Features
+### Fonctionnalités Pro
 
-Pro Features are available for [OsmAnd Pro subscription](#prices).
+Les fonctionnalités Pro sont disponibles avec l'[abonnement OsmAnd Pro](#prices).
 
-The **Pro** subscription currently has the following features:
+L'abonnement **Pro** comprend actuellement les fonctionnalités suivantes :
 
-|  Pro Feature  | Description   |
+|  Fonctionnalité Pro  | Description   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
-| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | Possibility to use OsmAnd Pro and OsmAnd Start on all platforms (Android *←→* iOS *→* Web).  |
-| [3D Relief](../plugins/topography.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
-| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
-| [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
-| [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Allows you to connect an OBD-II scanner to display detailed vehicle data in the OsmAnd app and store the information in track records.  |
-| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
-| [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | Shows your location on the Elevation graph of the navigation route with additional info.  |
-| [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Allows you to find out the elevation of the current map center above sea level.  |
-| [Elevation correction (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Allows you to calculate an altitude graph for your track ([Terrain map](../plugins/topography.md#how-to-download) required for chosen region). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Sauvegardez et restaurez vos données, synchronisez les données avec le [portail web OsmAnd](https://www.osmand.net/map). |
+| [Multiplateforme](../personal/osmand-cloud.md#cross-platform) | Possibilité d'utiliser OsmAnd Pro et OsmAnd Start sur toutes les plateformes (Android *←→* iOS *→* Web).  |
+| [Relief 3D](../plugins/topography.md#3d-relief) | Vous permet d'avoir et d'observer un modèle réduit de votre quartier ou d'un continent entier. |
+| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | Les cartes OsmAnd sont mises à jour toutes les 15 minutes après l'amélioration d'[OpenStreetMap](https://www.openstreetmap.org/). |
+| [Plugin Météo](../plugins/weather.md) | Prévisions horaires sur 24h et 7 jours à l'avance sur la carte. |
+| [Plugin Métriques de véhicule (OBD-II)](../plugins/vehicle-metrics.md) | Vous permet de connecter un scanner OBD-II pour afficher des données détaillées du véhicule dans l'application OsmAnd et stocker les informations dans les enregistrements de piste.  |
+| [Personnaliser la ligne d'itinéraire](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Modification de la couleur et de la largeur de la ligne d'itinéraire pendant la navigation. |
+| [Widget d'altitude](../widgets/nav-widgets.md#elevation-widget) | Affiche votre position sur le graphique d'altitude de l'itinéraire de navigation avec des informations supplémentaires.  |
+| [Widgets d'altitude - Altitude : Centre de la carte](../widgets/info-widgets.md#elevation-map-center) | Vous permet de connaître l'altitude du centre de la carte actuel au-dessus du niveau de la mer.  |
+| [Correction d'altitude (hors ligne)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Vous permet de calculer un graphique d'altitude pour votre piste ([carte de terrain](../plugins/topography.md#how-to-download) requise pour la région choisie). |
 
 
-### How to Buy
+### Comment acheter
 
-Easy way to choose and buy needed plan by **Purchases** menu. Of course, you see proposal menu for paid features.
+Un moyen simple de choisir et d'acheter le plan nécessaire via le menu **Achats**. Bien sûr, vous verrez un menu de proposition pour les fonctionnalités payantes.
 
-#### OsmAnd Pro Purchase
+#### Achat OsmAnd Pro
 
-![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* subscription plan. Here you can choose monthly or annual subscription:
+![Pro](@site/static/img/svg/pro_icon.svg) Plan d'abonnement *OsmAnd Pro*. Ici, vous pouvez choisir un abonnement mensuel ou annuel :
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → Continue with OsmAnd Pro*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → Continuer avec OsmAnd Pro*
 
-or  
+ou
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continuer avec OsmAnd Pro*
 
 ![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
 
-#### Maps+ Purchase
+#### Achat Maps+
 
-![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  *Maps+* subscription / in-app plan. Here you can choose annual subscription or one-time payment:
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Plan d'abonnement / intégré *Maps+*. Ici, vous pouvez choisir un abonnement annuel ou un paiement unique :
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tap the list of Maps+ features → Continue with Maps+*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Appuyez sur la liste des fonctionnalités Maps+ → Continuer avec Maps+*
 
 ![Maps+ Plan](@site/static/img/purchases/maps.png)
 
 
-## Legacy Subscriptions (prior 4.0)
+## Abonnements hérités (avant 4.0)
 
-New subscriptions start with OsmAnd version 4.0 (August 2021). All previous subscriptions are obsolete and technically equate to a *Map Subscription*, although older subscriptions are eligible for hourly map updates. Users cannot buy old subscriptions, but old subscriptions are automatically renewed until you unsubscribes (the price may change in the future).
+Les nouveaux abonnements commencent avec la version 4.0 d'OsmAnd (août 2021). Tous les abonnements précédents sont obsolètes et équivalent techniquement à un *Abonnement Cartes*, bien que les anciens abonnements soient éligibles aux mises à jour horaires des cartes. Les utilisateurs ne peuvent pas acheter d'anciens abonnements, mais les anciens abonnements sont automatiquement renouvelés jusqu'à ce que vous vous désabonniez (le prix peut changer à l'avenir).
 
 
-## Restore Purchases
+## Restaurer les achats
 
-### Find your Purchase
+### Trouver votre achat
 
-To restore the purchase, please check what OsmAnd plan you bought.
+Pour restaurer l'achat, veuillez vérifier quel plan OsmAnd vous avez acheté.
 
-- **Google Play**: you can check it in the [Google Play order history](https://support.google.com/googleplay/answer/2850369).
-- **Amazon**: you can check it in the [Amazon App store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) open it → click on the Menu → Appstore for Android → Your apps and subscriptions → review your order history.
-- **Huawei App Gallery**: you can check it in the [Huawei App Gallery order history](https://consumer.huawei.com/en/support/content/en-us00694318/ ).
+- **Google Play** : vous pouvez le vérifier dans l'[historique des commandes Google Play](https://support.google.com/googleplay/answer/2850369).
+- **Amazon** : vous pouvez le vérifier dans l'[Amazon App store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd), ouvrez-le → cliquez sur le Menu → Appstore pour Android → Vos applications et abonnements → consultez votre historique de commandes.
+- **Huawei App Gallery** : vous pouvez le vérifier dans l'[historique des commandes Huawei App Gallery](https://consumer.huawei.com/en/support/content/en-us00694318/).
 
-### Install Application
+### Installer l'application
 
-- Update Market app (Google Play, Amazon, Huawei AppGallery).
-- Log in with **the same account** to the Market (Google Play, Amazon, Huawei AppGallery) that you have an OsmAnd purchase.
-- Install an application by the link below.
+- Mettez à jour l'application du marché (Google Play, Amazon, Huawei AppGallery).
+- Connectez-vous avec **le même compte** au marché (Google Play, Amazon, Huawei AppGallery) avec lequel vous avez effectué un achat OsmAnd.
+- Installez une application via le lien ci-dessous.
 
 |  App  | Google Play   | Amazon | Huawei AppGallery |
 | :------------- | :------------- | :------------- | :------------- |
-| OsmAnd  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand) | ✔  &nbsp;&nbsp;[Install](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8) | ✔  &nbsp;&nbsp;[Install](https://appgallery.huawei.com/#/app/C101486545) |
-| OsmAnd+  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand.plus) |  ✔  &nbsp;&nbsp;[Install](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC/) | **-** |
+| OsmAnd  | ✔  &nbsp;&nbsp;[Installer](https://play.google.com/store/apps/details?id=net.osmand) | ✔  &nbsp;&nbsp;[Installer](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8) | ✔  &nbsp;&nbsp;[Installer](https://appgallery.huawei.com/#/app/C101486545) |
+| OsmAnd+  | ✔  &nbsp;&nbsp;[Installer](https://play.google.com/store/apps/details?id=net.osmand.plus) |  ✔  &nbsp;&nbsp;[Installer](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC/) | **-** |
 
-### Restore Subscription / In App
+### Restaurer l'abonnement / l'achat intégré
 
-**To restore your *in-app purchase* or *subscription* ([Maps+, Pro, OsmAnd Live](#difference-between-purchases-android)).**
+**Pour restaurer votre *achat intégré* ou *abonnement* ([Maps+, Pro, OsmAnd Live](#difference-between-purchases-android)).**
 
-- *Update Market app* (Google Play, Amazon, Huawei AppGallery).
-- *Log in* with **the same account** to the Market (Google Play, Amazon, Huawei AppGallery) that you have an OsmAnd purchase.
-- *Open OsmAnd* with an active Internet connection.
-- *To open Restore purchases*, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro) is activated.
-- *Register Pro features* with OsmAnd Pro subscription for all platforms (Android and iOS). If you have OsmAnd Pro account you need to use it [for activation OsmAnd Pro](../personal/osmand-cloud.md) for your device.
+- *Mettez à jour l'application du marché* (Google Play, Amazon, Huawei AppGallery).
+- *Connectez-vous* avec **le même compte** au marché (Google Play, Amazon, Huawei AppGallery) avec lequel vous avez effectué un achat OsmAnd.
+- *Ouvrez OsmAnd* avec une connexion Internet active.
+- *Pour ouvrir Restaurer les achats*, suivez ces étapes : *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* et en haut de l'écran devrait apparaître que Maps+(Pro) est activé.
+- *Enregistrez les fonctionnalités Pro* avec l'abonnement OsmAnd Pro pour toutes les plateformes (Android et iOS). Si vous avez un compte OsmAnd Pro, vous devez l'utiliser [pour l'activation d'OsmAnd Pro](../personal/osmand-cloud.md) pour votre appareil.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases.png)
 
-### Other Cases
+### Autres cas
 
-**If none of the methods worked:**
+**Si aucune des méthodes n'a fonctionné :**
 
-1. Clear the cache for Google Play (Huawei AppGallery).
-2. Clear the cache for OsmAnd.
-3. Restart the device and try to restore again.
+1. Videz le cache de Google Play (Huawei AppGallery).
+2. Videz le cache d'OsmAnd.
+3. Redémarrez l'appareil et essayez de restaurer à nouveau.
 
 
 <!--
 ## Action Guides
 
 - Restore your data after purchases expire.
-- Transfer purchases from Android to iOS or vice versa 
+- Transfer purchases from Android to iOS or vice versa
 - One purchase (account) for Android and iOS
 -->
 
 
-## Giftcards
+## Cartes cadeaux
 
-You can purchase OsmAnd using Google Play or Amazon gift cards, which provides a secure alternative to sharing credit card information online. Simply buy a gift card from a retailer of your choice and redeem the code on Google Play or Amazon.
+Vous pouvez acheter OsmAnd en utilisant des cartes cadeaux Google Play ou Amazon, ce qui constitue une alternative sécurisée au partage d'informations de carte de crédit en ligne. Achetez simplement une carte cadeau auprès d'un détaillant de votre choix et échangez le code sur Google Play ou Amazon.
 
-- [Detailed guide on purchasing Google Play gift cards](https://support.google.com/googleplay/answer/3422734?hl=en).
-- [Amazon gift cards](https://www.amazon.com/gift-cards/b?ie=UTF8&node=2238192011) and [instructions for redeeming them](https://www.amazon.com/gp/help/customer/display.html?nodeId=201357470).
+- [Guide détaillé sur l'achat de cartes cadeaux Google Play](https://support.google.com/googleplay/answer/3422734?hl=en).
+- [Cartes cadeaux Amazon](https://www.amazon.com/gift-cards/b?ie=UTF8&node=2238192011) et [instructions pour les échanger](https://www.amazon.com/gp/help/customer/display.html?nodeId=201357470).
+
+-- source-hash: blake2s: e167b126937a524f9a0e73d64cbb2833cb68f3510c19c9c85d114073d6a73ecd --

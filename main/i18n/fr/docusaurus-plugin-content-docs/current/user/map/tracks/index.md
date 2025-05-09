@@ -1,5 +1,5 @@
 ---
-title:  Tracks
+title:  Tracés
 sidebar_position: 2
 ---
 
@@ -15,164 +15,166 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
-OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin, or browsed and selected from OpenStreetMap data.
-
-
-## Types of Tracks
-
-[Tracks (GPX)](#display-tracks-on-the-map) - recorded or planned trip saved in [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). This kind of route could be imported from the external source, created in the application, or recorded by you. GPX could contain one of 3 different types of data, or all of them:
-
-- Track as a line (***Geometry***). The file has a ```<trkpt>``` points array, each point has the location and optional time, speed, altitude, and other attributes. These tracks are displayed on the map as solid lines.
-- Track as a route (***Route***). The file has a ```<rtept>``` points array, each point described as an intermediate point of the route. It depends on how points within a route should be connected, either as small route segments or via a straight line. These tracks are displayed on the map as dashed lines.
-- Waypoints (***Points***). The file has ```<wpt>``` points with attributes. Waypoints are displayed as circular points on the map. You can tap them to get additional information.
-
-OsmAnd could create tracks with 1–3 combinations. [Plan Route](../../plan-route/create-route.md) creates a track with ***Geometry*** and ***Route***, if you save it as ***Simplified Track***, only the ***Geometry*** will be kept. [Recording track](../../plugins/trip-recording.md#new-track-recording) creates only ***Geometry***, but you can also add ***Points*** to it via the context menu.
+OsmAnd dispose de nombreuses fonctionnalités puissantes pour afficher divers itinéraires sur la carte. Les itinéraires peuvent être construits dans le cadre de la navigation, créés via Planifier un itinéraire, importés en tant que tracés GPX, enregistrés via le plugin Enregistrement de trajet, ou parcourus et sélectionnés à partir des données OpenStreetMap.
 
 
-## Display Tracks on the Map
+## Types de tracés
 
-You can manage track visibility by choosing which ones to display or hide from several menus: the [My Places menu](#my-places), the [Configure Map menu](#configure-map), and the [Track Context menu](#track-context-menu). This flexibility allows you to quickly switch between different tracks, ensuring that only the relevant tracks are visible on your map at any given time.
+[Tracés (GPX)](#display-tracks-on-the-map) - trajet enregistré ou planifié enregistré au [format GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Ce type d'itinéraire peut être importé d'une source externe, créé dans l'application ou enregistré par vous. Un fichier GPX peut contenir l'un des 3 types de données différents, ou tous :
 
-### Configure Map
+- Tracé sous forme de ligne (***Géométrie***). Le fichier contient un tableau de points ```<trkpt>```, chaque point ayant la position et éventuellement l'heure, la vitesse, l'altitude et d'autres attributs. Ces tracés sont affichés sur la carte sous forme de lignes continues.
+- Tracé sous forme d'itinéraire (***Itinéraire***). Le fichier contient un tableau de points ```<rtept>```, chaque point étant décrit comme un point intermédiaire de l'itinéraire. Cela dépend de la manière dont les points d'un itinéraire doivent être connectés, soit sous forme de petits segments d'itinéraire, soit via une ligne droite. Ces tracés sont affichés sur la carte sous forme de lignes pointillées.
+- Points de passage (***Points***). Le fichier contient des points ```<wpt>``` avec des attributs. Les points de passage sont affichés sous forme de points circulaires sur la carte. Vous pouvez les toucher pour obtenir des informations supplémentaires.
 
-<Tabs groupId="operating-systems">
+OsmAnd peut créer des tracés avec 1 à 3 combinaisons. [Planifier un itinéraire](../../plan-route/create-route.md) crée un tracé avec ***Géométrie*** et ***Itinéraire***, si vous l'enregistrez en tant que ***Tracé simplifié***, seule la ***Géométrie*** sera conservée. [Enregistrer un tracé](../../plugins/trip-recording.md#new-track-recording) crée uniquement la ***Géométrie***, mais vous pouvez également y ajouter des ***Points*** via le menu contextuel.
 
-<TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
+## Afficher les tracés sur la carte
 
-![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+Vous pouvez gérer la visibilité des tracés en choisissant ceux à afficher ou à masquer à partir de plusieurs menus : le [menu Mes lieux](#my-places), le [menu Configurer la carte](#configure-map) et le [menu contextuel du tracé](#track-context-menu). Cette flexibilité vous permet de basculer rapidement entre différents tracés, garantissant que seuls les tracés pertinents sont visibles sur votre carte à un moment donné.
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
-
-![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-The *Configure Map* option enables you to quickly manage the display of all recently displayed tracks, allowing you to toggle visibility for a group of tracks. The track sorting follows the order configured in the *My Places → Tracks* tab. You can access the [Track Menu](../../personal/tracks/manage-tracks.md#track-menu) by long-tapping a track item. Additionally, in this menu, you can modify the appearance of multiple selected tracks simultaneously.
-
-### My Places
+### Configurer la carte
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![Configurer les tracés de carte Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Configurer les tracés de carte Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long tap the chosen GPX track → Show on map*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Configurer les tracés de carte iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Configurer les tracés de carte iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-In [My Places *→* Tracks tab](../../personal/tracks/manage-tracks.md#manage-tracks) to display the track on the map, you need to:
+L'option *Configurer la carte* vous permet de gérer rapidement l'affichage de tous les tracés récemment affichés, vous permettant d'activer ou de désactiver la visibilité d'un groupe de tracés. Le tri des tracés suit l'ordre configuré dans l'onglet *Mes lieux → Tracés*. Vous pouvez accéder au [Menu du tracé](../../personal/tracks/manage-tracks.md#track-menu) en appuyant longuement sur un élément de tracé. De plus, dans ce menu, vous pouvez modifier l'apparence de plusieurs tracés sélectionnés simultanément.
 
-- *Android* - tap the *three-dot menu* in the field with the required track.
-- *iOS* - long tap the required track in the list.
-
-
-### Track Context Menu
+### Mes lieux
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
+
+![Mes lieux avec des tracés dans Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → appuyer longuement sur le tracé GPX choisi → Afficher sur la carte*
+
+![Menu contextuel d'un tracé dans iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-When you select a track on the map or open the [track context menu](./track-context-menu.md) after recording or importing a track, you can control its visibility on the map. Simply use the *Show* or *Hide* buttons to display or remove the track from the map view.
+Dans [Mes lieux *→* onglet Tracés](../../personal/tracks/manage-tracks.md#manage-tracks) pour afficher le tracé sur la carte, vous devez :
+
+- *Android* - appuyer sur le *menu à trois points* dans le champ du tracé requis.
+- *iOS* - appuyer longuement sur le tracé requis dans la liste.
 
 
-## Analyze Track on Map  
+### Menu contextuel du tracé
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *Tap the track → Track tab → <Translate android="true" ids="analyze_on_map"/>*  
-
-![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Aperçu du menu contextuel du tracé Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *Tap the track → Track tab → <Translate ios="true" ids="analyze_on_map"/>*  
-
-![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Aperçu du menu contextuel du tracé iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
 
 </TabItem>
 
 </Tabs>
 
-This tool provides a detailed analysis of [track](../../map/tracks/track-context-menu.md#options) data using graphs and maps.
-
-- **Graph data (Y-axis)** displays: *Altitude*, *Slope*, *Speed*, [*External sensor data*](../../plugins/external-sensors.md), and combinations of up to two options if contained in the track data.
-- **Graph dimension (X-axis)** represents: *Distance*, *Time*, and *Time of day*.
-- **Tap/slide interaction**. Tap a graph to display information about a specific point on the track. Sliding on the graph highlights the appropriate location on the map and shows details in the information bar.
-- **Scaling**. Use a [two-finger gesture](../../map/interact-with-map.md#gestures) to scale the graph for more detailed viewing.
+Lorsque vous sélectionnez un tracé sur la carte ou ouvrez le [menu contextuel du tracé](./track-context-menu.md) après avoir enregistré ou importé un tracé, vous pouvez contrôler sa visibilité sur la carte. Utilisez simplement les boutons *Afficher* ou *Masquer* pour afficher ou supprimer le tracé de la vue de la carte.
 
 
-### Follow My Location
+## Analyser le tracé sur la carte  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
+Aller à : *Android* *Appuyer sur le tracé → Onglet Tracé → <Translate android="true" ids="analyze_on_map"/>*  
+
+![Menu du tracé analyser sur la carte Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Menu du tracé analyser sur la carte distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track menu analyze on map](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
+Aller à : *iOS* *Appuyer sur le tracé → Onglet Tracé → <Translate ios="true" ids="analyze_on_map"/>*  
+
+![Menu du tracé analyser sur la carte](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Menu du tracé analyser sur la carte ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Tap the [My Location](../../map/interact-with-map.md#my-location-and-zoom) button to synchronize the map view and graph with your location.
+Cet outil fournit une analyse détaillée des données du [tracé](../../map/tracks/track-context-menu.md#options) à l'aide de graphiques et de cartes.
 
-- The **scale of the graph** remains the same, and the **bar information** is fixed 1/4 to the left side.
-- As you move, the **graph will slide** from left to right, displaying information ahead of your track.
-- No other widgets are displayed on this screen.
-- This feature is useful for hiking and cycling as you navigate the track.  
+- Les **données du graphique (axe Y)** affichent : *Altitude*, *Pente*, *Vitesse*, [*Données de capteur externe*](../../plugins/external-sensors.md), et des combinaisons de jusqu'à deux options si elles sont contenues dans les données du tracé.
+- La **dimension du graphique (axe X)** représente : *Distance*, *Temps* et *Heure de la journée*.
+- **Interaction par toucher/glisser**. Touchez un graphique pour afficher des informations sur un point spécifique du tracé. Glisser sur le graphique met en évidence l'emplacement approprié sur la carte et affiche les détails dans la barre d'informations.
+- **Mise à l'échelle**. Utilisez un [geste à deux doigts](../../map/interact-with-map.md#gestures) pour mettre à l'échelle le graphique afin d'obtenir une vue plus détaillée.
 
 
-## Related Articles
+### Suivre ma position
 
-- [Track appearance](./appearance.md)
-- [Track Context menu](./track-context-menu.md)
-- [Navigate by track](../../navigation/setup/gpx-navigation.md)
-- [Routes on the map](https://docs.osmand.net/blog/routes) blog article
-- [Configure map](../../map/configure-map-menu.md)  
-- [GPX tracks](../../personal/tracks/index.md)  
-- [Plan route](../../plan-route/index.md)  
-- [Trip Recording](../../plugins/trip-recording.md)
+<Tabs groupId="operating-systems">
 
-> *This article was last updated in November 2024*
+<TabItem value="android" label="Android">
+
+![Menu du tracé analyser sur la carte 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Menu du tracé analyser sur la carte 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Menu du tracé analyser sur la carte](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Menu du tracé analyser sur la carte ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Appuyez sur le bouton [Ma position](../../map/interact-with-map.md#my-location-and-zoom) pour synchroniser la vue de la carte et le graphique avec votre position.
+
+- L'**échelle du graphique** reste la même, et la **barre d'informations** est fixée à 1/4 sur le côté gauche.
+- Lorsque vous vous déplacez, le **graphique glissera** de gauche à droite, affichant des informations en avant de votre tracé.
+- Aucun autre widget n'est affiché sur cet écran.
+- Cette fonctionnalité est utile pour la randonnée et le cyclisme lorsque vous naviguez sur le tracé.  
+
+
+## Articles connexes
+
+- [Apparence du tracé](./appearance.md)
+- [Menu contextuel du tracé](./track-context-menu.md)
+- [Naviguer par tracé](../../navigation/setup/gpx-navigation.md)
+- Article de blog [Routes on the map](https://docs.osmand.net/blog/routes)
+- [Configurer la carte](../../map/configure-map-menu.md)  
+- [Tracés GPX](../../personal/tracks/index.md)  
+- [Planifier un itinéraire](../../plan-route/index.md)  
+- [Enregistrement de trajet](../../plugins/trip-recording.md)
+
+> *Cet article a été mis à jour pour la dernière fois en novembre 2024*
+
+-- source-hash: blake2s: c36b99e0cc2e9439cdd717fc2086f3e511204bc69890a70336552456211f0dde --

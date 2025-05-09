@@ -1,6 +1,6 @@
 ---
 sidebar_position: 11
-title:  Online routing
+title:  Routage en ligne
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,47 +14,49 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
 <InfoAndroidOnly />
 
-Online routing is a powerful tool that can help users save time and navigate more efficiently. However, it is important to note that online routing relies on internet connectivity, and may not be available in areas with poor network coverage. Additionally, users should always exercise caution and use their judgment when following any route suggested by an online routing service.  
+Le routage en ligne est un outil puissant qui peut aider les utilisateurs à gagner du temps et à naviguer plus efficacement. Cependant, il est important de noter que le routage en ligne dépend de la connectivité Internet et peut ne pas être disponible dans les zones où la couverture réseau est faible. De plus, les utilisateurs doivent toujours faire preuve de prudence et utiliser leur jugement lorsqu'ils suivent un itinéraire suggéré par un service de routage en ligne.
 
-![Online routing Android](@site/static/img/navigation/routing/online_routing_andr.png)
+![Routage en ligne Android](@site/static/img/navigation/routing/online_routing_andr.png)
 
 
-## Route Parameters - Online Routing
+## Paramètres d'itinéraire - Routage en ligne
 
-*Online routing* can be enabled in [Navigation type](../guidance/navigation-settings.md#overview) section of the Navigation settings of the selected *Profile*. In OsmAnd there are two predefined *online routing engines* ([ZLZK](https://zlzk.biz/) and [OSM DE](https://routing.openstreetmap.de)), that provide three *Online routing* types : *Bicycle, Car, and On foot*.  
+Le *routage en ligne* peut être activé dans la section [Type de navigation](../guidance/navigation-settings.md#overview) des paramètres de navigation du *Profil* sélectionné. Dans OsmAnd, il existe deux *moteurs de routage en ligne* prédéfinis ([ZLZK](https://zlzk.biz/) et [OSM DE](https://routing.openstreetmap.de)), qui proposent trois types de *routage en ligne* : *Vélo, Voiture et À pied*.
 
 :::note
-Online routing types are designed for *Driving, Cycling, and Walking* profiles, although they can also be used with other OsmAnd profiles (Truck, Motorcycle, Skiing, Horseback riding). They are provided “as is", so you can't customize them according to your needs using different navigation options.  
+Les types de routage en ligne sont conçus pour les profils *Conduite, Cyclisme et Marche*, bien qu'ils puissent également être utilisés avec d'autres profils OsmAnd (Camion, Moto, Ski, Équitation). Ils sont fournis « tels quels », vous ne pouvez donc pas les personnaliser selon vos besoins en utilisant différentes options de navigation.
 :::
 
-### Custom Online Routing
+### Routage en ligne personnalisé
 
-In addition to the preset online routing types, you can configure other online routing mechanisms.  
-Tap the **+ Add online routing engine** button and choose one of the proposed online routing types ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Openrouteservice](https://openrouteservice.org)). Select the appropriate vehicle and tap *test routing* before saving your changes.  
+En plus des types de routage en ligne prédéfinis, vous pouvez configurer d'autres mécanismes de routage en ligne.
+Appuyez sur le bouton **+ Ajouter un moteur de routage en ligne** et choisissez l'un des types de routage en ligne proposés ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Openrouteservice](https://openrouteservice.org)). Sélectionnez le véhicule approprié et appuyez sur *tester le routage* avant d'enregistrer vos modifications.
 
-![Custom online routing Android](@site/static/img/navigation/routing/custom_online_routing_andr_1.png) ![Custom online routing Android](@site/static/img/navigation/routing/custom_online_routing_andr_2.png)  
+![Routage en ligne personnalisé Android](@site/static/img/navigation/routing/custom_online_routing_andr_1.png) ![Routage en ligne personnalisé Android](@site/static/img/navigation/routing/custom_online_routing_andr_2.png)
 
 :::info
-You can read about the differences between online routing engines in [OSMwiki](https://wiki.openstreetmap.org/wiki/Routing/online_routers).
+Vous pouvez lire les différences entre les moteurs de routage en ligne dans [OSMwiki](https://wiki.openstreetmap.org/wiki/Routing/online_routers).
 :::
 
-### Custom Online GPX Routing
+### Routage GPX en ligne personnalisé
 
-Online server builds a route using your starting point and destination. After receiving the track from the server, OsmaAnd creates a route using *[Attach to the roads](../setup/gpx-navigation.md#attach-to-roads)* feature. So all needed routing information will be taken from our offline maps, and more precise guidance along the route will be provided.  
+Le serveur en ligne construit un itinéraire en utilisant votre point de départ et votre destination. Après avoir reçu la trace du serveur, OsmaAnd crée un itinéraire en utilisant la fonction *[Attacher aux routes](../setup/gpx-navigation.md#attach-to-roads)*. Ainsi, toutes les informations de routage nécessaires seront tirées de nos cartes hors ligne, et des indications plus précises le long de l'itinéraire seront fournies.
 
-![Custom GPX routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_1.png) ![Custom GPX routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_2.png)
+![Routage GPX personnalisé Android 1](@site/static/img/navigation/routing/online_routing_gpx_1.png) ![Routage GPX personnalisé Android 1](@site/static/img/navigation/routing/online_routing_gpx_2.png)
 
 
-## Online Routing Setting
+## Paramètres de routage en ligne
 
-When online routing is selected for navigation, an additional option appears in the settings.
+Lorsque le routage en ligne est sélectionné pour la navigation, une option supplémentaire apparaît dans les paramètres.
 
-![Settings Online routing Android](@site/static/img/navigation/routing/settings_online_routing_1.png)
+![Paramètres de routage en ligne Android](@site/static/img/navigation/routing/settings_online_routing_1.png)
 
-- *<Translate android="true" ids="calculate_osmand_route_without_internet"/>*  - Allows to use OsmAnd offline routing, when online routing is selected in the navigation settings. This option may help if a route has already been built online, but then there was a deviation from the route and at the same time the internet connection was lost. In this case, offline routing will be used to return to the route, previousely calculated online.
+- *<Translate android="true" ids="calculate_osmand_route_without_internet"/>* - Permet d'utiliser le routage hors ligne d'OsmAnd lorsque le routage en ligne est sélectionné dans les paramètres de navigation. Cette option peut être utile si un itinéraire a déjà été construit en ligne, mais qu'il y a eu ensuite une déviation de l'itinéraire et qu'en même temps la connexion Internet a été perdue. Dans ce cas, le routage hors ligne sera utilisé pour revenir à l'itinéraire, précédemment calculé en ligne.
 
-> *This article was last updated in June 2024*
+> *Cet article a été mis à jour pour la dernière fois en juin 2024*
+
+-- source-hash: blake2s: d5cfab4861b9bd743d3f04bbd7ef92694768358602639508d75e0d21cfe0c9a9 --

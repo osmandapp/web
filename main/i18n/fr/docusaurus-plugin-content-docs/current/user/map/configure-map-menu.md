@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title:  Configure Map
+title: Configurer la carte
 ---
 
 import Tabs from '@theme/Tabs';
@@ -12,94 +12,95 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## Overview
+## Aperçu
 
-The **Configure map** menu is an important item in the OsmAnd *Main Menu*, where you can customize the map display to suit your needs. You can highlight favorite points, navigation markers, or special points of interest on the map, display specific routes or third-party GPX files, overlay terrain information, satellite images, or any other available raster images, display public transportation information, and change the map style.  
+Le menu **Configurer la carte** est un élément important du *Menu principal* d'OsmAnd, où vous pouvez personnaliser l'affichage de la carte en fonction de vos besoins. Vous pouvez mettre en évidence les points favoris, les marqueurs de navigation ou les points d'intérêt spéciaux sur la carte, afficher des itinéraires spécifiques ou des fichiers GPX tiers, superposer des informations de terrain, des images satellite ou toute autre image raster disponible, afficher des informations sur les transports en commun et modifier le style de la carte.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Section **Show**:  
+Section **Afficher** :
 
-![Configure map android](@site/static/img/map/configure_map_show1_andr.png)  ![Configure map android](@site/static/img/map/configure_map_show2_andr.png)  
+![Configurer la carte android](@site/static/img/map/configure_map_show1_andr.png) ![Configurer la carte android](@site/static/img/map/configure_map_show2_andr.png)
 
-Section **Topography**:  
+Section **Topographie** :
 
-![Configure map android](@site/static/img/map/configure_map_topography_andr.png)  
+![Configurer la carte android](@site/static/img/map/configure_map_topography_andr.png)
 
-Section **OpenStreetMap**:  
+Section **OpenStreetMap** :
 
-![Configure map android](@site/static/img/map/configure_map_osm_andr.png)  
+![Configurer la carte android](@site/static/img/map/configure_map_osm_andr.png)
 
-Sections **Routes and Map rendering**:  
+Sections **Itinéraires et rendu de la carte** :
 
-![Configure map android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
+![Configurer la carte android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Configure map ios](@site/static/img/map/configure-map-ios.png)
+![Configurer la carte ios](@site/static/img/map/configure-map-ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-The **<Translate android="true" ids="configure_map"/>** menu is divided into two categories:
+Le menu **<Translate android="true" ids="configure_map"/>** est divisé en deux catégories :
 
-- [Map style parameters](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (or **<Translate ios="true" ids="map_widget_renderer"/>**) is a group of settings that allow you to change the way the main map is displayed.  
-- [Map layers](#map-layers). These layers allow you to place information on top of (or underneath) the main map layer but do not change the display of the map itself.  
+- [Paramètres de style de carte](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (ou **<Translate ios="true" ids="map_widget_renderer"/>**) est un groupe de paramètres qui vous permettent de modifier la façon dont la carte principale est affichée.
+- [Couches de carte](#map-layers). Ces couches vous permettent de placer des informations au-dessus (ou en dessous) de la couche de carte principale, mais ne modifient pas l'affichage de la carte elle-même.
 
-**Notes:**
+**Notes :**
 
-- To change the information on the screen (widgets, icons), you can make settings in the [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md).
-- The Configure map settings depend on your [profile](../personal/profiles.md).
-- Pay attention - the Configure map menu **closes** when you tap the map field.
+- Pour modifier les informations à l'écran (widgets, icônes), vous pouvez effectuer des réglages dans [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md).
+- Les paramètres de configuration de la carte dépendent de votre [profil](../personal/profiles.md).
+- Attention : le menu Configurer la carte **se ferme** lorsque vous appuyez sur le champ de la carte.
 
-## Map Layers
+## Couches de carte
 
-- [Vector Map Layer](../map/vector-maps.md) - displays all vector map information including OpenStreetMap, Contour lines, and Nautical data.
-- [Map Raster sources](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer) - allows selecting underlay / main-source / overlay map with transparency levels.
-- [Terrain](../plugins/topography.md#configure-map-view) - displays slope / hillshade information, 3D Relief.
-- [Borders of downloaded maps](../map/vector-maps.md#show-borders) - displays all borders of downloaded maps on the main map layer.
-- [Coordinate grid](../map/vector-maps.md#coordinates-grid) - control the visibility of the coordinates grid on the map.
+- [Couche de carte vectorielle](../map/vector-maps.md) - affiche toutes les informations de carte vectorielle, y compris OpenStreetMap, les courbes de niveau et les données nautiques.
+- [Sources raster de carte](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer) - permet de sélectionner une carte de sous-couche / source principale / superposition avec des niveaux de transparence.
+- [Terrain](../plugins/topography.md#configure-map-view) - affiche les informations de pente / ombrage, le relief 3D.
+- [Bordures des cartes téléchargées](../map/vector-maps.md#show-borders) - affiche toutes les bordures des cartes téléchargées sur la couche de carte principale.
+- [Grille de coordonnées](../map/vector-maps.md#coordinates-grid) - contrôle la visibilité de la grille de coordonnées sur la carte.
 
-## Map Data Layers
+## Couches de données de carte
 
-   - [Favorites](../map/point-layers-on-map.md) - displays favorites points.
-   - [POI](../map/point-layers-on-map.md) - displays points of interests of selected categories.
-   - [Map markers](../map/point-layers-on-map.md) - displays map markers.
-   - [Overlay labels](../map/point-layers-on-map.md) - shows names of points, and favorites on the map.
-   - [Transport](../map/vector-maps.md#transport) - shows public transport stops.
-   - [Tracks](../map/tracks/index.md) - displays imported, planned, or recorded tracks over the map.
-   - [Street level imagery](../plugins/mapillary.md#viewing-images) - displays points with available street-level imagery.
-   - [Travel guides](../plan-route/travel-guides.md) - displays travel guides on the map.
-   - [Wikipedia](../plugins/wikipedia.md) - highlights Wikipedia articles linked to the map.
-   - [Other plugin layers](../plugins/index.md#configure-a-plugin) - many plugins add their layers with extra information.
+- [Favoris](../map/point-layers-on-map.md) - affiche les points favoris.
+- [POI](../map/point-layers-on-map.md) - affiche les points d'intérêt des catégories sélectionnées.
+- [Marqueurs de carte](../map/point-layers-on-map.md) - affiche les marqueurs de carte.
+- [Étiquettes de superposition](../map/point-layers-on-map.md) - affiche les noms des points et des favoris sur la carte.
+- [Transport](../map/vector-maps.md#transport) - affiche les arrêts de transport en commun.
+- [Tracés](../map/tracks/index.md) - affiche les tracés importés, planifiés ou enregistrés sur la carte.
+- [Imagerie au niveau de la rue](../plugins/mapillary.md#viewing-images) - affiche les points avec l'imagerie au niveau de la rue disponible.
+- [Guides de voyage](../plan-route/travel-guides.md) - affiche les guides de voyage sur la carte.
+- [Wikipedia](../plugins/wikipedia.md) - met en évidence les articles Wikipedia liés à la carte.
+- [Autres couches de plugins](../plugins/index.md#configure-a-plugin) - de nombreux plugins ajoutent leurs couches avec des informations supplémentaires.
 
-## Map style parameters
+## Paramètres de style de carte
 
-The map style settings depend on the main map style displayed. You can read more about it in the [Map Styles article](../map/vector-maps).
+Les paramètres de style de carte dépendent du style de carte principal affiché. Vous pouvez en savoir plus à ce sujet dans l'article [Styles de carte](../map/vector-maps).
 
-   - [Map style](../map/vector-maps.md#default-map-styles) - includes OsmAnd (City), Topo, Nautical, and others.
-   - [Map mode](../map/vector-maps.md#map-mode) - allows you to select the map view and navigation depending on the time of day.
-   - [Map magnifier](../map/vector-maps.md#map-magnifier) - allows changing the magnification of the map.
-   - [Text size](../map/vector-maps.md#text-size) - allows increasing or decreasing the text size on the map.
-   - [Map language](../map/vector-maps.md#map-language) - allows selecting the preferred language displayed on the map.
-   - [Details](../map/vector-maps.md#details) - shows specific objects.
-   - [Hide](../map/vector-maps.md#hide) - hides specific objects.
-   - [Routes](../map/vector-maps.md#routes) - allows highlighting routes and their symbols.  
+- [Style de carte](../map/vector-maps.md#default-map-styles) - comprend OsmAnd (Ville), Topo, Nautique et autres.
+- [Mode carte](../map/vector-maps.md#map-mode) - vous permet de sélectionner la vue de la carte et la navigation en fonction de l'heure de la journée.
+- [Loupe de carte](../map/vector-maps.md#map-magnifier) - permet de modifier le grossissement de la carte.
+- [Taille du texte](../map/vector-maps.md#text-size) - permet d'augmenter ou de diminuer la taille du texte sur la carte.
+- [Langue de la carte](../map/vector-maps.md#map-language) - permet de sélectionner la langue préférée affichée sur la carte.
+- [Détails](../map/vector-maps.md#details) - affiche des objets spécifiques.
+- [Masquer](../map/vector-maps.md#hide) - masque des objets spécifiques.
+- [Itinéraires](../map/vector-maps.md#routes) - permet de mettre en évidence les itinéraires et leurs symboles.
+
+## Personnalisation de l'interface utilisateur (Android)
+
+Pour chaque profil sélectionné dans le système Android, vous pouvez modifier l'ordre des éléments du menu <Translate android="true" ids="configure_map"/>, masquer les éléments, réinitialiser les paramètres par défaut ou les copier à partir d'un autre profil. Cela vous aidera à améliorer votre interaction avec l'application OsmAnd.
+
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
+
+![Éléments de configuration de la carte](@site/static/img/settings/configure-screen-ui-customization.png)
 
 
-## UI Customization (Android)
+> *Cet article a été mis à jour pour la dernière fois en février 2025*
 
-For each selected profile in the Android system, you can change the order of the <Translate android="true" ids="configure_map"/> menu items, hide the items, reset the default settings, or copy them from another profile. This will help improve your interaction with the OsmAnd app.  
-
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
-
-![Configure map items ](@site/static/img/settings/configure-screen-ui-customization.png)
-
-
-> *This article was last updated in February 2025*
+-- source-hash: blake2s: 823be201d28d7cf02563c69576e6d1b0bf1fcaab04351ff63bb9a5c3e1e205b5 --

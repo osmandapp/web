@@ -1,75 +1,77 @@
 import Admonition from '@theme/Admonition';
 
-# Build with OsmAnd
+# Développer avec OsmAnd
 
-Read **[Technical documentation](../technical/osmand-api-sdk/index.md)** how to integrate with OsmAnd.
+Lisez la **[documentation technique](../technical/osmand-api-sdk/index.md)** pour savoir comment intégrer avec OsmAnd.
 
-## Use OsmAnd API
+## Utiliser l'API OsmAnd
 
-OsmAnd API allows you to control the installed OsmAnd app. Starting development via the API is easy and straightforward and it can be embedded in any application, **without licensing requirements** of the target app. The only drawback is that you should already have OsmAnd installed.
+L'API OsmAnd vous permet de contrôler l'application OsmAnd installée. Commencer le développement via l'API est facile et direct, et elle peut être intégrée dans n'importe quelle application, **sans exigences de licence** pour l'application cible. Le seul inconvénient est que vous devez déjà avoir OsmAnd installé.
 
-**OsmAnd API features:**
+**Fonctionnalités de l'API OsmAnd :**
 
-* Adding favorites and markers to the map
-* Navigation between locations
-* Creating audio, video, and photo notes
-* Starting and stopping GPX track recording
-* Importing GPX tracks into OsmAnd and navigating along them
-* Many other features are already present or can be implemented by request
+* Ajout de favoris et de marqueurs sur la carte
+* Navigation entre les lieux
+* Création de notes audio, vidéo et photo
+* Démarrage et arrêt de l'enregistrement de traces GPX
+* Importation de traces GPX dans OsmAnd et navigation le long de celles-ci
+* De nombreuses autres fonctionnalités sont déjà présentes ou peuvent être implémentées sur demande
 
-### Start development (API)
+### Démarrer le développement (API)
 
-You can build your own project in any way you like. Integration with OsmAnd API is done using two types of intents: silent or visible. A silent intent doesn't keep OsmAnd open, whereas a visible intent brings OsmAnd to a specific screen. There are plans to add Android Interprocess Communication in the future. Please take a look at the source code of the OsmAnd API project.
+Vous pouvez construire votre propre projet comme vous le souhaitez. L'intégration avec l'API OsmAnd se fait en utilisant deux types d'intents : silencieux ou visible. Un intent silencieux ne garde pas OsmAnd ouvert, tandis qu'un intent visible amène OsmAnd à un écran spécifique. Il est prévu d'ajouter la communication inter-processus Android à l'avenir. Veuillez consulter le code source du projet API OsmAnd.
 
-<Admonition type="caution" icon="🛠️&nbsp;" title="Examples">
+<Admonition type="caution" icon="🛠️&nbsp;" title="Exemples">
   <p>
-    Browse GitHub source code and install demo from Google Play.
+    Parcourez le code source sur GitHub et installez la démo depuis Google Play.
   </p>
   <div>
     <a href="https://play.google.com/store/apps/details?id=net.osmand.osmandapidemo"><button class="button button--primary">Google Play</button></a> &nbsp;&nbsp;&nbsp;
     <a href="https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-api-sample"><button class="button button--primary">Github</button></a>
   </div>
-</Admonition>  
+</Admonition>
 
-Read **[Technical documentation](../technical/osmand-api-sdk/index.md)** for more details.
+Lisez la **[documentation technique](../technical/osmand-api-sdk/index.md)** pour plus de détails.
 
-### License (API)
+### Licence (API)
 
-Since there is no direct code usage from the core OsmAnd project, the License is different for the OsmAnd API and for the OsmAnd Core project. Most likely applications using the OsmAnd API will be written from scratch and this application provided as an example won't be used at all. For the OsmAnd API the least restrictive license is used, the MIT license.
+Comme il n'y a pas d'utilisation directe de code du projet OsmAnd principal, la licence est différente pour l'API OsmAnd et pour le projet OsmAnd Core. Très probablement, les applications utilisant l'API OsmAnd seront écrites à partir de zéro et cette application fournie en exemple ne sera pas utilisée du tout. Pour l'API OsmAnd, la licence la moins restrictive est utilisée, la licence MIT.
 
 [https://github.com/osmandapp/osmand-api-demo/blob/master/LICENSE.md](https://github.com/osmandapp/osmand-api-demo/blob/master/LICENSE.md)
 
 
-## Use OsmAnd SDK
+## Utiliser le SDK OsmAnd
 
-OsmAnd Sample represents a possibility to built an application on top of OsmAnd core. OsmAnd provides a Java library with lots of functions included. [Please take a look at the source code](https://github.com/osmandapp/osmand-api-demo). OsmAnd Sample is not an API use case and the LICENSE of OsmAnd Sample is the same as the OsmAnd application itself. It provides a possiblity to package and distribute it independently from OsmAnd.
+OsmAnd Sample représente une possibilité de construire une application basée sur le cœur d'OsmAnd. OsmAnd fournit une bibliothèque Java avec de nombreuses fonctions incluses. [Veuillez consulter le code source](https://github.com/osmandapp/osmand-api-demo). OsmAnd Sample n'est pas un cas d'utilisation de l'API et la LICENCE d'OsmAnd Sample est la même que celle de l'application OsmAnd elle-même. Elle offre la possibilité de l'empaqueter et de la distribuer indépendamment d'OsmAnd.
 
 
-### Start development (SDK)
+### Démarrer le développement (SDK)
 
-<Admonition type="caution" icon="🛠️&nbsp;" title="Examples">
+<Admonition type="caution" icon="🛠️&nbsp;" title="Exemples">
   <p>
-    Browse GitHub source code and install demo APK.
+    Parcourez le code source sur GitHub et installez l'APK de démonstration.
   </p>
   <div>
-    <a href="https://download.osmand.net/latest-night-build/OsmAnd-map-sample.apk"><button class="button button--primary">Download APK</button></a>
+    <a href="https://download.osmand.net/latest-night-build/OsmAnd-map-sample.apk"><button class="button button--primary">Télécharger l'APK</button></a>
  &nbsp;&nbsp;&nbsp;
     <a href="https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-map-sample"><button class="button button--primary">Github</button></a>
   </div>
-</Admonition>  
+</Admonition>
 
-Read the **[technical documentation](../technical/osmand-api-sdk/index.md)** for more details.
-
-
-### License (SDK)
-
-The [license](https://github.com/osmandapp/Osmand/blob/master/LICENSE) for the OsmAnd application is rather big. There are 2 important things: OsmAnd uses third-party code only with permissive licenses like (LGPL, MIT, Apache) and OsmAnd code itself copyrighted by OsmAnd BV is distributed under GPLv2 license with the exception of distributing it on Google Play markets without permission. That provides a possibility to build any application for personal usage or build an opensource application under GPLv2 license (cause OsmAnd is not a platform and all the code built on top of the core must also be licensed as GPL).
-
-If you want to build an application for internal usage, please contact <a class="mail-link" href="mailto:business@osmand.net">business@osmand.net</a>, in some cases exemptions from GPLv2 code copyrighted by OsmAnd BV are provided. For the rest of the code please double check the list from the [LICENSE](https://github.com/osmandapp/Osmand/blob/master/LICENSE) which consists only of permissive licenses (LGPL, MIT, Apache).
-
-In case of any question, please don't hesitate to contact <a class="mail-link" href="mailto:business@osmand.net">business@osmand.net</a>. We will also be happy to provide help from experienced OsmAnd developers to build a special purpose app.
+Lisez la **[documentation technique](../technical/osmand-api-sdk/index.md)** pour plus de détails.
 
 
-## Contact us for development
+### Licence (SDK)
 
-In case you are not sure which case fits you the most or you would like to ask for help from developers who have experience in building application integrated with OsmAnd, please don't hesitate to contact us <a class="mail-link" href="mailto:business@osmand.net">business@osmand.net</a>!
+La [licence](https://github.com/osmandapp/Osmand/blob/master/LICENSE) de l'application OsmAnd est assez volumineuse. Il y a 2 choses importantes : OsmAnd utilise du code tiers uniquement avec des licences permissives comme (LGPL, MIT, Apache) et le code OsmAnd lui-même, protégé par le droit d'auteur d'OsmAnd BV, est distribué sous licence GPLv2 avec l'exception de sa distribution sur les marchés Google Play sans autorisation. Cela offre la possibilité de construire n'importe quelle application pour un usage personnel ou de construire une application open source sous licence GPLv2 (car OsmAnd n'est pas une plateforme et tout le code construit au-dessus du cœur doit également être sous licence GPL).
+
+Si vous souhaitez construire une application pour un usage interne, veuillez contacter <a class="mail-link" href="mailto:business@osmand.net">business@osmand.net</a>. Dans certains cas, des exemptions du code GPLv2 protégé par le droit d'auteur d'OsmAnd BV sont accordées. Pour le reste du code, veuillez vérifier la liste dans la [LICENCE](https://github.com/osmandapp/Osmand/blob/master/LICENSE) qui ne contient que des licences permissives (LGPL, MIT, Apache).
+
+En cas de question, n'hésitez pas à contacter <a class="mail-link" href="mailto:business@osmand.net">business@osmand.net</a>. Nous serons également heureux de fournir l'aide de développeurs OsmAnd expérimentés pour construire une application à usage spécifique.
+
+
+## Contactez-nous pour le développement
+
+Si vous n'êtes pas sûr du cas qui vous convient le mieux ou si vous souhaitez demander l'aide de développeurs expérimentés dans la construction d'applications intégrées à OsmAnd, n'hésitez pas à nous contacter à <a class="mail-link" href="mailto:business@osmand.net">business@osmand.net</a> !
+
+-- source-hash: blake2s: 0c835fc3f8b567fc6df56f473be99e6a506b3fcc7cb45e0770026172d8ddcb6d --

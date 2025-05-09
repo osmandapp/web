@@ -1,20 +1,22 @@
 ---
-title: How to Inspect an obf Binary File
+title: Comment inspecter un fichier binaire obf
 versions: '*'
 ---
 
-**_This article needs to be reviewed_**
+**_Cet article doit être révisé_**
 
-If you want inspect the content of an obf file, you need to download [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). There you can find a console application Inspector (.sh, .bat). This console application has optional parameters [-vmap, -vaddress, -vtransport] and one required parameter (input obf file). By specifying optional parameters you can trace all information from the obf file (be aware: it could be huge!).
+Si vous souhaitez inspecter le contenu d'un fichier obf, vous devez télécharger [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). Vous y trouverez une application console Inspector (.sh, .bat). Cette application console a des paramètres optionnels [-vmap, -vaddress, -vtransport] et un paramètre obligatoire (fichier obf d'entrée). En spécifiant les paramètres optionnels, vous pouvez tracer toutes les informations du fichier obf (attention : cela pourrait être énorme !).
 
-Example and step-by-step for Windows users:
-- have Java Runtime Environment installed
-- download or copy any Osmand offline map from your device to your PC, place that obf file ideally in the folder with all the unzipped Mapcreator files
-- Open Windows commandline (e.g. by pressing Windows-key and "r", then enter cmd and press return
-- go to the folder where you have unzipped the Osmand-Mapcreator by command cd and folder name
-- type `dir` to see whether you are in the right folder with file inspector.bat
-- type `inspector -h` to see some help text
-- type `inspector -vaddress name_of_your_map.obf \>output.csv`
-- if you get a Java console error about not enough memory or similar, edit the file inspector.bat by increasing the number at parameter -Xmx512M (or similar) step-by step to a higher value
-- try to load that (eventually very big) CSV text file into any editor or program that can load very big files, like Notepad++ ... or try an import into any spreadsheet programm like Excel or LibreOffice calc (choose TAB as field separator)
-- use any search feature to find place names or street names
+Exemple et étape par étape pour les utilisateurs Windows :
+- avoir Java Runtime Environment installé
+- télécharger ou copier n'importe quelle carte hors ligne Osmand de votre appareil vers votre PC, placer ce fichier obf idéalement dans le dossier avec tous les fichiers Mapcreator décompressés
+- Ouvrir la ligne de commande Windows (par exemple, en appuyant sur la touche Windows et "r", puis en entrant cmd et en appuyant sur retour)
+- aller dans le dossier où vous avez décompressé Osmand-Mapcreator par la commande cd et le nom du dossier
+- taper `dir` pour voir si vous êtes dans le bon dossier avec le fichier inspector.bat
+- taper `inspector -h` pour voir un texte d'aide
+- taper `inspector -vaddress name_of_your_map.obf \>output.csv`
+- si vous obtenez une erreur de console Java concernant un manque de mémoire ou similaire, éditez le fichier inspector.bat en augmentant le nombre au paramètre -Xmx512M (ou similaire) étape par étape à une valeur plus élevée
+- essayer de charger ce fichier texte CSV (éventuellement très volumineux) dans n'importe quel éditeur ou programme capable de charger de très gros fichiers, comme Notepad++ ... ou essayer une importation dans n'importe quel programme de feuille de calcul comme Excel ou LibreOffice calc (choisir TAB comme séparateur de champ)
+- utiliser n'importe quelle fonction de recherche pour trouver des noms de lieux ou des noms de rues
+
+-- source-hash: blake2s: b47a941f30ccaf72f33d334da6842984fd8a9e16da922b622f461196dd78dd9c --

@@ -2,40 +2,41 @@
 sidebar_position: 3
 ---
 
-# How to Translate OsmAnd - We Need Your Assistance!
+# Comment traduire OsmAnd - Nous avons besoin de votre aide !
 
+Nous apprécions vraiment votre aide pour traduire OsmAnd ! Fournir des traductions de texte d'affichage n'est pas très compliqué, la manière préférée de fournir des traductions de chaînes est décrite ici : [OsmAnd @ Hosted Weblate](https://hosted.weblate.org/projects/osmand/).
 
-We really appreciate your help translating OsmAnd! Providing display text translations is not very complicated, the preferred way to provide string translations is described here: [OsmAnd @ Hosted Weblate](https://hosted.weblate.org/projects/osmand/).
+* Si une langue dans laquelle vous souhaitez aider à traduire n'est pas encore répertoriée, veuillez ouvrir un problème [ici](https://github.com/osmandapp/Osmand/issues) (nécessite un compte github).
+* Les fichiers de langue existants peuvent également être modifiés en éditant le fichier _strings.xml_ respectif directement dans notre code via les mécanismes github, mais ce n'est pas la méthode préférée.
+* Juste pour référence : les chaînes principales sont conservées dans le [fichier strings.xml en anglais américain](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/res/values/strings.xml). Les données de chaîne pour l'extracteur de données cartographiques se trouvent dans les fichiers `swing_messages_{language}.properties` dans le projet [DataExtractionOsm](https://github.com/osmandapp/Osmand/tree/master/DataExtractionOSM/src/net/osmand/swing) **(NOTE Hardy : le lien est cassé !)**.
 
-* If a language you would like to help translating into is not yet listed there, please open an issue [here](https://github.com/osmandapp/Osmand/issues) (requires a github account).
-* Existing language files could also be modified by editing the respective _strings.xml file_ directly in our code via github mechanisms, but this is not the preferred way.
-* Just for reference: master strings are kept in the [American English strings.xml file](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/res/values/strings.xml). The string data for the map data extractor is in the `swing_messages_{language}.properties` files in the [DataExtractionOsm](https://github.com/osmandapp/Osmand/tree/master/DataExtractionOSM/src/net/osmand/swing) **(NOTE Hardy: link is broken!)** project.
+Merci pour votre aide !
 
-Thank you for your help !
+## Quelques questions et réponses fréquentes :
 
-## Some Frequent Questions and Answers:
+#### Q1 : Quelles chaînes dois-je traduire ?
+L'outil Weblate est explicite. Seulement si vous essayez de modifier les fichiers directement :
+* Dans `strings.xml`, les chaînes ressemblent à `<string name="shared_string_save_as_gpx">Save as GPX track</string>`. Ne traduisez que la partie `Save route as GPX track`.
+* Dans `swing_messages.properties`, les chaînes ressemblent à `IndexCreator.INDEX_CITIES=Indexing cities...`. Ne traduisez que la partie droite `Indexing cities...`.
 
-#### Q1: Which strings should I translate?
-The Weblate tool is self explanatory. Only if you try to edit files directly:
-* In `strings.xml`, strings look like `<string name="shared_string_save_as_gpx">Save as GPX track</string>`. Translate only the `Save route as GPX track` part.
-* In `swing_messages.properties`, strings look like `IndexCreator.INDEX_CITIES=Indexing cities...`. Translate only the right part `Indexing cities...`. 
+#### Q2 : Je ne veux pas créer dans Weblate ou github, puis-je simplement vous envoyer le fichier ?
+Oui, vous pouvez envoyer le fichier par e-mail, mais veuillez essayer les méthodes préférées, c'est facile.
 
-#### Q2: I don't want to create in Weblate or github, can I simply post you the file?
-Yes, you can email the file, but please try the preferred ways, it is easy.
+#### Q3 : Comment vérifier ce qui a changé dans le __fichier strings.xml anglais__ ?
+Veuillez utiliser Weblate comme décrit ci-dessus, il vous montrera toutes les modifications. Si vous souhaitez vérifier la source manuellement par rapport à votre fichier : les nouvelles chaînes sont généralement ajoutées en haut du fichier de ressources de la langue principale. Vous pouvez le télécharger et utiliser un utilitaire comme pspad ou vim pour les comparer. Vous pouvez également utiliser *[blame](https://github.com/osmandapp/Osmand/blame/master/OsmAnd/res/values/strings.xml)* ou l'historique des fichiers sur github pour afficher les dernières modifications.
 
-#### Q3: How should I check what has changed in the __English strings.xml__ ?
-Please use Weblate as described above, it will show you all changes. If you want to check the source manually vs. your file: New strings are usually added at the top of the master language resource file. You can download it and use some utility like pspad or vim to compare them. You can also use *[blame](https://github.com/osmandapp/Osmand/blame/master/OsmAnd/res/values/strings.xml)* or the file history on github to view the last modifications.
+## Quelles langues seront incluses dans OsmAnd ?
 
-## What languages will be included in OsmAnd ?
-
-> Dear translators,
-> 
-> Thank you all very much for your efforts to complete our display language translations, and also to localize OsmAnd in more and more languages on [Weblate](https://hosted.weblate.org/projects/osmand/)!
-> 
-> Please note the following: I am happy to include in OsmAnd's display language selection menu any new language with >10% translation rate, (will mark it as "incomplete" until it reaches ~80%). Please post an issue with OsmAnd if you need this done, I only sporadically watch these figures on Weblate.
-> 
-> Unfortunately, languages featuring 3-letter ISO 639-2 codes currently seem to have issues in Android, see e.g.*   [https://code.google.com/p/android/issues/detail?id=49120](https://code.google.com/p/android/issues/detail?id=49120)*   [https://code.google.com/p/android/issues/detail?id=106574](https://code.google.com/p/android/issues/detail?id=106574)  
->     This means that, unfortunately, any such language may not display in the OsmAnd menus on your device. (This issue only affects the language used in the app menus, not in the map, of course.)
-> 
-> Thanks,  
+> Chers traducteurs,
+>
+> Merci beaucoup pour vos efforts pour compléter nos traductions de langue d'affichage, et aussi pour localiser OsmAnd dans de plus en plus de langues sur [Weblate](https://hosted.weblate.org/projects/osmand/) !
+>
+> Veuillez noter ce qui suit : Je suis heureux d'inclure dans le menu de sélection de la langue d'affichage d'OsmAnd toute nouvelle langue avec un taux de traduction >10 %, (je la marquerai comme "incomplète" jusqu'à ce qu'elle atteigne ~80 %). Veuillez poster un problème avec OsmAnd si vous avez besoin que cela soit fait, je ne regarde que sporadiquement ces chiffres sur Weblate.
+>
+> Malheureusement, les langues comportant des codes ISO 639-2 à 3 lettres semblent actuellement avoir des problèmes dans Android, voir par exemple :*   [https://code.google.com/p/android/issues/detail?id=49120](https://code.google.com/p/android/issues/detail?id=49120)*   [https://code.google.com/p/android/issues/detail?id=106574](https://code.google.com/p/android/issues/detail?id=106574)
+>     Cela signifie que, malheureusement, une telle langue peut ne pas s'afficher dans les menus d'OsmAnd sur votre appareil. (Ce problème n'affecte que la langue utilisée dans les menus de l'application, pas sur la carte, bien sûr.)
+>
+> Merci,
 > Dr. Hardy Mueller
+
+-- source-hash: blake2s: eb996eb50219207babfcbec7d3dab37b65316b761bb67f351e5ac55dbadc49d9 --

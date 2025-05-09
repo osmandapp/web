@@ -3,15 +3,17 @@ sidebar_position: 3
 ---
 import Translate from '@site/src/components/Translate.js';
 
-# Map Legend
+# Légende de la carte
 
-OsmAnd map legend for any styles
+Légende de la carte OsmAnd pour tous les styles
 
-### [OsmAnd Map Style](./osmand.md)
+### [Style de carte OsmAnd](./osmand.md)
 <Translate android="yes" id="default_render_descr" />
 
-### [Ski Map Style](./ski-map.md)
+### [Style de carte de ski](./ski-map.md)
 <Translate android="yes" id="ski_map_render_descr" />
 
-### [Nautical Map Style](./nautical-map.md)
+### [Style de carte nautique](./nautical-map.md)
 <Translate android="yes" id="nautical_render_descr" />
+
+-- source-hash: blake2s: 4b20b309dd2a5b1f579ed898224826206420905458c1355f451a29a420344a1a --

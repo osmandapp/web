@@ -2,10 +2,12 @@
 sidebar_position: 2
 ---
 
-# Create New Rendering Style
+# Créer un nouveau style de rendu
 
-Creating a new rendering style is possible without any changes in the program. However, defining a style can be complicated if you want to write it from scratch, like the Nautical or Default styles (15 thousand lines of code). It is recommended to create dependent styles so you can change the style in small chunks. For example, the UniRS style mostly redefines the colors and appearance of icons.
+Il est possible de créer un nouveau style de rendu sans apporter de modifications au programme. Cependant, définir un style peut être compliqué si vous souhaitez l'écrire à partir de zéro, comme les styles Nautical ou Default (15 000 lignes de code). Il est recommandé de créer des styles dépendants afin de pouvoir modifier le style par petites touches. Par exemple, le style UniRS redéfinit principalement les couleurs et l'apparence des icônes.
 
-To test the rendering style, you can use the OsmAnd Map Creator. In case you want to use OsmAnd on a device. You need to put the XML definition of the style in a folder on the SD card (“rendering”) next to the other rendering styles.
+Pour tester le style de rendu, vous pouvez utiliser OsmAnd Map Creator. Si vous souhaitez utiliser OsmAnd sur un appareil, vous devez placer la définition XML du style dans un dossier sur la carte SD ("rendering") à côté des autres styles de rendu.
 
-All rights to the style created belong to the author, although these rights cannot be applied to OsmAnd's executable files.
+Tous les droits sur le style créé appartiennent à l'auteur, bien que ces droits ne puissent pas être appliqués aux fichiers exécutables d'OsmAnd.
+
+-- source-hash: blake2s: c04b63d8552cf4b7ebb2ec995ac0ad4ccd60a6891c94da4652548bfd7a4713f9 --

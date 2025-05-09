@@ -3,8 +3,8 @@ sidebar_position: 3
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Points on map activity
-There is shown favourite points on map 
+# Points sur l'activité de la carte
+Les points favoris sont affichés sur la carte
 
   ```
  public class PointsOnMapActivity extends AppCompatActivity {
@@ -95,3 +95,5 @@ There is shown favourite points on map
 		return points;
 	}
 ```
+
+-- source-hash: blake2s: 7ec976854d72132ff3169c6cdfaabf8fc35f8e6f0d70ffa042f077dc9c62fbda --

@@ -1,25 +1,27 @@
 # Versions
 
-### [Free Releases - Android](/docs/versions/free-versions)
+### [Versions gratuites - Android](/docs/versions/free-versions)
 
-List of previous versions of OsmAnd for Android.
+Liste des versions précédentes d'OsmAnd pour Android.
 
-### [Beta & Nightly builds](/docs/versions/nightly_versions)
+### [Versions bêta et nocturnes](/docs/versions/nightly_versions)
 
-Every day OsmAnd releases several Ready-To-Use builds, allowing you to follow and participate in the creation of new features (translation process).
+Chaque jour, OsmAnd publie plusieurs versions prêtes à l'emploi, vous permettant de suivre et de participer à la création de nouvelles fonctionnalités (processus de traduction).
 
 ### [OsmAnd MapCreator](/docs/versions/map-creator)
 
-OsmAnd Map Creator is used to create any maps supported by OsmAnd by yourself.  
+OsmAnd Map Creator est utilisé pour créer vous-même toutes les cartes prises en charge par OsmAnd.
 
-### [Next Android Release](/docs/versions/future-android)
+### [Prochaine version Android](/docs/versions/future-android)
 
-Information about the release of the next version of Android, which is currently available as a beta.
+Informations sur la sortie de la prochaine version d'Android, actuellement disponible en version bêta.
 
-### [Next iOS Release](/docs/versions/future-ios)
+### [Prochaine version iOS](/docs/versions/future-ios)
 
-Information about the release of the next version of iOS, which is currently available as a beta.
+Informations sur la sortie de la prochaine version d'iOS, actuellement disponible en version bêta.
 
-### [Next Web Release](/docs/versions/future-web)
+### [Prochaine version Web](/docs/versions/future-web)
 
-Information about the release of the next version of OsmAnd Web.
+Informations sur la sortie de la prochaine version d'OsmAnd Web.
+
+-- source-hash: blake2s: 4b1e0a47223cac4b588c710c252f8745bda4760afac044028df61ca1d165fa5e --

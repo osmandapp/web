@@ -6,59 +6,59 @@ sidebar_position: 2
 
 ## Introduction
 
-GPX (GPS Exchange Format) is a widely-used XML-based standard for storing GPS data, including tracks, routes, and waypoints. OsmAnd supports the GPX format for importing, exporting, and customizing GPS data for navigation, enabling both beginner and advanced users to optimize their experience.
+GPX (GPS Exchange Format) est un standard largement utilisé basé sur XML pour stocker des données GPS, y compris des traces, des itinéraires et des points de passage. OsmAnd prend en charge le format GPX pour l'importation, l'exportation et la personnalisation des données GPS pour la navigation, permettant aux utilisateurs débutants et avancés d'optimiser leur expérience.
 
-#### What Makes OsmAnd GPX Unique?
+#### Qu'est-ce qui rend OsmAnd GPX unique ?
 
-OsmAnd extends the standard GPX 1.1 format by introducing its own custom `osmand:` XML namespace. This namespace enables storing additional data such as:
+OsmAnd étend le format GPX 1.1 standard en introduisant son propre espace de noms XML personnalisé `osmand:`. Cet espace de noms permet de stocker des données supplémentaires telles que :
 
-- Track visual settings (color, width, arrows).
-- Waypoint grouping and icons.
-- Detailed route attributes, including calculated routes and activity types.
+- Paramètres visuels de la trace (couleur, largeur, flèches).
+- Groupement et icônes des points de passage.
+- Attributs détaillés de l'itinéraire, y compris les itinéraires calculés et les types d'activité.
 
-#### What Will You Learn in This Guide?
+#### Que vous apprendrez dans ce guide ?
 
-This article provides a comprehensive overview of GPX file structure and features in OsmAnd. You will learn:
+Cet article fournit un aperçu complet de la structure et des fonctionnalités des fichiers GPX dans OsmAnd. Vous apprendrez :
 
-1. How to customize tracks and waypoints using GPX tags.
-2. Advanced features such as HTML descriptions, sensor data, and activity types.
-3. How to export calculated routes and preserve their full functionality.
-4. Converting GPX files into OBF format for optimized storage and advanced search capabilities.
+1. Comment personnaliser les traces et les points de passage à l'aide de balises GPX.
+2. Fonctionnalités avancées telles que les descriptions HTML, les données de capteurs et les types d'activité.
+3. Comment exporter des itinéraires calculés et préserver toutes leurs fonctionnalités.
+4. Convertir des fichiers GPX au format OBF pour un stockage optimisé et des capacités de recherche avancées.
 
-#### GPX Structure Overview
+#### Aperçu de la structure GPX
 
-GPX files in OsmAnd organize data hierarchically into the following elements:
+Les fichiers GPX dans OsmAnd organisent les données hiérarchiquement dans les éléments suivants :
 
-- `<gpx>` - the root element of the file.
-- `<trk>` - represents tracks, which contain:
-  - `<trkseg>` - segments of the track, which are further divided into `<trkpt>` (track points).
-- `<rte>` - represents routes, including waypoints and key points.
-- `<wpt>` - represents individual waypoints.
+- `<gpx>` - l'élément racine du fichier.
+- `<trk>` - représente les traces, qui contiennent :
+  - `<trkseg>` - segments de la trace, qui sont ensuite divisés en `<trkpt>` (points de trace).
+- `<rte>` - représente les itinéraires, y compris les points de passage et les points clés.
+- `<wpt>` - représente les points de passage individuels.
 
 
-## Track Customization
+## Personnalisation de la trace
 
-### Track Appearance Parameters
+### Paramètres d'apparence de la trace
 
-This section describes how OsmAnd displays tracks on the map and the customization options available to adjust their appearance. The parameters described below are applied within the `<gpx>` tag and affect all tracks included in a GPX file.
+Cette section décrit comment OsmAnd affiche les traces sur la carte et les options de personnalisation disponibles pour ajuster leur apparence. Les paramètres décrits ci-dessous sont appliqués dans la balise `<gpx>` et affectent toutes les traces incluses dans un fichier GPX.
 
-| Tag Name  | Description / Values |
+| Nom de la balise | Description / Valeurs |
 |:----------------------------------------|:---------|
-| `<color>`                                 | - Defines the color of the track line on the map.  <br/>  - *String:* HEX color code `#RRGGBB` or `#AARRGGBB` |
-| `<width>`                                 | - Specifies the width of the track line. <br/>  - *String:* `“thin”`, `“medium"`, `“bold”` (defined by the `“currentTrackWidth”` attribute), or integer (1-24) |
-| `<show_arrows>`                           | - Enables or disables direction arrows along the track. <br/> - *Bool:* `"true"` / `"false"` |
-| `<show_start_finish>`                     | - Shows or hides markers for the start and end of the track. <br/> - *Bool:* `"true"` / `"false"` |
-| `<split_type>`                            | - Specifies the type of segmentation for the track. <br/> - *String:* `"no_split"`, `"distance"`, `"time"` |
-| `<split_interval>`                        | - Sets the interval for track segmentation based on the selected type. <br/> - *Double:* Integer (meters for `"distance"`, seconds for `"time"`) |
-| `<line_3d_visualization_by_type>`         | - Specifies the type of 3D visualization for the track. <br/> - *String:* `"none"`, `"altitude"`, `"shared_string_speed"`, `"map_widget_ant_heart_rate"`, `"map_widget_ant_bicycle_cadence"`, `"map_widget_ant_bicycle_power"`, `"shared_string_temperature"`, `"shared_string_speed"`, `"fixed_height"` |
-| `<line_3d_visualization_wall_color_type>` | - Defines the wall color type for 3D visualization. <br/> - *String:* `"none"`, `"solid"`, `"downward_gradient"`, `"upward_gradient"`, `"altitude"`, `"slope"`, `"speed"` |
-| `<line_3d_visualization_position_type>`   | - Sets the position of the 3D visualization relative to the track. <br/> - *String:* `"top"`, `"bottom"`, `"top_bottom"`|
-| `<vertical_exaggeration_scale>`           | - Multiplier to scale the value of the `line_3d_visualization_by_type` attribute. <br/> - *Float:* Default: 1.0 |
-| `<elevation_meters>`                      | - Specifies a fixed elevation in meters for `"fixed_height"` in `<line_3d_visualization_by_type>`. <br/> - *Float:* Default: `1000` |
-| `<coloring_type>`                         | - Determines the coloring method for the track. <br/> - *String:* `"solid"`, `"speed"`, `"altitude"`, `"slope"`, `"routeInfo_roadClass`, `"routeInfo_surface"`, `"routeInfo_smoothness"` |
-| `<color_palette>`                         | - Specifies the color scheme for the track. <br/> - *String:* `"default"` / [user-defined schemes](/docs/user/personal/color-palette-schemes) |
+| `<color>`                                 | - Définit la couleur de la ligne de trace sur la carte.  <br/>  - *Chaîne de caractères :* code couleur HEX `#RRGGBB` ou `#AARRGGBB` |
+| `<width>`                                 | - Spécifie la largeur de la ligne de trace. <br/>  - *Chaîne de caractères :* `“thin”`, `“medium"`, `“bold”` (défini par l'attribut `“currentTrackWidth”`), ou entier (1-24) |
+| `<show_arrows>`                           | - Active ou désactive les flèches de direction le long de la trace. <br/> - *Booléen :* `"true"` / `"false"` |
+| `<show_start_finish>`                     | - Affiche ou masque les marqueurs pour le début et la fin de la trace. <br/> - *Booléen :* `"true"` / `"false"` |
+| `<split_type>`                            | - Spécifie le type de segmentation pour la trace. <br/> - *Chaîne de caractères :* `"no_split"`, `"distance"`, `"time"` |
+| `<split_interval>`                        | - Définit l'intervalle de segmentation de la trace en fonction du type sélectionné. <br/> - *Double :* Entier (mètres pour `"distance"`, secondes pour `"time"`) |
+| `<line_3d_visualization_by_type>`         | - Spécifie le type de visualisation 3D pour la trace. <br/> - *Chaîne de caractères :* `"none"`, `"altitude"`, `"shared_string_speed"`, `"map_widget_ant_heart_rate"`, `"map_widget_ant_bicycle_cadence"`, `"map_widget_ant_bicycle_power"`, `"shared_string_temperature"`, `"shared_string_speed"`, `"fixed_height"` |
+| `<line_3d_visualization_wall_color_type>` | - Définit le type de couleur du mur pour la visualisation 3D. <br/> - *Chaîne de caractères :* `"none"`, `"solid"`, `"downward_gradient"`, `"upward_gradient"`, `"altitude"`, `"slope"`, `"speed"` |
+| `<line_3d_visualization_position_type>`   | - Définit la position de la visualisation 3D par rapport à la trace. <br/> - *Chaîne de caractères :* `"top"`, `"bottom"`, `"top_bottom"`|
+| `<vertical_exaggeration_scale>`           | - Multiplicateur pour mettre à l'échelle la valeur de l'attribut `line_3d_visualization_by_type`. <br/> - *Flottant :* Par défaut : 1.0 |
+| `<elevation_meters>`                      | - Spécifie une élévation fixe en mètres pour `"fixed_height"` dans `<line_3d_visualization_by_type>`. <br/> - *Flottant :* Par défaut : `1000` |
+| `<coloring_type>`                         | - Détermine la méthode de coloration de la trace. <br/> - *Chaîne de caractères :* `"solid"`, `"speed"`, `"altitude"`, `"slope"`, `"routeInfo_roadClass`, `"routeInfo_surface"`, `"routeInfo_smoothness"` |
+| `<color_palette>`                         | - Spécifie le schéma de couleurs pour la trace. <br/> - *Chaîne de caractères :* `"default"` / [schémas définis par l'utilisateur](/docs/user/personal/color-palette-schemes) |
 
-***Example:***
+***Exemple :***
 
 ```xml
 <gpx version="1.1" creator="OsmAnd~ 5.0.0" xmlns="https://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx" xmlns:gpxtpx="https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -73,46 +73,46 @@ This section describes how OsmAnd displays tracks on the map and the customizati
 </gpx>
 ```
 
-### Tag 'coloring_type'
+### Balise 'coloring_type'
 
-The `<coloring_type>` tag in OsmAnd allows users to customize track coloring based on specific data attributes, providing a visual way to interpret key information along the track.
+La balise `<coloring_type>` dans OsmAnd permet aux utilisateurs de personnaliser la coloration des traces en fonction d'attributs de données spécifiques, offrant ainsi un moyen visuel d'interpréter les informations clés le long de la trace.
 
-| Type | Description | Use Case |
+| Type | Description | Cas d'utilisation |
 |:-----------------------|:--------|:--------|
-| `<solid>`                | The entire track is displayed with a single, solid color specified by the `color` tag. | Use when a uniform color is needed for clear visibility. |
-| `<speed>`                | The track is colored in a gradient based on the speed values at each track point (`<trkpt>`). Higher speeds are represented by distinct colors. | Ideal for activities such as cycling or driving to visualize changes in speed. |
-| `<altitude>`             | The track is colored according to the elevation data at each `<trkpt>`. A gradient is applied, indicating different altitude ranges. | Useful for hiking or mountain routes to highlight altitude changes. |
-| `<slope>`                | The track is colored based on the incline/decline between consecutive track points. Positive gradients indicate uphill slopes, while negative gradients indicate downhill. | Suitable for cyclists or hikers analyzing track difficulty. |
-| `<routeInfo_roadClass>`  | Colors the track segments based on the OpenStreetMap (OSM) road classification (e.g., highway, residential street). | Helps distinguish between different road types when following a route. |
-| `<routeInfo_surface>`    | Colors the track segments based on the OSM surface type (e.g., paved, gravel, dirt). | Useful for determining track conditions during activities like off-roading. |
-| `<routeInfo_smoothness>` | Colors the track according to OSM smoothness ratings, indicating the roughness or smoothness of the path (e.g., excellent, bad). | Helpful for evaluating track navigability for specific vehicles. |
+| `<solid>`                | La trace entière est affichée avec une seule couleur unie spécifiée par la balise `color`. | À utiliser lorsqu'une couleur uniforme est nécessaire pour une visibilité claire. |
+| `<speed>`                | La trace est colorée en dégradé en fonction des valeurs de vitesse à chaque point de trace (`<trkpt>`). Les vitesses plus élevées sont représentées par des couleurs distinctes. | Idéal pour des activités telles que le cyclisme ou la conduite pour visualiser les changements de vitesse. |
+| `<altitude>`             | La trace est colorée en fonction des données d'élévation à chaque `<trkpt>`. Un dégradé est appliqué, indiquant différentes plages d'altitude. | Utile pour la randonnée ou les itinéraires de montagne afin de mettre en évidence les changements d'altitude. |
+| `<slope>`                | La trace est colorée en fonction de l'inclinaison/déclinaison entre les points de trace consécutifs. Les gradients positifs indiquent des pentes ascendantes, tandis que les gradients négatifs indiquent des pentes descendantes. | Convient aux cyclistes ou aux randonneurs analysant la difficulté de la trace. |
+| `<routeInfo_roadClass>`  | Colore les segments de trace en fonction de la classification routière OpenStreetMap (OSM) (par exemple, autoroute, rue résidentielle). | Aide à distinguer les différents types de routes lors du suivi d'un itinéraire. |
+| `<routeInfo_surface>`    | Colore les segments de trace en fonction du type de surface OSM (par exemple, pavé, gravier, terre). | Utile pour déterminer les conditions de la trace lors d'activités hors route. |
+| `<routeInfo_smoothness>` | Colore la trace en fonction des évaluations de fluidité OSM, indiquant la rugosité ou la fluidité du chemin (par exemple, excellent, mauvais). | Utile pour évaluer la navigabilité de la trace pour des véhicules spécifiques. |
 
-### GPX tags in UI
+### Balises GPX dans l'interface utilisateur
 
-GPX extensions tags displayed at the bottom of Track context menu.
-Both `<metadata>` and `<gpx>` `<extensions>` are listed.
-Appearance tags are excluded from the listing.
-Supported since OsmAnd Android 5.0.
+Les balises d'extension GPX sont affichées en bas du menu contextuel de la trace.
+Les balises `<metadata>` et `<gpx>` `<extensions>` sont listées.
+Les balises d'apparence sont exclues de la liste.
+Pris en charge depuis OsmAnd Android 5.0.
 
-## Waypoints Customization
+## Personnalisation des points de passage
 
-This section explains how OsmAnd allows customization of waypoints in GPX files by using icons, colors, and grouping.
+Cette section explique comment OsmAnd permet la personnalisation des points de passage dans les fichiers GPX en utilisant des icônes, des couleurs et des regroupements.
 
-### Waypoint Icons
+### Icônes de points de passage
 
-The following tags control the appearance of waypoint icons in OsmAnd:
+Les balises suivantes contrôlent l'apparence des icônes de points de passage dans OsmAnd :
 
-| GPX tag      | Default   | Purpose    |
+| Balise GPX   | Par défaut | Objectif |
 |:-------------|:----------|:-----------|
-| `<icon>`       | *(none)*    | Specifies the icon for the waypoint (e.g., `historic_castle`). |
-| `<color>`      | `"red"`     | Sets the icon’s color using a HEX code (e.g., `#FF0000`) or color name (e.g., `"blue"`). |
-| `<background>` | `"circle"`  | Defines the icon's background shape. Possible values: `"circle"`, `"square"`, `"octagon"`. |
+| `<icon>`       | *(aucun)*    | Spécifie l'icône du point de passage (par exemple, `historic_castle`). |
+| `<color>`      | `"red"`     | Définit la couleur de l'icône à l'aide d'un code HEX (par exemple, `#FF0000`) ou d'un nom de couleur (par exemple, `"blue"`). |
+| `<background>` | `"circle"`  | Définit la forme de l'arrière-plan de l'icône. Valeurs possibles : `"circle"`, `"square"`, `"octagon"`. |
 
-***Example:***
+***Exemple :***
 
 ```xml
 <wpt lat="52.5163" lon="13.3779">
-  <name>Brandenburg Gate</name>
+  <name>Porte de Brandebourg</name>
   <extensions>
     <osmand:color>#FF5020</osmand:color>
     <osmand:icon>city_gate</osmand:icon>
@@ -121,27 +121,27 @@ The following tags control the appearance of waypoint icons in OsmAnd:
 </wpt>
 ```
 
-### Waypoint Groups
+### Groupes de points de passage
 
-Waypoints in OsmAnd can be sorted into groups based on their type. This grouping allows the user to organize multiple waypoints under specific categories, improving clarity and map readability.
+Les points de passage dans OsmAnd peuvent être triés en groupes en fonction de leur type. Ce regroupement permet à l'utilisateur d'organiser plusieurs points de passage sous des catégories spécifiques, améliorant ainsi la clarté et la lisibilité de la carte.
 
-- **Point group definition.** The `<type>` tag inside the `<wpt>` element specifies the point's group (e.g., `"castle"`, `"aqueduct"`).
-- **Group configuration.** The `<osmand:points_groups>` extension in the `<gpx>` element defines the settings for each group, including the `name`, `color`, `icon`, and `background` for all waypoints in that group.
+- **Définition du groupe de points.** La balise `<type>` à l'intérieur de l'élément `<wpt>` spécifie le groupe du point (par exemple, `"castle"`, `"aqueduct"`).
+- **Configuration du groupe.** L'extension `<osmand:points_groups>` dans l'élément `<gpx>` définit les paramètres de chaque groupe, y compris le `name`, `color`, `icon` et `background` pour tous les points de passage de ce groupe.
 
-***Example:***
+***Exemple :***
 
 ```xml
 <gpx>
   <wpt lat="1.234" lon="5.678">
-    <name>Look up to see the water</name>
+    <name>Regardez en haut pour voir l'eau</name>
     <type>aqueduct</type>
   </wpt>
   <wpt lat="5.678" lon="1.234">
-    <name>Beware of ghosts</name>
+    <name>Attention aux fantômes</name>
     <type>castle</type>
   </wpt>
   <wpt lat="66.666" lon="66.666">
-    <name>The house of Beetlejuice</name>
+    <name>La maison de Beetlejuice</name>
     <type>castle</type>
   </wpt>
   <extensions>
@@ -154,16 +154,16 @@ Waypoints in OsmAnd can be sorted into groups based on their type. This grouping
 ```
 
 
-## Advanced GPX Features
+## Fonctionnalités GPX avancées
 
-### Activity Type
+### Type d'activité
 
-Starting with OsmAnd [version 4.9](/blog/osmand-android-4-9-released/#gpx-track-activities), you can classify your tracks by activity type for further analysis and organization in folders.
+À partir de la [version 4.9](/blog/osmand-android-4-9-released/#gpx-track-activities) d'OsmAnd, vous pouvez classer vos traces par type d'activité pour une analyse et une organisation plus poussées dans des dossiers.
 
-The list of supported activity types is available in the [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json) file. Each activity is identified by its unique `ID` and stored within the `<metadata>` extensions of the GPX file.
+La liste des types d'activité pris en charge est disponible dans le fichier [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json). Chaque activité est identifiée par son `ID` unique et stockée dans les extensions `<metadata>` du fichier GPX.
 
 
-***Example:***
+***Exemple :***
 
 ```xml
   <metadata>
@@ -173,28 +173,28 @@ The list of supported activity types is available in the [activities.json](https
   </metadata>
 ```
 
-### HTML in Descriptions
+### HTML dans les descriptions
 
-HTML tags can be used within the `<desc>` tags in the `<metadata>` or `<wpt>` elements to provide formatted descriptions for tracks or waypoints.
+Les balises HTML peuvent être utilisées dans les balises `<desc>` des éléments `<metadata>` ou `<wpt>` pour fournir des descriptions formatées pour les traces ou les points de passage.
 
-To avoid conflicts with XML syntax, replace special characters as follows:
+Pour éviter les conflits avec la syntaxe XML, remplacez les caractères spéciaux comme suit :
 
 - `<` *→* `&lt;`
 - `>` *→* `&gt;`
 - `&` *→* `&amp;`
 
-***Example:***
+***Exemple :***
 
 ```xml
 <metadata>
   <desc>
     &lt;p&gt;
-        The first paragraph will be displayed as &lt;b&gt;brief&lt;/b&gt; description.
-        HTML tags are stripped in brief descriptions.
+        Le premier paragraphe sera affiché comme une description &lt;b&gt;brève&lt;/b&gt;.
+        Les balises HTML sont supprimées dans les descriptions brèves.
     &lt;/p&gt;
     &lt;p&gt;
-      &lt;h3&gt;Second paragraph&lt;/h3&gt;
-        &lt;b&gt;Hello, world!&lt;/b&gt;&lt;br/&gt;
+      &lt;h3&gt;Deuxième paragraphe&lt;/h3&gt;
+        &lt;b&gt;Bonjour, le monde !&lt;/b&gt;&lt;br/&gt;
         &lt;img src="..."/&gt;&lt;br/&gt;
         &lt;a href="..."&gt;url&lt;/a&gt;&lt;br/&gt;
         &lt;table&gt; ... &lt;/table&gt;
@@ -203,27 +203,27 @@ To avoid conflicts with XML syntax, replace special characters as follows:
 </metadata>
 ```
 
-***Important notes:***
+***Notes importantes :***
 
-- OsmAnd removes all HTML tags when generating brief descriptions, leaving plain text.
-- You can use tags like `<b>`, `<i>`, `<p>`, `<br/>`, `<a>`, `<img>`, and more for customization.
+- OsmAnd supprime toutes les balises HTML lors de la génération de descriptions brèves, laissant du texte brut.
+- Vous pouvez utiliser des balises comme `<b>`, `<i>`, `<p>`, `<br/>`, `<a>`, `<img>`, et plus encore pour la personnalisation.
 
 
-### Link Tag
+### Balise Link
 
-Use `<link>` tag to associate URLs with metadata, author information, or waypoints in OsmAnd GPX files. This tag can also display an image when the URL points to an image file.
+Utilisez la balise `<link>` pour associer des URL à des métadonnées, des informations d'auteur ou des points de passage dans les fichiers GPX OsmAnd. Cette balise peut également afficher une image lorsque l'URL pointe vers un fichier image.
 
-***Examples (Metadata link with image):***
+***Exemples (Lien de métadonnées avec image) :***
 
 ```xml
 <metadata>
   <link href="https://osmand.net/img/logo.png">
-    <text>OsmAnd Logo</text>
+    <text>Logo OsmAnd</text>
   </link>
 </metadata>
 ```
 
-***Examples (Waypoint link with image):***
+***Exemples (Lien de point de passage avec image) :***
 
 ```xml
 <wpt lat="52.5163" lon="13.3779">
@@ -231,18 +231,18 @@ Use `<link>` tag to associate URLs with metadata, author information, or waypoin
 </wpt>
 ```
 
-### Sensor Data Tags
+### Balises de données de capteurs
 
-You can enrich your tracks with data from fitness sensors, such as heart rate monitors or temperature sensors. OsmAnd uses Garmin’s [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd) schema to store this data, making it compatible with platforms like **Strava** and **Garmin Basecamp**.
+Vous pouvez enrichir vos traces avec des données provenant de capteurs de fitness, tels que des moniteurs de fréquence cardiaque ou des capteurs de température. OsmAnd utilise le schéma [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd) de Garmin pour stocker ces données, ce qui les rend compatibles avec des plateformes comme **Strava** et **Garmin Basecamp**.
 
-*Supported Sensor Data Tags:*
+*Balises de données de capteurs prises en charge :*
 
-- **hr** - heart rate (in beats per minute).
-- **cad** - bicycle cadence (in revolutions per minute).
-- **atemp** - ambient temperature (in degrees Celsius).
-- **power** - bicycle power output (in watts).
+- **hr** - fréquence cardiaque (en battements par minute).
+- **cad** - cadence de vélo (en révolutions par minute).
+- **atemp** - température ambiante (en degrés Celsius).
+- **power** - puissance de sortie du vélo (en watts).
 
-***Example:***
+***Exemple :***
 
 ```xml
 <extensions>
@@ -255,18 +255,18 @@ You can enrich your tracks with data from fitness sensors, such as heart rate mo
 </extensions>
 ```
 
-### Track Point Details
+### Détails des points de trace
 
-Each `<trkpt>` (track point) in the GPX file can include additional attributes to capture data such as speed, heading, and elevation.
+Chaque `<trkpt>` (point de trace) dans le fichier GPX peut inclure des attributs supplémentaires pour capturer des données telles que la vitesse, le cap et l'élévation.
 
-*Supported attributes:*
+*Attributs pris en charge :*
 
-- **speed** - speed at the track point (in meters per second).
-- **heading** - direction of movement (0-359 degrees).
-- **ele** - elevation above sea level (in meters).
-- **time** - timestamp for the track point.
+- **speed** - vitesse au point de trace (en mètres par seconde).
+- **heading** - direction du mouvement (0-359 degrés).
+- **ele** - élévation au-dessus du niveau de la mer (en mètres).
+- **time** - horodatage du point de trace.
 
-***Example:***
+***Exemple :***
 
 ```xml
   <trkpt lat="52.397799" lon="4.575998">
@@ -282,29 +282,29 @@ Each `<trkpt>` (track point) in the GPX file can include additional attributes t
 
 
 
-## Calculated route(s)
+## Itinéraire(s) calculé(s)
 
-In **OsmAnd** you can can calculate route and save all data in GPX, so later all features navigation will be available as running GPX navigation, so **OsmAnd** gpx will contain route segments, turns, road names, road types, restrictions, etc.. The route can be completely restored as if just built, even in the absence of the respective offline maps.
+Dans **OsmAnd**, vous pouvez calculer un itinéraire et enregistrer toutes les données au format GPX, de sorte que toutes les fonctionnalités de navigation seront disponibles ultérieurement comme une navigation GPX en cours, ainsi le fichier gpx d'OsmAnd contiendra les segments d'itinéraire, les virages, les noms de rues, les types de routes, les restrictions, etc. L'itinéraire peut être entièrement restauré comme s'il venait d'être construit, même en l'absence des cartes hors ligne correspondantes.
 
-A gpx file may contain several routes. Each of them is contained in a specific segment under **trkseg** / **extensions**. A gpx file is saved in this form when exporting a constructed route or when saving a track that consists of several separate segments via the [**Plan a route**](../../user/plan-route/create-route.md) functionality.
+Un fichier gpx peut contenir plusieurs itinéraires. Chacun d'eux est contenu dans un segment spécifique sous **trkseg** / **extensions**. Un fichier gpx est enregistré sous cette forme lors de l'exportation d'un itinéraire construit ou lors de l'enregistrement d'une trace composée de plusieurs segments séparés via la fonctionnalité [**Planifier un itinéraire**](../../user/plan-route/create-route.md).
 
-[**Plan a route**](../../user/plan-route/create-route.md) also adds one (or several, in accordance with the number of contained separate segments / tracks) **rte** blocks to the gpx file, containing route key points (**rtept**).
+[**Planifier un itinéraire**](../../user/plan-route/create-route.md) ajoute également un (ou plusieurs, en fonction du nombre de segments / traces séparés contenus) blocs **rte** au fichier gpx, contenant les points clés de l'itinéraire (**rtept**).
 
-#### Gpx structure:
+#### Structure Gpx :
 
 ```xml
 <trk>
   <trkseg>
-    // List of segment points. The order of the points corresponds to the order and length of the route segments (<route><segment length="x" ... />).
-    // The value of the "length" attribute corresponds to the number of points in this segment of the route.
+    // Liste des points de segment. L'ordre des points correspond à l'ordre et à la longueur des segments d'itinéraire (<route><segment length="x" ... />).
+    // La valeur de l'attribut "length" correspond au nombre de points dans ce segment de l'itinéraire.
     <trkpt ... ></trkpt>
     <extensions>
-      // List of route segments
+      // Liste des segments d'itinéraire
       <route>
         <segment ... />
       </route>
-      // Properties of segments included in the route.
-      // This data is taken from offline maps during the initial construction of a route.
+      // Propriétés des segments inclus dans l'itinéraire.
+      // Ces données sont extraites des cartes hors ligne lors de la construction initiale d'un itinéraire.
       <types>
         <type ... />
       </types>
@@ -312,49 +312,49 @@ A gpx file may contain several routes. Each of them is contained in a specific s
   </trkseg>
 </trk>
 
-// List of intermediate route points. If there are multiple routes, the order of the rte list matches the order of the route segments.
+// Liste des points d'itinéraire intermédiaires. S'il y a plusieurs itinéraires, l'ordre de la liste rte correspond à l'ordre des segments d'itinéraire.
 <rte>
   <rtept ... />
-    // For routes built with the "Plan route", the parameters of key points are saved.
-    // If rtept is not first and last, before it (with the same idx) trkpt will be with the same data.
+    // Pour les itinéraires construits avec "Planifier un itinéraire", les paramètres des points clés sont enregistrés.
+    // Si rtept n'est pas le premier et le dernier, avant lui (avec le même idx) trkpt sera avec les mêmes données.
     <extensions>
-      // Route profile type for next segment (car, bicycle, pedestrian, etc.).
+      // Type de profil d'itinéraire pour le segment suivant (voiture, vélo, piéton, etc.).
       <profile>...</profile>
-      // The index of the point in the gpx segment that corresponds to the first point of the calculated route for this segment.
-      // If rtept is not first and last, before it (with the same idx) trkpt will be with the same data.
+      // L'index du point dans le segment gpx qui correspond au premier point de l'itinéraire calculé pour ce segment.
+      // Si rtept n'est pas le premier et le dernier, avant lui (avec le même idx) trkpt sera avec les mêmes données.
       <trkpt_idx>...</trkpt_idx>
     </extensions>
   </rtept>
 </rte>
 ```
 
-#### Important properties:
+#### Propriétés importantes :
 
-* **trkpt_idx** of first **rtept** in **trkseg** is 0. So, if there are two **trkseg**s, there will be two **rtept**s with **trkpt_idx** = 0
-* **trkpt_idx** of last **rtept** in **trkseg** is equal to number of **trkpt**s in **trkseg** minus 1. For example, if **trkseg** has 12 **trkpt**s, **trkpt_idx** of last **rtept** should be 11
-* Neighbouring route **segments** of are overlapping: the end of previous **segment** and start of next **segment** is the one and same **trkpt**.
-* There is exception when neighbouring route **segments** don't overlap (don't share the same **trkpt**). It happens when there is **rtept** "between" route **segment**s. End of previous route **segment** is one **trkpt**, and start of next route **segment** is another **rtept**. But these two **trkpt**s are totally equal by lat, lon and other params.
-* Route **segment** overlapping can be detected via **length** and **startTrkptIdx** (the latter is used only for convenience of human reading):
-  - If sum of **startTrkptIdx** and **length** of prevous route **segment** equals **startTrkptIdx** of next route **segment**, route **segment**s are not overlapping
-  - If sum is less by one, then route **segment**s are overlapping
-* There can be straight route **segment**s. They are marked with **id="-1"**. They can appear in two cases:
-  - It is multiprofile route, and user selected straight line
-  - User placed **rtept** too far away from closest road, so osmand made straight line between **rtept** and road
-* trkpts = length - (segments - 1) + (rtepts - 2), where:
-  - trkpts - amount of **trkpt**s inside **trkseg**
-  - length - sum of all **length**s of route **segment**s inside **trkseg**
-  - segments - amount of route **segment**s inside **trkseg**
-  - rtepts - amount of **rtept**s owned by **trkseg**
+* **trkpt_idx** du premier **rtept** dans **trkseg** est 0. Donc, s'il y a deux **trkseg**s, il y aura deux **rtept**s avec **trkpt_idx** = 0
+* **trkpt_idx** du dernier **rtept** dans **trkseg** est égal au nombre de **trkpt**s dans **trkseg** moins 1. Par exemple, si **trkseg** a 12 **trkpt**s, **trkpt_idx** du dernier **rtept** doit être 11
+* Les **segments** d'itinéraire voisins se chevauchent : la fin du **segment** précédent et le début du **segment** suivant sont le même **trkpt**.
+* Il y a une exception lorsque les **segments** d'itinéraire voisins ne se chevauchent pas (ne partagent pas le même **trkpt**). Cela se produit lorsqu'il y a un **rtept** "entre" les **segments** d'itinéraire. La fin du **segment** d'itinéraire précédent est un **trkpt**, et le début du **segment** d'itinéraire suivant est un autre **rtept**. Mais ces deux **trkpt**s sont totalement égaux par lat, lon et autres paramètres.
+* Le chevauchement des **segments** d'itinéraire peut être détecté via **length** et **startTrkptIdx** (ce dernier n'est utilisé que pour la commodité de la lecture humaine) :
+  - Si la somme de **startTrkptIdx** et **length** du **segment** d'itinéraire précédent est égale à **startTrkptIdx** du **segment** d'itinéraire suivant, les **segments** d'itinéraire ne se chevauchent pas
+  - Si la somme est inférieure d'un, alors les **segments** d'itinéraire se chevauchent
+* Il peut y avoir des **segments** d'itinéraire droits. Ils sont marqués avec **id="-1"**. Ils peuvent apparaître dans deux cas :
+  - C'est un itinéraire multiprofil, et l'utilisateur a sélectionné une ligne droite
+  - L'utilisateur a placé **rtept** trop loin de la route la plus proche, donc osmand a tracé une ligne droite entre **rtept** et la route
+* trkpts = length - (segments - 1) + (rtepts - 2), où :
+  - trkpts - nombre de **trkpt**s à l'intérieur de **trkseg**
+  - length - somme de toutes les **length**s des **segments** d'itinéraire à l'intérieur de **trkseg**
+  - segments - nombre de **segments** d'itinéraire à l'intérieur de **trkseg**
+  - rtepts - nombre de **rtept**s appartenant à **trkseg**
 
-#### Example:
+#### Exemple :
 
 ```xml
 <gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>Fri 06 Nov 2020</name>
+    <name>Ven 06 Nov 2020</name>
   </metadata>
   <trk>
-    <name>Fri 06 Nov 2020</name>
+    <name>Ven 06 Nov 2020</name>
     <trkseg>
       <trkpt lat="52.3639849" lon="4.8900533">
         <ele>0.801</ele>
@@ -423,39 +423,39 @@ A gpx file may contain several routes. Each of them is contained in a specific s
 </gpx>
 ```
 
-## GPX Collections in OBF
+## Collections GPX en OBF
 
-OsmAnd allows you to convert multiple GPX files into a single OBF file. This enables the storage of thousands of GPX tracks in a compact, optimized format while maintaining features like special map icons, track appearance customization, and search functionality. This avoids a limit of local large GPX files which typically can't handle > 500 K points in total however some features of GPX tracks might be missing comparing displaying OBF file.
+OsmAnd vous permet de convertir plusieurs fichiers GPX en un seul fichier OBF. Cela permet de stocker des milliers de traces GPX dans un format compact et optimisé tout en conservant des fonctionnalités telles que les icônes de carte spéciales, la personnalisation de l'apparence des traces et la fonctionnalité de recherche. Cela évite une limite de fichiers GPX locaux volumineux qui ne peuvent généralement pas gérer plus de 500 000 points au total, bien que certaines fonctionnalités des traces GPX puissent être manquantes par rapport à l'affichage d'un fichier OBF.
 
-Steps to convert GPX to OBF:
+Étapes pour convertir GPX en OBF :
 
-- Log in to [OsmAnd Web Map](https://osmand.net/map) *→ Tracks → Select a folder → *Menu* (⋮) *→ Download as OBF collection*
+- Connectez-vous à [OsmAnd Web Map](https://osmand.net/map) *→ Traces → Sélectionnez un dossier → *Menu* (⋮) *→ Télécharger en tant que collection OBF*
 
-- The resulting `<.obf>` file can be imported into OsmAnd (requires OsmAnd Android 5.0+).
+- Le fichier `<.obf>` résultant peut être importé dans OsmAnd (nécessite OsmAnd Android 5.0+).
 
 
-### Track Line Style
+### Style de ligne de trace
 
-Customize track lines with the following tags:
+Personnalisez les lignes de trace avec les balises suivantes :
 
-| GPX tag                   | Default | Purpose  |
+| Balise GPX                | Par défaut | Objectif |
 |:--------------------------|:--------|:---------|
-| `<name>`                  | *(none)*  | Name displayed over the track line.  |
-| `color`                   | `red`   | Primary color (HEX or text). |
-| `colour`, `displaycolor`  | *(none)*  | Alternative ways to override `color`. |
-| `shield_waycolor`         | *(none)*  | Override for shield track line `color`. |
-| `translucent_line_colors` | `no`    | Set to `yes` for semi-transparent colors. |
-| `width`                   | `thin`  | Line width: `"thin"`, `"medium"`, `"bold"`, `"1-24"`, or `"roadstyle"` |
+| `<name>`                  | *(aucun)*  | Nom affiché au-dessus de la ligne de trace.  |
+| `color`                   | `red`   | Couleur principale (HEX ou texte). |
+| `colour`, `displaycolor`  | *(aucun)*  | Autres moyens de remplacer `color`. |
+| `shield_waycolor`         | *(aucun)*  | Remplacement pour la ligne de trace du bouclier `color`. |
+| `translucent_line_colors` | `no`    | Définir sur `yes` pour les couleurs semi-transparentes. |
+| `width`                   | `thin`  | Largeur de ligne : `"thin"`, `"medium"`, `"bold"`, `"1-24"`, ou `"roadstyle"` |
 
-**Supported colors:** black, blue, brown, darkyellow, gray, green, lightblue, lightgreen, orange, purple, red, white, yellow.
+**Couleurs prises en charge :** black, blue, brown, darkyellow, gray, green, lightblue, lightgreen, orange, purple, red, white, yellow.
 
-***Example:***
+***Exemple :***
 
 ```xml
 <gpx>
   <metadata>
     <name>
-      Track name located in Metadata
+      Nom de la trace situé dans les métadonnées
     </name>
   </metadata>
   <trk>
@@ -469,34 +469,34 @@ Customize track lines with the following tags:
 </gpx>
 ```
 
-### Track Line Shields
+### Boucliers de ligne de trace
 
-Shields are icons or symbols displayed along the track line. OsmAnd supports [OSMC-symbol-style](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) shields, which may include:
+Les boucliers sont des icônes ou des symboles affichés le long de la ligne de trace. OsmAnd prend en charge les boucliers [OSMC-symbol-style](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol), qui peuvent inclure :
 
-- Background icon - the main shape (e.g., circle or square).
-- Foreground icons - up to two smaller symbols layered over the background.
-- Text - short descriptions or identifiers, derived from the `shield_text` or `ref` tags.
+- Icône d'arrière-plan - la forme principale (par exemple, cercle ou carré).
+- Icônes de premier plan - jusqu'à deux symboles plus petits superposés à l'arrière-plan.
+- Texte - descriptions courtes ou identifiants, dérivés des balises `shield_text` ou `ref`.
 
-If no shield properties are defined, OsmAnd uses an auto-sized yellow shield for the track.
+Si aucune propriété de bouclier n'est définie, OsmAnd utilise un bouclier jaune de taille automatique pour la trace.
 
-***Tags for shields:***
+***Balises pour les boucliers :***
 
-| GPX tag            | Purpose                                                                |
+| Balise GPX         | Objectif                                                                |
 |:-------------------|:-----------------------------------------------------------------------|
-| `shield_bg`        | Defines the background icon for the shield.                            |
-| `shield_fg`        | Specifies the first foreground icon (e.g., an arrow or dot).           |
-| `shield_fg_2`      | Specifies the second foreground icon (optional).                       |
-| `shield_text`      | Sets the short text to be displayed over the shield (e.g., route ref). |
-| `shield_textcolor` | Determines the color of the shield text (optional).                    |
-| `shield_waycolor`  | Overrides the standard track color for the shield’s line (optional).   |
-| `ref`              | Used as fallback text if `shield_text` is not provided.                |
+| `shield_bg`        | Définit l'icône d'arrière-plan pour le bouclier.                            |
+| `shield_fg`        | Spécifie la première icône de premier plan (par exemple, une flèche ou un point).           |
+| `shield_fg_2`      | Spécifie la deuxième icône de premier plan (facultatif).                       |
+| `shield_text`      | Définit le texte court à afficher au-dessus du bouclier (par exemple, référence d'itinéraire). |
+| `shield_textcolor` | Détermine la couleur du texte du bouclier (facultatif).                    |
+| `shield_waycolor`  | Remplace la couleur de trace standard pour la ligne du bouclier (facultatif).   |
+| `ref`              | Utilisé comme texte de secours si `shield_text` n'est pas fourni.                |
 
-***Example:***
+***Exemple :***
 
 ```xml
 <gpx>
   <trk>
-    <name>Sample Route</name>
+    <name>Exemple d'itinéraire</name>
   </trk>
   <extensions>
     <osmand:shield_text>ABC</osmand:shield_text>
@@ -508,30 +508,30 @@ If no shield properties are defined, OsmAnd uses an auto-sized yellow shield for
 </gpx>
 ```
 
-### Waypoints Display
+### Affichage des points de passage
 
-Waypoint icons can be customized with the following tags:
+Les icônes de points de passage peuvent être personnalisées avec les balises suivantes :
 
-| GPX tag      | Default  | Purpose                                   |
+| Balise GPX   | Par défaut | Objectif                                   |
 |:-------------|:---------|:---------------------------------------------------|
-| `icon`       | *(none)*   | Specifies the icon for the waypoint (uses standard OsmAnd waypoint editor icons). |
-| `color`      | `red`    | Sets the icon color using a HEX code (e.g., `#ffaa00`) or a supported color name (limited options). |
-| `background` | `circle` | Defines the shape of the icon. Supported values: `circle`, `square`, `octagon`. |
+| `icon`       | *(aucun)*   | Spécifie l'icône du point de passage (utilise les icônes standard de l'éditeur de points de passage OsmAnd). |
+| `color`      | `red`    | Définit la couleur de l'icône à l'aide d'un code HEX (par exemple, `#ffaa00`) ou d'un nom de couleur pris en charge (options limitées). |
+| `background` | `circle` | Définit la forme de l'icône. Valeurs prises en charge : `circle`, `square`, `octagon`. |
 
-***Behavior of `background` shapes:***
+***Comportement des formes de `background` :***
 
-- `circle` - displays the icon with a circular background.
-- `square` - displays the icon with a square background, defaulting to red if no color is specified.
-- `octagon` - treated as a circular background in OsmAnd.
+- `circle` - affiche l'icône avec un arrière-plan circulaire.
+- `square` - affiche l'icône avec un arrière-plan carré, par défaut rouge si aucune couleur n'est spécifiée.
+- `octagon` - traité comme un arrière-plan circulaire dans OsmAnd.
 
-**Supported colors for** `background=circle`: blue, gray, green, lightblue, lightgreen, orange, purple, yellow.
+**Couleurs prises en charge pour** `background=circle` : blue, gray, green, lightblue, lightgreen, orange, purple, yellow.
 
-***Enhancements with additional elements:***
+***Améliorations avec des éléments supplémentaires :***
 
-- You can add formatted descriptions to waypoints using [HTML-code](#html-in-descriptions). This allows you to include styled text, links, or even images.
-- Waypoints can display linked images using [Link-as-Image](#link-tag).
+- Vous pouvez ajouter des descriptions formatées aux points de passage à l'aide de [code HTML](#html-in-descriptions). Cela vous permet d'inclure du texte stylisé, des liens ou même des images.
+- Les points de passage peuvent afficher des images liées à l'aide de [Link-as-Image](#link-tag).
 
-***Example:***
+***Exemple :***
 
 ```xml
 <wpt lat="3.1415926" lon="42">
@@ -545,24 +545,24 @@ Waypoint icons can be customized with the following tags:
 ```
 
 
-### Search by Name and Refs
+### Recherche par nom et références
 
-Tracks and waypoints can be located using a variety of GPX tags.
+Les traces et les points de passage peuvent être localisés à l'aide d'une variété de balises GPX.
 
-| GPX tag       | Location               | Purpose                                                                     |
+| Balise GPX    | Emplacement            | Objectif                                                                     |
 |:--------------|:-----------------------|:----------------------------------------------------------------------------|
-| `<name>`      | `<metadata>`           | The primary name of the GPX track.                                          |
-| `ref`         | GPX `<extensions>`     | A short identifier, often derived from the OSM `ref` tag.                   |
-| `shield_text` | GPX `<extensions>`     | Text displayed on shields (can also be used with `ref`).                    |
-| `name_-_lang` | GPX/WPT `<extensions>` | Localized `name:lang` (e.g., `name_-_en` for English, replace `:` -> `_-_`) |
-| `<name>`      | `<wpt>`                | The name of the waypoint.                                                   |
+| `<name>`      | `<metadata>`           | Le nom principal de la trace GPX.                                          |
+| `ref`         | `<extensions>` GPX     | Un identifiant court, souvent dérivé de la balise OSM `ref`.                   |
+| `shield_text` | `<extensions>` GPX     | Texte affiché sur les boucliers (peut également être utilisé avec `ref`).                    |
+| `name_-_lang` | `<extensions>` GPX/WPT | `name:lang` localisé (par exemple, `name_-_en` pour l'anglais, remplacer `:` -> `_-_`) |
+| `<name>`      | `<wpt>`                | Le nom du point de passage.                                                   |
 
-***Example:***
+***Exemple :***
 
 ```xml
 <gpx>
   <metadata>
-    <name>Xemxija Heritage Trail</name>
+    <name>Sentier du patrimoine de Xemxija</name>
   </metadata>
   <extensions>
     <osmand:ref>XHT</osmand:ref>
@@ -570,31 +570,31 @@ Tracks and waypoints can be located using a variety of GPX tags.
   <wpt lat="35.948477" lon="14.3806796">
     <name>Il-Mighba Rumana</name>
     <extensions>
-      <osmand:name_-_en>The Roman Apiary</osmand:name_-_en>
+      <osmand:name_-_en>L'Apiary Romain</osmand:name_-_en>
     </extensions>
   </wpt>
 </gpx>
 ```
 
-### Search by activity type
+### Recherche par type d'activité
 
-OsmAnd organizes tracks in OBF files into **Activity Groups** and **Activity Types**. These classifications help you filter tracks as POIs or create activity-based search filters.
+OsmAnd organise les traces dans les fichiers OBF en **Groupes d'activités** et **Types d'activités**. Ces classifications vous aident à filtrer les traces en tant que POI ou à créer des filtres de recherche basés sur les activités.
 
-How activity types work:
+Comment fonctionnent les types d'activité :
 
-- Activity types and groups are determined using the `"id"` and `"tags"` from the [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json) file.
-- OsmAnd uses `osmand:activity` or `osmand:route` tags to classify activities in GPX files.
+- Les types et groupes d'activités sont déterminés à l'aide des `"id"` et `"tags"` du fichier [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json).
+- OsmAnd utilise les balises `osmand:activity` ou `osmand:route` pour classer les activités dans les fichiers GPX.
 
 
-| GPX tag           | Location | Purpose                                          |
+| Balise GPX        | Emplacement | Objectif                                          |
 |:------------------|:---------|:-------------------------------------------------|
-| `osmand:activity` | `<metadata>` | Main OsmAnd tag to store the Activity type (ID). |
-| `osmand:route`    | GPX `<extensions>` | Alternative OSM-way to define the Activity type. |
+| `osmand:activity` | `<metadata>` | Balise OsmAnd principale pour stocker le type d'activité (ID). |
+| `osmand:route`    | `<extensions>` GPX | Autre façon OSM de définir le type d'activité. |
 
 
-***Examples of organizing tracks by activity type:***
+***Exemples d'organisation des traces par type d'activité :***
 
-1. This will classify the track under the **Motorcycling** group with the type **Off-Road Motorcycling (Dirt Biking)**.
+1. Cela classera la trace dans le groupe **Motocyclisme** avec le type **Motocyclisme tout-terrain (Dirt Biking)**.
 
     ```xml
     <metadata>
@@ -604,7 +604,7 @@ How activity types work:
     </metadata>
     ```
 
-2. This will organize the track under the **Cycling** group with the type **Mountain Biking**.
+2. Cela organisera la trace dans le groupe **Cyclisme** avec le type **VTT**.
 
     ```xml
     <gpx>
@@ -614,39 +614,41 @@ How activity types work:
     </gpx>
     ```
 
-### Search information Tags
+### Balises d'informations de recherche
 
-OBF files automatically generate and store critical track statistics and analytics.
+Les fichiers OBF génèrent et stockent automatiquement des statistiques et des analyses de trace critiques.
 
-| OBF tag                               | Purpose                                                               |
+| Balise OBF                            | Objectif                                                               |
 |:--------------------------------------|:----------------------------------------------------------------------|
-| `distance`                            | Total distance covered by all track segments.                         |
-| `start_ele`, `ele_graph`              | Elevation data from GPX, wrapped in a compact binary array.           |
-| `min_ele`, `avg_ele`, `max_ele`       | Minimum, average, and maximum elevation analytics.                    |
-| `diff_ele_up`, `diff_ele_down`        | Total elevation gain and loss across the track.                       |
-| `max_speed`, `avg_speed`, `min_speed` | Track speed analytics, including maximum, average, and minimum speed. |
-| `time_span`, `time_span_no_gaps`      | Total time for the track, with and without accounting for gaps.       |
-| `time_moving`, `time_moving_no_gaps`  | Total moving time, with and without accounting for gaps.              |
+| `distance`                            | Distance totale couverte par tous les segments de trace.                         |
+| `start_ele`, `ele_graph`              | Données d'élévation du GPX, encapsulées dans un tableau binaire compact.           |
+| `min_ele`, `avg_ele`, `max_ele`       | Analyses d'élévation minimale, moyenne et maximale.                    |
+| `diff_ele_up`, `diff_ele_down`        | Gain et perte d'élévation totaux sur la trace.                       |
+| `max_speed`, `avg_speed`, `min_speed` | Analyses de vitesse de trace, y compris la vitesse maximale, moyenne et minimale. |
+| `time_span`, `time_span_no_gaps`      | Temps total de la trace, avec et sans prise en compte des lacunes.       |
+| `time_moving`, `time_moving_no_gaps`  | Temps de déplacement total, avec et sans prise en compte des lacunes.              |
 
-### Internal Tags
+### Balises internes
 
-Some GPX tags are used or stored indirectly in OBF files. Refer to [OsmGpxWriteContext.java](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/obf/OsmGpxWriteContext.java) for details on the implementation.
+Certaines balises GPX sont utilisées ou stockées indirectement dans les fichiers OBF. Reportez-vous à [OsmGpxWriteContext.java](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/obf/OsmGpxWriteContext.java) pour plus de détails sur l'implémentation.
 
-| OBF tag                      | Purpose                                                                                                    |
+| Balise OBF                   | Objectif                                                                                                    |
 |:-----------------------------|:-----------------------------------------------------------------------------------------------------------|
-| `route_id`                   | A unique identifier for the GPX file, linking Map and POI data (format: `/[A-Z]+[0-9]+/` e.g. `OSM12345`). |
-| `route_type`                 | Activity group identifier (`id`) derived from `poi/activities.json`                                        |
-| `route_activity_type`        | Activity type (within the group) identifier (`id`) derived from `poi/activities.json`                      |
-| `name`, `ref`, `description` | Localizable and searchable attributes (`lang="true"` in POI types)                                         |
-| `filename`                   | The name of the original GPX file used to generate this track.                                             |
-| `track_color`                | Map section track color derived from `shield_waycolor`, `color`, `colour`, or `displaycolor`               |
-| `extensions_extra_tags`      | Arbitrary extra tags for `<gpx><extensions>` in JSON format.                                               |
-| `metadata_extra_tags`        | Arbitrary extra tags for `<metadata><extensions>` in JSON format.                                          |
-| `wpt_extra_tags`             | Arbitrary extra tags for waypoints `<wpt><extensions>` in JSON format.                                     |
-| `route_track_point`          | Waypoints from GPX file use this type in POI data.                                                         |
-| `route_bbox_radius`          | Specifies the default radius for searching parts of the track within the POI section                       |
-| `route_shortlink_tiles`      | Specifies a comma-separated list of OSM Shortlink tiles to speed up reading geometry data (optional)       |
-| `route_segment_index`        | Specifies an ordinal number of the geometry segment which is linked to this point (optional)               |
-| `route_name`                 | The route name, used by internal `searchPoiByName` (deprecated)                                            |
+| `route_id`                   | Un identifiant unique pour le fichier GPX, reliant les données de carte et de POI (format : `/[A-Z]+[0-9]+/` par exemple `OSM12345`). |
+| `route_type`                 | Identifiant de groupe d'activité (`id`) dérivé de `poi/activities.json`                                        |
+| `route_activity_type`        | Identifiant de type d'activité (au sein du groupe) (`id`) dérivé de `poi/activities.json`                      |
+| `name`, `ref`, `description` | Attributs localisables et recherchables (`lang="true"` dans les types de POI)                                         |
+| `filename`                   | Le nom du fichier GPX original utilisé pour générer cette trace.                                             |
+| `track_color`                | Couleur de trace de la section de carte dérivée de `shield_waycolor`, `color`, `colour`, ou `displaycolor`               |
+| `extensions_extra_tags`      | Balises supplémentaires arbitraires pour `<gpx><extensions>` au format JSON.                                               |
+| `metadata_extra_tags`        | Balises supplémentaires arbitraires pour `<metadata><extensions>` au format JSON.                                               |
+| `wpt_extra_tags`             | Balises supplémentaires arbitraires pour les points de passage `<wpt><extensions>` au format JSON.                                     |
+| `route_track_point`          | Les points de passage du fichier GPX utilisent ce type dans les données POI.                                                         |
+| `route_bbox_radius`          | Spécifie le rayon par défaut pour la recherche de parties de la trace dans la section POI                       |
+| `route_shortlink_tiles`      | Spécifie une liste de tuiles OSM Shortlink séparées par des virgules pour accélérer la lecture des données de géométrie (facultatif)       |
+| `route_segment_index`        | Spécifie un numéro ordinal du segment de géométrie qui est lié à ce point (facultatif)               |
+| `route_name`                 | Le nom de l'itinéraire, utilisé par la recherche interne `searchPoiByName` (obsolète)                                            |
 
-> *This article was last updated in March 2025*
+> *Cet article a été mis à jour pour la dernière fois en mars 2025*
+
+-- source-hash: blake2s: ff79c4be7a2c3139f8aadb907d3059385f3620612ed413e6c1c52178ad119ec3 --

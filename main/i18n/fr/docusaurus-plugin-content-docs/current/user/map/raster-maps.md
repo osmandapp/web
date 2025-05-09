@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  Raster Maps (Online / Offline)
+title:  Cartes Raster (en ligne / hors ligne)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,64 +14,64 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-## Overview
+## Aperçu
 
-Raster maps are significant and useful additions to OsmAnd vector maps. They allow you to combine various map sources with vector maps. For example, information about hills and slopes is displayed as a raster layer. You can display an overlay of hiking trails, rain maps, real-time traffic data, and an overlay of satellite imagery on a translucent base vector map. You can also switch the default maps to raster tiles on the web.
+Les cartes raster sont des ajouts importants et utiles aux cartes vectorielles OsmAnd. Elles vous permettent de combiner diverses sources de cartes avec des cartes vectorielles. Par exemple, les informations sur les collines et les pentes sont affichées sous forme de couche raster. Vous pouvez afficher une superposition de sentiers de randonnée, de cartes de pluie, de données de trafic en temps réel et une superposition d'images satellite sur une carte vectorielle de base translucide. Vous pouvez également basculer les cartes par défaut vers des tuiles raster sur le Web.
 
 
-## Use Cases
+## Cas d'utilisation
 
-Raster maps have a wide range of uses. Here are some of the most popular:
+Les cartes raster ont un large éventail d'utilisations. Voici quelques-unes des plus populaires :
 
-- Satellite images as an underlay.
-- Real-time traffic information.
-- Rain forecast as an overlay.
-- Topographic maps with the shading of hills and slopes.
-- Active cycling and running routes as an overlay.
-- Real-time vessel information.
-- Online OpenStreetMap tiles for OSM editing.
+- Images satellite en sous-couche.
+- Informations sur le trafic en temps réel.
+- Prévisions de pluie en superposition.
+- Cartes topographiques avec ombrage des collines et des pentes.
+- Itinéraires cyclables et de course actifs en superposition.
+- Informations sur les navires en temps réel.
+- Tuiles OpenStreetMap en ligne pour l'édition OSM.
 
 ![Online maps overview](@site/static/img/plugins/online-maps/online-maps-overview.png)
 
 :::tip
-You can also change the main source of maps from vector maps to online tiles.
+Vous pouvez également changer la source principale des cartes, passant des cartes vectorielles aux tuiles en ligne.
 :::
 
 
-## Raster Maps
+## Cartes Raster
 
-Online maps in OsmAnd are composed of raster data, which consists of pixels (also referred to as grid cells) - essentially a set of small images known as tiles. Unlike vector maps, which represent data like roads, points, and polygons using binary information, raster map tiles are arranged in a grid and can appear pixelated at high zoom levels because each pixel has a fixed value or class.
+Les cartes en ligne dans OsmAnd sont composées de données raster, qui consistent en des pixels (également appelés cellules de grille) - essentiellement un ensemble de petites images appelées tuiles. Contrairement aux cartes vectorielles, qui représentent des données comme les routes, les points et les polygones à l'aide d'informations binaires, les tuiles de cartes raster sont disposées en grille et peuvent apparaître pixellisées à des niveaux de zoom élevés car chaque pixel a une valeur ou une classe fixe.
 
-#### Comparison to default vector maps
+#### Comparaison avec les cartes vectorielles par défaut
 
-**Advantages:**
+**Avantages :**
 
-- Since raster maps are pre-rendered, they load faster, eliminating the need for the device to process and render data in real-time.
-- Raster maps can be loaded dynamically while browsing.
-- You can create an offline cache and download only missing tiles as needed.
-- You can use an unlimited number of external web sources for raster maps, making it flexible for different map types, like satellite views or specialized maps.
-- Raster data, such as traffic information, can be updated regularly after expiration (e.g., every 20-30 minutes, depending on the configuration).
+- Étant donné que les cartes raster sont pré-rendues, elles se chargent plus rapidement, éliminant ainsi le besoin pour l'appareil de traiter et de rendre les données en temps réel.
+- Les cartes raster peuvent être chargées dynamiquement pendant la navigation.
+- Vous pouvez créer un cache hors ligne et télécharger uniquement les tuiles manquantes si nécessaire.
+- Vous pouvez utiliser un nombre illimité de sources Web externes pour les cartes raster, ce qui les rend flexibles pour différents types de cartes, comme les vues satellite ou les cartes spécialisées.
+- Les données raster, telles que les informations sur le trafic, peuvent être mises à jour régulièrement après expiration (par exemple, toutes les 20 à 30 minutes, selon la configuration).
 
-**Disadvantages:**
+**Inconvénients :**
 
-- Raster maps take up significantly more space than vector maps. For example, a city map might be 15 MB as a vector map, but increase to 50 MB at zoom level 15, 200 MB at zoom level 16, and up to 800 MB at zoom level 17.
-- You cannot tap specific places or objects on raster maps to get more information.
-- Raster maps cannot be styled or modified to exclude specific objects.
-- Zooming in too far can cause the image to appear pixelated, especially if high-resolution tiles are unavailable.
-- It’s not possible to rotate the map without rotating the text, which can make reading labels difficult.
-
-
-## How to Use Raster Maps
-
-**Enable plugin**.
-
-- **iOS**. For *iOS*, this feature works by default.
-- **Android**. For *Android*, to use raster maps in OsmAnd you need to enable [Online maps plugin](../plugins/online-map.md). Follow these steps: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
-
-**Change layer parameters**. To improve the visibility and mix of raster map layers, you can adjust the layer transparency using the screen slider. Additionally, you can modify the vector map style by hiding polygons, making the underlay layers more visible. This is especially useful when viewing satellite imagery.
+- Les cartes raster occupent beaucoup plus d'espace que les cartes vectorielles. Par exemple, une carte de ville peut faire 15 Mo en tant que carte vectorielle, mais augmenter à 50 Mo au niveau de zoom 15, 200 Mo au niveau de zoom 16 et jusqu'à 800 Mo au niveau de zoom 17.
+- Vous ne pouvez pas appuyer sur des lieux ou des objets spécifiques sur les cartes raster pour obtenir plus d'informations.
+- Les cartes raster ne peuvent pas être stylisées ou modifiées pour exclure des objets spécifiques.
+- Un zoom trop important peut rendre l'image pixellisée, surtout si des tuiles haute résolution ne sont pas disponibles.
+- Il n'est pas possible de faire pivoter la carte sans faire pivoter le texte, ce qui peut rendre la lecture des étiquettes difficile.
 
 
-## Select Raster Maps
+## Comment utiliser les cartes Raster
+
+**Activer le plugin**.
+
+- **iOS**. Pour *iOS*, cette fonctionnalité fonctionne par défaut.
+- **Android**. Pour *Android*, pour utiliser les cartes raster dans OsmAnd, vous devez activer le [plugin Cartes en ligne](../plugins/online-map.md). Suivez ces étapes : *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
+
+**Modifier les paramètres de la couche**. Pour améliorer la visibilité et le mélange des couches de cartes raster, vous pouvez ajuster la transparence de la couche à l'aide du curseur à l'écran. De plus, vous pouvez modifier le style de la carte vectorielle en masquant les polygones, rendant ainsi les couches sous-jacentes plus visibles. Ceci est particulièrement utile lors de la visualisation d'images satellite.
+
+
+## Sélectionner les cartes Raster
 
 <Tabs groupId="operating-systems">
 
@@ -89,20 +89,20 @@ Online maps in OsmAnd are composed of raster data, which consists of pixels (als
 
 </Tabs>
 
-In OsmAnd, raster maps can serve as an additional map source alongside the default vector maps, which are optimized for offline use.  
+Dans OsmAnd, les cartes raster peuvent servir de source de carte supplémentaire aux cartes vectorielles par défaut, qui sont optimisées pour une utilisation hors ligne.
 
-You have the flexibility to add one or two online tile layers to complement your base map. This allows you to view up to three map layers simultaneously on your screen. For instance, you can have OsmAnd's offline vector map as the base, overlay it with a satellite view, and place a bike path map as the underlay for added detail.  
+Vous avez la possibilité d'ajouter une ou deux couches de tuiles en ligne pour compléter votre carte de base. Cela vous permet de visualiser jusqu'à trois couches de carte simultanément sur votre écran. Par exemple, vous pouvez avoir la carte vectorielle hors ligne d'OsmAnd comme base, la superposer avec une vue satellite et placer une carte des pistes cyclables comme sous-couche pour plus de détails.
 
-You can also adjust the transparency of the base map to blend it with your layers. If needed, you can enable a transparency slider on the main screen for quick adjustments.
+Vous pouvez également ajuster la transparence de la carte de base pour la mélanger avec vos couches. Si nécessaire, vous pouvez activer un curseur de transparence sur l'écran principal pour des ajustements rapides.
 
 
-### Main  
+### Principale
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
 
 ![Show maps](@site/static/img/plugins/online-maps/map_source.png)
 
@@ -110,7 +110,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_ma
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type"/>*  
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type"/>*  
 
 ![Show maps](@site/static/img/plugins/online-maps/map_type.png)
 
@@ -118,16 +118,16 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_se
 
 </Tabs>
 
-You can choose a map style from the list or [add](#add-new-online-raster-map-source) your own.
+Vous pouvez choisir un style de carte dans la liste ou [ajouter](#add-new-online-raster-map-source) le vôtre.
 
 
-### Overlay Layer
+### Couche de superposition
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
 ![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
 
@@ -135,7 +135,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_ma
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
 ![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
 
@@ -143,22 +143,22 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_se
 
 </Tabs>
 
-1. *Switch on/off* the Underlay map.
-2. *Overlay transparency* (*Android*)/ *Transparency* of the Overlay map (*iOS*).
-3. *Show transparency slider* (*Android*) / *Show slider on the map* (*iOS*). Quick access to the transparency setting.
-4. *Overlay map source* (*Android*) / *Available layers* (*iOS*). You can choose a tile map to install or update.
-5. *Show map symbols* - such as text, road signs, and others.  
-6. *Add online source* (*iOS*).
-7. *Import from documents* (*iOS*).
+1. *Activer/désactiver* la carte de sous-couche.
+2. *Transparence de la superposition* (*Android*)/ *Transparence* de la carte de superposition (*iOS*).
+3. *Afficher le curseur de transparence* (*Android*) / *Afficher le curseur sur la carte* (*iOS*). Accès rapide au réglage de la transparence.
+4. *Source de la carte de superposition* (*Android*) / *Couches disponibles* (*iOS*). Vous pouvez choisir une carte de tuiles à installer ou à mettre à jour.
+5. *Afficher les symboles de la carte* - tels que le texte, les panneaux de signalisation et autres.
+6. *Ajouter une source en ligne* (*iOS*).
+7. *Importer depuis les documents* (*iOS*).
 
 
-### Underlay Layer
+### Couche de sous-couche
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
 ![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.png)
 
@@ -166,7 +166,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_ma
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
 ![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
 
@@ -174,56 +174,56 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_se
 
 </Tabs>
 
-1. *Switch on/off* the Underlay map.
-2. *Base map transparency*.
-3. *Show transparency slider* (*Android*) / *Show slider on the map* (*iOS*). Quick access to the transparency setting.
-4. *Underlay map source* (*Android*) / *Available layers* (*iOS*). You can choose a tile map to install or update.
-5. *Show/Hide polygons*.
-6. *Add online source* (*iOS*).
-7. *Import from documents* (*iOS*).
+1. *Activer/désactiver* la carte de sous-couche.
+2. *Transparence de la carte de base*.
+3. *Afficher le curseur de transparence* (*Android*) / *Afficher le curseur sur la carte* (*iOS*). Accès rapide au réglage de la transparence.
+4. *Source de la carte de sous-couche* (*Android*) / *Couches disponibles* (*iOS*). Vous pouvez choisir une carte de tuiles à installer ou à mettre à jour.
+5. *Afficher/Masquer les polygones*.
+6. *Ajouter une source en ligne* (*iOS*).
+7. *Importer depuis les documents* (*iOS*).
 
 
-## Hillshade / Slope
+## Ombrage / Pente
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
-**Hillshade** and **Slope** are offline raster maps that show terrain relief. They are displayed as a special map layer, a second overlay on the base map. The maps contain additional elevation information to help you more accurately understand the slope and shadows of the landscape. *Hillshade* and *Slope* information is based on data from a single source, the *Global planet file*, and is divided into regions.  
+**Ombrage** et **Pente** sont des cartes raster hors ligne qui montrent le relief du terrain. Elles sont affichées comme une couche de carte spéciale, une deuxième superposition sur la carte de base. Les cartes contiennent des informations d'altitude supplémentaires pour vous aider à mieux comprendre la pente et les ombres du paysage. Les informations d'*Ombrage* et de *Pente* sont basées sur les données d'une seule source, le *fichier Global planet*, et sont divisées en régions.
 
-You don't need to switch between Hillshade and Slope layers, as they are merged automatically. You can select only one of these layers to display on the map, but you also have the option to combine them both [as an underlay or overlay](#select-raster-maps) on other layers for a more visual representation of the terrain.
+Vous n'avez pas besoin de basculer entre les couches Ombrage et Pente, car elles sont fusionnées automatiquement. Vous pouvez sélectionner une seule de ces couches à afficher sur la carte, mais vous avez également la possibilité de les combiner toutes deux [en sous-couche ou en superposition](#select-raster-maps) sur d'autres couches pour une représentation plus visuelle du terrain.
 
-To get started with Hillshade and Slope you need to:
+Pour commencer avec Ombrage et Pente, vous devez :
 
-1. Purchase the Topography plugin:
-    - [Android purchases](../purchases/android.md)
-    - [iOS purchases](../purchases/ios.md)
-2. Enable the [Topography plugin](../plugins/topography.md):  
-    *Menu → Plugins → ︙ → Enable*
-3. Select your required region, and download **Terrain map (3D)**.
-4. The download process may take some time, depending on the size of the selected region and the speed of your Internet connection.
+1. Acheter le plugin Topographie :
+    - [Achats Android](../purchases/android.md)
+    - [Achats iOS](../purchases/ios.md)
+2. Activer le [plugin Topographie](../plugins/topography.md) :
+    *Menu → Plugins → ︙ → Activer*
+3. Sélectionnez la région requise et téléchargez la **Carte du terrain (3D)**.
+4. Le processus de téléchargement peut prendre un certain temps, en fonction de la taille de la région sélectionnée et de la vitesse de votre connexion Internet.
 
 
-### Hillshade and 3D Relief
+### Ombrage et Relief 3D
 
-| Hillshade | 3D Relief |
+| Ombrage | Relief 3D |
 |--------|---------|
 | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-The difference of relief display on the map when applying these settings is described in the **Topography** article in the corresponding section [Hillshade and 3D Relief](../plugins/topography.md#hillshade-and-3d-relief).
+La différence d'affichage du relief sur la carte lors de l'application de ces paramètres est décrite dans l'article **Topographie** dans la section correspondante [Ombrage et Relief 3D](../plugins/topography.md#hillshade-and-3d-relief).
 
 
-### Configure Display Options
+### Configurer les options d'affichage
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
+Aller à : *Android* *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
+Aller à : *iOS* *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
 
 </TabItem>
 
@@ -231,55 +231,55 @@ Go to: *iOS* *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true"
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
 
-You can customize the zoom level to display and the transparency for Hillshade and Slope. You can read more in the [Topography article](../plugins/topography.md#configure-map-view).
+Vous pouvez personnaliser le niveau de zoom à afficher et la transparence pour l'Ombrage et la Pente. Vous pouvez en savoir plus dans l'article [Topographie](../plugins/topography.md#configure-map-view).
 
 
-## 3D Relief
+## Relief 3D
 
 :::note
-[3D Relief](../plugins/topography.md#3d-relief) is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
+Le [Relief 3D](../plugins/topography.md#3d-relief) est une fonctionnalité payante [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 ![Terrain layers](@site/static/img/plugins/online-maps/raster_maps_3d.png)
 
-The [**3D Relief** feature](../plugins/topography.md#3d-relief) is a mapping technology that allows the visualization of terrain on a map using three-dimensional models. This feature adds elevation information to a normal two-dimensional map, which creates a 3D and depth effect and allows you to better visualize the terrain.  
+La fonctionnalité [**Relief 3D**](../plugins/topography.md#3d-relief) est une technologie de cartographie qui permet la visualisation du terrain sur une carte à l'aide de modèles tridimensionnels. Cette fonctionnalité ajoute des informations d'altitude à une carte bidimensionnelle normale, ce qui crée un effet 3D et de profondeur et vous permet de mieux visualiser le terrain.
 
-*To start using 3D Relief*:  
-You need to purchase [OsmAnd Pro purchase plan](../plugins/index.md#purchase), enable the [Topography plugin](../plugins/topography.md), and switch on the [3D Relief](../plugins/topography.md#3d-relief) item in *Menu →  Configure map*.
-
-
-*How the 3D Relief feature works*:  
-*1.* To create a 3D relief, OsmAnd receives information about the terrain elevation.  
-*2.* Based on the elevation data, a 3D model is created to display mountains, hills, valleys, and other terrain elements on the map.  
-*3.* OsmAnd then displays these three-dimensional models on a flat map. The map can be zoomed in, zoomed out, and rotated to view the terrain from different angles and perspectives.  
-*4.* The display of contour lines on the map does not depend on whether the map source is online or offline.
+*Pour commencer à utiliser le Relief 3D* :
+Vous devez acheter un [plan d'achat OsmAnd Pro](../plugins/index.md#purchase), activer le [plugin Topographie](../plugins/topography.md) et activer l'élément [Relief 3D](../plugins/topography.md#3d-relief) dans *Menu → Configurer la carte*.
 
 
-## Prepare/Copy Raster Maps to Device
-
-There are multiple ways how to add a new raster map, copy it from another device, prepare it on a PC, and pre-download tiles to be used offline. For example, you can create your map package on a PC using special software such as [MOBAC, OsmAndMapCreator, etc](../../technical/map-creation/index.md). Typically raster maps are distributed as files with `.sqlitedb` extension.
-
-Here are the main methods how for adding a new raster map source which is not defined in OsmAnd yet:
-
-- Open ready to use `.sqlitedb` file with OsmAnd.
-- Import package with prepared online maps from another OsmAnd application as a special `.osf` **package** via [Import / export functionality](../personal/import-export.md).
-- Create a new online map source on a mobile device itself.
-- Prepare a magic URL with online map source parameters and open it with OsmAnd.
+*Comment fonctionne la fonctionnalité Relief 3D* :
+*1.* Pour créer un relief 3D, OsmAnd reçoit des informations sur l'altitude du terrain.
+*2.* Sur la base des données d'altitude, un modèle 3D est créé pour afficher les montagnes, les collines, les vallées et d'autres éléments du terrain sur la carte.
+*3.* OsmAnd affiche ensuite ces modèles tridimensionnels sur une carte plate. La carte peut être agrandie, réduite et tournée pour visualiser le terrain sous différents angles et perspectives.
+*4.* L'affichage des courbes de niveau sur la carte ne dépend pas du fait que la source de la carte soit en ligne ou hors ligne.
 
 
-### Add New Online Raster Map Source
+## Préparer/Copier les cartes Raster sur l'appareil
+
+Il existe plusieurs façons d'ajouter une nouvelle carte raster, de la copier depuis un autre appareil, de la préparer sur un PC et de pré-télécharger des tuiles pour une utilisation hors ligne. Par exemple, vous pouvez créer votre package de carte sur un PC à l'aide de logiciels spéciaux tels que [MOBAC, OsmAndMapCreator, etc](../../technical/map-creation/index.md). Généralement, les cartes raster sont distribuées sous forme de fichiers avec l'extension `.sqlitedb`.
+
+Voici les principales méthodes pour ajouter une nouvelle source de carte raster qui n'est pas encore définie dans OsmAnd :
+
+- Ouvrir un fichier `.sqlitedb` prêt à l'emploi avec OsmAnd.
+- Importer un package avec des cartes en ligne préparées depuis une autre application OsmAnd sous forme de **package** `.osf` spécial via la [fonctionnalité d'import/export](../personal/import-export.md).
+- Créer une nouvelle source de carte en ligne sur l'appareil mobile lui-même.
+- Préparer une URL magique avec les paramètres de la source de carte en ligne et l'ouvrir avec OsmAnd.
+
+
+### Ajouter une nouvelle source de carte Raster en ligne
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,add_online_source"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,add_online_source"/>*
 
 </TabItem>
 
@@ -287,70 +287,70 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_se
 
 ![Add online source](@site/static/img/plugins/online-maps/add-online-source-2.png)
 
-To create a raster map source you need to know the **URL of a tile**, which is a specific URL that distributes map tiles in the Mercator Projection. For example, a tile URL might look like this: `https://tile.osmand.net/hd/6/55/25.png`, where `tile.osmand.net/hd/` is the base URL.
+Pour créer une source de carte raster, vous devez connaître l'**URL d'une tuile**, qui est une URL spécifique qui distribue des tuiles de carte dans la projection de Mercator. Par exemple, une URL de tuile pourrait ressembler à ceci : `https://tile.osmand.net/hd/6/55/25.png`, où `tile.osmand.net/hd/` est l'URL de base.
 
-Here are the key parameters to configure when setting up a new online map source:
+Voici les paramètres clés à configurer lors de la configuration d'une nouvelle source de carte en ligne :
 
-| Parameter | Description |
+| Paramètre | Description |
 |:------------|:---------------|
-| *<Translate ios="true" ids="shared_string_name"/>* | Provide a name for the new online map source. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Enter or paste the URL for the online tile source. Make sure it follows the tile URL format. |
-| *<Translate ios="true" ids="shared_string_zoom_levels"/>* | This parameter affects how the map is displayed. <br/><ul><li>As a *map type*, the map will be limited to the selected zoom levels.</li><li>As an *overlay/underlay*, the map will appear at the selected zoom levels, with upscaling or downscaling applied outside those levels.</li></ul> |
-| *<Translate ios="true" ids="res_expire_time"/>* | Set the duration (in minutes) after which cached tiles will refresh. You can leave this field blank if you don’t want tiles to reload automatically. <br/><ul><li>1 day = 1440 minutes</li><li>1 week = 10,080 minutes</li><li>30 days = 43,200 minutes</li></ul> |
-| *<Translate ios="true" ids="res_mercator"/>* | Choose between *Pseudo-Mercator projection* and *Elliptic Mercator projection*, depending on the source. |
-| *<Translate ios="true" ids="res_source_format"/> / <Translate android="true" ids="storage_format"/>* | Select how tiles should be stored: either in an *SQLiteDB file* or as *one image file per tile*. |
+| *<Translate ios="true" ids="shared_string_name"/>* | Fournissez un nom pour la nouvelle source de carte en ligne. |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Entrez ou collez l'URL de la source de tuiles en ligne. Assurez-vous qu'elle suit le format d'URL de tuile. |
+| *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Ce paramètre affecte la façon dont la carte est affichée. <br/><ul><li>En tant que *type de carte*, la carte sera limitée aux niveaux de zoom sélectionnés.</li><li>En tant que *superposition/sous-couche*, la carte apparaîtra aux niveaux de zoom sélectionnés, avec une mise à l'échelle ou une réduction appliquée en dehors de ces niveaux.</li></ul> |
+| *<Translate ios="true" ids="res_expire_time"/>* | Définissez la durée (en minutes) après laquelle les tuiles mises en cache seront actualisées. Vous pouvez laisser ce champ vide si vous ne souhaitez pas que les tuiles se rechargent automatiquement. <br/><ul><li>1 jour = 1440 minutes</li><li>1 semaine = 10 080 minutes</li><li>30 jours = 43 200 minutes</li></ul> |
+| *<Translate ios="true" ids="res_mercator"/>* | Choisissez entre la *projection Pseudo-Mercator* et la *projection Elliptique Mercator*, selon la source. |
+| *<Translate ios="true" ids="res_source_format"/> / <Translate android="true" ids="storage_format"/>* | Sélectionnez la manière dont les tuiles doivent être stockées : soit dans un *fichier SQLiteDB*, soit sous forme d'*un fichier image par tuile*. |
 
 
-### Magic URL to Install Map Source
+### URL magique pour installer la source de carte
 
-Online maps can be added with a special link to the OsmAnd Raster map list. Click on this link and choose OsmAnd for opening:
+Les cartes en ligne peuvent être ajoutées avec un lien spécial à la liste des cartes Raster OsmAnd. Cliquez sur ce lien et choisissez OsmAnd pour l'ouvrir :
 
 `http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
 
-|Parameter of link|Example|
+|Paramètre du lien|Exemple|
 |:--------|:---------------|
-| [Constant part]| `http://osmand.net/add-tile-source` |
-|[Separators]| ?   & |
-|[Name]|name=TEST|
+| [Partie constante]| `http://osmand.net/add-tile-source` |
+|[Séparateurs]| ?   & |
+|[Nom]|name=TEST|
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|
-|[Zoom levels]|min_zoom=9 / max_zoom=15|
+|[Niveaux de zoom]|min_zoom=9 / max_zoom=15|
 
-You find an added Online map in the list of the [Main / Underlay / Overlay layer](#select-raster-maps) menu.
+Vous trouverez une carte en ligne ajoutée dans la liste du menu [Couche principale / sous-couche / superposition](#select-raster-maps).
 
 
-## Manage Raster Maps
+## Gérer les cartes Raster
 
-Raster maps can take up a significant amount of disk space, so you might need to regularly check it. For large datasets, it's recommended to use *SQLite raster source* cause it will store all tiles in 1 large file (SQLite database).
+Les cartes raster peuvent occuper une quantité importante d'espace disque, vous devrez donc peut-être le vérifier régulièrement. Pour les grands ensembles de données, il est recommandé d'utiliser la *source raster SQLite* car elle stockera toutes les tuiles dans 1 grand fichier (base de données SQLite).
 
-- [**SQ Lite format**](../../technical/osmand-file-formats/osmand-sqlite.md)
-- [**Metainfo format**](../../technical/osmand-file-formats/osmand-metainfo.md)
+- [**Format SQ Lite**](../../technical/osmand-file-formats/osmand-sqlite.md)
+- [**Format Metainfo**](../../technical/osmand-file-formats/osmand-metainfo.md)
 
-To change tile format, you can choose <Translate android="true" ids="storage_format"/> in the edit menu of online maps:
+Pour modifier le format des tuiles, vous pouvez choisir <Translate android="true" ids="storage_format"/> dans le menu d'édition des cartes en ligne :
 
-- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
+- **Android** : *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choisir les cartes en ligne →
 &#8942; → <Translate android="true" ids="shared_string_edit,storage_format,sqlite_db_file"/> / <Translate android="true" ids="one_image_per_tile"/>*
-- **iOS**: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit,res_source_format,sqlite_db_file"/> / <Translate ios="true" ids="one_image_per_tile"/>*
+- **iOS** : *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit,res_source_format,sqlite_db_file"/> / <Translate ios="true" ids="one_image_per_tile"/>*
 
 
-### Clear Raster Map Cache
+### Effacer le cache des cartes Raster
 
 ![Online sources list](@site/static/img/plugins/online-maps/online-sources-list.png)
 
-Tiles are stored in the cache when using Online raster maps as a Main / Overlay / Underlay layer. You can see the size of your SQ Lite file under your Online map name in the list. Sometimes regular cleansing is required to speed up the display of the tiles or to update the data.  
+Les tuiles sont stockées dans le cache lors de l'utilisation des cartes raster en ligne comme couche principale / superposition / sous-couche. Vous pouvez voir la taille de votre fichier SQ Lite sous le nom de votre carte en ligne dans la liste. Parfois, un nettoyage régulier est nécessaire pour accélérer l'affichage des tuiles ou pour mettre à jour les données.
 
-To clear the map tile cache, you need to do the following:
+Pour effacer le cache des tuiles de carte, vous devez procéder comme suit :
 
-- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
+- **Android** : *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choisir les cartes en ligne →
 &#8942; → <Translate android="true" ids="clear_tile_data"/>*
-- **iOS**: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
+- **iOS** : *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
 
 
 
-### Download / Update Tiles
+### Télécharger / Mettre à jour les tuiles
 
-If you want to access raster maps offline, you may need to preload tiles. This can be done on your mobile device, but be aware that some services may block large packet downloads. You can also use the same feature to update already downloaded tiles for selected areas, otherwise, OsmAnd will continue to display tiles that are already stored in the cache.  
+Si vous souhaitez accéder aux cartes raster hors ligne, vous devrez peut-être précharger les tuiles. Cela peut être fait sur votre appareil mobile, mais sachez que certains services peuvent bloquer les téléchargements de gros paquets. Vous pouvez également utiliser la même fonctionnalité pour mettre à jour les tuiles déjà téléchargées pour les zones sélectionnées, sinon OsmAnd continuera à afficher les tuiles déjà stockées dans le cache.
 
-For the maps to automatically update the tiles after a while, you can set an [Expiry time](#add-new-online-raster-map-source), then OsmAnd will reload the tiles as soon as they are displayed.  
+Pour que les cartes mettent automatiquement à jour les tuiles après un certain temps, vous pouvez définir un [Délai d'expiration](#add-new-online-raster-map-source), puis OsmAnd rechargera les tuiles dès qu'elles seront affichées.
 
 <Tabs groupId="operating-systems">
 
@@ -382,37 +382,39 @@ For the maps to automatically update the tiles after a while, you can set an [Ex
 
 </Tabs>
 
-- To download or update raster tiles, you need to select the source of the online map as the [Main map source](#select-raster-maps). You can also select online tiles separately for the [Overlay](#overlay-layer) map or for the [Underlay](#underlay-layer).
+- Pour télécharger ou mettre à jour les tuiles raster, vous devez sélectionner la source de la carte en ligne comme [source de carte principale](#select-raster-maps). Vous pouvez également sélectionner les tuiles en ligne séparément pour la carte de [superposition](#overlay-layer) ou pour la [sous-couche](#underlay-layer).
 
-- For the **Android** version of the OsmAnd app, you need to select an area according to the screen size of your device and make a long tap the map. Then select [Actions](../map/map-context-menu.md#customize) in the map context menu and the *Download map* or *Update map* option. On the Download Map screen, make changes to the necessary settings and tap Download.  
+- Pour la version **Android** de l'application OsmAnd, vous devez sélectionner une zone en fonction de la taille de l'écran de votre appareil et faire un appui long sur la carte. Ensuite, sélectionnez [Actions](../map/map-context-menu.md#customize) dans le menu contextuel de la carte et l'option *Télécharger la carte* ou *Mettre à jour la carte*. Sur l'écran Télécharger la carte, modifiez les paramètres nécessaires et appuyez sur Télécharger.
 
-- In the iOS version of the OsmAnd app, you need to long tap the map, then select *Actions* and the *Download map* or *Update map* option from the map context menu. On the Download Map screen, you can select the required area and modify the necessary settings. After you set all the parameters, you can see the number of tiles and the download size.
+- Dans la version iOS de l'application OsmAnd, vous devez appuyer longuement sur la carte, puis sélectionner *Actions* et l'option *Télécharger la carte* ou *Mettre à jour la carte* dans le menu contextuel de la carte. Sur l'écran Télécharger la carte, vous pouvez sélectionner la zone requise et modifier les paramètres nécessaires. Après avoir défini tous les paramètres, vous pouvez voir le nombre de tuiles et la taille du téléchargement.
 
 
-### Change Raster Map Parameters
+### Modifier les paramètres de la carte Raster
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choisir les cartes en ligne → &#8942; → <Translate android="true" ids="shared_string_edit"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit"/>*
 
 </TabItem>
 
 </Tabs>
 
-Raster maps can be used as they already exist if the tiles are already mapped. If the raster maps are provided online, there is always a base URL that needs to be configured. There are a few more basic parameters that can be changed for raster maps, you can read about that in [this section](#add-new-online-raster-map-source) of the article. More complex parameters are encoded in the internal components of the [SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md).
+Les cartes raster peuvent être utilisées telles qu'elles existent déjà si les tuiles sont déjà cartographiées. Si les cartes raster sont fournies en ligne, il y a toujours une URL de base qui doit être configurée. Il existe quelques autres paramètres de base qui peuvent être modifiés pour les cartes raster, vous pouvez en savoir plus dans [cette section](#add-new-online-raster-map-source) de l'article. Des paramètres plus complexes sont encodés dans les composants internes du [format SQ Lite](../../technical/osmand-file-formats/osmand-sqlite.md).
 
 
-## Related Articles
+## Articles connexes
 
 - [Import / Export](../personal/import-export.md)
-- [Color Palette Schemes](../personal/color-palette-schemes.md)
+- [Schémas de palette de couleurs](../personal/color-palette-schemes.md)
 
-> *This article was last updated in October 2024*
+> *Cet article a été mis à jour pour la dernière fois en octobre 2024*
+
+-- source-hash: blake2s: dfefdc173e7bcfd24685c160a8ebf5e0b37c0adb885dbe8879a0dfc9c747aca6 --

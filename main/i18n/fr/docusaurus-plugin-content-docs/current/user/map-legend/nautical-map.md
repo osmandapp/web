@@ -1,90 +1,92 @@
 ---
 sidebar_position: 3
-title: Nautical Map Style
+title: Style de carte nautique
 ---
 import Translate from '@site/src/components/Translate.js';
 
-# Nautical Map Style
-Default OsmAnd map style, part of Nautical plugin.
+# Style de carte nautique
+Style de carte OsmAnd par défaut, faisant partie du plugin Nautique.
 <Translate android="yes" id="nautical_render_descr" />
 
-## Anchorage and berth
-<img src={require('@site/static/img/map-legend/nautical-anchorage-and-berth.png').default} alt="Anchorage and berth" />
+## Mouillage et poste à quai
+<img src={require('@site/static/img/map-legend/nautical-anchorage-and-berth.png').default} alt="Mouillage et poste à quai" />
 
-## Buyos and beacons
-<img src={require('@site/static/img/map-legend/nautical-buyos-and-beacons.png').default} alt="Buyos and beacons" />
+## Bouées et balises
+<img src={require('@site/static/img/map-legend/nautical-buyos-and-beacons.png').default} alt="Bouées et balises" />
 
-## Electronic position
-Electronic position-fixing systems, fog signals
-<img src={require('@site/static/img/map-legend/nautical-electronic-position.png').default} alt="Electronic position-fixing systems, fog signals" />
+## Position électronique
+Systèmes de positionnement électronique, signaux de brouillard
+<img src={require('@site/static/img/map-legend/nautical-electronic-position.png').default} alt="Systèmes de positionnement électronique, signaux de brouillard" />
 
-## Lights
+## Feux
 
-<img src={require('@site/static/img/map-legend/nautical-lights.png').default} alt="Lights" />
+<img src={require('@site/static/img/map-legend/nautical-lights.png').default} alt="Feux" />
 
-## Ports, moorings
-<img src={require('@site/static/img/map-legend/nautical-port-moorings.png').default} alt="Ports, moorings" />
+## Ports, mouillages
+<img src={require('@site/static/img/map-legend/nautical-port-moorings.png').default} alt="Ports, mouillages" />
 
-## Ports, moorings
-<img src={require('@site/static/img/map-legend/nautical-port-moorings.png').default} alt="Lights" />
+## Ports, mouillages
+<img src={require('@site/static/img/map-legend/nautical-port-moorings.png').default} alt="Feux" />
 
-## Offshore platforms
-<img src={require('@site/static/img/map-legend/nautical-offshore.png').default} alt="Offshore platforms" />
+## Plateformes offshore
+<img src={require('@site/static/img/map-legend/nautical-offshore.png').default} alt="Plateformes offshore" />
 
-## Landmarks
-<img src={require('@site/static/img/map-legend/nautical-landmarks.png').default} alt="Landmarks" />
+## Repères
+<img src={require('@site/static/img/map-legend/nautical-landmarks.png').default} alt="Repères" />
 
-## Buildings
-<img src={require('@site/static/img/map-legend/nautical-buildings.png').default} alt="Buildings" />
+## Bâtiments
+<img src={require('@site/static/img/map-legend/nautical-buildings.png').default} alt="Bâtiments" />
 
-## Wrecks and rocks
-<img src={require('@site/static/img/map-legend/nautical-wrecks-and-rocks.png').default} alt="Wrecks and rocks" />
+## Épaves et rochers
+<img src={require('@site/static/img/map-legend/nautical-wrecks-and-rocks.png').default} alt="Épaves et rochers" />
 
-## Bridges lockgates
-<img src={require('@site/static/img/map-legend/nautical-bridges-lockgates.png').default} alt="Wrecks and rocks" />
-
-
-## Nautical small craft facility
-<img src={require('@site/static/img/map-legend/nautical-small-craft-facility.png').default} alt="Nautical small craft facility" />
-
-## Nautical others
-<img src={require('@site/static/img/map-legend/nautical-others.png').default} alt="Nautical others" />
-
-## Marine farm, fishing
-<img src={require('@site/static/img/map-legend/nautical-marine-farm-fishing.png').default} alt="Marine farm, fishing" />
-
-## Seabed area
-<img src={require('@site/static/img/map-legend/nautical-seabed.png').default} alt="Seabed area" />
+## Ponts, écluses
+<img src={require('@site/static/img/map-legend/nautical-bridges-lockgates.png').default} alt="Épaves et rochers" />
 
 
-## Cables and pipelines
-<img src={require('@site/static/img/map-legend/nautical-cables-and-pipelines.png').default} alt="Cables and pipelines" />
+## Installations pour petites embarcations nautiques
+<img src={require('@site/static/img/map-legend/nautical-small-craft-facility.png').default} alt="Installations pour petites embarcations nautiques" />
+
+## Autres éléments nautiques
+<img src={require('@site/static/img/map-legend/nautical-others.png').default} alt="Autres éléments nautiques" />
+
+## Ferme marine, pêche
+<img src={require('@site/static/img/map-legend/nautical-marine-farm-fishing.png').default} alt="Ferme marine, pêche" />
+
+## Zone du fond marin
+<img src={require('@site/static/img/map-legend/nautical-seabed.png').default} alt="Zone du fond marin" />
+
+
+## Câbles et pipelines
+<img src={require('@site/static/img/map-legend/nautical-cables-and-pipelines.png').default} alt="Câbles et pipelines" />
 
 
 ## Obstruction
 <img src={require('@site/static/img/map-legend/nautical-obstruction.png').default} alt="Obstruction" />
 
 
-## Restricted area
-<img src={require('@site/static/img/map-legend/nautical-restricted-area.png').default} alt="Restricted area" />
+## Zone réglementée
+<img src={require('@site/static/img/map-legend/nautical-restricted-area.png').default} alt="Zone réglementée" />
 
-## Precautionary area
-<img src={require('@site/static/img/map-legend/nautical-precautionary-area.png').default} alt="Precautionary area" />
+## Zone de précaution
+<img src={require('@site/static/img/map-legend/nautical-precautionary-area.png').default} alt="Zone de précaution" />
 
-## Precautionary area
-<img src={require('@site/static/img/map-legend/nautical-precautionary-area.png').default} alt="Precautionary area" />
+## Zone de précaution
+<img src={require('@site/static/img/map-legend/nautical-precautionary-area.png').default} alt="Zone de précaution" />
 
-## Notice
-<img src={require('@site/static/img/map-legend/nautical-notice.png').default} alt="Precautionary area" />
+## Avis
+<img src={require('@site/static/img/map-legend/nautical-notice.png').default} alt="Zone de précaution" />
 
-### Notice: prohibition
-<img src={require('@site/static/img/map-legend/nautical-notice-prohibition.png').default} alt="Notice: prohibition" />
+### Avis : interdiction
+<img src={require('@site/static/img/map-legend/nautical-notice-prohibition.png').default} alt="Avis : interdiction" />
 
-### Notice: regulation
-<img src={require('@site/static/img/map-legend/nautical-notice-regulation.png').default} alt="Notice: regulation" />
+### Avis : réglementation
+<img src={require('@site/static/img/map-legend/nautical-notice-regulation.png').default} alt="Avis : réglementation" />
 
-### Notice: recomendation
-<img src={require('@site/static/img/map-legend/nautical-notice-recomendation.png').default} alt="Notice: recomendation" />
+### Avis : recommandation
+<img src={require('@site/static/img/map-legend/nautical-notice-recomendation.png').default} alt="Avis : recommandation" />
 
-### Notice: information
-<img src={require('@site/static/img/map-legend/nautical-notice-information.png').default} alt="Notice: information" />
+### Avis : information
+<img src={require('@site/static/img/map-legend/nautical-notice-information.png').default} alt="Avis : information" />
+
+-- source-hash: blake2s: 4348b5b2de1b554a02bd09d83bbdb5cd52c1600366f7c57da135157f39195fa0 --

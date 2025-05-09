@@ -2,145 +2,146 @@
 sidebar_position: 5
 ---
 
-# Map Layers Rendering
+# Rendu des couches de carte
 
-The OsmAnd map is rendered by layers from bottom to top. Some layers cover the entire map screen, while others are rendered with transparency. The order of the layers is always the same, so it is important to keep track of what is displayed and in which order.
+La carte OsmAnd est rendue par couches, de bas en haut. Certaines couches couvrent tout l'écran de la carte, tandis que d'autres sont rendues avec transparence. L'ordre des couches est toujours le même, il est donc important de savoir ce qui est affiché et dans quel ordre.
 
-## Order of Layers
+## Ordre des couches
 
-OsmAnd uses three types of layers: raster, symbols, and controls. First, [raster layers are rendered](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L162) in OpenGL, followed by [symbol layers](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L200). Control layers are rendered independently from OpenGL in the UI of Android or iOS devices, on top of the map.
+OsmAnd utilise trois types de couches : raster, symboles et contrôles. Tout d'abord, [les couches raster sont rendues](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L162) en OpenGL, suivies par [les couches de symboles](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L200). Les couches de contrôle sont rendues indépendamment d'OpenGL dans l'interface utilisateur des appareils Android ou iOS, par-dessus la carte.
 
-**Android:**  
-Most layers on Android are instantiated in the [`createLayers`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/MapLayers.java#L121) method of the `MapLayers` class.
+**Android :**
+La plupart des couches sur Android sont instanciées dans la méthode [`createLayers`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/MapLayers.java#L121) de la classe `MapLayers`.
 
-The order of each layer depends on its `zOrder` property during instantiation and is set in the [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) method of the `OsmAndMapLayer` class.  
-Other layers may be instantiated in plugins.
+L'ordre de chaque couche dépend de sa propriété `zOrder` lors de l'instanciation et est défini dans la méthode [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) de la classe `OsmAndMapLayer`.
+D'autres couches peuvent être instanciées dans des plugins.
 
-**iOS:**  
-Most layers on iOS are instantiated in the [`createLayers`](https://github.com/osmandapp/OsmAnd-iOS/blob/c03cc60d4301c743573ac50dfc0026522c08a66c/Sources/Controllers/Map/Layers/OAMapLayers.mm#L36) method of `OAMapLayers`.
+**iOS :**
+La plupart des couches sur iOS sont instanciées dans la méthode [`createLayers`](https://github.com/osmandapp/OsmAnd-iOS/blob/c03cc60d4301c743573ac50dfc0026522c08a66c/Sources/Controllers/Map/Layers/OAMapLayers.mm#L36) de `OAMapLayers`.
 
-The order of each layer is set directly by the `baseOrder` property in `createLayers`.  
-Other layers may be instantiated in plugins.
+L'ordre de chaque couche est défini directement par la propriété `baseOrder` dans `createLayers`.
+D'autres couches peuvent être instanciées dans des plugins.
 
 
-## Android Order Tables
+## Tables d'ordre Android
 
-### Android. Raster layers
+### Android. Couches raster
 
-| Layer                             | Order/Range    | Type | Description                           |
+| Couche                            | Ordre/Plage    | Type | Description                           |
 | --------------------------------- | -------------: | ---- | ------------------------------------- |
-| MapTileLayer (underlay)           | -50 000        | Map  | Raster tiles underlay                 |
-| MapTileLayer (main layer)         | 5 000          | Map  | Map raster tiles                      |
-| ContourLinesLayer                 | 6 000          | Map  | Doesn't have its own layer class; managed by main MapTileLayer |
-| TerrainLayer                      | 60 000         | Map  | [Hillshade and slope](/docs/user/plugins/topography)           |
-| MapTileLayer (overlay)            | 70 000         | Map  | Raster tiles overlay                  |
+| MapTileLayer (sous-couche)        | -50 000        | Carte | Sous-couche de tuiles raster          |
+| MapTileLayer (couche principale)  | 5 000          | Carte | Tuiles raster de la carte             |
+| ContourLinesLayer                 | 6 000          | Carte | N'a pas sa propre classe de couche ; gérée par la couche principale MapTileLayer |
+| TerrainLayer                      | 60 000         | Carte | [Ombrage et pente](/docs/user/plugins/topography)           |
+| MapTileLayer (superposition)      | 70 000         | Carte | Superposition de tuiles raster        |
 
-### Android. Symbols layers
+### Android. Couches de symboles
 
-| Layer / symbols                   | Order/Range  | Type     | Description                                                        |
+| Couche / symboles                 | Ordre/Plage  | Type     | Description                                                        |
 | --------------------------------- | -----------: | -------- | ------------------------------------------------------------------ |
-| DownloadedRegionsLayer            | -1 100 000   | Polygons | Shows downloaded regions          |
-| Icons (MapVectorLayer)            | -1 000 000   | Points   | Vector map, iconOrder in style with [adding 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
-| GPXLayer (lines)                  | -500 000     | Lines    | Track lines             |
-| RouteLayer (chart highlight point)| -197 900     | Point    | Navigation route analysis on map  |
-| RouteLayer (chart x-axis points)  | -198 000     | Points   | Navigation route analysis on map  |
-| RouteLayer (turn arrows)          | -199 000     | Lines    | Navigation route                  |
-| RouteLayer                        | -200 000     | Lines    | Navigation route                  |
-| Text (MapVectorLayer)             | 1 - 255      | Text     | Vector map, textOrder in [style](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml), 100 by default                 |
-| Shields (MapVectorLayer)          | 1 - 255       | Shields  | Vector map, textOrder in style for shields, 100 by default |
-| GPX track start, finish           | 90 101       | Points   | GPXLayer                          |
-| GPX track waypoint                | 90 300       | Points   | GPXLayer                          |
-| GPXLayer (wpt name)               | 90 300       | Text     | Waypoints name                    |
-| GPX track chart icon              | 90 500       | Points   | GPXLayer                          |
-| GPX track selected icon           | 90 600       | Points   | GPXLayer                          |
-| OSM notes (OsmBugsLayer)          | 200 000      | Points   | OSM notes                         |
-| Fixme icon (OsmBugsLayer)         | 200 000      | Points   | OSM fixme icons                   |
-| Fixme text (OsmBugsLayer)         | 200 000      | Text     | OSM fixme text                    |
-| POIMapLayer (icon)                | 300 000      | Points   | POI overlay                       |
-| POIMapLayer (name)                | 300 000      | Text     | POI overlay name                  |
-| AudioNotesLayer                   | 350 000      | Points   | Audio/video notes plugin          |
-| OsmEditsLayer                     | 350 000      | Points   | OSM edit plugin                   |
-| FavoritesLayer                    | 400 000      | Points   | Favorites overlay                 |
-| TransportStopsLayer               | 500 000      | Lines    | Public transport lines            |
-| TransportStopsLayer               | 500 001      | Points   | Public transport stops            |
-| MapTextLayer                      | 595 000      | Text     | Text for different layers, canvas rendering |
-| PointLocationLayer                | 600 000      | Points   | My location                       |
-| PointNavigationLayer              | 700 000      | Points   | Start/finish points in navigation |
-| PointNavigationLayer              | 700 600      | Points   | Selected point in navigation      |
-| MapMarkersLayer (line)            | 729 999      | Lines    | Dashed line to map markers        |
-| MapMarkersLayer (text)            | 730 000      | Text     | Text on line. Canvas rendering    |
-| MapMarkersLayer (markers)         | 730 000      | Points   | Map markers                       |
-| ImpassableRoadsLayer              | 750 000      | Points   | Avoid roads                       |
-| ContextMenuLayer                  | 800 000      | Points   | Pin of context menu               |
-| MapillaryVectorLayer (lines)      | 1 000 000    | Lines    | Mapillary lines between points    |
-| MapillaryVectorLayer (points)     | 1 000 000    | Points   | Mapillary points                  |
+| DownloadedRegionsLayer            | -1 100 000   | Polygons | Affiche les régions téléchargées          |
+| Icônes (MapVectorLayer)           | -1 000 000   | Points   | Carte vectorielle, iconOrder dans le style avec [ajout de 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
+| GPXLayer (lignes)                 | -500 000     | Lignes   | Lignes de trace             |
+| RouteLayer (point de surbrillance du graphique)| -197 900 | Point    | Analyse de l'itinéraire de navigation sur la carte  |
+| RouteLayer (points de l'axe x du graphique) | -198 000 | Points   | Analyse de l'itinéraire de navigation sur la carte  |
+| RouteLayer (flèches de virage)    | -199 000     | Lignes   | Itinéraire de navigation                  |
+| RouteLayer                        | -200 000     | Lignes   | Itinéraire de navigation                  |
+| Texte (MapVectorLayer)            | 1 - 255      | Texte    | Carte vectorielle, textOrder dans le [style](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml), 100 par défaut                 |
+| Boucliers (MapVectorLayer)        | 1 - 255      | Boucliers | Carte vectorielle, textOrder dans le style pour les boucliers, 100 par défaut |
+| Départ, arrivée de la trace GPX   | 90 101       | Points   | GPXLayer                          |
+| Point de passage de la trace GPX  | 90 300       | Points   | GPXLayer                          |
+| GPXLayer (nom du point de passage)| 90 300       | Texte    | Nom des points de passage                    |
+| Icône du graphique de la trace GPX| 90 500       | Points   | GPXLayer                          |
+| Icône sélectionnée de la trace GPX| 90 600       | Points   | GPXLayer                          |
+| Notes OSM (OsmBugsLayer)          | 200 000      | Points   | Notes OSM                         |
+| Icône Fixme (OsmBugsLayer)        | 200 000      | Points   | Icônes Fixme OSM                   |
+| Texte Fixme (OsmBugsLayer)        | 200 000      | Texte    | Texte Fixme OSM                    |
+| POIMapLayer (icône)               | 300 000      | Points   | Superposition POI                       |
+| POIMapLayer (nom)                 | 300 000      | Texte    | Nom de la superposition POI                  |
+| AudioNotesLayer                   | 350 000      | Points   | Plugin de notes audio/vidéo          |
+| OsmEditsLayer                     | 350 000      | Points   | Plugin d'édition OSM                   |
+| FavoritesLayer                    | 400 000      | Points   | Superposition des favoris                 |
+| TransportStopsLayer               | 500 000      | Lignes   | Lignes de transport public            |
+| TransportStopsLayer               | 500 001      | Points   | Arrêts de transport public            |
+| MapTextLayer                      | 595 000      | Texte    | Texte pour différentes couches, rendu sur canevas |
+| PointLocationLayer                | 600 000      | Points   | Ma position                       |
+| PointNavigationLayer              | 700 000      | Points   | Points de départ/arrivée en navigation |
+| PointNavigationLayer              | 700 600      | Points   | Point sélectionné en navigation      |
+| MapMarkersLayer (ligne)           | 729 999      | Lignes   | Ligne pointillée vers les marqueurs de carte        |
+| MapMarkersLayer (texte)           | 730 000      | Texte    | Texte sur la ligne. Rendu sur canevas    |
+| MapMarkersLayer (marqueurs)       | 730 000      | Points   | Marqueurs de carte                       |
+| ImpassableRoadsLayer              | 750 000      | Points   | Éviter les routes                       |
+| ContextMenuLayer                  | 800 000      | Points   | Épingle du menu contextuel               |
+| MapillaryVectorLayer (lignes)     | 1 000 000    | Lignes   | Lignes Mapillary entre les points    |
+| MapillaryVectorLayer (points)     | 1 000 000    | Points   | Points Mapillary                  |
 
-### Android. Controls layers
+### Android. Couches de contrôles
 
-| Control layer             | Order/Range | Description           |
+| Couche de contrôle        | Ordre/Plage | Description           |
 | ------------------------- | ----------: | --------------------- |
-| PreviewRouteLineLayer     | 150 000     | Preview route options |
+| PreviewRouteLineLayer     | 150 000     | Options d'itinéraire de prévisualisation |
 | MeasurementToolLayer      | 460 000     |                       |
-| RadiusRulerControlLayer   | 780 000     | Radius ruler          |
-| DistanceRulerControlLayer | 790 000     | Distance ruler        |
+| RadiusRulerControlLayer   | 780 000     | Règle de rayon          |
+| DistanceRulerControlLayer | 790 000     | Règle de distance        |
 | MapInfoLayer              | 900 000     | Widgets               |
 | MapControlsLayer          | 1 100 000   |                       |
 | MapQuickActionLayer       | 1 200 000   |                       |
 
 
-## iOS Order Tables
+## Tables d'ordre iOS
 
-### iOS. Raster layers
+### iOS. Couches raster
 
-| Layer                           | Layer index | Description                           |
+| Couche                          | Index de couche | Description                           |
 | ------------------------------- | ----------: | ------------------------------------- |
-| OAUnderlayMapLayer              | -5          | Raster tiles underlay                 |
-| Raster layer (MapRasterLayerProvider) | 0     | Map raster tiles                      |
-| OATerrainMapLayer                | 4          | [Contour lines, hillshade and slope](/docs/user/plugins/topography) |
-| OAOverlayMapLayer                | 5          | Raster tiles overlay                  |
-| OAMapillaryLayer                 | 10         | Mapillary layer                       |
-| OAWeatherRasterLayer             | 20         | Weather                               |
-| OAWeatherRasterLayer             | 25         | Weather                               |
-| OAWeatherContourLayer            | 30         | Weather                               |
+| OAUnderlayMapLayer              | -5          | Sous-couche de tuiles raster          |
+| Couche raster (MapRasterLayerProvider) | 0     | Tuiles raster de la carte                      |
+| OATerrainMapLayer                | 4          | [Lignes de contour, ombrage et pente](/docs/user/plugins/topography) |
+| OAOverlayMapLayer                | 5          | Superposition de tuiles raster                  |
+| OAMapillaryLayer                 | 10         | Couche Mapillary                       |
+| OAWeatherRasterLayer             | 20         | Météo                               |
+| OAWeatherRasterLayer             | 25         | Météo                               |
+| OAWeatherContourLayer            | 30         | Météo                               |
 
-### iOS. Symbols layers
+### iOS. Couches de symboles
 
-| Layer / symbols              | Order/Range  | Type     | Description                                                                                |
+| Couche / symboles              | Ordre/Plage  | Type     | Description                                                                                |
 | ---------------------------- | -----------: | -------- | ------------------------------------------------------------------------------------------ |
-| Icons                        | -1 000 000   | Points   | Vector map, iconOrder in style with [adding 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
-| Text                         | 1 - 255      | Text     | Vector map, textOrder in style, 100 by default             |
-| Shields                      | 1 - 255      | Shields  | Vector map, textOrder in style for shields, 100 by default |
-| OADownloadedRegionsLayer     | 10 000       | Polygons | Shows downloaded green regions |
-| POI icon (OAPOILayer)        | 90 000       | Points   | POI overlay                 |
-| POI name (OAPOILayer)        | 90 000       | Text     | POI overlay name            |
-| GPX track lines (OAGPXLayer) | 100 000      | Lines    | Track lines                 |
-| GPX waypoint name            | 100 000      | Text     | GPX waypoints name          |
-| GPX waypoint icon            | 100 003      | Points   | GPX waypoints               |
-| GPX track start, finish      | 120 000      | Points   | OAGPXLayer                  |
-| OSM notes (OAOsmBugsLayer)   | 120 000      | Text     | OSM notes                   |
-| Fixme text (OAOsmBugsLayer)  | 120 000      | Text     | OSM fixme text              |
-| Fixme icon (OAOsmBugsLayer)  | 120 000      | Points   | OSM fixme icon              |
-| OAOsmEditsLayer              | 120 000      | Points   | Edit OSM plugin             |
-| OAPreviewRouteLineLayer      | 120 000      | Lines    | Preview route options       |
-| OATransportStopsLayer (lines)| 120 000      | Lines    | Public transport ines       |
-| OATransportStopsLayer (icons)| 121 000      | Points   | Public transport stops      |
-| OARouteLayer                 | 150 000      | Lines    | Navigation route            |
-| OAFavoritesLayer             | 160 000      | Points   | Favorites overlay           |
-| Avoid roads (OAImpassableRoadsLayer) | 205 998 | Points | Avoid roads                |
-| My location (OAMyPositionLayer)      | 206 001 | Points | My location                |
-| Map markers (OADestinationsLayer)    | 207 000 | Points | Map markers                |
-| Map markers (text on line)   | 207 000      | Text     | Text on line to map markers |
+| Icônes                       | -1 000 000   | Points   | Carte vectorielle, iconOrder dans le style avec [ajout de 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
+| Texte                        | 1 - 255      | Texte    | Carte vectorielle, textOrder dans le style, 100 par défaut             |
+| Boucliers                     | 1 - 255      | Boucliers | Carte vectorielle, textOrder dans le style pour les boucliers, 100 par défaut |
+| OADownloadedRegionsLayer     | 10 000       | Polygons | Affiche les régions vertes téléchargées |
+| Icône POI (OAPOILayer)       | 90 000       | Points   | Superposition POI                 |
+| Nom POI (OAPOILayer)         | 90 000       | Texte    | Nom de la superposition POI            |
+| Lignes de trace GPX (OAGPXLayer) | 100 000      | Lignes   | Lignes de trace                 |
+| Nom du point de passage GPX  | 100 000      | Texte    | Nom des points de passage GPX          |
+| Icône du point de passage GPX| 100 003      | Points   | Points de passage GPX               |
+| Départ, arrivée de la trace GPX | 120 000      | Points   | OAGPXLayer                  |
+| Notes OSM (OAOsmBugsLayer)   | 120 000      | Texte    | Notes OSM                   |
+| Texte Fixme (OAOsmBugsLayer) | 120 000      | Texte    | Texte Fixme OSM              |
+| Icône Fixme (OAOsmBugsLayer) | 120 000      | Points   | Icône Fixme OSM              |
+| OAOsmEditsLayer              | 120 000      | Points   | Plugin d'édition OSM             |
+| OAPreviewRouteLineLayer      | 120 000      | Lignes   | Options d'itinéraire de prévisualisation       |
+| OATransportStopsLayer (lignes)| 120 000      | Lignes   | Lignes de transport public       |
+| OATransportStopsLayer (icônes)| 121 000      | Points   | Arrêts de transport public      |
+| OARouteLayer                 | 150 000      | Lignes   | Itinéraire de navigation            |
+| OAFavoritesLayer             | 160 000      | Points   | Superposition des favoris           |
+| Éviter les routes (OAImpassableRoadsLayer) | 205 998 | Points | Éviter les routes                |
+| Ma position (OAMyPositionLayer)      | 206 001 | Points | Ma position                |
+| Marqueurs de carte (OADestinationsLayer)    | 207 000 | Points | Marqueurs de carte                |
+| Marqueurs de carte (texte sur la ligne) | 207 000      | Texte    | Texte sur la ligne vers les marqueurs de carte |
 | Navigation (points)          | 207 015      | Points   | OARouteLayer                |
-| Navigation (my location)     | 207 025      | Points   | OARouteLayer                |
-| Navigation (arrows on route) | 208 000      | Points   | OARouteLayer                |
-| OARoutePointsLayer           | 209 000      | Points   | Navigation points           |
+| Navigation (ma position)     | 207 025      | Points   | OARouteLayer                |
+| Navigation (flèches sur l'itinéraire) | 208 000      | Points   | OARouteLayer                |
+| OARoutePointsLayer           | 209 000      | Points   | Points de navigation           |
 
-### iOS. Controls layers
+### iOS. Couches de contrôles
 
-| Control layer            | Order/Range | Description    |
+| Couche de contrôle           | Ordre/Plage | Description    |
 | ------------------------ | ----------: | -------------  |
-| OAGPXRecLayer            | 110 000     | Editing GPX    |
+| OAGPXRecLayer            | 110 000     | Édition GPX    |
 | OAMeasurementToolLayer   | 160 000     |                |
-| OARulerByTapControlLayer | 170 000     | Distance ruler |
+| OARulerByTapControlLayer | 170 000     | Règle de distance |
 | OAContextMenuLayer       | 210 000     |                |
 
+-- source-hash: blake2s: 2fb897dc06184eb6668d655db9272507d80a43e8651d0398b5cf750ab25ea76a --

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  Interact with Map
+title:  Interagir avec la carte
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,70 +14,70 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Vue d'ensemble
 
-This article explains how to customize and interact with the map using various buttons and gestures. It covers how to rotate, zoom, adjust the view angle, and change the map's view angle, rotate it manually or automatically using the compass, or according to bearing.
+Cet article explique comment personnaliser et interagir avec la carte à l'aide de divers boutons et gestes. Il couvre comment faire pivoter, zoomer, ajuster l'angle de vue et modifier l'angle de vue de la carte, la faire pivoter manuellement ou automatiquement à l'aide de la boussole, ou en fonction du relèvement.
 
 
-## Gestures
+## Gestes
 
-Gestures are essential for navigating the map easily and intuitively.
+Les gestes sont essentiels pour naviguer sur la carte facilement et intuitivement.
 
-| Map Action  | Gesture  |
+| Action sur la carte | Geste |
 |:------------|:-------------|
-| **Move**    | Tap and hold the map with **one** finger, then drag to move around. |
-| **Slide**   | Swipe the map with **one** finger. |
-| **Zoom In** | Double tap the map with **one** finger. <br/> Double tap with **one** finger and swipe down. <br/> Pinch with **two** fingers to zoom in. |
-| **Zoom Out**| Double tap with **two** fingers. <br/> Double tap with **one** finger and swipe up. <br/> Pinch with **two** fingers to zoom out. |
-| **Rotate**  | Tap the map with **two** fingers, then rotate your fingers in a circular motion. |
-| **Tilt (3D)** | Tap with **two** fingers and move them up or down. <br/> Available only with [Map Rendering Engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL). |
+| **Déplacer** | Appuyez et maintenez la carte avec **un** doigt, puis faites glisser pour vous déplacer. |
+| **Glisser** | Balayez la carte avec **un** doigt. |
+| **Zoom avant** | Appuyez deux fois sur la carte avec **un** doigt. <br/> Appuyez deux fois avec **un** doigt et balayez vers le bas. <br/> Pincez avec **deux** doigts pour zoomer. |
+| **Zoom arrière** | Appuyez deux fois avec **deux** doigts. <br/> Appuyez deux fois avec **un** doigt et balayez vers le haut. <br/> Pincez avec **deux** doigts pour dézoomer. |
+| **Rotation** | Appuyez sur la carte avec **deux** doigts, puis faites pivoter vos doigts en cercle. |
+| **Inclinaison (3D)** | Appuyez avec **deux** doigts et déplacez-les vers le haut ou vers le bas. <br/> Disponible uniquement avec le [Moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL). |
 
-Slide animations can be disabled in the settings with a [special option](#no-animations).
+Les animations de glissement peuvent être désactivées dans les paramètres avec une [option spéciale](#no-animations).
 
 
-## My Location and Zoom
+## Ma position et zoom
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
-**My location**.  
-The *My Location* button is a circular icon that indicates whether the map's center is synchronized with your device’s current geolocation. Often referred to as the "Where am I?" button, it helps you quickly find your location on the map. During navigation, the map typically stays synced with the device's location, so the button remains hidden. However, it becomes visible if the map and your location go out of sync due to user interaction. Tapping the button will re-center the map on your current location, and a double tap will switch the view to 3D mode.
+**Ma position**.  
+Le bouton *Ma position* est une icône circulaire qui indique si le centre de la carte est synchronisé avec la géolocalisation actuelle de votre appareil. Souvent appelé bouton "Où suis-je ?", il vous aide à trouver rapidement votre position sur la carte. Pendant la navigation, la carte reste généralement synchronisée avec la position de l'appareil, de sorte que le bouton reste masqué. Cependant, il devient visible si la carte et votre position se désynchronisent en raison d'une interaction de l'utilisateur. Appuyer sur le bouton recentrera la carte sur votre position actuelle, et un double appui basculera la vue en mode 3D.
 
-- The *My Location* button has the following states:
-  - *Full blue icon*. The location is found but not synced with the map.
-  - *White icon*. The location is found and synced with the map.
-  - *Grey icon*. The location has not been found yet.
-  - *Arrow icon*. 3D mode is activated.
+- Le bouton *Ma position* a les états suivants :
+  - *Icône bleue pleine*. La position est trouvée mais pas synchronisée avec la carte.
+  - *Icône blanche*. La position est trouvée et synchronisée avec la carte.
+  - *Icône grise*. La position n'a pas encore été trouvée.
+  - *Icône flèche*. Le mode 3D est activé.
 
-- **Long tap** (*Android*) the *My Location* button opens the [map context menu](../map/map-context-menu.md), allowing you to share your location.
+- Un **appui long** (*Android*) sur le bouton *Ma position* ouvre le [menu contextuel de la carte](../map/map-context-menu.md), vous permettant de partager votre position.
 
 <br/>
 
-**Zoom buttons**.  
-*Zoom buttons* are always visible next to *My Location* and allow you to control the map's zoom level.
+**Boutons de zoom**.  
+Les *boutons de zoom* sont toujours visibles à côté de *Ma position* et vous permettent de contrôler le niveau de zoom de la carte.
 
-- Changing the zoom level does not affect the map's synchronization with your location.
-- **Long tap** *Zoom buttons* opens *Map magnifier* dialog,allowing you to adjust map detail levels.
-- Keep in mind that during navigation, the zoom can be controlled automatically by the **Auto zoom** setting:
-   - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
-   - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
+- Modifier le niveau de zoom n'affecte pas la synchronisation de la carte avec votre position.
+- Un **appui long** sur les *boutons de zoom* ouvre la boîte de dialogue *Loupe de carte*, vous permettant d'ajuster les niveaux de détail de la carte.
+- Gardez à l'esprit que pendant la navigation, le zoom peut être contrôlé automatiquement par le paramètre **Zoom automatique** :
+   - *<Translate android="true" ids="android_button_seq"/> :*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
+   - *<Translate ios="true" ids="ios_button_seq"/> :*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
-### My Location Appearance
+### Apparence de Ma position
 
-You can customize **My Location** button icons using Profile appearance settings. Read more about how to do this [here](../personal/profiles.md#profile-appearance).
-
-
-## Map Magnifier
-
-The *Map Magnifier* is a tool that enhances the map's visibility, similar to a magnifying glass used with paper maps. It allows you to zoom in on the map to view text and details more clearly or to adjust the level of detail while maintaining the same scale. For more information, go to [Vector Maps](../map/vector-maps.md#map-magnifier) article.
+Vous pouvez personnaliser les icônes du bouton **Ma position** à l'aide des paramètres d'apparence du profil. Pour en savoir plus, consultez [ici](../personal/profiles.md#profile-appearance).
 
 
-## Map Orientation Modes
+## Loupe de carte
+
+La *Loupe de carte* est un outil qui améliore la visibilité de la carte, similaire à une loupe utilisée avec des cartes papier. Elle vous permet de zoomer sur la carte pour afficher le texte et les détails plus clairement ou pour ajuster le niveau de détail tout en conservant la même échelle. Pour plus d'informations, consultez l'article [Cartes vectorielles](../map/vector-maps.md#map-magnifier).
+
+
+## Modes d'orientation de la carte
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
 
 ![Compass widget](@site/static/img/map/map_orientation_mode_2_andr.png)  
   
@@ -85,7 +85,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_strin
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
 
 ![Compass widget](@site/static/img/map/map_orientation_mode_ios.png)  
 
@@ -93,16 +93,16 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>  
 
-*Map orientation modes* allow you to choose how the map is displayed on the device screen. OsmAnd offers modes such as **Manually Rotated**, **Movement Direction**, **Compass Direction**, and **North is Up**. Enabling each mode changes the way the map is oriented according to the selected option. For full details, see the [Map Buttons](../widgets/map-buttons.md#compass) article.
+Les *modes d'orientation de la carte* vous permettent de choisir comment la carte est affichée sur l'écran de l'appareil. OsmAnd propose des modes tels que **Rotation manuelle**, **Direction du mouvement**, **Direction de la boussole** et **Le Nord est en haut**. L'activation de chaque mode modifie la façon dont la carte est orientée en fonction de l'option sélectionnée. Pour tous les détails, consultez l'article [Boutons de la carte](../widgets/map-buttons.md#compass).
 
 
-## Compass
+## Boussole
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/compass_widget.png)
   
@@ -110,7 +110,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_c
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/compass_widget.png)
 
@@ -118,17 +118,17 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-The compass button shows how the [map is oriented](#map-orientation-modes). The *red arrow* on icons, or the direction of the arrow in *Movement direction* mode, indicates the North. [The icon on the compass button](../widgets/map-buttons.md#compass) indicates the current map orientation mode. The compass button widget offers three [interaction options](../widgets/map-buttons.md#compass-tapping-behavior): *Single Tap* rotates the map to the North, *Double Tap* alternates between all map orientation modes, and *Long Tap* opens the list of modes.
+Le bouton boussole indique comment la [carte est orientée](#map-orientation-modes). La *flèche rouge* sur les icônes, ou la direction de la flèche en mode *Direction du mouvement*, indique le Nord. [L'icône sur le bouton boussole](../widgets/map-buttons.md#compass) indique le mode d'orientation de la carte actuel. Le widget du bouton boussole offre trois [options d'interaction](../widgets/map-buttons.md#compass-tapping-behavior) : un *simple appui* fait pivoter la carte vers le Nord, un *double appui* alterne entre tous les modes d'orientation de la carte, et un *appui long* ouvre la liste des modes.
 
 
-## Rotate Map by Bearing
+## Faire pivoter la carte par relèvement
 
-In the **rotate map by bearing** mode ([Movement direction](../widgets/map-buttons.md#compass)), the map automatically aligns with your direction of movement, so the area ahead of you is displayed at the top of the screen. This mode enhances navigation by shifting the map center slightly downward, showing more of the route ahead. If you are stationary, the map stays fixed.  
+En mode **faire pivoter la carte par relèvement** ([Direction du mouvement](../widgets/map-buttons.md#compass)), la carte s'aligne automatiquement avec votre direction de déplacement, de sorte que la zone devant vous est affichée en haut de l'écran. Ce mode améliore la navigation en décalant légèrement le centre de la carte vers le bas, affichant ainsi une plus grande partie de l'itinéraire à venir. Si vous êtes immobile, la carte reste fixe.  
 
-You can activate this feature via *Menu → Settings → Profiles → General settings → Appearance → Map orientation* or by double tapping the [Compass button](../widgets/map-buttons.md#compass-tapping-behavior). For more details about bearing, see [here](../widgets/nav-widgets.md#bearing-widget).
+Vous pouvez activer cette fonction via *Menu → Paramètres → Profils → Paramètres généraux → Apparence → Orientation de la carte* ou en appuyant deux fois sur le [bouton Boussole](../widgets/map-buttons.md#compass-tapping-behavior). Pour plus de détails sur le relèvement, consultez [ici](../widgets/nav-widgets.md#bearing-widget).
 
 
-## Map Tilt and Horizon
+## Inclinaison et horizon de la carte
 
 <Tabs groupId="operating-systems">
 
@@ -145,18 +145,18 @@ You can activate this feature via *Menu → Settings → Profiles → General se
 
 </Tabs>  
 
-With new map [rendering engine](../personal/global-settings.md#map-rendering-engine) you can change [camera tilt](../plugins/development.md#camera-tilt) from 90 (no tilt) to 10 degrees. Approximately at a map tilt less than 20-22 degrees (this parameter depends on zoom level), the imaginary horizon line becomes visible. Unlike the real one, the program horizon is always straight.  
+Avec le nouveau [moteur de rendu](../personal/global-settings.md#map-rendering-engine) de carte, vous pouvez modifier l'[inclinaison de la caméra](../plugins/development.md#camera-tilt) de 90 (pas d'inclinaison) à 10 degrés. À une inclinaison de carte inférieure à environ 20-22 degrés (ce paramètre dépend du niveau de zoom), la ligne d'horizon imaginaire devient visible. Contrairement à la vraie, l'horizon du programme est toujours droit.  
 
-Under the horizon, you can see so-called *haze* or *fog*. This area of the map is filled with grey color, only a few map details can be observed.  
-The use of fog is necessary since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on the OsmAnd map is currently limited to 35 tiles.  
+Sous l'horizon, vous pouvez voir ce qu'on appelle la *brume* ou le *brouillard*. Cette zone de la carte est remplie de couleur grise, seuls quelques détails de la carte peuvent être observés.  
+L'utilisation du brouillard est nécessaire car l'affichage d'objets éloignés sur la carte nécessite des ressources informatiques importantes et n'est pas toujours justifié en raison des [distorsions](../plugins/development.md#comparison-with-a-satellite-imagery) de la carte à de petits angles de vue. La distance visible sur la carte OsmAnd est donc actuellement limitée à 35 tuiles.  
 
 :::info
-Map tilt can be changed by a long tap on the screen with two fingers and moving them up/down. You can also change the tilt by tapping on the [My location](#my-location-and-zoom) icon in the lower-right corner of the screen (only 45 and 90-degree positions are available).  
-You can not change the Camera tilt when the old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
+L'inclinaison de la carte peut être modifiée par un appui long sur l'écran avec deux doigts et en les déplaçant vers le haut/bas. Vous pouvez également modifier l'inclinaison en appuyant sur l'icône [Ma position](#my-location-and-zoom) dans le coin inférieur droit de l'écran (seules les positions à 45 et 90 degrés sont disponibles).  
+Vous ne pouvez pas modifier l'inclinaison de la caméra lorsque l'ancien [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine) (version 1) est activé.
 :::
 
 
-## Touch Screen Lock
+## Verrouillage de l'écran tactile
 
 <Tabs groupId="operating-systems">
 
@@ -174,62 +174,62 @@ You can not change the Camera tilt when the old [map rendering engine](../person
 
 </Tabs>
 
-Use the **Touch Screen Lock** feature to avoid accidental taps during navigation. This is especially helpful for activities like cycling or hiking, where unintentional touches might disrupt your route.
+Utilisez la fonction **Verrouillage de l'écran tactile** pour éviter les appuis accidentels pendant la navigation. Cela est particulièrement utile pour des activités comme le cyclisme ou la randonnée, où des touches involontaires pourraient perturber votre itinéraire.
 
-**Unlocking**.  
-Tap the on-screen button, or, if the lock is activated, via an external button (e.g., Volume Down), press the external button and tap the on-screen button.  
+**Déverrouillage**.  
+Appuyez sur le bouton à l'écran, ou, si le verrouillage est activé, via un bouton externe (par exemple, Volume bas), appuyez sur le bouton externe et appuyez sur le bouton à l'écran.  
 
-**Setup**.
+**Configuration**.
 
-- Navigate to *Menu → Configure screen → Custom buttons*.
-- Select *+ → Add action → Interface → Touch Screen Lock*.
+- Naviguez vers *Menu → Configurer l'écran → Boutons personnalisés*.
+- Sélectionnez *+ → Ajouter une action → Interface → Verrouillage de l'écran tactile*.
 
-Clear on-screen messages will guide you when locking or unlocking the screen.
+Des messages clairs à l'écran vous guideront lors du verrouillage ou du déverrouillage de l'écran.
 
 
-## Settings
+## Paramètres
 
-### Extra Compass Settings  
+### Paramètres supplémentaires de la boussole  
 
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Smoothes the rotation of the map with a slower rotation animation, although this introduces a slight delay, not more than 1 second.  
+- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Lisse la rotation de la carte avec une animation de rotation plus lente, bien que cela introduise un léger délai, pas plus de 1 seconde.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
 
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Smoothes the rotation of the map with a slower rotation animation, although this introduces a slight delay, not more than 1 second.  
+- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Lisse la rotation de la carte avec une animation de rotation plus lente, bien que cela introduise un léger délai, pas plus de 1 seconde.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
 
-### No Animations
+### Pas d'animations
 
 <InfoAndroidOnly/>  
 
-You can disable all map animations during map interactions, including gestures and buttons.  
+Vous pouvez désactiver toutes les animations de carte lors des interactions avec la carte, y compris les gestes et les boutons.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
 
-### Animate Own Position
+### Animer ma position
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
+**Android** : *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
+**iOS** : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
 
-Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable it if such issues arise.
+Crée un effet de panoramique de carte fluide par rapport à l'icône *[Ma position](../personal/profiles/#profile-appearance)* lorsque vous êtes en mouvement. L'effet introduit un léger délai par rapport à la réalité d'environ 1 seconde. L'activation de cette option a été signalée comme créant des problèmes de décalage prononcés dans certaines circonstances, désactivez-la si de tels problèmes surviennent.
 
 
-## External Input Devices
+## Périphériques d'entrée externes
 
-External input device buttons provide a convenient and efficient way to interact with the map and the OsmAnd application interface.  They are located on external devices, such as **Bluetooth or other types of keyboards**, **specialized buttons on vehicle navigation devices**, or [WunderLINQ](https://blackboxembedded.com/) and [Parrot](https://www.parrot.com/en) controllers.  
+Les boutons des périphériques d'entrée externes offrent un moyen pratique et efficace d'interagir avec la carte et l'interface de l'application OsmAnd. Ils sont situés sur des périphériques externes, tels que des **claviers Bluetooth ou d'autres types**, des **boutons spécialisés sur les appareils de navigation de véhicules**, ou des contrôleurs [WunderLINQ](https://blackboxembedded.com/) et [Parrot](https://www.parrot.com/en).  
 
-One of the main functions of buttons on external input devices is to zoom in and out of the map. They also allow you to navigate the map and change its orientation without having to tap and gesture on the screen. Buttons on external input devices support many other functions, such as opening the *Main Menu*.
+L'une des fonctions principales des boutons des périphériques d'entrée externes est de zoomer et dézoomer sur la carte. Ils vous permettent également de naviguer sur la carte et de modifier son orientation sans avoir à appuyer et à faire des gestes sur l'écran. Les boutons des périphériques d'entrée externes prennent en charge de nombreuses autres fonctions, telles que l'ouverture du *Menu principal*.
 
 :::note
-The keyboard remains functional even when the *External input devices* option is turned off, and *None* is selected.
+Le clavier reste fonctionnel même lorsque l'option *Périphériques d'entrée externes* est désactivée et que *Aucun* est sélectionné.
 :::
 
-### Preconfigured Input Device
+### Périphérique d'entrée préconfiguré
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 ![External devices](@site/static/img/map/external_menu_android.png) ![External devices](@site/static/img/map/external_types_android.png)
 
@@ -237,7 +237,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_strin
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
 ![External devices](@site/static/img/map/external_types_ios.png)
 
@@ -245,43 +245,43 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>  
 
-To access the settings of an external input device, you need to enable this feature.
+Pour accéder aux paramètres d'un périphérique d'entrée externe, vous devez activer cette fonction.
 
-- Go to the main *Menu → Settings →* select the *Profile → General settings → Other → External input devices*, and switch to *Enabled*.
+- Allez dans le *Menu principal → Paramètres →* sélectionnez le *Profil → Paramètres généraux → Autre → Périphériques d'entrée externes*, et passez à *Activé*.
 
-- Select a device from those supported by OsmAnd by tapping the *Type* item in the list:  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*Android only*), or create [**your own type**](#custom-input-device-type) (*Android only*).
+- Sélectionnez un appareil parmi ceux pris en charge par OsmAnd en appuyant sur l'élément *Type* dans la liste :  
+    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*Android uniquement*), ou créez [**votre propre type**](#custom-input-device-type) (*Android uniquement*).
 
-- There is a different **defined action-key bundle** assignment for each type of external input device. Tap the *<Translate android="true" ids="key_assignments"/>* to see a list of actions and keys. The table of keys is shown below.
+- Il existe une **affectation différente de l'ensemble action-clé** définie pour chaque type de périphérique d'entrée externe. Appuyez sur les *<Translate android="true" ids="key_assignments"/>* pour voir une liste d'actions et de clés. Le tableau des clés est présenté ci-dessous.
 
-- You can read more about external input device actions on GitHub in the [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82) package.
+- Vous pouvez en savoir plus sur les actions des périphériques d'entrée externes sur GitHub dans le package [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82).
 
-| Key | Device | Action |
+| Clé | Appareil | Action |
 |:---------|:---------------|:---------------|
-|**C**| *Keyboard*   | Move - [To My location](#my-location-and-zoom) |
-|**D**| *Keyboard*   | Change - [Map orientation](#map-orientation-modes) |
-|**N**| *Keyboard*   | Show / Hide - Navigation view |
-|**S**| *Keyboard*   | Show / Hide - [Search view](../search/index.md) |
-|**P**| *Keyboard*   | Change - App profile to next |
-|**O**| *Keyboard*   | Change - App profile to previous |
-|**&#8593;**| *Keyboard*   | Move - Map up  |
-|**&#8595;**| *Keyboard*   | Move - Map down  |
-|**&#8592;**| *Keyboard*   | Move - Map to the left  |
-|**&#8594;**| *Keyboard*   | Move - Map to the right  |
-|**&#43;** **=**| *Keyboard*  | Map - [Zoom in](#my-location-and-zoom) |
-|**&#8722;**| *Keyboard*  | Map - [Zoom out](#my-location-and-zoom) |
-|**Press back**| *Keyboard*   | Navigate – Previous screen  |
-|**&#8595;**| *Wunderlinq*  | Map - [Zoom out](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq*  | Map - [Zoom in](#my-location-and-zoom) |
-| **ESC** | *Wunderlinq*  | Open WunderLINQ Datagrid |
-| **M** <br/> (*legacy Android*) | *Keyboard*  | Show / Hide - [Side menu](../start-with/main-menu.md#main-menu-drawer) |
-| **Joystick press** <br/> (*legacy Android*) | *Keyboard*  | Move - [To My location](#my-location-and-zoom) |
-| **Media button** <br/> (*Android only*)| *Keyboard*  | Show / Hide - [AV notes](../plugins/audio-video-notes.md#add-note-on-the-map) |
-| **&#8592;** <br/> (*Android only*)| *Parrot*  | Map - [Zoom out](#my-location-and-zoom) |
-| **&#8594;** <br/> (*Android only*) | *Parrot*  | Map - [Zoom in](#my-location-and-zoom) |
+|**C**| *Clavier*   | Déplacer - [Vers ma position](#my-location-and-zoom) |
+|**D**| *Clavier*   | Changer - [Orientation de la carte](#map-orientation-modes) |
+|**N**| *Clavier*   | Afficher / Masquer - Vue de navigation |
+|**S**| *Clavier*   | Afficher / Masquer - [Vue de recherche](../search/index.md) |
+|**P**| *Clavier*   | Changer - Profil d'application vers le suivant |
+|**O**| *Clavier*   | Changer - Profil d'application vers le précédent |
+|**&#8593;**| *Clavier*   | Déplacer - Carte vers le haut  |
+|**&#8595;**| *Clavier*   | Déplacer - Carte vers le bas  |
+|**&#8592;**| *Clavier*   | Déplacer - Carte vers la gauche  |
+|**&#8594;**| *Clavier*   | Déplacer - Carte vers la droite  |
+|**&#43;** **=**| *Clavier*  | Carte - [Zoom avant](#my-location-and-zoom) |
+|**&#8722;**| *Clavier*  | Carte - [Zoom arrière](#my-location-and-zoom) |
+|**Appuyer sur retour**| *Clavier*   | Naviguer – Écran précédent  |
+|**&#8595;**| *Wunderlinq*  | Carte - [Zoom arrière](#my-location-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Carte - [Zoom avant](#my-location-and-zoom) |
+| **ESC** | *Wunderlinq*  | Ouvrir la grille de données WunderLINQ |
+| **M** <br/> (*Android hérité*) | *Clavier*  | Afficher / Masquer - [Menu latéral](../start-with/main-menu.md#main-menu-drawer) |
+| **Appui sur joystick** <br/> (*Android hérité*) | *Clavier*  | Déplacer - [Vers ma position](#my-location-and-zoom) |
+| **Bouton média** <br/> (*Android uniquement*)| *Clavier*  | Afficher / Masquer - [Notes AV](../plugins/audio-video-notes.md#add-note-on-the-map) |
+| **&#8592;** <br/> (*Android uniquement*)| *Parrot*  | Carte - [Zoom arrière](#my-location-and-zoom) |
+| **&#8594;** <br/> (*Android uniquement*) | *Parrot*  | Carte - [Zoom avant](#my-location-and-zoom) |
 
 
-### Custom Input Device Type
+### Type de périphérique d'entrée personnalisé
 
 <InfoAndroidOnly />
 
@@ -289,45 +289,47 @@ To access the settings of an external input device, you need to enable this feat
 
 ![External devices](@site/static/img/map/external_mypilot_android.png)  ![External devices](@site/static/img/map/external_mypilot2_android.png)
 
-If you want to assign keys for an external input device (such as a keyboard, joystick, or controller), you need to create a device type: go to the [External Input Device](#external-input-devices) setting, select **Type** from the list, tap the&nbsp;  "**＋**"  &nbsp; and enter a name. Each type has a menu with the following options: ***Rename, Duplicate***, and ***Remove***.
+Si vous souhaitez attribuer des touches à un périphérique d'entrée externe (tel qu'un clavier, un joystick ou un contrôleur), vous devez créer un type de périphérique : accédez au paramètre [Périphérique d'entrée externe](#external-input-devices), sélectionnez **Type** dans la liste, appuyez sur le &nbsp;"**＋**"&nbsp; et entrez un nom. Chaque type dispose d'un menu avec les options suivantes : ***Renommer, Dupliquer*** et ***Supprimer***.
 
-### Add Action & Key Asssigments
+### Ajouter une action et des attributions de touches
 
 ![External devices](@site/static/img/map/external_custom_4_andr.png)  ![External devices](@site/static/img/map/external_custom_3_andr.png)
 
-After you have created a custom input type, you can assign the required actions to the keys. A wide range of [action types](../widgets/quick-action.md#action-types) from the Quick Action widget is available.
+Après avoir créé un type d'entrée personnalisé, vous pouvez attribuer les actions requises aux touches. Une large gamme de [types d'actions](../widgets/quick-action.md#action-types) du widget Action rapide est disponible.
 
-- Select a device type, then tap the **Key assignments** item.
-- Tap the ***Add*** button (&nbsp;"**＋**"&nbsp;) in the bottom right corner of the screen.
-- Select the required action then tap the ***Add key*** field and tap the button on your device to assign it to the action.  
+- Sélectionnez un type de périphérique, puis appuyez sur l'élément **Attributions de touches**.
+- Appuyez sur le bouton ***Ajouter*** (&nbsp;"**＋**"&nbsp;) dans le coin inférieur droit de l'écran.
+- Sélectionnez l'action requise, puis appuyez sur le champ ***Ajouter une touche*** et appuyez sur le bouton de votre appareil pour l'attribuer à l'action.  
 
 :::note
 
-- If the button you assign is already being used for another action, you will receive a notification with the option to reassign the button or cancel the assignment.
-- Later you can change actions and key assignments or add other ones for already created actions, just select an item in the Key assignments list.
+- Si le bouton que vous attribuez est déjà utilisé pour une autre action, vous recevrez une notification avec l'option de réattribuer le bouton ou d'annuler l'attribution.
+- Plus tard, vous pourrez modifier les actions et les attributions de touches ou en ajouter d'autres pour les actions déjà créées, il suffit de sélectionner un élément dans la liste des attributions de touches.
 
 :::
 
-### Delete Key assignment
+### Supprimer une attribution de touche
 
 ![External devices](@site/static/img/map/external_custom_1_andr.png)
 
-You can delete multiple unnecessary actions using the **Edit button** (*pencil-shaped*) in the upper right corner of the screen at once:
+Vous pouvez supprimer plusieurs actions inutiles à l'aide du **bouton Modifier** (*en forme de crayon*) dans le coin supérieur droit de l'écran à côté de *Modifier le nom* :
 
-- ***Remove one action*** per action, with the&nbsp;  "**−**"  &nbsp;button in the item field.
-- ***Remove all key assignments*** for the selected type by tapping the button in the upper right corner of the screen next to the *Edit name*.
-
-
-## Related Articles
-
-- [Map Context menu](./map-context-menu.md)
-- [Configure Map](./configure-map-menu.md)
-- [Vector maps (Map styles)](./vector-maps.md)
-- [Raster Maps (Online / Offline)](./raster-maps.md)
-- [Points on the map](./point-layers-on-map.md)
-- [Tracks and Routes](./tracks/index.md)
-- [Tracks Context menu](./tracks/track-context-menu.md)
-- [Public transport](./public-transport.md)
+- ***Supprimer une action*** par action, avec le bouton &nbsp;"**−**"&nbsp; dans le champ de l'élément.
+- ***Supprimer toutes les attributions de touches*** pour le type sélectionné en appuyant sur le bouton dans le coin supérieur droit de l'écran à côté de *Modifier le nom*.
 
 
-> *This article was last updated in December 2024*
+## Articles connexes
+
+- [Menu contextuel de la carte](./map-context-menu.md)
+- [Configurer la carte](./configure-map-menu.md)
+- [Cartes vectorielles (Styles de carte)](./vector-maps.md)
+- [Cartes raster (En ligne / Hors ligne)](./raster-maps.md)
+- [Points sur la carte](./point-layers-on-map.md)
+- [Traces et itinéraires](./tracks/index.md)
+- [Menu contextuel des traces](./tracks/track-context-menu.md)
+- [Transports en commun](./public-transport.md)
+
+
+> *Cet article a été mis à jour pour la dernière fois en décembre 2024*
+
+-- source-hash: blake2s: 334d213f4d679a5cf35fd6764834e4d7aac116a97756e62b991c6212416a93e3 --

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 14
-title: Topography
+title: Topographie
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,30 +15,30 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Vue d'ensemble
 
-:::info Paid feature
-The Topography plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.
+:::info Fonctionnalité payante
+Le plugin Topographie est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.
 :::
 
-Topography is an important feature of cartography that provides information to visually assess the terrain's relief.
-Topography information like [Contour lines](#contour-lines), [Terrain](#terrain) (*Hillshade* and *Slope*), and [3D Relief](#3d-relief) helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, or points of equal height.
+La topographie est une caractéristique importante de la cartographie qui fournit des informations pour évaluer visuellement le relief du terrain.
+Les informations topographiques telles que les [courbes de niveau](#courbes-de-niveau), le [terrain](#terrain) (*ombrage* et *pente*) et le [relief 3D](#relief-3d) aident à évaluer visuellement la configuration du terrain en visualisant l'altitude, le relief, les extrêmes, la pente ou les points de même hauteur.
 
-Each feature provided by this plugin is an independent map layer that, when enabled, can be displayed above or below the main map source depending on the [settings](../map/raster-maps.md#overlay-layer).  
+Chaque fonctionnalité fournie par ce plugin est une couche de carte indépendante qui, lorsqu'elle est activée, peut être affichée au-dessus ou en dessous de la source de carte principale en fonction des [paramètres](../map/raster-maps.md#overlay-layer).
 
-The Topography plugin provides access to the following map types:  
+Le plugin Topographie donne accès aux types de cartes suivants :
 
-- [Contour lines](#contour-lines). This is a [vector map](../map/vector-maps.md) represented in [**meters** or **feet**](#contour-lines-meters-or-feet). Contour lines show elevation levels and help visualize the terrain.
-- [Hillshade](#hillshade-slope-and-altitude-layers). Types of maps with shading of hills and slopes make the relief more visible and help to visually interpret the terrain.
-- [Slope](#hillshade-slope-and-altitude-layers). [Raster](../map/raster-maps.md) layer that provides information about the steepness of slopes, which can be important for route planning and safety.
-- [3D Relief](#3d-relief). It is a [vector map](../map/vector-maps.md) that provides a three-dimensional representation of the terrain, available only with [OsmAnd Pro subscription](../purchases/index.md).
+- [Courbes de niveau](#courbes-de-niveau). Il s'agit d'une [carte vectorielle](../map/vector-maps.md) représentée en [**mètres** ou **pieds**](#courbes-de-niveau-mètres-ou-pieds). Les courbes de niveau montrent les niveaux d'altitude et aident à visualiser le terrain.
+- [Ombrage](#couches-dombrage-pente-et-altitude). Les types de cartes avec ombrage des collines et des pentes rendent le relief plus visible et aident à interpréter visuellement le terrain.
+- [Pente](#couches-dombrage-pente-et-altitude). Couche [raster](../map/raster-maps.md) qui fournit des informations sur la raideur des pentes, ce qui peut être important pour la planification d'itinéraires et la sécurité.
+- [Relief 3D](#relief-3d). Il s'agit d'une [carte vectorielle](../map/vector-maps.md) qui fournit une représentation tridimensionnelle du terrain, disponible uniquement avec l'[abonnement OsmAnd Pro](../purchases/index.md).
 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-| Contour Lines | Hillshade | Slope |
+| Courbes de niveau | Ombrage | Pente |
 |:---|:---|:---|
 | ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
@@ -46,7 +46,7 @@ The Topography plugin provides access to the following map types:
 
 <TabItem value="ios" label="iOS">
 
-| Contour Lines | Hillshade | Slope |
+| Courbes de niveau | Ombrage | Pente |
 |:---|:---|:---|
 | ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
@@ -54,54 +54,54 @@ The Topography plugin provides access to the following map types:
 
 </Tabs>
 
-#### License for DEM data used by OsmAnd for terrain detection
+#### Licence pour les données DEM utilisées par OsmAnd pour la détection du terrain
 
-The altitude data on the map (between 70 degrees north latitude and 70 degrees south latitude) were obtained from measurements made as a part of the *Shuttle Radar Topography Mission (SRTM)*. It utilized the *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, the primary imaging tool in *NASA's Earth Observation System*.  
-For complete information, see the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
+Les données d'altitude sur la carte (entre 70 degrés de latitude nord et 70 degrés de latitude sud) ont été obtenues à partir de mesures effectuées dans le cadre de la *Shuttle Radar Topography Mission (SRTM)*. Elle a utilisé l'*Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, le principal outil d'imagerie du *Earth Observation System de la NASA*.
+Pour des informations complètes, voir la [Licence](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
-<details><summary>DEM (DSM) data</summary>
-   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
+<details><summary>Données DEM (DSM)</summary>
+   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Les données originales utilisées pour ce produit ont été fournies par AW3D de la JAXA.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).</details>
+	- <a href="https://sonny.4lima.de">Modèles numériques de terrain LiDAR de l'Europe de Sonny</a> (MNT).</details>
 
 
-## Required Setup Parameters
+## Paramètres de configuration requis
 
-To display **Contour lines** and **Terrain (Hillshade, Slope)** data on the map:
+Pour afficher les données de **courbes de niveau** et de **terrain (ombrage, pente)** sur la carte :
 
-1. **Purchase**: [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/index.md#purchase)
-2. [Enable](../plugins/index.md#enable--disable) Topography plugin in the Plugins section of the *Main Menu*.
-3. [Download](#download-maps): Contour lines, Hillshade, Slope, or Terrain map (3D) maps.
-4. **Enable and adjust**: Contour lines, Hillshade, or Slope for the map view.
-5. You can also watch [YouTube tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
+1. **Achat** : [Plan d'achat OsmAnd+, OsmAnd Maps+ ou OsmAnd Pro](../plugins/index.md#purchase)
+2. [Activer](../plugins/index.md#enable--disable) le plugin Topographie dans la section Plugins du *Menu principal*.
+3. [Télécharger](#télécharger-des-cartes) : cartes de courbes de niveau, d'ombrage, de pente ou de terrain (3D).
+4. **Activer et ajuster** : Courbes de niveau, Ombrage ou Pente pour l'affichage de la carte.
+5. Vous pouvez également regarder le [tutoriel YouTube](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).
 
-To display [**3D Relief**](#3d-relief) you need to purchase the *OsmAnd Pro* plan, including access to the Topography plugin.
-
-
-## Download Maps
-
-To start working with the plugin functionality, you need to download the maps you are interested in. Some maps, such as Contour Lines for mountainous regions, can be quite large, exceeding 2 GB, and may not be supported on outdated devices.
-
-For stable work and to save resources, you can download a map not of the entire country, but of its specific regions, if such regions are offered in the application. Information about the size of each map type is listed under their name.
+Pour afficher le [**relief 3D**](#relief-3d), vous devez acheter le plan *OsmAnd Pro*, qui inclut l'accès au plugin Topographie.
 
 
-### 3D Relief Maps  
+## Télécharger des cartes
+
+Pour commencer à utiliser les fonctionnalités du plugin, vous devez télécharger les cartes qui vous intéressent. Certaines cartes, comme les courbes de niveau pour les régions montagneuses, peuvent être assez volumineuses, dépassant 2 Go, et peuvent ne pas être prises en charge sur les appareils obsolètes.
+
+Pour un fonctionnement stable et pour économiser des ressources, vous pouvez télécharger une carte non pas de tout le pays, mais de ses régions spécifiques, si de telles régions sont proposées dans l'application. Les informations sur la taille de chaque type de carte sont indiquées sous leur nom.
+
+
+### Cartes de relief 3D
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
 ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
-</TabItem>  
+</TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
 ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
@@ -109,12 +109,12 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worl
 
 </Tabs>
 
-You need to download **Terrain map (3D)** maps to display Hillshade, Slope, and 3D Relief. After downloading maps, you can display **Contour lines** and **Terrain** using the [Configure map](../map/configure-map-menu.md) section of the *Main Menu*.
+Vous devez télécharger les cartes **Terrain map (3D)** pour afficher l'ombrage, la pente et le relief 3D. Après avoir téléchargé les cartes, vous pouvez afficher les **courbes de niveau** et le **terrain** à l'aide de la section [Configurer la carte](../map/configure-map-menu.md) du *Menu principal*.
 
-If the map displayed on the screen is not downloaded, then in *Menu → Configure map → Topography section → Terrain* at the bottom of the list of features the section *Download maps* with suggested additional maps will be displayed.
+Si la carte affichée à l'écran n'est pas téléchargée, alors dans *Menu → Configurer la carte → Section Topographie → Terrain*, en bas de la liste des fonctionnalités, la section *Télécharger des cartes* avec des cartes supplémentaires suggérées s'affichera.
 
 
-### Contour Lines (Meters or Feet)
+### Courbes de niveau (mètres ou pieds)
 
 <Tabs groupId="operating-systems">
 
@@ -124,26 +124,26 @@ If the map displayed on the screen is not downloaded, then in *Menu → Configur
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
 ![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-For [**Contour lines**](#contour-lines), you need to determine in which [units](../personal/profiles.md#units--formats) (meters or feet) they will be displayed on the map and download the appropriate version of the map to your device.
+Pour les [**courbes de niveau**](#courbes-de-niveau), vous devez déterminer dans quelles [unités](../personal/profiles.md#units--formats) (mètres ou pieds) elles seront affichées sur la carte et télécharger la version appropriée de la carte sur votre appareil.
 
-**The unit options are not interchangeable**, so if you need to switch from meters to feet or the reverse, you are required to uninstall the previous version of the Contour lines map to download the new version.
+**Les options d'unité ne sont pas interchangeables**, donc si vous devez passer des mètres aux pieds ou inversement, vous devez désinstaller la version précédente de la carte des courbes de niveau pour télécharger la nouvelle version.
 
 
-## Contour Lines
+## Courbes de niveau
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
 ![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
@@ -151,29 +151,29 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_ma
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Contour lines*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Courbes de niveau*
 
 ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-[Contour lines](../map/vector-maps.md#-contour-lines) are a graphical representation of elevations on a map and are available as vector maps. They form lines corresponding to points with the same altitude, which form contours that allow you to determine in which direction and how much the surface slopes.
+Les [courbes de niveau](../map/vector-maps.md#-contour-lines) sont une représentation graphique des altitudes sur une carte et sont disponibles sous forme de cartes vectorielles. Elles forment des lignes correspondant à des points de même altitude, qui forment des contours permettant de déterminer dans quelle direction et de combien la surface s'incline.
 
-When using the [Map rendering engine](../personal/global-settings.md#map-rendering-engine):
+Lors de l'utilisation du [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine) :
 
-- **Version 2 (OpenGL)**. Contour lines are supported in both 3D view and 3D relief mode.
-- **Version 1**. Contour lines are not supported when using tile maps sourced from the Internet.
+- **Version 2 (OpenGL)**. Les courbes de niveau sont prises en charge en mode vue 3D et en mode relief 3D.
+- **Version 1**. Les courbes de niveau ne sont pas prises en charge lors de l'utilisation de cartes tuilées provenant d'Internet.
 
-**Appearance settings**:
+**Paramètres d'apparence** :
 
-- *<Translate android="true" ids="download_srtm_maps"/>*. Toggle contour lines on or off.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Define the [zoom levels](../map/interact-with-map.md#my-location-and-zoom) at which contour lines are visible.
-- *<Translate android="true" ids="srtm_color_scheme"/>*. Choose the color for displaying contour lines.
-- *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Adjust the width of contour lines.
-- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Select the density of contour lines (Low, Medium, High). Higher densities may affect loading speed.
-- *<Translate android="true" ids="maps_and_resources"/>*. View and download contour line maps for the current region and nearby areas.
+- *<Translate android="true" ids="download_srtm_maps"/>*. Activer ou désactiver les courbes de niveau.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Définir les [niveaux de zoom](../map/interact-with-map.md#my-location-and-zoom) auxquels les courbes de niveau sont visibles.
+- *<Translate android="true" ids="srtm_color_scheme"/>*. Choisir la couleur d'affichage des courbes de niveau.
+- *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Ajuster la largeur des courbes de niveau.
+- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Sélectionner la densité des courbes de niveau (Faible, Moyenne, Élevée). Des densités plus élevées peuvent affecter la vitesse de chargement.
+- *<Translate android="true" ids="maps_and_resources"/>*. Afficher et télécharger les cartes de courbes de niveau pour la région actuelle et les zones voisines.
 
 
 ## Terrain
@@ -182,71 +182,71 @@ When using the [Map rendering engine](../personal/global-settings.md#map-renderi
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
 ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
 ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-The **Terrain** option enables and allows you to customize three features such as *Hillshade*, *Slope*, and *Altitude*.  
-Specific features:  
+L'option **Terrain** active et vous permet de personnaliser trois fonctionnalités telles que l'*Ombrage*, la *Pente* et l'*Altitude*.
+Fonctionnalités spécifiques :
 
-- Only one option can be enabled at the same time, either Hillshade, Slope, or Altitude.
-- If you do not see any changes after downloading and enabling the corresponding map, it is recommended to restart the application.
+- Une seule option peut être activée à la fois, soit Ombrage, soit Pente, soit Altitude.
+- Si vous ne voyez aucun changement après avoir téléchargé et activé la carte correspondante, il est recommandé de redémarrer l'application.
 
-The **Terrain** menu includes [color scheme](#default-color-scheme) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps-resources.md) needed to display the layer.
+Le menu **Terrain** comprend la sélection d'un [schéma de couleurs](#schéma-de-couleurs-par-défaut) avec la possibilité de le [modifier](#modifier-le-schéma-de-couleurs) (pour les [abonnés Pro](../../user/purchases/index.md)), la possibilité de modifier la transparence de la couche sur la carte ([visibilité](#visibilité)), et de sélectionner le [niveau de zoom](#niveaux-de-zoom) pour son affichage, des informations sur la taille des [données mises en cache](#taille-du-cache), et une liste des [cartes](../../user/personal/maps-resources.md) nécessaires pour afficher la couche.
 
 
-## Hillshade, Slope and Altitude Layers
+## Couches d'ombrage, de pente et d'altitude
 
-| Hillshade | Slope | Altitude |
+| Ombrage | Pente | Altitude |
 | ------ | ------- | ------- |
 | ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
 
-**Hillshade** is based on simulating surface lighting using terrain data. This method involves creating shadows and highlights based on the angle of the surface relative to the light source. As a result, you see natural hills, valleys, and other terrain details on the map.  
+L'**ombrage** est basé sur la simulation de l'éclairage de surface à l'aide de données de terrain. Cette méthode implique la création d'ombres et de reflets en fonction de l'angle de la surface par rapport à la source lumineuse. En conséquence, vous voyez des collines, des vallées et d'autres détails naturels du terrain sur la carte.
 
-**Slope** determines the surface slope angle based on the elevation data of points on the map. Slope angle calculations are performed considering changes in elevation and distances between points, and representing this change as a slope angle.  
+La **pente** détermine l'angle d'inclinaison de la surface en fonction des données d'altitude des points sur la carte. Les calculs d'angle de pente sont effectués en tenant compte des changements d'altitude et des distances entre les points, et en représentant ce changement sous forme d'angle de pente.
 
-**Altitude** represents the elevation of points on the map relative to sea level. It helps you understand how the terrain changes in height. This feature is particularly useful for activities such as hiking or mountain biking, where knowing the altitude can assist in planning routes and managing physical exertion. Altitude data is derived from elevation models and provides a clear view of high and low points, making it easier to assess the difficulty of a route or identify peaks and valleys along your journey.
+L'**altitude** représente l'élévation des points sur la carte par rapport au niveau de la mer. Elle vous aide à comprendre comment le terrain change en hauteur. Cette fonctionnalité est particulièrement utile pour des activités telles que la randonnée ou le VTT, où connaître l'altitude peut aider à planifier des itinéraires et à gérer l'effort physique. Les données d'altitude sont dérivées de modèles d'élévation et offrent une vue claire des points hauts et bas, ce qui facilite l'évaluation de la difficulté d'un itinéraire ou l'identification des sommets et des vallées le long de votre parcours.
 
-**Hillshade**, **Slope**, and **Altitude** raster maps are created based on raster terrain data such as Digital Elevation Models (DEM).
+Les cartes raster d'**ombrage**, de **pente** et d'**altitude** sont créées à partir de données de terrain raster telles que les modèles numériques d'élévation (MNE).
 
-**Usage:**
+**Utilisation :**
 
-- *Navigation.* Helps identify steep slopes, both downhill and uphill, which can be crucial for safe navigation.
-- *Plan routes.* Helps to choose the most suitable routes, considering the terrain.
-- *Terrain estimation.* It's convenient for visualizing the landscape, especially if you're walking or biking.
+- *Navigation.* Aide à identifier les pentes raides, à la fois en descente et en montée, ce qui peut être crucial pour une navigation sûre.
+- *Planifier des itinéraires.* Aide à choisir les itinéraires les plus appropriés, en tenant compte du terrain.
+- *Estimation du terrain.* Il est pratique de visualiser le paysage, surtout si vous marchez ou faites du vélo.
 
 
-### Default Color Scheme
+### Schéma de couleurs par défaut
 
-| Hillshade | Slope | Altitude |
+| Ombrage | Pente | Altitude |
 | ------ | ------- | ------- |
 |![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
-- *Hillshade* uses dark shades to show slopes, peaks, and lowlands. Virtual Sun has a fixed azimuth (direction) of 315 degrees.
+- L'*ombrage* utilise des nuances sombres pour montrer les pentes, les sommets et les basses terres. Le soleil virtuel a un azimut (direction) fixe de 315 degrés.
 
-- *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://en.wikipedia.org/wiki/Grade_(slope)). Each color corresponds to an angle of deviation from the horizontal. An additional *Slope* color scheme, ***Avalanche***, is available in the **Modify** menu.
+- La *pente* utilise la couleur pour visualiser la raideur du terrain. Vous pouvez en savoir plus [ici](https://en.wikipedia.org/wiki/Grade_(slope)). Chaque couleur correspond à un angle de déviation par rapport à l'horizontale. Un schéma de couleurs *Pente* supplémentaire, ***Avalanche***, est disponible dans le menu **Modifier**.
 
-- *Altitude*. Altitude map colors each pixel according to calculated map height using the gradient from a defined color scheme. Usually, altitude schemes are very dependent on location. In mountain areas you would prefer to distribute colors to a wider altitude range and in flat areas, you would select a color scheme with a small range between min/max altitude.
+- L'*altitude*. La carte d'altitude colore chaque pixel en fonction de la hauteur de carte calculée à l'aide du dégradé d'un schéma de couleurs défini. Habituellement, les schémas d'altitude dépendent beaucoup de l'emplacement. Dans les zones montagneuses, vous préférerez distribuer les couleurs sur une plage d'altitude plus large et dans les zones plates, vous sélectionnerez un schéma de couleurs avec une petite plage entre l'altitude min/max.
 
-> *Please read the [Color Scheme](../personal/color-palette-schemes.md) article for more information.*
+> *Veuillez lire l'article [Schéma de couleurs](../personal/color-palette-schemes.md) pour plus d'informations.*
 
 
-### Modify Color Scheme
+### Modifier le schéma de couleurs
 
-:::info Paid feature
-*Modify Color Scheme* is an **OsmAnd Pro** paid feature for [iOS](../purchases/ios.md#pro-features) and [Android](../purchases/android.md#pro-features) <ProFeature />.
+:::info Fonctionnalité payante
+*Modifier le schéma de couleurs* est une fonctionnalité payante **OsmAnd Pro** pour [iOS](../purchases/ios.md#pro-features) et [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems">
@@ -257,7 +257,7 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
 
@@ -265,110 +265,110 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 </Tabs>
 
-*Modify Color Scheme feature* allows you to select a color scheme:
+La fonctionnalité *Modifier le schéma de couleurs* vous permet de sélectionner un schéma de couleurs :
 
-- From a [predefined list](#default-color-scheme).
-- From color palette files that you have created on your computer. Custom files can be added to OsmAnd using the [import/export tool](../personal/import-export.md).
+- À partir d'une [liste prédéfinie](#schéma-de-couleurs-par-défaut).
+- À partir de fichiers de palette de couleurs que vous avez créés sur votre ordinateur. Des fichiers personnalisés peuvent être ajoutés à OsmAnd à l'aide de l'[outil d'importation/exportation](../personal/import-export.md).
 
-You can [edit these palettes](../personal/color-palette-schemes.md#edit-palette-file) to personalize the appearance of maps and routes.
+Vous pouvez [modifier ces palettes](../personal/color-palette-schemes.md#edit-palette-file) pour personnaliser l'apparence des cartes et des itinéraires.
 
 
-### Visibility
+### Visibilité
 
-| Visibility 31% | Visibility 74% |
+| Visibilité 31 % | Visibilité 74 % |
 | ------ | ------- |
 | ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used for representing the angle in the Slope parameter.
+La fonction *Visibilité* est utilisée pour ajuster la transparence des ombres pour l'ombrage et les couleurs utilisées pour représenter l'angle dans le paramètre Pente.
 
-### Zoom Levels
+### Niveaux de zoom
 
-![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
+![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)
 
-The *Scale Levels* function allows you to set the minimum and maximum values of map zoom levels, ranging from 4 to 19, at which the Hillshade or Slope map layers will be displayed.
+La fonction *Niveaux d'échelle* vous permet de définir les valeurs minimale et maximale des niveaux de zoom de la carte, allant de 4 à 19, auxquels les couches de carte Ombrage ou Pente seront affichées.
 
-### Cache Size
+### Taille du cache
 
-**Cache size** is an informational section that displays the amount of memory on your device currently used for *Terrain* data. Each time you view *Hillshade* or *Slope* information on a map, all of this data is temporarily stored in the cache for quick access and later use, avoiding additional load on your device's processor.  
+La **taille du cache** est une section informative qui affiche la quantité de mémoire sur votre appareil actuellement utilisée pour les données de *terrain*. Chaque fois que vous visualisez des informations d'*ombrage* ou de *pente* sur une carte, toutes ces données sont temporairement stockées dans le cache pour un accès rapide et une utilisation ultérieure, évitant ainsi une charge supplémentaire sur le processeur de votre appareil.
 
-**Clearing the cache** is sometimes necessary to free up space on your device or to resolve potential performance issues. To clear the cache you need to go to the *System Settings* of the device, then the path can be as follows: *Applications → OsmAnd → Storage → Clear cache*.
-
-
-### Rendering Engine (Android)
-
-**Hillshade** and **Slope** are displayed and adjusted in any selected [Map rendering engine](../personal/global-settings.md#map-rendering-engine).
-
-1. If you use the **Map rendering engine Version 1**, you need to use the normal [downloading](../start-with/download-maps.md) of Hillshade and Slope raster maps.
-
-2. If you use the **Map rendering engine Version 2 (OpenGL)**:
-    - You can continue to use the normal Hillshade and Slope raster map download type. However, to do so, you'll need to activate the [OsmAnd development plugin](../plugins/development.md) and enable the [Use raster SQLite format for hillshade and slope](../plugins/development.md#terrain) setting.
-
-    - Alternatively, you can use the [Terrain Map (3D)](../personal/maps-resources.md#paid-features-for-the-selected-location) download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
+La **vidange du cache** est parfois nécessaire pour libérer de l'espace sur votre appareil ou pour résoudre d'éventuels problèmes de performances. Pour vider le cache, vous devez accéder aux *Paramètres système* de l'appareil, puis le chemin peut être le suivant : *Applications → OsmAnd → Stockage → Vider le cache*.
 
 
-### Quick Actions
+### Moteur de rendu (Android)
+
+L'**ombrage** et la **pente** sont affichés et ajustés dans n'importe quel [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine) sélectionné.
+
+1. Si vous utilisez le **moteur de rendu de carte Version 1**, vous devez utiliser le [téléchargement](../start-with/download-maps.md) normal des cartes raster d'ombrage et de pente.
+
+2. Si vous utilisez le **moteur de rendu de carte Version 2 (OpenGL)** :
+    - Vous pouvez continuer à utiliser le type de téléchargement normal des cartes raster d'ombrage et de pente. Cependant, pour ce faire, vous devrez activer le [plugin de développement OsmAnd](../plugins/development.md) et activer le paramètre [Utiliser le format raster SQLite pour l'ombrage et la pente](../plugins/development.md#terrain).
+
+    - Alternativement, vous pouvez utiliser le téléchargement de [carte de terrain (3D)](../personal/maps-resources.md#paid-features-for-the-selected-location). Cela économise de l'espace mémoire sur votre appareil, et les effets d'ombrage, de pente et de relief 3D seront générés à partir de ceux-ci à l'aide de votre appareil.
+
+
+### Actions rapides
 
 ![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-You can use the *Quick Action* buttons on the map screen to switch the visibility of [Contour Lines](#contour-lines), [Terrain](#terrain) layers, and [Terrain color scheme](#default-color-scheme). Depending on the layer selected in the Configure map menu, assigning a *Terrain* action to the button will display *Hillshade*, *Slope*, or *Altitude*.  
+Vous pouvez utiliser les boutons *Action rapide* sur l'écran de la carte pour basculer la visibilité des [courbes de niveau](#courbes-de-niveau), des couches de [terrain](#terrain) et du [schéma de couleurs du terrain](#schéma-de-couleurs-par-défaut). En fonction de la couche sélectionnée dans le menu Configurer la carte, l'attribution d'une action *Terrain* au bouton affichera l'*ombrage*, la *pente* ou l'*altitude*.
 
-The main settings for *Show or Hide map types* are in the Topography section of the Configure Map menu. In the [Quick Action](../widgets/quick-action.md#configure-map) article, you can find a list of layers available for display. If you need quick access to this map configuration, use the *Custom Button* tool.
+Les principaux paramètres pour *Afficher ou masquer les types de carte* se trouvent dans la section Topographie du menu Configurer la carte. Dans l'article [Action rapide](../widgets/quick-action.md#configure-map), vous trouverez une liste des couches disponibles pour l'affichage. Si vous avez besoin d'un accès rapide à cette configuration de carte, utilisez l'outil *Bouton personnalisé*.
 
-- Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
-- Add one or more QA buttons to change the visibility of a particular topography layer.
+- Aller à [Ajouter une action](../widgets/quick-action.md#custom-buttons) : *Menu → Configurer l'écran → Boutons personnalisés → Action rapide → Ajouter une action → Configurer la carte*.
+- Ajoutez un ou plusieurs boutons QA pour modifier la visibilité d'une couche topographique particulière.
 
 
-## 3D Relief
+## Relief 3D
 
-:::info Pro feature
-3D Relief is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
+:::info Fonctionnalité Pro
+Le relief 3D est une fonctionnalité payante [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
 ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
 ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-The 3D Relief feature produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](../map/vector-maps.md) or any  [raster maps](../map/raster-maps.md#select-raster-maps) as a [Map Source](../map/raster-maps.md#main) or as an [Underlay/Overlay](../map/raster-maps.md#overlay-layer).
+La fonctionnalité Relief 3D produit un relief surélevé et fournit une représentation tridimensionnelle du paysage. Le relief 3D fonctionne hors ligne et peut être utilisé avec les [cartes vectorielles OsmAnd](../map/vector-maps.md) ou toute [carte raster](../map/raster-maps.md#select-raster-maps) comme [source de carte](../map/raster-maps.md#main) ou comme [sous-couche/superposition](../map/raster-maps.md#overlay-layer).
 
-***How to display 3D Relief on the map.***
+***Comment afficher le relief 3D sur la carte.***
 
-- Purchase **OsmAnd Pro** subscription for [iOS](../purchases/ios.md#pro-features) or [Android](../purchases/android.md#pro-features).
+- Achetez un abonnement **OsmAnd Pro** pour [iOS](../purchases/ios.md#pro-features) ou [Android](../purchases/android.md#pro-features).
 
-- Go to [*<Translate Android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md):
-    - **Android**: scroll to *<Translate android="true" ids="srtm_plugin_name"/> section → <Translate android="true" ids="relief_3d"/>*.
-    - **iOS**: scroll to *<Translate ios="true" ids="srtm_plugin_name"/> section → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*.
+- Aller à [*<Translate Android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md) :
+    - **Android** : faites défiler jusqu'à la section *<Translate android="true" ids="srtm_plugin_name"/> → <Translate android="true" ids="relief_3d"/>*.
+    - **iOS** : faites défiler jusqu'à la section *<Translate ios="true" ids="srtm_plugin_name"/> → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*.
 
-- Download the [Terrain map (3D)](#3d-relief-maps) of the regions, if necessary.
+- Téléchargez la [carte de terrain (3D)](#cartes-de-relief-3d) des régions, si nécessaire.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-| Vector map layer | Raster map layer |
+| Couche de carte vectorielle | Couche de carte raster |
 | ------ | ------- |
 | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
-</TabItem>  
+</TabItem>
 
 <TabItem value="ios" label="iOS">
 
-| Vector map layer | Raster map layer |
+| Couche de carte vectorielle | Couche de carte raster |
 | ------ | ------- |
 | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
@@ -377,21 +377,21 @@ The 3D Relief feature produces a raised relief and provides a three-dimensional 
 </Tabs>
 
 
-### Vertical Exaggeration
+### Exagération verticale
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Vertical exaggeration*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Exagération verticale*
 
 ![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
-</TabItem>  
+</TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Vertical exaggeration*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Exagération verticale*
 
 ![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
@@ -399,24 +399,24 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_p
 
 </Tabs>
 
-*Vertical exaggeration* is a special coefficient for *3D relief*. You can change the scale (*Vertical exaggeration*) from x1 to x3. This feature allows you to view smoother terrain contours with increased detail.
+L'*exagération verticale* est un coefficient spécial pour le *relief 3D*. Vous pouvez modifier l'échelle (*Exagération verticale*) de x1 à x3. Cette fonctionnalité vous permet de visualiser des contours de terrain plus lisses avec des détails accrus.
 
 
-### Hillshade and 3D Relief
+### Ombrage et relief 3D
 
-| Hillshade | 3D Relief |
+| Ombrage | Relief 3D |
 |--------|---------|
 | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-**Hillshade** is a type of map that displays terrain using shadows, creating a visual representation of the slope and shape of the earth's surface.  
-**3D Relief** is a feature that adds three-dimensional effects to the map.  
+L'**ombrage** est un type de carte qui affiche le terrain à l'aide d'ombres, créant une représentation visuelle de la pente et de la forme de la surface terrestre.
+Le **relief 3D** est une fonctionnalité qui ajoute des effets tridimensionnels à la carte.
 
-If you **disable** *Hillshade* and **enable** *3D Relief*, relief shadows will still be visible because *Hillshade* and *3D Relief* are two different ways of visualizing a map. *Hillshade* creates shadows based on the terrain and adds them to the map, while *3D Relief* models 3D elements to show the depth and shape of the terrain, and the shadows are part of the visualization. These features can work in parallel, and disabling *Hillshade* does not affect how 3D effects are displayed.  
+Si vous **désactivez** l'*ombrage* et **activez** le *relief 3D*, les ombres du relief seront toujours visibles car l'*ombrage* et le *relief 3D* sont deux façons différentes de visualiser une carte. L'*ombrage* crée des ombres basées sur le terrain et les ajoute à la carte, tandis que le *relief 3D* modélise des éléments 3D pour montrer la profondeur et la forme du terrain, et les ombres font partie de la visualisation. Ces fonctionnalités peuvent fonctionner en parallèle, et la désactivation de l'*ombrage* n'affecte pas la façon dont les effets 3D sont affichés.
 
-When **Hillshade** is **enabled**, an image with relief shadows appears more detailed, darker, and more stepped than a *3D Relief* image. The explanation is that *Hillshade* emphasizes the gradients and contrasts of the terrain, creating a sharper and more detailed image. The *3D Relief* feature gives the map a more fluid and smoothed appearance, softening the terrain and potentially reducing the visibility of some finer details.
+Lorsque l'**ombrage** est **activé**, une image avec des ombres de relief apparaît plus détaillée, plus sombre et plus étagée qu'une image de *relief 3D*. L'explication est que l'*ombrage* accentue les dégradés et les contrastes du terrain, créant une image plus nette et plus détaillée. La fonctionnalité *relief 3D* donne à la carte une apparence plus fluide et plus lissée, adoucissant le terrain et réduisant potentiellement la visibilité de certains détails plus fins.
 
 
-## Combine Layer Types
+## Combiner les types de couches
 
 <Tabs groupId="operating-systems">
 
@@ -424,7 +424,7 @@ When **Hillshade** is **enabled**, an image with relief shadows appears more det
 
 ![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
-</TabItem>  
+</TabItem>
 
 <TabItem value="ios" label="iOS">
 
@@ -434,27 +434,29 @@ When **Hillshade** is **enabled**, an image with relief shadows appears more det
 
 </Tabs>
 
-OsmAnd allows you to combine multiple types of map layers for a more visual display.
+OsmAnd vous permet de combiner plusieurs types de couches de carte pour un affichage plus visuel.
 
-- The combination of **Contour lines** and **Hillshade** is optimal for visually and numerically estimating mountain slope steepness.
-- The combination of **Contour lines** and **Slope** layers is best for estimating slope steepness and finding points with the same height.
-- The combination of **3D Relief** and **Hillshade** layers lets you get a more realistic and visual representation of the terrain, relief, and landscape details. This combination is especially suitable for mountainous and hilly terrain.
+- La combinaison des **courbes de niveau** et de l'**ombrage** est optimale pour estimer visuellement et numériquement la raideur des pentes de montagne.
+- La combinaison des **courbes de niveau** et des couches de **pente** est la meilleure pour estimer la raideur des pentes et trouver des points de même hauteur.
+- La combinaison des couches de **relief 3D** et d'**ombrage** vous permet d'obtenir une représentation plus réaliste et visuelle du terrain, du relief et des détails du paysage. Cette combinaison est particulièrement adaptée aux terrains montagneux et vallonnés.
 
 
-## Related Articles
+## Articles connexes
 
-- [Interact with Map](../../user/map/interact-with-map.md)
-- [Global Settings](../../user/personal/global-settings.md)
-- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+- [Interagir avec la carte](../../user/map/interact-with-map.md)
+- [Paramètres globaux](../../user/personal/global-settings.md)
+- [Cartes vectorielles (styles de carte)](../../user/map/vector-maps.md)
 
-### Common Issues and Solutions
+### Problèmes courants et solutions
 
 <!-- Troubleshooting Steps-->
 
-1. How to restore the Topography (formerly Contour lines) plugin purchase. [(check)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
-2. Contour Lines, Elevation data or 3D Relief are not displayed. [(check)](../troubleshooting/setup.md#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-3. The map automatically switches to 3D mode during navigation:  
-    - Ensure the **3D Mode** button is disabled in the **Menu → Configure Screen → Buttons → Default Buttons**.  
-    - Check if any Terrain features are enabled in **Menu → Configure Map → Topography** that may trigger a 3D effect.
+1. Comment restaurer l'achat du plugin Topographie (anciennement Courbes de niveau). [(vérifier)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
+2. Les courbes de niveau, les données d'altitude ou le relief 3D ne sont pas affichés. [(vérifier)](../troubleshooting/setup.md#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
+3. La carte passe automatiquement en mode 3D pendant la navigation :
+    - Assurez-vous que le bouton **Mode 3D** est désactivé dans le **Menu → Configurer l'écran → Boutons → Boutons par défaut**.
+    - Vérifiez si des fonctionnalités de terrain sont activées dans **Menu → Configurer la carte → Topographie** qui pourraient déclencher un effet 3D.
 
-> *This article was last updated in January 2025*
+> *Cet article a été mis à jour pour la dernière fois en janvier 2025*
+
+-- source-hash: blake2s: 933f553f35b03d554789bdbb294dabc7fc0fb98edd6422aa7d931c9bb06a034d --

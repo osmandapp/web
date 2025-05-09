@@ -3,113 +3,115 @@ sidebar_position: 5
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# How to Compile the Android Version
+# Comment compiler la version Android
 
 
-**Android SDK**:
-Min sdk version: [21](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L38)
-Target sdk version: [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build-common.gradle#L6)
-Target sdk tools: [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build-common.gradle#L6)
+**Android SDK** :
+Version SDK minimale : [21](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L38)
+Version SDK cible : [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build-common.gradle#L6)
+Outils SDK cibles : [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build-common.gradle#L6)
 
-**Android NDK**: 23.
+**Android NDK** : 23.
 
 
-## Compile Android apk
-1. First setup the **[development environment](setup-the-dev-environment.md)**.
-2. **Gradle** (command line):
-    -  Specify  **environment variables**.   ANDROID_SDK and ANDROID_HOME are where Android studio places things:
+## Compiler l'apk Android
+1. Configurez d'abord l'**[environnement de développement](setup-the-dev-environment.md)**.
+2. **Gradle** (ligne de commande) :
+    - Spécifiez les **variables d'environnement**. ANDROID_SDK et ANDROID_HOME sont les emplacements où Android Studio place les éléments :
     ```
-    export ANDROID_SDK=/[your-path]/Android/sdk
-    export ANDROID_NDK=/[your-path]/android-ndk-23
-    export ANDROID_HOME=/[your-path]/Android/sdk
+    export ANDROID_SDK=/[votre-chemin]/Android/sdk
+    export ANDROID_NDK=/[votre-chemin]/android-ndk-23
+    export ANDROID_HOME=/[votre-chemin]/Android/sdk
     ```
-    - Compile with command line 
+    - Compilez avec la ligne de commande
     ```
     cd android/OsmAnd && ../gradlew assembleNightlyFreeLegacyFatDebug
     ```
-3. **Android Studio**:
+3. **Android Studio** :
  ```
  import android project and run module flavor `android.OsmAnd`
  ```
-4. You may use our [debug.keystore](https://github.com/osmandapp/Osmand/tree/master/keystores) to make builds compatible with the nightly build.
+4. Vous pouvez utiliser notre [debug.keystore](https://github.com/osmandapp/Osmand/tree/master/keystores) pour rendre les builds compatibles avec la nightly build.
 
 
-### Gradle tasks / flavors
+### Tâches / saveurs Gradle
 
-Gradle task **assembleNightlyFreeLegacyFatDebug** will produce apk at *android/OsmAnd/build/outputs/apk/* *nightlyFreeLegacyFat/debug/OsmAnd-nightlyFree-legacy-fat-debug.apk*. Task name *assembleNightlyFreeLegacyFatDebug* consists of :
-- assemble - standard task to build apk
-- nightlyFree - build flavor described below
-- legacy - legacy / opengl / opengldebug - defines whether produced apk will have native libraries to use opengl map rendering or not. More information in OsmAnd development plugin.
-- fat - fat (all native targets) / armv7 / arm64 / x86 / armonly - select which native libraries will be inside apk.
-- debug - debug / release - standard task
+La tâche Gradle **assembleNightlyFreeLegacyFatDebug** produira l'apk dans *android/OsmAnd/build/outputs/apk/* *nightlyFreeLegacyFat/debug/OsmAnd-nightlyFree-legacy-fat-debug.apk*. Le nom de la tâche *assembleNightlyFreeLegacyFatDebug* se compose de :
+- assemble - tâche standard pour construire l'apk
+- nightlyFree - saveur de build décrite ci-dessous
+- legacy - legacy / opengl / opengldebug - définit si l'apk produit aura des bibliothèques natives pour utiliser le rendu de carte opengl ou non. Plus d'informations dans le plugin de développement OsmAnd.
+- fat - fat (toutes les cibles natives) / armv7 / arm64 / x86 / armonly - sélectionne les bibliothèques natives qui seront dans l'apk.
+- debug - debug / release - tâche standard
 
-To build bundle you could use **bundle${FLAVOR}LegacyFatRelease**.
+Pour construire un bundle, vous pouvez utiliser **bundle${FLAVOR}LegacyFatRelease**.
 
 
-| Flavor |  Package | Description
+| Saveur | Paquet | Description
 |:--------|:---------------|:---------------|
-| nightlyFree | net.osmand.dev | Nightly free build that could be installed next to both of GPlay versions for testing and exploring needs
-| androidFull | net.osmand.plus | Full OsmAnd~ version could be used for F-Droid builds. Doesn't use GooglePlay services.
-| amazonFree | net.osmand | Amazon OsmAnd - doesn't use GooglePlay services 
-| amazonFull | net.osmand.plus | Amazon OsmAnd+ - doesn't use GooglePlay services
-| gplayFree | net.osmand | Google Play OsmAnd version - uses GooglePlay services.
-| gplayFull | net.osmand.plus | Google Play OsmAnd+ version - uses GooglePlay services.
-| huawei | net.osmand | Special build for Huawei market - uses Huawei services but not Google Play
+| nightlyFree | net.osmand.dev | Build gratuite nocturne qui peut être installée à côté des deux versions GPlay pour les tests et l'exploration
+| androidFull | net.osmand.plus | La version complète d'OsmAnd~ peut être utilisée pour les builds F-Droid. N'utilise pas les services GooglePlay.
+| amazonFree | net.osmand | Amazon OsmAnd - n'utilise pas les services GooglePlay
+| amazonFull | net.osmand.plus | Amazon OsmAnd+ - n'utilise pas les services GooglePlay
+| gplayFree | net.osmand | Version Google Play OsmAnd - utilise les services GooglePlay.
+| gplayFull | net.osmand.plus | Version Google Play OsmAnd+ - utilise les services GooglePlay.
+| huawei | net.osmand | Build spéciale pour le marché Huawei - utilise les services Huawei mais pas Google Play
 
-### Debug
+### Débogage
 
-#### Enable NDK debug for legacy native library (OsmAnd-core-legacy)
+#### Activer le débogage NDK pour la bibliothèque native héritée (OsmAnd-core-legacy)
 
-In  OsmAnd/OsmAnd/jni/Application.mk uncomment lines
+Dans OsmAnd/OsmAnd/jni/Application.mk, décommentez les lignes
 ```
 APP_OPTIM := debug
 APP_DEBUG := true
 ```
-Add debug symbols in the Android Studio project configuration. For this go to Edit Configuration / in the left menu select Android App "OsmAnd" / in right side select tab "Debugger". And add OsmAnd/obj/local where build libraries for different configuration (arm64-v8a, armeabi-v7a, x86, x86_64).
+Ajoutez des symboles de débogage dans la configuration du projet Android Studio. Pour cela, allez dans Edit Configuration / dans le menu de gauche, sélectionnez Android App "OsmAnd" / sur le côté droit, sélectionnez l'onglet "Debugger". Et ajoutez OsmAnd/obj/local où les bibliothèques de build pour différentes configurations (arm64-v8a, armeabi-v7a, x86, x86_64).
 
 
-## Compile OpenGL library
+## Compiler la bibliothèque OpenGL
 
-Opengl library is needed for targets like assembleNightlyFree**Opengl**FatDebug and by default downloaded from [OsmAnd ivy repository](https://builder.osmand.net/ivy/net.osmand/) - [gradle task](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L187). For local development you might need to compile those library and publish to local ivy repo.
+La bibliothèque Opengl est nécessaire pour des cibles comme assembleNightlyFree**Opengl**FatDebug et est par défaut téléchargée depuis le [dépôt ivy OsmAnd](https://builder.osmand.net/ivy/net.osmand/) - [tâche gradle](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L187). Pour le développement local, vous pourriez avoir besoin de compiler ces bibliothèques et de les publier dans un dépôt ivy local.
 
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
-2. Install tools.
+1. Configurez d'abord l'**environnement de développement**, voir {% link /setup-the-dev-environment %}.
+2. Installez les outils.
     - Android SDK - 29.
     - Android NDK - 23.
     - CMake > 3.6 (cmake -version).
-    - SWIG - 4.1.1 (or compatible).
-    - Local c++ compiler (preferrable clang).
-    - Bash tools: wget, curl, python ...
-3. **Gradle** (command line):
-    -  Specify  **environment variables**.   ANDROID_SDK and ANDROID_HOME are where Android studio places things:
+    - SWIG - 4.1.1 (ou compatible).
+    - Compilateur c++ local (de préférence clang).
+    - Outils Bash : wget, curl, python ...
+3. **Gradle** (ligne de commande) :
+    - Spécifiez les **variables d'environnement**. ANDROID_SDK et ANDROID_HOME sont les emplacements où Android Studio place les éléments :
     ```
-    export ANDROID_SDK=/[your-path]/Android/sdk
-    export ANDROID_NDK=/[your-path]/android-ndk-23
-    export ANDROID_HOME=/[your-path]/Android/sdk
+    export ANDROID_SDK=/[votre-chemin]/Android/sdk
+    export ANDROID_NDK=/[votre-chemin]/android-ndk-23
+    export ANDROID_HOME=/[votre-chemin]/Android/sdk
     ```
-    - Compile with [gradle build task](https://github.com/osmandapp/OsmAnd-core/blob/master/wrappers/android/build.gradle)
+    - Compilez avec la [tâche de build gradle](https://github.com/osmandapp/OsmAnd-core/blob/master/wrappers/android/build.gradle)
     ```
     cd core/wrappers/android && ../gradlew build
     ```
-    
-**Hint**: Compilation might take a long time and you will likely don't need all platforms, so you can [comment out](https://github.com/osmandapp/OsmAnd-core/blob/master/wrappers/android/build.sh#L64) unwanted arch in the script and build only for 1 platform (x86, x86_64, arm, arm64) debug or relelease.
 
-### Debug
+**Astuce** : La compilation peut prendre beaucoup de temps et vous n'aurez probablement pas besoin de toutes les plateformes, vous pouvez donc [commenter](https://github.com/osmandapp/OsmAnd-core/blob/master/wrappers/android/build.sh#L64) les architectures indésirables dans le script et ne construire que pour 1 plateforme (x86, x86_64, arm, arm64) en mode debug ou release.
 
-To be completed: how to set up Android ndk debug.
+### Débogage
 
-## Compile API samples
+À compléter : comment configurer le débogage Android ndk.
+
+## Compiler les exemples d'API
 <IncompleteArticle/>
 
-There are 2 types of samples apps provided by OsmAnd, they are all represented in [osmand-api-demo](https://github.com/osmandapp/osmand-api-demo) Github repo and compiled regularly at [OsmAnd Builder](https://builder.osmand.net:8080/view/OsmAnd%20Builds/job/OsmAnd-API-demo/).
+Il existe 2 types d'applications d'exemple fournies par OsmAnd, elles sont toutes représentées dans le dépôt Github [osmand-api-demo](https://github.com/osmandapp/osmand-api-demo) et compilées régulièrement sur [OsmAnd Builder](https://builder.osmand.net:8080/view/OsmAnd%20Builds/job/OsmAnd-API-demo/).
 
-Compile script:
+Script de compilation :
 ```
 (cd OsmAnd-api-sample && ./gradlew clean assembleRelease)
 (cd OsmAnd-map-sample && ./gradlew clean assembleRelease)
 ```
 
-- [OsmAnd-api-sample](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-api-sample) - [the simplest sample application](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk) that interacts with with already installed OsmAnd via AIDL interface and Intents.
-- [OsmAnd-map-sample](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-map-sample) - [a sample application](https://download.osmand.net/latest-night-build/OsmAnd-map-sample.apk) has fully integrated OsmAnd inside it as SDK. Allows to use all internall APIs.
+- [OsmAnd-api-sample](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-api-sample) - [l'application d'exemple la plus simple](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk) qui interagit avec OsmAnd déjà installé via l'interface AIDL et les Intents.
+- [OsmAnd-map-sample](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-map-sample) - [une application d'exemple](https://download.osmand.net/latest-night-build/OsmAnd-map-sample.apk) qui a OsmAnd entièrement intégré en tant que SDK. Permet d'utiliser toutes les API internes.
 
-**[Read more](../osmand-api-sdk/index.md)**.
+**[En savoir plus](../osmand-api-sdk/index.md)**.
+
+-- source-hash: blake2s: 89e499909bbc779cd67dcba77868af8c03fa06282c37ac39b7cccd35351071df --

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  iOS Purchases Test
+title:  Test des achats iOS
 unlisted: true
 ---
 
@@ -13,5 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## Install OsmAnd
+## Installer OsmAnd
 
+-- source-hash: blake2s: 1fd429735af3f0580203fb791165c942574149e387c5d9bbe385ab9e78cc4754 --

@@ -14,48 +14,48 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 # iOS 5.0
 
-## Join Beta
+## Rejoindre la version bêta
 
-iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint demo). They do not contain descriptions and may have continuous versioning. They are assumed to be stable and ready to use.  
+Les versions bêta d'iOS (TestFlight) sont généralement fournies chaque semaine (après une démo Team Sprint). Elles ne contiennent pas de descriptions et peuvent avoir une version continue. Elles sont considérées comme stables et prêtes à l'emploi.
 
 <div>
-  <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Join TestFlight</a>
+  <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Rejoindre TestFlight</a>
 </div>
 
 <br/>
 
 ![OsmAnd iOS 5.0](../../blog/2025-04-15-ios-5-0/img/release_5-0_ios.png)
 
-## What's new
+## Nouveautés
 
-- [Introduced Smart Folders](#smart-folders-for-automatic-track-organization) for automatic track organization.
-- [Redesigned the image block](#redesign-image-block-in-context-menu) in context menu.
-- [Added a full-screen gallery](#gallery-viewer-for-wikimedia-images) for viewing Wikimedia images.
-- [Discover nearby areas](#polygon-selection-for-nearby-areas) with OsmAnd polygon info.
-- [Added option to toggle](#toggle-visibility-for-favorite-groups) the visibility of individual favorite groups on the map.
-- [Flexible appearance](#flexible-appearance-settings-for-favorite-groups) settings for favorite groups.
-- [Expanded icon selection](#expanded-icon-options-for-favorites) options for favorites by adding all existing icons from all POI categories.
-- [Added option to change the appearance](#change-appearance-for-multiple-tracks) of multiple tracks simultaneously.
-- [Battery level](#battery-status-for-external-sensors) display for external sensors.
-- [Added a *Reset* action](#reset-option-for-the-average-speed-widget) for the Average Speed widget.
-- [*Detailed track guidance* option and an *Attach to the roads*](#detailed-track-guidance-and-attach-to-the-roads) suggestion dialog has been added.
-- [Prominent peaks](#prominent-peaks-now-discoverable) are now discoverable on the map and in search.
-- [Added Quick Actions](#quick-actions-for-trip-recording) to manage trip recording.
-- [CarPlay address search](#improved-carplay-address-search-prioritization) has prioritized streets and buildings.
-- [Closing Configure Map](#closing-configure-map-after-tapping-the-map) menu after tapping the map.
+- [Introduction des dossiers intelligents](#smart-folders-for-automatic-track-organization) pour l'organisation automatique des traces.
+- [Refonte du bloc d'images](#redesign-image-block-in-context-menu) dans le menu contextuel.
+- [Ajout d'une galerie plein écran](#gallery-viewer-for-wikimedia-images) pour visualiser les images Wikimedia.
+- [Découvrir les zones à proximité](#polygon-selection-for-nearby-areas) avec les informations de polygone OsmAnd.
+- [Ajout d'une option pour basculer](#toggle-visibility-for-favorite-groups) la visibilité des groupes de favoris individuels sur la carte.
+- [Paramètres d'apparence flexibles](#flexible-appearance-settings-for-favorite-groups) pour les groupes de favoris.
+- [Options d'icônes étendues](#expanded-icon-options-for-favorites) pour les favoris en ajoutant toutes les icônes existantes de toutes les catégories de POI.
+- [Ajout d'une option pour modifier l'apparence](#change-appearance-for-multiple-tracks) de plusieurs traces simultanément.
+- [Niveau de batterie](#battery-status-for-external-sensors) affiché pour les capteurs externes.
+- [Ajout d'une action *Réinitialiser*](#reset-option-for-the-average-speed-widget) pour le widget Vitesse moyenne.
+- L'option [*Guidage détaillé de la trace* et un dialogue de suggestion *Attacher aux routes*](#detailed-track-guidance-and-attach-to-the-roads) ont été ajoutés.
+- [Les sommets proéminents](#prominent-peaks-now-discoverable) sont désormais découvrables sur la carte et dans la recherche.
+- [Ajout d'actions rapides](#quick-actions-for-trip-recording) pour gérer l'enregistrement de trajets.
+- [La recherche d'adresses CarPlay](#improved-carplay-address-search-prioritization) a priorisé les rues et les bâtiments.
+- [Fermeture du menu Configurer la carte](#closing-configure-map-after-tapping-the-map) après avoir tapé sur la carte.
 
 
-- [Optional updates](#optional-updates). Additional updates and refinements for the release.
+- [Mises à jour optionnelles](#optional-updates). Mises à jour et améliorations supplémentaires pour la version.
 
 
 <!--
-To docs ios:  
+To docs ios:
 
-- Added battery level display for external sensors. - https://github.com/osmandapp/OsmAnd-iOS/issues/3953 
+- Added battery level display for external sensors. - https://github.com/osmandapp/OsmAnd-iOS/issues/3953
 
 
 - Redesigned image block and separate screen for all images. - https://github.com/osmandapp/OsmAnd-iOS/issues/4062
-- Added a full-screen gallery viewer for Wikimedia images - https://github.com/osmandapp/OsmAnd-iOS/issues/4062  
+- Added a full-screen gallery viewer for Wikimedia images - https://github.com/osmandapp/OsmAnd-iOS/issues/4062
 
 
 add to docs android:
@@ -66,296 +66,297 @@ add to docs android:
 
 -->
 
-## Smart Folders for Automatic Track Organization
+## Dossiers intelligents pour l'organisation automatique des traces
 
 ![Smart Folders](../../blog/2025-04-15-ios-5-0/img/my_places_smart_folder_ios.png)
 
-**Smart Folders** for tracks are now available, enhancing the way you organize your saved locations. This feature, previously available on Android, is designed to help you manage and automatically sort your tracks into folders based on predefined criteria.
+Les **Dossiers intelligents** pour les traces sont désormais disponibles, améliorant la façon dont vous organisez vos lieux enregistrés. Cette fonctionnalité, auparavant disponible sur Android, est conçue pour vous aider à gérer et à trier automatiquement vos traces dans des dossiers basés sur des critères prédéfinis.
 
-Key features:
+Fonctionnalités clés :
 
-- **Automatic organization** - Smart Folders automatically sort tracks into categories such as *date*, *location*, *speed*, and more.
-- **Customizable sorting** - You can define how tracks are grouped using filters, making it easier to manage and find specific tracks.
-- **Improved track management** - With Smart Folders, you can quickly organize and access your tracks, making your trip planning and navigation more efficient.
+- **Organisation automatique** - Les Dossiers intelligents trient automatiquement les traces dans des catégories telles que *date*, *lieu*, *vitesse*, et plus encore.
+- **Tri personnalisable** - Vous pouvez définir comment les traces sont regroupées à l'aide de filtres, ce qui facilite la gestion et la recherche de traces spécifiques.
+- **Gestion améliorée des traces** - Avec les Dossiers intelligents, vous pouvez rapidement organiser et accéder à vos traces, rendant votre planification de voyage et votre navigation plus efficaces.
 
-How to use:  
-Go to *Menu → My Places → Tracks* and select *Add smart folder* to start organizing your tracks automatically.  
+Comment utiliser :
+Allez dans *Menu → Mes lieux → Traces* et sélectionnez *Ajouter un dossier intelligent* pour commencer à organiser automatiquement vos traces.
 
-Learn more:  
-[Smart Folder Setup for Tracks](https://osmand.net/docs/user/personal/tracks/smart-folder)
+En savoir plus :
+[Configuration des dossiers intelligents pour les traces](https://osmand.net/docs/user/personal/tracks/smart-folder)
 
 
-## Redesign Image Block in Context Menu
+## Refonte du bloc d'images dans le menu contextuel
 
 ![Redesign Image Block](../../blog/2025-04-15-ios-5-0/img/gallery_ios.png)
 
-The **image block** in the context menu has been redesigned for a more streamlined experience. Now, **Online Photos** (Wikimedia images) and **Street-level Imagery** (Mapillary images) are displayed as separate items within the menu.
+Le **bloc d'images** dans le menu contextuel a été repensé pour une expérience plus fluide. Désormais, les **Photos en ligne** (images Wikimedia) et les **Images au niveau de la rue** (images Mapillary) sont affichées comme des éléments distincts dans le menu.
 
-Key improvements:
+Améliorations clés :
 
-- **Separate sections** for Online Photos and Street-level Imagery.
-- **Gallery view** — Tapping on an image opens it in full-screen mode.
-- **Explore button** for Street-level Imagery — Opens Mapillary view for detailed street-level imagery.
-- **View all button** — A new button under photos allows users to access a **separate screen** listing all images related to the location.
+- **Sections séparées** pour les Photos en ligne et les Images au niveau de la rue.
+- **Vue galerie** — Taper sur une image l'ouvre en mode plein écran.
+- **Bouton Explorer** pour les Images au niveau de la rue — Ouvre la vue Mapillary pour des images détaillées au niveau de la rue.
+- **Bouton Tout afficher** — Un nouveau bouton sous les photos permet aux utilisateurs d'accéder à un **écran séparé** listant toutes les images liées à l'emplacement.
 
-How to use:  
-Tap on a location to open the context menu, then select **Online Photos** or **Street-level Imagery** to view images.  
+Comment utiliser :
+Tapez sur un lieu pour ouvrir le menu contextuel, puis sélectionnez **Photos en ligne** ou **Images au niveau de la rue** pour visualiser les images.
 
-Learn more:  
-[Online Photos in Map Context Menu](https://osmand.net/docs/user/map/map-context-menu#online-photos)  
+En savoir plus :
+[Photos en ligne dans le menu contextuel de la carte](https://osmand.net/docs/user/map/map-context-menu#online-photos)
 
 
-## Gallery Viewer for Wikimedia Images
+## Visionneuse de galerie pour les images Wikimedia
 
 ![Gallery](../../blog/2025-04-15-ios-5-0/img/gallery_viewer_ios.png)
 
-Introducing an enhanced **gallery viewer** for **Wikimedia images**, allowing for a more immersive photo viewing experience for points of interest.
+Présentation d'une **visionneuse de galerie** améliorée pour les **images Wikimedia**, permettant une expérience de visualisation de photos plus immersive pour les points d'intérêt.
 
-Key features:
+Fonctionnalités clés :
 
-- **Context menu integration** — Tap a POI on the map to open its context menu and access associated *Wikimedia images*.
-- **Gallery viewer** — Browse multiple images in sequence with the updated gallery layout
-- **Full-screen option** — View images in full-screen mode for better clarity and detail.
-- **Image details** — For each image, you can view key metadata such as description, date, author, and license.
+- **Intégration du menu contextuel** — Tapez sur un POI sur la carte pour ouvrir son menu contextuel et accéder aux *images Wikimedia* associées.
+- **Visionneuse de galerie** — Parcourez plusieurs images en séquence avec la disposition de galerie mise à jour.
+- **Option plein écran** — Visualisez les images en mode plein écran pour une meilleure clarté et des détails.
+- **Détails de l'image** — Pour chaque image, vous pouvez afficher les métadonnées clés telles que la description, la date, l'auteur et la licence.
 
-How to use:  
-Tap a **POI** on the map with **Wikimedia images** available, then select the **View all** option from the context menu to explore images.  
+Comment utiliser :
+Tapez sur un **POI** sur la carte avec des **images Wikimedia** disponibles, puis sélectionnez l'option **Tout afficher** dans le menu contextuel pour explorer les images.
 
-Learn more:  
-[Map Context menu](https://osmand.net/docs/user/map/map-context-menu#online-photos).
+En savoir plus :
+[Menu contextuel de la carte](https://osmand.net/docs/user/map/map-context-menu#online-photos).
 
 
-## Polygon Selection for Nearby Areas
+## Sélection de polygone pour les zones à proximité
 
 ![Poligon info](../../blog/2025-04-15-ios-5-0/img/areas_info_ios.png)
 
-The **Polygon Information** feature has been enhanced in OsmAnd for iOS, providing easier access to data about surrounding areas directly from the map.  
+La fonctionnalité **Informations sur le polygone** a été améliorée dans OsmAnd pour iOS, offrant un accès plus facile aux données sur les zones environnantes directement depuis la carte.
 
-Now, with a **long tap** the map or a **single tap** a POI, you can access detailed information about nearby polygons. This feature makes it quick and convenient to identify geographic or administrative areas around you.  
+Désormais, avec un **appui long** sur la carte ou un **appui simple** sur un POI, vous pouvez accéder à des informations détaillées sur les polygones à proximité. Cette fonctionnalité permet d'identifier rapidement et facilement les zones géographiques ou administratives autour de vous.
 
-What’s new:
+Nouveautés :
 
-- **View polygon details** — Easily access information about nearby areas from the map context menu, including their *type* and *name*.  
-- **Sorted by size** — Polygons are sorted by *size* from *smallest to largest* for better organization.
+- **Afficher les détails du polygone** — Accédez facilement aux informations sur les zones à proximité depuis le menu contextuel de la carte, y compris leur *type* et leur *nom*.
+- **Trié par taille** — Les polygones sont triés par *taille* du *plus petit au plus grand* pour une meilleure organisation.
 
-To access:  
-*Map Context menu → Details → Within*.
+Pour accéder :
+*Menu contextuel de la carte → Détails → Dans*.
 
-Learn more:  
-[Map Context menu - polygon information](https://osmand.net/docs/user/map/map-context-menu#polygon-information)
+En savoir plus :
+[Menu contextuel de la carte - informations sur le polygone](https://osmand.net/docs/user/map/map-context-menu#polygon-information)
 
 
-## Toggle Visibility for Favorite Groups
+## Basculer la visibilité des groupes de favoris
 
 ![Toggle Visibility for Favorite Groups](../../blog/2025-04-15-ios-5-0/img/visibility_favorite_groupes_ios.png)
 
-OsmAnd 5.0 introduces an updated **visibility toggle** for favorite groups, providing more control over what is displayed on the map. This feature, previously available on Android, is now also part of the iOS version.
+OsmAnd 5.0 introduit un **basculement de visibilité** mis à jour pour les groupes de favoris, offrant plus de contrôle sur ce qui est affiché sur la carte. Cette fonctionnalité, auparavant disponible sur Android, fait désormais également partie de la version iOS.
 
-Key improvements:
+Améliorations clés :
 
-- **Hide or show favorite groups** — Easily turn off visibility of specific group of favorites.
-- **Organize favorites** — Helps declutter the map by controlling which groups are visible at any given time.
-- **Improved organization** — Hidden groups are moved to the bottom of the list for better management.
+- **Masquer ou afficher les groupes de favoris** — Désactivez facilement la visibilité de groupes spécifiques de favoris.
+- **Organiser les favoris** — Aide à désencombrer la carte en contrôlant quels groupes sont visibles à un moment donné.
+- **Organisation améliorée** — Les groupes masqués sont déplacés en bas de la liste pour une meilleure gestion.
 
-How to use:  
-Go to *Menu → My Places → Favorites → long tap folder → Show on map option*.
+Comment utiliser :
+Allez dans *Menu → Mes lieux → Favoris → appui long sur le dossier → Option Afficher sur la carte*.
 
-Learn more:  
-[Favorites Management](https://osmand.net/docs/user/personal/favorites#favorite-group-actions)
+En savoir plus :
+[Gestion des favoris](https://osmand.net/docs/user/personal/favorites#favorite-group-actions)
 
 
-## Flexible Appearance Settings for Favorite Groups
+## Paramètres d'apparence flexibles pour les groupes de favoris
 
 ![Flexible Appearance Settings for Favorite Groups](../../blog/2025-04-15-ios-5-0/img/favorite_add_new_group_3_ios.png)
 
-In this release, you can **separately customize** the *icon, color*, and *shape* for each group of favorites without resetting all attributes. And then override the settings for existing points in the folder, only new favorites, or apply to all. This allows you to visually organize your saved locations more precisely.  
+Dans cette version, vous pouvez **personnaliser séparément** l'*icône, la couleur* et la *forme* de chaque groupe de favoris sans réinitialiser tous les attributs. Et ensuite, remplacer les paramètres pour les points existants dans le dossier, uniquement les nouveaux favoris, ou appliquer à tous. Cela vous permet d'organiser visuellement vos lieux enregistrés plus précisément.
 
-Learn more:  
-[Change Group Appearance](https://osmand.net/docs/user/personal/favorites/#change-group-appearance)
+En savoir plus :
+[Modifier l'apparence du groupe](https://osmand.net/docs/user/personal/favorites/#change-group-appearance)
 
 
-## Expanded Icon Options for Favorites
+## Options d'icônes étendues pour les favoris
 
 ![Icon Options for Favorites](../../blog/2025-04-15-ios-5-0/img/icons_favorites.png)
 
-In OsmAnd 5.0 for iOS, you can choose icons from all **POI categories** for your **Favorites**. The added full icon library allows you to search and select icons using the **Сustom POI search**, making it easier to organize and personalize your saved locations.
+Dans OsmAnd 5.0 pour iOS, vous pouvez choisir des icônes parmi toutes les **catégories de POI** pour vos **Favoris**. La bibliothèque d'icônes complète ajoutée vous permet de rechercher et de sélectionner des icônes à l'aide de la **recherche de POI personnalisée**, ce qui facilite l'organisation et la personnalisation de vos lieux enregistrés.
 
-Key features:
+Fonctionnalités clés :
 
-- **Choose from all POI icons** — Select from a wide range of icons available in all **POI categories** to identify specific places on the map.
-- **Search for icons** - Quickly find the perfect icon for your Favorites using the **Custom POI Search** feature.
+- **Choisir parmi toutes les icônes de POI** — Sélectionnez parmi une large gamme d'icônes disponibles dans toutes les **catégories de POI** pour identifier des lieux spécifiques sur la carte.
+- **Rechercher des icônes** - Trouvez rapidement l'icône parfaite pour vos Favoris à l'aide de la fonctionnalité **Recherche de POI personnalisée**.
 
-Learn more:  
-[Customize Favorites](https://osmand.net/docs/user/personal/favorites/#favorite-icons)
+En savoir plus :
+[Personnaliser les favoris](https://osmand.net/docs/user/personal/favorites/#favorite-icons)
 
 
-## Change Appearance for Multiple Tracks
+## Modifier l'apparence de plusieurs traces
 
 ![Change Appearance for Multiple Tracks](../../blog/2025-04-15-ios-5-0/img/tracks_change_appear_3_ios.png)
 
-You can now **change the appearance** of **multiple tracks** simultaneously through a new setting in *Selection mode*. This update makes it easier to apply consistent settings across multiple tracks, helping you quickly modify their appearance for better visualization.
+Vous pouvez désormais **modifier l'apparence** de **plusieurs traces** simultanément grâce à un nouveau paramètre dans le *mode Sélection*. Cette mise à jour facilite l'application de paramètres cohérents sur plusieurs traces, vous aidant à modifier rapidement leur apparence pour une meilleure visualisation.
 
-Parameters you can modify for all selected tracks:
+Paramètres que vous pouvez modifier pour toutes les traces sélectionnées :
 
-- **Direction arrows** — Add direction arrows.
-- **Start / Finish icons** — Display start and finish icons.
-- **Coloring** — Change the color scheme.
-- **Width** — Adjust the line width.
-- **Split interval** — Modify the split interval.
+- **Flèches de direction** — Ajouter des flèches de direction.
+- **Icônes de début / fin** — Afficher les icônes de début et de fin.
+- **Coloration** — Modifier le schéma de couleurs.
+- **Largeur** — Ajuster la largeur de la ligne.
+- **Intervalle de division** — Modifier l'intervalle de division.
 
-Learn more:  
-[Track Appearance Settings](https://osmand.net/docs/user/map/tracks/appearance)
+En savoir plus :
+[Paramètres d'apparence des traces](https://osmand.net/docs/user/map/tracks/appearance)
 
 
-## Battery Status for External Sensors
+## État de la batterie pour les capteurs externes
 
 ![Battery Status for External Sensors](../../blog/2025-04-15-ios-5-0/img/battery_level_sensors_ios.png)
 
-In OsmAnd 5.0, you can now **view the battery level** of connected external sensors as a main value. This makes it easier to monitor their status and ensures optimal performance during use.
+Dans OsmAnd 5.0, vous pouvez désormais **afficher le niveau de batterie** des capteurs externes connectés comme valeur principale. Cela facilite la surveillance de leur état et garantit des performances optimales pendant l'utilisation.
 
-Key features:
+Fonctionnalités clés :
 
-- **Battery level display** — Check the **battery level** of all connected external sensors directly in the app.
-- **Real-time monitoring** — The battery status updates in real time, helping you manage sensor power effectively.
+- **Affichage du niveau de batterie** — Vérifiez le **niveau de batterie** de tous les capteurs externes connectés directement dans l'application.
+- **Surveillance en temps réel** — L'état de la batterie se met à jour en temps réel, vous aidant à gérer efficacement l'alimentation des capteurs.
 
-How to use:
+Comment utiliser :
 
-- Go to *Menu → Plugins → External Sensors* to view connected sensors and their battery status.
-- Go to *Menu → Configure screen → Choose a panel → Add widget → External Sensors → Choose sensor → Settings → Show → Battery level*.
-- Long tap the widget on the map screen and select *Settings*.
+- Allez dans *Menu → Plugins → Capteurs externes* pour afficher les capteurs connectés et leur état de batterie.
+- Allez dans *Menu → Configurer l'écran → Choisir un panneau → Ajouter un widget → Capteurs externes → Choisir un capteur → Paramètres → Afficher → Niveau de batterie*.
+- Appuyez longuement sur le widget sur l'écran de la carte et sélectionnez *Paramètres*.
 
-Learn more:  
-[External Sensors plugin](https://osmand.net/docs/user/plugins/external-sensors)
+En savoir plus :
+[Plugin Capteurs externes](https://osmand.net/docs/user/plugins/external-sensors)
 
 
-## Reset Option for the Average Speed Widget
+## Option de réinitialisation pour le widget Vitesse moyenne
 
 ![Reset Option for the Average Speed Widget](../../blog/2025-04-15-ios-5-0/img/reset_average_speed.png)
 
-You can now **reset the average speed** directly from the *widget’s context menu*. This update adds a **Reset** action, allowing you to start fresh measurements without restarting navigation.  
+Vous pouvez désormais **réinitialiser la vitesse moyenne** directement depuis le *menu contextuel du widget*. Cette mise à jour ajoute une action **Réinitialiser**, vous permettant de recommencer les mesures sans redémarrer la navigation.
 
-What’s new:
+Nouveautés :
 
-- **Context menu option** to reset average speed via *long tap* on the widget on the map screen.  
-- **Reset action added to the widget settings** in the *Configure Screen* menu for quick access.  
+- **Option du menu contextuel** pour réinitialiser la vitesse moyenne via un *appui long* sur le widget sur l'écran de la carte.
+- **Action de réinitialisation ajoutée aux paramètres du widget** dans le menu *Configurer l'écran* pour un accès rapide.
 
-Learn more:  
-[Average Speed Widget](https://osmand.net/docs/user/widgets/info-widgets/#average-speed)
-[Configure Screen](https://osmand.net/docs/user/widgets/configure-screen#widget-settings)
+En savoir plus :
+[Widget Vitesse moyenne](https://osmand.net/docs/user/widgets/info-widgets/#average-speed)
+[Configurer l'écran](https://osmand.net/docs/user/widgets/configure-screen#widget-settings)
 
 
-## Detailed Track Guidance and Attach to the Roads
+## Guidage détaillé de la trace et attachement aux routes
 
 ![Detailed Track Guidance](../../blog/2025-04-15-ios-5-0/img/detailed_track_guidnce_ios.png)
 
-OsmAnd 5.0 for iOS introduces **Detailed Track Guidance** with the ability to **automatically attach tracks to roads**, enhancing your navigation experience.  
+OsmAnd 5.0 pour iOS introduit le **Guidage détaillé de la trace** avec la possibilité d'**attacher automatiquement les traces aux routes**, améliorant votre expérience de navigation.
 
-Key features:
+Fonctionnalités clés :
 
-- **Attach to the roads** — When using a track as your destination, OsmAnd can automatically align the track with the nearest roads for more accurate navigation. This feature is available in the **Follow track** menu.
+- **Attacher aux routes** — Lorsque vous utilisez une trace comme destination, OsmAnd peut aligner automatiquement la trace avec les routes les plus proches pour une navigation plus précise. Cette fonctionnalité est disponible dans le menu **Suivre la trace**.
 
-- **Automatic or manual confirmation**:
-  - **Ask every time** (default) — The *Attach to the roads* feature appears in the **Route Details** section each time a track-based route is calculated, letting you decide whether to apply road attachment for each session.
-  - **Always apply** — This option automatically attaches the track to the roads for every **navigation by track** route, with no manual confirmation needed.
+- **Confirmation automatique ou manuelle** :
+  - **Demander à chaque fois** (par défaut) — La fonctionnalité *Attacher aux routes* apparaît dans la section **Détails de l'itinéraire** chaque fois qu'un itinéraire basé sur une trace est calculé, vous permettant de décider d'appliquer ou non l'attachement aux routes pour chaque session.
+  - **Toujours appliquer** — Cette option attache automatiquement la trace aux routes pour chaque itinéraire de **navigation par trace**, sans confirmation manuelle nécessaire.
 
-How to use:  
-Go to *Menu → Settings → App profiles → Navigation settings → Detailed track guidance*.
+Comment utiliser :
+Allez dans *Menu → Paramètres → Profils d'application → Paramètres de navigation → Guidage détaillé de la trace*.
 
-Learn more:  
-[Detailed Track Guidance](https://osmand.net/docs/user/navigation/guidance/navigation-settings#detailed-track-guidance)  
-[Attach to the Roads](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-the-roads)
-
-
-## Prominent Peaks Now Discoverable  
-
-Now you can **discover prominent peaks** directly on the map and through search. This update adds [notable mountain peaks](https://en.wikipedia.org/wiki/Ultra-prominent_peak) to the basemap, allowing you to easily find their names, elevations, and additional details through the map's context menu or search functionality.
-
-Simply tap on the *peak icons* on the map, or use the *Search → Mountain Peaks* to quickly locate and explore key mountain summits.
-
-Learn more:  
-[Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
+En savoir plus :
+[Guidage détaillé de la trace](https://osmand.net/docs/user/navigation/guidance/navigation-settings#detailed-track-guidance)
+[Attacher aux routes](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-the-roads)
 
 
-## Quick Actions for Trip Recording
+## Sommets proéminents désormais découvrables
+
+Vous pouvez désormais **découvrir les sommets proéminents** directement sur la carte et via la recherche. Cette mise à jour ajoute les [sommets de montagne notables](https://en.wikipedia.org/wiki/Ultra-prominent_peak) à la carte de base, vous permettant de trouver facilement leurs noms, altitudes et détails supplémentaires via le menu contextuel de la carte ou la fonctionnalité de recherche.
+
+Il suffit de taper sur les *icônes de sommet* sur la carte, ou d'utiliser la *Recherche → Sommets de montagne* pour localiser et explorer rapidement les principaux sommets de montagne.
+
+En savoir plus :
+[Menu contextuel de la carte](https://osmand.net/docs/user/map/map-context-menu)
+
+
+## Actions rapides pour l'enregistrement de trajets
 
 ![Quick Actions for Trip Recording](../../blog/2025-04-15-ios-5-0/img/qa_trip_recording_ios.png)
 
-This release introduces **quick actions** for **trip recording**, allowing you to manage your journey recording with just a tap, improving efficiency and safety while on the go.
+Cette version introduit des **actions rapides** pour l'**enregistrement de trajets**, vous permettant de gérer l'enregistrement de votre parcours d'un simple toucher, améliorant l'efficacité et la sécurité lors de vos déplacements.
 
-Key features:
+Fonctionnalités clés :
 
-- **Convenient access** — Start, pause, save and finish a recording trip with new quick action buttons.
-- **Quick control** — Use the *quick action buttons* to easily manage your trip recording without navigating through multiple screens.
+- **Accès pratique** — Démarrer, mettre en pause, enregistrer et terminer un enregistrement de trajet avec de nouveaux boutons d'action rapide.
+- **Contrôle rapide** — Utilisez les *boutons d'action rapide* pour gérer facilement l'enregistrement de votre trajet sans naviguer à travers plusieurs écrans.
 
-How to use:  
-Go to *Menu → Configure screen → Custom buttons → Quick action → Add action → My Places* to add one or more actions to your screen.
+Comment utiliser :
+Allez dans *Menu → Configurer l'écran → Boutons personnalisés → Action rapide → Ajouter une action → Mes lieux* pour ajouter une ou plusieurs actions à votre écran.
 
-Learn more:  
-[Quick Actions for My Places](https://osmand.net/docs/user/widgets/quick-action#my-places)
+En savoir plus :
+[Actions rapides pour Mes lieux](https://osmand.net/docs/user/widgets/quick-action#my-places)
 
 
-## Improved CarPlay Address Search Prioritization
+## Amélioration de la priorisation de la recherche d'adresses CarPlay
 
 ![CarPlay Search](../../blog/2025-04-15-ios-5-0/img/car-play-search(1).png)
 
-The **CarPlay Search** feature now prioritizes streets and building numbers when searching for addresses, improving navigation.
+La fonctionnalité **Recherche CarPlay** priorise désormais les rues et les numéros de bâtiment lors de la recherche d'adresses, améliorant la navigation.
 
-Key features:
+Fonctionnalités clés :
 
-- **Streets and buildings first** - Streets and building numbers appear first when searching for an address. This ensures that relevant address details are displayed before other locations such as roads or stations.
-- **Search flow by city and street** — When searching for a city, streets within the city show first, followed by building numbers for those streets.
-- **Optimized for navigation** - This change improves the navigation process by prioritizing address-related information.
+- **Rues et bâtiments en premier** - Les rues et les numéros de bâtiment apparaissent en premier lors de la recherche d'une adresse. Cela garantit que les détails d'adresse pertinents sont affichés avant d'autres lieux tels que les routes ou les gares.
+- **Flux de recherche par ville et rue** — Lors de la recherche d'une ville, les rues de la ville s'affichent en premier, suivies des numéros de bâtiment pour ces rues.
+- **Optimisé pour la navigation** - Ce changement améliore le processus de navigation en priorisant les informations liées à l'adresse.
 
-Learn more:  
-[CarPlay Search](https://osmand.net/docs/user/navigation/car-play#search)  
-[Address Search Guide](https://osmand.net/docs/user/search/search-address)
+En savoir plus :
+[Recherche CarPlay](https://osmand.net/docs/user/navigation/car-play#search)
+[Guide de recherche d'adresses](https://osmand.net/docs/user/search/search-address)
 
 
-## Closing Configure Map after Tapping the Map
+## Fermeture de Configurer la carte après avoir tapé sur la carte
 
 ![Close Configure Map After Tapping on Map](../../blog/2025-04-15-ios-5-0/img/configure_map_behavior_ios.png)
 
-You can now **automatically close the *Configure Map* menu** by tapping the visible part of the map. This enhancement makes interacting with OsmAnd even more convenient.
+Vous pouvez désormais **fermer automatiquement le menu *Configurer la carte*** en tapant sur la partie visible de la carte. Cette amélioration rend l'interaction avec OsmAnd encore plus pratique.
 
-Key features:
+Fonctionnalités clés :
 
-- **Automatic close** — After selecting options in the *Configure Map* menu, a simple tap the map closes the menu, reducing the number of steps required to resume map interaction.
-- **Improved usability** — This feature allows for a smoother and more intuitive workflow when configuring map settings.
+- **Fermeture automatique** — Après avoir sélectionné des options dans le menu *Configurer la carte*, un simple appui sur la carte ferme le menu, réduisant le nombre d'étapes nécessaires pour reprendre l'interaction avec la carte.
+- **Utilisabilité améliorée** — Cette fonctionnalité permet un flux de travail plus fluide et plus intuitif lors de la configuration des paramètres de la carte.
 
-How to use:  
-Simply tap anywhere on the map after configuring the settings in the **Configure Map** menu to close it.
+Comment utiliser :
+Il suffit de taper n'importe où sur la carte après avoir configuré les paramètres dans le menu **Configurer la carte** pour le fermer.
 
-Learn more:  
-[Configure Map Menu](https://osmand.net/docs/user/map/configure-map-menu)
+En savoir plus :
+[Menu Configurer la carte](https://osmand.net/docs/user/map/configure-map-menu)
 
 
-## Optional updates
+## Mises à jour optionnelles
 
-- Added support for [Vietnamese and Hebrew](https://osmand.net/docs/user/navigation/guidance/voice-navigation#voice-prompt-language) Text-to-Speech (TTS) for navigation.
-- Added [border highlighting for buildings](https://github.com/osmandapp/OsmAnd-iOS/issues/4164) and ares with detailed information.
-- [Custom button: Show/hide MTB routes](https://github.com/osmandapp/OsmAnd-iOS/issues/4393) defaults to IMBA trail.
-- Fixed issues:  
-  - The [UTM coordinate input sequence](https://github.com/osmandapp/OsmAnd-iOS/issues/4333).
-  - An issue with [track waypoint colors](https://github.com/osmandapp/OsmAnd-iOS/issues/4293).
-  - The missing [*Download all* button for Terrain maps](https://github.com/osmandapp/OsmAnd-iOS/issues/4155).
-  - An issue where popular [articles were sometimes missing in Travel Guides](https://github.com/osmandapp/OsmAnd-iOS/issues/4370).
-  - The [*Battery Level* widget](https://github.com/osmandapp/OsmAnd-iOS/issues/4145) is displayed incorrectly.
-  - [Car play issues](https://github.com/osmandapp/OsmAnd-iOS/issues/4284) with always returning to my location.
-  - [Map markers colors](https://github.com/osmandapp/OsmAnd-iOS/issues/4293) doesn't restore after local import or cloud import.
-  - [Roundabout movement](https://github.com/osmandapp/OsmAnd-iOS/issues/4296) in route details.
-  - [Favorites screen crash](https://github.com/osmandapp/OsmAnd-iOS/issues/4426).
-  - [Color palette (terrain)](https://github.com/osmandapp/OsmAnd-iOS/issues/4471).
-  - [Hiking routes displayed](https://github.com/osmandapp/OsmAnd-iOS/issues/4325).
-  - Using display or map language for [lang=true tags in context menu](https://github.com/osmandapp/OsmAnd-iOS/issues/4216).
-  - [Custom button - underlay map](https://github.com/osmandapp/OsmAnd-iOS/issues/4394).
-  - [Tunnel freezes](https://github.com/osmandapp/OsmAnd-iOS/issues/4401).
-  - [Replaceed `/` with `-` in favorites folders name](https://github.com/osmandapp/OsmAnd-iOS/issues/4403)
-  - [Direct-to-point routing](https://github.com/osmandapp/OsmAnd-iOS/issues/4226)/
-  - Recalculate [route dialogue in CarPlay](https://github.com/osmandapp/OsmAnd-iOS/issues/4226).
-  - [Marker for select GPX](https://github.com/osmandapp/OsmAnd-iOS/issues/4367).
-  - [Export only settings](https://github.com/osmandapp/OsmAnd-iOS/issues/4405).
-  - [Invisible nav buttons on Dark mode](https://github.com/osmandapp/OsmAnd-iOS/issues/4399).
-  - [Distance by tap](https://github.com/osmandapp/OsmAnd-iOS/issues/4380).
-  - [Strings for US map data (US maps Plugin)](https://github.com/osmandapp/OsmAnd-iOS/issues/4334).
-  - [Overlay background](https://github.com/osmandapp/OsmAnd-iOS/issues/4332).
+- Ajout de la prise en charge du [vietnamien et de l'hébreu](https://osmand.net/docs/user/navigation/guidance/voice-navigation#voice-prompt-language) pour la synthèse vocale (TTS) pour la navigation.
+- Ajout de la [mise en évidence des bordures pour les bâtiments](https://github.com/osmandapp/OsmAnd-iOS/issues/4164) et les zones avec des informations détaillées.
+- [Bouton personnalisé : Afficher/masquer les itinéraires VTT](https://github.com/osmandapp/OsmAnd-iOS/issues/4393) par défaut sur le sentier IMBA.
+- Problèmes corrigés :
+  - La [séquence de saisie des coordonnées UTM](https://github.com/osmandapp/OsmAnd-iOS/issues/4333).
+  - Un problème avec les [couleurs des points de passage de trace](https://github.com/osmandapp/OsmAnd-iOS/issues/4293).
+  - Le bouton [*Télécharger tout* manquant pour les cartes de terrain](https://github.com/osmandapp/OsmAnd-iOS/issues/4155).
+  - Un problème où les [articles populaires étaient parfois manquants dans les Guides de voyage](https://github.com/osmandapp/OsmAnd-iOS/issues/4370).
+  - Le widget [*Niveau de batterie*](https://github.com/osmandapp/OsmAnd-iOS/issues/4145) s'affiche incorrectement.
+  - [Problèmes CarPlay](https://github.com/osmandapp/OsmAnd-iOS/issues/4284) avec le retour constant à ma position.
+  - Les [couleurs des marqueurs de carte](https://github.com/osmandapp/OsmAnd-iOS/issues/4293) ne se restaurent pas après une importation locale ou une importation cloud.
+  - [Mouvement dans les ronds-points](https://github.com/osmandapp/OsmAnd-iOS/issues/4296) dans les détails de l'itinéraire.
+  - [Plantages de l'écran des favoris](https://github.com/osmandapp/OsmAnd-iOS/issues/4426).
+  - [Palette de couleurs (terrain)](https://github.com/osmandapp/OsmAnd-iOS/issues/4471).
+  - [Affichage des itinéraires de randonnée](https://github.com/osmandapp/OsmAnd-iOS/issues/4325).
+  - Utilisation de la langue d'affichage ou de la carte pour les [balises lang=true dans le menu contextuel](https://github.com/osmandapp/OsmAnd-iOS/issues/4216).
+  - [Bouton personnalisé - carte sous-jacente](https://github.com/osmandapp/OsmAnd-iOS/issues/4394).
+  - [Blocages dans les tunnels](https://github.com/osmandapp/OsmAnd-iOS/issues/4401).
+  - [Remplacement de `/` par `-` dans le nom des dossiers de favoris](https://github.com/osmandapp/OsmAnd-iOS/issues/4403).
+  - [Routage direct vers un point](https://github.com/osmandapp/OsmAnd-iOS/issues/4226).
+  - Dialogue de recalcul d'[itinéraire dans CarPlay](https://github.com/osmandapp/OsmAnd-iOS/issues/4226).
+  - [Marqueur pour la sélection GPX](https://github.com/osmandapp/OsmAnd-iOS/issues/4367).
+  - [Exporter uniquement les paramètres](https://github.com/osmandapp/OsmAnd-iOS/issues/4405).
+  - [Boutons de navigation invisibles en mode sombre](https://github.com/osmandapp/OsmAnd-iOS/issues/4399).
+  - [Distance par appui](https://github.com/osmandapp/OsmAnd-iOS/issues/4380).
+  - [Chaînes pour les données cartographiques américaines (Plugin Cartes américaines)](https://github.com/osmandapp/OsmAnd-iOS/issues/4334).
+  - [Arrière-plan de superposition](https://github.com/osmandapp/OsmAnd-iOS/issues/4332).
 
+-- source-hash: blake2s: bf9f8cc2255be1b955c1bbd0295b32125e8dfe480f1b3ee0c0f673c8232b7e56 --

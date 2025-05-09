@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Smart Folder (Filter)
+title: Dossier intelligent (Filtre)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,20 +15,20 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
-The **Smart Folder** feature provides powerful tools for organizing and managing your tracks. One of the key features is the ability to filter files in the *Tracks tab* of the *My Places* menu based on criteria such as duration, length, or speed.  
+La fonction **Dossier intelligent** offre des outils puissants pour organiser et gérer vos traces. L'une des principales fonctionnalités est la possibilité de filtrer les fichiers dans l'*onglet Traces* du menu *Mes lieux* en fonction de critères tels que la durée, la longueur ou la vitesse.
 
-This feature allows you to quickly find specific tracks that match your requirements. Filtered results can be saved as a **Smart Folder**, offering convenient access to dynamically updated track collections.
+Cette fonctionnalité vous permet de trouver rapidement des traces spécifiques qui correspondent à vos besoins. Les résultats filtrés peuvent être enregistrés sous forme de **Dossier intelligent**, offrant un accès pratique à des collections de traces mises à jour dynamiquement.
 
 
-## Search Filter
+## Filtre de recherche
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> onglet*
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
 
@@ -36,7 +36,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_strin
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
 
@@ -44,20 +44,20 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-***How to apply a filter:***
+***Comment appliquer un filtre :***
 
-- Tap the *Search* icon, then tap *Filter* in the [*Sort by*](./manage-tracks.md#sort-by) row.
+- Appuyez sur l'icône *Rechercher*, puis sur *Filtre* dans la ligne [*Trier par*](./manage-tracks.md#sort-by).
 
-- **Choose the required filter settings** to refine your track search.
+- **Choisissez les paramètres de filtre requis** pour affiner votre recherche de traces.
 
-- Tap **Show** in the lower right corner to see the filtered results. The number of matching tracks appears in brackets.
+- Appuyez sur **Afficher** dans le coin inférieur droit pour voir les résultats filtrés. Le nombre de traces correspondantes apparaît entre parenthèses.
 
-- **To clear** all active filters, tap **Reset all**.
+- **Pour effacer** tous les filtres actifs, appuyez sur **Réinitialiser tout**.
 
-- **To save** the current filter set as a new **Smart Folder**, tap the save icon in the upper right corner of the screen.
+- **Pour enregistrer** l'ensemble de filtres actuel en tant que nouveau **Dossier intelligent**, appuyez sur l'icône d'enregistrement dans le coin supérieur droit de l'écran.
 
 
-### Available Filters
+### Filtres disponibles
 
 <Tabs groupId="operating-systems">
 
@@ -75,38 +75,38 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-- **Name** — Search tracks by title. Enter a full or partial name to display matching tracks.
-- **Folder** — Select one or more folders to filter tracks by their storage location.
-- **Duration** — Filter tracks by their recorded duration, setting a range in hours and minutes.
-- **Time in motion** — Specify the time range spent in motion during recording.
-- **Length** — Set a specific range in kilometers or miles to find tracks of a particular length.
-- **Average speed** — Filter tracks by [average speed](../../widgets/info-widgets.md#average-speed).
-- **Sensor data group.**  
-    Apply filters based on external sensor data, including:
-    - Sensor speed, average.
-    - Sensor speed, max.
-    - Heart rate, average.
-    - Heart rate, max.
-    - Bicycle Cadence, average.
-    - Bicycle Cadence, max
-    - Bicycle Power, average.
-    - Bicycle Power, max.
-    - Temperature, average.
-    - Temperature, max.
-- **Max Speed** — Select tracks with specific maximum speed ranges.
-- **Uphill** and **Downhill** — Filter tracks based on positive or negative elevation changes.
-- **Average altitude** and **Max altitude** — Find tracks with specific average or maximum altitude data.
-- **Date of creation** — Filter tracks created within a particular date range.
-- **Nearest cities** — Display tracks passing near selected cities or localities.
-- **Type of activity** (*Android only*) — Filter tracks based on the [activities](../../map/tracks/track-context-menu.md#track-information-activity) type recorded in the GPX file (e.g., cycling, hiking).
-- **Country** — Filter tracks by the country or region where they were recorded.
-- **Color** and **Width** — Select tracks by assigned color or line width.
-- **Other** — Additional filters for special characteristics:
-    - *Visible on Map*. Shows only tracks displayed on the map.
-    - *With Waypoints*. Displays tracks containing specific waypoints.
+- **Nom** — Rechercher des traces par titre. Entrez un nom complet ou partiel pour afficher les traces correspondantes.
+- **Dossier** — Sélectionnez un ou plusieurs dossiers pour filtrer les traces par leur emplacement de stockage.
+- **Durée** — Filtrer les traces par leur durée enregistrée, en définissant une plage en heures et minutes.
+- **Temps en mouvement** — Spécifiez la plage de temps passée en mouvement pendant l'enregistrement.
+- **Longueur** — Définissez une plage spécifique en kilomètres ou en miles pour trouver des traces d'une longueur particulière.
+- **Vitesse moyenne** — Filtrer les traces par [vitesse moyenne](../../widgets/info-widgets.md#average-speed).
+- **Groupe de données de capteur.**
+    Appliquer des filtres basés sur les données de capteurs externes, notamment :
+    - Vitesse du capteur, moyenne.
+    - Vitesse du capteur, max.
+    - Fréquence cardiaque, moyenne.
+    - Fréquence cardiaque, max.
+    - Cadence de vélo, moyenne.
+    - Cadence de vélo, max.
+    - Puissance de vélo, moyenne.
+    - Puissance de vélo, max.
+    - Température, moyenne.
+    - Température, max.
+- **Vitesse max** — Sélectionnez les traces avec des plages de vitesse maximale spécifiques.
+- **Montée** et **Descente** — Filtrer les traces en fonction des changements d'altitude positifs ou négatifs.
+- **Altitude moyenne** et **Altitude max** — Trouver des traces avec des données d'altitude moyenne ou maximale spécifiques.
+- **Date de création** — Filtrer les traces créées dans une plage de dates particulière.
+- **Villes les plus proches** — Afficher les traces passant près des villes ou localités sélectionnées.
+- **Type d'activité** (*Android uniquement*) — Filtrer les traces en fonction du type d'[activités](../../map/tracks/track-context-menu.md#track-information-activity) enregistré dans le fichier GPX (par exemple, cyclisme, randonnée).
+- **Pays** — Filtrer les traces par le pays ou la région où elles ont été enregistrées.
+- **Couleur** et **Largeur** — Sélectionnez les traces par couleur ou largeur de ligne attribuée.
+- **Autres** — Filtres supplémentaires pour des caractéristiques spéciales :
+    - *Visible sur la carte*. Affiche uniquement les traces affichées sur la carte.
+    - *Avec points de passage*. Affiche les traces contenant des points de passage spécifiques.
 
 
-## Smart Folder
+## Dossier intelligent
 
 <Tabs groupId="operating-systems">
 
@@ -124,40 +124,40 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-A **Smart Folder** is a dynamic collection of tracks automatically updated based on specific filter criteria. It offers advanced tools for organizing, searching, and managing tracks efficiently.  
+Un **Dossier intelligent** est une collection dynamique de traces automatiquement mise à jour en fonction de critères de filtre spécifiques. Il offre des outils avancés pour organiser, rechercher et gérer efficacement les traces.
 
-***Benefits of Smart Folders:***
+***Avantages des Dossiers intelligents :***
 
-1. **Automated organization.**  
-    Automatically includes tracks that match predefined rules, such as creation date or duration range.
-2. **Filtering and searching.**  
-    Allows for quick searches within tracks using advanced filters and keywords.
-3. **Dynamic refresh.**  
-    Automatically refreshes content to display the latest tracks matching the criteria.
-4. **Customize rules.**  
-    Create personalized track collections by defining custom filter rules.
-
-
-### How to Create Smart Folder
-
-To create a **Smart Folder**, follow these steps:
-
-1. Tap the ***three-dot menu*** icon in the *Tracks* tab of the *My Places* menu.
-
-2. Select the **Add smart folder** from the dropdown menu.
-
-3. Configure settings:
-   - **Name the folder**. Enter a name to identify the folder.
-   - Specify **track filter parameters**. Apply required filters using the available [Filter](#available-filters) options.
-
-4. **Save** the settings.
-    - Tap **Show** to preview the tracks.
-    - Select the **Save** button to finalize the *Smart Folder*.
-
-The newly created **Smart Folder** will automatically update its contents with tracks that match the selected criteria.
+1. **Organisation automatisée.**
+    Inclut automatiquement les traces qui correspondent à des règles prédéfinies, telles que la date de création ou la plage de durée.
+2. **Filtrage et recherche.**
+    Permet des recherches rapides dans les traces à l'aide de filtres avancés et de mots-clés.
+3. **Actualisation dynamique.**
+    Actualise automatiquement le contenu pour afficher les dernières traces correspondant aux critères.
+4. **Personnaliser les règles.**
+    Créez des collections de traces personnalisées en définissant des règles de filtre personnalisées.
 
 
-### Managing Smart Folders
+### Comment créer un Dossier intelligent
+
+Pour créer un **Dossier intelligent**, suivez ces étapes :
+
+1. Appuyez sur l'icône ***menu à trois points*** dans l'onglet *Traces* du menu *Mes lieux*.
+
+2. Sélectionnez **Ajouter un dossier intelligent** dans le menu déroulant.
+
+3. Configurez les paramètres :
+   - **Nommez le dossier**. Entrez un nom pour identifier le dossier.
+   - Spécifiez les **paramètres de filtre de trace**. Appliquez les filtres requis à l'aide des options de [Filtre](#available-filters) disponibles.
+
+4. **Enregistrez** les paramètres.
+    - Appuyez sur **Afficher** pour prévisualiser les traces.
+    - Sélectionnez le bouton **Enregistrer** pour finaliser le *Dossier intelligent*.
+
+Le **Dossier intelligent** nouvellement créé mettra automatiquement à jour son contenu avec les traces qui correspondent aux critères sélectionnés.
+
+
+### Gestion des Dossiers intelligents
 
 <Tabs groupId="operating-systems">
 
@@ -179,39 +179,41 @@ The newly created **Smart Folder** will automatically update its contents with t
 
 </Tabs>
 
-The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it (*Android*) and *long tap* (*iOS*) or open the folder and use the icon in the top-right corner.
+Le **Dossier intelligent** est affiché avec une icône unique dans la liste des dossiers de l'onglet Traces. Pour gérer le dossier, appuyez sur le *menu à trois points* à côté de celui-ci (*Android*) et *appuyez longuement* (*iOS*) ou ouvrez le dossier et utilisez l'icône dans le coin supérieur droit.
 
-***Available Actions:***
+***Actions disponibles :***
 
-- **Details** — View the complete list of tracks contained in the folder.
+- **Détails** — Afficher la liste complète des traces contenues dans le dossier.
 
-- **Show all tracks on the map** (*Android only*) — Display all folder tracks on the map.  
-    *NOTE: Loading many tracks may affect performance.*
+- **Afficher toutes les traces sur la carte** (*Android uniquement*) — Afficher toutes les traces du dossier sur la carte.
+    *NOTE : Le chargement de nombreuses traces peut affecter les performances.*
 
-- **Edit name** (*Android*) / **Rename** (*iOS*) — Change the folder name for easier identification.
+- **Modifier le nom** (*Android*) / **Renommer** (*iOS*) — Modifier le nom du dossier pour une identification plus facile.
 
-- **Refresh** — Manually update the folder's content to ensure it includes the latest tracks.
+- **Actualiser** — Mettre à jour manuellement le contenu du dossier pour s'assurer qu'il inclut les dernières traces.
 
-- **Change default appearance** (*Android*) — Changes the display appearance of all tracks in the folder.
+- **Modifier l'apparence par défaut** (*Android*) — Modifie l'apparence d'affichage de toutes les traces du dossier.
 
-- **Edit filter** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
+- **Modifier le filtre** — Modifier les paramètres de filtre de trace pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
 
-- **Export** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
+- **Exporter** — Exporter toutes les traces du Dossier intelligent via la fonction [Importer/Exporter](../../personal/import-export.md). Vous serez redirigé vers *Menu → Paramètres → Onglet Actions*.
 
-- **Delete folder** — Remove the Smart Folder without deleting its tracks.  
-    *WARNING: This action is irreversible and will prompt a confirmation message.*
+- **Supprimer le dossier** — Supprimer le Dossier intelligent sans supprimer ses traces.
+    *AVERTISSEMENT : Cette action est irréversible et demandera une confirmation.*
 
-- **Move** (*iOS*) — Allows you to move the folder to another existing folder or create a new one.
+- **Déplacer** (*iOS*) — Vous permet de déplacer le dossier vers un autre dossier existant ou d'en créer un nouveau.
 
-- **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
+- **Sélectionner** — Utiliser le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
 
 
-## Related Articles
+## Articles connexes
 
-- [Show track on Map](../../map/tracks/index.md)
-- [Analyze on Map](../../map/tracks/index.md#analyze-track-on-map)
-- [Track Context menu](../../map/tracks/track-context-menu.md)
-- [Navigation by track](../../navigation/setup/gpx-navigation.md)
-- [Trip recording](../../plugins/trip-recording.md)
+- [Afficher la trace sur la carte](../../map/tracks/index.md)
+- [Analyser sur la carte](../../map/tracks/index.md#analyze-track-on-map)
+- [Menu contextuel de la trace](../../map/tracks/track-context-menu.md)
+- [Navigation par trace](../../navigation/setup/gpx-navigation.md)
+- [Enregistrement de trajet](../../plugins/trip-recording.md)
 
-> *This article was last updated in March 2025*
+> *Cet article a été mis à jour pour la dernière fois en mars 2025*
+
+-- source-hash: blake2s: 7c1cfba29519bc920e59ee85875b29e11b28becce28f84022cd2961167ea4775 --

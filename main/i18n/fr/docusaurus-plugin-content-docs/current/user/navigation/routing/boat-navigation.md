@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title:  Boat routing
+title:  Itinéraire pour bateaux
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,101 +13,103 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Aperçu
 
-Boat routing can be a valuable tool for anyone who enjoys boating or sailing by channels, rivers or fairways. Due to lack of most Fairways in OpenStreeetMap data,  the boat routing is *not recommended* for **open water navigation**, it is suggested to use **[Direct to point](#direct-to-point-routing-for-boat)** instead. With Depth contour lines enabled, it can help you stay safe on the water by avoiding hazards such as shallow waters, rocks, or other obstacles.  
-The OsmAnd Boat routing engine also takes into account the characteristics of the waterways and the boat themselves.  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Boat Navigation screen Android](@site/static/img/navigation/boat/boat_navigation_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Boat Navigation screen iOS](@site/static/img/navigation/boat/boat_navigation_ios.png)  
-
-</TabItem>
-
-</Tabs>  
-
-## Route Parameters - Boat
-
-:::note
-By default, *Boat profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
-:::
-
-Boat routing can be configured according to your needs in the [Route parameters section](../../navigation/guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
-
-Typically, *Boat routing* is used with boat profile (the last one enabled together with the [Nautical plugin](../../plugins/nautical-charts.md)).  However, it is possible to use boat routing with other profiles as well, and different [routing types](#other-routing-types-for-boat) can also be employed in the boat profile.  
-
+L'itinéraire pour bateaux peut être un outil précieux pour tous ceux qui aiment naviguer en bateau ou à la voile sur des canaux, des rivières ou des voies navigables. En raison du manque de la plupart des voies navigables dans les données OpenStreetMap, l'itinéraire pour bateaux *n'est pas recommandé* pour la **navigation en eaux libres**. Il est suggéré d'utiliser plutôt la **[navigation directe vers un point](#navigation-directe-vers-un-point-pour-bateaux)**. Avec les lignes de contour de profondeur activées, cela peut vous aider à rester en sécurité sur l'eau en évitant les dangers tels que les eaux peu profondes, les rochers ou d'autres obstacles.
+Le moteur d'itinéraire pour bateaux d'OsmAnd prend également en compte les caractéristiques des voies navigables et des bateaux eux-mêmes.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-
-![Boat routing settings Android](@site/static/img/navigation/routing/boat_routing_andr.png)  
+![Écran de navigation pour bateaux Android](@site/static/img/navigation/boat/boat_navigation_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Boat routing settings iOS](@site/static/img/navigation/routing/boat_routing_ios.png)  
+![Écran de navigation pour bateaux iOS](@site/static/img/navigation/boat/boat_navigation_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-| Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Allows you to use streams and drains for boat navigation. Enabling this option may be useful for small boats such as canoes, kayaks, rafts, rowboats. |  [Streams](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) are naturally-forming waterways that are too narrow to be called a river. [Drains](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) are artificial waterways, typically lined with concrete or similar, used to carry superfluous water like storm water or grey-discharge.|
-| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Turning this option on allows you to use intermittent waterways to navigate by boat.   | Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) is used to indicate that a waterway does not permanently contain water.  |
-
-
-## Other Routing Types for Boat
-
-[Boat routing](#route-parameters---boat) type is a default routing algorithm for Boat profile. Although you can choose another routing type, which is also suitable for boat navigation:  
-
- - [Direct-to-point routing for Boat](./boat-navigation.md#direct-to-point-routing-for-boat)
- - [Straight line routing for Boat](./boat-navigation.md#straight-line-routing-for-boat)
-
-It's important to note, that the *Direct-to-point* and *Straight line* routings types should only be used in open water where there are no obstacles or hazards to navigation. If you are navigating in a waterway with a specific channel or route, you should use the boat routing type in OsmAnd, which will guide you through the correct navigational channels and avoid shallow areas or other hazards.  
-
-These routing types for the boat profile can be activated using the following path: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> or another one) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
-
-
-### Direct-to-Point Routing for Boat
+## Paramètres d'itinéraire - Bateau
 
 :::note
-When using Direct-to-point and Boat navigation types, you will need [Depth contours data](../../plugins/nautical-charts.md#nautical-map-style), which can be enabled and set in *Configure map*.
+Par défaut, le *profil Bateau* est désactivé. Pour utiliser ce profil pour la navigation, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-The [Direct-to-point routing type](./direct-to-point-routing.md) can be used with the boat profile when you want to navigate your boat in open water without following any specific route or waterway. This routing type allows you to set a destination point and OsmAnd will calculate a direct path to that point from your current location. This type of routing doesn't consider the characteristics of your boat such as minimum and maximum speeds, height and width. Your route will not be recalculated in case of deviation.
+L'itinéraire pour bateaux peut être configuré selon vos besoins dans la [section Paramètres d'itinéraire](../../navigation/guidance/navigation-settings.md#route-parameters) des paramètres de navigation.
 
-![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
-
-
-### Straight Line Routing for Boat
-
-The [Straight line routing type](./straight-line-routing) can be used with the boat profile when you want to navigate your boat in open water but prefer to follow a straight line rather than a curved route to your destination point. This can be useful when navigating to a distant point, that is visible on the horizon, for example.
-
-![Streaight-line Navigation type Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
+En règle générale, l'*itinéraire pour bateaux* est utilisé avec le profil bateau (le dernier activé avec le [plugin Nautique](../../plugins/nautical-charts.md)). Cependant, il est possible d'utiliser l'itinéraire pour bateaux avec d'autres profils également, et différents [types d'itinéraire](#autres-types-d'itinéraire-pour-bateaux) peuvent également être utilisés dans le profil bateau.
 
 
-## Other Routing Settings
+<Tabs groupId="operating-systems">
 
-- The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
+<TabItem value="android" label="Android">
 
-- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
 
-- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+![Paramètres d'itinéraire pour bateaux Android](@site/static/img/navigation/routing/boat_routing_andr.png)
 
-- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). This setting is used on unknown roads without speed limits. This is most often the case when navigating a track or online route. It must be set according to the parameters of your vehicle.
+</TabItem>
 
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
+<TabItem value="ios" label="iOS">
 
-> *This article was last updated in June 2024.*
+![Paramètres d'itinéraire pour bateaux iOS](@site/static/img/navigation/routing/boat_routing_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+| Paramètre | Description | Note |
+|:------------|:---------------|:---------------|
+| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Vous permet d'utiliser des ruisseaux et des drains pour la navigation en bateau. L'activation de cette option peut être utile pour les petits bateaux tels que les canoës, les kayaks, les radeaux, les bateaux à rames. | Les [ruisseaux](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) sont des cours d'eau naturels trop étroits pour être appelés une rivière. Les [drains](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) sont des cours d'eau artificiels, généralement revêtus de béton ou similaire, utilisés pour évacuer l'eau superflue comme les eaux pluviales ou les eaux grises.|
+| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* | L'activation de cette option vous permet d'utiliser des cours d'eau intermittents pour naviguer en bateau. | Le tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) est utilisé pour indiquer qu'un cours d'eau ne contient pas d'eau en permanence. |
+
+
+## Autres types d'itinéraire pour bateaux
+
+Le type d'[itinéraire pour bateaux](#paramètres-d'itinéraire---bateau) est l'algorithme d'itinéraire par défaut pour le profil Bateau. Bien que vous puissiez choisir un autre type d'itinéraire, qui convient également à la navigation en bateau :
+
+ - [Navigation directe vers un point pour bateaux](./boat-navigation.md#navigation-directe-vers-un-point-pour-bateaux)
+ - [Navigation en ligne droite pour bateaux](./boat-navigation.md#navigation-en-ligne-droite-pour-bateaux)
+
+Il est important de noter que les types d'itinéraire *Direct vers un point* et *Ligne droite* ne doivent être utilisés qu'en eaux libres où il n'y a pas d'obstacles ou de dangers pour la navigation. Si vous naviguez dans une voie navigable avec un chenal ou un itinéraire spécifique, vous devez utiliser le type d'itinéraire pour bateaux dans OsmAnd, qui vous guidera à travers les chenaux de navigation corrects et évitera les zones peu profondes ou autres dangers.
+
+Ces types d'itinéraire pour le profil bateau peuvent être activés en utilisant le chemin suivant : *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> ou un autre) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
+
+
+### Navigation directe vers un point pour bateaux
+
+:::note
+Lorsque vous utilisez les types de navigation Direct vers un point et Bateau, vous aurez besoin des [données de contours de profondeur](../../plugins/nautical-charts.md#nautical-map-style), qui peuvent être activées et définies dans *Configurer la carte*.
+:::
+
+Le [type d'itinéraire Direct vers un point](./direct-to-point-routing.md) peut être utilisé avec le profil bateau lorsque vous souhaitez naviguer en eaux libres sans suivre d'itinéraire ou de voie navigable spécifique. Ce type d'itinéraire vous permet de définir un point de destination et OsmAnd calculera un chemin direct vers ce point à partir de votre position actuelle. Ce type d'itinéraire ne prend pas en compte les caractéristiques de votre bateau telles que les vitesses minimale et maximale, la hauteur et la largeur. Votre itinéraire ne sera pas recalculé en cas de déviation.
+
+![Type de navigation Direct vers un point Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
+
+
+### Navigation en ligne droite pour bateaux
+
+Le [type d'itinéraire Ligne droite](./straight-line-routing) peut être utilisé avec le profil bateau lorsque vous souhaitez naviguer en eaux libres mais préférez suivre une ligne droite plutôt qu'un itinéraire courbe vers votre point de destination. Cela peut être utile lors de la navigation vers un point éloigné, visible à l'horizon, par exemple.
+
+![Type de navigation Ligne droite Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
+
+
+## Autres paramètres d'itinéraire
+
+- L'algorithme d'itinéraire peut également prendre en compte les limitations temporaires spécifiées dans OpenStreetMap. Cela peut être fait en utilisant l'option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Notez que dans certains cas, les informations d'OSM peuvent être obsolètes.
+
+- Dans la section [*Recalculer l'itinéraire*](../../navigation/guidance/navigation-settings.md#recalculate-route) des *Paramètres d'itinéraire*, vous pouvez activer et ajuster les options de recalcul d'itinéraire.
+
+- Dans la section [*Développement*](../guidance/navigation-settings.md#development-settings) des *Paramètres d'itinéraire*, vous pouvez essayer de nouvelles fonctionnalités d'itinéraire qui sont actuellement en phase de test. Notez que ces paramètres ne sont disponibles que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé.
+
+- Le paramètre *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* dans la version *iOS* d'OsmAnd se trouve dans *Paramètres de navigation → Paramètres d'itinéraire* (pour *Android*, dans *Paramètres du véhicule → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Ce paramètre est utilisé sur les routes inconnues sans limitation de vitesse. C'est le plus souvent le cas lors de la navigation sur une trace ou un itinéraire en ligne. Il doit être réglé en fonction des paramètres de votre véhicule.
+
+- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. La configuration correcte des paramètres vous aidera à éviter les problèmes lors de la création d'un itinéraire. Vous pouvez sélectionner l'itinéraire le plus approprié en fonction du type de véhicule et des restrictions routières, ainsi que calculer le temps de trajet.
+
+> *Cet article a été mis à jour pour la dernière fois en juin 2024.*
+
+-- source-hash: blake2s: 5e218cf447ce45e390fca96be7a7825e4dd65864a4114fdd1056e7673ec618bb --

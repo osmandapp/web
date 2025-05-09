@@ -2,46 +2,46 @@
 sidebar_position: 2
 ---
 
-# What Intents Does OsmAnd Listen to?
+# À quels intents OsmAnd est-il à l'écoute ?
 
-### [Android geo intents](http://developer.android.com/guide/appendix/g-app-intents.html)
+### [Intents géo Android](http://developer.android.com/guide/appendix/g-app-intents.html)
 * geo:latitude,longitude
 * geo:latitude,longitude?z=zoom
 * geo:0,0?q=my+street+address
 * geo:0,0?q=business+near+city
 
-### OsmAnd specific intents:
+### Intents spécifiques à OsmAnd :
 
-1. **Location with Pin**: [https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116](https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116)
+1. **Localisation avec épingle** : [https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116](https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116)
 
-URL description:
-- "https://osmand.net/map" - OsmAnd web resource.
-- "?pin=52.491143,7.116394" - Pin's coordinates.
-- "#9/52.3924/6.3116" - map zoom and centre map.
+Description de l'URL :
+- "https://osmand.net/map" - Ressource web OsmAnd.
+- "?pin=52.491143,7.116394" - Coordonnées de l'épingle.
+- "#9/52.3924/6.3116" - Zoom et centrage de la carte.
 
-![URL with PIN](@site/static/img/technical/url_pin.png) 
+![URL avec épingle](@site/static/img/technical/url_pin.png)
 
-2. **Location without Pin**: [https://osmand.net/map/#9/52.3924/6.3116](https://osmand.net/map/#9/52.3924/6.3116)
+2. **Localisation sans épingle** : [https://osmand.net/map/#9/52.3924/6.3116](https://osmand.net/map/#9/52.3924/6.3116)
 
-URL description:
-- "https://osmand.net/map" - OsmAnd web resource.
-- "#9/52.3924/6.3116" - map zoom and centre map.
+Description de l'URL :
+- "https://osmand.net/map" - Ressource web OsmAnd.
+- "#9/52.3924/6.3116" - Zoom et centrage de la carte.
 
-![URL without PIN](@site/static/img/technical/url_without_pin.png) 
+![URL sans épingle](@site/static/img/technical/url_without_pin.png)
 
-3. **Navigation**: [https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570](https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570)
+3. **Navigation** : [https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570](https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570)
 
-URL description:
-- "https://osmand.net/map" - OsmAnd web resource.
-- "start=52.236210,5.119629" - coordinates of the start point.
-- "finish=52.412472,4.855957" - coordinates of the finish point.
-- "profile=car" - navigation profile.
-- "pin=52.491143,7.116394" - Pin's coordinates.
-- "#9/52.3873/5.2570" - map zoom and centre map.
+Description de l'URL :
+- "https://osmand.net/map" - Ressource web OsmAnd.
+- "start=52.236210,5.119629" - Coordonnées du point de départ.
+- "finish=52.412472,4.855957" - Coordonnées du point d'arrivée.
+- "profile=car" - Profil de navigation.
+- "pin=52.491143,7.116394" - Coordonnées de l'épingle.
+- "#9/52.3873/5.2570" - Zoom et centrage de la carte.
 
-![URL with navigation](@site/static/img/technical/url_navigation.png) 
+![URL avec navigation](@site/static/img/technical/url_navigation.png)
 
-### Google:
+### Google :
 * google.navigation:q=34.99393,-106.61568
 * http://maps.google.com/maps?q=N34.939,W106
 * http://maps.google.com/maps?f=d&saddr=My+Location&daddr=lat,lon
@@ -50,14 +50,14 @@ URL description:
 * https://maps.google.com/maps?q=loc:-21.8835112,-47.7838932 (Name)
 * http://maps.google.com/maps?q=34,-106
 * http://www.google.com/maps/dir/Current+Location/34,-106
-* And many other similar on different google.`<lang>` domains
+* Et de nombreux autres similaires sur différents domaines google.`<lang>`
 
-### OSM:
+### OSM :
 * `http://www.openstreetmap.org/search?query=<lat>%2C<lon>`
 * https://openstreetmap.org/#map=11/34/-106
 * https://osm.org/go/TyFSutZ-?m= (https://wiki.openstreetmap.org/wiki/Shortlink)
 
-### Others:
+### Autres :
 * http://maps.yandex.ru/?ll=34,-106&z=11
 * http://map.baidu.com/?l=13&tn=B_NORMAL_MAP&c=13748138,4889173&s=gibberish
 * http://www.amap.com/#!poi!!q=38.174596,114.995033|2|%E5%AE%BE%E9%A6%86&radius=1000
@@ -67,7 +67,9 @@ URL description:
 * http://maps.apple.com/?daddr=Bargou,+Tunisien
 * http://maps.apple.com/?lsp=7618&q=40.738065,-73.988898&sll=40.738065,-73.988898
 * http://ge0.me/44TvlEGXf-/Kyiv
-  
-### Code and tests are here:
+
+### Le code et les tests sont ici :
 * https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/util/GeoPointParserUtil.java
 * https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/test/java/net/osmand/util/GeoPointParserUtilTest.java
+
+-- source-hash: blake2s: 2faf1ad9efb6a34a2bd8a06bc868c52e7da50e5280c91419d6143b42cb5b72aa --

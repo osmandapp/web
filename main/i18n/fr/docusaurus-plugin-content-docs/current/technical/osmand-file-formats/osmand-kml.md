@@ -2,23 +2,22 @@
 sidebar_position: 3
 ---
 
-# KML Tracks - .kml, .km
+# Tracés KML - .kml, .km
 
-In GoogleEarth (GE) you can add you own Placemarks on the map and collect them into a folder. From GE you can save the folder in KML format. When you have a different format you can use QGIS or other opensource software to convert to KML format. Maybe you can convert it directly to OSM. You may use any format containing your POIs, if you are able to convert it to OSM format. You can format KML to GPX [here](https://kml2gpx.com/).
+Dans GoogleEarth (GE), vous pouvez ajouter vos propres repères sur la carte et les regrouper dans un dossier. À partir de GE, vous pouvez enregistrer le dossier au format KML. Si vous avez un format différent, vous pouvez utiliser QGIS ou un autre logiciel open source pour le convertir au format KML. Vous pouvez peut-être le convertir directement en OSM. Vous pouvez utiliser n'importe quel format contenant vos POI, si vous êtes capable de le convertir au format OSM. Vous pouvez convertir KML en GPX [ici](https://kml2gpx.com/).
 
-## Native support
-OsmAnd doesn't support KML natively but OsmAnd can import some of them. During import process file will be transformed into GPX and later will be treated as [OsmAnd GPX](osmand-gpx).
+## Prise en charge native
+OsmAnd ne prend pas en charge le KML nativement, mais OsmAnd peut en importer certains. Pendant le processus d'importation, le fichier sera transformé en GPX et sera ensuite traité comme un [GPX OsmAnd](osmand-gpx).
 
+## Conversion de KML (ou d'autres formats) au format OSM
 
-## Converting KML (or Other Formats) into the OSM Format
-
-To perform this task we need to use gpsbabel. It is very useful to convert waypoints, tracks, and routes between popular GPS receivers and mapping programs. The syntax is very simple, and GPS Babel has an interface to create the syntax for you:
+Pour effectuer cette tâche, nous devons utiliser gpsbabel. Il est très utile pour convertir des points de cheminement, des tracés et des itinéraires entre les récepteurs GPS et les programmes de cartographie populaires. La syntaxe est très simple, et GPS Babel dispose d'une interface pour créer la syntaxe pour vous :
 
 ```
 $ gpsbabel -i kml -f my_places.kml -o osm,tagnd="tourism:museum",​created_by -F my_places.osm
 ```
 
-The generated file looks like this:
+Le fichier généré ressemble à ceci :
 
 ```
 <?xml version='1.0' encoding='UTF-8'?>
@@ -34,15 +33,17 @@ The generated file looks like this:
     <tag k='tourism' v='museum'/>
   </node>
 </osm>
-```        
+```
 
-All points inside the KML file are converted into OSM points, assigning them some properties like tourism category and museum type. The `created_by=` option with missing value means that the properties will be ignored. If your POI belongs to different categories, I suggest you create multiple OSM files and create OsmAnd OBF files and merge them together later with OsmAndMapCreator, or create multiple OBF files.
+Tous les points du fichier KML sont convertis en points OSM, en leur attribuant certaines propriétés comme la catégorie touristique et le type de musée. L'option `created_by=` avec une valeur manquante signifie que les propriétés seront ignorées. Si votre POI appartient à différentes catégories, je vous suggère de créer plusieurs fichiers OSM et de créer des fichiers OBF OsmAnd et de les fusionner plus tard avec OsmAndMapCreator, ou de créer plusieurs fichiers OBF.
 
-## Converting OSM Format into OBF Format
+## Conversion du format OSM au format OBF
 
-Now you are ready to perform the final step. The conversion will be done using OsmAndMapCreator. Download, unzip and run this program.
-- Deselect all choices except Build POI Index as shown:
-- Select the work dir (File/Specify working directory…)
-- Load my_places.osm (File/Select osm file…)
+Vous êtes maintenant prêt à effectuer l'étape finale. La conversion sera effectuée à l'aide d'OsmAndMapCreator. Téléchargez, décompressez et exécutez ce programme.
+- Désélectionnez toutes les options sauf Build POI Index comme indiqué :
+- Sélectionnez le répertoire de travail (Fichier/Spécifier le répertoire de travail...)
+- Chargez my_places.osm (Fichier/Sélectionner le fichier osm...)
 
-If all is right you'll find My\_places.obf into your workdir folder. Simply upload this file into your devices OsmAnd tracks folder.
+Si tout est correct, vous trouverez My_places.obf dans votre dossier de travail. Téléchargez simplement ce fichier dans le dossier des tracés OsmAnd de vos appareils.
+
+-- source-hash: blake2s: cdfab6e8f9b1f254d1aa7dab84ab7e20452f6ba634a6f7f4b0ecb2197c8d5f66 --

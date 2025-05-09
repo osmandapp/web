@@ -2,13 +2,15 @@
 sidebar_position: 1
 ---
 
-# Algorithms, Testing, Internals
-Describes different algorithms in different areas and explains how it works and what triggers certain behavior
+# Algorithmes, tests, éléments internes
+Décrit différents algorithmes dans différents domaines et explique leur fonctionnement et ce qui déclenche certains comportements.
 
 
-Functional Descriptions:
-* [What Intents Does OsmAnd Listen to?](./osmand-intents.md)
-* [Navigation Voice Prompt Triggering](./voice-prompt-triggering.md)
-* [Trace Address Search Issues](./trace-address-search-issues.md)
-* [Map rendering: layers, text, symbols, buttons and their order](./map-rendering-layers.md)
-* [Calculating uphill, downhill and slope in OsmAnd](./calculate-uphill-slope.md)
+Descriptions fonctionnelles :
+* [À quels Intents OsmAnd est-il à l'écoute ?](./osmand-intents.md)
+* [Déclenchement des invites vocales de navigation](./voice-prompt-triggering.md)
+* [Tracer les problèmes de recherche d'adresse](./trace-address-search-issues.md)
+* [Rendu de la carte : couches, texte, symboles, boutons et leur ordre](./map-rendering-layers.md)
+* [Calcul de la montée, de la descente et de la pente dans OsmAnd](./calculate-uphill-slope.md)
+
+-- source-hash: blake2s: b0be7c0a58db8f02556916a33330ca4403cef05099caaabc1e208b929579022a --

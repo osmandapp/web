@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Navigation
+title: Navigation
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,115 +13,117 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Route Calculation
+## Calcul d'itinéraire
 
-### Route calculation is slow
+### Le calcul d'itinéraire est lent
 
-*Android*. OsmAnd uses two different **offline routing engines**: a *Java-based engine* and a *Native (C++) engine*.
+*Android*. OsmAnd utilise deux **moteurs de routage hors ligne** différents : un *moteur basé sur Java* et un *moteur natif (C++)*.
 
-- The *Java-based engine* is used in [Safe Mode](../plugins/development.md#safe), but it is approximately 10 times slower than the native engine. It also has strict memory limitations, which can lead to errors such as *Not enough memory to compute*. If you encounter this issue, navigate to *Plugins → OsmAnd development → Settings →* [*Safe Mode*](../plugins/development.md#safe) and ensure this option is disabled.
-- The *Native (C++) engine* offers better performance, but its efficiency depends on your device’s memory and processor capabilities. Generally, native routing performs well for routes under 300 km, with route calculation times ranging from 15 seconds to 4 minutes. If the process takes longer than 4 minutes, it is advisable to stop, as the application may crash.
-
-
-### How to calculate routes longer than 250km?
-
-1. If the app does not show a route after 7-8 minutes of calculation time, consider [placing waypoints](../navigation/setup/route-navigation.md#route-recalculation) (pick e.g. places on motorways). 3-4 waypoints will be enough to calculate even 1000 km routes.
-
-2. For Top-end devices you can increase memory up to 512 MB or 1024 MB - [Memory allocated devices](../plugins/development.md#memory-allocated-for-routing).
-
-3. For Android version you can create a Navigation Profile with Online or Third-party routing (BRouter). Read more about it [here](../navigation/routing/brouter.md).
-
-### Calculation of 50 km routes for pedestrians
-
-If you are using the **Walking** profile in OsmAnd, the application may crash when calculating routes over 50 km. This issue occurs specifically when the [**Standard Routing A***](../navigation/guidance/navigation-settings.md#development-settings) is selected in the navigation settings. Several factors can contribute to this problem:
-
-- The route length exceeds 50 km.
-- The number of direct points on the route is greater than 1 million.
-- You are using a mobile device to calculate the route, which is not recommended for routes of this length. Consider using the web version for better performance.
-
-To avoid crashes with routes of similar distances, you may want to switch to other profile types like **Bicycle**.
+- Le *moteur basé sur Java* est utilisé en [Mode sécurisé](../plugins/development.md#safe), mais il est environ 10 fois plus lent que le moteur natif. Il a également des limitations de mémoire strictes, ce qui peut entraîner des erreurs telles que *Pas assez de mémoire pour calculer*. Si vous rencontrez ce problème, accédez à *Plugins → Développement OsmAnd → Paramètres →* [*Mode sécurisé*](../plugins/development.md#safe) et assurez-vous que cette option est désactivée.
+- Le *moteur natif (C++)* offre de meilleures performances, mais son efficacité dépend de la mémoire et des capacités du processeur de votre appareil. Généralement, le routage natif fonctionne bien pour les itinéraires de moins de 300 km, avec des temps de calcul d'itinéraire allant de 15 secondes à 4 minutes. Si le processus prend plus de 4 minutes, il est conseillé de l'arrêter, car l'application pourrait planter.
 
 
-## The Calculated Route does not Seem Correct
+### Comment calculer des itinéraires de plus de 250 km ?
 
-To track down issues with wrong or sub-optimum routes, please open a new posting in [Github discussions](https://github.com/osmandapp/OsmAnd/discussions) or [Github issue](https://github.com/osmandapp/Osmand/issues) and specify as detailed as possible the following information:
+1. Si l'application n'affiche pas d'itinéraire après 7 à 8 minutes de temps de calcul, envisagez de [placer des points de passage](../navigation/setup/route-navigation.md#route-recalculation) (choisissez par exemple des lieux sur les autoroutes). 3 à 4 points de passage suffiront pour calculer même des itinéraires de 1000 km.
 
-- What version of OsmAnd are you using, on what device?
-- Do you use the offline maps offered within the OsmAnd app for download, or online (tile / raster) maps?
-- If you use offline maps, tell us the exact name of the map file where the routing issue occurs, and its edition date.
-- Tell us whether you have used OsmAnd's in-app offline routing, or any online routing provider like YOURS, OpenRouteService or OSRM.
-- What routing profile is choosen in OsmAnd app (car, bike or pedestrian)?
-- Please specify as exactly as possible the start and end point of your route. If possible, tell us city name and street name for each. Also a [Permalink](https://wiki.openstreetmap.org/wiki/Permalink) from openstreetmap.org can be helpful.
-- Tell us your expected routing, and how OsmAnd routes.
+2. Pour les appareils haut de gamme, vous pouvez augmenter la mémoire jusqu'à 512 Mo ou 1024 Mo - [Mémoire allouée aux appareils](../plugins/development.md#memory-allocated-for-routing).
 
-## Road Information
+3. Pour la version Android, vous pouvez créer un profil de navigation avec un routage en ligne ou tiers (BRouter). En savoir plus à ce sujet [ici](../navigation/routing/brouter.md).
 
-### OsmAnd only shows some speed cams
+### Calcul d'itinéraires de 50 km pour les piétons
 
-Due to the geodata taken from the OpenStreetMap project there are by now two methods how speed cameras are integrated in the raw OSM data:
+Si vous utilisez le profil **Marche** dans OsmAnd, l'application peut planter lors du calcul d'itinéraires de plus de 50 km. Ce problème se produit spécifiquement lorsque le [**Routage standard A***](../navigation/guidance/navigation-settings.md#development-settings) est sélectionné dans les paramètres de navigation. Plusieurs facteurs peuvent contribuer à ce problème :
 
-- A point (called "node" in OSM terminology) of a way is tagged with "highway=speed_camera", see OSM wiki at [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
-- A group of OSM data elements are joined together in a so called "relation" that contains more elements than a single node to describe the direction that is covered by the speed trap. See [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
+- La longueur de l'itinéraire dépasse 50 km.
+- Le nombre de points directs sur l'itinéraire est supérieur à 1 million.
+- Vous utilisez un appareil mobile pour calculer l'itinéraire, ce qui n'est pas recommandé pour des itinéraires de cette longueur. Envisagez d'utiliser la version web pour de meilleures performances.
 
-Currently, OsmAnd can only make use of the elements that consists of a single node. Analyzing of relations is to come in a future release.
+Pour éviter les plantages avec des itinéraires de distances similaires, vous pouvez passer à d'autres types de profils comme **Vélo**.
 
 
-## Voice Navigation
+## L'itinéraire calculé ne semble pas correct
 
-### Why should I use a TTS voice instead of a recorded voice?
+Pour identifier les problèmes d'itinéraires incorrects ou sous-optimaux, veuillez ouvrir une nouvelle publication dans [Discussions Github](https://github.com/osmandapp/OsmAnd/discussions) ou [Problème Github](https://github.com/osmandapp/Osmand/issues) et spécifiez aussi précisément que possible les informations suivantes :
 
-**Text-to-Speech (TTS)** voices generate spoken prompts dynamically, allowing them to pronounce street names, place names, and highway numbers. In contrast, **recorded voices** are limited to pre-recorded phrases and cannot pronounce specific names or numbers.
+- Quelle version d'OsmAnd utilisez-vous, sur quel appareil ?
+- Utilisez-vous les cartes hors ligne proposées dans l'application OsmAnd pour le téléchargement, ou des cartes en ligne (tuiles / raster) ?
+- Si vous utilisez des cartes hors ligne, indiquez-nous le nom exact du fichier de carte où le problème de routage se produit, et sa date d'édition.
+- Dites-nous si vous avez utilisé le routage hors ligne intégré d'OsmAnd, ou un fournisseur de routage en ligne comme YOURS, OpenRouteService ou OSRM.
+- Quel profil de routage est choisi dans l'application OsmAnd (voiture, vélo ou piéton) ?
+- Veuillez spécifier aussi précisément que possible le point de départ et le point d'arrivée de votre itinéraire. Si possible, indiquez le nom de la ville et le nom de la rue pour chacun. Un [Permalien](https://wiki.openstreetmap.org/wiki/Permalink) d'openstreetmap.org peut également être utile.
+- Dites-nous votre routage attendu, et comment OsmAnd route.
 
-*Advantages of TTS over recorded voices:*
+## Informations routières
 
-- Pronounces street names and dynamic information.
-- Regularly updated with new features.
-- Offers better flexibility for navigation.
+### OsmAnd n'affiche que quelques radars
 
-To use TTS in OsmAnd, your device must have a **TTS engine** installed. Many devices come with a pre-installed TTS engine, but additional ones can be manually installed if needed. [List of supported TTS engines and languages for Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+En raison des géodonnées provenant du projet OpenStreetMap, il existe actuellement deux méthodes d'intégration des radars dans les données brutes d'OSM :
 
-For detailed instructions on setting up and adjusting Voice Prompts, refer to: [Voice Navigation Setup Guide](../navigation/guidance/voice-navigation.md).
+- Un point (appelé "nœud" dans la terminologie OSM) d'une voie est étiqueté avec "highway=speed_camera", voir le wiki OSM à [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- Un groupe d'éléments de données OSM est regroupé dans une "relation" qui contient plus d'éléments qu'un seul nœud pour décrire la direction couverte par le radar. Voir [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-### TTS does not function properly? Follow these steps to fix it
-
-Issues with **Text-to-Speech (TTS)** are typically related to **Android system settings**, not the OsmAnd app itself.  
-
-1. Ensure a TTS engine is installed.
-
-    - Open *Device Settings → Language & Input → Text-to-Speech Options*.
-    - Check if a **TTS engine** is installed (e.g., Google TTS, Samsung TTS, Pico).
-    - If no engine is installed, select *“Install more…”* and download a compatible one.
-    - [List of supported TTS engines and languages.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
-
-2. Verify TTS language settings.
-
-    - Select the language you want to use in *Android Settings → Text-to-Speech Options*.
-    - Tap *“Listen to an example”* to test if the TTS engine is working.
-    - If you don’t hear anything, update or reinstall the TTS engine.
-
-3. Adjust OsmAnd voice navigation settings.
-
-    - Open *OsmAnd → Menu → Configure Profile → Navigation Settings → Voice Prompts*.
-    - Select a compatible *Language → TTS*.
-    - Test the voice prompts by navigating to *Menu → Plugins → Enable OsmAnd Development → Settings → Test Voice Prompts*.
-
-#### Additional Steps
-
-- *Update Google TTS*. Open Google Play Store, search for **Google Text-to-Speech**, and update it.  
-- *Simulate Navigation*. Tap *Navigation button → Settings → Simulate Navigation* to check if voice guidance plays.  
-- *Reinstall OsmAnd*:  
-   - **Back up settings:** *Menu → Settings → Export to File*.  
-   - Uninstall OsmAnd, then reinstall it from the app store.  
-   - Restore settings: *Menu → Settings → Import File*.
-
-For additional troubleshooting, visit:
-
-- [Voice Navigation Guide](../navigation/guidance/voice-navigation.md)  
-- [Import/Export Settings](../personal/import-export.md)  
+Actuellement, OsmAnd ne peut utiliser que les éléments constitués d'un seul nœud. L'analyse des relations est prévue dans une future version.
 
 
-## Other
+## Navigation vocale
 
-### Navigation stops while screen is off
+### Pourquoi devrais-je utiliser une voix TTS au lieu d'une voix enregistrée ?
 
-- [The same issue](../troubleshooting/track-recording-issues.md#the-system-may-kill-background-apps-to-save-power) with track recording in the background.
+Les voix de **synthèse vocale (TTS)** génèrent des invites vocales de manière dynamique, ce qui leur permet de prononcer les noms de rues, les noms de lieux et les numéros d'autoroute. En revanche, les **voix enregistrées** sont limitées à des phrases pré-enregistrées et ne peuvent pas prononcer de noms ou de numéros spécifiques.
+
+*Avantages du TTS par rapport aux voix enregistrées :*
+
+- Prononce les noms de rues et les informations dynamiques.
+- Régulièrement mis à jour avec de nouvelles fonctionnalités.
+- Offre une meilleure flexibilité pour la navigation.
+
+Pour utiliser le TTS dans OsmAnd, votre appareil doit avoir un **moteur TTS** installé. De nombreux appareils sont livrés avec un moteur TTS préinstallé, mais d'autres peuvent être installés manuellement si nécessaire. [Liste des moteurs et langues TTS pris en charge pour Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+
+Pour des instructions détaillées sur la configuration et l'ajustement des invites vocales, consultez : [Guide de configuration de la navigation vocale](../navigation/guidance/voice-navigation.md).
+
+### Le TTS ne fonctionne pas correctement ? Suivez ces étapes pour le réparer
+
+Les problèmes de **synthèse vocale (TTS)** sont généralement liés aux **paramètres système Android**, et non à l'application OsmAnd elle-même.
+
+1. Assurez-vous qu'un moteur TTS est installé.
+
+    - Ouvrez *Paramètres de l'appareil → Langue et saisie → Options de synthèse vocale*.
+    - Vérifiez si un **moteur TTS** est installé (par exemple, Google TTS, Samsung TTS, Pico).
+    - Si aucun moteur n'est installé, sélectionnez *« Installer plus… »* et téléchargez un moteur compatible.
+    - [Liste des moteurs et langues TTS pris en charge.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
+
+2. Vérifiez les paramètres de langue TTS.
+
+    - Sélectionnez la langue que vous souhaitez utiliser dans *Paramètres Android → Options de synthèse vocale*.
+    - Appuyez sur *« Écouter un exemple »* pour tester si le moteur TTS fonctionne.
+    - Si vous n'entendez rien, mettez à jour ou réinstallez le moteur TTS.
+
+3. Ajustez les paramètres de navigation vocale d'OsmAnd.
+
+    - Ouvrez *OsmAnd → Menu → Configurer le profil → Paramètres de navigation → Invites vocales*.
+    - Sélectionnez une *Langue → TTS* compatible.
+    - Testez les invites vocales en naviguant vers *Menu → Plugins → Activer le développement OsmAnd → Paramètres → Tester les invites vocales*.
+
+#### Étapes supplémentaires
+
+- *Mettre à jour Google TTS*. Ouvrez le Google Play Store, recherchez **Google Text-to-Speech** et mettez-le à jour.
+- *Simuler la navigation*. Appuyez sur *Bouton de navigation → Paramètres → Simuler la navigation* pour vérifier si le guidage vocal est lu.
+- *Réinstaller OsmAnd* :
+   - **Sauvegarder les paramètres :** *Menu → Paramètres → Exporter vers un fichier*.
+   - Désinstallez OsmAnd, puis réinstallez-le depuis le magasin d'applications.
+   - Restaurer les paramètres : *Menu → Paramètres → Importer un fichier*.
+
+Pour un dépannage supplémentaire, visitez :
+
+- [Guide de navigation vocale](../navigation/guidance/voice-navigation.md)
+- [Importer/Exporter les paramètres](../personal/import-export.md)
+
+
+## Autre
+
+### La navigation s'arrête lorsque l'écran est éteint
+
+- [Le même problème](../troubleshooting/track-recording-issues.md#the-system-may-kill-background-apps-to-save-power) avec l'enregistrement de traces en arrière-plan.
+
+-- source-hash: blake2s: 3b9e52018b1e2b66d2a9ad05e42687fa73264bf1bacc890c90012ec8357db7a2 --

@@ -5,38 +5,37 @@ title: Docs
 ---
 
 
-### 🎓 [User guide](/docs/user/)
+### 🎓 [Guide de l'utilisateur](/docs/user/)
 
-User guide about the OsmAnd application describing main features & settings.
+Guide de l'utilisateur sur l'application OsmAnd décrivant les principales fonctionnalités et paramètres.
 
-### 🗺️ [Map legend](/docs/user/map-legend/)
+### 🗺️ [Légende de la carte](/docs/user/map-legend/)
 
-Key map elements used in OsmAnd Map.
+Éléments clés de la carte utilisés dans OsmAnd Map.
 
-### 🌍 [Map](https://osmand.net/map)
+### 🌍 [Carte](https://osmand.net/map)
 
-Use the OsmAnd route planner, look at the weather forecast, find interesting places on the map, and work with your OsmAnd Cloud account (tracks, favorites, account data). 
+Utilisez le planificateur d'itinéraire OsmAnd, consultez les prévisions météorologiques, trouvez des lieux intéressants sur la carte et travaillez avec votre compte OsmAnd Cloud (traces, favoris, données de compte).
 
-### 📚 [Technical Documentation](/docs/technical/)
+### 📚 [Documentation technique](/docs/technical/)
 
-Technical documentation related 
+Documentation technique connexe
 
-### 🛠 [Build it](/docs/build-it/)
+### 🛠 [Construire](/docs/build-it/)
 
-Build and create your own version of OsmAnd, also links to License questions.
+Construisez et créez votre propre version d'OsmAnd, ainsi que des liens vers les questions de licence.
 
 ### ⏪ [Versions](/docs/versions/)
 
-Release notes and links to previous OsmAnd Releases. Beta & Nightly builds. OsmAnd MapCreator.
+Notes de version et liens vers les versions précédentes d'OsmAnd. Versions bêta et nocturnes. OsmAnd MapCreator.
 
-### ⚖ [Legal](/docs/legal/)
+### ⚖ [Mentions légales](/docs/legal/)
 
-License. Privacy Policy. Terms of Use.
+Licence. Politique de confidentialité. Conditions d'utilisation.
 
-### 🚵‍♂️ [Join our team](/docs/hiring/)
+### 🚵‍♂️ [Rejoignez notre équipe](/docs/hiring/)
 
-We are always seeking for new contributors who can join our international team.
-
-
+Nous recherchons toujours de nouveaux contributeurs qui peuvent rejoindre notre équipe internationale.
 
 
+-- source-hash: blake2s: 1596c0b6840f2d0c57c8adaf497899cf60a733fb6b2b9339682ca3cf566e74ef --

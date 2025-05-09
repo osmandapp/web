@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-sidebar_label:  Plan Route
-title: Plan Route on the Website
+sidebar_label: Planifier un itinéraire
+title: Planifier un itinéraire sur le site Web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -18,109 +18,111 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-## Overview
+## Aperçu
 
-The OsmAnd Web Route Planner allows you to create navigation routes, plan tracks, and manage local files directly from your browser. This web tool is useful for creating detailed travel routes that you can sync to your app or share with others.
+Le planificateur d'itinéraire Web d'OsmAnd vous permet de créer des itinéraires de navigation, de planifier des traces et de gérer des fichiers locaux directement depuis votre navigateur. Cet outil Web est utile pour créer des itinéraires de voyage détaillés que vous pouvez synchroniser avec votre application ou partager avec d'autres.
 
 
-## Navigation Route
+## Itinéraire de navigation
 
-To create a navigation route, follow these steps:
+Pour créer un itinéraire de navigation, suivez ces étapes :
 
-- **Right-click** on the map to add waypoints:
+- **Cliquez avec le bouton droit** sur la carte pour ajouter des points de passage :
 
-  - *Navigate from*. Set the starting point.
-  - *Navigate to*. Set the destination.
-  - *Navigate via*. Add intermediate points if needed.
+  - *Naviguer depuis*. Définissez le point de départ.
+  - *Naviguer vers*. Définissez la destination.
+  - *Naviguer via*. Ajoutez des points intermédiaires si nécessaire.
 
-- After setting the start and end points, the route will be displayed on the map.
+- Après avoir défini les points de départ et d'arrivée, l'itinéraire s'affiche sur la carte.
 
-- In the **Route** block:
+- Dans le bloc **Itinéraire** :
 
-  - Move the start and end points if needed.
-  - Edit the waypoints and choose the desired route type (e.g., car, bicycle, walking).
+  - Déplacez les points de départ et d'arrivée si nécessaire.
+  - Modifiez les points de passage et choisissez le type d'itinéraire souhaité (par exemple, voiture, vélo, marche).
 
   ![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
 
-- Select the appropriate **Route Profile** for different navigation options.
+- Sélectionnez le **profil d'itinéraire** approprié pour différentes options de navigation.
 
   ![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
 
-- Click on the orange circles along the route to view detailed navigation instructions.
+- Cliquez sur les cercles orange le long de l'itinéraire pour afficher les instructions de navigation détaillées.
 
   ![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
 
-- To share the route, copy the URL. Example: [https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+- Pour partager l'itinéraire, copiez l'URL. Exemple : [https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
 
 
-## Create Track and Local Files
+## Créer une trace et des fichiers locaux
 
-OsmAnd Web's [**Plan route**](../plan-route/create-route.md) tool allows you to create and edit tracks similarly to the mobile app. Here's how you can create and manage tracks:
-
-
-***Creating a new route:***
-
-- *Right-click* on the map and select **Create New Route**.
-- Alternatively, use the **Create Track** button in the *Local* menu (located on the right side with the *Pencil* and *Upload* buttons).
+L'outil [**Planifier un itinéraire**](../plan-route/create-route.md) d'OsmAnd Web vous permet de créer et de modifier des traces de manière similaire à l'application mobile. Voici comment vous pouvez créer et gérer des traces :
 
 
-***Managing tracks:***
+***Créer un nouvel itinéraire :***
 
-- **Select Navigation Profile**. Choose a profile (e.g., hiking, driving) for specific route sections (*New segments*) or for the entire route (*All segments*).
-- **Add Waypoints**. Click on the map to add new points.
-- **Save the Route**. Save your route for future use.
-- **View Route Details**. Access detailed track information, including length, duration, and terrain.
+- *Cliquez avec le bouton droit* sur la carte et sélectionnez **Créer un nouvel itinéraire**.
+- Vous pouvez également utiliser le bouton **Créer une trace** dans le menu *Local* (situé sur le côté droit avec les boutons *Crayon* et *Télécharger*).
+
+
+***Gérer les traces :***
+
+- **Sélectionner le profil de navigation**. Choisissez un profil (par exemple, randonnée, conduite) pour des sections d'itinéraire spécifiques (*Nouveaux segments*) ou pour l'itinéraire entier (*Tous les segments*).
+- **Ajouter des points de passage**. Cliquez sur la carte pour ajouter de nouveaux points.
+- **Enregistrer l'itinéraire**. Enregistrez votre itinéraire pour une utilisation future.
+- **Afficher les détails de l'itinéraire**. Accédez aux informations détaillées de la trace, y compris la longueur, la durée et le terrain.
   ![OsmAnd Web Create Track](@site/static/img/web/create_route.png)
 
 
-***Importing and creating tracks:***
+***Importer et créer des traces :***
 
-- **Import Track**. You can upload any GPX file to the **Local** section by visiting [osmand.net/map](https://osmand.net/map).
-- **Create Track**. Manually create a new track by selecting waypoints.
+- **Importer une trace**. Vous pouvez télécharger n'importe quel fichier GPX dans la section **Local** en visitant [osmand.net/map](https://osmand.net/map).
+- **Créer une trace**. Créez manuellement une nouvelle trace en sélectionnant des points de passage.
   ![OsmAnd Web Create Track](@site/static/img/web/create_route_2.png)
 
 
-***Local track actions and information:***
+***Actions et informations sur les traces locales :***
 
-The **Local Track** menu provides three panels for editing: **Info**, **Track**, and **Waypoints**.
+Le menu **Trace locale** propose trois panneaux d'édition : **Info**, **Trace** et **Points de passage**.
 
-**Info Panel**:
+**Panneau Info** :
 
-- *Save to Cloud*. Save your track to OsmAnd Cloud for cross-device access.
-- *Add description*. Add notes about the track.
-- *Rename*. Change the track name.
-- *Recalculate*. Add or update elevation data.
-- *Elevation*. View the elevation profile.
-- *Speed graph*. Display speed data across the track.
-- *Slope graph*. Show slope changes along the route.  
-- *Road details*. View detailed information such as road type, surface, and steepness.
-- *Download GPX*. Export the track as a GPX file ([Pro feature](../purchases/index.md)).
-- *Close Track*. Close the track editing view.
-- *Delete Track*. Permanently delete the track.
+- *Enregistrer dans le cloud*. Enregistrez votre trace dans OsmAnd Cloud pour un accès multi-appareils.
+- *Ajouter une description*. Ajoutez des notes sur la trace.
+- *Renommer*. Modifiez le nom de la trace.
+- *Recalculer*. Ajoutez ou mettez à jour les données d'altitude.
+- *Altitude*. Affichez le profil d'altitude.
+- *Graphique de vitesse*. Affichez les données de vitesse sur la trace.
+- *Graphique de pente*. Affichez les changements de pente le long de l'itinéraire.
+- *Détails de la route*. Affichez des informations détaillées telles que le type de route, la surface et la pente.
+- *Télécharger le fichier GPX*. Exportez la trace au format GPX ([Fonctionnalité Pro](../purchases/index.md)).
+- *Fermer la trace*. Fermez la vue d'édition de la trace.
+- *Supprimer la trace*. Supprimez définitivement la trace.
   ![OsmAnd Web Create Track](@site/static/img/web/create_route_3.png)
 
-**Track Panel**:
+**Panneau Trace** :
 
-- View and edit track points.
-- Reorder or delete points as needed.
+- Affichez et modifiez les points de trace.
+- Réorganisez ou supprimez les points si nécessaire.
 
-**Waypoints Panel**:
+**Panneau Points de passage** :
 
-- View and manage track waypoints.
-- Toggle the visibility of waypoints on the map.
-- Delete waypoints individually if necessary.
+- Affichez et gérez les points de passage de la trace.
+- Activez ou désactivez la visibilité des points de passage sur la carte.
+- Supprimez les points de passage individuellement si nécessaire.
 
-**Turns Panel**:
+**Panneau Virages** :
 
-- View detailed information about turns along the track.
+- Affichez des informations détaillées sur les virages le long de la trace.
 
   ![OsmAnd Web Create Track](@site/static/img/web/create_route_1.png)
 
 
-***Additional features:***
+***Fonctionnalités supplémentaires :***
 
-- **Sync with app**. Save routes to OsmAnd Cloud and access them on your mobile app.
-- **Custom route profiles**. Adjust profiles to suit different activities, such as cycling or hiking.
-- **Shareable routes**. Copy and share route URLs for collaborative planning.
+- **Synchronisation avec l'application**. Enregistrez les itinéraires dans OsmAnd Cloud et accédez-y sur votre application mobile.
+- **Profils d'itinéraire personnalisés**. Ajustez les profils pour différentes activités, telles que le cyclisme ou la randonnée.
+- **Itinéraires partageables**. Copiez et partagez les URL d'itinéraire pour une planification collaborative.
 
-> *This article was last updated in January 2025*
+> *Cet article a été mis à jour pour la dernière fois en janvier 2025*
+
+-- source-hash: blake2s: f16f3cb4ca518ab2a1eeab708ce436b8d0b7b195fb8144a44bcbb541a2e20de5 --

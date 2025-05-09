@@ -3,8 +3,8 @@ sidebar_position: 4
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Navigate Map activity
-There is map and switch for opengl rengering, it has longClickListener on mapView, after first tap start point is selected, after second tap it selects finish and starts route calculation.
+# Activité de carte de navigation
+Il y a une carte et un interrupteur pour le rendu OpenGL. Il y a un longClickListener sur mapView. Après le premier appui, le point de départ est sélectionné. Après le deuxième appui, il sélectionne la destination et commence le calcul de l'itinéraire.
 
   ```
   public class NavigateMapActivity extends AppCompatActivity  {
@@ -127,3 +127,5 @@ There is map and switch for opengl rengering, it has longClickListener on mapVie
 	}
 }
 ```
+
+-- source-hash: blake2s: 3f4d461d10fe8af07e56eedd4cebd9c4cd0e717bdae0af976d44cb76684a4884 --

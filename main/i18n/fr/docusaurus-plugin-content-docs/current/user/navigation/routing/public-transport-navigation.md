@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title:  Public Transport routing
+title:  Itinéraire en transports en commun
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,14 +14,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Overview
+## Aperçu
 
-Public transport navigation in the OsmAnd app allows you to work out the routes using public transport, which will certainly help you get around the "concrete jungle" faster.
+La navigation en transports en commun dans l'application OsmAnd vous permet de calculer des itinéraires en utilisant les transports en commun, ce qui vous aidera certainement à vous déplacer plus rapidement dans la "jungle de béton".
 
-Data on public transport routes is taken from the [OpenStreetMap](http://openstreetmap.org/) project. OsmAnd uses the [PTv2 scheme](https://wiki.openstreetmap.org/wiki/Public_transport) for navigation.  OsmAnd supports following OpenStreetMap routes for navigation  *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. Default speed for each type of vehicle is configured in [Routing xml](../../../technical/build-osmand/routing.md) and it used to find the fastest routes.
+Les données sur les itinéraires de transports en commun proviennent du projet [OpenStreetMap](http://openstreetmap.org/). OsmAnd utilise le [schéma PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) pour la navigation. OsmAnd prend en charge les itinéraires OpenStreetMap suivants pour la navigation : *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. La vitesse par défaut pour chaque type de véhicule est configurée dans [Routing xml](../../../technical/build-osmand/routing.md) et est utilisée pour trouver les itinéraires les plus rapides.
 
 :::note
-Public transport routing is in the testing phase. For now, you can build and view your route without the full navigation function.
+La navigation en transports en commun est en phase de test. Pour l'instant, vous pouvez construire et visualiser votre itinéraire sans la fonction de navigation complète.
 :::
 
 <Tabs groupId="operating-systems">
@@ -41,11 +41,11 @@ Public transport routing is in the testing phase. For now, you can build and vie
 </Tabs>
 
 
-## How to Use
+## Comment utiliser
 
-To start navigating around the city by public transport, use [the navigation button](../../widgets/map-buttons.md#directions) on the map screen or select the navigation option in the *Main Menu*.  
+Pour commencer à naviguer dans la ville en transports en commun, utilisez [le bouton de navigation](../../widgets/map-buttons.md#directions) sur l'écran de la carte ou sélectionnez l'option de navigation dans le *Menu principal*.
 
-**1.** You need to choose *Public transport navigation profile*, start and destination points.  
+**1.** Vous devez choisir le *profil de navigation Transports en commun*, les points de départ et d'arrivée.
 
 <Tabs groupId="operating-systems">
 
@@ -63,7 +63,7 @@ To start navigating around the city by public transport, use [the navigation but
 
 </Tabs>
 
-**2.** OsmAnd offers route options with walking times and public transport routes with route information: time, distance, transfer, and public routes. You need to scroll through the navigation screen to select the required option.  
+**2.** OsmAnd propose des options d'itinéraire avec les temps de marche et les itinéraires de transports en commun avec des informations sur l'itinéraire : temps, distance, correspondance et lignes de transports en commun. Vous devez faire défiler l'écran de navigation pour sélectionner l'option requise.
 
 <Tabs groupId="operating-systems">
 
@@ -81,7 +81,7 @@ To start navigating around the city by public transport, use [the navigation but
 
 </Tabs>
 
-**3.** You can view all possible route suggestions on the map using the *Show on map* button. Swipe through the screens to view the next route option.
+**3.** Vous pouvez visualiser toutes les suggestions d'itinéraire possibles sur la carte en utilisant le bouton *Afficher sur la carte*. Faites glisser les écrans pour afficher l'option d'itinéraire suivante.
 
 <Tabs groupId="operating-systems">
 
@@ -100,7 +100,7 @@ To start navigating around the city by public transport, use [the navigation but
 </Tabs>
 
 
-**4.** Tap the "Details" button to open a description of the selected route with all stops and transfers.  
+**4.** Appuyez sur le bouton "Détails" pour ouvrir une description de l'itinéraire sélectionné avec tous les arrêts et correspondances.
 
 <Tabs groupId="operating-systems">
 
@@ -119,12 +119,14 @@ To start navigating around the city by public transport, use [the navigation but
 </Tabs>
 
 
-## Data and Guideline
+## Données et directives
 
-OsmAnd uses a new public transport scheme, also called Public Transport Version 2 (PTv2) for the OsmAnd Public Transport navigation algorithm.
+OsmAnd utilise un nouveau schéma de transports en commun, également appelé Public Transport Version 2 (PTv2), pour l'algorithme de navigation des transports en commun d'OsmAnd.
 
-- You can check your public transportation [here](http://tools.geofabrik.de/osmi/).
-- A guide to building or adjusting public transport routes is available on our [blog](https://osmand.net/blog/guideline-pt).
-- The presentation [2019: Public Transport Navigation using OpenStreetMap by OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
+- Vous pouvez vérifier vos transports en commun [ici](http://tools.geofabrik.de/osmi/).
+- Un guide pour construire ou ajuster les itinéraires de transports en commun est disponible sur notre [blog](https://osmand.net/blog/guideline-pt).
+- La présentation [2019 : Navigation en transports en commun utilisant OpenStreetMap par OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
 
-> *This article was last updated in June 2024.*
+> *Cet article a été mis à jour pour la dernière fois en juin 2024.*
+
+-- source-hash: blake2s: 7351826c8fb4c60b25d85b76503d19be0d8c40372400b9f8e4bb8e6c1112825b --

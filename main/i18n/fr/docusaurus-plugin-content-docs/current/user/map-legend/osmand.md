@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: OsmAnd Map Style
+title: Style de carte OsmAnd
 ---
 import Translate from '@site/src/components/Translate.js';
 import LegendItem from '@site/src/components/docs/LegendItem.js';
@@ -28,33 +28,33 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# OsmAnd map style
+# Style de carte OsmAnd
 <Translate android="yes" id="default_render_descr" />
 
 
-## Highways
-<img src={require('@site/static/img/map-legend/osmand-highways.png').default} alt="OsmAnd Map style" />
+## Autoroutes
+<img src={require('@site/static/img/map-legend/osmand-highways.png').default} alt="Style de carte OsmAnd" />
 
-## Railways
-<img src={require('@site/static/img/map-legend/osmand-railways.png').default} alt="OsmAnd Map style" />
+## Chemins de fer
+<img src={require('@site/static/img/map-legend/osmand-railways.png').default} alt="Style de carte OsmAnd" />
 
-## Aerialways
-<img src={require('@site/static/img/map-legend/osmand-aerialways.png').default} alt="OsmAnd Map style" />
+## Téléphériques
+<img src={require('@site/static/img/map-legend/osmand-aerialways.png').default} alt="Style de carte OsmAnd" />
 
-## Routes
-<img src={require('@site/static/img/map-legend/osmand-routes.png').default} alt="OsmAnd Map style" />
-<img src={require('@site/static/img/map-legend/osmand-routes-dirtbike.png').default} alt="OsmAnd Map style" />
+## Itinéraires
+<img src={require('@site/static/img/map-legend/osmand-routes.png').default} alt="Style de carte OsmAnd" />
+<img src={require('@site/static/img/map-legend/osmand-routes-dirtbike.png').default} alt="Style de carte OsmAnd" />
 
 ## Via ferrata
-<img src={require('@site/static/img/map-legend/osmand-via-ferrata.png').default} alt="OsmAnd Map style" />
+<img src={require('@site/static/img/map-legend/osmand-via-ferrata.png').default} alt="Style de carte OsmAnd" />
 
-## Path difficulty
-<img src={require('@site/static/img/map-legend/osmand-path-difficulty.png').default} alt="OsmAnd Map style" />
+## Difficulté des chemins
+<img src={require('@site/static/img/map-legend/osmand-path-difficulty.png').default} alt="Style de carte OsmAnd" />
 
-## Surface smoothness
-<img src={require('@site/static/img/map-legend/osmand-surface-smoothness.png').default} alt="OsmAnd Map style" />
+## Lissé de la surface
+<img src={require('@site/static/img/map-legend/osmand-surface-smoothness.png').default} alt="Style de carte OsmAnd" />
 
-## Access
+## Accès
 
 <LegendItem itemsMap={{
         'Access Private' : 'access/access_PrivateColor',
@@ -69,10 +69,10 @@ import TabItem from '@theme/TabItem';
 </LegendItem>
 
 
-## Waterways
-<img src={require('@site/static/img/map-legend/osmand-waterways.png').default} alt="OsmAnd Map style" />
+## Cours d'eau
+<img src={require('@site/static/img/map-legend/osmand-waterways.png').default} alt="Style de carte OsmAnd" />
 
-## Buildings, transportation
+## Bâtiments, transports
 
 <LegendItem itemsMap={{
         'Regular Building' : 'buildigns/building_RegularColor',
@@ -96,7 +96,7 @@ import TabItem from '@theme/TabItem';
         }}>
 </LegendItem>
 
-## Sport, leisure
+## Sport, loisirs
 
 <LegendItem itemsMap={{
         'Stadium' : 'sport_leisure/sport_Stadium',
@@ -120,7 +120,7 @@ import TabItem from '@theme/TabItem';
 </LegendItem>
 
 
-## Built-up areas
+## Zones bâties
 
 <LegendItem itemsMap={{
         'Place Of Worship' : 'built-up-areas/built-up_PlaceOfWorship',
@@ -147,7 +147,7 @@ import TabItem from '@theme/TabItem';
         }}>
 </LegendItem>
 
-### Landuse
+### Occupation des sols
 <LegendItem itemsMap={{
         'Residential' : 'built-up-areas/built-up_Residential',
         'Residential (Rural)' : 'built-up-areas/built-up_ResidentialRural',
@@ -173,7 +173,7 @@ import TabItem from '@theme/TabItem';
         }}>
 </LegendItem>
 
-### Cemetery
+### Cimetière
 <LegendItem itemsMap={{
         'Cemetery' : 'built-up-areas/built-up_cemeteryColor',
         'Christian cemetery' : 'built-up-areas/built-up_cemeteryColorСhristian',
@@ -182,7 +182,7 @@ import TabItem from '@theme/TabItem';
         }}>
 </LegendItem>
 
-### Education
+### Éducation
 <LegendItem itemsMap={{
         'KinderGarten' : 'built-up-areas/built-up_amenityKinderGarten',
         'School' : 'built-up-areas/built-up_amenitySchool',
@@ -193,7 +193,7 @@ import TabItem from '@theme/TabItem';
         }}>
 </LegendItem>
 
-### Historic
+### Historique
 <LegendItem itemsMap={{
         'Archaeological Site' : 'built-up-areas/built-up_ArchaeologicalSite',
         'Historic Ruins' : 'built-up-areas/built-up_HistoricRuins',
@@ -203,39 +203,39 @@ import TabItem from '@theme/TabItem';
 
 
 ## Nature
-<img src={require('@site/static/img/map-legend/osmand-nature.png').default} alt="OsmAnd Map style" />
+<img src={require('@site/static/img/map-legend/osmand-nature.png').default} alt="Style de carte OsmAnd" />
 
-## Icons
+## Icônes
 
-### Traffic, transportation
+### Circulation, transports
 
 <LegendItemAutogeneratedTraffic />
 
-### Emergency
+### Urgence
 
 <LegendItemAutogeneratedEmergency />
 
-### Health
+### Santé
 
 <LegendItemAutogeneratedHealth />
 
-### Tourism
+### Tourisme
 
 <LegendItemAutogeneratedTourism />
 
-### Entertainment
+### Divertissement
 
 <LegendItemAutogeneratedEntertainment />
 
-### Accomodation
+### Hébergement
 
 <LegendItemAutogeneratedAccomodation />
 
-### Education
+### Éducation
 
 <LegendItemAutogeneratedEducation />
 
-### Food and drink
+### Nourriture et boissons
 
 <LegendItemAutogeneratedSustenance />
 
@@ -251,7 +251,7 @@ import TabItem from '@theme/TabItem';
 
 <LegendItemAutogeneratedFinance />
 
-### Administrative
+### Administratif
 
 <LegendItemAutogeneratedAdministrative />
 
@@ -259,15 +259,15 @@ import TabItem from '@theme/TabItem';
 
 <LegendItemAutogeneratedService />
 
-### Shops
+### Boutiques
 
 <LegendItemAutogeneratedShop />
 
-### Offices
+### Bureaux
 
 <LegendItemAutogeneratedOffice />
 
-### Craft
+### Artisanat
 
 <LegendItemAutogeneratedCraft />
 
@@ -275,10 +275,12 @@ import TabItem from '@theme/TabItem';
 
 <LegendItemAutogeneratedClub />
 
-### Barriers
+### Barrières
 
 <LegendItemAutogeneratedBarrier />
 
-### Man made
+### Artificiel
 
 <LegendItemAutogeneratedManmade />
+
+-- source-hash: blake2s: 6c485250e4d508fe52465efdc98700cdb6fae28b140e21a9e21612701aa98477 --

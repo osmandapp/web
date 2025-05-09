@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title:  Track Appearance
+title:  Apparence de la trace
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,283 +15,285 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Vue d'ensemble
 
-The **Track Appearance** feature allows users to customize how tracks are displayed on the map. This includes adjusting color, width, direction indicators, and other visual elements. Customizing track appearance helps differentiate multiple tracks, highlight specific routes, and improve map readability.
+La fonction **Apparence de la trace** permet aux utilisateurs de personnaliser la façon dont les traces sont affichées sur la carte. Cela inclut l'ajustement de la couleur, de la largeur, des indicateurs de direction et d'autres éléments visuels. La personnalisation de l'apparence des traces permet de différencier plusieurs traces, de mettre en évidence des itinéraires spécifiques et d'améliorer la lisibilité de la carte.
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Track Appearance overview Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track_appearence_1_andr.png)  
+![Apparence de la trace vue d'ensemble Android](@site/static/img/map/track-appear-and-1.png) ![Menu Apparence de la trace Android](@site/static/img/map/track_appearence_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track menu Appearance iOS](@site/static/img/map/track_appearence_1_ios.png) ![Track menu Appearance iOS](@site/static/img/map/track_appearence_2_ios.png)  
+![Menu Apparence de la trace iOS](@site/static/img/map/track_appearence_1_ios.png) ![Menu Apparence de la trace iOS](@site/static/img/map/track_appearence_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Access to the menu
+## Accès au menu
 
-You can modify track appearance using one of the following methods:
+Vous pouvez modifier l'apparence de la trace en utilisant l'une des méthodes suivantes :
 
-- **From My Places**. Open *Menu → My Places → Tracks*, select a track, tap the *Appearance icon* in the [track context menu](../../map/tracks/track-context-menu.md#overview).
-- **From the map**. Tap a track directly on the map, then tap the *Appearance icon* in the *Overview section*.
-- **From track recording**. Modify the appearance of the currently recorded track via the [track recording context menu](../../plugins/trip-recording.md#сurrent-track-recording).  
-- **From the Configure Map menu**. Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* for the displayed tracks.
+- **Depuis Mes Lieux**. Ouvrez *Menu → Mes Lieux → Traces*, sélectionnez une trace, appuyez sur l'*icône Apparence* dans le [menu contextuel de la trace](../../map/tracks/track-context-menu.md#overview).
+- **Depuis la carte**. Appuyez directement sur une trace sur la carte, puis appuyez sur l'*icône Apparence* dans la section *Vue d'ensemble*.
+- **Depuis l'enregistrement de trace**. Modifiez l'apparence de la trace en cours d'enregistrement via le [menu contextuel d'enregistrement de trace](../../plugins/trip-recording.md#сurrent-track-recording).
+- **Depuis le menu Configurer la carte**. Allez dans *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* pour les traces affichées.
 
 
-## Track Appearance Settings
+## Paramètres d'apparence de la trace
 
-### Color
+### Couleur
 
-:::tip purchases
-Some settings you can use only with *OsmAnd Pro* or *Maps+*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> and <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Free and Paid features.
+:::tip achats
+Certains paramètres ne peuvent être utilisés qu'avec *OsmAnd Pro* ou *Maps+*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Fonctionnalités gratuites et payantes Android</a> et <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a>.
 :::
 
-![Appearance](@site/static/img/map/appearance_color_andr.png)
+![Apparence](@site/static/img/map/appearance_color_andr.png)
 
-You can set the track color manually or use **color-based data visualization** (e.g., speed, altitude, slope). If a track lacks certain data, OsmAnd displays missing sections in gray.
+Vous pouvez définir la couleur de la trace manuellement ou utiliser la **visualisation de données basée sur la couleur** (par exemple, vitesse, altitude, pente). Si une trace manque de certaines données, OsmAnd affiche les sections manquantes en gris.
 
-**Available Color Options:**
+**Options de couleur disponibles :**
 
-- **Free settings**: *<Translate android="true" ids="track_coloring_solid"/> color*, *<Translate android="true" ids="shared_string_speed"/>* (if recorded) and *<Translate android="true" ids="altitude"/>* (if recorded).
+- **Paramètres gratuits** : *<Translate android="true" ids="track_coloring_solid"/> couleur*, *<Translate android="true" ids="shared_string_speed"/>* (si enregistré) et *<Translate android="true" ids="altitude"/>* (si enregistré).
 
-    ![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+    ![Menu Apparence de la trace Couleur de la trace Android](@site/static/img/map/track_appearance_menu_track_color_android.png) ![Apparence Couleur de la trace Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)
 
-- **Premium settings** ([Maps+ / Pro feature](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
+- **Paramètres Premium** ([Fonctionnalité Maps+ / Pro](../../purchases/index.md)) : *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.
 
-For more details on route line appearance customization, see [Map screen during navigation](../../navigation/guidance/map-during-navigation.md#color)and on selecting and creating a custom color, see [Color schemes](../../personal/color-palette-schemes.md#routes).
-
-
-### Width
-
-![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track Appearance](@site/static/img/map/track_appearance_width_andr.png)  
-
-You can customize the appearance of the track in several menus of the application:
-
-- [*Track → Appearance*](../../personal/tracks/manage-tracks.md#folder-menu).
-- [*Navigation settings → Customize route line*](../../navigation/guidance/navigation-settings.md#customize-route-line).
-- [*My Places → Tracks tab → any folder → Default appearance*](../../personal/tracks/manage-tracks.md#folder-menu).
-
-Adjust track width to improve visibility on the map.
-
-- **Preset options**: **Thin, Medium,** and **Bold**.
-
-- **Custom width**: Adjustable from 1 to 24 px using a slider.
-
-- **Profile-based width**: Can be set via *Navigation settings → [Customize Route Line](../../navigation/guidance/navigation-settings.md#customize-route-line)*.
+Pour plus de détails sur la personnalisation de l'apparence de la ligne d'itinéraire, voir [Écran de la carte pendant la navigation](../../navigation/guidance/map-during-navigation.md#color) et sur la sélection et la création d'une couleur personnalisée, voir [Schémas de couleurs](../../personal/color-palette-schemes.md#routes).
 
 
-### Split Interval
+### Largeur
 
-![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+![Menu Apparence de la trace Épaisseur de la trace Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png) ![Apparence de la trace](@site/static/img/map/track_appearance_width_andr.png)
 
-Select whether to split the interval on the track **by distance or by time**.
+Vous pouvez personnaliser l'apparence de la trace dans plusieurs menus de l'application :
 
-### Direction Arrows
+- [*Trace → Apparence*](../../personal/tracks/manage-tracks.md#folder-menu).
+- [*Paramètres de navigation → Personnaliser la ligne d'itinéraire*](../../navigation/guidance/navigation-settings.md#customize-route-line).
+- [*Mes Lieux → Onglet Traces → n'importe quel dossier → Apparence par défaut*](../../personal/tracks/manage-tracks.md#folder-menu).
 
-![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
+Ajustez la largeur de la trace pour améliorer la visibilité sur la carte.
 
-Adds **arrow markers** along the track to indicate movement direction.
+- **Options prédéfinies** : **Fine, Moyenne** et **Épaisse**.
 
-### Start and Finish Icons
+- **Largeur personnalisée** : Réglable de 1 à 24 px à l'aide d'un curseur.
 
-![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
-
-Allows you to select whether to show the **start and finish icons** for track segments.
-
-### Join Gaps
-
-Connects **track segments** that were interrupted due to GPS loss or a pause in recording. The **<Translate android="true" ids="join_segments"/>** (*Android*) or **<Translate ios="true" ids="gpx_join_gaps"/>** (*iOS*) feature allows you to connect these gaps in the selected GPX track using straight lines.
-
-### Reset to Original
-
-Restores all **track appearance settings** to their default values.
+- **Largeur basée sur le profil** : Peut être définie via *Paramètres de navigation → [Personnaliser la ligne d'itinéraire](../../navigation/guidance/navigation-settings.md#customize-route-line)*.
 
 
-## 3D Track
+### Intervalle de division
 
-:::info Paid feature
-**3D Track** is an **OsmAnd Pro** paid feature for [iOS](../../purchases/ios.md#pro-features) and [Android](../../purchases/android.md#pro-features) <ProFeature />.
+![Menu Apparence de la trace Intervalle de division](@site/static/img/map/track_appearance_menu_split_interval_android.png) ![Intervalle de division](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+
+Sélectionnez si vous souhaitez diviser l'intervalle sur la trace **par distance ou par temps**.
+
+### Flèches de direction
+
+![Menu Apparence de la trace flèches de direction Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)
+
+Ajoute des **marqueurs fléchés** le long de la trace pour indiquer la direction du mouvement.
+
+### Icônes de début et de fin
+
+![Menu Apparence de la trace icônes de début et de fin Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)
+
+Vous permet de sélectionner si vous souhaitez afficher les **icônes de début et de fin** pour les segments de trace.
+
+### Joindre les lacunes
+
+Connecte les **segments de trace** qui ont été interrompus en raison d'une perte de GPS ou d'une pause dans l'enregistrement. La fonction **<Translate android="true" ids="join_segments"/>** (*Android*) ou **<Translate ios="true" ids="gpx_join_gaps"/>** (*iOS*) vous permet de connecter ces lacunes dans la trace GPX sélectionnée à l'aide de lignes droites.
+
+### Réinitialiser à l'original
+
+Restaure tous les **paramètres d'apparence de la trace** à leurs valeurs par défaut.
+
+
+## Trace 3D
+
+:::info Fonctionnalité payante
+La **Trace 3D** est une fonctionnalité payante **OsmAnd Pro** pour [iOS](../../purchases/ios.md#pro-features) et [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_android.png)
+![Menu Apparence de la trace Visualisation 3D](@site/static/img/map/3d_track_appearance_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_ios.png)
+![Menu Apparence de la trace Visualisation 3D](@site/static/img/map/3d_track_appearance_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-The **3D Track** feature generates a three-dimensional visualization by integrating elevation data into standard 2D tracks. This functionality creates a depth-enhanced representation, enabling precise analysis of the track concerning the terrain. By incorporating elevation details, the 3D track offers a more comprehensive view of the route's topography and geographical context.
+La fonction **Trace 3D** génère une visualisation tridimensionnelle en intégrant des données d'élévation dans des traces 2D standard. Cette fonctionnalité crée une représentation améliorée en profondeur, permettant une analyse précise de la trace par rapport au terrain. En incorporant les détails d'élévation, la trace 3D offre une vue plus complète de la topographie et du contexte géographique de l'itinéraire.
 
-### 3D Track Settings
+### Paramètres de la trace 3D
 
-**Wall height**  
-You can visualize a 3D track by altitude and other available data within the track, or by fixed altitude.
+**Hauteur du mur**
+Vous pouvez visualiser une trace 3D par altitude et autres données disponibles dans la trace, ou par altitude fixe.
 
-- **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Altitude*, &nbsp;*Speed*, &nbsp;*Fixed Height*. 3D Sensor data: &nbsp;*Heart Rate*, &nbsp;*Bicycle Cadence*, &nbsp;*Bicycle Power*, &nbsp;*Temperature*, &nbsp;*Bicycle Speed*.
+- **<Translate android="true" ids="visualized_by"/>** : &nbsp;*Altitude*, &nbsp;*Vitesse*, &nbsp;*Hauteur fixe*. Données du capteur 3D : &nbsp;*Fréquence cardiaque*, &nbsp;*Cadence de vélo*, &nbsp;*Puissance de vélo*, &nbsp;*Température*, &nbsp;*Vitesse de vélo*.
 
-- **<Translate android="true" ids="vertical_exaggeration"/>**. If visualized by *Altitude* or *Speed*, you can scale 3D data to get a more prominent visualization for the 3D track in the range of *None* to *x3.0*.
+- **<Translate android="true" ids="vertical_exaggeration"/>**. Si visualisé par *Altitude* ou *Vitesse*, vous pouvez mettre à l'échelle les données 3D pour obtenir une visualisation plus proéminente pour la trace 3D dans la plage de *Aucun* à *x3.0*.
 
-- **<Translate android="true" ids="wall_height"/>**. If visualized by *Fixed Height*, set the fixed height for the 3D track by defining its elevation on the map in the range of *None* to *2000 m*.
+- **<Translate android="true" ids="wall_height"/>**. Si visualisé par *Hauteur fixe*, définissez la hauteur fixe pour la trace 3D en définissant son élévation sur la carte dans la plage de *Aucun* à *2000 m*.
 
-- You can combine it with [3D Relief](../../plugins/topography.md#3d-relief). If the source of the 3D data is not altitude, the 3D representation will be a combination of relief altitude and the selected data, such as speed or heart rate.
+- Vous pouvez le combiner avec le [Relief 3D](../../plugins/topography.md#3d-relief). Si la source des données 3D n'est pas l'altitude, la représentation 3D sera une combinaison de l'altitude du relief et des données sélectionnées, telles que la vitesse ou la fréquence cardiaque.
 
-**<Translate android="true" ids="wall_color"/>**  
-Customizes the **3D track color** using gradients or data-based visualization.  
-Options include: *None*, &nbsp;*Solid*, &nbsp;*Downward Gradient*, &nbsp;*Upward Gradient*, &nbsp;*Altitude*, &nbsp;*Slope*, &nbsp;*Speed*.
+**<Translate android="true" ids="wall_color"/>**
+Personnalise la **couleur de la trace 3D** à l'aide de dégradés ou d'une visualisation basée sur les données.
+Les options incluent : *Aucun*, &nbsp;*Solide*, &nbsp;*Dégradé descendant*, &nbsp;*Dégradé ascendant*, &nbsp;*Altitude*, &nbsp;*Pente*, &nbsp;*Vitesse*.
 
-**<Translate android="true" ids="track_line"/>**  
-Adds a [highlighted lineline](#color) to the top or bottom of the 3D track.  
-Options include: *Top*, &nbsp;*Bottom*, &nbsp;*Top and bottom*.
+**<Translate android="true" ids="track_line"/>**
+Ajoute une [ligne surlignée](#color) en haut ou en bas de la trace 3D.
+Les options incluent : *Haut*, &nbsp;*Bas*, &nbsp;*Haut et bas*.
 
-> **NOTE**: *The **Android version** of the app requires the map rendering engine [Version 2 (OpenGL)](../../personal/global-settings.md#map-rendering-engine) to be enabled to use 3D track visualization.*
+> **NOTE** : *La **version Android** de l'application nécessite que le moteur de rendu de carte [Version 2 (OpenGL)](../../personal/global-settings.md#map-rendering-engine) soit activé pour utiliser la visualisation de trace 3D.*
 
 
-### Use Cases
+### Cas d'utilisation
 
-The 3D track feature is highly beneficial for activities like paragliding, where visualizing your flight path can offer deeper insights. By rendering the track in 3D, you can leverage features such as **Wall Height** and **Wall Color** to extract valuable visual information for analysis.
+La fonction de trace 3D est très bénéfique pour des activités comme le parapente, où la visualisation de votre trajectoire de vol peut offrir des informations plus approfondies. En rendant la trace en 3D, vous pouvez exploiter des fonctionnalités telles que la **Hauteur du mur** et la **Couleur du mur** pour extraire des informations visuelles précieuses pour l'analyse.
 
-1. **Visualize by Speed with 3D**.  
-    One common use case is utilizing 3D tracks to visualize speed variations. This allows you to pinpoint specific sections of the track where you slowed down or sped up.  
+1. **Visualiser par vitesse avec 3D**.
+    Un cas d'utilisation courant est l'utilisation de traces 3D pour visualiser les variations de vitesse. Cela vous permet de localiser des sections spécifiques de la trace où vous avez ralenti ou accéléré.
 
-    With Wall Color based on the Slope, you can observe how the terrain, particularly hills and inclines, impacted your speed. This combination of speed and slope visualization provides a detailed understanding of performance throughout the activity.
+    Avec la Couleur du mur basée sur la Pente, vous pouvez observer comment le terrain, en particulier les collines et les pentes, a impacté votre vitesse. Cette combinaison de visualisation de la vitesse et de la pente offre une compréhension détaillée des performances tout au long de l'activité.
 
-2. **Visualize by Heart sensor with 3D Relief**.  
-    Another insightful application is combining heart rate sensor data with 3D relief maps. This allows you to map heart rate fluctuations directly onto the terrain, giving you a comprehensive view of how altitude changes may have influenced your physical effort.  
+2. **Visualiser par capteur cardiaque avec Relief 3D**.
+    Une autre application perspicace consiste à combiner les données du capteur de fréquence cardiaque avec des cartes en relief 3D. Cela vous permet de mapper les fluctuations de la fréquence cardiaque directement sur le terrain, vous donnant une vue complète de la façon dont les changements d'altitude peuvent avoir influencé votre effort physique.
 
-    The 3D relief feature, which exaggerates the altitude, works independently of the 3D track view. Two vertical exaggeration parameters can be adjusted to better understand the correlation between heart rate and terrain elevation.
+    La fonction de relief 3D, qui exagère l'altitude, fonctionne indépendamment de la vue de trace 3D. Deux paramètres d'exagération verticale peuvent être ajustés pour mieux comprendre la corrélation entre la fréquence cardiaque et l'élévation du terrain.
 
-3. **Visualize Track height and Slope color line on a flat earth view.**  
-    When visualizing altitude data, using a flat earth view is recommended to avoid issues like GPS errors, which might cause sections of the track to appear underground.  
+3. **Visualiser la hauteur de la trace et la ligne de couleur de la pente sur une vue de terre plate.**
+    Lors de la visualisation des données d'altitude, il est recommandé d'utiliser une vue de terre plate pour éviter des problèmes tels que les erreurs GPS, qui pourraient faire apparaître des sections de la trace sous terre.
 
-    In this scenario, slope changes can be visualized separately along the track line, while Wall Color utilized to represent altitude. This method ensures that even with potential data inaccuracies, you still receive a clear and accurate visualization of slope and elevation.
+    Dans ce scénario, les changements de pente peuvent être visualisés séparément le long de la ligne de trace, tandis que la Couleur du mur est utilisée pour représenter l'altitude. Cette méthode garantit que même avec des inexactitudes potentielles des données, vous recevez toujours une visualisation claire et précise de la pente et de l'élévation.
 
-## Change Appearance for Multiple Tracks
+## Modifier l'apparence de plusieurs traces
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
+![Apparence Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png) ![Apparence Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Modifier l'apparence](@site/static/img/map/tracks_change_appear_3_ios.png) ![Modifier l'apparence](@site/static/img/map/tracks_change_appear_2_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-The [Tracks](../../personal/tracks/manage-tracks.md) tab automatically displays all tracks ever recorded, created, or imported. They are organized by folder or displayed as a list below them.  
+L'onglet [Traces](../../personal/tracks/manage-tracks.md) affiche automatiquement toutes les traces jamais enregistrées, créées ou importées. Elles sont organisées par dossier ou affichées sous forme de liste en dessous.
 
-Modify multiple track appearances in *My Places → Tracks*:
+Modifiez l'apparence de plusieurs traces dans *Mes Lieux → Traces* :
 
-- **Change default appearance** - Applies settings to all tracks in a [folder](../../personal/tracks/manage-tracks.md#folder-menu).
-- **Reset to original** - Restores individual track settings.
+- **Modifier l'apparence par défaut** - Applique les paramètres à toutes les traces d'un [dossier](../../personal/tracks/manage-tracks.md#folder-menu).
+- **Réinitialiser à l'original** - Restaure les paramètres de trace individuels.
 
-- [Selection mode](../../personal/tracks/manage-tracks.md#selection-mode) - Changes the appearance of specific tracks in the selected folder or the entire list in the Tracks tab.
-    - Select the *three-dot menu* in the upper right corner of the Tracks tab and tap *Select*.
-    - Then tap the *three-dot menu* at the top of the screen and select *Change Appearance*.  
+- [Mode de sélection](../../personal/tracks/manage-tracks.md#selection-mode) - Modifie l'apparence de traces spécifiques dans le dossier sélectionné ou dans la liste entière de l'onglet Traces.
+    - Sélectionnez le *menu à trois points* dans le coin supérieur droit de l'onglet Traces et appuyez sur *Sélectionner*.
+    - Appuyez ensuite sur le *menu à trois points* en haut de l'écran et sélectionnez *Modifier l'apparence*.
 
-Bulk appearance customization options:
+Options de personnalisation de l'apparence en masse :
 
-- **Direction arrows** - Adds [movement indicators](#direction-arrows).  
-    States: *Unchanged*, &nbsp;*Original*, &nbsp;*On*, &nbsp;*Off*.
+- **Flèches de direction** - Ajoute des [indicateurs de mouvement](#direction-arrows).
+    États : *Inchangé*, &nbsp;*Original*, &nbsp;*Activé*, &nbsp;*Désactivé*.
 
-- **Show start and finish icons** - [Displays markers](#start-and-finish-icons) for track start and end points.  
-    States: *Unchanged*, &nbsp;*Original*, &nbsp;*On*, &nbsp;*Off*.
+- **Afficher les icônes de début et de fin** - [Affiche les marqueurs](#start-and-finish-icons) pour les points de début et de fin de la trace.
+    États : *Inchangé*, &nbsp;*Original*, &nbsp;*Activé*, &nbsp;*Désactivé*.
 
-- **Color** – Apply manual or data-based [coloring](#color).
+- **Couleur** – Applique une [coloration](#color) manuelle ou basée sur les données.
 
-- **Width** – Adjust the [track line width](#width) using presets or manually.
+- **Largeur** – Ajuste la [largeur de la ligne de trace](#width) à l'aide de préréglages ou manuellement.
 
-- **Split interval** – [Set interval](#split-interval) for distance / time markers.  
-    States: *Unchanged*, &nbsp;*Original*, &nbsp;*Select*: *Time* or *Distance*.
+- **Intervalle de division** – [Définit l'intervalle](#split-interval) pour les marqueurs de distance / temps.
+    États : *Inchangé*, &nbsp;*Original*, &nbsp;*Sélectionner* : *Temps* ou *Distance*.
 
-Original and unchanged:
+Original et inchangé :
 
-- **Original** - Restores the original parameters from the track file.
+- **Original** - Restaure les paramètres d'origine du fichier de trace.
 
-- **Unchanged** - Keeps current settings during the editing session.
+- **Inchangé** - Conserve les paramètres actuels pendant la session d'édition.
 
 
-## Track Colors in GPX Files  
+## Couleurs des traces dans les fichiers GPX
 
-OsmAnd supports **custom track colors** in GPX files using the `<osmand:color>` tag within the `<extensions>` section of a `<trk>` element. This allows users to define colors for individual tracks, enhancing visual differentiation when multiple tracks are displayed on the map.
+OsmAnd prend en charge les **couleurs de trace personnalisées** dans les fichiers GPX à l'aide de la balise `<osmand:color>` dans la section `<extensions>` d'un élément `<trk>`. Cela permet aux utilisateurs de définir des couleurs pour les traces individuelles, améliorant la différenciation visuelle lorsque plusieurs traces sont affichées sur la carte.
 
-To specify a color for a track, use the following format:  
+Pour spécifier une couleur pour une trace, utilisez le format suivant :
 
 ```xml
 <trk>
-  <name>Example Track</name>
+  <name>Exemple de trace</name>
   <extensions>
     <osmand:color>#FF0000</osmand:color>
   </extensions>
 </trk>
 ```
 
-- The `<osmand:color>` tag accepts **hexadecimal color codes** (e.g., `#FF0000` for red).
-- If multiple tracks exist in a GPX file, each track can have its own `<osmand:color>` tag.
+- La balise `<osmand:color>` accepte les **codes couleur hexadécimaux** (par exemple, `#FF0000` pour le rouge).
+- Si plusieurs traces existent dans un fichier GPX, chaque trace peut avoir sa propre balise `<osmand:color>`.
 
 
-**Behavior in OsmAnd:**
+**Comportement dans OsmAnd :**
 
-1. **Default color assignment**:  
+1. **Attribution de couleur par défaut** :
 
-    - When a **GPX track is imported as a single track** (***Import as one track*** option), the entire track is assigned the **default GPX color** (red).  
-    - In OsmAnd **4.9.10 and later**, this issue has been resolved—individual track colors are now preserved upon import.
+    - Lorsqu'une **trace GPX est importée en tant que trace unique** (option ***Importer en tant qu'une seule trace***), la trace entière se voit attribuer la **couleur GPX par défaut** (rouge).
+    - Dans OsmAnd **4.9.10 et versions ultérieures**, ce problème a été résolu : les couleurs de trace individuelles sont désormais conservées lors de l'importation.
 
-2. **Single-color display for merged tracks:**  
+2. **Affichage en une seule couleur pour les traces fusionnées :**
 
-    - If tracks are **merged** using ***Join Segments***, the resulting track is treated as **one continuous track with a single segment**.
-    - Multi-color representation is **not supported** for merged tracks.
-    - The merged track will be displayed using the **main GPX color** (default: red), even if individual track segments originally had different colors.
+    - Si les traces sont **fusionnées** à l'aide de ***Joindre les segments***, la trace résultante est traitée comme **une trace continue avec un seul segment**.
+    - La représentation multicolore **n'est pas prise en charge** pour les traces fusionnées.
+    - La trace fusionnée sera affichée en utilisant la **couleur GPX principale** (par défaut : rouge), même si les segments de trace individuels avaient à l'origine des couleurs différentes.
 
-3. **Priority of appearance settings:**  
+3. **Priorité des paramètres d'apparence :**
 
-    - OsmAnd currently supports **color and width settings only for the entire track**.
-    - These appearance settings are stored in the **top-level GPX extensions**.
-    - If a color or width is **set at the top level** (either in the GPX file or manually in OsmAnd), this setting will take precedence over colors assigned to individual track segments.
+    - OsmAnd prend actuellement en charge les **paramètres de couleur et de largeur uniquement pour la trace entière**.
+    - Ces paramètres d'apparence sont stockés dans les **extensions GPX de niveau supérieur**.
+    - Si une couleur ou une largeur est **définie au niveau supérieur** (soit dans le fichier GPX, soit manuellement dans OsmAnd), ce paramètre aura la priorité sur les couleurs attribuées aux segments de trace individuels.
 
-**Workaround for Multi-Color Tracks:**
+**Solution de contournement pour les traces multicolores :**
 
-- To preserve **individual colors for multiple tracks**, **import tracks separately** instead of merging them.
+- Pour conserver les **couleurs individuelles pour plusieurs traces**, **importez les traces séparément** au lieu de les fusionner.
 
-- Adjust track colors manually in **Track Appearance Settings**:
+- Ajustez manuellement les couleurs des traces dans les **Paramètres d'apparence de la trace** :
 
-  - Open the track in OsmAnd.
-  - Tap the track to open the **Context Menu**.
-  - Select **Appearance**.
-  - Choose the preferred color.
+  - Ouvrez la trace dans OsmAnd.
+  - Appuyez sur la trace pour ouvrir le **Menu contextuel**.
+  - Sélectionnez **Apparence**.
+  - Choisissez la couleur préférée.
 
-- This ensures that each track retains its **intended color representation**, even if the GPX file originally contained multiple segments with different colors.
+- Cela garantit que chaque trace conserve sa **représentation de couleur prévue**, même si le fichier GPX contenait à l'origine plusieurs segments avec des couleurs différentes.
 
 
-## Related Articles
+## Articles connexes
 
-- [Map Context menu](../map-context-menu.md)
-- [Configure Map](../configure-map-menu.md)
-- [Points on the map](../point-layers-on-map.md)
-- [Tracks](../tracks/index.md)
-- [Tracks Context menu](../tracks/track-context-menu.md)
-- [Trip Recording](../../plugins/trip-recording.md)
+- [Menu contextuel de la carte](../map-context-menu.md)
+- [Configurer la carte](../configure-map-menu.md)
+- [Points sur la carte](../point-layers-on-map.md)
+- [Traces](../tracks/index.md)
+- [Menu contextuel des traces](../tracks/track-context-menu.md)
+- [Enregistrement de trajet](../../plugins/trip-recording.md)
 
-> *This article was last updated in February 2025*
+> *Cet article a été mis à jour pour la dernière fois en février 2025*
+
+-- source-hash: blake2s: d823d2049a36ba449750ff2d6d3df41eb3137345597f951f819a230b9f673b89 --

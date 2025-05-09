@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title:  Pedestrian routing
+title:  Itinéraire piéton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,19 +13,19 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Aperçu
 
-Pedestrian routing refers to the process of finding the best route for a pedestrian to travel from one location to another, taking into account factors such as pedestrian-only areas, sidewalks, crosswalks, and pedestrian-friendly intersections. It may also consider other factors such as *stairs*, which may be useful for wheelchair accessibility. OsmAnd always uses elevation data when calculating the estimated time of arrival (time to cover the distance) according to [Naismith's rule](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb).
+L'itinéraire piéton fait référence au processus de recherche du meilleur itinéraire pour un piéton afin de se déplacer d'un endroit à un autre, en tenant compte de facteurs tels que les zones réservées aux piétons, les trottoirs, les passages piétons et les intersections adaptées aux piétons. Il peut également prendre en compte d'autres facteurs tels que les *escaliers*, qui peuvent être utiles pour l'accessibilité en fauteuil roulant. OsmAnd utilise toujours les données d'élévation lors du calcul de l'heure d'arrivée estimée (temps pour parcourir la distance) selon la [règle de Naismith](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb).
 
-To configure *Pedestrian routing* go to the [Route parameters section](../guidance/navigation-settings.md/#route-parameters) of the Navigation settings.
-  
-### Route Parameters - Walking
+Pour configurer l'*itinéraire piéton*, accédez à la section [Paramètres d'itinéraire](../guidance/navigation-settings.md/#route-parameters) des paramètres de navigation.
 
-Pedestrian routing can be useful not only in urban areas, where pedestrians may encounter various obstacles when trying to get from one place to another. You can also use this routing type while jogging, hiking, and Nordic walking outside the city or in the mountains. Simply adjust routing parameters according to your needs.  
+### Paramètres d'itinéraire - Marche
+
+L'itinéraire piéton peut être utile non seulement dans les zones urbaines, où les piétons peuvent rencontrer divers obstacles pour se rendre d'un endroit à un autre. Vous pouvez également utiliser ce type d'itinéraire pour le jogging, la randonnée et la marche nordique en dehors de la ville ou en montagne. Il suffit d'ajuster les paramètres d'itinéraire en fonction de vos besoins.
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Pedestrian routing settings Android 2](@site/static/img/navigation/routing/routing_pedestrian_settings_andr_2.png)
 
@@ -39,25 +39,27 @@ Pedestrian routing can be useful not only in urban areas, where pedestrians may 
 
 </Tabs>
 
-| Parameter | Description | Note |
+| Paramètre | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Select roads you want to avoid during navigation. You can either [select a road on the map](../../map/map-context-menu/#avoid-road) or choose road types from the list.  </summary>![Avoid roads Android](@site/static/img/navigation/routing/avoid_pedestrian_andr.png) </details>       | <ul><li> [<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (a type of water transportation, that carries  vehicles across bodies of water)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel)</li><li>[<Translate android="true" ids="routing_attr_avoid_motorway_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway)</li></ul>|
-| *<Translate android="true" ids="prefer_in_routing_title"/>* | <details><summary> You can choose what type of surface to prefer when building a route. </summary> ![Elevation pedestrian Android](@site/static/img/navigation/routing/prefer_pedestrian_andr.png)  </details>  | You can choose between two options:<ul><li>[<Translate android="true" ids="routing_attr_prefer_hiking_routes_name"/>](https://wiki.openstreetmap.org/wiki/Hiking#Tagging_ways,_points_and_areas). These routes are typically found in natural environments such as forests, mountains, and parks. </li><li>[<Translate android="true" ids="routing_attr_prefer_tactile_paving_name"/>](https://wiki.openstreetmap.org/wiki/Key:tactile_paving). This textured ground surface indicator system may be installed on footpaths, stairs and public transportation platforms to assist blind or visually impaired pedestrians in moving. </li></ul> |
-| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Private access restrictions will be ignored when route calculating.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* is used in OSM to describe restrictions on the use of highways and other transportation routes, as well as buildings, entrances, amenities, and leisure entities.   |
-|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Elevation data will be used in route calculation: [penalties](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) will be set for roads that differ from the selected type. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | This preference can help avoid steep hills or vice versa, prefer them. Using this option may be very helpful in pedestrian routing. Without elevation data the fastest route as on plain terrain will be calculated. |
-|*<Translate android="true" ids="routing_attr_allow_via_ferrata_name"/>*| *Via ferrata* routes will be used for routing when this option together with *Use elevation data* enabled.  | [Via ferrata](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dvia_ferrata) is a mountain route equipped with fixed cables, stemples, ladders, and bridges. |
+| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Sélectionnez les routes que vous souhaitez éviter pendant la navigation. Vous pouvez soit [sélectionner une route sur la carte](../../map/map-context-menu/#avoid-road), soit choisir des types de routes dans la liste.  </summary>![Avoid roads Android](@site/static/img/navigation/routing/avoid_pedestrian_andr.png) </details>       | <ul><li> [<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (un type de transport par eau, qui transporte des véhicules à travers des plans d'eau)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel)</li><li>[<Translate android="true" ids="routing_attr_avoid_motorway_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway)</li></ul>|
+| *<Translate android="true" ids="prefer_in_routing_title"/>* | <details><summary> Vous pouvez choisir le type de surface à préférer lors de la construction d'un itinéraire. </summary> ![Elevation pedestrian Android](@site/static/img/navigation/routing/prefer_pedestrian_andr.png)  </details>  | Vous pouvez choisir entre deux options :<ul><li>[<Translate android="true" ids="routing_attr_prefer_hiking_routes_name"/>](https://wiki.openstreetmap.org/wiki/Hiking#Tagging_ways,_points_and_areas). Ces itinéraires se trouvent généralement dans des environnements naturels tels que les forêts, les montagnes et les parcs. </li><li>[<Translate android="true" ids="routing_attr_prefer_tactile_paving_name"/>](https://wiki.openstreetmap.org/wiki/Key:tactile_paving). Ce système d'indicateur de surface texturée peut être installé sur les sentiers, les escaliers et les plates-formes de transport public pour aider les piétons aveugles ou malvoyants à se déplacer. </li></ul> |
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Les restrictions d'accès privé seront ignorées lors du calcul de l'itinéraire.  | Le tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* est utilisé dans OSM pour décrire les restrictions d'utilisation des routes et autres voies de transport, ainsi que des bâtiments, des entrées, des commodités et des entités de loisirs.   |
+|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Les données d'élévation seront utilisées dans le calcul de l'itinéraire : des [pénalités](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) seront appliquées aux routes qui diffèrent du type sélectionné. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | Cette préférence peut aider à éviter les collines escarpées ou, inversement, à les préférer. L'utilisation de cette option peut être très utile dans l'itinéraire piéton. Sans données d'élévation, l'itinéraire le plus rapide sera calculé comme sur un terrain plat. |
+|*<Translate android="true" ids="routing_attr_allow_via_ferrata_name"/>*| Les itinéraires de *via ferrata* seront utilisés pour l'itinéraire lorsque cette option est activée en même temps que *Utiliser les données d'élévation*.  | Une [via ferrata](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dvia_ferrata) est un itinéraire de montagne équipé de câbles fixes, de marches, d'échelles et de ponts. |
 
 
-## Other Routing Settings
+## Autres paramètres d'itinéraire
 
-- The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
+- L'algorithme de routage peut également prendre en compte les limitations temporaires spécifiées dans OpenStreetMap. Cela peut être fait en utilisant l'option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Notez que dans certains cas, les informations d'OSM peuvent être obsolètes.
 
-- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
+- Dans la section [*Recalculer l'itinéraire*](../../navigation/guidance/navigation-settings.md#recalculate-route) des *Paramètres d'itinéraire*, vous pouvez activer et ajuster les options de recalcul de l'itinéraire.
 
-- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+- Dans la section [*Développement*](../guidance/navigation-settings.md#development-settings) des *Paramètres d'itinéraire*, vous pouvez essayer de nouvelles fonctionnalités de routage qui sont actuellement en phase de test. Notez que ces paramètres ne sont disponibles que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé.
 
-- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). This setting is used on unknown roads without speed limits. This is most often the case when navigating a track or online route. It must be set according to the parameters of your vehicle.
+- Le paramètre *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* dans la version *iOS* d'OsmAnd se trouve dans *Paramètres de navigation → Paramètres d'itinéraire* (pour *Android*, dans *Paramètres du véhicule → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Ce paramètre est utilisé sur les routes inconnues sans limitation de vitesse. C'est le plus souvent le cas lors de la navigation d'une trace ou d'un itinéraire en ligne. Il doit être réglé en fonction des paramètres de votre véhicule.
 
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
+- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. La configuration correcte des paramètres vous aidera à éviter les problèmes lors de la création d'un itinéraire. Vous pouvez sélectionner l'itinéraire le plus approprié en fonction du type de véhicule et des restrictions routières, ainsi que calculer le temps de trajet.
 
-> *This article was last updated in June 2024*
+> *Cet article a été mis à jour pour la dernière fois en juin 2024*
+
+-- source-hash: blake2s: ab14c8d75845b7cc61ee30b341c238378a3efc2f3adf3a3601a60f11bdc90932 --

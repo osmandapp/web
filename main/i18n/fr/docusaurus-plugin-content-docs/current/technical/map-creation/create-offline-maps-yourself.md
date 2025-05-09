@@ -1,45 +1,44 @@
 ---
-title: Create Offline Raster & Vector Maps
+title: Créer des cartes raster et vectorielles hors ligne
 versions: '*'
-intro: With OsmAndMapCreator there are many ways how to create and customize Raster & Vector maps for your needs. 
+intro: Avec OsmAndMapCreator, il existe de nombreuses façons de créer et de personnaliser des cartes raster et vectorielles pour vos besoins.
 ---
 
 ## OsmAndMapCreator
 
-[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) can be used to create any maps supported by OsmAnd yourself. You can download latest version from [website](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator has UI capabilities to create raster & vector maps. *To create vector map you will need OSM file (`*.pbf, *.osm.gz, *.osm.bz2`)* and *to create online sqlite map file you will need a `base tile url`*.
+[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) peut être utilisé pour créer vous-même toutes les cartes prises en charge par OsmAnd. Vous pouvez télécharger la dernière version depuis le [site web](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator dispose de capacités d'interface utilisateur pour créer des cartes raster et vectorielles. *Pour créer une carte vectorielle, vous aurez besoin d'un fichier OSM (`*.pbf, *.osm.gz, *.osm.bz2`)* et *pour créer un fichier de carte sqlite en ligne, vous aurez besoin d'une `url de tuile de base`*.
 
-### Raster maps (simple)
+### Cartes raster (simples)
 
-Once you have selected the tiles from which you want to create a map in the **Source of tiles** menu and they have been successfully loaded into OsmAndMapCreator, you can right-click on the area you want to preload. After that you can create `.sqlitedb` file in **Source of tiles** → **Create sqlite database**.  
+Une fois que vous avez sélectionné les tuiles à partir desquelles vous souhaitez créer une carte dans le menu **Source of tiles** et qu'elles ont été chargées avec succès dans OsmAndMapCreator, vous pouvez cliquer avec le bouton droit de la souris sur la zone que vous souhaitez précharger. Après cela, vous pouvez créer un fichier `.sqlitedb` dans **Source of tiles** → **Create sqlite database**.
 
-To create a vector map you will need an OSM file (*.pbf, *.osm.gz, *.osm.bz2) and to create an online sqlite map you will need the url of the base tile.
+Pour créer une carte vectorielle, vous aurez besoin d'un fichier OSM (*.pbf, *.osm.gz, *.osm.bz2) et pour créer une carte sqlite en ligne, vous aurez besoin de l'URL de la tuile de base.
 
-<img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-download-raster-maps.png').default} alt="Download raster maps" />
+<img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-download-raster-maps.png').default} alt="Télécharger des cartes raster" />
 
-<img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-raster-maps.png').default} alt="Create sqlitedb maps" />
+<img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-raster-maps.png').default} alt="Créer des cartes sqlitedb" />
 
-### Vector maps (simple)
+### Cartes vectorielles (simples)
 
-Steps to create vector map via OsmAndMapCreator UI:
+Étapes pour créer une carte vectorielle via l'interface utilisateur d'OsmAndMapCreator :
 
-1. OSM File
-    - Download it from [Geofabrik](https://www.geofabrik.de/data/download.html) or small export from [OpenStreetMap](https://www.openstreetmap.org/export#map=19/48.80672/2.13187)
-    - Convert [Shapefile to OSM](https://wiki.openstreetmap.org/wiki/OGR)
-    - Generate [OSM XML](https://wiki.openstreetmap.org/wiki/OSM_XML) it yourself using any programming utilities, you can proceed by converting it to [OBF Format](../osmand-file-formats/osmand-obf.md) which OsmAnd can undertand
-2. Select checkboxes whether you want to produce Maps including Address / Routing / Transport / Map data
-3. Select in **File** → **Create .obf from file**.
-4. Once process is completed you will have `.obf` file in the working directory.
+1. Fichier OSM
+    - Téléchargez-le depuis [Geofabrik](https://www.geofabrik.de/data/download.html) ou une petite exportation depuis [OpenStreetMap](https://www.openstreetmap.org/export#map=19/48.80672/2.13187)
+    - Convertir [Shapefile en OSM](https://wiki.openstreetmap.org/wiki/OGR)
+    - Générez vous-même [OSM XML](https://wiki.openstreetmap.org/wiki/OSM_XML) à l'aide de n'importe quel utilitaire de programmation, vous pouvez ensuite le convertir au [Format OBF](../osmand-file-formats/osmand-obf.md) qu'OsmAnd peut comprendre
+2. Cochez les cases si vous souhaitez produire des cartes incluant les adresses / le routage / les transports / les données cartographiques
+3. Sélectionnez dans **File** → **Create .obf from file**.
+4. Une fois le processus terminé, vous aurez un fichier `.obf` dans le répertoire de travail.
 
-<img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-vector-maps.png').default} alt="Create vector maps" />
+<img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-vector-maps.png').default} alt="Créer des cartes vectorielles" />
 
-More parameters how to generate vector maps could be specified in the shell `utilities.sh `.
+D'autres paramètres pour générer des cartes vectorielles peuvent être spécifiés dans le script shell `utilities.sh`.
 
+## Cartes vectorielles (script shell)
 
-## Vector maps (shell script)
+La manière la plus typique et la plus puissante de créer des cartes utilisée par les développeurs est via le script shell `utilities.sh` inclus dans OsmAndMapCreator. Il dispose également de nombreuses autres méthodes utilitaires pour créer des cartes personnalisées telles qu'une carte de base ou une carte avec les noms et les limites des régions (regions.ocbf).
 
-The most typical & the most powerful way to create maps used by developers is via shell script `utilities.sh` packaged within OsmAndMapCreator. It also has many other utilities methods to create some custom maps such as basemap or map with region names & boundaries (regions.ocbf).
-
-Example script:
+Exemple de script :
 ```
 wget -N http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip
 wget  https://creator.osmand.net/osm-extract/albania_europe/albania_europe.pbf
@@ -47,143 +46,136 @@ unzip OsmAndMapCreator-main.zip -d OsmAndMapCreator
 OsmAndMapCreator/utilities.sh generate-poi albania_europe.pbf --chars-build-poi-nameindex=3
 ```
 
-Generation script takes only 1 file OSM file to process at a time (.pbf, .osm.gz, osm.bz2, .osm) and many optional parameters specified as `--xxxxxx`.
+Le script de génération ne prend qu'un seul fichier OSM à la fois (.pbf, .osm.gz, osm.bz2, .osm) et de nombreux paramètres optionnels spécifiés comme `--xxxxxx`.
 
-| Main command | Description   |
+| Commande principale | Description |
 |--------------|---------------|
-| `generate-obf` | Generates full obf with map, address, poi, transport, routing information |
-| `generate-obf-no-address` | Generates full obf but without address information |
-| `generate-address` | Generates map with only address information |
-| `generate-poi` | Generates map with only poi information |
-| `generate-map` | Generates map with only map rendering information |
-| `generate-roads` | Generates map with only routing information |
+| `generate-obf` | Génère un obf complet avec les informations de carte, d'adresse, de poi, de transport, de routage |
+| `generate-obf-no-address` | Génère un obf complet mais sans les informations d'adresse |
+| `generate-address` | Génère une carte avec uniquement les informations d'adresse |
+| `generate-poi` | Génère une carte avec uniquement les informations de poi |
+| `generate-map` | Génère une carte avec uniquement les informations de rendu de carte |
+| `generate-roads` | Génère une carte avec uniquement les informations de routage |
 
+Tous les paramètres supplémentaires peuvent être trouvés dans le code au cas où ils ne seraient pas correctement documentés [Main Utilities](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/MainUtilities.java#L219). Tous les paramètres sont optionnels !
 
-All extra parameters could be found in the code in case they are not documented properly [Main Utilities](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/MainUtilities.java#L219). All parameters are optional!
-
-| Parameters | Description |
+| Paramètres | Description |
 |--------------|---------------|
-| `--add-region-tags` | Slows down map creation process by adding to each way a region name tag where it processed. It's needed only for worldwide basemap or when you process multinational regions, in all other cases it's easier to have proper name for your file i.e. germany_... , us_.... If you don't have this parameter and you don't specify add this parameter, it's likely you will see non-localized road / public transport route badges in OsmAnd. | 
-| `--keep-only-sea-objects` | Removes object that are not part of ocean / see, it's used to produce nautical map |
-| `--ram-process` | Specifies that creation will be using RAM SQlite DB instead of disk - [more information](#ram-to-process-maps). |
-| `--srtm=<FOLDER>` | Specifies folder with TIF-DEM images, so information about height & slope will be encoded into roads |
-| `--rendering-types=<FILE>` | rendering_types.xml location with rules & OSM tags needs to be encoded in OBF - [more information](#custom-vector-map-tags). |
-| `--poi-types=<FILE>` | poi_types.xml location with rules & OSM tags needs to be encoded in OBF for POI - [more information](#custom-vector-map-tags). |
-| `--extra-relations=<FILE>` | OSM file with polygons like Low Emission Zones which tags should be propagated to the ways. |
+| `--add-region-tags` | Ralentit le processus de création de carte en ajoutant à chaque chemin une balise de nom de région où il est traité. Cela n'est nécessaire que pour la carte de base mondiale ou lorsque vous traitez des régions multinationales, dans tous les autres cas, il est plus facile d'avoir un nom approprié pour votre fichier, c'est-à-dire germany_..., us_.... Si vous n'avez pas ce paramètre et que vous ne le spécifiez pas, il est probable que vous verrez des badges de route / de transport public non localisés dans OsmAnd. |
+| `--keep-only-sea-objects` | Supprime les objets qui ne font pas partie de l'océan / de la mer, il est utilisé pour produire une carte nautique |
+| `--ram-process` | Spécifie que la création utilisera une base de données SQlite en RAM au lieu du disque - [plus d'informations](#ram-to-process-maps). |
+| `--srtm=<FOLDER>` | Spécifie le dossier avec les images TIF-DEM, de sorte que les informations sur la hauteur et la pente seront codées dans les routes |
+| `--rendering-types=<FILE>` | Emplacement de rendering_types.xml avec les règles et les balises OSM qui doivent être codées en OBF - [plus d'informations](#custom-vector-map-tags). |
+| `--poi-types=<FILE>` | Emplacement de poi_types.xml avec les règles et les balises OSM qui doivent être codées en OBF pour les POI - [plus d'informations](#custom-vector-map-tags). |
+| `--extra-relations=<FILE>` | Fichier OSM avec des polygones comme les zones à faibles émissions dont les balises doivent être propagées aux chemins. |
 
-**Note**: Creating maps with batch.xml is deprecated, please use shell methods mentionned above and combine with downloads / for cycles using standard shell script capabilities.
+**Note** : La création de cartes avec batch.xml est obsolète, veuillez utiliser les méthodes shell mentionnées ci-dessus et les combiner avec des téléchargements / des boucles for en utilisant les capacités standard des scripts shell.
 
+### RAM pour traiter les cartes
 
-### RAM to process maps
-
-Creating maps is memory hungry and I/O intensive. In other words: it takes very long and could run out of memory! Please check generation on small maps first.
-To give more memory to JVM, you can declare env JAVA_OPTS variable.
+La création de cartes est gourmande en mémoire et intensive en E/S. En d'autres termes : cela prend très longtemps et peut manquer de mémoire ! Veuillez d'abord vérifier la génération sur de petites cartes.
+Pour donner plus de mémoire à la JVM, vous pouvez déclarer la variable d'environnement JAVA_OPTS.
 ```
 export JAVA_OPTS="-Xms256M -Xmx6400M"
 OsmAndMapCreator/utilities.sh generate-obf ....
 ```
 
+Que pouvez-vous faire pour améliorer les performances :
 
-What can you do to improve performance:
+- Utiliser des disques SSD.
+- Utiliser plusieurs disques.
+- Utiliser le traitement "en mémoire".
+Si vous souhaitez éviter d'utiliser de l'espace disque et utiliser uniquement la RAM pour accélérer le processus, spécifiez le paramètre `--ram-process`. Ce traitement "en mémoire" accélérera la génération de carte de 10 à 50 %, mais nécessite beaucoup de mémoire. 10 % à 50 % dépendent de la taille de la carte. Les cartes plus petites bénéficient moins du traitement en mémoire que les cartes plus grandes, car l'accès au disque pour la lecture initiale et l'écriture finale de la carte joue un rôle plus important, tandis que les cartes plus grandes nécessitent plus de "calcul".
 
-- Use SSD disks.
-- Use multiple disks.
-- Use "in memory" processing.
-If you want to avoid using disk space and use only RAM to speed up process - specify `--ram-process` parameter. This "in memory" processing will speed up the map generation by 10-50%, but requires a lot of memory. 10% to 50% depends on the map size. Smaller maps benefit less from in memory processing than larger maps, as disk access for initial reading and final map writing plays a bigger role, while larger maps require more "calculation".
+Dans le traitement normal "sur disque", un fichier *nodes.tmp.odb* est créé à partir de votre fichier *.osm* ou *.osm.pbf*. Ce fichier *nodes.tmp.odb* est un fichier de base de données sqlite et il est environ 15 à 25 fois plus grand que le fichier *.osm.pbf* original que vous avez téléchargé depuis [geofabrik.de](http://download.geofabrik.de/). Donc, si votre fichier *.osm.pbf* original est de 300 Mo, votre fichier *nodes.tmp.odb* sera de 5 Go à 6 Go ! Notez que les cartes plus petites seront autour du facteur 15x tandis que les grandes cartes (>350 Mo) finiront par augmenter l'espace de 20x à 25x.
 
-In normal "on disk" processing a *nodes.tmp.odb* file is created from your *.osm* or *.osm.pbf* file. This *nodes.tmp.odb* file is a sqlite database file and it is about 15 to 25 times as big as the original *.osm.pbf* file which you downloaded from [geofabrik.de](http://download.geofabrik.de/). So if your original *.osm.pbf* file is 300MB, your *nodes.tmp.odb* file will be 5GB to 6GB! Note that smaller maps will be around the 15x factor whereas big maps (\>350MB) will end up in the 20x to 25X space increase.
+Avec le traitement "en mémoire", ce fichier *nodes.tmp.odb* sera créé dans votre mémoire de travail. Vous aurez besoin de "la taille du nodes.tmp.odb" + 20-25 %. Veuillez noter que vous n'avez pas besoin d'augmenter le paramètre `-Xmx` car SQLite en mémoire n'occupera pas la mémoire JVM et utilisera uniquement la mémoire native du système d'exploitation.
 
-With "in memory" processing this *nodes.tmp.odb* file will be created in your working memory. You will need "the size of the nodes.tmp.odb" + 20-25%. Please note that that you don't need to increase `-Xmx` parameter cause SQLite in memory won't occupy JVM memory and use only native operating memory.
+Exemple : pour un *.osm.pbf* de 250 Mo, un fichier *nodes.tmp.odb* d'environ 4,5 Go sera généré.
 
-Example: for a 250MB *.osm.pbf* a \~4.5GB *nodes.tmp.odb* file will be generated.
+### Carte vectorielle personnalisée (balises)
 
+Le rendu et la recherche de POI d'OsmAnd reposent sur les informations écrites dans [OBF](../osmand-file-formats/osmand-obf.md). Il a une structure différente des autres formats OSM et est optimisé pour une utilisation mobile. Vous pouvez inspecter le contenu à l'aide de [Binary Inspector](../map-creation/how-to-inspect-an-obf.md). Les 3 parties les plus importantes du fichier OBF sont
 
-### Custom vector map (tags)
+- **Section Carte** utilisée pour le rendu de carte défini par [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml)
+- **Section POI** utilisée pour la recherche de POI et les informations d'objet définies par [POI types](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/poi_types.xml)
+- **Section Routage** utilisée pour le routage défini par [Routing types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml) - même fichier que les types de rendu mais a sa propre section `<category name="routing"> - routing_type`.
 
-OsmAnd rendering and POI search relies on information written to [OBF](../osmand-file-formats/osmand-obf.md). It has different structure than other OSM formats and optimized for mobile usage. You can inspect the contents using [Binary Inspector](../map-creation/how-to-inspect-an-obf.md). 3 Most important parts of OBF file are
+`rendering_types.xml` et `poi_types.xml` peuvent être remplacés pendant le processus de création de carte dans les paramètres de l'interface utilisateur d'OsmAndMapCreator ou en tant que paramètres de ligne de commande `--rendering-types=<path>`, `--poi-types==<path>` pour `utilities.sh generate-obf` (inclus avec OsmAndMapCreator).
 
-- **Map section** used for Map Rendering defined by [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml)
-- **POI section** used for POI search and Object information defined by [POI types](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/poi_types.xml)
-- **Routing section** used for Routing defined by [Routing types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml) - same file as rendering types but has own section `<category name="routing"> - routing_type`.
+- Le type d'objet de carte principal (`<type tag="abandoned:highway" value="track" minzoom="13"/>`) est enregistré par entité OSM (nœud ou chemin ou multipolygone). Il peut y avoir plusieurs types principaux enregistrés par 1 entité (par exemple, route + tram + route_bus), la balise `order` triera les types au sein de l'entité.
+- Le type d'objet de carte supplémentaire (`<type tag="service" value="driveway" minzoom="13" additional="true"/>`) est une information supplémentaire attachée à l'entité OSM, donc si l'entité OSM n'est pas enregistrée avec un type principal, elle ne sera pas stockée dans l'OBF. Habituellement, elle stocke des informations pour afficher des fonctionnalités supplémentaires comme la couleur, la fluidité.
+- Le type d'objet de carte texte (`<type tag="int_ref" additional="text" minzoom="1" order="32"/>`), stocke des informations textuelles sur l'objet afin qu'elles puissent être affichées ultérieurement sur la carte.
+- `entity_convert` représente de simples scripts de transformation de balises (`<entity_convert pattern="tag_transform" from_tag="bridge" if_tag1="highway" if_value1="proposed" routing="no"/>`). Il est souvent utilisé pour combiner des balises en types spécifiques, il est donc plus facile de les afficher avec un style de rendu personnalisé. Il permet également de donner une transformation de balise spécifique à une région et permet d'avoir un rendu de fonctionnalités différent par pays.
+- Propagation des balises de relation. OsmAnd n'indexe pas les objets de relation (sauf les multipolygones - stockés comme objets de zone) mais il permet de propager, de pousser les balises de la relation sur les membres. Évidemment, 1 membre peut avoir plusieurs relations parentes et des conflits de balises sont possibles. OsmAnd prend en charge 3 façons de gérer les conflits :
+  - combiner toutes les balises en une longue ligne séparée par des virgules (bon pour afficher les noms de lignes de bus comme une longue chaîne sur le chemin - `nameTags`, `namePrefix`).
+  - trier les valeurs et conserver la valeur la plus élevée (bon pour afficher les routes locales vs internationales - `relationGroupSort`, `additionalTags`, `additionalNamePrefix`).
+  - génère des balises uniques pour chaque relation (pas utilisé pour l'instant mais stocke les informations sans perte - `relationGroupNameTags`, `relationGroupAdditionalTags`, `relationGroupPrefix`). **Plus d'informations** vous pouvez trouver dans [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml).
 
-`rendering_types.xml` and `poi_types.xml` could be overridden during map creation process in OsmAndMapCreator UI settings or as command line parameters `--rendering-types=<path>`, `--poi-types==<path>` to `utilities.sh generate-obf` (packaged with OsmAndMapCreator).
+**En savoir plus** : généralement, les cartes vectorielles personnalisées sont combinées avec un [style de rendu personnalisé](../osmand-file-formats/osmand-rendering-style.md).
 
-- Main map object type (`<type tag="abandoned:highway" value="track" minzoom="13"/>`) is registered per OSM entity (node or way or multipolygon). There could be many main types registered per 1 entity (i.e. road + tram + route_bus), tag `order` will sort types within entity.
-- Additional map object type (`<type tag="service" value="driveway" minzoom="13" additional="true"/>`) is additional information attached for OSM entity, so in case OSM entity is not registered with main type it won't be stored inside OBF. Usually it stores information to display extra features like color, smoothness.
-- Text map object type (`<type tag="int_ref" additional="text" minzoom="1" order="32"/>`), stores text information about object so it could be later displayed on the map.
-- `entity_convert` represents simple tag transformation scripts (`<entity_convert pattern="tag_transform" from_tag="bridge" if_tag1="highway" if_value1="proposed" routing="no"/>`). It is often used to combine tags into specific types, so it's easier to display with custom rendering style. Also it allows to give region specific tag transformation and allows to have different features rendering per country.
-- Relation tag propagation. OsmAnd doesn't index relation objects (except multipolygons - stored as area objects) but it allows to propagate, push tags from relation onto members. Obviously 1 member could have multiple parent relations and tags conflicts are possible. OsmAnd supports 3 ways to deal with conflicts:
-  - combine all tags as long comma-separated line (good for rendering bus route names as a long string on the way - `nameTags`, `namePrefix`).
-  - sort values and keep the highest value (good for rendering routes local vs international - `relationGroupSort`, `additionalTags`, `additionalNamePrefix`).
-  - generates unique tags for each relation (not used for now but stores information without loss - `relationGroupNameTags`, `relationGroupAdditionalTags`, `relationGroupPrefix`). **More information** you can find in [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml).  
+## Cartes raster (avancées)
 
-**Read more**: usually custom vector maps combined with [custom rendering style](../osmand-file-formats/osmand-rendering-style.md).
+OSM est une grande base de données pour les cartes, mais elle ne contient pas toujours les informations dont vous avez besoin (par exemple, sur les déserts). Parfois, vous pouvez obtenir les informations dont vous avez besoin à partir d'autres sources, telles que des cartes papier ou des images satellite.
 
-## Raster maps (advanced)
+Il existe des programmes spéciaux pour la préparation, la conversion, la calibration de toutes les cartes sources (cartes au format image, format pdf, cartes raster en ligne) en cartes en ligne OsmAnd.
 
-OSM is a large database for maps, but it doesn't always have the information you need (for example, about deserts). Sometimes you can get the information you need from other sources, such as paper maps or satellite images.  
-
-There are special programs for preparation, conversion, calibration of any source maps (maps in image format, pdf-format, raster online maps) into OsmAnd online maps.
-
-About some of them below.
+Quelques-uns d'entre eux ci-dessous.
 
 ### MOBAC
 
-Mobile Atlas Creator (MOBAC) is an open source (GPL) program for creating offline atlases. Mobile Atlas Creator can use a large number of different online maps, such as OpenStreetMap and other map providers, as a source for creating an offline atlas.  
+Mobile Atlas Creator (MOBAC) est un programme open source (GPL) pour créer des atlas hors ligne. Mobile Atlas Creator peut utiliser un grand nombre de cartes en ligne différentes, telles qu'OpenStreetMap et d'autres fournisseurs de cartes, comme source pour créer un atlas hors ligne.
 
-Just [download](https://mobac.sourceforge.io/) the program, then run it.
+Il suffit de [télécharger](https://mobac.sourceforge.io/) le programme, puis de l'exécuter.
 
-In the format choosing dialogue pick *OsmAnd SQLite* or *OsmAnd tile storage*. SQLite is a single file with the selected area while tiles are separate pieces of the map gathered on your device. SQLite often happens to be more convenient as it is stored in one place and occupies less storage space.
+Dans la boîte de dialogue de choix du format, choisissez *OsmAnd SQLite* ou *OsmAnd tile storage*. SQLite est un seul fichier avec la zone sélectionnée tandis que les tuiles sont des morceaux séparés de la carte rassemblés sur votre appareil. SQLite est souvent plus pratique car il est stocké en un seul endroit et occupe moins d'espace de stockage.
 
-Pick the map source, zoom levels, and other features. Select an area, then choose the menu *Selection* -> *Add selection*.  
+Choisissez la source de la carte, les niveaux de zoom et d'autres fonctionnalités. Sélectionnez une zone, puis choisissez le menu *Selection* -> *Add selection*.
 
-After that, you can create your SQLite file: 'Atlas' -> 'Create Atlas'.
-
+Après cela, vous pouvez créer votre fichier SQLite : 'Atlas' -> 'Create Atlas'.
 
 ### MAPC2MAPC
 
-[MAPC2MAPC](https://www.the-thorns.org.uk/mapping/) is a Windows program to manipulate digital maps and convert them between different platforms and software.  
+[MAPC2MAPC](https://www.the-thorns.org.uk/mapping/) est un programme Windows pour manipuler des cartes numériques et les convertir entre différentes plateformes et logiciels.
 
-For example, you can convert and calibrate any image format & pdf maps to OsmAnd online map.  
+Par exemple, vous pouvez convertir et calibrer n'importe quel format d'image et cartes pdf en carte en ligne OsmAnd.
 
-[Video tutorial](https://www.youtube.com/watch?v=Y_fekLfcUOc) of using the program.
+[Tutoriel vidéo](https://www.youtube.com/watch?v=Y_fekLfcUOc) sur l'utilisation du programme.
 
 ### SASPlanet
 
-SASPlanet is a freeware, opensource navigation software with the capability of viewing and downloading maps and satellite images of Earth from various on-line services to OsmAnd online map.
+SASPlanet est un logiciel de navigation gratuit et open source capable de visualiser et de télécharger des cartes et des images satellite de la Terre à partir de divers services en ligne vers la carte en ligne OsmAnd.
 
-[Download](http://www.sasgis.org/download/) the program, [English guideline](https://www.evernote.com/shard/s100/client/snv?noteGuid=e659886a-096c-46b4-8280-b57b77373847&noteKey=dac8148d9a74ed77&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs100%2Fsh%2Fe659886a-096c-46b4-8280-b57b77373847%2Fdac8148d9a74ed77&title=How%2Bto%2Buse%2BSAS.Planet.%2BEnglish%2Bguideline).
+[Téléchargez](http://www.sasgis.org/download/) le programme, [guide en anglais](https://www.evernote.com/shard/s100/client/snv?noteGuid=e659886a-096c-46b4-8280-b57b77373847&noteKey=dac8148d9a74ed77&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs100%2Fsh%2Fe659886a-096c-46b4-8280-b57b77373847%2Fdac8148d9a74ed77&title=How%2Bto%2Buse%2BSAS.Planet.%2BEnglish%2Bguideline).
 
+### PDF ou TIFF géolocalisé
 
-### Geolocated PDF or TIFF
+Comment convertir des fichiers pdf/tif/tiff géolocalisés en [OsmAnd SQLitedb](../osmand-file-formats/osmand-sqlite.md) sous Windows.
+Le géoréférencement des fichiers tif/tiff et pdf peut être fait assez simplement dans QGIS.
 
-How to convert geolocated pdf/tif/tiff files to [OsmAnd SQLitedb](../osmand-file-formats/osmand-sqlite.md) in Windows.
-Georeferencing tif/tiff and pdf files can be fairly simply done in QGIS.
+1. **Installer et exécuter OSGeo4W**
 
-1. **Install and run OSGeo4W**
+[OSGeo4W](https://trac.osgeo.org/osgeo4w/) est une distribution binaire d'un large ensemble de logiciels géospatiaux open source pour Windows. Il comprend QGIS, GDAL/OGR, GRASS ainsi que de nombreux autres packages (plus de 150). Téléchargez et exécutez l'installateur réseau [OSGeo4W](https://trac.osgeo.org/osgeo4w/).
 
-[OSGeo4W](https://trac.osgeo.org/osgeo4w/) is a binary distribution of a broad set of open source geospatial software for Windows. It includes QGIS, GDAL/OGR, GRASS as well as many other packages (over 150). Download and run [OSGeo4W](https://trac.osgeo.org/osgeo4w/) network installer.
+Maintenant, depuis le menu Démarrer, exécutez OSGeo4W Shell. Il devrait démarrer dans le répertoire par défaut _C:\OSGeo4W_. Naviguez jusqu'à votre dossier de travail (ou vous pouvez simplement utiliser _C:\OSGeo4W_ à cette fin).
 
-Now, from Start menu, run OSGeo4W Shell. It should start in the default _C:\OSGeo4W_ directory. Either navigate to your work folder (or you could just use _C:\OSGeo4W_ for this purpose).
+2. **Convertir tif/pdf en mbtiles**
 
-2. **Convert tif/pdf to mbtiles**
-
-To convert _tif/pdf_ to _mbtiles_ run (replacing _tif/pdf_ and _mbtiles_ file names where necessary):
+Pour convertir _tif/pdf_ en _mbtiles_, exécutez (en remplaçant les noms de fichiers _tif/pdf_ et _mbtiles_ si nécessaire) :
 
 &nbsp;<i>gdal_translate -co "ZLEVEL=9" -of mbtiles map_1.tif map_1.mbtiles --config gdal_pdf_dpi 600</i>&nbsp;
 
 &nbsp;<i>gdaladdo -r nearest map_1.mbtiles</i>&nbsp;
 
+La première commande permet à _GDAL_ de déterminer le zoom maximum qu'il peut générer en fonction de la résolution de l'image. Et convertit le fichier _tif/pdf_ en _mbtiles_ avec le DPI spécifié. N'hésitez pas à jouer avec ce paramètre, mais soyez prudent car des valeurs DPI élevées rendront le processus de conversion très long et la taille du fichier résultant très grande.
 
-The first command lets _GDAL_ figure out the max zoom it can generate based on the image resolution. And converts _tif/pdf_ file to _mbtiles_ with specified DPI. Feel free to play around with this setting, but be careful as high DPI values will make the conversion process very long and the resulting file size very big.
+La deuxième commande permet à _GDAL_ de déterminer et de générer les niveaux de zoom inférieurs en fonction du niveau de zoom maximum qui existe déjà. Il n'est pas rare que ces deux commandes prennent un certain temps à se terminer.
 
-The second command lets _GDAL_ figure out and generate the lesser zoom levels based on the max zoom level that already exists. It's not uncommon for those two commands to take a while to complete.
+3. **Installer Python depuis le Microsoft Store**
 
-3.    **Install Python from the Microsoft Store**
-   
-Probably the easiest way is to head to [Microsoft Store](https://apps.microsoft.com/detail/9nj46sx7x90p).
+Probablement le moyen le plus simple est de se rendre sur le [Microsoft Store](https://apps.microsoft.com/detail/9nj46sx7x90p).
 
-If, while trying to execute Python script in the next step, this error occurs:
+Si, en essayant d'exécuter le script Python à l'étape suivante, cette erreur se produit :
 
 _Traceback (most recent call last):_
 
@@ -191,113 +183,111 @@ _File ```<console>```, line 1, in ```<module>```_
 
 _ImportError: No module named PIL_
 
-Then in PowerShell, run the following command:
+Alors dans PowerShell, exécutez la commande suivante :
 
 _pip install Pillow_
 
-4. **Convert mbtiles format to sqlitedb (suitable for OsmAnd and RMaps)**
+4. **Convertir le format mbtiles en sqlitedb (adapté à OsmAnd et RMaps)**
 
-You will find the Python scrip _mbtiles2osmand.py_ on [GitHub](https://github.com/tarwirdur/mbtiles2osmand). Download it to your work folder and run Command Prompt or PowerShell.
+Vous trouverez le script Python _mbtiles2osmand.py_ sur [GitHub](https://github.com/tarwirdur/mbtiles2osmand). Téléchargez-le dans votre dossier de travail et exécutez l'invite de commande ou PowerShell.
 
-**Usage:**
+**Utilisation :**
 
 &nbsp;<i>python3_ mbtiles2osmand.py [-h] [-f] [--jpg JPEG_QUALITY] input output</i>&nbsp;
 
-&nbsp;<u>Positional arguments:</u>&nbsp;
+&nbsp;<u>Arguments positionnels :</u>&nbsp;
 
-**input**&nbsp;&nbsp;&nbsp;&nbsp; input file
+**input**&nbsp;&nbsp;&nbsp;&nbsp; fichier d'entrée
 
-**output**&nbsp;&nbsp;&nbsp;&nbsp; output file
+**output**&nbsp;&nbsp;&nbsp;&nbsp; fichier de sortie
 
-&nbsp;<u>Optional arguments:</u>&nbsp;
+&nbsp;<u>Arguments optionnels :</u>&nbsp;
 
-**-h, --help** &nbsp;&nbsp;&nbsp;&nbsp;show this help message and exit
+**-h, --help** &nbsp;&nbsp;&nbsp;&nbsp;afficher ce message d'aide et quitter
 
-**-f, -force** &nbsp;&nbsp;&nbsp;&nbsp;override output file if exists
+**-f, -force** &nbsp;&nbsp;&nbsp;&nbsp;écraser le fichier de sortie s'il existe
 
-**--jpg JPEG_QUALITY** &nbsp;&nbsp;&nbsp;&nbsp;convert tiles to JPEG with specified quality
+**--jpg JPEG_QUALITY** &nbsp;&nbsp;&nbsp;&nbsp;convertir les tuiles en JPEG avec la qualité spécifiée
 
-**Examples:**
+**Exemples :**
 
-Simple:
+Simple :
 
 &nbsp;<i>python3 mbtiles2osmand.py _input.mbtiles output.sqlitedb_</i>&nbsp;
 
-Converting tiles to jpeg with compression:
+Conversion des tuiles en jpeg avec compression :
 
 &nbsp;<i>python3 mbtiles2osmand.py _--jpg 75 input.mbtiles output.sqlitedb_</i>&nbsp;
 
-5. **Copy the .sqlitedb file to OsmAnd**
+5. **Copier le fichier .sqlitedb dans OsmAnd**
 
-Now you should have a .sqlitedb file ready in your work folder. Copy it to appropriate OsmAnd folder and use it as an main, undelay or overlay. See [User guide](../../user/map/raster-maps.md) for more details. Done!
+Vous devriez maintenant avoir un fichier .sqlitedb prêt dans votre dossier de travail. Copiez-le dans le dossier OsmAnd approprié et utilisez-le comme carte principale, sous-jacente ou superposée. Voir le [Guide de l'utilisateur](../../user/map/raster-maps.md) pour plus de détails. C'est fait !
 
-6. **(OPTIONAL) Unite multiple osmand files into single file**
-  
-If you need to, you can find the scrip file unite_osmand.py on [GitHub](https://github.com/tarwirdur/mbtiles2osmand). Again - download it to your work folder and run Command Prompt or PowerShell.
+6. **(OPTIONNEL) Unir plusieurs fichiers osmand en un seul fichier**
 
-**Usage:**
+Si vous en avez besoin, vous pouvez trouver le fichier script unite_osmand.py sur [GitHub](https://github.com/tarwirdur/mbtiles2osmand). Encore une fois, téléchargez-le dans votre dossier de travail et exécutez l'invite de commande ou PowerShell.
+
+**Utilisation :**
 
 &nbsp;<i>python3 unite_osmand.py [-h] [-f] input [input ...] output</i>&nbsp;
 
-<u>Positional arguments:</u>
+<u>Arguments positionnels :</u>
 
-**input** &nbsp;&nbsp;&nbsp;&nbsp; input files. If multiple files contain tile with the same coordinates, tile from first (from argument list) file will be used
+**input** &nbsp;&nbsp;&nbsp;&nbsp; fichiers d'entrée. Si plusieurs fichiers contiennent une tuile avec les mêmes coordonnées, la tuile du premier fichier (de la liste d'arguments) sera utilisée
 
-**output** &nbsp;&nbsp;&nbsp;&nbsp;output file
+**output** &nbsp;&nbsp;&nbsp;&nbsp;fichier de sortie
 
-<u>Optional arguments:</u>
+<u>Arguments optionnels :</u>
 
-**-h, --help** &nbsp;&nbsp;&nbsp;&nbsp;show this help message and exit
+**-h, --help** &nbsp;&nbsp;&nbsp;&nbsp;afficher ce message d'aide et quitter
 
-**-f, -force** &nbsp;&nbsp;&nbsp;&nbsp;override output file if exists
+**-f, -force** &nbsp;&nbsp;&nbsp;&nbsp;écraser le fichier de sortie s'il existe
 
-7. **EXTRA: Convert A Single GeoPDF To GeoTIFF**
-  
-If, for whatever reason, should you wish to convert a single _geopdf_ to _geotiff_, use the _gdal_translate_ command and input your own parameters where denoted by < >. You can use _gdal_translate_ with or without optional parameters. It can take a long time to process and the resulting tiff can be really large especially when including the orthoimagery and shaded terrain. Therefore, it might be a good idea to exclude some of the PDF layers (see second example).
+7. **EXTRA : Convertir un seul GeoPDF en GeoTIFF**
 
-**Usage:**
+Si, pour une raison quelconque, vous souhaitez convertir un seul _geopdf_ en _geotiff_, utilisez la commande _gdal_translate_ et entrez vos propres paramètres là où indiqué par < >. Vous pouvez utiliser _gdal_translate_ avec ou sans paramètres optionnels. Le traitement peut prendre beaucoup de temps et le tiff résultant peut être très volumineux, surtout s'il inclut l'orthoimage et le terrain ombré. Par conséquent, il peut être judicieux d'exclure certaines des couches PDF (voir le deuxième exemple).
 
-&nbsp;<i>gdal_translate ```<GeoPDF filename> <Output Geotiff Filename>``` -of gtiff --config 
-gdal_pdf_layers_off “```<pdf layername 1>,<pdf layername 2>,<pdf layername 3>```” --config gdal_pdf_dpi ```<output dpi>``` </i>&nbsp;
+**Utilisation :**
 
-**Examples:**
+&nbsp;<i>gdal_translate ```<Nom du fichier GeoPDF> <Nom du fichier Geotiff de sortie>``` -of gtiff --config
+gdal_pdf_layers_off “```<nom de la couche pdf 1>,<nom de la couche pdf 2>,<nom de la couche pdf 3>```” --config gdal_pdf_dpi ```<dpi de sortie>``` </i>&nbsp;
 
-Converting pdf with all its layers to a geotiff at default DPI:
+**Exemples :**
+
+Conversion d'un pdf avec toutes ses couches en geotiff au DPI par défaut :
 
 &nbsp;<i>gdal_translate geo_sample_map.pdf output_sample_map.tif -of gtiff</i>&nbsp;
 
-Excluding several layers from conversion by <i>gdal_pdf_layers_off</i> parameter followed by list of comma separated layer names. Output file is a geotiff, with specified 600 DPI:
+Exclusion de plusieurs couches de la conversion par le paramètre <i>gdal_pdf_layers_off</i> suivi d'une liste de noms de couches séparés par des virgules. Le fichier de sortie est un geotiff, avec un DPI spécifié de 600 :
 
 &nbsp;<i>gdal_translate geo_sample_map.pdf output_sample_map.tif -of gtiff --config gdal_pdf_layers_off “Map_Collar, Map_Frame.Projections_and_Grids, Map_Frame.Terrain.Shaded_Relief, Images.Orthoimage” --config gdal_pdf_dpi 600</i>&nbsp;
 
-8. **Sources:**
+8. **Sources :**
 
-- [Gdal2mbtiles](https://github.com/tarwirdur/mbtiles2osmandhttps://gist.github.com/jbaranski/0073f7b98bdf1f64f49988853daed67bhttps://github.com/ecometrica/gdal2mbtiles) (for reference only),
-- [How to convert geopdf to geotiff using GDAL](https://opengislab.com/blog/2016/4/2/usgs-geopdf-to-geotif-with-gdal),
-- See also [Making Overlay Maps for OsmAnd on Linux](https://shallowsky.com/blog/mapping/osmand-making-overlay-maps.html).
+- [Gdal2mbtiles](https://github.com/tarwirdur/mbtiles2osmandhttps://gist.github.com/jbaranski/0073f7b98bdf1f64f49988853daed67bhttps://github.com/ecometrica/gdal2mbtiles) (pour référence uniquement),
+- [Comment convertir geopdf en geotiff en utilisant GDAL](https://opengislab.com/blog/2016/4/2/usgs-geopdf-to-geotif-with-gdal),
+- Voir aussi [Créer des cartes superposées pour OsmAnd sous Linux](https://shallowsky.com/blog/mapping/osmand-making-overlay-maps.html).
 
+## Problèmes courants
 
-## Common Issues
+### Problème OutOfMemoryError
 
-### OutOfMemoryError issue
+**Problème** : OsmAndMapCreator échoue avec le message - OutOfMemoryError.
 
-**Issue**: OsmAndMapCreator fails with message -  OutOfMemoryError.  
+Le fichier que vous essayez de traiter avec OsmAndMapCreator est trop volumineux. Essayez de traiter un fichier plus petit, ou augmentez la mémoire pour OsmAndMapCreator dans le fichier .sh ou .bat. Le paramètre `-Xmx` spécifie la quantité de mémoire que le programme peut consommer. Les paramètres peuvent être différents pour les machines 64 bits (plus de 1,5 Go) et 32 bits (maximum environ 1,5 Go).
 
-The file you try to process with OsmAndMapCreator is too large. Either try to process a smaller file, or increase the memory for OsmAndMapCreator in the .sh or .bat file. The `-Xmx` parameter specifies how much memory the program can consume. Settings can be different for 64bit (more than 1.5GB) and 32bit (max around 1.5GB) machines.
+### Problème de fichier vide
 
+**Problème** : Après avoir converti un .osm en .obf avec seulement un index POI, le .obf est vide, bien que le fichier .osm original contenait des POI.
 
-### Empty file issue
-
-**Issue**: After converting an .osm to .obf with only a POI index, the .obf is empty, although original .osm file did contain POIs.  
-
-It could be that a crucial tag was missing for OsmAndMapCreator to recognize a POI when you converted the osm from another source, like Garmin. If a point in the OSM file looks like this:
+Il se peut qu'une balise cruciale manquait pour qu'OsmAndMapCreator reconnaisse un POI lorsque vous avez converti l'osm d'une autre source, comme Garmin. Si un point dans le fichier OSM ressemble à ceci :
 ```
   <node id='-24' visible='true' lat='1.3094000' lon='103.7784000'>
     <tag k='created_by' v='GPSBabel-1.4.2'/>
     <tag k='name' v='Street-Soccer Court'/>
   </node>
 ```
-change it to contain an additional 'amenity' tag, like:
+modifiez-le pour qu'il contienne une balise 'amenity' supplémentaire, comme :
 ```
   <node id='-24' visible='true' lat='1.3094000' lon='103.7784000'>
     <tag k='created_by' v='GPSBabel-1.4.2'/>
@@ -306,6 +296,6 @@ change it to contain an additional 'amenity' tag, like:
   </node>
 ```
 
-Then convert the file using OsmAndMapCreator. You can check on the OSM site what tags are good ones to use and you can also verify which tags are supported by [OsmAnd](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/poi_types.xml).
+Ensuite, convertissez le fichier à l'aide d'OsmAndMapCreator. Vous pouvez vérifier sur le site OSM quelles balises sont bonnes à utiliser et vous pouvez également vérifier quelles balises sont prises en charge par [OsmAnd](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/poi_types.xml).
 
-
+-- source-hash: blake2s: 1d9578202d2aac42373cc72aa3c9dc504d4fa30c02071abbabd105f85add5670 --

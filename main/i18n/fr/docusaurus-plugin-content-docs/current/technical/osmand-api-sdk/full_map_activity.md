@@ -2,8 +2,8 @@
 sidebar_position: 5
 ---
 
-# Full Map activity
-It is possible to extend OsmAnd MapActivity and add additional features to it
+# Activité Carte complète
+Il est possible d'étendre OsmAnd MapActivity et d'y ajouter des fonctionnalités supplémentaires
 
 ```
 public class FullMapActivity extends MapActivity {
@@ -14,3 +14,5 @@ public class FullMapActivity extends MapActivity {
 	}
 }
 ```
+
+-- source-hash: blake2s: 0fb61871132c8f5d165f089535081037d5f440002ba74fe0d77b349e38e9b4e9 --

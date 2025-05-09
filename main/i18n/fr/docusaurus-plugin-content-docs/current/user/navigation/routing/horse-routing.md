@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  Horseback routing
+title:  Itinéraire à cheval
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,22 +13,22 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Aperçu
 
-*Horseback routing* can be useful for equestrians, who want to plan their rides on paths and trails that are safe and suitable for horses. With help of this type of routing you may also discover new routes that haven't been already known about otherwise.  
+L'*itinéraire à cheval* peut être utile aux cavaliers qui souhaitent planifier leurs randonnées sur des chemins et des sentiers sûrs et adaptés aux chevaux. Ce type d'itinéraire peut également vous permettre de découvrir de nouveaux itinéraires qui n'étaient pas connus auparavant.
 
-*Horseback routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
+L'*itinéraire à cheval* peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des paramètres de navigation.
 
 ![Horseback](@site/static/img/navigation/routing/horseback_routing_overview.png)
 
 
-## Route Parameters - Horse
+## Paramètres d'itinéraire - Cheval
 
 :::note
-By default, *Horseback riding profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+Par défaut, le *profil d'équitation* est désactivé. Pour utiliser ce profil pour l'itinéraire, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Horseback routing is designed to provide equestrians with information about horse-friendly paths, bridleways, and riding trails.
+L'itinéraire à cheval est conçu pour fournir aux cavaliers des informations sur les chemins, les pistes cavalières et les sentiers d'équitation adaptés aux chevaux.
 
 <Tabs groupId="operating-systems">
 
@@ -46,28 +46,30 @@ Horseback routing is designed to provide equestrians with information about hors
 
 </Tabs>
 
-| Parameter | Description | Note |
+| Paramètre | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Select roads you want to avoid during navigation. You can either [select a road on the map](../../map/map-context-menu/#avoid-road) or choose road types from the list.  </summary>  ![Avoid roads Android](@site/static/img/navigation/routing/horse_routing_avoid_android.png) </details> | <ul><li> [<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (a type of water transportation, that carries  vehicles across bodies of water)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel)</li><li>[<Translate android="true" ids="routing_attr_avoid_motorway_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway)</li></ul>|
-| *<Translate android="true" ids="prefer_in_routing_title"/>* | <details><summary> You can choose whether to prefer routes for horses or not. </summary> ![Prefer horses routes Android](@site/static/img/navigation/routing/horse_routing_prefer_android.png)  </details>  | <ul><li>[<Translate android="true" ids="routing_attr_prefer_horse_routes_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dbridleway). A way intended for use by horse riders (primarily) and pedestrians (depending on country-specific regulations). </li></ul> |
-| *<Translate android="true" ids="routing_attr_allow_gate_name"/>* |  <Translate android="true" ids="routing_attr_allow_gate_description"/>. | A [gate](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dgate) is a kind of [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier), that blocks movement. Usually it is a section in a wall or fence which can be opened or closed to allow or restrict access. |
-|  *<Translate android="true" ids="routing_attr_carriage_restrictions_name"/>*  |  <Translate android="true" ids="routing_attr_carriage_restrictions_description"/>.  | In some countries, [horse-drawn carriages](https://wiki.openstreetmap.org/wiki/Key:carriage) are not permitted on motorways, they are only allowed on a very small number of other roads.   |
-| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Private access restrictions will be ignored when route calculating.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* is used in OSM to describe restrictions on the use of highways and other transportation routes, as well as buildings, entrances, amenities, and leisure entities.   |
-| *<Translate android="true" ids="routing_attr_only_permitted_streets_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_streets_description"/>.  | Only streets specially designated for horses will be used for routing.   |
-| *<Translate android="true" ids="routing_attr_only_permitted_ways_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_ways_description"/>.  | Only ways specially designated for horses will be used for routing.   |
-|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Projected travel time will reflect elevation impact. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png)  </details> | This preference can help avoid steep uphills. Without elevation data the fastest route as on plain terrain will be calculated. |
+| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Sélectionnez les routes que vous souhaitez éviter pendant la navigation. Vous pouvez soit [sélectionner une route sur la carte](../../map/map-context-menu/#avoid-road), soit choisir des types de routes dans la liste.  </summary>  ![Avoid roads Android](@site/static/img/navigation/routing/horse_routing_avoid_android.png) </details> | <ul><li> [<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (un type de transport par eau qui transporte des véhicules à travers des étendues d'eau)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel)</li><li>[<Translate android="true" ids="routing_attr_avoid_motorway_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway)</li></ul>|
+| *<Translate android="true" ids="prefer_in_routing_title"/>* | <details><summary> Vous pouvez choisir de préférer les itinéraires pour chevaux ou non. </summary> ![Prefer horses routes Android](@site/static/img/navigation/routing/horse_routing_prefer_android.png)  </details>  | <ul><li>[<Translate android="true" ids="routing_attr_prefer_horse_routes_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dbridleway). Un chemin destiné à être utilisé par les cavaliers (principalement) et les piétons (selon les réglementations spécifiques à chaque pays). </li></ul> |
+| *<Translate android="true" ids="routing_attr_allow_gate_name"/>* |  <Translate android="true" ids="routing_attr_allow_gate_description"/>. | Une [barrière](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dgate) est un type de [barrière](https://wiki.openstreetmap.org/wiki/Key:barrier) qui bloque le mouvement. Il s'agit généralement d'une section dans un mur ou une clôture qui peut être ouverte ou fermée pour permettre ou restreindre l'accès. |
+|  *<Translate android="true" ids="routing_attr_carriage_restrictions_name"/>*  |  <Translate android="true" ids="routing_attr_carriage_restrictions_description"/>.  | Dans certains pays, les [calèches](https://wiki.openstreetmap.org/wiki/Key:carriage) ne sont pas autorisées sur les autoroutes, elles ne sont autorisées que sur un très petit nombre d'autres routes.   |
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Les restrictions d'accès privé seront ignorées lors du calcul de l'itinéraire.  | Le tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* est utilisé dans OSM pour décrire les restrictions d'utilisation des routes et autres voies de transport, ainsi que des bâtiments, des entrées, des équipements et des entités de loisirs.   |
+| *<Translate android="true" ids="routing_attr_only_permitted_streets_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_streets_description"/>.  | Seules les rues spécialement désignées pour les chevaux seront utilisées pour l'itinéraire.   |
+| *<Translate android="true" ids="routing_attr_only_permitted_ways_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_ways_description"/>.  | Seules les voies spécialement désignées pour les chevaux seront utilisées pour l'itinéraire.   |
+|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Le temps de trajet projeté reflétera l'impact de l'altitude. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png)  </details> | Cette préférence peut aider à éviter les montées raides. Sans données d'altitude, l'itinéraire le plus rapide sera calculé comme sur un terrain plat. |
 
 
-## Other Routing Settings
+## Autres paramètres d'itinéraire
 
-- The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using [<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations) option. Note that in some cases, information from OSM can be outdated.  
+- L'algorithme de routage peut également prendre en compte les limitations temporaires spécifiées dans OpenStreetMap. Cela peut être fait en utilisant l'option [<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations). Notez que dans certains cas, les informations d'OSM peuvent être obsolètes.
 
-- In the [Recalculate route section](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
+- Dans la section [Recalculer l'itinéraire](../../navigation/guidance/navigation-settings.md#recalculate-route) des *Paramètres d'itinéraire*, vous pouvez activer et ajuster les options de recalcul de l'itinéraire.
 
-- In the [Development section](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+- Dans la section [Développement](../guidance/navigation-settings.md#development-settings) des *Paramètres d'itinéraire*, vous pouvez essayer de nouvelles fonctionnalités de routage qui sont actuellement en phase de test. Notez que ces paramètres ne sont disponibles que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé.
 
-- [<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds) setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). This setting is used on unknown roads without speed limits. This is most often the case when navigating a track or online route. It must be set according to the parameters of your vehicle.
+- Le paramètre [<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds) dans la version *iOS* d'OsmAnd se trouve dans *Paramètres de navigation → Paramètres d'itinéraire* (pour *Android*, dans *Paramètres du véhicule → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Ce paramètre est utilisé sur les routes inconnues sans limitation de vitesse. C'est le plus souvent le cas lors de la navigation sur une trace ou un itinéraire en ligne. Il doit être réglé en fonction des paramètres de votre véhicule.
 
-- [<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters). Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
+- [<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters). La configuration correcte des paramètres vous aidera à éviter les problèmes lors de la création d'un itinéraire. Vous pouvez sélectionner l'itinéraire le plus approprié en fonction du type de véhicule et des restrictions routières, ainsi que calculer le temps de trajet.
 
-> *This article was last updated in June 2024*
+> *Cet article a été mis à jour pour la dernière fois en juin 2024*
+
+-- source-hash: blake2s: edb0ed89130e7fc0ec1149ee78e54f85d0ee20b9df6e676d1450996c5672aac5 --

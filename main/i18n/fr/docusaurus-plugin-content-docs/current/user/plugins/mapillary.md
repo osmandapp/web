@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  Mapillary
+title: Mapillary
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,22 +13,22 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Aperçu
 
-To get around faster, in OsmAnd you can use street-level views of your routes or places of interest provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).  
+Pour vous déplacer plus rapidement, vous pouvez utiliser dans OsmAnd des vues au niveau de la rue de vos itinéraires ou de vos points d'intérêt fournies par [Mapillary](https://www.mapillary.com/) (une connexion Internet est requise).
 
-[The Mapillary layer](https://www.mapillary.com/) brings street-level imagery straight into the OsmAnd app, so you can easily overview the surroundings of any place of interest or along the route you have planned. If imagery is missing, you can add it yourself, and others can use it. This feature has emerged from our collaboration with [the Mapillary team](https://www.mapillary.com/about), uniting the benefits of both apps.
-
-
-## Required Setup Parameters
-
-To display street-level images on the OsmAnd map, you need to make the following settings:
-
-1. Enable the [Mapillary plugin](../plugins/#enable--disable) in the *Plugins* section of the *Main Menu*.
-2. Display the [Street-level imagery](#enable-layer) on the map for the required profile in the Configure map menu.
+[La couche Mapillary](https://www.mapillary.com/) apporte des images au niveau de la rue directement dans l'application OsmAnd, afin que vous puissiez facilement avoir un aperçu des environs de n'importe quel point d'intérêt ou le long de l'itinéraire que vous avez planifié. Si des images manquent, vous pouvez les ajouter vous-même, et d'autres peuvent les utiliser. Cette fonctionnalité est née de notre collaboration avec [l'équipe Mapillary](https://www.mapillary.com/about), unissant les avantages des deux applications.
 
 
-## Map Layer
+## Paramètres de configuration requis
+
+Pour afficher les images au niveau de la rue sur la carte OsmAnd, vous devez effectuer les réglages suivants :
+
+1. Activez le [plugin Mapillary](../plugins/#enable--disable) dans la section *Plugins* du *Menu principal*.
+2. Affichez les [images au niveau de la rue](#enable-layer) sur la carte pour le profil requis dans le menu Configurer la carte.
+
+
+## Couche de carte
 
 <Tabs groupId="operating-systems">
 
@@ -46,15 +46,15 @@ To display street-level images on the OsmAnd map, you need to make the following
 
 </Tabs>
 
-The map layer with street images is displayed on the OsmAnd map as rows of connected green dots.
+La couche de carte avec les images de rue est affichée sur la carte OsmAnd sous forme de rangées de points verts connectés.
 
-- Mapillary users' photos are attached to these green dots.
-- Tap a green dot on the map to open a street view photo. Photos can also be selected from a list in the [map context menu](#map-context-menu), if available.
-- After selection, the application screen is divided into OsmAnd map and Mapillarystreet-level street images.
-- You can apply [filters](#data-filtering) to select the photos you want to display on the map.
+- Les photos des utilisateurs de Mapillary sont attachées à ces points verts.
+- Appuyez sur un point vert sur la carte pour ouvrir une photo de vue de rue. Les photos peuvent également être sélectionnées à partir d'une liste dans le [menu contextuel de la carte](#map-context-menu), si disponible.
+- Après la sélection, l'écran de l'application est divisé en carte OsmAnd et images de rue Mapillary.
+- Vous pouvez appliquer des [filtres](#data-filtering) pour sélectionner les photos que vous souhaitez afficher sur la carte.
 
 
-### Enable Layer
+### Activer la couche
 
 <Tabs groupId="operating-systems">
 
@@ -72,18 +72,18 @@ The map layer with street images is displayed on the OsmAnd map as rows of conne
 
 </Tabs>
 
-To display Mapillary street-level imagery on the map, you need to enable this layer in the [Configure Map menu](../map/configure-map-menu.md) in the *Show* section.  
+Pour afficher les images au niveau de la rue de Mapillary sur la carte, vous devez activer cette couche dans le menu [Configurer la carte](../map/configure-map-menu.md) dans la section *Afficher*.
 
-*To access: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
+*Pour accéder : <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.
 
-:::note Mapillary Photo viewer
+:::note Visionneuse de photos Mapillary
 
-- Tap the *three-dot menu* (&#8285;) button to open selected image in the [**Mapillary**](https://www.mapillary.com/mobile-apps) application.
-- Tap the arrow to move from image to image.
+- Appuyez sur le bouton *menu à trois points* (&#8285;) pour ouvrir l'image sélectionnée dans l'application [**Mapillary**](https://www.mapillary.com/mobile-apps).
+- Appuyez sur la flèche pour passer d'une image à l'autre.
 :::
 
 
-### Data Filtering
+### Filtrage des données
 
 <Tabs groupId="operating-systems">
 
@@ -101,16 +101,16 @@ To display Mapillary street-level imagery on the map, you need to enable this la
 
 </Tabs>
 
-You can create a filter and select which photos to display on the map. For example, choose to view only recent images or only 360-degrees images.  
+Vous pouvez créer un filtre et sélectionner les photos à afficher sur la carte. Par exemple, choisissez d'afficher uniquement les images récentes ou uniquement les images à 360 degrés.
 
-*To access: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
+*Pour accéder : <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
-:::note Tile cash
-If the selected images are not displayed, use **Reload** for the **Tile cache**.
+:::note Cache de tuiles
+Si les images sélectionnées ne s'affichent pas, utilisez **Recharger** pour le **Cache de tuiles**.
 :::
 
 
-## Map Context Menu
+## Menu contextuel de la carte
 
 <Tabs groupId="operating-systems">
 
@@ -128,10 +128,10 @@ If the selected images are not displayed, use **Reload** for the **Tile cache**.
 
 </Tabs>
 
-If the Mapillary plugin is enabled, you can view photos of streets available within a 40-meter radius of the selected point on the map. The photos are opened in the [map context menu](../map/map-context-menu.md#online-photos).
+Si le plugin Mapillary est activé, vous pouvez afficher les photos de rues disponibles dans un rayon de 40 mètres autour du point sélectionné sur la carte. Les photos sont ouvertes dans le [menu contextuel de la carte](../map/map-context-menu.md#online-photos).
 
 
-## Add Photos
+## Ajouter des photos
 
 <Tabs groupId="operating-systems">
 
@@ -149,24 +149,24 @@ If the Mapillary plugin is enabled, you can view photos of streets available wit
 
 </Tabs>
 
-To add photos, you need to register in the [Mapillary app](https://www.mapillary.com/mobile-apps). You can also add photos to the map context menu by tapping the *Add photos* button in the [Online photos](../map/map-context-menu.md#online-photos) section of the map context menu. Then the Mapillary application will open.
+Pour ajouter des photos, vous devez vous inscrire dans l'[application Mapillary](https://www.mapillary.com/mobile-apps). Vous pouvez également ajouter des photos au menu contextuel de la carte en appuyant sur le bouton *Ajouter des photos* dans la section [Photos en ligne](../map/map-context-menu.md#online-photos) du menu contextuel de la carte. L'application Mapillary s'ouvrira alors.
 
 
-## Mapillary Widget
+## Widget Mapillary
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="mapillary"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="mapillary"/>*
 
-![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png)  ![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
+![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png) ![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="mapillary"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → <Translate ios="true" ids="mapillary"/>*
 
 ![Mapillary plugin Map Context menu iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
 
@@ -174,13 +174,15 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin is enabled. You can enable or disable the Mapillary widget and other widgets in the [Configure screen](../widgets/configure-screen.md) menu.
+Le [widget Mapillary](../widgets/info-widgets.md#mapillary-widget) est utilisé pour accéder rapidement à l'application Mapillary. Le widget est ajouté automatiquement à l'écran principal lorsque le plugin Mapillary est activé. Vous pouvez activer ou désactiver le widget Mapillary et d'autres widgets dans le menu [Configurer l'écran](../widgets/configure-screen.md).
 
 
-## Related Articles
+## Articles connexes
 
-- [Interact with Map](../../user/map/interact-with-map.md)
-- [Global Settings](../../user/personal/global-settings.md)
-- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+- [Interagir avec la carte](../../user/map/interact-with-map.md)
+- [Paramètres globaux](../../user/personal/global-settings.md)
+- [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *This article was last updated in October 2024*
+> *Cet article a été mis à jour pour la dernière fois en octobre 2024*
+
+-- source-hash: blake2s: 1d6bd17d52c161edca2e273f051b6bd8a7b7b5ae6ada849ab1465ad06e2e5d33 --

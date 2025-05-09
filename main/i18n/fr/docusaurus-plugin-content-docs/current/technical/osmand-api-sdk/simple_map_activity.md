@@ -3,8 +3,8 @@ sidebar_position: 2
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Simple Map activity
-There is only map and switch for opengl rendering 
+# Activité de carte simple
+Il n'y a que la carte et un interrupteur pour le rendu OpenGL
 
   ```
 public class SimpleMapActivity extends AppCompatActivity {
@@ -72,3 +72,5 @@ public class SimpleMapActivity extends AppCompatActivity {
 	}
 }
 ```
+
+-- source-hash: blake2s: 247239c9a0199d09c7c1e3c126852d58b701aa5d264188aa982166f1a1c7013a --

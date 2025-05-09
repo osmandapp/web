@@ -2,162 +2,163 @@
 sidebar_position: 3
 ---
 
-# Trace Address Search Issues
+# Problèmes de recherche d'adresses de trace
 
-## Address Found in the Wrong City
+## Adresse trouvée dans la mauvaise ville
 
-In some cases, an address search in OsmAnd may return results for a different city than expected. These issues arise due to how city boundaries are defined and processed in OpenStreetMap (OSM). If a user searches for a **street name** or a **street with a house number** without specifying a city, the **full-text search algorithm** may return a match from another city.
+Dans certains cas, une recherche d'adresse dans OsmAnd peut renvoyer des résultats pour une ville différente de celle attendue. Ces problèmes proviennent de la manière dont les limites de la ville sont définies et traitées dans OpenStreetMap (OSM). Si un utilisateur recherche un **nom de rue** ou une **rue avec un numéro de maison** sans spécifier de ville, l'**algorithme de recherche en texte intégral** peut renvoyer une correspondance provenant d'une autre ville.
 
-### Related Issues
+### Problèmes connexes
 
-Instances of incorrect city assignments have been reported in the following GitHub issues:
+Des cas d'affectation de ville incorrecte ont été signalés dans les problèmes GitHub suivants :
 [10679](https://github.com/osmandapp/OsmAnd/issues/10679), [10677](https://github.com/osmandapp/OsmAnd/issues/10677), [10699](https://github.com/osmandapp/OsmAnd/issues/10699), [10921](https://github.com/osmandapp/OsmAnd/issues/10921).
 
 
-## How OsmAnd Identifies City Boundaries
+## Comment OsmAnd identifie les limites de la ville
 
-OsmAnd determines a city’s boundary using its **administrative relation** in OpenStreetMap. For a boundary to be considered valid, it must meet the following criteria:
+OsmAnd détermine la limite d'une ville en utilisant sa **relation administrative** dans OpenStreetMap. Pour qu'une limite soit considérée comme valide, elle doit répondre aux critères suivants :
 
-- The **boundary relation** must include the tags:
-  - **boundary** = *administrative* or *postal_code*
+- La **relation de limite** doit inclure les balises :
+  - **boundary** = *administrative* ou *postal_code*
   - **place** = *[city, town, village, hamlet, etc.]*
 
-- The boundary relation must contain a **relation member**:
+- La relation de limite doit contenir un **membre de relation** :
   - **label**
-  - **admin_centre** or **admin_center**
-  
-- The **name of the boundary relation** must exactly match the **place-node name**.
+  - **admin_centre** ou **admin_center**
 
-- If these conditions are not met, the boundary relation is not recognized as a city boundary.
+- Le **nom de la relation de limite** doit correspondre exactement au **nom du nœud de lieu**.
 
-- Among overlapping boundaries, OsmAnd selects the **largest boundary**.
+- Si ces conditions ne sont pas remplies, la relation de limite n'est pas reconnue comme une limite de ville.
 
-- The **relation ways** define the boundary. OsmAnd supports both **inner** and **outer** ways.
+- Parmi les limites qui se chevauchent, OsmAnd sélectionne la **plus grande limite**.
 
-
-## Exact Name Matching
-
-For accurate address processing, **street names must match exactly**, including:
-
-- Differences in **diacritic marks** (e.g., *Rue André Chenier* vs. *Rue André Chénier*).
-- Variations in **prefixes and abbreviations**.
-
-If a mismatch occurs, one of the following issues may arise:
-
-- The house is **assigned to the wrong street**.
-- The **same street appears multiple times** in different city boundaries.  
-
-See GitHub issue [10036](https://github.com/osmandapp/OsmAnd/issues/10036) for an example.
+- Les **chemins de relation** définissent la limite. OsmAnd prend en charge les chemins **intérieurs** et **extérieurs**.
 
 
-## Possible Causes of Incorrect City Assignments
+## Correspondance exacte des noms
 
-### Issues in OpenStreetMap
+Pour un traitement précis des adresses, les **noms de rue doivent correspondre exactement**, y compris :
 
-1. **Broken or missing city boundaries.**
+- Les différences dans les **signes diacritiques** (par exemple, *Rue André Chenier* vs. *Rue André Chénier*).
+- Les variations dans les **préfixes et abréviations**.
 
-   - If city boundaries are incomplete, incorrect, or missing, address assignments may be unreliable.  
-   - **Solution:** Follow the [OSM boundary fixing guide](https://help.openstreetmap.org/questions/1053/how-do-i-fix-inconsistent-boundaries).  
-   - Example: [10699](https://github.com/osmandapp/OsmAnd/issues/10699).
+Si une non-concordance se produit, l'un des problèmes suivants peut survenir :
 
-2. **City boundaries do not correctly overlap.**
+- La maison est **affectée à la mauvaise rue**.
+- La **même rue apparaît plusieurs fois** dans différentes limites de ville.
 
-   - If a street belongs to two cities but is mapped incorrectly, OsmAnd may not recognize the overlap.  
-   - **Solution:** Adjust city boundaries in OpenStreetMap to ensure they correctly encompass shared streets.
-
-3. **Missing required tags in the boundary relation.**
-
-   - If a relation lacks essential tags such as **boundary=administrative** or **place=city**, it will not be used.  
-   - Examples:  
-     - Issue [10921](https://github.com/osmandapp/OsmAnd/issues/10921) (missing tags).  
-     - Issue [12548](https://github.com/osmandapp/OsmAnd/issues/12548) (*Erfstadt* boundary issue).
-
-### Issues in OsmAnd
-
-**Addresses assigned to neighboring cities.**
-
-- Cities, towns, villages, or suburbs in proximity may **incorrectly inherit addresses** due to boundary overlaps or missing boundaries.
-- This is common when cities are divided into administrative areas but lack clearly defined OSM relations.  
-- See related reports: [10559](https://github.com/osmandapp/OsmAnd/issues/10559), [10679](https://github.com/osmandapp/OsmAnd/issues/10679), [10730](https://github.com/osmandapp/OsmAnd/issues/10730).
+Voir le problème GitHub [10036](https://github.com/osmandapp/OsmAnd/issues/10036) pour un exemple.
 
 
-## Verification Methods
+## Causes possibles d'affectations de ville incorrectes
 
-To verify and troubleshoot city boundary issues, compare results from different map tools.
+### Problèmes dans OpenStreetMap
 
-### Using OpenStreetMap
+1. **Limites de ville cassées ou manquantes.**
 
-**Example:** Address searched: *Wolności 223, Zabrze*  
+   - Si les limites de ville sont incomplètes, incorrectes ou manquantes, les affectations d'adresses peuvent être peu fiables.
+   - **Solution :** Suivez le [guide de correction des limites OSM](https://help.openstreetmap.org/questions/1053/how-do-i-fix-inconsistent-boundaries).
+   - Exemple : [10699](https://github.com/osmandapp/OsmAnd/issues/10699).
 
-1. Open OpenStreetMap (OSM).
-2. Search for **Zabrze** and select the result associated with an **administrative boundary**.  
-3. View the city boundary to confirm whether the address is correctly assigned.
+2. **Les limites de ville ne se chevauchent pas correctement.**
 
-### Using Nominatim
+   - Si une rue appartient à deux villes mais est mal cartographiée, OsmAnd peut ne pas reconnaître le chevauchement.
+   - **Solution :** Ajustez les limites de ville dans OpenStreetMap pour vous assurer qu'elles englobent correctement les rues partagées.
 
-**Example:** Address searched: *Wolności 223, Zabrze*  
+3. **Balises requises manquantes dans la relation de limite.**
 
-1. Search for the **street and house number** without specifying the city.  
-2. If the search result places the address in another city, note the suggested city name.  
-3. Enter the **found city name** in Nominatim.  
-4. Check the **Address Rank** value:
-   - Example: *Wolności, Maciejów*
-   - If Maciejów is listed as *suburb/hamlet (rank 20)*, it is a smaller administrative division of another city.
+   - Si une relation manque de balises essentielles telles que **boundary=administrative** ou **place=city**, elle ne sera pas utilisée.
+   - Exemples :
+     - Problème [10921](https://github.com/osmandapp/OsmAnd/issues/10921) (balises manquantes).
+     - Problème [12548](https://github.com/osmandapp/OsmAnd/issues/12548) (problème de limite *Erfstadt*).
 
-**Important:** Be cautious when selecting search results, as cities with similar names may exist in different regions or countries.
+### Problèmes dans OsmAnd
 
+**Adresses affectées aux villes voisines.**
 
-## US Address Search and TIGER Data
-
-OsmAnd uses OpenStreetMap data for address searches, with additional data sources such as **TIGER (Topologically Integrated Geographic Encoding and Referencing System)** from the U.S. Census Bureau. This dataset is range-based and does not contain precise house numbers. Some addresses may be missing or inaccurate.  
-
-Solving issues with U.S. addresses:
-
-1. The entered address is **split into components**: `[House Number] [Street Name]`, `[City]`, `[State]`, `[ZIP Code]`
-
-2. The system **first checks OSM** for an exact match with house numbers and streets.
-
-3. If **no match is found** in OSM, the system searches TIGER data, which includes:
-    - Street names and classifications.
-    - Interpolated house number ranges.
-    - Administrative boundaries.
-
-4. If a **house number is missing**, OsmAnd estimates its location based on nearby data.
-
-5. **Returning results**:
-    - If the address exists in OSM, an exact match is displayed.
-    - If only TIGER data is available, an approximate result is provided.
-    - If neither source contains the address, the search fails.
+- Les villes, les bourgs, les villages ou les banlieues à proximité peuvent **hériter incorrectement d'adresses** en raison de chevauchements de limites ou de limites manquantes.
+- Ceci est courant lorsque les villes sont divisées en zones administratives mais manquent de relations OSM clairement définies.
+- Voir les rapports connexes : [10559](https://github.com/osmandapp/OsmAnd/issues/10559), [10679](https://github.com/osmandapp/OsmAnd/issues/10679), [10730](https://github.com/osmandapp/OsmAnd/issues/10730).
 
 
-#### Types of Address Data in TIGER
+## Méthodes de vérification
 
-| TIGER Data Type            | Usage in OsmAnd    |
-|----------------------------|--------------------|
-| **Street names**           | Used for name-based searches. |
-| **House number ranges**    | Provides approximate address locations. |
-| **ZIP Codes**              | Helps associate addresses with correct postal areas. |
-| **Administrative boundaries** | Determines city and state locations. |
+Pour vérifier et résoudre les problèmes de limites de ville, comparez les résultats de différents outils cartographiques.
+
+### Utilisation d'OpenStreetMap
+
+**Exemple :** Adresse recherchée : *Wolności 223, Zabrze*
+
+1. Ouvrez OpenStreetMap (OSM).
+2. Recherchez **Zabrze** et sélectionnez le résultat associé à une **limite administrative**.
+3. Affichez la limite de la ville pour confirmer si l'adresse est correctement affectée.
+
+### Utilisation de Nominatim
+
+**Exemple :** Adresse recherchée : *Wolności 223, Zabrze*
+
+1. Recherchez la **rue et le numéro de maison** sans spécifier la ville.
+2. Si le résultat de la recherche place l'adresse dans une autre ville, notez le nom de la ville suggérée.
+3. Entrez le **nom de la ville trouvée** dans Nominatim.
+4. Vérifiez la valeur du **rang d'adresse** :
+   - Exemple : *Wolności, Maciejów*
+   - Si Maciejów est répertorié comme *banlieue/hameau (rang 20)*, il s'agit d'une division administrative plus petite d'une autre ville.
+
+**Important :** Soyez prudent lors de la sélection des résultats de recherche, car des villes portant des noms similaires peuvent exister dans différentes régions ou pays.
+
+
+## Recherche d'adresses aux États-Unis et données TIGER
+
+OsmAnd utilise les données OpenStreetMap pour les recherches d'adresses, avec des sources de données supplémentaires telles que **TIGER (Topologically Integrated Geographic Encoding and Referencing System)** du U.S. Census Bureau. Cet ensemble de données est basé sur des plages et ne contient pas de numéros de maison précis. Certaines adresses peuvent être manquantes ou inexactes.
+
+Résolution des problèmes avec les adresses aux États-Unis :
+
+1. L'adresse saisie est **divisée en composants** : `[Numéro de maison] [Nom de rue]`, `[Ville]`, `[État]`, `[Code postal]`
+
+2. Le système **vérifie d'abord OSM** pour une correspondance exacte avec les numéros de maison et les rues.
+
+3. Si **aucune correspondance n'est trouvée** dans OSM, le système recherche dans les données TIGER, qui comprennent :
+    - Noms de rue et classifications.
+    - Plages de numéros de maison interpolées.
+    - Limites administratives.
+
+4. Si un **numéro de maison est manquant**, OsmAnd estime son emplacement en fonction des données à proximité.
+
+5. **Retour des résultats** :
+    - Si l'adresse existe dans OSM, une correspondance exacte est affichée.
+    - Si seules les données TIGER sont disponibles, un résultat approximatif est fourni.
+    - Si aucune source ne contient l'adresse, la recherche échoue.
+
+
+#### Types de données d'adresse dans TIGER
+
+| Type de données TIGER      | Utilisation dans OsmAnd |
+|----------------------------|-------------------------|
+| **Noms de rue**            | Utilisé pour les recherches basées sur le nom. |
+| **Plages de numéros de maison** | Fournit des emplacements d'adresse approximatifs. |
+| **Codes postaux**          | Aide à associer les adresses aux zones postales correctes. |
+| **Limites administratives** | Détermine les emplacements des villes et des États. |
 
 <br/>
 
-#### When an Address is Found vs. Not Found
+#### Quand une adresse est trouvée ou non trouvée
 
-| Search Scenario     | Result in OsmAnd     |
+| Scénario de recherche | Résultat dans OsmAnd |
 |---------------------|----------------------|
-| Address exists in OSM with house number and street | ✅ Exact match |
-| Address exists in TIGER but lacks house numbers | ⚠️ Approximate match using interpolation |
-| Address exists in TIGER but contains incorrect data | ⚠️ Partial match with errors |
-| Address is missing from both OSM and TIGER | ❌ No result |
+| L'adresse existe dans OSM avec numéro de maison et rue | ✅ Correspondance exacte |
+| L'adresse existe dans TIGER mais manque de numéros de maison | ⚠️ Correspondance approximative par interpolation |
+| L'adresse existe dans TIGER mais contient des données incorrectes | ⚠️ Correspondance partielle avec erreurs |
+| L'adresse est manquante dans OSM et TIGER | ❌ Aucun résultat |
 
 
-#### Limitations of TIGER Data in OsmAnd
+#### Limites des données TIGER dans OsmAnd
 
-Several factors affect the accuracy of address searches in the TIGER-based system:
+Plusieurs facteurs affectent la précision des recherches d'adresses dans le système basé sur TIGER :
 
-- **Missing house numbers**. Many addresses in TIGER rely on **interpolation**, leading to approximate locations.
-  
-- **Outdated street names**. Road names in TIGER may not reflect current naming conventions in OSM.
+- **Numéros de maison manquants**. De nombreuses adresses dans TIGER reposent sur l'**interpolation**, ce qui conduit à des emplacements approximatifs.
 
-- **ZIP Code mismatches**. Boundaries in TIGER may be incorrect, causing incorrect ZIP code assignments.
+- **Noms de rue obsolètes**. Les noms de rue dans TIGER peuvent ne pas refléter les conventions de nommage actuelles dans OSM.
 
+- **Non-concordances de codes postaux**. Les limites dans TIGER peuvent être incorrectes, entraînant des affectations de codes postaux incorrectes.
+
+-- source-hash: blake2s: f63a2d083fe39882aaf9cfe50fe95e67872dae1da6d8801744282b7f8b17c272 --

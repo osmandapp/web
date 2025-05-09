@@ -10,42 +10,44 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-# Troubleshooting
+# Dépannage
 
-Solutions and hints for common problems.
+Solutions et astuces pour les problèmes courants.
 
 ### [Android Auto](android_auto.md)
 
-The most typical issues related to Android Auto.
+Les problèmes les plus typiques liés à Android Auto.
 
-### [Crash Logs](./crash-logs.md)
+### [Journaux de plantage](./crash-logs.md)
 
-Description of how to send crash logs to the OsmAnd team.
+Description de la manière d'envoyer les journaux de plantage à l'équipe OsmAnd.
 
-### [General](./general.md)
+### [Général](./general.md)
 
-General issues related to various OsmAnd features.
+Problèmes généraux liés aux différentes fonctionnalités d'OsmAnd.
 
-### [Maps & Data](./maps-data.md)
+### [Cartes et données](./maps-data.md)
 
-Issues related to maps, search, and other data.
+Problèmes liés aux cartes, à la recherche et à d'autres données.
 
 ### [Navigation](./navigation.md)
 
-The most common problems encountered in navigation mode.
+Les problèmes les plus courants rencontrés en mode navigation.
 
-### [Resources and Customizations](./resources)
+### [Ressources et personnalisations](./resources)
 
-Resources created by the community.
+Ressources créées par la communauté.
 
-### [Setup](./setup.md)
+### [Configuration](./setup.md)
 
-The most typical issues encountered when setting up the application.
+Les problèmes les plus typiques rencontrés lors de la configuration de l'application.
 
-### [Track Recording](./track-recording-issues.md)
+### [Enregistrement de trace](./track-recording-issues.md)
 
-Common issues with track recording, such as noise, gaps, or inaccuracies.
+Problèmes courants liés à l'enregistrement de trace, tels que le bruit, les lacunes ou les inexactitudes.
 
-### [Video Tutorials and Guides](./video-tutorials.md)
+### [Tutoriels vidéo et guides](./video-tutorials.md)
 
-Collection of video tutorials and guides.
+Collection de tutoriels vidéo et de guides.
+
+-- source-hash: blake2s: 01dc96e52a8ab0e38ed62e4cae52356d780060b69fee0b1f6fb62e2130f72cc2 --

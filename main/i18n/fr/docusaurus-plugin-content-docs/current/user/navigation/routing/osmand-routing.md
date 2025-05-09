@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-title:  About OsmAnd routing
+title:  À propos du routage OsmAnd
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,177 +14,179 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
-Offline OsmAnd routing is based on OpenStreetMap data and provides variety of routes for different purposes. This is a list of predefined routing types which could be extended. The navigation rules are contained in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md) file and are used for offline routing. The route type changes automatically, when you change your profile.  
+Le routage hors ligne d'OsmAnd est basé sur les données d'OpenStreetMap et propose une variété d'itinéraires à des fins différentes. Il s'agit d'une liste de types de routage prédéfinis qui peuvent être étendus. Les règles de navigation sont contenues dans le fichier [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md) et sont utilisées pour le routage hors ligne. Le type d'itinéraire change automatiquement lorsque vous modifiez votre profil.
 
 
-## Routing Types
+## Types de routage
 
-The following profiles with their routing types are preset in OsmAnd: *Driving, Cycling, Walking, Truck, Motorcycle, Moped, Public transport, Boat, Aircraft, Skiing, Train, Horseback riding*. Besides these, you can create your own profiles with specific routing rules or [modify OsmAnd routing algorithm](../routing/osmand-routing.md#customize-offline-routing).  
+Les profils suivants avec leurs types de routage sont prédéfinis dans OsmAnd : *Conduite, Cyclisme, Marche, Camion, Moto, Cyclomoteur, Transports en commun, Bateau, Avion, Ski, Train, Équitation*. En plus de ceux-ci, vous pouvez créer vos propres profils avec des règles de routage spécifiques ou [modifier l'algorithme de routage d'OsmAnd](../routing/osmand-routing.md#customize-offline-routing).
 
 :::note
 
-- [**Truck, Motorcycle, Moped, Train, Aircraft, Boat and Horseback riding**](./osmand-routing.md) profiles are switched off by default. To use these profiles, you need to activate them in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.  
+- Les profils [**Camion, Moto, Cyclomoteur, Train, Avion, Bateau et Équitation**](./osmand-routing.md) sont désactivés par défaut. Pour utiliser ces profils, vous devez les activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 
-- [**Direct-to-point**](./direct-to-point-routing.md) navigation type doesn't have its own profile and can be used with any enabled one.  
+- Le type de navigation [**Direct-vers-point**](./direct-to-point-routing.md) n'a pas son propre profil et peut être utilisé avec n'importe quel profil activé.
 
-- OsmAnd offline routing can be **configured by modifying the [.xml file](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)**. For more information, see the [*Customize offline routing*](../routing/osmand-routing.md#customize-offline-routing) article.
+- Le routage hors ligne d'OsmAnd peut être **configuré en modifiant le [fichier .xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)**. Pour plus d'informations, consultez l'article [*Personnaliser le routage hors ligne*](../routing/osmand-routing.md#customize-offline-routing).
 
 :::
 
-| Category | Description | Note |
+| Catégorie | Description | Note |
 |:------------|:---------------|:---------------|
-| *OsmAnd offline routing*  |  OsmAnd offline routing mechanism uses predownloaded maps as data source for route calculation. |  Navigation types: [<Translate android="true" ids="app_mode_boat"/>](./boat-navigation.md), [<Translate android="true" ids="rendering_value_bicycle_name"/>](./bicycle-based-routing.md), [<Translate android="true" ids="rendering_value_car_name"/>](./car-based-routing.md),  [<Translate android="true" ids="horseback_riding"/>](./horse-routing.md), [Moped](./moped-routing.md), [Motorcycle](./car-based-routing.md#route-parameters---motorcycle), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](./pedestrian-routing.md), [<Translate android="true" ids="app_mode_public_transport"/>](./public-transport-navigation.md), [<Translate android="true" ids="routing_profile_ski"/>](./ski-routing.md), [Truck](car-based-routing#route-parameters---truck), [Train](./train-routing.md).            |
-| *Direct to point routing* |  Also uses offline maps and provides a straight line routing (or *point-to-point* navigation).  | Navigation types: *[Straight line](./straight-line-routing.md)*,  *[Direct-to-point](./direct-to-point-routing.md)*.  |
-| [*BRouter* *(offline)*](./brouter.md)  |  Offline routing provided by [BRouter app](https://brouter.de/).  | Available for **Android only**. The full description read [here](./brouter.md).   |
-| [*<Translate android="true" ids="shared_string_online"/>* (*Android*)](./online-routing.md) |  Online routing builds the route servers' resources online by the Internet connection. | Available for **Android only**. You can configure [online routing](./online-routing.md) to build a route from various online routing engines such as [Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), Generic GPX.  |
+| *Routage hors ligne OsmAnd*  | Le mécanisme de routage hors ligne d'OsmAnd utilise des cartes pré-téléchargées comme source de données pour le calcul d'itinéraire. | Types de navigation : [<Translate android="true" ids="app_mode_boat"/>](./boat-navigation.md), [<Translate android="true" ids="rendering_value_bicycle_name"/>](./bicycle-based-routing.md), [<Translate android="true" ids="rendering_value_car_name"/>](./car-based-routing.md),  [<Translate android="true" ids="horseback_riding"/>](./horse-routing.md), [Cyclomoteur](./moped-routing.md), [Moto](./car-based-routing.md#route-parameters---motorcycle), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](./pedestrian-routing.md), [<Translate android="true" ids="app_mode_public_transport"/>](./public-transport-navigation.md), [<Translate android="true" ids="routing_profile_ski"/>](./ski-routing.md), [Camion](car-based-routing#route-parameters---truck), [Train](./train-routing.md).            |
+| *Routage direct vers point* | Utilise également des cartes hors ligne et fournit un routage en ligne droite (ou navigation *point à point*).  | Types de navigation : *[Ligne droite](./straight-line-routing.md)*,  *[Direct-vers-point](./direct-to-point-routing.md)*.  |
+| [*BRouter* *(hors ligne)*](./brouter.md)  | Routage hors ligne fourni par l'[application BRouter](https://brouter.de/).  | Disponible pour **Android uniquement**. La description complète se trouve [ici](./brouter.md).   |
+| [*<Translate android="true" ids="shared_string_online"/>* (*Android*)](./online-routing.md) | Le routage en ligne construit l'itinéraire en utilisant les ressources des serveurs en ligne via la connexion Internet. | Disponible pour **Android uniquement**. Vous pouvez configurer le [routage en ligne](./online-routing.md) pour construire un itinéraire à partir de divers moteurs de routage en ligne tels que [Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), GPX générique.  |
 
-- *[Car routing (Truck, Motorcycle)](./car-based-routing.md)* - OsmAnd provides driving instructions for  drivers of Cars, Trucks and Motorcycles.  
-- *[Bicycle  routing (MTB)](./bicycle-based-routing.md)* - Bicycle routing provides navigation prompts specifically for cyclists and mtb enthusiasts. It can also be used by moped (scooter) drivers.  
-- *[Pedestrian routing](./pedestrian-routing.md)* - can be used not only for walking around the city, but also during hiking trips.
-- *[Moped routing](./moped-routing.md)* - is based on the bicycle routing, though it has it's own features.
-- *[Public Transport routing](./public-transport-navigation.md)* - can help you while traveling around the city.
-- *[Horseback routing](./horse-routing.md)* - provides equestrians with tools they need to plan and enjoy their horseback riding activities.  
-- *[Skiing routing](./ski-routing.md)* - allows users to plan and navigate ski tours and other winter sports activities using the OsmAnd mobile app.  
-- *[Train routing](./train-routing.md)* - provides an opportunity to use the railroad tracks for navigation.
-- *[Boat routing](./boat-navigation.md)* - can be used to build a route on rivers, channels, small lakes and in the open sea but only when fairways are marked in OpenStreetMap.
-- *[Straight line routing](./straight-line-routing.md)* - provides a straight line routing (or "point-to-point" navigation) that is recalculated when your location changes.  
-- *[Direct-to-point routing](./direct-to-point-routing.md)* - provides a straight line routing (or "point-to-point" navigation) which stays stable for whole navigation in contrast to **Straight line** routing (route recalculation is disabled).
-
-
-## Customize Offline Routing
-
-You can also create your **[own routing.xml file](#customize-offline-routing)** or modify default **routing.xml** and use it for navigation (only for advanced OsmAnd users).
-
-- Copy the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file to your device. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. As an example, view the [routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file of the OsmAnd user.
-- After making the changes, the new *routing.xml* file can be added to OsmAnd by tapping it and selecting to open it in the OsmAnd app.
-- Select the modified [Navigation type](../../navigation/guidance/navigation-settings.md#navigation-type) for your profile.
-
-More information about this feature can be found in the [*Technical documentation*](../../../technical/osmand-file-formats/osmand-routing-xml.md) and on [*OsmAnd's GitHub page*](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
+- *[Routage voiture (Camion, Moto)](./car-based-routing.md)* - OsmAnd fournit des instructions de conduite pour les conducteurs de voitures, camions et motos.
+- *[Routage vélo (VTT)](./bicycle-based-routing.md)* - Le routage vélo fournit des invites de navigation spécifiquement pour les cyclistes et les amateurs de VTT. Il peut également être utilisé par les conducteurs de cyclomoteurs (scooters).
+- *[Routage piéton](./pedestrian-routing.md)* - peut être utilisé non seulement pour se promener en ville, mais aussi lors de randonnées.
+- *[Routage cyclomoteur](./moped-routing.md)* - est basé sur le routage vélo, bien qu'il ait ses propres caractéristiques.
+- *[Routage transports en commun](./public-transport-navigation.md)* - peut vous aider lors de vos déplacements en ville.
+- *[Routage équestre](./horse-routing.md)* - fournit aux cavaliers les outils dont ils ont besoin pour planifier et profiter de leurs activités équestres.
+- *[Routage ski](./ski-routing.md)* - permet aux utilisateurs de planifier et de naviguer lors de randonnées à ski et d'autres activités sportives hivernales à l'aide de l'application mobile OsmAnd.
+- *[Routage train](./train-routing.md)* - offre la possibilité d'utiliser les voies ferrées pour la navigation.
+- *[Routage bateau](./boat-navigation.md)* - peut être utilisé pour construire un itinéraire sur les rivières, les canaux, les petits lacs et en pleine mer, mais uniquement lorsque les chenaux sont marqués dans OpenStreetMap.
+- *[Routage en ligne droite](./straight-line-routing.md)* - fournit un routage en ligne droite (ou navigation "point à point") qui est recalculé lorsque votre position change.
+- *[Routage direct vers point](./direct-to-point-routing.md)* - fournit un routage en ligne droite (ou navigation "point à point") qui reste stable pendant toute la navigation, contrairement au routage **Ligne droite** (le recalcul d'itinéraire est désactivé).
 
 
-## Avoid Specific Roads
+## Personnaliser le routage hors ligne
+
+Vous pouvez également créer votre **[propre fichier routing.xml](#customize-offline-routing)** ou modifier le fichier **routing.xml** par défaut et l'utiliser pour la navigation (uniquement pour les utilisateurs avancés d'OsmAnd).
+
+- Copiez le fichier [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) sur votre appareil. Lisez attentivement les [informations d'aide](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25). À titre d'exemple, consultez le fichier [routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) d'un utilisateur d'OsmAnd.
+- Après avoir effectué les modifications, le nouveau fichier *routing.xml* peut être ajouté à OsmAnd en appuyant dessus et en sélectionnant de l'ouvrir dans l'application OsmAnd.
+- Sélectionnez le [type de navigation](../../navigation/guidance/navigation-settings.md#navigation-type) modifié pour votre profil.
+
+Plus d'informations sur cette fonctionnalité peuvent être trouvées dans la [*documentation technique*](../../../technical/osmand-file-formats/osmand-routing-xml.md) et sur la [*page GitHub d'OsmAnd*](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
+
+
+## Éviter certaines routes
 
 :::caution
-Avoid roads feature is global and affects all **[Routing types](#routing-types)** except *[Online routing](../routing/online-routing.md)* and *[BRouter](../routing/brouter.md)*.  
+La fonction Éviter les routes est globale et affecte tous les **[types de routage](#routing-types)**, sauf le *[routage en ligne](../routing/online-routing.md)* et *[BRouter](../routing/brouter.md)*.
 :::
 
-There are two possible ways to choose which roads to avoid when calculating a route:
+Il existe deux façons possibles de choisir les routes à éviter lors du calcul d'un itinéraire :
 
-- Select road type in the [Route parameters](../guidance/navigation-settings.md#route-parameters) section of [Navigation settings](../guidance/navigation-settings.md). Description of this setting is provided in the articles about [Routing types](#routing-types) settings. As example, see [Car / Truck / Motorcycle](../routing/car-based-routing.md#route-parameters---car) routing type description.
-- You can also select specific roads that will not be used for routing using the *[Avoid roads](../../map/map-context-menu.md#avoid-road)* option through the *map context menu* or using *[Avoid roads menu](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
+- Sélectionnez le type de route dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des [Paramètres de navigation](../guidance/navigation-settings.md). La description de ce paramètre est fournie dans les articles sur les paramètres des [types de routage](#routing-types). À titre d'exemple, consultez la description du type de routage [Voiture / Camion / Moto](../routing/car-based-routing.md#route-parameters---car).
+- Vous pouvez également sélectionner des routes spécifiques qui ne seront pas utilisées pour le routage à l'aide de l'option *[Éviter les routes](../../map/map-context-menu.md#avoid-road)* via le *menu contextuel de la carte* ou à l'aide du *[menu Éviter les routes](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
 
 :::note
 
-- The road must be marked at maximum zoom, as OsmAnd may misinterpret the tap and block, for example, the incorrect side of two-roadways road or sidewalk.
-- The Avoid specific roads function incorrectly works with [Navigation by track](../setup/gpx-navigation.md) option and doesn't impact simplified [Markers navigation](../setup/markers-navigation.md#how-to-use).
+- La route doit être marquée au zoom maximum, car OsmAnd peut mal interpréter le toucher et bloquer, par exemple, le mauvais côté d'une route à deux voies ou d'un trottoir.
+- La fonction Éviter certaines routes fonctionne incorrectement avec l'option [Navigation par trace](../setup/gpx-navigation.md) et n'a pas d'impact sur la [navigation par marqueurs](../setup/markers-navigation.md#how-to-use) simplifiée.
 
 :::
 
-### Avoid Roads Menu
+### Menu Éviter les routes
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-Go to: *Android* *Navigation button → Settings → Avoid roads...*
+Aller à : *Android* *Bouton Navigation → Paramètres → Éviter les routes...*
 
-![Avoid road menu Android](@site/static/img/navigation/routing/avoid_roads_menu_andr_2.png)
+![Menu Éviter les routes Android](@site/static/img/navigation/routing/avoid_roads_menu_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *Navigation button → Settings → Avoid roads*
+Aller à : *iOS* *Bouton Navigation → Paramètres → Éviter les routes*
 
-![Avoid road menu iOS](@site/static/img/navigation/routing/avoid_roads_menu_ios_2.png)
+![Menu Éviter les routes iOS](@site/static/img/navigation/routing/avoid_roads_menu_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-In this menu, you can cancel the previous selection of the road that should be avoided. To do so, tap a cross (Android) or a red **"-"** opposite the road you intend to use for route calculation.
+Dans ce menu, vous pouvez annuler la sélection précédente de la route qui doit être évitée. Pour ce faire, appuyez sur une croix (Android) ou sur un **"-"** rouge en face de la route que vous avez l'intention d'utiliser pour le calcul d'itinéraire.
 
-Using *Select on map* option you can continue to mark roads as invalid for routing on the OsmAnd map.
+En utilisant l'option *Sélectionner sur la carte*, vous pouvez continuer à marquer les routes comme invalides pour le routage sur la carte OsmAnd.
 
-When you select a road to avoid using *map context menu* or *Avoid roads menu*, the list of roads will be shown above map screen.  
+Lorsque vous sélectionnez une route à éviter à l'aide du *menu contextuel de la carte* ou du *menu Éviter les routes*, la liste des routes s'affiche au-dessus de l'écran de la carte.
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Avoid road on the map list Android](@site/static/img/navigation/routing/action_avoid_roads_list_android.png)
+![Liste des routes à éviter sur la carte Android](@site/static/img/navigation/routing/action_avoid_roads_list_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Avoid road on the map list iOS](@site/static/img/navigation/routing/avoid_route_ios_2.png)
+![Liste des routes à éviter sur la carte iOS](@site/static/img/navigation/routing/avoid_route_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Export / Import
+## Exporter / Importer
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*
 
-![Avoid road on the map export Android 1](@site/static/img/navigation/routing/avoid_roads_export_andr_1.png) ![Avoid road on the map export Android 2](@site/static/img/navigation/routing/avoid_roads_export_andr_2.png)
+![Exporter les routes à éviter sur la carte Android 1](@site/static/img/navigation/routing/avoid_roads_export_andr_1.png) ![Exporter les routes à éviter sur la carte Android 2](@site/static/img/navigation/routing/avoid_roads_export_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*
 
-![Avoid road on the map export iOS 1](@site/static/img/navigation/routing/avoid_roads_export_ios_1.png) ![Avoid road on the map export iOS 2](@site/static/img/navigation/routing/avoid_roads_export_ios_2.png)
+![Exporter les routes à éviter sur la carte iOS 1](@site/static/img/navigation/routing/avoid_roads_export_ios_1.png) ![Exporter les routes à éviter sur la carte iOS 2](@site/static/img/navigation/routing/avoid_roads_export_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Depending on your device settings and available applications, your whole list of roads to avoid or just one of them can be [exported](../../personal/import-export.md#export) as an `.osf` file to a different locations. Select the roads you want to export in the suggested list.
+Selon les paramètres de votre appareil et les applications disponibles, votre liste complète de routes à éviter ou seulement l'une d'entre elles peut être [exportée](../../personal/import-export.md#export) au format `.osf` vers différents emplacements. Sélectionnez les routes que vous souhaitez exporter dans la liste suggérée.
 
-You can [import](../../personal/import-export.md#import) roads to avoid during route calculation from other sources in `.osf` file format.  Also, it can be done using *Import option* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). You can choose to import all data or only few roads to avoid (marking a road with a tick in the list).  
+Vous pouvez [importer](../../personal/import-export.md#import) des routes à éviter lors du calcul d'itinéraire à partir d'autres sources au format de fichier `.osf`. Cela peut également être fait en utilisant l'*option Importer* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). Vous pouvez choisir d'importer toutes les données ou seulement quelques routes à éviter (en marquant une route avec une coche dans la liste).
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Avoid road on the map import Android](@site/static/img/navigation/routing/avoid_roads_import_andr_1.png)
+![Importer les routes à éviter sur la carte Android](@site/static/img/navigation/routing/avoid_roads_import_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Avoid road on the map import iOS](@site/static/img/navigation/routing/avoid_roads_import_ios_1.png)
+![Importer les routes à éviter sur la carte iOS](@site/static/img/navigation/routing/avoid_roads_import_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note
-The most convenient way to synchronize roads to avoid between your devices is to use [OsmAnd Cloud](../../personal/osmand-cloud.md) (Pro subscription required).
+Le moyen le plus pratique de synchroniser les routes à éviter entre vos appareils est d'utiliser [OsmAnd Cloud](../../personal/osmand-cloud.md) (abonnement Pro requis).
 :::
 
 
-## Consider Temporary Limitations
+## Tenir compte des limitations temporaires
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
-*Consider temporary limitations* option allows taking into account temporary road restrictions when calculating routes. They may include things like road construction or road closures for some reason (an accident, road repairs, natural disasters). Enabling this option can help you avoid unexpected detours or delays. Please note that sometimes this information may be outdated.
-In OpenStreetMap, this information is usually marked with the tag [`temporary`](https://wiki.openstreetmap.org/wiki/Comparison_of_life_cycle_concepts#Opening_hours_time_range_and_Temporary_namespace_and_Conditional_restrictions).  
+L'option *Tenir compte des limitations temporaires* permet de prendre en compte les restrictions routières temporaires lors du calcul des itinéraires. Elles peuvent inclure des éléments tels que des travaux routiers ou des fermetures de routes pour une raison quelconque (un accident, des réparations routières, des catastrophes naturelles). L'activation de cette option peut vous aider à éviter les détours ou les retards inattendus. Veuillez noter que ces informations peuvent parfois être obsolètes.
+Dans OpenStreetMap, ces informations sont généralement marquées avec la balise [`temporary`](https://wiki.openstreetmap.org/wiki/Comparison_of_life_cycle_concepts#Opening_hours_time_range_and_Temporary_namespace_and_Conditional_restrictions).
 
 
-## Development Section
+## Section Développement
 
-The **Development section** of the *Route parameters* settings (*Menu → Settings → app profile → Navigation settings → Route parameters → Development*) is visible only when [OsmAnd development plugin](../../plugins/development.md) is enabled. It includes settings such as *Routing type (Android) / Routing algorithm (iOS), GPX approximation (Android only), Autozoom, and OsmAnd Live data (Android only)*. Read the [Navigation Settings](../../navigation/guidance/navigation-settings.md#development-settings) article for a detailed description.
+La **section Développement** des paramètres *Paramètres d'itinéraire* (*Menu → Paramètres → profil d'application → Paramètres de navigation → Paramètres d'itinéraire → Développement*) n'est visible que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé. Elle comprend des paramètres tels que *Type de routage (Android) / Algorithme de routage (iOS), Approximation GPX (Android uniquement), Zoom automatique et données OsmAnd Live (Android uniquement)*. Lisez l'article [Paramètres de navigation](../../navigation/guidance/navigation-settings.md#development-settings) pour une description détaillée.
 
 
-> *This article was last updated in Jule 2024*
+> *Cet article a été mis à jour pour la dernière fois en juillet 2024*
+
+-- source-hash: blake2s: 8c5ae254ff458738a02bc05dabea45b233737610b3bb57f49508f333fe476c5e --

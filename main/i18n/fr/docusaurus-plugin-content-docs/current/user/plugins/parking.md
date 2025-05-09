@@ -1,6 +1,6 @@
 ---
 sidebar_position: 12
-title:  Parking Position
+title:  Position de stationnement
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,11 +13,11 @@ import Translate from '@site/src/components/Translate.js';
 
 
 
-## Overview
+## Vue d'ensemble
 
-With the plugin, you can set a spot on the map where your car will be left on the street and notify the calendar of the beginning of the parking time. This way, it will be easier for you to keep track of the time and location of your car.
+Avec le plugin, vous pouvez définir un endroit sur la carte où votre voiture sera laissée dans la rue et notifier le calendrier du début de l'heure de stationnement. De cette façon, il vous sera plus facile de suivre l'heure et l'emplacement de votre voiture.
 
-Parking spot on the map and notification in the calendar is provided by the Parking plugin. It's free and works well with downloaded OsmAnd maps. Parking spot helps you know exactly where your car is parked and how far away you are from the parking spot. For example, it can be very useful to get back on time and avoid unnecessary expenses. The plugin also allows you to share the location with the people you want. The parking spot is easy to set up, with or without time tracking, and delete after successful use.
+L'emplacement de stationnement sur la carte et la notification dans le calendrier sont fournis par le plugin Parking. Il est gratuit et fonctionne bien avec les cartes OsmAnd téléchargées. L'emplacement de stationnement vous aide à savoir exactement où votre voiture est garée et à quelle distance vous vous trouvez de l'emplacement de stationnement. Par exemple, il peut être très utile de revenir à temps et d'éviter des dépenses inutiles. Le plugin vous permet également de partager l'emplacement avec les personnes de votre choix. L'emplacement de stationnement est facile à configurer, avec ou sans suivi du temps, et à supprimer après une utilisation réussie.
 
 <Tabs groupId="operating-systems">
 
@@ -36,38 +36,38 @@ Parking spot on the map and notification in the calendar is provided by the Park
 </Tabs>
 
 
-## Required Setup Parameters
+## Paramètres de configuration requis
 
-To use a parking spot on the map, you need to make the following settings:
+Pour utiliser un emplacement de stationnement sur la carte, vous devez effectuer les réglages suivants :
 
-1. Enable the [Parking position plugin](../plugins/index.md#enable--disable) in the Plugins section of the *Main Menu*.  
-2. Add a [parking spot](#set-a-spot) on the map.
-3. If needed, add the [Parking widget](#parking-widget) to the screen.  
-
-
-## Parking Spot on the Map
-
-When a parking spot appears on the map, it acquires the latitude and longitude of the selected geolocation, as well as a timestamp of exactly when it was created. This helps you visually identify the parking spot both when you set the spot and when you later track it and use it to navigate when needed.  
+1. Activez le [plugin Position de stationnement](../plugins/index.md#enable--disable) dans la section Plugins du *Menu principal*.
+2. Ajoutez un [emplacement de stationnement](#set-a-spot) sur la carte.
+3. Si nécessaire, ajoutez le [widget Parking](#parking-widget) à l'écran.
 
 
-### Set a Spot
+## Emplacement de stationnement sur la carte
 
-To set a Parking spot on the map, zoom-in to the required level, then long tap the place on the map and in the [Context menu](../map/map-context-menu.md) that opens, do the settings.
+Lorsqu'un emplacement de stationnement apparaît sur la carte, il acquiert la latitude et la longitude de la géolocalisation sélectionnée, ainsi qu'un horodatage indiquant exactement quand il a été créé. Cela vous aide à identifier visuellement l'emplacement de stationnement à la fois lorsque vous définissez l'emplacement et lorsque vous le suivez plus tard et l'utilisez pour naviguer si nécessaire.
+
+
+### Définir un emplacement
+
+Pour définir un emplacement de stationnement sur la carte, zoomez au niveau requis, puis appuyez longuement sur l'endroit sur la carte et dans le [menu contextuel](../map/map-context-menu.md) qui s'ouvre, effectuez les réglages.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-1. Tap [Actions](../map/map-context-menu#actions).  
-2. Tap **Mark as parking location**.  
-3. Select the time limit from the <Translate android="true" ids="parking_options"/> dialog: *Time-unlimited* or *Time-limited parking*.
+1. Appuyez sur [Actions](../map/map-context-menu#actions).
+2. Appuyez sur **Marquer comme emplacement de stationnement**.
+3. Sélectionnez la limite de temps dans la boîte de dialogue <Translate android="true" ids="parking_options"/> : *Stationnement illimité* ou *Stationnement limité dans le temps*.
 
-- **<Translate android="true" ids="osmand_parking_no_lim_text"/>** option - if there is no time limit, select this option and a spot with no time limit appears on the map.  
-- **<Translate android="true" ids="osmand_parking_time_limit"/>** option - if a time limit is required, select this option, and then:
+- Option **<Translate android="true" ids="osmand_parking_no_lim_text"/>** : s'il n'y a pas de limite de temps, sélectionnez cette option et un emplacement sans limite de temps apparaît sur la carte.
+- Option **<Translate android="true" ids="osmand_parking_time_limit"/>** : si une limite de temps est requise, sélectionnez cette option, puis :
 
-    - Select the end time of parking.
-    - Add or not a reminder for the Calendar app.
-    - Tap **OK**, and the spot with the time limit you set will be placed on the map.  
+    - Sélectionnez l'heure de fin du stationnement.
+    - Ajoutez ou non un rappel pour l'application Calendrier.
+    - Appuyez sur **OK**, et l'emplacement avec la limite de temps que vous avez définie sera placé sur la carte.
 
 ![Set Parking spot in Android](@site/static/img/plugins/parking/and_set_p_point_limit.png) ![Set time limits in Android](@site/static/img/plugins/parking/and_set_p_point4_.png)
 
@@ -75,15 +75,15 @@ To set a Parking spot on the map, zoom-in to the required level, then long tap t
 
 <TabItem value="ios" label="iOS">
 
-1. Tap [Actions](../map/map-context-menu#actions).  
-2. Tap **<Translate ios="true" ids="add_parking_short"/>**.  
-3. Select the time limit from the **Parking marker** dialog.  
+1. Appuyez sur [Actions](../map/map-context-menu#actions).
+2. Appuyez sur **<Translate ios="true" ids="add_parking_short"/>**.
+3. Sélectionnez la limite de temps dans la boîte de dialogue **Marqueur de stationnement**.
 
-- If a time limit is required, enable **<Translate ios="true" ids="time_limited"/>** option, and then:
+- Si une limite de temps est requise, activez l'option **<Translate ios="true" ids="time_limited"/>**, puis :
 
-    - Select the end time of parking.
-    - Add or not a reminder for the Calendar app.
-    - Tap **Save**, and the spot with the time limit you set will be placed on the map.
+    - Sélectionnez l'heure de fin du stationnement.
+    - Ajoutez ou non un rappel pour l'application Calendrier.
+    - Appuyez sur **Enregistrer**, et l'emplacement avec la limite de temps que vous avez définie sera placé sur la carte.
 
 ![Select Parking in Actions in iOS](@site/static/img/plugins/parking/ios_set_p_point2.png)  ![Set Parking point in iOS](@site/static/img/plugins/parking/ios_set_p_point3_-2.png)
 
@@ -92,68 +92,68 @@ To set a Parking spot on the map, zoom-in to the required level, then long tap t
 </Tabs>
 
 :::info NOTE
-The start time is always automatically set for the parking spot. The end time, if a time limit is selected, can only be re-added by recreating the parking space, but not edited. Parking time end notifications can only be placed in the calendar app on your device if you specified Add notification in the Calendar app when you created the parking space.  
+L'heure de début est toujours automatiquement définie pour l'emplacement de stationnement. L'heure de fin, si une limite de temps est sélectionnée, ne peut être ajoutée à nouveau qu'en recréant l'espace de stationnement, mais pas modifiée. Les notifications de fin de temps de stationnement ne peuvent être placées dans l'application calendrier de votre appareil que si vous avez spécifié Ajouter une notification dans l'application Calendrier lors de la création de l'espace de stationnement.
 :::
 
 
-### Stay Informed
+### Restez informé
 
-To be aware of the parking location and time of parking after setting up a parking spot, you can use the [Parking widget](../widgets/info-widgets.md#-parking-widget) or use the context menu of the place on the map.  
+Pour connaître l'emplacement de stationnement et l'heure de stationnement après avoir configuré un emplacement de stationnement, vous pouvez utiliser le [widget Parking](../widgets/info-widgets.md#-parking-widget) ou utiliser le menu contextuel de l'endroit sur la carte.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-**Location**. You can zoom out of the map to see a parking spot or use the [Parking widget](../widgets/info-widgets.md#-parking-widget). When you close and reopen the app, the Parking Widget helps you find your parking spot on the map. Just tap the widget and the parking spot appears on the map.  
+**Emplacement**. Vous pouvez dézoomer sur la carte pour voir un emplacement de stationnement ou utiliser le [widget Parking](../widgets/info-widgets.md#-parking-widget). Lorsque vous fermez et rouvrez l'application, le widget Parking vous aide à trouver votre emplacement de stationnement sur la carte. Appuyez simplement sur le widget et l'emplacement de stationnement apparaît sur la carte.
 
-In addition, the widget shows the distance from your current location or the center of the screen to the Parking spot.  
+De plus, le widget affiche la distance entre votre position actuelle ou le centre de l'écran et l'emplacement de stationnement.
 
 ![Parking widget Android](@site/static/img/plugins/parking/parking_widget_android.png)
 
-**Start Time** is always displayed in the parking spot details. To view details, tap <Translate android="true" ids="parking_place"/> and the parking spot context menu will show the start time.  
+L'**heure de début** est toujours affichée dans les détails de l'emplacement de stationnement. Pour afficher les détails, appuyez sur <Translate android="true" ids="parking_place"/> et le menu contextuel de l'emplacement de stationnement affichera l'heure de début.
 
 ![Parking info in Android](@site/static/img/plugins/parking/and_parking_info.png)
 
-**Time Left** or **Time Overdue** in the time-limited Parking spot information will show the total amount of time: either the time left before the estimated end of parking or the time overdue since then.  
+Le **temps restant** ou le **temps dépassé** dans les informations de l'emplacement de stationnement limité dans le temps affichera la durée totale : soit le temps restant avant la fin estimée du stationnement, soit le temps dépassé depuis lors.
 
 ![Time left in Android](@site/static/img/plugins/parking/and_parking_info_left.png)
 
-**<Translate android="true" ids="osmand_parking_add_event"/>** option, if checked on the Set parking time limit pop-up screen, allows you to create a reminder about the end of parking time in the default Calendar app on your device.  
+L'option **<Translate android="true" ids="osmand_parking_add_event"/>**, si elle est cochée sur l'écran contextuel Définir la limite de temps de stationnement, vous permet de créer un rappel sur la fin du temps de stationnement dans l'application Calendrier par défaut de votre appareil.
 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-**Location** You can zoom out of the map to see a parking spot or use the [Parking widget](../widgets/info-widgets.md#-parking-widget). When you close and reopen the app, the Parking Widget helps you find your parking spot on the map. Just tap the widget and the parking spot appears on the map.  
+**Emplacement** Vous pouvez dézoomer sur la carte pour voir un emplacement de stationnement ou utiliser le [widget Parking](../widgets/info-widgets.md#-parking-widget). Lorsque vous fermez et rouvrez l'application, le widget Parking vous aide à trouver votre emplacement de stationnement sur la carte. Appuyez simplement sur le widget et l'emplacement de stationnement apparaît sur la carte.
 
-In addition, the widget shows the distance from your current location or the center of the screen to the Parking spot.  
+De plus, le widget affiche la distance entre votre position actuelle ou le centre de l'écran et l'emplacement de stationnement.
 
 ![Parking widget iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
 
 
-**Start Time** is always displayed in the parking spot details. To view details, tap Parking marker and the parking spot context menu will show the start time.  
+L'**heure de début** est toujours affichée dans les détails de l'emplacement de stationnement. Pour afficher les détails, appuyez sur Marqueur de stationnement et le menu contextuel de l'emplacement de stationnement affichera l'heure de début.
 
 ![Parking info in iOS](@site/static/img/plugins/parking/ios_parking_info.png)
 
 
-**Time Left** or **Time Overdue** in the time-limited Parking spot information will show the total amount of time: either the time left before the estimated end of parking or the time overdue since then.  
+Le **temps restant** ou le **temps dépassé** dans les informations de l'emplacement de stationnement limité dans le temps affichera la durée totale : soit le temps restant avant la fin estimée du stationnement, soit le temps dépassé depuis lors.
 
 ![Time left in iOS](@site/static/img/plugins/parking/ios_parking_info_left.png)
 
-**<Translate ios="true" ids="add_notification_calendar"/>** option, if checked on the Set parking time limit pop-up screen, allows you to create a reminder about the end of parking time in the default Calendar app on your device.
+L'option **<Translate ios="true" ids="add_notification_calendar"/>**, si elle est cochée sur l'écran contextuel Définir la limite de temps de stationnement, vous permet de créer un rappel sur la fin du temps de stationnement dans l'application Calendrier par défaut de votre appareil.
 
 </TabItem>
 
 </Tabs>
 
 
-### Navigating to a Waypoint
+### Navigation vers un point de passage
 
-The Parking spot can be used for navigation when the geolocation is unknown and/or simply to find the best course when navigating to your vehicle's parking location. To connect a Parking spot to the [Navigation](../navigation/routing/car-based-routing.md) function, do one of the following:
+L'emplacement de stationnement peut être utilisé pour la navigation lorsque la géolocalisation est inconnue et/ou simplement pour trouver le meilleur itinéraire lors de la navigation vers l'emplacement de stationnement de votre véhicule. Pour connecter un emplacement de stationnement à la fonction [Navigation](../navigation/routing/car-based-routing.md), effectuez l'une des opérations suivantes :
 
-- To show the route from your current position to the Parking spot, tap Navigation icon menu, select the profile, tap Set destination, and among the available options look for **Parking**.  
-- To show the route from your current position to the Parking spot with using widget, tap **Parking widget**, tap Parking spot, select **Navigation**, select the profile.
+- Pour afficher l'itinéraire de votre position actuelle à l'emplacement de stationnement, appuyez sur le menu de l'icône Navigation, sélectionnez le profil, appuyez sur Définir la destination, et parmi les options disponibles, recherchez **Parking**.
+- Pour afficher l'itinéraire de votre position actuelle à l'emplacement de stationnement à l'aide du widget, appuyez sur le **widget Parking**, appuyez sur l'emplacement de stationnement, sélectionnez **Navigation**, sélectionnez le profil.
 
 <Tabs groupId="operating-systems">
 
@@ -172,13 +172,13 @@ The Parking spot can be used for navigation when the geolocation is unknown and/
 </Tabs>
 
 
-### Remove a Spot
+### Supprimer un emplacement
 
-To remove a parking spot from the map, follow these steps:
+Pour supprimer un emplacement de stationnement de la carte, suivez ces étapes :
 
-- Tap the [widget](#parking-widget) or zoom out on the map to see the parking spot better.
-- Tap the **parking spot**, and then select **delete/dismiss** in the [context menu](../map/map-context-menu.md#-add--delete-parking-point) that opens.  
-If there are any reminders, they will also be deleted from the calendar application.
+- Appuyez sur le [widget](#parking-widget) ou dézoomez sur la carte pour mieux voir l'emplacement de stationnement.
+- Appuyez sur l'**emplacement de stationnement**, puis sélectionnez **supprimer/ignorer** dans le [menu contextuel](../map/map-context-menu.md#-add--delete-parking-point) qui s'ouvre.
+Si des rappels existent, ils seront également supprimés de l'application calendrier.
 
 
 <Tabs groupId="operating-systems">
@@ -190,7 +190,7 @@ If there are any reminders, they will also be deleted from the calendar applicat
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-  
+
 ![Action Delete Parking in iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
 
 </TabItem>
@@ -198,15 +198,15 @@ If there are any reminders, they will also be deleted from the calendar applicat
 </Tabs>
 
 
-## Parking Widget
+## Widget Parking
 
-The [Parking widget](../widgets/info-widgets.md#parking-widget) is added automatically to widgets list when you enable the Parking plugin. Before setting up a parking spot, make sure the widget is on the screen, and if not, add it in the [Configure Screen](../widgets/configure-screen.md) menu. The Parking widget will help you quickly find a parking spot on the map.
+Le [widget Parking](../widgets/info-widgets.md#parking-widget) est ajouté automatiquement à la liste des widgets lorsque vous activez le plugin Parking. Avant de configurer un emplacement de stationnement, assurez-vous que le widget est à l'écran, et si ce n'est pas le cas, ajoutez-le dans le menu [Configurer l'écran](../widgets/configure-screen.md). Le widget Parking vous aidera à trouver rapidement un emplacement de stationnement sur la carte.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_parking"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_parking"/>*
 
 ![Adding Parking widget in Android](@site/static/img/plugins/parking/and_adding_parking_widget-2.png)
 
@@ -214,7 +214,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_ap
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_parking"/>*  
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_parking"/>*
 
 ![Adding Parking widget in iOS](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)
 
@@ -223,10 +223,12 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 </Tabs>
 
 
-## Related Articles
+## Articles connexes
 
-- [Interact with Map](../../user/map/interact-with-map.md)
-- [Global Settings](../../user/personal/global-settings.md)
-- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+- [Interagir avec la carte](../../user/map/interact-with-map.md)
+- [Paramètres globaux](../../user/personal/global-settings.md)
+- [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *This article was last updated in May 2023*
+> *Cet article a été mis à jour pour la dernière fois en mai 2023*
+
+-- source-hash: blake2s: 56be66108f913fd0a5a96a68a630fe10de08975ad8003df7f14f2915f147c490 --

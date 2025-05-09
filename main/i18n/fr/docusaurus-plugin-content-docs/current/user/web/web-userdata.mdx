@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-sidebar_label: User data
-title: User data on the Map
+sidebar_label: Données utilisateur
+title: Données utilisateur sur la carte
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,101 +17,103 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-## Overview
+## Aperçu
 
-On the web, users can access, manage, and create their personal data, such as Tracks and Favorites, directly on the web.
+Sur le web, les utilisateurs peuvent accéder, gérer et créer leurs données personnelles, telles que les traces et les favoris, directement sur le web.
 
-- Tracks: Users can upload, view, edit, or create new tracks online. All changes are automatically synchronized with the OsmAnd Cloud, ensuring the data is available across all connected devices.
-- Favorites: Create and organize saved locations on the web, with automatic syncing to your OsmAnd app for quick access and navigation.
+- Traces : les utilisateurs peuvent télécharger, afficher, modifier ou créer de nouvelles traces en ligne. Toutes les modifications sont automatiquement synchronisées avec OsmAnd Cloud, garantissant que les données sont disponibles sur tous les appareils connectés.
+- Favoris : créez et organisez les lieux enregistrés sur le web, avec une synchronisation automatique avec votre application OsmAnd pour un accès et une navigation rapides.
 
-The integration with OsmAnd Cloud allows seamless synchronization, enabling users to manage their data conveniently from any device.
+L'intégration avec OsmAnd Cloud permet une synchronisation transparente, permettant aux utilisateurs de gérer leurs données facilement depuis n'importe quel appareil.
 
-## Tracks on the web
+## Traces sur le web
 
-It's a paid feature <ProFeature/>. At first you need to loggin your OsmAnd Pro:
+Il s'agit d'une fonctionnalité payante <ProFeature/>. Vous devez d'abord vous connecter à votre OsmAnd Pro :
 
-![Track loggin](@site/static/img/web/track_loggin.png)
+![Connexion aux traces](@site/static/img/web/track_loggin.png)
 
-For Track section:
+Pour la section Traces :
 
-- Show tracks from [OsmAnd Cloud](#users-tracks-pro).
-- Adding tracks on the map (**Visible on map** folder).
-- Looking all tracks info and graph
-- Modify tracks and add it to Cloud.
-- Download and delete tracks.
-- Create new folders or delete it.
-- Download folders as OSF or OBF collection.
-
-
-### Visible on the Map
-
-Here there is a list of visible tracks on the map.
-
-_Switch on/off_ tracks for showing or not its on the map.
-
-![Visible on the map](@site/static/img/web/visible.png)
+- Afficher les traces depuis [OsmAnd Cloud](#users-tracks-pro).
+- Ajout de traces sur la carte (dossier **Visible sur la carte**).
+- Affichage de toutes les informations et du graphique des traces.
+- Modification des traces et ajout au Cloud.
+- Téléchargement et suppression des traces.
+- Création de nouveaux dossiers ou suppression.
+- Téléchargement de dossiers en tant que collection OSF ou OBF.
 
 
-### Track folder menu
+### Visible sur la carte
 
-Click to the *Tree points* **⋮** button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
+Voici une liste des traces visibles sur la carte.
 
- - Download as OSF.
- - Download as OBF Collection:
-  You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+_Activez/désactivez_ les traces pour les afficher ou non sur la carte.
 
-    -  [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
-
-  You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
-
-    -  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
-
-  Also You can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
-
-- _Rename_ chosen folder.
-- _Delete_ chosen folder.
-
-![Track folder menu](@site/static/img/web/collection.png)
+![Visible sur la carte](@site/static/img/web/visible.png)
 
 
-### Cloud Tracks
+### Menu du dossier de traces
 
-GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only for **Pro users** <ProFeature/> and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users (who can download their data even after their Pro subscription has expired).
+Cliquez sur le bouton *Trois points* **⋮** pour ouvrir le menu *Dossier de traces*. Ici, vous pouvez télécharger toutes les traces du dossier choisi en tant que :
 
-The following features are available after choosin cloud track:
+ - Télécharger en tant que OSF.
+ - Télécharger en tant que collection OBF :
+  Vous pouvez obtenir une carte OBF à partir de ces données : [fichier OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) ou [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
 
-- Information screens:
-  - *Information* - displaying track data.
-  - *Elevation* - graph of elevation.
-  - *Speed* - speed graph.
-  - *Slope* - slope graph.
-  - *Settings* - list of navigation profiles for the *Create route* tool.  
+    -  [Fichier OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) :
 
-- Action buttons:
-  - *Edit track* - adding cloud track to local for editing (_Edit locality_ button on the panel).
-  - *Download GPX* - downloads the track to the PC.
-  - *Recalculate* Elevation (Satellite) - displays the elevation graph of the selected track.
-  - *Delete Track* - deletes the track.
-  - *Close track* - close the track.
+  Vous pouvez télécharger une carte hors ligne OBF (OsmAnd Binary Format) et l'ouvrir avec OsmAnd sur l'appareil. Elle convient pour afficher une grande quantité de traces qui seront visibles sur la carte.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
+    -  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes) :
 
+  Vous pouvez également importer une carte de traces en tant que carnet de voyage, ce qui vous permettra également de sélectionner une trace spécifique sur la carte et de l'utiliser comme un GPX normal. Le carnet de voyage prend également en charge des fonctionnalités telles que l'affichage des traces sous forme de points, le filtrage des traces par type d'activité et le filtrage des points de passage.
+
+- _Renommer_ le dossier choisi.
+- _Supprimer_ le dossier choisi.
+
+![Menu du dossier de traces](@site/static/img/web/collection.png)
 
 
-## Favorites on the web
+### Traces Cloud
 
-After registering an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), your Favorites are displayed in the Favorites menu.  
-The following actions are available:
+Les traces GPX que vous avez dans [OsmAnd Cloud](../personal/osmand-cloud.md) seront disponibles pour l'affichage et la modification après connexion. Uniquement pour les **utilisateurs Pro** <ProFeature/> et pour les utilisateurs [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (qui peuvent télécharger leurs données même après l'expiration de leur abonnement Pro).
 
-- *Show on map* - show favorites points from the chosen folder on the map.
-- *Rename* - name and description of favorite folder.
-- *Download* - download the chosen favorite folder.
-- *Delete* - delete the chosen favorite folder.
+Les fonctionnalités suivantes sont disponibles après avoir choisi une trace cloud :
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
+- Écrans d'information :
+  - *Information* - affichage des données de la trace.
+  - *Altitude* - graphique de l'altitude.
+  - *Vitesse* - graphique de la vitesse.
+  - *Pente* - graphique de la pente.
+  - *Paramètres* - liste des profils de navigation pour l'outil *Créer un itinéraire*.
 
-### Add / Edit Favorite
+- Boutons d'action :
+  - *Modifier la trace* - ajout de la trace cloud en local pour modification (bouton _Modifier la localité_ sur le panneau).
+  - *Télécharger GPX* - télécharge la trace sur le PC.
+  - *Recalculer* l'altitude (Satellite) - affiche le graphique de l'altitude de la trace sélectionnée.
+  - *Supprimer la trace* - supprime la trace.
+  - *Fermer la trace* - ferme la trace.
 
-[To add](../personal/favorites.md#edit) a new favorite point, right-click on the screen. To start editing, click on the favorite point, the edit menu screen looks the same as [the menu in OsmAnd app](../personal/favorites.md#create).  
+![Modification GPX cloud OsmAnd Web](@site/static/img/web/cloud_track.png)
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+
+
+## Favoris sur le web
+
+Après vous être inscrit à [**OsmAnd Pro**](../personal/osmand-cloud.md#login) et pour [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), vos favoris sont affichés dans le menu Favoris.
+Les actions suivantes sont disponibles :
+
+- *Afficher sur la carte* - afficher les points favoris du dossier choisi sur la carte.
+- *Renommer* - nom et description du dossier de favoris.
+- *Télécharger* - télécharger le dossier de favoris choisi.
+- *Supprimer* - supprimer le dossier de favoris choisi.
+
+![Modification des favoris OsmAnd Web cloud](@site/static/img/web/favorites.png)
+
+### Ajouter / Modifier un favori
+
+[Pour ajouter](../personal/favorites.md#edit) un nouveau point favori, faites un clic droit sur l'écran. Pour commencer la modification, cliquez sur le point favori. L'écran du menu de modification ressemble au [menu de l'application OsmAnd](../personal/favorites.md#create).
+
+![Ajout de favoris OsmAnd Web](@site/static/img/web/web_favorites_add.png)
+
+-- source-hash: blake2s: 392b866ce92eeff9a1f205b05f49abbfa41121e79329383d4ce8e139f86afb37 --

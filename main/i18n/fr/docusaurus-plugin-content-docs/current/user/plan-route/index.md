@@ -10,30 +10,29 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-# Plan Route
+# Planifier un itinéraire
 
-## Overview
+## Vue d'ensemble
 
-Planning a route is an important aspect of any trip, whether it's a walking tour of a city or a road trip across the country. To make it as comfortable and safe as possible, you need to plan the route correctly and familiarize yourself in advance with information about the area and places of interest.  
+La planification d'un itinéraire est un aspect important de tout voyage, qu'il s'agisse d'une visite à pied d'une ville ou d'un voyage en voiture à travers le pays. Pour le rendre aussi confortable et sûr que possible, vous devez planifier l'itinéraire correctement et vous familiariser à l'avance avec les informations sur la région et les lieux d'intérêt.
 
-OsmAnd offers a convenient and flexible tool for creating and using routes. With the app, you can create your own routes, use ready-made routes of other users, add your own routes to existing tracks, tie tracks to roads, and create points on the map using geographic coordinates. OsmAnd also provides the ability to use offline guides, which allows you to get important information about destinations as you travel.  
+OsmAnd offre un outil pratique et flexible pour créer et utiliser des itinéraires. Avec l'application, vous pouvez créer vos propres itinéraires, utiliser des itinéraires prêts à l'emploi d'autres utilisateurs, ajouter vos propres itinéraires à des traces existantes, lier des traces à des routes et créer des points sur la carte à l'aide de coordonnées géographiques. OsmAnd offre également la possibilité d'utiliser des guides hors ligne, ce qui vous permet d'obtenir des informations importantes sur les destinations pendant votre voyage.
 
 <!-- OsmAnd allows you to create your own routes and to use other user routes for trips.
 
 OsmAnd allows you to build various routes as tracks, add a route to existing tracks, snap a track to roads.
 Using offline Travel guides is an important source of information while traveling. -->
 
+## [Planifier un itinéraire](./create-route.md)
 
-## [Plan a Route](./create-route.md)
+Cet article décrit comment planifier un itinéraire pour un futur voyage.
 
-This article describes how to plan a route for a future trip.
+## [Guides de voyage](./travel-guides.md)
 
+Les guides vous aideront à voir tous les lieux intéressants sur la carte et à en apprendre davantage à leur sujet pendant votre voyage.
 
-## [Travel Guides](./travel-guides.md)
+## [Saisie des coordonnées](./coordinate-input.md)
 
-Guides will help you see all the interesting places on the map and learn about them in detail during your trip.
+Description d'un outil simple et rapide pour créer des points en spécifiant des coordonnées géographiques.
 
-
-## [Coordinate Input](./coordinate-input.md)
-
-Description of a simple and fast tool for creating points by specifying geographic coordinates.
+-- source-hash: blake2s: f029fc59051f735269a3ca9a391bdba257bd4be2965b95c7d33415d680b47cdc --

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  My Places
+title: Mes Lieux
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,15 +15,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-## Overview
+## Aperçu
 
-**My Places** is the central hub in the OsmAnd app for managing and customizing all personal data. You can use this section to organize [Favorite points](#favorites) marked as important or frequently visited. The [Tracks](#tracks) tab allows you to view, import, record, and create GPX files to help you keep a detailed history of your routes and travels. You can also manage your [OpenStreetMap Edits](#openstreetmap-edits), making contributing to map improvements and updates easy. The [Audio / Video Notes](#audiovideo-notes) plugin and widgets allow Android users to create and save multimedia notes related to specific locations, adding context to their travels.
+**Mes Lieux** est le centre névralgique de l'application OsmAnd pour gérer et personnaliser toutes les données personnelles. Vous pouvez utiliser cette section pour organiser les [Points favoris](#favorites) marqués comme importants ou fréquemment visités. L'onglet [Tracés](#tracks) vous permet de visualiser, d'importer, d'enregistrer et de créer des fichiers GPX pour vous aider à conserver un historique détaillé de vos itinéraires et voyages. Vous pouvez également gérer vos [Modifications OpenStreetMap](#openstreetmap-edits), ce qui facilite la contribution à l'amélioration et à la mise à jour des cartes. Le plugin et les widgets [Notes audio/vidéo](#audiovideo-notes) permettent aux utilisateurs Android de créer et d'enregistrer des notes multimédias liées à des lieux spécifiques, ajoutant ainsi du contexte à leurs voyages.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu"/> → My Places*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu"/> → Mes Lieux*
 
 ![My Places android](@site/static/img/personal/my_places_android.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android.png)
 
@@ -31,28 +31,28 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu"/> → My Pl
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu"/> → My Places*  
+Aller à : *iOS* *<Translate android="true" ids="shared_string_menu"/> → Mes Lieux*
 
-![My Places ios](@site/static/img/personal/my_places_ios.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.png)
+![My Places ios](@site/static/img/personal/my_places_ios.png) ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- [***Import and export data***](../personal/import-export.md):  
+- [***Importer et exporter des données***](../personal/import-export.md) :
 
-    All data stored in the *My Places* menu can be moved using a special `.osf` format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.  
+    Toutes les données stockées dans le menu *Mes Lieux* peuvent être déplacées en utilisant un format spécial `.osf` via les applications de votre appareil. Ce processus simplifie la sauvegarde et le transfert de données entre appareils et vous permet de les partager avec d'autres utilisateurs d'OsmAnd.
 
-    **Go to** *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* section and select whether to export or import data. If you select *export*, you will need to expand *My Places group* and check the required data.
+    **Aller à** la section *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* et sélectionnez si vous souhaitez exporter ou importer des données. Si vous sélectionnez *exporter*, vous devrez développer le *groupe Mes Lieux* et cocher les données requises.
 
-- [***Maps & Resources***](../personal/maps-resources.md):  
+- [***Cartes et ressources***](../personal/maps-resources.md) :
 
-    *Maps & Resources* *Main Menu* item of the OsmAnd application provides access to data management from the *My Places* section. The [*Local*](../personal/maps-resources.md#local) tab shows you how much space is occupied by all existing OsmAnd data on your device, and the *My Places* section is in particular. You can use it to get detailed information about your data and access to manage it. The section can only contain items for which data has been downloaded.  
+    L'élément de menu principal *Cartes et ressources* de l'application OsmAnd donne accès à la gestion des données de la section *Mes Lieux*. L'onglet [*Local*](../personal/maps-resources.md#local) vous indique l'espace occupé par toutes les données OsmAnd existantes sur votre appareil, et la section *Mes Lieux* en particulier. Vous pouvez l'utiliser pour obtenir des informations détaillées sur vos données et y accéder pour les gérer. La section ne peut contenir que les éléments pour lesquels des données ont été téléchargées.
 
-    **Go to** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Check and manage your data.
+    **Aller à** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Vérifiez et gérez vos données.
 
 
-## Favorites
+## Favoris
 
 <Tabs groupId="operating-systems">
 
@@ -70,20 +70,20 @@ Go to: *iOS* *<Translate android="true" ids="shared_string_menu"/> → My Places
 
 </Tabs>
 
-**Favorites** allow you to bookmark important or frequently visited locations. These favorite points are organized in folders and can be customized with different colors, shapes, and icons. You can quickly navigate to any favorite place through the **My Places** menu without needing to search for it repeatedly.
+Les **Favoris** vous permettent de marquer des lieux importants ou fréquemment visités. Ces points favoris sont organisés en dossiers et peuvent être personnalisés avec différentes couleurs, formes et icônes. Vous pouvez naviguer rapidement vers n'importe quel lieu favori via le menu **Mes Lieux** sans avoir à le rechercher à plusieurs reprises.
 
 
-1. ***Action buttons***. *Action buttons* at the bottom of the My Places screen allow you to manage the list of folders with your favorites:  
+1. ***Boutons d'action***. Les *boutons d'action* en bas de l'écran Mes Lieux vous permettent de gérer la liste des dossiers avec vos favoris :
 
-    - **Import** (*Add* button) — Allows you to import *favorite.gpx* files from your device storage.
+    - **Importer** (bouton *Ajouter*) — Vous permet d'importer des fichiers *favorite.gpx* depuis le stockage de votre appareil.
 
-    - **Export** — Save your favorite points as a *favorites.gpx* file for external use or backup.
+    - **Exporter** — Enregistrez vos points favoris sous forme de fichier *favorites.gpx* pour une utilisation externe ou une sauvegarde.
 
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** (*Android only*) — You can add any favorite point or the entire list of favorite points in a folder to the [Map markers list](../personal/markers.md).
+    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** (*Android uniquement*) — Vous pouvez ajouter n'importe quel point favori ou la liste entière des points favoris d'un dossier à la [liste des marqueurs de carte](../personal/markers.md).
 
-    - **Delete** (*on iOS, this option is located in the Edit menu*) — Deletes favorite points one at a time or selected favorite folders and all points contained in them.
+    - **Supprimer** (*sur iOS, cette option se trouve dans le menu Modifier*) — Supprime les points favoris un par un ou les dossiers favoris sélectionnés et tous les points qu'ils contiennent.
 
-2. ***Three-dot menu*** (*Android*) and ***long tap*** (*iOS*). Use the *three-dot* menu next to each folder or *long tap* the folder to manage groups of favorites:  
+2. ***Menu à trois points*** (*Android*) et ***appui long*** (*iOS*). Utilisez le menu *à trois points* à côté de chaque dossier ou *appuyez longuement* sur le dossier pour gérer les groupes de favoris :
 
     <Tabs groupId="operating-systems">
 
@@ -101,28 +101,28 @@ Go to: *iOS* *<Translate android="true" ids="shared_string_menu"/> → My Places
 
     </Tabs>
 
-    - **<Translate android="true" ids="shared_string_rename"/>** — Use this option to change the name of the selected folder.
+    - **<Translate android="true" ids="shared_string_rename"/>** — Utilisez cette option pour changer le nom du dossier sélectionné.
 
-    - **<Translate android="true" ids="change_default_appearance"/>** — Customize how the favorite points in the folder appear on the map by changing their icons, colors, or labels.
+    - **<Translate android="true" ids="change_default_appearance"/>** — Personnalisez l'apparence des points favoris du dossier sur la carte en modifiant leurs icônes, couleurs ou étiquettes.
 
-    - **<Translate android="true" ids="shared_string_show_on_map"/>** or **Hide on map** — Toggle this option to display or hide the favorite points from the folder on the map.
+    - **<Translate android="true" ids="shared_string_show_on_map"/>** ou **Masquer sur la carte** — Activez ou désactivez cette option pour afficher ou masquer les points favoris du dossier sur la carte.
 
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** or **Remove from map markers** (*Android only*) — Add all favorite points from the folder to the *Map markers list* or remove them as needed for easy reference.
+    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** ou **Supprimer des marqueurs de carte** (*Android uniquement*) — Ajoutez tous les points favoris du dossier à la *liste des marqueurs de carte* ou supprimez-les si nécessaire pour une référence facile.
 
-    - **<Translate android="true" ids="shared_string_share"/>** — Share the favorite points in the folder by exporting them as a *Favorites.gpx* file, making it easy to transfer or back up your data.
+    - **<Translate android="true" ids="shared_string_share"/>** — Partagez les points favoris du dossier en les exportant sous forme de fichier *Favorites.gpx*, ce qui facilite le transfert ou la sauvegarde de vos données.
 
-    - **<Translate android="true" ids="shared_string_delete"/>** — Permanently delete the selected favorites folder and all the points within it.
+    - **<Translate android="true" ids="shared_string_delete"/>** — Supprimez définitivement le dossier de favoris sélectionné et tous les points qu'il contient.
 
-For more detailed instructions, refer to the [Favorites](../personal/favorites.md) article.
+Pour des instructions plus détaillées, consultez l'article [Favoris](../personal/favorites.md).
 
 
-## Tracks
+## Tracés
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> onglet*
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -130,7 +130,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_strin
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
 
 ![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
 
@@ -138,28 +138,28 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-**Tracks** offer powerful tools for recording, creating, and managing routes within OsmAnd. They can be used for [navigation](../navigation/setup/gpx-navigation.md), [trip recording](../plugins/trip-recording.md), or [integrating](../personal/tracks/manage-tracks.md#import) external GPX files.
+Les **Tracés** offrent des outils puissants pour enregistrer, créer et gérer des itinéraires dans OsmAnd. Ils peuvent être utilisés pour la [navigation](../navigation/setup/gpx-navigation.md), l'[enregistrement de trajets](../plugins/trip-recording.md) ou l'[intégration](../personal/tracks/manage-tracks.md#import) de fichiers GPX externes.
 
-- **Tracks tab** — All tracks ever recorded, created, or imported are automatically displayed in the *My Places* folder in the *Tracks* tab. They are organized by folder or displayed in a list below them.
+- **Onglet Tracés** — Tous les tracés jamais enregistrés, créés ou importés sont automatiquement affichés dans le dossier *Mes Lieux* dans l'onglet *Tracés*. Ils sont organisés par dossier ou affichés dans une liste en dessous.
 
-- **Create a track** — Start recording using the **Tracks Tab** or the [Trip recording plugin](../plugins/trip-recording.md).
+- **Créer un tracé** — Commencez l'enregistrement à l'aide de l'**onglet Tracés** ou du [plugin d'enregistrement de trajets](../plugins/trip-recording.md).
 
-- **View and Edit** — Access the list of tracks through *My Places* and manage them using the *three-dot menu* for [folders](../personal/tracks/manage-tracks.md#folder-menu) or the [single track](../personal/tracks/manage-tracks.md#single-track-menu) menu.
+- **Afficher et modifier** — Accédez à la liste des tracés via *Mes Lieux* et gérez-les à l'aide du *menu à trois points* pour les [dossiers](../personal/tracks/manage-tracks.md#folder-menu) ou le menu [tracé unique](../personal/tracks/manage-tracks.md#single-track-menu).
 
-- **Manage** — Use the [Filter](../personal/tracks/smart-folder.md#filter) and [Smart folder](../personal/tracks/smart-folder.md#smart-folder) tools to organize tracks based on specific parameters.
+- **Gérer** — Utilisez les outils [Filtre](../personal/tracks/smart-folder.md#filter) et [Dossier intelligent](../personal/tracks/smart-folder.md#smart-folder) pour organiser les tracés en fonction de paramètres spécifiques.
 
-- **Appearance and Analysis** — [Customize](../map/tracks/appearance.md) the visual style of tracks and [analyze](../map/tracks/index.md#analyze-track-on-map) them using OsmAnd's [Plan a Route](../plan-route/create-route.md) tool.
+- **Apparence et analyse** — [Personnalisez](../map/tracks/appearance.md) le style visuel des tracés et [analysez-les](../map/tracks/index.md#analyze-track-on-map) à l'aide de l'outil [Planifier un itinéraire](../plan-route/create-route.md) d'OsmAnd.
 
-For comprehensive guidance, see the [Manage Tracks](../personal/tracks/manage-tracks.md) article.
+Pour des conseils complets, consultez l'article [Gérer les tracés](../personal/tracks/manage-tracks.md).
 
 
-## OpenStreetMap Edits
+## Modifications OpenStreetMap
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
 ![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
@@ -167,7 +167,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_strin
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
+Aller à : *iOS* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
 ![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
@@ -175,72 +175,72 @@ Go to: *iOS* *<Translate android="true" ids="shared_string_menu,shared_string_my
 
 </Tabs>
 
-OsmAnd's **OpenStreetMap Edits** feature enables you to contribute to the global mapping community by adding, modifying, or commenting on map data.
+La fonctionnalité **Modifications OpenStreetMap** d'OsmAnd vous permet de contribuer à la communauté cartographique mondiale en ajoutant, modifiant ou commentant les données cartographiques.
 
-1. ***Action buttons***. You can use the *action buttons* on the My Places screen to manage your list of notes:  
+1. ***Boutons d'action***. Vous pouvez utiliser les *boutons d'action* sur l'écran Mes Lieux pour gérer votre liste de notes :
 
     ![Share](@site/static/img/plugins/osm-editing/osm_plugin_export.png)
 
-    - **Upload files to OSM** — Send your notes and data to OpenStreetMap to contribute to the community.
+    - **Télécharger les fichiers sur OSM** — Envoyez vos notes et données à OpenStreetMap pour contribuer à la communauté.
 
-    - **Export** (*Android only*) — Save your notes and POIs as files for external use or backup, with options to export as OSM notes, POIs, or all data combined.
+    - **Exporter** (*Android uniquement*) — Enregistrez vos notes et POI sous forme de fichiers pour une utilisation externe ou une sauvegarde, avec des options d'exportation sous forme de notes OSM, de POI ou de toutes les données combinées.
 
-    - **Delete** — Remove selected items from your list permanently.
+    - **Supprimer** — Supprimez définitivement les éléments sélectionnés de votre liste.
 
 
-2. ***Three-dot menu***. You can manage specific POIs or notes using the *three-dot menu* next to each note:  
+2. ***Menu à trois points***. Vous pouvez gérer des POI ou des notes spécifiques à l'aide du *menu à trois points* à côté de chaque note :
 
     ![Three-dot menu](@site/static/img/plugins/osm-editing/osm_plugin_three-dot_menu.png)
 
-    - **Upload edit to OSM** — Submit your changes or edits to OpenStreetMap for others to see.
+    - **Télécharger la modification sur OSM** — Soumettez vos modifications ou éditions à OpenStreetMap pour que d'autres puissent les voir.
 
-    - **Show on map** — Display the specific location of the POI or note on the map.
+    - **Afficher sur la carte** — Affichez l'emplacement spécifique du POI ou de la note sur la carte.
 
-    - **Modify OSM change/note** — Make further edits to the POI or note that have already been added to OpenStreetMap.
+    - **Modifier la modification/note OSM** — Apportez d'autres modifications au POI ou à la note qui ont déjà été ajoutés à OpenStreetMap.
 
-    - **Delete** — Remove the selected POI or note from your list.
+    - **Supprimer** — Supprimez le POI ou la note sélectionné de votre liste.
 
-Refer to the [OSM Editing plugin](../plugins/osm-editing.md) for step-by-step instructions.
+Reportez-vous au [plugin d'édition OSM](../plugins/osm-editing.md) pour des instructions étape par étape.
 
 
-## Audio/Video Notes
+## Notes audio/vidéo
 
 <InfoAndroidOnly />
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
+![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)
 
-The **Audio/Video Notes plugin** allows you to create multimedia notes linked to specific map locations. These notes are stored in **My Places** under the **A/V Notes Tab**.
+Le **plugin Notes audio/vidéo** vous permet de créer des notes multimédias liées à des emplacements cartographiques spécifiques. Ces notes sont stockées dans **Mes Lieux** sous l'**onglet Notes A/V**.
 
-1. ***Action buttons***. You can use the *action buttons* at the bottom of the My Places screen to manage your list of notes:  
+1. ***Boutons d'action***. Vous pouvez utiliser les *boutons d'action* en bas de l'écran Mes Lieux pour gérer votre liste de notes :
 
     ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
 
-    - **<Translate android="true" ids="shared_string_sort"/>** — Opens a selection of sorting methods, *By type* or *By date*, and when selected, sorts the list accordingly.
+    - **<Translate android="true" ids="shared_string_sort"/>** — Ouvre une sélection de méthodes de tri, *Par type* ou *Par date*, et une fois sélectionnée, trie la liste en conséquence.
 
-    - **<Translate android="true" ids="shared_string_share"/>** — Displays a checklist of all notes, including those added to GPX files as waypoints. First, the required notes are checked, then the *Share* icon in the upper right corner of the screen suggests available sharing options, and finally, these notes become available according to the selected option.
+    - **<Translate android="true" ids="shared_string_share"/>** — Affiche une liste de contrôle de toutes les notes, y compris celles ajoutées aux fichiers GPX en tant que points de cheminement. Tout d'abord, les notes requises sont cochées, puis l'icône *Partager* dans le coin supérieur droit de l'écran suggère les options de partage disponibles, et enfin, ces notes deviennent disponibles selon l'option sélectionnée.
 
-    - **Share with GPX waypoints** — You can share the notes selected as waypoints in the *My Places* menu by adding [GPX data](../plugins/audio-video-notes.md#share-with-gpx-waypoints) to them using the **Share** button at the bottom of the *A/V notes* tab screen.
+    - **Partager avec les points de cheminement GPX** — Vous pouvez partager les notes sélectionnées comme points de cheminement dans le menu *Mes Lieux* en leur ajoutant des [données GPX](../plugins/audio-video-notes.md#share-with-gpx-waypoints) à l'aide du bouton **Partager** en bas de l'écran de l'onglet *Notes A/V*.
 
-    - **<Translate android="true" ids="shared_string_delete"/>** — Displays a checklist of audio, photo, and video notes only. First, check the unnecessary notes, then tap the *Delete* icon in the upper right corner of the screen, after confirming, the selected notes will be deleted permanently.
+    - **<Translate android="true" ids="shared_string_delete"/>** — Affiche une liste de contrôle des notes audio, photo et vidéo uniquement. Tout d'abord, cochez les notes inutiles, puis appuyez sur l'icône *Supprimer* dans le coin supérieur droit de l'écran, après confirmation, les notes sélectionnées seront définitivement supprimées.
 
 
-2. ***Three-dot menu***. You can manage specific audio, video, or photo notes using the *three-dot menu* next to each note:  
+2. ***Menu à trois points***. Vous pouvez gérer des notes audio, vidéo ou photo spécifiques à l'aide du *menu à trois points* à côté de chaque note :
 
     ![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
 
-    - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>** — Views or listens to the selected audio, video, or photo note directly.
+    - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>** — Affiche ou écoute directement la note audio, vidéo ou photo sélectionnée.
 
-    - **<Translate android="true" ids="shared_string_share"/>** — Shares the note with others through various apps or platforms.
+    - **<Translate android="true" ids="shared_string_share"/>** — Partage la note avec d'autres via diverses applications ou plateformes.
 
-    - **<Translate android="true" ids="shared_string_show_on_map"/>** — Displays the related location and [Context menu](../plugins/audio-video-notes#actions-in-map-context-menu) of the note on the map.
+    - **<Translate android="true" ids="shared_string_show_on_map"/>** — Affiche l'emplacement associé et le [menu contextuel](../plugins/audio-video-notes#actions-in-map-context-menu) de la note sur la carte.
 
-    - **<Translate android="true" ids="shared_string_rename"/>** — Change the name of the note to something more descriptive or relevant.
+    - **<Translate android="true" ids="shared_string_rename"/>** — Change le nom de la note pour quelque chose de plus descriptif ou pertinent.
 
-    - **<Translate android="true" ids="shared_string_delete"/>** — Selected notes are permanently deleted from your collection.
+    - **<Translate android="true" ids="shared_string_delete"/>** — Les notes sélectionnées sont définitivement supprimées de votre collection.
 
-For more information, visit the [Audio/Video Notes plugin](../plugins/audio-video-notes.md) page.
+Pour plus d'informations, visitez la page du [plugin Notes audio/vidéo](../plugins/audio-video-notes.md).
 
 
 <!--
@@ -263,10 +263,12 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 - **<Translate android="true" ids="shared_string_delete"/>**. Selected notes are permanently deleted from your collection.
 -->
 
-## Related Articles
+## Articles connexes
 
-- [Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)
-- [Search History](../search/search-history.md#export-and-share)
-- [Color Palette Schemes](../personal/color-palette-schemes.md)
+- [Gérer les tracés](../personal/tracks/manage-tracks.md#import--export-track)
+- [Historique de recherche](../search/search-history.md#export-and-share)
+- [Schémas de palette de couleurs](../personal/color-palette-schemes.md)
 
-> *This article was last updated in March 2025*
+> *Cet article a été mis à jour pour la dernière fois en mars 2025*
+
+-- source-hash: blake2s: 007fa637d76eede591d4847952ea2dafba5f47f9c3e9182ec321d34254691bbe --

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Map Screen During Navigation
+title: Écran de carte pendant la navigation
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,245 +15,247 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
-This article describes how to configure the appearance of the map during navigation. This includes features such as displaying [POIs along the route](#show-points-along-the-route), using [screen alerts](#screen-alerts), [route line appearance](#route-line-appearance) including color, width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
+Cet article décrit comment configurer l'apparence de la carte pendant la navigation. Cela inclut des fonctionnalités telles que l'affichage des [POI le long de l'itinéraire](#afficher-les-points-le-long-de-l'itinéraire), l'utilisation des [alertes d'écran](#alertes-d'écran), l'[apparence de la ligne d'itinéraire](#apparence-de-la-ligne-d'itinéraire), y compris la couleur, la largeur et les flèches de virage. Ces fonctionnalités sont étroitement liées aux [paramètres de navigation d'itinéraire](../setup/route-navigation.md#settings).
 
 
-## Map During Navigation
+## Carte pendant la navigation
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*
 
-![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Écran de carte pendant la navigation](@site/static/img/navigation/configure_map-during-navigation_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*
 
-![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Écran de carte pendant la navigation](@site/static/img/navigation/configure_map-during-navigation_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-When navigating, the map is a visual tool to locate your position, identify your destination plan your route, and view navigation guidance. You can use zooming to do this and drag and rotate the map as needed. The map can also display road information, street names, buildings, and other objects to help you easily determine your route.  
+Pendant la navigation, la carte est un outil visuel pour localiser votre position, identifier votre destination, planifier votre itinéraire et afficher les indications de navigation. Vous pouvez utiliser le zoom pour cela et faire glisser et faire pivoter la carte selon vos besoins. La carte peut également afficher des informations routières, des noms de rues, des bâtiments et d'autres objets pour vous aider à déterminer facilement votre itinéraire.
 
-During navigation, the map's appearance adjusts based on the selected navigation profile. Before starting navigation, ensure that the map's appearance aligns with your preferences for how it should function while driving.
+Pendant la navigation, l'apparence de la carte s'ajuste en fonction du profil de navigation sélectionné. Avant de commencer la navigation, assurez-vous que l'apparence de la carte correspond à vos préférences quant à son fonctionnement pendant la conduite.
 
-| Parameter | Description | Note |
+| Paramètre | Description | Remarque |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* |  The time for which the map view is synchronized with the current position after moving.  |  *Value:* <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
-| *<Translate android="true" ids="auto_zoom_map"/>*  |  Automatically scale the map according to your speed, as long as the map is synchronized with your current position. | *Value:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 5 m. |
-| *<Translate android="true" ids="snap_to_road"/>*  | The current position icon will be associated with the current navigation route.  | You can turn this option off, but all road-related options, such as lane display, will also not be visible during navigation.  |
-| *<Translate android="true" ids="approximate_bearing"/>* | Determines bearing based on the navigation route you are following.  | The setting is only visible when the [OsmAnd development plugin](../../plugins/development.md) is enabled. <br /> These settings should be enabled if the orientation of the directional map is flipped or jiggles when using [Android Auto](../auto-car.md#issues).   |
+| *<Translate android="true" ids="choose_auto_follow_route"/>* | Le temps pendant lequel la vue de la carte est synchronisée avec la position actuelle après un déplacement. | *Valeur :* <br /> Jamais, 5 s, 10 s, 15 s, 20 s, 25 s, 30 s, 45 s, 60 s, 50 s. |
+| *<Translate android="true" ids="auto_zoom_map"/>* | Mise à l'échelle automatique de la carte en fonction de votre vitesse, tant que la carte est synchronisée avec votre position actuelle. | *Valeur :* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manuel. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom de 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom de 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom de 5 m. |
+| *<Translate android="true" ids="snap_to_road"/>* | L'icône de position actuelle sera associée à l'itinéraire de navigation actuel. | Vous pouvez désactiver cette option, mais toutes les options liées à la route, telles que l'affichage des voies, ne seront pas non plus visibles pendant la navigation. |
+| *<Translate android="true" ids="approximate_bearing"/>* | Détermine le relèvement en fonction de l'itinéraire de navigation que vous suivez. | Le paramètre n'est visible que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé. <br /> Ces paramètres doivent être activés si l'orientation de la carte directionnelle est inversée ou tremble lors de l'utilisation d'[Android Auto](../auto-car.md#issues). |
 
 
-## Show Points Along the Route
+## Afficher les points le long de l'itinéraire
 
-The *Show along the route* setting allows you to configure additional route parameters and is required for the operation of widgets such as the [Street name](../../widgets/nav-widgets.md/#street-name) and the [Alert widget](../../widgets/nav-widgets.md#alert-widget). Options include displaying [**POIs**](#points-of-interest-pois) and [**My Favorites**](#my-favorites) along the route or using them as an addition to those already configured for the profile, as well as displaying a complete list of [**Traffic warnings**](#traffic-warnings) along the route.  
+Le paramètre *Afficher le long de l'itinéraire* vous permet de configurer des paramètres d'itinéraire supplémentaires et est nécessaire au fonctionnement de widgets tels que le [Nom de la rue](../../widgets/nav-widgets.md/#street-name) et le [Widget d'alerte](../../widgets/nav-widgets.md#alert-widget). Les options incluent l'affichage des [**POI**](#points-d'intérêt-poi) et de [**Mes favoris**](#mes-favoris) le long de l'itinéraire ou leur utilisation en complément de ceux déjà configurés pour le profil, ainsi que l'affichage d'une liste complète des [**Avertissements de circulation**](#avertissements-de-circulation) le long de l'itinéraire.
 
-- The ability to set different distances (up to 5 km, or 3.11 miles, depending on the [unit of length](../../personal/profiles.md#units--formats) you set) from the route to nearby points is useful when using routing types such as [Straight Line](../routing/straight-line-routing.md) or [Direct-to-point](../routing/direct-to-point-routing.md).
-- For the *Show along the route* setting, it is recommended to use [Voice prompts](../guidance/voice-navigation.md) for navigation.
-- *POIs, Favorite, and Traffic warnings* are not displayed in the list for a route you have already traveled.
-
-
-### View and Select Points
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>*
-
-![points along the route](@site/static/img/navigation/show-points-along-4-andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>* *→ Show along the route*
-
-![points along the route](@site/static/img/navigation/show-points-along-4-ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-When you create a route, you can set the types of points to be displayed along the route in the *Navigation* section.
+- La possibilité de définir différentes distances (jusqu'à 5 km, ou 3,11 miles, selon l'[unité de longueur](../../personal/profiles.md#units--formats) que vous avez définie) de l'itinéraire aux points proches est utile lors de l'utilisation de types de routage tels que [Ligne droite](../routing/straight-line-routing.md) ou [Direct-to-point](../routing/direct-to-point-routing.md).
+- Pour le paramètre *Afficher le long de l'itinéraire*, il est recommandé d'utiliser les [Invites vocales](../guidance/voice-navigation.md) pour la navigation.
+- Les *POI, Favoris et Avertissements de circulation* ne sont pas affichés dans la liste pour un itinéraire que vous avez déjà parcouru.
 
 
-### Points of Interest (POIs)
-
-![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)
-
-POIs settings in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-poi) are associated with the **Show along the route** setting. This is essentially an additional setting for displaying POIs on the map, directly related to the created route.  
-
-When you specify the display of certain POIs on the *Configure map*, they are all displayed on the maps you have downloaded, whether you have selected categories or, if you do not care which category, selected nearby POIs.  
-
-- The number and identification of POIs is *scale dependent*.
-
-- The *Show along the route* setting displays the same category as in the *POI overlay*, but you see the *entire list* of selected POIs at once, starting from the point of the current location at the set distance within your route.  
-
-- You can remove unnecessary POIs from the list or edit them in the [Сontext menu](../../map/map-context-menu.md) by tapping one of them.
-
-- The list contains the selected [POI types](../../map/point-layers-on-map.md#poi-types) and brief information about each of them, such as the *type icon, name, distance from the current location point to the POI along the route*, and *indications of which side of the route in a straight line and how far away the POI is*.  
-
-
-### My Favorites
-
-The list contains all previously added [Favorite](../../personal/favorites.md#favorite-point) points near the route you have created. As with POIs, you can select the distance at which these points are located.  
-
-- If you [turn off the display of Favorites on the map](../../map/configure-map-menu.md), they do not disappear from the list and continue to be displayed in the [widget](../../widgets/nav-widgets.md#street-name) and announced when you approach them.
-
-- You can add your *Favorite points* to the map not only in advance but also while navigating a route.
-
-- *To update the list*, toggle My Favorites off and then back on.
-
-- Each point contains a name or coordinates, a group, the distance from the current location point to the *Favorite* directly on the route line, information about how far to the right or left the point is from the line, and the direction of the route.
-
-
-### Traffic Warnings
-
-*Traffic warnings* are not displayed directly on the map like *POIs* or *My Favorites*.
-
-- **To enable** this option and see the warnings, you must first enable and configure the [Alerts widget](../../widgets/nav-widgets.md#alert-widget).
-
-- The choice to display *Traffic warnings* along your route allows you to see the entire list just before you start your route, which is useful when planning your trip.
-
-- You can remove unnecessary alerts from the list, or tap on the alert name to [edit the location](../../map/map-context-menu.md#avoid-road).
-
-
-## Screen Alerts
+### Afficher et sélectionner des points
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>*
+
+![points le long de l'itinéraire](@site/static/img/navigation/show-points-along-4-andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>* *→ Afficher le long de l'itinéraire*
+
+![points le long de l'itinéraire](@site/static/img/navigation/show-points-along-4-ios.png)
 
 </TabItem>
 
 </Tabs>
 
-| Parameter | Description | Note |
+Lorsque vous créez un itinéraire, vous pouvez définir les types de points à afficher le long de l'itinéraire dans la section *Navigation*.
+
+
+### Points d'intérêt (POI)
+
+![Superposition de POI Android](@site/static/img/map/poi_overlay_android.png) ![Superposition de POI iOS](@site/static/img/map/poi_overlay_ios.png)
+
+Les paramètres des POI dans [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-poi) sont associés au paramètre **Afficher le long de l'itinéraire**. Il s'agit essentiellement d'un paramètre supplémentaire pour afficher les POI sur la carte, directement lié à l'itinéraire créé.
+
+Lorsque vous spécifiez l'affichage de certains POI sur la *Configuration de la carte*, ils sont tous affichés sur les cartes que vous avez téléchargées, que vous ayez sélectionné des catégories ou, si vous ne vous souciez pas de la catégorie, sélectionné des POI à proximité.
+
+- Le nombre et l'identification des POI *dépendent de l'échelle*.
+
+- Le paramètre *Afficher le long de l'itinéraire* affiche la même catégorie que dans la *superposition de POI*, mais vous voyez la *liste entière* des POI sélectionnés en une seule fois, à partir du point de la position actuelle à la distance définie dans votre itinéraire.
+
+- Vous pouvez supprimer les POI inutiles de la liste ou les modifier dans le [Menu contextuel](../../map/map-context-menu.md) en appuyant sur l'un d'eux.
+
+- La liste contient les [types de POI](../../map/point-layers-on-map.md#poi-types) sélectionnés et de brèves informations sur chacun d'eux, telles que l'*icône du type, le nom, la distance du point de position actuel au POI le long de l'itinéraire*, et des *indications du côté de l'itinéraire en ligne droite et de la distance à laquelle se trouve le POI*.
+
+
+### Mes favoris
+
+La liste contient tous les points [Favoris](../../personal/favorites.md#favorite-point) précédemment ajoutés près de l'itinéraire que vous avez créé. Comme pour les POI, vous pouvez sélectionner la distance à laquelle ces points sont situés.
+
+- Si vous [désactivez l'affichage des Favoris sur la carte](../../map/configure-map-menu.md), ils ne disparaissent pas de la liste et continuent d'être affichés dans le [widget](../../widgets/nav-widgets.md#street-name) et annoncés lorsque vous vous en approchez.
+
+- Vous pouvez ajouter vos *points Favoris* à la carte non seulement à l'avance, mais aussi pendant la navigation sur un itinéraire.
+
+- *Pour mettre à jour la liste*, désactivez Mes favoris, puis réactivez-les.
+
+- Chaque point contient un nom ou des coordonnées, un groupe, la distance du point de position actuel au *Favori* directement sur la ligne d'itinéraire, des informations sur la distance à droite ou à gauche du point par rapport à la ligne, et la direction de l'itinéraire.
+
+
+### Avertissements de circulation
+
+Les *avertissements de circulation* ne sont pas affichés directement sur la carte comme les *POI* ou *Mes favoris*.
+
+- **Pour activer** cette option et voir les avertissements, vous devez d'abord activer et configurer le [widget Alertes](../../widgets/nav-widgets.md#alert-widget).
+
+- Le choix d'afficher les *avertissements de circulation* le long de votre itinéraire vous permet de voir la liste entière juste avant de commencer votre itinéraire, ce qui est utile lors de la planification de votre voyage.
+
+- Vous pouvez supprimer les alertes inutiles de la liste, ou appuyer sur le nom de l'alerte pour [modifier l'emplacement](../../map/map-context-menu.md#avoid-road).
+
+
+## Alertes d'écran
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
+
+</TabItem>
+
+</Tabs>
+
+| Paramètre | Description | Remarque |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Notifications, such as traffic warnings or speed limits, will appear on the screen as a widget. They appear in the bottom left corner while you are navigating. | [Types of alert widgets](../../widgets/nav-widgets.md#alert-widget)   |
+| **<Translate android="true" ids="screen_alerts"/>** | Les notifications, telles que les avertissements de circulation ou les limites de vitesse, apparaîtront à l'écran sous forme de widget. Elles apparaissent dans le coin inférieur gauche pendant que vous naviguez. | [Types de widgets d'alerte](../../widgets/nav-widgets.md#alert-widget) |
 
 
-## Route Line Appearance
+## Apparence de la ligne d'itinéraire
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*
 
-![Navigation route Android](@site/static/img/navigation/route/route_line_appearance_andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
-
-![Navigation route Android](@site/static/img/navigation/route/RLApp_iOS.png)
+![Itinéraire de navigation Android](@site/static/img/navigation/route/route_line_appearance_andr.png)
 
 </TabItem>
 
-</Tabs>  
+<TabItem value="ios" label="iOS">
 
-You can select route line appearance by style or manually select the color, width, and transparency of the line. In addition, you can choose whether to show turn arrows and direction arrows on the line.
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-**Advanced**: the Customize route line setting allows you to adjust the appearance of the route line to display elevation changes, significant uphill or downhill, ice on the road, unpaved roads, highways, and other possible obstacles. You can also select or create custom [color schemes](../../personal/color-palette-schemes.md#routes) to apply to the route line.
+![Itinéraire de navigation Android](@site/static/img/navigation/route/RLApp_iOS.png)
+
+</TabItem>
+
+</Tabs>
+
+Vous pouvez sélectionner l'apparence de la ligne d'itinéraire par style ou sélectionner manuellement la couleur, la largeur et la transparence de la ligne. De plus, vous pouvez choisir d'afficher ou non les flèches de virage et les flèches de direction sur la ligne.
+
+**Avancé** : le paramètre Personnaliser la ligne d'itinéraire vous permet d'ajuster l'apparence de la ligne d'itinéraire pour afficher les changements d'altitude, les montées ou descentes importantes, la glace sur la route, les routes non pavées, les autoroutes et autres obstacles possibles. Vous pouvez également sélectionner ou créer des [schémas de couleurs](../../personal/color-palette-schemes.md#routes) personnalisés à appliquer à la ligne d'itinéraire.
 
 
 :::note
- <ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscription</a>.
+ <ProFeature/> Certains paramètres ne sont utilisables qu'avec un <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">abonnement OsmAnd Pro</a>.
 :::
 
 
-### Color
+### Couleur
 
-The **Color** setting changes the color tones of the route lines. Their overall color changes depending on the selected type from the OsmAnd collection, and according to the **Map Legend**. Alternatively, their color becomes whatever color and transparency you set manually.
+Le paramètre **Couleur** modifie les tons de couleur des lignes d'itinéraire. Leur couleur globale change en fonction du type sélectionné dans la collection OsmAnd et selon la **Légende de la carte**. Alternativement, leur couleur devient la couleur et la transparence que vous avez définies manuellement.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Used with the default colors. For a full description of the colors, go to [Default Map styles](../../map/vector-maps.md#default-map-styles).  
-    ![map stule](@site/static/img/navigation/route/map_st_2.png)
+- ***<Translate android="true" id="map_widget_renderer"/>***. Utilisé avec les couleurs par défaut. Pour une description complète des couleurs, consultez [Styles de carte par défaut](../../map/vector-maps.md#default-map-styles).
+    ![style de carte](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Custom***. Allows you to select a line in any preferred color and transparency. You can select different settings for the day map and separately for the night map.  
-    ![custom](@site/static/img/navigation/route/custom.png)   ![custom](@site/static/img/navigation/route/custom_ios.png)
+- ***Personnalisé***. Vous permet de sélectionner une ligne dans la couleur et la transparence de votre choix. Vous pouvez sélectionner différents paramètres pour la carte de jour et séparément pour la carte de nuit.
+    ![personnalisé](@site/static/img/navigation/route/custom.png) ![personnalisé](@site/static/img/navigation/route/custom_ios.png)
 
-- ***<Translate android="true" id="altitude"/>***. It shows the height of the route point as a **green-yellow-red** gradient. **Green** indicates the lowest point of the route, **yellow** indicates the average height of the point, and **red** is the highest. If the route altitude difference is < 100 meters, the gradient is partially applied or not applied, for example for a simple climb from 100 meters to 150 meters - the gradient will be **green-yellow**. Note that the color doesn't represent the absolute value of the altitude.  
+- ***<Translate android="true" id="altitude"/>***. Il affiche la hauteur du point d'itinéraire sous forme de dégradé **vert-jaune-rouge**. Le **vert** indique le point le plus bas de l'itinéraire, le **jaune** indique la hauteur moyenne du point et le **rouge** est le plus élevé. Si la différence d'altitude de l'itinéraire est < 100 mètres, le dégradé est partiellement appliqué ou non appliqué, par exemple pour une simple montée de 100 mètres à 150 mètres - le dégradé sera **vert-jaune**. Notez que la couleur ne représente pas la valeur absolue de l'altitude.
     ![Altitude](@site/static/img/navigation/route/Altitude_rl.png)
 
-- ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. The route line is colored in different colors depending on the elevation profile of the route. A detailed description is in the *Topography plugin* article, [Slope](../../plugins/topography.md#slope) section.  
-    ![Altitude](@site/static/img/navigation/route/Slope.png)   ![Altitude](@site/static/img/navigation/route/Slope4.png)
+- ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. La ligne d'itinéraire est colorée de différentes couleurs en fonction du profil d'élévation de l'itinéraire. Une description détaillée se trouve dans l'article *Plugin Topographie*, section [Pente](../../plugins/topography.md#slope).
+    ![Altitude](@site/static/img/navigation/route/Slope.png) ![Altitude](@site/static/img/navigation/route/Slope4.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>***. Colors a route or track line according to the *road classification*. A detailed description is in the *Vector Maps - [Road Style](../../map/vector-maps.md#road-style)* section.  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>***. Colore une ligne d'itinéraire ou de trace en fonction de la *classification routière*. Une description détaillée se trouve dans l'article *Cartes vectorielles - [Style de route](../../map/vector-maps.md#road-style)*.
     ![Altitude](@site/static/img/navigation/route/Roud_type.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />***. Provides information about the physical surface of the road or trail. A detailed description can be found in the *OsmAnd Map Style - [Surface](../../map-legend/osmand.md#surface-smoothness)* article in the *Map Legend* section.  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />***. Fournit des informations sur la surface physique de la route ou du sentier. Une description détaillée se trouve dans l'article *Style de carte OsmAnd - [Surface](../../map-legend/osmand.md#surface-smoothness)* dans la section *Légende de la carte*.
     ![Altitude](@site/static/img/navigation/route/Surface.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Road or trail maneuverability classification for wheeled vehicles, especially concerning the regularity and smoothness of the surface. A detailed description can be found in the *OsmAnd Map Style - [Smoothness](../../map-legend/osmand.md#surface-smoothness)* article in the *Map Legend* section.  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Classification de la maniabilité des routes ou des sentiers pour les véhicules à roues, en particulier en ce qui concerne la régularité et la douceur de la surface. Une description détaillée se trouve dans l'article *Style de carte OsmAnd - [Douceur](../../map-legend/osmand.md#surface-smoothness)* dans la section *Légende de la carte*.
     ![Altitude](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colors a route or track line according to the *winter road classification*. A detailed description can be found in the *Vector Maps* article, [Winter and ice roads](../../map/vector-maps.md#winter-and-ski) section.  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colore une ligne d'itinéraire ou de trace en fonction de la *classification des routes d'hiver*. Une description détaillée se trouve dans l'article *Cartes vectorielles*, section [Routes d'hiver et de glace](../../map/vector-maps.md#winter-and-ski).
     ![Altitude](@site/static/img/navigation/route/Winter.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Coloring of a route or trail line by pavement composition. Typically, used when the road network is largely unpaved. A detailed description can be found in the *OsmAnd Map Style - [Surface firmness](../../map-legend/osmand.md#surface-smoothness)* article in the *Map Legend* section.  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Coloration d'une ligne d'itinéraire ou de sentier par composition du revêtement. Typiquement, utilisé lorsque le réseau routier est largement non pavé. Une description détaillée se trouve dans l'article *Style de carte OsmAnd - [Fermeté de la surface](../../map-legend/osmand.md#surface-smoothness)* dans la section *Légende de la carte*.
     ![Altitude](@site/static/img/navigation/route/firmness.png)
 
-- ***<ProFeature/> &nbsp;Difficulty of horse trails***. Render paths according to the difficulty of horse trails.  
+- ***<ProFeature/> &nbsp;Difficulté des sentiers équestres***. Rendu des chemins en fonction de la difficulté des sentiers équestres.
     ![Altitude](@site/static/img/navigation/route/firmness.png)
 
 
-### Width  
+### Largeur
 
-You can adjust the width of the route line to align with the road or path displayed on the map. For clearer visual identification, you can manually increase or decrease the line width as needed. For more details, refer to the *Tracks and Routes — [Appearance](../../map/tracks/appearance.md) article*.
+Vous pouvez ajuster la largeur de la ligne d'itinéraire pour l'aligner sur la route ou le chemin affiché sur la carte. Pour une identification visuelle plus claire, vous pouvez augmenter ou diminuer manuellement la largeur de la ligne selon vos besoins. Pour plus de détails, consultez l'article *Traces et itinéraires — [Apparence](../../map/tracks/appearance.md)*.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. It's used with the default width set by OsmAnd. A full description can be found in the *Vector Maps* article, [Map style](../../map/vector-maps.md#default-map-styles) section.  
-    ![map stule](@site/static/img/navigation/route/map_st_2.png)
+- ***<Translate android="true" id="map_widget_renderer"/>***. Il est utilisé avec la largeur par défaut définie par OsmAnd. Une description complète se trouve dans l'article *Cartes vectorielles*, section [Style de carte](../../map/vector-maps.md#default-map-styles).
+    ![style de carte](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Thin, Medium, and Bold widths***. You can select the width of the line to match the width of the road, or emphasize the route line more strongly on the map.  
-    ![width](@site/static/img/navigation/route/width_med.png)
+- ***Largeurs fine, moyenne et épaisse***. Vous pouvez sélectionner la largeur de la ligne pour qu'elle corresponde à la largeur de la route, ou accentuer davantage la ligne d'itinéraire sur la carte.
+    ![largeur](@site/static/img/navigation/route/width_med.png)
 
-- ***Custom***. It allows you to display a line of the width you require. Use the slider bar to select the width.  
-    ![custom](@site/static/img/navigation/route/custom_2.png)  
-
-
-### Turn Arrows  
-
-The Turn Arrows setting allows you to select whether turn arrows are displayed on the route line.  
-
-- ***On map***  
-    ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![turn_arr_ios_map](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
-
-- ***In app***  
-    ![Altitude](@site/static/img/navigation/route/turn_arr.png)   ![turn_arr_ios](@site/static/img/navigation/route/turn_arr_ios.png)
+- ***Personnalisé***. Il vous permet d'afficher une ligne de la largeur que vous souhaitez. Utilisez la barre de défilement pour sélectionner la largeur.
+    ![personnalisé](@site/static/img/navigation/route/custom_2.png)
 
 
-## Related Articles
+### Flèches de virage
 
-- [Route parameters](../routing/osmand-routing.md#routing-types)
-- [Route preparation](../setup/route-navigation.md)
-- [Navigation by track](../setup/gpx-navigation.md)
-- [Navigation by markers](../setup/markers-navigation.md)
-- [Route details](../setup/route-details.md)
-- [Navigation settings](./navigation-settings.md)
-- [Voice prompts / Notifications](./voice-navigation.md)
+Le paramètre Flèches de virage vous permet de sélectionner si les flèches de virage sont affichées sur la ligne d'itinéraire.
+
+- ***Sur la carte***
+    ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png) ![flèches de virage ios carte](@site/static/img/navigation/route/turn_arr_ios_on_map.png)
+
+- ***Dans l'application***
+    ![Altitude](@site/static/img/navigation/route/turn_arr.png) ![flèches de virage ios](@site/static/img/navigation/route/turn_arr_ios.png)
+
+
+## Articles connexes
+
+- [Paramètres d'itinéraire](../routing/osmand-routing.md#routing-types)
+- [Préparation de l'itinéraire](../setup/route-navigation.md)
+- [Navigation par trace](../setup/gpx-navigation.md)
+- [Navigation par marqueurs](../setup/markers-navigation.md)
+- [Détails de l'itinéraire](../setup/route-details.md)
+- [Paramètres de navigation](./navigation-settings.md)
+- [Invites vocales / Notifications](./voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in December 2024*
+> *Cet article a été mis à jour pour la dernière fois en décembre 2024*
+
+-- source-hash: blake2s: 723bea6cd577dc5206094ca8f58472018afc3847f542799bb26a1e7072f932b8 --

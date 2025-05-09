@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title:  Navigation Settings
+title: Paramètres de navigation
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,9 +15,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
-For successful navigation, it's important to properly configure the appropriate settings according to your needs and how you travel - by car, on foot, on horseback, or skis. This article describes the basic route parameters, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, [Fuel tank capacity](#fuel-tank-capacity), and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
+Pour une navigation réussie, il est important de configurer correctement les paramètres appropriés en fonction de vos besoins et de votre mode de déplacement - en voiture, à pied, à cheval ou à ski. Cet article décrit les paramètres de base de l'itinéraire, les [Invites vocales](#invites-vocales), les [Alertes d'écran](#alertes-décran), le [Comportement de la carte pendant la navigation](#carte-pendant-la-navigation) et l'[Apparence des lignes d'itinéraire](#personnaliser-la-ligne-ditinéraire). Il détaille également les paramètres du véhicule tels que la [Vitesse par défaut](#vitesse-par-défaut) et la [Vitesse maximale/minimale](#vitesses-sur-route), le [Type de moteur](#carburant-utilisé-par-le-moteur) pour le calcul du CO2, la [Capacité du réservoir de carburant](#capacité-du-réservoir-de-carburant) et la [Taille/le poids](#paramètres-de-taille), qui peuvent affecter l'itinéraire. L'ajustement de ces paramètres vous aidera à tirer le meilleur parti d'OsmAnd et à atteindre votre objectif sans délai inutile.
 
 <Tabs groupId="operating-systems">
 
@@ -35,30 +35,30 @@ For successful navigation, it's important to properly configure the appropriate 
 
 </Tabs>
 
-### How to Open
+### Comment ouvrir
 
-This section presents the navigation settings necessary for calculating and plotting a route, which you can set for the selected profile. This menu includes settings for [Route preparation](../setup/route-navigation.md), the [Map screen during navigation](../guidance/map-during-navigation.md), and what you set in the *Navigation settings* directly affects the display of data in the [Route Details](../setup/route-details.md).
+Cette section présente les paramètres de navigation nécessaires au calcul et au tracé d'un itinéraire, que vous pouvez définir pour le profil sélectionné. Ce menu comprend les paramètres de [Préparation de l'itinéraire](../setup/route-navigation.md), de l'[Écran de la carte pendant la navigation](../guidance/map-during-navigation.md), et ce que vous définissez dans les *Paramètres de navigation* affecte directement l'affichage des données dans les [Détails de l'itinéraire](../setup/route-details.md).
 
-There are three ways to access the Navigation settings menu.
+Il existe trois façons d'accéder au menu Paramètres de navigation.
 
-- Go to the main *Menu → Settings*, select the required *Profile*, and tap *Navigation settings*.
+- Allez dans le *Menu → Paramètres* principal, sélectionnez le *Profil* requis, et appuyez sur *Paramètres de navigation*.
 
-- Tap the *Navigation* icon on the map screen, then select the *Settings icon → Navigation settings*.
+- Appuyez sur l'icône *Navigation* sur l'écran de la carte, puis sélectionnez l'*icône Paramètres → Paramètres de navigation*.
 
-- Go to the main *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.  
+- Allez dans le *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>* principal.
 
 :::info
-The default *Browse map* profile has no navigation settings.  
+Le profil par défaut *Parcourir la carte* n'a pas de paramètres de navigation.
 :::
 
 
-## Navigation Type
+## Type de navigation
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_type_offline_andr.png)   ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_type_online_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_type_offline_andr.png) ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_type_online_andr.png)
 
 </TabItem>
 
@@ -68,20 +68,20 @@ The default *Browse map* profile has no navigation settings.
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-Navigation is an important part of a trip, and choosing *the right type* of navigation can make your journey much easier. The type of navigation you choose can depend on how you travel and whether you have an Internet connection.  
+La navigation est une partie importante d'un voyage, et choisir *le bon type* de navigation peut rendre votre voyage beaucoup plus facile. Le type de navigation que vous choisissez peut dépendre de votre mode de déplacement et de votre connexion Internet.
 
-- **Online navigation**
-    It mainly uses a special routing system or website that allows the OsmAnd app to plot a route based on current information and other factors. You can read about choosing the best route online in the article [Online routing](../routing/online-routing.md). This navigation type is only available for the *Android version* of the app.  
+- **Navigation en ligne**
+Elle utilise principalement un système de routage spécial ou un site Web qui permet à l'application OsmAnd de tracer un itinéraire basé sur les informations actuelles et d'autres facteurs. Vous pouvez lire comment choisir le meilleur itinéraire en ligne dans l'article [Routage en ligne](../routing/online-routing.md). Ce type de navigation n'est disponible que pour la *version Android* de l'application.
 
-- **Offline navigation**
-It does not require internet access and offers a wider selection of [navigation types](../routing/osmand-routing.md#routing-types) that can be used to calculate a route. Among them are *bicycle, boat, car, on foot, ski*, and *straight line*. There are currently 13 basic types of routing, as well as an external [BRouter](../routing/brouter.md) routing type that provides additional routing opportunities.  
+- **Navigation hors ligne**
+Elle ne nécessite pas d'accès à Internet et offre une sélection plus large de [types de navigation](../routing/osmand-routing.md#routing-types) qui peuvent être utilisés pour calculer un itinéraire. Parmi eux, on trouve *vélo, bateau, voiture, à pied, ski* et *ligne droite*. Il existe actuellement 13 types de routage de base, ainsi qu'un type de routage externe [BRouter](../routing/brouter.md) qui offre des possibilités de routage supplémentaires.
 
-The navigation type determines which rules are used to calculate routes. If you need a specific type of navigation, you can **import your own modified *XML* routing file**. Read more about routing rules on our [GitHub page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). And there is a separate article about XML format and how to use it, [Map Rendering style](../../../technical/osmand-file-formats/osmand-rendering-style.md), which can help you in creating a route file.  
+Le type de navigation détermine les règles utilisées pour calculer les itinéraires. Si vous avez besoin d'un type de navigation spécifique, vous pouvez **importer votre propre fichier de routage *XML* modifié**. Lisez-en plus sur les règles de routage sur notre [page GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). Et il existe un article séparé sur le format XML et comment l'utiliser, [Style de rendu de carte](../../../technical/osmand-file-formats/osmand-rendering-style.md), qui peut vous aider à créer un fichier d'itinéraire.
 
 
-## Route Parameters
+## Paramètres de l'itinéraire
 
 <Tabs groupId="operating-systems">
 
@@ -97,17 +97,17 @@ The navigation type determines which rules are used to calculate routes. If you 
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-**<Translate android="true" ids="route_parameters"/>** are settings that determine how the application will calculate a route to reach a destination, considering factors such as type of transport, routing priorities, route conditions, route complexity, and user preferences.  
+Les **<Translate android="true" ids="route_parameters"/>** sont des paramètres qui déterminent comment l'application calculera un itinéraire pour atteindre une destination, en tenant compte de facteurs tels que le type de transport, les priorités de routage, les conditions de l'itinéraire, la complexité de l'itinéraire et les préférences de l'utilisateur.
 
-For each [profile](../../personal/global-settings.md#default-profile), except for *Browse Map*, OsmAnd selects by default the optimal [Navigation type](#navigation-type) and the relevant [route parameters](../routing/osmand-routing.md#routing-types). However, you can choose any type you like and change the parameters depending on your preferences and the external conditions of the upcoming trip.  
+Pour chaque [profil](../../personal/global-settings.md#default-profile), à l'exception de *Parcourir la carte*, OsmAnd sélectionne par défaut le [Type de navigation](#navigation-type) optimal et les [paramètres d'itinéraire](../routing/osmand-routing.md#routing-types) pertinents. Cependant, vous pouvez choisir le type que vous souhaitez et modifier les paramètres en fonction de vos préférences et des conditions externes du voyage à venir.
 
-All route parameters are described in detail in the corresponding sections of the documentation:  
-*[Car routing (Truck, Motorcycle)](../routing/car-based-routing.md), [Bicycle  routing (MTB)](../routing/bicycle-based-routing.md), [Moped routing](../routing/moped-routing.md), [Pedestrian routing](../routing/pedestrian-routing.md), [Public Transport routing](../routing/public-transport-navigation.md), [Horseback routing](../routing/horse-routing.md), [Skiing routing](../routing/ski-routing.md), [Train routing](../routing/train-routing.md), [Boat routing](../routing/boat-navigation.md), [Direct-to-point routing](../routing/direct-to-point-routing.md), [Straight line routing](../routing/straight-line-routing.md), [Online routing](../routing/online-routing.md), [BRouter routing](../routing/brouter.md)*.  
+Tous les paramètres d'itinéraire sont décrits en détail dans les sections correspondantes de la documentation :
+*[Routage automobile (Camion, Moto)](../routing/car-based-routing.md), [Routage vélo (VTT)](../routing/bicycle-based-routing.md), [Routage cyclomoteur](../routing/moped-routing.md), [Routage piéton](../routing/pedestrian-routing.md), [Routage transports en commun](../routing/public-transport-navigation.md), [Routage équestre](../routing/horse-routing.md), [Routage ski](../routing/ski-routing.md), [Routage train](../routing/train-routing.md), [Routage bateau](../routing/boat-navigation.md), [Routage direct vers un point](../routing/direct-to-point-routing.md), [Routage ligne droite](../routing/straight-line-routing.md), [Routage en ligne](../routing/online-routing.md), [Routage BRouter](../routing/brouter.md)*.
 
 
-### Recalculate Route
+### Recalculer l'itinéraire
 
 <Tabs groupId="operating-systems">
 
@@ -125,23 +125,23 @@ All route parameters are described in detail in the corresponding sections of th
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-The **Route Calculation** parameter automatically changes the calculated route when you deviate from it or drive in the opposite direction. In both cases, this setting helps you maintain your direction of travel and get to your destination without wasting time manually searching for a new route.  
+Le paramètre **Calcul de l'itinéraire** modifie automatiquement l'itinéraire calculé lorsque vous vous en écartez ou que vous roulez dans la direction opposée. Dans les deux cas, ce paramètre vous aide à maintenir votre direction de voyage et à atteindre votre destination sans perdre de temps à chercher manuellement un nouvel itinéraire.
 
-| Parameter | Description | Note |
+| Paramètre | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/> in case of deviation*  | <Translate android="true" ids="recalculate_route_distance_promo"/>  | If [Voice prompts](../guidance/voice-navigation.md#voice-settings) are turned on, OsmAnd announces, that the route is being recalculated. |
-|  *Recalculate route in case of reverse direction*  | Your route will be recalculated if you move to the starting point.  |  With this setting turned off, movement to the starting point is not considered a deviation from the path (as long as it follows the calculated route).  |
+| *<Translate android="true" ids="route_recalculation_dist_title"/> en cas de déviation* | <Translate android="true" ids="recalculate_route_distance_promo"/> | Si les [Invites vocales](../guidance/voice-navigation.md#voice-settings) sont activées, OsmAnd annonce que l'itinéraire est en cours de recalcul. |
+| *Recalculer l'itinéraire en cas de direction inverse* | Votre itinéraire sera recalculé si vous vous dirigez vers le point de départ. | Avec ce paramètre désactivé, le mouvement vers le point de départ n'est pas considéré comme une déviation du chemin (tant qu'il suit l'itinéraire calculé). |
 
 
-### Development Settings
+### Paramètres de développement
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *Menu → Settings → app profile → Navigation settings → Route parameters → Development*
+Aller à : *Android* *Menu → Paramètres → profil de l'application → Paramètres de navigation → Paramètres de l'itinéraire → Développement*
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_development_1_andr.png)
 
@@ -149,33 +149,33 @@ Go to: *Android* *Menu → Settings → app profile → Navigation settings → 
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *Menu → Settings → app profile → Navigation settings → Route parameters → Development*
+Aller à : *iOS* *Menu → Paramètres → profil de l'application → Paramètres de navigation → Paramètres de l'itinéraire → Développement*
 
 ![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_development_1_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-The parameters in the **Development** section are mainly for advanced users and are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.  
+Les paramètres de la section **Développement** sont principalement destinés aux utilisateurs avancés et ne sont disponibles que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé.
 
-| Parameter | Description | Note |
+| Paramètre | Description | Note |
 |:------------|:---------------|
-| *Routing type* (*Android*) / *Routing algorithm* (*iOS*) | <ul><li>**A*** 2-phase (*Android*) / **A*** (*iOS*) adds an extra phase to the default algorithm to improve the quality of the calculated route. This option can be useful for finding routes in large and complex road networks, but route calculation may take longer.</li><li>**A* classic** (*Android*) / **Highway hierarchies** (*iOS*) optimize route planning by favoring main roads and motorways, minimizing the number of turns and junctions on the route. Particularly effective over long distances.</li><li>**HH (Highway Hierarchies) x Java** (*Android only*) is based on the implementation of hierarchical data structures to optimize pathfinding on a map, taking into account runtime constraints and device resource consumption, and is realized on the Java platform.</li><li>**HH (Highway Hierarchies) x C++** (*Android only*) is an algorithm that uses the C++ programming language to efficiently process road network data and build optimal routes using hierarchical data structures. It is optimized for fast processing of large amounts of data and is particularly effective for navigating maps with many road networks.</li></ul> |  
-| *GPX approximation* (*Android only*)  | <ul><li>**Routing-based** GPX approximation in **C++ and Java** uses route data to approximate GPS tracks with existing road routes, which improves track accuracy and reduces track size.</li><li>**Geometry-based** GPX approximations in **C++ and Java** work based on geometric principles to quickly and accurately approximate GPS tracks, allowing efficient processing of large amounts of data.</li></ul> |
-| *Auto zoom* | <ul><li>**Discrete** allows you to zoom in on the map to a specific level of detail measured in a few discrete steps.</li><li>**Smooth** provides a gradual change in map scale with smooth animation effects without jerks or jumps.</li></ul> |
-| *<Translate android="true" ids="use_live_routing"/>* (*Android only*)  | Use [OsmAnd Live updates](../../personal/maps-resources.md#osmand-live) while routing. Note, that we recommend using this option for testing purposes only.  |
+| *Type de routage* (*Android*) / *Algorithme de routage* (*iOS*) | <ul><li>**A*** 2 phases (*Android*) / **A*** (*iOS*) ajoute une phase supplémentaire à l'algorithme par défaut pour améliorer la qualité de l'itinéraire calculé. Cette option peut être utile pour trouver des itinéraires dans des réseaux routiers vastes et complexes, mais le calcul de l'itinéraire peut prendre plus de temps.</li><li>**A* classique** (*Android*) / **Hiérarchies autoroutières** (*iOS*) optimisent la planification d'itinéraire en favorisant les routes principales et les autoroutes, minimisant le nombre de virages et de jonctions sur l'itinéraire. Particulièrement efficace sur de longues distances.</li><li>**HH (Highway Hierarchies) x Java** (*Android uniquement*) est basé sur l'implémentation de structures de données hiérarchiques pour optimiser la recherche de chemin sur une carte, en tenant compte des contraintes d'exécution et de la consommation des ressources de l'appareil, et est réalisé sur la plateforme Java.</li><li>**HH (Highway Hierarchies) x C++** (*Android uniquement*) est un algorithme qui utilise le langage de programmation C++ pour traiter efficacement les données du réseau routier et construire des itinéraires optimaux à l'aide de structures de données hiérarchiques. Il est optimisé pour le traitement rapide de grandes quantités de données et est particulièrement efficace pour naviguer sur des cartes avec de nombreux réseaux routiers.</li></ul> |
+| *Approximation GPX* (*Android uniquement*) | <ul><li>L'approximation GPX **basée sur le routage** en **C++ et Java** utilise les données d'itinéraire pour approximer les traces GPS avec les itinéraires routiers existants, ce qui améliore la précision de la trace et réduit sa taille.</li><li>Les approximations GPX **basées sur la géométrie** en **C++ et Java** fonctionnent sur la base de principes géométriques pour approximer rapidement et précisément les traces GPS, permettant un traitement efficace de grandes quantités de données.</li></ul> |
+| *Zoom automatique* | <ul><li>**Discret** vous permet de zoomer sur la carte à un niveau de détail spécifique mesuré en quelques étapes discrètes.</li><li>**Lisse** offre un changement progressif de l'échelle de la carte avec des effets d'animation fluides sans à-coups ni sauts.</li></ul> |
+| *<Translate android="true" ids="use_live_routing"/>* (*Android uniquement*) | Utiliser les [mises à jour OsmAnd Live](../../personal/maps-resources.md#osmand-live) pendant le routage. Notez que nous recommandons d'utiliser cette option à des fins de test uniquement. |
 
 <!--
 | Parameter | Description | Note |
 |:------------|:---------------|
-| *<Translate android="true" ids="use_live_routing"/>*  | Allows using [OsmAnd Live updates](../../personal/maps-resources.md#osmand-live) while routing. Note, that we recommend using this option for testing purposes only. |   
-| *<Translate android="true" ids="use_two_phase_routing"/>*  | Adds an extra phase to the default (A*) algorithm to improve the quality of the calculated route. This option may be useful for finding routes in large and complex road networks, although it may take more time for route calculation. |  
-| *<Translate android="true" ids="use_fast_recalculation"/>* | <Translate android="true" ids="use_fast_recalculation_desc"/>  |   
+| *<Translate android="true" ids="use_live_routing"/>*  | Allows using [OsmAnd Live updates](../../personal/maps-resources.md#osmand-live) while routing. Note, that we recommend using this option for testing purposes only. |
+| *<Translate android="true" ids="use_two_phase_routing"/>*  | Adds an extra phase to the default (A*) algorithm to improve the quality of the calculated route. This option may be useful for finding routes in large and complex road networks, although it may take more time for route calculation. |
+| *<Translate android="true" ids="use_fast_recalculation"/>* | <Translate android="true" ids="use_fast_recalculation_desc"/>  |
 -->
 
 
-## Voice Prompts
+## Invites vocales
 
 <Tabs groupId="operating-systems">
 
@@ -199,22 +199,22 @@ The parameters in the **Development** section are mainly for advanced users and 
 
 </Tabs>
 
-The first part of the *[Voice Prompts / Notifications](./voice-navigation.md)* article describes how to set up voice prompts in detail.  
+La première partie de l'article *[Invites vocales / Notifications](./voice-navigation.md)* décrit en détail comment configurer les invites vocales.
 
-Audio instructions during navigation help you as a driver or pedestrian get to your destination while [navigating a selected route](../setup/route-navigation.md). They contain information about turns, driving directions, road signs, distances to your destination, and other factors that may affect your navigation.  
+Les instructions audio pendant la navigation vous aident, en tant que conducteur ou piéton, à atteindre votre destination tout en [naviguant sur un itinéraire sélectionné](../setup/route-navigation.md). Elles contiennent des informations sur les virages, les directions de conduite, les panneaux de signalisation, les distances jusqu'à votre destination et d'autres facteurs susceptibles d'affecter votre navigation.
 
-If you select a track as your destination point, you need to use the [Attach to the roads](../setup/gpx-navigation.md#attach-to-roads) option for the voice prompts to work correctly.
+Si vous sélectionnez une trace comme point de destination, vous devez utiliser l'option [Attacher aux routes](../setup/gpx-navigation.md#attach-to-roads) pour que les invites vocales fonctionnent correctement.
 
-*Voice prompts* allow you to focus on the road and not be distracted by the map or navigation device. They also improve driving safety, reduce the time it takes to navigate unfamiliar terrain, and can be useful for different [types of routes](../routing/osmand-routing.md#routing-types).
+Les *invites vocales* vous permettent de vous concentrer sur la route et de ne pas être distrait par la carte ou l'appareil de navigation. Elles améliorent également la sécurité de conduite, réduisent le temps nécessaire pour naviguer en terrain inconnu et peuvent être utiles pour différents [types d'itinéraires](../routing/osmand-routing.md#routing-types).
 
 
-## Screen Alerts
+## Alertes d'écran
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_andr.png)
 
@@ -222,47 +222,47 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_pr
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-The **Screen alert** navigation setting enable the [**Alerts Widget**](../../widgets/nav-widgets.md#alert-widget). *Details:*
+Le paramètre de navigation **Alerte d'écran** active le [**Widget d'alertes**](../../widgets/nav-widgets.md#alert-widget). *Détails :*
 
-- When you approach one of the supported obstacles on the road, notifications appear in the lower-left corner of the map.
-- If you configure the [*voice and text prompts*](../../navigation/guidance/voice-navigation.md) available in the OsmAnd app, you'll have a more comfortable and safer trip.
-- The appearance and timing of the prompts depend on your speed settings. You can find them [here](../../../technical/algorithms/voice-prompt-triggering.md).  
-- The behavior of *Screen Alerts* is also affected by the [Show points along the route](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route) setting.
+- Lorsque vous approchez de l'un des obstacles pris en charge sur la route, des notifications apparaissent dans le coin inférieur gauche de la carte.
+- Si vous configurez les [*invites vocales et textuelles*](../../navigation/guidance/voice-navigation.md) disponibles dans l'application OsmAnd, vous aurez un voyage plus confortable et plus sûr.
+- L'apparence et le moment des invites dépendent de vos paramètres de vitesse. Vous pouvez les trouver [ici](../../../technical/algorithms/voice-prompt-triggering.md).
+- Le comportement des *Alertes d'écran* est également affecté par le paramètre [Afficher les points le long de l'itinéraire](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route).
 
-You can ***select which alerts*** you want to see on the app screen while navigating:
+Vous pouvez ***sélectionner les alertes*** que vous souhaitez voir sur l'écran de l'application pendant la navigation :
 
-- **Speed limit** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Speed_limits)). In the Screen alerts setting, the *Speed limit* is only displayed on the screen with *Traffic warnings* turned on. If you want to see speed limits during navigation without other warnings, use the [widget](../../widgets/nav-widgets.md#speed-limit).
-- **Traffic warnings** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Additional information can be found in the article [Map screen during navigation](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
-- **Pedestrian crosswalks** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
-- **Speed cameras** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). For more information about the Speed camera setting in OsmAnd, read [Alert Types](../../widgets/nav-widgets.md#alert-types) and the article *Global settings*, section [Legal](../../personal/global-settings.md#legal).
-- **Tunnels** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
+- **Limite de vitesse** ([Infos OSM Wiki](https://wiki.openstreetmap.org/wiki/Speed_limits)). Dans le paramètre Alertes d'écran, la *Limite de vitesse* n'est affichée à l'écran que si les *Avertissements de circulation* sont activés. Si vous souhaitez voir les limites de vitesse pendant la navigation sans autres avertissements, utilisez le [widget](../../widgets/nav-widgets.md#speed-limit).
+- **Avertissements de circulation** ([Infos OSM Wiki](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Des informations supplémentaires peuvent être trouvées dans l'article [Écran de la carte pendant la navigation](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
+- **Passages piétons** ([Infos OSM Wiki](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
+- **Radars** ([Infos OSM Wiki](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). Pour plus d'informations sur le paramètre Radar dans OsmAnd, lisez [Types d'alertes](../../widgets/nav-widgets.md#alert-types) et l'article *Paramètres généraux*, section [Légal](../../personal/global-settings.md#legal).
+- **Tunnels** ([Infos OSM Wiki](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
 
 :::note
-The types of warnings have a different visual appearance, which depends on the travel region. OsmAnd does not aim to present 100% identical road signs but points out some similarities.  
+Les types d'avertissements ont une apparence visuelle différente, qui dépend de la région de voyage. OsmAnd ne vise pas à présenter des panneaux de signalisation 100% identiques, mais souligne certaines similitudes.
 :::
 
 
-## Map During Navigation
+## Carte pendant la navigation
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*
 
 </TabItem>
 
@@ -270,42 +270,42 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)
 
-The **map is used during navigation** to determine your location, plan your route, and land orientation. During navigation, you can view the map with *auto-center*, move it around, and *zoom in and out* to see the required area. The map can also display markers indicating points of interest, routes, weather conditions, road signs, and other objects to help you navigate. The map can be updated in *real-time* and displays *up-to-date information* that can affect route planning.
+La **carte est utilisée pendant la navigation** pour déterminer votre position, planifier votre itinéraire et vous orienter. Pendant la navigation, vous pouvez visualiser la carte avec *auto-centrage*, la déplacer et *zoomer/dézoomer* pour voir la zone requise. La carte peut également afficher des marqueurs indiquant les points d'intérêt, les itinéraires, les conditions météorologiques, les panneaux de signalisation et d'autres objets pour vous aider à naviguer. La carte peut être mise à jour en *temps réel* et affiche des *informations à jour* qui peuvent affecter la planification de l'itinéraire.
 
-You can learn how the behavior of the map changes during navigation in the article [Map screen during navigation](../guidance/map-during-navigation.md).  
+Vous pouvez apprendre comment le comportement de la carte change pendant la navigation dans l'article [Écran de la carte pendant la navigation](../guidance/map-during-navigation.md).
 
-## Customize Route Line
+## Personnaliser la ligne d'itinéraire
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
+Aller à : *Android* *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-With the **Customize Route Line** setting, you can choose the appearance of the route line that will be visible on the map during navigation. You can select the *color*, the *width of the line*, and the display of the *turn arrows* on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Map screen during navigation* in the section [Route line appearance](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
+Avec le paramètre **Personnaliser la ligne d'itinéraire**, vous pouvez choisir l'apparence de la ligne d'itinéraire qui sera visible sur la carte pendant la navigation. Vous pouvez sélectionner la *couleur*, la *largeur de la ligne* et l'affichage des *flèches de virage* dessus. Pour chaque profil, vous pouvez choisir une vue de ligne différente. Tous ces paramètres sont décrits en détail dans l'article *Écran de la carte pendant la navigation* dans la section [Apparence de la ligne d'itinéraire](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
 
 
-## Vehicle Parameters
+## Paramètres du véhicule
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
@@ -313,31 +313,31 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_pr
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-For optimal route calculation in OsmAnd, you should consider the following vehicle parameters:
+Pour un calcul d'itinéraire optimal dans OsmAnd, vous devez tenir compte des paramètres de véhicule suivants :
 
-1. Set the [*Default Speed* or *Road Speeds*](#default-speed--road-speeds), as the [minimum and maximum speed](#road-speeds) of the vehicle. This will help the application determine the time required to complete the route and allow it to choose the best route, considering the speed limits on different road segments.
-2. Specify the [*type*](#fuel-used-by-motor) of fuel used by the motor. This will allow the app to estimate CO2 emissions.
-3. Enter the [*capacity of your tank*](#fuel-tank-capacity) (*Android*) to accurately track your fuel level and consumption.
-4. Define [*size and weight parameters*](#size-parameters) of your vehicle, which can help the app calculate the optimal route and avoid obstacles on the road due to restrictions.
+1. Définissez la [*Vitesse par défaut* ou les *Vitesses sur route*](#vitesse-par-défaut--vitesses-sur-route), comme la [vitesse minimale et maximale](#vitesses-sur-route) du véhicule. Cela aidera l'application à déterminer le temps nécessaire pour effectuer l'itinéraire et lui permettra de choisir le meilleur itinéraire, en tenant compte des limitations de vitesse sur les différents segments de route.
+2. Spécifiez le [*type*](#carburant-utilisé-par-le-moteur) de carburant utilisé par le moteur. Cela permettra à l'application d'estimer les émissions de CO2.
+3. Entrez la [*capacité de votre réservoir*](#capacité-du-réservoir-de-carburant) (*Android*) pour suivre avec précision votre niveau de carburant et votre consommation.
+4. Définissez les [*paramètres de taille et de poids*](#paramètres-de-taille) de votre véhicule, ce qui peut aider l'application à calculer l'itinéraire optimal et à éviter les obstacles sur la route en raison des restrictions.
 
-Correctly setting the parameters in the OsmAnd app will help you avoid problems when navigating a route, choose the most suitable one according to the type of vehicle and road restrictions, and calculate the time for your trip.
+La configuration correcte des paramètres dans l'application OsmAnd vous aidera à éviter les problèmes lors de la navigation sur un itinéraire, à choisir le plus approprié en fonction du type de véhicule et des restrictions routières, et à calculer le temps de votre voyage.
 
 
-### Size Parameters
+### Paramètres de taille
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
 
@@ -345,7 +345,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_pr
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
@@ -353,47 +353,47 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-Vehicle parameters affect navigation and route construction because they determine the availability of roads, bridges, ferries, dams, and other infrastructure. If the height, width, length, or weight of a vehicle exceeds the permissible values for certain road sections, the OsmAnd navigation system will find an alternative route to avoid obstacles along the way.  
+Les paramètres du véhicule affectent la navigation et la construction de l'itinéraire car ils déterminent la disponibilité des routes, des ponts, des ferries, des barrages et d'autres infrastructures. Si la hauteur, la largeur, la longueur ou le poids d'un véhicule dépasse les valeurs admissibles pour certaines sections de route, le système de navigation OsmAnd trouvera un itinéraire alternatif pour éviter les obstacles en cours de route.
 
-- The units of measurement will correspond to the settings selected in *General settings → [Units & formats](../../personal/profiles.md#units--formats)*.
-- The vehicle parameters can be set manually.
-- If you manually select the vehicle measurement parameter, the application will offer you the closest value from the ready-made list. This is necessary to avoid errors and build the route more correctly.
-- You can choose vehicle parameters from a ready-made list of sizes.
-- Do not set the size, *None*, meaning no restrictions on the selected parameter will be applied.  
+- Les unités de mesure correspondront aux paramètres sélectionnés dans *Paramètres généraux → [Unités et formats](../../personal/profiles.md#units--formats)*.
+- Les paramètres du véhicule peuvent être définis manuellement.
+- Si vous sélectionnez manuellement le paramètre de mesure du véhicule, l'application vous proposera la valeur la plus proche de la liste prête à l'emploi. Cela est nécessaire pour éviter les erreurs et construire l'itinéraire plus correctement.
+- Vous pouvez choisir les paramètres du véhicule dans une liste de tailles prête à l'emploi.
+- Ne définissez pas la taille sur *Aucun*, ce qui signifie qu'aucune restriction sur le paramètre sélectionné ne sera appliquée.
 
-#### Limits
+#### Limites
 
-**1.** [**<Translate android="true" ids="routing_attr_weight_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> The Weight parameter is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).  
+**1.** [**<Translate android="true" ids="routing_attr_weight_name"/> limite**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> Le paramètre Poids n'est disponible que dans les types de navigation tels que [*Voiture, Camion* et *Moto*](../../navigation/routing/car-based-routing.md).
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
 
-**2.**  [**<Translate android="true" ids="routing_attr_height_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> The Height parameter is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
+**2.** [**<Translate android="true" ids="routing_attr_height_name"/> limite**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> Le paramètre Hauteur n'est disponible que dans les types de navigation tels que *[Voiture, Camion, Moto](../../navigation/routing/car-based-routing.md)* et *[Bateau](../../navigation/routing/boat-navigation.md)*.
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)
 
-**3.** [**<Translate android="true" ids="routing_attr_length_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> The Length parameter is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).  
+**3.** [**<Translate android="true" ids="routing_attr_length_name"/> limite**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> Le paramètre Longueur n'est disponible que dans les types de navigation tels que [*Voiture, Camion* et *Moto*](../../navigation/routing/car-based-routing.md).
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
 
-**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> The Width parameter is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
+**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limite**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> Le paramètre Largeur n'est disponible que dans les types de navigation tels que *[Voiture, Camion, Moto](../../navigation/routing/car-based-routing.md)* et *[Bateau](../../navigation/routing/boat-navigation.md)*.
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
-Limits on vehicle parameters can be important for navigation and road safety. Some of these restrictions may include:  
+Les limites sur les paramètres du véhicule peuvent être importantes pour la navigation et la sécurité routière. Certaines de ces restrictions peuvent inclure :
 
-1. Restrictions on vehicles moving in certain urban areas.  
-2. Restrictions on vehicle movement on specific sections of road, such as where there are bridges, tunnels with limited space, low elevation overpasses, complex turns, or other structures.  
-3. Weight limits per vehicle axle can be especially important for trucks.
-4. Restrictions for vehicles moving in certain conditions, such as high temperatures, wet or snowy roads, at night, or in weather conditions with limited visibility.
+1. Restrictions sur les véhicules circulant dans certaines zones urbaines.
+2. Restrictions sur la circulation des véhicules sur des sections de route spécifiques, par exemple là où il y a des ponts, des tunnels avec un espace limité, des passages inférieurs à faible hauteur, des virages complexes ou d'autres structures.
+3. Les limites de poids par essieu de véhicule peuvent être particulièrement importantes pour les camions.
+4. Restrictions pour les véhicules circulant dans certaines conditions, telles que des températures élevées, des routes mouillées ou enneigées, la nuit ou par temps de visibilité limitée.
 
-These restrictions can be important for navigation and should be considered when planning a route. If a vehicle exceeds the limits, it may result in road safety, infrastructure damage, accident fines, and other legal consequences. Therefore, drivers should carefully examine the route and make sure that the height of their vehicle meets the limits.
+Ces restrictions peuvent être importantes pour la navigation et doivent être prises en compte lors de la planification d'un itinéraire. Si un véhicule dépasse les limites, cela peut entraîner des problèmes de sécurité routière, des dommages aux infrastructures, des amendes en cas d'accident et d'autres conséquences juridiques. Par conséquent, les conducteurs doivent examiner attentivement l'itinéraire et s'assurer que la hauteur de leur véhicule respecte les limites.
 
 
-### Fuel parameters
+### Paramètres de carburant
 
-#### Fuel Used by Motor
+#### Carburant utilisé par le moteur
 
 <Tabs groupId="operating-systems">
 
@@ -411,40 +411,40 @@ These restrictions can be important for navigation and should be considered when
 
 </Tabs>
 
-If you select the engine type in the vehicle parameters, the [***CO2 footprint data***](../../navigation/setup/route-details.md#elevation-info) will be displayed above the graph in [Route Details](../setup/route-details.md).
-Available six fuel types: ***Petrol, Diesel, LPG, CNG, Electric,*** and ***Hybrid***.  
+Si vous sélectionnez le type de moteur dans les paramètres du véhicule, les [***données d'empreinte CO2***](../../navigation/setup/route-details.md#elevation-info) seront affichées au-dessus du graphique dans les [Détails de l'itinéraire](../setup/route-details.md).
+Six types de carburant sont disponibles : ***Essence, Diesel, GPL, GNC, Électrique*** et ***Hybride***.
 
-**Applicability:**
+**Applicabilité :**
 
-The **Fuel used by motor** setting is only available in vehicle-based navigation such as *[Car, Motorcycle, and Truck](../../navigation/routing/car-based-routing.md)*.
+Le paramètre **Carburant utilisé par le moteur** n'est disponible que dans les types de navigation basés sur les véhicules tels que *[Voiture, Moto et Camion](../../navigation/routing/car-based-routing.md)*.
 
 
-#### Fuel tank capacity
+#### Capacité du réservoir de carburant
 
 <InfoAndroidOnly/>
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
 
-The **Fuel tank capacity** parameter allows you to track your vehicle's fuel level and consumption more accurately by providing the total volume of your tank. The unit of measurement for fuel capacity is determined by the settings configured in *Menu → Configure profile → General settings → Units & Formats → Unit of volume*. For detailed guidance on setting Units & Formats, refer to the [Profile (Settings)](https://osmand.net/docs/user/personal/profiles#units--formats) article.
+Le paramètre **Capacité du réservoir de carburant** vous permet de suivre plus précisément le niveau de carburant et la consommation de votre véhicule en fournissant le volume total de votre réservoir. L'unité de mesure de la capacité du réservoir est déterminée par les paramètres configurés dans *Menu → Configurer le profil → Paramètres généraux → Unités et formats → Unité de volume*. Pour des instructions détaillées sur la configuration des Unités et formats, consultez l'article [Profil (Paramètres)](https://osmand.net/docs/user/personal/profiles#units--formats).
 
-OsmAnd supports the following units for capacity:
+OsmAnd prend en charge les unités de capacité suivantes :
 
-- Gallons - **gal**. This abbreviation is used to represent both **Imperial gallons** and **US gallons**, depending on your selected unit preferences.
-- Liters - **l**. The metric unit for capacity.
+- Gallons - **gal**. Cette abréviation est utilisée pour représenter à la fois les **gallons impériaux** et les **gallons américains**, en fonction de vos préférences d'unité sélectionnées.
+- Litres - **l**. L'unité métrique de capacité.
 
-**Applicability:**
+**Applicabilité :**
 
-The **Fuel tank capacity** setting is only available in vehicle-based navigation. For navigation types such as *Bicycle*, *Horseback riding*, *On foot*, and *Ski*, this parameter is not displayed in the Vehicle Parameters.
+Le paramètre **Capacité du réservoir de carburant** n'est disponible que dans la navigation basée sur les véhicules. Pour les types de navigation tels que *Vélo*, *Équitation*, *À pied* et *Ski*, ce paramètre n'est pas affiché dans les Paramètres du véhicule.
 
-By entering the exact capacity of your fuel tank, the app can provide a more tailored experience, including:
+En entrant la capacité exacte de votre réservoir de carburant, l'application peut fournir une expérience plus personnalisée, notamment :
 
-- Precise tracking of remaining fuel based on your consumption.
-- Enhanced route planning with fuel stops optimized according to your tank size.
+- Un suivi précis du carburant restant en fonction de votre consommation.
+- Une planification d'itinéraire améliorée avec des arrêts de ravitaillement optimisés en fonction de la taille de votre réservoir.
 
-To ensure accurate calculations and navigation suggestions, verify that your selected unit matches your tank’s measurement standard.
+Pour garantir des calculs et des suggestions de navigation précis, vérifiez que l'unité sélectionnée correspond à la norme de mesure de votre réservoir.
 
 
-### Default Speed / Road Speeds
+### Vitesse par défaut / Vitesses sur route
 
 <Tabs groupId="operating-systems">
 
@@ -460,24 +460,24 @@ To ensure accurate calculations and navigation suggestions, verify that your sel
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-For all types of navigation the minimum and maximum allowable speed, both by default and by road, can be different, according to certain values ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) and restrictions for vehicles. The speed is also set in certain increments to make the application settings maximum usable. For the *Walking*, *Horseback riding* and *Cycling* profiles, in small increments equivalent to 0.1 km/h ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h.  
-Speed settings determine when [voice announcements](../guidance/voice-navigation.md) are activated.
+Pour tous les types de navigation, la vitesse minimale et maximale autorisée, par défaut et par route, peut être différente, selon certaines valeurs ([Limites de vitesse par défaut](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) et restrictions pour les véhicules. La vitesse est également définie par certains incréments pour rendre les paramètres de l'application utilisables au maximum. Pour les profils *Marche*, *Équitation* et *Cyclisme*, par petits incréments équivalents à 0,1 km/h ([Unités et formats](https://osmand.net/docs/user/personal/profiles#units--formats)), et pour les autres profils, par incréments équivalents à 1 km/h.
+Les paramètres de vitesse déterminent quand les [annonces vocales](../guidance/voice-navigation.md) sont activées.
 
-These parameters are used as speed to estimate the [arrival time](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed cannot be determined from map data:
+Ces paramètres sont utilisés comme vitesse pour estimer l'[heure d'arrivée](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) lorsque la vitesse ne peut pas être déterminée à partir des données cartographiques :
 
-- for the selected profile;
-- if the used roads have no speed limits, which can also affect the routing;
-- if user-generated or imported tracks are selected.
-
-
-#### Default Speed
-
-The **Default speed** is the preset movement speed. It is used to calculate the arrival time and determine the optimal route based on the movement speed that the application considers typical for this mode of transport. For example, car, public transport, pedestrian, or the speed you set manually.
+- pour le profil sélectionné ;
+- si les routes utilisées n'ont pas de limitations de vitesse, ce qui peut également affecter le routage ;
+- si des traces générées par l'utilisateur ou importées sont sélectionnées.
 
 
-#### Road Speeds
+#### Vitesse par défaut
+
+La **Vitesse par défaut** est la vitesse de déplacement prédéfinie. Elle est utilisée pour calculer l'heure d'arrivée et déterminer l'itinéraire optimal en fonction de la vitesse de déplacement que l'application considère comme typique pour ce mode de transport. Par exemple, voiture, transports en commun, piéton, ou la vitesse que vous définissez manuellement.
+
+
+#### Vitesses sur route
 
 <InfoAndroidOnly />
 
@@ -499,63 +499,65 @@ The **Default speed** is the preset movement speed. It is used to calculate the 
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
 :::note
-These settings in iOS are available in *Menu → Settings → app profile → Navigation settings → Route parameters → Road speeds*.
+Ces paramètres dans iOS sont disponibles dans *Menu → Paramètres → profil de l'application → Paramètres de navigation → Paramètres de l'itinéraire → Vitesses sur route*.
 :::
 
 -->
 
-- **Minimum speed**  
-    The setting sets the minimum driving speed for all road types on the route. It increases the priority for roads with a recommended speed lower than the minimum speed.  
-- **Maximum speed**  
-    The setting sets the maximum driving speed and decreases the priority for roads with a possible speed higher than the maximum.
+- **Vitesse minimale**
+Le paramètre définit la vitesse de conduite minimale pour tous les types de routes sur l'itinéraire. Il augmente la priorité pour les routes avec une vitesse recommandée inférieure à la vitesse minimale.
+- **Vitesse maximale**
+Le paramètre définit la vitesse de conduite maximale et diminue la priorité pour les routes avec une vitesse possible supérieure à la vitesse maximale.
 
 
-## Detailed Track Guidance
+## Guidage détaillé de la trace
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>*
 
-![Attach to the roads 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png)    ![Navigation Settings Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
+![Attach to the roads 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png) ![Navigation Settings Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Detailed track guidance*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Guidage détaillé de la trace*
 
-![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_1_ios.png)   ![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
+![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_1_ios.png) ![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-The **Detailed track guidance** feature improves the accuracy of route navigation when using **track-based routes**. When you select a track as the destination, you can enable the [Attach to the roads](../setup/gpx-navigation.md#attach-to-the-roads) setting from the [Follow track](../setup/gpx-navigation.md#follow-track-options) menu. This ensures the track is aligned with existing roads for smoother, more precise navigation.
+La fonction **Guidage détaillé de la trace** améliore la précision de la navigation d'itinéraire lors de l'utilisation d'**itinéraires basés sur des traces**. Lorsque vous sélectionnez une trace comme destination, vous pouvez activer le paramètre [Attacher aux routes](../setup/gpx-navigation.md#attach-to-the-roads) à partir du menu [Suivre la trace](../setup/gpx-navigation.md#follow-track-options). Cela garantit que la trace est alignée avec les routes existantes pour une navigation plus fluide et plus précise.
 
-There are two options for using *Detailed track guidance*:
+Il existe deux options pour utiliser le *Guidage détaillé de la trace* :
 
-- **<Translate android="true" ids="ask_every_time"/>** (*default settings*) – The *Attach to the roads* option will appear in the [Route Details](../setup/route-details.md) section each time a track-based route is calculated. This allows you to decide whether to apply road attachment for each navigation session.
+- **<Translate android="true" ids="ask_every_time"/>** (*paramètres par défaut*) – L'option *Attacher aux routes* apparaîtra dans la section [Détails de l'itinéraire](../setup/route-details.md) chaque fois qu'un itinéraire basé sur une trace est calculé. Cela vous permet de décider d'appliquer ou non l'attachement aux routes pour chaque session de navigation.
 
-- **<Translate android="true" ids="shared_string_always"/>** – The road attachment process will be applied automatically for every *navigation by track* route without requiring manual confirmation.
+- **<Translate android="true" ids="shared_string_always"/>** – Le processus d'attachement aux routes sera appliqué automatiquement pour chaque *navigation par trace* sans nécessiter de confirmation manuelle.
 
-For more information on using track-based navigation, visit [Navigation by Track](../setup/gpx-navigation.md).
+Pour plus d'informations sur l'utilisation de la navigation basée sur les traces, consultez [Navigation par trace](../setup/gpx-navigation.md).
 
 
-## Related Articles
+## Articles connexes
 
-- [Route parameters](../routing/osmand-routing.md#routing-types)
-- [Route preparation](../setup/route-navigation.md)
-- [Navigation by track](../setup/gpx-navigation.md)
-- [Navigation by markers](../setup/markers-navigation.md)
-- [Route details](../setup/route-details.md)
-- [Map screen during navigation](./map-during-navigation.md)
-- [Voice prompts / Notifications](./voice-navigation.md)
+- [Paramètres de l'itinéraire](../routing/osmand-routing.md#routing-types)
+- [Préparation de l'itinéraire](../setup/route-navigation.md)
+- [Navigation par trace](../setup/gpx-navigation.md)
+- [Navigation par marqueurs](../setup/markers-navigation.md)
+- [Détails de l'itinéraire](../setup/route-details.md)
+- [Écran de la carte pendant la navigation](./map-during-navigation.md)
+- [Invites vocales / Notifications](./voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in April 2025*
+> *Cet article a été mis à jour pour la dernière fois en avril 2025*
+
+-- source-hash: blake2s: f6964efd49993fe30aa05f9c925d2fbcb4f659670a2c723f0a5d8d12b13374cf --

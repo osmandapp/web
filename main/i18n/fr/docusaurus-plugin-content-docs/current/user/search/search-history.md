@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Search History
+title:  Historique de recherche
 ---
 
 import Tabs from '@theme/Tabs';
@@ -12,51 +12,20 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-## Overview
+## Aperçu
 
-*Search History* is a record of all searches and locations that you have entered or searched for in the app over the period of use. This tool allows you to easily find and access previously searched locations, which makes navigation easier and saves your time.
+L'*Historique de recherche* est un enregistrement de toutes les recherches et de tous les lieux que vous avez saisis ou recherchés dans l'application au cours de la période d'utilisation. Cet outil vous permet de trouver et d'accéder facilement aux lieux précédemment recherchés, ce qui facilite la navigation et vous fait gagner du temps.
 
-OsmAnd provides several ways to view your search history.  
+OsmAnd propose plusieurs façons de consulter votre historique de recherche.
 
-- The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use).
-- Go to the main Android *Menu → Search → History tab*.
-- When preparing to start a route, tap *Navigation → Set destination → Search field*.
-- Information block in the navigation menu of [route preparation](../navigation/setup/route-navigation.md#navigation-menu) displays a list of recent destination points, which are also part of the search history.
-- Search history is available in [Android Auto](../navigation/auto-car.md#search) and [CarPlay](../navigation/car-play.md#search).
-
-
-## How to Use
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![History search](@site/static/img/search/history_search_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![History search](@site/static/img/search/history_search_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-The search history serves to provide relevant information about your previous actions.
-
-- *Re-search*. You can use the search history to search again for previously searched places or addresses without having to re-enter the query.  
-
-- *Quick access to frequently visited places*. If you visit certain places frequently, such as your home, work, or favorite places, Search History saves those places, providing quick access to them.  
-
-- *Track previous trips*. The search history can be useful for tracking previous trips and routes. You can track routes you have taken before, or [plan your next route](../plan-route/create-route.md) based on previous ones.  
-
-- *Search for places over a certain period of time*. For the Android app, you need to use a long tap, then find the month in which you made the trip, exit the delete menu and set the name in the search field. For the iOS app, the search history list is already divided into blocks by month.
-
-- *Delete entries*. Search History provides the ability to [delete](#delete) previous entries, which can be useful for confidentiality or to keep your history organized.
+- Le [bouton de recherche](../widgets/map-buttons.md#search) est toujours affiché sur la carte, et en appuyant dessus, vous accédez à l'[écran général](#how-to-use) de l'outil.
+- Allez dans le *Menu* Android principal *→ Rechercher → Onglet Historique*.
+- Lorsque vous vous préparez à démarrer un itinéraire, appuyez sur *Navigation → Définir la destination → Champ de recherche*.
+- Le bloc d'informations dans le menu de navigation de la [préparation d'itinéraire](../navigation/setup/route-navigation.md#navigation-menu) affiche une liste des points de destination récents, qui font également partie de l'historique de recherche.
+- L'historique de recherche est disponible dans [Android Auto](../navigation/auto-car.md#search) et [CarPlay](../navigation/car-play.md#search).
 
 
-## History Items
+## Comment utiliser
 
 <Tabs groupId="operating-systems">
 
@@ -74,35 +43,66 @@ The search history serves to provide relevant information about your previous ac
 
 </Tabs>
 
-Each field in the Search History list contains some of the **information** available to the application.
+L'historique de recherche sert à fournir des informations pertinentes sur vos actions précédentes.
 
-- An icon that identifies the type or category of the found object.
-- The object name, location, address, or type query. For tracks, information about the distance, number of waypoints, and time is displayed.
-- Distance from your current location to the point and direction by compass.
+- *Re-recherche*. Vous pouvez utiliser l'historique de recherche pour rechercher à nouveau des lieux ou des adresses précédemment recherchés sans avoir à ressaisir la requête.
+
+- *Accès rapide aux lieux fréquemment visités*. Si vous visitez fréquemment certains lieux, tels que votre domicile, votre lieu de travail ou vos lieux préférés, l'historique de recherche enregistre ces lieux, vous offrant un accès rapide à ceux-ci.
+
+- *Suivre les trajets précédents*. L'historique de recherche peut être utile pour suivre les trajets et les itinéraires précédents. Vous pouvez suivre les itinéraires que vous avez déjà empruntés, ou [planifier votre prochain itinéraire](../plan-route/create-route.md) en fonction des précédents.
+
+- *Rechercher des lieux sur une certaine période*. Pour l'application Android, vous devez utiliser un appui long, puis trouver le mois au cours duquel vous avez effectué le trajet, quitter le menu de suppression et définir le nom dans le champ de recherche. Pour l'application iOS, la liste de l'historique de recherche est déjà divisée en blocs par mois.
+
+- *Supprimer des entrées*. L'historique de recherche offre la possibilité de [supprimer](#delete) les entrées précédentes, ce qui peut être utile pour la confidentialité ou pour organiser votre historique.
 
 
-### Order of Items
+## Éléments de l'historique
 
-- **Recent Items**. The most recent requests or locations are displayed at the top of the list. This allows quick access to recently used items.
-- **Chronological order**. Items in the Search History list are arranged in chronological order, starting with the oldest or earliest entries and ending with the most recent or latest. Old items gradually move down the list as new entries are added, unless old items in the search history have been used, in which case they will be moved to the top of the list.
-- In iOS, the list is sorted by month.
+<Tabs groupId="operating-systems">
 
-### Type of Objects
+<TabItem value="android" label="Android">
 
-The following **types of objects** get into the Search History list:
+![History search](@site/static/img/search/history_search_android.png)
 
-- **Locations**. This can be an address, business name, route number, coordinates, markers, points of interest, OSM notes, or places you tapped on the map.
-- **Tracks and Waypoints**. The list includes tracks you created, recorded, or downloaded that you used in previous routes, and waypoints if you navigated to them separately.
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![History search](@site/static/img/search/history_search_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Chaque champ de la liste de l'historique de recherche contient certaines des **informations** disponibles pour l'application.
+
+- Une icône qui identifie le type ou la catégorie de l'objet trouvé.
+- Le nom de l'objet, l'emplacement, l'adresse ou la requête de type. Pour les traces, des informations sur la distance, le nombre de points de passage et le temps sont affichées.
+- Distance de votre position actuelle au point et direction par boussole.
+
+
+### Ordre des éléments
+
+- **Éléments récents**. Les requêtes ou les lieux les plus récents sont affichés en haut de la liste. Cela permet un accès rapide aux éléments récemment utilisés.
+- **Ordre chronologique**. Les éléments de la liste de l'historique de recherche sont classés par ordre chronologique, en commençant par les entrées les plus anciennes ou les premières et en terminant par les plus récentes ou les dernières. Les anciens éléments descendent progressivement dans la liste à mesure que de nouvelles entrées sont ajoutées, à moins que les anciens éléments de l'historique de recherche n'aient été utilisés, auquel cas ils seront déplacés en haut de la liste.
+- Dans iOS, la liste est triée par mois.
+
+### Type d'objets
+
+Les **types d'objets** suivants entrent dans la liste de l'historique de recherche :
+
+- **Lieux**. Il peut s'agir d'une adresse, d'un nom d'entreprise, d'un numéro de route, de coordonnées, de marqueurs, de points d'intérêt, de notes OSM ou de lieux sur lesquels vous avez appuyé sur la carte.
+- **Traces et points de passage**. La liste comprend les traces que vous avez créées, enregistrées ou téléchargées que vous avez utilisées dans des itinéraires précédents, et les points de passage si vous y avez navigué séparément.
 
 
 ## Actions
 
-In the Search History tool, you can [delete](#delete) unnecessary queries, all at once or by individual items. You can use History [export](#export-and-share). The Android app provides an additional action of [sharing](#share-android) search items as a [GPX](../../technical/osmand-file-formats/osmand-gpx.md) file.  
+Dans l'outil Historique de recherche, vous pouvez [supprimer](#delete) les requêtes inutiles, toutes en même temps ou par éléments individuels. Vous pouvez utiliser l'[exportation](#export-and-share) de l'historique. L'application Android offre une action supplémentaire de [partage](#share-android) d'éléments de recherche sous forme de fichier [GPX](../../technical/osmand-file-formats/osmand-gpx.md).
 
-You can **disable or enable** the display of the entire search history. In this case, the queries are not deleted from the device. In Android, the switch is located on the main screen of the tool on the [History tab](#overview). In iOS, it is located in *Menu → Settings → OsmAnd Settings → History → Search History*.
+Vous pouvez **désactiver ou activer** l'affichage de l'intégralité de l'historique de recherche. Dans ce cas, les requêtes ne sont pas supprimées de l'appareil. Dans Android, l'interrupteur se trouve sur l'écran principal de l'outil dans l'[onglet Historique](#overview). Dans iOS, il se trouve dans *Menu → Paramètres → Paramètres OsmAnd → Historique → Historique de recherche*.
 
 
-### Delete
+### Supprimer
 
 <Tabs groupId="operating-systems">
 
@@ -120,79 +120,81 @@ You can **disable or enable** the display of the entire search history. In this 
 
 </Tabs>
 
-After using OsmAnd for a long time, the *Search History* list can become too long, so deleting search queries helps to clear the list. You can delete queries that are no longer relevant or that you no longer intend to use in the future, which makes it easier to search through the list, especially when you need to find specific search queries quickly.
+Après avoir utilisé OsmAnd pendant une longue période, la liste de l'*Historique de recherche* peut devenir trop longue, de sorte que la suppression des requêtes de recherche permet de vider la liste. Vous pouvez supprimer les requêtes qui ne sont plus pertinentes ou que vous n'avez plus l'intention d'utiliser à l'avenir, ce qui facilite la recherche dans la liste, surtout lorsque vous devez trouver rapidement des requêtes de recherche spécifiques.
 
-You need to **long tap any of the query items in the list** to open the Delete screen.
+Vous devez **appuyer longuement sur l'un des éléments de requête de la liste** pour ouvrir l'écran de suppression.
 
-- *Select or deselect random items* - tap the required item in the list.
-- *Select the period available for deleting*, such as day, last 7 days, or month - check the box with the subheading in the list.
-- *You can delete the entire history* at once by tapping the *Select All* button at the bottom of the screen.
-- *Menu → Settings → OsmAnd settings → History → Actions*. This section contains the **Delete all history** button.
+- *Sélectionner ou désélectionner des éléments aléatoires* - appuyez sur l'élément requis dans la liste.
+- *Sélectionner la période disponible pour la suppression*, telle que le jour, les 7 derniers jours ou le mois - cochez la case avec le sous-titre dans la liste.
+- *Vous pouvez supprimer l'intégralité de l'historique* en une seule fois en appuyant sur le bouton *Tout sélectionner* en bas de l'écran.
+- *Menu → Paramètres → Paramètres OsmAnd → Historique → Actions*. Cette section contient le bouton **Supprimer tout l'historique**.
 
 
-### Export and Share
+### Exporter et partager
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+Allez à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)  
+![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+Allez à : *iOS* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png)  
+![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-There are several available options to export the search history. All files are exported in `.osf` (OsmAnd settings File) format.  
+Plusieurs options sont disponibles pour exporter l'historique de recherche. Tous les fichiers sont exportés au format `.osf` (OsmAnd settings File).
 
-1. *Menu → Settings → OsmAnd settings → History → Search history*.  
-    Export is available using the OsmAnd settings menu. For Android, following this path takes you to the delete screen, where [Share history](#share-android) is available. In the case of iOS, you can select individual items or the entire history on the screen, and after tapping the *Export* button, go to *Local Backup* menu.
+1. *Menu → Paramètres → Paramètres OsmAnd → Historique → Historique de recherche*.
+    L'exportation est disponible via le menu des paramètres OsmAnd. Pour Android, suivre ce chemin vous amène à l'écran de suppression, où le [Partage de l'historique](#share-android) est disponible. Dans le cas d'iOS, vous pouvez sélectionner des éléments individuels ou l'intégralité de l'historique sur l'écran, et après avoir appuyé sur le bouton *Exporter*, accéder au menu *Sauvegarde locale*.
 
-2. *Menu → Settings → OsmAnd settings → History → Actions → Back up as file* (Android).  
-    *Menu → Settings → OsmAnd settings → History → Actions → Export* (iOS).  
-    Tapping these items takes you to the *Import/Export* (Android) or *Local Backup* (iOS) menu. Expand the *My Places* list and find *Search History*. All queries are exported in one file at once.  
+2. *Menu → Paramètres → Paramètres OsmAnd → Historique → Actions → Sauvegarder en tant que fichier* (Android).
+    *Menu → Paramètres → Paramètres OsmAnd → Historique → Actions → Exporter* (iOS).
+    Appuyer sur ces éléments vous amène au menu *Importer/Exporter* (Android) ou *Sauvegarde locale* (iOS). Développez la liste *Mes lieux* et trouvez *Historique de recherche*. Toutes les requêtes sont exportées en un seul fichier à la fois.
 
-3. *Menu → Settings → Import/Export → Export to file* (Android).  
-    *Menu → Settings → Local Backup → Back up as file* (iOS).  
-    You can read more details in the [Import/Export](../personal/import-export.md#export) article.  
+3. *Menu → Paramètres → Importer/Exporter → Exporter vers un fichier* (Android).
+    *Menu → Paramètres → Sauvegarde locale → Sauvegarder en tant que fichier* (iOS).
+    Vous pouvez lire plus de détails dans l'article [Importer/Exporter](../personal/import-export.md#export).
 
-4. [OsmAnd Cloud](../personal/osmand-cloud.md#select-data-to-back-up)  
-    You can use the Cloud to back up your search history. In the *Local Changes* menu or *Settings → Back up data → My Places → Search History*.  
-
-![Settings History](@site/static/img/search/history_search_share_andr.png)  
-
-Exporting items or the entire search history can be useful in the following cases:
-
-- *Backup*. You can back up your search history to save the information before deleting it and restoring it if necessary.
-- *Transferring to another device*. When you change devices, you can use the export function or the Cloud to transfer your search history to a new device without having to search and enter data again.
-- *Analyze and process data*.  You can export your search history for data analysis or use it in other applications.
-- [Share](#share-android) search history with other OsmAnd users.
-
-
-#### Share (Android)
+4. [OsmAnd Cloud](../personal/osmand-cloud.md#select-data-to-back-up)
+    Vous pouvez utiliser le Cloud pour sauvegarder votre historique de recherche. Dans le menu *Modifications locales* ou *Paramètres → Sauvegarder les données → Mes lieux → Historique de recherche*.
 
 ![Settings History](@site/static/img/search/history_search_share_andr.png)
 
-The steps to share search history items are similar to [export](#export-and-share), with the difference that you export the whole history at once as an [osf](../../technical/osmand-file-formats/osmand-osf.md) file, while you can share individual selected files in gpx format.  
+L'exportation d'éléments ou de l'intégralité de l'historique de recherche peut être utile dans les cas suivants :
 
-On the [delete](#delete) screen, select the required items from the Search History list. In the upper-right corner of the screen, there is an icon indicating sharing. Select an available application or action in the list to share.
-
-
-## Related Articles
-
-- [Search All](./search-all.md)
-- [Search Address](./search-address.md)
-- [Search POI](./search-poi.md)
-- [Search Coordinates](./search-coordinates.md)
+- *Sauvegarde*. Vous pouvez sauvegarder votre historique de recherche pour enregistrer les informations avant de les supprimer et les restaurer si nécessaire.
+- *Transfert vers un autre appareil*. Lorsque vous changez d'appareil, vous pouvez utiliser la fonction d'exportation ou le Cloud pour transférer votre historique de recherche vers un nouvel appareil sans avoir à rechercher et à saisir à nouveau les données.
+- *Analyser et traiter les données*. Vous pouvez exporter votre historique de recherche pour l'analyse de données ou l'utiliser dans d'autres applications.
+- [Partager](#share-android) l'historique de recherche avec d'autres utilisateurs d'OsmAnd.
 
 
-> *This article was last updated in July 2024*
+#### Partager (Android)
+
+![Settings History](@site/static/img/search/history_search_share_andr.png)
+
+Les étapes pour partager des éléments de l'historique de recherche sont similaires à l'[exportation](#export-and-share), à la différence que vous exportez l'intégralité de l'historique en une seule fois sous forme de fichier [osf](../../technical/osmand-file-formats/osmand-osf.md), tandis que vous pouvez partager des fichiers sélectionnés individuellement au format gpx.
+
+Sur l'écran de [suppression](#delete), sélectionnez les éléments requis dans la liste de l'historique de recherche. Dans le coin supérieur droit de l'écran, il y a une icône indiquant le partage. Sélectionnez une application ou une action disponible dans la liste pour partager.
+
+
+## Articles connexes
+
+- [Rechercher tout](./search-all.md)
+- [Rechercher une adresse](./search-address.md)
+- [Rechercher un POI](./search-poi.md)
+- [Rechercher des coordonnées](./search-coordinates.md)
+
+
+> *Cet article a été mis à jour pour la dernière fois en juillet 2024*
+
+-- source-hash: blake2s: 453612ac9c35a04b0ba11c79a1840bf0c5dafd10afc3461a8d8413fa9e514840 --

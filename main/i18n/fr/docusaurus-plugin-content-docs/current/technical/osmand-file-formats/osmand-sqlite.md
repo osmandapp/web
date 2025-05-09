@@ -2,31 +2,31 @@
 sidebar_position: 9
 ---
 
-# Tiles SQLite Format - .sqlite
+# Format SQLite des tuiles - .sqlite
 
+Le format SQLite utilisé dans OsmAnd est basé sur le format SQLite "BigPlanet" tel que pris en charge par MOBAC. Dans OsmAnd, nous ajoutons un certain nombre de tables étendant le format :
 
-
-The SQLIte format used in OsmAnd is based on the "BigPlanet" SQLite as supported by MOBAC. In OsmAnd we add a number of tables extending the format:
-
-|Table|Column|Spec and Purpose|
+|Table|Colonne|Spécification et objectif|
 |:----|:-----|:---------------|
-|"info"|"url"|String. URL template to download tiles with zoom ≣ `{z}` ≣ `{0}`, `{x}` ≣ `{1}`, `{y}` ≣ `{2}`, server name ≣ `{rnd}`|
-||"randoms"|String. The names of the mirrors of server. Comma-separated. One of these values will randomly replace the placeholder {rdn} in "url" field.|
-||"referer"|String. HTTP Referer. As used for downloading.|
-||"rule"|String. Supported template:1 (same as empty), wms_tile, yandex_traffic. Adds specific algorithms how tiles will be downloaded. wms_tile is using proxy server such as whoots.mapwarper.net to deal with WMS sources |
-||"useragent"|String. HTTP User Agent. As used for downloading.|
-||"minzoom"|Integer. Min zoom level. Respective integer. (Also inverted in case of BigPlanet).|
-||"maxzoom"|Integer. Max zoom level. Respective integer. (Also inverted in case of BigPlanet).|
-||"ellipsoid"|Integer 0 or 1. 1 for Elliptic Mercator (Yandex tiles). 0 for regular Spheric Web Mercator (OSM, Google maps)|
-||"inverted\_y"|Integer 0 or 1. 1 for inverted Y tile number (Nakarte.me tiles).|
-||"timecolumn"|String "yes" or "no". A tiles table with a "time" column indicates when each tile was retrieved.|
-||"expireminutes"|Integer. Specifies if tiles shall expire after the given number of minutes. They would still be displayed, but also re-downloaded.|
-||"tilenumbering"|String "" or "BigPlanet". If "BigPlanet", zoom will be inverted and calculated as z = 17 - zoom.|
-||"tilesize"| Integer. Empty or 256 or 512, optional, it is used to describe what's the tile size|
-|"tiles"|"x", "y", "z"|Integer. Indicates tile Mercator coordinates. Note that zoom could be inverted for the BigPlanet case.|
-||"image"|Blob of image bytes.|
-||"time"|Integer. Time stamp when image was downloaded.|
+|"info"|"url"|Chaîne de caractères. Modèle d'URL pour télécharger des tuiles avec zoom ≣ `{z}` ≣ `{0}`, `{x}` ≣ `{1}`, `{y}` ≣ `{2}`, nom du serveur ≣ `{rnd}`|
+||"randoms"|Chaîne de caractères. Les noms des miroirs du serveur. Séparés par des virgules. Une de ces valeurs remplacera aléatoirement l'espace réservé {rdn} dans le champ "url".|
+||"referer"|Chaîne de caractères. Référent HTTP. Tel qu'utilisé pour le téléchargement.|
+||"rule"|Chaîne de caractères. Modèle pris en charge : 1 (identique à vide), wms_tile, yandex_traffic. Ajoute des algorithmes spécifiques pour le téléchargement des tuiles. wms_tile utilise un serveur proxy tel que whoots.mapwarper.net pour gérer les sources WMS.|
+||"useragent"|Chaîne de caractères. Agent utilisateur HTTP. Tel qu'utilisé pour le téléchargement.|
+||"minzoom"|Entier. Niveau de zoom minimum. Entier respectif. (Également inversé dans le cas de BigPlanet).|
+||"maxzoom"|Entier. Niveau de zoom maximum. Entier respectif. (Également inversé dans le cas de BigPlanet).|
+||"ellipsoid"|Entier 0 ou 1. 1 pour Mercator elliptique (tuiles Yandex). 0 pour Mercator Web sphérique régulier (OSM, Google maps).|
+||"inverted\_y"|Entier 0 ou 1. 1 pour le numéro de tuile Y inversé (tuiles Nakarte.me).|
+||"timecolumn"|Chaîne de caractères "yes" ou "no". Une table de tuiles avec une colonne "time" indique quand chaque tuile a été récupérée.|
+||"expireminutes"|Entier. Spécifie si les tuiles doivent expirer après le nombre de minutes donné. Elles seraient toujours affichées, mais également re-téléchargées.|
+||"tilenumbering"|Chaîne de caractères "" ou "BigPlanet". Si "BigPlanet", le zoom sera inversé et calculé comme z = 17 - zoom.|
+||"tilesize"| Entier. Vide ou 256 ou 512, facultatif, il est utilisé pour décrire la taille de la tuile.|
+|"tiles"|"x", "y", "z"|Entier. Indique les coordonnées Mercator de la tuile. Notez que le zoom peut être inversé dans le cas de BigPlanet.|
+||"image"|Blob d'octets d'image.|
+||"time"|Entier. Horodatage du téléchargement de l'image.|
 
-This format is also used by Hillshade and Slope files distributed by OsmAnd application.
+Ce format est également utilisé par les fichiers Hillshade et Slope distribués par l'application OsmAnd.
 
-The class supporting this is SQLiteTileSource at or near [https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/resources/SQLiteTileSource.java#L36](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/resources/SQLiteTileSource.java#L36).
+La classe prenant en charge cela est SQLiteTileSource à ou près de [https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/resources/SQLiteTileSource.java#L36](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/resources/SQLiteTileSource.java#L36).
+
+-- source-hash: blake2s: 3fc1f09bdc2161e550f7558068e535f6d206f31a388e535b86a1710bc8413c06 --

@@ -2,18 +2,20 @@
 sidebar_position: 1
 ---
 
-# Begin with OsmAnd
+# Débuter avec OsmAnd
 
-Begin with OsmAnd (OpenStreetMap Automated Navigation Directions): how to install and download maps. Get access to all features via *Main Menu*. First steps also refer to key OsmAnd functionality via simple questions list.
+Débuter avec OsmAnd (OpenStreetMap Automated Navigation Directions) : comment installer et télécharger des cartes. Accédez à toutes les fonctionnalités via le *Menu principal*. Les premières étapes font également référence aux fonctionnalités clés d'OsmAnd via une liste de questions simples.
 
-### [First Steps](./first-steps.md)
+### [Premiers pas](./first-steps.md)
 
-Welcome to OsmAnd! Explore how to download maps, how to configure the application, how to use map and build a route, how to start navigation and how to search points of interest. Get acquainted with key points of OsmAnd Privacy policy and required Permissions.
+Bienvenue sur OsmAnd ! Découvrez comment télécharger des cartes, comment configurer l'application, comment utiliser la carte et construire un itinéraire, comment démarrer la navigation et comment rechercher des points d'intérêt. Prenez connaissance des points clés de la politique de confidentialité d'OsmAnd et des autorisations requises.
 
-### [Download Maps](./download-maps.md)
+### [Télécharger des cartes](./download-maps.md)
 
-Download maps is a necessarily action for further using map and navigation in offline mode. Maps can be downloaded both by browsing through the regions list from the *Main Menu* and by clicking on the needed territory on the map.
+Le téléchargement de cartes est une action nécessaire pour utiliser la carte et la navigation en mode hors ligne. Les cartes peuvent être téléchargées soit en parcourant la liste des régions à partir du *Menu principal*, soit en cliquant sur le territoire souhaité sur la carte.
 
-### [Main Menu](./main-menu.md)
+### [Menu principal](./main-menu.md)
 
-*Main Menu* is a primary list of options available to use in the application. It provides quick access to the profile configuration, global settings, search, personal data, navigation and other features.
+Le *Menu principal* est une liste principale d'options disponibles dans l'application. Il permet un accès rapide à la configuration du profil, aux paramètres globaux, à la recherche, aux données personnelles, à la navigation et à d'autres fonctionnalités.
+
+-- source-hash: blake2s: fe5ee4191e3ef9fde0a236ce8645079c18b09fa7d43a50c60203208d2eac63c4 --

@@ -1,55 +1,57 @@
-# OsmAnd API, SDK - Samples
-In case you want to use OsmAnd as a library for your app, you might consider to use it via SDK or via API. Now these options are available only for Android.
- 
-There are 2 main ways how to reuse OsmAnd power in your app:
-- Android OsmAnd AIDL API
-- Android OsmAnd Full Library SDK
+# API, SDK OsmAnd - Exemples
+Si vous souhaitez utiliser OsmAnd comme bibliothèque pour votre application, vous pouvez envisager de l'utiliser via le SDK ou via l'API. Actuellement, ces options ne sont disponibles que pour Android.
 
-All the code for 2 samples is available in [a single repository](https://github.com/osmandapp/osmand-api-demo).
+Il existe 2 façons principales de réutiliser la puissance d'OsmAnd dans votre application :
+- API Android OsmAnd AIDL
+- SDK Android OsmAnd Full Library
 
-## SDK Examples
+Tout le code pour les 2 exemples est disponible dans [un seul dépôt](https://github.com/osmandapp/osmand-api-demo).
 
-Here is the list of examples how to use SDK inside your product.
+## Exemples SDK
 
-[Simple map](./add_mapview.md) - how to add the map to simple application.
+Voici la liste des exemples d'utilisation du SDK dans votre produit.
 
-## Android OsmAnd AIDL API
-Main concept behind this approach that Target application is communicated with OsmAnd via [AIDL](https://developer.android.com/guide/components/aidl) or intents api. OsmAnd has reach variety of methods supported [AIDL interface](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). There are several apps built using these approach and main concept that app contains several screens and "Go to map" button behind the scene app completely reconfigures OsmAnd and provides callback for main operations such as Navigation, GPS location acquired and also includes UI elements such as widgets / Drawer buttons, so user can navigate from the Map back to the Target API.
+[Carte simple](./add_mapview.md) - comment ajouter la carte à une application simple.
 
-List of APIs is pretty long and you can get acquainted with it inside [Demo App](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk).
+## API Android OsmAnd AIDL
+Le concept principal derrière cette approche est que l'application cible communique avec OsmAnd via [AIDL](https://developer.android.com/guide/components/aidl) ou l'API intents. OsmAnd dispose d'une grande variété de méthodes prises en charge par l'[interface AIDL](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). Plusieurs applications ont été construites en utilisant cette approche et le concept principal est que l'application contient plusieurs écrans et un bouton "Aller à la carte". En arrière-plan, l'application reconfigure complètement OsmAnd et fournit un rappel pour les opérations principales telles que la navigation, l'acquisition de la position GPS, et inclut également des éléments d'interface utilisateur tels que des widgets / boutons de tiroir, afin que l'utilisateur puisse naviguer de la carte vers l'API cible.
 
-**Pros** 
-- No License issues - available for all possible purposes
-- Always supported, versionned & maintained by OsmAnd Team
-- The Easiest integration requires the fewest lines of code
-- Always to not mix OsmAnd logic and App business logic
-- Smallest size (2 MB)
+La liste des API est assez longue et vous pouvez vous familiariser avec elle dans l'[application de démonstration](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk).
 
-**Cons**
-- Requires OsmAnd application to be installed next to your app
-- Limited number of methods comparing to Full Library SDK approach
-- Limited branding capabilities though it could have a branded logo, branded profiles, map styles & etc in the OsmAnd app
-- Not possible to pass code & UI elements to OsmAnd, so all interaction could be done only via switching screens between apps and callbacks
+**Avantages**
+- Pas de problèmes de licence - disponible pour tous les usages possibles
+- Toujours pris en charge, versionné et maintenu par l'équipe OsmAnd
+- L'intégration la plus simple nécessite le moins de lignes de code
+- Toujours ne pas mélanger la logique OsmAnd et la logique métier de l'application
+- Taille la plus petite (2 Mo)
 
-Please check the example on [Github repo](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-api-sample).
+**Inconvénients**
+- Nécessite que l'application OsmAnd soit installée à côté de votre application
+- Nombre limité de méthodes par rapport à l'approche Full Library SDK
+- Capacités de personnalisation limitées, bien qu'il puisse avoir un logo personnalisé, des profils personnalisés, des styles de carte, etc. dans l'application OsmAnd
+- Pas possible de passer du code et des éléments d'interface utilisateur à OsmAnd, donc toute interaction ne peut se faire qu'en basculant entre les écrans des applications et les rappels
 
-## Android OsmAnd Full Library SDK
-OsmAnd Full library reuses complete OsmAnd as a library. Basically All code / All UI fragments is part of that library which gives the freedom to use what's already present in OsmAnd but requires a good understanding how it is possible to combine several layers / services.
+Veuillez consulter l'exemple sur le [dépôt Github](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-api-sample).
 
-**Pros**
-- No need for OsmAnd / OsmAnd+ to be installed 
-- All possible functions / methods from OsmAnd are available to be reused
-- Doesn't require much own code to build a rich application
+## SDK Android OsmAnd Full Library
+La bibliothèque complète OsmAnd réutilise OsmAnd complet comme une bibliothèque. En gros, tout le code / tous les fragments d'interface utilisateur font partie de cette bibliothèque, ce qui donne la liberté d'utiliser ce qui est déjà présent dans OsmAnd, mais nécessite une bonne compréhension de la manière dont il est possible de combiner plusieurs couches / services.
 
-**Cons**
-- No full documentation
-- Strict code License, exactly the same as OsmAnd code itself
-- API that uses OsmAnd servers requires a direct consent from OsmAnd team
-- API is Not stable (cause it's not an API, it's internal library basically)
-- Size 70-150 MB (possible to shrink by removing World basemap 20 MB). Other size manipulation could be done based on the intent of the target app.
+**Avantages**
+- Pas besoin d'installer OsmAnd / OsmAnd+
+- Toutes les fonctions / méthodes possibles d'OsmAnd sont disponibles pour être réutilisées
+- Ne nécessite pas beaucoup de code propre pour construire une application riche
 
-Please check the example on [Github repo](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-map-sample).
-Demo app [OsmAnd-map-sample.apk](https://download.osmand.net/latest-night-build/OsmAnd-map-sample.apk).
+**Inconvénients**
+- Pas de documentation complète
+- Licence de code stricte, exactement la même que le code OsmAnd lui-même
+- L'API qui utilise les serveurs OsmAnd nécessite un consentement direct de l'équipe OsmAnd
+- L'API n'est pas stable (car ce n'est pas une API, c'est une bibliothèque interne en gros)
+- Taille 70-150 Mo (possible de réduire en supprimant la carte de base mondiale 20 Mo). D'autres manipulations de taille peuvent être effectuées en fonction de l'intention de l'application cible.
 
-## License
-You might want to double check [OsmAnd's License](https://osmand.net/help-online/license) and [complete version](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE).
+Veuillez consulter l'exemple sur le [dépôt Github](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-map-sample).
+Application de démonstration [OsmAnd-map-sample.apk](https://download.osmand.net/latest-night-build/OsmAnd-map-sample.apk).
+
+## Licence
+Vous pouvez vérifier la [Licence d'OsmAnd](https://osmand.net/help-online/license) et la [version complète](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE).
+
+-- source-hash: blake2s: d373c89e0e7f09b0745b70d7d102618fd3ed2efcb2858f21231cf9a92d5a3011 --

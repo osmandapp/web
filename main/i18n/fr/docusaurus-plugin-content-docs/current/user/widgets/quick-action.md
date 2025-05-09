@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title:  Quick Action (Custom buttons)
+title:  Action rapide (Boutons personnalisés)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,299 +16,301 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview
+## Aperçu
 
-Quick Action widget is an interactive user interface element that provides fast access to key functions or actions without opening additional settings. This widget is placed on the main map screen and allows you to simplify and speed up interaction with the application, making it more convenient and efficient.  
+Le widget Action rapide est un élément d'interface utilisateur interactif qui offre un accès rapide aux fonctions ou actions clés sans ouvrir de paramètres supplémentaires. Ce widget est placé sur l'écran principal de la carte et vous permet de simplifier et d'accélérer l'interaction avec l'application, la rendant plus pratique et efficace.
 
-![Quick action widget](@site/static/img/widgets/quick_action_widget.png)
+![Widget Action rapide](@site/static/img/widgets/quick_action_widget.png)
 
 
-## Quick Action Widget
+## Widget Action rapide
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
 
-![Quick action widget_android](@site/static/img/widgets/quick_action_widget_android.png)
+![Widget Action rapide_android](@site/static/img/widgets/quick_action_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
 
-![Quick action widget_ios](@site/static/img/widgets/quick_action_widget_ios.png)
+![Widget Action rapide_ios](@site/static/img/widgets/quick_action_widget_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-To use the Quick Action button, you have to enable this widget first.  
+Pour utiliser le bouton Action rapide, vous devez d'abord activer ce widget.
 
 <!--
 - To open the Quick action menu, just tap the button.
 - By default, the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to any part of the screen by long tapping it. -->
 
 
-### Add and Delete Actions
+### Ajouter et supprimer des actions
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Tap Delete (Bin icon on the right top corner) → Select actions*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Appuyer sur Supprimer (icône Corbeille dans le coin supérieur droit) → Sélectionner les actions*
 
-![Quick action widget_android_add](@site/static/img/widgets/quick_action_widget_andr.png)  ![Custom button Android](@site/static/img/widgets/add_action_screen_andr.png)
+![Widget Action rapide_android_add](@site/static/img/widgets/quick_action_widget_andr.png)  ![Bouton personnalisé Android](@site/static/img/widgets/add_action_screen_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Tap Edit (Pencil icon on the right top corner) → Select actions*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Appuyer sur Modifier (icône Crayon dans le coin supérieur droit) → Sélectionner les actions*
 
-![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Custom button Android](@site/static/img/widgets/add_action_screen_ios.png)
+![Widget Action rapide_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Bouton personnalisé Android](@site/static/img/widgets/add_action_screen_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-All actions are organized in the **Add Action** menu and grouped by type. A complete list of actions and their descriptions can be found in the [Action types](#action-types) section.
+Toutes les actions sont organisées dans le menu **Ajouter une action** et regroupées par type. Une liste complète des actions et de leurs descriptions se trouve dans la section [Types d'actions](#action-types).
 
-You can assign one or more [actions](#action-types) to the quick action button. There are two ways to add actions.
+Vous pouvez attribuer une ou plusieurs [actions](#action-types) au bouton d'action rapide. Il existe deux façons d'ajouter des actions.
 
-- **In the Configure screen**. Select a button from the list, and tap the&nbsp;  "**＋**"  &nbsp;button. You need to select the [action type](#action-types) first, and then change its name and [parameters](#actions-in-loop).
-- **In the quick action button panel**. Tap the *Quick Action button* on the map screen. At the end of the list, on the latest screen in the panel, is the "**＋**"  &nbsp;*Add Action* box. Tap it and select an action from the [list of types](#action-types).
+- **Dans l'écran Configurer**. Sélectionnez un bouton dans la liste, et appuyez sur le bouton&nbsp;  "**＋**"  &nbsp;. Vous devez d'abord sélectionner le [type d'action](#action-types), puis modifier son nom et ses [paramètres](#actions-in-loop).
+- **Dans le panneau du bouton d'action rapide**. Appuyez sur le *bouton Action rapide* sur l'écran de la carte. À la fin de la liste, sur le dernier écran du panneau, se trouve la case "**＋**"  &nbsp;*Ajouter une action*. Appuyez dessus et sélectionnez une action dans la [liste des types](#action-types).
 
 
 :::note
 
-- Each action must have a unique name.
-- The screens, labeled numerically as Screen 1, Screen 2, etc., are created automatically when the number of actions in the list increases to 6 items.
+- Chaque action doit avoir un nom unique.
+- Les écrans, numérotés numériquement comme Écran 1, Écran 2, etc., sont créés automatiquement lorsque le nombre d'actions dans la liste augmente jusqu'à 6 éléments.
 
 :::
 
 
-### Action Parameters
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Quick action widget_android_order](@site/static/img/widgets/quick_action_widget_android_order.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Quick action widget_ios_order](@site/static/img/widgets/quick_action_widget_ios_order.png)
-
-</TabItem>
-
-</Tabs>
-
-The actions assigned to a quick action button are grouped into screens. These groups of actions are opened when you tap that button on the map. New screens are automatically created when the list of actions exceeds *6 items*. You can rearrange actions to suit your preferences by following these steps:  
-
-**For Android**.
-
-1. Via configure screen:
-
-    - Go to *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*.
-    - Use *Hold & Drag* on the two vertical lines icon to rearrange actions.
-
-2. Via quick action menu:
-
-    - Open the quick action menu, then long tap *Add Action*.
-    - Use *Hold & Drag* on the two vertical lines icon to rearrange actions.  
-
-**For iOS**.
-
-- Navigate to *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
-- Tap *Edit* (pencil icon), then *Hold & Drag* on the three vertical lines icon to rearrange actions.
-
-#### Actions in Loop
-
-![Custom button Android](@site/static/img/widgets/actions_in_loop_andr.png)  
-
-For some actions, you can assign a list of layers that will change in a circle with each tap: *Map source*, *Map style*, *Overlay*, *Underlay*, *Terrain color scheme*, *Add profile*.
-
-The button allows you to assign a single layer or a list of layers that change circularly when tapped or with an interim dialog.
-
-- **Show an interim dialog**. Displays a dialog with a list of maps.
-- **Do not show an interim dialog**. The map sources change in a defined order.
-
-
-### Change Position on the Map
-
-The *Quick Action* widget appears at the bottom corner of the map screen when you first enable it. You can move the widget to any part of the screen by holding and dragging. For precise and accurate placement of buttons on the map screen, they are automatically aligned to the nearest invisible grid position when dragged.
-
-- **Initial appearance**. By default, the quick action widget is placed in the lower right corner of the map interface.
-
-    ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png)
-
-- **Move the widget**. By long pressing and dragging the widget, you can reposition it on the screen, with automatic column and row alignment.  
-
-    ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png)
-
-- **New placement**. Once moved, the widget will remain in its new position on the map screen until manually adjusted again.
-
-    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png)
-
-- **Multiple [Custom buttons](#custom-buttons)**. You can add multiple quick action buttons to the map screen. These buttons can also be customized and repositioned individually using the same drag-and-drop method.
-
-    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png)
-
-
-### Custom buttons
+### Paramètres d'action
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate android="true" ids="add_button"/>*  
-
-![Custom button Android](@site/static/img/widgets/custom_button_andr.png)  
+![Widget Action rapide_android_order](@site/static/img/widgets/quick_action_widget_android_order.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
-
-![Custom button Android](@site/static/img/widgets/custom_button_ios.png)  
+![Widget Action rapide_ios_order](@site/static/img/widgets/quick_action_widget_ios_order.png)
 
 </TabItem>
 
 </Tabs>
 
-**Custom buttons** are additional buttons on the map that act the same as the *Quick Action* button. You can create a button with one or more actions and display it on the map screen.  Custom buttons are located in the *Configure screen → Buttons → Custom buttons* list. Each button has a profile-independent actions list and should have a unique ***Name***, however, a button could be switched on/off individually for each **profile**.
+Les actions attribuées à un bouton d'action rapide sont regroupées en écrans. Ces groupes d'actions s'ouvrent lorsque vous appuyez sur ce bouton sur la carte. De nouveaux écrans sont automatiquement créés lorsque la liste d'actions dépasse *6 éléments*. Vous pouvez réorganiser les actions selon vos préférences en suivant ces étapes :
 
-All available [actions](#action-types) are identical to those that can be applied to the default quick action. Custom buttons can be configured as ***Single-action*** buttons, which apply the selected action immediately upon being tapped, without the need to navigate through an extra menu.
+**Pour Android**.
+
+1. Via l'écran de configuration :
+
+    - Aller à *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*.
+    - Utilisez *Maintenir et faire glisser* sur l'icône à deux lignes verticales pour réorganiser les actions.
+
+2. Via le menu d'action rapide :
+
+    - Ouvrez le menu d'action rapide, puis appuyez longuement sur *Ajouter une action*.
+    - Utilisez *Maintenir et faire glisser* sur l'icône à deux lignes verticales pour réorganiser les actions.
+
+**Pour iOS**.
+
+- Naviguez vers *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
+- Appuyez sur *Modifier* (icône crayon), puis *Maintenez et faites glisser* sur l'icône à trois lignes verticales pour réorganiser les actions.
+
+#### Actions en boucle
+
+![Bouton personnalisé Android](@site/static/img/widgets/actions_in_loop_andr.png)
+
+Pour certaines actions, vous pouvez attribuer une liste de couches qui changeront en cercle à chaque appui : *Source de la carte*, *Style de la carte*, *Superposition*, *Sous-couche*, *Schéma de couleurs du terrain*, *Ajouter un profil*.
+
+Le bouton vous permet d'attribuer une seule couche ou une liste de couches qui changent circulairement lorsqu'on appuie dessus ou avec une boîte de dialogue intermédiaire.
+
+- **Afficher une boîte de dialogue intermédiaire**. Affiche une boîte de dialogue avec une liste de cartes.
+- **Ne pas afficher de boîte de dialogue intermédiaire**. Les sources de carte changent dans un ordre défini.
 
 
-### Quick Action Button Appearance
+### Changer la position sur la carte
+
+Le widget *Action rapide* apparaît dans le coin inférieur de l'écran de la carte lorsque vous l'activez pour la première fois. Vous pouvez déplacer le widget vers n'importe quelle partie de l'écran en le maintenant et en le faisant glisser. Pour un placement précis et exact des boutons sur l'écran de la carte, ils sont automatiquement alignés sur la position de grille invisible la plus proche lorsqu'ils sont déplacés.
+
+- **Apparence initiale**. Par défaut, le widget d'action rapide est placé dans le coin inférieur droit de l'interface de la carte.
+
+    ![Vue du widget Action rapide](@site/static/img/widgets/quick_action_widget_view.png)
+
+- **Déplacer le widget**. En appuyant longuement et en faisant glisser le widget, vous pouvez le repositionner sur l'écran, avec un alignement automatique des colonnes et des lignes.
+
+    ![Appuyer sur le widget Action rapide](@site/static/img/widgets/quick_action_widget_tap.png)
+
+- **Nouveau placement**. Une fois déplacé, le widget restera dans sa nouvelle position sur l'écran de la carte jusqu'à ce qu'il soit à nouveau ajusté manuellement.
+
+    ![Déplacer le widget Action rapide](@site/static/img/widgets/quick_action_widget_move.png)
+
+- **Plusieurs [boutons personnalisés](#custom-buttons)**. Vous pouvez ajouter plusieurs boutons d'action rapide à l'écran de la carte. Ces boutons peuvent également être personnalisés et repositionnés individuellement en utilisant la même méthode de glisser-déposer.
+
+    ![Déplacer le widget Action rapide](@site/static/img/widgets/quick_action_widget_multi.png)
+
+
+### Boutons personnalisés
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate android="true" ids="add_button"/>*
+
+![Bouton personnalisé Android](@site/static/img/widgets/custom_button_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*
+
+![Bouton personnalisé Android](@site/static/img/widgets/custom_button_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Les **boutons personnalisés** sont des boutons supplémentaires sur la carte qui fonctionnent de la même manière que le bouton *Action rapide*. Vous pouvez créer un bouton avec une ou plusieurs actions et l'afficher sur l'écran de la carte. Les boutons personnalisés se trouvent dans la liste *Écran de configuration → Boutons → Boutons personnalisés*. Chaque bouton a une liste d'actions indépendante du profil et doit avoir un ***Nom*** unique, cependant, un bouton peut être activé/désactivé individuellement pour chaque **profil**.
+
+Toutes les [actions](#action-types) disponibles sont identiques à celles qui peuvent être appliquées à l'action rapide par défaut. Les boutons personnalisés peuvent être configurés comme des boutons ***à action unique***, qui appliquent l'action sélectionnée immédiatement après avoir été appuyés, sans avoir besoin de naviguer dans un menu supplémentaire.
+
+
+### Apparence du bouton Action rapide
 
 <InfoAndroidOnly/>
 
-![Quick action button appearance](@site/static/img/widgets/qa_button_appearance_andr.png)
+![Apparence du bouton Action rapide](@site/static/img/widgets/qa_button_appearance_andr.png)
 
-You can modify the appearance of Quick Action buttons through: *Menu → Configure screen → Custom buttons → Quick action → three-dot menu → Appearance*. This setting provides options to personalize the button's size, shape, icon, and background opacity, offering greater control over how the buttons look on your screen.  
+Vous pouvez modifier l'apparence des boutons Action rapide via : *Menu → Écran de configuration → Boutons personnalisés → Action rapide → menu à trois points → Apparence*. Ce paramètre offre des options pour personnaliser la taille, la forme, l'icône et l'opacité de l'arrière-plan du bouton, offrant un meilleur contrôle sur l'apparence des boutons sur votre écran.
 
-For detailed customization settings, refer to the [Configure Screen](../widgets/configure-screen.md#button-appearance) article, where you can learn how to fine-tune each button's appearance to match your preferences.
+Pour des paramètres de personnalisation détaillés, consultez l'article [Écran de configuration](../widgets/configure-screen.md#button-appearance), où vous pouvez apprendre à affiner l'apparence de chaque bouton pour qu'elle corresponde à vos préférences.
 
 
-## Action Types
+## Types d'actions
 
-### Configure Map
+### Configurer la carte
 
 | Action | Description |
 |:-------------|:-------------|
-| Show / Hide <br/> [**Routes**](../map/vector-maps.md#routes) | You can select route types to enable or disable their display. <br/> Some routes have additional settings. By default, if you have not selected anything in the [Configure Map](../map/configure-map-menu.md) menu, the first route type from the list will be assigned, otherwise, a type of your choice will be assigned. You can read more in the [Routes](../map/routes.md) article. <br/> - ***Cycle routes***  &nbsp;(*Route*, *Node networks*) <br/> - ***Mountain bike routes***  &nbsp;(*MTB scale*, *IMBA*) <br/> - ***Hiking routes***  &nbsp;(*OSMC*, *Network affiliation*, *Node networks*) <br/> - ***Hiking trails difficulty grade***  &nbsp;(*SAC scale*, *CAI scale*) <br/> - ***Ski slopes*** <br/> - ***Horse routes*** <br/> - ***Whitewater sports*** <br/> - ***Running routes*** <br/> - ***Fitness trails*** <br/> - ***Travel routes***  &nbsp;(*Tracks*, *Travel books*, *Points*) <br/> |
-| Show / Hide <br/> [**Topography layers**](../plugins/topography.md#overview) | All topography data is presented as separate map layers. You can quickly switch the visibility of these layers with Quick Action. <br/> - ***Contour lines*** <br/> - ***Terrain***  &nbsp;(*Depending on the layer selected in the [Configure Map](../map/configure-map-menu.md) menu*, *Hillshade*, *Slope*, or *Altitude* *will be displayed.*) |
-| Change <br/> [**Terrain color scheme**](../plugins/topography.md#modify-color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
-| Show / Hide <br/> [**Weather layers**](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action, you can get quick access to switch the visibility of these layers on the map. <br/> - ***Precipitation layer*** <br/> - ***Cloud layer*** <br/> - ***Pressure layer*** <br/> - ***Wind layer*** <br/> - ***Temperature layer*** |
-| Open <br/> [**Weather screen**](../plugins/weather.md) <br /> *Android only* | Opens the [*Weather* forecast screen](../plugins/weather.md#weather-forecast-screen) with the detailed information. |
-| Show / Hide <br/> [**Favorites**](../personal/favorites.md#view-on-the-map) | Show or hide the favourite points on the map. |
-| Show / Hide <br/> [**Tracks**](../personal/tracks/manage-tracks.md#show-tracks-on-map) | Show or hide the last visible tracks on the map. |
-| Show / Hide <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-poi) | Enable or disable the display of POI layers with selected categories on the map.<br/>You can select multiple POI categories. The action replaces the POI categories from the Configure Map selected without using Quick Actions.  |
-| Change <br/> [**Map mode**](../map/vector-maps.md#map-mode) | Quick access to switch between day and night modes. |
-| Change <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | The button allows you to assign a single map source or a list of source that change circularly when tapped or with an interim dialog. <br/> - *Show an interim dialog*. Displays a dialog with a list of maps. <br/> - *Do not show an interim dialog*. The map sources change in a defined order. <br/> - *Displayed Name* - *Map source* >. ">" after the map name indicates which map source is currently selected. <br/> - *Displayed Name* - > *Next map source*. ">" before the map name indicates what the next selected map source will be if the action is executed. <br/> - *Note*. To change map sources in OsmAnd, you can either set up a single quick action that allows you to switch between multiple map sources, or create several separate quick actions, each for a specific map source. |
-| Show / Hide <br /> [**Public transport**](../map/vector-maps.md#transport) | Enable or disable the public transport map layer <br /> - *Transport type*. On the first tap, you can select one or multiple transport types, including *Transport stops*, *Bus, trolleybus, and shuttle routes*, *Tram and train routes*, *Subway routes*. |
-| Change <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Create a list of map sources as a map overlay and cycle through them. <br /> - *Note*. To change map overlays in OsmAnd, you can either set up a single quick action that allows you to switch between multiple map overlays, or create several separate quick actions, each for a specific map overlay. |
-| Change <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Create a list of map sources as a map underlay and cycle through them. <br /> - *Note*. To change map overlays in OsmAnd, you can either set up a single quick action that allows you to switch between multiple map underlays, or create several separate quick actions, each for a specific map underlay.  |
-| Change <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> - *Note*. To change map styles in OsmAnd, you can either set up a single quick action that allows you to switch between multiple map overlays, or create several separate quick actions, each for a specific map style. |
-| Show / Hide <br/> [**Mapillary layer**](../plugins/mapillary.md) | Allows you to view map layers with street-level imagery provided by Mapillary. |
-| Show / Hide <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | You can select to display or hide all OSM notes on the map with a single tap of the button. |
+| Afficher / Masquer <br/> [**Routes**](../map/vector-maps.md#routes) | Vous pouvez sélectionner les types de routes pour activer ou désactiver leur affichage. <br/> Certaines routes ont des paramètres supplémentaires. Par défaut, si vous n'avez rien sélectionné dans le menu [Configurer la carte](../map/configure-map-menu.md), le premier type de route de la liste sera attribué, sinon, un type de votre choix sera attribué. Vous pouvez en savoir plus dans l'article [Routes](../map/routes.md). <br/> - ***Routes cyclables***  &nbsp;(*Route*, *Réseaux de nœuds*) <br/> - ***Routes VTT***  &nbsp;(*Échelle VTT*, *IMBA*) <br/> - ***Routes de randonnée***  &nbsp;(*Échelle OSMC*, *Affiliation réseau*, *Réseaux de nœuds*) <br/> - ***Difficulté des sentiers de randonnée***  &nbsp;(*Échelle SAC*, *Échelle CAI*) <br/> - ***Pistes de ski*** <br/> - ***Routes équestres*** <br/> - ***Sports d'eau vive*** <br/> - ***Routes de course à pied*** <br/> - ***Parcours de fitness*** <br/> - ***Routes de voyage***  &nbsp;(*Traces*, *Carnets de voyage*, *Points*) <br/> |
+| Afficher / Masquer <br/> [**Couches de topographie**](../plugins/topography.md#overview) | Toutes les données topographiques sont présentées sous forme de couches de carte distinctes. Vous pouvez rapidement basculer la visibilité de ces couches avec Action rapide. <br/> - ***Courbes de niveau*** <br/> - ***Terrain***  &nbsp;(*Selon la couche sélectionnée dans le menu [Configurer la carte](../map/configure-map-menu.md)*, *Ombrage*, *Pente*, ou *Altitude* *sera affiché.*) |
+| Changer <br/> [**Schéma de couleurs du terrain**](../plugins/topography.md#modify-color-scheme) | Vous permet de sélectionner une ou plusieurs palettes dans une liste de palettes existantes, qui changeront lorsque vous appuierez sur le bouton. |
+| Afficher / Masquer <br/> [**Couches météo**](../plugins/weather.md#weather-layers) | Toutes les données météorologiques sont présentées sous forme de couches de carte distinctes. Avec Action rapide, vous pouvez accéder rapidement pour basculer la visibilité de ces couches sur la carte. <br/> - ***Couche de précipitations*** <br/> - ***Couche de nuages*** <br/> - ***Couche de pression*** <br/> - ***Couche de vent*** <br/> - ***Couche de température*** |
+| Ouvrir <br/> [**Écran météo**](../plugins/weather.md) <br /> *Android uniquement* | Ouvre l'[*écran de prévisions météo*](../plugins/weather.md#weather-forecast-screen) avec les informations détaillées. |
+| Afficher / Masquer <br/> [**Favoris**](../personal/favorites.md#view-on-the-map) | Afficher ou masquer les points favoris sur la carte. |
+| Afficher / Masquer <br/> [**Traces**](../personal/tracks/manage-tracks.md#show-tracks-on-map) | Afficher ou masquer les dernières traces visibles sur la carte. |
+| Afficher / Masquer <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-poi) | Activer ou désactiver l'affichage des couches de POI avec les catégories sélectionnées sur la carte.<br/>Vous pouvez sélectionner plusieurs catégories de POI. L'action remplace les catégories de POI sélectionnées dans Configurer la carte sans utiliser les Actions rapides. |
+| Changer <br/> [**Mode carte**](../map/vector-maps.md#map-mode) | Accès rapide pour basculer entre les modes jour et nuit. |
+| Changer <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | Le bouton vous permet d'attribuer une seule source de carte ou une liste de sources qui changent circulairement lorsqu'on appuie dessus ou avec une boîte de dialogue intermédiaire. <br/> - *Afficher une boîte de dialogue intermédiaire*. Affiche une boîte de dialogue avec une liste de cartes. <br/> - *Ne pas afficher de boîte de dialogue intermédiaire*. Les sources de carte changent dans un ordre défini. <br/> - *Nom affiché* - *Source de carte* >. ">" après le nom de la carte indique quelle source de carte est actuellement sélectionnée. <br/> - *Nom affiché* - > *Source de carte suivante*. ">" avant le nom de la carte indique quelle sera la prochaine source de carte sélectionnée si l'action est exécutée. <br/> - *Note*. Pour changer de source de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs sources de carte, soit créer plusieurs actions rapides distinctes, chacune pour une source de carte spécifique. |
+| Afficher / Masquer <br /> [**Transports en commun**](../map/vector-maps.md#transport) | Activer ou désactiver la couche de carte des transports en commun <br /> - *Type de transport*. Au premier appui, vous pouvez sélectionner un ou plusieurs types de transport, y compris *Arrêts de transport*, *Lignes de bus, trolleybus et navette*, *Lignes de tramway et de train*, *Lignes de métro*. |
+| Changer <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Créez une liste de sources de carte en tant que superposition de carte et parcourez-les. <br /> - *Note*. Pour changer les superpositions de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs superpositions de carte, soit créer plusieurs actions rapides distinctes, chacune pour une superposition de carte spécifique. |
+| Changer <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Créez une liste de sources de carte en tant que sous-couche de carte et parcourez-les. <br /> - *Note*. Pour changer les superpositions de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs sous-couches de carte, soit créer plusieurs actions rapides distinctes, chacune pour une sous-couche de carte spécifique. |
+| Changer <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Créez une liste de styles de carte pour les cartes vectorielles et parcourez-les. <br /> - *Note*. Pour changer les styles de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs superpositions de carte, soit créer plusieurs actions rapides distinctes, chacune pour un style de carte spécifique. |
+| Afficher / Masquer <br/> [**Couche Mapillary**](../plugins/mapillary.md) | Vous permet de visualiser les couches de carte avec des images au niveau de la rue fournies par Mapillary. |
+| Afficher / Masquer <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | Vous pouvez choisir d'afficher ou de masquer toutes les notes OSM sur la carte en un seul appui sur le bouton. |
 
 
 ### Interface
 
 | Action | Description |
 |:-------------|:-------------|
-| Navigate <br/> **Previous screen** | A toggle to navigate to the previous screen. |
-| Show / Hide <br/> [**Navigation view**](../navigation/setup/route-navigation.md) | Toggles visibility of the navigation screen view. |
-| Show / Hide <br/> [**Search view**](../search/search-all.md) | Opens or closes the search view. |
-| Show / Hide <br/> [**Side menu**](../start-with/main-menu.md) | Toggles the visibility of the main side menu for accessing core features. |
-| Turn On / Off <br/> [**Touch screen lock**](../map/interact-with-map.md#touch-screen-lock) | Activates or deactivates touch screen locking to avoid unintended screen interactions. |
+| Naviguer <br/> **Écran précédent** | Un bouton pour naviguer vers l'écran précédent. |
+| Afficher / Masquer <br/> [**Vue de navigation**](../navigation/setup/route-navigation.md) | Bascule la visibilité de la vue de l'écran de navigation. |
+| Afficher / Masquer <br/> [**Vue de recherche**](../search/search-all.md) | Ouvre ou ferme la vue de recherche. |
+| Afficher / Masquer <br/> [**Menu latéral**](../start-with/main-menu.md) | Bascule la visibilité du menu latéral principal pour accéder aux fonctionnalités principales. |
+| Activer / Désactiver <br/> [**Verrouillage de l'écran tactile**](../map/interact-with-map.md#touch-screen-lock) | Active ou désactive le verrouillage de l'écran tactile pour éviter les interactions involontaires. |
 
 
-### Map Interactions
-
-| Action | Description |
-|:-------------|:-------------|
-| Map <br/> [**Zoom in**](../map/interact-with-map.md) | Zooming in the map with simultaneously increasing the amount of data displayed. |
-| Map <br/> [**Zoom out**](../map/interact-with-map.md) | Down scaling the map. It is convenient to use with [Developer widget - Zoom level](../widgets/info-widgets.md#developer-widgets). |
-| Move <br/> [**Map down**](../map/interact-with-map.md) | You can use the quick action button to move the map down.  |
-| Move <br/> [**Map up**](../map/interact-with-map.md) | When tapped, the map screen moves up. |
-| Move <br/> [**Map to the left**](../map/interact-with-map.md) | When you tap the button, the map screen moves to the left. |
-| Move <br/> [**Map to the right**](../map/interact-with-map.md) | With a quick action button, you can move the map to the right. |
-| Move <br/> [**To My location**](../map/interact-with-map.md#my-location-and-zoom) | Moves the map to *My location* position. |
-
-
-### My Places
+### Interactions avec la carte
 
 | Action | Description |
 |:-------------|:-------------|
-| Start / Pause <br/> [**Trip recording**](../plugins/trip-recording.md#new-track-recording) | Begin a recording session of the current track or pause to temporarily stop without completing the trip. |
-| Start  <br/> [**New trip segment**](../plugins/trip-recording.md#overview-screen) | Start a new segment of the trip without stopping the overall recording. |
-| Save <br/> [**Recorded Trip & Continue**](../plugins/trip-recording.md#current-track-recording) | Save the current trip recording and continue recording without interruption. |
-| Finish <br/> [**Trip recording**](../plugins/trip-recording.md#current-track-recording) | End the current trip recording session. |
-| Add <br/> [**Favorite**](../map/configure-map-menu.md#map-layers) | Adds a favorite to the selected (central) map location. <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Group*. Adds a favorite to the selected group. <br /> - *Color*. Adds a favorite with a preselected color <br /> - *Name*. Adds a favorite with the specified name prefix.  |
-| Add <br/> [**Track waypoint**](../map/point-layers-on-map.md#track-waypoints) | Adds a new Track waypoint to the [currently recording track](../plugins/trip-recording.md) or [any track in My Places](../personal/tracks/manage-tracks.md). <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Group*. Adds a favorite to the selected group. <br /> - *Color*. Adds a favorite with a preselected color <br /> - *Name*. Adds a favorite with the specified name prefix.  |
-| Add <br/> [**Map marker**](../map/configure-map-menu.md#map-layers) | Adds marker to a selected (center) map location. |
-| Add <br/> [**Parking place**](../plugins/parking.md) | Adds parking to a selected (center) map location. The old parking position is deleted. |
-| Add <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-poi) | Adds POI to a selected (center) map location map (same as context menu action). <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *POI Type* (optional). Preselects the OSM POI type. <br /> - *Tag/Value* (multiple). Adds [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / values |
-| Add <br/> [**OSM Note**](../plugins/osm-editing.md#create--modify-osm-note) | Adds an [OSM note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Message*. Adds a default message to the note. |
-| Add <br/> [**Media notes**](../plugins/audio-video-notes.md) | Starts audio / photo / video note recording for a selected (center) map location. |
-| Create <br/> [**New route**](../plan-route/create-route.md) <br /> *Android only* | Opens the [Plan a route](../plan-route/create-route.md) tool and creates a route for the selected (central) location on the map. |
+| Carte <br/> [**Zoom avant**](../map/interact-with-map.md) | Zoom avant sur la carte avec augmentation simultanée de la quantité de données affichées. |
+| Carte <br/> [**Zoom arrière**](../map/interact-with-map.md) | Réduction de l'échelle de la carte. Il est pratique de l'utiliser avec le [widget Développeur - Niveau de zoom](../widgets/info-widgets.md#developer-widgets). |
+| Déplacer <br/> [**Carte vers le bas**](../map/interact-with-map.md) | Vous pouvez utiliser le bouton d'action rapide pour déplacer la carte vers le bas. |
+| Déplacer <br/> [**Carte vers le haut**](../map/interact-with-map.md) | Lorsque vous appuyez, l'écran de la carte se déplace vers le haut. |
+| Déplacer <br/> [**Carte vers la gauche**](../map/interact-with-map.md) | Lorsque vous appuyez sur le bouton, l'écran de la carte se déplace vers la gauche. |
+| Déplacer <br/> [**Carte vers la droite**](../map/interact-with-map.md) | Avec un bouton d'action rapide, vous pouvez déplacer la carte vers la droite. |
+| Déplacer <br/> [**Vers Ma position**](../map/interact-with-map.md#my-location-and-zoom) | Déplace la carte vers la position *Ma position*. |
+
+
+### Mes lieux
+
+| Action | Description |
+|:-------------|:-------------|
+| Démarrer / Mettre en pause <br/> [**Enregistrement de trajet**](../plugins/trip-recording.md#new-track-recording) | Commencer une session d'enregistrement de la trace actuelle ou mettre en pause pour arrêter temporairement sans terminer le trajet. |
+| Démarrer <br/> [**Nouveau segment de trajet**](../plugins/trip-recording.md#overview-screen) | Démarrer un nouveau segment du trajet sans arrêter l'enregistrement global. |
+| Enregistrer <br/> [**Trajet enregistré et continuer**](../plugins/trip-recording.md#current-track-recording) | Enregistrer l'enregistrement de trajet actuel et continuer l'enregistrement sans interruption. |
+| Terminer <br/> [**Enregistrement de trajet**](../plugins/trip-recording.md#current-track-recording) | Terminer la session d'enregistrement de trajet actuelle. |
+| Ajouter <br/> [**Favori**](../map/configure-map-menu.md#map-layers) | Ajoute un favori à l'emplacement de carte sélectionné (central). <br /> - *Afficher une boîte de dialogue intermédiaire*. Affiche une boîte de dialogue de confirmation. <br /> - *Groupe*. Ajoute un favori au groupe sélectionné. <br /> - *Couleur*. Ajoute un favori avec une couleur présélectionnée <br /> - *Nom*. Ajoute un favori avec le préfixe de nom spécifié. |
+| Ajouter <br/> [**Point de passage de trace**](../map/point-layers-on-map.md#track-waypoints) | Ajoute un nouveau point de passage de trace à la [trace en cours d'enregistrement](../plugins/trip-recording.md) ou à [toute trace dans Mes lieux](../personal/tracks/manage-tracks.md). <br /> - *Afficher une boîte de dialogue intermédiaire*. Affiche une boîte de dialogue de confirmation. <br /> - *Groupe*. Ajoute un favori au groupe sélectionné. <br /> - *Couleur*. Ajoute un favori avec une couleur présélectionnée <br /> - *Nom*. Ajoute un favori avec le préfixe de nom spécifié. |
+| Ajouter <br/> [**Marqueur de carte**](../map/configure-map-menu.md#map-layers) | Ajoute un marqueur à un emplacement de carte sélectionné (centre). |
+| Ajouter <br/> [**Place de parking**](../plugins/parking.md) | Ajoute un parking à un emplacement de carte sélectionné (centre). L'ancienne position de parking est supprimée. |
+| Ajouter <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-poi) | Ajoute un POI à un emplacement de carte sélectionné (centre) (identique à l'action du menu contextuel). <br /> - *Afficher une boîte de dialogue intermédiaire*. Affiche une boîte de dialogue de confirmation. <br /> - *Type de POI* (facultatif). Présélectionne le type de POI OSM. <br /> - *Balise/Valeur* (multiple). Ajoute des balises/valeurs [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) |
+| Ajouter <br/> [**Note OSM**](../plugins/osm-editing.md#create--modify-osm-note) | Ajoute une [note OSM](https://wiki.openstreetmap.org/wiki/Notes) <br /> - *Afficher une boîte de dialogue intermédiaire*. Affiche une boîte de dialogue de confirmation. <br /> - *Message*. Ajoute un message par défaut à la note. |
+| Ajouter <br/> [**Notes multimédia**](../plugins/audio-video-notes.md) | Démarre l'enregistrement de notes audio/photo/vidéo pour un emplacement de carte sélectionné (centre). |
+| Créer <br/> [**Nouvel itinéraire**](../plan-route/create-route.md) <br /> *Android uniquement* | Ouvre l'outil [Planifier un itinéraire](../plan-route/create-route.md) et crée un itinéraire pour l'emplacement sélectionné (central) sur la carte. |
 
 
 ### Navigation
 
 | Action | Description |
 |:-------------|:-------------|
-| Add <br/> [**<Translate android="true" ids="quick_action_first_intermediate"/>**](../navigation/setup/route-navigation.md#intermediate-destinations) | You can select the center of the map screen as the first intermediate point. The previous destination remains the same. |
-| Turn On / Off <br/> [**Voice prompts**](../navigation/guidance/voice-navigation.md) | Mute or unmute voice guidance during navigation. |
-| Set <br/> [**Start point**](../navigation/setup/route-navigation.md#set-destinations) | Mark a selected (center) map location as a point of departure. |
-| Set <br/> [**Destination**](../navigation/setup/route-navigation.md#set-destinations) | Add the selected (central) location on the map as a destination. The previous destination becomes the last intermediate point.  |
-| Replace <br/> [**Destination**](../navigation/setup/route-navigation.md#intermediate-destinations) | Set / Replace a selected (center) map location as a destination. The previous destination is deleted. |
-| Turn On /Off <br/> [**Auto-zoom map**](../map/interact-with-map.md) | Enable or disable map auto zoom during navigation. |
-| Start/stop <br/> [**Navigation**](../navigation/setup/route-navigation.md#start--stop-navigation) | Start navigation (if there is a destination point present) or stop navigation. |
-| Pause / Resume <br/> [**Navigation**](../navigation/setup/route-navigation.md#pause--resume-navigation) | Pause / Resume navigation. |
-| Remote <br/> [**Next destination point**](../navigation/setup/route-navigation.md#intermediate-destinations) | Removes next intermediate point, if present, otherwise removes destination and displays finish navigation dialog. Action is inactive if you don't have any destination. |
-| Simulate <br/> [**Location by GPX**](../plugins/development.md#gpx-track-simulation) | Simulates the location and movement of your device using a GPX track. |
+| Ajouter <br/> [**<Translate android="true" ids="quick_action_first_intermediate"/>**](../navigation/setup/route-navigation.md#intermediate-destinations) | Vous pouvez sélectionner le centre de l'écran de la carte comme premier point intermédiaire. La destination précédente reste la même. |
+| Activer / Désactiver <br/> [**Invites vocales**](../navigation/guidance/voice-navigation.md) | Couper ou réactiver le guidage vocal pendant la navigation. |
+| Définir <br/> [**Point de départ**](../navigation/setup/route-navigation.md#set-destinations) | Marquer un emplacement de carte sélectionné (centre) comme point de départ. |
+| Définir <br/> [**Destination**](../navigation/setup/route-navigation.md#set-destinations) | Ajouter l'emplacement sélectionné (central) sur la carte comme destination. La destination précédente devient le dernier point intermédiaire. |
+| Remplacer <br/> [**Destination**](../navigation/setup/route-navigation.md#intermediate-destinations) | Définir / Remplacer un emplacement de carte sélectionné (centre) comme destination. La destination précédente est supprimée. |
+| Activer / Désactiver <br/> [**Zoom automatique de la carte**](../map/interact-with-map.md) | Activer ou désactiver le zoom automatique de la carte pendant la navigation. |
+| Démarrer/arrêter <br/> [**Navigation**](../navigation/setup/route-navigation.md#start--stop-navigation) | Démarrer la navigation (s'il y a un point de destination) ou arrêter la navigation. |
+| Mettre en pause / Reprendre <br/> [**Navigation**](../navigation/setup/route-navigation.md#pause--resume-navigation) | Mettre en pause / Reprendre la navigation. |
+| Supprimer <br/> [**Point de destination suivant**](../navigation/setup/route-navigation.md#intermediate-destinations) | Supprime le point intermédiaire suivant, s'il est présent, sinon supprime la destination et affiche la boîte de dialogue de fin de navigation. L'action est inactive si vous n'avez pas de destination. |
+| Simuler <br/> [**Position par GPX**](../plugins/development.md#gpx-track-simulation) | Simule la position et le mouvement de votre appareil à l'aide d'une trace GPX. |
 
 
-### Settings
+### Paramètres
 
 | Action | Description |
 |:-------------|:-------------|
-| Change <br/> [**App profile**](../personal/profiles.md) | Create a list of application profiles and cycle through them.  <br /> - *Show an interim dialog*. Displays a dialog with a list of profiles. <br /> - *Do not show an interim dialog*. The profiles change in a defined order. <br /> - *Note*. You can customize a single action that allows you to switch between multiple profiles, or create several separate actions, each for a specific profile. |
-| Change <br/> [**App profile to next**](../personal/profiles.md) | Switches to the next profile in the list. |
-| Change <br/> [**App profile to previous**](../personal/profiles.md) | Switches to the previous profile in the list. |
-| Change <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> *Android only*  | Allows you to set the placement of the *My Location* cursor on the map. Enables or disables the cursor to always be in the center of the screen. |
-| Change <br/> [**Location position on screen**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> *iOS only*  | Allows you to enable or disable the display of the previously selected My Location cursor position on the map. |
+| Changer <br/> [**Profil d'application**](../personal/profiles.md) | Créez une liste de profils d'application et parcourez-les. <br /> - *Afficher une boîte de dialogue intermédiaire*. Affiche une boîte de dialogue avec une liste de profils. <br /> - *Ne pas afficher de boîte de dialogue intermédiaire*. Les profils changent dans un ordre défini. <br /> - *Note*. Vous pouvez personnaliser une seule action qui vous permet de basculer entre plusieurs profils, ou créer plusieurs actions distinctes, chacune pour un profil spécifique. |
+| Changer <br/> [**Profil d'application vers le suivant**](../personal/profiles.md) | Bascule vers le profil suivant dans la liste. |
+| Changer <br/> [**Profil d'application vers le précédent**](../personal/profiles.md) | Bascule vers le profil précédent dans la liste. |
+| Changer <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> *Android uniquement* | Vous permet de définir le placement du curseur *Ma position* sur la carte. Active ou désactive le curseur pour qu'il soit toujours au centre de l'écran. |
+| Changer <br/> [**Position de l'emplacement sur l'écran**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> *iOS uniquement* | Vous permet d'activer ou de désactiver l'affichage de la position du curseur Ma position précédemment sélectionnée sur la carte. |
 
 
-## Use Keyboard for Actions
+## Utiliser le clavier pour les actions
 
 <InfoAndroidOnly />
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
-![External devices](@site/static/img/map/external_custom_2_andr.png)
+![Appareils externes](@site/static/img/map/external_custom_2_andr.png)
 
-Using the Quick Action tool's functionality, you can assign required actions to the keys of your external input device. A description can be found in the [Interact with Map](../map/interact-with-map.md#custom-input-device-type) article.
+En utilisant la fonctionnalité de l'outil Action rapide, vous pouvez attribuer les actions requises aux touches de votre périphérique d'entrée externe. Une description se trouve dans l'article [Interagir avec la carte](../map/interact-with-map.md#custom-input-device-type).
 
 
-## Related Articles
+## Articles connexes
 
-- [Configure Screen](./configure-screen.md)
-- [Map buttons](./map-buttons.md)
-- [Informational widgets](./info-widgets.md)
-- [Navigational widgets](./nav-widgets.md)
-- [Radius-ruler and Ruler](./radius-ruler.md)
-- [Marker widgets](./markers.md)
+- [Écran de configuration](./configure-screen.md)
+- [Boutons de carte](./map-buttons.md)
+- [Widgets d'information](./info-widgets.md)
+- [Widgets de navigation](./nav-widgets.md)
+- [Règle de rayon et Règle](./radius-ruler.md)
+- [Widgets de marqueurs](./markers.md)
 
-> *This article was last updated in April 2025*
+> *Cet article a été mis à jour pour la dernière fois en avril 2025*
+
+-- source-hash: blake2s: f953b48d9c0d7991a8de80efdc7104d4b8ee996aea6dfedafb14348ff4309e96 --

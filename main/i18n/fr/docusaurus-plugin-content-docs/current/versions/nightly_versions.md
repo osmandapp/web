@@ -2,32 +2,34 @@
 sidebar_position: 1
 ---
 
-# Beta & Nightly builds
+# Versions Bêta et Nightly
 
-OsmAnd produces multiple Ready-To-Use builds every day, allowing you to keep track of new features and participate in OsmAnd contributions.
+OsmAnd produit plusieurs versions prêtes à l'emploi chaque jour, ce qui vous permet de suivre les nouvelles fonctionnalités et de participer aux contributions d'OsmAnd.
 
 ## Android
-### Google Play Beta builds
-You can participate in testing OsmAnd beta builds thru Google Play. 
+### Versions Bêta de Google Play
+Vous pouvez participer aux tests des versions bêta d'OsmAnd via Google Play.
 
 <div class="button-row">
   <a class="button button--active" href="https://play.google.com/apps/testing/net.osmand.plus">OsmAnd+</a>
   <a class="button button--active" href="https://play.google.com/apps/testing/net.osmand">OsmAnd</a>
 </div>
 
-### Nightly Builds
-#### OpenGL Build
+### Versions Nightly
+#### Version OpenGL
 
-#### Free version
-OsmAnd-default.apk — nightly version of OsmAnd free. 
+#### Version gratuite
+OsmAnd-default.apk — version nightly d'OsmAnd gratuit.
 <div>
-  <a class="button button--active" href="https://download.osmand.net/latest-night-build/OsmAnd-default.apk">Download</a>
+  <a class="button button--active" href="https://download.osmand.net/latest-night-build/OsmAnd-default.apk">Télécharger</a>
 </div>
 
 ## iOS
 ### TestFlight
-iOS beta (TestFlight) builds are usually provided weekly. They don't have a description and could have continuous versioning. They are supposed to be stable and ready to use.
+Les versions bêta iOS (TestFlight) sont généralement fournies chaque semaine. Elles n'ont pas de description et peuvent avoir une numérotation de version continue. Elles sont censées être stables et prêtes à l'emploi.
 
 <div>
-  <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Join TestFlight</a>
+  <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Rejoindre TestFlight</a>
 </div>
+
+-- source-hash: blake2s: b103ec03d1346af9d4eb23d38cf2c934e195168537f6f6e2e35083562868be22 --

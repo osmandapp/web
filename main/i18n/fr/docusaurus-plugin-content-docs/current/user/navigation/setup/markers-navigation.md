@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Navigate by Markers
+title: Naviguer par marqueurs
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,15 +15,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview
+## Aperçu
 
-[Map markers](../../personal/markers.md) are points on the map marked by flags. They can be used for a variety of purposes, such as to indicate a location that you want to visit, a point of interest that you want to remember, or to create a custom route.  
+Les [marqueurs de carte](../../personal/markers.md) sont des points sur la carte marqués par des drapeaux. Ils peuvent être utilisés à diverses fins, par exemple pour indiquer un lieu que vous souhaitez visiter, un point d'intérêt dont vous souhaitez vous souvenir, ou pour créer un itinéraire personnalisé.
 
-They can be particularly helpful for hikers, bikers, or anyone exploring a new area who wants to mark interesting locations or points of reference on the map. Main difference from [Favorite points](../../personal/favorites.md), Markers are faster to create as they don't require a name.
+Ils peuvent être particulièrement utiles pour les randonneurs, les cyclistes ou toute personne explorant une nouvelle région qui souhaite marquer des lieux intéressants ou des points de référence sur la carte. La principale différence avec les [points favoris](../../personal/favorites.md) est que les marqueurs sont plus rapides à créer car ils ne nécessitent pas de nom.
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Navigation marker Android](@site/static/img/navigation/marker/navigation_marker_android.png)
 
@@ -38,13 +38,13 @@ They can be particularly helpful for hikers, bikers, or anyone exploring a new a
 </Tabs>
 
 
-## Use Markers in Navigation
+## Utiliser les marqueurs dans la navigation
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
- ![Difference marker navigation Android](@site/static/img/navigation/marker/markers_ex_andr_2.png) ![Difference marker navigation Android](@site/static/img/navigation/marker/markers_ex_andr_1.png)
+![Difference marker navigation Android](@site/static/img/navigation/marker/markers_ex_andr_2.png) ![Difference marker navigation Android](@site/static/img/navigation/marker/markers_ex_andr_1.png)
 
 </TabItem>
 
@@ -56,33 +56,33 @@ They can be particularly helpful for hikers, bikers, or anyone exploring a new a
 
 </Tabs>
 
-*Map markers* can serve as [destinations](./route-navigation.md/#set-destinations) while building a route. They are especially convenient when you need to set a route with intermediate points.
+Les *marqueurs de carte* peuvent servir de [destinations](./route-navigation.md/#set-destinations) lors de la construction d'un itinéraire. Ils sont particulièrement pratiques lorsque vous devez définir un itinéraire avec des points intermédiaires.
 
-However *Map markers* also provide various functionality such as [widgets](../../widgets/markers.md), direction of movements, lines on the map, so you could use these tools for navigation without building a route line and entering full voice guidance navigation.
+Cependant, les *marqueurs de carte* offrent également diverses fonctionnalités telles que les [widgets](../../widgets/markers.md), la direction des mouvements, les lignes sur la carte, afin que vous puissiez utiliser ces outils pour la navigation sans construire de ligne d'itinéraire et entrer dans la navigation vocale complète.
 
-In case you need a simple point to point navigation displayed as straight lines, you can build and sort ***Itinerary list*** consisted of markers as intermediate points and use widgets for simple navigation.
+Si vous avez besoin d'une navigation simple point à point affichée sous forme de lignes droites, vous pouvez construire et trier une ***liste d'itinéraires*** composée de marqueurs comme points intermédiaires et utiliser des widgets pour une navigation simple.
 
 
-#### Recommendations
+#### Recommandations
 
-Here are simple recommendation steps to *Navigate by markers*:
+Voici des étapes de recommandation simples pour *Naviguer par marqueurs* :
 
-1. Create markers. Find the desired object(s) on the map, tap it, and choose the *[Marker button](../../personal/markers.md#add-marker-on-the-map)* in the *[map context menu](../../map/map-context-menu.md#add--edit-marker)*. You can also make markers from [favorites](#add-group-of-favorite) or [GPX tracks](#add-group-of-track-waypoints).
-2. [*Sort markers*](#sort-markers) in preferred way you want to pass them
-3. Customise *Map markers view* if you would like to use Markers without starting Navigation. Enable **Arrows on the map** and **Direction line** options in the *[Appearance](../../personal/markers.md#appearance-on-the-map)* section of *[Map markers menu](../../personal/markers.md#map-markers-menu)*.
-4. Add *[Markers widgets](../../personal/markers.md#marker-widgets)* in *[Configure screen menu](../../widgets/configure-screen.md)* (optional).
-5. [*Mark as passed*](#pass-markers) already visited markers or restore them from the history if you want to pass them again.
+1. Créer des marqueurs. Trouvez le(s) objet(s) souhaité(s) sur la carte, appuyez dessus, et choisissez le *[bouton Marqueur](../../personal/markers.md#add-marker-on-the-map)* dans le *[menu contextuel de la carte](../../map/map-context-menu.md#add--edit-marker)*. Vous pouvez également créer des marqueurs à partir de [favoris](#add-group-of-favorite) ou de [traces GPX](#add-group-of-track-waypoints).
+2. [*Trier les marqueurs*](#sort-markers) de la manière préférée pour les passer.
+3. Personnaliser la *vue des marqueurs de carte* si vous souhaitez utiliser les marqueurs sans démarrer la navigation. Activez les options **Flèches sur la carte** et **Ligne de direction** dans la section *[Apparence](../../personal/markers.md#appearance-on-the-map)* du *[menu Marqueurs de carte](../../personal/markers.md#map-markers-menu)*.
+4. Ajouter des *[widgets Marqueurs](../../personal/markers.md#marker-widgets)* dans le *[menu Configurer l'écran](../../widgets/configure-screen.md)* (facultatif).
+5. [*Marquer comme passés*](#pass-markers) les marqueurs déjà visités ou les restaurer de l'historique si vous souhaitez les repasser.
 
 :::note
-When **Arrows on the map** and **Direction line** options are enabled in *Appearance* section of [Map markers menu](../../personal/markers.md#appearance-on-the-map), you will see an arrow or dashed line on the map. The arrow shows the direction to the active marker when it is outside the current map screen. Direction line is drawn when your geolocation and marker are both on the same screen.  
+Lorsque les options **Flèches sur la carte** et **Ligne de direction** sont activées dans la section *Apparence* du [menu Marqueurs de carte](../../personal/markers.md#appearance-on-the-map), vous verrez une flèche ou une ligne pointillée sur la carte. La flèche indique la direction du marqueur actif lorsqu'il est en dehors de l'écran de carte actuel. La ligne de direction est tracée lorsque votre géolocalisation et le marqueur sont tous deux sur le même écran.
 :::
 
 
-## Itinerary List
+## Liste d'itinéraires
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Markers list Android](@site/static/img/navigation/marker/markers_list_andr.png)
 
@@ -97,52 +97,52 @@ When **Arrows on the map** and **Direction line** options are enabled in *Appear
 </Tabs>
 
 
-Itinerary list represents an ordered list of *passable* markers that are visible on the map. You can add and delete points one by one or do it in batch using prepared in advance [GPX file](#add-group-of-track-waypoints) or [Favorite group](#add-group-of-favorite). For local competitions or adventure it might be useful to create a list points from coordinates using [Coordinate input tool](../../plan-route/coordinate-input.md).
+La liste d'itinéraires représente une liste ordonnée de marqueurs *passables* qui sont visibles sur la carte. Vous pouvez ajouter et supprimer des points un par un ou le faire en lot en utilisant un [fichier GPX](#add-group-of-track-waypoints) ou un [groupe de favoris](#add-group-of-favorite) préparé à l'avance. Pour les compétitions locales ou les aventures, il peut être utile de créer une liste de points à partir de coordonnées en utilisant l'[outil de saisie de coordonnées](../../plan-route/coordinate-input.md).
 
 
-### Add Single Markers
+### Ajouter des marqueurs uniques
 
-*Markers* can be added or deleted from the map by single tap the screen at the desired location. Then you need to follow instructions from the *[map context menu](../../map/map-context-menu.md#add--edit-marker)* article.  
+Les *marqueurs* peuvent être ajoutés ou supprimés de la carte en appuyant une seule fois sur l'écran à l'emplacement souhaité. Ensuite, vous devez suivre les instructions de l'article *[menu contextuel de la carte](../../map/map-context-menu.md#add--edit-marker)*.
 
 
-### Add Group of Favorite
+### Ajouter un groupe de favoris
 
 <InfoAndroidOnly />
 
 ![Favorites to markers 1](@site/static/img/navigation/marker/markers_favorites_andr_3.png) ![Favorites to markers 2](@site/static/img/navigation/marker/markers_favorites_andr_2.png)
 
-You can create *Map markers* from *[Favorites](../../personal/favorites.md)* using:
+Vous pouvez créer des *marqueurs de carte* à partir de *[Favoris](../../personal/favorites.md)* en utilisant :
 
-- *[Favorites groups menu](../../personal/favorites.md#add-to-map-markers)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→My Favorites)*.
-- &#128681; icon in the Favorites in-page menu *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→My Favorites→&#128681;)*.
-- **'+'** (add) option  in *[Groups tab](../../personal/markers.md#groups)* in Map markers menu *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.  
+- Le *[menu des groupes de favoris](../../personal/favorites.md#add-to-map-markers)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Mes favoris)*.
+- L'icône &#128681; dans le menu de la page Favoris *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Mes favoris→&#128681;)*.
+- L'option **'+'** (ajouter) dans l'onglet *[Groupes](../../personal/markers.md#groups)* du menu Marqueurs de carte *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
 
 
-### Add Group of Track Waypoints
+### Ajouter un groupe de points de passage de trace
 
 <InfoAndroidOnly />
 
 ![GPX to markers 1](@site/static/img/navigation/marker/track_to_markers_andr.png)
 
-GPX tracks with waypoints can be used as *Map markers* and quickly switched off:
+Les traces GPX avec points de passage peuvent être utilisées comme *marqueurs de carte* et rapidement désactivées :
 
-- Use **'+'** (add) option  in *[Groups tab](../../personal/markers.md#groups)* in Map markers menu *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
-- Turn on switch near track in *[Groups tab](../../personal/markers.md#groups)* in Map markers menu *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Utilisez l'option **'+'** (ajouter) dans l'onglet *[Groupes](../../personal/markers.md#groups)* du menu Marqueurs de carte *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Activez l'interrupteur près de la trace dans l'onglet *[Groupes](../../personal/markers.md#groups)* du menu Marqueurs de carte *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
 
 :::note
-Only tracks with waypoints can be added to the *Map markers list*. The track you intend to add should also be visible (active) on the map.
+Seules les traces avec points de passage peuvent être ajoutées à la *liste des marqueurs de carte*. La trace que vous avez l'intention d'ajouter doit également être visible (active) sur la carte.
 :::
 
 ![GPX to markers 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX to markers 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
 
-- You can also create *Markers* from a track with waypoints using *[track context menu](../../map/tracks/track-context-menu.md#waypoints-folder)*: *Tap a visible track on the map → in the track context menu choose Points → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
+- Vous pouvez également créer des *marqueurs* à partir d'une trace avec points de passage en utilisant le *[menu contextuel de la trace](../../map/tracks/track-context-menu.md#waypoints-folder)* : *Appuyez sur une trace visible sur la carte → dans le menu contextuel de la trace, choisissez Points → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
 
 
-## Sort Markers
+## Trier les marqueurs
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Sort Markers in a list Android](@site/static/img/navigation/marker/sort_markers_andr.png)
 
@@ -156,16 +156,16 @@ Only tracks with waypoints can be added to the *Map markers list*. The track you
 
 </Tabs>
 
-Pressing on a left corner (Android) or right corner (iOS) of a *Map marker* tab in *[Map markers list](../../personal/markers.md#list)* and moving it up or down, you can change its order in *Navigation list* (while moving a marker card you will see a line indicating where the marker will be placed).
+En appuyant sur le coin gauche (Android) ou le coin droit (iOS) d'un onglet *Marqueur de carte* dans la *[liste des marqueurs de carte](../../personal/markers.md#list)* et en le déplaçant vers le haut ou vers le bas, vous pouvez modifier son ordre dans la *liste de navigation* (en déplaçant une carte de marqueur, vous verrez une ligne indiquant où le marqueur sera placé).
 
-In Android version of the OsmAnd app, there are other sorting options for *Map markers* (*<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/> →* *Sort by* or *Plan a route*).
+Dans la version Android de l'application OsmAnd, il existe d'autres options de tri pour les *marqueurs de carte* (*<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/> →* *Trier par* ou *Planifier un itinéraire*).
 
 
-### Sort by Attributes
+### Trier par attributs
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Alternative Markers sorting Android 1](@site/static/img/navigation/marker/sorting_markers_andr_1.png) ![Alternative Markers sorting Android 2](@site/static/img/navigation/marker/sorting_markers_andr_2.png)
 
@@ -179,27 +179,27 @@ In Android version of the OsmAnd app, there are other sorting options for *Map m
 
 </Tabs>
 
-You can sort *Markers* by:
+Vous pouvez trier les *marqueurs* par :
 
-- **Name** (*alphabetically*). If markers have descriptive names, this can be a useful way to quickly find the marker you are looking for.
-- **Distance** (*nearest or farthest first*). This option will sort the markers by their distance from your current location.
-- **Date** (*recently or a long time ago*). This will sort the markers by the date they were added. If you have added a lot of markers over time, this can be a useful way to see which ones are the most recent.
+- **Nom** (*alphabétiquement*). Si les marqueurs ont des noms descriptifs, cela peut être un moyen utile de trouver rapidement le marqueur que vous recherchez.
+- **Distance** (*le plus proche ou le plus éloigné en premier*). Cette option triera les marqueurs par leur distance par rapport à votre position actuelle.
+- **Date** (*récemment ou il y a longtemps*). Cela triera les marqueurs par la date à laquelle ils ont été ajoutés. Si vous avez ajouté de nombreux marqueurs au fil du temps, cela peut être un moyen utile de voir lesquels sont les plus récents.
 
 
-### Reorder with a Plan Route Tool
+### Réorganiser avec l'outil Planifier un itinéraire
 
 <InfoAndroidOnly />
 
 ![Alternative Markers sorting Android 3](@site/static/img/navigation/marker/sorting_markers_andr_3.png) ![Alternative Markers sorting Android 4](@site/static/img/navigation/marker/sorting_markers_andr_4.png)
 
-Using functionality of the Plan a route in Markers list tool you can sort *Markers* *Door-to-door*, put them in reverse order or create a *Round trip*. If you tap a *Navigation* option, *Markers* will be used as [intermediate destinations](../setup/route-navigation.md#intermediate-destinations).
+En utilisant la fonctionnalité de l'outil Planifier un itinéraire dans la liste des marqueurs, vous pouvez trier les *marqueurs* *porte-à-porte*, les mettre dans l'ordre inverse ou créer un *aller-retour*. Si vous appuyez sur l'option *Navigation*, les *marqueurs* seront utilisés comme [destinations intermédiaires](../setup/route-navigation.md#intermediate-destinations).
 
 
-## Pass Markers
+## Passer les marqueurs
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Pass Marker Android 1](@site/static/img/navigation/marker/pass_markers_andr_1.png) ![Pass Marker Android 2](@site/static/img/navigation/marker/pass_markers_andr_2.png)
 
@@ -213,27 +213,29 @@ Using functionality of the Plan a route in Markers list tool you can sort *Marke
 
 </Tabs>
 
-A *Marker* can be marked as passed (*Android*) or dismissed (*iOS*).
+Un *marqueur* peut être marqué comme passé (*Android*) ou ignoré (*iOS*).
 
-- Through the *[map context menu](../../map/map-context-menu.md#add--edit-marker)*.  
-- When you approach the *Marker* at a distance closer than 40 meters (Android) or 50 meters (iOS), a switch in the *[Markers widgets](../../widgets/markers.md#top-bar-widget)* bar becomes active.  
+- Via le *[menu contextuel de la carte](../../map/map-context-menu.md#add--edit-marker)*.
+- Lorsque vous approchez du *marqueur* à une distance inférieure à 40 mètres (Android) ou 50 mètres (iOS), un interrupteur dans la barre des *[widgets Marqueurs](../../widgets/markers.md#top-bar-widget)* devient actif.
 
-After the *Marker* is been passed, it gets into the [History](../../personal/markers.md#history) folder, from where it can be restored if needed. The next marker in the [list](#itinerary-list) became active. Depending on your [settings](#use-markers-in-navigation), you may be guided to it with an arrow or dashed line.
+Une fois le *marqueur* passé, il est placé dans le dossier [Historique](../../personal/markers.md#history), d'où il peut être restauré si nécessaire. Le marqueur suivant dans la [liste](#itinerary-list) devient actif. Selon vos [paramètres](#use-markers-in-navigation), vous pouvez être guidé vers lui par une flèche ou une ligne pointillée.
 
 
-## Related Articles
+## Articles connexes
 
-- [About Map markers](../../personal/markers.md).
-- [Marker widget](../../widgets/markers.md).  
+- [À propos des marqueurs de carte](../../personal/markers.md).
+- [Widget Marqueur](../../widgets/markers.md).
 __
-- [Route parameters](../routing/osmand-routing.md#routing-types)
-- [Route preparation](./route-navigation.md)
-- [Route details](./route-details.md)
-- [Navigation by track](./gpx-navigation.md)
-- [Navigation settings](../guidance/navigation-settings.md)
-- [Map screen during navigation](../guidance/map-during-navigation.md)
-- [Voice prompts / Notifications](../guidance/voice-navigation.md)
+- [Paramètres d'itinéraire](../routing/osmand-routing.md#routing-types)
+- [Préparation d'itinéraire](./route-navigation.md)
+- [Détails d'itinéraire](./route-details.md)
+- [Navigation par trace](./gpx-navigation.md)
+- [Paramètres de navigation](../guidance/navigation-settings.md)
+- [Écran de carte pendant la navigation](../guidance/map-during-navigation.md)
+- [Invites vocales / Notifications](../guidance/voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in June 2024.*
+> *Cet article a été mis à jour pour la dernière fois en juin 2024.*
+
+-- source-hash: blake2s: 3c73f6d35d3497a8d646ecf3bc241fa47e067b1cbf601683230cf58e5cf9e2d2 --

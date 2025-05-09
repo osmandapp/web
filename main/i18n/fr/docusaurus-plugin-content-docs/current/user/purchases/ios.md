@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  iOS Purchases
+title: Achats iOS
 ---
 
 import Tabs from '@theme/Tabs';
@@ -12,9 +12,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## Install OsmAnd (iOS)
+## Installer OsmAnd (iOS)
 
-You can download the app via this link - [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+Vous pouvez télécharger l'application via ce lien - [OsmAnd Maps sur l'App Store d'Apple](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
 <!--
@@ -31,26 +31,26 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 -->
 
 
-### Difference Between Purchases (iOS)
+### Différence entre les achats (iOS)
 
-| Plan | Description | Availability | Notes |
+| Plan | Description | Disponibilité | Notes |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, and *OSM editing/notes*. | Available for all users of the free version of OsmAnd. | Limited to basic cloud features and **5MB** storage. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** that unlocks advanced features for the free OsmAnd app. | Available on [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Can be added to the [Apple Family Sharing](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks additional advanced and [pro features](#pro-features). | Available on [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Supports **cross-platform** access (see note below). |
+| **OsmAnd Start** | Un **plan gratuit** qui donne accès à [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) pour les *Favoris*, les *Paramètres* et l'*édition/notes OSM*. | Disponible pour tous les utilisateurs de la version gratuite d'OsmAnd. | Limité aux fonctionnalités de base du cloud et à **5 Mo** de stockage. |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **achat intégré** ou un **abonnement** qui débloque des fonctionnalités avancées pour l'application gratuite OsmAnd. | Disponible sur l'[App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Peut être ajouté au [Partage familial Apple](https://support.apple.com/en-us/HT201088). |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan d'abonnement** qui débloque des fonctionnalités avancées et [pro supplémentaires](#pro-features). | Disponible sur l'[App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Prend en charge l'accès **multiplateforme** (voir note ci-dessous). |
 
-### Important Notes  
+### Notes importantes
 
-1. **Maps+** is a *premium upgrade* for the free version of OsmAnd, unlocking most features.
+1. **Maps+** est une *mise à niveau premium* pour la version gratuite d'OsmAnd, débloquant la plupart des fonctionnalités.
 
-2. **OsmAnd Pro is a *cross-platform* subscription**. This means you can purchase it on one store (e.g., *AppStore, Google Play, and osmand.net*) and restore it on another by [registering your email as a Pro account](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro est un abonnement *multiplateforme***. Cela signifie que vous pouvez l'acheter sur un magasin (par exemple, *AppStore, Google Play et osmand.net*) et le restaurer sur un autre en [enregistrant votre e-mail en tant que compte Pro](../personal/osmand-cloud.md#cross-platform).
 
-3. You can add **Maps+** to [Apple Family Sharing](https://support.apple.com/en-us/HT201088) to share the purchase with family members.  
+3. Vous pouvez ajouter **Maps+** au [Partage familial Apple](https://support.apple.com/en-us/HT201088) pour partager l'achat avec les membres de votre famille.
 
 
-## Prices
+## Prix
 
-In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
+Dans la liste, vous trouverez des informations sur les prix des produits OsmAnd pour les régions des États-Unis et de l'Europe. Pour les autres régions, les prix sont équivalents dans les devises locales.
 
 <!--
 :::danger Seasonal Sale prices
@@ -72,127 +72,129 @@ In the list, there is information about prices of OsmAnd product for the US and 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **Price (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+| **Type d'achat** | **Gratuit** | **Achat unique** (à vie) | **Abonnement** (12 mois) | **Abonnement** (1 mois / 12 mois) |
+| **Prix (EUR)** | 0 € | 39,99 € | 9,99 € | 2,99 € / 29,99 € |
+| **Prix (USD)** | 0 $ | 39,99 $ | 9,99 $ | 2,99 $ / 29,99 $ |
 
 
-### Free and Paid Features
+### Fonctionnalités gratuites et payantes
 
-|  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(in&#8209;app & subscription) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(achat intégré et abonnement) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
-| [Access without advertising](#free-and-paid-features) | Ad-free | Ad-free | Ad-free |
+| [Accès sans publicité](#free-and-paid-features) | Sans publicité | Sans publicité | Sans publicité |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
-| [All Pro Features](#pro-features) | **-** | **-** | ✔ |
-| [Map downloads](../start-with/download-maps.md) |  <details><summary>**5 map downloads** <br /> (map update counts as download):</summary> <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 5 possibilities to download.</details> | ✔ | ✔ |
-| [Monthly map updates](../personal/maps-resources.md#update-maps) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
-| [Hourly map updates](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-**| ✔ |
+| [Toutes les fonctionnalités Pro](#pro-features) | **-** | **-** | ✔ |
+| [Téléchargements de cartes](../start-with/download-maps.md) |  <details><summary>**5 téléchargements de cartes** <br /> (la mise à jour de carte compte comme un téléchargement) :</summary> <br /> - Le téléchargement ou la mise à jour d'une carte signifie uniquement le téléchargement-mise à jour d'une carte de pays (région).<br /> - La **carte d'aperçu du monde**, la **correction d'altitude du monde**, les **polices de carte** et les **invites vocales** ne sont pas comptées comme 5 possibilités de téléchargement.</details> | ✔ | ✔ |
+| [Mises à jour mensuelles des cartes](../personal/maps-resources.md#update-maps) |  <details><summary>**Une fois par mois** <br /> (avec 2 jours de délai) :</summary> * limité à 5 téléchargements (la mise à jour de carte compte comme un téléchargement) </details> |  ✔ | ✔ |
+| [Mises à jour horaires des cartes](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 heure de délai) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
-| [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
-| [Topography data](../plugins/topography.md#setup)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
-| [3D track visualization](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
-| [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
-| [Travel guides (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
-| [External sensors support](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
-| [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
-| [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
-| [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [Export GPX tracks](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
-| [Import GPX/KML tracks](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
-| [Plan a route tool](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
-| [Map markers tool](../personal/markers.md) | ✔ | ✔ | ✔ |
-| [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [SQLitedb/mbtiles Map support](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
-| [Favorite points](../map/point-layers-on-map.md)<br/>bookmarks and waypoints | ✔ | ✔ | ✔ |
-| [Audio/pic/video points](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
-| [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
-| [Export/import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
+| [Relief 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
+| [Données topographiques](../plugins/topography.md#setup)<br/>(Courbes de niveau et Terrain) | **-** | ✔ | ✔ |
+| [Visualisation de piste 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Profondeurs nautiques](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
+| [Guides de voyage (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
+| [Prise en charge des capteurs externes](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Navigation hors ligne et en ligne](../navigation/index.md)<br/>avec indications virage par virage | ✔ | ✔ | ✔ |
+| [Recherche instantanée hors ligne](../search/index.md) | ✔ | ✔ | ✔ |
+| [Enregistrement de trajet](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
+| [Exporter des pistes GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Importer des pistes GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Outil de planification d'itinéraire](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
+| [Outil de marqueurs de carte](../personal/markers.md) | ✔ | ✔ | ✔ |
+| [Sources de cartes en ligne](../plugins/online-map.md) | ✔ | ✔ | ✔ |
+| [Prise en charge des cartes SQLitedb/mbtiles](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Points favoris](../map/point-layers-on-map.md)<br/>signets et points de passage | ✔ | ✔ | ✔ |
+| [Points audio/photo/vidéo](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
+| [Traqueur GPS en ligne OsmAnd](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
+| [Exporter/importer un profil d'application](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
-#### ** Map updates
+#### ** Mises à jour de carte
 
-[Free](../personal/maps-resources.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
+[Gratuit](../personal/maps-resources.md#free-for-osm-mappers). Les mises à jour en direct et les téléchargements de cartes illimités sont disponibles pour les contributeurs OSM.
 
-### Pro Features
+### Fonctionnalités Pro
 
-![Pro](@site/static/img/svg/pro_icon.svg) *Pro Features* are available for [OsmAnd Pro subscription](#prices). It means you need to have [OsmAnd Pro subscription](#install-osmand-ios).
+![Pro](@site/static/img/svg/pro_icon.svg) Les *fonctionnalités Pro* sont disponibles avec l'[abonnement OsmAnd Pro](#prices). Cela signifie que vous devez avoir un [abonnement OsmAnd Pro](#install-osmand-ios).
 
-At the moment, the Pro subscription has the following features:
+Actuellement, l'abonnement Pro offre les fonctionnalités suivantes :
 
-|  Pro Feature  | Description   |
+| Fonctionnalité Pro | Description |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
-| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | Possibility to use OsmAnd Pro and OsmAnd Start on all platforms (Android ← → iOS → Web). |
-| [3D Relief](../plugins/topography.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
-| [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Allows you to find out the elevation of the current map center above sea level.  |
-| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
-| [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
-| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Sauvegardez et restaurez vos données, synchronisez les données avec le [portail web OsmAnd](https://www.osmand.net/map). |
+| [Multiplateforme](../personal/osmand-cloud.md#cross-platform) | Possibilité d'utiliser OsmAnd Pro et OsmAnd Start sur toutes les plateformes (Android ← → iOS → Web). |
+| [Relief 3D](../plugins/topography.md#3d-relief) | Vous permet d'avoir et d'observer un modèle réduit de votre quartier ou d'un continent entier. |
+| [Widgets d'altitude - Élévation : Centre de la carte](../widgets/info-widgets.md#elevation-map-center) | Vous permet de connaître l'altitude du centre de la carte actuel au-dessus du niveau de la mer. |
+| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | Les cartes OsmAnd sont mises à jour toutes les 15 minutes après une amélioration d'[OpenStreetMap](https://www.openstreetmap.org/). |
+| [Plugin Météo](../plugins/weather.md) | Prévisions horaires sur 24h pour les 7 prochains jours sur la carte. |
+| [Personnaliser la ligne d'itinéraire](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changer la couleur et la largeur de la ligne d'itinéraire pendant la navigation. |
 
 
-### How to Buy
+### Comment acheter
 
-Easy way to choose and buy needed plan by **Purchases** menu. Of course, you see proposal menu for paid features.
+Un moyen simple de choisir et d'acheter le plan nécessaire via le menu **Achats**. Bien sûr, vous verrez un menu de proposition pour les fonctionnalités payantes.
 
-#### OsmAnd Pro Purchase
+#### Achat OsmAnd Pro
 
-![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* subscription plan. Here you can choose [monthly or annual subscription](#prices):
+![Pro](@site/static/img/svg/pro_icon.svg) Plan d'abonnement *OsmAnd Pro*. Ici, vous pouvez choisir un [abonnement mensuel ou annuel](#prices) :
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Continue with OsmAnd Pro*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Continuer avec OsmAnd Pro*
 
-or  
+ou
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continuer avec OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro.png)
+![Plan Pro](@site/static/img/purchases/pro.png)
 
-#### Maps+ Purchase
+#### Achat Maps+
 
-![Maps+](@site/static/img/svg/osmand_maps_plus.svg) *Maps+* subscription / in-app plan. Here you can choose [annual subscription](#prices) or [one-time payment](#prices):
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Plan d'abonnement / achat intégré *Maps+*. Ici, vous pouvez choisir un [abonnement annuel](#prices) ou un [paiement unique](#prices) :
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tap the list of Maps+ features → Continue with Maps+*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Appuyez sur la liste des fonctionnalités Maps+ → Continuer avec Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
-
-
-## Legacy Subscriptions (prior 4.0)
-
-New subscriptions became active from OsmAnd 4.3 (December 2022). All earlier subscriptions are legacy and technically equal to "Maps subscription", though legacy subscriptions are entitled for Hourly Map updates. Users can't buy legacy subscriptions but old subscriptions are automatically renewed until you unsubscribes (the price for them might change in the future).
+![Plan Maps+](@site/static/img/purchases/maps.png)
 
 
-## Restore Purchases
+## Abonnements hérités (avant 4.0)
 
-User can control all purchases and subscription from [Apple account](https://appleid.apple.com/).  
+Les nouveaux abonnements sont devenus actifs à partir d'OsmAnd 4.3 (décembre 2022). Tous les abonnements antérieurs sont hérités et techniquement équivalents à "Abonnement Cartes", bien que les abonnements hérités donnent droit aux mises à jour horaires des cartes. Les utilisateurs ne peuvent pas acheter d'abonnements hérités, mais les anciens abonnements sont automatiquement renouvelés jusqu'à ce que vous vous désabonniez (le prix de ceux-ci pourrait changer à l'avenir).
 
-Use the same Apple ID to restore your purchases.
 
-- Log in to the same Apple App Store account that you used to purchase in-apps(subscriptions) of OsmAnd Maps.
-- Install [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
-- Open OsmAnd Maps with an active Internet connection.
-- To restore purchases follow these steps: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro, Live) is activated.
+## Restaurer les achats
 
-![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
+L'utilisateur peut contrôler tous les achats et abonnements depuis son [compte Apple](https://appleid.apple.com/).
 
-**If none of the methods worked:**
+Utilisez le même identifiant Apple pour restaurer vos achats.
 
-1. Clear the cache for App Store.
-2. Clear the cache for OsmAnd.
-3. Restart the device and try to restore again.
+- Connectez-vous au même compte Apple App Store que celui que vous avez utilisé pour acheter les achats intégrés (abonnements) d'OsmAnd Maps.
+- Installez [OsmAnd Maps sur l'App Store d'Apple](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+- Ouvrez OsmAnd Maps avec une connexion Internet active.
+- Pour restaurer les achats, suivez ces étapes : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* et en haut de l'écran devrait apparaître que Maps+ (Pro, Live) est activé.
+
+![Plan Pro](@site/static/img/purchases/maps_purchases_ios.png)
+
+**Si aucune des méthodes n'a fonctionné :**
+
+1. Videz le cache de l'App Store.
+2. Videz le cache d'OsmAnd.
+3. Redémarrez l'appareil et essayez de restaurer à nouveau.
 
 
 <!--
 ## Action Guides
 
 - Restore your data after purchases expire.
-- Transfer purchases from Android to iOS or vice versa 
+- Transfer purchases from Android to iOS or vice versa
 - One purchase (account) for Android and iOS
 -->
 
 
-## Giftcards
+## Cartes cadeaux
 
-You can purchase OsmAnd using an App Store gift card. This method allows you to avoid sharing credit card information directly with the service. Simply buy a gift card from a retailer of your choice and redeem the code on the App Store.
+Vous pouvez acheter OsmAnd en utilisant une carte cadeau App Store. Cette méthode vous permet d'éviter de partager directement les informations de votre carte de crédit avec le service. Achetez simplement une carte cadeau auprès d'un détaillant de votre choix et échangez le code sur l'App Store.
 
-- [Detailed guide on purchasing App Store gift cards](https://www.apple.com/shop/gift-cards).
-- [Instructions for redeeming your App Store gift card](https://support.apple.com/en-gb/HT201209).
+- [Guide détaillé sur l'achat de cartes cadeaux App Store](https://www.apple.com/shop/gift-cards).
+- [Instructions pour échanger votre carte cadeau App Store](https://support.apple.com/en-gb/HT201209).
+
+-- source-hash: blake2s: a00f6a9e498cc04762d6e553a64ca34b5105ec0423d27d0cbaf40b75749f1edb --

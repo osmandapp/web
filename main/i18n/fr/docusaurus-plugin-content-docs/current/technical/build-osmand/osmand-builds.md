@@ -2,58 +2,59 @@
 sidebar_position: 2
 ---
 
-# OsmAnd Builds
+# Versions d'OsmAnd
 
-OsmAnd releases several Ready-To-Use builds every day, which allows you to follow new features and participate in OsmAnd's contribution (translation process).
+OsmAnd publie plusieurs versions prêtes à l'emploi chaque jour, ce qui vous permet de suivre les nouvelles fonctionnalités et de participer à la contribution d'OsmAnd (processus de traduction).
 
-## Google Play Beta builds (monthly)
+## Versions bêta de Google Play (mensuelles)
 
-The Google Play Store offers to test beta versions of
-apps, which enables you to (temporarily) download and use the test
-version from the Google Play Store instead of the standard release
-version(s).
+Le Google Play Store propose de tester les versions bêta des
+applications, ce qui vous permet de télécharger et d'utiliser (temporairement) la version de test
+à partir du Google Play Store au lieu des versions standard.
 
-For OsmAnd this means that you can participate in testing the new *OsmAnd
-free* or the new *OsmAnd+* paid versions. This enables you to use and test
-exciting new features. Of course, using a beta version also means that
-you might encounter bugs or app crashes.
+Pour OsmAnd, cela signifie que vous pouvez participer au test de la nouvelle version *OsmAnd
+gratuite* ou de la nouvelle version payante *OsmAnd+*. Cela vous permet d'utiliser et de tester
+de nouvelles fonctionnalités intéressantes. Bien sûr, l'utilisation d'une version bêta signifie également que
+vous pourriez rencontrer des bogues ou des plantages d'application.
 
-The Google Play Store mechanism also supports the easy return to the
-standard version from the Google Play Store.
+Le mécanisme du Google Play Store prend également en charge le retour facile à la
+version standard du Google Play Store.
 
 
-### Activating the test version
+### Activation de la version de test
 
-Register as tester for the OsmAnd free test version via the following [Google Group OsmAnd](https://play.google.com/apps/testing/net.osmand). Register for the *OsmAnd+* paid test version via the following [Google Group OsmAnd+](https://play.google.com/apps/testing/net.osmand.plus/testing) (note: this is only possible if you are a registered user for the paid version).
+Inscrivez-vous en tant que testeur pour la version de test gratuite d'OsmAnd via le [Groupe Google OsmAnd](https://play.google.com/apps/testing/net.osmand) suivant. Inscrivez-vous pour la version de test payante *OsmAnd+* via le [Groupe Google OsmAnd+](https://play.google.com/apps/testing/net.osmand.plus/testing) suivant (note : cela n'est possible que si vous êtes un utilisateur enregistré de la version payante).
 
-- When you click the link to register, you will see a big blue or green panel advertising "Be a test user" (in your defined language).
-- After clicking the "button" you will see the message "You are now a tester" with a green check-mark in front of it (and on repetitive actions it will show "You are a tester").
-- Give Google some time to synchronize which can be anywhere between 10 seconds or 60 minutes.
-- Now you can download the test version, either directly from the Google Play Store, or via your phone/tablet.
+- Lorsque vous cliquez sur le lien pour vous inscrire, vous verrez un grand panneau bleu ou vert annonçant "Devenez un utilisateur de test" (dans votre langue définie).
+- Après avoir cliqué sur le "bouton", vous verrez le message "Vous êtes maintenant un testeur" avec une coche verte devant (et lors d'actions répétitives, il affichera "Vous êtes un testeur").
+- Laissez à Google le temps de se synchroniser, ce qui peut prendre entre 10 secondes et 60 minutes.
+- Vous pouvez maintenant télécharger la version de test, soit directement depuis le Google Play Store, soit via votre téléphone/tablette.
 
-### Returning to the standard Google Play Store OsmAnd version
+### Retour à la version standard d'OsmAnd du Google Play Store
 
-Note that the same registration screen, after having registered, also has a link "Leave the test version". If, after some time, you want to use the current standard release version from the Google Play Store again, proceed as follows:
+Notez que le même écran d'inscription, après vous être inscrit, comporte également un lien "Quitter la version de test". Si, après un certain temps, vous souhaitez à nouveau utiliser la version standard actuelle du Google Play Store, procédez comme suit :
 
-- Use the above link again (so you better make this a bookmark/favorite in your browser). The page will still inform "You are a tester".
-- The page also contains the link "Leave the test version".
-- Click that link to then see "You have left the test version".
-- Manually uninstall the test version, either via the Google Play Store or on your phone/tablet.
-- Manually (re)install the current version, either via the Google Play Store or on your phone/tablet.
+- Utilisez à nouveau le lien ci-dessus (il est donc préférable d'en faire un signet/favori dans votre navigateur). La page indiquera toujours "Vous êtes un testeur".
+- La page contient également le lien "Quitter la version de test".
+- Cliquez sur ce lien pour voir ensuite "Vous avez quitté la version de test".
+- Désinstallez manuellement la version de test, soit via le Google Play Store, soit sur votre téléphone/tablette.
+- (Ré)installez manuellement la version actuelle, soit via le Google Play Store, soit sur votre téléphone/tablette.
 
-**Note**: Before changing to the test version, export your OsmAnd favorites. The new test version should simply continue using the favorites but as it is a beta version for testing, you never know.
+**Note** : Avant de passer à la version de test, exportez vos favoris OsmAnd. La nouvelle version de test devrait simplement continuer à utiliser les favoris, mais comme il s'agit d'une version bêta pour les tests, on ne sait jamais.
 
-## Android Nightly Builds (nightly)
+## Versions nocturnes Android (quotidiennes)
 
-Different builds of OsmAnd should be installed over any other build of the same strain (older or newer) without any issues, and with all offline data being preserved. The latest development build (*not necessarily stable !*) for testing can be found [here](https://download.osmand.net/latest-night-build/OsmAnd-default.apk). This will usually be updated over any other development build of the same development generation. If attempting to upgrade results in a signature error or “not installed” ( for example, if you are currently using the marketplace or want to upgrade to an older build), please  
+Différentes versions d'OsmAnd doivent être installées sur toute autre version de la même souche (plus ancienne ou plus récente) sans aucun problème, et avec toutes les données hors ligne préservées. La dernière version de développement (*pas nécessairement stable !*) pour les tests peut être trouvée [ici](https://download.osmand.net/latest-night-build/OsmAnd-default.apk). Celle-ci sera généralement mise à jour sur toute autre version de développement de la même génération de développement. Si la tentative de mise à niveau entraîne une erreur de signature ou "non installée" (par exemple, si vous utilisez actuellement le marché ou si vous souhaitez passer à une version plus ancienne), veuillez
 
-- export your Favorites first (Menu/Export in the favorites list),
-- export Navigation profiles,
-- uninstall the previous version,
-- re-install the new development build,
-- re-import your Favorites again (Menu/Import),
-All maps/tracks etc. are kept in place unchanged during this procedure.
+- exporter d'abord vos Favoris (Menu/Exporter dans la liste des favoris),
+- exporter les profils de navigation,
+- désinstaller la version précédente,
+- réinstaller la nouvelle version de développement,
+- réimporter à nouveau vos Favoris (Menu/Importer),
+Toutes les cartes/traces, etc. sont conservées en place sans modification pendant cette procédure.
 
-## iOS Testflight builds (weekly)
+## Versions Testflight iOS (hebdomadaires)
 
-To join TestFlight beta builds, you can follow the [link](https://testflight.apple.com/join/7poGNCKy). iOS builds usually are provided weekly (after the team sprint demo). They don't have descriptions and could have continuous versioning. They are supposed to be stable and ready to use.
+Pour rejoindre les versions bêta de TestFlight, vous pouvez suivre le [lien](https://testflight.apple.com/join/7poGNCKy). Les versions iOS sont généralement fournies chaque semaine (après la démo de l'équipe). Elles n'ont pas de descriptions et peuvent avoir une numérotation continue. Elles sont censées être stables et prêtes à l'emploi.
+
+-- source-hash: blake2s: 058f4c56a1a55a50f2014f512f6717b5a5705629606e507401f7dc709bab2300 --

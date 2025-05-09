@@ -1,6 +1,6 @@
 ---
 sidebar_position: 12
-title:  BRouter
+title: BRouter
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,25 +15,25 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 
-## Overview
+## Aperçu
 
-:::caution ANDROID ONLY
-The third-party routing algorithm BRouter is only available for the Android version of the OsmAnd app.
+:::caution ANDROID SEULEMENT
+L'algorithme de routage tiers BRouter est uniquement disponible pour la version Android de l'application OsmAnd.
 :::
 
-*BRouter* is a third-party routing algorithm that can be used in the OsmAnd app for [offline navigation mode](../guidance/navigation-settings.md#navigation-type). It is designed to optimize a route based on different parameters, such as time, distance, or vehicle type.
+*BRouter* est un algorithme de routage tiers qui peut être utilisé dans l'application OsmAnd pour le [mode de navigation hors ligne](../guidance/navigation-settings.md#navigation-type). Il est conçu pour optimiser un itinéraire en fonction de différents paramètres, tels que le temps, la distance ou le type de véhicule.
 
-[BRouter](http://brouter.de/) uses OpenStreetMap data to create a route and then adjusts it based on specified parameters. It uses pre-calculated routes to quickly build a route offline. It also allows you to customize routing profiles, which are defined by a set of parameters to account for various factors in route selection. The [BRouter readme.txt](http://brouter.de/brouter/readme.txt) file explains in more detail how to install and use the program.
+[BRouter](http://brouter.de/) utilise les données OpenStreetMap pour créer un itinéraire, puis l'ajuste en fonction des paramètres spécifiés. Il utilise des itinéraires pré-calculés pour construire rapidement un itinéraire hors ligne. Il vous permet également de personnaliser les profils de routage, qui sont définis par un ensemble de paramètres pour tenir compte de divers facteurs dans la sélection de l'itinéraire. Le fichier [BRouter readme.txt](http://brouter.de/brouter/readme.txt) explique plus en détail comment installer et utiliser le programme.
 
-OsmAnd provides you with the ability to select routes with BRouter and configure routing profiles to better define the route according to your needs.  
+OsmAnd vous offre la possibilité de sélectionner des itinéraires avec BRouter et de configurer des profils de routage pour mieux définir l'itinéraire selon vos besoins.
 
-For more information you can visit official [Brouter website](http://www.brouter.de/brouter/algorithm.html).  
+Pour plus d'informations, vous pouvez visiter le [site officiel de Brouter](http://www.brouter.de/brouter/algorithm.html).
 
-BRouter integration in OsmAnd changed a lot during the summer of 2019. This guide assumes you are using the BRouter Android app in version 1.5.0 or higher as well as OsmAnd in version 3.4 or higher.
+L'intégration de BRouter dans OsmAnd a beaucoup changé au cours de l'été 2019. Ce guide suppose que vous utilisez l'application Android BRouter en version 1.5.0 ou supérieure ainsi qu'OsmAnd en version 3.4 ou supérieure.
 
 :::note
-The third-party routing algorithm BRouter is only available for the Android version of the OsmAnd app.
-:::  
+L'algorithme de routage tiers BRouter est uniquement disponible pour la version Android de l'application OsmAnd.
+:::
 
 
 <table class="blogimage">
@@ -44,15 +44,15 @@ The third-party routing algorithm BRouter is only available for the Android vers
 </table>
 
 
-## How to Configure
+## Comment configurer
 
-Follow this guide to installing and configuring the third-party *BRouter Offline Navigation* application for use in OsmAnd.  
+Suivez ce guide pour installer et configurer l'application tierce *BRouter Offline Navigation* pour une utilisation dans OsmAnd.
 
-**1.** To get started, you need to install the BRouter app on your Android device from [F-Droid](https://f-droid.org/packages/btools.routingapp) or [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) on your device.  
-**2.** Then, to navigate using the OsmAnd app along pre-calculated routes with the BRouter, you need to:  
+**1.** Pour commencer, vous devez installer l'application BRouter sur votre appareil Android depuis [F-Droid](https://f-droid.org/packages/btools.routingapp) ou [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) sur votre appareil.
+**2.** Ensuite, pour naviguer à l'aide de l'application OsmAnd le long d'itinéraires pré-calculés avec BRouter, vous devez :
 
 
-  - Open BRouter application and tap *Download Manager*.
+  - Ouvrez l'application BRouter et appuyez sur *Gestionnaire de téléchargement*.
 
 <table class="blogimage">
     <tr>
@@ -60,7 +60,7 @@ Follow this guide to installing and configuring the third-party *BRouter Offline
     </tr>
 </table>
 
-  - Zoom in and select the areas you want to route in. Then click "Start Download" and BRouter will start downloading the [segments](http://brouter.de/brouter/segments4/) files for the selected areas.
+  - Zoomez et sélectionnez les zones dans lesquelles vous souhaitez naviguer. Cliquez ensuite sur "Démarrer le téléchargement" et BRouter commencera à télécharger les fichiers [segments](http://brouter.de/brouter/segments4/) pour les zones sélectionnées.
 
 <table class="blogimage">
     <tr>
@@ -76,24 +76,24 @@ Follow this guide to installing and configuring the third-party *BRouter Offline
     </tr>
 </table>
 
-**Note** that you will have to repeat this step periodically, whenever you want to have an updated version of the OSM data used for the routing.
+**Notez** que vous devrez répéter cette étape périodiquement, chaque fois que vous souhaitez avoir une version mise à jour des données OSM utilisées pour le routage.
 
-**3.** Once this is done, start again the BRouter app and choose the "BRouter App" entry on the *Main Menu*. Choose a routing profile depending on your mode of travel. It could be biking, moped, hiking, or trekking. A list of available profiles for download in *brf* format can be found [here](http://brouter.de/brouter/profiles2/). Or you can try using the routing profile in [BRouter-online](http://brouter.de/brouter-web/).
-Click "Service-Mode". Then, tick the boxes for the routing modes you want to use this profile for. You can use two different profiles per transportation mode, which will be mapped to the "shortest" and "fastest" presets (these are just labelling) in OsmAnd.
+**3.** Une fois cela fait, redémarrez l'application BRouter et choisissez l'entrée "BRouter App" dans le *Menu principal*. Choisissez un profil de routage en fonction de votre mode de déplacement. Il peut s'agir de vélo, de cyclomoteur, de randonnée ou de trekking. Une liste des profils disponibles en téléchargement au format *brf* peut être trouvée [ici](http://brouter.de/brouter/profiles2/). Ou vous pouvez essayer d'utiliser le profil de routage dans [BRouter-online](http://brouter.de/brouter-web/).
+Cliquez sur "Mode Service". Cochez ensuite les cases correspondant aux modes de routage pour lesquels vous souhaitez utiliser ce profil. Vous pouvez utiliser deux profils différents par mode de transport, qui seront mappés aux préréglages "le plus court" et "le plus rapide" (ce ne sont que des étiquettes) dans OsmAnd.
 
 <table class="blogimage">
     <tr>
         <td><img src={require('@site/static/img/navigation/third/prof18.png').default} alt="BRouter"/></td>
         <td><img src={require('@site/static/img/navigation/third/prof18a.png').default} alt="BRouter"/></td>
     </tr>
-</table>  
+</table>
 
-**4.** If you have already loaded any segments previously, they will be displayed on the BRouter map. The segments have four states:
+**4.** Si vous avez déjà chargé des segments auparavant, ils seront affichés sur la carte BRouter. Les segments ont quatre états :
 
-- *"Green"* square - Selected new segment to download.
-- *"Blue"* square - The segment with updated data.
-- *"Grey"* square - The segment is already downloaded but requires updating.
-- *"Yellow"* square - The segment is being updated.
+- Carré *"Vert"* - Nouveau segment sélectionné à télécharger.
+- Carré *"Bleu"* - Le segment avec des données mises à jour.
+- Carré *"Gris"* - Le segment est déjà téléchargé mais nécessite une mise à jour.
+- Carré *"Jaune"* - Le segment est en cours de mise à jour.
 
 <table class="blogimage">
     <tr>
@@ -101,10 +101,10 @@ Click "Service-Mode". Then, tick the boxes for the routing modes you want to use
     </tr>
 </table>
 
-**5.** When you have loaded the required map segments with BRouter and selected a routing profile in it, all the next settings of this type of navigation are made in the OsmAnd application.
+**5.** Lorsque vous avez chargé les segments de carte requis avec BRouter et sélectionné un profil de routage, tous les paramètres suivants de ce type de navigation sont effectués dans l'application OsmAnd.
 
-**6.** You can create an "Application profile" in OsmAnd which will be using BRouter for offline routing.
-Use the *BRouter (offline)* routing type with any [profile](../../personal/profiles.md) in the OsmAnd app. To do this, go to the main *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_offline,shared_string_external,routing_profile_broutrer"/>*  and create a new profile based on the base profile of your choice (cycling here, for bicycle routing), with a custom name of your choice ("BRouter" on the screenshot below) and making use of "BRouter (offline)" for navigation.
+**6.** Vous pouvez créer un "Profil d'application" dans OsmAnd qui utilisera BRouter pour le routage hors ligne.
+Utilisez le type de routage *BRouter (hors ligne)* avec n'importe quel [profil](../../personal/profiles.md) dans l'application OsmAnd. Pour ce faire, allez dans le *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_offline,shared_string_external,routing_profile_broutrer"/>* principal et créez un nouveau profil basé sur le profil de base de votre choix (cyclisme ici, pour le routage à vélo), avec un nom personnalisé de votre choix ("BRouter" sur la capture d'écran ci-dessous) et utilisant "BRouter (hors ligne)" pour la navigation.
 
 
 <table class="blogimage">
@@ -114,30 +114,30 @@ Use the *BRouter (offline)* routing type with any [profile](../../personal/profi
     </tr>
 </table>
 
-The BRouter app should be launched before OsmAnd for this specific entry to appear in OsmAnd. Therefore, if you cannot find "BRouter (offline)" navigation option, you should force quit OsmAnd and restart it.
+L'application BRouter doit être lancée avant OsmAnd pour que cette entrée spécifique apparaisse dans OsmAnd. Par conséquent, si vous ne trouvez pas l'option de navigation "BRouter (hors ligne)", vous devez forcer la fermeture d'OsmAnd et le redémarrer.
 
 ## OsmAnd Version 4.7.1
 
-From version 4.7.1 upwards Osmand supports the profile parameter for mapping: Since Osmand version 3, many profiles can be defined in Osmand and you can easily switch between these profiles. A new profile should be created, for example by copying the existing *Cycling* profile and giving it a new name in the format Brouter[fastbike]. You can use any of the exisiting BRouter profiles in the name that are installed on your device. All the profile files have a naming format of 'xxxxxxx.brf'. Or you could create a new profile of your own, like, 'myprofile.brf'.
+À partir de la version 4.7.1, Osmand prend en charge le paramètre de profil pour le mappage : Depuis la version 3 d'Osmand, de nombreux profils peuvent être définis dans Osmand et vous pouvez facilement basculer entre ces profils. Un nouveau profil doit être créé, par exemple en copiant le profil *Cyclisme* existant et en lui donnant un nouveau nom au format Brouter[fastbike]. Vous pouvez utiliser n'importe lequel des profils BRouter existants installés sur votre appareil. Tous les fichiers de profil ont un format de nommage 'xxxxxxx.brf'. Ou vous pouvez créer votre propre nouveau profil, comme 'myprofile.brf'.
 
-The naming convention in the OsmAnd profile is important as the BRouter profile included in that profile establishes the actual bridge between OsmAnd and BRouter.
+La convention de nommage dans le profil OsmAnd est importante car le profil BRouter inclus dans ce profil établit le pont réel entre OsmAnd et BRouter.
 
-- If in Osmand a profile has *BRouter* defined as navigation service
-- AND the profile-name looks like "Brouter[mystring]"
+- Si dans Osmand un profil a *BRouter* défini comme service de navigation
+- ET le nom du profil ressemble à "Brouter[mystring]"
 
-Then the profile "mystring" will be used in the Brouter-app. This new mapping replaces in that case the basic mapping defined above and based on the file "serviceconfig.dat.
+Alors le profil "mystring" sera utilisé dans l'application Brouter. Ce nouveau mappage remplace dans ce cas le mappage de base défini ci-dessus et basé sur le fichier "serviceconfig.dat".
 
-### Examples: Osmand-profile name Brouter-app
+### Exemples : Nom du profil Osmand - application Brouter
 
 ```xml
-Brouter[trekking] "trekking" profile will be used file: trekking.brf
-Brouter[fastbike] "fastbike" profile will be used file: fastbike.brf
+Brouter[trekking] le profil "trekking" sera utilisé fichier : trekking.brf
+Brouter[fastbike] le profil "fastbike" sera utilisé fichier : fastbike.brf
 ....
 ```
 
-Remark:
-Currently Osmand do not check the defined name (case sensitiv) for the Brouter-profile (mystring).
-If no profile is found, the routing will fail with "Could not calculate route..".
+Remarque :
+Actuellement, Osmand ne vérifie pas le nom défini (sensible à la casse) pour le profil Brouter (mystring).
+Si aucun profil n'est trouvé, le routage échouera avec "Impossible de calculer l'itinéraire..".
 
 <table class="blogimage">
     <tr>
@@ -145,11 +145,11 @@ If no profile is found, the routing will fail with "Could not calculate route.."
     </tr>
 </table>
 
-## How to Use
+## Comment utiliser
 
-This section describes a comparison of BRouter with the internal routing of the OsmAnd application.  
+Cette section décrit une comparaison de BRouter avec le routage interne de l'application OsmAnd.
 
-When BRouter is configured, we can compare the pre-calculation speed of the BRouter routing data with the internal OsmAnd routing. Let's choose two random points in the Netherlands and start calculating the trip. For this, we set a balanced driving style without using altitude data for the base profile. The calculation time for this trip is 14.5 sec for our internal OsmAnd route. The route calculation time when using BRouter routing is less than 1 second.  
+Lorsque BRouter est configuré, nous pouvons comparer la vitesse de pré-calcul des données de routage BRouter avec le routage interne d'OsmAnd. Choisissons deux points aléatoires aux Pays-Bas et commençons à calculer le trajet. Pour cela, nous définissons un style de conduite équilibré sans utiliser de données d'altitude pour le profil de base. Le temps de calcul pour ce trajet est de 14,5 secondes pour notre itinéraire interne OsmAnd. Le temps de calcul de l'itinéraire lors de l'utilisation du routage BRouter est inférieur à 1 seconde.
 
 <table class="blogimage">
     <tr>
@@ -159,24 +159,26 @@ When BRouter is configured, we can compare the pre-calculation speed of the BRou
 </table>
 
 
-## Route Parameters
+## Paramètres d'itinéraire
 
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*
 
 ![BRouter](@site/static/img/navigation/routing/BRouter_route_param.png)
 
-| Parameter | Description | Note |
+| Paramètre | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="fast_route_mode"/>* | <Translate android="true" ids="routing_attr_short_way_description"/>  <Translate android="true" ids="fast_route_mode_descr"/> | In most cases, the shortest route will be suggested. Often this route can take longer than if the setting was disabled |
-| *<Translate android="true" ids="temporary_conditional_routing"/>* |  Read about Consider temporary limitations option in this [article](../routing/osmand-routing.md#consider-temporary-limitations).   | The routing algorithm considers the time constraints specified in the OpenStreetMap. Note, that in some cases the information from the OSM may be out of date.   |
+| *<Translate android="true" ids="fast_route_mode"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> <Translate android="true" ids="fast_route_mode_descr"/> | Dans la plupart des cas, l'itinéraire le plus court sera suggéré. Souvent, cet itinéraire peut prendre plus de temps que si le paramètre était désactivé |
+| *<Translate android="true" ids="temporary_conditional_routing"/>* | Lisez l'option Considérer les limitations temporaires dans cet [article](../routing/osmand-routing.md#consider-temporary-limitations). | L'algorithme de routage prend en compte les contraintes de temps spécifiées dans OpenStreetMap. Notez que dans certains cas, les informations d'OSM peuvent être obsolètes. |
 
 
-### Other Routing Settings
+### Autres paramètres de routage
 
-- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigation → Settings*, [image](../routing/online-routing.md#online-routing-setting)). If this option is enabled, OsmAnd adds two segments to the calculated Brouter track: one from *[My location](../../map/interact-with-map.md#my-location-and-zoom)* to the starting point of the track and another from the end of the track to the finish point of your route. This option is active if the distance to or from the track exceeds 60 meters.
+- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigation → Paramètres*, [image](../routing/online-routing.md#online-routing-setting)). Si cette option est activée, OsmAnd ajoute deux segments à la trace Brouter calculée : un de *[Ma position](../../map/interact-with-map.md#my-location-and-zoom)* au point de départ de la trace et un autre de la fin de la trace au point d'arrivée de votre itinéraire. Cette option est active si la distance vers ou depuis la trace dépasse 60 mètres.
 
-- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
+- Dans la section [*Recalculer l'itinéraire*](../../navigation/guidance/navigation-settings.md#recalculate-route) des *Paramètres d'itinéraire*, vous pouvez activer et ajuster les options de recalcul d'itinéraire.
 
-- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+- Dans la section [*Développement*](../guidance/navigation-settings.md#development-settings) des *Paramètres d'itinéraire*, vous pouvez essayer de nouvelles fonctionnalités de routage qui sont actuellement en phase de test. Notez que ces paramètres ne sont disponibles que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé.
 
-> *This article was last updated in June 2024*
+> *Cet article a été mis à jour pour la dernière fois en juin 2024*
+
+-- source-hash: blake2s: 59d9a11d1fa0e8ee29659a85a1b8a197fa0d2e27c9582be7bcb51b1c4d44e029 --

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-title:  Straight line routing (Aircraft)
+title:  Guidage en ligne droite (Avion)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,29 +15,29 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 <InfoIncompleteArticle/>
 
 
-## Overview
+## Aperçu
 
-Unlike traditional routing algorithms that use roads, trails, or predefined routes, straight line routing calculates the shortest distance between two points on the map as a straight line. This feature can be useful for active hikers who want to route away from trails or explore remote areas where traditional routes may not be available. For light aircraft pilots and ship skippers, using the *Straight line routing type* can be very useful in navigation.  
+Contrairement aux algorithmes de routage traditionnels qui utilisent des routes, des sentiers ou des itinéraires prédéfinis, le routage en ligne droite calcule la distance la plus courte entre deux points sur la carte sous la forme d'une ligne droite. Cette fonctionnalité peut être utile pour les randonneurs actifs qui souhaitent s'éloigner des sentiers ou explorer des zones reculées où les itinéraires traditionnels peuvent ne pas être disponibles. Pour les pilotes d'avions légers et les skippers de navires, l'utilisation du *type de routage en ligne droite* peut être très utile pour la navigation.
 
-<!-- ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png)  -->
+<!-- ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png) -->
 
-- The *Straight line* routing does not consider any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests.
-- It does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-details.md) section is empty).
+- Le routage *en ligne droite* ne tient pas compte des obstacles ou des barrières qui peuvent être présents sur le terrain, tels que les montagnes, les rivières ou les forêts denses.
+- Il ne fournit aucune information sur la qualité du terrain, le niveau de difficulté de l'itinéraire ou tout autre facteur pertinent susceptible d'affecter la sécurité ou la faisabilité de l'itinéraire (la section [Détails de l'itinéraire](../setup/route-details.md) est vide).
 
 ![Straight-line Navigation type Android](@site/static/img/navigation/routing/straight_line_routing_andr.png)
 
 
-## Route Parameters - Straight Line
+## Paramètres d'itinéraire - Ligne droite
 
 :::note
-Straight line routing is linked to *Aircraft profile*. By default, this profile is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+Le routage en ligne droite est lié au *profil Avion*. Par défaut, ce profil est désactivé. Pour utiliser ce profil pour le routage, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-*Straight line* routing can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
+Le routage *en ligne droite* peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des paramètres de navigation.
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Straight line routing settings Android 1](@site/static/img/navigation/routing/aircraft_routing_andr.png)
 
@@ -51,19 +51,21 @@ Straight line routing is linked to *Aircraft profile*. By default, this profile 
 
 </Tabs>
 
-| Parameter | Description | Note |
+| Paramètre | Description | Remarque |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="recalc_angle_dialog_title"/>* |  <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/>  </summary>![Straight line recalculation Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details>  | When the angle between the calculated route and actual geolocation is higher than the one set by you, the shortest path from your current position to the calculated route will be built. In other words, OsmAnd will calculate an additional route segment to the previously calculated route. |  
+| *<Translate android="true" ids="recalc_angle_dialog_title"/>* |  <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/>  </summary>![Straight line recalculation Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details>  | Lorsque l'angle entre l'itinéraire calculé et la géolocalisation réelle est supérieur à celui que vous avez défini, le chemin le plus court de votre position actuelle à l'itinéraire calculé sera construit. En d'autres termes, OsmAnd calculera un segment d'itinéraire supplémentaire par rapport à l'itinéraire précédemment calculé. |
 
 
-## Other Routing Settings
+## Autres paramètres de routage
 
-- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, the distance at which the route will be recalculated for *Straight line routing* is set to 500 meters by default.
+- Dans la section [*Recalculer l'itinéraire*](../../navigation/guidance/navigation-settings.md#recalculate-route) des *Paramètres d'itinéraire*, la distance à laquelle l'itinéraire sera recalculé pour le *routage en ligne droite* est définie par défaut à 500 mètres.
 
-- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+- Dans la section [*Développement*](../guidance/navigation-settings.md#development-settings) des *Paramètres d'itinéraire*, vous pouvez essayer de nouvelles fonctionnalités de routage qui sont actuellement en phase de test. Notez que ces paramètres ne sont disponibles que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé.
 
-- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). These settings can also be set for *Direct-to-point* routing. It is used to calculate Estimated Time of Arrival.
+- Le paramètre *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* dans la version *iOS* d'OsmAnd se trouve dans *Paramètres de navigation → Paramètres d'itinéraire* (pour *Android*, dans *Paramètres du véhicule → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Ces paramètres peuvent également être définis pour le routage *Direct-to-point*. Il est utilisé pour calculer l'heure d'arrivée estimée.
 
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
+- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. La configuration correcte des paramètres vous aidera à éviter les problèmes lors de la création d'un itinéraire. Vous pouvez sélectionner l'itinéraire le plus approprié en fonction du type de véhicule et des restrictions routières, ainsi que calculer le temps de trajet.
 
-> *This article was last updated in June 2024*
+> *Cet article a été mis à jour pour la dernière fois en juin 2024*
+
+-- source-hash: blake2s: 8ac522afbab294c33da47125ffb36a8e67e06adf8e67e108b27aa672a888726d --

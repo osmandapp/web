@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Web Route Planner
+title: Planificateur d'itinéraire Web
 unlisted: true
 ---
 
@@ -16,289 +16,291 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
 :::info
-The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
-**Therefore, the layout and operation of some functions on the site may be different from those described in this article.**
+Le site *[osmand.net/map](https://osmand.net/map/)* est actuellement en cours de développement et de test.
+**Par conséquent, la présentation et le fonctionnement de certaines fonctions sur le site peuvent être différents de ceux décrits dans cet article.**
 
-We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
+Nous avons créé le [thème de discussion](https://github.com/osmandapp/OsmAnd/discussions/16567) sur notre GitHub afin que vous puissiez y laisser vos commentaires.
 :::
 
-The following features are available for users of the Free version of OsmAnd and for users with the [Pro](../purchases/android.md#osmand-pro) version <ProFeature/>:  
+Les fonctionnalités suivantes sont disponibles pour les utilisateurs de la version gratuite d'OsmAnd et pour les utilisateurs avec la version [Pro](../purchases/android.md#osmand-pro) <ProFeature/> :
 
-| Features | Versions |
+| Fonctionnalités | Versions |
 |--- |--- |
-| [OsmAnd Pro sync](#osmand-pro-sync) | <ProFeature/> |
-| [Weather](#weather) | Free |
-| [Tracks](#weather) | <ProFeature/> |
-| [Favorites](#farorites-pro) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> | 
-| [Navigation Route](#navigation-route) | Free |
-| [Create track](#create-track-pro) | Free |
+| [Synchronisation OsmAnd Pro](#osmand-pro-sync) | <ProFeature/> |
+| [Météo](#weather) | Gratuit |
+| [Tracés](#weather) | <ProFeature/> |
+| [Favoris](#farorites-pro) | [Osmand Start](https://osmand.net/blog/start) ou <ProFeature/> |
+| [Itinéraire de navigation](#navigation-route) | Gratuit |
+| [Créer un tracé](#create-track-pro) | Gratuit |
 
 
-![View OsmAnd Web](@site/static/img/web/web.png)
+![Vue OsmAnd Web](@site/static/img/web/web.png)
 
 
-## OsmAnd Pro and OsmAnd Start sync
+## Synchronisation OsmAnd Pro et OsmAnd Start
 
-- **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#cross-platform) paid subscription.
-- **OsmAnd Start** is a [free OsmAnd Cloud registration](https://osmand.net/blog/start).
+- **OsmAnd Pro** est un abonnement payant [multiplateforme](../troubleshooting/setup.md#cross-platform).
+- **OsmAnd Start** est une [inscription gratuite à OsmAnd Cloud](https://osmand.net/blog/start).
 
-The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
+La capacité multiplateforme vous permet d'utiliser OsmAnd Pro sur toutes les plateformes *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))*. Pour ce faire, vous devez :
 
-1. Subscribe to *OsmAnd Pro*. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
-2. How to create *OsmAnd Start* account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
-3. Register your [Pro or Start account](../troubleshooting/setup.md#cross-platform) on the OsmAnd server inside OsmAnd app.
-4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
+1. Vous abonner à *OsmAnd Pro*. Pour en savoir plus sur la procédure pour [Android, cliquez ici](../purchases/android.md#how-to-buy), et pour [iOS, cliquez ici](../purchases/ios.md#how-to-buy).
+2. Pour savoir comment créer un compte *OsmAnd Start*, lisez [ici](https://osmand.net/blog/start#how-to-create-an-account).
+3. Enregistrer votre [compte Pro ou Start](../troubleshooting/setup.md#cross-platform) sur le serveur OsmAnd dans l'application OsmAnd.
+4. L'adresse e-mail enregistrée sera votre identifiant pour activer OsmAnd Pro sur la plateforme web. La première fois, vous devrez choisir un mot de passe pour les futures connexions au portail web (veuillez suivre les instructions sur le portail web).
 
-- Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).  
+- Entrez votre *e-mail* et votre *mot de passe* pour [osmand.net/map](https://osmand.net/map/).
 
-![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)  
+![Vue activation OsmAnd Web](@site/static/img/web/web_pro_activation.png)
 
-- Your data, such as tracks (OsmAnd Pro) and favorites(OsmAnd Pro and OsmAnd Start), will appear in the menu after you log in. They are available for display on the map. But you need [to sync this data](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) from your devices.
+- Vos données, telles que les tracés (OsmAnd Pro) et les favoris (OsmAnd Pro et OsmAnd Start), apparaîtront dans le menu après votre connexion. Elles sont disponibles pour l'affichage sur la carte. Mais vous devez [synchroniser ces données](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) depuis vos appareils.
 
-![View OsmAnd Web data](@site/static/img/web/web_data.png)  
+![Vue données OsmAnd Web](@site/static/img/web/web_data.png)
 
-- To *DOWNLOAD BACKUP* from [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud), click the login field. On the login field you can see files info (total files number, total files size, cloud storage used) and account info (subscription type, start time and expire time of your subscription).
+- Pour *TÉLÉCHARGER LA SAUVEGARDE* depuis [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud), cliquez sur le champ de connexion. Sur le champ de connexion, vous pouvez voir les informations sur les fichiers (nombre total de fichiers, taille totale des fichiers, espace de stockage cloud utilisé) et les informations sur le compte (type d'abonnement, heure de début et heure d'expiration de votre abonnement).
 
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file.png)  
+![Vue fichier de sauvegarde OsmAnd Web](@site/static/img/web/web_backup_file.png)
 
-Choose needed files for downloading, `.zip` or `.osf` format of downloaded files and click *DOWNLOAD BACKUP* button:
+Choisissez les fichiers nécessaires à télécharger, le format `.zip` ou `.osf` des fichiers téléchargés et cliquez sur le bouton *TÉLÉCHARGER LA SAUVEGARDE* :
 
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_1.png)  
+![Vue fichier de sauvegarde OsmAnd Web](@site/static/img/web/web_backup_file_1.png)
 
-There is also a button to *logout* of the account.  
+Il y a aussi un bouton pour se *déconnecter* du compte.
 
-- *LOGOUT*, *DELETE YOUR ACCOUNT* or *Change email* you find on the login field too. For opening *DELETE YOUR ACCOUNT* or *Change email* you need to click *Dangerous area*.
+- *DÉCONNEXION*, *SUPPRIMER VOTRE COMPTE* ou *Changer d'e-mail* se trouvent également sur le champ de connexion. Pour ouvrir *SUPPRIMER VOTRE COMPTE* ou *Changer d'e-mail*, vous devez cliquer sur *Zone dangereuse*.
 
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_2.png)  
+![Vue fichier de sauvegarde OsmAnd Web](@site/static/img/web/web_backup_file_2.png)
 
-## Weather
+## Météo
 
-The [Weather plugin](../plugins/weather.md) is a paid feature of the OsmAnd app. For the web version, Weather is a free feature with such capabilities as:
+Le [plugin Météo](../plugins/weather.md) est une fonctionnalité payante de l'application OsmAnd. Pour la version web, la Météo est une fonctionnalité gratuite avec les capacités suivantes :
 
-- Enable weather layers on the map: *Temperature, Pressure, Wind, Cloud cover and Precipitation* using the menu on the left or right.
-- Enable the display of the weather forecast for the day or week (the forecast step is 3 hours).  
+- Activer les couches météo sur la carte : *Température, Pression, Vent, Couverture nuageuse et Précipitations* à l'aide du menu à gauche ou à droite.
+- Activer l'affichage des prévisions météo pour la journée ou la semaine (le pas de prévision est de 3 heures).
 
-![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
-
-
-## Tracks
-
-It's a paid feature <ProFeature/>. At first you need to loggin your OsmAnd Pro:
-
-![Track loggin](@site/static/img/web/track_loggin.png)
-
-For Track section:
-
-- Show tracks from [OsmAnd Cloud](#users-tracks-pro).
-- Adding tracks on the map (*Visible on map* folder).
-- Looking all tracks info and graph
-- Modify tracks and add it to Cloud.
-- Download and delete tracks.
-- Create new folders or delete it.
-- Download folders as `.osf` or `.obf` collection.
+![Météo OsmAnd Web](@site/static/img/web/web_weather.png)
 
 
-### Visible on the map
+## Tracés
 
-Here there is a list of visible tracks on the map.
+C'est une fonctionnalité payante <ProFeature/>. Vous devez d'abord vous connecter à votre compte OsmAnd Pro :
 
-Switch on / off tracks for showing or not its on the map.
+![Connexion Tracé](@site/static/img/web/track_loggin.png)
 
-![Visible on the map](@site/static/img/web/visible.png)
+Pour la section Tracés :
 
-
-### Track folder menu
-
-Click to the *Tree points* ⋮ button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
-
-- Download as OSF
-- Download as OBF Collection:
-  You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
-
-    [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
-
-You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
-
-  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
-
-Also You can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
-
-- Rename chosen folder.
-- Delete chosen folder.
-
-![Track folder menu](@site/static/img/web/collection.png)
-
-### Cloud tracks
-
-GPX tracks that you have in OsmAnd Cloud will be available for display and editing after login. Only for **Pro users** <ProFeature/>.
-
-The following features are available after choosin cloud track:
-
-- Information screens:
-  - *Information* - displaying track data.
-  - *Elevation* - graph of elevation.
-  - *Speed* - speed graph.
-  - *Slope* - slope graph.
-  - *Settings* - list of navigation profiles for the *Create route* tool.  
-
-- Action buttons:
-  - *Edit track* - adding cloud track to local for editing (*Edit locality* button on the panel).
-  - *Download GPX* - downloads the track to the PC.
-  - *Recalculate* Elevation (Satellite) - displays the elevation graph of the selected track.
-  - *Delete Track* - deletes the track.
-  - *Close track* - close the track.
-
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
+- Afficher les tracés depuis [OsmAnd Cloud](#users-tracks-pro).
+- Ajouter des tracés sur la carte (dossier *Visible sur la carte*).
+- Consulter toutes les informations et le graphique des tracés.
+- Modifier les tracés et les ajouter au Cloud.
+- Télécharger et supprimer des tracés.
+- Créer de nouveaux dossiers ou les supprimer.
+- Télécharger des dossiers au format collection `.osf` ou `.obf`.
 
 
-## Favorites
+### Visible sur la carte
 
-After registering an OsmAnd Pro or OsmAnd Start, your Favorites are displayed in the Favorites menu.  
-The following actions are available:
+Voici une liste des tracés visibles sur la carte.
 
-- *Show on map* - show favorites points from the chosen folder on the map.
-- *Rename* - name and description of favorite folder.
-- *Download* - download the chosen favorite folder.
-- *Delete* - delete the chosen favorite folder.
+Activer/désactiver les tracés pour les afficher ou non sur la carte.
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
+![Visible sur la carte](@site/static/img/web/visible.png)
 
-### Add / Edit Favorite
 
-[To add](../personal/favorites.md#edit) a new favorite point, right-click on the screen. To start editing, click on the favorite point, the edit menu screen looks the same as [the menu in OsmAnd app](../personal/favorites.md#create).  
+### Menu du dossier de tracés
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+Cliquez sur le bouton *Trois points* ⋮ pour ouvrir le menu *Dossier de tracés*. Ici, vous pouvez télécharger tous les tracés du dossier choisi sous forme de :
+
+- Télécharger au format OSF
+- Télécharger au format collection OBF :
+  Vous pouvez obtenir une carte OBF à partir de ces données : [fichier OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) ou [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+
+    [fichier OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) :
+
+Vous pouvez télécharger une carte hors ligne OBF (OsmAnd Binary Format) et l'ouvrir avec OsmAnd sur l'appareil, elle convient pour afficher une grande quantité de tracés qui seront visibles sur la carte.
+
+  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes) :
+
+Vous pouvez également importer une carte de tracés sous forme de carnet de voyage qui vous permettra également de sélectionner un tracé spécifique sur la carte et de l'utiliser comme un GPX normal. Le carnet de voyage prend également en charge des fonctionnalités telles que l'affichage des tracés sous forme de points, le filtrage des tracés par type d'activité et le filtrage des points de passage.
+
+- Renommer le dossier choisi.
+- Supprimer le dossier choisi.
+
+![Menu du dossier de tracés](@site/static/img/web/collection.png)
+
+### Tracés Cloud
+
+Les tracés GPX que vous avez dans OsmAnd Cloud seront disponibles pour l'affichage et l'édition après connexion. Uniquement pour les **utilisateurs Pro** <ProFeature/>.
+
+Les fonctionnalités suivantes sont disponibles après avoir choisi un tracé Cloud :
+
+- Écrans d'information :
+  - *Information* - affichage des données du tracé.
+  - *Altitude* - graphique d'altitude.
+  - *Vitesse* - graphique de vitesse.
+  - *Pente* - graphique de pente.
+  - *Paramètres* - liste des profils de navigation pour l'outil *Créer un itinéraire*.
+
+- Boutons d'action :
+  - *Modifier le tracé* - ajout du tracé Cloud en local pour l'édition (bouton *Modifier la localité* sur le panneau).
+  - *Télécharger GPX* - télécharge le tracé sur le PC.
+  - *Recalculer* l'altitude (Satellite) - affiche le graphique d'altitude du tracé sélectionné.
+  - *Supprimer le tracé* - supprime le tracé.
+  - *Fermer le tracé* - ferme le tracé.
+
+![Édition GPX Cloud OsmAnd Web](@site/static/img/web/cloud_track.png)
+
+
+## Favoris
+
+Après avoir enregistré un compte OsmAnd Pro ou OsmAnd Start, vos Favoris sont affichés dans le menu Favoris.
+Les actions suivantes sont disponibles :
+
+- *Afficher sur la carte* - afficher les points favoris du dossier choisi sur la carte.
+- *Renommer* - nom et description du dossier favori.
+- *Télécharger* - télécharger le dossier favori choisi.
+- *Supprimer* - supprimer le dossier favori choisi.
+
+![Édition Favoris Cloud OsmAnd Web](@site/static/img/web/favorites.png)
+
+### Ajouter / Modifier un favori
+
+[Pour ajouter](../personal/favorites.md#edit) un nouveau point favori, faites un clic droit sur l'écran. Pour commencer l'édition, cliquez sur le point favori, l'écran du menu d'édition ressemble au [menu de l'application OsmAnd](../personal/favorites.md#create).
+
+![Ajouter Favoris OsmAnd Web](@site/static/img/web/web_favorites_add.png)
 
 
 <!--
-## Map style
+## Style de carte
 
-In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
-**Some examples:**
+Dans cette section du menu, vous pouvez changer le style de la carte. Vous pouvez en savoir plus sur la procédure dans l'article [Cartes vectorielles (Styles de carte)](../map/vector-maps.md) pour l'application OsmAnd. Les paramètres de la version web ne sont pas différents.
+**Quelques exemples :**
 
-- Nautical map style
+- Style de carte nautique
 
-![OsmAnd Web Map Style](@site/static/img/web/web_map_style_nautical.png)
+![Style de carte nautique OsmAnd Web](@site/static/img/web/web_map_style_nautical.png)
 
-- Topo map style
+- Style de carte topo
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
+![Ajouter Favoris OsmAnd Web](@site/static/img/web/web_map_style_topo.png)
 -->
 
-## Navigation route
+## Itinéraire de navigation
 
-- To start building a navigation route, right-click to add the *Navigate from*,  *Navigate to* and *Navigate via* points.
+- Pour commencer à construire un itinéraire de navigation, faites un clic droit pour ajouter les points *Naviguer depuis*, *Naviguer vers* et *Naviguer via*.
 
-- After adding the start and end points, we get the route.
+- Après avoir ajouté les points de départ et d'arrivée, nous obtenons l'itinéraire.
 
-- In the Route block you can move the start and end points, edit them and change the type of route.
+- Dans le bloc Itinéraire, vous pouvez déplacer les points de départ et d'arrivée, les modifier et changer le type d'itinéraire.
 
-![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
+![Créer un itinéraire OsmAnd Web](@site/static/img/web/navigation.png)
 
-- choose *Route profile* for changing navigation routing type:
+- choisissez le *Profil d'itinéraire* pour changer le type de routage de navigation :
 
-![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
+![Créer un itinéraire OsmAnd Web](@site/static/img/web/profile_type.png)
 
-- click to Orange circles on Navigation route for look at instructions:
+- cliquez sur les cercles orange sur l'itinéraire de navigation pour voir les instructions :
 
-![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
+![Créer un itinéraire OsmAnd Web](@site/static/img/web/nav_instr.png)
 
-- copy URL for sending the navigation route. Example: [https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+- copiez l'URL pour envoyer l'itinéraire de navigation. Exemple : [https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
 
-## Create track and Local
+## Créer un tracé et Local
 
-A web version of the ["Plan route"](../plan-route/create-route.md) tool, similar to the OsmAnd app, is currently being developed. To go to create a route, *Right-click → Create new Route*.  Or you can use the *Create track* button on the *Local* menu(right side: *Pencil* and *Upload* buttons).
+Une version web de l'outil ["Planifier un itinéraire"](../plan-route/create-route.md), similaire à l'application OsmAnd, est en cours de développement. Pour créer un itinéraire, *clic droit → Créer un nouvel itinéraire*. Ou vous pouvez utiliser le bouton *Créer un tracé* dans le menu *Local* (côté droit : boutons *Crayon* et *Télécharger*).
 
-Here you can select a navigation profile to build a section of the route (New segments) or for all route (All segments), add waypoints, save the route and view information about it.  
+Ici, vous pouvez sélectionner un profil de navigation pour construire une section de l'itinéraire (Nouveaux segments) ou pour tout l'itinéraire (Tous les segments), ajouter des points de passage, enregistrer l'itinéraire et afficher des informations à son sujet.
 
-![OsmAnd Web Create Track](@site/static/img/web/create_route.png)
+![Créer un tracé OsmAnd Web](@site/static/img/web/create_route.png)
 
-You can view any actions and display track information in the [Track section](#tracks) of this article.
+Vous pouvez visualiser toutes les actions et afficher les informations du tracé dans la section [Tracés](#tracks) de cet article.
 
-Actions for Local:
+Actions pour Local :
 
-- *Import Track* - any user can download any GPX file at [*osmand.net/map*](https://osmand.net/map) to *Local* section.  
-- Create track.
+- *Importer un tracé* - tout utilisateur peut télécharger n'importe quel fichier GPX sur [*osmand.net/map*](https://osmand.net/map) dans la section *Local*.
+- Créer un tracé.
 
-![OsmAnd Web Create Track](@site/static/img/web/create_route_2.png)
+![Créer un tracé OsmAnd Web](@site/static/img/web/create_route_2.png)
 
-Local track menu and Edit has 3 panels: Info, Track, Waypoints, Turns.
+Le menu et l'édition du tracé local comportent 3 panneaux : Info, Tracé, Points de passage, Virages.
 
-*Info* actions and data:
+Actions et données *Info* :
 
-  - *Save to Cloud*.
-  - *Add description*.
-  - *Rename* a track.
-  - *recalculate* - Add elevation data for the selected track.
-  - *Elevation*: elevation graph.
-  - *Speed*: speed graph.  
-  - *Slope*: slope graph.  
-  - *Road details* - Road type, Surface, Steepness, Surface firmness, Piste.
-  - *Download GPX* button (Pro feature).
-  - *Close Track* the track.
-  - *Delete Track* - Delete the track.
+  - *Enregistrer dans le Cloud*.
+  - *Ajouter une description*.
+  - *Renommer* un tracé.
+  - *Recalculer* - Ajouter des données d'altitude pour le tracé sélectionné.
+  - *Altitude* : graphique d'altitude.
+  - *Vitesse* : graphique de vitesse.
+  - *Pente* : graphique de pente.
+  - *Détails de la route* - Type de route, Surface, Pente, Fermeté de la surface, Piste.
+  - Bouton *Télécharger GPX* (fonctionnalité Pro).
+  - *Fermer le tracé*.
+  - *Supprimer le tracé* - Supprimer le tracé.
 
-![OsmAnd Web Create Track](@site/static/img/web/create_route_3.png)
+![Créer un tracé OsmAnd Web](@site/static/img/web/create_route_3.png)
 
 
-*Track section* contains track points. Here you can delete it or change order.
-*Waypoints* menu contains track waypoints. Here you can show or not it on the map, and delete waypoints.
+La section *Tracé* contient les points du tracé. Ici, vous pouvez les supprimer ou changer leur ordre.
+Le menu *Points de passage* contient les points de passage du tracé. Ici, vous pouvez les afficher ou non sur la carte, et supprimer les points de passage.
 
-*Turns* menu contains info about segments turns.
+Le menu *Virages* contient des informations sur les virages des segments.
 
-![OsmAnd Web Create Track](@site/static/img/web/create_route_1.png)
+![Créer un tracé OsmAnd Web](@site/static/img/web/create_route_1.png)
 
-## POIs on the map
+## POI sur la carte
 
-Click to *POI* button on the side panel. *Show POI* menu: here you can choose POIs or search POI category for showing its on the map
+Cliquez sur le bouton *POI* dans le panneau latéral. Menu *Afficher les POI* : ici, vous pouvez choisir des POI ou rechercher une catégorie de POI pour les afficher sur la carte.
 
-![POIs menu](@site/static/img/web/poi_menu.png)
+![Menu POI](@site/static/img/web/poi_menu.png)
 
-## Search function
+## Fonction de recherche
 
-Write your request for searching and showing on the map. Click to circle for open POI's name.
+Écrivez votre requête pour rechercher et afficher sur la carte. Cliquez sur le cercle pour ouvrir le nom du POI.
 
-![Search menu](@site/static/img/web/search.png)
+![Menu Recherche](@site/static/img/web/search.png)
 
-## URL scheme
+## Schéma d'URL
 
-For easy use of the OsmAnd application you can take advantage of direct links. These are special URLs that allow you to transfer location and contain detailed data about pins and tracks.  
+Pour une utilisation facile de l'application OsmAnd, vous pouvez profiter des liens directs. Ce sont des URL spéciales qui vous permettent de transférer une position et contiennent des données détaillées sur les épingles et les tracés.
 
-These address strings can be copied and transferred using any data transfer medium supported by your device and used in the Android or iOS versions of OsmAnd.  
+Ces chaînes d'adresse peuvent être copiées et transférées à l'aide de tout moyen de transfert de données pris en charge par votre appareil et utilisées dans les versions Android ou iOS d'OsmAnd.
 
-1. **URL with a pin on the map:**
+1. **URL avec une épingle sur la carte :**
 
     https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-    ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
+    ![Créer un tracé OsmAnd Web](@site/static/img/plan-route/web_url_pin.png)
 
-2. **URL without a pin on the map:**
+2. **URL sans épingle sur la carte :**
 
     https://osmand.net/map/#9/52.3924/6.3116
 
-    ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
+    ![Créer un tracé OsmAnd Web](@site/static/img/plan-route/web_url_without.png)
 
-3. **URL with navigation:**
+3. **URL avec navigation :**
 
     https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-    ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
+    ![Créer un tracé OsmAnd Web](@site/static/img/plan-route/web_url_track.png)
 
-Depending on the specified parameters, URL strings may contain:
+Selon les paramètres spécifiés, les chaînes d'URL peuvent contenir :
 
-- **latitude:** latitude value as a number.  
-- **longitude:** longitude value as a number.  
-- **start-finish:** for navigation.
-- **profile:** for navigation.
-- **zoom:** zoom level.
+- **latitude :** valeur de la latitude sous forme de nombre.
+- **longitude :** valeur de la longitude sous forme de nombre.
+- **start-finish :** pour la navigation.
+- **profile :** pour la navigation.
+- **zoom :** niveau de zoom.
 
 
-## Related Articles
+## Articles connexes
 
-- [Import / Export](../personal/import-export.md)
-- [Color Palette Schemes](../personal/color-palette-schemes.md)
+- [Importer / Exporter](../personal/import-export.md)
+- [Schémas de palette de couleurs](../personal/color-palette-schemes.md)
 
-> *This article was last updated in January 2025*
+> *Cet article a été mis à jour pour la dernière fois en janvier 2025*
+
+-- source-hash: blake2s: 51394c351f3579688dc59ca9458a4887b13f594edda773875c3fb7fbe251f2ab --

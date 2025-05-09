@@ -2,54 +2,55 @@
 sidebar_position: 4
 ---
 
-# Navigation Voice Prompts
+# Invites vocales de navigation
 
+## 1. Quelques notions de base
 
-## 1. Some Basics
+* OsmAnd prend en charge les invites synthétisées par synthèse vocale (TTS) et les voix préenregistrées.
+* L'utilisation d'une voix TTS est préférable, elle est plus flexible et peut par exemple prononcer les noms de lieux ou de rues.
+* Les voix préenregistrées sont recommandées uniquement en dernier recours si votre appareil n'est pas du tout capable de prendre en charge la synthèse vocale dans la langue sélectionnée.
+* Pour utiliser la synthèse vocale, votre appareil doit disposer d'un moteur de synthèse vocale installé qui prend en charge la langue que vous souhaitez entendre. La plupart des appareils sont livrés avec un ou deux moteurs déjà préinstallés. Ce n'est que pour les langues moins courantes que vous devrez peut-être trouver et installer un moteur de synthèse vocale tiers.
+* Les événements pour lesquels des invites vocales sont proposées, ainsi que leur synchronisation, sont régis par le code du routeur vocal OsmAnd.
+* Mais le vocabulaire et la construction des phrases pour chaque langue sont spécifiés dans un fichier de configuration _xx-yy_tts.js_, où xx est le code de langue ISO 639-1 et yy un spécificateur régional ou similaire facultatif. Seules les voix enregistrées nécessitent un sous-dossier _voice_ supplémentaire avec toutes les expressions enregistrées nécessaires sous forme de fichiers _.ogg_.
+* La convention de dossier/fichier sur l'appareil est `voice/xx[-yy]-tts/xx[-yy]_tts.js`.
 
-* OsmAnd supports both Text-to-Speech (TTS) synthesized prompts and pre-recorded voices.
-* Using a TTS voice is preferred, it is more flexible and can e.g. also prononuce the names of places or streets.
-* Pre-recorded voices are recommended only as a fallback if your device is not capable of supporting TTS at all in the language selected.
-* To use TTS, your device needs to have a TTS engine installed which supports the language you would like to hear. Most devices come with one or two engines already pre-installed. Only for less common languages you may have to find and install a third party TTS engine.
-* For which event voice prompts are offered, and their timing, is governed by the OsmAnd voice router code.
-* But the vocabulary and sentence construction for any language is specified in a configuration file _xx-yy_tts.js_, where xx is the ISO 639-1 language code and yy an optional regional or similar specifier. Only for recorded voices an additional sub-folder _voice_ subfolder is required with all necessary recorded expressions as _.ogg_ files.
-* The folder/file convention on the device is `voice/xx[-yy]-tts/xx[-yy]_tts.js`.
-
-The _tts.js_ config files should contain a header as follows, keeping track of which particular features have been implemented and verified for the file in question:
+Les fichiers de configuration _tts.js_ doivent contenir un en-tête comme suit, indiquant les fonctionnalités particulières qui ont été implémentées et vérifiées pour le fichier en question :
 
 ```
-// IMPLEMENTED (X) or MISSING ( ) FEATURES, (N/A) if not needed in this language:
+// FONCTIONNALITÉS IMPLÉMENTÉES (X) ou MANQUANTES ( ), (N/A) si non nécessaire dans cette langue :
 //
-// (X) Basic navigation prompts: route (re)calculated (with distance and time support), turns, roundabouts, u-turns, straight/follow, arrival
-// (X) Announce nearby point names (destination / intermediate / GPX waypoint / favorites / POI)
-// (X) Attention prompts: SPEED_CAMERA; SPEED_LIMIT; BORDER_CONTROL; RAILWAY; TRAFFIC_CALMING; TOLL_BOOTH; STOP; PEDESTRIAN; MAXIMUM; TUNNEL
-// (X) Other prompts: gps lost, off route, back to route
-// (X) Street name and prepositions (onto / on / to) and street destination (toward) support
-// (X) Distance unit support (meters / feet / yard)
-// (N/A) Special grammar: (please specify which)
-// (X) Support announcing highway exits
+// (X) Invites de navigation de base : itinéraire (re)calculé (avec prise en charge de la distance et du temps), virages, ronds-points, demi-tours, tout droit/suivre, arrivée
+// (X) Annoncer les noms des points proches (destination / intermédiaire / point de cheminement GPX / favoris / POI)
+// (X) Invites d'attention : RADAR ; LIMITE_VITESSE ; CONTRÔLE_FRONTIÈRE ; CHEMIN_FER ; MODÉRATION_TRAFIC ; PÉAGE ; STOP ; PIÉTON ; MAXIMUM ; TUNNEL
+// (X) Autres invites : GPS perdu, hors route, retour à la route
+// (X) Prise en charge du nom de rue et des prépositions (sur / sur / vers) et de la destination de rue (vers)
+// (X) Prise en charge des unités de distance (mètres / pieds / yards)
+// (N/A) Grammaire spéciale : (veuillez préciser laquelle)
+// (X) Prise en charge de l'annonce des sorties d'autoroute
 ```
 
-## 2. Voice Languages and Variants
+## 2. Langues et variantes vocales
 
-* Some common language voice prompt packages are pre-installed in OsmAnd, others require a one-time download. (Please note that also the pre-installed ones appear as if they were a download.)
-* For some languages we offer different regional variants. Hearing also the corresponding regional pronunciation depends on the capabilities of your device.
-* For some voices we also offer additional variants with e.g. shorter ('casual') prompts or some prompts muted to reduce chattiness.
+* Certains packages d'invites vocales de langues courantes sont préinstallés dans OsmAnd, d'autres nécessitent un téléchargement unique. (Veuillez noter que même les préinstallés apparaissent comme s'ils étaient un téléchargement.)
+* Pour certaines langues, nous proposons différentes variantes régionales. L'écoute de la prononciation régionale correspondante dépend des capacités de votre appareil.
+* Pour certaines voix, nous proposons également des variantes supplémentaires avec par exemple des invites plus courtes (« décontractées ») ou certaines invites désactivées pour réduire le bavardage.
 
-## 3. Testing of Voice Prompts
+## 3. Test des invites vocales
 
-You may temporarily enable OsmAnd development plugin, then go to its settings and use button `Test voice prompts`. It provides several annlouncement examples for each type of OsmAnd prompt, using a wide range of numbers to test time/distance formating and pronunciation. The button caption staes the basic prompt content, the exact wording is specified in the tts.js file you test.
-There is also a test button showing your device settings and language capabilities.
+Vous pouvez activer temporairement le plugin de développement OsmAnd, puis accéder à ses paramètres et utiliser le bouton `Tester les invites vocales`. Il fournit plusieurs exemples d'annonces pour chaque type d'invite OsmAnd, en utilisant une large gamme de nombres pour tester le formatage et la prononciation du temps/de la distance. La légende du bouton indique le contenu de l'invite de base, le libellé exact est spécifié dans le fichier tts.js que vous testez.
+Il existe également un bouton de test affichant les paramètres et les capacités linguistiques de votre appareil.
 
-During navigation, the current voice prompt can always be triggered by tapping on the turn arrow widget.
+Pendant la navigation, l'invite vocale actuelle peut toujours être déclenchée en appuyant sur le widget de flèche de virage.
 
-## 4. Creating a New TTS Voice Language/Variant
+## 4. Création d'une nouvelle langue/variante vocale TTS
 
-Some hints:
+Quelques conseils :
 
-- OsmAnd only provides the wording, word order, grammar in terms of declinations, cases, singular/plural, etc., while the pronunciation is performed by the TTS engine you use on the device (there are built in and 3rd party ones)
-- This is done in a single voice definition file per language. On github the files are located <a href="https://github.com/osmandapp/OsmAnd-resources/tree/master/voice">here</a>, and please see above for the folder/file conventions on your device locally.
-- The file is now in js (migrated from former PROLOG to make it more mainstream).
-- To create a new configuration file, please start by cloning from _en\_tts.js_, i.e. use that as a template.
-- It may then be helpful to look at existing config files for grammatically more complex languages (e.g. German, Czech, or Slovak) to look at existing solutions for special grammar, word order, number forming, etc. Look particularly at languages similar to yours.
-- You can test your own tts file (or your improvements to existing ones) yourself locally, prior to a pull request, just place it on you device with nthecorrect file/folder convention.
+- OsmAnd ne fournit que le libellé, l'ordre des mots, la grammaire en termes de déclinaisons, de cas, de singulier/pluriel, etc., tandis que la prononciation est effectuée par le moteur TTS que vous utilisez sur l'appareil (il existe des moteurs intégrés et des moteurs tiers)
+- Cela se fait dans un seul fichier de définition vocale par langue. Sur github, les fichiers se trouvent <a href="https://github.com/osmandapp/OsmAnd-resources/tree/master/voice">ici</a>, et veuillez consulter ci-dessus les conventions de dossier/fichier sur votre appareil localement.
+- Le fichier est maintenant en js (migré de l'ancien PROLOG pour le rendre plus courant).
+- Pour créer un nouveau fichier de configuration, veuillez commencer par cloner à partir de _en\_tts.js_, c'est-à-dire l'utiliser comme modèle.
+- Il peut ensuite être utile de consulter les fichiers de configuration existants pour les langues grammaticalement plus complexes (par exemple, l'allemand, le tchèque ou le slovaque) afin d'examiner les solutions existantes pour la grammaire spéciale, l'ordre des mots, la formation des nombres, etc. Regardez particulièrement les langues similaires à la vôtre.
+- Vous pouvez tester votre propre fichier tts (ou vos améliorations aux fichiers existants) vous-même localement, avant une demande de tirage, placez-le simplement sur votre appareil avec la convention de fichier/dossier correcte.
+
+-- source-hash: blake2s: 0db426bf3863ed32bdabeb14e77d821e9cbf22f4a176cd185ee7046ff72ef040 --

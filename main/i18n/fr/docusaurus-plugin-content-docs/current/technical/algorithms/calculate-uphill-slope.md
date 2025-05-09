@@ -2,96 +2,96 @@
 sidebar_position: 5
 ---
 
-# Calculation of uphill / downhill / slope
+# Calcul de la montée / descente / pente
 
-OsmAnd uses different algorithms to calculate **slope** and **uphill** based on SRTM satellite data which is embedded in offline maps and based on Recorded GPX tracks.
+OsmAnd utilise différents algorithmes pour calculer la **pente** et la **montée** basés sur les données satellites SRTM intégrées dans les cartes hors ligne et basés sur les traces GPX enregistrées.
 
-Main goal to calculate **uphill** is to provide relevant information how much **extra energy** is spent on going up, obviously it depends
-on multiple factors like vehicle or way of transporting, surface, weight of the person and others.
-So in the end **uphill** should be a parameter taken into account by Elevation based routing, to produce energy-efficient routing.
+L'objectif principal du calcul de la **montée** est de fournir des informations pertinentes sur la quantité d'**énergie supplémentaire** dépensée en montant. Évidemment, cela dépend de multiples facteurs tels que le véhicule ou le mode de transport, la surface, le poids de la personne et d'autres.
+Ainsi, en fin de compte, la **montée** devrait être un paramètre pris en compte par le routage basé sur l'altitude, afin de produire un routage économe en énergie.
 
-Main goal to calculate **slope** is to have visual indication which steep roads needs to be avoided.
-
-
-## Uphill / Downhill
-
-There are lots of issues to calculate **uphill** cause there is no standard and cause it depends on way of transportation and many other parameters, it's hard to provide reasonable control to user so it's not too complicated. Usually uphill is compared to other programs but there is no program that has a golden standard.
-
-OsmAnd uses 3 steps algorithm:
-
-- Filter noisy data. 
-- Find local extremums (minimums and maximums).
-- Calculate sum of differences between min and max.
-
-Some tracks contains lots of noisy data which needs to be filtered first. For now we apply filtering to all tracks but prepared tracks such as built by 
-Plan Route tool, Navigation tool or after SRTM correction, filtering shouldn't have any effect.
+L'objectif principal du calcul de la **pente** est d'avoir une indication visuelle des routes escarpées à éviter.
 
 
-### Filter 70% slope
+## Montée / Descente
 
-Filtering is based on finding **extreme points** that are significantly higher or lower then 1 neighbor point on the left and 1 neighbor point on the right on the graph. 
-Those **extreme points** are excluded from further caclulation. The ```threshold``` is [70% slope](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) -  [code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72).
+Il y a beaucoup de problèmes pour calculer la **montée** car il n'y a pas de norme et parce que cela dépend du mode de transport et de nombreux autres paramètres, il est difficile de fournir un contrôle raisonnable à l'utilisateur sans que ce soit trop compliqué. Habituellement, la montée est comparée à d'autres programmes, mais aucun programme n'a de norme d'or.
 
-**Example 1**. (all points distributed by 10m), elevation - [5, 3, 10, 3, 5]. 10 is extreme point: cause it's 10 > 3 (70% slope).
+OsmAnd utilise un algorithme en 3 étapes :
 
-**Example 2**. (all points distributed by 10m), elevation - [5, 3, 10, 13, 15]. 10 is not an extreme point: cause 10 > 3 but 10 < 13, so it's a local peak.
+- Filtrer les données bruitées.
+- Trouver les extremums locaux (minimums et maximums).
+- Calculer la somme des différences entre min et max.
 
-### Filter jumping points
-
-Points that represent local hills ```/\``` are filtered, it leads to an issue that highest and lowest point will be always filtered out but it allows to deal with noisy tracks where recording was not frequent so first check with extreme slope doesn't work. Reference to the [code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L49).
-
-**Example 1**. Elevation - [5, 3, 10, 3, 5] -> [5, 5].
-
-**Example 2**. Elevation - [5, 6, 10, 7, 5] -> [5, 6, 7, 5].
-
-**Example 3**. Elevation - [5, 2, 3, 4, 5] -> [5, 3, 4, 5].
+Certaines traces contiennent beaucoup de données bruitées qui doivent être filtrées en premier. Pour l'instant, nous appliquons le filtrage à toutes les traces, mais pour les traces préparées telles que celles construites par l'outil Planifier un itinéraire, l'outil Navigation ou après correction SRTM, le filtrage ne devrait avoir aucun effet.
 
 
-### Finding extremums
+### Filtrer la pente à 70%
 
-To find extremums [Rames-Dougals-Peucker](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) algorithm is used. It's not absolutely good to find exactly extremums on the random graph, but in altitude calculation it avoids lots of random small peaks that could happen during 1 long uphill and some unnoticeably short downhills in between.
+Le filtrage est basé sur la recherche de **points extrêmes** qui sont significativement plus hauts ou plus bas qu'un point voisin à gauche et un point voisin à droite sur le graphique.
+Ces **points extrêmes** sont exclus du calcul ultérieur. Le ```seuil``` est de [70% de pente](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) - [code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72).
 
-The main purpose of the algorithm is to find minimum number of straight lines that could represent the altitude graph. The ```threshold``` is **[7 meters](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationDiffsCalculator.java#L13)**. So all peaks higher than 7 meters difference will be detected on a flat surfaces and won't be detected if they are less.
+**Exemple 1**. (tous les points distribués par 10m), altitude - [5, 3, 10, 3, 5]. 10 est un point extrême : car 10 > 3 (pente à 70%).
 
-Extremums are displayed on the graph as blue dots with еру OsmAnd development plugin enabled.
+**Exemple 2**. (tous les points distribués par 10m), altitude - [5, 3, 10, 13, 15]. 10 n'est pas un point extrême : car 10 > 3 mais 10 < 13, c'est donc un pic local.
 
-**Example 1**. Elevation - [0, 0, 10, 0, 0]. **Extremum** is 10.
+### Filtrer les points sautants
 
-**Example 2**. Elevation - [0, 1, 5, 4, -3, -2, -1, 0]. **None extremums** - all less than 7 meters difference.
+Les points qui représentent des collines locales ```/\``` sont filtrés, cela conduit à un problème où le point le plus haut et le point le plus bas seront toujours filtrés, mais cela permet de gérer les traces bruitées où l'enregistrement n'était pas fréquent, de sorte que la première vérification avec une pente extrême ne fonctionne pas. Référence au [code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L49).
+
+**Exemple 1**. Altitude - [5, 3, 10, 3, 5] -> [5, 5].
+
+**Exemple 2**. Altitude - [5, 6, 10, 7, 5] -> [5, 6, 7, 5].
+
+**Exemple 3**. Altitude - [5, 2, 3, 4, 5] -> [5, 3, 4, 5].
 
 
-### Calculate uphill / downhill between extremums
+### Trouver les extremums
 
-For example, if you have a simple track that goes up and down, you have only 1 maximum on your path, so the 
-  ``` 
-  Start ele diff = <start elevation> - <Extremum elevation>    : 
-  End   ele diff = <Extremum elevation> - <end elevation>      : if positive - **uphill**, if negative - **downhill**
+Pour trouver les extremums, l'algorithme [Rames-Dougals-Peucker](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) est utilisé. Il n'est pas absolument bon pour trouver exactement les extremums sur un graphique aléatoire, mais dans le calcul de l'altitude, il évite beaucoup de petits pics aléatoires qui pourraient se produire pendant une longue montée et quelques courtes descentes imperceptibles entre les deux.
+
+Le but principal de l'algorithme est de trouver le nombre minimum de lignes droites qui pourraient représenter le graphique d'altitude. Le ```seuil``` est de **[7 mètres](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationDiffsCalculator.java#L13)**. Ainsi, tous les pics supérieurs à 7 mètres de différence seront détectés sur des surfaces planes et ne seront pas détectés s'ils sont inférieurs.
+
+Les extremums sont affichés sur le graphique sous forme de points bleus avec le plugin de développement OsmAnd activé.
+
+**Exemple 1**. Altitude - [0, 0, 10, 0, 0]. L'**extremum** est 10.
+
+**Exemple 2**. Altitude - [0, 1, 5, 4, -3, -2, -1, 0]. **Aucun extremum** - tous inférieurs à 7 mètres de différence.
+
+
+### Calculer la montée / descente entre les extremums
+
+Par exemple, si vous avez une trace simple qui monte et descend, vous n'avez qu'un seul maximum sur votre chemin, donc la
+  ```
+  Diff altitude début = <altitude début> - <altitude Extremum> :
+  Diff altitude fin = <altitude Extremum> - <altitude fin> : si positif - **montée**, si négatif - **descente**
   ```
 
-1. If *Start ele diff* > 0
-  - **uphill** = *start ele diff*  
-  - **downhill** = *end ele diff*  
+1. Si *Diff altitude début* > 0
+  - **montée** = *diff altitude début*
+  - **descente** = *diff altitude fin*
 
-2. If *End ele diff* > 0
-  - **uphill** = *end ele diff*   
-  - **downhill** = *start ele diff*  
-
-
-More examples will be added.
+2. Si *Diff altitude fin* > 0
+  - **montée** = *diff altitude fin*
+  - **descente** = *diff altitude début*
 
 
-## Altitude SRTM correction
-
-There are 2 alternatives that's possible to use in OsmAnd to get altitude correction.
-
-1. Open track in OsmAnd Android and find, *Edit Track → Options → Altiude Correction* 
-1.1 **Online**  will process track via OsmAnd server and data.
-1.2 **Offline**  will process track on device if 3D geotifs files are downloaded.
-2. Open website https://osmand.net/map and upload track and see SRTM elevation.
+Plus d'exemples seront ajoutés.
 
 
-## Slope
+## Correction d'altitude SRTM
 
-Green graph is calculated different than uphill / downhill and could have slight variations. In theory in all **extremums** green graph should **cross 0 line**, though all 0 slope points are extremums.
+Il existe 2 alternatives possibles à utiliser dans OsmAnd pour obtenir une correction d'altitude.
 
-To calculate the slope the whole data is split for equal 20 meters steps. For each point of that grid average altitude around the point (10 meters radius) is calculated. Then discrete derivative is calulated using [Finite central difference](https://en.wikipedia.org/wiki/Finite_difference).
+1. Ouvrez la trace dans OsmAnd Android et trouvez, *Modifier la trace → Options → Correction d'altitude*
+1.1 **En ligne** traitera la trace via le serveur et les données OsmAnd.
+1.2 **Hors ligne** traitera la trace sur l'appareil si les fichiers geotifs 3D sont téléchargés.
+2. Ouvrez le site web https://osmand.net/map et téléchargez la trace pour voir l'altitude SRTM.
+
+
+## Pente
+
+Le graphique vert est calculé différemment de la montée / descente et peut présenter de légères variations. En théorie, dans tous les **extremums**, le graphique vert devrait **croiser la ligne 0**, bien que tous les points de pente 0 soient des extremums.
+
+Pour calculer la pente, l'ensemble des données est divisé en étapes égales de 20 mètres. Pour chaque point de cette grille, l'altitude moyenne autour du point (rayon de 10 mètres) est calculée. Ensuite, la dérivée discrète est calculée en utilisant la [différence finie centrée](https://en.wikipedia.org/wiki/Finite_difference).
+
+-- source-hash: blake2s: 48e505894a96c59679afafb50fc66400ba8958b131c56443e6315fa2398d6cc9 --

@@ -2,32 +2,34 @@
 sidebar_position: 9
 ---
 
-# Purchases
+# Achats
 
-OsmAnd app is available for Android and iOS systems. There is a great variety of features that OsmAnd offers. Most of them are available in a free version of the application. The paid OsmAnd services provide extended functionality.
+L'application OsmAnd est disponible pour les systèmes Android et iOS. OsmAnd offre une grande variété de fonctionnalités. La plupart d'entre elles sont disponibles dans la version gratuite de l'application. Les services payants d'OsmAnd offrent des fonctionnalités étendues.
 
-### [Android Purchases](./android.md)
+### [Achats Android](./android.md)
 
-Detailed information about purchases on Android: markets to install, subscriptions vs in app, prices, paid features.
+Informations détaillées sur les achats sur Android : marchés d'installation, abonnements vs achats intégrés, prix, fonctionnalités payantes.
 
-### [iOS Purchases](./ios.md)
+### [Achats iOS](./ios.md)
 
-Detailed information about purchases on iOS: subscriptions vs in app, prices, paid features.
+Informations détaillées sur les achats sur iOS : abonnements vs achats intégrés, prix, fonctionnalités payantes.
 
-### [Giveaway](./giveaway.md)
+### [Concours](./giveaway.md)
 
-You can get OsmAnd for free by one of our regular giveaways. Read more how to register and participate.
+Vous pouvez obtenir OsmAnd gratuitement grâce à l'un de nos concours réguliers. En savoir plus sur la façon de s'inscrire et de participer.
 
-### New device / new account
+### Nouvel appareil / nouveau compte
 
-- **Android.** Just enter Google Play using the same account you used to buy OsmAnd, then find OsmAnd through Search and install it again. Make sure you install OsmAnd+ if you have bought it or install OsmAnd if you have bought in app.
-- **iOS.** All you have to do is enter the App store and install OsmAnd again. You can use it on as many devices as you want without the need to buy the app again. You may see the "Buy" button, but you won't have to pay: just press it to download the app without paying again.
+- **Android.** Il suffit d'entrer dans Google Play en utilisant le même compte que celui que vous avez utilisé pour acheter OsmAnd, puis de trouver OsmAnd via la recherche et de l'installer à nouveau. Assurez-vous d'installer OsmAnd+ si vous l'avez acheté ou d'installer OsmAnd si vous avez acheté l'application.
+- **iOS.** Tout ce que vous avez à faire est d'entrer dans l'App Store et d'installer OsmAnd à nouveau. Vous pouvez l'utiliser sur autant d'appareils que vous le souhaitez sans avoir à racheter l'application. Vous pouvez voir le bouton "Acheter", mais vous n'aurez pas à payer : appuyez simplement dessus pour télécharger l'application sans payer à nouveau.
 
 
-**Get OsmAnd**
+**Obtenir OsmAnd**
 
-There are several ways to do that:
-- OsmAnd+ on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
-- OsmAnd on [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- OsmAnd+ on [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) (NOTE: [it will be closed](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program) in August 20, 2025 - [troubleshooting section](../troubleshooting/purchases_payments.md#what-do-after-close-of-amazon-store))
-- OsmAnd Maps on [Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
+Il existe plusieurs façons de le faire :
+- OsmAnd+ sur [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
+- OsmAnd sur [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
+- OsmAnd+ sur [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) (NOTE : [il sera fermé](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program) le 20 août 2025 - [section de dépannage](../troubleshooting/purchases_payments.md#what-do-after-close-of-amazon-store))
+- OsmAnd Maps sur [Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
+
+-- source-hash: blake2s: f4077226de87d4875f407f35b19be597117ba5d10948e519c4553df76119f409 --

@@ -4,7 +4,7 @@ title:  Android Auto
 ---
 
 import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import TabItem from '@theme/Tabs';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
@@ -14,28 +14,30 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Location delays (ANR crashes)
+## Retards de localisation (plantages ANR)
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_troubleshooting_1.png)
 
-Android Auto and OsmAnd may simultaneously detect the vehicle's location, which may cause a 3-5 second delay in displaying information in the related widgets or freeze. To avoid this, it is necessary to:
+Android Auto et OsmAnd peuvent détecter simultanément la position du véhicule, ce qui peut entraîner un délai de 3 à 5 secondes dans l'affichage des informations dans les widgets associés ou un blocage. Pour éviter cela, il est nécessaire de :
 
-1. Open the Android Auto settings.
-2. Under Settings, find Location permissions.
-3. This section displays a list of apps that are allowed to use location in Android Auto. Find the OsmAnd app and allow the use of location.
-4. Location will now only be detected by the OsmAnd app in Android Auto, avoiding delays in displaying location information.
-
-
-## Map orientation issue
-
-Movement direction map orientation is [flipped and jiggles](https://github.com/osmandapp/OsmAnd/issues/16041). Resolved by switching on ["Approximate bearing"](../navigation/guidance/map-during-navigation.md#map-during-navigation) option:
-
-- Visible only if [OsmAnd Development](../plugins/development.md) is enabled.
-- Placed in *Menu → Settings → Profile → Navigation settings → [Map during navigation](../navigation/guidance/map-during-navigation.md) → Approximate bearing*.
+1. Ouvrir les paramètres d'Android Auto.
+2. Dans les paramètres, trouver les autorisations de localisation.
+3. Cette section affiche une liste d'applications autorisées à utiliser la localisation dans Android Auto. Trouver l'application OsmAnd et autoriser l'utilisation de la localisation.
+4. La localisation ne sera désormais détectée que par l'application OsmAnd dans Android Auto, évitant ainsi les retards dans l'affichage des informations de localisation.
 
 
-## Volume control issue
+## Problème d'orientation de la carte
 
-In most cases, all types of **signals** remain at constant full volume, which is not affected by the simultaneous audio playback settings. To change the volume of the OsmAnd navigation prompts when using Android Auto, go to *Setup → Voice → Voice volume* on the vehicle multimedia system screen.  
+L'orientation de la carte dans le sens du mouvement est [inversée et vacille](https://github.com/osmandapp/OsmAnd/issues/16041). Résolu en activant l'option ["Orientation approximative"](../navigation/guidance/map-during-navigation.md#map-during-navigation) :
 
-If this method does not work, there is another option. To adjust the notification volume, you need to turn on Google Assistant during a call. Hold down the button on the steering wheel that turns on Google Assistant, and during the call, adjust the volume using the dashboard or steering wheel.  
+- Visible uniquement si [OsmAnd Development](../plugins/development.md) est activé.
+- Placé dans *Menu → Paramètres → Profil → Paramètres de navigation → [Carte pendant la navigation](../navigation/guidance/map-during-navigation.md) → Orientation approximative*.
+
+
+## Problème de contrôle du volume
+
+Dans la plupart des cas, tous les types de **signaux** restent à un volume constant et maximal, qui n'est pas affecté par les paramètres de lecture audio simultanée. Pour modifier le volume des invites de navigation OsmAnd lors de l'utilisation d'Android Auto, accédez à *Configuration → Voix → Volume de la voix* sur l'écran du système multimédia du véhicule.
+
+Si cette méthode ne fonctionne pas, il existe une autre option. Pour régler le volume des notifications, vous devez activer Google Assistant pendant un appel. Maintenez enfoncé le bouton du volant qui active Google Assistant, et pendant l'appel, réglez le volume à l'aide du tableau de bord ou du volant.
+
+-- source-hash: blake2s: 8ceba594c80385b497a558e2b60474c77d5b2d7b01d707343a6463a144cb54fb --

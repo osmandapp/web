@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  Marker Widgets
+title:  Widgets de marqueurs
 ---
 
 import Tabs from '@theme/Tabs';
@@ -12,177 +12,174 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-## Overview
+## Aperçu
 
-Markers are temporary points indicated on the map in the form of flags. The widgets show the *Direction*, *Distance*, *Address*, and *Estimated arrival time* to the marker. They allow you to quickly find markers on the map, as well as change their position. You can read more about markers in this [article](../personal/markers).  
+Les marqueurs sont des points temporaires indiqués sur la carte sous forme de drapeaux. Les widgets affichent la *direction*, la *distance*, l'*adresse* et l'*heure d'arrivée estimée* jusqu'au marqueur. Ils vous permettent de trouver rapidement des marqueurs sur la carte, ainsi que de modifier leur position. Vous pouvez en savoir plus sur les marqueurs dans cet [article](../personal/markers).
 
 
-## Top Bar Widget
+## Widget de la barre supérieure
 
-The **Map markers bar** (Android) widget / **Distance indication - Top bar** (iOS) widget displays:
+Le widget **Barre de marqueurs de carte** (Android) / **Indication de distance - Barre supérieure** (iOS) affiche :
 
-- Distance from your current location (or the centre map point / the initial map touching point when the Location is off) to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be chosen in the Profile settings).
-- An arrow of the same color as the marker indicates the direction from the current location (or the centre map point / the initial map touching point when the Location is off) and orientation in space of your device (heading) towards the marker.
-- Location Address.
-- Menu icon leading to [Map marker list](../personal/markers/#map-markers-menu).
+- La distance entre votre position actuelle (ou le point central de la carte / le point de contact initial de la carte lorsque la localisation est désactivée) et le point sélectionné indiqué par le marqueur sur la carte ([Unités de longueur](../personal/profiles/#general-settings) peuvent être choisies dans les paramètres du profil).
+- Une flèche de la même couleur que le marqueur indique la direction depuis la position actuelle (ou le point central de la carte / le point de contact initial de la carte lorsque la localisation est désactivée) et l'orientation dans l'espace de votre appareil (cap) vers le marqueur.
+- Adresse de localisation.
+- Icône de menu menant à la [Liste des marqueurs de carte](../personal/markers/#map-markers-menu).
 
-You can also select to display one or two markers. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Vous pouvez également choisir d'afficher un ou deux marqueurs. Pour en savoir plus sur les paramètres des widgets, consultez cet [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
 :::info
-*The distance to the marker* is the length of the straight line between your position (or the centre map point / the initial map touching point when the Location is off) and the marker.
-:::  
+*La distance jusqu'au marqueur* est la longueur de la ligne droite entre votre position (ou le point central de la carte / le point de contact initial de la carte lorsque la localisation est désactivée) et le marqueur.
+:::
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top-bar-widget-andr.png)
 
 
 | | |
 |------------|------------|
-| Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_markers_bar"/>* |
-| By tapping | The visible part of the map shifts to the marker location. |
-| Long tap + move | To measure the distance and see the direction from a particular point on the map to the tracked marker, you need to make a long tap and immediately slightly move the map position (the context menu should not appear). |
-| Approach marker | In case your location is within a small radius of the map marker (**< 50 m**), in the widget field you can see a checkmark button to quickly delete the map marker (mark as passed). The checked marker is replaced by the next marker in the list of markers.  |
-| Distance format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>*  |
+| Activer | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="map_markers_bar"/>* |
+| En appuyant | La partie visible de la carte se déplace vers l'emplacement du marqueur. |
+| Appui long + déplacement | Pour mesurer la distance et voir la direction d'un point particulier sur la carte vers le marqueur suivi, vous devez effectuer un appui long et immédiatement déplacer légèrement la position de la carte (le menu contextuel ne doit pas apparaître). |
+| Approche du marqueur | Si votre position se trouve dans un petit rayon du marqueur de carte (**< 50 m**), dans le champ du widget, vous pouvez voir un bouton de coche pour supprimer rapidement le marqueur de carte (marquer comme passé). Le marqueur coché est remplacé par le marqueur suivant dans la liste des marqueurs. |
+| Format de distance | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
 ![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top-bar-widget-ios.png)
 
 | | |
 |------------|------------|
-| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_markers_bar"/>*|
-| By tapping | The visible part of the map shifts to the marker location. |
-| By tapping | Changing between "Distance" / "Estimated time of arrival" (Switch mode). |
-| Approach marker | In case your location is within a small radius of the map marker (**< 50 m**), in the widget field you can see a checkmark button to quickly delete the map marker (mark as passed). The checked marker is replaced by the next marker in the list of markers.  |
-| Distance format  | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |  
+| Activer | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="map_markers_bar"/>*|
+| En appuyant | La partie visible de la carte se déplace vers l'emplacement du marqueur. |
+| En appuyant | Changement entre "Distance" / "Heure d'arrivée estimée" (Mode de commutation). |
+| Approche du marqueur | Si votre position se trouve dans un petit rayon du marqueur de carte (**< 50 m**), dans le champ du widget, vous pouvez voir un bouton de coche pour supprimer rapidement le marqueur de carte (marquer comme passé). Le marqueur coché est remplacé par le marqueur suivant dans la liste des marqueurs. |
+| Format de distance | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 </TabItem>
 
 </Tabs>
 
 
-## Panel Widgets
+## Widgets de panneau
 
-The **Map markers** *(for Android)* widget and **Distance indication - Widgets** *(for iOS)* displays:
+Le widget **Marqueurs de carte** *(pour Android)* et **Indication de distance - Widgets** *(pour iOS)* affiche :
 
-- *Distance from your current location* to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be choosed in the Profile settings).
-- *Estimated time of arrival or ETA*.  
-This is the time (hh:mm) when the vehicle or person should arrive at the destination. It is calculated as the distance to the marker divided by the average speed.
-The average speed is calculated as the mean of all speed values received from location points for the time interval you selected from 15 seconds to 60 minutes.
+- *Distance de votre position actuelle* au point sélectionné indiqué par le marqueur sur la carte ([Unités de longueur](../personal/profiles/#general-settings) peuvent être choisies dans les paramètres du profil).
+- *Heure d'arrivée estimée ou ETA*.
+Il s'agit de l'heure (hh:mm) à laquelle le véhicule ou la personne devrait arriver à destination. Elle est calculée comme la distance jusqu'au marqueur divisée par la vitesse moyenne.
+La vitesse moyenne est calculée comme la moyenne de toutes les valeurs de vitesse reçues des points de localisation pour l'intervalle de temps que vous avez sélectionné, de 15 secondes à 60 minutes.
 
-You can also select to display one or two markers. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Vous pouvez également choisir d'afficher un ou deux marqueurs. Pour en savoir plus sur les paramètres des widgets, consultez cet [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
 :::info
-*The distance to the marker* is the length of the straight line between your position (or a particular point on the map) and the marker.
-:::  
+*La distance jusqu'au marqueur* est la longueur de la ligne droite entre votre position (ou un point particulier sur la carte) et le marqueur.
+:::
 
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Panel widgets](@site/static/img/widgets/map_markers_widget-02.png)  
+![Panel widgets](@site/static/img/widgets/map_markers_widget-02.png)
 
 | | |
 |------------|------------|
-| Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_markers_item"/>*  |
-| By tapping 1 | Changing between "Distance" / "Estimated time of arrival" (Switch mode). |
-| By tapping 2 | The visible part of the map shifts to the marker location (Go to marker location mode) |
-| Long tap + move | To measure the distance and see the direction from a particular point on the map to the tracked marker, you need to make a long tap and immediately slightly move the map position (the context menu should not appear). |
-| Distance format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>*  |
+| Activer | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_markers_item"/>* |
+| En appuyant 1 | Changement entre "Distance" / "Heure d'arrivée estimée" (Mode de commutation). |
+| En appuyant 2 | La partie visible de la carte se déplace vers l'emplacement du marqueur (Mode Aller à l'emplacement du marqueur) |
+| Appui long + déplacement | Pour mesurer la distance et voir la direction d'un point particulier sur la carte vers le marqueur suivi, vous devez effectuer un appui long et immédiatement déplacer légèrement la position de la carte (le menu contextuel ne doit pas apparaître). |
+| Format de distance | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
 ![Panel widgets](@site/static/img/widgets/map_markers_widget_ios-02.png)
 
 | | |
 |------------|------------|
-| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_markers_bar"/>*  |
-| By tapping | The visible part of the map shifts to the marker location. |
-| By tapping | Changing between "Distance" / "Estimated time of arrival" (Switch mode). |
-| Distance format  | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
+| Activer | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="map_markers_bar"/>* |
+| En appuyant | La partie visible de la carte se déplace vers l'emplacement du marqueur. |
+| En appuyant | Changement entre "Distance" / "Heure d'arrivée estimée" (Mode de commutation). |
+| Format de distance | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 </TabItem>
 
 </Tabs>
 
 
-## Configure Marker Widgets
+## Configurer les widgets de marqueurs
 
-You can read general information about the Map markers widget settings on this [page](../personal/markers#map-markers-widgets).  
+Vous pouvez lire des informations générales sur les paramètres du widget Marqueurs de carte sur cette [page](../personal/markers#map-markers-widgets).
 
-**Map markers bar**  
-The top bar widget displays the distance and direction to the next Map marker from your current location. In the settings, you can choose whether one or two markers will be displayed at the top of the screen.
+**Barre de marqueurs de carte**
+Le widget de la barre supérieure affiche la distance et la direction vers le prochain marqueur de carte depuis votre position actuelle. Dans les paramètres, vous pouvez choisir si un ou deux marqueurs seront affichés en haut de l'écran.
 
-![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-02.png)  
+![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-02.png)
 
-**Map markers**  
-The widget shows the distance or estimated time of arrival (ETA) for the first or second marker in the list of Map markers. You can choose: one marker, first or second, to be displayed on the screen or both.
-
-![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-01.png)  ![appearence_on_the_map](@site/static/img/widgets/settings-marker-wid-first-01.png)  
-
-|    |     |  
+|    |     |
 | :------------- | :------------- |
-| Shows | This mode allows you to choose what information the widget will display: *Distance* or *Estimated arrival time*. |
-| Interval | If *Estimated arrival time* is selected in 'Show', this option appears with a choice of times (from 15 seconds to 60 minutes) for ETA calculation. |
-| Click on widget |  This setting allows you to choose which action will be performed when you click on the widget: *Switch mode* or *Go to marker location*. |
+| Affiche | Ce mode vous permet de choisir les informations que le widget affichera : *Distance* ou *Heure d'arrivée estimée*. |
+| Intervalle | Si *Heure d'arrivée estimée* est sélectionné dans 'Afficher', cette option apparaît avec un choix de temps (de 15 secondes à 60 minutes) pour le calcul de l'ETA. |
+| Cliquer sur le widget | Ce paramètre vous permet de choisir l'action qui sera effectuée lorsque vous cliquerez sur le widget : *Changer de mode* ou *Aller à l'emplacement du marqueur*. |
 
 
-## Appearance on the Map
+## Apparence sur la carte
 
-Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on the Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not. You can read the detailed information on this [page](../personal/markers.md#appearance-on-the-map).  
+La configuration de l'apparence des marqueurs de carte est disponible dans les versions Android et iOS d'OsmAnd. Le menu "Apparence sur la carte" est un paramètre général pour les marqueurs de carte et s'applique que les widgets soient activés ou non. Vous pouvez lire les informations détaillées sur cette [page](../personal/markers.md#appearance-on-the-map).
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
 
-![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)  
+![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)
 
 |    |    |
 | :------------- | :------------- |
-| <Translate android="true" ids="active_markers"/> | Shows information about the first one or two markers in the Map marker list. |
-|  <Translate android="true" ids="show_arrows_on_the_map"/> |  Indicates the direction to the tracked marker (one or two) as an arrow on the map. If the marker is in the visible part of the map, no arrow is displayed. |
-| <Translate android="true" ids="show_guide_line"/> | Shows the direction, as a dashed line, from a particular point on the map to the tracked marker in a straight line.  |
-| <Translate android="true" ids="one_tap_active"/> |  With a one-tap the required marker on the map, this marker moves to the top of the list of active Map markers without opening the Context menu. |  
-| <Translate android="true" ids="keep_passed_markers"/> | Markers added as a group of Favorites or GPX waypoints marked Passed will remain on the map. If the group is not active, the markers will disappear from the map. |
+| <Translate android="true" ids="active_markers"/> | Affiche des informations sur le premier ou les deux premiers marqueurs de la liste des marqueurs de carte. |
+|  <Translate android="true" ids="show_arrows_on_the_map"/> | Indique la direction vers le marqueur suivi (un ou deux) sous forme de flèche sur la carte. Si le marqueur se trouve dans la partie visible de la carte, aucune flèche n'est affichée. |
+| <Translate android="true" ids="show_guide_line"/> | Affiche la direction, sous forme de ligne pointillée, d'un point particulier sur la carte vers le marqueur suivi en ligne droite. |
+| <Translate android="true" ids="one_tap_active"/> | D'un simple toucher sur le marqueur requis sur la carte, ce marqueur se déplace en haut de la liste des marqueurs de carte actifs sans ouvrir le menu contextuel. |
+| <Translate android="true" ids="keep_passed_markers"/> | Les marqueurs ajoutés en tant que groupe de favoris ou de points de cheminement GPX marqués comme Passés resteront sur la carte. Si le groupe n'est pas actif, les marqueurs disparaîtront de la carte. |
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_appearance"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_appearance"/>*
 
-![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
+![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
 
-|    |     |  
+|    |     |
 | :------------- | :------------- |
-| <Translate android="true" ids="active_markers"/> | Shows information about the first one or two markers in the Map marker list. |
-|  <Translate android="true" ids="show_direction"/> | Allows you to choose whether or not to display widgets and how they will appear: above the map (<Translate android="true" ids="shared_string_topbar"/>) or on the right side of the screen (<Translate android="true" ids="shared_string_widgets"/>). |
-|  Arrows on the map |  Indicates the direction to the tracked marker (one or two) as an arrow on the map. If the marker is in the visible part of the map, no arrow is displayed. |
-| Direction line | Shows the direction, as a dashed line, from a particular point on the map to the tracked marker in a straight line.  |
+| <Translate android="true" ids="active_markers"/> | Affiche des informations sur le premier ou les deux premiers marqueurs de la liste des marqueurs de carte. |
+|  <Translate android="true" ids="show_direction"/> | Vous permet de choisir d'afficher ou non les widgets et comment ils apparaîtront : au-dessus de la carte (<Translate android="true" ids="shared_string_topbar"/>) ou sur le côté droit de l'écran (<Translate android="true" ids="shared_string_widgets"/>). |
+|  Flèches sur la carte | Indique la direction vers le marqueur suivi (un ou deux) sous forme de flèche sur la carte. Si le marqueur se trouve dans la partie visible de la carte, aucune flèche n'est affichée. |
+| Ligne de direction | Affiche la direction, sous forme de ligne pointillée, d'un point particulier sur la carte vers le marqueur suivi en ligne droite. |
 
 </TabItem>
 
 </Tabs>
 
 
-## Related Articles
+## Articles connexes
 
-- [Configure Screen](./configure-screen.md)
-- [Map buttons](./map-buttons.md)
-- [Informational widgets](./info-widgets.md)
-- [Navigational widgets](./nav-widgets.md)
-- [Radius-ruler and Ruler](./radius-ruler.md)
-- [Quick Action](./quick-action.md)
+- [Configurer l'écran](./configure-screen.md)
+- [Boutons de carte](./map-buttons.md)
+- [Widgets d'information](./info-widgets.md)
+- [Widgets de navigation](./nav-widgets.md)
+- [Règle de rayon et Règle](./radius-ruler.md)
+- [Action rapide](./quick-action.md)
 
 
-> *This article was last updated in October 2023*
+> *Cet article a été mis à jour pour la dernière fois en octobre 2023*
+
+-- source-hash: blake2s: e982d5a8bfb803b0cd3a52913a80226aa1bf366f5d4af51485fb3cc8bc180f86 --

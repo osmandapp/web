@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  Map Buttons
+title: Boutons de la carte
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,186 +15,188 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
-Map buttons, including *Zoom*, *Search*, *Directions*, *Compass*, *My Location*, *3D Mode*, and *Menu*, are the primary controls for interacting with the map. Each button offers specific functionalities to enhance your navigation and map usage experience.
-
-
-## My Location and Zoom
-
-![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
-
-Use these buttons to control how the map is displayed on the screen of your device:
-
-- **My Location**. Shows whether the center of the map is synchronized with your device's current geolocation.
-- **Zoom**. Allows you to adjust the map's zoom level to provide more or less details.
-If you want more information on using these buttons, you can see the article [Interact with map](../map/interact-with-map.md#my-location-and-zoom).
+Les boutons de la carte, notamment *Zoom*, *Recherche*, *Itinéraire*, *Boussole*, *Ma position*, *Mode 3D* et *Menu*, sont les principaux contrôles pour interagir avec la carte. Chaque bouton offre des fonctionnalités spécifiques pour améliorer votre expérience de navigation et d'utilisation de la carte.
 
 
-## Directions
+## Ma position et Zoom
 
-![Directions button allows](@site/static/img/widgets/directions_button_allows.png)
+![Menu de l'écran de configuration](@site/static/img/widgets/location_zoom_buttons.png)
 
-The **Directions** button is essential for route planning and navigation:
+Utilisez ces boutons pour contrôler la façon dont la carte est affichée sur l'écran de votre appareil :
 
-- [Build a route](../navigation/index.md). Use this button to create a route.
-- [Start navigation](../navigation/index.md). Initiate turn-by-turn navigation.
-- In navigation mode, the *Directions* button is not visible by default but appears after a short tap the map.
-
-Indicative states of the *Directions* button:
-
-- The *gray default icon* indicates that the route has not been created yet. Tapping this icon opens the [route setup](../navigation/setup/route-navigation.md) functionality.
-- The *blue default icon* indicates the route is built, but navigation has not started yet. Tapping this icon opens the [route setup](../navigation/setup/route-navigation.md#start--stop-navigation) functionality.
-- The *blue arrow icon* indicates that navigation is active. Tapping this icon opens the [details of the current route](../navigation/setup/route-details.md).
+- **Ma position**. Indique si le centre de la carte est synchronisé avec la géolocalisation actuelle de votre appareil.
+- **Zoom**. Vous permet d'ajuster le niveau de zoom de la carte pour fournir plus ou moins de détails.
+Si vous souhaitez plus d'informations sur l'utilisation de ces boutons, vous pouvez consulter l'article [Interagir avec la carte](../map/interact-with-map.md#my-location-and-zoom).
 
 
-## Configure Map
+## Itinéraire
 
-![Configure Map](@site/static/img/widgets/configure_map.png)
+![Le bouton Itinéraire permet](@site/static/img/widgets/directions_button_allows.png)
 
-The **Configure map** button provides access to the [Configure Map menu](../map/configure-map-menu.md). The icon also reflects the [Current app profile](../personal/profiles.md), allowing you to identify and switch between different profiles.
+Le bouton **Itinéraire** est essentiel pour la planification d'itinéraire et la navigation :
 
+- [Construire un itinéraire](../navigation/index.md). Utilisez ce bouton pour créer un itinéraire.
+- [Démarrer la navigation](../navigation/index.md). Lancez la navigation virage par virage.
+- En mode navigation, le bouton *Itinéraire* n'est pas visible par défaut mais apparaît après un court appui sur la carte.
 
-## Main Menu
+États indicatifs du bouton *Itinéraire* :
 
-![Main menu button](@site/static/img/widgets/main_menu_button.png)
-
-The [**Main Menu**](../start-with/main-menu.md) button opens the general menu, granting access to [all application features](../start-with/main-menu.md). In navigation mode, this button is hidden by default and becomes visible after a short tap the map.
-
-
-## Search
-
-![Search button](@site/static/img/widgets/search_button.png)
-
-The Search button offers quick access to the [search capabilities](../search/index.md), allowing you to find locations, points of interest, and other information directly from the map.
+- L'*icône grise par défaut* indique que l'itinéraire n'a pas encore été créé. Appuyer sur cette icône ouvre la fonctionnalité de [configuration d'itinéraire](../navigation/setup/route-navigation.md).
+- L'*icône bleue par défaut* indique que l'itinéraire est construit, mais que la navigation n'a pas encore commencé. Appuyer sur cette icône ouvre la fonctionnalité de [configuration d'itinéraire](../navigation/setup/route-navigation.md#start--stop-navigation).
+- L'*icône flèche bleue* indique que la navigation est active. Appuyer sur cette icône ouvre les [détails de l'itinéraire actuel](../navigation/setup/route-details.md).
 
 
-## Compass
+## Configurer la carte
 
-The Compass button indicates the orientation of the map on your device screen. For additional information, refer to the [Interact with map](../map/interact-with-map.md#map-orientation--compass) article.
+![Configurer la carte](@site/static/img/widgets/configure_map.png)
 
-
-### Map Orientation Modes
-
-- ![Compass](@site/static/img/widgets/map_butt_manually_ios.png)  
-**Manually rotated**. In this mode, you can manually rotate the map with a [two-pointer gesture (two-finger touch and rotate)](../map/interact-with-map.md#gestures) according to your preference. The orientation of the map does not depend on the direction of travel or the compass of the device but is determined by you. The manual rotation mode is set by default.
-
-- ![Compass](@site/static/img/widgets/map_butt_movem_dir_ios.png)  
-**Movement direction**. In this mode, the map is oriented according to the direction of your movement known from GPS data. For example, if you turn to the right, the map also rotates so that the right side of the screen corresponds to the direction of movement. For details, go to [Rotate map by bearing](../map/interact-with-map#rotate-map-by-bearing).
-
-- ![Compass](@site/static/img/widgets/map_butt_compas_dir_ios.png)  
-**Compass direction**. The icon on the button points to the actual North, and the map moves according to the compass orientation of your device. This way, the north of the map corresponds to the real north, and you can see the orientation of the map relative to the surrounding terrain. Your device should be in the most horizontal position possible. If your device does not have a compass sensor, the orientation of the map remains unchanged.
-
-- ![Compass](@site/static/img/widgets/map_butt_north_up_ios.png)  
-**North is up**. In this mode, the map is fixed (with a hard lock) in the North direction, which is the top edge of your device. Regardless of the direction the device is moving, the map remains static, and you can see your position related to your surroundings. The map has no automatic or manual rotation.
-
-### Compass Tapping Behavior
-
-The compass button provides multiple actions to control map orientation:
-
-- **Single tap**. A *single tap* of the [Compass button](../widgets/map-buttons.md#compass) (located in the upper left corner of the screen when [visible](../widgets/map-buttons.md#display-options)) instantly reorients the map orientation *to the North* in all map orientation modes. Even if the map is in the *Compass direction* mode, it still rotates for a moment and then reverts to the dynamic orientation of that mode.
-
-- **Double tap**. To quickly switch between map orientation modes, such as following the GPS direction or rotating with the device, *double tap* the [Compass button](../widgets/map-buttons.md#compass) (when [visible](../widgets/map-buttons.md#display-options)).
-
-- **Long tap**. With a *long tap* the [Compass button](../widgets/map-buttons.md#compass) (when [visible](../widgets/map-buttons.md#display-options)) you can open a list of all map orientation modes and select the required one. This list can also be opened in the [Profile settings](../personal/profiles.md#appearance).
+Le bouton **Configurer la carte** donne accès au [menu Configurer la carte](../map/configure-map-menu.md). L'icône reflète également le [profil d'application actuel](../personal/profiles.md), vous permettant d'identifier et de basculer entre différents profils.
 
 
-### Display Options
+## Menu principal
+
+![Bouton du menu principal](@site/static/img/widgets/main_menu_button.png)
+
+Le bouton [**Menu principal**](../start-with/main-menu.md) ouvre le menu général, donnant accès à [toutes les fonctionnalités de l'application](../start-with/main-menu.md). En mode navigation, ce bouton est masqué par défaut et devient visible après un court appui sur la carte.
+
+
+## Recherche
+
+![Bouton de recherche](@site/static/img/widgets/search_button.png)
+
+Le bouton Recherche offre un accès rapide aux [capacités de recherche](../search/index.md), vous permettant de trouver des lieux, des points d'intérêt et d'autres informations directement depuis la carte.
+
+
+## Boussole
+
+Le bouton Boussole indique l'orientation de la carte sur l'écran de votre appareil. Pour plus d'informations, reportez-vous à l'article [Interagir avec la carte](../map/interact-with-map.md#map-orientation--compass).
+
+
+### Modes d'orientation de la carte
+
+- ![Boussole](@site/static/img/widgets/map_butt_manually_ios.png)
+**Rotation manuelle**. Dans ce mode, vous pouvez faire pivoter manuellement la carte avec un [geste à deux doigts (toucher et faire pivoter avec deux doigts)](../map/interact-with-map.md#gestures) selon vos préférences. L'orientation de la carte ne dépend pas de la direction du déplacement ni de la boussole de l'appareil, mais est déterminée par vous. Le mode de rotation manuelle est défini par défaut.
+
+- ![Boussole](@site/static/img/widgets/map_butt_movem_dir_ios.png)
+**Direction du mouvement**. Dans ce mode, la carte est orientée selon la direction de votre mouvement connue à partir des données GPS. Par exemple, si vous tournez à droite, la carte tourne également de sorte que le côté droit de l'écran corresponde à la direction du mouvement. Pour plus de détails, allez à [Faire pivoter la carte par relèvement](../map/interact-with-map#rotate-map-by-bearing).
+
+- ![Boussole](@site/static/img/widgets/map_butt_compas_dir_ios.png)
+**Direction de la boussole**. L'icône sur le bouton pointe vers le Nord réel, et la carte se déplace selon l'orientation de la boussole de votre appareil. De cette façon, le nord de la carte correspond au nord réel, et vous pouvez voir l'orientation de la carte par rapport au terrain environnant. Votre appareil doit être dans la position la plus horizontale possible. Si votre appareil n'a pas de capteur de boussole, l'orientation de la carte reste inchangée.
+
+- ![Boussole](@site/static/img/widgets/map_butt_north_up_ios.png)
+**Le Nord est en haut**. Dans ce mode, la carte est fixe (avec un verrouillage dur) dans la direction Nord, qui est le bord supérieur de votre appareil. Quelle que soit la direction dans laquelle l'appareil se déplace, la carte reste statique et vous pouvez voir votre position par rapport à votre environnement. La carte n'a pas de rotation automatique ou manuelle.
+
+### Comportement du tapotement de la boussole
+
+Le bouton de la boussole offre plusieurs actions pour contrôler l'orientation de la carte :
+
+- **Simple tapotement**. Un *simple tapotement* sur le [bouton Boussole](../widgets/map-buttons.md#compass) (situé dans le coin supérieur gauche de l'écran lorsqu'il est [visible](../widgets/map-buttons.md#display-options)) réoriente instantanément l'orientation de la carte *vers le Nord* dans tous les modes d'orientation de la carte. Même si la carte est en mode *Direction de la boussole*, elle tourne quand même un instant puis revient à l'orientation dynamique de ce mode.
+
+- **Double tapotement**. Pour basculer rapidement entre les modes d'orientation de la carte, comme suivre la direction GPS ou tourner avec l'appareil, *double tapotez* le [bouton Boussole](../widgets/map-buttons.md#compass) (lorsqu'il est [visible](../widgets/map-buttons.md#display-options)).
+
+- **Long tapotement**. Avec un *long tapotement* sur le [bouton Boussole](../widgets/map-buttons.md#compass) (lorsqu'il est [visible](../widgets/map-buttons.md#display-options)), vous pouvez ouvrir une liste de tous les modes d'orientation de la carte et sélectionner celui requis. Cette liste peut également être ouverte dans les [Paramètres du profil](../personal/profiles.md#appearance).
+
+
+### Options d'affichage
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
-![Compass widget](@site/static/img/widgets/map_butt_compass_widg_andr.png)
+![Widget Boussole](@site/static/img/widgets/map_butt_compass_widg_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
-![Compass widget](@site/static/img/widgets/map_butt_compass_widg_ios.png)
+![Widget Boussole](@site/static/img/widgets/map_butt_compass_widg_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-The compass icon on the button always points to the North. You can select how the compass button is displayed on the screen.
+L'icône de la boussole sur le bouton pointe toujours vers le Nord. Vous pouvez sélectionner la façon dont le bouton de la boussole est affiché à l'écran.
 
-- **Always visible**. The button does not disappear from the screen.
-- **Always hidden**. In this case, you cannot quickly change the map orientation, but the button will not take up space on the screen.
-- **Visible if the map is rotated**. The button is not visible while the compass is pointing North at the top edge of your device.  
+- **Toujours visible**. Le bouton ne disparaît pas de l'écran.
+- **Toujours masqué**. Dans ce cas, vous ne pouvez pas changer rapidement l'orientation de la carte, mais le bouton ne prendra pas de place sur l'écran.
+- **Visible si la carte est tournée**. Le bouton n'est pas visible tant que la boussole pointe vers le Nord en haut de votre appareil.
 
 
-## 3D Mode
+## Mode 3D
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*
 
-![3D mode](@site/static/img/widgets/map_butt_3D_mode_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
-
-![3D mode](@site/static/img/widgets/map_butt_3D_mode_ios.png)
+![Mode 3D](@site/static/img/widgets/map_butt_3D_mode_andr.png)
 
 </TabItem>
 
-</Tabs>  
+<TabItem value="ios" label="iOS">
 
-- *<Translate android="true" ids="shared_string_hidden"/>*. If this mode is selected for a button, you need to use a gesture to change the map view. Tap the map with two fingers and move them up and down to adjust the map's tilt.  
-- *<Translate android="true" ids="shared_string_visible"/>*. The button is always displayed on the map screen.
-- *<Translate android="true" ids="visible_in_3d_mode"/>*. The button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.  
+Aller à : *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*
 
-### Additional Settings  
+![Mode 3D](@site/static/img/widgets/map_butt_3D_mode_ios.png)
 
-1. **Display the button**. (*For Android*) The setting for the *3D Mode* button appears in the Configure screen list only if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
+</TabItem>
 
-2. **Saves the angle**. After switching to 3D mode and changing the angle manually with a gesture, the angle is saved and used the next time the 3D mode is activated. This option is only saved for the profile selected at the time.
+</Tabs>
 
-3. **Moving**. You can place the button anywhere on the screen of your device. To do this, hold down the button and without taking your finger off, drag it to the required place.
+- *<Translate android="true" ids="shared_string_hidden"/>*. Si ce mode est sélectionné pour un bouton, vous devez utiliser un geste pour changer la vue de la carte. Appuyez sur la carte avec deux doigts et déplacez-les de haut en bas pour ajuster l'inclinaison de la carte.
+- *<Translate android="true" ids="shared_string_visible"/>*. Le bouton est toujours affiché sur l'écran de la carte.
+- *<Translate android="true" ids="visible_in_3d_mode"/>*. Le bouton est affiché sur l'écran de la carte lorsque vous changez la vue de la carte avec un geste [*à deux doigts et déplacer*](../map/interact-with-map.md#gestures).
 
-4. **Button position**. The button position on the map on the application screen is saved separately for each profile.
+### Paramètres supplémentaires
 
-5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/topography.md#configure-map-view) for the selected region.
+1. **Afficher le bouton**. (*Pour Android*) Le paramètre pour le bouton *Mode 3D* apparaît dans la liste de l'écran de configuration uniquement si le moteur de rendu de la carte [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) est sélectionné.
+
+2. **Enregistre l'angle**. Après être passé en mode 3D et avoir changé l'angle manuellement avec un geste, l'angle est enregistré et utilisé la prochaine fois que le mode 3D est activé. Cette option n'est enregistrée que pour le profil sélectionné à ce moment-là.
+
+3. **Déplacement**. Vous pouvez placer le bouton n'importe où sur l'écran de votre appareil. Pour ce faire, maintenez le bouton enfoncé et, sans retirer votre doigt, faites-le glisser à l'endroit souhaité.
+
+4. **Position du bouton**. La position du bouton sur la carte sur l'écran de l'application est enregistrée séparément pour chaque profil.
+
+5. **Recommandation**. Il est recommandé de télécharger et d'activer la [carte Hillshade](../plugins/topography.md#configure-map-view) pour la région sélectionnée.
 
 
-## Custom Buttons
+## Boutons personnalisés
 
-[Quick action widget](./quick-action.md) is a configurable button with various action types that could be assigned. It is also possible to have multiple [Custom buttons](./quick-action.md#custom-buttons).
+Le [widget d'action rapide](./quick-action.md) est un bouton configurable avec différents types d'actions qui peuvent être attribuées. Il est également possible d'avoir plusieurs [boutons personnalisés](./quick-action.md#custom-buttons).
 
 
-## Map Button Appearance
+## Apparence des boutons de la carte
 
 <InfoAndroidOnly/>
 
-| Default buttons | Custom buttons |
+| Boutons par défaut | Boutons personnalisés |
 | :--- | :--- |
-| ![Map Button Appearance](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![Map Button Appearance](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
+| ![Apparence des boutons de la carte](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![Apparence des boutons de la carte](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
 
-Setting for the map button appearance are available via the following menus:
+Les paramètres d'apparence des boutons de la carte sont disponibles via les menus suivants :
 
-- *Menu → Configure screen → Buttons → Default buttons*
-- *Menu → Configure screen → Custom buttons → Quick action → three-dot menu → Appearance*
+- *Menu → Configurer l'écran → Boutons → Boutons par défaut*
+- *Menu → Configurer l'écran → Boutons personnalisés → Action rapide → menu à trois points → Apparence*
 
-Customizing the appearance of buttons allows you to adjust the size, shape, icon, and background opacity for both [Quick Action (Custom buttons)](../widgets/quick-action.md#button-appearance) and [Default buttons](../widgets/configure-screen.md#button-appearance). This flexibility lets you personalize the interface to suit your preferences and improve usability.
+La personnalisation de l'apparence des boutons vous permet d'ajuster la taille, la forme, l'icône et l'opacité de l'arrière-plan pour les [Actions rapides (boutons personnalisés)](../widgets/quick-action.md#button-appearance) et les [boutons par défaut](../widgets/configure-screen.md#button-appearance). Cette flexibilité vous permet de personnaliser l'interface selon vos préférences et d'améliorer la convivialité.
 
 
-## Related Articles
+## Articles connexes
 
-- [Configure Screen](./configure-screen.md)
-- [Informational widgets](./info-widgets.md)
-- [Navigational widgets](./nav-widgets.md)
-- [Radius-ruler and Ruler](./radius-ruler.md)
-- [Marker widgets](./markers.md)
-- [Quick Action](./quick-action.md)
+- [Configurer l'écran](./configure-screen.md)
+- [Widgets d'information](./info-widgets.md)
+- [Widgets de navigation](./nav-widgets.md)
+- [Règle de rayon et Règle](./radius-ruler.md)
+- [Widgets de marqueurs](./markers.md)
+- [Action rapide](./quick-action.md)
 
-> *This article was last updated in February 2025*
+> *Cet article a été mis à jour pour la dernière fois en février 2025*
+
+-- source-hash: blake2s: 4bb43302236568281d23ca9e7cc98a6424244128acc46340d354ddfd49bf3b12 --

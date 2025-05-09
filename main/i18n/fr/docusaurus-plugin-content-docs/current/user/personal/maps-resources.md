@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  Maps & Resources
+title: Cartes et ressources
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,410 +15,412 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
-In the **Maps and Resources** section, you can manage *Online* and *Offline* maps, and other resources used in OsmAnd. For example, you can download, delete, rename, clear cache, update and check size, and perform different actions.
+Dans la section **Cartes et ressources**, vous pouvez gérer les cartes *en ligne* et *hors ligne*, ainsi que d'autres ressources utilisées dans OsmAnd. Par exemple, vous pouvez télécharger, supprimer, renommer, vider le cache, mettre à jour et vérifier la taille, et effectuer différentes actions.
 
-OsmAnd operates with two types of maps: [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md). The [Local](#local) tab stores all maps and resources. Available map types can be downloaded from the [Downloads](#downloads) tab. On the [Updates](#updates) tab, you can download maps that are available for updates and use [Live updates](#osmand-live). You can also access the [Extra map](#extra-maps) feature to create your map types.
+OsmAnd fonctionne avec deux types de cartes : les [cartes vectorielles](../map/vector-maps.md) et les [cartes raster](../map/raster-maps.md). L'onglet [Local](#local) stocke toutes les cartes et ressources. Les types de cartes disponibles peuvent être téléchargés à partir de l'onglet [Téléchargements](#downloads). Dans l'onglet [Mises à jour](#updates), vous pouvez télécharger les cartes disponibles pour les mises à jour et utiliser les [mises à jour en direct](#osmand-live). Vous pouvez également accéder à la fonction [Cartes supplémentaires](#extra-maps) pour créer vos types de cartes.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources"/>*
 
-![Maps menu Android](@site/static/img/personal/maps/maps_overview_1_andr.png)
+![Menu Cartes Android](@site/static/img/personal/maps/maps_overview_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
-![Maps menu iOS](@site/static/img/personal/maps/maps_overview_ios.png)
+![Menu Cartes iOS](@site/static/img/personal/maps/maps_overview_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Map Types
+## Types de cartes
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Download map menu Android](@site/static/img/personal/maps/map_type_1_andr.png) ![Regionwide maps Android](@site/static/img/personal/maps/map_type_2_andr.png)
+![Menu Télécharger carte Android](@site/static/img/personal/maps/map_type_1_andr.png) ![Cartes régionales Android](@site/static/img/personal/maps/map_type_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Download map menu iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regionwide maps Android](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Menu Télécharger carte iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Cartes régionales Android](@site/static/img/personal/maps/map_type_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Downloading maps into the OsmAnd application is an important step that determines the functionality and efficiency of navigation.
+Le téléchargement de cartes dans l'application OsmAnd est une étape importante qui détermine la fonctionnalité et l'efficacité de la navigation.
 
-#### Free Features for the Selected Location
+#### Fonctionnalités gratuites pour l'emplacement sélectionné
 
-- **Standard map**. Provides an overview of the area based on the [OpenStreetMap](https://www.openstreetmap.org/) source and contains a map, routes, addresses, POI, and public transportation information. Tapping opens a screen with a list of regions of the selected country and information about how much space these maps will take up on your device.  
-- **Roads-only** (*Android only*). The map contains only road grid information to focus on routes and road infrastructure. By removing details such as buildings and points of interest, it is smaller than a standard map. Tapping opens a screen with a list of regions in the selected country and information about how much space these maps will take up on your device.
+- **Carte standard**. Fournit un aperçu de la zone basé sur la source [OpenStreetMap](https://www.openstreetmap.org/) et contient une carte, des itinéraires, des adresses, des POI et des informations sur les transports en commun. En appuyant, vous ouvrez un écran avec une liste des régions du pays sélectionné et des informations sur l'espace que ces cartes occuperont sur votre appareil.
+- **Routes uniquement** (*Android uniquement*). La carte contient uniquement des informations sur le réseau routier pour se concentrer sur les itinéraires et l'infrastructure routière. En supprimant des détails tels que les bâtiments et les points d'intérêt, elle est plus petite qu'une carte standard. En appuyant, vous ouvrez un écran avec une liste des régions du pays sélectionné et des informations sur l'espace que ces cartes occuperont sur votre appareil.
 
-#### Paid Features for the Selected Location
+#### Fonctionnalités payantes pour l'emplacement sélectionné
 
-- [Contour lines](../plugins/topography.md#contour-lines). A map containing contour elevation lines to visualize the terrain.
-- [Terrain map (Hillshade and Slope)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
-- [Terrain map (3D)](../plugins/topography.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
-- [Wikipedia](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about landmarks or additional information about places.
-- [Weather forecast](../plugins/weather.md). Weather information on a map for easy route planning.
-- [Online raster maps](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
+- [Courbes de niveau](../plugins/topography.md#contour-lines). Une carte contenant des courbes de niveau pour visualiser le terrain.
+- [Carte du terrain (ombrage et pente)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Les cartes avec des ombres ou des pentes fournissent des informations supplémentaires sur le terrain.
+- [Carte du terrain (3D)](../plugins/topography.md#3d-relief). Représentation tridimensionnelle du terrain pour une meilleure compréhension de votre environnement. Le [moteur de rendu de carte Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) doit être activé.
+- [Wikipedia](../plugins/wikipedia.md). Carte vectorielle avec des articles [Wikipedia](https://wikipedia.org/) géolocalisés sur des points de repère ou des informations supplémentaires sur des lieux.
+- [Prévisions météorologiques](../plugins/weather.md). Informations météorologiques sur une carte pour faciliter la planification d'itinéraire.
+- [Cartes raster en ligne](../map/raster-maps.md). Les cartes sont disponibles en téléchargement en ligne et peuvent être installées en tant que cartes tierces ou tuiles OsmAnd.
 
-#### World Overview Map
+#### Carte d'aperçu du monde
 
-Versions of OsmAnd up to 3.8 offer to download a world map so you can view it on a planetary scale. In newer versions of OsmAnd, a lightweight *Mini World Map* is bundled with the application. The app lets you download a larger overview world map with more detailed information.
+Les versions d'OsmAnd jusqu'à 3.8 proposent de télécharger une carte du monde afin que vous puissiez la visualiser à l'échelle planétaire. Dans les versions plus récentes d'OsmAnd, une *Mini carte du monde* légère est fournie avec l'application. L'application vous permet de télécharger une carte du monde plus grande avec des informations plus détaillées.
 
 
-## Maps & Resources
+## Cartes et ressources
 
-The **Maps & Resources** *Main Menu* section of the OsmAnd app provides access to manage maps and other important data.
+La section **Cartes et ressources** du *Menu principal* de l'application OsmAnd permet de gérer les cartes et autres données importantes.
 
-- The [Download](#downloads) maps tab allows you to download maps for offline use, ensuring their availability without the internet.  
-- In the [Local](#local) maps tab, you can find and manage detailed information about maps and places, including favorites, tracks, OSM notes, and other items you have on your device.  
-- The [Updates](#updates) tab allows users to get information about available updates to maps and other resources, ensuring that the data is up-to-date and accurate.
+- L'onglet [Télécharger](#downloads) les cartes vous permet de télécharger des cartes pour une utilisation hors ligne, garantissant leur disponibilité sans Internet.
+- Dans l'onglet [Local](#local) des cartes, vous pouvez trouver et gérer des informations détaillées sur les cartes et les lieux, y compris les favoris, les traces, les notes OSM et d'autres éléments que vous avez sur votre appareil.
+- L'onglet [Mises à jour](#updates) permet aux utilisateurs d'obtenir des informations sur les mises à jour disponibles des cartes et autres ressources, garantissant que les données sont à jour et précises.
 
-***General actions you can do in Maps & Resources***:
+***Actions générales que vous pouvez effectuer dans Cartes et ressources*** :
 
-- **Refresh**. Reloads the list of available maps from the OsmAnd server.  
-- **Search**. Search for maps by **country**, **province**, or major **city**.  
-- **Device memory**. Shows on the indicator how much memory is available for download and how many maps can be downloaded for free. Depending on the tab, sometimes slightly different data is displayed.  
-- **Map counter** (*Free version* is only visible if you don't have a [subscription](../purchases/index.md)). The indicator with dividers shows how many maps you have left to download out of the *7 available*.
+- **Actualiser**. Recharge la liste des cartes disponibles à partir du serveur OsmAnd.
+- **Rechercher**. Rechercher des cartes par **pays**, **province** ou **grande ville**.
+- **Mémoire de l'appareil**. Indique sur l'indicateur la quantité de mémoire disponible pour le téléchargement et le nombre de cartes pouvant être téléchargées gratuitement. Selon l'onglet, des données légèrement différentes sont parfois affichées.
+- **Compteur de cartes** (*Version gratuite* n'est visible que si vous n'avez pas d'[abonnement](../purchases/index.md)). L'indicateur avec des séparateurs indique le nombre de cartes qu'il vous reste à télécharger sur les *7 disponibles*.
 
-:::info monthly map updates
-Please note that monthly map updates are considered another map download and are substracted from the available number of free map downloads.
+:::info mises à jour mensuelles des cartes
+Veuillez noter que les mises à jour mensuelles des cartes sont considérées comme un autre téléchargement de carte et sont soustraites du nombre disponible de téléchargements de cartes gratuits.
 :::
 
 
-### Downloads
+### Téléchargements
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
-![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)
+![Menu Télécharger carte général Android](@site/static/img/personal/maps/download_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
-![Download map menu general iOS](@site/static/img/personal/maps/download_menu_ios.png)
+![Menu Télécharger carte général iOS](@site/static/img/personal/maps/download_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-The **Download** tab lets you download various map types from OsmAnd servers, requiring an active Internet connection.
+L'onglet **Télécharger** vous permet de télécharger différents types de cartes à partir des serveurs OsmAnd, ce qui nécessite une connexion Internet active.
 
-***To download a map:***
+***Pour télécharger une carte :***
 
-- **Open the Download** tab, locate the required section, and tap the relevant folder to see available maps.
+- **Ouvrez l'onglet Télécharger**, localisez la section requise et appuyez sur le dossier pertinent pour voir les cartes disponibles.
 
-- **Available maps** display download icons, for a single map or for [multiple maps](#multiple-map-loading).
+- Les **cartes disponibles** affichent des icônes de téléchargement, pour une seule carte ou pour [plusieurs cartes](#multiple-map-loading).
 
-- **Downloaded maps** show a green icon with a menu button:  
-    - *Android*: Three-dot menu.  
-    - *iOS*: Info (I) icon.
+- Les **cartes téléchargées** affichent une icône verte avec un bouton de menu :
+    - *Android* : Menu à trois points.
+    - *iOS* : Icône Info (I).
 
-- **Maps in the process of loading** have an icon visualizing this. To cancel the download, tap the icon. To view the list of maps in the download queue and cancel the downloads, tap the Download bar in the Device memory info area of the Downloads and Updates tabs.
+- Les **cartes en cours de chargement** ont une icône visualisant cela. Pour annuler le téléchargement, appuyez sur l'icône. Pour afficher la liste des cartes dans la file d'attente de téléchargement et annuler les téléchargements, appuyez sur la barre de téléchargement dans la zone d'informations sur la mémoire de l'appareil des onglets Téléchargements et Mises à jour.
 
-- **In the Free version**, maps unavailable for download show a [GET](../purchases/index.md) icon, linking to the purchase page.
+- **Dans la version gratuite**, les cartes non disponibles au téléchargement affichent une icône [OBTENIR](../purchases/index.md), renvoyant à la page d'achat.
 
-***The downloads tab consists of map groups:***
+***L'onglet Téléchargements se compose de groupes de cartes :***
 
-- **Device memory info**. Visualize the amount of occupied and free space on your device.
-- **Map counter** (***Free version***). Displays how many maps you have left for download.
-- [Extra maps](#extra-maps). Displays the map data for the [Custom package](../plugins/custom.md).
-- **Regions**. List by continent and world region: *Africa, Antarctica, Asia, Australia and Oceania, Central America, Europe, North America, Russia, and South America.*
-- [World maps](#world-maps). A list of maps of the entire world: *World altitude correction (Android only)*, *World overview map*, *All world (Weather forecast)*
-- [Nautical maps](../plugins/nautical-charts.md) ([*paid feature*](../purchases/index.md)). Vector maps with elevations as points or lines.
-- [Travel guides (Wikivoyage)](../plan-route/travel-guides.md) ([*paid feature*](../purchases/index.md)). Vector maps with a collection of articles in HTML format and additionally GPX files.
-- **Other maps**. Maps that cannot be assigned to the current map hierarchy because they are not supported or will be available in future versions.
-- [Voice prompts](../navigation/guidance/voice-navigation.md) (*Android only*). Voice packs for voicing navigation prompts.
-- [Map fonts](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files display text on the map.
+- **Informations sur la mémoire de l'appareil**. Visualisez la quantité d'espace occupé et libre sur votre appareil.
+- **Compteur de cartes** (***Version gratuite***). Affiche le nombre de cartes qu'il vous reste à télécharger.
+- [Cartes supplémentaires](#extra-maps). Affiche les données cartographiques pour le [package personnalisé](../plugins/custom.md).
+- **Régions**. Liste par continent et région du monde : *Afrique, Antarctique, Asie, Australie et Océanie, Amérique centrale, Europe, Amérique du Nord, Russie et Amérique du Sud.*
+- [Cartes du monde](#world-maps). Une liste de cartes du monde entier : *Correction d'altitude mondiale (Android uniquement)*, *Carte d'aperçu du monde*, *Tout le monde (Prévisions météorologiques)*
+- [Cartes nautiques](../plugins/nautical-charts.md) ([*fonctionnalité payante*](../purchases/index.md)). Cartes vectorielles avec des élévations sous forme de points ou de lignes.
+- [Guides de voyage (Wikivoyage)](../plan-route/travel-guides.md) ([*fonctionnalité payante*](../purchases/index.md)). Cartes vectorielles avec une collection d'articles au format HTML et des fichiers GPX supplémentaires.
+- **Autres cartes**. Cartes qui ne peuvent pas être attribuées à la hiérarchie de cartes actuelle car elles ne sont pas prises en charge ou seront disponibles dans les futures versions.
+- [Invites vocales](../navigation/guidance/voice-navigation.md) (*Android uniquement*). Packs vocaux pour la vocalisation des invites de navigation.
+- [Polices de carte](../map/vector-maps.md#map-fonts-android) (*Android uniquement*). Fichiers de polices supplémentaires affichant du texte sur la carte.
 
-#### World Maps
+#### Cartes du monde
 
-In the Download Maps menu, there is a **World Maps** section that provides access to download various maps of the world, complementing the functionality of the app.  
+Dans le menu Télécharger les cartes, il y a une section **Cartes du monde** qui donne accès au téléchargement de diverses cartes du monde, complétant la fonctionnalité de l'application.
 
-- **World Altitude Correction** (*Android only*). Improves navigation accuracy, especially in mountainous terrain.
-- **World overview map**. Provides an extensive overview of the earth's surface, useful for long-term route planning and casual exploration.
-- **All world (Weather forecast)**. Allows you to download a map with weather information.
+- **Correction d'altitude mondiale** (*Android uniquement*). Améliore la précision de la navigation, en particulier en terrain montagneux.
+- **Carte d'aperçu du monde**. Fournit un aperçu étendu de la surface de la Terre, utile pour la planification d'itinéraires à long terme et l'exploration occasionnelle.
+- **Tout le monde (Prévisions météorologiques)**. Vous permet de télécharger une carte avec des informations météorologiques.
 
-Information about *maps menu* and *actions* can be found in the article [Download maps](../start-with/download-maps.md).
+Des informations sur le *menu des cartes* et les *actions* se trouvent dans l'article [Télécharger les cartes](../start-with/download-maps.md).
 
 
-#### Multiple Map Loading
+#### Chargement de plusieurs cartes
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Download map menu general Android](@site/static/img/personal/maps/multiple_maps_andr.png)
+![Menu Télécharger carte général Android](@site/static/img/personal/maps/multiple_maps_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Download map menu general iOS](@site/static/img/personal/maps/multiple_maps_ios.png)
+![Menu Télécharger carte général iOS](@site/static/img/personal/maps/multiple_maps_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-For countries consisting of **multiple region maps**, you can use bulk loading of multiple maps. Maps available for this type of download are displayed with a double download arrow icons and a label with the number of regions inside (e.g. Contour lines / All Regions: 10). You get to choose how many maps to download.
+Pour les pays composés de **plusieurs cartes régionales**, vous pouvez utiliser le chargement en masse de plusieurs cartes. Les cartes disponibles pour ce type de téléchargement sont affichées avec des icônes de double flèche de téléchargement et une étiquette indiquant le nombre de régions à l'intérieur (par exemple, Courbes de niveau / Toutes les régions : 10). Vous pouvez choisir le nombre de cartes à télécharger.
 
 
 ### Local
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
-
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*
-
-![Local tab Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Local tab Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
-
-![Local tab menu iOS](@site/static/img/personal/maps/local_tab_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
-
-- ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#osmand-live), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
-
-- ***My Places*** (*yellow*).  
-    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
-
-- ***Settings*** (*green*).  
-    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
-
-
-#### Viewing Data
-
-![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
-
-
-Tap any item in the **Local** tab to open its detailed list. At the top of this list, a visual panel displays how much space the selected data type occupies relative to the total OsmAnd storage.
-
-***Available actions:***
-
-- **Search**. Find specific data by name within the selected folder.
-- **Three-dot menu**:  
-    ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
-    ***Import***. Access the device's storage to import files.
-- [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
-
-
-#### Menu for Items from the List
-
-![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
-
-Each item in the list offers a *three-dot menu* with options:
-
-- **Info**. View detailed information on the *[data item](#local-data-item-overview)*.
-- **Export**. Save data to a file via *Settings → Export to File*.
-
-***Additional options for maps:***
-
-- **Deactivate**. Disable vector maps without deleting them. They remain stored but are not used for navigation, search, or routing. Reduces the load on the device and speeds up OsmAnd.
-- **Update**. Download the latest version of the map.
-- **Rename**. Customize the map’s name for better identification.
-- **Remove**. Delete the map from your device.
-- **Edit** (for Online Maps). Modify the online map configuration.
-
-#### Map source items menu
-
-![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
-
-Each item in the [Map source](../map/raster-maps.md) list provides settings for managing online raster map stored on your device. Open the *three-dot menu* to access the available actions:
-
-- [Info](#local-data-item-overview). Displays general details about the selected map source, including format and last update date.  
-- **Calculate Size**. Estimates the storage occupied by the cached tiles of this map source. If the cache exceeds *50MB*, the size can be displayed as *≥50MB* instead of an exact number.
-- **Clear All Tiles**. Deletes all cached tiles for the selected map source, freeing up storage while keeping the map source available for future use.  
-- **Export**. Saves the selected map source configuration for backup or sharing.  
-- **Remove**. Deletes the selected map source. This action does not affect downloaded offline maps but clears the associated cache.
-
-
-#### Local Data Item Overview
-
-![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
-
-When viewing a local data item, you see:
-
-- **Type**. The data type from the **Local** list.
-- **Created**. The date the item was added.
-- **Size**. The item’s size is in MB.
-
-Available **Actions** depend on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
-
-#### Sorting Options
-
-![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
-
-Use sorting options to organize map data:
-
-- **Name (A - Z / Z - A)**. Locate items alphabetically.
-- **Country name (A - Z / Z - A)**. Organize maps geographically.
-- **Newest date first** / **Oldest date first**. See updates or older versions.
-- **Large size first** / **Small size first**. Identify large maps to free storage space.
-
-
-### Updates
-
-<Tabs groupId="operating-systems">
-
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*
 
-![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png)
+![Onglet Local Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Onglet Local Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
 
-![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios.png)
+![Menu Onglet Local iOS](@site/static/img/personal/maps/local_tab_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. Standard and road-only maps are typically released two weeks into each month. For hourly updates, check your [OsmAnd Live](#osmand-live) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
+L'onglet Local fournit un aperçu de l'utilisation du stockage pour toutes les données OsmAnd sur votre appareil. Les données sont divisées en trois sections codées par couleur pour plus de clarté, avec les éléments triés par taille du plus grand au plus petit. Chaque section n'affiche que les éléments avec des données téléchargées :
+
+- ***Ressources*** (*bleu*).
+    Comprend les cartes ([Standard](../map/vector-maps.md), &nbsp;[Nautique](../plugins/nautical-charts.md), &nbsp;[Topographie](../plugins/topography.md), &nbsp;[Météo](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) et [Guides de voyage](../plan-route/travel-guides.md), &nbsp;[Mises à jour en direct](../personal/maps-resources.md#osmand-live), &nbsp;**Routes uniquement**, &nbsp;[Sources de cartes](../map/raster-maps.md), &nbsp;[Styles de rendu](../map/vector-maps.md#default-map-styles), &nbsp;**Polices de carte, &nbsp;Invites vocales (enregistrées et TTS), &nbsp;Cache**.
+
+- ***Mes lieux*** (*jaune*).
+    Comprend les [Favoris](../personal/favorites.md), &nbsp;les [Traces](../personal/tracks/manage-tracks.md), &nbsp;les [Notes OSM](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;les [Modifications OSM](../plugins/osm-editing.md#osm-editing-layer), &nbsp;les [Notes A/V](../plugins/audio-video-notes.md), &nbsp;les [Marqueurs de carte](../personal/markers.md), &nbsp;l'[Historique](../personal/global-settings.md#history), &nbsp;*Itinéraire*.
+
+- ***Paramètres*** (*vert*).
+    Comprend les [Profils](../personal/profiles.md), &nbsp;les [Couleurs](../personal/color-palette-schemes.md) et les **Autres** configurations d'application.
 
 
-### Extra Maps
+#### Affichage des données
 
-OsmAnd supports the transfer of profile-specific settings and data, including rendering files, fonts, routes, maps, and custom plugins. Create a custom map folder using a `.osf` plugin file (a compressed `.zip` format).
+![Aperçu de la catégorie locale Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Options de la catégorie locale Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
 
-To import a file:
 
-1. Locate the `.osf` file in your device’s storage, messenger, or email.
-2. Tap to open it with OsmAnd.
-3. The plugin will appear in the **Plugin List** section, where it can be activated.
-4. A corresponding folder will then appear in the **Extra Maps** section of the [Downloads](#downloads) tab.
+Appuyez sur n'importe quel élément de l'onglet **Local** pour ouvrir sa liste détaillée. En haut de cette liste, un panneau visuel affiche l'espace occupé par le type de données sélectionné par rapport au stockage total d'OsmAnd.
 
-Read more in the [**Custom package**](../plugins/custom.md/) article.
+***Actions disponibles :***
+
+- **Rechercher**. Rechercher des données spécifiques par nom dans le dossier sélectionné.
+- **Menu à trois points** :
+    ***Sélectionner***. Choisissez plusieurs éléments pour des actions telles que *Supprimer*, *Désactiver* ou *Activer*.
+    ***Importer***. Accédez au stockage de l'appareil pour importer des fichiers.
+- [Option de tri](#sorting-options). Triez les éléments par nom, pays, date ou taille (la disponibilité dépend du type de données).
+
+
+#### Menu pour les éléments de la liste
+
+![Actions des éléments de la catégorie locale 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Actions des éléments de la catégorie locale](@site/static/img/personal/maps/local_menu_items_2_andr.png)
+
+Chaque élément de la liste propose un *menu à trois points* avec des options :
+
+- **Info**. Afficher des informations détaillées sur l'*[élément de données](#local-data-item-overview)*.
+- **Exporter**. Enregistrer les données dans un fichier via *Paramètres → Exporter vers un fichier*.
+
+***Options supplémentaires pour les cartes :***
+
+- **Désactiver**. Désactiver les cartes vectorielles sans les supprimer. Elles restent stockées mais ne sont pas utilisées pour la navigation, la recherche ou le routage. Réduit la charge sur l'appareil et accélère OsmAnd.
+- **Mettre à jour**. Télécharger la dernière version de la carte.
+- **Renommer**. Personnaliser le nom de la carte pour une meilleure identification.
+- **Supprimer**. Supprimer la carte de votre appareil.
+- **Modifier** (pour les cartes en ligne). Modifier la configuration de la carte en ligne.
+
+#### Menu des éléments de source de carte
+
+![Menu des éléments de source de carte](@site/static/img/personal/maps/map_source_items_menu_andr.png)
+
+Chaque élément de la liste [Source de carte](../map/raster-maps.md) fournit des paramètres pour gérer la carte raster en ligne stockée sur votre appareil. Ouvrez le *menu à trois points* pour accéder aux actions disponibles :
+
+- [Info](#local-data-item-overview). Affiche les détails généraux sur la source de carte sélectionnée, y compris le format et la date de la dernière mise à jour.
+- **Calculer la taille**. Estime le stockage occupé par les tuiles mises en cache de cette source de carte. Si le cache dépasse *50 Mo*, la taille peut être affichée comme *≥50 Mo* au lieu d'un nombre exact.
+- **Effacer toutes les tuiles**. Supprime toutes les tuiles mises en cache pour la source de carte sélectionnée, libérant de l'espace de stockage tout en conservant la source de carte disponible pour une utilisation future.
+- **Exporter**. Enregistre la configuration de la source de carte sélectionnée pour la sauvegarde ou le partage.
+- **Supprimer**. Supprime la source de carte sélectionnée. Cette action n'affecte pas les cartes hors ligne téléchargées mais efface le cache associé.
+
+
+#### Aperçu de l'élément de données local
+
+![Aperçu de l'élément de données local](@site/static/img/settings/local_category_overview_2.png) ![Aperçu de l'élément de données local 2](@site/static/img/settings/local_category_overview_1.png)
+
+Lorsque vous visualisez un élément de données local, vous voyez :
+
+- **Type**. Le type de données de la liste **Local**.
+- **Créé**. La date à laquelle l'élément a été ajouté.
+- **Taille**. La taille de l'élément en Mo.
+
+Les **Actions** disponibles dépendent du type de données et peuvent inclure **Désactiver**, **Mettre à jour**, **Renommer**, **Exporter** et **Supprimer**.
+
+#### Options de tri
+
+![Options de tri des données locales](@site/static/img/settings/local_sorting_options_andr_1.png)
+
+Utilisez les options de tri pour organiser les données cartographiques :
+
+- **Nom (A - Z / Z - A)**. Localiser les éléments par ordre alphabétique.
+- **Nom du pays (A - Z / Z - A)**. Organiser les cartes géographiquement.
+- **Date la plus récente en premier** / **Date la plus ancienne en premier**. Voir les mises à jour ou les versions plus anciennes.
+- **Grande taille en premier** / **Petite taille en premier**. Identifier les grandes cartes pour libérer de l'espace de stockage.
+
+
+### Mises à jour
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
+
+![Menu Cartes Mettre à jour les cartes Android](@site/static/img/personal/maps/maps_update_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
+
+![Menu Cartes Mettre à jour les cartes iOS](@site/static/img/personal/maps/maps_update_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+L'onglet **Mises à jour** vous permet d'actualiser les cartes OsmAnd mensuellement. Utilisez le bouton *Tout mettre à jour* pour mettre à jour toutes les cartes simultanément, ou mettez à jour les cartes individuelles selon vos besoins. Les cartes standard et les cartes routes uniquement sont généralement publiées deux semaines après le début de chaque mois. Pour les mises à jour horaires, vérifiez l'état de votre abonnement [OsmAnd Live](#osmand-live). Si activé, la section **Mises à jour en direct** apparaîtra en haut de l'onglet, sous l'indicateur de mémoire de l'appareil.
+
+
+### Cartes supplémentaires
+
+OsmAnd prend en charge le transfert de paramètres et de données spécifiques au profil, y compris les fichiers de rendu, les polices, les itinéraires, les cartes et les plugins personnalisés. Créez un dossier de carte personnalisé à l'aide d'un fichier de plugin `.osf` (un format `.zip` compressé).
+
+Pour importer un fichier :
+
+1. Localisez le fichier `.osf` dans le stockage de votre appareil, votre messagerie ou votre e-mail.
+2. Appuyez pour l'ouvrir avec OsmAnd.
+3. Le plugin apparaîtra dans la section **Liste des plugins**, où il pourra être activé.
+4. Un dossier correspondant apparaîtra alors dans la section **Cartes supplémentaires** de l'onglet [Téléchargements](#downloads).
+
+En savoir plus dans l'article [**Package personnalisé**](../plugins/custom.md/).
 
 
 ## OsmAnd Live
 
-:::tip Purchase
-OsmAnd Live is a paid feature.  
+:::tip Achat
+OsmAnd Live est une fonctionnalité payante.
 :::
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*  
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*
 
-![Maps menu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Maps menu OsmAnd live edit Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
+![Menu Cartes OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Menu Cartes OsmAnd live modifier Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
+![Menu Cartes OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Menu Cartes OsmAnd live modifier iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**OsmAnd Live** provides frequent, incremental map updates through [subscription](../purchases/index.md) or is free for [OSM contributors](#free-for-osm-mappers). Updates occur every 15 minutes on OsmAnd servers and are downloadable hourly, daily, or weekly. These updates consume minimal storage — about 2-4% of the full map size per month.
+**OsmAnd Live** fournit des mises à jour de cartes fréquentes et incrémentielles via un [abonnement](../purchases/index.md) ou est gratuit pour les [contributeurs OSM](#free-for-osm-mappers). Les mises à jour ont lieu toutes les 15 minutes sur les serveurs OsmAnd et sont téléchargeables toutes les heures, tous les jours ou toutes les semaines. Ces mises à jour consomment un minimum de stockage - environ 2 à 4 % de la taille totale de la carte par mois.
 
 <!--
-Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
+Chaque carte a une collection indépendante de petites mises à jour, alors **soyez prudent** si vous avez des zones qui se chevauchent. Si vous souhaitez revenir à l'état d'origine, vous pouvez *désactiver les mises à jour et vider le cache*.
 -->
 
-Key features:
+Fonctionnalités clés :
 
-- **<Translate android="true" ids="shared_string_enabled"/> / <Translate android="true" ids="shared_string_disabled"/> Live Updates**. Manage via a toggle in the settings.
-- **&#8230; &#124;** button (*Android*) / **&#62;** button (*iOS*). Open *OsmAnd live* settings.
-- **Switcher**(*Android*) / **&#43;** button (*iOS*). Add maps for *live updates*.
-- **<Translate android="true" ids="update_frequency"/>**. Select the map update frequency (hourly, daily, or weekly).
-- **<Translate android="true" ids="update_now"/>**. Start the *OsmAnd live* map update.
-- **<Translate android="true" ids="updates_size"/>**(*Android*) / **<Translate ios="true" ids="osmand_live_updates_size"/>**(*iOS*). Size of *live updates*.
-- **Trash button**(*Android*). Delete all received *live updates* for the current map.
-- **<Translate android="true" ids="only_download_over_wifi"/>**. Manage the download of *live updates* over a Wi-Fi connection.
-
-
-### Update Timestamps
-
-- **Latest OSM update.**  
-    Indicates the last processed OpenStreetMap changes.
-- **Region Updated.**  
-    Shows when the specific region’s updates were last processed.
-- **Next update.**  
-    Displays the scheduled time for the next update check.
+- **<Translate android="true" ids="shared_string_enabled"/> / <Translate android="true" ids="shared_string_disabled"/> Mises à jour en direct**. Gérer via un interrupteur dans les paramètres.
+- Bouton **&#8230; &#124;** (*Android*) / Bouton **&#62;** (*iOS*). Ouvrir les paramètres *OsmAnd live*.
+- **Commutateur** (*Android*) / Bouton **&#43;** (*iOS*). Ajouter des cartes pour les *mises à jour en direct*.
+- **<Translate android="true" ids="update_frequency"/>**. Sélectionner la fréquence de mise à jour de la carte (horaire, quotidienne ou hebdomadaire).
+- **<Translate android="true" ids="update_now"/>**. Démarrer la mise à jour de la carte *OsmAnd live*.
+- **<Translate android="true" ids="updates_size"/>** (*Android*) / **<Translate ios="true" ids="osmand_live_updates_size"/>** (*iOS*). Taille des *mises à jour en direct*.
+- Bouton **Corbeille** (*Android*). Supprimer toutes les *mises à jour en direct* reçues pour la carte actuelle.
+- **<Translate android="true" ids="only_download_over_wifi"/>**. Gérer le téléchargement des *mises à jour en direct* via une connexion Wi-Fi.
 
 
-### Limitations of OsmAnd Live
+### Horodatages des mises à jour
 
-Address changes are supported only via monthly updates.
-Updated roads lack elevation details, affecting gradient graphs.
-Deleted or altered route references may still appear incorrectly.
+- **Dernière mise à jour OSM.**
+    Indique les dernières modifications OpenStreetMap traitées.
+- **Région mise à jour.**
+    Indique la dernière fois que les mises à jour de la région spécifique ont été traitées.
+- **Prochaine mise à jour.**
+    Affiche l'heure prévue pour la prochaine vérification des mises à jour.
 
 
-### Free for OSM Mappers
+### Limitations d'OsmAnd Live
+
+Les changements d'adresse ne sont pris en charge que via les mises à jour mensuelles.
+Les routes mises à jour n'ont pas de détails d'altitude, ce qui affecte les graphiques de gradient.
+Les références d'itinéraire supprimées ou modifiées peuvent toujours apparaître de manière incorrecte.
+
+
+### Gratuit pour les contributeurs OSM
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
+![OsmAnd live pour les contributeurs](@site/static/img/personal/maps/map_updates_mappers.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_ios.png)
+![OsmAnd live pour les contributeurs](@site/static/img/personal/maps/map_updates_mappers_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Contributors to [OpenStreetMap](https://openstreetmap.org/) are eligible for free unlimited map downloads and live updates. To qualify:
-Enable the [OpenStreetMap Editing plugin](../plugins/osm-editing.md).
-[Log in](../plugins/osm-editing.md#settings) with your OSM username.
-Maintain at least [**30 edits**](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/plugins/osmedit/fragments/MappersFragment.java#L65) over the last two months.
+Les contributeurs à [OpenStreetMap](https://openstreetmap.org/) sont éligibles pour des téléchargements de cartes illimités gratuits et des mises à jour en direct. Pour être éligible :
+Activez le [plugin d'édition OpenStreetMap](../plugins/osm-editing.md).
+[Connectez-vous](../plugins/osm-editing.md#settings) avec votre nom d'utilisateur OSM.
+Maintenez au moins [**30 modifications**](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/plugins/osmedit/fragments/MappersFragment.java#L65) au cours des deux derniers mois.
 
-## Related Articles
+## Articles connexes
 
-- [Profiles (Settings)](./profiles.md)
-- [Import / Export](../personal/import-export.md)
+- [Profils (Paramètres)](./profiles.md)
+- [Importation / Exportation](../personal/import-export.md)
 
-### Common Issues and Solutions
+### Problèmes courants et solutions
 
-- Voice Navigation. [(check)](../troubleshooting/navigation.md#voice-navigation)
-- How to delete search history. [(check)](../troubleshooting/general.md#how-to-delete-search-history)
-- For additional troubleshooting, visit: [Maps & Data](../troubleshooting/maps-data.md)
+- Navigation vocale. [(vérifier)](../troubleshooting/navigation.md#voice-navigation)
+- Comment supprimer l'historique de recherche. [(vérifier)](../troubleshooting/general.md#how-to-delete-search-history)
+- Pour un dépannage supplémentaire, visitez : [Cartes et données](../troubleshooting/maps-data.md)
 
-> *This article was last updated in February 2025*
+> *Cet article a été mis à jour pour la dernière fois en février 2025*
+
+-- source-hash: blake2s: 5429443bc50b5727e816929bb337b6bd90ba63e1318623e6ef91be26ce246eca --

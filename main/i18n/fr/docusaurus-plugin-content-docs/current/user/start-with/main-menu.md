@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Main Menu
+title: Menu principal
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,70 +13,72 @@ import Translate from '@site/src/components/Translate.js';
 
 
 
-## Overview
+## Aperçu
 
-**Main Menu** is a primary list of options available to use in the application. It provides quick access to the profile configuration, global settings, search, personal data, navigation and other features.
+Le **Menu principal** est une liste primaire d'options disponibles dans l'application. Il permet un accès rapide à la configuration du profil, aux paramètres globaux, à la recherche, aux données personnelles, à la navigation et à d'autres fonctionnalités.
 
-The [Main Menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located on the left bottom corner of the Map screen. In navigation mode this button is not visible by default. It appears after a short tap the map.
+L'icône du [Menu principal](../widgets/map-buttons.md#main-menu) '&#8801;' est située dans le coin inférieur gauche de l'écran Carte. En mode navigation, ce bouton n'est pas visible par défaut. Il apparaît après un court appui sur la carte.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Main menu Android](@site/static/img/menu/main_menu_android.png)
+![Menu principal Android](@site/static/img/menu/main_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Main menu iOS](@site/static/img/menu/main_menu_ios.png)
+![Menu principal iOS](@site/static/img/menu/main_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Main Menu (Side Menu)
+## Menu principal (Menu latéral)
 
-### Features
+### Fonctionnalités
 
-- [Map markers](../personal/markers.md) is a tool that allows to mark place on the map.
-- [My places](../personal/myplaces.md) is a menu that includes by default Favorites and tracks and in addition can include [A/V notes](../plugins/audio-video-notes.md) and [OSM edits](../plugins/osm-editing.md) (if such plugins are turned on).
-- [Search](../search/index.md) (Android) is a tool that allows you to find the place or object that exist on the map.
-- [Directions](../widgets/map-buttons.md#directions) button allows to create a route and start navigation.
-- [Configure map](../map/configure-map-menu.md) is a menu that allows configuring map view.
-- [Download maps](../start-with/download-maps.md) is a menu that contains all files that could be downloaded.
-- [Travel guides (Beta)](../plan-route/travel-guides.md) (*Android*) is a tool that allows using Wikivoyage guide for your trip.
-- [Plan route](../plan-route/create-route.md) is a tool that allows you to measure distances on the map, create GPX tracks or add new segments to existing ones.
-- [* Trip recording](../plugins/trip-recording.md) (*Android*) is a tool that allows to record all movements into track using phone's GPS.
+- [Marqueurs de carte](../personal/markers.md) est un outil qui permet de marquer un lieu sur la carte.
+- [Mes lieux](../personal/myplaces.md) est un menu qui inclut par défaut les Favoris et les traces et peut en outre inclure les [Notes A/V](../plugins/audio-video-notes.md) et les [Modifications OSM](../plugins/osm-editing.md) (si ces plugins sont activés).
+- [Recherche](../search/index.md) (Android) est un outil qui vous permet de trouver le lieu ou l'objet qui existe sur la carte.
+- Le bouton [Itinéraires](../widgets/map-buttons.md#directions) permet de créer un itinéraire et de démarrer la navigation.
+- [Configurer la carte](../map/configure-map-menu.md) est un menu qui permet de configurer l'affichage de la carte.
+- [Télécharger des cartes](../start-with/download-maps.md) est un menu qui contient tous les fichiers qui peuvent être téléchargés.
+- [Guides de voyage (Bêta)](../plan-route/travel-guides.md) (*Android*) est un outil qui permet d'utiliser le guide Wikivoyage pour votre voyage.
+- [Planifier un itinéraire](../plan-route/create-route.md) est un outil qui vous permet de mesurer les distances sur la carte, de créer des traces GPX ou d'ajouter de nouveaux segments à des traces existantes.
+- [* Enregistrement de trajet](../plugins/trip-recording.md) (*Android*) est un outil qui permet d'enregistrer tous les mouvements dans une trace à l'aide du GPS du téléphone.
 
-### Settings
+### Paramètres
 
-- [Configure screen](../widgets/configure-screen.md) is a menu that allows configuring displaying widgets on the Map.
-- [Plugins](../plugins/index.md#configure-a-plugin) is a list of additional functionality and advanced settings.
-- [Settings](../personal/global-settings.md) is a menu that allows configuring main app parameters.
-- [Help](./first-steps.md#offline-help) provides quick access to your guide, information about the app version and allows to quickly contact the development team.
+- [Configurer l'écran](../widgets/configure-screen.md) est un menu qui permet de configurer l'affichage des widgets sur la carte.
+- [Plugins](../plugins/index.md#configure-a-plugin) est une liste de fonctionnalités supplémentaires et de paramètres avancés.
+- [Paramètres](../personal/global-settings.md) est un menu qui permet de configurer les principaux paramètres de l'application.
+- [Aide](./first-steps.md#offline-help) fournit un accès rapide à votre guide, des informations sur la version de l'application et permet de contacter rapidement l'équipe de développement.
 
-### Active Profile (Android)
+### Profil actif (Android)
 
-*Main Menu* provides quick access to switch and [customize profile](../personal/profiles.md). Main purpose of profiles to have different application look & fill for navigation. Though you could use it to customize screen & widgets and switch profiles for different view purposes. All [settings](../personal/profiles.md) are configured separately for each profile.
+Le *Menu principal* permet un accès rapide pour changer et [personnaliser le profil](../personal/profiles.md). Le but principal des profils est d'avoir une apparence et une sensation différentes de l'application pour la navigation. Cependant, vous pouvez l'utiliser pour personnaliser l'écran et les widgets et changer de profil à des fins d'affichage différentes. Tous les [paramètres](../personal/profiles.md) sont configurés séparément pour chaque profil.
 
 ![profile_menu](@site/static/img/menu/profile_menu.png)
 
-In this menu you can **switch** active profile, **configure** (change settings) for active profile or **manage** all application profiles.
+Dans ce menu, vous pouvez **changer** le profil actif, **configurer** (modifier les paramètres) pour le profil actif ou **gérer** tous les profils de l'application.
 
 
-### Customize (Advanced Use of Android)
+### Personnaliser (Utilisation avancée d'Android)
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,shared_string_drawer"/> →  &#65049; → Enable*.  
+*<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,shared_string_drawer"/> →  &#65049; → Activer*.  
 
 ![Drawer menu items ](@site/static/img/settings/drawer_menu_correct.png)  
 
-- This menu allows you to change the order, hide or show items from the [Drawer](../personal/profiles.md#drawer), copy a list of items from another profile and reset the default settings.  
+- Ce menu vous permet de modifier l'ordre, de masquer ou d'afficher des éléments du [Tiroir](../personal/profiles.md#drawer), de copier une liste d'éléments d'un autre profil et de réinitialiser les paramètres par défaut.  
 
-- The *Minus* button deletes an item from the *Main Menu* in the drawer and moves it to the *Hidden* section. The *Move* button changes the position of the selected item in the list.  
+- Le bouton *Moins* supprime un élément du *Menu principal* dans le tiroir et le déplace vers la section *Masqué*. Le bouton *Déplacer* modifie la position de l'élément sélectionné dans la liste.  
 
-- Items moved to the *Hidden* section are not displayed in the Drawer menu, but all options, settings, or plugins from this list continue to work. You can restore items by tapping the green button to the left of their names.  
+- Les éléments déplacés vers la section *Masqué* ne sont pas affichés dans le menu du Tiroir, mais toutes les options, paramètres ou plugins de cette liste continuent de fonctionner. Vous pouvez restaurer les éléments en appuyant sur le bouton vert à gauche de leurs noms.  
     ![Drawer menu hidden items ](@site/static/img/settings/drawer_menu_hidden_items.png)
 
-> *This article was last updated in July 2022*
+> *Cet article a été mis à jour pour la dernière fois en juillet 2022*
+
+-- source-hash: blake2s: a29650de82a89ec22c40a084beb888ce4118499172a22d048ef34587cea9c288 --

@@ -2,8 +2,8 @@
 sidebar_position: 1
 ---
 
-# Add a map
-Open the activity you would like to add a map view to and use the code below.
+# Ajouter une carte
+Ouvrez l'activité à laquelle vous souhaitez ajouter une vue cartographique et utilisez le code ci-dessous.
 
 ```
 public class SimpleMapActivity extends AppCompatActivity {
@@ -30,7 +30,7 @@ public class SimpleMapActivity extends AppCompatActivity {
 }
 ```
 
-Open the activity’s XML layout file and add the following:
+Ouvrez le fichier de mise en page XML de l'activité et ajoutez ce qui suit :
 
 ```
 	<net.osmand.plus.views.MapViewWithLayers
@@ -40,7 +40,7 @@ Open the activity’s XML layout file and add the following:
 		android:orientation="vertical" />		
 ```
 
-The MapViewWithLayers contains its own lifecycle methods. In order for your app to correctly call the MapView's lifecycle methods, you must override the following lifecycle methods in the Activity that contains the MapViewWithLayers and call these methods.
+MapViewWithLayers contient ses propres méthodes de cycle de vie. Pour que votre application appelle correctement les méthodes de cycle de vie de MapView, vous devez remplacer les méthodes de cycle de vie suivantes dans l'activité qui contient MapViewWithLayers et appeler ces méthodes.
 
 ```
 
@@ -62,3 +62,5 @@ The MapViewWithLayers contains its own lifecycle methods. In order for your app 
 		mapViewWithLayers.onDestroy();
 	}
 ```
+
+-- source-hash: blake2s: 405d07fea97ea92e332791638395503ecfcc4dddd239bdf0172961dbc56b45aa --

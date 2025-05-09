@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title:  Search All
+title:  Rechercher tout
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,12 +16,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 <InfoIncompleteArticle/>
 
 
-## Overview
+## Aperçu
 
-**Search** is a useful tool for quickly finding locations. You can use Search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you want to get an exact location. [Coordinates](#search-coordinates) search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. Search [History](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find POIs nearby.
+La **recherche** est un outil utile pour trouver rapidement des lieux. Vous pouvez utiliser la recherche pour trouver un lieu par adresse, coordonnées, points d'intérêt (POI) ou recherches précédentes. La [recherche d'adresse](#search-address) vous permet de saisir l'adresse pour obtenir un emplacement exact. La [recherche de coordonnées](#search-coordinates) fonctionne avec des coordonnées géographiques telles que la latitude et la longitude. Avec la [recherche de POI](#search-poi), vous pouvez rechercher des lieux à proximité dans des catégories spécifiques, telles que des cafés, des hôtels ou des stations-service. L'[historique de recherche](#search-history) enregistre les recherches passées pour un accès rapide aux lieux précédemment trouvés. La fonction de recherche facilite la planification de voyages, la navigation en terrain inconnu et la recherche de POI à proximité.
 
 
-## How to Use
+## Comment utiliser
 
 <Tabs groupId="operating-systems">
 
@@ -33,78 +33,78 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-![Search POI list iOS](@site/static/img/search/poi_list_1_ios.png)  
+![Search POI list iOS](@site/static/img/search/poi_list_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-You need to follow one of the steps to start your search:
+Vous devez suivre l'une des étapes pour lancer votre recherche :
 
-- Tap the [Search button](../widgets/map-buttons.md#search) on the map application screen and enter your query.
+- Appuyez sur le [bouton de recherche](../widgets/map-buttons.md#search) sur l'écran de l'application cartographique et saisissez votre requête.
 
-- Go to the main *Menu → Search → enter your search query*.
+- Allez dans le *Menu principal → Rechercher → saisissez votre requête de recherche*.
 
-- When preparing to start a route, tap [*Navigation → Set destination → Search field*](../navigation/setup/route-navigation.md#set-target-point) *→ search query*.  
-
-
-Important information:
-
-- ***Downloaded offline vector maps are required to search with OsmAnd***.
-
-- Initially, **the search is based on the data located on the map in the visible area of the device screen**, but if nothing is found there, OsmAnd offers to increase the search radius.  
-
-### Basic Queries
-
-***Query list*:**
-
-- Coordinates all available formats.
-- Address:
-    - Street, House Number;
-    - City, Street;
-    - Street Intersections;
-    - City;
-    - Tiger data;
-    - Postal Code, House Number;
-    - Postal Code, Street, House Number.
-- Search POI by name and by category with additional filters.
-- Search OSM routes by name and by category with additional filters.
-- Search by most prominent peaks and volcanoes.
-- Search by Favorites and Waypoints.
-- Search icons by POI subcategory names.
-- Search by tracks.
-- Search by business venues and brand names.
-- Online search (Nominatim).
-- URL search (Google and OsmAnd).
-- Search History.
-
-***Supported formats*:**  
-
-***Tags*** can be used as a search query. They consist of ***a key and a value***, for example:
-*addr:street=StreetName*.  
-To avoid confusion, sometimes the key or value is surrounded by quotation marks: **key="value" or "key"="value"**. The quotation marks and equal sign are not part of the tag content.
+- Lorsque vous vous préparez à démarrer un itinéraire, appuyez sur [*Navigation → Définir la destination → Champ de recherche*](../navigation/setup/route-navigation.md#set-target-point) *→ requête de recherche*.
 
 
-### Sorting Search Results
+Informations importantes :
 
-OsmAnd automatically sorts search results by three main criteria:
+- ***Des cartes vectorielles hors ligne téléchargées sont nécessaires pour rechercher avec OsmAnd***.
 
-1. **Matching queries** — Results containing exact or partial matches to the words you entered are displayed higher.
+- Initialement, **la recherche est basée sur les données situées sur la carte dans la zone visible de l'écran de l'appareil**, mais si rien n'y est trouvé, OsmAnd propose d'augmenter le rayon de recherche.
 
-2. **Object type** - When sorting by name, cities, and streets are prioritized over POIs when displaying results.
+### Requêtes de base
 
-3. **Distance** - When results have similar matching criteria and object types, the results closest to the user's current location are shown first.
+***Liste des requêtes* :**
 
-***For example***, a search query *post office* will show the nearest post offices first, even if there are other items with similar names at a greater distance.  
+- Coordonnées tous les formats disponibles.
+- Adresse :
+    - Rue, Numéro de maison ;
+    - Ville, Rue ;
+    - Intersections de rues ;
+    - Ville ;
+    - Données TIGER ;
+    - Code postal, Numéro de maison ;
+    - Code postal, Rue, Numéro de maison.
+- Rechercher des POI par nom et par catégorie avec des filtres supplémentaires.
+- Rechercher des itinéraires OSM par nom et par catégorie avec des filtres supplémentaires.
+- Rechercher les pics et volcans les plus importants.
+- Rechercher par Favoris et Points de passage.
+- Rechercher des icônes par noms de sous-catégories de POI.
+- Rechercher par traces.
+- Rechercher par lieux d'affaires et noms de marques.
+- Recherche en ligne (Nominatim).
+- Recherche d'URL (Google et OsmAnd).
+- Historique de recherche.
 
-***Current limitations:***
+***Formats pris en charge* :**
 
-- There is no manual setting to change the sorting order of search results.
-- The sorting process is **automatically managed** by OsmAnd, based on the criteria listed above.
-- In cases where search results are too broad, OsmAnd can **limit the displayed results** to those with the highest word match accuracy.
+Les ***balises*** peuvent être utilisées comme requête de recherche. Elles se composent d'une ***clé et d'une valeur***, par exemple :
+*addr:street=NomDeRue*.
+Pour éviter toute confusion, la clé ou la valeur est parfois entourée de guillemets : **clé="valeur" ou "clé"="valeur"**. Les guillemets et le signe égal ne font pas partie du contenu de la balise.
 
 
-### Full Text Search
+### Tri des résultats de recherche
+
+OsmAnd trie automatiquement les résultats de recherche selon trois critères principaux :
+
+1. **Correspondance des requêtes** — Les résultats contenant des correspondances exactes ou partielles avec les mots que vous avez saisis sont affichés plus haut.
+
+2. **Type d'objet** - Lors du tri par nom, les villes et les rues sont prioritaires sur les POI lors de l'affichage des résultats.
+
+3. **Distance** - Lorsque les résultats ont des critères de correspondance et des types d'objets similaires, les résultats les plus proches de la position actuelle de l'utilisateur sont affichés en premier.
+
+***Par exemple***, une requête de recherche *bureau de poste* affichera d'abord les bureaux de poste les plus proches, même s'il existe d'autres éléments avec des noms similaires à une plus grande distance.
+
+***Limitations actuelles :***
+
+- Il n'y a pas de réglage manuel pour modifier l'ordre de tri des résultats de recherche.
+- Le processus de tri est **géré automatiquement** par OsmAnd, en fonction des critères énumérés ci-dessus.
+- Dans les cas où les résultats de recherche sont trop larges, OsmAnd peut **limiter les résultats affichés** à ceux ayant la plus grande précision de correspondance de mots.
+
+
+### Recherche en texte intégral
 
 <Tabs groupId="operating-systems">
 
@@ -116,31 +116,31 @@ OsmAnd automatically sorts search results by three main criteria:
 
 <TabItem value="ios" label="iOS">
 
-![Favorite search iOS](@site/static/img/search/favorite_search_ios.png)  
+![Favorite search iOS](@site/static/img/search/favorite_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-You can find the required location on the map from the list of points that appear as you enter a query.
+Vous pouvez trouver l'emplacement requis sur la carte à partir de la liste des points qui apparaissent au fur et à mesure que vous saisissez une requête.
 
-1. Start typing the name or address in the search bar.
+1. Commencez à saisir le nom ou l'adresse dans la barre de recherche.
 
-2. As you type, the list displays the points closest to the query, in roughly this order:
-    - POI Categories
-    - Favorites, POI, Routes, and Waypoints
-    - Tracks
-    - Addresses
-    - Maps to download
+2. Au fur et à mesure que vous tapez, la liste affiche les points les plus proches de la requête, dans cet ordre approximatif :
+    - Catégories de POI
+    - Favoris, POI, Itinéraires et Points de passage
+    - Traces
+    - Adresses
+    - Cartes à télécharger
 
-3. If you enter a [brand name](../search/search-poi.md#how-to-use), the list will start with results by this name, sorted by closest distance.
+3. Si vous saisissez un [nom de marque](../search/search-poi.md#how-to-use), la liste commencera par les résultats par ce nom, triés par distance la plus proche.
 
-:::note TIGER data limitations in address searches
-OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) into the US maps to provide information about US addresses. TIGER dataset is **range-based** and does not contain precise house numbers, so some addresses may be missing or inaccurate.
+:::note Limitations des données TIGER dans les recherches d'adresses
+OsmAnd a intégré les [**données TIGER**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) dans les cartes des États-Unis pour fournir des informations sur les adresses américaines. L'ensemble de données TIGER est **basé sur des plages** et ne contient pas de numéros de maison précis, de sorte que certaines adresses peuvent être manquantes ou inexactes.
 :::
 
 
-### Search on the Map
+### Rechercher sur la carte
 
 <Tabs groupId="operating-systems">
 
@@ -150,7 +150,7 @@ OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
 ![Search POI iOS](@site/static/img/search/poi_overlay_ios.png)
 
@@ -158,23 +158,23 @@ OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-
 
 </Tabs>
 
-OsmAnd allows you to search for points displayed on a map on your device's screen. To do this:
+OsmAnd vous permet de rechercher des points affichés sur une carte sur l'écran de votre appareil. Pour ce faire :
 
-- Use [one of the ways](#how-to-use) to get to the Search tool.
-- Start typing the name or address into the search box.
-- A box with the *Show on map* button will appear below the search input field.
-- Tap this button to go to the map.
-- You can continue typing your query at the top of the screen.
+- Utilisez [l'une des méthodes](#how-to-use) pour accéder à l'outil de recherche.
+- Commencez à saisir le nom ou l'adresse dans le champ de recherche.
+- Une boîte avec le bouton *Afficher sur la carte* apparaîtra sous le champ de saisie de la recherche.
+- Appuyez sur ce bouton pour accéder à la carte.
+- Vous pouvez continuer à saisir votre requête en haut de l'écran.
 
 
-### Search Nearby
+### Rechercher à proximité
 
 ![Search Android](@site/static/img/search/search_all_near_location_andr.png)
 
-You can use the search in the vicinity of a specific location. To do this, select the required point [from the list in the search menu](#full-text-search) or select it directly on the map. In the [map context menu](../map/map-context-menu.md#actions), select *Actions → Search nearby*.
+Vous pouvez utiliser la recherche à proximité d'un lieu spécifique. Pour ce faire, sélectionnez le point requis [dans la liste du menu de recherche](#full-text-search) ou sélectionnez-le directement sur la carte. Dans le [menu contextuel de la carte](../map/map-context-menu.md#actions), sélectionnez *Actions → Rechercher à proximité*.
 
 
-## Search Address
+## Rechercher une adresse
 
 <Tabs groupId="operating-systems">
 
@@ -186,16 +186,16 @@ You can use the search in the vicinity of a specific location. To do this, selec
 
 <TabItem value="ios" label="iOS">
 
-![Search iOS](@site/static/img/search/street_search_ios.png)  
+![Search iOS](@site/static/img/search/street_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Search Address** uses OpenStreetMap data. This type of search allows you to find the location and direction to a specific address from a ready-sorted list. Read more in the [Search Address](./search-address.md) article.
+La **recherche d'adresse** utilise les données OpenStreetMap. Ce type de recherche vous permet de trouver l'emplacement et la direction d'une adresse spécifique à partir d'une liste déjà triée. Pour en savoir plus, consultez l'article [Rechercher une adresse](./search-address.md).
 
 
-## Search History
+## Historique de recherche
 
 <Tabs groupId="operating-systems">
 
@@ -213,10 +213,10 @@ You can use the search in the vicinity of a specific location. To do this, selec
 
 </Tabs>
 
-You can use the **Search History** to search again for previously found places, addresses, or frequently visited places without entering the query again.. More details can be found in the [Search History](./search-history.md) article.
+Vous pouvez utiliser l'**historique de recherche** pour rechercher à nouveau des lieux, des adresses ou des lieux fréquemment visités précédemment trouvés sans saisir à nouveau la requête. Vous trouverez plus de détails dans l'article [Historique de recherche](./search-history.md).
 
 
-## Search POI
+## Rechercher des POI
 
 <Tabs groupId="operating-systems">
 
@@ -234,18 +234,18 @@ You can use the **Search History** to search again for previously found places, 
 
 </Tabs>
 
-The **Search POI** is a list, sorted by category, with which you can easily find places and services near your current location or a selected area on the map.
+La **recherche de POI** est une liste, triée par catégorie, avec laquelle vous pouvez facilement trouver des lieux et des services près de votre position actuelle ou d'une zone sélectionnée sur la carte.
 
-- [Custom POI search](./search-poi.md#custom-poi-search) allows you to combine different POI categories to simplify and personalize your search.  
-For example, if you need to find several types of services in a certain area or on a certain section of a route.
+- La [recherche de POI personnalisée](./search-poi.md#custom-poi-search) vous permet de combiner différentes catégories de POI pour simplifier et personnaliser votre recherche.
+Par exemple, si vous avez besoin de trouver plusieurs types de services dans une certaine zone ou sur une certaine section d'un itinéraire.
 
-- OsmAnd provides an [Online search](./search-poi.md#online-search) that works in real-time, giving you quick access to search results.  
-It is convenient to use when maps of the region are unavailable, but a constant and stable Internet connection is required.
+- OsmAnd propose une [recherche en ligne](./search-poi.md#online-search) qui fonctionne en temps réel, vous donnant un accès rapide aux résultats de recherche.
+Il est pratique à utiliser lorsque les cartes de la région ne sont pas disponibles, mais une connexion Internet constante et stable est requise.
 
-- Read the [Search POI](./search-poi.md) article for more information.
+- Lisez l'article [Rechercher des POI](./search-poi.md) pour plus d'informations.
 
 
-## Search Coordinates
+## Rechercher des coordonnées
 
 <Tabs groupId="operating-systems">
 
@@ -263,14 +263,16 @@ It is convenient to use when maps of the region are unavailable, but a constant 
 
 </Tabs>
 
-Coordinate search provides an accurate location. You can enter precise coordinates obtained, for example, from other sources such as a map, GPS device, or online services, which is particularly useful when it comes to places that do not have an exact address. For more information, see the [Search Coordinates](./search-coordinates.md) article.
+La recherche de coordonnées fournit un emplacement précis. Vous pouvez saisir des coordonnées précises obtenues, par exemple, à partir d'autres sources telles qu'une carte, un appareil GPS ou des services en ligne, ce qui est particulièrement utile lorsqu'il s'agit de lieux qui n'ont pas d'adresse exacte. Pour plus d'informations, consultez l'article [Rechercher des coordonnées](./search-coordinates.md).
 
 
-## Related Articles
+## Articles connexes
 
-- [Search Address](./search-address.md)
-- [Search History](./search-history.md)
-- [Search POI](./search-poi.md)
-- [Search Coordinates](./search-coordinates.md)
+- [Rechercher une adresse](./search-address.md)
+- [Historique de recherche](./search-history.md)
+- [Rechercher des POI](./search-poi.md)
+- [Rechercher des coordonnées](./search-coordinates.md)
 
-> *This article was last updated in April 2025*
+> *Cet article a été mis à jour pour la dernière fois en avril 2025*
+
+-- source-hash: blake2s: 0b3c089f8291e30d610814acff593e5740ccde8b67e75c4908fc4dc013b1388f --

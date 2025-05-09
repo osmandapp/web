@@ -2,78 +2,80 @@
 sidebar_position: 7
 ---
 
-# How to Compile OsmAndMapCreator and tools
+# Comment compiler OsmAndMapCreator et les outils
 
 
-## Compile OsmAndMapCreator
-1. First setup the **[development environment](setup-the-dev-environment.md)**.
-2. **Gradle** (command line):
-    - Compile with command line 
+## Compiler OsmAndMapCreator
+1. Configurez d'abord l'**[environnement de développement](setup-the-dev-environment.md)**.
+2. **Gradle** (ligne de commande) :
+    - Compilez avec la ligne de commande
     ```
     cd tools/java-tools && ../gradlew build
     ```
-    - OsmAndMapCreator.zip will be produced with all scripts inside
-    **Note**: android project is required to build tools (it uses OsmAnd-java project).
-3. **Eclipse**:
-    - Preconfigure eclipse projects
+    - OsmAndMapCreator.zip sera produit avec tous les scripts à l'intérieur
+    **Note** : le projet Android est nécessaire pour construire les outils (il utilise le projet OsmAnd-java).
+3. **Eclipse** :
+    - Préconfigurez les projets Eclipse
     ```
     cd tools/java-tools && ../gradlew cleanEclipse eclipse
     ```
-    - In Eclipse 'Import' - 'Existing projects in workspace' select folders 'OsmAnd-java', 'OsmAndMapCreatorutilities', 'OsmAndMapCreator', 'OsmAndServer', 'OsmAndServerUtilties'.
-    **Note**: don't select top folder java-tools and instead select specified above projects.    
+    - Dans Eclipse, 'Import' - 'Existing projects in workspace', sélectionnez les dossiers 'OsmAnd-java', 'OsmAndMapCreatorutilities', 'OsmAndMapCreator', 'OsmAndServer', 'OsmAndServerUtilties'.
+    **Note** : ne sélectionnez pas le dossier supérieur java-tools, mais sélectionnez les projets spécifiés ci-dessus.
 4. Android Studio / Idea
-    Feel free to make pull request to this documentation and describe how it could be done.
-5. Main classes to execute from IDE:
-   - net.osmand.MainUtilities - represents utilities.sh and leads to all possible utilties.
-   - net.osmand.obf.BinaryInspector - inspector.sh utility to read OBF files and gives information about it.
-   - net.osmand.obf.preparation.IndexCreator - shortcut to generate obf file.
+    N'hésitez pas à faire une pull request à cette documentation et à décrire comment cela pourrait être fait.
+5. Classes principales à exécuter depuis l'IDE :
+   - net.osmand.MainUtilities - représente utilities.sh et mène à toutes les utilités possibles.
+   - net.osmand.obf.BinaryInspector - utilité inspector.sh pour lire les fichiers OBF et donner des informations à leur sujet.
+   - net.osmand.obf.preparation.IndexCreator - raccourci pour générer un fichier obf.
    - net.osmand.swing.OsmExtractionUI - OsmAndMapCreator
-   
-## Compile Native rendering library for OsmAndMapCreator
-Native rendering library could be used to test Offline Rendering or Offline Native Routing. It's very useful to debug and test a rendering style or a routing configuration.
 
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
-2. Download external dependencies
+## Compiler la bibliothèque de rendu native pour OsmAndMapCreator
+La bibliothèque de rendu native peut être utilisée pour tester le rendu hors ligne ou le routage natif hors ligne. Elle est très utile pour déboguer et tester un style de rendu ou une configuration de routage.
+
+1. Configurez d'abord l'**environnement de développement**, voir {% link /setup-the-dev-environment %}.
+2. Téléchargez les dépendances externes
  ```
  cd core-legacy/externals
  ./configure.sh
  ```
-3. Specify JAVA_HOME globally via $PATH or in command line 
+3. Spécifiez JAVA_HOME globalement via $PATH ou dans la ligne de commande
   ```
   export JAVA_HOME=<>
   ```
-4. Choose a specific [target](https://github.com/osmandapp/OsmAnd-core/tree/legacy_core/targets) for OS and compile a specific version 'debug', 'release' or '' (default). Example
+4. Choisissez une [cible](https://github.com/osmandapp/OsmAnd-core/tree/legacy_core/targets) spécifique pour l'OS et compilez une version spécifique 'debug', 'release' ou '' (par défaut). Exemple
   ```
   cd core-legacy/targets
   ./intel-darwin.sh release # macOs release
   ./amd64-linux-clang.sh debug # linux debug - default
-  cd ....baked # like intel-darwin-intel-darwin-clang-release.baked or amd64-linux-amd64-clang-release.baked
+  cd ....baked # comme intel-darwin-intel-darwin-clang-release.baked ou amd64-linux-amd64-clang-release.baked
   make -j4
   ```
-5. Binaries will be available at core-legacy/binaries/.
-Example:
+5. Les binaires seront disponibles dans core-legacy/binaries/.
+Exemple :
   ```
     core-legacy/binaries/darwin/intel/Debug/libosmand.dylib
   ```
 
-### Troubleshooting 
-- Missing files externals/libjpeg-turbo/jconfigint.h.in does not exist.
-If you experience that libjpeg-turbo couldn't compile
+### Dépannage
+- Fichiers manquants externals/libjpeg-turbo/jconfigint.h.in n'existe pas.
+Si vous rencontrez que libjpeg-turbo n'a pas pu compiler
 ```
-targets/.cmake/../../externals/skia/upstream.patched/third_party/externals/libjpeg-turbo/jconfigint.h.in does not exist.
+targets/.cmake/../../externals/skia/upstream.patched/third_party/externals/libjpeg-turbo/jconfigint.h.in n'existe pas.
 ```
-You can find the files here and put them in the specified folder
+Vous pouvez trouver les fichiers ici et les placer dans le dossier spécifié
 https://github.com/osmandapp/OsmAnd-core/blob/legacy_core/externals/jpeg/jconfig.h
 https://github.com/osmandapp/OsmAnd-core/blob/legacy_core/externals/jpeg/jconfigint.h
 
-## Compile qt core version for OsmAndMapCreator
-1. First setup the **[development environment](setup-the-dev-environment.md)**.
-2. Prepare build (cmake) for specific target. Example clang / linux :
+## Compiler la version core qt pour OsmAndMapCreator
+1. Configurez d'abord l'**[environnement de développement](setup-the-dev-environment.md)**.
+2. Préparez la construction (cmake) pour une cible spécifique. Exemple clang / linux :
 ```
    alias clang='clang -std=c++11'
    build/amd64-linux-clang.sh release
 ```
-3. Compile library release
+3. Compilez la version de la bibliothèque
 ```
     (cd "baked/amd64-linux-clang-release.make" && make -j4)
 ```
+
+-- source-hash: blake2s: 7286d2161e67d694bf7579f2e1a3da2d61dab1b94dd48b3053e387b33c57e3e7 --

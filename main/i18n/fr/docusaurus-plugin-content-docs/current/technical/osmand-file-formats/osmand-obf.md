@@ -2,180 +2,182 @@
 sidebar_position: 7
 ---
 
-# OsmAnd Binary Maps - .obf
+# Cartes binaires OsmAnd - .obf
 
 ## Introduction
-Talk about *.travel.obf, *.wiki.obf, *.roads.obf, ..
+Parler de *.travel.obf, *.wiki.obf, *.roads.obf, ...
 
-Many questions are about content of and issues with map data in the application. This topic unveils some technical details of the internal data format and data processing. It can be interesting for non-developers who are familar with the OSM data structure.
+De nombreuses questions portent sur le contenu et les problèmes liés aux données cartographiques dans l'application. Ce sujet révèle quelques détails techniques du format de données interne et du traitement des données. Il peut être intéressant pour les non-développeurs familiers avec la structure des données OSM.
 
-OsmAnd offline map data is contained in 'obf' files. 'obf' files have a complex structure and can consist of many parts. It is highly recommended to keep file sizes below 2 Gb. Currently obf files can have many parts consisting of multiple POI parts, multiple routing data parts, multiple Map parts, multiple Transport parts and multiple Address data parts. That list can be extended in future. To combine or split or delete some parts from the obf file use 'binary\_inspector' console tool provided with OsmAndMapCreator.
-* POI, Transport part
-* Map part
-* Address part
+Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichiers 'obf'. Les fichiers 'obf' ont une structure complexe et peuvent être composés de nombreuses parties. Il est fortement recommandé de maintenir la taille des fichiers en dessous de 2 Go. Actuellement, les fichiers obf peuvent avoir de nombreuses parties composées de plusieurs parties POI, de plusieurs parties de données de routage, de plusieurs parties de carte, de plusieurs parties de transport et de plusieurs parties de données d'adresse. Cette liste peut être étendue à l'avenir. Pour combiner, diviser ou supprimer certaines parties du fichier obf, utilisez l'outil console 'binary\_inspector' fourni avec OsmAndMapCreator.
+* Partie POI, Transport
+* Partie Carte
+* Partie Adresse
 
-> Q: How does mapcreator generate its list of all places that will appear later in OsmAnd's offline address search? What objects are used in detail for that? What nodes with a place tag are included, and which are excluded?
+> Q : Comment mapcreator génère-t-il sa liste de tous les lieux qui apparaîtront plus tard dans la recherche d'adresses hors ligne d'OsmAnd ? Quels objets sont utilisés en détail pour cela ? Quels nœuds avec une balise de lieu sont inclus et lesquels sont exclus ?
 >
-> A: All places that are visible in OsmAnd as Cities are taken from nodes that have the tag "place" [https://wiki.openstreetmap.org/wiki/Place](https://wiki.openstreetmap.org/wiki/Place "https://wiki.openstreetmap.org/wiki/Place"). Currently city, town, suburb, village, hamlet are used.
+> R : Tous les lieux visibles dans OsmAnd en tant que villes sont tirés des nœuds qui ont la balise "place" [https://wiki.openstreetmap.org/wiki/Place](https://wiki.openstreetmap.org/wiki/Place "https://wiki.openstreetmap.org/wiki/Place"). Actuellement, city, town, suburb, village, hamlet sont utilisés.
 >
-> Q: How does mapcreator handle an area polygon that is given via a relation with boundary=administrative? How do you associate a place given as a node with its boundary when it is present in the OSM data?
+> Q : Comment mapcreator gère-t-il un polygone de zone donné via une relation avec boundary=administrative ? Comment associez-vous un lieu donné sous forme de nœud à sa limite lorsqu'elle est présente dans les données OSM ?
 >
-> A: Simply saying: it currently works by name. Mapcreator tries to visit all boundaries and creates a closed (!) boundary from the relation or from separated ways and associates it with only one name. After that it tries to match \*place\* with \*boundary name\* using the \*contains of\* algorithm. There is also an additional check if that boundary contains the place. If there are many boundaries of different admin\_level with the same name (containing each\_other like district/town/region having the same name) the highest admin\_level with exact matching will be chosen. TODO More details should be here (about districts of the city ...) ...
+> R : En termes simples : cela fonctionne actuellement par nom. Mapcreator essaie de visiter toutes les limites et crée une limite fermée (!) à partir de la relation ou de chemins séparés et l'associe à un seul nom. Après cela, il essaie de faire correspondre \*place\* avec \*nom de la limite\* en utilisant l'algorithme \*contient de\*. Il y a également une vérification supplémentaire si cette limite contient le lieu. S'il y a de nombreuses limites de différents admin\_level avec le même nom (se contenant mutuellement comme district/ville/région ayant le même nom), le plus haut admin\_level avec une correspondance exacte sera choisi. TODO Plus de détails devraient être ici (sur les districts de la ville ...) ...
 >
-> Q: Where is documentation describing what admin level is right to build an association to a certain place node? What countries prefer what admin level?
+> Q : Où se trouve la documentation décrivant quel niveau d'administration est approprié pour établir une association avec un certain nœud de lieu ? Quels pays préfèrent quel niveau d'administration ?
 >
-> A: Currently the association between admin\_level relation and admin\_centre is not used. Because only few relations provide that information.
+> R : Actuellement, l'association entre la relation admin\_level et admin\_centre n'est pas utilisée. Car seules quelques relations fournissent cette information.
 >
-> Q: How does MapCreator know what street belongs to what place? Are there different cases when a boundary polygon is given and when there is none?
+> Q : Comment MapCreator sait-il quelle rue appartient à quel lieu ? Y a-t-il différents cas lorsqu'un polygone de limite est donné et lorsqu'il n'y en a pas ?
 >
-> A: There are many strategies to check and they are prioritized in the following order:
-> - The most important are places and their boundaries. In order for the street management algorithm to work correctly, the place matching boundaries should be correct. If the street belongs to many boundaries, it will be registered in all appropriate places.
-> - is\_in tag (it is deprecated). So if a street has the is\_in tag, it will be parsed and splitted by comma and the street will be attached to all relevant cities (by exact name matching). (TO CHECK: basic check street is in city radius?)
-> - If the street doesn't belong to any boundary (not properly closed boundaries could be an issue here), it tries to find the closest/biggest city and register the stret in that city (sometimes it registers in a town at 1 km distance and misses the closest hamlet at only 100m distance).
+> R : Il existe de nombreuses stratégies à vérifier et elles sont classées par ordre de priorité :
+> - Les plus importantes sont les lieux et leurs limites. Pour que l'algorithme de gestion des rues fonctionne correctement, les limites correspondant aux lieux doivent être correctes. Si la rue appartient à de nombreuses limites, elle sera enregistrée dans tous les lieux appropriés.
+> - balise is\_in (elle est obsolète). Donc, si une rue a la balise is\_in, elle sera analysée et divisée par des virgules et la rue sera attachée à toutes les villes pertinentes (par correspondance de nom exacte). (À VÉRIFIER : vérification de base si la rue est dans le rayon de la ville ?)
+> - Si la rue n'appartient à aucune limite (les limites non correctement fermées pourraient être un problème ici), elle essaie de trouver la ville la plus proche/la plus grande et d'enregistrer la rue dans cette ville (parfois elle s'enregistre dans une ville à 1 km de distance et manque le hameau le plus proche à seulement 100 m de distance).
 >
-> The last part is very inaccurate. That's why many streets get attached to a neighbor city.
+> La dernière partie est très imprécise. C'est pourquoi de nombreuses rues sont attachées à une ville voisine.
 >
-> At MapCreator's preferences you have five more settings for street suffixes, zoom, smoothness and rendering ... what are the detailed effects that you can achieve with each of them? Are those settings actually used?
+> Dans les préférences de MapCreator, vous avez cinq autres paramètres pour les suffixes de rue, le zoom, la fluidité et le rendu ... quels sont les effets détaillés que vous pouvez obtenir avec chacun d'eux ? Ces paramètres sont-ils réellement utilisés ?
 >
-> Tools
+> Outils
 >
-> -   OsmAndMapCreator can display what streets are associated to what city (context menu -\> Show address). Local obf files should be present and configured in Settings.
-> -   Binary inspector tool can show a list of streets for each city. Run the tool without parameters to see the possible parameters.
-> -   Currently all index files contain gen.log. Viewing the log file you can find errors in the map creation process and that could give an answer why some streets are not in the proper address index place.
+> -   OsmAndMapCreator peut afficher quelles rues sont associées à quelle ville (menu contextuel -> Afficher l'adresse). Les fichiers obf locaux doivent être présents et configurés dans les paramètres.
+> -   L'outil Binary inspector peut afficher une liste de rues pour chaque ville. Exécutez l'outil sans paramètres pour voir les paramètres possibles.
+> -   Actuellement, tous les fichiers d'index contiennent gen.log. En consultant le fichier journal, vous pouvez trouver des erreurs dans le processus de création de la carte et cela pourrait donner une réponse expliquant pourquoi certaines rues ne se trouvent pas dans le bon emplacement d'index d'adresse.
 >
-> Address Part - workflow
+> Partie Adresse - flux de travail
 >
-> There are these relations:
+> Il existe ces relations :
 >
-> city -\> 0..1 boundary
+> ville -> 0..1 limite
 >
-> boundary -\> 0..\*\* city (used to define suburb of city)
+> limite -> 0..\*\* ville (utilisé pour définir le quartier d'une ville)
 >
-> iterate all Osm NODEs and register as cities if the tag = PLACE is present:
+> itérer sur tous les NŒUDS Osm et enregistrer comme villes si la balise = PLACE est présente :
 >
-> -   extract cities (TOWN, CITY).
-> -   extract villages (anything else).
+> -   extraire les villes (TOWN, CITY).
+> -   extraire les villages (tout le reste).
 >
-> iterate all RELATIONs and WAYs with type=boundary and register all boundaries:
+> itérer sur toutes les RELATIONS et WAYs avec type=boundary et enregistrer toutes les limites :
 >
-> -   boundary is called Entity (way or relation) with tag 'boundary=administrative' or with tag 'place=...'.
-> -   boundary should be admin\_level \> 4 or not have an admin\_level.
-> -   boundary is not always associated with a city (or state, ...).
-> -   boundary can have 'admin\_center', 'label' member pointing to a city node.
-> -   boundary exactly matches by name city node and the city node falls within the boundary.
-> -   boundary matches start, end or substring by name city node and city node falls within the boundary.
+> -   une limite est appelée Entité (way ou relation) avec la balise 'boundary=administrative' ou avec la balise 'place=...'.
+> -   la limite doit être admin\_level > 4 ou ne pas avoir d'admin\_level.
+> -   une limite n'est pas toujours associée à une ville (ou un état, ...).
+> -   une limite peut avoir un membre 'admin\_center', 'label' pointant vers un nœud de ville.
+> -   la limite correspond exactement par nom au nœud de ville et le nœud de ville se trouve à l'intérieur de la limite.
+> -   la limite correspond au début, à la fin ou à une sous-chaîne par nom au nœud de ville et le nœud de ville se trouve à l'intérieur de la limite.
 >
-> Many boundaries can be associated with one city. Here is the order on how the most important boundary is taken and associated with the city:
+> De nombreuses limites peuvent être associées à une ville. Voici l'ordre dans lequel la limite la plus importante est prise et associée à la ville :
 >
-> -   Boundary is matched by name exactly and has the tag place.
-> -   Boundary is matched by name exactly and has admin\_level 8 \> 7 \> 6 \> 9 \> 10 \> 5... or nothing.
-> -   Boundary has admin\_id matching.
-> -   All other cases including sorting of admin\_level.
+> -   La limite est exactement mise en correspondance par nom et a la balise place.
+> -   La limite est exactement mise en correspondance par nom et a admin\_level 8 > 7 > 6 > 9 > 10 > 5... ou rien.
+> -   La limite a une correspondance admin\_id.
+> -   Tous les autres cas, y compris le tri par admin\_level.
 >
-> if the city doesn't have any assigned boundary then all boundaries that don't have cities centers and contain that city will be checked and the boundary with admin\_level \>=7 will be assigned.
+> si la ville n'a aucune limite attribuée, toutes les limites qui n'ont pas de centres de villes et qui contiennent cette ville seront vérifiées et la limite avec admin\_level >=7 sera attribuée.
 >
-> for each boundary, make a list of cities that are inside it.
+> pour chaque limite, faire une liste des villes qui s'y trouvent.
 >
-> iterate all RELATIONS and find addresses ([Postal\_Addresses](https://wiki.openstreetmap.org/wiki/Relations/Proposed/Postal_Addresses)):
+> itérer sur toutes les RELATIONS et trouver les adresses ([Postal\_Addresses](https://wiki.openstreetmap.org/wiki/Relations/Proposed/Postal_Addresses)) :
 >
-> relation with "address" tag type, and is "house" or "a6" address\_type.
+> relation avec le type de balise "address", et est "house" ou "a6" address\_type.
 >
-> search for associated Street relation and house members.
+> rechercher la relation Street associée et les membres house.
 >
-> try to find the city for the street and city for house address.
+> essayer de trouver la ville pour la rue et la ville pour l'adresse de la maison.
 >
-> look up cities (we already must have found it in the steps before!).
+> rechercher les villes (nous devons déjà les avoir trouvées dans les étapes précédentes !).
 >
-> if we have city and street, register it to database:
+> si nous avons la ville et la rue, l'enregistrer dans la base de données :
 >
-> for streetregistration, see: register street for a city
+> pour l'enregistrement de rue, voir : enregistrer la rue pour une ville
 >
-> if street is registered, and we are processing street:
+> si la rue est enregistrée, et que nous traitons la rue :
 >
-> iterate over all relation members:
+> itérer sur tous les membres de la relation :
 >
-> -   find street -\> write the nodes of the street to db
-> -   find house -\> write the house to to the street
+> -   trouver la rue -> écrire les nœuds de la rue dans la base de données
+> -   trouver la maison -> écrire la maison dans la rue
 >
-> if street is registered, and we are processing house:
+> si la rue est enregistrée, et que nous traitons la maison :
 >
-> -   find house number
-> -   find house border: if found, store: building for the street
+> -   trouver le numéro de maison
+> -   trouver la limite de la maison : si trouvée, stocker : bâtiment pour la rue
 >
-> register street (street, location of street (los), cities):
+> enregistrer la rue (rue, emplacement de la rue (los), villes) :
 >
-> **Note:** we might register a street to more cities = this means, the street can be in nested areas, suburb, city, hamlet, etc... For each area, we want to register the street it is in.
+> **Note :** nous pourrions enregistrer une rue dans plusieurs villes = cela signifie que la rue peut se trouver dans des zones imbriquées, banlieue, ville, hameau, etc... Pour chaque zone, nous voulons enregistrer la rue dans laquelle elle se trouve.
 >
-> for each city:
+> pour chaque ville :
 >
-> find existing street registration within the city:
+> trouver l'enregistrement de rue existant dans la ville :
 >
-> if street exists:
+> si la rue existe :
 >
-> -   if citypart is unknown -\> update the existing street's city part
-> -   try to find city Part for our street, and lookup the street again
+> -   si la partie de la ville est inconnue -> mettre à jour la partie de la ville de la rue existante
+> -   essayer de trouver la partie de la ville pour notre rue, et rechercher à nouveau la rue
 >
-> if street does not exist: (might change after the lookup)
+> si la rue n'existe pas : (pourrait changer après la recherche)
 >
-> -   register the street for city, city part, location, and street name
+> -   enregistrer la rue pour la ville, la partie de la ville, l'emplacement et le nom de la rue
 >
 > findOrRegister street
 >
-> -   find close cities to the street
-> -   if the street is in the boundary of the city, add the city for search
-> -   if no city was find, using boundary, find closest city for the street
-> -   register street: for the found cities
+> -   trouver les villes proches de la rue
+> -   si la rue se trouve dans la limite de la ville, ajouter la ville pour la recherche
+> -   si aucune ville n'a été trouvée en utilisant la limite, trouver la ville la plus proche pour la rue
+> -   enregistrer la rue : pour les villes trouvées
 >
-> iterate all NODES, then WAYS, then RELATIONS (iterate main entity)
+> itérer sur tous les NŒUDS, puis les WAYS, puis les RELATIONS (itérer l'entité principale)
 >
-> find ways - interpolations:
+> trouver les ways - interpolations :
 >
-> -   for each interpolation, findOrRegister a street with the location of the interpolation
-> -   for each two nodes create a building representing the interpolation
+> -   pour chaque interpolation, findOrRegister une rue avec l'emplacement de l'interpolation
+> -   pour chaque paire de nœuds, créer un bâtiment représentant l'interpolation
 >
-> for any entity, find addr:housenumber and addr:street tag (can also be the interpolation of nodes again!!!):
+> pour toute entité, trouver les balises addr:housenumber et addr:street (peut aussi être l'interpolation de nœuds à nouveau !!!) :
 >
-> -   skip if building for this entity already exists!
-> -   findOrRegister streets for the street
-> -   find the house number
-> -   if housenumber contains '-', try to create interpolated house number (missing latlon2?)
-> -   if housenumber contains '/', try to lookup second street addr:street2 --\> seems only for [RU osm](https://wiki.openstreetmap.org/wiki/RU:Key:addr):
-> -   there are more variations for this: adr:housenumber2, addr2:street, addr2:housenumber etc...
-> -   for each street, store the existing house
+> -   ignorer si un bâtiment pour cette entité existe déjà !
+> -   findOrRegister les rues pour la rue
+> -   trouver le numéro de maison
+> -   si le numéro de maison contient '-', essayer de créer un numéro de maison interpolé (latlon2 manquant ?)
+> -   si le numéro de maison contient '/', essayer de rechercher la deuxième rue addr:street2 --> semble uniquement pour [RU osm](https://wiki.openstreetmap.org/wiki/RU:Key:addr) :
+> -   il existe d'autres variations pour cela : adr:housenumber2, addr2:street, addr2:housenumber etc...
+> -   pour chaque rue, stocker la maison existante
 >
-> for way with tag - name & tag - highway, but without addr:housenumber and addr:street:
+> pour les ways avec la balise - name & la balise - highway, mais sans addr:housenumber et addr:street :
 >
-> -   **Note**: this might be ways for cars, with names (highway, or so)
-> -   skip if such street already exists
-> -   findOrRegister the street for city
-> -   write the nodes for each found street in each city
+> -   **Note :** il peut s'agir de ways pour les voitures, avec des noms (highway, etc.)
+> -   ignorer si une telle rue existe déjà
+> -   findOrRegister la rue pour la ville
+> -   écrire les nœuds pour chaque rue trouvée dans chaque ville
 >
-> Each relation with "postal\_code", store for later use.
+> Chaque relation avec "postal\_code", stocker pour une utilisation ultérieure.
 >
-> **Note**: this does not include the address:type = pc and addr:postalcode
+> **Note :** cela n'inclut pas address:type = pc et addr:postalcode
 >
-> process post codes:
+> traiter les codes postaux :
 >
-> -   for each stored postal\_code relation
-> -   for each building member, update the postal\_code
+> -   pour chaque relation postal\_code stockée
+> -   pour chaque membre building, mettre à jour le postal\_code
 >
-> write the index:
+> écrire l'index :
 >
-> split cities to: cities+towns, suburbs (suburb with is\_in tag), villages (not city or town)
+> diviser les villes en : villes+towns, banlieues (banlieue avec balise is\_in), villages (pas ville ou town)
 >
-> write cities+towns using suburbs
+> écrire les villes+towns en utilisant les banlieues
 >
-> read street from cities+towns + apropriate suburbs for each town
+> lire la rue des villes+towns + banlieues appropriées pour chaque town
 >
-> -   in here, there might be more streets with the same name for one city, in such case we try to find a cityPart for the street (suburb), where the street is in. There should be not more streets with same name within one city part!
+> -   ici, il peut y avoir plusieurs rues avec le même nom pour une ville, dans ce cas, nous essayons de trouver une partie de ville pour la rue (banlieue), où se trouve la rue. Il ne devrait pas y avoir plus de rues avec le même nom dans une même partie de ville !
 >
-> for each street
+> pour chaque rue
 >
-> -   for each building, register/create/find postcode, register the street
+> -   pour chaque bâtiment, enregistrer/créer/trouver le code postal, enregistrer la rue
 >
-> write villages
+> écrire les villages
 >
-> -   same as towns...
+> -   idem que les towns...
 >
-> write extracted postcodes and their streets
+> écrire les codes postaux extraits et leurs rues
 >
+
+-- source-hash: blake2s: abda667c44ec505ff1c39f82c1ae71432c3462e6eb3b8363ff45abf1e78cd3f4 --

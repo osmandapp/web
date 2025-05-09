@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  AIS Vessel Tracker
+title:  Suivi de navires AIS
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,167 +17,168 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-## Overview
+## Aperçu
 
-The **AIS Vessel Tracker** plugin displays [Automatic Identification System (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) positions and detailed information about nearby vessels. The AIS data is received via a network connection from an external AIS receiver.
+Le plugin **Suivi de navires AIS** affiche les positions du [Système d'Identification Automatique (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) et des informations détaillées sur les navires à proximité. Les données AIS sont reçues via une connexion réseau à partir d'un récepteur AIS externe.
 
-:::caution DISCLAIMER
-**This plugin is a hobby project and is not designed for reliability or accuracy. DO NOT rely on this software for navigation or safety of life.**
+:::caution AVIS DE NON-RESPONSABILITÉ
+**Ce plugin est un projet amateur et n'est pas conçu pour la fiabilité ou la précision. NE vous fiez PAS à ce logiciel pour la navigation ou la sécurité des personnes.**
 :::
 
 
-## Required Setup Parameters
+## Paramètres de configuration requis
 
-The ability to use Online maps is automatically enabled in iOS version of OsmAnd. To display Online maps in Android, you need to make the following settings:
+La possibilité d'utiliser des cartes en ligne est automatiquement activée dans la version iOS d'OsmAnd. Pour afficher les cartes en ligne dans Android, vous devez effectuer les réglages suivants :
 
-1. [Enable](../plugins/index.md#enable--disable) **AIS vessel tracker** plugin in the *Main Menu → Plugins → AIS vessel tracker*.
-2. Configure the [AIS settings](../map/raster-maps.md#select-raster-maps)
-3. Configure an **AIS server connection** or connect an **external AIS receiver**.
-4. Check that vessels are displayed on the OsmAnd map.
+1. [Activer](../plugins/index.md#enable--disable) le plugin **Suivi de navires AIS** dans le *Menu principal → Plugins → Suivi de navires AIS*.
+2. Configurer les [paramètres AIS](../map/raster-maps.md#select-raster-maps)
+3. Configurer une **connexion au serveur AIS** ou connecter un **récepteur AIS externe**.
+4. Vérifier que les navires sont affichés sur la carte OsmAnd.
 
-## Vessels on the Map
+## Navires sur la carte
 
-AIS operates on *VHF frequencies* (161.975 MHz and 162.025 MHz) and has a limited signal range due to line-of-sight propagation.
+L'AIS fonctionne sur les *fréquences VHF* (161,975 MHz et 162,025 MHz) et a une portée de signal limitée en raison de la propagation en ligne de vue.
 
-***Typical AIS reception range:***
+***Portée de réception AIS typique :***
 
-- 15–20 nautical miles (28–37 km)
-- Depends on antenna height, environmental conditions, and obstacles
+- 15–20 milles nautiques (28–37 km)
+- Dépend de la hauteur de l'antenne, des conditions environnementales et des obstacles
 
-***AIS display on the map:***
+***Affichage AIS sur la carte :***
 
 ![AIS vessel tracker](@site/static/img/plugins/ais/ais.png)
 
-When correctly set up, vessel positions will appear on the map. Key features:
+Lorsqu'il est correctement configuré, les positions des navires apparaissent sur la carte. Principales caractéristiques :
 
-- Vessels move based on real-time speed and course.
-- New ships enter and exit the visible area dynamically.
-- Tapping a vessel opens detailed information.
+- Les navires se déplacent en fonction de la vitesse et du cap en temps réel.
+- De nouveaux navires entrent et sortent dynamiquement de la zone visible.
+- Taper sur un navire ouvre des informations détaillées.
 
 
-### AIS Vessel Information
+### Informations sur les navires AIS
 
 ![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png) ![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
 
-AIS vessels transmit three types of data:
+Les navires AIS transmettent trois types de données :
 
-1. Static Information (unchanging data).  
-    *Sent every **6 minutes** or upon request.*
+1. Informations statiques (données inchangées).  
+    *Envoyées toutes les **6 minutes** ou sur demande.*
 
-    - **Ship Name** (*if set*)  
-    - **MMSI (Maritime Mobile Service Identity)** (*Unique 9-digit ship identifier*)
-    - **IMO Number** (*if available*)  
-    - **Call Sign**  
-    - **Ship Type** (*e.g., Cargo, Passenger, Fishing Vessel*)  
-    - **Ship Dimensions** (*Length and Width*)  
-    - **AIS Antenna Position** (*Relative to the ship's hull*)  
+    - **Nom du navire** (*si défini*)  
+    - **MMSI (Maritime Mobile Service Identity)** (*Identifiant unique du navire à 9 chiffres*)
+    - **Numéro OMI** (*si disponible*)  
+    - **Indicatif d'appel**  
+    - **Type de navire** (*par exemple, Cargo, Passager, Navire de pêche*)  
+    - **Dimensions du navire** (*Longueur et largeur*)  
+    - **Position de l'antenne AIS** (*Par rapport à la coque du navire*)  
 
-2. Dynamic Information (real-time data).  
-    *Sent at different intervals depending on speed and maneuvering.*
+2. Informations dynamiques (données en temps réel).  
+    *Envoyées à différents intervalles selon la vitesse et les manœuvres.*
 
-    - **Ship Coordinates (Latitude & Longitude)**  
-    - **Course Over Ground (COG)**  
-    - **Speed Over Ground (SOG)**  
-    - **Heading** (*Direction the bow is pointing*)
-    - **Ship Status** (*Underway, Anchored, Maneuvering, etc.*)  
-    - **Rate of Turn (ROT)** (*Speed of course change*)  
-    - **Last Update Time**  
+    - **Coordonnées du navire (Latitude et Longitude)**  
+    - **Cap sur le fond (COG)**  
+    - **Vitesse sur le fond (SOG)**  
+    - **Cap** (*Direction vers laquelle pointe la proue*)
+    - **Statut du navire** (*En route, Ancré, Manœuvrant, etc.*)  
+    - **Taux de giration (ROT)** (*Vitesse de changement de cap*)  
+    - **Heure de la dernière mise à jour**  
 
-3. Voyage Information (manually set by crew).  
-    *Sent every **6 minutes**, manually set by crew*
+3. Informations de voyage (définies manuellement par l'équipage).  
+    *Envoyées toutes les **6 minutes**, définies manuellement par l'équipage*
 
-    - **Destination Port**
-    - **Estimated Time of Arrival (ETA)**  
-    - **Draught** (*Ship's water depth below surface*)  
-    - **Cargo Type** (*if transmitted*)
-    - **Number of People on Board** (*optional*)  
+    - **Port de destination**
+    - **Heure d'arrivée estimée (ETA)**  
+    - **Tirant d'eau** (*Profondeur du navire sous la surface de l'eau*)  
+    - **Type de cargaison** (*si transmis*)
+    - **Nombre de personnes à bord** (*facultatif*)  
 
-### AIS Symbols and Legends
+### Symboles et légendes AIS
 
-[Guidelines for AIS Symbol Presentation](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
+[Lignes directrices pour la présentation des symboles AIS](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
-| Symbols             | Description   |
+| Symboles             | Description   |
 |---------------------|---------------|
 | | |
-| **Vessel Types Symbols** |    |
-| *Green triangle*    | Cargo ship    |
-| *Blue triangle*     | Passenger ship |
-| *Black triangle*    | Fishing vessel |
-| *Yellow triangle*   | Tugboat       |
-| *Red triangle*      | Tanker        |
-| *White triangle*    | Military vessel |
-| *Orange triangle*   | Special craft (e.g., pilot, icebreaker) |
-| *Flashing Red triangle* | Vessel in distress |
+| **Symboles des types de navires** |    |
+| *Triangle vert*    | Navire cargo    |
+| *Triangle bleu*     | Navire à passagers |
+| *Triangle noir*    | Navire de pêche |
+| *Triangle jaune*   | Remorqueur       |
+| *Triangle rouge*      | Pétrolier        |
+| *Triangle blanc*   | Navire militaire |
+| *Triangle rouge clignotant* | Navire en détresse |
 | | |
-| **Navigational Aids Symbols** |    |
-| *Green Buoy*              | Starboard marker (right-hand side of the channel) |
-| *Red Buoy*                | Port marker (left-hand side of the channel) |
-| *Anchor symbol*           | Anchorage area |
-| *Ship symbol (SS)*        | Ferry or passenger terminal |
-| *Port Crane symbol*       | Cargo port |
-| *Black circle*            | Offshore platform |
+| **Symboles des aides à la navigation** |    |
+| *Bouée verte*              | Balise tribord (côté droit du chenal) |
+| *Bouée rouge*                | Balise bâbord (côté gauche du chenal) |
+| *Symbole d'ancre*           | Zone de mouillage |
+| *Symbole de navire (SS)*        | Ferry ou terminal passagers |
+| *Symbole de grue portuaire*       | Port de marchandises |
+| *Cercle noir*            | Plateforme offshore |
 | | |
-| **Status Indicators** |    |
-| *Solid triangle*  | Moving vessel |
-| *Hollow triangle* | Anchored or Moored |
-| *Rotating arrow*  | Undergoing maneuver |
-| *Red Flashing icon* | Emergency alert |
-| *Orange Exclamation mark* | AIS safety message |
+| **Indicateurs de statut** |    |
+| *Triangle plein*  | Navire en mouvement |
+| *Triangle creux* | Ancré ou amarré |
+| *Flèche rotative*  | En cours de manœuvre |
+| *Icône rouge clignotante* | Alerte d'urgence |
+| *Point d'exclamation orange* | Message de sécurité AIS |
 | | |
-| **Route and Speed Indicators** |    |
-| *Thin Blue line*  | Planned route |
-| *Dotted line*     | Past track |
-| *Clock icon*      | Estimated time of arrival (ETA) |
-| *Wave icon*       | Speed over water |
+| **Indicateurs de route et de vitesse** |    |
+| *Ligne bleue fine*  | Route prévue |
+| *Ligne pointillée*     | Trace passée |
+| *Icône d'horloge*      | Heure d'arrivée estimée (ETA) |
+| *Icône de vague*       | Vitesse sur l'eau |
 
-## Plugin Settings
+## Paramètres du plugin
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
 ![AIS settings](@site/static/img/plugins/ais/ais_settings_2.png)  
 
-The *AIS vessel tracker* plugin offers various settings to personalize navigation and interaction for users with disabilities. These settings are applied for all [profiles](../personal/profiles.md) in OsmAnd.
+Le plugin *Suivi de navires AIS* offre divers paramètres pour personnaliser la navigation et l'interaction pour les utilisateurs handicapés. Ces paramètres sont appliqués à tous les [profils](../personal/profiles.md) dans OsmAnd.
 
-| Setting |  Description  | Example  |
+| Paramètre |  Description  | Exemple  |
 |---------|---------------|----------|
 | | | |
-| **IP address settings** | | |
-| Protocol   | Choose protocol for receiving AIS data | `UDP/TCP` |
-| IP address | Define IP of AIS data source (if TCP is used) | `192.168.200.16` |
-| TCP port   | Define TCP port number for AIS data | `4001` |
-| UDP port   | Define UDP port for OsmAnd AIS reception  | `10110` |
+| **Paramètres d'adresse IP** | | |
+| Protocole   | Choisir le protocole pour recevoir les données AIS | `UDP/TCP` |
+| Adresse IP | Définir l'IP de la source de données AIS (si TCP est utilisé) | `192.168.200.16` |
+| Port TCP   | Définir le numéro de port TCP pour les données AIS | `4001` |
+| Port UDP   | Définir le port UDP pour la réception AIS d'OsmAnd  | `10110` |
 | | | |
-| **AIS Signal reception timeout** | |  |
-| Timeout for lost AIS objects     | Ships disappear if no signal received for a set time | `3 - 20 min` |
-| Timeout for ship visibility      | Ship icons will change state when no signal is received | `2 - 15 min / Disabled` |
+| **Délai d'attente de réception du signal AIS** | |  |
+| Délai d'attente pour les objets AIS perdus     | Les navires disparaissent si aucun signal n'est reçu pendant un temps défini | `3 - 20 min` |
+| Délai d'attente pour la visibilité des navires      | Les icônes des navires changeront d'état si aucun signal n'est reçu | `2 - 15 min / Désactivé` |
 | | | |
-| **Closest Point of Approach (CPA) Alerts** | | |
-| CPA Warning Time | Vessel is marked red if time to CPA is below this limit | `1 - 60 min / Disabled` |
-| CPA Warning Distance | Vessel is marked red if distance to CPA is below this limit | `0.02 - 2 nautical miles` |
+| **Alertes de point de rapprochement le plus proche (CPA)** | | |
+| Temps d'avertissement CPA | Le navire est marqué en rouge si le temps jusqu'au CPA est inférieur à cette limite | `1 - 60 min / Désactivé` |
+| Distance d'avertissement CPA | Le navire est marqué en rouge si la distance jusqu'au CPA est inférieure à cette limite | `0.02 - 2 milles nautiques` |
 
 
-### AIS Simulation Mode
+### Mode de simulation AIS
 
-> *You can simulate AIS vessel positions using [OsmAnd Development plugin](../plugins/development.md).*
+> *Vous pouvez simuler les positions des navires AIS à l'aide du [plugin de développement OsmAnd](../plugins/development.md).*
 
-1. **Download AIS data text files**:
+1. **Télécharger les fichiers texte de données AIS** :
 
-    - [AIS Test 1](https://github.com/user-attachments/files/18689404/ais_test_1.txt)
-    - [AIS Test 2](https://github.com/user-attachments/files/18689405/ais_test_2.txt)
+    - [Test AIS 1](https://github.com/user-attachments/files/18689404/ais_test_1.txt)
+    - [Test AIS 2](https://github.com/user-attachments/files/18689405/ais_test_2.txt)
     - [Single 3](https://github.com/user-attachments/files/18689403/333.txt)
 
-2. **Load AIS data into OsmAnd**  
-Open *<Translate android="true" ids="shared_string_menu,plugins_menu_group,development,shared_string_settings,ais_load_data"/>* and select one of the downloaded files.
+2. **Charger les données AIS dans OsmAnd**  
+Ouvrir *<Translate android="true" ids="shared_string_menu,plugins_menu_group,development,shared_string_settings,ais_load_data"/>* et sélectionner l'un des fichiers téléchargés.
 
-3. **View AIS vessels on the map**  
-Vessel icons will appear based on the simulated data. Tap the vessel icon to view detailed information.
+3. **Afficher les navires AIS sur la carte**  
+Les icônes des navires apparaîtront en fonction des données simulées. Appuyer sur l'icône du navire pour afficher des informations détaillées.
 
 
-## Related Articles
+## Articles connexes
 
-- [Interact with Map](../../user/map/interact-with-map.md)
-- [Global Settings](../../user/personal/global-settings.md)
-- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
-- [Nautical Plugin](../../user/plugins/nautical-charts.md)
+- [Interagir avec la carte](../../user/map/interact-with-map.md)
+- [Paramètres globaux](../../user/personal/global-settings.md)
+- [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
+- [Plugin nautique](../../user/plugins/nautical-charts.md)
 
-> *This article was last updated in March 2025*
+> *Cet article a été mis à jour pour la dernière fois en mars 2025*
+
+-- source-hash: blake2s: 8b41b51456a34be9bb72569dffa4c180ca9c78123be1ff71134bcfa41d8555de --

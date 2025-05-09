@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Map
-title: Global Map on the Website
+title: Carte globale sur le site web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -18,147 +18,147 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 :::info
-The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
-**Therefore, the layout and operation of some functions on the site may be different from those described in this article.**
+Le site *[osmand.net/map](https://osmand.net/map/)* est actuellement en cours de développement et de test.
+**Par conséquent, la mise en page et le fonctionnement de certaines fonctions sur le site peuvent être différents de ceux décrits dans cet article.**
 
-We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
+Nous avons créé le [thème de discussion](https://github.com/osmandapp/OsmAnd/discussions/16567) sur notre GitHub afin que vous puissiez y laisser vos commentaires.
 :::
 
 
-## Overview
+## Aperçu
 
-The OsmAnd web map is a global map based on [OpenStreetMap (OSM)](https://www.openstreetmap.org/) data. It allows users to view their own data, such as tracks and favorites, create navigation routes for any profile, and access additional features like weather, public GPX tracks, POIs, and Wikimedia images. Explore and customize your data experience directly in your browser.
+La carte web OsmAnd est une carte globale basée sur les données [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Elle permet aux utilisateurs de visualiser leurs propres données, telles que des traces et des favoris, de créer des itinéraires de navigation pour n'importe quel profil et d'accéder à des fonctionnalités supplémentaires comme la météo, les traces GPX publiques, les POI et les images Wikimedia. Explorez et personnalisez votre expérience de données directement dans votre navigateur.
 
 ![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
 
-## Map Context Menu
+## Menu contextuel de la carte
 
-For opening it right click anywhere on the map. This menu includes the following actions:
+Pour l'ouvrir, faites un clic droit n'importe où sur la carte. Ce menu comprend les actions suivantes :
 
-- **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
-- **Open weather** – Access the [Weather menu](#weather-on-the-web) to view weather details.
-- **Create new route** – Opens the [*Plan a route* tool](../web/planner.md#create-track-and-local) with the selected location as the starting or destination point.
-- **Add Favorite** –  Allows you to create and save a [favorite](../web/web-userdata.mdx#add--edit-favorite) at any point on the map for easy access.
-- **Directions from** –  Sets the selected point as the [starting location](../web/planner.md#navigation-route) for navigation.
-- **Directions to** – Sets the selected point as the [destination for navigation](../web/planner.md#navigation-route).
-- **Copy coordinates** – Copies the coordinates of the selected point for external use.
-- **Add pin** – Places a pin to mark a location on the map. ([Example](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
-- **Show regions** – Displays the regions associated with the selected location.
+- **Où suis-je** – Trouvez rapidement votre position actuelle sur la carte. Cette fonction affiche les adresses les plus proches du point sélectionné sur la carte.
+- **Ouvrir la météo** – Accédez au [menu Météo](#weather-on-the-web) pour afficher les détails météorologiques.
+- **Créer un nouvel itinéraire** – Ouvre l'outil [*Planifier un itinéraire*](../web/planner.md#create-track-and-local) avec l'emplacement sélectionné comme point de départ ou de destination.
+- **Ajouter un favori** – Vous permet de créer et d'enregistrer un [favori](../web/web-userdata.mdx#add--edit-favorite) à n'importe quel point de la carte pour un accès facile.
+- **Itinéraire depuis** – Définit le point sélectionné comme [point de départ](../web/planner.md#navigation-route) pour la navigation.
+- **Itinéraire vers** – Définit le point sélectionné comme [destination pour la navigation](../web/planner.md#navigation-route).
+- **Copier les coordonnées** – Copie les coordonnées du point sélectionné pour une utilisation externe.
+- **Ajouter une épingle** – Place une épingle pour marquer un emplacement sur la carte. ([Exemple](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
+- **Afficher les régions** – Affiche les régions associées à l'emplacement sélectionné.
 
 ![Map Context menu](@site/static/img/web/map_context_menu.png)
 
 
-## Weather on the Web
+## Météo sur le Web
 
-The OsmAnd Web provides weather information from two forecast sources:
+OsmAnd Web fournit des informations météorologiques provenant de deux sources de prévisions :
 
-- **GFS (default)**  
-- **ECMWF**  
+- **GFS (par défaut)**
+- **ECMWF**
 
-To switch between these forecast sources, click the **umbrella button** in the Weather menu.
+Pour basculer entre ces sources de prévisions, cliquez sur le **bouton parapluie** dans le menu Météo.
 
-***Features of the weather menu:***  
+***Fonctionnalités du menu météo :***
 
-- **Current Weather Data**: Displays your coordinates along with the following data:
+- **Données météorologiques actuelles** : affiche vos coordonnées ainsi que les données suivantes :
 
-  - Temperature.
-  - Precipitation.
-  - Wind.
-  - Air Pressure.
-  - Cloud Cover.
+  - Température.
+  - Précipitations.
+  - Vent.
+  - Pression atmosphérique.
+  - Couverture nuageuse.
 
-- **Time Adjustment**: Modify the date and time using the **time tool** in the Weather menu to view weather for a specific moment.
+- **Réglage de l'heure** : modifiez la date et l'heure à l'aide de l'**outil horaire** dans le menu Météo pour afficher la météo à un moment précis.
 
-***Weather layers on the map:***  
+***Couches météo sur la carte :***
 
-- Use the **layers button** to select and enable weather layers such as:
+- Utilisez le **bouton couches** pour sélectionner et activer les couches météo telles que :
 
-  - Temperature.
-  - Pressure.
-  - Wind.
-  - Cloud Cover.
-  - Precipitation.
+  - Température.
+  - Pression.
+  - Vent.
+  - Couverture nuageuse.
+  - Précipitations.
 
-***Viewing forecasts:***  
+***Affichage des prévisions :***
 
-- Weather forecasts are available for the **7-day** forecast.
-- Forecast updates are provided in **3-hour steps** for detailed insights.
+- Les prévisions météorologiques sont disponibles pour les **7 jours** à venir.
+- Les mises à jour des prévisions sont fournies par **pas de 3 heures** pour des informations détaillées.
 
-To access or customize these features, use the menus on the left or right side of the interface.
+Pour accéder à ces fonctionnalités ou les personnaliser, utilisez les menus situés sur les côtés gauche ou droit de l'interface.
 
   ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
 
-***7-Day Forecast***:  
+***Prévisions à 7 jours*** :
 
-Click on the forecast data in the menu to view the **7-day forecast** for your location. The forecast is available in:
+Cliquez sur les données de prévisions dans le menu pour afficher les **prévisions à 7 jours** pour votre position. Les prévisions sont disponibles en :
 
-- **Graph format**  
-- **List format**
+- **Format graphique**
+- **Format liste**
 
   ![OsmAnd Web Weather](@site/static/img/web/web_7day.png)
 
 
-## Configure Map Menu
+## Menu Configurer la carte
 
-The Configure Map menu allows you to manage the display settings for map data, such as POI layers, Favorites, tracks, and terrain. Please log in to your OsmAnd account to use this menu section.
+Le menu Configurer la carte vous permet de gérer les paramètres d'affichage des données cartographiques, tels que les couches de POI, les favoris, les traces et le terrain. Veuillez vous connecter à votre compte OsmAnd pour utiliser cette section du menu.
 
-To open this menu, click the button in the **top left corner** or access it through the **Menu**.
+Pour ouvrir ce menu, cliquez sur le bouton dans le **coin supérieur gauche** ou accédez-y via le **Menu**.
 
-- [POI overlay...](#poi-overlay-section). Allows you to choose and show needed POI categories on the map.
-- [Favorites](#favorites-section). Toggle the display of favorites on the map.
-- [Tracks](#tracks-section). Contains GPX tracks visible on the map.  
-- [Terrain](#terrain-section). Enable or disable the terrain color scheme on the map.
+- [Superposition de POI...](#poi-overlay-section). Vous permet de choisir et d'afficher les catégories de POI nécessaires sur la carte.
+- [Favoris](#favorites-section). Active ou désactive l'affichage des favoris sur la carte.
+- [Traces](#tracks-section). Contient les traces GPX visibles sur la carte.
+- [Terrain](#terrain-section). Active ou désactive le schéma de couleurs du terrain sur la carte.
 
 ![POIs menu](@site/static/img/web/configure_map_web.png)
 
 
-### POI overlay section
+### Section Superposition de POI
 
-To show POIs on the map:
+Pour afficher les POI sur la carte :
 
-*Configure map menu → POI overlay...*. Here, you can choose categories to display on the map.
+*Menu Configurer la carte → Superposition de POI...*. Ici, vous pouvez choisir les catégories à afficher sur la carte.
 
-Alternatively, you can use the [**Search section**](web-search.md) to find the desired place.
+Vous pouvez également utiliser la [**section Recherche**](web-search.md) pour trouver le lieu souhaité.
 
 ![POIs menu](@site/static/img/web/poi_menu.png)
 
 
-### Favorites Section
+### Section Favoris
 
-With one click, you can toggle favorites on or off on the map. However, only favorites with [**Show on map enabled**](../web/web-userdata.mdx##favorites-on-the-web) will be displayed.
+En un clic, vous pouvez activer ou désactiver les favoris sur la carte. Cependant, seuls les favoris avec [**Afficher sur la carte activé**](../web/web-userdata.mdx##favorites-on-the-web) seront affichés.
 
 
-### Tracks section
+### Section Traces
 
-This section contains a list of your [**GPX tracks visible on the map**](../web/web-userdata.mdx#visible-on-the-map) and **Recently Visible** tracks.
+Cette section contient une liste de vos [**traces GPX visibles sur la carte**](../web/web-userdata.mdx#visible-on-the-map) et des traces **Récemment visibles**.
 
-- You can toggle tracks on or off directly.  
-- Switch tracks on or off from the **Recently Visible** list.  
+- Vous pouvez activer ou désactiver les traces directement.
+- Activer ou désactiver les traces de la liste **Récemment visibles**.
 
-Each track has a **Context Menu** (accessible via the ⋮ button) with the following commands:
+Chaque trace dispose d'un **Menu contextuel** (accessible via le bouton ⋮) avec les commandes suivantes :
 
-- **Hide track**: Hides the currently visible track from the map.  
-- **Make track visible**: Displays a track from the Recently Visible list on the map.  
-- **Rename**: Allows you to rename the track for easier identification.  
-- **Duplicate**: Creates a copy of the track.  
-- **Download**: Saves the track to your local device.  
-- **Delete**: Removes the track permanently from the list.
+- **Masquer la trace** : masque la trace actuellement visible sur la carte.
+- **Rendre la trace visible** : affiche une trace de la liste Récemment visibles sur la carte.
+- **Renommer** : vous permet de renommer la trace pour une identification plus facile.
+- **Dupliquer** : crée une copie de la trace.
+- **Télécharger** : enregistre la trace sur votre appareil local.
+- **Supprimer** : supprime définitivement la trace de la liste.
 
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
 
-### Terrain section
+### Section Terrain
 
-The **Terrain** section is a paid feature <ProFeature/>. To use this feature, you must first log in to your OsmAnd Pro account.
+La section **Terrain** est une fonctionnalité payante <ProFeature/>. Pour utiliser cette fonctionnalité, vous devez d'abord vous connecter à votre compte OsmAnd Pro.
 
-In this section, you can:
+Dans cette section, vous pouvez :
 
-- Choose a **color scheme** for terrain:
-  - **Hillshade**
-  - **Slope**
-  - **Height**
-- Adjust the visibility of the selected terrain layer from **0% to 100%**.
+- Choisir un **schéma de couleurs** pour le terrain :
+  - **Ombrage**
+  - **Pente**
+  - **Hauteur**
+- Ajuster la visibilité de la couche de terrain sélectionnée de **0 % à 100 %**.
 
 ![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
 
@@ -166,7 +166,7 @@ In this section, you can:
 <!--
 ## Map style
 
-In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
+In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.
 **Some examples:**
 
 - Nautical map style
@@ -179,56 +179,58 @@ In this section of the menu, you can change the map style. You can read more abo
 -->
 
 
-## URL Schemes
+## Schémas d'URL
 
-For easy use of the OsmAnd web service (and application), you can take advantage of direct links. These are special URLs that allow you to transfer location data and include details about pins, tracks, weather, and more.
+Pour faciliter l'utilisation du service web OsmAnd (et de l'application), vous pouvez profiter des liens directs. Ce sont des URL spéciales qui vous permettent de transférer des données de localisation et d'inclure des détails sur les épingles, les traces, la météo, etc.
 
-These URLs can be copied and shared using any medium supported by your device and are compatible with both the Android and iOS versions of OsmAnd.
+Ces URL peuvent être copiées et partagées via n'importe quel support pris en charge par votre appareil et sont compatibles avec les versions Android et iOS d'OsmAnd.
 
-1. **URL with a pin on the map:**
+1. **URL avec une épingle sur la carte :**
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
   ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
 
-2. **URL without a pin on the map:**
+2. **URL sans épingle sur la carte :**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
   ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
 
-3. **URL with navigation:** `osmand.net/map/navigate`
+3. **URL avec navigation :** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
   ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
 
-Depending on the specified parameters, URL strings can contain:
+Selon les paramètres spécifiés, les chaînes d'URL peuvent contenir :
 
-- **latitude**: latitude value as a number.  
-- **longitude**: longitude value as a number.  
-- **start-finish**: coordinates for navigation.  
-- **profile**: navigation profile (e.g., car, bike).  
-- **zoom**: zoom level.
+- **latitude** : valeur de la latitude sous forme de nombre.
+- **longitude** : valeur de la longitude sous forme de nombre.
+- **start-finish** : coordonnées pour la navigation.
+- **profile** : profil de navigation (par exemple, voiture, vélo).
+- **zoom** : niveau de zoom.
 
-4. **Weather**&nbsp; – &nbsp;`osmand.net/map/weather`
+4. **Météo**&nbsp; – &nbsp;`osmand.net/map/weather`
 
-***For example***, you can directly access the weather page with specified coordinates:  
+***Par exemple***, vous pouvez accéder directement à la page météo avec les coordonnées spécifiées :
     [`https://osmand.net/map/weather/#9/52.2394/21.0362`](https://osmand.net/map/weather/#9/52.2394/21.0362)
 
-5. **Account**&nbsp; – &nbsp;`osmand.net/map/account`
+5. **Compte**&nbsp; – &nbsp;`osmand.net/map/account`
 
-6. **Configure Map**&nbsp; – &nbsp;`osmand.net/map/configure/`
+6. **Configurer la carte**&nbsp; – &nbsp;`osmand.net/map/configure/`
 
-7. **Tracks**&nbsp; – &nbsp;`osmand.net/map/mydata/tracks`
+7. **Traces**&nbsp; – &nbsp;`osmand.net/map/mydata/tracks`
 
-8. **Favorites**&nbsp; – &nbsp;`osmand.net/map/mydata/favorites`
+8. **Favoris**&nbsp; – &nbsp;`osmand.net/map/mydata/favorites`
 
-9. **Settings**&nbsp; – &nbsp;`osmand.net/map/settings`
+9. **Paramètres**&nbsp; – &nbsp;`osmand.net/map/settings`
 
-10. **Plan a Route**&nbsp; - &nbsp;`osmand.net/map/plan`
+10. **Planifier un itinéraire**&nbsp; - &nbsp;`osmand.net/map/plan`
 
-11. Direct link to the current [**Explore page**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
+11. Lien direct vers la [**page Explorer**](https://osmand.net/docs/user/web/web-search#explore) actuelle&nbsp; - &nbsp;`osmand.net/map/search`
 
 
-> *This article was last updated in January 2025*
+> *Cet article a été mis à jour pour la dernière fois en janvier 2025*
+
+-- source-hash: blake2s: 3e7c99d0fdc131a02cf2529fc0c253166246620219b07837a90709ed6869c355 --

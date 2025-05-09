@@ -2,43 +2,44 @@
 sidebar_position: 1
 ---
 
-# OsmAnd File Formats
+# Formats de fichiers OsmAnd
 
-The documentation describes the files supported by OsmAnd.
+La documentation décrit les fichiers pris en charge par OsmAnd.
 
-### [GPX Routes, Tracks - .gpx](./osmand-gpx.md)
+### [Itinéraires, traces GPX - .gpx](./osmand-gpx.md)
 
-OsmAnd uses GPX files to record tracks, save pre-calculated routes, and can import GPX files prepared by other sources for viewing or navigation.
+OsmAnd utilise les fichiers GPX pour enregistrer les traces, sauvegarder les itinéraires pré-calculés et peut importer des fichiers GPX préparés par d'autres sources pour la visualisation ou la navigation.
 
-### [KML Tracks - .kml, .kmz](./osmand-kml.md)
+### [Traces KML - .kml, .kmz](./osmand-kml.md)
 
-OsmAnd can import or convert location information in KML format.
+OsmAnd peut importer ou convertir des informations de localisation au format KML.
 
-### [OsmAnd Package - .osf](./osmand-osf.md)
+### [Paquet OsmAnd - .osf](./osmand-osf.md)
 
-A package to distribute backups, plugins, maps as a container for all other files.
+Un paquet pour distribuer des sauvegardes, des plugins, des cartes en tant que conteneur pour tous les autres fichiers.
 
-### [Routing Configuration - .routing.xml](./osmand-routing-xml.md)
+### [Configuration de routage - .routing.xml](./osmand-routing-xml.md)
 
-OsmAnd routing configuration file.
+Fichier de configuration de routage OsmAnd.
 
-### [Map Rendering style - .render.xml](./osmand-rendering-style.md)
+### [Style de rendu de carte - .render.xml](./osmand-rendering-style.md)
 
-OsmAnd rendering style is a special XML file that describes how vector map objects should be displayed on the map. As a rule, it contains quite a lot of lines of code and is well customizable.
+Le style de rendu OsmAnd est un fichier XML spécial qui décrit comment les objets de carte vectoriels doivent être affichés sur la carte. En règle générale, il contient un grand nombre de lignes de code et est bien personnalisable.
 
-### [OsmAnd Binary Maps - .obf](./osmand-obf.md)
+### [Cartes binaires OsmAnd - .obf](./osmand-obf.md)
 
-OsmAnd format for storing vectorized location data such as maps.
+Format OsmAnd pour le stockage de données de localisation vectorisées telles que les cartes.
 
-### [Tiles Directory Format - .metainfo](./osmand-metainfo.md)
+### [Format de répertoire de tuiles - .metainfo](./osmand-metainfo.md)
 
-OsmAnd's Metainfo format specification.
+Spécification du format Metainfo d'OsmAnd.
 
-### [Tiles SQLite Format - .sqlite](./osmand-sqlite.md)
+### [Format SQLite de tuiles - .sqlite](./osmand-sqlite.md)
 
-OsmAnd's SQLite format specification.
+Spécification du format SQLite d'OsmAnd.
 
-### [Voice packages](./osmand-voice-package.mdx)
+### [Paquets vocaux](./osmand-voice-package.mdx)
 
-Recorded and TTS-synthesized voice packets that create navigational voice prompts.
+Paquets vocaux enregistrés et synthétisés par TTS qui créent des invites vocales de navigation.
 
+-- source-hash: blake2s: ddef7e04b364b0cfd91aec8b77e838c70373369b54210429bc261181e4cac9bd --

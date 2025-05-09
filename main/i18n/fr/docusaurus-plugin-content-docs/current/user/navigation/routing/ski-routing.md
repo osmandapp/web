@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  Ski routing
+title:  Itinéraire de ski
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,30 +13,30 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Aperçu
 
 :::note
-The ski routing and skiing profile are only availible when [Ski map view plugin](../../plugins/ski-maps.md) is activated.  
+L'itinéraire de ski et le profil de ski ne sont disponibles que lorsque le [plugin Vue carte de ski](../../plugins/ski-maps.md) est activé.
 :::
 
-*Ski routing* can be particularly useful for backcountry skiers, ski mountaineers, and other winter sports enthusiasts who want to explore new areas and plan their trips in advance. With *ski routing* OsmAnd users can plan routes and navigate safely while enjoying the beauty of winter landscapes.  
+L'*itinéraire de ski* peut être particulièrement utile pour les skieurs de randonnée, les skieurs-alpinistes et autres amateurs de sports d'hiver qui souhaitent explorer de nouvelles zones et planifier leurs voyages à l'avance. Avec l'*itinéraire de ski*, les utilisateurs d'OsmAnd peuvent planifier des itinéraires et naviguer en toute sécurité tout en profitant de la beauté des paysages hivernaux.
 
-*Ski routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
+L'*itinéraire de ski* peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des paramètres de navigation.
 
 ![Map routes - ski slopes](@site/static/img/navigation/routing/ski_routing_overview.png)
 
 
-## Route Parameters - Ski
+## Paramètres d'itinéraire - Ski
 
 :::note
-By default, *Skiing profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+Par défaut, le *profil de ski* est désactivé. Pour utiliser ce profil pour l'itinéraire, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-*Ski routing* settings allows users to plan their routes by selecting the desired difficulty level and the type of terrain they want to explore. There are various options for safe, comfortable, and enjoyable movement on pistes or during a freeride.  
+Les paramètres d'*itinéraire de ski* permettent aux utilisateurs de planifier leurs itinéraires en sélectionnant le niveau de difficulté souhaité et le type de terrain qu'ils souhaitent explorer. Il existe diverses options pour un déplacement sûr, confortable et agréable sur les pistes ou en freeride.
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Ski routing settings Android 1](@site/static/img/navigation/routing/skiing_routing_1_andr.png) ![Ski routing settings Android 2](@site/static/img/navigation/routing/skiing_routing_2_andr.png)
 
@@ -50,31 +50,33 @@ By default, *Skiing profile* is deactivated. To use this profile for routing, yo
 
 </Tabs>
 
-| Parameter | Allows to use for routing | Note |
+| Paramètre | Permet d'utiliser pour l'itinéraire | Note |
 |:------------|:---------------|:---------------|
-|*<Translate android="true" ids="routing_attr_allow_skating_only_name"/>* | <Translate android="true" ids="routing_attr_allow_skating_only_description"/> |  `https://wiki.openstreetmap.org/wiki/Piste_Maps#Type`  |
-|*<Translate android="true" ids="app_mode_ski_touring"/>* |   <Translate android="true" ids="routing_attr_piste_type_skitour_description"/> | A recommended [ski tour way](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) or area that is generally used by many skiers during a season for the purpose of a Nordic ascent and a downhill descent in the backcountry. |
-|*<Translate android="true" ids="routing_attr_allow_advanced_name"/>* |  <Translate android="true" ids="routing_attr_allow_advanced_description"/>  | More [difficult routes](https://wiki.openstreetmap.org/wiki/Piste_Maps#Difficulty) will be allowed for routing. |
-|*<Translate android="true" ids="routing_attr_freeride_policy_name"/>* |   <details><summary> Choose one of the options for freeride skiing.  </summary>![Off piste Android](@site/static/img/navigation/routing/offpiste_android.png) </details> |   |
-|*<Translate android="true" ids="routing_attr_piste_type_downhill_name"/>* |  <Translate android="true" ids="routing_attr_piste_type_downhill_description"/> | Using [ski lifts](https://wiki.openstreetmap.org/wiki/Piste_Maps#Ski_lifts) will be switched on |
-|*<Translate android="true" ids="routing_attr_piste_type_nordic_name"/>*&nbsp;(Android) *<Translate ios="true" ids="routeInfo_piste_type_name"/>*&nbsp;(iOS) |   <Translate android="true" ids="routing_attr_piste_type_nordic_description"/>|  |
-|*<Translate android="true" ids="routing_attr_allow_classic_only_name"/>* |   <Translate android="true" ids="routing_attr_allow_classic_only_description"/>|  |
-|*<Translate android="true" ids="routing_attr_allow_expert_name"/>* |   <Translate android="true" ids="routing_attr_allow_expert_description"/>|  |
-|*<Translate android="true" ids="routing_attr_piste_type_sled_name"/>* |  <Translate android="true" ids="routing_attr_piste_type_sled_description"/> | [Sleds](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) are smaller vehicles that are pulled by a human or propelled only by gravity. When enabled, [sledding pistes](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) will be used for ski routing |
-|*<Translate android="true" ids="routing_attr_allow_intermediate_name"/>* |   <Translate android="true" ids="routing_attr_allow_intermediate_description"/>|  |
-|*<Translate android="true" ids="routing_attr_difficulty_preference_name"/>* |  <details><summary>  <Translate android="true" ids="routing_attr_difficulty_preference_description"/> </summary>![Off piste Android](@site/static/img/navigation/routing/offpiste_android.png) </details> |  |
+|*<Translate android="true" ids="routing_attr_allow_skating_only_name"/>* | <Translate android="true" ids="routing_attr_allow_skating_only_description"/> | `https://wiki.openstreetmap.org/wiki/Piste_Maps#Type` |
+|*<Translate android="true" ids="app_mode_ski_touring"/>* | <Translate android="true" ids="routing_attr_piste_type_skitour_description"/> | Un [itinéraire de ski de randonnée](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) recommandé ou une zone généralement utilisée par de nombreux skieurs pendant une saison pour une ascension nordique et une descente en hors-piste. |
+|*<Translate android="true" ids="routing_attr_allow_advanced_name"/>* | <Translate android="true" ids="routing_attr_allow_advanced_description"/> | Les [itinéraires plus difficiles](https://wiki.openstreetmap.org/wiki/Piste_Maps#Difficulty) seront autorisés pour l'itinéraire. |
+|*<Translate android="true" ids="routing_attr_freeride_policy_name"/>* | <details><summary> Choisissez l'une des options pour le ski freeride. </summary>![Off piste Android](@site/static/img/navigation/routing/offpiste_android.png) </details> | |
+|*<Translate android="true" ids="routing_attr_piste_type_downhill_name"/>* | <Translate android="true" ids="routing_attr_piste_type_downhill_description"/> | L'utilisation des [remontées mécaniques](https://wiki.openstreetmap.org/wiki/Piste_Maps#Ski_lifts) sera activée |
+|*<Translate android="true" ids="routing_attr_piste_type_nordic_name"/>*&nbsp;(Android) *<Translate ios="true" ids="routeInfo_piste_type_name"/>*&nbsp;(iOS) | <Translate android="true" ids="routing_attr_piste_type_nordic_description"/>| |
+|*<Translate android="true" ids="routing_attr_allow_classic_only_name"/>* | <Translate android="true" ids="routing_attr_allow_classic_only_description"/>| |
+|*<Translate android="true" ids="routing_attr_allow_expert_name"/>* | <Translate android="true" ids="routing_attr_allow_expert_description"/>| |
+|*<Translate android="true" ids="routing_attr_piste_type_sled_name"/>* | <Translate android="true" ids="routing_attr_piste_type_sled_description"/> | Les [luges](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) sont de petits véhicules tirés par un humain ou propulsés uniquement par la gravité. Lorsqu'elle est activée, les [pistes de luge](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) seront utilisées pour l'itinéraire de ski |
+|*<Translate android="true" ids="routing_attr_allow_intermediate_name"/>* | <Translate android="true" ids="routing_attr_allow_intermediate_description"/>| |
+|*<Translate android="true" ids="routing_attr_difficulty_preference_name"/>* | <details><summary> <Translate android="true" ids="routing_attr_difficulty_preference_description"/> </summary>![Off piste Android](@site/static/img/navigation/routing/offpiste_android.png) </details> | |
 
 
-## Other Routing Settings
+## Autres paramètres d'itinéraire
 
-- The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
+- L'algorithme de routage peut également prendre en compte les limitations temporaires spécifiées dans OpenStreetMap. Cela peut être fait en utilisant l'option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Notez que dans certains cas, les informations d'OSM peuvent être obsolètes.
 
-- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
+- Dans la section [*Recalculer l'itinéraire*](../../navigation/guidance/navigation-settings.md#recalculate-route) des *Paramètres d'itinéraire*, vous pouvez activer et ajuster les options de recalcul d'itinéraire.
 
-- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+- Dans la section [*Développement*](../guidance/navigation-settings.md#development-settings) des *Paramètres d'itinéraire*, vous pouvez essayer de nouvelles fonctionnalités de routage qui sont actuellement en phase de test. Notez que ces paramètres ne sont disponibles que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé.
 
-- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). This setting is used on unknown roads without speed limits. This is most often the case when navigating a track or online route. It must be set according to the parameters of your vehicle.
+- Le paramètre *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* dans la version *iOS* d'OsmAnd se trouve dans *Paramètres de navigation → Paramètres d'itinéraire* (pour *Android*, dans *Paramètres du véhicule → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Ce paramètre est utilisé sur les routes inconnues sans limitation de vitesse. C'est le plus souvent le cas lors de la navigation sur une trace ou un itinéraire en ligne. Il doit être réglé en fonction des paramètres de votre véhicule.
 
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
+- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. La configuration correcte des paramètres vous aidera à éviter les problèmes lors de la création d'un itinéraire. Vous pouvez sélectionner l'itinéraire le plus approprié en fonction du type de véhicule et des restrictions routières, ainsi que calculer le temps de trajet.
 
-> *This article was last updated in June 2024*
+> *Cet article a été mis à jour pour la dernière fois en juin 2024*
+
+-- source-hash: blake2s: a46301bd164277ebcea71e71443d70f2630fddc873e56443bd8a84fdf64b51ac --

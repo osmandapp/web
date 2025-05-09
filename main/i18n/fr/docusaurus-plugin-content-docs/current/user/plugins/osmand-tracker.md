@@ -15,215 +15,217 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <InfoAndroidOnly />
 
-## Overview
+## Aperçu
 
-OsmAnd Tracker is a modified Telegram client created for flexible monitoring and sending messages with GPS locations in real-time.  
+OsmAnd Tracker est un client Telegram modifié créé pour un suivi flexible et l'envoi de messages avec des positions GPS en temps réel.
 
-[OsmAnd tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) helps you see your contacts on a map in OsmAnd. It has a social aspect to it, meaning that to use it, you need to provide access to your contacts for the platform OsmAnd chooses.  
+[OsmAnd tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) vous aide à voir vos contacts sur une carte dans OsmAnd. Il a un aspect social, ce qui signifie que pour l'utiliser, vous devez autoriser l'accès à vos contacts pour la plateforme choisie par OsmAnd.
 
-We chose [Telegram](https://telegram.org/) s the most open social platform because it has an [Open API](https://core.telegram.org/api), Open SDK and, moreover, will eventually have an Open Server implementation (Blockchain).
+Nous avons choisi [Telegram](https://telegram.org/) comme plateforme sociale la plus ouverte car elle dispose d'une [API ouverte](https://core.telegram.org/api), d'un SDK ouvert et, de plus, aura éventuellement une implémentation de serveur ouvert (Blockchain).
 
-![OsmAnd Tracker](@site/static/img/plugins/online-tracker/My_Location.png)  ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Map.png)
-
-
-### How It Works
-
-Importantly, there is a high level of compatibility between the apps. You can easily share your location with your contacts without having the Telegram mobile app (OsmAnd Online GPS Tracker is an independent Telegram client), and conversely, your contacts do not need to have [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) to see your location.  
-
-We designed [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) so that you can continue to use the Telegram app and the OsmAnd app in the way you are used to, without additional restrictions.  
-
-The application sends Live Location messages to selected chats for the time you set, displays a list of your contacts and groups, and checks chats for messages with your location, which are then displayed on the map in OsmAnd.
-The application does not send or view your text messages.  
-
-Log in using your Telegram registered phone number to enable the following:
-
-- Manage the list of contacts and groups that send you their location.
-- View the location of contacts and groups in real time on a map in OsmAnd.
-- Set the time for sharing the location separately for each chat.
-- Set how often your location is updated.
-- Monitor the chronology of your movements and your contacts.  
-
-![OsmAnd Tracker](@site/static/img/plugins/online-tracker/My-location_1.png)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Live.png)
+![OsmAnd Tracker](@site/static/img/plugins/online-tracker/My_Location.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Map.png)
 
 
-## Required Setup Parameters
+### Comment ça marche
 
-Install OsmAnd Online GPS Tracker APK:
+Il est important de noter qu'il existe un haut niveau de compatibilité entre les applications. Vous pouvez facilement partager votre position avec vos contacts sans avoir l'application mobile Telegram (OsmAnd Online GPS Tracker est un client Telegram indépendant), et inversement, vos contacts n'ont pas besoin d'avoir [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) pour voir votre position.
 
-- [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
-- [OsmAnd server](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
+Nous avons conçu [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) afin que vous puissiez continuer à utiliser l'application Telegram et l'application OsmAnd de la manière dont vous avez l'habitude, sans restrictions supplémentaires.
+
+L'application envoie des messages de position en direct aux discussions sélectionnées pendant le temps que vous avez défini, affiche une liste de vos contacts et groupes, et vérifie les discussions pour les messages avec votre position, qui sont ensuite affichés sur la carte dans OsmAnd.
+L'application n'envoie ni ne visualise vos messages texte.
+
+Connectez-vous en utilisant votre numéro de téléphone enregistré sur Telegram pour activer les fonctionnalités suivantes :
+
+- Gérer la liste des contacts et des groupes qui vous envoient leur position.
+- Afficher la position des contacts et des groupes en temps réel sur une carte dans OsmAnd.
+- Définir le temps de partage de la position séparément pour chaque discussion.
+- Définir la fréquence de mise à jour de votre position.
+- Surveiller la chronologie de vos déplacements et de ceux de vos contacts.
+
+![OsmAnd Tracker](@site/static/img/plugins/online-tracker/My-location_1.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Live.png)
 
 
-## Plugin Settings
+## Paramètres de configuration requis
 
-There are several settings for managing the frequency of sharing locations and controlling the display of the locations sent to you.
+Installer l'APK OsmAnd Online GPS Tracker :
 
-For opening the *Settings* menu:  
+- [Google Play Store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
+- [Serveur OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
 
-*[My location](#my-location-screen) screen → move screen down (contacts list) → ⋮ → Settings*  
-or  
-*[Live now](#live-now-screen) screen → ⋮ → Settings*  
+
+## Paramètres du plugin
+
+Il existe plusieurs paramètres pour gérer la fréquence de partage des positions et contrôler l'affichage des positions qui vous sont envoyées.
+
+Pour ouvrir le menu *Paramètres* :
+
+Écran *[Ma position](#my-location-screen)* → faire défiler l'écran vers le bas (liste des contacts) → ⋮ → Paramètres
+ou
+Écran *[En direct maintenant](#live-now-screen)* → ⋮ → Paramètres
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_settings.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_settings_1.png)
 
 
 ### Position
 
-**Send my location** — allows you to set the interval for sending your position from once per second (for increasing accuracy) to once in 5 minutes (for reducing power consumption).
+**Envoyer ma position** — vous permet de définir l'intervalle d'envoi de votre position, d'une fois par seconde (pour augmenter la précision) à une fois toutes les 5 minutes (pour réduire la consommation d'énergie).
 
-**Not moving** — allows you to set the time (from 1 minute to 1 hour) after which a contact's location is considered out of date. If a location becomes obsolete, it turns grey.
+**Ne bouge pas** — vous permet de définir le temps (de 1 minute à 1 heure) après lequel la position d'un contact est considérée comme obsolète. Si une position devient obsolète, elle devient grise.
 
-**Location history** — allows you to set the time (from 5 minutes to 24 hours) after which the contact with the deleted location will be hidden from the list and the OsmAnd map.
+**Historique des positions** — vous permet de définir le temps (de 5 minutes à 24 heures) après lequel le contact dont la position a été supprimée sera masqué de la liste et de la carte OsmAnd.
 
-**Send location as** - allows you to choose a category for sending messages about your location in Telegram (3 types of sending): text, map, text and map.
+**Envoyer la position sous forme de** - vous permet de choisir une catégorie pour l'envoi de messages concernant votre position dans Telegram (3 types d'envoi) : texte, carte, texte et carte.
 
-**Buffer expiration time** - allows you to choose the time of saving points in the buffer.
+**Temps d'expiration du tampon** - vous permet de choisir le temps de sauvegarde des points dans le tampon.
 
-**Background work** - allows you to change battery optimization settings to stabilize location sharing.
+**Travail en arrière-plan** - vous permet de modifier les paramètres d'optimisation de la batterie pour stabiliser le partage de position.
 
-**Location source** - allows you to choose *Google Play Services* (by default) or *Android API* for determining location.
+**Source de position** - vous permet de choisir *Google Play Services* (par défaut) ou *Android API* pour déterminer la position.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/settingstracker.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/20.jpg)
 
 
-### Units & Formats
+### Unités et formats
 
-Allows you to add settings for units and formats. Now you can choose your comfortable values for Telegram messages when sharing location data.  
+Vous permet d'ajouter des paramètres pour les unités et les formats. Vous pouvez maintenant choisir vos valeurs confortables pour les messages Telegram lors du partage des données de position.
 
-![OsmAnd Tracker](@site/static/img/plugins/online-tracker/22.jpg)  ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/20.jpg)
-
-
-### Appearance
-
-Allows you to show the number of GPS points received from other contacts, as well as those sent by you.
+![OsmAnd Tracker](@site/static/img/plugins/online-tracker/22.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/20.jpg)
 
 
-### Privacy
+### Apparence
 
-Using proxy inside of OsmAnd Tracker. Go to Settings and write your proxy data: *Settings → Privacy → Proxy Settings*
-
-![OsmAnd Tracker](@site/static/img/plugins/online-tracker/3-1.jpg)  ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4-1.jpg)
+Vous permet d'afficher le nombre de points GPS reçus d'autres contacts, ainsi que ceux que vous avez envoyés.
 
 
-### GPS Settings
+### Confidentialité
 
-Location point settings. For example, if you stay in one location for some time without moving, your location point data is not sent and your GPX track will display more accurate and accurate data.  
+Utilisation d'un proxy à l'intérieur d'OsmAnd Tracker. Allez dans Paramètres et écrivez vos données de proxy : *Paramètres → Confidentialité → Paramètres du proxy*
+
+![OsmAnd Tracker](@site/static/img/plugins/online-tracker/3-1.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4-1.jpg)
+
+
+### Paramètres GPS
+
+Paramètres des points de position. Par exemple, si vous restez à un endroit pendant un certain temps sans bouger, vos données de point de position ne sont pas envoyées et votre trace GPX affichera des données plus précises et exactes.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/5-1.jpg)
 
 
-### Share location as
+### Partager la position sous forme de
 
-If you want to connect several devices to one Telegram account, you need to click "Add device" and name the device.
+Si vous souhaitez connecter plusieurs appareils à un seul compte Telegram, vous devez cliquer sur "Ajouter un appareil" et nommer l'appareil.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Settings-ShowGPSPoints.png)
 
 
-### OsmAnd Connect
+### Connexion OsmAnd
 
-This setting allows you to select the version of OsmAnd in which your contacts with their location will appear on the map.  
+Ce paramètre vous permet de sélectionner la version d'OsmAnd dans laquelle vos contacts avec leur position apparaîtront sur la carte.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Settings-2.png)
 
 
-### Account
+### Compte
 
-Use this setting to check which Telegram account you are currently using. Also in this menu you can exit the OsmAnd Telegram application by simply tapping the *Log out* button.  
-
-
-### Logcat Buffer
-
-Here you can check and share detailed logs of the app.
+Utilisez ce paramètre pour vérifier quel compte Telegram vous utilisez actuellement. Dans ce menu, vous pouvez également quitter l'application OsmAnd Telegram en appuyant simplement sur le bouton *Déconnexion*.
 
 
-## My Location Screen
+### Tampon Logcat
 
-On this screen, you can see your Telegram contacts. You can choose one or more of them, set sharing options, and start sharing your location.  
-
-After the first launch, you will see a list of Suggested contacts. These are the five most recent contacts you've shared your location with. You can only click once to continue sharing your location with these contacts.  
-
-Sharing Time is the last sharing time you selected for the contact.  
-
-When you start sharing, you'll see a list of Suggested contacts and a *Back to OsmAnd* button on the *My location* screen.  
-
-![OsmAnd Tracker](@site/static/img/plugins/online-tracker/8.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/9.jpg)
+Ici, vous pouvez vérifier et partager les journaux détaillés de l'application.
 
 
-## Live Now Screen
+## Écran Ma position
 
-In this menu, you can see all contacts who are sharing a location with you. Tap the contact and look at it on **OsmAnd map**.
+Sur cet écran, vous pouvez voir vos contacts Telegram. Vous pouvez en choisir un ou plusieurs, définir les options de partage et commencer à partager votre position.
+
+Après le premier lancement, vous verrez une liste de contacts suggérés. Ce sont les cinq contacts les plus récents avec lesquels vous avez partagé votre position. Vous ne pouvez cliquer qu'une seule fois pour continuer à partager votre position avec ces contacts.
+
+Temps de partage est le dernier temps de partage que vous avez sélectionné pour le contact.
+
+Lorsque vous commencez à partager, vous verrez une liste de contacts suggérés et un bouton *Retour à OsmAnd* sur l'écran *Ma position*.
+
+![OsmAnd Tracker](@site/static/img/plugins/online-tracker/8.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/9.jpg)
+
+
+## Écran En direct maintenant
+
+Dans ce menu, vous pouvez voir tous les contacts qui partagent une position avec vous. Appuyez sur le contact et regardez-le sur la **carte OsmAnd**.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Live.png)
 
 
-### Active Marker on the OsmAnd Map
+### Marqueur actif sur la carte OsmAnd
 
-Allows you to track the distance, speed, and angle movement of your contacts on the OsmAnd map and in Telegram text. You can understand where and how your contact is moving.  
+Vous permet de suivre la distance, la vitesse et l'angle de déplacement de vos contacts sur la carte OsmAnd et dans le texte Telegram. Vous pouvez comprendre où et comment votre contact se déplace.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/6-1.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/7-1.jpg)
 
 
-## Timeline Screen
+## Écran Chronologie
 
-This is the third tab in the application. This is the third tab in the app. Here you can select a day to view the history of locations shared with you. Selecting a day displays the contacts who showed their location that day.  
+C'est le troisième onglet de l'application. C'est le troisième onglet de l'application. Ici, vous pouvez sélectionner un jour pour afficher l'historique des positions partagées avec vous. La sélection d'un jour affiche les contacts qui ont montré leur position ce jour-là.
 
-Monitoring allows you to collect information in the background when your contacts share it. To do this, you must enable it.
+Le suivi vous permet de collecter des informations en arrière-plan lorsque vos contacts les partagent. Pour ce faire, vous devez l'activer.
 
-To view all information about a contact's location, tap its icon or open a GPX track in OsmAnd and explore the track in more detail ([read more here](./trip-recording.md)). You can also share the GPX track for a selected period: by sending it to an email or any instant messenger.
+Pour afficher toutes les informations sur la position d'un contact, appuyez sur son icône ou ouvrez une trace GPX dans OsmAnd et explorez la trace plus en détail ([en savoir plus ici](./trip-recording.md)). Vous pouvez également partager la trace GPX pour une période sélectionnée : en l'envoyant par e-mail ou par n'importe quel messager instantané.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4-1-Timeline.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Timeline_2.png)
 
-You can see the online movement of your contacts on the OsmAnd map using the online GPS track. To do this, you need to enable *Live* at the contact in the *Timeline*. If there are many contacts in common at the moment, the OsmAnd app selects the color of the tracks at random.  
+Vous pouvez voir le mouvement en ligne de vos contacts sur la carte OsmAnd à l'aide de la trace GPS en ligne. Pour ce faire, vous devez activer *En direct* pour le contact dans la *Chronologie*. S'il y a beaucoup de contacts en commun en ce moment, l'application OsmAnd sélectionne la couleur des traces au hasard.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/1.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/2.jpg)
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/3.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4.jpg)
 
-When you tap "Show in OsmAnd" or on the mini-map, you can select special settings for GPX tracking of your contact in the OsmAnd app and see their movement in real time on the OsmAnd map.  
+Lorsque vous appuyez sur "Afficher dans OsmAnd" ou sur la mini-carte, vous pouvez sélectionner des paramètres spéciaux pour le suivi GPX de votre contact dans l'application OsmAnd et voir son mouvement en temps réel sur la carte OsmAnd.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/5.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/6.jpg)
 
-If there is no data collected on the selected date, a special notification will appear on the screen. You can move to the nearest date by tapping the forward or backward arrow.  
+S'il n'y a pas de données collectées à la date sélectionnée, une notification spéciale apparaîtra à l'écran. Vous pouvez vous déplacer à la date la plus proche en appuyant sur la flèche avant ou arrière.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/7.jpg)
 
 
-## Tracker Widget
+## Widget Tracker
 
-To view the [widget](../widgets/info-widgets.md#tracker-widget-android), you need to first enable the OsmAnd Tracker plugin. After that, a widget with the word *Start* will appear in the upper right corner of the OsmAnd screen.  
+Pour afficher le [widget](../widgets/info-widgets.md#tracker-widget-android), vous devez d'abord activer le plugin OsmAnd Tracker. Après cela, un widget avec le mot *Démarrer* apparaîtra dans le coin supérieur droit de l'écran OsmAnd.
 
-To disable it, you can go to *Main Menu → Configure screen*.
+Pour le désactiver, vous pouvez aller dans *Menu principal → Configurer l'écran*.
 
-![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_widget_1.png)   ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_widget_2.png)
+![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_widget_1.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_widget_2.png)
 
-The widget has several views.  
+Le widget a plusieurs vues.
 
-1. The first is *Start*.  
-   When you tap *Start*, you go to [**OsmAnd Online GPS Tracker**](https://play.google.com/store/apps/details?id=net.osmand.telegram), where you can select any contacts or tap Suggested Contacts.
-2. Second, when you start sharing your location, the widget changes its appearance.  
+1. La première est *Démarrer*.
+   Lorsque vous appuyez sur *Démarrer*, vous accédez à [**OsmAnd Online GPS Tracker**](https://play.google.com/store/apps/details?id=net.osmand.telegram), où vous pouvez sélectionner n'importe quel contact ou appuyer sur Contacts suggérés.
+2. Deuxièmement, lorsque vous commencez à partager votre position, le widget change d'apparence.
 
-   - The green *OK* emoji icon means that your location is now being shared. Everything is normal, the sharing is running without errors.  
-   - An orange *OK* emoji icon means your location cannot be sent. There is a problem with the Internet or GPS connection.  
+   - L'icône emoji verte *OK* signifie que votre position est maintenant partagée. Tout est normal, le partage s'exécute sans erreur.
+   - Une icône emoji orange *OK* signifie que votre position ne peut pas être envoyée. Il y a un problème avec la connexion Internet ou GPS.
 
-   ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/11.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/13.jpg)
+   ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/11.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/13.jpg)
 
-   - If you don't have an Internet connection for a long time, your location points are saved in the OsmAnd Tracker buffer. The widget in OsmAnd changes its appearance to a gray emoji icon. It shows the buffer fill time, how long the buffer already saves your location points.  
+   - Si vous n'avez pas de connexion Internet pendant une longue période, vos points de position sont enregistrés dans le tampon OsmAnd Tracker. Le widget dans OsmAnd change d'apparence pour une icône emoji grise. Il affiche le temps de remplissage du tampon, combien de temps le tampon enregistre déjà vos points de position.
 
-   ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/15.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/16.jpg)
+   ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/15.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/16.jpg)
 
-3. As soon as the Internet connection is restored, it will start uploading location points from the buffer. The OsmAnd widget will change its appearance and the number of minutes in it will start decreasing. When all location points from the buffer are uploaded to Telegram, the emoji *OK* icon will appear on the widget.  
+3. Dès que la connexion Internet est rétablie, il commencera à télécharger les points de position du tampon. Le widget OsmAnd changera d'apparence et le nombre de minutes qu'il contient commencera à diminuer. Lorsque tous les points de position du tampon sont téléchargés sur Telegram, l'icône emoji *OK* apparaîtra sur le widget.
 
-   ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/18.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/23.jpg)
+   ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/18.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/23.jpg)
 
-4. If you see widget as *OK* emoji icon, it means that everything is fine. The exchange process is going on without any problems.  
+4. Si vous voyez le widget comme une icône emoji *OK*, cela signifie que tout va bien. Le processus d'échange se déroule sans aucun problème.
 
 
-## OsmAnd Assistant
+## Assistant OsmAnd
 
-The OsmAnd app has its own Telegram bot called "OsmAnd Assistant," which helps you integrate OsmAnd Telegram with third-party trackers or APIs. You'll be able to share not only your location but also the location of your bike or a group of people racing available through the API. OsmAnd Telegram will give you a nice presentation of your locations on the map in OsmAnd itself.  
+L'application OsmAnd dispose de son propre bot Telegram appelé "OsmAnd Assistant", qui vous aide à intégrer OsmAnd Telegram avec des trackers ou des API tiers. Vous pourrez partager non seulement votre position, mais aussi la position de votre vélo ou d'un groupe de personnes participant à une course disponible via l'API. OsmAnd Telegram vous offrira une belle présentation de vos positions sur la carte dans OsmAnd lui-même.
 
-Please share with us what you think about this new app on [Twitter](https://twitter.com/osmandapp) and other social channels.
+N'hésitez pas à nous faire part de ce que vous pensez de cette nouvelle application sur [Twitter](https://twitter.com/osmandapp) et d'autres canaux sociaux.
 
-To view the GPS positions of contacts on the map, you need the latest version of [OsmAnd or OsmAnd+](./../purchases/android.md). The minimum supported version of OsmAnd or OsmAnd+ is 3.0.4.
+Pour afficher les positions GPS des contacts sur la carte, vous avez besoin de la dernière version d'[OsmAnd ou OsmAnd+](./../purchases/android.md). La version minimale prise en charge d'OsmAnd ou OsmAnd+ est 3.0.4.
 
-> *This article was last updated in Jule 2024*
+> *Cet article a été mis à jour pour la dernière fois en juillet 2024*
+
+-- source-hash: blake2s: 290a152367610195d14c54d723d38d40bd4524b953b9ef493f1fa1ff7be015a5 --

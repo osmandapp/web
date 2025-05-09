@@ -1,16 +1,18 @@
 ---
-title: Join Us
+title: Rejoignez-nous
 ---
-We are always seeking for new contributors who can join our international team. Please check our [Mission](./mission.md) to see if you can help to make the World better.
+Nous sommes toujours à la recherche de nouveaux contributeurs qui peuvent rejoindre notre équipe internationale. Veuillez consulter notre [Mission](./mission.md) pour voir si vous pouvez aider à rendre le monde meilleur.
 
-# Open positions
+# Postes ouverts
 
-- [OpenGL / Vulkan Developer](./opengl-vulkan-dev.md) - software engineer to join our 3D World Map development team.
-- [Android Developer](./android-dev.md) - software engineer to join our Android development team.
-- [iOS Developer](./ios-dev.md) - software engineer to join our iOS development team.
+- [Développeur OpenGL / Vulkan](./opengl-vulkan-dev.md) - ingénieur logiciel pour rejoindre notre équipe de développement de cartes du monde 3D.
+- [Développeur Android](./android-dev.md) - ingénieur logiciel pour rejoindre notre équipe de développement Android.
+- [Développeur iOS](./ios-dev.md) - ingénieur logiciel pour rejoindre notre équipe de développement iOS.
 
-If you are enthusiastic about OsmAnd but couldn't find suitable position in the list above, please don't hesitate to contact us and we will strive to suggest an alternative.
+Si vous êtes enthousiaste à propos d'OsmAnd mais que vous n'avez pas trouvé de poste approprié dans la liste ci-dessus, n'hésitez pas à nous contacter et nous nous efforcerons de vous suggérer une alternative.
 
-# Contact us
+# Contactez-nous
 
-Please contact us at business@osmand.net!
+Veuillez nous contacter à business@osmand.net !
+
+-- source-hash: blake2s: 4fccc220ed851165d483e184390735d6ea474cb8e8a14845ba2f0d1ab6469168 --

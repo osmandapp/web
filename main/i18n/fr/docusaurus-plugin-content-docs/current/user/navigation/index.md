@@ -13,39 +13,41 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Navigation articles
+## Articles sur la navigation
 
-OsmAnd Navigation tool is designed to help you to build a route the way you would like it to be, offering a fully customizable map screen, turn-by-turn directions, additional voice prompts, or other notifications. It is an especially useful tool for travelers who want to explore new places without relying on an internet connection.
+L'outil de navigation OsmAnd est conçu pour vous aider à construire un itinéraire comme vous le souhaitez, en offrant un écran de carte entièrement personnalisable, des indications virage par virage, des invites vocales supplémentaires ou d'autres notifications. C'est un outil particulièrement utile pour les voyageurs qui souhaitent explorer de nouveaux endroits sans dépendre d'une connexion Internet.
 
-In the **Set up a route** section, you can read basics about how to start navigation:
+Dans la section **Configurer un itinéraire**, vous pouvez lire les bases sur la façon de démarrer la navigation :
 
-- [Route preparation](./setup/route-navigation.md)
-- [Navigation by track](./setup/gpx-navigation.md)
-- [Navigation by markers](./setup/markers-navigation.md)
-- [Route details](./setup/route-details.md)
+- [Préparation de l'itinéraire](./setup/route-navigation.md)
+- [Navigation par trace](./setup/gpx-navigation.md)
+- [Navigation par marqueurs](./setup/markers-navigation.md)
+- [Détails de l'itinéraire](./setup/route-details.md)
 
-In the **[Route parameters](./routing/osmand-routing.md#routing-types)** section, you can read about different routing types, online and offline. This section also describes routing rules, that determine how your route will be calculated. Common route parameters are described in the [index article](./routing/osmand-routing.md#routing-types). Other articles describe the features of certain rooting types.
-- [Car routing (Truck, Motorcycle)](./routing/car-based-routing.md)
-- [Bicycle routing (MTB)](./routing/bicycle-based-routing.md)
-- [Moped routing](./routing/moped-routing.md)
-- [Pedestrian routing](./routing/pedestrian-routing.md)
-- [Public Transport routing](./routing/public-transport-navigation.md)
-- [Horseback routing](./routing/horse-routing.md)
-- [Ski routing](./routing/ski-routing.md)
-- [Train routing](./routing/train-routing.md)
-- [Boat routing](./routing/boat-navigation.md)
-- [Direct-to-point routing (Boat)](./routing/direct-to-point-routing.md)
-- [Straight line routing (Aircraft)](./routing/straight-line-routing.md)
-- [Online routing](./routing/online-routing.md)
+Dans la section **[Paramètres d'itinéraire](./routing/osmand-routing.md#routing-types)**, vous pouvez lire sur les différents types d'itinéraires, en ligne et hors ligne. Cette section décrit également les règles de routage, qui déterminent comment votre itinéraire sera calculé. Les paramètres d'itinéraire courants sont décrits dans l'[article d'index](./routing/osmand-routing.md#routing-types). D'autres articles décrivent les caractéristiques de certains types de routage.
+- [Routage automobile (Camion, Moto)](./routing/car-based-routing.md)
+- [Routage vélo (VTT)](./routing/bicycle-based-routing.md)
+- [Routage cyclomoteur](./routing/moped-routing.md)
+- [Routage piéton](./routing/pedestrian-routing.md)
+- [Routage transports en commun](./routing/public-transport-navigation.md)
+- [Routage équestre](./routing/horse-routing.md)
+- [Routage ski](./routing/ski-routing.md)
+- [Routage train](./routing/train-routing.md)
+- [Routage bateau](./routing/boat-navigation.md)
+- [Routage direct vers un point (Bateau)](./routing/direct-to-point-routing.md)
+- [Routage en ligne droite (Avion)](./routing/straight-line-routing.md)
+- [Routage en ligne](./routing/online-routing.md)
 - [BRouter](./routing/brouter.md)
 
-In **Navigation guidance**, you can find all the needed information about how to customize the Navigation tool in Osmand.
+Dans **Guidage de navigation**, vous trouverez toutes les informations nécessaires sur la façon de personnaliser l'outil de navigation dans Osmand.
 
-- [Map screen during navigation](./guidance/map-during-navigation.md)
-- [Voice prompts / Notifications](./guidance/voice-navigation.md)
-- [Navigation settings](./guidance/navigation-settings.md)
+- [Écran de carte pendant la navigation](./guidance/map-during-navigation.md)
+- [Invites vocales / Notifications](./guidance/voice-navigation.md)
+- [Paramètres de navigation](./guidance/navigation-settings.md)
 
-And also two special use cases of Navigation tool:
+Et aussi deux cas d'utilisation spéciaux de l'outil de navigation :
 
 - [Android Auto](./auto-car.md)
 - [CarPlay](./car-play.md)
+
+-- source-hash: blake2s: ddab296472860e06131100c133eb27ef8be8a97881e8de1b322f68ded4c12898 --

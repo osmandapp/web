@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  Travel Guides
+title:  Guides de voyage
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,16 +14,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
-:::info Paid feature
-The Travel Guides is a [paid feature](../purchases/index.md) of the OsmAnd app.
+:::info Fonctionnalité payante
+Les Guides de voyage sont une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.
 :::
 
-Virtual travel guides in OsmAnd offer users valuable information, recommendations, and tips. They also allow travelers to access comprehensive navigation information about attractions in the app.
+Les guides de voyage virtuels dans OsmAnd offrent aux utilisateurs des informations précieuses, des recommandations et des conseils. Ils permettent également aux voyageurs d'accéder à des informations de navigation complètes sur les attractions dans l'application.
 
-OsmAnd travel guides are based on data from [Wikivoyage](https://www.wikivoyage.org/), a community project similar to Wikipedia, where volunteer authors create up-to-date articles.  
-Wikivoyage information includes the main facts about a place, transportation, attractions, shopping, and more.  
+Les guides de voyage OsmAnd sont basés sur les données de [Wikivoyage](https://www.wikivoyage.org/), un projet communautaire similaire à Wikipédia, où des auteurs bénévoles créent des articles à jour.
+Les informations de Wikivoyage comprennent les faits principaux sur un lieu, les transports, les attractions, le shopping, et plus encore.
 
 <Tabs groupId="operating-systems">
 
@@ -42,23 +42,23 @@ Wikivoyage information includes the main facts about a place, transportation, at
 </Tabs>
 
 
-## How to use
+## Comment utiliser
 
-- [Download](#download-articles) *Travel guides*.
-- Browse [articles](#browse-articles) about a country, region, city, attraction.
-    - Alternatively, [display travel guides articles and/or points on the map](#travel-routes) using the Configure map menu.
-    - Browse through attractions on the map, add them to *[Map markers](../personal/markers.md#add-marker-on-the-map)* or *[Favorites](../personal/favorites.md#add-to-map-markers)*.
-    - Using *[Read full](#manage-as-gpx-track)* button, go to the *[article](#travel-article) inside *Travel guides*.
-- [Bookmark](#explore-and-bookmark) articles to read them later.
-- Choose [points](#points) from articles to visit and add them to the OsmAnd map.
-- Get more information about places to visit from offline [Wikipedia articles](#combine-with-wikipedia).
-- [Build a route](../navigation/setup/route-navigation.md#set-destinations) to chosen touristic attractions or a free walk between points.
+- [Télécharger](#download-articles) les *Guides de voyage*.
+- Parcourir les [articles](#browse-articles) sur un pays, une région, une ville, une attraction.
+    - Alternativement, [afficher les articles et/ou les points des guides de voyage sur la carte](#travel-routes) en utilisant le menu Configurer la carte.
+    - Parcourir les attractions sur la carte, les ajouter aux *[Marqueurs de carte](../personal/markers.md#add-marker-on-the-map)* ou aux *[Favoris](../personal/favorites.md#add-to-map-markers)*.
+    - En utilisant le bouton *[Lire l'intégralité](#manage-as-gpx-track)*, accéder à l'*[article](#travel-article)* dans les *Guides de voyage*.
+- [Marquer](#explore-and-bookmark) les articles pour les lire plus tard.
+- Choisir des [points](#points) dans les articles à visiter et les ajouter à la carte OsmAnd.
+- Obtenir plus d'informations sur les lieux à visiter à partir d'articles [Wikipédia hors ligne](#combine-with-wikipedia).
+- [Construire un itinéraire](../navigation/setup/route-navigation.md#set-destinations) vers les attractions touristiques choisies ou une promenade libre entre les points.
 
 :::note
-*Travel guides* articles are stored inside OsmAnd as GPX tracks with Waypoints.  After adding these tracks to the map (see *[Points](#points)* or *[Travel routes](#travel-routes)* sections of this article), you can manage them via *[My Places](../personal/myplaces.md)* menu.
+Les articles des *Guides de voyage* sont stockés dans OsmAnd sous forme de traces GPX avec des points de passage. Après avoir ajouté ces traces à la carte (voir les sections *[Points](#points)* ou *[Itinéraires de voyage](#travel-routes)* de cet article), vous pouvez les gérer via le menu *[Mes lieux](../personal/myplaces.md)*.
 :::
 
-### Download articles
+### Télécharger des articles
 
 <Tabs groupId="operating-systems">
 
@@ -80,20 +80,20 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/
 
 </Tabs>
 
-Before you start using travel guides, you need to download them via the [Download map menu](../start-with/download-maps.md#main-menu) (*<Translate android="true" ids="shared_string_menu,maps_and_resources,shared_string_travel_guides"/>*). The articles are grouped by regions: *Africa, Asia, Australia and Oceania, Central America, Europe, North America, Russia, and South America*, so you don't have to download travel books for a separate city or country.  
-By saving the required regions on your device, you can browse the articles with OsmAnd even when you are abroad or out of range of your mobile network.
+Avant de commencer à utiliser les guides de voyage, vous devez les télécharger via le menu [Télécharger la carte](../start-with/download-maps.md#main-menu) (*<Translate android="true" ids="shared_string_menu,maps_and_resources,shared_string_travel_guides"/>*). Les articles sont regroupés par régions : *Afrique, Asie, Australie et Océanie, Amérique centrale, Europe, Amérique du Nord, Russie et Amérique du Sud*, vous n'avez donc pas besoin de télécharger des guides de voyage pour une ville ou un pays séparé.
+En enregistrant les régions requises sur votre appareil, vous pouvez parcourir les articles avec OsmAnd même lorsque vous êtes à l'étranger ou hors de portée de votre réseau mobile.
 
 :::note
-In addition to guides to countries, regions, or cities, you can find guides to places from movies, books, computer games, places of memory of great people, and so on.
-There are also specialized guides, such as the UNESCO Global Geoparks Network list or the world's largest and most complex international airports.
+En plus des guides sur les pays, les régions ou les villes, vous pouvez trouver des guides sur des lieux de films, de livres, de jeux informatiques, des lieux de mémoire de grandes personnalités, etc.
+Il existe également des guides spécialisés, tels que la liste du Réseau mondial des géoparcs de l'UNESCO ou les aéroports internationaux les plus grands et les plus complexes du monde.
 :::
 
-## Browse Articles
+## Parcourir les articles
 
-The *Travel guides* screen consists of two general parts: a [*search field*](#search) and a *travel guides* list with two tabs: *[<Translate android="true" ids="shared_string_explore"/> and <Translate android="true" ids="saved_articles"/>](#explore-and-bookmark)*. You can switch between them with a single tap of a tab.
-When you open *Travel Guides* (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), OsmAnd will show you articles about interesting places located near the geographic coordinates of the current center of the map. When you tap the item from the list, the [Travel guide article](#travel-article) opens. At the bottom of the screen is a switch to the *Bookmarks tab*.  
+L'écran *Guides de voyage* se compose de deux parties générales : un [*champ de recherche*](#search) et une liste de *guides de voyage* avec deux onglets : *[<Translate android="true" ids="shared_string_explore"/> et <Translate android="true" ids="saved_articles"/>](#explore-and-bookmark)*. Vous pouvez basculer entre eux d'un simple toucher d'un onglet.
+Lorsque vous ouvrez *Guides de voyage* (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), OsmAnd vous montrera des articles sur des lieux intéressants situés près des coordonnées géographiques du centre actuel de la carte. Lorsque vous appuyez sur un élément de la liste, l'[article du Guide de voyage](#travel-article) s'ouvre. En bas de l'écran se trouve un commutateur vers l'onglet *Marque-pages*.
 
-### Explore and Bookmark
+### Explorer et marquer
 
 <Tabs groupId="operating-systems">
 
@@ -111,14 +111,14 @@ When you open *Travel Guides* (*<Translate android="true" ids="shared_string_men
 
 </Tabs>
 
-On the **Explore** or **<Translate android="true" ids="popular_destinations"/>** tab, the top 30 articles about destinations are listed adjacent to the center of the screen (out of location). By tapping an item from the list with a title and a brief description of the article, you can view the full text of that article.  
-If you tap the *Bookmark button*, the article will be saved for later reading and will be available in the Bookmarks tab. In the *Bookmarked Articles* tab, articles are arranged as they are saved, with the newest articles at the top.
+Sur l'onglet **Explorer** ou **<Translate android="true" ids="popular_destinations"/>**, les 30 meilleurs articles sur les destinations sont listés à proximité du centre de l'écran (hors localisation). En appuyant sur un élément de la liste avec un titre et une brève description de l'article, vous pouvez afficher le texte intégral de cet article.
+Si vous appuyez sur le bouton *Marque-page*, l'article sera enregistré pour une lecture ultérieure et sera disponible dans l'onglet Marque-pages. Dans l'onglet *Articles marqués*, les articles sont classés par ordre d'enregistrement, les articles les plus récents étant en haut.
 
-- &nbsp;**<Translate android="true" ids="shared_string_read"/>**. Opens [Travel article](#travel-article).
-- &nbsp;**<Translate android="true" ids="shared_string_bookmark"/>**. Moves the selected article to <Translate android="true" ids="saved_articles"/>.
-- &nbsp;**<Translate android="true" ids="shared_string_remove"/>**. Removes the selected article from <Translate android="true" ids="saved_articles"/>.
+- &nbsp;**<Translate android="true" ids="shared_string_read"/>**. Ouvre l'[article de voyage](#travel-article).
+- &nbsp;**<Translate android="true" ids="shared_string_bookmark"/>**. Déplace l'article sélectionné vers <Translate android="true" ids="saved_articles"/>.
+- &nbsp;**<Translate android="true" ids="shared_string_remove"/>**. Supprime l'article sélectionné de <Translate android="true" ids="saved_articles"/>.
 
-### Search
+### Recherche
 
 <Tabs groupId="operating-systems">
 
@@ -136,15 +136,15 @@ If you tap the *Bookmark button*, the article will be saved for later reading an
 
 </Tabs>
 
-The search field is located at the top of the <Translate android="true" ids="shared_string_travel_guides"/> screen. If you start typing the first letters of a country, city, or famous place, a list of articles will appear under the search field. By touching the needed one, you can start reading.  
-Next to each search result are listed the first 3 most commonly used languages in which the selected article can be read. However, popular articles are available in more languages than the 3 listed.
+Le champ de recherche est situé en haut de l'écran <Translate android="true" ids="shared_string_travel_guides"/>. Si vous commencez à taper les premières lettres d'un pays, d'une ville ou d'un lieu célèbre, une liste d'articles apparaîtra sous le champ de recherche. En touchant celui dont vous avez besoin, vous pouvez commencer à lire.
+À côté de chaque résultat de recherche sont listées les 3 langues les plus couramment utilisées dans lesquelles l'article sélectionné peut être lu. Cependant, les articles populaires sont disponibles dans plus de langues que les 3 listées.
 
-**Additional features:**  
+**Fonctionnalités supplémentaires :**
 
-- You can search for special Cultural attractions, such as *Harry Potter tourism*, *Ghost towns*, *Monarchies*, and others.
-- To delete the search history, you need to use the [<Translate android="true" ids="shared_string_options"/> button](#options).
+- Vous pouvez rechercher des attractions culturelles spéciales, telles que le *tourisme Harry Potter*, les *villes fantômes*, les *monarchies*, et autres.
+- Pour supprimer l'historique de recherche, vous devez utiliser le bouton [<Translate android="true" ids="shared_string_options"/>](#options).
 
-<!-- 
+<!--
 - Search is complete only when you hit &#128269; or space at the end of the word. - doesn't work as it should be
 -->
 
@@ -166,14 +166,14 @@ Next to each search result are listed the first 3 most commonly used languages i
 
 </Tabs>
 
-In this menu, you can customize the appearance of articles when working offline. NOTE, that *[downloaded](#download-articles)* travel guides do not contain images. They only appear when you view articles with an active Internet connection.  
-In the Options menu, you can choose whether to save images in the viewed articles to use them when you are offline. You can also clear existing images cash or delete the search history (only works when searching in *Travel guides*).
+Dans ce menu, vous pouvez personnaliser l'apparence des articles lorsque vous travaillez hors ligne. NOTEZ que les guides de voyage *[téléchargés](#download-articles)* ne contiennent pas d'images. Elles n'apparaissent que lorsque vous consultez des articles avec une connexion Internet active.
+Dans le menu Options, vous pouvez choisir d'enregistrer les images des articles consultés pour les utiliser lorsque vous êtes hors ligne. Vous pouvez également vider le cache d'images existant ou supprimer l'historique de recherche (ne fonctionne que lors de la recherche dans les *Guides de voyage*).
 
-- &nbsp;**<Translate android="true" ids="wikivoyage_download_pics"/>**. Images in articles can be downloaded for offline use.  
-- &nbsp;**<Translate android="true" ids="images_cache"/>**. Clears the image cache to free up memory.
-- &nbsp;**<Translate android="true" ids="delete_search_history"/>**. Clears [search history](#search).
+- &nbsp;**<Translate android="true" ids="wikivoyage_download_pics"/>**. Les images des articles peuvent être téléchargées pour une utilisation hors ligne.
+- &nbsp;**<Translate android="true" ids="images_cache"/>**. Vide le cache d'images pour libérer de la mémoire.
+- &nbsp;**<Translate android="true" ids="delete_search_history"/>**. Efface l'[historique de recherche](#search).
 
-## Travel Article
+## Article de voyage
 
 <Tabs groupId="operating-systems">
 
@@ -191,22 +191,22 @@ In the Options menu, you can choose whether to save images in the viewed article
 
 </Tabs>
 
-You can open an article from the suggested options on the *[Explore tab](#explore-and-bookmark)* or using the *[Search](#search)* option. When you add tourist attractions called *[Points](#points)* from a *Travel guide article* to the OsmAnd map, you can also open the article using the *Read full* button in the [description section](../map/tracks/track-context-menu.md#description-and-info) of the waypoint.
+Vous pouvez ouvrir un article à partir des options suggérées dans l'onglet *[Explorer](#explore-and-bookmark)* ou en utilisant l'option *[Recherche](#search)*. Lorsque vous ajoutez des attractions touristiques appelées *[Points](#points)* à partir d'un *article de Guide de voyage* à la carte OsmAnd, vous pouvez également ouvrir l'article en utilisant le bouton *Lire l'intégralité* dans la [section description](../map/tracks/track-context-menu.md#description-and-info) du point de passage.
 
-The following controls are located at the top of the screen:
+Les commandes suivantes sont situées en haut de l'écran :
 
-- Switch to change the language of the article. The language can be selected from the available options. The system language is used by default.
-- Using the &#8942; button, you can share the article with your friends. The link opens in the OsmAnd app, appropriate travel guides file should be downloaded on the recipient's device or [Wikivoyage](https://www.wikivoyage.org/) site, if the recipient does not have the OsmAnd app or for iOS devices.
-- Taping the navigation bar opens *[Travel guides Navigation menu](#navigation-menu)*.
+- Commutateur pour changer la langue de l'article. La langue peut être sélectionnée parmi les options disponibles. La langue du système est utilisée par défaut.
+- En utilisant le bouton &#8942;, vous pouvez partager l'article avec vos amis. Le lien s'ouvre dans l'application OsmAnd, le fichier de guides de voyage approprié doit être téléchargé sur l'appareil du destinataire ou sur le site [Wikivoyage](https://www.wikivoyage.org/), si le destinataire n'a pas l'application OsmAnd ou pour les appareils iOS.
+- En appuyant sur la barre de navigation, vous ouvrez le *[menu de navigation des Guides de voyage](#navigation-menu)*.
 
-At the bottom of the screen are buttons such as:
+En bas de l'écran se trouvent des boutons tels que :
 
-- [Contents](#table-of-contents). Opens the table of contents of the article.
-- [Points](#points). Shows tourist attractions related to the article on a map.
-- [Bookmark](#explore-and-bookmark). Allows you to add an article to bookmarks for later reading.  
+- [Sommaire](#table-of-contents). Ouvre le sommaire de l'article.
+- [Points](#points). Affiche les attractions touristiques liées à l'article sur une carte.
+- [Marque-page](#explore-and-bookmark). Permet d'ajouter un article aux marque-pages pour une lecture ultérieure.
 
 
-### Navigation menu
+### Menu de navigation
 
 <Tabs groupId="operating-systems">
 
@@ -224,11 +224,11 @@ At the bottom of the screen are buttons such as:
 
 </Tabs>
 
-To move one article to another in the *Travel guide articles*, use the **Navigation menu**. You can access it by tapping on the address field above the image. NOTE, that the articles in the Travel Guides are grouped as follows: *Continent → Region → Country → Province (region) → City*.
-If you tap the arrow in the upper left corner of the screen, you will go directly to the *Explore* or *Bookmarked articles* tab (depending on which tab you opened earlier).
+Pour passer d'un article à l'autre dans les *articles du Guide de voyage*, utilisez le **menu de navigation**. Vous pouvez y accéder en appuyant sur le champ d'adresse au-dessus de l'image. NOTEZ que les articles des Guides de voyage sont regroupés comme suit : *Continent → Région → Pays → Province (région) → Ville*.
+Si vous appuyez sur la flèche dans le coin supérieur gauche de l'écran, vous accéderez directement à l'onglet *Explorer* ou *Articles marqués* (selon l'onglet que vous avez ouvert précédemment).
 
 
-### Table of contents
+### Table des matières
 
 <Tabs groupId="operating-systems">
 
@@ -246,17 +246,17 @@ If you tap the arrow in the upper left corner of the screen, you will go directl
 
 </Tabs>
 
-Most *Travel guide articles* have the same content structure: *introduction* (images and description of the tourist site) and *subsequent chapters*.
+La plupart des *articles de Guide de voyage* ont la même structure de contenu : *introduction* (images et description du site touristique) et *chapitres suivants*.
 
-- &nbsp;*Understand*. Details about local culture and habits.
-- &nbsp;*Get in*. Details on how to get to some places and how much this route will cost.
-- &nbsp;*See*. A list of attractions (museums, historical sites, and so on) with full descriptions: ticket prices, opening hours, useful links, and phone numbers.
-- &nbsp;*Do*. Places to spend time.
-- &nbsp;*Buy*. Sites to shop.
-- &nbsp;*Eat*. Catering facilities (divided by budget: budget, mid-range, splurge).
-- &nbsp;*Drink*. Bars and cafés.
-- &nbsp;*Sleep*. Accommodations are divided by budget (budget, mid-range, splurge).
-- &nbsp;*Go next*. Nearest places from Wikivoyage.
+- &nbsp;*Comprendre*. Détails sur la culture et les habitudes locales.
+- &nbsp;*Arriver*. Détails sur la façon de se rendre à certains endroits et le coût de cet itinéraire.
+- &nbsp;*Voir*. Une liste d'attractions (musées, sites historiques, etc.) avec des descriptions complètes : prix des billets, heures d'ouverture, liens utiles et numéros de téléphone.
+- &nbsp;*Faire*. Lieux où passer du temps.
+- &nbsp;*Acheter*. Sites pour faire du shopping.
+- &nbsp;*Manger*. Établissements de restauration (divisés par budget : budget, milieu de gamme, luxe).
+- &nbsp;*Boire*. Bars et cafés.
+- &nbsp;*Dormir*. Hébergements divisés par budget (budget, milieu de gamme, luxe).
+- &nbsp;*Aller ensuite*. Lieux les plus proches de Wikivoyage.
 
 ### Points
 
@@ -264,7 +264,7 @@ Most *Travel guide articles* have the same content structure: *introduction* (im
 
 <TabItem value="android" label="Android">
 
-![Travel guides points  menu](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_articles_three_dots_point.png)  
+![Travel guides points  menu](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_articles_three_dots_point.png)
 
 </TabItem>
 
@@ -276,34 +276,34 @@ Most *Travel guide articles* have the same content structure: *introduction* (im
 
 </Tabs>
 
-*Travel guide articles* often contain tourist attractions grouped by topic. By tapping once on the *Points* button at the bottom of the *[Article](#travel-article)*, all attractions related to the topic (eating places, accommodation options, airports, shops, historical monuments, and so on) will be added to the map and can be *[managed as a Track](#manage-as-gpx-track)*.  
+Les *articles de Guide de voyage* contiennent souvent des attractions touristiques regroupées par thème. En appuyant une fois sur le bouton *Points* en bas de l'*[Article](#travel-article)*, toutes les attractions liées au thème (lieux de restauration, options d'hébergement, aéroports, magasins, monuments historiques, etc.) seront ajoutées à la carte et pourront être *[gérées comme une trace](#manage-as-gpx-track)*.
 
-By default, attraction groups are marked with certain icons: *Eat and Drink* categories with a knife and fork in a red circle, *Do and See* with a camera in a green circle, and others. You can manage groups of points with &#8942; like a *[Waypoint folder](../map/tracks/track-context-menu.md#waypoints-folder)*.  
+Par défaut, les groupes d'attractions sont marqués par certaines icônes : les catégories *Manger et Boire* avec un couteau et une fourchette dans un cercle rouge, *Faire et Voir* avec un appareil photo dans un cercle vert, et d'autres. Vous pouvez gérer les groupes de points avec &#8942; comme un *[dossier de points de passage](../map/tracks/track-context-menu.md#waypoints-folder)*.
 
 :::note
-Points in *Travel articles* refer to waypoints on a GPX track.  
-You can also *[add points to the map](#travel-routes)* in the *Configure map* menu. You can display them all or select a specific category.  
+Les points dans les *articles de voyage* font référence aux points de passage sur une trace GPX.
+Vous pouvez également *[ajouter des points à la carte](#travel-routes)* dans le menu *Configurer la carte*. Vous pouvez les afficher tous ou sélectionner une catégorie spécifique.
 :::
 
 
-## Travel routes
+## Itinéraires de voyage
 
 *<Translate android="true" ids="shared_string_menu,configure_map,travel_routes"/>*
 
-An alternative way to browse *Travel guides* is to display them on the map using the *Configure map* menu. This feature does not apply to the ability provided by OsmAnd to use Wikivoyage, it only applies to tracks. You can read more in our [blog](https://osmand.net/blog/routes#generated-travel-routes).
+Une autre façon de parcourir les *Guides de voyage* est de les afficher sur la carte en utilisant le menu *Configurer la carte*. Cette fonctionnalité ne s'applique pas à la possibilité offerte par OsmAnd d'utiliser Wikivoyage, elle ne s'applique qu'aux traces. Vous pouvez en savoir plus dans notre [blog](https://osmand.net/blog/routes#generated-travel-routes).
 
 ![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_view.png)
 
 
-### Travel routes and articles on the map
+### Itinéraires de voyage et articles sur la carte
 
-![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
+![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)
 
-After you enable the *Travel routes* display in the *Configure map* menu, circles of different colors will appear on the map. The orange ones represent route tracks, route articles, and some waypoints. Tap a specific route, article, or point and then tap the *Download* button (&#9047;), and you can [manage them as a track](#manage-as-gpx-track).
+Après avoir activé l'affichage des *Itinéraires de voyage* dans le menu *Configurer la carte*, des cercles de différentes couleurs apparaîtront sur la carte. Les oranges représentent les traces d'itinéraires, les articles d'itinéraires et certains points de passage. Appuyez sur un itinéraire, un article ou un point spécifique, puis appuyez sur le bouton *Télécharger* (&#9047;), et vous pourrez les [gérer comme une trace](#manage-as-gpx-track).
 
-### Custom Travel guides
+### Guides de voyage personnalisés
 
-We recommend you add new articles or edits to [Wikivoyage](https://en.wikivoyage.org/). We update the Travel guides about every 6 months, and you can download new articles. You can also create your own *Travel book*. How to make it is described in technical documentation (see *[Create custom Travel guide](../../technical/map-creation/create_travel_guide.md)* article).
+Nous vous recommandons d'ajouter de nouveaux articles ou des modifications à [Wikivoyage](https://en.wikivoyage.org/). Nous mettons à jour les Guides de voyage environ tous les 6 mois, et vous pouvez télécharger de nouveaux articles. Vous pouvez également créer votre propre *Guide de voyage*. La façon de le faire est décrite dans la documentation technique (voir l'article *[Créer un Guide de voyage personnalisé](../../technical/map-creation/create_travel_guide.md)*).
 
 <!--
 ### Collections of tracks
@@ -312,23 +312,23 @@ https://osmand.net/blog/routes/#generated-travel-routes
 -->
 
 
-## Manage as GPX Track
+## Gérer comme une trace GPX
 
-![Travel guides points menu 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Travel guides points menu 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
+![Travel guides points menu 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Travel guides points menu 2](@site/static/img/guides/travel_guides_articles_my_places.png)
 
-After you add *Travel guides* to the map, *Travel articles* can be saved as a GPX track and managed through the *[My places](../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>*). They can be displayed on the map, shared, renamed, placed in another folder, exported, or deleted.  
+Après avoir ajouté les *Guides de voyage* à la carte, les *articles de voyage* peuvent être enregistrés en tant que trace GPX et gérés via le menu *[Mes lieux](../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>*). Ils peuvent être affichés sur la carte, partagés, renommés, placés dans un autre dossier, exportés ou supprimés.
 
-- &nbsp;In *[Overview](../map/tracks/track-context-menu.md#overview)*, you can read a brief description or open [Travel guide article](#travel-article) by taping *Read full* button. *Edit* allows you to correct the article.
-- &nbsp;There is no information in the *[Track](../map/tracks/track-context-menu.md#altitude--speed-graphs)* section,  the GPX files of *Travel guides* contain only waypoints.  
-- &nbsp;Under *[Points](../map/tracks/track-context-menu.md#points--waypoints)* you see folders with points grouped by name (Buy, Do, Drink, and so on).
-- &nbsp;The *[Option](../map/tracks/track-context-menu.md#options)* button performs the same functions as in the regular track.
+- &nbsp;Dans *[Aperçu](../map/tracks/track-context-menu.md#overview)*, vous pouvez lire une brève description ou ouvrir l'[article du Guide de voyage](#travel-article) en appuyant sur le bouton *Lire l'intégralité*. *Modifier* vous permet de corriger l'article.
+- &nbsp;Il n'y a pas d'informations dans la section *[Trace](../map/tracks/track-context-menu.md#altitude--speed-graphs)*, les fichiers GPX des *Guides de voyage* ne contiennent que des points de passage.
+- &nbsp;Sous *[Points](../map/tracks/track-context-menu.md#points--waypoints)*, vous voyez des dossiers avec des points regroupés par nom (Acheter, Faire, Boire, etc.).
+- &nbsp;Le bouton *[Option](../map/tracks/track-context-menu.md#options)* exécute les mêmes fonctions que dans une trace normale.
 
 :::info
-*Points* are stored in a [GPX-file](../../technical/osmand-file-formats/osmand-gpx.md) (a commonly used format for tracks) as [Waypoints](../map/point-layers-on-map.md#track-waypoints). The number of points (waypoints) in the track contains is marked next to the icon &#128681; in the track field.  
-In *[track context menu](../map/tracks/track-context-menu.md)* of GPX-file you can find general information about the article to which this track belongs.  
+Les *Points* sont stockés dans un [fichier GPX](../../technical/osmand-file-formats/osmand-gpx.md) (un format couramment utilisé pour les traces) en tant que [Points de passage](../map/point-layers-on-map.md#track-waypoints). Le nombre de points (points de passage) contenus dans la trace est indiqué à côté de l'icône &#128681; dans le champ de la trace.
+Dans le *[menu contextuel de la trace](../map/tracks/track-context-menu.md)* du fichier GPX, vous pouvez trouver des informations générales sur l'article auquel cette trace appartient.
 :::
 
-## Combine with Wikipedia
+## Combiner avec Wikipédia
 
 <Tabs groupId="operating-systems">
 
@@ -340,26 +340,28 @@ In *[track context menu](../map/tracks/track-context-menu.md)* of GPX-file you c
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_1_ios.png) ![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-In the *Travel guide articles* you can find useful information about tourist attractions (contact information, web links, prices, and so on). Many articles have a *Wikipedia* button that allows opening a *[Wikipedia article](../plugins/wikipedia.md)* (online or offline) about the place of interest.  
+Dans les *articles de Guide de voyage*, vous pouvez trouver des informations utiles sur les attractions touristiques (coordonnées, liens web, prix, etc.). De nombreux articles ont un bouton *Wikipédia* qui permet d'ouvrir un *[article Wikipédia](../plugins/wikipedia.md)* (en ligne ou hors ligne) sur le lieu d'intérêt.
 
-In some cases, OsmAnd's *[Bookmarks tab](#explore-and-bookmark)* will prompt you to download [Wikipedia map layer](../plugins/wikipedia.md#download-wikipedia-packages) to browse related articles offline.
+Dans certains cas, l'onglet *[Marque-pages](#explore-and-bookmark)* d'OsmAnd vous invitera à télécharger la [couche de carte Wikipédia](../plugins/wikipedia.md#download-wikipedia-packages) pour parcourir les articles associés hors ligne.
 
 ![Travel guides download Wikipedia](@site/static/img/guides/travel_guides_wikipedia_download.png)
 
 :::info NOTE
-The [Wikipedia plugin](../plugins/wikipedia.md) is a [paid feature](../purchases/index.md) of the OsmAnd app.
+Le [plugin Wikipédia](../plugins/wikipedia.md) est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.
 :::
 
-## Related Articles
+## Articles connexes
 
-- [Interact with Map](../../user/map/interact-with-map.md)
-- [Global Settings](../../user/personal/global-settings.md)
-- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+- [Interagir avec la carte](../../user/map/interact-with-map.md)
+- [Paramètres globaux](../../user/personal/global-settings.md)
+- [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *This article was last updated in January 2025*
+> *Cet article a été mis à jour pour la dernière fois en janvier 2025*
+
+-- source-hash: blake2s: d835e634c90026418b561c2679f618c58012076cabb7fc146a6bc68e9fab4b7e --

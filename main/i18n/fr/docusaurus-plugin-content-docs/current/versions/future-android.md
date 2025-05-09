@@ -13,14 +13,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';  
 
+# Android 5.0 (bêta)
 
-# Android 5.0 (beta)
+Android 5.0 est la dernière version qui introduit de nombreuses nouvelles fonctionnalités et améliorations dans l'application OsmAnd. Cet article décrit toutes les mises à jour clés qui représentent des changements significatifs pour nos utilisateurs.
 
-Android 5.0 is the latest release that introduces many new features and improvements to the OsmAnd app. This article describes all the key updates that represent meaningful changes for our users.
+# Rejoindre la version bêta
 
-# Join Beta
-
-OsmAnd releases several Ready-To-Use builds daily, allowing you to track new features and participate in the OsmAnd translation process. You can take part in testing the beta version of OsmAnd using Google Play.
+OsmAnd publie quotidiennement plusieurs versions prêtes à l'emploi, vous permettant de suivre les nouvelles fonctionnalités et de participer au processus de traduction d'OsmAnd. Vous pouvez participer aux tests de la version bêta d'OsmAnd via Google Play.
 
 <div class="button-row">
   <a class="button button--active" href="https://play.google.com/apps/testing/net.osmand.plus">OsmAnd+</a>
@@ -31,368 +30,347 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ![OsmAnd 5.0](../../blog/2025-03-11-android-5-0/img/osmand_5.png)
 
-## What's new
+## Nouveautés
 
-- [The new main navigation widget](#route-maneuvers-widgets-set) combines turn arrows and navigation instructions.
-- [Current route information widget](#new-route-information-widget): displays ETA, arrival time, and distance.
-- [Redesigned the Configure screen for widgets.](#redesigned-configure-screen)
-- [New option to select widget size](#resizable-widgets-for-side-panels) for left and right panels.
-- [Reset action for the Average speed widget.](#reset-option-for-the-average-speed-widget)
-- [Discover top-ranked POIs](#explore-mode-discover-popular-places) with the New Explore Mode.
-- [Wikidata integration](#popular-places-wikipedia) into map data (Popular Places - Wikipedia).
-- [Improved OSM routes search](#all-osm-routes--now-searchable) and selection for navigation.
-- [Detailed information](#ski-slopes-and-mtb-trails-information) about ski slopes and MTB trails.
-- [Added a coordinates grid](#coordinates-grid-overlay) with geographical coordinates.
-- [Crags and climbing](#climbing-areas-and-crags) areas on the map.
-- [Detailed information for linear objects.](#detailed-information-for-linear-objects)
-- [Mountain peak heights in feet.](#mountain-peak-heights-in-feet)
-- [Prominent peaks](#prominent-peaks-now-discoverable) are now discoverable on the map and through search.
-- [US address search](#usa-address-search-with-tiger-data) using TIGER data.
-- [Changed UI](#interactions-with-intermediate-destinations) for intermediate destinations in Waypoints.
-- [Added ability to change and set](#flexible-appearance-settings-for-favorite-groups) the default appearance for favorite groups.
-- [Improvements for Android Auto.](#android-auto-improvements)
-- [AIS Vessel Tracking plugin (nautical navigation).](#ais-vessel-tracking-plugin)
+- [Le nouveau widget de navigation principal](#route-maneuvers-widgets-set) combine les flèches de virage et les instructions de navigation.
+- [Nouveau widget d'informations sur l'itinéraire actuel](#new-route-information-widget) : affiche l'heure d'arrivée estimée, l'heure d'arrivée et la distance.
+- [Refonte de l'écran de configuration des widgets.](#redesigned-configure-screen)
+- [Nouvelle option pour sélectionner la taille du widget](#resizable-widgets-for-side-panels) pour les panneaux gauche et droit.
+- [Action de réinitialisation pour le widget Vitesse moyenne.](#reset-option-for-the-average-speed-widget)
+- [Découvrez les POI les mieux notés](#explore-mode-discover-popular-places) avec le nouveau mode Exploration.
+- [Intégration de Wikidata](#popular-places-wikipedia) dans les données cartographiques (Lieux populaires - Wikipedia).
+- [Amélioration de la recherche d'itinéraires OSM](#all-osm-routes--now-searchable) et de la sélection pour la navigation.
+- [Informations détaillées](#ski-slopes-and-mtb-trails-information) sur les pistes de ski et les sentiers VTT.
+- [Ajout d'une grille de coordonnées](#coordinates-grid-overlay) avec des coordonnées géographiques.
+- [Zones d'escalade et falaises](#climbing-areas-and-crags) sur la carte.
+- [Informations détaillées pour les objets linéaires.](#detailed-information-for-linear-objects)
+- [Altitudes des sommets en pieds.](#mountain-peak-heights-in-feet)
+- [Les sommets proéminents](#prominent-peaks-now-discoverable) sont désormais découvrables sur la carte et via la recherche.
+- [Recherche d'adresses aux États-Unis](#usa-address-search-with-tiger-data) à l'aide des données TIGER.
+- [Modification de l'interface utilisateur](#interactions-with-intermediate-destinations) pour les destinations intermédiaires dans les points de passage.
+- [Ajout de la possibilité de modifier et de définir](#flexible-appearance-settings-for-favorite-groups) l'apparence par défaut des groupes de favoris.
+- [Améliorations pour Android Auto.](#android-auto-improvements)
+- [Plugin de suivi des navires AIS (navigation nautique).](#ais-vessel-tracking-plugin)
 
+- [Mises à jour facultatives](#optional-updates). Mises à jour et améliorations supplémentaires pour la version.
 
-- [Optional updates](#optional-updates). Additional updates and refinements for the release.
-
-
-## Route Guidance Widgets Set
+## Ensemble de widgets de guidage d'itinéraire
 
 ![Route Guidance Widget](../../blog/2025-03-11-android-5-0/img/route_guidance_widget.png)
 
-The new **Route Guidance widget** combines essential navigation details into a single, compact display, providing **real-time navigation instructions**, helping you stay on track throughout your journey. These widgets are **active during navigation**, ensuring you never miss a turn.  
+Le nouveau **widget de guidage d'itinéraire** combine les détails de navigation essentiels en un seul affichage compact, fournissant des **instructions de navigation en temps réel**, vous aidant à rester sur la bonne voie tout au long de votre voyage. Ces widgets sont **actifs pendant la navigation**, vous assurant de ne jamais manquer un virage.
 
-Key improvements:
+Améliorations clés :
 
-- **All-in-one navigation view** — Integrates the *distance to the first and next turn, turn arrow, road name, road number with a shield, current street name, exit number*, and *lane information* in one widget.
-- **Available for top and bottom widget panels.**
+- **Vue de navigation tout-en-un** — Intègre la *distance jusqu'au premier et au prochain virage, la flèche de virage, le nom de la route, le numéro de la route avec un bouclier, le nom de la rue actuelle, le numéro de sortie* et les *informations sur la voie* dans un seul widget.
+- **Disponible pour les panneaux de widgets supérieur et inférieur.**
 
-Find them in:  
-*Menu → Configure screen → **Top panel / Bottom panel** → Route guidance: Next turn, Second next turn, Lanes*
+Trouvez-les dans :
+*Menu → Configurer l'écran → **Panneau supérieur / Panneau inférieur** → Guidage d'itinéraire : Prochain virage, Deuxième prochain virage, Voies*
 
-Learn more:  
-[Route Guidance Widget](https://osmand.net/docs/user/widgets/nav-widgets#route-guidance)
+En savoir plus :
+[Widget de guidage d'itinéraire](https://osmand.net/docs/user/widgets/nav-widgets#route-guidance)
 
-
-## New Route Information Widget
+## Nouveau widget d'informations sur l'itinéraire
 
 ![Route Guidance Widget](../../blog/2025-03-11-android-5-0/img/route_info_widget_2.png)
 
-The **Route Information widget** provides a clear overview of your journey by displaying *ETA (Estimated Time of Arrival), remaining travel time, and distance to the destination* in a compact format. Designed for real-time navigation, it ensures you have the most relevant travel details at a glance.  
+Le **widget d'informations sur l'itinéraire** offre un aperçu clair de votre voyage en affichant l'*heure d'arrivée estimée (ETA), le temps de trajet restant et la distance jusqu'à la destination* dans un format compact. Conçu pour la navigation en temps réel, il vous assure d'avoir les détails de voyage les plus pertinents en un coup d'œil.
 
-Key features:
+Fonctionnalités clés :
 
-- **Display priority settings** — Select between *Destination first (default)* or *Intermediate first* to prioritize the most relevant route information.  
-- **Available for top and bottom widget panels** for flexible placement.  
-- **Quick access to Start/Stop Navigation panel** — Tap the *arrow button* to open navigation controls.  
+- **Paramètres de priorité d'affichage** — Choisissez entre *Destination d'abord (par défaut)* ou *Intermédiaire d'abord* pour prioriser les informations d'itinéraire les plus pertinentes.
+- **Disponible pour les panneaux de widgets supérieur et inférieur** pour un placement flexible.
+- **Accès rapide au panneau Démarrer/Arrêter la navigation** — Appuyez sur le *bouton flèche* pour ouvrir les commandes de navigation.
 
-Find it in:  
-*Menu → Configure screen → **Top panel / Bottom panel** → Route information*  
+Trouvez-le dans :
+*Menu → Configurer l'écran → **Panneau supérieur / Panneau inférieur** → Informations sur l'itinéraire*
 
-Learn more:  
-[Navigation Points Widget](https://osmand.net/docs/user/widgets/nav-widgets#navigation-points)
-[Start/Stop Navigation Panel](https://osmand.net/docs/user/navigation/setup/route-navigation#start--stop-navigation)
+En savoir plus :
+[Widget Points de navigation](https://osmand.net/docs/user/widgets/nav-widgets#navigation-points)
+[Panneau Démarrer/Arrêter la navigation](https://osmand.net/docs/user/navigation/setup/route-navigation#start--stop-navigation)
 
-
-## Redesigned Configure Screen
+## Écran de configuration repensé
 
 ![Configure Screen](../../blog/2025-03-11-android-5-0/img/config_screen_1.png)  ![Configure Screen](../../blog/2025-03-11-android-5-0/img/config_screen_2.png)  
 
-The widget **Configure screen** has undergone a major redesign to enhance usability and streamline the process of adding, customizing, and organizing widgets.
+L'**écran de configuration** des widgets a fait l'objet d'une refonte majeure pour améliorer la convivialité et simplifier le processus d'ajout, de personnalisation et d'organisation des widgets.
 
-Key changes:
+Principaux changements :
 
-- **Add widget screen**:
-   - Widgets and widget groups are **sorted alphabetically** (A-Z).  
-   - **Search** functionality works for both widget names and groups.
-- **Panels** — Removed *Available widgets* and *Actions* groups for a cleaner interface.
-- **Widget groups** - Removed group icon and Add button, widgets are added separately, improved widget list.
-- **Widget settings** - All widget settings are now grouped together for easier management.
+- **Écran Ajouter un widget** :
+   - Les widgets et les groupes de widgets sont **triés par ordre alphabétique** (A-Z).
+   - La fonctionnalité de **recherche** fonctionne pour les noms de widgets et les groupes.
+- **Panneaux** — Suppression des groupes *Widgets disponibles* et *Actions* pour une interface plus claire.
+- **Groupes de widgets** - Suppression de l'icône de groupe et du bouton Ajouter, les widgets sont ajoutés séparément, liste de widgets améliorée.
+- **Paramètres de widget** - Tous les paramètres de widget sont désormais regroupés pour une gestion plus facile.
 
-This redesign ensures a **consistent experience** across Android and iOS, allowing for seamless configuration and management of widgets.  
+Cette refonte garantit une **expérience cohérente** sur Android et iOS, permettant une configuration et une gestion transparentes des widgets.
 
-Learn more:  
-[Widget Configure Screen](https://osmand.net/docs/user/widgets/configure-screen)
+En savoir plus :
+[Écran de configuration des widgets](https://osmand.net/docs/user/widgets/configure-screen)
 
-
-## Resizable Widgets for Side Panels
+## Widgets redimensionnables pour les panneaux latéraux
 
 ![Resizable Widgets for Side Panels](../../blog/2025-03-11-android-5-0/img/resizable_widgets_andr.png)
 
-You can now customize the **size of widgets** in the **left and right panels**, just as in the top and bottom ones. This update offers greater flexibility in *configuring the map screen*. Choose from *small, medium*, or *large* sizes to customize your screen layout.
+Vous pouvez désormais personnaliser la **taille des widgets** dans les **panneaux gauche et droit**, tout comme dans les panneaux supérieur et inférieur. Cette mise à jour offre une plus grande flexibilité dans la *configuration de l'écran de la carte*. Choisissez parmi les tailles *petite, moyenne* ou *grande* pour personnaliser la disposition de votre écran.
 
-Key improvements:
+Améliorations clés :
 
-- **Independent resizing** for left and right panels.  
-- **Consistent widget scaling** across all panel positions.  
-- **Optimized screen space** for navigation and stats.
+- **Redimensionnement indépendant** pour les panneaux gauche et droit.
+- **Mise à l'échelle cohérente des widgets** sur toutes les positions des panneaux.
+- **Espace d'écran optimisé** pour la navigation et les statistiques.
 
-These options can be accessed through the *Configure Screen* menu for widget management or by performing a *long tap* on the widget directly on the map screen.
+Ces options sont accessibles via le menu *Configurer l'écran* pour la gestion des widgets ou en effectuant un *appui long* sur le widget directement sur l'écran de la carte.
 
-Learn more:  
-[Widget Settings](https://osmand.net/docs/user/widgets/configure-screen#widget-settings)
+En savoir plus :
+[Paramètres de widget](https://osmand.net/docs/user/widgets/configure-screen#widget-settings)
 
-
-## Reset Option for the Average Speed Widget
+## Option de réinitialisation pour le widget Vitesse moyenne
 
 ![Reset Option for the Average Speed Widget](../../blog/2025-03-11-android-5-0/img/reset_average_speed.png)
 
-You can now **reset the average speed** directly from the *widget’s context menu*. This update adds a **Reset** action, allowing you to start fresh measurements without restarting navigation.  
+Vous pouvez désormais **réinitialiser la vitesse moyenne** directement depuis le *menu contextuel du widget*. Cette mise à jour ajoute une action **Réinitialiser**, vous permettant de recommencer les mesures sans redémarrer la navigation.
 
-What’s new:
+Nouveautés :
 
-- **Context menu option** to reset average speed via *long tap* on the widget on the map screen.  
-- **Reset action added to the widget settings** in the *Configure Screen* menu for quick access.  
+- **Option de menu contextuel** pour réinitialiser la vitesse moyenne via un *appui long* sur le widget sur l'écran de la carte.
+- **Action de réinitialisation ajoutée aux paramètres du widget** dans le menu *Configurer l'écran* pour un accès rapide.
 
-Learn more:  
-[Average Speed Widget](https://osmand.net/docs/user/widgets/info-widgets/#average-speed)
-[Configure Screen](https://osmand.net/docs/user/widgets/configure-screen#widget-settings)
+En savoir plus :
+[Widget Vitesse moyenne](https://osmand.net/docs/user/widgets/info-widgets/#average-speed)
+[Configurer l'écran](https://osmand.net/docs/user/widgets/configure-screen#widget-settings)
 
-
-## Explore Mode: Discover Popular Places
+## Mode Exploration : Découvrez les lieux populaires
 
 ![Explore Mode](../../blog/2025-03-11-android-5-0/img/explore_search.png)
 
-The **Explore** mode has been introduced, replacing the *History* tab, making it easier than ever to discover *top-ranked points of interest (POIs)*. Now, you can explore nearby POIs, view their *photos* on the map, and easily access your *Recently visited* locations — all within the new **Explore** tab. This update makes finding interesting places faster and more convenient.
+Le mode **Exploration** a été introduit, remplaçant l'onglet *Historique*, ce qui facilite plus que jamais la découverte des *points d'intérêt (POI) les mieux notés*. Vous pouvez désormais explorer les POI à proximité, afficher leurs *photos* sur la carte et accéder facilement à vos lieux *récemment visités* — le tout dans le nouvel onglet **Exploration**. Cette mise à jour rend la recherche de lieux intéressants plus rapide et plus pratique.
 
-Key features:
+Fonctionnalités clés :
 
-- **Explore nearby POIs** — Discover *popular places* and *top-ranked POIs* based on *popularity*, with helpful *photos* displayed on the map and in the search results.
-- **Recently visited** - Access your *recently visited (history) places* within the **Explore** tab for quick navigation back to previously explored locations.
-- **Wikipedia integration** - *Wikipedia entries* are combined with POI details, allowing you to view detailed information, including photos and descriptions for each location.
+- **Explorer les POI à proximité** — Découvrez les *lieux populaires* et les *POI les mieux notés* en fonction de leur *popularité*, avec des *photos* utiles affichées sur la carte et dans les résultats de recherche.
+- **Récemment visités** - Accédez à vos *lieux récemment visités (historique)* dans l'onglet **Exploration** pour une navigation rapide vers les lieux précédemment explorés.
+- **Intégration de Wikipedia** - Les *entrées Wikipedia* sont combinées avec les détails des POI, vous permettant d'afficher des informations détaillées, y compris des photos et des descriptions pour chaque lieu.
 
-How to use:  
-Go to *Menu → Search → Explore* to start discovering nearby POIs and view your recently visited places.
+Comment utiliser :
+Allez dans *Menu → Rechercher → Explorer* pour commencer à découvrir les POI à proximité et afficher vos lieux récemment visités.
 
-Learn more:  
-[Search All Locations](https://osmand.net/docs/user/search/search-all)
+En savoir plus :
+[Rechercher tous les lieux](https://osmand.net/docs/user/search/search-all)
 
-
-## Popular Places (Wikipedia)
+## Lieux populaires (Wikipedia)
 
 ![Wikidata](../../blog/2025-03-11-android-5-0/img/wikidata.png)
 
-The **Wikipedia POIs** feature is integrated under the new **Popular places (Wikipedia)** setting in the Configure map menu. This update provides expanded settings for Wikipedia content, giving you more control over your experience.
+La fonctionnalité **POI Wikipedia** est intégrée sous le nouveau paramètre **Lieux populaires (Wikipedia)** dans le menu Configurer la carte. Cette mise à jour offre des paramètres étendus pour le contenu Wikipedia, vous donnant plus de contrôle sur votre expérience.
 
-Key features:
+Fonctionnalités clés :
 
-- **Image previews** - You can now *view photos* for POIs directly on the map with the *Show image previews* setting.
-- **Offline and Online Mode** - View *Wikipedia POIs* without downloading the map data by using the online mode.
+- **Aperçus d'images** - Vous pouvez désormais *afficher des photos* pour les POI directement sur la carte avec le paramètre *Afficher les aperçus d'images*.
+- **Mode hors ligne et en ligne** - Affichez les *POI Wikipedia* sans télécharger les données cartographiques en utilisant le mode en ligne.
 
-How to use:
+Comment utiliser :
 
-- Enable the **Wikipedia plugin** to access wikidata on the map and its settings in the Configure map menu.
-- Go to *Menu → Configure map → Popular places (Wikipedia)* to adjust settings for image previews, language preferences, and data sources.
+- Activez le **plugin Wikipedia** pour accéder aux données wikidata sur la carte et à ses paramètres dans le menu Configurer la carte.
+- Allez dans *Menu → Configurer la carte → Lieux populaires (Wikipedia)* pour ajuster les paramètres des aperçus d'images, des préférences linguistiques et des sources de données.
 
-Learn more:  
-[Wikipedia Plugin](https://osmand.net/docs/user/plugins/wikipedia)  
+En savoir plus :
+[Plugin Wikipedia](https://osmand.net/docs/user/plugins/wikipedia)
 
-
-
-## All OSM Routes – Now Searchable
+## Tous les itinéraires OSM – Désormais recherchables
 
 ![Routes](../../blog/2025-03-11-android-5-0/img/routes.png)  ![Routes](../../blog/2025-03-11-android-5-0/img/routes_1.png)  
 
-You can now **search and navigate all OSM routes** directly in OsmAnd — including **hiking, cycling, mountain biking (MTB)**, and other recreational route types. This update greatly improves *route discovery*, allowing you to easily find and follow existing paths mapped in OpenStreetMap.  
+Vous pouvez désormais **rechercher et naviguer sur tous les itinéraires OSM** directement dans OsmAnd — y compris les itinéraires de **randonnée, de cyclisme, de VTT** et d'autres types d'itinéraires récréatifs. Cette mise à jour améliore considérablement la *découverte d'itinéraires*, vous permettant de trouver et de suivre facilement les chemins existants cartographiés dans OpenStreetMap.
 
-Key features:
+Fonctionnalités clés :
 
-- **Search by route type and name** — Find routes by name or use the filter by categories such as *Hiking, Cycling, MTB*, and more.  
-- **Route overview in search result** — See *route name, icon, total distance*, and *distance to the nearest point* before selecting it.  
-- **Start navigation or download GPX** — Tap a route to open it and either start navigation or *download it as a GPX file*.  
+- **Rechercher par type et nom d'itinéraire** — Trouvez des itinéraires par nom ou utilisez le filtre par catégories telles que *Randonnée, Cyclisme, VTT*, et plus encore.
+- **Aperçu de l'itinéraire dans le résultat de recherche** — Voir le *nom de l'itinéraire, l'icône, la distance totale* et la *distance jusqu'au point le plus proche* avant de le sélectionner.
+- **Démarrer la navigation ou télécharger le GPX** — Appuyez sur un itinéraire pour l'ouvrir et soit démarrer la navigation, soit le *télécharger en tant que fichier GPX*.
 
-How to use:
+Comment utiliser :
 
-- Go to *Menu → Search → Categories → Routes*  
-- Use filters to narrow down results by activity type  
-- Select a route *→* tap **Navigate** or **Download**  
+- Allez dans *Menu → Rechercher → Catégories → Itinéraires*
+- Utilisez les filtres pour affiner les résultats par type d'activité
+- Sélectionnez un itinéraire *→* appuyez sur **Naviguer** ou **Télécharger**
 
-For more details, visit:  
-[How to Use Global Search](https://osmand.net/docs/user/search/search-all#how-to-use)  
-[OSM Routes Overview](https://osmand.net/docs/user/map/routes)  
-[POI Search by Categories](https://osmand.net/docs/user/search/search-poi#poi-search-by-categories)  
-[GPX Navigation](https://osmand.net/docs/user/navigation/setup/gpx-navigation)
+Pour plus de détails, visitez :
+[Comment utiliser la recherche globale](https://osmand.net/docs/user/search/search-all#how-to-use)
+[Aperçu des itinéraires OSM](https://osmand.net/docs/user/map/routes)
+[Recherche de POI par catégories](https://osmand.net/docs/user/search/search-poi#poi-search-by-categories)
+[Navigation GPX](https://osmand.net/docs/user/navigation/setup/gpx-navigation)
 
 <!--
 ![Routes](../../blog/2025-03-11-android-5-0/img/routes_2.png) ![Routes](../../blog/2025-03-11-android-5-0/img/routes_3.png)
 -->
 
-
-## Ski Slopes and MTB Trails Information
+## Informations sur les pistes de ski et les sentiers VTT
 
 ![Ski Slopes and MTB Trails](../../blog/2025-03-11-android-5-0/img/ski_mtb.png)  ![Ski Slopes and MTB Trails](../../blog/2025-03-11-android-5-0/img/ski_mtb_2.png)
 
-You can now **select ski slopes and MTB trails directly on the map** to access more detailed information. This feature enhances the context menu with key data such as *difficulty level, trail length, terrain type*, and more, making it easier to plan your outdoor activities.
+Vous pouvez désormais **sélectionner les pistes de ski et les sentiers VTT directement sur la carte** pour accéder à des informations plus détaillées. Cette fonctionnalité enrichit le menu contextuel avec des données clés telles que le *niveau de difficulté, la longueur du sentier, le type de terrain*, et plus encore, ce qui facilite la planification de vos activités de plein air.
 
-Simply tap the *ski slopes* or *MTB routes* to quickly view information and get started with your adventure.
+Il suffit d'appuyer sur les *pistes de ski* ou les *itinéraires VTT* pour afficher rapidement les informations et commencer votre aventure.
 
-Learn more:  
-[Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
+En savoir plus :
+[Menu contextuel de la carte](https://osmand.net/docs/user/map/map-context-menu)
 
-
-## Coordinates Grid Overlay
+## Superposition de la grille de coordonnées
 
 ![Coordinates Grid Overlay](../../blog/2025-03-11-android-5-0/img/coordinates_grid_settings_andr.png)
 
-The **Coordinates Grid** feature allows you to overlay a grid with **geographical coordinates** on the map, providing a precise location reference for geospatial navigation.  
+La fonctionnalité **Grille de coordonnées** vous permet de superposer une grille avec des **coordonnées géographiques** sur la carte, fournissant une référence de localisation précise pour la navigation géospatiale.
 
-Key features:
+Fonctionnalités clés :
 
-- **Multiple coordinate formats** — Choose from DD°MM′SS″, DD.DDDDD°, DD°MM.MMM′, or `UTM`.  
-- **Adjustable zoom levels** — Grid lines appear dynamically between *zoom levels 2 – 22*, adapting to the map scale.  
-- Uses default coordinate settings from *Menu → Settings → App profiles → General settings → Units & formats*.  
+- **Plusieurs formats de coordonnées** — Choisissez parmi DD°MM′SS″, DD.DDDDD°, DD°MM.MMM′, ou `UTM`.
+- **Niveaux de zoom réglables** — Les lignes de la grille apparaissent dynamiquement entre les *niveaux de zoom 2 et 22*, s'adaptant à l'échelle de la carte.
+- Utilise les paramètres de coordonnées par défaut de *Menu → Paramètres → Profils d'application → Paramètres généraux → Unités et formats*.
 
-Find it in: *Menu → Configure Map → Show → Coordinates Grid*  
+Trouvez-le dans : *Menu → Configurer la carte → Afficher → Grille de coordonnées*
 
-Learn more:  
-[Coordinates Grid](https://osmand.net/docs/user/map/vector-maps#coordinates-grid)
+En savoir plus :
+[Grille de coordonnées](https://osmand.net/docs/user/map/vector-maps#coordinates-grid)
 
-
-## Climbing Areas and Crags
+## Zones d'escalade et falaises
 
 ![Map routes - Climbing Routes](../../blog/2025-03-11-android-5-0/img/map-routes-climbing-routes.png)
 
-Now you can explore **climbing areas and crags** directly on the map. These locations provide essential details such as elevation, rock type, and number of climbing routes.  
+Vous pouvez désormais explorer les **zones d'escalade et les falaises** directement sur la carte. Ces lieux fournissent des détails essentiels tels que l'altitude, le type de roche et le nombre de voies d'escalade.
 
-Use *Search → POI → Climbing* to quickly find climbing spots and plan your approach with OsmAnd’s navigation tools.  
+Utilisez *Rechercher → POI → Escalade* pour trouver rapidement des spots d'escalade et planifier votre approche avec les outils de navigation d'OsmAnd.
 
-For more details, visit:  
-[Climbing routes on the map](https://osmand.net/docs/user/map/routes/#climbing-routes)  
-[Climbing area and crag details](https://osmand.net/docs/user/map/map-context-menu/#climbing-area-and-crag-details)
+Pour plus de détails, visitez :
+[Voies d'escalade sur la carte](https://osmand.net/docs/user/map/routes/#climbing-routes)
+[Détails de la zone d'escalade et de la falaise](https://osmand.net/docs/user/map/map-context-menu/#climbing-area-and-crag-details)
 
-
-## Detailed Information for Linear Objects
+## Informations détaillées pour les objets linéaires
 
 ![Barrier icons](../../blog/2025-03-11-android-5-0/img/icons.png)
 
-You can now interact with **barriers, steps, gates, benches, and other access-related icons** directly on the map. A simple tap on these objects opens a *context menu* with detailed information, such as the object type, name (if available), and address.  
+Vous pouvez désormais interagir avec les **barrières, les marches, les portails, les bancs et autres icônes liées à l'accès** directement sur la carte. Un simple appui sur ces objets ouvre un *menu contextuel* avec des informations détaillées, telles que le type d'objet, le nom (si disponible) et l'adresse.
 
-This improvement provides *quick access to navigation-relevant data*, helping you better understand path restrictions and road attributes at a glance.  
+Cette amélioration offre un *accès rapide aux données pertinentes pour la navigation*, vous aidant à mieux comprendre les restrictions de chemin et les attributs de route en un coup d'œil.
 
-Explore more:  
-[Linear object details in the Map Context Menu](https://osmand.net/docs/user/map/map-context-menu/#linear-object)
+Explorez davantage :
+[Détails des objets linéaires dans le menu contextuel de la carte](https://osmand.net/docs/user/map/map-context-menu/#linear-object)
 
-
-## Mountain Peak Heights in Feet
+## Altitudes des sommets en pieds
 
 ![Mountain Peak](../../blog/2025-03-11-android-5-0/img/mountain_peak.png)
 
-In this update, **mountain peak heights** are now displayed in **feet** for users who prefer *imperial units*. This improvement ensures elevation markers on the map align with your chosen *units of length* setting.
+Dans cette mise à jour, les **altitudes des sommets** sont désormais affichées en **pieds** pour les utilisateurs qui préfèrent les *unités impériales*. Cette amélioration garantit que les marqueurs d'altitude sur la carte s'alignent sur votre paramètre d'*unités de longueur* choisi.
 
-Key improvements:
+Améliorations clés :
 
-- **Height display in feet** — Mountain peak elevations are now shown in feet as well.  
-- **Profile-dependent units** — The display of heights in *meters or feet* depends on the selected Units & Formats profile settings.
+- **Affichage de l'altitude en pieds** — Les altitudes des sommets sont désormais également affichées en pieds.
+- **Unités dépendantes du profil** — L'affichage des altitudes en *mètres ou en pieds* dépend des paramètres du profil Unités et formats sélectionné.
 
-This feature allows for a clearer and more accurate view of elevations when navigating mountainous areas, ensuring users in countries that use imperial units can easily understand peak heights.  
+Cette fonctionnalité permet une vue plus claire et plus précise des altitudes lors de la navigation dans les zones montagneuses, garantissant que les utilisateurs des pays qui utilisent les unités impériales peuvent facilement comprendre les altitudes des sommets.
 
-Learn more:  
-[Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
+En savoir plus :
+[Menu contextuel de la carte](https://osmand.net/docs/user/map/map-context-menu)
 
+## Les sommets proéminents sont désormais découvrables
 
-## Prominent Peaks Now Discoverable  
+Vous pouvez désormais **découvrir les sommets proéminents** directement sur la carte et via la recherche. Cette mise à jour ajoute des [sommets notables](https://en.wikipedia.org/wiki/Ultra-prominent_peak) à la carte de base, vous permettant de trouver facilement leurs noms, altitudes et détails supplémentaires via le menu contextuel de la carte ou la fonctionnalité de recherche.
 
-You can now **discover prominent peaks** directly on the map and through search. This update adds [notable mountain peaks](https://en.wikipedia.org/wiki/Ultra-prominent_peak) to the basemap, allowing you to easily find their names, elevations, and additional details through the map's context menu or search functionality.
+Il suffit d'appuyer sur les *icônes de sommet* sur la carte, ou d'utiliser *Rechercher → Sommets* pour localiser et explorer rapidement les principaux sommets.
 
-Simply tap on the *peak icons* on the map, or use the *Search → Mountain Peaks* to quickly locate and explore key mountain summits.
+En savoir plus :
+[Menu contextuel de la carte](https://osmand.net/docs/user/map/map-context-menu)
 
-Learn more:  
-[Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
-
-
-## USA Address Search with TIGER Data
+## Recherche d'adresses aux États-Unis avec les données TIGER
 
 ![TIGER Data](../../blog/2025-03-11-android-5-0/img/tiger_data.png)
 
-The **TIGER** (Topologically Integrated Geographic Encoding and Referencing) data for US address search is now integrated into OsmAnd. This update improves the accuracy of *street names, house numbers* and *address formatting*, and enhances  *geocoding* algorithms for better recognition of road names, abbreviations and postal structures.  
+Les données **TIGER** (Topologically Integrated Geographic Encoding and Referencing) pour la recherche d'adresses aux États-Unis sont désormais intégrées dans OsmAnd. Cette mise à jour améliore la précision des *noms de rue, des numéros de maison* et du *formatage des adresses*, et améliore les algorithmes de *géocodage* pour une meilleure reconnaissance des noms de route, des abréviations et des structures postales.
 
-Key improvements:
+Améliorations clés :
 
-- **Expanded coverage** of rural and urban addresses.  
-- **More precise house number placement** for improved routing.  
-- **Better handling of alternative street names and abbreviations**.  
+- **Couverture étendue** des adresses rurales et urbaines.
+- **Placement plus précis des numéros de maison** pour un meilleur routage.
+- **Meilleure gestion des noms de rue alternatifs et des abréviations**.
 
-Learn more:  
-[US address search and TIGER data – technical details](https://docs.osmand.net/docs/technical/algorithms/trace-address-search-issues/#us-address-search-and-tiger-data)  
-[US address search – user guide](https://docs.osmand.net/docs/user/search/search-address/#us-address-search-and-tiger-data)
+En savoir plus :
+[Recherche d'adresses aux États-Unis et données TIGER – détails techniques](https://docs.osmand.net/docs/technical/algorithms/trace-address-search-issues/#us-address-search-and-tiger-data)
+[Recherche d'adresses aux États-Unis – guide de l'utilisateur](https://docs.osmand.net/docs/user/search/search-address/#us-address-search-and-tiger-data)
 
-
-## Interactions with Intermediate Destinations
+## Interactions avec les destinations intermédiaires
 
 ![Intermediate Destinations](../../blog/2025-03-11-android-5-0/img/navigation_interpoints_2_andr.png)
 
-Managing **intermediate destinations** in waypoints is now more convenient. The update refines the **selection and modification** process, making adjustments faster and more intuitive.  
+La gestion des **destinations intermédiaires** dans les points de passage est désormais plus pratique. La mise à jour affine le processus de **sélection et de modification**, rendant les ajustements plus rapides et plus intuitifs.
 
-Key changes:
+Principaux changements :
 
-- **Simplified waypoint selection** when modifying a route.  
-- **Consistent UI behavior** for better usability.  
-- **Improved responsiveness** when interacting with waypoints.
+- **Sélection simplifiée des points de passage** lors de la modification d'un itinéraire.
+- **Comportement cohérent de l'interface utilisateur** pour une meilleure convivialité.
+- **Réactivité améliorée** lors de l'interaction avec les points de passage.
 
-Learn more:  
-[Intermediate destinations – user guide](https://osmand.net/docs/user/navigation/setup/route-navigation#intermediate-destinations)
+En savoir plus :
+[Destinations intermédiaires – guide de l'utilisateur](https://osmand.net/docs/user/navigation/setup/route-navigation#intermediate-destinations)
 
-
-## Flexible Appearance Settings for Favorite Groups
+## Paramètres d'apparence flexibles pour les groupes de favoris
 
 ![Flexible Appearance Settings for Favorite Groups](../../blog/2025-03-11-android-5-0/img/appearance_sett_favorites.png)
 
-Now you can **separately customize** the *icon, color*, and *shape* for each group of favorites without resetting all attributes. And then override the settings for existing points in the folder, only new favorites, or apply to all. This allows you to visually organize your saved locations more precisely.  
+Vous pouvez désormais **personnaliser séparément** l'*icône, la couleur* et la *forme* de chaque groupe de favoris sans réinitialiser tous les attributs. Et ensuite remplacer les paramètres pour les points existants dans le dossier, uniquement les nouveaux favoris, ou appliquer à tous. Cela vous permet d'organiser visuellement vos lieux enregistrés plus précisément.
 
-Learn more:  
-[Change Group Appearance](https://osmand.net/docs/user/personal/favorites/#change-group-appearance)
+En savoir plus :
+[Modifier l'apparence du groupe](https://osmand.net/docs/user/personal/favorites/#change-group-appearance)
 
-
-## Android Auto Improvements
+## Améliorations d'Android Auto
 
 ![Android Auto Improvements](../../blog/2025-03-11-android-5-0/img/android_auto_start_navigation.png)
 
-Navigation with **Android Auto** is now more informative and route-aware, thanks to two key improvements.  
+La navigation avec **Android Auto** est désormais plus informative et plus consciente de l'itinéraire, grâce à deux améliorations clés.
 
-What’s new:
+Nouveautés :
 
-- **ETA and Distance to next waypoint** — During active navigation, the *estimated arrival time* and *distance are now shown for the next intermediate destination*, not just the final one. This helps you better track progress on multi-stop routes.  
-- **Full destination name on preview field** — When reviewing your route before starting, the *entire destination name* is now visible on the route preview field, ensuring clarity when selecting from saved or searched locations.  
+- **ETA et distance jusqu'au prochain point de passage** — Pendant la navigation active, l'*heure d'arrivée estimée* et la *distance sont désormais affichées pour la prochaine destination intermédiaire*, et pas seulement la destination finale. Cela vous aide à mieux suivre la progression sur les itinéraires à plusieurs arrêts.
+- **Nom complet de la destination sur le champ d'aperçu** — Lorsque vous examinez votre itinéraire avant de commencer, le *nom complet de la destination* est désormais visible sur le champ d'aperçu de l'itinéraire, garantissant la clarté lors de la sélection parmi les lieux enregistrés ou recherchés.
 
-These updates improve *situational awareness and route transparency* when using OsmAnd with Android Auto.  
+Ces mises à jour améliorent la *conscience de la situation et la transparence de l'itinéraire* lors de l'utilisation d'OsmAnd avec Android Auto.
 
-Learn more:  
-[ETA to Next Stop](https://osmand.net/docs/user/navigation/auto-car#eta-next-stop)  
-[Start Navigation with Android Auto](https://osmand.net/docs/user/navigation/auto-car#start-navigation)
+En savoir plus :
+[ETA jusqu'au prochain arrêt](https://osmand.net/docs/user/navigation/auto-car#eta-next-stop)
+[Démarrer la navigation avec Android Auto](https://osmand.net/docs/user/navigation/auto-car#start-navigation)
 
-
-## AIS Vessel Tracking Plugin
+## Plugin de suivi des navires AIS
 
 ![AIS vessel tracker](@site/static/img/plugins/ais/ais.png)
 
-The **AIS Vessel Tracker** plugin allows you to display **real-time AIS (Automatic Identification System) vessel positions** on the map. This feature is essential for maritime navigation, providing details about nearby ships, including their type, speed, and route.  
+Le plugin **AIS Vessel Tracker** vous permet d'afficher les **positions des navires AIS (Automatic Identification System) en temps réel** sur la carte. Cette fonctionnalité est essentielle pour la navigation maritime, fournissant des détails sur les navires à proximité, y compris leur type, leur vitesse et leur itinéraire.
 
-Key features:
+Fonctionnalités clés :
 
-- **Live vessel tracking** — Ships update based on *real-time speed and course*.  
-- **Detailed vessel info** — Tap on a vessel to see *ship name, MMSI, IMO number, type, dimensions, heading, speed, and ETA*.  
-- **Configurable AIS data sources** — Connect via *external AIS receivers* or *network-based AIS servers*.  
-- **AIS symbols and alerts** — Supports standard *AIS vessel icons, safety messages, and maneuvering indicators*.  
+- **Suivi des navires en direct** — Les navires se mettent à jour en fonction de la *vitesse et du cap en temps réel*.
+- **Informations détaillées sur les navires** — Appuyez sur un navire pour voir le *nom du navire, le MMSI, le numéro IMO, le type, les dimensions, le cap, la vitesse et l'ETA*.
+- **Sources de données AIS configurables** — Connectez-vous via des *récepteurs AIS externes* ou des *serveurs AIS basés sur le réseau*.
+- **Symboles et alertes AIS** — Prend en charge les *icônes de navires AIS standard, les messages de sécurité et les indicateurs de manœuvre*.
 
-Find it in:  
-*Menu → Plugins → AIS Vessel Tracker*  
+Trouvez-le dans :
+*Menu → Plugins → AIS Vessel Tracker*
 
-Learn more:  
-[AIS Vessel Tracker Plugin](https://osmand.net/docs/user/plugins/ais-tracker)
+En savoir plus :
+[Plugin AIS Vessel Tracker](https://osmand.net/docs/user/plugins/ais-tracker)
 
+## Mises à jour facultatives
 
-## Optional updates
+- Ajout de la [synthèse vocale hébraïque](https://osmand.net/docs/user/navigation/guidance/voice-navigation#voice-prompt-language) pour la navigation.
+- Problèmes corrigés :
+  - Les langues [serbe latin](https://github.com/osmandapp/OsmAnd/issues/21480) (latin pour la Serbie, la Bosnie-Herzégovine et le Monténégro) fonctionnent désormais.
+  - Lors de l'utilisation de [Tout télécharger](https://github.com/osmandapp/OsmAnd/issues/21741) dans OsmAnd Cloud, la progression ne se terminait pas à 100 %.
+  - OsmAnd Cloud - Les pistes [Synchroniser maintenant](https://github.com/osmandapp/OsmAnd/issues/22017) ne fonctionnaient pas.
+  - Les boutons de niveau de zoom et de ma position [étaient masqués](https://github.com/osmandapp/OsmAnd/issues/21369) une fois le menu contextuel ouvert.
+  - Action rapide : l'option [Ajouter un point de passage](https://github.com/osmandapp/OsmAnd/issues/20102) ne permettait pas la sélection de la position.
+  - [Plantages](https://github.com/osmandapp/OsmAnd/issues/22033) lors de l'appui sur un POI avec une image.
+  - [Comportement incorrect d'Éviter les routes](https://github.com/osmandapp/OsmAnd/issues/21828) après la mise à jour de la carte.
+  - Dossier intelligent : corrections de bugs et améliorations de l'interface utilisateur.
+  - Bug avec la [projection directe vers un point](https://github.com/osmandapp/OsmAnd/issues/21588).
 
-- Added [Hebrew TTS](https://osmand.net/docs/user/navigation/guidance/voice-navigation#voice-prompt-language) for navigation.
-- Fixed issues:
-  - The languages [Serbian latin](https://github.com/osmandapp/OsmAnd/issues/21480) (Latin for Serbia, Bosnia and Herzegovina and Crna Gora) now work.
-  - When using [Download All](https://github.com/osmandapp/OsmAnd/issues/21741) in OsmAnd Cloud, progress did not complete at 100%.
-  - OsmAnd Cloud - [Sync now](https://github.com/osmandapp/OsmAnd/issues/22017) tracks did not work.
-  - Zoom level and My Location [buttons were hidden](https://github.com/osmandapp/OsmAnd/issues/21369) once context menu is open.
-  - Quick Action: [Add waypoint](https://github.com/osmandapp/OsmAnd/issues/20102) option did not permit position selection.
-  - [Crash](https://github.com/osmandapp/OsmAnd/issues/22033) when tapping a POI with an image.
-  - [Incorrect behavior of Avoid roads](https://github.com/osmandapp/OsmAnd/issues/21828) after map update.
-  - Smart Folder: Bugs and UI improvements.
-  - Bug with [Direct-to-point projection](https://github.com/osmandapp/OsmAnd/issues/21588).
-
+-- source-hash: blake2s: 34b50f27eb26c813777b149a24388345f0c68d342d4a9318ddac22e473a62397 --

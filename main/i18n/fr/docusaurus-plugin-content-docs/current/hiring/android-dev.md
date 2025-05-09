@@ -1,56 +1,57 @@
 ---
 sidebar_position: 2
-title: Android Developer
+title: Développeur Android
 ---
 
-We are developing a large Android open source project (https://www.openhub.net/p/Osmand) - Top 10 among Android based on https://www.openstreetmap.org/ (Wikipedia for maps).Our goal is to create a universal map tool that can be used in almost any situation. At the moment, about 2,000,000 people around the world are actively using it.
+Nous développons un grand projet open source Android (https://www.openhub.net/p/Osmand) - Top 10 parmi les applications Android basées sur https://www.openstreetmap.org/ (Wikipedia pour les cartes). Notre objectif est de créer un outil cartographique universel qui peut être utilisé dans presque toutes les situations. Actuellement, environ 2 000 000 de personnes dans le monde l'utilisent activement.
 
-## Job description
-OsmAnd is looking for a passionate and enthusiastic open-source software developer with good knowledge of Android platform and technologies.
+## Description du poste
+OsmAnd recherche un développeur de logiciels open source passionné et enthousiaste avec une bonne connaissance de la plateforme et des technologies Android.
 
 ## Qualifications
 
-### Requirements
-- 2+ years experience in Android development
-- strong knowledge of Java, Kotlin and Android SDK
-- technical English (higher level is advantage)
+### Exigences
+- 2+ années d'expérience en développement Android
+- Solide connaissance de Java, Kotlin et du SDK Android
+- Anglais technique (un niveau supérieur est un avantage)
 - Support Library
 - XML/JSON
 - SQLite
-- OOP, Multithreading & Concurrency
+- POO, Multithreading & Concurrency
 
-### Nice to have
-- Git + Github experience
-- Any GIS-expierience
-- OpenStreetMap mapper knowledge
+### Atouts
+- Expérience Git + Github
+- Toute expérience SIG
+- Connaissance de la cartographie OpenStreetMap
 
-### Responsibilities
-- Implementing new features
-- Maintaining the project
-- Covering code with unit tests
-- Refactoring code
-- Taking a part in planning and proposing new ideas
+### Responsabilités
+- Implémentation de nouvelles fonctionnalités
+- Maintenance du projet
+- Couverture du code avec des tests unitaires
+- Refactoring du code
+- Participation à la planification et proposition de nouvelles idées
 
-## Company offers
+## Offres de l'entreprise
 
-### What you can expect from us
-- Learning by doing – you will work with industry experts who are willing to share their knowledge and experience
-- Improving your skills by participating in training and mentoring programs
-- Advancing your career by choosing from different career paths (technical, management)
-- Great atmosphere and supportive environment
-- Working in a friendly and relaxed atmosphere created by a lot of bonding events and activities
-- Daily support for your technical and personal growth
-- Professional and very friendly team, that is always ready to help and support
+### Ce que vous pouvez attendre de nous
+- Apprentissage par la pratique – vous travaillerez avec des experts de l'industrie désireux de partager leurs connaissances et leur expérience
+- Amélioration de vos compétences en participant à des programmes de formation et de mentorat
+- Avancement de votre carrière en choisissant parmi différents parcours professionnels (technique, gestion)
+- Excellente ambiance et environnement favorable
+- Travail dans une atmosphère amicale et détendue créée par de nombreux événements et activités de cohésion
+- Soutien quotidien pour votre croissance technique et personnelle
+- Équipe professionnelle et très amicale, toujours prête à aider et à soutenir
 
-### What do we offer
-- Develop the best of the best 3D Offline Map application
-- Competitive salary adequate to your skills and performance
-- Flexible working hours
-- 15 days of paid vacation + 15 days at your own expense
-- Paid sick leave
-- All official holidays
-- Remote job (possible office location Krakow Poland, Kyiv Ukraine)
-- Work-life balance guarantee
-- Stable work in a dynamically developing company
-- Fully open source development (https://github.com/osmandapp/)
+### Ce que nous offrons
+- Développer la meilleure application de carte 3D hors ligne
+- Salaire compétitif adapté à vos compétences et performances
+- Horaires de travail flexibles
+- 15 jours de vacances payées + 15 jours à vos frais
+- Congés maladie payés
+- Tous les jours fériés officiels
+- Télétravail (bureaux possibles à Cracovie, Pologne, et Kiev, Ukraine)
+- Garantie d'équilibre vie professionnelle-vie privée
+- Travail stable dans une entreprise en développement dynamique
+- Développement entièrement open source (https://github.com/osmandapp/)
 
+-- source-hash: blake2s: de2db8b811d2e8c67852a176c1a4c31bf3a2ebcf0244c505bec68f9416edf631 --

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title:  External Sensors
+title:  Capteurs externes
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,31 +15,31 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Aperçu
 
-:::info Paid feature
-The External Sensors plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
+:::info Fonctionnalité payante
+Le plugin Capteurs externes est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.  
 :::
 
-The **External Sensors plugin** allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on [**ANT+**](https://en.wikipedia.org/wiki/ANT_(network)) and [**BLE (Bluetooth Low Energy)**](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) technologies and display this data using [widgets](#widgets) in the OsmAnd application. This managed network is capable of collecting, transmitting, and storing sensor data. *iPhones and iPads* do not have the hardware to receive ANT+ signals.
+Le **plugin Capteurs externes** vous permet de lire et d'enregistrer des données provenant de [capteurs externes sans fil](https://en.wikipedia.org/wiki/Wireless_sensor_network) fonctionnant sur les technologies [**ANT+**](https://en.wikipedia.org/wiki/ANT_(network)) et [**BLE (Bluetooth Low Energy)**](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) et d'afficher ces données à l'aide de [widgets](#widgets) dans l'application OsmAnd. Ce réseau géré est capable de collecter, transmettre et stocker des données de capteurs. Les *iPhones et iPads* ne disposent pas du matériel nécessaire pour recevoir les signaux ANT+.
 
-The OsmAnd External sensors plugin accesses external sensors and can read data such as *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed*, *Bicycle Distance* and *Temperature*. For the plugin to work correctly, make sure that your device [is connected](#pair-new-sensor) to the appropriate sensors.
-
-
-## Required Setup Parameters
-
-To start using data from external sensors, you need to make the following settings:  
-
-1. [Purchase](../purchases/) an **OsmAnd Pro subscription**.  
-2. [Enable](../plugins/#enable--disable) the External Sensors plugin in the Plugins section of the *Main Menu*.
-3. **Turn on** Bluetooth on your device to connect external **BLE sensors**.
-4. [Configure](#sensor-settings) the **sensor settings**.
-5. [Add](#widgets) **External sensors widgets** to the screen (optional).
-6. [Use the tips](https://www.thisisant.com/consumer/ant-101/ant-in-phones) for **ANT+ connect** to set up these types of sensors.
-7. [Use](#trip-recording) the **Trip recording plugin** to record sensor data.
+Le plugin Capteurs externes d'OsmAnd accède aux capteurs externes et peut lire des données telles que la *fréquence cardiaque*, la *puissance du vélo*, la *cadence du vélo*, la *vitesse du vélo*, la *distance du vélo* et la *température*. Pour que le plugin fonctionne correctement, assurez-vous que votre appareil [est connecté](#pair-new-sensor) aux capteurs appropriés.
 
 
-### Pair New Sensor
+## Paramètres de configuration requis
+
+Pour commencer à utiliser les données des capteurs externes, vous devez effectuer les réglages suivants :  
+
+1. [Achetez](../purchases/) un **abonnement OsmAnd Pro**.  
+2. [Activez](../plugins/#enable--disable) le plugin Capteurs externes dans la section Plugins du *Menu principal*.
+3. **Activez** le Bluetooth sur votre appareil pour connecter les **capteurs BLE** externes.
+4. [Configurez](#sensor-settings) les **paramètres des capteurs**.
+5. [Ajoutez](#widgets) les **widgets Capteurs externes** à l'écran (facultatif).
+6. [Utilisez les conseils](https://www.thisisant.com/consumer/ant-101/ant-in-phones) pour la **connexion ANT+** afin de configurer ces types de capteurs.
+7. [Utilisez](#trip-recording) le **plugin Enregistrement de trajet** pour enregistrer les données des capteurs.
+
+
+### Associer un nouveau capteur
 
 <Tabs groupId="operating-systems">
 
@@ -61,30 +61,30 @@ To start using data from external sensors, you need to make the following settin
 
 </Tabs>
 
-Use the *Pair new sensor* button to connect new sensors.  
+Utilisez le bouton *Associer un nouveau capteur* pour connecter de nouveaux capteurs.  
 
-- You need Bluetooth turned on to search for sensors. If your Bluetooth is turned off, the app will prompt you to *Open settings* on your device.
+- Vous devez activer le Bluetooth pour rechercher des capteurs. Si votre Bluetooth est désactivé, l'application vous invitera à *Ouvrir les paramètres* sur votre appareil.
 
-- To add new sensors, tap + for the required one in the list of found sensors.
+- Pour ajouter de nouveaux capteurs, appuyez sur + pour celui requis dans la liste des capteurs trouvés.
 
-- A pop-up notification is displayed when a paired sensor is connected or disconnected.  
-- Not all devices support ANT+ (Android only). You can check if your device works with ANT+ by going [here](https://www.thisisant.com/consumer/ant-101/ant-in-phones).
+- Une notification contextuelle s'affiche lorsqu'un capteur associé est connecté ou déconnecté.  
+- Tous les appareils ne prennent pas en charge ANT+ (Android uniquement). Vous pouvez vérifier si votre appareil fonctionne avec ANT+ en allant [ici](https://www.thisisant.com/consumer/ant-101/ant-in-phones).
 
-- Bicycle power in Android is only Ant+.
+- La puissance du vélo sous Android est uniquement Ant+.
 
-- **There is no Bicycle power in iOS** because Ant+ sensors are not supported.
+- **Il n'y a pas de puissance de vélo sous iOS** car les capteurs Ant+ ne sont pas pris en charge.
 
 
-## Sensor Settings
+## Paramètres des capteurs
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Use one of the following paths to open the sensor settings:
+Utilisez l'un des chemins suivants pour ouvrir les paramètres des capteurs :
 
-- *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Available device → Settings*
-- *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Available device → Settings*
+- *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Appareil disponible → Paramètres*
+- *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Appareil disponible → Paramètres*
 
 ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)  
 
@@ -92,7 +92,7 @@ Use one of the following paths to open the sensor settings:
 
 <TabItem value="ios" label="iOS">
 
-Use one of the following paths to open the sensor settings:
+Utilisez l'un des chemins suivants pour ouvrir les paramètres des capteurs :
 
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,external_sensors_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,selected_profile,plugins_menu_group,external_sensors_plugin_name"/>*
@@ -103,25 +103,25 @@ Use one of the following paths to open the sensor settings:
 
 </Tabs>
 
-With the plugin for each external sensor available to the OsmAnd application, you can use these settings:  
+Avec le plugin pour chaque capteur externe disponible pour l'application OsmAnd, vous pouvez utiliser ces paramètres :  
 
-1. All previously added sensors are divided into two lists: **Connected** and **Disconnected**.
-2. Each sensor in the list has a menu with settings:
-    - **Disconnect** or **Connect** the sensor, depending on its current state.
-    - **Settings**. Opens a separate sensor screen with additional information on sensor type, battery level, data received, and settings for renaming, *forget sensor*, and specifying wheel circumference. The sensor screen can be opened simply by tapping the field with the sensor name in the list.
-    - **Rename**. Allows you to set your name for the sensor.
-    - **Forget**. The sensor will be removed from the list but can be paired again.
+1. Tous les capteurs précédemment ajoutés sont divisés en deux listes : **Connecté** et **Déconnecté**.
+2. Chaque capteur de la liste dispose d'un menu avec des paramètres :
+    - **Déconnecter** ou **Connecter** le capteur, en fonction de son état actuel.
+    - **Paramètres**. Ouvre un écran de capteur séparé avec des informations supplémentaires sur le type de capteur, le niveau de batterie, les données reçues et les paramètres pour renommer, *oublier le capteur* et spécifier la circonférence de la roue. L'écran du capteur peut être ouvert simplement en appuyant sur le champ avec le nom du capteur dans la liste.
+    - **Renommer**. Vous permet de définir votre nom pour le capteur.
+    - **Oublier**. Le capteur sera supprimé de la liste mais pourra être à nouveau associé.
 
-- When the battery level of the paired sensor becomes less than 15%, a pop-up notification appears on the screen.
+- Lorsque le niveau de batterie du capteur associé devient inférieur à 15 %, une notification contextuelle apparaît à l'écran.
 
 
-## Trip Recording
+## Enregistrement de trajet
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
 ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
 
@@ -129,7 +129,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,plugins_menu
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
 ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)  
 
@@ -137,20 +137,20 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,r
 
 </Tabs>
 
-Data from connected external sensors can be added to the GPX file using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).  
+Les données des capteurs externes connectés peuvent être ajoutées au fichier GPX à l'aide du [plugin Enregistrement de trajet](../plugins/trip-recording.md#recording-settings).  
 
-- Settings for sensors are only available if the External Sensors plugin is enabled.
-- To use data from external sensors, go to *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
-- A list of available sensors for each data type is always available, regardless of whether any sensor is connected.
-- If none of the sensor types are paired, use the [Pair new sensor](#pair-new-sensor) button in the Trip recording plugin *Settings* menu.
-- OsmAnd records data from selected sensors to the [track](../plugins/trip-recording.md#recorded-gpx-file) while recording a trip.
+- Les paramètres des capteurs ne sont disponibles que si le plugin Capteurs externes est activé.
+- Pour utiliser les données des capteurs externes, allez à *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
+- Une liste des capteurs disponibles pour chaque type de données est toujours disponible, qu'un capteur soit connecté ou non.
+- Si aucun type de capteur n'est associé, utilisez le bouton [Associer un nouveau capteur](#pair-new-sensor) dans le menu *Paramètres* du plugin Enregistrement de trajet.
+- OsmAnd enregistre les données des capteurs sélectionnés dans la [trace](../plugins/trip-recording.md#recorded-gpx-file) pendant l'enregistrement d'un trajet.
 
 :::note
-OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file) with such *tag names* for external sensors, with which your file can be easily read by the sports applications you use. For example, Strava or Runkeeper.
+OsmAnd utilise l'[**enregistrement de trace**](../plugins/trip-recording.md#recorded-gpx-file) avec de tels *noms de balises* pour les capteurs externes, avec lesquels votre fichier peut être facilement lu par les applications sportives que vous utilisez. Par exemple, Strava ou Runkeeper.
 :::
 
 
-### Data Analyze
+### Analyse des données
 
 <Tabs groupId="operating-systems">
 
@@ -168,9 +168,9 @@ OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file
 
 </Tabs>
 
-Data from external sensors can be transmitted to the device and displayed in OsmAnd during the trip as additional information. If you want to analyze this information, you need to record the trip, and only after you save it, in the *Track context menu → Analyze on map*, additional items for the recorded data appear.  
+Les données des capteurs externes peuvent être transmises à l'appareil et affichées dans OsmAnd pendant le trajet comme informations supplémentaires. Si vous souhaitez analyser ces informations, vous devez enregistrer le trajet, et seulement après l'avoir enregistré, dans le *Menu contextuel de la trace → Analyser sur la carte*, des éléments supplémentaires pour les données enregistrées apparaissent.  
 
-OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*, *Cadence*, *Bicycle power*, and *Temperature*. *Distance* and *Battery* are not used in [Analyze on map](../map/tracks/index.md#analyze-track-on-map).
+OsmAnd vous permet de sélectionner un 2ème axe pour l'analyse des données : *Fréquence cardiaque*, *Vitesse*, *Cadence*, *Puissance du vélo* et *Température*. La *Distance* et la *Batterie* ne sont pas utilisées dans [Analyser la trace sur la carte](../map/tracks/index.md#analyze-track-on-map).
 
 
 ## Widgets
@@ -179,7 +179,7 @@ OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*,
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → Add widget → <Translate android="true" ids="external_sensor_widgets"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="external_sensor_widgets"/>*
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
 
@@ -187,7 +187,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_c
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → Add widget → <Translate ios="true" ids="external_sensors_plugin_name"/>*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → <Translate ios="true" ids="external_sensors_plugin_name"/>*
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_2_ios.png)  
 
@@ -195,22 +195,22 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widgets) is automatically added to the list of widgets when you enable the External Sensors plugin. Before you start your trip, make sure that the widgets are on the screen, and if not, add them using the [Configure Screen](../widgets/configure-screen.md) menu. External Sensor widgets help you track data from your external sensors in real-time.  
+Le [widget Capteurs externes](../widgets/info-widgets.md#external-sensors-widgets) est automatiquement ajouté à la liste des widgets lorsque vous activez le plugin Capteurs externes. Avant de commencer votre trajet, assurez-vous que les widgets sont à l'écran, et si ce n'est pas le cas, ajoutez-les à l'aide du menu [Configurer l'écran](../widgets/configure-screen.md). Les widgets Capteurs externes vous aident à suivre les données de vos capteurs externes en temps réel.  
 
-1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>**. The heart rate sensor can transmit your heart rate in real-time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts.
-2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*). Your bike's power sensors measure the power you exert when you pedal. This allows you to analyze and optimize your workouts to improve efficiency and performance.
-3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>**. Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling.
-4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>**. Speed sensors provide information about your current speed while cycling.
-5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>**. Distance sensors measure the distance you travel when you're driving.
-6. **<Translate android="true" ids="external_device_characteristic_temperature"/>**. The widget displays the ambient temperature, which can be very useful if you don't want to overheat or freeze on your bike or motorcycle.
+1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>**. Le capteur de fréquence cardiaque peut transmettre votre fréquence cardiaque en temps réel. C'est utile pour l'entraînement cycliste lorsque vous souhaitez suivre votre fréquence cardiaque pour optimiser vos efforts d'entraînement.
+2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android uniquement*). Les capteurs de puissance de votre vélo mesurent la puissance que vous exercez lorsque vous pédalez. Cela vous permet d'analyser et d'optimiser vos entraînements pour améliorer l'efficacité et les performances.
+3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>**. La cadence est le nombre de tours de pédale par minute. Les capteurs de cadence vous aident à maintenir une vitesse de pédalage optimale pour un cyclisme efficace.
+4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>**. Les capteurs de vitesse fournissent des informations sur votre vitesse actuelle pendant que vous faites du vélo.
+5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>**. Les capteurs de distance mesurent la distance que vous parcourez lorsque vous conduisez.
+6. **<Translate android="true" ids="external_device_characteristic_temperature"/>**. Le widget affiche la température ambiante, ce qui peut être très utile si vous ne voulez pas surchauffer ou geler sur votre vélo ou votre moto.
 
-### Widget Settings
+### Paramètres du widget
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="external_sensor_widgets"/> → ⚙️ or <Translate android="true" ids="shared_string_settings"/>*
+Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="external_sensor_widgets"/> → ⚙️ ou <Translate android="true" ids="shared_string_settings"/>*
 
 ![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-android.png)
 
@@ -218,7 +218,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_c
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → External sensor → Settings*
+Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → Capteur externe → Paramètres*
 
  ![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 
@@ -226,13 +226,15 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-By default, the widget shows the first currently connected sensor of this type. If you want to choose different, you need to choose manually from the connected sensors list.
+Par défaut, le widget affiche le premier capteur de ce type actuellement connecté. Si vous souhaitez en choisir un autre, vous devez le sélectionner manuellement dans la liste des capteurs connectés.
 
 
-## Related Articles
+## Articles connexes
 
-- [Interact with Map](../../user/map/interact-with-map.md)
-- [Global Settings](../../user/personal/global-settings.md)
-- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+- [Interagir avec la carte](../../user/map/interact-with-map.md)
+- [Paramètres globaux](../../user/personal/global-settings.md)
+- [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *This article was last updated in November 2024*
+> *Cet article a été mis à jour pour la dernière fois en novembre 2024*
+
+-- source-hash: blake2s: e2062ab5afd4af6d729a2cfca37742ecad03ffd670f06c2c5c4655d5c2277911 --

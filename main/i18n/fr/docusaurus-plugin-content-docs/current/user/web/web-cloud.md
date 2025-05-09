@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label:  OsmAnd Cloud
-title: OsmAnd Cloud on the Website
+title: OsmAnd Cloud sur le site Web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,102 +17,102 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-## Overview
+## Aperçu
 
-The [OsmAnd Map Portal](https://osmand.net/map) is a browser-based service provided by OsmAnd, allowing users to explore maps, manage their data, plan and create trips, or simply browse the map.
+Le [Portail cartographique OsmAnd](https://osmand.net/map) est un service basé sur un navigateur fourni par OsmAnd, permettant aux utilisateurs d'explorer des cartes, de gérer leurs données, de planifier et de créer des voyages, ou simplement de parcourir la carte.
 
-#### Subscription Accesses
+#### Accès par abonnement
 
-The Map Portal can be used without registration; however, some features are exclusively available for OsmAnd Pro and OsmAnd Start users:
+Le Portail cartographique peut être utilisé sans inscription ; cependant, certaines fonctionnalités sont exclusivement disponibles pour les utilisateurs d'OsmAnd Pro et d'OsmAnd Start :
 
-| Features | Versions |
+| Fonctionnalités | Versions |
 |--- |--- |
-| [Navigation Route](./planner.md) | Free |
-| [Create track](./planner.md) | Free |
-| [Weather](./web-map.md) | Free |
-| [Favorites](./web-map.md) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [OsmAnd Cloud sync](./web-cloud.md) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [Web Search](./web-search.md)|[Osmand Start](https://osmand.net/blog/start) or <ProFeature/>|
-| [Tracks](./web-map.md) | <ProFeature/> |
+| [Itinéraire de navigation](./planner.md) | Gratuit |
+| [Créer une trace](./planner.md) | Gratuit |
+| [Météo](./web-map.md) | Gratuit |
+| [Favoris](./web-map.md) | [Osmand Start](https://osmand.net/blog/start) ou <ProFeature/> |
+| [Synchronisation OsmAnd Cloud](./web-cloud.md) | [Osmand Start](https://osmand.net/blog/start) ou <ProFeature/> |
+| [Recherche Web](./web-search.md)|[Osmand Start](https://osmand.net/blog/start) ou <ProFeature/>|
+| [Traces](./web-map.md) | <ProFeature/> |
 
 
-## How to Start
+## Comment commencer
 
-If you have [OsmAnd Pro](../personal/osmand-cloud.md#login) account or want to create [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) account you need to do next steps:
+Si vous avez un compte [OsmAnd Pro](../personal/osmand-cloud.md#login) ou si vous souhaitez créer un compte [OsmAnd Start](../personal/osmand-cloud.md#osmand-start), vous devez suivre les étapes suivantes :
 
-- Go to the [*OsmAnd Map Portal*](https://osmand.net/map).
-- Open **Account** menu.
-  - *Log in*. Enter the email you used to create your account. For Pro or Start subscriptions.
-  - *Create account*. For OsmAnd Start.
-
-
-## How to Change Language
-
-If you want to change the display languge:
-
-- The Web version of OsmAnd uses the language from the browser settings.  
-- For Chrome, the priority is `chrome://settings/languages`.  
-- You can change the system (menu) language manually by selecting:  
-    *Menu →* ⚙ *→ Turn off language*.
+- Accédez au [*Portail cartographique OsmAnd*](https://osmand.net/map).
+- Ouvrez le menu **Compte**.
+  - *Se connecter*. Entrez l'adresse e-mail que vous avez utilisée pour créer votre compte. Pour les abonnements Pro ou Start.
+  - *Créer un compte*. Pour OsmAnd Start.
 
 
-## Managing Account
+## Comment changer de langue
 
-*General Menu → Account*
+Si vous souhaitez changer la langue d'affichage :
 
-After registering on the web, users can access their account information, download backups, log out, delete their account, or change their email address.
-
-#### Access Account
-
-#### Backups
-
-#### Log out and Delete
-
-#### Change Email Address
+- La version Web d'OsmAnd utilise la langue des paramètres du navigateur.
+- Pour Chrome, la priorité est `chrome://settings/languages`.
+- Vous pouvez changer la langue du système (menu) manuellement en sélectionnant :
+    *Menu →* ⚙ *→ Désactiver la langue*.
 
 
-## OsmAnd Pro and OsmAnd Start Sync
+## Gestion du compte
 
-- **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#cross-platform) paid subscription. 
-- **OsmAnd Start** is a [free OsmAnd Cloud registration](https://osmand.net/blog/start).
+*Menu général → Compte*
 
-The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
+Après s'être inscrit sur le web, les utilisateurs peuvent accéder aux informations de leur compte, télécharger des sauvegardes, se déconnecter, supprimer leur compte ou changer leur adresse e-mail.
 
-1. Subscribe to **OsmAnd Pro**. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
-2. How to create **OsmAnd Start** account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
-3. Register your [Pro or Start account](../troubleshooting/setup.md#cross-platform) on the OsmAnd server inside OsmAnd app.
-4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
+#### Accéder au compte
 
-- Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).
+#### Sauvegardes
 
-![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)  
+#### Se déconnecter et supprimer
 
-- Your data, such as tracks (OsmAnd Pro) and favorites(OsmAnd Pro and OsmAnd Start), will appear in the menu after you log in. They are available for display on the map. But you need [to sync this data](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) from your devices.
-
-![View OsmAnd Web data](@site/static/img/web/web_data.png)  
-
-- To *DOWNLOAD BACKUP* from [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud), click the login field. On the login field you can see files info (total files number, total files size, cloud storage used) and account info (subscription type, start time and expire time of your subscription).
-
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file.png)  
-
-Choose needed files for downloading, `.zip` or `.osf` format of downloaded files and click *DOWNLOAD BACKUP* button:
-
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_1.png)  
-
-There is also a button to *logout* of the account.  
-
-- *LOGOUT*, *DELETE YOUR ACCOUNT* or *Change email* you find on the login field too. For opening *DELETE YOUR ACCOUNT* or *Change email* you need to click *Dangerous area*.
-
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_2.png)  
+#### Changer d'adresse e-mail
 
 
-## Cloud data
+## Synchronisation OsmAnd Pro et OsmAnd Start
 
-[Tracks and Favorites](web-map.md#tracks).
+- **OsmAnd Pro** est un abonnement payant [multiplateforme](../troubleshooting/setup.md#cross-platform).
+- **OsmAnd Start** est une [inscription gratuite à OsmAnd Cloud](https://osmand.net/blog/start).
+
+La capacité multiplateforme vous permet d'utiliser OsmAnd Pro sur toutes les plateformes *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))*. Pour ce faire, vous devez :
+
+1. Vous abonner à **OsmAnd Pro**. Pour savoir comment faire pour [Android, lisez ici](../purchases/android.md#how-to-buy), et pour [iOS, lisez ici](../purchases/ios.md#how-to-buy).
+2. Pour savoir comment créer un compte **OsmAnd Start**, lisez [ici](https://osmand.net/blog/start#how-to-create-an-account).
+3. Enregistrer votre compte [Pro ou Start](../troubleshooting/setup.md#cross-platform) sur le serveur OsmAnd dans l'application OsmAnd.
+4. L'adresse e-mail enregistrée sera votre identifiant pour activer OsmAnd Pro sur la plateforme web. La première fois, vous devrez choisir un mot de passe pour les futures connexions au portail web (veuillez suivre les instructions sur le portail web).
+
+- Entrez votre *e-mail* et votre *mot de passe* pour [osmand.net/map](https://osmand.net/map/).
+
+![Vue de l'activation Web d'OsmAnd](@site/static/img/web/web_pro_activation.png)
+
+- Vos données, telles que les traces (OsmAnd Pro) et les favoris (OsmAnd Pro et OsmAnd Start), apparaîtront dans le menu après votre connexion. Elles sont disponibles pour l'affichage sur la carte. Mais vous devez [synchroniser ces données](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) depuis vos appareils.
+
+![Vue des données Web d'OsmAnd](@site/static/img/web/web_data.png)
+
+- Pour *TÉLÉCHARGER LA SAUVEGARDE* depuis [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud), cliquez sur le champ de connexion. Sur le champ de connexion, vous pouvez voir les informations sur les fichiers (nombre total de fichiers, taille totale des fichiers, espace de stockage cloud utilisé) et les informations sur le compte (type d'abonnement, heure de début et heure d'expiration de votre abonnement).
+
+![Vue du fichier de sauvegarde Web d'OsmAnd](@site/static/img/web/web_backup_file.png)
+
+Choisissez les fichiers nécessaires à télécharger, le format `.zip` ou `.osf` des fichiers téléchargés et cliquez sur le bouton *TÉLÉCHARGER LA SAUVEGARDE* :
+
+![Vue du fichier de sauvegarde Web d'OsmAnd](@site/static/img/web/web_backup_file_1.png)
+
+Il y a aussi un bouton pour se *déconnecter* du compte.
+
+- *SE DÉCONNECTER*, *SUPPRIMER VOTRE COMPTE* ou *Changer d'e-mail* se trouvent également sur le champ de connexion. Pour ouvrir *SUPPRIMER VOTRE COMPTE* ou *Changer d'e-mail*, vous devez cliquer sur *Zone dangereuse*.
+
+![Vue du fichier de sauvegarde Web d'OsmAnd](@site/static/img/web/web_backup_file_2.png)
+
+
+## Données cloud
+
+[Traces et Favoris](web-map.md#tracks).
 <!--
 ## Map style
 
-In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
+In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.
 **Some examples:**
 
 - Nautical map style
@@ -126,6 +126,6 @@ In this section of the menu, you can change the map style. You can read more abo
 
 
 
-> *This article was last updated in September 2024*
+> *Cet article a été mis à jour pour la dernière fois en septembre 2024*
 
-
+-- source-hash: blake2s: a65b84e286c45f4965a8c84bc5fd3d8bf1227aa836cd70a315a14ca548140473 --
