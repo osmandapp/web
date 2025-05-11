@@ -85,7 +85,7 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 |[Accessibility](#accessibility) 🤖  | [Custom Settings](../plugins/accessibility.md#plugin-settings) |
 | [OsmAnd development](#osmand-development) | [Custom Settings](../plugins/development.md#plugin-settings) |
 | [OsmAnd Tracker](#osmand-tracker) 🤖  | [Map Layer](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#osmand-tracker-widget), [Context Menu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [AIS vessel tracker](#ais-tracker) 🤖  |  [Custom Settings](../plugins/ais-tracker.md#plugin-settings) |
+| [AIS vessel tracker](#ais-vessel-tracker) 🤖  |  [Custom Settings](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Plugin Settings
@@ -129,7 +129,7 @@ The following plugins provide their own settings:
 |  [Accessibility](#accessibility) 🤖  | [Settings](../plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
 | [OsmAnd development](#osmand-development) | [Plugin settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
 |  [OsmAnd Tracker](#osmand-tracker) 🤖  | All settings are configurable in a separate app |
-| [AIS vessel tracker](#ais-tracker) | [Plugin settings](../plugins/ais-tracker.md#plugin-settings) allow you to enable special settings |
+| [AIS vessel tracker](#ais-vessel-tracker) | [Plugin settings](../plugins/ais-tracker.md#plugin-settings) allow you to enable special settings |
 
 ### Plugin Actions
 
