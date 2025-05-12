@@ -194,6 +194,25 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 **Sync now** combines the *Upload all* and *Download all* buttons in the Changes menu, in the [Local and Cloud](#local-and-cloud) sections. **Conflicts** are not synchronized in this way.
 
 
+#### Syncing GPX Collections
+
+OsmAnd supports grouping GPX tracks into **collections**, which allows you to organize related tracks under a single label.
+
+When using **OsmAnd Cloud**, GPX collections are:
+
+- Backed up along with your personal data.
+- Synchronized across devices.
+- Restored with the same **collection structure** (including the name and all associated tracks).
+
+> *This ensures that your route organization is preserved, even after reinstalling the app or switching to a new device.*
+
+To use this feature:
+
+1. Create or assign tracks to a collection via *Menu → My Places → Tracks*.
+2. Go to *Menu → Settings → OsmAnd Cloud → Back up data* and enable synchronization.
+3. On another device, sign in with the same OsmAnd Cloud account and restore the data.
+
+
 ## Trash
 
 <Tabs groupId="operating-systems">

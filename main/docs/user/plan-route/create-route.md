@@ -148,6 +148,21 @@ You can select a [threshold value](../navigation/setup/gpx-navigation.md#attach-
 If you select a track and the ***unspecified*** profile icon ("?") is displayed next to the *Settings* icon, tap on it to choose whether to attach the track to roads or just connect the points with a straight line and treat it as a recorded track.
 :::
 
+<!--
+### Add Route Points to Navigation from GPX
+
+If you import a GPX file containing a route (with `<rtept>` elements), OsmAnd will display the route on the map but will not automatically convert the route points into a turn-by-turn navigation list.
+
+To generate navigation instructions:
+
+1. Open the GPX file from *My Places → Tracks*.
+2. Tap the track to open it.
+3. Tap the point menu (⋮) and choose **Add to Navigation**.
+4. OsmAnd will convert the route points into a full navigation route with instructions.
+
+> **NOTE:** *You may still use [Attach to roads](#attach-track-to-roads) to adjust geometry before converting to navigation.*
+-->
+
 
 ## Points & Segments
 
@@ -376,6 +391,6 @@ When calculating a route for navigation in *Plan a route*, you can find out addi
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
 - [Trip recording](../plugins/trip-recording.md)
 
-> *This article was last updated in January 2025*
+> *This article was last updated in May 2025*
 
 
