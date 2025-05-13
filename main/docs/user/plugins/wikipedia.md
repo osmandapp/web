@@ -21,7 +21,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 The Wikipedia plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
 :::
 
-Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles related to the points of interest directly on the map.  
+Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Popular Places (Android) / Wikipedia articles (iOS) related to the points of interest directly on the map.  
 
 The Wikipedia plugin is a separate feature that can be enabled/disabled as needed. Once enabled, it allows you to upload Wikipedia data [downloaded](../personal/maps-resources.md#download-maps-maps) for each geographical region. The map has two kinds of uploaded knowledge from Wikipedia: brief information and a full article.  
 
@@ -80,15 +80,20 @@ To see what data has already been uploaded, go to *<Translate ios="true" ids="sh
 
 ## Display Wikipedia on the Map
 
-By loading Wikipedia data for the required regions, you can control the visibility of that data on the map. Visibility is controlled by [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia), which can be shown or hidden for all uploaded regions by a certain [profile](../personal/profiles.md), for example, a profile for driving, a profile for cycling, another profile to show public transport, and others.  
+By loading Wikipedia data for the required regions, you can control the visibility of that data on the map. Visibility is controlled by [Popular Places (Wikipedia)](../map/point-layers-on-map.md#-wikipedia) **for Android** / [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia) **for iOS**, which can be shown or hidden for all uploaded regions by a certain [profile](../personal/profiles.md), for example, a profile for driving, a profile for cycling, another profile to show public transport, and others.  
 
 To show or hide Wikipedia POIs, first select a profile and then on/off **Wikipedia** option.
 
 To show/hide Wikipedia POIs, do the following:
 
-1. Go to: *<Translate android="true" ids="shared_string_menu,configure_map"/>*  
+1. Go to: 
+
+   **<Translate android="true" ids="android_button_seq"/>**: [*<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*](../map/popular_places.md#popular-places-wikipedia-menu) 
+
+   **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*
+
 2. Select a Profile, and look for the *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* section of settings in the menu.  
-3. Toggle *<Translate android="true" ids="shared_string_wikipedia"/>* on.  
+3. Toggle  *<Translate android="true" ids="poi_osmwiki"/>* **for Android** / *<Translate ios="true" ids="download_wikipedia_maps"/>* **for iOS** on.  
 
 <Tabs groupId="operating-systems">
 
