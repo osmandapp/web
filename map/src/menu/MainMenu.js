@@ -70,7 +70,9 @@ import {
     SHARE_FILE_MAIN_URL,
     TRACK_ANALYZER_URL,
     INFO_MENU_URL,
-    SHARE_MENU_URL, MAIN_URL, LOGIN_URL,
+    SHARE_MENU_URL,
+    MAIN_URL,
+    LOGIN_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -83,7 +85,7 @@ import { getShareFileInfo, SHARE_TYPE, updateUserRequests } from '../manager/Sha
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
-import {openLoginMenu} from "../manager/LoginManager";
+import { openLoginMenu } from '../manager/LoginManager';
 
 export default function MainMenu({
     size,
@@ -135,7 +137,8 @@ export default function MainMenu({
     useEffect(() => {
         if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ctx.openLoginMenu && !ctx.loginUser) {
             const params = new URLSearchParams(location.search);
-            const to = params.get('redirect')
+            const to = params.get('redirect');
+            console.log('redirect', to);
             if (to) {
                 setRedirectUrl(to);
             }
