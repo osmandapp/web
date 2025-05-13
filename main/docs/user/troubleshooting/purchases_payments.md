@@ -14,9 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 
 ## How to Restore Purchases
 
-- **For iOS**. Open OsmAnd and navigate to *Menu → Settings → Troubleshooting →* tap *Restore purchases* and enter your Apple ID. For more details, refer to [this article](../purchases/ios.md#restore-purchases).
-- **For Android**. Log in to the same app store account used for purchasing OsmAnd. Search for *OsmAnd+* or *OsmAnd Free* (for restoring *Maps+*, *OsmAnd Live*, or *OsmAnd Pro*) and install the app.
-No additional payment is required. If the paid features are not restored, go to your device's *Settings → Apps →* select the app store, clear the cache, restart your device, and try again. For further details, refer to [this article](../purchases/android.md#restore-purchases).
+- **For iOS**. Open OsmAnd and navigate to *Menu → Settings → Purchases →* tap *Restore purchases* and enter your Apple ID. For more details, refer to [this article](../purchases/ios.md#restore-purchases).
+- **For Android**. Log in to the same app's store account used for purchasing OsmAnd. Search for *OsmAnd+* or *OsmAnd Free* (for restoring *Maps+*, *OsmAnd Live*, or *OsmAnd Pro*) and install the app.
+No additional payment is required. If the paid features are not restored, go to your device's *Settings → Apps →* select the app's store, clear the cache, restart your device, and try again. For further details, refer to [this article](../purchases/android.md#restore-purchases).
 
 
 ## Cross-Platform Purchases

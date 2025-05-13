@@ -214,7 +214,7 @@ To restore the purchase, please check what OsmAnd plan you bought.
 - Install an application by the link below.
 
 |  App  | Google Play  | Huawei AppGallery |
-| :------------- | :------------- | :------------- | :------------- |
+| :------------- | :------------- | :------------- |
 | OsmAnd  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand) | ✔  &nbsp;&nbsp;[Install](https://appgallery.huawei.com/#/app/C101486545) |
 | OsmAnd+  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** |
 
