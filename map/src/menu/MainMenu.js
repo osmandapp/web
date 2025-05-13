@@ -108,6 +108,8 @@ export default function MainMenu({
     const [selectedType, setSelectedType] = useState(null);
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
 
+    const [redirectUrl, setRedirectUrl] = useState(null);
+
     const [savePrevState, setSavePrevState] = useState(false);
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
@@ -132,14 +134,18 @@ export default function MainMenu({
 
     useEffect(() => {
         if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ctx.openLoginMenu && !ctx.loginUser) {
-            ctx.setPrevPageUrl(location.pathname + location.search + location.hash);
+            const params = new URLSearchParams(location.search);
+            const to = params.get('redirect')
+            if (to) {
+                setRedirectUrl(to);
+            }
             openLoginMenu(ctx, navigate);
         }
     }, [location.pathname, ctx, navigate]);
 
     useEffect(() => {
-        if (ctx.loginUser && ctx.prevPageUrl) {
-            navigate(ctx.prevPageUrl.url.pathname + ctx.prevPageUrl.url.search + ctx.prevPageUrl.url.hash);
+        if (ctx.loginUser && redirectUrl) {
+            window.location.href = redirectUrl;
         }
     }, [ctx.loginUser]);
 
