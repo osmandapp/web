@@ -132,9 +132,16 @@ export default function MainMenu({
 
     useEffect(() => {
         if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ctx.openLoginMenu && !ctx.loginUser) {
+            ctx.setPrevPageUrl(location.pathname + location.search + location.hash);
             openLoginMenu(ctx, navigate);
         }
     }, [location.pathname, ctx, navigate]);
+
+    useEffect(() => {
+        if (ctx.loginUser && ctx.prevPageUrl) {
+            navigate(ctx.prevPageUrl.url.pathname + ctx.prevPageUrl.url.search + ctx.prevPageUrl.url.hash);
+        }
+    }, [ctx.loginUser]);
 
     // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {
