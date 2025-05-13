@@ -21,30 +21,51 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly/>
 
-The **Popular Places** tool in OsmAnd provides a curated selection of globally notable locations, helping users explore famous landmarks and points of interest. This feature is entirely powered by [Wikidata](https://www.wikidata.org), a structured open knowledge base that contains data about millions of geographic objects, including coordinates, images, and multilingual descriptions.
+The **Popular Places** tool in OsmAnd provides a curated selection of globally notable locations, helping users explore famous landmarks and points of interest. This feature is entirely powered by [Wikidata](https://www.wikidata.org) and [Wikipedia](https://www.wikipedia.org/), which are structured open knowledge bases containing data about millions of geographic objects — including articles, coordinates, images, and multilingual descriptions.
 
-Each place listed in the Popular Places tool is linked to a **Wikidata ID**, which allows OsmAnd to display rich information and related images for that object. This linkage makes the Wikidata ID essential for identifying and visualizing each place accurately.
+Each place listed in the Popular Places tool is linked to a **Wikidata ID**, enabling OsmAnd to display detailed information and relevant images for the selected location. The presence of a Wikidata ID is essential for accurate identification and visualization of each place.
 
-Currently, the feature includes a focused subset of approximately **50,000 to 150,000 top-rated locations**, selected from about **1 million** Wikidata objects that are also present in [OpenStreetMap](https://www.openstreetmap.org). While Wikidata contains over **10 million** objects with geographic coordinates, this tool deliberately highlights only the most notable ones, making it a small but high-quality selection.
+Currently, the tool features a focused subset of approximately **50,000 to 150,000 top-rated locations**, selected from around **1 million** Wikidata objects that also exist in [OpenStreetMap](https://www.openstreetmap.org). Although Wikidata includes over **10 million** geotagged objects globally, OsmAnd highlights only the most prominent ones—resulting in a small but high-quality selection.
 
-> *This is the first iteration of the Popular Places tool in OsmAnd. We are open to feedback regarding specific location issues or suggestions for future improvements.*
+> *This is the first iteration of the Popular Places tool in OsmAnd. We welcome your feedback on any issues or missing locations.*
 
-You can learn more about how to use this feature in the rest of this guide or share your feedback through the [OsmAnd GitHub repository](https://github.com/osmandapp/OsmAnd).
+You can continue reading this guide to learn how to use the feature, or [submit feedback on GitHub](https://github.com/osmandapp/OsmAnd).
 
-![Popular places](@site/static/img/map/popular_places/popular_places.png) 
+![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
 
 ## How to Use
 
-The Popular Places feature can be activated in two different sections of the app:
+<InfoAndroidOnly/>
 
-Via [**Configure Map**](#popular-places-wikipedia-menu):
-Enable the overlay via **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
-→ POIs will appear on the map with thumbnails from Wikidata (if available). You can choose between offline Wikipedia data and online data by adjusting the POI Source in the [Popular Places menu](#popular-places-wikipedia-menu).
+The **Popular Places** feature — which includes POIs on the map and a curated list of notable locations — can be accessed from two different sections of the app:
 
-Via [**Search**](#explore-mode-by-search):
-Go to  *<Translate android="true" ids="map_widget_search,search_categories,popular_places_nearby"/>* to explore nearby landmarks and attractions.
+- **Free version**  
+  Via [**Search**](#explore-mode-by-search):  
+  Go to **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>* to explore nearby landmarks and attractions.
 
+- **Paid versions** *([Maps+ and OsmAnd Pro](../purchases/android.md))*  
+  Via [**Configure Map**](#popular-places-wikipedia-menu):  
+  Enable the overlay via **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>* → Points of interest will appear on the map, including thumbnail images from Wikidata (if available).  
+  You can switch between offline Wikipedia data and online data by adjusting the **POI Source** in the [Popular Places menu](#popular-places-wikipedia-menu).
 
+### Explore Mode by Search
+
+![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
+
+**<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+
+The *<Translate android="true" ids="popular_places_nearby"/>* section displays the most popular tourist destinations nearby. You can scroll left or right to browse highlighted locations around you, or tap the *<Translate android="true" ids="shared_string_show_all"/>* button to open the full list of popular places.
+
+Each item includes an image, a short description, a POI category tag, as well as the distance and direction to the location.
+
+At the top of the list, you’ll find the *<Translate android="true" ids="shared_string_show_on_map"/>* button, which displays all listed POIs directly on the map.
+
+Tapping any location opens the [POI’s context menu](./map-context-menu.md) on the map, where you can access the [Online Photos](#online-photos-menu) menu and view the Wikipedia article linked to the selected place.
+
+:::tip
+This feature works **online only** in the free version.  
+To use it **offline**, you need to purchase a [Maps+ or OsmAnd Pro](../purchases/android.md) subscription and download the [Wikipedia maps](../plugins/wikipedia.md) for your selected region.
+:::
 
 ### Popular Places (Wikipedia) Menu
 
@@ -67,24 +88,6 @@ Key features:
 - **<Translate android="true" ids="show_image_previews"/>** - Enable this setting to display image thumbnails for POIs directly on the map, enhancing visual navigation.
 
 
-### Explore Mode by Search
-
-<InfoAndroidOnly/>
-
-![Explore Mode](../../../blog/2025-04-18-android-5-0/img/explore_search.png)
-
-The **Explore** mode has been introduced, replacing the *History* tab, making it easier than ever to discover *top-ranked points of interest (POIs)*. Now, you can explore nearby POIs, view their *photos* on the map, and easily access your *Recently visited* locations — all within the new **Explore** tab. This update makes finding interesting places faster and more convenient.
-
-Key features:
-
-- **Explore nearby POIs** — Discover *popular places* and *top-ranked POIs* based on *popularity*, with helpful *photos* displayed on the map and in the search results.
-- **Recently visited** - Access your *recently visited (history) places* within the **Explore** tab for quick navigation back to previously explored locations.
-- **Wikipedia integration** - *Wikipedia entries* are combined with POI details, allowing you to view detailed information, including photos and descriptions for each location.
-
-How to use:  
-Go to *Menu → Search → Explore* to start discovering nearby POIs and view your recently visited places.
-
-Note: To use Popular Places (Wikipedia) online without downloading articles, enable ["POI Source > Online Only"](#popular-places-wikipedia-menu).
 
 ## Online Photos Menu
 
