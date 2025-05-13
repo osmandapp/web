@@ -138,7 +138,6 @@ export default function MainMenu({
         if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ctx.openLoginMenu && !ctx.loginUser) {
             const params = new URLSearchParams(location.search);
             const to = params.get('redirect');
-            console.log('redirect', to);
             if (to) {
                 setRedirectUrl(to);
             }
