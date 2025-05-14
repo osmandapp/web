@@ -1,4 +1,4 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg26" style="fill:none">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 
 <g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
 
@@ -13,6 +13,11 @@
 </defs>
 
 </g>%n%n
-<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
-<path d="M4 40h40s-5.22-8-12-10c-16 0-14.61.42-26 2z" id="path2-3" style="fill:#fff;fill-opacity:1;stroke-width:1"/><path d="M4 18h40s-5.22-8-12-10c-16 0-14.61.42-26 2z" id="path2-3-6" style="fill:#fff;fill-opacity:1;stroke-width:1"/>
+<g transform="translate(138.000000, 8.000000) scale(2.000000 2.000000) "> 
+
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 1 10 L 11 10 C 11 10 9.695312 8 8 7.5 C 4 7.5 4.347656 7.605469 1.5 8 Z M 1 10 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 1 4.5 L 11 4.5 C 11 4.5 9.695312 2.5 8 2 C 4 2 4.347656 2.105469 1.5 2.5 Z M 1 4.5 "/>
+</g>
+
 </g>%n%n</svg>
