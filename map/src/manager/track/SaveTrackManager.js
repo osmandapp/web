@@ -189,7 +189,8 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                         const gpxfile = new File([f], file.name, {
                             type: 'text/plain',
                         });
-                        TracksManager.getTrackData(gpxfile).then(async (track) => {
+                        const track = await TracksManager.getTrackData(gpxfile);
+                        if (track) {
                             track.name = file.name;
                             track.info = await Utils.getFileInfo(newGpxFiles[file.name]);
                             Object.keys(track).forEach((t) => {
@@ -197,7 +198,7 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                             });
                             newGpxFiles[oldName].url = null;
                             ctx.setGpxFiles({ ...newGpxFiles });
-                        });
+                        }
                     } else {
                         newGpxFiles[oldName].url = null;
                         ctx.setGpxFiles({ ...newGpxFiles });
