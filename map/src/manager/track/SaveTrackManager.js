@@ -183,30 +183,22 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
             let newGpxFiles = cloneDeep(ctx.gpxFiles);
             for (const file of files) {
                 if (file.name === newFileName) {
-                    let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
-                        file.type
-                    )}&name=${encodeURIComponent(file.name)}`;
-                    newGpxFiles[file.name] = {
-                        url: ctx.gpxFiles[oldName].url ? url : null,
-                        clienttimems: file.clienttimems,
-                        updatetimems: file.updatetimems,
-                        showOnMap: ctx.gpxFiles[oldName].showOnMap,
-                        name: file.name,
-                        type: 'GPX',
-                    };
+                    newGpxFiles[file.name] = preparedGpxFile({ file, oldFile: ctx.gpxFiles[oldName] });
                     if (newGpxFiles[file.name].url) {
                         let f = await Utils.getFileData(newGpxFiles[file.name]);
                         const gpxfile = new File([f], file.name, {
                             type: 'text/plain',
                         });
-                        TracksManager.getTrackData(gpxfile).then((track) => {
+                        const track = await TracksManager.getTrackData(gpxfile);
+                        if (track) {
                             track.name = file.name;
+                            track.info = await Utils.getFileInfo(newGpxFiles[file.name]);
                             Object.keys(track).forEach((t) => {
                                 newGpxFiles[file.name][t] = track[t];
                             });
                             newGpxFiles[oldName].url = null;
                             ctx.setGpxFiles({ ...newGpxFiles });
-                        });
+                        }
                     } else {
                         newGpxFiles[oldName].url = null;
                         ctx.setGpxFiles({ ...newGpxFiles });
@@ -365,6 +357,7 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
         const type = OBJECT_TYPE_CLOUD_TRACK;
         ctx.setUpdateInfoBlock(true);
         ctx.setCurrentObjectType(type);
+
         track.info = await Utils.getFileInfo(newGpxFiles[file.name]);
         track.name = file.name;
         Object.keys(track).forEach((t) => {
