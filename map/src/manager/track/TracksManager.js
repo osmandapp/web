@@ -1425,10 +1425,22 @@ export async function openTrackOnMap({
     return newGpxFiles;
 }
 
-export function preparedGpxFile({ file, sharedFile = false }) {
+export function preparedGpxFile({ file, sharedFile = false, oldFile = null }) {
     const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
     const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
     const qsInfo = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name + '.info')}`;
+    if (oldFile) {
+        return {
+            url: oldFile.url ? URL + qs : null,
+            infoUrl: oldFile.infoUrl ? URL + qsInfo : null,
+            clienttimems: file.clienttimems,
+            updatetimems: file.updatetimems,
+            showOnMap: oldFile.showOnMap,
+            name: file.name,
+            type: 'GPX',
+        };
+    }
+
     return {
         url: URL + qs,
         infoUrl: URL + qsInfo,
