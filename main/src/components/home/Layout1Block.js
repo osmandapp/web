@@ -10,7 +10,7 @@ export default function Layout1Block({ children, names, altSectionClass }) {
 
                     <div className="col col--6 padding-vert--md padding-horiz--md" align="center">
                         <h1 className="index-title text--center">{names ? names[0] : ''}</h1>
-                        {children[0]}
+                        {children}
                     </div>
                     <div className="col col--4" />
                 </div>
