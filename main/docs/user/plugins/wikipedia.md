@@ -121,6 +121,7 @@ When you tap the Search button, an additional panel appears allowing you to [sea
 - In the **Android** version, you can open [Search](../search/index.md) by tapping the *Search icon* in the upper left corner of the screen and/or tapping the *Search option* in the menu.
 - In the **iOS** version, to open [Search](../search/index.md), the Search icon is in the upper left corner of the screen.
 
+<!--
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -136,6 +137,8 @@ When you tap the Search button, an additional panel appears allowing you to [sea
 </TabItem>
 
 </Tabs>
+
+-->
 
 - To search by the Wikipedia [category](../search/search-poi.md#poi-search), select: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
@@ -165,8 +168,10 @@ To open the Wikipedia article:
 1. Enable [Wikipedia POI layer](../map/point-layers-on-map.md#-wikipedia) for a specified profile.
 2. Tap POI on the map.
 3. In the [context menu](../map/map-context-menu.md) of a POI tap *Details* (or simply pull the *context menu* up) to view an abstract of the chosen Wikipedia article.
-4. If you tap that text, you will be redirected to the offline Wikipedia article.
-5. For **Android** version of the OsmAnd app you can also use *Read article* or *Read full article* buttons.
+4. If you tap that text (for iOS version), you will be redirected to the offline Wikipedia article.
+5. Use the *Read article* or *Read full article* button to open the full version of the Wikipedia article.
+
+
 
 <Tabs groupId="operating-systems">
 
@@ -194,7 +199,7 @@ You can [set the language(-s)](#set-preferred-language) in which you prefer to r
 In the **Android** and **iOS** versions of the OsmAnd app, you can set your preferred language (or languages) for displaying Wikipedia articles using the *Configure map menu*. If you select more than one language, the *Wikipedia* articles on the map will be shown in any of them. Go to:
 
 1. *<Translate android="true" ids="shared_string_menu,configure_map"/>*.
-2. Select needed profile and in the *<Translate android="true" ids="shared_string_show"/>* section choose *<Translate android="true" ids="shared_string_wikipedia"/>*.  
+2. Select needed profile and in the *<Translate android="true" ids="shared_string_show"/>* section choose *<Translate android="true" ids="poi_osmwiki"/>* for Android / *<Translate ios="true" ids="download_wikipedia_maps"/>* for iOS.  
 3. Disable *<Translate android="true" ids="shared_string_all_languages"/>* option.  
 4. Select specific language(-s) in the opened list.  
 
@@ -236,7 +241,7 @@ In case the *Wikipedia article* is available in different languages, you can swi
 
 <TabItem value="ios" label="iOS">
 
-![Switching languages for a specific article](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png) ![Switching languages for a specific article](@site/static/img/plugins/wikipedia/switch_languages_ios_2.png)
+![Switching languages for a specific article](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png)
 
 </TabItem>
 
@@ -280,4 +285,4 @@ In the **iOS** version of the app, you can also access the image download option
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *This article was last updated in October 2024*
+> *This article was last updated in May 2025*
