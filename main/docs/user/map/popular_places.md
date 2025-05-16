@@ -114,13 +114,21 @@ Tapping any image-based POI on the map opens the [POI context menu](./map-contex
 
 This is a section within the [POI context menu](./map-context-menu.md) that displays a photo preview of the selected Popular Place (Wikipedia). You can scroll horizontally to browse through the available photos, or tap any image to open it in [full screen mode](#gallery).
 
-Learn more about additional options in the [Actions With Photos](#actions) section and [Gallery Menu](#gallery).
+Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
 
 ### Data Sources
 
+The image data in Popular Places comes from [Wikidata](https://en.wikipedia.org/wiki/Wikidata), a collaboratively edited, multilingual knowledge graph.  
+As noted in the [Overview](#overview), each location featured in the Popular Places tool is linked to a [**Wikidata ID**](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID), which allows OsmAnd to display detailed descriptions and relevant images.
+
+In the [Map Context Menu](../map/map-context-menu.md), each Popular Place includes a clickable Wikidata tag.  
+Tapping this tag opens the corresponding object's page on the Wikidata website.
+
+
+
 ### Actions
 
-How to access:
+In the Map Context menu How to access:
 
 - Tap the **Show All** (Android) / **View All** (iOS) button to open the [gallery](#gallery) in full screen mode, where you can swipe through all available photos for the selected location.
 
@@ -146,12 +154,7 @@ How to access:
 
 </Tabs>
 
-The **Gallery Menu** can display up to **100 images** related to the selected point of interest. You can swipe through all available photos. Tapping a photo briefly opens a detailed view showing:
-
-- **Name**  
-- **Date added**  
-- **Author**  
-- **License**  
+The **Gallery Menu** can display up to **100 images** related to the selected point of interest. You can swipe through all available photos. Tapping a photo briefly opens a detailed view showing: *Name*, *Date added*, *Author*, *License* 
 
 You can also perform the following actions on each photo:
 
@@ -159,22 +162,14 @@ You can also perform the following actions on each photo:
   Share the selected image using any compatible app installed on your device (e.g., messaging, email, or social media). The shared content includes the image and its source link (if available).
 
 - **Details**  
-  Open a detailed view showing metadata about the image, including:
-  - **Name**
-  - **Date added**
-  - **Author**
-  - **License**
-  - **Source**
-  - **Direct link**
+  Open a detailed view showing metadata about the image, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
 
 - **Open in browser**  
-  Launch the image’s source page (usually on Wikimedia Commons) in your default browser. This allows you to view the full image, licensing information, and related content.
+  Launch the image’s source page (usually on [Wikimedia Commons](https://commons.wikimedia.org/)) in your default browser. This allows you to view the full image, licensing information, and related content.
 
 - **Download**  
   Save the image to your device’s storage. The downloaded image can be found in your device’s default Downloads folder and accessed offline.
 
-
----
 
 <Tabs groupId="operating-systems">
 
@@ -202,7 +197,6 @@ On **iOS**, long-pressing a photo opens a context menu with additional actions:
 
 </Tabs>
 
----
 
 <Tabs groupId="operating-systems">
 
@@ -220,11 +214,4 @@ On **iOS**, long-pressing a photo opens a context menu with additional actions:
 
 </Tabs>
 
-The **Details** screen provides full metadata for the selected photo, including:
-
-- **Name**  
-- **Date added**  
-- **Author**  
-- **License**  
-- **Source**  
-- **Direct link**
+The **Details** screen provides full metadata for the selected photo, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
