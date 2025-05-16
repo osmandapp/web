@@ -48,9 +48,10 @@ export default function Home() {
         <Screenshots altSectionClass='sectionAlt'/>
         <Features />
         <Impressions altSectionClass='sectionAlt'/>
-        <Layout1Block names={['Poll']} >
+        <Layout2Blocks names={['Poll', 'Poll']} >
           <Poll />
-        </Layout1Block>
+          <Poll />
+        </Layout2Blocks>
         
       </main>
     </Layout>
