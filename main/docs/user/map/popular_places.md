@@ -40,15 +40,15 @@ You can continue reading this guide to learn how to use the feature, or [submit 
 The **Popular Places** feature — which includes POIs on the map and a curated list of notable locations — can be accessed from two different sections of the app:
 
 - **Free version**  
-  Via [**Search**](#explore-mode-by-search):  
+  Via [**Search**](#explore-in-search):  
   Go to **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>* to explore nearby landmarks and attractions.
 
 - **Paid versions** *([Maps+ and OsmAnd Pro](../purchases/android.md))*  
-  Via [**Configure Map**](#popular-places-wikipedia-menu):  
+  Via [**Configure Map**](#enable-layer):  
   Enable the overlay via **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>* → Points of interest will appear on the map, including thumbnail images from Wikidata (if available).  
-  You can switch between offline Wikipedia data and online data by adjusting the **POI Source** in the [Popular Places menu](#popular-places-wikipedia-menu).
+  You can switch between offline Wikipedia data and online data by adjusting the **POI Source** in the [Popular Places menu](#enable-layer).
 
-### Explore Mode by Search
+### Explore in Search
 
 ![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
 
@@ -60,14 +60,14 @@ Each item includes an image, a short description, a POI category tag, as well as
 
 At the top of the list, you’ll find the *<Translate android="true" ids="shared_string_show_on_map"/>* button, which displays all listed POIs directly on the map.
 
-Tapping any location opens the [POI context menu](./map-context-menu.md) on the map, where you can access the [Online Photos](#online-photos-menu) section and view the linked [Wikipedia article](../plugins/wikipedia.md)  for the selected place.
+Tapping any location opens the [POI context menu](./map-context-menu.md) on the map, where you can access the [Online Photos](#online-photos) section and view the linked [Wikipedia article](../plugins/wikipedia.md)  for the selected place.
 
 :::tip
 This feature works **online only** in the free version.  
 To use it **offline**, you need to purchase a [Maps+ or OsmAnd Pro](../purchases/android.md) subscription and download the [Wikipedia maps](../plugins/wikipedia.md) for your selected region.
 :::
 
-### Popular Places (Wikipedia) Menu
+### Enable Layer
 
 ![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
 
@@ -86,13 +86,13 @@ Key options in this menu include:
 - **POI Source** – Choose between:
   - **Offline** mode (requires downloaded Wikipedia articles), or
   - **Online only** mode (no article download required).  
-    In Online mode, POIs and their images are displayed dynamically — similar to the [Explore Mode by Search](#explore-mode-by-search).
+    In Online mode, POIs and their images are displayed dynamically — similar to the [Explore Mode by Search](#explore-in-search).
 - **<Translate android="true" ids="show_image_previews"/>** – Enable this to show thumbnail previews of images for POIs directly on the map.
 
-Tapping any image-based POI on the map opens the [POI context menu](./map-context-menu.md), where you can access the [Online Photos](#online-photos-menu) section and open the linked [Wikipedia article](../plugins/wikipedia.md) for the selected place.
+Tapping any image-based POI on the map opens the [POI context menu](./map-context-menu.md), where you can access the [Online Photos](#online-photos) section and open the linked [Wikipedia article](../plugins/wikipedia.md) for the selected place.
 
 
-## Online Photos Menu
+## Online Photos
 
 <Tabs groupId="operating-systems">
 
@@ -112,22 +112,23 @@ Tapping any image-based POI on the map opens the [POI context menu](./map-contex
 
 *<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
-This is a section within the [POI context menu](./map-context-menu.md) that displays a photo preview of the selected Popular Place (Wikipedia). You can scroll horizontally to browse through the available photos, or tap any image to open it in [full screen mode](#gallery-menu).
+This is a section within the [POI context menu](./map-context-menu.md) that displays a photo preview of the selected Popular Place (Wikipedia). You can scroll horizontally to browse through the available photos, or tap any image to open it in [full screen mode](#gallery).
 
-Learn more about additional options in the [Actions With Photos](#actions-with-photos) section and [Gallery Menu](#gallery-menu).
+Learn more about additional options in the [Actions With Photos](#actions) section and [Gallery Menu](#gallery).
 
+### Data Sources
 
-### Actions With Photos
+### Actions
 
 How to access:
 
-- Tap the **Show All** (Android) / **View All** (iOS) button to open the [gallery](#gallery-menu) in full screen mode, where you can swipe through all available photos for the selected location.
+- Tap the **Show All** (Android) / **View All** (iOS) button to open the [gallery](#gallery) in full screen mode, where you can swipe through all available photos for the selected location.
 
-- Tap any photo to view it in [full screen](#gallery-menu) and access the available actions:  
+- Tap any photo to view it in [full screen](#gallery) and access the available actions:  
   **Share**, **Details**, **Open in browser**, and **Download**.
 
 
-### Gallery Menu
+### Gallery
 
 <Tabs groupId="operating-systems">
 
