@@ -28,7 +28,7 @@ In this article, we will explore what HH Routing is, how it works in OsmAnd, and
 
 ## What is Highway Hierarchy (HH) Routing
 
-[Highway Hierarchy (HH) routing](https://en.wikipedia.org/wiki/Road_hierarchy) is an advanced method to calculate routes more efficiently by categorizing roads according to their importance. Instead of examining every possible path with equal weight, **HH routing first focuses on primary and major arterial roads before considering smaller local streets**.  
+**Highway Hierarchy (HH) routing** is an advanced method to calculate routes more efficiently by categorizing roads according to their importance. Instead of examining every possible path with equal weight, **HH routing first focuses on primary and major arterial roads before considering smaller local streets**.  
 
 This approach speeds up the route calculation process, which is especially valuable offline when resources are limited. It also improves route accuracy by prioritizing the most logical and efficient paths.
 
@@ -96,7 +96,7 @@ In contrast, HH routing relies on a pre-organized road network hierarchy, priori
 
 Behind the simplicity of fast, offline navigation is OsmAnd’s carefully engineered support for Highway Hierarchy (HH) routing. While most users don’t need to know the technical details, a few choices under the hood can make a noticeable difference, especially on large maps or lower-powered devices.  
 
-*OsmAnd provides two internal implementations of HH routing:*
+*OsmAnd provides [two internal implementations of HH routing](https://osmand.net/docs/user/navigation/guidance/navigation-settings/#development-settings):*
 
 - **HH x Java** – The standard engine, reliable and broadly compatible.
 - **HH x C++** – A faster, memory-efficient engine designed for larger maps and high-performance needs.
@@ -260,7 +260,7 @@ To showcase the performance advantages of HH routing, we’ve prepared several r
     - Track recording
     - Offline map display and overlays
 
-If your question isn’t listed here, check out the [Navigation Settings article](https://osmand.net/docs/user/navigation/guidance/navigation-settings).
+If your question isn’t listed here, check out the [Navigation Settings article](https://osmand.net/docs/user/navigation/guidance/navigation-settings/#development-settings).
 
 
 ## Conclusion
