@@ -1,4 +1,4 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg12" style="fill:none">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 
 <g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
 
@@ -6,6 +6,10 @@
 <path opacity="0.95" fill-rule="evenodd" clip-rule="evenodd" d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19ZM10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#BA37DD"/>
 
 </g>%n%n
-<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
-<path style="color:#000;clip100-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000;solid-opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;paint-order:normal;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" d="M45.1 2.9c3.51 3.52-3.59 15.3-15.24 26.96C18.21 41.51 6.42 48.61 2.9 45.1c-3.5-3.52 3.6-15.3 15.24-26.96C29.79 6.49 41.58-.61 45.1 2.9z" id="path819"/>
+<g transform="translate(138.000000, 8.000000) scale(2.000000 2.000000) "> 
+
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 11.273438 0.726562 C 12.152344 1.605469 10.378906 4.550781 7.464844 7.464844 C 4.550781 10.378906 1.605469 12.152344 0.726562 11.273438 C -0.148438 10.394531 1.625 7.449219 4.535156 4.535156 C 7.449219 1.621094 10.394531 -0.152344 11.273438 0.726562 Z M 11.273438 0.726562 "/>
+</g>
+
 </g>%n%n</svg>

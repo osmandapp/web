@@ -1,4 +1,4 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 
 <g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
@@ -7,8 +7,10 @@
 </g>%n%n
 <g transform="translate(138.000000, 8.000000) scale(2.000000 2.000000) "> 
 
-<path fill-rule="evenodd" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="0.7" d="M 2 6 L 2 11 L 1 11 L 1 6 Z M 2 6 "/>
-<path fill-rule="evenodd" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="0.7" d="M 11 6 L 11 11 L 10 11 L 10 6 Z M 11 6 "/>
-<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 1 1 L 11 1 L 11 6 L 1 6 Z M 1 1 "/>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(26.666668%,26.666668%,26.666668%);fill-opacity:0.698039;" d="M 2 6 L 2 11 L 1 11 L 1 6 Z M 2 6 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(26.666668%,26.666668%,26.666668%);fill-opacity:0.698039;" d="M 11 6 L 11 11 L 10 11 L 10 6 Z M 11 6 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(26.666668%,26.666668%,26.666668%);fill-opacity:1;" d="M 1 1 L 11 1 L 11 6 L 1 6 Z M 1 1 "/>
+</g>
 
 </g>%n%n</svg>

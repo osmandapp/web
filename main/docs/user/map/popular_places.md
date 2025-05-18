@@ -21,172 +21,197 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly/>
 
-The **Popular Places** tool in OsmAnd provides a curated selection of globally notable locations, helping users explore famous landmarks and points of interest. This feature is entirely powered by [Wikidata](https://www.wikidata.org), a structured open knowledge base that contains data about millions of geographic objects, including coordinates, images, and multilingual descriptions.
+The **Popular Places** tool in OsmAnd provides a curated selection of globally notable locations, helping users explore famous landmarks and points of interest. This feature is entirely powered by [Wikidata](https://www.wikidata.org) and [Wikipedia](https://www.wikipedia.org/), which are structured open knowledge bases containing data about millions of geographic objects — including articles, coordinates, images, and multilingual descriptions.
 
-Each place listed in the Popular Places tool is linked to a **Wikidata ID**, which allows OsmAnd to display rich information and related images for that object. This linkage makes the Wikidata ID essential for identifying and visualizing each place accurately.
+Each place listed in the Popular Places tool is linked to a **Wikidata ID**, enabling OsmAnd to display detailed information and relevant images for the selected location. The presence of a Wikidata ID is essential for accurate identification and visualization of each place.
 
-Currently, the feature includes a focused subset of approximately **50,000 to 150,000 top-rated locations**, selected from about **1 million** Wikidata objects that are also present in [OpenStreetMap](https://www.openstreetmap.org). While Wikidata contains over **10 million** objects with geographic coordinates, this tool deliberately highlights only the most notable ones, making it a small but high-quality selection.
+Currently, the tool features a focused subset of approximately **50,000 to 150,000 top-rated locations**, selected from around **1 million** Wikidata objects that also exist in [OpenStreetMap](https://www.openstreetmap.org). Although Wikidata includes over **10 million** geotagged objects globally, OsmAnd highlights only the most prominent ones—resulting in a small but high-quality selection.
 
-> *This is the first iteration of the Popular Places tool in OsmAnd. We are open to feedback regarding specific location issues or suggestions for future improvements.*
+> *This is the first iteration of the Popular Places tool in OsmAnd. We welcome your feedback on any issues or missing locations.*
 
-You can learn more about how to use this feature in the rest of this guide or share your feedback through the [OsmAnd GitHub repository](https://github.com/osmandapp/OsmAnd).
+You can continue reading this guide to learn how to use the feature, or [submit feedback on GitHub](https://github.com/osmandapp/OsmAnd).
 
-![Popular places](@site/static/img/map/popular_places/popular_places.png) 
+![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
 
 ## How to Use
 
-The Popular Places feature can be activated in two different sections of the app:
-
-Via [**Configure Map**](#popular-places-wikipedia-menu):
-Enable the overlay via **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
-→ POIs will appear on the map with thumbnails from Wikidata (if available). You can choose between offline Wikipedia data and online data by adjusting the POI Source in the [Popular Places menu](#popular-places-wikipedia-menu).
-
-Via [**Search**](#explore-mode-by-search):
-Go to  *<Translate android="true" ids="map_widget_search,search_categories,popular_places_nearby"/>* to explore nearby landmarks and attractions.
-
-
-
-### Popular Places (Wikipedia) Menu
-
 <InfoAndroidOnly/>
 
-The **Wikipedia POIs** feature is integrated under the new **Popular places (Wikipedia)** setting in the [Configure map menu](./configure-map-menu.md). This update provides expanded settings for Wikipedia content, giving you more control over your experience.
+The **Popular Places** feature — which includes POIs on the map and a curated list of notable locations — can be accessed from two different sections of the app:
 
-At first, you can make sure the [Wikipedia Plugin](../plugins/wikipedia.md) is enabled, next go to: 
+- **Free version**  
+  Via [**Search**](#explore-in-search):  
+  Go to **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>* to explore nearby landmarks and attractions.
+
+- **Paid versions** *([Maps+ and OsmAnd Pro](../purchases/android.md))*  
+  Via [**Configure Map**](#enable-layer):  
+  Enable the overlay via **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>* → Points of interest will appear on the map, including thumbnail images from Wikidata (if available).  
+  You can switch between offline Wikipedia data and online data by adjusting the **POI Source** in the [Popular Places menu](#enable-layer).
+
+### Explore in Search
+
+![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
+
+**<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+
+The *<Translate android="true" ids="popular_places_nearby"/>* section displays the most popular tourist destinations nearby. You can scroll left or right to browse highlighted locations around you, or tap the *<Translate android="true" ids="shared_string_show_all"/>* button to open the full list of popular places.
+
+Each item includes an image, a short description, a POI category tag, as well as the distance and direction to the location.
+
+At the top of the list, you’ll find the *<Translate android="true" ids="shared_string_show_on_map"/>* button, which displays all listed POIs directly on the map.
+
+Tapping any location opens the [POI context menu](./map-context-menu.md) on the map, where you can access the [Online Photos](#online-photos) section and view the linked [Wikipedia article](../plugins/wikipedia.md)  for the selected place.
+
+:::tip
+This feature works **online only** in the free version.  
+To use it **offline**, you need to purchase a [Maps+ or OsmAnd Pro](../purchases/android.md) subscription and download the [Wikipedia maps](../plugins/wikipedia.md) for your selected region.
+:::
+
+### Enable Layer
+
+![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
 
 **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png) 
+The **<Translate android="true" ids="poi_osmwiki"/>** feature is available under the [Configure Map menu](./configure-map-menu.md). It offers extended settings for displaying Wikipedia-based content on the map using Wikidata images.
 
-Key features:
+Before using this feature, ensure the [Wikipedia Plugin](../plugins/wikipedia.md) is enabled. Then, download the required Wikipedia map for your selected region if you want to use it offline.
 
-- **<Translate android="true" ids="poi_osmwiki"/>** - Toggle the display of POIs with Wikipedia content directly on the map.
-- **<Translate android="true" ids="shared_string_language"/>** - Choose the language of Wikipedia articles and POI descriptions.
-- **POI Source** - Select whether to use offline Wikipedia data (requires article download) or online content.
-→ With _“Online only”_ you can view Wikipedia POIs and images without downloading map data.
-- **<Translate android="true" ids="show_image_previews"/>** - Enable this setting to display image thumbnails for POIs directly on the map, enhancing visual navigation.
+This feature overlays Wikipedia POIs on the map, often with associated images from Wikidata.
+
+Key options in this menu include:
+
+- **<Translate android="true" ids="poi_osmwiki"/>** – Toggle the visibility of POIs with Wikipedia content on the map.
+- **<Translate android="true" ids="shared_string_language"/>** – Choose the language for Wikipedia articles and POI descriptions.
+- **POI Source** – Choose between:
+  - **Offline** mode (requires downloaded Wikipedia articles), or
+  - **Online only** mode (no article download required).  
+    In Online mode, POIs and their images are displayed dynamically — similar to the [Explore Mode by Search](#explore-in-search).
+- **<Translate android="true" ids="show_image_previews"/>** – Enable this to show thumbnail previews of images for POIs directly on the map.
+
+Tapping any image-based POI on the map opens the [POI context menu](./map-context-menu.md), where you can access the [Online Photos](#online-photos) section and open the linked [Wikipedia article](../plugins/wikipedia.md) for the selected place.
 
 
-### Explore Mode by Search
-
-<InfoAndroidOnly/>
-
-![Explore Mode](../../../blog/2025-04-18-android-5-0/img/explore_search.png)
-
-The **Explore** mode has been introduced, replacing the *History* tab, making it easier than ever to discover *top-ranked points of interest (POIs)*. Now, you can explore nearby POIs, view their *photos* on the map, and easily access your *Recently visited* locations — all within the new **Explore** tab. This update makes finding interesting places faster and more convenient.
-
-Key features:
-
-- **Explore nearby POIs** — Discover *popular places* and *top-ranked POIs* based on *popularity*, with helpful *photos* displayed on the map and in the search results.
-- **Recently visited** - Access your *recently visited (history) places* within the **Explore** tab for quick navigation back to previously explored locations.
-- **Wikipedia integration** - *Wikipedia entries* are combined with POI details, allowing you to view detailed information, including photos and descriptions for each location.
-
-How to use:  
-Go to *Menu → Search → Explore* to start discovering nearby POIs and view your recently visited places.
-
-Note: To use Popular Places (Wikipedia) online without downloading articles, enable ["POI Source > Online Only"](#popular-places-wikipedia-menu).
-
-## Online Photos Menu
+## Online Photos
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png)   ![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
+![Online Photos context menu Android](@site/static/img/map/popular_places/online_photos_android.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/online_photo_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
+![Online Photos context menu iOS](@site/static/img/map/popular_places/online_photos_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
-### Actions With Photos
+*<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
-How to access:
+This is a section within the [POI context menu](./map-context-menu.md) that displays a photo preview of the selected Popular Place (Wikipedia). You can scroll horizontally to browse through the available photos, or tap any image to open it in [full screen mode](#gallery).
 
-- Tap the **Show All**(Android) / **View All**(iOS) button to open [the gallery](#gallery-menu) in full screen mode. There you can swipe through all the images related to the selected location.
+Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
 
-- Tap a photo to access actions such as *Share*, *Details*, *Open in browser*, and *Download*.
+### Data Sources
 
-- You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.  
+The image data in Popular Places comes from [Wikidata](https://en.wikipedia.org/wiki/Wikidata), a collaboratively edited, multilingual knowledge graph.  
+As noted in the [Overview](#overview), each location featured in the Popular Places tool is linked to a [**Wikidata ID**](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID), which allows OsmAnd to display detailed descriptions and relevant images.
 
-In the **Online photos** section of the map context menu, you can access photos of objects from the [Wikimedia](https://www.wikimedia.org/), which offers media files tagged with `image` or `wikimedia` from OpenStreetMap. <!-- Here we need to write about Popula places (WIkipedia) -->
+In the [Map Context Menu](../map/map-context-menu.md), each Popular Place includes a clickable Wikidata tag.  
+Tapping this tag opens the corresponding object's page on the Wikidata website.
 
-<!--
-Images nearby
 
-Details:
 
-- Mapillary offers nearby street-level images, while Wikimedia provides media tagged with `image` or `wikimedia`from OpenStreetMap.
+### Actions
 
-- You can contribute your photos using the *Add Photos* button.
+In the Map Context menu How to access:
 
-*Images nearby* (*iOS*) section provides access to photos of points of interest from sources such as [Wikimedia](https://www.wikimedia.org/) and [Mapillary](../plugins/mapillary.md).
--->
+- Tap the **Show All** (Android) / **View All** (iOS) button to open the [gallery](#gallery) in full screen mode, where you can swipe through all available photos for the selected location.
 
-### Gallery Menu
+- Tap any photo to view it in [full screen](#gallery) and access the available actions:  
+  **Share**, **Details**, **Open in browser**, and **Download**.
+
+
+### Gallery
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/gallery_menu_android.png)   ![Street-Level Imagery Android](@site/static/img/map/gallery_menu_android_1.png)
+![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png) ![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png) ![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
+The **Gallery Menu** can display up to **100 images** related to the selected point of interest. You can swipe through all available photos. Tapping a photo briefly opens a detailed view showing: *Name*, *Date added*, *Author*, *License* 
 
-The gallery can display up to 100 items. You can browse through all the photos, and short tapping on any photo will open it to view additional details (*Name*, *Date*, *Author*, *License*) and perform various actions (*Share*, *Details*, *Open in browser*, and *Download* options).
+You can also perform the following actions on each photo:
+
+- **Share**  
+  Share the selected image using any compatible app installed on your device (e.g., messaging, email, or social media). The shared content includes the image and its source link (if available).
+
+- **Details**  
+  Open a detailed view showing metadata about the image, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
+
+- **Open in browser**  
+  Launch the image’s source page (usually on [Wikimedia Commons](https://commons.wikimedia.org/)) in your default browser. This allows you to view the full image, licensing information, and related content.
+
+- **Download**  
+  Save the image to your device’s storage. The downloaded image can be found in your device’s default Downloads folder and accessed offline.
 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_3.png) 
-
-</TabItem>
-
-</Tabs>
-
-
-
-On iOS, long tapping on any photo opens an additional menu with actions such as *Details*, *Open in browser*, and *Download*.
-
-Buttons:  
-- The **Share** button allows you to share the selected item.  
-- The **Three dots** button opens a menu with options like *Details*, *Open in browser*, and *Download*.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Online Photos context menu Android](@site/static/img/map/gallery_menu_android_2.png)
+The Android version does not include an additional menu for photo actions.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_2.png) 
+![iOS - Context Menu Options](@site/static/img/map/gallery_menu_ios_3.png)
+
+On **iOS**, long-pressing a photo opens a context menu with additional actions:
+
+- **Details**  
+- **Open in browser**  
+- **Download**
+
+**Buttons**:  
+- The **Share** button lets you quickly share the selected image.  
+- The **three-dot menu** provides access to extra actions, including viewing details, opening the source in a browser, or downloading the image.
 
 </TabItem>
 
 </Tabs>
 
 
-The Details screen provides information such as the *Name*, *Added Date*, *Author*, *License*, *Source*, and *Link* of the selected item.
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Android – Details View](@site/static/img/map/gallery_menu_android_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![iOS – Details View](@site/static/img/map/gallery_menu_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
+The **Details** screen provides full metadata for the selected photo, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*

@@ -159,11 +159,14 @@ export default function SearchLayer() {
 
     async function searchByWord(query, latlng, baseSearch) {
         const notifyTimeout = showProcessingNotification(ctx);
+        const bbox = map.getBounds();
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
             apiCache: true,
             params: {
                 lat: latlng.lat,
                 lon: latlng.lng,
+                northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
+                southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
                 text: query,
                 locale: i18n.language,
                 baseSearch,

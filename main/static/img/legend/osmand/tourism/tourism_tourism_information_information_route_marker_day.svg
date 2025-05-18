@@ -1,63 +1,29 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg8"  sodipodi:docname="information_route_marker.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 
 <g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 <path style="clip-rule:evenodd;opacity:.8;fill:#ebe7e4;fill-opacity:1;fill-rule:evenodd;stroke-width:1;font-variant-east_asian:normal;vector-effect:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="path2-6-7" d="M8.13 1.45c-.68 0-1.17.48-1.46 1.07H4.93a1.22 1.22 0 0 0-1.21 1.21v3.2a1.22 1.22 0 0 0 1.21 1.22h1.45v5.18a1.22 1.22 0 0 0 1.22 1.22h1.07a1.22 1.22 0 0 0 1.21-1.22V9.21a1.22 1.22 0 0 0 .71-.35l2.67-2.67a1.22 1.22 0 0 0 0-1.72l-2.67-2.66a1.22 1.22 0 0 0-1.68-.03c-.25-.14-.48-.33-.78-.33z"/>
 </g>%n%n
-<g transform="translate(139.000000, 9.000000) scale(0.458333 0.458333) "> 
+<g transform="translate(139.000000, 9.000000) scale(1.833333 1.833333) "> 
 
-  <metadata
-     id="metadata14">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs12" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1014"
-     id="namedview10"
-     showgrid="true"
-     inkscape:zoom="6.9532167"
-     inkscape:cx="9.2416699"
-     inkscape:cy="23.562141"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg8">
-    <inkscape:grid
-       type="xygrid"
-       id="grid821"
-       spacingx="2"
-       spacingy="2" />
-  </sodipodi:namedview>
-  <path
-     opacity="0.7"
-     fill-rule="evenodd"
-     clip100-rule="evenodd"
-     d="M24 4C25.1046 4 26 4.89543 26 6V44H22V6C22 4.89543 22.8954 4 24 4Z"
-     fill="#593906"
-     id="path2"
-     style="fill:#593906;fill-opacity:1" />
-  <path
-     d="M 12,8 H 30 V 4 L 40,14 30,24 V 20 H 12 Z"
-     id="path4"
-     style="fill:#593906;fill-opacity:1"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cccccccc" />
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<rect x="0" y="0" width="12" height="12" style="fill:rgb(0%,0%,0%);fill-opacity:0.7;stroke:none;"/>
+  </g>
+</mask>
+<clip100Path id="clip1001">
+  <rect x="0" y="0" width="12" height="12"/>
+</clip100Path>
+<g id="surface5" clip100-path="url(#clip1001)">
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(34.901962%,22.352941%,2.352941%);fill-opacity:1;" d="M 6 1 C 6.277344 1 6.5 1.222656 6.5 1.5 L 6.5 11 L 5.5 11 L 5.5 1.5 C 5.5 1.222656 5.722656 1 6 1 Z M 6 1 "/>
+</g>
+</defs>
+<g id="surface1">
+<use xlink:href="#surface5" mask="url(#mask0)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(34.901962%,22.352941%,2.352941%);fill-opacity:1;" d="M 3 2 L 7.5 2 L 7.5 1 L 10 3.5 L 7.5 6 L 7.5 5 L 3 5 Z M 3 2 "/>
+</g>
 
 </g>%n%n</svg>
