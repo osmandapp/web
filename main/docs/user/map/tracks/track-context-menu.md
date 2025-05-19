@@ -471,7 +471,7 @@ The *three-dot menu* ( &#8285; ) opens the waypoint *Group menu*.
 - **<Translate android="true" ids="change_default_appearance"/>** - Change the display options for a group of waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** or **Remove** (*Android only*) - Move group waypoints to [Map markers](../../personal/markers.md) list.
 - **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android only*) - Move group waypoints to [Favorites](../../personal/favorites.md).
-- **<Translate android="true" ids="add_to_navigation"/>** - Creates a route between waypoints. The first and last points become the start and finish of the route, and the rest are converted to intermediate points.
+- **<Translate android="true" ids="add_to_navigation"/>**  (*Android only*) - Creates a route between waypoints. The first and last points become the start and finish of the route, and the rest are converted to intermediate points.
 - **<Translate android="true" ids="shared_string_delete"/>** - Delete a group of waypoints.
 
 
