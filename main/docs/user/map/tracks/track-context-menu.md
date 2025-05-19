@@ -450,7 +450,7 @@ Tap the *Add Waypoint* button to open waypoint creation screen (this screen is f
 
 <TabItem value="android" label="Android">
 
-![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_android.png)
+![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
 
 </TabItem>
 
@@ -466,12 +466,13 @@ The *three-dot menu* ( &#8285; ) opens the waypoint *Group menu*.
 
 **Actions:**
 
-- **<Translate android="true" ids="shared_string_show_on_map"/>**. Allows you to display or not display group waypoints on the map. Or you can use [the screen button](#points--waypoints) to display or omit group waypoints on the map.
-- **<Translate android="true" ids="shared_string_rename"/>**. Change the name of the group.
-- **<Translate android="true" ids="change_color"/>**. Change the color for group waypoints.
-- **<Translate android="true" ids="copy_to_map_markers"/>** (*Android only*). Move group waypoints to [Map markers](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android only*). Move group waypoints to [Favorites](../../personal/favorites.md).
-- **<Translate android="true" ids="shared_string_delete"/>**. Delete group waypoints.
+- **<Translate android="true" ids="shared_string_show_on_map"/>** - Allows you to display or not display group waypoints on the map. Or you can use [the screen button](#points--waypoints) to display or omit group waypoints on the map.
+- **<Translate android="true" ids="shared_string_rename"/>** - Change the name of the group.
+- **<Translate android="true" ids="change_default_appearance"/>** - Change the display options for a group of waypoints.
+- **<Translate android="true" ids="add_group_to_markers"/>** or **Remove** (*Android only*) - Move group waypoints to [Map markers](../../personal/markers.md) list.
+- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android only*) - Move group waypoints to [Favorites](../../personal/favorites.md).
+- **<Translate android="true" ids="add_to_navigation"/>** - Creates a route between waypoints. The first and last points become the start and finish of the route, and the rest are converted to intermediate points.
+- **<Translate android="true" ids="shared_string_delete"/>** - Delete a group of waypoints.
 
 
 ### Waypoint Groups
@@ -492,9 +493,9 @@ The *three-dot menu* ( &#8285; ) opens the waypoint *Group menu*.
 
 </Tabs>
 
-- You can control the visibility of groups on the map. If the track is hidden, all groups will also be hidden.
+Manage the visibility of groups on the map: if you hide one track, the entire group will also be hidden.  
 
-- You can switch group waypoints on or off on the map using the button in the upper right corner of the context menu of the track on the map. Tap it and select the required action.
+You can switch group waypoints on or off on the map using the button in the upper right corner of the context menu of the track on the map. Tap it and select the required action.
 
 ### Display Custom GPX Tags
 

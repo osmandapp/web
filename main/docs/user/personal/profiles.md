@@ -249,7 +249,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_general_settings_other_andr.png)
+![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_general_settings_other_2_andr.png)
 
 </TabItem>
 
@@ -277,7 +277,7 @@ The **Other** section provides additional profile settings to customize OsmAnd�
 
 - [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*Android only*) – Disable animations in navigation mode for faster screen transitions.
 
-- **<Translate android="true" ids="animate_my_location"/>** – Enables smooth map panning while in motion, making navigation movements more fluid. This introduces a 1-second delay, causing a slight lag between actual movement and map [position](../map/interact-with-map.md#my-location-and-zoom) updates.
+- **<Translate android="true" ids="position_animation"/>** (*Android*) – The [position](../map/interact-with-map.md#my-location-and-zoom) icon animates with each GPS point received (once per second). A slight delay in its movement may be noticeable, especially during fast movement or GPS signal fluctuations. You can adjust this effect using the *Prediction time* setting: higher values increase smoothness but add delay, lower values reduce delay but may make movement less smooth.
 
 
 ## Navigation Settings

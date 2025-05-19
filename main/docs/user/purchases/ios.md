@@ -196,3 +196,5 @@ You can purchase OsmAnd using an App Store gift card. This method allows you to 
 
 - [Detailed guide on purchasing App Store gift cards](https://www.apple.com/shop/gift-cards).
 - [Instructions for redeeming your App Store gift card](https://support.apple.com/en-gb/HT201209).
+
+> *This article was last updated in May 2025*

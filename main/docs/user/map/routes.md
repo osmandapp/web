@@ -188,14 +188,6 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 ## Actions with Routes
 
-
-[Hiking, cycle, travel, and other routes](#type-of-routes) are available for selection on the map and are marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol), where applicable.
-
-When you tap a **route symbol** on the map:
-
-- A **list of nearby routes** at that location is displayed.
-- After selecting a route from the list, the [**track context menu**](../map/tracks/track-context-menu.md) for that route opens, showing detailed information and actions.
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -212,11 +204,18 @@ When you tap a **route symbol** on the map:
 
 </Tabs>
 
-In the **context menu**, you can:
-- View [additional information](#route-info-and-elevation) about the selected route,
-- [Save the route](#save-as-a-track) as a **GPX track**,
-- [Start navigation](#start-navigation) along the route.
+On the map, you can select routes for [hiking, cycle, travel, and more](#type-of-routes), which are marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) where applicable.
 
+When you tap a **route symbol** on the map:
+
+- A **list of the nearby routes** at that location is displayed.
+- After selecting a route from the list, a [context menu](../map/tracks/track-context-menu.md) for that route opens, displaying detailed information and available actions.
+
+In the **context menu**, you can:
+
+- View [additional information](#route-info-and-elevation) about the selected route.
+- [Save the route](#save-as-a-track) as a **GPX track**.
+- [Start navigation](#start-navigation) along the route.
 
 
 ### Route Info and Elevation
@@ -252,13 +251,13 @@ To view graph of the elevation, slope, or altitude details for a selected route,
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/routes_osm_2.png) 
+![Routes on the ground](@site/static/img/map/routes_osm_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/routes_osm_ios_2.png) 
+![Routes on the ground](@site/static/img/map/routes_osm_ios_2.png)
 
 </TabItem>
 
@@ -319,7 +318,7 @@ You can customize whether routes are switched on or off using the [Quick Action]
 
 Find routes using the [Search function](../search/index.md) by name or by selecting "Routes" in the [Categories section](../search/search-poi.md#).
 
-To search, go to the _<Translate android="true" ids="search_button"/>_ menu or _<Translate android="true" ids="search_button,search_categories"/>_ and enter your activity.
+To search, go to the *<Translate android="true" ids="search_button"/>* menu or *<Translate android="true" ids="search_button,search_categories"/>* and enter your activity.
 
 <Tabs groupId="operating-systems">
 
@@ -337,7 +336,7 @@ To search, go to the _<Translate android="true" ids="search_button"/>_ menu or _
 
 </Tabs>  
 
-Navigate to _<Translate android="true" ids="search_button,search_categories,poi_routes"/>_ to find desired routes. Routes include name, activity type, length, location, and distance to the nearest point.
+Navigate to *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* to find desired routes. Routes include name, activity type, length, location, and distance to the nearest point.
 
 <Tabs groupId="operating-systems">
 
@@ -353,7 +352,7 @@ Navigate to _<Translate android="true" ids="search_button,search_categories,poi_
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 Use filters button (top right corner) to display only the desired routes.
 
@@ -371,7 +370,7 @@ Use filters button (top right corner) to display only the desired routes.
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 
 ## Related Articles
@@ -383,4 +382,4 @@ Use filters button (top right corner) to display only the desired routes.
 - [Public transport](./public-transport.md)
 - [Navigation route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 
-> *This article was last updated in March 2025*
+> *This article was last updated in May 2025*
