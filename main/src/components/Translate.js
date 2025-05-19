@@ -30,17 +30,18 @@ function loadDicts(locale = 'en') {
   return dictCache[locale];
 }
 
+const decodeEscapes = (str) =>  str.replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)), );
+
 /**
  * Return the resolved string or a highlighted “MISSING …” marker.
  */
 function pick(id, dicts, isAndroid) {
   const {other, android, ios} = dicts;
 
-  if (other[id]) return other[id];
-  if (isAndroid) {
-    return android[id] ?? <span>{`MISSING Android resource: ${id}!`}</span>;
-  }
-  return ios[id] ?? <span>{`MISSING iOS resource: ${id}!`}</span>;
+  const str = other[id] ?? (isAndroid ? android[id] : ios[id]);
+  if (str) return decodeEscapes(str);
+
+  return (<span>{`MISSING ${isAndroid ? 'Android' : 'iOS'} resource: ${id}!`}</span>);
 }
 
 export default function Translate({ id, android, ids, delimeter = ' → '}) {
