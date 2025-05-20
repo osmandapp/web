@@ -30,7 +30,9 @@ function loadDicts(locale = 'en') {
   return dictCache[locale];
 }
 
-const decodeEscapes = (str) =>  str.replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)), );
+function decodeEscapes(str) {
+  return str.replace(/\\+u\{?([0-9a-fA-F]{4,6})\}?/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)), ).replace(/\\(['"`])/g, '$1');
+} 
 
 /**
  * Return the resolved string or a highlighted “MISSING …” marker.
