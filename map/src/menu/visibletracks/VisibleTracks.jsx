@@ -23,9 +23,7 @@ import { SHARE_TYPE } from '../../manager/ShareManager';
 export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_visible_marker_';
 
 export function getCountVisibleTracks(visibleTracks) {
-    const oldSize = visibleTracks?.old?.length || 0;
-    const newSize = visibleTracks?.new?.length || 0;
-    return oldSize + newSize;
+    return visibleTracks?.new?.length || 0;
 }
 
 export function isVisibleTrack(file) {
