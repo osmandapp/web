@@ -86,7 +86,7 @@ You can enter Browse Route menu by **clicking on a shield** or **selecting a rou
 
 You can see the full list of stops by clicking <Translate android="true" ids="rendering_category_details"/>. Currently selected stop is marked with 'location' icon on the Routes list.
 
-**Note**: If you click <Translate android="true" ids="get_directions"/> button you will get a route from your current location to the selected Public Transport Station.
+> **NOTE**: *If you tap <Translate android="true" ids="get_directions"/> button you will get a route from your current location to the selected Public Transport Station.*
 
 
 ## Related Articles
@@ -94,4 +94,4 @@ You can see the full list of stops by clicking <Translate android="true" ids="re
 - [Vector maps](../map/vector-maps.md)
 - [Public transport navigation](../navigation/routing/public-transport-navigation.md)
 
-> *This article was last updated in August 2022.*
+> *This article was last updated in August 2022*

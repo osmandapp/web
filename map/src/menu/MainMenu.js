@@ -71,6 +71,8 @@ import {
     TRACK_ANALYZER_URL,
     INFO_MENU_URL,
     SHARE_MENU_URL,
+    MAIN_URL,
+    LOGIN_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -83,6 +85,7 @@ import { getShareFileInfo, SHARE_TYPE, updateUserRequests } from '../manager/Sha
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
+import { openLoginMenu } from '../manager/LoginManager';
 
 export default function MainMenu({
     size,
@@ -107,6 +110,8 @@ export default function MainMenu({
     const [selectedType, setSelectedType] = useState(null);
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
 
+    const [redirectUrl, setRedirectUrl] = useState(null);
+
     const [savePrevState, setSavePrevState] = useState(false);
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
@@ -128,6 +133,23 @@ export default function MainMenu({
         }
         ctx.setLoadingContextMenu(false);
     }
+
+    useEffect(() => {
+        if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ctx.openLoginMenu && !ctx.loginUser) {
+            const params = new URLSearchParams(location.search);
+            const to = params.get('redirect');
+            if (to) {
+                setRedirectUrl(to);
+            }
+            openLoginMenu(ctx, navigate);
+        }
+    }, [location.pathname, ctx, navigate]);
+
+    useEffect(() => {
+        if (ctx.loginUser && redirectUrl) {
+            window.location.href = redirectUrl;
+        }
+    }, [ctx.loginUser]);
 
     // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {
@@ -463,6 +485,9 @@ export default function MainMenu({
     useEffect(() => {
         const pinPoint = ctx.pinPoint;
         if (pinPoint) {
+            if (location.pathname.includes(NAVIGATE_URL) && !ctx.routeObject.isReady()) {
+                return;
+            }
             const pin = `${pinPoint.lat.toFixed(6)},${pinPoint.lng.toFixed(6)}`;
             const pretty = createUrlParams({ pin });
             const pageParams = { ...ctx.pageParams };

@@ -1,11 +1,11 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import { Box, Button, Icon, ListItemText } from '@mui/material';
+import { Box, Icon, ListItemText } from '@mui/material';
 import styles from './errors.module.css';
-import buttonStyles from '../login/login.module.css';
 import EmptyLogin from '../login/EmptyLogin';
 import { ReactComponent as EmptyTravelIcon } from '../../assets/icons/ic_action_desert.svg';
+import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
 
 export default function EmptyTravel({ reset }) {
     const ctx = useContext(AppContext);
@@ -27,9 +27,7 @@ export default function EmptyTravel({ reset }) {
                             your filters.
                         </ListItemText>
                     </Box>
-                    <Button className={buttonStyles.button} component="span" onClick={reset}>
-                        {t('shared_string_reset')}
-                    </Button>
+                    <GrayBtnWithBlueHover action={reset} text={t('shared_string_reset')} span={true} />
                 </Box>
             ) : (
                 <EmptyLogin />

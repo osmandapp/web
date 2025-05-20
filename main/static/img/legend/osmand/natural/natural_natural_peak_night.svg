@@ -1,12 +1,14 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 
 <g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
 <path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M7.99999 2.11319L14.8042 13H1.19574L7.99999 2.11319Z" fill="#F1EAE4"/>
 
 </g>%n%n
-<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
+<g transform="translate(138.000000, 8.000000) scale(2.000000 2.000000) "> 
 
-<path d="M24 8L44 40H4L24 8Z" fill="#3f3f3f"/>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(24.705882%,24.705882%,24.705882%);fill-opacity:1;" d="M 6 2 L 11 10 L 1 10 Z M 6 2 "/>
+</g>
 
 </g>%n%n</svg>

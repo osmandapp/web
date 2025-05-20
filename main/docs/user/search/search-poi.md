@@ -389,6 +389,14 @@ To create custom filters for finding places on the map, select relevant categori
 
 24. **User defined**. Includes 1 type: *User Defined Other Postcode*.
 
+<!--
+:::note since OsmAnd 5.0 for Android
+Available for search:
+
+- Religious POIs based on the `amenity=place_of_worship` tag are divided into religious-specific locations such as churches, mosques, or synagogues.
+- Minor amenities such as “bench”, "youth bench" (`amenity=bench`) are available in the category list.
+:::
+-->
 
 ### Save New Custom Filters
 
@@ -496,4 +504,4 @@ An additional option only for the iOS app is **Delete Custom Categories**.
 - [Search Coordinates](./search-coordinates.md)
 
 
-> *This article was last updated in March 2025*
+> *This article was last updated in May 2025*

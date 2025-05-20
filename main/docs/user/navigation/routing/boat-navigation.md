@@ -68,6 +68,22 @@ Typically, *Boat routing* is used with boat profile (the last one enabled togeth
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Turning this option on allows you to use intermittent waterways to navigate by boat.   | Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) is used to indicate that a waterway does not permanently contain water.  |
 
 
+:::note Water Navigation and Limitation
+
+1. The Boat profile is designed for routing along rivers, lakes, and other waterways. It supports OSM tags such as:
+    - `waterway=river`
+    - `waterway=canal`
+    - `natural=water`, etc.
+
+2. The Boat profile **does not support ferry routes (`route=ferry`)**. This means ferry routes, even if present on the map, will **not be used** when calculating boat routes.
+
+3. To follow a ferry line manually:
+
+    - Use the [Plan a Route](../../plan-route/create-route.md) tool and place waypoints manually.
+    - Use the Car profile, which supports ferry routes
+
+:::
+
 ## Other Routing Types for Boat
 
 [Boat routing](#route-parameters---boat) type is a default routing algorithm for Boat profile. Although you can choose another routing type, which is also suitable for boat navigation:  
@@ -110,4 +126,4 @@ The [Straight line routing type](./straight-line-routing) can be used with the b
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
 
-> *This article was last updated in June 2024.*
+> *This article was last updated in May 2025*

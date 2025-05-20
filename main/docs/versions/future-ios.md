@@ -24,7 +24,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 <br/>
 
-![OsmAnd iOS 5.0](../../blog/2025-04-15-ios-5-0/img/release_5-0_ios.png)
+![OsmAnd iOS 5.0](../../blog/2025-04-21-ios-5-0/img/release_5-0_ios.png)
 
 ## What's new
 
@@ -68,7 +68,7 @@ add to docs android:
 
 ## Smart Folders for Automatic Track Organization
 
-![Smart Folders](../../blog/2025-04-15-ios-5-0/img/my_places_smart_folder_ios.png)
+![Smart Folders](../../blog/2025-04-21-ios-5-0/img/my_places_smart_folder_ios.png)
 
 **Smart Folders** for tracks are now available, enhancing the way you organize your saved locations. This feature, previously available on Android, is designed to help you manage and automatically sort your tracks into folders based on predefined criteria.
 
@@ -87,7 +87,7 @@ Learn more:
 
 ## Redesign Image Block in Context Menu
 
-![Redesign Image Block](../../blog/2025-04-15-ios-5-0/img/gallery_ios.png)
+![Redesign Image Block](../../blog/2025-04-21-ios-5-0/img/gallery_ios.png)
 
 The **image block** in the context menu has been redesigned for a more streamlined experience. Now, **Online Photos** (Wikimedia images) and **Street-level Imagery** (Mapillary images) are displayed as separate items within the menu.
 
@@ -107,7 +107,7 @@ Learn more:
 
 ## Gallery Viewer for Wikimedia Images
 
-![Gallery](../../blog/2025-04-15-ios-5-0/img/gallery_viewer_ios.png)
+![Gallery](../../blog/2025-04-21-ios-5-0/img/gallery_viewer_ios.png)
 
 Introducing an enhanced **gallery viewer** for **Wikimedia images**, allowing for a more immersive photo viewing experience for points of interest.
 
@@ -127,7 +127,7 @@ Learn more:
 
 ## Polygon Selection for Nearby Areas
 
-![Poligon info](../../blog/2025-04-15-ios-5-0/img/areas_info_ios.png)
+![Poligon info](../../blog/2025-04-21-ios-5-0/img/areas_info_ios.png)
 
 The **Polygon Information** feature has been enhanced in OsmAnd for iOS, providing easier access to data about surrounding areas directly from the map.  
 
@@ -147,7 +147,7 @@ Learn more:
 
 ## Toggle Visibility for Favorite Groups
 
-![Toggle Visibility for Favorite Groups](../../blog/2025-04-15-ios-5-0/img/visibility_favorite_groupes_ios.png)
+![Toggle Visibility for Favorite Groups](../../blog/2025-04-21-ios-5-0/img/visibility_favorite_groupes_ios.png)
 
 OsmAnd 5.0 introduces an updated **visibility toggle** for favorite groups, providing more control over what is displayed on the map. This feature, previously available on Android, is now also part of the iOS version.
 
@@ -166,7 +166,7 @@ Learn more:
 
 ## Flexible Appearance Settings for Favorite Groups
 
-![Flexible Appearance Settings for Favorite Groups](../../blog/2025-04-15-ios-5-0/img/favorite_add_new_group_3_ios.png)
+![Flexible Appearance Settings for Favorite Groups](../../blog/2025-04-21-ios-5-0/img/favorite_add_new_group_3_ios.png)
 
 In this release, you can **separately customize** the *icon, color*, and *shape* for each group of favorites without resetting all attributes. And then override the settings for existing points in the folder, only new favorites, or apply to all. This allows you to visually organize your saved locations more precisely.  
 
@@ -176,7 +176,7 @@ Learn more:
 
 ## Expanded Icon Options for Favorites
 
-![Icon Options for Favorites](../../blog/2025-04-15-ios-5-0/img/icons_favorites.png)
+![Icon Options for Favorites](../../blog/2025-04-21-ios-5-0/img/icons_favorites.png)
 
 In OsmAnd 5.0 for iOS, you can choose icons from all **POI categories** for your **Favorites**. The added full icon library allows you to search and select icons using the **Сustom POI search**, making it easier to organize and personalize your saved locations.
 
@@ -191,7 +191,7 @@ Learn more:
 
 ## Change Appearance for Multiple Tracks
 
-![Change Appearance for Multiple Tracks](../../blog/2025-04-15-ios-5-0/img/tracks_change_appear_3_ios.png)
+![Change Appearance for Multiple Tracks](../../blog/2025-04-21-ios-5-0/img/tracks_change_appear_3_ios.png)
 
 You can now **change the appearance** of **multiple tracks** simultaneously through a new setting in *Selection mode*. This update makes it easier to apply consistent settings across multiple tracks, helping you quickly modify their appearance for better visualization.
 
@@ -209,7 +209,7 @@ Learn more:
 
 ## Battery Status for External Sensors
 
-![Battery Status for External Sensors](../../blog/2025-04-15-ios-5-0/img/battery_level_sensors_ios.png)
+![Battery Status for External Sensors](../../blog/2025-04-21-ios-5-0/img/battery_level_sensors_ios.png)
 
 In OsmAnd 5.0, you can now **view the battery level** of connected external sensors as a main value. This makes it easier to monitor their status and ensures optimal performance during use.
 
@@ -230,7 +230,7 @@ Learn more:
 
 ## Reset Option for the Average Speed Widget
 
-![Reset Option for the Average Speed Widget](../../blog/2025-04-15-ios-5-0/img/reset_average_speed.png)
+![Reset Option for the Average Speed Widget](../../blog/2025-04-21-ios-5-0/img/reset_average_speed.png)
 
 You can now **reset the average speed** directly from the *widget’s context menu*. This update adds a **Reset** action, allowing you to start fresh measurements without restarting navigation.  
 
@@ -246,7 +246,7 @@ Learn more:
 
 ## Detailed Track Guidance and Attach to the Roads
 
-![Detailed Track Guidance](../../blog/2025-04-15-ios-5-0/img/detailed_track_guidnce_ios.png)
+![Detailed Track Guidance](../../blog/2025-04-21-ios-5-0/img/detailed_track_guidnce_ios.png)
 
 OsmAnd 5.0 for iOS introduces **Detailed Track Guidance** with the ability to **automatically attach tracks to roads**, enhancing your navigation experience.  
 
@@ -278,7 +278,7 @@ Learn more:
 
 ## Quick Actions for Trip Recording
 
-![Quick Actions for Trip Recording](../../blog/2025-04-15-ios-5-0/img/qa_trip_recording_ios.png)
+![Quick Actions for Trip Recording](../../blog/2025-04-21-ios-5-0/img/qa_trip_recording_ios.png)
 
 This release introduces **quick actions** for **trip recording**, allowing you to manage your journey recording with just a tap, improving efficiency and safety while on the go.
 
@@ -296,7 +296,7 @@ Learn more:
 
 ## Improved CarPlay Address Search Prioritization
 
-![CarPlay Search](../../blog/2025-04-15-ios-5-0/img/car-play-search(1).png)
+![CarPlay Search](../../blog/2025-04-21-ios-5-0/img/car-play-search(1).png)
 
 The **CarPlay Search** feature now prioritizes streets and building numbers when searching for addresses, improving navigation.
 
@@ -313,7 +313,7 @@ Learn more:
 
 ## Closing Configure Map after Tapping the Map
 
-![Close Configure Map After Tapping on Map](../../blog/2025-04-15-ios-5-0/img/configure_map_behavior_ios.png)
+![Close Configure Map After Tapping on Map](../../blog/2025-04-21-ios-5-0/img/configure_map_behavior_ios.png)
 
 You can now **automatically close the *Configure Map* menu** by tapping the visible part of the map. This enhancement makes interacting with OsmAnd even more convenient.
 
@@ -349,8 +349,8 @@ Learn more:
   - Using display or map language for [lang=true tags in context menu](https://github.com/osmandapp/OsmAnd-iOS/issues/4216).
   - [Custom button - underlay map](https://github.com/osmandapp/OsmAnd-iOS/issues/4394).
   - [Tunnel freezes](https://github.com/osmandapp/OsmAnd-iOS/issues/4401).
-  - [Replaceed `/` with `-` in favorites folders name](https://github.com/osmandapp/OsmAnd-iOS/issues/4403)
-  - [Direct-to-point routing](https://github.com/osmandapp/OsmAnd-iOS/issues/4226)/
+  - [Replaceed `/` with `-` in favorites folders name](https://github.com/osmandapp/OsmAnd-iOS/issues/4403).
+  - [Direct-to-point routing](https://github.com/osmandapp/OsmAnd-iOS/issues/4226).
   - Recalculate [route dialogue in CarPlay](https://github.com/osmandapp/OsmAnd-iOS/issues/4226).
   - [Marker for select GPX](https://github.com/osmandapp/OsmAnd-iOS/issues/4367).
   - [Export only settings](https://github.com/osmandapp/OsmAnd-iOS/issues/4405).

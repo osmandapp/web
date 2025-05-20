@@ -17,49 +17,49 @@ export default async function test() {
 
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
-
+    console.log(`Tracks menu opened`);
     const tracks = getFiles({ folder: 'gpx' });
     const trackName = 'test-routed-osrm';
-
+    console.log(`Track ${trackName} created`);
     for (const track of tracks) {
         await actionDeleteTracksByPattern(track.name);
     }
-
+    console.log(`All tracks deleted`);
     await actionImportCloudTrack(tracks, trackName);
 
     // delete track
     await deleteTrack(trackName);
-
+    console.log(`Track ${trackName} deleted`);
     // restore track
     await openTrash();
     await waitBy(By.id('se-cloud-trash-items'));
     await clickBy(By.id(`se-cloud-trash-actions-${trackName}`));
     await waitBy(By.id('se-trash-actions'));
     await clickBy(By.id('se-trash-actions-restore'));
-
+    console.log(`Track ${trackName} restored`);
     // check track
     await clickBy(By.id('se-show-menu-tracks'));
     await waitBy(By.id(`se-cloud-track-${trackName}`));
-
+    console.log(`Track ${trackName} exists`);
     // delete track
     await deleteTrack(trackName);
-
+    console.log(`Track ${trackName} deleted`);
     // empty trash
     await openTrash();
     await waitBy(By.id('se-cloud-trash-items'));
     await waitBy(By.id('se-empty_trash'));
     await clearTrash();
-
+    console.log(`Trash cleared`);
     // create and delete track
     await clickBy(By.id('se-show-menu-tracks'));
     await actionImportCloudTrack(tracks, trackName);
     await deleteTrack(trackName);
-
+    console.log(`Track ${trackName} deleted`);
     // check trash
     await openTrash();
     await waitBy(By.id('se-cloud-trash-items'));
     await waitBy(By.id(`se-cloud-trash-actions-${trackName}`));
-
+    console.log(`Track ${trackName} exists in trash`);
     // delete trash track
     await clickBy(By.id(`se-cloud-trash-actions-${trackName}`));
     await waitBy(By.id('se-trash-actions'));
@@ -68,7 +68,7 @@ export default async function test() {
     await clickBy(By.id('se-delete-version-dialog-delete'));
     await waitByRemoved(By.id('se-delete-version-dialog'));
     await waitByRemoved(By.id(`se-cloud-trash-actions-${trackName}`));
-
+    console.log(`Track ${trackName} deleted from trash`);
     // clear all files
     await clickBy(By.id('se-show-menu-tracks'));
     let testsTracks = [];
@@ -88,7 +88,7 @@ export default async function test() {
             await deleteTrack(name);
         }
     }
-
+    console.log(`All tracks deleted`);
     const folders = [UPLOAD_SORT, UPLOAD_TRACK];
 
     for (const name of folders) {
@@ -97,16 +97,16 @@ export default async function test() {
             await actionDeleteFolder(name);
         }
     }
-
+    console.log(`All folders deleted`);
     await waitBy(By.id('se-empty-page'));
-
+    console.log(`All folders deleted`);
     await openTrash();
-
+    console.log(`Trash opened`);
     let emptyTrash = await waitBy(By.id('se-empty-trash-page'), { optional: true, idle: true });
     if (!emptyTrash) {
         await clearTrash();
     }
-
+    console.log(`Trash cleared`);
     await actionFinish();
 }
 

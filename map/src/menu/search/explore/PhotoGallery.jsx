@@ -13,7 +13,7 @@ import { IMAGE_OSM_TAG, otherImgTags } from '../../../infoblock/components/wpt/W
 import PhotoLink from './PhotoLink';
 import md5 from 'blueimp-md5';
 
-export function getPhotoUrl({ photo = null, photoTitle = null, size = 300 }) {
+export function getPhotoUrl({ photo = null, photoTitle = null, size = 320 }) {
     if (!photo && !photoTitle) {
         return '';
     }

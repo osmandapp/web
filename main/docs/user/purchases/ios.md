@@ -41,9 +41,9 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 
 ### Important Notes  
 
-1. **Maps+** is a *premium upgrade* for the free version of OsmAnd, unlocking most features.
+1. **Maps+** is an *upgrade* for the free version of OsmAnd, unlocking most features.
 
-2. **OsmAnd Pro is a *cross-platform* subscription**. This means you can purchase it on one store (e.g., *AppStore, Google Play, and osmand.net*) and restore it on another by [registering your email as a Pro account](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro is a *cross-platform* subscription**. This means you can purchase it in one store (e.g., *AppStore, Google Play, and osmand.net*) and restore it in another by [linking your purchase with OsmAnd Cloud account](../personal/osmand-cloud.md#cross-platform).
 
 3. You can add **Maps+** to [Apple Family Sharing](https://support.apple.com/en-us/HT201088) to share the purchase with family members.  
 
@@ -53,9 +53,9 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
 <!--
-:::danger Seasonal Sale prices
+:::danger May Sale prices
 
-*Hurry up! This offer is only available until* **March 23 (23:00 CET)**.
+*Hurry up! This offer is only available until* **May 04 (23:00 CET)**.
 
 :::
 
@@ -196,3 +196,5 @@ You can purchase OsmAnd using an App Store gift card. This method allows you to 
 
 - [Detailed guide on purchasing App Store gift cards](https://www.apple.com/shop/gift-cards).
 - [Instructions for redeeming your App Store gift card](https://support.apple.com/en-gb/HT201209).
+
+> *This article was last updated in May 2025*

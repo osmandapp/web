@@ -88,7 +88,7 @@ export function createPoiIcon({
             : point?.extensions?.color && point?.extensions.color !== 'null'
               ? point?.extensions.color
               : DEFAULT_WPT_COLOR;
-    colorBackground = Utils.hexToArgb(colorBackground);
+    colorBackground = Utils.hexToRgba(colorBackground);
     const shapeBackground = background ? background : point?.background;
     let svg = getBackground(colorBackground, shapeBackground);
     if (backgroundSize) {
@@ -148,7 +148,7 @@ export function createPoiIcon({
 }
 
 export function getPoiCategoryIcon({ icon, color, background }) {
-    const colorBackground = Utils.hexToArgb(color);
+    const colorBackground = Utils.hexToRgba(color);
     const svg = getBackground(colorBackground, background);
     const allIconSize = DEFAULT_ICON_SIZE;
     const bsize = getBackgroundSize(background);

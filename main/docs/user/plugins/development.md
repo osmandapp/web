@@ -68,7 +68,6 @@ Use one of the following paths to open the plugin settings:
 
 - **Simulate your position** (*Android* / *iOS*). [Simulate](#gpx-track-simulation) the location and movement using a GPX track.
 - **Battery saving mode** (*Android* / *iOS*). This setting reduces [the screen refresh rate](#map-rendering-fps-widget) by 20 frames per second to help save battery power while using applications.
-- **Location interpolation percentage** (*Android*). Adjusts how smoothly your location is displayed on the map during route navigation. A higher percentage makes movements appear smoother but can slightly delay the displayed position compared to your real GPS location. A lower percentage keeps your position more accurate but may result in more abrupt map movements.
 - **Use 3D location position icons** (*iOS*). Allows you to select a 3D icon for the [My Location icon](../personal/profiles.md#my-location-appearance).
 - **Simulate obd data** (*Android*). Allows simulation of [OBD scanner](./vehicle-metrics.md) usage.
 - **Performance debug info** (*Android*). Displays rendering and navigation performance.
@@ -142,7 +141,7 @@ OsmAnd developer Widgets can be added to the screen only when OsmAnd development
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
 ![Development widget fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
 
@@ -171,7 +170,7 @@ OsmAnd developer Widgets can be added to the screen only when OsmAnd development
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*  
 
 ![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 

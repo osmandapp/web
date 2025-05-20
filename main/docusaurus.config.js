@@ -156,7 +156,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/osmandapp',
+                href: 'https://x.com/osmandapp',
               },
               {
                 label: 'Reddit',

@@ -55,7 +55,7 @@ export function processMarkers({ layer, markerLatLng, mainMarkers, secondaryMark
     }
 
     if (isSecondaryMarker) {
-        const color = layer.options.color ? Utils.hexToArgb(layer.options.color) : DEFAULT_WPT_COLOR;
+        const color = layer.options.color ? Utils.hexToRgba(layer.options.color) : DEFAULT_WPT_COLOR;
         const customIcon = L.divIcon({
             className: 'custom-circle-icon',
             iconSize: [10, 10],
@@ -331,7 +331,7 @@ const FavoriteLayer = () => {
     }
 
     useEffect(() => {
-        setOpenAddDialog((ctx.addFavorite.location && !openAddDialog) ?? false);
+        setOpenAddDialog((ctx.addFavorite.location && !ctx.addFavorite.poi && !openAddDialog) ?? false);
     }, [ctx.addFavorite]);
 
     function deleteMarkers(file) {

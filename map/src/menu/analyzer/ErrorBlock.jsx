@@ -1,7 +1,7 @@
 import styles from './trackanalyzer.module.css';
-import { Box, Button, ListItemIcon, Typography } from '@mui/material';
-import loginStyles from '../login/login.module.css';
+import { Box, ListItemIcon, Typography } from '@mui/material';
 import React from 'react';
+import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
 
 export default function ErrorBlock({ icon, text, desc = null, btnText, onClick, style = true }) {
     const iconStyles = style ? styles.errorIcon : undefined;
@@ -25,13 +25,11 @@ export default function ErrorBlock({ icon, text, desc = null, btnText, onClick, 
                     )}
                 </Box>
             </Box>
-            <Button
-                className={loginStyles.button}
-                sx={{ mt: 2, ml: '48px', mr: 2, maxWidth: '280px' }}
-                onClick={onClick}
-            >
-                {btnText}
-            </Button>
+            <GrayBtnWithBlueHover
+                action={onClick}
+                text={btnText}
+                additionalStyle={{ mt: 2, ml: '48px', mr: 2, maxWidth: '280px' }}
+            />
         </Box>
     );
 }

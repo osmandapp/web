@@ -289,6 +289,7 @@ export default function LoginDialog() {
                                         />
                                     ))}
                                 </MenuItem>
+                                <FastSpringPurchaseButton selectedProducts={selectedProducts} ctx={ctx} />
                                 <FastSpringPurchaseButton
                                     selectedProducts={selectedProducts}
                                     testMode={true}

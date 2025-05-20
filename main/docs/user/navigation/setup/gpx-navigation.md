@@ -46,7 +46,7 @@ Before using the *Navigation by track* option, you need to [display the track on
 
 - **Route** track will calculate route between route points by selected profile. Basically, all route points will be considered as intermediate points. If you route consists > 50 points, it's very likely that it's misconfigured **Geometry** track.
 
-- **OsmAnd** track consists of both geometry and route parts, and it's suitable to provide exactly the same guidance as navigation by default. These tracks are produced by [Plan route](../../plan-route/create-route.md) or [Web version](../../plan-route/web.md). It's possible to resave this track to **Geometry** only track as [**Simplified**](../../plan-route/create-route.md#save-route) to be used in 3rd party programs.
+- **OsmAnd** track consists of both geometry and route parts, and it's suitable to provide exactly the same guidance as navigation by default. These tracks are produced by [Plan route](../../plan-route/create-route.md) or [Web version](../../web/index.md). It's possible to resave this track to **Geometry** only track as [**Simplified**](../../plan-route/create-route.md#save-route) to be used in 3rd party programs.
 
 
 ### Start GPX Navigation
@@ -176,7 +176,7 @@ In the [Follow track menu](#follow-track-options), you can choose whether you wa
 
 ### Waypoints
 
-If the track has waypoints, you can use [Show along the road](../guidance/map-during-navigation.md#show-points-along-the-route) and [Voice guidance](../guidance/voice-navigation.md#voice-settings) to get notified about Points of Interests. You can add **Waypoints** to an existing track via **[Context menu](../../map/map-context-menu.md#-add--edit--track-waypoint)**, track need to be visible on the map.
+If the track has waypoints, you can use [Show along the route](../guidance/map-during-navigation.md#show-points-along-the-route) and [Voice guidance](../guidance/voice-navigation.md#voice-settings) to get notified about Points of Interests. You can add **Waypoints** to an existing track via **[Context menu](../../map/map-context-menu.md#-add--edit--track-waypoint)**, track need to be visible on the map.
 
 ### Intermediate Points
 

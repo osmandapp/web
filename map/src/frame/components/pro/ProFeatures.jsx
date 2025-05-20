@@ -1,20 +1,10 @@
 import React, { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
-import {
-    AppBar,
-    Box,
-    Button,
-    Divider,
-    IconButton,
-    ListItem,
-    ListItemIcon,
-    ListItemText,
-    Typography,
-} from '@mui/material';
+import { AppBar, Box, Divider, IconButton, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
 import { ReactComponent as LogoProIcon } from '../../../assets/ic_action_osmand_pro_logo_colored.svg';
 import styles from './pro.module.css';
-import buttonStyles from '../../../menu/login/login.module.css';
+import GrayBtnWithBlueHover from '../btns/GrayBtnWithBlueHover';
 
 export default function ProFeatures() {
     const ctx = useContext(AppContext);
@@ -46,21 +36,17 @@ export default function ProFeatures() {
                         <Typography className={styles.text2}>Cross-platform</Typography>
                     </ListItemText>
                 </ListItem>
-                <Button
-                    className={buttonStyles.button}
-                    component="span"
-                    onClick={() => openLink('https://play.google.com/store/apps/details?id=net.osmand')}
-                >
-                    Google Play
-                </Button>
-                <Button
-                    className={buttonStyles.button}
-                    component="span"
-                    sx={{ mt: '-4px' }}
-                    onClick={() => openLink('https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257')}
-                >
-                    Apple App Store
-                </Button>
+                <GrayBtnWithBlueHover
+                    action={() => openLink('https://play.google.com/store/apps/details?id=net.osmand')}
+                    text="Google Play"
+                    span={true}
+                />
+                <GrayBtnWithBlueHover
+                    action={() => openLink('https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257')}
+                    text="Apple App Store"
+                    additionalStyle={{ mt: '-4px' }}
+                    span={true}
+                />
                 <Typography className={styles.text2}>
                     Subscriptions aren’t available on the web. You can get OsmAnd Pro in the app via Google Play or the
                     App Store.

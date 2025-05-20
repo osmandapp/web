@@ -48,7 +48,7 @@ You can find detailed information about visualizing and customizing raster maps 
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
 ![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 

@@ -183,7 +183,7 @@ If data is present, you can select one of the following types:
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
 
 ![Navigation route Android](@site/static/img/navigation/route/route_details_attributes_andr.png)
 

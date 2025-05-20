@@ -38,7 +38,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### OsmAnd+ (One-Time Purchase)
 
-- A separate application available on Google Play and Amazon.
+- A separate application available on Google Play.
 - One-time purchase, after which all features are unlocked forever.
 - Does not include OsmAnd Pro subscription (cross-platform access).
 - Advantages:
@@ -128,10 +128,10 @@ OsmAnd Pro is the best choice for users who want to get the full functionality a
 
 ## How to Purchase
 
-- Purchase through Google Play, Amazon, Huawei AppGallery.
+- Purchase through Google Play, Huawei AppGallery.
 - Available payment methods:
-    - Bank card, Google Pay, Amazon Pay, Huawei Pay.
-    - Use of Google Play/Amazon gift cards.
+    - Bank card, Google Pay, Huawei Pay.
+    - Use of Google Play gift cards.
 - Problems with payment:
     - What to do if the payment fails.
     - Link to Google Play Support.
@@ -139,7 +139,7 @@ OsmAnd Pro is the best choice for users who want to get the full functionality a
 
 ## Restoring Purchases
 
-- How to restore a purchase from Google Play, Amazon, Huawei.
+- How to restore a purchase from Google Play, Huawei.
 - Step-by-step instructions:
 
     - 1 Make sure you are logged into the same account.
@@ -153,7 +153,7 @@ OsmAnd Pro is the best choice for users who want to get the full functionality a
 
 - How purchase synchronization works through Google Play.
 - Limitations:
-    - Subscriptions are not transferable between different stores (Google Play → Amazon).
+    - Subscriptions are not transferable between different stores.
     - Maps+ is not transferable between devices with different accounts.
 
 
@@ -173,28 +173,28 @@ OsmAnd Pro is the best choice for users who want to get the full functionality a
 
 ## Refunds
 
-- Google Play / Amazon return policy.
+- Google Play return policy.
 - Link to the official Google page to request a refund.
 
 
 ## Giftcards
 
 - This section allows users to buy OsmAnd without a bank card
-- Users can purchase OsmAnd with Google Play or Amazon gift cards.
+- Users can purchase OsmAnd with Google Play gift cards.
 - How to find a Google Play gift card in your area.
-- Links to instructions for Google Play Gift Cards and Amazon Gift Cards.
+- Links to instructions for Google Play Gift Cards.
 
 
 ## Common issues and solutions
 
-#### Troubleshooting Purchases
+### Troubleshooting Purchases
 
 - Purchase is not displayed → what to do.
 - Problems with payment → how to fix it.
 - Step-by-step solutions for common errors.
 - Link to troubleshhoting section.
 
-#### FAQ
+### FAQ
 
 - Can I activate my subscription without Google Play?
 - Can I share my purchase with my family?

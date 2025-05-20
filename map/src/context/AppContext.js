@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useCookie from 'react-use-cookie';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
-import TracksManager, { getGpxFiles, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
+import TracksManager, { getGpxFiles, preparedGpxFile, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
 import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
 import { apiGet, apiPost } from '../util/HttpApi';
@@ -199,26 +199,19 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
     }
 
     for (let ind of newSelectedFiles) {
-        let file = files[ind];
-        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
-            file.type
-        )}&name=${encodeURIComponent(file.name)}`;
-        newGpxFiles[file.name] = {
-            url: url,
-            clienttimems: file.clienttimems,
-            updatetimems: file.updatetimems,
-            showOnMap: true,
-            name: file.name,
-            type: 'GPX',
-        };
+        const file = files[ind];
+        let oneGpxFile = preparedGpxFile({ file });
+        oneGpxFile.showOnMap = true;
+        newGpxFiles[file.name] = oneGpxFile;
         let f = await Utils.getFileData(newGpxFiles[file.name]);
         const gpxfile = new File([f], file.name, {
             type: 'text/plain',
         });
 
         promises.push(
-            TracksManager.getTrackData(gpxfile).then((track) => {
+            TracksManager.getTrackData(gpxfile).then(async (track) => {
                 track.name = file.name;
+                track.info = await Utils.getFileInfo(oneGpxFile);
                 Object.keys(track).forEach((t) => {
                     newGpxFiles[file.name][t] = track[t];
                 });

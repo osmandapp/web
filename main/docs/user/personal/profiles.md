@@ -81,7 +81,7 @@ This section contains all settings related to appearance, navigation options, ma
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile"/>*
 
 ![Favorites folder functions android](@site/static/img/personal/profile_settings_free_backup_andr.png)
 
@@ -112,7 +112,7 @@ This section contains settings for the application theme and compass button, map
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
 
 ![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_2_andr.png)
 
@@ -247,9 +247,9 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_general_settings_other_andr.png)
+![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_general_settings_other_2_andr.png)
 
 </TabItem>
 
@@ -277,7 +277,7 @@ The **Other** section provides additional profile settings to customize OsmAnd�
 
 - [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*Android only*) – Disable animations in navigation mode for faster screen transitions.
 
-- **<Translate android="true" ids="animate_my_location"/>** – Enables smooth map panning while in motion, making navigation movements more fluid. This introduces a 1-second delay, causing a slight lag between actual movement and map [position](../map/interact-with-map.md#my-location-and-zoom) updates.
+- **<Translate android="true" ids="position_animation"/>** (*Android only*) – The [position](../map/interact-with-map.md#my-location-and-zoom) icon animates with each GPS point received (once per second). A slight delay in its movement may be noticeable, especially during fast movement or GPS signal fluctuations. You can adjust this effect using the *Prediction time* setting: higher values increase smoothness but add delay, lower values reduce delay but may make movement less smooth.
 
 
 ## Navigation Settings
@@ -286,7 +286,7 @@ The **Other** section provides additional profile settings to customize OsmAnd�
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
@@ -369,8 +369,8 @@ With this menu, you can:
 
 <TabItem value="android" label="Android">  
 
-- Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-- Go to: *Android* *Menu → Settings → App Profile → Configure screen*
+- Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+- Go to: *Menu → Settings → App Profile → Configure screen*
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
@@ -395,7 +395,7 @@ The [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-s
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
 ![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
 
@@ -420,7 +420,7 @@ The **Profile appearance** settings allow you to customize your profile's name a
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
 ![My location Appearance](@site/static/img/personal/profiles/location_appearance_andr.png)
 
@@ -529,7 +529,7 @@ To access the plugin's settings, you must first [**enable the plugin**](../plugi
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugin_settings"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugin_settings"/>*  
 
 ![Profile Settings Plugins Android](@site/static/img/personal/profiles/profile_plugins_1_andr.png)
 

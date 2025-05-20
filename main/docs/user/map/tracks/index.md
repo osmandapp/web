@@ -41,7 +41,7 @@ You can manage track visibility by choosing which ones to display or hide from s
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
 ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
 
@@ -65,7 +65,7 @@ The *Configure Map* option enables you to quickly manage the display of all rece
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -114,7 +114,7 @@ When you select a track on the map or open the [track context menu](./track-cont
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *Tap the track → Track tab → <Translate android="true" ids="analyze_on_map"/>*  
+Go to: *Tap the track → Track tab → <Translate android="true" ids="analyze_on_map"/>*  
 
 ![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 

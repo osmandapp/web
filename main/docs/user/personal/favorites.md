@@ -127,7 +127,7 @@ To modify a favorite point:
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![My places favorites android](@site/static/img/personal/favorite_icon_andr.png)
 
@@ -160,7 +160,7 @@ The *Personal folder* contains special points like **<Translate android="true" i
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![My places favorites android](@site/static/img/personal/my_places_android.png)
 
@@ -246,7 +246,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *Three-dot menu → Change default appearance*
+Go to: *Three-dot menu → Change default appearance*
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
 
@@ -320,7 +320,7 @@ OsmAnd provides several methods to [back up](./import-export.md) and [restore](.
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_andr.png)
 
@@ -351,7 +351,7 @@ The [Free Favorites Backup](../personal/osmand-cloud.md#osmand-start) is a speci
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
 
@@ -428,7 +428,7 @@ You can export and import your favorites using the special buttons at the bottom
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *Android → data → net.osmand → files → backup*
+Go to: *Android → data → net.osmand → files → backup*
 
 ![Favorites backup export Android](@site/static/img/personal/favorites_backup_export_andr.png)  ![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
 

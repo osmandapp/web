@@ -1,5 +1,5 @@
 import headerStyles from '../trackfavmenu.module.css';
-import { AppBar, Box, Button, CircularProgress, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, CircularProgress, IconButton, Toolbar, Typography } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
@@ -13,13 +13,13 @@ import {
     getSvgIcon,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import styles from './travel.module.css';
-import buttonStyles from '../login/login.module.css';
 import CustomSelect from './CustomSelect';
 import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
 import capitalize from 'lodash/capitalize';
+import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 
 export const ALL_YEARS = 'all';
 
@@ -193,9 +193,7 @@ export default function TravelMenu() {
                         marginLeft={'250px'}
                     />
                     <Box sx={{ m: 2 }}>
-                        <Button id="se-submit-show-travel" className={buttonStyles.primaryButton} onClick={showRoutes}>
-                            {t('shared_string_show')}
-                        </Button>
+                        <PrimaryBtn action={showRoutes} id={'se-submit-show-travel'} text={t('shared_string_show')} />
                     </Box>
                     {loadingResult && <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />}
                     {travelResult &&

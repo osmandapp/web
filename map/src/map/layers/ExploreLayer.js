@@ -11,9 +11,10 @@ import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
 import { areSetsEqual } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
-import { EXPLORE_BIG_ICON_SIZE, clusterMarkers, createHoverMarker, removeTooltip } from '../util/Clusterizer';
+import { clusterMarkers, createHoverMarker, EXPLORE_BIG_ICON_SIZE, removeTooltip } from '../util/Clusterizer';
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
+import { HEADER_SIZE, MAIN_MENU_MIN_SIZE } from '../../manager/GlobalManager';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
 export const EXPLORE_MIN_ZOOM = 6;
@@ -194,14 +195,13 @@ export default function ExploreLayer() {
                 return;
             }
             setLoadingContextMenu(true);
-            const bbox = map.getBounds();
+            const bbox = getVisibleBbox();
             const api = settings?.useWikiImages ? API_GET_IMGS : API_GET_OBJS;
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/${api}`, {
                 apiCache: true,
                 params: {
                     northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
                     southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
-                    zoom: api === API_GET_IMGS ? null : Math.round(map.getZoom()),
                     lang: settings?.useWikiImages ? null : i18n.language,
                     filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
                 },
@@ -214,6 +214,17 @@ export default function ExploreLayer() {
             setLoadingContextMenu(false);
             removeTooltip(map, ctx.searchTooltipRef);
         }
+    }
+
+    function getVisibleBbox() {
+        const containerSize = map.getSize();
+        const menuOffset = parseInt(ctx.infoBlockWidth, 10) + MAIN_MENU_MIN_SIZE + 20;
+        const topPadding = HEADER_SIZE + 20;
+        const bottomPadding = 50;
+        const topLeft = map.containerPointToLatLng([menuOffset, topPadding]);
+        const bottomRight = map.containerPointToLatLng([containerSize.x, containerSize.y - bottomPadding]);
+
+        return L.latLngBounds(topLeft, bottomRight);
     }
 
     function openInfo(feature) {
@@ -321,6 +332,7 @@ export default function ExploreLayer() {
                 places: geoJsonData.features,
                 zoom,
                 latitude,
+                isExplore: true,
             });
 
             let simpleMarkersArr = new L.geoJSON();
@@ -331,7 +343,7 @@ export default function ExploreLayer() {
                 const imgTag = ctx.searchSettings.useWikiImages
                     ? place.properties.imageTitle
                     : getImgByProps(place.properties);
-                const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: 200 });
+                const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: 160 });
                 const iconSize = [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE];
 
                 return new Promise((resolve, reject) => {
@@ -471,7 +483,7 @@ export default function ExploreLayer() {
                             <CloseIcon />
                         </IconButton>
                         <Box>
-                            <img src={getPhotoUrl({ photo: selectedObj, size: 300 })} alt="Selected" />
+                            <img src={getPhotoUrl({ photo: selectedObj })} alt="Selected" />
                         </Box>
                         <Box sx={{ marginTop: 2 }}>
                             <Table size="small" aria-label="properties table">

@@ -55,7 +55,7 @@ The following profiles with their routing types are preset in OsmAnd: *Driving, 
 
 ## Customize Offline Routing
 
-You can also create your **[own routing.xml file](#customize-offline-routing)** or modify default **routing.xml** and use it for navigation (only for advanced OsmAnd users).
+You can also create your **own routing.xml file** or modify default **routing.xml** and use it for navigation (only for advanced OsmAnd users).
 
 - Copy the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file to your device. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. As an example, view the [routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file of the OsmAnd user.
 - After making the changes, the new *routing.xml* file can be added to OsmAnd by tapping it and selecting to open it in the OsmAnd app.
@@ -88,7 +88,7 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *Navigation button → Settings → Avoid roads...*
+Go to: *Navigation button → Settings → Avoid roads...*
 
 ![Avoid road menu Android](@site/static/img/navigation/routing/avoid_roads_menu_andr_2.png)
 
@@ -133,7 +133,7 @@ When you select a road to avoid using *map context menu* or *Avoid roads menu*, 
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
 
 ![Avoid road on the map export Android 1](@site/static/img/navigation/routing/avoid_roads_export_andr_1.png) ![Avoid road on the map export Android 2](@site/static/img/navigation/routing/avoid_roads_export_andr_2.png)
 

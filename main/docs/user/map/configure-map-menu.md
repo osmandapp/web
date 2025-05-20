@@ -97,7 +97,7 @@ The map style settings depend on the main map style displayed. You can read more
 
 For each selected profile in the Android system, you can change the order of the <Translate android="true" ids="configure_map"/> menu items, hide the items, reset the default settings, or copy them from another profile. This will help improve your interaction with the OsmAnd app.  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
 
 ![Configure map items ](@site/static/img/settings/configure-screen-ui-customization.png)
 

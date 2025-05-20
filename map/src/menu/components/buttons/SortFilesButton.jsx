@@ -68,9 +68,9 @@ export default function SortFilesButton({
         if (ctx.loginUser) {
             if (type === TRACK_FILE_TYPE) {
                 if (customGroup) {
-                    return !customGroup.files || customGroup.files.length === 0;
+                    return !customGroup.files || customGroup.files.length <= 1;
                 }
-                return !trackGroup || trackGroup.files?.length === 0;
+                return !trackGroup || (trackGroup.files?.length <= 1 && trackGroup.groupFiles?.length <= 1);
             } else if (type === FAVORITE_FILE_TYPE) {
                 return ctx.favorites.groups?.length === 0;
             }

@@ -93,7 +93,7 @@ For stable work and to save resources, you can download a map not of the entire 
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
 ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
@@ -143,7 +143,7 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
 ![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
@@ -182,7 +182,7 @@ When using the [Map rendering engine](../personal/global-settings.md#map-renderi
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
 ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
@@ -328,7 +328,7 @@ The main settings for *Show or Hide map types* are in the Topography section of 
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
 ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
 
@@ -383,7 +383,7 @@ The 3D Relief feature produces a raised relief and provides a three-dimensional 
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Vertical exaggeration*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Vertical exaggeration*
 
 ![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 

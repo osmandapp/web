@@ -19,7 +19,7 @@ export default function ShareFileItem({ file, type }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const favGroup = type === FAVOURITES && ctx.favorites?.groups.find((g) => g.name === file.folder);
+    const favGroup = type === FAVOURITES && ctx.favorites?.groups.find((g) => g.file.folder === file.folder);
 
     const dist = type === GPX && getDist(file);
     const time = type === GPX && getTime(file);

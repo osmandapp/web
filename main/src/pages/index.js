@@ -9,6 +9,7 @@ import AllStores from '../components/buttons/AllStores.mdx';
 import Features from '../components/home/Features';
 import Poll from '../components/home/Poll';
 import Layout2Blocks from '../components/home/Layout2Blocks';
+import Layout1Block from '../components/home/Layout1Block';
 import Twitter from '../components/home/Twitter';
 import Screenshots from '../components/home/Screenshots';
 import Impressions from '../components/home/Impressions';
@@ -47,10 +48,9 @@ export default function Home() {
         <Screenshots altSectionClass='sectionAlt'/>
         <Features />
         <Impressions altSectionClass='sectionAlt'/>
-        <Layout2Blocks names={['Twitter', 'Poll']} >
-          <Twitter />
+        <Layout1Block names={['Poll']} >
           <Poll />
-        </Layout2Blocks>
+        </Layout1Block>
         
       </main>
     </Layout>

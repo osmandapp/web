@@ -127,7 +127,7 @@ History is a list of all deactivated (passed) markers. From this list it's possi
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
 
 ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)  
 
@@ -171,7 +171,7 @@ Using functionality of the Plan a route in Markers list tool you can sort *Marke
 
 ![Map markers More Android](@site/static/img/personal/markers/map_markers_more_android.png)
 
-- **<Translate android="true" ids="sort_by"/>**. Makrers can be sort in list by name, proximity, adding time.
+- **<Translate android="true" ids="sort_by"/>**. Markers can be sort in list by name, proximity, adding time.
 - **<Translate android="true" ids="appearance_on_the_map"/>**  or **<Translate ios="true" ids="shared_string_appearance"/>**. [Settings for Map markers](#appearance-on-the-map).
 - **<Translate android="true" ids="coordinate_input"/>**. Adds Markers by [coorditanes input](../plan-route/coordinate-input.md).
 - **<Translate android="true" ids="plan_route"/>**. Builds route [for navigation](../navigation/setup/markers-navigation.md) using chosen markers.

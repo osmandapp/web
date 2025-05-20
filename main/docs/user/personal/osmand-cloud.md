@@ -31,7 +31,7 @@ OsmAnd Cloud allows you to **store and synchronize personal settings and applica
 
 ## Cross-Platform
 
-OsmAnd Cloud allows you to back up, restore, and sync your data across Android, iOS, and the [web version](../plan-route/web.md). With cross-platform capabilities, you can transfer **profile settings**, **tracks**, **favorites**, **OSM edits/notes**, and more between devices. Additionally, the **web version** enables you to plan routes and save them for later use on connected devices.  
+OsmAnd Cloud allows you to back up, restore, and sync your data across Android, iOS, and the [web version](../web/index.md). With cross-platform capabilities, you can transfer **profile settings**, **tracks**, **favorites**, **OSM edits/notes**, and more between devices. Additionally, the **web version** enables you to plan routes and save them for later use on connected devices.  
 
 OsmAnd supports **cross-platform usage** across *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* with the following steps:
 
@@ -46,7 +46,7 @@ OsmAnd supports **cross-platform usage** across *([Android](../purchases/android
 4. **Use the registered email** as your login to activate OsmAnd Pro or OsmAnd Start on other platforms.
 
 :::note  
-**OsmAnd Pro** is a cross-platform subscription that includes all OsmAnd features. You can purchase it in one store (e.g., Google Play, Amazon, Huawei AppGallery) and use it also on **iOS**. Your **[registered email](#login)** is your login for activating OsmAnd Pro across platforms.  
+**OsmAnd Pro** is a cross-platform subscription that includes all OsmAnd features. You can purchase it in one store (e.g., Google Play, Huawei AppGallery) and use it also on **iOS**. Your **[registered email](#login)** is your login for activating OsmAnd Pro across platforms.  
 :::
 
 
@@ -56,7 +56,7 @@ OsmAnd supports **cross-platform usage** across *([Android](../purchases/android
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*  
 
 ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_1.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_17.png)
 
@@ -102,7 +102,7 @@ If you experience issues during registration:
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>*  
 
 ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_andr.png)   ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_andr.png)
 
@@ -132,7 +132,7 @@ Features included in OsmAnd Start:
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
 
@@ -168,7 +168,7 @@ If you already have an **OsmAnd Pro** subscription or an **active OsmAnd Cloud a
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*  
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_16.png)
 
@@ -193,6 +193,25 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 **Sync now** combines the *Upload all* and *Download all* buttons in the Changes menu, in the [Local and Cloud](#local-and-cloud) sections. **Conflicts** are not synchronized in this way.
 
+<!--
+#### Syncing GPX Collections
+
+OsmAnd supports grouping GPX tracks into **collections**, which allows you to organize related tracks under a single label.
+
+When using **OsmAnd Cloud**, GPX collections are:
+
+- Backed up along with your personal data.
+- Synchronized across devices.
+- Restored with the same **collection structure** (including the name and all associated tracks).
+
+> *This ensures that your route organization is preserved, even after reinstalling the app or switching to a new device.*
+
+To use this feature:
+
+1. Create or assign tracks to a collection via *Menu → My Places → Tracks*.
+2. Go to *Menu → Settings → OsmAnd Cloud → Back up data* and enable synchronization.
+3. On another device, sign in with the same OsmAnd Cloud account and restore the data.
+-->
 
 ## Trash
 
@@ -200,7 +219,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,help_article_personal_storage_name,shared_string_trash"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,help_article_personal_storage_name,shared_string_trash"/>*
 
 ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_1_andr.png)  ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_2_andr.png)  
 
@@ -240,7 +259,7 @@ The **Trash** feature allows you to view and manage files that have been deleted
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option.png)  
 
@@ -265,7 +284,7 @@ This section is for editing and managing your OsmAnd Cloud.
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_3.png)
 
@@ -298,7 +317,7 @@ All [maps](../start-with/download-maps.md) are stored on the device on which the
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_version_history"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_version_history"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_19-1.png)  
 
@@ -330,7 +349,7 @@ This section contains information about which of your accounts is connected to O
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
 ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)  
 
@@ -393,7 +412,7 @@ In the [Last Sync](#last-sync) section of the drop-down menu, tap any item to op
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate android="true" ids="shared_string_cloud"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate android="true" ids="shared_string_cloud"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_2.png)  
 
@@ -422,7 +441,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13-2.png)  
 

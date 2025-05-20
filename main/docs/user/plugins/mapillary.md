@@ -158,7 +158,7 @@ To add photos, you need to register in the [Mapillary app](https://www.mapillary
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="mapillary"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="mapillary"/>*
 
 ![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png)  ![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
 

@@ -29,7 +29,7 @@ OsmAnd e ["Coppiavventura"](https://www.facebook.com/coppiavventura/) vi present
 
 1. **Inserite il vostro indirizzo e-mail** per la registrazione:
    
-<RegisterUserPromoBlock  promoKey='cop'/>
+<RegisterUserPromoBlock  promoKey='cop2'/>
 
 <p> </p>
 

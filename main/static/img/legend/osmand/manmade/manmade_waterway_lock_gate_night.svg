@@ -1,7 +1,9 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 
 <g transform="translate(138.000000, 8.000000) scale(2.000000 2.000000) "> 
 
-<path fill-rule="nonzero" fill="rgb(46.666667%, 46.666667%, 46.666667%)" fill-opacity="1" stroke-width="5" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(46.666667%, 46.666667%, 46.666667%)" stroke-opacity="1" stroke-miterlimit="4" d="M 147.832031 290 L 208.815104 168.222656 L 371.184896 168.222656 L 432.167969 290 L 371.184896 411.777344 L 208.815104 411.777344 Z M 147.832031 290 " transform="matrix(0.0206897, 0, 0, 0.0206897, 0, 0)"/>
+<g id="surface1">
+<path style="fill-rule:nonzero;fill:rgb(46.666667%,46.666667%,46.666667%);fill-opacity:1;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(46.666667%,46.666667%,46.666667%);stroke-opacity:1;stroke-miterlimit:4;" d="M 147.832031 290 L 208.815104 168.222656 L 371.184896 168.222656 L 432.167969 290 L 371.184896 411.777344 L 208.815104 411.777344 Z M 147.832031 290 " transform="matrix(0.0206897,0,0,0.0206897,0,0)"/>
+</g>
 
 </g>%n%n</svg>

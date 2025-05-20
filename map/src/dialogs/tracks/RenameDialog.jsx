@@ -1,8 +1,7 @@
-import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import dialogStyles from '../dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
-import { Button, TextField } from '@mui/material';
+import { Button, TextField, Dialog } from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';

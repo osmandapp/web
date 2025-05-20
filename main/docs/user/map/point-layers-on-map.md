@@ -23,7 +23,7 @@ The map can display points such as [Favorites](#favorites), [Points of Interest]
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
 
 ![Favotires layer Android](@site/static/img/map/favorites_layer.png)  
 
@@ -52,7 +52,7 @@ In the Android version of OsmAnd, you can display only certain group favorites o
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
 
 ![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png)  
 
@@ -167,8 +167,8 @@ Requires [Parking position plugin](../plugins/parking.md).
 
 Enable or disable Wikipedia articles on the map and filter by language:
 
-- **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,local_indexes_cat_wiki"/>*
-- **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,local_indexes_cat_wiki"/>*  
+- **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
+- **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*  
 
 ![Wikipedia on map](@site/static/img/map/map-wikipedia-on-map.png) ![Wikipedia language - iOS](@site/static/img/map/map-wikipedia-language-ios.png)  
 

@@ -102,7 +102,7 @@ You can also adjust the transparency of the base map to blend it with your layer
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
 
 ![Show maps](@site/static/img/plugins/online-maps/map_source.png)
 
@@ -127,7 +127,7 @@ You can choose a map style from the list or [add](#add-new-online-raster-map-sou
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
 ![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
 
@@ -158,7 +158,7 @@ Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_se
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
 ![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.png)
 
@@ -217,7 +217,7 @@ The difference of relief display on the map when applying these settings is desc
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
+Go to: *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
 
 </TabItem>
 
@@ -273,7 +273,7 @@ Here are the main methods how for adding a new raster map source which is not de
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add"/>*
 
 </TabItem>
 
@@ -395,7 +395,7 @@ For the maps to automatically update the tiles after a while, you can set an [Ex
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
 
 </TabItem>
 

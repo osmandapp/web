@@ -53,7 +53,7 @@ The following setting makes the OsmAnd Ski Map appear on the screen:
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*  
 
 ![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles-2.png) ![Ski maps plugin map style Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android-2.png)
 
@@ -121,7 +121,7 @@ The Ski Map Viewer plugin is a separate application, and disabling its display d
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![Nautical depth contours in Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
@@ -194,7 +194,7 @@ Piste types such as *Hiking Trails* or *Sledging Trails* can be used for skiing 
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details,rendering_attr_pisteGrooming_name"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details,rendering_attr_pisteGrooming_name"/>*
 
 ![Enable grooming in Android](@site/static/img/plugins/ski-maps/and_enable_grooming.png) ![Grooming displayed in Android](@site/static/img/plugins/ski-maps/and_yes_grooming.png)
 
@@ -219,7 +219,7 @@ Special machines groom the tracks to prepare them for the appropriate activity, 
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
 
 ![Routes disabled in Android](@site/static/img/plugins/ski-maps/and_no_routes.png) ![Routes enabled in Android](@site/static/img/plugins/ski-maps/and_yes_routes.png)
 

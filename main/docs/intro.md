@@ -5,35 +5,35 @@ title: Docs
 ---
 
 
-### 🎓 [User guide](/docs/user/)
+### [User guide](/docs/user/)
 
 User guide about the OsmAnd application describing main features & settings.
 
-### 🗺️ [Map legend](/docs/user/map-legend/)
+### [Map legend](/docs/user/map-legend/)
 
 Key map elements used in OsmAnd Map.
 
-### 🌍 [Map](https://osmand.net/map)
+### [Map](https://osmand.net/map)
 
-Use the OsmAnd route planner, look at the weather forecast, find interesting places on the map, and work with your OsmAnd Cloud account (tracks, favorites, account data). 
+Use the OsmAnd route planner, look at the weather forecast, find interesting places on the map, and work with your OsmAnd Cloud account (tracks, favorites, account data).
 
-### 📚 [Technical Documentation](/docs/technical/)
+### [Technical Documentation](/docs/technical/)
 
-Technical documentation related 
+Technical documentation related.
 
-### 🛠 [Build it](/docs/build-it/)
+### [Build it](/docs/build-it/)
 
 Build and create your own version of OsmAnd, also links to License questions.
 
-### ⏪ [Versions](/docs/versions/)
+### [Versions](/docs/versions/)
 
 Release notes and links to previous OsmAnd Releases. Beta & Nightly builds. OsmAnd MapCreator.
 
-### ⚖ [Legal](/docs/legal/)
+### [Legal](/docs/legal/)
 
 License. Privacy Policy. Terms of Use.
 
-### 🚵‍♂️ [Join our team](/docs/hiring/)
+### [Join our team](/docs/hiring/)
 
 We are always seeking for new contributors who can join our international team.
 

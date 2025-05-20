@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
 
 ![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_1_andr.png)  ![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_2_andr.png)
 
@@ -89,7 +89,7 @@ The [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.m
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
 
 ![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
@@ -176,7 +176,7 @@ More information can be found in [*OsmAnd Privacy and Security Policy*](../../le
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
 
 ![General Settings Analytics Android](@site/static/img/personal/profiles/general_settings_analitics_andr.png)  
 
@@ -220,7 +220,7 @@ A **UUID** (*Unique User Identifier*) is generated for each installation of the 
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
 ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png) ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_new_2.png)
 
@@ -354,7 +354,7 @@ OsmAnd can [warn you about speed cameras](../navigation/guidance/navigation-sett
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
 ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_andr.png)   ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_andr.png)
 

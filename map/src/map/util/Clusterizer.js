@@ -14,7 +14,7 @@ import PoiManager from '../../manager/PoiManager';
 import { getIconByType } from '../../manager/SearchManager';
 import { processMarkers } from '../layers/FavoriteLayer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
-import { updateMarkerZIndex } from '../layers/ExploreLayer';
+import { getImgByProps, updateMarkerZIndex } from '../layers/ExploreLayer';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
 
@@ -27,9 +27,10 @@ export function clusterMarkers({
     secondaryIconSize = 10,
     isPoi = false,
     isFavorites = false,
+    isExplore = false,
 }) {
-    const maxMainPlaces = getMaxMainPlaces(zoom, isPoi);
-    const maxSecondaryPlaces = getMaxSecondaryPlaces(zoom);
+    const maxMainPlaces = getMaxMainPlaces(zoom, isPoi, isExplore);
+    const maxSecondaryPlaces = getMaxSecondaryPlaces(zoom, isExplore);
     const useUniformMarkerPlacement = getUseUniformMarkerPlacement(zoom, isPoi, isFavorites);
 
     // Minimum distances between markers in meters
@@ -46,6 +47,16 @@ export function clusterMarkers({
         zoom,
         isPoi,
     });
+
+    if (isExplore) {
+        return createExploreMarkersArr({
+            places,
+            mainMinDistance,
+            secondaryMinDistance,
+            maxMainPlaces,
+            maxSecondaryPlaces,
+        });
+    }
 
     // Sort clusters by size
     const clusters = Object.values(clusterPlaces(places, zoom, isFavorites));
@@ -65,7 +76,7 @@ export function clusterMarkers({
         };
     }
 
-    const mainMarkers = createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites);
+    const mainMarkers = createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites, isPoi);
 
     const secondaryMarkers = createOtherMarkersArr({
         clusters,
@@ -82,12 +93,64 @@ export function clusterMarkers({
     };
 }
 
-function getMaxMainPlaces(zoom, isPoi) {
-    return isPoi ? 2000 : 50;
+function createExploreMarkersArr({ places, mainMinDistance, secondaryMinDistance, maxMainPlaces, maxSecondaryPlaces }) {
+    places.sort((a, b) => (a.properties.rowNum ?? 0) - (b.properties.rowNum ?? 0));
+
+    const mainMarkers = [];
+    for (const place of places) {
+        if (
+            mainMarkers.length <= maxMainPlaces &&
+            place.properties.rowNum < 100 &&
+            canPlaceMarker({
+                place,
+                existingPlaces: mainMarkers,
+                minDistance: mainMinDistance,
+                isFav: false,
+            })
+        ) {
+            mainMarkers.push(place);
+        }
+    }
+
+    const secondaryMarkers = [];
+    for (const place of places) {
+        if (secondaryMarkers.length >= maxSecondaryPlaces || mainMarkers.includes(place)) continue;
+
+        if (
+            canPlaceMarker({
+                place,
+                existingPlaces: [...mainMarkers, ...secondaryMarkers],
+                minDistance: secondaryMinDistance,
+                isFav: false,
+            })
+        ) {
+            secondaryMarkers.push(place);
+        }
+    }
+
+    return {
+        mainMarkers,
+        secondaryMarkers,
+    };
 }
 
-function getMaxSecondaryPlaces(zoom) {
-    return zoom > 10 ? 200 : 900;
+function getMaxMainPlaces(zoom, isPoi, isExplore) {
+    if (isPoi) {
+        return 2000;
+    } else if (isExplore) {
+        return 20;
+    }
+    return 50;
+}
+
+function getMaxSecondaryPlaces(zoom, isExplore) {
+    if (isExplore) {
+        return 200;
+    }
+    if (zoom > 10) {
+        return 200;
+    }
+    return 900;
 }
 
 function getUseUniformMarkerPlacement(zoom, isPoi, isFavorites) {
@@ -161,9 +224,15 @@ function clusterPlaces(places, zoom, isFavorites) {
     return clustered;
 }
 
-function createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites) {
+function createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites, isPoi) {
     const mainMarkers = [];
     if (useUniformMarkerPlacement) {
+        if (!isPoi && !isFavorites) {
+            // Remove images from clusters without icon
+            clusters = clusters.map((cluster) => cluster.filter((item) => getImgByProps(item.properties)));
+            // Remove empty clusters
+            clusters = clusters.filter((cluster) => cluster.length > 0);
+        }
         const firstItemsSorted = clusters.map((cluster) => cluster[0]).sort((a, b) => a.index - b.index);
         // Add first items to main markers for better visibility
         firstItemsSorted.forEach((item) => {

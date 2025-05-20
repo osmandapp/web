@@ -105,7 +105,7 @@ The compass button provides multiple actions to control map orientation:
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/map_butt_compass_widg_andr.png)
 
@@ -134,7 +134,7 @@ The compass icon on the button always points to the North. You can select how th
 
 <TabItem value="android" label="Android">  
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
 
 ![3D mode](@site/static/img/widgets/map_butt_3D_mode_andr.png)
 

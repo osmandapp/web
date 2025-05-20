@@ -50,8 +50,6 @@ To build bundle you could use **bundle${FLAVOR}LegacyFatRelease**.
 |:--------|:---------------|:---------------|
 | nightlyFree | net.osmand.dev | Nightly free build that could be installed next to both of GPlay versions for testing and exploring needs
 | androidFull | net.osmand.plus | Full OsmAnd~ version could be used for F-Droid builds. Doesn't use GooglePlay services.
-| amazonFree | net.osmand | Amazon OsmAnd - doesn't use GooglePlay services 
-| amazonFull | net.osmand.plus | Amazon OsmAnd+ - doesn't use GooglePlay services
 | gplayFree | net.osmand | Google Play OsmAnd version - uses GooglePlay services.
 | gplayFull | net.osmand.plus | Google Play OsmAnd+ version - uses GooglePlay services.
 | huawei | net.osmand | Special build for Huawei market - uses Huawei services but not Google Play

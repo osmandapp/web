@@ -64,7 +64,7 @@ Wikivoyage information includes the main facts about a place, transportation, at
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*
 
 ![Travel guides download menu](@site/static/img/guides/travel_guides_download.png)
 

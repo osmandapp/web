@@ -21,7 +21,16 @@ export const DEFAULT_TRACK_LINE_WEIGHT = 7;
 
 function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE, simplifyWpts = false }) {
     const layers = [];
-    const trackAppearance = data.trackAppearance;
+    const emptyInfo = data?.info && data.info.width === '' && data.info.color === '#00000000';
+    const trackAppearance =
+        data?.info && !emptyInfo
+            ? {
+                  color: data.info.color,
+                  width: data.info.width,
+                  showArrows: data.info.show_arrows,
+                  showStartFinish: data.info.show_start_finish,
+              }
+            : data.trackAppearance;
     data.tracks?.forEach((track) => {
         if (track.points?.length > 0) {
             const res = parsePoints({
@@ -65,12 +74,7 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng));
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
-                let polyline = new L.Polyline(coordsTrk, getPolylineOpt());
-                if (ctx) {
-                    polyline.setStyle({
-                        color: ctx.trackRouter.getColor(getPointGeoProfile(point, points)),
-                    });
-                }
+                let polyline = createPolyline({ coords: coordsTrk, ctx, map, point, points, trackAppearance });
                 addStartEndGap(point, points, layers, draggable);
                 layers.push(polyline);
                 coordsAll = coordsAll.concat(_.cloneDeep(coordsTrk));
@@ -103,12 +107,7 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
         });
     }
 
-    let endPolyline = new L.Polyline(coordsTrk, getPolylineOpt());
-    if (ctx) {
-        endPolyline.setStyle({
-            color: ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE }),
-        });
-    }
+    const endPolyline = createPolyline({ coords: coordsTrk, ctx, map, point: null, points: null, trackAppearance });
     layers.push(endPolyline);
 
     return {
@@ -176,7 +175,17 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
 }
 
 function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
-    const color = trackAppearance?.color ?? ctx.trackRouter.getColor(getPointGeoProfile(point, points));
+    let color =
+        point && points
+            ? ctx.trackRouter.getColor(getPointGeoProfile(point, points))
+            : ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE });
+    if (trackAppearance?.color) {
+        if (typeof trackAppearance.color === 'string') {
+            color = Utils.hexToRgba(trackAppearance.color);
+        } else if (typeof trackAppearance.color === 'number') {
+            color = Utils.numberToRgba(trackAppearance.color);
+        }
+    }
     const width = trackAppearance?.width ?? 'medium';
     const arrowSettings = {
         show: trackAppearance?.showArrows,
@@ -184,7 +193,7 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
     };
     const polyline = new L.Polyline(coords, {
         color,
-        weight: DEFAULT_TRACK_LINE_WEIGHT,
+        weight: getPolylineWeight(width, map.getZoom()),
         ...(arrowSettings.show ? { renderer: L.svg() } : {}),
     });
 
@@ -460,7 +469,7 @@ function getMarkerFromCluster(point, clusters, coords, opt, markerLayer) {
         return secLatLng.equals(coords);
     });
     if (isSecondaryMarker) {
-        const color = point.color ? Utils.hexToArgb(point.color) : DEFAULT_WPT_COLOR;
+        const color = point.color ? Utils.hexToRgba(point.color) : DEFAULT_WPT_COLOR;
         const customIcon = L.divIcon({
             className: 'custom-circle-icon',
             iconSize: [10, 10],

@@ -12,6 +12,8 @@ import { ReactComponent as InstagramIcon } from '../../../assets/icons/ic_action
 import { ReactComponent as CuisineIcon } from '../../../assets/icons/ic_action_cuisine.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_mail.svg';
+import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
+import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import * as locales from 'date-fns/locale';
 import { format, startOfWeek, addDays } from 'date-fns';
 import capitalize from 'lodash/capitalize';
@@ -73,6 +75,7 @@ export const POI_ID = WEB_POI_PREFIX + 'id';
 // from PoiType object
 export const CATEGORY_NAME = WEB_PREFIX + 'name';
 export const CATEGORY_TYPE = WEB_PREFIX + 'type';
+export const CITY = WEB_PREFIX + 'city';
 export const ADDRESS_1 = WEB_PREFIX + 'address1';
 export const ADDRESS_2 = WEB_PREFIX + 'address2';
 export const CATEGORY_KEY_NAME = WEB_PREFIX + 'keyName';
@@ -295,13 +298,10 @@ async function getWptTags(obj, type, ctx) {
                                 const prepValue = value.replace(TYPE, '').replace('__', '_');
                                 const svgData = await getSvgIcon({ value: prepValue, ctx });
                                 tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
+                            } else if (parseTagWithLang(key).lang || key.includes('_name')) {
+                                tagObj.icon = <DisplayLanguageIcon />;
                             } else {
-                                const tagWithLang = parseTagWithLang(key);
-                                let preparedKey = key;
-                                if (tagWithLang.lang) {
-                                    preparedKey = tagWithLang.key;
-                                }
-                                const svgData = await getSvgIcon({ preparedKey, value, ctx });
+                                const svgData = await getSvgIcon({ key, value, ctx });
                                 tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
                             }
                     }
@@ -329,7 +329,9 @@ async function getWptTags(obj, type, ctx) {
                     tagObj.textPrefix = tagObj.key;
                 }
 
-                // add ele tag
+                if (key.includes(WIKIDATA)) {
+                    tagObj = addWikidataTags(key, value, tagObj);
+                }
 
                 res.push(tagObj);
             }
@@ -496,7 +498,7 @@ function getSocialMediaUrl(key, value) {
         facebook: 'https://facebook.com/%s',
         vk: 'https://vk.com/%s',
         instagram: 'https://instagram.com/%s',
-        twitter: 'https://twitter.com/%s',
+        twitter: 'https://x.com/%s',
         ok: 'https://ok.ru/%s',
         telegram: 'https://t.me/%s',
         flickr: 'https://flickr.com/%s',
@@ -515,6 +517,15 @@ function addWikipediaTags(key, value, tagObj) {
     tagObj.hiddenUrl = wikiParams.url;
     tagObj.isUrl = true;
     tagObj.textPrefix = wikiParams.prefix;
+
+    return tagObj;
+}
+
+function addWikidataTags(key, value, tagObj) {
+    tagObj.value = value;
+    tagObj.url = 'https://www.wikidata.org/wiki/' + value;
+    tagObj.isUrl = true;
+    tagObj.icon = <WikidataIcon />;
 
     return tagObj;
 }
@@ -684,7 +695,7 @@ function parseUrl(url, site) {
 }
 
 export function filterTag(tag) {
-    return tag.key !== WIKIMEDIA_COMMONS && tag.key !== WIKIDATA && !otherImgTags(tag.key);
+    return tag.key !== WIKIMEDIA_COMMONS && !otherImgTags(tag.key);
 }
 
 export const otherImgTags = (tag) => {

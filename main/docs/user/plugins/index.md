@@ -33,7 +33,7 @@ To access a plugin's functionality, it must first be [enabled](#enable--disable)
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable*
+Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable*
 
 ![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
 
@@ -85,7 +85,7 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 |[Accessibility](#accessibility) 🤖  | [Custom Settings](../plugins/accessibility.md#plugin-settings) |
 | [OsmAnd development](#osmand-development) | [Custom Settings](../plugins/development.md#plugin-settings) |
 | [OsmAnd Tracker](#osmand-tracker) 🤖  | [Map Layer](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#osmand-tracker-widget), [Context Menu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [AIS vessel tracker](#ais-tracker) 🤖  |  [Custom Settings](../plugins/ais-tracker.md#plugin-settings) |
+| [AIS vessel tracker](#ais-vessel-tracker) 🤖  |  [Custom Settings](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Plugin Settings
@@ -129,7 +129,7 @@ The following plugins provide their own settings:
 |  [Accessibility](#accessibility) 🤖  | [Settings](../plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
 | [OsmAnd development](#osmand-development) | [Plugin settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
 |  [OsmAnd Tracker](#osmand-tracker) 🤖  | All settings are configurable in a separate app |
-| [AIS vessel tracker](#ais-tracker) | [Plugin settings](../plugins/ais-tracker.md#plugin-settings) allow you to enable special settings |
+| [AIS vessel tracker](#ais-vessel-tracker) | [Plugin settings](../plugins/ais-tracker.md#plugin-settings) allow you to enable special settings |
 
 ### Plugin Actions
 
