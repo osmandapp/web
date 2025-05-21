@@ -72,7 +72,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_travel_g
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
 
 ![Maps menu iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
 

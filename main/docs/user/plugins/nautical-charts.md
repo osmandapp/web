@@ -73,7 +73,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*  
 
 ![Nautical Map Type in iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
 
@@ -104,7 +104,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nau
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
 
 ![Nautical plugin maps view iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
@@ -156,7 +156,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
 ![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
 
@@ -207,7 +207,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,shared_s
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
 
 ![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
 
@@ -239,7 +239,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
 
 ![Seabed details](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
 

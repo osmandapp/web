@@ -40,7 +40,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
 ![Car routing settings iOS 1](@site/static/img/navigation/routing/car_routing_ios.png)
 
@@ -77,7 +77,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
 ![Truck routing settings iOS 2](@site/static/img/navigation/routing/truck_routing_ios.png)
 

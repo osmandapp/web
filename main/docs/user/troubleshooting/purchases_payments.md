@@ -12,15 +12,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
-<<<<<<< HEAD
-- **For iOS**. Open OsmAnd and navigate to *Menu → Settings → Purchases →* tap *Restore purchases* and enter your Apple ID. For more details, refer to [this article](../purchases/ios.md#restore-purchases).
-- **For Android**. Log in to the same app's store account used for purchasing OsmAnd. Search for *OsmAnd+* or *OsmAnd Free* (for restoring *Maps+*, *OsmAnd Live*, or *OsmAnd Pro*) and install the app.
-No additional payment is required. If the paid features are not restored, go to your device's *Settings → Apps →* select the app's store, clear the cache, restart your device, and try again. For further details, refer to [this article](../purchases/android.md#restore-purchases).
-=======
->>>>>>> refs/remotes/origin/main
-
-
 ## Cross-Platform Purchases
 
 **OsmAnd Pro** and **Maps+** (*All World Maps* for iOS) are **cross-platform subscriptions** available for Android and iOS starting with OsmAnd 5.0. Cross-platform means that if you purchase a subscription, for example, in one of the Android stores (Google Play, Huawei AppGallery), you can also use it on iOS and in the web version.
@@ -83,8 +74,7 @@ No additional payment is required. If the paid features are not restored, go to 
 
 We are already developing a way to save all your purchases and will provide detailed instructions shortly.
 
-- On August 20, 2025, Amazon will close the Amazon Appstore for Android devices — details [here](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program).
-- To learn how to save your OsmAnd purchases made through the Amazon Appstore, read [here](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).
+On August 20, 2025, Amazon will close the Amazon Appstore for Android devices — details [here](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program).
 
 
 ## How to restore the Topography (formerly Contour lines) plugin purchase

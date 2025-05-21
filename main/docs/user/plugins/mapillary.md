@@ -166,7 +166,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="mapillary"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="mapillary"/>*
 
 ![Mapillary plugin Map Context menu iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
 

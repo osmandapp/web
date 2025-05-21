@@ -64,7 +64,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
 
 <table class="blogimage">
     <tr>
@@ -129,7 +129,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,gene
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,selected_profile,general_settings_2,always_center_position_on_map"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,selected_profile,general_settings_2,always_center_position_on_map"/>*
 
 ![Display position Android](@site/static/img/widgets/radius_ruler_display_position_ios.png) ![Radius ruler downward](@site/static/img/widgets/radius_ruler_downward_ios.png)
 

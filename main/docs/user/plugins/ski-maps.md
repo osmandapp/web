@@ -61,7 +61,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
 
 ![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![Ski maps plugin map style iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
 
@@ -129,7 +129,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
 ![Depth contours in iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
 
@@ -202,7 +202,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_details,rendering_attr_pisteGrooming_name"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_details,rendering_attr_pisteGrooming_name"/>*
 
 ![Enable grooming in iOS](@site/static/img/plugins/ski-maps/ios_details_grooming.png) ![Grooming displayed in iOS](@site/static/img/plugins/ski-maps/ios_grooming_enabled.png)
 
@@ -227,7 +227,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
 
 ![Routes disabled in iOS](@site/static/img/plugins/ski-maps/ios_no_routes.png) ![Routes enabled in iOS](@site/static/img/plugins/ski-maps/ios_yes_routes.png)
 

@@ -36,7 +36,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
 

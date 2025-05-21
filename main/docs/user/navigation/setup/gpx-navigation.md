@@ -109,7 +109,7 @@ For navigation, if the selected track consists of multiple segments or tracks, y
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
+Go to: *<Translate ios="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
 
 
 ![Navigation by track screen iOS](@site/static/img/navigation/gpx/follow_the_track_4-1_ios.png)

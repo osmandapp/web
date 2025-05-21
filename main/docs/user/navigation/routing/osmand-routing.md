@@ -96,7 +96,7 @@ Go to: *Navigation button → Settings → Avoid roads...*
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *Navigation button → Settings → Avoid roads*
+Go to: *Navigation button → Settings → Avoid roads*
 
 ![Avoid road menu iOS](@site/static/img/navigation/routing/avoid_roads_menu_ios_2.png)
 
@@ -141,7 +141,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
 
 ![Avoid road on the map export iOS 1](@site/static/img/navigation/routing/avoid_roads_export_ios_1.png) ![Avoid road on the map export iOS 2](@site/static/img/navigation/routing/avoid_roads_export_ios_2.png)
 

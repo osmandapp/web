@@ -110,7 +110,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_ma
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type"/>*  
 
 ![Show maps](@site/static/img/plugins/online-maps/map_type.png)
 
@@ -135,7 +135,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_ov
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
 ![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
 
@@ -166,7 +166,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_un
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
 ![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
 
@@ -223,7 +223,7 @@ Go to: *<Translate android="true" ids="android_button_seq"/> <Translate android=
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
+Go to: *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
 
 </TabItem>
 
@@ -279,7 +279,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_ma
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,add_online_source"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,add_online_source"/>*
 
 </TabItem>
 
@@ -401,7 +401,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit"/>*
 
 </TabItem>
 

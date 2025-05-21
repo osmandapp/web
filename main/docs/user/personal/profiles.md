@@ -41,7 +41,7 @@ OsmAnd offers a variety of default profiles tailored for different activities, i
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
 ![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
 
@@ -89,7 +89,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile"/>*
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
 ![Favorites actions ios](@site/static/img/personal/profile_settings_free_backup_ios.png)
 
@@ -120,7 +120,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,gene
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
 
@@ -255,7 +255,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,gene
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
 
 ![Profiles General Settings Other iOS](@site/static/img/personal/profiles/profile_general_settings_other_ios.png)  
 
@@ -294,7 +294,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,rout
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_overview_2_ios.png)
 
@@ -340,7 +340,7 @@ There are no navigation settings in the *Browse map* profile.
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,configure_map"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,configure_map"/>*  
 
 ![Profiles Configure map Settings iOS](@site/static/img/personal/profiles/profile_configure_map_ios.png)
 
@@ -378,7 +378,7 @@ With this menu, you can:
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)
 
@@ -403,7 +403,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,prof
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
 ![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
 
@@ -428,7 +428,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,prof
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
 ![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios.png)
 
@@ -537,7 +537,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group"/>*
 
 ![Profile Settings Plugins iOS](@site/static/img/personal/profiles/profile_plugins_1_ios.png)
 

@@ -65,7 +65,7 @@ Go to: *Enabled plugin → <Translate android="true" ids="shared_string_menu,sha
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *Enabled plugin → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
+Go to: *Enabled plugin → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
 ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
 
@@ -91,7 +91,7 @@ Go to: *Enabled plugin → <Translate android="true" ids="shared_string_menu,qui
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *Enabled plugin → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
+Go to: *Enabled plugin → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
 ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
@@ -245,7 +245,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="shared_string_weather"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="shared_string_weather"/>*
 
 ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 

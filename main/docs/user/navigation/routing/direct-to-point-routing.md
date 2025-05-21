@@ -44,7 +44,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,shared_string_settings"/> → any profile → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings"/> → any profile → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*
 
 ![Direct-to-point routing settings iOS](@site/static/img/navigation/routing/direct_to_point_ios.png)  
 

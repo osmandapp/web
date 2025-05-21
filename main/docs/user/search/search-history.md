@@ -144,7 +144,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
 ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png)  
 
