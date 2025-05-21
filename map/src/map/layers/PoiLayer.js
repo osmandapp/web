@@ -31,6 +31,7 @@ import styles from '../../menu/search/search.module.css';
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 import { MENU_INFO_OPEN_SIZE, showProcessingNotification } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import { getVisibleBbox } from '../util/MapManager';
 
 // WARNING: Do not use the 'title' field in marker layers on the map.
 // See the 'parseWpt' function for more details.
@@ -253,7 +254,7 @@ export default function PoiLayer() {
                 zoom,
             }) => {
                 map.spin(true, { color: '#1976d2' });
-                let bbox = map.getBounds();
+                const bbox = getVisibleBbox(map, ctx);
                 const notifyTimeout = showProcessingNotification(ctx);
                 await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategoriesCount).then(async (res) => {
                     map.spin(false);
