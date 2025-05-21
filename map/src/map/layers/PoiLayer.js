@@ -405,13 +405,17 @@ export default function PoiLayer() {
         }
     }, [ctx.addFavorite]);
 
+    useEffect(() => {
+        if (addAlert) {
+            ctx.setNotification({
+                text: 'Please zoom in closer!',
+                severity: 'info',
+            });
+        }
+    }, [addAlert]);
+
     return (
         <>
-            {addAlert && (
-                <Alert sx={{ position: 'absolute', zIndex: 1000, left: '40%', top: '2%' }} severity="info">
-                    Please zoom in closer!
-                </Alert>
-            )}
             {selectedPoi && openAddDialog && ctx.addFavorite.location && (
                 <AddFavoriteDialog
                     dialogOpen={openAddDialog}
