@@ -103,6 +103,14 @@
    <tile_source name="🇦🇹 🛰 Orthophoto (AU)" url_template="https://mapsneu.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{0}/{2}/{1}.jpeg" ext=".jpg" min_zoom="6" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
    <tile_source name="🇦🇹 Gelaende (AU)" url_template="https://mapsneu.wien.gv.at/basemap/bmapgelaende/grau/google3857/{0}/{2}/{1}.jpeg" ext=".jpg" min_zoom="6" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
 
+<!-- Bavarian LDBV Maps -->
+   <tile_source name="🔷 Bavaria Orthophoto (LDBV-BY)"           url_template="https://wmtsod5.bayernwolke.de/wmts/by_dop/smerc/{0}/{1}/{2}"           ext=".jpeg" min_zoom="0" max_zoom="19" tile_size="256" img_density="16" avg_img_size="13000"/>
+   <tile_source name="🔷 Bavaria Webkarte (LDBV-BY)"             url_template="https://wmtsod5.bayernwolke.de/wmts/by_webkarte/smerc/{0}/{1}/{2}"      ext=".png"  min_zoom="0" max_zoom="19" tile_size="256" img_density="16" avg_img_size="28000"/>
+   <tile_source name="🔷 Bavaria Webkarte (grau) (LDBV-BY)"      url_template="https://wmtsod5.bayernwolke.de/wmts/by_webkarte_grau/smerc/{0}/{1}/{2}" ext=".png"  min_zoom="0" max_zoom="19" tile_size="256" img_density="16" avg_img_size="22000"/>
+   <tile_source name="🔷 Bavaria Topo/Parzellar-Karte (LDBV-BY)" url_template="https://wmtsod5.bayernwolke.de/wmts/by_amtl_karte/smerc/{0}/{1}/{2}"    ext=".png"  min_zoom="0" max_zoom="19" tile_size="256" img_density="16" avg_img_size="24000"/>
+   <tile_source name="🔷 Bavaria Overlay für DOP (LDBV-BY)"      url_template="https://wmtsod5.bayernwolke.de/wmts/by_label/smerc/{0}/{1}/{2}"         ext=".png"  min_zoom="0" max_zoom="19" tile_size="256" img_density="16" avg_img_size="8800"/>
+   <tile_source name="🔷 Bavaria Orthophoto-CIR (LDBV-BY)"       url_template="https://wmtsod5.bayernwolke.de/wmts/by_dop_cir/smerc/{0}/{1}/{2}"       ext=".jpeg" min_zoom="0" max_zoom="19" tile_size="256" img_density="16" avg_img_size="13000"/>
+	
    <!-- Czech maps-->
    <tile_source name="🇨🇿 🚴 Prague cycle map" url_template="https://tiles.prahounakole.cz/{0}/{1}/{2}.png" ext=".png" min_zoom="11" max_zoom="18" tile_size="256" img_density="16" avg_img_size="26000"/>
 
