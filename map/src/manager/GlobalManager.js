@@ -1,6 +1,6 @@
-import { SHARE_TYPE } from './ShareManager';
-
 // px
+import { SHARE_TYPE } from '../menu/share/shareConstants';
+
 export const MAIN_MENU_MIN_SIZE = 64;
 export const MAIN_MENU_OPEN_SIZE = 240;
 export const MENU_INFO_OPEN_SIZE = 360;

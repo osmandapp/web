@@ -4,18 +4,18 @@ import { Box, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@m
 import styles from '../trackfavmenu.module.css';
 import AccountManager, { sendCode } from '../../manager/AccountManager';
 import i18n from 'i18next';
-import AppContext from '../../context/AppContext';
+import LoginContext from '../../context/LoginContext';
 
 const AccountActions = forwardRef(({ setOpenActions }, ref) => {
     const lang = i18n.language;
 
-    const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     function changeEmail() {
         sendCode({
             action: AccountManager.CHANGE_EMAIL_MSG,
             lang,
-        }).then(() => ctx.setOpenChangeEmailDialog(true));
+        }).then(() => ctxl.setOpenChangeEmailDialog(true));
     }
 
     return (

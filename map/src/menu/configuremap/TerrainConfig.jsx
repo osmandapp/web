@@ -24,11 +24,14 @@ import capitalize from 'lodash/capitalize';
 import { cloneDeep } from 'lodash';
 import ThickDivider from '../components/dividers/ThickDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import LoginContext from '../../context/LoginContext';
 
 export const NO_HEIGHTMAP = 'none';
 
 export default function TerrainConfig({ setOpenTerrainConfig }) {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
+
     const { t } = useTranslation();
 
     const [openMenu, setOpenMenu] = useState(false);
@@ -101,7 +104,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                     <Typography component="div" className={headerStyles.title}>
                         {t('shared_string_terrain')}
                     </Typography>
-                    {ctx.loginUser && (
+                    {ctxl.loginUser && (
                         <Tooltip key={'reset'} title={t('reset_to_default')} arrow placement="bottom-end">
                             <span>
                                 <IconButton

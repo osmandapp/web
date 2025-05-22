@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
-import AppContext from '../../context/AppContext';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import UnavailableActionAlert from '../../menu/errors/UnavailableActionAlert';
 import { IconButton } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
+import LoginContext from '../../context/LoginContext';
 
 const useStyles = makeStyles({
     disabledIconButton: {
@@ -13,7 +13,7 @@ const useStyles = makeStyles({
 });
 
 export default function IconButtonWithPermissions({ onClick, className, ...props }) {
-    const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
     const classes = useStyles();
 
     const [openDialog, setOpenDialog] = useState(false);
@@ -22,7 +22,7 @@ export default function IconButtonWithPermissions({ onClick, className, ...props
         setOpenDialog(false);
     };
 
-    const isDisabled = ctx.accountInfo?.account === FREE_ACCOUNT;
+    const isDisabled = ctxl.accountInfo?.account === FREE_ACCOUNT;
 
     const handleClick = () => {
         if (isDisabled) {

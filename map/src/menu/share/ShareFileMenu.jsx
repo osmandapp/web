@@ -13,21 +13,19 @@ import ShareFileItem from './ShareFileItem';
 import ShareType from './ShareType';
 import UserAccessList from './access/UserAccessList';
 import MenuItemWithLines from '../components/MenuItemWithLines';
-import {
-    APPROVED_ACCESS_TYPE,
-    APPROVED_ACCESS_TYPE_SERVER,
-    BLOCKED_ACCESS_TYPE,
-    changeShareTypeFile,
-    generateLink,
-    PENDING_ACCESS_TYPE,
-    updateUserRequests,
-} from '../../manager/ShareManager';
+import { changeShareTypeFile, generateLink, updateUserRequests } from '../../manager/ShareManager';
 import { MAIN_URL_WITH_SLASH, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
 import PublicAccessList from './access/PublicAccessList';
 import PrivateAccessList from './access/PrivateAccessList';
 import ThickDivider from '../components/dividers/ThickDivider';
 import BlueBtn from '../../frame/components/btns/BlueBtn';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import {
+    APPROVED_ACCESS_TYPE,
+    APPROVED_ACCESS_TYPE_SERVER,
+    BLOCKED_ACCESS_TYPE,
+    PENDING_ACCESS_TYPE,
+} from './shareConstants';
 
 export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
     const ctx = useContext(AppContext);

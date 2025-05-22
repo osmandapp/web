@@ -4,12 +4,12 @@ import loginStyles from './login.module.css';
 import { ReactComponent as UserAccountIcon } from '../../assets/icons/ic_custom_logo_osmand.svg';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { createAccount, openLogin } from '../../manager/LoginManager';
+import LoginContext from '../../context/LoginContext';
 
 export default function EmptyLogin() {
-    const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const navigate = useNavigate();
     const { t } = useTranslation();
@@ -31,11 +31,11 @@ export default function EmptyLogin() {
                 id="se-login-btn"
                 className={styles.button}
                 component="span"
-                onClick={() => openLogin(ctx, navigate)}
+                onClick={() => openLogin(ctxl, navigate)}
             >
                 {t('web:login_btn')}
             </Button>
-            <Button sx={{ mt: 1.5 }} className={styles.button} component="span" onClick={() => createAccount(ctx)}>
+            <Button sx={{ mt: 1.5 }} className={styles.button} component="span" onClick={() => createAccount(ctxl)}>
                 {t('web:create_account_btn')}
             </Button>
         </Box>

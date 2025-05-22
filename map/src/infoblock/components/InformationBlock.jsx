@@ -32,6 +32,7 @@ import ShareFileMenu from '../../menu/share/ShareFileMenu';
 import ShareFile from '../../menu/share/ShareFile';
 import { useNavigate } from 'react-router-dom';
 import { encodeString } from '../../util/Utils';
+import LoginContext from '../../context/LoginContext';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -61,6 +62,8 @@ export default function InformationBlock({
     const DRAWER_SIZE = 360;
 
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
+
     const navigate = useNavigate();
 
     const [value, setValue] = useState('general');
@@ -247,11 +250,11 @@ export default function InformationBlock({
     }, [ctx.shareFile]);
 
     useEffect(() => {
-        if (!ctx.loginUser) {
+        if (!ctxl.loginUser) {
             setShowInfoBlock(false);
             setOpenWptDetails(false);
         }
-    }, [ctx.loginUser]);
+    }, [ctxl.loginUser]);
 
     useEffect(() => {
         if (openWptTab) {

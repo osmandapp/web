@@ -31,6 +31,7 @@ import DividerWithMargin from '../components/dividers/DividerWithMargin';
 import UnitsMenu from './units/UnitsMenu';
 import SimpleDivider from '../components/dividers/SimpleDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import LoginContext from '../../context/LoginContext';
 
 export function getLocalizedTimeUpdate(time) {
     const locale = locales[i18n.language] || locales.enUS;
@@ -40,6 +41,7 @@ export function getLocalizedTimeUpdate(time) {
 
 export default function SettingsMenu() {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const [openLangList, setOpenLangList] = useState(false);
     const { i18n, t } = useTranslation();
@@ -174,7 +176,7 @@ export default function SettingsMenu() {
             <DividerWithMargin margin={'64px'} />
             <UnitsMenu />
             <SimpleDivider />
-            {ctx.loginUser && ctx.accountInfo?.account !== FREE_ACCOUNT && (
+            {ctxl.loginUser && ctxl.accountInfo?.account !== FREE_ACCOUNT && (
                 <>
                     <SubTitleMenu text={t('osmand_cloud')} />
                     <MenuItem
@@ -209,7 +211,7 @@ export default function SettingsMenu() {
                     </MenuItem>
                 </>
             )}
-            {process.env.REACT_APP_DEVEL_FEATURES === 'yes' && ctx.develFeatures && ctx.loginUser && (
+            {process.env.REACT_APP_DEVEL_FEATURES === 'yes' && ctx.develFeatures && ctxl.loginUser && (
                 <>
                     <Typography component="div" sx={{ ml: 2 }}>
                         Explore Wikimedia Images

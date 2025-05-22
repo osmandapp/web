@@ -15,23 +15,23 @@ export async function getAccountInfo(setAccountInfo) {
     }
 }
 
-export function openLoginMenu(ctx, navigate) {
+export function openLoginMenu(ctx, ctxl, navigate) {
     ctx.setPrevPageUrl({ url: location, active: false });
     navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
-    ctx.setOpenLoginMenu(true);
+    ctxl.setOpenLoginMenu(true);
 }
 
-export function closeLoginMenu(ctx) {
-    ctx.setOpenLoginMenu(false);
-    ctx.setLoginState({ default: true });
-    ctx.setLoginError(null);
+export function closeLoginMenu(ctxl) {
+    ctxl.setOpenLoginMenu(false);
+    ctxl.setLoginState({ default: true });
+    ctxl.setLoginError(null);
 }
 
-export const openLogin = (ctx, navigate) => {
+export const openLogin = (ctxl, navigate) => {
     navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
-    ctx.setLoginState({ login: true });
+    ctxl.setLoginState({ login: true });
 };
 
-export function createAccount(ctx) {
-    ctx.setLoginState({ create: true });
+export function createAccount(ctxl) {
+    ctxl.setLoginState({ create: true });
 }

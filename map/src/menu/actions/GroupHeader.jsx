@@ -18,8 +18,9 @@ import IconButtonWithPermissions from '../../frame/components/IconButtonWithPerm
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from './HeaderHelper';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import { SHARE_TYPE } from '../../manager/ShareManager';
 import SortFilesButton from '../components/buttons/SortFilesButton';
+import LoginContext from '../../context/LoginContext';
+import { SHARE_TYPE } from '../share/shareConstants';
 
 export default function GroupHeader({
     type,
@@ -31,6 +32,7 @@ export default function GroupHeader({
     markers = null,
 }) {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const TRACKS_TYPE = 'tracks';
     const FAVORITES_TYPE = 'favorites';
@@ -148,7 +150,7 @@ export default function GroupHeader({
                                         component="span"
                                         variant="contained"
                                         type="button"
-                                        disabled={ctx.accountInfo?.account === FREE_ACCOUNT}
+                                        disabled={ctxl.accountInfo?.account === FREE_ACCOUNT}
                                         className={styles.appBarIcon}
                                     >
                                         <ImportIcon />

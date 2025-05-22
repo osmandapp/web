@@ -2,7 +2,7 @@ import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { apiGet } from '../../util/HttpApi';
-import { BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE, REQUEST_ACCESS_TYPE, sendRequest } from '../../manager/ShareManager';
+import { sendRequest } from '../../manager/ShareManager';
 import headerStyles from '../trackfavmenu.module.css';
 import styles from './share.module.css';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
@@ -31,9 +31,13 @@ import { useTranslation } from 'react-i18next';
 import Loading from '../errors/Loading';
 import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import LoginContext from '../../context/LoginContext';
+import { BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE, REQUEST_ACCESS_TYPE } from './shareConstants';
 
 export default function ShareFile() {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
+
     const { uuid } = useParams();
 
     const { t } = useTranslation();
@@ -56,10 +60,10 @@ export default function ShareFile() {
     const currentLoc = useGeoLocation(ctx);
 
     useEffect(() => {
-        if (ctx.loginState !== INIT_LOGIN_STATE && ctx.accountInfo) {
-            setUserName(ctx.accountInfo.nickname ?? '');
+        if (ctxl.loginState !== INIT_LOGIN_STATE && ctxl.accountInfo) {
+            setUserName(ctxl.accountInfo.nickname ?? '');
         }
-    }, [ctx.accountInfo]);
+    }, [ctxl.accountInfo]);
 
     useEffect(() => {
         if (!uuid) {

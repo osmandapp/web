@@ -27,9 +27,11 @@ import { useNavigate } from 'react-router-dom';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { usePasswordValidation } from '../../util/hooks/usePasswordValidation';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
+import LoginContext from '../../context/LoginContext';
 
 export default function ChangeResetPwd() {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -142,7 +144,7 @@ export default function ChangeResetPwd() {
                         type="button"
                         className={styles.closeIcon}
                         onClick={() => {
-                            closeLoginMenu(ctx);
+                            closeLoginMenu(ctxl);
                             closeHeader({ ctx });
                         }}
                     >
@@ -289,7 +291,7 @@ export default function ChangeResetPwd() {
                             <Button
                                 className={errorStyles.button}
                                 component="span"
-                                onClick={() => openLogin(ctx, navigate)}
+                                onClick={() => openLogin(ctxl, navigate)}
                             >
                                 {t('web:login_btn')}
                             </Button>

@@ -38,12 +38,14 @@ import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import TopographyProFeatures from '../../frame/components/pro/TopographyProFeatures';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import LoginContext from '../../context/LoginContext';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
 
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const { t } = useTranslation();
     const [openSettings, setOpenSettings] = useState(false);
@@ -86,7 +88,7 @@ export default function ConfigureMap() {
     }
 
     function showProButton() {
-        return ctx.accountInfo?.account === FREE_ACCOUNT;
+        return ctxl.accountInfo?.account === FREE_ACCOUNT;
     }
 
     const DEFAULT_CONFIGURE = () => {
@@ -106,7 +108,7 @@ export default function ConfigureMap() {
                         <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
                             {t('configure_map')}
                         </Typography>
-                        {ctx.loginUser && (
+                        {ctxl.loginUser && (
                             <Tooltip key={'reset'} title={t('reset_to_default')} arrow placement="bottom-end">
                                 <span>
                                     <IconButton
@@ -123,11 +125,11 @@ export default function ConfigureMap() {
                         )}
                     </Toolbar>
                 </AppBar>
-                {!ctx.loginUser && !ctx.develFeatures ? (
+                {!ctxl.loginUser && !ctx.develFeatures ? (
                     <EmptyLogin />
                 ) : (
                     <>
-                        {ctx.loginUser && (
+                        {ctxl.loginUser && (
                             <>
                                 <SubTitleMenu text={t('shared_string_show')} />
                                 <MenuItem

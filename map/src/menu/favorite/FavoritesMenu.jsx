@@ -10,9 +10,11 @@ import { isEmpty } from 'lodash';
 import Loading from '../errors/Loading';
 import { byTime, doSort } from '../actions/SortActions';
 import SmartFolder from '../components/SmartFolder';
+import LoginContext from '../../context/LoginContext';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const [enableGroups, setEnableGroups] = useState([]);
     const [, height] = useWindowSize();
@@ -61,7 +63,7 @@ export default function FavoritesMenu() {
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-                {ctx.loginUser && (
+                {ctxl.loginUser && (
                     <GroupHeader
                         type="favorites"
                         favoriteGroup={DEFAULT_FAV_GROUP_NAME}

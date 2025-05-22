@@ -20,9 +20,11 @@ import RouteIcon from '@mui/icons-material/Route';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 import RouteProfileSettings from '../../../menu/navigate/RouteProfileSettings';
 import { downloadCurrentGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';
+import LoginContext from '../../../context/LoginContext';
 
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const [openRoutingSettings, setOpenRoutingSettings] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -191,8 +193,8 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                                 </IconButton>
                             </Tooltip>
                         )}
-                        {ctx.loginUser &&
-                            ctx.accountInfo?.account !== FREE_ACCOUNT &&
+                        {ctxl.loginUser &&
+                            ctxl.accountInfo?.account !== FREE_ACCOUNT &&
                             (isLocalTrack(ctx) || isRouteTrack(ctx)) && (
                                 <Tooltip title="Save to cloud" arrow placement={tooltipOrientation}>
                                     <span style={styleSpan}>

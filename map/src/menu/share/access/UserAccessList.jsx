@@ -2,12 +2,11 @@ import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/mate
 import React, { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 import UserAccessListItem from './UserAccessListItem';
-import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../../../manager/ShareManager';
 import styles from '../share.module.css';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { ReactComponent as ShareIcon } from '../../../assets/icons/ic_group.svg';
 import { useTranslation } from 'react-i18next';
-import DividerWithMargin from '../../components/dividers/DividerWithMargin';
+import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../shareConstants';
 
 export default function UserAccessList({ type, users, setForcedUpdate }) {
     const ctx = useContext(AppContext);

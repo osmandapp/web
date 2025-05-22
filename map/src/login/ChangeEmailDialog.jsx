@@ -8,13 +8,13 @@ import DialogActions from '@mui/material/DialogActions';
 import AccountManager from '../manager/AccountManager';
 import React, { useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { useTranslation } from 'react-i18next';
+import LoginContext from '../context/LoginContext';
 
 export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
-    const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
     const navigate = useNavigate();
 
     const { i18n } = useTranslation();
@@ -148,8 +148,8 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                                     setEmailError('');
                                     setOpenChangeEmailDialog(false);
                                     setEmailChanged(false);
-                                    ctx.setLoginUser(null);
-                                    ctx.setEmailCookie('');
+                                    ctxl.setLoginUser(null);
+                                    ctxl.setEmailCookie('');
                                     navigate('/map/' + window.location.search + window.location.hash);
                                 }}
                             >
@@ -168,8 +168,8 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                         <Button onClick={() => setOpenChangeEmailDialog(false)}>Cancel</Button>
                         <Button
                             onClick={() => {
-                                ctx.setLoginUser(null);
-                                ctx.setEmailCookie(newEmail, { days: 30, SameSite: 'Strict' });
+                                ctxl.setLoginUser(null);
+                                ctxl.setEmailCookie(newEmail, { days: 30, SameSite: 'Strict' });
                             }}
                         >
                             Login using new credentials

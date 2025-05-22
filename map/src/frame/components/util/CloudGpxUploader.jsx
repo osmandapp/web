@@ -4,9 +4,12 @@ import { useMutator } from '../../../util/Utils';
 import { styled } from '@mui/material/styles';
 import { createTrackFreeName, saveTrackToCloud } from '../../../manager/track/SaveTrackManager';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
+import LoginContext from '../../../context/LoginContext';
 
 export default function CloudGpxUploader({ children, folder = null, style = null }) {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
+
     const [uploadedFiles, mutateUploadedFiles] = useMutator({});
 
     function validName(name) {
@@ -60,7 +63,7 @@ export default function CloudGpxUploader({ children, folder = null, style = null
     return (
         <label className={style} htmlFor="se-upload-cloud-gpx">
             <HiddenInput
-                disabled={ctx.accountInfo?.account === FREE_ACCOUNT}
+                disabled={ctxl.accountInfo?.account === FREE_ACCOUNT}
                 id="se-upload-cloud-gpx"
                 accept=".gpx"
                 multiple

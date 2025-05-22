@@ -20,11 +20,13 @@ import EmptyLogin from '../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
 import capitalize from 'lodash/capitalize';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
+import LoginContext from "../../context/LoginContext";
 
 export const ALL_YEARS = 'all';
 
 export default function TravelMenu() {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
     const { t } = useTranslation();
 
     const DEFAULT_ACTIVITY = 'hiking';
@@ -156,7 +158,7 @@ export default function TravelMenu() {
 
     return (
         <>
-            {ctx.loginUser ? (
+            {ctxl.loginUser ? (
                 <>
                     <AppBar position="static" className={headerStyles.appbar}>
                         <Toolbar className={headerStyles.toolbar}>

@@ -3,16 +3,16 @@ import styles from './errors.module.css';
 import EmptyLogin from '../login/EmptyLogin';
 import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
 import { useContext } from 'react';
-import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
+import LoginContext from '../../context/LoginContext';
 
 export default function EmptySearch({ message }) {
-    const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
     const { t } = useTranslation();
 
     return (
         <>
-            {ctx.loginUser ? (
+            {ctxl.loginUser ? (
                 <Box className={styles.block} id={'se-empty-search'}>
                     <Icon className={styles.icon}>
                         <SearchIcon className={styles.icon} />

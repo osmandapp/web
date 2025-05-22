@@ -16,6 +16,7 @@ import Utils from '../../util/Utils';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 import { updateMarkerZIndex } from './ExploreLayer';
 import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
+import LoginContext from '../../context/LoginContext';
 
 export function restoreOriginalIcon(layer) {
     if (layer.options.originalIcon) {
@@ -69,6 +70,8 @@ export function processMarkers({ layer, markerLatLng, mainMarkers, secondaryMark
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
+
     const map = useMap();
 
     const { lat } = useHashParams();
@@ -102,7 +105,7 @@ const FavoriteLayer = () => {
     }, [ctx.removeFavGroup]);
 
     useEffect(() => {
-        if (!ctx.loginUser) {
+        if (!ctxl.loginUser) {
             // If there is no logged-in user, remove all favorites layers.
             map.eachLayer((layer) => {
                 if (layer.options.type === FAVORITE_FILE_TYPE) {
@@ -111,7 +114,7 @@ const FavoriteLayer = () => {
             });
             deleteAllFavoritesFromDB().then();
         }
-    }, [ctx.loginUser]);
+    }, [ctxl.loginUser]);
 
     useEffect(() => {
         // created favorites markers and move them to ctx.favorites for adding to map

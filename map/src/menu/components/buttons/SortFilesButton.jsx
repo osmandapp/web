@@ -7,6 +7,7 @@ import AppContext from '../../../context/AppContext';
 import { DEFAULT_FAV_GROUP_NAME } from '../../../manager/FavoritesManager';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time.svg';
 import SortMenu from '../../actions/SortMenu';
+import LoginContext from '../../../context/LoginContext';
 
 export const TRACK_FILE_TYPE = 'tracks';
 export const FAVORITE_FILE_TYPE = 'favorites';
@@ -43,6 +44,8 @@ export default function SortFilesButton({
     smartf,
 }) {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
+
     const { t } = useTranslation();
 
     const anchorEl = useRef(null);
@@ -65,7 +68,7 @@ export default function SortFilesButton({
     }, [ctx.selectedSort, trackGroup, sortType]);
 
     function disableSort() {
-        if (ctx.loginUser) {
+        if (ctxl.loginUser) {
             if (type === TRACK_FILE_TYPE) {
                 if (customGroup) {
                     return !customGroup.files || customGroup.files.length <= 1;

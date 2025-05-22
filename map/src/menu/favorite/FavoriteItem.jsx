@@ -9,11 +9,11 @@ import FavoriteItemActions from '../actions/FavoriteItemActions';
 import { addShareFavoriteToMap, getColorLocation } from '../../manager/FavoritesManager';
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import MenuItemWithLines from '../components/MenuItemWithLines';
-import { SHARE_TYPE } from '../../manager/ShareManager';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
 import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
+import { SHARE_TYPE } from '../share/shareConstants';
 
 export const CustomIcon = ({ marker }) => {
     return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;

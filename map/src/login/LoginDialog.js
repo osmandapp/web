@@ -51,10 +51,10 @@ export default function LoginDialog() {
     };
 
     useEffect(() => {
-        if (ctx.loginUser && ctx.loginUser !== '' && ctx.loginUser !== INIT_LOGIN_STATE) {
+        if (ctxl.loginUser && ctxl.loginUser !== '' && ctxl.loginUser !== INIT_LOGIN_STATE) {
             getAccountInfo(ctx.setAccountInfo).then();
         }
-    }, [ctx.loginUser]);
+    }, [ctxl.loginUser]);
 
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
@@ -62,11 +62,11 @@ export default function LoginDialog() {
         }
     };
 
-    if (ctx.loginUser) {
+    if (ctxl.loginUser) {
         return (
             <Dialog id={'se-login-dialog'} classes={{ paper: classes.paper }} open={true} onClose={handleClose}>
                 <DialogTitle sx={{ color: '#f8931d' }} onClick={clickHandler}>
-                    {ctx.loginUser} {ctx.develFeatures && ' :-)'}
+                    {ctxl.loginUser} {ctx.develFeatures && ' :-)'}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText component={'span'}>
@@ -104,7 +104,8 @@ export default function LoginDialog() {
                                                 1024 /
                                                 1024.0
                                             ).toFixed(1)} MB ${
-                                                ctx.accountInfo && `of ${ctx.accountInfo.maxAccSize / (1024 * 1024)} MB`
+                                                ctxl.accountInfo &&
+                                                `of ${ctxl.accountInfo.maxAccSize / (1024 * 1024)} MB`
                                             }`}
                                         </Typography>
                                     </ListItemText>
@@ -115,7 +116,7 @@ export default function LoginDialog() {
                             </>
                         )}
                         <Divider sx={{ mt: 1 }} />
-                        {ctx.accountInfo && (
+                        {ctxl.accountInfo && (
                             <>
                                 <Typography component={'span'} variant="h6" noWrap>
                                     {`Account info:`}
@@ -124,16 +125,16 @@ export default function LoginDialog() {
                                     <ListItemText>
                                         <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
                                             {`Subscription: ${getAccountType(ctx.accountInfo.account)} `}
-                                            {ctx.accountInfo.type && `(type: ${ctx.accountInfo.type})`}
+                                            {ctxl.accountInfo.type && `(type: ${ctxl.accountInfo.type})`}
                                         </Typography>
                                     </ListItemText>
                                 </MenuItem>
-                                {ctx.accountInfo.startTime && ctx.accountInfo.expireTime && (
+                                {ctxl.accountInfo.startTime && ctxl.accountInfo.expireTime && (
                                     <>
                                         <MenuItem sx={{ mt: -1 }}>
                                             <ListItemText>
                                                 <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
-                                                    {`Start time: ${ctx.accountInfo.startTime}`}
+                                                    {`Start time: ${ctxl.accountInfo.startTime}`}
                                                 </Typography>
                                             </ListItemText>
                                         </MenuItem>
@@ -144,29 +145,29 @@ export default function LoginDialog() {
                                                     sx={{
                                                         ml: 1,
                                                         color:
-                                                            ctx.accountInfo.valid === 'false' ? '#ff8d90' : undefined,
+                                                            ctxl.accountInfo.valid === 'false' ? '#ff8d90' : undefined,
                                                     }}
                                                     variant="body2"
                                                     noWrap
                                                 >
-                                                    {`Expire time: ${ctx.accountInfo.expireTime}`}
+                                                    {`Expire time: ${ctxl.accountInfo.expireTime}`}
                                                 </Typography>
                                             </ListItemText>
                                         </MenuItem>
                                     </>
                                 )}
-                                {ctx.accountInfo?.valid === 'false' && (
+                                {ctxl.accountInfo?.valid === 'false' && (
                                     <MenuItem sx={{ mt: -1 }}>
                                         <ListItemText>
                                             <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
-                                                {`Valid: 😢 ${ctx.accountInfo.valid}`}
+                                                {`Valid: 😢 ${ctxl.accountInfo.valid}`}
                                             </Typography>
                                         </ListItemText>
                                     </MenuItem>
                                 )}
                             </>
                         )}
-                        {(ctx.accountInfo?.inAppPurchases || ctx.accountInfo?.subscriptions) && (
+                        {(ctxl.accountInfo?.inAppPurchases || ctxl.accountInfo?.subscriptions) && (
                             <Accordion
                                 disableGutters
                                 elevation={0}
@@ -190,12 +191,12 @@ export default function LoginDialog() {
                                 </AccordionSummary>
                                 <AccordionDetails sx={{ p: 0 }}>
                                     {/* In-App Purchases */}
-                                    {ctx.accountInfo?.inAppPurchases && (
+                                    {ctxl.accountInfo?.inAppPurchases && (
                                         <>
                                             <Typography variant="subtitle1" sx={{ ml: 2, mt: 1 }}>
                                                 In-App Purchases:
                                             </Typography>
-                                            {JSON.parse(ctx.accountInfo.inAppPurchases).map((item, idx) => (
+                                            {JSON.parse(ctxl.accountInfo.inAppPurchases).map((item, idx) => (
                                                 <Typography key={`iap-${idx}`} variant="body2" sx={{ ml: 3, mb: 0.5 }}>
                                                     {`${item.valid ? '✅' : '❌'} ${item.sku}` +
                                                         (item.purchaseTime ? ` → ${item.purchaseTime}` : '')}
@@ -205,12 +206,12 @@ export default function LoginDialog() {
                                     )}
 
                                     {/* Subscriptions */}
-                                    {ctx.accountInfo?.subscriptions && (
+                                    {ctxl.accountInfo?.subscriptions && (
                                         <>
                                             <Typography variant="subtitle1" sx={{ ml: 2, mt: 2 }}>
                                                 Subscriptions:
                                             </Typography>
-                                            {JSON.parse(ctx.accountInfo.subscriptions).map((item) => (
+                                            {JSON.parse(ctxl.accountInfo.subscriptions).map((item) => (
                                                 <Typography
                                                     key={`${item.sku}-${item.startTime || Math.random()}`}
                                                     variant="body2"
@@ -227,7 +228,7 @@ export default function LoginDialog() {
                             </Accordion>
                         )}
 
-                        {ctx.develFeatures && ctx.loginUser && (
+                        {ctx.develFeatures && ctxl.loginUser && (
                             <>
                                 <Divider sx={{ mt: 1 }} />
                                 <Typography component={'span'} variant="h6" noWrap>
@@ -256,7 +257,7 @@ export default function LoginDialog() {
                                             control={
                                                 <Checkbox
                                                     size="small"
-                                                    disabled={item.type === 'pro' && ctx.accountInfo?.valid === 'true'}
+                                                    disabled={item.type === 'pro' && ctxl.accountInfo?.valid === 'true'}
                                                     checked={selectedProducts.includes(item.key)}
                                                     onChange={() => toggleProductSelection(item.key)}
                                                 />

@@ -23,11 +23,14 @@ import EmptyLogin from '../login/EmptyLogin';
 import useHashParams from '../../util/hooks/useHashParams';
 import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import LoginContext from '../../context/LoginContext';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
 export default function SearchMenu() {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
+
     const navigate = useNavigate();
 
     const [isMainSearchScreen, setIsMainSearchScreen] = useState(true);
@@ -210,7 +213,7 @@ export default function SearchMenu() {
 
     return (
         <>
-            {ctx.loginUser ? (
+            {ctxl.loginUser ? (
                 <>
                     {openSearchResults && (
                         <SearchResults

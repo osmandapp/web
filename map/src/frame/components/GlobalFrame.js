@@ -29,9 +29,11 @@ import PhotosModal from '../../menu/search/explore/PhotosModal';
 import InstallBanner from './InstallBanner';
 import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
 import GlobalGraph from './graph/GlobalGraph';
+import LoginContext from '../../context/LoginContext';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const [showInfoBlock, setShowInfoBlock] = useState(false);
     const [clearState, setClearState] = useState(false);
@@ -45,7 +47,7 @@ const GlobalFrame = () => {
 
     const MAIN_MENU_SIZE = openMainMenu ? `${MAIN_MENU_OPEN_SIZE}px` : `${MAIN_MENU_MIN_SIZE}px`;
     const MENU_INFO_SIZE =
-        menuInfo || ctx.openLoginMenu || ctx.infoBlockWidth === `${MENU_INFO_OPEN_SIZE}px`
+        menuInfo || ctxl.openLoginMenu || ctx.infoBlockWidth === `${MENU_INFO_OPEN_SIZE}px`
             ? `${MENU_INFO_OPEN_SIZE}px`
             : `${MENU_INFO_CLOSE_SIZE}px`;
 

@@ -25,6 +25,7 @@ import SegmentParamsFilter from './SegmentParamsFilter';
 import { TYPE_ANALYZER } from '../../frame/components/graph/GlobalGraph';
 import ErrorBlock from './ErrorBlock';
 import ColorBlock from '../../frame/components/other/ColorBlock';
+import LoginContext from '../../context/LoginContext';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
@@ -32,6 +33,7 @@ const SELECTED_FILTERS = 'selectedSegmentFilters';
 
 export default function TrackAnalyzerMenu() {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const [, height] = useWindowSize();
     const { t } = useTranslation();
@@ -326,7 +328,7 @@ export default function TrackAnalyzerMenu() {
 
     return (
         <>
-            {ctx.loginUser ? (
+            {ctxl.loginUser ? (
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}

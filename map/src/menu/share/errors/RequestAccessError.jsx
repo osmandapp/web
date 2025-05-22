@@ -3,12 +3,12 @@ import { Box, Icon, ListItemText, TextField } from '@mui/material';
 import styles from '../../errors/errors.module.css';
 import { ReactComponent as AccessIcon } from '../../../assets/icons/ic_action_lock.svg';
 import { useTranslation } from 'react-i18next';
-import AppContext from '../../../context/AppContext';
 import { INIT_LOGIN_STATE } from '../../../manager/LoginManager';
 import BlueBtn from '../../../frame/components/btns/BlueBtn';
+import LoginContext from '../../../context/LoginContext';
 
 export default function RequestAccessError({ sendRequest, userName, setUserName }) {
-    const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const [error, setError] = useState('');
     const { t } = useTranslation();
@@ -16,10 +16,10 @@ export default function RequestAccessError({ sendRequest, userName, setUserName 
     const [showNameField, setShowNameField] = useState(false);
 
     useEffect(() => {
-        if (ctx.loginState !== INIT_LOGIN_STATE && ctx.accountInfo) {
-            setShowNameField(!ctx.accountInfo.nickname);
+        if (ctxl.loginState !== INIT_LOGIN_STATE && ctxl.accountInfo) {
+            setShowNameField(!ctxl.accountInfo.nickname);
         }
-    }, [ctx.accountInfo]);
+    }, [ctxl.accountInfo]);
 
     const validateNickname = (nickname) => {
         const MIN_LENGTH = 3;

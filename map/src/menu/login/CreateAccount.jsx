@@ -16,9 +16,11 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
 import BlueBtn from '../../frame/components/btns/BlueBtn';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
+import LoginContext from '../../context/LoginContext';
 
 export default function CreateAccount() {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const { t } = useTranslation();
     const lang = i18n.language;
@@ -144,8 +146,8 @@ export default function CreateAccount() {
             lang,
         }).then(() => {
             if (createAccountError === EMPTY_INPUT) {
-                ctx.setOpenLoginMenu(true);
-                ctx.setLoginState({ default: true });
+                ctxl.setOpenLoginMenu(true);
+                ctxl.setLoginState({ default: true });
             }
         });
     }
@@ -160,7 +162,7 @@ export default function CreateAccount() {
                         type="button"
                         className={styles.closeIcon}
                         onClick={() => {
-                            closeLoginMenu(ctx);
+                            closeLoginMenu(ctxl);
                             closeHeader({ ctx });
                         }}
                     >
@@ -323,7 +325,7 @@ export default function CreateAccount() {
                             />
                             {emailError !== EMPTY_INPUT && emailError !== EMAIL_IS_NOT_VALID && (
                                 <BlueBtn
-                                    action={() => openLogin(ctx, navigate)}
+                                    action={() => openLogin(ctxl, navigate)}
                                     additionalStyle={{ mb: 1.5, mt: 0.5 }}
                                     text={t('web:login_btn')}
                                     span={true}

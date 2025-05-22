@@ -12,9 +12,9 @@ import { useTranslation } from 'react-i18next';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 import FileShareIcon from '../share/FileShareIcon.jsx';
 import { getShare } from '../../manager/track/TracksManager';
-import { SHARE_TYPE } from '../../manager/ShareManager';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
 import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
+import { SHARE_TYPE } from '../share/shareConstants';
 
 export default function FavoriteGroup({ index, group, smartf = null }) {
     const ctx = useContext(AppContext);

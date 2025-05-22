@@ -14,9 +14,10 @@ import { format } from 'date-fns';
 import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import AppContext from '../../../context/AppContext';
-import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../../../manager/ShareManager';
 import { useTranslation } from 'react-i18next';
 import DividerWithMargin from '../../components/dividers/DividerWithMargin';
+import LoginContext from '../../../context/LoginContext';
+import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../shareConstants';
 
 export default function UserAccessListItem({
     index,
@@ -29,6 +30,7 @@ export default function UserAccessListItem({
     anyone = false,
 }) {
     const ctx = useContext(AppContext);
+    const ctxl = useContext(LoginContext);
 
     const { t } = useTranslation();
 
@@ -41,7 +43,7 @@ export default function UserAccessListItem({
 
     function getName() {
         if (showOwner) {
-            return ctx.accountInfo?.nickname ?? ctx.loginUser;
+            return ctxl.accountInfo?.nickname ?? ctxl.loginUser;
         } else if (anyone) {
             return t('web:share_type_public');
         } else {
