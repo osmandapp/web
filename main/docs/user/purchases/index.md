@@ -16,7 +16,7 @@ Detailed information about purchases on iOS: subscriptions vs in app, prices, pa
 
 ### [Cross-Platform Purchases](./cross.md)
 
-Learn how to use your **Maps+** and **OsmAnd Pro** purchases across **Android**, **iOS**, and other supported platforms using your OsmAnd Cloud account.
+Learn how to use your Maps+ and OsmAnd Pro purchases across Android, iOS, and other supported platforms using your OsmAnd Cloud account.
 
 ### [Giveaway](./giveaway.md)
 

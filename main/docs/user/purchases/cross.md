@@ -1,7 +1,6 @@
 ---
 sidebar_position: 4
 title:  Cross Platform Purchases
-unlisted: true
 ---
 
 import Tabs from '@theme/Tabs';

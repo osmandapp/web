@@ -35,18 +35,18 @@ OsmAnd Cloud allows you to back up, restore, and sync your data across Android, 
 
 OsmAnd supports **cross-platform usage** across *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* with the following steps:
 
-1. **Subscribe to OsmAnd Pro.**  
+1. **Register an [account](#login) on the OsmAnd Cloud**:
+ 
+    1.1 **Subscribe to OsmAnd Pro for full Cloud access.**  
    Learn more about purchasing for [Android](../purchases/android.md#how-to-buy) or [iOS](../purchases/ios.md#how-to-buy).
 
-2. **Use the free OsmAnd Start plan** for cloud backups of favorites, settings, and OSM edits/notes.  
+    2.1 **Use the free OsmAnd Start plan** for cloud backups of favorites, settings, and OSM edits/notes.  
    The free storage limit is **5 MB**.
 
-3. **Register an [account](#login) on the OsmAnd server.**
-
-4. **Use the registered email** as your login to activate OsmAnd Pro or OsmAnd Start on other platforms.
+2. **Use the registered email** as your login to activate [OsmAnd Pro](../purchases/cross.md), [OsmAnd Maps+](../purchases/cross.md) or OsmAnd Start on other platforms.
 
 :::note  
-**OsmAnd Pro** is a cross-platform subscription that includes all OsmAnd features. You can purchase it in one store (e.g., Google Play, Huawei AppGallery) and use it also on **iOS**. Your **[registered email](#login)** is your login for activating OsmAnd Pro across platforms.  
+**OsmAnd Pro** is a cross-platform subscription that includes all OsmAnd features. You can purchase it in one store (e.g., Google Play, Huawei AppGallery) and use it also on **iOS**. Your **[registered email](#login)** is your login for activating OsmAnd Pro [across platforms](../purchases/cross.md). 
 :::
 
 
@@ -490,6 +490,7 @@ If you have problems with the registration of your account:
 
 - [Android Purchases](../purchases/android.md)
 - [iOS Purchases](../purchases/ios.md)
+- [Cross Platfom Purchases](../purchases/cross.md)
 - [Maps & Resources](../personal/maps-resources.md)
 
-> *This article was last updated in February 2025*
+> *This article was last updated in May 2025*
