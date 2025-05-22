@@ -328,6 +328,7 @@ export const AppContextProvider = (props) => {
     const [accountInfo, setAccountInfo] = useState(null);
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [loginError, setLoginError] = useState(null);
+    const [openChangeEmailDialog, setOpenChangeEmailDialog] = useState(false);
     // files
     const [listFiles, setListFiles] = useState({});
     const [updateFiles, setUpdateFiles] = useState(null);
@@ -843,6 +844,8 @@ export const AppContextProvider = (props) => {
                 setRemoveFavGroup,
                 notification,
                 setNotification,
+                openChangeEmailDialog,
+                setOpenChangeEmailDialog,
             }}
         >
             {props.children}

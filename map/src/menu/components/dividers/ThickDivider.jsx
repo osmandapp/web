@@ -9,7 +9,7 @@ export default function ThickDivider({ height = '16px', mt = null, mb = null }) 
             style={{
                 height,
                 ...(mt !== null ? { marginTop: mt } : {}),
-                ...(mb !== null ? { marginBottom: mb } : {})
+                ...(mb !== null ? { marginBottom: mb } : {}),
             }}
         />
     );

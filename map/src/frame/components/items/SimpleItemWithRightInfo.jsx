@@ -16,11 +16,7 @@ export default function SimpleItemWithRightInfo({ name, id, icon, rightText = nu
                     }}
                 >
                     <MenuItemWithLines name={name} maxLines={2} />
-                    {rightText && (
-                        <Typography className={styles.addInfo}>
-                            {rightText}
-                        </Typography>
-                    )}
+                    {rightText && <Typography className={styles.addInfo}>{rightText}</Typography>}
                 </div>
             </ListItemText>
         </MenuItem>

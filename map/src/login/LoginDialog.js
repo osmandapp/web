@@ -20,21 +20,16 @@ import {
     AccordionDetails,
 } from '@mui/material';
 import DeleteAccountDialog from './DeleteAccountDialog';
-import AccountManager, { sendCode, userLogout } from '../manager/AccountManager';
-import ChangeEmailDialog from './ChangeEmailDialog';
 import DownloadBackupDialog from './DownloadBackupDialog';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { makeStyles } from '@material-ui/core/styles';
-import { FREE_ACCOUNT, getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
-import { useTranslation } from 'react-i18next';
+import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
 import FastSpringPurchaseButton from './FastSpringPurchaseButton';
 import { purchases } from './FastSpringHelper';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function LoginDialog() {
     const ctx = useContext(AppContext);
-    const { i18n } = useTranslation();
-    const lang = i18n.language;
 
     const [width] = useWindowSize();
     const widthDialog = width / 2 < 450 ? width * 0.75 : width / 2;
@@ -47,7 +42,6 @@ export default function LoginDialog() {
 
     const [openDangerousArea, setOpenDangerousArea] = useState(false);
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
-    const [changeEmailFlag, setChangeEmailFlag] = useState(false);
     const [openDownloadBackupDialog, setOpenDownloadBackupDialog] = useState(false);
 
     const [selectedProducts, setSelectedProducts] = useState([]);
@@ -314,28 +308,7 @@ export default function LoginDialog() {
                         >
                             Delete your account
                         </Button>
-                        <Link
-                            sx={{
-                                mr: 'auto',
-                                ml: '25px',
-                                fontSize: '10pt',
-                                color: '#ff595e',
-                                whiteSpace: 'nowrap',
-                            }}
-                            href="#"
-                            color="inherit"
-                            onClick={() => {
-                                setChangeEmailFlag(true);
-                                sendCode({
-                                    action: AccountManager.CHANGE_EMAIL_MSG,
-                                    lang,
-                                }).then();
-                            }}
-                        >
-                            Change email
-                        </Link>
                         {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag} />}
-                        {changeEmailFlag && <ChangeEmailDialog setChangeEmailFlag={setChangeEmailFlag} />}
                     </Box>
                 )}
                 {openDownloadBackupDialog && (

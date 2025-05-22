@@ -621,7 +621,7 @@ export default function MainMenu({
                     open={openMainMenu}
                 >
                     <Toolbar />
-                    <LoginButton openMainMenu={openMainMenu} setMenuInfo={setMenuInfo}/>
+                    <LoginButton openMainMenu={openMainMenu} setMenuInfo={setMenuInfo} />
                     <Divider sx={{ my: '0px !important' }} />
                     <div className={styles.menu}>
                         {items.map(

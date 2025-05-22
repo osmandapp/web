@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { useTranslation } from 'react-i18next';
 
-export default function ChangeEmailDialog({ setChangeEmailFlag }) {
+export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
     const ctx = useContext(AppContext);
     const navigate = useNavigate();
 
@@ -71,7 +71,7 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
 
     return (
         <>
-            <Dialog classes={{ paper: classes.paper }} open={true} onClose={() => setChangeEmailFlag(false)}>
+            <Dialog classes={{ paper: classes.paper }} open={true} onClose={() => setOpenChangeEmailDialog(false)}>
                 <Grid container spacing={2}>
                     <Grid item xs={11} sx={{ mb: -3 }}>
                         <DialogTitle>Change email</DialogTitle>
@@ -82,7 +82,7 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                             type="button"
                             onClick={() => {
                                 setEmailError('');
-                                setChangeEmailFlag(false);
+                                setOpenChangeEmailDialog(false);
                             }}
                         >
                             <Close fontSize="small" />
@@ -128,14 +128,14 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                     )}
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setChangeEmailFlag(false)}>Cancel</Button>
+                    <Button onClick={() => setOpenChangeEmailDialog(false)}>Cancel</Button>
                     <Button disabled={emailError !== ''} onClick={handleNext}>
                         {oldCodeConfirmed ? 'Finish' : 'Next'}
                     </Button>
                 </DialogActions>
             </Dialog>
             {emailChanged && (
-                <Dialog classes={{ paper: classes.paper }} open={true} onClose={() => setChangeEmailFlag(false)}>
+                <Dialog classes={{ paper: classes.paper }} open={true} onClose={() => setOpenChangeEmailDialog(false)}>
                     <Grid container spacing={2}>
                         <Grid item xs={11} sx={{ mb: -3 }}>
                             <DialogTitle>Email changed succesfully</DialogTitle>
@@ -146,7 +146,7 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                                 type="button"
                                 onClick={() => {
                                     setEmailError('');
-                                    setChangeEmailFlag(false);
+                                    setOpenChangeEmailDialog(false);
                                     setEmailChanged(false);
                                     ctx.setLoginUser(null);
                                     ctx.setEmailCookie('');
@@ -165,7 +165,7 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                         )}
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={() => setChangeEmailFlag(false)}>Cancel</Button>
+                        <Button onClick={() => setOpenChangeEmailDialog(false)}>Cancel</Button>
                         <Button
                             onClick={() => {
                                 ctx.setLoginUser(null);

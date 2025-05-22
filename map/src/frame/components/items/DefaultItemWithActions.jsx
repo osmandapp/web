@@ -2,8 +2,9 @@ import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@m
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { ReactComponent as MenuIcon } from '../../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../../assets/icons/ic_overflow_menu_with_background.svg';
-import React, { useState } from 'react';
+import React, { cloneElement, isValidElement, useState } from 'react';
 import styles from '../items/items.module.css';
+import ActionsMenu from '../../../menu/actions/ActionsMenu';
 
 export default function DefaultItemWithActions({
     id,
@@ -12,39 +13,48 @@ export default function DefaultItemWithActions({
     additionalInfo = null,
     anchorEl,
     revertText = false,
+    actions,
 }) {
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
+    const [openActions, setOpenActions] = useState(false);
+
+    const preparedActions = isValidElement(actions) ? cloneElement(actions, { setOpenActions }) : actions;
 
     return (
-        <MenuItem id={id} className={styles.item} disableRipple>
-            <ListItemIcon className={styles.icon}>{icon}</ListItemIcon>
-            {revertText ? (
-                <ListItemText>
-                    <Typography variant="body2" className={styles.addInfo} noWrap>
-                        {name}
-                    </Typography>
-                    {additionalInfo && (
-                        <MenuItemWithLines name={additionalInfo} maxLines={2} />
-                    )}
-                </ListItemText>
-            ) : (
-                <ListItemText>
-                    <MenuItemWithLines name={name} maxLines={2} />
-                    {additionalInfo && (
+        <>
+            <MenuItem id={id} className={styles.item} disableRipple>
+                <ListItemIcon className={styles.icon}>{icon}</ListItemIcon>
+                {revertText ? (
+                    <ListItemText>
                         <Typography variant="body2" className={styles.addInfo} noWrap>
-                            {additionalInfo}
+                            {name}
                         </Typography>
-                    )}
-                </ListItemText>
-            )}
-            <IconButton
-                className={styles.menuIcon}
-                onMouseEnter={() => setHoverIconInfo(true)}
-                onMouseLeave={() => setHoverIconInfo(false)}
-                ref={anchorEl}
-            >
-                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-            </IconButton>
-        </MenuItem>
+                        {additionalInfo && <MenuItemWithLines name={additionalInfo} maxLines={2} />}
+                    </ListItemText>
+                ) : (
+                    <ListItemText>
+                        <MenuItemWithLines name={name} maxLines={2} />
+                        {additionalInfo && (
+                            <Typography variant="body2" className={styles.addInfo} noWrap>
+                                {additionalInfo}
+                            </Typography>
+                        )}
+                    </ListItemText>
+                )}
+                <IconButton
+                    className={styles.menuIcon}
+                    onMouseEnter={() => setHoverIconInfo(true)}
+                    onMouseLeave={() => setHoverIconInfo(false)}
+                    ref={anchorEl}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenActions(true);
+                    }}
+                >
+                    {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                </IconButton>
+            </MenuItem>
+            <ActionsMenu open={openActions} setOpen={setOpenActions} anchorEl={anchorEl} actions={preparedActions} />
+        </>
     );
 }

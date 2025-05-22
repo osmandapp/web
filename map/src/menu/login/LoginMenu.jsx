@@ -26,6 +26,8 @@ import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleItemWithRightInfo from '../../frame/components/items/SimpleItemWithRightInfo';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import DefaultItem from '../../frame/components/items/DefaultItem';
+import AccountActions from '../actions/AccountActions';
+import ChangeEmailDialog from '../../login/ChangeEmailDialog';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -121,6 +123,7 @@ export default function LoginMenu() {
                                 additionalInfo={ctx.loginUser}
                                 anchorEl={anchorEl}
                                 revertText={true}
+                                actions={<AccountActions />}
                             />
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SubTitleMenu text={'My data'} />
@@ -151,6 +154,7 @@ export default function LoginMenu() {
             {ctx.loginState.login && <Login />}
             {ctx.loginState.changePwd && <ChangeResetPwd />}
             {ctx.loginState.create && <CreateAccount />}
+            {ctx.openChangeEmailDialog && <ChangeEmailDialog setOpenChangeEmailDialog={ctx.setOpenChangeEmailDialog} />}
         </>
     );
 }
