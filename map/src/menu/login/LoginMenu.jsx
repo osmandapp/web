@@ -9,7 +9,7 @@ import { ReactComponent as UserIcon } from '../../assets/icons/ic_action_user_ac
 import { ReactComponent as CloudIcon } from '../../assets/icons/ic_action_cloud.svg';
 import { ReactComponent as PurchasesIcon } from '../../assets/icons/ic_action_purchases_outlined.svg';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_user_account_delete.svg';
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import EmptyLogin from './EmptyLogin';
 import Login from './Login';
@@ -28,6 +28,7 @@ import ColorBlock from '../../frame/components/other/ColorBlock';
 import DefaultItem from '../../frame/components/items/DefaultItem';
 import AccountActions from '../actions/AccountActions';
 import ChangeEmailDialog from '../../login/ChangeEmailDialog';
+import DeleteAccountDialog from '../../login/DeleteAccountDialog';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -38,6 +39,8 @@ export default function LoginMenu() {
     const { t } = useTranslation();
     const location = useLocation();
     const navigate = useNavigate();
+
+    const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
 
     useEffect(() => {
         if (location.hash === '#logout' && ctx.loginUser) {
@@ -140,7 +143,13 @@ export default function LoginMenu() {
                                 additionalInfo={mainSubscription()}
                             />
                             <ThickDivider mt={'0px'} mb={'0px'} />
-                            <SimpleItemWithRightInfo name={t('delete_account')} icon={<DeleteIcon />} />
+                            <SimpleItemWithRightInfo
+                                name={t('delete_account')}
+                                icon={<DeleteIcon />}
+                                onClick={() => {
+                                    setDeleteAccountFlag(true);
+                                }}
+                            />
                             <ColorBlock color={'#f0f0f0'} />
                         </>
                     )}
@@ -155,6 +164,7 @@ export default function LoginMenu() {
             {ctx.loginState.changePwd && <ChangeResetPwd />}
             {ctx.loginState.create && <CreateAccount />}
             {ctx.openChangeEmailDialog && <ChangeEmailDialog setOpenChangeEmailDialog={ctx.setOpenChangeEmailDialog} />}
+            {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag} />}
         </>
     );
 }

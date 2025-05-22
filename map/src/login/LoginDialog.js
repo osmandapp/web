@@ -1,16 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from '../context/AppContext';
 import {
-    Box,
     Checkbox,
     Divider,
     FormControlLabel,
-    Link,
     ListItemText,
     MenuItem,
     Typography,
@@ -19,7 +16,6 @@ import {
     AccordionSummary,
     AccordionDetails,
 } from '@mui/material';
-import DeleteAccountDialog from './DeleteAccountDialog';
 import DownloadBackupDialog from './DownloadBackupDialog';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { makeStyles } from '@material-ui/core/styles';
@@ -40,8 +36,6 @@ export default function LoginDialog() {
 
     const classes = useStyles();
 
-    const [openDangerousArea, setOpenDangerousArea] = useState(false);
-    const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [openDownloadBackupDialog, setOpenDownloadBackupDialog] = useState(false);
 
     const [selectedProducts, setSelectedProducts] = useState([]);
@@ -54,11 +48,6 @@ export default function LoginDialog() {
                 return [...prevSelected, item];
             }
         });
-    };
-
-    const toggleOpenDangerousArea = () => {
-        setOpenDangerousArea(!openDangerousArea);
-        setDeleteAccountFlag(false);
     };
 
     useEffect(() => {
@@ -285,32 +274,6 @@ export default function LoginDialog() {
                         )}
                     </DialogContentText>
                 </DialogContent>
-                <DialogActions>
-                    <Link
-                        sx={{ marginRight: 'auto', fontSize: '10pt', ml: 2, color: '#ff595e' }}
-                        href="#"
-                        color="inherit"
-                        onClick={toggleOpenDangerousArea}
-                    >
-                        Dangerous area
-                    </Link>
-                </DialogActions>
-                {openDangerousArea && <Divider sx={{ mb: 2, ml: 3, mr: 3, bgcolor: '#ff595e' }} />}
-                {openDangerousArea && (
-                    <Box sx={{ mb: 2 }}>
-                        <Button
-                            variant="contained"
-                            component="span"
-                            sx={{ backgroundColor: '#ff595e !important', ml: 3, mb: '10px' }}
-                            onClick={() => {
-                                setDeleteAccountFlag(true);
-                            }}
-                        >
-                            Delete your account
-                        </Button>
-                        {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag} />}
-                    </Box>
-                )}
                 {openDownloadBackupDialog && (
                     <DownloadBackupDialog
                         openDownloadBackupDialog={openDownloadBackupDialog}
