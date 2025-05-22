@@ -29,8 +29,7 @@ import EmptyLogin from '../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
 import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
-import TracksManager, { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
-import SubTitle from '../components/SubTitle';
+import { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
 import capitalize from 'lodash/capitalize';
 import TerrainConfig from './TerrainConfig';
@@ -38,6 +37,7 @@ import ButtonPro from '../../frame/components/pro/ButtonPro';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import TopographyProFeatures from '../../frame/components/pro/TopographyProFeatures';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -129,7 +129,7 @@ export default function ConfigureMap() {
                     <>
                         {ctx.loginUser && (
                             <>
-                                <SubTitle title={'shared_string_show'} />
+                                <SubTitleMenu text={t('shared_string_show')} />
                                 <MenuItem
                                     id="se-configure-map-menu-poi-categories"
                                     className={styles.item}
@@ -249,7 +249,7 @@ export default function ConfigureMap() {
                         )}
                         {ctx.develFeatures && (
                             <>
-                                <SubTitle title={'shared_string_appearance'} />
+                                <SubTitleMenu text={t('shared_string_appearance')} />
                                 <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
                                     <FormControl fullWidth>
                                         <InputLabel id="rendering-style-selector-label">

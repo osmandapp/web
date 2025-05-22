@@ -13,18 +13,17 @@ import {
     Typography,
 } from '@mui/material';
 import styles from './configuremap.module.css';
-import gStyles from '../gstylesmenu.module.css';
 import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { useTranslation } from 'react-i18next';
 import { ExpandMore } from '@mui/icons-material';
-import SubTitle from '../components/SubTitle';
 import ActionsMenu from '../actions/ActionsMenu';
 import capitalize from 'lodash/capitalize';
 import { cloneDeep } from 'lodash';
 import ThickDivider from '../components/dividers/ThickDivider';
+import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 
 export const NO_HEIGHTMAP = 'none';
 
@@ -186,7 +185,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
             {ctx.heightmap?.key ? (
                 <Box>
                     <ThickDivider />
-                    <SubTitle title={'shared_string_appearance'} />
+                    <SubTitleMenu text={t('shared_string_appearance')} />
                     <Box sx={{ m: 2 }}>
                         <div
                             style={{

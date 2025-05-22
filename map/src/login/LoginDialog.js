@@ -67,10 +67,6 @@ export default function LoginDialog() {
         setDeleteAccountFlag(false);
     };
 
-    const handleClose = () => {
-        ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
-    };
-
     useEffect(() => {
         if (ctx.loginUser && ctx.loginUser !== '' && ctx.loginUser !== INIT_LOGIN_STATE) {
             getAccountInfo(ctx.setAccountInfo).then();
@@ -82,10 +78,6 @@ export default function LoginDialog() {
             ctx.setDevelFeatures(!ctx.develFeatures);
         }
     };
-
-    function getAccountType(type) {
-        return type === FREE_ACCOUNT ? 'OsmAnd Start' : type;
-    }
 
     if (ctx.loginUser) {
         return (
@@ -308,22 +300,6 @@ export default function LoginDialog() {
                     >
                         Dangerous area
                     </Link>
-                    <Button id="se-cancel-login" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button
-                        id="se-logout-btn"
-                        onClick={() =>
-                            userLogout({
-                                ctx,
-                                username: ctx.loginUser,
-                                handleClose,
-                                lang,
-                            })
-                        }
-                    >
-                        Logout
-                    </Button>
                 </DialogActions>
                 {openDangerousArea && <Divider sx={{ mb: 2, ml: 3, mr: 3, bgcolor: '#ff595e' }} />}
                 {openDangerousArea && (

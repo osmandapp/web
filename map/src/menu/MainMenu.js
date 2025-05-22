@@ -71,7 +71,6 @@ import {
     TRACK_ANALYZER_URL,
     INFO_MENU_URL,
     SHARE_MENU_URL,
-    MAIN_URL,
     LOGIN_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
@@ -132,6 +131,7 @@ export default function MainMenu({
             ctx.setSelectedWpt(null);
         }
         ctx.setLoadingContextMenu(false);
+        ctx.setOpenLoginMenu(false);
     }
 
     useEffect(() => {
@@ -187,6 +187,10 @@ export default function MainMenu({
     useEffect(() => {
         if (location.pathname.includes(INFO_MENU_URL) || savePrevState) {
             setSavePrevState(false);
+            return;
+        }
+        if (location.pathname.includes(LOGIN_URL)) {
+            ctx.setOpenLoginMenu(true);
             return;
         }
         if (!menuInfo) {
@@ -617,7 +621,7 @@ export default function MainMenu({
                     open={openMainMenu}
                 >
                     <Toolbar />
-                    <LoginButton openMainMenu={openMainMenu} />
+                    <LoginButton openMainMenu={openMainMenu} setMenuInfo={setMenuInfo}/>
                     <Divider sx={{ my: '0px !important' }} />
                     <div className={styles.menu}>
                         {items.map(

@@ -1,5 +1,5 @@
 import { apiGet } from '../util/HttpApi';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH, OLD_LOGIN_URL } from './GlobalManager';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH } from './GlobalManager';
 
 export const FREE_ACCOUNT = 'Free';
 export const INIT_LOGIN_STATE = 'INIT';
@@ -17,12 +17,8 @@ export async function getAccountInfo(setAccountInfo) {
 
 export function openLoginMenu(ctx, navigate) {
     ctx.setPrevPageUrl({ url: location, active: false });
-    if (!ctx.loginUser) {
-        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
-        ctx.setOpenLoginMenu(true);
-    } else {
-        navigate(MAIN_URL_WITH_SLASH + OLD_LOGIN_URL + window.location.hash);
-    }
+    navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
+    ctx.setOpenLoginMenu(true);
 }
 
 export function closeLoginMenu(ctx) {

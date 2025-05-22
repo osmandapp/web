@@ -25,12 +25,12 @@ import { getFavMenuListByLayers, LOCATION_UNAVAILABLE, extractBaseFavFileName } 
 import FavoriteItem from '../favorite/FavoriteItem';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../manager/MapManager';
-import SubTitle from '../components/SubTitle';
 import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 import EmptyLogin from '../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import Loading from '../errors/Loading';
 import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
+import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 
 export default function ShareFile() {
     const ctx = useContext(AppContext);
@@ -211,7 +211,7 @@ export default function ShareFile() {
                     )}
                     {showFavorite && (
                         <Box>
-                            <SubTitle title={extractBaseFavFileName(fileRes.name)} />
+                            <SubTitleMenu text={extractBaseFavFileName(fileRes.name)} />
                             {favItems}
                         </Box>
                     )}

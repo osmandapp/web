@@ -2,9 +2,8 @@ import { Box, Button, Divider, Grid, LinearProgress, ListItemButton, ListItemIco
 import CustomInput from './search/CustomInput';
 import styles from './search.module.css';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import SubTitle from '../components/SubTitle';
 import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
@@ -23,6 +22,7 @@ import { CATEGORY_KEY_NAME } from '../../infoblock/components/wpt/WptTagsProvide
 import EmptyLogin from '../login/EmptyLogin';
 import useHashParams from '../../util/hooks/useHashParams';
 import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
+import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
@@ -237,7 +237,7 @@ export default function SearchMenu() {
                                 menuButton={<MenuButton needBackButton={!isMainSearchScreen} />}
                                 setSearchValue={setSearchValue}
                             />
-                            <SubTitle title={'search_categories'} />
+                            <SubTitleMenu text={t('search_categories')} />
                             <Box sx={{ overflow: 'none', mt: '16px', ml: '16px' }}>
                                 <Grid container spacing={2}>
                                     {ctx.poiCategory?.filters
@@ -285,7 +285,7 @@ export default function SearchMenu() {
                             <Divider />
                             {zoom >= EXPLORE_MIN_ZOOM && (
                                 <>
-                                    <SubTitle title={'web:explore_menu'} />
+                                    <SubTitleMenu text={t('web:explore_menu')} />
                                     {loadingWikiPlaces ? (
                                         <LinearProgress />
                                     ) : (

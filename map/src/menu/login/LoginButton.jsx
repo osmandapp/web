@@ -1,26 +1,46 @@
 import { ListItemButton, ListItemIcon, ListItemText, MenuItem } from '@mui/material';
 import styles from '../mainmenu.module.css';
-import { Person } from '@mui/icons-material';
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { INIT_LOGIN_STATE, openLoginMenu } from '../../manager/LoginManager';
+import { closeLoginMenu, INIT_LOGIN_STATE, openLoginMenu } from '../../manager/LoginManager';
+import { ReactComponent as PersonIcon } from '../../assets/icons/ic_action_user_account.svg';
+import { MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 
-export default function LoginButton({ openMainMenu }) {
+export default function LoginButton({ openMainMenu, setMenuInfo }) {
     const ctx = useContext(AppContext);
     const navigate = useNavigate();
 
     const { t } = useTranslation();
 
     const openLogin = () => {
-        openLoginMenu(ctx, navigate);
+        if (ctx.openLoginMenu) {
+            closeLoginMenu(ctx);
+            navigate(MAIN_URL_WITH_SLASH + location.hash);
+        } else {
+            openLoginMenu(ctx, navigate);
+            setMenuInfo(null);
+        }
     };
+
+    function setMenuStyles() {
+        let res = [];
+        //close
+        !openMainMenu && res.push(styles.menuItemClose);
+        //open
+        openMainMenu && res.push(styles.menuItemOpen);
+        //selected
+        ctx.openLoginMenu && res.push(styles.menuItemSelected);
+
+        return res.join(' ');
+    }
 
     return (
         <MenuItem
             id={'se-open-login-button'}
             key={'Profile'}
+            className={setMenuStyles()}
             sx={{
                 minHeight: 'var(--profile-menu-button-height)',
                 maxHeight: 'var(--profile-menu-button-height)',
@@ -35,12 +55,13 @@ export default function LoginButton({ openMainMenu }) {
                 }}
             >
                 <ListItemIcon
+                    className={styles.profileIcon}
                     sx={{
                         justifyContent: 'center',
                         ml: openMainMenu ? '-14px' : 0,
                     }}
                 >
-                    <Person />
+                    <PersonIcon />
                 </ListItemIcon>
                 {openMainMenu && (
                     <div>

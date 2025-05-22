@@ -24,6 +24,7 @@ import ActionsMenu from '../actions/ActionsMenu';
 import SegmentParamsFilter from './SegmentParamsFilter';
 import { TYPE_ANALYZER } from '../../frame/components/graph/GlobalGraph';
 import ErrorBlock from './ErrorBlock';
+import ColorBlock from '../../frame/components/other/ColorBlock';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
@@ -430,7 +431,7 @@ export default function TrackAnalyzerMenu() {
                             />
                         </>
                     )}
-                    <Box sx={{ backgroundColor: '#f0f0f0', flexGrow: 1 }}></Box>
+                    <ColorBlock color={'#f0f0f0'} />
                     <ActionsMenu
                         open={openFiltersDialog}
                         setOpen={setOpenFiltersDialog}

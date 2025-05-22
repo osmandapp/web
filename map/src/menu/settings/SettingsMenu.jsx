@@ -30,6 +30,7 @@ import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import DividerWithMargin from '../components/dividers/DividerWithMargin';
 import UnitsMenu from './units/UnitsMenu';
 import SimpleDivider from '../components/dividers/SimpleDivider';
+import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 
 export function getLocalizedTimeUpdate(time) {
     const locale = locales[i18n.language] || locales.enUS;
@@ -148,11 +149,7 @@ export default function SettingsMenu() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <MenuItem className={styles.item}>
-                <Typography className={styles.title} noWrap>
-                    {t('general_settings_2')}
-                </Typography>
-            </MenuItem>
+            <SubTitleMenu text={t('general_settings_2')} />
             <MenuItem className={styles.item} onClick={selectLanguage}>
                 <ListItemIcon className={styles.icon}>
                     <DisplayLanguageIcon />
@@ -179,12 +176,7 @@ export default function SettingsMenu() {
             <SimpleDivider />
             {ctx.loginUser && ctx.accountInfo?.account !== FREE_ACCOUNT && (
                 <>
-                    <MenuItem className={styles.item}>
-                        <Typography className={styles.title} noWrap>
-                            {t('osmand_cloud')}
-                        </Typography>
-                    </MenuItem>
-
+                    <SubTitleMenu text={t('osmand_cloud')} />
                     <MenuItem
                         id={'se-cloud_changes'}
                         className={styles.item}
