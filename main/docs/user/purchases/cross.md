@@ -20,7 +20,7 @@ The following products now support cross-platform access:
 - **Maps+** in-app purchase
 
 Previously, only the [**OsmAnd Pro**](../personal/osmand-cloud.md#cross-platform) subscription offered cross-platform functionality.  
-Starting with **OsmAnd version 5.1**, released in celebration of our **15th anniversary**, we are extending **cross-platform support to Maps+** (formerly known as *Unlimited*).
+Starting with **OsmAnd version 5.0**, released in celebration of our **15th anniversary**, we are extending **cross-platform support to Maps+** (formerly known as *Unlimited*).
 
 This means you can now use your **Maps+** purchase across both **Android** and **iOS** platforms by linking it to your [**OsmAnd Cloud**](../personal/osmand-cloud.md#login) account.
 
@@ -29,7 +29,7 @@ This means you can now use your **Maps+** purchase across both **Android** and *
 
 To use **Maps+/Pro** across platforms, you first need to **link your purchase** to your OsmAnd Cloud account.
 
-Follow these steps on the **device where you made the purchase** (Android or iOS, version 5.1 or later):
+Follow these steps on the **device where you made the purchase** (Android or iOS, version 5.0 or later):
 1. [**Log in or create an OsmAnd Cloud account**](../personal/osmand-cloud.md#login):  
    _Go to **Menu → Settings → OsmAnd Cloud → Create new account / I already have an account**_.
 2. Once logged in, your **Maps+/Pro purchase** will be automatically linked to your account and marked as **cross-platform**.
