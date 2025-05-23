@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title:  Cross Platform Purchases
+title:  Cross-Platform Purchases
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,64 +10,99 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-## Overview
+## Supported Cross-Platform Purchases
 
-The following products now support cross-platform access:
+The following OsmAnd products currently support use across multiple platforms (Android, iOS, and Web):
+
 - **OsmAnd Pro** subscription  
 - **Maps+** subscription  
-- **Maps+** in-app purchase
+- **Maps+** one-time in-app purchase (activated via OsmAnd Cloud)
 
-Previously, only the [**OsmAnd Pro**](../personal/osmand-cloud.md#cross-platform) subscription offered cross-platform functionality.  
-Starting with **OsmAnd version 5.0**, released in celebration of our **15th anniversary**, we are extending **cross-platform support to Maps+** (formerly known as *Unlimited*).
+Starting with **OsmAnd version 5.0**, released in celebration of our **15th anniversary**, cross-platform access has been extended to **Maps+** (formerly known as *Unlimited*). Previously, only the [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) subscription was cross-platform.  
 
-This means you can now use your **Maps+** purchase across both **Android** and **iOS** platforms by linking it to your [**OsmAnd Cloud**](../personal/osmand-cloud.md#login) account.
+To activate cross-platform access, purchases must be linked to your [OsmAnd Cloud](../personal/osmand-cloud.md#login) account.  
+You can compare all OsmAnd products here: [difference between purchases](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
+
+| Product Type                | Cross-Platform | Notes |
+|-----------------------------|----------------|-------|
+| OsmAnd Pro (subscription)   | ✔              | Works across Android, iOS, and Web via Cloud |
+| Maps+ (subscription)        | ✔              | Requires version 5.0+ and Cloud account |
+| Maps+ (one-time purchase)   | ✔              | Must be activated through OsmAnd Cloud on purchase device |
+| OsmAnd+ (standalone app)    | **—**          | Not transferable between stores or platforms |
 
 
 ## How It Works
 
-To use **Maps+/Pro** across platforms, you first need to **link your purchase** to your OsmAnd Cloud account.
+To use your **OsmAnd Pro** or **Maps+** purchase across different platforms (Android, iOS, or Web), you need to **link it to your OsmAnd Cloud account**.
 
-Follow these steps on the **device where you made the purchase** (Android or iOS, version 5.0 or later):
-1. [**Log in or create an OsmAnd Cloud account**](../personal/osmand-cloud.md#login):  
-   _Go to **Menu → Settings → OsmAnd Cloud → Create new account / I already have an account**_.
-2. Once logged in, your **Maps+/Pro purchase** will be automatically linked to your account and marked as **cross-platform**.
+### Link Your Purchase
 
-![Maps+ cross](@site/static/img/purchases/cloud_activation.png)
+![Cloud link](@site/static/img/purchases/cloud_activation.png)
+
+Perform this step on the **device where you made the purchase** (Android or iOS, version 5.0 or later):
+
+1. Go to your [OsmAnd Cloud account](../personal/osmand-cloud.md#login):  
+   *Menu → Settings → OsmAnd Cloud → Create new account / I already have an account*
+
+2. Once logged in, your **Pro or Maps+** purchase will be automatically linked to your **Cloud account** and marked as **cross-platform**.
 
 
+### Activate on Another Device or Platform
 
-To activate Maps+/Pro on a different device or platform:  
-1. [**Log in using the same OsmAnd Cloud account**](../personal/osmand-cloud.md#login):  
-   _Go to **Menu → Settings → OsmAnd Cloud**._
-2. **Verify your purchase**  
-   _Go to **Menu → Settings → Purchases** to confirm that Maps+ has been added._
-
-![Maps+ cross](@site/static/img/purchases/cross_purchase.png) 
+![Maps+ cross](@site/static/img/purchases/cross_purchase.png)
 ![Maps+ cross](@site/static/img/purchases/cross_purchase_1.png)
 
+1. Go to your [OsmAnd Cloud account](../personal/osmand-cloud.md#login):  
+   *Menu → Settings → OsmAnd Cloud →* ***Log in with the same account***
 
-**Troubleshooting**:
-If you don’t see your **Maps+/Pro** purchase listed:
-
-1. Tap _**Menu → Settings → Purchases → Restore purchases**_ to refresh your list of purchases.
-2. Make sure you're logged into the **correct OsmAnd Cloud account** (the one used to link your purchase).
-
-If the issue persists after these steps, please contact us at **support@osmand.net**.
+2. Then go to:  
+   *Menu → Settings → Purchases*  
+   Your linked **Pro or Maps+** purchase should now be available.
 
 
-### Example
+### Troubleshooting
 
-You purchased **Maps+** as an in-app purchase in the free version of OsmAnd from the [Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).  
+If you don't see your purchase listed:
+
+1. Tap *Menu → Settings → Purchases → Restore purchases*  
+2. Ensure you are logged in to the **same OsmAnd Cloud account** used on the original device.
+
+If the issue persists, contact **support@osmand.net** and include:
+
+- Your OsmAnd Cloud email.
+- Platform(s) and app store(s) used.
+- Type of purchase (Pro / Maps+ one-time / Maps+ subscription).
+
+
+## Example
+
+You purchased **Maps+** as a one-time in-app purchase in the free version of OsmAnd from the [Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).  
 Later, you decide to switch to an iPhone and want to use **Maps+** with the [OsmAnd iOS version](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 To activate your Maps+ purchase on iOS:
 
-1. Open the **Amazon version** of the OsmAnd app on your old device.
-2. Log in to your [OsmAnd Cloud account](../personal/osmand-cloud.md#login) from **Menu → Settings → OsmAnd Cloud**.
-3. On your iPhone, install OsmAnd from the [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
-4. Log in to the **same OsmAnd Cloud account** used on your previous device.
-5. Go to _**Menu → Settings → Purchases**_ and verify that **Maps+** is listed.
+1. Open the **Amazon version** of the OsmAnd app on your original device.
+2. Log in to your [OsmAnd Cloud account](../personal/osmand-cloud.md#login):  
+   *Menu → Settings → OsmAnd Cloud → I already have an account*
+3. Install OsmAnd on your iPhone from the [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
+4. Log in to the **same OsmAnd Cloud account** on your iPhone.
+5. Go to *Menu → Settings → Purchases* and confirm that **Maps+** is listed as active.
 
-Enjoy using Maps+/Pro across platforms!
+This completes the cross-platform activation of your purchase. You can now continue using **Maps+** on your new device.
+
+:::note
+The same procedure works for **OsmAnd Pro subscriptions** and for devices switching from iOS to Android.
+:::
+
+## Related Articles
+
+- [OsmAnd Cloud](../personal/osmand-cloud.md)  
+- [Troubleshooting purchases](../troubleshooting/purchases_payments.md)  
+- [Difference between purchases Android](./android.md#difference-between-purchases-android)
+- [Difference between purchases iOS](./ios.md#difference-between-purchases-ios)  
+
+> *This article was last updated in May 2025*
