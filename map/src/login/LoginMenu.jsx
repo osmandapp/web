@@ -1,10 +1,8 @@
 import headerStyles from '../menu/trackfavmenu.module.css';
-import { Alert, AppBar, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
-import styles from './login.module.css';
+import { Alert, IconButton, Tooltip } from '@mui/material';
 import { closeHeader } from '../menu/actions/HeaderHelper';
 import AppContext from '../context/AppContext';
 import LoginContext from '../context/LoginContext';
-import { ReactComponent as CloseIcon } from '../assets/icons/ic_action_close.svg';
 import { ReactComponent as LogoutIcon } from '../assets/icons/ic_action_logout.svg';
 import { ReactComponent as UserIcon } from '../assets/icons/ic_action_user_account.svg';
 import { ReactComponent as CloudIcon } from '../assets/icons/ic_action_cloud.svg';
@@ -14,7 +12,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import EmptyLogin from './EmptyLogin';
 import Login from './Login';
-import { closeLoginMenu, FREE_ACCOUNT } from '../manager/LoginManager';
+import {closeLoginMenu, FREE_ACCOUNT} from '../manager/LoginManager';
 import ChangeResetPwd from './ChangeResetPwd';
 import CreateAccount from './CreateAccount';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -30,6 +28,8 @@ import DefaultItem from '../frame/components/items/DefaultItem';
 import AccountActions from '../menu/actions/AccountActions';
 import ChangeEmailDialog from './dialogs/ChangeEmailDialog';
 import DeleteAccountDialog from './dialogs/DeleteAccountDialog';
+import AppBarWithBtns from '../frame/components/header/AppBarWithBtns';
+import CloudInfo from './CloudInfo';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -43,6 +43,7 @@ export default function LoginMenu() {
     const navigate = useNavigate();
 
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
+    const [openCloudInfo, setOpenCloudInfo] = useState(false);
 
     useEffect(() => {
         if (location.hash === '#logout' && ltx.loginUser) {
@@ -73,51 +74,47 @@ export default function LoginMenu() {
         return status + getAccountType(ltx.accountInfo.account);
     };
 
+    function close() {
+        closeLoginMenu(ltx);
+        closeHeader({ ctx });
+    }
+
     return (
         <>
-            {ltx.loginState.default && (
+            {openCloudInfo && <CloudInfo setOpenCloudInfo={setOpenCloudInfo} />}
+            {ltx.loginState.default && !openCloudInfo && (
                 <>
-                    <AppBar position="static" className={headerStyles.appbar}>
-                        <Toolbar className={headerStyles.toolbar}>
-                            <IconButton
-                                id={'se-login-menu-close'}
-                                variant="contained"
-                                type="button"
-                                className={styles.closeIcon}
-                                onClick={() => {
-                                    closeLoginMenu(ltx);
-                                    closeHeader({ ctx });
-                                }}
-                            >
-                                <CloseIcon />
-                            </IconButton>
-                            <Typography id="se-login-menu-name" component="div" className={headerStyles.title}>
-                                {'OsmAnd ' + t('login_account')}
-                            </Typography>
-                            {ltx.loginUser && (
-                                <Tooltip arrow placement="bottom-end" title={'Logout'}>
-                                    <span>
-                                        <IconButton
-                                            variant="contained"
-                                            type="button"
-                                            className={headerStyles.appBarIcon}
-                                            id="se-logout-btn"
-                                            onClick={() =>
-                                                userLogout({
-                                                    ltx: ltx,
-                                                    username: ltx.loginUser,
-                                                    handleClose,
-                                                    lang,
-                                                })
-                                            }
-                                        >
-                                            <LogoutIcon />
-                                        </IconButton>
-                                    </span>
-                                </Tooltip>
-                            )}
-                        </Toolbar>
-                    </AppBar>
+                    <AppBarWithBtns
+                        id={'login-menu'}
+                        header={'OsmAnd ' + t('login_account')}
+                        leftBtnAction={close}
+                        rightBtns={
+                            <>
+                                {ltx.loginUser && (
+                                    <Tooltip arrow placement="bottom-end" title={'Logout'}>
+                                        <span>
+                                            <IconButton
+                                                variant="contained"
+                                                type="button"
+                                                className={headerStyles.appBarIcon}
+                                                id="se-logout-btn"
+                                                onClick={() =>
+                                                    userLogout({
+                                                        ltx: ltx,
+                                                        username: ltx.loginUser,
+                                                        handleClose,
+                                                        lang,
+                                                    })
+                                                }
+                                            >
+                                                <LogoutIcon />
+                                            </IconButton>
+                                        </span>
+                                    </Tooltip>
+                                )}
+                            </>
+                        }
+                    />
                     {!ltx.loginUser ? (
                         <EmptyLogin />
                     ) : (
@@ -136,6 +133,9 @@ export default function LoginMenu() {
                                 name={t('osmand_cloud')}
                                 icon={<CloudIcon />}
                                 rightText={cloudSize}
+                                onClick={() => {
+                                    setOpenCloudInfo(true);
+                                }}
                             />
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SubTitleMenu text={'Payments and Purchases'} />
@@ -165,9 +165,7 @@ export default function LoginMenu() {
             {ltx.loginState.login && <Login />}
             {ltx.loginState.changePwd && <ChangeResetPwd />}
             {ltx.loginState.create && <CreateAccount />}
-            {ltx.openChangeEmailDialog && (
-                <ChangeEmailDialog setOpenChangeEmailDialog={ltx.setOpenChangeEmailDialog} />
-            )}
+            {ltx.openChangeEmailDialog && <ChangeEmailDialog setOpenChangeEmailDialog={ltx.setOpenChangeEmailDialog} />}
             {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag} />}
         </>
     );

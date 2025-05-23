@@ -11,7 +11,6 @@ import {
     ListItemText,
     MenuItem,
     Typography,
-    Button,
     Accordion,
     AccordionSummary,
     AccordionDetails,
@@ -35,8 +34,6 @@ export default function LoginDialog() {
     }));
 
     const classes = useStyles();
-
-    const [openDownloadBackupDialog, setOpenDownloadBackupDialog] = useState(false);
 
     const [selectedProducts, setSelectedProducts] = useState([]);
 
@@ -70,52 +67,6 @@ export default function LoginDialog() {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText component={'span'}>
-                        <Divider />
-                        {!ctx.listFiles || !ctx.listFiles.userid ? (
-                            <></>
-                        ) : (
-                            <>
-                                <Typography component={'span'} variant="h6" noWrap>
-                                    {`Files info:`}
-                                </Typography>
-                                <MenuItem>
-                                    <ListItemText>
-                                        <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
-                                            {`Total files: ${ctx.listFiles.totalFiles} (${ctx.listFiles.totalFileVersions} including versions)`}
-                                        </Typography>
-                                    </ListItemText>
-                                </MenuItem>
-                                <MenuItem sx={{ mt: -1 }}>
-                                    <ListItemText>
-                                        <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
-                                            {`Total files size: ${(
-                                                ctx.listFiles.totalFileSize /
-                                                1024.0 /
-                                                1024.0
-                                            ).toFixed(1)} MB`}
-                                        </Typography>
-                                    </ListItemText>
-                                </MenuItem>
-                                <MenuItem sx={{ mt: -1 }}>
-                                    <ListItemText>
-                                        <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
-                                            {`Cloud storage used: ${(
-                                                ctx.listFiles.totalZipSize /
-                                                1024 /
-                                                1024.0
-                                            ).toFixed(1)} MB ${
-                                                ltx.accountInfo &&
-                                                `of ${ltx.accountInfo.maxAccSize / (1024 * 1024)} MB`
-                                            }`}
-                                        </Typography>
-                                    </ListItemText>
-                                </MenuItem>
-                                <Button id={'se-download-backup'} onClick={() => setOpenDownloadBackupDialog(true)}>
-                                    Download backup
-                                </Button>
-                            </>
-                        )}
-                        <Divider sx={{ mt: 1 }} />
                         {ltx.accountInfo && (
                             <>
                                 <Typography component={'span'} variant="h6" noWrap>

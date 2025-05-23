@@ -82,9 +82,7 @@ export default function LoginButton({ openMainMenu, setMenuInfo }) {
                                 },
                             }}
                         >
-                            {ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE
-                                ? t('login_account')
-                                : t('user_login')}
+                            {ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE ? t('login_account') : t('user_login')}
                         </ListItemText>
                         {ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE && (
                             <ListItemText
