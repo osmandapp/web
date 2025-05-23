@@ -14,6 +14,10 @@ Detailed information about purchases on Android: markets to install, subscriptio
 
 Detailed information about purchases on iOS: subscriptions vs in app, prices, paid features.
 
+### [Cross-Platform Purchases](./cross.md)
+
+Learn how to use your Maps+ and OsmAnd Pro purchases across Android, iOS, and other supported platforms using your OsmAnd Cloud account.
+
 ### [Giveaway](./giveaway.md)
 
 You can get OsmAnd for free by one of our regular giveaways. Read more how to register and participate.
