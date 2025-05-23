@@ -16,7 +16,7 @@ import LoginContext from '../../context/LoginContext';
 
 export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
     const navigate = useNavigate();
 
     const { i18n } = useTranslation();
@@ -29,20 +29,20 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
 
     useEffect(() => {
         if (accountDeleted) {
-            ctxl.setEmailCookie('');
-            ctxl.setLoginUser(null);
+            ltx.setEmailCookie('');
+            ltx.setLoginUser(null);
             navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
         }
     }, [accountDeleted]);
 
     function checkLogin() {
-        if (ctxl.loginUser) {
+        if (ltx.loginUser) {
             return true;
         } else {
-            if (ctxl.loginUser !== INIT_LOGIN_STATE) {
-                ctxl.setWantDeleteAcc(true);
+            if (ltx.loginUser !== INIT_LOGIN_STATE) {
+                ltx.setWantDeleteAcc(true);
                 navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
-                ctxl.setOpenLoginMenu(true);
+                ltx.setOpenLoginMenu(true);
             }
         }
     }
@@ -50,28 +50,28 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     useEffect(() => {
         const loggedIn = checkLogin();
         if (loggedIn) {
-            if (ctxl.loginUser !== INIT_LOGIN_STATE) {
+            if (ltx.loginUser !== INIT_LOGIN_STATE) {
                 sendCode({
-                    email: ctxl.loginUser,
+                    email: ltx.loginUser,
                     action: AccountManager.DELETE_EMAIL_MSG,
                     lang,
                 }).then();
             }
         }
-    }, [ctxl.loginUser]);
+    }, [ltx.loginUser]);
 
     function close() {
         if (setDeleteAccountFlag) {
             setDeleteAccountFlag(false);
         } else {
-            ctxl.setWantDeleteAcc(false);
+            ltx.setWantDeleteAcc(false);
             navigate('/map/' + window.location.search + window.location.hash);
         }
     }
 
     return (
-        ctxl.loginUser &&
-        ctxl.loginUser !== INIT_LOGIN_STATE && (
+        ltx.loginUser &&
+        ltx.loginUser !== INIT_LOGIN_STATE && (
             <Dialog id="se-delete-account-dialog" open={true} onClose={close}>
                 <Grid container spacing={2}>
                     <Grid item xs={11} sx={{ mb: -3 }}>
@@ -134,7 +134,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
                         sx={{ backgroundColor: '#ff595e !important', ml: 2 }}
                         onClick={() => {
                             if (userEmail) {
-                                if (userEmail !== ctxl.loginUser) {
+                                if (userEmail !== ltx.loginUser) {
                                     setEmailError('Email does not match');
                                 } else {
                                     AccountManager.deleteAccount({

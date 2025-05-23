@@ -9,7 +9,7 @@ import { createAccount, openLogin } from '../manager/LoginManager';
 import LoginContext from '../context/LoginContext';
 
 export default function EmptyLogin() {
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const navigate = useNavigate();
     const { t } = useTranslation();
@@ -31,11 +31,11 @@ export default function EmptyLogin() {
                 id="se-login-btn"
                 className={styles.button}
                 component="span"
-                onClick={() => openLogin(ctxl, navigate)}
+                onClick={() => openLogin(ltx, navigate)}
             >
                 {t('web:login_btn')}
             </Button>
-            <Button sx={{ mt: 1.5 }} className={styles.button} component="span" onClick={() => createAccount(ctxl)}>
+            <Button sx={{ mt: 1.5 }} className={styles.button} component="span" onClick={() => createAccount(ltx)}>
                 {t('web:create_account_btn')}
             </Button>
         </Box>

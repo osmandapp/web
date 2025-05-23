@@ -8,7 +8,7 @@ import LoginContext from '../../context/LoginContext';
 
 export default function HeightmapLayer() {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const map = useMap();
 
@@ -17,7 +17,7 @@ export default function HeightmapLayer() {
     const tileLayerRef = useRef(null);
 
     useEffect(() => {
-        if (!map || !ctxl.loginUser || ctxl.loginUser === INIT_LOGIN_STATE) return;
+        if (!map || !ltx.loginUser || ltx.loginUser === INIT_LOGIN_STATE) return;
 
         if (ctx.heightmap === NO_HEIGHTMAP) {
             if (tileLayerRef.current) {
@@ -70,7 +70,7 @@ export default function HeightmapLayer() {
                 tileLayerRef.current.off('tileerror');
             }
         };
-    }, [ctx.heightmap, map, ctxl.loginUser]);
+    }, [ctx.heightmap, map, ltx.loginUser]);
 
     useEffect(() => {
         ctx.setProcessHeightmaps(loadingTiles);

@@ -26,7 +26,7 @@ import LoginContext from '../../context/LoginContext';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const map = useMap();
     const navigate = useNavigate();
@@ -362,7 +362,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                             id={'se-show-regions-action'}
                             className={styles.contextMenuItem}
                             onClick={() =>
-                                handleMenuItemClick((latlng) => (ctxl.loginUser ? getRegions(latlng) : openLogin()))
+                                handleMenuItemClick((latlng) => (ltx.loginUser ? getRegions(latlng) : openLogin()))
                             }
                         >
                             <ListItemIcon className={styles.contextMenuIcon}>

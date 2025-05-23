@@ -32,7 +32,7 @@ export default function GroupHeader({
     markers = null,
 }) {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const TRACKS_TYPE = 'tracks';
     const FAVORITES_TYPE = 'favorites';
@@ -150,7 +150,7 @@ export default function GroupHeader({
                                         component="span"
                                         variant="contained"
                                         type="button"
-                                        disabled={ctxl.accountInfo?.account === FREE_ACCOUNT}
+                                        disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
                                         className={styles.appBarIcon}
                                     >
                                         <ImportIcon />

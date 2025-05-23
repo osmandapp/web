@@ -45,7 +45,7 @@ export const VECTOR_GRID = 'vector_grid';
 
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
     const [openSettings, setOpenSettings] = useState(false);
@@ -88,7 +88,7 @@ export default function ConfigureMap() {
     }
 
     function showProButton() {
-        return ctxl.accountInfo?.account === FREE_ACCOUNT;
+        return ltx.accountInfo?.account === FREE_ACCOUNT;
     }
 
     const DEFAULT_CONFIGURE = () => {
@@ -108,7 +108,7 @@ export default function ConfigureMap() {
                         <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
                             {t('configure_map')}
                         </Typography>
-                        {ctxl.loginUser && (
+                        {ltx.loginUser && (
                             <Tooltip key={'reset'} title={t('reset_to_default')} arrow placement="bottom-end">
                                 <span>
                                     <IconButton
@@ -125,11 +125,11 @@ export default function ConfigureMap() {
                         )}
                     </Toolbar>
                 </AppBar>
-                {!ctxl.loginUser && !ctx.develFeatures ? (
+                {!ltx.loginUser && !ctx.develFeatures ? (
                     <EmptyLogin />
                 ) : (
                     <>
-                        {ctxl.loginUser && (
+                        {ltx.loginUser && (
                             <>
                                 <SubTitleMenu text={t('shared_string_show')} />
                                 <MenuItem

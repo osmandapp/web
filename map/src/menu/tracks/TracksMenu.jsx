@@ -22,7 +22,7 @@ export const DEFAULT_SORT_METHOD = 'time';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const [defaultGroup, setDefaultGroup] = useState(null);
     const [sortFiles, setSortFiles] = useState([]);
@@ -85,7 +85,7 @@ export default function TracksMenu() {
 
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-            {ctxl.loginUser && (
+            {ltx.loginUser && (
                 <GroupHeader
                     type="tracks"
                     trackGroup={defaultGroup}

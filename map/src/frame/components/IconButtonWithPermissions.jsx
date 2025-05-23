@@ -13,7 +13,7 @@ const useStyles = makeStyles({
 });
 
 export default function IconButtonWithPermissions({ onClick, className, ...props }) {
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
     const classes = useStyles();
 
     const [openDialog, setOpenDialog] = useState(false);
@@ -22,7 +22,7 @@ export default function IconButtonWithPermissions({ onClick, className, ...props
         setOpenDialog(false);
     };
 
-    const isDisabled = ctxl.accountInfo?.account === FREE_ACCOUNT;
+    const isDisabled = ltx.accountInfo?.account === FREE_ACCOUNT;
 
     const handleClick = () => {
         if (isDisabled) {

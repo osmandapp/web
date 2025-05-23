@@ -539,8 +539,8 @@ export default function GeneralInfo({ width }) {
                                   </>
                               )}
                     </div>
-                    {ctxl.loginUser &&
-                        ctxl.accountInfo?.account !== FREE_ACCOUNT &&
+                    {ltx.loginUser &&
+                        ltx.accountInfo?.account !== FREE_ACCOUNT &&
                         (isLocalTrack(ctx) || isRouteTrack(ctx)) &&
                         isEmptyTrack(ctx.selectedGpxFile) === false && (
                             <>

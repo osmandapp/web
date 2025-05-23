@@ -7,12 +7,12 @@ import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
 
 export default function EmptySearch({ message }) {
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
     return (
         <>
-            {ctxl.loginUser ? (
+            {ltx.loginUser ? (
                 <Box className={styles.block} id={'se-empty-search'}>
                     <Icon className={styles.icon}>
                         <SearchIcon className={styles.icon} />

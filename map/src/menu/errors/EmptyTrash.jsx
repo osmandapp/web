@@ -8,12 +8,12 @@ import { useContext } from 'react';
 import LoginContext from '../../context/LoginContext';
 
 export default function EmptyTrash() {
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
     return (
         <>
-            {ctxl.loginUser ? (
+            {ltx.loginUser ? (
                 <Box id={'se-empty-trash-page'} className={styles.block}>
                     <Icon className={styles.icon}>
                         <TrashIcon className={styles.icon} />

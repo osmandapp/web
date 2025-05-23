@@ -8,7 +8,7 @@ import LoginContext from '../../../context/LoginContext';
 
 export default function CloudGpxUploader({ children, folder = null, style = null }) {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const [uploadedFiles, mutateUploadedFiles] = useMutator({});
 
@@ -63,7 +63,7 @@ export default function CloudGpxUploader({ children, folder = null, style = null
     return (
         <label className={style} htmlFor="se-upload-cloud-gpx">
             <HiddenInput
-                disabled={ctxl.accountInfo?.account === FREE_ACCOUNT}
+                disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
                 id="se-upload-cloud-gpx"
                 accept=".gpx"
                 multiple

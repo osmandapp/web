@@ -33,7 +33,7 @@ const SELECTED_FILTERS = 'selectedSegmentFilters';
 
 export default function TrackAnalyzerMenu() {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const [, height] = useWindowSize();
     const { t } = useTranslation();
@@ -328,7 +328,7 @@ export default function TrackAnalyzerMenu() {
 
     return (
         <>
-            {ctxl.loginUser ? (
+            {ltx.loginUser ? (
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}

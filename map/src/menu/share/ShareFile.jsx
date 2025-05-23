@@ -36,7 +36,7 @@ import { BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE, REQUEST_ACCESS_TYPE } from '.
 
 export default function ShareFile() {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const { uuid } = useParams();
 
@@ -60,10 +60,10 @@ export default function ShareFile() {
     const currentLoc = useGeoLocation(ctx);
 
     useEffect(() => {
-        if (ctxl.loginState !== INIT_LOGIN_STATE && ctxl.accountInfo) {
-            setUserName(ctxl.accountInfo.nickname ?? '');
+        if (ltx.loginState !== INIT_LOGIN_STATE && ltx.accountInfo) {
+            setUserName(ltx.accountInfo.nickname ?? '');
         }
-    }, [ctxl.accountInfo]);
+    }, [ltx.accountInfo]);
 
     useEffect(() => {
         if (!uuid) {

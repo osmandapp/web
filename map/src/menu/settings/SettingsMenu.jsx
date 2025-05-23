@@ -41,7 +41,7 @@ export function getLocalizedTimeUpdate(time) {
 
 export default function SettingsMenu() {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const [openLangList, setOpenLangList] = useState(false);
     const { i18n, t } = useTranslation();
@@ -176,7 +176,7 @@ export default function SettingsMenu() {
             <DividerWithMargin margin={'64px'} />
             <UnitsMenu />
             <SimpleDivider />
-            {ctxl.loginUser && ctxl.accountInfo?.account !== FREE_ACCOUNT && (
+            {ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT && (
                 <>
                     <SubTitleMenu text={t('osmand_cloud')} />
                     <MenuItem
@@ -211,7 +211,7 @@ export default function SettingsMenu() {
                     </MenuItem>
                 </>
             )}
-            {process.env.REACT_APP_DEVEL_FEATURES === 'yes' && ctx.develFeatures && ctxl.loginUser && (
+            {process.env.REACT_APP_DEVEL_FEATURES === 'yes' && ctx.develFeatures && ltx.loginUser && (
                 <>
                     <Typography component="div" sx={{ ml: 2 }}>
                         Explore Wikimedia Images

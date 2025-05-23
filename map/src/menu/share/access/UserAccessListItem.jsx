@@ -30,7 +30,7 @@ export default function UserAccessListItem({
     anyone = false,
 }) {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
 
@@ -43,7 +43,7 @@ export default function UserAccessListItem({
 
     function getName() {
         if (showOwner) {
-            return ctxl.accountInfo?.nickname ?? ctxl.loginUser;
+            return ltx.accountInfo?.nickname ?? ltx.loginUser;
         } else if (anyone) {
             return t('web:share_type_public');
         } else {

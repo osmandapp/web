@@ -25,7 +25,7 @@ export default function PoiActionsButtons({ wpt }) {
     const lon = wpt.latlon?.lon;
 
     function addToFavorite() {
-        if (ctxl.loginUser) {
+        if (ltx.loginUser) {
             const location =
                 ctx.selectedWpt?.poi?.latlng ??
                 new LatLng(ctx.selectedWpt?.poi.geometry.coordinates[1], ctx.selectedWpt?.poi.geometry.coordinates[0]);

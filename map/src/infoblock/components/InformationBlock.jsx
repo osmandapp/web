@@ -62,7 +62,7 @@ export default function InformationBlock({
     const DRAWER_SIZE = 360;
 
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const navigate = useNavigate();
 
@@ -250,11 +250,11 @@ export default function InformationBlock({
     }, [ctx.shareFile]);
 
     useEffect(() => {
-        if (!ctxl.loginUser) {
+        if (!ltx.loginUser) {
             setShowInfoBlock(false);
             setOpenWptDetails(false);
         }
-    }, [ctxl.loginUser]);
+    }, [ltx.loginUser]);
 
     useEffect(() => {
         if (openWptTab) {

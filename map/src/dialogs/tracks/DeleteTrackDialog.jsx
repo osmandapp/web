@@ -25,7 +25,7 @@ export default function DeleteTrackDialog({
         if (isLocalTrack(ctx)) {
             return 'local tracks';
         }
-        if (file && ctxl.loginUser) {
+        if (file && ltx.loginUser) {
             return 'OsmAnd Cloud';
         }
         return '';

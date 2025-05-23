@@ -8,7 +8,7 @@ import BlueBtn from '../../../frame/components/btns/BlueBtn';
 import LoginContext from '../../../context/LoginContext';
 
 export default function RequestAccessError({ sendRequest, userName, setUserName }) {
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const [error, setError] = useState('');
     const { t } = useTranslation();
@@ -16,10 +16,10 @@ export default function RequestAccessError({ sendRequest, userName, setUserName 
     const [showNameField, setShowNameField] = useState(false);
 
     useEffect(() => {
-        if (ctxl.loginState !== INIT_LOGIN_STATE && ctxl.accountInfo) {
-            setShowNameField(!ctxl.accountInfo.nickname);
+        if (ltx.loginState !== INIT_LOGIN_STATE && ltx.accountInfo) {
+            setShowNameField(!ltx.accountInfo.nickname);
         }
-    }, [ctxl.accountInfo]);
+    }, [ltx.accountInfo]);
 
     const validateNickname = (nickname) => {
         const MIN_LENGTH = 3;

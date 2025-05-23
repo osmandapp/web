@@ -31,7 +31,7 @@ import LoginContext from '../context/LoginContext';
 
 export default function ChangeResetPwd() {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -144,7 +144,7 @@ export default function ChangeResetPwd() {
                         type="button"
                         className={styles.closeIcon}
                         onClick={() => {
-                            closeLoginMenu(ctxl);
+                            closeLoginMenu(ltx);
                             closeHeader({ ctx });
                         }}
                     >
@@ -291,7 +291,7 @@ export default function ChangeResetPwd() {
                             <Button
                                 className={errorStyles.button}
                                 component="span"
-                                onClick={() => openLogin(ctxl, navigate)}
+                                onClick={() => openLogin(ltx, navigate)}
                             >
                                 {t('web:login_btn')}
                             </Button>

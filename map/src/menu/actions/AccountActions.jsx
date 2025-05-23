@@ -9,13 +9,13 @@ import LoginContext from '../../context/LoginContext';
 const AccountActions = forwardRef(({ setOpenActions }, ref) => {
     const lang = i18n.language;
 
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     function changeEmail() {
         sendCode({
             action: AccountManager.CHANGE_EMAIL_MSG,
             lang,
-        }).then(() => ctxl.setOpenChangeEmailDialog(true));
+        }).then(() => ltx.setOpenChangeEmailDialog(true));
     }
 
     return (

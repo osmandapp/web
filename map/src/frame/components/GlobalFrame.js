@@ -33,7 +33,7 @@ import LoginContext from '../../context/LoginContext';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const [showInfoBlock, setShowInfoBlock] = useState(false);
     const [clearState, setClearState] = useState(false);
@@ -47,7 +47,7 @@ const GlobalFrame = () => {
 
     const MAIN_MENU_SIZE = openMainMenu ? `${MAIN_MENU_OPEN_SIZE}px` : `${MAIN_MENU_MIN_SIZE}px`;
     const MENU_INFO_SIZE =
-        menuInfo || ctxl.openLoginMenu || ctx.infoBlockWidth === `${MENU_INFO_OPEN_SIZE}px`
+        menuInfo || ltx.openLoginMenu || ctx.infoBlockWidth === `${MENU_INFO_OPEN_SIZE}px`
             ? `${MENU_INFO_OPEN_SIZE}px`
             : `${MENU_INFO_CLOSE_SIZE}px`;
 

@@ -33,7 +33,7 @@ import DeleteAccountDialog from './dialogs/DeleteAccountDialog';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const lang = i18n.language;
     const anchorEl = useRef(null);
@@ -45,12 +45,12 @@ export default function LoginMenu() {
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
 
     useEffect(() => {
-        if (location.hash === '#logout' && ctxl.loginUser) {
-            ctxl.setLoginUser(null);
-            ctxl.setLoginError('You are logged out by server!');
+        if (location.hash === '#logout' && ltx.loginUser) {
+            ltx.setLoginUser(null);
+            ltx.setLoginError('You are logged out by server!');
             window.location.hash = ''; // useLocation() is read-only
             navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
-            ctxl.setOpenLoginMenu(true);
+            ltx.setOpenLoginMenu(true);
         }
     }, [location.hash]);
 
@@ -64,18 +64,18 @@ export default function LoginMenu() {
 
     const cloudSize = `${(ctx.listFiles?.totalZipSize / 1024 / 1024.0).toFixed(1)} MB`;
     const mainSubscription = () => {
-        if (!ctxl.accountInfo) {
+        if (!ltx.accountInfo) {
             return '';
         }
         let status;
-        status = new Date(parseInt(ctxl.accountInfo.expireTime, 10)).getTime() > Date.now() ? 'Active' : 'Expired';
+        status = new Date(parseInt(ltx.accountInfo.expireTime, 10)).getTime() > Date.now() ? 'Active' : 'Expired';
         status = status ? status + ' · ' : '';
-        return status + getAccountType(ctxl.accountInfo.account);
+        return status + getAccountType(ltx.accountInfo.account);
     };
 
     return (
         <>
-            {ctxl.loginState.default && (
+            {ltx.loginState.default && (
                 <>
                     <AppBar position="static" className={headerStyles.appbar}>
                         <Toolbar className={headerStyles.toolbar}>
@@ -85,7 +85,7 @@ export default function LoginMenu() {
                                 type="button"
                                 className={styles.closeIcon}
                                 onClick={() => {
-                                    closeLoginMenu(ctxl);
+                                    closeLoginMenu(ltx);
                                     closeHeader({ ctx });
                                 }}
                             >
@@ -94,7 +94,7 @@ export default function LoginMenu() {
                             <Typography id="se-login-menu-name" component="div" className={headerStyles.title}>
                                 {'OsmAnd ' + t('login_account')}
                             </Typography>
-                            {ctxl.loginUser && (
+                            {ltx.loginUser && (
                                 <Tooltip arrow placement="bottom-end" title={'Logout'}>
                                     <span>
                                         <IconButton
@@ -104,8 +104,8 @@ export default function LoginMenu() {
                                             id="se-logout-btn"
                                             onClick={() =>
                                                 userLogout({
-                                                    ctxl,
-                                                    username: ctxl.loginUser,
+                                                    ltx: ltx,
+                                                    username: ltx.loginUser,
                                                     handleClose,
                                                     lang,
                                                 })
@@ -118,14 +118,14 @@ export default function LoginMenu() {
                             )}
                         </Toolbar>
                     </AppBar>
-                    {!ctxl.loginUser ? (
+                    {!ltx.loginUser ? (
                         <EmptyLogin />
                     ) : (
                         <>
                             <DefaultItemWithActions
                                 icon={<UserIcon />}
                                 name={'Email'}
-                                additionalInfo={ctxl.loginUser}
+                                additionalInfo={ltx.loginUser}
                                 anchorEl={anchorEl}
                                 revertText={true}
                                 actions={<AccountActions />}
@@ -155,18 +155,18 @@ export default function LoginMenu() {
                             <ColorBlock color={'#f0f0f0'} />
                         </>
                     )}
-                    {ctxl.loginError && (
+                    {ltx.loginError && (
                         <Alert id="se-alert-login-info" severity="info">
-                            {ctxl.loginError}
+                            {ltx.loginError}
                         </Alert>
                     )}
                 </>
             )}
-            {ctxl.loginState.login && <Login />}
-            {ctxl.loginState.changePwd && <ChangeResetPwd />}
-            {ctxl.loginState.create && <CreateAccount />}
-            {ctxl.openChangeEmailDialog && (
-                <ChangeEmailDialog setOpenChangeEmailDialog={ctxl.setOpenChangeEmailDialog} />
+            {ltx.loginState.login && <Login />}
+            {ltx.loginState.changePwd && <ChangeResetPwd />}
+            {ltx.loginState.create && <CreateAccount />}
+            {ltx.openChangeEmailDialog && (
+                <ChangeEmailDialog setOpenChangeEmailDialog={ltx.setOpenChangeEmailDialog} />
             )}
             {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag} />}
         </>

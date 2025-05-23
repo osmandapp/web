@@ -24,7 +24,7 @@ import LoginContext from '../../../context/LoginContext';
 
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const [openRoutingSettings, setOpenRoutingSettings] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -193,8 +193,8 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                                 </IconButton>
                             </Tooltip>
                         )}
-                        {ctxl.loginUser &&
-                            ctxl.accountInfo?.account !== FREE_ACCOUNT &&
+                        {ltx.loginUser &&
+                            ltx.accountInfo?.account !== FREE_ACCOUNT &&
                             (isLocalTrack(ctx) || isRouteTrack(ctx)) && (
                                 <Tooltip title="Save to cloud" arrow placement={tooltipOrientation}>
                                     <span style={styleSpan}>

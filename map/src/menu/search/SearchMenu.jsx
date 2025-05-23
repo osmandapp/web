@@ -29,7 +29,7 @@ export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
 export default function SearchMenu() {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const navigate = useNavigate();
 
@@ -213,7 +213,7 @@ export default function SearchMenu() {
 
     return (
         <>
-            {ctxl.loginUser ? (
+            {ltx.loginUser ? (
                 <>
                     {openSearchResults && (
                         <SearchResults

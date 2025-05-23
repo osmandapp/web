@@ -17,7 +17,7 @@ import LoginContext from '../context/LoginContext';
 
 export default function Login() {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
     const lang = i18n.language;
@@ -31,10 +31,10 @@ export default function Login() {
     const [tryCookie, setTryCookie] = useState(null); // then try cookie if userEmail is still not set by browser
 
     useEffect(() => {
-        if (ctxl.emailCookie) {
-            setTimeout(() => setTryCookie(ctxl.emailCookie), 500); // delay to allow browser auto-login
+        if (ltx.emailCookie) {
+            setTimeout(() => setTryCookie(ltx.emailCookie), 500); // delay to allow browser auto-login
         }
-    }, [ctxl.loginUser]);
+    }, [ltx.loginUser]);
 
     useEffect(() => {
         if (emailError !== EMPTY_INPUT) {
@@ -52,8 +52,8 @@ export default function Login() {
     const handleClose = () => {
         setEmailError(EMPTY_INPUT);
         setUserPassword(EMPTY_INPUT);
-        closeLoginMenu(ctxl);
-        if (ctxl.wantDeleteAcc) {
+        closeLoginMenu(ltx);
+        if (ltx.wantDeleteAcc) {
             navigate(MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + window.location.search + window.location.hash);
         } else {
             ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
@@ -78,7 +78,7 @@ export default function Login() {
 
     async function handleLogin() {
         await userLogin({
-            ctxl,
+            ltx,
             username: userEmail,
             pwd: userPassword,
             setError,
@@ -95,7 +95,7 @@ export default function Login() {
     };
 
     function openChangeResetPwd() {
-        ctxl.setLoginState({ changePwd: true });
+        ltx.setLoginState({ changePwd: true });
     }
 
     return (
@@ -108,7 +108,7 @@ export default function Login() {
                         type="button"
                         className={styles.closeIcon}
                         onClick={() => {
-                            closeLoginMenu(ctxl);
+                            closeLoginMenu(ltx);
                             closeHeader({ ctx });
                         }}
                     >
@@ -142,7 +142,7 @@ export default function Login() {
                     />
                     {emailError !== EMPTY_INPUT && (
                         <BlueBtn
-                            action={() => createAccount(ctxl)}
+                            action={() => createAccount(ltx)}
                             text={t('web:create_account_btn')}
                             additionalStyle={{ mb: 1.5, mt: 0.5 }}
                             span={true}

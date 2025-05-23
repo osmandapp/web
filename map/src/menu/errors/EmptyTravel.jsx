@@ -9,12 +9,12 @@ import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHov
 import LoginContext from '../../context/LoginContext';
 
 export default function EmptyTravel({ reset }) {
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
     return (
         <>
-            {ctxl.loginUser ? (
+            {ltx.loginUser ? (
                 <Box className={styles.block} id={'se-empty-travel'}>
                     <Icon className={styles.icon}>
                         <EmptyTravelIcon className={styles.icon} />

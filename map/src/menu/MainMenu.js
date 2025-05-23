@@ -101,7 +101,7 @@ export default function MainMenu({
     showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
     const location = useLocation();
@@ -135,25 +135,25 @@ export default function MainMenu({
             ctx.setSelectedWpt(null);
         }
         ctx.setLoadingContextMenu(false);
-        ctxl.setOpenLoginMenu(false);
+        ltx.setOpenLoginMenu(false);
     }
 
     useEffect(() => {
-        if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ctxl.openLoginMenu && !ctxl.loginUser) {
+        if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ltx.openLoginMenu && !ltx.loginUser) {
             const params = new URLSearchParams(location.search);
             const to = params.get('redirect');
             if (to) {
                 setRedirectUrl(to);
             }
-            openLoginMenu(ctx, ctxl, navigate);
+            openLoginMenu(ctx, ltx, navigate);
         }
     }, [location.pathname, ctx, navigate]);
 
     useEffect(() => {
-        if (ctxl.loginUser && redirectUrl) {
+        if (ltx.loginUser && redirectUrl) {
             window.location.href = redirectUrl;
         }
-    }, [ctxl.loginUser]);
+    }, [ltx.loginUser]);
 
     // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {
@@ -194,7 +194,7 @@ export default function MainMenu({
             return;
         }
         if (location.pathname.includes(LOGIN_URL)) {
-            ctxl.setOpenLoginMenu(true);
+            ltx.setOpenLoginMenu(true);
             return;
         }
         if (!menuInfo) {
@@ -244,7 +244,7 @@ export default function MainMenu({
             icon: SearchIcon,
             component: <SearchMenu />,
             type: OBJECT_SEARCH,
-            show: ctxl.loginUser,
+            show: ltx.loginUser,
             id: 'se-show-menu-search',
             url: MAIN_URL_WITH_SLASH + SEARCH_URL,
         },
@@ -612,7 +612,7 @@ export default function MainMenu({
                             zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
                             borderRight:
                                 ((!menuInfo &&
-                                    !ctxl.openLoginMenu &&
+                                    !ltx.openLoginMenu &&
                                     ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) ||
                                     (menuInfo && openMainMenu)) &&
                                 'none !important',
@@ -731,11 +731,11 @@ export default function MainMenu({
                         {/*add pro features*/}
                         {ctx.openProFeatures && <ProFeatures />}
                         {/*add login menu items*/}
-                        {ctxl.openLoginMenu && <LoginMenu />}
+                        {ltx.openLoginMenu && <LoginMenu />}
                         {/*add main menu items*/}
                         {_.isEmpty(ctx.openGroups) &&
                             !ctx.openVisibleMenu &&
-                            !ctxl.openLoginMenu &&
+                            !ltx.openLoginMenu &&
                             !ctx.openProFeatures && <Outlet />}
                         {/*add track groups*/}
                         {ctx.openGroups.length > 0 && getGroup()}

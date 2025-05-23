@@ -94,7 +94,7 @@ export async function saveTrackToCloud({
         }
     }
 
-    if (ctxl.loginUser) {
+    if (ltx.loginUser) {
         if (currentFile) {
             const convertedData = new TextEncoder().encode(currentFile.data);
             const zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });

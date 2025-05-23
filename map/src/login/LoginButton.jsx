@@ -11,17 +11,17 @@ import LoginContext from '../context/LoginContext';
 
 export default function LoginButton({ openMainMenu, setMenuInfo }) {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
     const navigate = useNavigate();
 
     const { t } = useTranslation();
 
     const openLogin = () => {
-        if (ctxl.openLoginMenu) {
-            closeLoginMenu(ctxl);
+        if (ltx.openLoginMenu) {
+            closeLoginMenu(ltx);
             navigate(MAIN_URL_WITH_SLASH + location.hash);
         } else {
-            openLoginMenu(ctx, ctxl, navigate);
+            openLoginMenu(ctx, ltx, navigate);
             setMenuInfo(null);
         }
     };
@@ -33,7 +33,7 @@ export default function LoginButton({ openMainMenu, setMenuInfo }) {
         //open
         openMainMenu && res.push(styles.menuItemOpen);
         //selected
-        ctxl.openLoginMenu && res.push(styles.menuItemSelected);
+        ltx.openLoginMenu && res.push(styles.menuItemSelected);
 
         return res.join(' ');
     }
@@ -50,7 +50,7 @@ export default function LoginButton({ openMainMenu, setMenuInfo }) {
             onClick={openLogin}
         >
             <ListItemButton
-                id={ctxl.loginUser && ctxl.loginUser !== INIT_LOGIN_STATE ? 'se-logout-button' : 'se-login-button'}
+                id={ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE ? 'se-logout-button' : 'se-login-button'}
                 className={styles.profileButton}
                 sx={{
                     justifyContent: openMainMenu ? 'initial' : 'center',
@@ -82,11 +82,11 @@ export default function LoginButton({ openMainMenu, setMenuInfo }) {
                                 },
                             }}
                         >
-                            {ctxl.loginUser && ctxl.loginUser !== INIT_LOGIN_STATE
+                            {ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE
                                 ? t('login_account')
                                 : t('user_login')}
                         </ListItemText>
-                        {ctxl.loginUser && ctxl.loginUser !== INIT_LOGIN_STATE && (
+                        {ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE && (
                             <ListItemText
                                 className={styles.profileLogin}
                                 sx={{
@@ -100,7 +100,7 @@ export default function LoginButton({ openMainMenu, setMenuInfo }) {
                                     },
                                 }}
                             >
-                                {ctxl.loginUser}
+                                {ltx.loginUser}
                             </ListItemText>
                         )}
                     </div>

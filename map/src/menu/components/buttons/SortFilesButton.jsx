@@ -44,7 +44,7 @@ export default function SortFilesButton({
     smartf,
 }) {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
 
@@ -68,7 +68,7 @@ export default function SortFilesButton({
     }, [ctx.selectedSort, trackGroup, sortType]);
 
     function disableSort() {
-        if (ctxl.loginUser) {
+        if (ltx.loginUser) {
             if (type === TRACK_FILE_TYPE) {
                 if (customGroup) {
                     return !customGroup.files || customGroup.files.length <= 1;

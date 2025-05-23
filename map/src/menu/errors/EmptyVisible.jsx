@@ -8,7 +8,7 @@ import TracksMenu from '../tracks/TracksMenu';
 import LoginContext from '../../context/LoginContext';
 
 export default function EmptyVisible({ id = null, setMenuInfo, setOpenVisibleMenu, setSelectedType }) {
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     function showAllTracks() {
         if (setMenuInfo) {
@@ -19,7 +19,7 @@ export default function EmptyVisible({ id = null, setMenuInfo, setOpenVisibleMen
 
     return (
         <>
-            {ctxl.loginUser ? (
+            {ltx.loginUser ? (
                 <Box className={styles.block} id={id ?? 'se-empty-page'}>
                     <Icon className={styles.icon}>
                         <EmptyIcon className={styles.icon} />

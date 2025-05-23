@@ -70,7 +70,7 @@ export function processMarkers({ layer, markerLatLng, mainMarkers, secondaryMark
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const map = useMap();
 
@@ -105,7 +105,7 @@ const FavoriteLayer = () => {
     }, [ctx.removeFavGroup]);
 
     useEffect(() => {
-        if (!ctxl.loginUser) {
+        if (!ltx.loginUser) {
             // If there is no logged-in user, remove all favorites layers.
             map.eachLayer((layer) => {
                 if (layer.options.type === FAVORITE_FILE_TYPE) {
@@ -114,7 +114,7 @@ const FavoriteLayer = () => {
             });
             deleteAllFavoritesFromDB().then();
         }
-    }, [ctxl.loginUser]);
+    }, [ltx.loginUser]);
 
     useEffect(() => {
         // created favorites markers and move them to ctx.favorites for adding to map

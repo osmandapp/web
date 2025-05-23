@@ -30,7 +30,7 @@ export const NO_HEIGHTMAP = 'none';
 
 export default function TerrainConfig({ setOpenTerrainConfig }) {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
 
@@ -104,7 +104,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                     <Typography component="div" className={headerStyles.title}>
                         {t('shared_string_terrain')}
                     </Typography>
-                    {ctxl.loginUser && (
+                    {ltx.loginUser && (
                         <Tooltip key={'reset'} title={t('reset_to_default')} arrow placement="bottom-end">
                             <span>
                                 <IconButton

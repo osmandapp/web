@@ -8,7 +8,7 @@ import BlueBtn from '../../../frame/components/btns/BlueBtn';
 import LoginContext from '../../../context/LoginContext';
 
 export default function PendingAccessError() {
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
     return (
@@ -27,7 +27,7 @@ export default function PendingAccessError() {
                 </Box>
             </Box>
             <BlueBtn
-                action={() => createAccount(ctxl)}
+                action={() => createAccount(ltx)}
                 text={t('web:access_requested_btn')}
                 additionalStyle={{ color: '#727272 !important', mt: '-15px' }}
                 span={true}

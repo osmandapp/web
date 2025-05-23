@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
 
 export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
     const navigate = useNavigate();
 
     const { i18n } = useTranslation();
@@ -148,8 +148,8 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                                     setEmailError('');
                                     setOpenChangeEmailDialog(false);
                                     setEmailChanged(false);
-                                    ctxl.setLoginUser(null);
-                                    ctxl.setEmailCookie('');
+                                    ltx.setLoginUser(null);
+                                    ltx.setEmailCookie('');
                                     navigate('/map/' + window.location.search + window.location.hash);
                                 }}
                             >
@@ -168,8 +168,8 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                         <Button onClick={() => setOpenChangeEmailDialog(false)}>Cancel</Button>
                         <Button
                             onClick={() => {
-                                ctxl.setLoginUser(null);
-                                ctxl.setEmailCookie(newEmail, { days: 30, SameSite: 'Strict' });
+                                ltx.setLoginUser(null);
+                                ltx.setEmailCookie(newEmail, { days: 30, SameSite: 'Strict' });
                             }}
                         >
                             Login using new credentials

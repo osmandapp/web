@@ -9,14 +9,14 @@ import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import LoginContext from '../../context/LoginContext';
 
 export default function Empty({ title, text, folder = null, menu = null, checkLogin = true }) {
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
 
     function showImportBtn() {
         if (folder !== null) {
             if (menu === OBJECT_TYPE_FAVORITE) {
                 return true;
             } else {
-                if (ctxl.accountInfo?.account !== FREE_ACCOUNT) {
+                if (ltx.accountInfo?.account !== FREE_ACCOUNT) {
                     return true;
                 }
             }
@@ -25,7 +25,7 @@ export default function Empty({ title, text, folder = null, menu = null, checkLo
     }
 
     function getText() {
-        if (menu !== OBJECT_TYPE_FAVORITE && ctxl.accountInfo?.account === FREE_ACCOUNT) {
+        if (menu !== OBJECT_TYPE_FAVORITE && ltx.accountInfo?.account === FREE_ACCOUNT) {
             return 'OsmAnd Pro subscription is required to import or create tracks in OsmAnd Cloud.';
         }
         return text;
@@ -33,7 +33,7 @@ export default function Empty({ title, text, folder = null, menu = null, checkLo
 
     function checkLoginUser() {
         if (checkLogin) {
-            return ctxl.loginUser;
+            return ltx.loginUser;
         }
         return true;
     }

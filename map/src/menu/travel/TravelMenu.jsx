@@ -26,7 +26,7 @@ export const ALL_YEARS = 'all';
 
 export default function TravelMenu() {
     const ctx = useContext(AppContext);
-    const ctxl = useContext(LoginContext);
+    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
     const DEFAULT_ACTIVITY = 'hiking';
@@ -158,7 +158,7 @@ export default function TravelMenu() {
 
     return (
         <>
-            {ctxl.loginUser ? (
+            {ltx.loginUser ? (
                 <>
                     <AppBar position="static" className={headerStyles.appbar}>
                         <Toolbar className={headerStyles.toolbar}>
