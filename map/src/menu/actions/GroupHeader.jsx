@@ -1,5 +1,5 @@
 import { AppBar, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
-import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
+import CloudGpxUploader from '../../frame/util/CloudGpxUploader';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
@@ -13,7 +13,7 @@ import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import AddFolderDialog from '../../dialogs/tracks/AddFolderDialog';
 import { byTime } from './SortActions';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
-import FavoriteGroupUploader from '../../frame/components/util/FavoriteGroupUploader';
+import FavoriteGroupUploader from '../../frame/util/FavoriteGroupUploader';
 import IconButtonWithPermissions from '../../frame/components/IconButtonWithPermissions';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from './HeaderHelper';

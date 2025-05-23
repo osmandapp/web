@@ -7,7 +7,7 @@ import { ReactComponent as CloudIcon } from '../assets/icons/ic_action_cloud.svg
 import { useTranslation } from 'react-i18next';
 import AppContext from '../context/AppContext';
 import LoginContext from '../context/LoginContext';
-import DividerWithMargin from '../menu/components/dividers/DividerWithMargin';
+import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
 import GrayBtnWithBlueHover from '../frame/components/btns/GrayBtnWithBlueHover';
 import { Box } from '@mui/material';
 import loginStyles from './login.module.css';

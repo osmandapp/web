@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Alert, Box, Button, Dialog, Snackbar } from '@mui/material';
-import OsmAndMap from '../../map/OsmAndMap';
-import MainMenu from '../../menu/MainMenu';
+import OsmAndMap from '../map/OsmAndMap';
+import MainMenu from '../menu/MainMenu';
 import { useLocation, useNavigate } from 'react-router-dom';
-import AppContext from '../../context/AppContext';
+import AppContext from '../context/AppContext';
 import GeneralPanelButtons from './panelbuttons/GeneralPanelButtons';
-import { GlobalConfirmationDialog } from '../../dialogs/GlobalConfirmationDialog';
-import HeaderMenu from './header/HeaderMenu';
+import { GlobalConfirmationDialog } from '../dialogs/GlobalConfirmationDialog';
+import HeaderMenu from './components/header/HeaderMenu';
 import {
     HEADER_SIZE,
     MAIN_MENU_MIN_SIZE,
@@ -15,21 +15,21 @@ import {
     MAIN_URL_WITH_SLASH,
     MENU_INFO_CLOSE_SIZE,
     MENU_INFO_OPEN_SIZE,
-} from '../../manager/GlobalManager';
-import { useWindowSize } from '../../util/hooks/useWindowSize';
-import GlobalAlert from './GlobalAlert';
+} from '../manager/GlobalManager';
+import { useWindowSize } from '../util/hooks/useWindowSize';
+import GlobalAlert from './components/GlobalAlert';
 import DialogTitle from '@mui/material/DialogTitle';
-import dialogStyles from '../../dialogs/dialog.module.css';
+import dialogStyles from '../dialogs/dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import _, { isEmpty } from 'lodash';
-import TracksManager, { createTrackGroups, getGpxFiles, TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
-import { addCloseTracksToRecently, VISIBLE_SHARE_MARKER } from '../../menu/visibletracks/VisibleTracks';
-import PhotosModal from '../../menu/search/explore/PhotosModal';
-import InstallBanner from './InstallBanner';
-import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
-import GlobalGraph from './graph/GlobalGraph';
-import LoginContext from '../../context/LoginContext';
+import TracksManager, { createTrackGroups, getGpxFiles, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
+import { addCloseTracksToRecently, VISIBLE_SHARE_MARKER } from '../menu/visibletracks/VisibleTracks';
+import PhotosModal from '../menu/search/explore/PhotosModal';
+import InstallBanner from './components/InstallBanner';
+import { hideAllTracks } from '../manager/track/DeleteTrackManager';
+import GlobalGraph from './components/graph/GlobalGraph';
+import LoginContext from '../context/LoginContext';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);

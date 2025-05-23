@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../../../context/AppContext';
-import { useMutator } from '../../../util/Utils';
-import TracksManager from '../../../manager/track/TracksManager';
+import AppContext from '../../context/AppContext';
+import { useMutator } from '../../util/Utils';
+import TracksManager from '../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import {
     createFavGroupFreeName,
@@ -9,8 +9,8 @@ import {
     DEFAULT_GROUP_NAME_POINTS_GROUPS,
     isFavGroupExists,
     saveFavoriteGroup,
-} from '../../../manager/FavoritesManager';
-import ImportFavoriteDialog from '../../../dialogs/favorites/ImportFavoriteDialog';
+} from '../../manager/FavoritesManager';
+import ImportFavoriteDialog from '../../dialogs/favorites/ImportFavoriteDialog';
 import { cloneDeep } from 'lodash';
 
 export default function FavoriteGroupUploader({ children }) {

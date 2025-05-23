@@ -27,9 +27,9 @@ import * as locales from 'date-fns/locale';
 import { format } from 'date-fns';
 import i18n from '../../i18n';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import UnitsMenu from './units/UnitsMenu';
-import SimpleDivider from '../components/dividers/SimpleDivider';
+import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 

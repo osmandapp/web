@@ -1,10 +1,10 @@
-import ThickDivider from '../components/dividers/ThickDivider';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { ReactComponent as DestIcon } from '../../assets/icons/ic_action_point_destination.svg';
 import { ReactComponent as SortIcon } from '../../assets/icons/ic_action_sort_by_name_ascending.svg';
 import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
 import styles from './trackanalyzer.module.css';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import React from 'react';
 
 export default function TrackAnalyzerTips() {

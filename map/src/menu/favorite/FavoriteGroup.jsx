@@ -12,8 +12,8 @@ import { useTranslation } from 'react-i18next';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 import FileShareIcon from '../share/FileShareIcon.jsx';
 import { getShare } from '../../manager/track/TracksManager';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
-import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
+import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import { SHARE_TYPE } from '../share/shareConstants';
 
 export default function FavoriteGroup({ index, group, smartf = null }) {

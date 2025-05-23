@@ -2,7 +2,7 @@ import { Box, ListItemIcon, ListItemText, MenuItem, Paper, Switch, Typography } 
 import styles from './trackanalyzer.module.css';
 import React, { forwardRef, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 
 const SegmentParamsFilter = forwardRef(
     ({ allStats, speedStats, altitudeStats, otherStats, activeSegmentParams, setActiveSegmentParams }, ref) => {

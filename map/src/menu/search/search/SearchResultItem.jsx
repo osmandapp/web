@@ -27,7 +27,7 @@ import {
 import { getPoiParentCategory, parseTagWithLang } from '../../../manager/SearchManager';
 import { LatLng } from 'leaflet';
 import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
-import DividerWithMargin from '../../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
 import { apiGet } from '../../../util/HttpApi';
 

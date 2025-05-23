@@ -22,7 +22,7 @@ import { ExpandMore } from '@mui/icons-material';
 import ActionsMenu from '../actions/ActionsMenu';
 import capitalize from 'lodash/capitalize';
 import { cloneDeep } from 'lodash';
-import ThickDivider from '../components/dividers/ThickDivider';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 

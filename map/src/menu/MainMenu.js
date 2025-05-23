@@ -80,7 +80,7 @@ import SearchMenu from './search/SearchMenu';
 import LoginButton from '../login/LoginButton';
 import LoginMenu from '../login/LoginMenu';
 import TravelMenu from './travel/TravelMenu';
-import ProFeatures from '../frame/components/pro/ProFeatures';
+import ProFeatures from '../frame/pro/ProFeatures';
 import { getShareFileInfo, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';

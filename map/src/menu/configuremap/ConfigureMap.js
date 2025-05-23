@@ -33,10 +33,10 @@ import { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
 import capitalize from 'lodash/capitalize';
 import TerrainConfig from './TerrainConfig';
-import ButtonPro from '../../frame/components/pro/ButtonPro';
+import ButtonPro from '../../frame/pro/ButtonPro';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
-import TopographyProFeatures from '../../frame/components/pro/TopographyProFeatures';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import TopographyProFeatures from '../../frame/pro/TopographyProFeatures';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 

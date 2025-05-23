@@ -20,7 +20,7 @@ import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
 import { userLogout } from '../manager/AccountManager';
 import i18n from 'i18next';
 import DefaultItemWithActions from '../frame/components/items/DefaultItemWithActions';
-import ThickDivider from '../menu/components/dividers/ThickDivider';
+import ThickDivider from '../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../frame/components/titles/SubTitleMenu';
 import SimpleItemWithRightInfo from '../frame/components/items/SimpleItemWithRightInfo';
 import ColorBlock from '../frame/components/other/ColorBlock';

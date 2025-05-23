@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import AppContext from '../../../context/AppContext';
-import { useMutator } from '../../../util/Utils';
+import AppContext from '../../context/AppContext';
+import { useMutator } from '../../util/Utils';
 import { styled } from '@mui/material/styles';
-import { createTrackFreeName, saveTrackToCloud } from '../../../manager/track/SaveTrackManager';
-import { FREE_ACCOUNT } from '../../../manager/LoginManager';
-import LoginContext from '../../../context/LoginContext';
+import { createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
+import { FREE_ACCOUNT } from '../../manager/LoginManager';
+import LoginContext from '../../context/LoginContext';
 
 export default function CloudGpxUploader({ children, folder = null, style = null }) {
     const ctx = useContext(AppContext);

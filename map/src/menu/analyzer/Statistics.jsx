@@ -1,7 +1,7 @@
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import styles from './trackanalyzer.module.css';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
-import SimpleDivider from '../components/dividers/SimpleDivider';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
+import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import React from 'react';
 
 export default function Statistics({ stats }) {

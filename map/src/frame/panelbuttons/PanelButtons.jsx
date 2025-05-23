@@ -8,19 +8,19 @@ import AppContext, {
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_POI,
-} from '../../../context/AppContext';
-import SaveTrackDialog from '../../../dialogs/tracks/SaveTrackDialog';
-import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
-import DeleteWptDialog from '../../../dialogs/favorites/DeleteWptDialog';
+} from '../../context/AppContext';
+import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
+import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
+import DeleteWptDialog from '../../dialogs/favorites/DeleteWptDialog';
 import _ from 'lodash';
-import TracksManager, { downloadGpx, isEmptyTrack } from '../../../manager/track/TracksManager';
-import useUndoRedo from '../../../infoblock/useUndoRedo';
-import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
+import TracksManager, { downloadGpx, isEmptyTrack } from '../../manager/track/TracksManager';
+import useUndoRedo from '../../infoblock/useUndoRedo';
+import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import RouteIcon from '@mui/icons-material/Route';
-import { FREE_ACCOUNT } from '../../../manager/LoginManager';
-import RouteProfileSettings from '../../../menu/navigate/RouteProfileSettings';
-import { downloadCurrentGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';
-import LoginContext from '../../../context/LoginContext';
+import { FREE_ACCOUNT } from '../../manager/LoginManager';
+import RouteProfileSettings from '../../menu/navigate/RouteProfileSettings';
+import { downloadCurrentGpx } from '../../infoblock/components/tabs/GeneralInfoTab';
+import LoginContext from '../../context/LoginContext';
 
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);

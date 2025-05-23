@@ -17,7 +17,7 @@ import { apiPost } from '../../util/HttpApi';
 import { quickNaNfix } from '../../util/Utils';
 import { getPointsForAnalysis } from './util/PointsManager';
 import TrackSegmentStat, { getAltitudeStats, getOtherStats, getSpeedStats } from './TrackSegmentStat';
-import ThickDivider from '../components/dividers/ThickDivider';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import { addColorsToSegments } from './util/SegmentColorizer';
 import SortFilesButton, { TRACK_FILE_TYPE } from '../components/buttons/SortFilesButton';
 import ActionsMenu from '../actions/ActionsMenu';

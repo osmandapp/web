@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
-import { ReactComponent as TopographyIcon } from '../../../assets/icons/ic_action_srtm_colored_day.svg';
+import { ReactComponent as TopographyIcon } from '../../assets/icons/ic_action_srtm_colored_day.svg';
 import styles from './pro.module.css';
 import { useTranslation } from 'react-i18next';
-import { formatString } from '../../../manager/SettingsManager';
+import { formatString } from '../../manager/SettingsManager';
 
 export default function TopographyProFeatures() {
     const { t } = useTranslation();

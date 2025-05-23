@@ -9,7 +9,7 @@ import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import SmartFolderActions from '../actions/SmartFolderActions';
-import DividerWithMargin from './dividers/DividerWithMargin';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { SHARE_TYPE } from '../share/shareConstants';
 
 const types = {

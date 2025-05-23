@@ -1,7 +1,7 @@
 import { Box, Button, Icon, ListItemText } from '@mui/material';
 import { ReactComponent as EmptyIcon } from '../../assets/icons/ic_action_folder_open.svg';
 import styles from './errors.module.css';
-import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
+import CloudGpxUploader from '../../frame/util/CloudGpxUploader';
 import { useContext } from 'react';
 import { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import EmptyLogin from '../../login/EmptyLogin';

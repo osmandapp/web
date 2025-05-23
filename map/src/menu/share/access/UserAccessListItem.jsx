@@ -15,7 +15,7 @@ import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import DividerWithMargin from '../../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import LoginContext from '../../../context/LoginContext';
 import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../shareConstants';
 

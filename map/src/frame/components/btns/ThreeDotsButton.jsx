@@ -1,5 +1,5 @@
 import { CircularProgress, IconButton, Tooltip } from '@mui/material';
-import styles from '../../trackfavmenu.module.css';
+import styles from '../../../menu/trackfavmenu.module.css';
 import React, { useContext, useState } from 'react';
 import { ReactComponent as MenuIcon } from '../../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../../assets/icons/ic_overflow_menu_with_background.svg';

@@ -1,21 +1,21 @@
 import { Box, IconButton, Paper, SvgIcon, Typography } from '@mui/material';
 import React, { useContext } from 'react';
-import AppContext, { OBJECT_CONFIGURE_MAP, OBJECT_TYPE_WEATHER } from '../../../context/AppContext';
+import AppContext, { OBJECT_CONFIGURE_MAP, OBJECT_TYPE_WEATHER } from '../../context/AppContext';
 import PanelButtons from './PanelButtons';
-import ChangeProfileTrackDialog from '../../../dialogs/tracks/ChangeProfileTrackDialog';
-import PointContextMenu from '../../../infoblock/components/PointContextMenu';
-import { useWindowSize } from '../../../util/hooks/useWindowSize';
-import styles from '../../../map/map.module.css';
-import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
-import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
-import ConfigureMap from '../../../menu/configuremap/ConfigureMap';
+import ChangeProfileTrackDialog from '../../dialogs/tracks/ChangeProfileTrackDialog';
+import PointContextMenu from '../../infoblock/components/PointContextMenu';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
+import styles from '../../map/map.module.css';
+import { ReactComponent as ConfigureMapIcon } from '../../assets/icons/ic_map_configure_map.svg';
+import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
+import ConfigureMap from '../../menu/configuremap/ConfigureMap';
 import {
     HEADER_SIZE,
     INSTALL_BANNER_SIZE,
     MAIN_MENU_MIN_SIZE,
     MENU_INFO_OPEN_SIZE,
-} from '../../../manager/GlobalManager';
-import SearchMenu from '../../../menu/search/SearchMenu';
+} from '../../manager/GlobalManager';
+import SearchMenu from '../../menu/search/SearchMenu';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,

@@ -17,7 +17,7 @@ import { changeShareTypeFile, generateLink, updateUserRequests } from '../../man
 import { MAIN_URL_WITH_SLASH, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
 import PublicAccessList from './access/PublicAccessList';
 import PrivateAccessList from './access/PrivateAccessList';
-import ThickDivider from '../components/dividers/ThickDivider';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import BlueBtn from '../../frame/components/btns/BlueBtn';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import {

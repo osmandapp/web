@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
-import GlobalFrame from './frame/components/GlobalFrame';
+import GlobalFrame from './frame/GlobalFrame';
 import LoginDialog from './login/dialogs/LoginDialog';
 import { AppContextProvider } from './context/AppContext';
 import DeleteAccountDialog from './login/dialogs/DeleteAccountDialog';

@@ -1,10 +1,10 @@
 import { useContext, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 
-import TracksManager from '../../../manager/track/TracksManager';
-import AppContext from '../../../context/AppContext';
-import { useMutator } from '../../../util/Utils';
-import { saveTrackToLocal } from '../../../manager/track/SaveTrackManager';
+import TracksManager from '../../manager/track/TracksManager';
+import AppContext from '../../context/AppContext';
+import { useMutator } from '../../util/Utils';
+import { saveTrackToLocal } from '../../manager/track/SaveTrackManager';
 
 /**
  * If you need to forward ref (for example, with <Toolip>),
