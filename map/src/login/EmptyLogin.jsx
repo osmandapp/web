@@ -1,12 +1,12 @@
 import { Box, Button, Icon, ListItemText } from '@mui/material';
-import styles from '../errors/errors.module.css';
+import styles from '../menu/errors/errors.module.css';
 import loginStyles from './login.module.css';
-import { ReactComponent as UserAccountIcon } from '../../assets/icons/ic_custom_logo_osmand.svg';
+import { ReactComponent as UserAccountIcon } from '../assets/icons/ic_custom_logo_osmand.svg';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { createAccount, openLogin } from '../../manager/LoginManager';
-import LoginContext from '../../context/LoginContext';
+import { createAccount, openLogin } from '../manager/LoginManager';
+import LoginContext from '../context/LoginContext';
 
 export default function EmptyLogin() {
     const ctxl = useContext(LoginContext);

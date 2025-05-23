@@ -1,4 +1,4 @@
-import headerStyles from '../trackfavmenu.module.css';
+import headerStyles from '../menu/trackfavmenu.module.css';
 import {
     AppBar,
     Box,
@@ -12,22 +12,22 @@ import {
     Typography,
 } from '@mui/material';
 import styles from './login.module.css';
-import errorStyles from './../errors/errors.module.css';
-import { closeHeader } from '../actions/HeaderHelper';
+import errorStyles from '../menu/errors/errors.module.css';
+import { closeHeader } from '../menu/actions/HeaderHelper';
 import React, { useContext, useEffect, useState } from 'react';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
-import { ReactComponent as UserPasswordIcon } from '../../assets/icons/ic_action_user_password.svg';
-import AppContext from '../../context/AppContext';
-import { closeLoginMenu, EMPTY_INPUT, ERROR_EMAIL, ERROR_TOKEN, openLogin } from '../../manager/LoginManager';
+import { ReactComponent as CloseIcon } from '../assets/icons/ic_action_close.svg';
+import { ReactComponent as UserPasswordIcon } from '../assets/icons/ic_action_user_password.svg';
+import AppContext from '../context/AppContext';
+import { closeLoginMenu, EMPTY_INPUT, ERROR_EMAIL, ERROR_TOKEN, openLogin } from '../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
-import { userActivate, userRegisterAndSendCode } from '../../manager/AccountManager';
+import { userActivate, userRegisterAndSendCode } from '../manager/AccountManager';
 import i18n from 'i18next';
 import loginStyles from './login.module.css';
 import { useNavigate } from 'react-router-dom';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { usePasswordValidation } from '../../util/hooks/usePasswordValidation';
-import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
-import LoginContext from '../../context/LoginContext';
+import { usePasswordValidation } from '../util/hooks/usePasswordValidation';
+import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
+import LoginContext from '../context/LoginContext';
 
 export default function ChangeResetPwd() {
     const ctx = useContext(AppContext);

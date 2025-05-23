@@ -3,7 +3,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import AppContext from '../context/AppContext';
+import AppContext from '../../context/AppContext';
 import {
     Checkbox,
     Divider,
@@ -17,11 +17,11 @@ import {
     AccordionDetails,
 } from '@mui/material';
 import DownloadBackupDialog from './DownloadBackupDialog';
-import { useWindowSize } from '../util/hooks/useWindowSize';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { makeStyles } from '@material-ui/core/styles';
-import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
-import FastSpringPurchaseButton from './FastSpringPurchaseButton';
-import { purchases } from './FastSpringHelper';
+import { getAccountInfo, INIT_LOGIN_STATE } from '../../manager/LoginManager';
+import FastSpringPurchaseButton from '../fs/FastSpringPurchaseButton';
+import { purchases } from '../fs/FastSpringHelper';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function LoginDialog() {

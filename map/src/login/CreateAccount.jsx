@@ -1,22 +1,22 @@
-import headerStyles from '../trackfavmenu.module.css';
+import headerStyles from '../menu/trackfavmenu.module.css';
 import { AppBar, Box, IconButton, InputAdornment, Link, TextField, Toolbar, Typography } from '@mui/material';
 import styles from './login.module.css';
-import { closeLoginMenu, EMPTY_INPUT, ERROR_TOKEN, openLogin } from '../../manager/LoginManager';
-import { closeHeader } from '../actions/HeaderHelper';
+import { closeLoginMenu, EMPTY_INPUT, ERROR_TOKEN, openLogin } from '../manager/LoginManager';
+import { closeHeader } from '../menu/actions/HeaderHelper';
 import React, { useContext, useEffect, useState } from 'react';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import { ReactComponent as CloseIcon } from '../assets/icons/ic_action_close.svg';
 import { useTranslation } from 'react-i18next';
-import AppContext from '../../context/AppContext';
-import { userActivate, userRegisterAndSendCode, validateUserToken } from '../../manager/AccountManager';
+import AppContext from '../context/AppContext';
+import { userActivate, userRegisterAndSendCode, validateUserToken } from '../manager/AccountManager';
 import i18n from 'i18next';
 import { useNavigate } from 'react-router-dom';
-import { formatString } from '../../manager/SettingsManager';
-import { usePasswordValidation } from '../../util/hooks/usePasswordValidation';
+import { formatString } from '../manager/SettingsManager';
+import { usePasswordValidation } from '../util/hooks/usePasswordValidation';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
-import BlueBtn from '../../frame/components/btns/BlueBtn';
-import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
-import LoginContext from '../../context/LoginContext';
+import GrayBtnWithBlueHover from '../frame/components/btns/GrayBtnWithBlueHover';
+import BlueBtn from '../frame/components/btns/BlueBtn';
+import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
+import LoginContext from '../context/LoginContext';
 
 export default function CreateAccount() {
     const ctx = useContext(AppContext);

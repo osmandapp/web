@@ -1,6 +1,6 @@
 import { Box, Icon, ListItemText } from '@mui/material';
 import styles from './errors.module.css';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { useTranslation } from 'react-i18next';
 import { formatString } from '../../manager/SettingsManager';

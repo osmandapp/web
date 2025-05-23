@@ -1,6 +1,6 @@
 import { Box, Button, Icon, ListItemText } from '@mui/material';
 import styles from './errors.module.css';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import React, { useContext } from 'react';
 import { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { ReactComponent as EmptyIcon } from '../../assets/icons/ic_action_track_disabled.svg';

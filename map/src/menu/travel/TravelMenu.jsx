@@ -16,7 +16,7 @@ import styles from './travel.module.css';
 import CustomSelect from './CustomSelect';
 import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
 import capitalize from 'lodash/capitalize';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';

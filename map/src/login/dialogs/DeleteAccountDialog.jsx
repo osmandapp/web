@@ -6,13 +6,13 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import Dialog from '@mui/material/Dialog';
 import React, { useContext, useEffect, useState } from 'react';
-import AccountManager, { sendCode } from '../manager/AccountManager';
-import AppContext from '../context/AppContext';
+import AccountManager, { sendCode } from '../../manager/AccountManager';
+import AppContext from '../../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
-import { INIT_LOGIN_STATE } from '../manager/LoginManager';
-import LoginContext from '../context/LoginContext';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
+import LoginContext from '../../context/LoginContext';
 
 export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     const ctx = useContext(AppContext);

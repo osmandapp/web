@@ -4,7 +4,7 @@ import styles from './errors.module.css';
 import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
 import { useContext } from 'react';
 import { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import LoginContext from '../../context/LoginContext';
 

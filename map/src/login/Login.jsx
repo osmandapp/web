@@ -1,19 +1,19 @@
 import { AppBar, Box, IconButton, Link, TextField, Toolbar, Typography } from '@mui/material';
-import headerStyles from '../trackfavmenu.module.css';
+import headerStyles from '../menu/trackfavmenu.module.css';
 import styles from './login.module.css';
-import { closeHeader } from '../actions/HeaderHelper';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import { closeHeader } from '../menu/actions/HeaderHelper';
+import { ReactComponent as CloseIcon } from '../assets/icons/ic_action_close.svg';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
-import { userLogin } from '../../manager/AccountManager';
+import AppContext from '../context/AppContext';
+import { userLogin } from '../manager/AccountManager';
 import i18n from 'i18next';
-import { closeLoginMenu, createAccount, EMPTY_INPUT, ERROR_EMAIL, ERROR_PASSWORD } from '../../manager/LoginManager';
+import { closeLoginMenu, createAccount, EMPTY_INPUT, ERROR_EMAIL, ERROR_PASSWORD } from '../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
-import { DELETE_ACCOUNT_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { DELETE_ACCOUNT_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
 import { useNavigate } from 'react-router-dom';
-import BlueBtn from '../../frame/components/btns/BlueBtn';
-import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
-import LoginContext from '../../context/LoginContext';
+import BlueBtn from '../frame/components/btns/BlueBtn';
+import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
+import LoginContext from '../context/LoginContext';
 
 export default function Login() {
     const ctx = useContext(AppContext);

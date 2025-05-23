@@ -19,7 +19,7 @@ import SearchResults from './search/SearchResults';
 import { MenuButton } from './search/MenuButton';
 import { SEARCH_TYPE_CATEGORY } from '../../map/layers/SearchLayer';
 import { CATEGORY_KEY_NAME } from '../../infoblock/components/wpt/WptTagsProvider';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import useHashParams from '../../util/hooks/useHashParams';
 import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';

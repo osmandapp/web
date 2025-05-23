@@ -26,7 +26,7 @@ import FavoriteItem from '../favorite/FavoriteItem';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../manager/MapManager';
 import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import Loading from '../errors/Loading';
 import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';

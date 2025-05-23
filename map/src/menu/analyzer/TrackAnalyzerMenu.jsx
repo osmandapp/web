@@ -5,7 +5,7 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
 import { ReactComponent as DesertIcon } from '../../assets/icons/ic_action_desert.svg';
 import { ReactComponent as ChangePointsIcon } from '../../assets/icons/ic_action_change_navigation_points.svg';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import TracksSelect from './TracksSelect';
 import PointField from './PointField';

@@ -5,13 +5,13 @@ import { Close } from '@mui/icons-material';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
-import AccountManager from '../manager/AccountManager';
+import AccountManager from '../../manager/AccountManager';
 import React, { useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useNavigate } from 'react-router-dom';
-import { useWindowSize } from '../util/hooks/useWindowSize';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { useTranslation } from 'react-i18next';
-import LoginContext from '../context/LoginContext';
+import LoginContext from '../../context/LoginContext';
 
 export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
     const ctxl = useContext(LoginContext);

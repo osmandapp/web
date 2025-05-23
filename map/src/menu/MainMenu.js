@@ -77,8 +77,8 @@ import {
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import SearchMenu from './search/SearchMenu';
-import LoginButton from './login/LoginButton';
-import LoginMenu from './login/LoginMenu';
+import LoginButton from '../login/LoginButton';
+import LoginMenu from '../login/LoginMenu';
 import TravelMenu from './travel/TravelMenu';
 import ProFeatures from '../frame/components/pro/ProFeatures';
 import { getShareFileInfo, updateUserRequests } from '../manager/ShareManager';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import PropTypes from 'prop-types';
-import { getAccountInfo } from '../manager/LoginManager';
+import { getAccountInfo } from '../../manager/LoginManager';
 
 export default function FastSpringPurchaseButton({ selectedProducts, testMode = false, ctx }) {
     const handleClick = () => {

@@ -19,11 +19,11 @@ import { Close, ExpandLess, ExpandMore } from '@mui/icons-material';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../context/AppContext';
+import AppContext from '../../context/AppContext';
 import { Checkbox } from '@mui/material/';
 import _ from 'lodash';
 import { makeStyles } from '@material-ui/core/styles';
-import { apiPost } from '../util/HttpApi';
+import { apiPost } from '../../util/HttpApi';
 
 export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpenDownloadBackupDialog, widthDialog }) {
     const ctx = useContext(AppContext);
