@@ -20,7 +20,7 @@ import EmptyLogin from '../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
 import capitalize from 'lodash/capitalize';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
-import LoginContext from "../../context/LoginContext";
+import LoginContext from '../../context/LoginContext';
 
 export const ALL_YEARS = 'all';
 

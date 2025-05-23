@@ -54,13 +54,16 @@ export default function LoginButton({ openMainMenu, setMenuInfo }) {
                 className={styles.profileButton}
                 sx={{
                     justifyContent: openMainMenu ? 'initial' : 'center',
+                    p: '30px',
+                    ml: '-15px',
+                    mr: openMainMenu ? '-15px' : '0px',
                 }}
             >
                 <ListItemIcon
                     className={styles.profileIcon}
                     sx={{
                         justifyContent: 'center',
-                        ml: openMainMenu ? '-14px' : 0,
+                        ml: openMainMenu ? '-12px' : 0,
                     }}
                 >
                     <PersonIcon />
