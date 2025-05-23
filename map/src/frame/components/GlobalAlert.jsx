@@ -1,5 +1,5 @@
 import { Box, IconButton, Typography } from '@mui/material';
-import styles from './frame.module.css';
+import styles from '../frame.module.css';
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as Cancel } from '../../assets/icons/ic_action_cancel.svg';

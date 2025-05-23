@@ -5285,5 +5285,8 @@
   "mile": "mi",
   "nm": "nmi",
   "unit_of_length": "Units of length",
-  "default_speed_system": "Unit of speed"
+  "default_speed_system": "Unit of speed",
+  "purchases": "Purchases",
+  "delete_account": "Delete account",
+  "download_all": "Download all"
 }

@@ -42,7 +42,7 @@ export async function userActivate({ username, pwd, token, setError, lang = DEFA
     return true;
 }
 
-export async function userLogin({ ctx, username, pwd, setError, handleClose, lang = DEFAULT_AUTH_API_LANG }) {
+export async function userLogin({ ltx, username, pwd, setError, handleClose, lang = DEFAULT_AUTH_API_LANG }) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -50,20 +50,20 @@ export async function userLogin({ ctx, username, pwd, setError, handleClose, lan
     });
     if (await isRequestOk(response, setError)) {
         setError('');
-        ctx.setLoginUser(username);
-        ctx.setEmailCookie(username, { days: 30, SameSite: 'Strict' }); // for next login
+        ltx.setLoginUser(username);
+        ltx.setEmailCookie(username, { days: 30, SameSite: 'Strict' }); // for next login
         handleClose();
     }
 }
 
-export async function userLogout({ ctx, username, handleClose, lang = DEFAULT_AUTH_API_LANG }) {
+export async function userLogout({ ltx, username, handleClose, lang = DEFAULT_AUTH_API_LANG }) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/logout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username.toLowerCase(), lang }),
     });
     if (await isRequestOk(response)) {
-        ctx.setLoginUser('');
+        ltx.setLoginUser('');
         handleClose();
     }
 }

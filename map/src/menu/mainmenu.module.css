@@ -22,6 +22,9 @@
     .customIconPath {
         fill: var(--selected-color) !important;
     }
+    .profileIcon {
+        fill: var(--selected-color) !important;
+    }
 }
 .menuIconClose {
     &:hover {
@@ -32,13 +35,18 @@
     }
 }
 .profileButton {
-    min-width: 40px !important;
-    max-width: 40px !important;
-    margin-left: -5px !important;
     min-height: var(--profile-menu-button-height) !important;
     max-height: var(--profile-menu-button-height) !important;
     &:hover {
         background-color: transparent !important;
+    }
+}
+.profileIcon {
+    min-width: 24px !important;
+    max-width: 24px !important;
+    fill: var(--svg-icon-color) !important;
+    &:hover {
+        fill: var(--selected-color) !important;
     }
 }
 .profileLogin {

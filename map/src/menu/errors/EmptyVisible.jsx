@@ -1,13 +1,14 @@
 import { Box, Button, Icon, ListItemText } from '@mui/material';
 import styles from './errors.module.css';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import React, { useContext } from 'react';
-import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
+import { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { ReactComponent as EmptyIcon } from '../../assets/icons/ic_action_track_disabled.svg';
 import TracksMenu from '../tracks/TracksMenu';
+import LoginContext from '../../context/LoginContext';
 
 export default function EmptyVisible({ id = null, setMenuInfo, setOpenVisibleMenu, setSelectedType }) {
-    const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
 
     function showAllTracks() {
         if (setMenuInfo) {
@@ -18,7 +19,7 @@ export default function EmptyVisible({ id = null, setMenuInfo, setOpenVisibleMen
 
     return (
         <>
-            {ctx.loginUser ? (
+            {ltx.loginUser ? (
                 <Box className={styles.block} id={id ?? 'se-empty-page'}>
                     <Icon className={styles.icon}>
                         <EmptyIcon className={styles.icon} />

@@ -1,5 +1,5 @@
 import { apiGet } from '../util/HttpApi';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH, OLD_LOGIN_URL } from './GlobalManager';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH } from './GlobalManager';
 
 export const FREE_ACCOUNT = 'Free';
 export const INIT_LOGIN_STATE = 'INIT';
@@ -15,27 +15,23 @@ export async function getAccountInfo(setAccountInfo) {
     }
 }
 
-export function openLoginMenu(ctx, navigate) {
+export function openLoginMenu(ctx, ltx, navigate) {
     ctx.setPrevPageUrl({ url: location, active: false });
-    if (!ctx.loginUser) {
-        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
-        ctx.setOpenLoginMenu(true);
-    } else {
-        navigate(MAIN_URL_WITH_SLASH + OLD_LOGIN_URL + window.location.hash);
-    }
+    navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
+    ltx.setOpenLoginMenu(true);
 }
 
-export function closeLoginMenu(ctx) {
-    ctx.setOpenLoginMenu(false);
-    ctx.setLoginState({ default: true });
-    ctx.setLoginError(null);
+export function closeLoginMenu(ltx) {
+    ltx.setOpenLoginMenu(false);
+    ltx.setLoginState({ default: true });
+    ltx.setLoginError(null);
 }
 
-export const openLogin = (ctx, navigate) => {
+export const openLogin = (ltx, navigate) => {
     navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
-    ctx.setLoginState({ login: true });
+    ltx.setLoginState({ login: true });
 };
 
-export function createAccount(ctx) {
-    ctx.setLoginState({ create: true });
+export function createAccount(ltx) {
+    ltx.setLoginState({ create: true });
 }

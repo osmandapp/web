@@ -28,8 +28,8 @@ import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
 import FileShareIcon from '../share/FileShareIcon.jsx';
 import { getFileStorage, GPX } from '../../manager/GlobalManager';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
-import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
+import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import ActionsMenu from '../actions/ActionsMenu';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 

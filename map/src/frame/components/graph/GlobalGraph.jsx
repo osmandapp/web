@@ -17,7 +17,7 @@ import {
 import { DISTANCE, ELEVATION, SLOPE, SPEED } from '../../../manager/GraphManager';
 import { getGraphData } from '../../../infoblock/components/graph/GpxGraphProvider';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
-import styles from '../frame.module.css';
+import styles from '../../frame.module.css';
 import SegmentSelector from './SegmentSelector';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';

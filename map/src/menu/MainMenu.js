@@ -12,6 +12,7 @@ import {
     Toolbar,
 } from '@mui/material';
 import { Menu } from '@mui/icons-material';
+import LoginContext from '../context/LoginContext';
 import AppContext, {
     OBJECT_CONFIGURE_MAP,
     OBJECT_GLOBAL_SETTINGS,
@@ -71,21 +72,21 @@ import {
     TRACK_ANALYZER_URL,
     INFO_MENU_URL,
     SHARE_MENU_URL,
-    MAIN_URL,
     LOGIN_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import SearchMenu from './search/SearchMenu';
-import LoginButton from './login/LoginButton';
-import LoginMenu from './login/LoginMenu';
+import LoginButton from '../login/LoginButton';
+import LoginMenu from '../login/LoginMenu';
 import TravelMenu from './travel/TravelMenu';
-import ProFeatures from '../frame/components/pro/ProFeatures';
-import { getShareFileInfo, SHARE_TYPE, updateUserRequests } from '../manager/ShareManager';
+import ProFeatures from '../frame/pro/ProFeatures';
+import { getShareFileInfo, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
+import { SHARE_TYPE } from './share/shareConstants';
 
 export default function MainMenu({
     size,
@@ -100,6 +101,8 @@ export default function MainMenu({
     showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
+
     const { t } = useTranslation();
     const location = useLocation();
     const [, height] = useWindowSize();
@@ -132,24 +135,25 @@ export default function MainMenu({
             ctx.setSelectedWpt(null);
         }
         ctx.setLoadingContextMenu(false);
+        ltx.setOpenLoginMenu(false);
     }
 
     useEffect(() => {
-        if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ctx.openLoginMenu && !ctx.loginUser) {
+        if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ltx.openLoginMenu && !ltx.loginUser) {
             const params = new URLSearchParams(location.search);
             const to = params.get('redirect');
             if (to) {
                 setRedirectUrl(to);
             }
-            openLoginMenu(ctx, navigate);
+            openLoginMenu(ctx, ltx, navigate);
         }
     }, [location.pathname, ctx, navigate]);
 
     useEffect(() => {
-        if (ctx.loginUser && redirectUrl) {
+        if (ltx.loginUser && redirectUrl) {
             window.location.href = redirectUrl;
         }
-    }, [ctx.loginUser]);
+    }, [ltx.loginUser]);
 
     // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {
@@ -187,6 +191,10 @@ export default function MainMenu({
     useEffect(() => {
         if (location.pathname.includes(INFO_MENU_URL) || savePrevState) {
             setSavePrevState(false);
+            return;
+        }
+        if (location.pathname.includes(LOGIN_URL)) {
+            ltx.setOpenLoginMenu(true);
             return;
         }
         if (!menuInfo) {
@@ -236,7 +244,7 @@ export default function MainMenu({
             icon: SearchIcon,
             component: <SearchMenu />,
             type: OBJECT_SEARCH,
-            show: ctx.loginUser,
+            show: ltx.loginUser,
             id: 'se-show-menu-search',
             url: MAIN_URL_WITH_SLASH + SEARCH_URL,
         },
@@ -604,7 +612,7 @@ export default function MainMenu({
                             zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
                             borderRight:
                                 ((!menuInfo &&
-                                    !ctx.openLoginMenu &&
+                                    !ltx.openLoginMenu &&
                                     ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) ||
                                     (menuInfo && openMainMenu)) &&
                                 'none !important',
@@ -617,7 +625,7 @@ export default function MainMenu({
                     open={openMainMenu}
                 >
                     <Toolbar />
-                    <LoginButton openMainMenu={openMainMenu} />
+                    <LoginButton openMainMenu={openMainMenu} setMenuInfo={setMenuInfo} />
                     <Divider sx={{ my: '0px !important' }} />
                     <div className={styles.menu}>
                         {items.map(
@@ -723,11 +731,11 @@ export default function MainMenu({
                         {/*add pro features*/}
                         {ctx.openProFeatures && <ProFeatures />}
                         {/*add login menu items*/}
-                        {ctx.openLoginMenu && <LoginMenu />}
+                        {ltx.openLoginMenu && <LoginMenu />}
                         {/*add main menu items*/}
                         {_.isEmpty(ctx.openGroups) &&
                             !ctx.openVisibleMenu &&
-                            !ctx.openLoginMenu &&
+                            !ltx.openLoginMenu &&
                             !ctx.openProFeatures && <Outlet />}
                         {/*add track groups*/}
                         {ctx.openGroups.length > 0 && getGroup()}

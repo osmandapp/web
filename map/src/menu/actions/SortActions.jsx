@@ -16,8 +16,8 @@ import AppContext from '../../context/AppContext';
 import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import i18n from '../../i18n';
 import ActionItem from '../components/ActionItem';
-import { SHARE_TYPE } from '../../manager/ShareManager';
 import { getSelectedSort } from '../components/buttons/SortFilesButton';
+import { SHARE_TYPE } from '../share/shareConstants';
 
 const az = (a, b) => (a > b) - (a < b);
 

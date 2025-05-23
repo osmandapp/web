@@ -2,7 +2,7 @@ import { AppBar, Box, Button, SvgIcon, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { INSTALL_BANNER_SIZE } from '../../manager/GlobalManager';
 import { ReactComponent as Logo } from '../../assets/ic_app_logo_osmand.svg';
-import styles from './frame.module.css';
+import styles from '../frame.module.css';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { useTranslation } from 'react-i18next';
 

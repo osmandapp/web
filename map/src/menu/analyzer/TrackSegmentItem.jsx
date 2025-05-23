@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { ReactComponent as SegmentIcon } from '../../assets/icons/ic_action_gpx_width_bold.svg';
-import SimpleDivider from '../components/dividers/SimpleDivider';
-import ThickDivider from '../components/dividers/ThickDivider';
-import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
+import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
+import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import ActionsMenu from '../actions/ActionsMenu';
 import SegmentActions from '../actions/SegmentActions';
 import styles from './trackanalyzer.module.css';

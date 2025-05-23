@@ -5,7 +5,7 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
 import { ReactComponent as DesertIcon } from '../../assets/icons/ic_action_desert.svg';
 import { ReactComponent as ChangePointsIcon } from '../../assets/icons/ic_action_change_navigation_points.svg';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import TracksSelect from './TracksSelect';
 import PointField from './PointField';
@@ -17,13 +17,15 @@ import { apiPost } from '../../util/HttpApi';
 import { quickNaNfix } from '../../util/Utils';
 import { getPointsForAnalysis } from './util/PointsManager';
 import TrackSegmentStat, { getAltitudeStats, getOtherStats, getSpeedStats } from './TrackSegmentStat';
-import ThickDivider from '../components/dividers/ThickDivider';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import { addColorsToSegments } from './util/SegmentColorizer';
 import SortFilesButton, { TRACK_FILE_TYPE } from '../components/buttons/SortFilesButton';
 import ActionsMenu from '../actions/ActionsMenu';
 import SegmentParamsFilter from './SegmentParamsFilter';
 import { TYPE_ANALYZER } from '../../frame/components/graph/GlobalGraph';
 import ErrorBlock from './ErrorBlock';
+import ColorBlock from '../../frame/components/other/ColorBlock';
+import LoginContext from '../../context/LoginContext';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
@@ -31,6 +33,7 @@ const SELECTED_FILTERS = 'selectedSegmentFilters';
 
 export default function TrackAnalyzerMenu() {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
 
     const [, height] = useWindowSize();
     const { t } = useTranslation();
@@ -325,7 +328,7 @@ export default function TrackAnalyzerMenu() {
 
     return (
         <>
-            {ctx.loginUser ? (
+            {ltx.loginUser ? (
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
@@ -430,7 +433,7 @@ export default function TrackAnalyzerMenu() {
                             />
                         </>
                     )}
-                    <Box sx={{ backgroundColor: '#f0f0f0', flexGrow: 1 }}></Box>
+                    <ColorBlock color={'#f0f0f0'} />
                     <ActionsMenu
                         open={openFiltersDialog}
                         setOpen={setOpenFiltersDialog}

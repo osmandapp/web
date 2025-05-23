@@ -15,10 +15,10 @@ import { saveTrackToLocal } from './SaveTrackManager';
 import L from 'leaflet';
 import MarkerOptions from '../../map/markers/MarkerOptions';
 import anchorme from 'anchorme';
-import { SHARE_TYPE } from '../ShareManager';
 import { isVisibleTrack, updateVisibleCache } from '../../menu/visibletracks/VisibleTracks';
 import { getFileStorage, GPX } from '../GlobalManager';
 import { closeTrack } from './DeleteTrackManager';
+import { SHARE_TYPE } from '../../menu/share/shareConstants';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const EMPTY_FILE_NAME = '__folder__.info';

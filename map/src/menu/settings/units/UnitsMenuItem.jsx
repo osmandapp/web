@@ -3,7 +3,7 @@ import { ClickAwayListener, ListItemIcon, ListItemText, MenuItem, Popover, Typog
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { LOCAL_STORAGE_UNITS_SETTINGS } from '../../../context/AppContext';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
-import DividerWithMargin from '../../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import { useTranslation } from 'react-i18next';
 import UnitsSelectMenu from './UnitsSelectMenu';
 

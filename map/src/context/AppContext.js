@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import useCookie from 'react-use-cookie';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import LoginContext from '../context/LoginContext';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import TracksManager, { getGpxFiles, preparedGpxFile, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
@@ -8,7 +8,7 @@ import { apiGet, apiPost } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
-import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
+import { INIT_LOGIN_STATE } from '../manager/LoginManager';
 import { cloneDeep, isEmpty } from 'lodash';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
@@ -228,27 +228,6 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
     localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
 }
 
-async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo) {
-    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/info`, {
-        method: 'GET',
-    });
-    if (response.data) {
-        if (loginUser !== INIT_LOGIN_STATE) {
-            await getAccountInfo(setAccountInfo);
-        }
-        const user = await response.json();
-        let newUser = user?.username;
-        if (loginUser !== newUser) {
-            if (newUser) {
-                setEmailCookie(newUser, { days: 30, SameSite: 'Strict' });
-            }
-            setLoginUser(newUser);
-        }
-    } else {
-        setLoginUser(null);
-    }
-}
-
 async function loadTileUrls(setAllTileURLs) {
     const response = await apiGet(`${process.env.REACT_APP_TILES_API_SITE}/tile/styles`, {});
     if (response.ok) {
@@ -285,6 +264,8 @@ function createInteractiveMap(data, type) {
 const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
+    const { loginUser } = useContext(LoginContext);
+
     seleniumUpdateActivity();
 
     const [processingSaveTrack, setProcessingSaveTrack] = useState(false);
@@ -319,15 +300,6 @@ export const AppContextProvider = (props) => {
 
     const [gpxLoading, setGpxLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
-    // cookie to store email logged in
-    const [emailCookie, setEmailCookie] = useCookie('email', '');
-    // login
-    const [loginUser, setLoginUser] = useState(INIT_LOGIN_STATE);
-    const [openLoginMenu, setOpenLoginMenu] = useState(false);
-    const [loginState, setLoginState] = useState({ default: true });
-    const [accountInfo, setAccountInfo] = useState(null);
-    const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
-    const [loginError, setLoginError] = useState(null);
     // files
     const [listFiles, setListFiles] = useState({});
     const [updateFiles, setUpdateFiles] = useState(null);
@@ -502,14 +474,6 @@ export const AppContextProvider = (props) => {
     }
 
     useEffect(() => {
-        if (wantDeleteAcc) {
-            setLoginError('Please log in to delete your account.');
-        } else {
-            setLoginError(null);
-        }
-    }, [wantDeleteAcc]);
-
-    useEffect(() => {
         Object.keys(localStorage).forEach((name) => {
             if (name.startsWith('localTrack_') || name.startsWith('favorites')) {
                 localStorage.removeItem(name);
@@ -568,10 +532,6 @@ export const AppContextProvider = (props) => {
     useEffect(() => {
         loadTileUrls(setAllTileURLs);
     }, []);
-
-    useEffect(() => {
-        checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo);
-    }, [loginUser]);
 
     useEffect(() => {
         const update = async () => {
@@ -641,12 +601,8 @@ export const AppContextProvider = (props) => {
                 setWeatherDate,
                 weatherType,
                 setWeatherType,
-                emailCookie,
-                setEmailCookie,
                 listFiles,
                 setListFiles,
-                loginUser,
-                setLoginUser,
                 gpxFiles,
                 setGpxFiles,
                 mutateGpxFiles,
@@ -726,8 +682,6 @@ export const AppContextProvider = (props) => {
                 setDevelFeatures,
                 infoBlockWidth,
                 setInfoBlockWidth,
-                wantDeleteAcc,
-                setWantDeleteAcc,
                 routeObject,
                 fitBoundsPadding,
                 mutateFitBoundsPadding,
@@ -737,8 +691,6 @@ export const AppContextProvider = (props) => {
                 setTrackErrorMsg,
                 trackLoading,
                 setTrackLoading,
-                accountInfo,
-                setAccountInfo,
                 stopUseGeoLocation,
                 setStopUseGeoLocation,
                 configureMapState,
@@ -791,12 +743,6 @@ export const AppContextProvider = (props) => {
                 setProcessingSearch,
                 searchTooltipRef,
                 searchPointerRef,
-                openLoginMenu,
-                setOpenLoginMenu,
-                loginState,
-                setLoginState,
-                loginError,
-                setLoginError,
                 favLoading,
                 setFavLoading,
                 searchTravelRoutes,

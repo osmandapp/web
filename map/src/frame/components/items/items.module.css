@@ -1,0 +1,35 @@
+.item {
+    width: 360px !important;
+    padding: 10px 16px !important;
+    gap: 24px !important;
+    min-height: 48px !important;
+}
+.mainText {
+    color: var(--text-primary) !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.16px !important;
+}
+.icon {
+    fill: var(--svg-icon-color) !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+    &:hover {
+        fill: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
+}
+.addInfo {
+    color: var(--text-secondary) !important;
+}
+.menuIcon {
+    fill: var(--svg-icon-color) !important;
+    padding: 8px;
+    &:hover {
+        fill: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
+}

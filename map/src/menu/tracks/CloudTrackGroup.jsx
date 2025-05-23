@@ -8,8 +8,8 @@ import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
-import ThreeDotsButton from '../components/buttons/ThreeDotsButton';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
+import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);

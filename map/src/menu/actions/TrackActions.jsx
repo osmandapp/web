@@ -12,8 +12,9 @@ import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
 import { createTrackFreeName, duplicateTrack, refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import { useTranslation } from 'react-i18next';
-import { getShareFileInfo, saveSharedFileToCloud, SHARE_TYPE } from '../../manager/ShareManager';
+import { getShareFileInfo, saveSharedFileToCloud } from '../../manager/ShareManager';
 import MakeTrackVisibleAction from './components/MakeTrackVisibleAction';
+import { SHARE_TYPE } from '../share/shareConstants';
 
 const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smartf = null }, ref) => {
     const ctx = useContext(AppContext);

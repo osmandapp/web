@@ -10,7 +10,7 @@ import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { processMarkers } from './FavoriteLayer';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 import { isEmpty } from 'lodash';
-import { SHARE_FILE_TYPE } from '../../manager/ShareManager';
+import { SHARE_FILE_TYPE } from '../../menu/share/shareConstants';
 
 function clickHandler({ ctx, file, layer }) {
     if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {

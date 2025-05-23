@@ -18,7 +18,7 @@ import Empty from '../errors/Empty';
 import { Button } from '@mui/material/';
 import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
 import { useTranslation } from 'react-i18next';
-import { SHARE_TYPE } from '../../manager/ShareManager';
+import { SHARE_TYPE } from '../share/shareConstants';
 
 export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_visible_marker_';
 
