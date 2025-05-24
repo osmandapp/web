@@ -33,7 +33,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)
 
@@ -56,7 +56,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
 ![Configure screen](@site/static/img/widgets/configure_screen_ios.png)
 
@@ -156,7 +156,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Top / Bottom panel*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Top / Bottom panel*
 
 ![top panel](@site/static/img/widgets/top_bottom_panel_1_ios.png)
 
@@ -227,7 +227,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left / Right panel*  
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left / Right panel*  
 
 ![Configure screen](@site/static/img/widgets/configure_screen_left_right_ios.png)
 
@@ -251,7 +251,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,m
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Edit → Add page*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Edit → Add page*
 
 ![Widget page](@site/static/img/widgets/widget_page_1_ios.png) ![Widget page](@site/static/img/widgets/widget_page_2_ios.png)  
 
@@ -398,7 +398,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,s
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Widget page](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
 
@@ -422,7 +422,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,s
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Widget page](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
 
@@ -487,7 +487,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,s
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Other*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Other*
 
 ![Widget page](@site/static/img/widgets/conf_screen_other_ios.png)
 
@@ -541,7 +541,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,s
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Any panel*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Any panel*
 
 ![Widget page](@site/static/img/widgets/widget_actions_ios.png)  
 

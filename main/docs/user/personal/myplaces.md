@@ -31,7 +31,7 @@ Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu"/> → My Places*  
+Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*  
 
 ![My Places ios](@site/static/img/personal/my_places_ios.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.png)
 
@@ -130,7 +130,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
 ![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
 
@@ -167,7 +167,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
 ![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
 

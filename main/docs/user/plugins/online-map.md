@@ -56,7 +56,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_ov
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
 ![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 

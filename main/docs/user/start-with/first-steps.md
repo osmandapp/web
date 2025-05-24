@@ -143,7 +143,7 @@ Go to: *Settings → Apps → OsmAnd → Language*
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *Settings → OsmAnd Maps → Language*
+Go to: *Settings → OsmAnd Maps → Language*
 
 ![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
 

@@ -305,6 +305,18 @@ The OsmAnd app can be opened and used to navigate in *Android Auto* on the vehic
 3. Find Multi window and choose switch.
 4. Return to the home screen.  
 
+<!--
+![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
+
+
+In Android Auto settings, you can change the position of the taskbar and the layout of the home screen:
+
+- **Taskbar position:**  
+  Go to *Android Auto settings → Show quick controls for Apps* and toggle the switch off. This will move the taskbar from the bottom to the side of the screen.
+
+- **Home screen layout:**  
+  Go to *Android Auto settings → Change layout → Change Driver seat location* to adjust the layout based on the driver’s seat position.
+
 
 ## Common Issues and Solutions
 

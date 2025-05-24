@@ -33,7 +33,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources"/>*
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ![Maps menu iOS](@site/static/img/personal/maps/maps_overview_ios.png)
 
@@ -115,7 +115,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ![Download map menu general iOS](@site/static/img/personal/maps/download_menu_ios.png)
 
@@ -198,7 +198,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
 
 ![Local tab menu iOS](@site/static/img/personal/maps/local_tab_ios.png)
 
@@ -302,7 +302,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
 ![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios.png)
 
@@ -344,7 +344,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
 ![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 

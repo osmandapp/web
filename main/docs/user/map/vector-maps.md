@@ -139,7 +139,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
 
 </TabItem>
 
@@ -166,7 +166,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
 ![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
 
@@ -193,7 +193,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,show_bor
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
 ![show-borders-ios](@site/static/img/map/show-borders-ios.png)
 
@@ -277,7 +277,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_mode"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_mode"/>*
 
 ![Map Mode](@site/static/img/map/map_mode_4-9_ios.png)
 
@@ -377,7 +377,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 </TabItem>
 
@@ -400,7 +400,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,shared_s
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_transport"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_transport"/>*
 
 </TabItem>
 
@@ -432,7 +432,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
 
 </TabItem>
 
@@ -463,7 +463,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
 
 </TabItem>
 
@@ -501,7 +501,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
 
 </TabItem>
 
@@ -559,7 +559,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
 
 </TabItem>
 

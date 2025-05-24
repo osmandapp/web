@@ -96,7 +96,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ![Download map menu general iOS](@site/static/img/personal/maps/download_menu_ios.png)
 
