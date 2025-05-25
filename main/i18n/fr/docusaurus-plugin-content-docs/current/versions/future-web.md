@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Web 1.02
 
-Web 1.02 est la dernière version web d'OsmAnd, qui inclut de nouvelles fonctionnalités et améliorations utiles. Cet article décrit toutes les principales mises à jour du [Planificateur d'itinéraire web](../user/plan-route/web.md).
+Web 1.02 est la dernière version web d'OsmAnd, qui inclut de nouvelles fonctionnalités et améliorations utiles. Cet article décrit toutes les principales mises à jour du [Planificateur d'itinéraire web](../user/web/index.md).
 
 
 ## Nouveautés

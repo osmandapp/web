@@ -47,7 +47,7 @@ Avant d'utiliser l'option *Navigation par trace*, vous devez [afficher la trace 
 
 - Une trace **Itinéraire** calculera l'itinéraire entre les points d'itinéraire par le profil sélectionné. En gros, tous les points d'itinéraire seront considérés comme des points intermédiaires. Si votre itinéraire comprend > 50 points, il est très probable qu'il s'agisse d'une trace **Géométrie** mal configurée.
 
-- Une trace **OsmAnd** se compose à la fois de parties géométriques et d'itinéraire, et elle est adaptée pour fournir exactement les mêmes indications que la navigation par défaut. Ces traces sont produites par [Planifier un itinéraire](../../plan-route/create-route.md) ou la [version Web](../../plan-route/web.md). Il est possible de réenregistrer cette trace en trace **Géométrie** uniquement sous forme [**Simplifiée**](../../plan-route/create-route.md#save-route) pour être utilisée dans des programmes tiers.
+- Une trace **OsmAnd** se compose à la fois de parties géométriques et d'itinéraire, et elle est adaptée pour fournir exactement les mêmes indications que la navigation par défaut. Ces traces sont produites par [Planifier un itinéraire](../../plan-route/create-route.md) ou la [version Web](../../web/index.md). Il est possible de réenregistrer cette trace en trace **Géométrie** uniquement sous forme [**Simplifiée**](../../plan-route/create-route.md#save-route) pour être utilisée dans des programmes tiers.
 
 
 ### Démarrer la navigation GPX

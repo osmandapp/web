@@ -32,7 +32,7 @@ OsmAnd Cloud vous permet de **stocker et de synchroniser les paramètres personn
 
 ## Multiplateforme
 
-OsmAnd Cloud vous permet de sauvegarder, restaurer et synchroniser vos données sur Android, iOS et la [version web](../plan-route/web.md). Grâce aux capacités multiplateformes, vous pouvez transférer les **paramètres de profil**, les **traces**, les **favoris**, les **modifications/notes OSM**, et plus encore entre les appareils. De plus, la **version web** vous permet de planifier des itinéraires et de les enregistrer pour une utilisation ultérieure sur les appareils connectés.  
+OsmAnd Cloud vous permet de sauvegarder, restaurer et synchroniser vos données sur Android, iOS et la [version web](../web/index.md). Grâce aux capacités multiplateformes, vous pouvez transférer les **paramètres de profil**, les **traces**, les **favoris**, les **modifications/notes OSM**, et plus encore entre les appareils. De plus, la **version web** vous permet de planifier des itinéraires et de les enregistrer pour une utilisation ultérieure sur les appareils connectés.  
 
 OsmAnd prend en charge l'**utilisation multiplateforme** sur *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* avec les étapes suivantes :
 
