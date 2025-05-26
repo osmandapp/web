@@ -1,5 +1,5 @@
 ---
-source-hash: f32feca78e313d11b93558bf66db7d3e44bebccb9d28ea4762fca959f54b39bd 
+source-hash: 675fa1df2a9853128e44c4d149bfda0ffdcdc58e528977e3d5d8e88a3fcc52df
 sidebar_position: 2
 title: Gérer les traces
 ---
@@ -16,7 +16,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Aperçu
+## Aperçu {#overview}
 
 Toutes les traces dans OsmAnd sont stockées dans un onglet dans *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd traite le fichier de trace au [format GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), mais les formats [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) et [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) peuvent être importés et convertis en GPX. Pour en savoir plus sur les différents types de traces, consultez l'article [Traces sur la carte](../../map/tracks/index.md#types-of-tracks).
 
@@ -24,20 +24,20 @@ Toutes les traces dans OsmAnd sont stockées dans un onglet dans *<Translate and
 
 <TabItem value="android" label="Android">
 
-![Gérer les traces Aperçu Android](@site/static/img/personal/tracks/track_on_map_android.png)
+![Gérer la trace Aperçu Android](@site/static/img/personal/tracks/track_on_map_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Gérer les traces Aperçu iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+![Gérer la trace Aperçu iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Créer une trace
+## Créer une trace {#create-a-track}
 
 <Tabs groupId="operating-systems">
 
@@ -55,32 +55,32 @@ Toutes les traces dans OsmAnd sont stockées dans un onglet dans *<Translate and
 
 </Tabs>
 
-Vous pouvez ajouter des traces dans OsmAnd de différentes manières :
+Vous pouvez ajouter des traces dans OsmAnd de plusieurs façons :
 
 1. **[Importer](./manage-tracks.md#import--export-track)** une trace depuis une source externe.
 2. Créer une nouvelle trace dans l'application à l'aide de l'outil **[Planifier un itinéraire](../../plan-route/create-route.md)**.
 3. Enregistrer une trace dans l'application à l'aide du plugin **[Enregistrement de trajet](../../plugins/trip-recording.md)**.
-4. Saisir plusieurs points par coordonnées et les enregistrer en tant que trace à l'aide de l'outil **[Saisie de coordonnées](../../plan-route/coordinate-input.md)**.
-5. Vous pouvez également ajouter des **points de passage** à une nouvelle trace via le **[menu contextuel](../../map/map-context-menu.md#-add--edit--track-waypoint)**.
+4. Saisir plusieurs points par coordonnées et les enregistrer comme une trace à l'aide de l'outil **[Saisie de coordonnées](../../plan-route/coordinate-input.md)**.
+5. Vous pouvez également ajouter des **points de passage** à une nouvelle trace via le **[Menu contextuel](../../map/map-context-menu.md#-add--edit--track-waypoint)**.
 
 
-## Gérer les traces
+## Gérer les traces {#manage-tracks}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> onglet*
+Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> onglet*
 
-![Mes lieux avec traces dans Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![Mes lieux avec des traces dans Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
 
-![Mes lieux avec traces dans iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![Mes lieux avec des traces dans iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
 
 </TabItem>
 
@@ -89,21 +89,21 @@ Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my
 Toutes les traces jamais enregistrées, créées ou importées sont automatiquement affichées dans le dossier [Mes lieux](../../personal/myplaces.md) dans l'onglet *Traces*. Elles sont organisées par dossier ou affichées dans une liste en dessous.
 
 
-### Menu de la trace
+### Menu de trace {#track-menu}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
+Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
 
-![Menu d'une trace dans Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![Mes lieux avec des traces dans Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
 
 ![Menu contextuel d'une trace dans iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
@@ -111,7 +111,7 @@ Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my
 
 </Tabs>  
 
-Chaque trace, comme les dossiers, possède un menu, vous permettant de gérer efficacement les traces. Voici comment y accéder :
+Chaque trace, comme les dossiers, dispose d'un menu, vous permettant de gérer les traces efficacement. Voici comment y accéder :
 
 - *Android* - appuyez sur le *menu à trois points* dans le champ de la trace.
 - *iOS* - appuyez longuement sur la trace requise dans la liste.
@@ -136,7 +136,7 @@ Le menu propose les actions suivantes :
 
 - **Dupliquer** (*iOS*) — Crée une copie de la trace sélectionnée.
 
-- **Renommer** — Modifiez le nom de la trace sélectionnée pour une meilleure organisation.
+- **Renommer** — Change le nom de la trace sélectionnée pour une meilleure organisation.
 
 - **Déplacer** — Vous permet de déplacer la trace sélectionnée vers un autre dossier.
 
@@ -145,7 +145,7 @@ Le menu propose les actions suivantes :
 - **Supprimer** — Supprime définitivement la trace sélectionnée qui n'est plus nécessaire.
 
 
-### Rechercher
+### Rechercher {#search}
 
 <Tabs groupId="operating-systems">
 
@@ -172,7 +172,7 @@ Disponible :
 - [Filtrer](./smart-folder.md#search-filter) (*Android uniquement*) si vous avez besoin des caractéristiques spécifiques de la trace.
 
 
-### Mode de sélection
+### Mode de sélection {#selection-mode}
 
 <Tabs groupId="operating-systems">
 
@@ -194,22 +194,22 @@ L'élément de menu **Sélectionner** propose des options pour gérer les dossie
 
 Une fois que vous avez fait votre choix, les étapes suivantes sont proposées :  
 
-- **Afficher sur la carte** — Avec cette fonctionnalité, vous pouvez afficher les traces sélectionnées sur la carte pour mieux comprendre leur emplacement et leur relation les unes avec les autres.
+- **Afficher sur la carte** — Avec cette fonctionnalité, vous pouvez afficher les traces sélectionnées sur la carte pour mieux comprendre leur emplacement et leur relation les unes par rapport aux autres.
 
-- **Partager** (*Android*) / **Exporter** (*iOS*) — Si vous souhaitez partager des données sélectionnées avec d'autres utilisateurs ou les enregistrer sur un service cloud, la fonction *Partager/Exporter* vous permet d'envoyer des traces et des dossiers en utilisant différentes méthodes de partage.
+- **Partager** (*Android*) / **Exporter** (*iOS*) — Si vous souhaitez partager des données sélectionnées avec d'autres utilisateurs ou les enregistrer sur un service cloud, la fonctionnalité *Partager/Exporter* vous permet d'envoyer des traces et des dossiers en utilisant différentes méthodes de partage.
 
 - **Télécharger sur OpenStreetMap** — Vous pouvez soumettre les traces sélectionnées à OpenStreetMap, contribuant ainsi au développement et à l'amélioration des données.
 
 - **Déplacer** — Vous pouvez organiser vos données en déplaçant les traces et les dossiers sélectionnés vers d'autres dossiers.
 
-- [Modifier l'activité](../../map/tracks/track-context-menu.md#track-information-activity) (*Android uniquement*) — Cette action vous permet de modifier le type d'activité, par exemple en *Voiture*, *Sports mécaniques d'aventure*, *Randonnée* ou autres, pour la trace sélectionnée.
+- [Changer d'activité](../../map/tracks/track-context-menu.md#track-information-activity) (*Android uniquement*) — Cette action vous permet de changer le type d'activité, par exemple en *Voiture*, *Sports mécaniques d'aventure*, *Randonnée* ou autres, pour la trace sélectionnée.
 
-- [Modifier l'apparence](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Cette option vous permet de personnaliser l'apparence des traces sélectionnées, les rendant plus visibles et reconnaissables sur la carte.
+- [Changer d'apparence](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Cette option vous permet de personnaliser l'apparence des traces sélectionnées, les rendant plus visibles et reconnaissables sur la carte.
 
 - **Supprimer** — Si les traces ou les dossiers sélectionnés ne sont plus nécessaires, la fonction Supprimer vous permet de les supprimer, l'application proposant des options de confirmation pour éviter toute suppression accidentelle.
 
 
-### Trier par
+### Trier par {#sort-by}
 
 <Tabs groupId="operating-systems">
 
@@ -251,7 +251,7 @@ OsmAnd offre un moyen simple de trier vos traces, vous aidant à gérer une gran
 
 - **Durée la plus courte en premier** — Trie les traces par durée, plaçant la plus courte en haut.
 
-#### Tri des sous-dossiers
+#### Tri des sous-dossiers {#sorting-subfolders}
 
 <Tabs groupId="operating-systems">
 
@@ -271,10 +271,10 @@ OsmAnd offre un moyen simple de trier vos traces, vous aidant à gérer une gran
 
 Si vous souhaitez trier les [sous-dossiers](#folder-actions), accédez au menu à trois points dans le dossier sélectionné et sélectionnez les [options](#sort-by) requises.  
 
-L'option de tri sélectionnée s'applique non seulement au sous-dossier actuel, mais également à tous les dossiers imbriqués et à toutes les traces à tous les niveaux. Cela garantit une structure cohérente dans vos données enregistrées.
+L'option de tri sélectionnée s'applique non seulement au sous-dossier actuel, mais également à tous les dossiers imbriqués et aux traces à tous les niveaux. Cela garantit une structure cohérente dans vos données enregistrées.
 
 
-## Dossier de traces
+## Dossier de traces {#track-folder}
 
 <Tabs groupId="operating-systems">
 
@@ -310,7 +310,7 @@ Comment ouvrir le menu du dossier :
 
 - [Modifier l'apparence par défaut](../../map/tracks/appearance.md) (*Android*) / **Apparence** (*iOS*) — Modifie l'apparence d'affichage de toutes les traces du dossier.
 
-- [Exporter](../../personal/import-export.md) — Ouvre l'onglet *Menu → Paramètres → Actions* pour exporter toutes les traces du dossier en tant que [fichier `.osf`](../../personal/import-export.md#export).
+- [Exporter](../../personal/import-export.md) — Ouvre l'onglet *Menu → Paramètres → Actions* pour exporter toutes les traces du dossier sous forme de fichier [`.osf`](../../personal/import-export.md#export).
 
 - [Déplacer](#track-folder) — Vous permet de déplacer le dossier vers un autre dossier existant ou d'en créer un nouveau.
 
@@ -318,23 +318,23 @@ Comment ouvrir le menu du dossier :
     ***NOTE : Cette action est irréversible.***
 
 
-### Statistiques du dossier
+### Statistiques du dossier {#folder-statistics}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> onglet*
+Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> onglet*
 
-![Mes lieux avec traces dans Android](@site/static/img/personal/tracks/dashboard_andr.png)
+![Mes lieux avec des traces dans Android](@site/static/img/personal/tracks/dashboard_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
 
-![Mes lieux avec traces dans iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
+![Mes lieux avec des traces dans iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
 
 </TabItem>
 
@@ -352,16 +352,16 @@ En bas de la liste dans l'onglet *Traces*, et en dessous de la liste des traces 
 
 - *Somme de la* **durée** *du temps* — Affiche le temps total nécessaire pour parcourir toutes les traces du dossier sélectionné.
 
-- *Taille totale des **fichiers** téléchargés en Mo* — La taille totale des fichiers téléchargés en mégaoctets indique l'espace que toutes les traces du dossier sélectionné occupent sur votre appareil.
+- *Taille totale des fichiers téléchargés en Mo* — La taille totale des fichiers téléchargés en mégaoctets indique l'espace que toutes les traces du dossier sélectionné occupent sur votre appareil.
 
 
-### Actions sur les dossiers
+### Actions du dossier {#folder-actions}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
 ![Fonction de tri des traces dans Mes lieux Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
 
@@ -369,7 +369,7 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_s
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
 ![Traces dans Mes lieux iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
 
@@ -389,30 +389,30 @@ Comment ouvrir les actions du dossier :
 
 - [Sélectionner](#selection-mode) — Appuyez sur les dossiers et les traces requis pour appliquer les actions du menu en *mode sélection*.
 
-- [Trier les sous-dossiers](#sort-by) — Appliquez un ordre de tri (par exemple, par nom, date) à tous les sous-dossiers et traces à tous les niveaux.
+- [Trier les sous-dossiers](#sort-by) — Appliquez un ordre de tri (par exemple, par nom, par date) à tous les sous-dossiers et traces à chaque niveau.
 
-- [Ajouter un dossier intelligent](../tracks/smart-folder.md#how-to-create-smart-folder) — Trie automatiquement les itinéraires et les traces en fonction des critères que vous définissez.
+- [Ajouter un dossier intelligent](../tracks/smart-folder.md#how-to-create-smart-folder) — Triez automatiquement les itinéraires et les traces en fonction des critères que vous définissez.
 
 - [Importer](#import) — Téléchargez des fichiers GPX ou d'autres fichiers de traces depuis votre appareil vers OsmAnd pour une utilisation hors ligne.
 
 - **Ajouter un nouveau dossier** — Pour organiser vos itinéraires et vos traces en catégories logiques, placez-les dans différents dossiers. Cela permet de structurer vos informations de navigation.
 
 
-### Supprimer le dossier
+### Supprimer le dossier {#delete-folder}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
+Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
 
-![Mes lieux avec traces dans Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
+![Mes lieux avec des traces dans Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> onglet*
 
 ![Menu contextuel d'une trace dans iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
 
@@ -427,9 +427,9 @@ Vous pouvez supprimer un dossier avec toutes les traces qu'il contient. Pour ce 
 - ***NOTE : Cette action est irréversible.***
 
 
-## Importer / Exporter une trace
+## Importer / Exporter une trace {#import--export-track}
 
-### Importer
+### Importer {#import}
 
 L'outil d'importation vous permet d'ajouter des traces à partir de fichiers externes pour la navigation et l'analyse hors ligne. Méthodes d'importation de traces :
 
@@ -447,13 +447,13 @@ L'outil d'importation vous permet d'ajouter des traces à partir de fichiers ext
 
     *Options supplémentaires :*
 
-    - **Fichiers GPX à trace unique** - importez la trace entière directement.
+    - **Fichiers GPX à trace unique** - importez directement la trace entière.
     - **Fichiers GPX à plusieurs traces** - choisissez d'importer le fichier GPX unique ou de sélectionner des traces spécifiques.
 
 ***NOTE :*** *Les traces ajoutées manuellement au dossier OsmAnd sur votre appareil sont automatiquement importées sans redémarrer l'application.*  
 
 
-### Exporter
+### Exporter {#export}
 
 <Tabs groupId="operating-systems">
 
@@ -498,10 +498,10 @@ Il existe plusieurs façons d'exporter un ou plusieurs fichiers de traces vers n
     - Pour [**exporter une seule trace**](#track-menu), sélectionnez le menu de la trace.
     - Pour [**exporter plusieurs traces**](#track-folder), sélectionnez le menu du dossier requis.
 
-3. Par [Fichier de sauvegarde local](../../personal/import-export.md#export-to-file). Exportation de traces GPX en tant que fichiers `.osf`.
+3. Par [Fichier de sauvegarde locale](../../personal/import-export.md#export-to-file). Exportation de traces GPX sous forme de fichiers `.osf`.
 
 
-## Articles connexes
+## Articles connexes {#related-articles}
 
 - [Afficher la trace sur la carte](../../map/tracks/index.md)
 - [Analyser sur la carte](../../map/tracks/index.md#analyze-track-on-map)
@@ -510,4 +510,3 @@ Il existe plusieurs façons d'exporter un ou plusieurs fichiers de traces vers n
 - [Enregistrement de trajet](../../plugins/trip-recording.md)
 
 > *Cet article a été mis à jour pour la dernière fois en avril 2025*
-

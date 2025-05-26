@@ -1,5 +1,5 @@
 ---
-source-hash: 551853d0584f91902301cf710aef255a66d074b9e41563ed9bd806fc0d3cc51b 
+source-hash: 99e9347b2bbbe87857d4f7d40cb5955a6e211f523c44613a564ec6007096844f
 sidebar_position: 1
 title:  Fonctionnalités et capacités d'OsmAnd
 unlisted: true
@@ -17,13 +17,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 
-## Toutes les fonctionnalités et capacités
+## Toutes les fonctionnalités et capacités {#all-features-and-capabilities}
 
 OsmAnd est **une application de navigation et de cartographie puissante** qui offre un large éventail de fonctionnalités hors ligne et en ligne. Cette page fournit un aperçu détaillé de toutes les fonctionnalités disponibles dans les différentes versions de l'application.
 
 
 
-## Navigation
+## Navigation {#navigation}
 
 Fonctionnalités de navigation principales :
 
@@ -55,7 +55,7 @@ Tableau :
 | Android Auto / CarPlay | - | ✔ | ✔ |
 
 
-## Cartes et rendu
+## Cartes et rendu {#maps-and-rendering}
 
 Cartes hors ligne et mises à jour :
 
@@ -88,7 +88,7 @@ Tableau :
 | Relief 3D | - | - | ✔ |
 
 
-## Recherche et POI
+## Recherche et POI {#search-and-pois}
 
 Types de recherche :
 
@@ -108,7 +108,7 @@ Tableau :
 | Recherche de transports en commun | - | ✔ | ✔ |
 
 
-## Traces et itinéraires
+## Traces et itinéraires {#tracks-and-routes}
 
 - Enregistrement de traces
 - Enregistrement d'itinéraires personnalisés
@@ -125,7 +125,7 @@ Tableau :
 | Visualisation de traces en 3D | - | ✔ | ✔ |
 
 
-## Outils cartographiques et personnalisation
+## Outils cartographiques et personnalisation {#map-tools-and-customization}
 
 - Mesure de distance
 - Affichage de la boussole
@@ -142,24 +142,24 @@ Tableau :
 | Styles de carte personnalisés | ✔ | ✔ | ✔ |
 
 
-## Plugins
+## Plugins {#plugins}
 
 - OsmAnd Cloud (sauvegarde et synchronisation)
-- Plugin Wikipédia
+- Plugin Wikipedia
 - Capteurs externes
 - Topographie
-- Modification OpenStreetMap
+- Édition OpenStreetMap
 
 Tableau :
 
 | Plugin | OsmAnd Gratuit | OsmAnd+ (Maps+) | OsmAnd Pro |
 |--------|------------|----------------|------------|
-| Wikipédia (hors ligne) | - | ✔ | ✔ |
+| Wikipedia (hors ligne) | - | ✔ | ✔ |
 | Wikivoyage (guides de voyage hors ligne) | - | ✔ | ✔ |
 | Capteurs externes (OBD-II, ANT+) | - | ✔ | ✔ |
 
 
-## Widgets et indicateurs supplémentaires
+## Widgets et indicateurs supplémentaires {#widgets-and-additional-indicators}
 
 - Widget de vitesse
 - Widget d'altitude
@@ -178,7 +178,7 @@ Tableau :
 | Widget météo | - | ✔ | ✔ |
 
 
-## Profils utilisateur
+## Profils utilisateur {#user-profiles}
 
 - Profil voiture
 - Profil vélo
@@ -202,4 +202,3 @@ Tableau :
 
 Dans l'article sur les achats Android, un **tableau raccourci** restera avec un **lien vers cet article**.
 **Cet article** fournit un **aperçu détaillé des fonctionnalités** pour toutes les versions d'OsmAnd.
-

@@ -1,6 +1,6 @@
 ---
-source-hash: 875b898778c887083add4eb60003df59ca527310067dcfbe538da5723289c381 
-sidebar_position: 3
+source-hash: 758784a5d4a3222b80ceac6d4a5704af787f9763d995e97cd275e6c7a572a210
+sidebar_position: 5
 title:  Cadeau
 ---
 
@@ -17,9 +17,8 @@ Vous pouvez obtenir OsmAnd gratuitement grâce à l'un de nos cadeaux réguliers
 
 Nous savons que tout le monde n'est pas en mesure d'acheter OsmAnd sur Google Play / App Store pour diverses raisons, mais beaucoup d'entre vous aimeraient quand même soutenir l'application en l'utilisant et en la diffusant dans le monde entier. Nous sommes fiers de notre communauté, c'est pourquoi nous avons décidé d'offrir gratuitement des licences OsmAnd en récompense de votre soutien. Le nombre de codes promotionnels que nous pouvons fournir est limité, nous choisirons donc les gagnants en fonction des résultats d'un petit jeu que nous avons organisé pour rendre l'ensemble du processus plus divertissant.
 
-**Liens utiles** :
+**Liens utiles** :
 - [Voir les résultats et les gagnants du cadeau OsmAnd](https://osmand.net/giveaway/)
 - [Participer au cadeau OsmAnd](https://osmand.net/giveaway/)
 - [Échanger un code promotionnel Android](https://support.google.com/googleplay/answer/3422659?hl)
 - [Échanger un code promotionnel iOS](https://support.apple.com/en-gb/HT201209)
-

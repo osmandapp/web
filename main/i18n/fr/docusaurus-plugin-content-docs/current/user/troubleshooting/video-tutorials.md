@@ -1,7 +1,7 @@
 ---
-source-hash: 94dc4d8559d19bc663e5f91dc21a10e44596748f1e8c32fc9e28aaed0384580b 
+source-hash: 2ed31b3276f64ccf7cd4bd56dde8f98f119d0ac3114d771d9ac36b091e50d6a7
 sidebar_position: 10
-title: Tutoriels et guides vidéo
+title: Tutoriels vidéo et guides
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,12 +14,12 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Ressources vidéo OsmAnd
+## Ressources vidéo OsmAnd {#osmand-video-resources}
 
-Nous avons rassemblé une vaste collection de tutoriels et de guides vidéo sur notre [chaîne YouTube officielle OsmAnd](https://www.youtube.com/@OsmAndMapsNavigation/playlists), spécialement conçue pour notre base d'utilisateurs mondiale. Les listes de lecture sont organisées par langue, ce qui permet de trouver facilement des tutoriels, des aperçus de fonctionnalités et du contenu généré par les utilisateurs dans votre langue préférée. Que vous souhaitiez approfondir votre compréhension d'OsmAnd, apprendre de nouvelles fonctionnalités ou découvrir comment la communauté utilise OsmAnd, vous trouverez quelque chose d'utile. Les sections suivantes fournissent des liens directs vers les listes de lecture disponibles dans différentes langues.
+Nous avons rassemblé une vaste collection de tutoriels vidéo et de guides sur notre [chaîne YouTube officielle OsmAnd](https://www.youtube.com/@OsmAndMapsNavigation/playlists), spécialement conçue pour notre base d'utilisateurs mondiale. Les listes de lecture sont organisées par langue, ce qui facilite la recherche de tutoriels, d'aperçus de fonctionnalités et de contenu généré par les utilisateurs dans votre langue préférée. Que vous souhaitiez approfondir votre compréhension d'OsmAnd, apprendre de nouvelles fonctionnalités ou découvrir comment la communauté utilise OsmAnd, vous trouverez quelque chose d'utile. Les sections suivantes fournissent des liens directs vers les listes de lecture disponibles dans différentes langues.
 
 
-### Listes de lecture par langue
+### Listes de lecture par langue {#playlists-by-language}
 
 - **[Anglais](https://www.youtube.com/watch?v=-Rf4aXfnYIg&list=PL2sj0drrh65F3QZqpulFGG3uNv_5TDagl&ab_channel=BartEisenberg)**
 - **[Allemand](https://www.youtube.com/watch?v=iWnFp2UQ_Tw&list=PL2sj0drrh65FEyB4KzntPa5bVKq6RVS7q&ab_channel=BikeArenaSonneberg)**
@@ -35,18 +35,18 @@ Nous avons rassemblé une vaste collection de tutoriels et de guides vidéo sur 
 
 Nous mettons fréquemment à jour ces listes de lecture pour vous assurer d'avoir les informations les plus récentes sur les fonctionnalités et les outils d'OsmAnd.
 
-## Tutoriels en vedette
+## Tutoriels en vedette {#featured-tutorials}
 
 Voici quelques exemples mis en évidence de notre collection de vidéos. Ces vidéos offrent des aperçus approfondis de fonctionnalités spécifiques d'OsmAnd dans différentes langues, ce qui permet aux utilisateurs de comprendre et d'optimiser plus facilement l'application pour leurs besoins.
 
-### Anglais : Aperçu de l'altitude pour Android et iOS
+### Anglais : Aperçu de l'altitude pour Android et iOS {#english-elevation-preview-for-android--ios}
 
 - **Vidéo** : _Previewing Elevaton: OsmAnd for Android & iOS (versions 4.5)_
 - De [Bart Eisenberg](https://www.youtube.com/@barteisenberg)
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/QXEnPR-oQSE" title="Previewing Elevation: OsmAnd for Android &amp; iOS (versions 4.5)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Anglais : Tutoriel complet
+### Anglais : Tutoriel complet {#english-full-tutorial}
 
 - **Vidéo** : _OsmAnd Trekking, travel Offline Trails📱_
 - De [LoHike](https://www.youtube.com/@lohike4083)
@@ -54,28 +54,28 @@ Voici quelques exemples mis en évidence de notre collection de vidéos. Ces vid
 <iframe width="770" height="433" src="https://www.youtube.com/embed/U1g0A5ZyVHQ" title="⛰️ Best Hiking App❗️OsmAnd Trekking, travel Offline Trails📱" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-### Français : Création de traces GPX
+### Français : Création de traces GPX {#french-creating-gpx-tracks}
 
 - **Vidéo** : _Tutoriel Osmand: Comment créer directement une trace GPX avec Osmand_
 - De [One World To Discover](https://www.youtube.com/@oneworldtodiscover9962)
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/3YKlAX5ocH4?list=PL2sj0drrh65F41lmfqtPcWep5pJBkKmX_" title="Tutoriel Osmand : Comment créer directement une trace GPX avec Osmand" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Allemand : Conseils de navigation pour camping-car
+### Allemand : Conseils de navigation pour camping-car {#german-camper-navigation-tips}
 
 - **Vidéo** : _Wohnmobil Navigation App - mein Geheimtipp_
 - De [Fan 4 Van](https://www.youtube.com/@fan4van)
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/dCGD6NmcnMI?list=PL2sj0drrh65FEyB4KzntPa5bVKq6RVS7q" title="Wohnmobil Navigation App - Mein Geheimtipp" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Italien : Guide de voyage à moto
+### Italien : Guide de voyage à moto {#italian-motorcycle-travel-guide}
 
 - **Vidéo** : _TUTORIAL: Osmand per chi viaggia in moto e tutto quello che c'è da sapere per sfruttarlo al meglio!_
 - De [PARTIREper - Gionata Nencini](https://www.youtube.com/@partire_per)
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/ulcEj46rgOw?list=PL2sj0drrh65G3W23XOVLtRFHwIEFV9zwX" title="TUTORIAL: Osmand per chi viaggia in moto e tutto quello che c&#39;è da sapere per sfruttarlo al meglio!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Espagnol : Balade tout-terrain à moto
+### Espagnol : Randonnée tout-terrain à moto {#spanish-off-road-ride-on-the-motorcycle}
 
 - **Vidéo** : _The TRK502X on Hell's Slope_
 - De [Pedro on a Trail Bike](https://www.youtube.com/@pedroenmototrail)
@@ -83,13 +83,12 @@ Voici quelques exemples mis en évidence de notre collection de vidéos. Ces vid
 <iframe width="770" height="433" src="https://www.youtube.com/embed/1Q_JFDeMEZA?list=PL2sj0drrh65FNIJ7WS58CAgCnJOb0-rTf" title="THE TRK502X ON HELL&#39;S SLOPE/🤘✌️🫣 #benellitrk502x" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-## Interagissez avec OsmAnd : Partagez, suggérez et connectez-vous
+## Engagez-vous avec OsmAnd : Partagez, suggérez et connectez-vous {#engage-with-osmand-share-suggest-and-connect}
 
-Si vous avez des suggestions de contenu ou si vous souhaitez que votre vidéo soit présentée sur notre chaîne, n'hésitez pas à nous contacter. Nous sommes toujours à la recherche de contributions nouvelles et de haute qualité pour enrichir notre vidéothèque OsmAnd.
+Si vous avez des suggestions de contenu ou si vous souhaitez que votre vidéo soit présentée sur notre chaîne, n'hésitez pas à nous contacter. Nous sommes toujours à la recherche de contributions fraîches et de haute qualité pour enrichir notre vidéothèque OsmAnd.
 
 - **Suivez** : <LinksSocial/>
 
 - **Rejoignez** : <LinksTelegram/>
 
 - **Obtenez** : <AllStores/>
-

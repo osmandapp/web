@@ -1,6 +1,7 @@
 ---
+source-hash: c81b1662dc95835f4ceb96e3166ff5b1809413cfc485b99ab86f16a5a32a8797
 sidebar_position: 3
-title:  Web Purchases
+title:  Achats Web
 unlisted: true
 ---
 
@@ -13,63 +14,62 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## How to Buy
+## Comment acheter {#how-to-buy}
 
-You can buy OsmAnd products on our official website or via in-app purchases:
+Vous pouvez acheter des produits OsmAnd sur notre site officiel ou via des achats intégrés :
 
-- **Website**: Payments are securely processed by our authorized reseller [FastSpring](https://fastspring.com/).  
+- **Site Web** : Les paiements sont traités en toute sécurité par notre revendeur agréé [FastSpring](https://fastspring.com/).
 
-All purchases made through any of these platforms support **cross-platform access**.
+Tous les achats effectués via l'une de ces plateformes prennent en charge l'**accès multiplateforme**.
 
 
-### Difference Between Purchases
+### Différence entre les achats {#difference-between-purchases}
 
 | Plan | Description | Notes |
 |------------|------------|------------|
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** that unlocks advanced features for the free OsmAnd app. | Supports **cross-platform** access |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks all [pro features](#pro-features), including CarPlay and 3D Relief. | Supports **cross-platform** access |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **achat intégré** ou un **abonnement** qui débloque des fonctionnalités avancées pour l'application gratuite OsmAnd. | Prend en charge l'accès **multiplateforme** |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan d'abonnement** qui débloque toutes les [fonctionnalités pro](#pro-features), y compris CarPlay et le relief 3D. | Prend en charge l'accès **multiplateforme** |
 
-:::note  
-**Cross-platform access** means you can buy OsmAnd in our website or one store (e.g., *App Store, Google Play, or osmand.net*) and use it on another platform by [linking your purchase to an OsmAnd Cloud account](../personal/osmand-cloud.md#cross-platform).
+:::note
+L'**accès multiplateforme** signifie que vous pouvez acheter OsmAnd sur notre site Web ou dans un magasin (par exemple, *App Store, Google Play ou osmand.net*) et l'utiliser sur une autre plateforme en [liant votre achat à un compte OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 :::
 
-## Prices
+## Prix {#prices}
 
-Below are the prices for OsmAnd products in the US and EU. Prices in other regions are automatically converted to local currency by the payment platform.
+Voici les prix des produits OsmAnd aux États-Unis et dans l'UE. Les prix dans les autres régions sont automatiquement convertis en devise locale par la plateforme de paiement.
 
-|    | OsmAnd Free   | [Maps+](#install-osmand-ios) One-Time | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Gratuit   | [Maps+](#install-osmand-ios) Achat unique | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |
-| **Price (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |
+| **Type d'achat** | **Gratuit** | **Achat unique** (à vie) | **Abonnement** (12 mois) | **Abonnement** (1 mois / 12 mois) |
+| **Prix (EUR)** | 0 € | 39,99 €  | 9,99 €   | 2,99 € / 29,99 €   |
+| **Prix (USD)** | 0 $ | 39,99 $  | 9,99 $   | 2,99 $ / 29,99 $   |
 
 
 
-### Free and Paid Features
+### Fonctionnalités gratuites et payantes {#free-and-paid-features}
 
-- [Android's free and paid features.](./android.md#free-and-paid-features)
-- [iOS's free and paid features.](./ios.md#free-and-paid-features)
+- [Fonctionnalités gratuites et payantes d'Android.](./android.md#free-and-paid-features)
+- [Fonctionnalités gratuites et payantes d'iOS.](./ios.md#free-and-paid-features)
 
 
 
-## Restore Purchases
+## Restaurer les achats {#restore-purchases}
 
-Your purchases are linked to your OsmAnd Cloud account (your email). To restore purchases on a new device:
+Vos achats sont liés à votre compte OsmAnd Cloud (votre adresse e-mail). Pour restaurer les achats sur un nouvel appareil :
 
-1. Install the OsmAnd app (Android or iOS).
-2. Open the app with an active internet connection.
-3. Go to:  
-   **Menu → Settings → OsmAnd Cloud → I already have an account**  
-   [More info here](../personal/osmand-cloud.md#login)
-4. To restore purchases:  
-   Go to **Menu → Settings → Purchases → Restore purchases**  
-   The screen will confirm that **Maps+**, **Pro**, or **Live** is activated.
+1. Installez l'application OsmAnd (Android ou iOS).
+2. Ouvrez l'application avec une connexion Internet active.
+3. Allez dans :
+   **Menu → Paramètres → OsmAnd Cloud → J'ai déjà un compte**
+   [Plus d'informations ici](../personal/osmand-cloud.md#login)
+4. Pour restaurer les achats :
+   Allez dans **Menu → Paramètres → Achats → Restaurer les achats**
+   L'écran confirmera que **Maps+**, **Pro** ou **Live** est activé.
 
-**If restoration doesn’t work:**
+**Si la restauration ne fonctionne pas :**
 
-1. Clear the app cache.
-2. Restart your device.
-3. Try restoring again using the same account.
-4. Or write to us: support@osmand.net 
-
+1. Videz le cache de l'application.
+2. Redémarrez votre appareil.
+3. Essayez de restaurer à nouveau en utilisant le même compte.
+4. Ou écrivez-nous : support@osmand.net

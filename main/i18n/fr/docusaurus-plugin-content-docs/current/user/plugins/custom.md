@@ -1,5 +1,5 @@
 ---
-source-hash: 42f8980606e2b3873ccd20c12c3077f6295f1d8350be048b687eafba73334066 
+source-hash: d05eefeaec577df6fa395e1eefae8a743d183b478105339e310b512404826bb7
 sidebar_position: 4
 title:  Package personnalisé
 ---
@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Aperçu
+## Vue d'ensemble {#overview}
 
 Dans l'application OsmAnd, vous pouvez créer de nombreuses personnalisations et les exporter dans un fichier `.osf`. Après avoir ajouté une description, une image et une icône, ces personnalisations deviennent un plugin complètement indépendant. Ce plugin peut inclure :
 
@@ -25,13 +25,13 @@ Dans l'application OsmAnd, vous pouvez créer de nombreuses personnalisations et
 - Des types de routage en ligne et des cartes en ligne spécifiques.
 
 
-## Comment créer
+## Comment créer {#how-to-create}
 
 ![Package personnalisé](@site/static/img/plugins/custom/1.jpg)
 
-Le *fichier* `.osf` est un *fichier* `.zip` renommé contenant des fichiers et des dossiers `.json`. À titre d'exemple, vous pouvez télécharger nos fichiers préparés à partir de [Google Drive](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) ou un plugin prêt à l'emploi à partir de ce [lien](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe).
+Le *fichier* `.osf` est un *fichier* `.zip` renommé contenant des fichiers et des dossiers `.json`. À titre d'exemple, vous pouvez télécharger nos fichiers préparés depuis [Google Drive](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) ou un plugin prêt à l'emploi depuis ce [lien](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe).
 
-Vous pouvez modifier les fichiers `.json` à l'aide du fichier *items.json* d'OsmAnd, qui contient des commandes pour importer des fichiers `.json`, des fichiers `.obf`, des icônes, etc.
+Vous pouvez modifier les fichiers `.json` à l'aide du fichier *items.json* d'OsmAnd, qui contient des commandes pour importer des fichiers `.json`, des fichiers `.obf`, des icônes, et plus encore.
 
 Vous pourriez avoir besoin de lire :
 
@@ -41,7 +41,7 @@ Vous pourriez avoir besoin de lire :
 - Vous pouvez vérifier votre code dans [JSON Editor Online](https://jsoneditoronline.org/).
 
 
-### items.json
+### items.json {#itemsjson}
 
 <details><summary> Fichier <b>items.json</b> d'OsmAnd. </summary>
 
@@ -273,56 +273,56 @@ Vous pourriez avoir besoin de lire :
 </details>
 
 
-## Types d'importation
+## Types d'importation {#import-types}
 
 Il existe de nombreux types d'importation pour le fichier *items.JSON* d'OsmAnd. Tous les types peuvent être trouvés [ici](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L133), et cet article n'en décrit que quelques-uns.
 
-### Description du plugin
+### Description du plugin {#plugin-description}
 
 Pour commencer, vous créez et ajoutez votre plugin à *items.JSON*. Le premier type d'importation est **"PLUGIN"**.
    *<u>NOTE</u>*. Vous devez créer et ajouter cette ligne pour chaque type **"pluginId":"test.plugin"**, où *test.plugin* est le nom de votre package.
 
    ![Package personnalisé](@site/static/img/plugins/custom/2.jpg)
 
-### Images du plugin
+### Images du plugin {#plugin-images}
 
 Pour importer les images de l'icône de votre plugin dans OsmAnd, créez un dossier (dans notre exemple, c'est le dossier *"res"*) où les fichiers image seront stockés. Le nom de ce type est **"RESOURCES"**.
 
    ![Package personnalisé](@site/static/img/plugins/custom/4.jpg)
 
 
-### Profils
+### Profils {#profiles}
 
 En utilisant le type **"PROFILE"**, vous pouvez ajouter un profil de navigation pour votre plugin. Vous pouvez obtenir toutes les informations sur votre profil de navigation dans le fichier JSON exporté, où il est possible de lire quels types *items.JSON* ont été ajoutés (*"QUICK_ACTIONS", "POI_UI_FILTERS", "MAP_SOURCES"* ou autres).
 NOTE : Commencez par créer un profil de navigation avec tous les paramètres, pour cela exportez les profils de navigation, et copiez les éléments nécessaires du fichier *profiles.osf* (items.JSON) de navigation vers le fichier *PLUGIN.osf* (items.JSON).
 
    ![Package personnalisé](@site/static/img/plugins/custom/6.jpg)
 
-### Téléchargements
+### Téléchargements {#downloads}
 
 Vous pouvez ajouter n'importe quel fichier tel que *SQLite, OBF ou des polices* à télécharger en utilisant le type **"DOWNLOADS"**. Les principaux types de fichiers téléchargeables peuvent être trouvés [ici](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).
-   *<u>NOTE</u>*. La balise **"isHidden":"true"** (par défaut, elle est *false*) peut masquer vos données cartographiques des [Cartes et ressources](../personal/maps-resources.md#local) d'OsmAnd. Dans **"scope-id"**, vous pouvez ajouter toutes les informations nécessaires sur l'URL, le nom, la description de votre fichier, et plus encore.
+   *<u>NOTE</u>*. La balise **"isHidden":"true"** (par défaut, elle est *false*) peut masquer les données de votre carte dans les [Cartes et ressources](../personal/maps-resources.md#local) d'OsmAnd. Dans **"scope-id"**, vous pouvez ajouter toutes les informations nécessaires sur l'URL, le nom, la description de votre fichier, et plus encore.
 
    ![Package personnalisé](@site/static/img/plugins/custom/3.jpg)
 
-### Téléchargements suggérés
+### Téléchargements suggérés {#suggested-downloads}
 
 Dans le type **"SUGGESTED_DOWNLOADS"**, vous pouvez télécharger les cartes qu'OsmAnd propose lors de l'importation d'un nouveau plugin.
 
    ![Package personnalisé](@site/static/img/plugins/custom/7.jpg)
 
-### Fichiers
+### Fichiers {#files}
 
-Dans le type **"FILE"**, vous pouvez ajouter des fichiers de vos dossiers de plugin aux dossiers OsmAnd, dont le "subtype" peut être trouvé [ici](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312). Dans l'exemple fourni, les fichiers *routing.xml* et *rendering.xml* ont été ajoutés. Vous pouvez lire comment créer ces fichiers aux liens [ici](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) et [ici](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).
+ Dans le type **"FILE"**, vous pouvez ajouter des fichiers de vos dossiers de plugin aux dossiers OsmAnd, dont le "subtype" peut être trouvé [ici](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312). Dans l'exemple fourni, les fichiers *routing.xml* et *rendering.xml* ont été ajoutés. Vous pouvez lire comment créer ces fichiers aux liens [ici](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) et [ici](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).
 
    ![Package personnalisé](@site/static/img/plugins/custom/8.jpg)
 
 Lorsque le fichier *items.JSON* et tous les fichiers du dossier sont prêts, vous pouvez les compresser en un seul document. Après cela, le *fichier .zip* doit être renommé en *.osf*, et votre *PLUGIN.osf* sera alors prêt à être ajouté à l'application OsmAnd.
 
 
-## Exemples
+## Exemples {#examples}
 
-Vous pouvez jeter un œil à certains des plugins que les utilisateurs d'OsmAnd ont créés eux-mêmes :
+Vous pouvez jeter un coup d'œil à certains des plugins que les utilisateurs d'OsmAnd ont créés eux-mêmes :
 
  - Plugin personnalisé [The USA Maps](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) (données PAD-US, sentiers et routes USFS, loisirs USFS).
  - Plugin personnalisé [Anygis maps](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf).
@@ -332,11 +332,10 @@ Vous pouvez jeter un œil à certains des plugins que les utilisateurs d'OsmAnd 
  - Plugin personnalisé [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf).
 
 
-## Articles connexes
+## Articles connexes {#related-articles}
 
 - [Interagir avec la carte](../../user/map/interact-with-map.md)
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
  > *Cet article a été mis à jour pour la dernière fois en juin 2024*
-

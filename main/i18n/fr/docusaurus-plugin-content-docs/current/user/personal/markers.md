@@ -1,5 +1,5 @@
 ---
-source-hash: 87f9b149666e0f5dfa93a59069bd335b8fcabc23dfd2be5a833a13c17c82ee24 
+source-hash: 2d03d88c42a2d85c1e2c387a3f3dc0d9554fbf38c7a908a8b7759ca80b713d8f
 sidebar_position: 8
 title: Marqueurs
 ---
@@ -15,9 +15,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Aperçu
+## Aperçu {#overview}
 
-Les marqueurs sont des points spéciaux marqués sur la carte comme des drapeaux qui peuvent être créés rapidement d'un simple toucher sans spécifier de nom et d'autres informations, contrairement aux [points favoris](./favorites.md). Les marqueurs offrent également des fonctionnalités supplémentaires avec les [widgets](../widgets/markers.md), les **flèches** (<Translate android="true" ids="show_arrows_on_the_map"/>) et l'**indication de distance** (<Translate android="true" ids="show_direction"/>).
+Les marqueurs sont des points spéciaux marqués sur la carte comme des drapeaux qui peuvent être rapidement créés d'un simple toucher sans spécifier de nom et d'autres informations, contrairement aux [points favoris](./favorites.md). Les marqueurs offrent également des fonctionnalités supplémentaires avec les [widgets](../widgets/markers.md), les **flèches** (<Translate android="true" ids="show_arrows_on_the_map"/>) et l'**indication de distance** (<Translate android="true" ids="show_direction"/>).
 
 <Tabs groupId="operating-systems">
 
@@ -35,9 +35,9 @@ Les marqueurs sont des points spéciaux marqués sur la carte comme des drapeaux
 
 </Tabs>
 
-## Marqueurs
+## Marqueurs {#markers}
 
-### Ajouter / Modifier des marqueurs
+### Ajouter / Modifier des marqueurs {#add--edit-markers}
 
 <Tabs groupId="operating-systems">
 
@@ -59,7 +59,7 @@ Appuyez brièvement ou longuement sur la carte et choisissez l'action nécessair
 
 </Tabs>
 
-Il est possible de marquer un point ou un objet pour faciliter la planification de la navigation. Il vous suffit d'appuyer sur l'icône *drapeau* (*Android*) ou *flèche* (*iOS*) dans le menu pour afficher la direction et la distance jusqu'au point sélectionné depuis votre position actuelle (ou le point central de la carte / le point de contact initial de la carte lorsque la localisation est désactivée).
+Il est possible de marquer un point ou un objet pour faciliter la planification de la navigation. Il suffit d'appuyer sur l'icône *drapeau* (*Android*) ou *flèche* (*iOS*) dans le menu pour afficher la direction et la distance jusqu'au point sélectionné depuis votre position actuelle (ou le point central de la carte / le point de contact initial de la carte lorsque la localisation est désactivée).
 
 ***Actions*** :
 
@@ -74,7 +74,7 @@ Vous ne pouvez pas supprimer un marqueur immédiatement, vous devez d'abord le d
 
 
 <!--
-### Add Favorites to Map Markers
+### Add Favorites to Map Markers {#add-favorites-to-map-markers}
 
 <InfoAndroidOnly/>
 
@@ -89,11 +89,11 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 -->
 
 
-### Liste d'itinéraires
+### Liste d'itinéraires {#itinerary-list}
 
-La liste d'itinéraires représente une liste ordonnée de marqueurs où le premier marqueur est utilisé dans les widgets pour la navigation. Pour en savoir plus, consultez l'article [Naviguer par marqueurs](../navigation/setup/markers-navigation.md#itinerary-list).
+La liste d'itinéraires représente une liste ordonnée de marqueurs où le premier marqueur est utilisé dans les widgets pour la navigation. En savoir plus à ce sujet dans l'article [Naviguer par marqueurs](../navigation/setup/markers-navigation.md#itinerary-list).
 
-### Groupes de marqueurs
+### Groupes de marqueurs {#marker-groups}
 
 <InfoAndroidOnly />
 
@@ -101,7 +101,7 @@ La liste d'itinéraires représente une liste ordonnée de marqueurs où le prem
 
 Les marqueurs peuvent être ajoutés et supprimés en tant que groupe entier à partir d'un groupe de favoris ou d'un fichier GPX avec des points de passage. Cela le rend très pratique pour être utilisé dans un mode de navigation spécial - [Naviguer par marqueurs](../navigation/setup/markers-navigation.md#add-group-of-favorite).
 
-### Historique
+### Historique {#history}
 
 <Tabs groupId="operating-systems">
 
@@ -122,13 +122,13 @@ Les marqueurs peuvent être ajoutés et supprimés en tant que groupe entier à 
 L'historique est une liste de tous les marqueurs désactivés (passés). À partir de cette liste, il est possible de supprimer définitivement un marqueur ou de le restaurer.
 
 
-## Apparence sur la carte
+## Apparence sur la carte {#appearance-on-the-map}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
 
 ![apparence_sur_la_carte](@site/static/img/widgets/appearence_on_the_map-01.png) ![apparence_sur_la_carte](@site/static/img/widgets/appearence_on_the_map-02.png)
 
@@ -136,7 +136,7 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_mark
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
 
 ![Apparence des marqueurs de carte iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png) ![Apparence des marqueurs de carte iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
 
@@ -149,13 +149,13 @@ Dans la version iOS d'OsmAnd, *Apparence sur la carte* est également un paramè
 
 - **Marqueurs actifs**. Affiche des informations sur le premier ou les deux premiers marqueurs de la liste des marqueurs de carte.
 - **Indication de distance** *(pour iOS)*. Vous permet de choisir d'afficher ou non les widgets et comment ils apparaîtront : au-dessus de la carte (Barre supérieure) ou sur le côté droit de l'écran (Widgets).
-- **Flèches sur la carte**. Indique la direction vers le marqueur suivi (un ou deux) sous forme de flèche sur la carte. Si le marqueur se trouve dans la partie visible de la carte, aucune flèche n'est affichée.
+- **Flèches sur la carte**. Indique la direction vers le marqueur suivi (un ou deux) sous forme de flèche sur la carte. Si le marqueur est dans la partie visible de la carte, aucune flèche n'est affichée.
 - **Ligne de direction**. Affiche la direction, sous forme de ligne pointillée, d'un point particulier sur la carte au marqueur suivi en ligne droite.
 - ***Un seul toucher*** actif (*pour Android*). Avec un seul toucher sur le marqueur requis sur la carte, ce marqueur se déplace en haut de la liste des marqueurs de carte actifs sans ouvrir le menu contextuel.
-- **Garder les marqueurs passés sur la carte** *(pour Android)*. Les marqueurs ajoutés en tant que groupe de favoris ou de points de passage GPX marqués comme passés resteront sur la carte. Si le groupe n'est pas actif, les marqueurs disparaîtront de la carte.
+- **Garder les marqueurs passés sur la carte** *(pour Android)*. Les marqueurs ajoutés en tant que groupe de favoris ou points de passage GPX marqués comme passés resteront sur la carte. Si le groupe n'est pas actif, les marqueurs disparaîtront de la carte.
 
 
-## Planifier un itinéraire pour les marqueurs
+## Planifier un itinéraire pour les marqueurs {#plan-route-for-markers}
 
 <InfoAndroidOnly />
 
@@ -163,10 +163,10 @@ Dans la version iOS d'OsmAnd, *Apparence sur la carte* est également un paramè
 
 ![Points de planification d'itinéraire des marqueurs de carte Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Options de planification d'itinéraire des marqueurs de carte Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
 
-En utilisant la fonctionnalité de l'outil Planifier un itinéraire dans la liste des marqueurs, vous pouvez trier les *marqueurs* *porte-à-porte*, les mettre en ordre inverse ou créer un *aller-retour*. Si vous appuyez sur l'option *Navigation*, les *marqueurs* seront utilisés comme [destinations intermédiaires](../navigation/setup/route-navigation.md#intermediate-destinations).
+En utilisant la fonctionnalité de l'outil Planifier un itinéraire dans la liste des marqueurs, vous pouvez trier les *Marqueurs* *Porte-à-porte*, les mettre en ordre inverse ou créer un *Aller-retour*. Si vous appuyez sur l'option *Navigation*, les *Marqueurs* seront utilisés comme [destinations intermédiaires](../navigation/setup/route-navigation.md#intermediate-destinations).
 
 
-## Actions
+## Actions {#actions}
 
 <InfoAndroidOnly />
 
@@ -180,10 +180,9 @@ En utilisant la fonctionnalité de l'outil Planifier un itinéraire dans la list
 - **<Translate android="true" ids="move_all_to_history"/>**. Désactive tous les marqueurs et les déplace vers l'[Historique](#history).
 
 
-## Articles connexes
+## Articles connexes {#related-articles}
 
 - [Navigation par marqueurs](../navigation/setup/markers-navigation.md)
 - [Widgets de marqueurs](../widgets/markers.md)
 
 > *Cet article a été mis à jour pour la dernière fois en août 2024*
-

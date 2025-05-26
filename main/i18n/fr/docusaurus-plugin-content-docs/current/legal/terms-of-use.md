@@ -1,9 +1,8 @@
 ---
-source-hash: 38918fe18e141645248032a5cfcf8df3d53ed60cf25f7331d6599dd8077a47ad 
+source-hash: f3692560c832e8d0f6ac3ddaa86409609d33ed30438cf4d8e10a558189acdbb8
 sidebar_position: 3
 title: Conditions d'utilisation
 ---
 import TermsOfUse from '@site/src/components/content/TermsOfUse.mdx';
 
 <TermsOfUse/>
-

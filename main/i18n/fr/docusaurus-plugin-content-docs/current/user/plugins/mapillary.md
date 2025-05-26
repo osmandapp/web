@@ -1,7 +1,7 @@
 ---
-source-hash: 1d6bd17d52c161edca2e273f051b6bd8a7b7b5ae6ada849ab1465ad06e2e5d33 
+source-hash: 9c1c3489d64f72c44c17381366f4bc261ddcc42652ca169cb45264a61c9490dd
 sidebar_position: 6
-title: Mapillary
+title:  Mapillary
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,14 +14,14 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Aperçu
+## Aperçu {#overview}
 
-Pour vous déplacer plus rapidement, vous pouvez utiliser dans OsmAnd des vues au niveau de la rue de vos itinéraires ou de vos points d'intérêt fournies par [Mapillary](https://www.mapillary.com/) (une connexion Internet est requise).
+Pour vous déplacer plus rapidement, vous pouvez utiliser dans OsmAnd les vues au niveau de la rue de vos itinéraires ou de vos points d'intérêt fournies par [Mapillary](https://www.mapillary.com/) (une connexion Internet est requise).
 
-[La couche Mapillary](https://www.mapillary.com/) apporte des images au niveau de la rue directement dans l'application OsmAnd, afin que vous puissiez facilement avoir un aperçu des environs de n'importe quel point d'intérêt ou le long de l'itinéraire que vous avez planifié. Si des images manquent, vous pouvez les ajouter vous-même, et d'autres peuvent les utiliser. Cette fonctionnalité est née de notre collaboration avec [l'équipe Mapillary](https://www.mapillary.com/about), unissant les avantages des deux applications.
+[La couche Mapillary](https://www.mapillary.com/) apporte des images au niveau de la rue directement dans l'application OsmAnd, afin que vous puissiez facilement avoir un aperçu des environs de n'importe quel lieu d'intérêt ou le long de l'itinéraire que vous avez prévu. Si des images manquent, vous pouvez les ajouter vous-même, et d'autres peuvent les utiliser. Cette fonctionnalité est née de notre collaboration avec [l'équipe Mapillary](https://www.mapillary.com/about), unissant les avantages des deux applications.
 
 
-## Paramètres de configuration requis
+## Paramètres de configuration requis {#required-setup-parameters}
 
 Pour afficher les images au niveau de la rue sur la carte OsmAnd, vous devez effectuer les réglages suivants :
 
@@ -29,7 +29,7 @@ Pour afficher les images au niveau de la rue sur la carte OsmAnd, vous devez eff
 2. Affichez les [images au niveau de la rue](#enable-layer) sur la carte pour le profil requis dans le menu Configurer la carte.
 
 
-## Couche de carte
+## Couche de carte {#map-layer}
 
 <Tabs groupId="operating-systems">
 
@@ -51,11 +51,11 @@ La couche de carte avec les images de rue est affichée sur la carte OsmAnd sous
 
 - Les photos des utilisateurs de Mapillary sont attachées à ces points verts.
 - Appuyez sur un point vert sur la carte pour ouvrir une photo de vue de rue. Les photos peuvent également être sélectionnées à partir d'une liste dans le [menu contextuel de la carte](#map-context-menu), si disponible.
-- Après la sélection, l'écran de l'application est divisé en carte OsmAnd et images de rue Mapillary.
+- Après la sélection, l'écran de l'application est divisé en carte OsmAnd et en images de rue Mapillary.
 - Vous pouvez appliquer des [filtres](#data-filtering) pour sélectionner les photos que vous souhaitez afficher sur la carte.
 
 
-### Activer la couche
+### Activer la couche {#enable-layer}
 
 <Tabs groupId="operating-systems">
 
@@ -84,7 +84,7 @@ Pour afficher les images au niveau de la rue de Mapillary sur la carte, vous dev
 :::
 
 
-### Filtrage des données
+### Filtrage des données {#data-filtering}
 
 <Tabs groupId="operating-systems">
 
@@ -107,11 +107,11 @@ Vous pouvez créer un filtre et sélectionner les photos à afficher sur la cart
 *Pour accéder : <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
 :::note Cache de tuiles
-Si les images sélectionnées ne s'affichent pas, utilisez **Recharger** pour le **Cache de tuiles**.
+Si les images sélectionnées ne sont pas affichées, utilisez **Recharger** pour le **Cache de tuiles**.
 :::
 
 
-## Menu contextuel de la carte
+## Menu contextuel de la carte {#map-context-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -132,7 +132,7 @@ Si les images sélectionnées ne s'affichent pas, utilisez **Recharger** pour le
 Si le plugin Mapillary est activé, vous pouvez afficher les photos de rues disponibles dans un rayon de 40 mètres autour du point sélectionné sur la carte. Les photos sont ouvertes dans le [menu contextuel de la carte](../map/map-context-menu.md#online-photos).
 
 
-## Ajouter des photos
+## Ajouter des photos {#add-photos}
 
 <Tabs groupId="operating-systems">
 
@@ -153,21 +153,21 @@ Si le plugin Mapillary est activé, vous pouvez afficher les photos de rues disp
 Pour ajouter des photos, vous devez vous inscrire dans l'[application Mapillary](https://www.mapillary.com/mobile-apps). Vous pouvez également ajouter des photos au menu contextuel de la carte en appuyant sur le bouton *Ajouter des photos* dans la section [Photos en ligne](../map/map-context-menu.md#online-photos) du menu contextuel de la carte. L'application Mapillary s'ouvrira alors.
 
 
-## Widget Mapillary
+## Widget Mapillary {#mapillary-widget}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="mapillary"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="mapillary"/>*
 
-![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png) ![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
+![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png)  ![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → <Translate ios="true" ids="mapillary"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → <Translate ios="true" ids="mapillary"/>*
 
 ![Mapillary plugin Map Context menu iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
 
@@ -178,11 +178,10 @@ Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appea
 Le [widget Mapillary](../widgets/info-widgets.md#mapillary-widget) est utilisé pour accéder rapidement à l'application Mapillary. Le widget est ajouté automatiquement à l'écran principal lorsque le plugin Mapillary est activé. Vous pouvez activer ou désactiver le widget Mapillary et d'autres widgets dans le menu [Configurer l'écran](../widgets/configure-screen.md).
 
 
-## Articles connexes
+## Articles connexes {#related-articles}
 
 - [Interagir avec la carte](../../user/map/interact-with-map.md)
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
 > *Cet article a été mis à jour pour la dernière fois en octobre 2024*
-

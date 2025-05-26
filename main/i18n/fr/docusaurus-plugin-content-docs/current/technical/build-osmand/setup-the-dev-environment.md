@@ -1,20 +1,22 @@
 ---
-source-hash: d41e36a24a3c9d90cabd8b9c4989e8ea49e1157b870506bf4a7edb33a6d2acab 
+source-hash: 1326453ee38d582942514d0f0499ca5e44dc0398cfda44498707b9a92f8c0ae3
 sidebar_position: 4
 ---
 
-# Comment configurer l'environnement de développement
+# Comment configurer l'environnement de développement {#how-to-setup-the-development-environment}
+
 
 Pour configurer l'environnement de développement, vous devez installer l'[utilitaire repo](https://source.android.com/setup/develop#repo) et utiliser le [manifeste repo](https://github.com/osmandapp/OsmAnd-manifest/blob/master/readonly.xml) suivant ou [toute autre configuration](https://github.com/osmandapp/OsmAnd-manifest).
 
-Si vous prévoyez d'utiliser le fichier `readonly.xml` et l'utilitaire `repo`, vous pouvez exécuter ce qui suit :
+
+Si vous prévoyez d'utiliser le fichier `readonly.xml` et l'utilitaire `repo`, vous pouvez exécuter ce qui suit :
 
 ```
 repo init -u https://github.com/osmandapp/OsmAnd-manifest -m readonly.xml
 repo sync
 ```
 
-Vous pouvez également utiliser simplement git et cloner les dépôts git suivants dans les noms de dossiers corrects :
+Vous pouvez également utiliser simplement git et extraire les dépôts git suivants dans les noms de dossiers corrects :
 * Dossier **android** - **[Osmand](https://github.com/osmandapp/Osmand.git)**
     * ```git clone https://github.com/osmandapp/Osmand.git android```
 * Dossier **ios** - **[OsmAnd-ios](https://github.com/osmandapp/OsmAnd-ios.git)**
@@ -23,9 +25,9 @@ Vous pouvez également utiliser simplement git et cloner les dépôts git suivan
     * ```git clone https://github.com/osmandapp/OsmAnd-resources.git resources```
 * Dossier **core** - **[OsmAnd-core](https://github.com/osmandapp/OsmAnd-core.git)**
     * ```git clone https://github.com/osmandapp/OsmAnd-core.git core```
-* Dossier **help** - **[osmandapp.github.io](https://github.com/osmandapp/osmandapp.github.io.git)**
+* Dossier **help** - **[osmandapp.github.io](https://github.com/osmandapp/osmandapp.github.io.git)** 
     * ```git clone https://github.com/osmandapp/osmandapp.github.io.git help```
-* Dossier **core-legacy** - **[OsmAnd-core-legacy](https://github.com/osmandapp/OsmAnd-core-legacy.git)**
+* Dossier **core-legacy** - **[OsmAnd-core-legacy](https://github.com/osmandapp/OsmAnd-core-legacy.git)** 
     * ```git clone https://github.com/osmandapp/OsmAnd-core-legacy.git core-legacy```
 * Dossier **build** - **[OsmAnd-build](https://github.com/osmandapp/OsmAnd-build.git)**
     * ```git clone https://github.com/osmandapp/OsmAnd-build.git build```
@@ -36,5 +38,5 @@ Vous pouvez également utiliser simplement git et cloner les dépôts git suivan
 * Dossier **misc** - **[OsmAnd-misc](https://github.com/osmandapp/OsmAnd-misc.git)** (utilitaires autonomes)
     * ```git clone https://github.com/osmandapp/OsmAnd-misc.git misc```
 
-Vous n'aurez peut-être pas besoin de tous les dépôts pour faire fonctionner les outils / Android ou iOS. Vous pouvez toujours vérifier les branches correspondantes dans les [configurations repo](https://github.com/osmandapp/OsmAnd-manifest).
 
+Vous n'aurez peut-être pas besoin de tous les dépôts pour faire fonctionner les outils / Android ou iOS. Vous pouvez toujours vérifier les branches correspondantes dans [repo-configurations](https://github.com/osmandapp/OsmAnd-manifest).

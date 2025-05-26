@@ -1,5 +1,5 @@
 ---
-source-hash: 1fd429735af3f0580203fb791165c942574149e387c5d9bbe385ab9e78cc4754 
+source-hash: fafc11efe9ed72932ef86dce495cdd017bf3ddf0940297b3bd38a796d4a03c4e
 sidebar_position: 2
 title:  Test des achats iOS
 unlisted: true
@@ -14,5 +14,4 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## Installer OsmAnd
-
+## Installer OsmAnd {#install-osmand}

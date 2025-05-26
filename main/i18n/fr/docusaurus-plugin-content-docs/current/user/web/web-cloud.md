@@ -1,5 +1,5 @@
 ---
-source-hash: a65b84e286c45f4965a8c84bc5fd3d8bf1227aa836cd70a315a14ca548140473 
+source-hash: 94487b301ff699926a0a7829c7e7225d4d3e9b451cdf3926946cdb6a7c41b2da
 sidebar_position: 2
 sidebar_label:  OsmAnd Cloud
 title: OsmAnd Cloud sur le site Web
@@ -18,11 +18,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-## Aperçu
+## Aperçu {#overview}
 
 Le [Portail cartographique OsmAnd](https://osmand.net/map) est un service basé sur un navigateur fourni par OsmAnd, permettant aux utilisateurs d'explorer des cartes, de gérer leurs données, de planifier et de créer des voyages, ou simplement de parcourir la carte.
 
-#### Accès par abonnement
+#### Accès par abonnement {#subscription-accesses}
 
 Le Portail cartographique peut être utilisé sans inscription ; cependant, certaines fonctionnalités sont exclusivement disponibles pour les utilisateurs d'OsmAnd Pro et d'OsmAnd Start :
 
@@ -37,7 +37,7 @@ Le Portail cartographique peut être utilisé sans inscription ; cependant, cert
 | [Traces](./web-map.md) | <ProFeature/> |
 
 
-## Comment commencer
+## Comment commencer {#how-to-start}
 
 Si vous avez un compte [OsmAnd Pro](../personal/osmand-cloud.md#login) ou si vous souhaitez créer un compte [OsmAnd Start](../personal/osmand-cloud.md#osmand-start), vous devez suivre les étapes suivantes :
 
@@ -47,7 +47,7 @@ Si vous avez un compte [OsmAnd Pro](../personal/osmand-cloud.md#login) ou si vou
   - *Créer un compte*. Pour OsmAnd Start.
 
 
-## Comment changer de langue
+## Comment changer de langue {#how-to-change-language}
 
 Si vous souhaitez changer la langue d'affichage :
 
@@ -57,31 +57,31 @@ Si vous souhaitez changer la langue d'affichage :
     *Menu →* ⚙ *→ Désactiver la langue*.
 
 
-## Gestion du compte
+## Gestion du compte {#managing-account}
 
 *Menu général → Compte*
 
-Après s'être inscrit sur le web, les utilisateurs peuvent accéder aux informations de leur compte, télécharger des sauvegardes, se déconnecter, supprimer leur compte ou changer leur adresse e-mail.
+Après s'être inscrits sur le web, les utilisateurs peuvent accéder aux informations de leur compte, télécharger des sauvegardes, se déconnecter, supprimer leur compte ou changer leur adresse e-mail.
 
-#### Accéder au compte
+#### Accéder au compte {#access-account}
 
-#### Sauvegardes
+#### Sauvegardes {#backups}
 
-#### Se déconnecter et supprimer
+#### Se déconnecter et supprimer {#log-out-and-delete}
 
-#### Changer d'adresse e-mail
+#### Changer d'adresse e-mail {#change-email-address}
 
 
-## Synchronisation OsmAnd Pro et OsmAnd Start
+## Synchronisation OsmAnd Pro et OsmAnd Start {#osmand-pro-and-osmand-start-sync}
 
 - **OsmAnd Pro** est un abonnement payant [multiplateforme](../troubleshooting/setup.md#cross-platform).
 - **OsmAnd Start** est une [inscription gratuite à OsmAnd Cloud](https://osmand.net/blog/start).
 
 La capacité multiplateforme vous permet d'utiliser OsmAnd Pro sur toutes les plateformes *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))*. Pour ce faire, vous devez :
 
-1. Vous abonner à **OsmAnd Pro**. Pour savoir comment faire pour [Android, lisez ici](../purchases/android.md#how-to-buy), et pour [iOS, lisez ici](../purchases/ios.md#how-to-buy).
+1. Vous abonner à **OsmAnd Pro**. Pour en savoir plus sur la procédure pour [Android, cliquez ici](../purchases/android.md#how-to-buy), et pour [iOS, cliquez ici](../purchases/ios.md#how-to-buy).
 2. Pour savoir comment créer un compte **OsmAnd Start**, lisez [ici](https://osmand.net/blog/start#how-to-create-an-account).
-3. Enregistrer votre compte [Pro ou Start](../troubleshooting/setup.md#cross-platform) sur le serveur OsmAnd dans l'application OsmAnd.
+3. Enregistrez votre [compte Pro ou Start](../troubleshooting/setup.md#cross-platform) sur le serveur OsmAnd dans l'application OsmAnd.
 4. L'adresse e-mail enregistrée sera votre identifiant pour activer OsmAnd Pro sur la plateforme web. La première fois, vous devrez choisir un mot de passe pour les futures connexions au portail web (veuillez suivre les instructions sur le portail web).
 
 - Entrez votre *e-mail* et votre *mot de passe* pour [osmand.net/map](https://osmand.net/map/).
@@ -107,11 +107,11 @@ Il y a aussi un bouton pour se *déconnecter* du compte.
 ![Vue du fichier de sauvegarde Web d'OsmAnd](@site/static/img/web/web_backup_file_2.png)
 
 
-## Données cloud
+## Données cloud {#cloud-data}
 
 [Traces et Favoris](web-map.md#tracks).
 <!--
-## Map style
+## Map style {#map-style}
 
 In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.
 **Some examples:**
@@ -128,4 +128,3 @@ In this section of the menu, you can change the map style. You can read more abo
 
 
 > *Cet article a été mis à jour pour la dernière fois en septembre 2024*
-

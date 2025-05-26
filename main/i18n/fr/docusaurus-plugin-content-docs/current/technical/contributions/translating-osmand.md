@@ -1,9 +1,10 @@
 ---
-source-hash: eb996eb50219207babfcbec7d3dab37b65316b761bb67f351e5ac55dbadc49d9 
+source-hash: ecffe7f80cbc1a8fa3d5d31ebbbdcc02422c7419dca8d41a62da2e2e44d21ede
 sidebar_position: 3
 ---
 
-# Comment traduire OsmAnd - Nous avons besoin de votre aide !
+# Comment traduire OsmAnd - Nous avons besoin de votre aide ! {#how-to-translate-osmand---we-need-your-assistance}
+
 
 Nous apprécions vraiment votre aide pour traduire OsmAnd ! Fournir des traductions de texte d'affichage n'est pas très compliqué, la manière préférée de fournir des traductions de chaînes est décrite ici : [OsmAnd @ Hosted Weblate](https://hosted.weblate.org/projects/osmand/).
 
@@ -13,30 +14,29 @@ Nous apprécions vraiment votre aide pour traduire OsmAnd ! Fournir des traducti
 
 Merci pour votre aide !
 
-## Quelques questions et réponses fréquentes :
+## Quelques questions et réponses fréquentes : {#some-frequent-questions-and-answers}
 
-#### Q1 : Quelles chaînes dois-je traduire ?
-L'outil Weblate est explicite. Seulement si vous essayez de modifier les fichiers directement :
+#### Q1 : Quelles chaînes dois-je traduire ? {#q1-which-strings-should-i-translate}
+L'outil Weblate est explicite. Seulement si vous essayez de modifier des fichiers directement :
 * Dans `strings.xml`, les chaînes ressemblent à `<string name="shared_string_save_as_gpx">Save as GPX track</string>`. Ne traduisez que la partie `Save route as GPX track`.
 * Dans `swing_messages.properties`, les chaînes ressemblent à `IndexCreator.INDEX_CITIES=Indexing cities...`. Ne traduisez que la partie droite `Indexing cities...`.
 
-#### Q2 : Je ne veux pas créer dans Weblate ou github, puis-je simplement vous envoyer le fichier ?
+#### Q2 : Je ne veux pas créer dans Weblate ou github, puis-je simplement vous envoyer le fichier ? {#q2-i-dont-want-to-create-in-weblate-or-github-can-i-simply-post-you-the-file}
 Oui, vous pouvez envoyer le fichier par e-mail, mais veuillez essayer les méthodes préférées, c'est facile.
 
-#### Q3 : Comment vérifier ce qui a changé dans le __fichier strings.xml anglais__ ?
+#### Q3 : Comment puis-je vérifier ce qui a changé dans le __strings.xml anglais__ ? {#q3-how-should-i-check-what-has-changed-in-the-english-stringsxml-}
 Veuillez utiliser Weblate comme décrit ci-dessus, il vous montrera toutes les modifications. Si vous souhaitez vérifier la source manuellement par rapport à votre fichier : les nouvelles chaînes sont généralement ajoutées en haut du fichier de ressources de la langue principale. Vous pouvez le télécharger et utiliser un utilitaire comme pspad ou vim pour les comparer. Vous pouvez également utiliser *[blame](https://github.com/osmandapp/Osmand/blame/master/OsmAnd/res/values/strings.xml)* ou l'historique des fichiers sur github pour afficher les dernières modifications.
 
-## Quelles langues seront incluses dans OsmAnd ?
+## Quelles langues seront incluses dans OsmAnd ? {#what-languages-will-be-included-in-osmand-}
 
 > Chers traducteurs,
 >
 > Merci beaucoup pour vos efforts pour compléter nos traductions de langue d'affichage, et aussi pour localiser OsmAnd dans de plus en plus de langues sur [Weblate](https://hosted.weblate.org/projects/osmand/) !
 >
-> Veuillez noter ce qui suit : Je suis heureux d'inclure dans le menu de sélection de la langue d'affichage d'OsmAnd toute nouvelle langue avec un taux de traduction >10 %, (je la marquerai comme "incomplète" jusqu'à ce qu'elle atteigne ~80 %). Veuillez poster un problème avec OsmAnd si vous avez besoin que cela soit fait, je ne regarde que sporadiquement ces chiffres sur Weblate.
+> Veuillez noter ce qui suit : Je suis heureux d'inclure dans le menu de sélection de la langue d'affichage d'OsmAnd toute nouvelle langue avec un taux de traduction >10 %, (je la marquerai comme "incomplète" jusqu'à ce qu'elle atteigne ~80 %). Veuillez signaler un problème avec OsmAnd si vous avez besoin que cela soit fait, je ne surveille que sporadiquement ces chiffres sur Weblate.
 >
-> Malheureusement, les langues comportant des codes ISO 639-2 à 3 lettres semblent actuellement avoir des problèmes dans Android, voir par exemple :*   [https://code.google.com/p/android/issues/detail?id=49120](https://code.google.com/p/android/issues/detail?id=49120)*   [https://code.google.com/p/android/issues/detail?id=106574](https://code.google.com/p/android/issues/detail?id=106574)
->     Cela signifie que, malheureusement, une telle langue peut ne pas s'afficher dans les menus d'OsmAnd sur votre appareil. (Ce problème n'affecte que la langue utilisée dans les menus de l'application, pas sur la carte, bien sûr.)
+> Malheureusement, les langues comportant des codes ISO 639-2 à 3 lettres semblent actuellement avoir des problèmes dans Android, voir par exemple * [https://code.google.com/p/android/issues/detail?id=49120](https://code.google.com/p/android/issues/detail?id=49120)* [https://code.google.com/p/android/issues/detail?id=106574](https://code.google.com/p/android/issues/detail?id=106574)
+> Cela signifie que, malheureusement, une telle langue peut ne pas s'afficher dans les menus OsmAnd sur votre appareil. (Ce problème n'affecte que la langue utilisée dans les menus de l'application, pas sur la carte, bien sûr.)
 >
 > Merci,
 > Dr. Hardy Mueller
-

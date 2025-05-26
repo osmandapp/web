@@ -1,5 +1,5 @@
 ---
-source-hash: 7a996f0ff5f72c93cb2ea873fed74c11d48cc7b159cce9f77707303a31608b46 
+source-hash: 434e3dcf8b132de12b9214b6a25b7c91207814d94694a3025beeb77262c426f1
 sidebar_position: 2
 title:  Télécharger des cartes
 ---
@@ -17,21 +17,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Aperçu
+## Aperçu {#overview}
 
 Le téléchargement de cartes dans l'application OsmAnd est une étape clé pour assurer le bon fonctionnement et l'utilisation de la navigation hors ligne. Sans cartes hors ligne, l'application ne peut pas fonctionner pleinement. Le téléchargement de cartes vous donne accès à des cartes de différentes régions, vous permettant de naviguer sans connexion Internet.
 
 Vous avez deux *principales* façons de télécharger des cartes : **1)** [afficher la liste des régions dans le *Menu principal*](#maps-and-resources), ou **2)** [sélectionner la région requise directement sur la carte](#select-on-the-map). Cela vous donne la flexibilité de sélectionner les régions que vous souhaitez et garantit que les cartes correspondront à vos plans.
 
-Bien qu'OsmAnd prenne en charge les cartes [Vectorielles](../map/vector-maps.md) et [Raster](../map/raster-maps.md), il est recommandé de commencer à travailler avec des cartes vectorielles hors ligne. Ce type de carte (en savoir plus sur les [types de cartes OsmAnd](../personal/maps-resources.md#map-types) ici) assure un fonctionnement fiable de toutes les fonctions clés de l'application, y compris la [Recherche](../search/index.md), la [Navigation](../navigation/index.md) et le [Menu contextuel](../map/map-context-menu.md). Ceci est particulièrement important si vos voyages incluent des déplacements dans des endroits éloignés ou des lieux avec un accès Internet limité.
+Bien qu'OsmAnd prenne en charge les cartes [Vectorielles](../map/vector-maps.md) et [Raster](../map/raster-maps.md), il est recommandé de commencer à travailler avec des cartes vectorielles hors ligne. Ce type de carte (en savoir plus sur les [types de cartes OsmAnd](../personal/maps-resources.md#map-types) ici) assure le fonctionnement fiable de toutes les fonctions clés de l'application, y compris la [Recherche](../search/index.md), la [Navigation](../navigation/index.md) et le [Menu contextuel](../map/map-context-menu.md). Ceci est particulièrement important si vos voyages incluent des déplacements dans des endroits éloignés ou des lieux avec un accès Internet limité.
 
 
-## Télécharger
+## Télécharger {#download}
 
 Commencez à charger des cartes à partir de l'[écran de configuration initiale](#initial-setup-screen), ou allez dans le *menu latéral* principal *→* [Cartes et ressources](#maps-and-resources) et sélectionnez les cartes requises dans la liste générale, ou [sélectionnez une région](#select-on-the-map) directement sur la carte en appuyant sur la région dont vous avez besoin.
 
 
-### Écran de configuration initiale
+### Écran de configuration initiale {#initial-setup-screen}
 
 <Tabs groupId="operating-systems">
 
@@ -54,7 +54,7 @@ Lors du premier lancement de l'application, vous êtes invité à télécharger 
 Si vous utilisez un VPN, OsmAnd peut suggérer une carte basée sur la localisation virtuelle du VPN. Dans de tels cas, vous pouvez sélectionner manuellement une carte qui correspond mieux à votre région géographique réelle.
 
 
-#### Menu à trois points
+#### Menu à trois points {#three-dot-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -75,21 +75,21 @@ Si vous utilisez un VPN, OsmAnd peut suggérer une carte basée sur la localisat
 **Menu de localisation :**
 
 - *Sélectionner une autre région.* Ouvre le menu [Télécharger des cartes](#maps-and-resources).
-- *Nous permettre de déterminer votre position.* [Demande l'autorisation](../start-with/first-steps.md#permission-to-access-the-location) d'accéder à la localisation et de trouver la carte requise à l'aide de ces données.
+- *Nous permettre de déterminer votre position.* [Demande l'autorisation](../start-with/first-steps.md#permission-to-access-the-location) d'accéder à la position et de trouver la carte requise à l'aide de ces données.
 
 **Autre menu :**
 
-- *Restaurer depuis OsmAnd Cloud.* Ouvre l'écran principal ou l'écran de connexion d'[OsmAnd Cloud](../personal/osmand-cloud.md). Ceci est utile si vous avez réinstallé l'application ou si vous souhaitez restaurer l'expérience utilisateur précédente sans resélectionner les régions et les paramètres.
+- *Restaurer depuis OsmAnd Cloud.* Ouvre l'écran principal [OsmAnd Cloud](../personal/osmand-cloud.md) ou l'écran de connexion. Ceci est utile si vous avez réinstallé l'application ou si vous souhaitez restaurer l'expérience utilisateur précédente sans resélectionner les régions et les paramètres.
 - *Restaurer depuis un fichier.* Ouvre le gestionnaire de fichiers de l'appareil pour sélectionner et importer un fichier `.osf`.
 
 
-### Cartes et ressources
+### Cartes et ressources {#maps-and-resources}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
 ![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)
 
@@ -97,7 +97,7 @@ Go to: *Android* *<Translate android="true" ids="shared_string_menu,maps_and_res
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ![Download map menu general iOS](@site/static/img/personal/maps/download_menu_ios.png)
 
@@ -111,7 +111,7 @@ L'écran [Cartes et ressources](../personal/maps-resources.md) donne accès aux 
 - [Local](../personal/maps-resources.md#local). Affiche toutes les données cartographiques actuellement stockées sur votre appareil, y compris les ressources personnalisées et importées.
 - [Mises à jour](../personal/maps-resources.md#updates). Vous permet d'actualiser les cartes mensuellement pour maintenir vos données à jour.
 
-#### Téléchargement de cartes
+#### Téléchargement de cartes {#downloading-maps}
 
 Pour télécharger un type de carte spécifique pour un pays ou une région :
 
@@ -121,22 +121,22 @@ Pour télécharger un type de carte spécifique pour un pays ou une région :
 
 Vous pouvez trouver des informations sur d'autres types de cartes dans la section [Téléchargements](../personal/maps-resources.md#downloads) de l'article **Cartes**.
 
-### Options de la carte du monde
+### Options de la carte du monde {#world-map-options}
 
 OsmAnd inclut deux options de carte du monde :
 
-1. **Mini carte du monde** (préinstallée). Une carte légère qui permet une navigation de base et donne un aperçu du monde.
+1. **Mini carte du monde** (préinstallée). Une carte légère qui permet une navigation de base et offre un aperçu du monde.
 2. **Carte du monde détaillée** (téléchargeable). Une carte mondiale présentant les grandes villes, les routes, les rivières et d'autres caractéristiques géographiques.
 
 ***Notes importantes :***
 
-- La **carte du monde détaillée ne remplace pas les cartes de pays ou de régions individuelles.** Elle est utile pour un aperçu mais ne contient pas le même niveau de détail que les cartes régionales.
-- Si vous avez besoin d'une navigation détaillée, **téléchargez manuellement les cartes de pays ou de régions spécifiques** via *Menu → Cartes et ressources → Télécharger des cartes.*
+- La **Carte du monde détaillée ne remplace pas les cartes individuelles de pays ou de régions.** Elle est utile pour un aperçu mais ne contient pas le même niveau de détail que les cartes régionales.
+- Si vous avez besoin d'une navigation détaillée, **téléchargez manuellement les cartes spécifiques de pays ou de régions** via *Menu → Cartes et ressources → Télécharger des cartes.*
 - Les utilisateurs avec **OsmAnd Pro ou Maps+** peuvent télécharger un **nombre illimité de cartes** mais doivent toujours télécharger chaque région séparément.
 - **Il n'y a pas d'option unique pour télécharger toutes les cartes du monde en une seule fois.**
 
 
-### Sélectionner sur la carte
+### Sélectionner sur la carte {#select-on-the-map}
 
 <Tabs groupId="operating-systems">
 
@@ -157,10 +157,10 @@ OsmAnd inclut deux options de carte du monde :
 Une façon de télécharger une carte est de dézoomer sur la carte du monde et d'appuyer brièvement pour sélectionner une région à télécharger. Cette zone sera surlignée en jaune, et un panneau apparaîtra en bas avec le nom de la région et une suggestion de la télécharger ou de sélectionner d'autres cartes.
 
 :::tip Couleur de la carte
-Sur le petit écran, la carte sélectionnée pour le téléchargement sera surlignée en jaune, les cartes déjà téléchargées seront surlignées en vert, et les cartes désactivées seront surlignées en orange. Les cartes **désactivées** sont ignorées pour accélérer le programme au cas où vous auriez beaucoup de cartes chargées.
+Sur le petit écran, la carte sélectionnée pour le téléchargement sera surlignée en jaune, les cartes qui ont déjà été téléchargées seront surlignées en vert, et les cartes désactivées seront surlignées en orange. Les cartes **désactivées** sont ignorées pour accélérer le programme si vous avez beaucoup de cartes chargées.
 :::
 
-### Recherche
+### Recherche {#search}
 
 <Tabs groupId="operating-systems">
 
@@ -186,4 +186,3 @@ La recherche facilite la recherche d'une carte ou d'une région spécifique, off
 - Sélectionnez les [types de cartes](../personal/maps-resources.md#map-types) : *Carte standard, Carte routière uniquement, Courbes de niveau, Wikipédia*.
 
 > *Cet article a été mis à jour pour la dernière fois en janvier 2025*
-

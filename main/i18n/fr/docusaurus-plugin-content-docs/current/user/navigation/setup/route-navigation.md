@@ -1,7 +1,7 @@
 ---
-source-hash: 8ef0efacc81d5d4c468ed3af855cf75ce6d8060193c4a288414433afaa285f84 
+source-hash: 48682f36414f5d40d14f481bfe9830e7436e998890e2b72e6c3205fdadba255d
 sidebar_position: 1
-title:  Préparation de l'itinéraire
+title:  Préparation d'itinéraire
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,9 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-## Aperçu
+## Aperçu {#overview}
 
-La fonction **Préparation de l'itinéraire** dans OsmAnd fournit des indications de navigation étape par étape pour différents [types d'itinéraires](./../routing/osmand-routing.md#routing-types), y compris la [conduite](./../routing/car-based-routing.md), la [marche](./../routing/pedestrian-routing.md), le cyclisme, l'[équitation](./../routing/horse-routing.md) et le [ski](./../routing/ski-routing.md). Les utilisateurs peuvent personnaliser les paramètres de navigation, ajouter des destinations et optimiser les itinéraires pour plus d'efficacité.
+La fonction **Préparation d'itinéraire** dans OsmAnd fournit des indications de navigation étape par étape pour différents [types d'itinéraires](./../routing/osmand-routing.md#routing-types), y compris la [conduite](./../routing/car-based-routing.md), la [marche](./../routing/pedestrian-routing.md), le cyclisme, l'[équitation](./../routing/horse-routing.md) et le [ski](./../routing/ski-routing.md). Les utilisateurs peuvent personnaliser les paramètres de navigation, ajouter des destinations et optimiser les itinéraires pour plus d'efficacité.
 
 :::tip
 
@@ -31,19 +31,19 @@ La fonction **Préparation de l'itinéraire** dans OsmAnd fournit des indication
 
 <TabItem value="android" label="Android">
 
-![Navigation screen Android 1](@site/static/img/navigation/route/navigation_by_route_andr_1.png) ![Navigation screen Android 3](@site/static/img/navigation/route/navigation_by_route_andr_3.png)
+![Écran de navigation Android 1](@site/static/img/navigation/route/navigation_by_route_andr_1.png) ![Écran de navigation Android 3](@site/static/img/navigation/route/navigation_by_route_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation screen iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png) ![Navigation screen iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3.png)
+![Écran de navigation iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png) ![Écran de navigation iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3.png)
 
 </TabItem>
 
 </Tabs>
 
-## Définir les destinations
+## Définir les destinations {#set-destinations}
 
 **Étape 1 : Télécharger les cartes.**
 
@@ -61,7 +61,7 @@ Avant d'utiliser la navigation hors ligne, assurez-vous que les [cartes requises
 
 **Étape 3 : Définir les destinations.**
 
-1. Ouvrez le [*menu de navigation*](#navigation-menu) :
+1. Ouvrez le [*menu Navigation*](#navigation-menu) :
 
     - Spécifiez le [point de destination](#set-target-point).
     - Attendez que l'itinéraire soit calculé. Après cela, vous pourrez obtenir des informations supplémentaires sur votre itinéraire dans la section *[Détails](./route-details.md#overview)*.
@@ -77,11 +77,11 @@ Avant d'utiliser la navigation hors ligne, assurez-vous que les [cartes requises
 
 :::note
 
-**L'itinéraire ne peut pas être construit lorsque la [*carte en ligne](../../map/raster-maps.md#select-raster-maps)* est sélectionnée comme source de carte.**
+**L'itinéraire ne peut pas être construit lorsque la [*carte en ligne*](../../map/raster-maps.md#select-raster-maps) est sélectionnée comme source de carte.**
 
 :::
 
-### Menu de navigation
+### Menu Navigation {#navigation-menu--}
 
 Il existe 3 façons d'accéder au menu de navigation :
 
@@ -93,13 +93,13 @@ Il existe 3 façons d'accéder au menu de navigation :
 
 <TabItem value="android" label="Android">
 
-![Navigation menu Android 1](@site/static/img/navigation/route/navigation_by_route_menu_andr_1.png)
+![Menu Navigation Android 1](@site/static/img/navigation/route/navigation_by_route_menu_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation menu iOS 1](@site/static/img/navigation/route/navigation_by_route_menu_ios_2.png)
+![Menu Navigation iOS 1](@site/static/img/navigation/route/navigation_by_route_menu_ios_2.png)
 
 </TabItem>
 
@@ -109,7 +109,7 @@ Il existe 3 façons d'accéder au menu de navigation :
 - **<Translate android="true" ids="add_destination_point"/>** - Utiliser pour [définir votre point de destination](#set-target-point).
 - **Ajouter** &nbsp;&#43; - Insérer des [points intermédiaires](../../widgets/nav-widgets.md#intermediate-destination) le long de l'itinéraire.
 - **Échanger** &nbsp;&#8595;&#8593; - Inverser les points de *Départ* et d'*Arrivée*.
-- **Bouton Son** - Couper le son des [invites vocales](../guidance/voice-navigation.md).
+- **Bouton Son** - Couper les [invites vocales](../guidance/voice-navigation.md).
 - **<Translate android="true" ids="shared_string_settings"/>** – [Ajuster](#settings) les préférences d'itinéraire et les restrictions routières.
 
 Définissez votre destination dans le *menu Navigation* en utilisant :
@@ -119,49 +119,49 @@ Définissez votre destination dans le *menu Navigation* en utilisant :
 - Le bouton **Annuler** ramène à l'écran principal.
 - Le [bouton Démarrer](#start--stop-navigation) démarre la navigation une fois le calcul de l'itinéraire terminé.
 
-### Sélectionner le point de départ
+### Sélectionner le point de départ {#select-starting-point}
 
-Quant au point de départ, vous pouvez choisir votre position actuelle, la position d'un [point Favori](../../map/point-layers-on-map.md#favorites), sélectionner un point sur la carte ou utiliser la [Recherche](../../search/index.md). Vous pouvez également définir un point de départ dans le [menu contextuel de la carte](../../map/map-context-menu.md) en sélectionnant la fonction [Directions depuis](../../map/map-context-menu.md#directions-to--from).
+Quant au point de départ, vous pouvez choisir votre position actuelle, la position d'un [point Favori](../../map/point-layers-on-map.md#favorites), sélectionner un point sur la carte, ou utiliser la [Recherche](../../search/index.md). Vous pouvez également définir un point de départ dans le [menu contextuel de la carte](../../map/map-context-menu.md) en sélectionnant la fonction [Directions depuis](../../map/map-context-menu.md#directions-to--from).
 
-### Définir le point cible
+### Définir le point cible {#set-target-point}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Navigation menu Android 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
+![Menu Navigation Android 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation menu iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
+![Menu Navigation iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
-La chose la plus importante pour commencer la navigation est de déterminer votre destination. Le point de destination peut être trouvé à l'aide d'une fonction de [*Recherche*](../../search/index.md#overview), ou simplement sur une carte. Vous pouvez également définir le point cible dans le [*menu Navigation*](#navigation-menu) :
+La chose la plus importante pour commencer la navigation est de déterminer votre destination. Le point de destination peut être trouvé en utilisant une fonction de [*Recherche*](../../search/index.md#overview), ou simplement sur une carte. Vous pouvez également définir le point cible dans le [*menu Navigation*](#navigation-menu) :
 
 - **<Translate android="true" ids="search_button"/>** - Ouvre [le menu de recherche](../../search/index.md).
 - **<Translate android="true" ids="shared_string_address"/>** - Ouvre [le menu de recherche d'adresse](../../search/search-address.md).
 - **<Translate android="true" ids="shared_string_select_on_map"/>** - Ouvre la carte pour choisir un point de destination en appuyant sur la carte.
 - **<Translate android="true" ids="shared_string_favorites"/>** - Permet d'utiliser un [Favori](../../personal/favorites.md) comme destination.
-- **<Translate android="true" ids="shared_string_markers"/>** - Permet de choisir l'un des [marqueurs de carte](../../personal/markers.md) comme point de destination.
-- **Échanger le point de départ et la destination** &nbsp;&#8595;&#8593; - Permet d'échanger les points de *Départ* et d'*Arrivée*.
+- **<Translate android="true" ids="shared_string_markers"/>** - Permet de choisir l'un des [Marqueurs de carte](../../personal/markers.md) comme point de destination.
+- **Échanger point de départ et destination** &nbsp;&#8595;&#8593; - Permet d'échanger les points de *Départ* et d'*Arrivée*.
 
-### Destinations intermédiaires
+### Destinations intermédiaires {#intermediate-destinations}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Navigation intermediate Android 1](@site/static/img/navigation/route/navigation_interpoints_1_andr.png) ![Navigation intermediate Android 2](@site/static/img/navigation/route/navigation_interpoints_2_andr.png)
+![Navigation intermédiaire Android 1](@site/static/img/navigation/route/navigation_interpoints_1_andr.png) ![Navigation intermédiaire Android 2](@site/static/img/navigation/route/navigation_interpoints_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation intermediate iOS 1](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_1.png) ![Navigation intermediate iOS 2](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_2.png)
+![Navigation intermédiaire iOS 1](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_1.png) ![Navigation intermédiaire iOS 2](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_2.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ La chose la plus importante pour commencer la navigation est de déterminer votr
 - **&nbsp;&#8592;** - revient à l'écran du menu Navigation.
 - **&nbsp;&#10005;** - permet de supprimer un point de destination de la liste des points.
 - **&nbsp;&#61;** - permet de modifier l'ordre des points dans la liste des points.
-- *&nbsp;&#43; Ajouter* - ouvre le menu contextuel *Ajouter un intermédiaire*.
+- *&nbsp;&#43; Ajouter* - ouvre le menu contextuel *Ajouter intermédiaire*.
 - *&nbsp;&#9776; Tout effacer* - permet d'effacer tous les points intermédiaires.
 
 Si vous choisissez **Trier** (*Android*) ou **Options** (*iOS*) dans la liste des destinations, vous accéderez à des options spéciales pour ajuster l'ordre de navigation vers les points intermédiaires.
@@ -180,13 +180,13 @@ Si vous choisissez **Trier** (*Android*) ou **Options** (*iOS*) dans la liste de
 
 <TabItem value="android" label="Android">
 
-![Navigation intermediate Android 3](@site/static/img/navigation/route/navigation_interpoints_android_3.png)
+![Navigation intermédiaire Android 3](@site/static/img/navigation/route/navigation_interpoints_android_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation intermediate iOS 2](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_3.png)
+![Navigation intermédiaire iOS 2](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_3.png)
 
 </TabItem>
 
@@ -194,7 +194,7 @@ Si vous choisissez **Trier** (*Android*) ou **Options** (*iOS*) dans la liste de
 
 Dans ce menu, vous trouverez des options supplémentaires pour gérer les points de destination :
 
-- **<Translate android="true" ids="intermediate_items_sort_by_distance"/>** - OsmAnd proposera l'itinéraire le plus court entre toutes vos destinations, cependant, l'ordre de la visite peut être modifié. Le point de départ et la destination finale ne seront pas modifiés.
+- **<Translate android="true" ids="intermediate_items_sort_by_distance"/>** - OsmAnd proposera l'itinéraire le plus court entre toutes vos destinations, cependant, l'ordre de visite peut être modifié. Le point de départ et la destination finale ne seront pas modifiés.
 
 - **<Translate android="true" ids="switch_start_finish"/>** - Le point de départ et la destination finale seront échangés.
 
@@ -204,19 +204,19 @@ Dans ce menu, vous trouverez des options supplémentaires pour gérer les points
 
 - **<Translate android="true" ids="clear_all_intermediates"/>**. Toutes les destinations intermédiaires seront supprimées de la carte.
 
-### Utiliser les points Domicile ou Travail
+### Utiliser les points Domicile ou Travail {#use-home-or-work-points}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Special favorites Android](@site/static/img/navigation/route/special_favorite_andr.png)
+![Favoris spéciaux Android](@site/static/img/navigation/route/special_favorite_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Special favorites iOS](@site/static/img/navigation/route/special_favorite_ios.png)
+![Favoris spéciaux iOS](@site/static/img/navigation/route/special_favorite_ios.png)
 
 </TabItem>
 
@@ -224,46 +224,46 @@ Dans ce menu, vous trouverez des options supplémentaires pour gérer les points
 
 Les onglets **Domicile** et **Travail** (ou [Points spéciaux](../../personal/favorites.md#special-favorites-personal) pour les Favoris) peuvent être utilisés pour définir rapidement des points de destination dans le menu de navigation. Si vous n'avez pas saisi les adresses des Favoris spéciaux, ces cellules resteront vides. Si vous appuyez sur ce champ, vous serez invité à créer ces POI.
 
-### Historique des itinéraires précédents
+### Historique des itinéraires précédents {#history-of-previous-routes}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Previous route Android](@site/static/img/navigation/route/previous_andr.png)
+![Itinéraire précédent Android](@site/static/img/navigation/route/previous_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Previous route  iOS](@site/static/img/navigation/route/previous_ios.png)
+![Itinéraire précédent iOS](@site/static/img/navigation/route/previous_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Si l'enregistrement de l'[Historique de navigation](../../personal/global-settings.md#history) est activé, vous pouvez utiliser les itinéraires ou destinations précédents de la liste de l'historique pour la navigation. Cette option peut être utile pour un accès rapide aux itinéraires fréquemment utilisés. Les éléments de la liste de l'historique sont triés par utilisation la plus récente, en commençant par le plus récent.
+Si l'enregistrement de l'[Historique de navigation](../../personal/global-settings.md#history) est activé, vous pouvez utiliser les itinéraires ou destinations précédents de la liste d'historique pour la navigation. Cette option peut être utile pour un accès rapide aux itinéraires fréquemment utilisés. Les éléments de la liste d'historique sont triés par utilisation la plus récente, en commençant par le plus récent.
 
 :::note
 
-- Lorsque l'[enregistrement des données de l'historique](../../personal/global-settings.md#history-options) est désactivé, vous ne serez pas invité à utiliser les itinéraires précédents pour la navigation.
-- Vous pouvez supprimer certains ou tous les enregistrements de l'historique concernant vos itinéraires précédents. Cela peut être fait dans l'onglet *[Historique de navigation](../../personal/global-settings.md#history-options)* de l'option Historique (*Menu → Paramètres → Paramètres OsmAnd → Historique*).
+- Lorsque l'[enregistrement des données d'historique](../../personal/global-settings.md#history-options) est désactivé, vous ne serez pas invité à utiliser les itinéraires précédents pour la navigation.
+- Vous pouvez supprimer certains ou tous les enregistrements d'historique concernant vos itinéraires précédents. Cela peut être fait dans l'onglet *[Historique de navigation](../../personal/global-settings.md#history-options)* de l'option Historique (*Menu → Paramètres → Paramètres OsmAnd → Historique*).
 
 :::
 
-## Démarrer / Arrêter la navigation
+## Démarrer / Arrêter la navigation {#start--stop-navigation}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Navigation screen start Android](@site/static/img/navigation/route/navigation_start_andr.png)
+![Écran de navigation démarrage Android](@site/static/img/navigation/route/navigation_start_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation screen iOS](@site/static/img/navigation/route/navigation_start_ios.png)
+![Écran de navigation iOS](@site/static/img/navigation/route/navigation_start_ios.png)
 
 </TabItem>
 
@@ -279,56 +279,56 @@ Une fois les points de départ et d'arrivée sélectionnés, l'application crée
 Des informations supplémentaires sur l'itinéraire créé, telles que l'altitude, les instructions virage par virage, l'outil d'analyse et autres, peuvent être trouvées dans la section [**Détails**](../setup/route-details.md).
 :::
 
-### Recalcul de l'itinéraire
+### Recalcul de l'itinéraire {#route-recalculation}
 
 L'itinéraire peut être recalculé automatiquement en cas de déviation. Vous pouvez modifier les paramètres du recalcul dans les [paramètres de navigation](../guidance/navigation-settings.md#recalculate-route). Vous pouvez également désactiver la notification de recalcul de l'itinéraire dans les paramètres des [invites vocales](../guidance/voice-navigation.md#voice-settings).
 
-### Mettre en pause / Reprendre la navigation
+### Mettre en pause / Reprendre la navigation {#pause--resume-navigation}
 
 <InfoAndroidOnly/>
 
 Si vous souhaitez vous arrêter pour une pause et vous écarter de l'itinéraire pendant une courte période, vous pouvez utiliser la fonction *Mettre en pause/Reprendre* la navigation pour mettre en pause les invites vocales et arrêter le recalcul de l'itinéraire.
-Cette option est disponible dans la version Android de l'application dans la [*liste de notifications](../guidance/voice-navigation.md#text-notifications)* ou dans le [*menu d'actions rapides](../../widgets/quick-action.md)*.
+Cette option est disponible dans la version Android de l'application dans la [*liste de notifications*](../guidance/voice-navigation.md#text-notifications) ou depuis le [*menu Actions rapides*](../../widgets/quick-action.md).
 
-![Notification screen Android](@site/static/img/navigation/route/navigation_pause_android.png)
+![Écran de notification Android](@site/static/img/navigation/route/navigation_pause_android.png)
 
 Pour reprendre la navigation :
 
 - Utilisez le message d'OsmAnd dans la barre de notification.
-- Utilisez le *menu d'actions rapides* ou la boîte de dialogue qui apparaît lorsque vous appuyez sur le [*bouton Navigation](../../widgets/map-buttons.md#directions)* (voir la capture d'écran).
+- Utilisez le *menu Actions rapides* ou la boîte de dialogue qui apparaît lorsque vous appuyez sur le [*bouton Navigation*](../../widgets/map-buttons.md#directions) (voir capture d'écran).
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Resume navigation Android](@site/static/img/navigation/route/navigation_menu_start_pause_andr_1.png)
+![Reprendre la navigation Android](@site/static/img/navigation/route/navigation_menu_start_pause_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Resume navigation ios](@site/static/img/navigation/route/navigation_menu_start_pause_ios_1.png)
+![Reprendre la navigation iOS](@site/static/img/navigation/route/navigation_menu_start_pause_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note
-Lorsque vous **appuyez sur le bouton Navigation** pendant votre itinéraire, la navigation **ne s'arrête pas et les invites vocales continuent d'être émises**, bien que les options proposées Reprendre ou Démarrer puissent être déroutantes.
+Lorsque vous **appuyez sur le bouton Navigation** pendant votre itinéraire, la navigation **ne s'arrête pas et les invites vocales continuent d'être diffusées**, bien que les options proposées Reprendre ou Démarrer puissent être confuses.
 :::
 
-### Conseils d'économie d'énergie
+### Conseils d'économie d'énergie {#power-saving-tips}
 
 La navigation utilise le GPS et le traitement en arrière-plan, ce qui peut épuiser la batterie. Pour optimiser l'utilisation de l'énergie :
 
 - **Éteignez l'écran** tout en vous fiant aux invites vocales.
-- Activez le [contrôle de l'écran](../guidance/voice-navigation.md#screen-control) (*Android uniquement*) dans *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>*.
+- Activez le [Contrôle de l'écran](../guidance/voice-navigation.md#screen-control) (*Android uniquement*) dans *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>*.
 
-## Paramètres
+## Paramètres {#settings}
 
-![Route preparation Android](@site/static/img/navigation/route/navigation_menu_settings_andr.png)
+![Préparation d'itinéraire Android](@site/static/img/navigation/route/navigation_menu_settings_andr.png)
 
-### Paramètres de navigation
+### Paramètres de navigation {#navigation-settings}
 
 Pour accéder aux paramètres de navigation, suivez l'une des étapes ci-dessous :
 
@@ -344,43 +344,43 @@ Il n'y a pas de paramètres de navigation dans le profil *Parcourir la carte*.
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
+![Paramètres de navigation Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles Navigation Settings iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
+![Paramètres de navigation des profils iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** détermine la manière dont les itinéraires sont calculés. Par exemple, votre profil de vélo a un type de navigation Cyclisme, qui définit les règles de routage. Vous pouvez importer ces règles (sous forme de fichier routing.xml) dans OsmAnd. Vous pouvez en savoir plus sur le routage sur notre page [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing).&nbsp;
+- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** détermine comment les itinéraires sont calculés. Par exemple, votre profil vélo a un type de navigation Cyclisme, qui définit les règles de routage. Vous pouvez importer ces règles (sous forme de fichier routing.xml) dans OsmAnd. Vous pouvez en savoir plus sur le routage sur notre page [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing).&nbsp;
 
 - &nbsp;**<Translate android="true" ids="route_parameters"/>** contrôle les paramètres qui seront utilisés pendant le routage (c'est le processus de sélection d'un itinéraire pour la navigation).
 
 Veuillez lire les paramètres d'itinéraire pour le type de navigation correspondant.
 
-Comment configurer le [type de routage](../routing/osmand-routing.md#routing-types) et les [paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters), vous pouvez lire dans l'[article sur les paramètres de navigation](../guidance/navigation-settings.md) ou dans les articles sur les types spécifiques de routage dans la section [Paramètres d'itinéraire](../routing/osmand-routing.md#routing-types).
+Comment configurer le [type de routage](../routing/osmand-routing.md#routing-types) et les [paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters), vous pouvez lire dans l'[article sur les paramètres de navigation](../guidance/navigation-settings.md) ou dans les articles sur les types spécifiques de routage dans la [section Paramètres d'itinéraire](../routing/osmand-routing.md#routing-types).
 
-### Navigation simulée
+### Navigation simulée {#simulated-navigation}
 
 L'outil **Navigation simulée** vous permet de prévisualiser un itinéraire avant de voyager. Cela aide à la planification, à la familiarisation et au test du système de navigation d'OsmAnd.
 
-#### Démarrer / Arrêter la simulation
+#### Démarrer / Arrêter la simulation {#start--stop-simulation}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_andr_1.png)
+![Simuler la navigation Android](@site/static/img/navigation/route/simulate_navigation_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_1.png)
+![Simuler la navigation iOS](@site/static/img/navigation/route/simulate_navigation_ios_1.png)
 
 </TabItem>
 
@@ -389,27 +389,27 @@ L'outil **Navigation simulée** vous permet de prévisualiser un itinéraire ava
 Lorsqu'un itinéraire de navigation est construit, vous pouvez commencer à simuler la navigation en utilisant l'option **<Translate android="true" ids="simulate_navigation"/>**.
 
 - Dans le [menu Navigation](#navigation-menu), allez dans *<Translate android="true" ids="shared_string_settings,simulate_navigation"/>*.
-- Basculez l'interrupteur pour activer l'option.
+- Activez l'interrupteur pour activer l'option.
 - Appuyez sur le bouton [Démarrer](#start--stop-navigation) la navigation pour commencer la simulation.
 - Pour [arrêter](#start--stop-navigation) la simulation de navigation, appuyez sur **Arrêter** (*Android*) ou **Annuler** (*iOS*).
 
-#### Mode vitesse
+#### Mode Vitesse {#speed-mode}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Allez dans : *Android* *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/> →* &#x2699
+Allez dans : *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/> →* &#x2699
 
-![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_andr_2.png)
+![Simuler la navigation Android](@site/static/img/navigation/route/simulate_navigation_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Allez dans : *iOS* *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/> →* &#x2699
+Allez dans : *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/> →* &#x2699
 
-![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
+![Simuler la navigation iOS](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
 
 </TabItem>
 
@@ -423,7 +423,7 @@ Allez dans : *iOS* *<Translate android="true" ids="shared_string_navigation,shar
     - **Aux intersections**, le simulateur réduira la vitesse.
     - Des **pénalités supplémentaires** seront appliquées aux feux de circulation, aux panneaux stop et à d'autres obstacles similaires.
 
-## Cartes manquantes ou non synchronisées
+## Cartes manquantes ou non synchronisées {#maps-missing-or-not-synchronized}
 
 Pour construire un itinéraire, toutes les **cartes nécessaires** doivent être téléchargées et avoir la même date de publication. Veuillez noter que dans certaines situations, le message de cartes manquantes peut être masqué dans le menu de préparation de l'itinéraire. Si vous faites glisser le menu de navigation vers le haut, vous verrez les raisons possibles pour lesquelles votre itinéraire n'a pas pu être calculé.
 
@@ -431,18 +431,18 @@ Pour construire un itinéraire, toutes les **cartes nécessaires** doivent être
 
 <TabItem value="android" label="Android">
 
-![Message no maps when building navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)
+![Message pas de cartes lors de la construction de la navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Message no maps when building navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
+![Message pas de cartes lors de la construction de la navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
 </TabItem>
 
 </Tabs>
 
-#### Cartes requises
+#### Cartes requises {#required-maps}
 
 Dans la boîte de dialogue des cartes requises, vous verrez des suggestions de cartes à télécharger ou à mettre à jour. La liste des cartes utilisées peut ne pas être précise car elle calcule un itinéraire très basique. Pour obtenir la liste précise des cartes, vous pouvez cliquer sur **Calculer en ligne**. Si vous sélectionnez **Utiliser les cartes téléchargées**, le calcul de l'itinéraire essaiera d'utiliser les cartes déjà téléchargées et ignorera le message d'avertissement.
 
@@ -450,19 +450,19 @@ Dans la boîte de dialogue des cartes requises, vous verrez des suggestions de c
 
 <TabItem value="android" label="Android">
 
-![Message no maps when building navigation Android](@site/static/img/navigation/route/navigation_by_route_no_maps_1.png)
+![Message pas de cartes lors de la construction de la navigation Android](@site/static/img/navigation/route/navigation_by_route_no_maps_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Message no maps when building navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_2_ios.png)
+![Message pas de cartes lors de la construction de la navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-## Problèmes courants et solutions
+## Problèmes courants et solutions {#common-issues-and-solutions}
 
 1. [Les causes possibles du calcul lent de l'itinéraire.](../../troubleshooting/navigation.md#route-calculation-is-slow)
 2. [Que faire si la longueur de l'itinéraire dépasse 250 kilomètres.](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km)
@@ -471,7 +471,7 @@ Dans la boîte de dialogue des cartes requises, vous verrez des suggestions de c
 
 Pour plus d'étapes de dépannage, consultez les [problèmes de navigation](../../troubleshooting/navigation.md).
 
-## Articles connexes
+## Articles connexes {#related-articles}
 
 - [Paramètres d'itinéraire](../routing/osmand-routing.md#routing-types)
 - [Détails de l'itinéraire](./route-details.md)
@@ -484,4 +484,3 @@ Pour plus d'étapes de dépannage, consultez les [problèmes de navigation](../.
 - [CarPlay](../car-play.md)
 
 > *Cet article a été mis à jour pour la dernière fois en février 2025*
-

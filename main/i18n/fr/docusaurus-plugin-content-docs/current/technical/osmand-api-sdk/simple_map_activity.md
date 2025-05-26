@@ -1,11 +1,11 @@
 ---
-source-hash: 247239c9a0199d09c7c1e3c126852d58b701aa5d264188aa982166f1a1c7013a 
+source-hash: 683139f34f2c9018f279c2010db07021cec88c72552d8a82f8c7f093f2e42f89
 sidebar_position: 2
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Activité de carte simple
-Il n'y a que la carte et un interrupteur pour le rendu OpenGL
+# Activité de carte simple {#simple-map-activity}
+Il n'y a que la carte et un interrupteur pour le rendu opengl
 
   ```
 public class SimpleMapActivity extends AppCompatActivity {
@@ -73,4 +73,3 @@ public class SimpleMapActivity extends AppCompatActivity {
 	}
 }
 ```
-

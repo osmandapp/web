@@ -1,9 +1,9 @@
 ---
-source-hash: 405d07fea97ea92e332791638395503ecfcc4dddd239bdf0172961dbc56b45aa 
+source-hash: 4bc73f353afe9f44fb120adbea53b7d3a4a2a1691b381665e9a3faa06545e719
 sidebar_position: 1
 ---
 
-# Ajouter une carte
+# Ajouter une carte {#add-a-map}
 Ouvrez l'activité à laquelle vous souhaitez ajouter une vue cartographique et utilisez le code ci-dessous.
 
 ```
@@ -63,4 +63,3 @@ MapViewWithLayers contient ses propres méthodes de cycle de vie. Pour que votre
 		mapViewWithLayers.onDestroy();
 	}
 ```
-

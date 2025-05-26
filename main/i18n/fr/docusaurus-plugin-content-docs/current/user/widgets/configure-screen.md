@@ -1,5 +1,5 @@
 ---
-source-hash: 159bad4464e7d9152eaa66e894011054f73ebdc003564eb80e99d725d24fd269 
+source-hash: 5884b152288325062fb3737678d597a4164a5d6db0148bdeab8ea898ba51c637
 sidebar_position: 1
 title: Configurer l'écran
 ---
@@ -16,9 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Aperçu
+## Aperçu {#overview--}
 
-L'écran de configuration est un menu qui vous permet de personnaliser les widgets à afficher sur la carte. Sur cet écran, vous pouvez activer les widgets [d'information](../widgets/info-widgets.md) et de [navigation](../widgets/nav-widgets.md), les [boutons](../widgets/map-buttons.md), une [règle](../widgets/radius-ruler.md) et ajouter des [actions rapides](../widgets/quick-action.md).
+L'écran de configuration est un menu qui vous permet de personnaliser les widgets à afficher sur la carte. Sur cet écran, vous pouvez activer les [widgets d'information](../widgets/info-widgets.md) et de [navigation](../widgets/nav-widgets.md), les [boutons](../widgets/map-buttons.md), une [règle](../widgets/radius-ruler.md) et ajouter des [actions rapides](../widgets/quick-action.md).
 
 Tous les widgets sont [dépendants du profil](../personal/profiles.md), de sorte que les modifications apportées à un profil, telles que l'ordre, la visibilité ou l'état, ne seront pas appliquées aux autres. Chaque profil possède sa liste prédéfinie de widgets basée sur la conception de l'écran de navigation. Il peut être configuré et utilisé avec ou sans navigation.
 
@@ -26,7 +26,7 @@ Tous les widgets sont [dépendants du profil](../personal/profiles.md), de sorte
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 ![Menu de l'écran de configuration](@site/static/img/widgets/configure_screen_overview_1-1_andr.png) ![Menu de l'écran de configuration](@site/static/img/widgets/configure_screen_overview_3_andr.png)
 
@@ -34,7 +34,7 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widg
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 ![Menu de l'écran de configuration](@site/static/img/widgets/configure_screen_overview_ios_1.png) ![Menu de l'écran de configuration](@site/static/img/widgets/configure_screen_overview_ios_2.png)
 
@@ -43,13 +43,13 @@ Aller à : *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_c
 </Tabs>
 
 
-## Panneaux de widgets
+## Panneaux de widgets {#widget-panels}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*
 
 ![Écran de configuration](@site/static/img/widgets/configure_screen_andr.png)
 
@@ -57,7 +57,7 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widg
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*
 
 ![Écran de configuration](@site/static/img/widgets/configure_screen_ios.png)
 
@@ -69,7 +69,7 @@ OsmAnd vous permet d'organiser vos widgets en les regroupant, en les copiant et 
 
 Pour organiser les widgets sur l'écran de l'application, utilisez des panneaux. Les panneaux vous permettent de placer des widgets à des emplacements spécifiques, soit en lignes en haut ou en bas, soit sur le côté gauche ou droit de l'écran. Cela vous aide à créer une disposition qui correspond à vos besoins et préférences.
 
-### Widgets pour tous les panneaux
+### Widgets pour tous les panneaux {#widgets-for-all-panels--}
 
 <Tabs groupId="operating-systems">
 
@@ -93,7 +93,7 @@ Pour organiser les widgets sur l'écran de l'application, utilisez des panneaux.
 2. [Point de navigation](../widgets/nav-widgets.md#navigation-points). Un ensemble de *widgets de navigation* affiche la distance restante jusqu'à une destination, un point intermédiaire, l'heure d'arrivée à un point intermédiaire ou le temps de trajet pour un itinéraire calculé.
     4 widgets sont inclus : [Distance jusqu'à la destination](../widgets/nav-widgets.md#distance-to-destination), [Distance jusqu'à l'intermédiaire](../widgets/nav-widgets.md#distance-to-intermediate), [Temps jusqu'à l'intermédiaire](../widgets/nav-widgets.md#time-to-intermediate), [Temps jusqu'à la destination](../widgets/nav-widgets.md#time-to-destination).
 
-3. [Marqueurs de carte](../widgets/markers.md). Un ensemble de widgets affiche la distance ou l'heure d'arrivée estimée (ETA) pour les deux premiers marqueurs de la liste des marqueurs de carte. Affiche les points spéciaux marqués comme drapeaux sur la carte. 2 widgets sont inclus : *Premier marqueur*, *Deuxième marqueur*.
+3. [Marqueurs de carte](../widgets/markers.md). Un ensemble de widgets affiche la distance ou l'heure d'arrivée estimée (ETA) pour les deux premiers marqueurs de la liste des marqueurs de carte. Affiche les points spéciaux marqués comme des drapeaux sur la carte. 2 widgets sont inclus : *Premier marqueur*, *Deuxième marqueur*.
 
 4. [Cap](../widgets/nav-widgets.md#bearing). Cet ensemble de widgets *de navigation* affiche le cap absolu ou relatif vers une cible en unités angulaires (en mode 180 degrés, 360 degrés ou milliradians).
     3 widgets sont inclus : *Cap relatif*, *Cap magnétique*, *Cap vrai*.
@@ -123,33 +123,33 @@ Pour organiser les widgets sur l'écran de l'application, utilisez des panneaux.
 
 15. [Infos GPS (*Android uniquement*)](../widgets/info-widgets.md#gps-info). Un widget *d'information* affiche le nombre de satellites que l'appareil détecte et utilise actuellement.
 
-16. [Widgets développeur (à partir du *plugin de développement OsmAnd*)](../widgets/info-widgets.md#developer-widgets). Un ensemble de widgets *d'information* fournit des informations sur le niveau de zoom, la vitesse de rendu de la carte, l'altitude du centre de la carte au-dessus du niveau de la mer, la distance jusqu'au centre de la carte, la hauteur et l'inclinaison de la caméra et la RAM disponible sur votre appareil.
-    5 widgets sont inclus : *FPS de rendu de carte*, *Inclinaison de la caméra*, *Altitude de la caméra*, *Niveau de zoom*, *Distance de la caméra à la cible*, *RAM disponible*.
+16. [Widgets développeur (du *plugin de développement OsmAnd*)](../widgets/info-widgets.md#developer-widgets). Un ensemble de widgets *d'information* fournit des informations sur le niveau de zoom, la vitesse de rendu de la carte, l'altitude du centre de la carte au-dessus du niveau de la mer, la distance jusqu'au centre de la carte, la hauteur et l'inclinaison de la caméra et la RAM disponible sur votre appareil.
+    5 widgets sont inclus : *FPS de rendu de la carte*, *Inclinaison de la caméra*, *Altitude de la caméra*, *Niveau de zoom*, *Distance de la caméra à la cible*, *RAM disponible*.
 
-17. [Mapillary (à partir du *plugin Mapillary*)](../widgets/info-widgets.md#mapillary-widget). Un widget *d'information* fournit un accès rapide à l'application Mapillary pour ajouter des images de rue.
+17. [Mapillary (du *plugin Mapillary*)](../widgets/info-widgets.md#mapillary-widget). Un widget *d'information* permet d'accéder rapidement à l'application Mapillary pour ajouter des images de rue.
 
-18. [Parking (à partir du *plugin Position de stationnement*)](../widgets/info-widgets.md#parking-widget). Un widget *d'information* affiche la distance entre le centre de l'écran et l'emplacement de stationnement.
+18. [Parking (du *plugin Position de stationnement*)](../widgets/info-widgets.md#parking-widget). Un widget *d'information* affiche la distance entre le centre de l'écran et l'emplacement de stationnement.
 
-19. [Météo (à partir du *plugin Météo*)](../widgets/info-widgets.md#weather-widgets). Un ensemble de widgets *d'information* affiche des données météorologiques détaillées.
+19. [Météo (du *plugin Météo*)](../widgets/info-widgets.md#weather-widgets). Un ensemble de widgets *d'information* affiche des données météorologiques détaillées.
     5 widgets sont inclus : *Température*, *Pression atmosphérique*, *Vent*, *Nuages*, *Précipitations*.
-20. [Enregistrement de trajet (à partir du *plugin Enregistrement de trajet*)](../widgets/info-widgets.md#trip-recording-widgets). Un ensemble de widgets *d'information* fournit un accès rapide pour démarrer et arrêter l'enregistrement de la trace.
+20. [Enregistrement de trajet (du *plugin Enregistrement de trajet*)](../widgets/info-widgets.md#trip-recording-widgets). Un ensemble de widgets *d'information* permet d'accéder rapidement au démarrage et à l'arrêt de l'enregistrement de la trace.
     4 widgets sont inclus : *Distance*, *Durée*, *Montée*, *Descente*.
 
-21. [Notes audio/vidéo (à partir du *plugin Notes audio/vidéo*)](../widgets/info-widgets.md#audiovideo-notes-widget). Cet ensemble de widgets *d'information* fournit un accès rapide pour démarrer/arrêter la prise de notes audio, vidéo ou photo.
+21. [Notes audio/vidéo (du *plugin Notes audio/vidéo*)](../widgets/info-widgets.md#audiovideo-notes-widget). Cet ensemble de widgets *d'information* permet d'accéder rapidement au démarrage/arrêt de la prise de notes audio, vidéo ou photo.
     4 widgets sont inclus : *Sur demande*, *Enregistrer l'audio*, *Enregistrer la vidéo*, *Prendre une photo*.
 
-22. [Widgets capteurs externes (à partir du *plugin Capteurs externes*)](../widgets/info-widgets.md#external-sensors-widgets). Un ensemble de widgets *d'information* vous aide à suivre les données de vos capteurs externes en temps réel.
+22. [Widgets capteurs externes (du *plugin Capteurs externes*)](../widgets/info-widgets.md#external-sensors-widgets). Un ensemble de widgets *d'information* vous aide à suivre les données de vos capteurs externes en temps réel.
     6 widgets sont inclus : *Fréquence cardiaque*, *Puissance vélo* (*Android uniquement*), *Cadence vélo*, *Vitesse vélo*, *Distance vélo*, *Température*.
 23. [Compteur de vitesse](../widgets/info-widgets.md#speedometer). Affiche la vitesse actuelle basée sur les données GPS et la vitesse limitée basée sur les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
 
-## Panneaux supérieur et inférieur
+## Panneaux supérieur et inférieur {#top-and-bottom-panels}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Panneau supérieur / inférieur*
+Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Panneau supérieur / inférieur*
 
 ![panneau supérieur](@site/static/img/widgets/top_bottom_panel_1_andr.png)
 
@@ -157,7 +157,7 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widg
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Panneau supérieur / inférieur*
+Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Panneau supérieur / inférieur*
 
 ![panneau supérieur](@site/static/img/widgets/top_bottom_panel_1_ios.png)
 
@@ -176,7 +176,7 @@ Les **panneaux supérieur et inférieur** vous permettent d'organiser les widget
 
 3. [Nom de rue](../widgets/nav-widgets#street-name). Un widget *de navigation* affiche le nom de la rue actuelle avec une flèche droite ou le nom de la rue suivante avec une flèche pointant vers un virage à venir.
 
-4. [Voies](../widgets/nav-widgets#lanes). Le widget *de navigation* affiche la disposition actuelle des voies routières et met en évidence les voies pour le trafic avec navigation active.
+4. [Voies](../widgets/nav-widgets#lanes). Le widget *de navigation* affiche la disposition actuelle des voies routières et met en évidence les voies pour la circulation avec la navigation active.
 
 5. [Barre de marqueurs de carte](../widgets/markers.md#configure-marker-widgets-android). Le widget affiche la distance et la direction jusqu'au prochain marqueur de carte à partir de votre position actuelle.
     Le widget peut être configuré pour afficher 1 ou 2 marqueurs.
@@ -185,21 +185,21 @@ Les **panneaux supérieur et inférieur** vous permettent d'organiser les widget
       ![profil d'élévation](@site/static/img/widgets/elevation_prof_and.png)
 
 
-### Lignes
+### Lignes {#rows}
 
 ![Menu de l'écran de configuration](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png) ![Menu de l'écran de configuration](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
 
-La fonctionnalité **Mode ligne** vous permet d'ajouter autant de lignes que nécessaire aux panneaux supérieur et inférieur. Vous pouvez afficher plusieurs widgets par ligne, ce qui augmente la quantité d'informations visibles.
+La fonction **Mode ligne** vous permet d'ajouter autant de lignes que nécessaire aux panneaux supérieur et inférieur. Vous pouvez afficher plusieurs widgets par ligne, ce qui augmente la quantité d'informations visibles.
 
 ***Comment configurer les lignes :***
 
 - **Ajouter des widgets**. Sélectionnez dans la liste des *Widgets disponibles*.
-- **Changer l'ordre.** Appuyez sur le bouton *Changer l'ordre* pour organiser les widgets.
-- **Ajouter des lignes.** Utilisez le bouton *Ajouter une ligne* pour créer de nouvelles lignes pour les widgets.
+- **Modifier l'ordre**. Appuyez sur le bouton *Modifier l'ordre* pour organiser les widgets.
+- **Ajouter des lignes**. Utilisez le bouton *Ajouter une ligne* pour créer de nouvelles lignes pour les widgets.
 - **Déplacer des widgets**. Déplacez les widgets entre les lignes.
-- **Appliquer les modifications.** Appuyez sur le bouton *Appliquer* pour enregistrer la configuration.
+- **Appliquer les modifications**. Appuyez sur le bouton *Appliquer* pour enregistrer la configuration.
 
-#### Types de widgets et restrictions
+#### Types et restrictions de widgets {#widget-types-and-restrictions}
 
 Le mode vous permet d'ajouter **plus d'un widget dans une seule ligne** sur les panneaux supérieur et inférieur pour afficher autant d'informations que nécessaire.
 
@@ -214,13 +214,13 @@ Le mode vous permet d'ajouter **plus d'un widget dans une seule ligne** sur les 
 - **Widgets simples**. Plusieurs widgets simples peuvent être ajoutés à une seule ligne. Ces widgets peuvent afficher *Nom*, *Unités de mesure*, *Valeur* et *Icône*.
 
 
-## Panneaux gauche et droit
+## Panneaux gauche et droit {#left-and-right-panels}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Panneau gauche / droit*
+Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Panneau gauche / droit*
 
 ![Écran de configuration](@site/static/img/widgets/configure_screen_left_right_andr.png) ![Écran de configuration](@site/static/img/widgets/configure_screen_left_right_2_andr.png)
 
@@ -228,7 +228,7 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widg
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Panneau gauche / droit*
+Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Panneau gauche / droit*
 
 ![Écran de configuration](@site/static/img/widgets/configure_screen_left_right_ios.png)
 
@@ -238,13 +238,13 @@ Aller à : *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_c
 
 L'application OsmAnd vous permet de placer des [widgets pour tous les panneaux](#widgets-for-all-panels) dans les panneaux gauche et droit et de les regrouper par [Pages](#pages). La [personnalisation du redimensionnement](#widget-settings) des widgets est disponible pour les widgets latéraux, de la même manière que pour les widgets des panneaux supérieur et inférieur.
 
-### Pages
+### Pages {#pages}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Modifier → Ajouter une page*
+Aller à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Modifier → Ajouter une page*
 
 ![Page de widget](@site/static/img/widgets/widget_page_1_andr.png) ![Page de widget](@site/static/img/widgets/widget_page_2_andr.png)
 
@@ -252,7 +252,7 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_ma
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Modifier → Ajouter une page*
+Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Modifier → Ajouter une page*
 
 ![Page de widget](@site/static/img/widgets/widget_page_1_ios.png) ![Page de widget](@site/static/img/widgets/widget_page_2_ios.png)
 
@@ -260,16 +260,16 @@ Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appear
 
 </Tabs>
 
-Les widgets des panneaux droit et gauche peuvent être regroupés en **Pages**. La fonctionnalité **Mode pages** vous permet d'ajouter 5 pages aux panneaux gauche et droit.
+Les widgets des panneaux droit et gauche peuvent être regroupés en **Pages**. La fonction **Mode pages** vous permet d'ajouter 5 pages aux panneaux gauche et droit.
 
 ***Comment configurer les lignes :***
 
 - **Ajouter une page**. Naviguez vers les paramètres du panneau gauche/droit et appuyez sur *Modifier → Ajouter une page*.
-- **Organiser les widgets par page**. Cette fonctionnalité est utile lorsque différents ensembles de widgets sont nécessaires pour différentes tâches, comme la navigation par rapport à la navigation sur la carte.
+- **Organiser les widgets par page**. Cette fonction est utile lorsque différents ensembles de widgets sont nécessaires pour différentes tâches, comme la navigation par rapport à la navigation sur la carte.
 - Les pages vous permettent de créer des **ensembles de widgets** pour des scénarios spécifiques, améliorant le flux de travail et réduisant l'encombrement.
 
 
-## Paramètres des widgets
+## Paramètres des widgets {#widget-settings}
 
 ![Menu de l'écran de configuration](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png) ![Menu de l'écran de configuration](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
@@ -280,7 +280,7 @@ Les widgets des panneaux droit et gauche peuvent être regroupés en **Pages**. 
     - **Moyen** (*taille de widget par défaut*). Équilibre la visibilité et l'utilisation de l'espace.
     - **Grand**. Fournit des informations de widget plus grandes et plus visibles.
 
-2. **Masquer les icônes des widgets** (*pour les panneaux supérieur et inférieur*) :
+2. **Masquer les icônes de widget** (*pour les panneaux supérieur et inférieur*) :
 
     - Améliore la clarté et maximise l'espace pour les données importantes.
     - Particulièrement utile lors de l'affichage de nombreux widgets sur la même **ligne**.
@@ -288,19 +288,19 @@ Les widgets des panneaux droit et gauche peuvent être regroupés en **Pages**. 
 3. **Taille individuelle pour différentes lignes** (*pour les panneaux supérieur et inférieur*) :
 
     - Les widgets peuvent être dimensionnés individuellement en ajustant la taille de la ligne.
-    - **NOTE :** Changer la taille d'un widget dans une ligne redimensionnera tous les widgets de cette ligne.
+    - **NOTE :** La modification de la taille d'un widget dans une ligne redimensionnera tous les widgets de cette ligne.
 
-4. **Pour changer la taille du widget et la visibilité de l'icône :**
+4. **Pour modifier la taille du widget et la visibilité de l'icône :**
 
     - Sélectionnez un widget que vous avez déjà ajouté au panneau.
     - Appuyez sur l'icône *Paramètres* sur le côté droit du champ du widget.
     - Appuyez sur le paramètre *Taille* et sélectionnez l'une des tailles disponibles.
-    - Basculez sur la position Off, dans le champ *Afficher l'icône*.
+    - Basculez en position Off, dans le champ *Afficher l'icône*.
 
 
-## Personnalisation des panneaux
+## Personnalisation des panneaux {#panels-customization}
 
-### Menu contextuel des widgets
+### Menu contextuel des widgets {#widget-context-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -347,13 +347,13 @@ Le **menu contextuel des widgets** offre un moyen rapide de gérer et de configu
     - Supprimez le widget du panneau.
     - Une invite de confirmation garantit que l'action est intentionnelle.
 
-### Copies de widgets
+### Copies de widgets {#copies-of-widgets}
 
 *Menu OsmAnd → Configurer l'écran → Widgets → Panneau*
 
 ![Duplication de widget](@site/static/img/widgets/widget_dublicate.png)
 
-OsmAnd vous permet d'ajouter plusieurs instances du même widget à différents panneaux ou pages. Cette fonctionnalité est particulièrement utile lorsque vous avez besoin d'informations cohérentes sur différentes vues ou profils.
+OsmAnd vous permet d'ajouter plusieurs instances du même widget à différents panneaux ou pages. Cette fonction est particulièrement utile lorsque vous avez besoin d'informations cohérentes sur différentes vues ou profils.
 
 ***Comment dupliquer des widgets :***
 
@@ -362,7 +362,7 @@ OsmAnd vous permet d'ajouter plusieurs instances du même widget à différents 
 - **Méthode alternative**. Sélectionnez le même widget dans la liste des *Widgets disponibles* et appuyez sur *Ajouter*.
 
 
-### Déplacer ou supprimer
+### Déplacer ou supprimer {#move-or-delete}
 
 *Menu OsmAnd → Configurer l'écran → Widgets → Panneau*
 
@@ -372,7 +372,7 @@ Vous pouvez réorganiser ou supprimer des widgets de l'écran de l'application �
 
 ***Comment déplacer un widget :***
 
-- Allez à : *Menu OsmAnd → Configurer l'écran → Widgets → Panneau → Bouton Modifier*.
+- Aller à : *Menu OsmAnd → Configurer l'écran → Widgets → Panneau → Bouton Modifier*.
 - Appuyez longuement sur l'**icône à droite** du widget.
 - Faites-le glisser vers la position requise dans la liste des widgets.
 
@@ -383,15 +383,15 @@ Vous pouvez réorganiser ou supprimer des widgets de l'écran de l'application �
 - Confirmez la suppression lorsque vous y êtes invité.
 
 
-## Boutons
+## Boutons {#buttons}
 
-### Boutons personnalisés
+### Boutons personnalisés {#custom-buttons}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Page de widget](@site/static/img/widgets/conf_screen_buttons_andr.png)
 
@@ -399,7 +399,7 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_ma
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Page de widget](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
 
@@ -409,13 +409,13 @@ Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appear
 
 **Action rapide (boutons personnalisés)** vous permet d'ajouter une liste d'actions uniques parmi toutes les [Actions rapides](../widgets/quick-action.md#custom-buttons) disponibles. Ces actions peuvent être attribuées à un ou plusieurs boutons de widget sur l'écran de la carte. Les boutons personnalisés offrent un accès rapide aux actions fréquemment utilisées.
 
-### Boutons par défaut
+### Boutons par défaut {#default-buttons}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Page de widget](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
 
@@ -423,7 +423,7 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_ma
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
 ![Page de widget](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
 
@@ -446,41 +446,41 @@ Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appear
 
     - [Navigation](../widgets/map-buttons.md#directions). Essentiel pour la planification d'itinéraire et le démarrage de la navigation.
 
-    - [Recherche](../widgets/map-buttons.md#search). Ouvre l'outil de recherche pour trouver des lieux.
+    - [Recherche](../widgets/map-buttons.md#search). Ouvre l'outil de recherche pour trouver des emplacements.
 
     - [Zoom avant / arrière](../widgets/map-buttons.md#my-location-and-zoom). Ajuste le niveau de zoom de la carte pour afficher plus ou moins de détails.
 
 2. Le **menu à trois points** sur l'écran des boutons par défaut contient des actions telles que :
 
-    - *Réinitialiser aux valeurs par défaut*. Vous permet de rétablir les paramètres des boutons à leur apparence d'origine.
-    - *Copier depuis un autre profil*. Sélectionnez dans quelle liste de profils proposés vous souhaitez copier les paramètres des boutons.
+    - *Réinitialiser par défaut*. Vous permet de rétablir les paramètres des boutons à leur apparence d'origine.
+    - *Copier depuis un autre profil*. Sélectionnez dans quel profil de la liste proposée vous souhaitez copier les paramètres des boutons.
 
 3. L'**apparence des boutons par défaut** (*Android uniquement*) offre une variété d'options de personnalisation pour ce type de boutons. Pour modifier l'apparence d'un bouton, appuyez sur le bouton requis dans la liste et sélectionnez l'option [Apparence](#button-appearance).
 
 
-### Apparence des boutons
+### Apparence des boutons {#button-appearance}
 
 <InfoAndroidOnly/>
 
 ![Apparence des boutons](@site/static/img/widgets/button_appearance_settings_andr.png)
 
-La fonctionnalité *Apparence des boutons* vous permet de personnaliser entièrement l'apparence des boutons sur votre interface cartographique. Ces options de personnalisation sont disponibles pour les *Actions rapides (boutons personnalisés)* et les *Boutons par défaut*, offrant un contrôle complet sur l'apparence de l'interface cartographique et permettant des ajustements précis de la conception des boutons.
+La fonction *Apparence des boutons* vous permet de personnaliser entièrement l'apparence des boutons sur votre interface cartographique. Ces options de personnalisation sont disponibles pour les *Actions rapides (boutons personnalisés)* et les *Boutons par défaut*, offrant un contrôle complet sur l'apparence de l'interface cartographique et permettant des ajustements précis de la conception des boutons.
 
 ***Options de personnalisation*** :
 
 - **Icône**. Sélectionnez dans une liste d'icônes qui représentent les actions que vous avez déjà ajoutées, ce qui facilite l'identification des fonctions en un coup d'œil.
-- **Rayon des coins**. Ajustez ce paramètre pour modifier la forme du bouton, allant des coins vifs et carrés aux bords lisses et arrondis.
-- **Taille**. Choisissez la taille du bouton qui convient le mieux à votre écran et qui se démarque au besoin. Pour les *Boutons par défaut*, les tailles sont prédéfinies et ne peuvent pas être ajustées.
+- **Rayon des coins**. Ajustez ce paramètre pour modifier la forme du bouton, allant des coins carrés et nets aux bords lisses et arrondis.
+- **Taille**. Choisissez la taille du bouton qui convient le mieux à votre écran et qui se démarque si nécessaire. Pour les *Boutons par défaut*, les tailles sont prédéfinies et ne peuvent pas être ajustées.
 - **Opacité de l'arrière-plan**. Contrôlez la visibilité de l'arrière-plan du bouton. Vous pouvez le définir comme entièrement visible ou partiellement transparent, ou afficher uniquement l'ombre du cadre et l'icône.
 
 
-## Autres
+## Autres {#other}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
 
 ![Page de widget](@site/static/img/widgets/conf_screen_other_andr.png)
 
@@ -488,7 +488,7 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_ma
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Autres*
+Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Autres*
 
 ![Page de widget](@site/static/img/widgets/conf_screen_other_ios.png)
 
@@ -501,7 +501,7 @@ Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appear
 - [Compteur de vitesse](../widgets/info-widgets.md#speedometer). Affiche la vitesse actuelle basée sur les données GPS et la vitesse limitée basée sur les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). Les données affichées dépendent également du paramètre [Tolérance de limite de vitesse](../navigation/guidance/voice-navigation.md#speed-limit) d'OsmAnd.
 
 
-### Position d'affichage (Position de la position à l'écran)
+### Afficher la position (Position de la position à l'écran) {#display-position-location-position-on-screen}
 
 <Tabs groupId="operating-systems">
 
@@ -524,17 +524,17 @@ Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appear
 Vous permet de définir le placement du curseur sur *[Ma position](../map/interact-with-map.md#my-location-and-zoom)* sur la carte OsmAnd. Trois options sont disponibles :
 
 - **<Translate android="true" ids="position_on_map_center"/>**. Le curseur est toujours positionné au centre de l'écran.
-- **<Translate android="true" ids="position_on_map_bottom"/>**. *Ma position* est placée légèrement en dessous du centre de l'écran. Ce mode vous permet de voir plus d'informations sur la carte devant votre mouvement, ce qui est utile pendant la navigation.
+- **<Translate android="true" ids="position_on_map_bottom"/>**. *Ma position* est placée légèrement en dessous du centre de l'écran. Ce mode vous permet de voir plus d'informations cartographiques devant votre mouvement, ce qui est utile pendant la navigation.
 - **<Translate android="true" ids="shared_string_automatic"/>**. Place *Ma position* en fonction de l'[Orientation de la carte](../map/interact-with-map.md#map-orientation-modes) (*Bas* - pour la direction du mouvement, *Centre* - pour tous les autres).
 
 
-## Actions
+## Actions {#actions}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*
 
 ![Page de widget](@site/static/img/widgets/widget_actions_andr.png)
 
@@ -542,7 +542,7 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_ma
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → N'importe quel panneau*
+Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → N'importe quel panneau*
 
 ![Page de widget](@site/static/img/widgets/widget_actions_ios.png)
 
@@ -557,11 +557,11 @@ Accès à des actions supplémentaires dans l'écran de configuration :
 
 Actions disponibles :
 
-- **Réinitialiser aux valeurs par défaut**. Cette fonctionnalité vous permet de réinitialiser tous les paramètres aux valeurs par défaut si vous souhaitez recommencer, ou d'utiliser uniquement les valeurs prédéfinies lors du démarrage d'OsmAnd.
-- **Copier depuis un autre profil**. Cette fonctionnalité vous permet d'importer rapidement les paramètres d'un autre profil, de sélectionner ceux requis dans la liste et de copier.
+- **Réinitialiser par défaut**. Cette fonction vous permet de réinitialiser tous les paramètres aux valeurs par défaut si vous souhaitez recommencer, ou d'utiliser uniquement ceux prédéfinis lors du démarrage d'OsmAnd.
+- **Copier depuis un autre profil**. Cette fonction vous permet d'importer rapidement les paramètres d'un autre profil, de sélectionner ceux requis dans la liste et de copier.
 
 
-## Changer de profil
+## Changer de profil {#switch-profile}
 
 <Tabs groupId="operating-systems">
 
@@ -585,7 +585,7 @@ Actions disponibles :
 **Notez bien**. L'*option Changer de profil* n'affiche pas tous les profils existants, mais uniquement ceux qui ont été *activés* dans le menu Paramètres.
 
 
-## Articles connexes
+## Articles connexes {#related-articles}
 
 - [Boutons de carte](./map-buttons.md)
 - [Widgets d'information](./info-widgets.md)
@@ -595,4 +595,3 @@ Actions disponibles :
 - [Action rapide](./quick-action.md)
 
 > *Cet article a été mis à jour pour la dernière fois en avril 2025*
-

@@ -1,11 +1,11 @@
 ---
-source-hash: 8ceba594c80385b497a558e2b60474c77d5b2d7b01d707343a6463a144cb54fb 
+source-hash: 21062add467a3600e83c31c7c4c07c6543d38feb6e47620afe72cb15253f8bdb
 sidebar_position: 7
-title:  Android Auto
+title: Android Auto
 ---
 
 import Tabs from '@theme/Tabs';
-import TabItem from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
@@ -13,9 +13,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-
-
-## Retards de localisation (plantages ANR)
+## Retards de localisation (plantages ANR) {#location-delays-anr-crashes}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_troubleshooting_1.png)
 
@@ -23,21 +21,18 @@ Android Auto et OsmAnd peuvent détecter simultanément la position du véhicule
 
 1. Ouvrir les paramètres d'Android Auto.
 2. Dans les paramètres, trouver les autorisations de localisation.
-3. Cette section affiche une liste d'applications autorisées à utiliser la localisation dans Android Auto. Trouver l'application OsmAnd et autoriser l'utilisation de la localisation.
+3. Cette section affiche une liste des applications autorisées à utiliser la localisation dans Android Auto. Trouver l'application OsmAnd et autoriser l'utilisation de la localisation.
 4. La localisation ne sera désormais détectée que par l'application OsmAnd dans Android Auto, évitant ainsi les retards dans l'affichage des informations de localisation.
 
+## Problème d'orientation de la carte {#map-orientation-issue}
 
-## Problème d'orientation de la carte
+L'orientation de la carte dans le sens du mouvement est [inversée et tremble](https://github.com/osmandapp/OsmAnd/issues/16041). Résolu en activant l'option ["Orientation approximative"](../navigation/guidance/map-during-navigation.md#map-during-navigation) :
 
-L'orientation de la carte dans le sens du mouvement est [inversée et vacille](https://github.com/osmandapp/OsmAnd/issues/16041). Résolu en activant l'option ["Orientation approximative"](../navigation/guidance/map-during-navigation.md#map-during-navigation) :
-
-- Visible uniquement si [OsmAnd Development](../plugins/development.md) est activé.
+- Visible uniquement si le [Développement OsmAnd](../plugins/development.md) est activé.
 - Placé dans *Menu → Paramètres → Profil → Paramètres de navigation → [Carte pendant la navigation](../navigation/guidance/map-during-navigation.md) → Orientation approximative*.
 
+## Problème de contrôle du volume {#volume-control-issue}
 
-## Problème de contrôle du volume
-
-Dans la plupart des cas, tous les types de **signaux** restent à un volume constant et maximal, qui n'est pas affecté par les paramètres de lecture audio simultanée. Pour modifier le volume des invites de navigation OsmAnd lors de l'utilisation d'Android Auto, accédez à *Configuration → Voix → Volume de la voix* sur l'écran du système multimédia du véhicule.
+Dans la plupart des cas, tous les types de **signaux** restent à un volume constant et maximal, qui n'est pas affecté par les paramètres de lecture audio simultanée. Pour modifier le volume des invites de navigation OsmAnd lors de l'utilisation d'Android Auto, accédez à *Configuration → Voix → Volume vocal* sur l'écran du système multimédia du véhicule.
 
 Si cette méthode ne fonctionne pas, il existe une autre option. Pour régler le volume des notifications, vous devez activer Google Assistant pendant un appel. Maintenez enfoncé le bouton du volant qui active Google Assistant, et pendant l'appel, réglez le volume à l'aide du tableau de bord ou du volant.
-

@@ -1,5 +1,5 @@
 ---
-source-hash: 8ac522afbab294c33da47125ffb36a8e67e06adf8e67e108b27aa672a888726d 
+source-hash: 4b17aec5038b2a6769de51050972a0b892941f6b138211b5698a0289f978b967
 sidebar_position: 10
 title:  Guidage en ligne droite (Avion)
 ---
@@ -16,11 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 <InfoIncompleteArticle/>
 
 
-## Aperçu
+## Aperçu {#overview}
 
-Contrairement aux algorithmes de routage traditionnels qui utilisent des routes, des sentiers ou des itinéraires prédéfinis, le routage en ligne droite calcule la distance la plus courte entre deux points sur la carte sous la forme d'une ligne droite. Cette fonctionnalité peut être utile pour les randonneurs actifs qui souhaitent s'éloigner des sentiers ou explorer des zones reculées où les itinéraires traditionnels peuvent ne pas être disponibles. Pour les pilotes d'avions légers et les skippers de navires, l'utilisation du *type de routage en ligne droite* peut être très utile pour la navigation.
+Contrairement aux algorithmes de routage traditionnels qui utilisent des routes, des sentiers ou des itinéraires prédéfinis, le routage en ligne droite calcule la distance la plus courte entre deux points sur la carte sous la forme d'une ligne droite. Cette fonction peut être utile pour les randonneurs actifs qui souhaitent s'éloigner des sentiers ou explorer des zones reculées où les itinéraires traditionnels peuvent ne pas être disponibles. Pour les pilotes d'avions légers et les skippers de navires, l'utilisation du *type de routage en ligne droite* peut être très utile pour la navigation.
 
-<!-- ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png) -->
+<!-- ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png)  -->
 
 - Le routage *en ligne droite* ne tient pas compte des obstacles ou des barrières qui peuvent être présents sur le terrain, tels que les montagnes, les rivières ou les forêts denses.
 - Il ne fournit aucune information sur la qualité du terrain, le niveau de difficulté de l'itinéraire ou tout autre facteur pertinent susceptible d'affecter la sécurité ou la faisabilité de l'itinéraire (la section [Détails de l'itinéraire](../setup/route-details.md) est vide).
@@ -28,7 +28,7 @@ Contrairement aux algorithmes de routage traditionnels qui utilisent des routes,
 ![Straight-line Navigation type Android](@site/static/img/navigation/routing/straight_line_routing_andr.png)
 
 
-## Paramètres d'itinéraire - Ligne droite
+## Paramètres d'itinéraire - Ligne droite {#route-parameters---straight-line}
 
 :::note
 Le routage en ligne droite est lié au *profil Avion*. Par défaut, ce profil est désactivé. Pour utiliser ce profil pour le routage, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -52,12 +52,12 @@ Le routage *en ligne droite* peut être configuré selon vos besoins dans la sec
 
 </Tabs>
 
-| Paramètre | Description | Remarque |
+| Paramètre | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="recalc_angle_dialog_title"/>* |  <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/>  </summary>![Straight line recalculation Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details>  | Lorsque l'angle entre l'itinéraire calculé et la géolocalisation réelle est supérieur à celui que vous avez défini, le chemin le plus court de votre position actuelle à l'itinéraire calculé sera construit. En d'autres termes, OsmAnd calculera un segment d'itinéraire supplémentaire par rapport à l'itinéraire précédemment calculé. |
+| *<Translate android="true" ids="recalc_angle_dialog_title"/>* |  <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/>  </summary>![Straight line recalculation Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details>  | Lorsque l'angle entre l'itinéraire calculé et la géolocalisation réelle est supérieur à celui que vous avez défini, le chemin le plus court de votre position actuelle à l'itinéraire calculé sera construit. En d'autres termes, OsmAnd calculera un segment d'itinéraire supplémentaire à l'itinéraire précédemment calculé. |
 
 
-## Autres paramètres de routage
+## Autres paramètres de routage {#other-routing-settings}
 
 - Dans la section [*Recalculer l'itinéraire*](../../navigation/guidance/navigation-settings.md#recalculate-route) des *Paramètres d'itinéraire*, la distance à laquelle l'itinéraire sera recalculé pour le *routage en ligne droite* est définie par défaut à 500 mètres.
 
@@ -68,4 +68,3 @@ Le routage *en ligne droite* peut être configuré selon vos besoins dans la sec
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. La configuration correcte des paramètres vous aidera à éviter les problèmes lors de la création d'un itinéraire. Vous pouvez sélectionner l'itinéraire le plus approprié en fonction du type de véhicule et des restrictions routières, ainsi que calculer le temps de trajet.
 
 > *Cet article a été mis à jour pour la dernière fois en juin 2024*
-

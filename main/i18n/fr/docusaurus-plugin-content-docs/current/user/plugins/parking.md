@@ -1,5 +1,5 @@
 ---
-source-hash: 56be66108f913fd0a5a96a68a630fe10de08975ad8003df7f14f2915f147c490 
+source-hash: e0ac61f9d2bf109c22ebc8594ef028a9a1bd53746b32738508df65a2ac6ee969
 sidebar_position: 12
 title:  Position de stationnement
 ---
@@ -12,65 +12,60 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
+## Aperçu {#overview}
 
+Avec le plugin, vous pouvez définir un point sur la carte où votre voiture sera laissée dans la rue et notifier le calendrier du début de l'heure de stationnement. De cette façon, il vous sera plus facile de suivre l'heure et l'emplacement de votre voiture.
 
-## Vue d'ensemble
-
-Avec le plugin, vous pouvez définir un endroit sur la carte où votre voiture sera laissée dans la rue et notifier le calendrier du début de l'heure de stationnement. De cette façon, il vous sera plus facile de suivre l'heure et l'emplacement de votre voiture.
-
-L'emplacement de stationnement sur la carte et la notification dans le calendrier sont fournis par le plugin Parking. Il est gratuit et fonctionne bien avec les cartes OsmAnd téléchargées. L'emplacement de stationnement vous aide à savoir exactement où votre voiture est garée et à quelle distance vous vous trouvez de l'emplacement de stationnement. Par exemple, il peut être très utile de revenir à temps et d'éviter des dépenses inutiles. Le plugin vous permet également de partager l'emplacement avec les personnes de votre choix. L'emplacement de stationnement est facile à configurer, avec ou sans suivi du temps, et à supprimer après une utilisation réussie.
+Le point de stationnement sur la carte et la notification dans le calendrier sont fournis par le plugin Parking. Il est gratuit et fonctionne bien avec les cartes OsmAnd téléchargées. Le point de stationnement vous aide à savoir exactement où votre voiture est garée et à quelle distance vous vous trouvez du point de stationnement. Par exemple, il peut être très utile de revenir à temps et d'éviter des dépenses inutiles. Le plugin vous permet également de partager l'emplacement avec les personnes que vous souhaitez. Le point de stationnement est facile à configurer, avec ou sans suivi du temps, et à supprimer après une utilisation réussie.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Parking widget Android](@site/static/img/plugins/parking/parking_widget_android.png)
+![Widget de stationnement Android](@site/static/img/plugins/parking/parking_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Parking widget iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
+![Widget de stationnement iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
 
 </TabItem>
 
 </Tabs>
 
+## Paramètres de configuration requis {#required-setup-parameters}
 
-## Paramètres de configuration requis
-
-Pour utiliser un emplacement de stationnement sur la carte, vous devez effectuer les réglages suivants :
+Pour utiliser un point de stationnement sur la carte, vous devez effectuer les réglages suivants :
 
 1. Activez le [plugin Position de stationnement](../plugins/index.md#enable--disable) dans la section Plugins du *Menu principal*.
-2. Ajoutez un [emplacement de stationnement](#set-a-spot) sur la carte.
+2. Ajoutez un [point de stationnement](#set-a-spot) sur la carte.
 3. Si nécessaire, ajoutez le [widget Parking](#parking-widget) à l'écran.
 
+## Point de stationnement sur la carte {#parking-spot-on-the-map}
 
-## Emplacement de stationnement sur la carte
+Lorsqu'un point de stationnement apparaît sur la carte, il acquiert la latitude et la longitude de la géolocalisation sélectionnée, ainsi qu'un horodatage exact de sa création. Cela vous aide à identifier visuellement le point de stationnement à la fois lorsque vous définissez le point et lorsque vous le suivez plus tard et l'utilisez pour naviguer si nécessaire.
 
-Lorsqu'un emplacement de stationnement apparaît sur la carte, il acquiert la latitude et la longitude de la géolocalisation sélectionnée, ainsi qu'un horodatage indiquant exactement quand il a été créé. Cela vous aide à identifier visuellement l'emplacement de stationnement à la fois lorsque vous définissez l'emplacement et lorsque vous le suivez plus tard et l'utilisez pour naviguer si nécessaire.
+### Définir un point {#set-a-spot}
 
-
-### Définir un emplacement
-
-Pour définir un emplacement de stationnement sur la carte, zoomez au niveau requis, puis appuyez longuement sur l'endroit sur la carte et dans le [menu contextuel](../map/map-context-menu.md) qui s'ouvre, effectuez les réglages.
+Pour définir un point de stationnement sur la carte, zoomez au niveau requis, puis appuyez longuement sur l'endroit sur la carte et dans le [menu contextuel](../map/map-context-menu.md) qui s'ouvre, effectuez les réglages.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
 1. Appuyez sur [Actions](../map/map-context-menu#actions).
-2. Appuyez sur **Marquer comme emplacement de stationnement**.
+2. Appuyez sur **Marquer comme lieu de stationnement**.
 3. Sélectionnez la limite de temps dans la boîte de dialogue <Translate android="true" ids="parking_options"/> : *Stationnement illimité* ou *Stationnement limité dans le temps*.
 
-- Option **<Translate android="true" ids="osmand_parking_no_lim_text"/>** : s'il n'y a pas de limite de temps, sélectionnez cette option et un emplacement sans limite de temps apparaît sur la carte.
+- Option **<Translate android="true" ids="osmand_parking_no_lim_text"/>** : s'il n'y a pas de limite de temps, sélectionnez cette option et un point sans limite de temps apparaît sur la carte.
 - Option **<Translate android="true" ids="osmand_parking_time_limit"/>** : si une limite de temps est requise, sélectionnez cette option, puis :
 
     - Sélectionnez l'heure de fin du stationnement.
     - Ajoutez ou non un rappel pour l'application Calendrier.
-    - Appuyez sur **OK**, et l'emplacement avec la limite de temps que vous avez définie sera placé sur la carte.
+    - Appuyez sur **OK**, et le point avec la limite de temps que vous avez définie sera placé sur la carte.
 
-![Set Parking spot in Android](@site/static/img/plugins/parking/and_set_p_point_limit.png) ![Set time limits in Android](@site/static/img/plugins/parking/and_set_p_point4_.png)
+![Définir un point de stationnement dans Android](@site/static/img/plugins/parking/and_set_p_point_limit.png) ![Définir les limites de temps dans Android](@site/static/img/plugins/parking/and_set_p_point4_.png)
 
 </TabItem>
 
@@ -84,63 +79,59 @@ Pour définir un emplacement de stationnement sur la carte, zoomez au niveau req
 
     - Sélectionnez l'heure de fin du stationnement.
     - Ajoutez ou non un rappel pour l'application Calendrier.
-    - Appuyez sur **Enregistrer**, et l'emplacement avec la limite de temps que vous avez définie sera placé sur la carte.
+    - Appuyez sur **Enregistrer**, et le point avec la limite de temps que vous avez définie sera placé sur la carte.
 
-![Select Parking in Actions in iOS](@site/static/img/plugins/parking/ios_set_p_point2.png)  ![Set Parking point in iOS](@site/static/img/plugins/parking/ios_set_p_point3_-2.png)
+![Sélectionner Stationnement dans Actions dans iOS](@site/static/img/plugins/parking/ios_set_p_point2.png) ![Définir un point de stationnement dans iOS](@site/static/img/plugins/parking/ios_set_p_point3_-2.png)
 
 </TabItem>
 
 </Tabs>
 
 :::info NOTE
-L'heure de début est toujours automatiquement définie pour l'emplacement de stationnement. L'heure de fin, si une limite de temps est sélectionnée, ne peut être ajoutée à nouveau qu'en recréant l'espace de stationnement, mais pas modifiée. Les notifications de fin de temps de stationnement ne peuvent être placées dans l'application calendrier de votre appareil que si vous avez spécifié Ajouter une notification dans l'application Calendrier lors de la création de l'espace de stationnement.
+L'heure de début est toujours automatiquement définie pour le point de stationnement. L'heure de fin, si une limite de temps est sélectionnée, ne peut être ajoutée à nouveau qu'en recréant l'espace de stationnement, mais pas modifiée. Les notifications de fin de temps de stationnement ne peuvent être placées dans l'application calendrier de votre appareil que si vous avez spécifié Ajouter une notification dans l'application Calendrier lors de la création de l'espace de stationnement.
 :::
 
+### Rester informé {#stay-informed}
 
-### Restez informé
-
-Pour connaître l'emplacement de stationnement et l'heure de stationnement après avoir configuré un emplacement de stationnement, vous pouvez utiliser le [widget Parking](../widgets/info-widgets.md#-parking-widget) ou utiliser le menu contextuel de l'endroit sur la carte.
+Pour connaître l'emplacement et l'heure du stationnement après avoir configuré un point de stationnement, vous pouvez utiliser le [widget Parking](../widgets/info-widgets.md#-parking-widget) ou utiliser le menu contextuel de l'endroit sur la carte.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-**Emplacement**. Vous pouvez dézoomer sur la carte pour voir un emplacement de stationnement ou utiliser le [widget Parking](../widgets/info-widgets.md#-parking-widget). Lorsque vous fermez et rouvrez l'application, le widget Parking vous aide à trouver votre emplacement de stationnement sur la carte. Appuyez simplement sur le widget et l'emplacement de stationnement apparaît sur la carte.
+**Emplacement**. Vous pouvez dézoomer sur la carte pour voir un point de stationnement ou utiliser le [widget Parking](../widgets/info-widgets.md#-parking-widget). Lorsque vous fermez et rouvrez l'application, le widget Parking vous aide à trouver votre point de stationnement sur la carte. Il suffit d'appuyer sur le widget et le point de stationnement apparaît sur la carte.
 
-De plus, le widget affiche la distance entre votre position actuelle ou le centre de l'écran et l'emplacement de stationnement.
+De plus, le widget affiche la distance entre votre position actuelle ou le centre de l'écran et le point de stationnement.
 
-![Parking widget Android](@site/static/img/plugins/parking/parking_widget_android.png)
+![Widget de stationnement Android](@site/static/img/plugins/parking/parking_widget_android.png)
 
-L'**heure de début** est toujours affichée dans les détails de l'emplacement de stationnement. Pour afficher les détails, appuyez sur <Translate android="true" ids="parking_place"/> et le menu contextuel de l'emplacement de stationnement affichera l'heure de début.
+L'**heure de début** est toujours affichée dans les détails du point de stationnement. Pour afficher les détails, appuyez sur <Translate android="true" ids="parking_place"/> et le menu contextuel du point de stationnement affichera l'heure de début.
 
-![Parking info in Android](@site/static/img/plugins/parking/and_parking_info.png)
+![Informations sur le stationnement dans Android](@site/static/img/plugins/parking/and_parking_info.png)
 
-Le **temps restant** ou le **temps dépassé** dans les informations de l'emplacement de stationnement limité dans le temps affichera la durée totale : soit le temps restant avant la fin estimée du stationnement, soit le temps dépassé depuis lors.
+Le **temps restant** ou le **temps dépassé** dans les informations sur le point de stationnement limité dans le temps affichera la durée totale : soit le temps restant avant la fin estimée du stationnement, soit le temps dépassé depuis lors.
 
-![Time left in Android](@site/static/img/plugins/parking/and_parking_info_left.png)
+![Temps restant dans Android](@site/static/img/plugins/parking/and_parking_info_left.png)
 
 L'option **<Translate android="true" ids="osmand_parking_add_event"/>**, si elle est cochée sur l'écran contextuel Définir la limite de temps de stationnement, vous permet de créer un rappel sur la fin du temps de stationnement dans l'application Calendrier par défaut de votre appareil.
-
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-**Emplacement** Vous pouvez dézoomer sur la carte pour voir un emplacement de stationnement ou utiliser le [widget Parking](../widgets/info-widgets.md#-parking-widget). Lorsque vous fermez et rouvrez l'application, le widget Parking vous aide à trouver votre emplacement de stationnement sur la carte. Appuyez simplement sur le widget et l'emplacement de stationnement apparaît sur la carte.
+**Emplacement** Vous pouvez dézoomer sur la carte pour voir un point de stationnement ou utiliser le [widget Parking](../widgets/info-widgets.md#-parking-widget). Lorsque vous fermez et rouvrez l'application, le widget Parking vous aide à trouver votre point de stationnement sur la carte. Il suffit d'appuyer sur le widget et le point de stationnement apparaît sur la carte.
 
-De plus, le widget affiche la distance entre votre position actuelle ou le centre de l'écran et l'emplacement de stationnement.
+De plus, le widget affiche la distance entre votre position actuelle ou le centre de l'écran et le point de stationnement.
 
-![Parking widget iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
+![Widget de stationnement iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
 
+L'**heure de début** est toujours affichée dans les détails du point de stationnement. Pour afficher les détails, appuyez sur Marqueur de stationnement et le menu contextuel du point de stationnement affichera l'heure de début.
 
-L'**heure de début** est toujours affichée dans les détails de l'emplacement de stationnement. Pour afficher les détails, appuyez sur Marqueur de stationnement et le menu contextuel de l'emplacement de stationnement affichera l'heure de début.
+![Informations sur le stationnement dans iOS](@site/static/img/plugins/parking/ios_parking_info.png)
 
-![Parking info in iOS](@site/static/img/plugins/parking/ios_parking_info.png)
+Le **temps restant** ou le **temps dépassé** dans les informations sur le point de stationnement limité dans le temps affichera la durée totale : soit le temps restant avant la fin estimée du stationnement, soit le temps dépassé depuis lors.
 
-
-Le **temps restant** ou le **temps dépassé** dans les informations de l'emplacement de stationnement limité dans le temps affichera la durée totale : soit le temps restant avant la fin estimée du stationnement, soit le temps dépassé depuis lors.
-
-![Time left in iOS](@site/static/img/plugins/parking/ios_parking_info_left.png)
+![Temps restant dans iOS](@site/static/img/plugins/parking/ios_parking_info_left.png)
 
 L'option **<Translate ios="true" ids="add_notification_calendar"/>**, si elle est cochée sur l'écran contextuel Définir la limite de temps de stationnement, vous permet de créer un rappel sur la fin du temps de stationnement dans l'application Calendrier par défaut de votre appareil.
 
@@ -148,87 +139,81 @@ L'option **<Translate ios="true" ids="add_notification_calendar"/>**, si elle es
 
 </Tabs>
 
+### Navigation vers un point de passage {#navigating-to-a-waypoint}
 
-### Navigation vers un point de passage
+Le point de stationnement peut être utilisé pour la navigation lorsque la géolocalisation est inconnue et/ou simplement pour trouver le meilleur itinéraire lors de la navigation vers l'emplacement de stationnement de votre véhicule. Pour connecter un point de stationnement à la fonction [Navigation](../navigation/routing/car-based-routing.md), effectuez l'une des opérations suivantes :
 
-L'emplacement de stationnement peut être utilisé pour la navigation lorsque la géolocalisation est inconnue et/ou simplement pour trouver le meilleur itinéraire lors de la navigation vers l'emplacement de stationnement de votre véhicule. Pour connecter un emplacement de stationnement à la fonction [Navigation](../navigation/routing/car-based-routing.md), effectuez l'une des opérations suivantes :
-
-- Pour afficher l'itinéraire de votre position actuelle à l'emplacement de stationnement, appuyez sur le menu de l'icône Navigation, sélectionnez le profil, appuyez sur Définir la destination, et parmi les options disponibles, recherchez **Parking**.
-- Pour afficher l'itinéraire de votre position actuelle à l'emplacement de stationnement à l'aide du widget, appuyez sur le **widget Parking**, appuyez sur l'emplacement de stationnement, sélectionnez **Navigation**, sélectionnez le profil.
+- Pour afficher l'itinéraire de votre position actuelle au point de stationnement, appuyez sur le menu de l'icône Navigation, sélectionnez le profil, appuyez sur Définir la destination, et parmi les options disponibles, recherchez **Stationnement**.
+- Pour afficher l'itinéraire de votre position actuelle au point de stationnement à l'aide du widget, appuyez sur le **widget Parking**, appuyez sur le point de stationnement, sélectionnez **Navigation**, sélectionnez le profil.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Heading to Parking point in Android](@site/static/img/plugins/parking/and_navigating_to_parking.png)
+![Se diriger vers le point de stationnement dans Android](@site/static/img/plugins/parking/and_navigating_to_parking.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Heading to Parking point in iOS](@site/static/img/plugins/parking/ios_going_to_parking.png)
+![Aller au point de stationnement dans iOS](@site/static/img/plugins/parking/ios_going_to_parking.png)
 
 </TabItem>
 
 </Tabs>
 
+### Supprimer un point {#remove-a-spot}
 
-### Supprimer un emplacement
+Pour supprimer un point de stationnement de la carte, suivez ces étapes :
 
-Pour supprimer un emplacement de stationnement de la carte, suivez ces étapes :
-
-- Appuyez sur le [widget](#parking-widget) ou dézoomez sur la carte pour mieux voir l'emplacement de stationnement.
-- Appuyez sur l'**emplacement de stationnement**, puis sélectionnez **supprimer/ignorer** dans le [menu contextuel](../map/map-context-menu.md#-add--delete-parking-point) qui s'ouvre.
+- Appuyez sur le [widget](#parking-widget) ou dézoomez sur la carte pour mieux voir le point de stationnement.
+- Appuyez sur le **point de stationnement**, puis sélectionnez **supprimer/ignorer** dans le [menu contextuel](../map/map-context-menu.md#-add--delete-parking-point) qui s'ouvre.
 Si des rappels existent, ils seront également supprimés de l'application calendrier.
 
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Action Delete Parking in Android](@site/static/img/map/context_menu_limited_parking.png)
+![Action Supprimer le stationnement dans Android](@site/static/img/map/context_menu_limited_parking.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Action Delete Parking in iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
+![Action Supprimer le stationnement dans iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
 
 </TabItem>
 
 </Tabs>
 
+## Widget Parking {#parking-widget}
 
-## Widget Parking
-
-Le [widget Parking](../widgets/info-widgets.md#parking-widget) est ajouté automatiquement à la liste des widgets lorsque vous activez le plugin Parking. Avant de configurer un emplacement de stationnement, assurez-vous que le widget est à l'écran, et si ce n'est pas le cas, ajoutez-le dans le menu [Configurer l'écran](../widgets/configure-screen.md). Le widget Parking vous aidera à trouver rapidement un emplacement de stationnement sur la carte.
+Le [widget Parking](../widgets/info-widgets.md#parking-widget) est ajouté automatiquement à la liste des widgets lorsque vous activez le plugin Parking. Avant de configurer un point de stationnement, assurez-vous que le widget est à l'écran, et si ce n'est pas le cas, ajoutez-le dans le menu [Configurer l'écran](../widgets/configure-screen.md). Le widget Parking vous aidera à trouver rapidement un point de stationnement sur la carte.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_parking"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_parking"/>*
 
-![Adding Parking widget in Android](@site/static/img/plugins/parking/and_adding_parking_widget-2.png)
+![Ajout du widget Parking dans Android](@site/static/img/plugins/parking/and_adding_parking_widget-2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_parking"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_parking"/>*
 
-![Adding Parking widget in iOS](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)
+![Ajout du widget Parking dans iOS](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)
 
 </TabItem>
 
 </Tabs>
 
-
-## Articles connexes
+## Articles connexes {#related-articles}
 
 - [Interagir avec la carte](../../user/map/interact-with-map.md)
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
 > *Cet article a été mis à jour pour la dernière fois en mai 2023*
-

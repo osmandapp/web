@@ -1,17 +1,16 @@
 ---
-source-hash: 11bedb2faeeb92ca2e44940e92934fa0059d3a21a724bb6a7c391a36ba62f07a 
+source-hash: 284382a49f7407ccb5a138e59df07ceadf0675f5afc337df071983061967d282
 sidebar_position: 6
 ---
 
-# Web 1.02
+# Web 1.02 {#web-102}
 
-Web 1.02 est la dernière version web d'OsmAnd, qui inclut de nouvelles fonctionnalités et améliorations utiles. Cet article décrit toutes les principales mises à jour du [Planificateur d'itinéraire web](../user/web/index.md).
+Web 1.02 est la dernière version web d'OsmAnd, qui comprend de nouvelles fonctionnalités et améliorations utiles. Cet article décrit toutes les principales mises à jour du [Planificateur d'itinéraire Web](../user/web/index.md).
 
 
-## Nouveautés
+## Quoi de neuf {#whats-new}
 
 - Partager des fichiers GPX / favoris
-- Refonte de la navigation du site web
+- Refonte de la navigation sur le site web
 - Cliquer sur la carte (tuiles vectorielles)
 - Analyse de segment
-

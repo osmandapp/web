@@ -1,5 +1,5 @@
 ---
-source-hash: e3aa95b847fca6a38a2084450352beb3869349ca6dc99925356bf3e8a5137635 
+source-hash: cbe08b9db54d0690b51c052bd6f84e80f7f6f72f815b51ff58e90afc67148727
 sidebar_position: 9
 title: Android Auto
 ios: false
@@ -17,27 +17,25 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Aperçu
+## Aperçu {#overview}
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_overview.png)
+![Écran Android Auto](@site/static/img/navigation/auto-car/android_auto_overview.png)
 
-[**Android Auto**](https://www.android.com/auto) est un logiciel développé par Google qui permet aux utilisateurs de connecter leurs appareils Android aux systèmes multimédias compatibles des véhicules. *Android Auto* fournit une version adaptée et optimisée de l'application OsmAnd pour une utilisation en toute sécurité pendant la conduite, ce qui facilite et sécurise l'accès aux fonctions de navigation de l'application.
+[**Android Auto**](https://www.android.com/auto) est un logiciel développé par Google qui permet aux utilisateurs de connecter leurs appareils Android à des systèmes multimédias de véhicules compatibles. *Android Auto* fournit une version adaptée et optimisée de l'application OsmAnd pour une utilisation en toute sécurité pendant la conduite, ce qui facilite et sécurise l'accès aux fonctions de navigation de l'application.
 
-- La fonction *Android Auto* n'est prise en charge que lors de l'utilisation de l'application OsmAnd disponible dans le [Google Play Store](https://play.google.com/store/apps/dev?id=8483587772816822023).
-- Si vous avez acheté [OsmAnd Pro](../purchases/android.md#osmand-pro) sur l'[Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd), vous pouvez l'[activer](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) dans l'application [OsmAnd Free version](https://play.google.com/store/apps/details?id=net.osmand) téléchargée depuis le Google Play Store.
-- Après cette activation, vous pouvez utiliser la fonction *Android Auto*, pour laquelle vous avez acheté un abonnement à OsmAnd Pro dans un autre magasin d'applications.
+La fonction **Android Auto** n'est prise en charge que lors de l'utilisation de l'application OsmAnd disponible dans le [Google Play Store](https://play.google.com/store/apps/dev?id=8483587772816822023).
 
-***Note*** : *Android Auto* n'est pas une réplication directe de l'application mobile OsmAnd. Il possède une interface simplifiée, axée sur les fonctions de navigation essentielles pour garantir une conduite sûre. Certaines fonctionnalités avancées ne sont pas prises en charge en raison des limitations de la plateforme.
+> **REMARQUE** : *Android Auto n'est pas une réplication directe de l'application mobile OsmAnd. Il possède une interface simplifiée, axée sur les fonctions de navigation essentielles pour garantir une conduite sûre. Certaines fonctionnalités avancées ne sont pas prises en charge en raison des limitations de la plateforme.*
 
 
-### Écran de connexion
+### Écran de connexion {#connection-screen}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)
 
 Lorsque votre appareil est connecté à *Android Auto*, la carte sur l'écran de l'application est verrouillée. Il s'agit d'une fonction de sécurité intentionnelle visant à garantir que la navigation est contrôlée exclusivement à partir de l'écran de la voiture, minimisant ainsi les distractions pendant la conduite. Consultez les [questions courantes](#common-issues-and-solutions) concernant l'écran de connexion.
 
 
-### Écran d'accueil
+### Écran d'accueil {#landing-screen}
 
 <table class="image">
     <tr>
@@ -52,29 +50,29 @@ Lorsque vous ouvrez l'application, une liste de catégories s'affiche. Pour faci
 - Dans le coin supérieur droit de l'écran, appuyez sur le bouton à côté des boutons de fonction si vous souhaitez revenir à la liste.
 
 
-### Interaction avec la carte
+### Interaction avec la carte {#interaction-with-the-map}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_interaction_2.png)
 
 *Android Auto* affiche l'interface OsmAnd adaptée à l'écran du système multimédia du véhicule. L'interaction avec la carte est limitée à des boutons tels que :
 
-- [Menu OsmAnd](#destination-points). Contient une liste des options disponibles pour attribuer un point d'arrivée d'itinéraire ou un trajet libre.
-- [Paramètres](#voice-prompts). Ce bouton est responsable de : 1. l'accès à l'activation/désactivation des *instructions vocales* lorsque vous naviguez sur l'itinéraire sélectionné ; 2. l'affichage des détails de l'itinéraire (heure et distance) pour le prochain arrêt.
+- [Menu OsmAnd](#destination-points). Contient une liste des options disponibles pour attribuer un point d'arrivée à un itinéraire ou une course libre.
+- [Paramètres](#voice-prompts). Ce bouton est responsable de : 1. l'accès à l'activation/désactivation des *invites vocales* lorsque vous naviguez sur l'itinéraire sélectionné ; 2. l'affichage des détails de l'itinéraire (heure et distance) pour le prochain arrêt.
 - [Recherche](#search). Appuyer sur le bouton ouvre un écran avec accès aux fonctions de recherche.
 - [Ma position](../widgets/map-buttons.md#my-location-and-zoom). Déplace la partie visible de la carte de manière à ce que votre position actuelle soit au centre de l'écran.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Permet de zoomer et dézoomer la partie visible de la carte.
+- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Vous permet de zoomer et dézoomer sur la partie visible de la carte.
 - [Boussole](../widgets/map-buttons.md#compass). Indique lequel des quatre modes d'orientation de carte disponibles sur l'écran de votre appareil est sélectionné.
 
 
-## Paramètres de configuration requis
+## Paramètres de configuration requis {#required-setup-parameters}
 
-### Démarrer la navigation
+### Démarrer la navigation {#start-navigation}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_start_navigation.png)
 
 Pour qu'OsmAnd fonctionne dans *Android Auto*, vous devez [connecter](#connection-screen) votre appareil Android au système multimédia de votre véhicule. Le système d'exploitation Android doit être mis à jour vers la version 6.0 ou supérieure.
 
-- Pour savoir comment connecter et configurer votre appareil, consultez les sites Web [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en).
+- Pour savoir comment connecter et configurer votre appareil, visitez les sites Web [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en).
 
 - Tous les véhicules ne prennent pas en charge la connexion d'appareils. Consultez la [liste pour *Android Auto*](https://www.android.com/auto/compatibility/#compatibility-vehicles).
 
@@ -84,12 +82,12 @@ Pour qu'OsmAnd fonctionne dans *Android Auto*, vous devez [connecter](#connectio
 
 - Il est important de se rappeler qu'*Android Auto* est une application gourmande en données, y compris les données mobiles, et la qualité du système peut dépendre de la qualité de votre connexion et de la vitesse de votre accès Internet.
 
-### Profil en premier
+### Profil en premier {#profile-first}
 
-Vous ne pouvez pas sélectionner de profil directement dans *Android Auto* sur l'écran du véhicule.
-Si vous avez déjà sélectionné un profil sur votre appareil qui correspond au type de véhicule, tel que *Conduite*, *Camion*, *Voiture*, *Moto*, *Cyclomoteur*, **l'application activera automatiquement** le profil approprié lorsque vous vous connecterez à Android Auto. Par exemple, si vous avez sélectionné un profil *Camion* et que votre appareil se connecte à **Android Auto**, l'application activera ce profil.
+Vous ne pouvez pas sélectionner un profil directement dans *Android Auto* sur l'écran du véhicule.
+Si vous avez déjà un profil sélectionné sur votre appareil qui correspond au type de véhicule, tel que *Conduite*, *Camion*, *Voiture*, *Moto*, *Cyclomoteur*, **l'application activera automatiquement** le profil approprié lorsque vous vous connecterez à Android Auto. Par exemple, si vous avez un profil *Camion* sélectionné et que votre appareil se connecte à **Android Auto**, l'application activera ce profil.
 
-Si vous n'avez pas sélectionné de profil *Conduite* sur votre appareil qui corresponde à votre type de véhicule, OsmAnd basculera automatiquement sur le profil *Conduite*. Cela est fait pour fournir une navigation de base et pour éviter les problèmes possibles causés par l'utilisation du mauvais profil pour un type de véhicule spécifique.
+Si vous n'avez aucun profil *Conduite* sélectionné sur votre appareil qui correspond à votre type de véhicule, alors OsmAnd basculera automatiquement vers le profil *Conduite*. Cela est fait pour fournir une navigation de base et pour éviter les problèmes possibles causés par l'utilisation du mauvais profil pour un type de véhicule spécifique.
 
 **Pourquoi c'est important :**
 
@@ -100,38 +98,38 @@ Si vous n'avez pas sélectionné de profil *Conduite* sur votre appareil qui cor
 3. **Éviter les erreurs.** Le passage au profil *Conduite* lorsqu'il n'y a pas de profil spécifique pour le mode de transport sélectionné vous donne un accès constant aux paramètres et informations minimum nécessaires, évitant ainsi les erreurs et les malentendus possibles pendant la conduite.
 
 
-## Points de destination
+## Points de destination {#destination-points}
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
+![Écran Android Auto](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-Vous pouvez sélectionner des [POI](../map/point-layers-on-map.md#points-of-interest-poi), des [Favoris](../personal/favorites.md) ou des [Marqueurs](../personal/markers.md) prédéfinis et ajoutés comme point de destination. Il est également possible de sélectionner une [Trace](../personal/tracks/manage-tracks.md) enregistrée ou téléchargée pour l'itinéraire, d'utiliser la [Recherche](../search/index.md), ou de sélectionner une destination dans l'[Historique](../search/search-history.md) des itinéraires ou de faire un *Trajet libre*.
+Vous pouvez sélectionner des [POI](../map/point-layers-on-map.md#points-of-interest-poi) prédéfinis et ajoutés, ou des [Favoris](../personal/favorites.md), ou des [Marqueurs](../personal/markers.md) comme point de destination. Il est également possible de sélectionner une [Trace](../personal/tracks/manage-tracks.md) enregistrée ou téléchargée pour l'itinéraire, d'utiliser la [Recherche](../search/index.md), ou de sélectionner une destination dans l'[Historique](../search/search-history.md) des itinéraires ou de faire une *Course libre*.
 
-1. Si vous souhaitez qu'un lieu particulier sur la carte soit un point d'arrivée, sélectionnez la catégorie de points appropriée dans la liste, [POI](#poi-categories), [Favoris](#favorites), ou [Marqueurs de carte](#map-markers).
+1. Si vous souhaitez qu'un emplacement particulier sur la carte soit un point d'arrivée, sélectionnez la catégorie de points appropriée dans la liste, [POI](#poi-categories), [Favoris](#favorites), ou [Marqueurs de carte](#map-markers).
 
     - Toutes les catégories ne peuvent pas contenir plus d'éléments de liste que ce qui est fourni par le système multimédia de votre véhicule. Cela signifie que la liste dans *Android Auto* pourrait être incomplète, et tous les autres dossiers ne sont disponibles que dans l'application OsmAnd sur votre appareil.
     - Le dossier [Dernière modification](#folder-last-modified) contient une liste des destinations récentes, triées par date d'ajout ou de modification.
     - La liste de tous les autres dossiers est triée par la mise à jour la plus récente, les nouveaux dossiers sont en haut de la liste. Il n'est pas possible de modifier leur ordre manuellement.
-    - La liste des points dans les dossiers est triée par la distance qui les sépare, en commençant par le plus proche. Chaque point a un nom ou des coordonnées, une icône de forme (couleur et icône définies par défaut ou choisies par vous dans l'application OsmAnd), et la distance entre le point de la position actuelle et celui-ci.
+    - La liste des points dans les dossiers est triée par la distance qui les sépare, en commençant par le plus proche. Chaque point a un nom ou des coordonnées, une icône de forme (couleur et icône définies par défaut ou choisies par vous dans l'application OsmAnd), et la distance du point de la position actuelle à celui-ci.
 
-2. Sélectionnez la catégorie [Historique](#history) pour trouver l'une des destinations récentes qui sont stockées dans la mémoire de l'appareil.
+2. Sélectionnez la catégorie [Historique](#history) pour trouver l'une des destinations récentes stockées dans la mémoire de l'appareil.
 
 3. Sélectionnez [Recherche](#search) pour saisir une destination à partir des catégories de recherche disponibles.
 
-4. Choisissez **Trajet libre** pour faire un voyage sans point d'arrivée spécifié.
+4. Choisissez **Course libre** pour faire un voyage sans point d'arrivée spécifié.
 
 :::note
-Pendant la conduite, les points sélectionnés peuvent être [annoncés](#voice-prompts) lorsque vous les approchez ou les dépassez. Consultez les paramètres [Instructions vocales](../navigation/guidance/voice-navigation.md) dans l'article approprié pour configurer les notifications vocales.
+Pendant la conduite, les points sélectionnés peuvent être [annoncés](#voice-prompts) lorsque vous les approchez ou les dépassez. Consultez les paramètres [Invites vocales](../navigation/guidance/voice-navigation.md) dans l'article approprié pour configurer les notifications vocales.
 :::
 
 
-### Historique
+### Historique {#history}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)
 
 Dans la catégorie Historique, vous pouvez sélectionner une destination dans une liste de points d'arrivée. Ils sont triés par utilisation la plus récente, en commençant par le plus récent. Cela peut être pratique pour un accès rapide aux itinéraires fréquemment utilisés. Pour savoir comment utiliser ou supprimer une destination, lisez l'article [Historique de recherche](../search/search-history.md).
 
 
-### Catégories de POI
+### Catégories de POI {#poi-categories}
 
 <table class="image">
     <tr>
@@ -146,12 +144,12 @@ Pour construire un itinéraire vers un POI dans *Android Auto*, suivez ces étap
 
 1. Sélectionnez le POI nécessaire dans la liste des catégories disponibles, ou saisissez le nom du POI à l'aide de la [Recherche](#search).
 2. Appuyer sur une catégorie ouvre l'écran suivant avec une liste de POI.
-3. Appuyer sur un élément de la liste ouvre la navigation.
+3. Appuyer sur un élément de la liste ouvre l'écran de navigation.
 4. OsmAnd calcule l'itinéraire et l'affiche sur l'écran *Android Auto*. Appuyez sur le bouton **Démarrer** pour commencer la navigation vers cet emplacement.
-5. Selon les [paramètres](../navigation/guidance/navigation-settings.md) de votre application OsmAnd et votre véhicule, vous pouvez recevoir des [instructions vocales](#voice-prompts) pour vous guider vers une destination.
+5. Selon les [paramètres](../navigation/guidance/navigation-settings.md) de votre application OsmAnd et votre véhicule, vous pouvez recevoir des [invites vocales](#voice-prompts) pour vous guider vers une destination.
 
 
-### Favoris
+### Favoris {#favorites}
 
 <table class="image">
     <tr>
@@ -168,50 +166,51 @@ Pour créer un itinéraire vers un point favori dans *Android Auto*, suivez les 
 2. Appuyer sur un élément de la liste ouvre la navigation.
 
 
-### Marqueurs de carte
+### Marqueurs de carte {#map-markers}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_markers_2.png)
 
 Pour définir votre destination finale comme Marqueur de carte, vous devez d'abord créer le nombre requis de marqueurs dans l'application OsmAnd sur votre appareil avant de le connecter au système. Les marqueurs doivent être disponibles dans la liste *Menu → Marqueur de carte*. Ceci est décrit plus en détail dans l'article [Marqueurs](../personal/markers.md).
 
 
-### Traces
+### Traces {#tracks}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_tracks.png)
 
 Pour construire un itinéraire vers une destination, vous pouvez sélectionner une trace existante disponible dans l'application OsmAnd. La trace peut être [téléchargée](../personal/tracks/manage-tracks.md#import) à l'avance, utilisée comme [enregistrée](../plugins/trip-recording.md) ou créée dans [Planifier un itinéraire](../plan-route/create-route.md).
 
-Dans la liste des traces dans le *Menu → Mes lieux → [Traces](../personal/tracks/manage-tracks.md)*, sélectionnez celle requise avant de vous connecter au système multimédia du véhicule, et l'itinéraire se construira soit jusqu'au début de la trace, soit affichera la direction actuelle le long de la trace.
+Dans la liste des traces dans *Menu → Mes lieux → [Traces](../personal/tracks/manage-tracks.md)*, sélectionnez celle requise avant de vous connecter au système multimédia du véhicule, et l'itinéraire se construira soit jusqu'au début de la trace, soit affichera la direction actuelle le long de la trace.
 
 Les traces peuvent également être sélectionnées directement sur l'écran du véhicule dans *Android Auto*. Elles sont organisées dans les dossiers que vous avez créés, et pour un accès facile et rapide aux traces récemment ouvertes, il existe un dossier spécial [Dernière modification](#folder-last-modified).
 
 
-### Recherche
+### Recherche {#search}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)
 
-Aller à la Recherche vous donne un accès rapide à une liste de l'[historique des destinations](#history) récentes. De même avec le [menu de navigation](../navigation/setup/route-navigation.md#navigation-menu), où toutes les méthodes de destination OsmAnd telles qu'une adresse, des POI ou des coordonnées sont rassemblées.
+Aller à la Recherche vous donne un accès rapide à une liste de l'[historique des destinations](#history) récentes. De même avec le [menu de navigation](../navigation/setup/route-navigation.md#navigation-menu), où toutes les méthodes de destination OsmAnd telles qu'une adresse, des POI ou des coordonnées sont collectées.
 
 Vous pouvez utiliser l'outil de recherche pour trouver le lieu requis sur la carte pour la planification d'itinéraire à partir de n'importe quelle catégorie de recherche disponible.
 
-- [Adresse](../search/search-address.md) - commencez à taper l'adresse dans le champ de recherche.
-- [POI](../search/search-poi.md) et [POI personnalisés](../search/search-poi.md) - la liste des noms similaires à proximité affichera également les POI ou leurs catégories.
+- [Adresse](../search/search-address.md) - commencez à saisir l'adresse dans le champ de recherche.
+- [POI](../search/search-poi.md) et [POI personnalisés](../search/search-poi.md) - la liste des noms similaires à proximité affichera également des POI ou leurs catégories.
 - [Recherche par coordonnées](../search/search-address#coordinates-search) - saisissez les coordonnées pour trouver le point sur la carte.
 
 
-### Dossier Dernière modification
+### Dossier Dernière modification {#folder-last-modified}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_last_modified.png)
+
 
 Les catégories Favoris et Traces ont un dossier spécial *Dernière modification*. Étant donné que la liste dans ces catégories peut être très longue car elle contient tous vos favoris ou traces existants, ce dossier est nécessaire pour un accès facile et rapide à vos destinations les plus récentes.
 
 
-## Fonctionnalités de navigation
+## Fonctionnalités de navigation {#navigation-features}
 
 En plus des fonctionnalités de base de l'application OsmAnd dans *Android Auto* qui offrent une navigation pratique dans votre véhicule, il existe un certain nombre de fonctionnalités supplémentaires qui améliorent votre expérience et rendent la navigation plus personnalisée, confortable et efficace.
 
 
-### Prochain virage et informations sur l'itinéraire
+### Prochain virage et informations sur l'itinéraire {#next-turn--route-info}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_alert_widget.png)
 
@@ -226,7 +225,7 @@ Les informations sur l'itinéraire comprennent :
 Lorsqu'il est activé, le [paramètre du widget](#eta-next-stop) (Informations sur l'itinéraire) affichera les détails de l'itinéraire pour le prochain arrêt ([le point intermédiaire](../navigation/setup/route-navigation.md#intermediate-destinations)).
 
 
-### Widget d'alerte d'écran
+### Widget d'alerte d'écran {#screen-alert-widget}
 
 Ce widget d'information combine des types d'alertes tels que les **Passages piétons** et la **Limite de vitesse**.
 
@@ -236,7 +235,7 @@ Ce widget d'information combine des types d'alertes tels que les **Passages pié
 - Pour configurer les alertes d'écran pour les profils disponibles, consultez l'article [Paramètres de navigation](../navigation/guidance/navigation-settings.md#screen-alerts).
 
 
-### Compteur de vitesse
+### Compteur de vitesse {#speedometer}
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
@@ -247,7 +246,7 @@ Le widget **Compteur de vitesse** est un élément d'interface intégré qui aff
 - Pour plus d'informations sur la façon d'ajouter et de configurer le widget *Compteur de vitesse* à l'affichage, veuillez lire l'article [Widgets d'information](../widgets/info-widgets.md#speedometer).
 
 
-### Apparence de la carte (3D)
+### Apparence de la carte (3D) {#map-appearance-3d}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance_3d_2.png)
 
@@ -259,25 +258,25 @@ L'application OsmAnd vous permet d'utiliser la vue de carte 3D sur l'écran *And
 - Vous pouvez basculer entre les modes de carte 3D / 2D en appuyant sur ce bouton.
 
 
-### Instructions vocales
+### Invites vocales {#voice-prompts}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
 
-Les instructions vocales sont l'une des fonctionnalités les plus utiles d'OsmAnd lors de la navigation pour *Android Auto*, vous donnant des indications en temps réel et permettant au conducteur de rester concentré sur la route. Les instructions vocales fournissent des instructions claires sur les virages, les directions et autres instructions de navigation, offrant une utilisation plus sûre et plus confortable du système de navigation.
+Les invites vocales sont l'une des fonctionnalités les plus utiles d'OsmAnd lors de la navigation pour *Android Auto*, vous donnant des indications en temps réel et permettant au conducteur de rester concentré sur la route. Les invites vocales fournissent des instructions claires sur les virages, les directions et autres instructions de navigation, offrant une utilisation plus sûre et plus confortable du système de navigation.
 
-Pour configurer les [instructions vocales](../navigation/guidance/voice-navigation.md) en fonction du profil sélectionné, vous devez le faire avant de démarrer un itinéraire dans l'application OsmAnd sur votre appareil. Dans *Android Auto*, seule l'option d'activer ou de désactiver toutes les instructions vocales sélectionnées en même temps est disponible (*Bouton Paramètres → Instructions vocales (activé/désactivé)*).
+Pour configurer les [invites vocales](../navigation/guidance/voice-navigation.md) selon le profil sélectionné, vous devez le faire avant de démarrer un itinéraire dans l'application OsmAnd sur votre appareil. Dans *Android Auto*, seule l'option d'activer ou de désactiver toutes les invites vocales sélectionnées en même temps est disponible (*Bouton Paramètres → Invites vocales (activées/désactivées)*).
 
 
-### ETA Prochain arrêt
+### ETA Prochain arrêt {#eta-next-stop}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
 
 Dans l'application OsmAnd, vous pouvez sélectionner un ou plusieurs [points intermédiaires](../navigation/setup/route-navigation.md#intermediate-destinations) pour l'itinéraire de navigation.
 
-Pour activer ou désactiver les [**Informations sur l'itinéraire** pour un point intermédiaire (prochain arrêt)](#next-turn--route-info), allez dans *Android Auto (OsmAnd)→ Bouton Paramètres → Afficher les détails de l'itinéraire pour le prochain arrêt → Activé/Désactivé*. Cette option affiche l'heure et la distance jusqu'au prochain arrêt sur le widget [*Informations sur l'itinéraire*](#next-turn--route-info).
+Pour activer ou désactiver les [**Informations sur l'itinéraire** pour un point intermédiaire (prochain arrêt)](#next-turn--route-info), allez dans *Android Auto (OsmAnd) → Bouton Paramètres → Afficher les détails de l'itinéraire pour le prochain arrêt → Activé/Désactivé*. Cette option affiche l'heure et la distance jusqu'au prochain arrêt sur le widget [*Informations sur l'itinéraire*](#next-turn--route-info).
 
 
-### Mode carte
+### Mode carte {#map-mode}
 
 <table class="image">
     <tr>
@@ -296,9 +295,9 @@ OsmAnd propose des options de [mode carte](../map/vector-maps.md#map-mode), mais
 <!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
 
 
-### Écran partagé
+### Écran partagé {#split-screen}
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_map_split_screen.png)
+![Écran Android Auto](@site/static/img/navigation/auto-car/android_auto_map_split_screen.png)
 
 L'application OsmAnd peut être ouverte et utilisée pour naviguer dans *Android Auto* sur l'écran du système multimédia du véhicule simultanément avec des applications de musique, de messages ou d'autres notifications. Configuration de l'affichage en écran partagé sur un téléphone connecté à *Android Auto* ou sur l'écran de votre système de véhicule.
 
@@ -307,8 +306,20 @@ L'application OsmAnd peut être ouverte et utilisée pour naviguer dans *Android
 3. Trouvez Multi-fenêtre et choisissez l'interrupteur.
 4. Retournez à l'écran d'accueil.
 
+<!--
+![Écran Android Auto](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
-## Problèmes courants et solutions
+
+Dans les paramètres Android Auto, vous pouvez modifier la position de la barre des tâches et la disposition de l'écran d'accueil :
+
+- **Position de la barre des tâches :**
+  Allez dans *Paramètres Android Auto → Afficher les commandes rapides pour les applications* et désactivez l'interrupteur. Cela déplacera la barre des tâches du bas vers le côté de l'écran.
+
+- **Disposition de l'écran d'accueil :**
+  Allez dans *Paramètres Android Auto → Modifier la disposition → Modifier l'emplacement du siège conducteur* pour ajuster la disposition en fonction de la position du siège conducteur.
+
+
+## Problèmes courants et solutions {#common-issues-and-solutions}
 
 1. Problème d'orientation de la carte. [(vérifier)](../troubleshooting/android_auto.md#map-orientation-issue)
 2. Problème de contrôle du volume. [(vérifier)](../troubleshooting/android_auto.md#volume-control-issue)
@@ -324,4 +335,3 @@ L'application OsmAnd peut être ouverte et utilisée pour naviguer dans *Android
 
 
 > *Cet article a été mis à jour pour la dernière fois en mars 2025*
-

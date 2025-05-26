@@ -1,18 +1,17 @@
 ---
-source-hash: 2042eb8bed1deb4a9569b18baef10033cddc25a6fee71d89caaf73fdb9d6dce8 
+source-hash: 4a3ab550599526c067110820a2caca8caf6ef210e4b66b32e8a728289c00cfde
+
 ---
-# Mentions légales
+# Mentions légales {#legal}
 
-
-### [Licence](./license.md)
+### [Licence](./license.md) {#license}
 
 Licence OsmAnd.
 
-### [Politique de confidentialité](./privacy-policy.md)
+### [Politique de confidentialité](./privacy-policy.md) {#privacy-policy}
 
 Politique de confidentialité d'OsmAnd.
 
-### [Conditions d'utilisation](./terms-of-use.md)
+### [Conditions d'utilisation](./terms-of-use.md) {#terms-of-use}
 
 Conditions d'utilisation d'OsmAnd.
-

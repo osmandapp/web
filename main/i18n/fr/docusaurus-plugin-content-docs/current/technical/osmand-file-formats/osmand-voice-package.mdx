@@ -1,10 +1,10 @@
 ---
-source-hash: 930a665fbb5f2a1cee36c62413170f1d39dd8e1ebfcb8997a972b90996b9ad0d 
+source-hash: 9d80a119c410016a5b2a0fd3bf00ac8893018273296f7e7a83c2de9dd1b90a15
 sidebar_position: 10
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Paquets vocaux
+# Paquets vocaux {#voice-packages}
 
 <IncompleteArticle/>
 
@@ -14,7 +14,7 @@ OsmAnd prend en charge deux types de paquets vocaux :
 
 Si vous n'avez pas trouvé le paquet vocal dont vous avez besoin, veuillez suivre les exemples suivants et créer votre propre paquet vocal. Exemples - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice, paquet allemand [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip), paquet anglais [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
 
-### Différence entre les paquets TTS et enregistrés
+### Différence entre les paquets TTS et enregistrés {#difference-between-tts-and-recorded-packages}
 
 - un moteur de synthèse vocale prend en charge la prononciation des noms de rues, des références, des noms de POI
 - tous les paquets pris en charge par la synthèse vocale sont regroupés et mis à jour avec une application
@@ -22,11 +22,11 @@ Si vous n'avez pas trouvé le paquet vocal dont vous avez besoin, veuillez suivr
 - un paquet enregistré peut ne pas prendre en charge certaines formes correctes, et la prise en charge est limitée
 - un paquet enregistré ne nécessite pas l'installation d'un moteur TTS propriétaire
 
-### Structure du paquet
+### Structure du paquet {#package-structure}
 
-Un paquet vocal est généralement distribué sous forme de .voice.zip, où le zip contient un dossier avec [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (fichier de **configuration** principal), et des fichiers sonores s'ils sont présents.
+Un paquet vocal est généralement distribué sous forme de .voice.zip, où le zip contient un dossier avec [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (fichier de **configuration** principal) et des fichiers audio s'ils sont présents.
 
-Les fichiers de configuration sont écrits en langage JavaScript. Tous les fichiers de configuration sont par défaut des paquets TTS, même s'il n'y a pas encore de TTS présent pour prendre en charge la langue. Et plus tard, la configuration est étendue en mappant des 'phrases de dictionnaire' à des 'noms de fichiers enregistrés'.
+Les fichiers de configuration sont écrits en langage JavaScript. Tous les fichiers de configuration sont par défaut des paquets TTS, même s'il n'y a pas encore de TTS pour prendre en charge la langue. Et plus tard, la configuration est étendue en mappant les "phrases du dictionnaire" aux "noms de fichiers enregistrés".
 
 ```
 function populateDictionary(tts) {
@@ -50,14 +50,13 @@ function route_recalc(dist, seconds) {
 ```
 
 
-### Génération d'un paquet personnalisé
+### Génération d'un paquet personnalisé {#generation-custom-package}
 
-Veuillez consulter les [ressources du projet](https://github.com/osmandapp/OsmAnd-resources/) et utiliser la même structure de dossiers que le [paquet allemand](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de) - faites simplement une copie. Une fois cela fait, vous pouvez modifier, exécuter le [script de génération](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) et spécifier les arguments requis. L'aide est dans le script.
+Veuillez consulter les [ressources du projet](https://github.com/osmandapp/OsmAnd-resources/) et utiliser la même structure de dossiers que le [paquet allemand](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de) - faites simplement une copie. Une fois cela fait, vous pouvez modifier, exécuter le [script de génération](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) et spécifier les arguments requis. L'aide se trouve dans le script.
 
-### Test du paquet vocal (Android)
+### Test du paquet vocal (Android) {#testing-voice-package-android}
 
 Pour les tests, il est possible d'utiliser :
-- la Navigation
-- la simulation de Navigation,
+- la navigation
+- la simulation de navigation,
 - ou la version pratique du [plugin de développement OsmAnd](/docs/user/navigation/guidance/voice-navigation#testing-of-voice-prompts-android), qui simule différentes commandes vocales à tester.
-

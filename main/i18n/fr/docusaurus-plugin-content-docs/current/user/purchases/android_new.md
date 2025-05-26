@@ -1,7 +1,7 @@
 ---
-source-hash: 5572a9df6e1e9e66bb42b362200436a14ca6945276b61f66693543584aff23aa 
+source-hash: 5dcf667e3b7080b6c96da0833358621f53ba4f0ab56a06311d7a2d686c6dbb43
 sidebar_position: 1
-title:  Test des achats Android
+title: Test des achats Android
 unlisted: true
 ---
 
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-## Introduction
+## Introduction {#introduction}
 
 - Que sont les achats OsmAnd et pourquoi en avez-vous besoin ?
 - Disponibilité d'OsmAnd :
@@ -26,20 +26,20 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     - Accès à toutes les fonctionnalités.
     - Aucune restriction sur les téléchargements de cartes.
     - Fonctionnalités avancées de navigation et de cartographie.
-    - Mises à jour fréquentes et prise en charge de nouvelles fonctionnalités.
+    - Mises à jour fréquentes et prise en charge des nouvelles fonctionnalités.
 
 
-## Installer OsmAnd
+## Installer OsmAnd {#install-osmand}
 
 - Versions de l'application OsmAnd.
 - Les principaux types d'achats disponibles.
 
 
-## Options d'achat
+## Options d'achat {#purchase-options}
 
-### OsmAnd+ (achat unique)
+### OsmAnd+ (achat unique) {#osmand-one-time-purchase}
 
-- Une application distincte disponible sur Google Play et Amazon.
+- Une application distincte disponible sur Google Play.
 - Achat unique, après quoi toutes les fonctionnalités sont débloquées pour toujours.
 - N'inclut pas l'abonnement OsmAnd Pro (accès multiplateforme).
 - Avantages :
@@ -49,18 +49,18 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     - Les cartes ne sont pas mises à jour en temps réel.
     - Ne peut pas être utilisé sur iOS ou le Web.
 
-### Maps+ (achat intégré ou abonnement)
+### Maps+ (achat intégré ou abonnement) {#maps-in-app-purchase-or-subscription}
 
-- Disponible en tant qu'achat unique ou abonnement annuel.
+- Disponible en achat unique ou en abonnement annuel.
 - Même ensemble de fonctionnalités qu'OsmAnd+, mais intégré à la version gratuite.
 - Avantages :
     - Flexibilité de choisir entre un achat unique et un abonnement.
     - Accès à toutes les mêmes fonctionnalités qu'OsmAnd+.
 - Inconvénients :
-    - Pas multiplateforme - non transférable entre Android et iOS.
+    - Non multiplateforme - non transférable entre Android et iOS.
 
 
-### OsmAnd Pro (abonnement)
+### OsmAnd Pro (abonnement) {#osmand-pro-subscription}
 
 - Abonnement complet avec accès multiplateforme (Android, iOS, Web).
 - Disponible en abonnement mensuel ou annuel.
@@ -71,7 +71,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     - Prend en charge tous les plugins, y compris Topographie, Météo, OsmAnd Live.
     - Utilisation sur jusqu'à 6 appareils simultanément.
 
-### OsmAnd Start (plan gratuit de base)
+### OsmAnd Start (plan gratuit de base) {#osmand-start-basic-free-plan}
 
 - Un plan gratuit qui vous donne accès à OsmAnd Cloud sans OsmAnd Pro.
 - Vous permet d'enregistrer dans le cloud :
@@ -80,13 +80,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     - Modifications d'OpenStreetMap (Notes OSM).
 
 
-## Prix
+## Prix {#prices}
 
 Tableau des prix.
 Explication que les prix peuvent être différents selon la région.
 
 
-## Fonctionnalités gratuites et payantes
+## Fonctionnalités gratuites et payantes {#free-and-paid-features}
 
 - **Tableau comparatif.** (?)
 
@@ -98,21 +98,21 @@ Explication que les prix peuvent être différents selon la région.
     - Prise en charge des capteurs externes (OBD-II).
 
 
-## Fonctionnalités Pro
+## Fonctionnalités Pro {#pro-features}
 
 OsmAnd Pro est le summum de la fonctionnalité et le meilleur choix pour les utilisateurs qui souhaitent obtenir toutes les fonctionnalités d'OsmAnd.
 
-### Qu'est-ce qu'OsmAnd Pro
+### Qu'est-ce qu'OsmAnd Pro {#what-is-osmand-pro}
 
 - Abonnement annuel ou mensuel avec accès à toutes les fonctionnalités.
 - Accès sur tous les appareils - Android, iOS, Web.
 - Peut être utilisé sur 6 appareils simultanément.
 
-### Ce qui est inclus dans l'abonnement OsmAnd Pro
+### Ce qui est inclus dans l'abonnement OsmAnd Pro {#what-is-included-in-the-osmand-pro-subscription}
 
 1. OsmAnd Cloud.
     - Sauvegarde et synchronisation des données entre les appareils.
-    - Enregistrer des itinéraires, des points favoris, des traces.
+    - Enregistrer les itinéraires, les points favoris, les traces.
     - Accès à la version Web d'OsmAnd pour la planification de voyages.
 2. Mises à jour horaires des cartes
     - Les dernières modifications d'OpenStreetMap directement dans votre application.
@@ -120,27 +120,27 @@ OsmAnd Pro est le summum de la fonctionnalité et le meilleur choix pour les uti
     - Navigation facile sur l'écran de la voiture.
 4. Accès complet à tous les plugins OsmAnd
     - Topographie (Relief 3D, courbes de niveau, profil d'élévation).
-    - Plugin Météo - prévisions météo sur l'itinéraire.
+    - Plugin Météo - prévisions météorologiques sur l'itinéraire.
     - Cartes nautiques - profondeurs pour les marins.
     - Métriques du véhicule - lecture des données de l'OBD-II (pour les voitures).
 
 OsmAnd Pro est le meilleur choix pour les utilisateurs qui souhaitent obtenir toutes les fonctionnalités et les mises à jour de cartes les plus récentes !
 
 
-## Comment acheter
+## Comment acheter {#how-to-purchase}
 
-- Achat via Google Play, Amazon, Huawei AppGallery.
+- Achat via Google Play, Huawei AppGallery.
 - Modes de paiement disponibles :
-    - Carte bancaire, Google Pay, Amazon Pay, Huawei Pay.
-    - Utilisation de cartes cadeaux Google Play/Amazon.
+    - Carte bancaire, Google Pay, Huawei Pay.
+    - Utilisation de cartes cadeaux Google Play.
 - Problèmes de paiement :
     - Que faire si le paiement échoue.
     - Lien vers l'assistance Google Play.
 
 
-## Restauration des achats
+## Restauration des achats {#restoring-purchases}
 
-- Comment restaurer un achat depuis Google Play, Amazon, Huawei.
+- Comment restaurer un achat depuis Google Play, Huawei.
 - Instructions étape par étape :
 
     - 1 Assurez-vous d'être connecté au même compte.
@@ -150,55 +150,54 @@ OsmAnd Pro est le meilleur choix pour les utilisateurs qui souhaitent obtenir to
 - Restaurer OsmAnd Pro via OsmAnd Cloud.
 
 
-## Synchronisation des achats
+## Synchronisation des achats {#purchase-synchronization}
 
 - Comment fonctionne la synchronisation des achats via Google Play.
 - Limitations :
-    - Les abonnements ne sont pas transférables entre différents magasins (Google Play → Amazon).
-    - Maps+ n'est pas transférable entre des appareils avec des comptes différents.
+    - Les abonnements ne sont pas transférables entre les différentes boutiques.
+    - Maps+ n'est pas transférable entre les appareils avec des comptes différents.
 
 
-## Transfert des achats
+## Transfert des achats {#transferring-purchases}
 
 - Seul OsmAnd Pro est un achat multiplateforme.
 - OsmAnd+ et Maps+ ne peuvent pas être transférés entre Android et iOS.
 - Voir les instructions de liaison de compte OsmAnd Cloud pour OsmAnd Pro.
 
 
-## Gestion des abonnements
+## Gestion des abonnements {#managing-subscriptions}
 
 - Où consulter votre abonnement actif.
 - Comment annuler ou modifier votre abonnement.
 - Ce qui se passe après l'annulation.
 
 
-## Remboursements
+## Remboursements {#refunds}
 
-- Politique de retour de Google Play / Amazon.
+- Politique de retour de Google Play.
 - Lien vers la page officielle de Google pour demander un remboursement.
 
 
-## Cartes cadeaux
+## Cartes cadeaux {#giftcards}
 
 - Cette section permet aux utilisateurs d'acheter OsmAnd sans carte bancaire
-- Les utilisateurs peuvent acheter OsmAnd avec des cartes cadeaux Google Play ou Amazon.
+- Les utilisateurs peuvent acheter OsmAnd avec des cartes cadeaux Google Play.
 - Comment trouver une carte cadeau Google Play dans votre région.
-- Liens vers les instructions pour les cartes cadeaux Google Play et les cartes cadeaux Amazon.
+- Liens vers les instructions pour les cartes cadeaux Google Play.
 
 
-## Problèmes courants et solutions
+## Problèmes courants et solutions {#common-issues-and-solutions}
 
-#### Dépannage des achats
+### Dépannage des achats {#troubleshooting-purchases}
 
 - L'achat ne s'affiche pas → que faire.
 - Problèmes de paiement → comment les résoudre.
 - Solutions étape par étape pour les erreurs courantes.
 - Lien vers la section de dépannage.
 
-#### FAQ
+### FAQ {#faq}
 
 - Puis-je activer mon abonnement sans Google Play ?
 - Puis-je partager mon achat avec ma famille ?
 - Comment transférer OsmAnd+ vers un autre téléphone ?
 - Pourquoi l'achat n'apparaît-il pas après la réinstallation ?
-

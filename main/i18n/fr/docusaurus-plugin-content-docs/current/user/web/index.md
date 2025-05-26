@@ -1,6 +1,6 @@
 ---
-source-hash: bc3484dbf3ffce9355c487f50f6e7e5305b4f3dee1bd37426e6767aee9446c38 
-title: Site Web
+source-hash: c79fb665b230c20078615d1596e48d0f640ccddb0f0d2a60de971e8aa0a31be6
+title: Planificateur d'itinéraire Web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,27 +13,27 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-### Vue d'ensemble
+
+### Aperçu {#overview}
 
 Dans cette section, vous trouverez une description de notre [service de carte Web](https://osmand.net/map).
 
-### [OsmAnd Cloud](./web-cloud.md)
+### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
 
 Cette section explique comment se connecter et s'inscrire sur [www.osmand.net/map](https://osmand.net/map/) et met en évidence les avantages que les utilisateurs reçoivent après leur inscription.
 
-### [Carte](./web-map.md)
+### [Carte](./web-map.md) {#map}
 
-Cette section détaille les données cartographiques supplémentaires telles que les Favoris, les Traces personnelles et les Couches météorologiques.
+Cette section détaille les données cartographiques supplémentaires telles que les Favoris, les Tracés personnels et les Couches météo.
 
-### [Données utilisateur](./web-userdata.mdx)
+### [Données utilisateur](./web-userdata.mdx) {#user-data}
 
-Traces GPX et Favoris de l'utilisateur sur la carte.
+Tracés GPX et Favoris de l'utilisateur sur la carte.
 
-### [Planifier un itinéraire](./planner.md)
+### [Planifier un itinéraire](./planner.md) {#plan-route}
 
-Cette section fournit des informations sur la planification d'itinéraires ou la création de navigation à l'aide de différents profils.
+Cette section fournit des informations sur la planification d'itinéraires ou la création de navigations à l'aide de différents profils.
 
-### [Recherche](./web-search.md)
+### [Recherche](./web-search.md) {#search}
 
-Cette section explique comment trouver des points d'intérêt (POI) de différentes catégories sur la carte, effectuer une recherche classique et afficher des icônes de catégorie sur la carte.
-
+Cette section explique comment trouver des points d'intérêt (POI) de différentes catégories sur la carte, effectuer une recherche classique et afficher les icônes de catégorie sur la carte.

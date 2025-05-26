@@ -1,7 +1,7 @@
 ---
-source-hash: e2062ab5afd4af6d729a2cfca37742ecad03ffd670f06c2c5c4655d5c2277911 
+source-hash: 61701e62d59ea43a48bf2bd4533a4cb176b4324c2c2585e8ffa79b466b2daf01
 sidebar_position: 5
-title:  Capteurs externes
+title: Capteurs externes
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,31 +16,42 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Aperçu
+## Aperçu {#overview}
 
 :::info Fonctionnalité payante
-Le plugin Capteurs externes est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.  
+Le plugin Capteurs externes est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.
 :::
 
-Le **plugin Capteurs externes** vous permet de lire et d'enregistrer des données provenant de [capteurs externes sans fil](https://en.wikipedia.org/wiki/Wireless_sensor_network) fonctionnant sur les technologies [**ANT+**](https://en.wikipedia.org/wiki/ANT_(network)) et [**BLE (Bluetooth Low Energy)**](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) et d'afficher ces données à l'aide de [widgets](#widgets) dans l'application OsmAnd. Ce réseau géré est capable de collecter, transmettre et stocker des données de capteurs. Les *iPhones et iPads* ne disposent pas du matériel nécessaire pour recevoir les signaux ANT+.
+Le **plugin Capteurs externes** vous permet de lire et d'enregistrer des données provenant de [capteurs externes sans fil](https://en.wikipedia.org/wiki/Wireless_sensor_network) fonctionnant sur les technologies [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) et [BLE (Bluetooth Low Energy)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) et d'afficher ces données à l'aide de [widgets](#widgets) dans l'application OsmAnd. Ce réseau géré est capable de collecter, transmettre et stocker des données de capteurs.
 
-Le plugin Capteurs externes d'OsmAnd accède aux capteurs externes et peut lire des données telles que la *fréquence cardiaque*, la *puissance du vélo*, la *cadence du vélo*, la *vitesse du vélo*, la *distance du vélo* et la *température*. Pour que le plugin fonctionne correctement, assurez-vous que votre appareil [est connecté](#pair-new-sensor) aux capteurs appropriés.
+> *REMARQUE : Les iPhones et les iPads ne prennent pas en charge ANT+ en raison de limitations matérielles.*
 
+Le **plugin Capteurs externes** accède aux capteurs externes et peut lire des données telles que :
 
-## Paramètres de configuration requis
+- *Fréquence cardiaque*
+- *Puissance du vélo*
+- *Cadence du vélo*
+- *Vitesse du vélo*
+- *Distance du vélo*
+- *Température*
 
-Pour commencer à utiliser les données des capteurs externes, vous devez effectuer les réglages suivants :  
-
-1. [Achetez](../purchases/) un **abonnement OsmAnd Pro**.  
-2. [Activez](../plugins/#enable--disable) le plugin Capteurs externes dans la section Plugins du *Menu principal*.
-3. **Activez** le Bluetooth sur votre appareil pour connecter les **capteurs BLE** externes.
-4. [Configurez](#sensor-settings) les **paramètres des capteurs**.
-5. [Ajoutez](#widgets) les **widgets Capteurs externes** à l'écran (facultatif).
-6. [Utilisez les conseils](https://www.thisisant.com/consumer/ant-101/ant-in-phones) pour la **connexion ANT+** afin de configurer ces types de capteurs.
-7. [Utilisez](#trip-recording) le **plugin Enregistrement de trajet** pour enregistrer les données des capteurs.
+Pour utiliser le plugin, assurez-vous que votre appareil est [compatible](#pair-new-sensor), que le plugin est [activé](../plugins/#enable--disable) et que vos capteurs externes sont connectés via Bluetooth (BLE).
 
 
-### Associer un nouveau capteur
+## Paramètres de configuration requis {#required-setup-parameters}
+
+Pour commencer à utiliser les données des capteurs externes, suivez ces étapes :
+
+1. [Achetez](../purchases/) un **abonnement OsmAnd Pro** pour débloquer le plugin Capteurs externes.
+2. [Activez](../plugins/#enable--disable) le plugin dans *Menu → Plugins*.
+3. **Activez le Bluetooth** sur votre appareil pour permettre la connexion avec les **capteurs BLE**.
+4. [Associez et configurez](#pair-new-sensor) les capteurs externes via le menu du plugin.
+5. (Facultatif) [Ajoutez](#widgets) des **widgets Capteurs externes** à l'écran de votre carte pour afficher des données en temps réel telles que la fréquence cardiaque, la cadence ou le niveau de batterie.
+6. (Facultatif) Utilisez le [plugin Enregistrement de trajet](../plugins/trip-recording.md) pour enregistrer les données des capteurs dans des traces GPX.
+7. (Facultatif, Android uniquement) Suivez [ces conseils](https://www.thisisant.com/consumer/ant-101/ant-in-phones) pour connecter des capteurs ANT+ si votre appareil les prend en charge.
+
+
+### Associer un nouveau capteur {#pair-new-sensor}
 
 <Tabs groupId="operating-systems">
 
@@ -62,102 +73,111 @@ Pour commencer à utiliser les données des capteurs externes, vous devez effect
 
 </Tabs>
 
-Utilisez le bouton *Associer un nouveau capteur* pour connecter de nouveaux capteurs.  
+Pour associer un nouveau capteur, suivez ces étapes :
 
-- Vous devez activer le Bluetooth pour rechercher des capteurs. Si votre Bluetooth est désactivé, l'application vous invitera à *Ouvrir les paramètres* sur votre appareil.
+1. Assurez-vous que le **Bluetooth est activé** sur votre appareil.
+2. Allez dans *Menu → Plugins → Capteurs externes → Paramètres*.
+3. Appuyez sur **Associer un nouveau capteur**.
+4. OsmAnd recherchera les capteurs **Bluetooth LE** ou **ANT+** disponibles (selon votre plateforme).
+5. Appuyez sur le bouton **+** à côté du capteur que vous souhaitez associer.
+6. Une fois connecté, le capteur apparaîtra dans la liste des **Appareils connectés**.
 
-- Pour ajouter de nouveaux capteurs, appuyez sur + pour celui requis dans la liste des capteurs trouvés.
+***Notes :***
 
-- Une notification contextuelle s'affiche lorsqu'un capteur associé est connecté ou déconnecté.  
-- Tous les appareils ne prennent pas en charge ANT+ (Android uniquement). Vous pouvez vérifier si votre appareil fonctionne avec ANT+ en allant [ici](https://www.thisisant.com/consumer/ant-101/ant-in-phones).
-
-- La puissance du vélo sous Android est uniquement Ant+.
-
-- **Il n'y a pas de puissance de vélo sous iOS** car les capteurs Ant+ ne sont pas pris en charge.
+- Sur **iOS**, seuls les capteurs **Bluetooth Low Energy (BLE)** sont pris en charge en raison de limitations matérielles. Les capteurs ANT+ ne sont pas disponibles.
+- Sur **Android**, les capteurs BLE et ANT+ peuvent être pris en charge selon votre appareil. Consultez le [guide de compatibilité ANT+](https://www.thisisant.com/consumer/ant-101/ant-in-phones) pour plus de détails.
+- Une **notification contextuelle** apparaîtra chaque fois qu'un capteur se connecte ou se déconnecte.
+- Les **capteurs de puissance de vélo** sont disponibles uniquement sur Android via ANT+.
 
 
-## Paramètres des capteurs
+## Paramètres du capteur {#sensor-settings}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Utilisez l'un des chemins suivants pour ouvrir les paramètres des capteurs :
+Utilisez l'un des chemins suivants pour ouvrir les paramètres du capteur :
 
 - *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Appareil disponible → Paramètres*
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Appareil disponible → Paramètres*
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)  
+![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Utilisez l'un des chemins suivants pour ouvrir les paramètres des capteurs :
+Utilisez l'un des chemins suivants pour ouvrir les paramètres du capteur :
 
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,external_sensors_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,selected_profile,plugins_menu_group,external_sensors_plugin_name"/>*
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_sett_sensors_ios.png)  
+![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_sett_sensors_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Avec le plugin pour chaque capteur externe disponible pour l'application OsmAnd, vous pouvez utiliser ces paramètres :  
+Chaque capteur externe associé répertorié dans OsmAnd possède son propre écran de configuration avec les options suivantes :
 
-1. Tous les capteurs précédemment ajoutés sont divisés en deux listes : **Connecté** et **Déconnecté**.
-2. Chaque capteur de la liste dispose d'un menu avec des paramètres :
-    - **Déconnecter** ou **Connecter** le capteur, en fonction de son état actuel.
-    - **Paramètres**. Ouvre un écran de capteur séparé avec des informations supplémentaires sur le type de capteur, le niveau de batterie, les données reçues et les paramètres pour renommer, *oublier le capteur* et spécifier la circonférence de la roue. L'écran du capteur peut être ouvert simplement en appuyant sur le champ avec le nom du capteur dans la liste.
-    - **Renommer**. Vous permet de définir votre nom pour le capteur.
-    - **Oublier**. Le capteur sera supprimé de la liste mais pourra être à nouveau associé.
+- **Connecter / Déconnecter** – basculer l'état de la connexion.
+- **Renommer** – attribuer un nom personnalisé au capteur.
+- **Oublier le capteur** – supprimer le capteur de la liste (peut être réassocié ultérieurement).
+- **Paramètres** – ouvrir l'écran des détails du capteur (type de capteur, valeurs, niveau de batterie, réglage de la circonférence de la roue).
 
-- Lorsque le niveau de batterie du capteur associé devient inférieur à 15 %, une notification contextuelle apparaît à l'écran.
+***Notes :***
+
+- Sur **iOS**, vous pouvez afficher le **niveau de batterie** des capteurs BLE connectés directement dans un [widget](#widgets) de carte. Pour activer cela, allez dans : *Menu → Configurer l'écran → Choisir le panneau → Ajouter un widget → Capteur externe → Paramètres → Afficher → Niveau de batterie*
+- Une notification contextuelle apparaît lorsque le niveau de batterie d'un capteur associé **descend en dessous de 15 %**.
 
 
-## Enregistrement de trajet
+## Enregistrement de trajet {#trip-recording}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
+Allez dans : *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
+![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
+Allez dans : *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)  
+![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Les données des capteurs externes connectés peuvent être ajoutées au fichier GPX à l'aide du [plugin Enregistrement de trajet](../plugins/trip-recording.md#recording-settings).  
+Pour enregistrer les données des capteurs à l'aide du [plugin Enregistrement de trajet](../plugins/trip-recording.md#recording-settings) pendant votre trajet :
 
-- Les paramètres des capteurs ne sont disponibles que si le plugin Capteurs externes est activé.
-- Pour utiliser les données des capteurs externes, allez à *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
-- Une liste des capteurs disponibles pour chaque type de données est toujours disponible, qu'un capteur soit connecté ou non.
-- Si aucun type de capteur n'est associé, utilisez le bouton [Associer un nouveau capteur](#pair-new-sensor) dans le menu *Paramètres* du plugin Enregistrement de trajet.
-- OsmAnd enregistre les données des capteurs sélectionnés dans la [trace](../plugins/trip-recording.md#recorded-gpx-file) pendant l'enregistrement d'un trajet.
+1. Assurez-vous que le **plugin Capteurs externes** est activé.
+2. Allez dans *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
+3. Sélectionnez les types de capteurs que vous souhaitez enregistrer (par exemple, cadence, fréquence cardiaque, vitesse).
+4. Commencez à enregistrer votre trajet. OsmAnd enregistrera les données des capteurs sélectionnés dans la trace GPX.
 
-:::note
-OsmAnd utilise l'[**enregistrement de trace**](../plugins/trip-recording.md#recorded-gpx-file) avec de tels *noms de balises* pour les capteurs externes, avec lesquels votre fichier peut être facilement lu par les applications sportives que vous utilisez. Par exemple, Strava ou Runkeeper.
+***Notes :***
+
+- La liste des types de capteurs disponibles est affichée même si aucun capteur n'est connecté.
+- Si aucun capteur n'est encore associé, utilisez le bouton [Associer un nouveau capteur](#pair-new-sensor) dans les paramètres des plugins.
+- Les données de niveau de batterie ne sont **pas** enregistrées dans les fichiers GPX et ne sont pas disponibles pour analyse sur la carte.
+
+:::note Compatibilité de format
+OsmAnd utilise l'[enregistrement de trace](../plugins/trip-recording.md#recorded-gpx-file) pour intégrer les données des capteurs dans les fichiers GPX. Ce format est compatible avec de nombreuses applications sportives et d'entraînement (par exemple, Strava, Runkeeper).
 :::
 
 
-### Analyse des données
+### Analyse des données {#data-analyze}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_andr.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_4_andr.png)
+![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_andr.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_5_andr.png)
 
 </TabItem>
 
@@ -169,49 +189,66 @@ OsmAnd utilise l'[**enregistrement de trace**](../plugins/trip-recording.md#reco
 
 </Tabs>
 
-Les données des capteurs externes peuvent être transmises à l'appareil et affichées dans OsmAnd pendant le trajet comme informations supplémentaires. Si vous souhaitez analyser ces informations, vous devez enregistrer le trajet, et seulement après l'avoir enregistré, dans le *Menu contextuel de la trace → Analyser sur la carte*, des éléments supplémentaires pour les données enregistrées apparaissent.  
+Après avoir enregistré votre trajet à l'aide du [plugin Enregistrement de trajet](../plugins/trip-recording.md#recording-settings), vous pouvez consulter les données des capteurs dans l'interface d'analyse de trace.
 
-OsmAnd vous permet de sélectionner un 2ème axe pour l'analyse des données : *Fréquence cardiaque*, *Vitesse*, *Cadence*, *Puissance du vélo* et *Température*. La *Distance* et la *Batterie* ne sont pas utilisées dans [Analyser la trace sur la carte](../map/tracks/index.md#analyze-track-on-map).
+Pour analyser les données :
+
+1. Terminez l'enregistrement de votre trajet.
+2. Ouvrez la trace enregistrée depuis *Mes lieux → Traces* ou appuyez sur la trace sur la carte.
+3. Sélectionnez *Options → Analyser sur la carte* dans le menu contextuel de la trace.
+
+Cela affichera des graphiques pour vos données enregistrées : *Fréquence cardiaque*, *Vitesse*, *Cadence*, *Puissance du vélo* et *Température*.
+
+> *Le niveau de batterie et la distance ne sont pas disponibles dans la fonctionnalité [Analyser la trace sur la carte](../map/tracks/index.md#analyze-track-on-map).*
 
 
-## Widgets
+## Widgets {#widgets}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="external_sensor_widgets"/>*
+Allez dans : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="external_sensor_widgets"/>*
 
-![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
+![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1_andr.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → <Translate ios="true" ids="external_sensors_plugin_name"/>*
+Allez dans : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → <Translate ios="true" ids="external_sensors_plugin_name"/>*
 
-![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_2_ios.png)  
+![External sensors widgets iOS](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![External sensors widgets iOS](@site/static/img/plugins/sensors/external_sens_widg_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Le [widget Capteurs externes](../widgets/info-widgets.md#external-sensors-widgets) est automatiquement ajouté à la liste des widgets lorsque vous activez le plugin Capteurs externes. Avant de commencer votre trajet, assurez-vous que les widgets sont à l'écran, et si ce n'est pas le cas, ajoutez-les à l'aide du menu [Configurer l'écran](../widgets/configure-screen.md). Les widgets Capteurs externes vous aident à suivre les données de vos capteurs externes en temps réel.  
+Le [widget Capteurs externes](../widgets/info-widgets.md#external-sensors-widgets) vous permet d'afficher les données en direct de vos capteurs connectés directement sur l'écran de la carte.
 
-1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>**. Le capteur de fréquence cardiaque peut transmettre votre fréquence cardiaque en temps réel. C'est utile pour l'entraînement cycliste lorsque vous souhaitez suivre votre fréquence cardiaque pour optimiser vos efforts d'entraînement.
-2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android uniquement*). Les capteurs de puissance de votre vélo mesurent la puissance que vous exercez lorsque vous pédalez. Cela vous permet d'analyser et d'optimiser vos entraînements pour améliorer l'efficacité et les performances.
-3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>**. La cadence est le nombre de tours de pédale par minute. Les capteurs de cadence vous aident à maintenir une vitesse de pédalage optimale pour un cyclisme efficace.
-4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>**. Les capteurs de vitesse fournissent des informations sur votre vitesse actuelle pendant que vous faites du vélo.
-5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>**. Les capteurs de distance mesurent la distance que vous parcourez lorsque vous conduisez.
-6. **<Translate android="true" ids="external_device_characteristic_temperature"/>**. Le widget affiche la température ambiante, ce qui peut être très utile si vous ne voulez pas surchauffer ou geler sur votre vélo ou votre moto.
+Avant de commencer votre trajet :
 
-### Paramètres du widget
+- Assurez-vous que le plugin Capteurs externes est activé.
+- Ouvrez *Configurer l'écran* et ajoutez les widgets nécessaires au panneau approprié.
+
+Types de widgets pris en charge :
+
+1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – affiche la fréquence cardiaque en temps réel d'un moniteur associé.
+2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android uniquement*) – affiche la puissance de pédalage actuelle en watts.
+3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – affiche le nombre de tours de pédale par minute.
+4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – vitesse actuelle du vélo.
+5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – distance totale mesurée par le capteur.
+6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – température ambiante actuelle.
+7. **Niveau de batterie** (*iOS uniquement*) – pourcentage de batterie restant dans un capteur BLE connecté.
+
+
+### Paramètres du widget {#widget-settings}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="external_sensor_widgets"/> → ⚙️ ou <Translate android="true" ids="shared_string_settings"/>*
+Allez dans : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="external_sensor_widgets"/> → Choisir un widget → <Translate android="true" ids="shared_string_settings"/>*
 
 ![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-android.png)
 
@@ -219,22 +256,28 @@ Aller à : *Android* *<Translate android="true" ids="shared_string_menu,map_widg
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → Capteur externe → Paramètres*
+Allez dans : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → Capteur externe → Choisir un widget → Paramètres*
 
- ![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
+![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Par défaut, le widget affiche le premier capteur de ce type actuellement connecté. Si vous souhaitez en choisir un autre, vous devez le sélectionner manuellement dans la liste des capteurs connectés.
+Par défaut, le widget affiche le premier capteur actuellement connecté de ce type. Si vous souhaitez utiliser un capteur spécifique, appuyez sur **Source de données** et choisissez dans la liste des capteurs connectés.
+
+Sur **iOS**, vous pouvez choisir la valeur à afficher dans le widget :
+
+- **Données du capteur** (par exemple, cadence, vitesse).
+- **Niveau de batterie** – pourcentage de batterie en temps réel du capteur sélectionné.
+
+> *C'est utile lorsque vous souhaitez surveiller la charge de la batterie pendant de longs trajets pour éviter les déconnexions.*
 
 
-## Articles connexes
+## Articles connexes {#related-articles}
 
 - [Interagir avec la carte](../../user/map/interact-with-map.md)
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *Cet article a été mis à jour pour la dernière fois en novembre 2024*
-
+> *Cet article a été mis à jour pour la dernière fois en mai 2025*

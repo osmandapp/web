@@ -1,7 +1,7 @@
 ---
-source-hash: 29f7018c5244678172109484191df9965e2dcff1272a73e9e960ec159d956644 
+source-hash: 1560000cbb5b9c06f7de5e4793fcff083d6b686c0c0c3deff939ff89639485ed
 sidebar_position: 8
-title: Site Web
+title:  Site Web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,11 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Aperçu
+## Vue d'ensemble {#overview}
 
-## Comment trouver les journaux de plantage dans les navigateurs web
+## Comment trouver les journaux de plantage dans les navigateurs web {#how-to-find-crash-logs-in-web-browsers}
 
-:::note OsmAnd ne collecte ni ne stocke aucune donnée personnelle de l'utilisateur
+:::note OsmAnd ne collecte ni ne stocke aucune donnée personnelle d'utilisateur
 Les journaux de plantage sont générés par votre navigateur web et ne contiennent que des informations techniques sur le problème, telles que les erreurs système et l'activité du navigateur au moment du plantage. Ces journaux n'incluent pas d'informations personnelles ni de données de suivi.
 Si vous choisissez de partager les journaux de plantage avec le support, ils ne sont utilisés que pour diagnostiquer et résoudre les problèmes techniques.
 :::
@@ -30,7 +30,7 @@ Pour résoudre efficacement les problèmes liés aux services web d'OsmAnd, il e
 1. Ouvrez Chrome et reproduisez le problème.
 2. Appuyez sur **Commande + Option + J** (Mac) ou **Contrôle + Maj + J** (Windows, Linux, ChromeOS) pour ouvrir la **Console JavaScript**.
 3. Recherchez les messages d'erreur marqués en **rouge**, qui peuvent indiquer la cause du problème.
-4. Cliquez avec le bouton droit n'importe où dans la console, sélectionnez **Enregistrer sous…**, et enregistrez le fichier journal.
+4. Cliquez avec le bouton droit de la souris n'importe où dans la console, sélectionnez **Enregistrer sous…**, et enregistrez le fichier journal.
 5. Joignez le fichier enregistré ou copiez et collez les messages d'erreur lorsque vous signalez le problème.
 
 **Mozilla Firefox** :
@@ -38,20 +38,19 @@ Pour résoudre efficacement les problèmes liés aux services web d'OsmAnd, il e
 1. Ouvrez Firefox et accédez à la page concernée.
 2. Cliquez sur ***Outils → Outils du navigateur → Outils de développement web → Console***, ou appuyez sur **Ctrl + Maj + I** (Windows/Linux) ou **Cmd + Opt + I** (macOS) pour ouvrir la **Console de développement**.
 3. Localisez les messages d'erreur ou les avertissements liés au problème.
-4. Pour exporter les journaux, cliquez avec le bouton droit à l'intérieur de la console, sélectionnez **Exporter la sortie de la console**, et enregistrez le fichier.
-5. Partagez le fichier journal enregistré avec une description du problème.
+4. Pour exporter les journaux, cliquez avec le bouton droit de la souris à l'intérieur de la console, sélectionnez **Exporter la sortie de la console**, et enregistrez le fichier.
+5. Partagez le fichier journal enregistré ainsi qu'une description du problème.
 
 **Microsoft Edge** :
 
 1. Ouvrez Edge et essayez de reproduire l'erreur.
 2. Appuyez sur **F12** ou **Ctrl + Maj + I** pour ouvrir les **Outils de développement**.
 3. Cliquez sur l'onglet **Console** pour afficher les erreurs ou les avertissements.
-4. Si nécessaire, cliquez avec le bouton droit à l'intérieur de la console, choisissez **Enregistrer sous…**, et enregistrez le journal d'erreurs pour le soumettre.
+4. Si nécessaire, cliquez avec le bouton droit de la souris à l'intérieur de la console, choisissez **Enregistrer sous…**, et enregistrez le journal d'erreurs pour le soumettre.
 
 **Conseils de dépannage** :
 
-- Si le site plante complètement, essayez d'actualiser la page et de vérifier à nouveau les journaux.
+- Si le site plante complètement, essayez de rafraîchir la page et de vérifier à nouveau les journaux.
 - Assurez-vous d'utiliser la **dernière version de votre navigateur**, car les versions obsolètes peuvent causer des problèmes inattendus.
 - Désactivez les extensions de navigateur qui pourraient interférer avec la fonctionnalité du site et testez à nouveau.
 - Si le problème persiste, redémarrez votre navigateur ou essayez d'en utiliser un autre.
-

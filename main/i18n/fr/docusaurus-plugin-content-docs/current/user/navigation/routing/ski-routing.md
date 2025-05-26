@@ -1,5 +1,5 @@
 ---
-source-hash: a46301bd164277ebcea71e71443d70f2630fddc873e56443bd8a84fdf64b51ac 
+source-hash: 4d3d1bdc06c5bec5c0a27ded9684d2393973a48e6a79d7a9a21534d1777b7da9
 sidebar_position: 6
 title:  Itinéraire de ski
 ---
@@ -14,20 +14,20 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Aperçu
+## Aperçu {#overview}
 
 :::note
 L'itinéraire de ski et le profil de ski ne sont disponibles que lorsque le [plugin Vue carte de ski](../../plugins/ski-maps.md) est activé.
 :::
 
-L'*itinéraire de ski* peut être particulièrement utile pour les skieurs de randonnée, les skieurs-alpinistes et autres amateurs de sports d'hiver qui souhaitent explorer de nouvelles zones et planifier leurs voyages à l'avance. Avec l'*itinéraire de ski*, les utilisateurs d'OsmAnd peuvent planifier des itinéraires et naviguer en toute sécurité tout en profitant de la beauté des paysages hivernaux.
+L'*itinéraire de ski* peut être particulièrement utile pour les skieurs de randonnée, les skieurs-alpinistes et autres amateurs de sports d'hiver qui souhaitent explorer de nouvelles régions et planifier leurs voyages à l'avance. Avec l'*itinéraire de ski*, les utilisateurs d'OsmAnd peuvent planifier des itinéraires et naviguer en toute sécurité tout en profitant de la beauté des paysages hivernaux.
 
 L'*itinéraire de ski* peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des paramètres de navigation.
 
 ![Map routes - ski slopes](@site/static/img/navigation/routing/ski_routing_overview.png)
 
 
-## Paramètres d'itinéraire - Ski
+## Paramètres d'itinéraire - Ski {#route-parameters---ski}
 
 :::note
 Par défaut, le *profil de ski* est désactivé. Pour utiliser ce profil pour l'itinéraire, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -66,17 +66,16 @@ Les paramètres d'*itinéraire de ski* permettent aux utilisateurs de planifier 
 |*<Translate android="true" ids="routing_attr_difficulty_preference_name"/>* | <details><summary> <Translate android="true" ids="routing_attr_difficulty_preference_description"/> </summary>![Off piste Android](@site/static/img/navigation/routing/offpiste_android.png) </details> | |
 
 
-## Autres paramètres d'itinéraire
+## Autres paramètres d'itinéraire {#other-routing-settings}
 
-- L'algorithme de routage peut également prendre en compte les limitations temporaires spécifiées dans OpenStreetMap. Cela peut être fait en utilisant l'option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Notez que dans certains cas, les informations d'OSM peuvent être obsolètes.
+- L'algorithme d'itinéraire peut également prendre en compte les limitations temporaires spécifiées dans OpenStreetMap. Cela peut être fait en utilisant l'option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Notez que dans certains cas, les informations d'OSM peuvent être obsolètes.
 
 - Dans la section [*Recalculer l'itinéraire*](../../navigation/guidance/navigation-settings.md#recalculate-route) des *Paramètres d'itinéraire*, vous pouvez activer et ajuster les options de recalcul d'itinéraire.
 
-- Dans la section [*Développement*](../guidance/navigation-settings.md#development-settings) des *Paramètres d'itinéraire*, vous pouvez essayer de nouvelles fonctionnalités de routage qui sont actuellement en phase de test. Notez que ces paramètres ne sont disponibles que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé.
+- Dans la section [*Développement*](../guidance/navigation-settings.md#development-settings) des *Paramètres d'itinéraire*, vous pouvez essayer de nouvelles fonctionnalités d'itinéraire qui sont actuellement en phase de test. Notez que ces paramètres ne sont disponibles que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé.
 
 - Le paramètre *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* dans la version *iOS* d'OsmAnd se trouve dans *Paramètres de navigation → Paramètres d'itinéraire* (pour *Android*, dans *Paramètres du véhicule → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Ce paramètre est utilisé sur les routes inconnues sans limitation de vitesse. C'est le plus souvent le cas lors de la navigation sur une trace ou un itinéraire en ligne. Il doit être réglé en fonction des paramètres de votre véhicule.
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. La configuration correcte des paramètres vous aidera à éviter les problèmes lors de la création d'un itinéraire. Vous pouvez sélectionner l'itinéraire le plus approprié en fonction du type de véhicule et des restrictions routières, ainsi que calculer le temps de trajet.
 
 > *Cet article a été mis à jour pour la dernière fois en juin 2024*
-

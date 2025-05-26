@@ -11,7 +11,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-We know that not everyone is able to purchase OsmAnd on Google Play / Amazon store or to purchase maps for OsmAnd on iTunes store due to various reasons, but many of you would still like to support the application by using it and spreading it around the world.
+We know that not everyone is able to purchase OsmAnd on Google Play store or to purchase maps for OsmAnd on iTunes store due to various reasons, but many of you would still like to support the application by using it and spreading it around the world.
 
 <!--truncate-->
 
