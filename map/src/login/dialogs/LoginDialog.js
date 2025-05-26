@@ -49,7 +49,7 @@ export default function LoginDialog() {
 
     useEffect(() => {
         if (ltx.loginUser && ltx.loginUser !== '' && ltx.loginUser !== INIT_LOGIN_STATE) {
-            getAccountInfo(ctx.setAccountInfo).then();
+            getAccountInfo(ltx.setAccountInfo).then();
         }
     }, [ltx.loginUser]);
 

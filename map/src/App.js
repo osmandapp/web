@@ -45,6 +45,7 @@ import InformationBlock from './infoblock/components/InformationBlock';
 import ShareFileMenu from './menu/share/ShareFileMenu';
 import { LoginContextProvider } from './context/LoginContext';
 import PurchasesMenu from './login/purchases/PurchasesMenu';
+import PurchaseInfo from './login/purchases/PurchaseInfo';
 
 export let globalNavigate = () => null;
 
@@ -65,7 +66,9 @@ const App = () => {
                             {/*temp route to old login UI*/}
                             <Route path={OLD_LOGIN_URL} element={<LoginDialog />}></Route>
                             <Route path={LOGIN_URL} element={<LoginMenu />}>
-                                <Route path={PURCHASES_URL} element={<PurchasesMenu />}></Route>
+                                <Route path={PURCHASES_URL} element={<PurchasesMenu />}>
+                                    <Route path=":key" element={<PurchaseInfo />}></Route>
+                                </Route>
                             </Route>
                             <Route
                                 path={DELETE_ACCOUNT_URL}

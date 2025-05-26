@@ -9,9 +9,10 @@ import PurchaseStatus from './PurchaseStatus';
 import { useTranslation } from 'react-i18next';
 import { formatString } from '../../manager/SettingsManager';
 
-const typeMap = {
+export const typeMap = {
     monthly: 'monthly_subscription',
     annual: 'annual_subscription',
+    inapp: 'in_app_purchase_desc',
 };
 
 const subIconMap = {

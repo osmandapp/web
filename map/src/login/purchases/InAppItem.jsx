@@ -8,6 +8,7 @@ import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import { format } from 'date-fns';
 import { useTranslation } from 'react-i18next';
+import { typeMap } from './SubscriptionItem';
 
 export default function InAppItem({ id, onClick, name, purchaseTime }) {
     const { t } = useTranslation();
@@ -35,7 +36,7 @@ export default function InAppItem({ id, onClick, name, purchaseTime }) {
                     {t(type)}
                 </Typography>
                 <Typography className={loginStyles.purchaseInfo} noWrap>
-                    {`${t('shared_string_purchased')}: ${purchaseDate}`}
+                    {`${t(typeMap['inapp'])}: ${purchaseDate}`}
                 </Typography>
                 <Box sx={{ mt: '6px' }}>
                     <PurchaseStatus status={'active'} />
