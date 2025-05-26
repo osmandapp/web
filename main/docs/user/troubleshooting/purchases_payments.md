@@ -70,7 +70,7 @@ import Translate from '@site/src/components/Translate.js';
 - Restore purchases in the Huawei AppGallery.
 -->
 
-## Amazon store is closing — what to do
+## Amazon store is closing - what to do
 
 We are already developing a way to save all your purchases and will provide detailed instructions shortly.
 

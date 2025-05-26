@@ -444,7 +444,7 @@ The Street name widget shows **the current street name** with a straight arrow, 
 | By tapping | No changes |
 
 
-## Approach POIs/Favorites
+## Approach POIs / Favorites
 
 <Tabs groupId="operating-systems">
 
