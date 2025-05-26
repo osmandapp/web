@@ -100,21 +100,25 @@ export default function PurchaseInfo() {
                         <InAppItem id={item.name} name={item.name} purchaseTime={item.purchaseTime} />
                     )}
                     <DefaultItem
-                        name={'Type'}
+                        name={t('shared_string_type')}
                         additionalInfo={typeMap[item.type] ? t(typeMap[item.type]) : t(typeMap['inapp'])}
                         revertText={true}
                     />
                     {type === SUBSCRIPTION && (
-                        <DefaultItem name={'Expires'} additionalInfo={formatDate(item.expire_time)} revertText={true} />
+                        <DefaultItem
+                            name={t('shared_string_expires')}
+                            additionalInfo={formatDate(item.expire_time)}
+                            revertText={true}
+                        />
                     )}
                     {type === IN_APP && (
                         <DefaultItem
-                            name={'Purchased'}
+                            name={t('shared_string_purchased')}
                             additionalInfo={formatDate(item.purchaseTime)}
                             revertText={true}
                         />
                     )}
-                    <DefaultItem name={t('shared_string_purchased')} additionalInfo={item.store} revertText={true} />
+                    <DefaultItem name={t('shared_string_purchased_on')} additionalInfo={item.store} revertText={true} />
                     <ColorBlock color={'#f0f0f0'} />
                 </>
             )}

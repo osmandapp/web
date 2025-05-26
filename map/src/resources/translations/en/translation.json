@@ -5294,6 +5294,9 @@
   "annual_subscription": "Annual subscription",
   "monthly_subscription": "Monthly subscription",
   "in_app_purchase_desc": "One-time payment",
-  "shared_string_purchased": "Purchased on",
-  "next_billing_date": "Next billing date: %1$s"
+  "shared_string_purchased_on": "Purchased on",
+  "next_billing_date": "Next billing date: %1$s",
+  "shared_string_type": "Type",
+  "shared_string_expires": "Expires",
+  "shared_string_purchased": "Purchased"
 }
