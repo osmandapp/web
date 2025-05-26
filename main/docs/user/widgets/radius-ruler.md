@@ -16,14 +16,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview
+## Overview {#overview}
 
 Ruler tools are designed to help you accurately assess the current [map scale](https://en.wikipedia.org/wiki/Scale_(map)) and measure distances. The *Ruler's Radius* tool lets you set a radius around any selected point on the map, displaying concentric distance circles for easy reference. The *Tangent Distance* tool allows you to calculate the distance between selected points or determine the distance to a specific point on the map, providing precise measurements for navigation and planning.
 
 ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_screen.png)
 
 
-## Ruler
+## Ruler {#ruler}
 
 <Tabs groupId="operating-systems">
 
@@ -50,7 +50,7 @@ As you zoom in or out, the *Ruler* dynamically adjusts, allowing you to visually
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
-## Radius Ruler Widget
+## Radius Ruler Widget {#radius-ruler-widget}
 
 <Tabs groupId="operating-systems">
 
@@ -83,7 +83,7 @@ The **[Radius Ruler Widget](../widgets/info-widgets.md#radius-ruler)** displays 
 The first circle drawn by the *Radius Ruler* corresponds to the current [map scale](#ruler), providing an easy visual reference for understanding the area surrounding your location. As you adjust the zoom level, the map scale and radius dynamically adapt, offering accurate distance measurements from your location to the center point on the map
 
 
-## Compass for Radius Ruler
+## Compass for Radius Ruler {#compass-for-radius-ruler}
 
 <Tabs groupId="operating-systems">
 
@@ -115,7 +115,7 @@ You may also notice a **blue triangle** that indicates the compass direction. Th
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-### Center / Bottom Position
+### Center / Bottom Position {#center--bottom-position}
 
 <Tabs groupId="operating-systems">
 
@@ -140,7 +140,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,sel
 To extend the visible range of the Radius Ruler, you need to disable the *<Translate android="true" ids="always_center_position_on_map"/>* option.
 Next, activate the *<Translate android="true" ids="radius_ruler_item"/>* setting in the *<Translate android="true" ids="layer_map_appearance"/>* menu. Once enabled, tapping the location button will shift the *<Translate android="true" ids="radius_ruler_item"/>* downwards, allowing you to see more of the surrounding area on the map.
 
-### 3D View
+### 3D View {#3d-view}
 
 <Tabs groupId="operating-systems">
 
@@ -162,7 +162,7 @@ Next, activate the *<Translate android="true" ids="radius_ruler_item"/>* setting
 To enhance the visible range of the *Radius Ruler*, tap on [the location button](../map/interact-with-map.md#my-location-and-zoom) and then [adjust the map's tilt to switch to 3D view](../map/interact-with-map.md#gestures). This perspective allows you to better visualize distances and relationships between points on the map.
 
 
-### Video Guides
+### Video Guides {#video-guides}
 
 <Tabs groupId="operating-systems">
 
@@ -183,7 +183,7 @@ To enhance the visible range of the *Radius Ruler*, tap on [the location button]
 Watch this video guide for a step-by-step walkthrough on how to effectively use the *Radius Ruler* tool.
 
 
-## Distance by Tap Tool
+## Distance by Tap Tool {#distance-by-tap-tool}
 
 ![Distance between two random points on the map](@site/static/img/widgets/distance_between_two_random_points.png)  
 
@@ -201,7 +201,7 @@ To measure the distance between two points, tap both points simultaneously. The 
 | Units Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Configure Screen](./configure-screen.md)
 - [Map buttons](./map-buttons.md)

@@ -14,11 +14,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';  
 
 
-# Android 5.0 (beta)
+# Android 5.0 (beta) {#android-50-beta}
 
 Android 5.0 is the latest release that introduces many new features and improvements to the OsmAnd app. This article describes all the key updates that represent meaningful changes for our users.
 
-# Join Beta
+# Join Beta {#join-beta}
 
 OsmAnd releases several Ready-To-Use builds daily, allowing you to track new features and participate in the OsmAnd translation process. You can take part in testing the beta version of OsmAnd using Google Play.
 
@@ -31,7 +31,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ![OsmAnd 5.0](../../blog/2025-04-18-android-5-0/img/osmand_5.png)
 
-## What's new
+## What's new {#whats-new}
 
 - [The new main navigation widget](#route-maneuvers-widgets-set) combines turn arrows and navigation instructions.
 - [Current route information widget](#new-route-information-widget): displays ETA, arrival time, and distance.
@@ -57,7 +57,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
 
 
-## Route Guidance Widgets Set
+## Route Guidance Widgets Set {#route-guidance-widgets-set}
 
 ![Route Guidance Widget](../../blog/2025-04-18-android-5-0/img/route_guidance_widget.png)
 
@@ -75,7 +75,7 @@ Learn more:
 [Route Guidance Widget](https://osmand.net/docs/user/widgets/nav-widgets#route-guidance)
 
 
-## New Route Information Widget
+## New Route Information Widget {#new-route-information-widget}
 
 ![Route Guidance Widget](../../blog/2025-04-18-android-5-0/img/route_info_widget_2.png)
 
@@ -95,7 +95,7 @@ Learn more:
 [Start/Stop Navigation Panel](https://osmand.net/docs/user/navigation/setup/route-navigation#start--stop-navigation)
 
 
-## Redesigned Configure Screen
+## Redesigned Configure Screen {#redesigned-configure-screen}
 
 ![Configure Screen](../../blog/2025-04-18-android-5-0/img/config_screen_1.png)  ![Configure Screen](../../blog/2025-04-18-android-5-0/img/config_screen_2.png)  
 
@@ -116,7 +116,7 @@ Learn more:
 [Widget Configure Screen](https://osmand.net/docs/user/widgets/configure-screen)
 
 
-## Resizable Widgets for Side Panels
+## Resizable Widgets for Side Panels {#resizable-widgets-for-side-panels}
 
 ![Resizable Widgets for Side Panels](../../blog/2025-04-18-android-5-0/img/resizable_widgets_andr.png)
 
@@ -134,7 +134,7 @@ Learn more:
 [Widget Settings](https://osmand.net/docs/user/widgets/configure-screen#widget-settings)
 
 
-## Reset Option for the Average Speed Widget
+## Reset Option for the Average Speed Widget {#reset-option-for-the-average-speed-widget}
 
 ![Reset Option for the Average Speed Widget](../../blog/2025-04-18-android-5-0/img/reset_average_speed.png)
 
@@ -150,7 +150,7 @@ Learn more:
 [Configure Screen](https://osmand.net/docs/user/widgets/configure-screen#widget-settings)
 
 
-## Explore Mode: Discover Popular Places
+## Explore Mode: Discover Popular Places {#explore-mode-discover-popular-places}
 
 ![Explore Mode](../../blog/2025-04-18-android-5-0/img/explore_search.png)
 
@@ -169,7 +169,7 @@ Learn more:
 [Search All Locations](https://osmand.net/docs/user/search/search-all)
 
 
-## Popular Places (Wikipedia)
+## Popular Places (Wikipedia) {#popular-places-wikipedia}
 
 ![Wikidata](../../blog/2025-04-18-android-5-0/img/wikidata.png)
 
@@ -190,7 +190,7 @@ Learn more:
 
 
 
-## All OSM Routes – Now Searchable
+## All OSM Routes – Now Searchable {#all-osm-routes--now-searchable}
 
 ![Routes](../../blog/2025-04-18-android-5-0/img/routes.png)  ![Routes](../../blog/2025-04-18-android-5-0/img/routes_1.png)  
 
@@ -219,7 +219,7 @@ For more details, visit:
 -->
 
 
-## Ski Slopes and MTB Trails Information
+## Ski Slopes and MTB Trails Information {#ski-slopes-and-mtb-trails-information}
 
 ![Ski Slopes and MTB Trails](../../blog/2025-04-18-android-5-0/img/ski_mtb.png)  ![Ski Slopes and MTB Trails](../../blog/2025-04-18-android-5-0/img/ski_mtb_2.png)
 
@@ -231,7 +231,7 @@ Learn more:
 [Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
 
 
-## Coordinates Grid Overlay
+## Coordinates Grid Overlay {#coordinates-grid-overlay}
 
 ![Coordinates Grid Overlay](../../blog/2025-04-18-android-5-0/img/coordinates_grid_settings_andr.png)
 
@@ -249,7 +249,7 @@ Learn more:
 [Coordinates Grid](https://osmand.net/docs/user/map/vector-maps#coordinates-grid)
 
 
-## Climbing Areas and Crags
+## Climbing Areas and Crags {#climbing-areas-and-crags}
 
 ![Map routes - Climbing Routes](../../blog/2025-04-18-android-5-0/img/map-routes-climbing-routes.png)
 
@@ -262,7 +262,7 @@ For more details, visit:
 [Climbing area and crag details](https://osmand.net/docs/user/map/map-context-menu/#climbing-area-and-crag-details)
 
 
-## Detailed Information for Linear Objects
+## Detailed Information for Linear Objects {#detailed-information-for-linear-objects}
 
 ![Barrier icons](../../blog/2025-04-18-android-5-0/img/icons.png)
 
@@ -274,7 +274,7 @@ Explore more:
 [Linear object details in the Map Context Menu](https://osmand.net/docs/user/map/map-context-menu/#linear-object)
 
 
-## Mountain Peak Heights in Feet
+## Mountain Peak Heights in Feet {#mountain-peak-heights-in-feet}
 
 ![Mountain Peak](../../blog/2025-04-18-android-5-0/img/mountain_peak.png)
 
@@ -291,7 +291,7 @@ Learn more:
 [Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
 
 
-## Prominent Peaks Now Discoverable  
+## Prominent Peaks Now Discoverable   {#prominent-peaks-now-discoverable--}
 
 You can now **discover prominent peaks** directly on the map and through search. This update adds [notable mountain peaks](https://en.wikipedia.org/wiki/Ultra-prominent_peak) to the basemap, allowing you to easily find their names, elevations, and additional details through the map's context menu or search functionality.
 
@@ -301,7 +301,7 @@ Learn more:
 [Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
 
 
-## USA Address Search with TIGER Data
+## USA Address Search with TIGER Data {#usa-address-search-with-tiger-data}
 
 ![TIGER Data](../../blog/2025-04-18-android-5-0/img/tiger_data.png)
 
@@ -318,7 +318,7 @@ Learn more:
 [US address search – user guide](https://docs.osmand.net/docs/user/search/search-address/#us-address-search-and-tiger-data)
 
 
-## Interactions with Intermediate Destinations
+## Interactions with Intermediate Destinations {#interactions-with-intermediate-destinations}
 
 ![Intermediate Destinations](../../blog/2025-04-18-android-5-0/img/navigation_interpoints_2_andr.png)
 
@@ -334,7 +334,7 @@ Learn more:
 [Intermediate destinations – user guide](https://osmand.net/docs/user/navigation/setup/route-navigation#intermediate-destinations)
 
 
-## Flexible Appearance Settings for Favorite Groups
+## Flexible Appearance Settings for Favorite Groups {#flexible-appearance-settings-for-favorite-groups}
 
 ![Flexible Appearance Settings for Favorite Groups](../../blog/2025-04-18-android-5-0/img/appearance_sett_favorites.png)
 
@@ -344,7 +344,7 @@ Learn more:
 [Change Group Appearance](https://osmand.net/docs/user/personal/favorites/#change-group-appearance)
 
 
-## Android Auto Improvements
+## Android Auto Improvements {#android-auto-improvements}
 
 ![Android Auto Improvements](../../blog/2025-04-18-android-5-0/img/android_auto_start_navigation.png)
 
@@ -362,7 +362,7 @@ Learn more:
 [Start Navigation with Android Auto](https://osmand.net/docs/user/navigation/auto-car#start-navigation)
 
 
-## AIS Vessel Tracking Plugin
+## AIS Vessel Tracking Plugin {#ais-vessel-tracking-plugin}
 
 ![AIS vessel tracker](@site/static/img/plugins/ais/ais.png)
 
@@ -384,7 +384,7 @@ Learn more:
 [AIS Vessel Tracker Plugin](https://osmand.net/docs/user/plugins/ais-tracker)
 
 
-## Optional updates
+## Optional updates {#optional-updates}
 
 - Added [Hebrew TTS](https://osmand.net/docs/user/navigation/guidance/voice-navigation#voice-prompt-language) for navigation.
 - Fixed issues:

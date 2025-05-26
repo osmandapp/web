@@ -15,14 +15,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview
+## Overview {#overview}
 
 Test functions of the app are collected in the OsmAnd development plugin. Use them at your own risk.
 
 The OsmAnd development plugin allows you to try new features of the app or to configure OsmAnd for testing: simulate navigation routes, check the screen rendering performance, etc. Plugin is designed for *developers and experienced users* and not required for daily use of the application.  
 
 
-## Required Setup Parameters  
+## Required Setup Parameters   {#required-setup-parameters--}
 
 To activate special features for developers and testers:
 
@@ -31,7 +31,7 @@ To activate special features for developers and testers:
 3. Enable **developer widgets** if necessary.  
 
 
-## Plugin Settings
+## Plugin Settings {#plugin-settings}
 
 :::info info  
 OsmAnd development plugin settings are global and apply to all profiles.  
@@ -59,12 +59,12 @@ Use one of the following paths to open the plugin settings:
 </Tabs>  
 
 
-### Terrain
+### Terrain {#terrain}
 
 - **Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite.md/) for hillshade and slope** (*Android*). Load old format raster maps.
 
 
-### Troubleshotting  
+### Troubleshotting   {#troubleshotting--}
 
 - **Simulate your position** (*Android* / *iOS*). [Simulate](#gpx-track-simulation) the location and movement using a GPX track.
 - **Battery saving mode** (*Android* / *iOS*). This setting reduces [the screen refresh rate](#map-rendering-fps-widget) by 20 frames per second to help save battery power while using applications.
@@ -78,7 +78,7 @@ Use one of the following paths to open the plugin settings:
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Heading is the compass direction from your current position towards true north. This option is enabled by default. Affects *[track recording](../plugins/trip-recording.md)*.
 
 
-### Application Testing
+### Application Testing {#application-testing}
 
 :::caution Android only
 :::
@@ -91,7 +91,7 @@ Use one of the following paths to open the plugin settings:
 - **Allow display on top**. Allows map texts to be displayed on top of each other.
 
 
-### Internal Algorithms
+### Internal Algorithms {#internal-algorithms}
 
 :::caution Android only
 :::
@@ -99,7 +99,7 @@ Use one of the following paths to open the plugin settings:
 - **Safe mode**. Run the app in (slower) safe mode.  
 
 
-### Memory Settings
+### Memory Settings {#memory-settings}
 
 :::caution Android only
 :::  
@@ -112,7 +112,7 @@ Use one of the following paths to open the plugin settings:
 - [Calculation of 50 km routes for pedestrians](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
 
 
-### Info and Statistics
+### Info and Statistics {#info-and-statistics}
 
 :::caution Android only
 :::  
@@ -131,7 +131,7 @@ Use one of the following paths to open the plugin settings:
     ![Development Settings Android](@site/static/img/plugins/development/devplugin_stat_and.png)
 
 
-## Map Rendering FPS Widget
+## Map Rendering FPS Widget {#map-rendering-fps-widget}
 
 :::info  Important
 OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
@@ -160,7 +160,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_w
 The [FPS Widget](../widgets/info-widgets.md#map-rendering-fps) shows how fast the map and map elements are displayed and refreshed. The numeric value is indicated in frames per second (FPS).
 
 
-## Camera Position Widgets
+## Camera Position Widgets {#camera-position-widgets}
 
 :::info  Important
 OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
@@ -189,7 +189,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_w
 You can use [Camera position widgets](../widgets/info-widgets.md#camera-widgets) to give the OsmAnd map a realistic look and match photos of the Earth taken both from above and from space.  
 
 
-### Camera tilt
+### Camera tilt {#camera-tilt}
 
 <Tabs groupId="operating-systems">
 
@@ -215,7 +215,7 @@ At the same time, due to the imaginary movement of the viewer, the distance from
 :::
 
 
-### Camera Elevation
+### Camera Elevation {#camera-elevation}
 
 <Tabs groupId="operating-systems">
 
@@ -236,7 +236,7 @@ At the same time, due to the imaginary movement of the viewer, the distance from
 The Camera Elevation widget shows the camera elevation above the surface level. Camera elevation is indicated in meters / kilometers.  
 
 
-### Zoom Level
+### Zoom Level {#zoom-level}
 
 <Tabs groupId="operating-systems">
 
@@ -266,7 +266,7 @@ The widget has two views that are switched by tapping it:
 
 :::
 
-### Distance to Target
+### Distance to Target {#distance-to-target}
 
 <Tabs groupId="operating-systems">
 
@@ -286,7 +286,7 @@ The widget has two views that are switched by tapping it:
 The Distance from camera to target widget shows the distance between the camera (viewer) and the center of the map. This distance is displayed in meters / kilometers.  
 
 
-### Comparison with a Satellite Imagery
+### Comparison with a Satellite Imagery {#comparison-with-a-satellite-imagery}
 
 ![Comparison](@site/static/img/plugins/development/comparison.png)
 
@@ -317,12 +317,12 @@ The table below contains information about the tilt of the camera and the distan
 |20| 66|11|30|10%|
 
 
-## Available RAM Widget
+## Available RAM Widget {#available-ram-widget}
 
 This widget is designed specifically for you when using OsmAnd to provide a more convenient and informative interaction with the available RAM on your device. It allows you to easily and quickly monitor the available RAM, which is especially useful when using OsmAnd for navigation. Read more about the widget in the [Information widgets](../widgets/info-widgets.md#available-ram) article.
 
 
-## GPX-Track Simulation
+## GPX-Track Simulation {#gpx-track-simulation}
 
 OsmAnd provides an opportunity to simulate the location and movement of your device using a GPX track. For these purposes, use *<Translate android="true" ids="simulate_location_by_gpx"/>* option in the OsmAnd development plugin [settings](#plugin-settings):  
 
@@ -355,7 +355,7 @@ To stop simulation of the movement of your device, go back to the OsmAnd develop
 - You can also simulate movement along a GPX-track from the [navigation menu](../navigation/setup/route-navigation.md#simulated-navigation) without enabling the OsmAnd development plugin. In that case, your location will not be synchronized with the track.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

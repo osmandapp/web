@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 The **Track Appearance** feature allows users to customize how tracks are displayed on the map. This includes adjusting color, width, direction indicators, and other visual elements. Customizing track appearance helps differentiate multiple tracks, highlight specific routes, and improve map readability.
 
@@ -36,7 +36,7 @@ The **Track Appearance** feature allows users to customize how tracks are displa
 </Tabs>
 
 
-## Access to the menu
+## Access to the menu {#access-to-the-menu}
 
 You can modify track appearance using one of the following methods:
 
@@ -46,9 +46,9 @@ You can modify track appearance using one of the following methods:
 - **From the Configure Map menu**. Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* for the displayed tracks.
 
 
-## Track Appearance Settings
+## Track Appearance Settings {#track-appearance-settings}
 
-### Color
+### Color {#color}
 
 :::tip purchases
 Some settings you can use only with *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> and <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Free and Paid features.
@@ -69,7 +69,7 @@ You can set the track color manually or use **color-based data visualization** (
 For more details on route line appearance customization, see [Map screen during navigation](../../navigation/guidance/map-during-navigation.md#color)and on selecting and creating a custom color, see [Color schemes](../../personal/color-palette-schemes.md#routes).
 
 
-### Width
+### Width {#width}
 
 ![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track Appearance](@site/static/img/map/track_appearance_width_andr.png)  
 
@@ -88,34 +88,34 @@ Adjust track width to improve visibility on the map.
 - **Profile-based width**: Can be set via *Navigation settings → [Customize Route Line](../../navigation/guidance/navigation-settings.md#customize-route-line)*.
 
 
-### Split Interval
+### Split Interval {#split-interval}
 
 ![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
 
 Select whether to split the interval on the track **by distance or by time**.
 
-### Direction Arrows
+### Direction Arrows {#direction-arrows}
 
 ![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
 
 Adds **arrow markers** along the track to indicate movement direction.
 
-### Start and Finish Icons
+### Start and Finish Icons {#start-and-finish-icons}
 
 ![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
 Allows you to select whether to show the **start and finish icons** for track segments.
 
-### Join Gaps
+### Join Gaps {#join-gaps}
 
 Connects **track segments** that were interrupted due to GPS loss or a pause in recording. The **<Translate android="true" ids="join_segments"/>** (*Android*) or **<Translate ios="true" ids="gpx_join_gaps"/>** (*iOS*) feature allows you to connect these gaps in the selected GPX track using straight lines.
 
-### Reset to Original
+### Reset to Original {#reset-to-original}
 
 Restores all **track appearance settings** to their default values.
 
 
-## 3D Track
+## 3D Track {#3d-track}
 
 :::info Paid feature
 **3D Track** is an **OsmAnd Pro** paid feature for [iOS](../../purchases/ios.md#pro-features) and [Android](../../purchases/android.md#pro-features) <ProFeature />.
@@ -139,7 +139,7 @@ Restores all **track appearance settings** to their default values.
 
 The **3D Track** feature generates a three-dimensional visualization by integrating elevation data into standard 2D tracks. This functionality creates a depth-enhanced representation, enabling precise analysis of the track concerning the terrain. By incorporating elevation details, the 3D track offers a more comprehensive view of the route's topography and geographical context.
 
-### 3D Track Settings
+### 3D Track Settings {#3d-track-settings}
 
 **Wall height**  
 You can visualize a 3D track by altitude and other available data within the track, or by fixed altitude.
@@ -163,7 +163,7 @@ Options include: *Top*, &nbsp;*Bottom*, &nbsp;*Top and bottom*.
 > **NOTE**: *The **Android version** of the app requires the map rendering engine [Version 2 (OpenGL)](../../personal/global-settings.md#map-rendering-engine) to be enabled to use 3D track visualization.*
 
 
-### Use Cases
+### Use Cases {#use-cases}
 
 The 3D track feature is highly beneficial for activities like paragliding, where visualizing your flight path can offer deeper insights. By rendering the track in 3D, you can leverage features such as **Wall Height** and **Wall Color** to extract valuable visual information for analysis.
 
@@ -182,7 +182,7 @@ The 3D track feature is highly beneficial for activities like paragliding, where
 
     In this scenario, slope changes can be visualized separately along the track line, while Wall Color utilized to represent altitude. This method ensures that even with potential data inaccuracies, you still receive a clear and accurate visualization of slope and elevation.
 
-## Change Appearance for Multiple Tracks
+## Change Appearance for Multiple Tracks {#change-appearance-for-multiple-tracks}
 
 <Tabs groupId="operating-systems">
 
@@ -233,7 +233,7 @@ Original and unchanged:
 - **Unchanged** - Keeps current settings during the editing session.
 
 
-## Track Colors in GPX Files  
+## Track Colors in GPX Files   {#track-colors-in-gpx-files--}
 
 OsmAnd supports **custom track colors** in GPX files using the `<osmand:color>` tag within the `<extensions>` section of a `<trk>` element. This allows users to define colors for individual tracks, enhancing visual differentiation when multiple tracks are displayed on the map.
 
@@ -285,7 +285,7 @@ To specify a color for a track, use the following format:
 - This ensures that each track retains its **intended color representation**, even if the GPX file originally contained multiple segments with different colors.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Map Context menu](../map-context-menu.md)
 - [Configure Map](../configure-map-menu.md)

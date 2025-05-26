@@ -12,9 +12,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-# iOS 5.0
+# iOS 5.0 {#ios-50}
 
-## Join Beta
+## Join Beta {#join-beta}
 
 iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint demo). They do not contain descriptions and may have continuous versioning. They are assumed to be stable and ready to use.  
 
@@ -26,7 +26,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 ![OsmAnd iOS 5.0](../../blog/2025-04-21-ios-5-0/img/release_5-0_ios.png)
 
-## What's new
+## What's new {#whats-new}
 
 - [Introduced Smart Folders](#smart-folders-for-automatic-track-organization) for automatic track organization.
 - [Redesigned the image block](#redesign-image-block-in-context-menu) in context menu.
@@ -66,7 +66,7 @@ add to docs android:
 
 -->
 
-## Smart Folders for Automatic Track Organization
+## Smart Folders for Automatic Track Organization {#smart-folders-for-automatic-track-organization}
 
 ![Smart Folders](../../blog/2025-04-21-ios-5-0/img/my_places_smart_folder_ios.png)
 
@@ -85,7 +85,7 @@ Learn more:
 [Smart Folder Setup for Tracks](https://osmand.net/docs/user/personal/tracks/smart-folder)
 
 
-## Redesign Image Block in Context Menu
+## Redesign Image Block in Context Menu {#redesign-image-block-in-context-menu}
 
 ![Redesign Image Block](../../blog/2025-04-21-ios-5-0/img/gallery_ios.png)
 
@@ -105,7 +105,7 @@ Learn more:
 [Online Photos in Map Context Menu](https://osmand.net/docs/user/map/map-context-menu#online-photos)  
 
 
-## Gallery Viewer for Wikimedia Images
+## Gallery Viewer for Wikimedia Images {#gallery-viewer-for-wikimedia-images}
 
 ![Gallery](../../blog/2025-04-21-ios-5-0/img/gallery_viewer_ios.png)
 
@@ -125,7 +125,7 @@ Learn more:
 [Map Context menu](https://osmand.net/docs/user/map/map-context-menu#online-photos).
 
 
-## Polygon Selection for Nearby Areas
+## Polygon Selection for Nearby Areas {#polygon-selection-for-nearby-areas}
 
 ![Poligon info](../../blog/2025-04-21-ios-5-0/img/areas_info_ios.png)
 
@@ -145,7 +145,7 @@ Learn more:
 [Map Context menu - polygon information](https://osmand.net/docs/user/map/map-context-menu#polygon-information)
 
 
-## Toggle Visibility for Favorite Groups
+## Toggle Visibility for Favorite Groups {#toggle-visibility-for-favorite-groups}
 
 ![Toggle Visibility for Favorite Groups](../../blog/2025-04-21-ios-5-0/img/visibility_favorite_groupes_ios.png)
 
@@ -164,7 +164,7 @@ Learn more:
 [Favorites Management](https://osmand.net/docs/user/personal/favorites#favorite-group-actions)
 
 
-## Flexible Appearance Settings for Favorite Groups
+## Flexible Appearance Settings for Favorite Groups {#flexible-appearance-settings-for-favorite-groups}
 
 ![Flexible Appearance Settings for Favorite Groups](../../blog/2025-04-21-ios-5-0/img/favorite_add_new_group_3_ios.png)
 
@@ -174,7 +174,7 @@ Learn more:
 [Change Group Appearance](https://osmand.net/docs/user/personal/favorites/#change-group-appearance)
 
 
-## Expanded Icon Options for Favorites
+## Expanded Icon Options for Favorites {#expanded-icon-options-for-favorites}
 
 ![Icon Options for Favorites](../../blog/2025-04-21-ios-5-0/img/icons_favorites.png)
 
@@ -189,7 +189,7 @@ Learn more:
 [Customize Favorites](https://osmand.net/docs/user/personal/favorites/#favorite-icons)
 
 
-## Change Appearance for Multiple Tracks
+## Change Appearance for Multiple Tracks {#change-appearance-for-multiple-tracks}
 
 ![Change Appearance for Multiple Tracks](../../blog/2025-04-21-ios-5-0/img/tracks_change_appear_3_ios.png)
 
@@ -207,7 +207,7 @@ Learn more:
 [Track Appearance Settings](https://osmand.net/docs/user/map/tracks/appearance)
 
 
-## Battery Status for External Sensors
+## Battery Status for External Sensors {#battery-status-for-external-sensors}
 
 ![Battery Status for External Sensors](../../blog/2025-04-21-ios-5-0/img/battery_level_sensors_ios.png)
 
@@ -228,7 +228,7 @@ Learn more:
 [External Sensors plugin](https://osmand.net/docs/user/plugins/external-sensors)
 
 
-## Reset Option for the Average Speed Widget
+## Reset Option for the Average Speed Widget {#reset-option-for-the-average-speed-widget}
 
 ![Reset Option for the Average Speed Widget](../../blog/2025-04-21-ios-5-0/img/reset_average_speed.png)
 
@@ -244,7 +244,7 @@ Learn more:
 [Configure Screen](https://osmand.net/docs/user/widgets/configure-screen#widget-settings)
 
 
-## Detailed Track Guidance and Attach to the Roads
+## Detailed Track Guidance and Attach to the Roads {#detailed-track-guidance-and-attach-to-the-roads}
 
 ![Detailed Track Guidance](../../blog/2025-04-21-ios-5-0/img/detailed_track_guidnce_ios.png)
 
@@ -266,7 +266,7 @@ Learn more:
 [Attach to the Roads](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-the-roads)
 
 
-## Prominent Peaks Now Discoverable  
+## Prominent Peaks Now Discoverable   {#prominent-peaks-now-discoverable--}
 
 Now you can **discover prominent peaks** directly on the map and through search. This update adds [notable mountain peaks](https://en.wikipedia.org/wiki/Ultra-prominent_peak) to the basemap, allowing you to easily find their names, elevations, and additional details through the map's context menu or search functionality.
 
@@ -276,7 +276,7 @@ Learn more:
 [Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
 
 
-## Quick Actions for Trip Recording
+## Quick Actions for Trip Recording {#quick-actions-for-trip-recording}
 
 ![Quick Actions for Trip Recording](../../blog/2025-04-21-ios-5-0/img/qa_trip_recording_ios.png)
 
@@ -294,7 +294,7 @@ Learn more:
 [Quick Actions for My Places](https://osmand.net/docs/user/widgets/quick-action#my-places)
 
 
-## Improved CarPlay Address Search Prioritization
+## Improved CarPlay Address Search Prioritization {#improved-carplay-address-search-prioritization}
 
 ![CarPlay Search](../../blog/2025-04-21-ios-5-0/img/car-play-search(1).png)
 
@@ -311,7 +311,7 @@ Learn more:
 [Address Search Guide](https://osmand.net/docs/user/search/search-address)
 
 
-## Closing Configure Map after Tapping the Map
+## Closing Configure Map after Tapping the Map {#closing-configure-map-after-tapping-the-map}
 
 ![Close Configure Map After Tapping on Map](../../blog/2025-04-21-ios-5-0/img/configure_map_behavior_ios.png)
 
@@ -329,7 +329,7 @@ Learn more:
 [Configure Map Menu](https://osmand.net/docs/user/map/configure-map-menu)
 
 
-## Optional updates
+## Optional updates {#optional-updates}
 
 - Added support for [Vietnamese and Hebrew](https://osmand.net/docs/user/navigation/guidance/voice-navigation#voice-prompt-language) Text-to-Speech (TTS) for navigation.
 - Added [border highlighting for buildings](https://github.com/osmandapp/OsmAnd-iOS/issues/4164) and ares with detailed information.

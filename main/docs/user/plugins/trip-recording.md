@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 The **Trip Recording plugin** is an essential tool for capturing your routes, movements, and workouts. This feature not only enables you to record your trips but also allows for easy reuse, modification, updating, and sharing of your tracks with others.  
 
@@ -37,7 +37,7 @@ With the *Trip Recording plugin*, you can create new tracks, display recorded on
 </Tabs>
 
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 To start recording tracks, you need to make the following settings:
 
@@ -47,7 +47,7 @@ To start recording tracks, you need to make the following settings:
 4. [Manage](../map/tracks/appearance.md) tracks on the map (optional).
 
 
-## New Track Recording
+## New Track Recording {#new-track-recording}
 
 ![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png)
 
@@ -75,7 +75,7 @@ With the Trip Recording plugin in OsmAnd, you can easily start recording your tr
 - **Location Source** (*Android only*) — Adjust settings in OsmAnd to choose the most suitable GPS provider for accurate recordings. [Learn more here](../personal/global-settings.md#location-source).
 
 
-### Start a Dialog
+### Start a Dialog {#start-a-dialog}
 
 <Tabs groupId="operating-systems">
 
@@ -106,7 +106,7 @@ Start dialog opens, if the **<Translate ios="true" ids="track_interval_remember"
 - **Remember my choice** (*iOS*). When enabled, track recording starts automatically, without prompting for additional settings or confirmation. If you want to change the recording settings before starting a new track, restart the Trip Recording plugin to make the settings menu reappear.
 
 
-### Launcher (Android)
+### Launcher (Android) {#launcher-android}
 
 ![Icon's context menu](@site/static/img/plugins/trip-recording/launcher_icon_andr.png) ![Start Recording icon](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
 
@@ -121,7 +121,7 @@ You can quickly start a new track recording directly from your Android device's 
 While track recording is active, a notification badge will appear on the corner of the OsmAnd app icon, indicating that the recording is in progress. For further details on managing this notification, see the [Notification](#notifications) section.
 
 
-## Current Track Recording
+## Current Track Recording {#current-track-recording}
 
 For *Stop / Save / Pause*:
 
@@ -136,7 +136,7 @@ For *Stop / Save / Pause*:
 - (*Android only*) To **Pause** or **Save** a recording track, use the system [notification](#notifications) in the notification area of your device.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
-### Overview Screen
+### Overview Screen {#overview-screen}
 
 <Tabs groupId="operating-systems">
 
@@ -188,7 +188,7 @@ For more details, you can explore the [**Tracks Context Menu**](../map/tracks/tr
 :::
 
 
-### Show on the Map
+### Show on the Map {#show-on-the-map}
 
 <Tabs groupId="operating-systems">
 
@@ -208,7 +208,7 @@ For more details, you can explore the [**Tracks Context Menu**](../map/tracks/tr
 Manage which tracks are visible on your map using one of two options. Head to *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>* *→* [*<Translate ios="true" ids="shared_string_gpx_tracks"/> tab*](../map/tracks/index.md#my-places) and enable the *Show on map* option for any track you want to display or hide. Alternatively, you can go to *<Translate android="true" ids="shared_string_menu,configure_map"/>* *→* [*<Translate android="true" ids="shared_string_gpx_files"/>*](../map/tracks/index.md#configure-map) to quickly adjust the visibility of all your tracks in one place.
 
 
-### Recorded GPX File
+### Recorded GPX File {#recorded-gpx-file}
 
 OsmAnd captures your journey in a structured [GPX file](https://en.wikipedia.org/wiki/GPS_Exchange_Format), using a hierarchy of *file > track > segments > points*. Here's how it works:
 
@@ -250,7 +250,7 @@ OsmAnd captures your journey in a structured [GPX file](https://en.wikipedia.org
 | `hr` | **Heart Rate** monitors your heartbeats per minute, using data from connected [sensors](../plugins/external-sensors.md). This information can be vital for tracking your cardiovascular performance during workouts. [Find out more](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
 
 
-## Recording Settings
+## Recording Settings {#recording-settings}
 
 Before you start tracking your trips, you need to properly configure the **Trip Recording plugin** for optimal performance.
 
@@ -302,7 +302,7 @@ Before you start tracking your trips, you need to properly configure the **Trip 
 | **Copy from another profile** (*Android*) | Copies the trip recording settings from one profile to another. |
 
 
-### Battery Optimization
+### Battery Optimization {#battery-optimization}
 
 <InfoAndroidOnly />
 
@@ -315,7 +315,7 @@ This feature allows you to manage battery optimization settings for OsmAnd to en
 - **Close**. Temporarily closes the dialog box, which will appear again the next time battery optimization needs attention.
 
 
-### Notifications
+### Notifications {#notifications}
 
 ![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
@@ -353,7 +353,7 @@ The app icon badge appears next to the OsmAnd icon when the track recording is a
 - To disable badges in Android settings, go to device *Settings → Apps → OsmAnd → Notifications* and disable the badge display option for this app.
 
 
-## Widgets  
+## Widgets   {#widgets--}
 
 Widgets allow you to display key information about track recording directly on the screen, such as *Distance*, *Duration*, *Uphill*, and *Downhill*.
 
@@ -364,7 +364,7 @@ To start using *Trip recording widgets*, you need to make all the following sett
 3. Add the necessary **Trip recording widgets** to the screen. Note that this configuration is **specific to each profile**.
 
 
-### Add Recording Widget
+### Add Recording Widget {#add-recording-widget}
 
 <Tabs groupId="operating-systems">
 
@@ -391,7 +391,7 @@ The [Trip Recording widget](../widgets/info-widgets.md#trip-recording-widgets) p
 To customize your interface, you can add or remove the Trip Recording widget and [other widgets](../plugins/trip-recording#duration-uphill-downhill) through the Configure Screen menu.
 
 
-### Distance (Start-Stop)
+### Distance (Start-Stop) {#distance-start-stop}
 
 <Tabs groupId="operating-systems">
 
@@ -425,7 +425,7 @@ In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** i
 | To open the [Trip Recording dialog](#start-a-dialog) when tapping an inactive widget, enable the *Show Startup Dialog* option in the Trip Recording plugin settings. If the option is disabled, recording will start immediately after tapping the widget without opening the dialog.|  
 
 
-### Duration, Uphill, Downhill
+### Duration, Uphill, Downhill {#duration-uphill-downhill}
 
 <Tabs groupId="operating-systems">
 
@@ -451,7 +451,7 @@ In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** i
 If you have multiple widgets selected — *Duration*, *Uphill*, or *Downhill* — you can access the same dialog box for each without needing to switch or close it. This unified interface makes it easy to view and manage all related information seamlessly.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Map Context menu](../map/map-context-menu.md)
 - [Show track on Map](../map/tracks/index.md)
@@ -459,7 +459,7 @@ If you have multiple widgets selected — *Duration*, *Uphill*, or *Downhill* �
 - [Track Context menu](../map/tracks/track-context-menu.md)
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
 
-### Common Issues and Solutions
+### Common Issues and Solutions {#common-issues-and-solutions}
 
 - Trip Recording does not start.
     - Ensure the **Trip Recording plugin** is enabled: *Menu → Plugins → Trip Recording → Enable*.

@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-## Overview
+## Overview {#overview}
 
 *OsmAnd Search by Address* is based on OpenStreetMap data and allows you to find location and directions to a specific address from a ready sorted list, as well as search by postal code or coordinates. This tool allows you to find the required addresses in a few taps, which reduces the search time and helps in case you don't remember the exact address.  
 
@@ -25,7 +25,7 @@ OsmAnd provides several ways to get to the *Search tool* where the **Search Addr
 - When preparing to start a route, tap *Navigation → Set destination → Search field*.  
 
 
-## Full text search
+## Full text search {#full-text-search}
 
 <Tabs groupId="operating-systems">
 
@@ -65,7 +65,7 @@ Search query list:
 - Additional information, such as the city's district.
 
 
-#### US Address Search and TIGER Data
+#### US Address Search and TIGER Data {#us-address-search-and-tiger-data}
 
 OsmAnd supports address searches using OpenStreetMap data, but in the United States, address search results may be incomplete due to the use of [TIGER data](https://wiki.openstreetmap.org/wiki/TIGER).  
 
@@ -74,12 +74,12 @@ OsmAnd supports address searches using OpenStreetMap data, but in the United Sta
 - Use *alternative location identifiers*, such as nearby landmarks or ZIP codes, to refine your search results.  
 
 
-### Supported formats
+### Supported formats {#supported-formats}
 
 See the [Search All](./search-all.md#basic-queries) article for a list of available queries and supported search formats.
 
 
-## Select City
+## Select City {#select-city}
 
 <Tabs groupId="operating-systems">
 
@@ -120,7 +120,7 @@ This way of searching makes it easy to find specific locations within a selected
 :::
 
 
-## Select Street
+## Select Street {#select-street}
 
 <Tabs groupId="operating-systems">
 
@@ -150,7 +150,7 @@ Street search is performed in the locality where you are, or where you searched 
 :::
 
 
-## Postcode Search
+## Postcode Search {#postcode-search}
 
 <Tabs groupId="operating-systems">
 
@@ -185,7 +185,7 @@ For more information, read the **[United Kingdom Postcode data](https://github.c
 :::
 
 
-## Coordinates Search
+## Coordinates Search {#coordinates-search}
 
 <Tabs groupId="operating-systems">
 
@@ -206,7 +206,7 @@ For more information, read the **[United Kingdom Postcode data](https://github.c
 [**Coordinate Search**](../search/search-coordinates.md) allows you to specify geographic coordinates, such as latitude and longitude, to find a specific location. It provides accurate locations on a map in different [coordinate formats](../search/search-coordinates.md#coordinates-search) and allows you to get related information. This feature can be useful when you do not have an address or exact name of a location, and can make it easier to plan travel and navigate in unknown places.  
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Search All](./search-all.md)
 - [Search History](./search-history.md)

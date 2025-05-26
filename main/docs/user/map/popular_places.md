@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-## Overview
+## Overview {#overview}
 
 <InfoAndroidOnly/>
 
@@ -33,7 +33,7 @@ You can continue reading this guide to learn how to use the feature, or [submit 
 
 ![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
 
-## How to Use
+## How to Use {#how-to-use}
 
 <InfoAndroidOnly/>
 
@@ -48,7 +48,7 @@ The **Popular Places** feature — which includes POIs on the map and a curated 
   Enable the overlay via **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>* → Points of interest will appear on the map, including thumbnail images from Wikidata (if available).  
   You can switch between offline Wikipedia data and online data by adjusting the **POI Source** in the [Popular Places menu](#enable-layer).
 
-### Explore in Search
+### Explore in Search {#explore-in-search}
 
 ![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
 
@@ -67,7 +67,7 @@ This feature works **online only** in the free version.
 To use it **offline**, you need to purchase a [Maps+ or OsmAnd Pro](../purchases/android.md) subscription and download the [Wikipedia maps](../plugins/wikipedia.md) for your selected region.
 :::
 
-### Enable Layer
+### Enable Layer {#enable-layer}
 
 ![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
 
@@ -92,7 +92,7 @@ Key options in this menu include:
 Tapping any image-based POI on the map opens the [POI context menu](./map-context-menu.md), where you can access the [Online Photos](#online-photos) section and open the linked [Wikipedia article](../plugins/wikipedia.md) for the selected place.
 
 
-## Online Photos
+## Online Photos {#online-photos}
 
 <Tabs groupId="operating-systems">
 
@@ -116,7 +116,7 @@ This is a section within the [POI context menu](./map-context-menu.md) that disp
 
 Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
 
-### Data Sources
+### Data Sources {#data-sources}
 
 The image data in Popular Places comes from [Wikidata](https://en.wikipedia.org/wiki/Wikidata), a collaboratively edited, multilingual knowledge graph.  
 As noted in the [Overview](#overview), each location featured in the Popular Places tool is linked to a [**Wikidata ID**](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID), which allows OsmAnd to display detailed descriptions and relevant images.
@@ -126,7 +126,7 @@ Tapping this tag opens the corresponding object's page on the Wikidata website.
 
 
 
-### Actions
+### Actions {#actions}
 
 In the Map Context menu How to access:
 
@@ -136,7 +136,7 @@ In the Map Context menu How to access:
   **Share**, **Details**, **Open in browser**, and **Download**.
 
 
-### Gallery
+### Gallery {#gallery}
 
 <Tabs groupId="operating-systems">
 

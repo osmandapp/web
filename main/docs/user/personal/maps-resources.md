@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 In the **Maps and Resources** section, you can manage *Online* and *Offline* maps, and other resources used in OsmAnd. For example, you can download, delete, rename, clear cache, update and check size, and perform different actions.
 
@@ -42,7 +42,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 </Tabs>
 
 
-## Map Types
+## Map Types {#map-types}
 
 <Tabs groupId="operating-systems">
 
@@ -62,12 +62,12 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 Downloading maps into the OsmAnd application is an important step that determines the functionality and efficiency of navigation.
 
-#### Free Features for the Selected Location
+#### Free Features for the Selected Location {#free-features-for-the-selected-location}
 
 - **Standard map**. Provides an overview of the area based on the [OpenStreetMap](https://www.openstreetmap.org/) source and contains a map, routes, addresses, POI, and public transportation information. Tapping opens a screen with a list of regions of the selected country and information about how much space these maps will take up on your device.  
 - **Roads-only** (*Android only*). The map contains only road grid information to focus on routes and road infrastructure. By removing details such as buildings and points of interest, it is smaller than a standard map. Tapping opens a screen with a list of regions in the selected country and information about how much space these maps will take up on your device.
 
-#### Paid Features for the Selected Location
+#### Paid Features for the Selected Location {#paid-features-for-the-selected-location}
 
 - [Contour lines](../plugins/topography.md#contour-lines). A map containing contour elevation lines to visualize the terrain.
 - [Terrain map (Hillshade and Slope)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
@@ -76,12 +76,12 @@ Downloading maps into the OsmAnd application is an important step that determine
 - [Weather forecast](../plugins/weather.md). Weather information on a map for easy route planning.
 - [Online raster maps](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
 
-#### World Overview Map
+#### World Overview Map {#world-overview-map}
 
 Versions of OsmAnd up to 3.8 offer to download a world map so you can view it on a planetary scale. In newer versions of OsmAnd, a lightweight *Mini World Map* is bundled with the application. The app lets you download a larger overview world map with more detailed information.
 
 
-## Maps & Resources
+## Maps & Resources {#maps--resources}
 
 The **Maps & Resources** *Main Menu* section of the OsmAnd app provides access to manage maps and other important data.
 
@@ -101,7 +101,7 @@ Please note that monthly map updates are considered another map download and are
 :::
 
 
-### Downloads
+### Downloads {#downloads}
 
 <Tabs groupId="operating-systems">
 
@@ -152,7 +152,7 @@ The **Download** tab lets you download various map types from OsmAnd servers, re
 - [Voice prompts](../navigation/guidance/voice-navigation.md) (*Android only*). Voice packs for voicing navigation prompts.
 - [Map fonts](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files display text on the map.
 
-#### World Maps
+#### World Maps {#world-maps}
 
 In the Download Maps menu, there is a **World Maps** section that provides access to download various maps of the world, complementing the functionality of the app.  
 
@@ -163,7 +163,7 @@ In the Download Maps menu, there is a **World Maps** section that provides acces
 Information about *maps menu* and *actions* can be found in the article [Download maps](../start-with/download-maps.md).
 
 
-#### Multiple Map Loading
+#### Multiple Map Loading {#multiple-map-loading}
 
 <Tabs groupId="operating-systems">
 
@@ -184,7 +184,7 @@ Information about *maps menu* and *actions* can be found in the article [Downloa
 For countries consisting of **multiple region maps**, you can use bulk loading of multiple maps. Maps available for this type of download are displayed with a double download arrow icons and a label with the number of regions inside (e.g. Contour lines / All Regions: 10). You get to choose how many maps to download.
 
 
-### Local
+### Local {#local}
 
 <Tabs groupId="operating-systems">
 
@@ -218,7 +218,7 @@ The Local tab provides an overview of the storage usage for all OsmAnd data on y
     Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
 
 
-#### Viewing Data
+#### Viewing Data {#viewing-data}
 
 ![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
 
@@ -234,7 +234,7 @@ Tap any item in the **Local** tab to open its detailed list. At the top of this 
 - [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
 
 
-#### Menu for Items from the List
+#### Menu for Items from the List {#menu-for-items-from-the-list}
 
 ![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
 
@@ -251,7 +251,7 @@ Each item in the list offers a *three-dot menu* with options:
 - **Remove**. Delete the map from your device.
 - **Edit** (for Online Maps). Modify the online map configuration.
 
-#### Map source items menu
+#### Map source items menu {#map-source-items-menu}
 
 ![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
 
@@ -264,7 +264,7 @@ Each item in the [Map source](../map/raster-maps.md) list provides settings for 
 - **Remove**. Deletes the selected map source. This action does not affect downloaded offline maps but clears the associated cache.
 
 
-#### Local Data Item Overview
+#### Local Data Item Overview {#local-data-item-overview}
 
 ![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
 
@@ -276,7 +276,7 @@ When viewing a local data item, you see:
 
 Available **Actions** depend on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
 
-#### Sorting Options
+#### Sorting Options {#sorting-options}
 
 ![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
 
@@ -288,7 +288,7 @@ Use sorting options to organize map data:
 - **Large size first** / **Small size first**. Identify large maps to free storage space.
 
 
-### Updates
+### Updates {#updates}
 
 <Tabs groupId="operating-systems">
 
@@ -313,7 +313,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_u
 The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. Standard and road-only maps are typically released two weeks into each month. For hourly updates, check your [OsmAnd Live](#osmand-live) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
 
 
-### Extra Maps
+### Extra Maps {#extra-maps}
 
 OsmAnd supports the transfer of profile-specific settings and data, including rendering files, fonts, routes, maps, and custom plugins. Create a custom map folder using a `.osf` plugin file (a compressed `.zip` format).
 
@@ -327,7 +327,7 @@ To import a file:
 Read more in the [**Custom package**](../plugins/custom.md/) article.
 
 
-## OsmAnd Live
+## OsmAnd Live {#osmand-live}
 
 :::tip Purchase
 OsmAnd Live is a paid feature.  
@@ -370,7 +370,7 @@ Key features:
 - **<Translate android="true" ids="only_download_over_wifi"/>**. Manage the download of *live updates* over a Wi-Fi connection.
 
 
-### Update Timestamps
+### Update Timestamps {#update-timestamps}
 
 - **Latest OSM update.**  
     Indicates the last processed OpenStreetMap changes.
@@ -380,14 +380,14 @@ Key features:
     Displays the scheduled time for the next update check.
 
 
-### Limitations of OsmAnd Live
+### Limitations of OsmAnd Live {#limitations-of-osmand-live}
 
 Address changes are supported only via monthly updates.
 Updated roads lack elevation details, affecting gradient graphs.
 Deleted or altered route references may still appear incorrectly.
 
 
-### Free for OSM Mappers
+### Free for OSM Mappers {#free-for-osm-mappers}
 
 <Tabs groupId="operating-systems">
 
@@ -410,12 +410,12 @@ Enable the [OpenStreetMap Editing plugin](../plugins/osm-editing.md).
 [Log in](../plugins/osm-editing.md#settings) with your OSM username.
 Maintain at least [**30 edits**](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/plugins/osmedit/fragments/MappersFragment.java#L65) over the last two months.
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Profiles (Settings)](./profiles.md)
 - [Import / Export](../personal/import-export.md)
 
-### Common Issues and Solutions
+### Common Issues and Solutions {#common-issues-and-solutions}
 
 - Voice Navigation. [(check)](../troubleshooting/navigation.md#voice-navigation)
 - How to delete search history. [(check)](../troubleshooting/general.md#how-to-delete-search-history)

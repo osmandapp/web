@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 :::info Paid feature
  <ProFeature/> The Weather plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
@@ -26,7 +26,7 @@ The interactive weather map layers in the OsmAnd app allow you to monitor temper
 The data source for the Weather plugin is the [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) operated by the United States National Weather Service (NWS) and the European Centre for Medium-Range Weather Forecasts ([ECMWF](https://www.ecmwf.int/)).  
 
 
-## Required Setup Parameters  
+## Required Setup Parameters   {#required-setup-parameters--}
 
 The following settings are *required* to display the Weather on the OsmAnd map:
 
@@ -49,9 +49,9 @@ The Weather plugin is only available with Map rendering engine [Version 2](../pe
 :::
 
 
-## Display Weather on the Map
+## Display Weather on the Map {#display-weather-on-the-map}
 
-### Weather Forecast Screen
+### Weather Forecast Screen {#weather-forecast-screen}
 
 <Tabs groupId="operating-systems">  
 
@@ -77,7 +77,7 @@ The main side menu has a dedicated **Weather** menu item that provides quick acc
 
 At the bottom of the screen is the *weather toolbar*. You can use the day buttons and the time slider to set the exact time at which the weather forecast will be displayed.
 
-### Customize Weather Layers
+### Customize Weather Layers {#customize-weather-layers}
 
 <Tabs groupId="operating-systems">  
 
@@ -104,7 +104,7 @@ To display weather layers on the OsmAnd map screen, you need to use the *Configu
 In this menu, you can change the **visibility** and [settings](#weather-settings) for each layer, select the type of contour lines, and download the [offline 7-day weather forecast](#offline-forecast) (*only available for Android here*).
 
 
-### Weather Settings
+### Weather Settings {#weather-settings}
 
 <Tabs groupId="operating-systems">
 
@@ -133,7 +133,7 @@ It is important to decide in which units of measurement it is convenient for you
 In the iOS version of OsmAnd, you can change measurement units and transparency level in the menu that opens after a long tap of the icon of the required map layer.  
 :::
 
-### Weather Layers  
+### Weather Layers   {#weather-layers--}
 
 All weather data is presented as separate map layers. To see the weather layers on the map, you need to zoom out, they are only available on zoom scales 2-12. Weather layers are using [weather palettes](../personal/color-palette-schemes.md#weather) to colorize the map, these palettes could be [changed](../personal/color-palette-schemes.md#edit-palette-file) if necessary.
 
@@ -153,7 +153,7 @@ All weather data is presented as separate map layers. To see the weather layers 
 | ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |  
 
 
-### Combine Maps
+### Combine Maps {#combine-maps}
 
 <Tabs groupId="operating-systems">
 
@@ -174,7 +174,7 @@ All weather data is presented as separate map layers. To see the weather layers 
 To get comprehensive weather information, you can use the map layers separately or easily combine them. Isolines of one specific type can also be added to the Weather layer. Just tap the *Layers* or *Isolines* button on the screen.
 
 
-### Quick Actions for Layers
+### Quick Actions for Layers {#quick-actions-for-layers}
 
 ![QA Weather layers](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
 
@@ -184,9 +184,9 @@ To switch the visibility of weather layers, you can use the *Quick Action* butto
 - Add one or more QA buttons to change the visibility of a particular weather layer.
 
 
-## Offline Forecast
+## Offline Forecast {#offline-forecast}
 
-### Cache  
+### Cache   {#cache--}
 
 When the Weather tab is open, unless otherwise specified, the required weather information is downloaded from the network. You can use the preloaded [Weather forecast](#download-forecast) on your devices. The weather information is automatically cashed after downloading and can be used offline until the forecast expires.  
 
@@ -195,7 +195,7 @@ On Android devices, you can check when weather data has been downloaded by tappi
 ![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
-### Download Forecast
+### Download Forecast {#download-forecast}
 
 <Tabs groupId="operating-systems">
 
@@ -231,7 +231,7 @@ OsmAnd generates a new forecast every 6 hours.
 :::
 
 
-## Weather Widgets
+## Weather Widgets {#weather-widgets}
 
 <Tabs groupId="operating-systems">
 
@@ -259,7 +259,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 - To activate weather widgets, select the *Configure screen* Main Menu item, the panel on which to place them, and the required widgets from the list.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

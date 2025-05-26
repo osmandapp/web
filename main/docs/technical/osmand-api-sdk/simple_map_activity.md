@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Simple Map activity
+# Simple Map activity {#simple-map-activity}
 There is only map and switch for opengl rendering 
 
   ```
