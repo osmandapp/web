@@ -14,6 +14,7 @@ export default function DefaultItemWithActions({
     anchorEl,
     revertText = false,
     actions,
+    onClick,
 }) {
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
@@ -22,7 +23,7 @@ export default function DefaultItemWithActions({
 
     return (
         <>
-            <MenuItem id={id} className={styles.item} disableRipple>
+            <MenuItem id={id} className={styles.item} disableRipple onClick={onClick}>
                 <ListItemIcon className={styles.icon}>{icon}</ListItemIcon>
                 {revertText ? (
                     <ListItemText>

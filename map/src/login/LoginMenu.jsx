@@ -47,6 +47,12 @@ export default function LoginMenu() {
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [openCloudInfo, setOpenCloudInfo] = useState(false);
 
+    const clickHandler = (event) => {
+        if (event.detail % 3 === 0) {
+            ctx.setDevelFeatures(!ctx.develFeatures);
+        }
+    };
+
     useEffect(() => {
         if (location.hash === '#logout' && ltx.loginUser) {
             ltx.setLoginUser(null);
@@ -123,8 +129,9 @@ export default function LoginMenu() {
                     ) : (
                         <>
                             <DefaultItemWithActions
+                                onClick={clickHandler}
                                 icon={<UserIcon />}
-                                name={'Email'}
+                                name={`Email ${ctx.develFeatures ? ' :-)' : ''}`}
                                 additionalInfo={ltx.loginUser}
                                 anchorEl={anchorEl}
                                 revertText={true}
