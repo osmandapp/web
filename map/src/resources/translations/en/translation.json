@@ -5289,5 +5289,11 @@
   "purchases": "Purchases",
   "delete_account": "Delete account",
   "download_all": "Download all",
-  "troubleshooting": "Troubleshooting"
+  "troubleshooting": "Troubleshooting",
+  "no_purchases": "You don\\'t have any purchases",
+  "annual_subscription": "Annual subscription",
+  "monthly_subscription": "Monthly subscription",
+  "in_app_purchase_desc": "One-time payment",
+  "shared_string_purchased": "Purchased on",
+  "next_billing_date": "Next billing date: %1$s"
 }

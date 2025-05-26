@@ -7,9 +7,12 @@ import { ReactComponent as InappIcon } from '../../assets/icons/ic_action_osmand
 import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import { format } from 'date-fns';
+import { useTranslation } from 'react-i18next';
 
 export default function InAppItem({ id, onClick, name, purchaseTime }) {
-    const type = 'One-time payment';
+    const { t } = useTranslation();
+
+    const type = 'in_app_purchase_desc';
     const locale = locales[i18n.language] || locales.enUS;
     const purchaseDate = purchaseTime ? format(new Date(parseInt(purchaseTime, 10)), 'MMM d, yyyy', { locale }) : 'N/A';
 
@@ -29,10 +32,10 @@ export default function InAppItem({ id, onClick, name, purchaseTime }) {
                     {name}
                 </Typography>
                 <Typography className={loginStyles.purchaseInfo} noWrap>
-                    {type}
+                    {t(type)}
                 </Typography>
                 <Typography className={loginStyles.purchaseInfo} noWrap>
-                    {`Purchased: ${purchaseDate}`}
+                    {`${t('shared_string_purchased')}: ${purchaseDate}`}
                 </Typography>
                 <Box sx={{ mt: '6px' }}>
                     <PurchaseStatus status={'active'} />
