@@ -190,7 +190,7 @@ Des messages clairs à l'écran vous guideront lors du verrouillage ou du déver
 
 ## Paramètres {#settings}
 
-### Paramètres supplémentaires de la boussole {#extra-compass-settings--}
+### Paramètres supplémentaires de la boussole {#extra-compass-settings}
 
 - **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Lisse la rotation de la carte avec une animation de rotation plus lente, bien que cela introduise un léger délai, pas plus de 1 seconde.
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*

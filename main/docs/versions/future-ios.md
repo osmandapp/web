@@ -266,7 +266,7 @@ Learn more:
 [Attach to the Roads](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-the-roads)
 
 
-## Prominent Peaks Now Discoverable   {#prominent-peaks-now-discoverable--}
+## Prominent Peaks Now Discoverable {#prominent-peaks-now-discoverable}
 
 Now you can **discover prominent peaks** directly on the map and through search. This update adds [notable mountain peaks](https://en.wikipedia.org/wiki/Ultra-prominent_peak) to the basemap, allowing you to easily find their names, elevations, and additional details through the map's context menu or search functionality.
 

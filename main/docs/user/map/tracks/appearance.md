@@ -233,7 +233,7 @@ Original and unchanged:
 - **Unchanged** - Keeps current settings during the editing session.
 
 
-## Track Colors in GPX Files   {#track-colors-in-gpx-files--}
+## Track Colors in GPX Files {#track-colors-in-gpx-files}
 
 OsmAnd supports **custom track colors** in GPX files using the `<osmand:color>` tag within the `<extensions>` section of a `<trk>` element. This allows users to define colors for individual tracks, enhancing visual differentiation when multiple tracks are displayed on the map.
 

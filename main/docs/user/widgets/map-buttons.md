@@ -154,7 +154,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 - *<Translate android="true" ids="shared_string_visible"/>*. The button is always displayed on the map screen.
 - *<Translate android="true" ids="visible_in_3d_mode"/>*. The button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.  
 
-### Additional Settings   {#additional-settings--}
+### Additional Settings {#additional-settings}
 
 1. **Display the button**. (*For Android*) The setting for the *3D Mode* button appears in the Configure screen list only if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
 

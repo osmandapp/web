@@ -87,7 +87,7 @@ To start working with the plugin functionality, you need to download the maps yo
 For stable work and to save resources, you can download a map not of the entire country, but of its specific regions, if such regions are offered in the application. Information about the size of each map type is listed under their name.
 
 
-### 3D Relief Maps   {#3d-relief-maps--}
+### 3D Relief Maps {#3d-relief-maps}
 
 <Tabs groupId="operating-systems">
 

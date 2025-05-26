@@ -234,7 +234,7 @@ Original et inchangé :
 - **Inchangé** - Conserve les paramètres actuels pendant la session d'édition.
 
 
-## Couleurs de trace dans les fichiers GPX {#track-colors-in-gpx-files--}
+## Couleurs de trace dans les fichiers GPX {#track-colors-in-gpx-files}
 
 OsmAnd prend en charge les **couleurs de trace personnalisées** dans les fichiers GPX à l'aide de la balise `<osmand:color>` dans la section `<extensions>` d'un élément `<trk>`. Cela permet aux utilisateurs de définir des couleurs pour les traces individuelles, améliorant la différenciation visuelle lorsque plusieurs traces sont affichées sur la carte.
 

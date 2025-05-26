@@ -97,7 +97,7 @@ Vous avez la possibilité d'ajouter une ou deux couches de tuiles en ligne pour 
 Vous pouvez également ajuster la transparence de la carte de base pour la mélanger avec vos couches. Si nécessaire, vous pouvez activer un curseur de transparence sur l'écran principal pour des ajustements rapides.
 
 
-### Principale {#main--}
+### Principale {#main}
 
 <Tabs groupId="operating-systems">
 

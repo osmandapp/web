@@ -219,7 +219,7 @@ The **Color** setting changes the color tones of the route lines. Their overall 
     ![Altitude](@site/static/img/navigation/route/firmness.png)
 
 
-### Width   {#width--}
+### Width {#width}
 
 You can adjust the width of the route line to align with the road or path displayed on the map. For clearer visual identification, you can manually increase or decrease the line width as needed. For more details, refer to the *Tracks and Routes — [Appearance](../../map/tracks/appearance.md) article*.
 
@@ -233,7 +233,7 @@ You can adjust the width of the route line to align with the road or path displa
     ![custom](@site/static/img/navigation/route/custom_2.png)  
 
 
-### Turn Arrows   {#turn-arrows--}
+### Turn Arrows {#turn-arrows}
 
 The Turn Arrows setting allows you to select whether turn arrows are displayed on the route line.  
 

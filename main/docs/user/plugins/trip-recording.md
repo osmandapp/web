@@ -353,7 +353,7 @@ The app icon badge appears next to the OsmAnd icon when the track recording is a
 - To disable badges in Android settings, go to device *Settings → Apps → OsmAnd → Notifications* and disable the badge display option for this app.
 
 
-## Widgets   {#widgets--}
+## Widgets {#widgets}
 
 Widgets allow you to display key information about track recording directly on the screen, such as *Distance*, *Duration*, *Uphill*, and *Downhill*.
 

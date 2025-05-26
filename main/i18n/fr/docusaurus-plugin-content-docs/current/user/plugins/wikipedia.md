@@ -191,11 +191,11 @@ Pour ouvrir l'article Wikipedia :
 </Tabs>
 
 
-## Paramètres Wikipedia {#wikipedia-settings--}
+## Paramètres Wikipedia {#wikipedia-settings}
 
 Vous pouvez [définir la ou les langues](#set-preferred-language) dans lesquelles vous préférez lire les [articles](#wikipedia-article) et également configurer les [options de téléchargement d'images](#download-images) pour chaque [profil](../personal/profiles.md).
 
-### Définir la langue préférée {#set-preferred-language--}
+### Définir la langue préférée {#set-preferred-language}
 
 Dans les versions **Android** et **iOS** de l'application OsmAnd, vous pouvez définir votre langue (ou vos langues) préférée(s) pour afficher les articles Wikipedia à l'aide du menu *Configurer la carte*. Si vous sélectionnez plus d'une langue, les articles *Wikipedia* sur la carte seront affichés dans l'une d'entre elles. Allez dans :
 
@@ -228,7 +228,7 @@ Dans la version **iOS**, vous pouvez également définir la langue préférée p
 
 :::
 
-### Changer de langue à l'intérieur de l'article {#switch-languages-inside-the-article--}
+### Changer de langue à l'intérieur de l'article {#switch-languages-inside-the-article}
 
 Si l'*article Wikipedia* est disponible en différentes langues, vous pouvez changer de langue pendant la lecture. Après avoir appuyé sur l'icône correspondante dans le coin supérieur droit de l'écran, des options vous seront proposées.
 

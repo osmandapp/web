@@ -96,7 +96,7 @@ You have the flexibility to add one or two online tile layers to complement your
 You can also adjust the transparency of the base map to blend it with your layers. If needed, you can enable a transparency slider on the main screen for quick adjustments.
 
 
-### Main   {#main--}
+### Main {#main}
 
 <Tabs groupId="operating-systems">
 

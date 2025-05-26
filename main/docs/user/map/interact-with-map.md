@@ -189,7 +189,7 @@ Clear on-screen messages will guide you when locking or unlocking the screen.
 
 ## Settings {#settings}
 
-### Extra Compass Settings   {#extra-compass-settings--}
+### Extra Compass Settings {#extra-compass-settings}
 
 - **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Smoothes the rotation of the map with a slower rotation animation, although this introduces a slight delay, not more than 1 second.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*

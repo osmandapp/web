@@ -114,7 +114,7 @@ Lorsque vous sélectionnez un itinéraire et appuyez sur le bouton **Démarrer**
 |![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)|
 
 
-## Widget de relèvement {#bearing-widget--}
+## Widget de relèvement {#bearing-widget}
 
 Le relèvement est la direction vers une cible en dehors de votre véhicule, comme une destination ou un point d'origine. Un relèvement peut être *Relatif* (selon votre cap) ou *Magnétique* (selon la boussole). Par exemple, un relèvement magnétique de 180° est la direction vers le sud, et un relèvement relatif de 180° est directement derrière vous. Les points cardinaux sont les quatre directions principales de la boussole. Ce sont le Nord (*N* - 0° ou 360°), l'Est (*E* - 90°), le Sud (*S* - 180°) et l'Ouest (*W* - 270°).
 

@@ -27,7 +27,7 @@ Les couches interactives de la carte météo dans l'application OsmAnd vous perm
 La source de données pour le plugin Météo est le [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) exploité par le United States National Weather Service (NWS) et le Centre européen pour les prévisions météorologiques à moyen terme ([ECMWF](https://www.ecmwf.int/)).
 
 
-## Paramètres de configuration requis {#required-setup-parameters--}
+## Paramètres de configuration requis {#required-setup-parameters}
 
 Les paramètres suivants sont *requis* pour afficher la météo sur la carte OsmAnd :
 
@@ -134,7 +134,7 @@ Il est important de décider dans quelles unités de mesure il vous convient de 
 Dans la version iOS d'OsmAnd, vous pouvez modifier les unités de mesure et le niveau de transparence dans le menu qui s'ouvre après un appui long sur l'icône de la couche de carte requise.
 :::
 
-### Couches météo {#weather-layers--}
+### Couches météo {#weather-layers}
 
 Toutes les données météorologiques sont présentées sous forme de couches de carte distinctes. Pour voir les couches météo sur la carte, vous devez dézoomer, elles ne sont disponibles qu'aux échelles de zoom 2-12. Les couches météo utilisent des [palettes météo](../personal/color-palette-schemes.md#weather) pour coloriser la carte, ces palettes peuvent être [modifiées](../personal/color-palette-schemes.md#edit-palette-file) si nécessaire.
 
@@ -187,7 +187,7 @@ Pour basculer la visibilité des couches météo, vous pouvez utiliser les bouto
 
 ## Prévisions hors ligne {#offline-forecast}
 
-### Cache {#cache--}
+### Cache {#cache}
 
 Lorsque l'onglet Météo est ouvert, sauf indication contraire, les informations météorologiques requises sont téléchargées depuis le réseau. Vous pouvez utiliser les [prévisions météorologiques](#download-forecast) préchargées sur vos appareils. Les informations météorologiques sont automatiquement mises en cache après le téléchargement et peuvent être utilisées hors ligne jusqu'à l'expiration des prévisions.
 

@@ -291,7 +291,7 @@ Learn more:
 [Map Context Menu](https://osmand.net/docs/user/map/map-context-menu)
 
 
-## Prominent Peaks Now Discoverable   {#prominent-peaks-now-discoverable--}
+## Prominent Peaks Now Discoverable {#prominent-peaks-now-discoverable}
 
 You can now **discover prominent peaks** directly on the map and through search. This update adds [notable mountain peaks](https://en.wikipedia.org/wiki/Ultra-prominent_peak) to the basemap, allowing you to easily find their names, elevations, and additional details through the map's context menu or search functionality.
 

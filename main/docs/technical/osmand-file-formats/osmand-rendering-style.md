@@ -9,7 +9,7 @@ In case you want to modify the default rendering style, you need to check out th
 
 In case you decide to create your custom rendering style, you may need to create [your own maps](../map-creation/create-offline-maps-yourself.md#custom-vector-map-tags) to add custom features display.
 
-## Map style sections  {#map-style-sections-}
+## Map style sections {#map-style-sections}
 
 Map style file consists of several sections.
 
@@ -40,7 +40,7 @@ Evaluation rules:
     - Example: `<apply_if nightMode="false" streetLightingNight="false" shield="street_lamp_lit_no_shield"/>`. Input parameters: nightMode, streetLightingNight; output parameters - shield.
 
 
-## Attributes (special) & Constants  {#attributes-special--constants-}
+## Attributes (special) & Constants {#attributes-special--constants}
 Rendering constants & rendering attributes are interchangeable and could be used to simplify rendering style and avoid copy/pasting of values or blocks of code. In case attribute like `color` is a single value, it is **preferred** to use **rendering constant** cause it greatly speeds up rendering style performance. 
 
 Rendering constants could be used only with one given value: `<renderingConstant name="motorwayShadowRadius" value="1.6"/>` and later in feature selectors as `<apply_if shadowRadius="$motorwayShadowRadius"/>`. 
@@ -54,7 +54,7 @@ Rendering attributes could have embedded structure with extra selectors and outp
     <case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 ```    
 
-### Special attributes  {#special-attributes-}
+### Special attributes {#special-attributes}
 
 Special attributes are `<renderingAttribute >` that are not used by selectors but used directly by the code to query specific feature which is drawn in application like a navigation route, ruler, gpx track, etc.
 

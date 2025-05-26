@@ -113,7 +113,7 @@ When you select a route and press the **Start** button, the map opens with your 
 |![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)|
 
 
-## Bearing Widget   {#bearing-widget--}
+## Bearing Widget {#bearing-widget}
   
 Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course) or, *Magnetic* (according to the compass). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you. The cardinal points are the four main directions of the compass. They are North (*N* - 0° or 360°), East (*E* - 90°), South (*S* - 180°), and west (*W* - 270°).  
 

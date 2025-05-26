@@ -40,7 +40,7 @@ Vous pouvez télécharger l'application via ce lien - [OsmAnd Maps sur l'App Sto
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **achat intégré** ou un **abonnement** qui débloque des fonctionnalités avancées pour l'application gratuite OsmAnd. | Disponible sur l'[App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Peut être ajouté au [Partage familial Apple](https://support.apple.com/en-us/HT201088). |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan d'abonnement** qui débloque des fonctionnalités avancées et [pro supplémentaires](#pro-features). | Disponible sur l'[App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Prend en charge l'accès **multiplateforme** (voir note ci-dessous). |
 
-### Notes importantes {#important-notes--}
+### Notes importantes {#important-notes}
 
 1. **Maps+** est une *mise à niveau* pour la version gratuite d'OsmAnd, débloquant la plupart des fonctionnalités.
 

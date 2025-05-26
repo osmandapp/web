@@ -109,7 +109,7 @@ Dans [Mes lieux *→* onglet Tracés](../../personal/tracks/manage-tracks.md#man
 Lorsque vous sélectionnez un tracé sur la carte ou ouvrez le [menu contextuel du tracé](./track-context-menu.md) après avoir enregistré ou importé un tracé, vous pouvez contrôler sa visibilité sur la carte. Utilisez simplement les boutons *Afficher* ou *Masquer* pour afficher ou supprimer le tracé de la vue de la carte.
 
 
-## Analyser le tracé sur la carte   {#analyze-track-on-map--}
+## Analyser le tracé sur la carte {#analyze-track-on-map}
 
 <Tabs groupId="operating-systems">
 

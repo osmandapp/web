@@ -81,7 +81,7 @@ Avant d'utiliser la navigation hors ligne, assurez-vous que les [cartes requises
 
 :::
 
-### Menu Navigation {#navigation-menu--}
+### Menu Navigation {#navigation-menu}
 
 Il existe 3 façons d'accéder au menu de navigation :
 

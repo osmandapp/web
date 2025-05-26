@@ -70,7 +70,7 @@ Notre objectif est de créer une application cartographique entièrement fonctio
 
 ## Guide des actions {#actions-guide}
 
-### Autorisation d'accès à la localisation {#permission-to-access-the-location--}
+### Autorisation d'accès à la localisation {#permission-to-access-the-location}
 
 <Tabs groupId="operating-systems">
 

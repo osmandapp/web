@@ -57,7 +57,7 @@ Exemple :
     core-legacy/binaries/darwin/intel/Debug/libosmand.dylib
   ```
 
-### Dépannage {#troubleshooting-}
+### Dépannage {#troubleshooting}
 - Fichiers manquants externals/libjpeg-turbo/jconfigint.h.in n'existe pas.
 Si vous rencontrez des problèmes de compilation de libjpeg-turbo
 ```

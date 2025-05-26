@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview   {#overview--}
+## Overview {#overview}
 
 Configure screen is a menu that allows you to customize the widgets to display on the map. On this screen, you can enable [information](../widgets/info-widgets.md) and [navigation](../widgets/nav-widgets.md) widgets, [buttons](../widgets/map-buttons.md), a [ruler](../widgets/radius-ruler.md), and add [quick actions](../widgets/quick-action.md).  
 
@@ -68,7 +68,7 @@ OsmAnd allows you to organize your widgets by grouping, copying, and customizing
 
 To arrange widgets on the app screen, use panels. Panels enable you to place widgets in specific locations, either in rows at the top or bottom or on the left or right side of the screen. This helps you create a layout that suits your needs and preferences.
 
-### Widgets for All Panels   {#widgets-for-all-panels--}
+### Widgets for All Panels {#widgets-for-all-panels}
 
 <Tabs groupId="operating-systems">
 

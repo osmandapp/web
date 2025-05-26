@@ -16,7 +16,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Aperçu {#overview--}
+## Aperçu {#overview}
 
 L'écran de configuration est un menu qui vous permet de personnaliser les widgets à afficher sur la carte. Sur cet écran, vous pouvez activer les [widgets d'information](../widgets/info-widgets.md) et de [navigation](../widgets/nav-widgets.md), les [boutons](../widgets/map-buttons.md), une [règle](../widgets/radius-ruler.md) et ajouter des [actions rapides](../widgets/quick-action.md).
 
@@ -69,7 +69,7 @@ OsmAnd vous permet d'organiser vos widgets en les regroupant, en les copiant et 
 
 Pour organiser les widgets sur l'écran de l'application, utilisez des panneaux. Les panneaux vous permettent de placer des widgets à des emplacements spécifiques, soit en lignes en haut ou en bas, soit sur le côté gauche ou droit de l'écran. Cela vous aide à créer une disposition qui correspond à vos besoins et préférences.
 
-### Widgets pour tous les panneaux {#widgets-for-all-panels--}
+### Widgets pour tous les panneaux {#widgets-for-all-panels}
 
 <Tabs groupId="operating-systems">
 

@@ -422,7 +422,7 @@ You can export and import your favorites using the special buttons at the bottom
 - Choose the **Share** button to send the *Favorites.gpx* file to your device's memory or share it via messaging apps.  
 
 
-### Automatic Favorites Backup   {#automatic-favorites-backup--}
+### Automatic Favorites Backup {#automatic-favorites-backup}
 
 <Tabs groupId="operating-systems">
 

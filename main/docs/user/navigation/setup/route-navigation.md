@@ -83,7 +83,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
 :::
 
 
-### Navigation Menu   {#navigation-menu--}
+### Navigation Menu {#navigation-menu}
 
 There are 3 ways to reach the navigation menu:
 

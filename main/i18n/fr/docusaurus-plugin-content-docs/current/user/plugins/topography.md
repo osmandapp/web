@@ -83,7 +83,7 @@ Pour commencer à utiliser les fonctionnalités du plugin, vous devez téléchar
 
 Pour un fonctionnement stable et pour économiser les ressources, vous pouvez télécharger une carte non pas de tout le pays, mais de ses régions spécifiques, si de telles régions sont proposées dans l'application. Les informations sur la taille de chaque type de carte sont listées sous leur nom.
 
-### Cartes de relief 3D {#3d-relief-maps--}
+### Cartes de relief 3D {#3d-relief-maps}
 
 <Tabs groupId="operating-systems">
 

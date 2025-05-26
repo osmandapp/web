@@ -290,7 +290,7 @@ En savoir plus :
 [Menu contextuel de la carte](https://osmand.net/docs/user/map/map-context-menu)
 
 
-## Les sommets proéminents sont maintenant découvrables {#prominent-peaks-now-discoverable--}
+## Les sommets proéminents sont maintenant découvrables {#prominent-peaks-now-discoverable}
 
 Vous pouvez maintenant **découvrir les sommets proéminents** directement sur la carte et par la recherche. Cette mise à jour ajoute des [sommets notables](https://en.wikipedia.org/wiki/Ultra-prominent_peak) à la carte de base, vous permettant de trouver facilement leurs noms, altitudes et détails supplémentaires via le menu contextuel de la carte ou la fonctionnalité de recherche.
 

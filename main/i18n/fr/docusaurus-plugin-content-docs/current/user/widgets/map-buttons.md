@@ -155,7 +155,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config
 - *<Translate android="true" ids="shared_string_visible"/>*. Le bouton est toujours affiché sur l'écran de la carte.
 - *<Translate android="true" ids="visible_in_3d_mode"/>*. Le bouton est affiché sur l'écran de la carte lorsque vous modifiez la vue de la carte avec un geste [*à deux doigts et déplacer*](../map/interact-with-map.md#gestures).  
 
-### Paramètres supplémentaires   {#additional-settings--}
+### Paramètres supplémentaires {#additional-settings}
 
 1. **Afficher le bouton**. (*Pour Android*) Le paramètre du bouton *Mode 3D* apparaît dans la liste de l'écran de configuration uniquement si le moteur de rendu de la carte [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) est sélectionné.
 

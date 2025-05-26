@@ -27,7 +27,7 @@ Chaque style de carte peut être personnalisé pour mettre en évidence ou masqu
 Les styles de carte personnalisables sont l'un des principaux avantages d'OsmAnd. Vous pouvez personnaliser l'affichage de la carte en fonction de vos préférences et de vos loisirs, ajuster l'affichage ou le masquage de certains objets cartographiques, la taille et la couleur de ces objets, et modifier l'échelle d'affichage de certains objets.
 
 
-## Styles de carte par défaut {#default-map-styles--}
+## Styles de carte par défaut {#default-map-styles}
 
 OsmAnd vous propose de nombreux styles de carte et couches de données qui s'adaptent par défaut. Cette section décrit les principaux pour les modes jour et nuit.
 
@@ -299,7 +299,7 @@ La carte peut être affichée dans un thème clair ou sombre en fonction du mode
 - **<Translate android="true" ids="daynight_mode_app_theme"/>**. L'affichage de la carte s'adapte au thème général de l'application, affichant le mode jour dans le thème clair et le mode nuit dans le thème sombre.
 
 
-### Détails {#details--}
+### Détails {#details}
 
 <Tabs groupId="operating-systems">
 

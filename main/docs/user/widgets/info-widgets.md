@@ -23,12 +23,12 @@ Informational widgets provide you with quick access to important data. This can 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
 
-## Altitude Widgets   {#altitude-widgets--}
+## Altitude Widgets {#altitude-widgets}
 
 Altitude widgets display the height above the sea level of the current geolocation and the elevation of the map center.  
 
 
-### Altitude: Current Location   {#altitude-current-location--}
+### Altitude: Current Location {#altitude-current-location}
   
 :::note  Download World altitude correction
 On some Android devices, the altitude can display inaccurately. To solve this problem, download a map with altitude correction.
@@ -321,7 +321,7 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
-## GPS Info   {#gps-info--}
+## GPS Info {#gps-info}
 
 <InfoAndroidOnly />
 
@@ -452,7 +452,7 @@ The Radius Ruler widget shows the distance between your location and the center 
 These widgets are enabled and work in combination with their corresponding plugins.
 
 
-### Trip Recording Widgets   {#trip-recording-widgets--}
+### Trip Recording Widgets {#trip-recording-widgets}
 
 :::note  
 You can read a more detailed description here: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  

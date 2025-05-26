@@ -26,7 +26,7 @@ The interactive weather map layers in the OsmAnd app allow you to monitor temper
 The data source for the Weather plugin is the [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) operated by the United States National Weather Service (NWS) and the European Centre for Medium-Range Weather Forecasts ([ECMWF](https://www.ecmwf.int/)).  
 
 
-## Required Setup Parameters   {#required-setup-parameters--}
+## Required Setup Parameters {#required-setup-parameters}
 
 The following settings are *required* to display the Weather on the OsmAnd map:
 
@@ -133,7 +133,7 @@ It is important to decide in which units of measurement it is convenient for you
 In the iOS version of OsmAnd, you can change measurement units and transparency level in the menu that opens after a long tap of the icon of the required map layer.  
 :::
 
-### Weather Layers   {#weather-layers--}
+### Weather Layers {#weather-layers}
 
 All weather data is presented as separate map layers. To see the weather layers on the map, you need to zoom out, they are only available on zoom scales 2-12. Weather layers are using [weather palettes](../personal/color-palette-schemes.md#weather) to colorize the map, these palettes could be [changed](../personal/color-palette-schemes.md#edit-palette-file) if necessary.
 
@@ -186,7 +186,7 @@ To switch the visibility of weather layers, you can use the *Quick Action* butto
 
 ## Offline Forecast {#offline-forecast}
 
-### Cache   {#cache--}
+### Cache {#cache}
 
 When the Weather tab is open, unless otherwise specified, the required weather information is downloaded from the network. You can use the preloaded [Weather forecast](#download-forecast) on your devices. The weather information is automatically cashed after downloading and can be used offline until the forecast expires.  
 

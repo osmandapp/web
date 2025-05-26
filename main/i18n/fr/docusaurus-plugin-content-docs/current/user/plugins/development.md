@@ -23,7 +23,7 @@ Les fonctions de test de l'application sont regroupées dans le plugin de dével
 Le plugin de développement OsmAnd vous permet d'essayer de nouvelles fonctionnalités de l'application ou de configurer OsmAnd pour les tests : simuler des itinéraires de navigation, vérifier les performances de rendu de l'écran, etc. Le plugin est conçu pour les *développeurs et les utilisateurs expérimentés* et n'est pas nécessaire pour l'utilisation quotidienne de l'application.
 
 
-## Paramètres de configuration requis {#required-setup-parameters--}
+## Paramètres de configuration requis {#required-setup-parameters}
 
 Pour activer les fonctionnalités spéciales pour les développeurs et les testeurs :
 
@@ -65,7 +65,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 - **Utiliser le format raster [SQLIte](../../technical/osmand-file-formats/osmand-sqlite.md/) pour l'ombrage et la pente** (*Android*). Charge les cartes raster au format ancien.
 
 
-### Dépannage {#troubleshotting--}
+### Dépannage {#troubleshotting}
 
 - **Simuler votre position** (*Android* / *iOS*). [Simulez](#gpx-track-simulation) la position et le mouvement à l'aide d'une trace GPX.
 - **Mode d'économie de batterie** (*Android* / *iOS*). Ce paramètre réduit [le taux de rafraîchissement de l'écran](#map-rendering-fps-widget) de 20 images par seconde pour aider à économiser la batterie lors de l'utilisation d'applications.

@@ -220,7 +220,7 @@ Le paramètre **Couleur** modifie les tons de couleur des lignes d'itinéraire. 
     ![Altitude](@site/static/img/navigation/route/firmness.png)
 
 
-### Largeur {#width--}
+### Largeur {#width}
 
 Vous pouvez ajuster la largeur de la ligne d'itinéraire pour l'aligner sur la route ou le chemin affiché sur la carte. Pour une identification visuelle plus claire, vous pouvez augmenter ou diminuer manuellement la largeur de la ligne selon vos besoins. Pour plus de détails, consultez l'article *Traces et itinéraires — [Apparence](../../map/tracks/appearance.md)*.
 
@@ -234,7 +234,7 @@ Vous pouvez ajuster la largeur de la ligne d'itinéraire pour l'aligner sur la r
     ![personnalisé](@site/static/img/navigation/route/custom_2.png)
 
 
-### Flèches de virage {#turn-arrows--}
+### Flèches de virage {#turn-arrows}
 
 Le paramètre Flèches de virage vous permet de sélectionner si les flèches de virage sont affichées sur la ligne d'itinéraire.
 

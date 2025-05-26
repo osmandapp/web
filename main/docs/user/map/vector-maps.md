@@ -26,7 +26,7 @@ Each map style can be customized to highlight or hide specific objects, and to s
 Customizable map styles are one of the main advantages of OsmAnd. You can customize the map display to suit yourself and your hobbies, adjust the display or hiding of certain map objects, the sizes, and colors of these objects, and change the scale of the display of certain objects.
 
 
-## Default Map Styles   {#default-map-styles--}
+## Default Map Styles {#default-map-styles}
 
 OsmAnd offers you many map styles and data layers that fit by default. This section describes the main ones for day and night modes.
 
@@ -298,7 +298,7 @@ The map can be displayed in a light or dark theme based on the mode selected fro
 - **<Translate android="true" ids="daynight_mode_app_theme"/>**. The map display adapts to the app's overall theme, showing day mode in the light theme and night mode in the dark theme.
 
 
-### Details   {#details--}
+### Details {#details}
 
 <Tabs groupId="operating-systems">
 

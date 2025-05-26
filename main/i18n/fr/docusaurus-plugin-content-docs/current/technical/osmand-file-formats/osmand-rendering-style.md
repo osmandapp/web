@@ -9,7 +9,7 @@ Si vous souhaitez modifier le style de rendu par défaut, vous devez consulter l
 
 Si vous décidez de créer votre propre style de rendu personnalisé, vous devrez peut-être créer [vos propres cartes](../map-creation/create-offline-maps-yourself.md#custom-vector-map-tags) pour ajouter l'affichage de fonctionnalités personnalisées.
 
-## Sections de style de carte {#map-style-sections-}
+## Sections de style de carte {#map-style-sections}
 
 Le fichier de style de carte se compose de plusieurs sections.
 
@@ -38,7 +38,7 @@ Règles d'évaluation :
 - Les paramètres de style de carte sont également des paramètres de recherche d'entrée, en plus de `tag/value/zoom`.
     - Exemple : `<apply_if nightMode="false" streetLightingNight="false" shield="street_lamp_lit_no_shield"/>`. Paramètres d'entrée : nightMode, streetLightingNight ; paramètres de sortie - shield.
 
-## Attributs (spéciaux) et Constantes {#attributes-special--constants-}
+## Attributs (spéciaux) et Constantes {#attributes-special--constants}
 Les constantes de rendu et les attributs de rendu sont interchangeables et peuvent être utilisés pour simplifier le style de rendu et éviter de copier/coller des valeurs ou des blocs de code. Si un attribut comme `color` est une valeur unique, il est **préférable** d'utiliser une **constante de rendu** car cela accélère considérablement les performances du style de rendu.
 
 Les constantes de rendu ne peuvent être utilisées qu'avec une seule valeur donnée : `<renderingConstant name="motorwayShadowRadius" value="1.6"/>` et plus tard dans les sélecteurs de fonctionnalités comme `<apply_if shadowRadius="$motorwayShadowRadius"/>`.
@@ -52,7 +52,7 @@ Les attributs de rendu peuvent avoir une structure intégrée avec des sélecteu
     <case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 ```
 
-### Attributs spéciaux {#special-attributes-}
+### Attributs spéciaux {#special-attributes}
 
 Les attributs spéciaux sont `<renderingAttribute >` qui ne sont pas utilisés par les sélecteurs mais utilisés directement par le code pour interroger une fonctionnalité spécifique qui est dessinée dans l'application comme un itinéraire de navigation, une règle, une trace gpx, etc.
 

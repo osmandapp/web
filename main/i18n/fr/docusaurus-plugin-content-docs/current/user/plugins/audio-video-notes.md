@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-## Aperçu {#overview--}
+## Aperçu {#overview}
 
 Vos enregistrements audio et vidéo peuvent être utiles à l'avenir, par exemple comme souvenirs des endroits où vous êtes allé. Ils sont disponibles dans le menu [Mes lieux](../personal/myplaces.md) et sont visibles lorsque le plugin Notes audio/vidéo est activé.
 

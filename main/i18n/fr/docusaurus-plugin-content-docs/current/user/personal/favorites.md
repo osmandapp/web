@@ -423,7 +423,7 @@ Vous pouvez exporter et importer vos favoris à l'aide des boutons spéciaux sit
 - Choisissez le bouton **Partager** pour envoyer le fichier *Favorites.gpx* à la mémoire de votre appareil ou le partager via des applications de messagerie.
 
 
-### Sauvegarde automatique des favoris {#automatic-favorites-backup--}
+### Sauvegarde automatique des favoris {#automatic-favorites-backup}
 
 <Tabs groupId="operating-systems">
 

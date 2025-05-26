@@ -137,7 +137,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_of
 You can enable or disable as a separate layer the display of OSM modifications such as *OSM notes* (online), *OSM edits*, *Fixme tags*, *Note tags*, *Icons at low zooms*, in the [Configure map](../map/configure-map-menu.md) section of the *Main Menu*.  
 
 
-## Create / Modify POI   {#create--modify-poi--}
+## Create / Modify POI {#create--modify-poi}
 
 The OpenStreetMap editing plugin allows you to create new objects on the map called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can map a new store, favorite landmark, bench, or shelter so people can find them.  
 

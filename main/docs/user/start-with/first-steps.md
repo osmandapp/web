@@ -69,7 +69,7 @@ We aim to create a fully functional map-oriented application that can be used fo
 
 ## Actions Guide {#actions-guide}
 
-### Permission to Access the Location   {#permission-to-access-the-location--}
+### Permission to Access the Location {#permission-to-access-the-location}
 
 <Tabs groupId="operating-systems">
 

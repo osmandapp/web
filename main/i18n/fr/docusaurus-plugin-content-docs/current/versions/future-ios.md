@@ -252,7 +252,7 @@ En savoir plus :
 [Attacher aux routes](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-the-roads)
 
 
-## Sommets proéminents désormais découvrables {#prominent-peaks-now-discoverable--}
+## Sommets proéminents désormais découvrables {#prominent-peaks-now-discoverable}
 
 Vous pouvez désormais **découvrir les sommets proéminents** directement sur la carte et via la recherche. Cette mise à jour ajoute des [sommets de montagne notables](https://en.wikipedia.org/wiki/Ultra-prominent_peak) à la carte de base, vous permettant de trouver facilement leurs noms, altitudes et détails supplémentaires via le menu contextuel de la carte ou la fonctionnalité de recherche.
 

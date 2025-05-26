@@ -354,7 +354,7 @@ Le badge de l'icône de l'application apparaît à côté de l'icône OsmAnd lor
 - Pour désactiver les badges dans les paramètres Android, allez dans *Paramètres de l'appareil → Applications → OsmAnd → Notifications* et désactivez l'option d'affichage des badges pour cette application.
 
 
-## Widgets {#widgets--}
+## Widgets {#widgets}
 
 Les widgets vous permettent d'afficher des informations clés sur l'enregistrement de trace directement à l'écran, telles que *Distance*, *Durée*, *Montée* et *Descente*.
 

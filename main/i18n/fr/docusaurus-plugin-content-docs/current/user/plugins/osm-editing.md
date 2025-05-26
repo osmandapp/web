@@ -138,7 +138,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edit
 Vous pouvez activer ou désactiver en tant que couche séparée l'affichage des modifications OSM telles que les *notes OSM* (en ligne), les *modifications OSM*, les *balises Fixme*, les *balises Note*, les *icônes aux faibles zooms*, dans la section [Configurer la carte](../map/configure-map-menu.md) du *Menu principal*.
 
 
-## Créer / Modifier un POI {#create--modify-poi--}
+## Créer / Modifier un POI {#create--modify-poi}
 
 Le plugin d'édition OpenStreetMap vous permet de créer de nouveaux objets sur la carte appelés [points d'intérêt ou POI](../map/point-layers-on-map.md#points-of-interest-poi). Vous pouvez cartographier un nouveau magasin, un point de repère préféré, un banc ou un abri afin que les gens puissent les trouver.
 
