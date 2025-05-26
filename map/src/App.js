@@ -1,7 +1,6 @@
 import { React } from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import GlobalFrame from './frame/GlobalFrame';
-import LoginDialog from './login/dialogs/LoginDialog';
 import { AppContextProvider } from './context/AppContext';
 import DeleteAccountDialog from './login/dialogs/DeleteAccountDialog';
 import { AppServices } from './services/AppServices';
@@ -63,8 +62,6 @@ const App = () => {
                     <NavigateGlobal />
                     <Routes>
                         <Route path={MAIN_URL} element={<GlobalFrame />}>
-                            {/*temp route to old login UI*/}
-                            <Route path={OLD_LOGIN_URL} element={<LoginDialog />}></Route>
                             <Route path={LOGIN_URL} element={<LoginMenu />}>
                                 <Route path={PURCHASES_URL} element={<PurchasesMenu />}>
                                     <Route path=":key" element={<PurchaseInfo />}></Route>

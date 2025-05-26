@@ -6,15 +6,20 @@ import EmptyLogin from '../EmptyLogin';
 import LoginContext from '../../context/LoginContext';
 import ErrorEmptyPurchases from '../../menu/errors/ErrorEmptyPurchases';
 import SubscriptionItem from './SubscriptionItem';
-import { Box } from '@mui/material';
+import { Box, Checkbox, Divider, FormControlLabel, MenuItem, Typography } from '@mui/material';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import InAppItem from './InAppItem';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleText from '../../frame/components/other/SimpleText';
 import { IN_APP, SUBSCRIPTION } from './PurchaseInfo';
+import { purchases } from '../fs/FastSpringHelper';
+import FastSpringPurchaseButton from '../fs/FastSpringPurchaseButton';
+import AppContext from '../../context/AppContext';
+import FastSpringBlock from '../fs/FastSpringBlock';
 
 export default function PurchasesMenu() {
     const ltx = useContext(LoginContext);
+    const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
     const { t } = useTranslation();
@@ -96,6 +101,7 @@ export default function PurchasesMenu() {
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SubTitleMenu text={t('troubleshooting')} />
                             <SimpleText text={'If you have any questions, please contact us at support@osmand.net.'} />
+                            {ctx.develFeatures && ltx.loginUser && <FastSpringBlock />}
                         </>
                     )}
                 </>

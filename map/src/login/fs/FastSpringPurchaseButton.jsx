@@ -2,8 +2,11 @@ import React from 'react';
 import { Button } from '@mui/material';
 import PropTypes from 'prop-types';
 import { getAccountInfo } from '../../manager/LoginManager';
+import BaseButton from '../../frame/components/btns/BaseButton';
+import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
+import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
 
-export default function FastSpringPurchaseButton({ selectedProducts, testMode = false, ctx }) {
+export default function FastSpringPurchaseButton({ selectedProducts, testMode = false, ltx }) {
     const handleClick = () => {
         // remove old script if exists
         const old = document.getElementById('fsc-api');
@@ -41,7 +44,7 @@ export default function FastSpringPurchaseButton({ selectedProducts, testMode = 
                 }
                 if (orderReference && orderReference.id) {
                     const tryUpdate = (attempt = 0) => {
-                        getAccountInfo(ctx.setAccountInfo).then((info) => {
+                        getAccountInfo(ltx.setAccountInfo).then((info) => {
                             // check current subscription was updated successfully
                             if ((info?.valid === 'true' && info?.startTime && info?.expireTime) || attempt >= 5) {
                                 testMode && console.log('✅ Updated info after payment');
@@ -58,11 +61,17 @@ export default function FastSpringPurchaseButton({ selectedProducts, testMode = 
         document.head.appendChild(script);
     };
 
-    return <Button onClick={handleClick}>{`${testMode ? 'Test ' : ''}Pay Now`}</Button>;
+    return (
+        <GrayBtnWithBlueHover
+            additionalStyle={{ mt: 2, ml: '48px', mr: 2, maxWidth: '280px' }}
+            text={`${testMode ? 'Test ' : ''}Pay Now`}
+            action={handleClick}
+        />
+    );
 }
 
 FastSpringPurchaseButton.propTypes = {
     selectedProducts: PropTypes.arrayOf(PropTypes.string).isRequired,
     testMode: PropTypes.bool,
-    ctx: PropTypes.object.isRequired,
+    ltx: PropTypes.object.isRequired,
 };
