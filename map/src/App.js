@@ -26,6 +26,7 @@ import {
     TRACK_ANALYZER_URL,
     INFO_MENU_URL,
     SHARE_MENU_URL,
+    PURCHASES_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -43,6 +44,7 @@ import TrackAnalyzerMenu from './menu/analyzer/TrackAnalyzerMenu';
 import InformationBlock from './infoblock/components/InformationBlock';
 import ShareFileMenu from './menu/share/ShareFileMenu';
 import { LoginContextProvider } from './context/LoginContext';
+import PurchasesMenu from './login/purchases/PurchasesMenu';
 
 export let globalNavigate = () => null;
 
@@ -62,7 +64,9 @@ const App = () => {
                         <Route path={MAIN_URL} element={<GlobalFrame />}>
                             {/*temp route to old login UI*/}
                             <Route path={OLD_LOGIN_URL} element={<LoginDialog />}></Route>
-                            <Route path={LOGIN_URL} element={<LoginMenu />}></Route>
+                            <Route path={LOGIN_URL} element={<LoginMenu />}>
+                                <Route path={PURCHASES_URL} element={<PurchasesMenu />}></Route>
+                            </Route>
                             <Route
                                 path={DELETE_ACCOUNT_URL}
                                 element={<DeleteAccountDialog setDeleteAccountFlag={null} />}

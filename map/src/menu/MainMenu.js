@@ -730,13 +730,8 @@ export default function MainMenu({
                     <>
                         {/*add pro features*/}
                         {ctx.openProFeatures && <ProFeatures />}
-                        {/*add login menu items*/}
-                        {ltx.openLoginMenu && <LoginMenu />}
                         {/*add main menu items*/}
-                        {_.isEmpty(ctx.openGroups) &&
-                            !ctx.openVisibleMenu &&
-                            !ltx.openLoginMenu &&
-                            !ctx.openProFeatures && <Outlet />}
+                        {_.isEmpty(ctx.openGroups) && !ctx.openVisibleMenu && !ctx.openProFeatures && <Outlet />}
                         {/*add track groups*/}
                         {ctx.openGroups.length > 0 && getGroup()}
                         {ctx.openVisibleMenu && (

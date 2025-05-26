@@ -3,9 +3,9 @@ import styles from './items.module.css';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import React from 'react';
 
-export default function DefaultItem({ id, icon, name, additionalInfo = null, revertText = false }) {
+export default function DefaultItem({ id, icon, name, additionalInfo = null, revertText = false, onClick = null }) {
     return (
-        <MenuItem id={id} className={styles.item} disableRipple>
+        <MenuItem id={id} className={styles.item} disableRipple onClick={onClick}>
             <ListItemIcon className={styles.icon}>{icon}</ListItemIcon>
             {revertText ? (
                 <ListItemText>

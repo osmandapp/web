@@ -12,11 +12,11 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import EmptyLogin from './EmptyLogin';
 import Login from './Login';
-import {closeLoginMenu, FREE_ACCOUNT} from '../manager/LoginManager';
+import { closeLoginMenu, FREE_ACCOUNT } from '../manager/LoginManager';
 import ChangeResetPwd from './ChangeResetPwd';
 import CreateAccount from './CreateAccount';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
+import { Outlet, useLocation, useNavigate, useOutlet } from 'react-router-dom';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH, PURCHASES_URL } from '../manager/GlobalManager';
 import { userLogout } from '../manager/AccountManager';
 import i18n from 'i18next';
 import DefaultItemWithActions from '../frame/components/items/DefaultItemWithActions';
@@ -37,6 +37,7 @@ export default function LoginMenu() {
 
     const lang = i18n.language;
     const anchorEl = useRef(null);
+    const outlet = useOutlet();
 
     const { t } = useTranslation();
     const location = useLocation();
@@ -82,7 +83,8 @@ export default function LoginMenu() {
     return (
         <>
             {openCloudInfo && <CloudInfo setOpenCloudInfo={setOpenCloudInfo} />}
-            {ltx.loginState.default && !openCloudInfo && (
+            <Outlet />
+            {ltx.loginState.default && !openCloudInfo && !outlet && (
                 <>
                     <AppBarWithBtns
                         id={'login-menu'}
@@ -143,6 +145,9 @@ export default function LoginMenu() {
                                 icon={<PurchasesIcon />}
                                 name={t('purchases')}
                                 additionalInfo={mainSubscription()}
+                                onClick={() => {
+                                    navigate(PURCHASES_URL);
+                                }}
                             />
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SimpleItemWithRightInfo
