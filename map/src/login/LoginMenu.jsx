@@ -30,6 +30,7 @@ import ChangeEmailDialog from './dialogs/ChangeEmailDialog';
 import DeleteAccountDialog from './dialogs/DeleteAccountDialog';
 import AppBarWithBtns from '../frame/components/header/AppBarWithBtns';
 import CloudInfo from './CloudInfo';
+import upperFirst from 'lodash/upperFirst';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -70,9 +71,9 @@ export default function LoginMenu() {
             return '';
         }
         let status;
-        status = new Date(parseInt(ltx.accountInfo.expireTime, 10)).getTime() > Date.now() ? 'Active' : 'Expired';
-        status = status ? status + ' · ' : '';
-        return status + getAccountType(ltx.accountInfo.account);
+        status = ltx.accountInfo.state;
+        status = status ? upperFirst(status) + ' · ' : '';
+        return status + getAccountType(ltx.accountInfo.name);
     };
 
     function close() {
