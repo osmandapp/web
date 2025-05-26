@@ -20,7 +20,7 @@ The following OsmAnd products currently support use across multiple platforms (A
 
 - **OsmAnd Pro** subscription  
 - **Maps+** subscription  
-- **Maps+** one-time in-app purchase (activated via OsmAnd Cloud)
+- **Maps+** one-time in-app purchase
 
 Starting with **OsmAnd version 5.0**, released in celebration of our **15th anniversary**, cross-platform access has been extended to **Maps+** (formerly known as *Unlimited*). Previously, only the [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) subscription was cross-platform.  
 
@@ -32,7 +32,7 @@ You can compare all OsmAnd products here: [difference between purchases](https:/
 | OsmAnd Pro (subscription)   | ✔              | Works across Android, iOS, and Web via Cloud |
 | Maps+ (subscription)        | ✔              | Requires version 5.0+ and Cloud account |
 | Maps+ (one-time purchase)   | ✔              | Must be activated through OsmAnd Cloud on purchase device |
-| OsmAnd+ (standalone app)    | **—**          | Not transferable between stores or platforms |
+| OsmAnd+ (standalone app)    | Coming soon    | Not transferable between stores or platforms |
 
 
 ## How It Works
@@ -87,16 +87,15 @@ To activate your Maps+ purchase on iOS:
 
 1. Open the **Amazon version** of the OsmAnd app on your original device.
 2. Log in to your [OsmAnd Cloud account](../personal/osmand-cloud.md#login):  
-   *Menu → Settings → OsmAnd Cloud → I already have an account*
+   *Menu → Settings → OsmAnd Cloud → Create new account / I already have an account*
 3. Install OsmAnd on your iPhone from the [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
 4. Log in to the **same OsmAnd Cloud account** on your iPhone.
 5. Go to *Menu → Settings → Purchases* and confirm that **Maps+** is listed as active.
 
 This completes the cross-platform activation of your purchase. You can now continue using **Maps+** on your new device.
 
-:::note
-The same procedure works for **OsmAnd Pro subscriptions** and for devices switching from iOS to Android.
-:::
+Enjoy using Maps+/Pro across platforms!
+
 
 ## Related Articles
 
