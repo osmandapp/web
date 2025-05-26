@@ -7,6 +7,7 @@ import { ReactComponent as AppStoreIcon } from '../../assets/icons/ic_logo_ios_a
 import { ReactComponent as HuaweiIcon } from '../../assets/icons/ic_logo_huawei_app_gallery.svg';
 import { ReactComponent as FastSpringIcon } from '../../assets/icons/ic_action_purchases_outlined.svg';
 import styles from '../../frame/components/items/items.module.css';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 
 const storeMap = {
     'Google Play': {
@@ -44,14 +45,17 @@ export default function PurchaseManager({ store }) {
 
     return (
         <>
-            <SimpleItem ml={'48px'} maxLines={4} text={currentStore.text} isMain={false} />
             {currentStore && (
-                <SimpleItemWithRightInfo
-                    name={t('manage_subscription')}
-                    icon={currentStore.icon}
-                    addStyles={styles.linkText}
-                    onClick={onClick}
-                />
+                <>
+                    <SimpleItem ml={'48px'} maxLines={4} text={currentStore.text} isMain={false} />
+                    <DividerWithMargin margin={'64px'} />
+                    <SimpleItemWithRightInfo
+                        name={t('manage_subscription')}
+                        icon={currentStore.icon}
+                        addStyles={styles.linkText}
+                        onClick={onClick}
+                    />
+                </>
             )}
         </>
     );
