@@ -3,7 +3,7 @@ import styles from './items.module.css';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import React from 'react';
 
-export default function SimpleItemWithRightInfo({ name, id, icon, rightText = null, onClick = null }) {
+export default function SimpleItemWithRightInfo({ name, id, icon, rightText = null, onClick = null, addStyles = {} }) {
     return (
         <MenuItem id={id} className={styles.item} disableRipple onClick={onClick}>
             <ListItemIcon className={styles.icon}>{icon}</ListItemIcon>
@@ -15,7 +15,7 @@ export default function SimpleItemWithRightInfo({ name, id, icon, rightText = nu
                         justifyContent: 'space-between',
                     }}
                 >
-                    <MenuItemWithLines name={name} maxLines={2} />
+                    <MenuItemWithLines className={addStyles} name={name} maxLines={2} />
                     {rightText && <Typography className={styles.addInfo}>{rightText}</Typography>}
                 </div>
             </ListItemText>

@@ -12,6 +12,8 @@ import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import { format } from 'date-fns';
 import ColorBlock from '../../frame/components/other/ColorBlock';
+import PurchaseManager from './PurchaseManager';
+import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 
 export const SUBSCRIPTION = 'subscription';
 export const IN_APP = 'inApp';
@@ -119,6 +121,12 @@ export default function PurchaseInfo() {
                         />
                     )}
                     <DefaultItem name={t('shared_string_purchased_on')} additionalInfo={item.store} revertText={true} />
+                    {type === SUBSCRIPTION && (
+                        <>
+                            <SimpleDivider />
+                            <PurchaseManager store={item.store} />
+                        </>
+                    )}
                     <ColorBlock color={'#f0f0f0'} />
                 </>
             )}
