@@ -84,6 +84,15 @@ export default function PurchaseInfo() {
         return date ? format(new Date(parseInt(date, 10)), 'MMM d, yyyy', { locale }) : 'N/A';
     }
 
+    function purchaseType() {
+        if (type === SUBSCRIPTION && item.type) {
+            return t(typeMap[item.type]);
+        }
+        if (type === IN_APP) {
+            return t(typeMap['inapp']);
+        }
+    }
+
     return (
         <>
             {!item && <Loading />}
@@ -107,11 +116,9 @@ export default function PurchaseInfo() {
                     ) : (
                         <InAppItem id={item.name} name={item.name} purchaseTime={item.purchaseTime} />
                     )}
-                    <DefaultItem
-                        name={t('shared_string_type')}
-                        additionalInfo={typeMap[item.type] ? t(typeMap[item.type]) : t(typeMap['inapp'])}
-                        revertText={true}
-                    />
+                    {purchaseType() && (
+                        <DefaultItem name={t('shared_string_type')} additionalInfo={purchaseType()} revertText={true} />
+                    )}
                     {type === SUBSCRIPTION && (
                         <DefaultItem
                             name={t('shared_string_expires')}
