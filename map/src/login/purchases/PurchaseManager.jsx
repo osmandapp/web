@@ -28,7 +28,7 @@ const storeMap = {
     'OsmAnd Web (FastSpring)': {
         text: 'You can manage or cancel your subscription through FastSpring account management portal.',
         icon: <FastSpringIcon />,
-        link: null,
+        link: 'https://osmand.onfastspring.com/account',
     },
 };
 
@@ -38,7 +38,7 @@ export default function PurchaseManager({ store }) {
     const currentStore = storeMap[store];
 
     function onClick() {
-        if (currentStore && !currentStore['OsmAnd Web (FastSpring)']) {
+        if (currentStore) {
             window.open(currentStore.link, '_blank');
         }
     }
