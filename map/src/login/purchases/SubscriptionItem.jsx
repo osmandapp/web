@@ -8,6 +8,9 @@ import { ReactComponent as OsmAndMapsIcon } from '../../assets/icons/ic_action_o
 import PurchaseStatus from './PurchaseStatus';
 import { useTranslation } from 'react-i18next';
 import { formatString } from '../../manager/SettingsManager';
+import { format } from 'date-fns';
+import * as locales from 'date-fns/locale';
+import i18n from 'i18next';
 
 export const typeMap = {
     monthly: 'monthly_subscription',
@@ -24,7 +27,11 @@ const subIconMap = {
 
 export default function SubscriptionItem({ id, onClick, name, type, state, billingDate = null }) {
     const { t } = useTranslation();
-    const billingDateFormatted = formatString(t('next_billing_date'), [billingDate ?? 'N/A']);
+    const locale = locales[i18n.language] || locales.enUS;
+    const billingDateFormatted = billingDate
+        ? format(new Date(parseInt(billingDate, 10)), 'MMM d, yyyy', { locale })
+        : 'N/A';
+    const billingDateString = formatString(t('next_billing_date'), [billingDateFormatted]);
 
     return (
         <MenuItem
@@ -43,7 +50,7 @@ export default function SubscriptionItem({ id, onClick, name, type, state, billi
                     {typeMap[type] ? t(typeMap[type]) : type}
                 </Typography>
                 <Typography className={loginStyles.purchaseInfo} noWrap>
-                    {billingDateFormatted}
+                    {billingDateString}
                 </Typography>
                 <Box sx={{ mt: '6px' }}>
                     <PurchaseStatus status={state} />

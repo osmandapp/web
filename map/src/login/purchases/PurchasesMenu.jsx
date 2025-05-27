@@ -83,6 +83,7 @@ export default function PurchasesMenu() {
                                                 name={item.name}
                                                 type={item.type}
                                                 state={item.state}
+                                                billingDate={item.billingDate}
                                                 onClick={() => clickOnSubscription(index)}
                                             />
                                         ))}

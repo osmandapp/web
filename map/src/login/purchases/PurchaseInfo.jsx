@@ -97,7 +97,13 @@ export default function PurchaseInfo() {
                         }}
                     />
                     {type === SUBSCRIPTION ? (
-                        <SubscriptionItem id={item.name} name={item.name} type={item.type} state={item.state} />
+                        <SubscriptionItem
+                            id={item.name}
+                            name={item.name}
+                            type={item.type}
+                            state={item.state}
+                            billingDate={item.billingDate}
+                        />
                     ) : (
                         <InAppItem id={item.name} name={item.name} purchaseTime={item.purchaseTime} />
                     )}
