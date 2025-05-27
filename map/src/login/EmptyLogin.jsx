@@ -1,12 +1,13 @@
-import { Box, Button, Icon, ListItemText } from '@mui/material';
+import { Box, Icon, ListItemText } from '@mui/material';
 import styles from '../menu/errors/errors.module.css';
 import loginStyles from './login.module.css';
 import { ReactComponent as UserAccountIcon } from '../assets/icons/ic_custom_logo_osmand.svg';
 import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { createAccount, openLogin } from '../manager/LoginManager';
 import LoginContext from '../context/LoginContext';
+import GrayBtnWithBlueHover from '../frame/components/btns/GrayBtnWithBlueHover';
 
 export default function EmptyLogin() {
     const ltx = useContext(LoginContext);
@@ -27,17 +28,12 @@ export default function EmptyLogin() {
                     {t('web:empty_login_desc')}
                 </ListItemText>
             </Box>
-            <Button
-                id="se-login-btn"
-                className={styles.button}
-                component="span"
-                onClick={() => openLogin(ltx, navigate)}
-            >
-                {t('web:login_btn')}
-            </Button>
-            <Button sx={{ mt: 1.5 }} className={styles.button} component="span" onClick={() => createAccount(ltx)}>
-                {t('web:create_account_btn')}
-            </Button>
+            <GrayBtnWithBlueHover id="se-login-btn" action={() => openLogin(ltx, navigate)} text={t('web:login_btn')} />
+            <GrayBtnWithBlueHover
+                action={() => createAccount(ltx)}
+                text={t('web:create_account_btn')}
+                additionalStyle={{ mt: 1.5 }}
+            />
         </Box>
     );
 }
