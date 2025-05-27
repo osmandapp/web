@@ -1,7 +1,6 @@
 ---
 sidebar_position: 8
 title: Popular Places
-unlisted: true
 ---
 
 import Tabs from '@theme/Tabs';
