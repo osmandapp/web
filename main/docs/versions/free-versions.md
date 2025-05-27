@@ -16,6 +16,29 @@ You can get the latest version of OsmAnd free from listed app stores.
 
 Direct links to free OsmAnd versions.
 
+## Version 5 {#version-5}
+
+### Version 5.0 {#version-50}
+
+Release date 04/2025:
+
+- Discover top-ranked POIs with the new Explore mode
+- All OSM routes, now searchable! Hiking, cycling, MTB, and more
+- New navigation widget combines turn arrow and navigation instructions
+- Current route info widget: displays ETA, arrival time, and distance
+- Select ski slopes and MTB trails on the map for detailed information
+- Ability to select widget size for left and right panels
+- Added "Coordinates grid" with geographical coordinates
+- Added ability to customize the default appearance of favorite groups
+- Android Auto: view ETA and distance to next waypoint; city names now appear in search results
+- Prominent peaks are now discoverable via map and search
+- Mountain peak heights in feet
+- Added: Crags and climbing areas on the map
+- Address search in the USA has been improved  
+- Added Hebrew TTS for navigation
+
+<DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
+
 ## Version 4 {#version-4}
 
 ### Version 4.9 {#version-49}
