@@ -13,7 +13,6 @@ import { typeMap } from './SubscriptionItem';
 export default function InAppItem({ id, onClick, name, purchaseTime }) {
     const { t } = useTranslation();
 
-    const type = 'in_app_purchase_desc';
     const locale = locales[i18n.language] || locales.enUS;
     const purchaseDate = purchaseTime ? format(new Date(parseInt(purchaseTime, 10)), 'MMM d, yyyy', { locale }) : 'N/A';
 
@@ -33,10 +32,10 @@ export default function InAppItem({ id, onClick, name, purchaseTime }) {
                     {name}
                 </Typography>
                 <Typography className={loginStyles.purchaseInfo} noWrap>
-                    {t(type)}
+                    {t(typeMap['inapp'])}
                 </Typography>
                 <Typography className={loginStyles.purchaseInfo} noWrap>
-                    {`${t(typeMap['inapp'])}: ${purchaseDate}`}
+                    {`${t('shared_string_purchased')}: ${purchaseDate}`}
                 </Typography>
                 <Box sx={{ mt: '6px' }}>
                     <PurchaseStatus status={'active'} />

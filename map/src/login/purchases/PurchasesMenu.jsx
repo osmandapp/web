@@ -16,6 +16,7 @@ import { purchases } from '../fs/FastSpringHelper';
 import FastSpringPurchaseButton from '../fs/FastSpringPurchaseButton';
 import AppContext from '../../context/AppContext';
 import FastSpringBlock from '../fs/FastSpringBlock';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 export default function PurchasesMenu() {
     const ltx = useContext(LoginContext);
@@ -24,6 +25,8 @@ export default function PurchasesMenu() {
     const navigate = useNavigate();
     const { t } = useTranslation();
     const outlet = useOutlet();
+
+    const [, height] = useWindowSize();
 
     const [selectedPurchase, setSelectedPurchase] = useState(null);
 
@@ -54,7 +57,7 @@ export default function PurchasesMenu() {
         <>
             <Outlet context={{ selectedPurchase }} />
             {!outlet && (
-                <>
+                <Box>
                     <AppBarWithBtns
                         id={'purchases-menu'}
                         header={t('purchases')}
@@ -66,15 +69,10 @@ export default function PurchasesMenu() {
                     {!ltx.loginUser ? (
                         <EmptyLogin />
                     ) : (
-                        <>
+                        <Box sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}>
                             {subscriptions && inAppPurchases && !hasPurchases() && <ErrorEmptyPurchases />}
                             {hasPurchases() && (
-                                <Box
-                                    sx={{
-                                        height: '490px',
-                                        overflowY: 'auto',
-                                    }}
-                                >
+                                <>
                                     {subscriptions?.length > 0 &&
                                         subscriptions.map((item, index) => (
                                             <SubscriptionItem
@@ -97,15 +95,15 @@ export default function PurchasesMenu() {
                                                 onClick={() => clickOnInApp(index)}
                                             />
                                         ))}
-                                </Box>
+                                </>
                             )}
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SubTitleMenu text={t('troubleshooting')} />
                             <SimpleText text={'If you have any questions, please contact us at support@osmand.net.'} />
                             {ctx.develFeatures && ltx.loginUser && <FastSpringBlock />}
-                        </>
+                        </Box>
                     )}
-                </>
+                </Box>
             )}
         </>
     );
