@@ -143,19 +143,11 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             if (value) {
                 ctx.setProcessingSearch(true);
                 if (zoom < MIN_SEARCH_ZOOM) {
-                    if (value.type === SEARCH_TYPE_CATEGORY) {
-                        setResult(null);
-                        setErrorZoom(ZOOM_ERROR);
-                        ctx.setProcessingSearch(false);
-                    } else {
-                        performBaseSearch(value);
-                    }
+                    performBaseSearch(value);
+                } else if (value.type === SEARCH_TYPE_CATEGORY) {
+                    searchByCategory(value, ctx);
                 } else {
-                    if (value.type === SEARCH_TYPE_CATEGORY) {
-                        searchByCategory(value, ctx);
-                    } else {
-                        searchByWord(value);
-                    }
+                    searchByWord(value);
                 }
             }
         }
