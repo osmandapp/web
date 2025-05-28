@@ -154,7 +154,10 @@ export default function LoginMenu() {
                                 name={t('purchases')}
                                 additionalInfo={mainSubscription()}
                                 onClick={() => {
-                                    navigate(PURCHASES_URL);
+                                    navigate({
+                                        pathname: PURCHASES_URL,
+                                        hash: location.hash,
+                                    });
                                 }}
                             />
                             <ThickDivider mt={'0px'} mb={'0px'} />

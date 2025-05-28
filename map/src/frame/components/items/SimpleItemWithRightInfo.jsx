@@ -3,7 +3,14 @@ import styles from './items.module.css';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import React from 'react';
 
-export default function SimpleItemWithRightInfo({ name, id, icon, rightText = null, onClick = null, addStyles = {} }) {
+export default function SimpleItemWithRightInfo({
+    name,
+    id,
+    icon,
+    rightText = null,
+    onClick = null,
+    addStyles = null,
+}) {
     return (
         <MenuItem id={id} className={styles.item} disableRipple onClick={onClick}>
             <ListItemIcon className={styles.icon}>{icon}</ListItemIcon>

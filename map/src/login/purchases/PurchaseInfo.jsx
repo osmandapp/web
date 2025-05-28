@@ -2,7 +2,7 @@ import SubscriptionItem, { typeMap } from './SubscriptionItem';
 import React, { useContext, useEffect, useState } from 'react';
 import DefaultItem from '../../frame/components/items/DefaultItem';
 import AppBarWithBtns from '../../frame/components/header/AppBarWithBtns';
-import { useNavigate, useOutletContext, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useOutletContext, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
 import { getAccountInfo } from '../../manager/LoginManager';
@@ -25,24 +25,33 @@ export default function PurchaseInfo() {
     const { key } = useParams();
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const location = useLocation();
+
     const [item, setItem] = useState(null);
     const [type, setType] = useState(null);
 
     const locale = locales[i18n.language] || locales.enUS;
+
+    function backToPurchases() {
+        navigate({
+            pathname: '../',
+            hash: location.hash,
+        });
+    }
 
     useEffect(() => {
         async function fetchData() {
             if (!selectedPurchase) {
                 const info = await getInfo();
                 if (!info) {
-                    navigate('..' + '/');
+                    backToPurchases();
                     return;
                 }
                 if (key.startsWith('sub')) {
                     const idx = parseInt(key.slice(3), 10);
                     const subscriptions = info?.subscriptions && JSON.parse(info.subscriptions);
                     if (!subscriptions || idx >= subscriptions.length) {
-                        navigate('..' + '/');
+                        backToPurchases();
                         return;
                     }
                     setItem(subscriptions[idx]);
@@ -51,7 +60,7 @@ export default function PurchaseInfo() {
                     const idx = parseInt(key.slice(5), 10);
                     const inAppPurchases = info?.inAppPurchases && JSON.parse(info.inAppPurchases);
                     if (!inAppPurchases || idx >= inAppPurchases.length) {
-                        navigate('..' + '/');
+                        backToPurchases();
                         return;
                     }
                     setItem(inAppPurchases[idx]);
@@ -102,7 +111,7 @@ export default function PurchaseInfo() {
                         header={item.name}
                         hasBackBtn={true}
                         leftBtnAction={() => {
-                            navigate('..' + '/');
+                            backToPurchases();
                         }}
                     />
                     {type === SUBSCRIPTION ? (

@@ -1,19 +1,18 @@
 import AppBarWithBtns from '../../frame/components/header/AppBarWithBtns';
 import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Outlet, useNavigate, useOutlet } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate, useOutlet } from 'react-router-dom';
 import EmptyLogin from '../EmptyLogin';
 import LoginContext from '../../context/LoginContext';
 import ErrorEmptyPurchases from '../../menu/errors/ErrorEmptyPurchases';
 import SubscriptionItem from './SubscriptionItem';
-import { Box, Checkbox, Divider, FormControlLabel, MenuItem, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import InAppItem from './InAppItem';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleText from '../../frame/components/other/SimpleText';
 import { IN_APP, SUBSCRIPTION } from './PurchaseInfo';
 import { purchases } from '../fs/FastSpringHelper';
-import FastSpringPurchaseButton from '../fs/FastSpringPurchaseButton';
 import AppContext from '../../context/AppContext';
 import FastSpringBlock from '../fs/FastSpringBlock';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
@@ -23,6 +22,7 @@ export default function PurchasesMenu() {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
+    const location = useLocation();
     const { t } = useTranslation();
     const outlet = useOutlet();
 
@@ -42,7 +42,10 @@ export default function PurchasesMenu() {
             type: SUBSCRIPTION,
             object: subscriptions[index],
         });
-        navigate(`sub${index}`);
+        navigate({
+            pathname: `sub${index}`,
+            hash: location.hash,
+        });
     }
 
     function clickOnInApp(index) {
@@ -50,7 +53,10 @@ export default function PurchasesMenu() {
             type: IN_APP,
             object: inAppPurchases[index],
         });
-        navigate(`inapp${index}`);
+        navigate({
+            pathname: `inapp${index}`,
+            hash: location.hash,
+        });
     }
 
     return (
@@ -63,7 +69,10 @@ export default function PurchasesMenu() {
                         header={t('purchases')}
                         hasBackBtn={true}
                         leftBtnAction={() => {
-                            navigate('..' + '/');
+                            navigate({
+                                pathname: '../',
+                                hash: location.hash,
+                            });
                         }}
                     />
                     {!ltx.loginUser ? (

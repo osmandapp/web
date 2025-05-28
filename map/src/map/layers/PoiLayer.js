@@ -398,7 +398,6 @@ export default function PoiLayer() {
         }
     }, [ctx.addFavorite]);
 
-
     return (
         <>
             {selectedPoi && openAddDialog && ctx.addFavorite.location && (
