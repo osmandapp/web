@@ -26,7 +26,7 @@ import {
 import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
-const MIN_SEARCH_ZOOM = 8;
+export const MIN_SEARCH_ZOOM = 8;
 const EMPTY_SEARCH_RESULT = 'empty';
 
 export function searchByCategory(value, ctx) {
@@ -142,17 +142,11 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         if (locReady) {
             if (value) {
                 ctx.setProcessingSearch(true);
-                if (zoom < MIN_SEARCH_ZOOM) {
-                    if (value.type === SEARCH_TYPE_CATEGORY) {
-                        setResult(null);
-                        setErrorZoom(ZOOM_ERROR);
-                        ctx.setProcessingSearch(false);
-                    } else {
-                        performBaseSearch(value);
-                    }
+                if (value.type === SEARCH_TYPE_CATEGORY) {
+                    searchByCategory(value, ctx);
                 } else {
-                    if (value.type === SEARCH_TYPE_CATEGORY) {
-                        searchByCategory(value, ctx);
+                    if (zoom < MIN_SEARCH_ZOOM) {
+                        performBaseSearch(value);
                     } else {
                         searchByWord(value);
                     }

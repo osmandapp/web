@@ -13,7 +13,6 @@ import PoiManager, {
     updatePoiCache,
 } from '../../manager/PoiManager';
 import 'leaflet.markercluster';
-import { Alert } from '@mui/material';
 import { apiPost } from '../../util/HttpApi';
 import {
     FINAL_POI_ICON_NAME,
@@ -32,6 +31,7 @@ import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 import { MENU_INFO_OPEN_SIZE, showProcessingNotification } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 import { getVisibleBbox } from '../util/MapManager';
+import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
 
 // WARNING: Do not use the 'title' field in marker layers on the map.
 // See the 'parseWpt' function for more details.
@@ -161,7 +161,6 @@ export default function PoiLayer() {
     });
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
-    const [addAlert, setAddAlert] = useState(false);
     const [bbox, setBbox] = useState(null);
     const [prevCategoriesCount, setPrevCategoriesCount] = useState(null);
     const [openAddDialog, setOpenAddDialog] = useState(false);
@@ -217,6 +216,7 @@ export default function PoiLayer() {
                 locale: i18n.language,
                 lat: map.getCenter().lat,
                 lon: map.getCenter().lng,
+                baseSearch: map.getZoom() < MIN_SEARCH_ZOOM,
             },
             apiCache: true,
             signal: controller.signal,
@@ -261,7 +261,7 @@ export default function PoiLayer() {
                     clearTimeout(notifyTimeout);
                     if (res && !ignore) {
                         if (!res.alreadyFound) {
-                            if (!res.mapLimitExceeded && res.features) {
+                            if (res.features) {
                                 const layer = await createPoiLayer({
                                     ctx,
                                     poiList: res.features.features,
@@ -279,9 +279,6 @@ export default function PoiLayer() {
                                 setPrevCategoriesCount(showPoiCategories.length);
                                 setUseLimit(res.useLimit);
                             }
-                        }
-                        if (res.mapLimitExceeded) {
-                            setAddAlert(true);
                         }
                     } else {
                         setPoiList(null);
@@ -364,15 +361,10 @@ export default function PoiLayer() {
             }
         }
 
-        if (zoom < 8 && !_.isEmpty(ctx.showPoiCategories)) {
-            setAddAlert(true);
-        } else {
-            setAddAlert(false);
-            getPoiList().then();
-            return () => {
-                ignore = true;
-            };
-        }
+        getPoiList().then();
+        return () => {
+            ignore = true;
+        };
     }, [zoom, move, ctx.showPoiCategories]);
 
     // add search result to the map and to the left panel
@@ -406,14 +398,6 @@ export default function PoiLayer() {
         }
     }, [ctx.addFavorite]);
 
-    useEffect(() => {
-        if (addAlert) {
-            ctx.setNotification({
-                text: 'Please zoom in closer!',
-                severity: 'info',
-            });
-        }
-    }, [addAlert]);
 
     return (
         <>
