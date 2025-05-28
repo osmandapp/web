@@ -142,12 +142,14 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         if (locReady) {
             if (value) {
                 ctx.setProcessingSearch(true);
-                if (zoom < MIN_SEARCH_ZOOM) {
-                    performBaseSearch(value);
-                } else if (value.type === SEARCH_TYPE_CATEGORY) {
+                if (value.type === SEARCH_TYPE_CATEGORY) {
                     searchByCategory(value, ctx);
                 } else {
-                    searchByWord(value);
+                    if (zoom < MIN_SEARCH_ZOOM) {
+                        performBaseSearch(value);
+                    } else {
+                        searchByWord(value);
+                    }
                 }
             }
         }
