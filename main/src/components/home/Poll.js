@@ -14,7 +14,7 @@ export default function Poll({id}) {
     const [results, setResults] = useState(null);
     const [ansId, setAnsId] = useState(null);
 
- 
+
     const updateVotes = (votes) => {
         let allVotes = 0;
         Object.values(votes).forEach(e => {
@@ -43,7 +43,7 @@ export default function Poll({id}) {
             return;
         }
         const votes = await fetch(`${pollHost}/api/poll-submit?pollId=${pollId}&ansId=${ansId}`, {
-            method: 'POST', 
+            method: 'POST',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' }
         }).then(res => res.json());
@@ -53,14 +53,21 @@ export default function Poll({id}) {
     useEffect(() => {
         const loadPoll = async (e) => {
             const idReq = id ? `pollId=${id}` : '';
-            const res = await fetch(`${pollHost}/api/latest-poll?${idReq}`, { 
+            const res = await fetch(`${pollHost}/api/latest-poll?${idReq}`, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
-            }).then(res => res.json());
-            if (res.id) {
-                setTitle(res.title);
-                setPollId(res.id);
-                setAnswers(res.answers);
+            });
+            if (res.ok) {
+                try {
+                    const json = await res.json();
+                    if (json.id) {
+                        setTitle(json.title);
+                        setPollId(json.id);
+                        setAnswers(json.answers);
+                    }
+                } catch (e) {
+                    console.warn('loadPoll', e);
+                }
             }
         }
         loadPoll();
@@ -73,7 +80,7 @@ export default function Poll({id}) {
                 {answers.map(answer => {
                     return <div className={styles.pollAnswer} key={answer.ind}>
                             {!results && <span>
-                                <input type="radio" id={answer.id} value={answer.ind} name={pollId} 
+                                <input type="radio" id={answer.id} value={answer.ind} name={pollId}
                                     onChange={() => setAnsId(answer.ind)} />
                             </span>}
                             <label htmlFor={answer.id}>
