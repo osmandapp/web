@@ -108,7 +108,7 @@ export default function PurchasesMenu() {
                             )}
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SubTitleMenu text={t('troubleshooting')} />
-                            <SimpleText text={'If you have any questions, please contact us at support@osmand.net.'} />
+                            <SimpleText text={'If you have any questions, please contact us at support@osmand.net'} />
                             {ctx.develFeatures && ltx.loginUser && <FastSpringBlock />}
                         </Box>
                     )}

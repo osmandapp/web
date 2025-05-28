@@ -7,6 +7,7 @@ import TracksManager from '../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import { deleteTrack } from '../../manager/track/DeleteTrackManager';
+import LoginContext from '../../context/LoginContext';
 
 export default function DeleteTrackDialog({
     dialogOpen,
@@ -17,6 +18,7 @@ export default function DeleteTrackDialog({
     shared = false,
 }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
 
     function getPlace() {
         if (isCloudTrack(ctx)) {
@@ -83,7 +85,7 @@ export default function DeleteTrackDialog({
                 <Button
                     id={'se-delete-track-dialog'}
                     onClick={() => {
-                        deleteTrack({ file, ctx, shared }).then();
+                        deleteTrack({ file, ctx, ltx, shared }).then();
                         cleanContextMenu();
                     }}
                 >

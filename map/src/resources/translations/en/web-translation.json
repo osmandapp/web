@@ -84,5 +84,12 @@
   "processing_track_analyzer": "Processing track data...",
   "short_min": "m",
   "track_analyzer_empty_result_desc": "None of the selected tracks pass through the selected points.",
-  "track_analyzer_empty_result_title": "No passing tracks"
+  "track_analyzer_empty_result_title": "No passing tracks",
+  "purchase_now": "Purchase Now",
+  "payments_and_purchases": "Payments and Purchases",
+  "subscriptions_and_purchases": "Subscriptions & Purchases",
+  "google_play_text": "You can manage or cancel your subscription through the Google Play.",
+  "apple_store_text": "You can manage or cancel your subscription through the Apple App Store.",
+  "fastspring_store_text": "You can manage or cancel your subscription through FastSpring account management portal.",
+  "huawei_store_text": "You can manage or cancel your subscription through the Huawei AppGallery app."
 }

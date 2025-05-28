@@ -11,22 +11,22 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 
 const storeMap = {
     'Google Play': {
-        text: 'You can manage or cancel your subscription through the Google Play.',
+        text: 'web:google_play_text',
         icon: <GooglePlayIcon />,
         link: 'https://play.google.com/store/account/subscriptions',
     },
     'Apple App Store': {
-        text: 'You can manage or cancel your subscription through the Apple App Store.',
+        text: 'web:apple_store_text',
         icon: <AppStoreIcon />,
         link: 'https://account.apple.com/account/manage/section/subscriptions',
     },
     'Huawei AppGallery': {
-        text: 'You can manage or cancel your subscription through the Huawei AppGallery app.',
+        text: 'web:huawei_store_text',
         icon: <HuaweiIcon />,
         link: 'https://consumer.huawei.com/en/support/content/en-us00729195/',
     },
     'OsmAnd Web (FastSpring)': {
-        text: 'You can manage or cancel your subscription through FastSpring account management portal.',
+        text: 'web:fastspring_store_text',
         icon: <FastSpringIcon />,
         link: 'https://osmand.onfastspring.com/account',
     },
@@ -47,7 +47,7 @@ export default function PurchaseManager({ store }) {
         <>
             {currentStore && (
                 <>
-                    <SimpleItem ml={'48px'} maxLines={4} text={currentStore.text} isMain={false} />
+                    <SimpleItem ml={'48px'} maxLines={4} text={t(currentStore.text)} isMain={false} />
                     <DividerWithMargin margin={'64px'} />
                     <SimpleItemWithRightInfo
                         name={t('manage_subscription')}

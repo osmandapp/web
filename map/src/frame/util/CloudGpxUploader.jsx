@@ -25,6 +25,7 @@ export default function CloudGpxUploader({ children, folder = null, style = null
                 fileName = createTrackFreeName(fileName, ctx.tracksGroups, folder);
                 saveTrackToCloud({
                     ctx,
+                    ltx,
                     currentFolder: folder,
                     fileName,
                     type: 'GPX',

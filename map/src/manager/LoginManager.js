@@ -10,7 +10,7 @@ export const EMPTY_INPUT = '';
 
 export async function getAccountInfo(setAccountInfo) {
     const resp = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
-    if (resp.data) {
+    if (resp.data && resp.data.info) {
         setAccountInfo(resp.data.info);
         return resp.data.info;
     }

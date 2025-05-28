@@ -66,6 +66,7 @@ export function saveTrackToLocal({ ctx, track, selected = true, overwrite = fals
 //save to cloud
 export async function saveTrackToCloud({
     ctx,
+    ltx,
     currentFolder,
     fileName,
     type,

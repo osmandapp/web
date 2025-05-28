@@ -1,14 +1,12 @@
-import { Checkbox, Divider, FormControlLabel, MenuItem, Typography } from '@mui/material';
+import { Checkbox, Divider, FormControlLabel, MenuItem } from '@mui/material';
 import { purchases } from './FastSpringHelper';
 import FastSpringPurchaseButton from './FastSpringPurchaseButton';
 import React, { useContext, useState } from 'react';
 import LoginContext from '../../context/LoginContext';
-import AppContext from '../../context/AppContext';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 
 export default function FastSpringBlock() {
     const ltx = useContext(LoginContext);
-    const ctx = useContext(AppContext);
 
     const [selectedProducts, setSelectedProducts] = useState([]);
 
@@ -25,11 +23,11 @@ export default function FastSpringBlock() {
     return (
         <>
             <Divider sx={{ mt: 2 }} />
-            <SubTitleMenu text={'Subscriptions & Purchases:'} />
+            <SubTitleMenu text={`${t('web:subscriptions_and_purchases')}:`} />
             <MenuItem sx={{ mt: -1 }}>
                 {purchases.products.map((item, index) => (
                     <FormControlLabel
-                        key={item.key}
+                        key={item.key + index}
                         label={item.value}
                         control={
                             <Checkbox
@@ -44,7 +42,7 @@ export default function FastSpringBlock() {
             <MenuItem sx={{ mt: -1 }}>
                 {purchases.subscriptions.map((item, index) => (
                     <FormControlLabel
-                        key={item.key}
+                        key={item.key + index}
                         label={item.value}
                         control={
                             <Checkbox

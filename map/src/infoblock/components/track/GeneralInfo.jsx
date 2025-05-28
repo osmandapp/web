@@ -50,10 +50,12 @@ import {
     LARGE_UNIT,
 } from '../../../menu/settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
+import LoginContext from '../../../context/LoginContext';
 
 export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
 

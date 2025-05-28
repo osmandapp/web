@@ -148,7 +148,7 @@ export default function LoginMenu() {
                                 }}
                             />
                             <ThickDivider mt={'0px'} mb={'0px'} />
-                            <SubTitleMenu text={'Payments and Purchases'} />
+                            <SubTitleMenu text={t('web:payments_and_purchases')} />
                             <DefaultItem
                                 icon={<PurchasesIcon />}
                                 name={t('purchases')}

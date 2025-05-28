@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button } from '@mui/material';
 import PropTypes from 'prop-types';
 import { getAccountInfo } from '../../manager/LoginManager';
-import BaseButton from '../../frame/components/btns/BaseButton';
-import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
+import { useTranslation } from 'react-i18next';
 
 export default function FastSpringPurchaseButton({ selectedProducts, testMode = false, ltx }) {
+    const { t } = useTranslation();
+
     const handleClick = () => {
         // remove old script if exists
         const old = document.getElementById('fsc-api');
@@ -64,7 +64,7 @@ export default function FastSpringPurchaseButton({ selectedProducts, testMode = 
     return (
         <GrayBtnWithBlueHover
             additionalStyle={{ mt: 2, ml: '48px', mr: 2, maxWidth: '280px' }}
-            text={`${testMode ? 'Test ' : ''}Pay Now`}
+            text={`${testMode ? 'Test ' : ''}${t('web:purchase_now')}`}
             action={handleClick}
         />
     );
