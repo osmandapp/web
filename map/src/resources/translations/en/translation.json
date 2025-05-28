@@ -5299,5 +5299,7 @@
   "shared_string_type": "Type",
   "shared_string_expires": "Expires",
   "shared_string_purchased": "Purchased",
-  "manage_subscription": "Manage subscription"
+  "manage_subscription": "Manage subscription",
+  "shared_string_learn_more": "Learn more",
+  "explore_osmnad_plans_to_find_suitable": "Explore OsmAnd Plans to find one suitable for you."
 }
