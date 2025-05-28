@@ -32,6 +32,7 @@ import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 import { MENU_INFO_OPEN_SIZE, showProcessingNotification } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 import { getVisibleBbox } from '../util/MapManager';
+import {MIN_SEARCH_ZOOM} from "../../menu/search/search/SearchResults";
 
 // WARNING: Do not use the 'title' field in marker layers on the map.
 // See the 'parseWpt' function for more details.
@@ -217,6 +218,7 @@ export default function PoiLayer() {
                 locale: i18n.language,
                 lat: map.getCenter().lat,
                 lon: map.getCenter().lng,
+                baseSearch: map.getZoom() < MIN_SEARCH_ZOOM,
             },
             apiCache: true,
             signal: controller.signal,

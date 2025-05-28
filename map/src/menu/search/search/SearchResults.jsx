@@ -26,7 +26,7 @@ import {
 import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
-const MIN_SEARCH_ZOOM = 8;
+export const MIN_SEARCH_ZOOM = 8;
 const EMPTY_SEARCH_RESULT = 'empty';
 
 export function searchByCategory(value, ctx) {
