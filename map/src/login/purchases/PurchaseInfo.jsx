@@ -108,6 +108,7 @@ export default function PurchaseInfo() {
             {item && (
                 <>
                     <AppBarWithBtns
+                        id={'purchase-info-header'}
                         header={item.name}
                         hasBackBtn={true}
                         leftBtnAction={() => {
@@ -130,6 +131,7 @@ export default function PurchaseInfo() {
                     )}
                     {type === SUBSCRIPTION && (
                         <DefaultItem
+                            id={'se-purchase-info-expire-time'}
                             name={t('shared_string_expires')}
                             additionalInfo={formatDate(item.expire_time)}
                             revertText={true}
@@ -142,7 +144,12 @@ export default function PurchaseInfo() {
                             revertText={true}
                         />
                     )}
-                    <DefaultItem name={t('shared_string_purchased_on')} additionalInfo={item.store} revertText={true} />
+                    <DefaultItem
+                        id={'se-purchase-info-store'}
+                        name={t('shared_string_purchased_on')}
+                        additionalInfo={item.store}
+                        revertText={true}
+                    />
                     {type === SUBSCRIPTION && (
                         <>
                             <SimpleDivider />

@@ -23,6 +23,7 @@ const AccountActions = forwardRef(({ setOpenActions }, ref) => {
             <Box ref={ref}>
                 <Paper className={styles.actions}>
                     <MenuItem
+                        id={'se-account-change-email'}
                         className={styles.action}
                         onClick={() => {
                             changeEmail();

@@ -71,7 +71,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
 
     return (
         <>
-            <Dialog classes={{ paper: classes.paper }} open={true} onClose={() => setOpenChangeEmailDialog(false)}>
+            <Dialog id={'se-change-email-dialog'} classes={{ paper: classes.paper }} open={true} onClose={() => setOpenChangeEmailDialog(false)}>
                 <Grid container spacing={2}>
                     <Grid item xs={11} sx={{ mb: -3 }}>
                         <DialogTitle>Change email</DialogTitle>
@@ -80,6 +80,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                         <IconButton
                             variant="contained"
                             type="button"
+                            id={'se-change-email-dialog-close-btn'}
                             onClick={() => {
                                 setEmailError('');
                                 setOpenChangeEmailDialog(false);

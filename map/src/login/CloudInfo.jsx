@@ -50,6 +50,7 @@ export default function CloudInfo({ setOpenCloudInfo }) {
             />
             <Box className={loginStyles.block} sx={{ mt: -2 }}>
                 <DefaultItem
+                    id={'cloud-info-total-files'}
                     icon={<FilesIcon />}
                     name={'Total files'}
                     additionalInfo={getTotalFiles()}
@@ -57,6 +58,7 @@ export default function CloudInfo({ setOpenCloudInfo }) {
                 />
                 <DividerWithMargin margin={'64px'} />
                 <DefaultItem
+                    id={'cloud-info-storage'}
                     icon={<StorageIcon />}
                     name={'Storage'}
                     additionalInfo={getStorageInfo()}
@@ -64,12 +66,14 @@ export default function CloudInfo({ setOpenCloudInfo }) {
                 />
                 <DividerWithMargin margin={'64px'} />
                 <DefaultItem
+                    id={'cloud-info-cloud-storage'}
                     icon={<CloudIcon />}
                     name={'Cloud storage used'}
                     additionalInfo={getCloudStorageInfo()}
                     revertText={true}
                 />
                 <GrayBtnWithBlueHover
+                    id={'se-download-backup'}
                     action={() => setOpenDownloadBackupDialog(true)}
                     text={t('download_all')}
                     additionalStyle={{ mt: 1.5, mb: -1.5 }}

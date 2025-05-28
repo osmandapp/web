@@ -43,6 +43,7 @@ export default function DefaultItemWithActions({
                     </ListItemText>
                 )}
                 <IconButton
+                    id={`${id}-actions`}
                     className={styles.menuIcon}
                     onMouseEnter={() => setHoverIconInfo(true)}
                     onMouseLeave={() => setHoverIconInfo(false)}

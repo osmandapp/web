@@ -78,7 +78,6 @@ import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import SearchMenu from './search/SearchMenu';
 import LoginButton from '../login/LoginButton';
-import LoginMenu from '../login/LoginMenu';
 import TravelMenu from './travel/TravelMenu';
 import ProFeatures from '../frame/pro/ProFeatures';
 import { getShareFileInfo, updateUserRequests } from '../manager/ShareManager';
@@ -87,6 +86,19 @@ import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
 import { SHARE_TYPE } from './share/shareConstants';
+
+export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
+    ctx.setOpenGroups([]);
+    ctx.setOpenVisibleMenu(false);
+    ctx.setOpenProFeatures(null);
+    if (wptDetails) {
+        ctx.setSelectedWpt(null);
+    }
+    ctx.setLoadingContextMenu(false);
+    if (closeLogin) {
+        ltx.setOpenLoginMenu(false);
+    }
+}
 
 export default function MainMenu({
     size,
@@ -127,17 +139,6 @@ export default function MainMenu({
 
     const navigate = useNavigate();
 
-    function closeSubPages({ wptDetails = true }) {
-        ctx.setOpenGroups([]);
-        ctx.setOpenVisibleMenu(false);
-        ctx.setOpenProFeatures(null);
-        if (wptDetails) {
-            ctx.setSelectedWpt(null);
-        }
-        ctx.setLoadingContextMenu(false);
-        ltx.setOpenLoginMenu(false);
-    }
-
     useEffect(() => {
         if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ltx.openLoginMenu && !ltx.loginUser) {
             const params = new URLSearchParams(location.search);
@@ -145,7 +146,7 @@ export default function MainMenu({
             if (to) {
                 setRedirectUrl(to);
             }
-            openLoginMenu(ctx, ltx, navigate);
+            openLoginMenu(ctx, ltx, navigate, location);
         }
     }, [location.pathname, ctx, navigate]);
 
@@ -204,7 +205,7 @@ export default function MainMenu({
             ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
         }
 
-        closeSubPages({ wptDetails: false });
+        closeSubPages({ ctx, ltx, wptDetails: false });
         openShareFileByLink();
 
         const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
@@ -451,7 +452,7 @@ export default function MainMenu({
     }
 
     function selectMenu({ item }) {
-        closeSubPages({});
+        closeSubPages({ ctx, ltx });
         let currentType;
         if (menuInfo) {
             // update menu
@@ -625,7 +626,11 @@ export default function MainMenu({
                     open={openMainMenu}
                 >
                     <Toolbar />
-                    <LoginButton openMainMenu={openMainMenu} setMenuInfo={setMenuInfo} />
+                    <LoginButton
+                        openMainMenu={openMainMenu}
+                        setMenuInfo={setMenuInfo}
+                        setShowInfoBlock={setShowInfoBlock}
+                    />
                     <Divider sx={{ my: '0px !important' }} />
                     <div className={styles.menu}>
                         {items.map(

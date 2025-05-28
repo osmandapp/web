@@ -85,6 +85,10 @@ export default function LoginMenu() {
     function close() {
         closeLoginMenu(ltx);
         closeHeader({ ctx });
+        navigate({
+            pathname: MAIN_URL_WITH_SLASH,
+            hash: location.hash,
+        });
     }
 
     return (
@@ -129,6 +133,7 @@ export default function LoginMenu() {
                     ) : (
                         <>
                             <DefaultItemWithActions
+                                id={'se-login-menu-user-item'}
                                 onClick={clickHandler}
                                 icon={<UserIcon />}
                                 name={`Email ${ctx.develFeatures ? ' :-)' : ''}`}
@@ -140,6 +145,7 @@ export default function LoginMenu() {
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SubTitleMenu text={'My data'} />
                             <SimpleItemWithRightInfo
+                                id={'se-login-menu-osmand-cloud-item'}
                                 name={t('osmand_cloud')}
                                 icon={<CloudIcon />}
                                 rightText={cloudSize}
@@ -150,6 +156,7 @@ export default function LoginMenu() {
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SubTitleMenu text={t('web:payments_and_purchases')} />
                             <DefaultItem
+                                id={'se-login-menu-osmand-purchases'}
                                 icon={<PurchasesIcon />}
                                 name={t('purchases')}
                                 additionalInfo={mainSubscription()}

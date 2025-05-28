@@ -2,27 +2,34 @@ import { ListItemButton, ListItemIcon, ListItemText, MenuItem } from '@mui/mater
 import styles from '../menu/mainmenu.module.css';
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { closeLoginMenu, INIT_LOGIN_STATE, openLoginMenu } from '../manager/LoginManager';
 import { ReactComponent as PersonIcon } from '../assets/icons/ic_action_user_account.svg';
 import { MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
 import LoginContext from '../context/LoginContext';
+import { closeSubPages } from '../menu/MainMenu';
 
-export default function LoginButton({ openMainMenu, setMenuInfo }) {
+export default function LoginButton({ openMainMenu, setMenuInfo, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const { t } = useTranslation();
 
     const openLogin = () => {
         if (ltx.openLoginMenu) {
             closeLoginMenu(ltx);
-            navigate(MAIN_URL_WITH_SLASH + location.hash);
+            navigate({
+                pathname: MAIN_URL_WITH_SLASH,
+                hash: location.hash,
+            });
         } else {
-            openLoginMenu(ctx, ltx, navigate);
+            openLoginMenu(ctx, ltx, navigate, location);
+            closeSubPages({ ctx, ltx, closeLogin: false });
             setMenuInfo(null);
+            setShowInfoBlock(false);
         }
     };
 
