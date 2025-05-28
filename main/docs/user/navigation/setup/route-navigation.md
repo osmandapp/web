@@ -418,7 +418,7 @@ Go to: *<Translate android="true" ids="shared_string_navigation,shared_string_se
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →*  &#x2699
+Go to: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →*  &#x2699
 
 ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
 

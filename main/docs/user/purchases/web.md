@@ -48,8 +48,8 @@ Below are the prices for OsmAnd products in the US and EU. Prices in other regio
 
 ### Free and Paid Features
 
-- [Android: Free vs Paid Features](./android.md#free-and-paid-features)
-- [iOS: Free vs Paid Features](./ios.md#free-and-paid-features)
+- [Android's free and paid features.](./android.md#free-and-paid-features)
+- [iOS's free and paid features.](./ios.md#free-and-paid-features)
 
 
 

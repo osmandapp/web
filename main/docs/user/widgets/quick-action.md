@@ -37,7 +37,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,c
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
 
 ![Quick action widget_ios](@site/static/img/widgets/quick_action_widget_ios.png)
 
@@ -66,7 +66,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,c
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Tap Edit (Pencil icon on the right top corner) → Select actions*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Tap Edit (Pencil icon on the right top corner) → Select actions*
 
 ![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Custom button Android](@site/static/img/widgets/add_action_screen_ios.png)
 
@@ -174,7 +174,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,s
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
 
 ![Custom button Android](@site/static/img/widgets/custom_button_ios.png)  
 

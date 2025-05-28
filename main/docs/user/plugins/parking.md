@@ -214,7 +214,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,m
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_parking"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_parking"/>*  
 
 ![Adding Parking widget in iOS](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)
 

@@ -31,7 +31,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,shared_s
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
 
 ![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)  
 
@@ -60,7 +60,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_am
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
 
 ![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png)  
 

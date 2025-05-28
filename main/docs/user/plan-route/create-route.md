@@ -51,7 +51,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
 
 ![Plan a route ios](@site/static/img/plan-route/plan-route-menu-ios.png)
 
@@ -81,7 +81,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,plan_a_route,plan_rout
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_open_existing_track"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_open_existing_track"/>*
 
 </TabItem>
 

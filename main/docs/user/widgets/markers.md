@@ -159,7 +159,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_markers_item,share
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_appearance"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_appearance"/>*
 
 ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
 

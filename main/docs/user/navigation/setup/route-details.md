@@ -191,7 +191,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_navigati
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> tab*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> tab*
 
 ![Navigation route iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
 

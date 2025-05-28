@@ -149,7 +149,7 @@ Go to: *Menu → Settings → app profile → Navigation settings → Route para
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *Menu → Settings → app profile → Navigation settings → Route parameters → Development*
+Go to: *Menu → Settings → app profile → Navigation settings → Route parameters → Development*
 
 ![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_development_1_ios.png)
 
@@ -222,7 +222,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,rout
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
 
@@ -262,7 +262,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,rout
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
 </TabItem>
 
@@ -288,7 +288,7 @@ Go to: *<Translate android="true" ids="profile_type_user_string,shared_string_se
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_ios.png)
 
@@ -313,7 +313,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,rout
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
@@ -345,7 +345,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,rout
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
@@ -527,7 +527,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,rout
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Detailed track guidance*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Detailed track guidance*
 
 ![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_1_ios.png)   ![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
 

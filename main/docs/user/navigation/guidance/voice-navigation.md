@@ -251,7 +251,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,rout
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
 
 ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
 

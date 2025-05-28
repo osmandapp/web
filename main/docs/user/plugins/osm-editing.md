@@ -126,7 +126,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_os
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
 
 ![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
@@ -200,7 +200,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_os
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
 
 ![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 

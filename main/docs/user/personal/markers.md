@@ -135,7 +135,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_markers_item,share
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
 
 ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
 

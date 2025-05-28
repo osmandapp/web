@@ -135,7 +135,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
 ![my_places_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -168,7 +168,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
 ![my_places_ios](@site/static/img/personal/my_places_ios.png)
 
@@ -254,7 +254,7 @@ Go to: *Three-dot menu → Change default appearance*
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *Long tap folder → Change appearance*
+Go to: *Long tap folder → Change appearance*
 
 ![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 
@@ -328,7 +328,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
 ![Favorites actions ios](@site/static/img/personal/favorites_free_backup_2_ios.png)
 
@@ -359,7 +359,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
 ![Favorites actions ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
@@ -436,7 +436,7 @@ Go to: *Android → data → net.osmand → files → backup*
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *Files → On my iPhone → OsmAnd Maps → favourites_backup*
+Go to: *Files → On my iPhone → OsmAnd Maps → favourites_backup*
 
 ![Favorites autobackup ios](@site/static/img/personal/favorites_autobackup.png)  
 

@@ -170,7 +170,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 

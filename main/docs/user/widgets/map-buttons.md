@@ -113,7 +113,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/map_butt_compass_widg_ios.png)
 
@@ -142,7 +142,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *iOS* *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
 
 ![3D mode](@site/static/img/widgets/map_butt_3D_mode_ios.png)
 

@@ -49,7 +49,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,shared_s
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
 ![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
 
@@ -73,7 +73,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long tap the chosen GPX track → Show on map*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long tap the chosen GPX track → Show on map*
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
@@ -122,7 +122,7 @@ Go to: *Tap the track → Track tab → <Translate android="true" ids="analyze_o
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS* *Tap the track → Track tab → <Translate ios="true" ids="analyze_on_map"/>*  
+Go to: *Tap the track → Track tab → <Translate ios="true" ids="analyze_on_map"/>*  
 
 ![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
