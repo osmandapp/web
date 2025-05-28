@@ -30,7 +30,7 @@ import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
-import {getVisibleBbox} from "../util/MapManager";
+import { getVisibleBbox } from '../util/MapManager';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
