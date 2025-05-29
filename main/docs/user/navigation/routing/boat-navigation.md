@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 Boat routing can be a valuable tool for anyone who enjoys boating or sailing by channels, rivers or fairways. Due to lack of most Fairways in OpenStreeetMap data,  the boat routing is *not recommended* for **open water navigation**, it is suggested to use **[Direct to point](#direct-to-point-routing-for-boat)** instead. With Depth contour lines enabled, it can help you stay safe on the water by avoiding hazards such as shallow waters, rocks, or other obstacles.  
 The OsmAnd Boat routing engine also takes into account the characteristics of the waterways and the boat themselves.  
@@ -34,7 +34,7 @@ The OsmAnd Boat routing engine also takes into account the characteristics of th
 
 </Tabs>  
 
-## Route Parameters - Boat
+## Route Parameters - Boat {#route-parameters---boat}
 
 :::note
 By default, *Boat profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -84,7 +84,7 @@ Typically, *Boat routing* is used with boat profile (the last one enabled togeth
 
 :::
 
-## Other Routing Types for Boat
+## Other Routing Types for Boat {#other-routing-types-for-boat}
 
 [Boat routing](#route-parameters---boat) type is a default routing algorithm for Boat profile. Although you can choose another routing type, which is also suitable for boat navigation:  
 
@@ -96,7 +96,7 @@ It's important to note, that the *Direct-to-point* and *Straight line* routings 
 These routing types for the boat profile can be activated using the following path: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> or another one) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 
 
-### Direct-to-Point Routing for Boat
+### Direct-to-Point Routing for Boat {#direct-to-point-routing-for-boat}
 
 :::note
 When using Direct-to-point and Boat navigation types, you will need [Depth contours data](../../plugins/nautical-charts.md#nautical-map-style), which can be enabled and set in *Configure map*.
@@ -107,14 +107,14 @@ The [Direct-to-point routing type](./direct-to-point-routing.md) can be used wit
 ![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 
 
-### Straight Line Routing for Boat
+### Straight Line Routing for Boat {#straight-line-routing-for-boat}
 
 The [Straight line routing type](./straight-line-routing) can be used with the boat profile when you want to navigate your boat in open water but prefer to follow a straight line rather than a curved route to your destination point. This can be useful when navigating to a distant point, that is visible on the horizon, for example.
 
 ![Streaight-line Navigation type Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
 
 
-## Other Routing Settings
+## Other Routing Settings {#other-routing-settings}
 
 - The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 

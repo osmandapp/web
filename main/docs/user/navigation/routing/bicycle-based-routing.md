@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 Bicycle routing considers factors such as the availability of bike paths, trails, and roads that are safe and legal for bicyclists. OsmAnd always uses elevation data when calculating the estimated time of arrival (time to cover the distance) according to [Naismith's rule](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). By default the fastest route is provided.  
 Bicycle routing can also be useful for [mountain biking](#mtb-routing-particularities).  
@@ -22,7 +22,7 @@ Bicycle routing can also be useful for [mountain biking](#mtb-routing-particular
 You can configure *Bicycle routing* in the [Route parameters section](../guidance/navigation-settings.md/#route-parameters) of the Navigation settings.
 
 
-## Route Parameters - Bicycle
+## Route Parameters - Bicycle {#route-parameters---bicycle}
 
 OsmAnd's bicycle routing features allows cyclists to input a start and end point, and then generate a route that takes into account their preferences and local geography.  
 
@@ -51,12 +51,12 @@ OsmAnd's bicycle routing features allows cyclists to input a start and end point
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* (Android) *Preferred&nbsp;terrain* (iOS) | <details><summary> Elevation data will be used in route calculation: [penalties for roads](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) with another elevation profile will be set. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | This preference can help avoid steep hills or vice versa, prefer them. If you choose *hilly* route, preference will be given to hills and mountains. If *flat* - to flats, hills will be avoided. Less hilly preference is something in between these two options. Without elevation data the fastest route as on plain terrain will be calculated. |
 
 
-## MTB routing particularities
+## MTB routing particularities {#mtb-routing-particularities}
 
 The MTB (mountain biking) routing mechanism is the same as bicycle routing. Note, that there are some penalties for using [MTB routes](../../map/vector-maps.md#routes), and therefore they are less likely to be offered for cycling to home or to work.
 
 
-## Other Routing Settings
+## Other Routing Settings {#other-routing-settings}
 
 - The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 

@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Location delays (ANR crashes)
+## Location delays (ANR crashes) {#location-delays-anr-crashes}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_troubleshooting_1.png)
 
@@ -26,7 +26,7 @@ Android Auto and OsmAnd may simultaneously detect the vehicle's location, which 
 4. Location will now only be detected by the OsmAnd app in Android Auto, avoiding delays in displaying location information.
 
 
-## Map orientation issue
+## Map orientation issue {#map-orientation-issue}
 
 Movement direction map orientation is [flipped and jiggles](https://github.com/osmandapp/OsmAnd/issues/16041). Resolved by switching on ["Approximate bearing"](../navigation/guidance/map-during-navigation.md#map-during-navigation) option:
 
@@ -34,7 +34,7 @@ Movement direction map orientation is [flipped and jiggles](https://github.com/o
 - Placed in *Menu → Settings → Profile → Navigation settings → [Map during navigation](../navigation/guidance/map-during-navigation.md) → Approximate bearing*.
 
 
-## Volume control issue
+## Volume control issue {#volume-control-issue}
 
 In most cases, all types of **signals** remain at constant full volume, which is not affected by the simultaneous audio playback settings. To change the volume of the OsmAnd navigation prompts when using Android Auto, go to *Setup → Voice → Voice volume* on the vehicle multimedia system screen.  
 

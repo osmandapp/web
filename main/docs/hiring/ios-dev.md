@@ -3,12 +3,12 @@ sidebar_position: 3
 title: iOS Developer
 ---
 
-## Job description
+## Job description {#job-description}
 We are looking for an experienced and enthusiastic developer who can bring our open-source iOS application to the next level and make it the best and the most powerful across the world.
 
-## Qualifications
+## Qualifications {#qualifications}
 
-### Requirements
+### Requirements {#requirements}
 - 3+ years experience in iOS development
 - Programming Languages: Objective-C, C++, Swift
 - Frameworks: UIKit, CoreLocation, CoreData, Cocoa Touch, CocoaPods, Location Kit
@@ -19,7 +19,7 @@ We are looking for an experienced and enthusiastic developer who can bring our o
 - Databases: SQLite, CoreData
 - Technical English (Intermediate+)
 
-### Nice to have
+### Nice to have {#nice-to-have}
 - Programming Languages: Java, JavaScript
 - Frameworks: QT, JNI, GDAL
 - IDE: Android Studio
@@ -28,9 +28,9 @@ We are looking for an experienced and enthusiastic developer who can bring our o
 - Any GIS-experience
 - OpenStreetMap
 
-## Company offers
+## Company offers {#company-offers}
 
-### What you can expect from us
+### What you can expect from us {#what-you-can-expect-from-us}
 - Work in an exciting and growing industry
 - An opportunity to combine work and hobbies (if you are a traveler person)
 - Learning by doing – you will work with industry experts who are willing to share their knowledge and experience
@@ -39,7 +39,7 @@ We are looking for an experienced and enthusiastic developer who can bring our o
 - Great atmosphere and supportive environment
 - Working in a friendly and relaxed atmosphere
 
-### What do we offer
+### What do we offer {#what-do-we-offer}
 - Develop one of the best 3D Offline Map application
 - Competitive salary according to your skills and performance
 - Flexible working hours

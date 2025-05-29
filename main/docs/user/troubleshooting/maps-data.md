@@ -13,19 +13,19 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Maps
+## Maps {#maps}
 
-### Why does OsmAnd not offer access to Google Maps?
+### Why does OsmAnd not offer access to Google Maps? {#why-does-osmand-not-offer-access-to-google-maps}
 
 OsmAnd is designed to support OpenStreetMap (OSM) and prioritizes this path as much as possible. Additionally, there are licensing restrictions that do not allow OsmAnd to be distributed with Google Maps data.
 
-### Maps slowly loading on Android 11, 12 (SD card)
+### Maps slowly loading on Android 11, 12 (SD card) {#maps-slowly-loading-on-android-11-12-sd-card}
 
 Due to the new [storage access rules introduced in Android 11 and 12](https://www.androidauthority.com/android-12-privacy-features-1225859/), users may experience slower performance when accessing maps stored on SD cards. These changes can also cause visibility and access restrictions for files in SD card folders. More discussions and technical insights can be found on the following links: [Reddit discussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
 
 At this moment, the following solutions are available:
 
-#### 1. Migrate the OsmAnd data storage folder to “Internal app memory”
+#### 1. Migrate the OsmAnd data storage folder to “Internal app memory” {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
 - You can change the storage folder by selecting the ***Internal app memory*** option in *Menu → Settings → OsmAnd settings → Data storage folder*.
 
@@ -33,7 +33,7 @@ At this moment, the following solutions are available:
 
 The development team is actively looking for more efficient solutions to improve SD card performance under the new Android storage policies.
 
-#### 2. Use the SD card's “Download” Folder
+#### 2. Use the SD card's “Download” Folder {#2-use-the-sd-cards-download-folder}
 
 You can try resolving the slow map loading issue by specifying the SD card’s **Download** folder for OsmAnd storage under *Menu → Settings → OsmAnd settings → Data storage folder → Manually specified*. The following paths are possible:
 
@@ -45,11 +45,11 @@ You can try resolving the slow map loading issue by specifying the SD card’s *
 
 The "XXXX-XXXX" represents your SD card’s unique identification number, which can sometimes be found in the folder path under *External storage 2* options or located using other methods. More research and details on this solution are available [here](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744).
 
-#### 3. "Media" storage option
+#### 3. "Media" storage option {#3-media-storage-option}
 
 If previous solutions don’t work or seem limited, you can try using the "Media" storage option to resolve slow map loading or storage access issues. This method allows selecting a folder that is accessible for OsmAnd and other apps, particularly useful for external or removable storage.
 
-### Picking a "Generally Accessible" OsmAnd data storage folder using the "Media" Storage
+### Picking a "Generally Accessible" OsmAnd data storage folder using the "Media" Storage {#picking-a-generally-accessible-osmand-data-storage-folder-using-the-media-storage}
 
 Android has become stricter with storage permissions, often limiting access to app-specific folders, especially with new installations or system upgrades. OsmAnd’s default data storage may be restricted, making it invisible to other apps or even file managers. Many users want to store maps and data in accessible external storage for backup, syncing, or manual file management.
 
@@ -61,7 +61,7 @@ However, OsmAnd doesn’t have the *All files access* permission (due to Google�
 
 A correct path will not prompt OsmAnd with any write permission errors. Before making these changes, ensure that OsmAnd has the appropriate storage permissions, including "Media" storage permission, under Android’s **Apps** settings. In newer Android versions, these permissions may be located in advanced or hidden menus.
 
-### Deleting map data after the app update (if “Multiuser Storage 1” is selected)
+### Deleting map data after the app update (if “Multiuser Storage 1” is selected) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
 In OsmAnd’s Android version, selecting *Multiuser Storage 1* as the storage location can lead to the deletion of all [local maps](../personal/maps-resources.md#local-maps) whenever the app is automatically updated, such as from version 4.1.9 to 4.1.10, 4.1.11, or later (**Android 11, 12**). This issue is documented on [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
@@ -75,7 +75,7 @@ To avoid losing your map data during updates, consider these solutions:
    - /storage/emulated/0/Android/**media**/net.osmand.
 
 
-### No maps rendering for Google Pixel devices
+### No maps rendering for Google Pixel devices {#no-maps-rendering-for-google-pixel-devices}
 
 For the OsmAnd 4.2 Android versions, [map rendering may fail](https://github.com/osmandapp/OsmAnd/issues/15045) on Google Pixel devices, leaving users with a blank white screen instead of a map.
 
@@ -85,7 +85,7 @@ To resolve this issue, switch to OpenGL rendering:
 - Restart OsmAnd to apply the changes.
 
 
-### Resolving slow map rendering in OsmAnd
+### Resolving slow map rendering in OsmAnd {#resolving-slow-map-rendering-in-osmand}
 
 <!--
 Other header variants:
@@ -111,13 +111,13 @@ To resolve the issue of slow map rendering, especially when using offline vector
 These changes should reduce the time it takes to render maps, especially during navigation. For more detailed configuration options, refer to the [Map Settings Guide](https://osmand.net/docs/user/map/interact-with-map#settings).
 
 
-## Contour Lines
+## Contour Lines {#contour-lines}
 
-### Is there a way to display contour lines in feet instead of meters?
+### Is there a way to display contour lines in feet instead of meters? {#is-there-a-way-to-display-contour-lines-in-feet-instead-of-meters}
 
 Yes, contour lines can be displayed in feet instead of meters. Before downloading the Contour line data, choose between Feet or Meters: [read more about it here](../../user/plugins/topography.md#contour-lines-meters-or-feet).
 
-### Contour Lines, Elevation data or 3D Relief are not displayed
+### Contour Lines, Elevation data or 3D Relief are not displayed {#contour-lines-elevation-data-or-3d-relief-are-not-displayed}
 
 - Verify if the correct region's data has been downloaded. Go to ***Menu → Maps & Resources → Downloads → Your Region***. [How to download maps](../start-with/first-steps.md#how-to-download-maps).
 - Check that the [plugin](../plugins/topography.md#required-setup-parameters) is enabled and visible in ***Menu → Plugins → Topography***.
@@ -128,9 +128,9 @@ Yes, contour lines can be displayed in feet instead of meters. Before downloadin
 - Restart OsmAnd to refresh settings and data.
 
 
-## Search
+## Search {#search}
 
-### Structured (city *→* street *→* house) address search doesn't find the house
+### Structured (city *→* street *→* house) address search doesn't find the house {#structured-city--street--house-address-search-doesnt-find-the-house}
 
 If you're trying to search for a location using the structure *City → Street → House Number* and no results are returned, consider the following tips and potential causes:
 
@@ -147,9 +147,9 @@ If you're trying to search for a location using the structure *City → Street �
 - **Possible Issue in OsmAnd**. If the house is present in Nominatim but still not found in OsmAnd, the problem might be specific to OsmAnd. You can contribute to solving this by investigating further. More details can be found in this [technical article](../../technical/algorithms/trace-address-search-issues.md).
 
 
-## Tracks and Points
+## Tracks and Points {#tracks-and-points}
 
-### How to mark different places on the map
+### How to mark different places on the map {#how-to-mark-different-places-on-the-map}
 
 You can leave notes and mark locations on the map in various forms, each serving different purposes:
 

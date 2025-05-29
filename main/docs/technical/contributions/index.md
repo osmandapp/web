@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Contributions are welcome!
+# Contributions are welcome! {#contributions-are-welcome}
 
 You can also use OsmAnd's functionality and plugins to directly contribute data to collaborative projects like OpenStreetMap, Wikipedia, WikiVoyage, Mapillary.
 

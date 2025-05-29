@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-## Overview
+## Overview {#overview}
 
 [OsmAnd Point of Interest](https://wiki.openstreetmap.org/wiki/Points_of_interest) (POI) functionality in OsmAnd provides accuracy, visibility, and convenience in finding interesting places, routes and services near your current location or a selected area on the map.  
 
@@ -32,7 +32,7 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 - *Android*: Go to the main [*Menu → Configure map → POI overlay → Search*](../map/point-layers-on-map.md#points-of-interest-poi).
 
 
-## How to Use
+## How to Use {#how-to-use}
 
 <Tabs groupId="operating-systems">
 
@@ -86,7 +86,7 @@ To accomplish some of these tasks (locate addresses, POI) you will need to have 
 :::  
 
 
-## POI Search by Categories
+## POI Search by Categories {#poi-search-by-categories}
 
 <Tabs groupId="operating-systems">
 
@@ -127,7 +127,7 @@ OsmAnd starts to find names and categories of POI by entered words. First result
 Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.   
 -->
 
-### Types of Filters
+### Types of Filters {#types-of-filters}
 
 <Tabs groupId="operating-systems">
 
@@ -225,7 +225,7 @@ A filter can consist of quite a number of items, the presence of which depends o
         Does not contain any filters.
 
 
-### Rearrange Categories
+### Rearrange Categories {#rearrange-categories}
 
 <Tabs groupId="operating-systems">
 
@@ -258,7 +258,7 @@ Description and how to use:
 ![Search POI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)  
 
 
-### Online Search
+### Online Search {#online-search}
 
 <InfoAndroidOnly />
 
@@ -288,14 +288,14 @@ To improve results, before using the Search tool, zoom in on the map to get clos
 
 You can find out information about Online Navigation in [Online routing](../navigation/routing/online-routing.md) article.
 
-#### Example of Online Search Query
+#### Example of Online Search Query {#example-of-online-search-query}
 
 *Nominatim* in OsmAnd is used as a search engine for OpenStreetMap data, with which you can search by name (search by address is currently disabled). Each result has a link to a detail page to see what data about the object is stored in the database.  
 
 **Example XML file.** This XML file does not contain any style information associated with it. The document tree is shown in the [link](https://nominatim.openstreetmap.org/search?format=xml&addressdetails=0&accept-language=en&q=%D0%9C%D1%96%D0%BD%D1%81%D0%BA+%D0%BD%D0%B5%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%86%D1%96+72+&addressdetails=1&limit=300).
 
 
-## Custom POI Search
+## Custom POI Search {#custom-poi-search}
 
 Custom POI Search is an advanced search feature that allows you to find POIs from different categories and combine them for a more accurate and personalized search. Unlike the standard POI search, which is limited to some predefined categories, the Custom POI search provides the flexibility to select and combine different types of POIs.  
 
@@ -307,7 +307,7 @@ This functionality is especially useful in various cases:
 - *Emergencies*. If you need to find several types of services quickly, you can use a custom POI search to get all the information you need.
 - *Search for nearby services*. Custom Search allows you to combine different POI categories for easy search if you need to find several types of services in a certain neighborhood or on a certain section of the route.
 
-### Custom POI Filter
+### Custom POI Filter {#custom-poi-filter}
 
 <Tabs groupId="operating-systems">
 
@@ -338,7 +338,7 @@ To create custom filters for finding places on the map, select relevant categori
 - *Select all* - To do this, select the toggle button.
 - Refine the list by excluding unnecessary ones - Start typing the suggested name in the *Search for POI types* field.  
 
-#### Categories and their Filters
+#### Categories and their Filters {#categories-and-their-filters}
 
 1. **<Translate android="true" ids="amenity_type_administrative"/>**. Includes 25 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
 
@@ -398,7 +398,7 @@ Available for search:
 :::
 -->
 
-### Save New Custom Filters
+### Save New Custom Filters {#save-new-custom-filters}
 
 <Tabs groupId="operating-systems">
 
@@ -428,7 +428,7 @@ Another way to **save**:
 - Select *[category](#poi-search-by-categories) → [filter icon](#types-of-filters) →* select *types* of characteristics *→ three-dot menu → Save filter*.
 
 
-### Edit an Existing Filter
+### Edit an Existing Filter {#edit-an-existing-filter}
 
 <Tabs groupId="operating-systems">
 
@@ -458,7 +458,7 @@ From the main screen:
     - Select POI categories and filter types for them *→* tap *Show → three-dot menu → Save As →* enter a new filter name or *save* changes to the current one.
 
 
-### Delete Custom POI Filter
+### Delete Custom POI Filter {#delete-custom-poi-filter}
 
 <Tabs groupId="operating-systems">
 
@@ -485,7 +485,7 @@ You can only delete categories that were created using filters or custom search.
 - ***You cannot undo the deletion.***
 
 
-#### Delete Custom Categories (iOS)
+#### Delete Custom Categories (iOS) {#delete-custom-categories-ios}
 
 ![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_3_ios.png)  
 
@@ -496,7 +496,7 @@ An additional option only for the iOS app is **Delete Custom Categories**.
 - Tap **Delete** button.  
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Search All](./search-all.md)
 - [Search Address](./search-address.md)

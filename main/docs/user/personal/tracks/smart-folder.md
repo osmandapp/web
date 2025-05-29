@@ -15,14 +15,14 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 The **Smart Folder** feature provides powerful tools for organizing and managing your tracks. One of the key features is the ability to filter files in the *Tracks tab* of the *My Places* menu based on criteria such as duration, length, or speed.  
 
 This feature allows you to quickly find specific tracks that match your requirements. Filtered results can be saved as a **Smart Folder**, offering convenient access to dynamically updated track collections.
 
 
-## Search Filter
+## Search Filter {#search-filter}
 
 <Tabs groupId="operating-systems">
 
@@ -57,7 +57,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 - **To save** the current filter set as a new **Smart Folder**, tap the save icon in the upper right corner of the screen.
 
 
-### Available Filters
+### Available Filters {#available-filters}
 
 <Tabs groupId="operating-systems">
 
@@ -106,7 +106,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
     - *With Waypoints*. Displays tracks containing specific waypoints.
 
 
-## Smart Folder
+## Smart Folder {#smart-folder}
 
 <Tabs groupId="operating-systems">
 
@@ -138,7 +138,7 @@ A **Smart Folder** is a dynamic collection of tracks automatically updated based
     Create personalized track collections by defining custom filter rules.
 
 
-### How to Create Smart Folder
+### How to Create Smart Folder {#how-to-create-smart-folder}
 
 To create a **Smart Folder**, follow these steps:
 
@@ -157,7 +157,7 @@ To create a **Smart Folder**, follow these steps:
 The newly created **Smart Folder** will automatically update its contents with tracks that match the selected criteria.
 
 
-### Managing Smart Folders
+### Managing Smart Folders {#managing-smart-folders}
 
 <Tabs groupId="operating-systems">
 
@@ -206,7 +206,7 @@ The **Smart folder** is displayed with a unique icon in the folder list in the T
 - **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Show track on Map](../../map/tracks/index.md)
 - [Analyze on Map](../../map/tracks/index.md#analyze-track-on-map)

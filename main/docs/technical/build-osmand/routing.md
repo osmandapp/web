@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Customize routing engine
+# Customize routing engine {#customize-routing-engine}
 
 In some cases you might want to extend or adjust routing experience of OsmAnd, so you could add extra parameters, add extra barriers or change some penalties. Please take a look at [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml). OsmAnd routing is using 2 directional A* algorithm based on fastest time (= distance/(speed*priority) + penalties) . It is a pretty easy format. It is divided into 7 sections (evaluation groups):
 

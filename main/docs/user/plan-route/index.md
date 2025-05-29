@@ -10,9 +10,9 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-# Plan Route
+# Plan Route {#plan-route}
 
-## Overview
+## Overview {#overview}
 
 Planning a route is an important aspect of any trip, whether it's a walking tour of a city or a road trip across the country. To make it as comfortable and safe as possible, you need to plan the route correctly and familiarize yourself in advance with information about the area and places of interest.  
 
@@ -24,16 +24,16 @@ OsmAnd allows you to build various routes as tracks, add a route to existing tra
 Using offline Travel guides is an important source of information while traveling. -->
 
 
-## [Plan a Route](./create-route.md)
+## [Plan a Route](./create-route.md) {#plan-a-route}
 
 This article describes how to plan a route for a future trip.
 
 
-## [Travel Guides](./travel-guides.md)
+## [Travel Guides](./travel-guides.md) {#travel-guides}
 
 Guides will help you see all the interesting places on the map and learn about them in detail during your trip.
 
 
-## [Coordinate Input](./coordinate-input.md)
+## [Coordinate Input](./coordinate-input.md) {#coordinate-input}
 
 Description of a simple and fast tool for creating points by specifying geographic coordinates.

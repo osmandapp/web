@@ -14,9 +14,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 General issues related to various OsmAnd's features.
 
-## Battery Consumption
+## Battery Consumption {#battery-consumption}
 
-### OsmAnd seems to use up too much battery power
+### OsmAnd seems to use up too much battery power {#osmand-seems-to-use-up-too-much-battery-power}
 
 There have been user reports of OsmAnd consuming excessive battery power, with cases where OsmAnd was responsible for up to 90% of battery usage. However, we have performed many tests and could not reproduce such results.  
 
@@ -32,7 +32,7 @@ Several factors influence battery consumption: the device's age, number of charg
 | OsmAnd running in the background for track recording | 0.5 % |
 | OsmAnd not running any service in the background | 0 % |
 
-#### OsmAnd Function Battery Consumption
+#### OsmAnd Function Battery Consumption {#osmand-function-battery-consumption}
 
 | OsmAnd function | Battery consumption per hour |
 | :--- | :--- |
@@ -42,7 +42,7 @@ Several factors influence battery consumption: the device's age, number of charg
 The overall power consumption should result from adding these components as applicable, depending on how you use OsmAnd. Please report if you see significant deviations from these typical values.
 
 
-### Optimizing battery consumption
+### Optimizing battery consumption {#optimizing-battery-consumption}
 
 When using OsmAnd, several features can influence battery consumption, especially during activities like navigation or track recording. Here are some tips to help manage battery usage effectively:
 
@@ -57,13 +57,13 @@ When using OsmAnd, several features can influence battery consumption, especiall
 - **Optimizing track recording settings**. Make sure to adjust GPS accuracy and screen usage during track recording to save battery. Visit the [Track recording troubleshooting](../troubleshooting/track-recording-issues.md) section for more guidance.
 
 
-## Privacy
+## Privacy {#privacy}
 
 <!--
 Privacy related issues (delete history / check internet usage / permissions).
 -->
 
-### How to delete search history
+### How to delete search history {#how-to-delete-search-history}
 
 To remove search history in OsmAnd:
 
@@ -75,9 +75,9 @@ To remove search history in OsmAnd:
 For more detailed instructions about the search functionality, you can refer to [this guide](../search/search-history.md).
 
 
-## Other
+## Other {#other}
 
-### Problem with the GPS connection (Android)
+### Problem with the GPS connection (Android) {#problem-with-the-gps-connection-android}
 
 OsmAnd relies on location data provided by your Android device through the Android API.  
 
@@ -92,11 +92,11 @@ To resolve GPS connection issues, follow these steps:
 7. **Check Device RAM**. If the issue persists, it may be due to insufficient memory, so ensure your device has enough RAM available.
 
 
-### Email mismatch issue during OsmAnd Pro purchase
+### Email mismatch issue during OsmAnd Pro purchase {#email-mismatch-issue-during-osmand-pro-purchase}
 
 <!-- ???
 or this title:
-### Resolving payment account and app email sync issues in OsmAnd
+### Resolving payment account and app email sync issues in OsmAnd {#resolving-payment-account-and-app-email-sync-issues-in-osmand}
 -->
 
 If you encounter an issue where the email associated with your OsmAnd Pro purchase does not match the OsmAnd app email, follow these steps to resolve the problem:

@@ -25,14 +25,14 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 :::
 
 
-## Overview
+## Overview {#overview}
 
 The OsmAnd web map is a global map based on [OpenStreetMap (OSM)](https://www.openstreetmap.org/) data. It allows users to view their own data, such as tracks and favorites, create navigation routes for any profile, and access additional features like weather, public GPX tracks, POIs, and Wikimedia images. Explore and customize your data experience directly in your browser.
 
 ![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
 
-## Map Context Menu
+## Map Context Menu {#map-context-menu}
 
 For opening it right click anywhere on the map. This menu includes the following actions:
 
@@ -49,7 +49,7 @@ For opening it right click anywhere on the map. This menu includes the following
 ![Map Context menu](@site/static/img/web/map_context_menu.png)
 
 
-## Weather on the Web
+## Weather on the Web {#weather-on-the-web}
 
 The OsmAnd Web provides weather information from two forecast sources:
 
@@ -99,7 +99,7 @@ Click on the forecast data in the menu to view the **7-day forecast** for your l
   ![OsmAnd Web Weather](@site/static/img/web/web_7day.png)
 
 
-## Configure Map Menu
+## Configure Map Menu {#configure-map-menu}
 
 The Configure Map menu allows you to manage the display settings for map data, such as POI layers, Favorites, tracks, and terrain. Please log in to your OsmAnd account to use this menu section.
 
@@ -113,7 +113,7 @@ To open this menu, click the button in the **top left corner** or access it thro
 ![POIs menu](@site/static/img/web/configure_map_web.png)
 
 
-### POI overlay section
+### POI overlay section {#poi-overlay-section}
 
 To show POIs on the map:
 
@@ -124,12 +124,12 @@ Alternatively, you can use the [**Search section**](web-search.md) to find the d
 ![POIs menu](@site/static/img/web/poi_menu.png)
 
 
-### Favorites Section
+### Favorites Section {#favorites-section}
 
 With one click, you can toggle favorites on or off on the map. However, only favorites with [**Show on map enabled**](../web/web-userdata.mdx##favorites-on-the-web) will be displayed.
 
 
-### Tracks section
+### Tracks section {#tracks-section}
 
 This section contains a list of your [**GPX tracks visible on the map**](../web/web-userdata.mdx#visible-on-the-map) and **Recently Visible** tracks.
 
@@ -148,7 +148,7 @@ Each track has a **Context Menu** (accessible via the ⋮ button) with the follo
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
 
-### Terrain section
+### Terrain section {#terrain-section}
 
 The **Terrain** section is a paid feature <ProFeature/>. To use this feature, you must first log in to your OsmAnd Pro account.
 
@@ -164,7 +164,7 @@ In this section, you can:
 
 
 <!--
-## Map style
+## Map style {#map-style}
 
 In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
 **Some examples:**
@@ -179,7 +179,7 @@ In this section of the menu, you can change the map style. You can read more abo
 -->
 
 
-## URL Schemes
+## URL Schemes {#url-schemes}
 
 For easy use of the OsmAnd web service (and application), you can take advantage of direct links. These are special URLs that allow you to transfer location data and include details about pins, tracks, weather, and more.
 

@@ -15,19 +15,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview
+## Overview {#overview}
 
 Plugins significantly extend the functionality of OsmAnd. Each is designed to address a specific task or use case, such as recording a trip, accessing Wikipedia articles offline, visualizing terrain data, or providing a street-level view.
 
 Plugins can be internal, activated in the OsmAnd application, or external, separately installed programs. Third-party plugins work through the OsmAnd API and can access OsmAnd data.
 
 
-## Configure Plugin
+## Configure Plugin {#configure-plugin}
 
 To access a plugin's functionality, it must first be [enabled](#enable--disable), and some plugins require a [purchase](#purchase) before use. Then, in some cases, a specific map layer must be activated, or a user profile must be [configured](#plugin-settings).
 
 
-### Enable / Disable
+### Enable / Disable {#enable--disable}
 
 <Tabs groupId="operating-systems">
 
@@ -49,7 +49,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → 
 
 </Tabs>
 
-### Purchase
+### Purchase {#purchase}
 
 Most plugins are available for free, only the plugins in the list below require the purchase of an [OsmAnd+ or OsmAnd Pro](../purchases/index.md) license to use:  
 
@@ -61,7 +61,7 @@ Most plugins are available for free, only the plugins in the list below require 
 
 Detailed information about the application purchase can be found in the [Purchase](../purchases/) section.
 
-### Plugin Features
+### Plugin Features {#plugin-features}
 
 OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
 
@@ -88,7 +88,7 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 | [AIS vessel tracker](#ais-vessel-tracker) 🤖  |  [Custom Settings](../plugins/ais-tracker.md#plugin-settings) |
 
 
-### Plugin Settings
+### Plugin Settings {#plugin-settings}
 
 :::caution NOTE
 Only the OsmAnd development plugin and the OSM editing plugin change settings for all profiles. The remaining plugins are configured for each profile separately.  
@@ -131,84 +131,84 @@ The following plugins provide their own settings:
 |  [OsmAnd Tracker](#osmand-tracker) 🤖  | All settings are configurable in a separate app |
 | [AIS vessel tracker](#ais-vessel-tracker) | [Plugin settings](../plugins/ais-tracker.md#plugin-settings) allow you to enable special settings |
 
-### Plugin Actions
+### Plugin Actions {#plugin-actions}
 
 **<Translate android="true" ids="reset_plugin_to_default"/>** - *using this option plugin settings can be reset to default values*.  
 **<Translate android="true" ids="copy_from_other_profile"/>** - *plugin settings can be copied from another profile*.
 
 
-## Plugins list
+## Plugins list {#plugins-list}
 
 
-### [Wikipedia](./wikipedia.md)
+### [Wikipedia](./wikipedia.md) {#wikipedia}
 
 Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles related to the points of interest right on the map.
 
-### [Online maps](./online-map.md)
+### [Online maps](./online-map.md) {#online-maps}
 
 OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from various sources.  
 
-### [Trip Recording](./trip-recording.md)
+### [Trip Recording](./trip-recording.md) {#trip-recording}
 
 To tell a story of where you have been, GPS data, as latitude and longitude of your location, can be recorded and stored in a file, and then re-used, improved, enhanced with waypoints, provided for navigation, shared with friends, etc.  
 
-### [Topography](./topography.md)
+### [Topography](./topography.md) {#topography}
 
 Topography information, such as Contour lines, Hillshade, Slope, 3D Relief, helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, points of equal height, etc.  
 
-### [Nautical Map View](./nautical-charts.md)
+### [Nautical Map View](./nautical-charts.md) {#nautical-map-view}
 
 Nautical map view provides detailed graphical representation of oceans, seas, coastal areas and rivers to help you navigate on the water, see popular traffic routes, obstacles in the waterway, harbors, anchorages, and other essential reference.
 
-### [Ski Map View](./ski-maps.md)
+### [Ski Map View](./ski-maps.md) {#ski-map-view}
 
 Ski Map View shows winter colors and pistes downhill or cross-country, as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.
 
-### [Audio/Video Notes](./audio-video-notes.md)
+### [Audio/Video Notes](./audio-video-notes.md) {#audiovideo-notes}
 
 Create audio/video notes for future reference, e.g. to remember a event, scene, or interaction. Created audio/video notes are available from *My places* as well as on the map as an individual layer of user-made stories and thoughts tied to a geolocation. For Android only.  
 
-### [Parking Position](./parking.md)
+### [Parking Position](./parking.md) {#parking-position}
 
 Set a point on the map where your car is left on the street and notify your calendar when the parking time ends. This will make it easier for you to track the time and location of your car.
 
-### [OpenStreetMap Editing](./osm-editing.md)
+### [OpenStreetMap Editing](./osm-editing.md) {#openstreetmap-editing}
 
 The OpenStreetMap editing plugin allows you to contribute to OpenStreetMap, a global community creating a comprehensive map of the world and providing publicly available up-to-date, open-source data.  
 
-### [Mapillary](./mapillary.md)
+### [Mapillary](./mapillary.md) {#mapillary}
 
 See street-level views of your routes or places of interest, provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).  
 
-### [Accessibility](./accessibility.md)
+### [Accessibility](./accessibility.md) {#accessibility}
 
 The Accessibility plugin makes the device's accessibility features directly available in OsmAnd. For Android only.  
 
-### [External Sensors](./external-sensors.md)
+### [External Sensors](./external-sensors.md) {#external-sensors}
 
 Connect external sensors to display their data in OsmAnd and store the information in track recordings.  
 
-### [Vehicle Metrics](./vehicle-metrics.md)
+### [Vehicle Metrics](./vehicle-metrics.md) {#vehicle-metrics}
 
 Connect OBD-II scanner to display vehicle data in OsmAnd and store the information in track recordings.  
 
-### [Weather](./weather.md)
+### [Weather](./weather.md) {#weather}
 
 Shows the hourly forecast for the current day and for 7 days ahead.  
 
-### [OsmAnd Development](./development.md)
+### [OsmAnd Development](./development.md) {#osmand-development}
 
 The OsmAnd development plugin targets developers and experienced users. It allows you to simulate navigation routes, check screen rendering performance, etc.  
 
-### [OsmAnd Tracker](./osmand-tracker.md)
+### [OsmAnd Tracker](./osmand-tracker.md) {#osmand-tracker}
 
 OsmAnd Tracker helps you see where your contacts are on the map in OsmAnd. For Android only.  
 
-### [AIS Vessel Tracker](./ais-tracker.md)
+### [AIS Vessel Tracker](./ais-tracker.md) {#ais-vessel-tracker}
 
 Display AIS positions and information about surrounding vessels. The AIS data is received via network from an exteranl AIS receiver.
 
-## [Create a Custom Plugin](./custom.md)
+## [Create a Custom Plugin](./custom.md) {#create-a-custom-plugin}
 
 You can create your own plugin by following *Custom Package* article.
 

@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 OsmAnd Ski Map view plugin shows famous and popular slopes, officially approved ski areas, and trail maps of most ski resorts. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) piste maps are the data source for OsmAnd ski maps. Combined vector maps with raster maps, the OsmAnd ski map is very accurate and will be useful for instructors, climbers, and winter sports enthusiasts.
 
@@ -38,7 +38,7 @@ Two profiles are shown below: the one on the left is for skiing and the one on t
 </Tabs>
 
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 The following setting makes the OsmAnd Ski Map appear on the screen:
 
@@ -47,7 +47,7 @@ The following setting makes the OsmAnd Ski Map appear on the screen:
 3. If needed, [combine maps](#combine-maps).  
   
 
-### Set Winter and Ski Map Style
+### Set Winter and Ski Map Style {#set-winter-and-ski-map-style}
 
 <Tabs groupId="operating-systems">
 
@@ -80,7 +80,7 @@ The Skiing profile is designed for use in combination with the Winter and Ski st
 :::
 
 
-### Combine Maps
+### Combine Maps {#combine-maps}
 
 <Tabs groupId="operating-systems">
 
@@ -101,7 +101,7 @@ The Skiing profile is designed for use in combination with the Winter and Ski st
 The [Vector map](../map/vector-maps.md) with [Winter and Ski map style](../map/vector-maps.md#winter-and-ski) included can be completed with [Contour lines](../plugins/topography.md#show-contour-linesterrain) and [Hillshade](../plugins/topography.md#hillshade-map). Below are two examples. The tracks on the default vector map are shown on the left, and the tracks on the vector map combined with the *Contour Lines* and *Hillshade* raster map are shown on the right. In the second case, the map shows more elevation data to help estimate difficulty, risk, and distance.  
 
 
-### Disable Ski Map Style
+### Disable Ski Map Style {#disable-ski-map-style}
 
 If removing trails and winter colors from the map is preferred, or the ski season is over, do one of the following:
 
@@ -115,7 +115,7 @@ The Ski Map Viewer plugin is a separate application, and disabling its display d
 :::
 
 
-## Skiing Profile
+## Skiing Profile {#skiing-profile}
 
 <Tabs groupId="operating-systems">
 
@@ -140,7 +140,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 Winter and Ski map styles can be enabled in any profile. But it is most valuable in the [Skiing profile](../personal/profiles.md), where it is set by default. The Skiing profile is very comfortable for the [Skiing navigation](../navigation/routing/ski-routing.md).
 
 
-## Ski Map Style
+## Ski Map Style {#ski-map-style}
 
 Use the [Ski map legend](../../user/map-legend/ski-map.md) for any reference. It helps to identify the types of pistes on the map, as well as the types of airways and other characteristics that can be read from the map.
 
@@ -154,7 +154,7 @@ OsmAnd Ski Map is built as one of the rendering styles, that determines which ob
 :::
 
 
-### Pistes by Difficulty
+### Pistes by Difficulty {#pistes-by-difficulty}
 
 | Color | Description |
 | --- | --- |
@@ -171,7 +171,7 @@ For more specific guidance for each trail difficulty type, see the [OSM piste di
 :::
 
 
-### Piste by Types
+### Piste by Types {#piste-by-types}
 
 Pistes differ by type. A type represents different characteristics for a piste to meet the requirements of different winter-related activities: alpine skiing, classic skating, snowboarding, sled riding, backcountry skiing, ski touring, mogul skiing, night skiing, etc. Understanding the [type of the piste](https://wiki.openstreetmap.org/wiki/Key:piste:type) on the map helps to build an optimal navigation route.
 
@@ -188,7 +188,7 @@ Often used by skiers for a Nordic ascent and a downhill descent. The difficulty 
 Piste types such as *Hiking Trails* or *Sledging Trails* can be used for skiing or hiking profiles.
 
 
-### Grooming Trails
+### Grooming Trails {#grooming-trails}
 
 <Tabs groupId="operating-systems">
 
@@ -213,7 +213,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_r
 To check on the map whether a particular piste is groomed, you need to enable **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** the option in the **<Translate android="true" ids="rendering_category_details"/>** list opened from the [Configure map](../map/configure-map-menu.md) menu.  
 Special machines groom the tracks to prepare them for the appropriate activity, such as classic skating, ice skating, and others. The same piste can be groomed differently in different areas.
 
-### Ski Slope Routes
+### Ski Slope Routes {#ski-slope-routes}
 
 <Tabs groupId="operating-systems">
 
@@ -240,7 +240,7 @@ To find out which pistes outside the ski resort you can navigate, you need to en
 With the Skiing profile, the ski navigation and the [Winter and Ski map style](../map/vector-maps.md#winter-and-ski) enabled, the [Ski slopes](../map/vector-maps.md#routes) routes show all types of pistes that the Ski navigation can use to build navigation routes along. Such ski slope routes, if enabled, are outlined with the violet color mostly outside ski resort boundaries.
 
 
-### Night and Lighting
+### Night and Lighting {#night-and-lighting}
 
 <Tabs groupId="operating-systems">
 
@@ -269,7 +269,7 @@ Both options are in the [Configure map](../map/configure-map-menu.md) menu.
 *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_details,rendering_attr_streetLighting_name"/>*
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

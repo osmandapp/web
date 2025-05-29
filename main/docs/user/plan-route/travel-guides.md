@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 :::info Paid feature
 The Travel Guides is a [paid feature](../purchases/index.md) of the OsmAnd app.
@@ -42,7 +42,7 @@ Wikivoyage information includes the main facts about a place, transportation, at
 </Tabs>
 
 
-## How to use
+## How to use {#how-to-use}
 
 - [Download](#download-articles) *Travel guides*.
 - Browse [articles](#browse-articles) about a country, region, city, attraction.
@@ -58,7 +58,7 @@ Wikivoyage information includes the main facts about a place, transportation, at
 *Travel guides* articles are stored inside OsmAnd as GPX tracks with Waypoints.  After adding these tracks to the map (see *[Points](#points)* or *[Travel routes](#travel-routes)* sections of this article), you can manage them via *[My Places](../personal/myplaces.md)* menu.
 :::
 
-### Download articles
+### Download articles {#download-articles}
 
 <Tabs groupId="operating-systems">
 
@@ -88,12 +88,12 @@ In addition to guides to countries, regions, or cities, you can find guides to p
 There are also specialized guides, such as the UNESCO Global Geoparks Network list or the world's largest and most complex international airports.
 :::
 
-## Browse Articles
+## Browse Articles {#browse-articles}
 
 The *Travel guides* screen consists of two general parts: a [*search field*](#search) and a *travel guides* list with two tabs: *[<Translate android="true" ids="shared_string_explore"/> and <Translate android="true" ids="saved_articles"/>](#explore-and-bookmark)*. You can switch between them with a single tap of a tab.
 When you open *Travel Guides* (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), OsmAnd will show you articles about interesting places located near the geographic coordinates of the current center of the map. When you tap the item from the list, the [Travel guide article](#travel-article) opens. At the bottom of the screen is a switch to the *Bookmarks tab*.  
 
-### Explore and Bookmark
+### Explore and Bookmark {#explore-and-bookmark}
 
 <Tabs groupId="operating-systems">
 
@@ -118,7 +118,7 @@ If you tap the *Bookmark button*, the article will be saved for later reading an
 - &nbsp;**<Translate android="true" ids="shared_string_bookmark"/>**. Moves the selected article to <Translate android="true" ids="saved_articles"/>.
 - &nbsp;**<Translate android="true" ids="shared_string_remove"/>**. Removes the selected article from <Translate android="true" ids="saved_articles"/>.
 
-### Search
+### Search {#search}
 
 <Tabs groupId="operating-systems">
 
@@ -148,7 +148,7 @@ Next to each search result are listed the first 3 most commonly used languages i
 - Search is complete only when you hit &#128269; or space at the end of the word. - doesn't work as it should be
 -->
 
-### Options
+### Options {#options}
 
 <Tabs groupId="operating-systems">
 
@@ -173,7 +173,7 @@ In the Options menu, you can choose whether to save images in the viewed article
 - &nbsp;**<Translate android="true" ids="images_cache"/>**. Clears the image cache to free up memory.
 - &nbsp;**<Translate android="true" ids="delete_search_history"/>**. Clears [search history](#search).
 
-## Travel Article
+## Travel Article {#travel-article}
 
 <Tabs groupId="operating-systems">
 
@@ -206,7 +206,7 @@ At the bottom of the screen are buttons such as:
 - [Bookmark](#explore-and-bookmark). Allows you to add an article to bookmarks for later reading.  
 
 
-### Navigation menu
+### Navigation menu {#navigation-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -228,7 +228,7 @@ To move one article to another in the *Travel guide articles*, use the **Navigat
 If you tap the arrow in the upper left corner of the screen, you will go directly to the *Explore* or *Bookmarked articles* tab (depending on which tab you opened earlier).
 
 
-### Table of contents
+### Table of contents {#table-of-contents}
 
 <Tabs groupId="operating-systems">
 
@@ -258,7 +258,7 @@ Most *Travel guide articles* have the same content structure: *introduction* (im
 - &nbsp;*Sleep*. Accommodations are divided by budget (budget, mid-range, splurge).
 - &nbsp;*Go next*. Nearest places from Wikivoyage.
 
-### Points
+### Points {#points}
 
 <Tabs groupId="operating-systems">
 
@@ -286,7 +286,7 @@ You can also *[add points to the map](#travel-routes)* in the *Configure map* me
 :::
 
 
-## Travel routes
+## Travel routes {#travel-routes}
 
 *<Translate android="true" ids="shared_string_menu,configure_map,travel_routes"/>*
 
@@ -295,24 +295,24 @@ An alternative way to browse *Travel guides* is to display them on the map using
 ![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_view.png)
 
 
-### Travel routes and articles on the map
+### Travel routes and articles on the map {#travel-routes-and-articles-on-the-map}
 
 ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
 
 After you enable the *Travel routes* display in the *Configure map* menu, circles of different colors will appear on the map. The orange ones represent route tracks, route articles, and some waypoints. Tap a specific route, article, or point and then tap the *Download* button (&#9047;), and you can [manage them as a track](#manage-as-gpx-track).
 
-### Custom Travel guides
+### Custom Travel guides {#custom-travel-guides}
 
 We recommend you add new articles or edits to [Wikivoyage](https://en.wikivoyage.org/). We update the Travel guides about every 6 months, and you can download new articles. You can also create your own *Travel book*. How to make it is described in technical documentation (see *[Create custom Travel guide](../../technical/map-creation/create_travel_guide.md)* article).
 
 <!--
-### Collections of tracks
+### Collections of tracks {#collections-of-tracks}
 
 https://osmand.net/blog/routes/#generated-travel-routes
 -->
 
 
-## Manage as GPX Track
+## Manage as GPX Track {#manage-as-gpx-track}
 
 ![Travel guides points menu 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Travel guides points menu 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
 
@@ -328,7 +328,7 @@ After you add *Travel guides* to the map, *Travel articles* can be saved as a GP
 In *[track context menu](../map/tracks/track-context-menu.md)* of GPX-file you can find general information about the article to which this track belongs.  
 :::
 
-## Combine with Wikipedia
+## Combine with Wikipedia {#combine-with-wikipedia}
 
 <Tabs groupId="operating-systems">
 
@@ -356,7 +356,7 @@ In some cases, OsmAnd's *[Bookmarks tab](#explore-and-bookmark)* will prompt you
 The [Wikipedia plugin](../plugins/wikipedia.md) is a [paid feature](../purchases/index.md) of the OsmAnd app.
 :::
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

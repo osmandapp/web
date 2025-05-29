@@ -12,12 +12,12 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-## Overview
+## Overview {#overview}
 
 Markers are temporary points indicated on the map in the form of flags. The widgets show the *Direction*, *Distance*, *Address*, and *Estimated arrival time* to the marker. They allow you to quickly find markers on the map, as well as change their position. You can read more about markers in this [article](../personal/markers).  
 
 
-## Top Bar Widget
+## Top Bar Widget {#top-bar-widget}
 
 The **Map markers bar** (Android) widget / **Distance indication - Top bar** (iOS) widget displays:
 
@@ -66,7 +66,7 @@ You can also select to display one or two markers. Read more about widget settin
 </Tabs>
 
 
-## Panel Widgets
+## Panel Widgets {#panel-widgets}
 
 The **Map markers** *(for Android)* widget and **Distance indication - Widgets** *(for iOS)* displays:
 
@@ -114,7 +114,7 @@ You can also select to display one or two markers. Read more about widget settin
 </Tabs>
 
 
-## Configure Marker Widgets
+## Configure Marker Widgets {#configure-marker-widgets}
 
 You can read general information about the Map markers widget settings on this [page](../personal/markers#map-markers-widgets).  
 
@@ -135,7 +135,7 @@ The widget shows the distance or estimated time of arrival (ETA) for the first o
 | Click on widget |  This setting allows you to choose which action will be performed when you click on the widget: *Switch mode* or *Go to marker location*. |
 
 
-## Appearance on the Map
+## Appearance on the Map {#appearance-on-the-map}
 
 Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on the Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not. You can read the detailed information on this [page](../personal/markers.md#appearance-on-the-map).  
 
@@ -175,7 +175,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_
 </Tabs>
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Configure Screen](./configure-screen.md)
 - [Map buttons](./map-buttons.md)

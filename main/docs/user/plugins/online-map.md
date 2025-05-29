@@ -13,12 +13,12 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source, beginning with the satellite or hiking routes view and ending with very specific data, such as the location of fire hydrants. You can also change the main source of the map from vector maps to online tiles.
 
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 The ability to use Online maps is automatically enabled in iOS version of OsmAnd. To display Online maps in Android, you need to make the following settings:
 
@@ -28,7 +28,7 @@ The ability to use Online maps is automatically enabled in iOS version of OsmAnd
 4. Download selected [Online map](#how-to-prepare-raster-maps) if needed.
 
 
-## Use Raster Maps on Device
+## Use Raster Maps on Device {#use-raster-maps-on-device}
 
 You can find detailed information about visualizing and customizing raster maps in the article [Raster Maps](../map/raster-maps.md). How to use:
 
@@ -65,7 +65,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 </Tabs>
 
 
-## How to Prepare Raster Maps
+## How to Prepare Raster Maps {#how-to-prepare-raster-maps}
 
 :::info
 Main article to prepare maps [read here](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
@@ -88,13 +88,13 @@ Online tiles can be helpful when you need just a small section of the map or a s
 ![Online Maps](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-### Common Issues and Solutions
+### Common Issues and Solutions {#common-issues-and-solutions}
 
 1. Online Maps do not appear in the Map Source menu:  
   

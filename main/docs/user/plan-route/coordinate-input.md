@@ -16,13 +16,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-## Overview
+## Overview {#overview}
 
 *Coordinates Input* is a simple and easy-to-use tool for creating waypoints by specifying their geographic location. This feature can be useful for navigating to certain places, that you know only by their coordinates: added points can be [saved](#save-as-track) as a GPX track and used later for [GPX navigation](../navigation/setup/gpx-navigation.md) or [navigation by markers](../navigation/setup/markers-navigation.md#add-gpx).  
 
 ![Coordinates input overview](@site/static/img/plan-route/coordinates_input/coordinates_input_overview.png) 
 
-## How to use
+## How to use {#how-to-use}
 
 You can create waypoints from *[Map markers](../personal/markers.md#map-markers-menu)* menu or from [My places](../personal/myplaces.md) (see screenshots). Please, follow these paths to reach the coordinate input option:
   - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Earth button at the bottom of the screen*
@@ -40,7 +40,7 @@ After you have opened the coordinate input screen:
 The results of creating points by coordinates - a *[GPX track](../personal/tracks/manage-tracks.md)* with waypoints - can be found in the [My places menu](../personal/myplaces.md) (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/> folder*).
 :::
 
-## Options
+## Options {#options}
 
 Using options menu you can [save](#save-as-track) added point(s) as a track, activate advanced input options (system keyboard and two digits longitude), or change coordinates format.
 
@@ -51,7 +51,7 @@ Using options menu you can [save](#save-as-track) added point(s) as a track, act
 - &nbsp;*<Translate android="true" ids="use_two_digits_longitude"/>* - enables to enter longitude data with only two digits. This can be useful for longitudes from 0° to 99° (for example, in Europe).
 - &nbsp;*<Translate android="true" ids="coordinates_format"/>* - allows changing the coordinate format for inputting.  
 
-### Coordinates format
+### Coordinates format {#coordinates-format}
 
 When you enter coordinates, it is important to ensure that the appropriate units of measurement are used. We support decimal degrees&nbsp;(DD), degrees and minutes, or degrees, minutes and seconds&nbsp;(DMS).  
 
@@ -63,7 +63,7 @@ When you enter coordinates, it is important to ensure that the appropriate units
 |<Translate android="true" ids="dd_mm_mmmm_format"/> | 23°27.2152′|
 |<Translate android="true" ids="dd_mm_ss_format"/> | 23°27′30″|
 
-## Add a point
+## Add a point {#add-a-point}
 
 After selecting the correct units, you are ready to enter the coordinates of future waypoints.  
 The coordinate input screen consists of the following elements:
@@ -76,7 +76,7 @@ The coordinate input screen consists of the following elements:
 - &nbsp;*Point name* field. You can leave the default name or make up your own.  
 - &nbsp;*X* button. Clears the input field of the corresponding line.  
 
-### Short keyboard
+### Short keyboard {#short-keyboard}
 
 To enter data, you can use the short keyboard (default) or the system (Android) keyboard. To change the input method go to *[Options](#options)* menu. After entering the latitude and longitude, you can add the point to the *[list](#points-list)* using *+Add* button.
 
@@ -87,7 +87,7 @@ To enter data, you can use the short keyboard (default) or the system (Android) 
 - &#9032; allows you to jump to the next value.
 - *Keyboard buttons* allow to input data, delete it, jump to the next coordinate value, hide the keyboard. 
 
-### Points list
+### Points list {#points-list}
 
 Shows already created points: name, distance and direction to this point.
 
@@ -97,7 +97,7 @@ The **⁝** button opens an action menu for editing or deleting the selected poi
 When you tap a point, it becomes possible to change its coordinates. Tap the *Apply* button to save the changes.
 
 
-## Save as track
+## Save as track {#save-as-track}
 
 To save your points as a track, tap *Back* ( &#8592; ) button or use *[Options](#options)* menu.
 

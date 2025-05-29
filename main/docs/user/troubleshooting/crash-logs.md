@@ -13,12 +13,12 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 Crash logs are valuable diagnostic tools that help developers identify and fix issues and bugs causing the application to crash or behave unexpectedly. Sharing logs from your Android device with the OsmAnd development team is possible. Currently, iOS users only have one type of crash log option to send.
 
 
-## Crash and Logcat Logs
+## Crash and Logcat Logs {#crash-and-logcat-logs}
 
 OsmAnd allows you to send two types of data to developers:
 
@@ -30,7 +30,7 @@ Be cautious when sending logcat logs, as they may contain private information su
 :::
 
 
-### Send Logs from OsmAnd App (Android)
+### Send Logs from OsmAnd App (Android) {#send-logs-from-osmand-app-android}
 
 1. Go to *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Depending on your situation, select the appropriate type of log. You can refer to the section [Crash and Logcat Logs](#crash-and-logcat-logs) for details on the differences between the log types.
 2. In the pop-up menu, choose Gmail or your preferred email app. The email will be generated automatically.
@@ -39,7 +39,7 @@ Be cautious when sending logcat logs, as they may contain private information su
 ![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
 
 
-### Send Logs from iOS Devices
+### Send Logs from iOS Devices {#send-logs-from-ios-devices}
 
 1. Logs from iOS devices can be sent:
 
@@ -60,7 +60,7 @@ Be cautious when sending logcat logs, as they may contain private information su
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 
 
-## Send Tombstone Files (Android)
+## Send Tombstone Files (Android) {#send-tombstone-files-android}
 
 :::caution Crucial
 For advanced users only!
@@ -69,7 +69,7 @@ For advanced users only!
 In certain complex or unusual cases, *[Tombstone files](https://source.android.com/docs/core/tests/debug)* may be required. These files provide detailed stack traces for all threads in a crashing process (not just the one that caused the error), a complete memory map, and a list of all open file descriptors. Tombstone files are vital for debugging and diagnosing issues related to native code on the Android platform.
 
 
-### Using Your Device
+### Using Your Device {#using-your-device}
 
 To export tombstone files, you need to generate a bug report using Android system settings:
 
@@ -89,11 +89,11 @@ After the bug report is ready, you will receive a notification. Tap the notifica
 Please note, that bug reports may contain private data, including app usage or location.
 :::
 
-### Using ADB
+### Using ADB {#using-adb}
 
 The Android Debugging Bridge (ADB) is a command-line tool that allows developers to debug their applications. To use ADB for exporting tombstone files, you'll need to download and install it first. Follow the instructions provided on the [official Android developer site](https://developer.android.com/tools/releases/platform-tools).
 
-#### Prepare Your Device
+#### Prepare Your Device {#prepare-your-device}
 
 Ensure *Developer options* are enabled (this screen is hidden by default) and *USB debugging* is turned on:
 
@@ -103,7 +103,7 @@ Ensure *Developer options* are enabled (this screen is hidden by default) and *U
 
 Then, connect your device to your workstation via USB. If it's the first time connecting, a pop-up will appear asking for permission to allow debugging.
 
-#### Generate Bug Report
+#### Generate Bug Report {#generate-bug-report}
 
 1. Open a command line terminal. On Mac or Linux, use the *Terminal* app, and on Windows, use the *Command Line*.
 2. Navigate to the platform-tools folder where ADB is located using the *cd* command (for example, ‘cd /Users/Username/Downloads/Tools’).
@@ -127,7 +127,7 @@ where output.zip is the name of the result file
 ```cd FS/data/tombstones```
 Where you find files like  -->
 
-### Using Rooted Devices or Android Studio Emulator
+### Using Rooted Devices or Android Studio Emulator {#using-rooted-devices-or-android-studio-emulator}
 
 - With root access to your device, you can directly open the */data/tombstones* folder.  
 

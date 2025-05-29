@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 **Favorites** OsmAnd's feature allows you to create bookmarks (notes) on the map. These favorite points are displayed as yellow stars by default, but you can fully customize them with different colors, shapes, and icons. Favorites are grouped into a dedicated map layer, which becomes visible from the *6th zoom level*.  
 
@@ -36,7 +36,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 
-## Favorite Point
+## Favorite Point {#favorite-point}
 
 <Tabs groupId="operating-systems">
 
@@ -57,7 +57,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Favorites are part of a special map layer, and you can [show or hide](../map/point-layers-on-map.md#favorites) them along with their [names](../map/point-layers-on-map.md#favorite-and-poi-names) on the map. Tapping a favorite point opens the [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group), allowing you to view details and [edit or delete](../map/map-context-menu.md#add--edit-favorite) the point.
 
 
-### Create
+### Create {#create}
 
 <Tabs groupId="operating-systems">
 
@@ -91,7 +91,7 @@ When adding a point from OSM data, the relevant POI information is automatically
 - **Visual customization** — Icon, color, shape can either match the default [group appearance](#change-group-appearance) or be customized individually.
 
 
-### Edit / Replace / Delete
+### Edit / Replace / Delete {#edit--replace--delete}
 
 <Tabs groupId="operating-systems">
 
@@ -121,7 +121,7 @@ To modify a favorite point:
 - **Delete** — Remove the favorite using the delete option, accessible through the Edit menu or via the delete button on Android.
 
 
-### Favorite Icons
+### Favorite Icons {#favorite-icons}
 
 <Tabs groupId="operating-systems">
 
@@ -149,12 +149,12 @@ A wide range of icons for POIs and waypoints is available in OsmAnd. You can:
 - Find a suitable icon using the [search option](../search/search-all.md#how-to-use).
 
 
-### Special Favorites (Personal)
+### Special Favorites (Personal) {#special-favorites-personal}
 
 The *Personal folder* contains special points like **<Translate android="true" ids="favorite_home_category"/>** and **<Translate android="true" ids="work_button"/>**, often used in [navigation](../navigation/setup/route-navigation.md#select-starting-point). This folder does not have a *three-dot menu*, and its parameters cannot be changed.
 
 
-## Manage Favorites
+## Manage Favorites {#manage-favorites}
 
 <Tabs groupId="operating-systems">
 
@@ -181,7 +181,7 @@ The **My Favorites** section lets you:
 - [Search](#order--sorting--search) for specific favorites or groups.
 - [Bulk operations](#bulk-edit--delete) — Rename, move, or delete multiple favorites at once.
 
-### Order / Sorting / Search
+### Order / Sorting / Search {#order--sorting--search}
 
 <Tabs groupId="operating-systems">
 
@@ -202,7 +202,7 @@ The **My Favorites** section lets you:
 - **Searching** — Use [Global search](../search/search-all.md) to find favorites by name. Favorites are sorted by distance from the map's center.
 
 
-### Bulk Edit / Delete
+### Bulk Edit / Delete {#bulk-edit--delete}
 
 <Tabs groupId="operating-systems">
 
@@ -225,7 +225,7 @@ The **My Favorites** section lets you:
 3. **Options available** — *Delete* for Android and iOS, *Move to a Favorite Group*, *Share*, and *Change Color* for iOS.
 
 <!--
-### Add Favorites to Map Markers
+### Add Favorites to Map Markers {#add-favorites-to-map-markers}
 
 <InfoAndroidOnly/>
 
@@ -240,7 +240,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 -->
 
 
-### Favorite Group Actions
+### Favorite Group Actions {#favorite-group-actions}
 
 <Tabs groupId="operating-systems">
 
@@ -280,7 +280,7 @@ More details in the article [My Places](../personal/myplaces.md#favorites) artic
 
 
 
-### Change Group Appearance
+### Change Group Appearance {#change-group-appearance}
 
 <Tabs groupId="operating-systems">
 
@@ -305,7 +305,7 @@ More details in the article [My Places](../personal/myplaces.md#favorites) artic
 - **Customization** — Override the default settings for existing points in the folder, new favorites only, or apply to all.
 
 
-## Export / Import
+## Export / Import {#export--import}
 
 OsmAnd provides several methods to [back up](./import-export.md) and [restore](./import-export.md#import) favorites:
 
@@ -314,7 +314,7 @@ OsmAnd provides several methods to [back up](./import-export.md) and [restore](.
 - **File format** — Favorites are saved as `.gpx` files (favorites.gpx).
 
 
-### Free Cloud Backup
+### Free Cloud Backup {#free-cloud-backup}
 
 <Tabs groupId="operating-systems">
 
@@ -345,7 +345,7 @@ The [Free Favorites Backup](../personal/osmand-cloud.md#osmand-start) is a speci
 - **Transfer favorite points**. Import your favorite points to a new device with *Free Favorites Backup* feature if you use OsmAnd across multiple devices.  
 
 
-#### How to Create a Backup
+#### How to Create a Backup {#how-to-create-a-backup}
 
 <Tabs groupId="operating-systems">
 
@@ -376,7 +376,7 @@ You need an OsmAnd Cloud account to use the *Free Settings Backup* feature. If y
 - *Create a backup* of your settings.
 
 
-### All Favorites
+### All Favorites {#all-favorites}
 
 <Tabs groupId="operating-systems">
 
@@ -400,7 +400,7 @@ You can export and import your favorites using the special buttons at the bottom
 - **Share** button (*Android*) / **Export favorite** (*iOS*). Allows you to export (share) all your favorites as a *favorites.gpx* file.
 
 
-### Favorite Group
+### Favorite Group {#favorite-group}
 
 <Tabs groupId="operating-systems">
 
@@ -422,7 +422,7 @@ You can export and import your favorites using the special buttons at the bottom
 - Choose the **Share** button to send the *Favorites.gpx* file to your device's memory or share it via messaging apps.  
 
 
-### Automatic Favorites Backup  
+### Automatic Favorites Backup {#automatic-favorites-backup}
 
 <Tabs groupId="operating-systems">
 
@@ -460,7 +460,7 @@ In the latest versions of ***Android***, access to system directories is limited
 :::
 
 
-### Favorites in GPX File
+### Favorites in GPX File {#favorites-in-gpx-file}
 
 All information about a Favourite is stored and described using tags. When creating a Favourite point, you can write your own [description](#favorite-point) or use information from the OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) data from which your point was created. Favorite points, POIs, and Waypoints use the same **tags** to store information and are saved in **GPX file format**.  
 
@@ -487,7 +487,7 @@ All information about a Favourite is stored and described using tags. When creat
 ```  
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)
 - [Search History](../search/search-history.md#export-and-share)

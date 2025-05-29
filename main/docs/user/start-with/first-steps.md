@@ -14,7 +14,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview
+## Overview {#overview}
 
 Welcome to OsmAnd (OpenStreetMap Automated Navigation Directions)!  
 
@@ -37,7 +37,7 @@ Explore how to download maps, how to configure the application, how to use the m
 </Tabs>
 
 
-## Install OsmAnd
+## Install OsmAnd {#install-osmand}
 
 OsmAnd is a mobile application for Maps and Navigation available for **Android** and **iOS**. You can download it from the most popular markets.
 
@@ -52,7 +52,7 @@ OsmAnd is a mobile application for Maps and Navigation available for **Android**
 [Read more](../purchases/index.md) about OsmAnd versions and Purchases.  
 
 
-## Welcome to OsmAnd
+## Welcome to OsmAnd {#welcome-to-osmand}
 
 We aim to create a fully functional map-oriented application that can be used for various purposes offline and online. The application has many features, so you won't have to switch between different apps, and everything will be at your fingertips.
 
@@ -67,9 +67,9 @@ We aim to create a fully functional map-oriented application that can be used fo
 - And don't forget to contribute to [OpenStreetMap](https://www.openstreetmap.org/) with the [OSM Editing Plugin](../plugins/osm-editing.md).
 
 
-## Actions Guide
+## Actions Guide {#actions-guide}
 
-### Permission to Access the Location  
+### Permission to Access the Location {#permission-to-access-the-location}
 
 <Tabs groupId="operating-systems">
 
@@ -90,7 +90,7 @@ We aim to create a fully functional map-oriented application that can be used fo
 We recommend that you grant OsmAnd permission to receive information about the precise location of your device. We do not collect, use, or share your private information, so access to precise geolocation is needed for correct offline work of search, navigation, and other OsmAnd functions.  
 
 
-### How to download maps
+### How to download maps {#how-to-download-maps}
 
 <Tabs groupId="operating-systems">
 
@@ -116,7 +116,7 @@ OsmAnd cannot work correctly without downloaded offline maps. Although the appli
 :::
 
 
-### How download maps for the whole world
+### How download maps for the whole world {#how-download-maps-for-the-whole-world}
 
 While OsmAnd allows you to download maps for all available regions, there is no single package to download the entire world at once. Instead, you can download individual country or region maps based on your needs.
 
@@ -127,7 +127,7 @@ While OsmAnd allows you to download maps for all available regions, there is no 
 - **Automatic updates.** Once downloaded, maps can be updated via *Menu → Maps & Resources → Updates.*
 
 
-### How to change app language
+### How to change app language {#how-to-change-app-language}
 
 The *Display language option* is used to change the language of the entire app, including pop-up prompts, internal text, messages, and more. Up to Android 12, OsmAnd allows you to customize the display language according to your preferences directly in the app. Starting from Android 13 and on iOS devices, the display language can only be changed in the system settings (see how to change per-app language preferences in [Android](https://developer.android.com/guide/topics/resources/app-languages) and [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
@@ -156,7 +156,7 @@ On some Android devices (Xiaomi with Muiu 14), there is no option to set app lan
 :::
 
 
-### How to manage your settings
+### How to manage your settings {#how-to-manage-your-settings}
 
 You could manage application settings as [Global settings](../personal/global-settings.md) or as [Profile configuration](../personal/profiles.md) via [Main Menu](../start-with/main-menu.md). The application comes with a predefined list of profiles that could be modified later. Each profile could be considered as a customized map application for specific purposes. By default, profiles are being served only as different navigation modes.
 
@@ -180,7 +180,7 @@ You could manage application settings as [Global settings](../personal/global-se
 [Read more](../personal/profiles.md) about Profile settings.
 
 
-### How to configure plugins
+### How to configure plugins {#how-to-configure-plugins}
 
 [Plugins](../plugins/index.md#configure-a-plugin) greatly extend application functionality. Almost all plugins have their own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and [Settings](../plugins/#plugin-settings).  
 
@@ -211,7 +211,7 @@ To enable / disable plugins, go to:
 [Read more](../plugins/index.md#configure-a-plugin) about OsmAnd plugins.
 
 
-### How to use a map
+### How to use a map {#how-to-use-a-map}
 
 Map is a core element of OsmAnd, and it's important to know [how to use it](../map/interact-with-map.md) (gestures, buttons, etc.). You could [configure map](../map/configure-map-menu.md) to your needs: [change map style](../map/configure-map-menu.md#map-style-parameters), configure different [map layers](../map/configure-map-menu.md#map-layers) such as favorites, POI, public transport, tracks, contour lines, hillshade and others.
 
@@ -234,7 +234,7 @@ Map is a core element of OsmAnd, and it's important to know [how to use it](../m
 [Read more](../map/configure-map-menu.md) about map configuration.
 
 
-### How to configure screen
+### How to configure screen {#how-to-configure-screen}
 
 [Configure screen](../widgets/configure-screen.md) allows you to enable [Informational](../widgets/info-widgets.md) (altitude, speed, current time, etc.) & [Navigational](../widgets/nav-widgets.md) (destination, bearing, arrival time, etc.) widgets, [Quick action](../widgets/quick-action.md) and other elements that will be displayed over Map.
 
@@ -257,7 +257,7 @@ Map is a core element of OsmAnd, and it's important to know [how to use it](../m
 [Read more](../widgets/configure-screen.md) about Screen configuration.
 
 
-### How to add personal data to maps
+### How to add personal data to maps {#how-to-add-personal-data-to-maps}
 
 OsmAnd allows you to make various marks on the Map for your personal needs. For example, [Favorite points](../personal/favorites.md) - personal points with name & icon & category, [Markers](../personal/markers.md) - quickly added points as a target, [Audio/Video notes](../plugins/audio-video-notes.md) - media notes recorded at a specific point, [Tracks](../personal/tracks/manage-tracks.md) - recorded and imported tracks & tours.
 
@@ -280,7 +280,7 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 [Read more](../map/point-layers-on-map.md) about points on the map.
 
 
-### How to browse & find point of interest
+### How to browse & find point of interest {#how-to-browse--find-point-of-interest}
 
 [Points of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) are amenities that could be searched or highlighted on the map. They represent interesting or useful places and are distributed as part of [Vector Maps](../map/vector-maps.md). You can use them to [display on the map](../map/point-layers-on-map.md#points-of-interest-poi), [navigate](../navigation/index.md) and [search](../search/search-poi.md) the points of interest on the Map.
 
@@ -303,7 +303,7 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 [Read more](../search/search-poi.md) about POI search.
 
 
-### How to plan a route
+### How to plan a route {#how-to-plan-a-route}
 
 [Plan route](../plan-route/create-route.md) is a powerful tool that allows you to create a trip, edit an existing track, and measure distance on the spot. You can quickly put intermediate points and connect them by various navigation lines (bike, pedestrian, straight line, etc.). Results could be saved into a GPX file, so it could be [shared](../personal/tracks/index.md) or [used by navigation](../navigation/setup/gpx-navigation.md) later.
 
@@ -326,7 +326,7 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 [Read more](../plan-route/create-route.md) about the plan route feature.
 
 
-### How to search by address
+### How to search by address {#how-to-search-by-address}
 
 OsmAnd provides many search capabilities, including address search. By default, it uses [OpenStreetMap data](https://nominatim.openstreetmap.org/ui/search.html) and should be able to find all addresses using Quick Search input. Also, you can [search](../search/search-address.md) by city, street, postcode, and coordinates.
 
@@ -353,7 +353,7 @@ You need to download the map before searching for an address there. Also, if you
 [Read more](../search/search-address.md) about address search.
 
 
-### How to start navigation
+### How to start navigation {#how-to-start-navigation}
 
 [Navigation](../navigation/index.md) provides you with step-by-step guidance to your destination by displaying the route, offering turn-by-turn instructions, extra road information about surface, smoothness, etc., and optional voice guidance.
 
@@ -376,7 +376,7 @@ You need to download the map before searching for an address there. Also, if you
 [Read more](../navigation/index.md) about navigation.
 
 
-### How to record your trip
+### How to record your trip {#how-to-record-your-trip}
 
 [Trip recording](../plugins/trip-recording.md) is a special tool packaged as an OsmAnd plugin that allows you to record all movements on track using the device's GPS.
 
@@ -399,7 +399,7 @@ You need to download the map before searching for an address there. Also, if you
 [Read more](../plugins/trip-recording.md) about trip recording.
 
 
-### How to edit maps
+### How to edit maps {#how-to-edit-maps}
 
 OsmAnd is powered by [OpenStreetMap](https://www.openstreetmap.org/) data. The maps are created by volunteer contributors, so they can have more or fewer details depending on how much work has been done at a certain part of the map. Anyone can register as a contributor and add or edit OSM maps. OsmAnd provides an editing plugin that helps to improve the OpenStreetMap.
 
@@ -422,7 +422,7 @@ OsmAnd is powered by [OpenStreetMap](https://www.openstreetmap.org/) data. The m
 [Read more](../plugins/osm-editing.md) about OSM editing.
 
 
-### How to close the app
+### How to close the app {#how-to-close-the-app}
 
 <Tabs groupId="operating-systems">
 
@@ -460,7 +460,7 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 </Tabs>
 
 
-## App Shortcuts
+## App Shortcuts {#app-shortcuts}
 
 <InfoAndroidOnly/>
 
@@ -471,7 +471,7 @@ Tap an action icon to immediately start the application with the selected action
 ![Shortcuts](@site/static/img/steps/shortcuts_3_andr.png) ![Shortcuts](@site/static/img/steps/shortcuts_4_andr.png)
 
 
-## Offline Help
+## Offline Help {#offline-help}
 
 <Tabs groupId="operating-systems">
 
@@ -493,7 +493,7 @@ In the *Help menu* you can find articles from our site [www.osmand.net/docs](htt
 The first subsection, *Offline Help* contains the **Most viewed** (or popular) articles among our users. **User guide** and **Troubleshooting** sections have the same structure as on the website.  
 In the *Help menu*, you can also find useful links to OsmAnd social networks, version information about your application, release notes, and support contacts. Through Help, you can also send [logcat and crash logs](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
 
-### Menu
+### Menu {#menu}
 
 <Tabs groupId="operating-systems">
 
@@ -517,7 +517,7 @@ In the *Help menu*, you can also find useful links to OsmAnd social networks, ve
 - **Copy build version**. Enables users to quickly and accurately communicate the current version of the app to developers when reporting issues, simplifying the diagnostic and resolution process.
 
 
-### Most Viewed
+### Most Viewed {#most-viewed}
 
 <Tabs groupId="operating-systems">
 
@@ -538,7 +538,7 @@ In the *Help menu*, you can also find useful links to OsmAnd social networks, ve
 The Most viewed articles among our users refer to the articles in the app or on the site that have garnered the most views or user interactions. This metric helps identify content that is particularly interesting or useful to your users. It can provide valuable insights into user preferences and interests, allowing developers and content creators to tailor future content to better meet audience needs. Additionally, highlighting popular articles can help new users find valuable resources within the app.
 
 
-### User Guide
+### User Guide {#user-guide}
 
 <Tabs groupId="operating-systems">
 
@@ -559,7 +559,7 @@ The Most viewed articles among our users refer to the articles in the app or on 
 The **User Guide** section of the Help menu is a complete manual that follows the structure of the OsmAnd website, ensuring consistency of information and ease of navigation across platforms. Using Help, you can easily navigate from app to the website, finding the same content organized familiarly. This consistency enhances usability by providing a single support resource to find answers to questions and troubleshoot issues quickly.
 
 
-### Troubleshooting
+### Troubleshooting {#troubleshooting}
 
 <Tabs groupId="operating-systems">
 
@@ -587,7 +587,7 @@ Solutions and tips for solving common problems. If you have a specific question,
 - [Crash logs](../troubleshooting/crash-logs.md). How to send crash logs to the OsmAnd team.
 - [Android Auto](../troubleshooting/android_auto.md) (*only for Android*). Auto navigation problems.
 
-### Contact Us
+### Contact Us {#contact-us}
 
 <Tabs groupId="operating-systems">
 
@@ -607,7 +607,7 @@ Solutions and tips for solving common problems. If you have a specific question,
 
 Allows you to ask questions or make suggestions.
 
-### Report Issues
+### Report Issues {#report-issues}
 
 <Tabs groupId="operating-systems">
 
@@ -629,7 +629,7 @@ Allows you to ask questions or make suggestions.
 - **Send crash log** (*for Android*). Contains only information about crashes.
 - [Send logcat log](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Send log](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Detailed log file.
 
-### About OsmAnd
+### About OsmAnd {#about-osmand}
 
 <Tabs groupId="operating-systems">
 
@@ -650,12 +650,12 @@ Allows you to ask questions or make suggestions.
 You can learn about our team, see the current version of the app and what's new, and download the beta version of the app.
 
 
-## Privacy
+## Privacy {#privacy}
 
 It is an [open source](https://github.com/osmandapp/osmand), ads-free / tracker-free privacy-focused application. To preserve maximum privacy, OsmAnd offers Offline maps as a first place, so no interaction or geo information is leaked from your device. We are very attentive to what data is collected and what data is transferred by the network, you can read more in our [Privacy policy](https://osmand.net/help-online/privacy-policy).  
 
 
-## Permissions
+## Permissions {#permissions}
 
 OsmAnd doesn't have any required permissions on the iOS / Android version.
 

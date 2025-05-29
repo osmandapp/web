@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 :::info Paid feature
 The External Sensors plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
@@ -37,7 +37,7 @@ The **External Sensors plugin** accesses external sensors and can read data such
 To use the plugin, ensure your device is [compatible](#pair-new-sensor), the plugin is [enabled](../plugins/#enable--disable), and your external sensors are connected via Bluetooth (BLE).
 
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 To start using data from external sensors, follow these steps:
 
@@ -50,7 +50,7 @@ To start using data from external sensors, follow these steps:
 7. (Optional, Android only) Follow [these tips](https://www.thisisant.com/consumer/ant-101/ant-in-phones) to connect ANT+ sensors if your device supports them.
 
 
-### Pair New Sensor
+### Pair New Sensor {#pair-new-sensor}
 
 <Tabs groupId="operating-systems">
 
@@ -89,7 +89,7 @@ To pair a new sensor, follow these steps:
 - **Bicycle power sensors** are available only on Android via ANT+.
 
 
-## Sensor Settings
+## Sensor Settings {#sensor-settings}
 
 <Tabs groupId="operating-systems">
 
@@ -130,7 +130,7 @@ Each paired external sensor listed in OsmAnd has its own configuration screen wi
 - A pop-up notification appears when the battery **level of a paired sensor drops below 15%**.
 
 
-## Trip Recording
+## Trip Recording {#trip-recording}
 
 <Tabs groupId="operating-systems">
 
@@ -170,7 +170,7 @@ OsmAnd uses [track recording](../plugins/trip-recording.md#recorded-gpx-file) to
 :::
 
 
-### Data Analyze
+### Data Analyze {#data-analyze}
 
 <Tabs groupId="operating-systems">
 
@@ -201,7 +201,7 @@ This will display graphs for your recorded data: *Heart rate*, *Speed*, *Cadence
 > *Battery level and Distance are not available in the [Analyze on map](../map/tracks/index.md#analyze-track-on-map) feature.*
 
 
-## Widgets
+## Widgets {#widgets}
 
 <Tabs groupId="operating-systems">
 
@@ -241,7 +241,7 @@ Supported widget types:
 7. **Battery Level** (*iOS only*) – percentage of battery remaining in a connected BLE sensor.
 
 
-### Widget Settings
+### Widget Settings {#widget-settings}
 
 <Tabs groupId="operating-systems">
 
@@ -273,7 +273,7 @@ On **iOS**, you can choose what value to display in the widget:
 > *This is useful when you want to monitor the battery charge during long trips to avoid disconnections.*
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

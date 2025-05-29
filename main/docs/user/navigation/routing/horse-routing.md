@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 *Horseback routing* can be useful for equestrians, who want to plan their rides on paths and trails that are safe and suitable for horses. With help of this type of routing you may also discover new routes that haven't been already known about otherwise.  
 
@@ -22,7 +22,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ![Horseback](@site/static/img/navigation/routing/horseback_routing_overview.png)
 
 
-## Route Parameters - Horse
+## Route Parameters - Horse {#route-parameters---horse}
 
 :::note
 By default, *Horseback riding profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -58,7 +58,7 @@ Horseback routing is designed to provide equestrians with information about hors
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Projected travel time will reflect elevation impact. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png)  </details> | This preference can help avoid steep uphills. Without elevation data the fastest route as on plain terrain will be calculated. |
 
 
-## Other Routing Settings
+## Other Routing Settings {#other-routing-settings}
 
 - The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using [<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations) option. Note that in some cases, information from OSM can be outdated.  
 

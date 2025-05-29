@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-## Overview
+## Overview {#overview}
 
 OsmAnd offers a variety of default profiles tailored for different activities, including driving, cycling, walking, and more specialized activities like skiing and boating. These profiles are designed to enhance your navigation experience according to the activity you are engaged in. Each profile includes configurable options, enabling you to adjust settings and incorporate additional plugins to match your preferences.
 
@@ -50,7 +50,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 </Tabs>
 
 
-## Profile Configuration
+## Profile Configuration {#profile-configuration}
 
 :::caution Applying settings to a specific profile only
 All settings apply exclusively to the currently selected application profile.
@@ -75,7 +75,7 @@ All settings apply exclusively to the currently selected application profile.
 This section contains all settings related to appearance, navigation options, map display, settings menu, and profile screen.
 
 
-### Free Cloud Backup
+### Free Cloud Backup {#free-cloud-backup}
 
 <Tabs groupId="operating-systems">
 
@@ -102,11 +102,11 @@ OsmAnd allows you [to back up](../personal/osmand-cloud.md#osmand-start) your ap
 You must have an [OsmAnd Cloud](../personal/osmand-cloud.md#login) account to use the *Free Settings Backup*. If you have an *OsmAnd Pro* subscription or an active *OsmAnd Cloud* account, the promotion banner will not be displayed.
 
 
-## General Settings
+## General Settings {#general-settings}
 
 This section contains settings for the application theme and compass button, map and profile data units and formats, external input devices, and many other settings to create the optimal configuration for your chosen profile.
 
-### Appearance
+### Appearance {#appearance}
 
 <Tabs groupId="operating-systems">
 
@@ -147,7 +147,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android only*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.  
 
 
-### Units & Formats
+### Units & Formats {#units--formats}
 
 <Tabs groupId="operating-systems">
 
@@ -241,7 +241,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 |          | <Translate android="true" ids="round_up"/> | *For better readability*, the numbers displayed in the navigation widgets (distance to a point, next turn, or lane) will be rounded down to have fewer digits. <br/> For examples: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
 
 
-### Other
+### Other {#other}
 
 <Tabs groupId="operating-systems">
 
@@ -280,7 +280,7 @@ The **Other** section provides additional profile settings to customize OsmAnd�
 - **<Translate android="true" ids="position_animation"/>** (*Android only*) – The [position](../map/interact-with-map.md#my-location-and-zoom) icon animates with each GPS point received (once per second). A slight delay in its movement may be noticeable, especially during fast movement or GPS signal fluctuations. You can adjust this effect using the *Prediction time* setting: higher values increase smoothness but add delay, lower values reduce delay but may make movement less smooth.
 
 
-## Navigation Settings
+## Navigation Settings {#navigation-settings}
 
 <Tabs groupId="operating-systems">
 
@@ -325,7 +325,7 @@ There are no navigation settings in the *Browse map* profile.
 :::
 
 
-## Configure Map
+## Configure Map {#configure-map}
 
 <Tabs groupId="operating-systems">
 
@@ -363,7 +363,7 @@ With this menu, you can:
 - **Adjust map appearance** by selecting a different [map style](../map/vector-maps.md#default-map-styles) to match your needs.
 
 
-## Configure Screen
+## Configure Screen {#configure-screen}
 
 <Tabs groupId="operating-systems">
 
@@ -389,7 +389,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 The [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) is a menu that allows you to configure the widgets for the selected profile to be displayed on the map. On this screen, you can enable and configure [Informational](../widgets/info-widgets.md) and [Navigational](../widgets/nav-widgets.md) widgets, as well as other items.
 
 
-## Profile Appearance
+## Profile Appearance {#profile-appearance}
 
 <Tabs groupId="operating-systems">
 
@@ -414,7 +414,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 The **Profile appearance** settings allow you to customize your profile's name and visual representation. You can also modify the appearance of [My Location](#my-location-appearance) here. While the *profile name* must be unique, *icons* and *colors* can be the same across different profiles. These changes will be applied across various parts of the application, such as the [Route preparation](../navigation/setup/route-navigation.md) menu.
 
 
-### My Location Appearance
+### My Location Appearance {#my-location-appearance}
 
 <Tabs groupId="operating-systems">
 
@@ -438,7 +438,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 The **My Location appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the operating system when the device speed is **greater than zero**.
 
-#### 1. View Angle and Location Radius
+#### 1. View Angle and Location Radius {#1-view-angle-and-location-radius}
 
 You can customize the visual elements related to your location and apply them separately or together for **Resting** and **Navigation** positions. For both 2D and 3D modes, *View Angle* and *Location Radius* are displayed in the same color selected for the [navigation profile](#profile-appearance), directly below the [My Location](../map/interact-with-map.md#my-location-and-zoom) icon.
 
@@ -446,7 +446,7 @@ You can customize the visual elements related to your location and apply them se
 - **<Translate android="true" ids="location_radius"/>** – Shows a **circular area** around your icon, representing the accuracy of your current location.
 
 
-#### 2. Custom 3D Icons
+#### 2. Custom 3D Icons {#2-custom-3d-icons}
 
 For a more personalized experience, you can create and add **custom 3D icons** to OsmAnd.  
 
@@ -463,7 +463,7 @@ For a more personalized experience, you can create and add **custom 3D icons** t
 
    - Alternatively, copy the **MTL and OBJ files** directly into the OsmAnd folder using the same directory structure.  
 
-#### 3. Map Orientation Modes
+#### 3. Map Orientation Modes {#3-map-orientation-modes}
 
 You can control how the **My Location** icon behaves using different [map orientation modes](../widgets/map-buttons.md#compass).  
 
@@ -472,7 +472,7 @@ You can control how the **My Location** icon behaves using different [map orient
 - Learn more about bearing and direction tracking in the [Bearing Widget](../widgets/nav-widgets#bearing-widget) section.  
 
 
-## UI Customization
+## UI Customization {#ui-customization}
 
 <InfoAndroidOnly />
 
@@ -487,7 +487,7 @@ To hide all control parameters of unused [plugins](../plugins/index.md#configure
 With the UI customization feature, you can adjust the number of items in actions such as [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android), [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) and [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md). Information about the number of added items out of all possible items can be found under the title of each feature.
 
 
-### Drawer
+### Drawer {#drawer}
 
 ![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
 
@@ -497,7 +497,7 @@ With the UI customization feature, you can adjust the number of items in actions
 
 - **<Translate android="true" ids="copy_from_other_profile"/>** - Allow you to copy the *drawer layout* from another OsmAnd profile to maintain a consistent setup across profiles.
 
-### Configuring the Map
+### Configuring the Map {#configuring-the-map}
 
 ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
 
@@ -508,7 +508,7 @@ With the UI customization feature, you can adjust the number of items in actions
 - **<Translate android="true" ids="copy_from_other_profile"/>** - Copies the *Configure map menu layout* from another OsmAnd profile.
 
 
-### Context Menu Actions
+### Context Menu Actions {#context-menu-actions}
 
 ![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
@@ -519,7 +519,7 @@ With the UI customization feature, you can adjust the number of items in actions
 - **<Translate android="true" ids="copy_from_other_profile"/>** – Copies the *context menu arrangement* from another OsmAnd profile to maintain consistency across different profiles.
 
 
-## Plugin Settings
+## Plugin Settings {#plugin-settings}
 
 :::caution Access to plugin settings
 To access the plugin's settings, you must first [**enable the plugin**](../plugins/index.md#enable--disable) in the *Plugin section of the main menu*.
@@ -567,7 +567,7 @@ Plugins unlock additional features of the application and can be either [paid or
 - **Wikipedia**. This menu opens *[Wikipedia plugin settings](../plugins/wikipedia.md#wikipedia-settings)*. You can select the language in which articles will be displayed and choose whether to download images from Wikipedia. Having Wikipedia on your trip enhances your experience by providing information about the places you visit. It works offline and displays relevant Wikipedia articles directly on the map related to points of interest.
 
 
-## Actions
+## Actions {#actions}
 
 <Tabs groupId="operating-systems">
 
@@ -599,7 +599,7 @@ Actions with selected profile:
     - To add a profile, go to *Menu → Settings → App profiles → + New profile*.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)
 - [Search History](../search/search-history.md#export-and-share)

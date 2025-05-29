@@ -13,9 +13,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Route Calculation
+## Route Calculation {#route-calculation}
 
-### Route calculation is slow
+### Route calculation is slow {#route-calculation-is-slow}
 
 *Android*. OsmAnd uses two different **offline routing engines**: a *Java-based engine* and a *Native (C++) engine*.
 
@@ -23,7 +23,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - The *Native (C++) engine* offers better performance, but its efficiency depends on your device’s memory and processor capabilities. Generally, native routing performs well for routes under 300 km, with route calculation times ranging from 15 seconds to 4 minutes. If the process takes longer than 4 minutes, it is advisable to stop, as the application may crash.
 
 
-### How to calculate routes longer than 250km?
+### How to calculate routes longer than 250km? {#how-to-calculate-routes-longer-than-250km}
 
 1. If the app does not show a route after 7-8 minutes of calculation time, consider [placing waypoints](../navigation/setup/route-navigation.md#route-recalculation) (pick e.g. places on motorways). 3-4 waypoints will be enough to calculate even 1000 km routes.
 
@@ -31,7 +31,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 3. For Android version you can create a Navigation Profile with Online or Third-party routing (BRouter). Read more about it [here](../navigation/routing/brouter.md).
 
-### Calculation of 50 km routes for pedestrians
+### Calculation of 50 km routes for pedestrians {#calculation-of-50-km-routes-for-pedestrians}
 
 If you are using the **Walking** profile in OsmAnd, the application may crash when calculating routes over 50 km. This issue occurs specifically when the [**Standard Routing A***](../navigation/guidance/navigation-settings.md#development-settings) is selected in the navigation settings. Several factors can contribute to this problem:
 
@@ -42,7 +42,7 @@ If you are using the **Walking** profile in OsmAnd, the application may crash wh
 To avoid crashes with routes of similar distances, you may want to switch to other profile types like **Bicycle**.
 
 
-## The Calculated Route does not Seem Correct
+## The Calculated Route does not Seem Correct {#the-calculated-route-does-not-seem-correct}
 
 To track down issues with wrong or sub-optimum routes, please open a new posting in [Github discussions](https://github.com/osmandapp/OsmAnd/discussions) or [Github issue](https://github.com/osmandapp/Osmand/issues) and specify as detailed as possible the following information:
 
@@ -54,9 +54,9 @@ To track down issues with wrong or sub-optimum routes, please open a new posting
 - Please specify as exactly as possible the start and end point of your route. If possible, tell us city name and street name for each. Also a [Permalink](https://wiki.openstreetmap.org/wiki/Permalink) from openstreetmap.org can be helpful.
 - Tell us your expected routing, and how OsmAnd routes.
 
-## Road Information
+## Road Information {#road-information}
 
-### OsmAnd only shows some speed cams
+### OsmAnd only shows some speed cams {#osmand-only-shows-some-speed-cams}
 
 Due to the geodata taken from the OpenStreetMap project there are by now two methods how speed cameras are integrated in the raw OSM data:
 
@@ -66,9 +66,9 @@ Due to the geodata taken from the OpenStreetMap project there are by now two met
 Currently, OsmAnd can only make use of the elements that consists of a single node. Analyzing of relations is to come in a future release.
 
 
-## Voice Navigation
+## Voice Navigation {#voice-navigation}
 
-### Why should I use a TTS voice instead of a recorded voice?
+### Why should I use a TTS voice instead of a recorded voice? {#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice}
 
 **Text-to-Speech (TTS)** voices generate spoken prompts dynamically, allowing them to pronounce street names, place names, and highway numbers. In contrast, **recorded voices** are limited to pre-recorded phrases and cannot pronounce specific names or numbers.
 
@@ -82,7 +82,7 @@ To use TTS in OsmAnd, your device must have a **TTS engine** installed. Many dev
 
 For detailed instructions on setting up and adjusting Voice Prompts, refer to: [Voice Navigation Setup Guide](../navigation/guidance/voice-navigation.md).
 
-### TTS does not function properly? Follow these steps to fix it
+### TTS does not function properly? Follow these steps to fix it {#tts-does-not-function-properly-follow-these-steps-to-fix-it}
 
 Issues with **Text-to-Speech (TTS)** are typically related to **Android system settings**, not the OsmAnd app itself.  
 
@@ -105,7 +105,7 @@ Issues with **Text-to-Speech (TTS)** are typically related to **Android system s
     - Select a compatible *Language → TTS*.
     - Test the voice prompts by navigating to *Menu → Plugins → Enable OsmAnd Development → Settings → Test Voice Prompts*.
 
-#### Additional Steps
+#### Additional Steps {#additional-steps}
 
 - *Update Google TTS*. Open Google Play Store, search for **Google Text-to-Speech**, and update it.  
 - *Simulate Navigation*. Tap *Navigation button → Settings → Simulate Navigation* to check if voice guidance plays.  
@@ -120,8 +120,8 @@ For additional troubleshooting, visit:
 - [Import/Export Settings](../personal/import-export.md)  
 
 
-## Other
+## Other {#other}
 
-### Navigation stops while screen is off
+### Navigation stops while screen is off {#navigation-stops-while-screen-is-off}
 
 - [The same issue](../troubleshooting/track-recording-issues.md#the-system-may-kill-background-apps-to-save-power) with track recording in the background.

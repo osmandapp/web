@@ -12,7 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## Overview
+## Overview {#overview}
 
 The **Configure map** menu is an important item in the OsmAnd *Main Menu*, where you can customize the map display to suit your needs. You can highlight favorite points, navigation markers, or special points of interest on the map, display specific routes or third-party GPX files, overlay terrain information, satellite images, or any other available raster images, display public transportation information, and change the map style.  
 
@@ -58,7 +58,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
 - The Configure map settings depend on your [profile](../personal/profiles.md).
 - Pay attention - the Configure map menu **closes** when you tap the map field.
 
-## Map Layers
+## Map Layers {#map-layers}
 
 - [Vector Map Layer](../map/vector-maps.md) - displays all vector map information including OpenStreetMap, Contour lines, and Nautical data.
 - [Map Raster sources](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer) - allows selecting underlay / main-source / overlay map with transparency levels.
@@ -66,7 +66,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
 - [Borders of downloaded maps](../map/vector-maps.md#show-borders) - displays all borders of downloaded maps on the main map layer.
 - [Coordinate grid](../map/vector-maps.md#coordinates-grid) - control the visibility of the coordinates grid on the map.
 
-## Map Data Layers
+## Map Data Layers {#map-data-layers}
 
    - [Favorites](../map/point-layers-on-map.md) - displays favorites points.
    - [POI](../map/point-layers-on-map.md) - displays points of interests of selected categories.
@@ -79,7 +79,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
    - [Wikipedia](../plugins/wikipedia.md) - highlights Wikipedia articles linked to the map.
    - [Other plugin layers](../plugins/index.md#configure-a-plugin) - many plugins add their layers with extra information.
 
-## Map style parameters
+## Map style parameters {#map-style-parameters}
 
 The map style settings depend on the main map style displayed. You can read more about it in the [Map Styles article](../map/vector-maps).
 
@@ -93,7 +93,7 @@ The map style settings depend on the main map style displayed. You can read more
    - [Routes](../map/vector-maps.md#routes) - allows highlighting routes and their symbols.  
 
 
-## UI Customization (Android)
+## UI Customization (Android) {#ui-customization-android}
 
 For each selected profile in the Android system, you can change the order of the <Translate android="true" ids="configure_map"/> menu items, hide the items, reset the default settings, or copy them from another profile. This will help improve your interaction with the OsmAnd app.  
 

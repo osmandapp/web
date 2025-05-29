@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 In the OsmAnd application, you can create many customizations and export them to a `.osf` file. After adding a description, image, and icon, these customizations become a completely independent plugin. This plugin may include:
 
@@ -24,7 +24,7 @@ In the OsmAnd application, you can create many customizations and export them to
 - Specific online routing types and online maps.
 
 
-## How to Create
+## How to Create {#how-to-create}
 
 ![Custom package](@site/static/img/plugins/custom/1.jpg)
 
@@ -40,7 +40,7 @@ You may need to read:
 - You can check your code in [JSON Editor Online](https://jsoneditoronline.org/).
 
 
-### items.json
+### items.json {#itemsjson}
 
 <details><summary> OsmAnd's <b>items.json</b> file. </summary> 
 
@@ -272,45 +272,45 @@ You may need to read:
 </details>
 
 
-## Import Types
+## Import Types {#import-types}
 
 There are many import types for the OsmAnd *items.JSON* file. All types can be found [here](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L133), and this article describes only a few of them.
 
-### Plugin Description
+### Plugin Description {#plugin-description}
 
 To start, you create and add your plugin to *items.JSON*. The first type of import is **"PLUGIN"**.  
    *<u>NOTE</u>*. You must create and add this line for each type **"pluginId":"test.plugin"**, where *test.plugin* is the name of your package.  
 
    ![Custom package](@site/static/img/plugins/custom/2.jpg)
 
-### Plugin Images
+### Plugin Images {#plugin-images}
 
 To import your plugin icon images into OsmAnd, create a folder (in our example it is the *"res ”* folder) where the image files will be stored. The name of this type is **"RESOURCES"**.  
 
    ![Custom package](@site/static/img/plugins/custom/4.jpg)
 
 
-### Profiles
+### Profiles {#profiles}
 
 Using the **"PROFILE ”** type you can add a navigation profile for your plugin. You can get all the information about your navigation profile in the exported JSON file, where it is possible to read which *items.JSON* types were added (*“QUICK_ACTIONS”, “POI_UI_FILTERS”, “MAP_SOURCES ”* or others).
 NOTE: Start creating a navigation profile with all parameters, for this purpose export navigation profiles, and copy necessary items from the navigation *profiles.osf* (items.JSON) file to *PLUGIN.osf* (items.JSON) file.  
 
    ![Custom package](@site/static/img/plugins/custom/6.jpg)
 
-### Downloads
+### Downloads {#downloads}
 
 You can add any files such as *SQLite, OBF, or fonts* for download using the **"DOWNLOADS"** type. The main types of downloadable files can be found [here](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
    *<u>NOTE</u>*. The tag **"isHidden":"true"** (by default it is *false*) can hide your map data from [Maps and Resources](../personal/maps-resources.md#local) of OsmAnd.  In **"scope-id"** you can add all the necessary information about your file's URL, name, description, and more.  
 
    ![Custom package](@site/static/img/plugins/custom/3.jpg)
 
-### Suggested Downloads
+### Suggested Downloads {#suggested-downloads}
 
 In the **"SUGGESTED_DOWNLOADS"** type, you can download the maps that OsmAnd offers when importing a new plugin.  
 
    ![Custom package](@site/static/img/plugins/custom/7.jpg)
 
-### Files
+### Files {#files}
 
  In the **"FILE"** type you can add files from your plugin folders to OsmAnd folders, the "subtype" of which can be found [here](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312). In the example provided, the *routing.xml* and *rendering.xml* files have been added. You can read about how to create these files at the links [here](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) and [here](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).  
 
@@ -319,7 +319,7 @@ In the **"SUGGESTED_DOWNLOADS"** type, you can download the maps that OsmAnd off
 When the *items.JSON* file and all the files in the folder are ready, you can zip them into one document. After that, the *.zip file* should be renamed to *.os*f*, and then your *PLUGIN.osf* will be ready to be added to the OsmAnd application.
 
 
-## Examples
+## Examples {#examples}
 
 You can take a look at some of the plugins that OsmAnd users have made on their own:
 
@@ -331,7 +331,7 @@ You can take a look at some of the plugins that OsmAnd users have made on their 
  - [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf) custom plugin.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

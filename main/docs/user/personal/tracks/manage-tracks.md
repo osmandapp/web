@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 All tracks in OsmAnd are stored in a tab in the *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd processes the track file in [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format), but [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) & [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) can be imported and converted to GPX. Read more about different types of tracks in the article [Tracks on map](../../map/tracks/index.md#types-of-tracks).
 
@@ -36,7 +36,7 @@ All tracks in OsmAnd are stored in a tab in the *<Translate android="true" ids="
 </Tabs>
 
 
-## Create a Track
+## Create a Track {#create-a-track}
 
 <Tabs groupId="operating-systems">
 
@@ -63,7 +63,7 @@ You can add tracks in OsmAnd in the following ways:
 5. You can also add **Waypoints** to a new track via **[Context menu](../../map/map-context-menu.md#-add--edit--track-waypoint)**.
 
 
-## Manage Tracks
+## Manage Tracks {#manage-tracks}
 
 <Tabs groupId="operating-systems">
 
@@ -88,7 +88,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 All tracks ever recorded, created, or imported are automatically displayed in the [My Places](../../personal/myplaces.md) folder in the *Tracks* tab. They are organized by folder or displayed in a list below them.
 
 
-### Track Menu
+### Track Menu {#track-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -144,7 +144,7 @@ The menu provides the following actions:
 - **Delete** — Permanently remove the selected track that is no longer needed.
 
 
-### Search
+### Search {#search}
 
 <Tabs groupId="operating-systems">
 
@@ -171,7 +171,7 @@ Available:
 - [Filter](./smart-folder.md#search-filter) (*Android only*) if you need the specific characteristics of the track.
 
 
-### Selection Mode
+### Selection Mode {#selection-mode}
 
 <Tabs groupId="operating-systems">
 
@@ -208,7 +208,7 @@ Once you have made your choice, the following steps are provided:
 - **Delete** — If the selected tracks or folders are no longer needed, the Delete function allows you to delete them, with the app providing confirmation options to avoid accidental deletion.
 
 
-### Sort by
+### Sort by {#sort-by}
 
 <Tabs groupId="operating-systems">
 
@@ -250,7 +250,7 @@ OsmAnd offers an easy way to sort your tracks, helping you manage a large collec
 
 - **Shorted duration first** — Sorts tracks by duration, placing the shortest at the top.
 
-#### Sorting Subfolders
+#### Sorting Subfolders {#sorting-subfolders}
 
 <Tabs groupId="operating-systems">
 
@@ -273,7 +273,7 @@ If you want to sort [subfolders](#folder-actions), go to the three-dot menu with
 The selected sorting option is applied not only to the current subfolder but also to all nesting folders and tracks at all levels. This ensures a consistent structure across your saved data.
 
 
-## Track Folder
+## Track Folder {#track-folder}
 
 <Tabs groupId="operating-systems">
 
@@ -317,7 +317,7 @@ How to open the folder menu:
     ***NOTE: This action is irreversible.***
 
 
-### Folder Statistics
+### Folder Statistics {#folder-statistics}
 
 <Tabs groupId="operating-systems">
 
@@ -354,7 +354,7 @@ At the bottom of the list in the *Tracks* tab, and below the list of tracks **in
 - *Total **Size** of downloaded files in MB* — The total downloaded file size in megabytes shows how much space all tracks in the selected folder take up on your device.
 
 
-### Folder Actions
+### Folder Actions {#folder-actions}
 
 <Tabs groupId="operating-systems">
 
@@ -397,7 +397,7 @@ How to open folder actions:
 - **Add new folder** — To organize your routes and tracks into logical categories, put them in different folders. This helps to structure your navigation information.
 
 
-### Delete Folder
+### Delete Folder {#delete-folder}
 
 <Tabs groupId="operating-systems">
 
@@ -426,9 +426,9 @@ You can delete a folder with all the tracks it contains. To do this:
 - ***NOTE: This action is irreversible.***
 
 
-## Import / Export Track
+## Import / Export Track {#import--export-track}
 
-### Import
+### Import {#import}
 
 Import tool allows you to add tracks from external files for offline navigation and analysis. Methods for importing tracks:
 
@@ -452,7 +452,7 @@ Import tool allows you to add tracks from external files for offline navigation 
 ***NOTE:*** *Tracks manually added to the OsmAnd folder on your device are automatically imported without restarting the application.*  
 
 
-### Export
+### Export {#export}
 
 <Tabs groupId="operating-systems">
 
@@ -500,7 +500,7 @@ There are several ways to export one or more track files to any messenger, email
 3. By [Local backup file](../../personal/import-export.md#export-to-file). Exporting GPX tracks as `.osf` files.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Show track on Map](../../map/tracks/index.md)
 - [Analyze on Map](../../map/tracks/index.md#analyze-track-on-map)

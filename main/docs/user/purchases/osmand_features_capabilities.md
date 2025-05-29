@@ -16,13 +16,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 
-## All Features and Capabilities
+## All Features and Capabilities {#all-features-and-capabilities}
 
 OsmAnd is **a powerful navigation and mapping app** that offers a wide range of offline and online features. This page provides a detailed overview of all available features in different versions of the app.
 
 
 
-## Navigation
+## Navigation {#navigation}
 
 Core Navigation Features:
 
@@ -54,7 +54,7 @@ Table:
 | Android Auto / CarPlay | - | ✔ | ✔ |
 
 
-## Maps and Rendering
+## Maps and Rendering {#maps-and-rendering}
 
 Offline Maps and Updates:
 
@@ -87,7 +87,7 @@ Table:
 | 3D Relief | - | - | ✔ |
 
 
-## Search and POIs
+## Search and POIs {#search-and-pois}
 
 Types of Search:
 
@@ -107,7 +107,7 @@ Table:
 | Public transport search | - | ✔ | ✔ |
 
 
-## Tracks and Routes
+## Tracks and Routes {#tracks-and-routes}
 
 - Track recording  
 - Saving custom routes  
@@ -124,7 +124,7 @@ Table:
 | 3D track visualization | - | ✔ | ✔ |
 
 
-## Map Tools and Customization
+## Map Tools and Customization {#map-tools-and-customization}
 
 - Distance measurement  
 - Compass display  
@@ -141,7 +141,7 @@ Table:
 | Custom map styles | ✔ | ✔ | ✔ |
 
 
-## Plugins
+## Plugins {#plugins}
 
 - OsmAnd Cloud (backup and synchronization)
 - Wikipedia Plugin
@@ -158,7 +158,7 @@ Table:
 | External sensors (OBD-II, ANT+) | - | ✔ | ✔ |
 
 
-## Widgets and Additional Indicators
+## Widgets and Additional Indicators {#widgets-and-additional-indicators}
 
 - Speed widget  
 - Altitude widget  
@@ -177,7 +177,7 @@ Table:
 | Weather widget | - | ✔ | ✔ |
 
 
-## User Profiles
+## User Profiles {#user-profiles}
 
 - Car profile  
 - Bicycle profile  

@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-## Overview
+## Overview {#overview}
 
 The **AIS Vessel Tracker** plugin displays [Automatic Identification System (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) positions and detailed information about nearby vessels. The AIS data is received via a network connection from an external AIS receiver.
 
@@ -26,7 +26,7 @@ The **AIS Vessel Tracker** plugin displays [Automatic Identification System (AIS
 :::
 
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 The ability to use Online maps is automatically enabled in iOS version of OsmAnd. To display Online maps in Android, you need to make the following settings:
 
@@ -35,7 +35,7 @@ The ability to use Online maps is automatically enabled in iOS version of OsmAnd
 3. Configure an **AIS server connection** or connect an **external AIS receiver**.
 4. Check that vessels are displayed on the OsmAnd map.
 
-## Vessels on the Map
+## Vessels on the Map {#vessels-on-the-map}
 
 AIS operates on *VHF frequencies* (161.975 MHz and 162.025 MHz) and has a limited signal range due to line-of-sight propagation.
 
@@ -55,7 +55,7 @@ When correctly set up, vessel positions will appear on the map. Key features:
 - Tapping a vessel opens detailed information.
 
 
-### AIS Vessel Information
+### AIS Vessel Information {#ais-vessel-information}
 
 ![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png) ![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
 
@@ -92,7 +92,7 @@ AIS vessels transmit three types of data:
     - **Cargo Type** (*if transmitted*)
     - **Number of People on Board** (*optional*)  
 
-### AIS Symbols and Legends
+### AIS Symbols and Legends {#ais-symbols-and-legends}
 
 [Guidelines for AIS Symbol Presentation](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
@@ -130,7 +130,7 @@ AIS vessels transmit three types of data:
 | *Clock icon*      | Estimated time of arrival (ETA) |
 | *Wave icon*       | Speed over water |
 
-## Plugin Settings
+## Plugin Settings {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
@@ -156,7 +156,7 @@ The *AIS vessel tracker* plugin offers various settings to personalize navigatio
 | CPA Warning Distance | Vessel is marked red if distance to CPA is below this limit | `0.02 - 2 nautical miles` |
 
 
-### AIS Simulation Mode
+### AIS Simulation Mode {#ais-simulation-mode}
 
 > *You can simulate AIS vessel positions using [OsmAnd Development plugin](../plugins/development.md).*
 
@@ -173,7 +173,7 @@ Open *<Translate android="true" ids="shared_string_menu,plugins_menu_group,devel
 Vessel icons will appear based on the simulated data. Tap the vessel icon to view detailed information.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

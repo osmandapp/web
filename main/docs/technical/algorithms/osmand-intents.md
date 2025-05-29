@@ -2,15 +2,15 @@
 sidebar_position: 2
 ---
 
-# What Intents Does OsmAnd Listen to?
+# What Intents Does OsmAnd Listen to? {#what-intents-does-osmand-listen-to}
 
-### [Android geo intents](http://developer.android.com/guide/appendix/g-app-intents.html)
+### [Android geo intents](http://developer.android.com/guide/appendix/g-app-intents.html) {#android-geo-intents}
 * geo:latitude,longitude
 * geo:latitude,longitude?z=zoom
 * geo:0,0?q=my+street+address
 * geo:0,0?q=business+near+city
 
-### OsmAnd specific intents:
+### OsmAnd specific intents: {#osmand-specific-intents}
 
 1. **Location with Pin**: [https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116](https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116)
 
@@ -41,7 +41,7 @@ URL description:
 
 ![URL with navigation](@site/static/img/technical/url_navigation.png) 
 
-### Google:
+### Google: {#google}
 * google.navigation:q=34.99393,-106.61568
 * http://maps.google.com/maps?q=N34.939,W106
 * http://maps.google.com/maps?f=d&saddr=My+Location&daddr=lat,lon
@@ -52,12 +52,12 @@ URL description:
 * http://www.google.com/maps/dir/Current+Location/34,-106
 * And many other similar on different google.`<lang>` domains
 
-### OSM:
+### OSM: {#osm}
 * `http://www.openstreetmap.org/search?query=<lat>%2C<lon>`
 * https://openstreetmap.org/#map=11/34/-106
 * https://osm.org/go/TyFSutZ-?m= (https://wiki.openstreetmap.org/wiki/Shortlink)
 
-### Others:
+### Others: {#others}
 * http://maps.yandex.ru/?ll=34,-106&z=11
 * http://map.baidu.com/?l=13&tn=B_NORMAL_MAP&c=13748138,4889173&s=gibberish
 * http://www.amap.com/#!poi!!q=38.174596,114.995033|2|%E5%AE%BE%E9%A6%86&radius=1000
@@ -68,6 +68,6 @@ URL description:
 * http://maps.apple.com/?lsp=7618&q=40.738065,-73.988898&sll=40.738065,-73.988898
 * http://ge0.me/44TvlEGXf-/Kyiv
   
-### Code and tests are here:
+### Code and tests are here: {#code-and-tests-are-here}
 * https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/util/GeoPointParserUtil.java
 * https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/test/java/net/osmand/util/GeoPointParserUtilTest.java

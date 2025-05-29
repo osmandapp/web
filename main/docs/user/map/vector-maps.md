@@ -14,19 +14,19 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 Vector maps are intended to be used as the default map data source for OsmAnd, so **you need to download them to your device**. Vector maps support a huge number of map styles for different activities such as cycling, hiking, riding by car or snowmobile, and others.  
 
 Each map style can be customized to highlight or hide specific objects, and to switch between day and night modes. Vector map data can be augmented by vector data and displayed in the default Map style, such as *Contour line* information. You can *create your own OsmAnd map style* to demonstrate the required information.
 
 
-## Use Cases
+## Use Cases {#use-cases}
 
 Customizable map styles are one of the main advantages of OsmAnd. You can customize the map display to suit yourself and your hobbies, adjust the display or hiding of certain map objects, the sizes, and colors of these objects, and change the scale of the display of certain objects.
 
 
-## Default Map Styles  
+## Default Map Styles {#default-map-styles}
 
 OsmAnd offers you many map styles and data layers that fit by default. This section describes the main ones for day and night modes.
 
@@ -35,7 +35,7 @@ OsmAnd offers you many map styles and data layers that fit by default. This sect
 2. **iOS**. *<Translate ios="true" ids="shared_string_menu,map_settings_type,configure_map,map_settings_offline"/>*
 
 
-### OsmAnd
+### OsmAnd {#osmand}
 
 ![OsmAnd map style](@site/static/img/map/map-style-osmand-with-routes.png)  
 
@@ -44,13 +44,13 @@ OsmAnd's standard map rendering style balances detail and simplicity, making it 
 Key benefits include route mapping, surface quality, access restrictions, road signage, SAC-scale path renderings, sports facilities, and topographic details such as contour lines.
 
 
-### Touring View
+### Touring View {#touring-view}
 
 ![Touring view map style](@site/static/img/map/map-style-touring.png)
 
 Touring style with high contrast and maximum detail. Includes all the options of the default OsmAnd style while displaying as much detail as possible, in particular roads, paths, and other ways of traveling. Clear distinction of road types in a *touring atlas*. Suitable for day, night, and outdoor use.
 
-### UniRS and LightRS
+### UniRS and LightRS {#unirs-and-lightrs}
 
 <Translate android="true" ids="unirs_render_descr"/>
 
@@ -64,13 +64,13 @@ UniRS and LightRS styles are author styles that render the basic map information
 
     ![UniRS map style](@site/static/img/map/map-style-unirs.png)
 
-### Nautical
+### Nautical {#nautical}
 
 ![Nautical map style](@site/static/img/map/map-style-nautical.png)
 
 This is a style of nautical navigation featuring buoys, lighthouses, river routes, sea lanes, marks, harbors, nautical marks, and depth contours. Read more in the article [Nautical Map View](../plugins/nautical-charts.md).
 
-### Winter and Ski
+### Winter and Ski {#winter-and-ski}
 
 ![Winter & Ski map style](@site/static/img/map/map-style-winter-ski.png)
 
@@ -78,45 +78,45 @@ This is a style for ski sports that describes the pistes, elevators, and cross-c
 
 You can see the ski slopes and other details such as the difficulty of the slopes and elevator markers. Key benefits include the convenient display of slopes, elevators, and other skiing features. Less of the distracting secondary objects of the map. Read more in the article [Ski Maps](../plugins/ski-maps.md).
 
-### Topo
+### Topo {#topo}
 
 ![Topo map style](@site/static/img/map/map-style-topo.png)
 
 This style is designed for hiking, camping, and bicycling in nature. It features contrasting roads and natural features, different types of trails, extended contour line options, and additional details. It is readable in the outdoors. The *Surface Integrity* setting allows you to distinguish the quality of the road.
 
-### OSM-carto
+### OSM-carto {#osm-carto}
 
 ![OSM-carto map style](@site/static/img/map/map-style-osm-carto.png)
 
 This style imitates the default [OpenStreetMap web style](https://www.openstreetmap.org/). The source code of the web version is available on [Github](https://github.com/gravitystorm/openstreetmap-carto), OsmAnd code is available on [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
 
-### Desert
+### Desert {#desert}
 
 ![Desert map style](@site/static/img/map/map-style-desert.png)
 
 Designed for deserts and other sparsely populated regions, offering more detailed map information.
 
-### Offroad
+### Offroad {#offroad}
 
 ![Offroad map style](@site/static/img/map/map-style-offroad.png)
 
 Designed for off-road navigation, this style is based on the [Topo](#topo) map layout and works well with satellite images as an underlay. It features thinner main roads to highlight paths, tracks, bike routes, and other off-road trails, making it ideal for exploring unpaved routes in rural or remote areas.
 
-### Snowmobile
+### Snowmobile {#snowmobile}
 
 ![Snowmobile map style](@site/static/img/map/map-style-snowmobile.png)
 
 Tailored for snowmobile navigation, this style highlights snowmobile-friendly paths, roads, and tracks. It highlights specialized paths in snowy regions, offering clear navigation across snow-covered terrains where standard roads may not be available.
 
 
-## Map Legend
+## Map Legend {#map-legend}
 
 The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
 
 The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
 
 
-## Map Fonts (Android)
+## Map Fonts (Android) {#map-fonts-android}
 
 *<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
 
@@ -127,7 +127,7 @@ For maps in simplified/traditional Chinese, Japanese, and Korean, incorrect char
 Some related font issues have been documented on GitHub: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
 
 
-## * Contour Lines
+## * Contour Lines {#-contour-lines}
 
 <Tabs groupId="operating-systems">
 
@@ -152,7 +152,7 @@ Contour lines in OsmAnd are displayed as elevation lines on vector maps. To use 
 Contour lines are compatible with all map styles and can be customized through the [Contour lines menu](../plugins/topography.md#contour-lines). For further details, visit [Topography plugin](../plugins/topography.md) article.
 
 
-## * Nautical Depth
+## * Nautical Depth {#-nautical-depth}
 
 <Tabs groupId="operating-systems">
 
@@ -179,7 +179,7 @@ Nautical depth contour lines represent areas of equal depth, helping visualize u
 For further details about the Nautical map view, visit the [Nautical Map plugin page](../plugins/nautical-charts).
 
 
-## Show Borders
+## Show Borders {#show-borders}
 
 <Tabs groupId="operating-systems">
 
@@ -212,7 +212,7 @@ On Android, archived maps are shown in **Orange**. In iOS, maps that can be upda
 :::
 
 
-## Coordinates Grid
+## Coordinates Grid {#coordinates-grid}
 
 <InfoAndroidOnly />
 
@@ -261,9 +261,9 @@ OsmAnd supports multiple **base projections** for displaying geographic grid lin
 **By default, the app uses the coordinate format selected in** [General settings](../personal/profiles.md#units--formats).
 
 
-## Configure Map Style
+## Configure Map Style {#configure-map-style}
 
-### Map Mode
+### Map Mode {#map-mode}
 
 <Tabs groupId="operating-systems">  
 
@@ -298,7 +298,7 @@ The map can be displayed in a light or dark theme based on the mode selected fro
 - **<Translate android="true" ids="daynight_mode_app_theme"/>**. The map display adapts to the app's overall theme, showing day mode in the light theme and night mode in the dark theme.
 
 
-### Details  
+### Details {#details}
 
 <Tabs groupId="operating-systems">
 
@@ -365,7 +365,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 |**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
 -->
 
-### Routes
+### Routes {#routes}
 
 <Tabs groupId="operating-systems">
 
@@ -388,7 +388,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 A route is a path that is predetermined and needs to be followed to reach a specific destination. A route can be optimized for different types of travel, such as cycling, hiking, running, public transport, and others. You can read more about routes and their types in the [Routes article](../map/routes.md).
 
 
-### Transport
+### Transport {#transport}
 
 <Tabs groupId="operating-systems">
 
@@ -420,7 +420,7 @@ When navigating through cities, you need a more contrasting view of public trans
 - **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Shows underground routes.  
     ![Map transport subway](@site/static/img/map/map-transport-subway.png)
 
-### Hide
+### Hide {#hide}
 
 <Tabs groupId="operating-systems">
 
@@ -451,7 +451,7 @@ To improve map visibility, you might need to hide certain objects. For example, 
 - **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Hide all underground objects, like tunnels, passes, floors, etc. Special for clearing maps on cities from non-useful objects.
 - **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Hide all overground objects. Special for seeing only underground objects like tunnels, passes, etc.
 
-### Road Style
+### Road Style {#road-style}
 
 <Tabs groupId="operating-systems">
 
@@ -489,7 +489,7 @@ Special settings for roads, where you can change the colors to match the road at
 ![Map road style bold outline](@site/static/img/map/map-road-style-bold-outline.png)
 
 
-### Text Size
+### Text Size {#text-size}
 
 <Tabs groupId="operating-systems">
 
@@ -514,7 +514,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_r
     ![Map text size 200%](@site/static/img/map/map-text-size-200.png)
 
 
-### Map Magnifier
+### Map Magnifier {#map-magnifier}
 
 <Tabs groupId="operating-systems">
 
@@ -543,7 +543,7 @@ This setting helps to change the magnification of the map. It is applicable for 
     ![Map magnifier 200%](@site/static/img/map/map-magnifier-200.png)
 
 
-### Map Language
+### Map Language {#map-language}
 
 The **Map language** option configures the spelling of names on the OsmAnd map for zoom levels 7-20, inclusive. For zoom levels 2-6, the names are displayed in the language set for OsmAnd in the system settings menu (see section *[How to change the application language](../start-with/first-steps.md#how-to-change-app-language)*).  
 
@@ -578,7 +578,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_strin
     ![Map language transliterate](@site/static/img/map/map-language-transliterate_2.png)
 
 
-## Custom Map Style
+## Custom Map Style {#custom-map-style}
 
 If you have a personal or third-party custom map style created according to the [Specification](../../technical/osmand-file-formats/osmand-rendering-style.md), you can install it on your device in these ways:
 
@@ -587,7 +587,7 @@ If you have a personal or third-party custom map style created according to the 
 - After installation, you can select the map style from the menu.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)

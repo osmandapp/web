@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# OsmAnd MapCreator
+# OsmAnd MapCreator {#osmand-mapcreator}
 
 import Download from '@site/src/components/buttons/Download.js';
 

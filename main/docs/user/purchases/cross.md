@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-## Supported Cross-Platform Purchases
+## Supported Cross-Platform Purchases {#supported-cross-platform-purchases}
 
 The following OsmAnd products currently support use across multiple platforms (Android, iOS, and Web):
 
@@ -35,11 +35,11 @@ You can compare all OsmAnd products here: [difference between purchases](https:/
 | OsmAnd+ (standalone app)    | Coming soon    | Not transferable between stores or platforms |
 
 
-## How It Works
+## How It Works {#how-it-works}
 
 To use your **OsmAnd Pro** or **Maps+** purchase across different platforms (Android, iOS, or Web), you need to **link it to your OsmAnd Cloud account**.
 
-### Link Your Purchase
+### Link Your Purchase {#link-your-purchase}
 
 ![Cloud link](@site/static/img/purchases/cloud_activation.png)
 
@@ -51,7 +51,7 @@ Perform this step on the **device where you made the purchase** (Android or iOS,
 2. Once logged in, your **Pro or Maps+** purchase will be automatically linked to your **Cloud account** and marked as **cross-platform**.
 
 
-### Activate on Another Device or Platform
+### Activate on Another Device or Platform {#activate-on-another-device-or-platform}
 
 ![Maps+ cross](@site/static/img/purchases/cross_purchase.png)
 ![Maps+ cross](@site/static/img/purchases/cross_purchase_1.png)
@@ -64,7 +64,7 @@ Perform this step on the **device where you made the purchase** (Android or iOS,
    Your linked **Pro or Maps+** purchase should now be available.
 
 
-### Troubleshooting
+### Troubleshooting {#troubleshooting}
 
 If you don't see your purchase listed:
 
@@ -78,7 +78,7 @@ If the issue persists, contact **support@osmand.net** and include:
 - Type of purchase (Pro / Maps+ one-time / Maps+ subscription).
 
 
-## Example
+## Example {#example}
 
 You purchased **Maps+** as a one-time in-app purchase in the free version of OsmAnd from the [Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).  
 Later, you decide to switch to an iPhone and want to use **Maps+** with the [OsmAnd iOS version](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
@@ -97,7 +97,7 @@ This completes the cross-platform activation of your purchase. You can now conti
 Enjoy using Maps+/Pro across platforms!
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [OsmAnd Cloud](../personal/osmand-cloud.md)  
 - [Troubleshooting purchases](../troubleshooting/purchases_payments.md)  

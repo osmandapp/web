@@ -18,12 +18,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-## Overview
+## Overview {#overview}
 
 The OsmAnd Web Route Planner allows you to create navigation routes, plan tracks, and manage local files directly from your browser. This web tool is useful for creating detailed travel routes that you can sync to your app or share with others.
 
 
-## Navigation Route
+## Navigation Route {#navigation-route}
 
 To create a navigation route, follow these steps:
 
@@ -53,7 +53,7 @@ To create a navigation route, follow these steps:
 - To share the route, copy the URL. Example: [https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
 
 
-## Create Track and Local Files
+## Create Track and Local Files {#create-track-and-local-files}
 
 OsmAnd Web's [**Plan route**](../plan-route/create-route.md) tool allows you to create and edit tracks similarly to the mobile app. Here's how you can create and manage tracks:
 

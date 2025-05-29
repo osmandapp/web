@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-## Overview
+## Overview {#overview}
 
 The **Route preparation** feature in OsmAnd provides step-by-step navigation guidance for various [routing types](./../routing/osmand-routing.md#routing-types), including [driving](./../routing/car-based-routing.md), [walking](./../routing/pedestrian-routing.md), cycling, [horse riding](./../routing/horse-routing.md), and [skiing](./../routing/ski-routing.md). Users can customize navigation settings, add destinations, and optimize routes for efficiency.
 
@@ -43,7 +43,7 @@ The **Route preparation** feature in OsmAnd provides step-by-step navigation gui
 </Tabs>
 
 
-## Set Destinations
+## Set Destinations {#set-destinations}
 
 **Step 1: Download maps.**
 
@@ -83,7 +83,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
 :::
 
 
-### Navigation Menu  
+### Navigation Menu {#navigation-menu}
 
 There are 3 ways to reach the navigation menu:
 
@@ -121,12 +121,12 @@ Set your destination in the *Navigation menu* using:
 - The **Cancel** button leads back to the main screen.
 - [Start button](#start--stop-navigation) starts navigation after route calculation has ended.
   
-### Select Starting Point
+### Select Starting Point {#select-starting-point}
 
 As for the starting point, you can choose your current location, the location of a [Favorite point](../../map/point-layers-on-map.md#favorites), select a point on the map, or use [Search](../../search/index.md). You can also set a starting point in [map context menu](../../map/map-context-menu.md) by selecting the [Directions from](../../map/map-context-menu.md#directions-to--from) function.  
 
 
-### Set Target Point
+### Set Target Point {#set-target-point}
 
 <Tabs groupId="operating-systems">
 
@@ -153,7 +153,7 @@ The most important thing to start navigation is to determine your destination. T
 - **Swap Starting point and Destination** &nbsp;&#8595;&#8593; - Allows to swap *Start* and *Finish* points.
 
 
-### Intermediate Destinations
+### Intermediate Destinations {#intermediate-destinations}
 
 <Tabs groupId="operating-systems">
 
@@ -208,7 +208,7 @@ In this menu you can find additional options for managing the destination points
 
 - **<Translate android="true" ids="clear_all_intermediates"/>**. All the intermediate destinations will be removed from the map.
 
-### Use Home or Work Points
+### Use Home or Work Points {#use-home-or-work-points}
 
 <Tabs groupId="operating-systems">
 
@@ -229,7 +229,7 @@ In this menu you can find additional options for managing the destination points
 **Home** and **Work** tabs (or [Special points](../../personal/favorites.md#special-favorites-personal) for Favorites)  can be used to quickly set destination points in the navigation menu. If you have not entered the addresses of the Special favorites, these cells will remain empty. If you tap this field, you will be prompted to create these POIs.  
 
 
-### History of Previous Routes
+### History of Previous Routes {#history-of-previous-routes}
 
 <Tabs groupId="operating-systems">
 
@@ -257,7 +257,7 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 :::
 
 
-## Start / Stop Navigation
+## Start / Stop Navigation {#start--stop-navigation}
 
 <Tabs groupId="operating-systems">
 
@@ -285,11 +285,11 @@ Once start and end points are selected, the app will create a route between them
 Additional information about the created route, such as altitude, turn-by-turn instructions, analyze tool, and others, can be found in the [**Details**](../setup/route-details.md) section.
 :::
 
-### Route Recalculation
+### Route Recalculation {#route-recalculation}
 
 The route can be recalculated automatically in case of deviation from it. You can change the parameters of the recalculation in the [Navigation settings](../guidance/navigation-settings.md#recalculate-route). You can also disable notification about route recalculation in the settings of [Voice prompts](../guidance/voice-navigation.md#voice-settings).
 
-### Pause / Resume Navigation
+### Pause / Resume Navigation {#pause--resume-navigation}
 
 <InfoAndroidOnly/>
 
@@ -324,7 +324,7 @@ When you **tap the Navigation button** while on your route, navigation **doesn't
 :::
 
 
-### Power-Saving Tips
+### Power-Saving Tips {#power-saving-tips}
 
 Navigation uses GPS and background processing, which can drain the battery. To optimize power usage:
 
@@ -332,12 +332,12 @@ Navigation uses GPS and background processing, which can drain the battery. To o
 - Enable [Screen control](../guidance/voice-navigation.md#screen-control) (*Android only*) in *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>*.
 
 
-## Settings
+## Settings {#settings}
 
 ![Route preparation Android](@site/static/img/navigation/route/navigation_menu_settings_andr.png)
 
 
-### Navigation Settings
+### Navigation Settings {#navigation-settings}
 
 To access the navigation settings, follow one of the steps below:
 
@@ -374,11 +374,11 @@ Please read about route parameters for the corresponding navigation type.
 How to configure [routing type](../routing/osmand-routing.md#routing-types) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters section](../routing/osmand-routing.md#routing-types).  
 
 
-### Simulated Navigation
+### Simulated Navigation {#simulated-navigation}
 
 The **Simulated navigation** tool allows you to preview a route before traveling. This helps with planning, familiarization, and testing OsmAnd's navigation system.
 
-#### Start / Stop Simulation
+#### Start / Stop Simulation {#start--stop-simulation}
 
 <Tabs groupId="operating-systems">
 
@@ -404,7 +404,7 @@ When a navigation route is built, you can start simulating navigation using the 
 - To [Stop](#start--stop-navigation) the navigation simulation, tap **Stop** (*Android*), or **Cancel** (*iOS*).
 
 
-#### Speed Mode
+#### Speed Mode {#speed-mode}
 
 <Tabs groupId="operating-systems">
 
@@ -435,7 +435,7 @@ Go to: *<Translate android="true" ids="shared_string_navigation,shared_string_se
     - **Additional penalties** will be applied at traffic lights, stop signs, and other similar obstacles.
 
 
-## Maps Missing or Not Synchronized
+## Maps Missing or Not Synchronized {#maps-missing-or-not-synchronized}
 
 To build a route all **necessary maps** need to be downloaded and have the same release date. Please note, that in some situations missing maps message could be hidden in the route preparation menu. If you pull the navigation menu up, you will see possible reasons why your route couldn't be calculated.
 
@@ -454,7 +454,7 @@ To build a route all **necessary maps** need to be downloaded and have the same 
 
 </Tabs>
 
-#### Required Maps
+#### Required Maps {#required-maps}
 
 In the required maps dialog you will see suggestions of maps to be downloaded or updated. The list of used maps might be not precise as it calculates a very basic route, to get the precise list of maps you can click **Calculate online**. If you select **Use downloaded maps** then routing calculation will try to use already downloaded maps and skip the warning message.
 
@@ -475,7 +475,7 @@ In the required maps dialog you will see suggestions of maps to be downloaded or
 </Tabs>
 
 
-## Common Issues and Solutions
+## Common Issues and Solutions {#common-issues-and-solutions}
 
 1. [The possible causes of slow route calculation.](../../troubleshooting/navigation.md#route-calculation-is-slow)
 2. [What to do if the route length exceeds 250 kilometers.](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km)
@@ -485,7 +485,7 @@ In the required maps dialog you will see suggestions of maps to be downloaded or
 For more troubleshooting steps, see [navigation issues](../../troubleshooting/navigation.md).
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Route parameters](../routing/osmand-routing.md#routing-types)
 - [Route details](./route-details.md)

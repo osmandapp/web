@@ -2,10 +2,10 @@
 sidebar_position: 7
 ---
 
-# How to Compile OsmAndMapCreator and tools
+# How to Compile OsmAndMapCreator and tools {#how-to-compile-osmandmapcreator-and-tools}
 
 
-## Compile OsmAndMapCreator
+## Compile OsmAndMapCreator {#compile-osmandmapcreator}
 1. First setup the **[development environment](setup-the-dev-environment.md)**.
 2. **Gradle** (command line):
     - Compile with command line 
@@ -29,7 +29,7 @@ sidebar_position: 7
    - net.osmand.obf.preparation.IndexCreator - shortcut to generate obf file.
    - net.osmand.swing.OsmExtractionUI - OsmAndMapCreator
    
-## Compile Native rendering library for OsmAndMapCreator
+## Compile Native rendering library for OsmAndMapCreator {#compile-native-rendering-library-for-osmandmapcreator}
 Native rendering library could be used to test Offline Rendering or Offline Native Routing. It's very useful to debug and test a rendering style or a routing configuration.
 
 1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
@@ -56,7 +56,7 @@ Example:
     core-legacy/binaries/darwin/intel/Debug/libosmand.dylib
   ```
 
-### Troubleshooting 
+### Troubleshooting {#troubleshooting}
 - Missing files externals/libjpeg-turbo/jconfigint.h.in does not exist.
 If you experience that libjpeg-turbo couldn't compile
 ```
@@ -66,7 +66,7 @@ You can find the files here and put them in the specified folder
 https://github.com/osmandapp/OsmAnd-core/blob/legacy_core/externals/jpeg/jconfig.h
 https://github.com/osmandapp/OsmAnd-core/blob/legacy_core/externals/jpeg/jconfigint.h
 
-## Compile qt core version for OsmAndMapCreator
+## Compile qt core version for OsmAndMapCreator {#compile-qt-core-version-for-osmandmapcreator}
 1. First setup the **[development environment](setup-the-dev-environment.md)**.
 2. Prepare build (cmake) for specific target. Example clang / linux :
 ```

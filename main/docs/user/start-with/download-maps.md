@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview
+## Overview {#overview}
 
 Uploading maps to the OsmAnd app is a key step to ensure smooth operation and use of offline navigation. Without offline maps, the app cannot function fully. Downloading maps gives you access to maps of different regions, allowing you to navigate without an Internet connection.  
 
@@ -25,12 +25,12 @@ You have two *main* ways to download maps: **1)** [view the list of regions in t
 Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../map/raster-maps.md), it is recommended to start working with vector maps offline. This type of map (read more about [Map OsmAnd types](../personal/maps-resources.md#map-types) here) ensures reliable operation of all key functions of the application, including [Search](../search/index.md), [Navigation](../navigation/index.md), and [Context menu](../map/map-context-menu.md). This is especially important if your travels include trips to remote locations or places with limited internet access.
 
 
-## Download
+## Download {#download}
 
 Start loading maps from the [initial setup screen](#initial-setup-screen), or go to the main *side menu* *→* [Maps & Resources](#maps-and-resources) and select the required maps from the general list, or [select a region](#select-on-the-map) directly on the map by tapping the region you need.
 
 
-### Initial Setup Screen
+### Initial Setup Screen {#initial-setup-screen}
 
 <Tabs groupId="operating-systems">
 
@@ -53,7 +53,7 @@ Upon launching the application for the first time, you are prompted to download 
 If you are using a VPN, OsmAnd may suggest a map based on the VPN’s virtual location. In such cases, you can manually select a map that better aligns with your actual geographic region.  
 
 
-#### Three-dot menu
+#### Three-dot menu {#three-dot-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -82,7 +82,7 @@ If you are using a VPN, OsmAnd may suggest a map based on the VPN’s virtual lo
 - *Restore from file.* Opens the device's file manager to select and import an `.osf` file.  
 
 
-### Maps and Resources
+### Maps and Resources {#maps-and-resources}
 
 <Tabs groupId="operating-systems">
 
@@ -110,7 +110,7 @@ The [Maps & Resources](../personal/maps-resources.md) screen provides access to 
 - [Local](../personal/maps-resources.md#local). Displays all map data currently stored on your device, including custom and imported resources.
 - [Updates](../personal/maps-resources.md#updates). Enables you to refresh maps monthly to keep your data current.
 
-#### Downloading Maps
+#### Downloading Maps {#downloading-maps}
 
 To download a specific map type for a country or region:
 
@@ -120,7 +120,7 @@ To download a specific map type for a country or region:
 
 You can find information about other types of maps in the [Downloads](../personal/maps-resources.md#downloads) section of the **Maps** article.
 
-### World Map Options
+### World Map Options {#world-map-options}
 
 OsmAnd includes two world map options:  
 
@@ -135,7 +135,7 @@ OsmAnd includes two world map options:
 - **There is no single option to download all world maps at once.**
 
 
-### Select on the map
+### Select on the map {#select-on-the-map}
 
 <Tabs groupId="operating-systems">
 
@@ -159,7 +159,7 @@ One way to download a map is to zoom out on the world map and briefly tap to sel
 On the small screen, the map selected for downloading will be highlighted in yellow, maps that have already been downloaded will be highlighted in green, and deactivated maps will be highlighted in orange. **Deactivated** maps are bypassed to speed up the program in case you have a lot of loaded maps.
 :::
 
-### Search
+### Search {#search}
 
 <Tabs groupId="operating-systems">
 
