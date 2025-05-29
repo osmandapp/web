@@ -12,7 +12,8 @@ import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
 import AppContext from '../../context/AppContext';
 import { updateAllFavorites, updateFavoriteGroups } from '../../manager/FavoritesManager';
 import { useTranslation } from 'react-i18next';
-import { getShareFileInfo, SHARE_TYPE } from '../../manager/ShareManager';
+import { getShareFileInfo } from '../../manager/ShareManager';
+import { SHARE_TYPE } from '../share/shareConstants';
 
 const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDownload, smartf = null }, ref) => {
     const ctx = useContext(AppContext);

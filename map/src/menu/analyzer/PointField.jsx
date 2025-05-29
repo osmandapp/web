@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import styles from './trackanalyzer.module.css';
 import { formatLatLon } from '../navigate/RouteMenu';
 import { parseCoordinate } from './util/PointsManager';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 
 const START_POINT = 'start';
 const FINISH_POINT = 'finish';

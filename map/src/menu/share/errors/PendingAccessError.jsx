@@ -1,12 +1,14 @@
 import { Box, Icon, ListItemText } from '@mui/material';
 import styles from '../../errors/errors.module.css';
-import React from 'react';
+import React, { useContext } from 'react';
 import { ReactComponent as AccessIcon } from '../../../assets/icons/ic_action_sand_clock.svg';
 import { useTranslation } from 'react-i18next';
 import { createAccount } from '../../../manager/LoginManager';
 import BlueBtn from '../../../frame/components/btns/BlueBtn';
+import LoginContext from '../../../context/LoginContext';
 
 export default function PendingAccessError() {
+    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
     return (
@@ -25,7 +27,7 @@ export default function PendingAccessError() {
                 </Box>
             </Box>
             <BlueBtn
-                action={() => createAccount(ctx)}
+                action={() => createAccount(ltx)}
                 text={t('web:access_requested_btn')}
                 additionalStyle={{ color: '#727272 !important', mt: '-15px' }}
                 span={true}

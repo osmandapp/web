@@ -5,7 +5,7 @@ import styles from '../trackfavmenu.module.css';
 import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useInView } from 'react-intersection-observer';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 
 const TravelRoute = ({ route }) => {
     const { ref, inView } = useInView();

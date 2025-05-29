@@ -14,9 +14,11 @@ import DialogContentText from '@mui/material/DialogContentText';
 import { sanitizedFileName } from '../../util/Utils';
 import { saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import Dialog from '@mui/material/Dialog';
+import LoginContext from '../../context/LoginContext';
 
 export default function SaveTrackDialog() {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
 
     const [folder, setFolder] = useState(getOldGroup);
     const [fileName, setFileName] = useState(ctx.selectedGpxFile.name);
@@ -77,6 +79,7 @@ export default function SaveTrackDialog() {
             if (!isTrackExists(preparedName, folder, null, ctx.tracksGroups)) {
                 const uploaded = !!(await saveTrackToCloud({
                     ctx,
+                    ltx,
                     currentFolder: getFolderName(folder),
                     fileName: preparedName,
                     type: TracksManager.GPX_FILE_TYPE,
@@ -100,6 +103,7 @@ export default function SaveTrackDialog() {
             setProcess(true);
             const uploaded = !!(await saveTrackToCloud({
                 ctx,
+                ltx,
                 currentFolder: getFolderName(folder),
                 fileName: preparedName,
                 type: TracksManager.GPX_FILE_TYPE,

@@ -50,10 +50,12 @@ import {
     LARGE_UNIT,
 } from '../../../menu/settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
+import LoginContext from '../../../context/LoginContext';
 
 export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
 
@@ -539,8 +541,8 @@ export default function GeneralInfo({ width }) {
                                   </>
                               )}
                     </div>
-                    {ctx.loginUser &&
-                        ctx.accountInfo?.account !== FREE_ACCOUNT &&
+                    {ltx.loginUser &&
+                        ltx.accountInfo?.account !== FREE_ACCOUNT &&
                         (isLocalTrack(ctx) || isRouteTrack(ctx)) &&
                         isEmptyTrack(ctx.selectedGpxFile) === false && (
                             <>
