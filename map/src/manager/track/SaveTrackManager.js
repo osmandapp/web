@@ -66,6 +66,7 @@ export function saveTrackToLocal({ ctx, track, selected = true, overwrite = fals
 //save to cloud
 export async function saveTrackToCloud({
     ctx,
+    ltx,
     currentFolder,
     fileName,
     type,
@@ -94,7 +95,7 @@ export async function saveTrackToCloud({
         }
     }
 
-    if (ctx.loginUser) {
+    if (ltx.loginUser) {
         if (currentFile) {
             const convertedData = new TextEncoder().encode(currentFile.data);
             const zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });

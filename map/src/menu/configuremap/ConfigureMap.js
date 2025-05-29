@@ -25,25 +25,27 @@ import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.
 import { ReactComponent as PoiIcon } from '../../assets/icons/ic_action_info_outlined.svg';
 import { ReactComponent as TerrainIcon } from '../../assets/icons/ic_action_terrain.svg';
 import { cloneDeep } from 'lodash';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
 import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
-import TracksManager, { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
-import SubTitle from '../components/SubTitle';
+import { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
 import capitalize from 'lodash/capitalize';
 import TerrainConfig from './TerrainConfig';
-import ButtonPro from '../../frame/components/pro/ButtonPro';
+import ButtonPro from '../../frame/pro/ButtonPro';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
-import TopographyProFeatures from '../../frame/components/pro/TopographyProFeatures';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import TopographyProFeatures from '../../frame/pro/TopographyProFeatures';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
+import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import LoginContext from '../../context/LoginContext';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
 
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
     const [openSettings, setOpenSettings] = useState(false);
@@ -86,7 +88,7 @@ export default function ConfigureMap() {
     }
 
     function showProButton() {
-        return ctx.accountInfo?.account === FREE_ACCOUNT;
+        return ltx.accountInfo?.account === FREE_ACCOUNT;
     }
 
     const DEFAULT_CONFIGURE = () => {
@@ -106,7 +108,7 @@ export default function ConfigureMap() {
                         <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
                             {t('configure_map')}
                         </Typography>
-                        {ctx.loginUser && (
+                        {ltx.loginUser && (
                             <Tooltip key={'reset'} title={t('reset_to_default')} arrow placement="bottom-end">
                                 <span>
                                     <IconButton
@@ -123,13 +125,13 @@ export default function ConfigureMap() {
                         )}
                     </Toolbar>
                 </AppBar>
-                {!ctx.loginUser && !ctx.develFeatures ? (
+                {!ltx.loginUser && !ctx.develFeatures ? (
                     <EmptyLogin />
                 ) : (
                     <>
-                        {ctx.loginUser && (
+                        {ltx.loginUser && (
                             <>
-                                <SubTitle title={'shared_string_show'} />
+                                <SubTitleMenu text={t('shared_string_show')} />
                                 <MenuItem
                                     id="se-configure-map-menu-poi-categories"
                                     className={styles.item}
@@ -249,7 +251,7 @@ export default function ConfigureMap() {
                         )}
                         {ctx.develFeatures && (
                             <>
-                                <SubTitle title={'shared_string_appearance'} />
+                                <SubTitleMenu text={t('shared_string_appearance')} />
                                 <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
                                     <FormControl fullWidth>
                                         <InputLabel id="rendering-style-selector-label">

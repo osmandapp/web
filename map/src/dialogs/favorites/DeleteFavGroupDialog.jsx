@@ -8,12 +8,16 @@ import { deleteTrack } from '../../manager/track/DeleteTrackManager';
 import AppContext from '../../context/AppContext';
 import { FAVORITE_FILE_TYPE } from '../../manager/FavoritesManager';
 import DialogContentText from '@mui/material/DialogContentText';
+import LoginContext from '../../context/LoginContext';
 
 export default function DeleteFavGroupDialog({ setOpenDialog, group, setOpenActions, shared }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
     async function deleteGroup() {
         const mapObj = ctx.favorites.mapObjs[group.id];
-        deleteTrack({ file: group.file, ctx, type: FAVORITE_FILE_TYPE, shared }).then(() => removeOldLayer(mapObj));
+        deleteTrack({ file: group.file, ctx, ltx, type: FAVORITE_FILE_TYPE, shared }).then(() =>
+            removeOldLayer(mapObj)
+        );
         if (setOpenActions) {
             setOpenActions(false);
         }

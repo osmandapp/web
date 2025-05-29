@@ -13,9 +13,11 @@ import { LatLng } from 'leaflet';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../../../manager/GlobalManager';
 import { useNavigate } from 'react-router-dom';
 import BlueBtn from '../../../../frame/components/btns/BlueBtn';
+import LoginContext from '../../../../context/LoginContext';
 
 export default function PoiActionsButtons({ wpt }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
     const navigate = useNavigate();
@@ -25,7 +27,7 @@ export default function PoiActionsButtons({ wpt }) {
     const lon = wpt.latlon?.lon;
 
     function addToFavorite() {
-        if (ctx.loginUser) {
+        if (ltx.loginUser) {
             const location =
                 ctx.selectedWpt?.poi?.latlng ??
                 new LatLng(ctx.selectedWpt?.poi.geometry.coordinates[1], ctx.selectedWpt?.poi.geometry.coordinates[0]);
