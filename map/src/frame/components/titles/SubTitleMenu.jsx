@@ -4,7 +4,7 @@ import styles from './titles.module.css';
 
 export default function SubTitleMenu({ text }) {
     return (
-        <MenuItem className={styles.subtitleItem}>
+        <MenuItem sx={{ pointerEvents: 'none' }} className={styles.subtitleItem}>
             <Typography className={styles.subtitle} noWrap>
                 {text}
             </Typography>
