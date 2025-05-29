@@ -1,0 +1,216 @@
+.productCard {
+    display: flex !important;
+    padding: 25px 0px 20px 0px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    align-self: stretch !important;
+    border-radius: 13px !important;
+    border: 1px solid #CCC !important;
+    background: #FFF !important;
+    max-width: 300px !important;
+}
+.productCardTitle {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 30px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 120% !important;
+    letter-spacing: 0.3px !important;
+}
+.productCardIcon {
+    min-width: 36px !important;
+    max-width: 36px !important;
+}
+.productCardFeatureIcon {
+    min-width: 24px !important;
+    max-width: 24px !important;
+    margin-top: 3px !important;
+}
+.productCardFeature {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    align-self: stretch !important;
+    padding: 0 0px 0px 0px !important;
+}
+.productCardFeatureBox {
+    display: flex !important;
+    width: 260px !important;
+    padding: 12px 0px 6px 0px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 9px !important;
+    margin-bottom: 16px !important;
+}
+.purchaseTypeCard {
+    display: flex !important;
+    width: 260px !important;
+    padding: 12px 0px 12px 0px !important;
+    gap: 3px !important;
+    border-radius: 6px !important;
+    border: 1px solid #CCC !important;
+}
+.purchaseTypeCardBox {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 6px !important;
+    align-self: stretch !important;
+}
+.purchaseTypeCardTitle {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.16px !important;
+    margin-left: 16px !important;
+}
+.purchaseTypeCardNewPrice {
+    color: #237BFF !important;
+    font-family: Roboto !important;
+    font-size: 20px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 140% !important;
+}
+.purchaseTypeCardOldPrice {
+    color: #666 !important;
+    font-family: Roboto !important;
+    font-size: 20px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 140% !important;
+    text-decoration: line-through !important;
+}
+.productTypeSale {
+    border-radius: 3px !important;
+    background: #12B38B !important;
+    display: flex!important;
+    padding: 0px 3px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+    color: #FFF !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+    margin-left: 16px !important;
+}
+.pricingTitle {
+    color: var(--text-primary) !important;
+    text-align: center !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 40px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 120% !important;
+    letter-spacing: 0.4px !important;
+}
+.pricingDesc {
+    color: var(--text-secondary) !important;
+    text-align: center !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.16px !important;
+}
+.pricingTableContainer {
+    display: flex !important;
+    width: 1280px !important;
+    height: 4080px !important;
+    align-items: flex-start !important;
+    flex-shrink: 0 !important;
+}
+
+.pricingTable {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.categoryRow .categoryCell {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    padding: 16px;
+}
+
+.featureRow .featureCell {
+    padding: 8px 16px;
+    vertical-align: top;
+}
+
+.featureName {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.16px !important;
+}
+
+.featureDesc {
+    font-size: 0.875rem;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 4px;
+    color: var(--text-secondary) !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+}
+
+.featureCell {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+.checkIcon {
+    width: 20px;
+    height: 20px;
+}
+.categoryTitle {
+    color: var(--text-primary)  !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 120% !important;
+    letter-spacing: 0.48px !important;
+}
+.featureIcon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+.featureContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 12px;
+}
+.planCell{
+    text-align: center;
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    white-space: nowrap;
+}
