@@ -156,6 +156,8 @@
     table-layout: fixed;
     text-align: center;
     min-width: 640px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+    border-bottom: none !important;
 }
 
 .categoryCell {
@@ -168,11 +170,6 @@
     font-weight: 500 !important;
     line-height: 120% !important;
     letter-spacing: 0.48px !important;
-}
-
-.featureRow .featureCell {
-    padding: 8px 16px;
-    vertical-align: top;
 }
 
 .featureName {
@@ -295,10 +292,6 @@
     line-height: 120% !important;
     letter-spacing: 0.48px !important;
     padding-bottom: 0 !important;
-}
-.pricingTable {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
-    border-bottom: none !important;
 }
 .pricingTable tbody {
     border: none !important;
