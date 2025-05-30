@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { products } from './ProductManager';
+import React, { useContext } from 'react';
+import { products, purchase } from './ProductManager';
 import {
     Box,
     Card,
@@ -16,16 +16,41 @@ import { ReactComponent as CheckIcon } from '../../assets/icons/ic_action_checkm
 import PurchaseTypeItem from './PurchaseTypeItem';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import { useTranslation } from 'react-i18next';
+import LoginContext from '../../context/LoginContext';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { createFastSpringPurchase } from '../../login/fs/FastSpringHelper';
 
-export default function ProductCard({ productId }) {
+export default function ProductCard({ productId, type, setType, testMode }) {
+    const ltx = useContext(LoginContext);
+
     const { t } = useTranslation();
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const product = products.find((p) => p.id === productId);
 
-    const [type, setType] = useState('');
-
     function onClick() {
-        // Handle the click event for the purchase button
+        if (productId === 'osmand-start') {
+            createNewAccount();
+        }
+        purchaseProduct();
+    }
+
+    function createNewAccount() {
+        if (!ltx.loginUser) {
+            navigate({
+                pathname: MAIN_URL_WITH_SLASH + LOGIN_URL,
+                hash: location.hash,
+            });
+        }
+    }
+
+    function purchaseProduct() {
+        const selectedProduct = purchase[type].find((p) => p.id === productId);
+        if (selectedProduct) {
+            createFastSpringPurchase({ testMode, ltx, selectedProducts: [selectedProduct.fsName] });
+        }
     }
 
     return (
@@ -59,6 +84,7 @@ export default function ProductCard({ productId }) {
                                 className={styles.purchaseTypeCardBox}
                                 row
                                 value={type}
+                                name={`purchase-type-${productId}`}
                                 onChange={(e) => setType(e.target.value)}
                             >
                                 {product.purchaseTypes.map((pt) => (

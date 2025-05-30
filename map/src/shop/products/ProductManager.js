@@ -69,6 +69,8 @@ export const purchase = {
             oldPrice: null,
             newPrice: '2.99',
             currency: '€',
+            sku: 'net.osmand.fastspring.subscription.pro.monthly',
+            fsName: 'osmand-pro-monthly',
         },
     ],
     annual: [
@@ -78,20 +80,34 @@ export const purchase = {
             newPrice: '14.99',
             currency: '€',
             save: 'Save 36%',
+            sku: 'net.osmand.fastspring.subscription.pro.annual',
+            fsName: 'osmand-pro-annual',
         },
         {
             id: 'osmand-maps-plus',
             oldPrice: '29.99',
             newPrice: '9.99',
             currency: '€',
+            sku: 'net.osmand.fastspring.subscription.maps.annual',
+            fsName: 'osmand-maps-annual',
         },
     ],
     'one-time': [
+        {
+            id: 'osmand-maps-plus',
+            oldPrice: null,
+            newPrice: '39.99',
+            currency: '€',
+            sku: 'net.osmand.fastspring.maps.inapp',
+            fsName: 'osmand-maps',
+        },
         {
             id: 'osmand-decade',
             oldPrice: '399',
             newPrice: '249',
             currency: '€',
+            sku: 'net.osmand.fastspring.inapp.pro.15y',
+            fsName: 'osmand-15-years',
         },
     ],
 };

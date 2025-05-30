@@ -1,4 +1,4 @@
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import { features, planFeatures } from './FeaturesManager';
 import { ReactComponent as CheckIcon } from '../../assets/icons/ic_action_checkmark_colored_day.svg';
 import { ReactComponent as ItemNotIncludedIcon } from '../../assets/icons/ic_action_item_not_included.svg';
@@ -6,7 +6,6 @@ import React from 'react';
 import styles from '../shop.module.css';
 import { useTranslation } from 'react-i18next';
 import { products } from '../products/ProductManager';
-import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 
 const grouped = features.reduce((acc, feat) => {
     (acc[feat.category] = acc[feat.category] || []).push(feat);
@@ -42,7 +41,7 @@ export default function FeaturesTable() {
                                 )}
                             </TableRow>
                             {feats.map((feat) => (
-                                <>
+                                <React.Fragment key={feat.id}>
                                     <TableRow key={feat.id} className={styles.featureRow}>
                                         <TableCell className={styles.featureCell}>
                                             <div className={styles.featureWrapper}>
@@ -63,8 +62,7 @@ export default function FeaturesTable() {
                                             </TableCell>
                                         ))}
                                     </TableRow>
-                                    <DividerWithMargin margin={'60px'} />
-                                </>
+                                </React.Fragment>
                             ))}
                         </React.Fragment>
                     ))}

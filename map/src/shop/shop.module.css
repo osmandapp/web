@@ -161,7 +161,6 @@
 .featureRow .featureCell {
     padding: 8px 16px;
     vertical-align: top;
-    border: none !important;
 }
 
 .featureName {

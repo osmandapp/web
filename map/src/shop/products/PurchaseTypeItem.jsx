@@ -48,7 +48,7 @@ export default function PurchaseTypeItem({ type, productId, selected, onChange }
                     </Box>
                     {purchaseObj.save && <Typography className={styles.productTypeSale}>{purchaseObj.save}</Typography>}
                 </Box>
-                <Radio sx={{ mr: 1 }} value={type} checked={selected === type} onChange={onChange} />
+                <Radio sx={{ mr: 1 }} value={type} checked={selected === type} />
             </Box>
         </Box>
     );

@@ -12,14 +12,10 @@ import InAppItem from './InAppItem';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleText from '../../frame/components/other/SimpleText';
 import { IN_APP, SUBSCRIPTION } from './PurchaseInfo';
-import { purchases } from '../fs/FastSpringHelper';
-import AppContext from '../../context/AppContext';
-import FastSpringBlock from '../fs/FastSpringBlock';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 export default function PurchasesMenu() {
     const ltx = useContext(LoginContext);
-    const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -109,7 +105,6 @@ export default function PurchasesMenu() {
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SubTitleMenu text={t('troubleshooting')} />
                             <SimpleText text={'If you have any questions, please contact us at support@osmand.net'} />
-                            {ctx.develFeatures && ltx.loginUser && <FastSpringBlock />}
                         </Box>
                     )}
                 </Box>
