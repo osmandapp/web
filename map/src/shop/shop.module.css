@@ -5,8 +5,8 @@
     align-items: center !important;
     align-self: stretch !important;
     border-radius: 13px !important;
-    border: 1px solid #CCC !important;
-    background: #FFF !important;
+    border: 1px solid #ccc !important;
+    background: #fff !important;
     max-width: 300px !important;
 }
 .productCardTitle {
@@ -51,7 +51,7 @@
     padding: 12px 0px 12px 0px !important;
     gap: 3px !important;
     border-radius: 6px !important;
-    border: 1px solid #CCC !important;
+    border: 1px solid #ccc !important;
 }
 .purchaseTypeCardBox {
     display: flex !important;
@@ -72,7 +72,7 @@
     margin-left: 16px !important;
 }
 .purchaseTypeCardNewPrice {
-    color: #237BFF !important;
+    color: #237bff !important;
     font-family: Roboto !important;
     font-size: 20px !important;
     font-style: normal !important;
@@ -90,13 +90,13 @@
 }
 .productTypeSale {
     border-radius: 3px !important;
-    background: #12B38B !important;
-    display: flex!important;
+    background: #12b38b !important;
+    display: flex !important;
     padding: 0px 3px !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 10px !important;
-    color: #FFF !important;
+    color: #fff !important;
     font-family: Roboto !important;
     font-size: 14px !important;
     font-style: normal !important;
@@ -115,6 +115,7 @@
     font-weight: 700 !important;
     line-height: 120% !important;
     letter-spacing: 0.4px !important;
+    margin-top: 104px !important;
 }
 .pricingDesc {
     color: var(--text-secondary) !important;
@@ -126,13 +127,16 @@
     font-weight: 400 !important;
     line-height: 150% !important;
     letter-spacing: 0.16px !important;
+    margin-top: 30px !important;
+    margin-bottom: 36px !important;
+    max-width: 1280px !important;
 }
 .pricingTableContainer {
     display: flex !important;
     width: 1280px !important;
-    height: 4080px !important;
     align-items: flex-start !important;
     flex-shrink: 0 !important;
+    margin-bottom: 20px !important;
 }
 
 .pricingTable {
@@ -166,7 +170,6 @@
 .featureDesc {
     font-size: 0.875rem;
     color: rgba(0, 0, 0, 0.6);
-    margin-top: 4px;
     color: var(--text-secondary) !important;
     font-family: Roboto !important;
     font-size: 14px !important;
@@ -178,8 +181,8 @@
 
 .featureCell {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    padding: 8px 16px;
 }
 
 .checkIcon {
@@ -187,7 +190,7 @@
     height: 20px;
 }
 .categoryTitle {
-    color: var(--text-primary)  !important;
+    color: var(--text-primary) !important;
     font-feature-settings: 'liga' off !important;
     font-family: Roboto !important;
     font-size: 16px !important;
@@ -205,12 +208,29 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 12px;
 }
-.planCell{
+.planCell {
     text-align: center;
     width: 80px;
     min-width: 80px;
     max-width: 80px;
     white-space: nowrap;
+}
+.featureWrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.pricingBox {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+}
+.productCardBox {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 24px !important;
+    justify-content: center !important;
 }

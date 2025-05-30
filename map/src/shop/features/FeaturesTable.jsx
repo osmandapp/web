@@ -1,15 +1,10 @@
-import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
-import {features, planFeatures} from "./FeaturesManager";
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { features, planFeatures } from './FeaturesManager';
 import { ReactComponent as CheckIcon } from '../../assets/icons/ic_action_checkmark_colored_day.svg';
 import React from 'react';
 import styles from '../shop.module.css';
-import {useTranslation} from "react-i18next";
-
-const plans = [
-    { key: 'osmand-start', label: 'Start' },
-    { key: 'osmand-maps-plus', label: 'Maps+' },
-    { key: 'osmand-pro', label: 'OsmAnd Pro' },
-];
+import { useTranslation } from 'react-i18next';
+import { products } from '../products/ProductManager';
 
 const grouped = features.reduce((acc, feat) => {
     (acc[feat.category] = acc[feat.category] || []).push(feat);
@@ -17,8 +12,9 @@ const grouped = features.reduce((acc, feat) => {
 }, {});
 
 export default function FeaturesTable() {
-
     const { t } = useTranslation();
+
+    const plans = products.filter((p) => p.show).map((p) => ({ key: p.id, label: t(p.name) }));
 
     return (
         <TableContainer component={Paper} className={styles.pricingTableContainer}>
@@ -43,12 +39,14 @@ export default function FeaturesTable() {
                             </TableRow>
                             {feats.map((feat) => (
                                 <TableRow key={feat.id} className="featureRow">
-                                    <TableCell className="featureCell">
-                                        <div className={styles.featureName}>
-                                            {feat.icon}
-                                            <span>{t(feat.name)}</span>
+                                    <TableCell className={styles.featureCell}>
+                                        <div className={styles.featureWrapper}>
+                                            <div className={styles.featureIcon}>{feat.icon}</div>
+                                            <div className={styles.featureContent}>
+                                                <div className={styles.featureName}>{t(feat.name)}</div>
+                                                <div className={styles.featureDesc}>{t(feat.desc)}</div>
+                                            </div>
                                         </div>
-                                        <div className={styles.featureDesc}>{t(feat.desc)}</div>
                                     </TableCell>
                                     {plans.map((plan) => (
                                         <TableCell key={plan.key} className={styles.planCell}>

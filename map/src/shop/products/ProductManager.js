@@ -14,6 +14,7 @@ export const products = [
             'web:feature_settings_favorites_sync',
         ],
         btnText: 'web:create_account_btn',
+        show: true,
     },
     {
         id: 'osmand-maps-plus',
@@ -28,6 +29,7 @@ export const products = [
         ],
         btnText: 'web:action_subscribe_monthly',
         purchaseTypes: ['annual', 'one-time'],
+        show: true,
     },
     {
         id: 'osmand-pro',
@@ -44,6 +46,7 @@ export const products = [
         ],
         btnText: 'web:action_subscribe_monthly',
         purchaseTypes: ['monthly', 'annual'],
+        show: true,
     },
     {
         id: 'osmand-decade',
@@ -55,6 +58,7 @@ export const products = [
         ],
         btnText: 'web:action_compete_purchase',
         purchaseTypes: ['one-time'],
+        show: false,
     },
 ];
 
