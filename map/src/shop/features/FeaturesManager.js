@@ -14,7 +14,7 @@ import { ReactComponent as SrtmIcon } from '../../assets/features/ic_action_srtm
 import { ReactComponent as CarplayIcon } from '../../assets/features/ic_action_srtm_colored_day.svg';
 import { ReactComponent as VehicleMetricsIcon } from '../../assets/features/ic_action_vehicle_metrics_colored_day.svg';
 import { ReactComponent as ExternalSensorIcon } from '../../assets/features/ic_action_external_sensor_colored_day.svg';
-import { ReactComponent as WikimediaIcon } from '../../assets/features/ic_action_srtm_colored_day.svg';
+import { ReactComponent as WikimediaIcon } from '../../assets/features/ic_action_wikipedia_download_colored_day.svg';
 import { ReactComponent as WikipediaDownloadIcon } from '../../assets/features/ic_action_wikipedia_download_colored_day.svg';
 import { ReactComponent as BackpackIcon } from '../../assets/features/ic_action_backpack_colored_day.svg';
 import { ReactComponent as NauticalChartsIcon } from '../../assets/features/ic_action_nautical_charts_colored.svg';
@@ -53,21 +53,21 @@ export const features = [
         id: 'osmand_cloud_backup',
         name: 'web:feature_osmand_cloud_backup',
         desc: 'web:feature_osmand_cloud_backup_desc',
-        icon: <BackpackIcon />,
+        icon: <CloudUploadIcon />,
         category: 'Backup & Sync',
     },
     {
         id: 'advanced_route_coloring',
         name: 'web:feature_advanced_route_coloring',
         desc: 'web:feature_advanced_route_coloring_desc',
-        icon: <WidgetsIcon />,
+        icon: <CloudUploadIcon />,
         category: 'Pro Features',
     },
     {
         id: 'elevation_profile',
         name: 'web:feature_elevation_profile',
         desc: 'web:feature_elevation_profile_desc',
-        icon: <CloudUploadIcon />,
+        icon: <WidgetsIcon />,
         category: 'Pro Features',
     },
     {
@@ -123,7 +123,7 @@ export const features = [
         id: 'terrain_visualization',
         name: 'web:feature_terrain_visualization',
         desc: 'web:feature_terrain_visualization_desc',
-        icon: <CarplayIcon />,
+        icon: <Relief3dIcon />,
         category: 'Topography',
     },
     {
@@ -165,14 +165,14 @@ export const features = [
         id: 'offline_wikivoyage',
         name: 'web:feature_offline_wikivoyage',
         desc: 'web:feature_offline_wikivoyage_desc',
-        icon: <CloudUploadIcon />,
+        icon: <BackpackIcon />,
         category: 'Wikipedia & Travel guides',
     },
     {
         id: 'nautical_map_view',
         name: 'web:feature_nautical_map_view',
         desc: 'web:feature_nautical_map_view_desc',
-        icon: <CloudUploadIcon />,
+        icon: <NauticalChartsIcon />,
         category: 'Nautical',
     },
     {

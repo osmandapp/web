@@ -143,17 +143,25 @@
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
+    text-align: center;
 }
 
-.categoryRow .categoryCell {
-    background-color: #f5f5f5;
-    font-weight: 600;
-    padding: 16px;
+.categoryCell {
+    border-bottom: none !important;
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 120% !important;
+    letter-spacing: 0.48px !important;
 }
 
 .featureRow .featureCell {
     padding: 8px 16px;
     vertical-align: top;
+    border: none !important;
 }
 
 .featureName {
@@ -210,7 +218,7 @@
     justify-content: center;
 }
 .planCell {
-    text-align: center;
+    text-align: center !important;
     width: 80px;
     min-width: 80px;
     max-width: 80px;
@@ -233,4 +241,39 @@
     flex-direction: row !important;
     gap: 24px !important;
     justify-content: center !important;
+}
+.pricingTable .MuiTableCell-root {
+    border: none !important;
+}
+.pricingTable thead th:not(:last-child) {
+    border-right: none !important;
+    position: relative;
+}
+.pricingTable thead th:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    bottom: 0;
+    width: 1px;
+    background-color: #ccc;
+}
+.pricingTable thead th {
+    border-bottom: none !important;
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 120% !important;
+    letter-spacing: 0.48px !important;
+    padding-bottom: 0 !important;
+}
+.pricingTable {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+    border-bottom: none !important;
+}
+.pricingTable tbody {
+    border: none !important;
 }
