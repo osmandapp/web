@@ -234,6 +234,20 @@
     min-width: 80px !important;
     max-width: 80px !important;
     white-space: nowrap !important;
+    border-bottom: none !important;
+}
+.pricingTable tbody .planCell {
+    position: relative;
+}
+
+.pricingTable tbody .planCell::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.12);
 }
 .featureWrapper {
     display: flex;
@@ -297,4 +311,20 @@
     .featureIcon {
         margin-bottom: 8px !important;
     }
+}
+
+.featureRow .featureCell {
+    position: relative;
+    padding: 8px 16px;
+    border-bottom: none;
+}
+
+.featureRow .featureCell::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 60px;
+    right: 0;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.12);
 }
