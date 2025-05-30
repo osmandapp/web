@@ -23,7 +23,7 @@ export default function FeaturesTable() {
             <Table className={styles.pricingTable}>
                 <TableHead>
                     <TableRow>
-                        <TableCell>{'Features'}</TableCell>
+                        <TableCell>{t('features_menu_group')}</TableCell>
                         {plans.map((plan) => (
                             <TableCell key={plan.key} className={styles.planCell}>
                                 {plan.label}
@@ -35,7 +35,7 @@ export default function FeaturesTable() {
                     {Object.entries(grouped).map(([category, feats]) => (
                         <React.Fragment key={category}>
                             <TableRow className={styles.categoryRow}>
-                                {category !== 'Features' && (
+                                {category !== t('features_menu_group') && (
                                     <TableCell className={styles.categoryCell} colSpan={plans.length + 1}>
                                         {category}
                                     </TableCell>
