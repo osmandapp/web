@@ -1,7 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import HeaderMenu from '../frame/components/header/HeaderMenu';
 import React, { useState } from 'react';
-import { useWindowSize } from '../util/hooks/useWindowSize';
 import ProductCard from './products/ProductCard';
 import styles from './shop.module.css';
 import { useTranslation } from 'react-i18next';
@@ -9,8 +8,6 @@ import FeaturesTable from './features/FeaturesTable';
 
 export default function PricingPage() {
     const { t } = useTranslation();
-
-    const [, height] = useWindowSize();
 
     const [selectedProductType, setSelectedProductType] = useState('');
 
@@ -25,12 +22,12 @@ export default function PricingPage() {
     return (
         <Box>
             <HeaderMenu />
-            <Box sx={{ overflowY: 'auto', maxHeight: `${height}px` }}>
+            <Box sx={{ overflowY: 'auto', maxHeight: `100vh` }}>
                 <Box className={styles.pricingBox}>
-                    <Typography className={styles.pricingTitle} noWrap onClick={clickHandler}>
+                    <Typography className={styles.pricingTitle} onClick={clickHandler}>
                         {`${t('web:label_pricing')}${useTestMode ? ' TEST MODE' : ''}`}
                     </Typography>
-                    <Typography className={styles.pricingDesc} noWrap>
+                    <Typography className={styles.pricingDesc}>
                         {t('web:subtitle_choose_your_ideal_osmand_plan')}
                     </Typography>
                     <Box className={styles.productCardBox}>

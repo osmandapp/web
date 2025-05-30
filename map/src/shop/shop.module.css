@@ -139,11 +139,23 @@
     margin-bottom: 20px !important;
 }
 
+@media (max-width: 1300px) {
+    .pricingTableContainer {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        align-items: flex-start !important;
+        flex-shrink: 0 !important;
+        margin-bottom: 20px !important;
+    }
+}
+
 .pricingTable {
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
     text-align: center;
+    min-width: 640px;
 }
 
 .categoryCell {
@@ -218,10 +230,10 @@
 }
 .planCell {
     text-align: center !important;
-    width: 80px;
-    min-width: 80px;
-    max-width: 80px;
-    white-space: nowrap;
+    width: 80px !important;
+    min-width: 80px !important;
+    max-width: 80px !important;
+    white-space: nowrap !important;
 }
 .featureWrapper {
     display: flex;
@@ -240,6 +252,7 @@
     flex-direction: row !important;
     gap: 24px !important;
     justify-content: center !important;
+    flex-wrap: wrap !important;
 }
 .pricingTable .MuiTableCell-root {
     border: none !important;
@@ -275,4 +288,13 @@
 }
 .pricingTable tbody {
     border: none !important;
+}
+@media (max-width: 600px) {
+    .featureWrapper {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    .featureIcon {
+        margin-bottom: 8px !important;
+    }
 }
