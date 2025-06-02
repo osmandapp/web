@@ -11,6 +11,14 @@
     box-shadow: none !important;
     flex: 0 0 auto !important;
 }
+.productCard:hover {
+    outline: 2px solid #237bff;
+    outline-offset: -2px;
+}
+.productCard.selected {
+    outline: 2px solid #237bff;
+    box-shadow: 0 0 0 6px #deebff !important;
+}
 .productCardTitle {
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off !important;
@@ -326,7 +334,6 @@
     position: relative;
     padding: 14px 16px;
     border-bottom: none;
-
 }
 
 .featureRow .featureCell::after {

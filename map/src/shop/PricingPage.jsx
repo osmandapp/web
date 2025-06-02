@@ -12,6 +12,7 @@ export default function PricingPage() {
     const [selectedProductType, setSelectedProductType] = useState('');
 
     const [useTestMode, setUseTestMode] = useState(false);
+    const [selectedCardId, setSelectedCardId] = useState(null);
 
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
@@ -36,8 +37,13 @@ export default function PricingPage() {
                                 key={id}
                                 productId={id}
                                 type={selectedProductType[id] || ''}
-                                setType={(type) => setSelectedProductType({ [id]: type })}
+                                setType={(type) => {
+                                    setSelectedProductType({ [id]: type });
+                                    setSelectedCardId(id);
+                                }}
                                 testMode={useTestMode}
+                                isSelected={selectedCardId === id}
+                                setSelectedCardId={setSelectedCardId}
                             />
                         ))}
                     </Box>

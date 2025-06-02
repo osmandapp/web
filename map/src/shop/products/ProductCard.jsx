@@ -21,7 +21,7 @@ import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { createFastSpringPurchase } from '../../login/fs/FastSpringHelper';
 
-export default function ProductCard({ productId, type, setType, testMode }) {
+export default function ProductCard({ productId, type, setType, testMode, isSelected, setSelectedCardId }) {
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
@@ -54,7 +54,10 @@ export default function ProductCard({ productId, type, setType, testMode }) {
     }
 
     return (
-        <Card className={styles.productCard}>
+        <Card
+            onClick={() => setSelectedCardId(productId)}
+            className={`${styles.productCard} ${isSelected ? styles.selected : ''}`}
+        >
             <Box
                 sx={{
                     display: 'flex',
