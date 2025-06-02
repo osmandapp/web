@@ -310,7 +310,6 @@
 }
 @media (max-width: 1300px) {
     .productCardBox {
-        overflow-x: auto !important;
         display: flex !important;
         flex-direction: row !important;
         gap: 24px !important;
