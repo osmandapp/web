@@ -13,12 +13,12 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## OsmAnd Video Resources
+## OsmAnd Video Resources {#osmand-video-resources}
 
 We’ve curated an extensive collection of video tutorials and guides on our [official OsmAnd YouTube channel](https://www.youtube.com/@OsmAndMapsNavigation/playlists), specifically designed for our global user base. The playlists are conveniently organized by language, making it simple to find tutorials, feature overviews, and user-generated content in your preferred language. Whether you want to deepen your understanding of OsmAnd, learn new features, or discover how the community uses OsmAnd, you will find something useful. The following sections provide direct links to the playlists available in different languages.
 
 
-### Playlists by Language
+### Playlists by Language {#playlists-by-language}
 
 - **[English](https://www.youtube.com/watch?v=-Rf4aXfnYIg&list=PL2sj0drrh65F3QZqpulFGG3uNv_5TDagl&ab_channel=BartEisenberg)**
 - **[German](https://www.youtube.com/watch?v=iWnFp2UQ_Tw&list=PL2sj0drrh65FEyB4KzntPa5bVKq6RVS7q&ab_channel=BikeArenaSonneberg)**
@@ -34,18 +34,18 @@ We’ve curated an extensive collection of video tutorials and guides on our [of
 
 We frequently update these playlists to ensure you have the most up-to-date information on OsmAnd’s features and tools.
 
-## Featured Tutorials
+## Featured Tutorials {#featured-tutorials}
 
 Here are some highlighted examples from our video collection. These videos provide in-depth looks into specific OsmAnd features across different languages, making it easier for users to understand and optimize the app for their needs.
 
-### English: Elevation Preview for Android & iOS
+### English: Elevation Preview for Android & iOS {#english-elevation-preview-for-android--ios}
 
 - **Video**: _Previewing Elevaton: OsmAnd for Android & iOS (versions 4.5)_  
 - From [Bart Eisenberg](https://www.youtube.com/@barteisenberg)  
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/QXEnPR-oQSE" title="Previewing Elevation: OsmAnd for Android &amp; iOS (versions 4.5)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### English: Full tutorial
+### English: Full tutorial {#english-full-tutorial}
 
 - **Video**: _OsmAnd Trekking, travel Offline Trails📱_
 - From [LoHike](https://www.youtube.com/@lohike4083)
@@ -53,28 +53,28 @@ Here are some highlighted examples from our video collection. These videos provi
 <iframe width="770" height="433" src="https://www.youtube.com/embed/U1g0A5ZyVHQ" title="⛰️ Best Hiking App❗️OsmAnd Trekking, travel Offline Trails📱" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-### French: Creating GPX Tracks
+### French: Creating GPX Tracks {#french-creating-gpx-tracks}
 
 - **Video**: _Tutoriel Osmand: Comment créer directement une trace GPX avec Osmand_  
 - From [One World To Discover](https://www.youtube.com/@oneworldtodiscover9962)  
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/3YKlAX5ocH4?list=PL2sj0drrh65F41lmfqtPcWep5pJBkKmX_" title="Tutoriel Osmand : Comment créer directement une trace GPX avec Osmand" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### German: Camper Navigation Tips
+### German: Camper Navigation Tips {#german-camper-navigation-tips}
 
 - **Video**: _Wohnmobil Navigation App - mein Geheimtipp_  
 - From [Fan 4 Van](https://www.youtube.com/@fan4van)  
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/dCGD6NmcnMI?list=PL2sj0drrh65FEyB4KzntPa5bVKq6RVS7q" title="Wohnmobil Navigation App - Mein Geheimtipp" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Italian: Motorcycle Travel Guide
+### Italian: Motorcycle Travel Guide {#italian-motorcycle-travel-guide}
 
 - **Video**: _TUTORIAL: Osmand per chi viaggia in moto e tutto quello che c'è da sapere per sfruttarlo al meglio!_  
 - From [PARTIREper - Gionata Nencini](https://www.youtube.com/@partire_per)  
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/ulcEj46rgOw?list=PL2sj0drrh65G3W23XOVLtRFHwIEFV9zwX" title="TUTORIAL: Osmand per chi viaggia in moto e tutto quello che c&#39;è da sapere per sfruttarlo al meglio!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Spanish: Off-Road Ride on the Motorcycle
+### Spanish: Off-Road Ride on the Motorcycle {#spanish-off-road-ride-on-the-motorcycle}
 
 - **Video**: _The TRK502X on Hell's Slope_  
 - From [Pedro on a Trail Bike](https://www.youtube.com/@pedroenmototrail)  
@@ -82,7 +82,7 @@ Here are some highlighted examples from our video collection. These videos provi
 <iframe width="770" height="433" src="https://www.youtube.com/embed/1Q_JFDeMEZA?list=PL2sj0drrh65FNIJ7WS58CAgCnJOb0-rTf" title="THE TRK502X ON HELL&#39;S SLOPE/🤘✌️🫣 #benellitrk502x" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-## Engage with OsmAnd: Share, Suggest, and Connect
+## Engage with OsmAnd: Share, Suggest, and Connect {#engage-with-osmand-share-suggest-and-connect}
 
 If you have suggestions for content or would like your video to be featured on our channel, feel free to get in touch. We’re always looking for fresh, high-quality contributions to expand our OsmAnd video library.  
 

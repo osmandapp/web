@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Navigation articles
+## Navigation articles {#navigation-articles}
 
 OsmAnd Navigation tool is designed to help you to build a route the way you would like it to be, offering a fully customizable map screen, turn-by-turn directions, additional voice prompts, or other notifications. It is an especially useful tool for travelers who want to explore new places without relying on an internet connection.
 

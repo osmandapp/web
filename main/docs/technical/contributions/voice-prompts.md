@@ -2,10 +2,10 @@
 sidebar_position: 4
 ---
 
-# Navigation Voice Prompts
+# Navigation Voice Prompts {#navigation-voice-prompts}
 
 
-## 1. Some Basics
+## 1. Some Basics {#1-some-basics}
 
 * OsmAnd supports both Text-to-Speech (TTS) synthesized prompts and pre-recorded voices.
 * Using a TTS voice is preferred, it is more flexible and can e.g. also prononuce the names of places or streets.
@@ -30,20 +30,20 @@ The _tts.js_ config files should contain a header as follows, keeping track of w
 // (X) Support announcing highway exits
 ```
 
-## 2. Voice Languages and Variants
+## 2. Voice Languages and Variants {#2-voice-languages-and-variants}
 
 * Some common language voice prompt packages are pre-installed in OsmAnd, others require a one-time download. (Please note that also the pre-installed ones appear as if they were a download.)
 * For some languages we offer different regional variants. Hearing also the corresponding regional pronunciation depends on the capabilities of your device.
 * For some voices we also offer additional variants with e.g. shorter ('casual') prompts or some prompts muted to reduce chattiness.
 
-## 3. Testing of Voice Prompts
+## 3. Testing of Voice Prompts {#3-testing-of-voice-prompts}
 
 You may temporarily enable OsmAnd development plugin, then go to its settings and use button `Test voice prompts`. It provides several annlouncement examples for each type of OsmAnd prompt, using a wide range of numbers to test time/distance formating and pronunciation. The button caption staes the basic prompt content, the exact wording is specified in the tts.js file you test.
 There is also a test button showing your device settings and language capabilities.
 
 During navigation, the current voice prompt can always be triggered by tapping on the turn arrow widget.
 
-## 4. Creating a New TTS Voice Language/Variant
+## 4. Creating a New TTS Voice Language/Variant {#4-creating-a-new-tts-voice-languagevariant}
 
 Some hints:
 
