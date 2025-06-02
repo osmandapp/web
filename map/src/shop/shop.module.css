@@ -17,6 +17,7 @@
 }
 .productCard.selected {
     outline: 2px solid #237bff;
+    outline-offset: -2px;
     box-shadow: 0 0 0 6px #deebff !important;
 }
 .productCardTitle {
