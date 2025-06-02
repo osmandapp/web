@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import ProductCard from './products/ProductCard';
 import styles from './shop.module.css';
 import { useTranslation } from 'react-i18next';
-import FeaturesTable from './features/FeaturesTable';
+
+const FeaturesTable = React.lazy(() => import('./features/FeaturesTable'));
 
 export default function PricingPage() {
     const { t } = useTranslation();
