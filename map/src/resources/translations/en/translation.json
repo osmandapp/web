@@ -5285,5 +5285,21 @@
   "mile": "mi",
   "nm": "nmi",
   "unit_of_length": "Units of length",
-  "default_speed_system": "Unit of speed"
+  "default_speed_system": "Unit of speed",
+  "purchases": "Purchases",
+  "delete_account": "Delete account",
+  "download_all": "Download all",
+  "troubleshooting": "Troubleshooting",
+  "no_purchases": "You don\\'t have any purchases",
+  "annual_subscription": "Annual subscription",
+  "monthly_subscription": "Monthly subscription",
+  "in_app_purchase_desc": "One-time payment",
+  "shared_string_purchased_on": "Purchased on",
+  "next_billing_date": "Next billing date: %1$s",
+  "shared_string_type": "Type",
+  "shared_string_expires": "Expires",
+  "shared_string_purchased": "Purchased",
+  "manage_subscription": "Manage subscription",
+  "shared_string_learn_more": "Learn more",
+  "explore_osmnad_plans_to_find_suitable": "Explore OsmAnd Plans to find one suitable for you."
 }

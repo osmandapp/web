@@ -1,5 +1,5 @@
 import { AppBar, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
-import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
+import CloudGpxUploader from '../../frame/util/CloudGpxUploader';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
@@ -13,13 +13,14 @@ import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import AddFolderDialog from '../../dialogs/tracks/AddFolderDialog';
 import { byTime } from './SortActions';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
-import FavoriteGroupUploader from '../../frame/components/util/FavoriteGroupUploader';
+import FavoriteGroupUploader from '../../frame/util/FavoriteGroupUploader';
 import IconButtonWithPermissions from '../../frame/components/IconButtonWithPermissions';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from './HeaderHelper';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import { SHARE_TYPE } from '../../manager/ShareManager';
 import SortFilesButton from '../components/buttons/SortFilesButton';
+import LoginContext from '../../context/LoginContext';
+import { SHARE_TYPE } from '../share/shareConstants';
 
 export default function GroupHeader({
     type,
@@ -31,6 +32,7 @@ export default function GroupHeader({
     markers = null,
 }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
 
     const TRACKS_TYPE = 'tracks';
     const FAVORITES_TYPE = 'favorites';
@@ -148,7 +150,7 @@ export default function GroupHeader({
                                         component="span"
                                         variant="contained"
                                         type="button"
-                                        disabled={ctx.accountInfo?.account === FREE_ACCOUNT}
+                                        disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
                                         className={styles.appBarIcon}
                                     >
                                         <ImportIcon />

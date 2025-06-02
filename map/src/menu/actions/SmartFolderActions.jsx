@@ -6,9 +6,9 @@ import { ReactComponent as ShowIcon } from '../../assets/icons/ic_show_on_map_ou
 import { useTranslation } from 'react-i18next';
 import { apiPost } from '../../util/HttpApi';
 import AppContext from '../../context/AppContext';
-import { SHARE_FILE_TYPE, SHARE_TYPE } from '../../manager/ShareManager';
 import { FIT_BOUNDS_MAX_ZOOM, openTrackOnMap, updateTracks } from '../../manager/track/TracksManager';
 import { isEmpty } from 'lodash';
+import { SHARE_FILE_TYPE, SHARE_TYPE } from '../share/shareConstants';
 
 const SmartFolderActions = forwardRef(
     ({ files, type, subtype, setOpenActions, setProcessDownload, showAllTracks, setShowAllTracks }, ref) => {

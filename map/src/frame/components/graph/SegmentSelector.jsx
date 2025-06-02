@@ -1,10 +1,10 @@
 import { Box, Select, Switch, Typography, FormControl, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
-import styles from '../frame.module.css';
+import styles from '../../frame.module.css';
 
 import { ReactComponent as SegmentIcon } from '../../../assets/icons/ic_action_polygom_dark.svg';
 import SegmentName from '../../../menu/analyzer/SegmentName';
-import DividerWithMargin from '../../../menu/components/dividers/DividerWithMargin';
+import DividerWithMargin from '../dividers/DividerWithMargin';
 import AppContext from '../../../context/AppContext';
 
 export default function SegmentSelector({ currentGraph, segmentVisibility, toggleSegmentVisibility }) {

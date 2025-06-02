@@ -1,0 +1,13 @@
+.subtitle {
+    max-height: var(--base-title-size) !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: var(--text-primary) !important;
+}
+.subtitleItem {
+    width: 360px !important;
+    padding: 10px 16px !important;
+    gap: 24px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+}

@@ -12,7 +12,7 @@ import { FAVOURITES, GPX } from '../../manager/GlobalManager';
 import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 import { useTranslation } from 'react-i18next';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 
 export default function ShareFileItem({ file, type }) {

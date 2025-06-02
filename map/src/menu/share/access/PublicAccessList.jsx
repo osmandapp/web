@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import UserAccessListItem from './UserAccessListItem';
-import DividerWithMargin from '../../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import React from 'react';
 
 export default function PublicAccessList() {

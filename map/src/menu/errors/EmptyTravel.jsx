@@ -3,17 +3,18 @@ import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { Box, Icon, ListItemText } from '@mui/material';
 import styles from './errors.module.css';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import { ReactComponent as EmptyTravelIcon } from '../../assets/icons/ic_action_desert.svg';
 import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
+import LoginContext from '../../context/LoginContext';
 
 export default function EmptyTravel({ reset }) {
-    const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
     return (
         <>
-            {ctx.loginUser ? (
+            {ltx.loginUser ? (
                 <Box className={styles.block} id={'se-empty-travel'}>
                     <Icon className={styles.icon}>
                         <EmptyTravelIcon className={styles.icon} />

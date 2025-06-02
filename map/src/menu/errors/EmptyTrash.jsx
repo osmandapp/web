@@ -1,19 +1,19 @@
 import { Box, Icon, ListItemText } from '@mui/material';
 import styles from './errors.module.css';
-import EmptyLogin from '../login/EmptyLogin';
+import EmptyLogin from '../../login/EmptyLogin';
 import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { useTranslation } from 'react-i18next';
 import { formatString } from '../../manager/SettingsManager';
 import { useContext } from 'react';
-import AppContext from '../../context/AppContext';
+import LoginContext from '../../context/LoginContext';
 
 export default function EmptyTrash() {
-    const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
     return (
         <>
-            {ctx.loginUser ? (
+            {ltx.loginUser ? (
                 <Box id={'se-empty-trash-page'} className={styles.block}>
                     <Icon className={styles.icon}>
                         <TrashIcon className={styles.icon} />

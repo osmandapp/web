@@ -22,9 +22,11 @@ import { ReactComponent as AddPinIcon } from '../../assets/icons/ic_show_on_map_
 import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_world_globe.svg';
 import { useTranslation } from 'react-i18next';
 import { GLOBAL_GRAPH_HEIGHT_SIZE, LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import LoginContext from '../../context/LoginContext';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
 
     const map = useMap();
     const navigate = useNavigate();
@@ -360,7 +362,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                             id={'se-show-regions-action'}
                             className={styles.contextMenuItem}
                             onClick={() =>
-                                handleMenuItemClick((latlng) => (ctx.loginUser ? getRegions(latlng) : openLogin()))
+                                handleMenuItemClick((latlng) => (ltx.loginUser ? getRegions(latlng) : openLogin()))
                             }
                         >
                             <ListItemIcon className={styles.contextMenuIcon}>

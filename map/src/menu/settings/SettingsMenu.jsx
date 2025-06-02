@@ -27,9 +27,11 @@ import * as locales from 'date-fns/locale';
 import { format } from 'date-fns';
 import i18n from '../../i18n';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import UnitsMenu from './units/UnitsMenu';
-import SimpleDivider from '../components/dividers/SimpleDivider';
+import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
+import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import LoginContext from '../../context/LoginContext';
 
 export function getLocalizedTimeUpdate(time) {
     const locale = locales[i18n.language] || locales.enUS;
@@ -39,6 +41,7 @@ export function getLocalizedTimeUpdate(time) {
 
 export default function SettingsMenu() {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
 
     const [openLangList, setOpenLangList] = useState(false);
     const { i18n, t } = useTranslation();
@@ -148,11 +151,7 @@ export default function SettingsMenu() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <MenuItem className={styles.item}>
-                <Typography className={styles.title} noWrap>
-                    {t('general_settings_2')}
-                </Typography>
-            </MenuItem>
+            <SubTitleMenu text={t('general_settings_2')} />
             <MenuItem className={styles.item} onClick={selectLanguage}>
                 <ListItemIcon className={styles.icon}>
                     <DisplayLanguageIcon />
@@ -177,14 +176,9 @@ export default function SettingsMenu() {
             <DividerWithMargin margin={'64px'} />
             <UnitsMenu />
             <SimpleDivider />
-            {ctx.loginUser && ctx.accountInfo?.account !== FREE_ACCOUNT && (
+            {ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT && (
                 <>
-                    <MenuItem className={styles.item}>
-                        <Typography className={styles.title} noWrap>
-                            {t('osmand_cloud')}
-                        </Typography>
-                    </MenuItem>
-
+                    <SubTitleMenu text={t('osmand_cloud')} />
                     <MenuItem
                         id={'se-cloud_changes'}
                         className={styles.item}
@@ -217,7 +211,7 @@ export default function SettingsMenu() {
                     </MenuItem>
                 </>
             )}
-            {process.env.REACT_APP_DEVEL_FEATURES === 'yes' && ctx.develFeatures && ctx.loginUser && (
+            {process.env.REACT_APP_DEVEL_FEATURES === 'yes' && ctx.develFeatures && ltx.loginUser && (
                 <>
                     <Typography component="div" sx={{ ml: 2 }}>
                         Explore Wikimedia Images

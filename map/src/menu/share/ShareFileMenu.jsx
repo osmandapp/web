@@ -11,23 +11,21 @@ import { useTranslation } from 'react-i18next';
 import styles from './share.module.css';
 import ShareFileItem from './ShareFileItem';
 import ShareType from './ShareType';
-import SubTitle from '../components/SubTitle';
 import UserAccessList from './access/UserAccessList';
 import MenuItemWithLines from '../components/MenuItemWithLines';
+import { changeShareTypeFile, generateLink, updateUserRequests } from '../../manager/ShareManager';
+import { MAIN_URL_WITH_SLASH, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
+import PublicAccessList from './access/PublicAccessList';
+import PrivateAccessList from './access/PrivateAccessList';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
+import BlueBtn from '../../frame/components/btns/BlueBtn';
+import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import {
     APPROVED_ACCESS_TYPE,
     APPROVED_ACCESS_TYPE_SERVER,
     BLOCKED_ACCESS_TYPE,
-    changeShareTypeFile,
-    generateLink,
     PENDING_ACCESS_TYPE,
-    updateUserRequests,
-} from '../../manager/ShareManager';
-import { MAIN_URL_WITH_SLASH, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
-import PublicAccessList from './access/PublicAccessList';
-import PrivateAccessList from './access/PrivateAccessList';
-import ThickDivider from '../components/dividers/ThickDivider';
-import BlueBtn from '../../frame/components/btns/BlueBtn';
+} from './shareConstants';
 
 export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
     const ctx = useContext(AppContext);
@@ -231,7 +229,7 @@ export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
                 />
                 <ThickDivider />
                 <Box>
-                    <SubTitle title={'Users'} hasTranslation={false} />
+                    <SubTitleMenu text={'Users'} />
                     {selectedShareType.key === shareTypes.request.key && (
                         <Box sx={{ mx: 2 }}>
                             <ToggleButtonGroup

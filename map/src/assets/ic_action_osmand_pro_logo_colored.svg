@@ -1,7 +1,18 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="ic_action_osmand_pro_logo_colored">
-<path id="Union" d="M8 1.75L16 3.75L20 2.75V17.75L16 18.75L8 16.75V22H4V2.75L8 1.75Z" fill="#5714CC"/>
-<path id="Rectangle 568 (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M16 7.87311L8 5.87311V12.6269L16 14.6269V7.87311Z" fill="#FFC30D"/>
-<path id="light" d="M16 3.75L20 2.75V17.75L16 18.75V3.75Z" fill="white" fill-opacity="0.2"/>
-</g>
+<path d="M8 2C11 2 12.8744 3.37886 16 3C16.8233 2.90021 17.8596 2.63794 18.6711 2.40704C19.3285 2.21999 20 2.70711 20 3.39057V15.5617C20 16.421 19.4518 17.1861 18.6249 17.4201C17.8206 17.6478 16.8078 17.9021 16 18C12.8744 18.3789 11 17 8 17V21C8 21.5523 7.55228 22 7 22H5C4.44772 22 4 21.5523 4 21V5V3.53078C4 3.07191 4.31203 2.6709 4.75596 2.55476C5.81963 2.27649 6.90258 2 8 2Z" fill="url(#paint0_linear_2304_9691)"/>
+<path d="M8 5.5C7.91769 5.5 7.74026 5.5171 7.5 5.54883V13.5H8C10.0084 13.5 11.686 13.9775 12.7725 14.2393C13.9011 14.5112 14.6547 14.6374 15.5791 14.5254L16.0176 14.4551C16.1687 14.4266 16.3307 14.3921 16.5 14.3535V6.46289L16.4209 6.47461C14.2198 6.74136 12.4727 6.36773 11.1328 6.04492C9.75088 5.71199 8.99137 5.5 8 5.5Z" fill="url(#paint1_linear_2304_9691)"/>
+<defs>
+<linearGradient id="paint0_linear_2304_9691" x1="20" y1="11" x2="4" y2="11" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A379EC"/>
+<stop offset="0.0817308" stop-color="#844CE6"/>
+<stop offset="0.336538" stop-color="#5714CC"/>
+<stop offset="0.625" stop-color="#844CE6"/>
+<stop offset="1" stop-color="#5714CC"/>
+</linearGradient>
+<linearGradient id="paint1_linear_2304_9691" x1="7.5" y1="9.55307" x2="16.5" y2="9.55307" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFC30D"/>
+<stop offset="0.725962" stop-color="#CC9900"/>
+<stop offset="1" stop-color="#FFC30D"/>
+</linearGradient>
+</defs>
 </svg>

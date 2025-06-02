@@ -13,23 +13,25 @@ import {
     Typography,
 } from '@mui/material';
 import styles from './configuremap.module.css';
-import gStyles from '../gstylesmenu.module.css';
 import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { useTranslation } from 'react-i18next';
 import { ExpandMore } from '@mui/icons-material';
-import SubTitle from '../components/SubTitle';
 import ActionsMenu from '../actions/ActionsMenu';
 import capitalize from 'lodash/capitalize';
 import { cloneDeep } from 'lodash';
-import ThickDivider from '../components/dividers/ThickDivider';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
+import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import LoginContext from '../../context/LoginContext';
 
 export const NO_HEIGHTMAP = 'none';
 
 export default function TerrainConfig({ setOpenTerrainConfig }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
+
     const { t } = useTranslation();
 
     const [openMenu, setOpenMenu] = useState(false);
@@ -102,7 +104,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                     <Typography component="div" className={headerStyles.title}>
                         {t('shared_string_terrain')}
                     </Typography>
-                    {ctx.loginUser && (
+                    {ltx.loginUser && (
                         <Tooltip key={'reset'} title={t('reset_to_default')} arrow placement="bottom-end">
                             <span>
                                 <IconButton
@@ -186,7 +188,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
             {ctx.heightmap?.key ? (
                 <Box>
                     <ThickDivider />
-                    <SubTitle title={'shared_string_appearance'} />
+                    <SubTitleMenu text={t('shared_string_appearance')} />
                     <Box sx={{ m: 2 }}>
                         <div
                             style={{

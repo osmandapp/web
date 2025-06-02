@@ -70,7 +70,7 @@ import Translate from '@site/src/components/Translate.js';
 - Restore purchases in the Huawei AppGallery.
 -->
 
-## Amazon store is closing — what to do {#amazon-store-is-closing--what-to-do}
+## Amazon store is closing - what to do {#amazon-store-is-closing---what-to-do}
 
 We are working on a solution to transfer purchases made through Amazon to other platforms.  
 Currently, [it is possible to transfer subscriptions and in-app purchases](../purchases/cross.md).  

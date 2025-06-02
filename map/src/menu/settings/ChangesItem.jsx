@@ -11,7 +11,7 @@ import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import MenuItemWithLines from '../components/MenuItemWithLines';
-import DividerWithMargin from '../components/dividers/DividerWithMargin';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 
 export default function ChangesItem({ item, changes, setChanges }) {
     const { t } = useTranslation();

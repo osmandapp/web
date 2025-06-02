@@ -9,8 +9,8 @@ import { deleteSharedWithMe } from '../ShareManager';
 import { GPX, updateFileStorage } from '../GlobalManager';
 import { deleteLocalTrack } from '../../context/LocalTrackStorage';
 
-export async function deleteTrack({ file, ctx, shared = false, type = 'GPX' }) {
-    if ((isCloudTrack(ctx) || file) && ctx.loginUser) {
+export async function deleteTrack({ file, ctx, ltx, shared = false, type = 'GPX' }) {
+    if ((isCloudTrack(ctx) || file) && ltx.loginUser) {
         const trackName = file ? file?.name : ctx.selectedGpxFile?.name;
         if (!trackName) {
             return;
