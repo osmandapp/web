@@ -19,18 +19,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 # Speed & Smarts: How OsmAnd Achieved 100x Faster Routing on Tiny Maps
 
-Offline navigation is a lifeline for travelers, adventurers, and everyday commuters. We demand speed, accuracy, and the flexibility to tailor routes to our specific needs. For years, OsmAnd has championed powerful, feature-rich offline maps that fit in your pocket. But as maps grew more detailed and user demands for complex routing increased, our trusty A* algorithm, despite its flexibility, started hitting a performance wall. How could we deliver a **100x speed boost** without bloating map sizes or sacrificing the deep customization our users love?
+Offline navigation is a lifeline for travelers, adventurers, and everyday commuters. We demand speed, accuracy, and the flexibility to tailor routes to our specific needs. For years, OsmAnd has championed powerful, feature-rich offline maps that fit in your pocket. But as maps grew more detailed and user demands for complex routing increased, our trusty [A* algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm), despite its flexibility, started hitting a performance wall. How could we deliver a **100x speed boost** without bloating map sizes or sacrificing the deep customization our users love?
+
+<!--truncate-->
 
 The answer: **OsmAnd's custom-built Highway Hierarchy (HH) Routing.** This isn't your standard routing engine; it's a ground-up redesign, meticulously engineered to overcome the unique challenges of providing advanced navigation on compact, offline-first map data.
 
+
+
 ## The Offline Navigation Conundrum: Why Standard Solutions Fell Short
 
-OsmAnd has always been about putting you in control. Our original A* routing engine, configurable via `routing.xml`, offered immense power. You could define intricate profiles, avoid specific road types, and truly personalize your journey. With maps optimized for minimal storage (the entire planet's car data for our new HH-routing is around a mere 800MB!), OsmAnd was a lean, mean navigating machine.
+OsmAnd has always been about putting you in control. Our original [A* routing engine](https://en.wikipedia.org/wiki/A*_search_algorithm), configurable via [`routing.xml`](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), offered immense power. You could define intricate profiles, avoid specific road types, and truly personalize your journey. With maps optimized for minimal storage (the entire planet's car data for our new HH-routing is around a mere 800MB!), OsmAnd was a lean, mean navigating machine.
 
 However, this flexibility came at a cost for complex routes:
 * **The A* Wall:** Calculating a 200-300km car route (or even shorter bicycle/pedestrian paths) could mean visiting over a million road segments, taking 10-20 seconds. For longer trips, this wait could become frustrating.
 
-We explored standard advanced algorithms like Contraction Hierarchies (CH), known for their speed. But they presented their own set of deal-breakers for OsmAnd:
+![A* car](./img/a2.gif)
+
+We explored standard advanced algorithms like [Contraction Hierarchies (CH)](https://en.wikipedia.org/wiki/Contraction_hierarchies), known for their speed. But they presented their own set of deal-breakers for OsmAnd:
 * **Flexibility Clash:** CH typically pre-calculates optimal paths. Supporting OsmAnd's 10+ routing parameters (leading to over 1024 combinations per profile!) would be impossible with standard CH.
 * **Storage Nightmare:** A CH car profile for a region can be massive (e.g., OSRM's Europe is tens of GBs, their global car profile around 200GB for just one profile). Our goal was to keep *all* profiles and parameters for the *entire planet* well under 20GB.
 * **Regional Map Dilemma:** Users download individual countries or regions. CH usually requires processing the entire road network globally, which doesn't align with OsmAnd's flexible map management.
