@@ -8,6 +8,7 @@
     border: 1px solid #ccc !important;
     background: #fff !important;
     max-width: 300px !important;
+    box-shadow: none !important;
 }
 .productCardTitle {
     color: var(--text-primary) !important;
@@ -308,8 +309,9 @@
 
 .featureRow .featureCell {
     position: relative;
-    padding: 8px 16px;
+    padding: 14px 16px;
     border-bottom: none;
+
 }
 
 .featureRow .featureCell::after {
