@@ -33,8 +33,9 @@ export default function ProductCard({ productId, type, setType, testMode, isSele
     function onClick() {
         if (productId === 'osmand-start') {
             createNewAccount();
+        } else {
+            purchaseProduct();
         }
-        purchaseProduct();
     }
 
     function createNewAccount() {
