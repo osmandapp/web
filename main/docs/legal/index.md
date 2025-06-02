@@ -1,13 +1,13 @@
-# Legal {#legal}
+# Legal
 
-### [License](./license.md) {#license}
+### [License](./license.md)
 
 OsmAnd License.
 
-### [Privacy Policy](./privacy-policy.md) {#privacy-policy}
+### [Privacy Policy](./privacy-policy.md)
 
 OsmAnd Privacy Policy.
 
-### [Terms of Use](./terms-of-use.md) {#terms-of-use}
+### [Terms of Use](./terms-of-use.md)
 
 OsmAnd Terms of Use.

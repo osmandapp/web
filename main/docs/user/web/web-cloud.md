@@ -17,11 +17,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-## Overview {#overview}
+## Overview
 
 The [OsmAnd Map Portal](https://osmand.net/map) is a browser-based service provided by OsmAnd, allowing users to explore maps, manage their data, plan and create trips, or simply browse the map.
 
-#### Subscription Accesses {#subscription-accesses}
+#### Subscription Accesses
 
 The Map Portal can be used without registration; however, some features are exclusively available for OsmAnd Pro and OsmAnd Start users:
 
@@ -36,7 +36,7 @@ The Map Portal can be used without registration; however, some features are excl
 | [Tracks](./web-map.md) | <ProFeature/> |
 
 
-## How to Start {#how-to-start}
+## How to Start
 
 If you have [OsmAnd Pro](../personal/osmand-cloud.md#login) account or want to create [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) account you need to do next steps:
 
@@ -46,7 +46,7 @@ If you have [OsmAnd Pro](../personal/osmand-cloud.md#login) account or want to c
   - *Create account*. For OsmAnd Start.
 
 
-## How to Change Language {#how-to-change-language}
+## How to Change Language
 
 If you want to change the display languge:
 
@@ -56,22 +56,22 @@ If you want to change the display languge:
     *Menu →* ⚙ *→ Turn off language*.
 
 
-## Managing Account {#managing-account}
+## Managing Account
 
 *General Menu → Account*
 
 After registering on the web, users can access their account information, download backups, log out, delete their account, or change their email address.
 
-#### Access Account {#access-account}
+#### Access Account
 
-#### Backups {#backups}
+#### Backups
 
-#### Log out and Delete {#log-out-and-delete}
+#### Log out and Delete
 
-#### Change Email Address {#change-email-address}
+#### Change Email Address
 
 
-## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
+## OsmAnd Pro and OsmAnd Start Sync
 
 - **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#cross-platform) paid subscription. 
 - **OsmAnd Start** is a [free OsmAnd Cloud registration](https://osmand.net/blog/start).
@@ -106,11 +106,11 @@ There is also a button to *logout* of the account.
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_2.png)  
 
 
-## Cloud data {#cloud-data}
+## Cloud data
 
 [Tracks and Favorites](web-map.md#tracks).
 <!--
-## Map style {#map-style}
+## Map style
 
 In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
 **Some examples:**

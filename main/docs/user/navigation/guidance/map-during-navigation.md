@@ -15,12 +15,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 This article describes how to configure the appearance of the map during navigation. This includes features such as displaying [POIs along the route](#show-points-along-the-route), using [screen alerts](#screen-alerts), [route line appearance](#route-line-appearance) including color, width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
 
 
-## Map During Navigation {#map-during-navigation}
+## Map During Navigation
 
 <Tabs groupId="operating-systems">
 
@@ -54,7 +54,7 @@ During navigation, the map's appearance adjusts based on the selected navigation
 | *<Translate android="true" ids="approximate_bearing"/>* | Determines bearing based on the navigation route you are following.  | The setting is only visible when the [OsmAnd development plugin](../../plugins/development.md) is enabled. <br /> These settings should be enabled if the orientation of the directional map is flipped or jiggles when using [Android Auto](../auto-car.md#issues).   |
 
 
-## Show Points Along the Route {#show-points-along-the-route}
+## Show Points Along the Route
 
 The *Show along the route* setting allows you to configure additional route parameters and is required for the operation of widgets such as the [Street name](../../widgets/nav-widgets.md/#street-name) and the [Alert widget](../../widgets/nav-widgets.md#alert-widget). Options include displaying [**POIs**](#points-of-interest-pois) and [**My Favorites**](#my-favorites) along the route or using them as an addition to those already configured for the profile, as well as displaying a complete list of [**Traffic warnings**](#traffic-warnings) along the route.  
 
@@ -63,7 +63,7 @@ The *Show along the route* setting allows you to configure additional route para
 - *POIs, Favorite, and Traffic warnings* are not displayed in the list for a route you have already traveled.
 
 
-### View and Select Points {#view-and-select-points}
+### View and Select Points
 
 <Tabs groupId="operating-systems">
 
@@ -88,7 +88,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,s
 When you create a route, you can set the types of points to be displayed along the route in the *Navigation* section.
 
 
-### Points of Interest (POIs) {#points-of-interest-pois}
+### Points of Interest (POIs)
 
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)
 
@@ -105,7 +105,7 @@ When you specify the display of certain POIs on the *Configure map*, they are al
 - The list contains the selected [POI types](../../map/point-layers-on-map.md#poi-types) and brief information about each of them, such as the *type icon, name, distance from the current location point to the POI along the route*, and *indications of which side of the route in a straight line and how far away the POI is*.  
 
 
-### My Favorites {#my-favorites}
+### My Favorites
 
 The list contains all previously added [Favorite](../../personal/favorites.md#favorite-point) points near the route you have created. As with POIs, you can select the distance at which these points are located.  
 
@@ -118,7 +118,7 @@ The list contains all previously added [Favorite](../../personal/favorites.md#fa
 - Each point contains a name or coordinates, a group, the distance from the current location point to the *Favorite* directly on the route line, information about how far to the right or left the point is from the line, and the direction of the route.
 
 
-### Traffic Warnings {#traffic-warnings}
+### Traffic Warnings
 
 *Traffic warnings* are not displayed directly on the map like *POIs* or *My Favorites*.
 
@@ -129,7 +129,7 @@ The list contains all previously added [Favorite](../../personal/favorites.md#fa
 - You can remove unnecessary alerts from the list, or tap on the alert name to [edit the location](../../map/map-context-menu.md#avoid-road).
 
 
-## Screen Alerts {#screen-alerts}
+## Screen Alerts
 
 <Tabs groupId="operating-systems">
 
@@ -152,7 +152,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 | **<Translate android="true" ids="screen_alerts"/>** | Notifications, such as traffic warnings or speed limits, will appear on the screen as a widget. They appear in the bottom left corner while you are navigating. | [Types of alert widgets](../../widgets/nav-widgets.md#alert-widget)   |
 
 
-## Route Line Appearance {#route-line-appearance}
+## Route Line Appearance
 
 <Tabs groupId="operating-systems">
 
@@ -184,7 +184,7 @@ You can select route line appearance by style or manually select the color, widt
 :::
 
 
-### Color {#color}
+### Color
 
 The **Color** setting changes the color tones of the route lines. Their overall color changes depending on the selected type from the OsmAnd collection, and according to the **Map Legend**. Alternatively, their color becomes whatever color and transparency you set manually.
 
@@ -219,7 +219,7 @@ The **Color** setting changes the color tones of the route lines. Their overall 
     ![Altitude](@site/static/img/navigation/route/firmness.png)
 
 
-### Width {#width}
+### Width  
 
 You can adjust the width of the route line to align with the road or path displayed on the map. For clearer visual identification, you can manually increase or decrease the line width as needed. For more details, refer to the *Tracks and Routes — [Appearance](../../map/tracks/appearance.md) article*.
 
@@ -233,7 +233,7 @@ You can adjust the width of the route line to align with the road or path displa
     ![custom](@site/static/img/navigation/route/custom_2.png)  
 
 
-### Turn Arrows {#turn-arrows}
+### Turn Arrows  
 
 The Turn Arrows setting allows you to select whether turn arrows are displayed on the route line.  
 
@@ -244,7 +244,7 @@ The Turn Arrows setting allows you to select whether turn arrows are displayed o
     ![Altitude](@site/static/img/navigation/route/turn_arr.png)   ![turn_arr_ios](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Route parameters](../routing/osmand-routing.md#routing-types)
 - [Route preparation](../setup/route-navigation.md)

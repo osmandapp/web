@@ -3,7 +3,7 @@ sidebar_position: 3
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Points on map activity {#points-on-map-activity}
+# Points on map activity
 There is shown favourite points on map 
 
   ```

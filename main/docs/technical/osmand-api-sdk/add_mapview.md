@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Add a map {#add-a-map}
+# Add a map
 Open the activity you would like to add a map view to and use the code below.
 
 ```

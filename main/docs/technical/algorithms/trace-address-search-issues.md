@@ -2,19 +2,19 @@
 sidebar_position: 3
 ---
 
-# Trace Address Search Issues {#trace-address-search-issues}
+# Trace Address Search Issues
 
-## Address Found in the Wrong City {#address-found-in-the-wrong-city}
+## Address Found in the Wrong City
 
 In some cases, an address search in OsmAnd may return results for a different city than expected. These issues arise due to how city boundaries are defined and processed in OpenStreetMap (OSM). If a user searches for a **street name** or a **street with a house number** without specifying a city, the **full-text search algorithm** may return a match from another city.
 
-### Related Issues {#related-issues}
+### Related Issues
 
 Instances of incorrect city assignments have been reported in the following GitHub issues:
 [10679](https://github.com/osmandapp/OsmAnd/issues/10679), [10677](https://github.com/osmandapp/OsmAnd/issues/10677), [10699](https://github.com/osmandapp/OsmAnd/issues/10699), [10921](https://github.com/osmandapp/OsmAnd/issues/10921).
 
 
-## How OsmAnd Identifies City Boundaries {#how-osmand-identifies-city-boundaries}
+## How OsmAnd Identifies City Boundaries
 
 OsmAnd determines a city’s boundary using its **administrative relation** in OpenStreetMap. For a boundary to be considered valid, it must meet the following criteria:
 
@@ -35,7 +35,7 @@ OsmAnd determines a city’s boundary using its **administrative relation** in O
 - The **relation ways** define the boundary. OsmAnd supports both **inner** and **outer** ways.
 
 
-## Exact Name Matching {#exact-name-matching}
+## Exact Name Matching
 
 For accurate address processing, **street names must match exactly**, including:
 
@@ -50,9 +50,9 @@ If a mismatch occurs, one of the following issues may arise:
 See GitHub issue [10036](https://github.com/osmandapp/OsmAnd/issues/10036) for an example.
 
 
-## Possible Causes of Incorrect City Assignments {#possible-causes-of-incorrect-city-assignments}
+## Possible Causes of Incorrect City Assignments
 
-### Issues in OpenStreetMap {#issues-in-openstreetmap}
+### Issues in OpenStreetMap
 
 1. **Broken or missing city boundaries.**
 
@@ -72,7 +72,7 @@ See GitHub issue [10036](https://github.com/osmandapp/OsmAnd/issues/10036) for a
      - Issue [10921](https://github.com/osmandapp/OsmAnd/issues/10921) (missing tags).  
      - Issue [12548](https://github.com/osmandapp/OsmAnd/issues/12548) (*Erfstadt* boundary issue).
 
-### Issues in OsmAnd {#issues-in-osmand}
+### Issues in OsmAnd
 
 **Addresses assigned to neighboring cities.**
 
@@ -81,11 +81,11 @@ See GitHub issue [10036](https://github.com/osmandapp/OsmAnd/issues/10036) for a
 - See related reports: [10559](https://github.com/osmandapp/OsmAnd/issues/10559), [10679](https://github.com/osmandapp/OsmAnd/issues/10679), [10730](https://github.com/osmandapp/OsmAnd/issues/10730).
 
 
-## Verification Methods {#verification-methods}
+## Verification Methods
 
 To verify and troubleshoot city boundary issues, compare results from different map tools.
 
-### Using OpenStreetMap {#using-openstreetmap}
+### Using OpenStreetMap
 
 **Example:** Address searched: *Wolności 223, Zabrze*  
 
@@ -93,7 +93,7 @@ To verify and troubleshoot city boundary issues, compare results from different 
 2. Search for **Zabrze** and select the result associated with an **administrative boundary**.  
 3. View the city boundary to confirm whether the address is correctly assigned.
 
-### Using Nominatim {#using-nominatim}
+### Using Nominatim
 
 **Example:** Address searched: *Wolności 223, Zabrze*  
 
@@ -107,7 +107,7 @@ To verify and troubleshoot city boundary issues, compare results from different 
 **Important:** Be cautious when selecting search results, as cities with similar names may exist in different regions or countries.
 
 
-## US Address Search and TIGER Data {#us-address-search-and-tiger-data}
+## US Address Search and TIGER Data
 
 OsmAnd uses OpenStreetMap data for address searches, with additional data sources such as **TIGER (Topologically Integrated Geographic Encoding and Referencing System)** from the U.S. Census Bureau. This dataset is range-based and does not contain precise house numbers. Some addresses may be missing or inaccurate.  
 
@@ -130,7 +130,7 @@ Solving issues with U.S. addresses:
     - If neither source contains the address, the search fails.
 
 
-#### Types of Address Data in TIGER {#types-of-address-data-in-tiger}
+#### Types of Address Data in TIGER
 
 | TIGER Data Type            | Usage in OsmAnd    |
 |----------------------------|--------------------|
@@ -141,7 +141,7 @@ Solving issues with U.S. addresses:
 
 <br/>
 
-#### When an Address is Found vs. Not Found {#when-an-address-is-found-vs-not-found}
+#### When an Address is Found vs. Not Found
 
 | Search Scenario     | Result in OsmAnd     |
 |---------------------|----------------------|
@@ -151,7 +151,7 @@ Solving issues with U.S. addresses:
 | Address is missing from both OSM and TIGER | ❌ No result |
 
 
-#### Limitations of TIGER Data in OsmAnd {#limitations-of-tiger-data-in-osmand}
+#### Limitations of TIGER Data in OsmAnd
 
 Several factors affect the accuracy of address searches in the TIGER-based system:
 

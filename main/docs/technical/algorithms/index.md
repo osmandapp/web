@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Algorithms, Testing, Internals {#algorithms-testing-internals}
+# Algorithms, Testing, Internals
 Describes different algorithms in different areas and explains how it works and what triggers certain behavior
 
 

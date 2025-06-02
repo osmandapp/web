@@ -14,7 +14,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 :::info Paid feature
 The Nautical Map View plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.
@@ -43,14 +43,14 @@ Nautical maps are important for professional sailors and amateurs who rent a boa
 </Tabs>
 
 
-### Why the Nautical Theme Matters {#why-the-nautical-theme-matters}
+### Why the Nautical Theme Matters
 
 All professional sailors are required to have official nautical maps on their ships. These maps are published by authorized agencies and are quite expensive. The agencies invest heavily in keeping the maps up to date. They issue regular updates to the maps, but because it takes time to verify the information and process the updates, nautical maps are never completely up to date.
 
 Based on [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap) data, OsmAnd Nautical maps are created by people who use them. Each map user can contribute to the map by adding information they find important and useful for themselves, thereby making the map more detailed and accurate, ideal for orienteering or route planning.  
 
 
-## Required Setup Parameters {#required-setup-parameters}
+## Required Setup Parameters
 
 The following setup makes the Nautical map show up on the screen:
 
@@ -59,7 +59,7 @@ The following setup makes the Nautical map show up on the screen:
 3. Set the [Nautical](#set-nautical-map-style) map style for the required [profile](../personal/profiles.md).
 
 
-### Set Nautical Map Style {#set-nautical-map-style}
+### Set Nautical Map Style
 
 <Tabs groupId="operating-systems">
 
@@ -90,7 +90,7 @@ To change the current map style to Nautical, you need to make the following sett
 3. Scroll down to Map style, open it, and check the **Nautical**.
 
 
-### Download Nautical Maps {#download-nautical-maps}
+### Download Nautical Maps
 
 <Tabs groupId="operating-systems">
 
@@ -130,7 +130,7 @@ All depth numbers on the Nautical Maps are indicated in meters.
 :::
 
 
-### Disable Nautical Map Style {#disable-nautical-map-style}
+### Disable Nautical Map Style
 
 To remove Nautical and display one of OsmAnd's conventional maps, do any of the following:
 
@@ -142,7 +142,7 @@ Disabling the Nautical plugin does not remove loaded nautical data, so even if y
 :::
 
 
-## Nautical Profile {#nautical-profile}
+## Nautical Profile
 
 <Tabs groupId="operating-systems">
 
@@ -167,12 +167,12 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 Nautical map can be included in any profile. However, it is most valuable in the [Boat profile](../personal/profiles.md) and especially in [Boat navigation](../navigation/routing/boat-navigation.md).  
 
 
-## Nautical Map Style {#nautical-map-style}
+## Nautical Map Style
 
 The Nautical plugin in OsmAnd extends the vector layer map styles with the Nautical map style. It allows you to display map data according to Nautical map rules, for example: yellow areas for land and shoals, light blue areas for shallow waters, etc. For more information, see [Map legend](../../user/map-legend/nautical-map.md).  
 
 
-### Depth Points {#depth-points}
+### Depth Points
 
 <Tabs groupId="operating-systems">
 
@@ -193,7 +193,7 @@ The Nautical plugin in OsmAnd extends the vector layer map styles with the Nauti
 Depth point [packages](../start-with/download-maps.md#type-of-maps) are available for Europe, the Northern Hemisphere, and the Southern Hemisphere and are informational. Depth points indicate changes in topography below the water's surface, indicating the shallowest depth. This is necessary for *Boat* navigation. After downloading, you need to turn on [Depth contours](#depth-contours) to display it on the map.
 
 
-### Depth Contours {#depth-contours}
+### Depth Contours
 
 <Tabs groupId="operating-systems">
 
@@ -225,7 +225,7 @@ You can help the OsmAnd app increase the Depth contours database by adding your 
 :::
 
 
-### Seabed Details {#seabed-details}
+### Seabed Details
 
 <Tabs groupId="operating-systems">
 
@@ -259,7 +259,7 @@ For more details on the classification of the surface details and the rendering 
 :::
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)

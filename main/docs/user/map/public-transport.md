@@ -12,11 +12,11 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## Overview {#overview}
+## Overview
 
 Public transport is an additional layer that allows you to display transport routes and stops on the map, to check detailed information about them and to navigate.
 
-## Transport Stops (Layer) {#transport-stops-layer}
+## Transport Stops (Layer)
 
 Enable/Disable Public transport layer:
 
@@ -40,7 +40,7 @@ Choose between 1 or more transport categories for displaying:
 [Read more](../map/vector-maps.md#transport) about how transport is displayed on the map.
 
 
-## Transport Routes (Context Menu) {#transport-routes-context-menu}
+## Transport Routes (Context Menu)
 
 ![Public transport Route menu Android](@site/static/img/map/pt_routemenu_android.png) ![Public transport Route menu iOS](@site/static/img/map/pt_routemenu_ios.png)
 
@@ -50,7 +50,7 @@ To open Transport menu, you can tap the the transport icon. It displays:
 - [List of the routes](#routes) stopping on that stop or nearby (within 150 m)
 - Name of the stop and other [details](#transport-stop-details)
 
-### Transport Stop Details {#transport-stop-details}
+### Transport Stop Details
 
 ![Public transport Route menu details Android](@site/static/img/map/pt_routemenu_details_android.png) ![Public transport Route menu iOS](@site/static/img/map/pt_routemenu_details_ios.png)
 
@@ -64,7 +64,7 @@ Public transport stop provides extra details comparing to standard OpenStreetMap
 **Note**: you can filter stops by certain criteria. For example, expand & tap "Bench" / "Yes" and you can see the list of stops with benches. Also they could be [shown on the map](../map/point-layers-on-map.md#search-results-poi-on-the-map).
 
 
-### Routes {#routes}
+### Routes
 
 ![Public transport Routes Android](@site/static/img/map/pt_routes_android.png) ![Public transport Routes iOS](@site/static/img/map/pt_routes_ios.png) 
 
@@ -78,7 +78,7 @@ Transport Routes are all public transport routes that approach via selected stop
 - Tram - blue
 - Trolleybus - purple
 
-### Browse Route {#browse-route}
+### Browse Route
 
 ![Public transport Route list Android](@site/static/img/map/pt_route_list_android.png)  ![Public transport Route list Android](@site/static/img/map/pt_route_list_ios.png)
 
@@ -89,7 +89,7 @@ You can see the full list of stops by clicking <Translate android="true" ids="re
 > **NOTE**: *If you tap <Translate android="true" ids="get_directions"/> button you will get a route from your current location to the selected Public Transport Station.*
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Vector maps](../map/vector-maps.md)
 - [Public transport navigation](../navigation/routing/public-transport-navigation.md)

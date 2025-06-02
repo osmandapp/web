@@ -13,13 +13,13 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 Pedestrian routing refers to the process of finding the best route for a pedestrian to travel from one location to another, taking into account factors such as pedestrian-only areas, sidewalks, crosswalks, and pedestrian-friendly intersections. It may also consider other factors such as *stairs*, which may be useful for wheelchair accessibility. OsmAnd always uses elevation data when calculating the estimated time of arrival (time to cover the distance) according to [Naismith's rule](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb).
 
 To configure *Pedestrian routing* go to the [Route parameters section](../guidance/navigation-settings.md/#route-parameters) of the Navigation settings.
   
-### Route Parameters - Walking {#route-parameters---walking}
+### Route Parameters - Walking
 
 Pedestrian routing can be useful not only in urban areas, where pedestrians may encounter various obstacles when trying to get from one place to another. You can also use this routing type while jogging, hiking, and Nordic walking outside the city or in the mountains. Simply adjust routing parameters according to your needs.  
 
@@ -48,7 +48,7 @@ Pedestrian routing can be useful not only in urban areas, where pedestrians may 
 |*<Translate android="true" ids="routing_attr_allow_via_ferrata_name"/>*| *Via ferrata* routes will be used for routing when this option together with *Use elevation data* enabled.  | [Via ferrata](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dvia_ferrata) is a mountain route equipped with fixed cables, stemples, ladders, and bridges. |
 
 
-## Other Routing Settings {#other-routing-settings}
+## Other Routing Settings
 
 - The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 

@@ -12,7 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-## Overview {#overview}
+## Overview
 
 *Search History* is a record of all searches and locations that you have entered or searched for in the app over the period of use. This tool allows you to easily find and access previously searched locations, which makes navigation easier and saves your time.
 
@@ -25,7 +25,7 @@ OsmAnd provides several ways to view your search history.
 - Search history is available in [Android Auto](../navigation/auto-car.md#search) and [CarPlay](../navigation/car-play.md#search).
 
 
-## How to Use {#how-to-use}
+## How to Use
 
 <Tabs groupId="operating-systems">
 
@@ -56,7 +56,7 @@ The search history serves to provide relevant information about your previous ac
 - *Delete entries*. Search History provides the ability to [delete](#delete) previous entries, which can be useful for confidentiality or to keep your history organized.
 
 
-## History Items {#history-items}
+## History Items
 
 <Tabs groupId="operating-systems">
 
@@ -81,13 +81,13 @@ Each field in the Search History list contains some of the **information** avail
 - Distance from your current location to the point and direction by compass.
 
 
-### Order of Items {#order-of-items}
+### Order of Items
 
 - **Recent Items**. The most recent requests or locations are displayed at the top of the list. This allows quick access to recently used items.
 - **Chronological order**. Items in the Search History list are arranged in chronological order, starting with the oldest or earliest entries and ending with the most recent or latest. Old items gradually move down the list as new entries are added, unless old items in the search history have been used, in which case they will be moved to the top of the list.
 - In iOS, the list is sorted by month.
 
-### Type of Objects {#type-of-objects}
+### Type of Objects
 
 The following **types of objects** get into the Search History list:
 
@@ -95,14 +95,14 @@ The following **types of objects** get into the Search History list:
 - **Tracks and Waypoints**. The list includes tracks you created, recorded, or downloaded that you used in previous routes, and waypoints if you navigated to them separately.
 
 
-## Actions {#actions}
+## Actions
 
 In the Search History tool, you can [delete](#delete) unnecessary queries, all at once or by individual items. You can use History [export](#export-and-share). The Android app provides an additional action of [sharing](#share-android) search items as a [GPX](../../technical/osmand-file-formats/osmand-gpx.md) file.  
 
 You can **disable or enable** the display of the entire search history. In this case, the queries are not deleted from the device. In Android, the switch is located on the main screen of the tool on the [History tab](#overview). In iOS, it is located in *Menu → Settings → OsmAnd Settings → History → Search History*.
 
 
-### Delete {#delete}
+### Delete
 
 <Tabs groupId="operating-systems">
 
@@ -130,7 +130,7 @@ You need to **long tap any of the query items in the list** to open the Delete s
 - *Menu → Settings → OsmAnd settings → History → Actions*. This section contains the **Delete all history** button.
 
 
-### Export and Share {#export-and-share}
+### Export and Share
 
 <Tabs groupId="operating-systems">
 
@@ -178,7 +178,7 @@ Exporting items or the entire search history can be useful in the following case
 - [Share](#share-android) search history with other OsmAnd users.
 
 
-#### Share (Android) {#share-android}
+#### Share (Android)
 
 ![Settings History](@site/static/img/search/history_search_share_andr.png)
 
@@ -187,7 +187,7 @@ The steps to share search history items are similar to [export](#export-and-shar
 On the [delete](#delete) screen, select the required items from the Search History list. In the upper-right corner of the screen, there is an icon indicating sharing. Select an available application or action in the list to share.
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Search All](./search-all.md)
 - [Search Address](./search-address.md)

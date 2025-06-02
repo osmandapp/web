@@ -2,11 +2,11 @@
 sidebar_position: 5
 ---
 
-# Map Layers Rendering {#map-layers-rendering}
+# Map Layers Rendering
 
 The OsmAnd map is rendered by layers from bottom to top. Some layers cover the entire map screen, while others are rendered with transparency. The order of the layers is always the same, so it is important to keep track of what is displayed and in which order.
 
-## Order of Layers {#order-of-layers}
+## Order of Layers
 
 OsmAnd uses three types of layers: raster, symbols, and controls. First, [raster layers are rendered](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L162) in OpenGL, followed by [symbol layers](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L200). Control layers are rendered independently from OpenGL in the UI of Android or iOS devices, on top of the map.
 
@@ -23,9 +23,9 @@ The order of each layer is set directly by the `baseOrder` property in `createLa
 Other layers may be instantiated in plugins.
 
 
-## Android Order Tables {#android-order-tables}
+## Android Order Tables
 
-### Android. Raster layers {#android-raster-layers}
+### Android. Raster layers
 
 | Layer                             | Order/Range    | Type | Description                           |
 | --------------------------------- | -------------: | ---- | ------------------------------------- |
@@ -35,7 +35,7 @@ Other layers may be instantiated in plugins.
 | TerrainLayer                      | 60 000         | Map  | [Hillshade and slope](/docs/user/plugins/topography)           |
 | MapTileLayer (overlay)            | 70 000         | Map  | Raster tiles overlay                  |
 
-### Android. Symbols layers {#android-symbols-layers}
+### Android. Symbols layers
 
 | Layer / symbols                   | Order/Range  | Type     | Description                                                        |
 | --------------------------------- | -----------: | -------- | ------------------------------------------------------------------ |
@@ -75,7 +75,7 @@ Other layers may be instantiated in plugins.
 | MapillaryVectorLayer (lines)      | 1 000 000    | Lines    | Mapillary lines between points    |
 | MapillaryVectorLayer (points)     | 1 000 000    | Points   | Mapillary points                  |
 
-### Android. Controls layers {#android-controls-layers}
+### Android. Controls layers
 
 | Control layer             | Order/Range | Description           |
 | ------------------------- | ----------: | --------------------- |
@@ -88,9 +88,9 @@ Other layers may be instantiated in plugins.
 | MapQuickActionLayer       | 1 200 000   |                       |
 
 
-## iOS Order Tables {#ios-order-tables}
+## iOS Order Tables
 
-### iOS. Raster layers {#ios-raster-layers}
+### iOS. Raster layers
 
 | Layer                           | Layer index | Description                           |
 | ------------------------------- | ----------: | ------------------------------------- |
@@ -103,7 +103,7 @@ Other layers may be instantiated in plugins.
 | OAWeatherRasterLayer             | 25         | Weather                               |
 | OAWeatherContourLayer            | 30         | Weather                               |
 
-### iOS. Symbols layers {#ios-symbols-layers}
+### iOS. Symbols layers
 
 | Layer / symbols              | Order/Range  | Type     | Description                                                                                |
 | ---------------------------- | -----------: | -------- | ------------------------------------------------------------------------------------------ |
@@ -135,7 +135,7 @@ Other layers may be instantiated in plugins.
 | Navigation (arrows on route) | 208 000      | Points   | OARouteLayer                |
 | OARoutePointsLayer           | 209 000      | Points   | Navigation points           |
 
-### iOS. Controls layers {#ios-controls-layers}
+### iOS. Controls layers
 
 | Control layer            | Order/Range | Description    |
 | ------------------------ | ----------: | -------------  |

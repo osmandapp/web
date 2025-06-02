@@ -13,7 +13,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## How to Buy {#how-to-buy}
+## How to Buy
 
 You can buy OsmAnd products on our official website or via in-app purchases:
 
@@ -22,7 +22,7 @@ You can buy OsmAnd products on our official website or via in-app purchases:
 All purchases made through any of these platforms support **cross-platform access**.
 
 
-### Difference Between Purchases {#difference-between-purchases}
+### Difference Between Purchases
 
 | Plan | Description | Notes |
 |------------|------------|------------|
@@ -33,7 +33,7 @@ All purchases made through any of these platforms support **cross-platform acces
 **Cross-platform access** means you can buy OsmAnd in our website or one store (e.g., *App Store, Google Play, or osmand.net*) and use it on another platform by [linking your purchase to an OsmAnd Cloud account](../personal/osmand-cloud.md#cross-platform).
 :::
 
-## Prices {#prices}
+## Prices
 
 Below are the prices for OsmAnd products in the US and EU. Prices in other regions are automatically converted to local currency by the payment platform.
 
@@ -46,14 +46,14 @@ Below are the prices for OsmAnd products in the US and EU. Prices in other regio
 
 
 
-### Free and Paid Features {#free-and-paid-features}
+### Free and Paid Features
 
 - [Android's free and paid features.](./android.md#free-and-paid-features)
 - [iOS's free and paid features.](./ios.md#free-and-paid-features)
 
 
 
-## Restore Purchases {#restore-purchases}
+## Restore Purchases
 
 Your purchases are linked to your OsmAnd Cloud account (your email). To restore purchases on a new device:
 

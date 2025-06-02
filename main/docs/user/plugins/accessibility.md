@@ -17,12 +17,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 The Accessibility plugin is available only on the **Android version** of OsmAnd. The [iOS Version](#how-to-use-ios) relies on the system’s default accessibility settings.
 :::
 
-## Overview {#overview}
+## Overview
 
 Accessibility improves usability for blind and visually impaired users by integrating with [Android Accessibility](https://www.android.com/accessibility/) tools. The plugin offers **text-to-speech, gesture control, automatic announcements** and **haptic feedback** to make navigation more accessible. On iOS, OsmAnd utilizes Apple's built-in accessibility features such as VoiceOver.
 
 
-### How To Use (Android) {#how-to-use-android}
+### How To Use (Android)
 
 ![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
@@ -61,7 +61,7 @@ Accessibility improves usability for blind and visually impaired users by integr
 | **Double tap** | *Not available in Accessibility mode* | *Not supported* |
 
 
-### How To Use (iOS) {#how-to-use-ios}
+### How To Use (iOS)
 
 The iOS version of OsmAnd uses the system’s **built-in accessibility tools**.
 
@@ -79,7 +79,7 @@ The iOS version of OsmAnd uses the system’s **built-in accessibility tools**.
    - Explore VoiceOver gestures for iPhone [here](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios).
 
 
-## Required Setup Parameters {#required-setup-parameters}
+## Required Setup Parameters
 
 To activate device's accessibility features in OsmAnd, you need to make the following settings:
 
@@ -88,7 +88,7 @@ To activate device's accessibility features in OsmAnd, you need to make the foll
 3. Configure Accessibility plugin [settings](#plugin-settings).
 
 
-## Plugin Settings {#plugin-settings}
+## Plugin Settings
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
@@ -131,7 +131,7 @@ The Accessibility plugin offers various settings to personalize navigation and i
 - **Haptic feedback** - Ideal for low-visibility environments or when audio guidances are impractical.
 
 
-#### Smart Autoannounce and Clockwise Directions {#smart-autoannounce-and-clockwise-directions}
+#### Smart Autoannounce and Clockwise Directions
 
 The **Smart Autoannounce** feature provides *audio notifications* when you deviate from the planned route, while the **Clockwise Direction Style** offers *clock-face-based navigation guidances*. These features are designed to support visually impaired users who rely on *voice guidance*.  
 
@@ -142,7 +142,7 @@ The **Smart Autoannounce** feature provides *audio notifications* when you devia
 - Set the **Autoannounce Period** (e.g., *10 seconds*) to control the frequency of announcements.
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

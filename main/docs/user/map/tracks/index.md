@@ -15,12 +15,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin, or browsed and selected from OpenStreetMap data.
 
 
-## Types of Tracks {#types-of-tracks}
+## Types of Tracks
 
 [Tracks (GPX)](#display-tracks-on-the-map) - recorded or planned trip saved in [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). This kind of route could be imported from the external source, created in the application, or recorded by you. GPX could contain one of 3 different types of data, or all of them:
 
@@ -31,11 +31,11 @@ OsmAnd has many powerful features to display various routes on the map. Routes c
 OsmAnd could create tracks with 1–3 combinations. [Plan Route](../../plan-route/create-route.md) creates a track with ***Geometry*** and ***Route***, if you save it as ***Simplified Track***, only the ***Geometry*** will be kept. [Recording track](../../plugins/trip-recording.md#new-track-recording) creates only ***Geometry***, but you can also add ***Points*** to it via the context menu.
 
 
-## Display Tracks on the Map {#display-tracks-on-the-map}
+## Display Tracks on the Map
 
 You can manage track visibility by choosing which ones to display or hide from several menus: the [My Places menu](#my-places), the [Configure Map menu](#configure-map), and the [Track Context menu](#track-context-menu). This flexibility allows you to quickly switch between different tracks, ensuring that only the relevant tracks are visible on your map at any given time.
 
-### Configure Map {#configure-map}
+### Configure Map
 
 <Tabs groupId="operating-systems">
 
@@ -59,7 +59,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_strin
 
 The *Configure Map* option enables you to quickly manage the display of all recently displayed tracks, allowing you to toggle visibility for a group of tracks. The track sorting follows the order configured in the *My Places → Tracks* tab. You can access the [Track Menu](../../personal/tracks/manage-tracks.md#track-menu) by long-tapping a track item. Additionally, in this menu, you can modify the appearance of multiple selected tracks simultaneously.
 
-### My Places {#my-places}
+### My Places
 
 <Tabs groupId="operating-systems">
 
@@ -87,7 +87,7 @@ In [My Places *→* Tracks tab](../../personal/tracks/manage-tracks.md#manage-tr
 - *iOS* - long tap the required track in the list.
 
 
-### Track Context Menu {#track-context-menu}
+### Track Context Menu
 
 <Tabs groupId="operating-systems">
 
@@ -108,7 +108,7 @@ In [My Places *→* Tracks tab](../../personal/tracks/manage-tracks.md#manage-tr
 When you select a track on the map or open the [track context menu](./track-context-menu.md) after recording or importing a track, you can control its visibility on the map. Simply use the *Show* or *Hide* buttons to display or remove the track from the map view.
 
 
-## Analyze Track on Map {#analyze-track-on-map}
+## Analyze Track on Map  
 
 <Tabs groupId="operating-systems">
 
@@ -138,7 +138,7 @@ This tool provides a detailed analysis of [track](../../map/tracks/track-context
 - **Scaling**. Use a [two-finger gesture](../../map/interact-with-map.md#gestures) to scale the graph for more detailed viewing.
 
 
-### Follow My Location {#follow-my-location}
+### Follow My Location
 
 <Tabs groupId="operating-systems">
 
@@ -164,7 +164,7 @@ Tap the [My Location](../../map/interact-with-map.md#my-location-and-zoom) butto
 - This feature is useful for hiking and cycling as you navigate the track.  
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Track appearance](./appearance.md)
 - [Track Context menu](./track-context-menu.md)

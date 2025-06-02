@@ -13,14 +13,14 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 To get around faster, in OsmAnd you can use street-level views of your routes or places of interest provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).  
 
 [The Mapillary layer](https://www.mapillary.com/) brings street-level imagery straight into the OsmAnd app, so you can easily overview the surroundings of any place of interest or along the route you have planned. If imagery is missing, you can add it yourself, and others can use it. This feature has emerged from our collaboration with [the Mapillary team](https://www.mapillary.com/about), uniting the benefits of both apps.
 
 
-## Required Setup Parameters {#required-setup-parameters}
+## Required Setup Parameters
 
 To display street-level images on the OsmAnd map, you need to make the following settings:
 
@@ -28,7 +28,7 @@ To display street-level images on the OsmAnd map, you need to make the following
 2. Display the [Street-level imagery](#enable-layer) on the map for the required profile in the Configure map menu.
 
 
-## Map Layer {#map-layer}
+## Map Layer
 
 <Tabs groupId="operating-systems">
 
@@ -54,7 +54,7 @@ The map layer with street images is displayed on the OsmAnd map as rows of conne
 - You can apply [filters](#data-filtering) to select the photos you want to display on the map.
 
 
-### Enable Layer {#enable-layer}
+### Enable Layer
 
 <Tabs groupId="operating-systems">
 
@@ -83,7 +83,7 @@ To display Mapillary street-level imagery on the map, you need to enable this la
 :::
 
 
-### Data Filtering {#data-filtering}
+### Data Filtering
 
 <Tabs groupId="operating-systems">
 
@@ -110,7 +110,7 @@ If the selected images are not displayed, use **Reload** for the **Tile cache**.
 :::
 
 
-## Map Context Menu {#map-context-menu}
+## Map Context Menu
 
 <Tabs groupId="operating-systems">
 
@@ -131,7 +131,7 @@ If the selected images are not displayed, use **Reload** for the **Tile cache**.
 If the Mapillary plugin is enabled, you can view photos of streets available within a 40-meter radius of the selected point on the map. The photos are opened in the [map context menu](../map/map-context-menu.md#online-photos).
 
 
-## Add Photos {#add-photos}
+## Add Photos
 
 <Tabs groupId="operating-systems">
 
@@ -152,7 +152,7 @@ If the Mapillary plugin is enabled, you can view photos of streets available wit
 To add photos, you need to register in the [Mapillary app](https://www.mapillary.com/mobile-apps). You can also add photos to the map context menu by tapping the *Add photos* button in the [Online photos](../map/map-context-menu.md#online-photos) section of the map context menu. Then the Mapillary application will open.
 
 
-## Mapillary Widget {#mapillary-widget}
+## Mapillary Widget
 
 <Tabs groupId="operating-systems">
 
@@ -177,7 +177,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin is enabled. You can enable or disable the Mapillary widget and other widgets in the [Configure screen](../widgets/configure-screen.md) menu.
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

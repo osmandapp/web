@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# Tiles Directory Format - .metainfo {#tiles-directory-format---metainfo}
+# Tiles Directory Format - .metainfo
 
 The Metainfo format used in OsmAnd to store the tile layers preferences. In OsmAnd we add a number of tables extending the format:
 

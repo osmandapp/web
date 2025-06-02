@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# How to Setup the Development Environment {#how-to-setup-the-development-environment}
+# How to Setup the Development Environment
 
 
 To setup the development environment, you need to install the [repo utility](https://source.android.com/setup/develop#repo) and use the following [repo manifest](https://github.com/osmandapp/OsmAnd-manifest/blob/master/readonly.xml) or [any other configuration](https://github.com/osmandapp/OsmAnd-manifest).

@@ -4,11 +4,11 @@ sidebar_position: 4
 
 import Translate from '@site/src/components/Translate.js';
 
-# Navigation Voice Prompt Triggering {#navigation-voice-prompt-triggering}
+# Navigation Voice Prompt Triggering
 
                                
 **(Compiled by Hardy 2013, reworked 2023-08)**
-## Principle and Related Settings {#principle-and-related-settings}
+## Principle and Related Settings
 * Prompts are triggered based on a **lead distance** threshold, derived by converting a specified lead time via the profile's **_<Translate android="true" ids="default_speed_setting_title" />_**. For close-up prompts this lead distance may then be adjusted based on the actual speed: increased to ensure the announcement is triggered early enough at high speeds, or decreased for more precision at low speeds.
 * The profile's **_<Translate android="true" ids="default_speed_setting_title" />_** is user-adjustable, and changing it will hence affect the voice prompt trigger distances.
 *Note*: The _<Translate android="true" ids="default_speed_setting_title" />_ also affects the calculated route time.
@@ -23,7 +23,7 @@ import Translate from '@site/src/components/Translate.js';
 * In addition, there is a user-configurable overall **_Voice prompt delay_** (adjustable in the _OsmAnd development plugin_, _Text voice prompts_, button 11.2). This is particularly needed for output type _Phone call audio_, where we emulate a call to a car stereo which induces some delay, to avoid the beginning of the prompts being cut off. (All distances announced in the prompts will anticipate any _Voice prompt delay_.)
 * We mute prompts immediately once they refer to outdated events, or if your direction of travel seems not in line with a current route.
 
-## Base Profile Default Speeds {#base-profile-default-speeds}
+## Base Profile Default Speeds
 While these can be user-adjusted, the defaults are
 * Driving: 12.5 m/s (45 km/h)
 * Cycling: 2.78 m/s (10 km/h)
@@ -32,7 +32,7 @@ While these can be user-adjusted, the defaults are
 * Ski: 1.39  m/s (5 km/h)
 * Aircraft: 40 m/s (144 km/h)
 
-## Trigger Table {#trigger-table}
+## Trigger Table
 
 The triggers are [here in the code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/routing/data/AnnounceTimeDistances.java#L65). The corresponding values for OsmAnd's default settings are:
 

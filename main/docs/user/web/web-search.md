@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-## Overview {#overview}
+## Overview
 
 The **Search menu** can be accessed from the side panel or the **left corner 🔍** of the map. It contains:
 
@@ -29,7 +29,7 @@ The **Search menu** can be accessed from the side panel or the **left corner �
 ![Search menu](@site/static/img/web/search.png)
 
 
-## Search Bar {#search-bar}
+## Search Bar
 
 Click the **🔍 button** to start the search. Enter a query in the **Search Line** and click on POI to open the [**POI Context Menu**](#explore-poi-data), where you can view the tags information.
 
@@ -52,7 +52,7 @@ Click the chosen POI on the map or in the result list opens the **POI Context Me
 
 ![Context Menu POI](@site/static/img/web/context_menu_poi_1.png)
 
-## Categories {#categories}
+## Categories
 
 You can choose and display one POI category on the map in the **Categories Menu**:
 
@@ -76,7 +76,7 @@ Click the selected  POI on the map or in the results list to open the **POI Cont
 ![Context Menu POI](@site/static/img/web/categories_poi_1.png)
 
 
-## Explore {#explore}
+## Explore
 
 The **Explore** section in the Search menu makes it easier to find places and view points of interest (POIs) with their photos ([Wikidata source](https://www.wikidata.org/)) directly on the map.
 
@@ -93,7 +93,7 @@ To get started:
 
    ![Explore menu](@site/static/img/web/explore_cat.png)
 
-### Explore POI data {#explore-poi-data}
+### Explore POI data
 
 Clicking on an image POI opens a new context menu that includes:
 
@@ -109,7 +109,7 @@ Clicking on an image POI opens a new context menu that includes:
 
 ![Explore menu](@site/static/img/web/poi_context.png)
 
-### Photo Gallery {#photo-gallery}
+### Photo Gallery
 
 If you click on ***Show All*** in the **Online Photos** section of the context nenu opens the *Photo Gallery* of the selected POI opens.  
 In the *Photo Gallery*, you can scroll through all photos of the POI.  

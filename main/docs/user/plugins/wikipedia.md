@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 :::info Paid feature
 The Wikipedia plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
@@ -35,7 +35,7 @@ Brief information is provided by Wikipedia POIs (an abbreviation for "[point of 
 ![Wikipedia](@site/static/img/map/map-wikipedia.png)
 
 
-## Required Setup Parameters {#required-setup-parameters}
+## Required Setup Parameters
 
 To display Wikipedia data on the map, you need to make the following settings:
 
@@ -45,7 +45,7 @@ To display Wikipedia data on the map, you need to make the following settings:
 4. Configure preferred [languages](#set-preferred-language) to read articles.
 
 
-## Download Wikipedia Packages {#download-wikipedia-packages}
+## Download Wikipedia Packages
 
 Wikipedia data is available for each geographic region. If it is loaded for one region and not loaded for another, in the first case you can work with Wikipedia information when viewing the region on a map, and in the other case, the region will not have any Wikipedia information. Once loaded, Wikipedia data becomes available in general, as well as offline.
 
@@ -78,7 +78,7 @@ To see what data has already been uploaded, go to *<Translate ios="true" ids="sh
 </Tabs>
 
 
-## Display Wikipedia on the Map {#display-wikipedia-on-the-map}
+## Display Wikipedia on the Map
 
 By loading Wikipedia data for the required regions, you can control the visibility of that data on the map. Visibility is controlled by [Popular Places (Wikipedia)](../map/point-layers-on-map.md#-wikipedia) **for Android** / [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia) **for iOS**, which can be shown or hidden for all uploaded regions by a certain [profile](../personal/profiles.md), for example, a profile for driving, a profile for cycling, another profile to show public transport, and others.  
 
@@ -112,7 +112,7 @@ To show/hide Wikipedia POIs, do the following:
 </Tabs>
 
 
-## Search Wikipedia {#search-wikipedia}
+## Search Wikipedia
 
 With uploaded Wikipedia data, regardless of the visibility mode of the [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia) on the map, it is possible to [search](../search/search-poi.md) for any information from Wikipedia.
 
@@ -161,7 +161,7 @@ When you tap the Search button, an additional panel appears allowing you to [sea
 - If necessary, tap the **Show Wikipedia on the map** option at the top of the search panel and search results from the Wikipedia category will appear on the map.  
 
 
-## Wikipedia Article {#wikipedia-article}
+## Wikipedia Article
 
 To open the Wikipedia article:
 
@@ -190,11 +190,11 @@ To open the Wikipedia article:
 </Tabs>
 
 
-## Wikipedia Settings {#wikipedia-settings}
+## Wikipedia Settings  
 
 You can [set the language(-s)](#set-preferred-language) in which you prefer to read [articles](#wikipedia-article) and also configure [images download options](#download-images) for each [profile](../personal/profiles.md).
 
-### Set Preferred Language {#set-preferred-language}
+### Set Preferred Language  
 
 In the **Android** and **iOS** versions of the OsmAnd app, you can set your preferred language (or languages) for displaying Wikipedia articles using the *Configure map menu*. If you select more than one language, the *Wikipedia* articles on the map will be shown in any of them. Go to:
 
@@ -227,7 +227,7 @@ In the **iOS** version, you can also set the preferred language for Wikipedia ar
 
 :::
 
-### Switch Languages Inside the Article {#switch-languages-inside-the-article}
+### Switch Languages Inside the Article  
 
 In case the *Wikipedia article* is available in different languages, you can switch the language while reading. After tapping the corresponding icon in the upper right corner of the screen you will be offered options to choose from.
 
@@ -248,7 +248,7 @@ In case the *Wikipedia article* is available in different languages, you can swi
 </Tabs>
 
 
-### Download Images {#download-images}
+### Download Images
 
 You can choose whether to download images from Wikipedia on your device or not inside *Wikipedia article*:
 
@@ -279,7 +279,7 @@ In the **iOS** version of the app, you can also access the image download option
 ![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios.png)
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

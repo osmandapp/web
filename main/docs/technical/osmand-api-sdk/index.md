@@ -1,4 +1,4 @@
-# OsmAnd API, SDK - Samples {#osmand-api-sdk---samples}
+# OsmAnd API, SDK - Samples
 In case you want to use OsmAnd as a library for your app, you might consider to use it via SDK or via API. Now these options are available only for Android.
  
 There are 2 main ways how to reuse OsmAnd power in your app:
@@ -7,13 +7,13 @@ There are 2 main ways how to reuse OsmAnd power in your app:
 
 All the code for 2 samples is available in [a single repository](https://github.com/osmandapp/osmand-api-demo).
 
-## SDK Examples {#sdk-examples}
+## SDK Examples
 
 Here is the list of examples how to use SDK inside your product.
 
 [Simple map](./add_mapview.md) - how to add the map to simple application.
 
-## Android OsmAnd AIDL API {#android-osmand-aidl-api}
+## Android OsmAnd AIDL API
 Main concept behind this approach that Target application is communicated with OsmAnd via [AIDL](https://developer.android.com/guide/components/aidl) or intents api. OsmAnd has reach variety of methods supported [AIDL interface](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). There are several apps built using these approach and main concept that app contains several screens and "Go to map" button behind the scene app completely reconfigures OsmAnd and provides callback for main operations such as Navigation, GPS location acquired and also includes UI elements such as widgets / Drawer buttons, so user can navigate from the Map back to the Target API.
 
 List of APIs is pretty long and you can get acquainted with it inside [Demo App](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk).
@@ -33,7 +33,7 @@ List of APIs is pretty long and you can get acquainted with it inside [Demo App]
 
 Please check the example on [Github repo](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-api-sample).
 
-## Android OsmAnd Full Library SDK {#android-osmand-full-library-sdk}
+## Android OsmAnd Full Library SDK
 OsmAnd Full library reuses complete OsmAnd as a library. Basically All code / All UI fragments is part of that library which gives the freedom to use what's already present in OsmAnd but requires a good understanding how it is possible to combine several layers / services.
 
 **Pros**
@@ -51,5 +51,5 @@ OsmAnd Full library reuses complete OsmAnd as a library. Basically All code / Al
 Please check the example on [Github repo](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-map-sample).
 Demo app [OsmAnd-map-sample.apk](https://download.osmand.net/latest-night-build/OsmAnd-map-sample.apk).
 
-## License {#license}
+## License
 You might want to double check [OsmAnd's License](https://osmand.net/help-online/license) and [complete version](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE).

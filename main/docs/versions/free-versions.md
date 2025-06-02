@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Free Releases — Android {#free-releases--android}
+# Free Releases — Android
 
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
@@ -16,9 +16,9 @@ You can get the latest version of OsmAnd free from listed app stores.
 
 Direct links to free OsmAnd versions.
 
-## Version 5 {#version-5}
+## Version 5
 
-### Version 5.0 {#version-50}
+### Version 5.0
 
 Release date 04/2025:
 
@@ -39,9 +39,9 @@ Release date 04/2025:
 
 <DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
 
-## Version 4 {#version-4}
+## Version 4
 
-### Version 4.9 {#version-49}
+### Version 4.9
 
 Release date 11/2024:
 
@@ -63,7 +63,7 @@ Release date 11/2024:
 <DownloadRelease blog="osmand-android-4-9-released" release="net.osmand-4.9.10.apk" />
 
 
-### Version 4.8 {#version-48}
+### Version 4.8
 
 Release date 08/2024:
 
@@ -81,7 +81,7 @@ Release date 08/2024:
 
 <DownloadRelease blog="osmand-android-4-8-released" release="net.osmand-4.8.6.apk" />
 
-### Version 4.7 {#version-47}
+### Version 4.7
 
 Release date 04/2024:
 
@@ -97,7 +97,7 @@ Release date 04/2024:
 
 <DownloadRelease blog="osmand-android-4-7-released" release="net.osmand-4.7.17.apk" />
 
-### Version 4.6 {#version-46}
+### Version 4.6
 
 Release date 12/2023:
 
@@ -115,7 +115,7 @@ Release date 12/2023:
 
 <DownloadRelease blog="osmand-android-4-6-released" release="net.osmand-4.6.13.apk" />
 
-### Version 4.5 {#version-45}
+### Version 4.5
 
 Release date 08/2023:
 
@@ -141,7 +141,7 @@ Release date 08/2023:
 
 <DownloadRelease blog="osmand-android-4-5-released" release="net.osmand-4.5.10.apk" />
 
-### Version 4.4 {#version-44}
+### Version 4.4
 
 Release date 03/2023:
 
@@ -164,7 +164,7 @@ Release date 03/2023:
 <DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7.apk" />
 
 
-### Version 4.3 {#version-43}
+### Version 4.3
 
 Release date 12/2022:
 
@@ -181,7 +181,7 @@ Release date 12/2022:
 
 <DownloadRelease blog="osmand-android-4-3-released" release="net.osmand-4.3.12.apk" />
 
-### Version 4.2 {#version-42}
+### Version 4.2
 
 Release date: 06/2022
 
@@ -192,7 +192,7 @@ Release date: 06/2022
 
 <DownloadRelease blog="osmand-android-4-2-released" release="net.osmand-4.2.7.apk" />
 
-### Version 4.1 {#version-41}
+### Version 4.1
 
 Release date: 12/2021
 
@@ -210,7 +210,7 @@ Release date: 12/2021
 
 <DownloadRelease blog="osmand-android-4-1" release="net.osmand-4.1.11.apk" />
 
-### Version 4.0 {#version-40}
+### Version 4.0
 
 Release date 08/2021:
 
@@ -239,9 +239,9 @@ Release date 08/2021:
 
 <hr></hr>
 
-## Version 3 {#version-3}
+## Version 3
 
-### Version 3.9 {#version-39}
+### Version 3.9
 
 Release date 02/2021:
 
@@ -253,7 +253,7 @@ Release date 02/2021:
 <DownloadRelease blog="osmand-3-9" release="net.osmand-3.9.9-399.apk" />
 
 
-### Version 3.8 {#version-38}
+### Version 3.8
 
 Release date 09/2020:
 
@@ -268,7 +268,7 @@ Release date 09/2020:
 <DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3.apk" />
 
 
-### Version 3.7 {#version-37}
+### Version 3.7
 
 Release date 05/2020:
 
@@ -285,7 +285,7 @@ Release date 05/2020:
 <DownloadRelease blog="osmand-3-7" release="net.osmand-3.7.4.apk" />
 
 
-### Version 3.6 {#version-36}
+### Version 3.6
 
 Release date 02/2020:
 
@@ -306,7 +306,7 @@ Release date 02/2020:
 
 
 
-### Version 3.5 {#version-35}
+### Version 3.5
 
 Release date: 11/2019
 
@@ -323,7 +323,7 @@ Release date: 11/2019
 
 
 
-### Version 3.4 {#version-34}
+### Version 3.4
 
 Release date: 07/2019
 
@@ -341,7 +341,7 @@ Release date: 07/2019
 
 
 
-### Version 3.3 {#version-33}
+### Version 3.3
 
 Release date: 03/2019
 
@@ -358,7 +358,7 @@ Release date: 03/2019
 
 
 
-### Version 3.2 {#version-32}
+### Version 3.2
 
 Release date 09/2018:
 
@@ -372,7 +372,7 @@ Release date 09/2018:
 
 
 
-### Version 3.1 {#version-31}
+### Version 3.1
 
 Release date 08/2018:
 
@@ -386,7 +386,7 @@ Release date 08/2018:
 <DownloadRelease blog="osmand-3-1" release="net.osmand-3.1.6.apk" />
 
 
-### Version 3.0 {#version-30}
+### Version 3.0
 
 Release date: 05/2018
   
@@ -401,9 +401,9 @@ Release date: 05/2018
 
 <hr></hr>
 
-## Version 2 {#version-2}
+## Version 2
 
-### Version 2.9 {#version-29}
+### Version 2.9
 
 Release date: 02/2018
   
@@ -420,7 +420,7 @@ Release date: 02/2018
 
 
 
-### Version 2.8 {#version-28}
+### Version 2.8
 
 Release date 10/2017:
 
@@ -433,7 +433,7 @@ Release date 10/2017:
   
 
 
-### Version 2.7 {#version-27}
+### Version 2.7
 
 Release date 07/2017:
   
@@ -446,7 +446,7 @@ Release date 07/2017:
   
 
 
-### Version 2.6 {#version-26}
+### Version 2.6
 
 Release date: 04/2017
 
@@ -462,7 +462,7 @@ Release date: 04/2017
 
 
 
-### Version 2.5 {#version-25}
+### Version 2.5
 
 Release date: 11/2016
   
@@ -476,7 +476,7 @@ Release date: 11/2016
 <DownloadRelease blog="osmand-2-5" release="net.osmand-2.5.3.apk" />
 
 
-### Version 2.4 {#version-24}
+### Version 2.4
 
 Release date: 08/2016
   
@@ -489,7 +489,7 @@ Release date: 08/2016
 
 
 
-### Version 2.3 {#version-23}
+### Version 2.3
 
 Release date: 03/2016
 
@@ -504,7 +504,7 @@ Release date: 03/2016
 
 
 
-### Version 2.2 {#version-22}
+### Version 2.2
 
 Release date: 11/2015
 
@@ -519,7 +519,7 @@ Release date: 11/2015
 
 
 
-### Version 2.1 {#version-21}
+### Version 2.1
 
 Release date 06/2015:
 
@@ -535,7 +535,7 @@ Release date 06/2015:
 
 
 
-### Version 2.0 {#version-20}
+### Version 2.0
 
 Release date 04/2015:
 
@@ -549,9 +549,9 @@ Release date 04/2015:
 
 <hr></hr>
 
-## Version 1 {#version-1}
+## Version 1
 
-### Version 1.9 {#version-19}
+### Version 1.9
 
 Release date: 10/2014
 
@@ -594,7 +594,7 @@ Simplification of Background Trip Recording and Background Navigation:
 
 
 
-### Version 1.8 {#version-18}
+### Version 1.8
 
 Release date: 07/2014
 
@@ -625,7 +625,7 @@ Navigatio:
 
 
 
-### Version 1.7 {#version-17}
+### Version 1.7
 
 Release date 03/2014:
 
@@ -641,7 +641,7 @@ Release date 03/2014:
 
 
 
-### Version 1.6 {#version-16}
+### Version 1.6
 
 Release date 10/2013:
 
@@ -658,7 +658,7 @@ Release date 10/2013:
 
 <Download link="net.osmand-1.6.5%20beta-167.apk" />
 
-### Version 1.5 {#version-15}
+### Version 1.5
 
 Release date: 07/2013
 
@@ -671,7 +671,7 @@ Release date: 07/2013
 
 
 
-### Version 1.4 {#version-14}
+### Version 1.4
 
 Release date: 05/2013
 
@@ -688,7 +688,7 @@ Release date: 05/2013
 
 
 
-### Version 1.3 {#version-13}
+### Version 1.3
 
 Release date 03/2013:
 
@@ -700,7 +700,7 @@ Release date 03/2013:
 <Download link="net.osmand-1.3%20beta-137.apk" />
 
 
-### Version 1.2 {#version-12}
+### Version 1.2
 
 Release date 02/2013:
 
@@ -714,7 +714,7 @@ Release date 02/2013:
 <Download link="net.osmand-1.2.1%20beta-133.apk" />
 
 
-### Version 1.1 {#version-11}
+### Version 1.1
 
 Release date 12/2012:
 
@@ -733,7 +733,7 @@ Release date 12/2012:
 
 
 
-### Version 1.0 {#version-10}
+### Version 1.0
 
 Release date 09/2012:
 
@@ -744,7 +744,7 @@ Release date 09/2012:
 <Download link="net.osmand-1.0.0%20beta-101.apk" />
 
 
-## Version 0.8 {#version-08}
+## Version 0.8
 
 Release date: 07/2012
 
@@ -764,7 +764,7 @@ Release date: 07/2012
 <Download link="net.osmand-0.8.3%20beta-81.apk" />
 
 
-## Version 0.7 {#version-07}
+## Version 0.7
 
 Release date 04/2012:
   
@@ -778,7 +778,7 @@ Release date 04/2012:
 <Download link="net.osmand-0.7.3%20beta-56.apk" />
 
 
-## Version 0.6 {#version-06}
+## Version 0.6
 
 Release date 09/2011:
 

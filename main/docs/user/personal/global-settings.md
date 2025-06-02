@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview {#overview}
+## Overview
 
 **Global settings** are general [settings](../personal/profiles.md) for all profiles in the OsmAnd application. These are the basic settings for the OsmAnd system, and any changes made will affect the entire application.
 
@@ -41,12 +41,12 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 </Tabs>
 
 
-## General {#general}
+## General
 
 This section contains the basic OsmAnd settings, such as selecting a [profile](#default-profile) when loading the application, selecting the [rendering engine](#map-rendering-engine) and the [folder](#data-storage-folder) where the data will be saved.  
 
 
-### Default Profile {#default-profile}
+### Default Profile
 
 <Tabs groupId="operating-systems">
 
@@ -70,7 +70,7 @@ OsmAnd uses the default profile, *Browse map*, as the first profile for new user
 - **<Translate android="true" ids="settings_preset"/>**. You select the profile to be used when starting OsmAnd. It can be changed in the application [settings](../personal/profiles.md).  
 
 
-### CarPlay Profile {#carplay-profile}
+### CarPlay Profile
 
 :::caution iOS ONLY
 This feature is available for the iOS version of the OsmAnd app.
@@ -83,7 +83,7 @@ This feature is available for the iOS version of the OsmAnd app.
 The [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) is used when connected to your vehicle's [CarPlay software](https://support.apple.com/en-gb/HT205634) and helps you make the most of the optimized version of the OsmAnd app using the audio and video systems to display data on your phone.
 
 
-### Data Storage Folder {#data-storage-folder}
+### Data Storage Folder
 
 <Tabs groupId="operating-systems">
 
@@ -128,7 +128,7 @@ Go to: *Files → On My Phone → OsmAnd Maps*
 </Tabs>
 
 
-### Map Rendering Engine {#map-rendering-engine}
+### Map Rendering Engine
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/> (Android only)*
 
@@ -162,7 +162,7 @@ The image for the 3D view of the map is loaded tile by tile, then all the symbol
 </table>
 
 
-## Privacy and Security {#privacy-and-security}
+## Privacy and Security
 
 OsmAnd allows you to choose whether to *[share your in-app activity](#analytics)* and [identifiers](#identifiers) (*Android only*) in the app, the ability to edit your *[history](#history)* and use a *[proxy](#proxy)* (*Android only*) of your choice.  
 
@@ -170,7 +170,7 @@ OsmAnd allows you to choose whether to *[share your in-app activity](#analytics)
 More information can be found in [*OsmAnd Privacy and Security Policy*](../../legal/privacy-policy.md)
 :::
 
-### Analytics {#analytics}
+### Analytics
 
 <Tabs groupId="operating-systems">
 
@@ -198,7 +198,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 Data about your location or the places you view on the map is not collected.
 :::  
 
-### Identifiers {#identifiers}
+### Identifiers
 
 <InfoAndroidOnly />
 
@@ -214,7 +214,7 @@ A **UUID** (*Unique User Identifier*) is generated for each installation of the 
 - You can read more information in the [Terms of Use (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier).
 
 
-### History {#history}
+### History
 
 <Tabs groupId="operating-systems">
 
@@ -265,7 +265,7 @@ The application records the history of previously entered data (history) in the 
 - To delete or export multiple records simultaneously, select checkboxes next to the required records and tap the **Export** or **Delete** buttons.  
 
 
-### Proxy {#proxy}
+### Proxy
 
 <InfoAndroidOnly />
 
@@ -276,11 +276,11 @@ The application records the history of previously entered data (history) in the 
 **<Translate android="true" ids="proxy_pref_title"/>** setting allows you to configure an [HTTP proxy](https://en.wikipedia.org/wiki/Proxy_server) for all network requests. You can set the *Proxy Host* and *Proxy Port*.  
 
 
-## Other {#other}
+## Other
 
 In this section of the OsmAnd settings, you can configure the notifications you receive, the location service, and how your application settings are saved.
 
-### Dialogs and notifications {#dialogs-and-notifications}
+### Dialogs and notifications
 
 <Tabs groupId="operating-systems">
 
@@ -305,7 +305,7 @@ The **<Translate android="true" ids="dialogs_and_notifications_title"/>** settin
 - [*Download map dialog*](../start-with/download-maps.md#download) informs you that specific maps can be downloaded.
 
 
-### Location Source {#location-source}
+### Location Source
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*Android only*)
 
@@ -325,7 +325,7 @@ OsmAnd provides you with a choice of services to determine your location. It is 
 - Privacy of Location services: *Settings → Privacy → Location Services*
 
 
-### Auto-Backup {#auto-backup}
+### Auto-Backup
 
 <InfoAndroidOnly />
 
@@ -343,12 +343,12 @@ OsmAnd provides you with a choice of services to determine your location. It is 
 **If you are using [*OsmAnd Cloud*](../personal/osmand-cloud.md), it's recommended to deactivate this default backup option to prevent any confusion during reinstallation.**
 
 
-## Legal {#legal}
+## Legal
 
 OsmAnd can [warn you about speed cameras](../navigation/guidance/navigation-settings.md#screen-alerts), but only if the laws in your country permit it.
 
 
-### Uninstall Speed Cameras {#uninstall-speed-cameras}
+### Uninstall Speed Cameras
 
 <Tabs groupId="operating-systems">
 
@@ -377,13 +377,13 @@ In some countries or regions, using speed camera warning applications is illegal
 Read about alerts for speed cameras on your route in the article Navigation widgets in the *[Alert widget](../widgets/nav-widgets.md#alert-widget)* section.
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Profiles (Settings)](./profiles.md)
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-### Troubleshooting {#troubleshooting}
+### Troubleshooting
 
 - **Android 12+ (change storage folder)**. New storage access guidelines have been implemented in Android versions 11-12. These changes particularly affect the storage of maps on SD cards, resulting in significantly slower file access performance and stricter access limitations to SD card folders on Android 11 and 12. For how to solve this problem, see the [**Troubleshooting**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) section.
 

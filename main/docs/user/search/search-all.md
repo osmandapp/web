@@ -16,12 +16,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 <InfoIncompleteArticle/>
 
 
-## Overview {#overview}
+## Overview
 
 **Search** is a useful tool for quickly finding locations. You can use Search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you want to get an exact location. [Coordinates](#search-coordinates) search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. Search [History](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find POIs nearby.
 
 
-## How to Use {#how-to-use}
+## How to Use
 
 <Tabs groupId="operating-systems">
 
@@ -54,7 +54,7 @@ Important information:
 
 - Initially, **the search is based on the data located on the map in the visible area of the device screen**, but if nothing is found there, OsmAnd offers to increase the search radius.  
 
-### Basic Queries {#basic-queries}
+### Basic Queries
 
 ***Query list*:**
 
@@ -86,7 +86,7 @@ Important information:
 To avoid confusion, sometimes the key or value is surrounded by quotation marks: **key="value" or "key"="value"**. The quotation marks and equal sign are not part of the tag content.
 -->
 
-### Sorting Search Results {#sorting-search-results}
+### Sorting Search Results
 
 OsmAnd automatically sorts search results by three main criteria:
 
@@ -105,7 +105,7 @@ OsmAnd automatically sorts search results by three main criteria:
 - In cases where search results are too broad, OsmAnd can **limit the displayed results** to those with the highest word match accuracy.
 
 
-### Full Text Search {#full-text-search}
+### Full Text Search
 
 <Tabs groupId="operating-systems">
 
@@ -141,7 +141,7 @@ OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-
 :::
 
 
-### Search on the Map {#search-on-the-map}
+### Search on the Map
 
 <Tabs groupId="operating-systems">
 
@@ -168,14 +168,14 @@ OsmAnd allows you to search for points displayed on a map on your device's scree
 - You can continue typing your query at the top of the screen.
 
 
-### Search Nearby {#search-nearby}
+### Search Nearby
 
 ![Search Android](@site/static/img/search/search_all_near_location_andr.png)
 
 You can use the search in the vicinity of a specific location. To do this, select the required point [from the list in the search menu](#full-text-search) or select it directly on the map. In the [map context menu](../map/map-context-menu.md#actions), select *Actions → Search nearby*.
 
 
-## Search Address {#search-address}
+## Search Address
 
 <Tabs groupId="operating-systems">
 
@@ -196,7 +196,7 @@ You can use the search in the vicinity of a specific location. To do this, selec
 **Search Address** uses OpenStreetMap data. This type of search allows you to find the location and direction to a specific address from a ready-sorted list. Read more in the [Search Address](./search-address.md) article.
 
 
-## Search History {#search-history}
+## Search History
 
 <Tabs groupId="operating-systems">
 
@@ -217,7 +217,7 @@ You can use the search in the vicinity of a specific location. To do this, selec
 You can use the **Search History** to search again for previously found places, addresses, or frequently visited places without entering the query again.. More details can be found in the [Search History](./search-history.md) article.
 
 
-## Search POI {#search-poi}
+## Search POI
 
 <Tabs groupId="operating-systems">
 
@@ -246,7 +246,7 @@ It is convenient to use when maps of the region are unavailable, but a constant 
 - Read the [Search POI](./search-poi.md) article for more information.
 
 
-## Search Coordinates {#search-coordinates}
+## Search Coordinates
 
 <Tabs groupId="operating-systems">
 
@@ -267,7 +267,7 @@ It is convenient to use when maps of the region are unavailable, but a constant 
 Coordinate search provides an accurate location. You can enter precise coordinates obtained, for example, from other sources such as a map, GPS device, or online services, which is particularly useful when it comes to places that do not have an exact address. For more information, see the [Search Coordinates](./search-coordinates.md) article.
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Search Address](./search-address.md)
 - [Search History](./search-history.md)

@@ -14,7 +14,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 Markers are special points marked on the map as flags that could be quickly created as a single tap without specifying name and other information in contrast with [Favorite points](./favorites.md). Also markers provide additional functionality with [widgets](../widgets/markers.md), **arrows** (<Translate android="true" ids="show_arrows_on_the_map"/>) and **distance indication** (<Translate android="true" ids="show_direction"/>).
 
@@ -34,9 +34,9 @@ Markers are special points marked on the map as flags that could be quickly crea
 
 </Tabs>
 
-## Markers {#markers}
+## Markers
 
-### Add / Edit Markers {#add--edit-markers}
+### Add / Edit Markers
 
 <Tabs groupId="operating-systems">
 
@@ -73,7 +73,7 @@ You can't delete marker immediately, you need to first deactivate (mark as passe
 
 
 <!--
-### Add Favorites to Map Markers {#add-favorites-to-map-markers}
+### Add Favorites to Map Markers
 
 <InfoAndroidOnly/>
 
@@ -88,11 +88,11 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 -->
 
 
-### Itinerary List {#itinerary-list}
+### Itinerary List
 
 Itinerary list represents an ordered list of markers where top 1st marker used in widgets for navigation. Read more about it in [Navigate by markers](../navigation/setup/markers-navigation.md#itinerary-list) article.
 
-### Marker Groups {#marker-groups}
+### Marker Groups
 
 <InfoAndroidOnly />
 
@@ -100,7 +100,7 @@ Itinerary list represents an ordered list of markers where top 1st marker used i
 
 Markers can be added and deleted as a whole group from Favorite group or GPX file with waypoints. That makes it's very convenient to be used in a special navigation mode - [Navigate by markers](../navigation/setup/markers-navigation.md#add-group-of-favorite).
 
-### History {#history}
+### History
 
 <Tabs groupId="operating-systems">
 
@@ -121,7 +121,7 @@ Markers can be added and deleted as a whole group from Favorite group or GPX fil
 History is a list of all deactivated (passed) markers. From this list it's possibly to permanently delete a marker or restore it back.
 
 
-## Appearance on the Map {#appearance-on-the-map}
+## Appearance on the Map
 
 <Tabs groupId="operating-systems">
 
@@ -154,7 +154,7 @@ In the iOS version of OsmAnd, *Appearance on Map* is also a setting for displayi
 - **Keep passed markers on the map** *(for Android)*. Markers added as a group of Favorites or GPX waypoints marked Passed will remain on the map. If the group is not active, the markers will disappear from the map.
 
 
-## Plan Route for Markers {#plan-route-for-markers}
+## Plan Route for Markers
 
 <InfoAndroidOnly />
 
@@ -165,7 +165,7 @@ In the iOS version of OsmAnd, *Appearance on Map* is also a setting for displayi
 Using functionality of the Plan a route in Markers list tool you can sort *Markers* *Door-to-door*, put them in reverse order or create a *Round trip*. If you tap a *Navigation* option, *Markers* will be used as [intermediate destinations](../navigation/setup/route-navigation.md#intermediate-destinations).
 
 
-## Actions {#actions}
+## Actions
 
 <InfoAndroidOnly />
 
@@ -179,7 +179,7 @@ Using functionality of the Plan a route in Markers list tool you can sort *Marke
 - **<Translate android="true" ids="move_all_to_history"/>**. Deactivates all markers and move them to [History](#history).
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Navigation by markers](../navigation/setup/markers-navigation.md)
 - [Marker widgets](../widgets/markers.md)

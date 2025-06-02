@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 :::info Paid feature
 
@@ -48,7 +48,7 @@ Go to: *Menu → Maps & Resources → Local → Colors*
 </Tabs>
 
 
-## Scheme Types {#scheme-types}
+## Scheme Types
 
 <Tabs groupId="operating-systems">
 
@@ -67,27 +67,27 @@ Go to: *Menu → Maps & Resources → Local → Colors*
 </Tabs>
 
 
-### Terrain {#terrain}
+### Terrain
 
 Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) define 3 [terrain visualizations](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*. For each type you can have multiple palettes, for example, *avalanche slope* is provided by default.
 
-### Routes {#routes}
+### Routes
 
 Line gradient visualizations uses palette files (`route_<type_name>_<palette_name>.txt`) to color GPX tracks and Routes:
 
 - For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
 - For [GPX Tracks](../map/tracks/index.md#color): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
 
-### Weather {#weather}
+### Weather
 
 Weather palette files (`weather_<type_name>.txt`) defines visualization for [weather layers](../plugins/weather.md#weather-layers).
 
-### Colors {#colors}
+### Colors
 
 Color palette (`user_palette_default.txt`) is simply used for predefined colors to assign to [Favorites](./favorites.md), [Tracks](./tracks/).
 
 
-## Palette Legend {#palette-legend}
+## Palette Legend
 
 <table class="image">
     <tr>
@@ -101,7 +101,7 @@ Color palette (`user_palette_default.txt`) is simply used for predefined colors 
 The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/index.md#color), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/topography.md#default-color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
 
 
-## Edit Palette file {#edit-palette-file}
+## Edit Palette file
 
 You can edit palettes to personalize the look for maps, and routes. Own color palette files can be added to OsmAnd using the [import/export tool](./import-export.md).
 
@@ -113,14 +113,14 @@ You can edit palettes to personalize the look for maps, and routes. Own color pa
 Each line represents a numerical value (for the color palette, it's an index) and RGB color. For example:
 
 ```xml
-# TXT file named *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
-# 0 - 90 degree RGBA {#0---90-degree-rgba}
+# TXT file named *height_altitude_0-200.txt*
+# 0 - 90 degree RGBA
 0,46,185,0,191
-# yellow  {#yellow-}
+# yellow 
 100,255,222,2,227
-# red {#red}
+# red
 200,255,1,1,255
-# violet {#violet}
+# violet
 220,130,1,255,255
 
 ```
@@ -128,9 +128,9 @@ Each line represents a numerical value (for the color palette, it's an index) an
 After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
 
 
-## Read more {#read-more}
+## Read more
 
-### Quick actions {#quick-actions}
+### Quick actions
 
 <Tabs groupId="operating-systems">
 
@@ -155,7 +155,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 **Quick Action** to change the palette for Terrain. Added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the [Quick Actions](../widgets/quick-action.md#configure-map) tool.  
 
 
-### Import / Export Colors {#import--export-colors}
+### Import / Export Colors
 
 <Tabs groupId="operating-systems">
 
@@ -186,7 +186,7 @@ You can import and export all available default and custom color palettes using 
 - View [*Import / Export*](../personal/import-export.md) article for more detailed information.
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

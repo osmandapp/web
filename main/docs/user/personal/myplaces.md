@@ -15,7 +15,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-## Overview {#overview}
+## Overview
 
 **My Places** is the central hub in the OsmAnd app for managing and customizing all personal data. You can use this section to organize [Favorite points](#favorites) marked as important or frequently visited. The [Tracks](#tracks) tab allows you to view, import, record, and create GPX files to help you keep a detailed history of your routes and travels. You can also manage your [OpenStreetMap Edits](#openstreetmap-edits), making contributing to map improvements and updates easy. The [Audio / Video Notes](#audiovideo-notes) plugin and widgets allow Android users to create and save multimedia notes related to specific locations, adding context to their travels.
 
@@ -52,7 +52,7 @@ Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*
     **Go to** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Check and manage your data.
 
 
-## Favorites {#favorites}
+## Favorites
 
 <Tabs groupId="operating-systems">
 
@@ -116,7 +116,7 @@ Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*
 For more detailed instructions, refer to the [Favorites](../personal/favorites.md) article.
 
 
-## Tracks {#tracks}
+## Tracks
 
 <Tabs groupId="operating-systems">
 
@@ -153,7 +153,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 For comprehensive guidance, see the [Manage Tracks](../personal/tracks/manage-tracks.md) article.
 
 
-## OpenStreetMap Edits {#openstreetmap-edits}
+## OpenStreetMap Edits
 
 <Tabs groupId="operating-systems">
 
@@ -203,7 +203,7 @@ OsmAnd's **OpenStreetMap Edits** feature enables you to contribute to the global
 Refer to the [OSM Editing plugin](../plugins/osm-editing.md) for step-by-step instructions.
 
 
-## Audio/Video Notes {#audiovideo-notes}
+## Audio/Video Notes
 
 <InfoAndroidOnly />
 
@@ -244,13 +244,13 @@ For more information, visit the [Audio/Video Notes plugin](../plugins/audio-vide
 
 
 <!--
-### Share with GPX Waypoints {#share-with-gpx-waypoints}
+### Share with GPX Waypoints
 
 ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
 
 You can share the notes selected as waypoints in the *My Places* menu by adding [GPX data](../plugins/audio-video-notes.md#share-with-gpx-waypoints) to them using the **Share** button at the bottom of the *A/V notes* tab screen.
 
-### Manage Single Note {#manage-single-note}
+### Manage Single Note
 
 ![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
 
@@ -263,7 +263,7 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 - **<Translate android="true" ids="shared_string_delete"/>**. Selected notes are permanently deleted from your collection.
 -->
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)
 - [Search History](../search/search-history.md#export-and-share)

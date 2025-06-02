@@ -3,7 +3,7 @@ sidebar_position: 5
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Routing Configuration - .routing.xml {#routing-configuration---routingxml}
+# Routing Configuration - .routing.xml
 
 <IncompleteArticle/>
 
@@ -16,7 +16,7 @@ Please check the documentation inside routing.xml:
 - Other examples https://github.com/osmandapp/OsmAnd-resources/tree/master/routing
 
 
-### Penalties of Elevation data {#penalties-of-elevation-data}
+### Penalties of Elevation data
 
 Depending on [the selected mode (Less hilly, Flat, Hilly)](../../user/navigation/routing/bicycle-based-routing.md/#penalties-of-elevation-data#penalties-of-elevation-data) and the physical slope (%) of thse road, a penalty calculated from the height difference is added to each horizontal metre.
 

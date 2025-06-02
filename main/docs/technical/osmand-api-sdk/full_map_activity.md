@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Full Map activity {#full-map-activity}
+# Full Map activity
 It is possible to extend OsmAnd MapActivity and add additional features to it
 
 ```

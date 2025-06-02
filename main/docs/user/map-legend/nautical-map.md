@@ -4,87 +4,87 @@ title: Nautical Map Style
 ---
 import Translate from '@site/src/components/Translate.js';
 
-# Nautical Map Style {#nautical-map-style}
+# Nautical Map Style
 Default OsmAnd map style, part of Nautical plugin.
 <Translate android="yes" id="nautical_render_descr" />
 
-## Anchorage and berth {#anchorage-and-berth}
+## Anchorage and berth
 <img src={require('@site/static/img/map-legend/nautical-anchorage-and-berth.png').default} alt="Anchorage and berth" />
 
-## Buyos and beacons {#buyos-and-beacons}
+## Buyos and beacons
 <img src={require('@site/static/img/map-legend/nautical-buyos-and-beacons.png').default} alt="Buyos and beacons" />
 
-## Electronic position {#electronic-position}
+## Electronic position
 Electronic position-fixing systems, fog signals
 <img src={require('@site/static/img/map-legend/nautical-electronic-position.png').default} alt="Electronic position-fixing systems, fog signals" />
 
-## Lights {#lights}
+## Lights
 
 <img src={require('@site/static/img/map-legend/nautical-lights.png').default} alt="Lights" />
 
-## Ports, moorings {#ports-moorings}
+## Ports, moorings
 <img src={require('@site/static/img/map-legend/nautical-port-moorings.png').default} alt="Ports, moorings" />
 
-## Ports, moorings {#ports-moorings}
+## Ports, moorings
 <img src={require('@site/static/img/map-legend/nautical-port-moorings.png').default} alt="Lights" />
 
-## Offshore platforms {#offshore-platforms}
+## Offshore platforms
 <img src={require('@site/static/img/map-legend/nautical-offshore.png').default} alt="Offshore platforms" />
 
-## Landmarks {#landmarks}
+## Landmarks
 <img src={require('@site/static/img/map-legend/nautical-landmarks.png').default} alt="Landmarks" />
 
-## Buildings {#buildings}
+## Buildings
 <img src={require('@site/static/img/map-legend/nautical-buildings.png').default} alt="Buildings" />
 
-## Wrecks and rocks {#wrecks-and-rocks}
+## Wrecks and rocks
 <img src={require('@site/static/img/map-legend/nautical-wrecks-and-rocks.png').default} alt="Wrecks and rocks" />
 
-## Bridges lockgates {#bridges-lockgates}
+## Bridges lockgates
 <img src={require('@site/static/img/map-legend/nautical-bridges-lockgates.png').default} alt="Wrecks and rocks" />
 
 
-## Nautical small craft facility {#nautical-small-craft-facility}
+## Nautical small craft facility
 <img src={require('@site/static/img/map-legend/nautical-small-craft-facility.png').default} alt="Nautical small craft facility" />
 
-## Nautical others {#nautical-others}
+## Nautical others
 <img src={require('@site/static/img/map-legend/nautical-others.png').default} alt="Nautical others" />
 
-## Marine farm, fishing {#marine-farm-fishing}
+## Marine farm, fishing
 <img src={require('@site/static/img/map-legend/nautical-marine-farm-fishing.png').default} alt="Marine farm, fishing" />
 
-## Seabed area {#seabed-area}
+## Seabed area
 <img src={require('@site/static/img/map-legend/nautical-seabed.png').default} alt="Seabed area" />
 
 
-## Cables and pipelines {#cables-and-pipelines}
+## Cables and pipelines
 <img src={require('@site/static/img/map-legend/nautical-cables-and-pipelines.png').default} alt="Cables and pipelines" />
 
 
-## Obstruction {#obstruction}
+## Obstruction
 <img src={require('@site/static/img/map-legend/nautical-obstruction.png').default} alt="Obstruction" />
 
 
-## Restricted area {#restricted-area}
+## Restricted area
 <img src={require('@site/static/img/map-legend/nautical-restricted-area.png').default} alt="Restricted area" />
 
-## Precautionary area {#precautionary-area}
+## Precautionary area
 <img src={require('@site/static/img/map-legend/nautical-precautionary-area.png').default} alt="Precautionary area" />
 
-## Precautionary area {#precautionary-area}
+## Precautionary area
 <img src={require('@site/static/img/map-legend/nautical-precautionary-area.png').default} alt="Precautionary area" />
 
-## Notice {#notice}
+## Notice
 <img src={require('@site/static/img/map-legend/nautical-notice.png').default} alt="Precautionary area" />
 
-### Notice: prohibition {#notice-prohibition}
+### Notice: prohibition
 <img src={require('@site/static/img/map-legend/nautical-notice-prohibition.png').default} alt="Notice: prohibition" />
 
-### Notice: regulation {#notice-regulation}
+### Notice: regulation
 <img src={require('@site/static/img/map-legend/nautical-notice-regulation.png').default} alt="Notice: regulation" />
 
-### Notice: recomendation {#notice-recomendation}
+### Notice: recomendation
 <img src={require('@site/static/img/map-legend/nautical-notice-recomendation.png').default} alt="Notice: recomendation" />
 
-### Notice: information {#notice-information}
+### Notice: information
 <img src={require('@site/static/img/map-legend/nautical-notice-information.png').default} alt="Notice: information" />

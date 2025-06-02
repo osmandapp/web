@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 
 
 
-## Overview {#overview}
+## Overview
 
 **Main Menu** is a primary list of options available to use in the application. It provides quick access to the profile configuration, global settings, search, personal data, navigation and other features.
 
@@ -36,9 +36,9 @@ The [Main Menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located o
 </Tabs>
 
 
-## Main Menu (Side Menu) {#main-menu-side-menu}
+## Main Menu (Side Menu)
 
-### Features {#features}
+### Features
 
 - [Map markers](../personal/markers.md) is a tool that allows to mark place on the map.
 - [My places](../personal/myplaces.md) is a menu that includes by default Favorites and tracks and in addition can include [A/V notes](../plugins/audio-video-notes.md) and [OSM edits](../plugins/osm-editing.md) (if such plugins are turned on).
@@ -50,14 +50,14 @@ The [Main Menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located o
 - [Plan route](../plan-route/create-route.md) is a tool that allows you to measure distances on the map, create GPX tracks or add new segments to existing ones.
 - [* Trip recording](../plugins/trip-recording.md) (*Android*) is a tool that allows to record all movements into track using phone's GPS.
 
-### Settings {#settings}
+### Settings
 
 - [Configure screen](../widgets/configure-screen.md) is a menu that allows configuring displaying widgets on the Map.
 - [Plugins](../plugins/index.md#configure-a-plugin) is a list of additional functionality and advanced settings.
 - [Settings](../personal/global-settings.md) is a menu that allows configuring main app parameters.
 - [Help](./first-steps.md#offline-help) provides quick access to your guide, information about the app version and allows to quickly contact the development team.
 
-### Active Profile (Android) {#active-profile-android}
+### Active Profile (Android)
 
 *Main Menu* provides quick access to switch and [customize profile](../personal/profiles.md). Main purpose of profiles to have different application look & fill for navigation. Though you could use it to customize screen & widgets and switch profiles for different view purposes. All [settings](../personal/profiles.md) are configured separately for each profile.
 
@@ -66,7 +66,7 @@ The [Main Menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located o
 In this menu you can **switch** active profile, **configure** (change settings) for active profile or **manage** all application profiles.
 
 
-### Customize (Advanced Use of Android) {#customize-advanced-use-of-android}
+### Customize (Advanced Use of Android)
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,shared_string_drawer"/> →  &#65049; → Enable*.  
 

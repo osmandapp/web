@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# How to Compile the iOS Version {#how-to-compile-the-ios-version}
+# How to Compile the iOS Version
 
 1. First setup the **[development environment](setup-the-dev-environment.md)**.
 2. Install Xcode from AppStore (Last tested 14.2)
@@ -60,30 +60,30 @@ sidebar_position: 6
   Paste this content into it. Save file and restart computer.
 
 ```
-## Project-wide Gradle settings. {#project-wide-gradle-settings}
+## Project-wide Gradle settings.
 #
-# For more details on how to configure your build environment visit {#for-more-details-on-how-to-configure-your-build-environment-visit}
-# http://www.gradle.org/docs/current/userguide/build_environment.html {#httpwwwgradleorgdocscurrentuserguidebuildenvironmenthtml}
+# For more details on how to configure your build environment visit
+# http://www.gradle.org/docs/current/userguide/build_environment.html
 #
-# Specifies the JVM arguments used for the daemon process. {#specifies-the-jvm-arguments-used-for-the-daemon-process}
-# The setting is particularly useful for tweaking memory settings. {#the-setting-is-particularly-useful-for-tweaking-memory-settings}
-# Default value: -Xmx10248m -XX:MaxMetaspaceSize=256m {#default-value--xmx10248m--xxmaxmetaspacesize256m}
-# org.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8 {#orggradlejvmargs-xmx2048m--xxmaxmetaspacesize512m--xxheapdumponoutofmemoryerror--dfileencodingutf-8}
+# Specifies the JVM arguments used for the daemon process.
+# The setting is particularly useful for tweaking memory settings.
+# Default value: -Xmx10248m -XX:MaxMetaspaceSize=256m
+# org.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
 
 org.gradle.daemon=true
 
 org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
 
 #
-# When configured, Gradle will run in incubating parallel mode. {#when-configured-gradle-will-run-in-incubating-parallel-mode}
-# This option should only be used with decoupled projects. More details, visit {#this-option-should-only-be-used-with-decoupled-projects-more-details-visit}
-# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects {#httpwwwgradleorgdocscurrentuserguidemultiprojectbuildshtmlsecdecoupledprojects}
+# When configured, Gradle will run in incubating parallel mode.
+# This option should only be used with decoupled projects. More details, visit
+# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
 
 org.gradle.parallel=true
 org.gradle.caching=true
 
 #Fri Apr 08 18:47:31 EEST 2016
-# android.useDeprecatedNdk=true {#androidusedeprecatedndktrue}
+# android.useDeprecatedNdk=true
 ```
 
 8. Run `prepare.sh` to compile Qt library and download external dependencies
@@ -131,8 +131,8 @@ org.gradle.caching=true
 
  - Ask your Team Leader for Sandbox accounts and Promo subscriptions
 
-## Troubleshooting {#troubleshooting}
-### Cleaning temp files. {#cleaning-temp-files}
+## Troubleshooting
+### Cleaning temp files.
   - In case of build errors you can press in Xcode: ```Product -> Clean build folder```
   - Close Xcode.
   - Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists).
@@ -143,13 +143,13 @@ org.gradle.caching=true
   - Then run `$ ./prepare.sh`
   - Open XCode and try to build the project again.
 
-### M1 mac {#m1-mac}
+### M1 mac
   - In case of ```ld: library not found for -lOsmAndCore_static_standalone```:
   - Project Navigator -> OsmAnd_projects -> OsmAnd_projects (in Project/Targets list) -> Build settings -> All -> Architectures -> Excluded Architectures -> Debug
   - Add string field of type ```Any IOS Simulator SDK``` with value ```arm64```. (you will need to add it after each prepare.sh run)
   - Build project. In case of errors, make all instructions from ```11. Troubleshooting - cleaning temp files.``` and ```prepare.sh``` once again.
 
-## Kotlin debug addon (optional) {#kotlin-debug-addon-optional}
+## Kotlin debug addon (optional)
 ```
 $ brew install xcode-kotlin
 $ xcode-kotlin install
@@ -158,7 +158,7 @@ $ xcode-kotlin sync
 
 Refer to LLDB Init File section to finish Kotlin debug setup.
 
-## Qt debug addon (optional). If you want to see Qt values in debug mode run this: {#qt-debug-addon-optional-if-you-want-to-see-qt-values-in-debug-mode-run-this}
+## Qt debug addon (optional). If you want to see Qt values in debug mode run this:
 ```
 $ mkdir -p ~/qtlldb
 $ git clone https://github.com/gbooker/lldb-qt-formatters ~/qtlldb
@@ -167,7 +167,7 @@ $ echo "" >> ~/.lldbinit-Xcode
 $ echo "command script import ~/qtlldb/both.py" >> ~/.lldbinit-Xcode
 ```
 
-## LLDB Init File (optional) {#lldb-init-file-optional}
+## LLDB Init File (optional)
 XCode 16+ does not load `~/.lldbinit-Xcode` automatically, so set it up manually using `Product - Scheme - Edit scheme - Run - LLDB Init File` menu.
 
 After set this parameters reboot your computer.

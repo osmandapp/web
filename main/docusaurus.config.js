@@ -16,14 +16,6 @@ const config = {
   organizationName: 'osmandapp', // Usually your GitHub org/user name.
   projectName: 'web', // Usually your repo name.
   staticDirectories: ['static', 'legacy-image-static'],
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'fr'],
-    localeConfigs: {
-      en: { label: 'English' },
-      fr: { label: 'Français' },
-    },
-  },
   presets: [
     [
       'classic',
@@ -84,10 +76,6 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-	{
-          type: 'localeDropdown',
-          position: 'right',
-        },
           {
             type: 'doc',
             docId: 'intro',

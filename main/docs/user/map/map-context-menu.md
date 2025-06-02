@@ -15,12 +15,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 The map context menu provides information about the selected object on the map. You can also use it to create a route to the selected location. To open the context menu, first, find the required location on the map, then select the object with a short tap or long tap when selecting any precise point on the map.
 
 
-### Select an Object (Single Tap) {#select-an-object-single-tap}
+### Select an Object (Single Tap)
 
 <Tabs groupId="operating-systems">
 
@@ -49,7 +49,7 @@ Selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.openst
 > *The height of mountain peaks is displayed in meters or feet depending on the [units of length](../personal/profiles.md#units--formats) selected in the profile settings.*
 
 
-### Select Any Point (Long Tap) {#select-any-point-long-tap}
+### Select Any Point (Long Tap)
 
 <Tabs groupId="operating-systems">
 
@@ -72,7 +72,7 @@ When you **long tap** anywhere on the map, a **context menu** appears, providing
 > **NOTE**. *Long tapping a **building number** highlights its outline and opens the map context menu*
 
 
-### Select Route {#select-route}
+### Select Route
 
 <Tabs groupId="operating-systems">
 
@@ -93,7 +93,7 @@ When you **long tap** anywhere on the map, a **context menu** appears, providing
 Tapping a [GPX-track](../map/tracks/index.md) on the map opens the [track context menu](../map/tracks/track-context-menu.md), where you can access additional track-related options.
 
 
-### Hide Context Menu {#hide-context-menu}
+### Hide Context Menu
 
 To close the **context menu**:
 
@@ -101,7 +101,7 @@ To close the **context menu**:
 - Drag the menu *down* from the top.
 
 
-## Details {#details}
+## Details
 
 <Tabs groupId="operating-systems">
 
@@ -122,7 +122,7 @@ To close the **context menu**:
 For more detailed information about an object, tap the **Details** button in the context menu or swipe the panel up to expand it.
 
 
-### Object Info {#object-info}
+### Object Info
 
 The **Object Info** panel provides additional details about the selected object. You can tap on any entry to copy the information to the clipboard.  
 
@@ -148,7 +148,7 @@ Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstr
 - [Width](https://wiki.openstreetmap.org/wiki/Key:width) / [Height](https://wiki.openstreetmap.org/wiki/Key:height)
 
 
-### Alternative Names {#alternative-names}
+### Alternative Names
 
 <Tabs groupId="operating-systems">
 
@@ -179,7 +179,7 @@ Features of alternative names display:
 - If a specific translation is *not available*, OsmAnd defaults to the **local** name to ensure accuracy and consistency across multilingual regions.
 
 
-### Polygon Information {#polygon-information}
+### Polygon Information
 
 <Tabs groupId="operating-systems">
 
@@ -218,7 +218,7 @@ The **Polygon information** feature provides detailed data on nearby **polygons*
 This feature helps you understand your *current location* in relation to mapped administrative divisions, natural areas, or other important geographic features.
 
 
-### Coordinates {#coordinates}
+### Coordinates
 
 |Coordinates format| |
 |:------|:------|
@@ -229,7 +229,7 @@ In the context menu, you can find [geographical coordinates](../search/search-co
 OsmAnd Web Link can be automatically recognized by OsmAnd (example: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Both OsmAnd and [OpenStreetMap links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) are opened on corresponding sites with a pin mark to the place of interest.  
 
 
-### Nearby POIs / Wikipedia {#nearby-pois--wikipedia}
+### Nearby POIs / Wikipedia
 
 ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
 
@@ -240,7 +240,7 @@ Tap *Nearby POIs / Wikipedia articles* opens a points list (POIs or Wikipedia). 
 > **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia)*.
 
 
-### Public Transport Routes {#public-transport-routes}
+### Public Transport Routes
 
 <Tabs groupId="operating-systems">
 
@@ -261,28 +261,28 @@ Tap *Nearby POIs / Wikipedia articles* opens a points list (POIs or Wikipedia). 
 Shown info about Public transport routes for chosen transport stop. Information about Public transport context menu and actions with it, read [here](../map/public-transport.md#transport-routes-context-menu).
 
 
-### Favorites / Track Points from the Group {#favorites--track-points-from-the-group}
+### Favorites / Track Points from the Group
 
 ![Favorite list](@site/static/img/map/favorite_list_android.png) ![Favorite list full](@site/static/img/map/favorite_list_full_android.png)
 
 This is a list of all points in one group for a [Favorite](../map/point-layers-on-map.md#favorites-on-the-map) or Waypoint. By tapping, the entire list of points of one group expands, when tapping a point from the list, the map moves to the selected point.
 
 
-### Linear Object {#linear-object}
+### Linear Object
 
 ![Favorite list](@site/static/img/map/linear_object_andr.png)
 
 For **linear objects**, such as *barriers, steps, gates, benches, slipways, weirs, bollard, or coupures*, the context menu displays additional details. These include the POI type and address associated with them, or the object type if no name is assigned.
 
 
-### Climbing Area and Crag Details {#climbing-area-and-crag-details}
+### Climbing Area and Crag Details
 
 ![Favorite list](@site/static/img/map/climbing_andr.png)
 
 When selecting a [climbing area or crag](../map/routes.md#climbing-routes), OsmAnd provides a detailed summary of the climbing location, including: name and location, climbing difficulty rating (UIAA, French, YDS, etc.), rock type, height and route length, climbing quality and surface conditions.
 
 
-### Ski Slopes, MTB Routes, and Dirt Bike Trails {#ski-slopes-mtb-routes-and-dirt-bike-trails}
+### Ski Slopes, MTB Routes, and Dirt Bike Trails
 
 ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb.png)  ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb_2.png)
 
@@ -295,7 +295,7 @@ Use the [Winter and Ski](../map/vector-maps.md#winter-and-ski) or [Offroad](../m
 :::
 
 
-### Article Description {#article-description}
+### Article Description
 
 <Tabs groupId="operating-systems">
 
@@ -316,7 +316,7 @@ Use the [Winter and Ski](../map/vector-maps.md#winter-and-ski) or [Offroad](../m
 This part contains a part of the description from [Wikipedia article](../plugins/wikipedia.md), [Favorite](../personal/favorites.md) or Waypoint description, by tapping you can open the full description.
 
 
-### OpenStreetMap Link {#openstreetmap-link}
+### OpenStreetMap Link
 
 ![OSM link](@site/static/img/map/context_menu_osm_link.png) ![OSM link](@site/static/img/map/context_menu_osm_link_1.png)
 
@@ -324,7 +324,7 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 [node](https://wiki.openstreetmap.org/wiki/Node) or [way](https://wiki.openstreetmap.org/wiki/Way).
 
 
-### Online Photos {#online-photos}
+### Online Photos
 
 <Tabs groupId="operating-systems">
 
@@ -342,7 +342,7 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 </Tabs>
 
-#### Actions With Photos {#actions-with-photos}
+#### Actions With Photos
 
 How to access:
 
@@ -366,7 +366,7 @@ Details:
 *Images nearby* (*iOS*) section provides access to photos of points of interest from sources such as [Wikimedia](https://www.wikimedia.org/) and [Mapillary](../plugins/mapillary.md).
 -->
 
-#### Gallery Menu {#gallery-menu}
+#### Gallery Menu
 
 <Tabs groupId="operating-systems">
 
@@ -429,7 +429,7 @@ Buttons:
 
 The Details screen provides information such as the *Name*, *Added Date*, *Author*, *License*, *Source*, and *Link* of the selected item.
 
-#### Street-level Imagery {#street-level-imagery}
+#### Street-level Imagery
 
 Details:
 
@@ -442,7 +442,7 @@ Details:
 
 
 
-### * Audio/Video Note {#-audiovideo-note}
+### * Audio/Video Note
 
 <InfoAndroidOnly />
 
@@ -451,7 +451,7 @@ Details:
 [Audio / Video notes](../plugins/audio-video-notes.md) information such as date, coordinates, preview and others are available in the **Details** menu. You can open the notes in secondary software by tapping the **Play / Show** button in the context menu of the note.
 
 
-## Actions {#actions}
+## Actions
 
 <Tabs groupId="operating-systems">
 
@@ -472,7 +472,7 @@ Details:
 It is a set of specific manipulations that can be performed on a point or object. This menu is split into two parts: visible section consists of maximum 3 actions and other actions are accessible by *Actions* button. You can customize (*Android*) the order of actions in [General settings](#customize).
 
 
-### Add / Edit Favorite {#add--edit-favorite}
+### Add / Edit Favorite
 
 <Tabs groupId="operating-systems">
 
@@ -499,7 +499,7 @@ In the context menu, there are options to **add** or to **edit** the selected po
 - [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md)  - adds a selected point to the favorites list.
 
 
-### Add / Edit Marker {#add--edit-marker}
+### Add / Edit Marker
 
 <Tabs groupId="operating-systems">
 
@@ -528,7 +528,7 @@ Actions:
 Read more about [markers here](../personal/markers.md).
 
 
-### Share {#share}
+### Share
 
 <Tabs groupId="operating-systems">
 
@@ -567,7 +567,7 @@ Available options to share the location:
 - ***Save to files*** (*iOS*) - saves the map screenshot in iCloud Drive or storage of your device. -->
 
 
-### Directions To / From {#directions-to--from}
+### Directions To / From
 
 <Tabs groupId="operating-systems">
 
@@ -598,7 +598,7 @@ If you tap **Start navigation** - *From* point will be discarded as application 
 :::
 
 
-### Search Nearby {#search-nearby}
+### Search Nearby
 
 <Tabs groupId="operating-systems">
 
@@ -621,7 +621,7 @@ With this context menu action, it is possible to search around a specific locati
 Read more about [search](../search/index.md) functionality.
 
 
-### Avoid Road {#avoid-road}
+### Avoid Road
 
 <Tabs groupId="operating-systems">
 
@@ -647,7 +647,7 @@ Avoid roads function is global and affects all *[routing types](../navigation/ro
 :::
 
 
-### Change Object Position {#change-object-position}
+### Change Object Position
 
 <Tabs groupId="operating-systems">
 
@@ -672,7 +672,7 @@ Avoid roads function is global and affects all *[routing types](../navigation/ro
 Almost every created object by user is moveable i.e. Marker, Favorite, Created POI, Audio/Video Note or Track Waypoint. First select an object on the map and then use *<Translate android="true" ids="change_markers_position"/>* the menu to move it to a new location.
 
 
-### Plan a Route {#plan-a-route}
+### Plan a Route
 
 ![Action Plan a route Android](@site/static/img/map/action_plan_route_android.png)
 
@@ -681,7 +681,7 @@ You can start a route planning from a selected point via object context menu.
 Read more about [Plan a route](../plan-route/create-route.md) tool.
 
 
-### Update / Download Online Maps {#update--download-online-maps}
+### Update / Download Online Maps
 
 <Tabs groupId="operating-systems">
 
@@ -707,7 +707,7 @@ To update or download online maps (tiles) at a specific location, you can use th
 Please read the [full instruction](../map/raster-maps.md#download--update-tiles).  
 
 
-### Update / Download Vector Maps {#update--download-vector-maps}
+### Update / Download Vector Maps
 
 <Tabs groupId="operating-systems">
 
@@ -736,7 +736,7 @@ In case there is no offline map present at the selected location, for example ma
 > **NOTE**. *If you have opened context menu for map region (region is highlighted), you will be able to see ***<Translate android="true" ids="rendering_category_details"/>*** about it: type and size of an available map, link to a Wikipedia page, language, population and other.*
 
 
-### * Add / Delete Parking point {#-add--delete-parking-point}
+### * Add / Delete Parking point
 
 :::note
 To add add/delete parking points, enable the OsmAnd [**Parking position plugin**](../plugins/parking.md).
@@ -765,7 +765,7 @@ To add add/delete parking points, enable the OsmAnd [**Parking position plugin**
 Any selected location on the map could be marked as [a parking position](../plugins/parking.md). To delete parking position, you can open the context menu associated with parking location.
 
 
-### * Add / Edit Track waypoint {#-add--edit-track-waypoint}
+### * Add / Edit Track waypoint
 
 :::note
 To add add/edit track points, enable the OsmAnd [**Trip recording plugin**](../plugins/trip-recording.md).
@@ -801,7 +801,7 @@ You can add waypoints to a recorded track or to the current track recording usin
 - You can configure the [Quick Actions](../widgets/quick-action.md) by adding a waypoint to the *Add track waypoint*.
 
 
-### * Create / Modify POI {#-create--modify-poi}
+### * Create / Modify POI
 
 :::note
 To add create/modify POIs, enable the OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md).
@@ -829,7 +829,7 @@ With OSM Editing plugin, you can create and modify most of the POIs present on [
 - &nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [modifies selected POI](../plugins/osm-editing.md#how-to-modify-poi).
 
 
-### * Open OSM Note {#-open-osm-note}
+### * Open OSM Note
 
 :::note
 To add open OSM note, enable the OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md).
@@ -858,7 +858,7 @@ To add open OSM note, enable the OsmAnd [**OSM Editing plugin**](../plugins/osm-
 You can [report](../plugins/osm-editing.md#how-to-report-a-mistake) map data errors at specific location to [OpenStreetMap community](https://wiki.openstreetmap.org/wiki/Join_the_community). Please follow [guidelines](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) and add proper comments to an issue.
 
 
-### * Comment / Close OSM Note {#-comment--close-osm-note}
+### * Comment / Close OSM Note
 
 :::note
 To comment/close OSM note, enable the OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md).
@@ -870,7 +870,7 @@ You can [comment](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes), [reso
 OpenStreetMap Notes via object's context menu.
 
 
-### * Upload POI / OSM Note {#-upload-poi--osm-note}
+### * Upload POI / OSM Note
 
 :::note
 To upload POI / OSM note, enable the OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md).
@@ -881,7 +881,7 @@ To upload POI / OSM note, enable the OsmAnd [**OSM Editing plugin**](../plugins/
 In case you use *Offline mode* to add / edit POI or OSM Note, you will need to upload the changes to OpenStreetMap. By default, *Offline mode* is on to avoid accidental changes of public database. You can upload or delete change via created object context menu.
 
 
-### * Record AV Note {#-record-av-note}
+### * Record AV Note
 
 <InfoAndroidOnly />
 
@@ -898,7 +898,7 @@ Records or takes a media note at a selected point on the map.
 - &nbsp;<Translate android="true" ids="recording_context_menu_precord"/> - makes a [photo point](../map/point-layers-on-map.md#-audio--video-points-android) on the map.
 
 
-## Customize {#customize}
+## Customize
 
 <InfoAndroidOnly/>  
 
@@ -918,7 +918,7 @@ Available types of actions:
 - **<Translate android="true" ids="shared_string_hidden"/>**. Moving actions to this section does not stop them from working. They just don't appear in the Actions menu.  
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Vector maps (Map styles)](./vector-maps.md)
 - [Raster Maps (Online / Offline)](./raster-maps.md)

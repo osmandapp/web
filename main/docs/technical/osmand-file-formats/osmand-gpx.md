@@ -2,13 +2,13 @@
 sidebar_position: 2
 ---
 
-# OsmAnd GPX {#osmand-gpx}
+# OsmAnd GPX
 
-## Introduction {#introduction}
+## Introduction
 
 GPX (GPS Exchange Format) is a widely-used XML-based standard for storing GPS data, including tracks, routes, and waypoints. OsmAnd supports the GPX format for importing, exporting, and customizing GPS data for navigation, enabling both beginner and advanced users to optimize their experience.
 
-#### What Makes OsmAnd GPX Unique? {#what-makes-osmand-gpx-unique}
+#### What Makes OsmAnd GPX Unique?
 
 OsmAnd extends the standard GPX 1.1 format by introducing its own custom `osmand:` XML namespace. This namespace enables storing additional data such as:
 
@@ -16,7 +16,7 @@ OsmAnd extends the standard GPX 1.1 format by introducing its own custom `osmand
 - Waypoint grouping and icons.
 - Detailed route attributes, including calculated routes and activity types.
 
-#### What Will You Learn in This Guide? {#what-will-you-learn-in-this-guide}
+#### What Will You Learn in This Guide?
 
 This article provides a comprehensive overview of GPX file structure and features in OsmAnd. You will learn:
 
@@ -25,7 +25,7 @@ This article provides a comprehensive overview of GPX file structure and feature
 3. How to export calculated routes and preserve their full functionality.
 4. Converting GPX files into OBF format for optimized storage and advanced search capabilities.
 
-#### GPX Structure Overview {#gpx-structure-overview}
+#### GPX Structure Overview
 
 GPX files in OsmAnd organize data hierarchically into the following elements:
 
@@ -36,9 +36,9 @@ GPX files in OsmAnd organize data hierarchically into the following elements:
 - `<wpt>` - represents individual waypoints.
 
 
-## Track Customization {#track-customization}
+## Track Customization
 
-### Track Appearance Parameters {#track-appearance-parameters}
+### Track Appearance Parameters
 
 This section describes how OsmAnd displays tracks on the map and the customization options available to adjust their appearance. The parameters described below are applied within the `<gpx>` tag and affect all tracks included in a GPX file.
 
@@ -73,7 +73,7 @@ This section describes how OsmAnd displays tracks on the map and the customizati
 </gpx>
 ```
 
-### Tag 'coloring_type' {#tag-coloringtype}
+### Tag 'coloring_type'
 
 The `<coloring_type>` tag in OsmAnd allows users to customize track coloring based on specific data attributes, providing a visual way to interpret key information along the track.
 
@@ -87,18 +87,18 @@ The `<coloring_type>` tag in OsmAnd allows users to customize track coloring bas
 | `<routeInfo_surface>`    | Colors the track segments based on the OSM surface type (e.g., paved, gravel, dirt). | Useful for determining track conditions during activities like off-roading. |
 | `<routeInfo_smoothness>` | Colors the track according to OSM smoothness ratings, indicating the roughness or smoothness of the path (e.g., excellent, bad). | Helpful for evaluating track navigability for specific vehicles. |
 
-### GPX tags in UI {#gpx-tags-in-ui}
+### GPX tags in UI
 
 GPX extensions tags displayed at the bottom of Track context menu.
 Both `<metadata>` and `<gpx>` `<extensions>` are listed.
 Appearance tags are excluded from the listing.
 Supported since OsmAnd Android 5.0.
 
-## Waypoints Customization {#waypoints-customization}
+## Waypoints Customization
 
 This section explains how OsmAnd allows customization of waypoints in GPX files by using icons, colors, and grouping.
 
-### Waypoint Icons {#waypoint-icons}
+### Waypoint Icons
 
 The following tags control the appearance of waypoint icons in OsmAnd:
 
@@ -121,7 +121,7 @@ The following tags control the appearance of waypoint icons in OsmAnd:
 </wpt>
 ```
 
-### Waypoint Groups {#waypoint-groups}
+### Waypoint Groups
 
 Waypoints in OsmAnd can be sorted into groups based on their type. This grouping allows the user to organize multiple waypoints under specific categories, improving clarity and map readability.
 
@@ -154,9 +154,9 @@ Waypoints in OsmAnd can be sorted into groups based on their type. This grouping
 ```
 
 
-## Advanced GPX Features {#advanced-gpx-features}
+## Advanced GPX Features
 
-### Activity Type {#activity-type}
+### Activity Type
 
 Starting with OsmAnd [version 4.9](/blog/osmand-android-4-9-released/#gpx-track-activities), you can classify your tracks by activity type for further analysis and organization in folders.
 
@@ -173,7 +173,7 @@ The list of supported activity types is available in the [activities.json](https
   </metadata>
 ```
 
-### HTML in Descriptions {#html-in-descriptions}
+### HTML in Descriptions
 
 HTML tags can be used within the `<desc>` tags in the `<metadata>` or `<wpt>` elements to provide formatted descriptions for tracks or waypoints.
 
@@ -209,7 +209,7 @@ To avoid conflicts with XML syntax, replace special characters as follows:
 - You can use tags like `<b>`, `<i>`, `<p>`, `<br/>`, `<a>`, `<img>`, and more for customization.
 
 
-### Link Tag {#link-tag}
+### Link Tag
 
 Use `<link>` tag to associate URLs with metadata, author information, or waypoints in OsmAnd GPX files. This tag can also display an image when the URL points to an image file.
 
@@ -231,7 +231,7 @@ Use `<link>` tag to associate URLs with metadata, author information, or waypoin
 </wpt>
 ```
 
-### Sensor Data Tags {#sensor-data-tags}
+### Sensor Data Tags
 
 You can enrich your tracks with data from fitness sensors, such as heart rate monitors or temperature sensors. OsmAnd uses Garmin’s [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd) schema to store this data, making it compatible with platforms like **Strava** and **Garmin Basecamp**.
 
@@ -255,7 +255,7 @@ You can enrich your tracks with data from fitness sensors, such as heart rate mo
 </extensions>
 ```
 
-### Track Point Details {#track-point-details}
+### Track Point Details
 
 Each `<trkpt>` (track point) in the GPX file can include additional attributes to capture data such as speed, heading, and elevation.
 
@@ -282,7 +282,7 @@ Each `<trkpt>` (track point) in the GPX file can include additional attributes t
 
 
 
-## Calculated route(s) {#calculated-routes}
+## Calculated route(s)
 
 In **OsmAnd** you can can calculate route and save all data in GPX, so later all features navigation will be available as running GPX navigation, so **OsmAnd** gpx will contain route segments, turns, road names, road types, restrictions, etc.. The route can be completely restored as if just built, even in the absence of the respective offline maps.
 
@@ -290,7 +290,7 @@ A gpx file may contain several routes. Each of them is contained in a specific s
 
 [**Plan a route**](../../user/plan-route/create-route.md) also adds one (or several, in accordance with the number of contained separate segments / tracks) **rte** blocks to the gpx file, containing route key points (**rtept**).
 
-#### Gpx structure: {#gpx-structure}
+#### Gpx structure:
 
 ```xml
 <trk>
@@ -328,7 +328,7 @@ A gpx file may contain several routes. Each of them is contained in a specific s
 </rte>
 ```
 
-#### Important properties: {#important-properties}
+#### Important properties:
 
 * **trkpt_idx** of first **rtept** in **trkseg** is 0. So, if there are two **trkseg**s, there will be two **rtept**s with **trkpt_idx** = 0
 * **trkpt_idx** of last **rtept** in **trkseg** is equal to number of **trkpt**s in **trkseg** minus 1. For example, if **trkseg** has 12 **trkpt**s, **trkpt_idx** of last **rtept** should be 11
@@ -346,7 +346,7 @@ A gpx file may contain several routes. Each of them is contained in a specific s
   - segments - amount of route **segment**s inside **trkseg**
   - rtepts - amount of **rtept**s owned by **trkseg**
 
-#### Example: {#example}
+#### Example:
 
 ```xml
 <gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -423,7 +423,7 @@ A gpx file may contain several routes. Each of them is contained in a specific s
 </gpx>
 ```
 
-## GPX Collections in OBF {#gpx-collections-in-obf}
+## GPX Collections in OBF
 
 OsmAnd allows you to convert multiple GPX files into a single OBF file. This enables the storage of thousands of GPX tracks in a compact, optimized format while maintaining features like special map icons, track appearance customization, and search functionality. This avoids a limit of local large GPX files which typically can't handle > 500 K points in total however some features of GPX tracks might be missing comparing displaying OBF file.
 
@@ -434,7 +434,7 @@ Steps to convert GPX to OBF:
 - The resulting `<.obf>` file can be imported into OsmAnd (requires OsmAnd Android 5.0+).
 
 
-### Track Line Style {#track-line-style}
+### Track Line Style
 
 Customize track lines with the following tags:
 
@@ -469,7 +469,7 @@ Customize track lines with the following tags:
 </gpx>
 ```
 
-### Track Line Shields {#track-line-shields}
+### Track Line Shields
 
 Shields are icons or symbols displayed along the track line. OsmAnd supports [OSMC-symbol-style](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) shields, which may include:
 
@@ -508,7 +508,7 @@ If no shield properties are defined, OsmAnd uses an auto-sized yellow shield for
 </gpx>
 ```
 
-### Waypoints Display {#waypoints-display}
+### Waypoints Display
 
 Waypoint icons can be customized with the following tags:
 
@@ -545,7 +545,7 @@ Waypoint icons can be customized with the following tags:
 ```
 
 
-### Search by Name and Refs {#search-by-name-and-refs}
+### Search by Name and Refs
 
 Tracks and waypoints can be located using a variety of GPX tags.
 
@@ -576,7 +576,7 @@ Tracks and waypoints can be located using a variety of GPX tags.
 </gpx>
 ```
 
-### Search by activity type {#search-by-activity-type}
+### Search by activity type
 
 OsmAnd organizes tracks in OBF files into **Activity Groups** and **Activity Types**. These classifications help you filter tracks as POIs or create activity-based search filters.
 
@@ -614,7 +614,7 @@ How activity types work:
     </gpx>
     ```
 
-### Search information Tags {#search-information-tags}
+### Search information Tags
 
 OBF files automatically generate and store critical track statistics and analytics.
 
@@ -628,7 +628,7 @@ OBF files automatically generate and store critical track statistics and analyti
 | `time_span`, `time_span_no_gaps`      | Total time for the track, with and without accounting for gaps.       |
 | `time_moving`, `time_moving_no_gaps`  | Total moving time, with and without accounting for gaps.              |
 
-### Internal Tags {#internal-tags}
+### Internal Tags
 
 Some GPX tags are used or stored indirectly in OBF files. Refer to [OsmGpxWriteContext.java](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/obf/OsmGpxWriteContext.java) for details on the implementation.
 

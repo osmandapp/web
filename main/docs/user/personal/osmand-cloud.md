@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview {#overview}
+## Overview
 
 :::tip subscribe  
 &nbsp;<ProFeature/> To access all features of OsmAnd Cloud, subscribe to **OsmAnd Pro** for [Android](../purchases/android.md#osmand-pro) or [iOS](../purchases/ios.md#osmand-pro).  
@@ -29,7 +29,7 @@ OsmAnd Cloud is an independent cloud storage service and is *not tied* to a spec
 OsmAnd Cloud allows you to **store and synchronize personal settings and application data** across multiple devices. You can access this data on any device where OsmAnd is installed, including the desktop app. All changes made within the app can be **synchronized across platforms**, ensuring seamless access to your saved data.
 
 
-## Cross-Platform {#cross-platform}
+## Cross-Platform
 
 OsmAnd Cloud allows you to back up, restore, and sync your data across Android, iOS, and the [web version](../web/index.md). With cross-platform capabilities, you can transfer **profile settings**, **tracks**, **favorites**, **OSM edits/notes**, and more between devices. Additionally, the **web version** enables you to plan routes and save them for later use on connected devices.  
 
@@ -50,7 +50,7 @@ OsmAnd supports **cross-platform usage** across *([Android](../purchases/android
 :::
 
 
-## Login {#login}
+## Login
 
 <Tabs groupId="operating-systems">
 
@@ -96,7 +96,7 @@ If you experience issues during registration:
 :::
 
 
-## OsmAnd Start {#osmand-start}
+## OsmAnd Start
 
 <Tabs groupId="operating-systems">
 
@@ -126,7 +126,7 @@ Features included in OsmAnd Start:
 - [Free Settings Backup](../personal/profiles.md#free-cloud-backup) – Save your OsmAnd app settings to OsmAnd Cloud and restore them on other devices for a seamless experience.  
 - [OSM Edits/Notes](../plugins/osm-editing.md) – Contribute to OpenStreetMap by creating and editing map data, adding notes, and saving changes directly to OsmAnd Cloud.
 
-### How to Activate OsmAnd Start {#how-to-activate-osmand-start}
+### How to Activate OsmAnd Start
 
 <Tabs groupId="operating-systems">
 
@@ -162,7 +162,7 @@ If you already have an **OsmAnd Pro** subscription or an **active OsmAnd Cloud a
 :::
 
 
-## Last Sync {#last-sync}
+## Last Sync
 
 <Tabs groupId="operating-systems">
 
@@ -194,7 +194,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 **Sync now** combines the *Upload all* and *Download all* buttons in the Changes menu, in the [Local and Cloud](#local-and-cloud) sections. **Conflicts** are not synchronized in this way.
 
 <!--
-#### Syncing GPX Collections {#syncing-gpx-collections}
+#### Syncing GPX Collections
 
 OsmAnd supports grouping GPX tracks into **collections**, which allows you to organize related tracks under a single label.
 
@@ -213,7 +213,7 @@ To use this feature:
 3. On another device, sign in with the same OsmAnd Cloud account and restore the data.
 -->
 
-## Trash {#trash}
+## Trash
 
 <Tabs groupId="operating-systems">
 
@@ -253,7 +253,7 @@ The **Trash** feature allows you to view and manage files that have been deleted
     - *<Translate ios="true" ids="shared_string_delete_immediately"/>*. This feature allows you to permanently delete the selected file without being able to restore it. Be careful when using this feature as the operation is irreversible.
 
 
-## Settings {#settings}
+## Settings
 
 <Tabs groupId="operating-systems">
 
@@ -278,7 +278,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 This section is for editing and managing your OsmAnd Cloud.  
 
 
-### Select Data to Back Up {#select-data-to-back-up}
+### Select Data to Back Up
 
 <Tabs groupId="operating-systems">
 
@@ -311,7 +311,7 @@ In this menu, you can select which data and folders to upload to the Cloud:
 All [maps](../start-with/download-maps.md) are stored on the device on which they were previously downloaded. OsmAnd Cloud only stores information about which maps you have and the date they were last modified.
 
 
-### Manage Storage {#manage-storage}
+### Manage Storage
 
 <Tabs groupId="operating-systems">
 
@@ -336,14 +336,14 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 The **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) menu section displays information about how much of the 3.15 gigabytes of memory in *Settings*, *My Places*, and *Resources* are being used. You can delete changes to separate data types from OsmAnd Cloud, but in this case, the action cannot be undone.  
 
 
-### Account {#account}
+### Account
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_9-1.png)
 
 This section contains information about which of your accounts is connected to OsmAnd Cloud and includes a logout button. To back up or restore data, you will need to log in again.
 
 
-### Deletion Option {#deletion-option}
+### Deletion Option
 
 <Tabs groupId="operating-systems">
 
@@ -379,7 +379,7 @@ The actions you can do in the **Danger zone** section of the Settings menu are i
     ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_deletion_2_andr.png)
 
 
-## List of Changes {#list-of-changes}
+## List of Changes
 
 <Tabs groupId="operating-systems">
 
@@ -406,7 +406,7 @@ In the [Last Sync](#last-sync) section of the drop-down menu, tap any item to op
 - In each tab, data is **sorted by type and alphabetically** to help you quickly find specific items, especially when managing multiple files in OsmAnd Cloud.
 
 
-### Local and Cloud {#local-and-cloud}
+### Local and Cloud
 
 <Tabs groupId="operating-systems">
 
@@ -435,7 +435,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 - **Cloud** - The **Cloud** tab displays a list of changes available for download from cloud storage. You can download all changes at once using the button at the bottom of the screen or download them individually.  
 
 
-### Conflicts {#conflicts}
+### Conflicts
 
 <Tabs groupId="operating-systems">
 
@@ -471,7 +471,7 @@ A **conflict** occurs when the **Local version** and the **Cloud version** of a 
 
 
 <!--
-## Action Guides {#action-guides}
+## Action Guides
 
 - Restore your data after purchases expire.
 - It is absolutely crucial that your Cloud account be registered on the device where the purchase was originally made.
@@ -486,7 +486,7 @@ If you have problems with the registration of your account:
 :::  
 -->
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Android Purchases](../purchases/android.md)
 - [iOS Purchases](../purchases/ios.md)

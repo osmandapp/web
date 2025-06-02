@@ -14,12 +14,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 Offline OsmAnd routing is based on OpenStreetMap data and provides variety of routes for different purposes. This is a list of predefined routing types which could be extended. The navigation rules are contained in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md) file and are used for offline routing. The route type changes automatically, when you change your profile.  
 
 
-## Routing Types {#routing-types}
+## Routing Types
 
 The following profiles with their routing types are preset in OsmAnd: *Driving, Cycling, Walking, Truck, Motorcycle, Moped, Public transport, Boat, Aircraft, Skiing, Train, Horseback riding*. Besides these, you can create your own profiles with specific routing rules or [modify OsmAnd routing algorithm](../routing/osmand-routing.md#customize-offline-routing).  
 
@@ -53,7 +53,7 @@ The following profiles with their routing types are preset in OsmAnd: *Driving, 
 - *[Direct-to-point routing](./direct-to-point-routing.md)* - provides a straight line routing (or "point-to-point" navigation) which stays stable for whole navigation in contrast to **Straight line** routing (route recalculation is disabled).
 
 
-## Customize Offline Routing {#customize-offline-routing}
+## Customize Offline Routing
 
 You can also create your **own routing.xml file** or modify default **routing.xml** and use it for navigation (only for advanced OsmAnd users).
 
@@ -64,7 +64,7 @@ You can also create your **own routing.xml file** or modify default **routing.xm
 More information about this feature can be found in the [*Technical documentation*](../../../technical/osmand-file-formats/osmand-routing-xml.md) and on [*OsmAnd's GitHub page*](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
 
 
-## Avoid Specific Roads {#avoid-specific-roads}
+## Avoid Specific Roads
 
 :::caution
 Avoid roads feature is global and affects all **[Routing types](#routing-types)** except *[Online routing](../routing/online-routing.md)* and *[BRouter](../routing/brouter.md)*.  
@@ -82,7 +82,7 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 
 :::
 
-### Avoid Roads Menu {#avoid-roads-menu}
+### Avoid Roads Menu
 
 <Tabs groupId="operating-systems">
 
@@ -127,7 +127,7 @@ When you select a road to avoid using *map context menu* or *Avoid roads menu*, 
 </Tabs>
 
 
-## Export / Import {#export--import}
+## Export / Import
 
 <Tabs groupId="operating-systems">
 
@@ -174,7 +174,7 @@ The most convenient way to synchronize roads to avoid between your devices is to
 :::
 
 
-## Consider Temporary Limitations {#consider-temporary-limitations}
+## Consider Temporary Limitations
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
@@ -182,7 +182,7 @@ The most convenient way to synchronize roads to avoid between your devices is to
 In OpenStreetMap, this information is usually marked with the tag [`temporary`](https://wiki.openstreetmap.org/wiki/Comparison_of_life_cycle_concepts#Opening_hours_time_range_and_Temporary_namespace_and_Conditional_restrictions).  
 
 
-## Development Section {#development-section}
+## Development Section
 
 The **Development section** of the *Route parameters* settings (*Menu → Settings → app profile → Navigation settings → Route parameters → Development*) is visible only when [OsmAnd development plugin](../../plugins/development.md) is enabled. It includes settings such as *Routing type (Android) / Routing algorithm (iOS), GPX approximation (Android only), Autozoom, and OsmAnd Live data (Android only)*. Read the [Navigation Settings](../../navigation/guidance/navigation-settings.md#development-settings) article for a detailed description.
 

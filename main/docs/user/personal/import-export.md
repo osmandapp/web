@@ -12,7 +12,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 The **Import** and **Export** tools in OsmAnd allow you to manage your data. You can move your profiles, favorites, tracks, and other settings using a special format through the apps on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.
 
@@ -21,7 +21,7 @@ The **Import** and **Export** tools in OsmAnd allow you to manage your data. You
 :::
 
 
-## Export / Import data {#export--import-data}
+## Export / Import data
 
 The *Import* and *Export* allow you to save data from generated `.osf` **files** or use [online sources](../map/raster-maps.md), making it possible to restore information after reinstallation.
 
@@ -35,7 +35,7 @@ The *Import* and *Export* allow you to save data from generated `.osf` **files**
         [Rendering style](../map/vector-maps.md#custom-map-style), &nbsp;[Routing](../navigation/routing/osmand-routing.md), &nbsp;[Online routing engines](../navigation/routing/online-routing.md), &nbsp;[Map sources*, *Standard/Offline Maps](../map/raster-maps.md), &nbsp;[Wikipedia and Travel maps](../plan-route/travel-guides.md), &nbsp;[Nautical maps](../plugins/nautical-charts.md), &nbsp;[Road maps](../map/vector-maps.md#road-style), &nbsp;[Topography maps](../plugins/topography.md), &nbsp;[Voice prompts (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Voice prompts (recorded)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favorites backup](../personal/favorites.md#automatic-favorites-backup).
 
 
-### Export {#export}
+### Export
 
 <Tabs groupId="operating-systems">
 
@@ -60,7 +60,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,loc
 All the data you have configured and created can be exported using the ***Export menu***. The menu consists of three groups: **Settings**, **My Places**, and **Resources**, which contain all available file folders. You can select the files you want to export in each folder, one at a time or all at once. **All exported files are saved in `.osf` format**.  
 
 
-### Import {#import}
+### Import
 
 <Tabs groupId="operating-systems">
 
@@ -92,12 +92,12 @@ Opens and restores `.osf` files. Tap the file in the device's file manager or us
 - *Restart*. After importing the files, the application must be restarted.
 
 
-### OsmAnd Cloud {#osmand-cloud}
+### OsmAnd Cloud
 
 [OsmAnd Cloud](../personal/osmand-cloud.md) is the alternative resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make can be synchronized.
 
 
-## Preventing Data Loss {#preventing-data-loss}
+## Preventing Data Loss
 
 In the *Android* and *iOS* versions of OsmAnd, if you completely **uninstall** the app or select **Clear Data** on your device in the Settings menu Application information, the data folder will also be deleted from the device's file manager. If you do not take precautions, this will result in **losing all downloaded maps for OsmAnd data, all saved Favorites, GPX tracks, Voice prompts (TTS), and [other data](#export--import-data).**
 
@@ -107,14 +107,14 @@ There are two ways to save your data before reinstalling the OsmAnd app:
 - [Export OSF file](#export) with your data. Copy the `.osf` file to a folder on your device or OsmAnd Cloud. After reinstalling OsmAnd, [import this `.osf` file](#import) to the OsmAnd app.
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Profiles (Settings)](./profiles.md)
 - [Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-### Common Issues and Solutions {#common-issues-and-solutions}
+### Common Issues and Solutions
 
 1. How to transfer Favorites and Tracks to a new device. [(check)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
 2. I have a GPX file, how do I import it into OsmAnd? [(check)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)

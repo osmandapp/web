@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 The **Plan a route** (*Menu → Plan a route*) tool is a powerful feature of the OsmAnd application that allows you to [create new routes](#create-new-route) as GPX tracks, [edit and add new segments](#segments) to already saved tracks, [measure distances](#distance-measurement) on the map, and [attach track](#attach-track-to-roads) segments to the nearest available road using different navigation profiles. The feature is designed to work in *offline mode*.
 
@@ -37,7 +37,7 @@ A route consists of a set of segments between specified points. The segments can
 </Tabs>
 
 
-## Main Use Cases {#main-use-cases}
+## Main Use Cases
 
 <Tabs groupId="operating-systems">
 
@@ -60,7 +60,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*
 </Tabs>
 
 
-### Create New Route {#create-new-route}
+### Create New Route
 
 To create a new track in GPX format, use the main function of the *Plan a route* tool. Pre-creating a route has many advantages, unlike recording the current track with *[Trip recording plugin](../plugins/trip-recording.md)*. You can [add](#adding-points) as many points as you want to the route, [delete and move them](#point-context-menu), change route types by [segments](#route-between-points), and get [detailed information about the route](#graph).  
 
@@ -69,7 +69,7 @@ By default, the routing type will match the previously selected profile, tap the
 You can **zoom in and out** for easy placement of points when creating or editing a track. When you **zoom out**, the points on the track become invisible for a better view of the entire length of the track and the map as a whole. Only the last added point and the pointer for adding the next point remain visible.
 
 
-### Modify Existing GPX Track {#modify-existing-gpx-track}
+### Modify Existing GPX Track
 
 <Tabs groupId="operating-systems">
 
@@ -90,7 +90,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_open
 *Plan a route* tool allows modifying existing GPX track as well as an [imported track](../personal/tracks/manage-tracks.md#import). However, in case you need to exclude large amount of points based on generic criteria, [<Translate android="true" ids="shared_string_gps_filter"/>](../map/tracks/track-context-menu.md#gps-filter) might be a more suitable tool.
 
 
-### Distance Measurement {#distance-measurement}
+### Distance Measurement
 
 ![Plan a route android](@site/static/img/plan-route/plan_route_lines_andr.png)  
 
@@ -105,7 +105,7 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 :::
 
 
-### Get Elevation Data {#get-elevation-data}
+### Get Elevation Data
 
 <InfoAndroidOnly />
 
@@ -117,7 +117,7 @@ If [Elevation data](../map/tracks/track-context-menu.md#calculating-missing-elev
 - [Use Terrain maps](../map/tracks/track-context-menu.md#calculating-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitudes recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
 
 
-### Attach Track to Roads {#attach-track-to-roads}
+### Attach Track to Roads
 
 <Tabs groupId="operating-systems">
 
@@ -149,7 +149,7 @@ If you select a track and the ***unspecified*** profile icon ("?") is displayed 
 :::
 
 <!--
-### Add Route Points to Navigation from GPX {#add-route-points-to-navigation-from-gpx}
+### Add Route Points to Navigation from GPX
 
 If you import a GPX file containing a route (with `<rtept>` elements), OsmAnd will display the route on the map but will not automatically convert the route points into a turn-by-turn navigation list.
 
@@ -164,9 +164,9 @@ To generate navigation instructions:
 -->
 
 
-## Points & Segments {#points--segments}
+## Points & Segments
 
-### Adding Points {#adding-points}
+### Adding Points
 
 <Tabs groupId="operating-systems">
 
@@ -190,7 +190,7 @@ To measure a distance or plan a trip, add points at the *Pointer* location one b
 You can also **Undo**/**Redo** every action you made in the plan route.
 :::
   
-### Route Between Points {#route-between-points}
+### Route Between Points
 
 Added points in the editor could be connected as a straight line or as a route between points of a selected profile. *Route between points* can be accessed in several ways:
 
@@ -221,14 +221,14 @@ You can change route between 2 specific points or between multiple points:
 - *Change the Route Type Before/After Point*. In the *point context menu*, you can change the way the route is calculated for the section from this point to the nearest or to the edge point. The setting provides information about the distance from this point to the beginning or the end of the route, or to the next/previous point.
 - *Recalculate routes*. You can use route recalculation without changing the profile type. The profile icon shown on the planned route in the tool will not change, but the route type will match the selected one. You may need this to find alternative routes.  
 
-### Segments {#segments}
+### Segments
 
 A track segment is a collection of points connected without **gaps**. In a plan route tool, it's possible:
 
 - To merge segments: [Join segments](#point-context-menu) option removes the gap to previously separated segments.
 - To split or create new, unconnected sections of a track. To create one, use the [Start new segment](#point-context-menu) option or select the [Split](#point-context-menu) feature from the Point context menu.
 
-### Point Context Menu {#point-context-menu}
+### Point Context Menu
 
 <Tabs groupId="operating-systems">
 
@@ -272,7 +272,7 @@ Each point on your route has its context menu. It shows the *sequence number* of
 
 - ***<Translate ios="true" ids="delete_point"/>***. Remove the selected point from the route. Similar to deleting a point in a list.
 
-### Multimodal Routes {#multimodal-routes}
+### Multimodal Routes
 
 <Tabs groupId="operating-systems">
 
@@ -293,9 +293,9 @@ Each point on your route has its context menu. It shows the *sequence number* of
 Using the *Plan a Route* tool and the [Route between points](#route-between-points) option, you can create multimodal routes where, for example, the first part can be a *cycling* route, the second part a *straight line* route and then a *pedestrian* one. Note that navigation on multimodal routes is not available, so you need to select one of the most suitable profiles to be able to follow the turn-by-turn instructions.
 
 
-## Editor {#editor}
+## Editor
 
-### Save Route {#save-route}
+### Save Route
 
 <Tabs groupId="operating-systems">
 
@@ -327,7 +327,7 @@ There are four ways to save:
 When saving a new track, you can select the ***Simplified*** track option to make the track compatible with other third-party applications. Technically, the track will be saved without route instructions as a purely geometric track.
 :::
 
-### Options {#options}
+### Options
 
 <Tabs groupId="operating-systems">
 
@@ -357,7 +357,7 @@ When saving a new track, you can select the ***Simplified*** track option to mak
 - [<Translate android="true" ids="get_altitude_data"/>](#get-elevation-data) (*Android only*). This option is only displayed in the menu if no elevation data is available. With this [option](#get-elevation-data), you can calculate altitude using *Terrain map data* or use data from downloaded maps to find the *nearby roads*.
 - ***<Translate android="true" ids="shared_string_clear_all"/>***. It archives completely all your actions. An "artifact" remains on the map - the dotted lines of the just cleared route. It disappears at the next, adding new points. You can cancel the Clear All function with the Return Action button. The feature does not affect the unchanged parts of the routes opened in the tool.
 
-### Graph {#graph}
+### Graph
 
 <Tabs groupId="operating-systems">
 
@@ -383,7 +383,7 @@ During route planning, the [graph](../navigation/setup/route-details.md#elevatio
 When calculating a route for navigation in *Plan a route*, you can find out additional track information such as [Elevation info](../navigation/setup/route-details.md#elevation-info) and [Road attributes](../navigation/setup/route-details.md#road-attributes), and use the [Analyze on map](../navigation/setup/route-details.md#analyse-on-map) tool. Tap the *Details* button below the graph.  
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Show track on Map](../map/tracks/index.md)
 - [Analyze on Map](../map/tracks/index.md#analyze-track-on-map)

@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# Tiles SQLite Format - .sqlite {#tiles-sqlite-format---sqlite}
+# Tiles SQLite Format - .sqlite
 
 
 

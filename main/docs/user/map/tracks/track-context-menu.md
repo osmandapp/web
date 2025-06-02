@@ -16,7 +16,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 The *Track context menu* provides information about the *[Track](../../personal/tracks/index.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit, and perform various other actions with the track. You can access the *track context menu* by simply tapping the needed track on the map or using menu *[My places](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open the track folder and select the desired track by tapping it.  
 
@@ -37,7 +37,7 @@ The *Track context menu* provides information about the *[Track](../../personal/
 </Tabs>
 
 
-## Track Overview {#track-overview}
+## Track Overview
 
 When you tap a track, the first screen opens of the *Track context menu* - *Overview tab*. On this tab, you can find a summary about the chosen track (*[Info panel](#info-panel)*) and make the most common actions with the track using *[Track actions menu](#track-actions)*. You can see [description and service information](#description-and-info) about your track if you pull the Overview tab up.
 
@@ -45,7 +45,7 @@ When you tap a track, the first screen opens of the *Track context menu* - *Over
 You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
 -->
 
-### Info Panel {#info-panel}
+### Info Panel
 
 <Tabs groupId="operating-systems">
 
@@ -75,7 +75,7 @@ The info panel also provides information about the following:
 In case your track was created in OsmAnd or any other tracking app (so its points have [`time` and  `speed`](../../plugins/trip-recording#recorded-gpx-file) tags), the informational panel will also contain information about *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) or *<Translate ios="true" ids="total_time"/>* (*iOS*) (the length of time between the start and end points of the track), *<Translate android="true" ids="shared_string_time_moving"/>* (the sum of time while driving).
 :::  
 
-### Track Actions {#track-actions}
+### Track Actions
 
 <Tabs groupId="operating-systems">
 
@@ -100,7 +100,7 @@ In case your track was created in OsmAnd or any other tracking app (so its point
 - **Directions**. Opens the track in *[Navigation](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.
 
 
-### Options {#options}
+### Options
 
 <Tabs groupId="operating-systems">
 
@@ -153,7 +153,7 @@ The menu **Options** allows you to manage and modify the selected track with var
 - **<Translate android="true" ids="shared_string_delete"/>**. Deletes the track.
 
 
-### Description and Info {#description-and-info}
+### Description and Info
 
 <Tabs groupId="operating-systems">
 
@@ -225,7 +225,7 @@ This section of the *Overview* tab displays ***tag data*** and ***all general in
 </details>
 
 
-### Track Information Activity {#track-information-activity}
+### Track Information Activity
 
 <InfoAndroidOnly />
 
@@ -239,7 +239,7 @@ The *Activity* feature in OsmAnd allows you to tag recorded GPX tracks with spec
 - **Activity list**. The activity categories and groups are defined in OsmAnd's resources. For developers and contributors, the activity list is maintained in a structured format at [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), which details the available activity groups and types.
 
 
-## Altitude / Speed Graphs {#altitude--speed-graphs}
+## Altitude / Speed Graphs
 
 On the *<Translate android="true" ids="shared_string_gpx_track"/>* tab, you can find information about the track in graphical form. Using the switch, you can choose which data to display on the graph: separate data on *[<Translate android="true" ids="altitude"/>](#altitude)*, about the *[Speed](#speed)* (this option is available only for recorded tracks) or display altogether (*[<Translate android="true" ids="shared_string_overview"/>](#overview-information)*).
 
@@ -250,7 +250,7 @@ Interaction with the graph:
 - ***Additional information***. The right side of the graph contains data about the lowest, highest, and average altitude, slope, and speed. At the bottom of the graph, you can see the distance marks.
 
 
-### Overview Information {#overview-information}
+### Overview Information
 
 <Tabs groupId="operating-systems">
 
@@ -285,7 +285,7 @@ The active **buttons** give access to actions such as:
   - *Split interval* opens [Split interval function](#split-interval) for the track.
 
 
-### Speed {#speed}
+### Speed
 
 :::note Only recorded tracks
 This tab can only be visible only on recorded tracks. Points on this type of track have **[`speed`](../../plugins/trip-recording#recorded-gpx-file)** tags.
@@ -315,7 +315,7 @@ The **Speed** graph displays metrics such as:
 - *<Translate android="true" ids="distance_moving"/>*. Indicates the adjusted distance of the trip.
 
 
-### Altitude {#altitude}
+### Altitude
 
 <Tabs groupId="operating-systems">
 
@@ -347,7 +347,7 @@ If there is *no elevation information* on the route, you can add it in the follo
 - [Use Terrain maps](#calculate-missing-elevation). Utilizes terrain maps to obtain elevation data. The track geometry remains unchanged.
 
 
-### Calculate Missing Elevation {#calculate-missing-elevation}
+### Calculate Missing Elevation
 
 :::note OsmAnd Pro subscription
 Calculate elevation offline feature is only available for [**OsmAnd Pro subscribers**](../../purchases/android.md#pro-features) <ProFeature />.
@@ -369,7 +369,7 @@ This feature allows you to calculate the elevation profile for GPX track offline
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
 
 
-## Points / Waypoints {#points--waypoints}
+## Points / Waypoints
 
 Waypoints are one of the types of points available on the map. In general, they can be track points that are part of GPX files. A detailed description is available in the [points on the map](../../map/point-layers-on-map.md) article.
 
@@ -395,7 +395,7 @@ In this *Points* tab:
 - Create and modify [Group (folder) of points](#waypoint-groups).
 
 
-### Add Waypoint to a Track {#add-waypoint-to-a-track}
+### Add Waypoint to a Track
 
 Waypoints can be added to the currently recorded track or to any track from [*My Places → Tracks list*](../../personal/tracks/manage-tracks.md):
 
@@ -408,7 +408,7 @@ Waypoints can be added to the currently recorded track or to any track from [*My
 
 - Add a waypoint as a [Quick action](../../widgets/quick-action.md#my-places) button.
 
-#### Create Waypoint {#create-waypoint}
+#### Create Waypoint
 
 <Tabs groupId="operating-systems">
 
@@ -444,7 +444,7 @@ Tap the *Add Waypoint* button to open waypoint creation screen (this screen is f
 4. **Replace** another point with this, if you need to.  
 
 
-### Actions with Groups {#actions-with-groups}
+### Actions with Groups
 
 <Tabs groupId="operating-systems">
 
@@ -475,7 +475,7 @@ The *three-dot menu* ( &#8285; ) opens the waypoint *Group menu*.
 - **<Translate android="true" ids="shared_string_delete"/>** - Delete a group of waypoints.
 
 
-### Waypoint Groups {#waypoint-groups}
+### Waypoint Groups
 
 <Tabs groupId="operating-systems">
 
@@ -497,7 +497,7 @@ Manage the visibility of groups on the map: if you hide one track, the entire gr
 
 You can switch group waypoints on or off on the map using the button in the upper right corner of the context menu of the track on the map. Tap it and select the required action.
 
-### Display Custom GPX Tags {#display-custom-gpx-tags}
+### Display Custom GPX Tags
 
 <Tabs groupId="operating-systems">
 
@@ -615,7 +615,7 @@ To change the Waypoint description, you can go one of the following ways:
 **Amenity tags** that describe additional information, such as hours of operation or phone number, specific to the POI take that information from OpenStreetMap data or data you entered when creating the POI. You can edit such tags and [custom tags](#display-custom-gpx-tags) only in the code of the GPX file, which you can open with any text editor on your device.
 
 
-## Split Interval {#split-interval}
+## Split Interval
 
 <InfoAndroidOnly />
 
@@ -627,7 +627,7 @@ Split the track by distance or time interval.
 ![Track split interval screen Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Track split interval screen time Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)  
 
 
-## GPS Filter {#gps-filter}
+## GPS Filter
 
 <InfoAndroidOnly />
 
@@ -652,7 +652,7 @@ The Android GPS Filter app page includes the following:
 - Blocks *Filter*, *Statistics*, *Action*.  
 
 
-### Filter Menu {#filter-menu}
+### Filter Menu
 
 In this menu, you can change some parameters of your track such as *Smoothing*, *Speed*, *Altitude*, or *GPS precision* using filters. The menu is divided into a *Points part* and an *Actions part*.
 
@@ -671,7 +671,7 @@ In this menu, you can change some parameters of your track such as *Smoothing*, 
 |![GPS filter precision numbers Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |  
 
 
-### Statistics {#statistics}
+### Statistics
 
 ![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
 
@@ -680,7 +680,7 @@ The Statistics tab displays information about the **modified** track, meaning th
 - The *Data* part shows statistics similar to the [Filter menu](#filter-menu).  
 - The *Graph* part displays three types of graphs by parameters: Overview, Altitude, and Speed. This functional is a copy of [track Graph](#altitude--speed-graphs).
 
-### Actions {#actions}
+### Actions
 
 ![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)
 
@@ -691,7 +691,7 @@ The list of actions is available at the bottom of the **Filter** or **Statistics
 - *<Translate android="true" ids="save_changes_into_file"/>*. Allows you to rewrite the track with the new parameters.  
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [GPX tracks](../../personal/tracks/manage-tracks.md)
 - [Tracks on the map](./track-context-menu.md)

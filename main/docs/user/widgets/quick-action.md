@@ -16,14 +16,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview {#overview}
+## Overview
 
 Quick Action widget is an interactive user interface element that provides fast access to key functions or actions without opening additional settings. This widget is placed on the main map screen and allows you to simplify and speed up interaction with the application, making it more convenient and efficient.  
 
 ![Quick action widget](@site/static/img/widgets/quick_action_widget.png)
 
 
-## Quick Action Widget {#quick-action-widget}
+## Quick Action Widget
 
 <Tabs groupId="operating-systems">
 
@@ -52,7 +52,7 @@ To use the Quick Action button, you have to enable this widget first.
 - By default, the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to any part of the screen by long tapping it. -->
 
 
-### Add and Delete Actions {#add-and-delete-actions}
+### Add and Delete Actions
 
 <Tabs groupId="operating-systems">
 
@@ -90,7 +90,7 @@ You can assign one or more [actions](#action-types) to the quick action button. 
 :::
 
 
-### Action Parameters {#action-parameters}
+### Action Parameters
 
 <Tabs groupId="operating-systems">
 
@@ -127,7 +127,7 @@ The actions assigned to a quick action button are grouped into screens. These gr
 - Navigate to *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
 - Tap *Edit* (pencil icon), then *Hold & Drag* on the three vertical lines icon to rearrange actions.
 
-#### Actions in Loop {#actions-in-loop}
+#### Actions in Loop
 
 ![Custom button Android](@site/static/img/widgets/actions_in_loop_andr.png)  
 
@@ -139,7 +139,7 @@ The button allows you to assign a single layer or a list of layers that change c
 - **Do not show an interim dialog**. The map sources change in a defined order.
 
 
-### Change Position on the Map {#change-position-on-the-map}
+### Change Position on the Map
 
 The *Quick Action* widget appears at the bottom corner of the map screen when you first enable it. You can move the widget to any part of the screen by holding and dragging. For precise and accurate placement of buttons on the map screen, they are automatically aligned to the nearest invisible grid position when dragged.
 
@@ -160,7 +160,7 @@ The *Quick Action* widget appears at the bottom corner of the map screen when yo
     ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png)
 
 
-### Custom buttons {#custom-buttons}
+### Custom buttons
 
 <Tabs groupId="operating-systems">
 
@@ -187,7 +187,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 All available [actions](#action-types) are identical to those that can be applied to the default quick action. Custom buttons can be configured as ***Single-action*** buttons, which apply the selected action immediately upon being tapped, without the need to navigate through an extra menu.
 
 
-### Quick Action Button Appearance {#quick-action-button-appearance}
+### Quick Action Button Appearance
 
 <InfoAndroidOnly/>
 
@@ -198,9 +198,9 @@ You can modify the appearance of Quick Action buttons through: *Menu → Configu
 For detailed customization settings, refer to the [Configure Screen](../widgets/configure-screen.md#button-appearance) article, where you can learn how to fine-tune each button's appearance to match your preferences.
 
 
-## Action Types {#action-types}
+## Action Types
 
-### Configure Map {#configure-map}
+### Configure Map
 
 | Action | Description |
 |:-------------|:-------------|
@@ -222,7 +222,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Show / Hide <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | You can select to display or hide all OSM notes on the map with a single tap of the button. |
 
 
-### Interface {#interface}
+### Interface
 
 | Action | Description |
 |:-------------|:-------------|
@@ -233,7 +233,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Turn On / Off <br/> [**Touch screen lock**](../map/interact-with-map.md#touch-screen-lock) | Activates or deactivates touch screen locking to avoid unintended screen interactions. |
 
 
-### Map Interactions {#map-interactions}
+### Map Interactions
 
 | Action | Description |
 |:-------------|:-------------|
@@ -246,7 +246,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Move <br/> [**To My location**](../map/interact-with-map.md#my-location-and-zoom) | Moves the map to *My location* position. |
 
 
-### My Places {#my-places}
+### My Places
 
 | Action | Description |
 |:-------------|:-------------|
@@ -264,7 +264,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Create <br/> [**New route**](../plan-route/create-route.md) <br /> *Android only* | Opens the [Plan a route](../plan-route/create-route.md) tool and creates a route for the selected (central) location on the map. |
 
 
-### Navigation {#navigation}
+### Navigation
 
 | Action | Description |
 |:-------------|:-------------|
@@ -280,7 +280,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Simulate <br/> [**Location by GPX**](../plugins/development.md#gpx-track-simulation) | Simulates the location and movement of your device using a GPX track. |
 
 
-### Settings {#settings}
+### Settings
 
 | Action | Description |
 |:-------------|:-------------|
@@ -291,7 +291,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Change <br/> [**Location position on screen**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> *iOS only*  | Allows you to enable or disable the display of the previously selected My Location cursor position on the map. |
 
 
-## Use Keyboard for Actions {#use-keyboard-for-actions}
+## Use Keyboard for Actions
 
 <InfoAndroidOnly />
 
@@ -302,7 +302,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 Using the Quick Action tool's functionality, you can assign required actions to the keys of your external input device. A description can be found in the [Interact with Map](../map/interact-with-map.md#custom-input-device-type) article.
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Configure Screen](./configure-screen.md)
 - [Map buttons](./map-buttons.md)

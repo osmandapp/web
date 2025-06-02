@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview {#overview}
+## Overview
 
 For successful navigation, it's important to properly configure the appropriate settings according to your needs and how you travel - by car, on foot, on horseback, or skis. This article describes the basic route parameters, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, [Fuel tank capacity](#fuel-tank-capacity), and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
 
@@ -35,7 +35,7 @@ For successful navigation, it's important to properly configure the appropriate 
 
 </Tabs>
 
-### How to Open {#how-to-open}
+### How to Open
 
 This section presents the navigation settings necessary for calculating and plotting a route, which you can set for the selected profile. This menu includes settings for [Route preparation](../setup/route-navigation.md), the [Map screen during navigation](../guidance/map-during-navigation.md), and what you set in the *Navigation settings* directly affects the display of data in the [Route Details](../setup/route-details.md).
 
@@ -52,7 +52,7 @@ The default *Browse map* profile has no navigation settings.
 :::
 
 
-## Navigation Type {#navigation-type}
+## Navigation Type
 
 <Tabs groupId="operating-systems">
 
@@ -81,7 +81,7 @@ It does not require internet access and offers a wider selection of [navigation 
 The navigation type determines which rules are used to calculate routes. If you need a specific type of navigation, you can **import your own modified *XML* routing file**. Read more about routing rules on our [GitHub page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). And there is a separate article about XML format and how to use it, [Map Rendering style](../../../technical/osmand-file-formats/osmand-rendering-style.md), which can help you in creating a route file.  
 
 
-## Route Parameters {#route-parameters}
+## Route Parameters
 
 <Tabs groupId="operating-systems">
 
@@ -107,7 +107,7 @@ All route parameters are described in detail in the corresponding sections of th
 *[Car routing (Truck, Motorcycle)](../routing/car-based-routing.md), [Bicycle  routing (MTB)](../routing/bicycle-based-routing.md), [Moped routing](../routing/moped-routing.md), [Pedestrian routing](../routing/pedestrian-routing.md), [Public Transport routing](../routing/public-transport-navigation.md), [Horseback routing](../routing/horse-routing.md), [Skiing routing](../routing/ski-routing.md), [Train routing](../routing/train-routing.md), [Boat routing](../routing/boat-navigation.md), [Direct-to-point routing](../routing/direct-to-point-routing.md), [Straight line routing](../routing/straight-line-routing.md), [Online routing](../routing/online-routing.md), [BRouter routing](../routing/brouter.md)*.  
 
 
-### Recalculate Route {#recalculate-route}
+### Recalculate Route
 
 <Tabs groupId="operating-systems">
 
@@ -135,7 +135,7 @@ The **Route Calculation** parameter automatically changes the calculated route w
 |  *Recalculate route in case of reverse direction*  | Your route will be recalculated if you move to the starting point.  |  With this setting turned off, movement to the starting point is not considered a deviation from the path (as long as it follows the calculated route).  |
 
 
-### Development Settings {#development-settings}
+### Development Settings
 
 <Tabs groupId="operating-systems">
 
@@ -175,7 +175,7 @@ The parameters in the **Development** section are mainly for advanced users and 
 -->
 
 
-## Voice Prompts {#voice-prompts}
+## Voice Prompts
 
 <Tabs groupId="operating-systems">
 
@@ -208,7 +208,7 @@ If you select a track as your destination point, you need to use the [Attach to 
 *Voice prompts* allow you to focus on the road and not be distracted by the map or navigation device. They also improve driving safety, reduce the time it takes to navigate unfamiliar terrain, and can be useful for different [types of routes](../routing/osmand-routing.md#routing-types).
 
 
-## Screen Alerts {#screen-alerts}
+## Screen Alerts
 
 <Tabs groupId="operating-systems">
 
@@ -250,7 +250,7 @@ The types of warnings have a different visual appearance, which depends on the t
 :::
 
 
-## Map During Navigation {#map-during-navigation}
+## Map During Navigation
 
 <Tabs groupId="operating-systems">
 
@@ -274,7 +274,7 @@ The **map is used during navigation** to determine your location, plan your rout
 
 You can learn how the behavior of the map changes during navigation in the article [Map screen during navigation](../guidance/map-during-navigation.md).  
 
-## Customize Route Line {#customize-route-line}
+## Customize Route Line
 
 <Tabs groupId="operating-systems">
 
@@ -299,7 +299,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 With the **Customize Route Line** setting, you can choose the appearance of the route line that will be visible on the map during navigation. You can select the *color*, the *width of the line*, and the display of the *turn arrows* on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Map screen during navigation* in the section [Route line appearance](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
 
 
-## Vehicle Parameters {#vehicle-parameters}
+## Vehicle Parameters
 
 <Tabs groupId="operating-systems">
 
@@ -331,7 +331,7 @@ For optimal route calculation in OsmAnd, you should consider the following vehic
 Correctly setting the parameters in the OsmAnd app will help you avoid problems when navigating a route, choose the most suitable one according to the type of vehicle and road restrictions, and calculate the time for your trip.
 
 
-### Size Parameters {#size-parameters}
+### Size Parameters
 
 <Tabs groupId="operating-systems">
 
@@ -361,7 +361,7 @@ Vehicle parameters affect navigation and route construction because they determi
 - You can choose vehicle parameters from a ready-made list of sizes.
 - Do not set the size, *None*, meaning no restrictions on the selected parameter will be applied.  
 
-#### Limits {#limits}
+#### Limits
 
 **1.** [**<Translate android="true" ids="routing_attr_weight_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> The Weight parameter is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).  
 
@@ -391,9 +391,9 @@ Limits on vehicle parameters can be important for navigation and road safety. So
 These restrictions can be important for navigation and should be considered when planning a route. If a vehicle exceeds the limits, it may result in road safety, infrastructure damage, accident fines, and other legal consequences. Therefore, drivers should carefully examine the route and make sure that the height of their vehicle meets the limits.
 
 
-### Fuel parameters {#fuel-parameters}
+### Fuel parameters
 
-#### Fuel Used by Motor {#fuel-used-by-motor}
+#### Fuel Used by Motor
 
 <Tabs groupId="operating-systems">
 
@@ -419,7 +419,7 @@ Available six fuel types: ***Petrol, Diesel, LPG, CNG, Electric,*** and ***Hybri
 The **Fuel used by motor** setting is only available in vehicle-based navigation such as *[Car, Motorcycle, and Truck](../../navigation/routing/car-based-routing.md)*.
 
 
-#### Fuel tank capacity {#fuel-tank-capacity}
+#### Fuel tank capacity
 
 <InfoAndroidOnly/>
 
@@ -444,7 +444,7 @@ By entering the exact capacity of your fuel tank, the app can provide a more tai
 To ensure accurate calculations and navigation suggestions, verify that your selected unit matches your tank’s measurement standard.
 
 
-### Default Speed / Road Speeds {#default-speed--road-speeds}
+### Default Speed / Road Speeds
 
 <Tabs groupId="operating-systems">
 
@@ -472,12 +472,12 @@ These parameters are used as speed to estimate the [arrival time](../../widgets/
 - if user-generated or imported tracks are selected.
 
 
-#### Default Speed {#default-speed}
+#### Default Speed
 
 The **Default speed** is the preset movement speed. It is used to calculate the arrival time and determine the optimal route based on the movement speed that the application considers typical for this mode of transport. For example, car, public transport, pedestrian, or the speed you set manually.
 
 
-#### Road Speeds {#road-speeds}
+#### Road Speeds
 
 <InfoAndroidOnly />
 
@@ -513,7 +513,7 @@ These settings in iOS are available in *Menu → Settings → app profile → Na
     The setting sets the maximum driving speed and decreases the priority for roads with a possible speed higher than the maximum.
 
 
-## Detailed Track Guidance {#detailed-track-guidance}
+## Detailed Track Guidance
 
 <Tabs groupId="operating-systems">
 
@@ -546,7 +546,7 @@ There are two options for using *Detailed track guidance*:
 For more information on using track-based navigation, visit [Navigation by Track](../setup/gpx-navigation.md).
 
 
-## Related Articles {#related-articles}
+## Related Articles
 
 - [Route parameters](../routing/osmand-routing.md#routing-types)
 - [Route preparation](../setup/route-navigation.md)
