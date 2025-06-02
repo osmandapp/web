@@ -234,7 +234,7 @@ The **Screen alert** navigation setting enable the [**Alerts Widget**](../../wid
 
 - When you approach one of the supported obstacles on the road, notifications appear in the lower-left corner of the map.
 - If you configure the [*voice and text prompts*](../../navigation/guidance/voice-navigation.md) available in the OsmAnd app, you'll have a more comfortable and safer trip.
-- The appearance and timing of the prompts depend on your speed settings. You can find them [here](../../../technical/algorithms/voice-prompt-triggering.md).  
+- The appearance and timing of the prompts depend on your speed settings. You can find them [in the article](../../../technical/algorithms/voice-prompt-triggering.md).  
 - The behavior of *Screen Alerts* is also affected by the [Show points along the route](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route) setting.
 
 You can ***select which alerts*** you want to see on the app screen while navigating:
@@ -465,7 +465,7 @@ To ensure accurate calculations and navigation suggestions, verify that your sel
 For all types of navigation the minimum and maximum allowable speed, both by default and by road, can be different, according to certain values ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) and restrictions for vehicles. The speed is also set in certain increments to make the application settings maximum usable. For the *Walking*, *Horseback riding* and *Cycling* profiles, in small increments equivalent to 0.1 km/h ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h.  
 Speed settings determine when [voice announcements](../guidance/voice-navigation.md) are activated.
 
-These parameters are used as speed to estimate the [arrival time](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed cannot be determined from map data:
+These parameters are used as speed to estimate the [arrival time](../../widgets/nav-widgets.md#time-to-intermediate) when speed cannot be determined from map data:
 
 - for the selected profile;
 - if the used roads have no speed limits, which can also affect the routing;
