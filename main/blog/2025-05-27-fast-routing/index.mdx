@@ -34,7 +34,7 @@ OsmAnd has always been about putting you in control. Our original [A* routing en
 However, this flexibility came at a cost for complex routes:
 * **The A* Wall:** Calculating a 200-300km car route (or even shorter bicycle/pedestrian paths) could mean visiting over a million road segments, taking 10-20 seconds. For longer trips, this wait could become frustrating.
 
-![A* car](./img/a2.gif)
+
 
 We explored standard advanced algorithms like [Contraction Hierarchies (CH)](https://en.wikipedia.org/wiki/Contraction_hierarchies), known for their speed. But they presented their own set of deal-breakers for OsmAnd:
 * **Flexibility Clash:** CH typically pre-calculates optimal paths. Supporting OsmAnd's 10+ routing parameters (leading to over 1024 combinations per profile!) would be impossible with standard CH.
@@ -52,7 +52,11 @@ The core of OsmAnd's HH-Routing is an elegant two-level hierarchy built upon "ar
 * **Border Points:** Each cluster has a limited number of defined "border points" – these are the gateways in and out of the cluster.
 * **Shortcuts:** For common scenarios, we pre-calculate the travel time/distance (the "shortcut") between border points *within the same cluster* and also to border points of *immediately adjacent* clusters.
 
-[IMAGE_PLACEHOLDER_1: Diagram showing a map area divided into several distinct "area clusters." Highlight a few "border points" on the boundaries of these clusters. Perhaps show a couple of illustrative shortcut lines between border points within one cluster, and one shortcut line connecting border points of two adjacent clusters.]
+Diagram illustrating the Highway Hierarchy approach in OsmAnd:
+The map is divided into multiple colored area clusters, each representing a logical section of the road network. Border points are marked along the boundaries between clusters. Within a cluster, shortcut lines connect key border points to optimize local routing. Additionally, a prominent shortcut connects border points between two adjacent clusters, enabling efficient long-distance routing across the hierarchy.
+
+![OsmAnd HH](./img/hh-image.png)
+
 
 The real magic, our **Secret Sauce #1**, lies in *how* these border points are selected. Naive approaches quickly fail:
 * Randomly selecting border points or using simple geometric divisions (squares/hexagons) results in too many border points per cluster (50-80). This leads to a shortcut explosion (N*(N-1)/2 shortcuts), making the files large and calculations slow.
@@ -60,6 +64,8 @@ The real magic, our **Secret Sauce #1**, lies in *how* these border points are s
 
 **The "Parking Lot" Insight:**
 Imagine a vast shopping mall parking lot with thousands of individual parking spots and internal lanes (representing road segments within a cluster). No matter how complex it is inside, there are usually only a few key exits to the main roads. Our goal was to identify these natural "exits" for each map cluster. For instance, the complex road network around Amsterdam Airport Schiphol ([see on OpenStreetMap](https://www.openstreetmap.org/#map=17/52.321360/4.766226)) has many internal roads but limited primary access points.
+
+![OsmAnd Schiphol](./img/schiphol.png)
 
 We wanted a scenario where, say, 5 well-placed border points could efficiently represent an area with 5,000 internal points and 10,000 road edges. This would reduce those 10,000 edges to just 5\*4/2 = 10 shortcuts for routing *through* that cluster at a high level – an incredible 1:1000 point ratio and a 30x reduction in edges to consider for the high-level path!
 
@@ -74,7 +80,9 @@ Just look at the numbers for processing the entire planet for a car profile:
 * Resulting HH structure: ~3 million border points, ~541,000 clusters
 * Estimated shortcuts: ~91 million (a manageable number for global routing)
 
+<!--
 [IMAGE_PLACEHOLDER_2: Conceptual diagram illustrating the "parking lot" analogy. Show a complex network of roads inside a boundary (the cluster) with only 2-3 "exit" points highlighted as border points. Contrast this with a "bad" cluster that has many border points all around its perimeter.]
+-->
 
 ## The HH-Routing Process in Action: From Request to Route
 
@@ -88,17 +96,21 @@ So, how does OsmAnd use this structure to calculate your route at lightning spee
 
 1.  **Step 1: Connect to the Hierarchy (Your Local Area):**
     * OsmAnd identifies the clusters containing your start and target points.
-    * It then uses the standard Dijkstra algorithm on the *detailed local map* within your start cluster to find the best paths from your actual start location to *all* border points of that starting cluster.
+    * It then uses the standard [Dijkstra algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) on the *detailed local map* within your start cluster to find the best paths from your actual start location to *all* border points of that starting cluster.
     * The same is done for your target point within its own cluster (finding paths from all its border points to your actual destination).
     * This is quick because it's operating on a very small, localized part of the map.
 
+<!--
     [IMAGE_PLACEHOLDER_3: Diagram showing a start point 'S' within a cluster. Arrows show Dijkstra exploring paths from 'S' to several border points on its cluster. Similarly for a target 'T' in another cluster, with paths from its border points to 'T'.]
+-->
 
 2.  **Step 2: Route on the Abstract Graph (The "Highway" Part):**
     * Now, OsmAnd performs another Dijkstra search, but this time on the much smaller "base graph." This graph consists *only* of the border points and the pre-calculated shortcut values between them.
     * This step rapidly finds the optimal sequence of border points and shortcuts to get from your start cluster's periphery to your target cluster's periphery. It's incredibly fast because it's ignoring all the tiny roads *within* intermediate clusters.
 
+<!--
     [IMAGE_PLACEHOLDER_4: Simplified graph showing only border points as nodes and shortcuts as edges between them. Highlight a path taken across this abstract graph connecting the 'S' cluster's border points to the 'T' cluster's border points.]
+-->
 
 3.  **Step 3: Refine with Detailed Shortcuts (Applying Secret Sauce #2):**
     * The result from Step 2 is a high-level route – a sequence of shortcuts connecting border points.
@@ -114,15 +126,15 @@ Speed is fantastic, but not if it means sacrificing the features OsmAnd users re
 * **Full Parameter Support:** Because the final shortcut refinement (Step 3 above) uses A* on detailed maps *within each cluster*, all your specified parameters are naturally incorporated:
     * Avoiding specific road types or toll roads.
     * Adding penalties or preferences for certain roads.
-    * Following all the nuanced rules in your custom `routing.xml` profiles.
-* **Handling Live Updates & Dynamic Changes:** What if a bridge is closed due to a live map update you just downloaded?
+    * Following all the nuanced rules in your custom [`routing.xml`](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) profiles.
+* **Handling Live Updates & Dynamic Changes:** What if a bridge is closed due to a [live map update](https://osmand.net/docs/user/personal/maps-resources#osmand-live) you just downloaded?
     * If the A* calculation for a shortcut (in Step 3) finds it's now impassable, or if its actual detailed cost is significantly different (e.g., >20%) from the pre-calculated shortcut value:
         * **Option 1:** The system can update the cost of that specific shortcut in the base graph and quickly re-run the Dijkstra search (Step 2) on the abstract graph to find an alternative high-level path.
         * **Option 2:** For very localized changes, it might even re-evaluate all shortcuts within that one affected cluster.
     * Minor road updates (like those in map data that might be a few months old if you're using maps from different regions) usually result in negligible cost differences for shortcuts, so the pre-calculated values remain effective.
 * **Graceful Fallback for Extreme Customization:**
     * What if you create a truly unique routing profile that's wildly different from the common ones for which shortcuts were pre-calculated? The system is smart. If it detects that too many shortcuts (~50, for example) need on-the-fly recalculation and deviate significantly, it might determine that falling back to the original, comprehensive A* algorithm for the *entire route* would actually be faster than doing many small, heavily modified A* calculations.
-    * Users can also manually switch to the "A*" routing engine in settings if they know their profile is highly experimental or unique.
+    * Users can also manually [switch to the "A*" routing engine in settings](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings) if they know their profile is highly experimental or unique.
 
 ## Real-World Wins for You, the OsmAnd User
 
@@ -130,17 +142,17 @@ This complex engineering translates into tangible benefits:
 
 * **Blazing Speed:** The 100x average improvement means route calculations, especially for longer journeys, are now dramatically faster.
 * **Tiny Footprint:** Our HH-Routing data adds only **0.5% to 1%** to OsmAnd's already incredibly compact map sizes. The entire planet's car routing data is around 800MB!
-* **Full Customization Power:** All the beloved flexibility of `routing.xml` and detailed routing parameters is retained.
+* **Full Customization Power:** All the beloved flexibility of [`routing.xml`](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) and detailed routing parameters is retained.
 * **Works with Regional Maps:** Download only the countries you need. HH-Routing seamlessly calculates routes across the borders of your downloaded map files (as long as they are compatible, see limitations). Clusters that overlap a region's boundary are included within that region's data.
-* **Supports Frequent Updates:** The architecture is designed to work with OsmAnd’s hourly map updates, allowing routing to adapt to fresh road information.
+* **Supports Frequent Updates:** The architecture is designed to work with [OsmAnd’s hourly map updates](https://osmand.net/docs/user/personal/maps-resources#osmand-live), allowing routing to adapt to fresh road information.
 * **Future-Proof:** This structure makes it much easier to implement features like alternative route suggestions based on these key border points.
 
 ## The Not-So-Secret Limitations: Transparency is Key
 
 No system is perfect, and OsmAnd's HH-Routing has a few considerations:
 
-* **Highly Divergent Profiles:** For routing configurations that are not pre-calculated as common scenarios and whose costs vary too much from default configurations, the original A* algorithm might still be faster (and is often used as an automatic fallback).
-* **Map Version Synchronicity (Important!):** For HH-Routing to work correctly when a route crosses multiple map files (e.g., different countries or regions), **all those map files MUST be from the same generation date** (i.e., downloaded from OsmAnd around the same time, based on the same underlying OpenStreetMap data version and pre-calculation run).
+* **Highly Divergent Profiles:** For routing configurations that are not pre-calculated as common scenarios and whose costs vary too much from default configurations, the original [A* algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm) might still be faster (and is often used as an automatic fallback).
+* **Map Version Synchronicity (Important!):** For HH-Routing to work correctly when a route crosses multiple map files (e.g., different countries or regions), [**all those map files MUST be from the same generation date**](https://osmand.net/docs/user/personal/maps-resources#updates) (i.e., downloaded from OsmAnd around the same time, based on the same underlying OpenStreetMap data version and pre-calculation run).
     * If you try to route from a map of France updated in May with a map of Germany updated in April, HH-Routing may not be compatible across the border. You would need to update all relevant maps to the same version.
     * This doesn't mean all maps must be *brand new*, just *from the same batch/pre-calculation period*.
 * **Map Release Schedule:** The intensive preprocessing required to generate all these routing profiles for the entire planet takes about 2-3 days. This means new map updates are now typically released around the 5th of each month, instead of the 2nd.
