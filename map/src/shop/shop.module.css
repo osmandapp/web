@@ -1,6 +1,9 @@
 .productCard {
     display: flex !important;
     padding: 25px 0px 20px 0px !important;
+    margin: 5px !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
     flex-direction: column !important;
     align-items: center !important;
     align-self: stretch !important;
@@ -140,11 +143,11 @@
     letter-spacing: 0.16px !important;
     margin-top: 30px !important;
     margin-bottom: 36px !important;
-    max-width: 1280px !important;
+    max-width: 880px !important;
 }
 .pricingTableContainer {
     display: flex !important;
-    width: 1280px !important;
+    width: 880px !important;
     align-items: flex-start !important;
     flex-shrink: 0 !important;
     margin-bottom: 20px !important;
@@ -153,7 +156,7 @@
 @media (max-width: 1300px) {
     .pricingTableContainer {
         display: block !important;
-        width: 100% !important;
+        width: 95vw !important;
         overflow-x: auto !important;
         align-items: flex-start !important;
         flex-shrink: 0 !important;
@@ -264,10 +267,12 @@
 }
 .pricingBox {
     flex-grow: 1 !important;
+    width: 100vw !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
+    overflow-x: hidden;
 }
 .pricingTable .MuiTableCell-root {
     border: none !important;
@@ -300,7 +305,7 @@
 .pricingTable tbody {
     border: none !important;
 }
-@media (max-width: 600px) {
+@media (max-width: 880px) {
     .featureWrapper {
         flex-direction: column !important;
         align-items: flex-start !important;
@@ -313,18 +318,16 @@
     .productCardBox {
         display: flex !important;
         flex-direction: row !important;
-        gap: 24px !important;
         width: 100vw !important;
         align-items: flex-start !important;
         flex-wrap: nowrap !important;
-        margin-left: 48px !important;
+        overflow-x: auto !important;
     }
 }
 @media (min-width: 1301px) {
     .productCardBox {
         display: flex !important;
         flex-direction: row !important;
-        gap: 24px !important;
         justify-content: center !important;
         flex-wrap: wrap !important;
     }
