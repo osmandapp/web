@@ -38,16 +38,12 @@ export default function PurchaseTypeItem({ type, productId, selected, onChange }
             >
                 <Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', ml: 2 }}>
-                        {purchaseObj.oldPrice && (
+                        {purchaseObj.oldPrice && purchaseObj.oldPrice !== purchaseObj.newPrice && (
                             <Typography className={styles.purchaseTypeCardOldPrice}>
-                                {purchaseObj.currency}
-                                {purchaseObj.oldPrice}&nbsp;
+                                {purchaseObj.oldPriceDisplay}&nbsp;
                             </Typography>
                         )}
-                        <Typography className={styles.purchaseTypeCardNewPrice}>
-                            {purchaseObj.currency}
-                            {purchaseObj.newPrice}
-                        </Typography>
+                        <Typography className={styles.purchaseTypeCardNewPrice}>{purchaseObj.display}</Typography>
                         <Typography>&nbsp;{periodMap[type]}</Typography>
                     </Box>
                     {purchaseObj.save && <Typography className={styles.productTypeSale}>{purchaseObj.save}</Typography>}
