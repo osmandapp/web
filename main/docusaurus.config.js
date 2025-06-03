@@ -155,6 +155,10 @@ const config = {
                 href: 'https://facebook.com/osmandapp/',
               },
               {
+                label: 'TikTok',
+                href: 'https://www.tiktok.com/@osmandapp',
+              },
+              {
                 label: 'Telegram Channel',
                 href: 'https://t.me/OsmAnd_News',
               },
