@@ -41,6 +41,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 - Fixed issues:
   - [The languages Serbian latin (Latin for Serbia, Bosnia and Herzegovina and Crna Gora) now work.](https://github.com/osmandapp/OsmAnd/issues/21480)
+  - [Implement tap on Ski / MTB /Dirt Bike routes & trails](https://github.com/orgs/osmandapp/projects/27/views/1)
 
 
 
