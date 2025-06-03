@@ -53,9 +53,9 @@ The core of OsmAnd's HH-Routing is an elegant two-level hierarchy built upon "ar
 * **Shortcuts:** For common scenarios, we pre-calculate the travel time/distance (the "shortcut") between border points *within the same cluster* and also to border points of *immediately adjacent* clusters.
 
 Diagram illustrating the Highway Hierarchy approach in OsmAnd:
-The map is divided into multiple colored area clusters, each representing a logical section of the road network. Border points are marked along the boundaries between clusters. Within a cluster, shortcut lines connect key border points to optimize local routing. Additionally, a prominent shortcut connects border points between two adjacent clusters, enabling efficient long-distance routing across the hierarchy.
+This map illustrates the OsmAnd routing concept. The route starts in the Start Area Cluster (Doetinchem), moves to the nearest Border Point, and continues through precomputed Shortcuts across intermediate clusters. It then enters the Finish Area Cluster (Arnhem) via another border point and finishes using local roads. This method speeds up routing by combining local search with efficient inter-cluster shortcuts.
 
-![OsmAnd HH](./img/hh-image.png)
+![OsmAnd HH](./img/fast-routing-scheme.png)
 
 
 The real magic, our **Secret Sauce #1**, lies in *how* these border points are selected. Naive approaches quickly fail:
