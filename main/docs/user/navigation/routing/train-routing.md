@@ -15,7 +15,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview
+## Overview {#overview}
 
 :::note
 By default, *Train profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -26,7 +26,7 @@ By default, *Train profile* is deactivated. To use this profile for routing, you
 ![Map transport tram](@site/static/img/navigation/routing/train_routing_overview.png)
 
 
-## Route Parameters - Train
+## Route Parameters - Train {#route-parameters---train}
 
 <Tabs groupId="operating-systems">
 
@@ -47,7 +47,7 @@ By default, *Train profile* is deactivated. To use this profile for routing, you
 *Train routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
 
 
-## Other Routing Settings
+## Other Routing Settings {#other-routing-settings}
 
 - The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 

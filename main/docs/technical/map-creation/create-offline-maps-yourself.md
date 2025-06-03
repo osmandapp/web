@@ -4,11 +4,11 @@ versions: '*'
 intro: With OsmAndMapCreator there are many ways how to create and customize Raster & Vector maps for your needs. 
 ---
 
-## OsmAndMapCreator
+## OsmAndMapCreator {#osmandmapcreator}
 
 [**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) can be used to create any maps supported by OsmAnd yourself. You can download latest version from [website](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator has UI capabilities to create raster & vector maps. *To create vector map you will need OSM file (`*.pbf, *.osm.gz, *.osm.bz2`)* and *to create online sqlite map file you will need a `base tile url`*.
 
-### Raster maps (simple)
+### Raster maps (simple) {#raster-maps-simple}
 
 Once you have selected the tiles from which you want to create a map in the **Source of tiles** menu and they have been successfully loaded into OsmAndMapCreator, you can right-click on the area you want to preload. After that you can create `.sqlitedb` file in **Source of tiles** → **Create sqlite database**.  
 
@@ -18,7 +18,7 @@ To create a vector map you will need an OSM file (*.pbf, *.osm.gz, *.osm.bz2) an
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-raster-maps.png').default} alt="Create sqlitedb maps" />
 
-### Vector maps (simple)
+### Vector maps (simple) {#vector-maps-simple}
 
 Steps to create vector map via OsmAndMapCreator UI:
 
@@ -35,7 +35,7 @@ Steps to create vector map via OsmAndMapCreator UI:
 More parameters how to generate vector maps could be specified in the shell `utilities.sh `.
 
 
-## Vector maps (shell script)
+## Vector maps (shell script) {#vector-maps-shell-script}
 
 The most typical & the most powerful way to create maps used by developers is via shell script `utilities.sh` packaged within OsmAndMapCreator. It also has many other utilities methods to create some custom maps such as basemap or map with region names & boundaries (regions.ocbf).
 
@@ -74,7 +74,7 @@ All extra parameters could be found in the code in case they are not documented 
 **Note**: Creating maps with batch.xml is deprecated, please use shell methods mentionned above and combine with downloads / for cycles using standard shell script capabilities.
 
 
-### RAM to process maps
+### RAM to process maps {#ram-to-process-maps}
 
 Creating maps is memory hungry and I/O intensive. In other words: it takes very long and could run out of memory! Please check generation on small maps first.
 To give more memory to JVM, you can declare env JAVA_OPTS variable.
@@ -98,7 +98,7 @@ With "in memory" processing this *nodes.tmp.odb* file will be created in your wo
 Example: for a 250MB *.osm.pbf* a \~4.5GB *nodes.tmp.odb* file will be generated.
 
 
-### Custom vector map (tags)
+### Custom vector map (tags) {#custom-vector-map-tags}
 
 OsmAnd rendering and POI search relies on information written to [OBF](../osmand-file-formats/osmand-obf.md). It has different structure than other OSM formats and optimized for mobile usage. You can inspect the contents using [Binary Inspector](../map-creation/how-to-inspect-an-obf.md). 3 Most important parts of OBF file are
 
@@ -119,7 +119,7 @@ OsmAnd rendering and POI search relies on information written to [OBF](../osmand
 
 **Read more**: usually custom vector maps combined with [custom rendering style](../osmand-file-formats/osmand-rendering-style.md).
 
-## Raster maps (advanced)
+## Raster maps (advanced) {#raster-maps-advanced}
 
 OSM is a large database for maps, but it doesn't always have the information you need (for example, about deserts). Sometimes you can get the information you need from other sources, such as paper maps or satellite images.  
 
@@ -127,7 +127,7 @@ There are special programs for preparation, conversion, calibration of any sourc
 
 About some of them below.
 
-### MOBAC
+### MOBAC {#mobac}
 
 Mobile Atlas Creator (MOBAC) is an open source (GPL) program for creating offline atlases. Mobile Atlas Creator can use a large number of different online maps, such as OpenStreetMap and other map providers, as a source for creating an offline atlas.  
 
@@ -140,7 +140,7 @@ Pick the map source, zoom levels, and other features. Select an area, then choos
 After that, you can create your SQLite file: 'Atlas' -> 'Create Atlas'.
 
 
-### MAPC2MAPC
+### MAPC2MAPC {#mapc2mapc}
 
 [MAPC2MAPC](https://www.the-thorns.org.uk/mapping/) is a Windows program to manipulate digital maps and convert them between different platforms and software.  
 
@@ -148,14 +148,14 @@ For example, you can convert and calibrate any image format & pdf maps to OsmAnd
 
 [Video tutorial](https://www.youtube.com/watch?v=Y_fekLfcUOc) of using the program.
 
-### SASPlanet
+### SASPlanet {#sasplanet}
 
 SASPlanet is a freeware, opensource navigation software with the capability of viewing and downloading maps and satellite images of Earth from various on-line services to OsmAnd online map.
 
 [Download](http://www.sasgis.org/download/) the program, [English guideline](https://www.evernote.com/shard/s100/client/snv?noteGuid=e659886a-096c-46b4-8280-b57b77373847&noteKey=dac8148d9a74ed77&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs100%2Fsh%2Fe659886a-096c-46b4-8280-b57b77373847%2Fdac8148d9a74ed77&title=How%2Bto%2Buse%2BSAS.Planet.%2BEnglish%2Bguideline).
 
 
-### Geolocated PDF or TIFF
+### Geolocated PDF or TIFF {#geolocated-pdf-or-tiff}
 
 How to convert geolocated pdf/tif/tiff files to [OsmAnd SQLitedb](../osmand-file-formats/osmand-sqlite.md) in Windows.
 Georeferencing tif/tiff and pdf files can be fairly simply done in QGIS.
@@ -277,16 +277,16 @@ Excluding several layers from conversion by <i>gdal_pdf_layers_off</i> parameter
 - See also [Making Overlay Maps for OsmAnd on Linux](https://shallowsky.com/blog/mapping/osmand-making-overlay-maps.html).
 
 
-## Common Issues
+## Common Issues {#common-issues}
 
-### OutOfMemoryError issue
+### OutOfMemoryError issue {#outofmemoryerror-issue}
 
 **Issue**: OsmAndMapCreator fails with message -  OutOfMemoryError.  
 
 The file you try to process with OsmAndMapCreator is too large. Either try to process a smaller file, or increase the memory for OsmAndMapCreator in the .sh or .bat file. The `-Xmx` parameter specifies how much memory the program can consume. Settings can be different for 64bit (more than 1.5GB) and 32bit (max around 1.5GB) machines.
 
 
-### Empty file issue
+### Empty file issue {#empty-file-issue}
 
 **Issue**: After converting an .osm to .obf with only a POI index, the .obf is empty, although original .osm file did contain POIs.  
 

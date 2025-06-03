@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 Driving a vehicle and using your phone or tablet at the same time is usually forbidden by law for safety reasons. [***CarPlay***](https://www.apple.com/ios/carplay/) is software that provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.
 
@@ -25,18 +25,18 @@ To use *CarPlay* on your vehicle screen, follow these steps:
 2. [Connect your device](https://support.apple.com/en-gb/HT203412) to your vehicle multimedia system using a USB port or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use *CarPlay* on your device.
 3. Once connected, the *CarPlay interface* will automatically appear on your vehicle screen with all available apps. If the *CarPlay home screen* does not appear, select the *CarPlay logo* on the vehicle display.  
 
-#### CarPlay Interface
+#### CarPlay Interface {#carplay-interface}
 
 *CarPlay* is **not a direct replication** of the OsmAnd mobile app. It has a simplified interface, focusing on essential navigation functions to ensure safe driving. Some advanced features are not supported due to platform limitations.
 
-### Connection Screen
+### Connection Screen {#connection-screen}
 
 ![CarPlay](@site/static/img/navigation/auto-car/car_play_connect_screen.png)
 
 While your device is connected to *CarPlay*, the map on the app screen is locked. This is an intentional security feature to ensure that navigation is controlled exclusively from the car display, minimizing distractions while driving. Check the [common questions](#common-issues-and-solutions) about the connection screen.
 
 
-### Location Position in CarPlay
+### Location Position in CarPlay {#location-position-in-carplay}
 
 The OsmAnd app for *CarPlay* allows you to adjust the position of the current location indicator on the screen to avoid overlapping the route and other important map details.
 
@@ -48,7 +48,7 @@ The OsmAnd app for *CarPlay* allows you to adjust the position of the current lo
     - **Center**. The indicator is placed in the center of the screen, suitable for standard navigation.
     - **Bottom**. The indicator is positioned closer to the bottom of the screen, making it easier to observe surrounding objects and complex intersections.
 
-### Interaction with the Map
+### Interaction with the Map {#interaction-with-the-map}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
 
@@ -58,7 +58,7 @@ The OsmAnd app for *CarPlay* allows you to adjust the position of the current lo
 - [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map.
 
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
@@ -74,7 +74,7 @@ You may need an Internet connection to use OsmAnd in *CarPlay*. If your device h
 :::
 
 
-### Start Navigation
+### Start Navigation {#start-navigation}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-start(1).png)  
 
@@ -93,7 +93,7 @@ All categories for **route endpoint** selection, *[History](#history), [POIs](#p
 :::  
 
 
-### CarPlay Profile
+### CarPlay Profile {#carplay-profile}
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 ![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)
@@ -110,7 +110,7 @@ You cannot select a profile directly in *CarPlay* from the vehicle screen. First
 - **Utility and Efficiency.** Navigation should be customized to meet the needs of a particular mode of transportation. This allows users to reduce the time it takes to find optimal routes and avoid unnecessary traffic restrictions.
 
 
-## Select a Route Endpoint
+## Select a Route Endpoint {#select-a-route-endpoint}
 
 You can select previously preset and added [POIs](../map/point-layers-on-map.md#points-of-interest-poi), or [Favorites](../personal/favorites.md), or [Markers](../personal/markers.md) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks/index.md) for the route, use the [Search](../search/index.md), or select a destination from the route [History](../search/search-history.md).
 
@@ -128,7 +128,7 @@ While driving, selected points can be [announced](#voice-prompts) when you appro
 :::
 
 
-### History
+### History {#history}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car_play_history.png)  
 
@@ -139,7 +139,7 @@ In the **History category**, you can select a destination from a list of endpoin
 - To learn how to use or delete a destination, read the [Search History](../search/search-history.md) article.
 
 
-### POI Categories
+### POI Categories {#poi-categories}
 
 <table class="image">
     <tr>
@@ -158,7 +158,7 @@ To build a route to a *POI* in *CarPlay*, follow these steps:
 4. When you arrive at the location, the app will notify you that you have reached the *POI*.
 
 
-### Favorites
+### Favorites {#favorites}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  
 
@@ -169,7 +169,7 @@ To build a route to a *POI* in *CarPlay*, follow these steps:
 - If you want to use them for navigation, configure everything you need before connecting the device to your vehicle multimedia system.  
 
 
-### Map Markers
+### Map Markers {#map-markers}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-markers(1).png)  
 
@@ -178,7 +178,7 @@ To build a route to a *POI* in *CarPlay*, follow these steps:
 - This is described in more detail in the [Markers](../personal/markers.md) article.  
 
 
-### Tracks
+### Tracks {#tracks}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
 
@@ -189,7 +189,7 @@ From the list of tracks in the *Menu → My Places → [Tracks](../personal/trac
 Tracks can also be selected directly on the vehicle screen in *CarPlay*. They are organized in folders you have created, and for easy and quick access to recently opened tracks, there is a special folder [Last modified](#folder-last-modified).
 
 
-### Search
+### Search {#search}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-search(1).png)  
 
@@ -201,7 +201,7 @@ You can use the *Search tool* to find the required place on the map for route pl
 - [POI](../search/search-poi.md) and [Custom POI](../search/search-poi.md). The list of nearby similar names will also display POIs or their categories.
 - [Coordinates search](../search/search-address#coordinates-search). Enter the coordinates to find the point on the map.
 
-#### Address Search Priorities
+#### Address Search Priorities {#address-search-priorities}
 
 The CarPlay search feature prioritizes streets and building numbers when **searching for addresses**.
 
@@ -209,26 +209,26 @@ The CarPlay search feature prioritizes streets and building numbers when **searc
 - When you search for a city, the streets within the city are displayed first, followed by the building numbers on those streets.
 
 
-### Folder Last Modified
+### Folder Last Modified {#folder-last-modified}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car_play_last_modified.png)
 
 The *Favorites* and *Tracks* categories have a special **Last Modified** folder. Since the list in these categories can be very large as it contains all your existing favorites or tracks, this folder is necessary for easy and quick access to your most recent destinations.
 
 
-## Additional Features
+## Additional Features {#additional-features}
 
 In addition to the basic features of the OsmAnd app in *CarPlay* that provide convenient navigation in your vehicle, there are a number of additional features that enhance your experience and make navigation more personalized, comfortable, and efficient.  
 
 
-### Voice Prompts
+### Voice Prompts {#voice-prompts}
 
 Voice guidance for *CarPlay* is one of OsmAnd's most useful navigation features, providing real-time guidance and allowing the driver to stay focused on the road. Voice prompts clearly indicate turns, directions and other navigation instructions, ensuring a safer and more comfortable use of the navigation system.  
 
 To configure voice prompts according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device. To see recommended settings for *CarPlay*, go to the [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md) article.  
 
 
-### Announce Incoming Text Messages
+### Announce Incoming Text Messages {#announce-incoming-text-messages}
 
 You can change the notification settings for the OsmAnd app in the system settings of your device. Tap *CarPlay*, then select one of the following items:
 
@@ -239,7 +239,7 @@ You can change the notification settings for the OsmAnd app in the system settin
 You can also enable or disable Announce messages directly in *CarPlay*. Read about how notification management is implemented on [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) and [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
 
 
-### Screen Alert Widget
+### Screen Alert Widget {#screen-alert-widget}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
@@ -251,7 +251,7 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 - To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).
 
 
-### Speedometer
+### Speedometer {#speedometer}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png)
 
@@ -262,7 +262,7 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 - For more information on how to add and configure the *Speedometer* widget to the display, please read the [Informational widgets article](../widgets/info-widgets.md#speedometer).
 
 
-### Map Appearance (3D)
+### Map Appearance (3D) {#map-appearance-3d}
 
 ![Car Play](@site/static/img/navigation/auto-car/car_play_3.png)
 
@@ -272,7 +272,7 @@ The OsmAnd app allows you to use the 3D map view on the *CarPlay screen* to disp
 - You can switch between 3D / 2D map modes by tapping this button.
 
 
-### Multifunction Dashboard
+### Multifunction Dashboard {#multifunction-dashboard}
 
 ![Car Play](@site/static/img/navigation/auto-car/car_play_4.png)
 
@@ -282,7 +282,7 @@ The OsmAnd app can be opened and used to navigate in *CarPlay* on the vehicle mu
 - Find Multi window button and switch it.
 
 
-## Volume Control Issue
+## Volume Control Issue {#volume-control-issue}
 
 Sometimes *CarPlay* doesn't connect, or you just can't hear anything even though it's connected. Other times, the OsmAnd app doesn't open properly in *CarPlay*. Possible solutions:  
 
@@ -298,12 +298,12 @@ Sometimes *CarPlay* doesn't connect, or you just can't hear anything even though
 8. If you use a VPN on your iPhone, it may prevent *CarPlay* from working. Try disabling the VPN and see if this will help *CarPlay* to work.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Profiles (Settings)](../personal/profiles.md)
 - [Import / Export](../personal/import-export.md)
 
-### Common Issues and Solutions
+### Common Issues and Solutions {#common-issues-and-solutions}
 
 1. Common questions about the connection screen:
     - *Why can’t I control the app from my phone when connected to CarPlay?*  

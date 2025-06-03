@@ -12,7 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## Cross-Platform Purchases
+## Cross-Platform Purchases {#cross-platform-purchases}
 
 **OsmAnd Pro** and **Maps+** (*All World Maps* for iOS) are **cross-platform subscriptions** available for Android and iOS starting with OsmAnd 5.0. Cross-platform means that if you purchase a subscription, for example, in one of the Android stores (Google Play, Huawei AppGallery), you can also use it on iOS and in the web version.
 
@@ -27,7 +27,7 @@ import Translate from '@site/src/components/Translate.js';
 - For more details, see: [Android purchases](../purchases/android.md), [iOS purchases](../purchases/ios.md), and [OsmAnd Map Portal](https://www.osmand.net/map).
 
 
-### How to link your purchase to OsmAnd Cloud account
+### How to link your purchase to OsmAnd Cloud account {#how-to-link-your-purchase-to-osmand-cloud-account}
 
 1. If you **don’t have** an OsmAnd Cloud account:
 
@@ -48,7 +48,7 @@ import Translate from '@site/src/components/Translate.js';
 > For more information, read [OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform) article.
 
 
-## How to Buy and Restore OsmAnd in the Huawei AppGallery without Huawei Mobile Services
+## How to Buy and Restore OsmAnd in the Huawei AppGallery without Huawei Mobile Services {#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services}
 
 1. **Buy OsmAnd**:
    - First, enable *Install from Unknown Sources* in your device's settings. You can usually find this option in **Settings → Security**.
@@ -70,7 +70,7 @@ import Translate from '@site/src/components/Translate.js';
 - Restore purchases in the Huawei AppGallery.
 -->
 
-## Amazon store is closing - what to do
+## Amazon store is closing - what to do {#amazon-store-is-closing---what-to-do}
 
 We are working on a solution to transfer purchases made through Amazon to other platforms.  
 Currently, [it is possible to transfer subscriptions and in-app purchases](../purchases/cross.md).  
@@ -79,10 +79,7 @@ The option to transfer the OsmAnd+ app is still under development.
 On August 20, 2025, Amazon will close the Amazon Appstore for Android devices — details [here](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program).
 
 
-
-
-
-## How to restore the Topography (formerly Contour lines) plugin purchase
+## How to restore the Topography (formerly Contour lines) plugin purchase {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
 
 To restore the [Topography plugin](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid):
 
@@ -91,27 +88,27 @@ To restore the [Topography plugin](https://play.google.com/store/apps/details?id
 3. After installation, enable the Topography plugin in the *[OsmAnd menu → Plugins](../plugins/topography.md)*, download the required files in the *[Maps and Resources](../start-with/download-maps.md#maps-and-resources)*, and activate it through the *[Configure map menu](../map/configure-map-menu.md)*.
 
 
-## How to identify if OsmAnd Unlimited is active
+## How to identify if OsmAnd Unlimited is active {#how-to-identify-if-osmand-unlimited-is-active}
 
 Navigate to *Menu → Download maps* and tap the map counter (the field labeled *Free version. X downloads left*). If OsmAnd Unlimited is active, the display will show the remaining device storage instead of the number of free downloads.
 
 
-## Can I get the full version of OsmAnd as a separate app for iOS?
+## Can I get the full version of OsmAnd as a separate app for iOS? {#can-i-get-the-full-version-of-osmand-as-a-separate-app-for-ios}
 
 For iOS, there is only one version of OsmAnd available. To access the full version, you need to unlock additional functions through in-app purchases.
 
 
-## What do 5 or 7 free downloads mean?
+## What do 5 or 7 free downloads mean? {#what-do-5-or-7-free-downloads-mean}
 
 You are allowed 5 free downloads on iOS or 7 on Android. Each download, whether it's a map, an update (map updates count as downloads), voice packs, or other items, reduces the available count. Please note, that removing items from your downloads does not restore the free download count.
 
 
-## How can I get additional map downloads in OsmAnd Free?
+## How can I get additional map downloads in OsmAnd Free? {#how-can-i-get-additional-map-downloads-in-osmand-free}
 
 If you have used all 5 (iOS) or 7 (Android) free downloads, you can receive 3 extra downloads by *subscribing to the mailing list*. A banner with the subscription option will appear once all free downloads have been used.
 
 
-## Verification Code for OsmAnd Cloud Not Received
+## Verification Code for OsmAnd Cloud Not Received {#verification-code-for-osmand-cloud-not-received}
 
 If you do not receive the **verification code** when creating an **OsmAnd Cloud** account, follow these steps to resolve the issue:  
 
@@ -131,7 +128,7 @@ If you do not receive the **verification code** when creating an **OsmAnd Cloud*
     If you are using a **corporate or custom email domain**, check with your **email provider** to ensure the email is not being blocked. Consider using a different email service (e.g., Gmail, Outlook) if issues persist.
 
 <!--
-## Purchases & Payments
+## Purchases & Payments {#purchases--payments}
 
 - Purchase Not Showing
 - Purchase Not Restoring
@@ -144,7 +141,7 @@ If you do not receive the **verification code** when creating an **OsmAnd Cloud*
 - Payment issues - instructions for contacting Google Play Support in case of paymentissues.
 
 
-## FAQ
+## FAQ {#faq}
 
 - Can I transfer a purchase between Android and iOS?
 - Can I use a purchase on multiple devices?

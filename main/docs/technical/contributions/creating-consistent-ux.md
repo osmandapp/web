@@ -2,13 +2,13 @@
 sidebar_position: 2
 ---
 
-# Creating a Consistent User Experience
+# Creating a Consistent User Experience {#creating-a-consistent-user-experience}
 
 Usability of our complex features is decisively enhanced by wording and good translations, and as much consistency as possible. It is worth thinking about many expressions or sentences for a little while. :)
 
 Please note the following:
 
-## 1. Consistent Wording
+## 1. Consistent Wording {#1-consistent-wording}
 
 Use only **one expression** for a certain feature, do not mix two possible expressions. Examples:
 
@@ -21,7 +21,7 @@ Use only **one expression** for a certain feature, do not mix two possible expre
 * Know the difference between _"elevation"_ and _"altitude"_
 * It is _"OsmAnd"_ now, not _"Osmand"_  :)
 
-## 2. Authoring Text
+## 2. Authoring Text {#2-authoring-text}
 
 * Please try to re-use existing string constants as much as possible, it is good for memory and performance.
 * For highly re-usable strings 'XXX' we often have a `shared_string_XXX`
@@ -32,6 +32,6 @@ Use only **one expression** for a certain feature, do not mix two possible expre
 * Clearly mark all features which require Internet access with the expression "online".
 * The base language for OsmAnd is American English. There is a translation folder for British English for all expressions and spelling that differs.
 
-## 3. Rendering
+## 3. Rendering {#3-rendering}
 
 * A note about rendering: The map appearance of our Maps styles has been tested for usabilityand visibility at a multitude of map locations, with many devices and screen technologies, and under different light conditions. _"Spontaneous improvements"_ to the renderer are almost always questionable, may at least require more investigation and testing than you may think... :)

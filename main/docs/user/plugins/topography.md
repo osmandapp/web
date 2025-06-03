@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 :::info Paid feature
 The Topography plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.
@@ -54,7 +54,7 @@ The Topography plugin provides access to the following map types:
 
 </Tabs>
 
-#### License for DEM data used by OsmAnd for terrain detection
+#### License for DEM data used by OsmAnd for terrain detection {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
 The altitude data on the map (between 70 degrees north latitude and 70 degrees south latitude) were obtained from measurements made as a part of the *Shuttle Radar Topography Mission (SRTM)*. It utilized the *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, the primary imaging tool in *NASA's Earth Observation System*.  
 For complete information, see the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
@@ -67,7 +67,7 @@ For complete information, see the [License](https://github.com/osmandapp/OsmAnd/
 	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).</details>
 
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 To display **Contour lines** and **Terrain (Hillshade, Slope)** data on the map:
 
@@ -80,14 +80,14 @@ To display **Contour lines** and **Terrain (Hillshade, Slope)** data on the map:
 To display [**3D Relief**](#3d-relief) you need to purchase the *OsmAnd Pro* plan, including access to the Topography plugin.
 
 
-## Download Maps
+## Download Maps {#download-maps}
 
 To start working with the plugin functionality, you need to download the maps you are interested in. Some maps, such as Contour Lines for mountainous regions, can be quite large, exceeding 2 GB, and may not be supported on outdated devices.
 
 For stable work and to save resources, you can download a map not of the entire country, but of its specific regions, if such regions are offered in the application. Information about the size of each map type is listed under their name.
 
 
-### 3D Relief Maps  
+### 3D Relief Maps {#3d-relief-maps}
 
 <Tabs groupId="operating-systems">
 
@@ -114,7 +114,7 @@ You need to download **Terrain map (3D)** maps to display Hillshade, Slope, and 
 If the map displayed on the screen is not downloaded, then in *Menu → Configure map → Topography section → Terrain* at the bottom of the list of features the section *Download maps* with suggested additional maps will be displayed.
 
 
-### Contour Lines (Meters or Feet)
+### Contour Lines (Meters or Feet) {#contour-lines-meters-or-feet}
 
 <Tabs groupId="operating-systems">
 
@@ -137,7 +137,7 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 **The unit options are not interchangeable**, so if you need to switch from meters to feet or the reverse, you are required to uninstall the previous version of the Contour lines map to download the new version.
 
 
-## Contour Lines
+## Contour Lines {#contour-lines}
 
 <Tabs groupId="operating-systems">
 
@@ -176,7 +176,7 @@ When using the [Map rendering engine](../personal/global-settings.md#map-renderi
 - *<Translate android="true" ids="maps_and_resources"/>*. View and download contour line maps for the current region and nearby areas.
 
 
-## Terrain
+## Terrain {#terrain}
 
 <Tabs groupId="operating-systems">
 
@@ -207,7 +207,7 @@ Specific features:
 The **Terrain** menu includes [color scheme](#default-color-scheme) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps-resources.md) needed to display the layer.
 
 
-## Hillshade, Slope and Altitude Layers
+## Hillshade, Slope and Altitude Layers {#hillshade-slope-and-altitude-layers}
 
 | Hillshade | Slope | Altitude |
 | ------ | ------- | ------- |
@@ -228,7 +228,7 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 - *Terrain estimation.* It's convenient for visualizing the landscape, especially if you're walking or biking.
 
 
-### Default Color Scheme
+### Default Color Scheme {#default-color-scheme}
 
 | Hillshade | Slope | Altitude |
 | ------ | ------- | ------- |
@@ -243,7 +243,7 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 > *Please read the [Color Scheme](../personal/color-palette-schemes.md) article for more information.*
 
 
-### Modify Color Scheme
+### Modify Color Scheme {#modify-color-scheme}
 
 :::info Paid feature
 *Modify Color Scheme* is an **OsmAnd Pro** paid feature for [iOS](../purchases/ios.md#pro-features) and [Android](../purchases/android.md#pro-features) <ProFeature />.
@@ -273,7 +273,7 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 You can [edit these palettes](../personal/color-palette-schemes.md#edit-palette-file) to personalize the appearance of maps and routes.
 
 
-### Visibility
+### Visibility {#visibility}
 
 | Visibility 31% | Visibility 74% |
 | ------ | ------- |
@@ -281,20 +281,20 @@ You can [edit these palettes](../personal/color-palette-schemes.md#edit-palette-
 
 The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used for representing the angle in the Slope parameter.
 
-### Zoom Levels
+### Zoom Levels {#zoom-levels}
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 The *Scale Levels* function allows you to set the minimum and maximum values of map zoom levels, ranging from 4 to 19, at which the Hillshade or Slope map layers will be displayed.
 
-### Cache Size
+### Cache Size {#cache-size}
 
 **Cache size** is an informational section that displays the amount of memory on your device currently used for *Terrain* data. Each time you view *Hillshade* or *Slope* information on a map, all of this data is temporarily stored in the cache for quick access and later use, avoiding additional load on your device's processor.  
 
 **Clearing the cache** is sometimes necessary to free up space on your device or to resolve potential performance issues. To clear the cache you need to go to the *System Settings* of the device, then the path can be as follows: *Applications → OsmAnd → Storage → Clear cache*.
 
 
-### Rendering Engine (Android)
+### Rendering Engine (Android) {#rendering-engine-android}
 
 **Hillshade** and **Slope** are displayed and adjusted in any selected [Map rendering engine](../personal/global-settings.md#map-rendering-engine).
 
@@ -306,7 +306,7 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
     - Alternatively, you can use the [Terrain Map (3D)](../personal/maps-resources.md#paid-features-for-the-selected-location) download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
 
 
-### Quick Actions
+### Quick Actions {#quick-actions}
 
 ![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
@@ -318,7 +318,7 @@ The main settings for *Show or Hide map types* are in the Topography section of 
 - Add one or more QA buttons to change the visibility of a particular topography layer.
 
 
-## 3D Relief
+## 3D Relief {#3d-relief}
 
 :::info Pro feature
 3D Relief is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
@@ -377,7 +377,7 @@ The 3D Relief feature produces a raised relief and provides a three-dimensional 
 </Tabs>
 
 
-### Vertical Exaggeration
+### Vertical Exaggeration {#vertical-exaggeration}
 
 <Tabs groupId="operating-systems">
 
@@ -402,7 +402,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 *Vertical exaggeration* is a special coefficient for *3D relief*. You can change the scale (*Vertical exaggeration*) from x1 to x3. This feature allows you to view smoother terrain contours with increased detail.
 
 
-### Hillshade and 3D Relief
+### Hillshade and 3D Relief {#hillshade-and-3d-relief}
 
 | Hillshade | 3D Relief |
 |--------|---------|
@@ -416,7 +416,7 @@ If you **disable** *Hillshade* and **enable** *3D Relief*, relief shadows will s
 When **Hillshade** is **enabled**, an image with relief shadows appears more detailed, darker, and more stepped than a *3D Relief* image. The explanation is that *Hillshade* emphasizes the gradients and contrasts of the terrain, creating a sharper and more detailed image. The *3D Relief* feature gives the map a more fluid and smoothed appearance, softening the terrain and potentially reducing the visibility of some finer details.
 
 
-## Combine Layer Types
+## Combine Layer Types {#combine-layer-types}
 
 <Tabs groupId="operating-systems">
 
@@ -441,13 +441,13 @@ OsmAnd allows you to combine multiple types of map layers for a more visual disp
 - The combination of **3D Relief** and **Hillshade** layers lets you get a more realistic and visual representation of the terrain, relief, and landscape details. This combination is especially suitable for mountainous and hilly terrain.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-### Common Issues and Solutions
+### Common Issues and Solutions {#common-issues-and-solutions}
 
 <!-- Troubleshooting Steps-->
 
