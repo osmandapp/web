@@ -122,7 +122,7 @@ export async function updatePrices(region = 'USD') {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/fs/products/price`, {
         apiCache: true,
         params: {
-            country: 'UA',
+            country: region,
         },
     });
     let prices;
