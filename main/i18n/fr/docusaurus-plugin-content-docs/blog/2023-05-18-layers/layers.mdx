@@ -1,0 +1,93 @@
+---
+slug: layers
+title: Map layers
+authors: eugene
+tags: [marketing,map,android,ios]
+draft: true
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+
+## Map types
+
+OsmAnd uses two types of map data: _[vector map](https://osmand.net/docs/user/map/vector-maps)_ and _[raster (images) maps](https://osmand.net/docs/user/map/raster-maps)_.
+
+ - Openstreetmap, Heigmap and Weather data are used for OsmAnd vector maps and layers.
+
+ - Any sources can be used for raster maps: satellite, scan papper maps...
+
+![Map layers in OsmAnd](./layers.png)
+
+<!--truncate-->
+
+It's important to note that raster maps and vector maps (as mentioned earlier) are two different types of map representations. While raster maps use a grid of pixels to represent data, vector maps use mathematical equations and geometric shapes to represent geographic features. Each type has its own advantages and applications depending on the specific use case and data being represented.
+
+
+### Vector Map
+
+[A vector map](https://osmand.net/docs/user/map/vector-maps) is a type of map that represents geographical features using vector graphics. It is a computer-based representation of a geographic area that uses points, lines, and polygons to depict different objects and their attributes.
+
+In a vector map, geographic features such as roads, rivers, buildings, and boundaries are defined by mathematical equations or coordinates. These coordinates specify the position, shape, and attributes of each feature in the map. The map data is stored as a collection of vector elements, which can be easily scaled, rotated, or manipulated without losing quality or detail.
+
+- **Advantages**: 
+
+  - _Scalability_.
+  - _Efficient Storage_.
+  - _Editability_.
+  - _Interactivity_.
+  - _Accuracy and Precision_.
+  - _Style Customization_.
+  - _Smoother Representation_.
+
+### Raster Map
+
+A raster map is a type of map that represents geographic features and data using a grid of cells or pixels. It is a digital image where each pixel corresponds to a specific location on the map and contains information about the attribute or value associated with that location. The resolution of the raster map is determined by the size and number of pixels in the grid. Higher resolution means more pixels and finer detail.
+
+Raster maps are commonly used to represent continuous data, such as elevation, temperature, precipitation, satellite imagery, and other phenomena that can be measured or observed at different points on the map. Each pixel in the raster map represents a specific measurement or attribute value at a particular location.
+
+- **Advantages**:
+  - _Efficient Rendering and Processing_.
+  - _Ease of Data Integration_.
+  - _Simple Data Exchange_.
+
+
+
+## Map layers
+
+Raster maps you can use online or offline mode. For offline use, you need to [download it by OsmAnd](https://osmand.net/docs/user/map/raster-maps#download--update-tiles) or by [another specialized service](https://osmand.net/docs/user/map/raster-maps#prepare--copy-raster-maps-to-device).
+
+
+How to use any layers in OsmAnd:
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/KBZ1DJa7RMg" title="Online Maps for OsmAnd Android" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/kmlgPA0W7VA" title="Online Maps for OsmAnd iOS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</TabItem>
+
+</Tabs>
+
+
+______________________
+
+<LinksSocial/>
+<LinksTelegram/>

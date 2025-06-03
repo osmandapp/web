@@ -12,9 +12,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-# iOS 5.1
+# iOS 5.0 {#ios-50}
 
-## Join Beta
+## Join Beta {#join-beta}
 
 iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint demo). They do not contain descriptions and may have continuous versioning. They are assumed to be stable and ready to use.  
 
@@ -25,7 +25,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 <br/>
 
 
-## What's new
+## What's new {#whats-new}
 
 - Added Rename action for Favorite groups
 - Added *Unit of Volume* and *Fuel Tank capacity*
@@ -36,7 +36,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 
 
-## Optional updates
+## Optional updates {#optional-updates}
 
 <!-- ***Example***  -->
 

@@ -3,7 +3,7 @@ sidebar_position: 4
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Navigate Map activity
+# Navigate Map activity {#navigate-map-activity}
 There is map and switch for opengl rengering, it has longClickListener on mapView, after first tap start point is selected, after second tap it selects finish and starts route calculation.
 
   ```

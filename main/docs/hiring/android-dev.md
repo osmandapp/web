@@ -5,12 +5,12 @@ title: Android Developer
 
 We are developing a large Android open source project (https://www.openhub.net/p/Osmand) - Top 10 among Android based on https://www.openstreetmap.org/ (Wikipedia for maps).Our goal is to create a universal map tool that can be used in almost any situation. At the moment, about 2,000,000 people around the world are actively using it.
 
-## Job description
+## Job description {#job-description}
 OsmAnd is looking for a passionate and enthusiastic open-source software developer with good knowledge of Android platform and technologies.
 
-## Qualifications
+## Qualifications {#qualifications}
 
-### Requirements
+### Requirements {#requirements}
 - 2+ years experience in Android development
 - strong knowledge of Java, Kotlin and Android SDK
 - technical English (higher level is advantage)
@@ -19,21 +19,21 @@ OsmAnd is looking for a passionate and enthusiastic open-source software develop
 - SQLite
 - OOP, Multithreading & Concurrency
 
-### Nice to have
+### Nice to have {#nice-to-have}
 - Git + Github experience
 - Any GIS-expierience
 - OpenStreetMap mapper knowledge
 
-### Responsibilities
+### Responsibilities {#responsibilities}
 - Implementing new features
 - Maintaining the project
 - Covering code with unit tests
 - Refactoring code
 - Taking a part in planning and proposing new ideas
 
-## Company offers
+## Company offers {#company-offers}
 
-### What you can expect from us
+### What you can expect from us {#what-you-can-expect-from-us}
 - Learning by doing – you will work with industry experts who are willing to share their knowledge and experience
 - Improving your skills by participating in training and mentoring programs
 - Advancing your career by choosing from different career paths (technical, management)
@@ -42,7 +42,7 @@ OsmAnd is looking for a passionate and enthusiastic open-source software develop
 - Daily support for your technical and personal growth
 - Professional and very friendly team, that is always ready to help and support
 
-### What do we offer
+### What do we offer {#what-do-we-offer}
 - Develop the best of the best 3D Offline Map application
 - Competitive salary adequate to your skills and performance
 - Flexible working hours

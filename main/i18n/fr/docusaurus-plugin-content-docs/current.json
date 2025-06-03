@@ -1,0 +1,114 @@
+{
+  "version.label": {
+    "message": "Suivant",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.User Guide": {
+    "message": "Guide de l'utilisateur",
+    "description": "The label for category User Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Begin with OsmAnd": {
+    "message": "Commencer avec OsmAnd",
+    "description": "The label for category Begin with OsmAnd in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map": {
+    "message": "Carte",
+    "description": "The label for category Map in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tracks": {
+    "message": "Traces",
+    "description": "The label for category Tracks in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map Legend": {
+    "message": "Légende de la carte",
+    "description": "The label for category Map Legend in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map Widgets": {
+    "message": "Widgets de carte",
+    "description": "The label for category Map Widgets in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.My Data": {
+    "message": "Mes données",
+    "description": "The label for category My Data in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Navigation": {
+    "message": "Navigation",
+    "description": "The label for category Navigation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Setup a Route": {
+    "message": "Configurer un itinéraire",
+    "description": "The label for category Setup a Route in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Route Parameters": {
+    "message": "Paramètres d'itinéraire",
+    "description": "The label for category Route Parameters in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Navigation Guidance": {
+    "message": "Guidage de navigation",
+    "description": "The label for category Navigation Guidance in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Plan Route": {
+    "message": "Planifier un itinéraire",
+    "description": "The label for category Plan Route in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Plugins": {
+    "message": "Plugins",
+    "description": "The label for category Plugins in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Purchases": {
+    "message": "Achats",
+    "description": "The label for category Purchases in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Search": {
+    "message": "Recherche",
+    "description": "The label for category Search in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Website": {
+    "message": "Site web",
+    "description": "The label for category Website in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Troubleshooting": {
+    "message": "Dépannage",
+    "description": "The label for category Troubleshooting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Technical Documentation": {
+    "message": "Documentation technique",
+    "description": "The label for category Technical Documentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OsmAnd File Formats": {
+    "message": "Formats de fichiers OsmAnd",
+    "description": "The label for category OsmAnd File Formats in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map Creation": {
+    "message": "Création de cartes",
+    "description": "The label for category Map Creation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Build OsmAnd": {
+    "message": "Compiler OsmAnd",
+    "description": "The label for category Build OsmAnd in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OsmAnd API & SDK": {
+    "message": "API et SDK OsmAnd",
+    "description": "The label for category OsmAnd API & SDK in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Contributions are welcome!": {
+    "message": "Les contributions sont les bienvenues !",
+    "description": "The label for category Contributions are welcome! in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Algorithms, Testing, Internals": {
+    "message": "Algorithmes, tests, internes",
+    "description": "The label for category Algorithms, Testing, Internals in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Versions": {
+    "message": "Versions",
+    "description": "The label for category Versions in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Legal": {
+    "message": "Mentions légales",
+    "description": "The label for category Legal in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Join Us": {
+    "message": "Rejoignez-nous",
+    "description": "The label for category Join Us in sidebar tutorialSidebar"
+  }
+}
