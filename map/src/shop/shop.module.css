@@ -1,9 +1,8 @@
 .productCard {
     display: flex !important;
     padding: 25px 0px 20px 0px !important;
-    margin: 5px !important;
-    margin-left: 20px !important;
-    margin-right: 20px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
     flex-direction: column !important;
     align-items: center !important;
     align-self: stretch !important;
@@ -22,6 +21,12 @@
     outline: 2px solid #237bff;
     outline-offset: -2px;
     box-shadow: 0 0 0 6px #deebff !important;
+}
+.productCardBox .productCard:first-child {
+    margin-left: 20px !important;
+}
+.productCardBox .productCard:last-child {
+    margin-right: 20px !important;
 }
 .productCardTitle {
     color: var(--text-primary) !important;
@@ -66,6 +71,15 @@
     gap: 3px !important;
     border-radius: 6px !important;
     border: 1px solid #ccc !important;
+}
+.purchaseTypeCard:hover {
+    outline: 2px solid #237bff;
+    outline-offset: -2px;
+}
+.purchaseTypeCard.selected {
+    background-color: #deebff !important;
+    outline: 2px solid #237bff;
+    outline-offset: -2px;
 }
 .purchaseTypeCardBox {
     display: flex !important;
@@ -322,6 +336,7 @@
         align-items: flex-start !important;
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
+        gap: 24px !important;
     }
 }
 @media (min-width: 1301px) {
@@ -330,6 +345,7 @@
         flex-direction: row !important;
         justify-content: center !important;
         flex-wrap: wrap !important;
+        gap: 24px !important;
     }
 }
 

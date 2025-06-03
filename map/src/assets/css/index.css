@@ -30,6 +30,7 @@ code {
 
 .MuiButton-root.Mui-disabled {
     background-color: #f0f0f0 !important;
+    color: #666666 !important;
 }
 
 .MuiAppBar-root {

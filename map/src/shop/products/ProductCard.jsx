@@ -96,8 +96,8 @@ export default function ProductCard({ productId, type, setType, testMode, isSele
                                         key={pt}
                                         type={pt}
                                         productId={productId}
-                                        onChange={(e) => setType(e.target.value)}
                                         selected={type}
+                                        onChange={(value) => setType(value)}
                                     />
                                 ))}
                             </RadioGroup>

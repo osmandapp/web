@@ -22,7 +22,11 @@ export default function PurchaseTypeItem({ type, productId, selected, onChange }
     };
 
     return (
-        <Box className={styles.purchaseTypeCard} sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Box
+            onClick={() => onChange(type)}
+            className={`${styles.purchaseTypeCard} ${selected === type ? styles.selected : ''}`}
+            sx={{ display: 'flex', flexDirection: 'column' }}
+        >
             <Typography className={styles.purchaseTypeCardTitle}>{t(labelMap[type])}</Typography>
 
             <Box
