@@ -1,6 +1,6 @@
 ---
 slug: fast-routing
-title: "Speed & Smarts: How OsmAnd Achieved 100x Faster Routing on Tiny Maps"
+title: "OsmAnd's Faster Offline Navigation"
 authors: [victor]
 tags: [ios, android]
 unlisted: true
@@ -17,7 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-# Speed & Smarts: How OsmAnd Achieved 100x Faster Routing on Tiny Maps
+# OsmAnd: 100x Faster Offline Routing
 
 Offline navigation is a lifeline for travelers, adventurers, and everyday commuters. We demand speed, accuracy, and the flexibility to tailor routes to our specific needs. For years, OsmAnd has championed powerful, feature-rich offline maps that fit in your pocket. But as maps grew more detailed and user demands for complex routing increased, our trusty [A* algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm), despite its flexibility, started hitting a performance wall. How could we deliver a **100x speed boost** without bloating map sizes or sacrificing the deep customization our users love?
 
@@ -25,16 +25,22 @@ Offline navigation is a lifeline for travelers, adventurers, and everyday commut
 
 The answer: **OsmAnd's custom-built Highway Hierarchy (HH) Routing.** This isn't your standard routing engine; it's a ground-up redesign, meticulously engineered to overcome the unique challenges of providing advanced navigation on compact, offline-first map data.
 
+- **Start:** [48.73829, 13.41383](https://osmand.net/map/?pin=48.738262,13.413754#18/48.73823/13.41362)
+- **Finish:** [47.94505, 7.73573](https://osmand.net/map/?pin=47.945066,7.735711#19/47.94500/7.73592)
+- **OsmAnd Web Preview:** [View Route](https://osmand.net/map/navigate/?start=48.738290,13.413830&end=47.945050,7.735730&profile=car#7/48.611/11.530)
+
+| [HH x C++ Fast Routing](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings) | [Traditional Routing A*2-phase](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings)  |
+|------------|----------------------|
+| Calculation time: **13 sec**| Calculation time: **36 sec** |
+| ![HH example](./img/hh.gif) | ![A2 example](./img/a2.gif) |
 
 
-## The Offline Navigation Conundrum: Why Standard Solutions Fell Short
+## Why Standard Solutions Failed
 
 OsmAnd has always been about putting you in control. Our original [A* routing engine](https://en.wikipedia.org/wiki/A*_search_algorithm), configurable via [`routing.xml`](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), offered immense power. You could define intricate profiles, avoid specific road types, and truly personalize your journey. With maps optimized for minimal storage (the entire planet's car data for our new HH-routing is around a mere 800MB!), OsmAnd was a lean, mean navigating machine.
 
 However, this flexibility came at a cost for complex routes:
 * **The A* Wall:** Calculating a 200-300km car route (or even shorter bicycle/pedestrian paths) could mean visiting over a million road segments, taking 10-20 seconds. For longer trips, this wait could become frustrating.
-
-
 
 We explored standard advanced algorithms like [Contraction Hierarchies (CH)](https://en.wikipedia.org/wiki/Contraction_hierarchies), known for their speed. But they presented their own set of deal-breakers for OsmAnd:
 * **Flexibility Clash:** CH typically pre-calculates optimal paths. Supporting OsmAnd's 10+ routing parameters (leading to over 1024 combinations per profile!) would be impossible with standard CH.
@@ -44,7 +50,7 @@ We explored standard advanced algorithms like [Contraction Hierarchies (CH)](htt
 
 The challenge was clear: achieve a quantum leap in speed while preserving extreme flexibility, minimal storage, regional map support, and dynamic update capabilities. Standard Highway Hierarchies were a starting point, but we needed something more – a uniquely OsmAnd solution.
 
-## OsmAnd's Innovation: Two Levels and Clever Clustering (Secret Sauce #1)
+## Secret Sauce #1: Two-Level Routing
 
 The core of OsmAnd's HH-Routing is an elegant two-level hierarchy built upon "area clusters."
 
@@ -52,14 +58,12 @@ The core of OsmAnd's HH-Routing is an elegant two-level hierarchy built upon "ar
 * **Border Points:** Each cluster has a limited number of defined "border points" – these are the gateways in and out of the cluster.
 * **Shortcuts:** For common scenarios, we pre-calculate the travel time/distance (the "shortcut") between border points *within the same cluster* and also to border points of *immediately adjacent* clusters.
 
-Diagram illustrating the Highway Hierarchy approach in OsmAnd:
-This map illustrates the OsmAnd routing concept. The route starts in the Start Area Cluster (Doetinchem), moves to the nearest Border Point, and continues through precomputed Shortcuts across intermediate clusters. It then enters the Finish Area Cluster (Arnhem) via another border point and finishes using local roads. This method speeds up routing by combining local search with efficient inter-cluster shortcuts.
+This map illustrates the OsmAnd routing concept. [The route](https://osmand.net/map/navigate/?start=51.989532,5.878372&end=51.967962,6.296539&profile=car#11/51.9993/5.9824) starts in the Start Area Cluster (Doetinchem), moves to the nearest Border Point, and continues through precomputed Shortcuts across intermediate clusters. It then enters the Finish Area Cluster (Arnhem) via another border point and finishes using local roads. This method speeds up routing by combining local search with efficient inter-cluster shortcuts.
 
 ![OsmAnd HH](./img/fast-routing-scheme.png)
 
-
 The real magic, our **Secret Sauce #1**, lies in *how* these border points are selected. Naive approaches quickly fail:
-* Randomly selecting border points or using simple geometric divisions (squares/hexagons) results in too many border points per cluster (50-80). This leads to a shortcut explosion (N*(N-1)/2 shortcuts), making the files large and calculations slow.
+* Randomly selecting border points or using simple geometric divisions (squares/hexagons) results in too many border points per cluster (50-80). This leads to a shortcut explosion (N*(N-1)/2 shortcuts), making the files large and and calculations slow.
 * We even tried building hierarchies with 2-3 levels, but the number of shortcuts grew too fast for higher levels if we generated a full graph inside each cluster.
 
 **The "Parking Lot" Insight:**
@@ -80,11 +84,9 @@ Just look at the numbers for processing the entire planet for a car profile:
 * Resulting HH structure: ~3 million border points, ~541,000 clusters
 * Estimated shortcuts: ~91 million (a manageable number for global routing)
 
-<!--
-[IMAGE_PLACEHOLDER_2: Conceptual diagram illustrating the "parking lot" analogy. Show a complex network of roads inside a boundary (the cluster) with only 2-3 "exit" points highlighted as border points. Contrast this with a "bad" cluster that has many border points all around its perimeter.]
--->
 
-## The HH-Routing Process in Action: From Request to Route
+
+## How OsmAnd Builds Routes
 
 So, how does OsmAnd use this structure to calculate your route at lightning speed? It's a multi-step process:
 
@@ -100,17 +102,9 @@ So, how does OsmAnd use this structure to calculate your route at lightning spee
     * The same is done for your target point within its own cluster (finding paths from all its border points to your actual destination).
     * This is quick because it's operating on a very small, localized part of the map.
 
-<!--
-    [IMAGE_PLACEHOLDER_3: Diagram showing a start point 'S' within a cluster. Arrows show Dijkstra exploring paths from 'S' to several border points on its cluster. Similarly for a target 'T' in another cluster, with paths from its border points to 'T'.]
--->
-
 2.  **Step 2: Route on the Abstract Graph (The "Highway" Part):**
     * Now, OsmAnd performs another Dijkstra search, but this time on the much smaller "base graph." This graph consists *only* of the border points and the pre-calculated shortcut values between them.
     * This step rapidly finds the optimal sequence of border points and shortcuts to get from your start cluster's periphery to your target cluster's periphery. It's incredibly fast because it's ignoring all the tiny roads *within* intermediate clusters.
-
-<!--
-    [IMAGE_PLACEHOLDER_4: Simplified graph showing only border points as nodes and shortcuts as edges between them. Highlight a path taken across this abstract graph connecting the 'S' cluster's border points to the 'T' cluster's border points.]
--->
 
 3.  **Step 3: Refine with Detailed Shortcuts (Applying Secret Sauce #2):**
     * The result from Step 2 is a high-level route – a sequence of shortcuts connecting border points.
@@ -119,7 +113,9 @@ So, how does OsmAnd use this structure to calculate your route at lightning spee
 
 This combination – localized Dijkstra, super-fast abstract graph traversal, and highly localized A* refinement – is what delivers the **100x speedup**.
 
-## Flexibility and Dynamism: Secret Sauce #2 - Beyond Just Speed
+
+
+## Secret Sauce #2: Adaptive Routing
 
 Speed is fantastic, but not if it means sacrificing the features OsmAnd users rely on. This is where our **Secret Sauce #2** comes into play – ensuring HH-Routing remains incredibly flexible and dynamic:
 
@@ -136,7 +132,9 @@ Speed is fantastic, but not if it means sacrificing the features OsmAnd users re
     * What if you create a truly unique routing profile that's wildly different from the common ones for which shortcuts were pre-calculated? The system is smart. If it detects that too many shortcuts (~50, for example) need on-the-fly recalculation and deviate significantly, it might determine that falling back to the original, comprehensive A* algorithm for the *entire route* would actually be faster than doing many small, heavily modified A* calculations.
     * Users can also manually [switch to the "A*" routing engine in settings](https://osmand.net/docs/user/navigation/guidance/navigation-settings#development-settings) if they know their profile is highly experimental or unique.
 
-## Real-World Wins for You, the OsmAnd User
+
+
+## Real Benefits for OsmAnd Users
 
 This complex engineering translates into tangible benefits:
 
@@ -147,7 +145,8 @@ This complex engineering translates into tangible benefits:
 * **Supports Frequent Updates:** The architecture is designed to work with [OsmAnd’s hourly map updates](https://osmand.net/docs/user/personal/maps-resources#osmand-live), allowing routing to adapt to fresh road information.
 * **Future-Proof:** This structure makes it much easier to implement features like alternative route suggestions based on these key border points.
 
-## The Not-So-Secret Limitations: Transparency is Key
+
+## Important Routing Notes
 
 No system is perfect, and OsmAnd's HH-Routing has a few considerations:
 
@@ -157,7 +156,9 @@ No system is perfect, and OsmAnd's HH-Routing has a few considerations:
     * This doesn't mean all maps must be *brand new*, just *from the same batch/pre-calculation period*.
 * **Map Release Schedule:** The intensive preprocessing required to generate all these routing profiles for the entire planet takes about 2-3 days. This means new map updates are now typically released around the 5th of each month, instead of the 2nd.
 
-## Conclusion: OsmAnd's Smart Engineering Delivers a Navigation Breakthrough
+
+
+## Smart Engineering Delivers
 
 OsmAnd's HH-Routing is more than just an algorithm; it's a testament to innovative problem-solving. It’s a carefully engineered system born from the need to overcome specific, demanding constraints: the desire for blazing speed, minimal storage, complete routing flexibility, regional map support, and adaptability to fresh data.
 
@@ -173,13 +174,12 @@ We're excited about what HH-Routing brings to OsmAnd!
 * Share your thoughts, experiences, and any questions in the comments below or on our community forums!
 For additional guidance:
 
-- <LinksTelegram/>  
+- <LinksTelegram/>
 
 - <LinksSocial/>
 
-- <AndroidStore/>  
+- <AndroidStore/>
 
     <br/>
 
     <AppleStore/>
-
