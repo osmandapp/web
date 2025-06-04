@@ -57,7 +57,7 @@ Ils peuvent être particulièrement utiles pour les randonneurs, les cyclistes o
 
 </Tabs>
 
-Les *marqueurs de carte* peuvent servir de [destinations](./route-navigation.md/#set-destinations) lors de la construction d'un itinéraire. Ils sont particulièrement pratiques lorsque vous devez définir un itinéraire avec des points intermédiaires.
+Les *marqueurs de carte* peuvent servir de [destinations](./route-navigation#set-destinations) lors de la construction d'un itinéraire. Ils sont particulièrement pratiques lorsque vous devez définir un itinéraire avec des points intermédiaires.
 
 Cependant, les *marqueurs de carte* offrent également diverses fonctionnalités telles que les [widgets](../../widgets/markers.md), la direction des mouvements, les lignes sur la carte, afin que vous puissiez utiliser ces outils pour la navigation sans construire de ligne d'itinéraire et sans entrer dans la navigation vocale complète.
 

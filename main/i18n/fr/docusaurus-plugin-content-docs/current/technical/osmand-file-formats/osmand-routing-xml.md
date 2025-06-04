@@ -19,7 +19,7 @@ Veuillez consulter la documentation dans routing.xml :
 
 ### Pénalités des données d'élévation {#penalties-of-elevation-data}
 
-Selon [le mode sélectionné (Moins vallonné, Plat, Vallonné)](../../user/navigation/routing/bicycle-based-routing.md/#penalties-of-elevation-data#penalties-of-elevation-data) et la pente physique (%) de la route, une pénalité calculée à partir de la différence de hauteur est ajoutée à chaque mètre horizontal.
+Selon [le mode sélectionné (Moins vallonné, Plat, Vallonné)](../../user/navigation/routing/bicycle-based-routing#penalties-of-elevation-data#penalties-of-elevation-data) et la pente physique (%) de la route, une pénalité calculée à partir de la différence de hauteur est ajoutée à chaque mètre horizontal.
 
 L'explication donnée comme 3% 1:2 signifie qu'un itinéraire plat de 2 km sera préféré à un itinéraire de 3% de 1 km, bien qu'un itinéraire de 3% de 1 km sera préféré à un itinéraire plat de 2,5 km.
 

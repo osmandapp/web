@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Le guidage piéton fait référence au processus de recherche du meilleur itinéraire pour un piéton, d'un endroit à un autre, en tenant compte de facteurs tels que les zones réservées aux piétons, les trottoirs, les passages piétons et les intersections adaptées aux piétons. Il peut également prendre en compte d'autres facteurs tels que les *escaliers*, qui peuvent être utiles pour l'accessibilité en fauteuil roulant. OsmAnd utilise toujours les données d'altitude pour calculer l'heure d'arrivée estimée (temps nécessaire pour parcourir la distance) selon la [règle de Naismith](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb).
 
-Pour configurer le *guidage piéton*, accédez à la section [Paramètres d'itinéraire](../guidance/navigation-settings.md/#route-parameters) des paramètres de navigation.
+Pour configurer le *guidage piéton*, accédez à la section [Paramètres d'itinéraire](../guidance/navigation-settings#route-parameters) des paramètres de navigation.
   
 ### Paramètres d'itinéraire - Marche {#route-parameters---walking}
 

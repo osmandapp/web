@@ -18,7 +18,7 @@ Please check the documentation inside routing.xml:
 
 ### Penalties of Elevation data {#penalties-of-elevation-data}
 
-Depending on [the selected mode (Less hilly, Flat, Hilly)](../../user/navigation/routing/bicycle-based-routing.md/#penalties-of-elevation-data#penalties-of-elevation-data) and the physical slope (%) of thse road, a penalty calculated from the height difference is added to each horizontal metre.
+Depending on [the selected mode (Less hilly, Flat, Hilly)](../../user/navigation/routing/bicycle-based-routing#penalties-of-elevation-data#penalties-of-elevation-data) and the physical slope (%) of thse road, a penalty calculated from the height difference is added to each horizontal metre.
 
 Explaination given as 3% 1:2 means that route with flat 2 km will be preferred over route with 3% 1 km though 3% 1km route will be preferred over route flat 2.5 km.
 
