@@ -198,6 +198,7 @@
     font-weight: 500 !important;
     line-height: 120% !important;
     letter-spacing: 0.48px !important;
+    padding-left: 0 !important;
 }
 
 .featureName {
@@ -255,11 +256,12 @@
 }
 .planCell {
     text-align: center !important;
-    width: 80px !important;
-    min-width: 80px !important;
-    max-width: 80px !important;
+    width: 112px !important;
+    min-width: 112px !important;
+    max-width: 112px !important;
     white-space: nowrap !important;
     border-bottom: none !important;
+    padding: 12px 0px 12px !important;
 }
 .pricingTable tbody .planCell {
     position: relative;
@@ -315,6 +317,7 @@
     line-height: 120% !important;
     letter-spacing: 0.48px !important;
     padding-bottom: 0 !important;
+    padding-left: 0 !important;
 }
 .pricingTable tbody {
     border: none !important;
@@ -351,7 +354,7 @@
 
 .featureRow .featureCell {
     position: relative;
-    padding: 14px 16px;
+    padding: 12px 0px 12px;
     border-bottom: none;
 }
 
@@ -359,10 +362,13 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 60px;
+    left: 45px;
     right: 0;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.12);
+}
+.featureRow:has(+ .categoryRow) .featureCell::after {
+    left: 0 !important;
 }
 .radioButton {
     margin-right: 4px !important;
