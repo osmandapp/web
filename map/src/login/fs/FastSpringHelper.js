@@ -1,6 +1,6 @@
 import { getAccountInfo } from '../../manager/LoginManager';
 
-export const createFastSpringPurchase = ({ testMode, selectedProducts, ltx }) => {
+export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx }) => {
     // remove old script if exists
     const old = document.getElementById('fsc-api');
     if (old) old.remove();
@@ -17,10 +17,12 @@ export const createFastSpringPurchase = ({ testMode, selectedProducts, ltx }) =>
     );
     script.setAttribute('data-popup-webhook-received', 'onFSPopupClosed');
 
-    const products = selectedProducts.map((id) => ({
-        path: `${testMode ? 'test-' : ''}${id}`,
-        quantity: 1,
-    }));
+    const products = [
+        {
+            path: `${testMode ? 'test-' : ''}${selectedProduct}`,
+            quantity: 1,
+        },
+    ];
 
     const s = {
         reset: true,
