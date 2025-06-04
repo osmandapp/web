@@ -61,7 +61,7 @@ Use one of the following paths to open the plugin settings:
 
 ### Terrain {#terrain}
 
-- **Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite.md/) for hillshade and slope** (*Android*). Load old format raster maps.
+- **Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite) for hillshade and slope** (*Android*). Load old format raster maps.
 
 
 ### Troubleshotting {#troubleshotting}

@@ -62,7 +62,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 
 ### Terrain {#terrain}
 
-- **Utiliser le format raster [SQLIte](../../technical/osmand-file-formats/osmand-sqlite.md/) pour l'ombrage et la pente** (*Android*). Charge les cartes raster au format ancien.
+- **Utiliser le format raster [SQLIte](../../technical/osmand-file-formats/osmand-sqlite) pour l'ombrage et la pente** (*Android*). Charge les cartes raster au format ancien.
 
 
 ### Dépannage {#troubleshotting}

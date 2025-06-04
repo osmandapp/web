@@ -325,7 +325,7 @@ Pour importer un fichier :
 3. Le plugin apparaîtra dans la section **Liste des plugins**, où il pourra être activé.
 4. Un dossier correspondant apparaîtra alors dans la section **Cartes supplémentaires** de l'onglet [Téléchargements](#downloads).
 
-En savoir plus dans l'article [**Package personnalisé**](../plugins/custom.md/).
+En savoir plus dans l'article [**Package personnalisé**](../plugins/custom).
 
 
 ## OsmAnd Live {#osmand-live}

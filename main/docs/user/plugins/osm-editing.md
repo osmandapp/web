@@ -25,7 +25,7 @@ To use the *OpenStreetMap editing* plugin, you have to make the following settin
 
 1. Enable [Plugin](../plugins/index.md#enable--disable).  
 2. Set OpenStreetMap editing  in any [profile](../personal/profiles.md).
-3. Enable the display of *OSM notes (online)* or *OSM edits* on the map in the [Configure map menu](../map/configure-map-menu.md/).
+3. Enable the display of *OSM notes (online)* or *OSM edits* on the map in the [Configure map menu](../map/configure-map-menu).
 
 
 ## Settings {#settings}
