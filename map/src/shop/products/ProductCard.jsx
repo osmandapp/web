@@ -70,7 +70,7 @@ export default function ProductCard({ productId, type, setType, testMode, isSele
                 <Typography className={styles.productCardTitle}>{product.name}</Typography>
                 <ListItemIcon className={styles.productCardIcon}>{product.icon}</ListItemIcon>
             </Box>
-            <CardContent sx={{ width: '90%', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+            <CardContent className={styles.productCardContent}>
                 <List className={styles.productCardFeatureBox}>
                     {product.shortFeaturesList.map((f) => (
                         <ListItem key={f} className={styles.productCardFeature}>

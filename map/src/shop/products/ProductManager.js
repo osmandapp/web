@@ -158,12 +158,18 @@ export async function updatePrices(region = 'USD') {
 }
 
 export async function getCountryCode() {
+    const defaultCode = 'UA';
     try {
-        const response = await fetch('https://ipapi.co/json');
+        const response = await apiGet(process.env.REACT_APP_GEO_IP_URL);
+        if (!response.ok) {
+            console.error('Error fetching country code: HTTP status', response.status);
+            return defaultCode;
+        }
+
         const data = await response.json();
-        return data.country_code;
+        return data.country_code || defaultCode;
     } catch (e) {
         console.error('Error fetching country code:', e);
-        return 'UA'; // default
+        return defaultCode;
     }
 }
