@@ -31,6 +31,7 @@ export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx }) => 
     };
 
     script.onload = () => {
+        window.fastspring.builder.reset();
         window.fastspring.builder.push(s);
         window.onFSPopupClosed = function (orderReference) {
             if (window.fastspring && window.fastspring.builder) {
