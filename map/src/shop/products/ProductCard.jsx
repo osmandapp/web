@@ -52,7 +52,7 @@ export default function ProductCard({ productId, type, setType, testMode, isSele
     function processingPurchase() {
         const selectedProduct = purchase[type]?.find((p) => p.id === productId);
         if (selectedProduct) {
-            createFastSpringPurchase({ testMode, ltx, selectedProducts: selectedProduct.fsName });
+            createFastSpringPurchase({ testMode, ltx, selectedProduct: selectedProduct.fsName });
         }
     }
 
