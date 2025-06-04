@@ -2,14 +2,14 @@
 sidebar_position: 6
 ---
 
-# Map Rendering style - .render.xml
+# Map Rendering style - .render.xml {#map-rendering-style---renderxml}
 
 
 In case you want to modify the default rendering style, you need to check out the [definition on GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml). You'll find all sorts of styles at this [link](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles), so if you're going to create your own style, you can find the easiest example.
 
 In case you decide to create your custom rendering style, you may need to create [your own maps](../map-creation/create-offline-maps-yourself.md#custom-vector-map-tags) to add custom features display.
 
-## Map style sections 
+## Map style sections {#map-style-sections}
 
 Map style file consists of several sections.
 
@@ -25,7 +25,7 @@ Map style file consists of several sections.
 | **Line** section | Defined as a block [`<line>`](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml#9535). Each displayed line map object (defined in `order`-section) is searched whether in this section to determine how it should be displayed. 1 line object could be rendered as multiple combined lines up to -2 layers below and up to 7 layers on top.  **Search parameters** (input): `tag`, `value`, `zoom`, `nameTag` (each text tag is checked), .  **Search result** (output): `color, color_*` (color of stroke around polygon), `strokeWidth, strokeWidth_*` (stroke width), `pathEffect, pathEffect_*` (path effect), `cap, cap_*` (BUTT, ROUND, SQUARE), `pathIcon`, `pathIconStep`, `shadowRadius` (shadow around line). |
 
 
-## Map feature selectors
+## Map feature selectors {#map-feature-selectors}
 To determine which attributes should be retrieved from rendering style, following search procedure is completed:
 - Find the most inner `<case>` that corresponds to Search input parameters `tag/value/zoom` i.e. for `highway=primary` - `<case tag="highway" value="primary">` will be found.
 - All internals of `<case>` are applied sequentially deep and output parameters are collected
@@ -40,7 +40,7 @@ Evaluation rules:
     - Example: `<apply_if nightMode="false" streetLightingNight="false" shield="street_lamp_lit_no_shield"/>`. Input parameters: nightMode, streetLightingNight; output parameters - shield.
 
 
-## Attributes (special) & Constants 
+## Attributes (special) & Constants {#attributes-special--constants}
 Rendering constants & rendering attributes are interchangeable and could be used to simplify rendering style and avoid copy/pasting of values or blocks of code. In case attribute like `color` is a single value, it is **preferred** to use **rendering constant** cause it greatly speeds up rendering style performance. 
 
 Rendering constants could be used only with one given value: `<renderingConstant name="motorwayShadowRadius" value="1.6"/>` and later in feature selectors as `<apply_if shadowRadius="$motorwayShadowRadius"/>`. 
@@ -54,7 +54,7 @@ Rendering attributes could have embedded structure with extra selectors and outp
     <case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 ```    
 
-### Special attributes 
+### Special attributes {#special-attributes}
 
 Special attributes are `<renderingAttribute >` that are not used by selectors but used directly by the code to query specific feature which is drawn in application like a navigation route, ruler, gpx track, etc.
 
@@ -87,7 +87,7 @@ Special attributes are `<renderingAttribute >` that are not used by selectors bu
 | `debugTextDoNotFindIntersectionsSameName` | Attributes to debug text rendering and positioning |
 | `debugTextDisplayShortRoadNames` | Attributes to debug text rendering and positioning |
 
-## Map Style Parameters
+## Map Style Parameters {#map-style-parameters}
 
 Map style parameters allow to combine multiple rendering style within one file definition i.e. there is no need to have separate 'my_custom_style_night_mode.render.xml', it is possible to define parameter like `night_mode` (enabled by default) and customize certain rules (like colors) using this parameter. Later in the User interface it's possible to easy switch that parameter and have a different map style in OsmAnd.
 

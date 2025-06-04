@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview  
+## Overview {#overview}
 
 Configure screen is a menu that allows you to customize the widgets to display on the map. On this screen, you can enable [information](../widgets/info-widgets.md) and [navigation](../widgets/nav-widgets.md) widgets, [buttons](../widgets/map-buttons.md), a [ruler](../widgets/radius-ruler.md), and add [quick actions](../widgets/quick-action.md).  
 
@@ -43,7 +43,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 </Tabs>
 
 
-## Widget Panels
+## Widget Panels {#widget-panels}
 
 <Tabs groupId="operating-systems">
 
@@ -69,7 +69,7 @@ OsmAnd allows you to organize your widgets by grouping, copying, and customizing
 
 To arrange widgets on the app screen, use panels. Panels enable you to place widgets in specific locations, either in rows at the top or bottom or on the left or right side of the screen. This helps you create a layout that suits your needs and preferences.
 
-### Widgets for All Panels  
+### Widgets for All Panels {#widgets-for-all-panels}
 
 <Tabs groupId="operating-systems">
 
@@ -143,7 +143,7 @@ To arrange widgets on the app screen, use panels. Panels enable you to place wid
 23. [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
 
-## Top and Bottom Panels
+## Top and Bottom Panels {#top-and-bottom-panels}
 
 <Tabs groupId="operating-systems">
 
@@ -185,7 +185,7 @@ The **Top and Bottom panels** allow you to organize widgets in rows. You can add
       ![elevation profile](@site/static/img/widgets/elevation_prof_and.png)
 
 
-### Rows
+### Rows {#rows}
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
 
@@ -199,7 +199,7 @@ The **Row mode** feature allows you to add as many rows as needed to the top and
 - **Move widgets**. Move widgets between rows.
 - **Apply changes.** Tap the *Apply* button to save the configuration.
 
-#### Widget Types and Restrictions
+#### Widget Types and Restrictions {#widget-types-and-restrictions}
 
 The mode allows you to add **more than one widget in a single row** on the top and bottom panels to display as much information as needed.  
 
@@ -214,7 +214,7 @@ The mode allows you to add **more than one widget in a single row** on the top a
 - **Simple widgets**. Multiple simple widgets can be added to a single row. These widgets could display *Name*, *Units of measurement*, *Value*, and *Icon*.
 
 
-## Left and Right Panels
+## Left and Right Panels {#left-and-right-panels}
 
 <Tabs groupId="operating-systems">
 
@@ -238,7 +238,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 The OsmAnd app allows you to place [widgets for all panels](#widgets-for-all-panels) in the left and right panels and group them by [Pages](#pages). Widget [resizing customization](#widget-settings) is available for side widgets, the same as for widgets in the top and bottom panels.
 
-### Pages
+### Pages {#pages}
 
 <Tabs groupId="operating-systems">
 
@@ -269,7 +269,7 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
 - Pages allow you to create **widget sets** for specific scenarios, improving workflow and reducing clutter.
 
 
-## Widget Settings
+## Widget Settings {#widget-settings}
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
@@ -298,9 +298,9 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
     - Switch to the Off position, in the *Show icon* field.
 
 
-## Panels Customization
+## Panels Customization {#panels-customization}
 
-### Widget Context Menu
+### Widget Context Menu {#widget-context-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -347,7 +347,7 @@ The **widget context menu** provides a quick way to manage and configure widgets
     - Remove the widget from the panel.
     - A confirmation prompt ensures the action is intentional.
 
-### Copies of Widgets
+### Copies of Widgets {#copies-of-widgets}
 
 *OsmAnd menu → Configure screen → Widgets → Panel*  
 
@@ -362,7 +362,7 @@ OsmAnd allows you to add multiple instances of the same widget to different pane
 - **Alternative method**. Select the same widget from the *Available widgets* list and tap *Add*.
 
 
-### Move or Delete
+### Move or Delete {#move-or-delete}
 
 *OsmAnd menu → Configure screen → Widgets → Panel*  
 
@@ -383,9 +383,9 @@ You can rearrange or remove widgets from the application screen using the **Edit
 - Confirm the deletion when prompted.
 
 
-## Buttons
+## Buttons {#buttons}
 
-### Custom Buttons
+### Custom Buttons {#custom-buttons}
 
 <Tabs groupId="operating-systems">
 
@@ -409,7 +409,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 **Quick Action (Custom buttons)** allows you to add a list of single actions from all available [Quick actions](../widgets/quick-action.md#custom-buttons). These actions can be assigned to one or more widget buttons on the map screen. Custom buttons provide quick access to frequently used actions.
 
-### Default Buttons
+### Default Buttons {#default-buttons}
 
 <Tabs groupId="operating-systems">
 
@@ -458,7 +458,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 3. **The default button appearance** (*Android only*) offers a variety of customization options for these type of buttons. To modify a button's appearance, tap the required button from the list and select the [Appearance](#button-appearance) option.
 
 
-### Button Appearance
+### Button Appearance {#button-appearance}
 
 <InfoAndroidOnly/>
 
@@ -474,7 +474,7 @@ The *Button appearance* feature enables you to fully customize the look of butto
 - **Background opacity**. Control the visibility of the button’s background. You can set it to be fully visible or partially transparent, or display only the frame shadow and icon.
 
 
-## Other
+## Other {#other}
 
 <Tabs groupId="operating-systems">
 
@@ -501,7 +501,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *
 - [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [Speed Limit Tolerance](../navigation/guidance/voice-navigation.md#speed-limit) setting.
 
 
-### Display Position (Location position on screen)
+### Display Position (Location position on screen) {#display-position-location-position-on-screen}
 
 <Tabs groupId="operating-systems">
 
@@ -528,7 +528,7 @@ Allows you to set the placement of the cursor to *[My location](../map/interact-
 - **<Translate android="true" ids="shared_string_automatic"/>**. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* - for movement direction, *Center* - for all others).
 
 
-## Actions
+## Actions {#actions}
 
 <Tabs groupId="operating-systems">
 
@@ -561,7 +561,7 @@ Available actions:
 - **Copy from another profile**. This feature allows you to quickly import settings from another profile, select the required ones from the list, and copy.
 
 
-## Switch Profile
+## Switch Profile {#switch-profile}
 
 <Tabs groupId="operating-systems">
 
@@ -585,7 +585,7 @@ Available actions:
 **Take note**. The *Switch profile option* does not display all existing profiles, but only those that have been *switched on* in the Settings menu.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Map buttons](./map-buttons.md)
 - [Informational widgets](./info-widgets.md)

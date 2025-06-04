@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Create New Rendering Style
+# Create New Rendering Style {#create-new-rendering-style}
 
 Creating a new rendering style is possible without any changes in the program. However, defining a style can be complicated if you want to write it from scratch, like the Nautical or Default styles (15 thousand lines of code). It is recommended to create dependent styles so you can change the style in small chunks. For example, the UniRS style mostly redefines the colors and appearance of icons.
 

@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Overview
+## Overview {#overview}
 
 Public transport navigation in the OsmAnd app allows you to work out the routes using public transport, which will certainly help you get around the "concrete jungle" faster.
 
@@ -41,7 +41,7 @@ Public transport routing is in the testing phase. For now, you can build and vie
 </Tabs>
 
 
-## How to Use
+## How to Use {#how-to-use}
 
 To start navigating around the city by public transport, use [the navigation button](../../widgets/map-buttons.md#directions) on the map screen or select the navigation option in the *Main Menu*.  
 
@@ -119,7 +119,7 @@ To start navigating around the city by public transport, use [the navigation but
 </Tabs>
 
 
-## Data and Guideline
+## Data and Guideline {#data-and-guideline}
 
 OsmAnd uses a new public transport scheme, also called Public Transport Version 2 (PTv2) for the OsmAnd Public Transport navigation algorithm.
 

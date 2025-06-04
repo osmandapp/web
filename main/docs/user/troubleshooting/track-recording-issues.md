@@ -12,7 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## Overview
+## Overview {#overview}
 
 This article covers GPX track recording issues which have been observed for a long time in different versions of Android and iOS. By **Background**, we mean that the OsmAnd app does not appear in the foreground, especially when the device screen is off (which is different from the internal *background* definition in devices).
 
@@ -27,7 +27,7 @@ This article covers GPX track recording issues which have been observed for a lo
   - **Allow all the time**, on the other hand, means that the app can in principle obtain your location 'unnoticed' without either of these conditions applying. But *Android* limits the frequency of location access in this (*background*) mode to something like once per hour, which is certainly not the correct mode for a navigation app.
 
 
-## Recorded Tracks are Noisy
+## Recorded Tracks are Noisy {#recorded-tracks-are-noisy}
 
 There are 2 typical accuracy issues leading to a *messy* recorded track.
 
@@ -46,30 +46,30 @@ Actions you can perform:
 - **Google Services API or Android API**. You may further change how OsmAnd receives location data on Android devices. In [OsmAnd Settings → Location Source](../personal/global-settings.md#location-source) select between **Google Play Services** and **Android API**, in many cases changing to **Android API** helps to improve the recorded tracks and makes them less noisy.
 
 
-## Recorded Tracks Have Gaps
+## Recorded Tracks Have Gaps {#recorded-tracks-have-gaps}
 
 Starting with Android 4.4, power-saving features can limit CPU usage, reduce screen brightness, and kill background apps when the screen is off. This can affect OsmAnd’s performance for outdoor use, map rendering, and track recording. To avoid issues, consider disabling power-saving features entirely. Based on user experience, this has little impact on battery life for most devices.
 
-### Configuring OsmAnd for Track Recording
+### Configuring OsmAnd for Track Recording {#configuring-osmand-for-track-recording}
 
 - **Prevent Standalone Logging**. Ensure the *Prevent standalone logging* setting under Plugins/Trip Recording is deactivated to allow OsmAnd to record tracks with the screen off.
 - **Update OsmAnd**. Android versions use different strategies to reduce power consumption by [killing applications running in the background](https://dontkillmyapp.com/). Version 3.9 or higher uses a Foreground service, visible in the notification bar, [to keep the app running in the background](https://dontkillmyapp.com/) on most Android versions. This is particularly effective on Android 8+ ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255), [Issue #5587](https://github.com/osmandapp/Osmand/issues/5587)).
 
 
-### Optimizing Android for Track Recording
+### Optimizing Android for Track Recording {#optimizing-android-for-track-recording}
 
 - **Exclude OsmAnd from Power Optimization**. In your Android device's Power or Power Savings settings, find OsmAnd under *Apps*, *Applications*, or *App Manager*. Locate *Power Savings* or *Power Consumption*, and exclude OsmAnd from power optimization. ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255))
   
 - **Disable Power Saving Mode**. Disabling Android Power Saving entirely can help, especially on older Android versions. This may resolve performance issues during track recording or navigation.
 
-### Control the Behavior of iOS Background Apps
+### Control the Behavior of iOS Background Apps {#control-the-behavior-of-ios-background-apps}
 
 iOS can suspend or stop background apps automatically when system resources are reallocated. OsmAnd cannot override this behavior. If track recording is interrupted when the device is locked, this can leave gaps in the recording. You can edit these gaps using the [Plan a Route](https://docs.osmand.net/docs/user/plan-route/create-route) tool.
 
 For more details on how iOS handles location tracking, check out Apple's documentation [here](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 
 
-### Tested Power Settings for Android 9, 10, and 11 (Hardy, 2020-08-25)
+### Tested Power Settings for Android 9, 10, and 11 (Hardy, 2020-08-25) {#tested-power-settings-for-android-9-10-and-11-hardy-2020-08-25}
 
 The following Power settings have been successfully tested under Android 9, 10, and later 11 (on Samsung devices) to make OsmAnd register tracks without gaps. Please review these **10 settings** and set accordingly:
 
@@ -95,12 +95,12 @@ Some of these settings interact, so be accurate. The best search for the above s
 - *Device care / Battery / More battery settings*
 
 
-## How to Track Traveled Distance
+## How to Track Traveled Distance {#how-to-track-traveled-distance}
 
 OsmAnd does not have a special widget similar to an odometer, you can use the [Trip Recording plugin](../plugins/trip-recording.md#new-track-recording) to track your traveled distance and reset it when needed.  
 
 
-## OsmAnd 3.9: Altitude issues when using Google Play Services
+## OsmAnd 3.9: Altitude issues when using Google Play Services {#osmand-39-altitude-issues-when-using-google-play-services}
 
 Google Play has changed its policy, and to comply, OsmAnd, as of version 3.9 (excluding Nightly, F-Droid, and Huawei builds) is required to use Google Play Services to obtain location fixes while running in the background (that is, in Android terminology, as a foreground service with a visible system notification).
 
@@ -109,7 +109,7 @@ After this change, there seems to be an issue with altitude recording: Apparentl
 As a workaround, in [*OsmAnd Settings → Location Source*](../personal/global-settings.md#location-source) you can switch the location source from **Google Play Services** to **Android API**.
 
 
-## OsmAnd 3.9: GPS wake-up now replaced by continuous foreground service (2020/12)
+## OsmAnd 3.9: GPS wake-up now replaced by continuous foreground service (2020/12) {#osmand-39-gps-wake-up-now-replaced-by-continuous-foreground-service-202012}
 
 As of version 3.9, when track recording or navigation is required, OsmAnd continuously supports GPX via the *Android* background service, and this is visible as an *Android* system notification.
 

@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 
 
 
-## Overview
+## Overview {#overview}
 
 With the plugin, you can set a spot on the map where your car will be left on the street and notify the calendar of the beginning of the parking time. This way, it will be easier for you to keep track of the time and location of your car.
 
@@ -36,7 +36,7 @@ Parking spot on the map and notification in the calendar is provided by the Park
 </Tabs>
 
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 To use a parking spot on the map, you need to make the following settings:
 
@@ -45,12 +45,12 @@ To use a parking spot on the map, you need to make the following settings:
 3. If needed, add the [Parking widget](#parking-widget) to the screen.  
 
 
-## Parking Spot on the Map
+## Parking Spot on the Map {#parking-spot-on-the-map}
 
 When a parking spot appears on the map, it acquires the latitude and longitude of the selected geolocation, as well as a timestamp of exactly when it was created. This helps you visually identify the parking spot both when you set the spot and when you later track it and use it to navigate when needed.  
 
 
-### Set a Spot
+### Set a Spot {#set-a-spot}
 
 To set a Parking spot on the map, zoom-in to the required level, then long tap the place on the map and in the [Context menu](../map/map-context-menu.md) that opens, do the settings.
 
@@ -96,7 +96,7 @@ The start time is always automatically set for the parking spot. The end time, i
 :::
 
 
-### Stay Informed
+### Stay Informed {#stay-informed}
 
 To be aware of the parking location and time of parking after setting up a parking spot, you can use the [Parking widget](../widgets/info-widgets.md#-parking-widget) or use the context menu of the place on the map.  
 
@@ -148,7 +148,7 @@ In addition, the widget shows the distance from your current location or the cen
 </Tabs>
 
 
-### Navigating to a Waypoint
+### Navigating to a Waypoint {#navigating-to-a-waypoint}
 
 The Parking spot can be used for navigation when the geolocation is unknown and/or simply to find the best course when navigating to your vehicle's parking location. To connect a Parking spot to the [Navigation](../navigation/routing/car-based-routing.md) function, do one of the following:
 
@@ -172,7 +172,7 @@ The Parking spot can be used for navigation when the geolocation is unknown and/
 </Tabs>
 
 
-### Remove a Spot
+### Remove a Spot {#remove-a-spot}
 
 To remove a parking spot from the map, follow these steps:
 
@@ -198,7 +198,7 @@ If there are any reminders, they will also be deleted from the calendar applicat
 </Tabs>
 
 
-## Parking Widget
+## Parking Widget {#parking-widget}
 
 The [Parking widget](../widgets/info-widgets.md#parking-widget) is added automatically to widgets list when you enable the Parking plugin. Before setting up a parking spot, make sure the widget is on the screen, and if not, add it in the [Configure Screen](../widgets/configure-screen.md) menu. The Parking widget will help you quickly find a parking spot on the map.
 
@@ -223,7 +223,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_w
 </Tabs>
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)
