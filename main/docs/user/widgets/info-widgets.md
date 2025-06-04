@@ -16,19 +16,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview
+## Overview {#overview}
 
 Informational widgets provide you with quick access to important data. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to your specific requirements, enabling their visibility on the application screen or disabling them if necessary.
 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
 
-## Altitude Widgets  
+## Altitude Widgets {#altitude-widgets}
 
 Altitude widgets display the height above the sea level of the current geolocation and the elevation of the map center.  
 
 
-### Altitude: Current Location  
+### Altitude: Current Location {#altitude-current-location}
   
 :::note  Download World altitude correction
 On some Android devices, the altitude can display inaccurately. To solve this problem, download a map with altitude correction.
@@ -62,7 +62,7 @@ On some Android devices, the altitude can display inaccurately. To solve this pr
 | Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |  
 
 
-### Elevation: Map Center
+### Elevation: Map Center {#elevation-map-center}
 
 :::info Paid feature
 &nbsp;<ProFeature/> To get access to use the *Elevation: map center* widget, subscribe to OsmAnd Pro for [Android](../purchases/android.md#pro-features) or [iOS](../purchases/ios.md#pro-features).  
@@ -95,7 +95,7 @@ You can use the widget to find out the elevation of the current map center above
 | Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |
 
 
-## Current Time
+## Current Time {#current-time}
 
 ![Current time widget](@site/static/img/widgets/current_time_widget.png)
 
@@ -110,7 +110,7 @@ This widget displays the current time taken from your device.
 | Format | Device settings configure Time & Format. |
 
 
-## Current Speed
+## Current Speed {#current-speed}
 
 ![Speed widget](@site/static/img/widgets/current_speed_widget.png)  
 
@@ -125,7 +125,7 @@ The widget shows the current speed detected by the GPS sensor.
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/>* |
 
 
-## Average Speed
+## Average Speed {#average-speed}
 
 <Tabs groupId="operating-systems">
 
@@ -193,7 +193,7 @@ After reset, the average speed is recalculated from the new GPS data. This featu
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). <br/> Can be used to reset average speed. |
 
 
-## Glide Ratio
+## Glide Ratio {#glide-ratio}
 
 <Tabs groupId="operating-systems">
 
@@ -244,7 +244,7 @@ The [simple](../widgets/configure-screen.md#widgets-for-all-panels) *Glide Ratio
   - "102.35" is displayed as "102:1."
 
 
-### Glide Ratio to Target
+### Glide Ratio to Target {#glide-ratio-to-target}
 
 - **Glide ratio to target** shows the exact glide ratio required to reach the target point.
 - **Target elevation** shows the target point elevation. The [Map marker](../personal/markers.md) should be used as the target point.
@@ -257,7 +257,7 @@ The [simple](../widgets/configure-screen.md#widgets-for-all-panels) *Glide Ratio
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### Average Glide Ratio
+### Average Glide Ratio {#average-glide-ratio}
 
 - **Average glide ratio** shows the average glide ratio for a specified time interval.
 - **Average vertical speed** indicates the rate at which an object ascends or descends over a while. Only the first and last points of the time interval are considered for evaluation. You can set the time interval for this widget from 15 seconds to 60 minutes. You should use the [Map marker](../personal/markers.md) as the target point.
@@ -270,7 +270,7 @@ The [simple](../widgets/configure-screen.md#widgets-for-all-panels) *Glide Ratio
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## Battery Level
+## Battery Level {#battery-level}
 
 ![Battery level widget](@site/static/img/widgets/battery_level_widget.png)  
 
@@ -288,7 +288,7 @@ The **Battery Level** widget displays your device's battery percentage right on 
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## Coordinates Widget
+## Coordinates Widget {#coordinates-widget}
 
 <Tabs groupId="operating-systems">
 
@@ -321,7 +321,7 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
-## GPS Info  
+## GPS Info {#gps-info}
 
 <InfoAndroidOnly />
 
@@ -339,7 +339,7 @@ You can reset the current GPS cache through:
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## Sun Position
+## Sun Position {#sun-position}
 
 <Tabs groupId="operating-systems">
 
@@ -371,7 +371,7 @@ Sun position widgets show the next sunrise and sunset times for the center of th
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## Radius Ruler
+## Radius Ruler {#radius-ruler}
 
 :::note  
 You can read a more detailed description here: **[Radius ruler and Ruler](../widgets/radius-ruler)**.  
@@ -410,7 +410,7 @@ The Radius Ruler widget shows the distance between your location and the center 
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
-## Speedometer
+## Speedometer {#speedometer}
 
 <Tabs groupId="operating-systems">
 
@@ -447,12 +447,12 @@ The Radius Ruler widget shows the distance between your location and the center 
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>*  |
 
 
-## Plugin Widgets
+## Plugin Widgets {#plugin-widgets}
 
 These widgets are enabled and work in combination with their corresponding plugins.
 
 
-### Trip Recording Widgets  
+### Trip Recording Widgets {#trip-recording-widgets}
 
 :::note  
 You can read a more detailed description here: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
@@ -484,7 +484,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### External Sensors Widgets
+### External Sensors Widgets {#external-sensors-widgets}
 
 :::note
 To add External Sensors widgets to the map screen, enable the OsmAnd [External Sensors plugin](../plugins/external-sensors.md).
@@ -530,7 +530,7 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### Vehicle Metrics Widgets
+### Vehicle Metrics Widgets {#vehicle-metrics-widgets}
 
 <InfoAndroidOnly />
 
@@ -554,7 +554,7 @@ The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### Weather Widgets
+### Weather Widgets {#weather-widgets}
 
 :::note
 To add Weather widgets to the map screen, enable the OsmAnd [Weather plugin](../plugins/weather.md).
@@ -593,7 +593,7 @@ Weather widgets display current weather information for a central point on the m
 | Format | *Menu → Plugins → Weather → Settings* or *Menu → Settings → App Profile → Weather* |  
 
 
-### Parking Widget
+### Parking Widget {#parking-widget}
 
 :::note
 To add Parking widgets to the map screen, enable the OsmAnd [Parking position plugin](../plugins/parking.md).
@@ -614,7 +614,7 @@ The Parking plugin widget shows the distance from the center of the screen to th
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
-### Mapillary Widget
+### Mapillary Widget {#mapillary-widget}
 
 :::note  
 To add the Mapillary widget to the map screen, enable the OsmAnd [Mapillary plugin](../plugins/mapillary.md).  
@@ -632,7 +632,7 @@ This is a Mapillary plugin widget that provides quick access to the Mapillary ap
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### Audio/Video Notes Widget
+### Audio/Video Notes Widget {#audiovideo-notes-widget}
 
 <InfoAndroidOnly />
 
@@ -658,7 +658,7 @@ You can configure which action is selected by default:
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### Tracker Widget
+### Tracker Widget {#tracker-widget}
 
 <InfoAndroidOnly />
 
@@ -678,7 +678,7 @@ This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker a
 | By tapping | Opens OsmAnd Online GPS Tracker app. |
 
 
-### Developer Widgets
+### Developer Widgets {#developer-widgets}
 
 :::note
 To add Developer widgets to the map screen, enable the OsmAnd [OsmAnd development plugin](../plugins/development.md).
@@ -686,7 +686,7 @@ To add Developer widgets to the map screen, enable the OsmAnd [OsmAnd developmen
 
 **Developer widgets** provide information about map [rendering speed](../plugins/development.md#map-rendering-fps-widget) and virtual camera position parameters, including [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, [camera elevation](../plugins/development.md#camera-elevation) and [tilt angle](../plugins/development.md#camera-tilt).  
 
-#### Map Rendering FPS
+#### Map Rendering FPS {#map-rendering-fps}
 
 <Tabs groupId="operating-systems">
 
@@ -714,7 +714,7 @@ The [Map rendering FPS widget](../plugins/development.md#map-rendering-fps-widge
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-#### Camera Widgets
+#### Camera Widgets {#camera-widgets}
 
 <Tabs groupId="operating-systems">
 
@@ -747,7 +747,7 @@ The **Camera widgets** allow you to monitor the alignment between the OsmAnd map
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-#### Available RAM
+#### Available RAM {#available-ram}
 
 <InfoAndroidOnly />
 
@@ -770,7 +770,7 @@ The **Available RAM** widget is a tool for monitoring your device's memory usage
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Configure Screen](./configure-screen.md)
 - [Map buttons](./map-buttons.md)

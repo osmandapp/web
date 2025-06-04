@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-## Introduction
+## Introduction {#introduction}
 
 - What are OsmAnd purchases and why do you need them?
 - Availability of OsmAnd:
@@ -28,15 +28,15 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     - Frequent updates and support for new features.
 
 
-## Install OsmAnd
+## Install OsmAnd {#install-osmand}
 
 - Versions of the OsmAnd application.
 - The main types of available purchases.
 
 
-## Purchase Options
+## Purchase Options {#purchase-options}
 
-### OsmAnd+ (One-Time Purchase)
+### OsmAnd+ (One-Time Purchase) {#osmand-one-time-purchase}
 
 - A separate application available on Google Play.
 - One-time purchase, after which all features are unlocked forever.
@@ -48,7 +48,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     - Maps are not updated in real time.
     - Can't be used on iOS or Web.
 
-### Maps+ (In-App Purchase or Subscription)
+### Maps+ (In-App Purchase or Subscription) {#maps-in-app-purchase-or-subscription}
 
 - Available as a one-time purchase or annual subscription.
 - Same feature set as OsmAnd+, but built into the free version.
@@ -59,7 +59,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     - Not cross-platform - not transferable between Android and iOS.
 
 
-### OsmAnd Pro (Subscription)
+### OsmAnd Pro (Subscription) {#osmand-pro-subscription}
 
 - Full subscription with cross-platform access (Android, iOS, Web).
 - Available as a monthly or annual subscription.
@@ -70,7 +70,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     - Supports all plugins, including Topography, Weather, OsmAnd Live.
     - Use on up to 6 devices simultaneously.
 
-### OsmAnd Start (Basic Free Plan)
+### OsmAnd Start (Basic Free Plan) {#osmand-start-basic-free-plan}
 
 - A free plan that gives you access to OsmAnd Cloud without OsmAnd Pro.
 - Allows you to save to the cloud:
@@ -79,13 +79,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     - Changes to OpenStreetMap (OSM Notes).
 
 
-## Prices
+## Prices {#prices}
 
 Price table.
 Explanation that prices may be different depending on the region.
 
 
-## Free and Paid Features
+## Free and Paid Features {#free-and-paid-features}
 
 - **Comparative table.** (?)
 
@@ -97,17 +97,17 @@ Explanation that prices may be different depending on the region.
     - Support for external sensors (OBD-II).
 
 
-## Pro Features
+## Pro Features {#pro-features}
 
 OsmAnd Pro is the ultimate in functionality and the best choice for users who want to get all the features of OsmAnd.
 
-### What is OsmAnd Pro
+### What is OsmAnd Pro {#what-is-osmand-pro}
 
 - Annual or monthly subscription with access to all features.
 - Access on all devices - Android, iOS, Web.
 - Can be used on 6 devices simultaneously.
 
-### What is included in the OsmAnd Pro subscription
+### What is included in the OsmAnd Pro subscription {#what-is-included-in-the-osmand-pro-subscription}
 
 1. OsmAnd Cloud.
     - Backup and synchronization of data between devices.
@@ -126,7 +126,7 @@ OsmAnd Pro is the ultimate in functionality and the best choice for users who wa
 OsmAnd Pro is the best choice for users who want to get the full functionality and the most up-to-date map updates!
 
 
-## How to Purchase
+## How to Purchase {#how-to-purchase}
 
 - Purchase through Google Play, Huawei AppGallery.
 - Available payment methods:
@@ -137,7 +137,7 @@ OsmAnd Pro is the best choice for users who want to get the full functionality a
     - Link to Google Play Support.
 
 
-## Restoring Purchases
+## Restoring Purchases {#restoring-purchases}
 
 - How to restore a purchase from Google Play, Huawei.
 - Step-by-step instructions:
@@ -149,7 +149,7 @@ OsmAnd Pro is the best choice for users who want to get the full functionality a
 - Restore OsmAnd Pro via OsmAnd Cloud.
 
 
-## Purchase Synchronization
+## Purchase Synchronization {#purchase-synchronization}
 
 - How purchase synchronization works through Google Play.
 - Limitations:
@@ -157,27 +157,27 @@ OsmAnd Pro is the best choice for users who want to get the full functionality a
     - Maps+ is not transferable between devices with different accounts.
 
 
-## Transferring Purchases
+## Transferring Purchases {#transferring-purchases}
 
 - Only OsmAnd Pro is a cross-platform purchase.
 - OsmAnd+ and Maps+ cannot be transferred between Android and iOS.
 - See OsmAnd Cloud account linking instructions for OsmAnd Pro.
 
 
-## Managing Subscriptions
+## Managing Subscriptions {#managing-subscriptions}
 
 - Where to view your active subscription.
 - How to cancel or change your subscription.
 - What happens after you cancel.
 
 
-## Refunds
+## Refunds {#refunds}
 
 - Google Play return policy.
 - Link to the official Google page to request a refund.
 
 
-## Giftcards
+## Giftcards {#giftcards}
 
 - This section allows users to buy OsmAnd without a bank card
 - Users can purchase OsmAnd with Google Play gift cards.
@@ -185,16 +185,16 @@ OsmAnd Pro is the best choice for users who want to get the full functionality a
 - Links to instructions for Google Play Gift Cards.
 
 
-## Common issues and solutions
+## Common issues and solutions {#common-issues-and-solutions}
 
-### Troubleshooting Purchases
+### Troubleshooting Purchases {#troubleshooting-purchases}
 
 - Purchase is not displayed → what to do.
 - Problems with payment → how to fix it.
 - Step-by-step solutions for common errors.
 - Link to troubleshhoting section.
 
-### FAQ
+### FAQ {#faq}
 
 - Can I activate my subscription without Google Play?
 - Can I share my purchase with my family?

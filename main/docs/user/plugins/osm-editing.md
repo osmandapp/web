@@ -13,22 +13,22 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 [OpenStreetMap](https://www.openstreetmap.org/about) (OSM) is a global community that aims to create a detailed free geographical map of the world and provide up-to-date open-source data to every user. The OpenStreetMap editing plugin allows you to contribute to the community.  
 
 With OsmAnd and the OSM editing plugin, you can easily contribute your own information to OpenStreetMap.org, such as to create or modify [POIs](#create--modify-poi), add or comment [notes](#create--modify-osm-note), and upload recorded GPX [tracks](#upload-gps-track).
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 To use the *OpenStreetMap editing* plugin, you have to make the following settings:
 
 1. Enable [Plugin](../plugins/index.md#enable--disable).  
 2. Set OpenStreetMap editing  in any [profile](../personal/profiles.md).
-3. Enable the display of *OSM notes (online)* or *OSM edits* on the map in the [Configure map menu](../map/configure-map-menu.md/).
+3. Enable the display of *OSM notes (online)* or *OSM edits* on the map in the [Configure map menu](../map/configure-map-menu).
 
 
-## Settings
+## Settings {#settings}
 
 <Tabs groupId="operating-systems">
 
@@ -67,7 +67,7 @@ If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, 
 :::  
 
 
-### Authorization
+### Authorization {#authorization}
 
 <Tabs groupId="operating-systems">
 
@@ -91,7 +91,7 @@ Login to contribute changes and GPX files.
 - Tap the *Login to OpenStreetMap* field in the OsmAnd app, then tap the *Sign in with OpenStreetMap* button.  
 
 
-### Free map updates for mappers
+### Free map updates for mappers {#free-map-updates-for-mappers}
 
 <Tabs groupId="operating-systems">
 
@@ -112,7 +112,7 @@ Login to contribute changes and GPX files.
 The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you to enable **[OsmAnd live](../personal/maps-resources.md#free-for-osm-mappers)** if you are active OpenStreetMap contributor. This way you can enjoy free hourly map updates, unlike the standard monthly updates. Active contributors to OpenStreetMap.org may be entitled to unlimited hourly map updates. Sign in to OpenStreetMap to check your eligibility for unlimited monthly and hourly map updates.
 
 
-### OSM Editing Layer
+### OSM Editing Layer {#osm-editing-layer}
 
 <Tabs groupId="operating-systems">
 
@@ -137,7 +137,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_of
 You can enable or disable as a separate layer the display of OSM modifications such as *OSM notes* (online), *OSM edits*, *Fixme tags*, *Note tags*, *Icons at low zooms*, in the [Configure map](../map/configure-map-menu.md) section of the *Main Menu*.  
 
 
-## Create / Modify POI  
+## Create / Modify POI {#create--modify-poi}
 
 The OpenStreetMap editing plugin allows you to create new objects on the map called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can map a new store, favorite landmark, bench, or shelter so people can find them.  
 
@@ -146,7 +146,7 @@ The OpenStreetMap editing plugin allows you to create new objects on the map cal
 3. Depending on the [Offline editing](#settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).
 
 
-### Add tags
+### Add tags {#add-tags}
 
 <Tabs groupId="operating-systems">
 
@@ -169,7 +169,7 @@ You can easily add OSM [tags](https://wiki.openstreetmap.org/wiki/Tags) to the P
 **Offline modifications.**  
 You can view, upload to OSM, or delete POIs in *My Places → OSM Edits*. You can also export your OSM POIs changes to an [OSC file](https://wiki.openstreetmap.org/wiki/OsmChange) and import it into [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).  
 
-### Add unsupported POI types
+### Add unsupported POI types {#add-unsupported-poi-types}
 
 In the *Advanced* tab, you can add unsupported POI types that may be useful for your specific task. This option allows you to enter POI data manually thus extending the functionality of the application.  
 
@@ -186,7 +186,7 @@ To add unsupported POI types, follow these steps:
 Remember that when adding unsupported POI types, it is important to make sure that the data is entered correctly to ensure the correct functioning of the application and subsequent processing of the information.
 
 
-## Create / Modify OSM Note
+## Create / Modify OSM Note {#create--modify-osm-note}
 
 <Tabs groupId="operating-systems">
 
@@ -225,7 +225,7 @@ The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
 :::
 
 
-## GPS Track
+## GPS Track {#gps-track}
 
 The GPS tracks you have recorded are useful for:
 
@@ -238,7 +238,7 @@ Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) 
 :::  
 
 
-### Upload GPS track
+### Upload GPS track {#upload-gps-track}
 
 
 <Tabs groupId="operating-systems">
@@ -277,12 +277,12 @@ To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks)
 You can select more than one track to upload to OSM. To do this, tap the *Upload to OpenStreetMap* icon at the bottom of the screen, select tracks using the checkbox, tap *Upload*, and then *Continue*.
 :::
 
-### Generate OBF file
+### Generate OBF file {#generate-obf-file}
 
 You can create an OBF file with [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) if you have a large GPX track database. This is a collection of tracks from osmand.net with the 'gpsies' tag, a collection of downloaded tracks from OpenStreetMap or your own collection.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

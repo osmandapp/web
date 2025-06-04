@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 <InfoIncompleteArticle/>
 
 
-## Overview
+## Overview {#overview}
 
 Unlike traditional routing algorithms that use roads, trails, or predefined routes, straight line routing calculates the shortest distance between two points on the map as a straight line. This feature can be useful for active hikers who want to route away from trails or explore remote areas where traditional routes may not be available. For light aircraft pilots and ship skippers, using the *Straight line routing type* can be very useful in navigation.  
 
@@ -27,7 +27,7 @@ Unlike traditional routing algorithms that use roads, trails, or predefined rout
 ![Straight-line Navigation type Android](@site/static/img/navigation/routing/straight_line_routing_andr.png)
 
 
-## Route Parameters - Straight Line
+## Route Parameters - Straight Line {#route-parameters---straight-line}
 
 :::note
 Straight line routing is linked to *Aircraft profile*. By default, this profile is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -56,7 +56,7 @@ Straight line routing is linked to *Aircraft profile*. By default, this profile 
 | *<Translate android="true" ids="recalc_angle_dialog_title"/>* |  <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/>  </summary>![Straight line recalculation Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details>  | When the angle between the calculated route and actual geolocation is higher than the one set by you, the shortest path from your current position to the calculated route will be built. In other words, OsmAnd will calculate an additional route segment to the previously calculated route. |  
 
 
-## Other Routing Settings
+## Other Routing Settings {#other-routing-settings}
 
 - In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, the distance at which the route will be recalculated for *Straight line routing* is set to 500 meters by default.
 

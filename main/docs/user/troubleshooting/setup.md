@@ -13,22 +13,22 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Initial Setup
+## Initial Setup {#initial-setup}
 
-### How to recover data
+### How to recover data {#how-to-recover-data}
 
 To prevent data loss, ensure that your personal data, routes, and maps are backed up. OsmAnd offers options for exporting your data to various formats. In case of data loss or device change, follow [these steps](https://osmand.net/docs/user/personal/import-export/#preventing-data-loss) to restore your data from a backup.
 
 
-### How to transfer Favorites and Tracks to a new device
+### How to transfer Favorites and Tracks to a new device {#how-to-transfer-favorites-and-tracks-to-a-new-device}
 
 - The simplest method is to export a profile with the necessary data: *Menu → Settings → Export →* select the data that you want to export.
 - Alternatively, you can backup all your data from the previous device by copying the folder located in *Settings → OsmAnd Settings → Data storage folder* (default path: `Android/data/net.osmand.plus`). Then, paste the contents of this folder into the Data storage folder on your new device.
 
 
-## Import Files
+## Import Files {#import-files}
 
-### I have a GPX file, how do I import it into OsmAnd?
+### I have a GPX file, how do I import it into OsmAnd? {#i-have-a-gpx-file-how-do-i-import-it-into-osmand}
 
 - **Android**
     - You can [download and open the file](../navigation/setup/gpx-navigation.md) using a file browser or cloud service like Dropbox, and select OsmAnd as the target application.
@@ -37,12 +37,12 @@ To prevent data loss, ensure that your personal data, routes, and maps are backe
 - **iOS**
     - To open [a GPX file in OsmAnd](../navigation/setup/gpx-navigation.md), simply download it and choose OsmAnd as the app to open it. The file will then be available for use within the app.
 
-### Contour lines or hillshades do not show up
+### Contour lines or hillshades do not show up {#contour-lines-or-hillshades-do-not-show-up}
 
 Read more about the [Topography plugin](../plugins/topography.md).
 
 
-## How to enable system fonts (Android)
+## How to enable system fonts (Android) {#how-to-enable-system-fonts-android}
 
 Starting with the Android 4.9 version, OsmAnd integrates your device's system font into the application interface, optimizing its design by eliminating mixed font usage. The system font is automatically applied to all UI elements.
 
@@ -51,7 +51,7 @@ Starting with the Android 4.9 version, OsmAnd integrates your device's system fo
 - This feature does not affect the fonts displayed on the map.
 
 
-## OsmAnd 4.4 (iOS)
+## OsmAnd 4.4 (iOS) {#osmand-44-ios}
 
 OsmAnd 4.4 for iOS devices is not available for iOS versions older than iOS 15.
 
@@ -59,13 +59,13 @@ This means that to install OsmAnd 4.4 you need to upgrade your OS to at least iO
 
 
 <!--
-## Storage on an SD card (Android)
+## Storage on an SD card (Android) {#storage-on-an-sd-card-android}
 
 :::note
 When you *turn on a USB drive to share files* with a computer or disconnect the SD card through system settings, the external drive is disconnected from the device and all applications running on the external drive are **immediately terminated**. You can [read more here](https://developer.android.com/guide/topics/data/install-location).
 :::
 
-### To move the OsmAnd home (maps) folder to an external SD card:
+### To move the OsmAnd home (maps) folder to an external SD card: {#to-move-the-osmand-home-maps-folder-to-an-external-sd-card}
 
 -   Go to *Settings (on the start screen) →  OsmAnd Settings → Data storage folder*
 -   Change the value to a path pointing to the external SD card, on many
@@ -78,7 +78,7 @@ When you *turn on a USB drive to share files* with a computer or disconnect the 
     connecting the device to a computer as external storage and performing the move from there.
 
 
-### How do I use my SD card with OsmAnd under Android 4.4+ and 5
+### How do I use my SD card with OsmAnd under Android 4.4+ and 5 {#how-do-i-use-my-sd-card-with-osmand-under-android-44-and-5}
 
 If you update your Android to version 4.4.x, you will experience a known
 Android issue with the `WRITE_EXTERNAL_STORAGE` permission: Android has
@@ -110,7 +110,7 @@ errors (e.g. if the SD card is too full).
 -->
 
 
-## Copy Raster Map Package Created on PC
+## Copy Raster Map Package Created on PC {#copy-raster-map-package-created-on-pc}
 
 <Tabs groupId="operating-systems">
 

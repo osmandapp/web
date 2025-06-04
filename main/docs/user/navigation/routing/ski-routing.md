@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 :::note
 The ski routing and skiing profile are only availible when [Ski map view plugin](../../plugins/ski-maps.md) is activated.  
@@ -26,7 +26,7 @@ The ski routing and skiing profile are only availible when [Ski map view plugin]
 ![Map routes - ski slopes](@site/static/img/navigation/routing/ski_routing_overview.png)
 
 
-## Route Parameters - Ski
+## Route Parameters - Ski {#route-parameters---ski}
 
 :::note
 By default, *Skiing profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -65,7 +65,7 @@ By default, *Skiing profile* is deactivated. To use this profile for routing, yo
 |*<Translate android="true" ids="routing_attr_difficulty_preference_name"/>* |  <details><summary>  <Translate android="true" ids="routing_attr_difficulty_preference_description"/> </summary>![Off piste Android](@site/static/img/navigation/routing/offpiste_android.png) </details> |  |
 
 
-## Other Routing Settings
+## Other Routing Settings {#other-routing-settings}
 
 - The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 

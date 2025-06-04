@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 OsmAnd allows you to find the best route and explore its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), [CO2 footprint data](#distance--time--co2),and [turn information](#turn-by-turn-information). You can also [analyze](#analyze-on-map) the route on the map, find out information about track segments, [print](#print) the route plan, [save](#share--export-actions) the route, and share it with others. With this functionality, you will always know the route details and can plan your trip more efficiently.  
 
@@ -37,7 +37,7 @@ OsmAnd allows you to find the best route and explore its details. The app provid
 </Tabs>
 
 
-### How to Access
+### How to Access {#how-to-access}
 
 After calculating a route in the [Navigation menu](./route-navigation.md#start--stop-navigation), you have access to "Details" about that route. This information is useful to use before starting a trip to improve route planning or to check information about the road ahead while driving.  
 There are three ways to access the *Route Details menu*.  
@@ -49,7 +49,7 @@ There are three ways to access the *Route Details menu*.
 Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../../navigation/routing/osmand-routing.md#routing-types), some route details may not be displayed. In addition, the route details depend highly on the *OpenStreetMap data coverage*.
 
 
-## Distance / Time / CO2
+## Distance / Time / CO2 {#distance--time--co2}
 
 <Tabs groupId="operating-systems">
 
@@ -76,7 +76,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 - ***CO2 footprint data*** estimates roughly how much CO2 will be produced while following the route. You need to configure the [Fuel engine type](../guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get a more accurate approximation.
 
 
-## Elevation Info
+## Elevation Info {#elevation-info}
 
 <Tabs groupId="operating-systems">
 
@@ -105,14 +105,17 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 The altitude data on the map (between 70 degrees north latitude and 70 degrees south latitude) were obtained from measurements made as a part of the *Shuttle Radar Topography Mission (SRTM)*. It utilized the *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, the primary imaging tool in *NASA's Earth Observation System*. For complete information, see the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
-<details><summary>DEM (DSM) data</summary>
-   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
+<details>
+<summary>DEM (DSM) data</summary>
+ - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
  - <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
  - <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
- - <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).</details>
+ - <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
+
+</details>
 
 
-### Elevation Graph
+### Elevation Graph {#elevation-graph}
 
 <Tabs groupId="operating-systems">
 
@@ -137,7 +140,7 @@ The [graphs](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visu
 - ***Location Pin***. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with altitude and slope percent will appear.  
 
 
-## Analyze on Map
+## Analyze on Map {#analyze-on-map}
 
 <Tabs groupId="operating-systems">
 
@@ -170,14 +173,14 @@ If data is present, you can select one of the following types:
    - *Time of day*. You can view route data at certain times of the day.
 
 
-### Type of Interactions
+### Type of Interactions {#type-of-interactions}
 
 - *Tap and Slide*. Tap the graph to display information about the track point and the movement along it. The graph highlights the location of the point on the map and displays information about it on the ruler.
 - *Scale*. Scale graph by [two fingers gesture](../../map/interact-with-map.md#gestures).
 - *Follow My location* (*Android only*). You can tap [My Location](../../map/interact-with-map.md#my-location-and-zoom) to synchronize the map view and graph with your location. As you move, the graph will shift from left to right, displaying information ahead of your path.  
 
 
-## Road Attributes
+## Road Attributes {#road-attributes}
 
 <Tabs groupId="operating-systems">
 
@@ -224,7 +227,7 @@ Road attributes are accessible in the [Route Details](#how-to-access) and displa
 - [**Difficulty of horse trails**](https://wiki.openstreetmap.org/wiki/Riding). This road attribute indicates the difficulty of the route while riding a horse. Suitable for [Horseback routing](../../navigation/routing/horse-routing.md).  
 
 
-## Turn-by-Turn Information
+## Turn-by-Turn Information {#turn-by-turn-information}
 
 <Tabs groupId="operating-systems">
 
@@ -247,7 +250,7 @@ Turn-by-turn information provides detailed [instructions](#instructions) on how 
 Tap a specific section of the route in the list to view detailed information or make changes as required. The map enlarges and a [Context menu](../../map/map-context-menu.md) opens.
 
 
-### Instructions
+### Instructions {#instructions}
 
 <Tabs groupId="operating-systems">
 
@@ -275,7 +278,7 @@ Instructions include information about moving along the route, such as:
 - [*Road side indicator*](#roadside-indicator) (*iOS only*).
 
 
-### Roadside Indicator
+### Roadside Indicator {#roadside-indicator}
 
 :::caution iOS only
 This type of instruction is currently *not available for the Android* version of the OsmAnd app.
@@ -292,7 +295,7 @@ The angle between your destination (*[Bearing](https://en.wikipedia.org/w/index.
 - `60 °`&nbsp; &nbsp; &nbsp; &nbsp; to &nbsp; &nbsp;`180 °`&nbsp; &nbsp; - marked as **right** side.
 
 
-### Print
+### Print {#print}
 
 <InfoAndroidOnly/>
 
@@ -307,7 +310,7 @@ This information can be useful when you are planning a trip and want to estimate
 The ability **to print** or **save** turn-by-turn information **in PDF format** is especially useful when traveling long distances or in unfamiliar places when you need to have a more detailed idea of the route and the time it takes to get there.
 
 
-## Share / Export (Actions)
+## Share / Export (Actions) {#share--export-actions}
 
 <Tabs groupId="operating-systems">
 
@@ -332,7 +335,7 @@ The Route Details navigation section has options that allow you to perform certa
 - **Share**. Shares an exported track or a link to the route which could be opened on another device with OsmAnd.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Route parameters](../routing/osmand-routing.md#routing-types)
 - [Route preparation](./route-navigation.md)

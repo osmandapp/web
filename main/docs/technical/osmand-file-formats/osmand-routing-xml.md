@@ -3,7 +3,7 @@ sidebar_position: 5
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Routing Configuration - .routing.xml
+# Routing Configuration - .routing.xml {#routing-configuration---routingxml}
 
 <IncompleteArticle/>
 
@@ -16,15 +16,15 @@ Please check the documentation inside routing.xml:
 - Other examples https://github.com/osmandapp/OsmAnd-resources/tree/master/routing
 
 
-### Penalties of Elevation data
+### Penalties of Elevation data {#penalties-of-elevation-data}
 
-Depending on [the selected mode (Less hilly, Flat, Hilly)](../../user/navigation/routing/bicycle-based-routing.md/#penalties-of-elevation-data#penalties-of-elevation-data) and the physical slope (%) of thse road, a penalty calculated from the height difference is added to each horizontal metre.
+Depending on [the selected mode (Less hilly, Flat, Hilly)](../../user/navigation/routing/bicycle-based-routing#penalties-of-elevation-data#penalties-of-elevation-data) and the physical slope (%) of thse road, a penalty calculated from the height difference is added to each horizontal metre.
 
 Explaination given as 3% 1:2 means that route with flat 2 km will be preferred over route with 3% 1 km though 3% 1km route will be preferred over route flat 2.5 km.
 
 **Table of penalties bicycle routing:** 
 
-|                  **Option**                 |**Incline:**| <1% | <3%  | <7% | <13% | <25% | >=25% |**Decline:**| <17% | <35% | <60% | >=60%      |
+|                  **Option**                 |**Incline:**| &lt;1% | &lt;3%  | &lt;7% | &lt;13% | &lt;25% | &gt;=25% |**Decline:**| &lt;17% | &lt;35% | &lt;60% | &gt;=60%      |
 |:--------------------------------------------|:-----------|-----|------|-----|------|------|-------|:-----------|------|------|------|------------|
 |**_Disabled/Any_** (the shortest but hardest)|            |  -  |   -  |  -  |   -  |   -  |   -   |            |   -  |   -  |   -  |     -      |
 |**_Less hilly_** (default, balanced)         |            |     |  1:2 | 1:8 | 1:16 | 1:32 | 1:48  |            | 1:6.4| 1:25 | 1:25 | impossible |
@@ -36,7 +36,7 @@ Depending on [the selected mode (Less hilly, Flat, Hilly)](../../user/navigation
 
 **Table of penalties pedestrian routing:** 
 
-|                  **Option**                 | **Incline:** | <1% | <3% | <7% | <13% | <25% | >=25% | **Decline:** | <9% | <17% | <35% | <60% | >=60% |
+|                  **Option**                 | **Incline:** | &lt;1% | &lt;3% | &lt;7% | &lt;13% | &lt;25% | &gt;=25% | **Decline:** | &lt;9% | &lt;17% | &lt;35% | &lt;60% | &gt;=60% |
 |:--------------------------------------------|:-------------|-----|-----|-----|------|------|-------|:-------------|-----|------|------|------|-------|
 |**_Disabled/Any_** (the shortest but hardest)|              |  -  |  -  |  -  |   -  |   -  |   -   |              |  -  |   -  |   -  |   -  |   -   |
 |**_Less hilly_** (default, balanced)         |              |     | 1:1 | 1:4 | 1:8  | 1:10 | 1:15  |              | 1:5 | 1:10 | 1:17 | 1:25 | 1:40  |

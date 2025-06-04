@@ -2,15 +2,15 @@
 sidebar_position: 3
 ---
 
-# KML Tracks - .kml, .km
+# KML Tracks - .kml, .km {#kml-tracks---kml-km}
 
 In GoogleEarth (GE) you can add you own Placemarks on the map and collect them into a folder. From GE you can save the folder in KML format. When you have a different format you can use QGIS or other opensource software to convert to KML format. Maybe you can convert it directly to OSM. You may use any format containing your POIs, if you are able to convert it to OSM format. You can format KML to GPX [here](https://kml2gpx.com/).
 
-## Native support
+## Native support {#native-support}
 OsmAnd doesn't support KML natively but OsmAnd can import some of them. During import process file will be transformed into GPX and later will be treated as [OsmAnd GPX](osmand-gpx).
 
 
-## Converting KML (or Other Formats) into the OSM Format
+## Converting KML (or Other Formats) into the OSM Format {#converting-kml-or-other-formats-into-the-osm-format}
 
 To perform this task we need to use gpsbabel. It is very useful to convert waypoints, tracks, and routes between popular GPS receivers and mapping programs. The syntax is very simple, and GPS Babel has an interface to create the syntax for you:
 
@@ -38,7 +38,7 @@ The generated file looks like this:
 
 All points inside the KML file are converted into OSM points, assigning them some properties like tourism category and museum type. The `created_by=` option with missing value means that the properties will be ignored. If your POI belongs to different categories, I suggest you create multiple OSM files and create OsmAnd OBF files and merge them together later with OsmAndMapCreator, or create multiple OBF files.
 
-## Converting OSM Format into OBF Format
+## Converting OSM Format into OBF Format {#converting-osm-format-into-obf-format}
 
 Now you are ready to perform the final step. The conversion will be done using OsmAndMapCreator. Download, unzip and run this program.
 - Deselect all choices except Build POI Index as shown:

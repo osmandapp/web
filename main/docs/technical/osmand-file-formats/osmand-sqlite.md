@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# Tiles SQLite Format - .sqlite
+# Tiles SQLite Format - .sqlite {#tiles-sqlite-format---sqlite}
 
 
 
@@ -11,7 +11,7 @@ The SQLIte format used in OsmAnd is based on the "BigPlanet" SQLite as supported
 |Table|Column|Spec and Purpose|
 |:----|:-----|:---------------|
 |"info"|"url"|String. URL template to download tiles with zoom ≣ `{z}` ≣ `{0}`, `{x}` ≣ `{1}`, `{y}` ≣ `{2}`, server name ≣ `{rnd}`|
-||"randoms"|String. The names of the mirrors of server. Comma-separated. One of these values will randomly replace the placeholder {rdn} in "url" field.|
+||"randoms"|String. The names of the mirrors of server. Comma-separated. One of these values will randomly replace the placeholder `{rdn}` in "url" field.|
 ||"referer"|String. HTTP Referer. As used for downloading.|
 ||"rule"|String. Supported template:1 (same as empty), wms_tile, yandex_traffic. Adds specific algorithms how tiles will be downloaded. wms_tile is using proxy server such as whoots.mapwarper.net to deal with WMS sources |
 ||"useragent"|String. HTTP User Agent. As used for downloading.|

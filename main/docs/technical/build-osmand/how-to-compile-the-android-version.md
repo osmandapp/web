@@ -3,7 +3,7 @@ sidebar_position: 5
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# How to Compile the Android Version
+# How to Compile the Android Version {#how-to-compile-the-android-version}
 
 
 **Android SDK**:
@@ -14,7 +14,7 @@ Target sdk tools: [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/bu
 **Android NDK**: 23.
 
 
-## Compile Android apk
+## Compile Android apk {#compile-android-apk}
 1. First setup the **[development environment](setup-the-dev-environment.md)**.
 2. **Gradle** (command line):
     -  Specify  **environment variables**.   ANDROID_SDK and ANDROID_HOME are where Android studio places things:
@@ -34,7 +34,7 @@ Target sdk tools: [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/bu
 4. You may use our [debug.keystore](https://github.com/osmandapp/Osmand/tree/master/keystores) to make builds compatible with the nightly build.
 
 
-### Gradle tasks / flavors
+### Gradle tasks / flavors {#gradle-tasks--flavors}
 
 Gradle task **assembleNightlyFreeLegacyFatDebug** will produce apk at *android/OsmAnd/build/outputs/apk/* *nightlyFreeLegacyFat/debug/OsmAnd-nightlyFree-legacy-fat-debug.apk*. Task name *assembleNightlyFreeLegacyFatDebug* consists of :
 - assemble - standard task to build apk
@@ -43,7 +43,7 @@ Gradle task **assembleNightlyFreeLegacyFatDebug** will produce apk at *android/O
 - fat - fat (all native targets) / armv7 / arm64 / x86 / armonly - select which native libraries will be inside apk.
 - debug - debug / release - standard task
 
-To build bundle you could use **bundle${FLAVOR}LegacyFatRelease**.
+To build bundle you could use **`bundle${FLAVOR}LegacyFatRelease`**.
 
 
 | Flavor |  Package | Description
@@ -54,9 +54,9 @@ To build bundle you could use **bundle${FLAVOR}LegacyFatRelease**.
 | gplayFull | net.osmand.plus | Google Play OsmAnd+ version - uses GooglePlay services.
 | huawei | net.osmand | Special build for Huawei market - uses Huawei services but not Google Play
 
-### Debug
+### Debug {#debug}
 
-#### Enable NDK debug for legacy native library (OsmAnd-core-legacy)
+#### Enable NDK debug for legacy native library (OsmAnd-core-legacy) {#enable-ndk-debug-for-legacy-native-library-osmand-core-legacy}
 
 In  OsmAnd/OsmAnd/jni/Application.mk uncomment lines
 ```
@@ -66,11 +66,11 @@ APP_DEBUG := true
 Add debug symbols in the Android Studio project configuration. For this go to Edit Configuration / in the left menu select Android App "OsmAnd" / in right side select tab "Debugger". And add OsmAnd/obj/local where build libraries for different configuration (arm64-v8a, armeabi-v7a, x86, x86_64).
 
 
-## Compile OpenGL library
+## Compile OpenGL library {#compile-opengl-library}
 
 Opengl library is needed for targets like assembleNightlyFree**Opengl**FatDebug and by default downloaded from [OsmAnd ivy repository](https://builder.osmand.net/ivy/net.osmand/) - [gradle task](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L187). For local development you might need to compile those library and publish to local ivy repo.
 
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
+1. First setup the **development environment**, see [development environment](./setup-the-dev-environment).
 2. Install tools.
     - Android SDK - 29.
     - Android NDK - 23.
@@ -92,11 +92,11 @@ Opengl library is needed for targets like assembleNightlyFree**Opengl**FatDebug 
     
 **Hint**: Compilation might take a long time and you will likely don't need all platforms, so you can [comment out](https://github.com/osmandapp/OsmAnd-core/blob/master/wrappers/android/build.sh#L64) unwanted arch in the script and build only for 1 platform (x86, x86_64, arm, arm64) debug or relelease.
 
-### Debug
+### Debug {#debug}
 
 To be completed: how to set up Android ndk debug.
 
-## Compile API samples
+## Compile API samples {#compile-api-samples}
 <IncompleteArticle/>
 
 There are 2 types of samples apps provided by OsmAnd, they are all represented in [osmand-api-demo](https://github.com/osmandapp/osmand-api-demo) Github repo and compiled regularly at [OsmAnd Builder](https://builder.osmand.net:8080/view/OsmAnd%20Builds/job/OsmAnd-API-demo/).
