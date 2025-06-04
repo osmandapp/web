@@ -50,19 +50,27 @@ function filterUnlistedSidebarItems(itemsToFilter, unlistedDocIds) {
 }
 
 async function OsmAndHelpStructureGenerator(props) {
+  let isTranslatedDocs = false;
+  const unlistedDocIds = new Set();
   const items = await props.defaultSidebarItemsGenerator(props);
 
-  const unlistedDocIds = new Set();
   if (props.docs) {
     props.docs.forEach(doc => {
+      if (doc.source && doc.source.includes('/i18n/')) {
+        isTranslatedDocs = true;
+      }
       if (doc.frontMatter && doc.frontMatter.unlisted === true) {
         unlistedDocIds.add(doc.id);
       }
     });
   }
-  const filteredItems = filterUnlistedSidebarItems(items, unlistedDocIds);
+
+  if (isTranslatedDocs) {
+    return items; // avoid translated help-structure.json
+  }
 
   const articles = [];
+  const filteredItems = filterUnlistedSidebarItems(items, unlistedDocIds);
   traverseItems(articles, filteredItems);
   flushArticlesIntoStaticDir(articles);
   // articles.forEach((i) => console.log(i)); // debug
