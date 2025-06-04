@@ -24,6 +24,12 @@
     flex-direction: column !important;
     align-items: center !important;
 }
+.dialogBlock {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 8px 20px !important;
+    align-items: center !important;
+}
 .loginText {
     color: var(--text-secondary) !important;
     font-size: 14px !important;
@@ -71,4 +77,56 @@
     font-weight: 400 !important;
     line-height: 140% !important;
     letter-spacing: 0.28px !important;
+}
+.loginDialog {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.loginDialogPaper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 400px !important;
+    margin: 0 auto !important;
+}
+.loginDialogTitle {
+    display: flex !important;
+    width: 400px !important;
+    height: 72px !important;
+    padding: 20px 18px 16px 24px !important;
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+}
+.loginDialogPaper,
+.loginDialogTitle {
+    box-sizing: border-box !important;
+}
+.loginDialogText {
+    color: #212121 !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 20px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    letter-spacing: 0.2px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex: 1 0 0 !important;
+    align-self: stretch !important;
+}
+.loginDialogIcon {
+    display: flex !important;
+    width: 36px !important;
+    height: 36px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    fill: var(--svg-icon-color) !important;
+}
+.loginDialogContent {
+    padding: 0px 4px 20px 4px !important;
 }

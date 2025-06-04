@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { products, purchase } from './ProductManager';
 import {
     Box,
@@ -17,37 +17,39 @@ import PurchaseTypeItem from './PurchaseTypeItem';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { createFastSpringPurchase } from '../../login/fs/FastSpringHelper';
 
 export default function ProductCard({ productId, type, setType, testMode, isSelected, setSelectedCardId }) {
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
-    const navigate = useNavigate();
-    const location = useLocation();
 
     const product = products.find((p) => p.id === productId);
 
+    useEffect(() => {
+        if (ltx.completePurchase) {
+            processingPurchase();
+            ltx.setCompletePurchase(false);
+        }
+    }, [ltx.completePurchase]);
+
     function onClick() {
         if (productId === 'osmand-start') {
-            createNewAccount();
+            ltx.setOpenLoginDialog(true);
         } else {
             purchaseProduct();
         }
     }
 
-    function createNewAccount() {
+    function purchaseProduct() {
         if (!ltx.loginUser) {
-            navigate({
-                pathname: MAIN_URL_WITH_SLASH + LOGIN_URL,
-                hash: location.hash,
-            });
+            ltx.setOpenLoginDialog(true);
+        } else {
+            processingPurchase();
         }
     }
 
-    function purchaseProduct() {
+    function processingPurchase() {
         const selectedProduct = purchase[type].find((p) => p.id === productId);
         if (selectedProduct) {
             createFastSpringPurchase({ testMode, ltx, selectedProducts: [selectedProduct.fsName] });

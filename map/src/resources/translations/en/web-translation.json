@@ -154,5 +154,6 @@
   "feature_nautical_navigation": "Nautical navigation",
   "feature_nautical_navigation_desc": "Navigation support for waterways, canals, and open water",
   "feature_nautical_depth": "Nautical depth",
-  "feature_nautical_depth_desc": "Visualize underwater relief with depth contours and numbered depth points indicating shallowest areas"
+  "feature_nautical_depth_desc": "Visualize underwater relief with depth contours and numbered depth points indicating shallowest areas",
+  "empty_login_prices_desc": "Your purchase or subscription needs to be linked to an account. Please log in if you already have one, or create a new account to proceed."
 }

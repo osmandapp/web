@@ -18,7 +18,7 @@ import BlueBtn from '../frame/components/btns/BlueBtn';
 import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
 import LoginContext from '../context/LoginContext';
 
-export default function CreateAccount() {
+export default function CreateAccount({ dialog, reopenLoginDialog = null }) {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
@@ -148,31 +148,36 @@ export default function CreateAccount() {
             if (createAccountError === EMPTY_INPUT) {
                 ltx.setOpenLoginMenu(true);
                 ltx.setLoginState({ default: true });
+                if (dialog && reopenLoginDialog) {
+                    reopenLoginDialog();
+                }
             }
         });
     }
 
     return (
         <>
-            <AppBar position="static" className={headerStyles.appbar}>
-                <Toolbar className={headerStyles.toolbar}>
-                    <IconButton
-                        id={'se-create-account-menu-close'}
-                        variant="contained"
-                        type="button"
-                        className={styles.closeIcon}
-                        onClick={() => {
-                            closeLoginMenu(ltx);
-                            closeHeader({ ctx });
-                        }}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                    <Typography id="se-create-account-menu-name" component="div" className={headerStyles.title}>
-                        {t('register_opr_create_new_account')}
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            {!dialog && (
+                <AppBar position="static" className={headerStyles.appbar}>
+                    <Toolbar className={headerStyles.toolbar}>
+                        <IconButton
+                            id={'se-create-account-menu-close'}
+                            variant="contained"
+                            type="button"
+                            className={styles.closeIcon}
+                            onClick={() => {
+                                closeLoginMenu(ltx);
+                                closeHeader({ ctx });
+                            }}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                        <Typography id="se-create-account-menu-name" component="div" className={headerStyles.title}>
+                            {t('register_opr_create_new_account')}
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+            )}
             <Box sx={{ mx: 2, my: 1 }}>
                 {openPassword && (
                     <>

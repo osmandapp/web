@@ -5,6 +5,7 @@ import ProductCard from './products/ProductCard';
 import styles from './shop.module.css';
 import { useTranslation } from 'react-i18next';
 import { getCountryCode, updatePrices } from './products/ProductManager';
+import EmptyLoginDialog from '../login/dialogs/EmptyLoginDialog';
 
 const FeaturesTable = React.lazy(() => import('./features/FeaturesTable'));
 
@@ -65,6 +66,7 @@ export default function PricingPage() {
                     <FeaturesTable />
                 </Box>
             </Box>
+            <EmptyLoginDialog />
         </Box>
     );
 }
