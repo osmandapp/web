@@ -32,7 +32,7 @@ sidebar_position: 7
 ## Compile Native rendering library for OsmAndMapCreator {#compile-native-rendering-library-for-osmandmapcreator}
 Native rendering library could be used to test Offline Rendering or Offline Native Routing. It's very useful to debug and test a rendering style or a routing configuration.
 
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
+1. First setup the **development environment**, see [development environment](./setup-the-dev-environment).
 2. Download external dependencies
  ```
  cd core-legacy/externals

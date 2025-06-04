@@ -12,7 +12,7 @@ Le format SQLite utilisé dans OsmAnd est basé sur le format SQLite "BigPlanet"
 |Table|Colonne|Spécification et objectif|
 |:----|:-----|:---------------|
 |"info"|"url"|Chaîne de caractères. Modèle d'URL pour télécharger les tuiles avec zoom ≣ `{z}` ≣ `{0}`, `{x}` ≣ `{1}`, `{y}` ≣ `{2}`, nom du serveur ≣ `{rnd}`|
-||"randoms"|Chaîne de caractères. Les noms des miroirs du serveur. Séparés par des virgules. L'une de ces valeurs remplacera aléatoirement l'espace réservé {rdn} dans le champ "url".|
+||"randoms"|Chaîne de caractères. Les noms des miroirs du serveur. Séparés par des virgules. L'une de ces valeurs remplacera aléatoirement l'espace réservé {`rdn`} dans le champ "url".|
 ||"referer"|Chaîne de caractères. Référent HTTP. Tel qu'utilisé pour le téléchargement.|
 ||"rule"|Chaîne de caractères. Modèle pris en charge : 1 (identique à vide), wms_tile, yandex_traffic. Ajoute des algorithmes spécifiques pour le téléchargement des tuiles. wms_tile utilise un serveur proxy tel que whoots.mapwarper.net pour gérer les sources WMS|
 ||"useragent"|Chaîne de caractères. Agent utilisateur HTTP. Tel qu'utilisé pour le téléchargement.|

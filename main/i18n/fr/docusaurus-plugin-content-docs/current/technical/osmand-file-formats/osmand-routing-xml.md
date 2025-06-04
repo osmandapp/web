@@ -25,7 +25,7 @@ L'explication donnée comme 3% 1:2 signifie qu'un itinéraire plat de 2 km sera 
 
 **Tableau des pénalités pour le routage à vélo :**
 
-|                  **Option**                 |**Inclinaison :**| <1% | <3%  | <7% | <13% | <25% | >=25% |**Déclinaison :**| <17% | <35% | <60% | >=60%      |
+|                  **Option**                 |**Inclinaison :**| &lt;1% | &lt;3%  | &lt;7% | &lt;13% | &lt;25% | &gt;=25% |**Déclinaison :**| &lt;17% | &lt;35% | &lt;60% | &gt;=60%      |
 |:--------------------------------------------|:-----------|-----|------|-----|------|------|-------|:-----------|------|------|------|------------|
 |**_Désactivé/Quelconque_** (le plus court mais le plus difficile)|            |  -  |   -  |  -  |   -  |   -  |   -   |            |   -  |   -  |   -  |     -      |
 |**_Moins vallonné_** (par défaut, équilibré)         |            |     |  1:2 | 1:8 | 1:16 | 1:32 | 1:48  |            | 1:6.4| 1:25 | 1:25 | impossible |
@@ -37,7 +37,7 @@ Selon [le mode sélectionné (Moins vallonné, Plat, Vallonné)](../../user/navi
 
 **Tableau des pénalités pour le routage piéton :**
 
-|                  **Option**                 | **Inclinaison :** | <1% | <3% | <7% | <13% | <25% | >=25% | **Déclinaison :** | <9% | <17% | <35% | <60% | >=60% |
+|                  **Option**                 | **Inclinaison :** | &lt;1% | &lt;3% | &lt;7% | &lt;13% | &lt;25% | &gt;=25% | **Déclinaison :** | &lt;9% | &lt;17% | &lt;35% | &lt;60% | &gt;=60% |
 |:--------------------------------------------|:-------------|-----|-----|-----|------|------|-------|:-------------|-----|------|------|------|-------|
 |**_Désactivé/Quelconque_** (le plus court mais le plus difficile)|              |  -  |  -  |  -  |   -  |   -  |   -   |              |  -  |   -  |   -  |   -  |   -   |
 |**_Moins vallonné_** (par défaut, équilibré)         |              |     | 1:1 | 1:4 | 1:8  | 1:10 | 1:15  |              | 1:5 | 1:10 | 1:17 | 1:25 | 1:40  |

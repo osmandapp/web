@@ -292,7 +292,7 @@ If viewing the GPX file of the track added with a waypoint from an audio/video/p
 
 The <Translate android="true" ids="audionotes_plugin_name"/> plugin generates audio/video/photo files in the following format:
 
-    {SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}
+    `{SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}`
 
 where `SHORTLINK_LOCATION` specifies the latitude and longitude of the location to which the file is bound. The `SHORTLINK_LOCATION` is encoded, according to the specification of the [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 

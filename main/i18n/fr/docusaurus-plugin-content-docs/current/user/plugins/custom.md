@@ -43,7 +43,8 @@ Vous pourriez avoir besoin de lire :
 
 ### items.json {#itemsjson}
 
-<details><summary> Fichier <b>items.json</b> d'OsmAnd. </summary>
+<details>
+<summary> Fichier <b>items.json</b> d'OsmAnd. </summary>
 
 ```
 {
@@ -268,8 +269,8 @@ Vous pourriez avoir besoin de lire :
       }
    ]
 }
-
 ```
+
 </details>
 
 

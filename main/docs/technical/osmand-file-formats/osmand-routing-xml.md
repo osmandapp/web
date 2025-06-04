@@ -24,7 +24,7 @@ Explaination given as 3% 1:2 means that route with flat 2 km will be preferred o
 
 **Table of penalties bicycle routing:** 
 
-|                  **Option**                 |**Incline:**| <1% | <3%  | <7% | <13% | <25% | >=25% |**Decline:**| <17% | <35% | <60% | >=60%      |
+|                  **Option**                 |**Incline:**| &lt;1% | &lt;3%  | &lt;7% | &lt;13% | &lt;25% | &gt;=25% |**Decline:**| &lt;17% | &lt;35% | &lt;60% | &gt;=60%      |
 |:--------------------------------------------|:-----------|-----|------|-----|------|------|-------|:-----------|------|------|------|------------|
 |**_Disabled/Any_** (the shortest but hardest)|            |  -  |   -  |  -  |   -  |   -  |   -   |            |   -  |   -  |   -  |     -      |
 |**_Less hilly_** (default, balanced)         |            |     |  1:2 | 1:8 | 1:16 | 1:32 | 1:48  |            | 1:6.4| 1:25 | 1:25 | impossible |
@@ -36,7 +36,7 @@ Depending on [the selected mode (Less hilly, Flat, Hilly)](../../user/navigation
 
 **Table of penalties pedestrian routing:** 
 
-|                  **Option**                 | **Incline:** | <1% | <3% | <7% | <13% | <25% | >=25% | **Decline:** | <9% | <17% | <35% | <60% | >=60% |
+|                  **Option**                 | **Incline:** | &lt;1% | &lt;3% | &lt;7% | &lt;13% | &lt;25% | &gt;=25% | **Decline:** | &lt;9% | &lt;17% | &lt;35% | &lt;60% | &gt;=60% |
 |:--------------------------------------------|:-------------|-----|-----|-----|------|------|-------|:-------------|-----|------|------|------|-------|
 |**_Disabled/Any_** (the shortest but hardest)|              |  -  |  -  |  -  |   -  |   -  |   -   |              |  -  |   -  |   -  |   -  |   -   |
 |**_Less hilly_** (default, balanced)         |              |     | 1:1 | 1:4 | 1:8  | 1:10 | 1:15  |              | 1:5 | 1:10 | 1:17 | 1:25 | 1:40  |

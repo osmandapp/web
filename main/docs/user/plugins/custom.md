@@ -42,7 +42,8 @@ You may need to read:
 
 ### items.json {#itemsjson}
 
-<details><summary> OsmAnd's <b>items.json</b> file. </summary> 
+<details>
+<summary> OsmAnd's <b>items.json</b> file. </summary> 
 
 ```
 {
@@ -269,6 +270,7 @@ You may need to read:
 }
 
 ```
+
 </details>
 
 
