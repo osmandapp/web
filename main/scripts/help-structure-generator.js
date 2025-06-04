@@ -12,11 +12,59 @@ const BUILD_DIR_READY_TRIGGER = "./build/assets"; // trigger file/dir that indic
 const IOS_LINKS_JSON = "./static/help-links-ios.json";
 const ANDROID_LINKS_JSON = "./static/help-links-android.json";
 
+/**
+ * Helper function to recursively filter sidebar items.
+ * - Removes 'doc' items if their ID is in unlistedDocIds.
+ * - Recursively filters items for 'category' type.
+ * - Prunes categories that become empty AND ( (do not have a link) OR (their link is to an unlisted doc) ).
+ * @param {Array<Object>} itemsToFilter - The array of sidebar items to filter.
+ * @param {Set<string>} unlistedDocIds - A Set of document IDs that are unlisted.
+ * @returns {Array<Object>} The filtered array of sidebar items.
+ */
+function filterUnlistedSidebarItems(itemsToFilter, unlistedDocIds) {
+  if (!itemsToFilter) {
+    return [];
+  }
+  return itemsToFilter
+    .map(item => {
+      if (item.type === 'doc' && unlistedDocIds.has(item.id)) {
+        return null; // Mark doc for removal
+      }
+
+      if (item.type === 'category') {
+        const newSubItems = filterUnlistedSidebarItems(item.items, unlistedDocIds);
+
+        // Prune category if it becomes empty of children AND
+        // (it has no link OR its link is to an unlisted doc)
+        if (newSubItems.length === 0) {
+          if (!item.link || (item.link.type === 'doc' && unlistedDocIds.has(item.link.id))) {
+            return null; // Prune category
+          }
+        }
+
+        // If it has listed children, keep it.
+        return { ...item, items: newSubItems };
+      }
+      return item;
+    })
+    .filter(Boolean);
+}
+
 async function OsmAndHelpStructureGenerator(props) {
   const items = await props.defaultSidebarItemsGenerator(props);
 
+  const unlistedDocIds = new Set();
+  if (props.docs) {
+    props.docs.forEach(doc => {
+      if (doc.frontMatter && doc.frontMatter.unlisted === true) {
+        unlistedDocIds.add(doc.id);
+      }
+    });
+  }
+  const filteredItems = filterUnlistedSidebarItems(items, unlistedDocIds);
+
   const articles = [];
-  traverseItems(articles, items);
+  traverseItems(articles, filteredItems);
   flushArticlesIntoBuildDir(articles);
   // articles.forEach((i) => console.log(i)); // debug
 
