@@ -62,6 +62,8 @@ Starting with Android 4.4, power-saving features can limit CPU usage, reduce scr
   
 - **Disable Power Saving Mode**. Disabling Android Power Saving entirely can help, especially on older Android versions. This may resolve performance issues during track recording or navigation.
 
+- **Allow Background Notifications**. In order to show the above mentioned track recording notification, *Background Botifications* need to be enabled in the app's notification settings.
+
 ### Control the Behavior of iOS Background Apps
 
 iOS can suspend or stop background apps automatically when system resources are reallocated. OsmAnd cannot override this behavior. If track recording is interrupted when the device is locked, this can leave gaps in the recording. You can edit these gaps using the [Plan a Route](https://docs.osmand.net/docs/user/plan-route/create-route) tool.
