@@ -344,7 +344,7 @@
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 .pricingTable .MuiTableCell-root {
