@@ -12,7 +12,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-# iOS 5.0 {#ios-50}
+# iOS 5.1 {#ios-51}
 
 ## Join Beta {#join-beta}
 

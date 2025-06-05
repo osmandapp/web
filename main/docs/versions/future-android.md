@@ -14,7 +14,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';  
 
 
-# Android 5.0 (beta) {#android-50-beta}
+# Android 5.1 {#android-51}
 
 Android 5.0 is the latest release that introduces many new features and improvements to the OsmAnd app. This article describes all the key updates that represent meaningful changes for our users.
 
