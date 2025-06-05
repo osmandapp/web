@@ -27,13 +27,15 @@ export default function PurchaseTypeItem({ type, productId, selected, onChange }
         if (!purchaseObj) {
             return;
         }
-        if (purchaseObj.monthlyVersionId && purchaseObj.oldPrice === purchaseObj.newPrice) {
-            const monthlyVersion = purchase['monthly'].find((p) => p.id === purchaseObj.monthlyVersionId);
+        const { monthlyVersionId, oldPrice, newPrice } = purchaseObj;
+        if (monthlyVersionId && oldPrice === newPrice) {
+            const monthlyVersion = purchase['monthly'].find((p) => p.id === monthlyVersionId);
             if (monthlyVersion && monthlyVersion.oldPrice === monthlyVersion.newPrice) {
-                const annualVersion = parseFloat(monthlyVersion.newPrice) * 12;
-                const save = parseFloat(purchaseObj.newPrice) - annualVersion / 100;
-                if (save > 0) {
-                    setSaveBox(`${t('web:shared_string_save')} ${save.toFixed(0)}%`);
+                const annualFull = parseFloat(monthlyVersion.newPrice) * 12;
+                const annualPromo = parseFloat(newPrice);
+                const discountPercent = ((annualFull - annualPromo) / annualFull) * 100;
+                if (discountPercent > 0) {
+                    setSaveBox(`${t('web:shared_string_save')} ${discountPercent.toFixed(0)}%`);
                 }
             }
         }
