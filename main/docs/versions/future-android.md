@@ -40,7 +40,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 <!-- ***Example***  -->
 
 - Fixed issues:
-  - [The languages Serbian latin (Latin for Serbia, Bosnia and Herzegovina and Crna Gora) now work.](https://github.com/osmandapp/OsmAnd/issues/21480)
+  
 
 
 
