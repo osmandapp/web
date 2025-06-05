@@ -5,8 +5,7 @@ module.exports = OsmAndHelpStructureGenerator;
 const BASE_URL = "/docs/"; // relative or absolute URL to include into JSON articles
 
 const DOC_PATH = "./docs/"; // path to docs files when yarn build started
-const JSON_OUTPUT_FILE = "./build/help-structure.json"; // JSON file with the Help Structure
-const BUILD_DIR_READY_TRIGGER = "./build/assets"; // trigger file/dir that indicates that build dir is ready
+const JSON_OUTPUT_FILE = "./static/help-structure.json"; // JSON file with the Help Structure
 
 // repository-maintained files with help links
 const IOS_LINKS_JSON = "./static/help-links-ios.json";
@@ -51,37 +50,39 @@ function filterUnlistedSidebarItems(itemsToFilter, unlistedDocIds) {
 }
 
 async function OsmAndHelpStructureGenerator(props) {
+  let isTranslatedDocs = false;
+  const unlistedDocIds = new Set();
   const items = await props.defaultSidebarItemsGenerator(props);
 
-  const unlistedDocIds = new Set();
   if (props.docs) {
     props.docs.forEach(doc => {
+      if (doc.source && doc.source.includes('/i18n/')) {
+        isTranslatedDocs = true;
+      }
       if (doc.frontMatter && doc.frontMatter.unlisted === true) {
         unlistedDocIds.add(doc.id);
       }
     });
   }
-  const filteredItems = filterUnlistedSidebarItems(items, unlistedDocIds);
+
+  if (isTranslatedDocs) {
+    return items; // avoid translated help-structure.json
+  }
 
   const articles = [];
+  const filteredItems = filterUnlistedSidebarItems(items, unlistedDocIds);
   traverseItems(articles, filteredItems);
-  flushArticlesIntoBuildDir(articles);
+  flushArticlesIntoStaticDir(articles);
   // articles.forEach((i) => console.log(i)); // debug
 
   return items;
 }
 
-// Docusaurus cleanups the ./build dir instantly after this module called.
-// That is the reason why flushing JSON file into ./build/ immediately is a wrong way.
-// Docusaurus does not have API to connect custom sidebar generator with the later-on build process.
-// As a result, cycle of setTimeout() is used to wait for "trigger" file in the build dir to assure that build is started.
-function flushArticlesIntoBuildDir(articles) {
+function flushArticlesIntoStaticDir(articles) {
   const prettyJSON = (smth) => JSON.stringify(smth, null, 2);
 
   const ios = JSON.parse(fs.readFileSync(IOS_LINKS_JSON, { encoding: "utf8" }));
-  const android = JSON.parse(
-    fs.readFileSync(ANDROID_LINKS_JSON, { encoding: "utf8" })
-  );
+  const android = JSON.parse(fs.readFileSync(ANDROID_LINKS_JSON, { encoding: "utf8" }));
 
   const helpStructure = {
     articles,
@@ -89,16 +90,7 @@ function flushArticlesIntoBuildDir(articles) {
     ios,
   };
 
-  function flush() {
-    if (fs.existsSync(BUILD_DIR_READY_TRIGGER)) {
-      fs.writeFileSync(JSON_OUTPUT_FILE, prettyJSON(helpStructure), {
-        encoding: "utf8",
-      });
-      return;
-    }
-    setTimeout(flush, 1000);
-  }
-  setTimeout(flush, 1000);
+  fs.writeFileSync(JSON_OUTPUT_FILE, prettyJSON(helpStructure), { encoding: "utf8" });
 }
 
 // traverse items array
