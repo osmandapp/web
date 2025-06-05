@@ -50,11 +50,6 @@ You can view the Wikidata link directly in the [Map Context Menu](../map/map-con
 Learn how to find a Wikidata ID: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
-</TabItem>
-
-</Tabs>
-
-
 ### Data Sources {#data-sources}
 
 **Popular Places** are based on structured content from [Wikidata](https://www.wikidata.org) and [Wikipedia](https://www.wikipedia.org/).
@@ -214,17 +209,20 @@ In the Map Context menu How to access:
 
 <TabItem value="android" label="Android">  
 
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png) ![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1.png)
+![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
+![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png) ![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png)
+![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
 </Tabs>
+
 
 The **Gallery Menu** can display up to **100 images** related to the selected point of interest. You can swipe through all available photos. Tapping a photo briefly opens a detailed view showing: *Name*, *Date added*, *Author*, *License*  
 
