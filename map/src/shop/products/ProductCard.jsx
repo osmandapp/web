@@ -92,7 +92,7 @@ export default function ProductCard({ productId, type, setType, testMode, isSele
                         </ListItem>
                     ))}
                 </List>
-                <Box sx={{ mt: 'auto' }}>
+                <Box sx={{ mt: 'auto', ml: '4px', mr: '4px' }}>
                     {product.purchaseTypes && (
                         <Box>
                             <RadioGroup
