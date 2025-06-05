@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { products, purchase } from './ProductManager';
 import {
     Box,
@@ -26,12 +26,28 @@ export default function ProductCard({ productId, type, setType, testMode, isSele
 
     const product = products.find((p) => p.id === productId);
 
+    const [btnText, setBtnText] = useState('web:action_compete_purchase');
+
     useEffect(() => {
         if (ltx.completePurchase) {
             processingPurchase();
             ltx.setCompletePurchase(false);
         }
     }, [ltx.completePurchase]);
+
+    useEffect(() => {
+        if (product?.btnText) {
+            setBtnText(product.btnText);
+        } else if (type === 'monthly') {
+            setBtnText('web:action_subscribe_monthly');
+        } else if (type === 'annual') {
+            setBtnText('web:action_subscribe_annual');
+        } else if (type === 'one-time') {
+            setBtnText('web:action_compete_purchase');
+        } else {
+            setBtnText('web:action_compete_purchase');
+        }
+    }, [type]);
 
     function onClick() {
         if (productId === 'osmand-start') {
@@ -100,7 +116,7 @@ export default function ProductCard({ productId, type, setType, testMode, isSele
                     )}
                     <PrimaryBtn
                         additionalStyle={{ mt: 2, mb: -2 }}
-                        text={t(product.btnText)}
+                        text={t(btnText)}
                         span={true}
                         disabled={product.purchaseTypes?.[0] && !type}
                         action={onClick}

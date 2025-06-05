@@ -26,7 +26,6 @@ export default function PricingPage() {
 
     useEffect(() => {
         getCountryCode().then((region) => {
-            console.log(`Region code: ${region}`);
             updatePrices(region).then(() => {
                 setShow(true);
             });
