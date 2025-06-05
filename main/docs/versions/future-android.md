@@ -41,6 +41,9 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 - Fixed issues:
   
-
+- [Missing outline for GPS coordinates Widget with Transparent widgets option enabled](https://github.com/osmandapp/OsmAnd/issues/22258)
+- [For all inner levels tracks folder use default - Track sorting NAME_ASCENDING](https://github.com/osmandapp/OsmAnd/issues/22256)
+- [OsmAnd does not offer to activate maps](https://github.com/osmandapp/OsmAnd/issues/21302)
+- [Add Temperature units for General settings](https://github.com/osmandapp/OsmAnd-Issues/issues/2792)
 
 
