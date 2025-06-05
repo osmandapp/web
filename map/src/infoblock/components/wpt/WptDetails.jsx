@@ -63,7 +63,6 @@ import WptTagsProvider, {
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
-import * as locales from 'date-fns/locale';
 import { format } from 'date-fns';
 import { getDistance } from '../../../util/Utils';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
@@ -461,8 +460,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     function formatTime(time) {
-        const locale = locales[i18n.language] || locales.enUS;
-        return format(time, 'MMM dd, yyyy – HH:mm', { locale: locale }).replace(',', EMPTY_STRING);
+        return format(time, 'MMM dd, yyyy – HH:mm', { locale: ctx.dateLocale }).replace(',', EMPTY_STRING);
     }
 
     async function getPoiAddress(wpt) {

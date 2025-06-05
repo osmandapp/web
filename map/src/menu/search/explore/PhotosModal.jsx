@@ -11,8 +11,6 @@ import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_clo
 import AppContext from '../../../context/AppContext';
 import { useInView } from 'react-intersection-observer';
 import { format } from 'date-fns';
-import * as locales from 'date-fns/locale';
-import i18n from 'i18next';
 import { getPhotoUrl } from './PhotoGallery';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
@@ -127,12 +125,11 @@ export default function PhotosModal({ photos }) {
 
     const formatDate = (dateStr) => {
         const cleanDateStr = dateStr.startsWith('+') ? dateStr.slice(1) : dateStr;
-        const locale = locales[i18n.language] || locales.enUS;
         const date = new Date(cleanDateStr);
         if (isNaN(date)) {
             return dateStr;
         }
-        return format(date, 'd MMMM yyyy', { locale });
+        return format(date, 'd MMMM yyyy', { locale: ctx.dateLocale });
     };
 
     return (

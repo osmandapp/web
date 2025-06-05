@@ -23,9 +23,7 @@ import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import * as locales from 'date-fns/locale';
 import { format } from 'date-fns';
-import i18n from '../../i18n';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import UnitsMenu from './units/UnitsMenu';
@@ -33,10 +31,9 @@ import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 
-export function getLocalizedTimeUpdate(time) {
-    const locale = locales[i18n.language] || locales.enUS;
+export function getLocalizedTimeUpdate(time, ctx) {
     const currentDate = new Date(time);
-    return format(currentDate, 'MMM d', { locale });
+    return format(currentDate, 'MMM d', { locale: ctx.dateLocale });
 }
 
 export default function SettingsMenu() {
@@ -76,6 +73,15 @@ export default function SettingsMenu() {
                 if (process.env.NODE_ENV === 'development') {
                     console.error(`Could not load web-translation.json for language: ${lng}`);
                 }
+            }
+
+            try {
+                const folder = lng === 'en' ? 'en-US' : lng;
+                const mod = await import(`date-fns/locale/${folder}`);
+                ctx.setDateLocale(mod.default);
+            } catch {
+                const fallback = await import('date-fns/locale/en-US');
+                ctx.setDateLocale(fallback.default);
             }
 
             localStorage.setItem('i18nextLng', lng);

@@ -2,19 +2,21 @@ import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/mate
 import loginStyles from '../login.module.css';
 import styles from '../../frame/components/items/items.module.css';
 import PurchaseStatus from './PurchaseStatus';
-import React from 'react';
+import React, { useContext } from 'react';
 import { ReactComponent as InappIcon } from '../../assets/icons/ic_action_osmand_maps_plus.svg';
-import * as locales from 'date-fns/locale';
-import i18n from 'i18next';
 import { format } from 'date-fns';
 import { useTranslation } from 'react-i18next';
 import { typeMap } from './SubscriptionItem';
+import AppContext from '../../context/AppContext';
 
 export default function InAppItem({ id, onClick, name, purchaseTime }) {
+    const ctx = useContext(AppContext);
+
     const { t } = useTranslation();
 
-    const locale = locales[i18n.language] || locales.enUS;
-    const purchaseDate = purchaseTime ? format(new Date(parseInt(purchaseTime, 10)), 'MMM d, yyyy', { locale }) : 'N/A';
+    const purchaseDate = purchaseTime
+        ? format(new Date(parseInt(purchaseTime, 10)), 'MMM d, yyyy', { locale: ctx.dateLocale })
+        : 'N/A';
 
     return (
         <MenuItem
