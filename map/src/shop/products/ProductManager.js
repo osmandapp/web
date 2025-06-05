@@ -82,9 +82,9 @@ export const purchase = {
             oldPriceDisplay: null,
             newPrice: '14.99',
             display: '€14.99',
-            save: 'Save 36%',
             sku: 'net.osmand.fastspring.subscription.pro.annual',
             fsName: 'osmand-pro-annual',
+            monthlyVersionId: 'osmand-pro',
         },
         {
             id: 'osmand-maps-plus',
