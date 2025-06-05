@@ -41,6 +41,8 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 - Fixed issues:
   - [The languages Serbian latin (Latin for Serbia, Bosnia and Herzegovina and Crna Gora) now work.](https://github.com/osmandapp/OsmAnd/issues/21480)
+  - [Add Downhills / uphills info inside Analyze by intervals](https://github.com/osmandapp/OsmAnd-Issues/issues/2878)
+  - [Resume button does not work as expected](https://github.com/osmandapp/OsmAnd/issues/21842)
 
 
 
