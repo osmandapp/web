@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview
+## Overview {#overview}
 
 The **Ruler tools** in OsmAnd are designed to help you measure distances and understand the [map scale](https://en.wikipedia.org/wiki/Scale_(map)) with precision.
 
@@ -29,7 +29,7 @@ These tools are useful for planning routes, estimating proximity to landmarks, a
 ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_screen.png)
 
 
-## Ruler
+## Ruler {#ruler}
 
 <Tabs groupId="operating-systems">
 
@@ -60,7 +60,7 @@ This tool is helpful when you need a quick understanding of object sizes or dist
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
-## Radius Ruler Widget
+## Radius Ruler Widget {#radius-ruler-widget}
 
 <Tabs groupId="operating-systems">
 
@@ -112,7 +112,7 @@ Use this widget to estimate proximity to points of interest or plan around a def
 </Tabs>
 
 
-## Compass for Radius Ruler
+## Compass for Radius Ruler {#compass-for-radius-ruler}
 
 <Tabs groupId="operating-systems">
 
@@ -147,7 +147,7 @@ This overlay is helpful for outdoor navigation, allowing you to match [map orien
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## Center / Bottom Position
+## Center / Bottom Position {#center--bottom-position}
 
 <Tabs groupId="operating-systems">
 
@@ -174,7 +174,7 @@ To increase the visible radius around your location, you can change the position
 For more information about *the position on the screen*, see the article [Configure Screen](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
-## 3D View
+## 3D View {#3d-view}
 
 <Tabs groupId="operating-systems">
 
@@ -200,7 +200,7 @@ You can switch to **3D view** to better visualize distances and surrounding terr
 The radius circles will appear with depth, which is particularly useful for route planning in hilly areas or urban environments where vertical context matters.
 
 
-## Distance by Tap
+## Distance by Tap {#distance-by-tap}
 
 ![Distance between two random points on the map](@site/static/img/widgets/distance_between_two_random_points.png)
 
@@ -222,7 +222,7 @@ There are two use cases:
 | Units Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
-## Video Guides
+## Video Guides {#video-guides}
 
 Watch these short tutorials to learn how to use the Radius Ruler and related tools in OsmAnd:
 
@@ -243,7 +243,7 @@ Watch these short tutorials to learn how to use the Radius Ruler and related too
 </Tabs>
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Configure Screen](./configure-screen.md)
 - [Map buttons](./map-buttons.md)
