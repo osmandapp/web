@@ -1,0 +1,118 @@
+---
+source-hash: 42031b78e29fbd1911d4dd552afcc77bc2c286dce954d90b69e5940edc79b516
+sidebar_position: 4
+sidebar_label: Дані користувача
+title: Дані користувача на карті
+---
+
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+<InfoIncompleteArticle/>
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+## Огляд {#overview}
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+В Інтернеті користувачі можуть отримувати доступ, керувати та створювати свої особисті дані, такі як Треки та Вибране, безпосередньо в Інтернеті.
+import Translate from '@site/src/components/Translate.js';
+
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+- Треки: Користувачі можуть завантажувати, переглядати, редагувати або створювати нові треки онлайн. Усі зміни автоматично синхронізуються з OsmAnd Cloud, забезпечуючи доступність даних на всіх підключених пристроях.
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+- Вибране: Створюйте та впорядковуйте збережені місця в Інтернеті з автоматичною синхронізацією з вашим додатком OsmAnd для швидкого доступу та навігації.
+
+Інтеграція з OsmAnd Cloud забезпечує безперебійну синхронізацію, дозволяючи користувачам зручно керувати своїми даними з будь-якого пристрою.
+
+## Треки в Інтернеті {#tracks-on-the-web}
+
+Це платна функція <ProFeature/>. Спочатку вам потрібно увійти до свого OsmAnd Pro:
+
+![Вхід до треку](@site/static/img/web/track_loggin.png)
+
+Для розділу Треки:
+
+- Показати треки з [OsmAnd Cloud](#users-tracks-pro).
+- Додавання треків на карту (папка **Видимі на карті**).
+- Перегляд усієї інформації та графіка треків
+- Змінюйте треки та додавайте їх до Хмари.
+- Завантажуйте та видаляйте треки.
+- Створюйте нові папки або видаляйте їх.
+- Завантажуйте папки як колекцію OSF або OBF.
+
+
+### Видимі на карті {#visible-on-the-map}
+
+Тут знаходиться список видимих треків на карті.
+
+_Увімкніть/вимкніть_ треки для відображення або не відображення їх на карті.
+
+![Видимі на карті](@site/static/img/web/visible.png)
+
+
+### Меню папки треків {#track-folder-menu}
+
+Натисніть кнопку *Три точки* **⋮**, щоб відкрити меню *Папка треків*. Тут ви можете завантажити всі треки з обраної папки як:
+
+ - Завантажити як OSF.
+ - Завантажити як колекцію OBF:
+  Ви можете отримати карту OBF з цих даних: [файл OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) або [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+
+    -  [файл OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
+
+  Ви можете завантажити офлайн-карту OBF (OsmAnd Binary Format) і відкрити її за допомогою OsmAnd на пристрої, вона підходить для відображення великої кількості треків, які будуть видимі на карті.
+
+    -  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
+
+  Також ви можете імпортувати карту треків як Travel book, що дозволить вам також вибрати конкретний трек на карті та використовувати його як звичайний GPX. Travel book також підтримує такі функції, як відображення треків як точок, фільтрація треків за типом активності та фільтрація шляхових точок.
+
+- _Перейменувати_ обрану папку.
+- _Видалити_ обрану папку.
+
+![Меню папки треків](@site/static/img/web/collection.png)
+
+
+### Хмарні треки {#cloud-tracks}
+
+Треки GPX, які ви маєте в [OsmAnd Cloud](../personal/osmand-cloud.md), будуть доступні для відображення та редагування після входу. Тільки для **Pro користувачів** <ProFeature/> та для користувачів [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (які можуть завантажувати свої дані навіть після закінчення терміну дії їхньої Pro підписки).
+
+Після вибору хмарного треку доступні такі функції:
+
+- Екрани інформації:
+  - *Інформація* - відображення даних треку.
+  - *Висота* - графік висоти.
+  - *Швидкість* - графік швидкості.
+  - *Нахил* - графік нахилу.
+  - *Налаштування* - список навігаційних профілів для інструменту *Створити маршрут*.  
+
+- Кнопки дій:
+  - *Редагувати трек* - додавання хмарного треку до локального для редагування (кнопка _Редагувати місцевість_ на панелі).
+  - *Завантажити GPX* - завантажує трек на ПК.
+  - *Перерахувати* Висоту (Супутник) - відображає графік висоти обраного треку.
+  - *Видалити трек* - видаляє трек.
+  - *Закрити трек* - закриває трек.
+
+![Редагування хмарного GPX в OsmAnd Web](@site/static/img/web/cloud_track.png)
+
+
+
+## Вибране в Інтернеті {#favorites-on-the-web}
+
+Після реєстрації [**OsmAnd Pro**](../personal/osmand-cloud.md#login) та для [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), ваше Вибране відображається в меню Вибране.  
+Доступні такі дії:
+
+- *Показати на карті* - показати точки вибраного з обраної папки на карті.
+- *Перейменувати* - назва та опис папки вибраного.
+- *Завантажити* - завантажити обрану папку вибраного.
+- *Видалити* - видалити обрану папку вибраного.
+
+![Редагування хмарного Вибраного в OsmAnd Web](@site/static/img/web/favorites.png)
+
+### Додати / Редагувати Вибране {#add--edit-favorite}
+
+[Щоб додати](../personal/favorites.md#edit) нову точку вибраного, клацніть правою кнопкою миші на екрані. Щоб почати редагування, клацніть на точку вибраного, екран меню редагування виглядає так само, як [меню в додатку OsmAnd](../personal/favorites.md#create).  
+
+![Додати Вибране в OsmAnd Web](@site/static/img/web/web_favorites_add.png)
