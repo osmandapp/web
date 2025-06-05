@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly/>
 
-## Overview
+## Overview {#overview}
 
 :::info Paid feature
 The Vehicle Metrics plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
@@ -39,7 +39,7 @@ OBD-II scanners are integral to modern automotive diagnostics. With real-time da
 </Tabs>
 
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 To use data from an OBD-II scanner:
 
@@ -52,7 +52,7 @@ To use data from an OBD-II scanner:
 7. [Use](#trip-recording)the **Trip recording plugin** to record vehicle data.
 
 
-### Pair ODB-II Scanner
+### Pair ODB-II Scanner {#pair-odb-ii-scanner}
 
 |  |  |
 |--|--|
@@ -66,7 +66,7 @@ Connect the scanner to your vehicle’s port and pair it through the app:
 Choose your OBD-II device from the list and establish the connection.
 
 
-## Scanner Settings
+## Scanner Settings {#scanner-settings}
 
 **Android.** Go to: *Menu → Plugins → Vehicle Metrics → OBD → three-dot menu*
 
@@ -80,7 +80,7 @@ Choose your OBD-II device from the list and establish the connection.
 - **Forget**. Removes the previously paired OBD-II sensor from the list, requiring re-pairing if needed later.
 
 
-## Metrics List
+## Metrics List {#metrics-list}
 
 Metrics are categorized for clarity. Advanced diagnostic tools enable preventive maintenance by interpreting these parameters:
 
@@ -111,7 +111,7 @@ Metrics are categorized for clarity. Advanced diagnostic tools enable preventive
   **VIN**. Displays the vehicle's 17-character identification number.
 
 
-## Trip Recording
+## Trip Recording {#trip-recording}
 
 **Android**. Go to: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
 
@@ -121,7 +121,7 @@ Metrics are categorized for clarity. Advanced diagnostic tools enable preventive
 
 To include OBD-II data in a GPX file, you need to select the desired parameters for recording using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings). This allows you to analyze vehicle metrics alongside your trip data.
 
-#### Tags
+#### Tags {#tags}
 
 OsmAnd applies custom tag names for vehicle metrics in the [GPX file](../plugins/trip-recording.md#recorded-gpx-file). For example:
 
@@ -132,7 +132,7 @@ OsmAnd applies custom tag names for vehicle metrics in the [GPX file](../plugins
 These tags make it easier to identify and utilize specific vehicle data when reviewing the recorded GPX file.
 
 
-## Widgets
+## Widgets {#widgets}
 
 **Android.** Go to: *Menu → Configure screen → Widgets → Choose a panel → Vehicle Metrics*
 
@@ -142,7 +142,7 @@ These tags make it easier to identify and utilize specific vehicle data when rev
 
 The [Vehicle Metrics widgets](../widgets/info-widgets.md#vehicle-metrics-widgets) are automatically included when you enable the plugin. If they do not visible, you can manually add them via the [Configure Screen](../widgets/configure-screen.md) menu.
 
-### Widget Settings
+### Widget Settings {#widget-settings}
 
 The widgets display key data from your connected OBD-II device in real time, such as speed, engine metrics, and fuel consumption. Ensure they are visible before starting your trip to track metrics seamlessly.
 
@@ -152,7 +152,7 @@ Some widgets offer display mode options:
 - **Average**. Displays averaged values over a configurable time interval (15 seconds to 60 minutes).
 
 
-## Related articles
+## Related articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 OsmAnd’s voice navigation feature provides real-time spoken instructions and alerts that help you stay informed and safe while on the move. You can tailor the guidance to your preferences and needs. To do so, select a suitable voice profile, either a [Text-to-Speech (TTS) engine](#tts-text-to-speech) that can dynamically announce street names, distances, and speed limits, or a [pre-recorded voice](#recorded-voice-prompts) offering concise instructions.  
 
@@ -31,7 +31,7 @@ With the right combination of voice options, alert settings, and device sound ad
 :::  
 
 
-## Setting Up Voice Prompts
+## Setting Up Voice Prompts {#setting-up-voice-prompts}
 
 OsmAnd provides various options for controlling voice prompts so you can follow your route with convenience. To configure these settings, begin in the appropriate application sections.  
 
@@ -42,7 +42,7 @@ OsmAnd provides various options for controlling voice prompts so you can follow 
 For more information on how and when voice prompts are triggered, consult the [Navigation Voice Prompt Triggering](../../../technical/algorithms/voice-prompt-triggering.md) documentation.  
 
 
-### Voice Settings
+### Voice Settings {#voice-settings}
 
 <Tabs groupId="operating-systems">
 
@@ -105,7 +105,7 @@ For more information on how and when voice prompts are triggered, consult the [N
 - *Pause music*. Voice prompts stop music playback for a while.
 
 
-### Speed Cameras
+### Speed Cameras {#speed-cameras}
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
@@ -114,7 +114,7 @@ For more information on how and when voice prompts are triggered, consult the [N
 In some countries or regions, using speed camera warning applications is illegal. You must make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall** and all data related to speed cameras, such as warnings, notifications, and POIs, will be deleted until you completely reinstall OsmAnd.  
 
 
-### Speed Limit
+### Speed Limit {#speed-limit}
 
 <Tabs groupId="operating-systems">
 
@@ -146,7 +146,7 @@ The **Speed limit** option allows OsmAnd to inform you when your current speed e
 This **Speed limit tolerance** setting affects the speed displayed in the *warning* part of the [Speedometer widget](../../widgets/info-widgets.md#speedometer) in the OsmAnd app, [Android Auto](../../navigation/auto-car.md#speedometer), and [CarPlay](../../navigation/car-play.md#speedometer).
 
 
-### Announcement Time
+### Announcement Time {#announcement-time}
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
 
@@ -155,7 +155,7 @@ The announcement time of the different voice prompts depends on the selected pro
 In the *Time and Distance Intervals* drop-down list, you can view detailed information about the activation of prompts for the different distance multipliers. For more information, see the [Navigation Voice Prompt Triggering](../../../technical/algorithms/voice-prompt-triggering.md).
 
 
-### Voice Guidance Output
+### Voice Guidance Output {#voice-guidance-output}
 
 <InfoAndroidOnly/>
 
@@ -168,7 +168,7 @@ To avoid playing audio in the same output stream at the same time, the audio foc
 - Phone call audio (to interrupt Bluetooth [car stereos](../auto-car.md)).
 
 
-### Testing of Voice Prompts
+### Testing of Voice Prompts {#testing-of-voice-prompts}
 
 You can test the voice prompts with:
 
@@ -179,7 +179,7 @@ You can test the voice prompts with:
     - Select a language and check if the system plays the prompts correctly.
 
 
-### Solving Audio Issues
+### Solving Audio Issues {#solving-audio-issues}
 
 If you are not hearing **voice prompts** or [speed limit warnings](#speed-limit):
 
@@ -192,7 +192,7 @@ If you are not hearing **voice prompts** or [speed limit warnings](#speed-limit)
 For additional troubleshooting steps, refer to the [navigation troubleshooting guide](../../troubleshooting/navigation.md#voice-navigation).
 
 
-## TTS (Text-to-Speech)
+## TTS (Text-to-Speech) {#tts-text-to-speech}
 
 OsmAnd supports **Text-to-Speech (TTS)** voices, which provide dynamic and detailed voice guidance, including turn instructions, street names, and POI announcements. TTS voices are included in the application but require a [Text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) installed on the device.  
 
@@ -237,7 +237,7 @@ For troubleshooting, refer to:
 [Troubleshooting voice navigation](../../troubleshooting/navigation.md#voice-navigation).
 
 
-### Voice Prompt Language
+### Voice Prompt Language {#voice-prompt-language}
 
 <Tabs groupId="operating-systems">
 
@@ -275,7 +275,7 @@ OsmAnd provides two types of voice prompts:
 
 > *TTS is recommended for detailed navigation guidance.*
 
-#### System-Level Voice Prompt Settings
+#### System-Level Voice Prompt Settings {#system-level-voice-prompt-settings}
 
 Voice prompt behavior, including *playback speed, pitch, and pauses*, can be adjusted only in the device’s system settings.
 
@@ -293,7 +293,7 @@ Voice prompt behavior, including *playback speed, pitch, and pauses*, can be adj
 > *For additional voices, download language packs from system settings.*
 
 
-#### Available TTS Languages
+#### Available TTS Languages {#available-tts-languages}
 
 There are currently a total of 45 languages. Not all languages listed below may be supported by every TTS engine. See [here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
@@ -320,9 +320,9 @@ There are currently a total of 45 languages. Not all languages listed below may 
 | **V** | Vietnamese  |
 
 
-## Recorded Voice Prompts
+## Recorded Voice Prompts {#recorded-voice-prompts}
 
-### Download Voice Packages
+### Download Voice Packages {#download-voice-packages}
 
 <InfoAndroidOnly />
 
@@ -340,7 +340,7 @@ Using recorded voices in OsmAnd should be a fallback only. They are rather limit
 
     ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
 
-### Beep Modes
+### Beep Modes {#beep-modes}
 
 <InfoAndroidOnly />
 
@@ -354,7 +354,7 @@ You can configure an OsmAnd profile to beep instead of speaking, in a similar wa
     - A low beep means left turn, while a high beep means right. A series of middle pitched beeps represents the exit to take on a roundabout (traffic circle). All three pitches in sequence represents a U-turn. In all these cases short beeps mean prepare to do something, while long beeps mean do something now.
 
 
-## Text Notifications
+## Text Notifications {#text-notifications}
 
 Once you start a route, you can view the information in the drop-down system menu in the notification list. OsmAnd's silent notifications contain information such as turn-by-turn instructions, turn directions arrows, arrival time and time to go, current speed and distance to destination.  
 
@@ -366,14 +366,14 @@ Active buttons on the Drop-down system menu for your navigation:
 - *<Translate android="true" ids="shared_string_pause"/>*. Allows pausing your navigation.
 - *<Translate android="true" ids="shared_string_resume"/>*. Allows resuming your navigation.  
 
-### Configure Notifications
+### Configure Notifications {#configure-notifications}
 
 You can change the notification settings for the OsmAnd app in the system settings of your device. Notifications can be displayed on the lock screen, the home screen, in the drop-down menu, or at the top of the app.  
 
 Read about how notification control is implemented on Android in this [article](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). For iOS - [here](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
 
 
-## Screen Control
+## Screen Control {#screen-control}
 
 <InfoAndroidOnly/>
 
@@ -383,7 +383,7 @@ Read about how notification control is implemented on Android in this [article](
 
 You can control the screen of your device to save power. This mode has two general settings: *<Translate android="true" ids="screen_timeout"/>* and *<Translate android="true" ids="turn_screen_on"/>*.
 
-### Screen Timeout
+### Screen Timeout {#screen-timeout}
 
 1. **<Translate android="true" ids="system_screen_timeout"/>**. The screen turns off depending on the system settings of your device. The *Change Settings* button provides quick access to the system menu such as *Display and Brightness* where you can adjust the screen timeout.
 
@@ -393,7 +393,7 @@ You can control the screen of your device to save power. This mode has two gener
 
     ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
-### Turn Screen On
+### Turn Screen On {#turn-screen-on}
 
 ![turn screen on Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
@@ -404,7 +404,7 @@ Select screen wake-up options and ensure OsmAnd remains in the foreground when t
 - *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Route parameters](../routing/osmand-routing.md#routing-types)
 - [Route preparation](../setup/route-navigation.md)
@@ -416,7 +416,7 @@ Select screen wake-up options and ensure OsmAnd remains in the foreground when t
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-### Common Issues and Solutions
+### Common Issues and Solutions {#common-issues-and-solutions}
 
 1. Audio Issues. [(check)](#solving-audio-issues)
 2. Testing of Voice Prompts. [(check)](#testing-of-voice-prompts)

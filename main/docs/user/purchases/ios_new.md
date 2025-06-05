@@ -13,5 +13,5 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## Install OsmAnd
+## Install OsmAnd {#install-osmand}
 

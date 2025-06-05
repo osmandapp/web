@@ -15,7 +15,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-## Overview  
+## Overview {#overview}
 
 Your audio and video recordings can be useful in the future, such as memories of where you've been. They are available in the [My Places](../personal/myplaces.md) menu and are visible when the Audio/Video Notes plugin is enabled.
 
@@ -34,7 +34,7 @@ All created audio and video notes compose the Record layer. When enabled on the 
 </Tabs>
 
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 The audio/video notes are provided with the Audio/video notes plugin, and require the following setup:
 
@@ -43,7 +43,7 @@ The audio/video notes are provided with the Audio/video notes plugin, and requir
 3. Customize the [recording settings](#plugin-settings) for each profile, if necessary.  
 
 
-## Plugin Settings
+## Plugin Settings {#plugin-settings}
 
 <Tabs groupId="operating-systems">
 
@@ -77,7 +77,7 @@ For each profile, you can configure the *audio and video recording options*.
 | **<Translate android="true" ids="copy_from_other_profile"/>** | Opens a dialog to select a profile to copy the Audio/video note recording configuration from, and establish it for the current profile. |
 
 
-## Manage a Single Note
+## Manage a Single Note {#manage-a-single-note}
 
 You can manage your information, thoughts, ideas, etc. tied to a geographical place, as follows:
 
@@ -91,7 +91,7 @@ You can manage your information, thoughts, ideas, etc. tied to a geographical pl
 - Export to [JOSM](https://josm.openstreetmap.de/).
 
 
-### Create
+### Create {#create}
 
 You can create a photo, video, and audio note in any of the following ways:
 
@@ -99,7 +99,7 @@ You can create a photo, video, and audio note in any of the following ways:
 - With the [Context menu](../map/map-context-menu.md#-record-av-note-android) of a point on the map. If the note should be tied to the selected point on the map.
 
 
-#### 1. Create and Tie to your Current Position
+#### 1. Create and Tie to your Current Position {#1-create-and-tie-to-your-current-position}
 
 <Tabs groupId="operating-systems">
 
@@ -116,7 +116,7 @@ The <Translate android="true" ids="map_widget_av_notes"/> widget is used to crea
 The functions provided by the <Translate android="true" ids="map_widget_av_notes"/> widget depend on how it is configured in the [Configure screen](../widgets/info-widgets.md#-audio-video-notes-widget-android) menu. The widget either immediately opens the camera to make a note, according to the established settings, or asks first what format to create a note in and then opens the respective recorder dialog.
 
 
-#### 2. Create and Tie to Selected Geolocation
+#### 2. Create and Tie to Selected Geolocation {#2-create-and-tie-to-selected-geolocation}
 
 <Tabs groupId="operating-systems">
 
@@ -140,7 +140,7 @@ To create a note tied to a selected point on the map, use the [Context menu](../
 3. Depending on the selected format of the note, the respective recorder dialog opens.
 
 
-#### Recorder Dialog
+#### Recorder Dialog {#recorder-dialog}
 
 <Tabs groupId="operating-systems">
 
@@ -165,7 +165,7 @@ Automatically, all photo, audio, and video records are saved to: <Translate andr
 :::
 
 
-### View in My Places
+### View in My Places {#view-in-my-places}
 
 <Tabs groupId="operating-systems">
 
@@ -182,7 +182,7 @@ Automatically, all photo, audio, and video records are saved to: <Translate andr
 [My Places](../personal/myplaces.md) is a central repository for all your notes. It allows you to view all your notes in a sorted list, display a specific note on a map, and manage your entire list of notes.
 
 
-### Show on the Map
+### Show on the Map {#show-on-the-map}
 
 <Tabs groupId="operating-systems">
 
@@ -197,7 +197,7 @@ Automatically, all photo, audio, and video records are saved to: <Translate andr
 To show a specific note on the map, use the list of notes in My Places, find the needed one, and tap it. As a result, the map shows up, highlights the location of the note, and opens the [Context menu](../plugins/audio-video-notes.md#actions-in-map-context-menu). It is possible to work with the note by selecting the options in the context menu.
 
 
-### Play
+### Play {#play}
 
 <Tabs groupId="operating-systems">
 
@@ -218,7 +218,7 @@ To play a note, use the respective option in the [Context menu](../map/map-conte
 The [Details](../map/map-context-menu#-audiovideo-note-android) section provides more data about the notes, such as latitude and longitude, the date and time of the note, and photos.
 
 
-### Rename, Delete, Share
+### Rename, Delete, Share {#rename-delete-share}
 
 <Tabs groupId="operating-systems">
 
@@ -239,7 +239,7 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 - **<Translate android="true" ids="shared_string_delete"/>**. Removes notes permanently from the application.
 
 
-## Recording Widget
+## Recording Widget {#recording-widget}
 
 <Tabs groupId="operating-systems">
 
@@ -275,9 +275,9 @@ Adding a widget to the screen is necessary if you prefer to avoid searching for 
     ![The widget](@site/static/img/plugins/audio-video-notes/widget.png)  
 
 
-## Manage Multiple Notes
+## Manage Multiple Notes {#manage-multiple-notes}
 
-### Manage in My Places
+### Manage in My Places {#manage-in-my-places}
 
 <Tabs groupId="operating-systems">
 
@@ -292,7 +292,7 @@ Adding a widget to the screen is necessary if you prefer to avoid searching for 
 The options on the bottom bar can be used to manage the list of notes in [My Places](../personal/myplaces.md#audiovideo-notes) menu.
 
 
-### Share with GPX Waypoints
+### Share with GPX Waypoints {#share-with-gpx-waypoints}
 
 <Tabs groupId="operating-systems">
 
@@ -312,7 +312,7 @@ Each note contains the time it was created, the amount of data, and if it is a r
 Supported file formats: audio - **3gp**, video - **mp4**, photo -**jpg**.
 
 
-### Show All on the Map
+### Show All on the Map {#show-all-on-the-map}
 
 <Tabs groupId="operating-systems">
 
@@ -333,7 +333,7 @@ Use the [Recording](../map/point-layers-on-map#-audio--video-points-android) map
 ![No notes on the map](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notes are on the map](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
-## Waypoints Created from Notes
+## Waypoints Created from Notes {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems">
 
@@ -353,7 +353,7 @@ If a track is exported, the waypoints cannot be viewed, or played, because audio
 :::
 
 
-### Create Waypoints
+### Create Waypoints {#create-waypoints}
 
 <Tabs groupId="operating-systems">
 
@@ -383,7 +383,7 @@ You can specify names for each waypoint created manually.
 :::
 
 
-### View Waypoints
+### View Waypoints {#view-waypoints}
 
 - A waypoint is available for viewing as a waypoint on the map and in the list of [waypoints of a specific track](../map/tracks/track-context-menu.md#points--waypoints). Deleting the waypoint does not delete the respective audio/video/photo note.
 
@@ -401,32 +401,32 @@ You can specify names for each waypoint created manually.
 | None | Neither Tracks, not Recording layer. |
 
 
-### GPX File with Waypoints
+### GPX File with Waypoints {#gpx-file-with-waypoints}
 
 ![Waypoint in a GPX file](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)  
 
 If viewing the GPX file of the track added with a waypoint from an audio/video/photo note, the waypoint will be like in the example below, having the coordinates, the timestamp, the name of the respective note, and the short link.
 
 
-## Miscellaneous
+## Miscellaneous {#miscellaneous}
 
-### File Name Details
+### File Name Details {#file-name-details}
 
 The <Translate android="true" ids="audionotes_plugin_name"/> plugin generates audio/video/photo files in the following format:
 
-    {SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}
+    `{SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}`
 
 where `SHORTLINK_LOCATION` specifies the latitude and longitude of the location to which the file is bound. The `SHORTLINK_LOCATION` is encoded, according to the specification of the [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
-### Export to JOSM
+### Export to JOSM {#export-to-josm}
 
 ![Audio video notes in Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)  
 
 To view everything later, you can export the track along with all the media files and view them in the [JOSM editor](https://josm.openstreetmap.de/). Note that the media files must be placed in the appropriate folder. You can find out which one by clicking on the video. A notification will appear showing that there is no file available, place the correct file in the specified folder.  
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)

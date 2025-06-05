@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Overview
+## Overview {#overview}
 
 Car-based routing is designed to help drivers navigate the roads efficiently, safely, and comfortably, by providing customized directions tailored to each driver's unique needs and preferences. Proper routing settings can help drivers save time and fuel, and avoid hazards on the road. The fastest routing is offered by default.
 
@@ -24,7 +24,7 @@ The routing mechanism for motorized ground vehicles differs only in a few settin
 Routing can be configured according to your needs in the [Route parameters section](../../navigation/guidance/navigation-settings.md#route-parameters) of the Navigation settings of the corresponding profile (*Driving, Truck, Motorcycle*).  
 
 
-## Route Parameters - Car
+## Route Parameters - Car {#route-parameters---car}
 
 Car routing is designed to help drivers find the most efficient and direct routes to their destinations. It takes into account common driving restrictions, such as one-way streets, ban on turns, pedestrian zones, and also helps avoid roads that are not suitable for cars, such as narrow roads or roads with weight limitations.  
 
@@ -54,10 +54,10 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 | *<Translate android="true" ids="prefer_in_routing_title"/>* |  <Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_description"/> | For car routing it is assumed, that the surface of roads is [paved](https://wiki.openstreetmap.org/wiki/Key:surface), unless otherwise specified. |
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Private access restrictions will be ignored when route calculating.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* is used in OSM to describe restrictions on the use of highways and other transportation routes, as well as buildings, entrances, amenities, and leisure entities.   |
 | *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (only&nbsp;car) |  <details><summary> Roads, that are closed for goods delivery, will be avoided. </summary>![Goods delivery Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| This option applies only to vehicles carrying goods, that weigh no more than 3.5 tonnes. If your vehicle weight is more than 3.5 tonnes, you should use the [Truck profile](#route-parameters---truck).   |
-| *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | To calculate fuel-efficient routing engine limits speed internallyto 60 kmh, it doesn't change Estimated Time of Arrival though. So in case of 2 same start-end routes motorway (120 kmh) and minor (60 kmh) - shorter route will be selected. For the service roads that has speed limit <60 kmh, faster route will be selected. |
+| *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | To calculate fuel-efficient routing engine limits speed internallyto 60 kmh, it doesn't change Estimated Time of Arrival though. So in case of 2 same start-end routes motorway (120 kmh) and minor (60 kmh) - shorter route will be selected. For the service roads that has speed limit &lt;60 kmh, faster route will be selected. |
 
 
-## Route Parameters - Truck
+## Route Parameters - Truck {#route-parameters---truck}
 
 :::note
 By default, *Tuck profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -91,7 +91,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 | *<Translate android="true" ids="dangerous_goods"/>* (only if **USA region** is selected) | <details><summary> Hazardous materials transportation rules in the USA differ from the EU. Displayed only if the Driving Region is set to US. You can select multiple classes. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/routing_truck_dangerous_goods_andr.png) </details> | Select one of the types (from 1 to 9) of dangerous materials according to the [**USA restrictions**](https://www.iafc.org/topics-and-tools/hazmat/fusion-center/transportation-commodities/dot-hazard-classification-system). Transportation of hazardous materials is forbidden on some roads and tunnels. <ul><li>1. *Explosives* </li><li> 2. *Gases* </li><li> 3. *Flammable Liquids* </li><li> 4. *Flammable Solids* </li><li> 5. *Oxidizing Agents and Organic Peroxides* </li><li> 6. *Toxic and Infectious Substances* </li><li> 7. *Radioactive Substances* </li><li> 8. *Corrosive Substances* </li><li> 9. *Miscellaneous* </li></ul> |
 
 
-## Route Parameters - Motorcycle
+## Route Parameters - Motorcycle {#route-parameters---motorcycle}
 
 :::note
 By default, *Motorcycle profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -100,7 +100,7 @@ By default, *Motorcycle profile* is deactivated. To use this profile for routing
 Motorcycle routing is the process of creating a route specifically optimized for motorcycle travel. This type of routing takes into account the unique needs and preferences of motorcyclists, providing the best possible riding conditions. Routes are laid out taking into account a number of parameters such as choice of road surface ( for example, poor road conditions can be preferred or avoided), avoidance of traffic jams, accessibility of infrastructure or safety.
 
 
-## Other Routing Settings
+## Other Routing Settings {#other-routing-settings}
 
 - The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 

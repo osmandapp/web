@@ -12,12 +12,12 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## Overview
+## Overview {#overview}
 
 The map can display points such as [Favorites](#favorites), [Points of Interest](#points-of-interest-pois), [Markers](#markers), [Wikipedia](#-wikipedia), [Search results](#search-results-poi), [Audio and Video notes](#-audio--video-points-android), and [OSM editing](#-osm-edit-points).
 
 
-## Favorites
+## Favorites {#favorites}
 
 <Tabs groupId="operating-systems">
 
@@ -46,7 +46,7 @@ In the Android version of OsmAnd, you can display only certain group favorites o
 :::
 
 
-## Favorite and POI Names
+## Favorite and POI Names {#favorite-and-poi-names}
 
 <Tabs groupId="operating-systems">
 
@@ -71,7 +71,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,layer_amenit
 By default, Favorites and points of interest (POI) are displayed without names, so as not to clutter up the map with text. You can enable names in the Configure map menu.  
 
 
-## Points of Interest (POIs)
+## Points of Interest (POIs) {#points-of-interest-pois}
 
 Enable or disable points of interest of **selected** type on the map:
 
@@ -83,7 +83,7 @@ Enable or disable points of interest of **selected** type on the map:
 [Points of interest (POIs)](https://wiki.openstreetmap.org/wiki/Points_of_interest) are specific points highlighted with an icon on the map. They represent interesting or useful places and objects and are a part of [Vector Maps](../map/vector-maps.md). The most notable POIs are displayed on the map automatically. However, you can select a specific type of POIs (i.e. Restaurants) and they all will be highlighted on the map within an **orange circle** (from Zoom level 9). You can find detailed information about the point of interest in the [Context menu](../map/map-context-menu.md) that appears on a [short tap](../map/map-context-menu.md#select-an-object-short-tap) on the point.  
 
 
-### POI Types
+### POI Types {#poi-types}
 
 ![Single POI Selection](@site/static/img/map/single_selection_android.png) ![Multiple POI Selection](@site/static/img/map/multiple_selection_android.png)
 
@@ -92,7 +92,7 @@ You can select one or many from standard OsmAnd POI types, or make your own [POI
 **Android**. Tap the lower left button to switch between selecting one or more points of interest.
 
 
-### Map Style POI
+### Map Style POI {#map-style-poi}
 
 Hide POI from map style:
 
@@ -106,7 +106,7 @@ Each POI type in OsmAnd assigned a specific icon and color. POI's [zoom level](.
 [Read more](../map/vector-maps.md#hide).
 
 
-## Markers
+## Markers {#markers}
 
 Follow the path to the available markers and their settings:
 
@@ -120,7 +120,7 @@ Follow the path to the available markers and their settings:
 You can read more about markers appearance in this [article](../personal/markers#appearance-on-the-map).
 
 
-## Track Waypoints
+## Track Waypoints {#track-waypoints}
 
 ![Track on map](@site/static/img/map/track_point_on_map.png)
 
@@ -129,7 +129,7 @@ Track points (waypoints) are part of Track (GPX) files. These points are display
 [Read more](../map/tracks/index.md) about tracks on the map.
 
 
-## Search Results (POI)
+## Search Results (POI) {#search-results-poi}
 
 ![POI search](@site/static/img/map/poi_search.png) ![POI search result](@site/static/img/map/poi_search_result.png)
 
@@ -140,7 +140,7 @@ To switch off POIs, hit **X** in the top right corner.
 Read more about [search](../search/index.md).
 
 
-## * Street-Level Imagery
+## * Street-Level Imagery {#-street-level-imagery}
 
 Enable or disable Street-level imagery on the map:
 
@@ -154,7 +154,7 @@ Enable or disable Street-level imagery on the map:
 Requires [Mapillary plugin](../plugins/mapillary.md).
 
 
-## * Parking Point
+## * Parking Point {#-parking-point}
 
 ![Limited parking](@site/static/img/map/context_menu_limited_parking.png) ![Unlimited parking](@site/static/img/map/context_menu_unlimited_parking.png)
 
@@ -163,7 +163,7 @@ A [Parking point](../plugins/parking.md) is a point marked by users on the map t
 Requires [Parking position plugin](../plugins/parking.md).
 
 
-## * Wikipedia
+## * Wikipedia {#-wikipedia}
 
 Enable or disable Wikipedia articles on the map and filter by language:
 
@@ -177,7 +177,7 @@ OsmAnd has special Points of Interest indicated with the “W” logo and Wikipe
 [Read more](../plugins/wikipedia.md) how to download and use the Wikipedia feature in OsmAnd.
 
 
-## * Audio / Video Points (Android)
+## * Audio / Video Points (Android) {#-audio--video-points-android}
 
 Enable or disable recording points on the map:
 
@@ -190,7 +190,7 @@ Audio / Video notes are points with audio, photo, and video data on the map crea
 Requires [Audio / Video note plugin](../plugins/audio-video-notes.md).
 
 
-## * OSM Edit Points
+## * OSM Edit Points {#-osm-edit-points}
 
 Enable or disable OSM edits on the map:
 
@@ -204,7 +204,7 @@ OSM edit points are users' made POI for adding it for [OpenStreetMap project](ht
 Requires [OSM Editing plugin](../plugins/osm-editing.md).
 
 
-## * OSM Notes
+## * OSM Notes {#-osm-notes}
 
 Enable or disable OSM notes on the map:
 
@@ -218,7 +218,7 @@ OSM note points are users' made POI for reporting issues about map data in [Open
 Requires [OSM Editing plugin](../plugins/osm-editing.md#how-to-report-a-mistake).
 
 
-## Points Along the Route
+## Points Along the Route {#points-along-the-route}
 
 Waypoints, POIs, Favorite points, and Audio/video notes all refer to the concept of saving locations and routes in [GPX (GPS Exchange Format)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). You can use [the same tags](../map/tracks/track-context-menu.md#display-custom-gpx-tags) to describe and edit them.  
 
@@ -233,7 +233,7 @@ Waypoints, POIs, Favorite points, and Audio/video notes all refer to the concept
 All of these point types can be saved in GPX format to provide you with location information and help with navigation and route planning. They serve different purposes, but the general idea is to store and transmit geographic information so you can use it in their navigation tasks.
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Configure map menu](../map/configure-map-menu.md)
 - [Vector maps (Map styles)](./vector-maps.md)

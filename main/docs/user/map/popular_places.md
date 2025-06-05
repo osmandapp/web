@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-## Overview
+## Overview {#overview}
 
 The **Popular Places** feature in OsmAnd highlights notable landmarks and attractions using open structured data from [Wikidata](https://www.wikidata.org) and [Wikipedia](https://www.wikipedia.org/). It helps users explore well-known destinations with multilingual descriptions and photos.
 
@@ -50,7 +50,23 @@ You can view the Wikidata link directly in the [Map Context Menu](../map/map-con
 Learn how to find a Wikidata ID: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
-## How to Use
+</TabItem>
+
+</Tabs>
+
+
+### Data Sources {#data-sources}
+
+**Popular Places** are based on structured content from [Wikidata](https://www.wikidata.org) and [Wikipedia](https://www.wikipedia.org/).
+
+Only POIs with a linked **Wikidata ID** are displayed. These IDs connect map objects to verified names, descriptions, and images.
+
+You can view the Wikidata link directly in the [Map Context Menu](../map/map-context-menu.md). Tapping the Wikidata tag opens the full object page on the Wikidata website.
+
+Learn how to find a Wikidata ID: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
+
+
+## How to Use {#how-to-use}
 
 <InfoAndroidOnly/>
 
@@ -71,7 +87,7 @@ There are two main ways to access this feature:
 You can switch between **online** and **offline** Wikipedia sources in the overlay settings. Learn more in [Enable Layer](#enable-layer).
 
 
-## Explore in Search
+## Explore in Search {#explore-in-search}
 
 <InfoAndroidOnly/>
 
@@ -81,7 +97,8 @@ You can switch between **online** and **offline** Wikipedia sources in the overl
 
 Go to: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
+![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png)  
+![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
 
 </TabItem>
 
@@ -105,7 +122,7 @@ To use it **offline**, you need a [Maps+ or OsmAnd Pro](../purchases/android.md)
 :::
 
 
-## Enable Layer
+## Enable Layer {#enable-layer}
 
 <InfoAndroidOnly/>
 
@@ -145,7 +162,7 @@ Once enabled, the following options become available:
 Tapping a POI on the map opens the [POI context menu](./map-context-menu.md), where you can view [online photos](#online-photos) and access linked [Wikipedia articles](../plugins/wikipedia.md).
 
 
-## Online Photos
+## Online Photos {#online-photos}
 
 <Tabs groupId="operating-systems">
 
@@ -170,7 +187,7 @@ This is a section within the [POI context menu](./map-context-menu.md) that disp
 Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
 
 
-<!--
+<!-- 
 
 When you tap a Popular Place on the map or from the list, the [POI context menu](./map-context-menu.md) includes an **Online Photos** section with a horizontal preview of images.
 
@@ -181,7 +198,7 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 -->
 
-### Actions
+### Actions {#actions}
 
 In the Map Context menu How to access:
 
@@ -191,7 +208,7 @@ In the Map Context menu How to access:
   **Share**, **Details**, **Open in browser**, and **Download**.
 
 
-### Gallery
+### Gallery {#gallery}
 
 <Tabs groupId="operating-systems">
 

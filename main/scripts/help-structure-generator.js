@@ -5,35 +5,84 @@ module.exports = OsmAndHelpStructureGenerator;
 const BASE_URL = "/docs/"; // relative or absolute URL to include into JSON articles
 
 const DOC_PATH = "./docs/"; // path to docs files when yarn build started
-const JSON_OUTPUT_FILE = "./build/help-structure.json"; // JSON file with the Help Structure
-const BUILD_DIR_READY_TRIGGER = "./build/assets"; // trigger file/dir that indicates that build dir is ready
+const JSON_OUTPUT_FILE = "./static/help-structure.json"; // JSON file with the Help Structure
 
 // repository-maintained files with help links
 const IOS_LINKS_JSON = "./static/help-links-ios.json";
 const ANDROID_LINKS_JSON = "./static/help-links-android.json";
 
+/**
+ * Helper function to recursively filter sidebar items.
+ * - Removes 'doc' items if their ID is in unlistedDocIds.
+ * - Recursively filters items for 'category' type.
+ * - Prunes categories that become empty AND ( (do not have a link) OR (their link is to an unlisted doc) ).
+ * @param {Array<Object>} itemsToFilter - The array of sidebar items to filter.
+ * @param {Set<string>} unlistedDocIds - A Set of document IDs that are unlisted.
+ * @returns {Array<Object>} The filtered array of sidebar items.
+ */
+function filterUnlistedSidebarItems(itemsToFilter, unlistedDocIds) {
+  if (!itemsToFilter) {
+    return [];
+  }
+  return itemsToFilter
+    .map(item => {
+      if (item.type === 'doc' && unlistedDocIds.has(item.id)) {
+        return null; // Mark doc for removal
+      }
+
+      if (item.type === 'category') {
+        const newSubItems = filterUnlistedSidebarItems(item.items, unlistedDocIds);
+
+        // Prune category if it becomes empty of children AND
+        // (it has no link OR its link is to an unlisted doc)
+        if (newSubItems.length === 0) {
+          if (!item.link || (item.link.type === 'doc' && unlistedDocIds.has(item.link.id))) {
+            return null; // Prune category
+          }
+        }
+
+        // If it has listed children, keep it.
+        return { ...item, items: newSubItems };
+      }
+      return item;
+    })
+    .filter(Boolean);
+}
+
 async function OsmAndHelpStructureGenerator(props) {
+  let isTranslatedDocs = false;
+  const unlistedDocIds = new Set();
   const items = await props.defaultSidebarItemsGenerator(props);
 
+  if (props.docs) {
+    props.docs.forEach(doc => {
+      if (doc.source && doc.source.includes('/i18n/')) {
+        isTranslatedDocs = true;
+      }
+      if (doc.frontMatter && doc.frontMatter.unlisted === true) {
+        unlistedDocIds.add(doc.id);
+      }
+    });
+  }
+
+  if (isTranslatedDocs) {
+    return items; // avoid translated help-structure.json
+  }
+
   const articles = [];
-  traverseItems(articles, items);
-  flushArticlesIntoBuildDir(articles);
+  const filteredItems = filterUnlistedSidebarItems(items, unlistedDocIds);
+  traverseItems(articles, filteredItems);
+  flushArticlesIntoStaticDir(articles);
   // articles.forEach((i) => console.log(i)); // debug
 
   return items;
 }
 
-// Docusaurus cleanups the ./build dir instantly after this module called.
-// That is the reason why flushing JSON file into ./build/ immediately is a wrong way.
-// Docusaurus does not have API to connect custom sidebar generator with the later-on build process.
-// As a result, cycle of setTimeout() is used to wait for "trigger" file in the build dir to assure that build is started.
-function flushArticlesIntoBuildDir(articles) {
+function flushArticlesIntoStaticDir(articles) {
   const prettyJSON = (smth) => JSON.stringify(smth, null, 2);
 
   const ios = JSON.parse(fs.readFileSync(IOS_LINKS_JSON, { encoding: "utf8" }));
-  const android = JSON.parse(
-    fs.readFileSync(ANDROID_LINKS_JSON, { encoding: "utf8" })
-  );
+  const android = JSON.parse(fs.readFileSync(ANDROID_LINKS_JSON, { encoding: "utf8" }));
 
   const helpStructure = {
     articles,
@@ -41,16 +90,7 @@ function flushArticlesIntoBuildDir(articles) {
     ios,
   };
 
-  function flush() {
-    if (fs.existsSync(BUILD_DIR_READY_TRIGGER)) {
-      fs.writeFileSync(JSON_OUTPUT_FILE, prettyJSON(helpStructure), {
-        encoding: "utf8",
-      });
-      return;
-    }
-    setTimeout(flush, 1000);
-  }
-  setTimeout(flush, 1000);
+  fs.writeFileSync(JSON_OUTPUT_FILE, prettyJSON(helpStructure), { encoding: "utf8" });
 }
 
 // traverse items array

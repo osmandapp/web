@@ -12,7 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-## Overview
+## Overview {#overview}
 
 The **Parking Position** plugin helps you save and manage the location where you parked your car. It allows you to place a marker on the map, track the parking duration, and optionally set a calendar reminder for when your parking time ends.
 
@@ -42,7 +42,7 @@ The marker is temporary and easy to remove once no longer needed.
 </Tabs>
 
 
-## Required Setup Parameters
+## Required Setup Parameters {#required-setup-parameters}
 
 To use a parking spot on the map, you need to make the following settings:
 
@@ -51,12 +51,12 @@ To use a parking spot on the map, you need to make the following settings:
 3. (Optional) Add the [Parking widget](#parking-widget) to the screen for quicker access.  
 
 
-## Parking Spot on the Map
+## Parking Spot on the Map {#parking-spot-on-the-map}
 
 When you mark a parking spot, OsmAnd saves its geographic coordinates along with a timestamp. If needed, a time limit and calendar reminder can also be added.
 
 
-### Set a Spot
+### Set a Spot {#set-a-spot}
 
 To set a Parking spot on the map, zoom-in to the required level, then long tap the place on the map and in the [Context menu](../map/map-context-menu.md) that opens, do the settings.
 
@@ -90,7 +90,7 @@ The start time is always set automatically. If you need to change the end time, 
 :::
 
 
-### Stay Informed
+### Stay Informed {#stay-informed}
 
 <Tabs groupId="operating-systems">
 
@@ -124,7 +124,7 @@ Additional details are shown when tapping the parking marker:
 - If you enabled the calendar reminder, it will appear in your device’s calendar app.
 
 
-### Navigating to a Waypoint
+### Navigating to a Waypoint {#navigating-to-a-waypoint}
 
 <Tabs groupId="operating-systems">
 
@@ -157,7 +157,7 @@ You can use the parking spot as a navigation target to easily return to your veh
   3. Select **Navigation** and choose the profile you want to use.
 
 
-### Remove a Spot
+### Remove a Spot {#remove-a-spot}
 
 <Tabs groupId="operating-systems">
 
@@ -186,7 +186,7 @@ To delete a parking marker:
 If a calendar reminder was set, it will also be removed automatically.
 
 
-## Parking Widget
+## Parking Widget {#parking-widget}
 
 <Tabs groupId="operating-systems">
 
@@ -216,7 +216,7 @@ The [Parking widget](../widgets/info-widgets.md#parking-widget) shows the distan
 To learn more, see: [Informational Widgets – Parking Widget](https://osmand.net/docs/user/widgets/info-widgets#parking-widget)
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)
