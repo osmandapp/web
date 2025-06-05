@@ -16,19 +16,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+<InfoAndroidOnly/>
+
 ## Overview
 
 :::info Paid feature
 The Vehicle Metrics plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
 :::
 
-<InfoAndroidOnly/>
-
 The **Vehicle Metrics plugin** enables real-time vehicle data monitoring via the OBD-II protocol. Users can track essential metrics such as engine performance, fuel efficiency, and speed, allowing for proactive vehicle maintenance and troubleshooting.  
 
 OBD-II scanners are integral to modern automotive diagnostics. With real-time data streaming, users gain instantaneous insights into vehicle systems, facilitating preventive maintenance and reducing repair costs. These tools are vital for both personal use and professional automotive services.
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![OBD settings](@site/static/img/plugins/obd/obd_overview_2.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ## Required Setup Parameters
@@ -60,7 +68,7 @@ Choose your OBD-II device from the list and establish the connection.
 
 ## Scanner Settings
 
-*Menu → Plugins → Vehicle Metrics → OBD → three-dot menu*
+**Android.** Go to: *Menu → Plugins → Vehicle Metrics → OBD → three-dot menu*
 
 |  |  |
 |--|--|
@@ -105,7 +113,7 @@ Metrics are categorized for clarity. Advanced diagnostic tools enable preventive
 
 ## Trip Recording
 
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
+**Android**. Go to: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
 
 | | |
 |--|--|
@@ -126,7 +134,7 @@ These tags make it easier to identify and utilize specific vehicle data when rev
 
 ## Widgets
 
-*Menu → Configure screen → Widgets → Choose a panel → Vehicle Metrics*
+**Android.** Go to: *Menu → Configure screen → Widgets → Choose a panel → Vehicle Metrics*
 
 | | |
 |--|--|

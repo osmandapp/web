@@ -46,7 +46,15 @@ AIS operates on *VHF frequencies* (161.975 MHz and 162.025 MHz) and has a limite
 
 ***AIS display on the map:***
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![AIS vessel tracker](@site/static/img/plugins/ais/ais.png)
+
+</TabItem>
+
+</Tabs>
 
 When correctly set up, vessel positions will appear on the map. Key features:
 
@@ -57,7 +65,16 @@ When correctly set up, vessel positions will appear on the map. Key features:
 
 ### AIS Vessel Information
 
-![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png) ![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png)  
+![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
+
+</TabItem>
+
+</Tabs>
 
 AIS vessels transmit three types of data:
 
@@ -132,9 +149,17 @@ AIS vessels transmit three types of data:
 
 ## Plugin Settings
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
 ![AIS settings](@site/static/img/plugins/ais/ais_settings_2.png)  
+
+</TabItem>
+
+</Tabs>
 
 The *AIS vessel tracker* plugin offers various settings to personalize navigation and interaction for users with disabilities. These settings are applied for all [profiles](../personal/profiles.md) in OsmAnd.
 
