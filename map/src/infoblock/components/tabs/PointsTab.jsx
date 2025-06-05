@@ -16,13 +16,11 @@ import AppContext from '../../../context/AppContext';
 import TracksManager from '../../../manager/track/TracksManager';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
 import PointManager from '../../../manager/PointManager';
-import contextMenuStyles from '../../styles/ContextMenuStyles';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import _ from 'lodash';
 
 const PointsTab = ({ width }) => {
     const ctx = useContext(AppContext);
-    const styles = contextMenuStyles();
 
     const [loading, setLoading] = useState(false);
     const [openPointAlert, setOpenPointAlert] = useState(true);
@@ -140,7 +138,17 @@ const PointsTab = ({ width }) => {
                     </Alert>
                 )}
             {ctx.createTrack && ctx.selectedGpxFile?.points?.length > 0 && (
-                <Button variant="contained" className={styles.button} onClick={deleteAllPoints}>
+                <Button
+                    variant="contained"
+                    onClick={deleteAllPoints}
+                    sx={{
+                        backgroundColor: '#fbc73a',
+                        fontSize: '12px',
+                        minWidth: '20px',
+                        padding: '3px 5px',
+                        marginLeft: '5px',
+                    }}
+                >
                     Clear points
                 </Button>
             )}

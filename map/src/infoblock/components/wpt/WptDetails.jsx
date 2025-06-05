@@ -11,7 +11,7 @@ import {
     ListItemText,
     MenuItem,
     Toolbar,
-    Tooltip,
+    Dialog,
     Typography,
 } from '@mui/material';
 import styles from '../../infoblock.module.css';
@@ -62,7 +62,6 @@ import WptTagsProvider, {
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
-import i18n from 'i18next';
 import { format } from 'date-fns';
 import { getDistance } from '../../../util/Utils';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
@@ -73,7 +72,6 @@ import Loading from '../../../menu/errors/Loading';
 import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
-import { Dialog } from '@material-ui/core';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';

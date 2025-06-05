@@ -9,7 +9,6 @@ import TracksManager, {
 } from '../../../manager/track/TracksManager';
 import _ from 'lodash';
 import { Checkbox, Divider, FormControlLabel } from '@mui/material';
-import { makeStyles } from '@material-ui/core/styles';
 import { seleniumUpdateActivity } from '../../../util/Utils';
 import {
     checkShowData,
@@ -34,15 +33,6 @@ import {
     WINTER_ROAD,
 } from '../../../manager/GraphManager';
 import { convertMeters, LARGE_UNIT } from '../../../menu/settings/units/UnitsConverter';
-
-const useStyles = makeStyles({
-    checkbox: {
-        '& .MuiTypography-root': {
-            fontSize: '12',
-        },
-        transform: 'scale(0.8)',
-    },
-});
 
 export const getGraphData = ({
     trackData = null,
@@ -130,7 +120,6 @@ export const getGraphData = ({
 
 const GpxGraphProvider = ({ width }) => {
     const ctx = useContext(AppContext);
-    const classes = useStyles();
 
     const [data, setData] = useState(null);
     const [showData, setShowData] = useState(null);
@@ -279,7 +268,6 @@ const GpxGraphProvider = ({ width }) => {
                 {showData &&
                     Object.entries(showData).map(([key, value]) => (
                         <FormControlLabel
-                            className={classes.checkbox}
                             key={key}
                             label={key === ELEVATION_SRTM ? 'Elevation (Satellite)' : key}
                             control={
@@ -293,7 +281,11 @@ const GpxGraphProvider = ({ width }) => {
                                     }}
                                 />
                             }
-                        ></FormControlLabel>
+                            sx={{
+                                '& .MuiFormControlLabel-label': { fontSize: '12px' },
+                                transform: 'scale(0.8)',
+                            }}
+                        />
                     ))}
             </div>
             {mainGraphData && showData && hasData() && (

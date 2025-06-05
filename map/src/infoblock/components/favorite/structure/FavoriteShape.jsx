@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { Box, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
-import favoriteEditMenuStyles from '../../../styles/FavoriteEditMenuStyles';
 import FavoritesManager from '../../../../manager/FavoritesManager';
 
 export default function FavoriteShape({ color, favoriteShape, setFavoriteShape, defaultBackground }) {
-    const favoriteStyles = favoriteEditMenuStyles();
-
     const [selectFavoriteShape, setSelectFavoriteShape] = useState(false);
     let shapesSvg = FavoritesManager.getShapesSvg(color);
 
@@ -36,8 +33,17 @@ export default function FavoriteShape({ color, favoriteShape, setFavoriteShape, 
                                     setFavoriteShape(shape[0]);
                                 }}
                             >
-                                <div
-                                    className={favoriteStyles.background}
+                                <Box
+                                    component="div"
+                                    sx={{
+                                        '& .background': {
+                                            left: '-20px',
+                                            top: '2px',
+                                            width: '80px',
+                                            height: '80px',
+                                            filter: 'drop-shadow(0 0 0 gray)',
+                                        },
+                                    }}
                                     dangerouslySetInnerHTML={{ __html: shape[1] + '' }}
                                 />
                             </ListItemButton>

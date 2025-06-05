@@ -17,6 +17,7 @@ import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX } from '../manager/GlobalMana
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
 import i18n from 'i18next';
+import * as locales from 'date-fns/locale';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -443,21 +444,9 @@ export const AppContextProvider = (props) => {
     const [dateLocale, setDateLocale] = useState(null);
 
     useEffect(() => {
-        async function loadDateLocale(lng) {
-            try {
-                const folder = lng === 'en' ? 'en-US' : lng;
-                const mod = await import(`date-fns/locale/${folder}`);
-                setDateLocale(mod.default);
-            } catch {
-                const fallback = await import('date-fns/locale/en-US');
-                setDateLocale(fallback.default);
-            }
-        }
-
-        loadDateLocale(i18n.language).then();
-        const onChange = (lng) => loadDateLocale(lng);
-        i18n.on('languageChanged', onChange);
-        return () => i18n.off('languageChanged', onChange);
+        const currentLanguage = i18n.language;
+        const locale = locales[currentLanguage] || locales.enUS;
+        setDateLocale(locale);
     }, []);
 
     // global graph

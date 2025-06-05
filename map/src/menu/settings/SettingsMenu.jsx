@@ -30,6 +30,7 @@ import UnitsMenu from './units/UnitsMenu';
 import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
+import * as locales from 'date-fns/locale';
 
 export function getLocalizedTimeUpdate(time, ctx) {
     const currentDate = new Date(time);
@@ -75,16 +76,9 @@ export default function SettingsMenu() {
                 }
             }
 
-            try {
-                const folder = lng === 'en' ? 'en-US' : lng;
-                const mod = await import(`date-fns/locale/${folder}`);
-                ctx.setDateLocale(mod.default);
-            } catch {
-                const fallback = await import('date-fns/locale/en-US');
-                ctx.setDateLocale(fallback.default);
-            }
-
             localStorage.setItem('i18nextLng', lng);
+            const locale = locales[lng] || locales.enUS;
+            ctx.setDateLocale(locale);
             setCurrentLang(t(`lang_${lng}`));
         }
 

@@ -1,10 +1,9 @@
-import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import { emptyTrash, formatString } from '../../manager/SettingsManager';
 import DialogActions from '@mui/material/DialogActions';
-import { Button, LinearProgress } from '@mui/material';
+import { Button, LinearProgress, Dialog } from '@mui/material';
 import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';

@@ -4,7 +4,6 @@ import { AppBar, Box, ListItem, ListItemButton, ListItemText, Tab, Typography } 
 import { History } from '@mui/icons-material';
 import Paper from '@mui/material/Paper';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
-import favoriteEditMenuStyles from '../../../styles/FavoriteEditMenuStyles';
 import FavoritesManager from '../../../../manager/FavoritesManager';
 import { isEmpty } from 'lodash';
 
@@ -18,8 +17,6 @@ export default function FavoriteIcon({
     defaultIcon,
     widthDialog,
 }) {
-    const favoriteStyles = favoriteEditMenuStyles();
-
     const [value, setValue] = useState(FavoritesManager.DEFAULT_TAB_ICONS);
     const [selectFavoriteIcon, setSelectFavoriteIcon] = useState(false);
     let tabs = {};
@@ -46,8 +43,23 @@ export default function FavoriteIcon({
                                     setFavoriteIcon(icon);
                                 }}
                             >
-                                <div
-                                    className={favoriteStyles.shape}
+                                <Box
+                                    component="div"
+                                    sx={{
+                                        '& .background': {
+                                            left: '-30px',
+                                            top: '2px',
+                                            width: '80px',
+                                            height: '80px',
+                                            filter: 'drop-shadow(0 0 0 gray)',
+                                        },
+                                        '& .icon': {
+                                            left: '14px',
+                                            top: '13px',
+                                            width: '25px',
+                                            height: '25px',
+                                        },
+                                    }}
                                     dangerouslySetInnerHTML={{
                                         __html:
                                             `<div>` +
