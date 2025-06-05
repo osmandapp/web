@@ -38,8 +38,19 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 ## Optional updates {#optional-updates}
 
-<!-- ***Example***  -->
-
-- Fixed issues:
-  - [Car play issues with always returning to my location.](https://github.com/osmandapp/OsmAnd-iOS/issues/4284)
+- [OsmAnd does not follow the track](https://github.com/osmandapp/OsmAnd-iOS/issues/4412)
+- [Add Rename action for Favorite groups](https://github.com/osmandapp/OsmAnd-iOS/issues/4516)
+- [Apple CarPlay Navigation stopped after switching app](https://github.com/osmandapp/OsmAnd-iOS/issues/4442)
+- [Broken address search](https://github.com/osmandapp/OsmAnd-iOS/issues/4598)
+- [Unit of Volume and Fuel Tank capacity](https://github.com/osmandapp/OsmAnd-iOS/issues/4104)
+- [App Crashes on CarPlay When Starting Navigation](https://github.com/osmandapp/OsmAnd-iOS/issues/4605)
+- [Change appearance for Favorites](https://github.com/osmandapp/OsmAnd-iOS/issues/4428)
+- [Allow to select size for widgets in Left / Right panel](https://github.com/osmandapp/OsmAnd-iOS/issues/4494)
+- [Allow to set Activity to recorded GPX with filter](https://github.com/osmandapp/OsmAnd-iOS/issues/4177)
+- [Navigation info – Widget](https://github.com/osmandapp/OsmAnd-iOS/issues/4468)
+- [Рage in Maps and Resources is not updated after downloading the map](https://github.com/osmandapp/OsmAnd-iOS/issues/4301)
+- [Default profile loses its POI overlay settings after app restart](https://github.com/osmandapp/OsmAnd-iOS/issues/4455)
+- [Endless spinner rotation in Maps & Recouces search](https://github.com/osmandapp/OsmAnd-iOS/issues/4395)
+- [Weather: measurement units cannot be changed from Plugin settings (except Wind animation)](https://github.com/osmandapp/OsmAnd-iOS/issues/4413)
+- [Synchronize the route line of creating track with the current profile](https://github.com/osmandapp/OsmAnd-iOS/issues/4392)
 
