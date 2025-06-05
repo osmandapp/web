@@ -33,6 +33,14 @@
     margin-right: 20px !important;
 }
 
+.productCardHeader {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 90% !important;
+    margin-top: 6px !important;
+}
+
 .productCardTitle {
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off !important;

@@ -61,14 +61,7 @@ export default function ProductCard({ productId, type, setType, testMode, isSele
             onClick={() => setSelectedCardId(productId)}
             className={`${styles.productCard} ${isSelected ? styles.selected : ''}`}
         >
-            <Box
-                sx={{
-                    display: 'flex',
-                    width: '90%',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                }}
-            >
+            <Box className={styles.productCardHeader}>
                 <Typography className={styles.productCardTitle}>{product.name}</Typography>
                 <ListItemIcon className={styles.productCardIcon}>{product.icon}</ListItemIcon>
             </Box>
