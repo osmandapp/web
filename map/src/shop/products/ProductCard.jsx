@@ -79,7 +79,7 @@ export default function ProductCard({ productId, type, setType, testMode, isSele
                             <ListItemIcon className={styles.productCardFeatureIcon}>
                                 <CheckIcon />
                             </ListItemIcon>
-                            <ListItemText>{t(f)}</ListItemText>
+                            <ListItemText className={styles.productCardFeatureText}>{t(f)}</ListItemText>
                         </ListItem>
                     ))}
                 </List>

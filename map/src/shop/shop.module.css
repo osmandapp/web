@@ -13,21 +13,26 @@
     box-shadow: none !important;
     flex: 0 0 auto !important;
 }
+
 .productCard:hover {
     outline: 2px solid #237bff;
     outline-offset: -2px;
 }
+
 .productCard.selected {
     outline: 2px solid #237bff;
     outline-offset: -2px;
     box-shadow: 0 0 0 6px #deebff !important;
 }
+
 .productCardBox .productCard:first-child {
     margin-left: 20px !important;
 }
+
 .productCardBox .productCard:last-child {
     margin-right: 20px !important;
 }
+
 .productCardTitle {
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off !important;
@@ -38,15 +43,17 @@
     line-height: 120% !important;
     letter-spacing: 0.3px !important;
 }
+
 .productCardIcon {
     min-width: 36px !important;
     max-width: 36px !important;
 }
+
 .productCardFeatureIcon {
     min-width: 24px !important;
     max-width: 24px !important;
-    margin-top: 3px !important;
 }
+
 .productCardFeature {
     display: flex !important;
     justify-content: center !important;
@@ -55,6 +62,20 @@
     align-self: stretch !important;
     padding: 0 0px 0px 0px !important;
 }
+
+.productCardFeatureText {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.16px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
 .productCardFeatureBox {
     display: flex !important;
     width: 260px !important;
@@ -64,6 +85,7 @@
     gap: 9px !important;
     margin-bottom: 16px !important;
 }
+
 .purchaseTypeCard {
     display: flex !important;
     width: 260px !important;
@@ -72,15 +94,18 @@
     border-radius: 6px !important;
     border: 1px solid #ccc !important;
 }
+
 .purchaseTypeCard:hover {
     outline: 2px solid #237bff;
     outline-offset: -2px;
 }
+
 .purchaseTypeCard.selected {
     background-color: #deebff !important;
     outline: 2px solid #237bff;
     outline-offset: -2px;
 }
+
 .purchaseTypeCardBox {
     display: flex !important;
     flex-direction: column !important;
@@ -88,6 +113,7 @@
     gap: 6px !important;
     align-self: stretch !important;
 }
+
 .purchaseTypeCardTitle {
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off !important;
@@ -99,6 +125,7 @@
     letter-spacing: 0.16px !important;
     margin-left: 16px !important;
 }
+
 .purchaseTypeCardNewPrice {
     color: #237bff !important;
     font-family: Roboto !important;
@@ -107,6 +134,7 @@
     font-weight: 700 !important;
     line-height: 140% !important;
 }
+
 .purchaseTypeCardOldPrice {
     color: #666 !important;
     font-family: Roboto !important;
@@ -116,6 +144,7 @@
     line-height: 140% !important;
     text-decoration: line-through !important;
 }
+
 .productTypeSale {
     border-radius: 3px !important;
     background: #12b38b !important;
@@ -133,6 +162,7 @@
     letter-spacing: 0.28px !important;
     margin-left: 16px !important;
 }
+
 .pricingTitle {
     color: var(--text-primary) !important;
     text-align: center !important;
@@ -145,6 +175,7 @@
     letter-spacing: 0.4px !important;
     margin-top: 104px !important;
 }
+
 .pricingDesc {
     color: var(--text-secondary) !important;
     text-align: center !important;
@@ -159,6 +190,7 @@
     margin-bottom: 36px !important;
     max-width: 880px !important;
 }
+
 .pricingTableContainer {
     display: flex !important;
     width: 880px !important;
@@ -234,6 +266,7 @@
     width: 20px;
     height: 20px;
 }
+
 .categoryTitle {
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off !important;
@@ -244,16 +277,19 @@
     line-height: 120% !important;
     letter-spacing: 0.48px !important;
 }
+
 .featureIcon {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
 }
+
 .featureContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .planCell {
     text-align: center !important;
     width: 112px !important;
@@ -263,6 +299,7 @@
     border-bottom: none !important;
     padding: 12px 0px 12px !important;
 }
+
 .pricingTable tbody .planCell {
     position: relative;
 }
@@ -276,11 +313,13 @@
     height: 1px;
     background-color: rgba(0, 0, 0, 0.12);
 }
+
 .featureWrapper {
     display: flex;
     align-items: center;
     gap: 20px;
 }
+
 .pricingBox {
     flex-grow: 1 !important;
     width: 100vw !important;
@@ -290,13 +329,16 @@
     justify-content: flex-start !important;
     overflow-x: hidden;
 }
+
 .pricingTable .MuiTableCell-root {
     border: none !important;
 }
+
 .pricingTable thead th:not(:last-child) {
     border-right: none !important;
     position: relative;
 }
+
 .pricingTable thead th:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -306,6 +348,7 @@
     width: 1px;
     background-color: #ccc;
 }
+
 .pricingTable thead th {
     border-bottom: none !important;
     color: var(--text-primary) !important;
@@ -319,18 +362,22 @@
     padding-bottom: 0 !important;
     padding-left: 0 !important;
 }
+
 .pricingTable tbody {
     border: none !important;
 }
+
 @media (max-width: 880px) {
     .featureWrapper {
         flex-direction: column !important;
         align-items: flex-start !important;
     }
+
     .featureIcon {
         margin-bottom: 8px !important;
     }
 }
+
 @media (max-width: 1300px) {
     .productCardBox {
         display: flex !important;
@@ -342,6 +389,7 @@
         gap: 24px !important;
     }
 }
+
 @media (min-width: 1301px) {
     .productCardBox {
         display: flex !important;
@@ -367,13 +415,16 @@
     height: 1px;
     background-color: rgba(0, 0, 0, 0.12);
 }
+
 .featureRow:has(+ .categoryRow) .featureCell::after {
     left: 0 !important;
 }
+
 .radioButton {
     margin-right: 4px !important;
     color: #237bff !important;
 }
+
 .productCardContent {
     display: flex !important;
     flex-direction: column !important;
