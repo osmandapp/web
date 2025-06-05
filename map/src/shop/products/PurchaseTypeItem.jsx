@@ -27,8 +27,6 @@ export default function PurchaseTypeItem({ type, productId, selected, onChange }
             className={`${styles.purchaseTypeCard} ${selected === type ? styles.selected : ''}`}
             sx={{ display: 'flex', flexDirection: 'column' }}
         >
-            <Typography className={styles.purchaseTypeCardTitle}>{t(labelMap[type])}</Typography>
-
             <Box
                 sx={{
                     display: 'flex',
@@ -37,6 +35,7 @@ export default function PurchaseTypeItem({ type, productId, selected, onChange }
                 }}
             >
                 <Box>
+                    <Typography className={styles.purchaseTypeCardTitle}>{t(labelMap[type])}</Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', ml: 2 }}>
                         {purchaseObj.oldPrice && purchaseObj.oldPrice !== purchaseObj.newPrice && (
                             <Typography className={styles.purchaseTypeCardOldPrice}>
@@ -44,7 +43,7 @@ export default function PurchaseTypeItem({ type, productId, selected, onChange }
                             </Typography>
                         )}
                         <Typography className={styles.purchaseTypeCardNewPrice}>{purchaseObj.display}</Typography>
-                        <Typography>&nbsp;{periodMap[type]}</Typography>
+                        <Typography className={styles.purchaseTypeCardNewPriceType}>&nbsp;{periodMap[type]}</Typography>
                     </Box>
                     {purchaseObj.save && <Typography className={styles.productTypeSale}>{purchaseObj.save}</Typography>}
                 </Box>

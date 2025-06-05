@@ -143,6 +143,15 @@
     line-height: 140% !important;
 }
 
+.purchaseTypeCardNewPriceType {
+    color: var(--text-secondary) !important;
+    font-family: Roboto  !important;
+    font-size: 14px !important;
+    font-style: normal  !important;
+    font-weight: 400  !important;
+    line-height: 181% !important;
+}
+
 .purchaseTypeCardOldPrice {
     color: #666 !important;
     font-family: Roboto !important;
@@ -429,8 +438,9 @@
 }
 
 .radioButton {
-    margin-right: 4px !important;
+    margin-right: 2px !important;
     color: #237bff !important;
+    padding: 14px !important;
 }
 
 .productCardContent {
