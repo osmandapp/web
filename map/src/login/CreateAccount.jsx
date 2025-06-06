@@ -330,7 +330,7 @@ export default function CreateAccount({ dialog, reopenLoginDialog = null }) {
                             />
                             {emailError !== EMPTY_INPUT && emailError !== EMAIL_IS_NOT_VALID && (
                                 <BlueBtn
-                                    action={() => openLogin(ltx, navigate)}
+                                    action={() => openLogin(ltx, navigate, reopenLoginDialog)}
                                     additionalStyle={{ mb: 1.5, mt: 0.5 }}
                                     text={t('web:login_btn')}
                                     span={true}
