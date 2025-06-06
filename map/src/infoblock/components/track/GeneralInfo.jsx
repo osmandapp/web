@@ -201,7 +201,7 @@ export default function GeneralInfo({ width }) {
 
     function getTimeMoving(info) {
         if (info?.timeMoving) {
-            setTimeMoving(toHHMMSS(info?.timeMoving));
+            setTimeMoving(toHHMMSS(info?.timeMoving).split('.')[0]);
         } else {
             setTimeMoving('');
         }
