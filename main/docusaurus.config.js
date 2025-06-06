@@ -46,7 +46,7 @@ const config = {
       }),
     ],
   ],
-  plugins: [require.resolve('docusaurus-lunr-search'),
+  plugins: [
     [
     '@docusaurus/plugin-client-redirects',
     {
@@ -74,6 +74,17 @@ const config = {
       ],
     },
   ]],
+  themes: [
+  [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+      {
+        hashed: true,                        // long-term cache-friendly
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      },
+    ],
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -89,6 +100,10 @@ const config = {
           position: 'right',
         },
           {
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
             type: 'doc',
             docId: 'intro',
             position: 'left',
@@ -103,6 +118,7 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          { type: 'search', position: 'right' },
         ],
       },
       footer: {
@@ -165,6 +181,10 @@ const config = {
               {
                 label: 'Facebook',
                 href: 'https://facebook.com/osmandapp/',
+              },
+              {
+                label: 'TikTok',
+                href: 'https://www.tiktok.com/@osmandapp',
               },
               {
                 label: 'Telegram Channel',

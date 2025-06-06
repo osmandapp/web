@@ -324,7 +324,7 @@ To import a file:
 3. The plugin will appear in the **Plugin List** section, where it can be activated.
 4. A corresponding folder will then appear in the **Extra Maps** section of the [Downloads](#downloads) tab.
 
-Read more in the [**Custom package**](../plugins/custom.md/) article.
+Read more in the [**Custom package**](../plugins/custom) article.
 
 
 ## OsmAnd Live {#osmand-live}

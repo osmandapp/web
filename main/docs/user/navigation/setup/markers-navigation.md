@@ -56,7 +56,7 @@ They can be particularly helpful for hikers, bikers, or anyone exploring a new a
 
 </Tabs>
 
-*Map markers* can serve as [destinations](./route-navigation.md/#set-destinations) while building a route. They are especially convenient when you need to set a route with intermediate points.
+*Map markers* can serve as [destinations](./route-navigation#set-destinations) while building a route. They are especially convenient when you need to set a route with intermediate points.
 
 However *Map markers* also provide various functionality such as [widgets](../../widgets/markers.md), direction of movements, lines on the map, so you could use these tools for navigation without building a route line and entering full voice guidance navigation.
 

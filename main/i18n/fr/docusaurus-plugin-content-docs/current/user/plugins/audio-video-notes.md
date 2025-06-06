@@ -273,7 +273,7 @@ Si vous visualisez le fichier GPX de la trace ajoutée avec un point de passage 
 
 Le plugin <Translate android="true" ids="audionotes_plugin_name"/> génère des fichiers audio/vidéo/photo au format suivant :
 
-    {SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}
+    `{SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}`
 
 où `SHORTLINK_LOCATION` spécifie la latitude et la longitude de l'emplacement auquel le fichier est lié. Le `SHORTLINK_LOCATION` est encodé, selon la spécification du [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 

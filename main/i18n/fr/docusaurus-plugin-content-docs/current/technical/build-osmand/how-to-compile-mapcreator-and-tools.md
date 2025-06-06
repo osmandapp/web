@@ -33,7 +33,7 @@ sidebar_position: 7
 ## Compiler la bibliothèque de rendu native pour OsmAndMapCreator {#compile-native-rendering-library-for-osmandmapcreator}
 La bibliothèque de rendu native peut être utilisée pour tester le rendu hors ligne ou le routage natif hors ligne. Elle est très utile pour déboguer et tester un style de rendu ou une configuration de routage.
 
-1. Configurez d'abord l'**environnement de développement**, voir {% link /setup-the-dev-environment %}.
+1. Configurez d'abord l'**environnement de développement**, voir [environnement de développement](./setup-the-dev-environment).
 2. Téléchargez les dépendances externes
  ```
  cd core-legacy/externals

@@ -26,7 +26,7 @@ Pour utiliser le plugin *Édition OpenStreetMap*, vous devez effectuer les régl
 
 1. Activer le [Plugin](../plugins/index.md#enable--disable).
 2. Configurer l'édition OpenStreetMap dans n'importe quel [profil](../personal/profiles.md).
-3. Activer l'affichage des *notes OSM (en ligne)* ou des *modifications OSM* sur la carte dans le [menu Configurer la carte](../map/configure-map-menu.md/).
+3. Activer l'affichage des *notes OSM (en ligne)* ou des *modifications OSM* sur la carte dans le [menu Configurer la carte](../map/configure-map-menu).
 
 
 ## Paramètres {#settings}

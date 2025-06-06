@@ -44,7 +44,7 @@ La tâche Gradle **assembleNightlyFreeLegacyFatDebug** produira l’apk dans *an
 - fat - fat (toutes les cibles natives) / armv7 / arm64 / x86 / armonly - sélectionne les bibliothèques natives qui seront dans l’apk.
 - debug - debug / release - tâche standard
 
-Pour construire le bundle, vous pouvez utiliser **bundle${FLAVOR}LegacyFatRelease**.
+Pour construire le bundle, vous pouvez utiliser **`bundle${FLAVOR}LegacyFatRelease`**.
 
 
 | Saveur | Paquet | Description
@@ -71,7 +71,7 @@ Ajoutez des symboles de débogage dans la configuration du projet Android Studio
 
 La bibliothèque Opengl est nécessaire pour des cibles comme assembleNightlyFree**Opengl**FatDebug et est par défaut téléchargée depuis le [répertoire OsmAnd ivy](https://builder.osmand.net/ivy/net.osmand/) - [tâche gradle](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L187). Pour le développement local, vous pourriez avoir besoin de compiler ces bibliothèques et de les publier dans le répertoire ivy local.
 
-1. Configurez d’abord l’**environnement de développement**, voir {% link /setup-the-dev-environment %}.
+1. Configurez d’abord l’**environnement de développement**, voir [environnement de développement](./setup-the-dev-environment).
 2. Installez les outils.
     - Android SDK - 29.
     - Android NDK - 23.

@@ -43,7 +43,7 @@ Gradle task **assembleNightlyFreeLegacyFatDebug** will produce apk at *android/O
 - fat - fat (all native targets) / armv7 / arm64 / x86 / armonly - select which native libraries will be inside apk.
 - debug - debug / release - standard task
 
-To build bundle you could use **bundle${FLAVOR}LegacyFatRelease**.
+To build bundle you could use **`bundle${FLAVOR}LegacyFatRelease`**.
 
 
 | Flavor |  Package | Description
@@ -70,7 +70,7 @@ Add debug symbols in the Android Studio project configuration. For this go to Ed
 
 Opengl library is needed for targets like assembleNightlyFree**Opengl**FatDebug and by default downloaded from [OsmAnd ivy repository](https://builder.osmand.net/ivy/net.osmand/) - [gradle task](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L187). For local development you might need to compile those library and publish to local ivy repo.
 
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
+1. First setup the **development environment**, see [development environment](./setup-the-dev-environment).
 2. Install tools.
     - Android SDK - 29.
     - Android NDK - 23.

@@ -59,11 +59,14 @@ Le plugin Topographie donne accès aux types de cartes suivants :
 Les données d'altitude sur la carte (entre 70 degrés de latitude nord et 70 degrés de latitude sud) ont été obtenues à partir de mesures effectuées dans le cadre de la *Shuttle Radar Topography Mission (SRTM)*. Elle a utilisé l'*Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, le principal outil d'imagerie du *Earth Observation System de la NASA*.
 Pour des informations complètes, voir la [Licence](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
-<details><summary>Données DEM (DSM)</summary>
+<details>
+<summary>Données DEM (DSM)</summary>
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Les données originales utilisées pour ce produit ont été fournies par AW3D de la JAXA.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Modèles numériques de terrain LiDAR de Sonny pour l'Europe</a> (MNT).</details>
+	- <a href="https://sonny.4lima.de">Modèles numériques de terrain LiDAR de Sonny pour l'Europe</a> (MNT).
+
+</details>
 
 ## Paramètres de configuration requis {#required-setup-parameters}
 

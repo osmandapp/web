@@ -10,7 +10,7 @@ sidebar_position: 6
   ```
   $ xcode-select --install
   ```
-  Or in case of errors try to download and install it from Apple site: <https://developer.apple.com/download/all/?q=xcode>.
+  Or in case of errors try to download and install it from: [Apple site](https://developer.apple.com/download/all/?q=xcode>).
 
 4. Log in into Xcode account (optional)
   In case if you don't have Apple Developer account. Open Xcode and go to preferences (via top menu)

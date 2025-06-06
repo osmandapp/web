@@ -11,7 +11,7 @@ sidebar_position: 6
   ```
   $ xcode-select --install
   ```
-  Ou en cas d'erreurs, essayez de le télécharger et de l'installer depuis le site d'Apple : <https://developer.apple.com/download/all/?q=xcode>.
+  Ou en cas d'erreurs, essayez de le télécharger et de l'installer depuis le: [site d'Apple](https://developer.apple.com/download/all/?q=xcode>)..
 
 4. Connectez-vous au compte Xcode (facultatif)
   Au cas où vous n'auriez pas de compte Apple Developer. Ouvrez Xcode et allez dans les préférences (via le menu supérieur)

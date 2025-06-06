@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 L'itinéraire à vélo prend en compte des facteurs tels que la disponibilité de pistes cyclables, de sentiers et de routes sûres et légales pour les cyclistes. OsmAnd utilise toujours les données d'altitude lors du calcul de l'heure d'arrivée estimée (temps pour couvrir la distance) selon la [règle de Naismith](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). Par défaut, l'itinéraire le plus rapide est fourni.
 L'itinéraire à vélo peut également être utile pour le [VTT](#mtb-routing-particularities).
 
-Vous pouvez configurer l'*itinéraire à vélo* dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md/#route-parameters) des paramètres de navigation.
+Vous pouvez configurer l'*itinéraire à vélo* dans la section [Paramètres d'itinéraire](../guidance/navigation-settings#route-parameters) des paramètres de navigation.
 
 
 ## Paramètres d'itinéraire - Vélo {#route-parameters---bicycle}

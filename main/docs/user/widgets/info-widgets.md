@@ -23,12 +23,12 @@ Informational widgets provide you with quick access to important data. This can 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
 
-## Altitude Widgets {#altitude-widgets}
+## Altitude Widgets   {#altitude-widgets}
 
 Altitude widgets display the height above the sea level of the current geolocation and the elevation of the map center.  
 
 
-### Altitude: Current Location {#altitude-current-location}
+### Altitude: Current Location   {#altitude-current-location}
   
 :::note  Download World altitude correction
 On some Android devices, the altitude can display inaccurately. To solve this problem, download a map with altitude correction.
@@ -321,7 +321,7 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
-## GPS Info {#gps-info}
+## GPS Info   {#gps-info}
 
 <InfoAndroidOnly />
 
@@ -452,7 +452,7 @@ The Radius Ruler widget shows the distance between your location and the center 
 These widgets are enabled and work in combination with their corresponding plugins.
 
 
-### Trip Recording Widgets {#trip-recording-widgets}
+### Trip Recording Widgets   {#trip-recording-widgets}
 
 :::note  
 You can read a more detailed description here: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
@@ -487,7 +487,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 ### External Sensors Widgets {#external-sensors-widgets}
 
 :::note
-To add External Sensors widgets to the map screen, enable the OsmAnd [**External Sensors plugin**](../plugins/external-sensors.md).
+To add External Sensors widgets to the map screen, enable the OsmAnd [External Sensors plugin](../plugins/external-sensors.md).
 :::
 
 <Tabs groupId="operating-systems">
@@ -535,7 +535,7 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 <InfoAndroidOnly />
 
 :::note
-To add Vehicle Metrics Widgets to the map screen, enable the OsmAnd [**Vehicle Metrics plugin**](../plugins/vehicle-metrics.md).
+To add Vehicle Metrics Widgets to the map screen, enable the OsmAnd [Vehicle Metrics plugin](../plugins/vehicle-metrics.md).
 :::
 
 ![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_1.png)
@@ -557,7 +557,7 @@ The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md
 ### Weather Widgets {#weather-widgets}
 
 :::note
-To add Weather widgets to the map screen, enable the OsmAnd [**Weather plugin**](../plugins/weather.md).
+To add Weather widgets to the map screen, enable the OsmAnd [Weather plugin](../plugins/weather.md).
 :::
 
 <Tabs groupId="operating-systems">
@@ -596,7 +596,7 @@ Weather widgets display current weather information for a central point on the m
 ### Parking Widget {#parking-widget}
 
 :::note
-To add Parking widgets to the map screen, enable the OsmAnd [**Parking position plugin**](../plugins/parking.md).
+To add Parking widgets to the map screen, enable the OsmAnd [Parking position plugin](../plugins/parking.md).
 :::  
 
 ![Parking widget](@site/static/img/plugins/parking/parking_widget.png)  
@@ -617,7 +617,7 @@ The Parking plugin widget shows the distance from the center of the screen to th
 ### Mapillary Widget {#mapillary-widget}
 
 :::note  
-To add the Mapillary widget to the map screen, enable the OsmAnd [**Mapillary plugin**](../plugins/mapillary.md).  
+To add the Mapillary widget to the map screen, enable the OsmAnd [Mapillary plugin](../plugins/mapillary.md).  
 :::  
 
 ![Mapillary widget](@site/static/img/widgets/mapillary_widget.png)
@@ -637,7 +637,7 @@ This is a Mapillary plugin widget that provides quick access to the Mapillary ap
 <InfoAndroidOnly />
 
 :::note
-To add Audio/Video Notes widgets to the map screen, enable the OsmAnd [**Audio/Video Notes plugin**](../plugins/audio-video-notes.md).
+To add Audio/Video Notes widgets to the map screen, enable the OsmAnd [Audio/Video Notes plugin](../plugins/audio-video-notes.md).
 :::
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
@@ -663,10 +663,10 @@ You can configure which action is selected by default:
 <InfoAndroidOnly />
 
 :::note
-To add the Tracker widget to the map screen, enable the OsmAnd [Tracker plugin**](../plugins/osmand-tracker.md).
+To add the Tracker widget to the map screen, enable the OsmAnd [Tracker plugin](../plugins/osmand-tracker.md).
 :::  
 
-For the plugin and widget to work, you need to install [**OsmAnd Online GPS Tracker**](https://play.google.com/store/apps/details?id=net.osmand.telegram) from Google Play or other sources.  
+For the plugin and widget to work, you need to install [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) from Google Play or other sources.  
 
 This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker app and share your location information with other users. The app sends *Live Location* messages to selected chats within a certain time, displays a list of contacts and groups, and checks chats for messages with your location, which are then displayed on a map in OsmAnd.  
 
@@ -681,7 +681,7 @@ This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker a
 ### Developer Widgets {#developer-widgets}
 
 :::note
-To add Developer widgets to the map screen, enable the OsmAnd [**OsmAnd development plugin**](../plugins/development.md).
+To add Developer widgets to the map screen, enable the OsmAnd [OsmAnd development plugin](../plugins/development.md).
 :::
 
 **Developer widgets** provide information about map [rendering speed](../plugins/development.md#map-rendering-fps-widget) and virtual camera position parameters, including [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, [camera elevation](../plugins/development.md#camera-elevation) and [tilt angle](../plugins/development.md#camera-tilt).  

@@ -113,7 +113,7 @@ When you select a route and press the **Start** button, the map opens with your 
 |![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)|
 
 
-## Bearing Widget {#bearing-widget}
+## Bearing Widget   {#bearing-widget}
   
 Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course) or, *Magnetic* (according to the compass). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you. The cardinal points are the four main directions of the compass. They are North (*N* - 0° or 360°), East (*E* - 90°), South (*S* - 180°), and west (*W* - 270°).  
 
@@ -221,7 +221,7 @@ The widget shows the distance to the first intermediate point along the calculat
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → *<Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
 |  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
 | By tapping | **One intermediate point** - move the map to the intermediate point. <br /> **Two or more intermediate points** - opens Destinations list menu. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
@@ -444,7 +444,7 @@ The Street name widget shows **the current street name** with a straight arrow, 
 | By tapping | No changes |
 
 
-## Approach POIs/Favorites {#approach-poisfavorites}
+## Approach POIs / Favorites {#approach-pois--favorites}
 
 <Tabs groupId="operating-systems">
 
