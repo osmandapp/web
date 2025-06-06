@@ -45,5 +45,16 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [For all inner levels tracks folder use default - Track sorting NAME_ASCENDING](https://github.com/osmandapp/OsmAnd/issues/22256)
 - [OsmAnd does not offer to activate maps](https://github.com/osmandapp/OsmAnd/issues/21302)
 - [Add Temperature units for General settings](https://github.com/osmandapp/OsmAnd-Issues/issues/2792)
+- [some unused not expected values are supported](https://github.com/osmandapp/OsmAnd/issues/22103)
+- [Cleanup POI search (split place of worship)](https://github.com/osmandapp/OsmAnd/issues/21972)
+- [waterway=flowline missing in data, boat routing broken](https://github.com/osmandapp/OsmAnd/issues/22512)
+- [Show protected areas in Topo Map style](https://github.com/osmandapp/OsmAnd/issues/22168)
+- [[AndroidAuto] 3D perspective center point moved](https://github.com/osmandapp/OsmAnd/issues/22304)
+- [Contour lines overlay in China](https://github.com/osmandapp/OsmAnd/issues/22434)
+- [Contour Line Bugs on Edges of Parallels / Meridians](https://github.com/osmandapp/OsmAnd/issues/21738)
+
+
+
+
 
 
