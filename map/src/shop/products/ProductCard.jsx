@@ -18,11 +18,14 @@ import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
 import { createFastSpringPurchase } from '../../login/fs/FastSpringHelper';
+import {useNavigate} from "react-router-dom";
 
 export default function ProductCard({ productId, type, setType, testMode, isSelected, setSelectedCardId }) {
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
+
+    const navigate = useNavigate();
 
     const product = products.find((p) => p.id === productId);
 
@@ -68,7 +71,7 @@ export default function ProductCard({ productId, type, setType, testMode, isSele
     function processingPurchase() {
         const selectedProduct = purchase[type]?.find((p) => p.id === productId);
         if (selectedProduct) {
-            createFastSpringPurchase({ testMode, ltx, selectedProduct: selectedProduct.fsName });
+            createFastSpringPurchase({ testMode, ltx, selectedProduct: selectedProduct.fsName, navigate });
         }
     }
 

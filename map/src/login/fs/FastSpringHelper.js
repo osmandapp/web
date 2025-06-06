@@ -1,6 +1,7 @@
 import { getAccountInfo } from '../../manager/LoginManager';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH, PURCHASES_URL } from '../../manager/GlobalManager';
 
-export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx }) => {
+export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navigate }) => {
     // remove old script if exists
     const old = document.getElementById('fsc-api');
     if (old) old.remove();
@@ -50,6 +51,9 @@ export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx }) => 
                 };
                 tryUpdate();
             }
+            navigate({
+                pathname: MAIN_URL_WITH_SLASH + LOGIN_URL + PURCHASES_URL,
+            });
         };
     };
 
