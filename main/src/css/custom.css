@@ -207,6 +207,7 @@ ul.no-bullets {
 }
 
 .navbar__search { 
+  display: flex;
   padding-left: 16px;
 }
 
