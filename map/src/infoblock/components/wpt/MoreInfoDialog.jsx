@@ -1,8 +1,7 @@
-import { Box, IconButton, Typography } from '@mui/material';
+import { Box, IconButton, Typography, Dialog } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
 import CloseIcon from '@mui/icons-material/Close';
 import DialogContent from '@mui/material/DialogContent';
-import { Dialog } from '@material-ui/core';
 import React from 'react';
 
 export default function MoreInfoDialog({ setOpenMoreDialog, title, content }) {

@@ -1,8 +1,7 @@
 import { Chart } from 'react-chartjs-2';
 import GraphManager from '../../manager/GraphManager';
 import { Box } from '@mui/material';
-import React, { useRef } from 'react';
-import * as locales from 'date-fns/locale';
+import React, { useContext, useRef } from 'react';
 import { format } from 'date-fns';
 import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -21,6 +20,7 @@ import {
 } from 'chart.js';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
+import AppContext from '../../context/AppContext';
 
 ChartJS.register(
     Tooltip,
@@ -37,6 +37,8 @@ ChartJS.register(
 );
 
 export default function ForecastGraph({ data, weatherType, weatherUnits }) {
+    const ctx = useContext(AppContext);
+
     const chartRef = useRef(null);
     const { t } = useTranslation();
 
@@ -85,9 +87,8 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
                 display: true,
                 ticks: {
                     callback: function (value, index) {
-                        const locale = locales[i18n.language] || locales.enUS;
                         const date = new Date(Object.keys(data)[index]);
-                        return format(date, 'dd.MM', { locale });
+                        return format(date, 'dd.MM', { locale: ctx.dateLocale });
                     },
                     font: {
                         size: 9,

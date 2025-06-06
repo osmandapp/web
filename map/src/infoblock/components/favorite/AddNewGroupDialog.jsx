@@ -3,7 +3,6 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useEffect, useState } from 'react';
-import contextMenuStyles from '../../styles/ContextMenuStyles';
 import AppContext from '../../../context/AppContext';
 import { Close } from '@mui/icons-material';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
@@ -15,7 +14,6 @@ import FavoritesManager, { saveFavoriteGroup } from '../../../manager/FavoritesM
 import { apiGet } from '../../../util/HttpApi';
 
 export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavoriteGroup }) {
-    const menuStyles = contextMenuStyles();
     const ctx = useContext(AppContext);
 
     const [groupName, setGroupName] = useState('');
@@ -100,7 +98,21 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
         <Dialog id={'se-add-new-fav-group-dialog'} open={dialogOpen}>
             {process ? <LinearProgress /> : <></>}
             <Grid container spacing={2}>
-                <Grid className={menuStyles.name} item xs={11} sx={{ mb: -3 }}>
+                <Grid
+                    item
+                    xs={11}
+                    sx={{
+                        mb: -3,
+                        fontFamily: 'Arial',
+                        fontSize: 20,
+                        color: 'black',
+                        outline: 'none',
+                        letterSpacing: 'normal',
+                        pb: '2px',
+                        lineHeight: 'normal',
+                        overflowWrap: 'break-word',
+                    }}
+                >
                     <DialogTitle>Add new category</DialogTitle>
                 </Grid>
                 <Grid item xs={1} sx={{ ml: -2, mt: 1 }}>

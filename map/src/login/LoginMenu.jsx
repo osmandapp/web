@@ -46,7 +46,6 @@ export default function LoginMenu() {
 
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [openCloudInfo, setOpenCloudInfo] = useState(false);
-
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
             ctx.setDevelFeatures(!ctx.develFeatures);

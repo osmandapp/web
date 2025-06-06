@@ -4,17 +4,15 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Dialog from '@mui/material/Dialog';
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles(() => ({
-    paper: { minWidth: '100vh' },
-}));
 
 export default function AddRoutingToTrackDialog({ setOpenAddRoutingToTrackDialog, setAddRoutingToTrack }) {
-    const classes = useStyles();
-
     return (
-        <Dialog classes={{ paper: classes.paper }} open={true}>
+        <Dialog
+            PaperProps={{
+                sx: { minWidth: '100vh' },
+            }}
+            open={true}
+        >
             <DialogTitle>Add segment with routing</DialogTitle>
             <DialogContent>
                 <Typography variant="body2">

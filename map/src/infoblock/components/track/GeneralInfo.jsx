@@ -1,4 +1,3 @@
-import contextMenuStyles from '../../styles/ContextMenuStyles';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../context/AppContext';
 import TracksManager, {
@@ -53,7 +52,6 @@ import { useTranslation } from 'react-i18next';
 import LoginContext from '../../../context/LoginContext';
 
 export default function GeneralInfo({ width }) {
-    const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
@@ -355,16 +353,7 @@ export default function GeneralInfo({ width }) {
                 {enableEditName && (
                     <div style={{ display: 'inline-block' }}>
                         <TextField
-                            style={{
-                                minWidth: '200px',
-                                maxWidth: '400px',
-                                width: inputLength + 'ch',
-                                resize: 'none',
-                                marginBottom: '5px',
-                                fontSize: '16px',
-                            }}
                             multiline
-                            className={styles.nameInput}
                             name="title"
                             onChange={(e) => setFileName(e.target.value)}
                             value={fileName}
@@ -374,6 +363,24 @@ export default function GeneralInfo({ width }) {
                             size="small"
                             error={!!fileNameError}
                             helperText={fileNameError}
+                            sx={{
+                                minWidth: '200px',
+                                maxWidth: '400px',
+                                width: `${inputLength}ch`,
+                                resize: 'none',
+                                mb: '5px',
+                                fontSize: '16px',
+                                '&[disabled]': { border: 'none' },
+                                fontFamily: 'Arial',
+                                color: 'black',
+                                ml: '-2px',
+                                borderColor: '#bebdb4',
+                                backgroundColor: 'transparent',
+                                outlineColor: '#757575',
+                                cursor: 'pointer',
+                                pb: '8px',
+                                pt: '8px',
+                            }}
                         />
                     </div>
                 )}
@@ -381,10 +388,19 @@ export default function GeneralInfo({ width }) {
                 {!enableEditName && (
                     <div style={{ display: 'inline-block' }}>
                         <Typography
-                            className={styles.name}
-                            style={{ color: '#666666', fontWeight: 'bold' }}
                             variant="inherit"
-                            maxWidth={'400px'}
+                            sx={{
+                                fontFamily: 'Arial',
+                                fontSize: 20,
+                                color: '#666666',
+                                outline: 'none',
+                                letterSpacing: 'normal',
+                                pb: '2px',
+                                lineHeight: 'normal',
+                                overflowWrap: 'break-word',
+                                fontWeight: 'bold',
+                                maxWidth: '400px',
+                            }}
                         >
                             {'* ' + fileName}
                             <IconButton
@@ -434,9 +450,19 @@ export default function GeneralInfo({ width }) {
     const NoEditName = () => {
         return (
             <Typography
-                className={styles.name}
                 variant="inherit"
-                style={{ color: '#666666', fontWeight: 'bold', marginBottom: '3px' }}
+                sx={{
+                    fontFamily: 'Arial',
+                    fontSize: 20,
+                    color: '#666666',
+                    outline: 'none',
+                    letterSpacing: 'normal',
+                    pb: '2px',
+                    lineHeight: 'normal',
+                    overflowWrap: 'break-word',
+                    fontWeight: 'bold',
+                    mb: '3px',
+                }}
             >
                 {ctx.selectedGpxFile?.name && TracksManager.prepareName(ctx.selectedGpxFile.name, false)}
             </Typography>
@@ -447,7 +473,15 @@ export default function GeneralInfo({ width }) {
         return (
             <>
                 {upDownHill !== '' || elevation !== '-' || (points > 1 && <Divider sx={{ mt: '13px', mb: '12px' }} />)}
-                <Typography className={styles.info} variant="subtitle1" color="inherit">
+                <Typography
+                    variant="subtitle1"
+                    color="inherit"
+                    sx={{
+                        '& .MuiListItemIcon-root': {
+                            minWidth: 'auto !important',
+                        },
+                    }}
+                >
                     {upDownHill !== '' && (
                         <MenuItem sx={{ ml: -2, mt: -1 }}>
                             <ListItemIcon>
@@ -521,7 +555,15 @@ export default function GeneralInfo({ width }) {
     return (
         <>
             <Box minWidth={width} maxWidth={width}>
-                <Typography className={styles.info} variant="subtitle1" color="inherit">
+                <Typography
+                    variant="subtitle1"
+                    color="inherit"
+                    sx={{
+                        '& .MuiListItemIcon-root': {
+                            minWidth: 'auto !important',
+                        },
+                    }}
+                >
                     <div>{isLocalTrack(ctx) ? EditName() : NoEditName()}</div>
                     <div>
                         {preparedDesc
@@ -549,8 +591,13 @@ export default function GeneralInfo({ width }) {
                                 <Button
                                     id="se-infoblock-button-save-to-cloud"
                                     variant="contained"
-                                    sx={{ ml: '-0.5px !important' }}
-                                    className={styles.button}
+                                    sx={{
+                                        ml: '-0.5px !important',
+                                        backgroundColor: '#fbc73a',
+                                        fontSize: '12px',
+                                        minWidth: '20px',
+                                        padding: '3px 5px',
+                                    }}
                                     onClick={() => {
                                         ctx.selectedGpxFile.save = true;
                                         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
@@ -562,7 +609,13 @@ export default function GeneralInfo({ width }) {
                                 {ctx.createTrack?.cloudAutoSave && (
                                     <Button
                                         variant="contained"
-                                        className={styles.button}
+                                        sx={{
+                                            backgroundColor: '#fbc73a',
+                                            fontSize: '12px',
+                                            minWidth: '20px',
+                                            padding: '3px 5px',
+                                            ml: '5px',
+                                        }}
                                         onClick={() => {
                                             ctx.selectedGpxFile.save = true;
                                             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
@@ -580,8 +633,14 @@ export default function GeneralInfo({ width }) {
                             <Button
                                 id="se-infoblock-button-edit-track"
                                 variant="contained"
-                                sx={{ ml: isRouteTrack(ctx) ? 0 : '-0.5px !important' }}
-                                className={styles.button}
+                                sx={{
+                                    ml: isRouteTrack(ctx) ? 0 : '-0.5px !important',
+                                    backgroundColor: '#fbc73a',
+                                    fontSize: '12px',
+                                    minWidth: '20px',
+                                    padding: '3px 5px',
+                                    marginLeft: '5px',
+                                }}
                                 onClick={() => TracksManager.handleEditCloudTrack(ctx)}
                             >
                                 <Create fontSize="small" sx={{ mr: '7px' }} />

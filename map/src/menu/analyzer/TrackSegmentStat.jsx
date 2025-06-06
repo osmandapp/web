@@ -16,7 +16,6 @@ import { ReactComponent as TimeDurationIcon } from '../../assets/icons/ic_action
 import { ReactComponent as TimeMovingIcon } from '../../assets/icons/ic_action_time_span_16.svg';
 import { ReactComponent as DistanceIcon } from '../../assets/icons/ic_action_length_16.svg';
 import { format } from 'date-fns';
-import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import { MAIN_BLOCK_SIZE } from './TrackAnalyzerMenu';
 import { useTranslation } from 'react-i18next';
@@ -170,12 +169,11 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
     const [filteredStats, setFilteredStats] = useState([]);
 
     const formatDate = (timestamp) => {
-        const locale = locales[i18n.language] || locales.enUS;
         const date = new Date(parseInt(timestamp, 10));
         if (isNaN(date)) {
             return UNDEFINED_VALUE;
         }
-        return format(date, 'dd.MM.yyyy', { locale });
+        return format(date, 'dd.MM.yyyy', { locale: ctx.dateLocale });
     };
 
     useEffect(() => {

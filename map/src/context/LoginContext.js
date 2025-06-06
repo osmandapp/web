@@ -13,6 +13,8 @@ export const LoginContextProvider = ({ children }) => {
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [loginError, setLoginError] = useState(null);
     const [openChangeEmailDialog, setOpenChangeEmailDialog] = useState(false);
+    const [openLoginDialog, setOpenLoginDialog] = useState(false);
+    const [completePurchase, setCompletePurchase] = useState(false);
     // cookie to store email logged in
     const [emailCookie, setEmailCookie] = useCookie('email', '');
 
@@ -68,6 +70,10 @@ export const LoginContextProvider = ({ children }) => {
                 setOpenChangeEmailDialog,
                 emailCookie,
                 setEmailCookie,
+                openLoginDialog,
+                setOpenLoginDialog,
+                completePurchase,
+                setCompletePurchase,
             }}
         >
             {children}

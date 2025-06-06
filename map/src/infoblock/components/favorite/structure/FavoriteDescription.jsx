@@ -1,23 +1,35 @@
 import { IconButton, ListItemText, TextField } from '@mui/material';
 import { Delete } from '@mui/icons-material';
 import React from 'react';
-import contextMenuStyles from '../../../styles/ContextMenuStyles';
 
 export default function FavoriteDescription({ favoriteDescription, setFavoriteDescription, setClose, widthDialog }) {
-    const menuStyles = contextMenuStyles();
-
     return (
         <ListItemText sx={{ maxWidth: `${widthDialog}px`, mt: 3 }}>
             <TextField
-                className={menuStyles.favouriteLineInfo}
                 id="se-edit-fav-dialog-desc"
                 label="Description"
                 fullWidth
                 onChange={(e) => setFavoriteDescription(e.target.value)}
                 value={favoriteDescription}
-                autoFocus={true}
+                autoFocus
                 multiline
                 rows={2}
+                sx={{
+                    maxWidth: '450px !important',
+                    resize: 'none',
+                    fontFamily: 'Arial',
+                    color: 'black',
+                    fontSize: 20,
+                    ml: '-2px',
+                    borderColor: '#bebdb4',
+                    backgroundColor: 'transparent',
+                    outlineColor: '#757575',
+                    cursor: 'pointer',
+                    '&[disabled]': { border: 'none' },
+                    mb: '-10px',
+                    pb: '8px',
+                    pt: '8px',
+                }}
             />
             {favoriteDescription && favoriteDescription !== '' && (
                 <IconButton

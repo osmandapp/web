@@ -3,7 +3,6 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useEffect, useState } from 'react';
-import contextMenuStyles from '../../infoblock/styles/ContextMenuStyles';
 import AppContext from '../../context/AppContext';
 import DeleteWptDialog from './DeleteWptDialog';
 import { Close } from '@mui/icons-material';
@@ -29,7 +28,6 @@ export default function EditWptDialog({
     setOpenActions = null,
     isDetails = false,
 }) {
-    const menuStyles = contextMenuStyles();
     const ctx = useContext(AppContext);
     const [favoriteName, setFavoriteName] = useState(wpt.name);
     const [favoriteAddress, setFavoriteAddress] = useState(wpt.address);
@@ -223,7 +221,21 @@ export default function EditWptDialog({
         <Dialog id="se-edit-fav-dialog" open={true} onClick={(e) => e.stopPropagation()}>
             {process ? <LinearProgress /> : <></>}
             <Grid container spacing={2}>
-                <Grid className={menuStyles.name} item xs={11} sx={{ mb: -3 }}>
+                <Grid
+                    item
+                    xs={11}
+                    sx={{
+                        mb: -3,
+                        fontFamily: 'Arial',
+                        fontSize: 20,
+                        color: 'black',
+                        outline: 'none',
+                        letterSpacing: 'normal',
+                        pb: '2px',
+                        lineHeight: 'normal',
+                        overflowWrap: 'break-word',
+                    }}
+                >
                     <DialogTitle>{getTitleDialog()}</DialogTitle>
                 </Grid>
                 <Grid item xs={1} sx={{ ml: -2, mt: 1 }}>

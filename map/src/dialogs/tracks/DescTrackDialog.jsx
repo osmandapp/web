@@ -1,9 +1,8 @@
-import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
-import { Alert, Box, Button, TextField } from '@mui/material';
+import { Alert, Box, Button, TextField, Dialog } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext, { isLocalTrack } from '../../context/AppContext';
 import { Editor } from 'react-draft-wysiwyg';
@@ -12,13 +11,11 @@ import draftToHtml from 'draftjs-to-html';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import 'draft-js/dist/Draft.css';
 import _ from 'lodash';
-import contextMenuStyles from '../../infoblock/styles/ContextMenuStyles';
 import { AddPhotoAlternate } from '@mui/icons-material';
 import { saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
 
 export default function DescTrackDialog({ dialogOpen, setDialogOpen, desc }) {
     const ctx = useContext(AppContext);
-    const styles = contextMenuStyles();
 
     const [description, setDescription] = useState(null);
     const [link, setLink] = useState(null);
@@ -96,8 +93,13 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen, desc }) {
                             ) : (
                                 <Button
                                     variant="contained"
-                                    sx={{ ml: '-0.5px !important' }}
-                                    className={styles.button}
+                                    sx={{
+                                        ml: '-0.5px !important',
+                                        backgroundColor: '#fbc73a',
+                                        fontSize: '12px',
+                                        minWidth: '20px',
+                                        padding: '3px 5px',
+                                    }}
                                     onClick={() => {
                                         toggleShowEditImgDialog();
                                     }}

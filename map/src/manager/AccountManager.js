@@ -51,6 +51,10 @@ export async function userLogin({ ltx, username, pwd, setError, handleClose, lan
     if (await isRequestOk(response, setError)) {
         setError('');
         ltx.setLoginUser(username);
+        if (ltx.openLoginDialog) {
+            ltx.setOpenLoginDialog((prev) => !prev);
+            ltx.setCompletePurchase((prev) => !prev);
+        }
         ltx.setEmailCookie(username, { days: 30, SameSite: 'Strict' }); // for next login
         handleClose();
     }

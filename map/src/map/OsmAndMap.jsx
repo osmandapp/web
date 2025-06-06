@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useContext, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { MapContainer, Marker, ScaleControl, AttributionControl, ZoomControl } from 'react-leaflet';
 import AppContext from '../context/AppContext';
 import RouteLayer from './layers/RouteLayer';
@@ -24,55 +23,14 @@ import HeightmapLayer from './layers/HeightmapLayer';
 import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
-
-const useStyles = makeStyles(() => ({
-    root: (props) => ({
-        width: '100%',
-        height: '100%',
-        position: 'fixed',
-        '& .leaflet-control-layers': {
-            border: '0px !important',
-        },
-        '& .leaflet-bottom .leaflet-control-zoom': {
-            bottom: props.globalGraph?.show ? `${props.globalGraph.size}px` : '0px',
-        },
-        '& .leaflet-control-scale': {
-            marginLeft:
-                props.width < 750 || props.width - props.marginLeft < 500
-                    ? `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0) + 20}px`
-                    : `${props.marginLeft}px`,
-            display: props.width > 750 && props.width - props.marginLeft > 500 ? 'inline-block' : 'flex',
-            float: 'none',
-            marginBottom: props.globalGraph?.show ? `${props.globalGraph.size + 20}px` : '20px',
-        },
-        '& .leaflet-control-attribution': {
-            left: `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0)}px`,
-            marginLeft: '20px',
-            borderRadius: '4px !important',
-            marginBottom: props.globalGraph?.show ? `${props.globalGraph.size + 20}px` : '20px',
-        },
-        '& .leaflet-control-layers-toggle': {
-            width: '0px !important',
-            height: '0px !important',
-        },
-        '& .leaflet-bar': {
-            border: '4px !important',
-            width: '40px !important',
-        },
-        '& .leaflet-bar a': {
-            width: '40px !important',
-            color: '#757575',
-            border: '4px !important',
-        },
-    }),
-}));
+import { Box } from '@mui/material';
 
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     if (lat) {
         if (hoverPointRef.current) {
             hoverPointRef.current.setLatLng([lat, lng]);
         } else {
-            setHoverPoint({ lat: lat, lng: lng });
+            setHoverPoint({ lat, lng });
         }
         ctx.setGraphHighlightedPoint({ lat, lng });
     } else {
@@ -96,18 +54,18 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const menuMargin = parseFloat(menuInfoWidth) !== 0 ? parseFloat(menuInfoWidth) - 100 : 0;
     const attributionSize = 300;
     const marginLeft = width / 2 - attributionSize + menuMargin;
-    const classes = useStyles({ mainMenuWidth, menuInfoWidth, marginLeft, width, globalGraph: ctx.globalGraph });
+
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
-            const hash = new L.Hash(map);
+            new L.Hash(map);
             mapRef.current = map;
             if (!ctx.mapMarkerListener) {
                 ctx.setMapMarkerListener(
                     () => (lat, lng) => updateMarker({ lat, lng, setHoverPoint, hoverPointRef, ctx })
                 );
             }
-            detectGeoByIp({ map, hash });
+            detectGeoByIp({ map, hash: new L.Hash(map) });
         }
     };
 
@@ -149,53 +107,101 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
         };
         document.addEventListener('touchstart', markerEventHandler, { passive: false });
         document.addEventListener('touchend', markerEventHandler, { passive: false });
-    }, []);
+
+        return () => {
+            document.removeEventListener('touchstart', markerEventHandler);
+            document.removeEventListener('touchend', markerEventHandler);
+        };
+    }, [ctx]);
 
     const routersReady = ctx.trackRouter.isReady() && ctx.routeObject.isReady();
 
     return (
-        <MapContainer
-            zoom={initialZoom}
-            center={initialPosition}
-            className={classes.root}
-            minZoom={1}
-            maxZoom={20}
-            zoomControl={false}
-            whenReady={whenReadyHandler}
-            contextmenu={true}
-            contextmenuItems={[]}
-            editable={true}
-            attributionControl={false}
+        <Box
+            sx={{
+                width: '100%',
+                height: '100%',
+                position: 'fixed',
+                '& .leaflet-control-layers': {
+                    border: '0px !important',
+                },
+                '& .leaflet-bottom .leaflet-control-zoom': {
+                    bottom: ctx.globalGraph?.show ? `${ctx.globalGraph.size}px` : '0px',
+                },
+                '& .leaflet-control-scale': {
+                    marginLeft:
+                        width < 750 || width - marginLeft < 500
+                            ? `${(parseFloat(mainMenuWidth) || 0) + (parseFloat(menuInfoWidth) || 0) + 20}px`
+                            : `${marginLeft}px`,
+                    display: width > 750 && width - marginLeft > 500 ? 'inline-block' : 'flex',
+                    float: 'none',
+                    marginBottom: ctx.globalGraph?.show ? `${ctx.globalGraph.size + 20}px` : '20px',
+                },
+                '& .leaflet-control-attribution': {
+                    left: `${(parseFloat(mainMenuWidth) || 0) + (parseFloat(menuInfoWidth) || 0)}px`,
+                    marginLeft: '20px',
+                    borderRadius: '4px !important',
+                    marginBottom: ctx.globalGraph?.show ? `${ctx.globalGraph.size + 20}px` : '20px',
+                },
+                '& .leaflet-control-layers-toggle': {
+                    width: '0px !important',
+                    height: '0px !important',
+                },
+                '& .leaflet-bar': {
+                    border: '4px !important',
+                    width: '40px !important',
+                },
+                '& .leaflet-bar a': {
+                    width: '40px !important',
+                    color: '#757575',
+                    border: '4px !important',
+                },
+            }}
         >
-            {routersReady && <CloudTrackLayer />}
-            {routersReady && <LocalClientTrackLayer />}
-            {routersReady && <RouteLayer geocodingData={geocodingData} region={regionData} />}
-            <TrackAnalyzerLayer />
-            <ShareFileLayer />
-            <TravelLayer />
-            <FavoriteLayer />
-            <WeatherLayer />
-            <GraphLayer />
-            <PoiLayer />
-            <SearchLayer />
-            <ExploreLayer />
-            <CustomTileLayer
-                ref={tileLayer}
-                attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+            <MapContainer
+                zoom={initialZoom}
+                center={initialPosition}
                 minZoom={1}
                 maxZoom={20}
-                maxNativeZoom={19}
-            />
-            <HeightmapLayer />
-            {hoverPoint && (
-                <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
-            )}
-            <ScaleControl position={'bottomleft'} imperial={false} />
-            <AttributionControl position={'bottomleft'} prefix={false} />
-            <LocationControl position={'bottomright'} />
-            <ZoomControl position={'bottomright'} />
-            <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData} />
-        </MapContainer>
+                zoomControl={false}
+                whenReady={whenReadyHandler}
+                contextmenu={true}
+                contextmenuItems={[]}
+                editable={true}
+                attributionControl={false}
+                style={{ width: '100%', height: '100%' }}
+            >
+                {routersReady && <CloudTrackLayer />}
+                {routersReady && <LocalClientTrackLayer />}
+                {routersReady && <RouteLayer geocodingData={geocodingData} region={regionData} />}
+                <TrackAnalyzerLayer />
+                <ShareFileLayer />
+                <TravelLayer />
+                <FavoriteLayer />
+                <WeatherLayer />
+                <GraphLayer />
+                <PoiLayer />
+                <SearchLayer />
+                <ExploreLayer />
+                <CustomTileLayer
+                    ref={tileLayer}
+                    attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+                    minZoom={1}
+                    maxZoom={20}
+                    maxNativeZoom={19}
+                />
+                <HeightmapLayer />
+                {hoverPoint && (
+                    <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
+                )}
+                <ScaleControl position="bottomleft" imperial={false} />
+                <AttributionControl position="bottomleft" prefix={false} />
+                <LocationControl position="bottomright" />
+                <ZoomControl position="bottomright" />
+                <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData} />
+            </MapContainer>
+        </Box>
     );
 };
+
 export default OsmAndMap;

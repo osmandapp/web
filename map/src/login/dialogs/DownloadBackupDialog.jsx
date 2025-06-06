@@ -13,6 +13,7 @@ import {
     ToggleButton,
     ToggleButtonGroup,
     Typography,
+    Checkbox,
 } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Close, ExpandLess, ExpandMore } from '@mui/icons-material';
@@ -20,18 +21,11 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import { Checkbox } from '@mui/material/';
 import _ from 'lodash';
-import { makeStyles } from '@material-ui/core/styles';
 import { apiPost } from '../../util/HttpApi';
 
 export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpenDownloadBackupDialog, widthDialog }) {
     const ctx = useContext(AppContext);
-    const useStyles = makeStyles(() => ({
-        paper: { maxWidth: `${widthDialog}px`, minWidth: `${widthDialog}px` },
-    }));
-
-    const classes = useStyles();
 
     const userPlaces = [
         'FAVOURITES',
@@ -328,8 +322,13 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
 
     return (
         <Dialog
+            PaperProps={{
+                sx: {
+                    maxWidth: `${widthDialog}px`,
+                    minWidth: `${widthDialog}px`,
+                },
+            }}
             id={'se-download-backup-dialog'}
-            classes={{ paper: classes.paper }}
             open={openDownloadBackupDialog}
             onClose={() => setOpenDownloadBackupDialog(false)}
         >

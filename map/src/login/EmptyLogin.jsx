@@ -9,14 +9,21 @@ import { createAccount, openLogin } from '../manager/LoginManager';
 import LoginContext from '../context/LoginContext';
 import GrayBtnWithBlueHover from '../frame/components/btns/GrayBtnWithBlueHover';
 
-export default function EmptyLogin() {
+export default function EmptyLogin({
+    description = 'web:empty_login_desc',
+    setOpenLoginDialog = null,
+    setOpenCreateAccountDialog = null,
+}) {
     const ltx = useContext(LoginContext);
 
     const navigate = useNavigate();
     const { t } = useTranslation();
 
     return (
-        <Box id="se-empty-login-page" className={loginStyles.block}>
+        <Box
+            id="se-empty-login-page"
+            className={setOpenLoginDialog && setOpenCreateAccountDialog ? loginStyles.dialogBlock : loginStyles.block}
+        >
             <Icon className={loginStyles.logoIcon}>
                 <UserAccountIcon />
             </Icon>
@@ -25,12 +32,28 @@ export default function EmptyLogin() {
                     {t('web:OsmAnd_account')}
                 </ListItemText>
                 <ListItemText disableTypography={true} className={styles.text}>
-                    {t('web:empty_login_desc')}
+                    {t(description)}
                 </ListItemText>
             </Box>
-            <GrayBtnWithBlueHover id="se-login-btn" action={() => openLogin(ltx, navigate)} text={t('web:login_btn')} />
             <GrayBtnWithBlueHover
-                action={() => createAccount(ltx)}
+                id="se-login-btn"
+                action={() => {
+                    if (setOpenLoginDialog) {
+                        setOpenLoginDialog(true);
+                    } else {
+                        openLogin(ltx, navigate);
+                    }
+                }}
+                text={t('web:login_btn')}
+            />
+            <GrayBtnWithBlueHover
+                action={() => {
+                    if (setOpenCreateAccountDialog) {
+                        setOpenCreateAccountDialog(true);
+                    } else {
+                        createAccount(ltx);
+                    }
+                }}
                 text={t('web:create_account_btn')}
                 additionalStyle={{ mt: 1.5 }}
             />

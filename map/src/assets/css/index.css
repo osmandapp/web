@@ -3,7 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
         'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -30,6 +31,7 @@ code {
 
 .MuiButton-root.Mui-disabled {
     background-color: #f0f0f0 !important;
+    color: #666666 !important;
 }
 
 .MuiAppBar-root {

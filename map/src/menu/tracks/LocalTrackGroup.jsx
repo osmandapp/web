@@ -3,7 +3,6 @@ import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import LocalTrackItem from './LocalTrackItem';
-import drawerStyles from '../../frame/styles/DrawerStyles';
 import TracksManager from '../../manager/track/TracksManager';
 import PopperMenu from './PopperMenu';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
@@ -11,8 +10,6 @@ import LocalGpxUploader from '../../frame/util/LocalGpxUploader';
 import { clearAllLocalTracks } from '../../context/LocalTrackStorage';
 
 export default function LocalTrackGroup() {
-    const styles = drawerStyles();
-
     const ctx = useContext(AppContext);
 
     const [localGpxOpen, setLocalGpxOpen] = useState(true);
@@ -49,7 +46,14 @@ export default function LocalTrackGroup() {
     };
 
     return (
-        <div className={styles.drawerItem}>
+        <Box
+            sx={{
+                '& .MuiMenuItem-root': {
+                    minHeight: '50px !important',
+                    maxHeight: '50px !important',
+                },
+            }}
+        >
             <MenuItem sx={{ ml: 3, mb: 1 }} divider onClick={() => setLocalGpxOpen(!localGpxOpen)}>
                 <ListItemIcon>
                     <Folder fontSize="small" sx={{ mb: '4px' }} />
@@ -87,8 +91,15 @@ export default function LocalTrackGroup() {
                 </div>
                 <ButtonGroup variant="text" sx={{ mt: 1, ml: 2 }}>
                     <Button
-                        className={styles.button}
-                        sx={{ ml: 3, fontSize: 11, textAlign: 'center' }}
+                        sx={{
+                            ml: 3,
+                            fontSize: 11,
+                            textAlign: 'center',
+                            maxWidth: '120px !important',
+                            maxHeight: '40px',
+                            minWidth: '120px !important',
+                            minHeight: '40px',
+                        }}
                         variant="contained"
                         component="span"
                         onClick={() => TracksManager.createTrack(ctx)}
@@ -97,16 +108,22 @@ export default function LocalTrackGroup() {
                     </Button>
                     <LocalGpxUploader>
                         <Button
-                            className={styles.button}
+                            sx={{
+                                fontSize: 11,
+                                ml: 2,
+                                maxWidth: '120px !important',
+                                maxHeight: '40px',
+                                minWidth: '120px !important',
+                                minHeight: '40px',
+                            }}
                             variant="contained"
                             component="span"
-                            sx={{ fontSize: 11, ml: 2 }}
                         >
                             Import track
                         </Button>
                     </LocalGpxUploader>
                 </ButtonGroup>
             </Collapse>
-        </div>
+        </Box>
     );
 }

@@ -29,28 +29,11 @@ import {
     Tooltip,
 } from 'chart.js';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import { getRelativePosition } from 'chart.js/helpers';
 import { getLargeLengthUnit, getSmallLengthUnit, getSpeedUnit } from '../../../menu/settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
-
-const useStyles = makeStyles({
-    slider: {
-        '& .MuiSlider-thumb': {
-            '&.first-thumb': {
-                backgroundImage: `url('/map/images/map_icons/map_track_point_start.svg')`,
-                backgroundPosition: 'center',
-            },
-            '&.second-thumb ': {
-                backgroundImage: `url('/map/images/map_icons/map_track_point_finish.svg')`,
-                backgroundPosition: 'center',
-            },
-        },
-        '& .MuiSlider-valueLabel': { fontSize: '8px' },
-    },
-});
 
 ChartJS.register(
     Tooltip,
@@ -68,7 +51,6 @@ ChartJS.register(
 
 export default function MainGraph({ data, attrGraphData, showData, setSelectedPoint, width }) {
     const ctx = useContext(AppContext);
-    const styles = useStyles();
 
     const { t } = useTranslation();
 
@@ -617,7 +599,19 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                 />
             </Box>
             <Slider
-                className={styles.slider}
+                sx={{
+                    '& .MuiSlider-thumb.first-thumb': {
+                        backgroundImage: "url('/map/images/map_icons/map_track_point_start.svg')",
+                        backgroundPosition: 'center',
+                    },
+                    '& .MuiSlider-thumb.second-thumb': {
+                        backgroundImage: "url('/map/images/map_icons/map_track_point_finish.svg')",
+                        backgroundPosition: 'center',
+                    },
+                    '& .MuiSlider-valueLabel': {
+                        fontSize: '8px',
+                    },
+                }}
                 valueLabelDisplay="auto"
                 valueLabelFormat={valueLabelFormat}
                 getAriaLabel={() => 'Distance range'}

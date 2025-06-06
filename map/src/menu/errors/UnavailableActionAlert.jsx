@@ -1,7 +1,6 @@
-import { Dialog } from '@material-ui/core';
 import dialogStyles from '../../dialogs/dialog.module.css';
 import DialogActions from '@mui/material/DialogActions';
-import { Button } from '@mui/material';
+import { Button, Dialog } from '@mui/material';
 import React from 'react';
 import DialogContent from '@mui/material/DialogContent';
 

@@ -1,6 +1,5 @@
 import { ListItemText, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
-import contextMenuStyles from '../../../styles/ContextMenuStyles';
 import AppContext from '../../../../context/AppContext';
 import { getPropsFromSearchResultItem } from '../../../../menu/search/search/SearchResultItem';
 import { useTranslation } from 'react-i18next';
@@ -14,7 +13,6 @@ export default function FavoriteName({
     widthDialog,
     isGroupName = false,
 }) {
-    const menuStyles = contextMenuStyles();
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -83,15 +81,30 @@ export default function FavoriteName({
     return (
         <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
             <TextField
-                className={menuStyles.favouriteLineInfo}
                 id={isGroupName ? 'se-fav-group-name-input' : 'se-fav-name-input'}
                 label="Name"
                 fullWidth
                 onChange={(e) => setFavoriteName(e.target.value)}
                 value={favoriteName}
-                autoFocus={true}
+                autoFocus
                 error={favoriteName === '' || nameAlreadyExist}
                 helperText={gerErrorText(favoriteName)}
+                sx={{
+                    maxWidth: '450px !important',
+                    resize: 'none',
+                    fontFamily: 'Arial',
+                    color: 'black',
+                    fontSize: 20,
+                    ml: '-2px',
+                    borderColor: '#bebdb4',
+                    backgroundColor: 'transparent',
+                    outlineColor: '#757575',
+                    cursor: 'pointer',
+                    '&[disabled]': { border: 'none' },
+                    mb: '-10px',
+                    pb: '8px',
+                    pt: '8px',
+                }}
             />
         </ListItemText>
     );

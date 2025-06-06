@@ -15,7 +15,7 @@ import {
     Box,
     Grid,
     ButtonGroup,
-    Divider,
+    TextField,
 } from '@mui/material';
 import AppContext, {
     isLocalTrack,
@@ -24,28 +24,13 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_TRACK,
 } from '../../context/AppContext';
 import RouteProfileSettings from './RouteProfileSettings';
-import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
-import { makeStyles } from '@material-ui/core/styles';
 import styles from './routemenu.module.css';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 import i18n from 'i18next';
 
 const StyledInput = styled('input')({
     display: 'none',
-});
-
-const useStyles = makeStyles({
-    start: {
-        '& .MuiFilledInput-root': {
-            background: '#aad3df',
-        },
-    },
-    finish: {
-        '& .MuiFilledInput-root': {
-            background: '#ebdbe8',
-        },
-    },
 });
 
 export function formatRouteInfo(props, ctx) {
@@ -89,8 +74,6 @@ export default function RouteMenu() {
     const finishPoint = routeObject.getOption('route.points.finish');
     const viaPoints = routeObject.getOption('route.points.viaPoints');
     const avoidRoads = routeObject.getOption('route.points.avoidRoads');
-
-    const classes = useStyles();
 
     const [open, setOpen] = useState(false);
     const [start, setStart] = useState('');
@@ -244,7 +227,18 @@ export default function RouteMenu() {
                     <Typography>{formatRouteInfo(routeObject.getRouteProps(), ctx)}</Typography>
                 </MenuItem>
             )}
-            <MenuItem key="start" sx={{ ml: 1, mr: 2, mt: 1 }} className={classes.start} disableRipple={true}>
+            <MenuItem
+                key="start"
+                sx={{
+                    ml: 1,
+                    mr: 2,
+                    mt: 1,
+                    '& .MuiFilledInput-root': {
+                        background: '#aad3df',
+                    },
+                }}
+                disableRipple={true}
+            >
                 <FormControl fullWidth>
                     <TextField
                         InputLabelProps={{
@@ -298,7 +292,18 @@ export default function RouteMenu() {
                     </IconButton>
                 </MenuItem>
             ))}
-            <MenuItem key="finish" sx={{ ml: 1, mr: 2, mt: 1 }} className={classes.finish} disableRipple={true}>
+            <MenuItem
+                key="finish"
+                sx={{
+                    ml: 1,
+                    mr: 2,
+                    mt: 1,
+                    '& .MuiFilledInput-root': {
+                        background: '#ebdbe8',
+                    },
+                }}
+                disableRipple={true}
+            >
                 <FormControl fullWidth>
                     <TextField
                         InputLabelProps={{

@@ -63,7 +63,7 @@ export default function ShareFileItem({ file, type }) {
                     )}
                     {type === FAVOURITES && (
                         <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
-                            {`${getLocalizedTimeUpdate(favGroup.clienttimems)}, ${getSize(favGroup, t)}`}
+                            {`${getLocalizedTimeUpdate(favGroup.clienttimems, ctx)}, ${getSize(favGroup, t)}`}
                         </Typography>
                     )}
                 </ListItemText>

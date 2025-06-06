@@ -14,7 +14,6 @@ import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_acti
 import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_mail.svg';
 import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
-import * as locales from 'date-fns/locale';
 import { format, startOfWeek, addDays } from 'date-fns';
 import capitalize from 'lodash/capitalize';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
@@ -321,7 +320,7 @@ async function getWptTags(obj, type, ctx) {
                 }
 
                 if (tagObj.key === OPENING_HOURS) {
-                    tagObj.value = localizeWeekDays(tagObj.value);
+                    tagObj.value = localizeWeekDays(tagObj.value, ctx);
                 }
 
                 if (tagObj.key.startsWith(POI_NAME)) {
@@ -391,8 +390,8 @@ export async function addPoiTypeTag({
     return tagObj;
 }
 
-function localizeWeekDays(schedule) {
-    const locale = locales[i18n.language] || locales.enUS;
+function localizeWeekDays(schedule, ctx) {
+    const locale = ctx.dateLocale;
     const baseDate = startOfWeek(new Date(), { weekStartsOn: 1 });
 
     const days = {

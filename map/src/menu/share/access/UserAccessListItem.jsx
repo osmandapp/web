@@ -11,7 +11,6 @@ import { ReactComponent as ActionDoneIcon } from '../../../assets/icons/ic_actio
 import { ReactComponent as ActionRemoveIcon } from '../../../assets/icons/ic_action_remove_dark.svg';
 import { ReactComponent as AnyoneIcon } from '../../../assets/icons/ic_world_globe_dark.svg';
 import { format } from 'date-fns';
-import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
@@ -62,8 +61,7 @@ export default function UserAccessListItem({
     }
 
     function formatRequestedDateWithDateFns(date) {
-        const locale = locales[i18n.language] || locales.enUS;
-        return `Requested: ${format(date, 'd MMM yyyy', { locale })}`;
+        return `Requested: ${format(date, 'd MMM yyyy', { locale: ctx.dateLocale })}`;
     }
 
     function approveRequest() {
