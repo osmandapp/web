@@ -29,3 +29,4 @@ Web 1.02 is the latest web version of OsmAnd, which includes new useful features
 - [Renaming a track does not work properly](https://github.com/osmandapp/web/issues/744)
 - [Number of "Tracks on display" is incorrect](https://github.com/osmandapp/web/issues/798)
 - [Ecco brand is displayed as a category even though it is not on the visible maps](https://github.com/osmandapp/web/issues/807)
+- [Track is created with two <rte> tags](https://github.com/osmandapp/OsmAnd-iOS/issues/4466)
