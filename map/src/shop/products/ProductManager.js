@@ -1,7 +1,7 @@
 import { ReactComponent as StartIcon } from '../../assets/icons/ic_action_osmand_start_v2.svg';
 import { ReactComponent as MapsIcon } from '../../assets/icons/ic_action_osmand_maps_plus_v2.svg';
 import { ReactComponent as ProIcon } from '../../assets/icons/ic_action_osmand_pro_logo_colored_v2.svg';
-import { ReactComponent as DecadeIcon } from '../../assets/icons/ic_action_osmand_pro_logo_colored_v2.svg';
+import { ReactComponent as DecadeIcon } from '../../assets/icons/ic_action_osmand_decade_v2.svg';
 import { apiGet } from '../../util/HttpApi';
 
 export const products = [
@@ -49,7 +49,7 @@ export const products = [
     },
     {
         id: 'osmand-decade',
-        name: 'Decade+',
+        name: 'XV',
         icon: <DecadeIcon />,
         shortFeaturesList: [
             'web:feature_15_year_access_to_all_pro_features',
