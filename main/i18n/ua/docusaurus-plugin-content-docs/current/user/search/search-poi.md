@@ -3,23 +3,23 @@ source-hash: 57f5e55c17d1fe43724aee334098b683afa627fb95ae959e88c691cb4284783c
 sidebar_position: 4
 title:  Пошук POI
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoIncompleteArticle/>
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-## Огляд {#overview}
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-Функціональність [Точок інтересу (POI) OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) в OsmAnd забезпечує точність, видимість та зручність у пошуку цікавих місць, маршрутів та послуг поблизу вашого поточного місцезнаходження або вибраної області на мапі.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoIncompleteArticle/>
+
+
+## Огляд {#overview}
+
+Функціональність [Точок інтересу (POI) OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) в OsmAnd забезпечує точність, видимість та зручність у пошуку цікавих місць, маршрутів та послуг поблизу вашого поточного місцезнаходження або вибраної області на мапі.
 
 Рядок пошуку дозволяє вводити ключові слова, пов'язані з місцями, які вас цікавлять. Пошук POI також представляє зручний список, відсортований за [категоріями](#poi-search-by-categories), щоб допомогти вам швидко знайти те, що ви шукаєте, а [фільтр](#save-new-custom-filters) дозволяє вибрати конкретні характеристики POI для відображення лише відповідних результатів.
 

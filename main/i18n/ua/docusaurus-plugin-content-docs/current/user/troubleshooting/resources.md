@@ -3,21 +3,21 @@ source-hash: a6ac3e26e303e0906f8e1000bdd051b36b35e0f99bc3fb6d392941cc2915c41d
 sidebar_position: 9
 title: Ресурси та налаштування
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Досліджуйте OsmAnd {#explore-osmand}
 import AllStores from '@site/src/components/buttons/AllStores.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-OsmAnd — це потужний додаток з широкою базою користувачів, і окрім офіційної документації, існує безліч ресурсів, створених спільнотою.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Досліджуйте OsmAnd {#explore-osmand}
+
+OsmAnd — це потужний додаток з широкою базою користувачів, і окрім офіційної документації, існує безліч ресурсів, створених спільнотою.
+
 Ця стаття містить посилання на користувацькі посібники, групи в соціальних мережах, плагіни, стилі карт та багато іншого. Досліджуйте ці ресурси, щоб розширити свої знання, налаштувати OsmAnd під себе та зв'язатися з іншими користувачами.
 
 

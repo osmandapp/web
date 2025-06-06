@@ -3,25 +3,25 @@ source-hash: 84ddeb56f44e87741ae08ac73c00b4a7a69284cfa8aacfd4aca15431bdfe5c57
 sidebar_position: 5
 title:  Вигляд треку
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Функція **Вигляд треку** дозволяє користувачам налаштовувати відображення треків на мапі. Це включає налаштування кольору, ширини, індикаторів напрямку та інших візуальних елементів. Налаштування вигляду треку допомагає розрізняти кілька треків, виділяти певні маршрути та покращувати читабельність мапи.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-<Tabs groupId="operating-systems">
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Функція **Вигляд треку** дозволяє користувачам налаштовувати відображення треків на мапі. Це включає налаштування кольору, ширини, індикаторів напрямку та інших візуальних елементів. Налаштування вигляду треку допомагає розрізняти кілька треків, виділяти певні маршрути та покращувати читабельність мапи.
+
+<Tabs groupId="operating-systems">
+
 <TabItem value="android" label="Android">
 
 ![Track Appearance overview Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track_appearence_1_andr.png)

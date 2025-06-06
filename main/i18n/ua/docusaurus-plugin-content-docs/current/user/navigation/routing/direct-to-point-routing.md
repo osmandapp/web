@@ -3,21 +3,21 @@ source-hash: 252654763c354c132dbaedeca614dda4ef05292197f17612efe2edff762d6a14
 sidebar_position: 9
 title:  Навігація за прямою (Човен)
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Навігація за прямою в OsmAnd — це корисна функція, яка дозволяє вам переміщатися безпосередньо до певної точки на карті без необхідності слідувати заздалегідь визначеним маршрутом або дорожньою мережею. Цю функцію можуть використовувати капітани човнів,
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-любителі активного відпочинку або аварійні служби під час рятувальних операцій. Загалом, навігація за прямою є гнучкою та універсальною функцією, яку можна використовувати в різних ситуаціях, коли традиційні методи навігації можуть бути недоречними або неефективними.
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+Навігація за прямою в OsmAnd — це корисна функція, яка дозволяє вам переміщатися безпосередньо до певної точки на карті без необхідності слідувати заздалегідь визначеним маршрутом або дорожньою мережею. Цю функцію можуть використовувати капітани човнів,
+любителі активного відпочинку або аварійні служби під час рятувальних операцій. Загалом, навігація за прямою є гнучкою та універсальною функцією, яку можна використовувати в різних ситуаціях, коли традиційні методи навігації можуть бути недоречними або неефективними.
 
 ![Тип навігації за прямою Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 

@@ -3,25 +3,25 @@ source-hash: 0f90c9e6cf112f98f5490732a7aa0e4c68a17fa750ea3706ce765910a70aad18
 title:  Треки
 sidebar_position: 2
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-OsmAnd має багато потужних функцій для відображення різних маршрутів на карті. Маршрути можуть бути побудовані як частина Навігації, створені за допомогою Планування маршруту, імпортовані як GPX-треки, записані за допомогою плагіна Запис поїздки, або переглянуті та обрані з даних OpenStreetMap.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-## Типи треків {#types-of-tracks}
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+OsmAnd має багато потужних функцій для відображення різних маршрутів на карті. Маршрути можуть бути побудовані як частина Навігації, створені за допомогою Планування маршруту, імпортовані як GPX-треки, записані за допомогою плагіна Запис поїздки, або переглянуті та обрані з даних OpenStreetMap.
+
+
+## Типи треків {#types-of-tracks}
 
 [Треки (GPX)](#display-tracks-on-the-map) - записана або запланована поїздка, збережена у [GPX-форматі](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Цей тип маршруту може бути імпортований із зовнішнього джерела, створений у застосунку або записаний вами. GPX може містити один із 3 різних типів даних або всі з них:
 

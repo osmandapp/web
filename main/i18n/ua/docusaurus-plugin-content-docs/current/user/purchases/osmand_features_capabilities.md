@@ -4,23 +4,23 @@ sidebar_position: 1
 title:  Функції та можливості OsmAnd
 unlisted: true
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Усі функції та можливості {#all-features-and-capabilities}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-OsmAnd — це **потужна програма для навігації та картографування**, яка пропонує широкий спектр офлайн- та онлайн-функцій. Ця сторінка містить детальний огляд усіх доступних функцій у різних версіях програми.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+
+
+
+## Усі функції та можливості {#all-features-and-capabilities}
+
+OsmAnd — це **потужна програма для навігації та картографування**, яка пропонує широкий спектр офлайн- та онлайн-функцій. Ця сторінка містить детальний огляд усіх доступних функцій у різних версіях програми.
+
 
 
 ## Навігація {#navigation}

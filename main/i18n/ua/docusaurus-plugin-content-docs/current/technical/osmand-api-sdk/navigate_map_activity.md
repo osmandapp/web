@@ -1,8 +1,8 @@
 ---
 source-hash: c04ca618d3358afda1016b282a182e90d180da8a4be9bb6b7bf6b059af6893e6
 sidebar_position: 4
-import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 ---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # Дія "Навігація по карті" {#navigate-map-activity}
 Є карта та перемикач для рендерингу opengl, він має longClickListener на mapView, після першого дотику вибирається початкова точка, після другого дотику вибирається кінцева точка та починається розрахунок маршруту.

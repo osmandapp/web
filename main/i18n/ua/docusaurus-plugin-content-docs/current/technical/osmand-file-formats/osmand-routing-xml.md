@@ -1,8 +1,8 @@
 ---
 source-hash: 7c6414cdee8a43f004ddeb93c977bee4a471d040252f2a0e62805cfcd71c1fd6
 sidebar_position: 5
-import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 ---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # Конфігурація маршрутизації - .routing.xml {#routing-configuration---routingxml}
 

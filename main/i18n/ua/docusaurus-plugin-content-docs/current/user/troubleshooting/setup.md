@@ -3,21 +3,21 @@ source-hash: 88e4f7fd45f03ba362eef617efece8cbb32eac46a5e30d86a6db12675354fa56
 sidebar_position: 1
 title:  Налаштування
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Початкове налаштування {#initial-setup}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-### Як відновити дані {#how-to-recover-data}
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Початкове налаштування {#initial-setup}
+
+### Як відновити дані {#how-to-recover-data}
+
 Щоб запобігти втраті даних, переконайтеся, що ваші особисті дані, маршрути та карти резервуються. OsmAnd пропонує варіанти експорту ваших даних у різні формати. У разі втрати даних або зміни пристрою, виконайте [ці кроки](https://osmand.net/docs/user/personal/import-export/#preventing-data-loss), щоб відновити дані з резервної копії.
 
 

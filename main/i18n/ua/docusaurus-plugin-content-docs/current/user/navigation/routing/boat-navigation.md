@@ -3,21 +3,21 @@ source-hash: 1b0248f79fb147341e713ffd4c07381c3d0499e5d9abb1f928f9d17412b75d84
 sidebar_position: 8
 title:  Прокладання маршруту для човна
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Прокладання маршруту для човна може бути цінним інструментом для тих, хто любить кататися на човні або плавати каналами, річками чи фарватерами. Через відсутність більшості фарватерів у даних OpenStreetMap, прокладання маршруту для човна *не рекомендується* для **навігації у відкритій воді**, натомість пропонується використовувати **[Прямо до точки](#direct-to-point-routing-for-boat)**. Завдяки увімкненим лініям контурів глибини, це може допомогти вам залишатися в безпеці на воді, уникаючи небезпек, таких як мілководдя, скелі або інші перешкоди.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Навігаційний двигун OsmAnd для човнів також враховує характеристики водних шляхів та самих човнів.
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+Прокладання маршруту для човна може бути цінним інструментом для тих, хто любить кататися на човні або плавати каналами, річками чи фарватерами. Через відсутність більшості фарватерів у даних OpenStreetMap, прокладання маршруту для човна *не рекомендується* для **навігації у відкритій воді**, натомість пропонується використовувати **[Прямо до точки](#direct-to-point-routing-for-boat)**. Завдяки увімкненим лініям контурів глибини, це може допомогти вам залишатися в безпеці на воді, уникаючи небезпек, таких як мілководдя, скелі або інші перешкоди.
+Навігаційний двигун OsmAnd для човнів також враховує характеристики водних шляхів та самих човнів.
 
 <Tabs groupId="operating-systems">
 

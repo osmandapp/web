@@ -3,21 +3,21 @@ source-hash: 4eabfd2b5a483a8f83ee870e1e1a1668b6718c79bfec727fd8eaa501963c787a
 sidebar_position: 6
 title:  Пошук за координатами
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-**Пошук за координатами в OsmAnd** дозволяє знайти певне місце за широтою та довготою. Цей тип пошуку допомагає точно визначити місцезнаходження. Він особливо корисний для районів, які не мають точних адрес, або для конкретних географічних завдань, таких як створення геозон або точне позиціонування на відкритому просторі.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+**Пошук за координатами в OsmAnd** дозволяє знайти певне місце за широтою та довготою. Цей тип пошуку допомагає точно визначити місцезнаходження. Він особливо корисний для районів, які не мають точних адрес, або для конкретних географічних завдань, таких як створення геозон або точне позиціонування на відкритому просторі.
+
 OsmAnd надає кілька способів перейти до *Інструменту пошуку → [Вкладка пошуку адреси](../search/search-address.md)*, де розташований **Пошук за координатами**.
 
 - [Кнопка пошуку](../widgets/map-buttons.md#search) на екрані програми карти.

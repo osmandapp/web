@@ -3,21 +3,21 @@ source-hash: 4279e8b0f36e69d2e860ec2e48cb3a48d0b171f309dc5569b62b8e5d94ae87fa
 sidebar_position: 3
 title: Навігація
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Розрахунок маршруту {#route-calculation}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-### Розрахунок маршруту повільний {#route-calculation-is-slow}
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Розрахунок маршруту {#route-calculation}
+
+### Розрахунок маршруту повільний {#route-calculation-is-slow}
+
 *Android*. OsmAnd використовує два різні **офлайн-рушії маршрутизації**: *рушій на основі Java* та *нативний рушій (C++)*.
 
 - *Рушій на основі Java* використовується в [Безпечному режимі](../plugins/development.md#safe), але він приблизно в 10 разів повільніший за нативний рушій. Він також має суворі обмеження пам’яті, що може призвести до помилок, таких як *Недостатньо пам’яті для обчислення*. Якщо ви зіткнулися з цією проблемою, перейдіть до *Плагіни → Розробка OsmAnd → Налаштування →* [*Безпечний режим*](../plugins/development.md#safe) і переконайтеся, що ця опція вимкнена.

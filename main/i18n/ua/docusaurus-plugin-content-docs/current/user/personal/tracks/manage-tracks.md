@@ -3,25 +3,25 @@ source-hash: 756f21f2fc7dbe6a06f1cc114337def23f08730abef31e8c965887a3e12139c0
 sidebar_position: 2
 title:  Керування треками
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Усі треки в OsmAnd зберігаються на вкладці в *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd обробляє файл треку у [форматі GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), але [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) та [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) можна імпортувати та конвертувати в GPX. Докладніше про різні типи треків читайте у статті [Треки на мапі](../../map/tracks/index.md#types-of-tracks).
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-<Tabs groupId="operating-systems">
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Усі треки в OsmAnd зберігаються на вкладці в *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd обробляє файл треку у [форматі GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), але [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) та [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) можна імпортувати та конвертувати в GPX. Докладніше про різні типи треків читайте у статті [Треки на мапі](../../map/tracks/index.md#types-of-tracks).
+
+<Tabs groupId="operating-systems">
+
 <TabItem value="android" label="Android">
 
 ![Manage track Overview Android](@site/static/img/personal/tracks/track_on_map_android.png)

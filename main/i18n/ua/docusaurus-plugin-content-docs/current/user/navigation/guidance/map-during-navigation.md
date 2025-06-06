@@ -3,25 +3,25 @@ source-hash: fd5bcd702244f06b6dcda0375fdef2aba27fb94fa81bb7fc1ef7d80191482605
 sidebar_position: 1
 title: Екран мапи під час навігації
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-У цій статті описано, як налаштувати вигляд мапи під час навігації. Це включає такі функції, як відображення [POI вздовж маршруту](#show-points-along-the-route), використання [екранних сповіщень](#screen-alerts), [вигляд лінії маршруту](#route-line-appearance), включаючи колір, ширину та стрілки повороту. Ці функції тісно пов'язані з [налаштуваннями навігації за маршрутом](../setup/route-navigation.md#settings).
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-## Мапа під час навігації {#map-during-navigation}
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+У цій статті описано, як налаштувати вигляд мапи під час навігації. Це включає такі функції, як відображення [POI вздовж маршруту](#show-points-along-the-route), використання [екранних сповіщень](#screen-alerts), [вигляд лінії маршруту](#route-line-appearance), включаючи колір, ширину та стрілки повороту. Ці функції тісно пов'язані з [налаштуваннями навігації за маршрутом](../setup/route-navigation.md#settings).
+
+
+## Мапа під час навігації {#map-during-navigation}
 
 <Tabs groupId="operating-systems">
 

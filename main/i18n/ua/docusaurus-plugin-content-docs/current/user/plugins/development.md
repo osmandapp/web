@@ -3,23 +3,23 @@ source-hash: 2f29d2073fad93550938f8ca3add12f64ae276043a0c012e930838420947881e
 sidebar_position: 10
 title:  Розробка OsmAnd
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Тестові функції програми зібрані в плагіні розробки OsmAnd. Використовуйте їх на свій страх і ризик.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+
+## Огляд {#overview}
+
+Тестові функції програми зібрані в плагіні розробки OsmAnd. Використовуйте їх на свій страх і ризик.
+
 Плагін розробки OsmAnd дозволяє спробувати нові функції програми або налаштувати OsmAnd для тестування: імітувати навігаційні маршрути, перевіряти продуктивність рендерингу екрана тощо. Плагін призначений для *розробників та досвідчених користувачів* і не потрібен для щоденного використання програми.
 
 

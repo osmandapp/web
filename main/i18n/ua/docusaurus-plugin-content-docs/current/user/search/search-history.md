@@ -3,21 +3,21 @@ source-hash: 4dea207613166e68489ac2bcce83191cfe3242596baace414c5ac847f3c0000f
 sidebar_position: 3
 title:  Історія пошуку
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-## Огляд {#overview}
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-*Історія пошуку* — це запис усіх пошукових запитів та місць, які ви вводили або шукали в застосунку протягом періоду використання. Цей інструмент дозволяє легко знаходити та отримувати доступ до раніше шуканих місць, що полегшує навігацію та економить ваш час.
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-OsmAnd надає кілька способів перегляду історії пошуку.
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+## Огляд {#overview}
+
+*Історія пошуку* — це запис усіх пошукових запитів та місць, які ви вводили або шукали в застосунку протягом періоду використання. Цей інструмент дозволяє легко знаходити та отримувати доступ до раніше шуканих місць, що полегшує навігацію та економить ваш час.
+
+OsmAnd надає кілька способів перегляду історії пошуку.
 
 - [Кнопка пошуку](../widgets/map-buttons.md#search) завжди відображається на мапі, і натискання на неї переведе вас до [загального екрана](#how-to-use) інструменту.
 - Перейдіть до головного меню Android *Меню → Пошук → вкладка Історія*.

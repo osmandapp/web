@@ -3,25 +3,25 @@ source-hash: 7b47f4d236356fcbfc3f51d3043e6df666ad45f0eb6899631849946623cc0007
 sidebar_position: 3
 title: Контекстне меню мапи
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Контекстне меню мапи надає інформацію про вибраний об'єкт на мапі. Ви також можете використовувати його для створення маршруту до вибраного місця. Щоб відкрити контекстне меню, спочатку знайдіть потрібне місце на мапі, потім виберіть об'єкт коротким натисканням або довгим натисканням, вибираючи будь-яку точну точку на мапі.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-### Виберіть об'єкт (один дотик) {#select-an-object-single-tap}
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Контекстне меню мапи надає інформацію про вибраний об'єкт на мапі. Ви також можете використовувати його для створення маршруту до вибраного місця. Щоб відкрити контекстне меню, спочатку знайдіть потрібне місце на мапі, потім виберіть об'єкт коротким натисканням або довгим натисканням, вибираючи будь-яку точну точку на мапі.
+
+
+### Виберіть об'єкт (один дотик) {#select-an-object-single-tap}
 
 <Tabs groupId="operating-systems">
 

@@ -4,25 +4,25 @@ sidebar_position: 5
 sidebar_label:  Планування маршруту
 title: Планування маршруту на вебсайті
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoIncompleteArticle/>
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-## Огляд {#overview}
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-Планувальник маршрутів OsmAnd Web дозволяє створювати навігаційні маршрути, планувати треки та керувати локальними файлами безпосередньо з браузера. Цей веб-інструмент корисний для створення детальних маршрутів подорожей, які можна синхронізувати з вашим додатком або ділитися ними з іншими.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoIncompleteArticle/>
+
+
+## Огляд {#overview}
+
+Планувальник маршрутів OsmAnd Web дозволяє створювати навігаційні маршрути, планувати треки та керувати локальними файлами безпосередньо з браузера. Цей веб-інструмент корисний для створення детальних маршрутів подорожей, які можна синхронізувати з вашим додатком або ділитися ними з іншими.
+
 
 ## Навігаційний маршрут {#navigation-route}
 

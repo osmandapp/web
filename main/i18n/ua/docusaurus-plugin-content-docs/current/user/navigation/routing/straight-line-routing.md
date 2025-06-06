@@ -3,21 +3,21 @@ source-hash: 07cb6e5d9285e61a1ab559af18a7232b0ed1b71599b33d53ff8950d689bcc8b4
 sidebar_position: 10
 title:  Прямолінійне прокладання маршруту (Літак)
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoIncompleteArticle/>
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-## Огляд {#overview}
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+<InfoIncompleteArticle/>
+
+
+## Огляд {#overview}
+
 На відміну від традиційних алгоритмів прокладання маршрутів, які використовують дороги, стежки або заздалегідь визначені маршрути, прямолінійне прокладання маршруту розраховує найкоротшу відстань між двома точками на карті як пряму лінію. Ця функція може бути корисною для активних туристів, які хочуть прокласти маршрут подалі від стежок або дослідити віддалені райони, де традиційні маршрути можуть бути недоступні. Для пілотів легкомоторних літаків та капітанів суден використання *типу прокладання маршруту "Пряма лінія"* може бути дуже корисним для навігації.
 
 <!-- ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png)  -->

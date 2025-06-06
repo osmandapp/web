@@ -3,19 +3,19 @@ source-hash: 85e83f992aa762a2e2efd89904614015a99838ef4709986d156457e2b1dd5ade
 sidebar_position: 10
 title: Громадський транспорт
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Громадський транспорт — це додатковий шар, який дозволяє відображати маршрути та зупинки транспорту на мапі, перевіряти детальну інформацію про них та здійснювати навігацію.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
+
+
+## Огляд {#overview}
+
+Громадський транспорт — це додатковий шар, який дозволяє відображати маршрути та зупинки транспорту на мапі, перевіряти детальну інформацію про них та здійснювати навігацію.
 
 ## Зупинки громадського транспорту (Шар) {#transport-stops-layer}
 

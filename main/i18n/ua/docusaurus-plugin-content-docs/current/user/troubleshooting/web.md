@@ -3,21 +3,21 @@ source-hash: 0ce7c5c23a1ae947746e82bd4b5d1a4356be1000ed5804c50cb21de56d29d68d
 sidebar_position: 8
 title:  Вебсайт
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-## Як знайти журнали збоїв у веббраузерах {#how-to-find-crash-logs-in-web-browsers}
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+## Як знайти журнали збоїв у веббраузерах {#how-to-find-crash-logs-in-web-browsers}
+
 :::note OsmAnd не збирає та не зберігає жодних персональних даних користувачів
 Журнали збоїв генеруються вашим веббраузером і містять лише технічну інформацію про проблему, таку як системні помилки та активність браузера на момент збою. Ці журнали не містять особистої інформації чи даних відстеження.
 Якщо ви вирішите поділитися журналами збоїв зі службою підтримки, вони використовуються лише для діагностики та усунення технічних проблем.

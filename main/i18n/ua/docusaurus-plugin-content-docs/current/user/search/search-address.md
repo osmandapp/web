@@ -3,21 +3,21 @@ source-hash: 881628693e943dc6d67cb411035fc798a1c817a4c5705d97a0cba3ef2a048665
 sidebar_position: 2
 title:  Пошук за адресою
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoIncompleteArticle/>
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-*Пошук за адресою в OsmAnd* базується на даних OpenStreetMap і дозволяє знайти місцезнаходження та маршрут до певної адреси зі вже відсортованого списку, а також здійснити пошук за поштовим індексом або координатами. Цей інструмент дозволяє знайти потрібні адреси за кілька дотиків, що скорочує час пошуку та допомагає у випадку, якщо ви не пам'ятаєте точну адресу.
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+<InfoIncompleteArticle/>
+
+## Огляд {#overview}
+
+*Пошук за адресою в OsmAnd* базується на даних OpenStreetMap і дозволяє знайти місцезнаходження та маршрут до певної адреси зі вже відсортованого списку, а також здійснити пошук за поштовим індексом або координатами. Цей інструмент дозволяє знайти потрібні адреси за кілька дотиків, що скорочує час пошуку та допомагає у випадку, якщо ви не пам'ятаєте точну адресу.
 
 OsmAnd надає кілька способів потрапити до *Інструменту пошуку*, де знаходиться розділ **Пошук за адресою**.
 

@@ -3,23 +3,23 @@ source-hash: 12204bbc41378725ec0cea2c6e71913845c147425efc613f1f730647670ef7c1
 sidebar_position: 1
 title:  Покупки на Android
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Встановлення OsmAnd (Android) {#install-osmand-android}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Для пристроїв Android ви можете завантажити **безкоштовну** та **платну** версії програми з наступних магазинів:
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-- [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+
+
+## Встановлення OsmAnd (Android) {#install-osmand-android}
+
+Для пристроїв Android ви можете завантажити **безкоштовну** та **платну** версії програми з наступних магазинів:
+
+- [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
 - Amazon більше не доступний. Детальну інформацію можна знайти [тут](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
 

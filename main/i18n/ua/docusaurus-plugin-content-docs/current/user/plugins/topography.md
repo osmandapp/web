@@ -3,25 +3,25 @@ source-hash: f16edc09d1c0a0d0eebbf43332b0103bba1b28facbe9c4f3b5b6e0b24ddd8298
 sidebar_position: 14
 title: Топографія
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-:::info Платна функція
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Плагін Топографія — це [платна функція](../purchases/index.md) застосунку OsmAnd.
 import Translate from '@site/src/components/Translate.js';
-:::
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+:::info Платна функція
+Плагін Топографія — це [платна функція](../purchases/index.md) застосунку OsmAnd.
+:::
+
 Топографія — це важлива функція картографії, яка надає інформацію для візуальної оцінки рельєфу місцевості.
 Топографічна інформація, як-от [Горизонталі](#contour-lines), [Рельєф](#terrain) (*Відтінення пагорбів* та *Нахил*), а також [3D-рельєф](#3d-relief), допомагає візуально оцінити місцевість, побачивши висоту, рельєф, екстремуми, крутизну або точки однакової висоти.
 

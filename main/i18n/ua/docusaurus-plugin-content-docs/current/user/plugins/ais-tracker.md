@@ -3,23 +3,23 @@ source-hash: bcd0c0a48afef5adc743fe7f2178cd6572127aedfd3ef8ce3b59f04ce8980802
 sidebar_position: 2
 title:  AIS Vessel Tracker
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoIncompleteArticle/>
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-<InfoAndroidOnly />
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-## Огляд {#overview}
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoIncompleteArticle/>
+
+<InfoAndroidOnly />
+
+## Огляд {#overview}
+
 Плагін **AIS Vessel Tracker** відображає позиції [Автоматичної ідентифікаційної системи (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) та детальну інформацію про судна поблизу. Дані AIS отримуються через мережеве з'єднання від зовнішнього приймача AIS.
 
 :::caution ВІДМОВА ВІД ВІДПОВІДАЛЬНОСТІ

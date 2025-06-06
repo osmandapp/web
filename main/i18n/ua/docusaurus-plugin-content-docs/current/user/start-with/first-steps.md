@@ -3,21 +3,21 @@ source-hash: c27732b1e4879e71331df4a27f4b1431b7b1804685e36a9260de067e3cd82d1d
 sidebar_position: 1
 title:  Перші кроки
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Ласкаво просимо до OsmAnd (OpenStreetMap Automated Navigation Directions)!
 import Translate from '@site/src/components/Translate.js';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+
+## Огляд {#overview}
+
+Ласкаво просимо до OsmAnd (OpenStreetMap Automated Navigation Directions)!
 
 Дізнайтеся, як завантажувати карти, як налаштовувати додаток, як користуватися картою та будувати маршрут, як розпочинати навігацію та як шукати цікаві місця. Ознайомтеся з ключовими моментами Політики конфіденційності OsmAnd та необхідними Дозволами.
 

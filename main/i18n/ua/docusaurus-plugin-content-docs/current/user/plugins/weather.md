@@ -3,25 +3,25 @@ source-hash: f484768f7419f56817ff870e3e780225f68a6628b5261c623038b9a19d6814c9
 sidebar_position: 17
 title: Погода
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-:::info Платна функція
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
- <ProFeature/> Плагін Погода є [платною функцією](../purchases/index.md) застосунку OsmAnd.
 import Translate from '@site/src/components/Translate.js';
-:::
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+:::info Платна функція
+ <ProFeature/> Плагін Погода є [платною функцією](../purchases/index.md) застосунку OsmAnd.
+:::
+
 Інтерактивні шари погодної карти в застосунку OsmAnd дозволяють відстежувати температуру, атмосферний тиск, хмарність, швидкість вітру та опади у вашому місті чи будь-якому іншому місці на інтерактивній глобальній карті. Плагін Погода надає погодинний прогноз погоди на 7 днів наперед безпосередньо на карті OsmAnd. Інформацію про погоду також можна завантажити для використання в автономному режимі.
 
 Джерелом даних для плагіна Погода є [Глобальна система прогнозування](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast), що управляється Національною метеорологічною службою США (NWS), та Європейський центр середньострокових прогнозів погоди ([ECMWF](https://www.ecmwf.int/)).

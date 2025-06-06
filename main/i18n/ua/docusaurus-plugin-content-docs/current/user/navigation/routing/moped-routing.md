@@ -3,23 +3,23 @@ source-hash: 09ac3f5870c477c9041dc10fca9defa1b0d10c8a21bf8fc744ea295e5b83850e
 sidebar_position: 4
 title:  Маршрути для мопедів
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-*Маршрути для мопедів* дозволяють водіям будувати оптимальний (найшвидший) маршрут, враховуючи специфіку керування таким транспортним засобом, як мопед чи скутер. Процес маршрутизації враховує різні фактори для безпечного, комфортного та легального пересування дорогами чи велосипедними доріжками.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-:::note
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+*Маршрути для мопедів* дозволяють водіям будувати оптимальний (найшвидший) маршрут, враховуючи специфіку керування таким транспортним засобом, як мопед чи скутер. Процес маршрутизації враховує різні фактори для безпечного, комфортного та легального пересування дорогами чи велосипедними доріжками.
+
+:::note
 За замовчуванням *Профіль мопеда* деактивовано. Щоб використовувати цей профіль для маршрутизації, його потрібно увімкнути в *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 

@@ -3,23 +3,23 @@ source-hash: 8a3d4f0a5046e1a8ebe34bc40d88b3a570ceeb1895ce9cb769a4620949373450
 sidebar_position: 4
 title:  Кросплатформні покупки
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Підтримувані кросплатформні покупки {#supported-cross-platform-purchases}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Наступні продукти OsmAnd наразі підтримують використання на кількох платформах (Android, iOS та Web):
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-- Підписка **OsmAnd Pro**
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+
+
+## Підтримувані кросплатформні покупки {#supported-cross-platform-purchases}
+
+Наступні продукти OsmAnd наразі підтримують використання на кількох платформах (Android, iOS та Web):
+
+- Підписка **OsmAnd Pro**
 - Підписка **Maps+**
 - Одноразова покупка в застосунку **Maps+**
 

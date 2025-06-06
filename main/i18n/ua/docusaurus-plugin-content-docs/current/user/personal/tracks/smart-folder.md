@@ -3,25 +3,25 @@ source-hash: b978cfc844f8aac876dbe8ae7190962a3a1feeebf3c1171b8824441b07f979c4
 sidebar_position: 3
 title: Розумна папка (Фільтр)
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Функція **Розумна папка** надає потужні інструменти для організації та керування вашими треками. Однією з ключових можливостей є фільтрування файлів на вкладці *Треки* меню *Мої місця* за такими критеріями, як тривалість, довжина або швидкість.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-Ця функція дозволяє швидко знаходити конкретні треки, які відповідають вашим вимогам. Відфільтровані результати можна зберегти як **Розумну папку**, що забезпечує зручний доступ до динамічно оновлюваних колекцій треків.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Функція **Розумна папка** надає потужні інструменти для організації та керування вашими треками. Однією з ключових можливостей є фільтрування файлів на вкладці *Треки* меню *Мої місця* за такими критеріями, як тривалість, довжина або швидкість.
+
+Ця функція дозволяє швидко знаходити конкретні треки, які відповідають вашим вимогам. Відфільтровані результати можна зберегти як **Розумну папку**, що забезпечує зручний доступ до динамічно оновлюваних колекцій треків.
+
 
 ## Фільтр пошуку {#search-filter}
 

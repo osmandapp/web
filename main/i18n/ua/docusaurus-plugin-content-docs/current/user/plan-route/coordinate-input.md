@@ -3,23 +3,23 @@ source-hash: e47e6068fb2626d1ab56936c2f0b26002fee1e3a180ce6332d4ca53fafd316b7
 sidebar_position: 3
 title:  Введення координат
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-<InfoAndroidOnly />
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-## Огляд {#overview}
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-*Введення координат* — це простий і легкий у використанні інструмент для створення точок маршруту шляхом визначення їхнього географічного розташування. Ця функція може бути корисною для навігації до певних місць, які ви знаєте лише за їхніми координатами: додані точки можна [зберегти](#save-as-track) як GPX-трек і використовувати пізніше для [GPX-навігації](../navigation/setup/gpx-navigation.md) або [навігації за маркерами](../navigation/setup/markers-navigation.md#add-gpx).
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+<InfoAndroidOnly />
+
+## Огляд {#overview}
+
+*Введення координат* — це простий і легкий у використанні інструмент для створення точок маршруту шляхом визначення їхнього географічного розташування. Ця функція може бути корисною для навігації до певних місць, які ви знаєте лише за їхніми координатами: додані точки можна [зберегти](#save-as-track) як GPX-трек і використовувати пізніше для [GPX-навігації](../navigation/setup/gpx-navigation.md) або [навігації за маркерами](../navigation/setup/markers-navigation.md#add-gpx).
 
 ![Огляд введення координат](@site/static/img/plan-route/coordinates_input/coordinates_input_overview.png)
 

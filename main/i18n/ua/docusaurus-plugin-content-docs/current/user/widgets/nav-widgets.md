@@ -3,23 +3,23 @@ source-hash: 08f85c80ce1f7f45e7a1319d717948bc026e5f62b9066e7b74515e1fe9d5e9fc
 sidebar_position: 4
 title:  Навігаційні віджети
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Навігаційні віджети вмикаються під час навігації для відображення такої інформації, як відстань, час прибуття або час, що залишився, наступні повороти, азимут, назва поточної вулиці, інформація про смуги руху, максимальна швидкість, попередження про наближення, POI та проміжні точки.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-![Навігаційні віджети всі](@site/static/img/widgets/navigational_widgets_all.png)
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Навігаційні віджети вмикаються під час навігації для відображення такої інформації, як відстань, час прибуття або час, що залишився, наступні повороти, азимут, назва поточної вулиці, інформація про смуги руху, максимальна швидкість, попередження про наближення, POI та проміжні точки.
+
+![Навігаційні віджети всі](@site/static/img/widgets/navigational_widgets_all.png)
 
 
 ## Активна та пасивна навігація {#active-and-passive-navigation}

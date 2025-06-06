@@ -3,25 +3,25 @@ source-hash: 1eb9756ab9cf04df0c7e0015051a9c4b7ae2725b55889d5749fa1ae231dcc463
 sidebar_position: 3
 title:  Глобальні налаштування
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-**Глобальні налаштування** — це загальні [налаштування](../personal/profiles.md) для всіх профілів у застосунку OsmAnd. Це базові налаштування для системи OsmAnd, і будь-які внесені зміни вплинуть на весь застосунок.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-<Tabs groupId="operating-systems">
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+
+## Огляд {#overview}
+
+**Глобальні налаштування** — це загальні [налаштування](../personal/profiles.md) для всіх профілів у застосунку OsmAnd. Це базові налаштування для системи OsmAnd, і будь-які внесені зміни вплинуть на весь застосунок.
+
+<Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 

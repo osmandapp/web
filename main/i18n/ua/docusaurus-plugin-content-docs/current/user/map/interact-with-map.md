@@ -3,23 +3,23 @@ source-hash: aa294873a566eab0e06b04307b6e68bc08e0b7f1509c12f3d2fbf98c5b7ad2f8
 sidebar_position: 2
 title:  Взаємодія з картою
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-У цій статті пояснюється, як налаштувати карту та взаємодіяти з нею за допомогою різних кнопок та жестів. Вона охоплює, як обертати, масштабувати, регулювати кут огляду та змінювати кут огляду карти, обертати її вручну або автоматично за допомогою компаса, або відповідно до напрямку руху.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+У цій статті пояснюється, як налаштувати карту та взаємодіяти з нею за допомогою різних кнопок та жестів. Вона охоплює, як обертати, масштабувати, регулювати кут огляду та змінювати кут огляду карти, обертати її вручну або автоматично за допомогою компаса, або відповідно до напрямку руху.
+
+
 ## Жести {#gestures}
 
 Жести є важливими для легкої та інтуїтивно зрозумілої навігації по карті.

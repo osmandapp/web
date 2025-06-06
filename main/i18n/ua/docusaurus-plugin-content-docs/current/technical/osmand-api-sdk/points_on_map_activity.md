@@ -1,8 +1,8 @@
 ---
 source-hash: a6a2962fac79b5b611b34ace226be31abf031030ebb6b44b2b975b95131b70d6
 sidebar_position: 3
-import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 ---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # Дія "Точки на карті" {#points-on-map-activity}
 На карті показано улюблені точки

@@ -3,23 +3,23 @@ source-hash: 8c606c0ed27b57b0171ee1511302e4e32dd248e6fdb4d2cf0967b263e544b0ab
 sidebar_position: 12
 title:  BRouter
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-:::caution ТІЛЬКИ ДЛЯ ANDROID
 import Translate from '@site/src/components/Translate.js';
-Сторонній алгоритм маршрутизації BRouter доступний лише для версії програми OsmAnd для Android.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+
+
+
+## Огляд {#overview}
+
+:::caution ТІЛЬКИ ДЛЯ ANDROID
+Сторонній алгоритм маршрутизації BRouter доступний лише для версії програми OsmAnd для Android.
 :::
 
 *BRouter* — це сторонній алгоритм маршрутизації, який можна використовувати в програмі OsmAnd для [режиму офлайн-навігації](../guidance/navigation-settings.md#navigation-type). Він призначений для оптимізації маршруту на основі різних параметрів, таких як час, відстань або тип транспортного засобу.

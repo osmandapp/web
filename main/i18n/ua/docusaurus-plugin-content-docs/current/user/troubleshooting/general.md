@@ -3,21 +3,21 @@ source-hash: 0a0e6bbadf34561e82d857c6270b71b1fa26543e35edd9ea4cda96e07711812f
 sidebar_position: 2
 title:  Загальні питання
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-Загальні питання, пов'язані з різними функціями OsmAnd.
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Витрата заряду батареї {#battery-consumption}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-### OsmAnd, здається, споживає занадто багато заряду батареї {#osmand-seems-to-use-up-too-much-battery-power}
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+Загальні питання, пов'язані з різними функціями OsmAnd.
+
+## Витрата заряду батареї {#battery-consumption}
+
+### OsmAnd, здається, споживає занадто багато заряду батареї {#osmand-seems-to-use-up-too-much-battery-power}
 
 Користувачі повідомляли про надмірне споживання заряду батареї OsmAnd, причому в деяких випадках OsmAnd відповідав за до 90% використання батареї. Однак ми провели багато тестів і не змогли відтворити такі результати.
 

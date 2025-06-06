@@ -3,25 +3,25 @@ source-hash: 0da63556289a850f0637bcffd574d397268783a2b767e7acfcd1bb24b9439406
 sidebar_position: 11
 title:  OsmAnd Tracker
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoAndroidOnly />
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-OsmAnd Tracker — це модифікований клієнт Telegram, створений для гнучкого моніторингу та надсилання повідомлень із GPS-координатами в режимі реального часу.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-[OsmAnd tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) допомагає бачити ваші контакти на карті в OsmAnd. Він має соціальний аспект, тобто для його використання вам потрібно надати доступ до ваших контактів для платформи, яку вибере OsmAnd.
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoAndroidOnly />
+
+## Огляд {#overview}
+
+OsmAnd Tracker — це модифікований клієнт Telegram, створений для гнучкого моніторингу та надсилання повідомлень із GPS-координатами в режимі реального часу.
+
+[OsmAnd tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) допомагає бачити ваші контакти на карті в OsmAnd. Він має соціальний аспект, тобто для його використання вам потрібно надати доступ до ваших контактів для платформи, яку вибере OsmAnd.
 
 Ми обрали [Telegram](https://telegram.org/) як найбільш відкриту соціальну платформу, оскільки вона має [Open API](https://core.telegram.org/api), Open SDK і, крім того, з часом матиме реалізацію Open Server (Blockchain).
 

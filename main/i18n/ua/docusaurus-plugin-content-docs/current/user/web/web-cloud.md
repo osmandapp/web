@@ -4,25 +4,25 @@ sidebar_position: 2
 sidebar_label:  OsmAnd Cloud
 title: OsmAnd Cloud на вебсайті
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoIncompleteArticle/>
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-[Портал карт OsmAnd](https://osmand.net/map) — це вебсервіс, що надається OsmAnd, який дозволяє користувачам досліджувати карти, керувати своїми даними, планувати та створювати поїздки або просто переглядати карту.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-#### Доступ за підпискою {#subscription-accesses}
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoIncompleteArticle/>
+
+## Огляд {#overview}
+
+[Портал карт OsmAnd](https://osmand.net/map) — це вебсервіс, що надається OsmAnd, який дозволяє користувачам досліджувати карти, керувати своїми даними, планувати та створювати поїздки або просто переглядати карту.
+
+#### Доступ за підпискою {#subscription-accesses}
 
 Портал карт можна використовувати без реєстрації; однак деякі функції доступні виключно для користувачів OsmAnd Pro та OsmAnd Start:
 

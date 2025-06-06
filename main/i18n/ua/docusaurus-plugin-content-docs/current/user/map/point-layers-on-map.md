@@ -3,19 +3,19 @@ source-hash: 47ae00a1c7b1b67ccb2c7470aa241ca87a81811deceb1221a40d3b952ca9b775
 sidebar_position: 7
 title:  Точки на карті
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-На карті можуть відображатися такі точки, як [Вибране](#favorites), [Об'єкти інтересу (POI)](#points-of-interest-pois), [Маркери](#markers), [Вікіпедія](#-wikipedia), [Результати пошуку](#search-results-poi), [Аудіо- та відеонотатки](#-audio--video-points-android) та [Редагування OSM](#-osm-edit-points).
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
+
+
+## Огляд {#overview}
+
+На карті можуть відображатися такі точки, як [Вибране](#favorites), [Об'єкти інтересу (POI)](#points-of-interest-pois), [Маркери](#markers), [Вікіпедія](#-wikipedia), [Результати пошуку](#search-results-poi), [Аудіо- та відеонотатки](#-audio--video-points-android) та [Редагування OSM](#-osm-edit-points).
 
 
 ## Вибране {#favorites}

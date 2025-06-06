@@ -3,25 +3,25 @@ source-hash: 4e30e7a937260970f52c7f05f02189be509610bb3c5be26ca1148e1860a16062
 sidebar_position: 2
 title:  Завантажити карти
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Завантаження карт у додаток OsmAnd є ключовим кроком для забезпечення безперебійної роботи та використання офлайн-навігації. Без офлайн-карт додаток не може повноцінно функціонувати. Завантаження карт надає вам доступ до карт різних регіонів, дозволяючи здійснювати навігацію без підключення до Інтернету.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-У вас є два *основні* способи завантаження карт: **1)** [переглянути список регіонів у *Головному меню*](#maps-and-resources), або **2)** [вибрати потрібний регіон безпосередньо на карті](#select-on-the-map). Це дає вам гнучкість у виборі потрібних регіонів і гарантує, що карти відповідатимуть вашим планам.
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+
+## Огляд {#overview}
+
+Завантаження карт у додаток OsmAnd є ключовим кроком для забезпечення безперебійної роботи та використання офлайн-навігації. Без офлайн-карт додаток не може повноцінно функціонувати. Завантаження карт надає вам доступ до карт різних регіонів, дозволяючи здійснювати навігацію без підключення до Інтернету.
+
+У вас є два *основні* способи завантаження карт: **1)** [переглянути список регіонів у *Головному меню*](#maps-and-resources), або **2)** [вибрати потрібний регіон безпосередньо на карті](#select-on-the-map). Це дає вам гнучкість у виборі потрібних регіонів і гарантує, що карти відповідатимуть вашим планам.
 
 Хоча OsmAnd підтримує як [Векторні](../map/vector-maps.md), так і [Растрові](../map/raster-maps.md) карти, рекомендується починати роботу з векторними офлайн-картами. Цей тип карт (докладніше про [типи карт OsmAnd](../personal/maps-resources.md#map-types) читайте тут) забезпечує надійну роботу всіх ключових функцій програми, включаючи [Пошук](../search/index.md), [Навігацію](../navigation/index.md) та [Контекстне меню](../map/map-context-menu.md). Це особливо важливо, якщо ваші подорожі включають поїздки у віддалені місця або місця з обмеженим доступом до Інтернету.
 

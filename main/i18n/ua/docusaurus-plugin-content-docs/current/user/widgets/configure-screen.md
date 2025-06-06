@@ -3,25 +3,25 @@ source-hash: 792cf7244a3dfcb8a8f00bb9f34b8a3e816d4d472924fe427e2f8bc43f2d6d39
 sidebar_position: 1
 title:  Налаштувати екран
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Меню **Налаштувати екран** в OsmAnd дозволяє налаштувати інтерфейс мапи, додаючи та впорядковуючи віджети, кнопки та швидкі дії на кількох панелях.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-Ви можете:
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Меню **Налаштувати екран** в OsmAnd дозволяє налаштувати інтерфейс мапи, додаючи та впорядковуючи віджети, кнопки та швидкі дії на кількох панелях.
+
+Ви можете:
+
 - Додавати [інформаційні](../widgets/info-widgets.md), [навігаційні](../widgets/nav-widgets.md) та [пов'язані з маркерами](../widgets/markers.md) віджети.
 - Додавати [Швидкі дії](../widgets/quick-action.md) та [кнопки мапи](../widgets/map-buttons.md).
 - Організовувати віджети на панелях (верхня, нижня, ліва, права, центральна).

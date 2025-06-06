@@ -2,8 +2,8 @@
 source-hash: bb22bcf1fdaa828b07cfccd05959b1c7d957608a4bc40163f0ca9a3600f43560
 sidebar_position: 2
 title: Стиль лижної мапи
-import Translate from '@site/src/components/Translate.js';
 ---
+import Translate from '@site/src/components/Translate.js';
 
 # Стиль лижної мапи {#ski-map-style}
 Типовий стиль мапи OsmAnd, частина плагіна "Лижна мапа".

@@ -4,23 +4,23 @@ sidebar_position: 8
 title:  Маркери
 ---
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Маркери — це спеціальні точки, позначені на карті як прапорці, які можна швидко створити одним дотиком, не вказуючи назву та іншу інформацію, на відміну від [Обраних точок](./favorites.md). Також маркери надають додаткові функції за допомогою [віджетів](../widgets/markers.md), **стрілок** (<Translate android="true" ids="show_arrows_on_the_map"/>) та **індикації відстані** (<Translate android="true" ids="show_direction"/>).
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-<Tabs groupId="operating-systems">
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+## Огляд {#overview}
+
+Маркери — це спеціальні точки, позначені на карті як прапорці, які можна швидко створити одним дотиком, не вказуючи назву та іншу інформацію, на відміну від [Обраних точок](./favorites.md). Також маркери надають додаткові функції за допомогою [віджетів](../widgets/markers.md), **стрілок** (<Translate android="true" ids="show_arrows_on_the_map"/>) та **індикації відстані** (<Translate android="true" ids="show_direction"/>).
+
+<Tabs groupId="operating-systems">
+
 <TabItem value="android" label="Android">
 
 ![Маркери на карті Android](@site/static/img/map/map_markers_android.png)

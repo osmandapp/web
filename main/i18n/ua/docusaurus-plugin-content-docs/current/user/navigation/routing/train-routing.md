@@ -3,23 +3,23 @@ source-hash: 3b1ea46462582239e0b5a4c44f838ef1581977b24510ef9ff2987c5e84e9e32e
 sidebar_position: 7
 title:  Прокладання маршрутів для потягів
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-:::note
 import Translate from '@site/src/components/Translate.js';
-За замовчуванням *Профіль потяга* деактивовано. Щоб використовувати цей профіль для прокладання маршрутів, його потрібно увімкнути в *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+
+## Огляд {#overview}
+
+:::note
+За замовчуванням *Профіль потяга* деактивовано. Щоб використовувати цей профіль для прокладання маршрутів, його потрібно увімкнути в *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
 *Прокладання маршрутів для потягів* в OsmAnd надає користувачам можливість використовувати залізничні лінії для навігації, ніби вони керують потягом, як автомобілем. Ця опція може бути корисною, наприклад, для піших прогулянок, коли немає інших доріг. В інших випадках краще використовувати *[Прокладання маршрутів для громадського транспорту](./public-transport-navigation.md)*.

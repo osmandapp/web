@@ -3,19 +3,19 @@ source-hash: 172aaf0861c19fd3c9f9ca6114c02ca526364a9ccc9200834d2b932487412d18
 sidebar_position: 2
 title:  Покупки в iOS
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Встановлення OsmAnd (iOS) {#install-osmand-ios}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Ви можете завантажити додаток за цим посиланням - [OsmAnd Maps в Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
+
+
+## Встановлення OsmAnd (iOS) {#install-osmand-ios}
+
+Ви можете завантажити додаток за цим посиланням - [OsmAnd Maps в Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
 <!--

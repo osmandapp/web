@@ -3,25 +3,25 @@ source-hash: 1edbe5b9d541a7328531326780db05e1b84fd7d6e72e5b6b577dd51dca9010b3
 sidebar_position: 2
 title: Карти та ресурси
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-У розділі **Карти та ресурси** ви можете керувати *онлайн* та *офлайн* картами, а також іншими ресурсами, що використовуються в OsmAnd. Наприклад, ви можете завантажувати, видаляти, перейменовувати, очищати кеш, оновлювати та перевіряти розмір, а також виконувати різні дії.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-OsmAnd працює з двома типами карт: [Векторні карти](../map/vector-maps.md) та [Растрові карти](../map/raster-maps.md). На вкладці [Локальні](#local) зберігаються всі карти та ресурси. Доступні типи карт можна завантажити з вкладки [Завантаження](#downloads). На вкладці [Оновлення](#updates) ви можете завантажити карти, які доступні для оновлення, та використовувати [Live-оновлення](#osmand-live). Ви також можете отримати доступ до функції [Додаткові карти](#extra-maps), щоб створити власні типи карт.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+У розділі **Карти та ресурси** ви можете керувати *онлайн* та *офлайн* картами, а також іншими ресурсами, що використовуються в OsmAnd. Наприклад, ви можете завантажувати, видаляти, перейменовувати, очищати кеш, оновлювати та перевіряти розмір, а також виконувати різні дії.
+
+OsmAnd працює з двома типами карт: [Векторні карти](../map/vector-maps.md) та [Растрові карти](../map/raster-maps.md). На вкладці [Локальні](#local) зберігаються всі карти та ресурси. Доступні типи карт можна завантажити з вкладки [Завантаження](#downloads). На вкладці [Оновлення](#updates) ви можете завантажити карти, які доступні для оновлення, та використовувати [Live-оновлення](#osmand-live). Ви також можете отримати доступ до функції [Додаткові карти](#extra-maps), щоб створити власні типи карт.
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">

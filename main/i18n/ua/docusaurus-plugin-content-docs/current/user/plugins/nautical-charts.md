@@ -3,23 +3,23 @@ source-hash: 775b6a79254030e05ed36114e04d2ed14e342a6a242944a2d037f070544bbcc8
 sidebar_position: 7
 title:  Морська карта
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-:::info Платна функція
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Плагін Морська карта є [платною функцією](../purchases/index.md) застосунку OsmAnd.
 import Translate from '@site/src/components/Translate.js';
-:::
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+:::info Платна функція
+Плагін Морська карта є [платною функцією](../purchases/index.md) застосунку OsmAnd.
+:::
 
 Морська карта — це детальне графічне зображення океанів, морів, прибережних районів і річок, яке допомагає орієнтуватися на воді та знати популярні маршрути, перешкоди на водному шляху, найближчі гавані, місця для стоянки на якорі та інші важливі орієнтири.
 

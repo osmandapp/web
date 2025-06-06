@@ -4,19 +4,19 @@ sidebar_position: 3
 title:  Веб-покупки
 unlisted: true
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Як купити {#how-to-buy}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Ви можете придбати продукти OsmAnd на нашому офіційному сайті або через покупки в застосунку:
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
+
+
+## Як купити {#how-to-buy}
+
+Ви можете придбати продукти OsmAnd на нашому офіційному сайті або через покупки в застосунку:
 
 - **Вебсайт**: Платежі безпечно обробляються нашим авторизованим торговим посередником [FastSpring](https://fastspring.com/).  
 

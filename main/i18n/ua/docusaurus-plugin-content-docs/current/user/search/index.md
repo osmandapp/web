@@ -3,19 +3,19 @@ source-hash: 892c634b7bf81dafb9296c6e2b65ee7f15f7bf8b1d0e766e4ed35dfd9df8901e
 sidebar_position: 5
 title: Пошук
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-### Огляд {#overview}
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-**Пошук** — це важливий інструмент OsmAnd, який дозволяє знаходити потрібні місця, об'єкти чи адреси. Доступні параметри пошуку надають різні способи пошуку об'єктів. Ви можете використовувати пошук за адресою для точної навігації, пошук за категоріями POI для пошуку найближчих об'єктів, пошук за історією для швидкого доступу до попередніх запитів та пошук за координатами для точного місцезнаходження.
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
+
+### Огляд {#overview}
+
+**Пошук** — це важливий інструмент OsmAnd, який дозволяє знаходити потрібні місця, об'єкти чи адреси. Доступні параметри пошуку надають різні способи пошуку об'єктів. Ви можете використовувати пошук за адресою для точної навігації, пошук за категоріями POI для пошуку найближчих об'єктів, пошук за історією для швидкого доступу до попередніх запитів та пошук за координатами для точного місцезнаходження.
+
 
 ### [Пошук усього](./search-all.md) {#search-all}
 

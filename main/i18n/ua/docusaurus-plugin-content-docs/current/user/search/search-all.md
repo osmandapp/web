@@ -3,21 +3,21 @@ source-hash: 6ba76946147c1491bba77d16f2fafd3e08513708a041924bd0e66ea61c50ee9c
 sidebar_position: 1
 title:  Пошук
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-<InfoIncompleteArticle/>
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-## Огляд {#overview}
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+<InfoIncompleteArticle/>
+
+
+## Огляд {#overview}
 
 **Пошук** — це корисний інструмент для швидкого пошуку місць. Ви можете використовувати Пошук, щоб знайти місце за адресою, координатами, об'єктами інтересу (POI) або попередніми пошуками. [Пошук за адресою](#search-address) дозволяє ввести адресу, щоб отримати точне місцезнаходження. Пошук за [координатами](#search-coordinates) працює з географічними координатами, такими як широта та довгота. За допомогою пошуку [POI](#search-poi) ви можете шукати найближчі місця в певних категоріях, таких як кафе, готелі або заправки. [Історія пошуку](#search-history) зберігає минулі пошуки для швидкого доступу до раніше знайдених місць. Функція пошуку полегшує планування поїздок, навігацію по незнайомій місцевості та пошук найближчих POI.
 

@@ -4,25 +4,25 @@ sidebar_position: 9
 title: Android Auto
 ios: false
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-![Екран Android Auto](@site/static/img/navigation/auto-car/android_auto_overview.png)
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-[**Android Auto**](https://www.android.com/auto) — це програмне забезпечення, розроблене Google, яке дозволяє користувачам підключати свої пристрої Android до сумісних мультимедійних систем автомобіля. *Android Auto* надає адаптовану та оптимізовану версію програми OsmAnd для безпечного використання під час водіння, що робить доступ до навігаційних функцій програми простішим та безпечнішим.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+![Екран Android Auto](@site/static/img/navigation/auto-car/android_auto_overview.png)
+
+[**Android Auto**](https://www.android.com/auto) — це програмне забезпечення, розроблене Google, яке дозволяє користувачам підключати свої пристрої Android до сумісних мультимедійних систем автомобіля. *Android Auto* надає адаптовану та оптимізовану версію програми OsmAnd для безпечного використання під час водіння, що робить доступ до навігаційних функцій програми простішим та безпечнішим.
+
 Функція **Android Auto** підтримується лише під час використання програми OsmAnd, доступної в [Google Play Store](https://play.google.com/store/apps/dev?id=8483587772816822023).
 
 > **ПРИМІТКА**: *Android Auto не є прямою реплікацією мобільного додатка OsmAnd. Він має спрощений інтерфейс, орієнтований на основні навігаційні функції для забезпечення безпечного водіння. Деякі розширені функції не підтримуються через обмеження платформи.*

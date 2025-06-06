@@ -3,21 +3,21 @@ source-hash: dc77f9a13bc0de823e328ba99cb54a84d78b64884307f9b98ccfcad5f6c1e73e
 sidebar_position: 8
 title:  Онлайн-карти
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Онлайн-карти OsmAnd є значним доповненням до бази даних OpenStreetMap, яка вже присутня в застосунку. За допомогою цього плагіна ви можете додавати шари до своєї карти з інформацією з іншого джерела, починаючи з супутникового зображення або туристичних маршрутів і закінчуючи дуже специфічними даними, такими як розташування пожежних гідрантів. Ви також можете змінити основне джерело карти з векторних карт на онлайн-тайли.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+Онлайн-карти OsmAnd є значним доповненням до бази даних OpenStreetMap, яка вже присутня в застосунку. За допомогою цього плагіна ви можете додавати шари до своєї карти з інформацією з іншого джерела, починаючи з супутникового зображення або туристичних маршрутів і закінчуючи дуже специфічними даними, такими як розташування пожежних гідрантів. Ви також можете змінити основне джерело карти з векторних карт на онлайн-тайли.
+
 
 ## Необхідні параметри налаштування {#required-setup-parameters}
 

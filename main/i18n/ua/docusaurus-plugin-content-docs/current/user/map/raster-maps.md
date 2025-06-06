@@ -3,23 +3,23 @@ source-hash: e3716d64d293156d55edf37cc8c802e41d1cb6903a2c1d1deb516daf046f07e8
 sidebar_position: 6
 title:  Растрові карти (онлайн / офлайн)
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoIncompleteArticle/>
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Растрові карти є значним і корисним доповненням до векторних карт OsmAnd. Вони дозволяють поєднувати різні джерела карт з векторними картами. Наприклад, інформація про пагорби та схили відображається як растровий шар. Ви можете відобразити напівпрозорий базовий векторний шар з накладанням туристичних стежок, карт дощів, даних про трафік у реальному часі та накладанням супутникових знімків. Ви також можете переключити карти за замовчуванням на растрові тайли в Інтернеті.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+
+<InfoIncompleteArticle/>
+
+## Огляд {#overview}
+
+Растрові карти є значним і корисним доповненням до векторних карт OsmAnd. Вони дозволяють поєднувати різні джерела карт з векторними картами. Наприклад, інформація про пагорби та схили відображається як растровий шар. Ви можете відобразити напівпрозорий базовий векторний шар з накладанням туристичних стежок, карт дощів, даних про трафік у реальному часі та накладанням супутникових знімків. Ви також можете переключити карти за замовчуванням на растрові тайли в Інтернеті.
+
 
 ## Варіанти використання {#use-cases}
 

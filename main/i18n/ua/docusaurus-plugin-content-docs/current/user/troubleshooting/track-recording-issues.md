@@ -3,19 +3,19 @@ source-hash: b20d566784f9980fe5e20bf7150aed84f093a993d25503654c0a929b88a08bd6
 sidebar_position: 6
 title:  Запис треку
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Ця стаття охоплює проблеми запису треків GPX, які спостерігаються протягом тривалого часу в різних версіях Android та iOS. Під **фоном** ми розуміємо, що додаток OsmAnd не відображається на передньому плані, особливо коли екран пристрою вимкнено (що відрізняється від внутрішнього визначення *фону* в пристроях).
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
+
+
+## Огляд {#overview}
+
+Ця стаття охоплює проблеми запису треків GPX, які спостерігаються протягом тривалого часу в різних версіях Android та iOS. Під **фоном** ми розуміємо, що додаток OsmAnd не відображається на передньому плані, особливо коли екран пристрою вимкнено (що відрізняється від внутрішнього визначення *фону* в пристроях).
 
 **Примітки**:
 

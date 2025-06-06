@@ -4,19 +4,19 @@ sidebar_position: 10
 title:  Імпорт / Експорт
 ---
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Інструменти **Імпорт** та **Експорт** в OsmAnd дозволяють керувати вашими даними. Ви можете переміщувати свої профілі, обране, треки та інші налаштування за допомогою спеціального формату через додатки на вашому пристрої. Цей процес спрощує збереження та передачу даних між пристроями, а також дозволяє ділитися ними з іншими користувачами OsmAnd.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+## Огляд {#overview}
+
+Інструменти **Імпорт** та **Експорт** в OsmAnd дозволяють керувати вашими даними. Ви можете переміщувати свої профілі, обране, треки та інші налаштування за допомогою спеціального формату через додатки на вашому пристрої. Цей процес спрощує збереження та передачу даних між пристроями, а також дозволяє ділитися ними з іншими користувачами OsmAnd.
+
 :::note Великий розмір
 *Якщо розмір вибраних даних значний, додатку знадобиться час для підготовки файлу `.osf`.*
 :::

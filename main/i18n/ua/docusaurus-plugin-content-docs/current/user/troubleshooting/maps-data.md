@@ -3,21 +3,21 @@ source-hash: 5be228574247e03992e3e0ddd030d4377aa5bc7c791ba46b7915c2586ebae9b4
 sidebar_position: 4
 title:  Карти та дані
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Карти {#maps}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-### Чому OsmAnd не пропонує доступ до Google Maps? {#why-does-osmand-not-offer-access-to-google-maps}
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Карти {#maps}
+
+### Чому OsmAnd не пропонує доступ до Google Maps? {#why-does-osmand-not-offer-access-to-google-maps}
+
 OsmAnd розроблено для підтримки OpenStreetMap (OSM) і максимально пріоритезує цей шлях. Крім того, існують ліцензійні обмеження, які не дозволяють розповсюджувати OsmAnd з даними Google Maps.
 
 ### Карти повільно завантажуються на Android 11, 12 (SD-карта) {#maps-slowly-loading-on-android-11-12-sd-card}

@@ -3,21 +3,21 @@ source-hash: 81541ab645deb51322d31ce91cf3d821b25fe939ec8598b14ade07ebf4f28816
 sidebar_position: 4
 title: Пішохідна навігація
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Пішохідна навігація — це процес пошуку найкращого маршруту для пішохода, щоб дістатися з одного місця в інше, враховуючи такі фактори, як зони лише для пішоходів, тротуари, пішохідні переходи та перехрестя, зручні для пішоходів. Він також може враховувати інші фактори, такі як *сходи*, які можуть бути корисними для доступу на інвалідних візках. OsmAnd завжди використовує дані про висоту під час розрахунку орієнтовного часу прибуття (час подолання відстані) відповідно до [правила Нейсміта](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb).
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+Пішохідна навігація — це процес пошуку найкращого маршруту для пішохода, щоб дістатися з одного місця в інше, враховуючи такі фактори, як зони лише для пішоходів, тротуари, пішохідні переходи та перехрестя, зручні для пішоходів. Він також може враховувати інші фактори, такі як *сходи*, які можуть бути корисними для доступу на інвалідних візках. OsmAnd завжди використовує дані про висоту під час розрахунку орієнтовного часу прибуття (час подолання відстані) відповідно до [правила Нейсміта](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb).
+
 Щоб налаштувати *Пішохідну навігацію*, перейдіть до розділу [Параметри маршруту](../guidance/navigation-settings#route-parameters) у Налаштуваннях навігації.
   
 ### Параметри маршруту - Пішохідний {#route-parameters---walking}

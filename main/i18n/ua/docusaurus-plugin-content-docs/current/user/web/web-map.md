@@ -4,25 +4,25 @@ sidebar_position: 3
 sidebar_label: Карта
 title: Глобальна карта на сайті
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoIncompleteArticle/>
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-:::info
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Сайт *[osmand.net/map](https://osmand.net/map/)* наразі розробляється та тестується.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-**Тому макет та робота деяких функцій на сайті можуть відрізнятися від описаних у цій статті.**
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-Ми створили [тему для обговорення](https://github.com/osmandapp/OsmAnd/discussions/16567) на нашому GitHub, щоб ви могли залишити там відгук.
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoIncompleteArticle/>
+
+:::info
+Сайт *[osmand.net/map](https://osmand.net/map/)* наразі розробляється та тестується.
+**Тому макет та робота деяких функцій на сайті можуть відрізнятися від описаних у цій статті.**
+
+Ми створили [тему для обговорення](https://github.com/osmandapp/OsmAnd/discussions/16567) на нашому GitHub, щоб ви могли залишити там відгук.
 :::
 
 

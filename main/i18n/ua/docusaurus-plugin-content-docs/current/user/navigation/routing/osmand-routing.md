@@ -3,23 +3,23 @@ source-hash: e3f1c0b65e7cba4e4d1f8c1542368495f53fd3d7aa81a639666e2a9f56293e78
 sidebar_position: 0
 title:  Про маршрутизацію в OsmAnd
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Офлайн-маршрутизація OsmAnd базується на даних OpenStreetMap і надає різноманітні маршрути для різних цілей. Це список попередньо визначених типів маршрутизації, який можна розширити. Правила навігації містяться у файлі [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md) і використовуються для офлайн-маршрутизації. Тип маршруту змінюється автоматично, коли ви змінюєте свій профіль.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Офлайн-маршрутизація OsmAnd базується на даних OpenStreetMap і надає різноманітні маршрути для різних цілей. Це список попередньо визначених типів маршрутизації, який можна розширити. Правила навігації містяться у файлі [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md) і використовуються для офлайн-маршрутизації. Тип маршруту змінюється автоматично, коли ви змінюєте свій профіль.
+
+
 ## Типи маршрутизації {#routing-types}
 
 У OsmAnd попередньо встановлені такі профілі з їхніми типами маршрутизації: *Автомобіль, Велосипед, Пішохід, Вантажівка, Мотоцикл, Мопед, Громадський транспорт, Човен, Літак, Лижі, Потяг, Верхова їзда*. Крім них, ви можете створити власні профілі з конкретними правилами маршрутизації або [змінити алгоритм маршрутизації OsmAnd](../routing/osmand-routing.md#customize-offline-routing).

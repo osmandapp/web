@@ -3,23 +3,23 @@ source-hash: 72db7757f255e6bc8d69cb57bc811e9941503efeb2fedb6ede97dca3cca2d7fb
 sidebar_position: 18
 title:  Плагіни
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Плагіни значно розширюють функціональність OsmAnd. Кожен з них розроблений для вирішення конкретного завдання або випадку використання, наприклад, запису поїздки, доступу до статей Вікіпедії в автономному режимі, візуалізації даних про рельєф або надання виду на рівні вулиць.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+
+## Огляд {#overview}
+
+Плагіни значно розширюють функціональність OsmAnd. Кожен з них розроблений для вирішення конкретного завдання або випадку використання, наприклад, запису поїздки, доступу до статей Вікіпедії в автономному режимі, візуалізації даних про рельєф або надання виду на рівні вулиць.
+
 Плагіни можуть бути внутрішніми, що активуються в додатку OsmAnd, або зовнішніми, що встановлюються окремо. Сторонні плагіни працюють через API OsmAnd і можуть отримувати доступ до даних OsmAnd.
 
 

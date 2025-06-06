@@ -3,23 +3,23 @@ source-hash: 64996ddc1052758bb9889879c497788210af5f7224546ab145dac947d8626f5f
 sidebar_position: 6
 title:  Мої місця
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoIncompleteArticle/>
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-**Мої місця** — це центральний вузол у застосунку OsmAnd для керування та налаштування всіх особистих даних. Ви можете використовувати цей розділ для організації [Улюблених точок](#favorites), позначених як важливі або часто відвідувані. Вкладка [Треки](#tracks) дозволяє переглядати, імпортувати, записувати та створювати файли GPX, щоб допомогти вам вести детальну історію ваших маршрутів та подорожей. Ви також можете керувати своїми [Редагуваннями OpenStreetMap](#openstreetmap-edits), що полегшує внесення змін та оновлень до мапи. Плагін та віджети [Аудіо/Відео нотатки](#audiovideo-notes) дозволяють користувачам Android створювати та зберігати мультимедійні нотатки, пов'язані з певними місцями, додаючи контекст до їхніх подорожей.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoIncompleteArticle/>
+
+## Огляд {#overview}
+
+**Мої місця** — це центральний вузол у застосунку OsmAnd для керування та налаштування всіх особистих даних. Ви можете використовувати цей розділ для організації [Улюблених точок](#favorites), позначених як важливі або часто відвідувані. Вкладка [Треки](#tracks) дозволяє переглядати, імпортувати, записувати та створювати файли GPX, щоб допомогти вам вести детальну історію ваших маршрутів та подорожей. Ви також можете керувати своїми [Редагуваннями OpenStreetMap](#openstreetmap-edits), що полегшує внесення змін та оновлень до мапи. Плагін та віджети [Аудіо/Відео нотатки](#audiovideo-notes) дозволяють користувачам Android створювати та зберігати мультимедійні нотатки, пов'язані з певними місцями, додаючи контекст до їхніх подорожей.
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">

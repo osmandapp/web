@@ -3,25 +3,25 @@ source-hash: 97584fe0b2af522cf7d4e215f777458063503613cfce2938530973a11b7db743
 sidebar_position: 5
 title:  Зовнішні датчики
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-:::info Платна функція
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Плагін "Зовнішні датчики" — це [платна функція](../purchases/index.md) застосунку OsmAnd.
 import Translate from '@site/src/components/Translate.js';
-:::
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+:::info Платна функція
+Плагін "Зовнішні датчики" — це [платна функція](../purchases/index.md) застосунку OsmAnd.
+:::
+
 Плагін **Зовнішні датчики** дозволяє зчитувати та записувати дані з [бездротових зовнішніх датчиків](https://en.wikipedia.org/wiki/Wireless_sensor_network), що працюють за технологіями [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) та [BLE (Bluetooth Low Energy)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy), та відображати ці дані за допомогою [віджетів](#widgets) у застосунку OsmAnd. Ця керована мережа здатна збирати, передавати та зберігати дані датчиків.
 
 > *ПРИМІТКА: iPhone та iPad не підтримують ANT+ через апаратні обмеження.*

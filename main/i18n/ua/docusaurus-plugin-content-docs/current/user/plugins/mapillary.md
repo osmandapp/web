@@ -3,21 +3,21 @@ source-hash: 7748bf41551911fdb4490129f03e9db2f977da99530c4fa2b102a563988d8db8
 sidebar_position: 6
 title:  Mapillary
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Щоб швидше орієнтуватися, в OsmAnd ви можете використовувати перегляд вулиць ваших маршрутів або цікавих місць, наданий [Mapillary](https://www.mapillary.com/) (потрібне підключення до Інтернету).
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+Щоб швидше орієнтуватися, в OsmAnd ви можете використовувати перегляд вулиць ваших маршрутів або цікавих місць, наданий [Mapillary](https://www.mapillary.com/) (потрібне підключення до Інтернету).
+
 [Шар Mapillary](https://www.mapillary.com/) переносить зображення з рівня вулиць прямо в додаток OsmAnd, щоб ви могли легко оглядати околиці будь-якого цікавого місця або вздовж запланованого маршруту. Якщо зображення відсутні, ви можете додати їх самостійно, і інші зможуть їх використовувати. Ця функція з'явилася в результаті нашої співпраці з [командою Mapillary](https://www.mapillary.com/about), об'єднавши переваги обох додатків.
 
 

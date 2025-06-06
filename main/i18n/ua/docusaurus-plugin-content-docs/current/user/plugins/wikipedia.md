@@ -3,24 +3,24 @@ source-hash: ca05304b905a8c08f546a6985ec772141da7be77a298cd7f09be943e571d56f9
 sidebar_position: 18
 title:  Вікіпедія
 ---
-
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-:::info Платна функція
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Плагін Вікіпедія є [платною функцією](../purchases/index.md) застосунку OsmAnd.
 import Translate from '@site/src/components/Translate.js';
-:::
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+
+
+
+## Огляд {#overview}
+
+:::info Платна функція
+Плагін Вікіпедія є [платною функцією](../purchases/index.md) застосунку OsmAnd.
+:::
 
 Наявність Вікіпедії під час подорожі допоможе вам дізнатися більше про місця, які ви відвідуєте. Вона доступна в автономному режимі та показує Популярні місця (Android) / статті Вікіпедії (iOS), пов'язані з об'єктами інтересу, безпосередньо на мапі.
 

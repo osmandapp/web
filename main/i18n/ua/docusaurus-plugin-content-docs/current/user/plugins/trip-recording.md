@@ -3,23 +3,23 @@ source-hash: 16855757b3ed8834c62ad9adea95cef53b807a03c472c8a2c9377fed14246183
 sidebar_position: 15
 title:  Запис поїздки
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-**Плагін Запис поїздки** є важливим інструментом для запису ваших маршрутів, переміщень та тренувань. Ця функція не тільки дозволяє записувати ваші поїздки, але й дає змогу легко повторно використовувати, змінювати, оновлювати та ділитися своїми треками з іншими.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-За допомогою *плагіна Запис поїздки* ви можете створювати нові треки, відображати записані безпосередньо на мапі та керувати наявними записами. Він надає цінну інформацію про ваші поїздки, таку як швидкість, зміни висоти, деталі рельєфу та дані із зовнішніх датчиків. Плагін записує ваш маршрут, дозволяючи детальний аналіз та обмін після поїздки.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+**Плагін Запис поїздки** є важливим інструментом для запису ваших маршрутів, переміщень та тренувань. Ця функція не тільки дозволяє записувати ваші поїздки, але й дає змогу легко повторно використовувати, змінювати, оновлювати та ділитися своїми треками з іншими.
+
+За допомогою *плагіна Запис поїздки* ви можете створювати нові треки, відображати записані безпосередньо на мапі та керувати наявними записами. Він надає цінну інформацію про ваші поїздки, таку як швидкість, зміни висоти, деталі рельєфу та дані із зовнішніх датчиків. Плагін записує ваш маршрут, дозволяючи детальний аналіз та обмін після поїздки.
 
 <Tabs groupId="operating-systems">
 
@@ -201,7 +201,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![показати_тр_намапі_іос_1](@site/static/img/plugins/trip-recording/sshow_tr_onmap_ios_1.png) ![Налаштувати треки на мапі iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![показати_тр_намапі_іос_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Налаштувати треки на мапі iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>

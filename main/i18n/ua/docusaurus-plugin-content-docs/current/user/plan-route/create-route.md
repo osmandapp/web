@@ -3,23 +3,23 @@ source-hash: 010da75625174a76f1d725b7a9ebf48a3ef77017579608079582c98445b13ae3
 sidebar_position: 1
 title:  Планування маршруту
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Інструмент **Планування маршруту** (*Меню → Планування маршруту*) — це потужна функція застосунку OsmAnd, яка дозволяє [створювати нові маршрути](#create-new-route) як GPX-треки, [редагувати та додавати нові сегменти](#segments) до вже збережених треків, [вимірювати відстані](#distance-measurement) на мапі та [прив'язувати сегменти треків](#attach-track-to-roads) до найближчої доступної дороги за допомогою різних навігаційних профілів. Функція призначена для роботи в *автономному режимі*.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-Маршрут складається з набору сегментів між вказаними точками. Сегменти можуть бути прямими лініями або маршрутами, адаптованими до вибраного профілю. Маршрут можна зберегти як GPX для подальшого імпорту, редагування та [навігації](../navigation/setup/gpx-navigation.md).
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Інструмент **Планування маршруту** (*Меню → Планування маршруту*) — це потужна функція застосунку OsmAnd, яка дозволяє [створювати нові маршрути](#create-new-route) як GPX-треки, [редагувати та додавати нові сегменти](#segments) до вже збережених треків, [вимірювати відстані](#distance-measurement) на мапі та [прив'язувати сегменти треків](#attach-track-to-roads) до найближчої доступної дороги за допомогою різних навігаційних профілів. Функція призначена для роботи в *автономному режимі*.
+
+Маршрут складається з набору сегментів між вказаними точками. Сегменти можуть бути прямими лініями або маршрутами, адаптованими до вибраного профілю. Маршрут можна зберегти як GPX для подальшого імпорту, редагування та [навігації](../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems">
 

@@ -3,19 +3,19 @@ source-hash: 212ac4c80976038c3369ba42db713fb837385f1080dd80dd1129601cbee0ccec
 sidebar_position: 2
 title:  Покупки та платежі
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Кросплатформні покупки {#cross-platform-purchases}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-**OsmAnd Pro** та **Maps+** (*All World Maps* для iOS) — це **кросплатформні підписки**, доступні для Android та iOS, починаючи з OsmAnd 5.0. Кросплатформність означає, що якщо ви придбали підписку, наприклад, в одному з магазинів Android (Google Play, Huawei AppGallery), ви також можете використовувати її на iOS та у вебверсії.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
+
+
+## Кросплатформні покупки {#cross-platform-purchases}
+
+**OsmAnd Pro** та **Maps+** (*All World Maps* для iOS) — це **кросплатформні підписки**, доступні для Android та iOS, починаючи з OsmAnd 5.0. Кросплатформність означає, що якщо ви придбали підписку, наприклад, в одному з магазинів Android (Google Play, Huawei AppGallery), ви також можете використовувати її на iOS та у вебверсії.
 
 - Кросплатформну підписку можна використовувати на кількох пристроях та платформах, **якщо вона прив’язана до одного облікового запису OsmAnd Cloud**.
 

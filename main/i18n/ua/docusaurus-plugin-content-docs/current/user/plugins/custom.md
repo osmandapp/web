@@ -3,23 +3,23 @@ source-hash: c8591b2ea29f1d550d8ade11ae695de68dcbe0f205820160914491d13a15b3ea
 sidebar_position: 4
 title:  Користувацький пакет
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStoreTracker from '@site/src/components/buttons/TrackerGooglePlay.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-У застосунку OsmAnd можна створити багато налаштувань та експортувати їх у файл `.osf`. Після додавання опису, зображення та іконки ці налаштування стають повністю незалежним плагіном. Цей плагін може включати:
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-- Усі [Налаштування профілю](../personal/profiles.md) з новим профілем.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+У застосунку OsmAnd можна створити багато налаштувань та експортувати їх у файл `.osf`. Після додавання опису, зображення та іконки ці налаштування стають повністю незалежним плагіном. Цей плагін може включати:
+
+- Усі [Налаштування профілю](../personal/profiles.md) з новим профілем.
 - Спеціальний набір швидких дій та макетів меню для *Висувної панелі* та *Контекстного меню*.
 - Користувацька офлайн-мапа всередині плагіна або запропонована для завантаження.
 - Спеціальні типи онлайн-маршрутизації та онлайн-мапи.

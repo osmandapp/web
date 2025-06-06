@@ -3,25 +3,25 @@ source-hash: 78a1af6f90293cb40478bb09bf9a2c54914d8d300ed45ed42b55e7f6935cebe4
 sidebar_position: 7
 title:  Швидка дія (Користувацькі кнопки)
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Віджет «Швидка дія» — це інтерактивний елемент користувацького інтерфейсу, який забезпечує швидкий доступ до ключових функцій або дій без відкриття додаткових налаштувань. Цей віджет розміщується на головному екрані мапи і дозволяє спростити та прискорити взаємодію з застосунком, роблячи його зручнішим та ефективнішим.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-![Віджет швидкої дії](@site/static/img/widgets/quick_action_widget.png)
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+
+## Огляд {#overview}
+
+Віджет «Швидка дія» — це інтерактивний елемент користувацького інтерфейсу, який забезпечує швидкий доступ до ключових функцій або дій без відкриття додаткових налаштувань. Цей віджет розміщується на головному екрані мапи і дозволяє спростити та прискорити взаємодію з застосунком, роблячи його зручнішим та ефективнішим.
+
+![Віджет швидкої дії](@site/static/img/widgets/quick_action_widget.png)
 
 
 ## Віджет швидкої дії {#quick-action-widget}

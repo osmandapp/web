@@ -3,21 +3,21 @@ source-hash: fb13db1a50a38c9e4dad25c75866dcf340eace1a14e1662867aa6115ed2227d6
 sidebar_position: 13
 title:  Перегляд лижної мапи
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Плагін OsmAnd Ski Map view показує відомі та популярні схили, офіційно затверджені гірськолижні зони та мапи трас більшості гірськолижних курортів. Джерелом даних для лижних мап OsmAnd є мапи трас [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550). Поєднуючи векторні мапи з растровими, лижна мапа OsmAnd є дуже точною і буде корисною для інструкторів, альпіністів та любителів зимових видів спорту.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+Плагін OsmAnd Ski Map view показує відомі та популярні схили, офіційно затверджені гірськолижні зони та мапи трас більшості гірськолижних курортів. Джерелом даних для лижних мап OsmAnd є мапи трас [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550). Поєднуючи векторні мапи з растровими, лижна мапа OsmAnd є дуже точною і буде корисною для інструкторів, альпіністів та любителів зимових видів спорту.
+
 Лижна мапа OsmAnd є частиною векторних мап і не потребує додаткового завантаження. За замовчуванням вона вимкнена. Лижна мапа OsmAnd є одним зі [Стилів мапи](../map/vector-maps.md), який надає додаткові можливості, виділяючи деякі об'єкти та роблячи інші менш помітними.  
 
 Нижче показано два профілі: ліворуч — для катання на лижах, праворуч — для водіння. Профіль "Катання на лижах" виділяє траси, повітряні шляхи, зимові кольори та всі об'єкти мапи, корисні для навігації в гірськолижній зоні.

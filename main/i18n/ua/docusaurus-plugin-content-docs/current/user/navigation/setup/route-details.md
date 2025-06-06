@@ -3,25 +3,25 @@ source-hash: 005488c9f361f5a285ec76782eb6ca1d318aa0d0018f16a37bafee38f5d9b2ca
 sidebar_position: 4
 title:  Деталі маршруту
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-OsmAnd дозволяє знайти найкращий маршрут та дослідити його деталі. Додаток надає детальну інформацію про маршрут, таку як відстань, [час у дорозі](#distance--time--co2), [тип покриття](#road-attributes), [різниця висот](#elevation-info), [дані про викиди CO2](#distance--time--co2) та [інформацію про повороти](#turn-by-turn-information). Ви також можете [аналізувати](#analyze-on-map) маршрут на карті, дізнаватися інформацію про сегменти треку, [друкувати](#print) план маршруту, [зберігати](#share--export-actions) маршрут та ділитися ним з іншими. Завдяки цій функціональності ви завжди знатимете деталі маршруту та зможете ефективніше планувати свою подорож.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-<Tabs groupId="operating-systems">
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+OsmAnd дозволяє знайти найкращий маршрут та дослідити його деталі. Додаток надає детальну інформацію про маршрут, таку як відстань, [час у дорозі](#distance--time--co2), [тип покриття](#road-attributes), [різниця висот](#elevation-info), [дані про викиди CO2](#distance--time--co2) та [інформацію про повороти](#turn-by-turn-information). Ви також можете [аналізувати](#analyze-on-map) маршрут на карті, дізнаватися інформацію про сегменти треку, [друкувати](#print) план маршруту, [зберігати](#share--export-actions) маршрут та ділитися ним з іншими. Завдяки цій функціональності ви завжди знатимете деталі маршруту та зможете ефективніше планувати свою подорож.
+
+
+<Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 

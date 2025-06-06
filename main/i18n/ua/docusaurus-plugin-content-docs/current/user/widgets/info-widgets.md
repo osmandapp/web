@@ -3,25 +3,25 @@ source-hash: 4f51467f654bce312502c4c3540a628607d79ee39ab14601bed3bc914f36a0cd
 sidebar_position: 3
 title:  Інформаційні віджети
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Інформаційні віджети надають швидкий доступ до важливих даних. Це можуть бути дані про швидкість, погоду, місце паркування, дані із зовнішніх датчиків та багато іншого. Віджети можна налаштувати відповідно до ваших конкретних вимог, увімкнувши їх видимість на екрані програми або вимкнувши їх за необхідності.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-![Інформаційні віджети](@site/static/img/widgets/informational_widgets_all.png)
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+
+## Огляд {#overview}
+
+Інформаційні віджети надають швидкий доступ до важливих даних. Це можуть бути дані про швидкість, погоду, місце паркування, дані із зовнішніх датчиків та багато іншого. Віджети можна налаштувати відповідно до ваших конкретних вимог, увімкнувши їх видимість на екрані програми або вимкнувши їх за необхідності.
+
+![Інформаційні віджети](@site/static/img/widgets/informational_widgets_all.png)
 
 
 ## Віджети висоти {#altitude-widgets}

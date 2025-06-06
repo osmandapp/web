@@ -3,21 +3,21 @@ source-hash: e245d0a8d185e0eb4570fd1b908d1c8ccda0b97d189a853407a98e84348a2b57
 sidebar_position: 7
 title:  Android Auto
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Затримки визначення місцезнаходження (збої ANR) {#location-delays-anr-crashes}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_troubleshooting_1.png)
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+
+## Затримки визначення місцезнаходження (збої ANR) {#location-delays-anr-crashes}
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_troubleshooting_1.png)
 
 Android Auto та OsmAnd можуть одночасно визначати місцезнаходження транспортного засобу, що може спричинити затримку на 3-5 секунд у відображенні інформації у відповідних віджетах або зависання. Щоб уникнути цього, необхідно:
 

@@ -3,21 +3,21 @@ source-hash: e6ee24d43a2fa6f42228f49a1b9ee52256cc054f09d4a2d54de79b76e5bec373
 sidebar_position: 10
 title:  Відеоуроки та посібники
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Відеоресурси OsmAnd {#osmand-video-resources}
 import AllStores from '@site/src/components/buttons/AllStores.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Ми зібрали велику колекцію відеоуроків та посібників на нашому [офіційному YouTube-каналі OsmAnd](https://www.youtube.com/@OsmAndMapsNavigation/playlists), спеціально розроблених для нашої глобальної бази користувачів. Плейлисти зручно організовані за мовами, що дозволяє легко знайти навчальні посібники, огляди функцій та контент, створений користувачами, бажаною мовою. Незалежно від того, чи хочете ви поглибити своє розуміння OsmAnd, вивчити нові функції або дізнатися, як спільнота використовує OsmAnd, ви знайдете щось корисне. У наступних розділах наведено прямі посилання на плейлисти, доступні різними мовами.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Відеоресурси OsmAnd {#osmand-video-resources}
+
+Ми зібрали велику колекцію відеоуроків та посібників на нашому [офіційному YouTube-каналі OsmAnd](https://www.youtube.com/@OsmAndMapsNavigation/playlists), спеціально розроблених для нашої глобальної бази користувачів. Плейлисти зручно організовані за мовами, що дозволяє легко знайти навчальні посібники, огляди функцій та контент, створений користувачами, бажаною мовою. Незалежно від того, чи хочете ви поглибити своє розуміння OsmAnd, вивчити нові функції або дізнатися, як спільнота використовує OsmAnd, ви знайдете щось корисне. У наступних розділах наведено прямі посилання на плейлисти, доступні різними мовами.
+
 
 ### Плейлисти за мовами {#playlists-by-language}
 

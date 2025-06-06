@@ -3,21 +3,21 @@ source-hash: 470395b442bc02f739c70c743b8609eba6a9167790d69975a70c66f773f1f9c2
 sidebar_position: 6
 title:  Маршрути для верхової їзди
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-*Маршрути для верхової їзди* можуть бути корисними для вершників, які хочуть планувати свої поїздки стежками та маршрутами, які є безпечними та придатними для коней. За допомогою цього типу маршрутизації ви також можете відкрити нові маршрути, про які інакше не знали.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+*Маршрути для верхової їзди* можуть бути корисними для вершників, які хочуть планувати свої поїздки стежками та маршрутами, які є безпечними та придатними для коней. За допомогою цього типу маршрутизації ви також можете відкрити нові маршрути, про які інакше не знали.
+
 *Маршрути для верхової їзди* можна налаштувати відповідно до ваших потреб у розділі [Параметри маршруту](../guidance/navigation-settings.md#route-parameters) Налаштувань навігації.
 
 ![Horseback](@site/static/img/navigation/routing/horseback_routing_overview.png)

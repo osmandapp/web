@@ -3,25 +3,25 @@ source-hash: 33e4dbbce2f29f25895ac2911f408a4c445e97c0bfec87fc88e60d04aa4cc776
 sidebar_position: 16
 title:  Показники автомобіля
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoIncompleteArticle/>
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-<InfoAndroidOnly/>
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-## Огляд {#overview}
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-:::info Платна функція
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoIncompleteArticle/>
+
+<InfoAndroidOnly/>
+
+## Огляд {#overview}
+
+:::info Платна функція
 Плагін "Показники автомобіля" — це [платна функція](../purchases/index.md) застосунку OsmAnd.
 :::
 

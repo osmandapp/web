@@ -3,25 +3,25 @@ source-hash: 6903b49424e5c482237d25b37443ef83dcd424359ce1c77b4d978684406c3ba7
 sidebar_position: 10
 title:  Маршрути
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-OsmAnd має багато потужних функцій для відображення різних [маршрутів](#type-of-routes) на мапі. За замовчуванням ці маршрути є частиною [векторних мап](./vector-maps.md#routes) (дані OpenStreetMap), однак подібну функціональність надають [треки](./tracks/index.md), які можна створити за допомогою функції [Планування маршруту](../plan-route/create-route.md), імпортувати як [GPX треки](#save-as-a-track), записати за допомогою [плагіна Запис поїздки](../plugins/trip-recording.md).
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-## Типи маршрутів {#type-of-routes}
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+OsmAnd має багато потужних функцій для відображення різних [маршрутів](#type-of-routes) на мапі. За замовчуванням ці маршрути є частиною [векторних мап](./vector-maps.md#routes) (дані OpenStreetMap), однак подібну функціональність надають [треки](./tracks/index.md), які можна створити за допомогою функції [Планування маршруту](../plan-route/create-route.md), імпортувати як [GPX треки](#save-as-a-track), записати за допомогою [плагіна Запис поїздки](../plugins/trip-recording.md).
+
+
+## Типи маршрутів {#type-of-routes}
 
 Маршрути представляють різні види активного відпочинку, використовуючи дані з [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Натискання на **іконку щита з номером маршруту або прапором маршруту** на мапі відкриє контекстне меню, яке надає додаткову інформацію про маршрут і дозволяє використовувати його як частину навігації.
 

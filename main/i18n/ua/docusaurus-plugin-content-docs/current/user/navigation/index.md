@@ -3,21 +3,21 @@ source-hash: 64e70bb76edd2b30f2b0d339bd4c6e36d84152b0908b7817a4a4b3f7136b2c35
 sidebar_position: 4
 title: Навігація
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Статті про навігацію {#navigation-articles}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Інструмент навігації OsmAnd розроблений, щоб допомогти вам побудувати маршрут так, як ви хочете, пропонуючи повністю настроюваний екран карти, покрокові інструкції, додаткові голосові підказки або інші сповіщення. Це особливо корисний інструмент для мандрівників, які хочуть досліджувати нові місця, не покладаючись на підключення до Інтернету.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Статті про навігацію {#navigation-articles}
+
+Інструмент навігації OsmAnd розроблений, щоб допомогти вам побудувати маршрут так, як ви хочете, пропонуючи повністю настроюваний екран карти, покрокові інструкції, додаткові голосові підказки або інші сповіщення. Це особливо корисний інструмент для мандрівників, які хочуть досліджувати нові місця, не покладаючись на підключення до Інтернету.
+
 У розділі **Налаштування маршруту** ви можете прочитати основи того, як розпочати навігацію:
 
 - [Підготовка маршруту](./setup/route-navigation.md)

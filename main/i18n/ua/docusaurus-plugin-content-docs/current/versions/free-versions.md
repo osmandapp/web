@@ -2,11 +2,11 @@
 source-hash: 010d1952603adc3309b34701c4951ffbb0d35b8a4686df5354ac94075ddff63d
 sidebar_position: 2
 ---
+import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
+import Download from '@site/src/components/buttons/Download.js';
 
 # Безкоштовні версії — Android {#free-releases--android}
 
-import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
-import Download from '@site/src/components/buttons/Download.js';
 
 Ви можете отримати останню безкоштовну версію OsmAnd з перелічених магазинів застосунків.
 

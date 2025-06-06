@@ -3,25 +3,25 @@ source-hash: f191169b6e649a8a2fa4d7290e81ee1eed2f9375e4ed5477423f846f1f381744
 sidebar_position: 2
 title:  Кнопки на мапі
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Кнопки на мапі, зокрема *Масштаб*, *Пошук*, *Напрямки*, *Компас*, *Моє місцезнаходження*, *3D-режим* та *Меню*, є основними елементами керування для взаємодії з мапою. Кожна кнопка пропонує специфічні функції для покращення вашого досвіду навігації та використання мапи.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-## Моє місцезнаходження та Масштаб {#my-location-and-zoom}
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Кнопки на мапі, зокрема *Масштаб*, *Пошук*, *Напрямки*, *Компас*, *Моє місцезнаходження*, *3D-режим* та *Меню*, є основними елементами керування для взаємодії з мапою. Кожна кнопка пропонує специфічні функції для покращення вашого досвіду навігації та використання мапи.
+
+
+## Моє місцезнаходження та Масштаб {#my-location-and-zoom}
 
 ![Меню налаштування екрана](@site/static/img/widgets/location_zoom_buttons.png)
 

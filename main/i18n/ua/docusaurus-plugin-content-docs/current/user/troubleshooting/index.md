@@ -2,19 +2,19 @@
 source-hash: f4bfa5d27b06d6b62f71474e1eae1218ef9add8b5fade76e6107def055d05c2d
 sidebar_position: 10
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-# Вирішення проблем {#troubleshooting}
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-Рішення та підказки для поширених проблем.
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
+
+# Вирішення проблем {#troubleshooting}
+
+Рішення та підказки для поширених проблем.
+
 ### [Android Auto](android_auto.md) {#android-auto}
 
 Найпоширеніші проблеми, пов'язані з Android Auto.

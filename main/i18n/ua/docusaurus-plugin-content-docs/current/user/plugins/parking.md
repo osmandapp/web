@@ -3,19 +3,19 @@ source-hash: 233a4f242e18610a3a2cb1c046d14118d980144c24a70cdd73cda0a085f1935d
 sidebar_position: 12
 title:  Місце паркування
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Плагін **Місце паркування** допоможе вам зберегти та керувати місцем, де ви припаркували свій автомобіль. Він дозволяє розмістити маркер на мапі, відстежувати тривалість паркування та, за бажанням, встановити нагадування в календарі про закінчення часу паркування.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
+
+
+## Огляд {#overview}
+
+Плагін **Місце паркування** допоможе вам зберегти та керувати місцем, де ви припаркували свій автомобіль. Він дозволяє розмістити маркер на мапі, відстежувати тривалість паркування та, за бажанням, встановити нагадування в календарі про закінчення часу паркування.
 
 Цей плагін безкоштовний і працює офлайн із завантаженими мапами OsmAnd. Ви можете швидко знайти свій припаркований автомобіль, оцінити відстань пішки до нього та поділитися місцем паркування, якщо це необхідно.
 

@@ -3,21 +3,21 @@ source-hash: ddfc3ac037400ba4b7624aa8ca7bc26f488d3c9f1394a2591ffca630f3fb25bf
 sidebar_position: 6
 title:  Віджети маркерів
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-## Огляд {#overview}
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-Маркери — це тимчасові точки, позначені на мапі у вигляді прапорців. Віджети показують *Напрямок*, *Відстань*, *Адресу* та *Орієнтовний час прибуття* до маркера. Вони дозволяють швидко знаходити маркери на мапі, а також змінювати їхнє положення. Детальніше про маркери можна прочитати в цій [статті](../personal/markers).
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+## Огляд {#overview}
+
+Маркери — це тимчасові точки, позначені на мапі у вигляді прапорців. Віджети показують *Напрямок*, *Відстань*, *Адресу* та *Орієнтовний час прибуття* до маркера. Вони дозволяють швидко знаходити маркери на мапі, а також змінювати їхнє положення. Детальніше про маркери можна прочитати в цій [статті](../personal/markers).
+
+
 ## Віджет верхньої панелі {#top-bar-widget}
 
 Віджет **Панель маркерів мапи** (Android) / **Індикація відстані - Верхня панель** (iOS) відображає:

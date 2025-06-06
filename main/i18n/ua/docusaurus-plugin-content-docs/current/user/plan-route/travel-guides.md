@@ -3,23 +3,23 @@ source-hash: ad9a848b756ff2ea9b6fa820fe1e2158fafcaae5e5f09135bad2dc629b8c3d27
 sidebar_position: 2
 title:  Путівники
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-:::info Платна функція
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Путівники — це [платна функція](../purchases/index.md) застосунку OsmAnd.
 import Translate from '@site/src/components/Translate.js';
-:::
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+:::info Платна функція
+Путівники — це [платна функція](../purchases/index.md) застосунку OsmAnd.
+:::
 
 Віртуальні путівники в OsmAnd пропонують користувачам цінну інформацію, рекомендації та поради. Вони також дозволяють мандрівникам отримати доступ до вичерпної навігаційної інформації про визначні місця в застосунку.
 

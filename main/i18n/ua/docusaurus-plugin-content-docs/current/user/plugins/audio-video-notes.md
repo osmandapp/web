@@ -3,23 +3,23 @@ source-hash: f355b46d163b900349f3d42c0dbe2b200a45bdbd34749cac699671889463740b
 sidebar_position: 3
 title:  Аудіо/відео нотатки
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoAndroidOnly />
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Ваші аудіо- та відеозаписи можуть бути корисними в майбутньому, наприклад, як спогади про місця, де ви побували. Вони доступні в меню [Мої місця](../personal/myplaces.md) і відображаються, коли увімкнено плагін Аудіо/відео нотатки.
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoAndroidOnly />
+
+## Огляд {#overview}
+
+Ваші аудіо- та відеозаписи можуть бути корисними в майбутньому, наприклад, як спогади про місця, де ви побували. Вони доступні в меню [Мої місця](../personal/myplaces.md) і відображаються, коли увімкнено плагін Аудіо/відео нотатки.
+
 Плагін Аудіо/відео нотатки розширює функціональність OsmAnd, дозволяючи створювати власні нотатки в різних форматах, таких як фото, відео або аудіо, та пов'язувати їх з їхнім географічним розташуванням або поточним місцезнаходженням. Ви можете робити записи лише тоді, коли плагін увімкнено, використовуючи [віджет Аудіо/відео нотатки](../widgets/info-widgets.md#-audio-video-notes-widget) та/або [контекстне меню карти](../map/map-context-menu.md#-audiovideo-note). Отримані дані автоматично зберігаються в [Моїх місцях](../personal/myplaces.md), звідки ними можна зручно керувати та ділитися.
 
 Усі створені аудіо- та відеонотатки складають шар записів. Коли він увімкнений на карті, він змінює вигляд записаних даних, і з'являється більше налаштувань для керування записами. У шарі записів аудіо- та відеонотатки розміщуються на карті як POI, створюючи таким чином розповідь користувача, видиму лише власнику пристрою.

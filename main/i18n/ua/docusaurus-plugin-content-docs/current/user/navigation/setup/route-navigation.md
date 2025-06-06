@@ -3,25 +3,25 @@ source-hash: d233eb77ecfd69d56460233fec14e03db65e064bc86c70d632d57a3af7572d04
 sidebar_position: 1
 title:  Підготовка маршруту
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-## Огляд {#overview}
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-Функція **Підготовка маршруту** в OsmAnd надає покрокові навігаційні вказівки для різних [типів маршрутизації](./../routing/osmand-routing.md#routing-types), включаючи [автомобіль](./../routing/car-based-routing.md), [пішохід](./../routing/pedestrian-routing.md), велосипед, [верхову їзду](./../routing/horse-routing.md) та [лижі](./../routing/ski-routing.md). Користувачі можуть налаштовувати параметри навігації, додавати пункти призначення та оптимізувати маршрути для ефективності.
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-:::tip
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-- **Офлайн-навігація** увімкнена за замовчуванням. Однак ви також можете використовувати [онлайн-рушії маршрутизації](./../routing/online-routing.md).
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+## Огляд {#overview}
+
+Функція **Підготовка маршруту** в OsmAnd надає покрокові навігаційні вказівки для різних [типів маршрутизації](./../routing/osmand-routing.md#routing-types), включаючи [автомобіль](./../routing/car-based-routing.md), [пішохід](./../routing/pedestrian-routing.md), велосипед, [верхову їзду](./../routing/horse-routing.md) та [лижі](./../routing/ski-routing.md). Користувачі можуть налаштовувати параметри навігації, додавати пункти призначення та оптимізувати маршрути для ефективності.
+
+:::tip
+
+- **Офлайн-навігація** увімкнена за замовчуванням. Однак ви також можете використовувати [онлайн-рушії маршрутизації](./../routing/online-routing.md).
 
 - **OsmAnd вимагає дозволу** на доступ до [точного місцезнаходження](../../start-with/first-steps.md#permission-to-access-the-location) для точної навігації. Увімкніть це в налаштуваннях пристрою, якщо потрібно.
 

@@ -3,25 +3,25 @@ source-hash: 402175ec241b4cb5afa53974a57f409216132338b5885358e8268f81d654415e
 sidebar_position: 7
 title:  Налаштування навігації
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Для успішної навігації важливо правильно налаштувати відповідні параметри відповідно до ваших потреб та способу пересування — автомобілем, пішки, верхи чи на лижах. У цій статті описано основні параметри маршруту, [Голосові підказки](#voice-prompts), [Екранні сповіщення](#screen-alerts), [Поведінка мапи під час навігації](#map-during-navigation) та [Вигляд лінії маршруту](#customize-route-line). Також детально описано налаштування транспортного засобу, такі як [Швидкість за замовчуванням](#default-speed) та [Максимальна/мінімальна швидкість](#road-speeds), [Тип двигуна](#fuel-used-by-motor) для розрахунку CO2, [Об'єм паливного бака](#fuel-tank-capacity) та [Розмір/вага](#size-parameters), які можуть впливати на маршрут. Налаштування цих параметрів допоможе вам отримати максимальну користь від використання OsmAnd та досягти своєї мети без зайвих затримок.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-<Tabs groupId="operating-systems">
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Для успішної навігації важливо правильно налаштувати відповідні параметри відповідно до ваших потреб та способу пересування — автомобілем, пішки, верхи чи на лижах. У цій статті описано основні параметри маршруту, [Голосові підказки](#voice-prompts), [Екранні сповіщення](#screen-alerts), [Поведінка мапи під час навігації](#map-during-navigation) та [Вигляд лінії маршруту](#customize-route-line). Також детально описано налаштування транспортного засобу, такі як [Швидкість за замовчуванням](#default-speed) та [Максимальна/мінімальна швидкість](#road-speeds), [Тип двигуна](#fuel-used-by-motor) для розрахунку CO2, [Об'єм паливного бака](#fuel-tank-capacity) та [Розмір/вага](#size-parameters), які можуть впливати на маршрут. Налаштування цих параметрів допоможе вам отримати максимальну користь від використання OsmAnd та досягти своєї мети без зайвих затримок.
+
+<Tabs groupId="operating-systems">
+
 <TabItem value="android" label="Android">
 
 ![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_overview_andr.png)

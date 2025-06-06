@@ -3,23 +3,23 @@ source-hash: 6aa2b169b83239a736de808a9e09817c0e5aa056194ea84167b0b85591a1716c
 sidebar_position: 5
 title:  Векторні карти (Стилі карт)
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Векторні карти призначені для використання як стандартне джерело даних карт для OsmAnd, тому **вам потрібно завантажити їх на свій пристрій**. Векторні карти підтримують величезну кількість стилів карт для різних видів діяльності, таких як їзда на велосипеді, піші прогулянки, їзда на автомобілі або снігоході, та інші.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-Кожен стиль карти можна налаштувати, щоб виділити або приховати певні об'єкти, а також перемикатися між денним і нічним режимами. Дані векторних карт можуть бути доповнені векторними даними та відображені в стандартному стилі карти, наприклад, інформація про *контурні лінії*. Ви можете *створити свій власний стиль карти OsmAnd*, щоб відобразити необхідну інформацію.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Векторні карти призначені для використання як стандартне джерело даних карт для OsmAnd, тому **вам потрібно завантажити їх на свій пристрій**. Векторні карти підтримують величезну кількість стилів карт для різних видів діяльності, таких як їзда на велосипеді, піші прогулянки, їзда на автомобілі або снігоході, та інші.
+
+Кожен стиль карти можна налаштувати, щоб виділити або приховати певні об'єкти, а також перемикатися між денним і нічним режимами. Дані векторних карт можуть бути доповнені векторними даними та відображені в стандартному стилі карти, наприклад, інформація про *контурні лінії*. Ви можете *створити свій власний стиль карти OsmAnd*, щоб відобразити необхідну інформацію.
 
 
 ## Варіанти використання {#use-cases}

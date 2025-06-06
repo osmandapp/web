@@ -3,19 +3,19 @@ source-hash: 9a4c69a2f9a7fe83a7109b11bcbe43d44146ddaccdb8960db9690c4dd2a6f32a
 sidebar_position: 3
 title:  Головне меню
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
+
+
+
+## Огляд {#overview}
+
 **Головне меню** — це основний список опцій, доступних для використання в застосунку. Воно забезпечує швидкий доступ до налаштувань профілю, глобальних налаштувань, пошуку, особистих даних, навігації та інших функцій.
 
 Іконка [Головного меню](../widgets/map-buttons.md#main-menu) '&#8801;' розташована в лівому нижньому кутку екрана Мапи. У режимі навігації ця кнопка за замовчуванням не відображається. Вона з'являється після короткого натискання на мапу.

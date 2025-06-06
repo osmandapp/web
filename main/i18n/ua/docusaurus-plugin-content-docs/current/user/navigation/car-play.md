@@ -4,23 +4,23 @@ sidebar_position: 10
 title:  CarPlay
 android: false
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Керування транспортним засобом та одночасне користування телефоном або планшетом зазвичай заборонено законом з міркувань безпеки. [***CarPlay***](https://www.apple.com/ios/carplay/) — це програмне забезпечення, яке надає адаптовану та оптимізовану версію програми OsmAnd для безпечного використання під час керування автомобілем, полегшуючи та убезпечуючи доступ до навігаційних функцій програми.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-Щоб використовувати *CarPlay* на екрані вашого автомобіля, виконайте наступні кроки:
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+
+
+## Огляд {#overview}
+
+Керування транспортним засобом та одночасне користування телефоном або планшетом зазвичай заборонено законом з міркувань безпеки. [***CarPlay***](https://www.apple.com/ios/carplay/) — це програмне забезпечення, яке надає адаптовану та оптимізовану версію програми OsmAnd для безпечного використання під час керування автомобілем, полегшуючи та убезпечуючи доступ до навігаційних функцій програми.
+
+Щоб використовувати *CarPlay* на екрані вашого автомобіля, виконайте наступні кроки:
 
 1. *CarPlay* доступний не у всіх країнах. Переконайтеся, що він підтримується у вашій [країні чи регіоні](https://www.apple.com/uk/ios/feature-availability/#applecarplay-applecarplay) та що *CarPlay* підтримується у вашій [моделі автомобіля](https://www.apple.com/ios/carplay/available-models/).
 2. [Підключіть свій пристрій](https://support.apple.com/en-gb/HT203412) до мультимедійної системи вашого автомобіля за допомогою порту USB або бездротово через Wi-Fi чи Bluetooth. При першому підключенні вам може знадобитися дозвіл на використання *CarPlay* на вашому пристрої.

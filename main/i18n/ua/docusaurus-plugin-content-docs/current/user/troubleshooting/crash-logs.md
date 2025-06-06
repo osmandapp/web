@@ -3,21 +3,21 @@ source-hash: 1a33a1b4a2dedfaff07a0bf3e3e748f9060a255db1a4b2b9c0fb3d363a38cdf0
 sidebar_position: 5
 title:  Журнали збоїв
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Журнали збоїв є цінними діагностичними інструментами, які допомагають розробникам виявляти та виправляти проблеми та помилки, що спричиняють збій програми або її несподівану поведінку. Можна ділитися журналами зі свого пристрою Android з командою розробників OsmAnd. Наразі користувачі iOS мають лише один варіант журналу збоїв для надсилання.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+Журнали збоїв є цінними діагностичними інструментами, які допомагають розробникам виявляти та виправляти проблеми та помилки, що спричиняють збій програми або її несподівану поведінку. Можна ділитися журналами зі свого пристрою Android з командою розробників OsmAnd. Наразі користувачі iOS мають лише один варіант журналу збоїв для надсилання.
+
 
 ## Журнали збоїв та Logcat {#crash-and-logcat-logs}
 

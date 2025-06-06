@@ -4,25 +4,25 @@ sidebar_position: 11
 title:  OsmAnd Cloud
 ---
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-:::tip subscribe  
 import Translate from '@site/src/components/Translate.js';
-&nbsp;<ProFeature/> Щоб отримати доступ до всіх функцій OsmAnd Cloud, підпишіться на **OsmAnd Pro** для [Android](../purchases/android.md#osmand-pro) або [iOS](../purchases/ios.md#osmand-pro).  
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-:::  
 import Poll from '@site/src/components/home/Poll';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+:::tip subscribe  
+&nbsp;<ProFeature/> Щоб отримати доступ до всіх функцій OsmAnd Cloud, підпишіться на **OsmAnd Pro** для [Android](../purchases/android.md#osmand-pro) або [iOS](../purchases/ios.md#osmand-pro).  
+:::  
+
 :::note cross-platform  
 OsmAnd Cloud — це незалежний сервіс хмарного сховища, який *не прив'язаний* до певної версії платформи Android, iOS чи веб.  
 :::  

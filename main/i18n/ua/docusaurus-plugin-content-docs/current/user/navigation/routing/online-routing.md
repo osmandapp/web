@@ -3,23 +3,23 @@ source-hash: e7cacd9b2695c636ca2b51d596bab2502f1059561eb16cf6e73fded7d8b20cd0
 sidebar_position: 11
 title:  Онлайн-маршрутизація
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-<InfoAndroidOnly />
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-Онлайн-маршрутизація — це потужний інструмент, який може допомогти користувачам заощадити час і ефективніше пересуватися. Однак важливо зазначити, що онлайн-маршрутизація залежить від підключення до Інтернету і може бути недоступною в районах з поганим покриттям мережі. Крім того, користувачі завжди повинні бути обережними та використовувати власне судження, дотримуючись будь-якого маршруту, запропонованого онлайн-сервісом маршрутизації.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+<InfoAndroidOnly />
+
+Онлайн-маршрутизація — це потужний інструмент, який може допомогти користувачам заощадити час і ефективніше пересуватися. Однак важливо зазначити, що онлайн-маршрутизація залежить від підключення до Інтернету і може бути недоступною в районах з поганим покриттям мережі. Крім того, користувачі завжди повинні бути обережними та використовувати власне судження, дотримуючись будь-якого маршруту, запропонованого онлайн-сервісом маршрутизації.
 
 ![Онлайн-маршрутизація Android](@site/static/img/navigation/routing/online_routing_andr.png)
 

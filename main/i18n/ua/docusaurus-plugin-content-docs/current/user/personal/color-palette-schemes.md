@@ -3,25 +3,25 @@ source-hash: d163d01217802e521e371206bbaa38f9d607bfc03894f014fe9dfef28bebc92f
 sidebar_position: 5
 title:  Кольорові схеми
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-:::info Платна функція
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-Кольорові схеми використовуються як частина платних функцій [Maps+](../purchases/index.md) та Pro <ProFeature />.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+:::info Платна функція
+
+Кольорові схеми використовуються як частина платних функцій [Maps+](../purchases/index.md) та Pro <ProFeature />.
+
 :::
 
 Кольорові схеми використовуються для [розфарбовування маршрутів](#routes), [рельєфу мапи](#terrain) та [погоди на мапі](#weather), і представлені як окрема частина інформації, яку можна експортувати, імпортувати та редагувати для зміни колірної схеми мапи та візуалізації даних.

@@ -1,8 +1,8 @@
 ---
 source-hash: c95e1035173b21e1b1b5458c275dbed73d3f2f0447aa7b379c4057ef2e86720b
 sidebar_position: 5
-import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 ---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # Як скомпілювати версію для Android {#how-to-compile-the-android-version}
 

@@ -3,21 +3,21 @@ source-hash: b2fce03e6d9da01bd74250791681c9c19239d595e605a569ddc8593a5ea7a4a0
 sidebar_position: 9
 title:  Редагування OpenStreetMap
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) — це глобальна спільнота, яка має на меті створити детальну безкоштовну географічну карту світу та надати актуальні дані з відкритим кодом кожному користувачеві. Плагін для редагування OpenStreetMap дозволяє вам зробити свій внесок у спільноту.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+## Огляд {#overview}
+
+[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) — це глобальна спільнота, яка має на меті створити детальну безкоштовну географічну карту світу та надати актуальні дані з відкритим кодом кожному користувачеві. Плагін для редагування OpenStreetMap дозволяє вам зробити свій внесок у спільноту.
+
 За допомогою OsmAnd та плагіна для редагування OSM ви можете легко додавати власну інформацію на OpenStreetMap.org, наприклад, створювати або змінювати [POI](#create--modify-poi), додавати або коментувати [нотатки](#create--modify-osm-note), а також завантажувати записані GPX [треки](#upload-gps-track).
 
 ## Необхідні параметри налаштування {#required-setup-parameters}

@@ -3,26 +3,26 @@ source-hash: 07f4cfdec4fee4cf9a5b9df0c10fb106ceea5d82eece93df77935b115f52a919
 sidebar_position: 4
 title:  Контекстне меню треку
 ---
-
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-*Контекстне меню треку* надає інформацію про *[Трек](../../personal/tracks/index.md)* як у текстовій, так і в [графічній](#altitude--speed-graphs) формах. Воно дозволяє додавати інформацію, вносити зміни, редагувати та виконувати різні інші дії з треком. Ви можете отримати доступ до *контекстного меню треку*, просто торкнувшись потрібного треку на карті або скориставшись меню *[Мої місця](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Можливо, вам знадобиться відкрити папку треків і вибрати потрібний трек, торкнувшись його.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-<Tabs groupId="operating-systems">
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+
+## Огляд {#overview}
+
+*Контекстне меню треку* надає інформацію про *[Трек](../../personal/tracks/index.md)* як у текстовій, так і в [графічній](#altitude--speed-graphs) формах. Воно дозволяє додавати інформацію, вносити зміни, редагувати та виконувати різні інші дії з треком. Ви можете отримати доступ до *контекстного меню треку*, просто торкнувшись потрібного треку на карті або скориставшись меню *[Мої місця](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Можливо, вам знадобиться відкрити папку треків і вибрати потрібний трек, торкнувшись його.
+
+<Tabs groupId="operating-systems">
+
 <TabItem value="android" label="Android">
 
 ![Overview track context menu Android](@site/static/img/personal/tracks/track_context_overview_andr_1.png)

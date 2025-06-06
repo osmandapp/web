@@ -3,23 +3,23 @@ source-hash: 01d2bab37db61db0c8bf15607a0fb46e437033b23cd49b6da9cfceebbded535a
 sidebar_position: 2
 title:  Навігація за треком
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Опція *Навігація за треком* (GPX) дозволяє вам слідувати заздалегідь визначеним маршрутом або треком на карті. Це може бути особливо корисно для активного відпочинку, такого як піші прогулянки, їзда на велосипеді або їзда по бездоріжжю, де наявність запланованого маршруту підвищує безпеку та ефективність. Якщо ви подорожуєте організованою групою, ця функція допоможе вам і кожному члену групи мати однакову інформацію про маршрут.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-Опція *Навігація за треком* також може використовуватися в повсякденному житті. Ви можете використовувати раніше [записаний трек](../../plugins/trip-recording.md) або [створити трек](../../personal/tracks/manage-tracks.md#create-a-track) та поділитися ним зі своєю родиною чи друзями замість того, щоб пояснювати їм маршрут. Ви також можете використовувати [маршрути на карті OsmAnd](../../../../blog/routes/) для навігації. Як їх виділити на карті та що означають їхні кольори, описано в розділі [Маршрути](../../map/vector-maps.md#routes) статті *Векторні карти*.
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Опція *Навігація за треком* (GPX) дозволяє вам слідувати заздалегідь визначеним маршрутом або треком на карті. Це може бути особливо корисно для активного відпочинку, такого як піші прогулянки, їзда на велосипеді або їзда по бездоріжжю, де наявність запланованого маршруту підвищує безпеку та ефективність. Якщо ви подорожуєте організованою групою, ця функція допоможе вам і кожному члену групи мати однакову інформацію про маршрут.
+
+Опція *Навігація за треком* також може використовуватися в повсякденному житті. Ви можете використовувати раніше [записаний трек](../../plugins/trip-recording.md) або [створити трек](../../personal/tracks/manage-tracks.md#create-a-track) та поділитися ним зі своєю родиною чи друзями замість того, щоб пояснювати їм маршрут. Ви також можете використовувати [маршрути на карті OsmAnd](../../../../blog/routes/) для навігації. Як їх виділити на карті та що означають їхні кольори, описано в розділі [Маршрути](../../map/vector-maps.md#routes) статті *Векторні карти*.
 
 <Tabs groupId="operating-systems">
 

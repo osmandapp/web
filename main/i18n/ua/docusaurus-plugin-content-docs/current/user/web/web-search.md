@@ -4,25 +4,25 @@ sidebar_position: 6
 sidebar_label: Пошук
 title: Пошук на сайті
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-<InfoIncompleteArticle/>
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-## Огляд {#overview}
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-
 import Translate from '@site/src/components/Translate.js';
-До **Меню пошуку** можна отримати доступ з бічної панелі або з **лівого кута 🔍** карти. Воно містить:
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoIncompleteArticle/>
+
+
+## Огляд {#overview}
+
+До **Меню пошуку** можна отримати доступ з бічної панелі або з **лівого кута 🔍** карти. Воно містить:
+
 - [Рядок пошуку](#search-bar). Введіть ключові слова для пошуку конкретних місць або об'єктів інтересу.
 - [Розділ Категорії](#categories). Переглядайте параметри за категоріями для полегшення пошуку об'єктів інтересу.
 - [Розділ Дослідити](#explore). Відкрийте для себе найближчі місця та цікаві об'єкти з фотографіями.

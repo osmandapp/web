@@ -3,21 +3,21 @@ source-hash: 918939e10c904d01cfd0907c3fe6fc1132e5c7eed6ef043e4aced839138673b3
 sidebar_position: 5
 title:  Маршрути громадського транспорту
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-## Огляд {#overview}
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Навігація громадським транспортом у застосунку OsmAnd дозволяє прокладати маршрути з використанням громадського транспорту, що, безумовно, допоможе вам швидше пересуватися "бетонними джунглями".
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+
+
+
+## Огляд {#overview}
+
+Навігація громадським транспортом у застосунку OsmAnd дозволяє прокладати маршрути з використанням громадського транспорту, що, безумовно, допоможе вам швидше пересуватися "бетонними джунглями".
 
 Дані про маршрути громадського транспорту беруться з проєкту [OpenStreetMap](http://openstreetmap.org/). OsmAnd використовує [схему PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) для навігації. OsmAnd підтримує наступні маршрути OpenStreetMap для навігації: *автобус*, *тролейбус*, *маршрутне таксі*, *фунікулер*, *метро*, *легкорейковий транспорт*, *монорейка*, *поїзд*, *трамвай*, *пором*. Швидкість за замовчуванням для кожного типу транспортного засобу налаштовується в [Routing xml](../../../technical/build-osmand/routing.md) і використовується для пошуку найшвидших маршрутів.
 

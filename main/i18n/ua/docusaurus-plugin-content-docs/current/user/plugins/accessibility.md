@@ -3,23 +3,23 @@ source-hash: c1d5df6a1169bf1847e971df29e04917dfe084eb3aac39fa72b73772a49f409d
 sidebar_position: 1
 title:  Доступність
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-:::caution Примітка
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-Плагін Доступність доступний лише у **версії OsmAnd для Android**. [Версія для iOS](#how-to-use-ios) покладається на стандартні системні налаштування доступності.
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-:::
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-## Огляд {#overview}
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+:::caution Примітка
+Плагін Доступність доступний лише у **версії OsmAnd для Android**. [Версія для iOS](#how-to-use-ios) покладається на стандартні системні налаштування доступності.
+:::
+
+## Огляд {#overview}
+
 Доступність покращує зручність використання для сліпих та людей з вадами зору завдяки інтеграції з інструментами [Доступності Android](https://www.android.com/accessibility/). Плагін пропонує **перетворення тексту на мовлення, керування жестами, автоматичні оголошення** та **тактильний зворотний зв'язок**, щоб зробити навігацію більш доступною. На iOS OsmAnd використовує вбудовані функції доступності Apple, такі як VoiceOver.
 
 

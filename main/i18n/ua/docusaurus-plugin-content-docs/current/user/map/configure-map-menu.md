@@ -3,19 +3,19 @@ source-hash: 6fa7422b06e6718a3df899beccedf3a8140e366d8d20c981e996cc2109415a71
 sidebar_position: 4
 title:  Налаштувати мапу
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Меню **Налаштувати мапу** є важливим пунктом у *Головному меню* OsmAnd, де ви можете налаштувати відображення мапи відповідно до ваших потреб. Ви можете виділити на мапі улюблені точки, навігаційні маркери або спеціальні точки інтересу, відобразити певні маршрути або сторонні файли GPX, накласти інформацію про рельєф, супутникові знімки або будь-які інші доступні растрові зображення, відобразити інформацію про громадський транспорт та змінити стиль мапи.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
+
+
+## Огляд {#overview}
+
+Меню **Налаштувати мапу** є важливим пунктом у *Головному меню* OsmAnd, де ви можете налаштувати відображення мапи відповідно до ваших потреб. Ви можете виділити на мапі улюблені точки, навігаційні маркери або спеціальні точки інтересу, відобразити певні маршрути або сторонні файли GPX, накласти інформацію про рельєф, супутникові знімки або будь-які інші доступні растрові зображення, відобразити інформацію про громадський транспорт та змінити стиль мапи.
 
 <Tabs groupId="operating-systems">
 

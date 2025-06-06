@@ -3,23 +3,23 @@ source-hash: 62958161a92688643653ef05335adc88ebd99659a7f095e14db47e44f722a525
 sidebar_position: 3
 title: Велосипедний маршрут (MTB)
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
-## Огляд {#overview}
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
-
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
-Велосипедний маршрут враховує такі фактори, як наявність велосипедних доріжок, стежок і доріг, які є безпечними та законними для велосипедистів. OsmAnd завжди використовує дані про висоту під час розрахунку орієнтовного часу прибуття (час подолання відстані) відповідно до [правила Нейсміта](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). За замовчуванням надається найшвидший маршрут.
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
-Велосипедний маршрут також може бути корисним для [гірського велосипеда](#mtb-routing-particularities).
 import Translate from '@site/src/components/Translate.js';
-
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+
+## Огляд {#overview}
+
+Велосипедний маршрут враховує такі фактори, як наявність велосипедних доріжок, стежок і доріг, які є безпечними та законними для велосипедистів. OsmAnd завжди використовує дані про висоту під час розрахунку орієнтовного часу прибуття (час подолання відстані) відповідно до [правила Нейсміта](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). За замовчуванням надається найшвидший маршрут.
+Велосипедний маршрут також може бути корисним для [гірського велосипеда](#mtb-routing-particularities).
+
 Ви можете налаштувати *Велосипедний маршрут* у розділі [Параметри маршруту](../guidance/navigation-settings#route-parameters) Налаштувань навігації.
 
 
