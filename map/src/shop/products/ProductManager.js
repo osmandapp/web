@@ -135,9 +135,9 @@ export async function updatePrices(region = 'USD') {
     prices.forEach((p) => {
         priceMap[p.fsName] = {
             oldPrice: p.oldPrice,
-            oldPriceDisplay: p.oldPriceDisplay,
+            oldPriceDisplay: p.display,
             newPrice: p.newPrice,
-            display: p.display,
+            display: p.newPriceDisplay,
         };
     });
 
