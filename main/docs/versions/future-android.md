@@ -37,21 +37,19 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ## Optional updates {#optional-updates}
 
-<!-- ***Example***  -->
-
-- [Add Downhills / uphills info inside Analyze by intervals](https://github.com/osmandapp/OsmAnd-Issues/issues/2878)
-- [Resume button does not work as expected](https://github.com/osmandapp/OsmAnd/issues/21842)
-- [Missing outline for GPS coordinates Widget with Transparent widgets option enabled](https://github.com/osmandapp/OsmAnd/issues/22258)
-- [For all inner levels tracks folder use default - Track sorting NAME_ASCENDING](https://github.com/osmandapp/OsmAnd/issues/22256)
-- [OsmAnd does not offer to activate maps](https://github.com/osmandapp/OsmAnd/issues/21302)
-- [Add Temperature units for General settings](https://github.com/osmandapp/OsmAnd-Issues/issues/2792)
-- [some unused not expected values are supported](https://github.com/osmandapp/OsmAnd/issues/22103)
-- [Cleanup POI search (split place of worship)](https://github.com/osmandapp/OsmAnd/issues/21972)
-- [waterway=flowline missing in data, boat routing broken](https://github.com/osmandapp/OsmAnd/issues/22512)
-- [Show protected areas in Topo Map style](https://github.com/osmandapp/OsmAnd/issues/22168)
-- [[AndroidAuto] 3D perspective center point moved](https://github.com/osmandapp/OsmAnd/issues/22304)
-- [Contour lines overlay in China](https://github.com/osmandapp/OsmAnd/issues/22434)
-- [Contour Line Bugs on Edges of Parallels / Meridians](https://github.com/osmandapp/OsmAnd/issues/21738)
+- [Add information about Downhills / Uphills to Analyze by intervals.](https://github.com/osmandapp/OsmAnd-Issues/issues/2878)
+- [Resume button does not work as expected.](https://github.com/osmandapp/OsmAnd/issues/21842)
+- [Missing outline for GPS coordinates Widget with transparent widgets option enabled.](https://github.com/osmandapp/OsmAnd/issues/22258)
+- [Use default value for track folder of all internal levels - Track sorting NAME_ASCENDING.](https://github.com/osmandapp/OsmAnd/issues/22256)
+- [OsmAnd does not offer to activate maps.](https://github.com/osmandapp/OsmAnd/issues/21302)
+- [Add Temperature units for General settings.](https://github.com/osmandapp/OsmAnd-Issues/issues/2792)
+- [Some unused but unexpected values are supported.](https://github.com/osmandapp/OsmAnd/issues/22103)
+- [Clear POI search (separate places of worship).](https://github.com/osmandapp/OsmAnd/issues/21972)
+- [waterway=flowline missing in data, boat routing broken.](https://github.com/osmandapp/OsmAnd/issues/22512)
+- [Show protected areas in Topo Map style.](https://github.com/osmandapp/OsmAnd/issues/22168)
+- [[Android Auto] 3D perspective center point moved.](https://github.com/osmandapp/OsmAnd/issues/22304)
+- [Overlapping Contour lines in China.](https://github.com/osmandapp/OsmAnd/issues/22434)
+- [Contour line errors on Parallel / Meridian boundaries.](https://github.com/osmandapp/OsmAnd/issues/21738)
 
 
 

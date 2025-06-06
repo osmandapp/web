@@ -54,11 +54,12 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 - [Weather: measurement units cannot be changed from Plugin settings (except Wind animation).](https://github.com/osmandapp/OsmAnd-iOS/issues/4413)
 - [Synchronization of the route line when creating a track with the current profile.](https://github.com/osmandapp/OsmAnd-iOS/issues/4392)
 - [Some unused not expected values are supported.](https://github.com/osmandapp/OsmAnd/issues/22103)
-- [POI search cleanup (separation of places of worship).](https://github.com/osmandapp/OsmAnd/issues/21972)
+- [Clear POI search (separate places of worship).](https://github.com/osmandapp/OsmAnd/issues/21972)
 - [waterway=flowline missing in data, boat routing broken.](https://github.com/osmandapp/OsmAnd/issues/22512)
 - [Show protected areas in Topo Map style.](https://github.com/osmandapp/OsmAnd/issues/22168)
 - [Overlapping Contour lines in China.](https://github.com/osmandapp/OsmAnd/issues/22434)
 - [Contour line errors on Parallel / Meridian boundaries.](https://github.com/osmandapp/OsmAnd/issues/21738)
+
 
 
 
