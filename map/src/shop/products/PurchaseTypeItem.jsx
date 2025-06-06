@@ -43,7 +43,7 @@ export default function PurchaseTypeItem({ type, productId, selected, onChange }
     }, [purchaseObj]);
 
     if (!purchaseObj) return null;
-    purchaseObj.display = '€ ' + 777777777.7;
+
     return (
         <Box
             onClick={() => onChange(type)}
