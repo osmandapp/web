@@ -2,7 +2,8 @@ import { Box, Radio, Typography } from '@mui/material';
 import { purchase } from './ProductManager';
 import styles from '../shop.module.css';
 import { useTranslation } from 'react-i18next';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import MenuItemWithLines from '../../menu/components/MenuItemWithLines';
 
 export default function PurchaseTypeItem({ type, productId, selected, onChange }) {
     const { t } = useTranslation();
@@ -42,7 +43,7 @@ export default function PurchaseTypeItem({ type, productId, selected, onChange }
     }, [purchaseObj]);
 
     if (!purchaseObj) return null;
-
+    purchaseObj.display = '€ ' + 777777777.7;
     return (
         <Box
             onClick={() => onChange(type)}
@@ -54,11 +55,19 @@ export default function PurchaseTypeItem({ type, productId, selected, onChange }
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
+                    gap: '10px',
                 }}
             >
                 <Box>
                     <Typography className={styles.purchaseTypeCardTitle}>{t(labelMap[type])}</Typography>
-                    <Box sx={{ display: 'flex', alignItems: 'center', ml: 2 }}>
+                    <Box
+                        sx={{
+                            display: 'inline-flex',
+                            alignItems: 'baseline',
+                            flexWrap: 'wrap',
+                            ml: 2,
+                        }}
+                    >
                         {purchaseObj.oldPrice && purchaseObj.oldPrice !== purchaseObj.newPrice && (
                             <Typography className={styles.purchaseTypeCardOldPrice}>
                                 {purchaseObj.oldPriceDisplay}&nbsp;
