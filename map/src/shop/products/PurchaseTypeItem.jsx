@@ -35,7 +35,7 @@ export default function PurchaseTypeItem({ type, productId, selected, onChange }
                 const annualFull = parseFloat(monthlyVersion.newPrice) * 12;
                 const annualPromo = parseFloat(newPrice);
                 const discountPercent = ((annualFull - annualPromo) / annualFull) * 100;
-                if (discountPercent > 0) {
+                if (discountPercent > 1) {
                     setSaveBox(`${t('web:shared_string_save')} ${discountPercent.toFixed(0)}%`);
                 }
             }
