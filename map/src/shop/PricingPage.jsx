@@ -35,7 +35,7 @@ export default function PricingPage() {
     return (
         <Box>
             <HeaderMenu />
-            <Box sx={{ overflowY: 'auto', maxHeight: `100vh` }}>
+            <Box sx={{ overflowY: 'auto', maxHeight: `100%` }}>
                 <Box className={styles.pricingBox}>
                     <Typography className={styles.pricingTitle} onClick={clickHandler}>
                         {`${t('web:label_pricing')}${useTestMode ? ' TEST MODE' : ''}`}
