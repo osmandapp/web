@@ -30,6 +30,7 @@ OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://os
 
 <SotmScreenshots />
 
+
 _________________
 
 
