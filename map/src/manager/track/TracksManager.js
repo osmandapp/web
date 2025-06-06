@@ -1312,8 +1312,8 @@ export function getDist(file) {
 }
 
 export function getTime(file) {
-    let f = getAnalysisData(file);
-    return f?.timeMoving ? toHHMMSS(f?.timeMoving) : DEFAULT_TIME;
+    const data = getAnalysisData(file);
+    return data?.timeMoving ? toHHMMSS(data.timeMoving).split('.')[0] : DEFAULT_TIME;
 }
 
 export function getWptPoints(file) {
