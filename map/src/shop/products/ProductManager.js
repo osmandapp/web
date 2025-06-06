@@ -100,7 +100,7 @@ export const purchase = {
             oldPriceDisplay: null,
             newPrice: '39.99',
             display: '€39.99',
-            sku: 'net.osmand.fastspring.maps.inapp',
+            sku: 'net.osmand.fastspring.inapp.maps.plus',
             fsName: 'osmand-maps',
         },
         {
