@@ -42,7 +42,7 @@ export default function TrackInfo({ file }) {
             t(getLargeLengthUnit(ctx));
     }
     if (summary?.timeMoving) {
-        timeMoving = 'Time moving: ' + toHHMMSS(summary?.timeMoving);
+        timeMoving = 'Time moving: ' + toHHMMSS(summary?.timeMoving).split('.')[0];
     }
     if (summary?.diffElevationDown > 0 || summary?.diffElevationUp > 0) {
         updownhill =
