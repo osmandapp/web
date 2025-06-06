@@ -80,7 +80,8 @@ const config = {
       /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
       {
         hashed: true,                        // long-term cache-friendly
-        highlightSearchTermsOnTargetPage: true
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
       },
     ],
   ],
