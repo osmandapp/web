@@ -37,10 +37,22 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ## Optional updates {#optional-updates}
 
-<!-- ***Example***  -->
+- [Add information about Downhills / Uphills to Analyze by intervals.](https://github.com/osmandapp/OsmAnd-Issues/issues/2878)
+- [Resume button does not work as expected.](https://github.com/osmandapp/OsmAnd/issues/21842)
+- [Missing outline for GPS coordinates Widget with transparent widgets option enabled.](https://github.com/osmandapp/OsmAnd/issues/22258)
+- [Use default value for track folder of all internal levels - Track sorting NAME_ASCENDING.](https://github.com/osmandapp/OsmAnd/issues/22256)
+- [OsmAnd does not offer to activate maps.](https://github.com/osmandapp/OsmAnd/issues/21302)
+- [Add Temperature units for General settings.](https://github.com/osmandapp/OsmAnd-Issues/issues/2792)
+- [Some unused but unexpected values are supported.](https://github.com/osmandapp/OsmAnd/issues/22103)
+- [Clear POI search (separate places of worship).](https://github.com/osmandapp/OsmAnd/issues/21972)
+- [waterway=flowline missing in data, boat routing broken.](https://github.com/osmandapp/OsmAnd/issues/22512)
+- [Show protected areas in Topo Map style.](https://github.com/osmandapp/OsmAnd/issues/22168)
+- [[Android Auto] 3D perspective center point moved.](https://github.com/osmandapp/OsmAnd/issues/22304)
+- [Overlapping Contour lines in China.](https://github.com/osmandapp/OsmAnd/issues/22434)
+- [Contour line errors on Parallel / Meridian boundaries.](https://github.com/osmandapp/OsmAnd/issues/21738)
 
-- Fixed issues:
-  - [The languages Serbian latin (Latin for Serbia, Bosnia and Herzegovina and Crna Gora) now work.](https://github.com/osmandapp/OsmAnd/issues/21480)
+
+
 
 
 
