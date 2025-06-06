@@ -18,10 +18,11 @@ const config = {
   staticDirectories: ['static', 'legacy-image-static'],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr'],
+    locales: ['en', 'fr', 'ua'],
     localeConfigs: {
       en: { label: 'English' },
       fr: { label: 'Français' },
+      ua: { label: 'Українська' },
     },
   },
   presets: [
