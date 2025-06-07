@@ -928,4 +928,4 @@ Available types of actions:
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in April 2025*
+> *This article was last updated in June 2025*
