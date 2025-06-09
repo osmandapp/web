@@ -81,6 +81,7 @@ const config = {
       /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
       {
         hashed: true,                        // long-term cache-friendly
+        language: ['en', 'ru'],
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
       },
