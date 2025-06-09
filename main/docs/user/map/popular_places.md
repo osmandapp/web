@@ -288,7 +288,7 @@ The **Details** screen provides full metadata for the selected photo, including:
 > *Last updated: June 2025*
 
 
-
+<!--
 ### Online Photos 2
 
 <Tabs groupId="operating-systems">
@@ -317,19 +317,7 @@ How to access:
 
 - You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.  
 
-In the **Online photos** section of the map context menu, you can access photos of objects from the [Wikimedia](https://www.wikimedia.org/), which offers media files tagged with `image` or `wikimedia` from OpenStreetMap. <!-- Here we need to write about Popula places (WIkipedia) -->
-
-<!--
-Images nearby
-
-Details:
-
-- Mapillary offers nearby street-level images, while Wikimedia provides media tagged with `image` or `wikimedia`from OpenStreetMap.
-
-- You can contribute your photos using the *Add Photos* button.
-
-*Images nearby* (*iOS*) section provides access to photos of points of interest from sources such as [Wikimedia](https://www.wikimedia.org/) and [Mapillary](../plugins/mapillary.md).
--->
+In the **Online photos** section of the map context menu, you can access photos of objects from the [Wikimedia](https://www.wikimedia.org/), which offers media files tagged with `image` or `wikimedia` from OpenStreetMap.
 
 #### Gallery Menu 2
 
@@ -395,3 +383,4 @@ Buttons:
 
 The Details screen provides information such as the *Name*, *Added Date*, *Author*, *License*, *Source*, and *Link* of the selected item.
 
+-->
