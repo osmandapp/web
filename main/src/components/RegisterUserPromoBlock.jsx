@@ -1,6 +1,6 @@
 import {Box, Button, Grid, TextField} from "@mui/material";
 import React, {useState} from "react";
-import {post} from "axios";
+import axios from 'axios';
 
 
 export default function RegisterUserPromoBlock({promoKey}) {
@@ -13,7 +13,7 @@ export default function RegisterUserPromoBlock({promoKey}) {
     const [msg, setMsg] = useState('');
 
     async function registerEmail() {
-        await post(host + `/api/promo-add-user`, '',
+        await axios.post(host + `/api/promo-add-user`, '',
             {
                 params: {
                     promoKey: promoKey,
