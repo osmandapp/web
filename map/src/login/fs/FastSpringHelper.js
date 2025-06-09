@@ -1,7 +1,8 @@
 import { getAccountInfo } from '../../manager/LoginManager';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH, PURCHASES_URL } from '../../manager/GlobalManager';
+import { purchase } from '../../shop/products/ProductManager';
 
-export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navigate }) => {
+function createFastSpringBuilder(testMode) {
     // remove old script if exists
     const old = document.getElementById('fsc-api');
     if (old) old.remove();
@@ -17,6 +18,12 @@ export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navig
         `osmand.${testMode ? 'test.' : ''}onfastspring.com/popup-${testMode ? 'test-' : ''}osmand`
     );
     script.setAttribute('data-popup-webhook-received', 'onFSPopupClosed');
+
+    return script;
+}
+
+export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navigate }) => {
+    const script = createFastSpringBuilder(testMode);
 
     const products = [
         {
@@ -59,3 +66,52 @@ export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navig
 
     document.head.appendChild(script);
 };
+
+export function updatePrices(setPurchasePriceMap, testMode = false) {
+    const script = createFastSpringBuilder(testMode);
+    script.onload = () => {
+        window.fastspring.builder.reset();
+
+        const productsList = Object.values(purchase)
+            .flat()
+            .map((item) => {
+                if (testMode) {
+                    if (item.hasTestMode) {
+                        return {
+                            path: `test-${item.fsName}`,
+                            quantity: 1,
+                        };
+                    }
+                } else {
+                    return {
+                        path: item.fsName,
+                        quantity: 1,
+                    };
+                }
+            })
+            .filter(Boolean);
+
+        window.fastspring.builder.push(
+            {
+                reset: true,
+                pricing: true,
+                products: productsList,
+            },
+            (pricingData) => {
+                const priceMap = {};
+                pricingData.groups[0].items.forEach((item) => {
+                    const name = item.product;
+                    priceMap[name] = {
+                        oldPrice: item.priceTotalValue,
+                        oldPriceDisplay: item.priceTotal,
+                        newPrice: item.totalValue,
+                        display: item.total,
+                    };
+                });
+                setPurchasePriceMap(priceMap);
+            }
+        );
+    };
+
+    document.head.appendChild(script);
+}

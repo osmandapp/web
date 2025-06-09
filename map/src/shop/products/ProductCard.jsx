@@ -18,9 +18,18 @@ import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
 import { createFastSpringPurchase } from '../../login/fs/FastSpringHelper';
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-export default function ProductCard({ productId, type, setType, testMode, isSelected, setSelectedCardId }) {
+export default function ProductCard({
+    productId,
+    type,
+    setType,
+    testMode,
+    isSelected,
+    setSelectedCardId,
+    updateCardPrices,
+    setUpdateCardPrices,
+}) {
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
@@ -112,6 +121,8 @@ export default function ProductCard({ productId, type, setType, testMode, isSele
                                         productId={productId}
                                         selected={type}
                                         onChange={(value) => setType(value)}
+                                        updateCardPrices={updateCardPrices}
+                                        setUpdateCardPrices={setUpdateCardPrices}
                                     />
                                 ))}
                             </RadioGroup>

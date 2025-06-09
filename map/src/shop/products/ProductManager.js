@@ -2,7 +2,6 @@ import { ReactComponent as StartIcon } from '../../assets/icons/ic_action_osmand
 import { ReactComponent as MapsIcon } from '../../assets/icons/ic_action_osmand_maps_plus_v2.svg';
 import { ReactComponent as ProIcon } from '../../assets/icons/ic_action_osmand_pro_logo_colored_v2.svg';
 import { ReactComponent as DecadeIcon } from '../../assets/icons/ic_action_osmand_decade_v2.svg';
-import { apiGet } from '../../util/HttpApi';
 
 export const products = [
     {
@@ -82,6 +81,7 @@ export const purchase = {
             sku: 'net.osmand.fastspring.subscription.pro.annual',
             fsName: 'osmand-pro-annual',
             monthlyVersionId: 'osmand-pro',
+            hasTestMode: true,
         },
         {
             id: 'osmand-maps-plus',
@@ -102,6 +102,7 @@ export const purchase = {
             display: '€39.99',
             sku: 'net.osmand.fastspring.inapp.maps.plus',
             fsName: 'osmand-maps',
+            hasTestMode: true,
         },
         {
             id: 'osmand-decade',
@@ -114,59 +115,3 @@ export const purchase = {
         },
     ],
 };
-
-export async function updatePrices(region = 'USD') {
-    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/fs/products/price`, {
-        apiCache: true,
-        params: {
-            country: region,
-        },
-    });
-    let prices;
-    if (response.ok) {
-        const result = await response.json();
-        prices = result.prices;
-    } else {
-        console.error('Failed to fetch prices from FastSpring API');
-        return;
-    }
-
-    const priceMap = {};
-    prices.forEach((p) => {
-        priceMap[p.fsName] = {
-            oldPrice: p.oldPrice,
-            oldPriceDisplay: p.display,
-            newPrice: p.newPrice,
-            display: p.newPriceDisplay,
-        };
-    });
-
-    Object.keys(purchase).forEach((type) => {
-        purchase[type].forEach((item) => {
-            const info = priceMap[item.fsName];
-            if (info) {
-                item.oldPrice = info.oldPrice;
-                item.newPrice = info.newPrice;
-                item.oldPriceDisplay = info.oldPriceDisplay;
-                item.display = info.display;
-            }
-        });
-    });
-}
-
-export async function getCountryCode() {
-    const defaultCode = 'UA';
-    try {
-        const response = await apiGet(process.env.REACT_APP_GEO_IP_URL);
-        if (!response.ok) {
-            console.error('Error fetching country code: HTTP status', response.status);
-            return defaultCode;
-        }
-
-        const data = await response.json();
-        return data.country_code || defaultCode;
-    } catch (e) {
-        console.error('Error fetching country code:', e);
-        return defaultCode;
-    }
-}

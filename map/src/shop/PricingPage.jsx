@@ -4,8 +4,9 @@ import React, { useEffect, useState } from 'react';
 import ProductCard from './products/ProductCard';
 import styles from './shop.module.css';
 import { useTranslation } from 'react-i18next';
-import { getCountryCode, updatePrices } from './products/ProductManager';
+import { purchase } from './products/ProductManager';
 import EmptyLoginDialog from '../login/dialogs/EmptyLoginDialog';
+import { updatePrices } from '../login/fs/FastSpringHelper';
 
 const FeaturesTable = React.lazy(() => import('./features/FeaturesTable'));
 
@@ -13,10 +14,12 @@ export default function PricingPage() {
     const { t } = useTranslation();
 
     const [selectedProductType, setSelectedProductType] = useState('');
+    const [purchasePriceMap, setPurchasePriceMap] = useState([]);
 
     const [useTestMode, setUseTestMode] = useState(false);
     const [selectedCardId, setSelectedCardId] = useState(null);
     const [show, setShow] = useState(false);
+    const [updateCardPrices, setUpdateCardPrices] = useState(false);
 
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
@@ -25,12 +28,26 @@ export default function PricingPage() {
     };
 
     useEffect(() => {
-        getCountryCode().then((region) => {
-            updatePrices(region).then(() => {
-                setShow(true);
+        updatePrices(setPurchasePriceMap, useTestMode);
+    }, [useTestMode]);
+
+    useEffect(() => {
+        if (purchasePriceMap && Object.keys(purchasePriceMap).length > 0) {
+            Object.keys(purchase).forEach((type) => {
+                purchase[type].forEach((item) => {
+                    const info = purchasePriceMap[useTestMode ? 'test-' + item.fsName : item.fsName];
+                    if (info) {
+                        item.oldPrice = info.oldPrice;
+                        item.newPrice = info.newPrice;
+                        item.oldPriceDisplay = info.oldPriceDisplay;
+                        item.display = info.display;
+                    }
+                });
             });
-        });
-    }, []);
+            setShow(true);
+            setUpdateCardPrices(true);
+        }
+    }, [purchasePriceMap]);
 
     return (
         <Box>
@@ -58,6 +75,8 @@ export default function PricingPage() {
                                     testMode={useTestMode}
                                     isSelected={selectedCardId === id}
                                     setSelectedCardId={setSelectedCardId}
+                                    updateCardPrices={updateCardPrices}
+                                    setUpdateCardPrices={setUpdateCardPrices}
                                 />
                             ))}
                         </Box>

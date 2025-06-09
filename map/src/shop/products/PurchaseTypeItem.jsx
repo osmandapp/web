@@ -3,14 +3,29 @@ import { purchase } from './ProductManager';
 import styles from '../shop.module.css';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
-import MenuItemWithLines from '../../menu/components/MenuItemWithLines';
 
-export default function PurchaseTypeItem({ type, productId, selected, onChange }) {
+export default function PurchaseTypeItem({
+    type,
+    productId,
+    selected,
+    onChange,
+    updateCardPrices,
+    setUpdateCardPrices,
+}) {
     const { t } = useTranslation();
 
     const [saveBox, setSaveBox] = useState(null);
+    const [purchaseObj, setPurchaseObj] = useState(null);
 
-    const purchaseObj = purchase[type]?.find((p) => p.id === productId);
+    useEffect(() => {
+        if (updateCardPrices) {
+            const updatedPurchaseObj = purchase[type]?.find((p) => p.id === productId);
+            if (updatedPurchaseObj) {
+                setPurchaseObj(updatedPurchaseObj);
+            }
+            setUpdateCardPrices(false);
+        }
+    }, [updateCardPrices]);
 
     const labelMap = {
         monthly: 'web:purchase_type_monthly_subscription',
