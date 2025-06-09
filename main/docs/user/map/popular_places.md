@@ -50,17 +50,6 @@ You can view the Wikidata link directly in the [Map Context Menu](../map/map-con
 Learn how to find a Wikidata ID: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
-### Data Sources {#data-sources}
-
-**Popular Places** are based on structured content from [Wikidata](https://www.wikidata.org) and [Wikipedia](https://www.wikipedia.org/).
-
-Only POIs with a linked **Wikidata ID** are displayed. These IDs connect map objects to verified names, descriptions, and images.
-
-You can view the Wikidata link directly in the [Map Context Menu](../map/map-context-menu.md). Tapping the Wikidata tag opens the full object page on the Wikidata website.
-
-Learn how to find a Wikidata ID: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
-
-
 ## How to Use {#how-to-use}
 
 <InfoAndroidOnly/>
@@ -297,3 +286,112 @@ The **Details** screen provides full metadata for the selected photo, including:
 
 
 > *This article was last updated in June 2025*
+
+
+
+### Online Photos 2
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png)   ![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Online Photos context menu iOS](@site/static/img/map/online_photo_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+#### Actions With Photos
+
+How to access:
+
+- Tap the **Show All**(Android) / **View All**(iOS) button to open [the gallery](#gallery-menu) in full screen mode. There you can swipe through all the images related to the selected location.
+
+- Tap a photo to access actions such as *Share*, *Details*, *Open in browser*, and *Download*.
+
+- You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.  
+
+In the **Online photos** section of the map context menu, you can access photos of objects from the [Wikimedia](https://www.wikimedia.org/), which offers media files tagged with `image` or `wikimedia` from OpenStreetMap. <!-- Here we need to write about Popula places (WIkipedia) -->
+
+<!--
+Images nearby
+
+Details:
+
+- Mapillary offers nearby street-level images, while Wikimedia provides media tagged with `image` or `wikimedia`from OpenStreetMap.
+
+- You can contribute your photos using the *Add Photos* button.
+
+*Images nearby* (*iOS*) section provides access to photos of points of interest from sources such as [Wikimedia](https://www.wikimedia.org/) and [Mapillary](../plugins/mapillary.md).
+-->
+
+#### Gallery Menu 2
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Online Photos context menu Android](@site/static/img/map/gallery_menu_android.png)   ![Street-Level Imagery Android](@site/static/img/map/gallery_menu_android_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/gallery_menu_ios_1.png)
+
+</TabItem>
+
+</Tabs>
+
+
+The gallery can display up to 100 items. You can browse through all the photos, and short tapping on any photo will open it to view additional details (*Name*, *Date*, *Author*, *License*) and perform various actions (*Share*, *Details*, *Open in browser*, and *Download* options).
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_3.png) 
+
+</TabItem>
+
+</Tabs>
+
+
+
+On iOS, long tapping on any photo opens an additional menu with actions such as *Details*, *Open in browser*, and *Download*.
+
+Buttons:
+
+- The **Share** button allows you to share the selected item.  
+- The **Three dots** button opens a menu with options like *Details*, *Open in browser*, and *Download*.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Online Photos context menu Android](@site/static/img/map/gallery_menu_android_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_2.png) 
+
+</TabItem>
+
+</Tabs>
+
+
+The Details screen provides information such as the *Name*, *Added Date*, *Author*, *License*, *Source*, and *Link* of the selected item.
+

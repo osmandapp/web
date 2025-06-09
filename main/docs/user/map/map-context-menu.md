@@ -258,7 +258,7 @@ Tap *Nearby POIs / Wikipedia articles* opens a points list (POIs or Wikipedia). 
 
 </Tabs>
 
-Shown info about Public transport routes for chosen transport stop. Information about Public transport context menu and actions with it, read [here](../map/public-transport.md#transport-routes-context-menu).
+Shown info about Public transport routes for chosen transport stop. Information about Public transport context menu and actions with it, read in the [article](../map/public-transport.md#transport-routes-context-menu).
 
 
 ### Favorites / Track Points from the Group {#favorites--track-points-from-the-group}
@@ -330,116 +330,61 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png)   ![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
+![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png)
+![Online Photos context menu Android](@site/static/img/map/gallery_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/online_photo_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
+![Online Photos context menu iOS](@site/static/img/map/online_photo_ios.png)
+![Online Photos context menu iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-#### Actions With Photos {#actions-with-photos}
+When you tap a Popular Place on map, the **Online Photos** section in the *POIs context menu* displays image previews sourced from [Wikipedia](https://www.wikipedia.org/) and [Wikimedia Commons](https://www.wikimedia.org/).
 
-How to access:
+Tapping a photo opens the **Gallery** view, where you can:
 
-- Tap the **Show All**(Android) / **View All**(iOS) button to open [the gallery](#gallery-menu) in full screen mode. There you can swipe through all the images related to the selected location.
+- Browse up to 100 images per place
+- View image metadata (*author*, *license*, *source*)
+- Perform actions: **Share**, **Open in browser**, **Download**
 
-- Tap a photo to access actions such as *Share*, *Details*, *Open in browser*, and *Download*.
+> *On iOS, long-tapping an image opens a context menu with quick actions.*
 
-- You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.  
+For more, see: [Online Photos](https://osmand.net/docs/user/map/popular_places#online-photos) and [Gallery view](https://osmand.net/docs/user/map/popular_places#gallery)
 
-In the **Online photos** section of the map context menu, you can access photos of objects from the [Wikimedia](https://www.wikimedia.org/), which offers media files tagged with `image` or `wikimedia` from OpenStreetMap. <!-- Here we need to write about Popula places (WIkipedia) -->
 
-<!--
-Images nearby
-
-Details:
-
-- Mapillary offers nearby street-level images, while Wikimedia provides media tagged with `image` or `wikimedia`from OpenStreetMap.
-
-- You can contribute your photos using the *Add Photos* button.
-
-*Images nearby* (*iOS*) section provides access to photos of points of interest from sources such as [Wikimedia](https://www.wikimedia.org/) and [Mapillary](../plugins/mapillary.md).
--->
-
-#### Gallery Menu {#gallery-menu}
+### Street-level Imagery {#street-level-imagery}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/gallery_menu_android.png)   ![Street-Level Imagery Android](@site/static/img/map/gallery_menu_android_1.png)
+![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
 
 </TabItem>
 
 </Tabs>
 
+OsmAnd supports integration with [Mapillary](https://www.mapillary.com/), a global platform for crowdsourced street-level imagery. This feature allows you to view and explore real-world photo sequences directly on the map.
 
-The gallery can display up to 100 items. You can browse through all the photos, and short tapping on any photo will open it to view additional details (*Name*, *Date*, *Author*, *License*) and perform various actions (*Share*, *Details*, *Open in browser*, and *Download* options).
+Mapillary images appear as directional photo icons, aligned with the road or path where they were captured. These can help you better understand your surroundings, especially in unfamiliar areas.
 
+You can:
 
-<Tabs groupId="operating-systems">
+- Use the **Explore** button to open Mapillary’s viewer and browse through nearby street-level images.
+- Tap the **Add Photos** button to contribute your own photos to the Mapillary platform.
 
-<TabItem value="android" label="Android">  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_3.png) 
-
-</TabItem>
-
-</Tabs>
-
-
-
-On iOS, long tapping on any photo opens an additional menu with actions such as *Details*, *Open in browser*, and *Download*.
-
-Buttons:  
-- The **Share** button allows you to share the selected item.  
-- The **Three dots** button opens a menu with options like *Details*, *Open in browser*, and *Download*.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Online Photos context menu Android](@site/static/img/map/gallery_menu_android_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_2.png) 
-
-</TabItem>
-
-</Tabs>
-
-
-The Details screen provides information such as the *Name*, *Added Date*, *Author*, *License*, *Source*, and *Link* of the selected item.
-
-#### Street-level Imagery {#street-level-imagery}
-
-Details:
-
-- With *Add photos* button, you can share your own street-level imagery via Mapillary.
-
-- Use *Explore* button to open Mapillary view with photos.
-
-*Street-level imagery* integrates Mapillary’s extensive collection of real-world street views. You can access nearby, sequentially captured images of streets and paths. Also, Mapillary provides street-level images directly on the map view. You can read more in the article [Mapillary plugin](../plugins/mapillary.md).
-
-
+> *Learn more about how to activate and use this feature in the [Mapillary plugin guide](../plugins/mapillary.md).*
 
 
 ### * Audio/Video Note {#-audiovideo-note}

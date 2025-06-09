@@ -14,7 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Overview {#overview}
 
-The map can display points such as [Favorites](#favorites), [Points of Interest](#points-of-interest-pois), [Markers](#markers), [Wikipedia](#-wikipedia), [Search results](#search-results-poi), [Audio and Video notes](#-audio--video-points-android), and [OSM editing](#-osm-edit-points).
+The map can display points such as [Favorites](#favorites), [Points of Interest](#points-of-interest-pois), [Markers](#markers), [Wikipedia](#-wikipedia--wikipedia), [Search results](#search-results-poi), [Audio and Video notes](#-audio--video-points-android--audio--video-points-android), and [OSM editing](#-osm-edit-points--osm-edit-points).
 
 
 ## Favorites {#favorites}
@@ -73,14 +73,31 @@ By default, Favorites and points of interest (POI) are displayed without names, 
 
 ## Points of Interest (POIs) {#points-of-interest-pois}
 
-Enable or disable points of interest of **selected** type on the map:
+<Tabs groupId="operating-systems">
 
-- **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*
-- **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*  
+<TabItem value="android" label="Android">  
 
-![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*
 
-[Points of interest (POIs)](https://wiki.openstreetmap.org/wiki/Points_of_interest) are specific points highlighted with an icon on the map. They represent interesting or useful places and objects and are a part of [Vector Maps](../map/vector-maps.md). The most notable POIs are displayed on the map automatically. However, you can select a specific type of POIs (i.e. Restaurants) and they all will be highlighted on the map within an **orange circle** (from Zoom level 9). You can find detailed information about the point of interest in the [Context menu](../map/map-context-menu.md) that appears on a [short tap](../map/map-context-menu.md#select-an-object-short-tap) on the point.  
+![POI overlay Android](@site/static/img/map/poi_overlay_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*
+
+![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+[Points of interest (POIs)](https://wiki.openstreetmap.org/wiki/Points_of_interest) are specific locations marked with a symbol on the map. They indicate interesting or useful places and objects and are part of the [Vector Maps](../map/vector-maps.md).  
+
+The most notable POIs are displayed on the map automatically. However, you can select a specific type of POIs (e.g. *Restaurants*) and all of them will be highlighted on the map with an **orange circle** (starting at zoom level 9).  
+
+Detailed information about a point of interest can be found in the [Context menu](../map/map-context-menu.md) that appears when you [tap](../map/map-context-menu.md#select-an-object-short-tap) on the point.  
 
 
 ### POI Types {#poi-types}
@@ -94,12 +111,25 @@ You can select one or many from standard OsmAnd POI types, or make your own [POI
 
 ### Map Style POI {#map-style-poi}
 
-Hide POI from map style:
+<Tabs groupId="operating-systems">
 
-- **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*
-- **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,rendering_category_hide"/>*
+<TabItem value="android" label="Android">  
 
-![POI on map style](@site/static/img/map/poi_layer.png) ![POI on topo style](@site/static/img/map/poi_layer_topo_style.png)
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*
+
+![POI on map style](@site/static/img/map/poi_layer.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,rendering_category_hide"/>*
+
+![POI on topo style](@site/static/img/map/poi_layer_topo_style.png)  
+
+</TabItem>
+
+</Tabs>
 
 Each POI type in OsmAnd assigned a specific icon and color. POI's [zoom level](../map/vector-maps.md#details) and design could be different in some [map styles](../map/vector-maps.md#default-map-styles).  
 
@@ -108,23 +138,36 @@ Each POI type in OsmAnd assigned a specific icon and color. POI's [zoom level](.
 
 ## Markers {#markers}
 
-Follow the path to the available markers and their settings:
+<Tabs groupId="operating-systems">
 
-- **Android**: *<Translate android="true" ids="shared_string_menu,map_markers_item"/>*  
-- **iOS**: *<Translate ios="true" ids="shared_string_menu,map_markers"/>*
+<TabItem value="android" label="Android">  
 
-![Map markers Android](@site/static/img/map/map_markers_android.png) ![Map markers iOS](@site/static/img/map/map_markers_ios.png)
+Go to: *<Translate android="true" ids="shared_string_menu,map_markers_item"/>*
 
-[Map markers](../personal/markers.md) are temporary points indicated on the map in the form of flags. Their appearance can be configured with **arrows** (Arrows on the map) and **distance indication** (Direction lines).  
+![Map markers Android](@site/static/img/map/map_markers_android.png)
 
-You can read more about markers appearance in this [article](../personal/markers#appearance-on-the-map).
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,map_markers"/>*
+
+![Map markers iOS](@site/static/img/map/map_markers_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+[Map markers](../personal/markers.md) are temporary points marked on the map as flags. Their appearance can be customized using **arrows** (Arrows on the map) and **distance indication** (Direction lines).  
+
+You can read more about the markers appearance in this [article](../personal/markers#appearance-on-the-map).
 
 
 ## Track Waypoints {#track-waypoints}
 
 ![Track on map](@site/static/img/map/track_point_on_map.png)
 
-Track points (waypoints) are part of Track (GPX) files. These points are displayed automatically if the track is on the map. They look & could be configured similar to [Favorites](#favorites) - icon, names, color, shape. How to create and add Waypoint, read [here](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).  
+Track points (waypoints) are part of Track (GPX) files. These points are displayed automatically if the track is on the map. They look & could be configured similar to [Favorites](#favorites) - icon, names, color, shape. How to create and add Waypoint, read in the [article](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).  
 
 [Read more](../map/tracks/index.md) about tracks on the map.
 
@@ -142,14 +185,27 @@ Read more about [search](../search/index.md).
 
 ## * Street-Level Imagery {#-street-level-imagery}
 
-Enable or disable Street-level imagery on the map:
+<Tabs groupId="operating-systems">
 
-- **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/>*  
-- **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,street_level_imagery"/>*
+<TabItem value="android" label="Android">  
 
-![Mapillary filter](@site/static/img/map/mapillary_filter.png) ![Mapillary street view](@site/static/img/map/mapillary_street-view.png)  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
-[Street-level imagery (Mapillary)](../plugins/mapillary.md) are displayed as green dots on the map. Attached to these dots are photos with a view of the street. You can create a [filter](../plugins/mapillary.md#filtering-the-data) and select the photos you want to display on the map. To open a street-view photo, you need to tap the green dot.  
+![Mapillary filter](@site/static/img/map/mapillary_filter.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,street_level_imagery"/>*
+
+![Mapillary street view](@site/static/img/map/mapillary_street-view.png)
+
+</TabItem>
+
+</Tabs>
+
+[Street-level imagery (Mapillary)](../plugins/mapillary.md) are displayed as green dots on the map. Photos of the street view are attached to these dots. You can create a [filter](../plugins/mapillary.md#filtering-the-data) and select the photos you want to display on the map. To open a street-view photo, tap the green dot.  
 
 Requires [Mapillary plugin](../plugins/mapillary.md).
 
@@ -165,25 +221,44 @@ Requires [Parking position plugin](../plugins/parking.md).
 
 ## * Wikipedia {#-wikipedia}
 
-Enable or disable Wikipedia articles on the map and filter by language:
+<Tabs groupId="operating-systems">
 
-- **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
-- **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*  
+<TabItem value="android" label="Android">  
 
-![Wikipedia on map](@site/static/img/map/map-wikipedia-on-map.png) ![Wikipedia language - iOS](@site/static/img/map/map-wikipedia-language-ios.png)  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-OsmAnd has special Points of Interest indicated with the “W” logo and Wikipedia articles attached to points. These points could be displayed exactly as any other POIs type via Search or <Translate android="true" ids="configure_map"/> → <Translate android="true" ids="layer_poi"/>. However, there is a special way to filter Wikipedia articles by **available languages**.  
+![Wikipedia on map](@site/static/img/map/map-wikipedia-on-map.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*
+
+![Wikipedia language - iOS](@site/static/img/map/map-wikipedia-language-ios.png)
+
+</TabItem>
+
+</Tabs>
+
+OsmAnd has special points of interest marked with a “W” logo and linked to Wikipedia articles. These points can be displayed just like any other POI type, via search or by going to <Translate android="true" ids="configure_map"/> → <Translate android="true" ids="layer_poi"/>. However, there is a special way to filter Wikipedia articles by **available languages**.  
 
 [Read more](../plugins/wikipedia.md) how to download and use the Wikipedia feature in OsmAnd.
 
 
 ## * Audio / Video Points (Android) {#-audio--video-points-android}
 
-Enable or disable recording points on the map:
+<Tabs groupId="operating-systems">
 
-- **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>*
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>*
 
 ![AV POI](@site/static/img/map/av_poi.png)
+
+</TabItem>
+
+</Tabs>
 
 Audio / Video notes are points with audio, photo, and video data on the map created by users.  
 
@@ -192,30 +267,56 @@ Requires [Audio / Video note plugin](../plugins/audio-video-notes.md).
 
 ## * OSM Edit Points {#-osm-edit-points}
 
-Enable or disable OSM edits on the map:
+<Tabs groupId="operating-systems">
 
-- **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
-- **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,osm_edits_title"/>*
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
 
 ![OSM edit POI](@site/static/img/map/osm_edit_poi.png)
 
-OSM edit points are users' made POI for adding it for [OpenStreetMap project](https://www.openstreetmap.org/).  
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,osm_edits_title"/>*
+
+![OSM edit POI](@site/static/img/map/osm_edit_poi.png)
+
+</TabItem>
+
+</Tabs>
+
+OSM edit points are POIs created by users to be added to the [OpenStreetMap project](https://www.openstreetmap.org/).  
 
 Requires [OSM Editing plugin](../plugins/osm-editing.md).
 
 
 ## * OSM Notes {#-osm-notes}
 
-Enable or disable OSM notes on the map:
+<Tabs groupId="operating-systems">
 
-- **<Translate android="true" ids="android_button_seq"/>**: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*
-- **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,osm_notes_online_layer"/>*
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*
 
 ![OSM notes](@site/static/img/map/osm_note.png)
 
-OSM note points are users' made POI for reporting issues about map data in [OpenStreetMap](https://www.openstreetmap.org/). A new note (not uploaded to OpenStreetMap) is marked as green with **+**, the closed note is marked as green with “V”, and the open note is marked as red.  You can customize the zoom level to display notes and select show or hide closed notes.  
+</TabItem>
 
-Requires [OSM Editing plugin](../plugins/osm-editing.md#how-to-report-a-mistake).
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,osm_notes_online_layer"/>*
+
+![OSM notes](@site/static/img/map/osm_note.png)
+
+</TabItem>
+
+</Tabs>
+
+OSM notes are user-created POIs for reporting issues with map data in [OpenStreetMap](https://www.openstreetmap.org/). New notes (not yet uploaded to OpenStreetMap) are marked in green with a **+**, closed notes are marked in green with a “V”, and open notes are marked in red. You can customize the zoom level for displaying notes and choose whether to show or hide closed notes.  
+
+Requires the [OSM Editing plugin](../plugins/osm-editing.md#how-to-report-a-mistake).
 
 
 ## Points Along the Route {#points-along-the-route}
@@ -228,7 +329,7 @@ Waypoints, POIs, Favorite points, and Audio/video notes all refer to the concept
 
 [Favorite points](#favorites) are places users find particularly important or interesting and save to their list of favorite places. Places can include any location you may want to find and return to later.
 
-[Audio/video notes](#-audio--video-points-android). In GPX format, you can save audio and video recordings as waypoints. This allows you to associate media files to specific locations on the map or route.  
+[Audio/video notes](#-audio--video-points-android--audio--video-points-android). In GPX format, you can save audio and video recordings as waypoints. This allows you to associate media files to specific locations on the map or route.  
 
 All of these point types can be saved in GPX format to provide you with location information and help with navigation and route planning. They serve different purposes, but the general idea is to store and transmit geographic information so you can use it in their navigation tasks.
 
@@ -239,4 +340,4 @@ All of these point types can be saved in GPX format to provide you with location
 - [Vector maps (Map styles)](./vector-maps.md)
 - [Raster Maps (Online / Offline)](./raster-maps.md)
 
-> *This article was last updated in November 2024*
+> *This article was last updated in June 2025*
