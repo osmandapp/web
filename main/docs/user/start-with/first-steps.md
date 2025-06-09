@@ -182,9 +182,9 @@ You could manage application settings as [Global settings](../personal/global-se
 
 ### How to configure plugins {#how-to-configure-plugins}
 
-[Plugins](../plugins/index.md#configure-a-plugin) greatly extend application functionality. Almost all plugins have their own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and [Settings](../plugins/#plugin-settings).  
+[Plugins](../plugins/index.md#configure-plugin) greatly extend application functionality. Almost all plugins have their own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and [Settings](../plugins/#plugin-settings).  
 
-You can enable / disable plugins via [Main Menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-a-plugin).  
+You can enable / disable plugins via [Main Menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-plugin).  
 
 <Tabs groupId="operating-systems">
 
@@ -208,7 +208,7 @@ To enable / disable plugins, go to:
 
 </Tabs>
 
-[Read more](../plugins/index.md#configure-a-plugin) about OsmAnd plugins.
+[Read more](../plugins/index.md#configure-plugin) about OsmAnd plugins.
 
 
 ### How to use a map {#how-to-use-a-map}
@@ -282,7 +282,7 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 
 ### How to browse & find point of interest {#how-to-browse--find-point-of-interest}
 
-[Points of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) are amenities that could be searched or highlighted on the map. They represent interesting or useful places and are distributed as part of [Vector Maps](../map/vector-maps.md). You can use them to [display on the map](../map/point-layers-on-map.md#points-of-interest-poi), [navigate](../navigation/index.md) and [search](../search/search-poi.md) the points of interest on the Map.
+[Points of interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) are amenities that could be searched or highlighted on the map. They represent interesting or useful places and are distributed as part of [Vector Maps](../map/vector-maps.md). You can use them to [display on the map](../map/point-layers-on-map.md#points-of-interest-pois), [navigate](../navigation/index.md) and [search](../search/search-poi.md) the points of interest on the Map.
 
 <Tabs groupId="operating-systems">
 
@@ -669,4 +669,4 @@ OsmAnd doesn't have any required permissions on the iOS / Android version.
 - **Camera/voice recording** (*Android*). Only used by [the Audio/Video notes](../plugins/audio-video-notes.md). This feature is packaged as a plugin and by default disabled. It allows you to quickly create location-related audio/video notes during a trip.
 
 
-> *This article was last updated in January 2025*
+> *Last updated: January 2025*

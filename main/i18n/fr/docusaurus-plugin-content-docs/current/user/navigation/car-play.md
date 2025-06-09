@@ -113,7 +113,7 @@ Vous ne pouvez pas sélectionner un profil directement dans *CarPlay* à partir 
 
 ## Sélectionner un point d'arrivée de l'itinéraire {#select-a-route-endpoint}
 
-Vous pouvez sélectionner des [POIs](../map/point-layers-on-map.md#points-of-interest-poi) prédéfinis et ajoutés, ou des [Favoris](../personal/favorites.md), ou des [Marqueurs](../personal/markers.md) comme point de destination. Il est également possible de sélectionner un [Tracé](../personal/tracks/index.md) enregistré ou téléchargé pour l'itinéraire, d'utiliser la [Recherche](../search/index.md), ou de sélectionner une destination à partir de l'[Historique](../search/search-history.md) de l'itinéraire.
+Vous pouvez sélectionner des [POIs](../map/point-layers-on-map.md#points-of-interest-pois) prédéfinis et ajoutés, ou des [Favoris](../personal/favorites.md), ou des [Marqueurs](../personal/markers.md) comme point de destination. Il est également possible de sélectionner un [Tracé](../personal/tracks/index.md) enregistré ou téléchargé pour l'itinéraire, d'utiliser la [Recherche](../search/index.md), ou de sélectionner une destination à partir de l'[Historique](../search/search-history.md) de l'itinéraire.
 
 1. Si vous souhaitez un emplacement particulier sur la carte comme point d'arrivée, sélectionnez la catégorie de points appropriée dans la liste, [POIs](#poi-categories), [Favoris](#favorites) ou [Marqueurs de carte](#map-markers).
 

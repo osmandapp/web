@@ -102,7 +102,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Екран Android Auto](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-Ви можете вибрати попередньо встановлені та додані [POI](../map/point-layers-on-map.md#points-of-interest-poi), або [Вибране](../personal/favorites.md), або [Маркери](../personal/markers.md) як пункт призначення. Також можна вибрати записаний або завантажений [Трек](../personal/tracks/manage-tracks.md) для маршруту, скористатися [Пошуком](../search/index.md), або вибрати пункт призначення з [Історії](../search/search-history.md) маршрутів, або здійснити *Вільну поїздку*.
+Ви можете вибрати попередньо встановлені та додані [POI](../map/point-layers-on-map.md#points-of-interest-pois), або [Вибране](../personal/favorites.md), або [Маркери](../personal/markers.md) як пункт призначення. Також можна вибрати записаний або завантажений [Трек](../personal/tracks/manage-tracks.md) для маршруту, скористатися [Пошуком](../search/index.md), або вибрати пункт призначення з [Історії](../search/search-history.md) маршрутів, або здійснити *Вільну поїздку*.
 
 1. Якщо ви хочете, щоб певна локація на карті була кінцевою точкою, виберіть відповідну категорію точок зі списку, [POI](#poi-categories), [Вибране](#favorites) або [Маркери карти](#map-markers).
 

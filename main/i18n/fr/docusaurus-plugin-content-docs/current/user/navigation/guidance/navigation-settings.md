@@ -204,7 +204,7 @@ La première partie de l'article *[Invites vocales / Notifications](./voice-navi
 
 Les instructions audio pendant la navigation vous aident, en tant que conducteur ou piéton, à atteindre votre destination tout en [naviguant sur un itinéraire sélectionné](../setup/route-navigation.md). Elles contiennent des informations sur les virages, les directions de conduite, les panneaux de signalisation, les distances jusqu'à votre destination et d'autres facteurs susceptibles d'affecter votre navigation.  
 
-Si vous sélectionnez une trace comme point de destination, vous devez utiliser l'option [Attacher aux routes](../setup/gpx-navigation.md#attach-to-roads) pour que les invites vocales fonctionnent correctement.
+Si vous sélectionnez une trace comme point de destination, vous devez utiliser l'option [Attacher aux routes](../setup/gpx-navigation.md#attach-to-the-roads) pour que les invites vocales fonctionnent correctement.
 
 Les *invites vocales* vous permettent de vous concentrer sur la route et de ne pas être distrait par la carte ou l'appareil de navigation. Elles améliorent également la sécurité de conduite, réduisent le temps nécessaire pour naviguer en terrain inconnu et peuvent être utiles pour différents [types d'itinéraires](../routing/osmand-routing.md#routing-types).
 

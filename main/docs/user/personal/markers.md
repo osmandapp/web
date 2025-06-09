@@ -184,4 +184,4 @@ Using functionality of the Plan a route in Markers list tool you can sort *Marke
 - [Navigation by markers](../navigation/setup/markers-navigation.md)
 - [Marker widgets](../widgets/markers.md)
 
-> *This article was last updated in August 2024*
+> *Last updated: August 2024*

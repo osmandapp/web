@@ -113,7 +113,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Виберіть кінцеву точку маршруту {#select-a-route-endpoint}
 
-Ви можете вибрати попередньо встановлені та додані [POI](../map/point-layers-on-map.md#points-of-interest-poi), або [Вибране](../personal/favorites.md), або [Маркери](../personal/markers.md) як пункт призначення. Також можна вибрати записаний або завантажений [Трек](../personal/tracks/index.md) для маршруту, скористатися [Пошуком](../search/index.md) або вибрати пункт призначення з [Історії](../search/search-history.md) маршруту.
+Ви можете вибрати попередньо встановлені та додані [POI](../map/point-layers-on-map.md#points-of-interest-pois), або [Вибране](../personal/favorites.md), або [Маркери](../personal/markers.md) як пункт призначення. Також можна вибрати записаний або завантажений [Трек](../personal/tracks/index.md) для маршруту, скористатися [Пошуком](../search/index.md) або вибрати пункт призначення з [Історії](../search/search-history.md) маршруту.
 
 1. Якщо ви хочете, щоб певна точка на карті була кінцевою точкою, виберіть відповідну категорію точок зі списку, [POI](#poi-categories), [Вибране](#favorites) або [Маркери на карті](#map-markers).
 

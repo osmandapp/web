@@ -131,12 +131,11 @@ Les détails disponibles incluent :
 
 - [Noms alternatifs](#alternative-names)
 - [Coordonnées](../map/map-context-menu.md#coordinates)
-- [Articles Wikipédia à proximité](../map/map-context-menu.md#nearby-pois-wikipedia)
-- [POI à proximité](../map/map-context-menu.md#nearby-pois-wikipedia)
+- [POI à proximité / Wikipédia](../map/map-context-menu.md#poi--wikipédia-à-proximité-nearby-pois--wikipedia)
 - [Itinéraires de transport en commun](../map/map-context-menu.md#public-transport-routes) (pour les arrêts de transport)
 - [Favoris / Points de trace du même groupe](../map/map-context-menu.md#favorites--track-points-from-the-group)
 - [Lien OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)
-- [Image / description de l'article](../map/map-context-menu.md#article-image--description)
+- [Image / description de l'article](../map/map-context-menu.md#articles-connexes-related-articles)
 - [Photos en ligne](../map/map-context-menu.md#online-photos)
 
 De plus, le panneau peut inclure des [Détails OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_features), tels que :
@@ -167,7 +166,7 @@ De plus, le panneau peut inclure des [Détails OpenStreetMap](https://wiki.opens
 
 </Tabs>
 
-OsmAnd affiche les **noms supplémentaires des POI** dans le *menu contextuel de la carte*, en donnant la priorité au nom dans la [langue d'affichage](../personal/global-settings.md#display-language) ou dans la liste des langues préférées du système. Si plusieurs traductions sont disponibles, elles sont regroupées en balises catégorisées telles que *nom, marque, opérateur* ou *POI à proximité*.
+OsmAnd affiche les **noms supplémentaires des POI** dans le *menu contextuel de la carte*, en donnant la priorité au nom dans la *langue d'affichage* ou dans la liste des langues préférées du système. Si plusieurs traductions sont disponibles, elles sont regroupées en balises catégorisées telles que *nom, marque, opérateur* ou *POI à proximité*.
 
 Fonctionnalités d'affichage des noms alternatifs :
 
@@ -234,11 +233,11 @@ Le lien web OsmAnd peut être automatiquement reconnu par OsmAnd (exemple : `htt
 
 ![Articles Wikipédia à proximité](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Articles Wikipédia à proximité](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
 
-Ces sections affichent les [articles Wikipédia](../plugins/wikipedia.md) ou les [Points d'intérêt](../map/point-layers-on-map.md#points-of-interest-pois-on-the-map) à proximité avec *<Translate android="true" ids="shared_string_show_on_map"/>* et *<Translate android="true" ids="search_more"/>* pour afficher et [rechercher](../search/search-poi.md) tous les autres POI et articles Wikipédia.
+Ces sections affichent les [articles Wikipédia](../plugins/wikipedia.md) ou les [Points d'intérêt](../map/point-layers-on-map.md#points-of-interest-pois) à proximité avec *<Translate android="true" ids="shared_string_show_on_map"/>* et *<Translate android="true" ids="search_more"/>* pour afficher et [rechercher](../search/search-poi.md) tous les autres POI et articles Wikipédia.
 
 Appuyer sur *POI / Articles Wikipédia à proximité* ouvre une liste de points (POI ou Wikipédia). Un appui sur l'un de ces points dans une liste de points déplace la carte vers ce point (POI ou Wikipédia) avec l'ouverture du menu contextuel de la carte du point.
 
-> **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) n'apparaîtra que si vous avez précédemment téléchargé des cartes spéciales avec des [articles Wikipédia pour cette zone](../plugins/wikipedia.md#download-wikipedia)*.
+> **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) n'apparaîtra que si vous avez précédemment téléchargé des cartes spéciales avec des [articles Wikipédia pour cette zone](../plugins/wikipedia.md#download-wikipedia-packages)*.
 
 
 ### Itinéraires de transport en commun {#public-transport-routes}
@@ -266,7 +265,7 @@ Affiche des informations sur les itinéraires de transport en commun pour l'arr�
 
 ![Liste des favoris](@site/static/img/map/favorite_list_android.png) ![Liste complète des favoris](@site/static/img/map/favorite_list_full_android.png)
 
-Il s'agit d'une liste de tous les points d'un groupe pour un [Favori](../map/point-layers-on-map.md#favorites-on-the-map) ou un point de passage. En appuyant, la liste entière des points d'un groupe se développe, en appuyant sur un point de la liste, la carte se déplace vers le point sélectionné.
+Il s'agit d'une liste de tous les points d'un groupe pour un Favori ou un point de passage. En appuyant, la liste entière des points d'un groupe se développe, en appuyant sur un point de la liste, la carte se déplace vers le point sélectionné.
 
 
 ### Objet linéaire {#linear-object}
@@ -730,7 +729,7 @@ Veuillez lire les [instructions complètes](../map/raster-maps.md#download--upda
 
 </Tabs>
 
-Si aucune carte hors ligne n'est présente à l'emplacement sélectionné, par exemple si le menu de l'objet cartographique a été ouvert via la recherche ou via un favori spécifique, la plus petite carte hors ligne possible sera suggérée au [téléchargement](../start-with/download-maps.md#download---map-context-menu).
+Si aucune carte hors ligne n'est présente à l'emplacement sélectionné, par exemple si le menu de l'objet cartographique a été ouvert via la recherche ou via un favori spécifique, la plus petite carte hors ligne possible sera suggérée au [téléchargement](../start-with/download-maps.md#select-on-the-map).
 
 **iOS**. Si vous avez déjà [téléchargé](../map/map-context-menu.md) des cartes OsmAnd (vectorielles ou de terrain), il est possible de les mettre à jour via le menu contextuel. Vous devrez d'abord sélectionner la région sur la carte - appuyez sur n'importe quel emplacement sur le zoom mondial 3-7.
 
@@ -796,7 +795,7 @@ Vous pouvez ajouter des points de passage à une trace enregistrée ou à l'enre
 
 - Sélectionnez un emplacement sur la carte avec un [appui long](../map/map-context-menu.md#select-any-point-long-tap).
 - Dans le *menu contextuel de la carte* qui s'ouvre, choisissez *Actions → Ajouter un point de passage de trace*.
-- La liste affiche les [traces](../map/tracks/index.md#display-tracks-on-the-map) enregistrées et affichées sur la carte, ainsi que l'[enregistrement de trace actuel](../plugins/trip-recording.md#from-widget), auquel vous pouvez ajouter le point de passage sélectionné.
+- La liste affiche les [traces](../map/tracks/index.md#display-tracks-on-the-map) enregistrées et affichées sur la carte, ainsi que l'[enregistrement de trace actuel](../plugins/trip-recording.md), auquel vous pouvez ajouter le point de passage sélectionné.
 - Vous pouvez ajouter des points de passage à une trace qui n'est pas encore active pour l'enregistrement, auquel cas la trace inactive passe de l'*état de départ* à l'*état de reprise*.
 - [Remplissez](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) les données requises et enregistrez le point de passage.
 - Vous pouvez configurer les [Actions rapides](../widgets/quick-action.md) en ajoutant un point de passage à l'*Ajouter un point de passage de trace*.
@@ -826,8 +825,8 @@ Pour ajouter/modifier des POI, activez le [**plugin d'édition OSM**](../plugins
 
 Avec le plugin d'édition OSM, vous pouvez créer et modifier la plupart des POI présents sur [OpenStreetMap](https://www.openstreetmap.org/).
 
-- &nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [crée un nouveau POI](../plugins/osm-editing.md#how-to-add-poi) à l'emplacement sélectionné.
-- &nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [modifie le POI sélectionné](../plugins/osm-editing.md#how-to-modify-poi).
+- &nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [crée un nouveau POI](../plugins/osm-editing.md#create--modify-poi) à l'emplacement sélectionné.
+- &nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [modifie le POI sélectionné](../plugins/osm-editing.md#create--modify-poi).
 
 
 ### * Ouvrir une note OSM {#-open-osm-note}
@@ -856,7 +855,7 @@ Pour ouvrir une note OSM, activez le [**plugin d'édition OSM**](../plugins/osm-
 
 </Tabs>
 
-Vous pouvez [signaler](../plugins/osm-editing.md#how-to-report-a-mistake) des erreurs de données cartographiques à un emplacement spécifique à la [communauté OpenStreetMap](https://wiki.openstreetmap.org/wiki/Join_the_community). Veuillez suivre les [directives](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) et ajouter des commentaires appropriés à un problème.
+Vous pouvez **signaler** des erreurs de données cartographiques à un emplacement spécifique à la [communauté OpenStreetMap](https://wiki.openstreetmap.org/wiki/Join_the_community). Veuillez suivre les [directives](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) et ajouter des commentaires appropriés à un problème.
 
 
 ### * Commenter / Fermer une note OSM {#-comment--close-osm-note}

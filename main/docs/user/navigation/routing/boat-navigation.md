@@ -126,4 +126,4 @@ The [Straight line routing type](./straight-line-routing) can be used with the b
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
 
-> *This article was last updated in May 2025*
+> *Last updated: May 2025*

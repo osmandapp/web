@@ -54,7 +54,7 @@ L'icône du [Menu principal](../widgets/map-buttons.md#main-menu) '&#8801;' est 
 ### Paramètres {#settings}
 
 - [Configurer l'écran](../widgets/configure-screen.md) est un menu qui permet de configurer l'affichage des widgets sur la carte.
-- [Plugins](../plugins/index.md#configure-a-plugin) est une liste de fonctionnalités supplémentaires et de paramètres avancés.
+- [Plugins](../plugins/index.md#configure-plugin) est une liste de fonctionnalités supplémentaires et de paramètres avancés.
 - [Paramètres](../personal/global-settings.md) est un menu qui permet de configurer les principaux paramètres de l'application.
 - [Aide](./first-steps.md#offline-help) permet d'accéder rapidement à votre guide, aux informations sur la version de l'application et de contacter rapidement l'équipe de développement.
 

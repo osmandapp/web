@@ -227,4 +227,4 @@ Please share with us what you think about this new app on [Twitter](https://twit
 
 To view the GPS positions of contacts on the map, you need the latest version of [OsmAnd or OsmAnd+](./../purchases/android.md). The minimum supported version of OsmAnd or OsmAnd+ is 3.0.4.
 
-> *This article was last updated in Jule 2024*
+> *Last updated: Jule 2024*

@@ -101,7 +101,7 @@ If you do not have any *Driving* profile selected on your device that correspond
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-You can select previously preset and added [POIs](../map/point-layers-on-map.md#points-of-interest-poi), or [Favorites](../personal/favorites.md), or [Markers](../personal/markers.md) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks/manage-tracks.md) for the route, use the [Search](../search/index.md), or select a destination from the route [History](../search/search-history.md) or take a *Free ride*.
+You can select previously preset and added [POIs](../map/point-layers-on-map.md#points-of-interest-pois), or [Favorites](../personal/favorites.md), or [Markers](../personal/markers.md) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks/manage-tracks.md) for the route, use the [Search](../search/index.md), or select a destination from the route [History](../search/search-history.md) or take a *Free ride*.
 
 1. If you want a particular location on the map as an endpoint, select the appropriate category of points from the list, [POIs](#poi-categories), [Favorites](#favorites), or [Map Markers](#map-markers).  
   
@@ -320,9 +320,9 @@ In Android Auto settings, you can change the position of the taskbar and the lay
 
 ## Common Issues and Solutions {#common-issues-and-solutions}
 
-1. Map orientation issue. [(check)](../troubleshooting/android_auto.md#map-orientation-issue)
-2. Volume control issue. [(check)](../troubleshooting/android_auto.md#volume-control-issue)
-3. Location delays (ANR crashes). [(check)](../troubleshooting/android_auto.md#location-delays-anr-crashes)
+1. [Map orientation issue.](../troubleshooting/android_auto.md#map-orientation-issue)
+2. [Volume control issue.](../troubleshooting/android_auto.md#volume-control-issue)
+3. [Location delays (ANR crashes).](../troubleshooting/android_auto.md#location-delays-anr-crashes)
 4. Common questions about the connection screen:
     - *Why can’t I control the app from my phone when connected to Android Auto?*  
         For safety reasons, the OsmAnd app screen on your phone is locked while connected to Android Auto. You can interact with the app only through the car display.
@@ -333,4 +333,4 @@ In Android Auto settings, you can change the position of the taskbar and the lay
         Restart your car’s infotainment system and the OsmAnd app if the connection is unstable.
 
 
-> *This article was last updated in March 2025*
+> *Last updated: March 2025*

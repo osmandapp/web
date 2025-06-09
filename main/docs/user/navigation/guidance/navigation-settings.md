@@ -203,7 +203,7 @@ The first part of the *[Voice Prompts / Notifications](./voice-navigation.md)* a
 
 Audio instructions during navigation help you as a driver or pedestrian get to your destination while [navigating a selected route](../setup/route-navigation.md). They contain information about turns, driving directions, road signs, distances to your destination, and other factors that may affect your navigation.  
 
-If you select a track as your destination point, you need to use the [Attach to the roads](../setup/gpx-navigation.md#attach-to-roads) option for the voice prompts to work correctly.
+If you select a track as your destination point, you need to use the [Attach to the roads](../setup/gpx-navigation.md#attach-to-the-roads) option for the voice prompts to work correctly.
 
 *Voice prompts* allow you to focus on the road and not be distracted by the map or navigation device. They also improve driving safety, reduce the time it takes to navigate unfamiliar terrain, and can be useful for different [types of routes](../routing/osmand-routing.md#routing-types).
 
@@ -558,4 +558,4 @@ For more information on using track-based navigation, visit [Navigation by Track
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in April 2025*
+> *Last updated: April 2025*

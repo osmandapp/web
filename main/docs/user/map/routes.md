@@ -382,4 +382,4 @@ Use filters button (top right corner) to display only the desired routes.
 - [Public transport](./public-transport.md)
 - [Navigation route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 
-> *This article was last updated in May 2025*
+> *Last updated: May 2025*

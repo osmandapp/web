@@ -75,9 +75,9 @@ For more details on route line appearance customization, see [Map screen during 
 
 You can customize the appearance of the track in several menus of the application:
 
-- [*Track → Appearance*](../../personal/tracks/manage-tracks.md#folder-menu).
+- [*Track → Appearance*](../../personal/tracks/manage-tracks.md#track-folder).
 - [*Navigation settings → Customize route line*](../../navigation/guidance/navigation-settings.md#customize-route-line).
-- [*My Places → Tracks tab → any folder → Default appearance*](../../personal/tracks/manage-tracks.md#folder-menu).
+- [*My Places → Tracks tab → any folder → Default appearance*](../../personal/tracks/manage-tracks.md#track-folder).
 
 Adjust track width to improve visibility on the map.
 
@@ -204,7 +204,7 @@ The [Tracks](../../personal/tracks/manage-tracks.md) tab automatically displays 
 
 Modify multiple track appearances in *My Places → Tracks*:
 
-- **Change default appearance** - Applies settings to all tracks in a [folder](../../personal/tracks/manage-tracks.md#folder-menu).
+- **Change default appearance** - Applies settings to all tracks in a [folder](../../personal/tracks/manage-tracks.md#track-folder).
 - **Reset to original** - Restores individual track settings.
 
 - [Selection mode](../../personal/tracks/manage-tracks.md#selection-mode) - Changes the appearance of specific tracks in the selected folder or the entire list in the Tracks tab.
@@ -294,4 +294,4 @@ To specify a color for a track, use the following format:
 - [Tracks Context menu](../tracks/track-context-menu.md)
 - [Trip Recording](../../plugins/trip-recording.md)
 
-> *This article was last updated in February 2025*
+> *Last updated: February 2025*

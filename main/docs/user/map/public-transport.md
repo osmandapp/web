@@ -61,12 +61,12 @@ Public transport stop provides extra details comparing to standard OpenStreetMap
 - Wheelchair accessibility
 - Operator name
 
-**Note**: you can filter stops by certain criteria. For example, expand & tap "Bench" / "Yes" and you can see the list of stops with benches. Also they could be [shown on the map](../map/point-layers-on-map.md#search-results-poi-on-the-map).
+**Note**: you can filter stops by certain criteria. For example, expand & tap "Bench" / "Yes" and you can see the list of stops with benches. Also they could be [shown on the map](../map/point-layers-on-map.md#points-of-interest-pois).
 
 
 ### Routes {#routes}
 
-![Public transport Routes Android](@site/static/img/map/pt_routes_android.png) ![Public transport Routes iOS](@site/static/img/map/pt_routes_ios.png) 
+![Public transport Routes Android](@site/static/img/map/pt_routes_android.png) ![Public transport Routes iOS](@site/static/img/map/pt_routes_ios.png)
 
 Transport Routes are all public transport routes that approach via selected stop and nearby routes (within 150m). Routes information is taken from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Public_transport) such as ref, name, colour and type.
 
@@ -94,4 +94,4 @@ You can see the full list of stops by clicking <Translate android="true" ids="re
 - [Vector maps](../map/vector-maps.md)
 - [Public transport navigation](../navigation/routing/public-transport-navigation.md)
 
-> *This article was last updated in August 2022*
+> *Last updated: August 2022*

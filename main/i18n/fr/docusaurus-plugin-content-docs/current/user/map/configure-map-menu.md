@@ -62,8 +62,8 @@ Le menu **<Translate android="true" ids="configure_map"/>** est divisé en deux 
 ## Couches de carte {#map-layers}
 
 - [Couche de carte vectorielle](../map/vector-maps.md) - affiche toutes les informations de la carte vectorielle, y compris OpenStreetMap, les courbes de niveau et les données nautiques.
-- [Sources raster de la carte](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer) - permet de sélectionner une carte de sous-couche / source principale / superposition avec des niveaux de transparence.
-- [Terrain](../plugins/topography.md#configure-map-view) - affiche les informations de pente / ombrage, le relief 3D.
+- [Sources raster de la carte](../map/raster-maps.md#select-raster-maps) - permet de sélectionner une carte de sous-couche / source principale / superposition avec des niveaux de transparence.
+- [Terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) - affiche les informations de pente / ombrage, le relief 3D.
 - [Bordures des cartes téléchargées](../map/vector-maps.md#show-borders) - affiche toutes les bordures des cartes téléchargées sur la couche de carte principale.
 - [Grille de coordonnées](../map/vector-maps.md#coordinates-grid) - contrôle la visibilité de la grille de coordonnées sur la carte.
 
@@ -75,10 +75,10 @@ Le menu **<Translate android="true" ids="configure_map"/>** est divisé en deux 
    - [Étiquettes de superposition](../map/point-layers-on-map.md) - affiche les noms des points et des favoris sur la carte.
    - [Transport](../map/vector-maps.md#transport) - affiche les arrêts de transport en commun.
    - [Tracés](../map/tracks/index.md) - affiche les tracés importés, planifiés ou enregistrés sur la carte.
-   - [Imagerie au niveau de la rue](../plugins/mapillary.md#viewing-images) - affiche les points avec l'imagerie au niveau de la rue disponible.
+   - [Imagerie au niveau de la rue](../plugins/mapillary.md#map-layer) - affiche les points avec l'imagerie au niveau de la rue disponible.
    - [Guides de voyage](../plan-route/travel-guides.md) - affiche les guides de voyage sur la carte.
    - [Wikipedia](../plugins/wikipedia.md) - met en évidence les articles Wikipedia liés à la carte.
-   - [Autres couches de plugins](../plugins/index.md#configure-a-plugin) - de nombreux plugins ajoutent leurs couches avec des informations supplémentaires.
+   - [Autres couches de plugins](../plugins/index.md#configure-plugin) - de nombreux plugins ajoutent leurs couches avec des informations supplémentaires.
 
 ## Paramètres de style de carte {#map-style-parameters}
 

@@ -72,7 +72,7 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 | [Wikipedia](#wikipedia) | [Map layer](../plugins/wikipedia.md#download-wikipedia-packages), [Context menu](../plugins/wikipedia.md#wikipedia-languages) |
 | [Online maps](#online-maps) |[Map layer](../plugins/online-map.md#configure-map-source) |
 | [Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#profile-settings) |
-| [Topography](#topography) | [Map layer](../plugins/topography.md#configure-map-view) |
+| [Topography](#topography) | [Map layer](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
 | [3D Relief](#topography) 🤖  | [Map layer](../plugins/topography.md#3d-relief) |
 | [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Screen](../plugins/weather.md#configure-screen) |
 | [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-options)  |
@@ -215,4 +215,4 @@ You can create your own plugin by following *Custom Package* article.
 
 _______
 
-> *This article was last updated in March 2025*
+> *Last updated: March 2025*

@@ -166,7 +166,7 @@ L'abonnement **Pro** comprend actuellement les fonctionnalités suivantes :
 | [Personnaliser la ligne d'itinéraire](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changer la couleur et la largeur de la ligne d'itinéraire pendant la navigation. |
 | [Widget d'altitude](../widgets/nav-widgets.md#elevation-widget) | Affiche votre position sur le graphique d'altitude de l'itinéraire de navigation avec des informations supplémentaires.  |
 | [Widgets d'altitude - Altitude : Centre de la carte](../widgets/info-widgets.md#elevation-map-center) | Permet de connaître l'altitude du centre de la carte actuel au-dessus du niveau de la mer.  |
-| [Correction d'altitude (hors ligne)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permet de calculer un graphique d'altitude pour votre piste ([carte de terrain](../plugins/topography.md#how-to-download) requise pour la région choisie). |
+| [Correction d'altitude (hors ligne)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permet de calculer un graphique d'altitude pour votre piste ([carte de terrain](../plugins/topography.md#download-maps) requise pour la région choisie). |
 
 
 ### Comment acheter {#how-to-buy}

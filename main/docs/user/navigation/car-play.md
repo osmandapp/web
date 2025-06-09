@@ -112,7 +112,7 @@ You cannot select a profile directly in *CarPlay* from the vehicle screen. First
 
 ## Select a Route Endpoint {#select-a-route-endpoint}
 
-You can select previously preset and added [POIs](../map/point-layers-on-map.md#points-of-interest-poi), or [Favorites](../personal/favorites.md), or [Markers](../personal/markers.md) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks/index.md) for the route, use the [Search](../search/index.md), or select a destination from the route [History](../search/search-history.md).
+You can select previously preset and added [POIs](../map/point-layers-on-map.md#points-of-interest-pois), or [Favorites](../personal/favorites.md), or [Markers](../personal/markers.md) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks/index.md) for the route, use the [Search](../search/index.md), or select a destination from the route [History](../search/search-history.md).
 
 1. If you want a particular location on the map as an endpoint, select the appropriate category of points from the list, [POIs](#poi-categories), [Favorites](#favorites), or [Map Markers](#map-markers).  
   
@@ -314,4 +314,4 @@ Sometimes *CarPlay* doesn't connect, or you just can't hear anything even though
         Ensure your device is properly connected via USB or Bluetooth.  
         Restart your car’s infotainment system and the OsmAnd app if the connection is unstable.
 
-> *This article was last updated in January 2025*
+> *Last updated: January 2025*

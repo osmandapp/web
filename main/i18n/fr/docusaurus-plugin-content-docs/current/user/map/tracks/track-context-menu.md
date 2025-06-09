@@ -134,7 +134,7 @@ Le menu **Options** vous permet de gérer et de modifier la trace sélectionnée
 <br/>
 
 - **<Translate android="true" ids="shared_string_share"/>** – Exporte la trace sélectionnée au format GPX.
-- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Télécharge](../../plugins/osm-editing.md#how-to-upload-gpx-track) la trace sélectionnée sur OpenStreetMap.
+- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Télécharge](../../plugins/osm-editing.md#upload-gps-track) la trace sélectionnée sur OpenStreetMap.
 
 <br/>
 
@@ -344,7 +344,7 @@ Le graphique **Altitude** affiche des métriques telles que :
 **Obtenir les données d'altitude.**
 S'il n'y a *aucune information d'altitude* sur l'itinéraire, vous pouvez l'ajouter de la manière suivante :
 
-- *Bouton Calculer l'altitude → [Utiliser les routes à proximité](../../plan-route/create-route.md#use-nearby-roads)*. Utilise une carte hors ligne pour trouver les routes à proximité et les données d'altitude. Il vous permet de personnaliser la géométrie de la trace.
+- *Bouton Calculer l'altitude → [Utiliser les routes à proximité](../../plan-route/create-route.md#get-elevation-data)*. Utilise une carte hors ligne pour trouver les routes à proximité et les données d'altitude. Il vous permet de personnaliser la géométrie de la trace.
 - [Utiliser les cartes de terrain](#calculate-missing-elevation). Utilise les cartes de terrain pour obtenir les données d'altitude. La géométrie de la trace reste inchangée.
 
 
@@ -356,7 +356,7 @@ La fonction de calcul de l'altitude hors ligne n'est disponible que pour les [**
 
 <InfoAndroidOnly />
 
-Cette fonction vous permet de calculer le profil d'altitude pour une trace GPX hors ligne pour n'importe quel terrain entre 70 degrés de latitude nord et 70 degrés de latitude sud, en fonction des [données des cartes de terrain](../../plugins/topography.md#how-to-download). *Les cartes de terrain (3D) doivent être préalablement téléchargées*.
+Cette fonction vous permet de calculer le profil d'altitude pour une trace GPX hors ligne pour n'importe quel terrain entre 70 degrés de latitude nord et 70 degrés de latitude sud, en fonction des [données des cartes de terrain](../../plugins/topography.md#download-maps). *Les cartes de terrain (3D) doivent être préalablement téléchargées*.
 
 1. Téléchargez les [cartes de terrain (3D)](../../plugins/topography.md#download-maps) pour la région requise.
 2. Si la trace ne contient aucune donnée d'altitude, allez dans le menu contextuel de la trace (*Menu contextuel de la trace → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), sélectionnez *Utiliser les cartes de terrain*, et après le calcul, vous obtiendrez un graphique de trace basé sur les données de terrain.
@@ -427,7 +427,7 @@ Des waypoints peuvent être ajoutés à la trace actuellement enregistrée ou à
 
 </Tabs>
 
-Appuyez sur le bouton *Ajouter un waypoint* pour ouvrir l'écran de création de waypoint (cet écran est similaire au [menu contextuel des favoris](../../personal/favorites.md#favorite-context-menu)).
+Appuyez sur le bouton *Ajouter un waypoint* pour ouvrir l'écran de création de waypoint (cet écran est similaire au [menu contextuel des favoris](../../personal/favorites.md#create)).
 
 1. **Ajoutez** le *Nom* du waypoint, l'*Adresse* de l'emplacement sélectionné et une *Description* (facultatif).
 2. **Sélectionnez** un groupe.
@@ -609,7 +609,7 @@ Pour modifier la description d'un waypoint, vous pouvez procéder de l'une des m
 
 1. Trouvez la trace requise dans la liste de l'onglet *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*.
 2. Appuyez sur la trace sur la carte, si elle est incluse dans la [liste des visibles](../tracks/index.md#display-tracks-on-the-map).
-3. Appuyez sur le waypoint requis s'il est [visible](../../personal/tracks/manage-tracks.md#show-tracks-on-map) sur la carte.
+3. Appuyez sur le waypoint requis s'il est [visible](../../personal/tracks/manage-tracks.md#track-menu) sur la carte.
 
     Ensuite, dans le [menu contextuel des traces](./track-context-menu.md), appuyez sur *points*, le champ du dossier requis avec les waypoints disponibles et le waypoint que vous recherchez. Sélectionnez le menu *Actions →* **Modifier le waypoint GPX** et apportez les modifications. Vous ne pouvez pas modifier la date de création d'un point, le *timestamp*, dans l'application.
 

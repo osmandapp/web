@@ -62,7 +62,7 @@ L'arrêt de transport en commun fournit des détails supplémentaires par rappor
 - Accessibilité en fauteuil roulant
 - Nom de l'opérateur
 
-**Remarque** : vous pouvez filtrer les arrêts selon certains critères. Par exemple, développez et appuyez sur "Banc" / "Oui" et vous pouvez voir la liste des arrêts avec des bancs. Ils peuvent également être [affichés sur la carte](../map/point-layers-on-map.md#search-results-poi-on-the-map).
+**Remarque** : vous pouvez filtrer les arrêts selon certains critères. Par exemple, développez et appuyez sur "Banc" / "Oui" et vous pouvez voir la liste des arrêts avec des bancs. Ils peuvent également être [affichés sur la carte](../map/point-layers-on-map.md#points-of-interest-pois).
 
 
 ### Itinéraires {#routes}

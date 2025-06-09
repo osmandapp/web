@@ -30,7 +30,7 @@ OsmAnd propose plusieurs façons d'accéder à l'outil de recherche où se trouv
 - Le [bouton de recherche](../widgets/map-buttons.md#search) est toujours affiché sur la carte, et en appuyant dessus, vous accédez à l'[écran général](#how-to-use) de l'outil, où vous trouverez l'onglet *Catégories*.
 - *Android* : Allez dans le *Menu principal → Rechercher → onglet Catégories*.
 - Lorsque vous vous préparez à démarrer un itinéraire, appuyez sur [*Navigation → Définir la destination → Champ de recherche → onglet Catégories*](../navigation/setup/route-navigation.md#set-target-point).
-- *Android* : Allez dans le *Menu principal → Configurer la carte → Superposition de POI → Rechercher*](../map/point-layers-on-map.md#points-of-interest-poi).
+- *Android* : Allez dans le *Menu principal → Configurer la carte → Superposition de POI → Rechercher*](../map/point-layers-on-map.md#points-of-interest-pois).
 
 
 ## Comment utiliser {#how-to-use}
@@ -64,7 +64,7 @@ OsmAnd propose plusieurs façons d'accéder à l'outil de recherche où se trouv
     - Les résultats de la recherche affichent l'emplacement du POI, ses coordonnées, ses évaluations et ses avis.
 
 - **Rechercher des POI par catégorie directement sur la carte** :
-    - Vous devez sélectionner les catégories requises dans la [**liste**](../map/point-layers-on-map.md#points-of-interest-poi) dans *Configurer la carte → Afficher la superposition de POI...* et rechercher par icônes à l'emplacement attendu.
+    - Vous devez sélectionner les catégories requises dans la [**liste**](../map/point-layers-on-map.md#points-of-interest-pois) dans *Configurer la carte → Afficher la superposition de POI...* et rechercher par icônes à l'emplacement attendu.
 
     - *Android* : Vous pouvez commencer à rechercher des POI dans *Menu → Rechercher → Catégories*.
 
@@ -125,7 +125,7 @@ La recherche de catégorie de POI vous permet de trouver et de sélectionner rap
 
 OsmAnd commence à trouver les noms et les catégories de POI par les mots saisis. Les premiers résultats seront des catégories, les deuxièmes résultats seront des POI avec des informations supplémentaires, le nom complet, le nom de la catégorie, la direction et la distance du POI, les heures d'ouverture. En appuyant sur la catégorie souhaitée, la liste des POI de cette catégorie s'ouvre.
 
-En appuyant sur le POI choisi dans la liste, le [menu contextuel de la carte](../map/map-context-menu.md#select-an-object-short-tap) du POI s'ouvre.
+En appuyant sur le POI choisi dans la liste, le [menu contextuel de la carte](../map/map-context-menu.md#select-an-object-single-tap) du POI s'ouvre.
 -->
 
 ### Types de filtres {#types-of-filters}

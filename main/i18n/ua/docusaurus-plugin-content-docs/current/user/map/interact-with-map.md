@@ -275,9 +275,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |**&#8595;**| *Wunderlinq*  | Карта - [Зменшити](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq*  | Карта - [Збільшити](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq*  | Відкрити WunderLINQ Datagrid |
-| **M** <br/> (*застарілий Android*) | *Клавіатура*  | Показати / Приховати - [Бічне меню](../start-with/main-menu.md#main-menu-drawer) |
+| **M** <br/> (*застарілий Android*) | *Клавіатура*  | Показати / Приховати - [Бічне меню](../start-with/main-menu.md#main-menu-side-menu) |
 | **Натискання джойстика** <br/> (*застарілий Android*) | *Клавіатура*  | Переміщення - [До Мого місцезнаходження](#my-location-and-zoom) |
-| **Кнопка медіа** <br/> (*лише Android*)| *Клавіатура*  | Показати / Приховати - [Аудіо/відео нотатки](../plugins/audio-video-notes.md#add-note-on-the-map) |
+| **Кнопка медіа** <br/> (*лише Android*)| *Клавіатура*  | Показати / Приховати - [Аудіо/відео нотатки](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*лише Android*)| *Parrot*  | Карта - [Зменшити](#my-location-and-zoom) |
 | **&#8594;** <br/> (*лише Android*) | *Parrot*  | Карта - [Збільшити](#my-location-and-zoom) |
 

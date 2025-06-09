@@ -184,4 +184,4 @@ Search makes it easy to find a specific map or region, providing a convenient an
 - Tap the name of the required result and the Regionwide map list will open.
 - Select [map types](../personal/maps-resources.md#map-types): *Standard map, Road-only map, Contour lines, Wikipedia*.
 
-> *This article was last updated in January 2025*
+> *Last updated: January 2025*

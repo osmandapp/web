@@ -148,4 +148,4 @@ The **Smart Autoannounce** feature provides *audio notifications* when you devia
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *This article was last updated in February 2025*
+> *Last updated: February 2025*

@@ -460,4 +460,4 @@ OsmAnd allows you to combine multiple types of map layers for a more visual disp
     - Ensure the **3D Mode** button is disabled in the **Menu → Configure Screen → Buttons → Default Buttons**.  
     - Check if any Terrain features are enabled in **Menu → Configure Map → Topography** that may trigger a 3D effect.
 
-> *This article was last updated in January 2025*
+> *Last updated: January 2025*

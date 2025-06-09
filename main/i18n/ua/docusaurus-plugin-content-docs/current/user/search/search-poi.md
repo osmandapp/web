@@ -30,7 +30,7 @@ OsmAnd надає кілька способів дістатися до інст
 - [Кнопка Пошук](../widgets/map-buttons.md#search) завжди відображається на мапі, і натискання на неї переведе вас до [загального екрана](#how-to-use) інструменту, де ви можете знайти вкладку *Категорії*.
 - *Android*: Перейдіть до головного *Меню → Пошук → вкладка Категорії*.
 - Під час підготовки до початку маршруту натисніть [*Навігація → Встановити пункт призначення → Поле пошуку → вкладка Категорії*](../navigation/setup/route-navigation.md#set-target-point).
-- *Android*: Перейдіть до головного [*Меню → Налаштувати мапу → Накладання POI → Пошук*](../map/point-layers-on-map.md#points-of-interest-poi).
+- *Android*: Перейдіть до головного [*Меню → Налаштувати мапу → Накладання POI → Пошук*](../map/point-layers-on-map.md#points-of-interest-pois).
 
 
 ## Як використовувати {#how-to-use}
@@ -64,7 +64,7 @@ OsmAnd надає кілька способів дістатися до інст
     - Результати пошуку показують місцезнаходження POI, його контактну інформацію, рейтинги та відгуки.
 
 - **Пошук POI за категоріями безпосередньо на мапі**:
-    - Вам потрібно вибрати необхідні категорії зі [**списку**](../map/point-layers-on-map.md#points-of-interest-poi) у *Налаштувати мапу → Показати накладання POI...* та шукати за іконками в очікуваному місці.
+    - Вам потрібно вибрати необхідні категорії зі [**списку**](../map/point-layers-on-map.md#points-of-interest-pois) у *Налаштувати мапу → Показати накладання POI...* та шукати за іконками в очікуваному місці.
 
     - *Android*: Ви можете розпочати пошук POI у *Меню → Пошук → Категорії*.
 
@@ -125,7 +125,7 @@ POI category search allows you to quickly find and select places of interest bas
 
 OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie.
 
-Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.
+Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-single-tap) of POI.
 -->
 
 ### Типи фільтрів {#types-of-filters}

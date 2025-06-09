@@ -353,7 +353,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 
 За допомогою цього меню ви можете:
 
-- **Виділити важливі елементи карти**, включаючи [Улюблені точки](../personal/favorites.md), [Навігаційні маркери](../personal/markers.md) або спеціальні [Точки інтересу](../map/point-layers-on-map.md#points-of-interest-poi) на карті.
+- **Виділити важливі елементи карти**, включаючи [Улюблені точки](../personal/favorites.md), [Навігаційні маркери](../personal/markers.md) або спеціальні [Точки інтересу](../map/point-layers-on-map.md#points-of-interest-pois) на карті.
 
 - **Відобразити конкретні маршрути та файли GPX**, включаючи сторонні треки для навігації або аналізу.
 
@@ -478,7 +478,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 <InfoAndroidOnly />
 
 :::note Для невикористовуваних плагінів
-Щоб приховати всі параметри керування невикористовуваних [плагінів](../plugins/index.md#configure-a-plugin), вимкніть їх.
+Щоб приховати всі параметри керування невикористовуваних [плагінів](../plugins/index.md#configure-plugin), вимкніть їх.
 :::
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*

@@ -87,7 +87,7 @@ Pour organiser les widgets sur l'écran de l'application, utilisez des panneaux.
 
 </Tabs>
 
-1. [Manœuvres d'itinéraire](../widgets/nav-widgets.md#next-turns) (*uniquement pour le panneau gauche/droit*). Cet ensemble de widgets *de navigation* est activé pendant la navigation et affiche des informations sur la distance jusqu'à la prochaine manœuvre.
+1. [Manœuvres d'itinéraire](../widgets/nav-widgets.md#next-turn) (*uniquement pour le panneau gauche/droit*). Cet ensemble de widgets *de navigation* est activé pendant la navigation et affiche des informations sur la distance jusqu'à la prochaine manœuvre.
     3 widgets sont inclus : *Prochain virage*, *Prochain virage (petit)*, *Deuxième prochain virage*.
 
 2. [Point de navigation](../widgets/nav-widgets.md#navigation-points). Un ensemble de *widgets de navigation* affiche la distance restante jusqu'à une destination, un point intermédiaire, l'heure d'arrivée à un point intermédiaire ou le temps de trajet pour un itinéraire calculé.
@@ -209,7 +209,7 @@ Le mode vous permet d'ajouter **plus d'un widget dans une seule ligne** sur les 
     - [Widgets de coordonnées](../widgets/info-widgets#coordinates-widget)
     - [Voies](../widgets/nav-widgets#lanes)
     - [Profil d'élévation (*Android uniquement*)](../widgets/nav-widgets#elevation-widget)
-    - [Manœuvres d'itinéraire](../widgets/nav-widgets.md#next-turns)
+    - [Manœuvres d'itinéraire](../widgets/nav-widgets.md#next-turn)
 
 - **Widgets simples**. Plusieurs widgets simples peuvent être ajoutés à une seule ligne. Ces widgets peuvent afficher *Nom*, *Unités de mesure*, *Valeur* et *Icône*.
 

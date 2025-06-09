@@ -233,7 +233,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ![Шари рельєфу](@site/static/img/plugins/online-maps/terrain_layers.png)
 
-Ви можете налаштувати рівень масштабування для відображення та прозорість для Затінення пагорбів та Схилу. Детальніше можна прочитати в статті [Топографія](../plugins/topography.md#configure-map-view).
+Ви можете налаштувати рівень масштабування для відображення та прозорість для Затінення пагорбів та Схилу. Детальніше можна прочитати в статті [Топографія](../plugins/topography.md#hillshade-slope-and-altitude-layers).
 
 
 ## 3D-рельєф {#3d-relief}

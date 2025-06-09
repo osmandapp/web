@@ -264,4 +264,4 @@ For more details on the classification of the surface details and the rendering 
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in June 2023*
+> *Last updated: June 2023*

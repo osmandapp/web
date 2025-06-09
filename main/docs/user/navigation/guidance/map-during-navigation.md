@@ -51,7 +51,7 @@ During navigation, the map's appearance adjusts based on the selected navigation
 | *<Translate android="true" ids="choose_auto_follow_route"/>* |  The time for which the map view is synchronized with the current position after moving.  |  *Value:* <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  |  Automatically scale the map according to your speed, as long as the map is synchronized with your current position. | *Value:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 5 m. |
 | *<Translate android="true" ids="snap_to_road"/>*  | The current position icon will be associated with the current navigation route.  | You can turn this option off, but all road-related options, such as lane display, will also not be visible during navigation.  |
-| *<Translate android="true" ids="approximate_bearing"/>* | Determines bearing based on the navigation route you are following.  | The setting is only visible when the [OsmAnd development plugin](../../plugins/development.md) is enabled. <br /> These settings should be enabled if the orientation of the directional map is flipped or jiggles when using [Android Auto](../auto-car.md#issues).   |
+| *<Translate android="true" ids="approximate_bearing"/>* | Determines bearing based on the navigation route you are following.  | The setting is only visible when the [OsmAnd development plugin](../../plugins/development.md) is enabled. <br /> These settings should be enabled if the orientation of the directional map is flipped or jiggles when using [Android Auto](../auto-car.md#common-issues-and-solutions).   |
 
 
 ## Show Points Along the Route {#show-points-along-the-route}
@@ -92,7 +92,7 @@ When you create a route, you can set the types of points to be displayed along t
 
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)
 
-POIs settings in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-poi) are associated with the **Show along the route** setting. This is essentially an additional setting for displaying POIs on the map, directly related to the created route.  
+POIs settings in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) are associated with the **Show along the route** setting. This is essentially an additional setting for displaying POIs on the map, directly related to the created route.  
 
 When you specify the display of certain POIs on the *Configure map*, they are all displayed on the maps you have downloaded, whether you have selected categories or, if you do not care which category, selected nearby POIs.  
 
@@ -197,7 +197,7 @@ The **Color** setting changes the color tones of the route lines. Their overall 
 - ***<Translate android="true" id="altitude"/>***. It shows the height of the route point as a **green-yellow-red** gradient. **Green** indicates the lowest point of the route, **yellow** indicates the average height of the point, and **red** is the highest. If the route altitude difference is < 100 meters, the gradient is partially applied or not applied, for example for a simple climb from 100 meters to 150 meters - the gradient will be **green-yellow**. Note that the color doesn't represent the absolute value of the altitude.  
     ![Altitude](@site/static/img/navigation/route/Altitude_rl.png)
 
-- ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. The route line is colored in different colors depending on the elevation profile of the route. A detailed description is in the *Topography plugin* article, [Slope](../../plugins/topography.md#slope) section.  
+- ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. The route line is colored in different colors depending on the elevation profile of the route. A detailed description is in the *Topography plugin* article, [Slope](../../plugins/topography.md#hillshade-slope-and-altitude-layers) section.  
     ![Altitude](@site/static/img/navigation/route/Slope.png)   ![Altitude](@site/static/img/navigation/route/Slope4.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>***. Colors a route or track line according to the *road classification*. A detailed description is in the *Vector Maps - [Road Style](../../map/vector-maps.md#road-style)* section.  
@@ -256,4 +256,4 @@ The Turn Arrows setting allows you to select whether turn arrows are displayed o
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in December 2024*
+> *Last updated: December 2024*

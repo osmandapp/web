@@ -102,7 +102,7 @@ Si vous n'avez aucun profil *Conduite* sélectionné sur votre appareil qui corr
 
 ![Écran Android Auto](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-Vous pouvez sélectionner des [POI](../map/point-layers-on-map.md#points-of-interest-poi) prédéfinis et ajoutés, ou des [Favoris](../personal/favorites.md), ou des [Marqueurs](../personal/markers.md) comme point de destination. Il est également possible de sélectionner une [Trace](../personal/tracks/manage-tracks.md) enregistrée ou téléchargée pour l'itinéraire, d'utiliser la [Recherche](../search/index.md), ou de sélectionner une destination dans l'[Historique](../search/search-history.md) des itinéraires ou de faire une *Course libre*.
+Vous pouvez sélectionner des [POI](../map/point-layers-on-map.md#points-of-interest-pois) prédéfinis et ajoutés, ou des [Favoris](../personal/favorites.md), ou des [Marqueurs](../personal/markers.md) comme point de destination. Il est également possible de sélectionner une [Trace](../personal/tracks/manage-tracks.md) enregistrée ou téléchargée pour l'itinéraire, d'utiliser la [Recherche](../search/index.md), ou de sélectionner une destination dans l'[Historique](../search/search-history.md) des itinéraires ou de faire une *Course libre*.
 
 1. Si vous souhaitez qu'un emplacement particulier sur la carte soit un point d'arrivée, sélectionnez la catégorie de points appropriée dans la liste, [POI](#poi-categories), [Favoris](#favorites), ou [Marqueurs de carte](#map-markers).
 

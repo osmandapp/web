@@ -97,7 +97,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"
 
 The most notable POIs are displayed on the map automatically. However, you can select a specific type of POIs (e.g. *Restaurants*) and all of them will be highlighted on the map with an **orange circle** (starting at zoom level 9).  
 
-Detailed information about a point of interest can be found in the [Context menu](../map/map-context-menu.md) that appears when you [tap](../map/map-context-menu.md#select-an-object-short-tap) on the point.  
+Detailed information about a point of interest can be found in the [Context menu](../map/map-context-menu.md) that appears when you [tap](../map/map-context-menu.md#select-an-object-single-tap) on the point.  
 
 
 ### POI Types {#poi-types}
@@ -205,7 +205,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,street_level
 
 </Tabs>
 
-[Street-level imagery (Mapillary)](../plugins/mapillary.md) are displayed as green dots on the map. Photos of the street view are attached to these dots. You can create a [filter](../plugins/mapillary.md#filtering-the-data) and select the photos you want to display on the map. To open a street-view photo, tap the green dot.  
+[Street-level imagery (Mapillary)](../plugins/mapillary.md) are displayed as green dots on the map. Photos of the street view are attached to these dots. You can create a [filter](../plugins/mapillary.md#data-filtering) and select the photos you want to display on the map. To open a street-view photo, tap the green dot.  
 
 Requires [Mapillary plugin](../plugins/mapillary.md).
 
@@ -316,7 +316,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_ma
 
 OSM notes are user-created POIs for reporting issues with map data in [OpenStreetMap](https://www.openstreetmap.org/). New notes (not yet uploaded to OpenStreetMap) are marked in green with a **+**, closed notes are marked in green with a “V”, and open notes are marked in red. You can customize the zoom level for displaying notes and choose whether to show or hide closed notes.  
 
-Requires the [OSM Editing plugin](../plugins/osm-editing.md#how-to-report-a-mistake).
+Requires the [OSM Editing plugin](../plugins/osm-editing.md).
 
 
 ## Points Along the Route {#points-along-the-route}
@@ -340,4 +340,4 @@ All of these point types can be saved in GPX format to provide you with location
 - [Vector maps (Map styles)](./vector-maps.md)
 - [Raster Maps (Online / Offline)](./raster-maps.md)
 
-> *This article was last updated in June 2025*
+> *Last updated: June 2025*

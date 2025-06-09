@@ -62,8 +62,8 @@ import Translate from '@site/src/components/Translate.js';
 ## Шари мапи {#map-layers}
 
 - [Шар векторної мапи](../map/vector-maps.md) - відображає всю інформацію векторної мапи, включаючи OpenStreetMap, контурні лінії та морські дані.
-- [Растрові джерела мапи](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer) - дозволяє вибирати підкладку / основне джерело / накладену мапу з рівнями прозорості.
-- [Рельєф](../plugins/topography.md#configure-map-view) - відображає інформацію про схили / тіні пагорбів, 3D рельєф.
+- [Растрові джерела мапи](../map/raster-maps.md#select-raster-maps) - дозволяє вибирати підкладку / основне джерело / накладену мапу з рівнями прозорості.
+- [Рельєф](../plugins/topography.md#hillshade-slope-and-altitude-layers) - відображає інформацію про схили / тіні пагорбів, 3D рельєф.
 - [Межі завантажених мап](../map/vector-maps.md#show-borders) - відображає всі межі завантажених мап на основному шарі мапи.
 - [Сітка координат](../map/vector-maps.md#coordinates-grid) - керує видимістю сітки координат на мапі.
 
@@ -75,10 +75,10 @@ import Translate from '@site/src/components/Translate.js';
    - [Накладені мітки](../map/point-layers-on-map.md) - показує назви точок та вибраного на мапі.
    - [Транспорт](../map/vector-maps.md#transport) - показує зупинки громадського транспорту.
    - [Треки](../map/tracks/index.md) - відображає імпортовані, заплановані або записані треки поверх мапи.
-   - [Зображення рівня вулиць](../plugins/mapillary.md#viewing-images) - відображає точки з доступними зображеннями рівня вулиць.
+   - [Зображення рівня вулиць](../plugins/mapillary.md#map-layer) - відображає точки з доступними зображеннями рівня вулиць.
    - [Путівники](../plan-route/travel-guides.md) - відображає путівники на мапі.
    - [Вікіпедія](../plugins/wikipedia.md) - виділяє статті Вікіпедії, пов'язані з мапою.
-   - [Інші шари плагінів](../plugins/index.md#configure-a-plugin) - багато плагінів додають свої шари з додатковою інформацією.
+   - [Інші шари плагінів](../plugins/index.md#configure-plugin) - багато плагінів додають свої шари з додатковою інформацією.
 
 ## Параметри стилю мапи {#map-style-parameters}
 

@@ -76,7 +76,7 @@ For more information on how and when voice prompts are triggered, consult the [N
 
 **User points**:
 
-- Enable voice prompts for the pre-set and added [Waypoints](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi). While driving, the selected points will be announced when you approach or pass them.
+- Enable voice prompts for the pre-set and added [Waypoints](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-pois). While driving, the selected points will be announced when you approach or pass them.
 
 | Prompt Type | Lead Time [s]:<br/>Corresponding<br/>Lead Distance @ Default Speed [m] | Limit |
 | :- | :- | :- |
@@ -96,7 +96,7 @@ For more information on how and when voice prompts are triggered, consult the [N
 
 **Options**:
 
-- *Repeat navigation instructions*. Allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../../widgets/nav-widgets.md#next-turns) on the application screen.
+- *Repeat navigation instructions*. Allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../../widgets/nav-widgets.md#next-turn) on the application screen.
 - *[Announcement time](#announcement-time)*.
 
 **Output** (*Android only*):
@@ -109,7 +109,7 @@ For more information on how and when voice prompts are triggered, consult the [N
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
-[Speed cameras alerts](../../personal/global-settings.md#uninstall-speed-camera) allow you to activate or deactivate POIs with speed cameras. You will need to restart the OsmAnd application to apply the changes.
+[Speed cameras alerts](../../personal/global-settings.md#uninstall-speed-cameras) allow you to activate or deactivate POIs with speed cameras. You will need to restart the OsmAnd application to apply the changes.
   
 In some countries or regions, using speed camera warning applications is illegal. You must make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall** and all data related to speed cameras, such as warnings, notifications, and POIs, will be deleted until you completely reinstall OsmAnd.  
 
@@ -173,6 +173,7 @@ To avoid playing audio in the same output stream at the same time, the audio foc
 You can test the voice prompts with:
 
 - [Simulate Navigation](../../navigation//setup/route-navigation.md#simulated-navigation). Set a route and start the simulation: *Navigation menu → Settings → Simulate navigation*.
+
 - [Test voice prompts](../../plugins/development.md#application-testing) (*Android only*). Use the *Development plugin* to test voice prompts:
     - Go to *Menu → Plugins → Enable OsmAnd Development*.
     - Go to *Settings → Test voice prompts*.
@@ -418,9 +419,9 @@ Select screen wake-up options and ensure OsmAnd remains in the foreground when t
 
 ### Common Issues and Solutions {#common-issues-and-solutions}
 
-1. Audio Issues. [(check)](#solving-audio-issues)
-2. Testing of Voice Prompts. [(check)](#testing-of-voice-prompts)
-3. Why should I use a TTS voice instead of a recorded voice? [(check)](../../troubleshooting/navigation.md#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice)
-4. TTS does not function properly? Follow these steps to fix it. [(check)](../../troubleshooting/navigation.md#tts-does-not-function-properly-follow-these-steps-to-fix-it)
+1. [Audio Issues.](#solving-audio-issues)
+2. [Testing of Voice Prompts.](#testing-of-voice-prompts)
+3. [Why should I use a TTS voice instead of a recorded voice?](../../troubleshooting/navigation.md#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice)
+4. [TTS does not function properly? Follow these steps to fix it.](../../troubleshooting/navigation.md#tts-does-not-function-properly-follow-these-steps-to-fix-it)
 
-> *This article was last updated in March 2025*
+> *Last updated: March 2025*

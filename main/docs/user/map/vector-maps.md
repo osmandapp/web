@@ -438,10 +438,10 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_r
 
 </Tabs>  
 
-To improve map visibility, you might need to hide certain objects. For example, you can hide water when using the [Satellite online maps with the Underlay layer](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer).
+To improve map visibility, you might need to hide certain objects. For example, you can hide water when using the [Satellite online maps with the Underlay layer](../map/raster-maps.md#select-raster-maps).
 
 - **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Hide regional boundaries inside of countries, but state boundaries are visible.
-- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Hide all polygons of natural objects, special function for [Underlay/Overlay layer](../map/raster-maps.md#change-layer-parameters-transparency).
+- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Hide all polygons of natural objects, special function for [Underlay/Overlay layer](../map/raster-maps.md#select-raster-maps).
 - **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Hide all polygons of buildings.
 - **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Hide all polygons of water (seas, lakes, reservoirs, etc.)
 - **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Hide house numbers on the map.
@@ -592,4 +592,4 @@ If you have a personal or third-party custom map style created according to the 
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in March 2025*
+> *Last updated: March 2025*

@@ -76,9 +76,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ви можете налаштувати вигляд треку в декількох меню програми:
 
-- [*Трек → Вигляд*](../../personal/tracks/manage-tracks.md#folder-menu).
+- [*Трек → Вигляд*](../../personal/tracks/manage-tracks.md#track-folder).
 - [*Налаштування навігації → Налаштувати лінію маршруту*](../../navigation/guidance/navigation-settings.md#customize-route-line).
-- [*Мої місця → Вкладка Треки → будь-яка папка → Вигляд за замовчуванням*](../../personal/tracks/manage-tracks.md#folder-menu).
+- [*Мої місця → Вкладка Треки → будь-яка папка → Вигляд за замовчуванням*](../../personal/tracks/manage-tracks.md#track-folder).
 
 Налаштуйте ширину треку, щоб покращити видимість на мапі.
 
@@ -205,7 +205,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Змініть вигляд кількох треків у *Мої місця → Треки*:
 
-- **Змінити вигляд за замовчуванням** - Застосовує налаштування до всіх треків у [папці](../../personal/tracks/manage-tracks.md#folder-menu).
+- **Змінити вигляд за замовчуванням** - Застосовує налаштування до всіх треків у [папці](../../personal/tracks/manage-tracks.md#track-folder).
 - **Скинути до оригіналу** - Відновлює індивідуальні налаштування треку.
 
 - [Режим вибору](../../personal/tracks/manage-tracks.md#selection-mode) - Змінює вигляд певних треків у вибраній папці або в усьому списку на вкладці Треки.

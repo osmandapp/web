@@ -192,4 +192,4 @@ You can import and export all available default and custom color palettes using 
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *This article was last updated in January 2025*
+> *Last updated: January 2025*

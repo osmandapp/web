@@ -77,7 +77,7 @@ Pour plus d'informations sur la manière et le moment où les invites vocales so
 
 **Points utilisateur** :
 
-- Activez les invites vocales pour les [points de passage](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track), les [favoris](../../personal/favorites.md) ou les [POI](../../map/point-layers-on-map.md#points-of-interest-poi) prédéfinis et ajoutés. Pendant la conduite, les points sélectionnés seront annoncés lorsque vous les approcherez ou les dépasserez.
+- Activez les invites vocales pour les [points de passage](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track), les [favoris](../../personal/favorites.md) ou les [POI](../../map/point-layers-on-map.md#points-of-interest-pois) prédéfinis et ajoutés. Pendant la conduite, les points sélectionnés seront annoncés lorsque vous les approcherez ou les dépasserez.
 
 | Type d'invite | Délai [s] :<br/>Distance d'avance correspondante @ Vitesse par défaut [m] | Limite |
 | :- | :- | :- |
@@ -97,7 +97,7 @@ Pour plus d'informations sur la manière et le moment où les invites vocales so
 
 **Options** :
 
-- *Répéter les instructions de navigation*. Vous permet de répéter les instructions de navigation à intervalles réguliers de 1 min à 30 min. Ou manuellement - si vous manquez une invite vocale, vous pouvez l'écouter à nouveau en appuyant simplement sur [la flèche de virage actuelle](../../widgets/nav-widgets.md#next-turns) sur l'écran de l'application.
+- *Répéter les instructions de navigation*. Vous permet de répéter les instructions de navigation à intervalles réguliers de 1 min à 30 min. Ou manuellement - si vous manquez une invite vocale, vous pouvez l'écouter à nouveau en appuyant simplement sur [la flèche de virage actuelle](../../widgets/nav-widgets.md#next-turn) sur l'écran de l'application.
 - *[Temps d'annonce](#announcement-time)*.
 
 **Sortie** (*Android uniquement*) :
@@ -110,7 +110,7 @@ Pour plus d'informations sur la manière et le moment où les invites vocales so
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
-Les [alertes de radars](../../personal/global-settings.md#uninstall-speed-camera) vous permettent d'activer ou de désactiver les POI avec des radars. Vous devrez redémarrer l'application OsmAnd pour appliquer les modifications.
+Les [alertes de radars](../../personal/global-settings.md#uninstall-speed-cameras) vous permettent d'activer ou de désactiver les POI avec des radars. Vous devrez redémarrer l'application OsmAnd pour appliquer les modifications.
 
 Dans certains pays ou régions, l'utilisation d'applications d'avertissement de radars est illégale. Vous devez faire un choix en fonction des lois de votre pays. Sélectionnez **Garder actif**, et vous recevrez des alertes et des notifications de radars. Sélectionnez **Désinstaller** et toutes les données relatives aux radars, telles que les avertissements, les notifications et les POI, seront supprimées jusqu'à ce que vous réinstalliez complètement OsmAnd.
 

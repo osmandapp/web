@@ -421,4 +421,4 @@ Maintain at least [**30 edits**](https://github.com/osmandapp/OsmAnd/blob/master
 - How to delete search history. [(check)](../troubleshooting/general.md#how-to-delete-search-history)
 - For additional troubleshooting, visit: [Maps & Data](../troubleshooting/maps-data.md)
 
-> *This article was last updated in February 2025*
+> *Last updated: February 2025*

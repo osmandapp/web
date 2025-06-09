@@ -352,7 +352,7 @@ The [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.
 
 With this menu, you can:
 
-- **Highlight important map elements**, including [Favorite points](../personal/favorites.md), [Navigation markers](../personal/markers.md), or special [Points of Interests](../map/point-layers-on-map.md#points-of-interest-poi) on the map.
+- **Highlight important map elements**, including [Favorite points](../personal/favorites.md), [Navigation markers](../personal/markers.md), or special [Points of Interests](../map/point-layers-on-map.md#points-of-interest-pois) on the map.
 
 - **Display specific routes and GPX files**, including third-party tracks for navigation or analysis.
 
@@ -477,7 +477,7 @@ You can control how the **My Location** icon behaves using different [map orient
 <InfoAndroidOnly />
 
 :::note For unused plugins
-To hide all control parameters of unused [plugins](../plugins/index.md#configure-a-plugin), disable them.
+To hide all control parameters of unused [plugins](../plugins/index.md#configure-plugin), disable them.
 :::
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
@@ -605,4 +605,4 @@ Actions with selected profile:
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in February 2025*
+> *Last updated: February 2025*

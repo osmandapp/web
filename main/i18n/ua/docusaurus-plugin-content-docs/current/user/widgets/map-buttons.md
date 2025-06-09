@@ -165,7 +165,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 4. **Позиція кнопки**. Позиція кнопки на мапі на екрані застосунку зберігається окремо для кожного профілю.
 
-5. **Рекомендація**. Рекомендується завантажити та увімкнути [мапу рельєфу](../plugins/topography.md#configure-map-view) для вибраного регіону.
+5. **Рекомендація**. Рекомендується завантажити та увімкнути [мапу рельєфу](../plugins/topography.md#hillshade-slope-and-altitude-layers) для вибраного регіону.
 
 
 ## Користувацькі кнопки {#custom-buttons}

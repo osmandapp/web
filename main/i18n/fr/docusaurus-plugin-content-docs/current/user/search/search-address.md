@@ -107,7 +107,7 @@ Cette méthode de recherche permet de trouver facilement des emplacements spéci
 - Dans la liste qui s'ouvre, sélectionnez la localité requise. [Ici](#full-text-search) décrit l'ordre dans lequel les requêtes de recherche sont affichées et les informations disponibles sur chaque élément.
 - Sur l'écran suivant, vous pouvez soit continuer à affiner l'adresse, soit sélectionner le bouton *Afficher sur la carte* sous le champ de saisie de la recherche.
 - Pour affiner votre recherche, vous pouvez saisir tout ou partie du nom de la ville, du village ou du hameau où se trouve l'adresse que vous recherchez. Cela vous permet de restreindre votre recherche et d'obtenir une liste plus précise.
-- En appuyant sur le dernier élément de l'adresse, le numéro de maison ou le nom de l'intersection, le [menu contextuel de la carte](../map/map-context-menu.md#select-an-object-short-tap) de l'objet s'ouvre.
+- En appuyant sur le dernier élément de l'adresse, le numéro de maison ou le nom de l'intersection, le [menu contextuel de la carte](../map/map-context-menu.md#select-an-object-single-tap) de l'objet s'ouvre.
 
 **La recherche par ville offre les avantages suivants :**
 
@@ -172,7 +172,7 @@ La recherche de rue est effectuée dans la localité où vous vous trouvez, ou o
 **Pour utiliser la *recherche par code postal*, il vous suffit de saisir le numéro**, qui peut même être composé d'un seul chiffre, et l'application propose une liste de codes postaux pertinents disponibles.
 
 - Sélectionnez le code requis et appuyez dessus.
-- Vous pouvez utiliser la fonction *Afficher le numéro de code postal sur la carte*. Cela ouvre un [menu contextuel de la carte](../map/map-context-menu.md#select-an-object-short-tap) avec le code postal sélectionné sans aucune information supplémentaire sur l'emplacement.
+- Vous pouvez utiliser la fonction *Afficher le numéro de code postal sur la carte*. Cela ouvre un [menu contextuel de la carte](../map/map-context-menu.md#select-an-object-single-tap) avec le code postal sélectionné sans aucune information supplémentaire sur l'emplacement.
 - Vous pouvez affiner votre recherche par ce code en sélectionnant d'abord la rue requise dans la liste, puis le numéro.
 
 **La recherche par code postal peut être utile dans les cas suivants :**

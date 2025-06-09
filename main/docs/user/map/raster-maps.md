@@ -232,7 +232,7 @@ Go to: *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
 
-You can customize the zoom level to display and the transparency for Hillshade and Slope. You can read more in the [Topography article](../plugins/topography.md#configure-map-view).
+You can customize the zoom level to display and the transparency for Hillshade and Slope. You can read more in the [Topography article](../plugins/topography.md#hillshade-slope-and-altitude-layers).
 
 
 ## 3D Relief {#3d-relief}
@@ -416,4 +416,4 @@ Raster maps can be used as they already exist if the tiles are already mapped. I
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in October 2024*
+> *Last updated: October 2024*

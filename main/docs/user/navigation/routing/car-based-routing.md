@@ -112,4 +112,4 @@ Motorcycle routing is the process of creating a route specifically optimized for
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
 
-> *This article was last updated in Jule 2024*
+> *Last updated: Jule 2024*

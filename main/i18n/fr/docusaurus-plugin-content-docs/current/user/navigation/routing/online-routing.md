@@ -45,7 +45,7 @@ Vous pouvez lire les différences entre les moteurs de routage en ligne dans [OS
 
 ### Routage GPX en ligne personnalisé {#custom-online-gpx-routing}
 
-Le serveur en ligne construit un itinéraire en utilisant votre point de départ et votre destination. Après avoir reçu la trace du serveur, OsmAnd crée un itinéraire en utilisant la fonction *[Attacher aux routes](../setup/gpx-navigation.md#attach-to-roads)*. Ainsi, toutes les informations de routage nécessaires seront tirées de nos cartes hors ligne, et des indications plus précises le long de l'itinéraire seront fournies.
+Le serveur en ligne construit un itinéraire en utilisant votre point de départ et votre destination. Après avoir reçu la trace du serveur, OsmAnd crée un itinéraire en utilisant la fonction *[Attacher aux routes](../setup/gpx-navigation.md#attach-to-the-roads)*. Ainsi, toutes les informations de routage nécessaires seront tirées de nos cartes hors ligne, et des indications plus précises le long de l'itinéraire seront fournies.
 
 ![Routage GPX personnalisé Android 1](@site/static/img/navigation/routing/online_routing_gpx_1.png) ![Routage GPX personnalisé Android 1](@site/static/img/navigation/routing/online_routing_gpx_2.png)
 

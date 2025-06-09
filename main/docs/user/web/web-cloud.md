@@ -126,6 +126,6 @@ In this section of the menu, you can change the map style. You can read more abo
 
 
 
-> *This article was last updated in September 2024*
+> *Last updated: September 2024*
 
 

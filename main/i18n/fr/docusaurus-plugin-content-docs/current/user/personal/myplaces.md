@@ -145,7 +145,7 @@ Les **Tracés** offrent des outils puissants pour enregistrer, créer et gérer 
 
 - **Créer un tracé** — Commencez l'enregistrement en utilisant l'**Onglet Tracés** ou le [plugin d'enregistrement de trajets](../plugins/trip-recording.md).
 
-- **Afficher et Modifier** — Accédez à la liste des tracés via *Mes Lieux* et gérez-les en utilisant le *menu à trois points* pour les [dossiers](../personal/tracks/manage-tracks.md#folder-menu) ou le menu [tracé unique](../personal/tracks/manage-tracks.md#single-track-menu).
+- **Afficher et Modifier** — Accédez à la liste des tracés via *Mes Lieux* et gérez-les en utilisant le *menu à trois points* pour les [dossiers](../personal/tracks/manage-tracks.md#track-folder) ou le menu [tracé unique](../personal/tracks/manage-tracks.md#single-track-menu).
 
 - **Gérer** — Utilisez les outils [Filtre](../personal/tracks/smart-folder.md#filter) et [Dossier intelligent](../personal/tracks/smart-folder.md#smart-folder) pour organiser les tracés en fonction de paramètres spécifiques.
 

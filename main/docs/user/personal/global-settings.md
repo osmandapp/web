@@ -389,4 +389,4 @@ Read about alerts for speed cameras on your route in the article Navigation widg
 
 - **Location source for altitude issues**. Google Play has changed its policy, and to comply, OsmAnd, starting with version 3.9, must use Google Play Services to get location fixes while running in the background. Read more information in [Troubleshooting](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) section.
 
-> *This article was last updated in November 2024*
+> *Last updated: November 2024*

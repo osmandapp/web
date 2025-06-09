@@ -285,4 +285,4 @@ In the **iOS** version of the app, you can also access the image download option
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *This article was last updated in May 2025*
+> *Last updated: May 2025*

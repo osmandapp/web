@@ -144,7 +144,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 
 - **Create a track** — Start recording using the **Tracks Tab** or the [Trip recording plugin](../plugins/trip-recording.md).
 
-- **View and Edit** — Access the list of tracks through *My Places* and manage them using the *three-dot menu* for [folders](../personal/tracks/manage-tracks.md#folder-menu) or the [single track](../personal/tracks/manage-tracks.md#single-track-menu) menu.
+- **View and Edit** — Access the list of tracks through *My Places* and manage them using the *three-dot menu* for [folders](../personal/tracks/manage-tracks.md#track-folder) or the [single track](../personal/tracks/manage-tracks.md#single-track-menu) menu.
 
 - **Manage** — Use the [Filter](../personal/tracks/smart-folder.md#filter) and [Smart folder](../personal/tracks/smart-folder.md#smart-folder) tools to organize tracks based on specific parameters.
 
@@ -269,4 +269,4 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in March 2025*
+> *Last updated: March 2025*

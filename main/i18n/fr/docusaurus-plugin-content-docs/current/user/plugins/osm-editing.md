@@ -140,7 +140,7 @@ Vous pouvez activer ou désactiver en tant que couche séparée l'affichage des 
 
 ## Créer / Modifier un POI {#create--modify-poi}
 
-Le plugin d'édition OpenStreetMap vous permet de créer de nouveaux objets sur la carte appelés [points d'intérêt ou POI](../map/point-layers-on-map.md#points-of-interest-poi). Vous pouvez cartographier un nouveau magasin, un point de repère préféré, un banc ou un abri afin que les gens puissent les trouver.
+Le plugin d'édition OpenStreetMap vous permet de créer de nouveaux objets sur la carte appelés [points d'intérêt ou POI](../map/point-layers-on-map.md#points-of-interest-pois). Vous pouvez cartographier un nouveau magasin, un point de repère préféré, un banc ou un abri afin que les gens puissent les trouver.
 
 1. Appuyez sur la carte pour placer un nouveau POI, ou appuyez sur un POI non encore chargé.2. Appuyez sur [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
 2. Choisissez [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), et ajoutez son nom et d'autres informations telles que les heures d'ouverture, le site Web, etc. Lorsque vous sélectionnez un POI non téléchargé, *Créer un POI* devient *Modifier un POI*.

@@ -29,7 +29,7 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 - The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use), where you can find the *Categories* tab.
 - *Android*: Go to the main *Menu → Search → Categories tab*.
 - When preparing to start a route, tap [*Navigation → Set destination → Search field → Categories tab*](../navigation/setup/route-navigation.md#set-target-point).  
-- *Android*: Go to the main [*Menu → Configure map → POI overlay → Search*](../map/point-layers-on-map.md#points-of-interest-poi).
+- *Android*: Go to the main [*Menu → Configure map → POI overlay → Search*](../map/point-layers-on-map.md#points-of-interest-pois).
 
 
 ## How to Use {#how-to-use}
@@ -63,7 +63,7 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
     - Search results show the location of the POI, its contact information, ratings, and reviews.
 
 - **Search POIs by category directly on the map**:
-    - You need to select the required categories from the [**list**](../map/point-layers-on-map.md#points-of-interest-poi) in *Configure map → Show POI overlay...* and search by icons in the expected location.
+    - You need to select the required categories from the [**list**](../map/point-layers-on-map.md#points-of-interest-pois) in *Configure map → Show POI overlay...* and search by icons in the expected location.
 
     - *Android*: You can start searching for POIs in *Menu → Search → Categories*.
 
@@ -124,7 +124,7 @@ POI category search allows you to quickly find and select places of interest bas
 
 OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
 
-Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.   
+Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-single-tap) of POI.   
 -->
 
 ### Types of Filters {#types-of-filters}
@@ -504,4 +504,4 @@ An additional option only for the iOS app is **Delete Custom Categories**.
 - [Search Coordinates](./search-coordinates.md)
 
 
-> *This article was last updated in May 2025*
+> *Last updated: May 2025*

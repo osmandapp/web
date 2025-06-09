@@ -214,4 +214,4 @@ The **Smart folder** is displayed with a unique icon in the folder list in the T
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)
 - [Trip recording](../../plugins/trip-recording.md)
 
-> *This article was last updated in March 2025*
+> *Last updated: March 2025*

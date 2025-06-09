@@ -140,7 +140,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Створити / Змінити POI {#create--modify-poi}
 
-Плагін для редагування OpenStreetMap дозволяє створювати нові об'єкти на карті, які називаються [точки інтересу або POI](../map/point-layers-on-map.md#points-of-interest-poi). Ви можете нанести на карту новий магазин, улюблену пам'ятку, лавку або притулок, щоб люди могли їх знайти.
+Плагін для редагування OpenStreetMap дозволяє створювати нові об'єкти на карті, які називаються [точки інтересу або POI](../map/point-layers-on-map.md#points-of-interest-pois). Ви можете нанести на карту новий магазин, улюблену пам'ятку, лавку або притулок, щоб люди могли їх знайти.
 
 1. Натисніть на карту, щоб розмістити новий POI, або натисніть на POI, який ще не завантажено.2. Натисніть [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
 2. Виберіть [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) та додайте його назву та іншу інформацію, таку як години роботи, вебсайт тощо. Коли ви вибираєте незавантажений POI, *Створити POI* змінюється на *Змінити POI*.

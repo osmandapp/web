@@ -275,9 +275,9 @@ Pour accéder aux paramètres d'un périphérique d'entrée externe, vous devez 
 |**&#8595;**| *Wunderlinq* | Carte - [Zoom arrière](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq* | Carte - [Zoom avant](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq* | Ouvrir la grille de données WunderLINQ |
-| **M** <br/> (*Android hérité*) | *Clavier* | Afficher / Masquer - [Menu latéral](../start-with/main-menu.md#main-menu-drawer) |
+| **M** <br/> (*Android hérité*) | *Clavier* | Afficher / Masquer - [Menu latéral](../start-with/main-menu.md#main-menu-side-menu) |
 | **Appui sur le joystick** <br/> (*Android hérité*) | *Clavier* | Déplacer - [Vers ma position](#my-location-and-zoom) |
-| **Bouton média** <br/> (*Android uniquement*)| *Clavier* | Afficher / Masquer - [Notes AV](../plugins/audio-video-notes.md#add-note-on-the-map) |
+| **Bouton média** <br/> (*Android uniquement*)| *Clavier* | Afficher / Masquer - [Notes AV](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*Android uniquement*)| *Parrot* | Carte - [Zoom arrière](#my-location-and-zoom) |
 | **&#8594;** <br/> (*Android uniquement*) | *Parrot* | Carte - [Zoom avant](#my-location-and-zoom) |
 

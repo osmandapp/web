@@ -233,7 +233,7 @@ Aller à : *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" i
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
 
-Vous pouvez personnaliser le niveau de zoom à afficher et la transparence pour l'Ombrage et la Pente. Vous pouvez en savoir plus dans l'[article Topographie](../plugins/topography.md#configure-map-view).
+Vous pouvez personnaliser le niveau de zoom à afficher et la transparence pour l'Ombrage et la Pente. Vous pouvez en savoir plus dans l'[article Topographie](../plugins/topography.md#hillshade-slope-and-altitude-layers).
 
 
 ## Relief 3D {#3d-relief}

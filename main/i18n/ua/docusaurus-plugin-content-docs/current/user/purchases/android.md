@@ -166,7 +166,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [Налаштування лінії маршруту](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Зміна кольору та ширини лінії маршруту під час навігації. |
 | [Віджет висоти](../widgets/nav-widgets.md#elevation-widget) | Показує ваше місцезнаходження на графіку висоти навігаційного маршруту з додатковою інформацією.  |
 | [Віджети висоти - Висота: Центр карти](../widgets/info-widgets.md#elevation-map-center) | Дозволяє дізнатися висоту поточного центру карти над рівнем моря.  |
-| [Корекція висоти (офлайн)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Дозволяє розрахувати графік висоти для вашого треку (потрібна [карта рельєфу](../plugins/topography.md#how-to-download) для обраного регіону). |
+| [Корекція висоти (офлайн)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Дозволяє розрахувати графік висоти для вашого треку (потрібна [карта рельєфу](../plugins/topography.md#download-maps) для обраного регіону). |
 
 
 ### Як купити {#how-to-buy}

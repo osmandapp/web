@@ -78,7 +78,7 @@ Les favoris font partie d'une couche de carte spéciale, et vous pouvez les [aff
 
 Pour ajouter un point favori :
 
-1. Sélectionnez un [POI](../map/point-layers-on-map.md#points-of-interest-poi) ou une structure sur la carte.
+1. Sélectionnez un [POI](../map/point-layers-on-map.md#points-of-interest-pois) ou une structure sur la carte.
     Appui court pour un POI ou appui long pour un point de carte général.
 2. Sélectionnez [Ajouter (☆)](../map/map-context-menu.md#add--edit-favorite) dans le menu contextuel de la carte.
 
@@ -112,7 +112,7 @@ Lors de l'ajout d'un point à partir de données OSM, les informations POI perti
 
 Pour modifier un point favori :
 
-1. [Appuyez](../map/map-context-menu.md#select-an-object-short-tap) sur le favori sur la carte ou allez dans [Mes favoris](#manage-favorites).
+1. [Appuyez](../map/map-context-menu.md#select-an-object-single-tap) sur le favori sur la carte ou allez dans [Mes favoris](#manage-favorites).
 2. Choisissez **Modifier le favori** dans le [*menu contextuel de la carte*](../map/map-context-menu.md#add--edit-favorite).
 
 ***Options disponibles :***
@@ -463,7 +463,7 @@ Dans les dernières versions d'***Android***, l'accès aux répertoires système
 
 ### Favoris dans le fichier GPX {#favorites-in-gpx-file}
 
-Toutes les informations sur un favori sont stockées et décrites à l'aide de balises. Lors de la création d'un point favori, vous pouvez écrire votre propre [description](#favorite-point) ou utiliser les informations des données [point d'intérêt (POI)](../map/point-layers-on-map.md#points-of-interest-poi) d'OSM à partir desquelles votre point a été créé. Les points favoris, les POI et les points de passage utilisent les mêmes **balises** pour stocker les informations et sont enregistrés au **format de fichier GPX**.
+Toutes les informations sur un favori sont stockées et décrites à l'aide de balises. Lors de la création d'un point favori, vous pouvez écrire votre propre [description](#favorite-point) ou utiliser les informations des données [point d'intérêt (POI)](../map/point-layers-on-map.md#points-of-interest-pois) d'OSM à partir desquelles votre point a été créé. Les points favoris, les POI et les points de passage utilisent les mêmes **balises** pour stocker les informations et sont enregistrés au **format de fichier GPX**.
 
 
 ```xml

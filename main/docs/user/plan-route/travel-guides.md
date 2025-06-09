@@ -348,7 +348,7 @@ In *[track context menu](../map/tracks/track-context-menu.md)* of GPX-file you c
 
 In the *Travel guide articles* you can find useful information about tourist attractions (contact information, web links, prices, and so on). Many articles have a *Wikipedia* button that allows opening a *[Wikipedia article](../plugins/wikipedia.md)* (online or offline) about the place of interest.  
 
-In some cases, OsmAnd's *[Bookmarks tab](#explore-and-bookmark)* will prompt you to download [Wikipedia map layer](../plugins/wikipedia.md#download-wikipedia-packages) to browse related articles offline.
+In some cases, OsmAnd's *[Bookmarks tab](#explore-and-bookmark)* will prompt you to download [Wikipedia map layer](../plugins/wikipedia.md#download-wikipedia-packages-download-wikipedia-packages) to browse related articles offline.
 
 ![Travel guides download Wikipedia](@site/static/img/guides/travel_guides_wikipedia_download.png)
 
@@ -362,4 +362,4 @@ The [Wikipedia plugin](../plugins/wikipedia.md) is a [paid feature](../purchases
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *This article was last updated in January 2025*
+> *Last updated: January 2025*

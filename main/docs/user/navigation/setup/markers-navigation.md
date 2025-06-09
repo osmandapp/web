@@ -236,4 +236,4 @@ __
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in June 2024.*
+> *Last updated: June 2024.*

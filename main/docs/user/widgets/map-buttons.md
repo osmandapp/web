@@ -164,7 +164,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 4. **Button position**. The button position on the map on the application screen is saved separately for each profile.
 
-5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/topography.md#configure-map-view) for the selected region.
+5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/topography.md#hillshade-slope-and-altitude-layers) for the selected region.
 
 
 ## Custom Buttons {#custom-buttons}
@@ -197,4 +197,4 @@ Customizing the appearance of buttons allows you to adjust the size, shape, icon
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in February 2025*
+> *Last updated: February 2025*

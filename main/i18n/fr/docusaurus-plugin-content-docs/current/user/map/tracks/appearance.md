@@ -76,9 +76,9 @@ Pour plus de détails sur la personnalisation de l'apparence de la ligne d'itin�
 
 Vous pouvez personnaliser l'apparence de la trace dans plusieurs menus de l'application :
 
-- [*Trace → Apparence*](../../personal/tracks/manage-tracks.md#folder-menu).
+- [*Trace → Apparence*](../../personal/tracks/manage-tracks.md#track-folder).
 - [*Paramètres de navigation → Personnaliser la ligne d'itinéraire*](../../navigation/guidance/navigation-settings.md#customize-route-line).
-- [*Mes Lieux → Onglet Traces → n'importe quel dossier → Apparence par défaut*](../../personal/tracks/manage-tracks.md#folder-menu).
+- [*Mes Lieux → Onglet Traces → n'importe quel dossier → Apparence par défaut*](../../personal/tracks/manage-tracks.md#track-folder).
 
 Ajustez la largeur de la trace pour améliorer la visibilité sur la carte.
 
@@ -205,7 +205,7 @@ L'onglet [Traces](../../personal/tracks/manage-tracks.md) affiche automatiquemen
 
 Modifiez l'apparence de plusieurs traces dans *Mes Lieux → Traces* :
 
-- **Modifier l'apparence par défaut** - Applique les paramètres à toutes les traces d'un [dossier](../../personal/tracks/manage-tracks.md#folder-menu).
+- **Modifier l'apparence par défaut** - Applique les paramètres à toutes les traces d'un [dossier](../../personal/tracks/manage-tracks.md#track-folder).
 - **Réinitialiser à l'original** - Restaure les paramètres de trace individuels.
 
 - [Mode de sélection](../../personal/tracks/manage-tracks.md#selection-mode) - Modifie l'apparence de traces spécifiques dans le dossier sélectionné ou de la liste entière dans l'onglet Traces.

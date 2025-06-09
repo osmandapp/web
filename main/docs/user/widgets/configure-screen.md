@@ -125,7 +125,7 @@ Each panel supports different layout behaviors:
     The set shows the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
     4 widgets are included: [Distance to destination](../widgets/nav-widgets.md#distance-to-destination), [Distance to intermediate](../widgets/nav-widgets.md#distance-to-intermediate), [Time to intermediate](../widgets/nav-widgets.md#time-to-intermediate), [Time to destination](../widgets/nav-widgets.md#time-to-destination).
 
-- [Route maneuvers](../widgets/nav-widgets.md#next-turns) (*Left/Right panel only*).  
+- [Route maneuvers](../widgets/nav-widgets.md#next-turn) (*Left/Right panel only*).  
     This set is activated during navigation and shows the distance and arrow to the next maneuver.  
     3 widgets are included: *Next turn*, *Next turn (small)*, *Second next turn*.
 
@@ -245,7 +245,7 @@ The mode allows you to add **more than one widget in a single row** on the top a
     - [Coordinates widgets](../widgets/info-widgets#coordinates-widget)
     - [Lanes](../widgets/nav-widgets#lanes)
     - [Elevation profile (*Android only*)](../widgets/nav-widgets#elevation-widget)
-    - [Route maneuvers](../widgets/nav-widgets.md#next-turns)
+    - [Route maneuvers](../widgets/nav-widgets.md#next-turn)
 
 - **Simple widgets**. Multiple simple widgets can be added to a single row. These widgets could display *Name*, *Units of measurement*, *Value*, and *Icon*.
 
@@ -606,4 +606,4 @@ Available actions:
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in May 2025*
+> *Last updated: May 2025*

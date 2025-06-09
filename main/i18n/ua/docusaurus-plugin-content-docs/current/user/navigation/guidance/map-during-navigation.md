@@ -52,7 +52,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | Час, протягом якого вигляд мапи синхронізується з поточною позицією після руху. | *Значення:* <br /> Ніколи, 5 сек, 10 сек, 15 сек, 20 сек, 25 сек, 30 сек, 45 сек, 60 сек, 50 сек. |
 | *<Translate android="true" ids="auto_zoom_map"/>* | Автоматично масштабувати мапу відповідно до вашої швидкості, доки мапа синхронізована з вашою поточною позицією. | *Значення:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - масштабування вручну. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - масштабування 200 м. <br /> *<Translate android="true" ids="auto_zoom_far"/>* - масштабування 100 м. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - масштабування 5 м. |
 | *<Translate android="true" ids="snap_to_road"/>* | Іконка поточної позиції буде асоціюватися з поточним навігаційним маршрутом. | Ви можете вимкнути цю опцію, але всі опції, пов'язані з дорогою, такі як відображення смуг, також не будуть видимі під час навігації. |
-| *<Translate android="true" ids="approximate_bearing"/>* | Визначає напрямок на основі навігаційного маршруту, яким ви рухаєтеся. | Налаштування видно лише тоді, коли увімкнено [плагін розробки OsmAnd](../../plugins/development.md). <br /> Ці налаштування слід увімкнути, якщо орієнтація мапи напрямку перевернута або тремтить під час використання [Android Auto](../auto-car.md#issues). |
+| *<Translate android="true" ids="approximate_bearing"/>* | Визначає напрямок на основі навігаційного маршруту, яким ви рухаєтеся. | Налаштування видно лише тоді, коли увімкнено [плагін розробки OsmAnd](../../plugins/development.md). <br /> Ці налаштування слід увімкнути, якщо орієнтація мапи напрямку перевернута або тремтить під час використання [Android Auto](../auto-car.md#common-issues-and-solutions). |
 
 
 ## Показати точки вздовж маршруту {#show-points-along-the-route}
@@ -93,7 +93,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)
 
-Налаштування POI в [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-poi) пов'язані з налаштуванням **Показати вздовж маршруту**. Це, по суті, додаткове налаштування для відображення POI на мапі, безпосередньо пов'язане зі створеним маршрутом.  
+Налаштування POI в [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) пов'язані з налаштуванням **Показати вздовж маршруту**. Це, по суті, додаткове налаштування для відображення POI на мапі, безпосередньо пов'язане зі створеним маршрутом.  
 
 Коли ви вказуєте відображення певних POI на *Налаштувати мапу*, вони всі відображаються на завантажених вами мапах, незалежно від того, чи вибрали ви категорії, чи, якщо вам байдуже, яку категорію, вибрали найближчі POI.  
 
@@ -198,7 +198,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - ***<Translate android="true" id="altitude"/>***. Показує висоту точки маршруту як **зелено-жовто-червоний** градієнт. **Зелений** вказує на найнижчу точку маршруту, **жовтий** вказує на середню висоту точки, а **червоний** - на найвищу. Якщо різниця висот маршруту < 100 метрів, градієнт застосовується частково або не застосовується, наприклад, для простого підйому від 100 метрів до 150 метрів - градієнт буде **зелено-жовтим**. Зверніть увагу, що колір не представляє абсолютне значення висоти.  
     ![Altitude](@site/static/img/navigation/route/Altitude_rl.png)
 
-- ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. Лінія маршруту забарвлюється в різні кольори залежно від профілю висот маршруту. Детальний опис див. у статті *Плагін Топографія*, розділ [Нахил](../../plugins/topography.md#slope).  
+- ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. Лінія маршруту забарвлюється в різні кольори залежно від профілю висот маршруту. Детальний опис див. у статті *Плагін Топографія*, розділ [Нахил](../../plugins/topography.md#hillshade-slope-and-altitude-layers).  
     ![Altitude](@site/static/img/navigation/route/Slope.png)   ![Altitude](@site/static/img/navigation/route/Slope4.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>***. Забарвлює лінію маршруту або треку відповідно до *класифікації доріг*. Детальний опис див. у статті *Векторні мапи - [Стиль доріг](../../map/vector-maps.md#road-style)*.  

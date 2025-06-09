@@ -120,4 +120,4 @@ There are two ways to save your data before reinstalling the OsmAnd app:
 2. I have a GPX file, how do I import it into OsmAnd? [(check)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
 3. Deleting map data after the app update (if “Multiuser Storage 1” is selected). [(check)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)
 
-> *This article was last updated in January 2025*
+> *Last updated: January 2025*

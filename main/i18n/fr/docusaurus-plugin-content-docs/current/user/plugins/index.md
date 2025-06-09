@@ -73,7 +73,7 @@ Les plugins OsmAnd peuvent augmenter ces groupes de fonctionnalités : **Couches
 | [Wikipédia](#wikipedia) | [Couche de carte](../plugins/wikipedia.md#download-wikipedia-packages), [Menu contextuel](../plugins/wikipedia.md#wikipedia-languages) |
 | [Cartes en ligne](#online-maps) |[Couche de carte](../plugins/online-map.md#configure-map-source) |
 | [Enregistrement de trajet](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profil](../plugins/trip-recording.md#profile-settings) |
-| [Topographie](#topography) | [Couche de carte](../plugins/topography.md#configure-map-view) |
+| [Topographie](#topography) | [Couche de carte](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
 | [Relief 3D](#topography) 🤖  | [Couche de carte](../plugins/topography.md#3d-relief) |
 | [Météo](../plugins/weather.md) | [Couche de carte](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Écran](../plugins/weather.md#configure-screen) |
 | [Vue carte nautique](#nautical-map-view) | [Style de carte](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-options)  |

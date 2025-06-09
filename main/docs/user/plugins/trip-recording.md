@@ -479,4 +479,4 @@ If you have multiple widgets selected â€” *Duration*, *Uphill*, or *Downhill* â€
 
 For additional troubleshooting, visit: [Track Recording Troubleshooting](https://osmand.net/docs/user/troubleshooting/track-recording-issues).
 
-> *This article was last updated in January 2025*
+> *Last updated: January 2025*

@@ -134,7 +134,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 <br/>
 
 - **<Translate android="true" ids="shared_string_share"/>** – Експортує вибраний трек у форматі GPX.
-- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Завантажує](../../plugins/osm-editing.md#how-to-upload-gpx-track) вибраний трек до OpenStreetMap.
+- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Завантажує](../../plugins/osm-editing.md#upload-gps-track) вибраний трек до OpenStreetMap.
 
 <br/>
 
@@ -344,7 +344,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 **Отримати дані про висоту.**
 Якщо на маршруті *немає інформації про висоту*, ви можете додати її наступними способами:
 
-- Кнопка *Розрахувати висоту → [Використовувати найближчі дороги](../../plan-route/create-route.md#use-nearby-roads)*. Використовує офлайн-карту для пошуку найближчих доріг та даних про висоту. Дозволяє налаштувати геометрію треку.
+- Кнопка *Розрахувати висоту → [Використовувати найближчі дороги](../../plan-route/create-route.md#get-elevation-data)*. Використовує офлайн-карту для пошуку найближчих доріг та даних про висоту. Дозволяє налаштувати геометрію треку.
 - [Використовувати карти рельєфу](#calculate-missing-elevation). Використовує карти рельєфу для отримання даних про висоту. Геометрія треку залишається незмінною.
 
 
@@ -356,7 +356,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <InfoAndroidOnly />
 
-Ця функція дозволяє розрахувати профіль висоти для треку GPX офлайн для будь-якої місцевості між 70 градусами північної широти та 70 градусами південної широти, на основі [даних карт рельєфу](../../plugins/topography.md#how-to-download). *Карти рельєфу (3D) мають бути попередньо завантажені*.
+Ця функція дозволяє розрахувати профіль висоти для треку GPX офлайн для будь-якої місцевості між 70 градусами північної широти та 70 градусами південної широти, на основі [даних карт рельєфу](../../plugins/topography.md#download-maps). *Карти рельєфу (3D) мають бути попередньо завантажені*.
 
 1. Завантажте [Карти рельєфу (3D)](../../plugins/topography.md#download-maps) для потрібного регіону.
 2. Якщо трек не містить даних про висоту, перейдіть до контекстного меню треку (*Контекстне меню треку → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), виберіть *Використовувати карти рельєфу*, і після розрахунку ви отримаєте графік треку на основі даних рельєфу.
@@ -427,7 +427,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Торкніться кнопки *Додати шляхову точку*, щоб відкрити екран створення шляхової точки (цей екран схожий на [Контекстне меню обраного](../../personal/favorites.md#favorite-context-menu)).
+Торкніться кнопки *Додати шляхову точку*, щоб відкрити екран створення шляхової точки (цей екран схожий на [Контекстне меню обраного](../../personal/favorites.md#create)).
 
 1. **Додайте** *Назву* шляхової точки, *Адресу* вибраного місця та *Опис* для неї (необов'язково).
 2. **Виберіть** Групу.
@@ -609,7 +609,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 1. Знайдіть потрібний трек у списку вкладки *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*.
 2. Торкніться треку на карті, якщо він включений до [списку видимих](../tracks/index.md#display-tracks-on-the-map).
-3. Торкніться потрібної шляхової точки, якщо вона [видима](../../personal/tracks/manage-tracks.md#show-tracks-on-map) на карті.
+3. Торкніться потрібної шляхової точки, якщо вона [видима](../../personal/tracks/manage-tracks.md#track-menu) на карті.
 
     Потім у [Контекстному меню треків](./track-context-menu.md) торкніться *точки*, поля потрібної папки з доступними шляховими точками та шляхової точки, яку ви шукаєте. Виберіть меню *Дії →* **Редагувати шляхову точку GPX** та внесіть зміни. Ви не можете змінити дату створення точки, *часову мітку*, у програмі.
 

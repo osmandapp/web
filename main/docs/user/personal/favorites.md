@@ -77,7 +77,7 @@ Favorites are part of a special map layer, and you can [show or hide](../map/poi
 
 To add a favorite point:
 
-1. Select a [POI](../map/point-layers-on-map.md#points-of-interest-poi) or a structure on the map.  
+1. Select a [POI](../map/point-layers-on-map.md#points-of-interest-pois) or a structure on the map.  
     Short tap for a POI or long tap for a general map point.
 2. Select [Add (☆)](../map/map-context-menu.md#add--edit-favorite) from the map context menu.
 
@@ -111,7 +111,7 @@ When adding a point from OSM data, the relevant POI information is automatically
 
 To modify a favorite point:
 
-1. [Tap](../map/map-context-menu.md#select-an-object-short-tap) the favorite on the map or go to [My Favorites](#manage-favorites).
+1. [Tap](../map/map-context-menu.md#select-an-object-single-tap) the favorite on the map or go to [My Favorites](#manage-favorites).
 2. Choose **Edit favorite** from the [*map context menu*](../map/map-context-menu.md#add--edit-favorite).
 
 ***Options available:***
@@ -462,7 +462,7 @@ In the latest versions of ***Android***, access to system directories is limited
 
 ### Favorites in GPX File {#favorites-in-gpx-file}
 
-All information about a Favourite is stored and described using tags. When creating a Favourite point, you can write your own [description](#favorite-point) or use information from the OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) data from which your point was created. Favorite points, POIs, and Waypoints use the same **tags** to store information and are saved in **GPX file format**.  
+All information about a Favourite is stored and described using tags. When creating a Favourite point, you can write your own [description](#favorite-point) or use information from the OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) data from which your point was created. Favorite points, POIs, and Waypoints use the same **tags** to store information and are saved in **GPX file format**.  
 
 
 ```xml
@@ -493,4 +493,4 @@ All information about a Favourite is stored and described using tags. When creat
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in April 2025*
+> *Last updated: April 2025*

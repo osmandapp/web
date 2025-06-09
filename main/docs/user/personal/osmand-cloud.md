@@ -493,4 +493,4 @@ If you have problems with the registration of your account:
 - [Cross Platfom Purchases](../purchases/cross.md)
 - [Maps & Resources](../personal/maps-resources.md)
 
-> *This article was last updated in May 2025*
+> *Last updated: May 2025*

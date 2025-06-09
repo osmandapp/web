@@ -73,7 +73,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | [Вікіпедія](#wikipedia) | [Шар карти](../plugins/wikipedia.md#download-wikipedia-packages), [Контекстне меню](../plugins/wikipedia.md#wikipedia-languages) |
 | [Онлайн карти](#online-maps) |[Шар карти](../plugins/online-map.md#configure-map-source) |
 | [Запис поїздки](#trip-recording) | [Віджет](../plugins/trip-recording.md#widgets), [Профіль](../plugins/trip-recording.md#profile-settings) |
-| [Топографія](#topography) | [Шар карти](../plugins/topography.md#configure-map-view) |
+| [Топографія](#topography) | [Шар карти](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
 | [3D Рельєф](#topography) 🤖  | [Шар карти](../plugins/topography.md#3d-relief) |
 | [Погода](../plugins/weather.md) | [Шар карти](../plugins/weather.md#display-weather-on-the-map), [Віджет](../plugins/weather#weather-widgets), [Екран](../plugins/weather.md#configure-screen) |
 | [Вигляд морської карти](#nautical-map-view) | [Стиль карти](../plugins/nautical-charts.md#nautical-map-style), [Профіль](../plugins/nautical-charts.md#nautical-options)  |

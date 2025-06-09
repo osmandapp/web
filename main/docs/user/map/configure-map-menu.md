@@ -61,8 +61,8 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
 ## Map Layers {#map-layers}
 
 - [Vector Map Layer](../map/vector-maps.md) - displays all vector map information including OpenStreetMap, Contour lines, and Nautical data.
-- [Map Raster sources](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer) - allows selecting underlay / main-source / overlay map with transparency levels.
-- [Terrain](../plugins/topography.md#configure-map-view) - displays slope / hillshade information, 3D Relief.
+- [Map Raster sources](../map/raster-maps.md#select-raster-maps) - allows selecting underlay / main-source / overlay map with transparency levels.
+- [Terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) - displays slope / hillshade information, 3D Relief.
 - [Borders of downloaded maps](../map/vector-maps.md#show-borders) - displays all borders of downloaded maps on the main map layer.
 - [Coordinate grid](../map/vector-maps.md#coordinates-grid) - control the visibility of the coordinates grid on the map.
 
@@ -74,10 +74,10 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
    - [Overlay labels](../map/point-layers-on-map.md) - shows names of points, and favorites on the map.
    - [Transport](../map/vector-maps.md#transport) - shows public transport stops.
    - [Tracks](../map/tracks/index.md) - displays imported, planned, or recorded tracks over the map.
-   - [Street level imagery](../plugins/mapillary.md#viewing-images) - displays points with available street-level imagery.
+   - [Street level imagery](../plugins/mapillary.md#map-layer) - displays points with available street-level imagery.
    - [Travel guides](../plan-route/travel-guides.md) - displays travel guides on the map.
    - [Wikipedia](../plugins/wikipedia.md) - highlights Wikipedia articles linked to the map.
-   - [Other plugin layers](../plugins/index.md#configure-a-plugin) - many plugins add their layers with extra information.
+   - [Other plugin layers](../plugins/index.md#configure-plugin) - many plugins add their layers with extra information.
 
 ## Map style parameters {#map-style-parameters}
 
@@ -102,4 +102,4 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_c
 ![Configure map items ](@site/static/img/settings/configure-screen-ui-customization.png)
 
 
-> *This article was last updated in February 2025*
+> *Last updated: February 2025*

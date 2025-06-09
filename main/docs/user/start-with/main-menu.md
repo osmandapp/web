@@ -53,7 +53,7 @@ The [Main Menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located o
 ### Settings {#settings}
 
 - [Configure screen](../widgets/configure-screen.md) is a menu that allows configuring displaying widgets on the Map.
-- [Plugins](../plugins/index.md#configure-a-plugin) is a list of additional functionality and advanced settings.
+- [Plugins](../plugins/index.md#configure-plugin) is a list of additional functionality and advanced settings.
 - [Settings](../personal/global-settings.md) is a menu that allows configuring main app parameters.
 - [Help](./first-steps.md#offline-help) provides quick access to your guide, information about the app version and allows to quickly contact the development team.
 
@@ -79,4 +79,4 @@ In this menu you can **switch** active profile, **configure** (change settings) 
 - Items moved to the *Hidden* section are not displayed in the Drawer menu, but all options, settings, or plugins from this list continue to work. You can restore items by tapping the green button to the left of their names.  
     ![Drawer menu hidden items ](@site/static/img/settings/drawer_menu_hidden_items.png)
 
-> *This article was last updated in July 2022*
+> *Last updated: July 2022*

@@ -183,9 +183,9 @@ OsmAnd не може працювати коректно без завантаж
 
 ### Як налаштувати плагіни {#how-to-configure-plugins}
 
-[Плагіни](../plugins/index.md#configure-a-plugin) значно розширюють функціональність додатка. Майже всі плагіни мають власні [Дії на карті](../map/map-context-menu.md), [Шари карти](../map/configure-map-menu.md), [Завантаження карт](../start-with/download-maps.md) та [Налаштування](../plugins/#plugin-settings).
+[Плагіни](../plugins/index.md#configure-plugin) значно розширюють функціональність додатка. Майже всі плагіни мають власні [Дії на карті](../map/map-context-menu.md), [Шари карти](../map/configure-map-menu.md), [Завантаження карт](../start-with/download-maps.md) та [Налаштування](../plugins/#plugin-settings).
 
-Ви можете ввімкнути / вимкнути плагіни через [Головне меню](../start-with/main-menu.md) → [Плагіни](../plugins/index.md#configure-a-plugin).
+Ви можете ввімкнути / вимкнути плагіни через [Головне меню](../start-with/main-menu.md) → [Плагіни](../plugins/index.md#configure-plugin).
 
 <Tabs groupId="operating-systems">
 
@@ -209,7 +209,7 @@ OsmAnd не може працювати коректно без завантаж
 
 </Tabs>
 
-[Докладніше](../plugins/index.md#configure-a-plugin) про плагіни OsmAnd.
+[Докладніше](../plugins/index.md#configure-plugin) про плагіни OsmAnd.
 
 
 ### Як користуватися картою {#how-to-use-a-map}
@@ -283,7 +283,7 @@ OsmAnd дозволяє робити різні позначки на карті
 
 ### Як переглядати та знаходити цікаві місця {#how-to-browse--find-point-of-interest}
 
-[Цікаві місця (POI)](../map/point-layers-on-map.md#points-of-interest-poi) - це об'єкти, які можна шукати або виділяти на карті. Вони представляють цікаві або корисні місця і поширюються як частина [Векторних карт](../map/vector-maps.md). Ви можете використовувати їх для [відображення на карті](../map/point-layers-on-map.md#points-of-interest-poi), [навігації](../navigation/index.md) та [пошуку](../search/search-poi.md) цікавих місць на карті.
+[Цікаві місця (POI)](../map/point-layers-on-map.md#points-of-interest-pois) - це об'єкти, які можна шукати або виділяти на карті. Вони представляють цікаві або корисні місця і поширюються як частина [Векторних карт](../map/vector-maps.md). Ви можете використовувати їх для [відображення на карті](../map/point-layers-on-map.md#points-of-interest-pois), [навігації](../navigation/index.md) та [пошуку](../search/search-poi.md) цікавих місць на карті.
 
 <Tabs groupId="operating-systems">
 

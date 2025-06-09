@@ -179,4 +179,4 @@ When BRouter is configured, we can compare the pre-calculation speed of the BRou
 
 - In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
 
-> *This article was last updated in June 2024*
+> *Last updated: June 2024*

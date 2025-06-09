@@ -131,12 +131,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - [Альтернативні назви](#alternative-names)
 - [Координати](../map/map-context-menu.md#coordinates)
-- [Статті Вікіпедії поблизу](../map/map-context-menu.md#nearby-pois-wikipedia)
-- [POI поблизу](../map/map-context-menu.md#nearby-pois-wikipedia)
+- [POI / Вікіпедія поблизу](../map/map-context-menu.md#poi-поблизу--wikipedia-nearby-pois--wikipedia)
 - [Маршрути громадського транспорту](../map/map-context-menu.md#public-transport-routes) (для зупинок транспорту)
 - [Улюблені місця / Точки треку з тієї ж групи](../map/map-context-menu.md#favorites--track-points-from-the-group)
 - [Посилання на OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)
-- [Зображення / опис статті](../map/map-context-menu.md#article-image--description)
+- [Зображення / опис статті](../map/map-context-menu.md#опис-статті-article-description)
 - [Онлайн фотографії](../map/map-context-menu.md#online-photos)
 
 Крім того, панель може включати [Деталі OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_features), такі як:
@@ -167,7 +166,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-OsmAnd відображає **додаткові назви POI** у *контекстному меню мапи*, надаючи пріоритет назві мовою [відображення](../personal/global-settings.md#display-language) або мові зі списку бажаних мов системи. Якщо доступно кілька перекладів, вони групуються в категорії тегів, такі як *назва, бренд, оператор* або *POI поблизу*.
+OsmAnd відображає **додаткові назви POI** у *контекстному меню мапи*, надаючи пріоритет назві *мовою відображення* або мові зі списку бажаних мов системи. Якщо доступно кілька перекладів, вони групуються в категорії тегів, такі як *назва, бренд, оператор* або *POI поблизу*.
 
 Особливості відображення альтернативних назв:
 
@@ -234,11 +233,11 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 ![Статті Вікіпедії поблизу](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Статті Вікіпедії поблизу](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
 
-Ці розділи відображають найближчі [статті Вікіпедії](../plugins/wikipedia.md) або [Точки інтересу](../map/point-layers-on-map.md#points-of-interest-pois-on-the-map) з кнопками *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для відображення та [пошуку](../search/search-poi.md) всіх інших POI та статей Вікіпедії.
+Ці розділи відображають найближчі [статті Вікіпедії](../plugins/wikipedia.md) або [Точки інтересу](../map/point-layers-on-map.md#points-of-interest-pois) з кнопками *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для відображення та [пошуку](../search/search-poi.md) всіх інших POI та статей Вікіпедії.
 
 Натискання на *POI поблизу / статті Вікіпедії* відкриває список точок (POI або Wikipedia). Натискання на одну з цих точок зі списку точок переміщує мапу до цієї точки (POI або Wikipedia) з відкриттям контекстного меню мапи точки.
 
-> **ПРИМІТКА**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) з'явиться лише якщо ви попередньо завантажили спеціальні мапи зі [статтями Вікіпедії для цієї області](../plugins/wikipedia.md#download-wikipedia)*.
+> **ПРИМІТКА**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) з'явиться лише якщо ви попередньо завантажили спеціальні мапи зі [статтями Вікіпедії для цієї області](../plugins/wikipedia.md#download-wikipedia-packages)*.
 
 
 ### Маршрути громадського транспорту {#public-transport-routes}
@@ -266,7 +265,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 ![Список улюблених](@site/static/img/map/favorite_list_android.png) ![Повний список улюблених](@site/static/img/map/favorite_list_full_android.png)
 
-Це список усіх точок в одній групі для [Улюбленого місця](../map/point-layers-on-map.md#favorites-on-the-map) або Точки маршруту. При натисканні розгортається весь список точок однієї групи, при натисканні на точку зі списку мапа переміщується до вибраної точки.
+Це список усіх точок в одній групі для Улюбленого місця або Точки маршруту. При натисканні розгортається весь список точок однієї групи, при натисканні на точку зі списку мапа переміщується до вибраної точки.
 
 
 ### Лінійний об'єкт {#linear-object}
@@ -730,7 +729,7 @@ Details:
 
 </Tabs>
 
-Якщо в вибраному місці немає офлайн-мапи, наприклад, меню об'єкта мапи було відкрито через Пошук або через певне Улюблене місце, тоді буде запропоновано [завантажити](../start-with/download-maps.md#download---map-context-menu) найменшу можливу офлайн-мапу.
+Якщо в вибраному місці немає офлайн-мапи, наприклад, меню об'єкта мапи було відкрито через Пошук або через певне Улюблене місце, тоді буде запропоновано [завантажити](../start-with/download-maps.md#select-on-the-map) найменшу можливу офлайн-мапу.
 
 **iOS**. Якщо ви вже [завантажили](../map/map-context-menu.md) мапи OsmAnd (векторні або рельєфні), їх можна оновити через контекстне меню. Спочатку потрібно вибрати регіон на мапі - торкніться будь-якого місця на мапі світу з масштабом 3-7.
 
@@ -796,7 +795,7 @@ Details:
 
 - Виберіть місце на мапі [довгим натисканням](../map/map-context-menu.md#select-any-point-long-tap).
 - У *контекстному меню мапи*, що відкриється, виберіть *Дії → Додати точку маршруту*.
-- У списку відображаються [треки](../map/tracks/index.md#display-tracks-on-the-map), записані та показані на мапі, а також [поточний запис треку](../plugins/trip-recording.md#from-widget), до якого можна додати вибрану точку маршруту.
+- У списку відображаються [треки](../map/tracks/index.md#display-tracks-on-the-map), записані та показані на мапі, а також [поточний запис треку](../plugins/trip-recording.md), до якого можна додати вибрану точку маршруту.
 - Ви можете додавати точки маршруту до треку, який ще не активний для запису, в цьому випадку неактивний трек переходить зі стану *Старт* у стан *Відновити*.
 - [Заповніть](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) необхідні дані та збережіть точку маршруту.
 - Ви можете налаштувати [Швидкі дії](../widgets/quick-action.md), додавши точку маршруту до *Додати точку маршруту*.
@@ -826,8 +825,8 @@ Details:
 
 За допомогою плагіна OSM Editing ви можете створювати та змінювати більшість POI, присутніх на [OpenStreetMap](https://www.openstreetmap.org/).
 
-- &nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [створює новий POI](../plugins/osm-editing.md#how-to-add-poi) у вибраному місці.
-- &nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [змінює вибраний POI](../plugins/osm-editing.md#how-to-modify-poi).
+- &nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [створює новий POI](../plugins/osm-editing.md#create--modify-poi) у вибраному місці.
+- &nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [змінює вибраний POI](../plugins/osm-editing.md#create--modify-poi).
 
 
 ### * Відкрити нотатку OSM {#-open-osm-note}
@@ -856,7 +855,7 @@ Details:
 
 </Tabs>
 
-Ви можете [повідомити](../plugins/osm-editing.md#how-to-report-a-mistake) про помилки даних мапи в певному місці [спільноті OpenStreetMap](https://wiki.openstreetmap.org/wiki/Join_the_community). Будь ласка, дотримуйтесь [рекомендацій](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) та додавайте відповідні коментарі до проблеми.
+Ви можете **повідомити** про помилки даних мапи в певному місці [спільноті OpenStreetMap](https://wiki.openstreetmap.org/wiki/Join_the_community). Будь ласка, дотримуйтесь [рекомендацій](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) та додавайте відповідні коментарі до проблеми.
 
 
 ### * Коментувати / Закрити нотатку OSM {#-comment--close-osm-note}

@@ -139,7 +139,7 @@ You can enable or disable as a separate layer the display of OSM modifications s
 
 ## Create / Modify POI {#create--modify-poi}
 
-The OpenStreetMap editing plugin allows you to create new objects on the map called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can map a new store, favorite landmark, bench, or shelter so people can find them.  
+The OpenStreetMap editing plugin allows you to create new objects on the map called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-pois). You can map a new store, favorite landmark, bench, or shelter so people can find them.  
 
 1. Tap the map to place a new POI, or tap a POI not yet loaded.2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
 2. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc. When you select a not uploaded POI, *Create POI* changes to *Modify POI*.
@@ -257,7 +257,7 @@ Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) 
 
 </Tabs>
 
-To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks), follow the steps below::  
+To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks), follow the steps below:  
 
 - Find the required track in [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](../personal/tracks/manage-tracks.md).  
 - Tap the *three-dot menu* next to the track name and select *Export*.
@@ -288,5 +288,5 @@ You can create an OBF file with [OsmAndMapCreator](../../technical/map-creation/
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *This article was last updated in May 2024*
+> *Last updated: May 2024*
 

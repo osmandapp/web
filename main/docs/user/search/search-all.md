@@ -274,4 +274,4 @@ Coordinate search provides an accurate location. You can enter precise coordinat
 - [Search POI](./search-poi.md)
 - [Search Coordinates](./search-coordinates.md)
 
-> *This article was last updated in April 2025*
+> *Last updated: April 2025*

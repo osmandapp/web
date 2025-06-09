@@ -52,7 +52,7 @@ Pendant la navigation, l'apparence de la carte s'ajuste en fonction du profil de
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | Le temps pendant lequel la vue de la carte est synchronisée avec la position actuelle après un déplacement. | *Valeur :* <br /> Jamais, 5 s, 10 s, 15 s, 20 s, 25 s, 30 s, 45 s, 60 s, 50 s. |
 | *<Translate android="true" ids="auto_zoom_map"/>* | Adapte automatiquement l'échelle de la carte en fonction de votre vitesse, tant que la carte est synchronisée avec votre position actuelle. | *Valeur :* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manuel. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom de 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom de 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom de 5 m. |
 | *<Translate android="true" ids="snap_to_road"/>* | L'icône de position actuelle sera associée à l'itinéraire de navigation actuel. | Vous pouvez désactiver cette option, mais toutes les options liées à la route, telles que l'affichage des voies, ne seront pas non plus visibles pendant la navigation. |
-| *<Translate android="true" ids="approximate_bearing"/>* | Détermine le relèvement en fonction de l'itinéraire de navigation que vous suivez. | Le paramètre n'est visible que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé. <br /> Ces paramètres doivent être activés si l'orientation de la carte directionnelle est inversée ou tremble lors de l'utilisation d'[Android Auto](../auto-car.md#issues). |
+| *<Translate android="true" ids="approximate_bearing"/>* | Détermine le relèvement en fonction de l'itinéraire de navigation que vous suivez. | Le paramètre n'est visible que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé. <br /> Ces paramètres doivent être activés si l'orientation de la carte directionnelle est inversée ou tremble lors de l'utilisation d'[Android Auto](../auto-car.md#common-issues-and-solutions). |
 
 
 ## Afficher les points le long de l'itinéraire {#show-points-along-the-route}
@@ -93,7 +93,7 @@ Lorsque vous créez un itinéraire, vous pouvez définir les types de points à 
 
 ![Superposition de POI Android](@site/static/img/map/poi_overlay_android.png) ![Superposition de POI iOS](@site/static/img/map/poi_overlay_ios.png)
 
-Les paramètres des POI dans [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-poi) sont associés au paramètre **Afficher le long de l'itinéraire**. Il s'agit essentiellement d'un paramètre supplémentaire pour afficher les POI sur la carte, directement lié à l'itinéraire créé.
+Les paramètres des POI dans [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) sont associés au paramètre **Afficher le long de l'itinéraire**. Il s'agit essentiellement d'un paramètre supplémentaire pour afficher les POI sur la carte, directement lié à l'itinéraire créé.
 
 Lorsque vous spécifiez l'affichage de certains POI sur la *Configuration de la carte*, ils sont tous affichés sur les cartes que vous avez téléchargées, que vous ayez sélectionné des catégories ou, si vous ne vous souciez pas de la catégorie, sélectionné des POI à proximité.
 
@@ -198,7 +198,7 @@ Le paramètre **Couleur** modifie les tons de couleur des lignes d'itinéraire. 
 - ***<Translate android="true" id="altitude"/>***. Il affiche la hauteur du point d'itinéraire sous forme de dégradé **vert-jaune-rouge**. Le **vert** indique le point le plus bas de l'itinéraire, le **jaune** indique la hauteur moyenne du point et le **rouge** est le plus élevé. Si la différence d'altitude de l'itinéraire est < 100 mètres, le dégradé est partiellement appliqué ou non appliqué, par exemple pour une simple montée de 100 mètres à 150 mètres - le dégradé sera **vert-jaune**. Notez que la couleur ne représente pas la valeur absolue de l'altitude.
     ![Altitude](@site/static/img/navigation/route/Altitude_rl.png)
 
-- ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. La ligne d'itinéraire est colorée de différentes couleurs en fonction du profil d'élévation de l'itinéraire. Une description détaillée se trouve dans l'article *Plugin Topographie*, section [Pente](../../plugins/topography.md#slope).
+- ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. La ligne d'itinéraire est colorée de différentes couleurs en fonction du profil d'élévation de l'itinéraire. Une description détaillée se trouve dans l'article *Plugin Topographie*, section [Pente](../../plugins/topography.md#hillshade-slope-and-altitude-layers).
     ![Altitude](@site/static/img/navigation/route/Slope.png) ![Altitude](@site/static/img/navigation/route/Slope4.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>***. Colore une ligne d'itinéraire ou de trace selon la *classification routière*. Une description détaillée se trouve dans l'article *Cartes vectorielles - [Style de route](../../map/vector-maps.md#road-style)*.

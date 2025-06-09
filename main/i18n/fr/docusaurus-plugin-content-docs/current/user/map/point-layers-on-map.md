@@ -81,7 +81,7 @@ Activer ou désactiver les points d'intérêt de type **sélectionné** sur la c
 
 ![Superposition de POI Android](@site/static/img/map/poi_overlay_android.png) ![Superposition de POI iOS](@site/static/img/map/poi_overlay_ios.png)  
 
-Les [Points d'intérêt (POI)](https://wiki.openstreetmap.org/wiki/Points_of_interest) sont des points spécifiques mis en évidence par une icône sur la carte. Ils représentent des lieux et des objets intéressants ou utiles et font partie des [Cartes vectorielles](../map/vector-maps.md). Les POI les plus notables sont affichés automatiquement sur la carte. Cependant, vous pouvez sélectionner un type spécifique de POI (par exemple, Restaurants) et ils seront tous mis en évidence sur la carte dans un **cercle orange** (à partir du niveau de zoom 9). Vous pouvez trouver des informations détaillées sur le point d'intérêt dans le [Menu contextuel](../map/map-context-menu.md) qui apparaît lors d'un [appui court](../map/map-context-menu.md#select-an-object-short-tap) sur le point.  
+Les [Points d'intérêt (POI)](https://wiki.openstreetmap.org/wiki/Points_of_interest) sont des points spécifiques mis en évidence par une icône sur la carte. Ils représentent des lieux et des objets intéressants ou utiles et font partie des [Cartes vectorielles](../map/vector-maps.md). Les POI les plus notables sont affichés automatiquement sur la carte. Cependant, vous pouvez sélectionner un type spécifique de POI (par exemple, Restaurants) et ils seront tous mis en évidence sur la carte dans un **cercle orange** (à partir du niveau de zoom 9). Vous pouvez trouver des informations détaillées sur le point d'intérêt dans le [Menu contextuel](../map/map-context-menu.md) qui apparaît lors d'un [appui court](../map/map-context-menu.md#select-an-object-single-tap) sur le point.  
 
 
 ### Types de POI {#poi-types}
@@ -150,7 +150,7 @@ Activer ou désactiver l'imagerie au niveau de la rue sur la carte :
 
 ![Filtre Mapillary](@site/static/img/map/mapillary_filter.png) ![Vue de rue Mapillary](@site/static/img/map/mapillary_street-view.png)  
 
-L'[imagerie au niveau de la rue (Mapillary)](../plugins/mapillary.md) est affichée sous forme de points verts sur la carte. Des photos avec une vue de la rue sont attachées à ces points. Vous pouvez créer un [filtre](../plugins/mapillary.md#filtering-the-data) et sélectionner les photos que vous souhaitez afficher sur la carte. Pour ouvrir une photo de vue de rue, vous devez appuyer sur le point vert.  
+L'[imagerie au niveau de la rue (Mapillary)](../plugins/mapillary.md) est affichée sous forme de points verts sur la carte. Des photos avec une vue de la rue sont attachées à ces points. Vous pouvez créer un [filtre](../plugins/mapillary.md#data-filtering) et sélectionner les photos que vous souhaitez afficher sur la carte. Pour ouvrir une photo de vue de rue, vous devez appuyer sur le point vert.  
 
 Nécessite le [plugin Mapillary](../plugins/mapillary.md).
 
@@ -216,7 +216,7 @@ Activer ou désactiver les notes OSM sur la carte :
 
 Les points de note OSM sont des POI créés par les utilisateurs pour signaler des problèmes concernant les données cartographiques dans [OpenStreetMap](https://www.openstreetmap.org/). Une nouvelle note (non téléchargée sur OpenStreetMap) est marquée en vert avec **+**, la note fermée est marquée en vert avec "V", et la note ouverte est marquée en rouge. Vous pouvez personnaliser le niveau de zoom pour afficher les notes et choisir d'afficher ou de masquer les notes fermées.  
 
-Nécessite le [plugin d'édition OSM](../plugins/osm-editing.md#how-to-report-a-mistake).
+Nécessite le [plugin d'édition OSM](../plugins/osm-editing.md).
 
 
 ## Points le long de l'itinéraire {#points-along-the-route}

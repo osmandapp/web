@@ -165,7 +165,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config
 
 4. **Position du bouton**. La position du bouton sur la carte sur l'écran de l'application est enregistrée séparément pour chaque profil.
 
-5. **Recommandation**. Il est recommandé de télécharger et d'activer la [carte d'ombrage](../plugins/topography.md#configure-map-view) pour la région sélectionnée.
+5. **Recommandation**. Il est recommandé de télécharger et d'activer la [carte d'ombrage](../plugins/topography.md#hillshade-slope-and-altitude-layers) pour la région sélectionnée.
 
 
 ## Boutons personnalisés {#custom-buttons}

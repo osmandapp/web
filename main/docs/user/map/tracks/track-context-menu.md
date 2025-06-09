@@ -127,13 +127,13 @@ The menu **Options** allows you to manage and modify the selected track with var
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Android only*) – Merges track segments to fill gaps.
-- **<Translate android="true" ids="analyze_on_map"/>**. Opens the [Analyze on map](../index.md#analyze-track-on-map) tool to inspect the track’s elevation, speed, and distance.
+- **<Translate android="true" ids="analyze_on_map"/>**. Opens the [Analyze on map](../tracks/index.md#analyze-track-on-map-analyze-track-on-map) tool to inspect the track’s elevation, speed, and distance.
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Android only*) - Analyzes the track by time or distance [intervals](./track-context-menu.md#split-interval).
 
 <br/>
 
 - **<Translate android="true" ids="shared_string_share"/>** – Exports the selected track in a GPX format.
-- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Uploads](../../plugins/osm-editing.md#how-to-upload-gpx-track) the selected track to OpenStreetMap.
+- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Uploads](../../plugins/osm-editing.md#upload-gps-track) the selected track to OpenStreetMap.
 
 <br/>
 
@@ -343,7 +343,7 @@ The **Altitude** graph displays metrics such as:
 **Get elevation data.**  
 If there is *no elevation information* on the route, you can add it in the following ways:
 
-- *Calculate elevation button → [Use nearby roads](../../plan-route/create-route.md#use-nearby-roads)*. Utilizes an offline map to find nearby roads and elevation data. It allows you to customize the geometry of the track.
+- *Calculate elevation button → [Use nearby roads](../../plan-route/create-route.md#get-elevation-data)*. Utilizes an offline map to find nearby roads and elevation data. It allows you to customize the geometry of the track.
 - [Use Terrain maps](#calculate-missing-elevation). Utilizes terrain maps to obtain elevation data. The track geometry remains unchanged.
 
 
@@ -355,7 +355,7 @@ Calculate elevation offline feature is only available for [**OsmAnd Pro subscrib
 
 <InfoAndroidOnly />
 
-This feature allows you to calculate the elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../../plugins/topography.md#how-to-download). *Terrain maps (3D) should be previously downloaded*.
+This feature allows you to calculate the elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../../plugins/topography.md#download-maps). *Terrain maps (3D) should be previously downloaded*.
 
 1. Download [Terrain maps (3D)](../../plugins/topography.md#download-maps) for the required region.
 2. If the track does not contain any altitude data, go to the track context menu (*Track context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
@@ -399,10 +399,10 @@ In this *Points* tab:
 
 Waypoints can be added to the currently recorded track or to any track from [*My Places → Tracks list*](../../personal/tracks/manage-tracks.md):
 
-- Use the [map context menu](../../map/map-context-menu.md#-add--edit--track-waypoint).
+- Use the [map context menu](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint).
   - Waypoints are automatically displayed if the selected track is enabled on the map.
   - [Long tap](../../map/map-context-menu.md#select-any-point-long-tap) the map at any chosen location to create a waypoint.
-  - You can set information about the waypoint in the opened [map context menu](../../map/map-context-menu.md#-add--edit--track-waypoint).
+  - You can set information about the waypoint in the opened [map context menu](../../map/map-context-menu.md#-add--edit-track-waypoint).
 
 - Use [Add Waypoint](#points--waypoints) button of the track context menu.
 
@@ -426,7 +426,7 @@ Waypoints can be added to the currently recorded track or to any track from [*My
 
 </Tabs>
 
-Tap the *Add Waypoint* button to open waypoint creation screen (this screen is familiar with [Favorite Context menu](../../personal/favorites.md#favorite-context-menu)).
+Tap the *Add Waypoint* button to open waypoint creation screen (this screen is familiar with [Favorite Context menu](../../personal/favorites.md#create)).
 
 1. **Add** *Name* of the waypoint, *Address* of the selected location and *Description* for it (optional).
 2. **Select** Group.
@@ -608,7 +608,7 @@ To change the Waypoint description, you can go one of the following ways:
   
 1. Find the required track in the *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab* list.
 2. Tap the track on the map, if it is included in the [list of visible](../tracks/index.md#display-tracks-on-the-map).
-3. Tap the required waypoint if it is [visible](../../personal/tracks/manage-tracks.md#show-tracks-on-map) on the map.  
+3. Tap the required waypoint if it is [visible](../../personal/tracks/manage-tracks.md#track-menu) on the map.  
 
     Then in the [Tracks Context menu](./track-context-menu.md) tap *points*, the field of the required folder with available waypoints and the Waypoint you are looking for. Select menu *Actions →* **Edit GPX waypoint** and make changes. You cannot change the creation date of a point, *timestamp*, in the application.  
 
@@ -700,4 +700,4 @@ The list of actions is available at the bottom of the **Filter** or **Statistics
 - [Trip Recording plugin](../../plugins/trip-recording.md)
 - [Analyze on Map](../index.md#analyze-track-on-map)
 
-> *This article was last updated in November 2024*
+> *Last updated: November 2024*

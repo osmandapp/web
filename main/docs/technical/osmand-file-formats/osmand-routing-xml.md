@@ -12,17 +12,19 @@ Routing.xml is a configuration file that stores multiple routing profiles. Each 
 In the application you can use multiple custom routing.xml files and profiles you can select them in Settings -> Profile -> Navigation Settings -> Routing Settings.
 
 Please check the documentation inside routing.xml:
+
 - https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L24
 - Other examples https://github.com/osmandapp/OsmAnd-resources/tree/master/routing
 
 
 ### Penalties of Elevation data {#penalties-of-elevation-data}
 
-Depending on [the selected mode (Less hilly, Flat, Hilly)](../../user/navigation/routing/bicycle-based-routing#penalties-of-elevation-data#penalties-of-elevation-data) and the physical slope (%) of thse road, a penalty calculated from the height difference is added to each horizontal metre.
+
+Depending on [the selected mode (Less hilly, Flat, Hilly) of Bicycle-based routing](../../user/navigation/routing/bicycle-based-routing.md) and the physical slope (%) of thse road, a penalty calculated from the height difference is added to each horizontal metre.
 
 Explaination given as 3% 1:2 means that route with flat 2 km will be preferred over route with 3% 1 km though 3% 1km route will be preferred over route flat 2.5 km.
 
-**Table of penalties bicycle routing:** 
+**Table of penalties bicycle routing:**
 
 |                  **Option**                 |**Incline:**| &lt;1% | &lt;3%  | &lt;7% | &lt;13% | &lt;25% | &gt;=25% |**Decline:**| &lt;17% | &lt;35% | &lt;60% | &gt;=60%      |
 |:--------------------------------------------|:-----------|-----|------|-----|------|------|-------|:-----------|------|------|------|------------|
@@ -32,9 +34,9 @@ Explaination given as 3% 1:2 means that route with flat 2 km will be preferred o
 |**_Hilly_** (more difficult)                 |            | 1:61|1:19.7|1:7.5|  1:3 | 1:0.5| 1:0.3 |            | 1:6.4| 1:25 | 1:25 | impossible |
 
 
-Depending on [the selected mode (Less hilly, Flat, Hilly)](../../user/navigation/routing/pedestrian-routing.md) and the physical slope (%) of the road, a penalty calculated from the height difference is added to each horizontal metre.
+Depending on [the selected mode (Less hilly, Flat, Hilly) of Pedestrian routing](../../user/navigation/routing/pedestrian-routing.md) and the physical slope (%) of the road, a penalty calculated from the height difference is added to each horizontal metre.
 
-**Table of penalties pedestrian routing:** 
+**Table of penalties pedestrian routing:**
 
 |                  **Option**                 | **Incline:** | &lt;1% | &lt;3% | &lt;7% | &lt;13% | &lt;25% | &gt;=25% | **Decline:** | &lt;9% | &lt;17% | &lt;35% | &lt;60% | &gt;=60% |
 |:--------------------------------------------|:-------------|-----|-----|-----|------|------|-------|:-------------|-----|------|------|------|-------|

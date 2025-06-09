@@ -158,4 +158,4 @@ Some widgets offer display mode options:
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *This article was last updated in December 2024*
+> *Last updated: December 2024*

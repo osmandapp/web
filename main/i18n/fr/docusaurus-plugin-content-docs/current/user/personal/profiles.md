@@ -353,7 +353,7 @@ Le menu [<Translate android="true" ids="configure_map"/>](../map/configure-map-m
 
 Avec ce menu, vous pouvez :
 
-- **Mettre en évidence les éléments importants de la carte**, y compris les [Points favoris](../personal/favorites.md), les [Marqueurs de navigation](../personal/markers.md) ou les [Points d'intérêt](../map/point-layers-on-map.md#points-of-interest-poi) spéciaux sur la carte.
+- **Mettre en évidence les éléments importants de la carte**, y compris les [Points favoris](../personal/favorites.md), les [Marqueurs de navigation](../personal/markers.md) ou les [Points d'intérêt](../map/point-layers-on-map.md#points-of-interest-pois) spéciaux sur la carte.
 
 - **Afficher des itinéraires et des fichiers GPX spécifiques**, y compris des traces tierces pour la navigation ou l'analyse.
 
@@ -478,7 +478,7 @@ Vous pouvez contrôler le comportement de l'icône **Ma position** en utilisant 
 <InfoAndroidOnly />
 
 :::note Pour les plugins inutilisés
-Pour masquer tous les paramètres de contrôle des [plugins](../plugins/index.md#configure-a-plugin) inutilisés, désactivez-les.
+Pour masquer tous les paramètres de contrôle des [plugins](../plugins/index.md#configure-plugin) inutilisés, désactivez-les.
 :::
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*

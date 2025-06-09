@@ -779,5 +779,5 @@ The **Available RAM** widget is a tool for monitoring your device's memory usage
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in April 2025*
+> *Last updated: April 2025*
 

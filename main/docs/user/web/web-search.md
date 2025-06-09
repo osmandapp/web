@@ -124,5 +124,5 @@ Each photo contains:
 ![Photo Gallery](@site/static/img/web/poi_photo.png)
 
 
-> *This article was last updated in January 2025*
+> *Last updated: January 2025*
 

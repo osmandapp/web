@@ -252,4 +252,4 @@ Watch these short tutorials to learn how to use the Radius Ruler and related too
 - [Quick Action](./quick-action.md)
 - [Marker widgets](./markers.md)
 
-> *This article was last updated in May 2025*
+> *Last updated: May 2025*

@@ -183,9 +183,9 @@ Vous pouvez gérer les paramètres de l'application en tant que [Paramètres glo
 
 ### Comment configurer les plugins {#how-to-configure-plugins}
 
-Les [plugins](../plugins/index.md#configure-a-plugin) étendent considérablement les fonctionnalités de l'application. Presque tous les plugins ont leurs propres [Actions de carte](../map/map-context-menu.md), [Couches de carte](../map/configure-map-menu.md), [Téléchargements de carte](../start-with/download-maps.md) et [Paramètres](../plugins/#plugin-settings).
+Les [plugins](../plugins/index.md#configure-plugin) étendent considérablement les fonctionnalités de l'application. Presque tous les plugins ont leurs propres [Actions de carte](../map/map-context-menu.md), [Couches de carte](../map/configure-map-menu.md), [Téléchargements de carte](../start-with/download-maps.md) et [Paramètres](../plugins/#plugin-settings).
 
-Vous pouvez activer/désactiver les plugins via le [Menu principal](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-a-plugin).
+Vous pouvez activer/désactiver les plugins via le [Menu principal](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-plugin).
 
 <Tabs groupId="operating-systems">
 
@@ -209,7 +209,7 @@ Pour activer/désactiver les plugins, allez dans :
 
 </Tabs>
 
-[En savoir plus](../plugins/index.md#configure-a-plugin) sur les plugins OsmAnd.
+[En savoir plus](../plugins/index.md#configure-plugin) sur les plugins OsmAnd.
 
 
 ### Comment utiliser une carte {#how-to-use-a-map}
@@ -283,7 +283,7 @@ OsmAnd vous permet de faire diverses marques sur la carte pour vos besoins perso
 
 ### Comment parcourir et trouver un point d'intérêt {#how-to-browse--find-point-of-interest}
 
-Les [Points d'intérêt (POI)](../map/point-layers-on-map.md#points-of-interest-poi) sont des commodités qui peuvent être recherchées ou mises en évidence sur la carte. Ils représentent des lieux intéressants ou utiles et sont distribués dans le cadre des [Cartes vectorielles](../map/vector-maps.md). Vous pouvez les utiliser pour les [afficher sur la carte](../map/point-layers-on-map.md#points-of-interest-poi), [naviguer](../navigation/index.md) et [rechercher](../search/search-poi.md) les points d'intérêt sur la carte.
+Les [Points d'intérêt (POI)](../map/point-layers-on-map.md#points-of-interest-pois) sont des commodités qui peuvent être recherchées ou mises en évidence sur la carte. Ils représentent des lieux intéressants ou utiles et sont distribués dans le cadre des [Cartes vectorielles](../map/vector-maps.md). Vous pouvez les utiliser pour les [afficher sur la carte](../map/point-layers-on-map.md#points-of-interest-pois), [naviguer](../navigation/index.md) et [rechercher](../search/search-poi.md) les points d'intérêt sur la carte.
 
 <Tabs groupId="operating-systems">
 

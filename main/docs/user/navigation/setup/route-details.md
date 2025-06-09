@@ -347,4 +347,4 @@ The Route Details navigation section has options that allow you to perform certa
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in November 2024*
+> *Last updated: November 2024*

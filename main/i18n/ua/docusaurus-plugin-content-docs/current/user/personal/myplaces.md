@@ -145,7 +145,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **Створити трек** — Почніть запис за допомогою **Вкладки Треки** або [плагіна Запис поїздки](../plugins/trip-recording.md).
 
-- **Перегляд та редагування** — Отримайте доступ до списку треків через *Мої місця* та керуйте ними за допомогою *меню з трьома крапками* для [папок](../personal/tracks/manage-tracks.md#folder-menu) або меню [одного треку](../personal/tracks/manage-tracks.md#single-track-menu).
+- **Перегляд та редагування** — Отримайте доступ до списку треків через *Мої місця* та керуйте ними за допомогою *меню з трьома крапками* для [папок](../personal/tracks/manage-tracks.md#track-folder) або меню [одного треку](../personal/tracks/manage-tracks.md#single-track-menu).
 
 - **Керування** — Використовуйте інструменти [Фільтр](../personal/tracks/smart-folder.md#filter) та [Розумна папка](../personal/tracks/smart-folder.md#smart-folder) для організації треків за певними параметрами.
 

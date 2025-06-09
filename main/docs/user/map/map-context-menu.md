@@ -130,12 +130,11 @@ Available details include:
 
 - [Alternative names](#alternative-names)
 - [Coordinates](../map/map-context-menu.md#coordinates)
-- [Nearby Wikipedia articles](../map/map-context-menu.md#nearby-pois-wikipedia)
-- [Nearby POIs](../map/map-context-menu.md#nearby-pois-wikipedia)
+- [Nearby POIs / Wikipedia](../map/map-context-menu.md#nearby-pois--wikipedia-nearby-pois--wikipedia)
 - [Public Transport routes](../map/map-context-menu.md#public-transport-routes) (for transport stops)
 - [Favorites / Track Points from the same group](../map/map-context-menu.md#favorites--track-points-from-the-group)
 - [OpenStreetMap link](../map/map-context-menu.md#openstreetmap-link)
-- [Article image / description](../map/map-context-menu.md#article-image--description)
+- [Article image / description](../map/map-context-menu.md#article-description-article-description)
 - [Online photos](../map/map-context-menu.md#online-photos)
 
 Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstreetmap.org/wiki/Map_features), such as:
@@ -166,7 +165,7 @@ Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstr
 
 </Tabs>
 
-OsmAnd displays **additional POI names** in the *map context menu*, prioritizing the name in the [display language](../personal/global-settings.md#display-language) or the system's preferred language list. If multiple translations are available, they are grouped into categorized tags such as *name, brand, operator,* or *nearby POIs*.  
+OsmAnd displays **additional POI names** in the *map context menu*, prioritizing the name in the *display language* or the system's preferred language list. If multiple translations are available, they are grouped into categorized tags such as *name, brand, operator,* or *nearby POIs*.  
 
 Features of alternative names display:
 
@@ -233,11 +232,11 @@ OsmAnd Web Link can be automatically recognized by OsmAnd (example: `https://osm
 
 ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
 
-These sections display nearby [Wikipedia articles](../plugins/wikipedia.md) or [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois-on-the-map) with *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to display and [search](../search/search-poi.md) all other POIs & Wikipedia articles.
+These sections display nearby [Wikipedia articles](../plugins/wikipedia.md) or [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois) with *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to display and [search](../search/search-poi.md) all other POIs & Wikipedia articles.
 
 Tap *Nearby POIs / Wikipedia articles* opens a points list (POIs or Wikipedia). A tap to one of these points from a point list moves the map to this point (POIs or Wikipedia) with the opening point map context menu.
 
-> **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia)*.
+> **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia-packages-download-wikipedia-packages)*.
 
 
 ### Public Transport Routes {#public-transport-routes}
@@ -265,7 +264,7 @@ Shown info about Public transport routes for chosen transport stop. Information 
 
 ![Favorite list](@site/static/img/map/favorite_list_android.png) ![Favorite list full](@site/static/img/map/favorite_list_full_android.png)
 
-This is a list of all points in one group for a [Favorite](../map/point-layers-on-map.md#favorites-on-the-map) or Waypoint. By tapping, the entire list of points of one group expands, when tapping a point from the list, the map moves to the selected point.
+This is a list of all points in one group for a Favorite or Waypoint. By tapping, the entire list of points of one group expands, when tapping a point from the list, the map moves to the selected point.
 
 
 ### Linear Object {#linear-object}
@@ -674,7 +673,7 @@ Please read the [full instruction](../map/raster-maps.md#download--update-tiles)
 
 </Tabs>
 
-In case there is no offline map present at the selected location, for example map object menu was opened via Search or via specific Favorite, then the smallest possible offline map will be suggested to [download](../start-with/download-maps.md#download---map-context-menu).  
+In case there is no offline map present at the selected location, for example map object menu was opened via Search or via specific Favorite, then the smallest possible offline map will be suggested to [download](../start-with/download-maps.md#select-on-the-map).  
 
 **iOS**. If you already have [downloaded](../map/map-context-menu.md) OsmAnd maps (vector or terrain), it is possible to updated them via context menu. You will need to select the region on the map first - tap any location on worldwide zoom 3-7.  
 
@@ -740,7 +739,7 @@ You can add waypoints to a recorded track or to the current track recording usin
 
 - Select a location on the map with a [long tap](../map/map-context-menu.md#select-any-point-long-tap).
 - In the *map context menu* that opens, choose *Actions → Add track waypoint*.
-- The list displays the [tracks](../map/tracks/index.md#display-tracks-on-the-map) recorded and shown on the map, as well as the [current track recording](../plugins/trip-recording.md#from-widget), to which you can add the selected waypoint.
+- The list displays the [tracks](../map/tracks/index.md#display-tracks-on-the-map) recorded and shown on the map, as well as the [current track recording](../plugins/trip-recording.md), to which you can add the selected waypoint.
 - You can add waypoints to a track that is not yet active for recording, in which case the inactive track switches from the *Start state* to the *Resume state*.
 - [Fill in](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) the required data and save the waypoint.
 - You can configure the [Quick Actions](../widgets/quick-action.md) by adding a waypoint to the *Add track waypoint*.
@@ -770,8 +769,8 @@ To add create/modify POIs, enable the OsmAnd [**OSM Editing plugin**](../plugins
 
 With OSM Editing plugin, you can create and modify most of the POIs present on [OpenStreetMap](https://www.openstreetmap.org/).
 
-- &nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [creates a new POI](../plugins/osm-editing.md#how-to-add-poi) at selected location.
-- &nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [modifies selected POI](../plugins/osm-editing.md#how-to-modify-poi).
+- &nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [creates a new POI](../plugins/osm-editing.md#create--modify-poi) at selected location.
+- &nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [modifies selected POI](../plugins/osm-editing.md#create--modify-poi).
 
 
 ### * Open OSM Note {#-open-osm-note}
@@ -800,7 +799,7 @@ To add open OSM note, enable the OsmAnd [**OSM Editing plugin**](../plugins/osm-
 
 </Tabs>
 
-You can [report](../plugins/osm-editing.md#how-to-report-a-mistake) map data errors at specific location to [OpenStreetMap community](https://wiki.openstreetmap.org/wiki/Join_the_community). Please follow [guidelines](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) and add proper comments to an issue.
+You can **report** map data errors at specific location to [OpenStreetMap community](https://wiki.openstreetmap.org/wiki/Join_the_community). Please follow [guidelines](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) and add proper comments to an issue.
 
 
 ### * Comment / Close OSM Note {#-comment--close-osm-note}
@@ -873,4 +872,4 @@ Available types of actions:
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in June 2025*
+> *Last updated: June 2025*

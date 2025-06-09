@@ -123,4 +123,4 @@ The **Local Track** menu provides three panels for editing: **Info**, **Track**,
 - **Custom route profiles**. Adjust profiles to suit different activities, such as cycling or hiking.
 - **Shareable routes**. Copy and share route URLs for collaborative planning.
 
-> *This article was last updated in January 2025*
+> *Last updated: January 2025*
