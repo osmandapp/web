@@ -443,10 +443,35 @@
     padding: 14px !important;
 }
 
+.radioButtonDisabled {
+    margin-right: 2px !important;
+    color: #b3b3b3 !important;
+    padding: 14px !important;
+}
+
 .productCardContent {
     display: flex !important;
     flex-direction: column !important;
     flex-grow: 1 !important;
     width: 90% !important;
     margin-bottom: -4px !important;
+}
+
+.purchaseTypeCardUnavailable {
+    display: flex !important;
+    padding: 6px 16px !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    align-self: stretch !important;
+    border-radius: 0px 0px 5px 5px !important;
+    background: #deebff !important;
+}
+
+.purchaseTypeCardUnavailableText {
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
 }

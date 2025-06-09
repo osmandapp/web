@@ -3,6 +3,9 @@ import { ReactComponent as MapsIcon } from '../../assets/icons/ic_action_osmand_
 import { ReactComponent as ProIcon } from '../../assets/icons/ic_action_osmand_pro_logo_colored_v2.svg';
 import { ReactComponent as DecadeIcon } from '../../assets/icons/ic_action_osmand_decade_v2.svg';
 
+const PURCHASE_OSMAND_PRO = 'OsmAnd Pro';
+const PURCHASE_OSMAND_MAPS_PLUS = 'OsmAnd Maps+';
+
 export const products = [
     {
         id: 'osmand-start',
@@ -63,17 +66,20 @@ export const purchase = {
     monthly: [
         {
             id: 'osmand-pro',
+            name: PURCHASE_OSMAND_PRO,
             oldPrice: null,
             oldPriceDisplay: null,
             newPrice: '2.99',
             display: '€2.99',
             sku: 'net.osmand.fastspring.subscription.pro.monthly',
             fsName: 'osmand-pro-monthly',
+            show: true,
         },
     ],
     annual: [
         {
             id: 'osmand-pro',
+            name: PURCHASE_OSMAND_PRO,
             oldPrice: null,
             oldPriceDisplay: null,
             newPrice: '14.99',
@@ -82,20 +88,24 @@ export const purchase = {
             fsName: 'osmand-pro-annual',
             monthlyVersionId: 'osmand-pro',
             hasTestMode: true,
+            show: true,
         },
         {
             id: 'osmand-maps-plus',
+            name: PURCHASE_OSMAND_MAPS_PLUS,
             oldPrice: '29.99',
             oldPriceDisplay: '€29.99',
             newPrice: '9.99',
             display: '€9.99',
             sku: 'net.osmand.fastspring.subscription.maps.annual',
             fsName: 'osmand-maps-annual',
+            show: true,
         },
     ],
     'one-time': [
         {
             id: 'osmand-maps-plus',
+            name: PURCHASE_OSMAND_MAPS_PLUS,
             oldPrice: null,
             oldPriceDisplay: null,
             newPrice: '39.99',
@@ -103,15 +113,18 @@ export const purchase = {
             sku: 'net.osmand.fastspring.inapp.maps.plus',
             fsName: 'osmand-maps',
             hasTestMode: true,
+            show: true,
         },
         {
             id: 'osmand-decade',
+            name: PURCHASE_OSMAND_PRO,
             oldPrice: '399',
             oldPriceDisplay: '€399',
             newPrice: '249',
             display: '€249',
             sku: 'net.osmand.fastspring.inapp.pro.15y',
             fsName: 'osmand-15-years',
+            show: true,
         },
     ],
 };

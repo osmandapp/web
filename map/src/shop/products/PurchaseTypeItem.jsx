@@ -1,8 +1,10 @@
-import { Box, Radio, Typography } from '@mui/material';
+import { Box, Link, Radio, Typography } from '@mui/material';
 import { purchase } from './ProductManager';
 import styles from '../shop.module.css';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH, PURCHASES_URL } from '../../manager/GlobalManager';
+import { useNavigate } from 'react-router-dom';
 
 export default function PurchaseTypeItem({
     type,
@@ -13,6 +15,7 @@ export default function PurchaseTypeItem({
     setUpdateCardPrices,
 }) {
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const [saveBox, setSaveBox] = useState(null);
     const [purchaseObj, setPurchaseObj] = useState(null);
@@ -57,13 +60,23 @@ export default function PurchaseTypeItem({
         }
     }, [purchaseObj]);
 
+    function openPurchases() {
+        navigate({
+            pathname: MAIN_URL_WITH_SLASH + LOGIN_URL + PURCHASES_URL,
+        });
+    }
+
     if (!purchaseObj) return null;
 
     return (
         <Box
-            onClick={() => onChange(type)}
+            onClick={purchaseObj.show ? () => onChange(type) : undefined}
             className={`${styles.purchaseTypeCard} ${selected === type ? styles.selected : ''}`}
-            sx={{ display: 'flex', flexDirection: 'column' }}
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                backgroundColor: purchaseObj.show ? 'transparent' : '#f0f0f0',
+            }}
         >
             <Box
                 sx={{
@@ -93,8 +106,33 @@ export default function PurchaseTypeItem({
                     </Box>
                     {saveBox && <Typography className={styles.productTypeSale}>{saveBox}</Typography>}
                 </Box>
-                <Radio className={styles.radioButton} value={type} checked={selected === type} />
+                {purchaseObj.show ? (
+                    <Radio className={styles.radioButton} value={type} checked={selected === type} />
+                ) : (
+                    <Radio disabled={true} className={styles.radioButtonDisabled} checked={true} />
+                )}
             </Box>
+            {!purchaseObj.show && (
+                <Box
+                    className={styles.purchaseTypeCardUnavailable}
+                    sx={{
+                        display: 'inline-flex',
+                        alignItems: 'baseline',
+                        mb: '-12px',
+                    }}
+                >
+                    <Typography className={styles.purchaseTypeCardUnavailableText}>Current plan.</Typography>
+                    <Link
+                        sx={{ color: '#237BFF' }}
+                        component="button"
+                        onClick={openPurchases}
+                        underline="hover"
+                        className={styles.purchaseTypeCardUnavailableText}
+                    >
+                        Purchases
+                    </Link>
+                </Box>
+            )}
         </Box>
     );
 }

@@ -1,20 +1,25 @@
 import { Box, CircularProgress, Typography } from '@mui/material';
 import HeaderMenu from '../frame/components/header/HeaderMenu';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ProductCard from './products/ProductCard';
 import styles from './shop.module.css';
 import { useTranslation } from 'react-i18next';
 import { purchase } from './products/ProductManager';
 import EmptyLoginDialog from '../login/dialogs/EmptyLoginDialog';
 import { updatePrices } from '../login/fs/FastSpringHelper';
+import { getAccountInfo } from '../manager/LoginManager';
+import LoginContext from '../context/LoginContext';
 
 const FeaturesTable = React.lazy(() => import('./features/FeaturesTable'));
 
 export default function PricingPage() {
+    const ltx = useContext(LoginContext);
+
     const { t } = useTranslation();
 
     const [selectedProductType, setSelectedProductType] = useState('');
     const [purchasePriceMap, setPurchasePriceMap] = useState([]);
+    const [currentPurchases, setCurrentPurchases] = useState(null);
 
     const [useTestMode, setUseTestMode] = useState(false);
     const [selectedCardId, setSelectedCardId] = useState(null);
@@ -28,11 +33,21 @@ export default function PricingPage() {
     };
 
     useEffect(() => {
-        updatePrices(setPurchasePriceMap, useTestMode);
+        getAccountInfo(ltx.setAccountInfo).then((info) => {
+            const subscriptions = info?.subscriptions && JSON.parse(info.subscriptions);
+            const inAppPurchases = info?.inAppPurchases && JSON.parse(info.inAppPurchases);
+            setCurrentPurchases({ subscriptions, inAppPurchases });
+            updatePrices(setPurchasePriceMap, useTestMode);
+        });
     }, [useTestMode]);
 
     useEffect(() => {
-        if (purchasePriceMap && Object.keys(purchasePriceMap).length > 0) {
+        if (purchasePriceMap && Object.keys(purchasePriceMap).length > 0 && currentPurchases) {
+            const allPurchases = [
+                ...(currentPurchases.subscriptions || []),
+                ...(currentPurchases.inAppPurchases || []),
+            ];
+
             Object.keys(purchase).forEach((type) => {
                 purchase[type].forEach((item) => {
                     const info = purchasePriceMap[useTestMode ? 'test-' + item.fsName : item.fsName];
@@ -41,6 +56,14 @@ export default function PricingPage() {
                         item.newPrice = info.newPrice;
                         item.oldPriceDisplay = info.oldPriceDisplay;
                         item.display = info.display;
+                        if (
+                            allPurchases.find((p) => {
+                                p.type = p.type ?? 'one-time';
+                                return p.name === item.name && p.type === type;
+                            })
+                        ) {
+                            item.show = false;
+                        }
                     }
                 });
             });
