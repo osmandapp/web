@@ -35,6 +35,13 @@ The answer: **OsmAnd's custom-built Highway Hierarchy (HH) Routing.** This isn't
 | ![HH example](./img/hh.gif) | ![A2 example](./img/a2.gif) |
 
 
+:::tip Note
+
+100x speedup is achieved by comparing HH with bidirectional A*. 
+2-phase A* already uses many heuristics which don't always create an optimal route and still 5-10x slower.
+
+:::
+
 ## Why Standard Solutions Failed
 
 OsmAnd has always been about putting you in control. Our original [A* routing engine](https://en.wikipedia.org/wiki/A*_search_algorithm), configurable via [`routing.xml`](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), offered immense power. You could define intricate profiles, avoid specific road types, and truly personalize your journey. With maps optimized for minimal storage (the entire planet's car data for our new HH-routing is around a mere 800MB!), OsmAnd was a lean, mean navigating machine.
