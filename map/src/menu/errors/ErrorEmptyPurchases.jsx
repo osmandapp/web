@@ -8,9 +8,13 @@ import SimpleText from '../../frame/components/other/SimpleText';
 import React from 'react';
 import BlueButtonWithIcon from '../../frame/components/btns/BlueButtonWithIcon';
 import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { PRICING_URL } from '../../manager/GlobalManager';
 
 export default function ErrorEmptyPurchases() {
     const { t } = useTranslation();
+    const navigate = useNavigate();
+    const location = useLocation();
 
     return (
         <>
@@ -32,7 +36,12 @@ export default function ErrorEmptyPurchases() {
                 <BlueButtonWithIcon
                     icon={<ArrowIcon />}
                     text={t('shared_string_learn_more')}
-                    action={() => window.open('/docs/user/purchases', '_blank')}
+                    action={() =>
+                        navigate({
+                            pathname: '/' + PRICING_URL,
+                            hash: location.hash,
+                        })
+                    }
                 />
             </Box>
         </>

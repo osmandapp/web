@@ -1,6 +1,6 @@
 import { Box, CircularProgress, Typography } from '@mui/material';
 import HeaderMenu from '../frame/components/header/HeaderMenu';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { Suspense, useContext, useEffect, useState } from 'react';
 import ProductCard from './products/ProductCard';
 import styles from './shop.module.css';
 import { useTranslation } from 'react-i18next';
@@ -110,7 +110,9 @@ export default function PricingPage() {
                         </Box>
                     )}
                     <Typography className={styles.pricingDesc}>{t('web:notice_fastspring_purchase_info')}</Typography>
-                    <FeaturesTable />
+                    <Suspense fallback={<CircularProgress />}>
+                        <FeaturesTable />
+                    </Suspense>
                 </Box>
             </Box>
             <EmptyLoginDialog />
