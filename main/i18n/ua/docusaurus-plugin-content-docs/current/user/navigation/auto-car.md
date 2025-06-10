@@ -280,8 +280,8 @@ POI (Points of Interest) — це тип точок, які ідентифіку
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
-        <td><img src={require('@site/carplay/carplay_map_mode_day.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_landing_screen_2.png').default} alt="AA"/></td>
     </tr>
 </table>
 

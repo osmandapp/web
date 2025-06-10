@@ -201,7 +201,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![показати_тр_намапі_іос_1](@site/static/img/plugins/trip-recording/sshow_tr_onmap_ios_1.png) ![Налаштувати треки на мапі iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![показати_тр_намапі_іос_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Налаштувати треки на мапі iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
