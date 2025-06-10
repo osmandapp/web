@@ -1,9 +1,8 @@
 ---
-source-hash: a9ffdaa11402ca2b31934c154f7a475962eb31cd8ae464172943feec46310c52
+source-hash: 1a33a1b4a2dedfaff07a0bf3e3e748f9060a255db1a4b2b9c0fb3d363a38cdf0
 sidebar_position: 5
 title:  Journaux de plantage
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,6 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
 
 
 ## Aperçu {#overview}
@@ -23,7 +23,7 @@ Les journaux de plantage sont des outils de diagnostic précieux qui aident les 
 
 OsmAnd vous permet d'envoyer deux types de données aux développeurs :
 
-- **Journaux de plantage**. Générés lorsque l'application OsmAnd rencontre une erreur critique ou une exception qui la fait planter. Ces journaux fournissent des informations détaillées sur l'état de l'application pendant l'échec, y compris les données de construction, les traces de pile, les messages d'erreur et d'autres détails pertinents.
+- **Journaux de plantage**. Générés lorsque l'application OsmAnd rencontre une erreur critique ou une exception qui la fait planter. Ces journaux fournissent des informations détaillées sur l'état de l'application pendant l'échec, y compris les données de build, les traces de pile, les messages d'erreur et d'autres détails pertinents.
 - **Journaux Logcat**. Un enregistrement du flux de journaux OsmAnd capturant divers événements et messages. Ces journaux aident les développeurs à surveiller le comportement de l'application, à suivre le flux d'exécution, à tracer des actions spécifiques et à enquêter sur les problèmes non liés aux plantages. Les journaux Logcat contiennent généralement des enregistrements d'activité depuis le dernier démarrage de l'application.
 
 :::caution Vos informations privées
@@ -45,11 +45,11 @@ Soyez prudent lorsque vous envoyez des journaux logcat, car ils peuvent contenir
 1. Les journaux des appareils iOS peuvent être envoyés :
 
     - Automatiquement.
-        - Naviguez vers l'application OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
+        - Naviguez dans l'application OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
         - Ensuite, en utilisant votre application de messagerie, nous vous recommandons d'envoyer les journaux à `crash@osmand.net`.
 
     - Manuellement.
-        - Naviguez vers l'application système iOS *Fichiers → Sur mon iPhone (ou Sur mon iPad) → OsmAnd Maps → Journaux*.
+        - Naviguez dans l'application système iOS *Fichiers → Sur mon iPhone (ou Sur mon iPad) → OsmAnd Maps → Journaux*.
 
     ![Envoyer les journaux de plantage iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Envoyer les journaux de plantage iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
@@ -67,7 +67,7 @@ Soyez prudent lorsque vous envoyez des journaux logcat, car ils peuvent contenir
 Pour les utilisateurs avancés uniquement !
 :::
 
-Dans certains cas complexes ou inhabituels, des *[fichiers Tombstone](https://source.android.com/docs/core/tests/debug)* peuvent être nécessaires. Ces fichiers fournissent des traces de pile détaillées pour tous les threads d'un processus en plantage (pas seulement celui qui a causé l'erreur), une carte mémoire complète et une liste de tous les descripteurs de fichiers ouverts. Les fichiers Tombstone sont essentiels pour le débogage et le diagnostic des problèmes liés au code natif sur la plateforme Android.
+Dans certains cas complexes ou inhabituels, des *[fichiers Tombstone](https://source.android.com/docs/core/tests/debug)* peuvent être nécessaires. Ces fichiers fournissent des traces de pile détaillées pour tous les threads d'un processus en cours de plantage (pas seulement celui qui a causé l'erreur), une carte mémoire complète et une liste de tous les descripteurs de fichiers ouverts. Les fichiers Tombstone sont essentiels pour le débogage et le diagnostic des problèmes liés au code natif sur la plateforme Android.
 
 
 ### Utilisation de votre appareil {#using-your-device}
@@ -78,7 +78,7 @@ Pour exporter les fichiers tombstone, vous devez générer un rapport de bogue �
     - Allez dans *Paramètres → À propos du téléphone → Informations sur le logiciel* (ce chemin est valable pour les appareils Samsung).
     - Appuyez sept fois sur *Numéro de build* jusqu'à ce qu'une fenêtre contextuelle confirme que le mode développeur est actif.
 
-2. Allez dans *Options pour les développeurs*, généralement situé en bas de la liste des paramètres. Vous pouvez également utiliser la fonction de recherche.
+2. Allez dans *Options pour les développeurs*, généralement situées en bas de la liste des paramètres. Vous pouvez également utiliser la fonction de recherche.
     - Appuyez sur l'option *Prendre un rapport de bogue*.
     - Sélectionnez le type de rapport de bogue et appuyez sur *Rapport*.
   
@@ -102,11 +102,11 @@ Assurez-vous que les *Options pour les développeurs* sont activées (cet écran
 - Appuyez sept fois sur *Numéro de build* jusqu'à ce qu'une fenêtre contextuelle confirme que le mode développeur est actif.
 - Dans les *Options pour les développeurs*, activez le *Débogage USB*.
 
-Ensuite, connectez votre appareil à votre poste de travail via USB. Si c'est la première fois que vous vous connectez, une fenêtre contextuelle apparaîtra vous demandant l'autorisation d'autoriser le débogage.
+Ensuite, connectez votre appareil à votre poste de travail via USB. S'il s'agit de la première connexion, une fenêtre contextuelle apparaîtra demandant l'autorisation d'autoriser le débogage.
 
 #### Générer un rapport de bogue {#generate-bug-report}
 
-1. Ouvrez un terminal de ligne de commande. Sur Mac ou Linux, utilisez l'application *Terminal*, et sur Windows, utilisez la *Ligne de commande*.
+1. Ouvrez un terminal en ligne de commande. Sur Mac ou Linux, utilisez l'application *Terminal*, et sur Windows, utilisez la *Ligne de commande*.
 2. Naviguez vers le dossier platform-tools où se trouve ADB à l'aide de la commande *cd* (par exemple, « cd /Users/NomUtilisateur/Téléchargements/Outils »).
 3. Générez le rapport de bogue :
    - Sur Mac : ```adb bugreport```

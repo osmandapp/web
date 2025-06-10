@@ -1,9 +1,8 @@
 ---
-source-hash: 53846e916fc981dba0770956701a3ed446eb7685737ecf35ecb40aaeb5ba0a56
+source-hash: 14db1ff378f43e871dddc04366518dc17627a2aeb32b40272132b8334b11f558
 sidebar_position: 5
-title:  Règle de rayon et règle
+title:  Règle de rayon et Règle
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -17,9 +16,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
+
 ## Aperçu {#overview}
 
-Les outils de règle sont conçus pour vous aider à évaluer avec précision l'[échelle de la carte](https://en.wikipedia.org/wiki/Scale_(map)) et à mesurer les distances. L'outil *Règle de rayon* vous permet de définir un rayon autour de n'importe quel point sélectionné sur la carte, affichant des cercles de distance concentriques pour une référence facile. L'outil *Distance tangente* vous permet de calculer la distance entre les points sélectionnés ou de déterminer la distance jusqu'à un point spécifique sur la carte, fournissant des mesures précises pour la navigation et la planification.
+Les **outils Règle** dans OsmAnd sont conçus pour vous aider à mesurer les distances et à comprendre l'[échelle de la carte](https://en.wikipedia.org/wiki/Scale_(map)) avec précision.
+
+- L'outil **Règle** affiche une échelle de carte dynamique en unités telles que les mètres ou les pieds, vous aidant à évaluer visuellement les distances entre les objets à l'écran.
+- La **Règle de rayon** vous permet de définir un rayon à partir de n'importe quel point sur la carte, affichant des cercles concentriques qui représentent des intervalles de distance.
+- L'outil **Distance par toucher** vous permet de mesurer les distances en touchant la carte — soit à partir de votre position actuelle, soit entre deux emplacements quelconques.
+
+Ces outils sont utiles pour planifier des itinéraires, estimer la proximité de points de repère et analyser des zones — que ce soit pour des activités de plein air ou une navigation précise.
 
 ![Écran de la règle de rayon](@site/static/img/widgets/radius_ruler_screen.png)
 
@@ -42,13 +48,17 @@ Les outils de règle sont conçus pour vous aider à évaluer avec précision l'
 
 </Tabs>
 
-L'outil **Règle** fournit une représentation visuelle de l'échelle de la carte, affichant la distance en mètres, pieds ou autres unités de mesure pour un segment sur la carte. Vous pouvez trouver l'échelle affichée en bas de l'écran, ce qui permet une référence rapide pendant que vous naviguez. En règle générale, l'échelle de la carte est arrondie à un nombre pratique qui correspond approximativement à la largeur d'un pouce, ce qui facilite l'estimation des distances.
+La **Règle** affiche l'échelle actuelle de la carte sous forme de segment de ligne étiqueté avec sa longueur réelle (par exemple, 100 m ou 500 pieds), en bas de l'écran. Caractéristiques :
 
-Lorsque vous zoomez ou dézoomez, la *Règle* s'ajuste dynamiquement, vous permettant d'évaluer visuellement la taille des objets sur la carte et la distance entre eux avec une plus grande précision. Que vous mesuriez la distance entre des points de repère ou des îles, la *Règle* s'adapte pour fournir un retour d'information en temps réel sur la distance, vous assurant ainsi d'avoir toujours une idée précise de l'échelle à portée de main.
+- L'échelle s'adapte dynamiquement lorsque vous zoomez ou dézoomez.
+- Elle donne une référence visuelle pour estimer les distances réelles entre les objets sur la carte.
+- La longueur du segment est arrondie à des unités pratiques (par exemple, 100 m), correspondant approximativement à la largeur d'un pouce pour une utilisation intuitive.
+
+Cet outil est utile lorsque vous avez besoin d'une compréhension rapide de la taille des objets ou des distances sans placer de marqueurs ou d'itinéraires.
 
 | | |
 |------------|------------|
-| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>*  |
+| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
 ## Widget Règle de rayon {#radius-ruler-widget}
@@ -57,15 +67,38 @@ Lorsque vous zoomez ou dézoomez, la *Règle* s'ajuste dynamiquement, vous perme
 
 <TabItem value="android" label="Android">
 
-Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="radius_ruler_item"/>*
+
+![Position d'affichage Android](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="radius_ruler_item"/>*
+
+![Position d'affichage Android](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Le [Widget Règle de rayon](../widgets/info-widgets.md#radius-ruler) affiche la distance entre votre position actuelle (*Ma position*) et le centre de la carte. Vous pouvez également déplacer la carte pour définir n'importe quel point central personnalisé. Caractéristiques :
+
+- Afficher des cercles concentriques centrés sur le point sélectionné.
+- Le premier cercle reflète l'[échelle de la carte](#ruler) actuelle pour une référence visuelle rapide.
+- S'ajuste automatiquement lors du zoom pour maintenir des valeurs de rayon précises.
+
+Utilisez ce widget pour estimer la proximité de points d'intérêt ou planifier autour d'une zone définie.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Écran de la règle de rayon](@site/static/img/widgets/radius_ruler_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-
-Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
 
 <table class="blogimage">
     <tr>
@@ -79,10 +112,6 @@ Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,
 
 </Tabs>
 
-Le **[Widget Règle de rayon](../widgets/info-widgets.md#radius-ruler)** affiche la distance entre votre position actuelle (*Ma position*) et le centre de la carte ou un point que vous sélectionnez sur la carte, marqué comme le centre de la *Règle de rayon*. Cet outil est utile pour mesurer rapidement les distances de votre position à un point spécifique, vous aidant à évaluer la proximité de points de repère ou d'autres lieux.
-
-Le premier cercle tracé par la *Règle de rayon* correspond à l'[échelle de la carte](#ruler) actuelle, offrant une référence visuelle facile pour comprendre la zone entourant votre position. Lorsque vous ajustez le niveau de zoom, l'échelle de la carte et le rayon s'adaptent dynamiquement, offrant des mesures de distance précises de votre position au point central sur la carte.
-
 
 ## Boussole pour la règle de rayon {#compass-for-radius-ruler}
 
@@ -90,7 +119,7 @@ Le premier cercle tracé par la *Règle de rayon* correspond à l'[échelle de l
 
 <TabItem value="android" label="Android">
 
-![Règle de boussole](@site/static/img/widgets/compass_ruler.png)
+![Règle de boussole](@site/static/img/widgets/compass_ruler_andr.png)
 
 </TabItem>
 
@@ -102,46 +131,51 @@ Le premier cercle tracé par la *Règle de rayon* correspond à l'[échelle de l
 
 </Tabs>
 
-Par défaut, l'[orientation de la carte](../map/interact-with-map.md#map-orientation--compass) est affichée sous forme de cercles à côté de la règle de rayon, indiquant comment le Nord de la carte est aligné avec le haut de l'écran de votre appareil. Cela permet une navigation facile et vous permet de vous orienter dans l'espace.
+Lorsque la **Règle de rayon** est active, la carte affiche une superposition de boussole pour vous aider à vous orienter dans l'espace. La superposition montre comment la carte est alignée par rapport au Nord vrai, et peut inclure un triangle bleu indiquant la direction actuelle de l'appareil.
 
-Vous remarquerez peut-être également un **triangle bleu** qui indique la direction de la boussole. Cette fonction nécessite que la **boussole GPS** de votre appareil soit présente et activée. Lorsqu'elle est activée, cette fonction vous aide à aligner votre appareil avec la carte. Pour l'utiliser, tenez votre appareil horizontalement pour voir la direction dans laquelle il est orienté.
+- L'anneau de la boussole indique l'orientation de la carte — si le Nord est en haut ou tourné.
+- Un **triangle bleu** indique la direction dans laquelle votre appareil est orienté.
+- Pour utiliser cette fonction, l'appareil doit prendre en charge et activer un **capteur de boussole** (boussole GPS, magnétomètre).
+- Tenir l'appareil horizontalement améliore la précision et la visualisation.
+- Si le **triangle bleu** et la **flèche rouge** (Nord) pointent tous deux vers le haut, l'appareil est aligné sur le Nord vrai.
 
-
-**Astuce**. Si vous faites pivoter l'appareil de manière à ce que le *triangle bleu* et la *flèche rouge* pointent vers le haut, le haut de l'appareil sera orienté vers le Nord vrai. De plus, en faisant pivoter la carte ou l'appareil jusqu'à ce que le *triangle bleu* et la *flèche rouge* soient alignés, vous pouvez confirmer que la carte est correctement orientée pour correspondre au paysage physique qui vous entoure.
+Cette superposition est utile pour la navigation en extérieur, vous permettant de faire correspondre l'[orientation de la carte](../map/interact-with-map.md#map-orientation--compass) avec l'environnement réel.
 
 | | |
 |------------|------------|
-| Activer | **Android** : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_ruler_control"/>* |
-|   |  **iOS** : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_ruler_control"/>* |
-| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
+| Activer | **Android** : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="radius_ruler_item"/>* |
+|   |  **iOS** : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="radius_ruler_item"/>* |
+| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |
 
 
-### Position centrale / inférieure {#center--bottom-position}
+## Position centrale / inférieure {#center--bottom-position}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,always_center_position_on_map"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,display_position"/>*
 
-![Position d'affichage Android](@site/static/img/widgets/radius_ruler_display_position_android.png) ![Règle de rayon vers le bas](@site/static/img/widgets/radius_ruler_downward_android.png)
+![Position d'affichage Android](@site/static/img/widgets/radius_ruler_display_position_2_andr.png) ![Règle de rayon vers le bas](@site/static/img/widgets/radius_ruler_view_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,selected_profile,general_settings_2,always_center_position_on_map"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Autre → Position de l'emplacement à l'écran*
 
-![Position d'affichage Android](@site/static/img/widgets/radius_ruler_display_position_ios.png) ![Règle de rayon vers le bas](@site/static/img/widgets/radius_ruler_downward_ios.png)
+![Position d'affichage Android](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Règle de rayon vers le bas](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Pour étendre la portée visible de la règle de rayon, vous devez désactiver l'option *<Translate android="true" ids="always_center_position_on_map"/>*.
-Ensuite, activez le paramètre *<Translate android="true" ids="radius_ruler_item"/>* dans le menu *<Translate android="true" ids="layer_map_appearance"/>*. Une fois activé, appuyer sur le bouton de localisation déplacera l'*<Translate android="true" ids="radius_ruler_item"/>* vers le bas, vous permettant de voir une plus grande partie de la zone environnante sur la carte.
+Pour augmenter le rayon visible autour de votre emplacement, vous pouvez modifier la position de la Règle de rayon en sélectionnant l'option *Centre* ou *Bas*.
 
-### Vue 3D {#3d-view}
+Pour plus d'informations sur *la position à l'écran*, consultez l'article [Configurer l'écran](../widgets/configure-screen.md#display-position-location-position-on-screen).
+
+
+## Vue 3D {#3d-view}
 
 <Tabs groupId="operating-systems">
 
@@ -159,11 +193,39 @@ Ensuite, activez le paramètre *<Translate android="true" ids="radius_ruler_item
 
 </Tabs>
 
+Vous pouvez passer en **vue 3D** pour mieux visualiser les distances et le terrain environnant lorsque vous utilisez la Règle de rayon. Cette vue incline la carte et offre un effet de perspective qui élargit le rayon visible.
 
-Pour améliorer la portée visible de la *Règle de rayon*, appuyez sur [le bouton de localisation](../map/interact-with-map.md#my-location-and-zoom), puis [ajustez l'inclinaison de la carte pour passer en vue 3D](../map/interact-with-map.md#gestures). Cette perspective vous permet de mieux visualiser les distances et les relations entre les points sur la carte.
+- Appuyez sur [le bouton de localisation](../map/interact-with-map.md#my-location-and-zoom) pour vous concentrer sur votre position.
+- Utilisez un geste de [balayage vers le haut à deux doigts](../map/interact-with-map.md#gestures) pour incliner la carte en mode 3D.
+
+Les cercles de rayon apparaîtront avec de la profondeur, ce qui est particulièrement utile pour la planification d'itinéraires dans les zones vallonnées ou les environnements urbains où le contexte vertical est important.
 
 
-### Guides vidéo {#video-guides}
+## Distance par toucher {#distance-by-tap}
+
+![Distance entre deux points aléatoires sur la carte](@site/static/img/widgets/distance_between_two_random_points.png)
+
+L'outil **Distance par toucher** vous permet de mesurer les distances entre des points sur la carte sans utiliser la Règle de rayon ni créer d'itinéraire.
+
+Il existe deux cas d'utilisation :
+
+- **Distance de votre emplacement à un point**
+  Appuyez n'importe où sur la carte et une ligne droite apparaîtra de votre emplacement actuel au point touché, ainsi qu'une étiquette de distance. La ligne reste à l'écran même si vous appuyez ailleurs.
+
+- **Distance entre deux points quelconques**
+  Appuyez simultanément sur deux points de la carte (multi-touch). Une ligne relie les deux points et la distance mesurée est affichée.
+
+| | |
+|------------|------------|
+| Activer |  **Android :** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
+|   |  **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
+| Taille du texte (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Format des unités | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+
+
+## Guides vidéo {#video-guides}
+
+Regardez ces courts tutoriels pour apprendre à utiliser la Règle de rayon et les outils associés dans OsmAnd :
 
 <Tabs groupId="operating-systems">
 
@@ -181,26 +243,6 @@ Pour améliorer la portée visible de la *Règle de rayon*, appuyez sur [le bout
 
 </Tabs>
 
-Regardez ce guide vidéo pour une présentation étape par étape sur la façon d'utiliser efficacement l'outil *Règle de rayon*.
-
-
-## Outil Distance par appui {#distance-by-tap-tool}
-
-![Distance entre deux points aléatoires sur la carte](@site/static/img/widgets/distance_between_two_random_points.png)  
-
-**Distance de votre position à un point sur la carte**  
-Appuyez sur un point de la carte et une ligne apparaît indiquant la distance entre votre position actuelle et le point sélectionné. Cette ligne reste visible même si vous continuez à appuyer sur l'écran pour vérifier d'autres points.
-
-**Distance entre deux points sur la carte**  
-Pour mesurer la distance entre deux points, appuyez simultanément sur les deux points. La carte affichera une ligne reliant les points ainsi que la distance mesurée entre eux.
-
-| | |
-|------------|------------|
-| Activer |  **Android :** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,map_widget_distance_by_tap"/>* |
-|   |  **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,map_widget_distance_by_tap"/>* |
-| Taille du texte (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,map_widget_distance_by_tap,text_size"/>* |
-| Format des unités | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
-
 
 ## Articles connexes {#related-articles}
 
@@ -211,4 +253,4 @@ Pour mesurer la distance entre deux points, appuyez simultanément sur les deux 
 - [Action rapide](./quick-action.md)
 - [Widgets de marqueurs](./markers.md)
 
-> *Cet article a été mis à jour pour la dernière fois en septembre 2024*
+> *Dernière mise à jour : mai 2025*

@@ -1,5 +1,5 @@
 ---
-source-hash: 4ffbbec49632c587e9e909065e99b79cbe23ff033e351f6ce0d792fd6eca6226
+source-hash: 7076009c9784737dc98bf0bb08162ea069d99e967dc9fc185118a416f1b22aa5
 
 ---
 # Documentation technique {#technical-documentation}
@@ -16,7 +16,7 @@ Comment les données de carte hors ligne d'OsmAnd sont créées et comment vous 
 
 ### [Construire OsmAnd, outils et exemples SDK & API](./build-osmand/index.md) {#build-osmand-tools-and-sdk--api-samples}
 
-Si vous souhaitez réutiliser le code d'OsmAnd, créer une application exemple à l'aide de l'API d'OsmAnd ou configurer un environnement de développement complet, cette section vous guidera tout au long du processus.
+Si vous souhaitez réutiliser le code d'OsmAnd, créer un exemple d'application à l'aide de l'API d'OsmAnd ou configurer un environnement de développement complet, cette section vous guidera tout au long du processus.
 
 ### [Algorithmes, tests, internes](./algorithms/index.md) {#algorithms-testing-internals}
 

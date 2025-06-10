@@ -1,9 +1,8 @@
 ---
-source-hash: 4b17aec5038b2a6769de51050972a0b892941f6b138211b5698a0289f978b967
+source-hash: 7e3135f97cb0856e50ca46f17778ece558a18d14044f072d10d8739db6285192
 sidebar_position: 10
 title:  Guidage en ligne droite (Avion)
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,10 +12,11 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 <InfoIncompleteArticle/>
 
 
-## Aperçu {#overview}
+## Vue d'ensemble {#overview}
 
 Contrairement aux algorithmes de routage traditionnels qui utilisent des routes, des sentiers ou des itinéraires prédéfinis, le routage en ligne droite calcule la distance la plus courte entre deux points sur la carte sous la forme d'une ligne droite. Cette fonction peut être utile pour les randonneurs actifs qui souhaitent s'éloigner des sentiers ou explorer des zones reculées où les itinéraires traditionnels peuvent ne pas être disponibles. Pour les pilotes d'avions légers et les skippers de navires, l'utilisation du *type de routage en ligne droite* peut être très utile pour la navigation.
 
@@ -67,4 +67,4 @@ Le routage *en ligne droite* peut être configuré selon vos besoins dans la sec
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. La configuration correcte des paramètres vous aidera à éviter les problèmes lors de la création d'un itinéraire. Vous pouvez sélectionner l'itinéraire le plus approprié en fonction du type de véhicule et des restrictions routières, ainsi que calculer le temps de trajet.
 
-> *Cet article a été mis à jour pour la dernière fois en juin 2024*
+> *Dernière mise à jour : juin 2024*

@@ -1,9 +1,8 @@
 ---
-source-hash: e2ad787ed36896b3d30204d8bde96469c50383864d723756d324202a42b8a7c0
+source-hash: b8ecea2035993ff0e016d749492d1333c847eecc1d0377fec540b313e0961c99
 sidebar_position: 4
 title:  Rechercher des POI
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,23 +13,24 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 <InfoIncompleteArticle/>
 
 
-## Vue d'ensemble {#overview}
+## Aperçu {#overview}
 
-La fonctionnalité [Point d'intérêt (POI) d'OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) dans OsmAnd offre précision, visibilité et commodité pour trouver des lieux intéressants, des itinéraires et des services près de votre position actuelle ou d'une zone sélectionnée sur la carte.
+La fonctionnalité [Point d'intérêt (POI) d'OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) dans OsmAnd offre précision, visibilité et commodité pour trouver des lieux, des itinéraires et des services intéressants près de votre position actuelle ou d'une zone sélectionnée sur la carte.
 
-La barre de recherche vous permet de saisir des mots-clés liés aux lieux qui vous intéressent. La recherche de POI présente également une liste pratique triée par [catégorie](#poi-search-by-categories) pour vous aider à trouver rapidement ce que vous cherchez, et le [filtre](#save-new-custom-filters) vous permet de sélectionner des caractéristiques spécifiques de POI pour n'afficher que les résultats pertinents.
+La barre de recherche vous permet de saisir des mots-clés liés aux lieux qui vous intéressent. La recherche de POI présente également une liste pratique triée par [catégorie](#poi-search-by-categories) pour vous aider à trouver rapidement ce que vous cherchez, et le [filtre](#save-new-custom-filters) vous permet de sélectionner des caractéristiques spécifiques de POI pour afficher uniquement les résultats pertinents.
 
 La [recherche personnalisée](#custom-poi-search) améliore la fonctionnalité de recherche en permettant plusieurs choix de catégories et de sous-catégories. Vous pouvez enregistrer les filtres créés pour une utilisation future, ce qui facilite la localisation rapide des POI qui répondent à des critères ou préférences spécifiques. Pour plus de détails, reportez-vous à la section sur l'enregistrement des filtres personnalisés [ici](#save-new-custom-filters).
 
 OsmAnd propose plusieurs façons d'accéder à l'outil de recherche où se trouve la section **Recherche par catégories**.
 
 - Le [bouton de recherche](../widgets/map-buttons.md#search) est toujours affiché sur la carte, et en appuyant dessus, vous accédez à l'[écran général](#how-to-use) de l'outil, où vous trouverez l'onglet *Catégories*.
-- *Android* : Allez dans le *Menu principal → Rechercher → onglet Catégories*.
-- Lorsque vous vous préparez à démarrer un itinéraire, appuyez sur [*Navigation → Définir la destination → Champ de recherche → onglet Catégories*](../navigation/setup/route-navigation.md#set-target-point).
-- *Android* : Allez dans le *Menu principal → Configurer la carte → Superposition de POI → Rechercher*](../map/point-layers-on-map.md#points-of-interest-pois).
+- *Android* : Accédez au *Menu principal → Rechercher → Onglet Catégories*.
+- Lorsque vous vous préparez à démarrer un itinéraire, appuyez sur [*Navigation → Définir la destination → Champ de recherche → Onglet Catégories*](../navigation/setup/route-navigation.md#set-target-point).
+- *Android* : Accédez au *Menu principal → Configurer la carte → Superposition de POI → Rechercher*.
 
 
 ## Comment utiliser {#how-to-use}
@@ -39,13 +39,13 @@ OsmAnd propose plusieurs façons d'accéder à l'outil de recherche où se trouv
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/poi_overlay_android.png)
+![Rechercher des POI Android](@site/static/img/search/poi_overlay_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search POI iOS](@site/static/img/search/poi_overlay_ios.png)
+![Rechercher des POI iOS](@site/static/img/search/poi_overlay_ios.png)
 
 </TabItem>
 
@@ -54,7 +54,7 @@ OsmAnd propose plusieurs façons d'accéder à l'outil de recherche où se trouv
 *Tous les types de POI dans OsmAnd se trouvent ici :* [lien gitHub](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).
 
 - **Recherche de points d'intérêt (POI) :**
-    - Permet de rechercher :
+    - Vous permet de rechercher :
        - des points d'intérêt (POI) proches ou de catégories spécifiques.
        - des [itinéraires OSM](../map/routes.md).
        - des [lieux populaires (Wikipedia)](../map/map-context-menu.md#details).
@@ -73,13 +73,13 @@ OsmAnd propose plusieurs façons d'accéder à l'outil de recherche où se trouv
 
     - Le nom de la localité est affiché à côté de chaque résultat de recherche pour vous aider à identifier le bon emplacement parmi d'autres à une distance similaire de vous.
 
-    - Ce type de recherche est pratique si un point de vente au détail est spécialisé dans la vente de biens ou de services d'une seule marque ou si la marque elle-même est mieux connue et plus reconnaissable que le nom ou la catégorie du POI.
+    - Ce type de recherche est pratique à utiliser si un point de vente au détail est spécialisé dans la vente de biens ou de services d'une seule marque ou si la marque elle-même est mieux connue et plus reconnaissable que le nom ou la catégorie du POI.
 
     - Pour effectuer une recherche, la balise `brand` et les noms de marque doivent être ajoutés à la description du POI.
 
     - Exemple de magasin de voitures : *Type de POI* - Concessionnaire automobile, *nom* - Octo Automobile, [***nom de la marque***](https://wiki.openstreetmap.org/wiki/Key:brand) - Audi, BMW, Fiat, Jaguar, Land Rover.
 
-    ![Search POI Android](@site/static/img/search/brand_search_andr.png)
+    ![Rechercher des POI Android](@site/static/img/search/brand_search_andr.png)
 
 
 :::note
@@ -93,13 +93,13 @@ Pour accomplir certaines de ces tâches (localiser des adresses, des POI), vous 
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![Rechercher des POI Android](@site/static/img/search/search_poi_categoties_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search POI iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
+![Rechercher des POI iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
 
 </TabItem>
 
@@ -111,7 +111,7 @@ Comment ça marche :
 
 - *Sélection de catégorie* - Vous sélectionnez la catégorie qui vous intéresse, comme les restaurants, les hôtels, les magasins, les itinéraires OSM, les lieux populaires de Wikipedia et autres, dans une liste de catégories suggérées.
 - *Filtres de caractéristiques* - Après avoir sélectionné une catégorie, l'application affiche des caractéristiques supplémentaires qui peuvent être utilisées pour affiner la recherche. Par exemple, pour la catégorie Restaurants, vous pouvez sélectionner des filtres tels que le type de cuisine (italienne, chinoise, etc.), la fourchette de prix, l'évaluation et la disponibilité du stationnement.
-- *Application des filtres* - Vous sélectionnez les valeurs requises dans les filtres, puis l'application applique ces filtres aux résultats de la recherche pour n'afficher que les propriétés qui correspondent aux caractéristiques spécifiées.
+- *Application des filtres* - Vous sélectionnez les valeurs requises dans les filtres, puis l'application applique ces filtres aux résultats de la recherche pour afficher uniquement les propriétés qui correspondent aux caractéristiques spécifiées.
 - *Affichage des résultats* - Après avoir appliqué les filtres, OsmAnd affiche une liste avec de brèves informations correspondant à la catégorie et aux caractéristiques définies.
 
 Avantages :
@@ -123,7 +123,7 @@ Avantages :
 <!--
 La recherche de catégorie de POI vous permet de trouver et de sélectionner rapidement des lieux d'intérêt en fonction de vos besoins. C'est un outil pratique pour voyager, trouver des services ou des lieux d'intérêt à proximité, et planifier des itinéraires en fonction des catégories de POI sélectionnées.
 
-OsmAnd commence à trouver les noms et les catégories de POI par les mots saisis. Les premiers résultats seront des catégories, les deuxièmes résultats seront des POI avec des informations supplémentaires, le nom complet, le nom de la catégorie, la direction et la distance du POI, les heures d'ouverture. En appuyant sur la catégorie souhaitée, la liste des POI de cette catégorie s'ouvre.
+OsmAnd commence à trouver les noms et les catégories de POI par les mots saisis. Les premiers résultats seront des catégories, les deuxièmes résultats seront des POI avec des informations supplémentaires, le nom complet, le nom de la catégorie, la direction et la distance jusqu'au POI, les heures d'ouverture. En appuyant sur la catégorie souhaitée, la liste des POI de cette catégorie s'ouvre.
 
 En appuyant sur le POI choisi dans la liste, le [menu contextuel de la carte](../map/map-context-menu.md#select-an-object-single-tap) du POI s'ouvre.
 -->
@@ -134,13 +134,13 @@ En appuyant sur le POI choisi dans la liste, le [menu contextuel de la carte](..
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/search_poi_filter_andr.png)
+![Rechercher des POI Android](@site/static/img/search/search_poi_filter_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search POI iOS](@site/static/img/search/search_poi_filter_ios.png)
+![Rechercher des POI iOS](@site/static/img/search/search_poi_filter_ios.png)
 
 </TabItem>
 
@@ -152,32 +152,32 @@ Avec la fonction **Filtre**, vous pouvez sélectionner les caractéristiques né
 - Sur l'écran qui s'ouvre, appuyez sur l'icône qui affiche le filtre. Elle se trouve sous le champ de saisie, à côté de *Afficher sur la carte*.
 - Dans le filtre, sélectionnez le type de caractéristiques.
 
-![Search POI Android](@site/static/img/search/search_poi_filter_icon_andr.png)
+![Rechercher des POI Android](@site/static/img/search/search_poi_filter_icon_andr.png)
 
-Un filtre peut être composé d'un grand nombre d'éléments, dont la présence dépend de la catégorie sélectionnée. Chaque catégorie possède un certain nombre de filtres qui lui sont propres, organisés en dossiers par type. Il existe un total de *22 catégories par défaut*. Certaines d'entre elles sont listées ici :
+Un filtre peut contenir un grand nombre d'éléments, dont la présence dépend de la catégorie sélectionnée. Chaque catégorie possède un certain nombre de filtres spécifiques, organisés en dossiers par type. Il existe un total de *22 catégories par défaut*. Certaines d'entre elles sont listées ici :
 
  1. **<Translate android="true" ids="poi_filter_accomodation"/>**. [Hébergement](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation) comprend les établissements qui proposent un hébergement temporaire tels que les hôtels, les motels, les auberges de jeunesse, les maisons d'hôtes et les campings. Ces lieux offrent des commodités et des services pour un séjour confortable en voyage.
         Comprend *9* types de filtres : **Réfrigérateur** (a *2* valeurs), **Chauffage** (a *7* valeurs), **Type d'accès Internet** (a *3* valeurs), **Matelas** (a *2* valeurs), **Type de paiement** (plus de *10* valeurs), **Douche** (a *1* valeur), **Fumer** (a *6* valeurs), **Classement par étoiles** (a *10* valeurs), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24h/24 et 7j/7.
 
  2. **Café et restaurant**. [Café](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) et [restaurants](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) représentent des lieux de restauration.
-        Comprend *16* types de filtres : **Table à langer** (a *3* valeurs), **Café** (a *2* valeurs), **Cuisine** (plus de *10* valeurs), **Livraison** (a *1* valeur), **Régime** (a *8* valeurs), **Plat** (plus de *10* valeurs), **Recharge d'eau potable** (a *1* valeur), **Drive-in** (a *1* valeur), **Type d'accès Internet** (a *3* valeurs), **Microbrasserie** (a *1* valeur), **Produits biologiques** (a *2* valeurs), **Places assises à l'extérieur** (a *1* valeur), **Type de paiement** (plus de *10* valeurs), **Fumer** (a *6* valeurs), **À emporter** (a *1* valeur), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24h/24 et 7j/7.
+        Comprend *16* types de filtres : **Table à langer** (a *3* valeurs), **Café** (a *2* valeurs), **Cuisine** (plus de *10* valeurs), **Livraison** (a *1* valeur), **Régime** (a *8* valeurs), **Plat** (plus de *10* valeurs), **Recharge d'eau potable** (a *1* valeur), **Drive-in** (a *1* valeur), **Type d'accès Internet** (a *3* valeurs), **Microbrasserie** (a *1* valeur), **Produits biologiques** (a *2* valeurs), **Terrasse** (a *1* valeur), **Type de paiement** (plus de *10* valeurs), **Fumer** (a *6* valeurs), **À emporter** (a *1* valeur), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24h/24 et 7j/7.
 
  3. **Station de recharge**. Une [station de recharge](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) est une infrastructure où les propriétaires de véhicules électriques peuvent recharger leurs voitures, motos ou autres véhicules électriques. Ces points fournissent des chargeurs et des connexions appropriées pour fournir de l'énergie aux batteries des véhicules.
         Comprend *35* types de filtres : **Accès vélo** (a *1* valeur), **Accès bus** (a *1* valeur), **Accès poids lourds** (a *5* valeurs), **Accès voiture** (a *1* valeur), **Accès scooter** (a *1* valeur), **Authentification par application** (a *1* valeur), **Authentification par carte à puce** (a *1* valeur), **Authentification sans contact** (a *1* valeur), **Authentification par clé** (a *1* valeur), **Authentification requise** (a *1* valeur), **Authentification par appel téléphonique** (a *1* valeur), **Authentification par message court** (a *1* valeur), **Frais** (a *2* valeurs), **Type d'accès Internet** (a *3* valeurs), **Type d'accès Internet** (a *3* valeurs), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24h/24 et 7j/7, et autres.
 
- 4. **Magasin de proximité et supermarché**. [Magasin de proximité](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) et [supermarché](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) représentent des établissements de vente au détail.
+ 4. **Dépanneur et supermarché**. [Dépanneur](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) et [supermarché](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) représentent des établissements de vente au détail.
         Comprend *13* types de filtres : **Achat en gros** (a *2* valeurs), **Retrait d'espèces** (a *5* valeurs), **Table à langer** (a *3* valeurs), **Café** (a *2* valeurs), **Livraison** (a *1* valeur), **Régime** (a *8* valeurs), **Glace** (a *1* valeur), **Produits biologiques** (a *2* valeurs), **Type de paiement** (plus de *10* valeurs), **Filtre d'occasion** (a *2* valeurs), **Caisse automatique** (a *2* valeurs), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24h/24 et 7j/7.
 
- 5. **<Translate android="true" ids="poi_filter_emergency"/>**. [Urgence](https://wiki.openstreetmap.org/wiki/Key:emergency) comprend les installations et les lieux associés aux services d'urgence tels que les hôpitaux, les postes de police, les casernes de pompiers et les centres médicaux de premiers secours.
+ 5. **<Translate android="true" ids="poi_filter_emergency"/>**. [Urgence](https://wiki.openstreetmap.org/wiki/Key:emergency) comprend les établissements et les lieux associés aux services d'urgence tels que les hôpitaux, les postes de police, les casernes de pompiers et les centres médicaux de premiers secours.
         Ne contient aucun filtre.
 
  6. **Station-service**. Une [station-service](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), également connue sous le nom de station de remplissage, station d'essence, station-service et garage d'essence. C'est l'établissement de type commerce de détail où les véhicules à moteur peuvent être ravitaillés.
-        Comprend *13* types de filtres : **Lavage de voiture** (a *2* valeurs), **Retrait d'espèces** (a *5* valeurs), **Air comprimé** (a *1* valeur), **Type de carburant (avia)** (a plus de *20* valeurs), **Cartes de carburant** (a *5* valeurs), **Type de paiement** (a plus de *20* valeurs), **Caisse automatique** (a *2* valeurs), **Accès motoneige** (a *3* valeurs), **Toilettes** (plus de *1* valeur), **Aspirateur** (a *1* valeur), **Distributeur de carburant automatique** (a *1* valeur), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24h/24 et 7j/7.
+        Comprend *13* types de filtres : **Lavage de voiture** (a *2* valeurs), **Retrait d'espèces** (a *5* valeurs), **Air comprimé** (a *1* valeur), **Type de carburant (avia)** (a plus de *20* valeurs), **Cartes carburant** (a *5* valeurs), **Type de paiement** (a plus de *20* valeurs), **Caisse automatique** (a *2* valeurs), **Accès motoneige** (a *3* valeurs), **Toilettes** (plus de *1* valeur), **Aspirateur** (a *1* valeur), **Distributeur de carburant automatique** (a *1* valeur), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24h/24 et 7j/7.
 
  7. **Finance**. [Finance](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) utilisé pour les bureaux d'entreprises du secteur financier.
         Comprend *5* types de filtres.
 
- 8. **Alimentation**. [Alimentation](https://wiki.openstreetmap.org/wiki/Category:Food_and_beverages) comprend tous les lieux proposant de la nourriture et des boissons.
+ 8. **Alimentation**. [Alimentation](https://wiki.openstreetmap.org/wiki/Category:Food_and_beverages) comprend tous les lieux de livraison de nourriture et de boissons.
         Comprend *24* types de filtres.
 
  9. **Santé**. [Santé](https://wiki.openstreetmap.org/wiki/Healthcare) comprend les services fournis par différents professionnels dans différents types d'établissements.
@@ -192,7 +192,7 @@ Un filtre peut être composé d'un grand nombre d'éléments, dont la présence 
  12. **<Translate android="true" ids="poi_filter_closest_poi"/>**. Comprend les POI qui sont proches de vous.
         Comprend *216* types de filtres.
 
- 13. **<Translate android="true" ids="poi_filter_parking"/>**. [Parking](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) comprend les installations utilisées par le public, les clients ou d'autres utilisateurs autorisés pour garer des véhicules tels que des voitures et des camions, communément appelées parking (anglais britannique) ou parking lot (anglais américain).
+ 13. **<Translate android="true" ids="poi_filter_parking"/>**. [Parking](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) comprend les installations utilisées par le public, les clients ou d'autres utilisateurs autorisés pour garer des véhicules tels que des voitures et des camions, communément appelées parking (anglais britannique) ou parking (anglais américain).
         Comprend *34* types de filtres.
 
  14. **Transport personnel**. Tous les [types de véhicules](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) peuvent être en votre possession.
@@ -210,7 +210,7 @@ Un filtre peut être composé d'un grand nombre d'éléments, dont la présence 
  18. **Itinéraires**. Comprend les [itinéraires OSM](../map/routes.md) pour divers types d'activités.
         Comprend *14* types de filtres : **Point de contrôle**, **Nœud de réseau cyclable**, **Nœud de réseau de randonnée**, **Réseau d'itinéraires (cyclisme)**, **Réseau d'itinéraires (randonnée)**, **Catégorie de point d'itinéraire**, **Sports aériens**, **Cyclisme**, **Conduite**, **À pied**, **Motocyclisme**, **Autres itinéraires**, **Sports nautiques**, **Sports d'hiver**.
 
- 19. **Tourisme**. C'est une activité dans laquelle les gens visitent des lieux ou des sites intéressants pour se familiariser avec eux et profiter de leur beauté, de leur histoire ou de leur signification.
+ 19. **Tourisme**. C'est une activité dans laquelle les gens visitent des lieux ou des sites intéressants pour se familiariser avec eux et profiter de leur beauté, de leur histoire ou de leur importance.
         Comprend *8* types de filtres.
 
  20. **Sport**. Comprend les zones pour les activités sportives.
@@ -232,13 +232,13 @@ Un filtre peut être composé d'un grand nombre d'éléments, dont la présence 
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/search_poi_rearrange_andr.png)
+![Rechercher des POI Android](@site/static/img/search/search_poi_rearrange_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search POI iOS](@site/static/img/search/search_poi_rearrange_ios.png)
+![Rechercher des POI iOS](@site/static/img/search/search_poi_rearrange_ios.png)
 
 </TabItem>
 
@@ -252,18 +252,18 @@ Description et mode d'emploi :
 - Les modifications apportées à la liste des catégories sont effectuées pour chaque profil séparément.
 - Déplacez les catégories en les faisant glisser et en les déposant à la bonne position dans la liste.
 - *Pour masquer* les catégories inutiles, appuyez sur l'icône **moins**.
-- **Disponible**. Les catégories précédemment *masquées* peuvent être réintégrées dans la liste affichée en appuyant sur l'icône **plus**.
+- **Disponible**. Les catégories précédemment *masquées* peuvent être renvoyées à la liste affichée en appuyant sur l'icône **plus**.
 - Utilisez le bouton **Réinitialiser** pour rétablir la liste à l'état prédéfini.
-- Les catégories créées avec la [recherche personnalisée](#custom-poi-search) ou les [filtres](#save-new-custom-filters) peuvent être supprimées à l'aide de l'icône **Supprimer**.
+- Les catégories créées avec [Recherche personnalisée](#custom-poi-search) ou [Filtres](#save-new-custom-filters) peuvent être supprimées à l'aide de l'icône **Supprimer**.
 
-![Search POI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)
+![Rechercher des POI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)
 
 
 ### Recherche en ligne {#online-search}
 
 <InfoAndroidOnly />
 
-![Search POI Android](@site/static/img/search/search_online_2_andr.png)
+![Rechercher des POI Android](@site/static/img/search/search_online_2_andr.png)
 
 La **recherche en ligne** permet de trouver des lieux, des adresses et des points d'intérêt en temps réel. OsmAnd utilise [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), un géocodeur en ligne développé par OpenStreetMap qui traduit les requêtes textuelles des utilisateurs en coordonnées géographiques et inversement ([*exemple*](#example-of-online-search-query)).
 
@@ -271,8 +271,8 @@ La recherche en ligne comprend les fonctionnalités suivantes :
 
 1. **Recherche par lieu** - Vous pouvez saisir le nom d'une ville, d'une rue, d'un quartier ou d'un autre lieu et OsmAnd fournira des résultats correspondant à la requête.
 2. **Géocodage** - La recherche en ligne convertit vos requêtes textuelles en coordonnées géographiques, permettant une localisation précise.
-3. **Géocodage inverse** - Vous pouvez saisir des coordonnées géographiques et la recherche renverra l'emplacement correspondant sous forme de nom de ville, de nom de rue ou de lieu sur la carte.
-4. **Recherche par points d'intérêt** - Permet de rechercher différents points par nom ou par catégorie.
+3. **Géocodage inversé** - Vous pouvez saisir des coordonnées géographiques et la recherche renverra le lieu correspondant sous forme de nom de ville, de nom de rue ou de lieu sur la carte.
+4. **Recherche par points d'intérêt** - Vous permet de rechercher différents points par nom ou par catégorie.
 
 Utilisation de la recherche en ligne :
 
@@ -280,10 +280,10 @@ Utilisation de la recherche en ligne :
 - Elle offre une large couverture de lieux et d'objets, vous permettant de trouver des lieux d'intérêt dans différentes régions du monde.
 - Les recherches en ligne sont en temps réel, offrant un accès rapide aux résultats de la recherche.
 - Utile dans les villes et sur les autoroutes avec une bonne couverture Internet.
-- La recherche en ligne est pratique si vous n'avez pas de cartes de la région et s'il est impossible de les télécharger.
+- La recherche en ligne est pratique à utiliser s'il n'y a pas de cartes de la région et s'il est impossible de les télécharger.
 - *Nécessite une connexion Internet constante et stable.*
 
-![Search POI Android](@site/static/img/search/search_poi_online_increase2_andr.png)
+![Rechercher des POI Android](@site/static/img/search/search_poi_online_increase2_andr.png)
 
 Pour améliorer les résultats, avant d'utiliser l'outil de recherche, zoomez sur la carte pour vous rapprocher de l'endroit où vous devez trouver un lieu spécifique. Et pendant la recherche, vous pouvez **augmenter le rayon de recherche** pour trouver des lieux plus éloignés de votre position. Lors d'une recherche hors ligne, si les résultats requis ne sont pas disponibles, OsmAnd suggère d'utiliser la recherche en ligne.
 
@@ -298,7 +298,7 @@ Vous pouvez trouver des informations sur la navigation en ligne dans l'article [
 
 ## Recherche de POI personnalisée {#custom-poi-search}
 
-La recherche de POI personnalisée est une fonctionnalité de recherche avancée qui vous permet de trouver des POI de différentes catégories et de les combiner pour une recherche plus précise et personnalisée. Contrairement à la recherche de POI standard, qui est limitée à certaines catégories prédéfinies, la recherche de POI personnalisée offre la flexibilité de sélectionner et de combiner différents types de POI.
+La recherche de POI personnalisée est une fonction de recherche avancée qui vous permet de trouver des POI de différentes catégories et de les combiner pour une recherche plus précise et personnalisée. Contrairement à la recherche de POI standard, qui est limitée à certaines catégories prédéfinies, la recherche de POI personnalisée offre la flexibilité de sélectionner et de combiner différents types de POI.
 
 Par exemple, vous pouvez rechercher des restaurants et des pharmacies simultanément pour trouver l'endroit le plus proche pour dîner, puis prendre vos médicaments. Ou rechercher la station-service et le service automobile les plus proches lorsque vous avez un problème avec votre voiture.
 
@@ -314,27 +314,27 @@ Cette fonctionnalité est particulièrement utile dans divers cas :
 
 <TabItem value="android" label="Android">
 
-![Custom search Android](@site/static/img/search/search_custom_filter_andr.png) ![Custom search Android](@site/static/img/search/search_custom_filter_second_andr.png)
+![Recherche personnalisée Android](@site/static/img/search/search_custom_filter_andr.png) ![Recherche personnalisée Android](@site/static/img/search/search_custom_filter_second_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 <!--
-![Custom POI iOS](@site/static/img/search/custom_poi_ios.png)   ![Custom POI types iOS](@site/static/img/search/custom_poi_types_ios.png)
+![POI personnalisé iOS](@site/static/img/search/custom_poi_ios.png) ![Types de POI personnalisés iOS](@site/static/img/search/custom_poi_types_ios.png)
 -->
 
-![Custom POI iOS](@site/static/img/search/custom_poi_filter_1_ios.png) ![Custom POI types iOS](@site/static/img/search/custom_poi_filter_2_ios.png)
+![Filtre de POI personnalisé iOS](@site/static/img/search/custom_poi_filter_1_ios.png) ![Types de POI personnalisés iOS](@site/static/img/search/custom_poi_filter_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Le *filtre de POI personnalisé* comprend des ensembles de catégories de commodités composées de valeurs pertinentes. OsmAnd vous permet de collecter et de combiner les types de POI requis à partir d'une ou plusieurs catégories suggérées.
+Le *filtre de POI personnalisé* comprend des ensembles de catégories d'équipements composés de valeurs pertinentes. OsmAnd vous permet de collecter et de combiner les types de POI requis à partir d'une ou plusieurs catégories suggérées.
 
 Pour créer des filtres personnalisés pour trouver des lieux sur la carte, sélectionnez les catégories et sous-catégories pertinentes qui vous intéressent. Vous pouvez [enregistrer](#save-new-custom-filters) ces filtres pour une utilisation ultérieure ou les [modifier](#edit-an-existing-filter) si nécessaire. Alternativement, vous pouvez afficher les données filtrées sans enregistrer en appuyant sur le bouton *Afficher*. Cependant, notez que si vous n'enregistrez pas les filtres, toutes les sélections seront annulées une fois que vous changerez de recherche ou quitterez l'outil de recherche.
 
-- Chaque catégorie de commodité contient une liste de valeurs génériques disponibles pour les types de POI.
+- Chaque catégorie d'équipement contient une liste de valeurs génériques disponibles pour les types de POI.
 - Vous avez la possibilité de les sélectionner ou de les désélectionner individuellement en appuyant sur le champ du type qui vous intéresse.
 - *Tout sélectionner* - Pour ce faire, sélectionnez le bouton bascule.
 - Affinez la liste en excluant les éléments inutiles - Commencez à taper le nom suggéré dans le champ *Rechercher des types de POI*.
@@ -395,7 +395,7 @@ Pour créer des filtres personnalisés pour trouver des lieux sur la carte, sél
 Disponible pour la recherche :
 
 - Les POI religieux basés sur la balise `amenity=place_of_worship` sont divisés en lieux religieux spécifiques tels que les églises, les mosquées ou les synagogues.
-- Les commodités mineures telles que "banc", "banc pour jeunes" (`amenity=bench`) sont disponibles dans la liste des catégories.
+- Les équipements mineurs tels que "banc", "banc pour jeunes" (`amenity=bench`) sont disponibles dans la liste des catégories.
 :::
 -->
 
@@ -406,13 +406,13 @@ Disponible pour la recherche :
 <TabItem value="android" label="Android">
 
 
-![Custom POI save Android](@site/static/img/search/custom_poi_save_android.png) ![Custom POI save Android](@site/static/img/search/custom_poi_save_1_android.png)
+![Enregistrer POI personnalisé Android](@site/static/img/search/custom_poi_save_android.png) ![Enregistrer POI personnalisé Android](@site/static/img/search/custom_poi_save_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Custom POI save iOS](@site/static/img/search/custom_poi_save_2_ios.png)
+![Enregistrer POI personnalisé iOS](@site/static/img/search/custom_poi_save_2_ios.png)
 
 </TabItem>
 
@@ -421,13 +421,12 @@ Disponible pour la recherche :
 Pour **enregistrer** un filtre personnalisé, sélectionnez les types de filtres, puis :
 
 - Appuyez sur le bouton *Afficher* et sélectionnez le bouton *Enregistrer* pour iOS ou le bouton avec l'*icône indiquant l'action d'enregistrement* pour Android.
-- Saisissez un nom pour la nouvelle catégorie.
+- Entrez un nom pour la nouvelle catégorie.
 - Votre filtre apparaîtra dans la liste de l'*onglet Catégories* dans l'outil de recherche.
 
 Une autre façon d'**enregistrer** :
 
 - Sélectionnez *[catégorie](#poi-search-by-categories) → [icône de filtre](#types-of-filters) →* sélectionnez les *types* de caractéristiques *→ menu à trois points → Enregistrer le filtre*.
-
 
 ### Modifier un filtre existant {#edit-an-existing-filter}
 
@@ -435,13 +434,13 @@ Une autre façon d'**enregistrer** :
 
 <TabItem value="android" label="Android">
 
-![Custom POI delete Android](@site/static/img/search/custom_poi_delete_5_andr.png)
+![Supprimer POI personnalisé Android](@site/static/img/search/custom_poi_delete_5_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_4_ios.png)
+![Supprimer POI personnalisé iOS](@site/static/img/search/custom_poi_delete_4_ios.png)
 
 </TabItem>
 
@@ -456,8 +455,7 @@ Depuis l'écran principal :
 - Appuyez sur le *menu à trois points*.
 - Dans le menu déroulant, sélectionnez **Modifier le filtre**.
 - Pour enregistrer une recherche de POI personnalisée après modification :
-    - Sélectionnez les catégories de POI et les types de filtres pour celles-ci *→* appuyez sur *Afficher → menu à trois points → Enregistrer sous →* saisissez un nouveau nom de filtre ou *enregistrez* les modifications apportées au filtre actuel.
-
+    - Sélectionnez les catégories de POI et les types de filtres pour celles-ci *→* appuyez sur *Afficher → menu à trois points → Enregistrer sous →* entrez un nouveau nom de filtre ou *enregistrez* les modifications apportées au filtre actuel.
 
 ### Supprimer un filtre de POI personnalisé {#delete-custom-poi-filter}
 
@@ -465,13 +463,13 @@ Depuis l'écran principal :
 
 <TabItem value="android" label="Android">
 
-![Custom POI delete Android](@site/static/img/search/custom_poi_delete_4_andr.png)
+![Supprimer POI personnalisé Android](@site/static/img/search/custom_poi_delete_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_2_ios.png)
+![Supprimer POI personnalisé iOS](@site/static/img/search/custom_poi_delete_2_ios.png)
 
 </TabItem>
 
@@ -479,23 +477,21 @@ Depuis l'écran principal :
 
 Vous ne pouvez supprimer que les catégories qui ont été créées à l'aide de filtres ou de la recherche personnalisée.
 
-- Allez dans l'onglet [Catégories](#poi-search-by-categories) et sélectionnez celle requise.
+- Accédez à l'onglet [Catégories](#poi-search-by-categories) et sélectionnez celle requise.
 - Dans le champ à côté de *Afficher sur la carte*, appuyez sur l'icône représentant le *filtre*.
 - Dans le menu *Filtres*, appuyez sur le *menu à trois points* ( &#8285; ) situé dans le coin supérieur droit de l'écran.
 - Sélectionnez **Supprimer le filtre**.
 - ***Vous ne pouvez pas annuler la suppression.***
 
-
 #### Supprimer les catégories personnalisées (iOS) {#delete-custom-categories-ios}
 
-![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_3_ios.png)
+![Supprimer POI personnalisé iOS](@site/static/img/search/custom_poi_delete_3_ios.png)
 
 Une option supplémentaire uniquement pour l'application iOS est **Supprimer les catégories personnalisées**.
 
 - Cet élément se trouve à la fin de la liste de l'onglet *Catégories*.
 - Sélectionnez les catégories inutiles une par une ou *Tout sélectionner*.
 - Appuyez sur le bouton **Supprimer**.
-
 
 ## Articles connexes {#related-articles}
 
@@ -505,4 +501,4 @@ Une option supplémentaire uniquement pour l'application iOS est **Supprimer les
 - [Rechercher des coordonnées](./search-coordinates.md)
 
 
-> *Cet article a été mis à jour pour la dernière fois en mai 2025*
+> *Dernière mise à jour : mai 2025*

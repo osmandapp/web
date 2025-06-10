@@ -1,9 +1,8 @@
 ---
-source-hash: 3dc80d47d56339f3dcd63ac184ca7d66dff86666dcc29b69beb1322effd4a594
+source-hash: 51654f0372d25b1e23ebe1fe1f87693cdca3c6347b3cbd054f37d07a1e769578
 sidebar_position: 3
 title:  Paramètres globaux
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -17,7 +16,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Vue d'ensemble {#overview}
+
+## Aperçu {#overview}
 
 Les **paramètres globaux** sont des [paramètres](../personal/profiles.md) généraux pour tous les profils de l'application OsmAnd. Ce sont les paramètres de base du système OsmAnd, et toute modification apportée affectera l'ensemble de l'application.
 
@@ -67,13 +67,13 @@ Cette section contient les paramètres de base d'OsmAnd, tels que la sélection 
 
 OsmAnd utilise le profil par défaut, *Parcourir la carte*, comme premier profil pour les nouveaux utilisateurs, et si ce profil a été sélectionné par vous, il sera utilisé à chaque redémarrage de l'application. Vous pouvez sélectionner n'importe quel profil dans la liste par défaut, y compris *Dernier utilisé* et *Parcourir la carte*.
 
-- **<Translate android="true" ids="shared_string_last_used"/>**. Permet de sélectionner le profil qui a été utilisé en dernier.
+- **<Translate android="true" ids="shared_string_last_used"/>**. Vous permet de sélectionner le profil qui a été utilisé en dernier.
 - **<Translate android="true" ids="settings_preset"/>**. Vous sélectionnez le profil à utiliser au démarrage d'OsmAnd. Il peut être modifié dans les [paramètres](../personal/profiles.md) de l'application.  
 
 
 ### Profil CarPlay {#carplay-profile}
 
-:::caution iOS SEULEMENT
+:::caution iOS UNIQUEMENT
 Cette fonctionnalité est disponible pour la version iOS de l'application OsmAnd.
 :::
 
@@ -100,7 +100,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
     - *Mémoire interne de l'application*. Seule l'application OsmAnd a accès à ses données et aucune des applications externes.
     - *Mémoire partagée*. N'est plus disponible.
-    - *Stockage externe 1*. Seule 1 application OsmAnd a accès et les applications Admin et USB.
+    - *Stockage externe 1*. Seule 1 application OsmAnd a accès, ainsi que les applications d'administration et USB.
     - *Stockage multi-utilisateur*. Seule 1 application OsmAnd a accès, mais elle est partagée entre plusieurs utilisateurs Android.
     - *Spécifié manuellement*. Dépend du chemin.
 
@@ -143,7 +143,7 @@ Aller à : *Fichiers → Sur mon iPhone → OsmAnd Maps*
 | Fonctionnalités | Version 1 | Version 2 (OpenGL) |
 |:---|:--- |:--- |
 | Multiplateforme | Non utilisé dans la version iOS. | Convient aux deux versions. |
-| Dépendance GPU / CPU | Recommandé pour les appareils peu performants ou obsolètes. | Moteur de rendu puissant. <br /> Uniquement disponible pour [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) et les versions ultérieures, et en mode test pour [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| Dépend du GPU / CPU | Recommandé pour les appareils peu performants ou obsolètes. | Moteur de rendu puissant. <br /> Uniquement disponible pour [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) et les versions ultérieures, et en mode test pour [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
 | Mode 3D | Il est possible de visualiser la carte en 2D, et vous pouvez modifier l'angle de vue pour obtenir une [vue 3D](../widgets/map-buttons.md#3d-mode). | Vous pouvez visualiser la carte en 2D et en [3D](../widgets/map-buttons.md#3d-mode). |
 | Affichage de la carte | La carte entière est rendue sous forme d'un ensemble de tuiles, et les marqueurs, les lignes et le texte sont déjà à l'intérieur de ces tuiles. | Tout d'abord, l'ensemble des tuiles est rendu, puis les symboles disponibles sont appliqués à la carte, [couche par couche](../../technical/algorithms/map-rendering-layers.md). |
 | Superposition / sous-couche de symboles transparents | Prend en charge tous les paramètres. | Il ne prend pas en charge une couche raster au-dessus du texte vectoriel. |
@@ -207,7 +207,7 @@ Les données sur votre position ou les lieux que vous consultez sur la carte ne 
 
 ![UUID Android](@site/static/img/personal/profiles/uuid_android.png)  
 
-Un **UUID** (*Unique User Identifier*) est généré pour chaque installation de l'application OsmAnd et envoyé aux serveurs lors du chargement de la carte.
+Un **UUID** (*Unique User Identifier*) est généré pour chaque installation de l'application OsmAnd et envoyé aux serveurs lors du chargement des cartes.
 
 - Un UUID aléatoire est utilisé pour télécharger des cartes hors ligne depuis les serveurs OsmAnd afin de contrôler l'utilisation rationnelle des ressources du serveur, de prévoir l'utilisation du trafic et de fournir des rapports mensuels généraux sur les téléchargements de cartes.
 - L'UUID change tous les 3 mois.  
@@ -237,9 +237,9 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </Tabs>  
 
-L'application enregistre l'historique des données précédemment saisies (historique) dans les catégories suivantes : [Recherche](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#history-of-previous-routes), [Marqueurs de carte](../personal/markers.md#history). À l'aide du commutateur sur l'onglet approprié, vous pouvez *Activer / Désactiver* la journalisation pour certaines catégories d'entrées. Vous pouvez également [gérer](#history) (afficher, supprimer et partager) les données précédemment enregistrées.  
+L'application enregistre l'historique des données précédemment saisies (historique) dans les catégories suivantes : [Recherche](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#history-of-previous-routes), [Marqueurs de carte](../personal/markers.md#history). En utilisant le commutateur sur l'onglet approprié, vous pouvez *Activer / Désactiver* l'enregistrement pour certaines catégories d'entrées. Vous pouvez également [gérer](#history) (afficher, supprimer et partager) les données précédemment enregistrées.  
 
-- ***Sauvegarder en tant que fichier*** (*Android*) ou ***Exporter*** (*iOS*) est utilisé pour créer [un fichier de sauvegarde](../personal/import-export.md#export) de votre historique.
+- ***Sauvegarder en fichier*** (*Android*) ou ***Exporter*** (*iOS*) est utilisé pour créer [un fichier de sauvegarde](../personal/import-export.md#export) de votre historique.
 - ***Effacer tout l'historique*** (*Android*) ou ***Supprimer tout l'historique*** (*iOS*) est utilisé pour supprimer toutes les entrées d'historique enregistrées jusqu'au moment de la suppression.
 
 <br/>
@@ -277,9 +277,9 @@ L'application enregistre l'historique des données précédemment saisies (histo
 Le paramètre **<Translate android="true" ids="proxy_pref_title"/>** vous permet de configurer un [proxy HTTP](https://en.wikipedia.org/wiki/Proxy_server) pour toutes les requêtes réseau. Vous pouvez définir l'*Hôte proxy* et le *Port proxy*.  
 
 
-## Autre {#other}
+## Autres {#other}
 
-Dans cette section des paramètres OsmAnd, vous pouvez configurer les notifications que vous recevez, le service de localisation et la manière dont les paramètres de votre application sont enregistrés.
+Dans cette section des paramètres OsmAnd, vous pouvez configurer les notifications que vous recevez, le service de localisation et la manière dont vos paramètres d'application sont enregistrés.
 
 ### Dialogues et notifications {#dialogs-and-notifications}
 
@@ -312,7 +312,7 @@ Le paramètre **<Translate android="true" ids="dialogs_and_notifications_title"/
 
 ![Auto-backup](@site/static/img/personal/profiles/location_source_andr.png)
 
-OsmAnd vous offre un choix de services pour déterminer votre position. Il est recommandé de lire plus d'informations sur la [Permission de localisation](../start-with/first-steps.md#permission-to-access-the-location) et le [Dépannage](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) pour cette section.
+OsmAnd vous offre un choix de services pour déterminer votre position. Il est recommandé de lire plus d'informations sur l'[autorisation de localisation](../start-with/first-steps.md#permission-to-access-the-location) et le [dépannage](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) pour cette section.
 
 ***Android*** :
 
@@ -321,7 +321,7 @@ OsmAnd vous offre un choix de services pour déterminer votre position. Il est r
 
 ***iOS*** :
 
-- Le système iOS utilise l'*iOS API* pour déterminer la position.  
+- Le système iOS utilise l'*API iOS* pour déterminer la position.  
 - Tous les paramètres de localisation OsmAnd se trouvent dans les paramètres de l'appareil iOS : *Réglages → OsmAnd maps → Localisation*  
 - Confidentialité des services de localisation : *Réglages → Confidentialité → Services de localisation*
 
@@ -332,9 +332,9 @@ OsmAnd vous offre un choix de services pour déterminer votre position. Il est r
 
 ![General Settings notifications Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
 
-- Android ou OsmAnd Cloud peuvent enregistrer vos données et les paramètres de votre application.
+- Android ou OsmAnd Cloud peuvent enregistrer vos données et les paramètres de l'application.
 
-- Par défaut, vos *paramètres OsmAnd* et les marqueurs de carte [*Favoris*](../personal/favorites.md#automatic-favorites-backup) sont automatiquement sauvegardés par le système Android. Cela vous permet de les restaurer sur de nouveaux appareils ou après avoir réinstallé l'application.
+- Par défaut, vos *paramètres OsmAnd* et les marqueurs de carte [*Favoris*](../personal/favorites.md#automatic-favorites-backup) sont automatiquement sauvegardés par le système Android. Cela vous permet de les restaurer sur de nouveaux appareils ou après la réinstallation de l'application.
 
 - Veuillez noter que la taille de la sauvegarde est limitée à *25 Mo*.
 
@@ -346,7 +346,7 @@ OsmAnd vous offre un choix de services pour déterminer votre position. Il est r
 
 ## Légal {#legal}
 
-OsmAnd peut vous [avertir des radars](../navigation/guidance/navigation-settings.md#screen-alerts), mais uniquement si les lois de votre pays le permettent.
+OsmAnd peut [vous avertir des radars](../navigation/guidance/navigation-settings.md#screen-alerts), mais uniquement si les lois de votre pays le permettent.
 
 
 ### Désinstaller les radars {#uninstall-speed-cameras}
@@ -371,11 +371,11 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </Tabs>
 
-Ce paramètre vous permet d'activer ou de désactiver les POI avec des radars, vous devez redémarrer l'application OsmAnd pour que les modifications prennent effet.
+Ce paramètre vous permet d'activer ou de désactiver les POI avec les radars, vous devez redémarrer l'application OsmAnd pour que les modifications prennent effet.
   
-Dans certains pays ou régions, l'utilisation d'applications d'avertissement de radar est illégale. Vous devez faire un choix en fonction des lois de votre pays. Sélectionnez **Garder actif**, et vous recevrez des alertes et des notifications de radar. Sélectionnez **Désinstaller** et toutes les données liées aux radars, telles que les avertissements, les notifications et les POI, seront supprimées jusqu'à ce que vous réinstalliez complètement OsmAnd.  
+Dans certains pays ou régions, l'utilisation d'applications d'avertissement de radars est illégale. Vous devez faire un choix en fonction des lois de votre pays. Sélectionnez **Garder actif**, et vous recevrez des alertes et des notifications de radars. Sélectionnez **Désinstaller** et toutes les données relatives aux radars, telles que les avertissements, les notifications et les POI, seront supprimées jusqu'à ce que vous réinstalliez complètement OsmAnd.  
 
-Lisez les alertes de radar sur votre itinéraire dans l'article Widgets de navigation dans la section *[Widget d'alerte](../widgets/nav-widgets.md#alert-widget)*.
+Lisez les alertes de radars sur votre itinéraire dans l'article Widgets de navigation dans la section *[Widget d'alerte](../widgets/nav-widgets.md#alert-widget)*.
 
 
 ## Articles connexes {#related-articles}
@@ -386,8 +386,8 @@ Lisez les alertes de radar sur votre itinéraire dans l'article Widgets de navig
 
 ### Dépannage {#troubleshooting}
 
-- **Android 12+ (changer de dossier de stockage)**. De nouvelles directives d'accès au stockage ont été mises en œuvre dans les versions Android 11-12. Ces changements affectent particulièrement le stockage des cartes sur les cartes SD, entraînant des performances d'accès aux fichiers considérablement plus lentes et des limitations d'accès plus strictes aux dossiers des cartes SD sur Android 11 et 12. Pour savoir comment résoudre ce problème, consultez la section [**Dépannage**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
+- **Android 12+ (changer de dossier de stockage)**. De nouvelles directives d'accès au stockage ont été mises en œuvre dans les versions Android 11-12. Ces changements affectent particulièrement le stockage des cartes sur les cartes SD, entraînant des performances d'accès aux fichiers nettement plus lentes et des limitations d'accès plus strictes aux dossiers des cartes SD sur Android 11 et 12. Pour savoir comment résoudre ce problème, consultez la section [**Dépannage**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 
-- **Source de localisation pour les problèmes d'altitude**. Google Play a modifié sa politique, et pour s'y conformer, OsmAnd, à partir de la version 3.9, doit utiliser les services Google Play pour obtenir des corrections de localisation en arrière-plan. Lisez plus d'informations dans la section [Dépannage](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).
+- **Source de localisation pour les problèmes d'altitude**. Google Play a modifié sa politique, et pour s'y conformer, OsmAnd, à partir de la version 3.9, doit utiliser Google Play Services pour obtenir des corrections de localisation en arrière-plan. Lisez plus d'informations dans la section [Dépannage](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).
 
-> *Cet article a été mis à jour pour la dernière fois en novembre 2024*
+> *Dernière mise à jour : novembre 2024*

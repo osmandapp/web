@@ -1,9 +1,8 @@
 ---
-source-hash: 4876cd40626e366525298cc3bb4d8753a3139a5effb8518847ba214a5d530e8e
+source-hash: 580c8fbd0c79564b0976cee07d1bc9d431e8f4533df5daa052bc1202ccd84564
 sidebar_position: 10
-title: Développement OsmAnd
+title:  Développement OsmAnd
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,11 +15,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
+
 ## Aperçu {#overview}
 
 Les fonctions de test de l'application sont regroupées dans le plugin de développement OsmAnd. Utilisez-les à vos risques et périls.
 
-Le plugin de développement OsmAnd vous permet d'essayer de nouvelles fonctionnalités de l'application ou de configurer OsmAnd pour les tests : simuler des itinéraires de navigation, vérifier les performances de rendu de l'écran, etc. Le plugin est conçu pour les *développeurs et les utilisateurs expérimentés* et n'est pas nécessaire pour l'utilisation quotidienne de l'application.
+Le plugin de développement OsmAnd vous permet d'essayer de nouvelles fonctionnalités de l'application ou de configurer OsmAnd pour des tests : simuler des itinéraires de navigation, vérifier les performances de rendu de l'écran, etc. Le plugin est conçu pour les *développeurs et les utilisateurs expérimentés* et n'est pas nécessaire pour une utilisation quotidienne de l'application.
 
 
 ## Paramètres de configuration requis {#required-setup-parameters}
@@ -47,13 +47,13 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 
 <TabItem value="android" label="Android">
 
-![Paramètres de développement Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Paramètres de développement 2 Android](@site/static/img/plugins/development/development_settings_2_andr.png)
+![Development Settings Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_settings_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Paramètres de développement iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_1.png)
 
 </TabItem>
 
@@ -68,7 +68,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 ### Dépannage {#troubleshotting}
 
 - **Simuler votre position** (*Android* / *iOS*). [Simulez](#gpx-track-simulation) la position et le mouvement à l'aide d'une trace GPX.
-- **Mode d'économie de batterie** (*Android* / *iOS*). Ce paramètre réduit [le taux de rafraîchissement de l'écran](#map-rendering-fps-widget) de 20 images par seconde pour aider à économiser la batterie lors de l'utilisation d'applications.
+- **Mode économie de batterie** (*Android* / *iOS*). Ce paramètre réduit [le taux de rafraîchissement de l'écran](#map-rendering-fps-widget) de 20 images par seconde pour aider à économiser la batterie lors de l'utilisation des applications.
 - **Utiliser des icônes de position 3D** (*iOS*). Vous permet de sélectionner une icône 3D pour l'[icône Ma position](../personal/profiles.md#my-location-appearance).
 - **Simuler les données obd** (*Android*). Permet la simulation de l'utilisation du [scanner OBD](./vehicle-metrics.md).
 - **Informations de débogage des performances** (*Android*). Affiche les performances de rendu et de navigation.
@@ -81,11 +81,11 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 
 ### Test d'application {#application-testing}
 
-:::caution Android only
+:::caution Android uniquement
 :::
 
 - **Simuler le premier démarrage de l'application**. Définit le drapeau indiquant le premier démarrage de l'application, conserve tous les autres paramètres inchangés.
-- **Tester les invites vocales**. Sélectionnez une voix et testez en jouant des annonces.
+- **Tester les invites vocales**. Sélectionnez une voix et testez en lisant les annonces.
 - **Barre d'état transparente**. La carte devient visible sous la barre d'état.
 - **Afficher la bannière de la version gratuite**. Affiche la bannière de la version gratuite même dans la version payante.
 - **Afficher les informations de débogage**. Affiche des informations graphiques sur le placement de chaque texte sur la carte.
@@ -94,7 +94,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 
 ### Algorithmes internes {#internal-algorithms}
 
-:::caution Android only
+:::caution Android uniquement
 :::
 
 - **Mode sécurisé**. Exécute l'application en mode sécurisé (plus lent).
@@ -102,25 +102,25 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 
 ### Paramètres de mémoire {#memory-settings}
 
-:::caution Android only
+:::caution Android uniquement
 :::
 
 - L'option **Mémoire allouée pour le routage** vous permet de déterminer la quantité de mémoire allouée pour le calcul de longs itinéraires. Vous pouvez utiliser cette option si le [routage standard A*](../navigation/guidance/navigation-settings.md#development-settings) est sélectionné dans les *Paramètres de navigation*.
 
 ***Calcul d'itinéraires extra-longs :***
 
-- Une allocation de mémoire plus élevée peut avoir un impact sur les performances des autres applications.
+- Une allocation de mémoire plus élevée peut avoir un impact sur les performances d'autres applications.
 - [Calcul d'itinéraires de 50 km pour les piétons](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
 
 
 ### Informations et statistiques {#info-and-statistics}
 
-:::caution Android only
+:::caution Android uniquement
 :::
 
 - **Mémoire allouée**. Affiche la mémoire système allouée à l'application OsmAnd.
 - **Mémoire native totale**. Affiche la quantité totale de mémoire native allouée à l'application, y compris la mémoire proportionnelle.
-- **Informations A-GPS**. Indique la date du dernier téléchargement des données A-GPS.
+- **Informations A-GPS**. Indique la dernière fois que les données A-GPS ont été téléchargées.
 - **Informations jour/nuit**. Indique les heures de lever et de coucher du soleil d'aujourd'hui.
 - **Statistiques énergétiques (moyenne 1 / 5 / 15 minutes)**. Affiche le niveau de batterie par minute (%) et la consommation d'énergie moyenne (mAh) sur des intervalles de 1, 5 et 15 minutes.
 - **Statistiques de rendu (moyenne 1 / 5 / 15 minutes)**. Affiche les statistiques de rendu, y compris les FPS sur les 1k dernières images, le CPU (tuiles), le CPU (temps d'inactivité) et le CPU (veille) en moyenne sur des intervalles de 1, 5 et 15 minutes.
@@ -129,7 +129,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 
 - **Réinitialiser les paramètres du plugin aux valeurs par défaut**. Réinitialise tous les paramètres du plugin à leurs valeurs par défaut.
 
-    ![Paramètres de développement Android](@site/static/img/plugins/development/devplugin_stat_and.png)
+    ![Development Settings Android](@site/static/img/plugins/development/devplugin_stat_and.png)
 
 
 ## Widget FPS de rendu de carte {#map-rendering-fps-widget}
@@ -144,7 +144,7 @@ Les widgets développeur OsmAnd ne peuvent être ajoutés à l'écran que lorsqu
 
 Aller à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
-![Widget de développement fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Widget de développement fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
+![Development widget fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
 
 </TabItem>
 
@@ -152,7 +152,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,layer_map_appearan
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
-![Widget de développement iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
+![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
 
 </TabItem>
 
@@ -173,7 +173,7 @@ Les widgets développeur OsmAnd ne peuvent être ajoutés à l'écran que lorsqu
 
 Aller à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*
 
-![Widgets de position de la caméra 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Widgets de position de la caméra 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
+![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
 </TabItem>
 
@@ -181,7 +181,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,layer_map_appearan
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>*
 
-![Widgets de position de la caméra 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Widgets de position de la caméra 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
+![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
 
 </TabItem>
 
@@ -196,13 +196,13 @@ Vous pouvez utiliser les [widgets de position de la caméra](../widgets/info-wid
 
 <TabItem value="android" label="Android">
 
-![Widget d'inclinaison de la caméra Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Widget d'inclinaison de la caméra Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)
+![Camera tilt widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camera tilt widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget d'inclinaison de la caméra ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Widget d'inclinaison de la caméra ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)
+![Camera tilt widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Camera tilt widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)
 
 </TabItem>
 
@@ -222,13 +222,13 @@ En même temps, en raison du mouvement imaginaire de l'observateur, la distance 
 
 <TabItem value="android" label="Android">
 
-![Widget d'élévation de la caméra Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Widget d'élévation de la caméra Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)
+![Camera elevation widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camera elevation widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget d'élévation de la caméra ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Widget d'élévation de la caméra ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)
+![Camera elevation widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Camera elevation widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)
 
 </TabItem>
 
@@ -243,13 +243,13 @@ Le widget d'élévation de la caméra affiche l'élévation de la caméra au-des
 
 <TabItem value="android" label="Android">
 
-![Widget de niveau de zoom Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Widget de niveau de zoom Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)
+![Zoom level widget Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Zoom level widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget de niveau de zoom ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Widget de niveau de zoom ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)
+![Zoom level widget ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Zoom level widget ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)
 
 </TabItem>
 
@@ -258,7 +258,7 @@ Le widget d'élévation de la caméra affiche l'élévation de la caméra au-des
 Le widget a deux vues qui sont commutées en appuyant dessus :
 
 - **<Translate android="true" ids="map_widget_zoom_level"/>**. Affiche le niveau de zoom actuel de la carte.
-- **<Translate android="true" ids="map_widget_map_scale"/>**. Affiche le rapport actuel entre une distance sur une carte et la distance correspondante sur la terre. Exemples : "1 : 3 000", "1 : 3,3 M" "1 : 340 K".
+- **<Translate android="true" ids="map_widget_map_scale"/>**. Affiche le rapport actuel entre une distance sur une carte et la distance correspondante sur la terre. Exemples : "1 : 3 000", "1 : 3,3 M" "1: 340 K".
 
 :::note
 
@@ -273,13 +273,13 @@ Le widget a deux vues qui sont commutées en appuyant dessus :
 
 <TabItem value="android" label="Android">
 
-![Widget de distance à la cible 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Widget de distance à la cible 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)
+![Distance to target widget 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget de distance à la cible 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Widget de distance à la cible 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)
+![Distance to target widget 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Distance to target widget 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)
 </TabItem>
 
 </Tabs>
@@ -289,11 +289,11 @@ Le widget Distance de la caméra à la cible affiche la distance entre la camér
 
 ### Comparaison avec une imagerie satellite {#comparison-with-a-satellite-imagery}
 
-![Comparaison](@site/static/img/plugins/development/comparison.png)
+![Comparison](@site/static/img/plugins/development/comparison.png)
 
 Une comparaison de la carte OsmAnd et de la surface de la terre révèle les modèles suivants :
 
-- La distorsion maximale est observée à de grands zooms (zoom 6-7 pour une inclinaison de la caméra de 90 degrés).
+- La distorsion maximale est observée à de grands zooms (zoom 6-7 pour une inclinaison de caméra de 90 degrés).
 - À mesure que l'inclinaison de la caméra diminue (de 90 à 10 degrés), la distorsion de la carte augmente.
 - Les distorsions commencent à être observées plus tôt aux hautes latitudes.
 
@@ -336,13 +336,13 @@ OsmAnd offre la possibilité de simuler la position et le mouvement de votre app
 
 <TabItem value="android" label="Android">
 
-![Paramètres de développement Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Paramètres de développement Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
+![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Paramètres de développement iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Paramètres de développement iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)
 
 </TabItem>
 
@@ -362,4 +362,4 @@ Pour arrêter la simulation du mouvement de votre appareil, retournez aux [param
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *Cet article a été mis à jour pour la dernière fois en mai 2023*
+> *Dernière mise à jour : mai 2023*

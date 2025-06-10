@@ -1,5 +1,5 @@
 ---
-source-hash: 5d642db4e453e0ff28e4436cec5f0a79b3a7847a7ace90b96c7e438ce9d125f9
+source-hash: 00c5daf74a16f214549f0a88cc1cb9258c0e4c09765d41d21306b6e11418fa8c
 sidebar_position: 2
 ---
 
@@ -25,12 +25,12 @@ N'utilisez qu'**une seule expression** pour une certaine fonctionnalité, ne mé
 ## 2. Rédaction de texte {#2-authoring-text}
 
 * Veuillez essayer de réutiliser autant que possible les constantes de chaîne de caractères existantes, c'est bon pour la mémoire et les performances.
-* Pour les chaînes de caractères hautement réutilisables 'XXX', nous avons souvent un `shared_string_XXX`
+* Pour les chaînes de caractères 'XXX' hautement réutilisables, nous avons souvent un `shared_string_XXX`
 * Les chaînes de caractères sont souvent réutilisées ! Lorsque vous modifiez des chaînes de caractères existantes, veuillez vérifier _toutes_ leurs occurrences dans le code.
-* Le texte inutile encombre les écrans sans beaucoup aider. Veuillez être bref et précis, n'ajoutez que des mots qui transmettent des informations _nécessaires_.
+* Le texte inutile encombre les écrans sans beaucoup aider. Veuillez être court et précis, n'ajoutez que des mots qui transmettent des informations _nécessaires_.
 * Veuillez vérifier l'apparence du texte dans l'application, en particulier sur les appareils à faible densité. Trop de sauts de ligne, de texte coupé ou de boutons de menu agrandis peuvent rendre un écran ou une boîte de dialogue inutilisable.
-* Dans certains cas, il existe des conventions qu'il peut être utile de vérifier, plutôt que d'"inventer quelque chose". Ainsi, si 99 % des systèmes de navigation commerciaux dans votre langue annoncent "vous avez atteint votre destination", l'utilisation de "vous êtes arrivé là où vous vouliez aller" n'est peut-être pas le meilleur choix... :)
-* Marquez clairement toutes les fonctionnalités qui nécessitent un accès à Internet avec l'expression "en ligne".
+* Dans certains cas, il existe des conventions qu'il peut être utile de vérifier, plutôt que d'"inventer quelque chose". Ainsi, si 99 % des systèmes de navigation commerciaux dans votre langue annoncent "vous êtes arrivé à votre destination", alors utiliser "vous êtes arrivé là où vous vouliez aller" n'est peut-être pas le meilleur choix... :)
+* Marquez clairement toutes les fonctionnalités qui nécessitent un accès Internet avec l'expression "en ligne".
 * La langue de base pour OsmAnd est l'anglais américain. Il existe un dossier de traduction pour l'anglais britannique pour toutes les expressions et l'orthographe qui diffèrent.
 
 ## 3. Rendu {#3-rendering}

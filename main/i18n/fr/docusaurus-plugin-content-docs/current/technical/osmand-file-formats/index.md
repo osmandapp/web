@@ -1,5 +1,5 @@
 ---
-source-hash: 9d4f32efd2119f5dc66faca7d94dacf2d73b5f70df7feae3fba9d6644debc131
+source-hash: d85cbe5c7c1cc62b53b6c1cb730ae9d2a482d7fe63edd9c82f5141917f091420
 sidebar_position: 1
 ---
 
@@ -9,7 +9,7 @@ La documentation décrit les fichiers pris en charge par OsmAnd.
 
 ### [Itinéraires GPX, Traces - .gpx](./osmand-gpx.md) {#gpx-routes-tracks---gpx}
 
-OsmAnd utilise les fichiers GPX pour enregistrer des traces, sauvegarder des itinéraires pré-calculés, et peut importer des fichiers GPX préparés par d'autres sources pour les visualiser ou naviguer.
+OsmAnd utilise les fichiers GPX pour enregistrer des traces, sauvegarder des itinéraires pré-calculés et peut importer des fichiers GPX préparés par d'autres sources pour la visualisation ou la navigation.
 
 ### [Traces KML - .kml, .kmz](./osmand-kml.md) {#kml-tracks---kml-kmz}
 
@@ -25,7 +25,7 @@ Fichier de configuration de routage OsmAnd.
 
 ### [Style de rendu de carte - .render.xml](./osmand-rendering-style.md) {#map-rendering-style---renderxml}
 
-Le style de rendu OsmAnd est un fichier XML spécial qui décrit comment les objets de carte vectoriels doivent être affichés sur la carte. En règle générale, il contient un grand nombre de lignes de code et est très personnalisable.
+Le style de rendu OsmAnd est un fichier XML spécial qui décrit comment les objets de carte vectoriels doivent être affichés sur la carte. En règle générale, il contient un grand nombre de lignes de code et est bien personnalisable.
 
 ### [Cartes binaires OsmAnd - .obf](./osmand-obf.md) {#osmand-binary-maps---obf}
 

@@ -1,8 +1,7 @@
 ---
-source-hash: 847497cc9ece96bf123d6b224fa77427489863d2dc5bb7342a53f0ca7ad60d08
+source-hash: f4bfa5d27b06d6b62f71474e1eae1218ef9add8b5fade76e6107def055d05c2d
 sidebar_position: 10
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,6 +9,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
 
 # Dépannage {#troubleshooting}
 
@@ -25,7 +25,7 @@ Description de la manière d'envoyer les journaux de plantage à l'équipe OsmAn
 
 ### [Général](./general.md) {#general}
 
-Problèmes généraux liés aux différentes fonctionnalités d'OsmAnd.
+Problèmes généraux liés à diverses fonctionnalités d'OsmAnd.
 
 ### [Cartes et données](./maps-data.md) {#maps--data}
 
@@ -43,9 +43,9 @@ Ressources créées par la communauté.
 
 Les problèmes les plus typiques rencontrés lors de la configuration de l'application.
 
-### [Enregistrement de trace](./track-recording-issues.md) {#track-recording}
+### [Enregistrement de traces](./track-recording-issues.md) {#track-recording}
 
-Problèmes courants liés à l'enregistrement de trace, tels que le bruit, les lacunes ou les inexactitudes.
+Problèmes courants liés à l'enregistrement de traces, tels que le bruit, les lacunes ou les inexactitudes.
 
 ### [Tutoriels vidéo et guides](./video-tutorials.md) {#video-tutorials-and-guides}
 

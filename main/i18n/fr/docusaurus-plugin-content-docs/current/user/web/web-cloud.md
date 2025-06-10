@@ -1,10 +1,9 @@
 ---
-source-hash: 94487b301ff699926a0a7829c7e7225d4d3e9b451cdf3926946cdb6a7c41b2da
+source-hash: 751ce0d01399c5201cf9fd9a85ce2e3a31e3f473f43bd4237e02b1fda097d4dd
 sidebar_position: 2
 sidebar_label:  OsmAnd Cloud
 title: OsmAnd Cloud sur le site Web
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,6 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 <InfoIncompleteArticle/>
 
@@ -61,7 +61,7 @@ Si vous souhaitez changer la langue d'affichage :
 
 *Menu général → Compte*
 
-Après s'être inscrits sur le web, les utilisateurs peuvent accéder aux informations de leur compte, télécharger des sauvegardes, se déconnecter, supprimer leur compte ou changer leur adresse e-mail.
+Après s'être inscrit sur le web, les utilisateurs peuvent accéder aux informations de leur compte, télécharger des sauvegardes, se déconnecter, supprimer leur compte ou changer leur adresse e-mail.
 
 #### Accéder au compte {#access-account}
 
@@ -84,7 +84,7 @@ La capacité multiplateforme vous permet d'utiliser OsmAnd Pro sur toutes les pl
 3. Enregistrez votre [compte Pro ou Start](../troubleshooting/setup.md#cross-platform) sur le serveur OsmAnd dans l'application OsmAnd.
 4. L'adresse e-mail enregistrée sera votre identifiant pour activer OsmAnd Pro sur la plateforme web. La première fois, vous devrez choisir un mot de passe pour les futures connexions au portail web (veuillez suivre les instructions sur le portail web).
 
-- Entrez votre *e-mail* et votre *mot de passe* pour [osmand.net/map](https://osmand.net/map/).
+- Entrez votre *e-mail* et votre *mot de passe* pour [osmand.net/map](https://osmand.osmand.net/map/).
 
 ![Vue de l'activation Web d'OsmAnd](@site/static/img/web/web_pro_activation.png)
 
@@ -111,20 +111,20 @@ Il y a aussi un bouton pour se *déconnecter* du compte.
 
 [Traces et Favoris](web-map.md#tracks).
 <!--
-## Map style {#map-style}
+## Style de carte {#map-style}
 
-In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.
-**Some examples:**
+Dans cette section du menu, vous pouvez changer le style de la carte. Vous pouvez en savoir plus sur la façon de procéder dans l'article [Cartes vectorielles (Styles de carte)](../map/vector-maps.md) pour l'application OsmAnd. Les paramètres de la version web ne sont pas différents.
+**Quelques exemples :**
 
-- Nautical map style
+- Style de carte nautique
 
-![OsmAnd Web Map Style](@site/static/img/web/web_map_style_nautical.png)
+![Style de carte Web OsmAnd](@site/static/img/web/web_map_style_nautical.png)
 
-- Topo map style
+- Style de carte Topo
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
+![Ajout de favoris Web OsmAnd](@site/static/img/web/web_map_style_topo.png)
 -->
 
 
 
-> *Cet article a été mis à jour pour la dernière fois en septembre 2024*
+> *Dernière mise à jour : Septembre 2024*

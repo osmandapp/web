@@ -1,27 +1,27 @@
 ---
-source-hash: a4971dc08c1be0e7916527eab66c8d0ac7c83472c8395362c0c2bea9015ea1d1
-title:  Tracés
+source-hash: 7ffc8bb6ad320c2fba120a64fe501c64d5fa3b56d0addef5a691228269465d64
+title:  Traces
 sidebar_position: 8
 ---
 
-## [Gérer les tracés](./manage-tracks.md) {#manage-tracks}
+## [Gérer les traces](./manage-tracks.md) {#manage-tracks}
 
-Toutes les informations sur la création, la gestion et l'organisation des tracés et des dossiers de tracés.
+Toutes les informations sur la création, la gestion et l'organisation des traces et des dossiers de traces.
 
 ## [Dossier intelligent (filtre)](./smart-folder.md) {#smart-folderfilter}
 
-Un moyen simple de créer des dossiers virtuels pour les tracés avec n'importe quel filtre.
+Un moyen simple de créer des dossiers virtuels pour les traces avec n'importe quel filtre.
 
 ## En savoir plus {#read-more}
 
-### [Types de tracés](../../map/tracks/index.md#types-of-tracks) {#types-of-tracks}
+### [Types de traces](../../map/tracks/index.md#types-of-tracks) {#types-of-tracks}
 
-En savoir plus sur ce qu'est un tracé et les différents types de tracés.
+Découvrez ce qu'est une trace et les différents types de traces.
 
-### [Afficher les tracés](../../map/tracks/index.md#display-tracks) {#display-tracks}
+### [Afficher les traces](../../map/tracks/index.md#display-tracks) {#display-tracks}
 
-En savoir plus sur la façon d'afficher les tracés et leurs options dans OsmAnd.
+Découvrez comment afficher les traces et leurs options dans OsmAnd.
 
-### [Naviguer par tracé](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
+### [Naviguer par trace](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
 
-En savoir plus sur l'utilisation des tracés dans la navigation.
+En savoir plus sur l'utilisation des traces dans la navigation.

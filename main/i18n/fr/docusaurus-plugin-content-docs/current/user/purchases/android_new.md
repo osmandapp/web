@@ -1,10 +1,9 @@
 ---
-source-hash: 5dcf667e3b7080b6c96da0833358621f53ba4f0ab56a06311d7a2d686c6dbb43
+source-hash: 501a2710e530ae1d29674c48c3fedfb446aa07e7e9d9b50601432988adaa6339
 sidebar_position: 1
-title: Test des achats Android
+title:  Test des achats Android
 unlisted: true
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,6 +13,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
 
 
 ## Introduction {#introduction}
@@ -26,7 +26,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     - Accès à toutes les fonctionnalités.
     - Aucune restriction sur les téléchargements de cartes.
     - Fonctionnalités avancées de navigation et de cartographie.
-    - Mises à jour fréquentes et prise en charge des nouvelles fonctionnalités.
+    - Mises à jour fréquentes et prise en charge de nouvelles fonctionnalités.
 
 
 ## Installer OsmAnd {#install-osmand}
@@ -57,7 +57,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     - Flexibilité de choisir entre un achat unique et un abonnement.
     - Accès à toutes les mêmes fonctionnalités qu'OsmAnd+.
 - Inconvénients :
-    - Non multiplateforme - non transférable entre Android et iOS.
+    - Pas multiplateforme - non transférable entre Android et iOS.
 
 
 ### OsmAnd Pro (abonnement) {#osmand-pro-subscription}
@@ -113,14 +113,14 @@ OsmAnd Pro est le summum de la fonctionnalité et le meilleur choix pour les uti
 1. OsmAnd Cloud.
     - Sauvegarde et synchronisation des données entre les appareils.
     - Enregistrer les itinéraires, les points favoris, les traces.
-    - Accès à la version Web d'OsmAnd pour la planification de voyages.
+    - Accès à la version web d'OsmAnd pour la planification de voyages.
 2. Mises à jour horaires des cartes
     - Les dernières modifications d'OpenStreetMap directement dans votre application.
 3. Android Auto et CarPlay
     - Navigation facile sur l'écran de la voiture.
 4. Accès complet à tous les plugins OsmAnd
     - Topographie (Relief 3D, courbes de niveau, profil d'élévation).
-    - Plugin Météo - prévisions météorologiques sur l'itinéraire.
+    - Plugin Météo - prévisions météo sur l'itinéraire.
     - Cartes nautiques - profondeurs pour les marins.
     - Métriques du véhicule - lecture des données de l'OBD-II (pour les voitures).
 
@@ -154,8 +154,8 @@ OsmAnd Pro est le meilleur choix pour les utilisateurs qui souhaitent obtenir to
 
 - Comment fonctionne la synchronisation des achats via Google Play.
 - Limitations :
-    - Les abonnements ne sont pas transférables entre les différentes boutiques.
-    - Maps+ n'est pas transférable entre les appareils avec des comptes différents.
+    - Les abonnements ne sont pas transférables entre différents magasins.
+    - Maps+ n'est pas transférable entre des appareils avec des comptes différents.
 
 
 ## Transfert des achats {#transferring-purchases}

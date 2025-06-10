@@ -1,9 +1,8 @@
 ---
-source-hash: bb6942e8b5d695fc565d1660d70f3a33678e5782077874fa698bfc22d4e9b7a2
+source-hash: 5be228574247e03992e3e0ddd030d4377aa5bc7c791ba46b7915c2586ebae9b4
 sidebar_position: 4
 title: Cartes et données
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +12,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-
 ## Cartes {#maps}
 
 ### Pourquoi OsmAnd n'offre-t-il pas l'accès à Google Maps ? {#why-does-osmand-not-offer-access-to-google-maps}
@@ -22,11 +20,11 @@ OsmAnd est conçu pour prendre en charge OpenStreetMap (OSM) et privilégie cett
 
 ### Cartes se chargeant lentement sur Android 11, 12 (carte SD) {#maps-slowly-loading-on-android-11-12-sd-card}
 
-En raison des nouvelles [règles d'accès au stockage introduites dans Android 11 et 12](https://www.androidauthority.com/android-12-privacy-features-1225859/), les utilisateurs peuvent rencontrer des performances plus lentes lors de l'accès aux cartes stockées sur les cartes SD. Ces changements peuvent également entraîner des restrictions de visibilité et d'accès pour les fichiers dans les dossiers de la carte SD. D'autres discussions et informations techniques peuvent être trouvées sur les liens suivants : [Discussion Reddit](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
+En raison des nouvelles [règles d'accès au stockage introduites dans Android 11 et 12](https://www.androidauthority.com/android-12-privacy-features-1225859/), les utilisateurs peuvent rencontrer des performances plus lentes lors de l'accès aux cartes stockées sur les cartes SD. Ces changements peuvent également entraîner des restrictions de visibilité et d'accès pour les fichiers dans les dossiers de la carte SD. Vous trouverez plus de discussions et d'informations techniques sur les liens suivants : [Discussion Reddit](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
 
 À l'heure actuelle, les solutions suivantes sont disponibles :
 
-#### 1. Migrer le dossier de stockage des données OsmAnd vers la « Mémoire interne de l'application » {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
+#### 1. Migrer le dossier de stockage des données OsmAnd vers la « mémoire interne de l'application » {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
 - Vous pouvez modifier le dossier de stockage en sélectionnant l'option ***Mémoire interne de l'application*** dans *Menu → Paramètres → Paramètres OsmAnd → Dossier de stockage des données*.
 
@@ -39,7 +37,7 @@ L'équipe de développement recherche activement des solutions plus efficaces po
 Vous pouvez essayer de résoudre le problème de chargement lent des cartes en spécifiant le dossier **Téléchargement** de la carte SD pour le stockage OsmAnd sous *Menu → Paramètres → Paramètres OsmAnd → Dossier de stockage des données → Spécifié manuellement*. Les chemins suivants sont possibles :
 
 - ***/storage/XXXX-XXXX/Download/osmand***
-   Ce chemin peut entraîner des erreurs lors de l'accès à plusieurs fichiers. Par exemple, vous pourrez peut-être télécharger la carte World Overview, mais d'autres régions pourraient ne pas apparaître.
+   Ce chemin peut provoquer des erreurs lors de l'accès à plusieurs fichiers. Par exemple, vous pourrez peut-être télécharger la carte World Overview, mais d'autres régions pourraient ne pas apparaître.
 
 - ***/storage/XXXX-XXXX/Download***
    Ce chemin devrait fonctionner de manière cohérente pour le téléchargement de cartes et d'autres données. Cependant, notez qu'OsmAnd ne reconnaîtra pas les fichiers écrits dans ce dossier par d'autres applications ou programmes (par exemple, SasPlanet). Pour plus de détails, consultez [ce guide](../../technical/map-creation/create-offline-maps-yourself.md).
@@ -60,7 +58,7 @@ Cependant, OsmAnd n'a pas l'autorisation *Accès à tous les fichiers* (en raiso
 - Notez le chemin du dossier actuel, qui pourrait ressembler à */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
 - Passez à l'option *Spécifié manuellement* et modifiez le chemin vers un dossier accessible aux médias. Sur de nombreux systèmes, changer */Android/data/* en */media/* (par exemple, ***/storage/xxxx-xxxx/media***) fonctionne. Certains systèmes peuvent nécessiter des modifications de chemin différentes.
 
-Un chemin correct ne provoquera pas d'erreurs d'autorisation d'écriture dans OsmAnd. Avant d'effectuer ces modifications, assurez-vous qu'OsmAnd dispose des autorisations de stockage appropriées, y compris l'autorisation de stockage "Média", dans les paramètres **Applications** d'Android. Dans les versions plus récentes d'Android, ces autorisations peuvent se trouver dans des menus avancés ou cachés.
+Un chemin correct ne provoquera pas d'erreurs d'autorisation d'écriture dans OsmAnd. Avant d'apporter ces modifications, assurez-vous qu'OsmAnd dispose des autorisations de stockage appropriées, y compris l'autorisation de stockage "Média", dans les paramètres **Applications** d'Android. Dans les versions plus récentes d'Android, ces autorisations peuvent se trouver dans des menus avancés ou cachés.
 
 ### Suppression des données cartographiques après la mise à jour de l'application (si "Stockage multi-utilisateur 1" est sélectionné) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
@@ -76,9 +74,9 @@ Pour éviter de perdre vos données cartographiques lors des mises à jour, envi
    - /storage/emulated/0/Android/**media**/net.osmand.
 
 
-### Aucun rendu de carte pour les appareils Google Pixel {#no-maps-rendering-for-google-pixel-devices}
+### Aucune carte ne s'affiche pour les appareils Google Pixel {#no-maps-rendering-for-google-pixel-devices}
 
-Pour les versions Android d'OsmAnd 4.2, le [rendu de carte peut échouer](https://github.com/osmandapp/OsmAnd/issues/15045) sur les appareils Google Pixel, laissant les utilisateurs avec un écran blanc vide au lieu d'une carte.
+Pour les versions Android d'OsmAnd 4.2, le [rendu des cartes peut échouer](https://github.com/osmandapp/OsmAnd/issues/15045) sur les appareils Google Pixel, laissant les utilisateurs avec un écran blanc vide au lieu d'une carte.
 
 Pour résoudre ce problème, passez au rendu OpenGL :
 
@@ -86,7 +84,7 @@ Pour résoudre ce problème, passez au rendu OpenGL :
 - Redémarrez OsmAnd pour appliquer les modifications.
 
 
-### Résolution du rendu lent des cartes dans OsmAnd {#resolving-slow-map-rendering-in-osmand}
+### Résoudre le rendu lent des cartes dans OsmAnd {#resolving-slow-map-rendering-in-osmand}
 
 <!--
 Other header variants:
@@ -97,19 +95,19 @@ Other header variants:
 
 Pour résoudre le problème du rendu lent des cartes, en particulier lors de l'utilisation de cartes vectorielles hors ligne, les étapes suivantes doivent être suivies :
 
-1. **Désactivez les fonctionnalités de carte inutiles.** Désactivez le relief 3D, les courbes de niveau, les ombres portées et les pentes, ce qui peut augmenter considérablement la puissance de traitement nécessaire pour rendre les cartes. Vous pouvez le faire dans *Menu → Configurer la carte*.
+1. **Désactivez les fonctionnalités de carte inutiles.** Désactivez le relief 3D, les courbes de niveau, les ombres portées et les pentes, qui peuvent augmenter considérablement la puissance de traitement nécessaire pour afficher les cartes. Vous pouvez le faire dans *Menu → Configurer la carte*.
 
-2. **Simplifiez les détails de la carte.** Masquez les éléments moins critiques comme les limites, les POI, les notes OSM, les couches météo, les détails supplémentaires (*Menu → Configurer la carte → Rendu de la carte*) pour rationaliser l'affichage de la carte et améliorer la vitesse.
+2. **Simplifiez les détails de la carte.** Masquez les éléments moins critiques comme les limites, les POI, les notes OSM, les couches météo, les détails supplémentaires (*Menu → Configurer la carte → Rendu de la carte*) pour simplifier l'affichage de la carte et améliorer la vitesse.
 
 3. **Limitez le nombre de POI affichés.** Affichez uniquement les POI principaux ou limitez les catégories affichées pendant la navigation, ce qui peut aider à accélérer le rendu de la carte. Accédez à ces paramètres dans *Menu → Navigation → Paramètres*.
 
-4. **Ajustez la loupe de carte.** Le paramètre de loupe de carte pourrait être un facteur clé dans le ralentissement de la carte. Réglez la loupe à 100 % en appuyant longuement sur le bouton **"+"** ou **"-"** sur l'écran de la carte pour optimiser l'affichage.
+4. **Ajustez le zoom de la carte.** Le paramètre de zoom de la carte pourrait être un facteur clé dans le ralentissement de la carte. Réglez le zoom à 100 % en appuyant longuement sur le bouton **"+"** ou **"-"** sur l'écran de la carte pour optimiser l'affichage.
 
 5. **Désactivez le zoom automatique.** Le zoom automatique peut entraîner un redessin fréquent de la carte pendant la navigation, provoquant des retards. Désactivez le zoom automatique dans *Menu → Paramètres → Profil → Paramètres de navigation → [Carte pendant la navigation](../navigation/guidance/map-during-navigation.md)*.
 
 6. **Utilisez uniquement des cartes hors ligne.** Les cartes en ligne, surtout lorsqu'elles ne sont pas téléchargées à l'avance, peuvent ralentir le chargement des cartes. Passez à l'utilisation de cartes hors ligne uniquement pour des performances plus fluides.
 
-Ces modifications devraient réduire le temps nécessaire pour rendre les cartes, en particulier pendant la navigation. Pour des options de configuration plus détaillées, consultez le [Guide des paramètres de carte](https://osmand.net/docs/user/map/interact-with-map#settings).
+Ces modifications devraient réduire le temps nécessaire pour afficher les cartes, en particulier pendant la navigation. Pour des options de configuration plus détaillées, consultez le [Guide des paramètres de carte](https://osmand.net/docs/user/map/interact-with-map#settings).
 
 
 ## Courbes de niveau {#contour-lines}
@@ -118,7 +116,7 @@ Ces modifications devraient réduire le temps nécessaire pour rendre les cartes
 
 Oui, les courbes de niveau peuvent être affichées en pieds au lieu de mètres. Avant de télécharger les données des courbes de niveau, choisissez entre Pieds ou Mètres : [en savoir plus ici](../../user/plugins/topography.md#contour-lines-meters-or-feet).
 
-### Les courbes de niveau, les données d'altitude ou le relief 3D ne sont pas affichés {#contour-lines-elevation-data-or-3d-relief-are-not-displayed}
+### Les courbes de niveau, les données d'altitude ou le relief 3D ne s'affichent pas {#contour-lines-elevation-data-or-3d-relief-are-not-displayed}
 
 - Vérifiez si les données de la région correcte ont été téléchargées. Allez dans ***Menu → Cartes et ressources → Téléchargements → Votre région***. [Comment télécharger des cartes](../start-with/first-steps.md#how-to-download-maps).
 - Vérifiez que le [plugin](../plugins/topography.md#required-setup-parameters) est activé et visible dans ***Menu → Plugins → Topographie***.
@@ -139,22 +137,22 @@ Si vous essayez de rechercher un lieu en utilisant la structure *Ville → Rue �
 
 **Problèmes potentiels :**
 
-- **Maison manquante**. La maison peut ne pas être répertoriée sur OpenStreetMap, ou elle peut être présente mais sans numéros attribués. Vous pouvez vérifier cela avec un exemple [ici](https://www.openstreetmap.org/#map=19/33.91937/-118.24357).
+- **Maison manquante**. La maison peut ne pas être répertoriée sur OpenStreetMap, ou elle peut être présente mais sans numéros attribués. Vous pouvez le vérifier avec un exemple [ici](https://www.openstreetmap.org/#map=19/33.91937/-118.24357).
 
 - **Nom de rue incorrect**. Le nom de rue associé à la maison peut être incorrect dans OpenStreetMap. Vérifiez la balise `addr:street` pour vous assurer que le nom de rue correspond exactement à celui des informations de balisage de la rue.
 
-- **Problème avec Nominatim**. La maison peut être présente dans OpenStreetMap mais ne pas être trouvée via Nominatim (le moteur de recherche utilisé par OpenStreetMap). Vous pouvez en savoir plus sur la façon de résoudre les problèmes liés aux adresses [ici](https://wiki.openstreetmap.org/wiki/Addresses).
+- **Problème avec Nominatim**. La maison peut être présente dans OpenStreetMap mais pas trouvée via Nominatim (le moteur de recherche utilisé par OpenStreetMap). Vous pouvez en savoir plus sur la façon de résoudre les problèmes liés aux adresses [ici](https://wiki.openstreetmap.org/wiki/Addresses).
 
-- **Problème possible dans OsmAnd**. Si la maison est présente dans Nominatim mais n'est toujours pas trouvée dans OsmAnd, le problème pourrait être spécifique à OsmAnd. Vous pouvez contribuer à résoudre ce problème en enquêtant davantage. Plus de détails peuvent être trouvés dans cet [article technique](../../technical/algorithms/trace-address-search-issues.md).
+- **Problème possible dans OsmAnd**. Si la maison est présente dans Nominatim mais toujours pas trouvée dans OsmAnd, le problème peut être spécifique à OsmAnd. Vous pouvez contribuer à résoudre ce problème en enquêtant davantage. Plus de détails peuvent être trouvés dans cet [article technique](../../technical/algorithms/trace-address-search-issues.md).
 
 
 ## Traces et points {#tracks-and-points}
 
-### Comment marquer différents lieux sur la carte {#how-to-mark-different-places-on-the-map}
+### Comment marquer différents endroits sur la carte {#how-to-mark-different-places-on-the-map}
 
 Vous pouvez laisser des notes et marquer des lieux sur la carte sous différentes formes, chacune servant des objectifs différents :
 
-- *[Favoris](../personal/favorites.md)*. Ce sont des points permanents sur la carte où vous pouvez ajouter des descriptions. Pour créer un Favori, faites un *appui long → appuyez sur Ajouter*. Les Favoris sont parfaits pour marquer les lieux que vous visitez fréquemment ou que vous souhaitez enregistrer pour référence future.
+- *[Favoris](../personal/favorites.md)*. Ce sont des points permanents sur la carte où vous pouvez ajouter des descriptions. Pour créer un Favori, faites un *appui long → appuyez sur Ajouter*. Les favoris sont parfaits pour marquer les lieux que vous visitez fréquemment ou que vous souhaitez enregistrer pour référence future.
 
 - *[Marqueurs](../personal/markers.md)*. Les marqueurs sont des points temporaires, souvent utilisés pour la navigation ou la planification. Ils peuvent afficher la distance par rapport à votre position actuelle ou à un autre point, et peuvent être supprimés rapidement lorsqu'ils ne sont plus nécessaires. Pour ajouter un Marqueur, faites un *appui long → appuyez sur Marqueur*.
 

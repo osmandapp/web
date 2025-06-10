@@ -1,5 +1,5 @@
 ---
-source-hash: dde74eb7cad7d66d2a8a2ae0f2c644aa6bb6a0471bbd78db21be27c9691a9b46
+source-hash: 493d0f4bb5654e0183f24ee23ee49f36be8431ec2466fa554bd47c6ad8ab3813
 sidebar_position: 1
 label: Introduction
 title: Docs
@@ -8,7 +8,7 @@ title: Docs
 
 ### [Guide de l'utilisateur](/docs/user/) {#user-guide}
 
-Guide de l'utilisateur de l'application OsmAnd décrivant les principales fonctionnalités et paramètres.
+Guide de l'utilisateur sur l'application OsmAnd décrivant les principales fonctionnalités et paramètres.
 
 ### [Légende de la carte](/docs/user/map-legend/) {#map-legend}
 
@@ -16,7 +16,7 @@ Guide de l'utilisateur de l'application OsmAnd décrivant les principales foncti
 
 ### [Carte](https://osmand.net/map) {#map}
 
-Utilisez le planificateur d'itinéraire OsmAnd, consultez les prévisions météorologiques, trouvez des lieux intéressants sur la carte et travaillez avec votre compte OsmAnd Cloud (traces, favoris, données du compte).
+Utilisez le planificateur d'itinéraire OsmAnd, consultez les prévisions météorologiques, trouvez des lieux intéressants sur la carte et travaillez avec votre compte OsmAnd Cloud (traces, favoris, données de compte).
 
 ### [Documentation technique](/docs/technical/) {#technical-documentation}
 
@@ -28,7 +28,7 @@ Construisez et créez votre propre version d'OsmAnd, ainsi que des liens vers le
 
 ### [Versions](/docs/versions/) {#versions}
 
-Notes de version et liens vers les versions précédentes d'OsmAnd. Versions bêta et nocturnes. OsmAnd MapCreator.
+Notes de publication et liens vers les versions précédentes d'OsmAnd. Versions bêta et nocturnes. OsmAnd MapCreator.
 
 ### [Mentions légales](/docs/legal/) {#legal}
 

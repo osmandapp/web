@@ -1,9 +1,8 @@
 ---
-source-hash: 5fa97189298d76c6cc81486d1b1e9eb0fc2745996eaa4d55bdf6588f88a152ba
+source-hash: 88e4f7fd45f03ba362eef617efece8cbb32eac46a5e30d86a6db12675354fa56
 sidebar_position: 1
 title:  Configuration
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,9 +13,10 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
+
 ## Configuration initiale {#initial-setup}
 
-### Comment récupérer des données {#how-to-recover-data}
+### Comment récupérer les données {#how-to-recover-data}
 
 Pour éviter la perte de données, assurez-vous que vos données personnelles, vos itinéraires et vos cartes sont sauvegardés. OsmAnd offre des options pour exporter vos données vers différents formats. En cas de perte de données ou de changement d'appareil, suivez [ces étapes](https://osmand.net/docs/user/personal/import-export/#preventing-data-loss) pour restaurer vos données à partir d'une sauvegarde.
 
@@ -56,7 +56,7 @@ En savoir plus sur le [plugin Topographie](../plugins/topography.md).
 
 OsmAnd 4.4 pour les appareils iOS n'est pas disponible pour les versions iOS antérieures à iOS 15.
 
-Cela signifie que pour installer OsmAnd 4.4, vous devez mettre à niveau votre système d'exploitation vers au moins iOS 15 ou une version plus récente.
+Cela signifie que pour installer OsmAnd 4.4, vous devez mettre à niveau votre système d'exploitation vers au moins iOS 15 ou une version ultérieure.
 
 
 <!--
@@ -111,26 +111,26 @@ errors (e.g. if the SD card is too full).
 -->
 
 
-## Copier un paquet de cartes raster créé sur PC {#copy-raster-map-package-created-on-pc}
+## Copier un package de carte raster créé sur PC {#copy-raster-map-package-created-on-pc}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Import sqlitedb Android](@site/static/img/plugins/online-maps/import-sqlitedb-android.png)
+![Importer sqlitedb Android](@site/static/img/plugins/online-maps/import-sqlitedb-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Import sqlitedb iOS](@site/static/img/plugins/online-maps/import-sqlitedb-ios.png)  
+![Importer sqlitedb iOS](@site/static/img/plugins/online-maps/import-sqlitedb-ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Les paquets de cartes peuvent être enregistrés en deux formats : [SQLite et Metainfo](https://osmand.net/docs/user/map/raster-maps). Après avoir créé votre paquet de cartes, suivez ces étapes pour le déplacer vers OsmAnd :
+Les packages de cartes peuvent être enregistrés en deux formats : [SQLite et Metainfo](https://osmand.net/docs/user/map/raster-maps). Après avoir créé votre package de carte, suivez ces étapes pour le déplacer vers OsmAnd :
 
-- **Pour Android**. Accédez au stockage de votre appareil et copiez le(s) fichier(s) de votre PC vers le dossier `BASE_OSMAND_STORAGE/tiles_`. Alternativement, vous pouvez télécharger le fichier depuis votre e-mail, votre cloud ou votre messagerie, et l'ouvrir avec l'application OsmAnd. Le paquet de cartes sera automatiquement ajouté à votre liste de cartes en ligne.
+- **Pour Android**. Accédez au stockage de votre appareil et copiez le(s) fichier(s) de votre PC vers le dossier `BASE_OSMAND_STORAGE/tiles_`. Alternativement, vous pouvez télécharger le fichier depuis votre e-mail, votre cloud ou votre messagerie, et l'ouvrir avec l'application OsmAnd. Le package de carte sera automatiquement ajouté à votre liste de cartes en ligne.
 
-- **Pour iOS**. Téléchargez le fichier depuis iTunes ou une messagerie, puis ouvrez-le avec l'application OsmAnd. Le paquet de cartes sera automatiquement ajouté à votre liste de cartes en ligne.
+- **Pour iOS**. Téléchargez le fichier depuis iTunes ou une messagerie, puis ouvrez-le avec l'application OsmAnd. Le package de carte sera automatiquement ajouté à votre liste de cartes en ligne.

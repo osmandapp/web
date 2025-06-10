@@ -1,5 +1,5 @@
 ---
-source-hash: 6c61ac2dd4099e8c20c80a6fdc6676ce68075a15aa7d9d22e257ac140ab1b869
+source-hash: 8cfaeb188adf8c1a24d710a5caef6a5cc4eb8a7611ebe74b7f246a1173d8bdbb
 sidebar_position: 6
 ---
 
@@ -11,7 +11,7 @@ sidebar_position: 6
   ```
   $ xcode-select --install
   ```
-  Ou en cas d'erreurs, essayez de le télécharger et de l'installer depuis le: [site d'Apple](https://developer.apple.com/download/all/?q=xcode>)..
+  Ou en cas d'erreurs, essayez de le télécharger et de l'installer depuis : [site Apple](https://developer.apple.com/download/all/?q=xcode>).
 
 4. Connectez-vous au compte Xcode (facultatif)
   Au cas où vous n'auriez pas de compte Apple Developer. Ouvrez Xcode et allez dans les préférences (via le menu supérieur)
@@ -134,7 +134,7 @@ org.gradle.caching=true
 
 ## Dépannage {#troubleshooting}
 ### Nettoyage des fichiers temporaires. {#cleaning-temp-files}
-  - En cas d'erreurs de compilation, vous pouvez appuyer dans Xcode sur : ```Product -> Clean build folder```
+  - En cas d'erreurs de compilation, vous pouvez appuyer dans Xcode sur : ```Produit -> Nettoyer le dossier de compilation```
   - Fermez Xcode.
   - Supprimez les dossiers `baked` et `binaries` dans le répertoire `OsmAnd` (s'il existe déjà).
   - Allez dans le dossier ```core/external/qtbase-ios/``` et supprimez tous les dossiers commençant par ```upstream```.
@@ -159,7 +159,7 @@ $ xcode-kotlin sync
 
 Reportez-vous à la section Fichier d'initialisation LLDB pour terminer la configuration du débogage Kotlin.
 
-## Addon de débogage Qt (facultatif). Si vous voulez voir les valeurs Qt en mode débogage, exécutez ceci : {#qt-debug-addon-optional-if-you-want-to-see-qt-values-in-debug-mode-run-this}
+## Addon de débogage Qt (facultatif). Si vous souhaitez voir les valeurs Qt en mode débogage, exécutez ceci : {#qt-debug-addon-optional-if-you-want-to-see-qt-values-in-debug-mode-run-this}
 ```
 $ mkdir -p ~/qtlldb
 $ git clone https://github.com/gbooker/lldb-qt-formatters ~/qtlldb
@@ -169,6 +169,6 @@ $ echo "command script import ~/qtlldb/both.py" >> ~/.lldbinit-Xcode
 ```
 
 ## Fichier d'initialisation LLDB (facultatif) {#lldb-init-file-optional}
-XCode 16+ ne charge pas automatiquement `~/.lldbinit-Xcode`, alors configurez-le manuellement en utilisant le menu `Product - Scheme - Edit scheme - Run - LLDB Init File`.
+XCode 16+ ne charge pas automatiquement `~/.lldbinit-Xcode`, alors configurez-le manuellement en utilisant le menu `Produit - Schéma - Modifier le schéma - Exécuter - Fichier d'initialisation LLDB`.
 
 Après avoir défini ces paramètres, redémarrez votre ordinateur.
