@@ -3,7 +3,6 @@ slug: fast-routing
 title: "OsmAnd's Faster Offline Navigation"
 authors: [victor]
 tags: [ios, android]
-unlisted: true
 ---
 
 import Tabs from '@theme/Tabs';
@@ -65,7 +64,7 @@ The core of OsmAnd's HH-Routing is an elegant two-level hierarchy built upon "ar
 * **Border Points:** Each cluster has a limited number of defined "border points" – these are the gateways in and out of the cluster.
 * **Shortcuts:** For common scenarios, we pre-calculate the travel time/distance (the "shortcut") between border points *within the same cluster* and also to border points of *immediately adjacent* clusters.
 
-This map illustrates the OsmAnd routing concept. [The route](https://osmand.net/map/navigate/?start=51.989532,5.878372&end=51.967962,6.296539&profile=car#11/51.9993/5.9824) starts in the Start Area Cluster (Doetinchem), moves to the nearest Border Point, and continues through precomputed Shortcuts across intermediate clusters. It then enters the Finish Area Cluster (Arnhem) via another border point and finishes using local roads. This method speeds up routing by combining local search with efficient inter-cluster shortcuts.
+This map illustrates the OsmAnd routing concept. [The route](https://osmand.net/map/navigate/?start=42.343860,-71.068550&end=42.306935,-71.082991&profile=car#14/42.3280/-71.0819) starts in the Start Area Cluster (221558), moves to the nearest Border Point, and continues through precomputed Shortcuts across intermediate clusters. It then enters the Finish Area Cluster (221536) via another border point and finishes using local roads. This method speeds up routing by combining local search with efficient inter-cluster shortcuts.
 
 ![OsmAnd HH](./img/example_boston.png)
 
