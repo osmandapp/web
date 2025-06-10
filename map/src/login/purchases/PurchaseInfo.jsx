@@ -10,7 +10,7 @@ import Loading from '../../menu/errors/Loading';
 import InAppItem from './InAppItem';
 import { format } from 'date-fns';
 import ColorBlock from '../../frame/components/other/ColorBlock';
-import PurchaseManager from './PurchaseManager';
+import PurchaseManager, {getStatus} from './PurchaseManager';
 import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import AppContext from '../../context/AppContext';
 
@@ -120,7 +120,7 @@ export default function PurchaseInfo() {
                             id={item.name}
                             name={item.name}
                             type={item.type}
-                            state={item.state}
+                            state={getStatus(item)}
                             billingDate={item.billingDate}
                         />
                     ) : (

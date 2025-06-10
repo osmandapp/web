@@ -13,6 +13,7 @@ import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleText from '../../frame/components/other/SimpleText';
 import { IN_APP, SUBSCRIPTION } from './PurchaseInfo';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import {getStatus} from "./PurchaseManager";
 
 export default function PurchasesMenu() {
     const ltx = useContext(LoginContext);
@@ -85,7 +86,7 @@ export default function PurchasesMenu() {
                                                 key={index + item.name}
                                                 name={item.name}
                                                 type={item.type}
-                                                state={item.state}
+                                                state={getStatus(item)}
                                                 billingDate={item.billingDate}
                                                 onClick={() => clickOnSubscription(index)}
                                             />
