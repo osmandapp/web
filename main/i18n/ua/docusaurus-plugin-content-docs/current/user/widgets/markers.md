@@ -1,5 +1,5 @@
 ---
-source-hash: ddfc3ac037400ba4b7624aa8ca7bc26f488d3c9f1394a2591ffca630f3fb25bf
+source-hash: d3abf03ba6407956088e1ed644ced36e7ab7236b5ccbcd41e305f4fac26a3b36
 sidebar_position: 6
 title:  Віджети маркерів
 ---
@@ -29,7 +29,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Ви також можете вибрати відображення одного або двох маркерів. Детальніше про налаштування віджетів читайте в цій [статті](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
 :::info
-*Відстань до маркера* — це довжина прямої лінії між вашим положенням (або центральною точкою мапи / початковою точкою дотику до мапи, коли місцезнаходження вимкнено) та маркером.
+*Відстань до маркера* — це довжина прямої лінії між вашим місцезнаходженням (або центральною точкою мапи / початковою точкою дотику до мапи, коли місцезнаходження вимкнено) та маркером.
 :::
 
 <Tabs groupId="operating-systems">
@@ -43,8 +43,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 |------------|------------|
 | Увімкнути | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Виберіть панель → <Translate android="true" ids="map_markers_bar"/>* |
 | Натисканням | Видима частина мапи зміщується до місцезнаходження маркера. |
-| Довге натискання + переміщення | Щоб виміряти відстань і побачити напрямок від певної точки на мапі до відстежуваного маркера, потрібно зробити довге натискання і відразу трохи перемістити положення мапи (контекстне меню не повинно з'явитися). |
-| Наближення до маркера | Якщо ваше місцезнаходження знаходиться в невеликому радіусі від маркера мапи (**< 50 м**), у полі віджета ви можете побачити кнопку з галочкою для швидкого видалення маркера мапи (позначити як пройдений). Пройдений маркер замінюється наступним маркером у списку маркерів. |
+| Довге натискання + переміщення | Щоб виміряти відстань і побачити напрямок від певної точки на мапі до відстежуваного маркера, потрібно зробити довге натискання і відразу трохи перемістити положення мапи (контекстне меню не повинно з'являтися). |
+| Наближення до маркера | Якщо ваше місцезнаходження знаходиться в невеликому радіусі від маркера мапи (**< 50 м**), у полі віджета ви можете побачити кнопку з галочкою для швидкого видалення маркера мапи (позначити як пройдений). Відмічений маркер замінюється наступним маркером у списку маркерів. |
 | Формат відстані | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
@@ -59,7 +59,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | Увімкнути | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Виберіть панель → <Translate android="true" ids="map_markers_bar"/>*|
 | Натисканням | Видима частина мапи зміщується до місцезнаходження маркера. |
 | Натисканням | Перемикання між "Відстань" / "Орієнтовний час прибуття" (Режим перемикання). |
-| Наближення до маркера | Якщо ваше місцезнаходження знаходиться в невеликому радіусі від маркера мапи (**< 50 м**), у полі віджета ви можете побачити кнопку з галочкою для швидкого видалення маркера мапи (позначити як пройдений). Пройдений маркер замінюється наступним маркером у списку маркерів. |
+| Наближення до маркера | Якщо ваше місцезнаходження знаходиться в невеликому радіусі від маркера мапи (**< 50 м**), у полі віджета ви можете побачити кнопку з галочкою для швидкого видалення маркера мапи (позначити як пройдений). Відмічений маркер замінюється наступним маркером у списку маркерів. |
 | Формат відстані | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 </TabItem>
@@ -73,12 +73,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 - *Відстань від вашого поточного місцезнаходження* до вибраної точки, позначеної маркером на мапі ([Одиниці довжини](../personal/profiles/#general-settings) можна вибрати в налаштуваннях профілю).
 - *Орієнтовний час прибуття або ETA*.
-Це час (гг:хх), коли транспортний засіб або особа мають прибути до пункту призначення. Він розраховується як відстань до маркера, поділена на середню швидкість.
+Це час (год:хв), коли транспортний засіб або особа мають прибути до пункту призначення. Він розраховується як відстань до маркера, поділена на середню швидкість.
 Середня швидкість розраховується як середнє значення всіх значень швидкості, отриманих з точок місцезнаходження за вибраний вами часовий інтервал від 15 секунд до 60 хвилин.
 
 Ви також можете вибрати відображення одного або двох маркерів. Детальніше про налаштування віджетів читайте в цій [статті](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
 :::info
-*Відстань до маркера* — це довжина прямої лінії між вашим положенням (або певною точкою на мапі) та маркером.
+*Відстань до маркера* — це довжина прямої лінії між вашим місцезнаходженням (або певною точкою на мапі) та маркером.
 :::
 
 
@@ -93,7 +93,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | Увімкнути | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_markers_item"/>* |
 | Натисканням 1 | Перемикання між "Відстань" / "Орієнтовний час прибуття" (Режим перемикання). |
 | Натисканням 2 | Видима частина мапи зміщується до місцезнаходження маркера (Режим переходу до місцезнаходження маркера) |
-| Довге натискання + переміщення | Щоб виміряти відстань і побачити напрямок від певної точки на мапі до відстежуваного маркера, потрібно зробити довге натискання і відразу трохи перемістити положення мапи (контекстне меню не повинно з'явитися). |
+| Довге натискання + переміщення | Щоб виміряти відстань і побачити напрямок від певної точки на мапі до відстежуваного маркера, потрібно зробити довге натискання і відразу трохи перемістити положення мапи (контекстне меню не повинно з'являтися). |
 | Формат відстані | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
@@ -139,7 +139,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
+Перейти до: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
 
 ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)
 
@@ -155,7 +155,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_appearance"/>*
+Перейти до: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_appearance"/>*
 
 ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
 
@@ -181,4 +181,4 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - [Швидка дія](./quick-action.md)
 
 
-> *Цю статтю востаннє оновлено в жовтні 2023 року*
+> *Останнє оновлення: Жовтень 2023*

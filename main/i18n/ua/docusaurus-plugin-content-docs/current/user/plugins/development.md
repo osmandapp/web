@@ -1,5 +1,5 @@
 ---
-source-hash: 2f29d2073fad93550938f8ca3add12f64ae276043a0c012e930838420947881e
+source-hash: 580c8fbd0c79564b0976cee07d1bc9d431e8f4533df5daa052bc1202ccd84564
 sidebar_position: 10
 title:  Розробка OsmAnd
 ---
@@ -25,11 +25,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Необхідні параметри налаштування {#required-setup-parameters}
 
-Щоб активувати спеціальні функції для розробників та тестувальників:
+Щоб активувати спеціальні функції для розробників і тестувальників:
 
 1. [Увімкніть](../plugins/index.md#enable--disable) плагін розробки OsmAnd у розділі Плагіни *Головного меню*.
-2. Зробіть необхідні налаштування в [меню налаштувань](#plugin-settings) плагіна.
-3. Увімкніть **віджети розробника** за необхідності.
+2. Зробіть необхідні налаштування в [меню налаштувань плагіна](#plugin-settings).
+3. Увімкніть **віджети розробника**, якщо необхідно.
 
 
 ## Налаштування плагіна {#plugin-settings}
@@ -67,8 +67,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Вирішення проблем {#troubleshotting}
 
-- **Імітувати ваше місцезнаходження** (*Android* / *iOS*). [Імітувати](#gpx-track-simulation) місцезнаходження та рух за допомогою GPX-треку.
-- **Режим економії заряду батареї** (*Android* / *iOS*). Це налаштування зменшує [частоту оновлення екрана](#map-rendering-fps-widget) на 20 кадрів на секунду, щоб допомогти заощадити заряд батареї під час використання програм.
+- **Імітувати ваше місцезнаходження** (*Android* / *iOS*). [Імітувати](#gpx-track-simulation) місцезнаходження та рух за допомогою треку GPX.
+- **Режим енергозбереження** (*Android* / *iOS*). Це налаштування зменшує [частоту оновлення екрана](#map-rendering-fps-widget) на 20 кадрів на секунду, щоб допомогти заощадити заряд батареї під час використання програм.
 - **Використовувати 3D-іконки позиції місцезнаходження** (*iOS*). Дозволяє вибрати 3D-іконку для [іконки Моє місцезнаходження](../personal/profiles.md#my-location-appearance).
 - **Імітувати дані OBD** (*Android*). Дозволяє імітувати використання [сканера OBD](./vehicle-metrics.md).
 - **Інформація про налагодження продуктивності** (*Android*). Відображає продуктивність рендерингу та навігації.
@@ -81,7 +81,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Тестування програми {#application-testing}
 
-:::caution Android only
+:::caution Тільки Android
 :::
 
 - **Імітувати перший запуск програми**. Встановлює прапорець, що вказує на перший запуск програми, зберігає всі інші налаштування без змін.
@@ -94,7 +94,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Внутрішні алгоритми {#internal-algorithms}
 
-:::caution Android only
+:::caution Тільки Android
 :::
 
 - **Безпечний режим**. Запускати програму в (повільнішому) безпечному режимі.
@@ -102,20 +102,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Налаштування пам'яті {#memory-settings}
 
-:::caution Android only
+:::caution Тільки Android
 :::
 
 - Опція **Пам'ять, виділена для маршрутизації** дозволяє визначити обсяг пам'яті, виділеної для розрахунку довгих маршрутів. Ви можете використовувати цю опцію, якщо в *Налаштуваннях навігації* вибрано [Стандартна маршрутизація A*](../navigation/guidance/navigation-settings.md#development-settings).
 
 ***Розрахунок наддовгих маршрутів:***
 
-- Виділення більшого обсягу пам'яті може вплинути на продуктивність інших програм.
+- Більший обсяг виділеної пам'яті може вплинути на продуктивність інших програм.
 - [Розрахунок 50-кілометрових маршрутів для пішоходів](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
 
 
 ### Інформація та статистика {#info-and-statistics}
 
-:::caution Android only
+:::caution Тільки Android
 :::
 
 - **Виділена пам'ять**. Відображає виділену системну пам'ять для програми OsmAnd.
@@ -134,7 +134,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Віджет FPS рендерингу карти {#map-rendering-fps-widget}
 
-:::info  Важливо
+:::info Важливо
 Віджети розробника OsmAnd можна додати на екран лише тоді, коли увімкнено плагін розробки OsmAnd.
 :::
 
@@ -142,7 +142,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
+Перейти до: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
 ![Development widget fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
 
@@ -150,7 +150,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
+Перейти до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
 ![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
 
@@ -163,7 +163,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Віджети положення камери {#camera-position-widgets}
 
-:::info  Важливо
+:::info Важливо
 Віджети розробника OsmAnd можна додати на екран лише тоді, коли увімкнено плагін розробки OsmAnd.
 :::
 
@@ -171,7 +171,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*
+Перейти до: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*
 
 ![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
@@ -179,7 +179,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>*
+Перейти до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>*
 
 ![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
 
@@ -255,7 +255,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Віджет має два режими відображення, які перемикаються натисканням на нього:
+Віджет має два режими відображення, які перемикаються натисканням:
 
 - **<Translate android="true" ids="map_widget_zoom_level"/>**. Показує поточний рівень масштабування карти.
 - **<Translate android="true" ids="map_widget_map_scale"/>**. Показує поточне співвідношення між відстанню на карті та відповідною відстанню на землі. Приклади: "1 : 3 000", "1 : 3,3 M", "1: 340 K".
@@ -287,7 +287,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Віджет відстані від камери до цілі показує відстань між камерою (глядачем) та центром карти. Ця відстань відображається в метрах / кілометрах.
 
 
-### Порівняння із супутниковим зображенням {#comparison-with-a-satellite-imagery}
+### Порівняння із супутниковими знімками {#comparison-with-a-satellite-imagery}
 
 ![Comparison](@site/static/img/plugins/development/comparison.png)
 
@@ -297,7 +297,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Зі зменшенням нахилу камери (від 90 до 10 градусів) спотворення карти збільшується.
 - Спотворення починають спостерігатися раніше на високих широтах.
 
-У таблиці нижче наведено інформацію про нахил камери, відстань до цілі та рівень масштабування, при якому спотворення карти OsmAnd стають видимими. Якщо камера продовжує віддалятися від цілі, спостережуване спотворення карти OsmAnd буде збільшуватися.
+У таблиці нижче наведено інформацію про нахил камери, відстань до цілі та рівень масштабування, при якому стають видимими спотворення карти OsmAnd. Якщо камера продовжує віддалятися від цілі, спостережуване спотворення карти OsmAnd буде збільшуватися.
 
 |Нахил (90) |Широта |Макс. масштаб |Висота, км |Спотворення|
 |-----|-----|-----|-----|-----|
@@ -320,17 +320,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Віджет доступної оперативної пам'яті {#available-ram-widget}
 
-Цей віджет розроблено спеціально для вас під час використання OsmAnd, щоб забезпечити більш зручну та інформативну взаємодію з доступною оперативною пам'яттю на вашому пристрої. Він дозволяє легко та швидко контролювати доступну оперативну пам'ять, що особливо корисно під час використання OsmAnd для навігації. Детальніше про віджет читайте у статті [Інформаційні віджети](../widgets/info-widgets.md#available-ram).
+Цей віджет розроблено спеціально для вас під час використання OsmAnd, щоб забезпечити більш зручну та інформативну взаємодію з доступною оперативною пам'яттю на вашому пристрої. Він дозволяє легко та швидко контролювати доступну оперативну пам'ять, що особливо корисно під час використання OsmAnd для навігації. Детальніше про віджет читайте в статті [Інформаційні віджети](../widgets/info-widgets.md#available-ram).
 
 
-## Імітація GPX-треку {#gpx-track-simulation}
+## Імітація треку GPX {#gpx-track-simulation}
 
-OsmAnd надає можливість імітувати місцезнаходження та рух вашого пристрою за допомогою GPX-треку. Для цього використовуйте опцію *<Translate android="true" ids="simulate_location_by_gpx"/>* у [налаштуваннях](#plugin-settings) плагіна розробки OsmAnd:
+OsmAnd надає можливість імітувати місцезнаходження та рух вашого пристрою за допомогою треку GPX. Для цих цілей використовуйте опцію *<Translate android="true" ids="simulate_location_by_gpx"/>* у [налаштуваннях](#plugin-settings) плагіна розробки OsmAnd:
 
 - Натисніть *<Translate android="true" ids="simulate_location_by_gpx"/>*.
 - Виберіть трек для імітації місцезнаходження та руху пристрою.
 - Виберіть швидкість імітації руху.
-- Натисніть кнопку Start.
+- Натисніть кнопку "Старт".
 
 <Tabs groupId="operating-systems">
 
@@ -348,12 +348,12 @@ OsmAnd надає можливість імітувати місцезнаход
 
 </Tabs>
 
-Після запуску імітації ви побачите на головному екрані програми, що навігаційна позначка рухається відповідно до GPX-треку. Натисніть [кнопку мого місцезнаходження](../map/interact-with-map#my-location-and-zoom), щоб синхронізувати *Моє місцезнаходження* (імітована геолокація пристрою) з центром карти.
-Щоб зупинити імітацію руху вашого пристрою, поверніться до [налаштувань](#plugin-settings) розробки OsmAnd і натисніть **stop** в опції **імітувати ваше місцезнаходження**.
+Після запуску імітації ви побачите на головному екрані програми, що навігаційна позначка рухається відповідно до треку GPX. Натисніть [кнопку мого місцезнаходження](../map/interact-with-map#my-location-and-zoom), щоб синхронізувати *Моє місцезнаходження* (імітована геолокація пристрою) з центром карти.
+Щоб зупинити імітацію руху вашого пристрою, поверніться до [налаштувань](#plugin-settings) розробки OsmAnd і натисніть **зупинити** в опції **імітувати ваше місцезнаходження**.
 
 - До *<Translate android="true" ids="simulate_location_by_gpx"/>* також можна отримати доступ через **[Меню швидких дій](../widgets/quick-action.md#navigation)**.
-- Швидкість руху місцезнаходження під час імітації може бути встановлена ​​рівною записаній швидкості (1) або швидшою (x2, x3, x4).
-- Ви також можете імітувати рух по GPX-треку з [меню навігації](../navigation/setup/route-navigation.md#simulated-navigation) без увімкнення плагіна розробки OsmAnd. У цьому випадку ваше місцезнаходження не буде синхронізовано з треком.
+- Швидкість руху місцезнаходження під час імітації можна встановити рівною записаній швидкості (1) або швидшою (x2, x3, x4).
+- Ви також можете імітувати рух по треку GPX з [меню навігації](../navigation/setup/route-navigation.md#simulated-navigation) без увімкнення плагіна розробки OsmAnd. У цьому випадку ваше місцезнаходження не буде синхронізовано з треком.
 
 
 ## Пов'язані статті {#related-articles}
@@ -362,4 +362,4 @@ OsmAnd надає можливість імітувати місцезнаход
 - [Глобальні налаштування](../../user/personal/global-settings.md)
 - [Векторні карти (стилі карт)](../../user/map/vector-maps.md)
 
-> *Цю статтю востаннє оновлено в травні 2023 року*
+> *Останнє оновлення: травень 2023*

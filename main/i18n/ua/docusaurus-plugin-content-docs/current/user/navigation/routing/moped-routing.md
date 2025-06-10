@@ -1,5 +1,5 @@
 ---
-source-hash: 09ac3f5870c477c9041dc10fca9defa1b0d10c8a21bf8fc744ea295e5b83850e
+source-hash: f3ae7502efc866393db44fa06909a99ed7ca0f9aec1864d654e84235132cb2f5
 sidebar_position: 4
 title:  Маршрути для мопедів
 ---
@@ -48,7 +48,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Параметр | Опис | Примітка |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Виберіть дороги, яких ви хочете уникнути під час навігації.  </summary>![Уникнути доріг Android](@site/static/img/navigation/routing/avoid_moped_android.png) </details>  | Ви можете або [вибрати дорогу на карті](../../map/map-context-menu/#avoid-road), або вибрати тип(и) дороги зі списку:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (тип водного транспорту, що перевозить транспортні засоби через водойми)</li></ul>|
+| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Виберіть дороги, яких ви хочете уникнути під час навігації.  </summary>![Уникнути доріг Android](@site/static/img/navigation/routing/avoid_moped_android.png) </details>  | Ви можете або [вибрати дорогу на карті](../../map/map-context-menu/#avoid-road), або вибрати тип(и) дороги зі списку:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (тип водного транспорту, який перевозить транспортні засоби через водойми)</li></ul>|
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Обмеження приватного доступу будуть ігноруватися при розрахунку маршруту.  | Тег *[private](https://wiki.openstreetmap.org/wiki/Key:access)* використовується в OSM для опису обмежень на використання доріг та інших транспортних шляхів, а також будівель, входів, зручностей та об'єктів відпочинку.   |
 
 
@@ -60,8 +60,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - У розділі [*Розробка*](../guidance/navigation-settings.md#development-settings) *Параметрів маршруту* ви можете спробувати нові функції маршрутизації, які наразі перебувають на стадії тестування. Зауважте, що ці налаштування доступні лише тоді, коли увімкнено [плагін розробки OsmAnd](../../plugins/development.md).
 
-- Налаштування *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* у версії OsmAnd для *iOS* знаходиться в *Налаштуваннях навігації → Параметри маршруту* (для *Android* — у *Параметрах транспортного засобу → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Це налаштування використовується на невідомих дорогах без обмежень швидкості. Найчастіше це відбувається при навігації за треком або онлайн-маршрутом. Його потрібно встановити відповідно до параметрів вашого транспортного засобу.
+- Налаштування *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* у версії OsmAnd для *iOS* знаходиться в *Налаштуваннях навігації → Параметри маршруту* (для *Android* — у *Параметрах транспортного засобу → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Це налаштування використовується на невідомих дорогах без обмежень швидкості. Це найчастіше трапляється при навігації по треку або онлайн-маршруту. Його потрібно встановити відповідно до параметрів вашого транспортного засобу.
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Правильне налаштування параметрів допоможе уникнути проблем при створенні маршруту. Ви можете вибрати найбільш відповідний маршрут залежно від типу транспортного засобу та дорожніх обмежень, а також розрахувати час у дорозі.
 
-> *Цю статтю востаннє оновлено в червні 2024 року*
+> *Останнє оновлення: Червень 2024*

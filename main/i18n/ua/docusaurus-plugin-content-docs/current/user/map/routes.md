@@ -1,5 +1,5 @@
 ---
-source-hash: 6903b49424e5c482237d25b37443ef83dcd424359ce1c77b4d978684406c3ba7
+source-hash: 0e2f6c946c393607b5033a3e8d96b50750de7efd28c223841bc9d886f3ec9f2d
 sidebar_position: 10
 title:  Маршрути
 ---
@@ -29,7 +29,7 @@ OsmAnd має багато потужних функцій для відобра
 
 ### Велосипедні маршрути {#cycle-routes}
 
-[Велосипедні маршрути](https://wiki.openstreetmap.org/wiki/Cycle_routes) представлені трьома типами: *місцеві* (`lcn`), *регіональні* (`rcn`), *національні* (`ncn`), *міжнародні* (`icn`). Також велосипедні маршрути можуть бути частиною [вузлових мереж](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Ви можете вибрати, як призначити колір сегментам маршруту:
+[Велосипедні маршрути](https://wiki.openstreetmap.org/wiki/Cycle_routes) представлені трьома типами: *місцеві* (`lcn`), *регіональні* (`rcn`), *національні* (`ncn`), *міжнародні* (`icn`). Також велосипедні маршрути можуть бути частиною [мереж вузлів](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Ви можете вибрати, як призначити колір сегментам маршруту:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -37,12 +37,12 @@ OsmAnd має багато потужних функцій для відобра
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-Більше інформації ви можете знайти у статті [Легенда мапи](../map-legend/index.md).
+Більше інформації можна знайти у статті [Легенда мапи](../map-legend/index.md).
 
 
 ### Маршрути для гірських велосипедів {#mountain-bike-routes}
 
-Маршрути для гірських велосипедів мають специфічне картографування в [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) і можуть бути обрані окремо від велосипедних маршрутів.
+Маршрути для гірських велосипедів мають специфічне відображення в [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) і можуть бути вибрані окремо від велосипедних маршрутів.
 
 <!--
 | | | |
@@ -57,9 +57,9 @@ OsmAnd має багато потужних функцій для відобра
 - ***<Translate android="true" ids="mtb_imba"/>***.  Показує стежки MTB відповідно до Міжнародної асоціації гірського велосипеда, [MTB IMBA](https://www.imba.com/). Більше інформації у статті [Легенда мапи](../map-legend/index.md).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
-### Пішохідні маршрути {#hiking--walking-routes}
+### Пішохідні / Прогулянкові маршрути {#hiking--walking-routes}
 
-[Пішохідні маршрути](https://wiki.openstreetmap.org/wiki/Walking_Routes) представлені трьома типами: *місцеві* (`lwn`), *регіональні* (`rwn`), *національні* (`nwn`), *міжнародні* (`iwn`). Також пішохідні маршрути можуть бути частиною [вузлових мереж](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd не розділяє пішохідні та туристичні маршрути і об'єднує їх в 1 групу. Ви можете вибрати, як призначити колір сегментам маршруту:
+[Пішохідні маршрути](https://wiki.openstreetmap.org/wiki/Walking_Routes) представлені трьома типами: *місцеві* (`lwn`), *регіональні* (`rwn`), *національні* (`nwn`), *міжнародні* (`iwn`). Також пішохідні маршрути можуть бути частиною [мереж вузлів](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd не розділяє прогулянкові та пішохідні маршрути і об'єднує їх в 1 групу. Ви можете вибрати, як призначити колір сегментам маршруту:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Забарвлює маршрути відповідно до їх індивідуального [місцевого кольору](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (якщо доступно в OpenStreetMap) та символу туристичного щита.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
@@ -67,7 +67,7 @@ OsmAnd має багато потужних функцій для відобра
 - ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  Забарвлює за [приналежністю до мережі](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
 ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  Забарвлює маршрути відповідно до типу [вузлової мережі](https://wiki.openstreetmap.org/wiki/Node_Networks) (міжнародна, регіональна або місцева).  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  Забарвлює маршрути відповідно до типу [мережі вузлів](https://wiki.openstreetmap.org/wiki/Node_Networks) (міжнародна, регіональна або місцева).  
 ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
 
 
@@ -75,7 +75,7 @@ OsmAnd має багато потужних функцій для відобра
 
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-Функція **Стежки для кросових мотоциклів** дозволяє відображати на мапі маршрути, призначені для кросових мотоциклів, на основі тегу `dirtbike:scale`. Ця шкала виділяє стежки, придатні для кросових мотоциклів, з кольоровим накладанням, що показує рівні складності.
+Функція **Стежки для кросових мотоциклів** дозволяє відображати на мапі маршрути, призначені для кросових мотоциклів, на основі тегу `dirtbike:scale`. Ця шкала виділяє стежки, придатні для кросових мотоциклів, з кольоровим накладанням, що показує рівні складності.  
 
 Ви можете активувати цю функцію в *Меню → Налаштувати мапу → Маршрути → Маршрути для кросових мотоциклів*. Система функціонує аналогічно шкалі MTB, пропонуючи візуальне представлення маршрутів, адаптованих для кросових мотоциклів — більше про тег [`dirtbike` можна знайти тут](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
@@ -94,7 +94,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
     - *Категорія складності скелелазіння* (наприклад, UIAA, Французька, YDS).
     - *Тип скелі* (наприклад, вапняк, граніт).
-    - *Довжина маршруту* (в метрах).
+    - *Довжина маршруту* (у метрах).
     - *Якість скелелазіння* (міцна, сипуча, змішана).
     - *Наявність журналу сходжень*.
 
@@ -105,45 +105,45 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 ![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)
 
-Деякі ділянки доріг можуть бути частиною багатьох маршрутів, але їх можна індивідуально забарвити, щоб представити складність ділянки в гірських районах. Наразі OsmAnd підтримує італійську та швейцарську класифікації, і кожна має специфічний перелік вимог до спорядження для доступу до цієї ділянки.
+Деякі сегменти доріг можуть бути частиною багатьох маршрутів, але вони можуть бути індивідуально забарвлені, щоб представити складність сегмента в гірських районах. Наразі OsmAnd підтримує італійську та швейцарську класифікації, і кожна має специфічний список вимог до спорядження для доступу до цього сегмента.  
 
 1. [Шкала SAC](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
-2. [Шкала CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)
+2. [Шкала CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
 ### Лижні маршрути {#ski-routes}
 
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-Лижні маршрути є специфічною групою [маршрутів](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) в OpenStreetMap. Зазвичай ці маршрути можна використовувати зі стилем мапи [Зима та лижі](../map/vector-maps.md#winter-and-ski) з усіма видимими [трасами](https://wiki.openstreetmap.org/wiki/Pistes).
+Лижні маршрути є специфічною групою [маршрутів](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) в OpenStreetMap. Зазвичай ці маршрути можна використовувати зі стилем мапи [Зима та лижі](../map/vector-maps.md#winter-and-ski) з усіма видимими [трасами](https://wiki.openstreetmap.org/wiki/Pistes).  
 
 
 ### Кінні маршрути {#horse-routes}
 
 ![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
 
-[Кінні маршрути](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) відображаються як кольорові маршрути з символами для верхової їзди.
+[Кінні маршрути](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) відображаються як кольорові маршрути із символами для верхової їзди.  
 
 
-### Водні види спорту {#whitewater-sports}
+### Водний спорт {#whitewater-sports}
 
 ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
-[Маршрути для водних видів спорту](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) відображаються разом з іконками доступу, зонами небезпеки для [водного туризму](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).
+[Маршрути для водного спорту](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) відображаються разом з іконками доступу, небезпечними зонами для [водного туризму](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
 
 
 ### Маршрути для бігу {#running-routes}
 
 ![Fitness routes](@site/static/img/map/fitness_1.png)
 
-[Маршрути для бігу](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) в OpenStreetMap використовуються для названих, пронумерованих або іншим чином позначених маршрутів для бігу, переважно для легкої атлетики.
+[Маршрути для бігу](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) в OpenStreetMap використовуються для названих, нумерованих або іншим чином позначених маршрутів для бігу, переважно для легкої атлетики.
 
 
 ### Фітнес-стежки {#fitness-trails}
 
 ![Fitness routes](@site/static/img/map/fitness_route.png)
 
-[Фітнес-стежка](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) — це стежка або шлях, обладнаний перешкодами або станціями по всій довжині для фізичних вправ з метою покращення здоров'я.
+[Фітнес-стежка](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) — це стежка або шлях, обладнаний перешкодами або станціями по всій довжині для фізичних вправ з метою покращення здоров'я.  
 
 
 ### Туристичні маршрути {#travel-routes}
@@ -152,7 +152,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 ![Travel routes](@site/static/img/map/travel_route_2.png)  ![Travel routes](@site/static/img/map/travel_routes.png)
 
-Туристичні маршрути є частиною користувацьких файлів [Путівника](../plan-route/travel-guides.md) (`travel.obf`), які можуть бути згенеровані з [маршрутів користувача](https://osmand.net/blog/routes#generated-travel-routes) або бути частиною додаткових [плагінів](../plugins/index.md).
+Туристичні маршрути є частиною користувацьких файлів [Путівників](../plan-route/travel-guides.md) (`travel.obf`), які можуть бути згенеровані з [маршрутів користувача](https://osmand.net/blog/routes#generated-travel-routes) або бути частиною додаткових [плагінів](../plugins/index.md).  
 
 Ви можете налаштувати відображення певних ***Путівників*** та типів ***треків***, відображати треки як точки або ***Групи точок*** (наприклад, для путівників Wikivoyage). Дізнайтеся більше про [Путівники тут](../plan-route/travel-guides.md).
 
@@ -181,7 +181,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 - Щоб відобразити потрібні маршрути на мапі, увімкніть їх у *Списку маршрутів* меню [Налаштувати мапу](../map/configure-map-menu.md).
 - OsmAnd може виділяти [маршрути, присутні на OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, натиснувши на [символ на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштовано правильно, ви можете слідувати за кольором та іконками.
-- Ви можете створити трек поверх маршрутів за допомогою інструменту [Планування маршруту](../plan-route/create-route.md).
+- Ви можете створити трек поверх маршрутів за допомогою інструменту [Планування маршруту](../plan-route/create-route.md).  
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -239,10 +239,10 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 У контекстному меню буде видно наступну інформацію:
 
-- **Інформація про маршрут**: Назва маршруту, посилання на OSM (потрібен плагін OSM Editing), Тип, Опис, Відстань, Напрямок, Підйом/Спуск, Діапазон висот, Мережа, Оператор, Стан, Колір, Круговий маршрут, Початкова/Кінцева точки тощо.
-- **Загальне**: Розмір, Розташування, Дата створення.
+- **Інформація про маршрут**: Назва маршруту, посилання на OSM (потрібен плагін OSM Editing), Тип, Опис, Відстань, Напрямок, Підйом/Спуск, Діапазон висот, Мережа, Оператор, Стан, Колір, Круговий маршрут, Початкова/Кінцева точки та інше.
+- **Загальне**: Розмір, Розташування, Створено.
 - **Додаткова інформація**. Відображає тип активності.
-- Кнопки дій: [Зберегти як](#save-as-a-track) та [Розпочати навігацію](#start-navigation).
+- кнопки дій: [Зберегти як](#save-as-a-track) та [Розпочати навігацію](#start-navigation).
 - [Інформація про висоту](../navigation/setup/route-details.md#elevation-info). Відображає інформацію про дані висоти на маршруті.
 - [Аналіз треку на мапі](../map/tracks/index.md#analyze-track-on-map). Відображає детальний аналіз даних треку за допомогою графіків та мап.
 
@@ -262,7 +262,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 ### Зберегти як трек {#save-as-a-track}
 
@@ -280,9 +280,10 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Щоб зберегти маршрут як *GPX файл*, натисніть кнопку **Зберегти (Завантажити)** під [Інформаційною панеллю](../map/tracks/track-context-menu.md#info-panel). Це відкриє панель кнопок [Швидких дій](../map/tracks/track-context-menu.md#track-actions), де ви матимете доступ до дій з треком, таких як зміна [Вигляду](./tracks/appearance.md), [Навігація](../navigation/setup/route-navigation.md) або редагування [Планування маршруту](../plan-route/create-route.md).
+
+Щоб зберегти маршрут як *GPX файл*, натисніть кнопку **Зберегти (Завантажити)** під [Інформаційною панеллю](../map/tracks/track-context-menu.md#info-panel). Це відкриє панель кнопок [Швидкі дії](../map/tracks/track-context-menu.md#track-actions), де ви матимете доступ до дій з треком, таких як зміна [Вигляду](./tracks/appearance.md), [Навігація](../navigation/setup/route-navigation.md) або редагування [Планування маршруту](../plan-route/create-route.md).
 
 
 ### Розпочати навігацію {#start-navigation}
@@ -301,7 +302,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Щоб розпочати навігацію по вибраному маршруту OSM, натисніть кнопку **Розпочати навігацію** на [**Інформаційній панелі**](../map/tracks/track-context-menu.md#info-panel).
 
@@ -311,14 +312,14 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 ### Швидкі дії {#quick-actions}
 
-Ви можете налаштувати, чи ввімкнені або вимкнені маршрути, за допомогою віджету [Швидкі дії](../widgets/quick-action.md#configure-map).
+Ви можете налаштувати ввімкнення або вимкнення маршрутів за допомогою віджета [Швидкі дії](../widgets/quick-action.md#configure-map).
 
 
 ## Пошук маршрутів {#routes-search}
 
 Знайдіть маршрути за допомогою функції [Пошук](../search/index.md) за назвою або вибравши "Маршрути" в розділі [Категорії](../search/search-poi.md#).
 
-Щоб здійснити пошук, перейдіть до меню *<Translate android="true" ids="search_button"/>* або *<Translate android="true" ids="search_button,search_categories"/>* і введіть свою активність.
+Щоб здійснити пошук, перейдіть до меню *<Translate android="true" ids="search_button"/>* або *<Translate android="true" ids="search_button,search_categories"/>* та введіть свою активність.
 
 <Tabs groupId="operating-systems">
 
@@ -334,7 +335,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Перейдіть до *<Translate android="true" ids="search_button,search_categories,poi_routes"/>*, щоб знайти потрібні маршрути. Маршрути включають назву, тип активності, довжину, місцезнаходження та відстань до найближчої точки.
 
@@ -354,7 +355,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 </Tabs>
 
-Використовуйте кнопку фільтрів (верхній правий кут), щоб відобразити лише потрібні маршрути.
+Використовуйте кнопку фільтрів (у верхньому правому куті), щоб відобразити лише потрібні маршрути.
 
 <Tabs groupId="operating-systems">
 
@@ -382,4 +383,4 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 - [Громадський транспорт](./public-transport.md)
 - [Вигляд лінії маршруту навігації](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 
-> *Цю статтю востаннє оновлено у травні 2025 року*
+> *Останнє оновлення: Травень 2025*

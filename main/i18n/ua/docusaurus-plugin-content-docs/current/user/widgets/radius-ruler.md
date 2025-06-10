@@ -1,5 +1,5 @@
 ---
-source-hash: ee71171af08a926a3ee0a91deaa054e668b28a09ef3bd027fd2d79a9874170a9
+source-hash: 14db1ff378f43e871dddc04366518dc17627a2aeb32b40272132b8334b11f558
 sidebar_position: 5
 title:  Радіусна лінійка та Лінійка
 
@@ -15,12 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
-
-
 ## Огляд {#overview}
 
-**Інструменти лінійки** в OsmAnd розроблені, щоб допомогти вам точно вимірювати відстані та розуміти [масштаб карти](https://en.wikipedia.org/wiki/Scale_(map)).
+**Інструменти лінійки** в OsmAnd розроблені, щоб допомогти вам точно вимірювати відстані та розуміти [масштаб карти](https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1).
 
 - Інструмент **Лінійка** відображає динамічний масштаб карти в таких одиницях, як метри або фути, допомагаючи візуально оцінити відстані між об'єктами на екрані.
 - **Радіусна лінійка** дозволяє встановити радіус від будь-якої точки на карті, показуючи концентричні кола, що представляють інтервали відстані.
@@ -29,7 +26,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Ці інструменти корисні для планування маршрутів, оцінки близькості до визначних місць та аналізу територій — як для активного відпочинку, так і для точної навігації.
 
 ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_screen.png)
-
 
 ## Лінійка {#ruler}
 
@@ -61,7 +57,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |------------|------------|
 | Формат | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
-
 ## Віджет радіусної лінійки {#radius-ruler-widget}
 
 <Tabs groupId="operating-systems">
@@ -85,7 +80,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 [Віджет радіусної лінійки](../widgets/info-widgets.md#radius-ruler) показує відстань між вашим поточним місцезнаходженням (*Моє місцезнаходження*) та центром карти. Ви також можете перемістити карту, щоб встановити будь-яку власну центральну точку. Характеристики:
 
-- Відображення концентричних кіл, центрованих на вибраній точці.
+- Відображає концентричні кола, центровані на вибраній точці.
 - Перше коло відображає поточний [масштаб карти](#ruler) для швидкого візуального орієнтира.
 - Автоматично налаштовується при масштабуванні для підтримки точних значень радіуса.
 
@@ -113,7 +108,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-
 ## Компас для радіусної лінійки {#compass-for-radius-ruler}
 
 <Tabs groupId="operating-systems">
@@ -132,13 +126,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Коли **Радіусна лінійка** активна, на карті відображається накладання компаса, щоб допомогти вам зорієнтуватися в просторі. Накладання показує, як карта вирівняна відносно істинної Півночі, і може включати синій трикутник, що вказує поточний напрямок пристрою.
+Коли **Радіусна лінійка** активна, на карті відображається накладання компаса, щоб допомогти вам зорієнтуватися в просторі. Накладання показує, як карта вирівняна відносно справжньої Півночі, і може включати синій трикутник, що вказує поточний напрямок пристрою.
 
 - Кільце компаса показує орієнтацію карти — чи Північ вгорі, чи повернута.
 - **Синій трикутник** вказує напрямок, в якому спрямований ваш пристрій.
 - Щоб використовувати цю функцію, пристрій повинен підтримувати та вмикати **датчик компаса** (GPS-компас, магнітометр).
 - Тримання пристрою горизонтально покращує точність та візуалізацію.
-- Якщо **синій трикутник** і **червона стрілка** (Північ) обидва спрямовані вгору, пристрій вирівняно за істинною Північчю.
+- Якщо **синій трикутник** і **червона стрілка** (Північ) обидва спрямовані вгору, пристрій вирівняно до справжньої Півночі.
 
 Це накладання корисне для навігації на відкритому повітрі, дозволяючи вам зіставити [орієнтацію карти](../map/interact-with-map.md#map-orientation--compass) з реальним середовищем.
 
@@ -147,7 +141,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | Увімкнути | **Android**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="radius_ruler_item"/>* |
 |   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="radius_ruler_item"/>* |
 | Формат | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |
-
 
 ## Центральне / Нижнє положення {#center--bottom-position}
 
@@ -175,7 +168,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Для отримання додаткової інформації про *положення на екрані* дивіться статтю [Налаштування екрана](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
-
 ## 3D-вигляд {#3d-view}
 
 <Tabs groupId="operating-systems">
@@ -196,11 +188,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ви можете переключитися на **3D-вигляд**, щоб краще візуалізувати відстані та навколишній рельєф під час використання Радіусної лінійки. Цей вигляд нахиляє карту та надає ефект перспективи, що розширює видимий радіус.
 
-- Натисніть [кнопку місцезнаходження](../map/interact-with-map.md#my-location-and-zoom), щоб сфокусуватися на вашому положенні.
+- Торкніться [кнопки місцезнаходження](../map/interact-with-map.md#my-location-and-zoom), щоб сфокусуватися на вашому положенні.
 - Використовуйте жест [проведення двома пальцями вгору](../map/interact-with-map.md#gestures), щоб нахилити карту в 3D-режим.
 
-Кола радіуса з'являться з глибиною, що особливо корисно для планування маршрутів у горбистих районах або міських середовищах, де важливий вертикальний контекст.
-
+Радіусні кола з'являться з глибиною, що особливо корисно для планування маршрутів у горбистих районах або міських середовищах, де важливий вертикальний контекст.
 
 ## Відстань за дотиком {#distance-by-tap}
 
@@ -210,11 +201,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Існує два варіанти використання:
 
-- **Відстань від вашого місцезназначення до точки**
-  Торкніться будь-де на карті, і з'явиться пряма лінія від вашого поточного місцезнаходження до точки дотику, разом з міткою відстані. Лінія залишається на екрані, навіть якщо ви торкнетеся в іншому місці.
+- **Відстань від вашого місцезнаходження до точки**
+  Торкніться будь-де на карті, і з'явиться пряма лінія від вашого поточного місцезнаходження до точки дотику, разом з міткою відстані. Лінія залишається на екрані, навіть якщо ви торкнетеся іншого місця.
 
 - **Відстань між будь-якими двома точками**
-  Торкніться двох точок на карті одночасно (мультитач). Лінія з'єднає дві точки, і відобразиться виміряна відстань.
+  Торкніться двох точок на карті одночасно (мультитач). Лінія з'єднує дві точки, і відображається виміряна відстань.
 
 | | |
 |------------|------------|
@@ -222,7 +213,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
 | Розмір тексту (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Формат одиниць | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
-
 
 ## Відеоінструкції {#video-guides}
 
@@ -244,7 +234,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-
 ## Пов'язані статті {#related-articles}
 
 - [Налаштування екрана](./configure-screen.md)
@@ -254,4 +243,4 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [Швидка дія](./quick-action.md)
 - [Віджети маркерів](./markers.md)
 
-> *Цю статтю востаннє оновлено в травні 2025 року*
+> *Останнє оновлення: травень 2025*
