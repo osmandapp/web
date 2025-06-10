@@ -91,7 +91,7 @@ export default function PricingPage() {
                     {!show && <CircularProgress />}
                     {show && (
                         <Box className={styles.productCardBox}>
-                            {['osmand-start', 'osmand-maps-plus', 'osmand-pro', 'osmand-decade'].map((id) => (
+                            {['osmand-start', 'osmand-maps-plus', 'osmand-pro'].map((id) => (
                                 <ProductCard
                                     key={id}
                                     productId={id}
