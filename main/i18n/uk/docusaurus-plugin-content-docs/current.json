@@ -111,5 +111,5 @@
     "message": "Приєднуйтесь до нас",
     "description": "The label for category Join Us in sidebar tutorialSidebar"
   },
-  "sourceHash": "940517787f3a13596b2af35af782b063ed83ad020e42ac213742463d21d05b96"
+  "sourceHash": { "hash" : "940517787f3a13596b2af35af782b063ed83ad020e42ac213742463d21d05b96"}
 }
