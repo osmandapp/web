@@ -13,7 +13,7 @@ import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleText from '../../frame/components/other/SimpleText';
 import { IN_APP, SUBSCRIPTION } from './PurchaseInfo';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import {getStatus} from "./PurchaseManager";
+import { getStatus } from './PurchaseManager';
 
 export default function PurchasesMenu() {
     const ltx = useContext(LoginContext);

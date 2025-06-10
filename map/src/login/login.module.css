@@ -77,6 +77,8 @@
     font-weight: 400 !important;
     line-height: 140% !important;
     letter-spacing: 0.28px !important;
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
 }
 .loginDialog {
     display: flex !important;

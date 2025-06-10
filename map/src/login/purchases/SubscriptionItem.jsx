@@ -21,7 +21,7 @@ const subIconMap = {
     'OsmAnd Start': <OsmAndMapsIcon />,
     'OsmAnd Pro': <OsmAndProIcon />,
     'OsmAnd Live': <OsmAndLiveIcon />,
-    'OsmAnd+': <OsmAndMapsIcon />,
+    'OsmAnd Maps+': <OsmAndMapsIcon />,
 };
 
 export default function SubscriptionItem({ id, onClick, name, type, state, billingDate = null }) {
