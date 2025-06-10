@@ -1,5 +1,5 @@
 ---
-source-hash: dc77f9a13bc0de823e328ba99cb54a84d78b64884307f9b98ccfcad5f6c1e73e
+source-hash: 1b9d749ebb8730c64d4b1fceddc86003dfc6c14c7f5e556129e21a75f245cdc3
 sidebar_position: 8
 title:  Онлайн-карти
 ---
@@ -25,7 +25,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 1. [Увімкніть](../plugins/index.md#enable--disable) плагін **Онлайн-карти** в *Головному меню → Плагіни → Онлайн-карти*.
 2. Зробіть необхідні налаштування в розділі [Джерело карти](../map/raster-maps.md#select-raster-maps) меню Налаштувати карту.
-3. Встановіть *Джерело карти*, *Накладення* та *Підкладку*. Виберіть бажаного постачальника супутникових карт.
+3. Встановіть *Джерело карти*, *Накладання* та *Підкладку*. Виберіть бажаного постачальника супутникових карт.
 4. Завантажте вибрану [Онлайн-карту](#how-to-prepare-raster-maps), якщо потрібно.
 
 
@@ -51,7 +51,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Налаштування підкладки / накладення Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Налаштування підкладки / накладання Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Налаштування підкладки / накладення iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Налаштування підкладки / накладання iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
 </TabItem>
 
@@ -72,17 +72,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Основна стаття про підготовку карт [читайте тут](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Незважаючи на те, що плагін називається *Онлайн-карти*, ви також можете використовувати карти без підключення до Інтернету. Вам просто потрібно зберегти частини карт (часто звані тайлами), щоб використовувати їх пізніше. Для цього завантажте спеціальний [інструмент Map Creator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip), розроблений командою OsmAnd.
+Незважаючи на те, що плагін називається *Онлайн-карти*, ви можете використовувати карти і без підключення до Інтернету. Вам просто потрібно зберегти частини карт (часто називаються тайлами), щоб використовувати їх пізніше. Для цього завантажте спеціальний [інструмент Map Creator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip), розроблений командою OsmAnd.
 
 Виберіть область, яку потрібно завантажити, натисніть на Preload area, потім встановіть найменший і найбільший рівні масштабу, які ви хочете відобразити, і завантажте тайли.
-Для <b>версії Android</b> ви можете скопіювати їх до папки <i>osmand/tiles/*тип тайлів*</i> на вашому телефоні. Вам також потрібно буде відкрити <i>Налаштувати карту - Накладена карта</i> та вибрати онлайн-тайли OsmAnd.
+Для <b>версії Android</b> ви можете скопіювати їх до папки <i>osmand/tiles/*тип тайлів*</i> на своєму телефоні. Вам також потрібно буде відкрити <i>Налаштувати карту - Накладена карта</i> та вибрати онлайн-тайли OsmAnd.
 
-Для <b>версії iOS</b> ви можете вибрати файл SQ Lite на своєму телефоні (будь-який месенджер або dropbox), OsmAnd запропонує його додати. Вам також потрібно буде відкрити <i>Карта → Накладення / Підкладка або Тип карти</i> та вибрати нове джерело карти.
+Для <b>версії iOS</b> ви можете вибрати файл SQ Lite на своєму телефоні (будь-який месенджер або dropbox), OsmAnd запропонує його додати. Вам також потрібно буде відкрити <i>Карта → Накладання / Підкладка або Тип карти</i> та вибрати нове джерело карти.
 
 Як додати файл SQ Lite у версіях OsmAnd для Android та iOS, ви можете прочитати в <a href="https://anygis.ru/Web/Html/Osmand_en"><b>проєкті Anygis</b></a>.
 
 
-Онлайн-тайли можуть бути корисними, коли вам потрібен лише невеликий розділ карти або її специфічний тип для використання в обмеженій області, але ви не хочете завантажувати весь регіон. Вони можуть стати в нагоді в нескінченних ситуаціях.
+Онлайн-тайли можуть бути корисними, коли вам потрібна лише невелика частина карти або її специфічний тип для використання в обмеженій області, але ви не хочете завантажувати весь регіон. Вони можуть стати в нагоді в нескінченних ситуаціях.
 
 ![Онлайн-карти](@site/static/img/plugins/online-maps/map_creator.jpg)
 
@@ -103,4 +103,4 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
     - Переконайтеся, що у вас є активне підключення до Інтернету для доступу до супутникових зображень.  
     - Перевірте, чи завантажено вибрану Онлайн-карту або чи потрібні [додаткові налаштування](../map/raster-maps.md#select-raster-maps).
 
-> *Цю статтю востаннє оновлено в січні 2025 року*
+> *Останнє оновлення: січень 2025*

@@ -1,7 +1,7 @@
 ---
-source-hash: 918939e10c904d01cfd0907c3fe6fc1132e5c7eed6ef043e4aced839138673b3
+source-hash: 4555734ace3e7132cbe343a64b51b8a14b9f7d50262e566f5b87185e156e7f36
 sidebar_position: 5
-title:  Маршрути громадського транспорту
+title:  Маршрутизація громадським транспортом
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,25 +17,25 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Огляд {#overview}
 
-Навігація громадським транспортом у застосунку OsmAnd дозволяє прокладати маршрути з використанням громадського транспорту, що, безумовно, допоможе вам швидше пересуватися "бетонними джунглями".
+Навігація громадським транспортом у застосунку OsmAnd дозволяє прокладати маршрути громадським транспортом, що, безумовно, допоможе вам швидше пересуватися "бетонними джунглями".
 
-Дані про маршрути громадського транспорту беруться з проєкту [OpenStreetMap](http://openstreetmap.org/). OsmAnd використовує [схему PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) для навігації. OsmAnd підтримує наступні маршрути OpenStreetMap для навігації: *автобус*, *тролейбус*, *маршрутне таксі*, *фунікулер*, *метро*, *легкорейковий транспорт*, *монорейка*, *поїзд*, *трамвай*, *пором*. Швидкість за замовчуванням для кожного типу транспортного засобу налаштовується в [Routing xml](../../../technical/build-osmand/routing.md) і використовується для пошуку найшвидших маршрутів.
+Дані про маршрути громадського транспорту беруться з проєкту [OpenStreetMap](http://openstreetmap.org/). OsmAnd використовує [схему PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) для навігації. OsmAnd підтримує навігацію за маршрутами OpenStreetMap для *автобусів*, *тролейбусів*, *маршрутних таксі*, *фунікулерів*, *метро*, *легкорейкового транспорту*, *монорейки*, *поїздів*, *трамваїв*, *поромів*. Швидкість за замовчуванням для кожного типу транспортного засобу налаштовується в [Routing xml](../../../technical/build-osmand/routing.md) і використовується для пошуку найшвидших маршрутів.
 
 :::note
-Маршрути громадського транспорту перебувають на стадії тестування. Наразі ви можете будувати та переглядати свій маршрут без повної функції навігації.
+Маршрутизація громадським транспортом знаходиться на стадії тестування. Наразі ви можете будувати та переглядати свій маршрут без повної функції навігації.
 :::
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Навігація громадським транспортом Android](@site/static/img/navigation/public/navigation_android.png)  
+![Navigation public transport Android](@site/static/img/navigation/public/navigation_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Навігація громадським транспортом iOS](@site/static/img/navigation/public/navigation_ios.png)
+![avigation public transport iOS](@site/static/img/navigation/public/navigation_ios.png)
 
 </TabItem>
 
@@ -52,13 +52,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![Маршрути громадського транспорту Android](@site/static/img/navigation/public/navigation_public_android.png)
+![Navigation public transport routes Android](@site/static/img/navigation/public/navigation_public_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Маршрути громадського транспорту iOS](@site/static/img/navigation/public/navigation_public_ios.png)
+![Navigation public transport routes iOS](@site/static/img/navigation/public/navigation_public_ios.png)
 
 </TabItem>
 
@@ -70,31 +70,31 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![Маршрут громадського транспорту Android](@site/static/img/navigation/public/navigation_way_android.png)
+![Navigation public transport way Android](@site/static/img/navigation/public/navigation_way_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Маршрут громадського транспорту iOS](@site/static/img/navigation/public/navigation_way_ios.png)
+![Navigation public transport way iOS](@site/static/img/navigation/public/navigation_way_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**3.** Ви можете переглянути всі можливі пропозиції маршрутів на мапі за допомогою кнопки *Показати на мапі*. Проведіть пальцем по екранах, щоб переглянути наступний варіант маршруту.
+**3.** Ви можете переглянути всі можливі варіанти маршрутів на мапі за допомогою кнопки *Показати на мапі*. Проведіть пальцем по екранах, щоб переглянути наступний варіант маршруту.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Деталі громадського транспорту Android](@site/static/img/navigation/public/navigation_details_android.png)
+![Navigation public transport Details Android](@site/static/img/navigation/public/navigation_details_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Деталі громадського транспорту iOS](@site/static/img/navigation/public/navigation_details_ios.png)
+![Navigation public transport Details iOS](@site/static/img/navigation/public/navigation_details_ios.png)
 
 </TabItem>
 
@@ -107,13 +107,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![Список зупинок громадського транспорту Android](@site/static/img/navigation/public/navigation_stops_list_android.png)
+![Navigation public transport stops list Android](@site/static/img/navigation/public/navigation_stops_list_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Список зупинок громадського транспорту iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
+![Navigation public transport stops list iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
 
 </TabItem>
 
@@ -128,4 +128,4 @@ OsmAnd використовує нову схему громадського т�
 - Інструкція з побудови або коригування маршрутів громадського транспорту доступна в нашому [блозі](https://osmand.net/blog/guideline-pt).
 - Презентація [2019: Навігація громадським транспортом за допомогою OpenStreetMap від OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
 
-> *Цю статтю востаннє оновлено в червні 2024 року.*
+> *Останнє оновлення: Червень 2024.*

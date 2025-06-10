@@ -1,5 +1,5 @@
 ---
-source-hash: 7748bf41551911fdb4490129f03e9db2f977da99530c4fa2b102a563988d8db8
+source-hash: e46e862bf3423da156a08ba066e94f7d2262dcd693d6bfcdfd87d3e6f3328253
 sidebar_position: 6
 title:  Mapillary
 ---
@@ -16,9 +16,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Огляд {#overview}
 
-Щоб швидше орієнтуватися, в OsmAnd ви можете використовувати перегляд вулиць ваших маршрутів або цікавих місць, наданий [Mapillary](https://www.mapillary.com/) (потрібне підключення до Інтернету).
+Щоб швидше орієнтуватися, в OsmAnd можна використовувати перегляд вулиць ваших маршрутів або визначних місць, наданий [Mapillary](https://www.mapillary.com/) (потрібне підключення до Інтернету).
 
-[Шар Mapillary](https://www.mapillary.com/) переносить зображення з рівня вулиць прямо в додаток OsmAnd, щоб ви могли легко оглядати околиці будь-якого цікавого місця або вздовж запланованого маршруту. Якщо зображення відсутні, ви можете додати їх самостійно, і інші зможуть їх використовувати. Ця функція з'явилася в результаті нашої співпраці з [командою Mapillary](https://www.mapillary.com/about), об'єднавши переваги обох додатків.
+[Шар Mapillary](https://www.mapillary.com/) переносить зображення з рівня вулиць прямо в додаток OsmAnd, тож ви можете легко оглянути околиці будь-якого цікавого місця або вздовж запланованого маршруту. Якщо зображення відсутні, ви можете додати їх самостійно, і інші зможуть їх використовувати. Ця функція з'явилася завдяки нашій співпраці з [командою Mapillary](https://www.mapillary.com/about), об'єднавши переваги обох додатків.
 
 
 ## Необхідні параметри налаштування {#required-setup-parameters}
@@ -47,11 +47,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-Шар карти з вуличними зображеннями відображається на карті OsmAnd у вигляді рядів з'єднаних зелених точок.
+Шар карти з вуличними зображеннями відображається на карті OsmAnd як ряди з'єднаних зелених точок.
 
 - Фотографії користувачів Mapillary прикріплені до цих зелених точок.
-- Натисніть на зелену точку на карті, щоб відкрити фотографію з видом вулиці. Фотографії також можна вибрати зі списку в [контекстному меню карти](#map-context-menu), якщо вони доступні.
-- Після вибору екран програми розділяється на карту OsmAnd та вуличні зображення Mapillary.
+- Натисніть зелену точку на карті, щоб відкрити фотографію з видом вулиці. Фотографії також можна вибрати зі списку в [контекстному меню карти](#map-context-menu), якщо вони доступні.
+- Після вибору екран програми ділиться на карту OsmAnd та вуличні зображення Mapillary.
 - Ви можете застосувати [фільтри](#data-filtering), щоб вибрати фотографії, які ви хочете відобразити на карті.
 
 
@@ -75,7 +75,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Щоб відобразити зображення з рівня вулиць Mapillary на карті, потрібно увімкнути цей шар у меню [Налаштувати карту](../map/configure-map-menu.md) у розділі *Показати*.
 
-*Щоб отримати доступ: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.
+*Доступ: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.
 
 :::note Переглядач фотографій Mapillary
 
@@ -84,7 +84,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 :::
 
 
-### Фільтрація даних {#data-filtering}
+### Фільтрування даних {#data-filtering}
 
 <Tabs groupId="operating-systems">
 
@@ -104,7 +104,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Ви можете створити фільтр і вибрати, які фотографії відображати на карті. Наприклад, вибрати перегляд лише нещодавніх зображень або лише 360-градусних зображень.
 
-*Щоб отримати доступ: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
+*Доступ: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
 :::note Кеш плиток
 Якщо вибрані зображення не відображаються, скористайтеся **Перезавантажити** для **Кешу плиток**.
@@ -175,7 +175,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-[Віджет Mapillary](../widgets/info-widgets.md#mapillary-widget) використовується для швидкого доступу до додатка Mapillary. Віджет автоматично додається на головний екран, коли увімкнено плагін Mapillary. Ви можете увімкнути або вимкнути віджет Mapillary та інші віджети в меню [Налаштувати екран](../widgets/configure-screen.md).
+[Віджет Mapillary](../widgets/info-widgets.md#mapillary-widget) використовується для швидкого доступу до програми Mapillary. Віджет автоматично додається на головний екран, коли увімкнено плагін Mapillary. Ви можете увімкнути або вимкнути віджет Mapillary та інші віджети в меню [Налаштувати екран](../widgets/configure-screen.md).
 
 
 ## Пов'язані статті {#related-articles}
@@ -184,4 +184,4 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - [Глобальні налаштування](../../user/personal/global-settings.md)
 - [Векторні карти (стилі карт)](../../user/map/vector-maps.md)
 
-> *Цю статтю востаннє оновлено в жовтні 2024 року*
+> *Останнє оновлення: Жовтень 2024*

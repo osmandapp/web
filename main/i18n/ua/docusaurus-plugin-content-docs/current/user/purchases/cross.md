@@ -1,5 +1,5 @@
 ---
-source-hash: 8a3d4f0a5046e1a8ebe34bc40d88b3a570ceeb1895ce9cb769a4620949373450
+source-hash: e2a8b31531cf77d4170940f3ca56d8b88e2db83a1c606521c6533631e1c3ebba
 sidebar_position: 4
 title:  Кросплатформні покупки
 ---
@@ -33,16 +33,16 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | OsmAnd Pro (підписка)   | ✔              | Працює на Android, iOS та Web через Cloud |
 | Maps+ (підписка)        | ✔              | Потрібна версія 5.0+ та обліковий запис Cloud |
 | Maps+ (одноразова покупка)   | ✔              | Має бути активована через OsmAnd Cloud на пристрої, де здійснено покупку |
-| OsmAnd+ (окремий застосунок)    | Скоро         | Не переноситься між магазинами чи платформами |
+| OsmAnd+ (окремий застосунок)    | Скоро    | Не переноситься між магазинами чи платформами |
 
 
 ## Як це працює {#how-it-works}
 
-Щоб використовувати вашу покупку **OsmAnd Pro** або **Maps+** на різних платформах (Android, iOS або Web), вам потрібно **прив'язати її до свого облікового запису OsmAnd Cloud**.
+Щоб використовувати вашу покупку **OsmAnd Pro** або **Maps+** на різних платформах (Android, iOS або Web), вам потрібно **прив'язати її до вашого облікового запису OsmAnd Cloud**.
 
 ### Прив'яжіть свою покупку {#link-your-purchase}
 
-![Cloud link](@site/static/img/purchases/cloud_activation.png)
+![Прив'язка до Cloud](@site/static/img/purchases/cloud_activation.png)
 
 Виконайте цей крок на **пристрої, де ви здійснили покупку** (Android або iOS, версія 5.0 або новіша):
 
@@ -54,8 +54,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Активуйте на іншому пристрої або платформі {#activate-on-another-device-or-platform}
 
-![Maps+ cross](@site/static/img/purchases/cross_purchase.png)
-![Maps+ cross](@site/static/img/purchases/cross_purchase_1.png)
+![Maps+ крос](@site/static/img/purchases/cross_purchase.png)
+![Maps+ крос](@site/static/img/purchases/cross_purchase_1.png)
 
 1. Перейдіть до свого облікового запису [OsmAnd Cloud](../personal/osmand-cloud.md#login):
    *Меню → Налаштування → OsmAnd Cloud →* ***Увійдіть за допомогою того ж облікового запису***
@@ -70,7 +70,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 Якщо ви не бачите свою покупку в списку:
 
 1. Натисніть *Меню → Налаштування → Покупки → Відновити покупки*
-2. Переконайтеся, що ви увійшли до **того ж облікового запису OsmAnd Cloud**, який використовувався на оригінальному пристрої.
+2. Переконайтеся, що ви увійшли в **той самий обліковий запис OsmAnd Cloud**, який використовувався на оригінальному пристрої.
 
 Якщо проблема не зникає, зверніться до **support@osmand.net** та вкажіть:
 
@@ -91,7 +91,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
    *Меню → Налаштування → OsmAnd Cloud → Створити новий обліковий запис / У мене вже є обліковий запис*
 3. Встановіть OsmAnd на свій iPhone з [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
 4. Увійдіть до **того ж облікового запису OsmAnd Cloud** на своєму iPhone.
-5. Перейдіть до *Меню → Налаштування → Покупки* та переконайтеся, що **Maps+** вказано як активний.
+5. Перейдіть до *Меню → Налаштування → Покупки* та переконайтеся, що **Maps+** зазначено як активний.
 
 Це завершує кросплатформну активацію вашої покупки. Тепер ви можете продовжувати використовувати **Maps+** на своєму новому пристрої.
 
@@ -105,4 +105,4 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - [Різниця між покупками Android](./android.md#difference-between-purchases-android)
 - [Різниця між покупками iOS](./ios.md#difference-between-purchases-ios)
 
-> *Цю статтю востаннє оновлено в травні 2025 року*
+> *Останнє оновлення: Травень 2025*

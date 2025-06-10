@@ -1,5 +1,5 @@
 ---
-source-hash: c8591b2ea29f1d550d8ade11ae695de68dcbe0f205820160914491d13a15b3ea
+source-hash: 8b0e6840fa8a6ab7074614a2706b18f2202e61cb73c6101c59c92ac68b75cc73
 sidebar_position: 4
 title:  Користувацький пакет
 ---
@@ -17,12 +17,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-У застосунку OsmAnd можна створити багато налаштувань та експортувати їх у файл `.osf`. Після додавання опису, зображення та іконки ці налаштування стають повністю незалежним плагіном. Цей плагін може включати:
+У застосунку OsmAnd ви можете створити багато налаштувань та експортувати їх у файл `.osf`. Після додавання опису, зображення та іконки, ці налаштування стають повністю незалежним плагіном. Цей плагін може включати:
 
 - Усі [Налаштування профілю](../personal/profiles.md) з новим профілем.
 - Спеціальний набір швидких дій та макетів меню для *Висувної панелі* та *Контекстного меню*.
-- Користувацька офлайн-мапа всередині плагіна або запропонована для завантаження.
-- Спеціальні типи онлайн-маршрутизації та онлайн-мапи.
+- Користувацька офлайн-карта всередині плагіна або запропонована для завантаження.
+- Спеціальні типи онлайн-маршрутизації та онлайн-карти.
 
 
 ## Як створити {#how-to-create}
@@ -288,14 +288,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Зображення плагіна {#plugin-images}
 
-Щоб імпортувати зображення іконок вашого плагіна в OsmAnd, створіть папку (у нашому прикладі це папка *"res ”*), де будуть зберігатися файли зображень. Назва цього типу — **"RESOURCES"**.
+Щоб імпортувати зображення іконок вашого плагіна в OsmAnd, створіть папку (у нашому прикладі це папка *"res”*), де будуть зберігатися файли зображень. Назва цього типу — **"RESOURCES"**.
 
    ![Користувацький пакет](@site/static/img/plugins/custom/4.jpg)
 
 
 ### Профілі {#profiles}
 
-Використовуючи тип **"PROFILE ”**, ви можете додати навігаційний профіль для свого плагіна. Ви можете отримати всю інформацію про свій навігаційний профіль в експортованому файлі JSON, де можна прочитати, які типи *items.JSON* були додані (*“QUICK_ACTIONS”, “POI_UI_FILTERS”, “MAP_SOURCES ”* або інші).
+Використовуючи тип **"PROFILE”**, ви можете додати навігаційний профіль для свого плагіна. Ви можете отримати всю інформацію про свій навігаційний профіль в експортованому файлі JSON, де можна прочитати, які типи *items.JSON* були додані (*“QUICK_ACTIONS”, “POI_UI_FILTERS”, “MAP_SOURCES”* або інші).
 ПРИМІТКА: Почніть створення навігаційного профілю з усіма параметрами, для цього експортуйте навігаційні профілі та скопіюйте необхідні елементи з файлу навігаційних *profiles.osf* (items.JSON) до файлу *PLUGIN.osf* (items.JSON).
 
    ![Користувацький пакет](@site/static/img/plugins/custom/6.jpg)
@@ -303,19 +303,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### Завантаження {#downloads}
 
 Ви можете додати будь-які файли, такі як *SQLite, OBF або шрифти*, для завантаження за допомогою типу **"DOWNLOADS"**. Основні типи файлів, що завантажуються, можна знайти [тут](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).
-   *<u>ПРИМІТКА</u>*. Тег **"isHidden":"true"** (за замовчуванням *false*) може приховати дані вашої мапи від [Мап та ресурсів](../personal/maps-resources.md#local) OsmAnd. У **"scope-id"** ви можете додати всю необхідну інформацію про URL-адресу вашого файлу, назву, опис тощо.
+   *<u>ПРИМІТКА</u>*. Тег **"isHidden":"true"** (за замовчуванням *false*) може приховати дані вашої карти від [Карти та ресурси](../personal/maps-resources.md#local) OsmAnd. У **"scope-id"** ви можете додати всю необхідну інформацію про URL-адресу вашого файлу, назву, опис тощо.
 
    ![Користувацький пакет](@site/static/img/plugins/custom/3.jpg)
 
-### Запропоновані завантаження {#suggested-downloads}
+### Пропоновані завантаження {#suggested-downloads}
 
-У типі **"SUGGESTED_DOWNLOADS"** ви можете завантажити мапи, які OsmAnd пропонує при імпорті нового плагіна.
+У типі **"SUGGESTED_DOWNLOADS"** ви можете завантажити карти, які OsmAnd пропонує при імпорті нового плагіна.
 
    ![Користувацький пакет](@site/static/img/plugins/custom/7.jpg)
 
 ### Файли {#files}
 
-У типі **"FILE"** ви можете додати файли з папок вашого плагіна до папок OsmAnd, "підтип" яких можна знайти [тут](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312). У наведеному прикладі додано файли *routing.xml* та *rendering.xml*. Ви можете прочитати про те, як створити ці файли, за посиланнями [тут](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) та [тут](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).
+У типі **"FILE"** ви можете додати файли з папок вашого плагіна до папок OsmAnd, "підтип" яких можна знайти [тут](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312). У наведеному прикладі додано файли *routing.xml* та *rendering.xml*. Ви можете прочитати про те, як створити ці файли за посиланнями [тут](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) та [тут](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).
 
    ![Користувацький пакет](@site/static/img/plugins/custom/8.jpg)
 
@@ -326,18 +326,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ви можете ознайомитися з деякими плагінами, які користувачі OsmAnd створили самостійно:
 
- - Користувацький плагін [Мапи США](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) (дані PAD-US, стежки та дороги USFS, відпочинок USFS).
+ - Користувацький плагін [Карти США](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) (дані PAD-US, стежки та дороги USFS, відпочинок USFS).
  - Користувацький плагін [Anygis maps](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf).
  - Користувацький плагін [Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf).
- - [UMP-PL](https://ump.waw.pl/) Польща [користувацький плагін мапи](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf).
+ - [UMP-PL](https://ump.waw.pl/) Польща [користувацький плагін карти](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf).
  - Користувацький плагін [OsmAnd Rendering plugin](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf).
  - Користувацький плагін [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf).
 
 
 ## Пов'язані статті {#related-articles}
 
-- [Взаємодія з мапою](../../user/map/interact-with-map.md)
+- [Взаємодія з картою](../../user/map/interact-with-map.md)
 - [Загальні налаштування](../../user/personal/global-settings.md)
-- [Векторні мапи (Стилі мап)](../../user/map/vector-maps.md)
+- [Векторні карти (стилі карт)](../../user/map/vector-maps.md)
 
- > *Цю статтю востаннє оновлено в червні 2024 року*
+ > *Останнє оновлення: Червень 2024*

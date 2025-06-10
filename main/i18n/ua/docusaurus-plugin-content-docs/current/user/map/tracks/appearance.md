@@ -1,5 +1,5 @@
 ---
-source-hash: 84ddeb56f44e87741ae08ac73c00b4a7a69284cfa8aacfd4aca15431bdfe5c57
+source-hash: 90a0b74b4490473745395b99a2752c49185e30cca6fc93a62ca20659393e7eed
 sidebar_position: 5
 title:  Вигляд треку
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Track Appearance overview Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track_appearence_1_andr.png)
+![Track Appearance overview Android](@site/static/img/map/track-appear-and-1.png) ![Track menu Appearance Android](@site/static/img/map/track_appearence_1_andr.png)
 
 </TabItem>
 
@@ -41,8 +41,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ви можете змінити вигляд треку одним із наступних способів:
 
-- **З Моїх місць**. Відкрийте *Меню → Мої місця → Треки*, виберіть трек, торкніться *іконки Вигляду* в [контекстному меню треку](../../map/tracks/track-context-menu.md#overview).
-- **З мапи**. Торкніться треку безпосередньо на мапі, потім торкніться *іконки Вигляду* в розділі *Огляд*.
+- **З Моїх місць**. Відкрийте *Меню → Мої місця → Треки*, виберіть трек, торкніться *іконки Вигляд* у [контекстному меню треку](../../map/tracks/track-context-menu.md#overview).
+- **З мапи**. Торкніться треку безпосередньо на мапі, потім торкніться *іконки Вигляд* у розділі *Огляд*.
 - **З запису треку**. Змініть вигляд поточного записаного треку через [контекстне меню запису треку](../../plugins/trip-recording.md#сurrent-track-recording).
 - **З меню Налаштувати мапу**. Перейдіть до *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* для відображених треків.
 
@@ -63,16 +63,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **Безкоштовні налаштування**: *<Translate android="true" ids="track_coloring_solid"/> колір*, *<Translate android="true" ids="shared_string_speed"/>* (якщо записано) та *<Translate android="true" ids="altitude"/>* (якщо записано).
 
-    ![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)
+    ![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png) ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)
 
 - [Pro функція](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.
 
-Для отримання додаткової інформації про налаштування вигляду лінії маршруту див. [Екран мапи під час навігації](../../navigation/guidance/map-during-navigation.md#color) та про вибір і створення власного кольору див. [Кольорові схеми](../../personal/color-palette-schemes.md#routes).
+Для отримання додаткової інформації про налаштування вигляду лінії маршруту дивіться [Екран мапи під час навігації](../../navigation/guidance/map-during-navigation.md#color) та про вибір і створення власного кольору дивіться [Кольорові схеми](../../personal/color-palette-schemes.md#routes).
 
 
 ### Ширина {#width}
 
-![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track Appearance](@site/static/img/map/track_appearance_width_andr.png)
+![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png) ![Track Appearance](@site/static/img/map/track_appearance_width_andr.png)
 
 Ви можете налаштувати вигляд треку в декількох меню програми:
 
@@ -89,9 +89,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **Ширина на основі профілю**: Може бути встановлена через *Налаштування навігації → [Налаштувати лінію маршруту](../../navigation/guidance/navigation-settings.md#customize-route-line)*.
 
 
-### Інтервал поділу {#split-interval}
+### Інтервал розділення {#split-interval}
 
-![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png) ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
 
 Виберіть, чи розділяти інтервал на треку **за відстанню чи за часом**.
 
@@ -99,7 +99,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)
 
-Додає **стрілкові маркери** вздовж треку для позначення напрямку руху.
+Додає **маркери-стрілки** вздовж треку для позначення напрямку руху.
 
 ### Іконки початку та кінця {#start-and-finish-icons}
 
@@ -138,50 +138,50 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Функція **3D Трек** генерує тривимірну візуалізацію шляхом інтеграції даних про висоту в стандартні 2D треки. Ця функція створює представлення з покращеною глибиною, що дозволяє точно аналізувати трек відносно рельєфу. Включення деталей висоти дозволяє 3D треку пропонувати більш повний огляд топографії та географічного контексту маршруту.
+Функція **3D Трек** генерує тривимірну візуалізацію шляхом інтеграції даних про висоту в стандартні 2D треки. Ця функція створює представлення з покращеною глибиною, що дозволяє точно аналізувати трек відносно рельєфу. Включення деталей висоти дозволяє 3D треку запропонувати більш повний огляд топографії та географічного контексту маршруту.
 
 ### Налаштування 3D Треку {#3d-track-settings}
 
 **Висота стіни**
 Ви можете візуалізувати 3D трек за висотою та іншими доступними даними в межах треку, або за фіксованою висотою.
 
-- **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Висота*, &nbsp;*Швидкість*, &nbsp;*Фіксована висота*. Дані 3D датчика: &nbsp;*Пульс*, &nbsp;*Каденс велосипеда*, &nbsp;*Потужність велосипеда*, &nbsp;*Температура*, &nbsp;*Швидкість велосипеда*.
+- **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Висота*, &nbsp;*Швидкість*, &nbsp;*Фіксована висота*. Дані 3D-сенсорів: &nbsp;*Пульс*, &nbsp;*Каденс велосипеда*, &nbsp;*Потужність велосипеда*, &nbsp;*Температура*, &nbsp;*Швидкість велосипеда*.
 
-- **<Translate android="true" ids="vertical_exaggeration"/>**. Якщо візуалізується за *Висотою* або *Швидкістю*, ви можете масштабувати 3D дані, щоб отримати більш помітну візуалізацію для 3D треку в діапазоні від *Немає* до *x3.0*.
+- **<Translate android="true" ids="vertical_exaggeration"/>**. Якщо візуалізується за *Висотою* або *Швидкістю*, ви можете масштабувати 3D-дані, щоб отримати більш помітну візуалізацію для 3D-треку в діапазоні від *Немає* до *x3.0*.
 
-- **<Translate android="true" ids="wall_height"/>**. Якщо візуалізується за *Фіксованою висотою*, встановіть фіксовану висоту для 3D треку, визначивши його висоту на мапі в діапазоні від *Немає* до *2000 м*.
+- **<Translate android="true" ids="wall_height"/>**. Якщо візуалізується за *Фіксованою висотою*, встановіть фіксовану висоту для 3D-треку, визначивши його висоту на мапі в діапазоні від *Немає* до *2000 м*.
 
-- Ви можете поєднати це з [3D Рельєфом](../../plugins/topography.md#3d-relief). Якщо джерелом 3D даних не є висота, 3D представлення буде комбінацією висоти рельєфу та вибраних даних, таких як швидкість або пульс.
+- Ви можете поєднати це з [3D Рельєфом](../../plugins/topography.md#3d-relief). Якщо джерелом 3D-даних не є висота, 3D-представлення буде комбінацією висоти рельєфу та вибраних даних, таких як швидкість або пульс.
 
 **<Translate android="true" ids="wall_color"/>**
-Налаштовує **колір 3D треку** за допомогою градієнтів або візуалізації на основі даних.
-Доступні опції: *Немає*, &nbsp;*Суцільний*, &nbsp;*Низхідний градієнт*, &nbsp;*Висхідний градієнт*, &nbsp;*Висота*, &nbsp;*Нахил*, &nbsp;*Швидкість*.
+Налаштовує **колір 3D-треку** за допомогою градієнтів або візуалізації на основі даних.
+Параметри включають: *Немає*, &nbsp;*Суцільний*, &nbsp;*Низхідний градієнт*, &nbsp;*Висхідний градієнт*, &nbsp;*Висота*, &nbsp;*Нахил*, &nbsp;*Швидкість*.
 
 **<Translate android="true" ids="track_line"/>**
-Додає [виділену лінію](#color) до верхньої або нижньої частини 3D треку.
-Доступні опції: *Верх*, &nbsp;*Низ*, &nbsp;*Верх і низ*.
+Додає [виділену лінію](#color) до верхньої або нижньої частини 3D-треку.
+Параметри включають: *Верх*, &nbsp;*Низ*, &nbsp;*Верх і низ*.
 
-> **ПРИМІТКА**: *Для використання візуалізації 3D треку в **версії програми для Android** необхідно увімкнути рушій рендерингу мапи [Версія 2 (OpenGL)](../../personal/global-settings.md#map-rendering-engine).*
+> **ПРИМІТКА**: *Для використання візуалізації 3D-треку в **версії програми для Android** потрібен увімкнений механізм рендерингу мапи [Версія 2 (OpenGL)](../../personal/global-settings.md#map-rendering-engine).*
 
 
 ### Варіанти використання {#use-cases}
 
-Функція 3D треку дуже корисна для таких видів діяльності, як парапланеризм, де візуалізація траєкторії польоту може надати глибше розуміння. Відображаючи трек у 3D, ви можете використовувати такі функції, як **Висота стіни** та **Колір стіни**, щоб отримати цінну візуальну інформацію для аналізу.
+Функція 3D-треку дуже корисна для таких видів діяльності, як парапланеризм, де візуалізація траєкторії польоту може надати глибше розуміння. Відображаючи трек у 3D, ви можете використовувати такі функції, як **Висота стіни** та **Колір стіни**, щоб отримати цінну візуальну інформацію для аналізу.
 
 1. **Візуалізація за швидкістю в 3D**.
-    Одним із поширених варіантів використання є використання 3D треків для візуалізації змін швидкості. Це дозволяє точно визначити конкретні ділянки треку, де ви сповільнювалися або прискорювалися.
+    Одним із поширених варіантів використання є використання 3D-треків для візуалізації змін швидкості. Це дозволяє точно визначити конкретні ділянки треку, де ви сповільнювалися або прискорювалися.
 
-    За допомогою Кольору стіни на основі Нахилу ви можете спостерігати, як рельєф, зокрема пагорби та схили, впливали на вашу швидкість. Це поєднання візуалізації швидкості та нахилу забезпечує детальне розуміння продуктивності протягом активності.
+    За допомогою Кольору стіни на основі Нахилу ви можете спостерігати, як рельєф, зокрема пагорби та схили, впливали на вашу швидкість. Ця комбінація візуалізації швидкості та нахилу забезпечує детальне розуміння продуктивності протягом активності.
 
-2. **Візуалізація за датчиком серця з 3D Рельєфом**.
-    Іншим корисним застосуванням є поєднання даних датчика пульсу з 3D рельєфними мапами. Це дозволяє відображати коливання пульсу безпосередньо на рельєфі, надаючи вам повний огляд того, як зміни висоти могли вплинути на ваші фізичні зусилля.
+2. **Візуалізація за датчиком серця з 3D-рельєфом**.
+    Ще одним корисним застосуванням є поєднання даних датчика пульсу з 3D-картами рельєфу. Це дозволяє відображати коливання пульсу безпосередньо на рельєфі, надаючи вам повне уявлення про те, як зміни висоти могли вплинути на ваші фізичні зусилля.
 
-    Функція 3D рельєфу, яка перебільшує висоту, працює незалежно від вигляду 3D треку. Два параметри вертикального перебільшення можна налаштувати, щоб краще зрозуміти кореляцію між пульсом та висотою рельєфу.
+    Функція 3D-рельєфу, яка перебільшує висоту, працює незалежно від вигляду 3D-треку. Можна налаштувати два параметри вертикального перебільшення, щоб краще зрозуміти кореляцію між пульсом та висотою рельєфу.
 
-3. **Візуалізація висоти треку та лінії кольору нахилу на плоскому вигляді землі.**
+3. **Візуалізація висоти треку та кольорової лінії нахилу на плоскому вигляді землі.**
     При візуалізації даних про висоту рекомендується використовувати плоский вигляд землі, щоб уникнути проблем, таких як помилки GPS, які можуть призвести до того, що ділянки треку з'являться під землею.
 
-    У цьому сценарії зміни нахилу можна візуалізувати окремо вздовж лінії треку, тоді як Колір стіни використовується для представлення висоти. Цей метод гарантує, що навіть при потенційних неточностях даних ви все одно отримаєте чітку та точну візуалізацію нахилу та висоти.
+    У цьому сценарії зміни нахилу можна візуалізувати окремо вздовж лінії треку, тоді як Колір стіни використовується для представлення висоти. Цей метод гарантує, що навіть за потенційних неточностей даних ви все одно отримаєте чітку та точну візуалізацію нахилу та висоти.
 
 ## Змінити вигляд для кількох треків {#change-appearance-for-multiple-tracks}
 
@@ -189,19 +189,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
+![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png) ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios.png) ![Change Appearance](@site/static/img/map/tracks_change_appear_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Вкладка [Треки](../../personal/tracks/manage-tracks.md) автоматично відображає всі коли-небудь записані, створені або імпортовані треки. Вони організовані за папками або відображаються списком під ними.
+Вкладка [Треки](../../personal/tracks/manage-tracks.md) автоматично відображає всі треки, які коли-небудь були записані, створені або імпортовані. Вони організовані за папками або відображаються списком під ними.
 
 Змініть вигляд кількох треків у *Мої місця → Треки*:
 
@@ -224,7 +224,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **Ширина** – Налаштуйте [ширину лінії треку](#width) за допомогою попередньо встановлених значень або вручну.
 
-- **Інтервал поділу** – [Встановіть інтервал](#split-interval) для маркерів відстані / часу.
+- **Інтервал розділення** – [Встановіть інтервал](#split-interval) для маркерів відстані / часу.
     Стани: *Без змін*, &nbsp;*Оригінал*, &nbsp;*Вибрати*: *Час* або *Відстань*.
 
 Оригінал та без змін:
@@ -242,7 +242,7 @@ OsmAnd підтримує **власні кольори треків** у фай
 
 ```xml
 <trk>
-  <name>Example Track</name>
+  <name>Приклад треку</name>
   <extensions>
     <osmand:color>#FF0000</osmand:color>
   </extensions>
@@ -283,7 +283,7 @@ OsmAnd підтримує **власні кольори треків** у фай
   - Виберіть **Вигляд**.
   - Виберіть бажаний колір.
 
-- Це гарантує, що кожен трек збереже своє **призначене кольорове представлення**, навіть якщо файл GPX спочатку містив кілька сегментів з різними кольорами.
+- Це гарантує, що кожен трек збереже своє **заплановане кольорове представлення**, навіть якщо файл GPX спочатку містив кілька сегментів з різними кольорами.
 
 
 ## Пов'язані статті {#related-articles}
@@ -295,4 +295,4 @@ OsmAnd підтримує **власні кольори треків** у фай
 - [Контекстне меню треків](../tracks/track-context-menu.md)
 - [Запис поїздки](../../plugins/trip-recording.md)
 
-> *Цю статтю востаннє оновлено в лютому 2025 року*
+> *Останнє оновлення: Лютий 2025*

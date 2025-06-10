@@ -1,8 +1,8 @@
 ---
-source-hash: 0c64dc0300241a6577e627d46bbc944db8b5273561739b69da637def6e4173ab
+source-hash: 751ce0d01399c5201cf9fd9a85ce2e3a31e3f473f43bd4237e02b1fda097d4dd
 sidebar_position: 2
-sidebar_label:  OsmAnd Cloud
-title: OsmAnd Cloud на вебсайті
+sidebar_label: OsmAnd Cloud
+title: OsmAnd Cloud на сайті
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -20,11 +20,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-[Портал карт OsmAnd](https://osmand.net/map) — це вебсервіс, що надається OsmAnd, який дозволяє користувачам досліджувати карти, керувати своїми даними, планувати та створювати поїздки або просто переглядати карту.
+[Портал мап OsmAnd](https://osmand.net/map) — це вебсервіс від OsmAnd, що дозволяє користувачам досліджувати мапи, керувати своїми даними, планувати та створювати поїздки, або просто переглядати мапу.
 
 #### Доступ за підпискою {#subscription-accesses}
 
-Портал карт можна використовувати без реєстрації; однак деякі функції доступні виключно для користувачів OsmAnd Pro та OsmAnd Start:
+Портал мап можна використовувати без реєстрації; однак деякі функції доступні виключно для користувачів OsmAnd Pro та OsmAnd Start:
 
 | Функції | Версії |
 |--- |--- |
@@ -41,9 +41,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Якщо у вас є обліковий запис [OsmAnd Pro](../personal/osmand-cloud.md#login) або ви хочете створити обліковий запис [OsmAnd Start](../personal/osmand-cloud.md#osmand-start), вам потрібно виконати наступні кроки:
 
-- Перейдіть на [*Портал карт OsmAnd*](https://osmand.net/map).
+- Перейдіть на [*Портал мап OsmAnd*](https://osmand.net/map).
 - Відкрийте меню **Обліковий запис**.
-  - *Увійти*. Введіть адресу електронної пошти, яку ви використовували для створення облікового запису. Для підписок Pro або Start.
+  - *Увійти*. Введіть електронну пошту, яку ви використовували для створення облікового запису. Для підписок Pro або Start.
   - *Створити обліковий запис*. Для OsmAnd Start.
 
 
@@ -61,7 +61,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *Загальне меню → Обліковий запис*
 
-Після реєстрації на вебсайті користувачі можуть отримати доступ до інформації свого облікового запису, завантажити резервні копії, вийти з облікового запису, видалити його або змінити адресу електронної пошти.
+Після реєстрації на сайті користувачі можуть отримати доступ до інформації свого облікового запису, завантажити резервні копії, вийти з облікового запису, видалити його або змінити адресу електронної пошти.
 
 #### Доступ до облікового запису {#access-account}
 
@@ -79,16 +79,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Кросплатформність дозволяє використовувати OsmAnd Pro на всіх платформах *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Веб](https://www.osmand.net/map))*. Для цього вам потрібно:
 
-1. Підписатися на **OsmAnd Pro**. Докладніше про те, як це зробити для [Android тут](../purchases/android.md#how-to-buy), а для [iOS тут](../purchases/ios.md#how-to-buy).
+1. Підписатися на **OsmAnd Pro**. Детальніше про те, як це зробити для [Android тут](../purchases/android.md#how-to-buy), а для [iOS тут](../purchases/ios.md#how-to-buy).
 2. Як створити обліковий запис **OsmAnd Start**, читайте [тут](https://osmand.net/blog/start#how-to-create-an-account).
-3. Зареєструйте свій обліковий запис [Pro або Start](../troubleshooting/setup.md#cross-platform) на сервері OsmAnd у додатку OsmAnd.
+3. Зареєструйте свій обліковий запис [Pro або Start](../troubleshooting/setup.md#cross-platform) на сервері OsmAnd у застосунку OsmAnd.
 4. Зареєстрована електронна пошта буде вашим логіном для активації OsmAnd Pro на вебплатформі. Спочатку потрібно вибрати пароль для майбутнього входу на вебпортал (будь ласка, використовуйте інструкцію на вебпорталі).
 
 - Введіть свою *електронну пошту* та *пароль* для [osmand.net/map](https://osmand.net/map/).
 
 ![Перегляд активації OsmAnd Web](@site/static/img/web/web_pro_activation.png)
 
-- Ваші дані, такі як треки (OsmAnd Pro) та вибране (OsmAnd Pro та OsmAnd Start), з'являться в меню після входу. Вони доступні для відображення на карті. Але вам потрібно [синхронізувати ці дані](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) зі своїх пристроїв.
+- Ваші дані, такі як треки (OsmAnd Pro) та вибране (OsmAnd Pro та OsmAnd Start), з'являться в меню після входу. Вони доступні для відображення на мапі. Але вам потрібно [синхронізувати ці дані](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) зі своїх пристроїв.
 
 ![Перегляд даних OsmAnd Web](@site/static/img/web/web_data.png)
 
@@ -127,4 +127,4 @@ In this section of the menu, you can change the map style. You can read more abo
 
 
 
-> *Цю статтю востаннє оновлено у вересні 2024 року*
+> *Останнє оновлення: Вересень 2024*

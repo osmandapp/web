@@ -1,5 +1,5 @@
 ---
-source-hash: 982677a57779c943622535d0052ab879bc488f0edd48e8ee22cd5d814b6c94a8
+source-hash: 40fa743bf8ff1af9b22626a59238738a53b329a87c740a9afcf0b643af7911c7
 sidebar_position: 4
 ---
 import Tabs from '@theme/Tabs';
@@ -38,7 +38,16 @@ OsmAnd щодня випускає кілька готових до викори
 
 ## Додаткові оновлення {#optional-updates}
 
-<!-- ***Example***  -->
-
-- Виправлені проблеми:
-  - [Тепер працюють сербська латиниця (латиниця для Сербії, Боснії та Герцеговини та Чорногорії).](https://github.com/osmandapp/OsmAnd/issues/21480)
+- [Додано інформацію про спуски/підйоми до Аналізу за інтервалами.](https://github.com/osmandapp/OsmAnd-Issues/issues/2878)
+- [Кнопка "Відновити" працює не так, як очікувалося.](https://github.com/osmandapp/OsmAnd/issues/21842)
+- [Відсутній контур для віджету GPS-координат з увімкненою опцією прозорих віджетів.](https://github.com/osmandapp/OsmAnd/issues/22258)
+- [Використовувати значення за замовчуванням для папки треків усіх внутрішніх рівнів - Сортування треків NAME_ASCENDING.](https://github.com/osmandapp/OsmAnd/issues/22256)
+- [OsmAnd не пропонує активувати карти.](https://github.com/osmandapp/OsmAnd/issues/21302)
+- [Додано одиниці вимірювання температури для Загальних налаштувань.](https://github.com/osmandapp/OsmAnd-Issues/issues/2792)
+- [Підтримуються деякі невикористовувані, але неочікувані значення.](https://github.com/osmandapp/OsmAnd/issues/22103)
+- [Очистити пошук POI (окремі місця поклоніння).](https://github.com/osmandapp/OsmAnd/issues/21972)
+- [waterway=flowline відсутній у даних, маршрутизація човнів не працює.](https://github.com/osmandapp/OsmAnd/issues/22512)
+- [Показати заповідні території у стилі Топографічної карти.](https://github.com/osmandapp/OsmAnd/issues/22168)
+- [[Android Auto] Центр 3D-перспективи зміщено.](https://github.com/osmandapp/OsmAnd/issues/22304)
+- [Перекриття контурних ліній у Китаї.](https://github.com/osmandapp/OsmAnd/issues/22434)
+- [Помилки контурних ліній на межах паралелей/меридіанів.](https://github.com/osmandapp/OsmAnd/issues/21738)
