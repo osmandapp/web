@@ -1,7 +1,6 @@
 ---
 sidebar_position: 3
 title:  Web Purchases
-unlisted: true
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,11 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 
 ## How to Buy {#how-to-buy}
 
-You can buy OsmAnd products on our official website or via in-app purchases:
+You can buy OsmAnd products on [our official website](https://osmand.net/pricing):
 
-- **Website**: Payments are securely processed by our authorized reseller [FastSpring](https://fastspring.com/).  
+- [**Website**](https://osmand.net/pricing): Payments are securely processed by our authorized reseller [FastSpring](https://fastspring.com/).  
 
-All purchases made through any of these platforms support **cross-platform access**.
+All purchases made through any of these platforms support [**cross-platform access**](./cross.md).
 
 
 ### Difference Between Purchases {#difference-between-purchases}
@@ -55,7 +54,7 @@ Below are the prices for OsmAnd products in the US and EU. Prices in other regio
 
 ## Restore Purchases {#restore-purchases}
 
-Your purchases are linked to your OsmAnd Cloud account (your email). To restore purchases on a new device:
+Your purchases are linked to your [OsmAnd Cloud account](../personal/osmand-cloud.md#login) (your email). To restore purchases on a new device:
 
 1. Install the OsmAnd app (Android or iOS).
 2. Open the app with an active internet connection.
