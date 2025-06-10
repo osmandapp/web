@@ -19,13 +19,13 @@ import {
     TRACKS_URL,
     WEATHER_URL,
     EXPLORE_URL,
-    OLD_LOGIN_URL,
     TRAVEL_URL,
     SHARE_FILE_URL,
     TRACK_ANALYZER_URL,
     INFO_MENU_URL,
     SHARE_MENU_URL,
     PURCHASES_URL,
+    PRICING_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -45,6 +45,7 @@ import ShareFileMenu from './menu/share/ShareFileMenu';
 import { LoginContextProvider } from './context/LoginContext';
 import PurchasesMenu from './login/purchases/PurchasesMenu';
 import PurchaseInfo from './login/purchases/PurchaseInfo';
+import PricingPage from './shop/PricingPage';
 
 export let globalNavigate = () => null;
 
@@ -93,6 +94,7 @@ const App = () => {
                             <Route path={SHARE_FILE_URL} element={<ShareFile />}></Route>
                             <Route path={TRACK_ANALYZER_URL} element={<TrackAnalyzerMenu />}></Route>
                         </Route>
+                        <Route path={PRICING_URL} element={<PricingPage />}></Route>
                     </Routes>
                 </BrowserRouter>
             </AppContextProvider>

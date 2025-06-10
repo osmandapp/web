@@ -7,7 +7,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import AccountManager from '../../manager/AccountManager';
 import React, { useContext, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { useTranslation } from 'react-i18next';
@@ -22,11 +21,6 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
 
     const [width] = useWindowSize();
     const widthDialog = width / 2 < 450 ? width * 0.75 : width / 2;
-    const useStyles = makeStyles(() => ({
-        paper: { maxWidth: `${widthDialog}px`, minWidth: `${widthDialog}px` },
-    }));
-
-    const classes = useStyles();
 
     const [newEmail, setNewEmail] = useState(null);
     const [oldCode, setOldCode] = useState(null);
@@ -73,7 +67,12 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
         <>
             <Dialog
                 id={'se-change-email-dialog'}
-                classes={{ paper: classes.paper }}
+                PaperProps={{
+                    sx: {
+                        maxWidth: `${widthDialog}px`,
+                        minWidth: `${widthDialog}px`,
+                    },
+                }}
                 open={true}
                 onClose={() => setOpenChangeEmailDialog(false)}
             >

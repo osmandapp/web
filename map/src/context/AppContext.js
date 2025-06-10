@@ -16,6 +16,8 @@ import { getShareWithMe } from '../manager/ShareManager';
 import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
+import i18n from 'i18next';
+import * as locales from 'date-fns/locale';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -439,6 +441,14 @@ export const AppContextProvider = (props) => {
     const [graphHighlightedPoint, setGraphHighlightedPoint] = useState(null);
     const [sortedSegments, setSortedSegments] = useState(null);
 
+    const [dateLocale, setDateLocale] = useState(null);
+
+    useEffect(() => {
+        const currentLanguage = i18n.language;
+        const locale = locales[currentLanguage] || locales.enUS;
+        setDateLocale(locale);
+    }, []);
+
     // global graph
     const [globalGraph, setGlobalGraph] = useState({
         show: false,
@@ -789,6 +799,8 @@ export const AppContextProvider = (props) => {
                 setRemoveFavGroup,
                 notification,
                 setNotification,
+                dateLocale,
+                setDateLocale,
             }}
         >
             {props.children}

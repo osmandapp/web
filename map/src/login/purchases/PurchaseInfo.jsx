@@ -8,17 +8,17 @@ import LoginContext from '../../context/LoginContext';
 import { getAccountInfo } from '../../manager/LoginManager';
 import Loading from '../../menu/errors/Loading';
 import InAppItem from './InAppItem';
-import * as locales from 'date-fns/locale';
-import i18n from 'i18next';
 import { format } from 'date-fns';
 import ColorBlock from '../../frame/components/other/ColorBlock';
-import PurchaseManager from './PurchaseManager';
+import PurchaseManager, { getStatus } from './PurchaseManager';
 import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
+import AppContext from '../../context/AppContext';
 
 export const SUBSCRIPTION = 'subscription';
 export const IN_APP = 'inApp';
 
 export default function PurchaseInfo() {
+    const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
     const { selectedPurchase } = useOutletContext();
@@ -30,7 +30,7 @@ export default function PurchaseInfo() {
     const [item, setItem] = useState(null);
     const [type, setType] = useState(null);
 
-    const locale = locales[i18n.language] || locales.enUS;
+    const locale = ctx.dateLocale;
 
     function backToPurchases() {
         navigate({
@@ -120,7 +120,7 @@ export default function PurchaseInfo() {
                             id={item.name}
                             name={item.name}
                             type={item.type}
-                            state={item.state}
+                            state={getStatus(item)}
                             billingDate={item.billingDate}
                         />
                     ) : (

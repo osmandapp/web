@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Box, Button, Divider } from '@mui/material';
+import { Box, Button, Divider, Checkbox, FormControlLabel } from '@mui/material';
 import AppContext, {
     isLocalTrack,
     isRouteTrack,
@@ -7,7 +7,6 @@ import AppContext, {
     OBJECT_TYPE_SHARE_FILE,
 } from '../../../context/AppContext';
 import { Download } from '@mui/icons-material';
-import contextMenuStyles from '../../styles/ContextMenuStyles';
 import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
 import GeneralInfo from '../track/GeneralInfo';
 import TracksManager, {
@@ -17,19 +16,8 @@ import TracksManager, {
     hasSegments,
     isEmptyTrack,
 } from '../../../manager/track/TracksManager';
-import { Checkbox, FormControlLabel } from '@mui/material/';
-import { makeStyles } from '@material-ui/core/styles';
 import GpxGraphProvider from '../graph/GpxGraphProvider';
 import { useTranslation } from 'react-i18next';
-
-const useStyles = makeStyles({
-    checkbox: {
-        '& .MuiTypography-root': {
-            fontSize: '12',
-        },
-        transform: 'scale(0.8)',
-    },
-});
 
 export const downloadCurrentGpx = async (ctx) => {
     const gpx = await getGpxFileFromTrackData(ctx.selectedGpxFile, ctx.selectedGpxFile.routeTypes);
@@ -44,9 +32,7 @@ export const downloadCurrentGpx = async (ctx) => {
 };
 
 export default function GeneralInfoTab({ setShowInfoBlock }) {
-    const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
-    const classes = useStyles();
 
     const { t } = useTranslation();
 
@@ -62,7 +48,10 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                         <div style={{ marginLeft: '15px', marginTop: '-10px' }}>
                             {!isEmptyTrack(ctx.selectedGpxFile, false, true) && (
                                 <FormControlLabel
-                                    className={classes.checkbox}
+                                    sx={{
+                                        '& .MuiTypography-root': { fontSize: '12px' },
+                                        transform: 'scale(0.8)',
+                                    }}
                                     key={'show_points'}
                                     label={'Show track points'}
                                     control={
@@ -76,7 +65,10 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                             )}
                             {!isEmptyTrack(ctx.selectedGpxFile, true, false) && (
                                 <FormControlLabel
-                                    className={classes.checkbox}
+                                    sx={{
+                                        '& .MuiTypography-root': { fontSize: '12px' },
+                                        transform: 'scale(0.8)',
+                                    }}
                                     key={'show_wpts'}
                                     label={'Show track wpts'}
                                     control={
@@ -97,9 +89,14 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                         <Divider sx={{ mt: '3px', mb: '12px' }} />
                         <Button
                             id="se-infoblock-button-download-gpx"
-                            sx={{ ml: '-0.5px !important' }}
                             variant="contained"
-                            className={styles.button}
+                            sx={{
+                                ml: '-0.5px !important',
+                                backgroundColor: '#fbc73a !important',
+                                fontSize: '12px !important',
+                                minWidth: '20px !important',
+                                padding: '3px 5px !important',
+                            }}
                             onClick={() => {
                                 if (isLocalTrack(ctx) || isRouteTrack(ctx)) {
                                     downloadCurrentGpx(ctx);
@@ -123,8 +120,13 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                             <Button
                                 id="se-infoblock-button-close-track"
                                 variant="contained"
-                                sx={{ ml: '-0.5px !important' }}
-                                className={styles.button}
+                                sx={{
+                                    ml: '-0.5px !important',
+                                    backgroundColor: '#fbc73a !important',
+                                    fontSize: '12px !important',
+                                    minWidth: '20px !important',
+                                    padding: '3px 5px !important',
+                                }}
                                 onClick={() => setShowInfoBlock(false)}
                             >
                                 Close Track
@@ -132,8 +134,13 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                             <Button
                                 id="se-infoblock-button-delete-track"
                                 variant="contained"
-                                sx={{ backgroundColor: '#ff595e !important' }}
-                                className={styles.button}
+                                sx={{
+                                    backgroundColor: '#ff595e !important',
+                                    fontSize: '12px !important',
+                                    minWidth: '20px !important',
+                                    padding: '3px 5px !important',
+                                    ml: '5px !important',
+                                }}
                                 onClick={() => {
                                     setOpenDeleteDialog(true);
                                 }}

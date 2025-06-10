@@ -1,31 +1,20 @@
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
-import { Dialog } from '@material-ui/core';
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import SelectTrackProfile from '../../infoblock/components/track/SelectTrackProfile';
 import DialogActions from '@mui/material/DialogActions';
 import AppContext from '../../context/AppContext';
 import TracksManager from '../../manager/track/TracksManager';
-import { Button, IconButton, ToggleButton, ToggleButtonGroup, Box } from '@mui/material';
+import { Button, IconButton, ToggleButton, ToggleButtonGroup, Box, Dialog } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { makeStyles } from '@material-ui/core/styles';
 import TrackLayerProvider from '../../map/util/TrackLayerProvider';
 import TracksRoutingCache from '../../context/TracksRoutingCache';
 import RouteProfileSettings from '../../menu/navigate/RouteProfileSettings';
 import { Settings } from '@mui/icons-material';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 
-const useStyles = makeStyles({
-    dialog: {
-        '& .MuiDialog-paper': {
-            overflow: 'hidden',
-        },
-    },
-});
-
 export default function ChangeProfileTrackDialog({ open }) {
     const ctx = useContext(AppContext);
-    const classes = useStyles();
     const [width] = useWindowSize();
 
     const geoRouters = {
@@ -251,7 +240,16 @@ export default function ChangeProfileTrackDialog({ open }) {
                     setOpenSettings={setOpenSettings}
                 />
             )}
-            <Dialog disableEnforceFocus open={open} onClose={handleCancel} className={classes.dialog}>
+            <Dialog
+                disableEnforceFocus
+                open={open}
+                onClose={handleCancel}
+                PaperProps={{
+                    sx: {
+                        overflow: 'hidden',
+                    },
+                }}
+            >
                 <Box display="flex">
                     <Box flexGrow={1}>
                         <DialogTitle>Change profile</DialogTitle>

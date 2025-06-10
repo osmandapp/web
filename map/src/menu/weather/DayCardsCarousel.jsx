@@ -5,7 +5,6 @@ import { isEmpty } from 'lodash';
 import AppContext from '../../context/AppContext';
 import { getAlignedStep } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
-import * as locales from 'date-fns/locale';
 import { format } from 'date-fns';
 
 export default function DayCardsCarousel() {
@@ -19,8 +18,7 @@ export default function DayCardsCarousel() {
     const carouselRef = useRef(null);
 
     function formatDay(currentDay) {
-        const locale = locales[i18n.language] || locales.enUS;
-        const formattedDay = format(currentDay, 'eee', { locale });
+        const formattedDay = format(currentDay, 'eee', { locale: ctx.dateLocale });
         return formattedDay.charAt(0).toUpperCase() + formattedDay.slice(1);
     }
 
