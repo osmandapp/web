@@ -1,5 +1,5 @@
 ---
-source-hash: 9535eb84594011abc599a489df3b7a831ab539d909c02f080c906cc2eaaf353a
+source-hash: ff51c38b0c680f96f4e769ba5c90a79ee59427348b6dce6d5877cd5e30b74441
 sidebar_position: 3
 title: Développeur iOS
 ---
@@ -34,7 +34,7 @@ Nous recherchons un développeur expérimenté et enthousiaste capable de faire 
 ### Ce que vous pouvez attendre de nous {#what-you-can-expect-from-us}
 - Travailler dans un secteur passionnant et en pleine croissance
 - Une opportunité de combiner travail et loisirs (si vous êtes un voyageur)
-- Apprendre en faisant – vous travaillerez avec des experts de l'industrie désireux de partager leurs connaissances et leur expérience
+- Apprentissage par la pratique – vous travaillerez avec des experts du secteur désireux de partager leurs connaissances et leur expérience
 - Améliorer vos compétences en participant à des programmes de formation et de mentorat
 - Faire progresser votre carrière en choisissant parmi différents parcours professionnels (technique, gestion)
 - Excellente ambiance et environnement favorable
@@ -46,7 +46,7 @@ Nous recherchons un développeur expérimenté et enthousiaste capable de faire 
 - Horaires de travail flexibles
 - 15 jours de vacances payées
 - 15 jours de congés de maladie payés
-- Télétravail (Bureaux disponibles : Amstelveen - Pays-Bas, Cracovie - Pologne, Kiev - Ukraine)
+- Télétravail (Bureaux disponibles : Amstelveen - Pays-Bas, Cracovie - Pologne, Kyiv - Ukraine)
 - Garantie d'équilibre vie professionnelle-vie privée
 - Travail stable dans une entreprise en développement dynamique
 - Développement entièrement open source (https://github.com/osmandapp/)

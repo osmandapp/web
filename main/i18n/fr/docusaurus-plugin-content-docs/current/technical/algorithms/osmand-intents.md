@@ -1,5 +1,5 @@
 ---
-source-hash: f4eccd467e26789c1ec687ddb911ae66bf248f54698c1e793c7ef32d545d8cca
+source-hash: ce45a79a4677df21e3a8b5a8f3178863dd34264f1ee672755713d1437ee0e199
 sidebar_position: 2
 ---
 
@@ -18,7 +18,7 @@ sidebar_position: 2
 Description de l'URL :
 - "https://osmand.net/map" - Ressource web OsmAnd.
 - "?pin=52.491143,7.116394" - Coordonnées de l'épingle.
-- "#9/52.3924/6.3116" - Zoom et centrage de la carte.
+- "#9/52.3924/6.3116" - Zoom et centre de la carte.
 
 ![URL avec épingle](@site/static/img/technical/url_pin.png)
 
@@ -26,7 +26,7 @@ Description de l'URL :
 
 Description de l'URL :
 - "https://osmand.net/map" - Ressource web OsmAnd.
-- "#9/52.3924/6.3116" - Zoom et centrage de la carte.
+- "#9/52.3924/6.3116" - Zoom et centre de la carte.
 
 ![URL sans épingle](@site/static/img/technical/url_without_pin.png)
 
@@ -38,7 +38,7 @@ Description de l'URL :
 - "finish=52.412472,4.855957" - Coordonnées du point d'arrivée.
 - "profile=car" - Profil de navigation.
 - "pin=52.491143,7.116394" - Coordonnées de l'épingle.
-- "#9/52.3873/5.2570" - Zoom et centrage de la carte.
+- "#9/52.3873/5.2570" - Zoom et centre de la carte.
 
 ![URL avec navigation](@site/static/img/technical/url_navigation.png)
 

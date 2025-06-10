@@ -1,9 +1,8 @@
 ---
-source-hash: f18fb0f4478776aef8346f9997a98ee7280ac9f5ea4f6fd6e5e2299210fe83fc
+source-hash: afd8d811e22a04d300b6aceb6838f774b297758d02f07d66e5b085e41519527d
 sidebar_position: 4
 title: Configurer la carte
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,9 +12,10 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
+
 ## Aperçu {#overview}
 
-Le menu **Configurer la carte** est un élément important du *Menu principal* d'OsmAnd, où vous pouvez personnaliser l'affichage de la carte en fonction de vos besoins. Vous pouvez mettre en évidence les points favoris, les marqueurs de navigation ou les points d'intérêt spéciaux sur la carte, afficher des itinéraires spécifiques ou des fichiers GPX tiers, superposer des informations sur le terrain, des images satellite ou toute autre image raster disponible, afficher des informations sur les transports en commun et modifier le style de la carte.
+Le menu **Configurer la carte** est un élément important du *Menu principal* d'OsmAnd, où vous pouvez personnaliser l'affichage de la carte en fonction de vos besoins. Vous pouvez mettre en évidence les points favoris, les marqueurs de navigation ou les points d'intérêt spéciaux sur la carte, afficher des itinéraires spécifiques ou des fichiers GPX tiers, superposer des informations sur le terrain, des images satellite ou toute autre image raster disponible, afficher des informations sur les transports publics et modifier le style de la carte.
 
 <Tabs groupId="operating-systems">
 
@@ -61,37 +61,37 @@ Le menu **<Translate android="true" ids="configure_map"/>** est divisé en deux 
 
 ## Couches de carte {#map-layers}
 
-- [Couche de carte vectorielle](../map/vector-maps.md) - affiche toutes les informations de la carte vectorielle, y compris OpenStreetMap, les courbes de niveau et les données nautiques.
-- [Sources raster de la carte](../map/raster-maps.md#select-raster-maps) - permet de sélectionner une carte de sous-couche / source principale / superposition avec des niveaux de transparence.
+- [Couche de carte vectorielle](../map/vector-maps.md) - affiche toutes les informations de carte vectorielle, y compris OpenStreetMap, les courbes de niveau et les données nautiques.
+- [Sources raster de carte](../map/raster-maps.md#select-raster-maps) - permet de sélectionner une carte de fond / source principale / superposition avec des niveaux de transparence.
 - [Terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) - affiche les informations de pente / ombrage, le relief 3D.
 - [Bordures des cartes téléchargées](../map/vector-maps.md#show-borders) - affiche toutes les bordures des cartes téléchargées sur la couche de carte principale.
 - [Grille de coordonnées](../map/vector-maps.md#coordinates-grid) - contrôle la visibilité de la grille de coordonnées sur la carte.
 
 ## Couches de données de carte {#map-data-layers}
 
-   - [Favoris](../map/point-layers-on-map.md) - affiche les points favoris.
-   - [POI](../map/point-layers-on-map.md) - affiche les points d'intérêt des catégories sélectionnées.
-   - [Marqueurs de carte](../map/point-layers-on-map.md) - affiche les marqueurs de carte.
-   - [Étiquettes de superposition](../map/point-layers-on-map.md) - affiche les noms des points et des favoris sur la carte.
-   - [Transport](../map/vector-maps.md#transport) - affiche les arrêts de transport en commun.
-   - [Tracés](../map/tracks/index.md) - affiche les tracés importés, planifiés ou enregistrés sur la carte.
-   - [Imagerie au niveau de la rue](../plugins/mapillary.md#map-layer) - affiche les points avec l'imagerie au niveau de la rue disponible.
-   - [Guides de voyage](../plan-route/travel-guides.md) - affiche les guides de voyage sur la carte.
-   - [Wikipedia](../plugins/wikipedia.md) - met en évidence les articles Wikipedia liés à la carte.
-   - [Autres couches de plugins](../plugins/index.md#configure-plugin) - de nombreux plugins ajoutent leurs couches avec des informations supplémentaires.
+- [Favoris](../map/point-layers-on-map.md) - affiche les points favoris.
+- [POI](../map/point-layers-on-map.md) - affiche les points d'intérêt des catégories sélectionnées.
+- [Marqueurs de carte](../map/point-layers-on-map.md) - affiche les marqueurs de carte.
+- [Étiquettes de superposition](../map/point-layers-on-map.md) - affiche les noms des points et des favoris sur la carte.
+- [Transport](../map/vector-maps.md#transport) - affiche les arrêts de transport public.
+- [Tracés](../map/tracks/index.md) - affiche les tracés importés, planifiés ou enregistrés sur la carte.
+- [Imagerie au niveau de la rue](../plugins/mapillary.md#map-layer) - affiche les points avec l'imagerie au niveau de la rue disponible.
+- [Guides de voyage](../plan-route/travel-guides.md) - affiche les guides de voyage sur la carte.
+- [Wikipedia](../plugins/wikipedia.md) - met en évidence les articles Wikipedia liés à la carte.
+- [Autres couches de plugins](../plugins/index.md#configure-plugin) - de nombreux plugins ajoutent leurs couches avec des informations supplémentaires.
 
 ## Paramètres de style de carte {#map-style-parameters}
 
-Les paramètres de style de carte dépendent du style de carte principal affiché. Vous pouvez en savoir plus à ce sujet dans l'[article sur les styles de carte](../map/vector-maps).
+Les paramètres de style de carte dépendent du style de carte principal affiché. Vous pouvez en savoir plus à ce sujet dans l'[article Styles de carte](../map/vector-maps).
 
-   - [Style de carte](../map/vector-maps.md#default-map-styles) - comprend OsmAnd (Ville), Topo, Nautique et autres.
-   - [Mode carte](../map/vector-maps.md#map-mode) - vous permet de sélectionner l'affichage de la carte et la navigation en fonction de l'heure de la journée.
-   - [Loupe de carte](../map/vector-maps.md#map-magnifier) - permet de modifier le grossissement de la carte.
-   - [Taille du texte](../map/vector-maps.md#text-size) - permet d'augmenter ou de diminuer la taille du texte sur la carte.
-   - [Langue de la carte](../map/vector-maps.md#map-language) - permet de sélectionner la langue préférée affichée sur la carte.
-   - [Détails](../map/vector-maps.md#details) - affiche des objets spécifiques.
-   - [Masquer](../map/vector-maps.md#hide) - masque des objets spécifiques.
-   - [Itinéraires](../map/vector-maps.md#routes) - permet de mettre en évidence les itinéraires et leurs symboles.
+- [Style de carte](../map/vector-maps.md#default-map-styles) - comprend OsmAnd (Ville), Topo, Nautique et autres.
+- [Mode carte](../map/vector-maps.md#map-mode) - vous permet de sélectionner la vue de la carte et la navigation en fonction de l'heure de la journée.
+- [Loupe de carte](../map/vector-maps.md#map-magnifier) - permet de modifier le grossissement de la carte.
+- [Taille du texte](../map/vector-maps.md#text-size) - permet d'augmenter ou de diminuer la taille du texte sur la carte.
+- [Langue de la carte](../map/vector-maps.md#map-language) - permet de sélectionner la langue préférée affichée sur la carte.
+- [Détails](../map/vector-maps.md#details) - affiche des objets spécifiques.
+- [Masquer](../map/vector-maps.md#hide) - masque des objets spécifiques.
+- [Itinéraires](../map/vector-maps.md#routes) - permet de mettre en évidence les itinéraires et leurs symboles.
 
 ## Personnalisation de l'interface utilisateur (Android) {#ui-customization-android}
 
@@ -102,4 +102,4 @@ Allez dans : *<Translate android="true" ids="shared_string_menu,configure_profil
 ![Éléments de configuration de la carte](@site/static/img/settings/configure-screen-ui-customization.png)
 
 
-> *Cet article a été mis à jour pour la dernière fois en février 2025*
+> *Dernière mise à jour : Février 2025*

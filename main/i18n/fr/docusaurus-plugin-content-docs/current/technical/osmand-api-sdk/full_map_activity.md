@@ -1,9 +1,9 @@
 ---
-source-hash: a0f9518d42588710815b302bfb3fb7d54b916f92c9f78e368bdbcc943131b4c3
+source-hash: 9d9421c67c958cec3ca0def2d9e6f7dcb0de27495a1123cc5b12d8969f022143
 sidebar_position: 5
 ---
 
-# Activité de carte complète {#full-map-activity}
+# Activité Carte complète {#full-map-activity}
 Il est possible d'étendre OsmAnd MapActivity et d'y ajouter des fonctionnalités supplémentaires
 
 ```

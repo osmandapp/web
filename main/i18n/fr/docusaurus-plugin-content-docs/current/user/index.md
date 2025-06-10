@@ -1,10 +1,10 @@
 ---
-source-hash: ecd46c369f7b7bc5132c1d20b758e220d1e0ec3610e21ee15b434c6ef2c77b35
+source-hash: 7aea09ded358921f2251853fe554d8f51b9a110d6d8c0ced23bab4e8a044c7d3
 
 ---
 # Guide de l'utilisateur {#user-guide}
 
-OsmAnd propose une navigation et une consultation de cartes hors ligne mondiales avec de nombreux outils spéciaux pour Android et iOS.
+OsmAnd propose une navigation et une exploration de cartes hors ligne mondiales avec de nombreux outils spéciaux pour Android et iOS.
 
 
 ### [Commencer avec OsmAnd](./start-with/index.md) {#begin-with-osmand}
@@ -29,7 +29,7 @@ OsmAnd permet de stocker et de gérer différentes données cartographiques comm
 
 ### [Navigation](./navigation/index.md) {#navigation}
 
-La fonctionnalité de navigation vous guide vers vos destinations, en affichant des itinéraires, en offrant des instructions virage par virage et une assistance vocale facultative.
+La fonctionnalité de navigation vous guide vers vos destinations, en affichant des itinéraires, en offrant des instructions virage par virage et un guidage vocal facultatif.
 
 
 ### [Planifier un itinéraire](./plan-route/index.md) {#plan-route}
@@ -38,7 +38,7 @@ OsmAnd vous permet de créer vos propres itinéraires et d'utiliser les itinéra
 
 ### [Plugins](./plugins/index.md) {#plugins}
 
-Les plugins activent des paramètres avancés et des fonctionnalités supplémentaires pour OsmAnd, comme l'enregistrement de trajets, l'affichage de données de terrain sur la carte, les vues de rue par Mapillary, les articles Wikipédia hors ligne sur la carte, etc.
+Les plugins activent des paramètres avancés et des fonctionnalités supplémentaires pour OsmAnd, comme l'enregistrement de trajets, l'affichage de données de terrain sur la carte, les vues de rue par Mapillary, les articles Wikipedia hors ligne sur la carte, etc.
 
 ### [Achats](./purchases/index.md) {#purchases}
 
@@ -50,7 +50,7 @@ L'outil offre des fonctionnalités de recherche pour tous les cas d'utilisation 
 
 ### [Planificateur d'itinéraire Web](./web/index.md) {#web-route-planner}
 
-OsmAnd Web Source offre un large éventail de fonctionnalités cartographiques, un service de navigation et une synchronisation avec OsmAnd Cloud. Cela permet aux utilisateurs d'accéder à des cartes détaillées, de naviguer sur des itinéraires et de synchroniser leurs données sur tous les appareils.
+La source Web d'OsmAnd offre un large éventail de fonctionnalités cartographiques, un service de navigation et une synchronisation avec OsmAnd Cloud. Cela permet aux utilisateurs d'accéder à des cartes détaillées, de naviguer sur des itinéraires et de synchroniser leurs données sur tous les appareils.
 
 ### [Dépannage](./troubleshooting/index.md) {#troubleshooting}
 

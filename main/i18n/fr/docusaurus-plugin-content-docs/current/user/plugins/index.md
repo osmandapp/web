@@ -1,9 +1,8 @@
 ---
-source-hash: c8b722b01f6bc574c9ee9bfcf1cc77381d108fa84cf86bde7d86f0c7c73845d6
+source-hash: 82f8eb0792e7d1e839f270fe978f42afb1342112ba3154466d07b464ea6b59b9
 sidebar_position: 18
 title:  Plugins
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,9 +15,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Vue d'ensemble {#overview}
 
-Les plugins étendent considérablement les fonctionnalités d'OsmAnd. Chacun est conçu pour répondre à une tâche ou un cas d'utilisation spécifique, comme l'enregistrement d'un trajet, l'accès hors ligne à des articles Wikipédia, la visualisation de données de terrain ou la fourniture d'une vue au niveau de la rue.
+## Aperçu {#overview}
+
+Les plugins étendent considérablement les fonctionnalités d'OsmAnd. Chacun est conçu pour répondre à une tâche ou à un cas d'utilisation spécifique, comme l'enregistrement d'un trajet, l'accès hors ligne à des articles Wikipédia, la visualisation de données de terrain ou la fourniture d'une vue au niveau de la rue.
 
 Les plugins peuvent être internes, activés dans l'application OsmAnd, ou externes, des programmes installés séparément. Les plugins tiers fonctionnent via l'API OsmAnd et peuvent accéder aux données OsmAnd.
 
@@ -36,7 +36,7 @@ Pour accéder aux fonctionnalités d'un plugin, il faut d'abord l'[activer](#ena
 
 Aller à : *<Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Activer*
 
-![Activer les plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Exemple de plugin Android](@site/static/img/settings/plugin_example_android.png)
+![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
 
 </TabItem>
 
@@ -44,7 +44,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,plugin_settings"/>
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;*
 
-![Activer les plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Exemple de plugin iOS](@site/static/img/settings/plugin_example_ios.png)
+![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
 
 </TabItem>
 
@@ -95,7 +95,7 @@ Les plugins OsmAnd peuvent augmenter ces groupes de fonctionnalités : **Couches
 Seuls le plugin de développement OsmAnd et le plugin d'édition OSM modifient les paramètres pour tous les profils. Les autres plugins sont configurés pour chaque profil séparément.
 :::
 
-La plupart des plugins fournissent des paramètres spécifiques au profil ou globaux, accessibles via :
+La plupart des plugins proposent des paramètres spécifiques au profil ou globaux, accessibles via :
 
 - *Menu principal → Plugins → Nom du plugin → Paramètres (&#x2699 pour iOS)* ou
 - *Menu principal → Paramètres → Profil → [Paramètres des plugins](../personal/profiles.md#plugin-settings)*.
@@ -104,13 +104,13 @@ La plupart des plugins fournissent des paramètres spécifiques au profil ou glo
 
 <TabItem value="android" label="Android">
 
-![Paramètres plugin Android 1](@site/static/img/plugins/development/access_plugin_settings_andr_2.png) ![Paramètres plugin Android 2](@site/static/img/plugins/development/access_plugin_settings_andr_1.png)
+![Settings plugin Android 1](@site/static/img/plugins/development/access_plugin_settings_andr_2.png) ![Settings plugin Android 2](@site/static/img/plugins/development/access_plugin_settings_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Paramètres plugin iOS 1](@site/static/img/plugins/development/access_plugin_settings_ios_2.png) ![Paramètres plugin iOS 2](@site/static/img/plugins/development/access_plugin_settings_ios_1.png)
+![Settings plugin iOS 1](@site/static/img/plugins/development/access_plugin_settings_ios_2.png) ![Settings plugin iOS 2](@site/static/img/plugins/development/access_plugin_settings_ios_1.png)
 
 </TabItem>
 
@@ -128,9 +128,9 @@ Les plugins suivants proposent leurs propres paramètres :
 |[Édition OpenStreetMap](#openstreetmap-editing)| Spécifier le [login](../plugins/osm-editing.md#plugin-settings) de l'utilisateur |
 |  [Capteurs externes](#external-sensors) 🤖  | Se connecter à un appareil externe [Paramètres](../plugins/external-sensors.md#settings) |
 |  [Accessibilité](#accessibility) 🤖  | Les [Paramètres](../plugins/accessibility.md#plugin-settings) vous permettent d'utiliser les [fonctionnalités d'accessibilité Android](https://www.android.com/accessibility/) dans OsmAnd. |
-| [Développement OsmAnd](#osmand-development) | Les [paramètres du plugin](../plugins/development.md#plugin-settings) vous permettent d'activer des fonctionnalités spéciales pour les développeurs ou les utilisateurs expérimentés |
+| [Développement OsmAnd](#osmand-development) | Les [Paramètres du plugin](../plugins/development.md#plugin-settings) vous permettent d'activer des fonctionnalités spéciales pour les développeurs ou les utilisateurs expérimentés |
 |  [OsmAnd Tracker](#osmand-tracker) 🤖  | Tous les paramètres sont configurables dans une application séparée |
-| [Suivi de navires AIS](#ais-vessel-tracker) | Les [paramètres du plugin](../plugins/ais-tracker.md#plugin-settings) vous permettent d'activer des paramètres spéciaux |
+| [Suivi de navires AIS](#ais-vessel-tracker) | Les [Paramètres du plugin](../plugins/ais-tracker.md#plugin-settings) vous permettent d'activer des paramètres spéciaux |
 
 ### Actions des plugins {#plugin-actions}
 
@@ -171,11 +171,11 @@ Créez des notes audio/vidéo pour référence future, par exemple pour vous sou
 
 ### [Position de stationnement](./parking.md) {#parking-position}
 
-Définissez un point sur la carte où votre voiture est garée dans la rue et informez votre calendrier de la fin du temps de stationnement. Cela vous permettra de suivre plus facilement l'heure et l'emplacement de votre voiture.
+Définissez un point sur la carte où votre voiture est laissée dans la rue et notifiez votre calendrier lorsque le temps de stationnement se termine. Cela vous permettra de suivre plus facilement l'heure et l'emplacement de votre voiture.
 
 ### [Édition OpenStreetMap](./osm-editing.md) {#openstreetmap-editing}
 
-Le plugin d'édition OpenStreetMap vous permet de contribuer à OpenStreetMap, une communauté mondiale créant une carte complète du monde et fournissant des données open source à jour et accessibles au public.
+Le plugin d'édition OpenStreetMap vous permet de contribuer à OpenStreetMap, une communauté mondiale créant une carte complète du monde et fournissant des données open source à jour et publiquement disponibles.
 
 ### [Mapillary](./mapillary.md) {#mapillary}
 
@@ -187,11 +187,11 @@ Le plugin Accessibilité rend les fonctionnalités d'accessibilité de l'apparei
 
 ### [Capteurs externes](./external-sensors.md) {#external-sensors}
 
-Connectez des capteurs externes pour afficher leurs données dans OsmAnd et stocker les informations dans les enregistrements de trace.
+Connectez des capteurs externes pour afficher leurs données dans OsmAnd et stocker les informations dans les enregistrements de trajet.
 
 ### [Métriques du véhicule](./vehicle-metrics.md) {#vehicle-metrics}
 
-Connectez un scanner OBD-II pour afficher les données du véhicule dans OsmAnd et stocker les informations dans les enregistrements de trace.
+Connectez un scanner OBD-II pour afficher les données du véhicule dans OsmAnd et stocker les informations dans les enregistrements de trajet.
 
 ### [Météo](./weather.md) {#weather}
 
@@ -216,4 +216,4 @@ Vous pouvez créer votre propre plugin en suivant l'article *Package personnalis
 
 _______
 
-> *Cet article a été mis à jour pour la dernière fois en mars 2025*
+> *Dernière mise à jour : mars 2025*

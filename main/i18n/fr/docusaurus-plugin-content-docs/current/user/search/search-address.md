@@ -1,9 +1,8 @@
 ---
-source-hash: 7751ba528e431a84b5311d05c627e7b6b4db577091987c845970e30492b9e65d
+source-hash: 7aa187a96947b5ca65aab12d710ed0867ffb5db9a42f53d9dfb15a99a9107f74
 sidebar_position: 2
 title:  Rechercher une adresse
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,11 +12,12 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 <InfoIncompleteArticle/>
 
 ## Aperçu {#overview}
 
-*La recherche d'adresses OsmAnd* est basée sur les données OpenStreetMap et vous permet de trouver l'emplacement et les directions d'une adresse spécifique à partir d'une liste déjà triée, ainsi que de rechercher par code postal ou par coordonnées. Cet outil vous permet de trouver les adresses requises en quelques clics, ce qui réduit le temps de recherche et vous aide si vous ne vous souvenez pas de l'adresse exacte.
+*La recherche par adresse d'OsmAnd* est basée sur les données OpenStreetMap et vous permet de trouver l'emplacement et les directions vers une adresse spécifique à partir d'une liste déjà triée, ainsi que de rechercher par code postal ou par coordonnées. Cet outil vous permet de trouver les adresses requises en quelques clics, ce qui réduit le temps de recherche et vous aide si vous ne vous souvenez pas de l'adresse exacte.
 
 OsmAnd propose plusieurs façons d'accéder à l'*outil de recherche* où se trouve la section **Rechercher une adresse**.
 
@@ -32,13 +32,13 @@ OsmAnd propose plusieurs façons d'accéder à l'*outil de recherche* où se tro
 
 <TabItem value="android" label="Android">
 
-![Recherche Android](@site/static/img/search/search_address_2_andr.png)
+![Search Android](@site/static/img/search/search_address_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Recherche iOS](@site/static/img/search/street_search_ios.png)
+![Search iOS](@site/static/img/search/street_search_ios.png)
 
 </TabItem>
 
@@ -46,7 +46,7 @@ OsmAnd propose plusieurs façons d'accéder à l'*outil de recherche* où se tro
 
 La recherche par adresse simplifie le processus de recherche et de navigation, garantit la précision et la convivialité, et réduit le temps nécessaire pour trouver la bonne adresse.
 
-- **Pour utiliser la fonction de recherche d'adresses,** vous devez d'abord [télécharger une carte](../start-with/download-maps.md) de la zone requise.
+- **Pour utiliser la fonction de recherche d'adresse,** vous devez d'abord [télécharger une carte](../start-with/download-maps.md) de la zone requise.
 - **La recherche est basée sur les données situées dans la zone visible de la carte** sur l'écran de l'appareil. Si vous ne trouvez rien, OsmAnd propose d'augmenter le rayon de recherche.
 - Les informations d'adresse dans OsmAnd contiennent toutes les [clés de balise OSM](https://wiki.openstreetmap.org/w/index.php?title=Key:addr).
 
@@ -55,10 +55,10 @@ Liste des requêtes de recherche :
 
 **1.** L'**ordre** des éléments dans la liste :
 
-- **Trié par nom**. La sélection de *Spécifier d'abord la ville/localité* (Android) ou *Sélectionner la ville* (iOS) affichera une liste qui commence par des éléments sans nom, le cas échéant, puis des noms numériques suivis des noms par lettres.
+- **Trié par nom**. La sélection de *Spécifier d'abord la ville/localité* (Android) ou *Sélectionner la ville* (iOS) affichera une liste qui commence par les éléments sans nom, le cas échéant, puis les noms numériques suivis des noms par lettres.
 - **Ordre numérique croissant**. Dans la liste de recherche suivante, les numéros de maison sont affichés par ordre croissant, après avoir entré la ville et la rue.
 
-**2.** Chaque champ de la liste de recherche d'adresses contient des **informations** telles que :
+**2.** Chaque champ de la liste de recherche d'adresse contient des **informations** telles que :
 
 - Une icône qui identifie le type de localité.
 - Une partie d'une adresse, un numéro postal ou une zone de coordonnées.
@@ -72,7 +72,7 @@ OsmAnd prend en charge les recherches d'adresses à l'aide des données OpenStre
 
 - **Les données TIGER fournissent des plages d'adresses, pas des emplacements exacts**, ce qui signifie que certains numéros de maison peuvent ne pas être reconnus.
 - **Si une adresse n'est pas trouvée**, essayez de rechercher *par nom de rue* au lieu d'un numéro de maison spécifique.
-- Utilisez des *identifiants de localisation alternatifs*, tels que des points de repère à proximité ou des codes postaux, pour affiner vos résultats de recherche.
+- Utilisez des *identifiants d'emplacement alternatifs*, tels que des points de repère à proximité ou des codes postaux, pour affiner vos résultats de recherche.
 
 
 ### Formats pris en charge {#supported-formats}
@@ -80,34 +80,34 @@ OsmAnd prend en charge les recherches d'adresses à l'aide des données OpenStre
 Consultez l'article [Rechercher tout](./search-all.md#basic-queries) pour obtenir la liste des requêtes disponibles et des formats de recherche pris en charge.
 
 
-## Sélectionner une ville {#select-city}
+## Sélectionner la ville {#select-city}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Rechercher une rue Android](@site/static/img/search/town_search_android.png)
+![Search Street Android](@site/static/img/search/town_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rechercher une rue iOS](@site/static/img/search/town_search_ios.png)
+![Search Street iOS](@site/static/img/search/town_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 **Villes les plus proches**
-Cela **affiche une petite liste de villes autour de votre position** ou de la localité que vous avez spécifiée pour *Sélectionner une rue* ou *Sélectionner une ville*. Chaque champ contient une icône correspondant à la taille de la ville, le nom de la ville, la distance entre vous et son centre, et pour Android la direction de la boussole.
+Cela **affiche une petite liste de villes autour de votre position** ou de la localité que vous avez spécifiée pour *Sélectionner la rue* ou *Sélectionner la ville*. Chaque champ contient une icône correspondant à la taille de la ville, le nom de la ville, la distance entre vous et son centre, et pour Android la direction de la boussole.
 
-Cette méthode de recherche permet de trouver facilement des emplacements spécifiques dans une localité sélectionnée, offrant un moyen pratique de trouver des adresses avec précision et rapidité. Vous pouvez commencer à rechercher l'adresse nécessaire en déterminant la localité.
+Cette façon de rechercher facilite la recherche d'emplacements spécifiques au sein d'une localité sélectionnée, offrant un moyen pratique de trouver des adresses avec précision et rapidité. Vous pouvez commencer à rechercher l'adresse nécessaire en déterminant la localité.
 
 - Pour ce faire, appuyez sur **Spécifier d'abord la ville/localité** (Android) ou **Sélectionner la ville** (iOS).
 - Dans la liste qui s'ouvre, sélectionnez la localité requise. [Ici](#full-text-search) décrit l'ordre dans lequel les requêtes de recherche sont affichées et les informations disponibles sur chaque élément.
 - Sur l'écran suivant, vous pouvez soit continuer à affiner l'adresse, soit sélectionner le bouton *Afficher sur la carte* sous le champ de saisie de la recherche.
-- Pour affiner votre recherche, vous pouvez saisir tout ou partie du nom de la ville, du village ou du hameau où se trouve l'adresse que vous recherchez. Cela vous permet de restreindre votre recherche et d'obtenir une liste plus précise.
-- En appuyant sur le dernier élément de l'adresse, le numéro de maison ou le nom de l'intersection, le [menu contextuel de la carte](../map/map-context-menu.md#select-an-object-single-tap) de l'objet s'ouvre.
+- Pour affiner votre recherche, vous pouvez saisir tout ou partie du nom de la ville, du village ou de la localité où se trouve l'adresse que vous recherchez. Cela vous permet de restreindre votre recherche et d'obtenir une liste plus précise.
+- En appuyant sur le dernier élément de l'adresse, le numéro de maison ou le nom de l'intersection, vous ouvrez le [menu contextuel de la carte](../map/map-context-menu.md#select-an-object-single-tap) de l'objet.
 
 **La recherche par ville offre les avantages suivants :**
 
@@ -116,24 +116,24 @@ Cette méthode de recherche permet de trouver facilement des emplacements spéci
 - *Filtrage.* La possibilité de sélectionner une maison spécifique dans la liste facilite la navigation précise vers l'emplacement requis, en particulier lorsque l'adresse exacte est inconnue.
 
 :::note Clé & Valeur
-*Recherche de ville / village / hameau* par [**addr:city/hamlet/town/village/suburb=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)
+*Recherche de ville / localité / village* par [**addr:city/hamlet/town/village/suburb=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)
 *Résultat* : affichage de tous les objets portant ce nom.
 :::
 
 
-## Sélectionner une rue {#select-street}
+## Sélectionner la rue {#select-street}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Rechercher une rue Android](@site/static/img/search/street_search.png) ![Rechercher une rue Android](@site/static/img/search/street_search_1.png)
+![Search Street Android](@site/static/img/search/street_search.png) ![Search Street Android](@site/static/img/search/street_search_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rechercher une rue iOS](@site/static/img/search/address_street_search_3_ios.png) ![Rechercher une rue Android](@site/static/img/search/address_street_search_4_ios.png)
+![Search Street iOS](@site/static/img/search/address_street_search_3_ios.png) ![Search Street Android](@site/static/img/search/address_street_search_4_ios.png)
 
 </TabItem>
 
@@ -142,8 +142,8 @@ Cette méthode de recherche permet de trouver facilement des emplacements spéci
 La recherche de rue est effectuée dans la localité où vous vous trouvez, ou où vous avez recherché auparavant, ou qui est au centre de la carte visible sur l'écran de l'application.
 
 - Pour utiliser ce type de recherche, appuyez sur **Rechercher une rue** (*Android*) ou **Sélectionner une rue** (*iOS*).
-- Dans le champ de recherche à côté du nom de la ville, vous pouvez commencer à saisir le nom de la rue et la liste s'affinera, vous donnant les résultats les plus appropriés.
-- Dans les autres éléments, la recherche de rue est la même que dans [Sélectionner une ville](#select-city).
+- Dans le champ de recherche à côté du nom de la ville, vous pouvez commencer à taper le nom de la rue et la liste s'affinera, vous donnant les résultats les plus appropriés.
+- Dans les autres éléments, la recherche de rue est la même que dans [Sélectionner la ville](#select-city).
 
 :::note Clé & Valeur
 *Rechercher des rues* par [**addr:street=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)
@@ -157,13 +157,13 @@ La recherche de rue est effectuée dans la localité où vous vous trouvez, ou o
 
 <TabItem value="android" label="Android">
 
-![Rechercher un code postal Android](@site/static/img/search/postcode_android.png)
+![Search Postcode Android](@site/static/img/search/postcode_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rechercher un code postal iOS](@site/static/img/search/postcode_ios.png)
+![Search Postcode iOS](@site/static/img/search/postcode_ios.png)
 
 </TabItem>
 
@@ -177,7 +177,7 @@ La recherche de rue est effectuée dans la localité où vous vous trouvez, ou o
 
 **La recherche par code postal peut être utile dans les cas suivants :**
 
-- *Trouver des adresses*. Lorsque vous saisissez un code postal, OsmAnd identifie la zone correspondante et suggère des adresses dans cette zone. Cela est particulièrement utile si vous connaissez le code postal mais ne connaissez pas l'adresse exacte.
+- *Trouver des adresses*. Lorsque vous saisissez un code postal, OsmAnd identifie la zone correspondante et suggère des adresses dans cette zone. Ceci est particulièrement utile si vous connaissez le code postal mais ne connaissez pas l'adresse exacte.
 - *Précision de la navigation*. Dans les cas où l'adresse n'est pas certaine, ou lorsque le nom de la rue peut être répété dans différentes zones, l'utilisation d'un code postal peut fournir le meilleur itinéraire vers une adresse donnée.
 - *Commodité et rapidité*. La recherche par code postal vous permet de trouver rapidement des informations, surtout si vous connaissez le code postal mais n'êtes pas sûr de l'adresse. Au lieu de saisir l'adresse complète, vous pouvez saisir uniquement le code et obtenir des résultats pertinents.
 
@@ -192,13 +192,13 @@ Pour plus d'informations, lisez les **[données de code postal du Royaume-Uni](h
 
 <TabItem value="android" label="Android">
 
-![Rechercher des coordonnées Android](@site/static/img/search/coordinates_search_android.png)
+![Search Coordinates Android](@site/static/img/search/coordinates_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rechercher des coordonnées iOS](@site/static/img/search/coordinates_search_ios.png)
+![Search Coordinates iOS](@site/static/img/search/coordinates_search_ios.png)
 
 </TabItem>
 
@@ -211,7 +211,7 @@ La [**recherche par coordonnées**](../search/search-coordinates.md) vous permet
 
 - [Rechercher tout](./search-all.md)
 - [Historique de recherche](./search-history.md)
-- [Rechercher des POI](./search-poi.md)
+- [Rechercher un POI](./search-poi.md)
 - [Rechercher des coordonnées](./search-coordinates.md)
 
-> *Cet article a été mis à jour pour la dernière fois en juillet 2024*
+> *Dernière mise à jour : juillet 2024*

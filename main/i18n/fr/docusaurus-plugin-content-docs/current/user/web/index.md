@@ -1,8 +1,7 @@
 ---
-source-hash: c79fb665b230c20078615d1596e48d0f640ccddb0f0d2a60de971e8aa0a31be6
+source-hash: db5393e1ef4b80ecb882bc11e9592a05dc345bb7a77685186a3304ee088544a7
 title: Planificateur d'itinéraire Web
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,9 +13,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
+
 ### Aperçu {#overview}
 
-Dans cette section, vous trouverez une description de notre [service de carte Web](https://osmand.net/map).
+Dans cette section, vous trouverez la description de notre [service de carte Web](https://osmand.net/map).
 
 ### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
 
@@ -32,7 +32,7 @@ Tracés GPX et Favoris de l'utilisateur sur la carte.
 
 ### [Planifier un itinéraire](./planner.md) {#plan-route}
 
-Cette section fournit des informations sur la planification d'itinéraires ou la création de navigations à l'aide de différents profils.
+Cette section fournit des informations sur la planification d'itinéraires ou la création de navigation à l'aide de différents profils.
 
 ### [Recherche](./web-search.md) {#search}
 

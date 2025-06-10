@@ -1,10 +1,10 @@
 ---
-source-hash: 56809685de940fdbdb62e35fa2e2102d06fc7b03f41e17ab78cea4dd0a8b9b46
+source-hash: 504d37c63818c1fd91f4825bfefd95d097c561b6b3c39e9d5773e16606a55a9f
 sidebar_position: 2
 title: Développeur Android
 ---
 
-Nous développons un grand projet open source Android (https://www.openhub.net/p/Osmand) - Top 10 parmi les applications Android basées sur https://www.openstreetmap.org/ (Wikipédia pour les cartes). Notre objectif est de créer un outil cartographique universel qui peut être utilisé dans presque toutes les situations. À l'heure actuelle, environ 2 000 000 de personnes dans le monde l'utilisent activement.
+Nous développons un grand projet open source Android (https://www.openhub.net/p/Osmand) - Top 10 parmi les applications Android basées sur https://www.openstreetmap.org/ (le Wikipédia des cartes). Notre objectif est de créer un outil cartographique universel qui peut être utilisé dans presque toutes les situations. Actuellement, environ 2 000 000 de personnes dans le monde l'utilisent activement.
 
 ## Description du poste {#job-description}
 OsmAnd recherche un développeur de logiciels open source passionné et enthousiaste avec une bonne connaissance de la plateforme et des technologies Android.
@@ -13,7 +13,7 @@ OsmAnd recherche un développeur de logiciels open source passionné et enthousi
 
 ### Exigences {#requirements}
 - 2+ ans d'expérience en développement Android
-- Solide connaissance de Java, Kotlin et Android SDK
+- Solide connaissance de Java, Kotlin et du SDK Android
 - Anglais technique (niveau supérieur est un avantage)
 - Support Library
 - XML/JSON
@@ -26,20 +26,20 @@ OsmAnd recherche un développeur de logiciels open source passionné et enthousi
 - Connaissance de la cartographie OpenStreetMap
 
 ### Responsabilités {#responsibilities}
-- Implémentation de nouvelles fonctionnalités
-- Maintenance du projet
-- Couverture du code avec des tests unitaires
-- Refactorisation du code
-- Participation à la planification et proposition de nouvelles idées
+- Implémenter de nouvelles fonctionnalités
+- Maintenir le projet
+- Couvrir le code avec des tests unitaires
+- Refactoriser le code
+- Participer à la planification et proposer de nouvelles idées
 
 ## Offres de l'entreprise {#company-offers}
 
 ### Ce que vous pouvez attendre de nous {#what-you-can-expect-from-us}
 - Apprentissage par la pratique – vous travaillerez avec des experts de l'industrie qui sont prêts à partager leurs connaissances et leur expérience
-- Amélioration de vos compétences en participant à des programmes de formation et de mentorat
-- Avancement de votre carrière en choisissant parmi différents parcours professionnels (technique, gestion)
-- Excellente atmosphère et environnement favorable
-- Travail dans une atmosphère amicale et détendue créée par de nombreux événements et activités de cohésion
+- Améliorer vos compétences en participant à des programmes de formation et de mentorat
+- Faire progresser votre carrière en choisissant parmi différents parcours professionnels (technique, gestion)
+- Excellente ambiance et environnement favorable
+- Travailler dans une atmosphère amicale et détendue créée par de nombreux événements et activités de cohésion
 - Soutien quotidien pour votre croissance technique et personnelle
 - Équipe professionnelle et très amicale, toujours prête à aider et à soutenir
 
@@ -50,7 +50,7 @@ OsmAnd recherche un développeur de logiciels open source passionné et enthousi
 - 15 jours de vacances payées + 15 jours à vos frais
 - Congés de maladie payés
 - Tous les jours fériés officiels
-- Travail à distance (emplacement de bureau possible à Cracovie, Pologne, Kiev, Ukraine)
+- Télétravail (bureaux possibles à Cracovie, Pologne, et Kiev, Ukraine)
 - Garantie d'équilibre vie professionnelle-vie privée
 - Travail stable dans une entreprise en développement dynamique
 - Développement entièrement open source (https://github.com/osmandapp/)

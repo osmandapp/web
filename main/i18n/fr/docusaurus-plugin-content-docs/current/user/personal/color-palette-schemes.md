@@ -1,9 +1,8 @@
 ---
-source-hash: 3b5e6150365a0ed2da516b75f0ad26b396d7a5a9dd11e5300ec0ed22794006f5
+source-hash: ead970e0da14ac537b4760d0b7fd64970b6d1adfce611ce55ab0742f34c9c591
 sidebar_position: 5
-title:  Schémas de couleurs
+title:  Jeux de couleurs
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,15 +15,16 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Aperçu {#overview}
+
+## Vue d'ensemble {#overview}
 
 :::info Fonctionnalité payante
 
-Les schémas de couleurs sont utilisés dans le cadre des fonctionnalités payantes [Maps+](../purchases/index.md) et Pro <ProFeature />.
+Les jeux de couleurs sont utilisés dans le cadre des fonctionnalités payantes [Maps+](../purchases/index.md) et Pro <ProFeature />.
 
 :::
 
-Les schémas de couleurs sont utilisés dans la [colorisation des itinéraires](#routes), le [terrain de la carte](#terrain) et la [carte météo](#weather). Ils représentent une partie distincte des informations qui peuvent être exportées, importées et modifiées pour changer le schéma de couleurs de la carte et la visualisation des données.
+Les jeux de couleurs sont utilisés pour la [colorisation des itinéraires](#routes), le [terrain de la carte](#terrain) et la [carte météo](#weather). Ils constituent une partie distincte des informations qui peuvent être exportées, importées et modifiées pour changer le jeu de couleurs de la carte et la visualisation des données.
 
 Les données de la palette de couleurs sont disponibles dans le menu [*Cartes et ressources*](../personal/maps-resources.md#local).
 
@@ -42,14 +42,14 @@ Aller à : *Menu → Cartes et ressources → Local → Couleurs*
 
 Aller à : *Menu → Cartes et ressources → Local → Couleurs*
 
-![Palette de couleurs](@site/static/img/personal/color-schemes/color_palette_ios.png)
+![Color palette](@site/static/img/personal/color-schemes/color_palette_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Types de schémas {#scheme-types}
+## Types de jeux {#scheme-types}
 
 <Tabs groupId="operating-systems">
 
@@ -61,7 +61,7 @@ Aller à : *Menu → Cartes et ressources → Local → Couleurs*
 
 <TabItem value="ios" label="iOS">
 
-![Palette de couleurs](@site/static/img/personal/color-schemes/color_altitude.png)
+![Color palette](@site/static/img/personal/color-schemes/color_altitude.png)
 
 </TabItem>
 
@@ -92,9 +92,9 @@ La palette de couleurs (`user_palette_default.txt`) est simplement utilisée pou
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="color"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="color"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="couleur"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="couleur"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="couleur"/></td>
     </tr>
 </table>
 
@@ -126,7 +126,7 @@ Chaque ligne représente une valeur numérique (pour la palette de couleurs, c'e
 
 ```
 
-Après avoir déplacé ce fichier TXT vers *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, une nouvelle palette apparaîtra dans le menu Schéma de couleurs.
+Après avoir déplacé ce fichier TXT vers *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, une nouvelle palette apparaîtra dans le menu Jeu de couleurs.
 
 
 ## En savoir plus {#read-more}
@@ -137,23 +137,23 @@ Après avoir déplacé ce fichier TXT vers *..Android/data/net.osmand/files/colo
 
 <TabItem value="android" label="Android">
 
-Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Ajouter une action → Topographie → Changer le schéma de couleurs du terrain*
+Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Ajouter une action → Topographie → Changer le jeu de couleurs du terrain*
 
-![Schéma de couleurs](@site/static/img/widgets/color_scheme.png)
+![Color Scheme](@site/static/img/widgets/color_scheme.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Ajouter une action → Topographie → Changer le schéma de couleurs du terrain*
+Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Ajouter une action → Topographie → Changer le jeu de couleurs du terrain*
 
-![Palette de couleurs](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
+![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Action rapide** pour changer la palette du terrain. Ajout de la possibilité de basculer entre les schémas de couleurs du terrain, similaire au basculement entre les couches. Cela peut être fait à l'aide de l'[outil Actions rapides](../widgets/quick-action.md#configure-map).
+**Action rapide** pour changer la palette du terrain. Ajout de la possibilité de basculer entre les jeux de couleurs du terrain, similaire au basculement entre les couches. Cela peut être fait à l'aide de l'[outil Actions rapides](../widgets/quick-action.md#configure-map).
 
 
 ### Importer / Exporter les couleurs {#import--export-colors}
@@ -164,7 +164,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
 
-![Actions de profil Exporter Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Sauvegarde locale Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -172,7 +172,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Actions de profil Exporter iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Actions de profil Exporter iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
@@ -183,7 +183,7 @@ Vous pouvez importer et exporter toutes les palettes de couleurs par défaut et 
 - Ouvrez le *Menu* principal, *Paramètres*, faites défiler jusqu'à la section **Importation/exportation** (*Android*) ou **Sauvegarde locale** (*iOS*), et sélectionnez l'action requise.
 - Sélectionnez un ou plusieurs éléments dans la liste *Couleur* ou l'option *Tout sélectionner*.
 - Tous les fichiers exportés sont enregistrés au format `.osf`.
-- Si la taille des données sélectionnées est importante, l'application mettra un certain temps à préparer le fichier `.osf`.
+- Si la taille des données sélectionnées est importante, il faudra un certain temps à l'application pour préparer le fichier `.osf`.
 - Consultez l'article [*Importation / Exportation*](../personal/import-export.md) pour plus d'informations détaillées.
 
 
@@ -193,4 +193,4 @@ Vous pouvez importer et exporter toutes les palettes de couleurs par défaut et 
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *Cet article a été mis à jour pour la dernière fois en janvier 2025*
+> *Dernière mise à jour : janvier 2025*

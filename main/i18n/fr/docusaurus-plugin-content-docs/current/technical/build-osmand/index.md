@@ -1,10 +1,10 @@
 ---
-source-hash: 1c9a3f09a83a4f67911c78eb73a5652b8cc2107f57c4f729875320d002e8a080
+source-hash: d0e7d0628f62249b86f3c24068a1a7ea0ff7e379fcef4499cc7aecf7c7d9f10e
 sidebar_position: 1
 ---
 
 # Compiler OsmAnd, outils et exemples SDK & API {#build-osmand-tools-and-sdk--api-samples}
-Si vous souhaitez réutiliser le code d'OsmAnd, créer un exemple d'application utilisant l'API d'OsmAnd ou configurer un environnement de développement complet, cette section vous guidera tout au long du processus.
+Si vous souhaitez réutiliser le code d'OsmAnd, créer un exemple d'application à l'aide de l'API d'OsmAnd ou configurer un environnement de développement complet, cette section vous guidera tout au long du processus.
 
 ### [Compilations OsmAnd](./osmand-builds.md) {#osmand-builds}
 OsmAnd produit chaque jour plusieurs compilations prêtes à l'emploi qui permettent de suivre les nouvelles fonctionnalités et de participer aux contributions d'OsmAnd (processus de traduction).

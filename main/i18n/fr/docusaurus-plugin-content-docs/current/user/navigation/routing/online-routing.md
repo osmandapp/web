@@ -1,9 +1,8 @@
 ---
-source-hash: dc389e721214e0fa34c25fb988a339d7223a6835dec3ce9fb364e7e2bddcaebb
+source-hash: 4f96a8e9fe2039b52000ce52f1a94177338192fe1d90ceb5161a41d19e94cfea
 sidebar_position: 11
 title:  Routage en ligne
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 
 ## Aperçu {#overview}
@@ -29,7 +29,7 @@ Le routage en ligne est un outil puissant qui peut aider les utilisateurs à gag
 Le *routage en ligne* peut être activé dans la section [Type de navigation](../guidance/navigation-settings.md#overview) des paramètres de navigation du *Profil* sélectionné. Dans OsmAnd, il existe deux *moteurs de routage en ligne* prédéfinis ([ZLZK](https://zlzk.biz/) et [OSM DE](https://routing.openstreetmap.de)), qui proposent trois types de *routage en ligne* : *Vélo, Voiture et À pied*.
 
 :::note
-Les types de routage en ligne sont conçus pour les profils *Conduite, Cyclisme et Marche*, bien qu'ils puissent également être utilisés avec d'autres profils OsmAnd (Camion, Moto, Ski, Équitation). Ils sont fournis « tels quels », vous ne pouvez donc pas les personnaliser selon vos besoins en utilisant différentes options de navigation.
+Les types de routage en ligne sont conçus pour les profils *Conduite, Cyclisme et Marche*, bien qu'ils puissent également être utilisés avec d'autres profils OsmAnd (Camion, Moto, Ski, Équitation). Ils sont fournis « tels quels », vous ne pouvez donc pas les personnaliser selon vos besoins à l'aide de différentes options de navigation.
 :::
 
 ### Routage en ligne personnalisé {#custom-online-routing}
@@ -50,12 +50,12 @@ Le serveur en ligne construit un itinéraire en utilisant votre point de départ
 ![Routage GPX personnalisé Android 1](@site/static/img/navigation/routing/online_routing_gpx_1.png) ![Routage GPX personnalisé Android 1](@site/static/img/navigation/routing/online_routing_gpx_2.png)
 
 
-## Paramètres de routage en ligne {#online-routing-setting}
+## Paramètre de routage en ligne {#online-routing-setting}
 
 Lorsque le routage en ligne est sélectionné pour la navigation, une option supplémentaire apparaît dans les paramètres.
 
-![Paramètres de routage en ligne Android](@site/static/img/navigation/routing/settings_online_routing_1.png)
+![Paramètres Routage en ligne Android](@site/static/img/navigation/routing/settings_online_routing_1.png)
 
 - *<Translate android="true" ids="calculate_osmand_route_without_internet"/>* - Permet d'utiliser le routage hors ligne d'OsmAnd lorsque le routage en ligne est sélectionné dans les paramètres de navigation. Cette option peut être utile si un itinéraire a déjà été construit en ligne, mais qu'il y a eu ensuite une déviation de l'itinéraire et qu'en même temps la connexion Internet a été perdue. Dans ce cas, le routage hors ligne sera utilisé pour revenir à l'itinéraire, précédemment calculé en ligne.
 
-> *Cet article a été mis à jour pour la dernière fois en juin 2024*
+> *Dernière mise à jour : juin 2024*

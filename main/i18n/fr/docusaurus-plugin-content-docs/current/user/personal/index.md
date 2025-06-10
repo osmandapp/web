@@ -1,5 +1,5 @@
 ---
-source-hash: 4706bc1c5df694653c060253affd9f7546f79418ee8dc606a218f5f28aaa5e1c
+source-hash: e64a79277d96c09a9a3ac5a8a365ce8d53da4205892da38b7bbecf28535f96ef
 sidebar_position: 1
 ---
 
@@ -17,7 +17,7 @@ Le menu *Cartes et ressources* vous permet d'effectuer des opérations de base s
 
 ## [Profils (Paramètres)](./profiles.md) {#profiles-settings}
 
-Chaque *profil* est entièrement personnalisable. Chaque profil peut devenir une application distincte pour vos besoins.
+Chaque *profil* est disponible pour une personnalisation complète. Chaque profil peut devenir une application distincte pour vos besoins.
 
 ## [Schémas de palette de couleurs](./color-palette-schemes.md) {#color-palette-schemes}
 
@@ -39,9 +39,9 @@ L'interface *Marqueurs* est un outil pratique qui vous aide à enregistrer des p
 
 *Traces* est un outil puissant pour suivre les trajets, enregistrer les itinéraires et les points d'intérêt (POI) en temps réel, puis analyser et partager les données.
 
-## [Importation / Exportation](./import-export.md) {#import--export}
+## [Import / Export](./import-export.md) {#import--export}
 
-L'*outil d'importation / exportation* dans OsmAnd vous permet de gérer vos données. Vous pouvez exporter vos profils, favoris, traces et autres paramètres dans un format spécial accessible via les applications sur votre appareil.
+L'*outil Import / Export* dans OsmAnd vous permet de gérer vos données. Vous pouvez exporter vos profils, favoris, traces et autres paramètres dans un format spécial accessible via les applications sur votre appareil.
 
 ## [OsmAnd Cloud](./osmand-cloud.md) {#osmand-cloud}
 

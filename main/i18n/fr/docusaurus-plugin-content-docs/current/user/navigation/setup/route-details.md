@@ -1,9 +1,8 @@
 ---
-source-hash: 350e4f04116e1af126847456befc7f67a60365c1c12e8b7e0ff95769893c1ea2
+source-hash: 4d94702418502470aad2ca1fbd09659956c170a23f9c5c7ba0cf595f9829be63
 sidebar_position: 4
 title:  Détails de l'itinéraire
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,9 +15,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
+
 ## Aperçu {#overview}
 
-OsmAnd vous permet de trouver le meilleur itinéraire et d'explorer ses détails. L'application fournit des informations détaillées sur l'itinéraire, telles que la distance, le [temps de trajet](#distance--time--co2), le [type de surface](#road-attributes), les [différences d'altitude](#elevation-info), les [données d'empreinte carbone](#distance--time--co2) et les [informations sur les virages](#turn-by-turn-information). Vous pouvez également [analyser](#analyze-on-map) l'itinéraire sur la carte, obtenir des informations sur les segments de piste, [imprimer](#print) le plan de l'itinéraire, [enregistrer](#share--export-actions) l'itinéraire et le partager avec d'autres. Grâce à cette fonctionnalité, vous connaîtrez toujours les détails de l'itinéraire et pourrez planifier votre voyage plus efficacement.
+OsmAnd vous permet de trouver le meilleur itinéraire et d'en explorer les détails. L'application fournit des informations détaillées sur l'itinéraire, telles que la distance, le [temps de trajet](#distance--time--co2), le [type de surface](#road-attributes), les [différences d'altitude](#elevation-info), les [données d'empreinte carbone](#distance--time--co2) et les [informations sur les virages](#turn-by-turn-information). Vous pouvez également [analyser](#analyze-on-map) l'itinéraire sur la carte, obtenir des informations sur les segments de piste, [imprimer](#print) le plan de l'itinéraire, [enregistrer](#share--export-actions) l'itinéraire et le partager avec d'autres. Grâce à cette fonctionnalité, vous connaîtrez toujours les détails de l'itinéraire et pourrez planifier votre voyage plus efficacement.
 
 
 <Tabs groupId="operating-systems">
@@ -70,7 +70,7 @@ Selon les [paramètres de profil](../../personal/profiles.md) sélectionnés et 
 
 - La ***distance totale*** est calculée entre tous les segments de l'itinéraire, y compris les points intermédiaires dans les [unités](../../personal/profiles.md#units--formats) sélectionnées.
 
-- Le ***temps de trajet estimé*** est calculé comme la somme des temps sur chaque segment et des pénalités de temps sur des points spécifiques. Chaque profil de navigation a des règles différentes pour calculer la vitesse sur un segment et les pénalités à inclure (configurées dans [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). Par exemple, les profils de voiture et de vélo prennent la vitesse moyenne par segment à partir des données OpenStreetMap, mais les profils de piéton, de bateau et d'avion utilisent la vitesse *par défaut* des [Paramètres de navigation](../guidance/navigation-settings.md#default-speed--road-speeds).
+- Le ***temps de trajet estimé*** est calculé comme la somme des temps sur chaque segment et des pénalités de temps sur des points spécifiques. Chaque profil de navigation a des règles différentes pour calculer la vitesse sur un segment et les pénalités à inclure (configurées dans [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). Par exemple, les profils voiture et vélo prennent la vitesse moyenne par segment à partir des données OpenStreetMap, mais les profils piéton, bateau et avion utilisent la vitesse *par défaut* des [Paramètres de navigation](../guidance/navigation-settings.md#default-speed--road-speeds).
 
 - L'***heure d'arrivée estimée*** est calculée à partir de maintenant en heure locale de l'origine en utilisant le *temps de trajet estimé*.
 
@@ -95,7 +95,7 @@ Selon les [paramètres de profil](../../personal/profiles.md) sélectionnés et 
 
 </Tabs>
 
-Les **informations d'altitude** sont fournies dans tous les profils d'itinéraire hors ligne d'OsmAnd, à l'exception des profils qui utilisent la [navigation en ligne droite](../routing/straight-line-routing.md). Les données d'altitude font partie des cartes hors ligne d'OsmAnd et sont calculées à partir de [sources SRTM publiques](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission).
+Les **informations d'altitude** sont fournies dans tous les profils d'itinéraire hors ligne d'OsmAnd, à l'exception des profils qui utilisent la [navigation en ligne droite](../routing/straight-line-routing.md). Les données d'altitude font partie des cartes hors ligne d'OsmAnd et sont calculées sur la base des [sources SRTM publiques](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission).
 
 - *Plage d'altitude*. Affiche l'altitude minimale / maximale sur l'itinéraire.
 - *Altitude moyenne*. Affiche l'altitude moyenne pondérée sur l'itinéraire.
@@ -103,12 +103,12 @@ Les **informations d'altitude** sont fournies dans tous les profils d'itinérair
 
 
 ***Une licence pour les données DEM utilisées par OsmAnd pour la détection du terrain***
-Les données d'altitude sur la carte (entre 70 degrés de latitude nord et 70 degrés de latitude sud) ont été obtenues à partir de mesures effectuées dans le cadre de la *Shuttle Radar Topography Mission (SRTM)*. Elle a utilisé l'*Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, le principal outil d'imagerie du *système d'observation de la Terre de la NASA*. Pour des informations complètes, voir la [Licence](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
+Les données d'altitude sur la carte (entre 70 degrés de latitude nord et 70 degrés de latitude sud) ont été obtenues à partir de mesures effectuées dans le cadre de la *Shuttle Radar Topography Mission (SRTM)*. Elle a utilisé l'*Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, le principal outil d'imagerie du *Earth Observation System de la NASA*. Pour des informations complètes, voir la [Licence](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
 <details>
 <summary>Données DEM (DSM)</summary>
-   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Les données originales utilisées pour ce produit ont été fournies par AW3D de la JAXA.<br/>
+ - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Les données originales utilisées pour ce produit ont été fournies par AW3D de la JAXA.<br/>
  - <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
  - <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
  - <a href="https://sonny.4lima.de">Modèles numériques de terrain LiDAR de Sonny pour l'Europe</a> (MNT).
@@ -136,9 +136,9 @@ Les données d'altitude sur la carte (entre 70 degrés de latitude nord et 70 de
 
 Les [graphiques](../../map/tracks/track-context-menu.md#altitude--speed-graphs) affichent visuellement des informations sur l'altitude et la pente de votre itinéraire de navigation et votre position actuelle sur ce graphique avec l'altitude et la pente actuelles. Le graphique est tracé sur deux axes. L'axe des X est la distance sur votre itinéraire. Le premier axe des Y est l'altitude au-dessus du niveau de la mer, dont la valeur dépend du terrain, et le deuxième axe des Y est la [pente](https://en.wikipedia.org/wiki/Grade_(slope)) approximative. Vous pouvez afficher le graphique d'altitude pour l'ensemble de l'itinéraire ou seulement pour un intervalle sélectionné en mettant à l'échelle le graphique.
 
-- ***Zoom avant/arrière***. Par défaut, le graphique affiche l'itinéraire de la position actuelle à votre point de destination. Vous pouvez utiliser des [mouvements à deux doigts](../../map/interact-with-map.md#gestures) pour zoomer avant et arrière afin d'obtenir une vue plus détaillée. Vous pouvez également déplacer le graphique vers la droite, vers l'avant sur l'itinéraire et vers l'arrière jusqu'à la position actuelle. *Ces manipulations se réfèrent également au bloc visuel d'informations dans le bloc [Attributs de la route](#road-attributes).*
+- ***Zoom avant/arrière***. Par défaut, le graphique affiche l'itinéraire de l'emplacement actuel à votre point de destination. Vous pouvez utiliser les [mouvements à deux doigts](../../map/interact-with-map.md#gestures) pour zoomer et dézoomer afin d'obtenir une vue plus détaillée. Vous pouvez également déplacer le graphique vers la droite, vers l'avant sur l'itinéraire, et vers l'arrière jusqu'à l'emplacement actuel. *Ces manipulations se réfèrent également au bloc visuel d'informations dans le bloc [Attributs de la route](#road-attributes).*
 
-- ***Épingle de localisation***. Si vous souhaitez voir les informations à un point particulier de votre itinéraire, vous pouvez appuyer n'importe où sur le graphique et un pointeur avec l'altitude et le pourcentage de pente apparaîtra.
+- ***Épingle de localisation***. Si vous souhaitez voir les informations à un point particulier plus loin sur votre itinéraire, vous pouvez appuyer n'importe où sur le graphique et un pointeur avec l'altitude et le pourcentage de pente apparaîtra.
 
 
 ## Analyser sur la carte {#analyze-on-map}
@@ -159,7 +159,7 @@ Les [graphiques](../../map/tracks/track-context-menu.md#altitude--speed-graphs) 
 
 </Tabs>
 
-L'outil **Analyser sur la carte** est similaire à l'outil de visualisation des [détails de la piste](../../map/tracks/index.md#analyze-track-on-map) sur la carte. Il vous permet de visualiser et d'interagir visuellement avec divers graphiques et de voir le point sélectionné sur la carte.
+L'outil **Analyser sur la carte** est similaire à l'outil permettant de visualiser les [détails de la piste](../../map/tracks/index.md#analyze-track-on-map) sur la carte. Il vous permet de visualiser et d'interagir visuellement avec divers graphiques et de voir le point sélectionné sur la carte.
 
 Si des données sont présentes, vous pouvez sélectionner l'un des types suivants :
 
@@ -174,11 +174,11 @@ Si des données sont présentes, vous pouvez sélectionner l'un des types suivan
    - *Heure de la journée*. Vous pouvez afficher les données d'itinéraire à certaines heures de la journée.
 
 
-### Type d'interactions {#type-of-interactions}
+### Types d'interactions {#type-of-interactions}
 
 - *Appuyer et glisser*. Appuyez sur le graphique pour afficher des informations sur le point de la piste et le mouvement le long de celle-ci. Le graphique met en évidence l'emplacement du point sur la carte et affiche des informations à son sujet sur la règle.
-- *Échelle*. Mettez le graphique à l'échelle par [geste à deux doigts](../../map/interact-with-map.md#gestures).
-- *Suivre ma position* (*Android uniquement*). Vous pouvez appuyer sur [Ma position](../../map/interact-with-map.md#my-location-and-zoom) pour synchroniser la vue de la carte et le graphique avec votre position. Au fur et à mesure que vous vous déplacez, le graphique se déplacera de gauche à droite, affichant des informations devant votre chemin.
+- *Échelle*. Mettez à l'échelle le graphique par [geste à deux doigts](../../map/interact-with-map.md#gestures).
+- *Suivre ma position* (*Android uniquement*). Vous pouvez appuyer sur [Ma position](../../map/interact-with-map.md#my-location-and-zoom) pour synchroniser la vue de la carte et le graphique avec votre position. Au fur et à mesure que vous vous déplacez, le graphique se décalera de gauche à droite, affichant des informations devant votre chemin.
 
 
 ## Attributs de la route {#road-attributes}
@@ -187,7 +187,7 @@ Si des données sont présentes, vous pouvez sélectionner l'un des types suivan
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
 
 ![Navigation route Android](@site/static/img/navigation/route/route_details_attributes_andr.png)
 
@@ -195,7 +195,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_navi
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> tab*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> tab*
 
 ![Navigation route iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
 
@@ -209,9 +209,9 @@ Les attributs de la route sont accessibles dans les [Détails de l'itinéraire](
 
    Par exemple, les [autoroutes](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) principales ont généralement une limitation de vitesse élevée et peuvent être divisées en voies, et les [routes locales](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) peuvent avoir une limitation de vitesse basse et une voie dans chaque direction.
 
-- [**Surface**](https://wiki.openstreetmap.org/wiki/Key:surface). Les surfaces routières sont la couche supérieure de la chaussée qui entre en contact avec les roues des véhicules. Elles peuvent être de différents types en fonction de leurs propriétés et de leur fonction.
+- [**Surface**](https://wiki.openstreetmap.org/wiki/Key:surface). Les surfaces routières sont la couche supérieure de la chaussée qui entre en contact avec les roues des véhicules. Elles peuvent être de différents types selon leurs propriétés et leur fonction.
 
-   Par exemple, le revêtement [asphalté](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) offre une bonne adhérence et une bonne isolation phonique, et le revêtement en [béton](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) est plus durable et a une plus grande capacité de charge. D'autres matériaux tels que le gravier, la pierre concassée, les planches de bois et autres peuvent également être utilisés pour créer une surface routière.
+   Par exemple, le revêtement en [asphalte](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) offre une bonne adhérence et une bonne isolation phonique, et le revêtement en [béton](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) est plus durable et a une plus grande capacité de charge. D'autres matériaux tels que le gravier, la pierre concassée, les planches de bois et autres peuvent également être utilisés pour créer une surface routière.
 
 - [**Pente**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). C'est une mesure de l'angle de la pente de la route, exprimée en pourcentage. Elle indique à quel point la route est inclinée vers le haut ou vers le bas par rapport à l'horizon, et elle est calculée en mesurant le changement vertical de l'altitude de la route par la distance horizontale et en multipliant la valeur résultante par 100 %.
 
@@ -276,10 +276,10 @@ Les instructions comprennent des informations sur le déplacement le long de l'i
 - Une description de *ce qu'il faut faire*, qui comprend le *nom de la rue ou du sentier*.
 - *Distance totale* et *temps de l'itinéraire*.
 - Disposition des [*voies*](../../widgets/nav-widgets.md#lanes) pour la route actuelle.
-- [*Indicateur de côté de la route*](#roadside-indicator) (*iOS uniquement*).
+- [*Indicateur de côté de route*](#roadside-indicator) (*iOS uniquement*).
 
 
-### Indicateur de côté de la route {#roadside-indicator}
+### Indicateur de côté de route {#roadside-indicator}
 
 :::caution iOS uniquement
 Ce type d'instruction n'est actuellement *pas disponible pour la version Android* de l'application OsmAnd.
@@ -287,7 +287,7 @@ Ce type d'instruction n'est actuellement *pas disponible pour la version Android
 
 ![Side indication](@site/static/img/navigation/route/side_indication.png)
 
-Dans la liste des instructions, l'**indicateur de côté de la route** indique dans quelle direction par rapport à votre position actuelle et à votre direction de déplacement vers votre point final se trouve votre destination, cela peut être à gauche, à droite et tout droit.
+Dans la liste des instructions, l'**indicateur de côté de route** indique la direction par rapport à votre position actuelle et à votre direction de déplacement vers votre point final, cela peut être à gauche, à droite et tout droit.
 
 L'angle entre votre destination (*[Cap](https://en.wikipedia.org/w/index.php?title=Bearing_(navigation)&oldformat=true) depuis le dernier point*) et le dernier segment (*Cap vers les 2 derniers points de l'itinéraire*) est mesuré, divisé en 3 secteurs de 120 degrés, et le résultat est que vous pouvez voir dans quelle direction se trouve votre destination.
 
@@ -304,7 +304,7 @@ L'angle entre votre destination (*[Cap](https://en.wikipedia.org/w/index.php?tit
 
 La fonction **Imprimer** d'une description d'itinéraire virage par virage peut être utile si vous préférez avoir une copie physique de votre description d'itinéraire au lieu d'utiliser des appareils électroniques, ou si vous n'avez pas accès aux applications de navigation ou aux navigateurs GPS, pas d'accès à Internet, ou si vous avez besoin d'informations pour d'autres personnes voyageant avec vous.
 
-Une description d'itinéraire imprimée fournit des *instructions détaillées virage par virage* sur la façon de naviguer sur votre itinéraire, y compris la distance jusqu'au prochain virage, la direction de conduite et les noms de rues ou de sentiers, ainsi que des informations sur la distance et le temps de trajet.
+Une description d'itinéraire imprimée fournit des *instructions détaillées virage par virage* sur la façon de naviguer sur votre itinéraire, y compris la distance jusqu'au prochain virage, la direction de conduite et les noms de rue ou de sentier, ainsi que des informations sur la distance et le temps de trajet.
 
 Ces informations peuvent être utiles lorsque vous planifiez un voyage et que vous souhaitez estimer le temps et la distance entre différents points de l'itinéraire et déterminer l'heure d'arrivée prévue.
 
@@ -332,7 +332,7 @@ La possibilité **d'imprimer** ou **d'enregistrer** les informations virage par 
 La section de navigation Détails de l'itinéraire propose des options qui vous permettent d'effectuer certaines actions avec les informations de l'itinéraire.
 
 - [**Imprimer**](#print). Vous permet d'imprimer ou d'enregistrer les informations d'itinéraire virage par virage.
-- **Exporter/Enregistrer**. Vous permet d'enregistrer les informations d'itinéraire **en tant que nouvelle piste** pour une utilisation hors ligne ultérieure. La piste exportée contient toutes les informations sur les attributs de la route et les instructions de virage. Ainsi, la [navigation par cette piste](./gpx-navigation.md) devrait fournir toutes les fonctionnalités de la navigation par l'itinéraire.
+- **Exporter/Enregistrer**. Vous permet d'enregistrer les informations de l'itinéraire **en tant que nouvelle piste** pour une utilisation hors ligne ultérieure. La piste exportée contient toutes les informations sur les attributs de la route et les instructions de virage. Ainsi, la [navigation par cette piste](./gpx-navigation.md) devrait fournir toutes les fonctionnalités de la navigation par l'itinéraire.
 - **Partager**. Partage une piste exportée ou un lien vers l'itinéraire qui pourrait être ouvert sur un autre appareil avec OsmAnd.
 
 
@@ -348,4 +348,4 @@ La section de navigation Détails de l'itinéraire propose des options qui vous 
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *Cet article a été mis à jour pour la dernière fois en novembre 2024*
+> *Dernière mise à jour : novembre 2024*

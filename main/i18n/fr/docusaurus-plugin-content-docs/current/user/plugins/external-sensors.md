@@ -1,9 +1,8 @@
 ---
-source-hash: 61701e62d59ea43a48bf2bd4533a4cb176b4324c2c2585e8ffa79b466b2daf01
+source-hash: 9d1531d9555eb2840386ca7a59c86b6aaea01e503c8115d6bb52a5af5ac3dfed
 sidebar_position: 5
 title: Capteurs externes
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,6 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 
 ## Aperçu {#overview}
@@ -167,7 +167,7 @@ Pour enregistrer les données des capteurs à l'aide du [plugin Enregistrement d
 - Les données de niveau de batterie ne sont **pas** enregistrées dans les fichiers GPX et ne sont pas disponibles pour analyse sur la carte.
 
 :::note Compatibilité de format
-OsmAnd utilise l'[enregistrement de trace](../plugins/trip-recording.md#recorded-gpx-file) pour intégrer les données des capteurs dans les fichiers GPX. Ce format est compatible avec de nombreuses applications sportives et d'entraînement (par exemple, Strava, Runkeeper).
+OsmAnd utilise l'[enregistrement de trace](../plugins/trip-recording.md#recorded-gpx-file) pour intégrer les données des capteurs dans les fichiers GPX. Ce format est compatible avec de nombreuses applications de sport et d'entraînement (par exemple, Strava, Runkeeper).
 :::
 
 
@@ -236,7 +236,7 @@ Types de widgets pris en charge :
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – affiche la fréquence cardiaque en temps réel d'un moniteur associé.
 2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android uniquement*) – affiche la puissance de pédalage actuelle en watts.
 3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – affiche le nombre de tours de pédale par minute.
-4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – vitesse actuelle du vélo.
+4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – vitesse de cyclisme actuelle.
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – distance totale mesurée par le capteur.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – température ambiante actuelle.
 7. **Niveau de batterie** (*iOS uniquement*) – pourcentage de batterie restant dans un capteur BLE connecté.
@@ -264,14 +264,14 @@ Allez dans : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-Par défaut, le widget affiche le premier capteur actuellement connecté de ce type. Si vous souhaitez utiliser un capteur spécifique, appuyez sur **Source de données** et choisissez dans la liste des capteurs connectés.
+Par défaut, le widget affiche le premier capteur de ce type actuellement connecté. Si vous souhaitez utiliser un capteur spécifique, appuyez sur **Source de données** et choisissez dans la liste des capteurs connectés.
 
 Sur **iOS**, vous pouvez choisir la valeur à afficher dans le widget :
 
 - **Données du capteur** (par exemple, cadence, vitesse).
 - **Niveau de batterie** – pourcentage de batterie en temps réel du capteur sélectionné.
 
-> *C'est utile lorsque vous souhaitez surveiller la charge de la batterie pendant de longs trajets pour éviter les déconnexions.*
+> *Ceci est utile lorsque vous souhaitez surveiller la charge de la batterie pendant de longs trajets pour éviter les déconnexions.*
 
 
 ## Articles connexes {#related-articles}
@@ -280,4 +280,4 @@ Sur **iOS**, vous pouvez choisir la valeur à afficher dans le widget :
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *Cet article a été mis à jour pour la dernière fois en mai 2025*
+> *Dernière mise à jour : mai 2025*

@@ -1,10 +1,8 @@
 ---
-source-hash: dbdeac65d8e4105192f86a642bfb9bd6a2de4fc59b832e350c719ebfde5f0531
+source-hash: 9e8ffc4e9ad66f08b7e397dce821b6b3045def307beb315cd2a5eb994c70479b
 sidebar_position: 18
 title:  Wikipedia
 ---
-
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,13 +14,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
+
+
 ## Aperçu {#overview}
 
 :::info Fonctionnalité payante
 Le plugin Wikipedia est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.
 :::
 
-Avoir Wikipedia pendant votre voyage vous aide à en apprendre davantage sur les lieux que vous visitez. Il est disponible hors ligne et affiche les lieux populaires (Android) / articles Wikipedia (iOS) liés aux points d'intérêt directement sur la carte.
+Avoir Wikipedia pendant votre voyage vous aide à en apprendre davantage sur les lieux que vous visitez. Il est disponible hors ligne et affiche les Lieux populaires (Android) / articles Wikipedia (iOS) liés aux points d'intérêt directement sur la carte.
 
 Le plugin Wikipedia est une fonctionnalité distincte qui peut être activée/désactivée selon les besoins. Une fois activé, il vous permet de télécharger les données Wikipedia [téléchargées](../personal/maps-resources.md#download-maps-maps) pour chaque région géographique. La carte contient deux types de connaissances téléchargées depuis Wikipedia : des informations brèves et un article complet.
 
@@ -40,7 +40,7 @@ Les informations brèves sont fournies par les POI Wikipedia (une abréviation d
 
 Pour afficher les données Wikipedia sur la carte, vous devez effectuer les réglages suivants :
 
-1. [Acheter](../plugins/index.md#purchase) et [activer](../plugins/index.md#enable--disable) le plugin Wikipedia dans la section Plugins du *Menu principal*.
+1. [Acheter](../plugins/index.md#purchase) et [Activer](../plugins/index.md#enable--disable) le plugin Wikipedia dans la section Plugins du *Menu principal*.
 2. Télécharger les [paquets Wikipedia](#download-wikipedia-packages) pour les régions requises.
 3. Afficher les [POI Wikipedia](#display-wikipedia-on-the-map) sur la carte pour le profil requis.
 4. Configurer les [langues](#set-preferred-language) préférées pour lire les articles.
@@ -50,7 +50,7 @@ Pour afficher les données Wikipedia sur la carte, vous devez effectuer les rég
 
 Les données Wikipedia sont disponibles pour chaque région géographique. Si elles sont chargées pour une région et non pour une autre, dans le premier cas, vous pouvez travailler avec les informations Wikipedia lorsque vous visualisez la région sur une carte, et dans l'autre cas, la région n'aura aucune information Wikipedia. Une fois chargées, les données Wikipedia deviennent disponibles en général, ainsi qu'hors ligne.
 
-Pour télécharger les données Wikipedia pour une région, accédez aux [paquets disponibles au téléchargement dans le *Menu principal*](../start-with/download-maps.md#download---main-menu), trouvez la région souhaitée et ouvrez-la. Les données Wikipedia seront parmi les autres paquets.
+Pour télécharger les données Wikipedia pour une région, allez dans les [paquets disponibles au téléchargement dans le *Menu principal*](../start-with/download-maps.md#download---main-menu), trouvez la région souhaitée et ouvrez-la. Les données Wikipedia seront parmi les autres paquets.
 
 Vous pouvez ouvrir les données Wikipedia à télécharger par région comme suit :
 
@@ -117,9 +117,9 @@ Pour afficher/masquer les POI Wikipedia, procédez comme suit :
 
 Avec les données Wikipedia téléchargées, quel que soit le mode de visibilité des [POI Wikipedia](../map/point-layers-on-map.md#-wikipedia) sur la carte, il est possible de [rechercher](../search/search-poi.md) toute information provenant de Wikipedia.
 
-Lorsque vous appuyez sur le bouton Rechercher, un panneau supplémentaire apparaît vous permettant de [rechercher](../search/index.md) dans le texte entier et/ou dans une catégorie spécifique. Dans le premier cas, les résultats de la recherche afficheront les POI Wikipedia avec les articles Wikipedia correspondants parmi d'autres types d'informations. Dans le cas d'une [recherche par catégorie Wikipedia](../search/search-poi.md#poi-search), les résultats de la recherche n'afficheront que les informations Wikipedia, triées par la localisation la plus proche de la zone de la carte actuellement affichée à l'écran.
+Lorsque vous appuyez sur le bouton Rechercher, un panneau supplémentaire apparaît vous permettant de [rechercher](../search/index.md) dans tout le texte et/ou une catégorie spécifique. Dans le premier cas, les résultats de la recherche afficheront les POI Wikipedia avec les articles Wikipedia correspondants parmi d'autres types d'informations. Dans le cas d'une [recherche par catégorie Wikipedia](../search/search-poi.md#poi-search), les résultats de la recherche n'afficheront que les informations Wikipedia, triées par l'emplacement le plus proche de la zone de la carte actuellement affichée à l'écran.
 
-- Dans la version **Android**, vous pouvez ouvrir [Rechercher](../search/index.md) en appuyant sur l'*icône de recherche* dans le coin supérieur gauche de l'écran et/ou en appuyant sur l'*option de recherche* dans le menu.
+- Dans la version **Android**, vous pouvez ouvrir [Rechercher](../search/index.md) en appuyant sur l'*icône de recherche* dans le coin supérieur gauche de l'écran et/ou en appuyant sur l'*option Rechercher* dans le menu.
 - Dans la version **iOS**, pour ouvrir [Rechercher](../search/index.md), l'icône de recherche se trouve dans le coin supérieur gauche de l'écran.
 
 <!--
@@ -197,7 +197,7 @@ Vous pouvez [définir la ou les langues](#set-preferred-language) dans lesquelle
 
 ### Définir la langue préférée {#set-preferred-language}
 
-Dans les versions **Android** et **iOS** de l'application OsmAnd, vous pouvez définir votre langue (ou vos langues) préférée(s) pour afficher les articles Wikipedia à l'aide du menu *Configurer la carte*. Si vous sélectionnez plus d'une langue, les articles *Wikipedia* sur la carte seront affichés dans l'une d'entre elles. Allez dans :
+Dans les versions **Android** et **iOS** de l'application OsmAnd, vous pouvez définir votre langue (ou vos langues) préférée(s) pour afficher les articles Wikipedia à l'aide du *menu Configurer la carte*. Si vous sélectionnez plus d'une langue, les articles *Wikipedia* sur la carte seront affichés dans l'une d'entre elles. Allez dans :
 
 1. *<Translate android="true" ids="shared_string_menu,configure_map"/>*.
 2. Sélectionnez le profil nécessaire et dans la section *<Translate android="true" ids="shared_string_show"/>*, choisissez *<Translate android="true" ids="poi_osmwiki"/>* pour Android / *<Translate ios="true" ids="download_wikipedia_maps"/>* pour iOS.
@@ -228,7 +228,7 @@ Dans la version **iOS**, vous pouvez également définir la langue préférée p
 
 :::
 
-### Changer de langue à l'intérieur de l'article {#switch-languages-inside-the-article}
+### Changer de langue dans l'article {#switch-languages-inside-the-article}
 
 Si l'*article Wikipedia* est disponible en différentes langues, vous pouvez changer de langue pendant la lecture. Après avoir appuyé sur l'icône correspondante dans le coin supérieur droit de l'écran, des options vous seront proposées.
 
@@ -251,7 +251,7 @@ Si l'*article Wikipedia* est disponible en différentes langues, vous pouvez cha
 
 ### Télécharger des images {#download-images}
 
-Vous pouvez choisir de télécharger ou non les images de Wikipedia sur votre appareil à l'intérieur de l'*article Wikipedia* :
+Vous pouvez choisir de télécharger ou non les images de Wikipedia sur votre appareil dans l'*article Wikipedia* :
 
 - **Android**. Ouvrez *[Article Wikipedia](#display-wikipedia-on-the-map) → &#8942; → Options*
 - **iOS**. Ouvrez *[Article Wikipedia](#display-wikipedia-on-the-map) → Icône d'image*
@@ -286,4 +286,4 @@ Dans la version **iOS** de l'application, vous pouvez également accéder aux op
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *Cet article a été mis à jour pour la dernière fois en mai 2025*
+> *Dernière mise à jour : mai 2025*

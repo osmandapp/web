@@ -1,5 +1,5 @@
 ---
-source-hash: f156f267fdf3aa860692fdb5ca9b3cdb37b7748b0888daed4c7678ae58f20a84
+source-hash: 39556978deb8b41b55e594c9ff9a5c79306e81f58ea03364a4714c19e79d3a98
 sidebar_position: 1
 ---
 
@@ -27,7 +27,7 @@ OsmAnd-default.apk — version nocturne d'OsmAnd gratuit.
 
 ## iOS {#ios}
 ### TestFlight {#testflight}
-Les versions bêta d'iOS (TestFlight) sont généralement fournies chaque semaine. Elles n'ont pas de description et peuvent avoir une numérotation de version continue. Elles sont censées être stables et prêtes à l'emploi.
+Les versions bêta iOS (TestFlight) sont généralement fournies chaque semaine. Elles n'ont pas de description et peuvent avoir une numérotation de version continue. Elles sont censées être stables et prêtes à l'emploi.
 
 <div>
   <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Rejoindre TestFlight</a>

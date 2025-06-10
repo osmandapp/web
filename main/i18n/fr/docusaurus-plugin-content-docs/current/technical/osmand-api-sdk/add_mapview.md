@@ -1,10 +1,10 @@
 ---
-source-hash: 4bc73f353afe9f44fb120adbea53b7d3a4a2a1691b381665e9a3faa06545e719
+source-hash: f8b747ecc580eb49cc0ae0c770f9a896b1da4bf5a81a4b702f78315746e14757
 sidebar_position: 1
 ---
 
 # Ajouter une carte {#add-a-map}
-Ouvrez l'activité à laquelle vous souhaitez ajouter une vue cartographique et utilisez le code ci-dessous.
+Ouvrez l'activité à laquelle vous souhaitez ajouter une vue de carte et utilisez le code ci-dessous.
 
 ```
 public class SimpleMapActivity extends AppCompatActivity {

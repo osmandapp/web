@@ -1,9 +1,8 @@
 ---
-source-hash: d2e6d96db1f23e54b77a8946efb5e28a289f85968c2159162391da1097caea11
+source-hash: f14066ee1c93315ba000b7389de0d0c6a42230c90308779a1b3a10e9a16d1fc7
 sidebar_position: 13
 title:  Vue Carte de ski
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,13 +13,14 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
+
 ## Aperçu {#overview}
 
 Le plugin Vue Carte de ski d'OsmAnd affiche les pistes célèbres et populaires, les domaines skiables officiellement approuvés et les cartes des pistes de la plupart des stations de ski. Les cartes des pistes [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) sont la source de données pour les cartes de ski OsmAnd. Combinant des cartes vectorielles avec des cartes raster, la carte de ski OsmAnd est très précise et sera utile pour les moniteurs, les grimpeurs et les amateurs de sports d'hiver.
 
 La carte de ski OsmAnd fait partie des cartes vectorielles et ne nécessite pas de téléchargements supplémentaires. Elle est désactivée par défaut. La carte de ski OsmAnd est l'un des [Styles de carte](../map/vector-maps.md) qui offre des fonctionnalités supplémentaires en mettant en évidence certains objets et en rendant d'autres moins visibles.
 
-Deux profils sont présentés ci-dessous : celui de gauche est pour le ski et celui de droite est pour la conduite. Le profil Ski met en évidence les pistes, les voies aériennes, les couleurs hivernales et tous les objets cartographiques utiles pour naviguer dans le domaine skiable.
+Deux profils sont présentés ci-dessous : celui de gauche est pour le ski et celui de droite est pour la conduite. Le profil Ski met en évidence les pistes, les voies aériennes, les couleurs d'hiver et tous les objets cartographiques utiles pour naviguer dans le domaine skiable.
 
 <Tabs groupId="operating-systems">
 
@@ -44,11 +44,11 @@ Deux profils sont présentés ci-dessous : celui de gauche est pour le ski et ce
 Le paramètre suivant permet d'afficher la carte de ski OsmAnd à l'écran :
 
 1. Activez le [plugin Vue Carte de ski](../plugins/index.md#enable--disable).
-2. Définissez le [style de carte Hiver et Ski](#set-winter-and-ski-map-style) pour le [profil](../personal/profiles.md) requis.
+2. Définissez le [style de carte Hiver et ski](#set-winter-and-ski-map-style) pour le [profil](../personal/profiles.md) requis.
 3. Si nécessaire, [combinez les cartes](#combine-maps).
 
 
-### Définir le style de carte Hiver et Ski {#set-winter-and-ski-map-style}
+### Définir le style de carte Hiver et ski {#set-winter-and-ski-map-style}
 
 <Tabs groupId="operating-systems">
 
@@ -70,14 +70,14 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_sett
 
 </Tabs>
 
-Le style de carte Hiver et Ski met en évidence les pistes, les itinéraires de ski de randonnée, les pistes de luge et les informations relatives à l'hiver et au ski. Pour afficher le style sur la carte, vous devez effectuer les réglages suivants :
+Le style de carte Hiver et ski met en évidence les pistes, les itinéraires de ski de randonnée, les pistes de luge et les informations relatives à l'hiver et au ski. Pour afficher le style sur la carte, vous devez effectuer les réglages suivants :
 
 1. Sélectionnez le [profil](../personal/profiles.md) requis.
 2. Ouvrez [Configurer la carte](../map/configure-map-menu.md).
-3. Faites défiler jusqu'à Style de carte/Type de carte, ouvrez-le et cochez **Hiver et Ski**.
+3. Faites défiler jusqu'à Style de carte/Type de carte, ouvrez-le et cochez **Hiver et ski**.
 
 :::tip configurations
-Le profil Ski est conçu pour être utilisé en combinaison avec les styles Hiver et Ski. Cependant, le type de navigation pour chaque profil spécifique peut être modifié et défini individuellement, de sorte que la configuration finale du profil, du style de carte et de la navigation dépend entièrement de vos réglages.
+Le profil Ski est conçu pour être utilisé en combinaison avec les styles Hiver et ski. Cependant, le type de navigation pour chaque profil spécifique peut être modifié et défini individuellement, de sorte que la configuration finale du profil, du style de carte et de la navigation dépend entièrement de vos réglages.
 :::
 
 
@@ -99,14 +99,14 @@ Le profil Ski est conçu pour être utilisé en combinaison avec les styles Hive
 
 </Tabs>
 
-La [carte vectorielle](../map/vector-maps.md) avec le [style de carte Hiver et Ski](../map/vector-maps.md#winter-and-ski) inclus peut être complétée par des [lignes de contour](../plugins/topography.md#show-contour-linesterrain) et un [ombrage](../plugins/topography.md#hillshade-map). Voici deux exemples. Les pistes sur la carte vectorielle par défaut sont affichées à gauche, et les pistes sur la carte vectorielle combinée avec la carte raster *Lignes de contour* et *Ombrage* sont affichées à droite. Dans le second cas, la carte affiche plus de données d'altitude pour aider à estimer la difficulté, le risque et la distance.
+La [carte vectorielle](../map/vector-maps.md) avec le [style de carte Hiver et ski](../map/vector-maps.md#winter-and-ski) inclus peut être complétée par des [courbes de niveau](../plugins/topography.md#show-contour-linesterrain) et un [ombrage](../plugins/topography.md#hillshade-map). Voici deux exemples. Les pistes sur la carte vectorielle par défaut sont affichées à gauche, et les pistes sur la carte vectorielle combinée avec la carte raster *Courbes de niveau* et *Ombrage* sont affichées à droite. Dans le second cas, la carte affiche plus de données d'altitude pour aider à estimer la difficulté, le risque et la distance.
 
 
-### Désactiver le style de carte Ski {#disable-ski-map-style}
+### Désactiver le style de carte de ski {#disable-ski-map-style}
 
-Si vous préférez supprimer les pistes et les couleurs hivernales de la carte, ou si la saison de ski est terminée, effectuez l'une des opérations suivantes :
+Si vous préférez supprimer les pistes et les couleurs d'hiver de la carte, ou si la saison de ski est terminée, effectuez l'une des opérations suivantes :
 
-- Décochez le [style de carte Hiver et Ski](#set-winter-and-ski-map-style) pour le profil requis.
+- Décochez le style de carte [Hiver et ski](#set-winter-and-ski-map-style) pour le profil requis.
 - Changez le [profil Ski](../personal/profiles.md) pour tout autre profil.
 - Désactivez le [plugin Vue Carte de ski](../plugins/index.md#enable--disable).
 
@@ -138,20 +138,20 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </Tabs>
 
-Les styles de carte Hiver et Ski peuvent être activés dans n'importe quel profil. Mais il est le plus utile dans le [profil Ski](../personal/profiles.md), où il est défini par défaut. Le profil Ski est très confortable pour la [navigation Ski](../navigation/routing/ski-routing.md).
+Les styles de carte Hiver et ski peuvent être activés dans n'importe quel profil. Mais il est le plus utile dans le [profil Ski](../personal/profiles.md), où il est défini par défaut. Le profil Ski est très confortable pour la [navigation à ski](../navigation/routing/ski-routing.md).
 
 
-## Style de carte Ski {#ski-map-style}
+## Style de carte de ski {#ski-map-style}
 
 Utilisez la [légende de la carte de ski](../../user/map-legend/ski-map.md) pour toute référence. Elle permet d'identifier les types de pistes sur la carte, ainsi que les types de voies aériennes et d'autres caractéristiques qui peuvent être lues sur la carte.
 
 En lisant la carte, vous pouvez connaître les détails qui sont importants pour vous, tels que la difficulté d'une piste particulière, le type de piste, si le damage est effectué et si la piste est éclairée la nuit.
 
-Les options décrites ici sont disponibles dans la [navigation Ski](../navigation/setup/route-navigation.md). La **navigation Ski** définit les options d'itinéraire individuelles, qui s'appliquent uniquement au ski.
+Les options décrites ici sont disponibles dans la [navigation à ski](../navigation/setup/route-navigation.md). La **navigation à ski** définit les options d'itinéraire individuelles, qui s'appliquent uniquement au ski.
 
 
 :::info style de rendu
-La carte de ski OsmAnd est construite comme l'un des styles de rendu, qui détermine les objets à afficher sur la carte et l'apparence des objets. Tous les styles de rendu sont décrits dans le fichier [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml). Pour les règles qui définissent la structure interne du fichier XML, consultez la [documentation sur le rendu](../../technical/osmand-file-formats/osmand-rendering-style.md).
+La carte de ski OsmAnd est construite comme l'un des styles de rendu, qui détermine quels objets afficher sur la carte et l'apparence des objets. Tous les styles de rendu sont décrits dans le fichier [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml). Pour les règles qui définissent la structure interne du fichier XML, consultez la [documentation sur le rendu](../../technical/osmand-file-formats/osmand-rendering-style.md).
 :::
 
 
@@ -174,19 +174,19 @@ Pour des conseils plus spécifiques sur chaque type de difficulté de piste, con
 
 ### Piste par types {#piste-by-types}
 
-Les pistes diffèrent par leur type. Un type représente différentes caractéristiques pour une piste afin de répondre aux exigences de différentes activités hivernales : ski alpin, patinage classique, snowboard, luge, ski de randonnée, ski de randonnée, ski de bosses, ski nocturne, etc. Comprendre le [type de piste](https://wiki.openstreetmap.org/wiki/Key:piste:type) sur la carte permet de construire un itinéraire de navigation optimal.
+Les pistes diffèrent par leur type. Un type représente différentes caractéristiques pour une piste afin de répondre aux exigences de différentes activités liées à l'hiver : ski alpin, patinage classique, snowboard, luge, ski de randonnée, ski de randonnée, ski de bosses, ski nocturne, etc. Comprendre le [type de piste](https://wiki.openstreetmap.org/wiki/Key:piste:type) sur la carte aide à construire un itinéraire de navigation optimal.
 
-- **Piste de descente/ski alpin.**
-Utilisé pour la navigation Ski. Ce [type de piste](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) a une direction et une difficulté, et le plus souvent il est entouré par les limites du domaine skiable. Lorsqu'une piste de descente est sélectionnée pour la navigation Ski, la direction de la piste est prise en considération. Si les points de départ et de destination sont établis à l'opposé de la direction de la piste, la navigation se fait le long de la voie aérienne la plus proche.
+- **Piste de ski de descente/alpin.**
+Utilisé pour la navigation à ski. Ce [type de piste](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) a une direction et une difficulté, et le plus souvent il est entouré par les limites du domaine skiable. Lorsqu'une piste de descente est sélectionnée pour la navigation à ski, la direction de la piste est prise en considération. Si les points de départ et de destination sont établis à l'opposé de la direction de la piste, la navigation se fait le long de la voie aérienne la plus proche.
 
 - **Piste de ski nordique/arrière-pays.**
-Également utilisé pour la navigation Ski. Ce [type de piste](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) n'a pas de difficulté, peut ou non avoir une direction, et va le plus souvent au-delà des limites du domaine skiable. Lors de la navigation le long de ce type de pistes, les points de départ et de destination peuvent souvent être inversés.
+Également utilisé pour la navigation à ski. Ce [type de piste](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) n'a pas de difficulté, peut ou non avoir une direction, et le plus souvent il dépasse les limites du domaine skiable. Lors de la navigation le long de ce type de pistes, les points de départ et de destination peuvent souvent être inversés.
 
 - **Piste de ski de randonnée.**
-Souvent utilisé par les skieurs pour une ascension nordique et une descente. La difficulté d'une piste de ski de randonnée est souvent marquée par la couleur respective. La navigation Ski peut construire un itinéraire le long de ce type de piste, ce qui vous permet de combiner les types de pistes.
+Souvent utilisé par les skieurs pour une montée nordique et une descente en descente. La difficulté d'une piste de ski de randonnée est souvent marquée par la couleur respective. La navigation à ski peut construire un itinéraire le long de ce type de piste, ce qui vous permet de combiner les types de pistes.
 
 - **Autre piste de ski.**
-Les types de pistes tels que les *sentiers de randonnée* ou les *sentiers de luge* peuvent être utilisés pour les profils de ski ou de randonnée.
+Les types de pistes tels que les *sentiers de randonnée* ou les *pistes de luge* peuvent être utilisés pour les profils de ski ou de randonnée.
 
 
 ### Pistes damées {#grooming-trails}
@@ -238,7 +238,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,renderin
 
 Pour savoir sur quelles pistes en dehors du domaine skiable vous pouvez naviguer, vous devez activer l'option **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** dans la liste **<Translate android="true" ids="rendering_category_routes"/>**, ouverte depuis le menu [Configurer la carte](../map/configure-map-menu.md).
 
-Avec le profil Ski, la navigation ski et le [style de carte Hiver et Ski](../map/vector-maps.md#winter-and-ski) activés, les itinéraires des [pistes de ski](../map/vector-maps.md#routes) affichent tous les types de pistes que la navigation ski peut utiliser pour construire des itinéraires de navigation. Ces itinéraires de pistes de ski, s'ils sont activés, sont délimités par la couleur violette principalement en dehors des limites du domaine skiable.
+Avec le profil Ski, la navigation à ski et le [style de carte Hiver et ski](../map/vector-maps.md#winter-and-ski) activés, les itinéraires des [pistes de ski](../map/vector-maps.md#routes) affichent tous les types de pistes que la navigation à ski peut utiliser pour construire des itinéraires de navigation. Ces itinéraires de pistes de ski, s'ils sont activés, sont délimités par la couleur violette, principalement en dehors des limites du domaine skiable.
 
 
 ### Nuit et éclairage {#night-and-lighting}
@@ -259,9 +259,9 @@ Avec le profil Ski, la navigation ski et le [style de carte Hiver et Ski](../map
 
 </Tabs>
 
-Le style **Hiver et ski** peut être utilisé avec le [mode Nuit ou Lever/coucher du soleil](../map/vector-maps.md#map-mode). Un choix confortable pour ceux qui préfèrent les couleurs sombres, ou l'assombrissement de l'écran la nuit, ainsi que pour ceux qui pratiquent le ski nocturne. En plus du mode Nuit, les cartes de ski OsmAnd peuvent également montrer quelles pistes sont éclairées avec l'option [Éclairage public](../map/vector-maps.md#details).
+Le style **Hiver et ski** peut être utilisé avec le [mode Nuit ou Lever/coucher du soleil](../map/vector-maps.md#map-mode). Un choix confortable pour ceux qui préfèrent les couleurs sombres, ou assombrir l'écran la nuit, ainsi que pour ceux qui pratiquent le ski nocturne. En plus du mode Nuit, les cartes de ski OsmAnd peuvent également montrer quelles pistes sont éclairées avec l'option [Éclairage public](../map/vector-maps.md#details).
 
-Les deux options se trouvent dans le menu [Configurer la carte](../map/configure-map-menu.md).
+Ces deux options se trouvent dans le menu [Configurer la carte](../map/configure-map-menu.md).
 
 - Pour activer l'option ***Mode Nuit***, faites défiler la liste :
 *<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*
@@ -276,4 +276,4 @@ Les deux options se trouvent dans le menu [Configurer la carte](../map/configure
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *Cet article a été mis à jour pour la dernière fois en décembre 2024*
+> *Dernière mise à jour : Décembre 2024*

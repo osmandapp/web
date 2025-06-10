@@ -1,11 +1,11 @@
 ---
-source-hash: 00e05f1c97d010587c40166425499255301704015dd71cd77033293b0f64148a
+source-hash: a2b33dbddd31b385847a89ae53a225c19d91062512f263d6956874077a7aa413
 sidebar_position: 1
 ---
 
 # Les contributions sont les bienvenues ! {#contributions-are-welcome}
 
-Vous pouvez également utiliser les fonctionnalités et les plugins d'OsmAnd pour contribuer directement des données à des projets collaboratifs comme OpenStreetMap, Wikipedia, WikiVoyage, Mapillary.
+Vous pouvez également utiliser les fonctionnalités et les plugins d'OsmAnd pour contribuer directement aux données de projets collaboratifs tels qu'OpenStreetMap, Wikipedia, WikiVoyage, Mapillary.
 
 * [Créer une expérience utilisateur cohérente](./creating-consistent-ux.md)
 * [Comment traduire OsmAnd](./translating-osmand.md)

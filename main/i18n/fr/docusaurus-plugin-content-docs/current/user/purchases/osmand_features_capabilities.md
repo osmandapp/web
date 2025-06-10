@@ -1,10 +1,9 @@
 ---
-source-hash: 99e9347b2bbbe87857d4f7d40cb5955a6e211f523c44613a564ec6007096844f
+source-hash: 6b5cb0dee9768a0e086887f342898a0c51cd65f88cda41eede74cc3549af0b14
 sidebar_position: 1
 title:  Fonctionnalités et capacités d'OsmAnd
 unlisted: true
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,6 +13,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
 
 
 
@@ -31,7 +31,7 @@ Fonctionnalités de navigation principales :
 - Recalcul automatique de l'itinéraire en cas de déviation
 - Heure d'arrivée estimée (ETA)
 - Prise en charge des points de passage intermédiaires
-- Guidage de voie
+- Guidage sur voie
 - Avertissements de limitation de vitesse
 - Ajustements d'itinéraire en fonction du trafic
 
@@ -49,7 +49,7 @@ Tableau :
 | Fonctionnalité | OsmAnd Gratuit | OsmAnd+ (Maps+) | OsmAnd Pro |
 |---------|------------|----------------|------------|
 | Navigation virage par virage | ✔ | ✔ | ✔ |
-| Guidage de voie | ✔ | ✔ | ✔ |
+| Guidage sur voie | ✔ | ✔ | ✔ |
 | Points de passage intermédiaires | ✔ | ✔ | ✔ |
 | Recalcul d'itinéraire en fonction du trafic | - | - | ✔ |
 | Android Auto / CarPlay | - | ✔ | ✔ |
@@ -74,9 +74,9 @@ Types de cartes pris en charge :
 Couches supplémentaires :
 
 - Surface et qualité des routes
-- Sentiers pédestres et pistes cyclables
+- Sentiers de randonnée et pistes cyclables
 - Couches OpenStreetMap hors ligne
-- Couches météorologiques dynamiques
+- Couches météo dynamiques
 
 Tableau :
 
@@ -114,7 +114,7 @@ Tableau :
 - Enregistrement d'itinéraires personnalisés
 - Import/export GPX/KML
 - Visualisation de traces en 3D
-- Analyse de profil d'élévation
+- Analyse du profil d'élévation
 
 Tableau :
 

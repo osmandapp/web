@@ -1,9 +1,8 @@
 ---
-source-hash: f1fece95e533dae0683e9c033a3e7b290e8ef68525570147e7c28b2d1d93b05b
+source-hash: 892c634b7bf81dafb9296c6e2b65ee7f15f7bf8b1d0e766e4ed35dfd9df8901e
 sidebar_position: 5
 title: Recherche
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +11,8 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-### Aperçu {#overview}
+
+### Vue d'ensemble {#overview}
 
 La **recherche** est un outil important d'OsmAnd qui vous permet de trouver les lieux, objets ou adresses requis. Les options de recherche disponibles offrent différentes façons de trouver des objets. Vous pouvez utiliser la recherche par adresse pour une navigation précise, la recherche par catégories de POI pour trouver les objets les plus proches, la recherche par historique pour un accès rapide aux requêtes précédentes, et la recherche par coordonnées pour une localisation précise.
 
