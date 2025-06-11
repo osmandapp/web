@@ -126,8 +126,8 @@ const config = {
             title: 'OsmAnd',
             items: [
               {
-                label: 'Purchases 💳',
-                to: '/docs/user/purchases',
+                label: 'Pricing 💳',
+                to: 'pathname:///pricing',
               },
               {
                 label: 'Map 🌍',
@@ -137,6 +137,10 @@ const config = {
               {
                 label: 'Docs',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Purchases',
+                to: '/docs/user/purchases',
               },
               {
                 label: 'Map legend',
