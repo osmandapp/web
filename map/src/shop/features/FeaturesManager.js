@@ -3,6 +3,7 @@ import { ReactComponent as FollowTrackIcon } from '../../assets/features/ic_acti
 import { ReactComponent as CrossBuyIcon } from '../../assets/features/ic_action_cross_buy_colored_day.svg';
 import { ReactComponent as SettingsCloudIcon } from '../../assets/features/ic_action_settings_cloud_colored.svg';
 import { ReactComponent as CloudUploadIcon } from '../../assets/features/ic_action_cloud_upload_colored_day.svg';
+import { ReactComponent as AdvancedRouteIcon } from '../../assets/features/ic_action_route_appearance.svg';
 import { ReactComponent as WidgetsIcon } from '../../assets/features/ic_action_advanced_widgets_colored_day.svg';
 import { ReactComponent as Track3dIcon } from '../../assets/features/ic_action_3dtrack_colored.svg';
 import { ReactComponent as UmbrellaIcon } from '../../assets/features/ic_action_umbrella_colored.svg';
@@ -10,11 +11,12 @@ import { ReactComponent as MapUpdatesIcon } from '../../assets/features/ic_actio
 import { ReactComponent as MonthlyUpdatesIcon } from '../../assets/features/ic_action_monthly_map_updates_colored_day.svg';
 import { ReactComponent as UnlimitedDownloadsIcon } from '../../assets/features/ic_action_unlimited_downloads_colored_day.svg';
 import { ReactComponent as Relief3dIcon } from '../../assets/features/ic_action_3d_relief_colored_day.svg';
+import { ReactComponent as TerrainVisualizationIcon } from '../../assets/features/ic_action_terrain_slope_day.svg';
 import { ReactComponent as SrtmIcon } from '../../assets/features/ic_action_srtm_colored_day.svg';
-import { ReactComponent as CarplayIcon } from '../../assets/features/ic_action_srtm_colored_day.svg';
+import { ReactComponent as CarplayIcon } from '../../assets/features/ic_action_vehicle_integration_colored.svg';
 import { ReactComponent as VehicleMetricsIcon } from '../../assets/features/ic_action_vehicle_metrics_colored_day.svg';
 import { ReactComponent as ExternalSensorIcon } from '../../assets/features/ic_action_external_sensor_colored_day.svg';
-import { ReactComponent as WikimediaIcon } from '../../assets/features/ic_action_wikipedia_download_colored_day.svg';
+import { ReactComponent as WikimediaIcon } from '../../assets/features/ic_action_logo_wikimedia.svg';
 import { ReactComponent as WikipediaDownloadIcon } from '../../assets/features/ic_action_wikipedia_download_colored_day.svg';
 import { ReactComponent as BackpackIcon } from '../../assets/features/ic_action_backpack_colored_day.svg';
 import { ReactComponent as NauticalChartsIcon } from '../../assets/features/ic_action_nautical_charts_colored.svg';
@@ -60,7 +62,7 @@ export const features = [
         id: 'advanced_route_coloring',
         name: 'web:feature_advanced_route_coloring',
         desc: 'web:feature_advanced_route_coloring_desc',
-        icon: <CloudUploadIcon />,
+        icon: <AdvancedRouteIcon />,
         category: 'Pro Features',
     },
     {
@@ -123,7 +125,7 @@ export const features = [
         id: 'terrain_visualization',
         name: 'web:feature_terrain_visualization',
         desc: 'web:feature_terrain_visualization_desc',
-        icon: <Relief3dIcon />,
+        icon: <TerrainVisualizationIcon />,
         category: 'Topography',
     },
     {
