@@ -1,0 +1,41 @@
+eugene:
+  name: Eugene
+  title: Marketing lead
+  url: http://github.com/EugeneZmeuk
+  image_url: https://avatars.githubusercontent.com/u/44466116?s=400&u=71229fe1980e30ac5ab43d7afaf6f91897c5ed53&v=4
+
+tat:
+  name: Tatiana
+  title: Marketing manager
+  url: https://github.com/TatianaRud
+  image_url: https://avatars.githubusercontent.com/u/54069247?v=4
+
+dmytro:
+  name: Dmytro
+  title: Product Lead
+  url: https://github.com/dmpr0
+  image_url: https://avatars.githubusercontent.com/u/9365308?v=4
+  
+chat:
+  name: Chatty Garrate
+  title: Writer
+  url: https://osmand.net/blog/story-27
+  image_url: https://i.imgur.com/Pek08Ce.jpeg
+
+victor:
+  name: Victor
+  title: CEO
+  url: https://github.com/vshcherb
+  image_url: https://avatars.githubusercontent.com/u/1042025?v=4
+
+shura:
+  name: Alexandra
+  title: Technical writer
+  url: https://github.com/shurasmiling
+  image_url: https://avatars.githubusercontent.com/u/105276875?v=4
+
+antti:
+  name: Antti
+  title: Profi
+  url: https://www.facebook.com/advseeker.fi/
+  image_url: http://www.advseeker.fi/wp-content/uploads/2022/02/about_me-1-e1645430605164.png
