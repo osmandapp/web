@@ -123,6 +123,7 @@ export default function ProductCard({
                                         onChange={(value) => setType(value)}
                                         updateCardPrices={updateCardPrices}
                                         setUpdateCardPrices={setUpdateCardPrices}
+                                        testMode={testMode}
                                     />
                                 ))}
                             </RadioGroup>

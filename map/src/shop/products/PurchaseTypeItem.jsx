@@ -13,6 +13,7 @@ export default function PurchaseTypeItem({
     onChange,
     updateCardPrices,
     setUpdateCardPrices,
+    testMode,
 }) {
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -106,13 +107,13 @@ export default function PurchaseTypeItem({
                     </Box>
                     {saveBox && <Typography className={styles.productTypeSale}>{saveBox}</Typography>}
                 </Box>
-                {purchaseObj.show ? (
+                {purchaseObj.show || testMode ? (
                     <Radio className={styles.radioButton} value={type} checked={selected === type} />
                 ) : (
                     <Radio disabled={true} className={styles.radioButtonDisabled} checked={true} />
                 )}
             </Box>
-            {!purchaseObj.show && (
+            {!testMode && !purchaseObj.show && (
                 <Box
                     className={styles.purchaseTypeCardUnavailable}
                     sx={{
