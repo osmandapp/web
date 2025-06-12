@@ -78,7 +78,8 @@ export default function LoginMenu() {
         let status;
         status = ltx.accountInfo.state;
         status = status ? upperFirst(status) + ' · ' : '';
-        return status + getAccountType(ltx.accountInfo.name);
+        const type = getAccountType(ltx.accountInfo.name) || '';
+        return status + type;
     };
 
     function close() {
