@@ -1,10 +1,9 @@
 ---
-source-hash: c81b1662dc95835f4ceb96e3166ff5b1809413cfc485b99ab86f16a5a32a8797
+source-hash: cbfdd7a6856d6bd70ca36fdf85dcda15af58c170cc269eb99def74f28abaf782
 sidebar_position: 3
-title:  Achats Web
+title:  Achats sur le Web
 unlisted: true
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,6 +11,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
 
 
 ## Comment acheter {#how-to-buy}
@@ -28,7 +28,7 @@ Tous les achats effectués via l'une de ces plateformes prennent en charge l'**a
 | Plan | Description | Notes |
 |------------|------------|------------|
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **achat intégré** ou un **abonnement** qui débloque des fonctionnalités avancées pour l'application gratuite OsmAnd. | Prend en charge l'accès **multiplateforme** |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan d'abonnement** qui débloque toutes les [fonctionnalités pro](#pro-features), y compris CarPlay et le relief 3D. | Prend en charge l'accès **multiplateforme** |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan d'abonnement** qui débloque toutes les [fonctionnalités Pro](#pro-features), y compris CarPlay et le relief 3D. | Prend en charge l'accès **multiplateforme** |
 
 :::note
 L'**accès multiplateforme** signifie que vous pouvez acheter OsmAnd sur notre site Web ou dans un magasin (par exemple, *App Store, Google Play ou osmand.net*) et l'utiliser sur une autre plateforme en [liant votre achat à un compte OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
@@ -36,7 +36,7 @@ L'**accès multiplateforme** signifie que vous pouvez acheter OsmAnd sur notre s
 
 ## Prix {#prices}
 
-Voici les prix des produits OsmAnd aux États-Unis et dans l'UE. Les prix dans les autres régions sont automatiquement convertis en devise locale par la plateforme de paiement.
+Vous trouverez ci-dessous les prix des produits OsmAnd aux États-Unis et dans l'UE. Les prix dans les autres régions sont automatiquement convertis en devise locale par la plateforme de paiement.
 
 |    | OsmAnd Gratuit   | [Maps+](#install-osmand-ios) Achat unique | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |

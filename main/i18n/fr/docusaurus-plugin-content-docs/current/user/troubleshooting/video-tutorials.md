@@ -1,9 +1,8 @@
 ---
-source-hash: 2ed31b3276f64ccf7cd4bd56dde8f98f119d0ac3114d771d9ac36b091e50d6a7
+source-hash: e6ee24d43a2fa6f42228f49a1b9ee52256cc054f09d4a2d54de79b76e5bec373
 sidebar_position: 10
-title: Tutoriels vidéo et guides
+title:  Tutoriels et guides vidéo
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,9 +13,10 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
+
 ## Ressources vidéo OsmAnd {#osmand-video-resources}
 
-Nous avons rassemblé une vaste collection de tutoriels vidéo et de guides sur notre [chaîne YouTube officielle OsmAnd](https://www.youtube.com/@OsmAndMapsNavigation/playlists), spécialement conçue pour notre base d'utilisateurs mondiale. Les listes de lecture sont organisées par langue, ce qui facilite la recherche de tutoriels, d'aperçus de fonctionnalités et de contenu généré par les utilisateurs dans votre langue préférée. Que vous souhaitiez approfondir votre compréhension d'OsmAnd, apprendre de nouvelles fonctionnalités ou découvrir comment la communauté utilise OsmAnd, vous trouverez quelque chose d'utile. Les sections suivantes fournissent des liens directs vers les listes de lecture disponibles dans différentes langues.
+Nous avons rassemblé une vaste collection de tutoriels et de guides vidéo sur notre [chaîne YouTube officielle OsmAnd](https://www.youtube.com/@OsmAndMapsNavigation/playlists), spécialement conçue pour notre base d'utilisateurs mondiale. Les listes de lecture sont organisées par langue, ce qui permet de trouver facilement des tutoriels, des aperçus de fonctionnalités et du contenu généré par les utilisateurs dans votre langue préférée. Que vous souhaitiez approfondir votre compréhension d'OsmAnd, apprendre de nouvelles fonctionnalités ou découvrir comment la communauté utilise OsmAnd, vous trouverez quelque chose d'utile. Les sections suivantes fournissent des liens directs vers les listes de lecture disponibles dans différentes langues.
 
 
 ### Listes de lecture par langue {#playlists-by-language}
@@ -37,7 +37,7 @@ Nous mettons fréquemment à jour ces listes de lecture pour vous assurer d'avoi
 
 ## Tutoriels en vedette {#featured-tutorials}
 
-Voici quelques exemples mis en évidence de notre collection de vidéos. Ces vidéos offrent des aperçus approfondis de fonctionnalités spécifiques d'OsmAnd dans différentes langues, ce qui permet aux utilisateurs de comprendre et d'optimiser plus facilement l'application pour leurs besoins.
+Voici quelques exemples tirés de notre collection de vidéos. Ces vidéos offrent un aperçu approfondi de fonctionnalités spécifiques d'OsmAnd dans différentes langues, ce qui permet aux utilisateurs de comprendre et d'optimiser plus facilement l'application pour leurs besoins.
 
 ### Anglais : Aperçu de l'altitude pour Android et iOS {#english-elevation-preview-for-android--ios}
 
@@ -75,7 +75,7 @@ Voici quelques exemples mis en évidence de notre collection de vidéos. Ces vid
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/ulcEj46rgOw?list=PL2sj0drrh65G3W23XOVLtRFHwIEFV9zwX" title="TUTORIAL: Osmand per chi viaggia in moto e tutto quello che c&#39;è da sapere per sfruttarlo al meglio!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Espagnol : Randonnée tout-terrain à moto {#spanish-off-road-ride-on-the-motorcycle}
+### Espagnol : Balade tout-terrain à moto {#spanish-off-road-ride-on-the-motorcycle}
 
 - **Vidéo** : _The TRK502X on Hell's Slope_
 - De [Pedro on a Trail Bike](https://www.youtube.com/@pedroenmototrail)
@@ -83,7 +83,7 @@ Voici quelques exemples mis en évidence de notre collection de vidéos. Ces vid
 <iframe width="770" height="433" src="https://www.youtube.com/embed/1Q_JFDeMEZA?list=PL2sj0drrh65FNIJ7WS58CAgCnJOb0-rTf" title="THE TRK502X ON HELL&#39;S SLOPE/🤘✌️🫣 #benellitrk502x" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-## Engagez-vous avec OsmAnd : Partagez, suggérez et connectez-vous {#engage-with-osmand-share-suggest-and-connect}
+## Interagissez avec OsmAnd : Partagez, suggérez et connectez-vous {#engage-with-osmand-share-suggest-and-connect}
 
 Si vous avez des suggestions de contenu ou si vous souhaitez que votre vidéo soit présentée sur notre chaîne, n'hésitez pas à nous contacter. Nous sommes toujours à la recherche de contributions fraîches et de haute qualité pour enrichir notre vidéothèque OsmAnd.
 

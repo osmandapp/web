@@ -29,7 +29,7 @@ import { usePasswordValidation } from '../util/hooks/usePasswordValidation';
 import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
 import LoginContext from '../context/LoginContext';
 
-export default function ChangeResetPwd() {
+export default function ChangeResetPwd({ dialog, reopenLoginDialog }) {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
@@ -136,25 +136,27 @@ export default function ChangeResetPwd() {
 
     return (
         <>
-            <AppBar position="static" className={headerStyles.appbar}>
-                <Toolbar className={headerStyles.toolbar}>
-                    <IconButton
-                        id={'se-change-pwd-menu-close'}
-                        variant="contained"
-                        type="button"
-                        className={styles.closeIcon}
-                        onClick={() => {
-                            closeLoginMenu(ltx);
-                            closeHeader({ ctx });
-                        }}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                    <Typography id="se-change-pwd-menu-name" component="div" className={headerStyles.title}>
-                        {t('web:change_reset_password')}
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            {!dialog && (
+                <AppBar position="static" className={headerStyles.appbar}>
+                    <Toolbar className={headerStyles.toolbar}>
+                        <IconButton
+                            id={'se-change-pwd-menu-close'}
+                            variant="contained"
+                            type="button"
+                            className={styles.closeIcon}
+                            onClick={() => {
+                                closeLoginMenu(ltx);
+                                closeHeader({ ctx });
+                            }}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                        <Typography id="se-change-pwd-menu-name" component="div" className={headerStyles.title}>
+                            {t('web:change_reset_password')}
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+            )}
             <Box sx={{ mx: 2, my: 1 }}>
                 {!openResetStatus && !openCodeInput && (
                     <>
@@ -291,7 +293,7 @@ export default function ChangeResetPwd() {
                             <Button
                                 className={errorStyles.button}
                                 component="span"
-                                onClick={() => openLogin(ltx, navigate)}
+                                onClick={() => openLogin(ltx, navigate, reopenLoginDialog)}
                             >
                                 {t('web:login_btn')}
                             </Button>

@@ -1,21 +1,9 @@
 import { FormControl, InputLabel, MenuItem, IconButton, Select, Box } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 import { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import RouteProfileSettings from '../../../menu/navigate/RouteProfileSettings';
 
-const useStyles = makeStyles({
-    grid: {
-        '& .MuiGrid-root': {
-            marginTop: '0px !important',
-            marginLeft: '0px !important',
-        },
-    },
-});
-
 export default function SelectTrackProfile({ geoRouter, label, hideSettings = false } = {}) {
-    const classes = useStyles();
-
     const [openSettings, setOpenSettings] = useState(false);
 
     const { profile } = geoRouter.getProfile();
@@ -29,7 +17,18 @@ export default function SelectTrackProfile({ geoRouter, label, hideSettings = fa
                     setOpenSettings={setOpenSettings}
                 />
             )}
-            <MenuItem className={classes.grid} key="trackrouteprofile" sx={{ ml: 1, mr: 2, mt: 1 }}>
+            <MenuItem
+                key="trackrouteprofile"
+                sx={{
+                    ml: 1,
+                    mr: 2,
+                    mt: 1,
+                    '& .MuiGrid-root': {
+                        marginTop: 0,
+                        marginLeft: 0,
+                    },
+                }}
+            >
                 <FormControl fullWidth>
                     <InputLabel id="route-mode-label">{label}</InputLabel>
                     <Select

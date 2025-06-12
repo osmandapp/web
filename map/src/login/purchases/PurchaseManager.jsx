@@ -32,6 +32,13 @@ const storeMap = {
     },
 };
 
+export function getStatus(item) {
+    if (item.state === 'cancelled' || item.state === 'in_grace_period') {
+        return 'active';
+    }
+    return item.state;
+}
+
 export default function PurchaseManager({ store }) {
     const { t } = useTranslation();
 

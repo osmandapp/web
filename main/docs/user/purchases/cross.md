@@ -46,9 +46,10 @@ To use your **OsmAnd Pro** or **Maps+** purchase across different platforms (And
 Perform this step on the **device where you made the purchase** (Android or iOS, version 5.0 or later):
 
 1. Go to your [OsmAnd Cloud account](../personal/osmand-cloud.md#login):  
-   *Menu → Settings → OsmAnd Cloud → Create new account / I already have an account*
+   _Menu → Settings → OsmAnd Cloud → Create new account / I already have an account_
 
-2. Once logged in, your **Pro or Maps+** purchase will be automatically linked to your **Cloud account** and marked as **cross-platform**.
+2. Once logged in, your **Pro** or **Maps+** purchase will be automatically linked to your **Cloud account** and marked as **cross-platform**, *if it was not previously linked to another account.*
+
 
 
 ### Activate on Another Device or Platform {#activate-on-another-device-or-platform}

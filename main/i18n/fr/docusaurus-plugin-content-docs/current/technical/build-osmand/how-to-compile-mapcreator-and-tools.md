@@ -1,5 +1,5 @@
 ---
-source-hash: 6b7c877c4a28883606155cbfda6b5e5b0ee211262d32916af77ba2a75c7e1d61
+source-hash: d4fdeaa3f3d1430002a0e679e72ccee20fec335cb9d13974b60c5cadd82a094e
 sidebar_position: 7
 ---
 
@@ -8,25 +8,25 @@ sidebar_position: 7
 
 ## Compiler OsmAndMapCreator {#compile-osmandmapcreator}
 1. Configurez d'abord l'**[environnement de développement](setup-the-dev-environment.md)**.
-2. **Gradle** (ligne de commande) :
+2. **Gradle** (ligne de commande) :
     - Compilez avec la ligne de commande
     ```
     cd tools/java-tools && ../gradlew build
     ```
     - OsmAndMapCreator.zip sera produit avec tous les scripts à l'intérieur
-    **Remarque** : le projet Android est nécessaire pour créer des outils (il utilise le projet OsmAnd-java).
-3. **Eclipse** :
+    **Remarque** : le projet Android est nécessaire pour construire les outils (il utilise le projet OsmAnd-java).
+3. **Eclipse** :
     - Préconfigurez les projets Eclipse
     ```
     cd tools/java-tools && ../gradlew cleanEclipse eclipse
     ```
-    - Dans Eclipse, « Importer » - « Projets existants dans l'espace de travail », sélectionnez les dossiers « OsmAnd-java », « OsmAndMapCreatorutilities », « OsmAndMapCreator », « OsmAndServer », « OsmAndServerUtilties ».
-    **Remarque** : ne sélectionnez pas le dossier supérieur java-tools et sélectionnez plutôt les projets spécifiés ci-dessus.
+    - Dans Eclipse, 'Importer' - 'Projets existants dans l'espace de travail', sélectionnez les dossiers 'OsmAnd-java', 'OsmAndMapCreatorutilities', 'OsmAndMapCreator', 'OsmAndServer', 'OsmAndServerUtilties'.
+    **Remarque** : ne sélectionnez pas le dossier supérieur java-tools, mais sélectionnez les projets spécifiés ci-dessus.
 4. Android Studio / Idea
-    N'hésitez pas à faire une demande de tirage pour cette documentation et à décrire comment cela pourrait être fait.
-5. Classes principales à exécuter à partir de l'IDE :
+    N'hésitez pas à faire une pull request à cette documentation et à décrire comment cela pourrait être fait.
+5. Classes principales à exécuter depuis l'IDE :
    - net.osmand.MainUtilities - représente utilities.sh et mène à toutes les utilités possibles.
-   - net.osmand.obf.BinaryInspector - utilitaire inspector.sh pour lire les fichiers OBF et donner des informations à leur sujet.
+   - net.osmand.obf.BinaryInspector - utilité inspector.sh pour lire les fichiers OBF et donner des informations à leur sujet.
    - net.osmand.obf.preparation.IndexCreator - raccourci pour générer un fichier obf.
    - net.osmand.swing.OsmExtractionUI - OsmAndMapCreator
 
@@ -39,7 +39,7 @@ La bibliothèque de rendu native peut être utilisée pour tester le rendu hors 
  cd core-legacy/externals
  ./configure.sh
  ```
-3. Spécifiez JAVA_HOME globalement via $PATH ou en ligne de commande
+3. Spécifiez JAVA_HOME globalement via $PATH ou dans la ligne de commande
   ```
   export JAVA_HOME=<>
   ```
@@ -52,16 +52,16 @@ La bibliothèque de rendu native peut être utilisée pour tester le rendu hors 
   make -j4
   ```
 5. Les binaires seront disponibles dans core-legacy/binaries/.
-Exemple :
+Exemple :
   ```
     core-legacy/binaries/darwin/intel/Debug/libosmand.dylib
   ```
 
 ### Dépannage {#troubleshooting}
 - Fichiers manquants externals/libjpeg-turbo/jconfigint.h.in n'existe pas.
-Si vous rencontrez des problèmes de compilation de libjpeg-turbo
+Si vous rencontrez que libjpeg-turbo n'a pas pu compiler
 ```
-targets/.cmake/../../externals/skia/upstream.patched/third_party/externals/libjpeg-turbo/jconfigint.h.in n'existe pas.
+targets/.cmake/../../externals/skia/upstream.patched/third_party/externals/libjpeg-turbo/jconfigint.h.in does not exist.
 ```
 Vous pouvez trouver les fichiers ici et les placer dans le dossier spécifié
 https://github.com/osmandapp/OsmAnd-core/blob/legacy_core/externals/jpeg/jconfig.h
@@ -69,7 +69,7 @@ https://github.com/osmandapp/OsmAnd-core/blob/legacy_core/externals/jpeg/jconfig
 
 ## Compiler la version du cœur Qt pour OsmAndMapCreator {#compile-qt-core-version-for-osmandmapcreator}
 1. Configurez d'abord l'**[environnement de développement](setup-the-dev-environment.md)**.
-2. Préparez la construction (cmake) pour une cible spécifique. Exemple clang / linux :
+2. Préparez la construction (cmake) pour une cible spécifique. Exemple clang / linux :
 ```
    alias clang='clang -std=c++11'
    build/amd64-linux-clang.sh release

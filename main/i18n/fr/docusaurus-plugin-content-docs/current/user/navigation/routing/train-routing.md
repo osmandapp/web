@@ -1,9 +1,8 @@
 ---
-source-hash: 8ae3a34197a7e9b7ecc1cdf7e18ecd85032a12ff61135fdf04f13a5c6d654b0e
+source-hash: f5ae16407762521ec4aa196b206ad374ecb06bfd7b394248db04784c9100bc68
 sidebar_position: 7
 title:  Itinéraire ferroviaire
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,13 +15,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
+
 ## Aperçu {#overview}
 
 :::note
-Par défaut, le *profil Train* est désactivé. Pour utiliser ce profil pour le routage, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+Par défaut, le *profil Train* est désactivé. Pour utiliser ce profil pour l'itinéraire, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Le *routage ferroviaire* dans OsmAnd permet aux utilisateurs d'utiliser les lignes de chemin de fer pour la navigation comme s'ils conduisaient un train comme une voiture. Cette option peut être utile, par exemple, pour la randonnée lorsqu'aucune autre route n'est disponible. Dans d'autres cas, il est préférable d'utiliser le *[routage des transports en commun](./public-transport-navigation.md)*.
+L'*itinéraire ferroviaire* dans OsmAnd offre aux utilisateurs la possibilité d'utiliser les lignes de chemin de fer pour la navigation comme s'ils conduisaient un train comme une voiture. Cette option peut être utile, par exemple, pour la randonnée lorsque d'autres routes ne sont pas disponibles. Dans d'autres cas, il est préférable d'utiliser l'*[itinéraire de transport en commun](./public-transport-navigation.md)*.
 
 ![Map transport tram](@site/static/img/navigation/routing/train_routing_overview.png)
 
@@ -45,10 +45,10 @@ Le *routage ferroviaire* dans OsmAnd permet aux utilisateurs d'utiliser les lign
 
 </Tabs>
 
-Le *routage ferroviaire* peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des paramètres de navigation.
+L'*itinéraire ferroviaire* peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des paramètres de navigation.
 
 
-## Autres paramètres de routage {#other-routing-settings}
+## Autres paramètres d'itinéraire {#other-routing-settings}
 
 - L'algorithme de routage peut également prendre en compte les limitations temporaires spécifiées dans OpenStreetMap. Cela peut être fait en utilisant l'option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Notez que dans certains cas, les informations d'OSM peuvent être obsolètes.
 
@@ -60,4 +60,4 @@ Le *routage ferroviaire* peut être configuré selon vos besoins dans la section
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Une configuration correcte des paramètres vous aidera à éviter les problèmes lors de la création d'un itinéraire. Vous pouvez sélectionner l'itinéraire le plus approprié en fonction du type de véhicule et des restrictions routières, ainsi que calculer le temps de trajet.
 
-> *Cet article a été mis à jour pour la dernière fois en juin 2024*
+> *Dernière mise à jour : juin 2024*

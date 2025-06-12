@@ -1,10 +1,8 @@
 ---
-source-hash: 6c0ae42a9c806d18da8c84b9bf4149a1c87b1f199ac1df706e387cd6d5cd8e35
+source-hash: 7e2ccc0ea2e0d19c95b956a22f974da03bc1dcae580234c1cfcce8ededbdeb06
 sidebar_position: 4
 title:  Menu contextuel de la trace
 ---
-
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -17,9 +15,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Aperçu {#overview}
 
-Le *menu contextuel de la trace* fournit des informations sur la *[Trace](../../personal/tracks/index.md)* sous forme textuelle et [graphique](#altitude--speed-graphs). Il vous permet d'ajouter des informations, d'apporter des modifications, d'éditer et d'effectuer diverses autres actions avec la trace. Vous pouvez accéder au *menu contextuel de la trace* en appuyant simplement sur la trace souhaitée sur la carte ou en utilisant le menu *[Mes lieux](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Vous devrez peut-être ouvrir le dossier de la trace et sélectionner la trace souhaitée en appuyant dessus.
+
+## Vue d'ensemble {#overview}
+
+Le *menu contextuel de la trace* fournit des informations sur la *[trace](../../personal/tracks/index.md)* sous forme textuelle et [graphique](#altitude--speed-graphs). Il vous permet d'ajouter des informations, d'apporter des modifications, d'éditer et d'effectuer diverses autres actions avec la trace. Vous pouvez accéder au *menu contextuel de la trace* en appuyant simplement sur la trace souhaitée sur la carte ou en utilisant le menu *[Mes lieux](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Vous devrez peut-être ouvrir le dossier de la trace et sélectionner la trace souhaitée en appuyant dessus.
 
 <Tabs groupId="operating-systems">
 
@@ -38,9 +38,9 @@ Le *menu contextuel de la trace* fournit des informations sur la *[Trace](../../
 </Tabs>
 
 
-## Aperçu de la trace {#track-overview}
+## Vue d'ensemble de la trace {#track-overview}
 
-Lorsque vous appuyez sur une trace, le premier écran du *menu contextuel de la trace* s'ouvre - l'*onglet Aperçu*. Dans cet onglet, vous pouvez trouver un résumé sur la trace choisie (*[Panneau d'information](#info-panel)*) et effectuer les actions les plus courantes avec la trace à l'aide du *[menu Actions de la trace](#track-actions)*. Vous pouvez voir la [description et les informations de service](#description-and-info) sur votre trace si vous faites glisser l'onglet Aperçu vers le haut.
+Lorsque vous appuyez sur une trace, le premier écran du *menu contextuel de la trace* s'ouvre - l'*onglet Vue d'ensemble*. Dans cet onglet, vous pouvez trouver un résumé sur la trace choisie (*[Panneau d'information](#info-panel)*) et effectuer les actions les plus courantes avec la trace en utilisant le *[menu Actions de la trace](#track-actions)*. Vous pouvez voir la [description et les informations de service](#description-and-info) sur votre trace si vous faites glisser l'onglet Vue d'ensemble vers le haut.
 
 <!--
 You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map.
@@ -64,7 +64,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-En haut du panneau d'information, vous pouvez voir le nom de la trace et le symbole utilisé pour la marquer (*Android uniquement*). Le nom de la trace peut être modifié à l'aide de la fonction de renommage dans le [menu Options](#options). Certaines traces (principalement les *[Guides de voyage](../../plan-route/travel-guides.md#manage-as-gpx-track)*) peuvent avoir une courte *[description](#description-and-info)* et (ou) une image sous le *Nom de la trace*. Une flèche indique la *Direction vers le point le plus proche de la trace* depuis [Ma position](../../map/interact-with-map#my-location-and-zoom).
+En haut du panneau d'information, vous pouvez voir le nom de la trace et le symbole utilisé pour la marquer (*Android uniquement*). Le nom de la trace peut être modifié à l'aide de la fonction de renommage dans le [menu Options](#options). Certaines traces (principalement les *[guides de voyage](../../plan-route/travel-guides.md#manage-as-gpx-track)*) peuvent avoir une courte *[description](#description-and-info)* et (ou) une image sous le *nom de la trace*. Une flèche indique la *direction vers le point le plus proche de la trace* à partir de [Ma position](../../map/interact-with-map#my-location-and-zoom).
 
 Le panneau d'information fournit également des informations sur les éléments suivants :
 
@@ -73,7 +73,7 @@ Le panneau d'information fournit également des informations sur les éléments 
 - *<Translate android="true" ids="altitude_range"/>*. Indique l'altitude min et max sur une trace.
 
 :::note
-Si votre trace a été créée dans OsmAnd ou toute autre application de suivi (ses points ont donc des balises [`time` et `speed`](../../plugins/trip-recording#recorded-gpx-file)), le panneau d'information contiendra également des informations sur la *<Translate android="true" ids="average_speed"/>*, la *<Translate android="true" ids="max_speed"/>*, la *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) ou le *<Translate ios="true" ids="total_time"/>* (*iOS*) (la durée entre les points de début et de fin de la trace), la *<Translate android="true" ids="shared_string_time_moving"/>* (la somme du temps de conduite).
+Si votre trace a été créée dans OsmAnd ou toute autre application de suivi (donc ses points ont des balises [`time` et `speed`](../../plugins/trip-recording#recorded-gpx-file)), le panneau d'information contiendra également des informations sur la *<Translate android="true" ids="average_speed"/>*, la *<Translate android="true" ids="max_speed"/>*, la *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) ou le *<Translate ios="true" ids="total_time"/>* (*iOS*) (la durée entre les points de début et de fin de la trace), la *<Translate android="true" ids="shared_string_time_moving"/>* (la somme du temps passé en mouvement).
 :::
 
 ### Actions de la trace {#track-actions}
@@ -128,7 +128,7 @@ Le menu **Options** vous permet de gérer et de modifier la trace sélectionnée
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Android uniquement*) – Fusionne les segments de trace pour combler les lacunes.
-- **<Translate android="true" ids="analyze_on_map"/>**. Ouvre l'[outil Analyser sur la carte](../index.md#analyze-track-on-map) pour inspecter l'altitude, la vitesse et la distance de la trace.
+- **<Translate android="true" ids="analyze_on_map"/>**. Ouvre l'[outil Analyser sur la carte](../tracks/index.md#analyze-track-on-map-analyze-track-on-map) pour inspecter l'élévation, la vitesse et la distance de la trace.
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Android uniquement*) - Analyse la trace par [intervalles](./track-context-menu.md#split-interval) de temps ou de distance.
 
 <br/>
@@ -146,7 +146,7 @@ Le menu **Options** vous permet de gérer et de modifier la trace sélectionnée
 <br/>
 
 - **<Translate android="true" ids="shared_string_gps_filter"/>** (*Android uniquement*) - Permet de [filtrer les points de la trace](#gps-filter) pour affiner la précision.
-- **<Translate android="true" ids="altitude_correction"/>** (*Android uniquement*) - Pour [recevoir les données d'altitude](#calculate-missing-elevation), [attacher votre trace aux routes](../../navigation/setup/gpx-navigation.md#attach-to-the-roads) ou la calculer hors ligne (nécessite des [cartes de terrain](../../plugins/topography.md#download-maps)).
+- **<Translate android="true" ids="altitude_correction"/>** (*Android uniquement*) - Pour [recevoir des données d'élévation](#calculate-missing-elevation), [attacher votre trace aux routes](../../navigation/setup/gpx-navigation.md#attach-to-the-roads) ou la calculer hors ligne (nécessite des [cartes de terrain](../../plugins/topography.md#download-maps)).
 - **<Translate android="true" ids="simulate_your_location"/>** (*Android uniquement*) - [Simule votre position](../../plugins/development.md#gpx-track-simulation) à l'aide d'une trace GPX.
 
 <br/>
@@ -172,7 +172,7 @@ Le menu **Options** vous permet de gérer et de modifier la trace sélectionnée
 
 </Tabs>
 
-Cette section de l'onglet *Aperçu* affiche les ***données de balise*** et ***toutes les informations générales***.
+Cette section de l'*onglet Vue d'ensemble* affiche les ***données de balise*** et ***toutes les informations générales***.
 
 - **Description**. Le bouton *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) est utilisé pour modifier la description de la trace. Balise `desc`.
 
@@ -237,7 +237,7 @@ La fonction *Activité* dans OsmAnd vous permet de marquer les traces GPX enregi
 - [Balises d'activité pour les traces GPX](../../plugins/trip-recording.md#recording-settings). Lors de l'enregistrement d'une trace GPX, vous pouvez attribuer un type d'activité. Cette balise d'activité vous aide à catégoriser initialement les traces.
 - [Filtre d'activité](../../personal/tracks/smart-folder.md#search-filter). Vous pouvez filtrer les traces GPX enregistrées par activité, ce qui vous permet de vous concentrer sur la recherche de types d'enregistrements spécifiques, tels que toutes les traces de vélo ou de randonnée.
 - [Gérer les types d'activité](../../personal/tracks/manage-tracks.md#selection-mode). Vous pouvez modifier le type d'activité pour les dossiers ou les traces sélectionnés à l'aide du mode de sélection dans l'onglet Traces du menu Mes lieux.
-- **Liste d'activités**. Les catégories et groupes d'activités sont définis dans les ressources d'OsmAnd. Pour les développeurs et les contributeurs, la liste d'activités est maintenue dans un format structuré à l'adresse [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), qui détaille les groupes et types d'activités disponibles.
+- **Liste d'activités**. Les catégories et groupes d'activités sont définis dans les ressources d'OsmAnd. Pour les développeurs et les contributeurs, la liste d'activités est maintenue dans un format structuré à [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), qui détaille les groupes et types d'activités disponibles.
 
 
 ## Graphiques Altitude / Vitesse {#altitude--speed-graphs}
@@ -247,7 +247,7 @@ Dans l'onglet *<Translate android="true" ids="shared_string_gpx_track"/>*, vous 
 Interaction avec le graphique :
 
 - ***Placer un point sur le graphique***. Si vous souhaitez voir les informations à un point particulier d'une trace, vous pouvez appuyer n'importe où sur le graphique et un pointeur avec les valeurs apparaîtra. En même temps, un marqueur bleu apparaîtra sur la carte, pointant vers cet emplacement sur la trace.
-- ***Zoom avant/arrière***. Vous pouvez utiliser des [mouvements à deux doigts](../../map/interact-with-map.md#gestures) pour zoomer avant et arrière afin d'obtenir une vue plus détaillée. Après avoir zoomé, vous pouvez déplacer le graphique vers la droite et la gauche, ce qui correspond à un déplacement vers l'avant et vers l'arrière le long de l'itinéraire.
+- ***Zoom avant/arrière***. Vous pouvez utiliser des [mouvements à deux doigts](../../map/interact-with-map.md#gestures) pour zoomer avant et arrière afin d'obtenir une vue plus détaillée. Après avoir zoomé avant, vous pouvez déplacer le graphique vers la droite et la gauche, ce qui correspond à un déplacement vers l'avant et vers l'arrière le long de l'itinéraire.
 - ***Informations supplémentaires***. Le côté droit du graphique contient des données sur l'altitude la plus basse, la plus haute et moyenne, la pente et la vitesse. En bas du graphique, vous pouvez voir les marques de distance.
 
 
@@ -269,7 +269,7 @@ Interaction avec le graphique :
 
 </Tabs>
 
-Dans l'onglet **Aperçu**, vous pouvez voir des paramètres tels que :
+Dans l'onglet **Vue d'ensemble**, vous pouvez voir des paramètres tels que :
 
 - *<Translate android="true" ids="distance"/>*. La somme de la distance totale parcourue sur la trace, ou la longueur de la trace elle-même.
 - *<Translate android="true" ids="shared_string_time_span"/>*. L'intervalle de temps entre les points de début et de fin de la trace.
@@ -278,7 +278,7 @@ Dans l'onglet **Aperçu**, vous pouvez voir des paramètres tels que :
 
 Les **boutons** actifs donnent accès à des actions telles que :
 
-- Le bouton **<Translate android="true" ids="analyze_on_map"/>** ouvre le [menu Analyser la trace](../tracks/index.md#analyze-track-on-map) pour la trace.
+- Le bouton **<Translate android="true" ids="analyze_on_map"/>** ouvre le [menu Analyser la trace sur la carte](../tracks/index.md#analyze-track-on-map) pour la trace.
 - Le bouton **<Translate android="true" ids="shared_string_options"/>** ouvre un menu avec :
 
   - *Modifier* ouvre la trace dans l'[outil Planifier un itinéraire](../../plan-route/index.md).
@@ -289,7 +289,7 @@ Les **boutons** actifs donnent accès à des actions telles que :
 ### Vitesse {#speed}
 
 :::note Traces enregistrées uniquement
-Cet onglet ne peut être visible que sur les traces enregistrées. Les points de ce type de trace ont des balises **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**.
+Cet onglet n'est visible que sur les traces enregistrées. Les points de ce type de trace ont des balises **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**.
 :::
 
 <Tabs groupId="operating-systems">
@@ -312,7 +312,7 @@ Le graphique **Vitesse** affiche des métriques telles que :
 
 - *<Translate android="true" ids="average_speed"/>*. Indique la vitesse moyenne pendant le trajet.
 - *<Translate android="true" ids="max_speed"/>*. Affiche la vitesse maximale pendant le trajet.
-- *<Translate android="true" ids="moving_time"/>*. Affiche le temps total pendant le trajet en mouvement uniquement.
+- *<Translate android="true" ids="moving_time"/>*. Affiche le temps total passé en mouvement uniquement pendant le trajet.
 - *<Translate android="true" ids="distance_moving"/>*. Indique la distance ajustée du trajet.
 
 
@@ -341,30 +341,30 @@ Le graphique **Altitude** affiche des métriques telles que :
 - *<Translate android="true" ids="altitude_ascent"/>*. Le gain cumulé d'altitude au-dessus du niveau de la mer le long de l'itinéraire.
 - *<Translate android="true" ids="altitude_descent"/>*. La perte cumulée d'altitude le long de l'itinéraire.
 
-**Obtenir les données d'altitude.**
-S'il n'y a *aucune information d'altitude* sur l'itinéraire, vous pouvez l'ajouter de la manière suivante :
+**Obtenir les données d'élévation.**
+S'il n'y a *aucune information d'élévation* sur l'itinéraire, vous pouvez l'ajouter de la manière suivante :
 
-- *Bouton Calculer l'altitude → [Utiliser les routes à proximité](../../plan-route/create-route.md#get-elevation-data)*. Utilise une carte hors ligne pour trouver les routes à proximité et les données d'altitude. Il vous permet de personnaliser la géométrie de la trace.
-- [Utiliser les cartes de terrain](#calculate-missing-elevation). Utilise les cartes de terrain pour obtenir les données d'altitude. La géométrie de la trace reste inchangée.
+- *Bouton Calculer l'élévation → [Utiliser les routes à proximité](../../plan-route/create-route.md#get-elevation-data)*. Utilise une carte hors ligne pour trouver les routes à proximité et les données d'élévation. Il vous permet de personnaliser la géométrie de la trace.
+- [Utiliser les cartes de terrain](#calculate-missing-elevation). Utilise les cartes de terrain pour obtenir les données d'élévation. La géométrie de la trace reste inchangée.
 
 
-### Calculer l'altitude manquante {#calculate-missing-elevation}
+### Calculer l'élévation manquante {#calculate-missing-elevation}
 
 :::note Abonnement OsmAnd Pro
-La fonction de calcul de l'altitude hors ligne n'est disponible que pour les [**abonnés OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
+La fonction de calcul de l'élévation hors ligne n'est disponible que pour les [**abonnés OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <InfoAndroidOnly />
 
-Cette fonction vous permet de calculer le profil d'altitude pour une trace GPX hors ligne pour n'importe quel terrain entre 70 degrés de latitude nord et 70 degrés de latitude sud, en fonction des [données des cartes de terrain](../../plugins/topography.md#download-maps). *Les cartes de terrain (3D) doivent être préalablement téléchargées*.
+Cette fonction vous permet de calculer le profil d'élévation pour une trace GPX hors ligne pour n'importe quel terrain entre 70 degrés de latitude nord et 70 degrés de latitude sud, en fonction des [données de la carte de terrain](../../plugins/topography.md#download-maps). *Les cartes de terrain (3D) doivent avoir été téléchargées au préalable*.
 
 1. Téléchargez les [cartes de terrain (3D)](../../plugins/topography.md#download-maps) pour la région requise.
-2. Si la trace ne contient aucune donnée d'altitude, allez dans le menu contextuel de la trace (*Menu contextuel de la trace → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), sélectionnez *Utiliser les cartes de terrain*, et après le calcul, vous obtiendrez un graphique de trace basé sur les données de terrain.
+2. Si la trace ne contient aucune donnée d'altitude, accédez au menu contextuel de la trace (*Menu contextuel de la trace → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), sélectionnez *Utiliser les cartes de terrain*, et après le calcul, vous obtiendrez un graphique de trace basé sur les données de terrain.
 
     ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->
 
-3. Si vous créez un itinéraire avec l'[outil Planifier un itinéraire](../../plan-route/create-route.md#graph) en utilisant la méthode *Ligne droite* et qu'il n'y a pas de données d'altitude sur le graphique, vous devez :
-    - Appuyez sur *Obtenir les données d'altitude*, puis sélectionnez *Utiliser les cartes de terrain*.
+3. Si vous créez un itinéraire avec l'[outil Planifier un itinéraire](../../plan-route/create-route.md#graph) en utilisant la méthode *Ligne droite* et qu'il n'y a pas de données d'élévation sur le graphique, vous devez :
+    - Appuyez sur *Obtenir les données d'élévation*, puis sélectionnez *Utiliser les cartes de terrain*.
     - Après le calcul, vous obtiendrez le graphique complet Altitude/Pente de votre itinéraire basé sur les données de terrain.
 
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
@@ -398,7 +398,7 @@ Dans cet onglet *Points* :
 
 ### Ajouter un waypoint à une trace {#add-waypoint-to-a-track}
 
-Des waypoints peuvent être ajoutés à la trace actuellement enregistrée ou à toute trace de la liste [*Mes lieux → Traces*](../../personal/tracks/manage-tracks.md) :
+Des waypoints peuvent être ajoutés à la trace actuellement enregistrée ou à toute trace de la liste [*Mes lieux → Liste des traces*](../../personal/tracks/manage-tracks.md) :
 
 - Utilisez le [menu contextuel de la carte](../../map/map-context-menu.md#-add--edit-track-waypoint).
   - Les waypoints sont automatiquement affichés si la trace sélectionnée est activée sur la carte.
@@ -429,7 +429,7 @@ Des waypoints peuvent être ajoutés à la trace actuellement enregistrée ou à
 
 Appuyez sur le bouton *Ajouter un waypoint* pour ouvrir l'écran de création de waypoint (cet écran est similaire au [menu contextuel des favoris](../../personal/favorites.md#create)).
 
-1. **Ajoutez** le *Nom* du waypoint, l'*Adresse* de l'emplacement sélectionné et une *Description* (facultatif).
+1. **Ajoutez** le *nom* du waypoint, l'*adresse* de l'emplacement sélectionné et une *description* (facultatif).
 2. **Sélectionnez** un groupe.
 
     - Sélectionnez des catégories de groupes précédemment créées ou créez-en une nouvelle.
@@ -439,8 +439,8 @@ Appuyez sur le bouton *Ajouter un waypoint* pour ouvrir l'écran de création de
 3. Paramètres d'**apparence** :
 
     - Sélectionnez une [**icône**](../../personal/favorites.md#favorite-icons) dans la liste de toutes les icônes de catégories de POI.
-    - Sélectionnez la **Couleur** de l'icône.
-    - Sélectionnez ensuite la **Forme** de l'icône : *Cercle, Octogone, Carré*.
+    - Sélectionnez la **couleur** de l'icône.
+    - Sélectionnez ensuite la **forme** de l'icône : *Cercle, Octogone, Carré*.
 
 4. **Remplacez** un autre point par celui-ci, si nécessaire.
 
@@ -468,12 +468,12 @@ Le *menu à trois points* ( &#8285; ) ouvre le *menu de groupe* de waypoints.
 **Actions :**
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - Vous permet d'afficher ou de ne pas afficher les waypoints du groupe sur la carte. Ou vous pouvez utiliser [le bouton d'écran](#points--waypoints) pour afficher ou omettre les waypoints du groupe sur la carte.
-- **<Translate android="true" ids="shared_string_rename"/>** - Modifier le nom du groupe.
-- **<Translate android="true" ids="change_default_appearance"/>** - Modifier les options d'affichage pour un groupe de waypoints.
-- **<Translate android="true" ids="add_group_to_markers"/>** ou **Supprimer** (*Android uniquement*) - Déplacer les waypoints du groupe vers la liste des [marqueurs de carte](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android uniquement*) - Déplacer les waypoints du groupe vers les [Favoris](../../personal/favorites.md).
+- **<Translate android="true" ids="shared_string_rename"/>** - Modifiez le nom du groupe.
+- **<Translate android="true" ids="change_default_appearance"/>** - Modifiez les options d'affichage d'un groupe de waypoints.
+- **<Translate android="true" ids="add_group_to_markers"/>** ou **Supprimer** (*Android uniquement*) - Déplacez les waypoints du groupe vers la liste des [marqueurs de carte](../../personal/markers.md).
+- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android uniquement*) - Déplacez les waypoints du groupe vers les [Favoris](../../personal/favorites.md).
 - **<Translate android="true" ids="add_to_navigation"/>** (*Android uniquement*) - Crée un itinéraire entre les waypoints. Les premier et dernier points deviennent le début et la fin de l'itinéraire, et les autres sont convertis en points intermédiaires.
-- **<Translate android="true" ids="shared_string_delete"/>** - Supprimer un groupe de waypoints.
+- **<Translate android="true" ids="shared_string_delete"/>** - Supprime un groupe de waypoints.
 
 
 ### Groupes de waypoints {#waypoint-groups}
@@ -579,39 +579,39 @@ Vous pouvez activer ou désactiver les waypoints de groupe sur la carte à l'aid
 
 | Paramètre | Description |
 | --- | --- |
-| `lat` | La **Latitude** est l'une des coordonnées géographiques par lesquelles vous pouvez déterminer un emplacement. |
-| `lon` | La **Longitude** est une autre des coordonnées géographiques par lesquelles vous pouvez déterminer un emplacement. |
-| `time` | Le **Timestamp** est la date et l'heure auxquelles le point a été enregistré. |
-| `name` | Le **Nom** est le nom du point. Tous les caractères sont autorisés. |
-| `desc` | La **Description** contient des informations supplémentaires sur le point. |
+| `lat` | La **latitude** est l'une des coordonnées géographiques permettant de déterminer un emplacement. |
+| `lon` | La **longitude** est une autre des coordonnées géographiques permettant de déterminer un emplacement. |
+| `time` | L'**horodatage** est la date et l'heure d'enregistrement du point. |
+| `name` | Le **nom** est le nom du point. Tous les caractères sont autorisés. |
+| `desc` | La **description** contient des informations supplémentaires sur le point. |
 | `type` | **Sélectionner un groupe** est le nom du dossier OsmAnd dans lequel ce waypoint est enregistré. |
-| `cmt` | Le **Commentaire** est un court commentaire sur un point. |
-| `link` | Le **Lien** est un lien vers n'importe quelle source. |
-| `ele` | L'**Altitude** est l'altitude d'un point. |
+| `cmt` | Le **commentaire** est un court commentaire sur un point. |
+| `link` | Le **lien** est un lien vers n'importe quelle source. |
+| `ele` | L'**élévation** est l'élévation d'un point. |
 
 
 **Extensions :**
 
 | Extension | Description |
 | --- | --- |
-| `osmand:icon` | L'**Icône** est le nom de l'icône que vous avez sélectionnée. |
-| `osmand:color` | La **Couleur** est la couleur au format HEX. |
-| `osmand:background` | L'**Arrière-plan** est la forme de l'icône, telle qu'un cercle, un octogone ou un carré. |
-| `osmand:country` | Le **Pays** est le nom du pays. |
-| `osmand:address` | L'**Adresse** est l'adresse. |
-| `osmand:postcode` | Le **Code postal** est le code postal. |
-| `osmand:telephone` | Le **Téléphone** est le numéro de téléphone. |
-| `osmand:state` | L'**État** est le nom de l'état. |
-| `osmand:start_date` | La **Date de début** est la date prévue d'un point. |
+| `osmand:icon` | L'**icône** est le nom de l'icône que vous avez sélectionnée. |
+| `osmand:color` | La **couleur** est la couleur au format HEX. |
+| `osmand:background` | L'**arrière-plan** est la forme de l'icône, comme un cercle, un octogone ou un carré. |
+| `osmand:country` | Le **pays** est le nom du pays. |
+| `osmand:address` | L'**adresse** est l'adresse. |
+| `osmand:postcode` | Le **code postal** est le code postal. |
+| `osmand:telephone` | Le **téléphone** est le numéro de téléphone. |
+| `osmand:state` | L'**état** est le nom de l'état. |
+| `osmand:start_date` | La **date de début** est la date de planification d'un point. |
 
-Les waypoints sont enregistrés avec la trace dans le [fichier GPX](../../../technical/osmand-file-formats/osmand-gpx.md). Chacun de ces waypoints a son propre ensemble de balises pour la description. Toutes les balises directement liées à la description des waypoints qui peuvent être modifiées directement dans l'application OsmAnd sont listées dans cette section.
+Les waypoints sont enregistrés avec la trace dans le [fichier GPX](../../../technical/osmand-file-formats/osmand-gpx.md). Chacun de ces waypoints possède son propre ensemble de balises pour la description. Toutes les balises directement liées à la description des waypoints qui peuvent être modifiées directement dans l'application OsmAnd sont listées dans cette section.
 Pour modifier la description d'un waypoint, vous pouvez procéder de l'une des manières suivantes :
 
-1. Trouvez la trace requise dans la liste de l'onglet *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*.
-2. Appuyez sur la trace sur la carte, si elle est incluse dans la [liste des visibles](../tracks/index.md#display-tracks-on-the-map).
+1. Trouvez la trace requise dans la liste de l'*onglet <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*.
+2. Appuyez sur la trace sur la carte, si elle est incluse dans la [liste des traces visibles](../tracks/index.md#display-tracks-on-the-map).
 3. Appuyez sur le waypoint requis s'il est [visible](../../personal/tracks/manage-tracks.md#track-menu) sur la carte.
 
-    Ensuite, dans le [menu contextuel des traces](./track-context-menu.md), appuyez sur *points*, le champ du dossier requis avec les waypoints disponibles et le waypoint que vous recherchez. Sélectionnez le menu *Actions →* **Modifier le waypoint GPX** et apportez les modifications. Vous ne pouvez pas modifier la date de création d'un point, le *timestamp*, dans l'application.
+    Ensuite, dans le [menu contextuel des traces](./track-context-menu.md), appuyez sur *points*, le champ du dossier requis avec les waypoints disponibles et le waypoint que vous recherchez. Sélectionnez le menu *Actions →* **Modifier le waypoint GPX** et apportez les modifications. Vous ne pouvez pas modifier la date de création d'un point, l'*horodatage*, dans l'application.
 
 Les **balises d'équipement** qui décrivent des informations supplémentaires, telles que les heures d'ouverture ou le numéro de téléphone, spécifiques au POI, prennent ces informations des données OpenStreetMap ou des données que vous avez saisies lors de la création du POI. Vous ne pouvez modifier ces balises et les [balises personnalisées](#display-custom-gpx-tags) que dans le code du fichier GPX, que vous pouvez ouvrir avec n'importe quel éditeur de texte sur votre appareil.
 
@@ -622,7 +622,7 @@ Les **balises d'équipement** qui décrivent des informations supplémentaires, 
 
 Vous pouvez diviser la trace en intervalles, tels que la distance et le temps, et l'analyser.
 
-Fractionner la trace par intervalle de distance ou de temps.
+Fractionnez la trace par intervalle de distance ou de temps.
 *<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*
 
 ![Track split interval screen Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Track split interval screen time Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)
@@ -638,7 +638,7 @@ Fractionner la trace par intervalle de distance ou de temps.
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
-Ce filtre vous permet d'améliorer les statistiques de votre trace en excluant les données inutiles ou incorrectes. Vous pouvez filtrer les points de trace qui ne correspondent pas aux paramètres de votre trace, et ainsi obtenir un graphique et une ligne d'itinéraire visuelle plus précis sans distorsion ni bruit d'enregistrement. Vous pouvez apporter des modifications avec des filtres tels que *Lissage*, *Vitesse*, *Altitude* et *Précision GPS*, qui masquent les points filtrés de la trace actuelle. De plus, dans le menu *Statistiques*, vous pouvez vérifier comment vos modifications sont affichées sur le graphique avant de les enregistrer. Vous pouvez également *Réinitialiser à l'original* et *Enregistrer comme copie* de votre trace dans ce filtre sans enregistrer l'original.
+Ce filtre vous permet d'améliorer les statistiques de votre trace en excluant les données inutiles ou incorrectes. Vous pouvez filtrer les points de trace qui ne correspondent pas à vos paramètres de trace et, par conséquent, obtenir un graphique et une ligne d'itinéraire visuelle plus précis sans distorsion ni bruit d'enregistrement. Vous pouvez apporter des modifications avec des filtres tels que *Lissage*, *Vitesse*, *Altitude* et *Précision GPS*, qui masquent les points filtrés de la trace actuelle. De plus, dans le menu *Statistiques*, vous pouvez vérifier comment vos modifications sont affichées sur le graphique avant de les enregistrer. Vous pouvez également *Réinitialiser à l'original* et *Enregistrer comme copie* de votre trace dans ce filtre sans enregistrer l'original.
 
 <!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
@@ -662,13 +662,13 @@ Dans ce menu, vous pouvez modifier certains paramètres de votre trace tels que 
 |Cette partie affiche le nombre de points après le filtrage et le nombre total de points sur la trace sélectionnée avant l'utilisation des filtres.|
 |![GPS filter screen points numbers Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
 | ***Actions*** |
-|*Lissage*. Définit la distance seuil entre les points. Les points de trace qui sont au moins à cette distance du dernier point visible sont masqués. Tous les points de la trace, qui sont à une distance les uns des autres inférieure à la distance sélectionnée par le filtre, seront masqués. Les points de trace sont comptés à partir du dernier point visible. Notez que des seuils élevés peuvent trop simplifier la géométrie de la trace.|
+|*Lissage*. Définit la distance seuil entre les points. Les points de trace qui se trouvent à au moins cette distance du dernier point visible sont masqués. Tous les points de la trace, qui se trouvent à une distance les uns des autres inférieure à la distance sélectionnée par le filtre, seront masqués. Les points de trace sont comptés à partir du dernier point visible. Notez que des seuils élevés peuvent simplifier excessivement la géométrie de la trace.|
 |![GPS filter smoothing numbers Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
 |*Vitesse*. Seuls les points de trace correspondant à l'intervalle de vitesse sélectionné sont affichés sur le graphique et la carte, les autres sont masqués.|
 |![GPS filter speed numbers Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) |
 |*Altitude*. Seuls les points de trace correspondant à l'intervalle d'altitude sélectionné sont affichés sur le graphique et la carte, les autres sont masqués.|
 |![GPS filter altitude numbers Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
-|*Précision GPS*. Définit la valeur maximale admissible pour le HDOP. Les points avec une valeur plus élevée sont masqués.|
+|*Précision GPS*. Définit la valeur maximale autorisée pour le HDOP. Les points avec une valeur plus élevée sont masqués.|
 |![GPS filter precision numbers Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |
 
 
@@ -679,7 +679,7 @@ Dans ce menu, vous pouvez modifier certains paramètres de votre trace tels que 
 L'onglet Statistiques affiche des informations sur la trace **modifiée**, c'est-à-dire la trace sans les valeurs filtrées. Elles sont affichées dans les blocs de statistiques et les données du graphique.
 
 - La partie *Données* affiche des statistiques similaires au [menu Filtre](#filter-menu).
-- La partie *Graphique* affiche trois types de graphiques par paramètres : Aperçu, Altitude et Vitesse. Cette fonctionnalité est une copie du [graphique de trace](#altitude--speed-graphs).
+- La partie *Graphique* affiche trois types de graphiques par paramètres : Vue d'ensemble, Altitude et Vitesse. Cette fonctionnalité est une copie du [graphique de trace](#altitude--speed-graphs).
 
 ### Actions {#actions}
 
@@ -701,4 +701,4 @@ La liste des actions est disponible en bas de l'onglet **Filtre** ou **Statistiq
 - [Plugin Enregistrement de trajet](../../plugins/trip-recording.md)
 - [Analyser sur la carte](../index.md#analyze-track-on-map)
 
-> *Cet article a été mis à jour pour la dernière fois en novembre 2024*
+> *Dernière mise à jour : novembre 2024*

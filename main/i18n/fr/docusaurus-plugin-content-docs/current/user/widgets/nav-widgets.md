@@ -1,9 +1,8 @@
 ---
-source-hash: 773600448b620e71f901e3dddc38be8058c8017c5d79f65243048ba8b844ac5d
+source-hash: 2a2825755522d1d674eca0e28ae419a075ecef2a2e6c4f86faef75b3b7e8dd3f
 sidebar_position: 4
 title:  Widgets de navigation
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 
 ## Aperçu {#overview}
@@ -28,34 +28,34 @@ Les widgets de navigation dans OsmAnd sont conçus pour améliorer les modes de 
 
 #### Navigation active {#active-navigation}
 
-- **Exigences :**
+- **Exigences :**
   - Définir une **destination**.
   - Calculer l'**itinéraire** à l'aide de la fonction *Directions*.
   - **Démarrer** la navigation (le guidage vocal est facultatif).
-  - Disponible uniquement lors du déplacement le long de l'itinéraire.
+  - Disponible uniquement lorsque vous vous déplacez le long de l'itinéraire.
 
-- **Widgets pris en charge :**
+- **Widgets pris en charge :**
   - Tous les **widgets de navigation** sont disponibles.
 
-- **Avantages clés :**
+- **Avantages clés :**
   - Fournit des **instructions virage par virage**, des **indications de voie** et l'**heure d'arrivée estimée**.
   - Assure des mises à jour précises et dynamiques pendant le trajet.
 
 #### Navigation passive {#passive-navigation}
 
-- **Comment ça marche :**
+- **Comment ça marche :**
   - Aucune destination n'est nécessaire.
   - Fonctionne automatiquement lorsque vous sélectionnez un **profil de navigation** (par exemple, *Conduite*, *Cyclisme*).
 
-- **Fonctionnalité :**
+- **Fonctionnalité :**
   - Tente de déterminer la route que vous suivez à l'aide des données GPS.
-  - Affiche des **informations routières de base**, telles que le [nom de la rue](#street-name), les [informations sur les voies](#lanes), la [vitesse maximale](#speed-limit).
+  - Affiche les **informations routières de base**, telles que le [nom de la rue](#street-name), les [informations sur les voies](#lanes), la [vitesse maximale](#speed-limit).
 
-- **Limitations :**
+- **Limites :**
   - Certaines fonctionnalités avancées peuvent ne pas fonctionner correctement sans destination définie.
   - Les informations fournies peuvent ne pas toujours être **précises**, en particulier sur les réseaux routiers complexes.
 
-> **NOTE.** *Gardez à l'esprit que le profil **Parcourir la carte** ne prend pas en charge les widgets de navigation dans aucun des modes. Passez à un **profil de navigation** pertinent pour activer ces fonctionnalités.*
+> **REMARQUE.** *Gardez à l'esprit que le profil **Parcourir la carte** ne prend pas en charge les widgets de navigation dans aucun des modes. Passez à un **profil de navigation** pertinent pour activer ces fonctionnalités.*
 
 
 <!--
@@ -85,8 +85,8 @@ Le widget d'altitude affiche un graphique avec l'altitude et la pente de votre i
 
 #### Interactions avec le graphique {#interactions-with-the-graph}
 
-- *Zoom avant/arrière*. Par défaut, le graphique affiche l'itinéraire depuis la position actuelle jusqu'à 10 km plus loin. Vous pouvez utiliser le [mouvement à deux doigts](../map/interact-with-map#gestures) pour zoomer et dézoomer afin d'obtenir une vue plus détaillée des changements d'altitude sur votre itinéraire. Vous pouvez également déplacer le graphique vers la droite, vers l'avant sur l'itinéraire, et vers l'arrière jusqu'à la position actuelle.
-- *Placer un point sur le graphique*. Si vous souhaitez voir l'altitude et la valeur en degrés à un point particulier plus loin sur votre itinéraire, vous pouvez appuyer n'importe où sur le graphique et un pointeur avec les valeurs apparaîtra.
+- *Zoom avant/arrière*. Par défaut, le graphique affiche l'itinéraire depuis la position actuelle jusqu'à 10 km devant. Vous pouvez utiliser le [mouvement à deux doigts](../map/interact-with-map#gestures) pour zoomer et dézoomer afin d'obtenir une vue plus détaillée des changements d'altitude sur votre itinéraire. Vous pouvez également déplacer le graphique vers la droite, vers l'avant sur l'itinéraire et vers l'arrière jusqu'à la position actuelle.
+- *Placer un point sur le graphique*. Si vous souhaitez voir l'altitude et la valeur en degrés à un point particulier devant sur votre itinéraire, vous pouvez appuyer n'importe où sur le graphique et un pointeur avec les valeurs apparaîtra.
 
 
 #### Contenu {#whats-in}
@@ -94,17 +94,17 @@ Le widget d'altitude affiche un graphique avec l'altitude et la pente de votre i
 Lorsque vous sélectionnez un itinéraire et appuyez sur le bouton **Démarrer**, la carte s'ouvre avec votre position actuelle, l'itinéraire et le widget en bas de l'écran. Le widget contient le graphique et des informations sur la *Montée*, la *Descente*, la *Pente*, la distance, l'altitude et l'angle de pente. Vous pouvez sélectionner l'*échelle optimale* et voir tous les obstacles possibles sur votre itinéraire.
 
 - Toutes les valeurs sont indiquées soit pour l'ensemble de l'itinéraire, soit uniquement pour l'intervalle sélectionné en mettant à l'échelle le graphique.
-- Lisez l'article sur la [licence pour les données DEM](../plugins/topography.md#license-for-dem-data-used-by-osmand-for-terrain-detection) utilisées par OsmAnd pour la détection du terrain.
+- Lisez la [licence pour les données DEM](../plugins/topography.md#license-for-dem-data-used-by-osmand-for-terrain-detection) utilisées par OsmAnd pour déterminer l'altitude.
 
 |  |
 |:------------|
 | ***Épingle de localisation*** |
-| Votre ***Position actuelle*** sur le graphique comprend une icône de localisation, l'altitude et la valeur en pourcentage de la pente. Le côté droit du widget contient l'altitude et le gradient les plus élevés, la valeur moyenne pour ceux-ci, et la valeur la plus basse sur la section sélectionnée de l'itinéraire visible sur le graphique. |
+| Votre ***position actuelle*** sur le graphique comprend une icône de localisation, l'altitude et la valeur en pourcentage de la pente. Le côté droit du widget contient l'altitude et le gradient les plus élevés, la valeur moyenne pour ceux-ci, et la valeur la plus basse sur la section sélectionnée de l'itinéraire visible sur le graphique. |
 | ![point](@site/static/img/widgets/sch_1-1.png)|
 | ***Informations supplémentaires*** |
 | Le côté droit du widget contient des données sur l'altitude et la pente les plus élevées, la valeur moyenne pour les deux, et l'altitude et la pente les plus basses sur la section d'itinéraire sélectionnée visible sur le graphique. |
 |  ![data](@site/static/img/widgets/sch_1-2.png)|
-|Les valeurs de ***Montée*** et de ***Descente*** sont les sommes des distances de votre point de localisation à la fin du graphique visible. S'il n'y a pas de point de localisation sur le graphique, alors c'est la somme de l'ensemble du graphique visible à l'écran (cela peut arriver lorsque vous changez l'échelle et que la localisation sort du graphique).|
+|Les valeurs ***Montée*** et ***Descente*** sont les sommes des distances de votre point de localisation à la fin du graphique visible. S'il n'y a pas de point de localisation sur le graphique, il s'agit de la somme de l'ensemble du graphique visible à l'écran (cela peut se produire lorsque vous modifiez l'échelle et que la localisation sort du graphique).|
 | **Montée** – affiche la somme de toutes les distances avec une altitude croissante de votre point de localisation à la fin du graphique visible ou pour la section sélectionnée de l'itinéraire sans le point de localisation visible à l'écran. |
 | ![uphill scheme](@site/static/img/widgets/sch_uphill_1.png) ![uphill scheme](@site/static/img/widgets/sch_uphill_2.png)|
 | **Descente** – affiche la somme de toutes les distances avec une altitude décroissante de votre point de localisation à la fin du graphique visible ou pour la section sélectionnée de l'itinéraire sans le point de localisation visible à l'écran.|
@@ -116,7 +116,7 @@ Lorsque vous sélectionnez un itinéraire et appuyez sur le bouton **Démarrer**
 
 ## Widget de relèvement {#bearing-widget}
 
-Le relèvement est la direction vers une cible en dehors de votre véhicule, comme une destination ou un point d'origine. Un relèvement peut être *Relatif* (selon votre cap) ou *Magnétique* (selon la boussole). Par exemple, un relèvement magnétique de 180° est la direction vers le sud, et un relèvement relatif de 180° est directement derrière vous. Les points cardinaux sont les quatre directions principales de la boussole. Ce sont le Nord (*N* - 0° ou 360°), l'Est (*E* - 90°), le Sud (*S* - 180°) et l'Ouest (*W* - 270°).
+Le relèvement est la direction vers une cible en dehors de votre véhicule, telle qu'une destination ou un point d'origine. Un relèvement peut être *relatif* (selon votre cap) ou *magnétique* (selon la boussole). Par exemple, un relèvement magnétique de 180° est la direction vers le sud, et un relèvement relatif de 180° est directement derrière vous. Les points cardinaux sont les quatre directions principales de la boussole. Ce sont le Nord (*N* - 0° ou 360°), l'Est (*E* - 90°), le Sud (*S* - 180°) et l'Ouest (*W* - 270°).
 
 ![Trip recording widget](@site/static/img/widgets/bearing.png)
 
@@ -138,27 +138,27 @@ Le relèvement est la direction vers une cible en dehors de votre véhicule, com
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="shared_string_bearing"/>* |
-|  | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>  → Choisir un panneau → Ajouter un widget →  <Translate ios="true" ids="shared_string_bearing"/>* |
+| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="shared_string_bearing"/>* |
+|  | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate ios="true" ids="shared_string_bearing"/>* |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
-| Format | **Android :** Vous pouvez modifier le format d'affichage des données pour les unités angulaires : *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>* |
-|  | **iOS :** Vous pouvez modifier le format d'affichage des données pour les unités angulaires : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |
+| Format | **Android :** Vous pouvez modifier le format d'affichage des données pour les unités angulaires : *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>* |
+|  | **iOS :** Vous pouvez modifier le format d'affichage des données pour les unités angulaires : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |
 
 
 #### Comment ça marche {#how-it-works}
 
 Pour afficher le relèvement, un **point cible** doit être sélectionné. Si un point de **destination** (ou le **premier point intermédiaire**, s'il y en a un) est sélectionné pour la navigation, il sera utilisé comme point cible. Sinon, le **marqueur sélectionné le plus haut** sera utilisé.
 
-- Le [relèvement relatif](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) est l'angle entre votre direction de déplacement vers l'avant et le point cible. La **direction de déplacement vers l'avant** est soit la **direction de votre mouvement** obtenue à partir des capteurs GPS, soit si vous êtes debout **où vous avez pointé votre appareil** (c'est-à-dire l'orientation de votre appareil selon sa boussole magnétique). Exemple : Un objet avec un relèvement relatif de 0° est directement devant vous et un objet avec un relèvement relatif de 180° est directement derrière vous. Le **relèvement relatif** est l'angle entre votre direction vers l'avant et le point cible.
+- Le [relèvement relatif](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) est l'angle entre votre direction de déplacement vers l'avant et le point cible. La **direction de déplacement vers l'avant** est soit la **direction de votre mouvement** obtenue à partir des capteurs GPS, soit si vous êtes debout **où vous avez pointé votre appareil** (c'est-à-dire l'orientation de votre appareil selon sa boussole magnétique). Exemple : Un objet avec un relèvement relatif de 0° est directement devant vous et un objet avec un relèvement relatif de 180° est directement derrière vous. Le **relèvement relatif** est l'angle entre votre direction vers l'avant et le point cible.
 
-- Le [relèvement magnétique](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) est l'angle horaire (horizontal) entre le nord magnétique et le point cible observé depuis votre position. Vous devez suivre cette valeur de boussole magnétique pour atteindre votre cible. Exemple : Si le **relèvement magnétique** est affiché comme 0° M, vous devez vous déplacer strictement vers le nord magnétique pour atteindre le point cible.
+- Le [relèvement magnétique](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) est l'angle horaire (horizontal) entre le nord magnétique et le point cible observé depuis votre position. Vous devez suivre cette valeur de boussole magnétique pour atteindre votre cible. Exemple : Si le **relèvement magnétique** est affiché comme 0° M, vous devez vous déplacer strictement vers le nord magnétique pour atteindre le point cible.
 
-- Le [relèvement vrai](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) est exprimé comme l'angle horizontal entre le méridien géographique et une ligne sur Terre. Plus précisément, le **relèvement vrai d'un point** est l'angle mesuré en degrés dans le sens horaire à partir de la ligne du Nord vrai. Le logiciel OsmAnd vous montrera le relèvement vrai et le cap dans notre interface conviviale, ce qui vous permettra de prendre la bonne décision rapidement.
+- Le [relèvement vrai](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) est exprimé comme l'angle horizontal entre le méridien géographique et une ligne sur Terre. Plus précisément, le **relèvement vrai d'un point** est l'angle mesuré en degrés dans le sens des aiguilles d'une montre à partir de la ligne du Nord vrai. Le logiciel OsmAnd vous montrera le relèvement vrai et le cap dans notre interface conviviale, ce qui vous permettra de prendre la bonne décision rapidement.
 
 ### Navigation le long de la loxodromie {#navigation-along-the-rhumb-line}
 
 - **Relèvement relatif**. Si vous vous en tenez à un relèvement relatif de 0 degré et que vous avancez, vous arriverez au point de destination, mais pas par l'itinéraire le plus court ([Loxodromie](https://en.wikipedia.org/wiki/Rhumb_line)).
-- **Relèvement magnétique**. Si vous alignez la boussole de votre bateau/véhicule avec la valeur du widget et que vous avancez, vous arriverez à votre destination, mais pas par l'itinéraire le plus court ([Loxodromie](https://en.wikipedia.org/wiki/Rhumb_line)).
+- **Relèvement magnétique**. Si vous alignez la boussole de votre bateau/véhicule sur la valeur du widget et que vous avancez, vous arriverez à votre destination, mais pas par l'itinéraire le plus court ([Loxodromie](https://en.wikipedia.org/wiki/Rhumb_line)).
 
 <!--![Relative Magnetic bearing widget](@site/static/img/widgets/relative_magnetic_bearing_widget.png)-->
 
@@ -181,23 +181,23 @@ Le groupe de widgets *Point de navigation* affiche la distance restante jusqu'à
 
 Le widget *Informations sur l'itinéraire* fournit des données en temps réel sur l'itinéraire de navigation en cours et un moyen rapide [de gérer un itinéraire actif](../navigation/setup/route-navigation.md#start--stop-navigation). Il permet de suivre les détails clés de l'itinéraire et vous permet d'arrêter ou de reprendre la session de navigation en cours avec une interaction minimale.
 
-**Informations affichées :**
+**Informations affichées :**
 
 - **Heure d'arrivée estimée (ETA)**. Affiche l'heure d'arrivée prévue à la destination finale.
 - **Temps de trajet restant**. Affiche le temps estimé restant pour atteindre la destination.
 - **Distance jusqu'à la destination**. Indique la distance totale restante jusqu'à la destination finale et les distances jusqu'aux points intermédiaires.
 
-**Menu des paramètres :**
+**Menu des paramètres** :
 
-- Sélectionnez une **Vue par défaut** pour prioriser l'une des valeurs suivantes : *Heure d'arrivée estimée*, *Temps restant*, *Distance*.
-- Dans **Priorité d'affichage**, sélectionnez entre *Destination en premier (par défaut)* ou *Intermédiaire en premier* pour prioriser les informations d'itinéraire les plus pertinentes.
+- Sélectionnez une **Vue par défaut** pour donner la priorité à l'une des valeurs suivantes : *Heure d'arrivée estimée*, *Temps restant*, *Distance*.
+- Dans **Priorité d'affichage**, sélectionnez entre *Destination d'abord (par défaut)* ou *Intermédiaire d'abord* pour donner la priorité aux informations d'itinéraire les plus pertinentes.
 
-> NOTE : Le widget n'est visible que pendant la navigation.
+> REMARQUE : Le widget n'est visible que pendant la navigation.
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget →<Translate android="true" ids="map_widget_distance_to_destination"/>* |
-| En appuyant | Appuyez sur le bouton avec la flèche pour ouvrir le panneau [Démarrer/Arrêter la navigation](../navigation/setup/route-navigation.md#start--stop-navigation) |
+| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget →<Translate android="true" ids="map_widget_distance_to_destination"/>* |
+| En appuyant | Appuyez sur le bouton avec la flèche pour ouvrir le [panneau Démarrer/Arrêter la navigation](../navigation/setup/route-navigation.md#start--stop-navigation) |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats"/>* |
 
@@ -205,12 +205,12 @@ Le widget *Informations sur l'itinéraire* fournit des données en temps réel s
 
 ![Destination widget](@site/static/img/widgets/destination_widget.png)
 
-Le widget affiche la distance restante jusqu'au dernier point de destination lors du suivi d'un itinéraire calculé.
+Le widget affiche la distance restante jusqu'au dernier point de destination lorsque vous suivez un itinéraire calculé.
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
-|  | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
+| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
+|  | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
 | En appuyant | Déplace la carte vers le point de destination. |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -222,8 +222,8 @@ Le widget affiche la distance jusqu'au premier point intermédiaire le long de l
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → *<Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
-|  | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
+| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
+|  | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
 | En appuyant | **Un point intermédiaire** - déplace la carte vers le point intermédiaire. <br /> **Deux points intermédiaires ou plus** - ouvre le menu de la liste des destinations. |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -249,9 +249,9 @@ Le widget affiche l'*Heure d'arrivée* ou le *Temps restant* jusqu'au premier po
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-| En appuyant | Change entre *Heure d'arrivée* et *Temps restant* et inversement. |
+| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+| En appuyant | Alterne entre *Heure d'arrivée* et *Temps restant* et inversement. |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -277,9 +277,9 @@ Le widget affiche l'*Heure d'arrivée* ou le *Temps restant* jusqu'au dernier po
 
 | | |
 |:------------|:------------|
-| Activer |  **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-| En appuyant | Change entre *Heure d'arrivée* et *Temps restant* et inversement. |
+| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+| En appuyant | Alterne entre *Heure d'arrivée* et *Temps restant* et inversement. |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -293,12 +293,12 @@ Le widget *Limite de vitesse* affiche la limite de vitesse actuelle basée sur l
 - Le widget fonctionne en modes de navigation passive et active.
 - Si les données de limite de vitesse ne sont pas disponibles pour une route ou une zone spécifique, *le widget n'apparaîtra pas*.
 
-> NOTE : Assurez-vous que vos [cartes sont à jour](../personal/maps-resources.md#updates) et que vous avez téléchargé toutes les données régionales nécessaires pour accéder aux dernières informations sur les limites de vitesse.
+> REMARQUE : Assurez-vous que vos [cartes sont à jour](../personal/maps-resources.md#updates) et que vous avez téléchargé toutes les données régionales nécessaires pour accéder aux dernières informations sur les limites de vitesse.
 
 | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_max_speed"/>* |
-|  |  **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate ios="true" ids="map_widget_max_speed"/>* |
+| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_max_speed"/>* |
+|  | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate ios="true" ids="map_widget_max_speed"/>* |
 | En appuyant | Pas de changements |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -311,8 +311,8 @@ Cet ensemble de widgets de navigation est activé pendant la navigation et affic
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *Menu → Configurer l'écran → Panneau gauche / droit → Ajouter un widget → Manœuvres d'itinéraire → Prochain virage, Prochain virage (petit), Deuxième prochain virage*  |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Panneau gauche / droit → Ajouter un widget → Manœuvres d'itinéraire → Prochain virage, Prochain virage (petit), Deuxième prochain virage* |
+| Activer | **Android :** *Menu → Configurer l'écran → Panneau gauche/droit → Ajouter un widget → Manœuvres d'itinéraire → Prochain virage, Prochain virage (petit), Deuxième prochain virage* |
+|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Panneau gauche/droit → Ajouter un widget → Manœuvres d'itinéraire → Prochain virage, Prochain virage (petit), Deuxième prochain virage* |
 | En appuyant | Si les [invites vocales](../navigation/guidance/voice-navigation.md) sont activées, la prochaine manœuvre et la distance jusqu'à celle-ci sont prononcées. |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -321,7 +321,7 @@ Cet ensemble de widgets de navigation est activé pendant la navigation et affic
 
 ![Next turns widget](@site/static/img/widgets/next_turns_widgets_andr.png)
 
-Les widgets *Manœuvres d'itinéraire* contiennent des informations sur :
+Les widgets *Manœuvres d'itinéraire* contiennent des informations sur :
 
 - **Prochain virage** - le prochain virage avec une grande flèche représentant la manœuvre et avec des données sur la distance jusqu'à celui-ci.
 - **Prochain virage (petit)** - le prochain virage avec une petite flèche représentant la manœuvre et avec des données de distance à côté de la flèche.
@@ -329,15 +329,15 @@ Les widgets *Manœuvres d'itinéraire* contiennent des informations sur :
 
 | | |
 |:------------|:------------|
-| Activer      | **Android :** *Menu → Configurer l'écran → Panneau gauche / droit → Ajouter un widget → Prochain virage, Prochain virage (petit), Deuxième prochain virage*  |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Panneau gauche / droit → Ajouter un widget → Prochain virage, Prochain virage (petit), Deuxième prochain virage* |
-| En appuyant  | Si les [invites vocales](../navigation/guidance/voice-navigation.md) sont activées, la prochaine manœuvre et la distance jusqu'à celle-ci sont prononcées. |
-| Appui long    | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
+| Activer | **Android :** *Menu → Configurer l'écran → Panneau gauche/droit → Ajouter un widget → Prochain virage, Prochain virage (petit), Deuxième prochain virage* |
+|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Panneau gauche/droit → Ajouter un widget → Prochain virage, Prochain virage (petit), Deuxième prochain virage* |
+| En appuyant | Si les [invites vocales](../navigation/guidance/voice-navigation.md) sont activées, la prochaine manœuvre et la distance jusqu'à celle-ci sont prononcées. |
+| Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
 ### Invites de couleur pour le prochain virage {#color-prompts-for-next-turn}
 
-Ce tableau montre le temps approximatif jusqu'à l'activation des invites et l'indication de couleur correspondante des flèches pour effectuer la manœuvre. Pour plus d'informations, consultez la [documentation technique](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) ou l'article [Invites vocales](../navigation/guidance/voice-navigation.md).
+Ce tableau indique le temps approximatif jusqu'à l'activation des invites et l'indication de couleur correspondante des flèches pour effectuer la manœuvre. Pour plus d'informations, consultez la [documentation technique](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) ou l'article [Invites vocales](../navigation/guidance/voice-navigation.md).
 
 | Couleur     | ~ Temps de déclenchement | Distance   | Type d'invite     |
 | :-------- | :------------- | :--------- | :-------------- |
@@ -350,12 +350,12 @@ Ce tableau montre le temps approximatif jusqu'à l'activation des invites et l'i
 
 ![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
 
-Le widget **Voies** met en évidence la voie actuelle lorsque la navigation est active et affiche la disposition des voies pour la route réelle lorsque la navigation est passive. Les données proviennent du [projet OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+Le widget **Voies** met en évidence la voie actuelle lorsque la navigation est active et affiche la disposition des voies pour la route actuelle lorsque la navigation est passive. Les données proviennent du [projet OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="route_guidance"/> → Ajouter un widget → <Translate android="true" ids="show_lanes"/>* |
-|   | **iOS :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget → <Translate android="true" ids="show_lanes"/>* |
+| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="route_guidance"/> → Ajouter un widget → <Translate android="true" ids="show_lanes"/>* |
+|   | **iOS :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget → <Translate android="true" ids="show_lanes"/>* |
 | En appuyant | Pas de changements |
 
 ### Invites de couleur pour les voies {#color-prompts-for-lanes}
@@ -376,17 +376,17 @@ Affiche un widget selon les paramètres de temps d'approche. La couleur de la vo
 
 Fournit un guidage d'itinéraire en temps réel, y compris la distance jusqu'au prochain virage, le nom de la route, le nom de la rue actuelle et les informations sur les voies. Les widgets sont actifs pendant la navigation.
 
-Les widgets *Guidage d'itinéraire* contiennent des informations sur :
+Les widgets *Guidage d'itinéraire* contiennent des informations sur :
 
-- [Voies](#lanes) - affiche l'emplacement actuel des voies routières et met en évidence celles sur lesquelles vous devez rouler.
+- [Voies](#lanes) - affiche l'emplacement actuel des voies de circulation et met en évidence celles sur lesquelles vous devez rouler.
 - **Prochain virage** - le prochain virage avec une grande flèche représentant la manœuvre et avec des données sur la distance jusqu'à celui-ci.
 - **Deuxième prochain virage** est le prochain virage après le premier virage, qui est activé s'il est à distance d'approche.
 
 | | |
 |:------------|:------------|
-| Activer      | **Android :** *Menu → Configurer l'écran → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget → Voie, Prochain virage, Deuxième prochain virage*  |
-| En appuyant  | **Prochain virage** : Si les [invites vocales](../navigation/guidance/voice-navigation.md) sont activées, la prochaine manœuvre et la distance jusqu'à celle-ci sont prononcées. <br/> **Voie** : Pas de changements. |
-| Appui long    | **Prochain virage** : Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Voie** : Pas de changements. |
+| Activer | **Android :** *Menu → Configurer l'écran → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget → Voie, Prochain virage, Deuxième prochain virage* |
+| En appuyant | **Prochain virage** : Si les [invites vocales](../navigation/guidance/voice-navigation.md) sont activées, la prochaine manœuvre et la distance jusqu'à celle-ci sont prononcées. <br/> **Voie** : Pas de changements. |
+| Appui long | **Prochain virage** : Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Voie** : Pas de changements. |
 
 
 ## Widget d'alerte {#alert-widget}
@@ -395,7 +395,7 @@ Les widgets *Guidage d'itinéraire* contiennent des informations sur :
 
 Le **widget d'alerte** combine plusieurs types d'alertes qui s'affichent dans le coin inférieur gauche pendant que vous naviguez.
 
-- Vous avez la possibilité d'activer et de désactiver des alertes telles que *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* et *<Translate android="true" ids="show_tunnels"/>*. D'autres alertes sont actives par défaut si le widget est activé.
+- Vous avez la possibilité d'activer et de désactiver des alertes telles que *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* et *<Translate android="true" ids="show_tunnels"/>*. Les autres alertes sont actives par défaut si le widget est activé.
 
 - Pour le type d'alerte *Limite de vitesse*, vous pouvez ajuster la valeur <Translate android="true" ids="speed_limit_exceed"/>](../navigation/guidance/voice-navigation.md#speed-limit) dans les paramètres d'invite vocale pour mieux correspondre à la vitesse du véhicule et à la vitesse GPS.
 
@@ -409,16 +409,16 @@ Le **widget d'alerte** combine plusieurs types d'alertes qui s'affichent dans le
 
 ### Types d'alertes {#alert-types}
 
-Les types d'alertes ont une conception visuelle différente, qui dépend de la **<Translate android="true" ids="driving_region"/>** et peut être configurée via *<Translate android="true" ids="shared_string_settings"/> → <Translate android="true" ids="general_settings_2"/>*. OsmAnd ne vise pas à représenter des panneaux de signalisation 100 % identiques, mais souligne certaines similitudes.
+Les types d'alertes ont une conception visuelle différente, qui dépend de la **<Translate android="true" ids="driving_region"/>** et peut être configurée via *<Translate android="true" ids="shared_string_settings"/> → <Translate android="true" ids="general_settings_2"/>*. OsmAnd ne vise pas à représenter des panneaux de signalisation 100 % identiques, mais souligne certaines similitudes.
 
 | | | |
 |:------------|:------------|:------------|
 | Nom | Description | Icône |
-| *<Translate android="true" ids="show_traffic_warnings"/>* | Le [calme du trafic](https://en.wikipedia.org/wiki/Traffic_calming) utilise la conception physique et d'autres mesures pour améliorer la sécurité des automobilistes, des piétons et des cyclistes. | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_traffic_calming.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_traffic_calming_us.png)|
+| *<Translate android="true" ids="show_traffic_warnings"/>* | Le [calme de la circulation](https://en.wikipedia.org/wiki/Traffic_calming) utilise la conception physique et d'autres mesures pour améliorer la sécurité des automobilistes, des piétons et des cyclistes. | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_traffic_calming.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_traffic_calming_us.png)|
 | *<Translate android="true" ids="show_pedestrian_warnings"/>* | Un [passage piéton](https://en.wikipedia.org/wiki/Pedestrian_crossing) (principalement en anglais britannique) ou un passage clouté est un endroit désigné pour que les piétons traversent une route, une rue ou une avenue. OsmAnd affiche l'alerte du passage piéton non contrôlé.  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_pedestrian.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_pedestrian_us.png) |
 | *<Translate android="true" ids="traffic_warning_speed_limit"/>* | Dans la plupart des pays, les [limites de vitesse routières](https://en.wikipedia.org/wiki/Speed_limit) fixent la vitesse maximale, moyenne ou minimale légale à laquelle les véhicules routiers peuvent circuler sur un tronçon de route donné. Dans OsmAnd, l'alerte s'affiche lorsque vous dépassez la vitesse. Vous pouvez définir les paramètres de dépassement de vitesse (0, 5, 10.. km/h). ![Alert ex_speed widgets](@site/static/img/widgets/ex_warning_speed.png)  | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) ![Alert speed_limit_ca widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alert speed_limit_us widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
 | *<Translate android="true" ids="show_tunnels"/>* | Un tunnel est un passage souterrain, passant sous une montagne, une rivière ou une zone urbaine congestionnée. Dans OsmAnd, l'alerte *Tunnels* contient des informations sur la longueur du tunnel. Si vous êtes dans un tunnel, elle affiche la distance jusqu'à la fin du tunnel.   ![Alert ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Alert warnings_tunnel widgets](@site/static/img/widgets/warnings_tunnel.png)  ![Alert warnings_tunnel_us widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
-| *<Translate android="true" ids="show_cameras"/>* | Les [caméras de contrôle du trafic](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) et les [radars](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) enregistrent les infractions au code de la route, notamment les excès de vitesse, les feux rouges grillés et d'autres types de comportements illégaux. <br />**NOTE :** Les alertes de radar sont interdites ou illégales dans certains pays. Pour [supprimer complètement les radars](../personal/global-settings.md#legal) d'OsmAnd, allez dans le menu principal *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
+| *<Translate android="true" ids="show_cameras"/>* | Les [caméras de contrôle de la circulation](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) et les [radars](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) enregistrent les infractions routières, notamment les excès de vitesse, les feux rouges grillés et d'autres types de comportements illégaux. <br />**REMARQUE :** Les alertes de radar sont interdites ou illégales dans certains pays. Pour [supprimer complètement les radars](../personal/global-settings.md#legal) d'OsmAnd, allez dans le menu principal *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
 | *<Translate android="true" ids="traffic_warning_stop"/>* | Un [panneau stop](https://en.wikipedia.org/wiki/Stop_sign) est un panneau de signalisation conçu pour avertir les conducteurs qu'ils doivent s'arrêter complètement et s'assurer que l'intersection est dégagée en toute sécurité de véhicules et de piétons avant de continuer au-delà du panneau.  | ![Alert stop widgets](@site/static/img/widgets/warnings_stop.png) |
 | *<Translate android="true" ids="show_railway_warnings"/>* |Cet avertissement signifie qu'il y a un [passage à niveau](https://en.wikipedia.org/wiki/Crossbuck) devant. | ![Alert warnings_railways widgets](@site/static/img/widgets/warnings_railways.png) ![Alert warnings_railways_ca widgets](@site/static/img/widgets/warnings_railways_ca.png)  ![Alert warnings_railways_us widgets](@site/static/img/widgets/warnings_railways_us.png)  |
 | *<Translate android="true" ids="traffic_warning_border_control"/>* |Cet avertissement indique qu'un contrôle frontalier est devant.| ![Alert border control widgets](@site/static/img/widgets/warnings_border_control.png)  |
@@ -428,7 +428,7 @@ Les types d'alertes ont une conception visuelle différente, qui dépend de la *
 
 ## Nom de la rue {#street-name}
 
-Le widget Nom de la rue affiche **le nom de la rue actuelle** avec une flèche droite, ou **le nom de la prochaine rue** avec la manœuvre à effectuer. Le nom de la rue se compose généralement d'un bouclier d'autoroute, d'un [nom](https://wiki.openstreetmap.org/wiki/Key:name), d'une [référence](https://wiki.openstreetmap.org/wiki/Key:ref), d'une [référence internationale](https://wiki.openstreetmap.org/wiki/Key:int_ref) et d'une [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Le passage entre le nom de la rue actuelle et le nom de la prochaine rue se produit lorsque vous approchez de l'endroit où vous souhaitez effectuer la manœuvre (~20 secondes), similaire à l'invite vocale [Tourner dans X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+Le widget Nom de la rue affiche **le nom de la rue actuelle** avec une flèche droite, ou **le nom de la prochaine rue** avec la manœuvre à effectuer. Le nom de la rue se compose généralement d'un bouclier d'autoroute, d'un [nom](https://wiki.openstreetmap.org/wiki/Key:name), d'une [référence](https://wiki.openstreetmap.org/wiki/Key:ref), d'une [référence internationale](https://wiki.openstreetmap.org/wiki/Key:int_ref) et d'une [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Le passage du nom de la rue actuelle au nom de la prochaine rue se produit lorsque vous approchez de l'endroit où vous souhaitez effectuer la manœuvre (~20 secondes), similaire à l'invite vocale [Tourner dans X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 - Lorsque vous roulez le long d'une rue ou d'une autoroute, le widget affiche le nom ou la désignation de la rue (route) actuelle avec une flèche bleue.
 
@@ -440,12 +440,12 @@ Le widget Nom de la rue affiche **le nom de la rue actuelle** avec une flèche d
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget → <Translate android="true" ids="map_widget_top_text"/>* |
-|   | **iOS :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget → <Translate android="true" ids="map_widget_top_text"/>* |
+| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget → <Translate android="true" ids="map_widget_top_text"/>* |
+|   | **iOS :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget → <Translate android="true" ids="map_widget_top_text"/>* |
 | En appuyant | Pas de changements |
 
 
-## Approche POI/Favoris {#approach-poisfavorites}
+## Approche POI / Favoris {#approach-pois--favorites}
 
 <Tabs groupId="operating-systems">
 
@@ -463,9 +463,9 @@ Le widget Nom de la rue affiche **le nom de la rue actuelle** avec une flèche d
 
 </Tabs>
 
-Le widget **Approche POI/Favoris/Points de passage** est combiné avec [Nom de la rue](#street-name) et affiche les points d'intérêt, les points de passage de la trace suivie et les favoris le long de l'itinéraire qui approchent et qui sont passés.
+Le widget **Approche POI/Favoris/Points de passage** est combiné avec [Nom de la rue](#street-name) et affiche les points d'intérêt, les points de passage du parcours suivi et les favoris qui approchent et qui sont passés le long de l'itinéraire.
 
-Il affiche le **nom**, l'**icône du point** et 2 **distances** :
+Il affiche le **nom**, l'**icône du point** et 2 **distances** :
 
 - La **distance de l'itinéraire** (en haut) affiche la distance à parcourir en suivant l'itinéraire.
 - La **distance de déviation** est une distance en ligne droite du point d'itinéraire le plus proche au point lui-même.
@@ -474,8 +474,8 @@ Il affiche le **nom**, l'**icône du point** et 2 **distances** :
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu"/> → Démarrer la navigation → bouton crayon* |
+| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* |
+|   | **iOS :** *<Translate ios="true" ids="shared_string_menu"/> → Démarrer la navigation → bouton crayon* |
 | En appuyant | Pas de changements |
 
 
@@ -489,4 +489,4 @@ Il affiche le **nom**, l'**icône du point** et 2 **distances** :
 - [Widgets de marqueurs](./markers.md)
 - [Action rapide](./quick-action.md)
 
-> *Cet article a été mis à jour pour la dernière fois en avril 2025*
+> *Dernière mise à jour : avril 2025*

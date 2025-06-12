@@ -1,9 +1,8 @@
 ---
-source-hash: 2201dc33b3b04c6fdc861724bbc2e5d377f94672c06648ce2b049fd73a5fb136 
+source-hash: 843de01f95130e3bc5cdb52c3d6aeced91ef984279186c80bbefa7df8de573f3
 sidebar_position: 2
 title: Politique de confidentialité
 ---
 import PrivacyPolicy from '@site/src/components/content/PrivacyPolicy.mdx';
 
 <PrivacyPolicy/>
-

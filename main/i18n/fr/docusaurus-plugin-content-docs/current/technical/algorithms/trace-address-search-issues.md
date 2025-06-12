@@ -1,5 +1,5 @@
 ---
-source-hash: a27e013afa95185b3bb8fe4437c0dd4ada6ba4462c34339cb1e1451ccad027e3
+source-hash: 4127321256305d47dce48682c4990b76cec1e4db868aa211746d1c49c5418eb3
 sidebar_position: 3
 ---
 
@@ -40,8 +40,8 @@ OsmAnd détermine la limite d'une ville en utilisant sa **relation administrativ
 
 Pour un traitement précis des adresses, les **noms de rue doivent correspondre exactement**, y compris :
 
-- Les différences dans les **signes diacritiques** (par exemple, *Rue André Chenier* vs. *Rue André Chénier*).
-- Les variations dans les **préfixes et abréviations**.
+- Différences dans les **signes diacritiques** (par exemple, *Rue André Chenier* vs. *Rue André Chénier*).
+- Variations dans les **préfixes et abréviations**.
 
 Si une non-concordance se produit, l'un des problèmes suivants peut survenir :
 
@@ -71,13 +71,13 @@ Voir le problème GitHub [10036](https://github.com/osmandapp/OsmAnd/issues/1003
    - Si une relation manque de balises essentielles telles que **boundary=administrative** ou **place=city**, elle ne sera pas utilisée.  
    - Exemples :  
      - Problème [10921](https://github.com/osmandapp/OsmAnd/issues/10921) (balises manquantes).  
-     - Problème [12548](https://github.com/osmandapp/OsmAnd/issues/12548) (problème de limite d'*Erfstadt*).
+     - Problème [12548](https://github.com/osmandapp/OsmAnd/issues/12548) (problème de limite *Erfstadt*).
 
 ### Problèmes dans OsmAnd {#issues-in-osmand}
 
 **Adresses affectées aux villes voisines.**
 
-- Les villes, villages, hameaux ou banlieues à proximité peuvent **hériter incorrectement d'adresses** en raison de chevauchements de limites ou de limites manquantes.
+- Les villes, villages ou banlieues à proximité peuvent **hériter incorrectement d'adresses** en raison de chevauchements de limites ou de limites manquantes.
 - Ceci est courant lorsque les villes sont divisées en zones administratives mais manquent de relations OSM clairement définies.  
 - Voir les rapports connexes : [10559](https://github.com/osmandapp/OsmAnd/issues/10559), [10679](https://github.com/osmandapp/OsmAnd/issues/10679), [10730](https://github.com/osmandapp/OsmAnd/issues/10730).
 
@@ -135,7 +135,7 @@ Résolution des problèmes avec les adresses aux États-Unis :
 
 | Type de données TIGER      | Utilisation dans OsmAnd |
 |----------------------------|-------------------------|
-| **Noms de rue**            | Utilisé pour les recherches par nom. |
+| **Noms de rue**            | Utilisé pour les recherches basées sur le nom. |
 | **Plages de numéros de maison** | Fournit des emplacements d'adresses approximatifs. |
 | **Codes postaux**          | Aide à associer les adresses aux zones postales correctes. |
 | **Limites administratives** | Détermine les emplacements des villes et des États. |
@@ -152,7 +152,7 @@ Résolution des problèmes avec les adresses aux États-Unis :
 | L'adresse est manquante dans OSM et TIGER | ❌ Aucun résultat |
 
 
-#### Limites des données TIGER dans OsmAnd {#limitations-of-tiger-data-in-osmand}
+#### Limitations des données TIGER dans OsmAnd {#limitations-of-tiger-data-in-osmand}
 
 Plusieurs facteurs affectent la précision des recherches d'adresses dans le système basé sur TIGER :
 

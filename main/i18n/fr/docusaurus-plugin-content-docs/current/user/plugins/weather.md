@@ -1,9 +1,8 @@
 ---
-source-hash: f89cb88cfddb3f20bca9ebe2b5e3db3bc4c66f245338db33074b9eb1d3348a30
+source-hash: 2f59b1c67bc9886426af5d0c0cd282853675b77154ff95cd42a65f37a70509cb
 sidebar_position: 17
 title: Météo
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,17 +14,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 ## Aperçu {#overview}
 
 :::info Fonctionnalité payante
  <ProFeature/> Le plugin Météo est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.
 :::
 
-Les couches interactives de la carte météo dans l'application OsmAnd vous permettent de surveiller la température, la pression atmosphérique, la couverture nuageuse, la vitesse du vent et les précipitations dans votre ville ou tout autre lieu sur une carte mondiale interactive. Le plugin Météo fournit des prévisions météorologiques horaires pour les 7 prochains jours directement sur la carte OsmAnd. Les informations météorologiques peuvent également être téléchargées pour une utilisation hors ligne.
+Les couches de carte météo interactives de l'application OsmAnd vous permettent de surveiller la température, la pression atmosphérique, la couverture nuageuse, la vitesse du vent et les précipitations dans votre ville ou tout autre lieu sur une carte mondiale interactive. Le plugin Météo fournit des prévisions météorologiques horaires pour les 7 prochains jours directement sur la carte OsmAnd. Les informations météorologiques peuvent également être téléchargées pour une utilisation hors ligne.
 
-La source de données pour le plugin Météo est le [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) exploité par le United States National Weather Service (NWS) et le Centre européen pour les prévisions météorologiques à moyen terme ([ECMWF](https://www.ecmwf.int/)).
-
+La source de données du plugin Météo est le [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) géré par le United States National Weather Service (NWS) et le Centre européen pour les prévisions météorologiques à moyen terme ([ECMWF](https://www.ecmwf.int/)).
 
 ## Paramètres de configuration requis {#required-setup-parameters}
 
@@ -39,7 +36,7 @@ Les paramètres suivants sont *requis* pour afficher la météo sur la carte Osm
 
 **4.** [Afficher les **couches Météo**](#customize-weather-layers) sur la carte à l'aide de l'élément de menu Météo dans le menu Configurer la carte (n'oubliez pas de dézoomer).
 
-**5.** [Afficher les **prévisions météorologiques**](#weather-forecast-screen) pour la zone sélectionnée (ce menu permet de ne pas encombrer l'écran principal de la carte OsmAnd avec les couches météorologiques).
+**5.** [Afficher les **prévisions météorologiques**](#weather-forecast-screen) pour la zone sélectionnée (ce menu permet de ne pas encombrer l'écran principal de la carte OsmAnd avec les couches météo).
 
 **6.** [Télécharger](#offline-forecast) les prévisions météorologiques si vous prévoyez de les utiliser hors ligne.
 
@@ -48,7 +45,6 @@ Les paramètres suivants sont *requis* pour afficher la météo sur la carte Osm
 :::caution Rendu requis
 Le plugin Météo n'est disponible qu'avec le moteur de rendu de carte [Version 2](../personal/global-settings/#map-rendering-engine) (OpenGL).
 :::
-
 
 ## Afficher la météo sur la carte {#display-weather-on-the-map}
 
@@ -74,7 +70,7 @@ Aller à : *Plugin activé → <Translate ios="true" ids="shared_string_menu,sha
 
 </Tabs>
 
-Le menu latéral principal dispose d'un élément de menu dédié **Météo** qui permet d'accéder rapidement à tous les outils météorologiques. L'*écran des prévisions météorologiques* affiche des informations sur la *température*, la *pression atmosphérique*, la *vitesse du vent*, la *couverture nuageuse* et les *précipitations*.
+Le menu latéral principal dispose d'un élément de menu dédié **Météo** qui permet d'accéder rapidement à tous les outils météo. L'*écran des prévisions météorologiques* affiche des informations sur la *température*, la *pression atmosphérique*, la *vitesse du vent*, la *couverture nuageuse* et les *précipitations*.
 
 En bas de l'écran se trouve la *barre d'outils météo*. Vous pouvez utiliser les boutons de jour et le curseur temporel pour définir l'heure exacte à laquelle les prévisions météorologiques seront affichées.
 
@@ -100,10 +96,9 @@ Aller à : *Plugin activé → <Translate ios="true" ids="shared_string_menu,con
 
 </Tabs>
 
-Pour afficher les couches météo sur l'écran de la carte OsmAnd, vous devez utiliser le *menu Configurer la carte*. Allez dans le menu, trouvez l'élément *Météo* dans la liste (disponible uniquement lorsque le plugin est activé), et appuyez dessus.
+Pour afficher les couches météo sur l'écran de la carte OsmAnd, vous devez utiliser le *menu Configurer la carte*. Allez dans le menu, trouvez l'élément *Météo* dans la liste (disponible uniquement lorsque le plugin est activé) et appuyez dessus.
 
 Dans ce menu, vous pouvez modifier la **visibilité** et les [paramètres](#weather-settings) de chaque couche, sélectionner le type de courbes de niveau et télécharger les [prévisions météorologiques hors ligne sur 7 jours](#offline-forecast) (*uniquement disponible pour Android ici*).
-
 
 ### Paramètres météo {#weather-settings}
 
@@ -128,7 +123,7 @@ Dans ce menu, vous pouvez modifier la **visibilité** et les [paramètres](#weat
 
 </Tabs>
 
-Il est important de décider dans quelles unités de mesure il vous convient de voir les [données météorologiques](#weather-layers) sur la carte et dans la section [Widgets météo](#weather-widgets) de l'écran. Vous pouvez choisir les unités de mesure appropriées pour chaque paramètre ou utiliser les valeurs par défaut (*iOS uniquement*). Dans la version iOS de l'application OsmAnd, vous pouvez également activer l'option de prévisions hors ligne pour éviter d'utiliser le trafic mobile pendant vos déplacements.
+Il est important de décider dans quelles unités de mesure il vous convient de voir les [données météo](#weather-layers) sur la carte et dans la section [Widgets météo](#weather-widgets) de l'écran. Vous pouvez choisir les unités de mesure appropriées pour chaque paramètre ou utiliser les valeurs par défaut (*iOS uniquement*). Dans la version iOS de l'application OsmAnd, vous pouvez également activer l'option de prévisions hors ligne pour éviter d'utiliser le trafic mobile pendant vos déplacements.
 
 :::note
 Dans la version iOS d'OsmAnd, vous pouvez modifier les unités de mesure et le niveau de transparence dans le menu qui s'ouvre après un appui long sur l'icône de la couche de carte requise.
@@ -136,7 +131,7 @@ Dans la version iOS d'OsmAnd, vous pouvez modifier les unités de mesure et le n
 
 ### Couches météo {#weather-layers}
 
-Toutes les données météorologiques sont présentées sous forme de couches de carte distinctes. Pour voir les couches météo sur la carte, vous devez dézoomer, elles ne sont disponibles qu'aux échelles de zoom 2-12. Les couches météo utilisent des [palettes météo](../personal/color-palette-schemes.md#weather) pour coloriser la carte, ces palettes peuvent être [modifiées](../personal/color-palette-schemes.md#edit-palette-file) si nécessaire.
+Toutes les données météo sont présentées sous forme de couches de carte distinctes. Pour voir les couches météo sur la carte, vous devez dézoomer, elles ne sont disponibles qu'aux échelles de zoom 2-12. Les couches météo utilisent des [palettes météo](../personal/color-palette-schemes.md#weather) pour coloriser la carte, ces palettes peuvent être [modifiées](../personal/color-palette-schemes.md#edit-palette-file) si nécessaire.
 
 | |
 |------------|
@@ -152,7 +147,6 @@ Toutes les données météorologiques sont présentées sous forme de couches de
 | ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |
 | L'**animation du vent** comprend des représentations dynamiques montrant la direction et la vitesse du vent dans la région. |
 | ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |
-
 
 ### Combiner les cartes {#combine-maps}
 
@@ -174,7 +168,6 @@ Toutes les données météorologiques sont présentées sous forme de couches de
 
 Pour obtenir des informations météorologiques complètes, vous pouvez utiliser les couches de carte séparément ou les combiner facilement. Des isolignes d'un type spécifique peuvent également être ajoutées à la couche Météo. Il suffit d'appuyer sur le bouton *Couches* ou *Isolignes* à l'écran.
 
-
 ### Actions rapides pour les couches {#quick-actions-for-layers}
 
 ![QA Weather layers](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
@@ -184,7 +177,6 @@ Pour basculer la visibilité des couches météo, vous pouvez utiliser les bouto
 - Aller à [Ajouter une action](../widgets/quick-action.md#custom-buttons) : *Menu → Configurer l'écran → Boutons personnalisés → Action rapide → Ajouter une action → Configurer la carte*.
 - Ajouter un ou plusieurs boutons QA pour modifier la visibilité d'une couche météo particulière.
 
-
 ## Prévisions hors ligne {#offline-forecast}
 
 ### Cache {#cache}
@@ -192,7 +184,7 @@ Pour basculer la visibilité des couches météo, vous pouvez utiliser les bouto
 Lorsque l'onglet Météo est ouvert, sauf indication contraire, les informations météorologiques requises sont téléchargées depuis le réseau. Vous pouvez utiliser les [prévisions météorologiques](#download-forecast) préchargées sur vos appareils. Les informations météorologiques sont automatiquement mises en cache après le téléchargement et peuvent être utilisées hors ligne jusqu'à l'expiration des prévisions.
 
 :::tip
-Sur les appareils Android, vous pouvez vérifier quand les données météorologiques ont été téléchargées en appuyant sur le *widget Météo*. Le plugin de développement OsmAnd doit être activé.
+Sur les appareils Android, vous pouvez vérifier quand les données météo ont été téléchargées en appuyant sur le *widget Météo*. Le plugin de développement OsmAnd doit être activé.
 ![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)
 :::
 
@@ -219,7 +211,7 @@ Pour chaque pays, vous pouvez télécharger les **prévisions hors ligne** (jusq
 Dans le menu de téléchargement des prévisions, vous pouvez obtenir des informations et définir des paramètres pour maintenir les données météorologiques à jour.
 
 - **Créé** (*Android*) / **Mis à jour** (*iOS*). Indique la date de la dernière mise à jour.
-- **Prochaine mise à jour** (*iOS*). Quand la prochaine mise à jour sera disponible.
+- **Prochaine mise à jour** (*iOS*). Indique quand la prochaine mise à jour sera disponible.
 - **Taille** (*Android*) / **Taille des mises à jour** (*iOS*). Indique la taille de toutes les mises à jour.
 - Bouton **Mettre à jour** (*Android*) / **Mettre à jour maintenant** (*iOS*). Lorsqu'il est actif, vous permet de mettre à jour les données météorologiques manuellement sans attendre une mise à jour automatique.
 - **Fréquence de mise à jour** (*iOS*). Peut être réglée sur 12 heures, 24 heures ou hebdomadaire.
@@ -230,7 +222,6 @@ Dans le menu de téléchargement des prévisions, vous pouvez obtenir des inform
 :::info
 OsmAnd génère de nouvelles prévisions toutes les 6 heures.
 :::
-
 
 ## Widgets météo {#weather-widgets}
 
@@ -256,9 +247,8 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 Les [widgets météo](../widgets/info-widgets.md#weather-widgets) tels que Température, Pression atmosphérique, Vent, Nuages et Précipitations affichent les données météorologiques actuelles pour le **point central sur la carte**.
 
-- Les widgets météo ne sont affichés que lorsque l'[écran Météo](#weather-forecast-screen) est activé.
+- Les widgets météo ne sont affichés que lorsque l'*écran Météo* est activé.
 - Pour activer les widgets météo, sélectionnez l'élément de menu principal *Configurer l'écran*, le panneau sur lequel les placer et les widgets requis dans la liste.
-
 
 ## Articles connexes {#related-articles}
 
@@ -266,4 +256,4 @@ Les [widgets météo](../widgets/info-widgets.md#weather-widgets) tels que Temp�
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *Cet article a été mis à jour pour la dernière fois en novembre 2024*
+> *Dernière mise à jour : novembre 2024*

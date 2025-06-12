@@ -1,9 +1,8 @@
 ---
-source-hash: 9afbf9d1abae179c59a082ed00b5c547cb64fbbce8843cc8aca59f12240567da
+source-hash: 7008e200a45abc6dac5f84f04d67cfa4d6839d97740df298ea502bad90aec24d
 sidebar_position: 6
 title:  Itinéraire à cheval
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,9 +13,10 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
+
 ## Aperçu {#overview}
 
-L'*itinéraire à cheval* peut être utile aux cavaliers qui souhaitent planifier leurs randonnées sur des chemins et des sentiers sûrs et adaptés aux chevaux. Grâce à ce type d'itinéraire, vous pouvez également découvrir de nouveaux itinéraires qui n'étaient pas connus auparavant.
+L'*itinéraire à cheval* peut être utile aux cavaliers qui souhaitent planifier leurs randonnées sur des chemins et des sentiers sûrs et adaptés aux chevaux. Ce type d'itinéraire peut également vous aider à découvrir de nouveaux itinéraires qui n'étaient pas connus auparavant.
 
 L'*itinéraire à cheval* peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des paramètres de navigation.
 
@@ -29,7 +29,7 @@ L'*itinéraire à cheval* peut être configuré selon vos besoins dans la sectio
 Par défaut, le *profil d'équitation* est désactivé. Pour utiliser ce profil pour l'itinéraire, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-L'itinéraire à cheval est conçu pour fournir aux cavaliers des informations sur les chemins, les pistes cavalières et les sentiers d'équitation adaptés aux chevaux.
+L'itinéraire à cheval est conçu pour fournir aux cavaliers des informations sur les chemins adaptés aux chevaux, les pistes cavalières et les sentiers d'équitation.
 
 <Tabs groupId="operating-systems">
 
@@ -49,14 +49,14 @@ L'itinéraire à cheval est conçu pour fournir aux cavaliers des informations s
 
 | Paramètre | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="impassable_road"/>* | <details><summary> Sélectionnez les routes que vous souhaitez éviter pendant la navigation. Vous pouvez soit [sélectionner une route sur la carte](../../map/map-context-menu/#avoid-road), soit choisir des types de routes dans la liste. </summary> ![Avoid roads Android](@site/static/img/navigation/routing/horse_routing_avoid_android.png) </details> | <ul><li> [<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (un type de transport par eau qui transporte des véhicules à travers des étendues d'eau)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel)</li><li>[<Translate android="true" ids="routing_attr_avoid_motorway_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway)</li></ul>|
-| *<Translate android="true" ids="prefer_in_routing_title"/>* | <details><summary> Vous pouvez choisir de préférer les itinéraires pour chevaux ou non. </summary> ![Prefer horses routes Android](@site/static/img/navigation/routing/horse_routing_prefer_android.png) </details> | <ul><li>[<Translate android="true" ids="routing_attr_prefer_horse_routes_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dbridleway). Un chemin destiné à être utilisé par les cavaliers (principalement) et les piétons (selon les réglementations spécifiques à chaque pays). </li></ul> |
-| *<Translate android="true" ids="routing_attr_allow_gate_name"/>* | <Translate android="true" ids="routing_attr_allow_gate_description"/>. | Une [barrière](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dgate) est un type de [barrière](https://wiki.openstreetmap.org/wiki/Key:barrier) qui bloque le mouvement. Il s'agit généralement d'une section dans un mur ou une clôture qui peut être ouverte ou fermée pour permettre ou restreindre l'accès. |
-| *<Translate android="true" ids="routing_attr_carriage_restrictions_name"/>* | <Translate android="true" ids="routing_attr_carriage_restrictions_description"/>. | Dans certains pays, les [calèches](https://wiki.openstreetmap.org/wiki/Key:carriage) ne sont pas autorisées sur les autoroutes, elles ne sont autorisées que sur un très petit nombre d'autres routes. |
-| *<Translate android="true" ids="routing_attr_allow_private_name"/>* | Les restrictions d'accès privé seront ignorées lors du calcul de l'itinéraire. | Le tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* est utilisé dans OSM pour décrire les restrictions d'utilisation des autoroutes et autres voies de transport, ainsi que des bâtiments, des entrées, des commodités et des entités de loisirs. |
-| *<Translate android="true" ids="routing_attr_only_permitted_streets_name"/>* | <Translate android="true" ids="routing_attr_only_permitted_streets_description"/>. | Seules les rues spécialement désignées pour les chevaux seront utilisées pour l'itinéraire. |
-| *<Translate android="true" ids="routing_attr_only_permitted_ways_name"/>* | <Translate android="true" ids="routing_attr_only_permitted_ways_description"/>. | Seules les voies spécialement désignées pour les chevaux seront utilisées pour l'itinéraire. |
-|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Le temps de trajet projeté reflétera l'impact de l'altitude. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png) </details> | Cette préférence peut aider à éviter les montées raides. Sans données d'altitude, l'itinéraire le plus rapide sera calculé comme sur un terrain plat. |
+| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Sélectionnez les routes que vous souhaitez éviter pendant la navigation. Vous pouvez soit [sélectionner une route sur la carte](../../map/map-context-menu/#avoid-road), soit choisir des types de routes dans la liste.  </summary>  ![Avoid roads Android](@site/static/img/navigation/routing/horse_routing_avoid_android.png) </details> | <ul><li> [<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (un type de transport par eau qui transporte des véhicules à travers des étendues d'eau)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel)</li><li>[<Translate android="true" ids="routing_attr_avoid_motorway_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway)</li></ul>|
+| *<Translate android="true" ids="prefer_in_routing_title"/>* | <details><summary> Vous pouvez choisir de préférer les itinéraires pour chevaux ou non. </summary> ![Prefer horses routes Android](@site/static/img/navigation/routing/horse_routing_prefer_android.png)  </details>  | <ul><li>[<Translate android="true" ids="routing_attr_prefer_horse_routes_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dbridleway). Un chemin destiné à être utilisé par les cavaliers (principalement) et les piétons (selon les réglementations spécifiques à chaque pays). </li></ul> |
+| *<Translate android="true" ids="routing_attr_allow_gate_name"/>* |  <Translate android="true" ids="routing_attr_allow_gate_description"/>. | Une [barrière](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dgate) est un type de [barrière](https://wiki.openstreetmap.org/wiki/Key:barrier) qui bloque le mouvement. Il s'agit généralement d'une section dans un mur ou une clôture qui peut être ouverte ou fermée pour permettre ou restreindre l'accès. |
+|  *<Translate android="true" ids="routing_attr_carriage_restrictions_name"/>*  |  <Translate android="true" ids="routing_attr_carriage_restrictions_description"/>.  | Dans certains pays, les [calèches](https://wiki.openstreetmap.org/wiki/Key:carriage) ne sont pas autorisées sur les autoroutes, elles ne sont autorisées que sur un très petit nombre d'autres routes.   |
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Les restrictions d'accès privé seront ignorées lors du calcul de l'itinéraire.  | Le tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* est utilisé dans OSM pour décrire les restrictions d'utilisation des routes et autres voies de transport, ainsi que des bâtiments, des entrées, des équipements et des entités de loisirs.   |
+| *<Translate android="true" ids="routing_attr_only_permitted_streets_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_streets_description"/>.  | Seules les rues spécialement désignées pour les chevaux seront utilisées pour l'itinéraire.   |
+| *<Translate android="true" ids="routing_attr_only_permitted_ways_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_ways_description"/>.  | Seules les voies spécialement désignées pour les chevaux seront utilisées pour l'itinéraire.   |
+|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Le temps de trajet projeté reflétera l'impact de l'altitude. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png)  </details> | Cette préférence peut aider à éviter les montées raides. Sans données d'altitude, l'itinéraire le plus rapide sera calculé comme sur un terrain plat. |
 
 
 ## Autres paramètres d'itinéraire {#other-routing-settings}
@@ -71,4 +71,4 @@ L'itinéraire à cheval est conçu pour fournir aux cavaliers des informations s
 
 - [<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters). La configuration correcte des paramètres vous aidera à éviter les problèmes lors de la création d'un itinéraire. Vous pouvez sélectionner l'itinéraire le plus approprié en fonction du type de véhicule et des restrictions routières, ainsi que calculer le temps de trajet.
 
-> *Cet article a été mis à jour pour la dernière fois en juin 2024*
+> *Dernière mise à jour : juin 2024*

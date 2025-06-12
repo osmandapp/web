@@ -1,9 +1,8 @@
 ---
-source-hash: cc7df1331b9201d43626a5150296d4017334f3400e9c6cb570335aca3633b804
+source-hash: 64e70bb76edd2b30f2b0d339bd4c6e36d84152b0908b7817a4a4b3f7136b2c35
 sidebar_position: 4
 title: Navigation
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,6 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
 
 
 ## Articles sur la navigation {#navigation-articles}
@@ -25,7 +25,7 @@ Dans la section **Configurer un itinéraire**, vous pouvez lire les bases sur la
 - [Navigation par marqueurs](./setup/markers-navigation.md)
 - [Détails de l'itinéraire](./setup/route-details.md)
 
-Dans la section **[Paramètres d'itinéraire](./routing/osmand-routing.md#routing-types)**, vous pouvez lire les différents types de routage, en ligne et hors ligne. Cette section décrit également les règles de routage, qui déterminent la manière dont votre itinéraire sera calculé. Les paramètres d'itinéraire courants sont décrits dans l'[article d'index](./routing/osmand-routing.md#routing-types). D'autres articles décrivent les caractéristiques de certains types de routage.
+Dans la section **[Paramètres de l'itinéraire](./routing/osmand-routing.md#routing-types)**, vous pouvez lire les différents types d'itinéraires, en ligne et hors ligne. Cette section décrit également les règles de routage, qui déterminent la manière dont votre itinéraire sera calculé. Les paramètres d'itinéraire courants sont décrits dans l'[article d'index](./routing/osmand-routing.md#routing-types). D'autres articles décrivent les caractéristiques de certains types de routage.
 - [Routage automobile (Camion, Moto)](./routing/car-based-routing.md)
 - [Routage vélo (VTT)](./routing/bicycle-based-routing.md)
 - [Routage cyclomoteur](./routing/moped-routing.md)

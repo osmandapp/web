@@ -78,7 +78,7 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
                     <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" component="div" className={styles.groupInfo} noWrap>
                         {share && !sharedFile && <FileShareIcon />}
-                        {`${getLocalizedTimeUpdate(group.clienttimems)}, ${groupSize}`}
+                        {`${getLocalizedTimeUpdate(group.clienttimems, ctx)}, ${groupSize}`}
                     </Typography>
                 </ListItemText>
                 <ThreeDotsButton

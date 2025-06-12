@@ -3,7 +3,6 @@ import i18n from 'i18next';
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import styles from '../weather/weather.module.css';
-import * as locales from 'date-fns/locale';
 import { format } from 'date-fns';
 
 export default function TopWeatherInfo({
@@ -16,8 +15,7 @@ export default function TopWeatherInfo({
 
     function getSubInfo() {
         if (useWeatherDate) {
-            const locale = locales[i18n.language] || locales.enUS;
-            let formattedDay = format(ctx.weatherDate, 'eeee', { locale });
+            let formattedDay = format(ctx.weatherDate, 'eeee', { locale: ctx.dateLocale });
             formattedDay = formattedDay.charAt(0).toUpperCase() + formattedDay.slice(1);
             return `${formattedDay}, ${ctx.weatherDate.toLocaleString(i18n.language, {
                 hour: '2-digit',

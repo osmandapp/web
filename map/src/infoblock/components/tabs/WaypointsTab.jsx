@@ -2,34 +2,16 @@ import { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext, { isLocalTrack } from '../../../context/AppContext';
 import { Alert, Box, Button, Collapse, Grid, IconButton, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import L from 'leaflet';
-import contextMenuStyles from '../../styles/ContextMenuStyles';
 import { Cancel, ExpandLess, ExpandMore, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp } from '@mui/icons-material';
 import PointManager from '../../../manager/PointManager';
 import TracksManager from '../../../manager/track/TracksManager';
-import wptTabStyle from '../../styles/WptTabStyle';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
-import { makeStyles } from '@material-ui/core/styles';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
 import _ from 'lodash';
 
-const useStyles = makeStyles({
-    boxNoOverflow: {
-        maxWidth: '100%',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-    },
-    boxPreLine: {
-        marginTop: '4px',
-        whiteSpace: 'pre-line', // pre-line is multiline
-    },
-});
-
 // distinct component
 const WaypointGroup = ({ ctx, group, points, defaultOpen, massOpen, massVisible }) => {
-    const stylesWpt = wptTabStyle();
-    const stylesMenu = contextMenuStyles();
-
     const [open, setOpen] = useState(defaultOpen);
     const switchOpen = () => setOpen(!open);
 
@@ -69,10 +51,35 @@ const WaypointGroup = ({ ctx, group, points, defaultOpen, massOpen, massVisible 
             <MenuItem divider sx={{ px: 1, py: 1 }} onClick={switchOpen}>
                 <Grid container alignItems="center">
                     <Grid item xs={2}>
-                        <div className={stylesWpt.iconGroup} dangerouslySetInnerHTML={{ __html: iconHTML }} />
+                        <Box
+                            component="div"
+                            sx={{
+                                '& .icon': {
+                                    left: 10,
+                                    top: 25,
+                                },
+                                '& .background': {
+                                    filter: 'drop-shadow(0 0 0 gray)',
+                                    left: -12,
+                                    top: 4,
+                                },
+                            }}
+                            dangerouslySetInnerHTML={{ __html: iconHTML }}
+                        />
                     </Grid>
                     <Grid item xs={6}>
-                        <Typography>{group || 'Waypoints'}</Typography>
+                        <Typography
+                            sx={{
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                width: '100%',
+                                pr: '20px',
+                                ml: '14px',
+                            }}
+                        >
+                            {group || 'Waypoints'}
+                        </Typography>
                     </Grid>
                     <Grid item xs={1}>
                         <Button sx={{ borderRadius: 28, minWidth: '30px !important' }} size="small">
@@ -92,7 +99,18 @@ const WaypointGroup = ({ ctx, group, points, defaultOpen, massOpen, massVisible 
                 </Grid>
             </MenuItem>
             <Collapse in={open}>
-                <Box className={stylesMenu.item}>
+                <Box
+                    sx={{
+                        '& .MuiMenuItem-root': {
+                            userSelect: 'text',
+                            maxWidth: '800px',
+                        },
+                        '& .MuiTypography-root': {
+                            marginLeft: '1px !important',
+                            overflow: 'visible !important',
+                        },
+                    }}
+                >
                     {points.map((point, keyIndex) => (
                         <WaypointRow key={'wpt' + point.index + keyIndex} point={point} index={point.index} ctx={ctx} />
                     ))}
@@ -104,8 +122,6 @@ const WaypointGroup = ({ ctx, group, points, defaultOpen, massOpen, massVisible 
 
 // distinct component
 const WaypointRow = ({ point, index, ctx }) => {
-    const styles = useStyles();
-
     const [, , mobile] = useWindowSize();
 
     function showPoint(point) {
@@ -119,7 +135,15 @@ const WaypointRow = ({ point, index, ctx }) => {
     function pointLines(point) {
         const line = ({ key, font, str }) =>
             str && (
-                <Box key={'box' + key} className={styles.boxNoOverflow} sx={{ fontSize: font + 'rem' }}>
+                <Box
+                    key={'box' + key}
+                    sx={{
+                        fontSize: `${font}rem`,
+                        maxWidth: '100%',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                    }}
+                >
                     {str.replace(/\n/g, ' ')}
                 </Box>
             );
@@ -133,7 +157,14 @@ const WaypointRow = ({ point, index, ctx }) => {
     function pointTooltip(point) {
         const line = ({ key, font, str }) =>
             str && (
-                <Box key={'box' + key} className={styles.boxPreLine} sx={{ fontSize: font + 'rem' }}>
+                <Box
+                    key={'box' + key}
+                    sx={{
+                        fontSize: `${font}rem`,
+                        marginTop: '4px',
+                        whiteSpace: 'pre-line',
+                    }}
+                >
                     {str}
                 </Box>
             );
@@ -184,8 +215,6 @@ const WaypointRow = ({ point, index, ctx }) => {
 
 export default function WaypointsTab() {
     const ctx = useContext(AppContext);
-
-    const stylesMenu = contextMenuStyles();
 
     const [openWptAlert, setOpenWptAlert] = useState(true);
 
@@ -312,7 +341,17 @@ export default function WaypointsTab() {
                 <Grid container alignItems="center">
                     <Grid item xs={7}>
                         {ctx.createTrack && ctx.selectedGpxFile?.wpts && !_.isEmpty(ctx.selectedGpxFile.wpts) && (
-                            <Button variant="contained" className={stylesMenu.button} onClick={deleteAllWpts}>
+                            <Button
+                                variant="contained"
+                                sx={{
+                                    backgroundColor: '#fbc73a',
+                                    fontSize: '12px',
+                                    minWidth: '20px',
+                                    padding: '3px 5px',
+                                    marginLeft: '5px',
+                                }}
+                                onClick={deleteAllWpts}
+                            >
                                 Clear all waypoints
                             </Button>
                         )}

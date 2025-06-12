@@ -2,24 +2,12 @@ import { ClickAwayListener, Grid, IconButton, MenuItem, MenuList, Paper, Popper 
 import React, { useContext, useEffect, useState } from 'react';
 import TracksManager from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
-import { makeStyles } from '@material-ui/core/styles';
 import PointManager from '../../manager/PointManager';
 import { Close } from '@mui/icons-material';
 import _ from 'lodash';
 
-const useStyles = makeStyles({
-    drawerItem: {
-        '& .MuiMenuItem-root': {
-            minHeight: 'auto !important',
-            maxHeight: 'auto !important',
-            fontSize: '0.7rem',
-        },
-    },
-});
-
 export default function PointContextMenu({ anchorEl }) {
     const ctx = useContext(AppContext);
-    const classes = useStyles();
 
     const [open, setOpen] = useState(false);
     const [pointInd, setPointInd] = useState(-1);
@@ -236,9 +224,15 @@ export default function PointContextMenu({ anchorEl }) {
                                 <Paper>
                                     <div style={{ maxHeight: '30vh', overflow: 'auto' }}>
                                         <MenuList
-                                            className={classes.drawerItem}
                                             autoFocusItem={open}
                                             id="menu-list-grow"
+                                            sx={{
+                                                '& .MuiMenuItem-root': {
+                                                    minHeight: 'auto !important',
+                                                    maxHeight: 'auto !important',
+                                                    fontSize: '0.7rem',
+                                                },
+                                            }}
                                         >
                                             <Buttons />
                                         </MenuList>

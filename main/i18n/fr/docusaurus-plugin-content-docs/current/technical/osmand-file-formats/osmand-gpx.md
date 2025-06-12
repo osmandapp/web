@@ -1,5 +1,5 @@
 ---
-source-hash: cf984a9839208302b931e2e300799ebdbb2378a1b7885108c56580546fdc6859
+source-hash: f4b2b293ad51358460be21f120eea4ead0ba855b2536fc69c26f9eb724fe95d1
 sidebar_position: 2
 ---
 
@@ -7,23 +7,23 @@ sidebar_position: 2
 
 ## Introduction {#introduction}
 
-GPX (GPS Exchange Format) est un standard basé sur XML largement utilisé pour stocker des données GPS, y compris des traces, des itinéraires et des points de cheminement. OsmAnd prend en charge le format GPX pour l'importation, l'exportation et la personnalisation des données GPS pour la navigation, permettant aux utilisateurs débutants et avancés d'optimiser leur expérience.
+GPX (GPS Exchange Format) est un standard basé sur XML largement utilisé pour stocker des données GPS, y compris des traces, des routes et des points de passage. OsmAnd prend en charge le format GPX pour l'importation, l'exportation et la personnalisation des données GPS pour la navigation, permettant aux utilisateurs débutants et avancés d'optimiser leur expérience.
 
 #### Qu'est-ce qui rend OsmAnd GPX unique ? {#what-makes-osmand-gpx-unique}
 
 OsmAnd étend le format standard GPX 1.1 en introduisant son propre espace de noms XML personnalisé `osmand:`. Cet espace de noms permet de stocker des données supplémentaires telles que :
 
 - Paramètres visuels de la trace (couleur, largeur, flèches).
-- Groupement et icônes des points de cheminement.
-- Attributs détaillés de l'itinéraire, y compris les itinéraires calculés et les types d'activité.
+- Groupement et icônes des points de passage.
+- Attributs détaillés de la route, y compris les routes calculées et les types d'activité.
 
-#### Que vous apprendrez dans ce guide ? {#what-will-you-learn-in-this-guide}
+#### Que découvrirez-vous dans ce guide ? {#what-will-you-learn-in-this-guide}
 
 Cet article fournit un aperçu complet de la structure et des fonctionnalités des fichiers GPX dans OsmAnd. Vous apprendrez :
 
-1. Comment personnaliser les traces et les points de cheminement à l'aide de balises GPX.
-2. Fonctionnalités avancées telles que les descriptions HTML, les données de capteurs et les types d'activité.
-3. Comment exporter des itinéraires calculés et préserver toutes leurs fonctionnalités.
+1. Comment personnaliser les traces et les points de passage à l'aide de balises GPX.
+2. Des fonctionnalités avancées telles que les descriptions HTML, les données de capteurs et les types d'activité.
+3. Comment exporter des routes calculées et préserver toutes leurs fonctionnalités.
 4. Convertir des fichiers GPX au format OBF pour un stockage optimisé et des capacités de recherche avancées.
 
 #### Aperçu de la structure GPX {#gpx-structure-overview}
@@ -33,31 +33,31 @@ Les fichiers GPX dans OsmAnd organisent les données hiérarchiquement dans les 
 - `<gpx>` - l'élément racine du fichier.
 - `<trk>` - représente les traces, qui contiennent :
   - `<trkseg>` - segments de la trace, qui sont ensuite divisés en `<trkpt>` (points de trace).
-- `<rte>` - représente les itinéraires, y compris les points de cheminement et les points clés.
-- `<wpt>` - représente les points de cheminement individuels.
+- `<rte>` - représente les routes, y compris les points de passage et les points clés.
+- `<wpt>` - représente les points de passage individuels.
 
 
-## Personnalisation des traces {#track-customization}
+## Personnalisation de la trace {#track-customization}
 
-### Paramètres d'apparence des traces {#track-appearance-parameters}
+### Paramètres d'apparence de la trace {#track-appearance-parameters}
 
 Cette section décrit comment OsmAnd affiche les traces sur la carte et les options de personnalisation disponibles pour ajuster leur apparence. Les paramètres décrits ci-dessous sont appliqués dans la balise `<gpx>` et affectent toutes les traces incluses dans un fichier GPX.
 
-| Nom de la balise | Description / Valeurs |
+| Nom de la balise  | Description / Valeurs |
 |:----------------------------------------|:---------|
-| `<color>`                                 | - Définit la couleur de la ligne de trace sur la carte.  <br/>  - *Chaîne de caractères :* Code couleur HEX `#RRGGBB` ou `#AARRGGBB` |
-| `<width>`                                 | - Spécifie la largeur de la ligne de trace. <br/>  - *Chaîne de caractères :* `“thin”`, `“medium"`, `“bold”` (défini par l'attribut `“currentTrackWidth”`), ou entier (1-24) |
+| `<color>`                                 | - Définit la couleur de la ligne de trace sur la carte.  <br/>  - *Chaîne :* Code couleur HEX `#RRGGBB` ou `#AARRGGBB` |
+| `<width>`                                 | - Spécifie la largeur de la ligne de trace. <br/>  - *Chaîne :* `“thin”`, `“medium"`, `“bold”` (défini par l'attribut `“currentTrackWidth”`), ou entier (1-24) |
 | `<show_arrows>`                           | - Active ou désactive les flèches de direction le long de la trace. <br/> - *Booléen :* `"true"` / `"false"` |
 | `<show_start_finish>`                     | - Affiche ou masque les marqueurs de début et de fin de la trace. <br/> - *Booléen :* `"true"` / `"false"` |
-| `<split_type>`                            | - Spécifie le type de segmentation de la trace. <br/> - *Chaîne de caractères :* `"no_split"`, `"distance"`, `"time"` |
+| `<split_type>`                            | - Spécifie le type de segmentation de la trace. <br/> - *Chaîne :* `"no_split"`, `"distance"`, `"time"` |
 | `<split_interval>`                        | - Définit l'intervalle de segmentation de la trace en fonction du type sélectionné. <br/> - *Double :* Entier (mètres pour `"distance"`, secondes pour `"time"`) |
-| `<line_3d_visualization_by_type>`         | - Spécifie le type de visualisation 3D pour la trace. <br/> - *Chaîne de caractères :* `"none"`, `"altitude"`, `"shared_string_speed"`, `"map_widget_ant_heart_rate"`, `"map_widget_ant_bicycle_cadence"`, `"map_widget_ant_bicycle_power"`, `"shared_string_temperature"`, `"shared_string_speed"`, `"fixed_height"` |
-| `<line_3d_visualization_wall_color_type>` | - Définit le type de couleur de mur pour la visualisation 3D. <br/> - *Chaîne de caractères :* `"none"`, `"solid"`, `"downward_gradient"`, `"upward_gradient"`, `"altitude"`, `"slope"`, `"speed"` |
-| `<line_3d_visualization_position_type>`   | - Définit la position de la visualisation 3D par rapport à la trace. <br/> - *Chaîne de caractères :* `"top"`, `"bottom"`, `"top_bottom"`|
+| `<line_3d_visualization_by_type>`         | - Spécifie le type de visualisation 3D pour la trace. <br/> - *Chaîne :* `"none"`, `"altitude"`, `"shared_string_speed"`, `"map_widget_ant_heart_rate"`, `"map_widget_ant_bicycle_cadence"`, `"map_widget_ant_bicycle_power"`, `"shared_string_temperature"`, `"shared_string_speed"`, `"fixed_height"` |
+| `<line_3d_visualization_wall_color_type>` | - Définit le type de couleur du mur pour la visualisation 3D. <br/> - *Chaîne :* `"none"`, `"solid"`, `"downward_gradient"`, `"upward_gradient"`, `"altitude"`, `"slope"`, `"speed"` |
+| `<line_3d_visualization_position_type>`   | - Définit la position de la visualisation 3D par rapport à la trace. <br/> - *Chaîne :* `"top"`, `"bottom"`, `"top_bottom"`|
 | `<vertical_exaggeration_scale>`           | - Multiplicateur pour mettre à l'échelle la valeur de l'attribut `line_3d_visualization_by_type`. <br/> - *Flottant :* Par défaut : 1.0 |
 | `<elevation_meters>`                      | - Spécifie une élévation fixe en mètres pour `"fixed_height"` dans `<line_3d_visualization_by_type>`. <br/> - *Flottant :* Par défaut : `1000` |
-| `<coloring_type>`                         | - Détermine la méthode de coloration de la trace. <br/> - *Chaîne de caractères :* `"solid"`, `"speed"`, `"altitude"`, `"slope"`, `"routeInfo_roadClass`, `"routeInfo_surface"`, `"routeInfo_smoothness"` |
-| `<color_palette>`                         | - Spécifie le schéma de couleurs pour la trace. <br/> - *Chaîne de caractères :* `"default"` / [schémas définis par l'utilisateur](/docs/user/personal/color-palette-schemes) |
+| `<coloring_type>`                         | - Détermine la méthode de coloration de la trace. <br/> - *Chaîne :* `"solid"`, `"speed"`, `"altitude"`, `"slope"`, `"routeInfo_roadClass`, `"routeInfo_surface"`, `"routeInfo_smoothness"` |
+| `<color_palette>`                         | - Spécifie le schéma de couleurs pour la trace. <br/> - *Chaîne :* `"default"` / [schémas définis par l'utilisateur](/docs/user/personal/color-palette-schemes) |
 
 ***Exemple :***
 
@@ -76,7 +76,7 @@ Cette section décrit comment OsmAnd affiche les traces sur la carte et les opti
 
 ### Balise 'coloring_type' {#tag-coloringtype}
 
-La balise `<coloring_type>` dans OsmAnd permet aux utilisateurs de personnaliser la coloration des traces en fonction d'attributs de données spécifiques, offrant un moyen visuel d'interpréter les informations clés le long de la trace.
+La balise `<coloring_type>` dans OsmAnd permet aux utilisateurs de personnaliser la coloration des traces en fonction d'attributs de données spécifiques, offrant ainsi un moyen visuel d'interpréter les informations clés le long de la trace.
 
 | Type | Description | Cas d'utilisation |
 |:-----------------------|:--------|:--------|
@@ -91,21 +91,21 @@ La balise `<coloring_type>` dans OsmAnd permet aux utilisateurs de personnaliser
 ### Balises GPX dans l'interface utilisateur {#gpx-tags-in-ui}
 
 Les balises d'extension GPX sont affichées en bas du menu contextuel de la trace.
-Les extensions `<metadata>` et `<gpx>` sont listées.
+Les extensions `<metadata>` et `<gpx>` `<extensions>` sont listées.
 Les balises d'apparence sont exclues de la liste.
 Pris en charge depuis OsmAnd Android 5.0.
 
-## Personnalisation des points de cheminement {#waypoints-customization}
+## Personnalisation des points de passage {#waypoints-customization}
 
-Cette section explique comment OsmAnd permet la personnalisation des points de cheminement dans les fichiers GPX en utilisant des icônes, des couleurs et des regroupements.
+Cette section explique comment OsmAnd permet la personnalisation des points de passage dans les fichiers GPX en utilisant des icônes, des couleurs et des regroupements.
 
-### Icônes des points de cheminement {#waypoint-icons}
+### Icônes de points de passage {#waypoint-icons}
 
-Les balises suivantes contrôlent l'apparence des icônes des points de cheminement dans OsmAnd :
+Les balises suivantes contrôlent l'apparence des icônes de points de passage dans OsmAnd :
 
 | Balise GPX   | Par défaut | Objectif   |
 |:-------------|:----------|:-----------|
-| `<icon>`       | *(aucun)*   | Spécifie l'icône du point de cheminement (par exemple, `historic_castle`). |
+| `<icon>`       | *(aucun)*   | Spécifie l'icône du point de passage (par exemple, `historic_castle`). |
 | `<color>`      | `"red"`     | Définit la couleur de l'icône à l'aide d'un code HEX (par exemple, `#FF0000`) ou d'un nom de couleur (par exemple, `"blue"`). |
 | `<background>` | `"circle"`  | Définit la forme de l'arrière-plan de l'icône. Valeurs possibles : `"circle"`, `"square"`, `"octagon"`. |
 
@@ -113,7 +113,7 @@ Les balises suivantes contrôlent l'apparence des icônes des points de cheminem
 
 ```xml
 <wpt lat="52.5163" lon="13.3779">
-  <name>Porte de Brandebourg</name>
+  <name>Brandenburg Gate</name>
   <extensions>
     <osmand:color>#FF5020</osmand:color>
     <osmand:icon>city_gate</osmand:icon>
@@ -122,27 +122,27 @@ Les balises suivantes contrôlent l'apparence des icônes des points de cheminem
 </wpt>
 ```
 
-### Groupes de points de cheminement {#waypoint-groups}
+### Groupes de points de passage {#waypoint-groups}
 
-Les points de cheminement dans OsmAnd peuvent être triés en groupes en fonction de leur type. Ce regroupement permet à l'utilisateur d'organiser plusieurs points de cheminement sous des catégories spécifiques, améliorant la clarté et la lisibilité de la carte.
+Les points de passage dans OsmAnd peuvent être triés en groupes en fonction de leur type. Ce regroupement permet à l'utilisateur d'organiser plusieurs points de passage sous des catégories spécifiques, améliorant ainsi la clarté et la lisibilité de la carte.
 
 - **Définition du groupe de points.** La balise `<type>` à l'intérieur de l'élément `<wpt>` spécifie le groupe du point (par exemple, `"castle"`, `"aqueduct"`).
-- **Configuration du groupe.** L'extension `<osmand:points_groups>` dans l'élément `<gpx>` définit les paramètres de chaque groupe, y compris le `name`, `color`, `icon` et `background` pour tous les points de cheminement de ce groupe.
+- **Configuration du groupe.** L'extension `<osmand:points_groups>` dans l'élément `<gpx>` définit les paramètres de chaque groupe, y compris le `name`, `color`, `icon` et `background` pour tous les points de passage de ce groupe.
 
 ***Exemple :***
 
 ```xml
 <gpx>
   <wpt lat="1.234" lon="5.678">
-    <name>Regardez en haut pour voir l'eau</name>
+    <name>Look up to see the water</name>
     <type>aqueduct</type>
   </wpt>
   <wpt lat="5.678" lon="1.234">
-    <name>Attention aux fantômes</name>
+    <name>Beware of ghosts</name>
     <type>castle</type>
   </wpt>
   <wpt lat="66.666" lon="66.666">
-    <name>La maison de Beetlejuice</name>
+    <name>The house of Beetlejuice</name>
     <type>castle</type>
   </wpt>
   <extensions>
@@ -176,7 +176,7 @@ La liste des types d'activité pris en charge est disponible dans le fichier [ac
 
 ### HTML dans les descriptions {#html-in-descriptions}
 
-Les balises HTML peuvent être utilisées dans les balises `<desc>` des éléments `<metadata>` ou `<wpt>` pour fournir des descriptions formatées pour les traces ou les points de cheminement.
+Les balises HTML peuvent être utilisées dans les balises `<desc>` des éléments `<metadata>` ou `<wpt>` pour fournir des descriptions formatées pour les traces ou les points de passage.
 
 Pour éviter les conflits avec la syntaxe XML, remplacez les caractères spéciaux comme suit :
 
@@ -190,7 +190,7 @@ Pour éviter les conflits avec la syntaxe XML, remplacez les caractères spécia
 <metadata>
   <desc>
     &lt;p&gt;
-        Le premier paragraphe sera affiché comme description &lt;b&gt;brève&lt;/b&gt;.
+        Le premier paragraphe sera affiché comme une description &lt;b&gt;brève&lt;/b&gt;.
         Les balises HTML sont supprimées dans les descriptions brèves.
     &lt;/p&gt;
     &lt;p&gt;
@@ -212,7 +212,7 @@ Pour éviter les conflits avec la syntaxe XML, remplacez les caractères spécia
 
 ### Balise Link {#link-tag}
 
-Utilisez la balise `<link>` pour associer des URL à des métadonnées, des informations d'auteur ou des points de cheminement dans les fichiers GPX d'OsmAnd. Cette balise peut également afficher une image lorsque l'URL pointe vers un fichier image.
+Utilisez la balise `<link>` pour associer des URL à des métadonnées, des informations d'auteur ou des points de passage dans les fichiers GPX OsmAnd. Cette balise peut également afficher une image lorsque l'URL pointe vers un fichier image.
 
 ***Exemples (Lien de métadonnées avec image) :***
 
@@ -224,7 +224,7 @@ Utilisez la balise `<link>` pour associer des URL à des métadonnées, des info
 </metadata>
 ```
 
-***Exemples (Lien de point de cheminement avec image) :***
+***Exemples (Lien de point de passage avec image) :***
 
 ```xml
 <wpt lat="52.5163" lon="13.3779">
@@ -232,11 +232,11 @@ Utilisez la balise `<link>` pour associer des URL à des métadonnées, des info
 </wpt>
 ```
 
-### Balises de données de capteur {#sensor-data-tags}
+### Balises de données de capteurs {#sensor-data-tags}
 
 Vous pouvez enrichir vos traces avec des données provenant de capteurs de fitness, tels que des moniteurs de fréquence cardiaque ou des capteurs de température. OsmAnd utilise le schéma [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd) de Garmin pour stocker ces données, ce qui les rend compatibles avec des plateformes comme **Strava** et **Garmin Basecamp**.
 
-*Balises de données de capteur prises en charge :*
+*Balises de données de capteurs prises en charge :*
 
 - **hr** - fréquence cardiaque (en battements par minute).
 - **cad** - cadence de vélo (en révolutions par minute).
@@ -283,15 +283,15 @@ Chaque `<trkpt>` (point de trace) dans le fichier GPX peut inclure des attributs
 
 
 
-## Itinéraire(s) calculé(s) {#calculated-routes}
+## Route(s) calculée(s) {#calculated-routes}
 
-Dans **OsmAnd**, vous pouvez calculer un itinéraire et enregistrer toutes les données au format GPX, de sorte que plus tard, toutes les fonctionnalités de navigation seront disponibles comme une navigation GPX en cours d'exécution. Ainsi, le fichier GPX d'OsmAnd contiendra les segments d'itinéraire, les virages, les noms de routes, les types de routes, les restrictions, etc. L'itinéraire peut être entièrement restauré comme s'il venait d'être construit, même en l'absence des cartes hors ligne respectives.
+Dans **OsmAnd**, vous pouvez calculer un itinéraire et enregistrer toutes les données au format GPX, de sorte que toutes les fonctionnalités de navigation seront disponibles ultérieurement comme une navigation GPX en cours d'exécution. Ainsi, le fichier GPX d'OsmAnd contiendra les segments d'itinéraire, les virages, les noms de rues, les types de routes, les restrictions, etc. L'itinéraire peut être entièrement restauré comme s'il venait d'être construit, même en l'absence des cartes hors ligne correspondantes.
 
-Un fichier GPX peut contenir plusieurs itinéraires. Chacun d'eux est contenu dans un segment spécifique sous **trkseg** / **extensions**. Un fichier GPX est enregistré sous cette forme lors de l'exportation d'un itinéraire construit ou lors de l'enregistrement d'une trace composée de plusieurs segments séparés via la fonctionnalité [**Planifier un itinéraire**](../../user/plan-route/create-route.md).
+Un fichier gpx peut contenir plusieurs itinéraires. Chacun d'eux est contenu dans un segment spécifique sous **trkseg** / **extensions**. Un fichier gpx est enregistré sous cette forme lors de l'exportation d'un itinéraire construit ou lors de l'enregistrement d'une trace composée de plusieurs segments séparés via la fonctionnalité [**Planifier un itinéraire**](../../user/plan-route/create-route.md).
 
-[**Planifier un itinéraire**](../../user/plan-route/create-route.md) ajoute également un (ou plusieurs, en fonction du nombre de segments / traces séparés contenus) blocs **rte** au fichier GPX, contenant les points clés de l'itinéraire (**rtept**).
+[**Planifier un itinéraire**](../../user/plan-route/create-route.md) ajoute également un (ou plusieurs, en fonction du nombre de segments / traces séparés contenus) blocs **rte** au fichier gpx, contenant les points clés de l'itinéraire (**rtept**).
 
-#### Structure GPX : {#gpx-structure}
+#### Structure Gpx : {#gpx-structure}
 
 ```xml
 <trk>
@@ -332,15 +332,15 @@ Un fichier GPX peut contenir plusieurs itinéraires. Chacun d'eux est contenu da
 #### Propriétés importantes : {#important-properties}
 
 * **trkpt_idx** du premier **rtept** dans **trkseg** est 0. Donc, s'il y a deux **trkseg**s, il y aura deux **rtept**s avec **trkpt_idx** = 0
-* **trkpt_idx** du dernier **rtept** dans **trkseg** est égal au nombre de **trkpt**s dans **trkseg** moins 1. Par exemple, si **trkseg** a 12 **trkpt**s, **trkpt_idx** du dernier **rtept** doit être 11
+* **trkpt_idx** du dernier **rtept** dans **trkseg** est égal au nombre de **trkpt**s dans **trkseg** moins 1. Par exemple, si **trkseg** a 12 **trkpt**s, **trkpt_idx** du dernier **rtept** devrait être 11
 * Les **segments** d'itinéraire voisins se chevauchent : la fin du **segment** précédent et le début du **segment** suivant sont le même **trkpt**.
-* Il y a une exception lorsque les **segments** d'itinéraire voisins ne se chevauchent pas (ne partagent pas le même **trkpt**). Cela se produit lorsqu'il y a un **rtept** "entre" les **segments** d'itinéraire. La fin du **segment** d'itinéraire précédent est un **trkpt**, et le début du **segment** d'itinéraire suivant est un autre **rtept**. Mais ces deux **trkpt**s sont totalement égaux en termes de lat, lon et autres paramètres.
+* Il y a une exception lorsque les **segments** d'itinéraire voisins ne se chevauchent pas (ne partagent pas le même **trkpt**). Cela se produit lorsqu'il y a un **rtept** "entre" les **segments** d'itinéraire. La fin du **segment** d'itinéraire précédent est un **trkpt**, et le début du **segment** d'itinéraire suivant est un autre **rtept**. Mais ces deux **trkpt**s sont totalement égaux en lat, lon et autres paramètres.
 * Le chevauchement des **segments** d'itinéraire peut être détecté via **length** et **startTrkptIdx** (ce dernier n'est utilisé que pour la commodité de la lecture humaine) :
   - Si la somme de **startTrkptIdx** et **length** du **segment** d'itinéraire précédent est égale à **startTrkptIdx** du **segment** d'itinéraire suivant, les **segments** d'itinéraire ne se chevauchent pas
   - Si la somme est inférieure d'un, alors les **segments** d'itinéraire se chevauchent
 * Il peut y avoir des **segments** d'itinéraire droits. Ils sont marqués avec **id="-1"**. Ils peuvent apparaître dans deux cas :
-  - Il s'agit d'un itinéraire multiprofil, et l'utilisateur a sélectionné une ligne droite
-  - L'utilisateur a placé un **rtept** trop loin de la route la plus proche, de sorte qu'osmand a tracé une ligne droite entre **rtept** et la route
+  - C'est un itinéraire multiprofil, et l'utilisateur a sélectionné une ligne droite
+  - L'utilisateur a placé **rtept** trop loin de la route la plus proche, donc osmand a tracé une ligne droite entre **rtept** et la route
 * trkpts = length - (segments - 1) + (rtepts - 2), où :
   - trkpts - nombre de **trkpt**s à l'intérieur de **trkseg**
   - length - somme de toutes les **length**s des **segments** d'itinéraire à l'intérieur de **trkseg**
@@ -352,10 +352,10 @@ Un fichier GPX peut contenir plusieurs itinéraires. Chacun d'eux est contenu da
 ```xml
 <gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>Ven 06 Nov 2020</name>
+    <name>Fri 06 Nov 2020</name>
   </metadata>
   <trk>
-    <name>Ven 06 Nov 2020</name>
+    <name>Fri 06 Nov 2020</name>
     <trkseg>
       <trkpt lat="52.3639849" lon="4.8900533">
         <ele>0.801</ele>
@@ -426,7 +426,7 @@ Un fichier GPX peut contenir plusieurs itinéraires. Chacun d'eux est contenu da
 
 ## Collections GPX en OBF {#gpx-collections-in-obf}
 
-OsmAnd vous permet de convertir plusieurs fichiers GPX en un seul fichier OBF. Cela permet de stocker des milliers de traces GPX dans un format compact et optimisé tout en conservant des fonctionnalités telles que des icônes de carte spéciales, la personnalisation de l'apparence des traces et la fonctionnalité de recherche. Cela évite la limite des fichiers GPX locaux volumineux qui ne peuvent généralement pas gérer plus de 500 000 points au total, bien que certaines fonctionnalités des traces GPX puissent être manquantes par rapport à l'affichage d'un fichier OBF.
+OsmAnd vous permet de convertir plusieurs fichiers GPX en un seul fichier OBF. Cela permet de stocker des milliers de traces GPX dans un format compact et optimisé tout en conservant des fonctionnalités telles que les icônes de carte spéciales, la personnalisation de l'apparence des traces et la fonctionnalité de recherche. Cela évite la limite des fichiers GPX locaux volumineux qui ne peuvent généralement pas gérer plus de 500 000 points au total, bien que certaines fonctionnalités des traces GPX puissent être manquantes par rapport à l'affichage d'un fichier OBF.
 
 Étapes pour convertir GPX en OBF :
 
@@ -476,16 +476,16 @@ Les boucliers sont des icônes ou des symboles affichés le long de la ligne de 
 
 - Icône d'arrière-plan - la forme principale (par exemple, cercle ou carré).
 - Icônes de premier plan - jusqu'à deux symboles plus petits superposés à l'arrière-plan.
-- Texte - descriptions courtes ou identifiants, dérivés des balises `shield_text` ou `ref`.
+- Texte - courtes descriptions ou identifiants, dérivés des balises `shield_text` ou `ref`.
 
 Si aucune propriété de bouclier n'est définie, OsmAnd utilise un bouclier jaune de taille automatique pour la trace.
 
 ***Balises pour les boucliers :***
 
-| Balise GPX         | Objectif                                                               |
+| Balise GPX         | Objectif                                                                |
 |:-------------------|:-----------------------------------------------------------------------|
-| `shield_bg`        | Définit l'icône d'arrière-plan pour le bouclier.                           |
-| `shield_fg`        | Spécifie la première icône de premier plan (par exemple, une flèche ou un point). |
+| `shield_bg`        | Définit l'icône d'arrière-plan pour le bouclier.                            |
+| `shield_fg`        | Spécifie la première icône de premier plan (par exemple, une flèche ou un point).           |
 | `shield_fg_2`      | Spécifie la deuxième icône de premier plan (facultatif).                       |
 | `shield_text`      | Définit le texte court à afficher au-dessus du bouclier (par exemple, référence d'itinéraire). |
 | `shield_textcolor` | Détermine la couleur du texte du bouclier (facultatif).                    |
@@ -509,13 +509,13 @@ Si aucune propriété de bouclier n'est définie, OsmAnd utilise un bouclier jau
 </gpx>
 ```
 
-### Affichage des points de cheminement {#waypoints-display}
+### Affichage des points de passage {#waypoints-display}
 
-Les icônes des points de cheminement peuvent être personnalisées avec les balises suivantes :
+Les icônes de points de passage peuvent être personnalisées avec les balises suivantes :
 
 | Balise GPX   | Par défaut | Objectif                                   |
 |:-------------|:---------|:---------------------------------------------------|
-| `icon`       | *(aucun)*  | Spécifie l'icône du point de cheminement (utilise les icônes standard de l'éditeur de points de cheminement OsmAnd). |
+| `icon`       | *(aucun)*  | Spécifie l'icône du point de passage (utilise les icônes standard de l'éditeur de points de passage OsmAnd). |
 | `color`      | `red`    | Définit la couleur de l'icône à l'aide d'un code HEX (par exemple, `#ffaa00`) ou d'un nom de couleur pris en charge (options limitées). |
 | `background` | `circle` | Définit la forme de l'icône. Valeurs prises en charge : `circle`, `square`, `octagon`. |
 
@@ -529,8 +529,8 @@ Les icônes des points de cheminement peuvent être personnalisées avec les bal
 
 ***Améliorations avec des éléments supplémentaires :***
 
-- Vous pouvez ajouter des descriptions formatées aux points de cheminement à l'aide de [code HTML](#html-in-descriptions). Cela vous permet d'inclure du texte stylisé, des liens ou même des images.
-- Les points de cheminement peuvent afficher des images liées à l'aide de [Link-as-Image](#link-tag).
+- Vous pouvez ajouter des descriptions formatées aux points de passage à l'aide de [code HTML](#html-in-descriptions). Cela vous permet d'inclure du texte stylisé, des liens ou même des images.
+- Les points de passage peuvent afficher des images liées à l'aide de [Lien en tant qu'image](#link-tag).
 
 ***Exemple :***
 
@@ -548,15 +548,15 @@ Les icônes des points de cheminement peuvent être personnalisées avec les bal
 
 ### Recherche par nom et références {#search-by-name-and-refs}
 
-Les traces et les points de cheminement peuvent être localisés à l'aide d'une variété de balises GPX.
+Les traces et les points de passage peuvent être localisés à l'aide d'une variété de balises GPX.
 
 | Balise GPX    | Emplacement            | Objectif                                                                     |
 |:--------------|:-----------------------|:----------------------------------------------------------------------------|
 | `<name>`      | `<metadata>`           | Le nom principal de la trace GPX.                                          |
-| `ref`         | `<extensions>` GPX     | Un identifiant court, souvent dérivé de la balise `ref` d'OSM.                   |
-| `shield_text` | `<extensions>` GPX     | Texte affiché sur les boucliers (peut également être utilisé avec `ref`).                    |
-| `name_-_lang` | `<extensions>` GPX/WPT | `name:lang` localisé (par exemple, `name_-_en` pour l'anglais, remplacer `:` -> `_-_`) |
-| `<name>`      | `<wpt>`                | Le nom du point de cheminement.                                                   |
+| `ref`         | GPX `<extensions>`     | Un identifiant court, souvent dérivé de la balise OSM `ref`.                   |
+| `shield_text` | GPX `<extensions>`     | Texte affiché sur les boucliers (peut également être utilisé avec `ref`).                    |
+| `name_-_lang` | GPX/WPT `<extensions>` | `name:lang` localisé (par exemple, `name_-_en` pour l'anglais, remplacer `:` -> `_-_`) |
+| `<name>`      | `<wpt>`                | Le nom du point de passage.                                                   |
 
 ***Exemple :***
 
@@ -571,7 +571,7 @@ Les traces et les points de cheminement peuvent être localisés à l'aide d'une
   <wpt lat="35.948477" lon="14.3806796">
     <name>Il-Mighba Rumana</name>
     <extensions>
-      <osmand:name_-_en>L'Apiary Romain</osmand:name_-_en>
+      <osmand:name_-_en>The Roman Apiary</osmand:name_-_en>
     </extensions>
   </wpt>
 </gpx>
@@ -581,7 +581,7 @@ Les traces et les points de cheminement peuvent être localisés à l'aide d'une
 
 OsmAnd organise les traces dans les fichiers OBF en **Groupes d'activités** et **Types d'activités**. Ces classifications vous aident à filtrer les traces en tant que POI ou à créer des filtres de recherche basés sur les activités.
 
-Comment fonctionnent les types d'activité :
+Comment fonctionnent les types d'activités :
 
 - Les types et groupes d'activités sont déterminés à l'aide des `"id"` et `"tags"` du fichier [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json).
 - OsmAnd utilise les balises `osmand:activity` ou `osmand:route` pour classer les activités dans les fichiers GPX.
@@ -590,7 +590,7 @@ Comment fonctionnent les types d'activité :
 | Balise GPX        | Emplacement | Objectif                                          |
 |:------------------|:---------|:-------------------------------------------------|
 | `osmand:activity` | `<metadata>` | Balise OsmAnd principale pour stocker le type d'activité (ID). |
-| `osmand:route`    | `<extensions>` GPX | Autre façon OSM de définir le type d'activité. |
+| `osmand:route`    | GPX `<extensions>` | Autre façon OSM de définir le type d'activité. |
 
 
 ***Exemples d'organisation des traces par type d'activité :***
@@ -622,7 +622,7 @@ Les fichiers OBF génèrent et stockent automatiquement des statistiques et des 
 | Balise OBF                            | Objectif                                                               |
 |:--------------------------------------|:----------------------------------------------------------------------|
 | `distance`                            | Distance totale couverte par tous les segments de trace.                         |
-| `start_ele`, `ele_graph`              | Données d'élévation du GPX, enveloppées dans un tableau binaire compact.           |
+| `start_ele`, `ele_graph`              | Données d'élévation du GPX, encapsulées dans un tableau binaire compact.           |
 | `min_ele`, `avg_ele`, `max_ele`       | Analyses d'élévation minimale, moyenne et maximale.                    |
 | `diff_ele_up`, `diff_ele_down`        | Gain et perte d'élévation totaux sur la trace.                       |
 | `max_speed`, `avg_speed`, `min_speed` | Analyses de vitesse de trace, y compris la vitesse maximale, moyenne et minimale. |
@@ -643,11 +643,11 @@ Certaines balises GPX sont utilisées ou stockées indirectement dans les fichie
 | `track_color`                | Couleur de trace de la section de carte dérivée de `shield_waycolor`, `color`, `colour`, ou `displaycolor`               |
 | `extensions_extra_tags`      | Balises supplémentaires arbitraires pour `<gpx><extensions>` au format JSON.                                               |
 | `metadata_extra_tags`        | Balises supplémentaires arbitraires pour `<metadata><extensions>` au format JSON.                                               |
-| `wpt_extra_tags`             | Balises supplémentaires arbitraires pour les points de cheminement `<wpt><extensions>` au format JSON.                                     |
-| `route_track_point`          | Les points de cheminement du fichier GPX utilisent ce type dans les données de POI.                                                         |
+| `wpt_extra_tags`             | Balises supplémentaires arbitraires pour les points de passage `<wpt><extensions>` au format JSON.                                     |
+| `route_track_point`          | Les points de passage du fichier GPX utilisent ce type dans les données POI.                                                         |
 | `route_bbox_radius`          | Spécifie le rayon par défaut pour la recherche de parties de la trace dans la section POI                       |
 | `route_shortlink_tiles`      | Spécifie une liste de tuiles OSM Shortlink séparées par des virgules pour accélérer la lecture des données de géométrie (facultatif)       |
 | `route_segment_index`        | Spécifie un numéro ordinal du segment de géométrie qui est lié à ce point (facultatif)               |
 | `route_name`                 | Le nom de l'itinéraire, utilisé par la fonction interne `searchPoiByName` (obsolète)                                            |
 
-> *Cet article a été mis à jour pour la dernière fois en mars 2025*
+> *Dernière mise à jour : mars 2025*

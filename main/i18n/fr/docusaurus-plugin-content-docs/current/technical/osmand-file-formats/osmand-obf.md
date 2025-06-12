@@ -1,5 +1,5 @@
 ---
-source-hash: 48bc9a285f5977bfbb67838e06e88367e642e126d02ef098ce1c676e4701fbec
+source-hash: d5b7054e046a16fa52c2baf86bbe3278c548299ab710161c6f4e85a0c2933ff7
 sidebar_position: 7
 ---
 
@@ -8,20 +8,20 @@ sidebar_position: 7
 ## Introduction {#introduction}
 Parlez de *.travel.obf, *.wiki.obf, *.roads.obf, ...
 
-De nombreuses questions portent sur le contenu et les problèmes liés aux données cartographiques dans l'application. Ce sujet révèle quelques détails techniques sur le format de données interne et le traitement des données. Il peut être intéressant pour les non-développeurs familiers avec la structure des données OSM.
+De nombreuses questions portent sur le contenu et les problèmes liés aux données cartographiques dans l'application. Ce sujet révèle quelques détails techniques du format de données interne et du traitement des données. Il peut être intéressant pour les non-développeurs familiers avec la structure des données OSM.
 
-Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichiers 'obf'. Les fichiers 'obf' ont une structure complexe et peuvent être composés de nombreuses parties. Il est fortement recommandé de maintenir la taille des fichiers en dessous de 2 Go. Actuellement, les fichiers obf peuvent avoir de nombreuses parties composées de plusieurs parties POI, de plusieurs parties de données de routage, de plusieurs parties de carte, de plusieurs parties de transport et de plusieurs parties de données d'adresse. Cette liste peut être étendue à l'avenir. Pour combiner, diviser ou supprimer certaines parties du fichier obf, utilisez l'outil console 'binary\_inspector' fourni avec OsmAndMapCreator.
+Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichiers 'obf'. Les fichiers 'obf' ont une structure complexe et peuvent être composés de plusieurs parties. Il est fortement recommandé de maintenir la taille des fichiers en dessous de 2 Go. Actuellement, les fichiers obf peuvent avoir de nombreuses parties composées de plusieurs parties POI, de plusieurs parties de données de routage, de plusieurs parties de carte, de plusieurs parties de transport et de plusieurs parties de données d'adresse. Cette liste peut être étendue à l'avenir. Pour combiner, diviser ou supprimer certaines parties du fichier obf, utilisez l'outil console 'binary\_inspector' fourni avec OsmAndMapCreator.
 * POI, partie Transport
 * Partie Carte
 * Partie Adresse
 
 > Q : Comment mapcreator génère-t-il sa liste de tous les lieux qui apparaîtront plus tard dans la recherche d'adresses hors ligne d'OsmAnd ? Quels objets sont utilisés en détail pour cela ? Quels nœuds avec une balise de lieu sont inclus et lesquels sont exclus ?
 >
-> R : Tous les lieux visibles dans OsmAnd comme des villes sont tirés des nœuds qui ont la balise "place" [https://wiki.openstreetmap.org/wiki/Place](https://wiki.openstreetmap.org/wiki/Place "https://wiki.openstreetmap.org/wiki/Place"). Actuellement, city, town, suburb, village, hamlet sont utilisés.
+> R : Tous les lieux visibles dans OsmAnd en tant que villes sont tirés des nœuds qui ont la balise "place" [https://wiki.openstreetmap.org/wiki/Place](https://wiki.openstreetmap.org/wiki/Place "https://wiki.openstreetmap.org/wiki/Place"). Actuellement, city, town, suburb, village, hamlet sont utilisés.
 >
 > Q : Comment mapcreator gère-t-il un polygone de zone donné via une relation avec boundary=administrative ? Comment associez-vous un lieu donné comme un nœud à sa limite lorsqu'il est présent dans les données OSM ?
 >
-> R : En termes simples : cela fonctionne actuellement par nom. Mapcreator essaie de visiter toutes les limites et crée une limite fermée (!) à partir de la relation ou de chemins séparés et l'associe à un seul nom. Après cela, il essaie de faire correspondre \*place\* avec \*boundary name\* en utilisant l'algorithme \*contains of\*. Il y a aussi une vérification supplémentaire si cette limite contient le lieu. S'il y a de nombreuses limites de différents admin\_level avec le même nom (se contenant les unes les autres comme district/ville/région ayant le même nom), le plus haut admin\_level avec une correspondance exacte sera choisi. TODO Plus de détails devraient être ici (sur les districts de la ville ...) ...
+> R : En termes simples : cela fonctionne actuellement par nom. Mapcreator essaie de visiter toutes les limites et crée une limite fermée (!) à partir de la relation ou de chemins séparés et l'associe à un seul nom. Après cela, il essaie de faire correspondre \*place\* avec \*boundary name\* en utilisant l'algorithme \*contains of\*. Il y a aussi une vérification supplémentaire si cette limite contient le lieu. S'il y a de nombreuses limites de différents admin\_level avec le même nom (se contenant mutuellement comme district/ville/région ayant le même nom), le plus haut admin\_level avec une correspondance exacte sera choisi. TODO Plus de détails devraient être ici (sur les districts de la ville...) ...
 >
 > Q : Où se trouve la documentation décrivant quel niveau d'administration est approprié pour établir une association avec un certain nœud de lieu ? Quels pays préfèrent quel niveau d'administration ?
 >
@@ -36,13 +36,13 @@ Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichier
 >
 > La dernière partie est très imprécise. C'est pourquoi de nombreuses rues sont attachées à une ville voisine.
 >
-> Dans les préférences de MapCreator, vous avez cinq autres paramètres pour les suffixes de rue, le zoom, la fluidité et le rendu ... quels sont les effets détaillés que vous pouvez obtenir avec chacun d'eux ? Ces paramètres sont-ils réellement utilisés ?
+> Dans les préférences de MapCreator, vous avez cinq autres paramètres pour les suffixes de rue, le zoom, la fluidité et le rendu... quels sont les effets détaillés que vous pouvez obtenir avec chacun d'eux ? Ces paramètres sont-ils réellement utilisés ?
 >
 > Outils
 >
 > -   OsmAndMapCreator peut afficher quelles rues sont associées à quelle ville (menu contextuel -> Afficher l'adresse). Les fichiers obf locaux doivent être présents et configurés dans les paramètres.
 > -   L'outil Binary inspector peut afficher une liste de rues pour chaque ville. Exécutez l'outil sans paramètres pour voir les paramètres possibles.
-> -   Actuellement, tous les fichiers d'index contiennent gen.log. En consultant le fichier journal, vous pouvez trouver des erreurs dans le processus de création de la carte et cela pourrait donner une réponse expliquant pourquoi certaines rues ne se trouvent pas au bon endroit dans l'index d'adresses.
+> -   Actuellement, tous les fichiers d'index contiennent gen.log. En consultant le fichier journal, vous pouvez trouver des erreurs dans le processus de création de la carte, ce qui pourrait donner une réponse expliquant pourquoi certaines rues ne se trouvent pas au bon endroit dans l'index d'adresses.
 >
 > Partie Adresse - flux de travail
 >
@@ -52,19 +52,19 @@ Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichier
 >
 > limite -> 0..\*\* ville (utilisé pour définir la banlieue de la ville)
 >
-> itérer sur tous les NŒUDS Osm et enregistrer comme villes si la balise = PLACE est présente :
+> itérer sur tous les NŒUDS Osm et les enregistrer comme villes si la balise = PLACE est présente :
 >
 > -   extraire les villes (TOWN, CITY).
 > -   extraire les villages (tout le reste).
 >
 > itérer sur toutes les RELATIONS et CHEMINS avec type=boundary et enregistrer toutes les limites :
 >
-> -   la limite est appelée Entité (chemin ou relation) avec la balise 'boundary=administrative' ou avec la balise 'place=...'.
+> -   une limite est appelée Entité (chemin ou relation) avec la balise 'boundary=administrative' ou avec la balise 'place=...'.
 > -   la limite doit être admin\_level > 4 ou ne pas avoir d'admin\_level.
-> -   la limite n'est pas toujours associée à une ville (ou un état, ...).
-> -   la limite peut avoir un membre 'admin\_center', 'label' pointant vers un nœud de ville.
-> -   la limite correspond exactement par nom au nœud de ville et le nœud de ville se trouve dans la limite.
-> -   la limite correspond au début, à la fin ou à une sous-chaîne par nom au nœud de ville et le nœud de ville se trouve dans la limite.
+> -   une limite n'est pas toujours associée à une ville (ou un état, ...).
+> -   une limite peut avoir un membre 'admin\_center', 'label' pointant vers un nœud de ville.
+> -   la limite correspond exactement par nom au nœud de ville et le nœud de ville se trouve à l'intérieur de la limite.
+> -   la limite correspond au début, à la fin ou à une sous-chaîne par nom au nœud de ville et le nœud de ville se trouve à l'intérieur de la limite.
 >
 > De nombreuses limites peuvent être associées à une seule ville. Voici l'ordre dans lequel la limite la plus importante est prise et associée à la ville :
 >
@@ -73,7 +73,7 @@ Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichier
 > -   La limite a une correspondance admin\_id.
 > -   Tous les autres cas, y compris le tri d'admin\_level.
 >
-> si la ville n'a pas de limite attribuée, toutes les limites qui n'ont pas de centres de villes et contiennent cette ville seront vérifiées et la limite avec admin\_level >=7 sera attribuée.
+> si la ville n'a aucune limite attribuée, toutes les limites qui n'ont pas de centres de villes et qui contiennent cette ville seront vérifiées et la limite avec admin\_level >=7 sera attribuée.
 >
 > pour chaque limite, faire une liste des villes qui s'y trouvent.
 >
@@ -105,7 +105,7 @@ Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichier
 >
 > enregistrer la rue (rue, emplacement de la rue (los), villes) :
 >
-> **Note :** nous pourrions enregistrer une rue dans plusieurs villes = cela signifie que la rue peut se trouver dans des zones imbriquées, banlieue, ville, hameau, etc... Pour chaque zone, nous voulons enregistrer la rue dans laquelle elle se trouve.
+> **Note :** nous pourrions enregistrer une rue dans plusieurs villes = cela signifie que la rue peut se trouver dans des zones imbriquées, une banlieue, une ville, un hameau, etc... Pour chaque zone, nous voulons enregistrer la rue dans laquelle elle se trouve.
 >
 > pour chaque ville :
 >
@@ -124,7 +124,7 @@ Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichier
 >
 > -   trouver les villes proches de la rue
 > -   si la rue se trouve dans la limite de la ville, ajouter la ville pour la recherche
-> -   si aucune ville n'a été trouvée, en utilisant la limite, trouver la ville la plus proche pour la rue
+> -   si aucune ville n'a été trouvée en utilisant la limite, trouver la ville la plus proche pour la rue
 > -   enregistrer la rue : pour les villes trouvées
 >
 > itérer sur tous les NŒUDS, puis les CHEMINS, puis les RELATIONS (itérer sur l'entité principale)
@@ -132,7 +132,7 @@ Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichier
 > trouver les chemins - interpolations :
 >
 > -   pour chaque interpolation, findOrRegister une rue avec l'emplacement de l'interpolation
-> -   pour chaque deux nœuds, créer un bâtiment représentant l'interpolation
+> -   pour chaque paire de nœuds, créer un bâtiment représentant l'interpolation
 >
 > pour toute entité, trouver les balises addr:housenumber et addr:street (peut aussi être l'interpolation de nœuds à nouveau !!!) :
 >
@@ -141,19 +141,19 @@ Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichier
 > -   trouver le numéro de maison
 > -   si le numéro de maison contient '-', essayer de créer un numéro de maison interpolé (latlon2 manquant ?)
 > -   si le numéro de maison contient '/', essayer de rechercher la deuxième rue addr:street2 --> semble uniquement pour [RU osm](https://wiki.openstreetmap.org/wiki/RU:Key:addr) :
-> -   il existe d'autres variations pour cela : adr:housenumber2, addr2:street, addr2:housenumber etc...
+> -   il existe d'autres variations pour cela : adr:housenumber2, addr2:street, addr2:housenumber, etc...
 > -   pour chaque rue, stocker la maison existante
 >
 > pour le chemin avec la balise - name & tag - highway, mais sans addr:housenumber et addr:street :
 >
-> -   **Note :** il peut s'agir de chemins pour les voitures, avec des noms (autoroute, etc.)
+> -   **Note** : il peut s'agir de chemins pour les voitures, avec des noms (autoroute, etc.)
 > -   ignorer si une telle rue existe déjà
 > -   findOrRegister la rue pour la ville
 > -   écrire les nœuds pour chaque rue trouvée dans chaque ville
 >
 > Chaque relation avec "postal\_code", stocker pour une utilisation ultérieure.
 >
-> **Note :** cela n'inclut pas address:type = pc et addr:postalcode
+> **Note** : cela n'inclut pas address:type = pc et addr:postalcode
 >
 > traiter les codes postaux :
 >
@@ -168,7 +168,7 @@ Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichier
 >
 > lire la rue des villes+bourgs + banlieues appropriées pour chaque bourg
 >
-> -   ici, il peut y avoir plusieurs rues avec le même nom pour une ville, dans ce cas, nous essayons de trouver une partie de la ville pour la rue (banlieue), où se trouve la rue. Il ne devrait pas y avoir plus de rues avec le même nom dans une même partie de la ville !
+> -   ici, il peut y avoir plusieurs rues avec le même nom pour une ville, dans ce cas, nous essayons de trouver une partie de la ville pour la rue (banlieue), où se trouve la rue. Il ne devrait pas y avoir plus de rues avec le même nom dans une seule partie de la ville !
 >
 > pour chaque rue
 >

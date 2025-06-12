@@ -1,9 +1,9 @@
 ---
-source-hash: 47ef6f830b3d993697671927528d4d43cd4a66de5b95fb505c52caefdfd55e91
+source-hash: 4555734ace3e7132cbe343a64b51b8a14b9f7d50262e566f5b87185e156e7f36
 sidebar_position: 5
 title:  Itinéraire en transports en commun
----
 
+---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,11 +15,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
+
 ## Aperçu {#overview}
 
-La navigation en transports en commun dans l'application OsmAnd vous permet d'élaborer des itinéraires en utilisant les transports en commun, ce qui vous aidera certainement à vous déplacer plus rapidement dans la "jungle de béton".
+La navigation en transports en commun dans l'application OsmAnd vous permet de calculer des itinéraires en utilisant les transports en commun, ce qui vous aidera certainement à vous déplacer plus rapidement dans la "jungle de béton".
 
-Les données sur les itinéraires de transports en commun sont tirées du projet [OpenStreetMap](http://openstreetmap.org/). OsmAnd utilise le [schéma PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) pour la navigation. OsmAnd prend en charge les itinéraires OpenStreetMap suivants pour la navigation : *bus*, *trolleybus*, *share_taxi*, *funiculaire*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. La vitesse par défaut pour chaque type de véhicule est configurée dans [Routing xml](../../../technical/build-osmand/routing.md) et est utilisée pour trouver les itinéraires les plus rapides.
+Les données sur les itinéraires de transports en commun proviennent du projet [OpenStreetMap](http://openstreetmap.org/). OsmAnd utilise le [schéma PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) pour la navigation. OsmAnd prend en charge les itinéraires OpenStreetMap suivants pour la navigation : *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. La vitesse par défaut pour chaque type de véhicule est configurée dans [Routing xml](../../../technical/build-osmand/routing.md) et est utilisée pour trouver les itinéraires les plus rapides.
 
 :::note
 La navigation en transports en commun est en phase de test. Pour l'instant, vous pouvez construire et visualiser votre itinéraire sans la fonction de navigation complète.
@@ -29,11 +30,11 @@ La navigation en transports en commun est en phase de test. Pour l'instant, vous
 
 <TabItem value="android" label="Android">
 
-![Navigation public transport Android](@site/static/img/navigation/public/navigation_android.png)  
+![Navigation public transport Android](@site/static/img/navigation/public/navigation_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
 ![avigation public transport iOS](@site/static/img/navigation/public/navigation_ios.png)
 
@@ -44,9 +45,9 @@ La navigation en transports en commun est en phase de test. Pour l'instant, vous
 
 ## Comment utiliser {#how-to-use}
 
-Pour commencer à naviguer dans la ville en transports en commun, utilisez [le bouton de navigation](../../widgets/map-buttons.md#directions) sur l'écran de la carte ou sélectionnez l'option de navigation dans le *Menu principal*.  
+Pour commencer à naviguer dans la ville en transports en commun, utilisez [le bouton de navigation](../../widgets/map-buttons.md#directions) sur l'écran de la carte ou sélectionnez l'option de navigation dans le *Menu principal*.
 
-**1.** Vous devez choisir le *profil de navigation Transports en commun*, les points de départ et d'arrivée.  
+**1.** Vous devez choisir le *profil de navigation Transports en commun*, les points de départ et d'arrivée.
 
 <Tabs groupId="operating-systems">
 
@@ -56,7 +57,7 @@ Pour commencer à naviguer dans la ville en transports en commun, utilisez [le b
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
 ![Navigation public transport routes iOS](@site/static/img/navigation/public/navigation_public_ios.png)
 
@@ -64,7 +65,7 @@ Pour commencer à naviguer dans la ville en transports en commun, utilisez [le b
 
 </Tabs>
 
-**2.** OsmAnd propose des options d'itinéraire avec les temps de marche et les itinéraires de transports en commun avec des informations sur l'itinéraire : temps, distance, transfert et itinéraires publics. Vous devez faire défiler l'écran de navigation pour sélectionner l'option requise.  
+**2.** OsmAnd propose des options d'itinéraire avec les temps de marche et les itinéraires de transports en commun avec des informations sur l'itinéraire : temps, distance, correspondance et lignes de transports en commun. Vous devez faire défiler l'écran de navigation pour sélectionner l'option requise.
 
 <Tabs groupId="operating-systems">
 
@@ -74,7 +75,7 @@ Pour commencer à naviguer dans la ville en transports en commun, utilisez [le b
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
 ![Navigation public transport way iOS](@site/static/img/navigation/public/navigation_way_ios.png)
 
@@ -92,7 +93,7 @@ Pour commencer à naviguer dans la ville en transports en commun, utilisez [le b
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
 ![Navigation public transport Details iOS](@site/static/img/navigation/public/navigation_details_ios.png)
 
@@ -101,7 +102,7 @@ Pour commencer à naviguer dans la ville en transports en commun, utilisez [le b
 </Tabs>
 
 
-**4.** Appuyez sur le bouton "Détails" pour ouvrir une description de l'itinéraire sélectionné avec tous les arrêts et transferts.  
+**4.** Appuyez sur le bouton "Détails" pour ouvrir une description de l'itinéraire sélectionné avec tous les arrêts et correspondances.
 
 <Tabs groupId="operating-systems">
 
@@ -111,7 +112,7 @@ Pour commencer à naviguer dans la ville en transports en commun, utilisez [le b
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
 ![Navigation public transport stops list iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
 
@@ -122,10 +123,10 @@ Pour commencer à naviguer dans la ville en transports en commun, utilisez [le b
 
 ## Données et directives {#data-and-guideline}
 
-OsmAnd utilise un nouveau schéma de transports en commun, également appelé Public Transport Version 2 (PTv2) pour l'algorithme de navigation des transports en commun d'OsmAnd.
+OsmAnd utilise un nouveau schéma de transports en commun, également appelé Public Transport Version 2 (PTv2), pour l'algorithme de navigation des transports en commun d'OsmAnd.
 
 - Vous pouvez vérifier vos transports en commun [ici](http://tools.geofabrik.de/osmi/).
 - Un guide pour construire ou ajuster les itinéraires de transports en commun est disponible sur notre [blog](https://osmand.net/blog/guideline-pt).
-- La présentation [2019 : Navigation en transports en commun utilisant OpenStreetMap par OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
+- La présentation [2019: Public Transport Navigation using OpenStreetMap by OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
 
-> *Cet article a été mis à jour pour la dernière fois en juin 2024.*
+> *Dernière mise à jour : juin 2024.*

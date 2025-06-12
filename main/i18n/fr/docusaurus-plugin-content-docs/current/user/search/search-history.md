@@ -1,9 +1,8 @@
 ---
-source-hash: 783e364623f414c045ef36990a7a5cd28d15d3b77a3d20b16a585399f53290c1
+source-hash: 7a908eb0d049f610343ddbeb81ac84c7f787f549729ffd82f824c9c2f9bd25d6
 sidebar_position: 3
 title:  Historique de recherche
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,9 +12,10 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 ## Aperçu {#overview}
 
-L'*historique de recherche* est un enregistrement de toutes les recherches et de tous les lieux que vous avez saisis ou recherchés dans l'application au cours de la période d'utilisation. Cet outil vous permet de trouver et d'accéder facilement aux lieux précédemment recherchés, ce qui facilite la navigation et vous fait gagner du temps.
+L'*Historique de recherche* est un enregistrement de toutes les recherches et de tous les lieux que vous avez saisis ou recherchés dans l'application au cours de la période d'utilisation. Cet outil vous permet de trouver et d'accéder facilement aux lieux précédemment recherchés, ce qui facilite la navigation et vous fait gagner du temps.
 
 OsmAnd propose plusieurs façons de consulter votre historique de recherche.
 
@@ -98,7 +98,7 @@ Les **types d'objets** suivants entrent dans la liste de l'historique de recherc
 
 ## Actions {#actions}
 
-Dans l'outil Historique de recherche, vous pouvez [supprimer](#delete) les requêtes inutiles, toutes en même temps ou par éléments individuels. Vous pouvez utiliser l'[exportation](#export-and-share) de l'historique. L'application Android offre une action supplémentaire de [partage](#share-android) des éléments de recherche sous forme de fichier [GPX](../../technical/osmand-file-formats/osmand-gpx.md).
+Dans l'outil Historique de recherche, vous pouvez [supprimer](#delete) les requêtes inutiles, toutes en même temps ou par éléments individuels. Vous pouvez utiliser l'[exportation](#export-and-share) de l'historique. L'application Android offre une action supplémentaire de [partage](#share-android) d'éléments de recherche sous forme de fichier [GPX](../../technical/osmand-file-formats/osmand-gpx.md).
 
 Vous pouvez **désactiver ou activer** l'affichage de l'intégralité de l'historique de recherche. Dans ce cas, les requêtes ne sont pas supprimées de l'appareil. Dans Android, l'interrupteur se trouve sur l'écran principal de l'outil, dans l'[onglet Historique](#overview). Dans iOS, il se trouve dans *Menu → Paramètres → Paramètres OsmAnd → Historique → Historique de recherche*.
 
@@ -121,7 +121,7 @@ Vous pouvez **désactiver ou activer** l'affichage de l'intégralité de l'histo
 
 </Tabs>
 
-Après avoir utilisé OsmAnd pendant une longue période, la liste de l'*historique de recherche* peut devenir trop longue, de sorte que la suppression des requêtes de recherche permet de vider la liste. Vous pouvez supprimer les requêtes qui ne sont plus pertinentes ou que vous n'avez plus l'intention d'utiliser à l'avenir, ce qui facilite la recherche dans la liste, surtout lorsque vous devez trouver rapidement des requêtes de recherche spécifiques.
+Après avoir utilisé OsmAnd pendant une longue période, la liste de l'*Historique de recherche* peut devenir trop longue, de sorte que la suppression des requêtes de recherche permet de vider la liste. Vous pouvez supprimer les requêtes qui ne sont plus pertinentes ou que vous n'avez plus l'intention d'utiliser à l'avenir, ce qui facilite la recherche dans la liste, surtout lorsque vous devez trouver rapidement des requêtes de recherche spécifiques.
 
 Vous devez **appuyer longuement sur l'un des éléments de requête de la liste** pour ouvrir l'écran de suppression.
 
@@ -153,7 +153,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 </Tabs>
 
-Plusieurs options sont disponibles pour exporter l'historique de recherche. Tous les fichiers sont exportés au format `.osf` (fichier de paramètres OsmAnd).
+Plusieurs options sont disponibles pour exporter l'historique de recherche. Tous les fichiers sont exportés au format `.osf` (OsmAnd settings File).
 
 1. *Menu → Paramètres → Paramètres OsmAnd → Historique → Historique de recherche*.
     L'exportation est disponible via le menu des paramètres OsmAnd. Pour Android, suivre ce chemin vous amène à l'écran de suppression, où le [partage de l'historique](#share-android) est disponible. Dans le cas d'iOS, vous pouvez sélectionner des éléments individuels ou l'intégralité de l'historique sur l'écran, et après avoir appuyé sur le bouton *Exporter*, accéder au menu *Sauvegarde locale*.
@@ -196,4 +196,4 @@ Sur l'écran de [suppression](#delete), sélectionnez les éléments requis dans
 - [Rechercher des coordonnées](./search-coordinates.md)
 
 
-> *Cet article a été mis à jour pour la dernière fois en juillet 2024*
+> *Dernière mise à jour : juillet 2024*

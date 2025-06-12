@@ -1,9 +1,8 @@
 ---
-source-hash: 0f42589e38d1978b1691ab971e855b3b493b6165120e7ac0a8b5745cc6418f19
+source-hash: 86a8bfde16941bcffdc5129bb4a29e33fad3d85fc69d6aa1cb05584a5cc0d8fd
 sidebar_position: 2
 title:  Achats iOS
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,9 +12,10 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
+
 ## Installer OsmAnd (iOS) {#install-osmand-ios}
 
-Vous pouvez télécharger l'application via ce lien - [OsmAnd Maps sur l'App Store d'Apple](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+Vous pouvez télécharger l'application via ce lien - [OsmAnd Maps sur l'Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
 <!--
@@ -74,8 +74,8 @@ Dans la liste, vous trouverez des informations sur les prix des produits OsmAnd 
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Type d'achat** | **Gratuit** | **Achat unique** (à vie) | **Abonnement** (12 mois) | **Abonnement** (1 mois / 12 mois) |
-| **Prix (EUR)** | 0 € | 39,99 € | 9,99 € | 2,99 € / 29,99 € |
-| **Prix (USD)** | 0 $ | 39,99 $ | 9,99 $ | 2,99 $ / 29,99 $ |
+| **Prix (EUR)** | 0 € | 39,99 €  |  9,99 €   |  2,99 € / 29,99 €   |
+| **Prix (USD)** | 0 $ | 39,99 $  |  9,99 $   |  2,99 $ / 29,99 $   |
 
 
 ### Fonctionnalités gratuites et payantes {#free-and-paid-features}
@@ -93,15 +93,15 @@ Dans la liste, vous trouverez des informations sur les prix des produits OsmAnd 
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Relief 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Données topographiques](../plugins/topography.md#setup)<br/>(Courbes de niveau et Terrain) | **-** | ✔ | ✔ |
-| [Visualisation de trace 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Visualisation de piste 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Profondeurs nautiques](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guides de voyage (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Prise en charge des capteurs externes](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Navigation hors ligne et en ligne](../navigation/index.md)<br/>avec indications virage par virage | ✔ | ✔ | ✔ |
 | [Recherche instantanée hors ligne](../search/index.md) | ✔ | ✔ | ✔ |
 | [Enregistrement de trajet](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [Exporter des traces GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
-| [Importer des traces GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Exporter des pistes GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Importer des pistes GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Outil de planification d'itinéraire](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
 | [Outil de marqueurs de carte](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Sources de cartes en ligne](../plugins/online-map.md) | ✔ | ✔ | ✔ |
@@ -111,7 +111,7 @@ Dans la liste, vous trouverez des informations sur les prix des produits OsmAnd 
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Exporter/importer un profil d'application](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
-#### ** Mises à jour des cartes {#-map-updates}
+#### ** Mises à jour de carte {#-map-updates}
 
 [Gratuit](../personal/maps-resources.md#free-for-osm-mappers). Les mises à jour en direct et les téléchargements de cartes illimités sont disponibles pour les contributeurs OSM.
 
@@ -134,7 +134,7 @@ Actuellement, l'abonnement Pro offre les fonctionnalités suivantes :
 
 ### Comment acheter {#how-to-buy}
 
-Un moyen simple de choisir et d'acheter le plan nécessaire est via le menu **Achats**. Bien sûr, vous verrez un menu de proposition pour les fonctionnalités payantes.
+Un moyen simple de choisir et d'acheter le plan nécessaire via le menu **Achats**. Bien sûr, vous verrez un menu de proposition pour les fonctionnalités payantes.
 
 #### Achat OsmAnd Pro {#osmand-pro-purchase}
 
@@ -159,7 +159,7 @@ ou
 
 ## Abonnements hérités (avant 4.0) {#legacy-subscriptions-prior-40}
 
-Les nouveaux abonnements sont devenus actifs à partir d'OsmAnd 4.3 (décembre 2022). Tous les abonnements antérieurs sont hérités et techniquement équivalents à l'"abonnement Cartes", bien que les abonnements hérités donnent droit aux mises à jour horaires des cartes. Les utilisateurs ne peuvent pas acheter d'abonnements hérités, mais les anciens abonnements sont automatiquement renouvelés jusqu'à ce que vous vous désabonniez (le prix de ceux-ci pourrait changer à l'avenir).
+Les nouveaux abonnements sont devenus actifs à partir d'OsmAnd 4.3 (décembre 2022). Tous les abonnements antérieurs sont des abonnements hérités et techniquement équivalents à un "abonnement Cartes", bien que les abonnements hérités donnent droit aux mises à jour horaires des cartes. Les utilisateurs ne peuvent pas acheter d'abonnements hérités, mais les anciens abonnements sont automatiquement renouvelés jusqu'à ce que vous vous désabonniez (le prix de ceux-ci pourrait changer à l'avenir).
 
 
 ## Restaurer les achats {#restore-purchases}
@@ -169,9 +169,9 @@ L'utilisateur peut contrôler tous les achats et abonnements depuis son [compte 
 Utilisez le même identifiant Apple pour restaurer vos achats.
 
 - Connectez-vous au même compte Apple App Store que celui que vous avez utilisé pour acheter les achats intégrés (abonnements) d'OsmAnd Maps.
-- Installez [OsmAnd Maps sur l'App Store d'Apple](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+- Installez [OsmAnd Maps sur l'Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 - Ouvrez OsmAnd Maps avec une connexion Internet active.
-- Pour restaurer les achats, suivez ces étapes : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* et en haut de l'écran devrait apparaître que Maps+(Pro, Live) est activé.
+- Pour restaurer les achats, suivez ces étapes : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* et en haut de l'écran devrait apparaître que Maps+ (Pro, Live) est activé.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
 
@@ -198,4 +198,4 @@ Vous pouvez acheter OsmAnd en utilisant une carte cadeau App Store. Cette métho
 - [Guide détaillé sur l'achat de cartes cadeaux App Store](https://www.apple.com/shop/gift-cards).
 - [Instructions pour échanger votre carte cadeau App Store](https://support.apple.com/en-gb/HT201209).
 
-> *Cet article a été mis à jour pour la dernière fois en mai 2025*
+> *Dernière mise à jour : mai 2025*

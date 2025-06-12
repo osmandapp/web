@@ -1,9 +1,9 @@
 ---
-source-hash: ab43c065c82602d63f65d27735b68d6ec1edd885b59f15c02c3299725cdad6bf
+source-hash: ce62f6fd113ba54378f5dc39e541fa7e711306a641c814ab9db60c61a6c63dd1
 sidebar_position: 4
 ---
-
 import Translate from '@site/src/components/Translate.js';
+
 
 # Déclenchement des invites vocales de navigation {#navigation-voice-prompt-triggering}
 
@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 * Les invites sont déclenchées en fonction d'un seuil de **distance d'avance**, dérivé en convertissant un temps d'avance spécifié via la **_<Translate android="true" ids="default_speed_setting_title" />_** du profil. Pour les invites rapprochées, cette distance d'avance peut ensuite être ajustée en fonction de la vitesse réelle : augmentée pour garantir que l'annonce est déclenchée suffisamment tôt à grande vitesse, ou diminuée pour plus de précision à basse vitesse.
 * La **_<Translate android="true" ids="default_speed_setting_title" />_** du profil est réglable par l'utilisateur, et sa modification affectera donc les distances de déclenchement des invites vocales.
 *Note* : La _<Translate android="true" ids="default_speed_setting_title" />_ affecte également le temps de parcours calculé.
-* Le timing des invites vocales peut également être ajusté via le paramètre **_<Translate android="true" ids="arrival_distance" />_**. Consultez la colonne "Paramètre d'arrivée" ci-dessous pour voir quelles invites vocales seront affectées. La distance de déclenchement sera multipliée par le facteur suivant :
+* Le timing des invites vocales peut également être ajusté via le paramètre **_<Translate android="true" ids="arrival_distance" />_**. Consultez la colonne 'Paramètre d'arrivée' ci-dessous pour voir quelles invites vocales seront affectées. La distance de déclenchement sera multipliée par le facteur suivant :
 
 **<Translate android="true" ids="arrival_distance" />** | Multiplicateur de distance
 --- | --- 
@@ -25,7 +25,7 @@ import Translate from '@site/src/components/Translate.js';
 * Nous désactivons immédiatement les invites dès qu'elles font référence à des événements obsolètes, ou si votre direction de déplacement ne semble pas conforme à un itinéraire actuel.
 
 ## Vitesses par défaut du profil de base {#base-profile-default-speeds}
-Bien qu'elles puissent être ajustées par l'utilisateur, les valeurs par défaut sont les suivantes :
+Bien que celles-ci puissent être ajustées par l'utilisateur, les valeurs par défaut sont :
 * Conduite : 12,5 m/s (45 km/h)
 * Cyclisme : 2,78 m/s (10 km/h)
 * Marche : 1,11 m/s (4 km/h)
@@ -37,13 +37,13 @@ Bien qu'elles puissent être ajustées par l'utilisateur, les valeurs par défau
 
 Les déclencheurs se trouvent [ici dans le code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/routing/data/AnnounceTimeDistances.java#L65). Les valeurs correspondantes pour les paramètres par défaut d'OsmAnd sont :
 
-Type d'invite | Temps d'avance [s] :<br/>Distance d'avance<br/>correspondante à la vitesse par défaut [m] | Distance d'avance ajustée par la vitesse réelle ? | Réglable par le paramètre d'arrivée ? | Commentaire |
+Type d'invite | Temps d'avance [s] :<br/>Distance d'avance correspondante @ Vitesse par défaut [m] | Distance d'avance ajustée par la vitesse réelle ? | Réglable par le paramètre d'arrivée ? | Commentaire |
 --- | --- | --- | --- | --- |
-Tourner maintenant | **6,7 s / 3,2 s / 2 s :**<br/>Conduite : 83 m<br/>Cyclisme : 12(8) m<br/>Marche : 12(2) m | :heavy_check_mark: (Proportionnel à *vitesse réelle / vitesse par défaut*) | :heavy_check_mark: | Temps d'avance (heuristique) = _max(8, sqrt(vitesse par défaut \* 3,6))_. La distance d'avance correspondante est arrondie à 12 m pour tenir compte de l'imprécision de la position. |
+Tourner maintenant | **6,7 s / 3,2 s / 2 s :**<br/>Conduite : 83 m<br/>Cyclisme : 12(8) m<br/>Marche : 12(2) m | :heavy_check_mark: (Proportionnel à *vitesse réelle / Vitesse par défaut*) | :heavy_check_mark: | Temps d'avance (heuristique) = _max(8, sqrt(Vitesse par défaut * 3,6))_. La distance d'avance correspondante est arrondie à 12 m pour tenir compte de l'imprécision de la position. |
 Tourner dans X m | **22 s :**<br/>Conduite : 275 m<br/>Cyclisme : 61 m<br/>Marche : 24 m | :heavy_check_mark: (Augmentation uniquement) |  | Ignoré si < 15 s avant le virage |
-Préparer à tourner dans X m | **115 s :**<br/>Conduite : 1438 m<br/>Cyclisme : 319 m<br/>Marche : - |  |  | Ignoré si < 150 m avant "Tourner dans", ignoré pour _vitesse par défaut_ < 8 km/h |
-Préparer à tourner dans X m (long) | **300 s :**<br/>Conduite : -<br/>Cyclisme : -<br/>Marche : - |  |  | Ignoré pour _vitesse par défaut_ < 108 km/h |
-Aller tout droit | **>300 s :**<br/>Conduite : 3750 m<br/>Cyclisme : 833 m<br/>Marche : 333 m | | | Joue après le calcul de l'itinéraire si aucune autre invite n'est due, ou après un virage si le prochain virage est à plus de _Préparer long_ |
+Préparez-vous à tourner dans X m | **115 s :**<br/>Conduite : 1438 m<br/>Cyclisme : 319 m<br/>Marche : - |  |  | Ignoré si < 150 m avant "Tourner dans", ignoré pour _Vitesse par défaut_ < 8 km/h |
+Longue préparation pour tourner dans X m | **300 s :**<br/>Conduite : -<br/>Cyclisme : -<br/>Marche : - |  |  | Ignoré pour _Vitesse par défaut_ < 108 km/h |
+Aller tout droit | **>300 s :**<br/>Conduite : 3750 m<br/>Cyclisme : 833 m<br/>Marche : 333 m | | | Joue après le calcul de l'itinéraire si aucune autre invite n'est due, ou après un virage si le prochain virage est à plus de _Longue préparation_ |
 Arriver à destination ou intermédiaire | **5 s :**<br/>Conduite : 63 m<br/>Cyclisme : 14 m<br/>Marche : 6(12) m | |:heavy_check_mark: | Minimum 12 m |
 Approche d'un point de passage / favori / POI | **60 s :**<br/>Conduite : 750 m<br/>Cyclisme : 167 m<br/>Marche : 67 m | :heavy_check_mark: (Augmentation uniquement) | :heavy_check_mark: | Limité à 1 point maximum à la fois |
 Passage d'un point de passage / favori / POI | **15 s :**<br/>Conduite : 188 m<br/>Cyclisme : 42 m<br/>Marche : 17 m | :heavy_check_mark: (Augmentation uniquement) | :heavy_check_mark: | Limité à 3 points maximum à la fois |

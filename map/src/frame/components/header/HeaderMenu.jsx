@@ -1,9 +1,9 @@
 import { AppBar, Box, Button, IconButton, SvgIcon, Toolbar } from '@mui/material';
-import { Link } from 'react-router-dom';
 import React from 'react';
 import { ReactComponent as Logo } from '../../../assets/logo.svg';
 import styles from './header.module.css';
 import { HEADER_SIZE, INSTALL_BANNER_SIZE } from '../../../manager/GlobalManager';
+import { useLocation } from 'react-router-dom';
 
 const pages = [
     {
@@ -15,8 +15,8 @@ const pages = [
         url: '/blog',
     },
     {
-        name: '💳 Purchases',
-        url: '/docs/user/purchases',
+        name: '💳 Pricing',
+        url: '/pricing',
     },
     {
         name: '🌍 Map',
@@ -28,7 +28,9 @@ const pages = [
     },
 ];
 
-export default function HeaderMenu({ showInstallBanner }) {
+export default function HeaderMenu({ showInstallBanner = null }) {
+    const location = useLocation();
+
     return (
         <AppBar
             sx={{
@@ -56,7 +58,11 @@ export default function HeaderMenu({ showInstallBanner }) {
                             href={page.url}
                             key={page.name}
                             className={styles.menuItem}
-                            sx={page.url === '/map' ? { color: '#237bff !important' } : { color: '#1c1e21 !important' }}
+                            sx={
+                                page.url.startsWith(location.pathname)
+                                    ? { color: '#237bff !important' }
+                                    : { color: '#1c1e21 !important' }
+                            }
                         >
                             {page.name}
                         </Button>

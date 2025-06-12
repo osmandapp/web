@@ -1,9 +1,8 @@
 ---
-source-hash: 9c1c3489d64f72c44c17381366f4bc261ddcc42652ca169cb45264a61c9490dd
+source-hash: e46e862bf3423da156a08ba066e94f7d2262dcd693d6bfcdfd87d3e6f3328253
 sidebar_position: 6
 title:  Mapillary
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,11 +13,12 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
+
 ## Aperçu {#overview}
 
 Pour vous déplacer plus rapidement, vous pouvez utiliser dans OsmAnd les vues au niveau de la rue de vos itinéraires ou de vos points d'intérêt fournies par [Mapillary](https://www.mapillary.com/) (une connexion Internet est requise).
 
-[La couche Mapillary](https://www.mapillary.com/) apporte des images au niveau de la rue directement dans l'application OsmAnd, afin que vous puissiez facilement avoir un aperçu des environs de n'importe quel lieu d'intérêt ou le long de l'itinéraire que vous avez prévu. Si des images manquent, vous pouvez les ajouter vous-même, et d'autres peuvent les utiliser. Cette fonctionnalité est née de notre collaboration avec [l'équipe Mapillary](https://www.mapillary.com/about), unissant les avantages des deux applications.
+La [couche Mapillary](https://www.mapillary.com/) apporte des images au niveau de la rue directement dans l'application OsmAnd, afin que vous puissiez facilement avoir un aperçu des environs de n'importe quel lieu d'intérêt ou le long de l'itinéraire que vous avez planifié. Si des images manquent, vous pouvez les ajouter vous-même, et d'autres peuvent les utiliser. Cette fonctionnalité est née de notre collaboration avec [l'équipe Mapillary](https://www.mapillary.com/about), unissant les avantages des deux applications.
 
 
 ## Paramètres de configuration requis {#required-setup-parameters}
@@ -107,7 +107,7 @@ Vous pouvez créer un filtre et sélectionner les photos à afficher sur la cart
 *Pour accéder : <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
 :::note Cache de tuiles
-Si les images sélectionnées ne sont pas affichées, utilisez **Recharger** pour le **Cache de tuiles**.
+Si les images sélectionnées ne s'affichent pas, utilisez **Recharger** pour le **Cache de tuiles**.
 :::
 
 
@@ -161,7 +161,7 @@ Pour ajouter des photos, vous devez vous inscrire dans l'[application Mapillary]
 
 Aller à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="mapillary"/>*
 
-![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png)  ![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
+![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png) ![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
 
 </TabItem>
 
@@ -184,4 +184,4 @@ Le [widget Mapillary](../widgets/info-widgets.md#mapillary-widget) est utilisé 
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *Cet article a été mis à jour pour la dernière fois en octobre 2024*
+> *Dernière mise à jour : octobre 2024*

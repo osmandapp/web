@@ -1,9 +1,8 @@
 ---
-source-hash: 883a2bbec65e29b0e526052be6f4255caca9f29b5941211505cd7c667d593734
+source-hash: 31419e7adbc6b5574f7d6ddec3548363e0888514a187077a060bcc8123f6d866
 sidebar_position: 2
 title: Naviguer par trace
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 
 ## Aperçu {#overview}
@@ -45,9 +45,9 @@ Avant d'utiliser l'option *Navigation par trace*, vous devez [afficher la trace 
 
 - Une trace **Géométrie** aura une navigation très basique par défaut et ne fournira pas de virages précis, de noms de rues et de voies de virage. Pour obtenir les informations manquantes, vous devez utiliser l'outil [Attacher aux routes](#attach-to-the-roads).
 
-- Une trace **Itinéraire** calculera l'itinéraire entre les points d'itinéraire selon le profil sélectionné. En gros, tous les points d'itinéraire seront considérés comme des points intermédiaires. Si votre itinéraire contient > 50 points, il est très probable qu'il s'agisse d'une trace **Géométrie** mal configurée.
+- Une trace **Itinéraire** calculera l'itinéraire entre les points d'itinéraire selon le profil sélectionné. En gros, tous les points d'itinéraire seront considérés comme des points intermédiaires. Si votre itinéraire comprend plus de 50 points, il est très probable qu'il s'agisse d'une trace **Géométrie** mal configurée.
 
-- Une trace **OsmAnd** se compose à la fois de parties géométriques et d'itinéraire, et elle est adaptée pour fournir exactement les mêmes indications que la navigation par défaut. Ces traces sont produites par [Planifier un itinéraire](../../plan-route/create-route.md) ou la [version Web](../../web/index.md). Il est possible de réenregistrer cette trace en trace **Géométrie** uniquement en tant que [**Simplifiée**](../../plan-route/create-route.md#save-route) pour être utilisée dans des programmes tiers.
+- Une trace **OsmAnd** se compose à la fois de parties géométriques et d'itinéraires, et elle est adaptée pour fournir exactement les mêmes indications que la navigation par défaut. Ces traces sont produites par [Planifier un itinéraire](../../plan-route/create-route.md) ou la [version Web](../../web/index.md). Il est possible de réenregistrer cette trace en trace **Géométrie** uniquement en tant que [**Simplifiée**](../../plan-route/create-route.md#save-route) pour être utilisée dans des programmes tiers.
 
 
 ### Démarrer la navigation GPX {#start-gpx-navigation}
@@ -56,13 +56,13 @@ Avant d'utiliser l'option *Navigation par trace*, vous devez [afficher la trace 
 
 <TabItem value="android" label="Android">
 
-![Sélectionner la trace à naviguer Android 1](@site/static/img/navigation/gpx/follow_track_andr_1.png) ![Sélectionner la trace à naviguer Android 2](@site/static/img/navigation/gpx/follow_track_andr_2.png)
+![Sélectionner la trace pour naviguer Android 1](@site/static/img/navigation/gpx/follow_track_andr_1.png) ![Sélectionner la trace pour naviguer Android 2](@site/static/img/navigation/gpx/follow_track_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Sélectionner la trace à naviguer iOS 1](@site/static/img/navigation/gpx/follow_track_ios_1.png) ![Sélectionner la trace à naviguer iOS 2](@site/static/img/navigation/gpx/follow_track_ios_2.png)
+![Sélectionner la trace pour naviguer iOS 1](@site/static/img/navigation/gpx/follow_track_ios_1.png) ![Sélectionner la trace pour naviguer iOS 2](@site/static/img/navigation/gpx/follow_track_ios_2.png)
 
 </TabItem>
 
@@ -70,9 +70,9 @@ Avant d'utiliser l'option *Navigation par trace*, vous devez [afficher la trace 
 
 La navigation sur une trace peut être lancée à l'aide du bouton d'action rapide dans le [menu contextuel de la trace](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (ouvert en sélectionnant l'une des [traces mises en évidence](./route-navigation.md#history-of-previous-routes) sur la carte, ou en appuyant sur un fichier de trace dans la section [Mes lieux](../../personal/myplaces.md) du *Menu principal*) ou à partir du menu de navigation, qui s'ouvre en appuyant sur :
 
-- [*Bouton de navigation*](../../widgets/map-buttons.md#directions) sur l'écran de la carte.
+- [*Bouton Navigation*](../../widgets/map-buttons.md#directions) sur l'écran de la carte.
 - *Section Navigation* dans le *Menu principal* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
-- Dans le [*Menu de navigation*](./route-navigation.md#navigation-menu), allez à *<Translate android="true" ids="shared_string_settings,follow_track"/>*.
+- Dans le [*Menu Navigation*](./route-navigation.md#navigation-menu), allez à *<Translate android="true" ids="shared_string_settings,follow_track"/>*.
 
 ### Choisir les segments {#choose-segments}
 
@@ -110,7 +110,7 @@ Pour la navigation, si la trace sélectionnée se compose de plusieurs segments 
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
+Aller à : *<Translate ios="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
 
 
 ![Écran de navigation par trace iOS](@site/static/img/navigation/gpx/follow_the_track_4-1_ios.png)
@@ -162,7 +162,7 @@ OsmAnd aligne automatiquement les itinéraires sur les routes lors de l'utilisat
 
 - Les **points de passage** s'alignent automatiquement sur la route disponible la plus proche (*sauf pour le [Routage en ligne droite](../../navigation/routing/straight-line-routing.md) et le [Routage direct vers un point](../../navigation/routing/direct-to-point-routing.md)*).
 - Si aucune route n'est détectée (par exemple, dans des environnements hors route), l'itinéraire suivra des **segments en ligne droite**.
-- Vous pouvez **ajuster manuellement** l'itinéraire en faisant glisser les points de passage vers différents endroits.
+- Vous pouvez **ajuster manuellement** l'itinéraire en faisant glisser les points de passage vers différents emplacements.
 
 Par défaut, la fonction **Attacher aux routes** s'exécute **automatiquement** lorsqu'une trace est sélectionnée pour la navigation. Vous pouvez modifier ce paramètre si nécessaire. Pour plus de détails, reportez-vous à [Guidage détaillé de la trace](../guidance/navigation-settings.md#detailed-track-guidance) dans l'article *Paramètres de navigation*.
 
@@ -181,19 +181,19 @@ Si la trace comporte des points de passage, vous pouvez utiliser [Afficher le lo
 
 ### Points intermédiaires {#intermediate-points}
 
-Lors de la préparation ou de la navigation d'une trace GPX, vous ne pouvez pas ajouter de lieux intermédiaires que vous prévoyez de traverser dans cette trace. Vous ne pouvez attribuer que des points de départ et d'arrivée en plus de la trace ou du segment que vous prévoyez de suivre.
+Lors de la préparation ou de la navigation d'une trace GPX, vous ne pouvez pas ajouter de lieux intermédiaires par lesquels vous prévoyez de passer dans cette trace. Vous ne pouvez attribuer que des points de départ et d'arrivée en plus de la trace ou du segment que vous prévoyez de suivre.
 
 ## Guidage {#guidance}
 
-La *Navigation par trace GPX* contient les mêmes [instructions vocales](../guidance/voice-navigation.md) que la navigation par itinéraire. Cependant, certains virages ou ronds-points peuvent ne pas être interprétés correctement car il n'y a pas d'informations sur les intersections de routes dans le GPX, sauf pour les fichiers GPX créés par OsmAnd. Pour éliminer ces problèmes, vous devez utiliser la fonction [**Attacher aux routes**](#attach-to-the-roads).
+La *Navigation par trace GPX* contient les mêmes [instructions vocales](../guidance/voice-navigation.md) que la navigation routière. Cependant, certains virages ou ronds-points peuvent ne pas être interprétés correctement car il n'y a pas d'informations sur les intersections routières dans le GPX, sauf pour les fichiers GPX créés par OsmAnd. Pour éliminer ces problèmes, vous devez utiliser la fonction [**Attacher aux routes**](#attach-to-the-roads).
 
-Pendant la navigation, vous pouvez utiliser diverses options telles que le zoom avant ou arrière, le panoramique de la carte ou le passage à un style de carte différent. Si vous vous écartez de la trace, OsmAnd recalculera automatiquement l'itinéraire pour vous ramener sur la trace. Vous pouvez également ajuster la vitesse de la trace et définir des alertes sonores pour les points d'approche ou les écarts par rapport à l'itinéraire.
+Pendant la navigation, vous pouvez utiliser diverses options telles que le zoom avant ou arrière, le panoramique de la carte ou le changement de style de carte. Si vous vous écartez de la trace, OsmAnd recalculera automatiquement l'itinéraire pour vous ramener sur la trace. Vous pouvez également ajuster la vitesse de la trace et définir des alertes sonores pour les points d'approche ou les écarts par rapport à l'itinéraire.
 
 
 ## Articles connexes {#related-articles}
 
 - [Paramètres d'itinéraire](../routing/osmand-routing.md#routing-types)
-- [Préparation de l'itinéraire](./route-navigation.md)
+- [Préparation d'itinéraire](./route-navigation.md)
 - [Détails de l'itinéraire](./route-details.md)
 - [Navigation par marqueurs](./markers-navigation.md)
 - [Paramètres de navigation](../guidance/navigation-settings.md)
@@ -202,4 +202,4 @@ Pendant la navigation, vous pouvez utiliser diverses options telles que le zoom 
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *Cet article a été mis à jour pour la dernière fois en avril 2025*
+> *Dernière mise à jour : avril 2025*

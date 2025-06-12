@@ -3,8 +3,6 @@ import CloudChanges from './CloudChanges';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { apiGet } from '../../util/HttpApi';
 import { format } from 'date-fns';
-import * as locales from 'date-fns/locale';
-import i18n from 'i18next';
 import devList from '../../resources/apple_device_model_list.json';
 import AppContext from '../../context/AppContext';
 
@@ -82,9 +80,8 @@ export default function CloudSettings({ setOpenCloudSettings }) {
     // Process and group files by updatetimems (month/year).
     function getPreparedFiles(files) {
         const filesByDate = {};
-        const locale = locales[i18n.language] || locales.enUS;
         files.forEach((file) => {
-            let dateKey = format(new Date(file.updatetimems), 'LLLL yyyy', { locale });
+            let dateKey = format(new Date(file.updatetimems), 'LLLL yyyy', { locale: ctx.dateLocale });
             dateKey = dateKey.charAt(0).toUpperCase() + dateKey.slice(1);
             if (!filesByDate[dateKey]) {
                 filesByDate[dateKey] = [];

@@ -1,5 +1,5 @@
 ---
-source-hash: bd2fa520d74a2e439a039d8659872f0beac94ba810af92344dbd5b4cef8d5601
+source-hash: f02ec46753a3101b544ff59059a374da99a432907dcbacd5732081d6f1f151e5
 sidebar_position: 3
 title: Style de carte nautique
 ---
@@ -54,8 +54,8 @@ Systèmes de positionnement électronique, signaux de brume
 ## Ferme marine, pêche {#marine-farm-fishing}
 <img src={require('@site/static/img/map-legend/nautical-marine-farm-fishing.png').default} alt="Ferme marine, pêche" />
 
-## Zone de fond marin {#seabed-area}
-<img src={require('@site/static/img/map-legend/nautical-seabed.png').default} alt="Zone de fond marin" />
+## Zone du fond marin {#seabed-area}
+<img src={require('@site/static/img/map-legend/nautical-seabed.png').default} alt="Zone du fond marin" />
 
 
 ## Câbles et pipelines {#cables-and-pipelines}

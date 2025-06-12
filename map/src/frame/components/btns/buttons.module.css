@@ -28,7 +28,7 @@
     }
     &:disabled {
         background-color: #f5f5f5 !important;
-        color: #727272 !important;
+        color: #666666 !important;
     }
 }
 .blueButton {
@@ -64,7 +64,7 @@
     }
     &:disabled {
         background-color: #f5f5f5 !important;
-        color: #727272 !important;
+        color: #666666 !important;
     }
 }
 .primaryButton {
@@ -101,7 +101,7 @@
     }
     &:disabled {
         background-color: #f5f5f5 !important;
-        color: #727272 !important;
+        color: #666666 !important;
     }
 }
 .blueButtonWithIcon {
@@ -136,6 +136,6 @@
     }
     &:disabled {
         background-color: #f5f5f5 !important;
-        color: #727272 !important;
+        color: #666666 !important;
     }
 }

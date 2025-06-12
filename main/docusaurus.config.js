@@ -18,11 +18,11 @@ const config = {
   staticDirectories: ['static', 'legacy-image-static'],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr', 'ua'],
+    locales: ['en', 'fr', 'uk'],
     localeConfigs: {
       en: { label: 'English' },
       fr: { label: 'Français' },
-      ua: { label: 'Українська' },
+      uk: { label: 'Українська' },
     },
   },
   presets: [
@@ -108,7 +108,7 @@ const config = {
             label: 'Docs',
           },
           { to: '/blog', label: 'Blog', position: 'left'},
-          { to: '/docs/user/purchases', label: '💳 Purchases', position: 'left' },
+          { to: 'pathname:///pricing', label: '💳 Pricing', position: 'left' },
           { to: 'pathname:///map', target: '_self', label: '🌍 Map', position: 'left' },
           { to: '/docs/hiring', label: '🚵‍♂️ Join us', position: 'left' },
           {
@@ -126,8 +126,8 @@ const config = {
             title: 'OsmAnd',
             items: [
               {
-                label: 'Purchases 💳',
-                to: '/docs/user/purchases',
+                label: 'Pricing 💳',
+                to: 'pathname:///pricing',
               },
               {
                 label: 'Map 🌍',
@@ -137,6 +137,10 @@ const config = {
               {
                 label: 'Docs',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Purchases',
+                to: '/docs/user/purchases',
               },
               {
                 label: 'Map legend',

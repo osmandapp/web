@@ -1,9 +1,8 @@
 ---
-source-hash: 64a3bb21e703f5b408f41031134c82819cdbf20137d71519ef147f18e7b152d6
+source-hash: 0a0e6bbadf34561e82d857c6270b71b1fa26543e35edd9ea4cda96e07711812f
 sidebar_position: 2
 title:  Général
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +12,8 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-Problèmes généraux liés aux diverses fonctionnalités d'OsmAnd.
+
+Problèmes généraux liés aux différentes fonctionnalités d'OsmAnd.
 
 ## Consommation de la batterie {#battery-consumption}
 
@@ -31,7 +31,7 @@ Plusieurs facteurs influencent la consommation de la batterie : l'âge de l'appa
 | Écran allumé (typiquement) | 6 % |
 | GPS actif (typiquement) | 5 % |
 | OsmAnd fonctionnant en arrière-plan pour l'enregistrement de traces | 0,5 % |
-| OsmAnd ne faisant fonctionner aucun service en arrière-plan | 0 % |
+| OsmAnd ne fonctionnant sur aucun service en arrière-plan | 0 % |
 
 #### Consommation de la batterie par fonction OsmAnd {#osmand-function-battery-consumption}
 
@@ -49,7 +49,7 @@ Lorsque vous utilisez OsmAnd, plusieurs fonctionnalités peuvent influencer la c
 
 - **Contrôle de l'écran pendant la navigation** (*Android*). Pour économiser de l'énergie, vous pouvez configurer OsmAnd pour que l'écran reste éteint pendant la navigation, sauf en cas de virage ou d'événement important. Cela est particulièrement utile pendant la navigation vocale. Pour plus de détails, consultez *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2"/> → [<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)*.
 
-- **Paramètres de navigation économes en énergie**. Vous pouvez réduire la consommation de la batterie en minimisant la fréquence de redessin de la carte et en limitant la précision du GPS. Pour ajuster ces paramètres, allez dans *Navigation → Paramètres → Navigation d'itinéraire*. Pour plus d'informations, consultez la section [Économiser de l'énergie pendant la navigation](../navigation/setup/route-navigation.md#saving-power-during-navigation).
+- **Paramètres de navigation d'économie d'énergie**. Vous pouvez réduire la consommation de la batterie en minimisant la fréquence de redessin de la carte et en limitant la précision du GPS. Pour ajuster ces paramètres, allez dans *Navigation → Paramètres → Navigation d'itinéraire*. Pour plus d'informations, consultez la section [Économiser de l'énergie pendant la navigation](../navigation/setup/route-navigation.md#saving-power-during-navigation).
 
 - **Gestion des couches de carte et des détails**. Désactivez les fonctionnalités de carte inutiles comme le relief 3D, les courbes de niveau ou les ombrages. Vous pouvez également réduire le nombre d'objets affichés (étiquettes de POI, limites, numéros de maison, etc.) via le menu *Configurer la carte*. La désactivation de ces couches permet de réduire la fréquence de redessin de la carte, ce qui diminue la consommation d'énergie.
 
@@ -73,7 +73,7 @@ Pour supprimer l'historique de recherche dans OsmAnd :
 3. Sélectionnez les résultats que vous souhaitez supprimer, ou utilisez l'option *Tout sélectionner* dans le coin supérieur gauche pour supprimer tous les résultats.
 4. Appuyez sur l'icône *Corbeille* dans le coin supérieur droit pour confirmer la suppression.
 
-Pour des instructions plus détaillées sur la fonctionnalité de recherche, vous pouvez consulter [ce guide](../search/search-history.md).
+Pour des instructions plus détaillées sur la fonctionnalité de recherche, vous pouvez vous référer à [ce guide](../search/search-history.md).
 
 
 ## Autre {#other}
@@ -88,12 +88,12 @@ Pour résoudre les problèmes de connexion GPS, suivez ces étapes :
 2. **Mettre à jour l'API Google Service**. Assurez-vous d'avoir la dernière version de [Google Play](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en&gl=US).
 3. **Vérifier les paramètres de localisation Android**. Allez dans les paramètres système Android et assurez-vous que l'accès à la localisation est activé et réglé sur Haute précision. Vous pouvez également essayer de vider le cache et de redémarrer votre appareil. Des problèmes de GPS peuvent survenir si des bâtiments ou de grands objets interfèrent avec le signal. Testez les performances du GPS, et si le signal est faible, réglez la précision d'enregistrement minimale à plus de 15 mètres.
 4. **Activer le widget GPS**. Utilisez le widget d'informations GPS pour vérifier les connexions satellites. S'il n'y a pas de connexions satellites, votre appareil ne déterminera pas la localisation, et le nombre de satellites sera de 0. Plus de détails peuvent être trouvés dans le [guide du widget GPS](../widgets/info-widgets.md#gps-info-android).
-5. **Utiliser uniquement le signal GPS**. Configurez votre appareil pour utiliser uniquement le GPS (désactivez la localisation basée sur le Wi-Fi ou le Bluetooth). Des instructions sont disponibles sur [Google Support](https://support.google.com/android/answer/3467281?hl=en).
-6. **Réinstaller OsmAnd**. Si les étapes ci-dessus ne fonctionnent pas, essayez de désinstaller et de réinstaller l'application OsmAnd pour effacer les données corrompues et résoudre les problèmes de GPS. Avant de le faire, exportez toutes vos données enregistrées.
+5. **Utiliser uniquement le signal GPS**. Réglez votre appareil pour utiliser uniquement le GPS (désactivez la localisation basée sur le Wi-Fi ou le Bluetooth). Des instructions sont disponibles sur [Google Support](https://support.google.com/android/answer/3467281?hl=en).
+6. **Réinstaller OsmAnd**. Si les étapes ci-dessus ne fonctionnent pas, essayez de réinstaller l'application OsmAnd pour effacer les données corrompues et résoudre les problèmes de GPS. Avant de le faire, exportez toutes vos données enregistrées.
 7. **Vérifier la RAM de l'appareil**. Si le problème persiste, cela peut être dû à une mémoire insuffisante, alors assurez-vous que votre appareil dispose de suffisamment de RAM disponible.
 
 
-### Problème de non-concordance d'e-mail lors de l'achat d'OsmAnd Pro {#email-mismatch-issue-during-osmand-pro-purchase}
+### Problème de non-concordance des e-mails lors de l'achat d'OsmAnd Pro {#email-mismatch-issue-during-osmand-pro-purchase}
 
 <!-- ???
 or this title:
@@ -102,7 +102,7 @@ or this title:
 
 Si vous rencontrez un problème où l'e-mail associé à votre achat OsmAnd Pro ne correspond pas à l'e-mail de l'application OsmAnd, suivez ces étapes pour résoudre le problème :
 
-1. **Vérifiez les comptes Google Play et Pay**. Assurez-vous que le bon e-mail est lié à vos comptes Google Play Store et Pay. Le processus de paiement est géré par ces services, et la non-concordance de l'e-mail peut se produire en raison d'un ancien e-mail toujours associé à votre profil de paiement.
+1. **Vérifiez les comptes Google Play et Pay**. Assurez-vous que le bon e-mail est lié à vos comptes Google Play Store et Pay. Le processus de paiement est géré par ces services, et la non-concordance des e-mails peut se produire en raison d'un ancien e-mail toujours associé à votre profil de paiement.
 
 2. **Vérifiez l'e-mail de l'application OsmAnd**. Revérifiez l'adresse e-mail dans votre application OsmAnd pour vous assurer qu'elle correspond à votre e-mail Google Play actuel. Cela peut être fait en ouvrant l'application et en naviguant vers les paramètres du compte.
 

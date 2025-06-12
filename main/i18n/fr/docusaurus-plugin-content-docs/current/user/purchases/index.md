@@ -1,5 +1,5 @@
 ---
-source-hash: d5ff3bfd836aa4a81b9d2d514dc732e61dcf06c5661f41539ab846fd97798d84
+source-hash: 056e9b402c10235807cfe7ca52331e9f9e9c6d2b75d52227e4c1578978420247
 sidebar_position: 9
 ---
 
@@ -21,11 +21,11 @@ Découvrez comment utiliser vos achats Maps+ et OsmAnd Pro sur Android, iOS et d
 
 ### [Cadeau](./giveaway.md) {#giveaway}
 
-Vous pouvez obtenir OsmAnd gratuitement grâce à l'un de nos cadeaux réguliers. Lisez comment vous inscrire et participer.
+Vous pouvez obtenir OsmAnd gratuitement grâce à l'un de nos cadeaux réguliers. En savoir plus sur la façon de s'inscrire et de participer.
 
 ### Nouvel appareil / Nouveau compte {#new-device--new-account}
 
-- **Android.** Connectez-vous simplement à Google Play en utilisant le même compte que celui que vous avez utilisé pour acheter OsmAnd, puis trouvez OsmAnd via *Recherche* et réinstallez-le. Assurez-vous d'installer OsmAnd+ si vous l'avez acheté, ou installez OsmAnd si vous l'avez acheté dans l'application.
+- **Android.** Connectez-vous simplement à Google Play en utilisant le même compte que celui que vous avez utilisé pour acheter OsmAnd, puis trouvez OsmAnd via *Rechercher* et réinstallez-le. Assurez-vous d'installer OsmAnd+ si vous l'avez acheté, ou installez OsmAnd si vous l'avez acheté dans l'application.
 
 - **iOS.** Tout ce que vous avez à faire est d'aller sur l'App Store et de réinstaller OsmAnd. Vous pouvez utiliser l'application sur autant d'appareils que vous le souhaitez sans avoir à l'acheter à nouveau. Vous pouvez voir un bouton *Acheter*, mais vous n'avez pas besoin de payer : appuyez simplement dessus pour télécharger l'application sans payer à nouveau.
 

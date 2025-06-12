@@ -31,7 +31,11 @@ export function closeLoginMenu(ltx) {
     ltx.setLoginError(null);
 }
 
-export const openLogin = (ltx, navigate) => {
+export const openLogin = (ltx, navigate, reopenLoginDialog = null) => {
+    if (reopenLoginDialog) {
+        reopenLoginDialog();
+        return;
+    }
     navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
     ltx.setLoginState({ login: true });
 };

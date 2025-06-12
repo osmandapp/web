@@ -1,9 +1,8 @@
 ---
-source-hash: 598c9d042c8fd223f7c9418c6493d246fbeebca840eedb54c37603801085e17c
+source-hash: 27a4297a5019f248c9db5c74a4569bcd2b0de8e623b0c0ff1053a5740868f8b2
 sidebar_position: 5
-title: Cartes vectorielles (Styles de carte)
+title:  Cartes vectorielles (Styles de carte)
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,16 +14,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
+
 ## Aperçu {#overview}
 
-Les cartes vectorielles sont destinées à être utilisées comme source de données cartographiques par défaut pour OsmAnd, vous devez donc les **télécharger sur votre appareil**. Les cartes vectorielles prennent en charge un grand nombre de styles de carte pour différentes activités telles que le cyclisme, la randonnée, la conduite en voiture ou en motoneige, et autres.
+Les cartes vectorielles sont destinées à être utilisées comme source de données cartographiques par défaut pour OsmAnd, vous **devez donc les télécharger sur votre appareil**. Les cartes vectorielles prennent en charge un grand nombre de styles de carte pour différentes activités telles que le cyclisme, la randonnée, la conduite en voiture ou en motoneige, et autres.
 
 Chaque style de carte peut être personnalisé pour mettre en évidence ou masquer des objets spécifiques, et pour basculer entre les modes jour et nuit. Les données de carte vectorielle peuvent être augmentées par des données vectorielles et affichées dans le style de carte par défaut, telles que les informations sur les *lignes de contour*. Vous pouvez *créer votre propre style de carte OsmAnd* pour afficher les informations requises.
 
 
 ## Cas d'utilisation {#use-cases}
 
-Les styles de carte personnalisables sont l'un des principaux avantages d'OsmAnd. Vous pouvez personnaliser l'affichage de la carte en fonction de vos préférences et de vos loisirs, ajuster l'affichage ou le masquage de certains objets cartographiques, la taille et la couleur de ces objets, et modifier l'échelle d'affichage de certains objets.
+Les styles de carte personnalisables sont l'un des principaux avantages d'OsmAnd. Vous pouvez personnaliser l'affichage de la carte en fonction de vos préférences et de vos loisirs, ajuster l'affichage ou le masquage de certains objets de la carte, les tailles et les couleurs de ces objets, et modifier l'échelle d'affichage de certains objets.
 
 
 ## Styles de carte par défaut {#default-map-styles}
@@ -40,16 +40,16 @@ OsmAnd vous propose de nombreux styles de carte et couches de données qui s'ada
 
 ![Style de carte OsmAnd](@site/static/img/map/map-style-osmand-with-routes.png)
 
-Le style de rendu de carte standard d'OsmAnd équilibre les détails et la simplicité, ce qui le rend idéal pour l'exploration urbaine et extérieure. Il détaille les caractéristiques de la ville telles que les rues, les bâtiments et les arrêts de transport, tout en simplifiant l'encombrement visuel en rendant les cartes plus claires.
+Le style de rendu de carte standard d'OsmAnd équilibre les détails et la simplicité, ce qui le rend idéal pour l'exploration urbaine et extérieure. Il détaille les caractéristiques de la ville telles que les rues, les bâtiments et les arrêts de transport tout en simplifiant l'encombrement visuel en rendant les cartes plus claires.
 
-Les principaux avantages comprennent la cartographie des itinéraires, la qualité de la surface, les restrictions d'accès, la signalisation routière, le rendu des chemins à l'échelle SAC, les installations sportives et les détails topographiques tels que les courbes de niveau.
+Les principaux avantages comprennent la cartographie des itinéraires, la qualité de la surface, les restrictions d'accès, la signalisation routière, les rendus des chemins à l'échelle SAC, les installations sportives et les détails topographiques tels que les courbes de niveau.
 
 
-### Vue Touring {#touring-view}
+### Vue touristique {#touring-view}
 
-![Style de carte Vue Touring](@site/static/img/map/map-style-touring.png)
+![Style de carte Vue touristique](@site/static/img/map/map-style-touring.png)
 
-Style Touring avec un contraste élevé et un maximum de détails. Inclut toutes les options du style OsmAnd par défaut tout en affichant le plus de détails possible, en particulier les routes, les chemins et autres voies de déplacement. Distinction claire des types de routes dans un *atlas de tourisme*. Convient pour une utilisation de jour, de nuit et en extérieur.
+Style touristique avec un contraste élevé et un maximum de détails. Comprend toutes les options du style OsmAnd par défaut tout en affichant le plus de détails possible, en particulier les routes, les chemins et autres voies de déplacement. Distinction claire des types de routes dans un *atlas touristique*. Convient pour une utilisation de jour, de nuit et en extérieur.
 
 ### UniRS et LightRS {#unirs-and-lightrs}
 
@@ -61,7 +61,7 @@ Les styles UniRS et LightRS sont des styles d'auteur qui rendent les information
 
     ![Style de carte LightRS](@site/static/img/map/map-style-lightrs.png)
 
-- **Style LightRS**. Il s'agit d'un style de conduite simple qui présente un mode nuit doux. Il met en évidence les routes dans une couleur orange contrastée, atténue les objets cartographiques secondaires et affiche les caractéristiques topographiques comme les courbes de niveau.
+- **Style LightRS**. Il s'agit d'un style de conduite simple qui présente un mode nuit doux. Il met en évidence les routes dans une couleur orange contrastante, atténue les objets cartographiques secondaires et affiche les caractéristiques topographiques comme les courbes de niveau.
 
     ![Style de carte UniRS](@site/static/img/map/map-style-unirs.png)
 
@@ -69,7 +69,7 @@ Les styles UniRS et LightRS sont des styles d'auteur qui rendent les information
 
 ![Style de carte Nautique](@site/static/img/map/map-style-nautical.png)
 
-Il s'agit d'un style de navigation nautique présentant des bouées, des phares, des routes fluviales, des voies maritimes, des marques, des ports, des marques nautiques et des courbes de profondeur. En savoir plus dans l'article [Vue de carte nautique](../plugins/nautical-charts.md).
+Il s'agit d'un style de navigation nautique présentant des bouées, des phares, des routes fluviales, des voies maritimes, des marques, des ports, des marques nautiques et des courbes de niveau de profondeur. En savoir plus dans l'article [Vue de carte nautique](../plugins/nautical-charts.md).
 
 ### Hiver et Ski {#winter-and-ski}
 
@@ -101,7 +101,7 @@ Conçu pour les déserts et autres régions peu peuplées, offrant des informati
 
 ![Style de carte Tout-terrain](@site/static/img/map/map-style-offroad.png)
 
-Conçu pour la navigation tout-terrain, ce style est basé sur la mise en page de la carte [Topo](#topo) et fonctionne bien avec les images satellite en sous-couche. Il présente des routes principales plus fines pour mettre en évidence les chemins, les pistes, les pistes cyclables et autres sentiers tout-terrain, ce qui le rend idéal pour explorer les routes non pavées dans les zones rurales ou isolées.
+Conçu pour la navigation tout-terrain, ce style est basé sur la mise en page de la carte [Topo](#topo) et fonctionne bien avec les images satellite en sous-couche. Il présente des routes principales plus fines pour mettre en évidence les chemins, les pistes, les pistes cyclables et autres sentiers tout-terrain, ce qui le rend idéal pour explorer les routes non pavées dans les zones rurales ou éloignées.
 
 ### Motoneige {#snowmobile}
 
@@ -112,7 +112,7 @@ Adapté à la navigation en motoneige, ce style met en évidence les chemins, le
 
 ## Légende de la carte {#map-legend}
 
-La légende de la carte sert de clé pour comprendre les symboles utilisés dans les cartes OsmAnd. Elle explique la signification des différents symboles cartographiques, y compris les points, les lignes et les zones. Par exemple, des symboles comme des lignes sinueuses bleues indiquent des rivières, tandis que différentes couleurs et formes peuvent représenter des bâtiments, des chemins et des routes.
+La légende de la carte sert de clé pour comprendre les symboles utilisés dans les cartes OsmAnd. Elle explique la signification des différents symboles cartographiques, y compris les points, les lignes et les zones. Par exemple, des symboles comme des lignes sinueuses bleues indiquent des rivières, tandis que différentes couleurs et formes peuvent représenter des bâtiments, des chemins et des itinéraires.
 
 La légende aide les utilisateurs à interpréter ce qu'ils voient sur la carte. Vous pouvez accéder à la légende complète de la carte OsmAnd [ici](../map-legend/index.md).
 
@@ -161,7 +161,7 @@ Les courbes de niveau sont compatibles avec tous les styles de carte et peuvent 
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*
 
-![profondeur_nautique_largeur_et](@site/static/img/map/nautical_depth_width_and.png) ![profondeur_nautique_couleur_et](@site/static/img/map/nautical_depth_color_and.png)
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png) ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
 
 </TabItem>
 
@@ -169,18 +169,18 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*
 
-![profondeur_nautique_largeur_et](@site/static/img/map/nautical_depth_width_ios.png) ![profondeur_nautique_couleur_et](@site/static/img/map/nautical_depth_color_ios.png)
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png) ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Les courbes de profondeur nautique représentent des zones d'égale profondeur, aidant à visualiser les changements de topographie sous-marine. Cette fonctionnalité est disponible dans tous les styles et modes de carte et peut être ajustée avec ou sans le plugin Vue de carte nautique activé.
+Les courbes de niveau de profondeur nautique représentent des zones d'égale profondeur, aidant à visualiser les changements de topographie sous-marine. Cette fonctionnalité est disponible dans tous les styles et modes de carte et peut être ajustée avec ou sans le plugin Vue de carte nautique activé.
 
-Pour plus de détails sur la vue de carte nautique, consultez la [page du plugin Nautique](../plugins/nautical-charts).
+Pour plus de détails sur la vue de carte nautique, consultez la page du [plugin Nautique](../plugins/nautical-charts).
 
 
-## Afficher les frontières {#show-borders}
+## Afficher les bordures {#show-borders}
 
 <Tabs groupId="operating-systems">
 
@@ -188,7 +188,7 @@ Pour plus de détails sur la vue de carte nautique, consultez la [page du plugin
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![afficher-frontières-andr](@site/static/img/map/show-borders-andr.png)
+![afficher-bordures-andr](@site/static/img/map/show-borders-andr.png)
 
 </TabItem>
 
@@ -196,18 +196,18 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,show
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![afficher-frontières-ios](@site/static/img/map/show-borders-ios.png)
+![afficher-bordures-ios](@site/static/img/map/show-borders-ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Cette fonctionnalité vous permet d'activer ou de désactiver la visibilité des frontières des cartes précédemment téléchargées à partir de la liste des cartes disponibles. Son objectif principal est d'aider à désencombrer la carte principale en masquant les contours des cartes téléchargées, ce qui est particulièrement utile si vous avez de nombreuses cartes installées.
+Cette fonctionnalité vous permet d'activer ou de désactiver la visibilité des bordures des cartes précédemment téléchargées à partir de la liste des cartes disponibles. Son objectif principal est d'aider à désencombrer la carte principale en masquant les contours des cartes téléchargées, ce qui est particulièrement utile si vous avez de nombreuses cartes installées.
 
-Par défaut, les frontières des cartes apparaissent lorsque vous zoomez au niveau 7 et disparaissent au niveau de zoom 3 et en dessous.
+Par défaut, les bordures de carte apparaissent lorsque vous zoomez au niveau 7 et disparaissent au niveau de zoom 3 et en dessous.
 
-:::tip Couleur Afficher les frontières des cartes téléchargées
-Lorsque la fonctionnalité *Afficher les frontières des cartes téléchargées* est activée, les cartes téléchargées sont colorées en **Vert** dans les versions Android et iOS d'OsmAnd.
+:::tip Couleur Afficher les bordures des cartes téléchargées
+Lorsque la fonctionnalité *Afficher les bordures des cartes téléchargées* est activée, les cartes téléchargées sont colorées en **Vert** dans les versions Android et iOS d'OsmAnd.
 
 Sur Android, les cartes archivées sont affichées en **Orange**. Sur iOS, les cartes qui peuvent être mises à jour sont également marquées en **Orange**.
 :::
@@ -229,7 +229,7 @@ La fonctionnalité **Grille de coordonnées** superpose une grille de référenc
 - **DD.DDDDD°** (Degrés décimaux - format par défaut WGS84)
 - **DD°MM.MMM′** (Degrés, Minutes décimales)
 - **MGRS** (Military Grid Reference System)
-- **UTM** (Universal Transverse Mercator - système de grille basé sur des zones)
+- **UTM** (Universal Transverse Mercator - système de grille basé sur les zones)
 
 :::note
 
@@ -247,10 +247,10 @@ OsmAnd prend en charge plusieurs **projections de base** pour afficher les ligne
 
 | **Projection** | **Code EPSG** | **Description** |
 |----------------|-------------|----------------|
-| **WGS84** | EPSG:4326 | Système de référence latitude/longitude par défaut, utilisé mondialement. |
-| **Mercator** | EPSG:3857 | Utilisé pour la cartographie web (Google Maps, OpenStreetMap, etc.). |
-| **UTM** | EPSG:6387 | Divise le monde en **60 zones** pour un positionnement local précis. |
-| **MGRS** | - | Military Grid Reference System (extension de l'UTM). |
+| **WGS84**      | EPSG:4326   | Système de référence latitude/longitude par défaut, utilisé mondialement. |
+| **Mercator**   | EPSG:3857   | Utilisé pour la cartographie web (Google Maps, OpenStreetMap, etc.). |
+| **UTM**        | EPSG:6387   | Divise le monde en **60 zones** pour un positionnement local précis. |
+| **MGRS**       | -           | Military Grid Reference System (extension de l'UTM). |
 
 
 
@@ -288,7 +288,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widg
 
 La carte peut être affichée dans un thème clair ou sombre en fonction du mode sélectionné dans une liste d'options. Par défaut et pour tous les nouveaux utilisateurs, le [style de carte](#default-map-styles) s'aligne sur le thème choisi dans les paramètres système de votre appareil.
 
-- **<Translate android="true" ids="daynight_mode_day"/>**. Affiche toujours la carte dans un thème clair pour une visibilité optimale de jour.
+- **<Translate android="true" ids="daynight_mode_day"/>**. Affiche toujours la carte dans un thème clair pour une visibilité optimale en journée.
 
 - **<Translate android="true" ids="daynight_mode_night"/>**. Affiche toujours la carte dans un thème sombre, idéal pour la nuit ou les conditions de faible luminosité.
 
@@ -324,13 +324,13 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_
 - **<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. Affiche le type de revêtement routier. La couleur de la route vous aide à comprendre quel est le revêtement routier, comme l'asphalte, l'herbe ou le sable. Voir la [Légende de la carte](../map-legend/index.md).
     ![Paramètre de carte - Revêtement routier](@site/static/img/map/map-parameter-road-surface.png)
 
-- **<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. Indique la qualité de la route. Indique la douceur (pente) de la route. À quel point vos routes sont lisses : bonnes, mauvaises, éventuellement terribles, etc. Consultez la [Légende de la carte](../map-legend/index.md) pour déterminer la douceur de votre route.
+- **<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. Indique la qualité de la route. Indique la douceur (pente) de la route. À quel point vos routes sont lisses : bonnes, mauvaises, peut-être terribles, etc. Regardez la [Légende de la carte](../map-legend/index.md) pour déterminer la douceur de votre route.
     ![Paramètre de carte - Douceur de la route](@site/static/img/map/map-parameter-road-smoothness.png)
 
 - **<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. Affiche l'accessibilité de la route : privée ou autorisée, réservée aux urgences ou route à péage. Consultez la [Légende de la carte](../map-legend/index.md) pour trouver les routes disponibles.
     ![Paramètre de carte - Accès routier](@site/static/img/map/map-parameter-road-access.png)
 
-- **<Translate ios="true" ids="rendering_attr_showLez_name"/>**. La fonctionnalité [Zones à faibles émissions (ZFE)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) affiche des bordures vertes et des étiquettes "ZFE" sur les cartes pour les zones des villes où l'accès est restreint pour certains véhicules polluants. Les ZFE visent à améliorer la qualité de l'air en limitant l'entrée aux véhicules qui respectent des normes d'émission spécifiques. L'utilisation de cette fonctionnalité aide les utilisateurs à éviter les pénalités en identifiant et en naviguant autour de ces zones vertes, garantissant ainsi la conformité avec les réglementations environnementales locales lors des déplacements dans les centres-villes.
+- **<Translate ios="true" ids="rendering_attr_showLez_name"/>**. La fonctionnalité [Zones à faibles émissions (ZFE)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) affiche des bordures vertes et des étiquettes "ZFE" sur les cartes pour les zones des villes où l'accès est restreint pour certains véhicules polluants. Les ZFE visent à améliorer la qualité de l'air en limitant l'entrée aux véhicules qui respectent des normes d'émissions spécifiques. L'utilisation de cette fonctionnalité aide les utilisateurs à éviter les pénalités en identifiant et en naviguant autour de ces zones vertes, garantissant ainsi la conformité avec les réglementations environnementales locales lors des déplacements dans les centres-villes.
 
     ![Paramètre de carte - Zones à faibles émissions](@site/static/img/map/map-parameter-low-emission-zones.png)
 
@@ -341,12 +341,12 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_
     ![Paramètre de carte - Éclairage public](@site/static/img/map/map-parameter-street-lighting.png)
 
 - **<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. Conçue pour les cartographes, cette fonctionnalité affiche les références, les remarques et les commentaires d'autres utilisateurs sur la carte.
-    ![Paramètre de carte - Assistant cartographique](@site/static/img/map/map-parameter-map-assistant.png)
+    ![Paramètre de carte - Assistant cartographe](@site/static/img/map/map-parameter-map-assistant.png)
 
-- **<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. Affiche les courbes de profondeur marine. Vous devez installer le [plugin Nautique](../plugins/nautical-charts) et télécharger les cartes nautiques.
-    ![Paramètre de carte - Courbes de profondeur](@site/static/img/map/map-parameter-depth-contours.png)
+- **<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. Affiche les courbes de niveau de profondeur marine. Vous devez installer le [plugin Nautique](../plugins/nautical-charts) et télécharger les cartes nautiques.
+    ![Paramètre de carte - Courbes de niveau de profondeur](@site/static/img/map/map-parameter-depth-contours.png)
 
-- **<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. Affiche les bordures vertes et les étiquettes "NR" pour les [territoires de réserve naturelle](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Met en évidence les zones protégées avec une bordure verte et l'étiquette "NR" pour les zones de conservation de la faune.
+- **<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. Affiche une bordure verte et les étiquettes "NR" pour les [territoires de réserve naturelle](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Met en évidence les zones protégées avec une bordure verte et l'étiquette "NR" pour les zones de conservation de la faune.
 
     &nbsp;&nbsp;&nbsp;![Paramètre de carte - Réserve naturelle](@site/static/img/map/nature-reserve.png)
 
@@ -356,14 +356,14 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_
 |--------|--------|--------|
 |**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Affiche les polygones, les sentiers, les points et les panneaux sur la carte à faible zoom. Cela signifie que vous pouvez voir plus de détails sur la carte à faible grossissement. Notez que le rendu sur votre appareil peut ne pas être rapide.| ![Paramètre de carte - Plus détaillé](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 |**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Affiche le type de revêtement routier. La couleur de la route vous aide à comprendre quel est le revêtement routier, comme l'asphalte, l'herbe ou le sable. Voir la [Légende de la carte](../map-legend/index.md).| ![Paramètre de carte - Revêtement routier](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indique la qualité de la route. Indique la douceur (pente) de la route. À quel point vos routes sont lisses : bonnes, mauvaises, éventuellement terribles, etc. Consultez la [Légende de la carte](../map-legend/index.md) pour déterminer la douceur de votre route.| ![Paramètre de carte - Douceur de la route](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indique la qualité de la route. Indique la douceur (pente) de la route. À quel point vos routes sont lisses : bonnes, mauvaises, peut-être terribles, etc. Regardez la [Légende de la carte](../map-legend/index.md) pour déterminer la douceur de votre route.| ![Paramètre de carte - Douceur de la route](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 |**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Affiche l'accessibilité de la route : privée ou autorisée, réservée aux urgences ou route à péage. Consultez la [Légende de la carte](../map-legend/index.md) pour trouver les routes disponibles. | ![Paramètre de carte - Accès routier](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | La fonctionnalité [Zones à faibles émissions (ZFE)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) affiche des bordures vertes et des étiquettes "ZFE" sur les cartes pour les zones des villes où l'accès est restreint pour certains véhicules polluants. Les ZFE visent à améliorer la qualité de l'air en limitant l'entrée aux véhicules qui respectent des normes d'émission spécifiques. L'utilisation de cette fonctionnalité aide les utilisateurs à éviter les pénalités en identifiant et en naviguant autour de ces zones vertes, garantissant ainsi la conformité avec les réglementations environnementales locales lors des déplacements dans les centres-villes.| ![Paramètre de carte - Zones à faibles émissions](@site/static/img/map/map-parameter-low-emission-zones.png)|
+|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | La fonctionnalité [Zones à faibles émissions (ZFE)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) affiche des bordures vertes et des étiquettes "ZFE" sur les cartes pour les zones des villes où l'accès est restreint pour certains véhicules polluants. Les ZFE visent à améliorer la qualité de l'air en limitant l'entrée aux véhicules qui respectent des normes d'émissions spécifiques. L'utilisation de cette fonctionnalité aide les utilisateurs à éviter les pénalités en identifiant et en naviguant autour de ces zones vertes, garantissant ainsi la conformité avec les réglementations environnementales locales lors des déplacements dans les centres-villes.| ![Paramètre de carte - Zones à faibles émissions](@site/static/img/map/map-parameter-low-emission-zones.png)|
 |**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Différentes catégories de bâtiments, telles que résidentiels, industriels et commerciaux, sont codées par couleur. Reportez-vous à la [Légende de la carte](../map-legend/index.md) pour plus de détails. | ![Paramètre de carte - Bâtiments colorés](@site/static/img/map/map-parameter-coloured-buildings.png)|
 |**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Affiche les rues éclairées et non éclairées, ainsi que les voies souterraines et temporairement éclairées. Consultez la [Légende de la carte](../map-legend/index.md) pour plus de détails. | ![Paramètre de carte - Éclairage public](@site/static/img/map/map-parameter-street-lighting.png)|
-|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Conçue pour les cartographes, cette fonctionnalité affiche les références, les remarques et les commentaires d'autres utilisateurs sur la carte. | ![Paramètre de carte - Assistant cartographique](@site/static/img/map/map-parameter-map-assistant.png)|
-|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Affiche les courbes de profondeur marine. Vous devez installer le [plugin Nautique](../plugins/nautical-charts) et télécharger les cartes nautiques.| ![Paramètre de carte - Courbes de profondeur](@site/static/img/map/map-parameter-depth-contours.png)|
-|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Affiche les bordures vertes et les étiquettes "NR" pour les [territoires de réserve naturelle](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Met en évidence les zones protégées avec une bordure verte et l'étiquette "NR" pour les zones de conservation de la faune.| ![Paramètre de carte - Réserve naturelle](@site/static/img/map/nature-reserve.png)|
+|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Conçue pour les cartographes, cette fonctionnalité affiche les références, les remarques et les commentaires d'autres utilisateurs sur la carte. | ![Paramètre de carte - Assistant cartographe](@site/static/img/map/map-parameter-map-assistant.png)|
+|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Affiche les courbes de niveau de profondeur marine. Vous devez installer le [plugin Nautique](../plugins/nautical-charts) et télécharger les cartes nautiques.| ![Paramètre de carte - Courbes de niveau de profondeur](@site/static/img/map/map-parameter-depth-contours.png)|
+|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Affiche une bordure verte et les étiquettes "NR" pour les [territoires de réserve naturelle](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Met en évidence les zones protégées avec une bordure verte et l'étiquette "NR" pour les zones de conservation de la faune.| ![Paramètre de carte - Réserve naturelle](@site/static/img/map/nature-reserve.png)|
 -->
 
 ### Itinéraires {#routes}
@@ -407,19 +407,19 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widg
 
 </Tabs>
 
-Lorsque vous naviguez dans les villes, vous avez besoin d'une vue plus contrastée des transports en commun et des arrêts. Vous pouvez appuyer sur un arrêt de transport en commun et sélectionner l'une des lignes ou des arrêts dans la liste. Les lignes de train sont également affichées dans ce paramètre.
+Lorsque vous naviguez dans les villes, vous avez besoin d'une vue plus contrastée des transports en commun et des arrêts. Vous pouvez appuyer sur un arrêt de transport en commun et sélectionner l'un des itinéraires ou arrêts dans la liste. Les itinéraires de train sont également affichés dans ce paramètre.
 
 - **<Translate android="true" ids="rendering_attr_transportStops_name"/>**. Affiche les arrêts de transport en commun.
     ![Arrêts de transport sur la carte](@site/static/img/map/map-transport-stops.png)
 
-- **<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**. Affiche les lignes de bus, de trolleybus et de navette.
-    ![Bus sur la carte](@site/static/img/map/map-transport-bus.png)
+- **<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**. Affiche les itinéraires de bus, de trolleybus et de navette.
+    ![Bus de transport sur la carte](@site/static/img/map/map-transport-bus.png)
 
-- **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Affiche les lignes de tramway et de train.
-    ![Tramway sur la carte](@site/static/img/map/map-transport-tram.png)
+- **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Affiche les itinéraires de tramway et de train.
+    ![Tramway de transport sur la carte](@site/static/img/map/map-transport-tram.png)
 
-- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Affiche les lignes de métro.
-    ![Métro sur la carte](@site/static/img/map/map-transport-subway.png)
+- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Affiche les itinéraires souterrains.
+    ![Métro de transport sur la carte](@site/static/img/map/map-transport-subway.png)
 
 ### Masquer {#hide}
 
@@ -441,7 +441,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widg
 
 Pour améliorer la visibilité de la carte, vous pourriez avoir besoin de masquer certains objets. Par exemple, vous pouvez masquer l'eau lorsque vous utilisez les [cartes en ligne satellite avec la couche de sous-couche](../map/raster-maps.md#select-raster-maps).
 
-- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Masque les frontières régionales à l'intérieur des pays, mais les frontières des États sont visibles.
+- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Masque les limites régionales à l'intérieur des pays, mais les limites d'État sont visibles.
 - **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Masque tous les polygones d'objets naturels, fonction spéciale pour la [couche de sous-couche/superposition](../map/raster-maps.md#select-raster-maps).
 - **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Masque tous les polygones de bâtiments.
 - **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Masque tous les polygones d'eau (mers, lacs, réservoirs, etc.)
@@ -470,24 +470,24 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widg
 
 </Tabs>
 
-Paramètres spéciaux pour les routes, où vous pouvez changer les couleurs pour correspondre à l'atlas routier ou ajouter des routes à contraste élevé ou des contours gras pour les routes.
+Paramètres spéciaux pour les routes, où vous pouvez changer les couleurs pour correspondre à l'atlas routier ou ajouter des routes à contraste élevé ou des contours audacieux pour les routes.
 
-- **<Translate android="true" ids="rendering_value_default_name"/>**. Style par défaut pour les autoroutes. Voir la [Légende de la carte](../map-legend/index.md).
-![Style de route par défaut](@site/static/img/map/map-road-style-default.png)
+- **<Translate android="true" ids="rendering_value_default_name"/>**. Style par défaut pour les autoroutes. Regardez la [Légende de la carte](../map-legend/index.md).
+![Style de route par défaut sur la carte](@site/static/img/map/map-road-style-default.png)
 
 - **<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Style de l'atlas routier allemand.
-![Style de route allemand](@site/static/img/map/map-road-style-german.png)
+![Style de route allemand sur la carte](@site/static/img/map/map-road-style-german.png)
 
 - **<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. Style de l'atlas routier américain.
-![Style de route américain](@site/static/img/map/map-road-style-american.png)
+![Style de route américain sur la carte](@site/static/img/map/map-road-style-american.png)
 
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Contraste élevé des routes.
-![Style de route à contraste élevé](@site/static/img/map/map-road-style-high-contrast.png)
+![Style de route à contraste élevé sur la carte](@site/static/img/map/map-road-style-high-contrast.png)
 - **Pâle**. Couleurs moins contrastées des routes.
-![Style de route à contour gras](@site/static/img/map/map-road-style-pale.png)
+![Style de route à contour audacieux sur la carte](@site/static/img/map/map-road-style-pale.png)
 
-- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contour gras pour les routes.
-![Style de route à contour gras](@site/static/img/map/map-road-style-bold-outline.png)
+- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contour audacieux pour les routes.
+![Style de route à contour audacieux sur la carte](@site/static/img/map/map-road-style-bold-outline.png)
 
 
 ### Taille du texte {#text-size}
@@ -584,7 +584,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,shared_s
 Si vous avez un style de carte personnalisé personnel ou tiers créé selon la [Spécification](../../technical/osmand-file-formats/osmand-rendering-style.md), vous pouvez l'installer sur votre appareil de ces manières :
 
 - Copiez le fichier `.render.xml` sur votre appareil et ouvrez-le avec OsmAnd.
-- Utilisez les [dialogues d'importation/exportation standard](../personal/import-export.md) pour exporter ou importer des styles de rendu. Si vous créez un package `.osf`, il fonctionne comme un plugin que vous pouvez partager avec d'autres.
+- Utilisez les [boîtes de dialogue d'importation/exportation standard](../personal/import-export.md) pour exporter ou importer des styles de rendu. Si vous créez un package `.osf`, il fonctionne comme un plugin que vous pouvez partager avec d'autres.
 - Après l'installation, vous pouvez sélectionner le style de carte dans le menu.
 
 
@@ -593,4 +593,4 @@ Si vous avez un style de carte personnalisé personnel ou tiers créé selon la 
 - [Importation / Exportation](../personal/import-export.md)
 - [Schémas de palette de couleurs](../personal/color-palette-schemes.md)
 
-> *Cet article a été mis à jour pour la dernière fois en mars 2025*
+> *Dernière mise à jour : mars 2025*

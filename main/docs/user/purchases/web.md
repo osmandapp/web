@@ -1,7 +1,6 @@
 ---
 sidebar_position: 3
 title:  Web Purchases
-unlisted: true
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,11 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 
 ## How to Buy {#how-to-buy}
 
-You can buy OsmAnd products on our official website or via in-app purchases:
+You can buy OsmAnd products on [our official website](https://osmand.net/pricing):
 
-- **Website**: Payments are securely processed by our authorized reseller [FastSpring](https://fastspring.com/).  
+- [**Website**](https://osmand.net/pricing): Payments are securely processed by our authorized reseller [FastSpring](https://fastspring.com/).  
 
-All purchases made through any of these platforms support **cross-platform access**.
+All purchases made through any of these platforms support [**cross-platform access**](./cross.md).
 
 
 ### Difference Between Purchases {#difference-between-purchases}
@@ -37,14 +36,39 @@ All purchases made through any of these platforms support **cross-platform acces
 
 Below are the prices for OsmAnd products in the US and EU. Prices in other regions are automatically converted to local currency by the payment platform.
 
-|    | OsmAnd Free   | [Maps+](#install-osmand-ios) One-Time | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+
+:::danger June Sale prices
+
+*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **June 15 (23:00 CET)**.
+
+:::
+
+
+|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+:::note 
+By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
+you receive a 2-year discounted plan.  
+Starting from the third year, the full price will apply.
+:::
+
+<!--
+
+
+
+|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |
 | **Price (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |
 
-
+-->
 
 ### Free and Paid Features {#free-and-paid-features}
 
@@ -55,7 +79,7 @@ Below are the prices for OsmAnd products in the US and EU. Prices in other regio
 
 ## Restore Purchases {#restore-purchases}
 
-Your purchases are linked to your OsmAnd Cloud account (your email). To restore purchases on a new device:
+Your purchases are linked to your [OsmAnd Cloud account](../personal/osmand-cloud.md#login) (your email). To restore purchases on a new device:
 
 1. Install the OsmAnd app (Android or iOS).
 2. Open the app with an active internet connection.

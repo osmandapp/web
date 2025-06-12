@@ -1,9 +1,8 @@
 ---
-source-hash: 819f6897928963a96db39b792e9d9cceb71bb66df91ed645efd5deb1116c4348
+source-hash: 3285f0c719a8255c35a044a6bccdc05206d01216a9c0d4f8c30f58b3a9122f36
 sidebar_position: 16
 title:  Métriques du véhicule
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,21 +14,30 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 <InfoIncompleteArticle/>
 
-## Aperçu {#overview}
+<InfoAndroidOnly/>
+
+## Vue d'ensemble {#overview}
 
 :::info Fonctionnalité payante
 Le plugin Métriques du véhicule est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.
 :::
 
-<InfoAndroidOnly/>
-
 Le **plugin Métriques du véhicule** permet la surveillance en temps réel des données du véhicule via le protocole OBD-II. Les utilisateurs peuvent suivre les métriques essentielles telles que les performances du moteur, l'efficacité énergétique et la vitesse, ce qui permet une maintenance et un dépannage proactifs du véhicule.
 
 Les scanners OBD-II font partie intégrante des diagnostics automobiles modernes. Grâce à la diffusion de données en temps réel, les utilisateurs obtiennent des informations instantanées sur les systèmes du véhicule, ce qui facilite la maintenance préventive et réduit les coûts de réparation. Ces outils sont essentiels pour un usage personnel et les services automobiles professionnels.
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![Paramètres OBD](@site/static/img/plugins/obd/obd_overview_2.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ## Paramètres de configuration requis {#required-setup-parameters}
@@ -61,7 +69,7 @@ Choisissez votre appareil OBD-II dans la liste et établissez la connexion.
 
 ## Paramètres du scanner {#scanner-settings}
 
-*Menu → Plugins → Métriques du véhicule → OBD → menu à trois points*
+**Android.** Accédez à : *Menu → Plugins → Métriques du véhicule → OBD → menu à trois points*
 
 |  |  |
 |--|--|
@@ -75,7 +83,7 @@ Choisissez votre appareil OBD-II dans la liste et établissez la connexion.
 
 ## Liste des métriques {#metrics-list}
 
-Les métriques sont classées pour plus de clarté. Les outils de diagnostic avancés permettent une maintenance préventive en interprétant ces paramètres :
+Les métriques sont classées par catégorie pour plus de clarté. Les outils de diagnostic avancés permettent une maintenance préventive en interprétant ces paramètres :
 
 *Température :*
 
@@ -101,12 +109,12 @@ Les métriques sont classées pour plus de clarté. Les outils de diagnostic ava
 - **Niveau de batterie**. Indique le niveau de tension de la batterie du véhicule.
 - **Vitesse du véhicule**. Affiche les données du capteur de vitesse du véhicule (VSS).
 - **Position du papillon**. Détermine l'admission d'air du moteur via l'angle de la plaque du papillon.
-  **VIN**. Affiche le numéro d'identification à 17 caractères du véhicule.
+  **VIN**. Affiche le numéro d'identification du véhicule à 17 caractères.
 
 
 ## Enregistrement de trajet {#trip-recording}
 
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
+**Android**. Accédez à : *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
 
 | | |
 |--|--|
@@ -127,7 +135,7 @@ Ces balises facilitent l'identification et l'utilisation de données spécifique
 
 ## Widgets {#widgets}
 
-*Menu → Configurer l'écran → Widgets → Choisir un panneau → Métriques du véhicule*
+**Android.** Accédez à : *Menu → Configurer l'écran → Widgets → Choisir un panneau → Métriques du véhicule*
 
 | | |
 |--|--|
@@ -137,7 +145,7 @@ Les [widgets Métriques du véhicule](../widgets/info-widgets.md#vehicle-metrics
 
 ### Paramètres du widget {#widget-settings}
 
-Les widgets affichent les données clés de votre appareil OBD-II connecté en temps réel, telles que la vitesse, les métriques du moteur et la consommation de carburant. Assurez-vous qu'ils sont visibles avant de commencer votre trajet pour suivre les métriques en toute transparence.
+Les widgets affichent les données clés de votre appareil OBD-II connecté en temps réel, telles que la vitesse, les métriques du moteur et la consommation de carburant. Assurez-vous qu'ils sont visibles avant de commencer votre trajet pour suivre les métriques de manière transparente.
 
 Certains widgets offrent des options de mode d'affichage :
 
@@ -151,4 +159,4 @@ Certains widgets offrent des options de mode d'affichage :
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *Cet article a été mis à jour pour la dernière fois en décembre 2024*
+> *Dernière mise à jour : décembre 2024*
