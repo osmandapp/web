@@ -79,7 +79,7 @@ Il existe deux façons possibles de choisir les routes à éviter lors du calcul
 :::note
 
 - La route doit être marquée au zoom maximum, car OsmAnd peut mal interpréter le toucher et bloquer, par exemple, le mauvais côté d'une route à deux voies ou un trottoir.
-- La fonction Éviter les routes spécifiques fonctionne incorrectement avec l'option [Navigation par trace](../setup/gpx-navigation.md) et n'a pas d'impact sur la [navigation par marqueurs](../setup/markers-navigation.md#how-to-use) simplifiée.
+- La fonction Éviter les routes spécifiques fonctionne incorrectement avec l'option [Navigation par trace](../setup/gpx-navigation.md) et n'a pas d'impact sur la [navigation par marqueurs](../setup/markers-navigation.md#use-markers-in-navigation) simplifiée.
 
 :::
 

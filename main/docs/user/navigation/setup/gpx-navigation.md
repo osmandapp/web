@@ -67,7 +67,7 @@ Before using the *Navigation by track* option, you need to [display the track on
 
 </Tabs>
 
-Navigation on a track can be started using the quick action button in the [track context menu](../../map/tracks/track-context-menu.md#quick-actions) (opened by selecting one of the [highlighted tracks](./route-navigation.md#history-of-previous-routes) on the map, or by tapping a track file in the [My Places](../../personal/myplaces.md) section of the *Main Menu*) or from the navigation menu, which is opened by tapping:
+Navigation on a track can be started using the quick action button in the [track context menu](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (opened by selecting one of the [highlighted tracks](./route-navigation.md#history-of-previous-routes) on the map, or by tapping a track file in the [My Places](../../personal/myplaces.md) section of the *Main Menu*) or from the navigation menu, which is opened by tapping:
 
 - [*Navigation button*](../../widgets/map-buttons.md#directions) on the map screen.  
 - *Navigation section* in the *Main Menu* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
@@ -176,7 +176,7 @@ In the [Follow track menu](#follow-track-options), you can choose whether you wa
 
 ### Waypoints {#waypoints}
 
-If the track has waypoints, you can use [Show along the route](../guidance/map-during-navigation.md#show-points-along-the-route) and [Voice guidance](../guidance/voice-navigation.md#voice-settings) to get notified about Points of Interests. You can add **Waypoints** to an existing track via **[Context menu](../../map/map-context-menu.md#-add--edit--track-waypoint)**, track need to be visible on the map.
+If the track has waypoints, you can use [Show along the route](../guidance/map-during-navigation.md#show-points-along-the-route) and [Voice guidance](../guidance/voice-navigation.md#voice-settings) to get notified about Points of Interests. You can add **Waypoints** to an existing track via [Context menu](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint), track need to be visible on the map.
 
 ### Intermediate Points {#intermediate-points}
 
@@ -184,7 +184,7 @@ When preparing or navigating a GPX track, you cannot add intermediate places you
 
 ## Guidance {#guidance}
 
-*Navigation by GPX track* contains the same [voice instructions](../guidance/voice-navigation.md) as route navigation. However, some turns or traffic circles may not be interpreted correctly because there is no information about road intersections in GPX, except for GPX files created by OsmAnd. To eliminate these problems, you should use the [**Attach to the roads**](#attach-to-the-roads) feature.  
+*Navigation by GPX track* contains the same [voice instructions](../guidance/voice-navigation.md) as route navigation. However, some turns or traffic circles may not be interpreted correctly because there is no information about road intersections in GPX, except for GPX files created by OsmAnd. To eliminate these problems, you should use the [sAttach to the roads](#attach-to-the-roads) feature.  
 
 During navigation, you can use various options such as zooming in or out, panning the map, or switching to a different map style. If you deviate from the track, OsmAnd will automatically recalculate the route to bring you back on track. You can also adjust the speed of the track and set audible alerts for approaching points or deviations from the route.  
 

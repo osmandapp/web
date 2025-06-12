@@ -55,7 +55,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
 
 - Set [vehicle parameters](../guidance/navigation-settings.md#size-parameters) (*important for truck drivers*), select the [engine type](../guidance/navigation-settings.md#fuel-used-by-motor) (*optional*).
 
-- Configure [route line appearance](../guidance/map-during-navigation#route-line-appearance) (*optional*, available for [Pro users](../../purchases/index.md#purchases)).
+- Configure [route line appearance](../guidance/map-during-navigation#route-line-appearance) (*optional*, available for Pro users ([Android](../../purchases/android.md#pro-features-pro-features) / [iOS](../../purchases/ios.md#pro-features-pro-features))).
 
 - Configure [voice prompts](../guidance/voice-navigation.md).
 
@@ -109,7 +109,7 @@ There are 3 ways to reach the navigation menu:
 
 - **<Translate android="true" ids="shared_string_my_location"/>** – Set starting location (default: [*My Current location*](../../map/interact-with-map.md#my-location-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Use to [set your destination point](#set-target-point).
-- **Add** &nbsp;&#43; - Insert [intermediate points](../../widgets/nav-widgets.md#intermediate-destination) along the route.
+- **Add** &nbsp;&#43; - Insert [intermediate points](../../widgets/nav-widgets.md#distance-to-intermediate) along the route.
 - **Swap** &nbsp;&#8595;&#8593; - Reverse the *Start* and *Finish* points.
 - **Sound button** - Mute the [voice prompts](../guidance/voice-navigation.md).
 - **<Translate android="true" ids="shared_string_settings"/>** – [Adjust](#settings) route preferences and road restrictions.

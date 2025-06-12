@@ -76,7 +76,7 @@ Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.t
 Line gradient visualizations uses palette files (`route_<type_name>_<palette_name>.txt`) to color GPX tracks and Routes:
 
 - For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
-- For [GPX Tracks](../map/tracks/index.md#color): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
+- For [GPX Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
 
 ### Weather {#weather}
 
@@ -98,7 +98,7 @@ Color palette (`user_palette_default.txt`) is simply used for predefined colors 
 </table>
 
 
-The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/index.md#color), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/topography.md#default-color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
+The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/appearance#track-colors-in-gpx-files), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/topography.md#default-color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
 
 
 ## Edit Palette file {#edit-palette-file}

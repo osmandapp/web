@@ -68,10 +68,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ось прості рекомендації щодо *Навігації за маркерами*:
 
-1. Створіть маркери. Знайдіть потрібний об'єкт(и) на карті, торкніться його та виберіть кнопку *[Маркер](../../personal/markers.md#add-marker-on-the-map)* у *[контекстному меню карти](../../map/map-context-menu.md#add--edit-marker)*. Ви також можете створити маркери з [обраних](#add-group-of-favorite) або [GPX-треків](#add-group-of-track-waypoints).
+1. Створіть маркери. Знайдіть потрібний об'єкт(и) на карті, торкніться його та виберіть кнопку *[Маркер](../../personal/markers.md#add--edit-markers)* у *[контекстному меню карти](../../map/map-context-menu.md#add--edit-marker)*. Ви також можете створити маркери з [обраних](#add-group-of-favorite) або [GPX-треків](#add-group-of-track-waypoints).
 2. [*Відсортуйте маркери*](#sort-markers) у бажаному порядку, в якому ви хочете їх пройти.
-3. Налаштуйте *Вигляд маркерів на карті*, якщо ви хочете використовувати маркери без запуску навігації. Увімкніть опції **Стрілки на карті** та **Лінія напрямку** в розділі *[Вигляд](../../personal/markers.md#appearance-on-the-map)* *[Меню маркерів на карті](../../personal/markers.md#map-markers-menu)*.
-4. Додайте *[Віджети маркерів](../../personal/markers.md#marker-widgets)* у *[Меню налаштування екрана](../../widgets/configure-screen.md)* (необов'язково).
+3. Налаштуйте *Вигляд маркерів на карті*, якщо ви хочете використовувати маркери без запуску навігації. Увімкніть опції **Стрілки на карті** та **Лінія напрямку** в розділі *[Вигляд](../../personal/markers.md#appearance-on-the-map)* *[Меню маркерів на карті](../../personal/markers.md#actions)*.
+4. Додайте *[Віджети маркерів](../../personal/markers.md#markers)* у *[Меню налаштування екрана](../../widgets/configure-screen.md)* (необов'язково).
 5. [*Позначте як пройдені*](#pass-markers) вже відвідані маркери або відновіть їх з історії, якщо ви хочете пройти їх знову.
 
 :::note
@@ -114,9 +114,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ви можете створити *Маркери на карті* з *[Обраних](../../personal/favorites.md)* за допомогою:
 
-- *[Меню груп обраних](../../personal/favorites.md#add-to-map-markers)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Мої обрані)*.
+- *[Меню груп обраних](../../personal/favorites.md#favorite-group-actions)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Мої обрані)*.
 - Іконки &#128681; у внутрішньому меню Обраних *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Мої обрані→&#128681;)*.
-- Опції **'+'** (додати) у *[вкладці Групи](../../personal/markers.md#groups)* в меню Маркерів на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
+- Опції **'+'** (додати) у *[вкладці Групи](../../personal/markers.md#marker-groups)* в меню Маркерів на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
 
 
 ### Додати групу точок треку {#add-group-of-track-waypoints}
@@ -127,8 +127,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 GPX-треки з точками можуть використовуватися як *Маркери на карті* і швидко вимикатися:
 
-- Використовуйте опцію **'+'** (додати) у *[вкладці Групи](../../personal/markers.md#groups)* в меню Маркерів на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
-- Увімкніть перемикач біля треку у *[вкладці Групи](../../personal/markers.md#groups)* в меню Маркерів на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Використовуйте опцію **'+'** (додати) у *[вкладці Групи](../../personal/markers.md#marker-groups)* в меню Маркерів на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Увімкніть перемикач біля треку у *[вкладці Групи](../../personal/markers.md#marker-groups)* в меню Маркерів на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
 
 :::note
 До *Списку маркерів на карті* можна додавати лише треки з точками. Трек, який ви маєте намір додати, також має бути видимим (активним) на карті.
@@ -136,7 +136,7 @@ GPX-треки з точками можуть використовуватися
 
 ![GPX to markers 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX to markers 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
 
-- Ви також можете створити *Маркери* з треку з точками за допомогою *[контекстного меню треку](../../map/tracks/track-context-menu.md#waypoints-folder)*: *Торкніться видимого треку на карті → у контекстному меню треку виберіть Точки → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
+- Ви також можете створити *Маркери* з треку з точками за допомогою *[контекстного меню треку](../../map/tracks/track-context-menu.md#points--waypoints)*: *Торкніться видимого треку на карті → у контекстному меню треку виберіть Точки → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
 
 
 ## Сортування маркерів {#sort-markers}
@@ -157,7 +157,7 @@ GPX-треки з точками можуть використовуватися
 
 </Tabs>
 
-Натискаючи на лівий кут (Android) або правий кут (iOS) вкладки *Маркера на карті* у *[Списку маркерів на карті](../../personal/markers.md#list)* та переміщуючи її вгору або вниз, ви можете змінити її порядок у *Списку навігації* (під час переміщення картки маркера ви побачите лінію, що вказує, куди буде розміщено маркер).
+Натискаючи на лівий кут (Android) або правий кут (iOS) вкладки *Маркера на карті* у *[Списку маркерів на карті](../../personal/markers.md#itinerary-list)* та переміщуючи її вгору або вниз, ви можете змінити її порядок у *Списку навігації* (під час переміщення картки маркера ви побачите лінію, що вказує, куди буде розміщено маркер).
 
 У версії OsmAnd для Android є інші опції сортування *Маркерів на карті* (*<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/> →* *Сортувати за* або *Планувати маршрут*).
 

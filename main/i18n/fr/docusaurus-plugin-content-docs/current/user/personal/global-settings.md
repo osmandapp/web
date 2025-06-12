@@ -94,7 +94,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 ![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Mémoire de l'appareil** indique l'espace libre restant sur votre appareil. Appuyez sur un champ pour accéder au menu [*Cartes et ressources*](../personal/maps-resources.md#maps-and-resources), où vous pouvez afficher et gérer des informations détaillées sur vos données OsmAnd.
+1. **Mémoire de l'appareil** indique l'espace libre restant sur votre appareil. Appuyez sur un champ pour accéder au menu [*Cartes et ressources*](../personal/maps-resources.md#maps--resources), où vous pouvez afficher et gérer des informations détaillées sur vos données OsmAnd.
 
 2. Dans le **<Translate android="true" ids="change_data_storage_folder"/>**, vous pouvez sélectionner un dossier pour enregistrer les données OsmAnd sur votre appareil.  
 

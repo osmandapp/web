@@ -184,7 +184,7 @@ For a more detailed view, you can **scale the graph**:
 | ![data](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
 :::info
-For more details, you can explore the [**Tracks Context Menu**](../map/tracks/track-context-menu.md#options), where you can manage various track-related options like renaming, deleting, or adding waypoints. To adjust how tracks appear on the map, visit the [**Appearance**](../map/tracks/appearance.md) section. If you want to add specific waypoints to your current track, check out the [**Track Points**](../map/tracks/track-context-menu.md#waypoints-folder) guide. For any modifications, such as renaming a track, use the [**Options**](https://osmand.net/docs/user/map/track-context-menu#options) tab within the Tracks Context Menu.
+For more details, you can explore the [**Tracks Context Menu**](../map/tracks/track-context-menu.md#options), where you can manage various track-related options like renaming, deleting, or adding waypoints. To adjust how tracks appear on the map, visit the [**Appearance**](../map/tracks/appearance.md) section. If you want to add specific waypoints to your current track, check out the [**Track Points**](../map/tracks/track-context-menu.md#points--waypoints) guide. For any modifications, such as renaming a track, use the [**Options**](https://osmand.net/docs/user/map/track-context-menu#options) tab within the Tracks Context Menu.
 :::
 
 

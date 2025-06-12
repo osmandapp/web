@@ -61,7 +61,7 @@ Vous pouvez ajouter des traces dans OsmAnd de plusieurs façons :
 2. Créer une nouvelle trace dans l'application à l'aide de l'outil **[Planifier un itinéraire](../../plan-route/create-route.md)**.
 3. Enregistrer une trace dans l'application à l'aide du plugin **[Enregistrement de trajet](../../plugins/trip-recording.md)**.
 4. Saisir plusieurs points par coordonnées et les enregistrer comme une trace à l'aide de l'outil **[Saisie de coordonnées](../../plan-route/coordinate-input.md)**.
-5. Vous pouvez également ajouter des **points de passage** à une nouvelle trace via le **[Menu contextuel](../../map/map-context-menu.md#-add--edit--track-waypoint)**.
+5. Vous pouvez également ajouter des **points de passage** à une nouvelle trace via le **[Menu contextuel](../../map/map-context-menu.md#-add--edit-track-waypoint)**.
 
 
 ## Gérer les traces {#manage-tracks}

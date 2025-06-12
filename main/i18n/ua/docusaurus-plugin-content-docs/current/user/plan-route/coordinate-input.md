@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Як використовувати {#how-to-use}
 
-Ви можете створити точки маршруту з меню *[Маркери на мапі](../personal/markers.md#map-markers-menu)* або з [Мої місця](../personal/myplaces.md) (див. скріншоти). Будь ласка, дотримуйтесь цих шляхів, щоб дістатися до опції введення координат:
+Ви можете створити точки маршруту з меню *[Маркери на мапі](../personal/markers.md#actions)* або з [Мої місця](../personal/myplaces.md) (див. скріншоти). Будь ласка, дотримуйтесь цих шляхів, щоб дістатися до опції введення координат:
   - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Кнопка Земля внизу екрана*
   - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 

@@ -47,7 +47,7 @@ Wikivoyage information includes the main facts about a place, transportation, at
 - [Download](#download-articles) *Travel guides*.
 - Browse [articles](#browse-articles) about a country, region, city, attraction.
     - Alternatively, [display travel guides articles and/or points on the map](#travel-routes) using the Configure map menu.
-    - Browse through attractions on the map, add them to *[Map markers](../personal/markers.md#add-marker-on-the-map)* or *[Favorites](../personal/favorites.md#add-to-map-markers)*.
+    - Browse through attractions on the map, add them to *[Map markers](../personal/markers.md#add--edit-markers)* or *[Favorites](../personal/favorites.md#favorite-group-actions)*.
     - Using *[Read full](#manage-as-gpx-track)* button, go to the *[article](#travel-article) inside *Travel guides*.
 - [Bookmark](#explore-and-bookmark) articles to read them later.
 - Choose [points](#points) from articles to visit and add them to the OsmAnd map.
@@ -278,7 +278,7 @@ Most *Travel guide articles* have the same content structure: *introduction* (im
 
 *Travel guide articles* often contain tourist attractions grouped by topic. By tapping once on the *Points* button at the bottom of the *[Article](#travel-article)*, all attractions related to the topic (eating places, accommodation options, airports, shops, historical monuments, and so on) will be added to the map and can be *[managed as a Track](#manage-as-gpx-track)*.  
 
-By default, attraction groups are marked with certain icons: *Eat and Drink* categories with a knife and fork in a red circle, *Do and See* with a camera in a green circle, and others. You can manage groups of points with &#8942; like a *[Waypoint folder](../map/tracks/track-context-menu.md#waypoints-folder)*.  
+By default, attraction groups are marked with certain icons: *Eat and Drink* categories with a knife and fork in a red circle, *Do and See* with a camera in a green circle, and others. You can manage groups of points with &#8942; like a *[Waypoint folder](../map/tracks/track-context-menu.md#points--waypoints)*.  
 
 :::note
 Points in *Travel articles* refer to waypoints on a GPX track.  

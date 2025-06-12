@@ -48,7 +48,7 @@ Les informations de Wikivoyage comprennent les faits principaux sur un lieu, les
 - [Télécharger](#download-articles) les *Guides de voyage*.
 - Parcourir les [articles](#browse-articles) sur un pays, une région, une ville, une attraction.
     - Alternativement, [afficher les articles et/ou les points des guides de voyage sur la carte](#travel-routes) en utilisant le menu Configurer la carte.
-    - Parcourir les attractions sur la carte, les ajouter aux *[Marqueurs de carte](../personal/markers.md#add-marker-on-the-map)* ou aux *[Favoris](../personal/favorites.md#add-to-map-markers)*.
+    - Parcourir les attractions sur la carte, les ajouter aux *[Marqueurs de carte](../personal/markers.md#add--edit-markers)* ou aux *[Favoris](../personal/favorites.md#favorite-group-actions)*.
     - En utilisant le bouton *[Lire l'intégralité](#manage-as-gpx-track)*, accéder à l'*[article](#travel-article)* dans les *Guides de voyage*.
 - [Marquer](#explore-and-bookmark) les articles pour les lire plus tard.
 - Choisir les [points](#points) des articles à visiter et les ajouter à la carte OsmAnd.
@@ -279,7 +279,7 @@ La plupart des *articles des guides de voyage* ont la même structure de contenu
 
 Les *articles des guides de voyage* contiennent souvent des attractions touristiques regroupées par thème. En tapant une fois sur le bouton *Points* en bas de l'*[Article](#travel-article)*, toutes les attractions liées au thème (lieux de restauration, options d'hébergement, aéroports, magasins, monuments historiques, etc.) seront ajoutées à la carte et pourront être *[gérées comme une trace](#manage-as-gpx-track)*.  
 
-Par défaut, les groupes d'attractions sont marqués par certaines icônes : les catégories *Manger et Boire* avec un couteau et une fourchette dans un cercle rouge, *Faire et Voir* avec un appareil photo dans un cercle vert, et d'autres. Vous pouvez gérer les groupes de points avec &#8942; comme un *[dossier de points de passage](../map/tracks/track-context-menu.md#waypoints-folder)*.  
+Par défaut, les groupes d'attractions sont marqués par certaines icônes : les catégories *Manger et Boire* avec un couteau et une fourchette dans un cercle rouge, *Faire et Voir* avec un appareil photo dans un cercle vert, et d'autres. Vous pouvez gérer les groupes de points avec &#8942; comme un *[dossier de points de passage](../map/tracks/track-context-menu.md#points--waypoints)*.  
 
 :::note
 Les points dans les *articles de voyage* font référence aux points de passage sur une trace GPX.  

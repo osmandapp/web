@@ -392,7 +392,7 @@ Les waypoints sont l'un des types de points disponibles sur la carte. En génér
 
 Dans cet onglet *Points* :
 
-- [Afficher les données des points de trace](#display-custom-gpx-tags) et modifier vos points de trace (waypoints et points d'itinéraire), les [supprimer et ajouter](#points--waypoints) des waypoints à une trace.
+- [Afficher les données des points de trace](#display-custom-gpx-tags) et modifier vos points de trace (waypoints et points d'itinéraire), les [supprimer et ajouter](#points--waypoints-points--waypoints) des waypoints à une trace.
 - Créer et modifier un [Groupe (dossier) de points](#waypoint-groups).
 
 
@@ -400,12 +400,12 @@ Dans cet onglet *Points* :
 
 Des waypoints peuvent être ajoutés à la trace actuellement enregistrée ou à toute trace de la liste [*Mes lieux → Traces*](../../personal/tracks/manage-tracks.md) :
 
-- Utilisez le [menu contextuel de la carte](../../map/map-context-menu.md#-add--edit--track-waypoint).
+- Utilisez le [menu contextuel de la carte](../../map/map-context-menu.md#-add--edit-track-waypoint).
   - Les waypoints sont automatiquement affichés si la trace sélectionnée est activée sur la carte.
   - [Appuyez longuement](../../map/map-context-menu.md#select-any-point-long-tap) sur la carte à l'emplacement choisi pour créer un waypoint.
-  - Vous pouvez définir des informations sur le waypoint dans le [menu contextuel de la carte](../../map/map-context-menu.md#-add--edit--track-waypoint) ouvert.
+  - Vous pouvez définir des informations sur le waypoint dans le [menu contextuel de la carte](../../map/map-context-menu.md#-add--edit-track-waypoint) ouvert.
 
-- Utilisez le bouton [Ajouter un waypoint](#points--waypoints) du menu contextuel de la trace.
+- Utilisez le bouton [Ajouter un waypoint](#points--waypoints-points--waypoints) du menu contextuel de la trace.
 
 - Ajoutez un waypoint comme bouton [Action rapide](../../widgets/quick-action.md#my-places).
 

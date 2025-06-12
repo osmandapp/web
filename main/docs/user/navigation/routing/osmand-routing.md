@@ -78,7 +78,7 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 :::note
 
 - The road must be marked at maximum zoom, as OsmAnd may misinterpret the tap and block, for example, the incorrect side of two-roadways road or sidewalk.
-- The Avoid specific roads function incorrectly works with [Navigation by track](../setup/gpx-navigation.md) option and doesn't impact simplified [Markers navigation](../setup/markers-navigation.md#how-to-use).
+- The Avoid specific roads function incorrectly works with [Navigation by track](../setup/gpx-navigation.md) option and doesn't impact simplified [Markers navigation](../setup/markers-navigation.md#use-markers-in-navigation).
 
 :::
 

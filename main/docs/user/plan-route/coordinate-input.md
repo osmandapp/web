@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## How to use {#how-to-use}
 
-You can create waypoints from *[Map markers](../personal/markers.md#map-markers-menu)* menu or from [My places](../personal/myplaces.md) (see screenshots). Please, follow these paths to reach the coordinate input option:
+You can create waypoints from *[Map markers](../personal/markers.md#actions)* menu or from [My places](../personal/myplaces.md) (see screenshots). Please, follow these paths to reach the coordinate input option:
   - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Earth button at the bottom of the screen*
   - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
