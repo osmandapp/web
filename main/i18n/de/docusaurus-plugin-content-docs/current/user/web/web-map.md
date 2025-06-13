@@ -114,7 +114,7 @@ Um dieses Menü zu öffnen, klicken Sie auf die Schaltfläche in der **oberen li
 ![POIs menu](@site/static/img/web/configure_map_web.png)
 
 
-### POI-Overlay-Bereich {#poi-overlay-section}
+### POI Overlay Bereich {#poi-overlay-section}
 
 So zeigen Sie POIs auf der Karte an:
 
@@ -125,12 +125,12 @@ Alternativ können Sie den [**Suchbereich**](web-search.md) verwenden, um den ge
 ![POIs menu](@site/static/img/web/poi_menu.png)
 
 
-### Favoriten-Bereich {#favorites-section}
+### Favoriten Bereich {#favorites-section}
 
 Mit einem Klick können Sie Favoriten auf der Karte ein- oder ausschalten. Es werden jedoch nur Favoriten angezeigt, bei denen [**Auf Karte anzeigen aktiviert**](../web/web-userdata.mdx##favorites-on-the-web) ist.
 
 
-### Tracks-Bereich {#tracks-section}
+### Tracks Bereich {#tracks-section}
 
 Dieser Bereich enthält eine Liste Ihrer [**auf der Karte sichtbaren GPX-Tracks**](../web/web-userdata.mdx#visible-on-the-map) und **kürzlich sichtbaren** Tracks.
 
@@ -149,7 +149,7 @@ Jeder Track verfügt über ein **Kontextmenü** (zugänglich über die Schaltfl�
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
 
-### Gelände-Bereich {#terrain-section}
+### Gelände Bereich {#terrain-section}
 
 Der Bereich **Gelände** ist eine kostenpflichtige Funktion <ProFeature/>. Um diese Funktion nutzen zu können, müssen Sie sich zunächst bei Ihrem OsmAnd Pro-Konto anmelden.
 
@@ -180,7 +180,7 @@ In this section of the menu, you can change the map style. You can read more abo
 -->
 
 
-## URL-Schemata {#url-schemes}
+## URL Schemata {#url-schemes}
 
 Für die einfache Nutzung des OsmAnd-Webdienstes (und der Anwendung) können Sie direkte Links nutzen. Dies sind spezielle URLs, die es Ihnen ermöglichen, Standortdaten zu übertragen und Details zu Pins, Tracks, Wetter und mehr einzuschließen.
 

@@ -25,7 +25,7 @@ Das **Suchmenü** kann über das Seitenpanel oder die **linke Ecke 🔍** der Ka
 
 - [Suchleiste](#search-bar). Geben Sie Schlüsselwörter ein, um nach bestimmten Orten oder Points of Interest (POIs) zu suchen.
 - [Kategorienbereich](#categories). Durchsuchen Sie kategorisierte Optionen für eine einfachere POI-Suche.
-- [Erkunden-Bereich](#explore). Entdecken Sie Orte und interessante Gebiete in der Nähe mit Fotos.
+- [Erkunden Bereich](#explore). Entdecken Sie Orte und interessante Gebiete in der Nähe mit Fotos.
 
 ![Suchmenü](@site/static/img/web/search.png)
 

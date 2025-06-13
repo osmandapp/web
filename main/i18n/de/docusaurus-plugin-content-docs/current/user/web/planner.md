@@ -85,7 +85,7 @@ Das [**Route planen**](../plan-route/create-route.md)-Tool von OsmAnd Web ermög
 
 Das Menü **Lokaler Track** bietet drei Bereiche zur Bearbeitung: **Info**, **Track** und **Wegpunkte**.
 
-**Info-Bereich**:
+**Info Bereich**:
 
 - *In Cloud speichern*. Speichern Sie Ihren Track in OsmAnd Cloud für den geräteübergreifenden Zugriff.
 - *Beschreibung hinzufügen*. Fügen Sie Notizen zum Track hinzu.
@@ -100,18 +100,18 @@ Das Menü **Lokaler Track** bietet drei Bereiche zur Bearbeitung: **Info**, **Tr
 - *Track löschen*. Löschen Sie den Track dauerhaft.
   ![OsmAnd Web Create Track](@site/static/img/web/create_route_3.png)
 
-**Track-Bereich**:
+**Track Bereich**:
 
 - Trackpunkte anzeigen und bearbeiten.
 - Punkte bei Bedarf neu anordnen oder löschen.
 
-**Wegpunkte-Bereich**:
+**Wegpunkte Bereich**:
 
 - Track-Wegpunkte anzeigen und verwalten.
 - Die Sichtbarkeit von Wegpunkten auf der Karte umschalten.
 - Einzelne Wegpunkte bei Bedarf löschen.
 
-**Abbiegungen-Bereich**:
+**Abbiegungen Bereich**:
 
 - Detaillierte Informationen zu Abbiegungen entlang des Tracks anzeigen.
 

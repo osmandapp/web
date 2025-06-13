@@ -52,7 +52,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>
 </Tabs>
 
 
-## Widget-Bereiche {#widget-panels}
+## Widget Bereiche {#widget-panels}
 
 <Tabs groupId="operating-systems">
 
@@ -74,7 +74,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,sh
 
 </Tabs>
 
-OsmAnd ermöglicht es Ihnen, die Kartenoberfläche mithilfe anpassbarer Widget-Bereiche zu organisieren.  
+OsmAnd ermöglicht es Ihnen, die Kartenoberfläche mithilfe anpassbarer Widget Bereiche zu organisieren.  
 Sie können Widgets in den folgenden Bereichen hinzufügen, neu anordnen, gruppieren und entfernen:
 
 - **Oberer Bereich**

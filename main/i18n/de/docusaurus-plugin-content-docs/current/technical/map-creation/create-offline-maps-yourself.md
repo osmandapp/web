@@ -99,8 +99,8 @@ Beispiel: Für eine 250 MB *.osm.pbf* wird eine ~4,5 GB *nodes.tmp.odb*-Datei ge
 Das Rendering und die POI-Suche von OsmAnd basieren auf Informationen, die in [OBF](../osmand-file-formats/osmand-obf.md) geschrieben wurden. Es hat eine andere Struktur als andere OSM-Formate und ist für die mobile Nutzung optimiert. Sie können den Inhalt mit dem [Binary Inspector](../map-creation/how-to-inspect-an-obf.md) überprüfen. Die 3 wichtigsten Teile der OBF-Datei sind:
 
 - **Kartenbereich** wird für das Kartenrendering verwendet, das durch [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml) definiert ist.
-- **POI-Bereich** wird für die POI-Suche und Objektinformationen verwendet, die durch [POI types](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/poi_types.xml) definiert sind.
-- **Routing-Bereich** wird für das Routing verwendet, das durch [Routing types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml) definiert ist - dieselbe Datei wie Rendering-Typen, hat aber einen eigenen Abschnitt `<category name="routing"> - routing_type`.
+- **POI Bereich** wird für die POI-Suche und Objektinformationen verwendet, die durch [POI types](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/poi_types.xml) definiert sind.
+- **Routing Bereich** wird für das Routing verwendet, das durch [Routing types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml) definiert ist - dieselbe Datei wie Rendering-Typen, hat aber einen eigenen Abschnitt `<category name="routing"> - routing_type`.
 
 `rendering_types.xml` und `poi_types.xml` können während des Kartenerstellungsprozesses in den OsmAndMapCreator UI-Einstellungen oder als Befehlszeilenparameter `--rendering-types=<path>`, `--poi-types==<path>` für `utilities.sh generate-obf` (im Lieferumfang von OsmAndMapCreator enthalten) überschrieben werden.
 
