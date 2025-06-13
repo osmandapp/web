@@ -48,7 +48,7 @@ Das *Zug-Routing* in OsmAnd bietet Nutzern die Möglichkeit, Eisenbahnlinien fü
 Das *Zug-Routing* kann in den [Routenparametern](../guidance/navigation-settings.md#route-parameters) der Navigationseinstellungen an Ihre Bedürfnisse angepasst werden.
 
 
-## Weitere Routing-Einstellungen {#other-routing-settings}
+## Weitere Routing Einstellungen {#other-routing-settings}
 
 - Der Routing-Algorithmus kann auch temporäre Einschränkungen berücksichtigen, die in OpenStreetMap angegeben sind. Dies kann mit der Option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* erfolgen. Beachten Sie, dass die Informationen aus OSM in einigen Fällen veraltet sein können.
 

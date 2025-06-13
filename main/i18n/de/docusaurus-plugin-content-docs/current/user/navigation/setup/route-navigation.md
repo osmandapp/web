@@ -251,7 +251,7 @@ Wenn die Aufzeichnung des [Navigationsverlaufs](../../personal/global-settings.m
 :::note
 
 - Wenn die [Protokollierung der Verlaufsdaten](../../personal/global-settings.md#history-options) deaktiviert ist, werden Sie nicht aufgefordert, frühere Routen für die Navigation zu verwenden.
-- Sie können einige oder alle Verlaufsdatensätze über Ihre früheren Routen löschen. Dies kann auf der Registerkarte *[Navigationsverlauf](../../personal/global-settings.md#history-options)* der Verlaufsoption (*Menü → Einstellungen → OsmAnd-Einstellungen → Verlauf*) erfolgen.
+- Sie können einige oder alle Verlaufsdatensätze über Ihre früheren Routen löschen. Dies kann auf der Registerkarte *[Navigationsverlauf](../../personal/global-settings.md#history-options)* der Verlaufsoption (*Menü → Einstellungen → OsmAnd Einstellungen → Verlauf*) erfolgen.
 
 :::
 

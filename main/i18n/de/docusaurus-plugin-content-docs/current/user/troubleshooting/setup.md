@@ -24,7 +24,7 @@ Um Datenverlust zu vermeiden, stellen Sie sicher, dass Ihre persönlichen Daten,
 ### Favoriten und Tracks auf ein neues Gerät übertragen {#how-to-transfer-favorites-and-tracks-to-a-new-device}
 
 - Die einfachste Methode ist der Export eines Profils mit den notwendigen Daten: *Menü → Einstellungen → Exportieren →* wählen Sie die Daten aus, die Sie exportieren möchten.
-- Alternativ können Sie alle Ihre Daten vom vorherigen Gerät sichern, indem Sie den Ordner kopieren, der sich unter *Einstellungen → OsmAnd-Einstellungen → Datenspeicherordner* befindet (Standardpfad: `Android/data/net.osmand.plus`). Fügen Sie dann den Inhalt dieses Ordners in den Datenspeicherordner auf Ihrem neuen Gerät ein.
+- Alternativ können Sie alle Ihre Daten vom vorherigen Gerät sichern, indem Sie den Ordner kopieren, der sich unter *Einstellungen → OsmAnd Einstellungen → Datenspeicherordner* befindet (Standardpfad: `Android/data/net.osmand.plus`). Fügen Sie dann den Inhalt dieses Ordners in den Datenspeicherordner auf Ihrem neuen Gerät ein.
 
 
 ## Dateien importieren {#import-files}

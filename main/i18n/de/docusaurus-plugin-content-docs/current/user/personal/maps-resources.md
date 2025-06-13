@@ -362,7 +362,7 @@ Each card has an independent collection of tiny updates, so **be careful** if yo
 Hauptmerkmale:
 
 - **<Translate android="true" ids="shared_string_enabled"/> / <Translate android="true" ids="shared_string_disabled"/> Live-Updates**. Verwaltung über einen Schalter in den Einstellungen.
-- **&#8230; &#124;** Schaltfläche (*Android*) / **&#62;** Schaltfläche (*iOS*). Öffnen Sie die *OsmAnd Live*-Einstellungen.
+- **&#8230; &#124;** Schaltfläche (*Android*) / **&#62;** Schaltfläche (*iOS*). Öffnen Sie die *OsmAnd Live* Einstellungen.
 - **Schalter**(*Android*) / **&#43;** Schaltfläche (*iOS*). Karten für *Live-Updates* hinzufügen.
 - **<Translate android="true" ids="update_frequency"/>**. Wählen Sie die Karten-Update-Frequenz (stündlich, täglich oder wöchentlich).
 - **<Translate android="true" ids="update_now"/>**. Starten Sie das *OsmAnd Live*-Karten-Update.

@@ -254,7 +254,7 @@ OsmAnd unterstützt mehrere **Basisprojektionen** zur Anzeige geografischer Gitt
 
 
 
-***Zoomstufen-Einstellungen:***
+***Zoomstufen Einstellungen:***
 
 - Die Gitterlinien erscheinen basierend auf der Zoomstufe, zwischen **2 – 22**.
 - Die Linien passen die Koordinatenteilungen dynamisch an die Zoomstufe an.

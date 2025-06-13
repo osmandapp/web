@@ -32,16 +32,16 @@ So aktivieren Sie spezielle Funktionen für Entwickler und Tester:
 3. Aktivieren Sie bei Bedarf **Entwickler-Widgets**.
 
 
-## Plugin-Einstellungen {#plugin-settings}
+## Plugin Einstellungen {#plugin-settings}
 
 :::info info
 Die Einstellungen des OsmAnd Entwicklungs-Plugins sind global und gelten für alle Profile.
 :::
 
-Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
+Verwenden Sie einen der folgenden Pfade, um die Plugin Einstellungen zu öffnen:
 
 - *Hauptmenü → Plugins → OsmAnd Entwicklung → Einstellungen*.
-- *Hauptmenü → [Globale Einstellungen](../personal/global-settings.md) → Profil → OsmAnd Entwicklungs-Plugin-Einstellungen*.
+- *Hauptmenü → [Globale Einstellungen](../personal/global-settings.md) → Profil → OsmAnd Entwicklungs-Plugin Einstellungen*.
 
 <Tabs groupId="operating-systems">
 
@@ -127,7 +127,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 
 **Schaltfläche:**
 
-- **Plugin-Einstellungen auf Standard zurücksetzen**. Setzt alle Plugin-Einstellungen auf ihre Standardwerte zurück.
+- **Plugin Einstellungen auf Standard zurücksetzen**. Setzt alle Plugin Einstellungen auf ihre Standardwerte zurück.
 
     ![Development Settings Android](@site/static/img/plugins/development/devplugin_stat_and.png)
 

@@ -49,7 +49,7 @@ Fußgänger-Routing kann nicht nur in städtischen Gebieten nützlich sein, wo F
 |*<Translate android="true" ids="routing_attr_allow_via_ferrata_name"/>*| *Via ferrata*-Routen werden für das Routing verwendet, wenn diese Option zusammen mit *Höhendaten verwenden* aktiviert ist.  | [Via ferrata](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dvia_ferrata) ist eine Bergroute, die mit festen Seilen, Stufen, Leitern und Brücken ausgestattet ist. |
 
 
-## Weitere Routing-Einstellungen {#other-routing-settings}
+## Weitere Routing Einstellungen {#other-routing-settings}
 
 - Der Routing-Algorithmus kann auch temporäre Einschränkungen berücksichtigen, die in OpenStreetMap angegeben sind. Dies kann mit der Option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* erfolgen. Beachten Sie, dass Informationen aus OSM in einigen Fällen veraltet sein können.  
 

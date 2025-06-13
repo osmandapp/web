@@ -10,7 +10,7 @@ import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 Routing.xml ist eine Konfigurationsdatei, die mehrere Routing-Profile speichert. Jedes Profil ist unabhängig und hat nur das Basis-OsmAnd-Profil als Referenz, weshalb es nicht möglich ist, eine Hierarchie von Profilen zu erstellen, und Sie alle Regelabschnitte kopieren müssen. Jedes ist über routing.xml vollständig konfigurierbar, das heißt, es gibt keine Konstanten im Code und alle Strafen werden anhand dieser Konfiguration berechnet.
 
-In der Anwendung können Sie mehrere benutzerdefinierte routing.xml-Dateien und Profile verwenden. Sie können diese unter Einstellungen -> Profil -> Navigationseinstellungen -> Routing-Einstellungen auswählen.
+In der Anwendung können Sie mehrere benutzerdefinierte routing.xml-Dateien und Profile verwenden. Sie können diese unter Einstellungen -> Profil -> Navigationseinstellungen -> Routing Einstellungen auswählen.
 
 Bitte überprüfen Sie die Dokumentation in routing.xml:
 

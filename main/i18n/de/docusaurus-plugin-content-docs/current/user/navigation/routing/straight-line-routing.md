@@ -57,7 +57,7 @@ Das Routing *Luftlinie* kann nach Ihren Bedürfnissen im Abschnitt [Routenparame
 | *<Translate android="true" ids="recalc_angle_dialog_title"/>* |  <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/>  </summary>![Straight line recalculation Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details>  | Wenn der Winkel zwischen der berechneten Route und der tatsächlichen Geoposition größer ist als der von Ihnen eingestellte, wird der kürzeste Weg von Ihrer aktuellen Position zur berechneten Route erstellt. Mit anderen Worten, OsmAnd berechnet ein zusätzliches Routensegment zur zuvor berechneten Route. |
 
 
-## Weitere Routing-Einstellungen {#other-routing-settings}
+## Weitere Routing Einstellungen {#other-routing-settings}
 
 - Im Abschnitt [*Route neu berechnen*](../../navigation/guidance/navigation-settings.md#recalculate-route) der *Routenparameter* ist die Entfernung, bei der die Route für das *Luftlinien-Routing* neu berechnet wird, standardmäßig auf 500 Meter eingestellt.
 

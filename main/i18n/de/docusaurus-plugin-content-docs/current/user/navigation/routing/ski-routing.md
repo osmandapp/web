@@ -33,7 +33,7 @@ Das Ski-Routing und das Ski-Profil sind nur verfügbar, wenn das [Ski-Kartenansi
 Standardmäßig ist das *Ski-Profil* deaktiviert. Um dieses Profil für das Routing zu verwenden, müssen Sie es in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* aktivieren.
 :::
 
-Die *Ski-Routing*-Einstellungen ermöglichen es Benutzern, ihre Routen zu planen, indem sie den gewünschten Schwierigkeitsgrad und die Art des Geländes auswählen, das sie erkunden möchten. Es gibt verschiedene Optionen für eine sichere, komfortable und angenehme Bewegung auf Pisten oder beim Freeriden.
+Die *Ski-Routing* Einstellungen ermöglichen es Benutzern, ihre Routen zu planen, indem sie den gewünschten Schwierigkeitsgrad und die Art des Geländes auswählen, das sie erkunden möchten. Es gibt verschiedene Optionen für eine sichere, komfortable und angenehme Bewegung auf Pisten oder beim Freeriden.
 
 <Tabs groupId="operating-systems">
 
@@ -66,7 +66,7 @@ Die *Ski-Routing*-Einstellungen ermöglichen es Benutzern, ihre Routen zu planen
 |*<Translate android="true" ids="routing_attr_difficulty_preference_name"/>* | <details><summary> <Translate android="true" ids="routing_attr_difficulty_preference_description"/> </summary>![Off piste Android](@site/static/img/navigation/routing/offpiste_android.png) </details> | |
 
 
-## Weitere Routing-Einstellungen {#other-routing-settings}
+## Weitere Routing Einstellungen {#other-routing-settings}
 
 - Der Routing-Algorithmus kann auch temporäre Einschränkungen berücksichtigen, die in OpenStreetMap angegeben sind. Dies kann mit der Option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* erfolgen. Beachten Sie, dass in einigen Fällen Informationen aus OSM veraltet sein können.
 

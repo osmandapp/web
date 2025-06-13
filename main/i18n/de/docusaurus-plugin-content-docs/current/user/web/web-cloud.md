@@ -51,7 +51,7 @@ Wenn Sie ein [OsmAnd Pro](../personal/osmand-cloud.md#login) Konto haben oder ei
 
 Wenn Sie die Anzeigesprache ändern möchten:
 
-- Die Webversion von OsmAnd verwendet die Sprache aus den Browser-Einstellungen.
+- Die Webversion von OsmAnd verwendet die Sprache aus den Browser Einstellungen.
 - Für Chrome hat `chrome://settings/languages` Priorität.
 - Sie können die System-(Menü-)Sprache manuell ändern, indem Sie auswählen:
     *Menü →* ⚙ *→ Sprache ausschalten*.

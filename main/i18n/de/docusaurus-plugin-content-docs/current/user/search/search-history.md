@@ -100,7 +100,7 @@ Die folgenden **Objekttypen** gelangen in die Suchverlaufsliste:
 
 Im Suchverlauf-Tool können Sie unnötige Abfragen [löschen](#delete), alle auf einmal oder einzelne Elemente. Sie können den Verlauf [exportieren](#export-and-share). Die Android-App bietet eine zusätzliche Aktion zum [Teilen](#share-android) von Suchelementen als [GPX](../../technical/osmand-file-formats/osmand-gpx.md)-Datei.
 
-Sie können die Anzeige des gesamten Suchverlaufs **deaktivieren oder aktivieren**. In diesem Fall werden die Abfragen nicht vom Gerät gelöscht. In Android befindet sich der Schalter auf dem Hauptbildschirm des Tools auf der Registerkarte [Verlauf](#overview). In iOS befindet er sich unter *Menü → Einstellungen → OsmAnd-Einstellungen → Verlauf → Suchverlauf*.
+Sie können die Anzeige des gesamten Suchverlaufs **deaktivieren oder aktivieren**. In diesem Fall werden die Abfragen nicht vom Gerät gelöscht. In Android befindet sich der Schalter auf dem Hauptbildschirm des Tools auf der Registerkarte [Verlauf](#overview). In iOS befindet er sich unter *Menü → Einstellungen → OsmAnd Einstellungen → Verlauf → Suchverlauf*.
 
 
 ### Löschen {#delete}
@@ -128,7 +128,7 @@ Sie müssen **lange auf eines der Abfrageelemente in der Liste tippen**, um den 
 - *Zufällige Elemente auswählen oder abwählen* - tippen Sie auf das gewünschte Element in der Liste.
 - *Wählen Sie den Zeitraum aus, der zum Löschen verfügbar ist*, z. B. Tag, letzte 7 Tage oder Monat - aktivieren Sie das Kontrollkästchen mit der Unterüberschrift in der Liste.
 - *Sie können den gesamten Verlauf* auf einmal löschen, indem Sie auf die Schaltfläche *Alle auswählen* am unteren Bildschirmrand tippen.
-- *Menü → Einstellungen → OsmAnd-Einstellungen → Verlauf → Aktionen*. Dieser Abschnitt enthält die Schaltfläche **Gesamten Verlauf löschen**.
+- *Menü → Einstellungen → OsmAnd Einstellungen → Verlauf → Aktionen*. Dieser Abschnitt enthält die Schaltfläche **Gesamten Verlauf löschen**.
 
 
 ### Exportieren und Teilen {#export-and-share}
@@ -155,11 +155,11 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Es gibt mehrere verfügbare Optionen zum Exportieren des Suchverlaufs. Alle Dateien werden im Format `.osf` (OsmAnd settings File) exportiert.
 
-1. *Menü → Einstellungen → OsmAnd-Einstellungen → Verlauf → Suchverlauf*.
+1. *Menü → Einstellungen → OsmAnd Einstellungen → Verlauf → Suchverlauf*.
     Der Export ist über das OsmAnd-Einstellungsmenü verfügbar. Für Android gelangen Sie über diesen Pfad zum Löschbildschirm, auf dem [Verlauf teilen](#share-android) verfügbar ist. Im Falle von iOS können Sie einzelne Elemente oder den gesamten Verlauf auf dem Bildschirm auswählen und nach dem Tippen auf die Schaltfläche *Exportieren* zum Menü *Lokale Sicherung* wechseln.
 
-2. *Menü → Einstellungen → OsmAnd-Einstellungen → Verlauf → Aktionen → Als Datei sichern* (Android).
-    *Menü → Einstellungen → OsmAnd-Einstellungen → Verlauf → Aktionen → Exportieren* (iOS).
+2. *Menü → Einstellungen → OsmAnd Einstellungen → Verlauf → Aktionen → Als Datei sichern* (Android).
+    *Menü → Einstellungen → OsmAnd Einstellungen → Verlauf → Aktionen → Exportieren* (iOS).
     Durch Antippen dieser Elemente gelangen Sie zum Menü *Import/Export* (Android) oder *Lokale Sicherung* (iOS). Erweitern Sie die Liste *Meine Orte* und suchen Sie *Suchverlauf*. Alle Abfragen werden auf einmal in einer Datei exportiert.
 
 3. *Menü → Einstellungen → Import/Export → In Datei exportieren* (Android).

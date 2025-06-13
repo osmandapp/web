@@ -44,7 +44,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,o
 
 ## Allgemein {#general}
 
-Dieser Abschnitt enthält die grundlegenden OsmAnd-Einstellungen, wie z. B. die Auswahl eines [Profils](#default-profile) beim Laden der Anwendung, die Auswahl der [Rendering-Engine](#map-rendering-engine) und des [Ordners](#data-storage-folder), in dem die Daten gespeichert werden.
+Dieser Abschnitt enthält die grundlegenden OsmAnd Einstellungen, wie z. B. die Auswahl eines [Profils](#default-profile) beim Laden der Anwendung, die Auswahl der [Rendering-Engine](#map-rendering-engine) und des [Ordners](#data-storage-folder), in dem die Daten gespeichert werden.
 
 
 ### Standardprofil {#default-profile}
@@ -203,7 +203,7 @@ Daten über Ihren Standort oder die Orte, die Sie auf der Karte anzeigen, werden
 
 <InfoAndroidOnly />
 
-*Menü → Einstellungen → OsmAnd-Einstellungen → Datenschutz und Sicherheit → Identifikatoren*
+*Menü → Einstellungen → OsmAnd Einstellungen → Datenschutz und Sicherheit → Identifikatoren*
 
 ![UUID Android](@site/static/img/personal/profiles/uuid_android.png)
 
@@ -279,7 +279,7 @@ Die Einstellung **<Translate android="true" ids="proxy_pref_title"/>** ermöglic
 
 ## Sonstiges {#other}
 
-In diesem Abschnitt der OsmAnd-Einstellungen können Sie die Benachrichtigungen, die Sie erhalten, den Ortungsdienst und die Art und Weise, wie Ihre Anwendungseinstellungen gespeichert werden, konfigurieren.
+In diesem Abschnitt der OsmAnd Einstellungen können Sie die Benachrichtigungen, die Sie erhalten, den Ortungsdienst und die Art und Weise, wie Ihre Anwendungseinstellungen gespeichert werden, konfigurieren.
 
 ### Dialoge und Benachrichtigungen {#dialogs-and-notifications}
 
@@ -332,9 +332,9 @@ OsmAnd bietet Ihnen eine Auswahl an Diensten zur Bestimmung Ihres Standorts. Es 
 
 ![General Settings notifications Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
 
-- Android oder OsmAnd Cloud können Ihre Daten und App-Einstellungen speichern.
+- Android oder OsmAnd Cloud können Ihre Daten und App Einstellungen speichern.
 
-- Standardmäßig werden Ihre *OsmAnd-Einstellungen* und [*Favoriten*](../personal/favorites.md#automatic-favorites-backup)-Kartenmarker automatisch vom Android-System gesichert. Dadurch können Sie sie auf neuen Geräten oder nach der Neuinstallation der App wiederherstellen.
+- Standardmäßig werden Ihre *OsmAnd Einstellungen* und [*Favoriten*](../personal/favorites.md#automatic-favorites-backup)-Kartenmarker automatisch vom Android-System gesichert. Dadurch können Sie sie auf neuen Geräten oder nach der Neuinstallation der App wiederherstellen.
 
 - Bitte beachten Sie, dass die Sicherungsgröße auf *25 MB* beschränkt ist.
 

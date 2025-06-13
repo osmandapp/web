@@ -191,7 +191,7 @@ Um den Wikipedia-Artikel zu öffnen:
 </Tabs>
 
 
-## Wikipedia-Einstellungen {#wikipedia-settings}
+## Wikipedia Einstellungen {#wikipedia-settings}
 
 Sie können die [Sprache(n) festlegen](#set-preferred-language), in der Sie [Artikel](#wikipedia-article) bevorzugt lesen möchten, und auch die [Optionen zum Herunterladen von Bildern](#download-images) für jedes [Profil](../personal/profiles.md) konfigurieren.
 
@@ -272,7 +272,7 @@ Sie können wählen, ob Sie Bilder von Wikipedia auf Ihr Gerät herunterladen m�
 
 </Tabs>
 
-In der **iOS**-Version der App können Sie auch über die *Wikipedia-Plugin-Einstellungen* auf die Optionen zum Herunterladen von Bildern zugreifen:
+In der **iOS**-Version der App können Sie auch über die *Wikipedia-Plugin Einstellungen* auf die Optionen zum Herunterladen von Bildern zugreifen:
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*

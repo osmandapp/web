@@ -105,14 +105,14 @@ Um Wetterebenen auf dem OsmAnd-Kartenbildschirm anzuzeigen, müssen Sie das Men�
 In diesem Menü können Sie die **Sichtbarkeit** und [Einstellungen](#weather-settings) für jede Ebene ändern, die Art der Höhenlinien auswählen und die [Offline-7-Tage-Wettervorhersage](#offline-forecast) herunterladen (*hier nur für Android verfügbar*).
 
 
-### Wetter-Einstellungen {#weather-settings}
+### Wetter Einstellungen {#weather-settings}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
 - *Hauptmenü → Plugins → Wetter → Einstellungen*
-- *Hauptmenü → Einstellungen → Profil → Plugin-Einstellungen → Wetter*
+- *Hauptmenü → Einstellungen → Profil → Plugin Einstellungen → Wetter*
 
 ![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
 

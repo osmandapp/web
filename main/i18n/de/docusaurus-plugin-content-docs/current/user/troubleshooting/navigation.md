@@ -96,7 +96,7 @@ Probleme mit **Text-to-Speech (TTS)** hängen typischerweise mit den **Android-S
 
 2. Überprüfen Sie die TTS-Spracheinstellungen.
 
-    - Wählen Sie die Sprache, die Sie verwenden möchten, unter *Android-Einstellungen → Text-to-Speech-Optionen*.
+    - Wählen Sie die Sprache, die Sie verwenden möchten, unter *Android Einstellungen → Text-to-Speech-Optionen*.
     - Tippen Sie auf *„Beispiel anhören“*, um zu testen, ob die TTS-Engine funktioniert.
     - Wenn Sie nichts hören, aktualisieren oder installieren Sie die TTS-Engine neu.
 

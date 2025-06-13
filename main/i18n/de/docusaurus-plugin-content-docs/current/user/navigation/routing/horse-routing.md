@@ -59,7 +59,7 @@ Das Pferderouting wurde entwickelt, um Reitern Informationen über pferdefreundl
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Die voraussichtliche Reisezeit berücksichtigt den Einfluss der Höhe. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png)  </details> | Diese Einstellung kann helfen, steile Anstiege zu vermeiden. Ohne Höhendaten wird die schnellste Route wie auf ebenem Gelände berechnet. |
 
 
-## Weitere Routing-Einstellungen {#other-routing-settings}
+## Weitere Routing Einstellungen {#other-routing-settings}
 
 - Der Routing-Algorithmus kann auch temporäre Einschränkungen berücksichtigen, die in OpenStreetMap angegeben sind. Dies kann mit der Option [<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations) erfolgen. Beachten Sie, dass in einigen Fällen Informationen aus OSM veraltet sein können.
 

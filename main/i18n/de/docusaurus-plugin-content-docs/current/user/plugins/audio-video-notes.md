@@ -44,7 +44,7 @@ Die Audio-/Video-Notizen werden mit dem Audio-/Video-Notizen-Plugin bereitgestel
 3. Passen Sie die [Aufnahmeeinstellungen](#plugin-settings) für jedes Profil an, falls erforderlich.
 
 
-## Plugin-Einstellungen {#plugin-settings}
+## Plugin Einstellungen {#plugin-settings}
 
 <Tabs groupId="operating-systems">
 
@@ -74,7 +74,7 @@ Für jedes Profil können Sie die *Audio- und Videoaufnahmeoptionen* konfigurier
 | **<Translate android="true" ids="rec_split_clip_length"/>** | Dies bestimmt die obere Zeitbegrenzung für aufgezeichnete Videoclips. Es gibt Optionen mit einem Bereich von 1 Minute bis 30 Minuten. |
 | **<Translate android="true" ids="rec_split_storage_size"/>** | Dies legt die Größe des für aufgezeichnete Videos vorgesehenen Speichers fest. Es gibt Optionen mit einem Bereich von 1024 MB bis 62 GB. Ein bestimmter Bereich von Optionen und die Standardoption werden durch die Parameter eines bestimmten Geräts bestimmt. Eine Systemmeldung erinnert Sie daran, dass die Speichergröße die festgelegte Grenze erreicht. |
 | **<Translate android="true" ids="notes"/>** | Diese Option leitet Sie zu den [Audio-/Video-Notizen in Meine Orte](../personal/myplaces.md) weiter - dem zentralen Speicher aller jemals in der App erstellten Audio-/Video-Notizen. |
-| **<Translate android="true" ids="reset_plugin_to_default"/>** | Sie können die Standardwerte für alle A/V-Notizen-Einstellungen festlegen. |
+| **<Translate android="true" ids="reset_plugin_to_default"/>** | Sie können die Standardwerte für alle A/V-Notizen Einstellungen festlegen. |
 | **<Translate android="true" ids="copy_from_other_profile"/>** | Öffnet einen Dialog zur Auswahl eines Profils, von dem die Audio-/Video-Notizen-Aufnahmekonfiguration kopiert und für das aktuelle Profil festgelegt werden soll. |
 
 

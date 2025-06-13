@@ -115,7 +115,7 @@ Der [Gerade Linie Routing-Typ](./straight-line-routing) kann mit dem Bootsprofil
 ![Gerade Linie Navigationstyp Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
 
 
-## Andere Routing-Einstellungen {#other-routing-settings}
+## Andere Routing Einstellungen {#other-routing-settings}
 
 - Der Routing-Algorithmus kann auch temporäre Einschränkungen berücksichtigen, die in OpenStreetMap angegeben sind. Dies kann mit der Option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* erfolgen. Beachten Sie, dass die Informationen aus OSM in einigen Fällen veraltet sein können.
 

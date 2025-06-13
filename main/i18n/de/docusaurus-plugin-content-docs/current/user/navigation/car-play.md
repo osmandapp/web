@@ -101,7 +101,7 @@ Alle Kategorien für die Auswahl des **Routenendpunkts**, *[Verlauf](#history), 
 
 Das **CarPlay-Profil** ist ein spezifisches Profil in der OsmAnd-App zur bequemen Nutzung des Audio- und Videosystems Ihres Autos zur weiteren Anzeige dieser Daten auf Ihrem Telefon.
 
-Dieses Profil wird verwendet, solange Ihr Gerät mit *CarPlay* verbunden ist. Tippen Sie im Menü *OsmAnd-Einstellungen* auf das Feld *CarPlay-Profil* und wählen Sie aus der Liste der [für die Verwendung aktivierten Profile](../personal/profiles.md) das Profil aus, mit dem *CarPlay* aktiviert wird.
+Dieses Profil wird verwendet, solange Ihr Gerät mit *CarPlay* verbunden ist. Tippen Sie im Menü *OsmAnd Einstellungen* auf das Feld *CarPlay-Profil* und wählen Sie aus der Liste der [für die Verwendung aktivierten Profile](../personal/profiles.md) das Profil aus, mit dem *CarPlay* aktiviert wird.
 
 Sie können ein Profil nicht direkt in *CarPlay* vom Fahrzeugbildschirm aus auswählen. Wählen Sie zuerst das gewünschte Profil auf Ihrem Gerät aus und weisen Sie ihm das *CarPlay-Profil* zu. Sie sollten ein Profil auswählen, das dem Fahrzeugtyp entspricht, z. B. *Fahren*, *LKW*, *Auto*, *Motorrad* oder *Moped*. **Die App wird automatisch aktiviert**, das *CarPlay-Profil* wird beim Verbinden mit einem Fahrzeug aktiviert.
 
@@ -149,13 +149,13 @@ In der **Verlaufskategorie** können Sie ein Ziel aus einer Liste von Endpunkten
     </tr>
 </table>
 
-*POIs (Points of Interest)* sind eine Art von Punkten, die Orte oder Objekte auf der Karte identifizieren, die für Benutzer wichtig oder von Interesse sind. Sie werden durch spezielle Symbole hervorgehoben, die in den [OsmAnd-Einstellungen](../map/point-layers-on-map.md#poi-types) bereitgestellt und in Gruppen sortiert sind.
+*POIs (Points of Interest)* sind eine Art von Punkten, die Orte oder Objekte auf der Karte identifizieren, die für Benutzer wichtig oder von Interesse sind. Sie werden durch spezielle Symbole hervorgehoben, die in den [OsmAnd Einstellungen](../map/point-layers-on-map.md#poi-types) bereitgestellt und in Gruppen sortiert sind.
 
 Um eine Route zu einem *POI* in *CarPlay* zu erstellen, befolgen Sie diese Schritte:
 
 1. Wählen Sie den benötigten *POI* aus der Liste der verfügbaren Kategorien aus oder geben Sie den Namen des POI über die [Suche](#search) ein.
 2. OsmAnd berechnet die Route und zeigt sie auf dem *CarPlay-Bildschirm* an. Tippen Sie auf die Schaltfläche **Start**, um die Navigation zu diesem Ort zu starten.
-3. Abhängig von Ihren OsmAnd-App-Einstellungen und Ihrem Fahrzeug erhalten Sie möglicherweise [Sprachansagen](#voice-prompts), die Sie zu Ihrem Ziel führen.
+3. Abhängig von Ihren OsmAnd-App Einstellungen und Ihrem Fahrzeug erhalten Sie möglicherweise [Sprachansagen](#voice-prompts), die Sie zu Ihrem Ziel führen.
 4. Wenn Sie am Zielort ankommen, benachrichtigt Sie die App, dass Sie den *POI* erreicht haben.
 
 
@@ -256,7 +256,7 @@ Dieses Informations-Widget kombiniert Alarmtypen wie **Fußgängerüberwege** un
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png)
 
-Das **Tachometer-Widget** ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* anhand von GPS-Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM-Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd-Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Bildschirm des Multimediasystems des Fahrzeugs anzeigt.
+Das **Tachometer-Widget** ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* anhand von GPS-Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM-Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Bildschirm des Multimediasystems des Fahrzeugs anzeigt.
 
 - Das **Tachometer-Widget** ist [*profilabhängig*](../personal/profiles.md), sodass Änderungen der Einstellungen für ein Profil nicht auf ein anderes angewendet werden.
 - Es gibt keine Option, die Anzeige des *Tachometers* direkt in *CarPlay* einzustellen. Sie müssen ihn für das ausgewählte [Navigationsprofil](#carplay-profile) in der OsmAnd-Anwendung konfigurieren, bevor Sie die Navigation starten und Ihr Gerät mit dem Fahrzeug verbinden.

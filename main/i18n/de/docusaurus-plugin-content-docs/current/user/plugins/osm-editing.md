@@ -54,7 +54,7 @@ Um das Plugin *OpenStreetMap-Bearbeitung* zu verwenden, müssen Sie die folgende
 </Tabs>
 
 :::note
-Die Plugin-Einstellungen sind global und gelten für alle Profile.
+Die Plugin Einstellungen sind global und gelten für alle Profile.
 :::
 
 - [Bei OpenStreetMap anmelden](#authorization). Melden Sie sich an, um neue oder geänderte Änderungen hochzuladen. Verwenden Sie die sichere *OAuth 2.0-Methode* oder [melden Sie sich auf der OSM-Website an](https://www.openstreetmap.org/login). Für iOS ist die Schaltfläche für die OAuth-Methode nur für Benutzer mit einer unterstützten Version von iOS, 16.4, verfügbar.

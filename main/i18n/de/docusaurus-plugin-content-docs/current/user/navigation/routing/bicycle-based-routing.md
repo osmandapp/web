@@ -57,7 +57,7 @@ Die Fahrrad-Routing-Funktionen von OsmAnd ermöglichen es Radfahrern, einen Star
 Der MTB-Routing-Mechanismus ist derselbe wie das Fahrrad-Routing. Beachten Sie, dass es einige Strafen für die Nutzung von [MTB-Routen](../../map/vector-maps.md#routes) gibt, und daher werden sie für das Radfahren nach Hause oder zur Arbeit weniger wahrscheinlich angeboten.
 
 
-## Weitere Routing-Einstellungen {#other-routing-settings}
+## Weitere Routing Einstellungen {#other-routing-settings}
 
 - Der Routing-Algorithmus kann auch temporäre Einschränkungen berücksichtigen, die in OpenStreetMap angegeben sind. Dies kann mit der Option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* erfolgen. Beachten Sie, dass Informationen aus OSM in einigen Fällen veraltet sein können.  
 

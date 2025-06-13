@@ -56,7 +56,7 @@ Installieren Sie die OsmAnd Online GPS Tracker APK:
 - [OsmAnd Server](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
 
 
-## Plugin-Einstellungen {#plugin-settings}
+## Plugin Einstellungen {#plugin-settings}
 
 Es gibt mehrere Einstellungen zur Verwaltung der Häufigkeit der Standortfreigabe und zur Steuerung der Anzeige der an Sie gesendeten Standorte.
 
@@ -102,12 +102,12 @@ Ermöglicht die Anzeige der Anzahl der von anderen Kontakten empfangenen GPS-Pun
 
 ### Datenschutz {#privacy}
 
-Verwenden Sie einen Proxy innerhalb von OsmAnd Tracker. Gehen Sie zu Einstellungen und geben Sie Ihre Proxy-Daten ein: *Einstellungen → Datenschutz → Proxy-Einstellungen*
+Verwenden Sie einen Proxy innerhalb von OsmAnd Tracker. Gehen Sie zu Einstellungen und geben Sie Ihre Proxy-Daten ein: *Einstellungen → Datenschutz → Proxy Einstellungen*
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/3-1.jpg)  ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4-1.jpg)
 
 
-### GPS-Einstellungen {#gps-settings}
+### GPS Einstellungen {#gps-settings}
 
 Einstellungen für den Standortpunkt. Wenn Sie sich beispielsweise einige Zeit an einem Ort aufhalten, ohne sich zu bewegen, werden Ihre Standortpunktdaten nicht gesendet und Ihre GPX-Spur zeigt genauere und präzisere Daten an.
 

@@ -172,7 +172,7 @@ Wenn BRouter konfiguriert ist, können wir die Vorberechnungsgeschwindigkeit der
 | *<Translate android="true" ids="temporary_conditional_routing"/>* | Lesen Sie mehr über die Option Temporäre Einschränkungen berücksichtigen in diesem [Artikel](../routing/osmand-routing.md#consider-temporary-limitations). | Der Routing-Algorithmus berücksichtigt die in OpenStreetMap angegebenen Zeitbeschränkungen. Beachten Sie, dass die Informationen aus der OSM in einigen Fällen veraltet sein können. |
 
 
-### Weitere Routing-Einstellungen {#other-routing-settings}
+### Weitere Routing Einstellungen {#other-routing-settings}
 
 - ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigation → Einstellungen*, [Bild](../routing/online-routing.md#online-routing-setting)). Wenn diese Option aktiviert ist, fügt OsmAnd zwei Segmente zum berechneten Brouter-Track hinzu: eines von *[Mein Standort](../../map/interact-with-map.md#my-location-and-zoom)* zum Startpunkt des Tracks und ein weiteres vom Ende des Tracks zum Endpunkt Ihrer Route. Diese Option ist aktiv, wenn die Entfernung zum oder vom Track 60 Meter überschreitet.
 

@@ -32,7 +32,7 @@ Das Plugin **AIS Vessel Tracker** zeigt [Automatic Identification System (AIS)](
 Die Möglichkeit, Online-Karten zu verwenden, ist in der iOS-Version von OsmAnd automatisch aktiviert. Um Online-Karten in Android anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
 
 1. [Aktivieren](../plugins/index.md#enable--disable) Sie das Plugin **AIS vessel tracker** im *Hauptmenü → Plugins → AIS vessel tracker*.
-2. Konfigurieren Sie die [AIS-Einstellungen](../map/raster-maps.md#select-raster-maps).
+2. Konfigurieren Sie die [AIS Einstellungen](../map/raster-maps.md#select-raster-maps).
 3. Konfigurieren Sie eine **AIS-Serververbindung** oder schließen Sie einen **externen AIS-Empfänger** an.
 4. Überprüfen Sie, ob Schiffe auf der OsmAnd-Karte angezeigt werden.
 
@@ -148,7 +148,7 @@ AIS-Schiffe senden drei Arten von Daten:
 | *Uhrensymbol*      | Geschätzte Ankunftszeit (ETA) |
 | *Wellensymbol*       | Geschwindigkeit über Wasser |
 
-## Plugin-Einstellungen {#plugin-settings}
+## Plugin Einstellungen {#plugin-settings}
 
 <Tabs groupId="operating-systems">
 

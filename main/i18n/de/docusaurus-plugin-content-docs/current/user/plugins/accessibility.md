@@ -35,7 +35,7 @@ Barrierefreiheit verbessert die Benutzerfreundlichkeit für blinde und sehbehind
    - Navigieren Sie auf Ihrem Android-Gerät zu *Systemeinstellungen → Barrierefreiheit*.
    - Aktivieren Sie TalkBack oder einen anderen Bildschirmleser.
 
-3. **Plugin-Einstellungen anpassen**:
+3. **Plugin Einstellungen anpassen**:
    - Öffnen Sie die [Barrierefreiheitseinstellungen](#plugin-settings) in der OsmAnd-App.
    - Konfigurieren Sie Funktionen wie Sprechgeschwindigkeit, automatische Ansage und haptisches Feedback.
 
@@ -72,7 +72,7 @@ Die iOS-Version von OsmAnd verwendet die **integrierten Barrierefreiheits-Tools*
 
 2. **Unterstützte Funktionen**:
    - **Bildschirmleser-Unterstützung** für Karteninteraktionen.
-   - **Anpassbare Gesten** über die iOS-Einstellungen.
+   - **Anpassbare Gesten** über die iOS Einstellungen.
    - Alle Standard-[OsmAnd-Gesten](../map/interact-with-map#gestures) sind verfügbar.
 
 3. **Mehr erfahren**:
@@ -89,7 +89,7 @@ Um die Barrierefreiheitsfunktionen des Geräts in OsmAnd zu aktivieren, müssen 
 3. Konfigurieren Sie die [Einstellungen](#plugin-settings) des Barrierefreiheits-Plugins.
 
 
-## Plugin-Einstellungen {#plugin-settings}
+## Plugin Einstellungen {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 

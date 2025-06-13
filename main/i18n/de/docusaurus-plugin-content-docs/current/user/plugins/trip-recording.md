@@ -282,7 +282,7 @@ Bevor Sie mit der Aufzeichnung Ihrer Touren beginnen, müssen Sie das **Plugin z
 
 | Parameter | Beschreibung |
 |---|---|
-| **Dialog zur Batterieoptimierung** (*Android*) | Öffnet die [Android-Einstellungen zur Batterieoptimierung](#battery-optimization). Tippen Sie auf *Nicht mehr fragen*, wenn Sie nicht erneut aufgefordert werden möchten. |
+| **Dialog zur Batterieoptimierung** (*Android*) | Öffnet die [Android Einstellungen zur Batterieoptimierung](#battery-optimization). Tippen Sie auf *Nicht mehr fragen*, wenn Sie nicht erneut aufgefordert werden möchten. |
 | **Startdialog anzeigen** (*Android*) | Aktiviert einen Dialog, in dem Sie Einstellungen vor Beginn der Aufzeichnung konfigurieren können. Wenn deaktiviert, startet die Aufzeichnung automatisch. |
 | **Track während der Navigation automatisch aufzeichnen** | Zeichnet den Track während der Navigation automatisch auf und speichert ihn in der Registerkarte *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*. <br />*Hinweis*: Die Track-Aufzeichnung verbraucht Batterie und läuft im Hintergrund weiter, auch wenn der Bildschirm ausgeschaltet ist. |
 | **Allgemeines Protokollierungsintervall** | Definiert, wie oft Standortpunkte aufgezeichnet werden. Der Standardwert ist 5 Sekunden. Es wird mit dem *Widget zur Aufnahme von Touren* aktiviert. |
@@ -299,7 +299,7 @@ Bevor Sie mit der Aufzeichnung Ihrer Touren beginnen, müssen Sie das **Plugin z
 | **Benachrichtigung** | Steuert die Anzeige einer Systembenachrichtigung zur [Aufnahme von Touren](#notifications) im Benachrichtigungsbereich des Geräts, die es Ihnen ermöglicht, die Aufzeichnung von Touren zu starten. |
 | **Online-Tracking** (*Android*) | Ermöglicht die Echtzeit-Verfolgung Ihres Standorts durch Senden aufgezeichneter Punkte an eine angegebene URL. Das Tracking-Intervall bestimmt, wie oft Punkte gesendet werden, und der Zeitpuffer speichert Punkte, wenn keine Internetverbindung besteht.<details><summary>*Anmerkung*</summary>Wenn diese Option aktiviert ist und die Track-Aufzeichnung läuft, wird das Entfernungs-/Start-Stopp-Widget (REC) **grün** statt **rot**, was anzeigt, dass jeder aufgezeichnete Punkt an eine angegebene URL übertragen wird. Im Feld **Webadresse** können Sie die URL mit dem folgenden Parameterformat eingeben:<ul><li>`lat={0}`: Breitengrad</li><li>`lon={1}`: Längengrad</li><li>`timestamp={2}`: Zeitstempel (Unix-Zeit)</li><li>`hdop={3}`: Horizontale Verdünnung der Präzision</li><li>`altitude={4}`: Höhe</li><li>`speed={5}`: Geschwindigkeit</li><li>`bearing={6}`: Peilung (Bewegungsrichtung)</li><li>`eta={7}`: Geschätzte Ankunftszeit (Unix-Zeit)</li><li>`etfa={8}`: Geschätzte Zeit bis zum ersten Zwischenpunkt oder Endpunkt (Unix-Zeit)</li><li>`eda={9}`: Geschätzte Entfernung bis zur Ankunft oder einem Marker (in Metern)</li><li>`edfa={10}`: Geschätzte Entfernung bis zum ersten Zwischenpunkt oder Endpunkt (in Metern)</li></ul>Sie können das **Tracking-Intervall** festlegen, um anzugeben, wie oft Standortpunkte gesendet werden, mit Optionen von 0 Sekunden bis 5 Minuten. Zusätzlich bestimmt der Parameter **Zeitpuffer**, wie lange Standortpunkte gespeichert werden, wenn keine Internetverbindung besteht, um sicherzustellen, dass Daten gespeichert und übertragen werden, wenn die Verbindung wiederhergestellt ist.</details> |
 | **Tracks** | Ein schneller Verweis auf den Ordner, in dem Tracks gespeichert sind, in der Registerkarte *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
-| **Plugin-Einstellungen auf Standard zurücksetzen** | Setzt alle Einstellungen zur Aufnahme von Touren für das aktuelle Profil auf ihre Standardwerte zurück. |
+| **Plugin Einstellungen auf Standard zurücksetzen** | Setzt alle Einstellungen zur Aufnahme von Touren für das aktuelle Profil auf ihre Standardwerte zurück. |
 | **Von einem anderen Profil kopieren** (*Android*) | Kopiert die Einstellungen zur Aufnahme von Touren von einem Profil auf ein anderes. |
 
 
@@ -311,7 +311,7 @@ Bevor Sie mit der Aufzeichnung Ihrer Touren beginnen, müssen Sie das **Plugin z
 
 Diese Funktion ermöglicht es Ihnen, die Einstellungen zur Batterieoptimierung für OsmAnd zu verwalten, um einen unterbrechungsfreien Zugriff auf Ihren Standort zu gewährleisten, auch wenn die App im Hintergrund während der Navigation oder Track-Aufzeichnung läuft.
 
-- **Einstellungen zur Batterieoptimierung**. Öffnet die Android-Einstellungen, in denen Sie die Einstellungen zum Batteriesparen für OsmAnd ändern können. [Weitere Details hier](../troubleshooting/general.md#optimizing-battery-consumption).
+- **Einstellungen zur Batterieoptimierung**. Öffnet die Android Einstellungen, in denen Sie die Einstellungen zum Batteriesparen für OsmAnd ändern können. [Weitere Details hier](../troubleshooting/general.md#optimizing-battery-consumption).
 - **Nicht mehr fragen**. Schließt das Dialogfeld dauerhaft, sodass es nicht wieder angezeigt wird.
 - **Schließen**. Schließt das Dialogfeld vorübergehend, das beim nächsten Mal, wenn die Batterieoptimierung Aufmerksamkeit erfordert, wieder angezeigt wird.
 
@@ -320,7 +320,7 @@ Diese Funktion ermöglicht es Ihnen, die Einstellungen zur Batterieoptimierung f
 
 ![Benachrichtigung zur Aufnahme von Touren](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)
 
-Wenn [Benachrichtigung](#recording-settings) in den Plugin-Einstellungen aktiviert ist, werden Benachrichtigungen zur Aufnahme von Touren immer im Systembenachrichtigungsbereich angezeigt, wenn die Aufzeichnung aktiv ist. Diese Benachrichtigung stellt sicher, dass der Aufzeichnungsprozess vom System nicht unterbrochen wird, und sie kann während einer aktiven Aufzeichnung nicht deaktiviert werden.
+Wenn [Benachrichtigung](#recording-settings) in den Plugin Einstellungen aktiviert ist, werden Benachrichtigungen zur Aufnahme von Touren immer im Systembenachrichtigungsbereich angezeigt, wenn die Aufzeichnung aktiv ist. Diese Benachrichtigung stellt sicher, dass der Aufzeichnungsprozess vom System nicht unterbrochen wird, und sie kann während einer aktiven Aufzeichnung nicht deaktiviert werden.
 
 - Der Benachrichtigungsbereich öffnet sich, wenn Sie vom oberen Bildschirmrand nach unten wischen, und schließt sich, wenn Sie nach oben wischen. Diese Nachrichten informieren Sie über Aktionen wie das Starten/Stoppen der Aufnahme von Touren, insbesondere wenn die automatische Aufzeichnung während der Navigation aktiviert ist.
 - Benachrichtigungen bleiben sichtbar, unabhängig davon, ob die App im Vordergrund, Hintergrund oder geschlossen läuft. Sie können die alte Benachrichtigung manuell löschen, wenn sie nicht mehr benötigt wird, aber dies stoppt die laufende Aufzeichnung nicht.
@@ -336,7 +336,7 @@ Dieses Verhalten wird von Android für jeden Vordergrunddienst, wie z. B. die Au
 
 ![Benachrichtigung zur Aufnahme von Touren](@site/static/img/plugins/trip-recording/trip_rec_notification_andr.png)
 
-- In den ***Android-Einstellungen → Benachrichtigungen und Statusleiste → Benachrichtigungen auf dem Sperrbildschirm*** können Sie OsmAnd aus der App-Liste entfernen, um zu verhindern, dass Benachrichtigungen auf dem Sperrbildschirm angezeigt werden, und so eine versehentliche Bildschirmaktivierung zu vermeiden. Dies hat keine Auswirkungen auf die Track-Aufzeichnung. Benachrichtigungen werden weiterhin im regulären Benachrichtigungsbereich angezeigt.
+- In den ***Android Einstellungen → Benachrichtigungen und Statusleiste → Benachrichtigungen auf dem Sperrbildschirm*** können Sie OsmAnd aus der App-Liste entfernen, um zu verhindern, dass Benachrichtigungen auf dem Sperrbildschirm angezeigt werden, und so eine versehentliche Bildschirmaktivierung zu vermeiden. Dies hat keine Auswirkungen auf die Track-Aufzeichnung. Benachrichtigungen werden weiterhin im regulären Benachrichtigungsbereich angezeigt.
 - **OsmAnd** kann auch unter ***Datenschutz → Spezielle Berechtigungen → Bildschirm einschalten*** angezeigt werden. Wenn Sie verhindern möchten, dass sich der Bildschirm einschaltet, wenn eine Benachrichtigung angezeigt wird, versuchen Sie, OsmAnd aus dieser Liste zu entfernen.
 
 <!--
@@ -351,7 +351,7 @@ Das App-Symbol-Badge erscheint neben dem OsmAnd-Symbol, wenn die Track-Aufzeichn
 
 - Dieses Symbol verschwindet, wenn die Track-Aufzeichnung abgeschlossen ist. Um zu überprüfen, ob eine Aufzeichnung aktiv ist, können Sie zu *Menü → Meine Orte → Registerkarte Tracks* gehen oder auf das Widget tippen, um die Aufzeichnung zu verwalten.
 - Wenn keine Aufzeichnung läuft und das Badge immer noch angezeigt wird, kann dies bedeuten, dass eine Nachricht von OsmAnd im Benachrichtigungsfeld des Geräts hinterlassen wurde.
-- Um Badges in den Android-Einstellungen zu deaktivieren, gehen Sie zu den Geräte-*Einstellungen → Apps → OsmAnd → Benachrichtigungen* und deaktivieren Sie die Option zur Badge-Anzeige für diese App.
+- Um Badges in den Android Einstellungen zu deaktivieren, gehen Sie zu den Geräte-*Einstellungen → Apps → OsmAnd → Benachrichtigungen* und deaktivieren Sie die Option zur Badge-Anzeige für diese App.
 
 
 ## Widgets {#widgets}
@@ -464,7 +464,7 @@ Wenn Sie mehrere Widgets ausgewählt haben – *Dauer*, *Aufstieg* oder *Abstieg
 
 - Die Aufnahme von Touren startet nicht.
     - Stellen Sie sicher, dass das **Plugin zur Aufnahme von Touren** aktiviert ist: *Menü → Plugins → Aufnahme von Touren → Aktivieren*.
-    - Überprüfen Sie, ob die Einstellungen korrekt sind: *Menü → Profil konfigurieren → Plugin-Einstellungen → Aufnahme von Touren*.
+    - Überprüfen Sie, ob die Einstellungen korrekt sind: *Menü → Profil konfigurieren → Plugin Einstellungen → Aufnahme von Touren*.
     - Wenn die Aufzeichnung immer noch nicht startet, starten Sie die App neu und versuchen Sie es erneut.
 
 - Die Aufnahme von Touren stoppt unerwartet.

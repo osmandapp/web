@@ -39,7 +39,7 @@ Bei Verwendung der Navigationstypen Direktpunkt und Boot benötigen Sie [Tiefenl
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings"/> → beliebiges Profil → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*
 
-![Direktpunkt-Routing-Einstellungen](@site/static/img/navigation/routing/direct_to_point_routing_3_andr.png)
+![Direktpunkt-Routing Einstellungen](@site/static/img/navigation/routing/direct_to_point_routing_3_andr.png)
 
 </TabItem>
 
@@ -47,14 +47,14 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_s
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings"/> → beliebiges Profil → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*
 
-![Direktpunkt-Routing-Einstellungen iOS](@site/static/img/navigation/routing/direct_to_point_ios.png)
+![Direktpunkt-Routing Einstellungen iOS](@site/static/img/navigation/routing/direct_to_point_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Weitere Routing-Einstellungen {#other-routing-settings}
+## Weitere Routing Einstellungen {#other-routing-settings}
 
 - Im Abschnitt [*Route neu berechnen*](../../navigation/guidance/navigation-settings.md#recalculate-route) der *Routenparameter* können Sie die Optionen zur Neuberechnung der Route aktivieren und anpassen. Der Standardwert ist 0 Meter Abweichung, was bedeutet, dass die Route nicht neu berechnet wird.
 

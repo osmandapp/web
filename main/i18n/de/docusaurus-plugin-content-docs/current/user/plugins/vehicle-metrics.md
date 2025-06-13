@@ -48,7 +48,7 @@ Um Daten von einem OBD-II-Scanner zu verwenden:
 2. [Aktivieren Sie](../plugins/index.md#enable--disable) das Fahrzeugmetriken-Plugin im Abschnitt Plugins des *Hauptmenüs*.
 3. **Schalten Sie** Bluetooth auf Ihrem Gerät **ein**.
 4. [Verbinden Sie](#pair-odb-ii-scanner) den OBD-II-Scanner mit dem Anschluss Ihres Fahrzeugs.
-5. [Konfigurieren Sie](#scanner-settings) die **Scanner-Einstellungen**.
+5. [Konfigurieren Sie](#scanner-settings) die **Scanner Einstellungen**.
 6. [Fügen Sie](#widgets) **Fahrzeugmetriken-Widgets** für die Anzeige auf dem Bildschirm hinzu (optional).
 7. [Verwenden Sie](#trip-recording) das **Plugin zur Aufzeichnung von Fahrten**, um Fahrzeugdaten aufzuzeichnen.
 
@@ -67,7 +67,7 @@ Verbinden Sie den Scanner mit dem Anschluss Ihres Fahrzeugs und koppeln Sie ihn 
 Wählen Sie Ihr OBD-II-Gerät aus der Liste aus und stellen Sie die Verbindung her.
 
 
-## Scanner-Einstellungen {#scanner-settings}
+## Scanner Einstellungen {#scanner-settings}
 
 **Android.** Gehen Sie zu: *Menü → Plugins → Fahrzeugmetriken → OBD → Drei-Punkte-Menü*
 
@@ -76,7 +76,7 @@ Wählen Sie Ihr OBD-II-Gerät aus der Liste aus und stellen Sie die Verbindung h
 |![OBD settings](@site/static/img/plugins/obd/obd_settings.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_1.png)|
 
 - **Verbinden / Trennen**. Stellt die Verbindung mit dem OBD-II-Sensor her oder beendet sie.
-- **Einstellungen**. Öffnet den Bildschirm mit den OBD-II-Einstellungen, der die Verbindungsverwaltung und den Zugriff auf verfügbare Fahrzeugparameter ermöglicht.
+- **Einstellungen**. Öffnet den Bildschirm mit den OBD-II Einstellungen, der die Verbindungsverwaltung und den Zugriff auf verfügbare Fahrzeugparameter ermöglicht.
 - **Umbenennen**. Ermöglicht die Zuweisung eines benutzerdefinierten Namens zum Sensor zur einfacheren Identifizierung.
 - **Vergessen**. Entfernt den zuvor gekoppelten OBD-II-Sensor aus der Liste, sodass bei Bedarf eine erneute Kopplung erforderlich ist.
 
@@ -143,7 +143,7 @@ Diese Tags erleichtern die Identifizierung und Nutzung spezifischer Fahrzeugdate
 
 Die [Fahrzeugmetriken-Widgets](../widgets/info-widgets.md#vehicle-metrics-widgets) werden automatisch hinzugefügt, wenn Sie das Plugin aktivieren. Wenn sie nicht sichtbar sind, können Sie sie manuell über das Menü [Bildschirm konfigurieren](../widgets/configure-screen.md) hinzufügen.
 
-### Widget-Einstellungen {#widget-settings}
+### Widget Einstellungen {#widget-settings}
 
 Die Widgets zeigen wichtige Daten von Ihrem verbundenen OBD-II-Gerät in Echtzeit an, wie z. B. Geschwindigkeit, Motormetriken und Kraftstoffverbrauch. Stellen Sie sicher, dass sie sichtbar sind, bevor Sie Ihre Fahrt beginnen, um Metriken nahtlos zu verfolgen.
 

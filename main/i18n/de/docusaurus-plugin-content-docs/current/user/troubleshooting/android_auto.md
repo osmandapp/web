@@ -21,7 +21,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Android Auto und OsmAnd können den Standort des Fahrzeugs gleichzeitig erkennen, was zu einer Verzögerung von 3-5 Sekunden bei der Anzeige von Informationen in den entsprechenden Widgets oder zum Einfrieren führen kann. Um dies zu vermeiden, ist es notwendig:
 
-1. Öffnen Sie die Android Auto-Einstellungen.
+1. Öffnen Sie die Android Auto Einstellungen.
 2. Suchen Sie unter Einstellungen nach Standortberechtigungen.
 3. Dieser Abschnitt zeigt eine Liste von Apps an, denen die Nutzung des Standorts in Android Auto erlaubt ist. Suchen Sie die OsmAnd-App und erlauben Sie die Nutzung des Standorts.
 4. Der Standort wird nun nur noch von der OsmAnd-App in Android Auto erkannt, wodurch Verzögerungen bei der Anzeige von Standortinformationen vermieden werden.

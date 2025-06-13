@@ -27,7 +27,7 @@ Das Widget **Kartenmarker-Leiste** (Android) / **Entfernungsanzeige - Obere Leis
 - Standortadresse.
 - Menüsymbol, das zur [Kartenmarkerliste](../personal/markers/#map-markers-menu) führt.
 
-Sie können auch auswählen, ob ein oder zwei Marker angezeigt werden sollen. Lesen Sie mehr über die Widget-Einstellungen in diesem [Artikel](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Sie können auch auswählen, ob ein oder zwei Marker angezeigt werden sollen. Lesen Sie mehr über die Widget Einstellungen in diesem [Artikel](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
 :::info
 *Die Entfernung zum Marker* ist die Länge der geraden Linie zwischen Ihrer Position (oder dem Mittelpunkt der Karte / dem anfänglichen Berührungspunkt der Karte, wenn der Standort ausgeschaltet ist) und dem Marker.
 :::  
@@ -76,7 +76,7 @@ Das Widget **Kartenmarker** *(für Android)* und **Entfernungsanzeige - Widgets*
 Dies ist die Zeit (hh:mm), zu der das Fahrzeug oder die Person am Ziel ankommen soll. Sie wird als Entfernung zum Marker geteilt durch die Durchschnittsgeschwindigkeit berechnet.
 Die Durchschnittsgeschwindigkeit wird als Mittelwert aller Geschwindigkeitswerte berechnet, die von den Standortpunkten für das von Ihnen ausgewählte Zeitintervall von 15 Sekunden bis 60 Minuten empfangen wurden.
 
-Sie können auch auswählen, ob ein oder zwei Marker angezeigt werden sollen. Lesen Sie mehr über die Widget-Einstellungen in diesem [Artikel](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Sie können auch auswählen, ob ein oder zwei Marker angezeigt werden sollen. Lesen Sie mehr über die Widget Einstellungen in diesem [Artikel](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
 :::info
 *Die Entfernung zum Marker* ist die Länge der geraden Linie zwischen Ihrer Position (oder einem bestimmten Punkt auf der Karte) und dem Marker.
 :::  

@@ -520,9 +520,9 @@ Mit der UI-Anpassungsfunktion können Sie die Anzahl der Elemente in Aktionen wi
 - **<Translate android="true" ids="copy_from_other_profile"/>** – Kopiert die *Kontextmenüanordnung* von einem anderen OsmAnd-Profil, um die Konsistenz über verschiedene Profile hinweg zu gewährleisten.
 
 
-## Plugin-Einstellungen {#plugin-settings}
+## Plugin Einstellungen {#plugin-settings}
 
-:::caution Zugriff auf Plugin-Einstellungen
+:::caution Zugriff auf Plugin Einstellungen
 Um auf die Einstellungen des Plugins zuzugreifen, müssen Sie das Plugin zuerst im Abschnitt *Plugins des Hauptmenüs* [**aktivieren**](../plugins/index.md#enable--disable).
 :::
 
@@ -557,7 +557,7 @@ Plugins schalten zusätzliche Funktionen der Anwendung frei und können entweder
 
 - **OpenStreetMap-Bearbeitung**. Dieser Punkt öffnet die [Einstellungen des OpenStreetMap-Bearbeitungs-Plugins](../plugins/osm-editing.md#settings) für das ausgewählte Profil. Mit OsmAnd und dem OSM-Bearbeitungs-Plugin können Sie zu OpenStreetMap.org beitragen, indem Sie POIs erstellen oder ändern, Notizen hinzufügen oder kommentieren und aufgezeichnete GPX-Tracks hochladen.
 
-- **Externe Sensoren**. Wenn Sie auf einen Punkt im Abschnitt *Plugin-Einstellungen* tippen, werden die [Einstellungen externer Sensoren](../plugins/external-sensors.md#sensors-settings) für das ausgewählte Profil geöffnet. Das Plugin für externe Sensoren ermöglicht es Ihnen, Daten von drahtlosen externen Sensoren zu lesen und aufzuzeichnen und diese mithilfe von Widgets in der OsmAnd-Anwendung anzuzeigen.
+- **Externe Sensoren**. Wenn Sie auf einen Punkt im Abschnitt *Plugin Einstellungen* tippen, werden die [Einstellungen externer Sensoren](../plugins/external-sensors.md#sensors-settings) für das ausgewählte Profil geöffnet. Das Plugin für externe Sensoren ermöglicht es Ihnen, Daten von drahtlosen externen Sensoren zu lesen und aufzuzeichnen und diese mithilfe von Widgets in der OsmAnd-Anwendung anzuzeigen.
 
 - **Barrierefreiheit** (*nur Android*). Dieser Punkt öffnet die [Einstellungen des Barrierefreiheits-Plugins](../plugins/accessibility.md#plugin-settings) für das ausgewählte Profil. Die Einstellungen des Barrierefreiheits-Plugins ermöglichen es Ihnen, die Anwendung an Ihre Bedürfnisse anzupassen. Alle Einstellungen beziehen sich auf den Navigationsprozess und werden für jedes Profil individuell festgelegt.
 
@@ -565,7 +565,7 @@ Plugins schalten zusätzliche Funktionen der Anwendung frei und können entweder
 
   > ***Das Ändern der Einstellungen des OsmAnd-Entwicklungs-Plugins wirkt sich auf alle Profile aus.***
 
-- **Wikipedia**. Dieses Menü öffnet die *[Wikipedia-Plugin-Einstellungen](../plugins/wikipedia.md#wikipedia-settings)*. Sie können die Sprache auswählen, in der Artikel angezeigt werden, und wählen, ob Bilder von Wikipedia heruntergeladen werden sollen. Wikipedia auf Ihrer Reise verbessert Ihr Erlebnis, indem es Informationen über die Orte liefert, die Sie besuchen. Es funktioniert offline und zeigt relevante Wikipedia-Artikel direkt auf der Karte an, die sich auf Points of Interest beziehen.
+- **Wikipedia**. Dieses Menü öffnet die *[Wikipedia-Plugin Einstellungen](../plugins/wikipedia.md#wikipedia-settings)*. Sie können die Sprache auswählen, in der Artikel angezeigt werden, und wählen, ob Bilder von Wikipedia heruntergeladen werden sollen. Wikipedia auf Ihrer Reise verbessert Ihr Erlebnis, indem es Informationen über die Orte liefert, die Sie besuchen. Es funktioniert offline und zeigt relevante Wikipedia-Artikel direkt auf der Karte an, die sich auf Points of Interest beziehen.
 
 
 ## Aktionen {#actions}

@@ -124,7 +124,7 @@ Der **OsmAnd Start** Plan bietet kostenlosen Zugang zu **OsmAnd Cloud** mit begr
 Funktionen, die in OsmAnd Start enthalten sind:
 
 - [Kostenloses Favoriten-Backup](../personal/favorites.md#free-cloud-backup) – Speichern Sie wichtige Orte und Routen in Ihren Favoriten und greifen Sie von jedem mit OsmAnd Cloud verbundenen Gerät darauf zu.  
-- [Kostenloses Einstellungs-Backup](../personal/profiles.md#free-cloud-backup) – Speichern Sie Ihre OsmAnd App-Einstellungen in OsmAnd Cloud und stellen Sie sie auf anderen Geräten wieder her, um ein nahtloses Erlebnis zu gewährleisten.  
+- [Kostenloses Einstellungs-Backup](../personal/profiles.md#free-cloud-backup) – Speichern Sie Ihre OsmAnd App Einstellungen in OsmAnd Cloud und stellen Sie sie auf anderen Geräten wieder her, um ein nahtloses Erlebnis zu gewährleisten.  
 - [OSM-Bearbeitungen/Notizen](../plugins/osm-editing.md) – Tragen Sie zu OpenStreetMap bei, indem Sie Kartendaten erstellen und bearbeiten, Notizen hinzufügen und Änderungen direkt in OsmAnd Cloud speichern.
 
 ### OsmAnd Start aktivieren {#how-to-activate-osmand-start}

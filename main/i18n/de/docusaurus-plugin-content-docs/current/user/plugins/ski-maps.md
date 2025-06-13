@@ -112,7 +112,7 @@ Wenn Sie es vorziehen, Loipen und Winterfarben von der Karte zu entfernen, oder 
 
 
 :::info Plugin deinstallieren
-Das Ski-Kartenansicht-Plugin ist eine separate Anwendung, und das Deaktivieren der Anzeige entfernt es nicht. Wenn Sie es deinstallieren müssen, gehen Sie zu den Android-Einstellungen über *Einstellungen öffnen* im Plugin-Menü.
+Das Ski-Kartenansicht-Plugin ist eine separate Anwendung, und das Deaktivieren der Anzeige entfernt es nicht. Wenn Sie es deinstallieren müssen, gehen Sie zu den Android Einstellungen über *Einstellungen öffnen* im Plugin-Menü.
 :::
 
 

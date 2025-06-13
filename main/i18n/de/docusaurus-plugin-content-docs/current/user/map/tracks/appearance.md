@@ -140,7 +140,7 @@ Stellt alle **Einstellungen für die Track-Darstellung** auf ihre Standardwerte 
 
 Die Funktion **3D-Track** erzeugt eine dreidimensionale Visualisierung, indem Höhendaten in Standard-2D-Tracks integriert werden. Diese Funktionalität schafft eine tiefenverstärkte Darstellung, die eine präzise Analyse des Tracks in Bezug auf das Gelände ermöglicht. Durch die Einbeziehung von Höhendetails bietet der 3D-Track eine umfassendere Ansicht der Topographie und des geografischen Kontexts der Route.
 
-### 3D-Track-Einstellungen {#3d-track-settings}
+### 3D-Track Einstellungen {#3d-track-settings}
 
 **Wandhöhe**
 Sie können einen 3D-Track nach Höhe und anderen verfügbaren Daten innerhalb des Tracks oder nach fester Höhe visualisieren.

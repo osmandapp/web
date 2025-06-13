@@ -28,7 +28,7 @@ Standardmäßig ist das *Moped-Profil* deaktiviert. Um dieses Profil für das Ro
 
 Das *Moped-Routing* kann nach Ihren Bedürfnissen im Abschnitt [Routenparameter](../guidance/navigation-settings.md#route-parameters) der Navigationseinstellungen konfiguriert werden.
 
-Die Routing-Einstellungen für Mopeds sind sehr einfach und bestehen aus nur wenigen Optionen.
+Die Routing Einstellungen für Mopeds sind sehr einfach und bestehen aus nur wenigen Optionen.
 
 <Tabs groupId="operating-systems">
 
@@ -52,7 +52,7 @@ Die Routing-Einstellungen für Mopeds sind sehr einfach und bestehen aus nur wen
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Private Zugangsbeschränkungen werden bei der Routenberechnung ignoriert.  | Das Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* wird in OSM verwendet, um Beschränkungen für die Nutzung von Autobahnen und anderen Verkehrswegen sowie Gebäuden, Eingängen, Annehmlichkeiten und Freizeiteinrichtungen zu beschreiben.   |
 
 
-## Andere Routing-Einstellungen {#other-routing-settings}
+## Andere Routing Einstellungen {#other-routing-settings}
 
 - Der Routing-Algorithmus kann auch temporäre Einschränkungen berücksichtigen, die in OpenStreetMap angegeben sind. Dies kann mit der Option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* erfolgen. Beachten Sie, dass in einigen Fällen Informationen aus OSM veraltet sein können.
 

@@ -138,7 +138,7 @@ In der Kategorie Historie können Sie ein Ziel aus einer Liste von Endpunkten au
     </tr>
 </table>
 
-POIs (Points of Interest) sind eine Art von Punkten, die Orte oder Objekte auf der Karte identifizieren, die für Benutzer wichtig oder interessant sind. Sie werden durch spezielle Symbole hervorgehoben, die in den [OsmAnd-Einstellungen](../map/point-layers-on-map.md#poi-types) bereitgestellt und in Gruppen sortiert sind.
+POIs (Points of Interest) sind eine Art von Punkten, die Orte oder Objekte auf der Karte identifizieren, die für Benutzer wichtig oder interessant sind. Sie werden durch spezielle Symbole hervorgehoben, die in den [OsmAnd Einstellungen](../map/point-layers-on-map.md#poi-types) bereitgestellt und in Gruppen sortiert sind.
 
 Um eine Route zu einem POI in *Android Auto* zu erstellen, gehen Sie wie folgt vor:
 
@@ -239,7 +239,7 @@ Dieses Informations-Widget kombiniert Warnungstypen wie **Fußgängerüberwege**
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
-Das **Tachometer-Widget** ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* anhand von GPS-Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM-Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd-Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Bildschirm des Fahrzeug-Multimediasystems anzeigt.
+Das **Tachometer-Widget** ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* anhand von GPS-Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM-Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Bildschirm des Fahrzeug-Multimediasystems anzeigt.
 
 - Das **Tachometer-Widget** ist [*profilabhängig*](../personal/profiles.md), sodass Änderungen an den Einstellungen für ein Profil nicht auf ein anderes angewendet werden.
 - Es gibt keine Option, die Anzeige des **Tachometer-Widgets** direkt in *Android Auto* anzupassen, Sie müssen es in der OsmAnd-App konfigurieren, bevor Sie die Navigation starten und Ihr Gerät mit dem Fahrzeug verbinden.
@@ -310,13 +310,13 @@ Die OsmAnd-App kann in *Android Auto* auf dem Bildschirm des Fahrzeug-Multimedia
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
 
-In den Android Auto-Einstellungen können Sie die Position der Taskleiste und das Layout des Startbildschirms ändern:
+In den Android Auto Einstellungen können Sie die Position der Taskleiste und das Layout des Startbildschirms ändern:
 
 - **Position der Taskleiste:**
-  Gehen Sie zu *Android Auto-Einstellungen → Schnelle Steuerelemente für Apps anzeigen* und schalten Sie den Schalter aus. Dadurch wird die Taskleiste vom unteren Rand an die Seite des Bildschirms verschoben.
+  Gehen Sie zu *Android Auto Einstellungen → Schnelle Steuerelemente für Apps anzeigen* und schalten Sie den Schalter aus. Dadurch wird die Taskleiste vom unteren Rand an die Seite des Bildschirms verschoben.
 
 - **Layout des Startbildschirms:**
-  Gehen Sie zu *Android Auto-Einstellungen → Layout ändern → Position des Fahrersitzes ändern*, um das Layout basierend auf der Position des Fahrersitzes anzupassen.
+  Gehen Sie zu *Android Auto Einstellungen → Layout ändern → Position des Fahrersitzes ändern*, um das Layout basierend auf der Position des Fahrersitzes anzupassen.
 
 
 ## Häufige Probleme und Lösungen {#common-issues-and-solutions}

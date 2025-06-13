@@ -166,7 +166,7 @@ Das Widget **Durchschnittsgeschwindigkeit** berechnet und zeigt Ihre Durchschnit
    Sie können die Berechnung der Durchschnittsgeschwindigkeit auf zwei Arten zurücksetzen:
 
    - Tippen Sie lange auf das Widget, um das [Kontextmenü](../widgets/configure-screen.md#widget-context-menu) zu öffnen, und wählen Sie *Durchschnittsgeschwindigkeit zurücksetzen*.
-   - Öffnen Sie die *Widget-Einstellungen* über das [Bildschirm konfigurieren Menü](../widgets/configure-screen.md#settings) und wählen Sie die Option zum Zurücksetzen.
+   - Öffnen Sie die *Widget Einstellungen* über das [Bildschirm konfigurieren Menü](../widgets/configure-screen.md#settings) und wählen Sie die Option zum Zurücksetzen.
 
 Nach dem Zurücksetzen wird die Durchschnittsgeschwindigkeit aus den neuen GPS-Daten neu berechnet. Diese Funktion ist nützlich für die Echtzeit-Geschwindigkeitsüberwachung, z. B. zur Verfolgung der Geschwindigkeit in Bereichen mit **Durchschnittsgeschwindigkeitskontrollen**.
 
@@ -432,7 +432,7 @@ Das Radiuslineal-Widget zeigt die Entfernung zwischen Ihrem Standort und dem Mit
 
 Das **Tachometer-Widget** ist eine grafische Anzeige der aktuellen Fahrzeuggeschwindigkeit basierend auf *Daten, die vom GPS empfangen werden*. Es ermöglicht Ihnen, in Echtzeit die Übereinstimmung zwischen Ihrer Geschwindigkeit und der zulässigen Höchstgeschwindigkeit zu überwachen. Die zulässige Höchstgeschwindigkeit wird von [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Key:maxspeed) für einen bestimmten Straßenabschnitt und der OsmAnd [Geschwindigkeitsbegrenzungstoleranz](../navigation/guidance/voice-navigation.md#speed-limit) bereitgestellt.
 
-- In den *Tachometer-Einstellungen* können Sie die Größe (**Höhe**) des Widgets auf dem Anwendungsbildschirm als *Klein*, *Mittel* oder *Groß* auswählen.
+- In den *Tachometer Einstellungen* können Sie die Größe (**Höhe**) des Widgets auf dem Anwendungsbildschirm als *Klein*, *Mittel* oder *Groß* auswählen.
 - Sie können festlegen, wann eine **Geschwindigkeitsbegrenzungswarnung** ausgegeben werden soll, indem Sie *Immer* oder *Bei Überschreitung* auswählen.
 
 <table class="blogimage">

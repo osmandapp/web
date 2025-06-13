@@ -89,7 +89,7 @@ OsmAnd-Plugins können diese Funktionsgruppen erweitern: **Ebenen**, **Widgets**
 | [AIS-Schiffs-Tracker](#ais-vessel-tracker) 🤖  |  [Benutzerdefinierte Einstellungen](../plugins/ais-tracker.md#plugin-settings) |
 
 
-### Plugin-Einstellungen {#plugin-settings}
+### Plugin Einstellungen {#plugin-settings}
 
 :::caution HINWEIS
 Nur das OsmAnd-Entwicklungs-Plugin und das OSM-Bearbeitungs-Plugin ändern die Einstellungen für alle Profile. Die übrigen Plugins werden für jedes Profil separat konfiguriert.
@@ -98,7 +98,7 @@ Nur das OsmAnd-Entwicklungs-Plugin und das OSM-Bearbeitungs-Plugin ändern die E
 Die meisten Plugins bieten spezifische Profil- oder globale Einstellungen, auf die über folgende Wege zugegriffen werden kann:
 
 - *Hauptmenü → Plugins → Plugin-Name → Einstellungen (&#x2699 für iOS)* oder
-- *Hauptmenü → Einstellungen → Profil → [Plugin-Einstellungen](../personal/profiles.md#plugin-settings)*.
+- *Hauptmenü → Einstellungen → Profil → [Plugin Einstellungen](../personal/profiles.md#plugin-settings)*.
 
 <Tabs groupId="operating-systems">
 
@@ -128,14 +128,14 @@ Die folgenden Plugins bieten eigene Einstellungen:
 |[OpenStreetMap-Bearbeitung](#openstreetmap-editing)| Geben Sie den Benutzer-[Login](../plugins/osm-editing.md#plugin-settings) an |
 |  [Externe Sensoren](#external-sensors) 🤖  | Verbindung zu externem Gerät [Einstellungen](../plugins/external-sensors.md#settings) |
 |  [Barrierefreiheit](#accessibility) 🤖  | [Einstellungen](../plugins/accessibility.md#plugin-settings) ermöglichen die Nutzung von [Android-Barrierefreiheitsfunktionen](https://www.android.com/accessibility/) innerhalb von OsmAnd. |
-| [OsmAnd-Entwicklung](#osmand-development) | [Plugin-Einstellungen](../plugins/development.md#plugin-settings) ermöglichen die Aktivierung spezieller Funktionen für Entwickler oder erfahrene Benutzer |
+| [OsmAnd-Entwicklung](#osmand-development) | [Plugin Einstellungen](../plugins/development.md#plugin-settings) ermöglichen die Aktivierung spezieller Funktionen für Entwickler oder erfahrene Benutzer |
 |  [OsmAnd Tracker](#osmand-tracker) 🤖  | Alle Einstellungen sind in einer separaten App konfigurierbar |
-| [AIS-Schiffs-Tracker](#ais-vessel-tracker) | [Plugin-Einstellungen](../plugins/ais-tracker.md#plugin-settings) ermöglichen die Aktivierung spezieller Einstellungen |
+| [AIS-Schiffs-Tracker](#ais-vessel-tracker) | [Plugin Einstellungen](../plugins/ais-tracker.md#plugin-settings) ermöglichen die Aktivierung spezieller Einstellungen |
 
 ### Plugin-Aktionen {#plugin-actions}
 
-**<Translate android="true" ids="reset_plugin_to_default"/>** - *mit dieser Option können die Plugin-Einstellungen auf die Standardwerte zurückgesetzt werden*.
-**<Translate android="true" ids="copy_from_other_profile"/>** - *Plugin-Einstellungen können von einem anderen Profil kopiert werden*.
+**<Translate android="true" ids="reset_plugin_to_default"/>** - *mit dieser Option können die Plugin Einstellungen auf die Standardwerte zurückgesetzt werden*.
+**<Translate android="true" ids="copy_from_other_profile"/>** - *Plugin Einstellungen können von einem anderen Profil kopiert werden*.
 
 
 ## Plugin-Liste {#plugins-list}

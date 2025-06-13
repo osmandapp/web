@@ -61,7 +61,7 @@ sidebar_position: 6
   Fügen Sie diesen Inhalt ein. Speichern Sie die Datei und starten Sie den Computer neu.
 
 ```
-## Projektweite Gradle-Einstellungen. {#project-wide-gradle-settings}
+## Projektweite Gradle Einstellungen. {#project-wide-gradle-settings}
 #
 # Weitere Details zur Konfiguration Ihrer Build-Umgebung finden Sie unter {#for-more-details-on-how-to-configure-your-build-environment-visit}
 # http://www.gradle.org/docs/current/userguide/build_environment.html {#httpwwwgradleorgdocscurrentuserguidebuildenvironmenthtml}
@@ -146,7 +146,7 @@ org.gradle.caching=true
 
 ### M1 Mac {#m1-mac}
   - Im Falle von ```ld: library not found for -lOsmAndCore_static_standalone```:
-  - Projektnavigator -> OsmAnd_projects -> OsmAnd_projects (in der Projekt-/Ziel-Liste) -> Build-Einstellungen -> Alle -> Architekturen -> Ausgeschlossene Architekturen -> Debug
+  - Projektnavigator -> OsmAnd_projects -> OsmAnd_projects (in der Projekt-/Ziel-Liste) -> Build Einstellungen -> Alle -> Architekturen -> Ausgeschlossene Architekturen -> Debug
   - Fügen Sie ein Zeichenkettenfeld vom Typ ```Any IOS Simulator SDK``` mit dem Wert ```arm64``` hinzu. (Sie müssen dies nach jedem prepare.sh-Lauf hinzufügen)
   - Projekt erstellen. Im Falle von Fehlern führen Sie alle Anweisungen aus ```11. Fehlerbehebung - Bereinigen temporärer Dateien.``` und ```prepare.sh``` erneut aus.
 

@@ -112,6 +112,6 @@ Wenn Sie auf ein Problem stoßen, bei dem die mit Ihrem OsmAnd Pro-Kauf verknüp
 
 5. **OsmAnd neu installieren**. Wenn das Löschen des Caches das Problem nicht löst, versuchen Sie, die App zu deinstallieren und neu zu installieren. Stellen Sie vorher sicher, dass Sie alle wichtigen Daten (Tracks, Favoriten) sichern, indem Sie zu *Menü → Einstellungen → Exportieren in Datei* gehen. Durch die Neuinstallation der App wird sichergestellt, dass alle Kontodaten korrekt aktualisiert werden.
 
-6. **Proxy deaktivieren**. Überprüfen Sie die Proxy-Einstellungen der App und stellen Sie sicher, dass der Proxy ausgeschaltet ist, indem Sie zu *Menü → Einstellungen → OsmAnd-Einstellungen → Proxy* gehen. Ein Proxy oder VPN könnte die Kontosynchronisierung beeinträchtigen.
+6. **Proxy deaktivieren**. Überprüfen Sie die Proxy Einstellungen der App und stellen Sie sicher, dass der Proxy ausgeschaltet ist, indem Sie zu *Menü → Einstellungen → OsmAnd Einstellungen → Proxy* gehen. Ein Proxy oder VPN könnte die Kontosynchronisierung beeinträchtigen.
 
 7. **Neu anmelden oder Web für die Kontoverwaltung verwenden**. Wenn Sie immer noch Probleme haben, versuchen Sie, sich ab- und wieder anzumelden, um die Verbindung der App zu Ihrem aktuellen Konto zu aktualisieren. Wenn Sie Probleme beim Löschen des alten Kontos in der App haben, sollten Sie Ihr Konto über die Webversion von OsmAnd verwalten.

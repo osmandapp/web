@@ -163,7 +163,7 @@ Um Sensordaten während Ihrer Tour mit dem [Plugin Tourenaufzeichnung](../plugin
 ***Hinweise:***
 
 - Die Liste der verfügbaren Sensortypen wird angezeigt, auch wenn keine Sensoren verbunden sind.
-- Wenn noch keine Sensoren gekoppelt sind, verwenden Sie die Schaltfläche [Neuen Sensor koppeln](#pair-new-sensor) in den Plugin-Einstellungen.
+- Wenn noch keine Sensoren gekoppelt sind, verwenden Sie die Schaltfläche [Neuen Sensor koppeln](#pair-new-sensor) in den Plugin Einstellungen.
 - Batteriestandsdaten werden **nicht** in GPX-Dateien aufgezeichnet und sind nicht für die Analyse auf der Karte verfügbar.
 
 :::note Formatkompatibilität
@@ -242,7 +242,7 @@ Unterstützte Widget-Typen:
 7. **Batteriestand** (*nur iOS*) – Prozentsatz der verbleibenden Batterie in einem verbundenen BLE-Sensor.
 
 
-### Widget-Einstellungen {#widget-settings}
+### Widget Einstellungen {#widget-settings}
 
 <Tabs groupId="operating-systems">
 

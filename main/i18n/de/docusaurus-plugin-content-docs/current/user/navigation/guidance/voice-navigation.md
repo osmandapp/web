@@ -215,7 +215,7 @@ Eine Liste der **verfügbaren TTS-Engines und unterstützten Sprachen** auf Andr
 6. Tippen Sie auf **Beispiel anhören**, um die Sprachausgabe zu testen.
 
 Weitere Details finden Sie unter:
-[Google Support – Android Text-to-Speech-Einstellungen](https://support.google.com/accessibility/android/answer/6006983).
+[Google Support – Android Text-to-Speech Einstellungen](https://support.google.com/accessibility/android/answer/6006983).
 
 **iOS:**
 
@@ -277,7 +277,7 @@ OsmAnd bietet zwei Arten von Sprachansagen:
 
 > *TTS wird für detaillierte Navigationsanweisungen empfohlen.*
 
-#### Systemweite Sprachansagen-Einstellungen {#system-level-voice-prompt-settings}
+#### Systemweite Sprachansagen Einstellungen {#system-level-voice-prompt-settings}
 
 Das Verhalten von Sprachansagen, einschließlich *Wiedergabegeschwindigkeit, Tonhöhe und Pausen*, kann nur in den Systemeinstellungen des Geräts angepasst werden.
 

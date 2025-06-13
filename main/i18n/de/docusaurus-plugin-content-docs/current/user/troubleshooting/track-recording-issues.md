@@ -93,7 +93,7 @@ Einige dieser Einstellungen interagieren, seien Sie also genau. Am besten suchen
 - *Gerätewartung / Batterie*
 - *Gerätewartung / Batterie / Einstellungen*
 - *Gerätewartung / Batterie / App-Energieverwaltung*
-- *Gerätewartung / Batterie / Weitere Batterie-Einstellungen*
+- *Gerätewartung / Batterie / Weitere Batterie Einstellungen*
 
 
 ## Wie man die zurückgelegte Strecke verfolgt {#how-to-track-traveled-distance}

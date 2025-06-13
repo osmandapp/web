@@ -93,7 +93,7 @@ Wenn Sie eine Route erstellen, können Sie im Abschnitt *Navigation* die Arten v
 
 ![POI-Overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI-Overlay iOS](@site/static/img/map/poi_overlay_ios.png)
 
-Die POI-Einstellungen in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) sind mit der Einstellung **Entlang der Route anzeigen** verknüpft. Dies ist im Wesentlichen eine zusätzliche Einstellung zur Anzeige von POIs auf der Karte, die direkt mit der erstellten Route zusammenhängt.  
+Die POI Einstellungen in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) sind mit der Einstellung **Entlang der Route anzeigen** verknüpft. Dies ist im Wesentlichen eine zusätzliche Einstellung zur Anzeige von POIs auf der Karte, die direkt mit der erstellten Route zusammenhängt.  
 
 Wenn Sie die Anzeige bestimmter POIs auf der *Karte konfigurieren* festlegen, werden diese alle auf den von Ihnen heruntergeladenen Karten angezeigt, unabhängig davon, ob Sie Kategorien ausgewählt haben oder, wenn Ihnen die Kategorie egal ist, nahegelegene POIs ausgewählt haben.  
 

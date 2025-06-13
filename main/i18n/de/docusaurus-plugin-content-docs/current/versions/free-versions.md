@@ -292,7 +292,7 @@ Veröffentlichungsdatum 02/2020:
 
 - Profile: Jetzt können Sie die Reihenfolge ändern, ein Symbol für die Karte festlegen, alle Einstellungen für Basisprofile ändern und sie auf die Standardwerte zurücksetzen
 - Ausfahrtnummer in der Navigation hinzugefügt
-- Plugin-Einstellungen überarbeitet
+- Plugin Einstellungen überarbeitet
 - Einstellungsbildschirm für schnellen Zugriff auf alle Profile überarbeitet
 - Option zum Kopieren von Einstellungen aus einem anderen Profil hinzugefügt
 - Möglichkeit zum Ändern der Reihenfolge oder zum Ausblenden von POI-Kategorien in der Suche hinzugefügt

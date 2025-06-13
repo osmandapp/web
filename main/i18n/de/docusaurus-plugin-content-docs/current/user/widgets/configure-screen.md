@@ -88,7 +88,7 @@ Jeder Bereich unterstützt unterschiedliche Layout-Verhalten:
 - **Linker und rechter Bereich** unterstützen mehrere Seiten. Sie können Widgets in separate Seiten gruppieren und zwischen ihnen wechseln.
 
 
-### Widget-Katalog {#widgets-catalog}
+### Widget Katalog {#widgets-catalog}
 
 <Tabs groupId="operating-systems">
 
@@ -282,7 +282,7 @@ Widgets in den rechten und linken Bereichen können in **Seiten** gruppiert werd
 - Seiten ermöglichen es Ihnen, **Widget-Sätze** für bestimmte Szenarien zu erstellen, den Arbeitsablauf zu verbessern und die Unordnung zu reduzieren.
 
 
-## Widget-Einstellungen {#widget-settings}
+## Widget Einstellungen {#widget-settings}
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 

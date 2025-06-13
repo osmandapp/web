@@ -130,7 +130,7 @@ Tabelle:
 - Entfernungsmessung
 - Kompassanzeige
 - Benutzerdefinierte Kartenstile
-- Routing-Einstellungen
+- Routing Einstellungen
 - Anzeige von Verkehrszeichen
 
 Tabelle:
