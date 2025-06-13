@@ -72,7 +72,7 @@ Das Herunterladen von Karten in die OsmAnd-Anwendung ist ein wichtiger Schritt, 
 
 - [Höhenlinien](../plugins/topography.md#contour-lines). Eine Karte mit Höhenlinien zur Visualisierung des Geländes.
 - [Geländekarte (Schummerung und Hangneigung)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Karten mit Schatten oder Hangneigungen liefern zusätzliche Geländinformationen.
-- [Geländekarte (3D)](../plugins/topography.ography.md#3d-relief). Dreidimensionale Darstellung des Geländes für ein besseres Verständnis Ihrer Umgebung. [Karten-Rendering-Engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) muss aktiviert sein.
+- [Geländekarte (3D)](../plugins/topography.md#3d-relief). Dreidimensionale Darstellung des Geländes für ein besseres Verständnis Ihrer Umgebung. [Karten-Rendering-Engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) muss aktiviert sein.
 - [Wikipedia](../plugins/wikipedia.md). Vektorkarte mit georeferenzierten [Wikipedia](https://wikipedia.org/)-Artikeln über Sehenswürdigkeiten oder zusätzliche Informationen über Orte.
 - [Wettervorhersage](../plugins/weather.md). Wetterinformationen auf einer Karte zur einfachen Routenplanung.
 - [Online-Rasterkarten](../map/raster-maps.md). Die Karten stehen online zum Download bereit und können als Karten von Drittanbietern oder OsmAnd-Kacheln installiert werden.
