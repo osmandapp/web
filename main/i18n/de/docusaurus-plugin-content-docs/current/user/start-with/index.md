@@ -9,7 +9,7 @@ Erste Schritte mit OsmAnd (OpenStreetMap Automated Navigation Directions): Insta
 
 ### [Erste Schritte](./first-steps.md) {#first-steps}
 
-Willkommen bei OsmAnd! Erfahren Sie, wie Sie Karten herunterladen, die Anwendung konfigurieren, Karten verwenden und eine Route erstellen, die Navigation starten und nach Points of Interest suchen. Machen Sie sich mit den wichtigsten Punkten der OsmAnd-Datenschutzrichtlinie und den erforderlichen Berechtigungen vertraut.
+Willkommen bei OsmAnd! Erfahren Sie, wie Sie Karten herunterladen, die Anwendung konfigurieren, Karten verwenden und eine Route erstellen, die Navigation starten und nach Points of Interest suchen. Machen Sie sich mit den wichtigsten Punkten der OsmAnd Datenschutzrichtlinie und den erforderlichen Berechtigungen vertraut.
 
 ### [Karten herunterladen](./download-maps.md) {#download-maps}
 

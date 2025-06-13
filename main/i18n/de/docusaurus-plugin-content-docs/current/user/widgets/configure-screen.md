@@ -134,7 +134,7 @@ Jeder Bereich unterstützt unterschiedliche Layout-Verhalten:
     Zeigt die aktuelle Geschwindigkeitsbegrenzung für die Straße an.
 
 - [Tachometer](../widgets/info-widgets.md#speedometer).  
-    Zeigt die aktuelle Geschwindigkeit basierend auf GPS-Daten und die begrenzte Geschwindigkeit basierend auf [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Key:maxspeed) an.
+    Zeigt die aktuelle Geschwindigkeit basierend auf GPS Daten und die begrenzte Geschwindigkeit basierend auf [OpenStreetMap Daten](https://wiki.openstreetmap.org/wiki/Key:maxspeed) an.
 
 - [Straßenname](../widgets/nav-widgets#street-name) (*Nur oben/unten*).  
     Zeigt die aktuelle oder kommende Straße an.
@@ -511,7 +511,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
 - [Entfernung per Tippen](../widgets/radius-ruler.md#distance-by-tap). Bietet die Möglichkeit, die Entfernung von Ihrer Position zum ausgewählten Punkt zu messen.
-- [Tachometer](../widgets/info-widgets.md#speedometer). Zeigt die aktuelle Geschwindigkeit basierend auf GPS-Daten und die begrenzte Geschwindigkeit basierend auf [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Key:maxspeed) an. Die angezeigten Daten hängen auch von der OsmAnd-Einstellung [Toleranz der Geschwindigkeitsbegrenzung](../navigation/guidance/voice-navigation.md#speed-limit) ab.
+- [Tachometer](../widgets/info-widgets.md#speedometer). Zeigt die aktuelle Geschwindigkeit basierend auf GPS Daten und die begrenzte Geschwindigkeit basierend auf [OpenStreetMap Daten](https://wiki.openstreetmap.org/wiki/Key:maxspeed) an. Die angezeigten Daten hängen auch von der OsmAnd-Einstellung [Toleranz der Geschwindigkeitsbegrenzung](../navigation/guidance/voice-navigation.md#speed-limit) ab.
 
 
 ### Anzeigeposition (Standortposition auf dem Bildschirm) {#display-position-location-position-on-screen}

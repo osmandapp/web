@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### Warum bietet OsmAnd keinen Zugriff auf Google Maps? {#why-does-osmand-not-offer-access-to-google-maps}
 
-OsmAnd wurde entwickelt, um OpenStreetMap (OSM) zu unterstützen, und priorisiert diesen Weg so weit wie möglich. Zusätzlich gibt es Lizenzbeschränkungen, die es OsmAnd nicht erlauben, mit Google Maps-Daten vertrieben zu werden.
+OsmAnd wurde entwickelt, um OpenStreetMap (OSM) zu unterstützen, und priorisiert diesen Weg so weit wie möglich. Zusätzlich gibt es Lizenzbeschränkungen, die es OsmAnd nicht erlauben, mit Google Maps Daten vertrieben zu werden.
 
 ### Karten laden langsam auf Android 11, 12 (SD-Karte) {#maps-slowly-loading-on-android-11-12-sd-card}
 
@@ -26,7 +26,7 @@ Aufgrund der neuen [Speicherzugriffsregeln, die in Android 11 und 12 eingeführt
 
 Derzeit stehen folgende Lösungen zur Verfügung:
 
-#### 1. Migrieren Sie den OsmAnd-Datenspeicherordner in den „Internen App-Speicher“ {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
+#### 1. Migrieren Sie den OsmAnd Datenspeicherordner in den „Internen App-Speicher“ {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
 - Sie können den Speicherordner ändern, indem Sie die Option ***Interner App-Speicher*** in *Menü → Einstellungen → OsmAnd Einstellungen → Datenspeicherordner* auswählen.
 
@@ -50,9 +50,9 @@ Das "XXXX-XXXX" steht für die eindeutige Identifikationsnummer Ihrer SD-Karte, 
 
 Wenn frühere Lösungen nicht funktionieren oder begrenzt erscheinen, können Sie versuchen, die Option „Medien“ zu verwenden, um langsame Kartenlade- oder Speicherzugriffsprobleme zu lösen. Diese Methode ermöglicht die Auswahl eines Ordners, der für OsmAnd und andere Apps zugänglich ist, besonders nützlich für externen oder entfernbaren Speicher.
 
-### Auswahl eines „allgemein zugänglichen“ OsmAnd-Datenspeicherordners mithilfe des „Medien“-Speichers {#picking-a-generally-accessible-osmand-data-storage-folder-using-the-media-storage}
+### Auswahl eines „allgemein zugänglichen“ OsmAnd Datenspeicherordners mithilfe des „Medien“-Speichers {#picking-a-generally-accessible-osmand-data-storage-folder-using-the-media-storage}
 
-Android ist bei Speicherberechtigungen strenger geworden und beschränkt oft den Zugriff auf app-spezifische Ordner, insbesondere bei Neuinstallationen oder System-Upgrades. Der Standard-Datenspeicher von OsmAnd kann eingeschränkt sein, wodurch er für andere Apps oder sogar Dateimanager unsichtbar wird. Viele Benutzer möchten Karten und Daten in einem zugänglichen externen Speicher für Sicherung, Synchronisierung oder manuelle Dateiverwaltung speichern.
+Android ist bei Speicherberechtigungen strenger geworden und beschränkt oft den Zugriff auf app-spezifische Ordner, insbesondere bei Neuinstallationen oder System-Upgrades. Der Standard Datenspeicher von OsmAnd kann eingeschränkt sein, wodurch er für andere Apps oder sogar Dateimanager unsichtbar wird. Viele Benutzer möchten Karten und Daten in einem zugänglichen externen Speicher für Sicherung, Synchronisierung oder manuelle Dateiverwaltung speichern.
 
 OsmAnd verfügt jedoch nicht über die Berechtigung *Zugriff auf alle Dateien* (aufgrund von Google-Beschränkungen), was die Auswahl der Ordner einschränkt. Ein Workaround ist die Verwendung des „Medien“-Speicherordners, dem Android typischerweise breitere Lese-/Schreibzugriffe gewährt. Dazu:
 

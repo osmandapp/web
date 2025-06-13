@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Plugins erweitern die Funktionalität von OsmAnd erheblich. Jedes Plugin ist für eine bestimmte Aufgabe oder einen bestimmten Anwendungsfall konzipiert, z. B. für die Aufzeichnung einer Reise, den Offline-Zugriff auf Wikipedia-Artikel, die Visualisierung von Geländedaten oder die Bereitstellung einer Ansicht auf Straßenebene.
 
-Plugins können intern sein, in der OsmAnd-Anwendung aktiviert, oder extern, separat installierte Programme. Plugins von Drittanbietern arbeiten über die OsmAnd-API und können auf OsmAnd-Daten zugreifen.
+Plugins können intern sein, in der OsmAnd-Anwendung aktiviert, oder extern, separat installierte Programme. Plugins von Drittanbietern arbeiten über die OsmAnd-API und können auf OsmAnd Daten zugreifen.
 
 
 ## Plugin konfigurieren {#configure-plugin}
@@ -147,11 +147,11 @@ Wikipedia auf Ihrer Reise hilft Ihnen, mehr über die Orte zu erfahren, die Sie 
 
 ### [Online-Karten](./online-map.md) {#online-maps}
 
-OsmAnd Online-Karten sind eine umfangreiche Ergänzung zur bereits in der Anwendung vorhandenen OpenStreetMap-Datenbank. Mit diesem Plugin können Sie Ihrer Karte Ebenen mit Informationen aus verschiedenen Quellen hinzufügen.
+OsmAnd Online-Karten sind eine umfangreiche Ergänzung zur bereits in der Anwendung vorhandenen OpenStreetMap Datenbank. Mit diesem Plugin können Sie Ihrer Karte Ebenen mit Informationen aus verschiedenen Quellen hinzufügen.
 
 ### [Reiseaufzeichnung](./trip-recording.md) {#trip-recording}
 
-Um eine Geschichte darüber zu erzählen, wo Sie waren, können GPS-Daten, wie Breiten- und Längengrad Ihres Standorts, aufgezeichnet und in einer Datei gespeichert werden, um sie dann wiederzuverwenden, zu verbessern, mit Wegpunkten zu erweitern, für die Navigation bereitzustellen, mit Freunden zu teilen usw.
+Um eine Geschichte darüber zu erzählen, wo Sie waren, können GPS Daten, wie Breiten- und Längengrad Ihres Standorts, aufgezeichnet und in einer Datei gespeichert werden, um sie dann wiederzuverwenden, zu verbessern, mit Wegpunkten zu erweitern, für die Navigation bereitzustellen, mit Freunden zu teilen usw.
 
 ### [Topographie](./topography.md) {#topography}
 
@@ -175,7 +175,7 @@ Setzen Sie einen Punkt auf der Karte, an dem Ihr Auto auf der Straße abgestellt
 
 ### [OpenStreetMap-Bearbeitung](./osm-editing.md) {#openstreetmap-editing}
 
-Das OpenStreetMap-Bearbeitungs-Plugin ermöglicht es Ihnen, zu OpenStreetMap beizutragen, einer globalen Gemeinschaft, die eine umfassende Karte der Welt erstellt und öffentlich verfügbare, aktuelle Open-Source-Daten bereitstellt.
+Das OpenStreetMap-Bearbeitungs-Plugin ermöglicht es Ihnen, zu OpenStreetMap beizutragen, einer globalen Gemeinschaft, die eine umfassende Karte der Welt erstellt und öffentlich verfügbare, aktuelle Open-Source Daten bereitstellt.
 
 ### [Mapillary](./mapillary.md) {#mapillary}
 
@@ -207,7 +207,7 @@ OsmAnd Tracker hilft Ihnen, zu sehen, wo sich Ihre Kontakte auf der Karte in Osm
 
 ### [AIS-Schiffs-Tracker](./ais-tracker.md) {#ais-vessel-tracker}
 
-Zeigt AIS-Positionen und Informationen über umliegende Schiffe an. Die AIS-Daten werden über das Netzwerk von einem externen AIS-Empfänger empfangen.
+Zeigt AIS-Positionen und Informationen über umliegende Schiffe an. Die AIS Daten werden über das Netzwerk von einem externen AIS-Empfänger empfangen.
 
 ## [Ein benutzerdefiniertes Plugin erstellen](./custom.md) {#create-a-custom-plugin}
 

@@ -69,7 +69,7 @@ Die Haltestelle des öffentlichen Nahverkehrs bietet zusätzliche Details im Ver
 
 ![Öffentliche Verkehrsrouten Android](@site/static/img/map/pt_routes_android.png) ![Öffentliche Verkehrsrouten iOS](@site/static/img/map/pt_routes_ios.png)
 
-Verkehrsrouten sind alle öffentlichen Verkehrsrouten, die über die ausgewählte Haltestelle und nahegelegene Routen (innerhalb von 150 m) verlaufen. Die Routeninformationen stammen aus [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Public_transport) wie Ref, Name, Farbe und Typ.
+Verkehrsrouten sind alle öffentlichen Verkehrsrouten, die über die ausgewählte Haltestelle und nahegelegene Routen (innerhalb von 150 m) verlaufen. Die Routeninformationen stammen aus [OpenStreetMap Daten](https://wiki.openstreetmap.org/wiki/Public_transport) wie Ref, Name, Farbe und Typ.
 
 **Schildfarbe**:
 

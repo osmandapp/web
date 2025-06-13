@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Überblick {#overview}
 
-[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) ist eine globale Gemeinschaft, die sich zum Ziel gesetzt hat, eine detaillierte, freie geografische Karte der Welt zu erstellen und jedem Nutzer aktuelle Open-Source-Daten zur Verfügung zu stellen. Das OpenStreetMap-Bearbeitungs-Plugin ermöglicht es Ihnen, zur Community beizutragen.
+[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) ist eine globale Gemeinschaft, die sich zum Ziel gesetzt hat, eine detaillierte, freie geografische Karte der Welt zu erstellen und jedem Nutzer aktuelle Open-Source Daten zur Verfügung zu stellen. Das OpenStreetMap-Bearbeitungs-Plugin ermöglicht es Ihnen, zur Community beizutragen.
 
 Mit OsmAnd und dem OSM-Bearbeitungs-Plugin können Sie ganz einfach eigene Informationen zu OpenStreetMap.org beitragen, z. B. [POIs](#create--modify-poi) erstellen oder ändern, [Notizen](#create--modify-osm-note) hinzufügen oder kommentieren und aufgezeichnete GPX-[Tracks](#upload-gps-track) hochladen.
 
@@ -172,7 +172,7 @@ Sie können POIs in *Meine Orte → OSM-Bearbeitungen* anzeigen, auf OSM hochlad
 
 ### Nicht unterstützte POI-Typen hinzufügen {#add-unsupported-poi-types}
 
-Auf der Registerkarte *Erweitert* können Sie nicht unterstützte POI-Typen hinzufügen, die für Ihre spezifische Aufgabe nützlich sein können. Diese Option ermöglicht es Ihnen, POI-Daten manuell einzugeben und so die Funktionalität der Anwendung zu erweitern.
+Auf der Registerkarte *Erweitert* können Sie nicht unterstützte POI-Typen hinzufügen, die für Ihre spezifische Aufgabe nützlich sein können. Diese Option ermöglicht es Ihnen, POI Daten manuell einzugeben und so die Funktionalität der Anwendung zu erweitern.
 
 Ein Beispiel für nicht unterstützte POI-Typen, die Sie hinzufügen können, ist *amenity=freeshops*. Dieser Typ kann nützlich sein, wenn Sie kostenlose Geschäfte oder Orte markieren möchten, die kostenlose Produkte anbieten.
 
@@ -211,7 +211,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_n
 
 Um OSM-Notizen zu bearbeiten, zu kommentieren oder zu schließen, aktivieren Sie deren Anzeige auf der Karte im Menü [Karte konfigurieren](../map/configure-map-menu.md).
 
-- Die Funktion OSM-Notizen ermöglicht es Ihnen, Notizen zur Karte hinzuzufügen. In diesen Notizen können Sie Fehler beschreiben oder über fehlende Informationen in den OpenStreetMap-Daten schreiben. Sie und andere Benutzer können Kommentare zu Ihren Notizen hinterlassen.
+- Die Funktion OSM-Notizen ermöglicht es Ihnen, Notizen zur Karte hinzuzufügen. In diesen Notizen können Sie Fehler beschreiben oder über fehlende Informationen in den OpenStreetMap Daten schreiben. Sie und andere Benutzer können Kommentare zu Ihren Notizen hinterlassen.
 - Sie können anderen Benutzern helfen, indem Sie deren Fragen oder Probleme überprüfen, Kommentare abgeben und dann die gelösten Notizen schließen.
 - Lesen Sie mehr über die OpenStreetMap-Notizen [hier](https://wiki.openstreetmap.org/wiki/Notes).
 
@@ -269,7 +269,7 @@ Um den [GPS-Track hochzuladen](https://wiki.openstreetmap.org/wiki/Upload_GPS_tr
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Dieser Punkt im Einstellungsbereich ermöglicht das Hinzufügen von Tags zur Identifizierung des Tracks. Der Standard-Tag ist "osmand", Sie können zusätzliche Tags durch Kommas getrennt eingeben.
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Track-Sichtbarkeit für OSM-Benutzer:
    - *Öffentlich* bedeutet, dass der Track öffentlich verfügbar ist und in Rohform in Ihren GPS-Tracks, GPS-Tracklisten und zeitgestempelten Tracklisten angezeigt wird. Die über die API übertragenen Daten werden nicht mit Ihrer Track-Seite referenziert. Zeitstempel von Trace-Punkten sind über die öffentliche GPS-API nicht verfügbar und Track-Punkte sind nicht chronologisch geordnet.
-   - *Identifizierbar* bedeutet, dass der Track öffentlich in Ihren GPS-Track-Punkten und öffentlichen GPS-Tracklisten angezeigt wird, was bedeutet, dass andere Benutzer den Roh-Track herunterladen und mit Ihrem Benutzernamen verknüpfen können. Öffentliche zeitgestempelte Track-Punkt-Daten aus der GPS-API, die über die Track-Punkt-API übergeben werden, verlinken zu Ihrer ursprünglichen Track-Seite.
+   - *Identifizierbar* bedeutet, dass der Track öffentlich in Ihren GPS-Track-Punkten und öffentlichen GPS-Tracklisten angezeigt wird, was bedeutet, dass andere Benutzer den Roh-Track herunterladen und mit Ihrem Benutzernamen verknüpfen können. Öffentliche zeitgestempelte Track-Punkt Daten aus der GPS-API, die über die Track-Punkt-API übergeben werden, verlinken zu Ihrer ursprünglichen Track-Seite.
    - *Verfolgbar* bedeutet, dass der Track nicht in öffentlichen Listen angezeigt wird, aber die verarbeiteten Track-Punkte mit Zeitstempeln daraus (die nicht direkt mit Ihnen verknüpft werden können) über die öffentliche GPS-API geladen werden.
    - *Privat* bedeutet, dass der Track nicht in öffentlichen Listen angezeigt wird, aber die Track-Punkte daraus in nicht-chronologischer Reihenfolge über die öffentliche GPS-API ohne Zeitstempel verfügbar sind.
 - **<Translate android="true" ids="login_account"/>** - [OSM-Konto](https://www.openstreetmap.org/login).
@@ -280,7 +280,7 @@ Sie können mehr als einen Track zum Hochladen auf OSM auswählen. Tippen Sie da
 
 ### OBF-Datei generieren {#generate-obf-file}
 
-Sie können eine OBF-Datei mit [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) erstellen, wenn Sie eine große GPX-Track-Datenbank haben. Dies ist eine Sammlung von Tracks von osmand.net mit dem Tag 'gpsies', eine Sammlung von heruntergeladenen Tracks von OpenStreetMap oder Ihre eigene Sammlung.
+Sie können eine OBF-Datei mit [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) erstellen, wenn Sie eine große GPX-Track Datenbank haben. Dies ist eine Sammlung von Tracks von osmand.net mit dem Tag 'gpsies', eine Sammlung von heruntergeladenen Tracks von OpenStreetMap oder Ihre eigene Sammlung.
 
 
 ## Verwandte Artikel {#related-articles}

@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ## Überblick {#overview}
 
-Vektorkarten sind als Standard-Datenquelle für OsmAnd gedacht, daher **müssen Sie sie auf Ihr Gerät herunterladen**. Vektorkarten unterstützen eine riesige Anzahl von Kartenstilen für verschiedene Aktivitäten wie Radfahren, Wandern, Autofahren oder Schneemobilfahren und andere.
+Vektorkarten sind als Standard Datenquelle für OsmAnd gedacht, daher **müssen Sie sie auf Ihr Gerät herunterladen**. Vektorkarten unterstützen eine riesige Anzahl von Kartenstilen für verschiedene Aktivitäten wie Radfahren, Wandern, Autofahren oder Schneemobilfahren und andere.
 
 Jeder Kartenstil kann angepasst werden, um bestimmte Objekte hervorzuheben oder auszublenden und zwischen Tag- und Nachtmodus zu wechseln. Vektorkartendaten können durch Vektordaten erweitert und im Standard-Kartenstil angezeigt werden, z. B. Informationen zu *Höhenlinien*. Sie können *Ihren eigenen OsmAnd-Kartenstil erstellen*, um die erforderlichen Informationen anzuzeigen.
 

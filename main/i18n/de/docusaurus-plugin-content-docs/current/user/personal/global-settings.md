@@ -94,9 +94,9 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 ![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)
 
-1. **Gerätespeicher** zeigt an, wie viel freier Speicherplatz auf Ihrem Gerät verbleibt. Tippen Sie auf ein Feld, um auf das Menü [*Karten und Ressourcen*](../personal/maps-resources.md#maps-and-resources) zuzugreifen, in dem Sie detaillierte Informationen zu Ihren OsmAnd-Daten anzeigen und verwalten können.
+1. **Gerätespeicher** zeigt an, wie viel freier Speicherplatz auf Ihrem Gerät verbleibt. Tippen Sie auf ein Feld, um auf das Menü [*Karten und Ressourcen*](../personal/maps-resources.md#maps-and-resources) zuzugreifen, in dem Sie detaillierte Informationen zu Ihren OsmAnd Daten anzeigen und verwalten können.
 
-2. Im **<Translate android="true" ids="change_data_storage_folder"/>** können Sie einen Ordner zum Speichern von OsmAnd-Daten auf Ihrem Gerät auswählen.
+2. Im **<Translate android="true" ids="change_data_storage_folder"/>** können Sie einen Ordner zum Speichern von OsmAnd Daten auf Ihrem Gerät auswählen.
 
     - *Interner App-Speicher*. Nur die OsmAnd-App hat Zugriff auf ihre Daten und keine der externen Apps.
     - *Gemeinsamer Speicher*. Nicht mehr verfügbar.

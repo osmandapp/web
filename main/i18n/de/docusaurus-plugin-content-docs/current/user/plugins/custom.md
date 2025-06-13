@@ -326,7 +326,7 @@ Wenn die *items.JSON*-Datei und alle Dateien im Ordner bereit sind, können Sie 
 
 Sie können sich einige der Plugins ansehen, die OsmAnd-Benutzer selbst erstellt haben:
 
- - [The USA Maps](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) benutzerdefiniertes Plugin (PAD-US-Daten, USFS-Trails und -Straßen, USFS-Erholung).
+ - [The USA Maps](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) benutzerdefiniertes Plugin (PAD-US Daten, USFS-Trails und -Straßen, USFS-Erholung).
  - [Anygis maps](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf) benutzerdefiniertes Plugin.
  - [Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf) benutzerdefiniertes Plugin.
  - [UMP-PL](https://ump.waw.pl/) Polen [Karten-Plugin](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf).

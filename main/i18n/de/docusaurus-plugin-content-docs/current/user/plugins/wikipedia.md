@@ -24,7 +24,7 @@ Das Wikipedia-Plugin ist eine [bezahlte Funktion](../purchases/index.md) der Osm
 
 Wikipedia auf Ihrer Reise hilft Ihnen, mehr über die Orte zu erfahren, die Sie besuchen. Es ist offline verfügbar und zeigt beliebte Orte (Android) / Wikipedia-Artikel (iOS) im Zusammenhang mit den Points of Interest direkt auf der Karte an.
 
-Das Wikipedia-Plugin ist eine separate Funktion, die nach Bedarf aktiviert/deaktiviert werden kann. Nach der Aktivierung können Sie Wikipedia-Daten hochladen, die für jede geografische Region [heruntergeladen](../personal/maps-resources.md#download-maps-maps) wurden. Die Karte enthält zwei Arten von hochgeladenem Wissen aus Wikipedia: kurze Informationen und einen vollständigen Artikel.
+Das Wikipedia-Plugin ist eine separate Funktion, die nach Bedarf aktiviert/deaktiviert werden kann. Nach der Aktivierung können Sie Wikipedia Daten hochladen, die für jede geografische Region [heruntergeladen](../personal/maps-resources.md#download-maps-maps) wurden. Die Karte enthält zwei Arten von hochgeladenem Wissen aus Wikipedia: kurze Informationen und einen vollständigen Artikel.
 
 
 Kurze Informationen werden von Wikipedia POIs (eine Abkürzung für "[Point of Interest](../map/point-layers-on-map.md)") bereitgestellt. Wenn die Wikipedia-Option im Menü aktiviert ist, erscheint ein Wikipedia-POI auf der Karte. Wenn Sie auf einen Point of Interest tippen, wird er erweitert, um kurze Informationen aus Wikipedia sowie die Möglichkeit zum Öffnen eines vollständigen Artikels anzuzeigen. Der Wikipedia-POI sowie verwandte Artikel sind offline verfügbar. Sie können sie nach Bedarf lesen, die Sprache wechseln und nach anderen Informationen auf Wikipedia suchen.
@@ -38,7 +38,7 @@ Kurze Informationen werden von Wikipedia POIs (eine Abkürzung für "[Point of I
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
 
-Um Wikipedia-Daten auf der Karte anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
+Um Wikipedia Daten auf der Karte anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
 
 1. [Kaufen](../plugins/index.md#purchase) und [Aktivieren](../plugins/index.md#enable--disable) Sie das Wikipedia-Plugin im Abschnitt Plugins des *Hauptmenüs*.
 2. Laden Sie die [Wikipedia-Pakete](#download-wikipedia-packages) für die benötigten Regionen herunter.
@@ -48,15 +48,15 @@ Um Wikipedia-Daten auf der Karte anzuzeigen, müssen Sie die folgenden Einstellu
 
 ## Wikipedia-Pakete herunterladen {#download-wikipedia-packages}
 
-Wikipedia-Daten sind für jede geografische Region verfügbar. Wenn sie für eine Region geladen sind und für eine andere nicht, können Sie im ersten Fall mit Wikipedia-Informationen arbeiten, wenn Sie die Region auf einer Karte anzeigen, und im anderen Fall hat die Region keine Wikipedia-Informationen. Nach dem Laden sind die Wikipedia-Daten allgemein sowie offline verfügbar.
+Wikipedia Daten sind für jede geografische Region verfügbar. Wenn sie für eine Region geladen sind und für eine andere nicht, können Sie im ersten Fall mit Wikipedia-Informationen arbeiten, wenn Sie die Region auf einer Karte anzeigen, und im anderen Fall hat die Region keine Wikipedia-Informationen. Nach dem Laden sind die Wikipedia Daten allgemein sowie offline verfügbar.
 
-Um die Wikipedia-Daten für eine Region herunterzuladen, gehen Sie zu den [verfügbaren Paketen zum Herunterladen im *Hauptmenü*](../start-with/download-maps.md#download---main-menu), suchen Sie die benötigte Region und öffnen Sie sie. Die Wikipedia-Daten werden unter anderen Paketen sein.
+Um die Wikipedia Daten für eine Region herunterzuladen, gehen Sie zu den [verfügbaren Paketen zum Herunterladen im *Hauptmenü*](../start-with/download-maps.md#download---main-menu), suchen Sie die benötigte Region und öffnen Sie sie. Die Wikipedia Daten werden unter anderen Paketen sein.
 
-Sie können Wikipedia-Daten zum Herunterladen nach Region wie folgt öffnen:
+Sie können Wikipedia Daten zum Herunterladen nach Region wie folgt öffnen:
 
 1. **Android**. Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 2. **iOS**. Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
-3. Wählen Sie die benötigte Region aus. Sobald die Region geöffnet ist, werden die Wikipedia-Daten unter anderen Paketen sein.
+3. Wählen Sie die benötigte Region aus. Sobald die Region geöffnet ist, werden die Wikipedia Daten unter anderen Paketen sein.
 
 <Tabs groupId="operating-systems">
 
@@ -81,7 +81,7 @@ Um zu sehen, welche Daten bereits hochgeladen wurden, gehen Sie zu *<Translate i
 
 ## Wikipedia auf der Karte anzeigen {#display-wikipedia-on-the-map}
 
-Durch das Laden von Wikipedia-Daten für die benötigten Regionen können Sie die Sichtbarkeit dieser Daten auf der Karte steuern. Die Sichtbarkeit wird durch [Beliebte Orte (Wikipedia)](../map/point-layers-on-map.md#-wikipedia) **für Android** / [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia) **für iOS** gesteuert, die für alle hochgeladenen Regionen durch ein bestimmtes [Profil](../personal/profiles.md) angezeigt oder ausgeblendet werden können, z. B. ein Profil zum Fahren, ein Profil zum Radfahren, ein weiteres Profil zur Anzeige öffentlicher Verkehrsmittel und andere.
+Durch das Laden von Wikipedia Daten für die benötigten Regionen können Sie die Sichtbarkeit dieser Daten auf der Karte steuern. Die Sichtbarkeit wird durch [Beliebte Orte (Wikipedia)](../map/point-layers-on-map.md#-wikipedia) **für Android** / [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia) **für iOS** gesteuert, die für alle hochgeladenen Regionen durch ein bestimmtes [Profil](../personal/profiles.md) angezeigt oder ausgeblendet werden können, z. B. ein Profil zum Fahren, ein Profil zum Radfahren, ein weiteres Profil zur Anzeige öffentlicher Verkehrsmittel und andere.
 
 Um Wikipedia-POIs anzuzeigen oder auszublenden, wählen Sie zuerst ein Profil aus und schalten Sie dann die Option **Wikipedia** ein/aus.
 
@@ -115,7 +115,7 @@ Um Wikipedia-POIs anzuzeigen/auszublenden, gehen Sie wie folgt vor:
 
 ## Wikipedia durchsuchen {#search-wikipedia}
 
-Mit hochgeladenen Wikipedia-Daten ist es unabhängig vom Sichtbarkeitsmodus der [Wikipedia-POIs](../map/point-layers-on-map.md#-wikipedia) auf der Karte möglich, nach beliebigen Informationen aus Wikipedia zu [suchen](../search/search-poi.md).
+Mit hochgeladenen Wikipedia Daten ist es unabhängig vom Sichtbarkeitsmodus der [Wikipedia-POIs](../map/point-layers-on-map.md#-wikipedia) auf der Karte möglich, nach beliebigen Informationen aus Wikipedia zu [suchen](../search/search-poi.md).
 
 Wenn Sie auf die Schaltfläche Suchen tippen, erscheint ein zusätzliches Panel, mit dem Sie den gesamten Text und/oder eine bestimmte Kategorie [durchsuchen](../search/index.md) können. Im ersteren Fall zeigen die Suchergebnisse Wikipedia-POIs mit entsprechenden Wikipedia-Artikeln neben anderen Informationstypen an. Im Falle einer [Wikipedia-Kategoriensuche](../search/search-poi.md#poi-search) zeigen die Suchergebnisse nur Wikipedia-Informationen an, sortiert nach dem nächstgelegenen Ort zum aktuell auf dem Bildschirm angezeigten Kartenbereich.
 

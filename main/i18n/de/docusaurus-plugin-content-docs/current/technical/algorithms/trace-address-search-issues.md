@@ -108,9 +108,9 @@ Um Probleme mit Stadtgrenzen zu überprüfen und zu beheben, vergleichen Sie die
 **Wichtig:** Seien Sie vorsichtig bei der Auswahl von Suchergebnissen, da Städte mit ähnlichen Namen in verschiedenen Regionen oder Ländern existieren können.
 
 
-## US-Adresssuche und TIGER-Daten {#us-address-search-and-tiger-data}
+## US-Adresssuche und TIGER Daten {#us-address-search-and-tiger-data}
 
-OsmAnd verwendet OpenStreetMap-Daten für die Adresssuche, mit zusätzlichen Datenquellen wie **TIGER (Topologically Integrated Geographic Encoding and Referencing System)** vom U.S. Census Bureau. Dieser Datensatz ist bereichsbasiert und enthält keine präzisen Hausnummern. Einige Adressen können fehlen oder ungenau sein.  
+OsmAnd verwendet OpenStreetMap Daten für die Adresssuche, mit zusätzlichen Datenquellen wie **TIGER (Topologically Integrated Geographic Encoding and Referencing System)** vom U.S. Census Bureau. Dieser Datensatz ist bereichsbasiert und enthält keine präzisen Hausnummern. Einige Adressen können fehlen oder ungenau sein.  
 
 Lösung von Problemen mit US-Adressen:
 
@@ -118,7 +118,7 @@ Lösung von Problemen mit US-Adressen:
 
 2. Das System **prüft zuerst OSM** auf eine exakte Übereinstimmung mit Hausnummern und Straßen.
 
-3. Wenn **keine Übereinstimmung** in OSM gefunden wird, sucht das System in TIGER-Daten, die Folgendes enthalten:
+3. Wenn **keine Übereinstimmung** in OSM gefunden wird, sucht das System in TIGER Daten, die Folgendes enthalten:
     - Straßennamen und Klassifizierungen.
     - Interpolierte Hausnummernbereiche.
     - Administrative Grenzen.
@@ -127,13 +127,13 @@ Lösung von Problemen mit US-Adressen:
 
 5. **Rückgabe der Ergebnisse**:
     - Wenn die Adresse in OSM existiert, wird eine exakte Übereinstimmung angezeigt.
-    - Wenn nur TIGER-Daten verfügbar sind, wird ein ungefähres Ergebnis bereitgestellt.
+    - Wenn nur TIGER Daten verfügbar sind, wird ein ungefähres Ergebnis bereitgestellt.
     - Wenn keine der beiden Quellen die Adresse enthält, schlägt die Suche fehl.
 
 
 #### Arten von Adressdaten in TIGER {#types-of-address-data-in-tiger}
 
-| TIGER-Datentyp            | Verwendung in OsmAnd    |
+| TIGER Datentyp            | Verwendung in OsmAnd    |
 |----------------------------|--------------------|
 | **Straßennamen**           | Wird für namensbasierte Suchen verwendet. |
 | **Hausnummernbereiche**    | Bietet ungefähre Adressstandorte. |
@@ -152,7 +152,7 @@ Lösung von Problemen mit US-Adressen:
 | Adresse fehlt sowohl in OSM als auch in TIGER | ❌ Kein Ergebnis |
 
 
-#### Einschränkungen der TIGER-Daten in OsmAnd {#limitations-of-tiger-data-in-osmand}
+#### Einschränkungen der TIGER Daten in OsmAnd {#limitations-of-tiger-data-in-osmand}
 
 Mehrere Faktoren beeinflussen die Genauigkeit der Adresssuche im TIGER-basierten System:
 

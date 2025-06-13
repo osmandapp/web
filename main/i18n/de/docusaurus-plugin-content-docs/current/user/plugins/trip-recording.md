@@ -175,13 +175,13 @@ Für eine detailliertere Ansicht können Sie das **Diagramm skalieren**:
 
 | |
 | ------------- |
-|**Übersicht** Registerkarte iOS (für Android sind die Y-Achsen-Parameter *Höhe*, *Geschwindigkeit* und der X-Achsen-Parameter *Entfernung*). Diese Registerkarte zeigt ein Diagramm, das Änderungen der Geschwindigkeit und Höhe entlang der Länge des Tracks sowie wichtige Track-Details darstellt. Track-Daten für iOS: *Entfernung*, *Zeitspanne*, *Startzeit* und *Endzeit*. Sie können sehen, wie dies in den Android- und iOS-Versionen unten angezeigt wird. |
+|**Übersicht** Registerkarte iOS (für Android sind die Y-Achsen-Parameter *Höhe*, *Geschwindigkeit* und der X-Achsen-Parameter *Entfernung*). Diese Registerkarte zeigt ein Diagramm, das Änderungen der Geschwindigkeit und Höhe entlang der Länge des Tracks sowie wichtige Track-Details darstellt. Track Daten für iOS: *Entfernung*, *Zeitspanne*, *Startzeit* und *Endzeit*. Sie können sehen, wie dies in den Android- und iOS-Versionen unten angezeigt wird. |
 | ![Daten](@site/static/img/plugins/trip-recording/graph_overview_andr.png) ![Daten](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
 | **Höhe** Registerkarte iOS (für Android sind die Y-Achsen-Parameter *Höhe*, *Steigung* und der X-Achsen-Parameter *Entfernung*). Diese Registerkarte konzentriert sich auf das Höhenprofil Ihres aufgezeichneten Tracks und bietet Einblicke in Höhenänderungen und Geländesteigungen. Wichtige Metriken für iOS sind: *Durchschnittliche Höhe*, *Höhenbereich*, *Aufstieg* und *Abstieg*. Die Diagramme unten veranschaulichen die Unterschiede zwischen den Android- und iOS-Oberflächen. |
 | ![Daten](@site/static/img/plugins/trip-recording/graph_altitude_andr.png) ![Daten](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
 | **Geschwindigkeit** Registerkarte iOS (für Android ist der Y-Achsen-Parameter *Geschwindigkeit* und der X-Achsen-Parameter *Entfernung*). Die Registerkarte Geschwindigkeit hebt geschwindigkeitsbezogene Daten während des gesamten Tracks hervor. Für iOS enthält sie Informationen wie *Durchschnittsgeschwindigkeit*, *Höchstgeschwindigkeit*, *Zeit in Bewegung* und *Korrigierte Entfernung*. Die Screenshots unten zeigen, wie diese Daten auf beiden Plattformen angezeigt werden. |
 | ![Daten](@site/static/img/plugins/trip-recording/graph_speed_andr.png) ![Daten](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
-| Für **Android** können Sie weitere Kombinationen der verfügbaren Y-Achsen-Daten und X-Achsen-Werte erstellen. |
+| Für **Android** können Sie weitere Kombinationen der verfügbaren Y-Achsen Daten und X-Achsen-Werte erstellen. |
 | ![Daten](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
 :::info

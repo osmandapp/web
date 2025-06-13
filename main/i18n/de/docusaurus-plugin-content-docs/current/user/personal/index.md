@@ -45,4 +45,4 @@ Das *Import / Export-Tool* in OsmAnd ermöglicht Ihnen die Verwaltung Ihrer Date
 
 ## [OsmAnd Cloud](./osmand-cloud.md) {#osmand-cloud}
 
-*OsmAnd Cloud* ist die Ressource, die Sie benötigen, um Ihre persönlichen Einstellungen und App-Daten zu speichern.
+*OsmAnd Cloud* ist die Ressource, die Sie benötigen, um Ihre persönlichen Einstellungen und App Daten zu speichern.

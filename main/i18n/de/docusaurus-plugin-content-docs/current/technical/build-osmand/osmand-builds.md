@@ -45,7 +45,7 @@ Beachten Sie, dass derselbe Registrierungsbildschirm nach der Registrierung auch
 
 ## Android Nightly Builds (nächtlich) {#android-nightly-builds-nightly}
 
-Verschiedene Builds von OsmAnd sollten ohne Probleme und unter Beibehaltung aller Offline-Daten über jeden anderen Build desselben Stammes (älter oder neuer) installiert werden. Der neueste Entwicklungs-Build (*nicht unbedingt stabil!*) zum Testen finden Sie [hier](https://download.osmand.net/latest-night-build/OsmAnd-default.apk). Dieser wird normalerweise über jeden anderen Entwicklungs-Build derselben Entwicklungsgeneration aktualisiert. Wenn der Versuch, ein Upgrade durchzuführen, zu einem Signaturfehler oder "nicht installiert" führt (z. B. wenn Sie derzeit den Marketplace verwenden oder auf einen älteren Build aktualisieren möchten), gehen Sie bitte wie folgt vor:
+Verschiedene Builds von OsmAnd sollten ohne Probleme und unter Beibehaltung aller Offline Daten über jeden anderen Build desselben Stammes (älter oder neuer) installiert werden. Der neueste Entwicklungs-Build (*nicht unbedingt stabil!*) zum Testen finden Sie [hier](https://download.osmand.net/latest-night-build/OsmAnd-default.apk). Dieser wird normalerweise über jeden anderen Entwicklungs-Build derselben Entwicklungsgeneration aktualisiert. Wenn der Versuch, ein Upgrade durchzuführen, zu einem Signaturfehler oder "nicht installiert" führt (z. B. wenn Sie derzeit den Marketplace verwenden oder auf einen älteren Build aktualisieren möchten), gehen Sie bitte wie folgt vor:
 
 - exportieren Sie zuerst Ihre Favoriten (Menü/Export in der Favoritenliste),
 - exportieren Sie Navigationsprofile,

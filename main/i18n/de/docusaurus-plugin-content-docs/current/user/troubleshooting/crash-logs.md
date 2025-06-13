@@ -23,7 +23,7 @@ Absturzprotokolle sind wertvolle Diagnosewerkzeuge, die Entwicklern helfen, Prob
 
 OsmAnd ermöglicht Ihnen, zwei Arten von Daten an Entwickler zu senden:
 
-- **Absturzprotokolle**. Werden generiert, wenn die OsmAnd-App auf einen kritischen Fehler oder eine Ausnahme stößt, die zum Absturz führt. Diese Protokolle liefern detaillierte Informationen über den Zustand der Anwendung während des Fehlers, einschließlich Build-Daten, Stack-Traces, Fehlermeldungen und andere relevante Details.
+- **Absturzprotokolle**. Werden generiert, wenn die OsmAnd-App auf einen kritischen Fehler oder eine Ausnahme stößt, die zum Absturz führt. Diese Protokolle liefern detaillierte Informationen über den Zustand der Anwendung während des Fehlers, einschließlich Build Daten, Stack-Traces, Fehlermeldungen und andere relevante Details.
 - **Logcat-Protokolle**. Eine Aufzeichnung des OsmAnd-Protokollstroms, der verschiedene Ereignisse und Nachrichten erfasst. Diese Protokolle helfen Entwicklern, das Verhalten der App zu überwachen, den Ausführungsfluss zu verfolgen, bestimmte Aktionen zu verfolgen und nicht-absturzbezogene Probleme zu untersuchen. Logcat-Protokolle enthalten normalerweise Aufzeichnungen der Aktivität seit dem letzten Start der App.
 
 :::caution Ihre privaten Informationen

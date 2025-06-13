@@ -48,7 +48,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu"/> → Meine Orte*
 
 - [***Karten & Ressourcen***](../personal/maps-resources.md):  
 
-    Der Menüpunkt *Karten & Ressourcen* im Hauptmenü der OsmAnd-Anwendung bietet Zugriff auf die Datenverwaltung aus dem Bereich *Meine Orte*. Die Registerkarte [*Lokal*](../personal/maps-resources.md#local) zeigt Ihnen, wie viel Speicherplatz alle vorhandenen OsmAnd-Daten auf Ihrem Gerät belegen, insbesondere der Bereich *Meine Orte*. Sie können ihn verwenden, um detaillierte Informationen über Ihre Daten zu erhalten und darauf zuzugreifen. Der Bereich kann nur Elemente enthalten, für die Daten heruntergeladen wurden.  
+    Der Menüpunkt *Karten & Ressourcen* im Hauptmenü der OsmAnd-Anwendung bietet Zugriff auf die Datenverwaltung aus dem Bereich *Meine Orte*. Die Registerkarte [*Lokal*](../personal/maps-resources.md#local) zeigt Ihnen, wie viel Speicherplatz alle vorhandenen OsmAnd Daten auf Ihrem Gerät belegen, insbesondere der Bereich *Meine Orte*. Sie können ihn verwenden, um detaillierte Informationen über Ihre Daten zu erhalten und darauf zuzugreifen. Der Bereich kann nur Elemente enthalten, für die Daten heruntergeladen wurden.  
 
     **Gehe zu** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Überprüfen und verwalten Sie Ihre Daten.
 
@@ -222,7 +222,7 @@ Mit dem **Audio-/Video-Notizen-Plugin** können Sie Multimedia-Notizen erstellen
 
     - **<Translate android="true" ids="shared_string_share"/>** – Zeigt eine Checkliste aller Notizen an, einschließlich derjenigen, die als Wegpunkte zu GPX-Dateien hinzugefügt wurden. Zuerst werden die erforderlichen Notizen markiert, dann schlägt das *Teilen*-Symbol in der oberen rechten Ecke des Bildschirms verfügbare Freigabeoptionen vor, und schließlich werden diese Notizen gemäß der ausgewählten Option verfügbar.
 
-    - **Mit GPX-Wegpunkten teilen** – Sie können die im Menü *Meine Orte* als Wegpunkte ausgewählten Notizen teilen, indem Sie ihnen [GPX-Daten](../plugins/audio-video-notes.md#share-with-gpx-waypoints) über die Schaltfläche **Teilen** am unteren Rand des Bildschirms der Registerkarte *A/V-Notizen* hinzufügen.
+    - **Mit GPX-Wegpunkten teilen** – Sie können die im Menü *Meine Orte* als Wegpunkte ausgewählten Notizen teilen, indem Sie ihnen [GPX Daten](../plugins/audio-video-notes.md#share-with-gpx-waypoints) über die Schaltfläche **Teilen** am unteren Rand des Bildschirms der Registerkarte *A/V-Notizen* hinzufügen.
 
     - **<Translate android="true" ids="shared_string_delete"/>** – Zeigt nur eine Checkliste von Audio-, Foto- und Video-Notizen an. Markieren Sie zuerst die unnötigen Notizen, tippen Sie dann auf das *Löschen*-Symbol in der oberen rechten Ecke des Bildschirms, nach Bestätigung werden die ausgewählten Notizen dauerhaft gelöscht.
 
@@ -249,7 +249,7 @@ Weitere Informationen finden Sie auf der Seite [Audio-/Video-Notizen-Plugin](../
 
 ![Teilen](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
 
-Sie können die im Menü *Meine Orte* als Wegpunkte ausgewählten Notizen teilen, indem Sie ihnen [GPX-Daten](../plugins/audio-video-notes.md#share-with-gpx-waypoints) über die Schaltfläche **Teilen** am unteren Rand des Bildschirms der Registerkarte *A/V-Notizen* hinzufügen.
+Sie können die im Menü *Meine Orte* als Wegpunkte ausgewählten Notizen teilen, indem Sie ihnen [GPX Daten](../plugins/audio-video-notes.md#share-with-gpx-waypoints) über die Schaltfläche **Teilen** am unteren Rand des Bildschirms der Registerkarte *A/V-Notizen* hinzufügen.
 
 ### Einzelne Notiz verwalten {#manage-single-note}
 

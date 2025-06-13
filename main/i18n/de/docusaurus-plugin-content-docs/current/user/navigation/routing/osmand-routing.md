@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Überblick {#overview}
 
-Das Offline-Routing von OsmAnd basiert auf OpenStreetMap-Daten und bietet eine Vielzahl von Routen für verschiedene Zwecke. Dies ist eine Liste vordefinierter Routing-Typen, die erweitert werden können. Die Navigationsregeln sind in der Datei [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md) enthalten und werden für das Offline-Routing verwendet. Der Routentyp ändert sich automatisch, wenn Sie Ihr Profil ändern.
+Das Offline-Routing von OsmAnd basiert auf OpenStreetMap Daten und bietet eine Vielzahl von Routen für verschiedene Zwecke. Dies ist eine Liste vordefinierter Routing-Typen, die erweitert werden können. Die Navigationsregeln sind in der Datei [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md) enthalten und werden für das Offline-Routing verwendet. Der Routentyp ändert sich automatisch, wenn Sie Ihr Profil ändern.
 
 
 ## Routing-Typen {#routing-types}
@@ -185,7 +185,7 @@ In OpenStreetMap werden diese Informationen normalerweise mit dem Tag [`temporar
 
 ## Entwicklungsbereich {#development-section}
 
-Der **Entwicklungsbereich** der Einstellungen für *Routenparameter* (Menü → Einstellungen → App-Profil → Navigationseinstellungen → Routenparameter → Entwicklung) ist nur sichtbar, wenn das [OsmAnd-Entwicklungs-Plugin](../../plugins/development.md) aktiviert ist. Er enthält Einstellungen wie *Routing-Typ (Android) / Routing-Algorithmus (iOS), GPX-Approximation (nur Android), Autozoom und OsmAnd Live-Daten (nur Android)*. Lesen Sie den Artikel [Navigationseinstellungen](../../navigation/guidance/navigation-settings.md#development-settings) für eine detaillierte Beschreibung.
+Der **Entwicklungsbereich** der Einstellungen für *Routenparameter* (Menü → Einstellungen → App-Profil → Navigationseinstellungen → Routenparameter → Entwicklung) ist nur sichtbar, wenn das [OsmAnd-Entwicklungs-Plugin](../../plugins/development.md) aktiviert ist. Er enthält Einstellungen wie *Routing-Typ (Android) / Routing-Algorithmus (iOS), GPX-Approximation (nur Android), Autozoom und OsmAnd Live Daten (nur Android)*. Lesen Sie den Artikel [Navigationseinstellungen](../../navigation/guidance/navigation-settings.md#development-settings) für eine detaillierte Beschreibung.
 
 
 > *Zuletzt aktualisiert: Juli 2024*

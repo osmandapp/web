@@ -239,7 +239,7 @@ Dieses Informations-Widget kombiniert Warnungstypen wie **Fußgängerüberwege**
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
-Das **Tachometer-Widget** ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* anhand von GPS-Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM-Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Bildschirm des Fahrzeug-Multimediasystems anzeigt.
+Das **Tachometer-Widget** ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* anhand von GPS Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Bildschirm des Fahrzeug-Multimediasystems anzeigt.
 
 - Das **Tachometer-Widget** ist [*profilabhängig*](../personal/profiles.md), sodass Änderungen an den Einstellungen für ein Profil nicht auf ein anderes angewendet werden.
 - Es gibt keine Option, die Anzeige des **Tachometer-Widgets** direkt in *Android Auto* anzupassen, Sie müssen es in der OsmAnd-App konfigurieren, bevor Sie die Navigation starten und Ihr Gerät mit dem Fahrzeug verbinden.

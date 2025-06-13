@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Überblick {#overview}
 
-Das Plugin **AIS Vessel Tracker** zeigt [Automatic Identification System (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) Positionen und detaillierte Informationen über nahegelegene Schiffe an. Die AIS-Daten werden über eine Netzwerkverbindung von einem externen AIS-Empfänger empfangen.
+Das Plugin **AIS Vessel Tracker** zeigt [Automatic Identification System (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) Positionen und detaillierte Informationen über nahegelegene Schiffe an. Die AIS Daten werden über eine Netzwerkverbindung von einem externen AIS-Empfänger empfangen.
 
 :::caution HAFTUNGSAUSSCHLUSS
 **Dieses Plugin ist ein Hobbyprojekt und nicht auf Zuverlässigkeit oder Genauigkeit ausgelegt. Verlassen Sie sich NICHT auf diese Software für Navigation oder Sicherheit.**
@@ -168,9 +168,9 @@ Das Plugin *AIS vessel tracker* bietet verschiedene Einstellungen zur Personalis
 |---------|---------------|----------|
 | | | |
 | **IP-Adresseinstellungen** | | |
-| Protokoll   | Wählen Sie das Protokoll zum Empfangen von AIS-Daten | `UDP/TCP` |
-| IP-Adresse | Definieren Sie die IP der AIS-Datenquelle (bei Verwendung von TCP) | `192.168.200.16` |
-| TCP-Port   | Definieren Sie die TCP-Portnummer für AIS-Daten | `4001` |
+| Protokoll   | Wählen Sie das Protokoll zum Empfangen von AIS Daten | `UDP/TCP` |
+| IP-Adresse | Definieren Sie die IP der AIS Datenquelle (bei Verwendung von TCP) | `192.168.200.16` |
+| TCP-Port   | Definieren Sie die TCP-Portnummer für AIS Daten | `4001` |
 | UDP-Port   | Definieren Sie den UDP-Port für den OsmAnd AIS-Empfang  | `10110` |
 | | | |
 | **AIS-Signalempfangs-Timeout** | |  |
@@ -186,13 +186,13 @@ Das Plugin *AIS vessel tracker* bietet verschiedene Einstellungen zur Personalis
 
 > *Sie können AIS-Schiffspositionen mithilfe des [OsmAnd Development-Plugins](../plugins/development.md) simulieren.*
 
-1. **Laden Sie AIS-Daten-Textdateien herunter**:
+1. **Laden Sie AIS Daten-Textdateien herunter**:
 
     - [AIS Test 1](https://github.com/user-attachments/files/18689404/ais_test_1.txt)
     - [AIS Test 2](https://github.com/user-attachments/files/18689405/ais_test_2.txt)
     - [Single 3](https://github.com/user-attachments/files/18689403/333.txt)
 
-2. **Laden Sie AIS-Daten in OsmAnd**
+2. **Laden Sie AIS Daten in OsmAnd**
 Öffnen Sie *<Translate android="true" ids="shared_string_menu,plugins_menu_group,development,shared_string_settings,ais_load_data"/>* und wählen Sie eine der heruntergeladenen Dateien aus.
 
 3. **Zeigen Sie AIS-Schiffe auf der Karte an**

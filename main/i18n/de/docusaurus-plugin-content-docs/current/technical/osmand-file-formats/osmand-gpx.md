@@ -7,7 +7,7 @@ sidebar_position: 2
 
 ## Einführung {#introduction}
 
-GPX (GPS Exchange Format) ist ein weit verbreiteter XML-basierter Standard zur Speicherung von GPS-Daten, einschließlich Tracks, Routen und Wegpunkten. OsmAnd unterstützt das GPX-Format für den Import, Export und die Anpassung von GPS-Daten für die Navigation, sodass sowohl Anfänger als auch fortgeschrittene Benutzer ihre Erfahrung optimieren können.
+GPX (GPS Exchange Format) ist ein weit verbreiteter XML-basierter Standard zur Speicherung von GPS Daten, einschließlich Tracks, Routen und Wegpunkten. OsmAnd unterstützt das GPX-Format für den Import, Export und die Anpassung von GPS Daten für die Navigation, sodass sowohl Anfänger als auch fortgeschrittene Benutzer ihre Erfahrung optimieren können.
 
 #### Was macht OsmAnd GPX einzigartig? {#what-makes-osmand-gpx-unique}
 
@@ -635,7 +635,7 @@ Einige GPX-Tags werden in OBF-Dateien indirekt verwendet oder gespeichert. Detai
 
 | OBF-Tag                      | Zweck                                                                                                    |
 |:-----------------------------|:-----------------------------------------------------------------------------------------------------------|
-| `route_id`                   | Eine eindeutige Kennung für die GPX-Datei, die Karten- und POI-Daten verknüpft (Format: `/[A-Z]+[0-9]+/` z. B. `OSM12345`). |
+| `route_id`                   | Eine eindeutige Kennung für die GPX-Datei, die Karten- und POI Daten verknüpft (Format: `/[A-Z]+[0-9]+/` z. B. `OSM12345`). |
 | `route_type`                 | Aktivitätsgruppen-ID (`id`), abgeleitet von `poi/activities.json`                                        |
 | `route_activity_type`        | Aktivitätstyp (innerhalb der Gruppe) ID (`id`), abgeleitet von `poi/activities.json`                      |
 | `name`, `ref`, `description` | Lokalisierbare und durchsuchbare Attribute (`lang="true"` in POI-Typen)                                         |
@@ -644,7 +644,7 @@ Einige GPX-Tags werden in OBF-Dateien indirekt verwendet oder gespeichert. Detai
 | `extensions_extra_tags`      | Beliebige zusätzliche Tags für `<gpx><extensions>` im JSON-Format.                                               |
 | `metadata_extra_tags`        | Beliebige zusätzliche Tags für `<metadata><extensions>` im JSON-Format.                                               |
 | `wpt_extra_tags`             | Beliebige zusätzliche Tags für Wegpunkte `<wpt><extensions>` im JSON-Format.                                     |
-| `route_track_point`          | Wegpunkte aus der GPX-Datei verwenden diesen Typ in den POI-Daten.                                                         |
+| `route_track_point`          | Wegpunkte aus der GPX-Datei verwenden diesen Typ in den POI Daten.                                                         |
 | `route_bbox_radius`          | Gibt den Standardradius für die Suche nach Teilen des Tracks innerhalb des POI-Abschnitts an                       |
 | `route_shortlink_tiles`      | Gibt eine durch Kommas getrennte Liste von OSM-Shortlink-Kacheln an, um das Lesen von Geometriedaten zu beschleunigen (optional)       |
 | `route_segment_index`        | Gibt eine Ordnungszahl des Geometriesegments an, das mit diesem Punkt verknüpft ist (optional)               |

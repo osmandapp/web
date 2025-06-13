@@ -82,7 +82,7 @@ So fügen Sie einen Favoritenpunkt hinzu:
     Kurzes Tippen für einen POI oder langes Tippen für einen allgemeinen Kartenpunkt.
 2. Wählen Sie im Kartenkontextmenü [Hinzufügen (☆)](../map/map-context-menu.md#add--edit-favorite).
 
-Beim Hinzufügen eines Punktes aus OSM-Daten werden die relevanten POI-Informationen automatisch übernommen. Sie können auch einen Favoriten erstellen, indem Sie eine beliebige Kartenposition [lange antippen](../map/map-context-menu.md#select-any-point-long-tap).
+Beim Hinzufügen eines Punktes aus OSM Daten werden die relevanten POI-Informationen automatisch übernommen. Sie können auch einen Favoriten erstellen, indem Sie eine beliebige Kartenposition [lange antippen](../map/map-context-menu.md#select-any-point-long-tap).
 
 ***Felder für einen Favoritenpunkt:***
 
@@ -397,7 +397,7 @@ Sie benötigen ein OsmAnd Cloud-Konto, um die Funktion *Kostenlose Einstellungen
 
 Sie können Ihre Favoriten über die speziellen Schaltflächen am unteren Rand des Favoritenbildschirms exportieren und importieren. Eine [.gpx-Datei](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) kann an Dropbox, E-Mail, Messenger und andere auf Ihrem Gerät installierte Anwendungen gesendet werden, die diese Funktion unterstützen.
 
-- Schaltfläche **Importieren** (*Android*) / **Favorit importieren** (*iOS*). Ermöglicht Ihnen den Import von Favoritenpunkten (*favorites.gpx*) als Wegpunkte aus einer *GPX*-Datei (einem gängigen GPS-Datenformat) aus dem Speicher Ihres Geräts.
+- Schaltfläche **Importieren** (*Android*) / **Favorit importieren** (*iOS*). Ermöglicht Ihnen den Import von Favoritenpunkten (*favorites.gpx*) als Wegpunkte aus einer *GPX*-Datei (einem gängigen GPS Datenformat) aus dem Speicher Ihres Geräts.
 - Schaltfläche **Teilen** (*Android*) / **Favorit exportieren** (*iOS*). Ermöglicht Ihnen den Export (Teilen) aller Ihrer Favoriten als *favorites.gpx*-Datei.
 
 
@@ -463,7 +463,7 @@ In den neuesten Versionen von ***Android*** ist der Zugriff auf Systemverzeichni
 
 ### Favoriten in GPX-Datei {#favorites-in-gpx-file}
 
-Alle Informationen über einen Favoriten werden mithilfe von Tags gespeichert und beschrieben. Beim Erstellen eines Favoritenpunkts können Sie Ihre eigene [Beschreibung](#favorite-point) schreiben oder Informationen aus den OSM-Daten des [Points of Interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) verwenden, aus denen Ihr Punkt erstellt wurde. Favoritenpunkte, POIs und Wegpunkte verwenden dieselben **Tags**, um Informationen zu speichern, und werden im **GPX-Dateiformat** gespeichert.
+Alle Informationen über einen Favoriten werden mithilfe von Tags gespeichert und beschrieben. Beim Erstellen eines Favoritenpunkts können Sie Ihre eigene [Beschreibung](#favorite-point) schreiben oder Informationen aus den OSM Daten des [Points of Interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) verwenden, aus denen Ihr Punkt erstellt wurde. Favoritenpunkte, POIs und Wegpunkte verwenden dieselben **Tags**, um Informationen zu speichern, und werden im **GPX-Dateiformat** gespeichert.
 
 
 ```xml

@@ -147,11 +147,11 @@ Sie können einen 3D-Track nach Höhe und anderen verfügbaren Daten innerhalb d
 
 - **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Höhe*, &nbsp;*Geschwindigkeit*, &nbsp;*Feste Höhe*. 3D-Sensordaten: &nbsp;*Herzfrequenz*, &nbsp;*Fahrradtrittfrequenz*, &nbsp;*Fahrradleistung*, &nbsp;*Temperatur*, &nbsp;*Fahrradgeschwindigkeit*.
 
-- **<Translate android="true" ids="vertical_exaggeration"/>**. Wenn nach *Höhe* oder *Geschwindigkeit* visualisiert wird, können Sie 3D-Daten skalieren, um eine prominentere Visualisierung für den 3D-Track im Bereich von *Keine* bis *x3.0* zu erhalten.
+- **<Translate android="true" ids="vertical_exaggeration"/>**. Wenn nach *Höhe* oder *Geschwindigkeit* visualisiert wird, können Sie 3D Daten skalieren, um eine prominentere Visualisierung für den 3D-Track im Bereich von *Keine* bis *x3.0* zu erhalten.
 
 - **<Translate android="true" ids="wall_height"/>**. Wenn nach *Fester Höhe* visualisiert wird, stellen Sie die feste Höhe für den 3D-Track ein, indem Sie seine Höhe auf der Karte im Bereich von *Keine* bis *2000 m* definieren.
 
-- Sie können dies mit [3D-Relief](../../plugins/topography.md#3d-relief) kombinieren. Wenn die Quelle der 3D-Daten nicht die Höhe ist, ist die 3D-Darstellung eine Kombination aus Reliefhöhe und den ausgewählten Daten, wie z. B. Geschwindigkeit oder Herzfrequenz.
+- Sie können dies mit [3D-Relief](../../plugins/topography.md#3d-relief) kombinieren. Wenn die Quelle der 3D Daten nicht die Höhe ist, ist die 3D-Darstellung eine Kombination aus Reliefhöhe und den ausgewählten Daten, wie z. B. Geschwindigkeit oder Herzfrequenz.
 
 **<Translate android="true" ids="wall_color"/>**
 Passt die **3D-Track-Farbe** mithilfe von Farbverläufen oder datenbasierter Visualisierung an.

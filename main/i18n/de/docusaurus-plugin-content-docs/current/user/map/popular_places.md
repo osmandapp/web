@@ -128,7 +128,7 @@ Die Funktion **Beliebte Orte (Wikipedia)** ist im Menü [Karte konfigurieren](./
 Bevor Sie diese Funktion verwenden:
 
 - Stellen Sie sicher, dass das [Wikipedia-Plugin](../plugins/wikipedia.md) aktiviert ist.
-- Laden Sie Wikipedia-Daten für Ihre Region herunter, wenn Sie sie offline verwenden möchten.
+- Laden Sie Wikipedia Daten für Ihre Region herunter, wenn Sie sie offline verwenden möchten.
 
 ### Ebenenoptionen
 
@@ -138,7 +138,7 @@ Nach der Aktivierung stehen die folgenden Optionen zur Verfügung:
 
 - **POI-Quelle** – Wechseln Sie zwischen:
   - *Offline-Modus* (Wikipedia-Artikel müssen heruntergeladen werden).
-  - *Nur Online*-Modus (verwendet Live-Daten und Bilder).
+  - *Nur Online*-Modus (verwendet Live Daten und Bilder).
 
 - **<Translate android="true" ids="shared_string_language"/>** – Wählen Sie die Sprache für Wikipedia-Beschreibungen.
 

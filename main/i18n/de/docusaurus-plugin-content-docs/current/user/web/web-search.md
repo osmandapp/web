@@ -46,7 +46,7 @@ Durch Klicken auf den ausgewählten POI auf der Karte oder in der Ergebnisliste 
 - **🔍 Schaltfläche**. Verschiebt die Karte zum Standort des POI.
 - **Entfernung und Richtung**. Zeigt die Entfernung und Richtung von Ihrem Standort zum ausgewählten POI an.
 - **Standort**. Zeigt die Koordinaten des POI an.
-- **Online-Fotos**. Bietet Wikimedia-Daten zum POI, falls verfügbar. Klicken Sie auf *Alle anzeigen*, um die [Fotogalerie](#photo-gallery) zu öffnen.
+- **Online-Fotos**. Bietet Wikimedia Daten zum POI, falls verfügbar. Klicken Sie auf *Alle anzeigen*, um die [Fotogalerie](#photo-gallery) zu öffnen.
 - **Objektdaten**. Enthält Details wie Kontakte, Social-Media-Links, Wikipedia-Links, Beschreibungen, Inschriften usw.
 - **OSM-ID**. Die OpenStreetMap-ID des POI.
 - **Koordinaten**. Durch Klicken auf die Koordinaten können Sie diese kopieren.
@@ -68,7 +68,7 @@ Klicken Sie auf den ausgewählten POI auf der Karte oder in der Ergebnisliste, u
 - **★ Schaltfläche (*Zu Favoriten hinzufügen*)**. Ermöglicht Ihnen, den ausgewählten POI als [Favoriten](../web/web-userdata.mdx#add--edit-favorite) zu speichern.
 - **🔍 Schaltfläche**. Verschiebt die Karte zum Standort des POI.
 - **Entfernung und Richtung**. Zeigt die Entfernung und Richtung von Ihrem Standort zum ausgewählten POI an.
-- **Online-Fotos**. Bietet Wikimedia-Daten zum POI, falls verfügbar. Klicken Sie auf *Alle anzeigen*, um die [Fotogalerie](#photo-gallery) zu öffnen.
+- **Online-Fotos**. Bietet Wikimedia Daten zum POI, falls verfügbar. Klicken Sie auf *Alle anzeigen*, um die [Fotogalerie](#photo-gallery) zu öffnen.
 - **Objektdaten**. Enthält Details wie Kontakte, Social-Media-Links, Wikipedia-Links, Beschreibungen, Inschriften usw.
 - **OSM-ID**. Die OpenStreetMap-ID des POI.
 - **Koordinaten**. Durch Klicken auf die Koordinaten können Sie diese kopieren.
@@ -84,7 +84,7 @@ Der Bereich **Erkunden** im Suchmenü erleichtert das Finden von Orten und das A
 So starten Sie:
 
 1. Klicken Sie auf das **🔍 Symbol**, um die Suchregisterkarte zu öffnen, die beliebte POI-Kategorien und das **Erkunden**-Menü darunter anzeigt.
-2. Die **Erkunden**-Daten werden automatisch auf der Karte angezeigt.
+2. Die **Erkunden** Daten werden automatisch auf der Karte angezeigt.
 3. Wählen Sie im Bereich Erkunden **"Alle anzeigen"**, um die vollständige Kategorienliste mit der Schaltfläche ***Filter*** oben zu öffnen.
 
    ![Erkunden-Menü](@site/static/img/web/explore.png)
@@ -93,7 +93,7 @@ So starten Sie:
 
    ![Erkunden-Menü](@site/static/img/web/explore_cat.png)
 
-### POI-Daten erkunden {#explore-poi-data}
+### POI Daten erkunden {#explore-poi-data}
 
 Durch Klicken auf einen Bild-POI wird ein neues Kontextmenü geöffnet, das Folgendes enthält:
 
@@ -102,7 +102,7 @@ Durch Klicken auf einen Bild-POI wird ein neues Kontextmenü geöffnet, das Folg
 - **Entfernung und Richtung**. Zeigt die Entfernung und Richtung von Ihrem Standort zum ausgewählten POI an.
 - **Standort**. Zeigt die Koordinaten des POI an.
 - **Beschreibung**. Bietet zusätzliche Informationen zum POI.
-- **Online-Fotos**. Zeigt Wikimedia-Daten zum POI an, falls verfügbar. Klicken Sie auf *Alle anzeigen*, um die [Fotogalerie](#photo-gallery) zu öffnen.
+- **Online-Fotos**. Zeigt Wikimedia Daten zum POI an, falls verfügbar. Klicken Sie auf *Alle anzeigen*, um die [Fotogalerie](#photo-gallery) zu öffnen.
 - **Objektdaten**. Enthält Details wie Kontakte, Social-Media-Links, Wikipedia-Links usw.
 - **OSM-ID**. Zeigt die OpenStreetMap-ID des POI an.
 - **Koordinaten**. Durch Klicken auf die Koordinaten können Sie diese kopieren.

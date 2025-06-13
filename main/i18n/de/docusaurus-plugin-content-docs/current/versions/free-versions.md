@@ -511,7 +511,7 @@ Veröffentlichungsdatum: 11/2015
 
 - Neue kontextsensitive Benutzeroberfläche zum Antippen von Standorten auf der Karte und auf anderen Bildschirmen
 - Der Kartenbildschirm wird jetzt direkt gestartet, es sei denn, 'Dashboard beim App-Start anzeigen' ist ausgewählt
-- Neue Wikipedia-Daten, jetzt pro Land herunterladbar und mit viel vollständigeren Daten
+- Neue Wikipedia Daten, jetzt pro Land herunterladbar und mit viel vollständigeren Daten
 - Bessere Routenneuberechnung (nach wiederholten Versuchen schlägt die Engine jetzt eine andere Route vor)
 - Die POI-Suche unterstützt jetzt spezifischere Abfragen
 - Die Struktur und Benutzeroberfläche für den Karten-Download wurden überarbeitet
@@ -524,7 +524,7 @@ Veröffentlichungsdatum: 11/2015
 
 Veröffentlichungsdatum 06/2015:
 
-- Neue Wikipedia-Daten, strukturiert nach Ländern und mit viel mehr Punkten als zuvor
+- Neue Wikipedia Daten, strukturiert nach Ländern und mit viel mehr Punkten als zuvor
 - Bessere Routenneuberechnung (nach mehreren Versuchen schlägt die Engine eine andere Route vor)
 - Die POI-Suche unterstützt spezifischere Abfragen (wie Kraftstoffart und religionsspezifische Abfragen)
 - Abbiegepfeile auf der Route anzeigen
@@ -774,7 +774,7 @@ Veröffentlichungsdatum 04/2012:
 - Aktuell aufgezeichneten Track auf der Karte anzeigen
 - Richtungserkennung: 'Wenden' wird angezeigt und angesagt, wenn man in die entgegengesetzte Richtung fährt oder eine Abbiegung verpasst hat
 - Optische Anzeige einer bevorstehenden Abbiegung innerhalb von 100 m durch Farbänderung des Richtungspfeils
-- Offline-Wikipedia-Daten mit Artikeln
+- Offline-Wikipedia Daten mit Artikeln
 
 <Download link="net.osmand-0.7.3%20beta-56.apk" />
 
@@ -784,7 +784,7 @@ Veröffentlichungsdatum 04/2012:
 Veröffentlichungsdatum 09/2011:
 
 - POI-Suche nach Namen in großen Gebieten (Ländern) implementieren
-- Offline-Datenmanager (Offline-Daten direkt in OsmAnd herunterladen, löschen, aktivieren/deaktivieren)
+- Offline Datenmanager (Offline Daten direkt in OsmAnd herunterladen, löschen, aktivieren/deaktivieren)
 - Favoritenpunkte und -gruppen (Favoriten kategorisieren, löschen, verwalten)
 - Höheninformationen
 - GPX Explorer in der Anwendung (Trackdetails, Entfernung, Durchschnittsgeschwindigkeit, Höhe usw. anzeigen)

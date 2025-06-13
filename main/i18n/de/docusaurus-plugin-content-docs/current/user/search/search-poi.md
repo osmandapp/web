@@ -118,7 +118,7 @@ Vorteile:
 
 - *Benutzeranpassung* - Merkmalfilter ermöglichen es Ihnen, Suchen an ihre spezifischen Bedürfnisse und Vorlieben anzupassen.
 - *Verfeinerte Ergebnisse* - Filter helfen, Suchergebnisse zu verfeinern und sie relevanter und genauer zu machen.
-- *Mehrere Kategorien* - Die OpenStreetMap-Datenbank verfügt über eine umfangreiche Sammlung von POI-Kategorien, die es Ihnen ermöglichen, Orte verschiedener Typen und Kategorien zu finden.
+- *Mehrere Kategorien* - Die OpenStreetMap Datenbank verfügt über eine umfangreiche Sammlung von POI-Kategorien, die es Ihnen ermöglichen, Orte verschiedener Typen und Kategorien zu finden.
 
 <!--
 POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.
@@ -291,7 +291,7 @@ Informationen zur Online-Navigation finden Sie im Artikel [Online-Routing](../na
 
 #### Beispiel einer Online-Suchanfrage {#example-of-online-search-query}
 
-*Nominatim* in OsmAnd wird als Suchmaschine für OpenStreetMap-Daten verwendet, mit der Sie nach Namen suchen können (die Adresssuche ist derzeit deaktiviert). Jedes Ergebnis hat einen Link zu einer Detailseite, um zu sehen, welche Daten über das Objekt in der Datenbank gespeichert sind.
+*Nominatim* in OsmAnd wird als Suchmaschine für OpenStreetMap Daten verwendet, mit der Sie nach Namen suchen können (die Adresssuche ist derzeit deaktiviert). Jedes Ergebnis hat einen Link zu einer Detailseite, um zu sehen, welche Daten über das Objekt in der Datenbank gespeichert sind.
 
 **Beispiel XML-Datei.** Diese XML-Datei enthält keine Stilinformationen. Der Dokumentbaum wird im [Link](https://nominatim.openstreetmap.org/search?format=xml&addressdetails=0&accept-language=en&q=%D0%9C%D1%96%D0%BD%D1%81%D0%BA+%D0%BD%D0%B5%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%86%D1%96+72+&addressdetails=1&limit=300) angezeigt.
 

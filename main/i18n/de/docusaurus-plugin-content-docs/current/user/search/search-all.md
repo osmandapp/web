@@ -65,7 +65,7 @@ Wichtige Informationen:
     - Stadt, Straße;
     - Straßenkreuzungen;
     - Stadt;
-    - Tiger-Daten;
+    - Tiger Daten;
     - Postleitzahl, Hausnummer;
     - Postleitzahl, Straße, Hausnummer.
 - POI-Suche nach Name und Kategorie mit zusätzlichen Filtern.
@@ -137,8 +137,8 @@ Sie können den benötigten Ort auf der Karte aus der Liste der Punkte finden, d
 
 3. Wenn Sie einen [Markennamen](../search/search-poi.md#how-to-use) eingeben, beginnt die Liste mit Ergebnissen nach diesem Namen, sortiert nach der nächstgelegenen Entfernung.
 
-:::note Einschränkungen der TIGER-Daten bei Adresssuchen
-OsmAnd hat [**TIGER-Daten**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) in die US-Karten integriert, um Informationen über US-Adressen bereitzustellen. Der TIGER-Datensatz ist **bereichsbasiert** und enthält keine genauen Hausnummern, sodass einige Adressen fehlen oder ungenau sein können.
+:::note Einschränkungen der TIGER Daten bei Adresssuchen
+OsmAnd hat [**TIGER Daten**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) in die US-Karten integriert, um Informationen über US-Adressen bereitzustellen. Der TIGER Datensatz ist **bereichsbasiert** und enthält keine genauen Hausnummern, sodass einige Adressen fehlen oder ungenau sein können.
 :::
 
 
@@ -194,7 +194,7 @@ Sie können die Suche in der Nähe eines bestimmten Ortes verwenden. Wählen Sie
 
 </Tabs>
 
-Die **Adresssuche** verwendet OpenStreetMap-Daten. Diese Art der Suche ermöglicht es Ihnen, den Standort und die Richtung zu einer bestimmten Adresse aus einer vorsortierten Liste zu finden. Lesen Sie mehr im Artikel [Adresssuche](./search-address.md).
+Die **Adresssuche** verwendet OpenStreetMap Daten. Diese Art der Suche ermöglicht es Ihnen, den Standort und die Richtung zu einer bestimmten Adresse aus einer vorsortierten Liste zu finden. Lesen Sie mehr im Artikel [Adresssuche](./search-address.md).
 
 
 ## Suchhistorie {#search-history}

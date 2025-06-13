@@ -102,7 +102,7 @@ Ermöglicht die Anzeige der Anzahl der von anderen Kontakten empfangenen GPS-Pun
 
 ### Datenschutz {#privacy}
 
-Verwenden Sie einen Proxy innerhalb von OsmAnd Tracker. Gehen Sie zu Einstellungen und geben Sie Ihre Proxy-Daten ein: *Einstellungen → Datenschutz → Proxy Einstellungen*
+Verwenden Sie einen Proxy innerhalb von OsmAnd Tracker. Gehen Sie zu Einstellungen und geben Sie Ihre Proxy Daten ein: *Einstellungen → Datenschutz → Proxy Einstellungen*
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/3-1.jpg)  ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4-1.jpg)
 

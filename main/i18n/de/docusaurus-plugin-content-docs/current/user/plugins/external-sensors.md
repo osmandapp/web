@@ -224,7 +224,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 </Tabs>
 
-Das [Widget Externe Sensoren](../widgets/info-widgets.md#external-sensors-widgets) ermöglicht es Ihnen, Live-Daten von Ihren verbundenen Sensoren direkt auf dem Kartenbildschirm anzuzeigen.
+Das [Widget Externe Sensoren](../widgets/info-widgets.md#external-sensors-widgets) ermöglicht es Ihnen, Live Daten von Ihren verbundenen Sensoren direkt auf dem Kartenbildschirm anzuzeigen.
 
 Bevor Sie Ihre Tour beginnen:
 

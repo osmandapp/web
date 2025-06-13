@@ -24,7 +24,7 @@ Der Routing-Algorithmus BRouter eines Drittanbieters ist nur für die Android-Ve
 
 *BRouter* ist ein Routing-Algorithmus eines Drittanbieters, der in der OsmAnd-App für den [Offline-Navigationsmodus](../guidance/navigation-settings.md#navigation-type) verwendet werden kann. Er wurde entwickelt, um eine Route basierend auf verschiedenen Parametern wie Zeit, Entfernung oder Fahrzeugtyp zu optimieren.
 
-[BRouter](http://brouter.de/) verwendet OpenStreetMap-Daten, um eine Route zu erstellen, und passt diese dann basierend auf den angegebenen Parametern an. Es verwendet vorab berechnete Routen, um schnell eine Route offline zu erstellen. Es ermöglicht Ihnen auch, Routing-Profile anzupassen, die durch eine Reihe von Parametern definiert werden, um verschiedene Faktoren bei der Routenauswahl zu berücksichtigen. Die Datei [BRouter readme.txt](http://brouter.de/brouter/readme.txt) erklärt detaillierter, wie das Programm installiert und verwendet wird.
+[BRouter](http://brouter.de/) verwendet OpenStreetMap Daten, um eine Route zu erstellen, und passt diese dann basierend auf den angegebenen Parametern an. Es verwendet vorab berechnete Routen, um schnell eine Route offline zu erstellen. Es ermöglicht Ihnen auch, Routing-Profile anzupassen, die durch eine Reihe von Parametern definiert werden, um verschiedene Faktoren bei der Routenauswahl zu berücksichtigen. Die Datei [BRouter readme.txt](http://brouter.de/brouter/readme.txt) erklärt detaillierter, wie das Programm installiert und verwendet wird.
 
 OsmAnd bietet Ihnen die Möglichkeit, Routen mit BRouter auszuwählen und Routing-Profile zu konfigurieren, um die Route besser an Ihre Bedürfnisse anzupassen.
 
@@ -77,7 +77,7 @@ Befolgen Sie diese Anleitung zur Installation und Konfiguration der Drittanbiete
     </tr>
 </table>
 
-**Beachten Sie**, dass Sie diesen Schritt regelmäßig wiederholen müssen, wenn Sie eine aktualisierte Version der für das Routing verwendeten OSM-Daten haben möchten.
+**Beachten Sie**, dass Sie diesen Schritt regelmäßig wiederholen müssen, wenn Sie eine aktualisierte Version der für das Routing verwendeten OSM Daten haben möchten.
 
 **3.** Sobald dies erledigt ist, starten Sie die BRouter-App erneut und wählen Sie im *Hauptmenü* den Eintrag "BRouter App". Wählen Sie ein Routing-Profil je nach Ihrer Reiseart. Dies kann Radfahren, Moped, Wandern oder Trekking sein. Eine Liste der verfügbaren Profile zum Download im *brf*-Format finden Sie [hier](http://brouter.de/brouter/profiles2/). Oder Sie können versuchen, das Routing-Profil in [BRouter-online](http://brouter.de/brouter-web/) zu verwenden.
 Klicken Sie auf "Service-Modus". Aktivieren Sie dann die Kontrollkästchen für die Routing-Modi, für die Sie dieses Profil verwenden möchten. Sie können zwei verschiedene Profile pro Transportmodus verwenden, die den Voreinstellungen "kürzeste" und "schnellste" (dies sind nur Bezeichnungen) in OsmAnd zugeordnet werden.
@@ -150,7 +150,7 @@ Wenn kein Profil gefunden wird, schlägt das Routing mit "Route konnte nicht ber
 
 Dieser Abschnitt beschreibt einen Vergleich von BRouter mit dem internen Routing der OsmAnd-Anwendung.
 
-Wenn BRouter konfiguriert ist, können wir die Vorberechnungsgeschwindigkeit der BRouter-Routing-Daten mit dem internen OsmAnd-Routing vergleichen. Wählen wir zwei zufällige Punkte in den Niederlanden und beginnen wir mit der Berechnung der Fahrt. Dazu stellen wir einen ausgewogenen Fahrstil ohne Verwendung von Höhendaten für das Basisprofil ein. Die Berechnungszeit für diese Fahrt beträgt 14,5 Sekunden für unsere interne OsmAnd-Route. Die Routenberechnungszeit bei Verwendung von BRouter-Routing beträgt weniger als 1 Sekunde.
+Wenn BRouter konfiguriert ist, können wir die Vorberechnungsgeschwindigkeit der BRouter-Routing Daten mit dem internen OsmAnd-Routing vergleichen. Wählen wir zwei zufällige Punkte in den Niederlanden und beginnen wir mit der Berechnung der Fahrt. Dazu stellen wir einen ausgewogenen Fahrstil ohne Verwendung von Höhendaten für das Basisprofil ein. Die Berechnungszeit für diese Fahrt beträgt 14,5 Sekunden für unsere interne OsmAnd-Route. Die Routenberechnungszeit bei Verwendung von BRouter-Routing beträgt weniger als 1 Sekunde.
 
 <table class="blogimage">
     <tr>

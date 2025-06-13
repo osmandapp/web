@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Überblick {#overview}
 
-OsmAnd verfügt über viele leistungsstarke Funktionen zur Anzeige verschiedener [Routen](#type-of-routes) auf der Karte. Standardmäßig sind diese Routen Teil von [Vektorkarten](./vector-maps.md#routes) (OpenStreetMap-Daten), aber ähnliche Funktionen werden von [Tracks](./tracks/index.md) bereitgestellt, die mit [Route planen](../plan-route/create-route.md) erstellt, als [GPX-Tracks](#save-as-a-track) importiert oder mit dem [Trip Recording Plugin](../plugins/trip-recording.md) aufgezeichnet werden können.
+OsmAnd verfügt über viele leistungsstarke Funktionen zur Anzeige verschiedener [Routen](#type-of-routes) auf der Karte. Standardmäßig sind diese Routen Teil von [Vektorkarten](./vector-maps.md#routes) (OpenStreetMap Daten), aber ähnliche Funktionen werden von [Tracks](./tracks/index.md) bereitgestellt, die mit [Route planen](../plan-route/create-route.md) erstellt, als [GPX-Tracks](#save-as-a-track) importiert oder mit dem [Trip Recording Plugin](../plugins/trip-recording.md) aufgezeichnet werden können.
 
 
 ## Routentypen {#type-of-routes}

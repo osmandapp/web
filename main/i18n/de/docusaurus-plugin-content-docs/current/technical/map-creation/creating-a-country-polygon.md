@@ -60,7 +60,7 @@ Hinzufügen des Polygons zum Kartendatenbereich
 - Gehen Sie zur Webadresse des OsmAnd-Entwicklungsservers unter [https://github.com/osmandapp/](https://github.com/osmandapp/ "https://github.com/osmandapp/")
 - Wählen Sie den Bereich OsmAnd-misc.
 - Wählen Sie "fork", um Ihr eigenes persönliches Repository zu erstellen.
-- Erstellen Sie eine neue Datei und kopieren Sie Ihre Poly-Daten hinein. Speichern Sie die Datei.
+- Erstellen Sie eine neue Datei und kopieren Sie Ihre Poly Daten hinein. Speichern Sie die Datei.
 - Erstellen Sie einen Pull-Request.
 
 Kartenerstellung zur Batch-Liste hinzufügen
@@ -87,4 +87,4 @@ Angenommen, Ihre Tochter fährt für ein paar Tage mit einer Freundin nach Paris
 $ osmconvert ile-de-france.osm.pbf -B=paris.poly --out-pbf > Paris.osm.pbf
 </pre>
 - Laden Sie die Anwendung OsmAndMapCreator von [download.osmand.net/latest-night-build/](http://download.osmand.net/latest-night-build/ "https://download.osmand.net/latest-night-build/") herunter.
-- Erstellen Sie Ihre OsmAnd obf-Karte aus den Paris.osm.pbf-Daten mit OsmAndMapCreator.
+- Erstellen Sie Ihre OsmAnd obf-Karte aus den Paris.osm.pbf Daten mit OsmAndMapCreator.

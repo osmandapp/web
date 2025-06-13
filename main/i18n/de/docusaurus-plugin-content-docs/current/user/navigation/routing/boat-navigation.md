@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Überblick {#overview}
 
-Die Bootsnavigation kann ein wertvolles Werkzeug für jeden sein, der gerne mit dem Boot oder Segelboot auf Kanälen, Flüssen oder Fahrwassern unterwegs ist. Da die meisten Fahrwasser in den OpenStreetMap-Daten fehlen, wird die Bootsnavigation für die **Navigation auf offenem Wasser *nicht empfohlen***. Stattdessen wird die Verwendung von **[Direkt zum Punkt](#direct-to-point-routing-for-boat)** vorgeschlagen. Mit aktivierten Tiefenlinien kann sie Ihnen helfen, auf dem Wasser sicher zu bleiben, indem Sie Gefahren wie flaches Wasser, Felsen oder andere Hindernisse vermeiden.
+Die Bootsnavigation kann ein wertvolles Werkzeug für jeden sein, der gerne mit dem Boot oder Segelboot auf Kanälen, Flüssen oder Fahrwassern unterwegs ist. Da die meisten Fahrwasser in den OpenStreetMap Daten fehlen, wird die Bootsnavigation für die **Navigation auf offenem Wasser *nicht empfohlen***. Stattdessen wird die Verwendung von **[Direkt zum Punkt](#direct-to-point-routing-for-boat)** vorgeschlagen. Mit aktivierten Tiefenlinien kann sie Ihnen helfen, auf dem Wasser sicher zu bleiben, indem Sie Gefahren wie flaches Wasser, Felsen oder andere Hindernisse vermeiden.
 Die OsmAnd Bootsnavigation berücksichtigt auch die Eigenschaften der Wasserwege und des Bootes selbst.
 
 <Tabs groupId="operating-systems">
@@ -100,7 +100,7 @@ Diese Routing-Typen für das Bootsprofil können über den folgenden Pfad aktivi
 ### Direkt zum Punkt Routing für Boote {#direct-to-point-routing-for-boat}
 
 :::note
-Bei Verwendung der Navigationstypen Direkt zum Punkt und Boot benötigen Sie [Tiefenlinien-Daten](../../plugins/nautical-charts.md#nautical-map-style), die in *Karte konfigurieren* aktiviert und eingestellt werden können.
+Bei Verwendung der Navigationstypen Direkt zum Punkt und Boot benötigen Sie [Tiefenlinien Daten](../../plugins/nautical-charts.md#nautical-map-style), die in *Karte konfigurieren* aktiviert und eingestellt werden können.
 :::
 
 Der [Direkt zum Punkt Routing-Typ](./direct-to-point-routing.md) kann mit dem Bootsprofil verwendet werden, wenn Sie Ihr Boot auf offenem Wasser navigieren möchten, ohne einer bestimmten Route oder einem Wasserweg zu folgen. Mit diesem Routing-Typ können Sie einen Zielpunkt festlegen, und OsmAnd berechnet einen direkten Weg von Ihrem aktuellen Standort zu diesem Punkt. Dieser Routing-Typ berücksichtigt nicht die Eigenschaften Ihres Bootes wie Mindest- und Höchstgeschwindigkeiten, Höhe und Breite. Ihre Route wird im Falle einer Abweichung nicht neu berechnet.

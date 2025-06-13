@@ -142,7 +142,7 @@ Die folgende Tabelle listet verschiedene von Benutzern vorbereitete Online-Karte
 
 ## Engagieren Sie sich mit OsmAnd: Teilen, Vorschlagen und Verbinden {#engage-with-osmand-share-suggest-and-connect}
 
-Wenn Sie Vorschläge für neue Kartenstile oder Plugins haben oder vielleicht mit Ihren eigenen Kreationen zur Erweiterung der OsmAnd-Community-Ressourcen beitragen möchten, kontaktieren Sie uns bitte. Wir schätzen und begrüßen Ihre Beiträge zur Weiterentwicklung der OsmAnd-Datenbank.
+Wenn Sie Vorschläge für neue Kartenstile oder Plugins haben oder vielleicht mit Ihren eigenen Kreationen zur Erweiterung der OsmAnd-Community-Ressourcen beitragen möchten, kontaktieren Sie uns bitte. Wir schätzen und begrüßen Ihre Beiträge zur Weiterentwicklung der OsmAnd Datenbank.
 
 - **Folgen Sie uns**: <LinksSocial/>  
 

@@ -48,7 +48,7 @@ Nautische Karten sind wichtig für professionelle Segler und Amateure, die ein B
 
 Alle professionellen Segler müssen offizielle nautische Karten auf ihren Schiffen haben. Diese Karten werden von autorisierten Agenturen veröffentlicht und sind recht teuer. Die Agenturen investieren stark in die Aktualisierung der Karten. Sie geben regelmäßige Updates für die Karten heraus, aber da es Zeit braucht, die Informationen zu überprüfen und die Updates zu verarbeiten, sind nautische Karten nie vollständig aktuell.
 
-Basierend auf [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap)-Daten werden OsmAnd Nautische Karten von den Menschen erstellt, die sie verwenden. Jeder Kartennutzer kann zur Karte beitragen, indem er Informationen hinzufügt, die er für sich selbst wichtig und nützlich findet, und so die Karte detaillierter und genauer macht, ideal für die Orientierung oder Routenplanung.
+Basierend auf [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap) Daten werden OsmAnd Nautische Karten von den Menschen erstellt, die sie verwenden. Jeder Kartennutzer kann zur Karte beitragen, indem er Informationen hinzufügt, die er für sich selbst wichtig und nützlich findet, und so die Karte detaillierter und genauer macht, ideal für die Orientierung oder Routenplanung.
 
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}

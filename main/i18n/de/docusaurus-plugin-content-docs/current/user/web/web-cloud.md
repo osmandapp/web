@@ -107,7 +107,7 @@ Es gibt auch eine Schaltfläche zum *Abmelden* vom Konto.
 ![Ansicht OsmAnd Web Backup-Datei](@site/static/img/web/web_backup_file_2.png)
 
 
-## Cloud-Daten {#cloud-data}
+## Cloud Daten {#cloud-data}
 
 [Tracks und Favoriten](web-map.md#tracks).
 <!--

@@ -27,7 +27,7 @@ Das Fahrzeugmetriken-Plugin ist eine [Bezahlfunktion](../purchases/index.md) der
 
 Das **Fahrzeugmetriken-Plugin** ermöglicht die Echtzeit-Überwachung von Fahrzeugdaten über das OBD-II-Protokoll. Benutzer können wichtige Metriken wie Motorleistung, Kraftstoffeffizienz und Geschwindigkeit verfolgen, was eine proaktive Fahrzeugwartung und Fehlerbehebung ermöglicht.
 
-OBD-II-Scanner sind integraler Bestandteil der modernen Fahrzeugdiagnose. Mit Echtzeit-Datenstreaming erhalten Benutzer sofortige Einblicke in Fahrzeugsysteme, was vorbeugende Wartung erleichtert und Reparaturkosten senkt. Diese Tools sind sowohl für den persönlichen Gebrauch als auch für professionelle Kfz-Dienstleistungen unerlässlich.
+OBD-II-Scanner sind integraler Bestandteil der modernen Fahrzeugdiagnose. Mit Echtzeit Datenstreaming erhalten Benutzer sofortige Einblicke in Fahrzeugsysteme, was vorbeugende Wartung erleichtert und Reparaturkosten senkt. Diese Tools sind sowohl für den persönlichen Gebrauch als auch für professionelle Kfz-Dienstleistungen unerlässlich.
 
 <Tabs groupId="operating-systems">
 
@@ -120,7 +120,7 @@ Metriken sind zur besseren Übersichtlichkeit kategorisiert. Fortschrittliche Di
 |--|--|
 |![OBD recording](@site/static/img/plugins/obd/obd_recording.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_1.png)|
 
-Um OBD-II-Daten in eine GPX-Datei aufzunehmen, müssen Sie die gewünschten Parameter für die Aufzeichnung mit dem [Plugin zur Fahrtenaufzeichnung](../plugins/trip-recording.md#recording-settings) auswählen. Dies ermöglicht Ihnen, Fahrzeugmetriken zusammen mit Ihren Fahrtdaten zu analysieren.
+Um OBD-II Daten in eine GPX-Datei aufzunehmen, müssen Sie die gewünschten Parameter für die Aufzeichnung mit dem [Plugin zur Fahrtenaufzeichnung](../plugins/trip-recording.md#recording-settings) auswählen. Dies ermöglicht Ihnen, Fahrzeugmetriken zusammen mit Ihren Fahrtdaten zu analysieren.
 
 #### Tags {#tags}
 

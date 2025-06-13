@@ -47,7 +47,7 @@ Es gibt drei Möglichkeiten, auf das Menü *Routendetails* zuzugreifen.
 2. Tippen Sie auf das *Navigationssymbol* auf dem Kartenbildschirm, legen Sie die Route fest und tippen Sie auf die Schaltfläche *Details*.
 3. Gehen Sie zum Menü *Meine Orte*, tippen Sie in der Liste *Menü → Meine Orte → Tracks* auf einen beliebigen verfügbaren Track, wählen Sie im Kontextmenü des Tracks in der *Übersicht* das *Navigationssymbol* und tippen Sie auf *Details*.
 
-Abhängig von den ausgewählten [Profileinstellungen](../../personal/profiles.md) und dem ausgewählten [Routingtyp](../../navigation/routing/osmand-routing.md#routing-types) werden einige Routendetails möglicherweise nicht angezeigt. Darüber hinaus hängen die Routendetails stark von der *OpenStreetMap-Datenabdeckung* ab.
+Abhängig von den ausgewählten [Profileinstellungen](../../personal/profiles.md) und dem ausgewählten [Routingtyp](../../navigation/routing/osmand-routing.md#routing-types) werden einige Routendetails möglicherweise nicht angezeigt. Darüber hinaus hängen die Routendetails stark von der *OpenStreetMap Datenabdeckung* ab.
 
 
 ## Entfernung / Zeit / CO2 {#distance--time--co2}
@@ -70,7 +70,7 @@ Abhängig von den ausgewählten [Profileinstellungen](../../personal/profiles.md
 
 - ***Gesamtdistanz*** wird zwischen allen Routensegmenten berechnet, einschließlich Zwischenpunkten in den ausgewählten [Einheiten](../../personal/profiles.md#units--formats).
 
-- ***Geschätzte Fahrzeit*** wird als Summe der Zeiten auf jedem Segment und Zeitstrafen an bestimmten Punkten berechnet. Jedes Navigationsprofil hat unterschiedliche Regeln für die Berechnung der Geschwindigkeit auf einem Segment und welche Strafen einbezogen werden sollen (konfiguriert in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). Zum Beispiel nehmen Auto- und Fahrradprofile die Durchschnittsgeschwindigkeit pro Segment aus OpenStreetMap-Daten, aber Fußgänger-, Boots- und Flugzeugprofile verwenden die *Standardgeschwindigkeit* aus den [Navigationseinstellungen](../guidance/navigation-settings.md#default-speed--road-speeds).
+- ***Geschätzte Fahrzeit*** wird als Summe der Zeiten auf jedem Segment und Zeitstrafen an bestimmten Punkten berechnet. Jedes Navigationsprofil hat unterschiedliche Regeln für die Berechnung der Geschwindigkeit auf einem Segment und welche Strafen einbezogen werden sollen (konfiguriert in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). Zum Beispiel nehmen Auto- und Fahrradprofile die Durchschnittsgeschwindigkeit pro Segment aus OpenStreetMap Daten, aber Fußgänger-, Boots- und Flugzeugprofile verwenden die *Standardgeschwindigkeit* aus den [Navigationseinstellungen](../guidance/navigation-settings.md#default-speed--road-speeds).
 
 - ***Geschätzte Ankunftszeit*** wird als Zeit ab jetzt in der Ortszeit des Ursprungs unter Verwendung der *Geschätzten Fahrzeit* berechnet.
 
@@ -102,7 +102,7 @@ Abhängig von den ausgewählten [Profileinstellungen](../../personal/profiles.md
 - *Bergauf / bergab*. Zeigt das Verhältnis des Weges zur Horizontalen an, wobei Null die Horizontalität und die Gradzahl einen höheren oder steileren Neigungsgrad angibt. Die Steigung zeigt die maximale Straßensteigung in Prozent von Ihrem Standort bis zum Ende des sichtbaren Graphen oder für den ausgewählten Abschnitt der Route, ohne dass der Standort auf dem Bildschirm sichtbar ist.
 
 
-***Eine Lizenz für DEM-Daten, die von OsmAnd zur Geländeerfassung verwendet werden***
+***Eine Lizenz für DEM Daten, die von OsmAnd zur Geländeerfassung verwendet werden***
 Die Höhendaten auf der Karte (zwischen 70 Grad nördlicher Breite und 70 Grad südlicher Breite) wurden aus Messungen im Rahmen der *Shuttle Radar Topography Mission (SRTM)* gewonnen. Dabei wurde das *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)* verwendet, das primäre Bildgebungswerkzeug im *NASA Earth Observation System*. Vollständige Informationen finden Sie in der [Lizenz](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 

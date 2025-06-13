@@ -256,7 +256,7 @@ Dieses Informations-Widget kombiniert Alarmtypen wie **Fußgängerüberwege** un
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png)
 
-Das **Tachometer-Widget** ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* anhand von GPS-Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM-Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Bildschirm des Multimediasystems des Fahrzeugs anzeigt.
+Das **Tachometer-Widget** ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* anhand von GPS Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Bildschirm des Multimediasystems des Fahrzeugs anzeigt.
 
 - Das **Tachometer-Widget** ist [*profilabhängig*](../personal/profiles.md), sodass Änderungen der Einstellungen für ein Profil nicht auf ein anderes angewendet werden.
 - Es gibt keine Option, die Anzeige des *Tachometers* direkt in *CarPlay* einzustellen. Sie müssen ihn für das ausgewählte [Navigationsprofil](#carplay-profile) in der OsmAnd-Anwendung konfigurieren, bevor Sie die Navigation starten und Ihr Gerät mit dem Fahrzeug verbinden.

@@ -207,7 +207,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab
 
 </Tabs>
 
-Der Tab Lokal bietet eine Übersicht über die Speichernutzung aller OsmAnd-Daten auf Ihrem Gerät. Die Daten sind zur besseren Übersichtlichkeit in drei farbcodierte Abschnitte unterteilt, wobei die Elemente nach Größe sortiert sind, vom größten zum kleinsten. Jeder Abschnitt zeigt nur Elemente mit heruntergeladenen Daten an:
+Der Tab Lokal bietet eine Übersicht über die Speichernutzung aller OsmAnd Daten auf Ihrem Gerät. Die Daten sind zur besseren Übersichtlichkeit in drei farbcodierte Abschnitte unterteilt, wobei die Elemente nach Größe sortiert sind, vom größten zum kleinsten. Jeder Abschnitt zeigt nur Elemente mit heruntergeladenen Daten an:
 
 - ***Ressourcen*** (*blau*).  
     Enthält Karten ([Standard](../map/vector-maps.md), &nbsp;[Seekarten](../plugins/nautical-charts.md), &nbsp;[Topographie](../plugins/topography.md), &nbsp;[Wetter](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) und [Reiseführer](../plan-route/travel-guides.md), &nbsp;[Live-Updates](../personal/maps-resources.md#osmand-live), &nbsp;**Nur Straßen**,  &nbsp;[Kartenquellen](../map/raster-maps.md), &nbsp;[Rendering-Stile](../map/vector-maps.md#default-map-styles), &nbsp;**Karten-Schriftarten, &nbsp;Sprachansagen (aufgezeichnet und TTS), &nbsp;Cache**.  

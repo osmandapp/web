@@ -309,7 +309,7 @@ Die Optionen in der unteren Leiste können verwendet werden, um die Liste der No
 
 Sie können alle Notizen einschließlich [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) teilen, das ausgewählte Notizen als Wegpunkte auf dem Bildschirm [Meine Orte](../personal/myplaces.md#audiovideo-notes) enthält, indem Sie auf die Schaltfläche "Teilen" im unteren Menü klicken. Neben jeder Notiz wird ein Kontrollkästchen angezeigt, um bestimmte Notizen auszuwählen. Über den Notizen befinden sich zwei Kontrollkästchen: *A/V-Notizen nach Datum*, um alle Notizen auszuwählen, und das Kontrollkästchen *Orte*. Das Kontrollkästchen *Orte* ermöglicht es Ihnen, eine separate GPX-Datei mit Koordinaten und Daten hinzuzufügen.
 
-Jede Notiz enthält die Zeit, zu der sie erstellt wurde, die Datenmenge und, wenn es sich um eine Aufzeichnung handelt, die Aufnahmezeit und Standortdaten. Sie können GPX-Daten hinzufügen.
+Jede Notiz enthält die Zeit, zu der sie erstellt wurde, die Datenmenge und, wenn es sich um eine Aufzeichnung handelt, die Aufnahmezeit und Standortdaten. Sie können GPX Daten hinzufügen.
 Unterstützte Dateiformate: Audio - **3gp**, Video - **mp4**, Foto - **jpg**.
 
 

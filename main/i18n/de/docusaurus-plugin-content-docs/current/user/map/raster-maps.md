@@ -322,7 +322,7 @@ Sie finden eine hinzugefügte Online-Karte in der Liste des Menüs [Haupt-/Unter
 
 ## Rasterkarten verwalten {#manage-raster-maps}
 
-Rasterkarten können einen erheblichen Speicherplatz auf der Festplatte beanspruchen, daher müssen Sie ihn möglicherweise regelmäßig überprüfen. Für große Datensätze wird die Verwendung von *SQLite-Rasterquellen* empfohlen, da alle Kacheln in einer großen Datei (SQLite-Datenbank) gespeichert werden.
+Rasterkarten können einen erheblichen Speicherplatz auf der Festplatte beanspruchen, daher müssen Sie ihn möglicherweise regelmäßig überprüfen. Für große Datensätze wird die Verwendung von *SQLite-Rasterquellen* empfohlen, da alle Kacheln in einer großen Datei (SQLite Datenbank) gespeichert werden.
 
 - [**SQ Lite-Format**](../../technical/osmand-file-formats/osmand-sqlite.md)
 - [**Metainfo-Format**](../../technical/osmand-file-formats/osmand-metainfo.md)

@@ -102,7 +102,7 @@ Das Werkzeug *Route planen* ermöglicht die Änderung bestehender GPX-Tracks sow
 - Verschieben Sie die Karte, um die Distanz und den Azimut zu bestimmen. Die Informationen werden in einem Feld mit einer Liste von Punkten unter der Karte angezeigt.
 
 :::note
-Die *Gerade Linie* wird benötigt und verwendet für Bereiche, die nicht von Routing-Daten abgedeckt sind, wie z. B. Offroad- und Off-Track Bereiche.
+Die *Gerade Linie* wird benötigt und verwendet für Bereiche, die nicht von Routing Daten abgedeckt sind, wie z. B. Offroad- und Off-Track Bereiche.
 :::
 
 

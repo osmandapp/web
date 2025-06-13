@@ -48,7 +48,7 @@ Navigations-Widgets in OsmAnd sind so konzipiert, dass sie sowohl den **aktiven*
   - Funktioniert automatisch, wenn Sie ein **Navigationsprofil** auswählen (z. B. *Fahren*, *Radfahren*).
 
 - **Funktionalität:**
-  - Versucht, die Straße, der Sie folgen, anhand von GPS-Daten zu bestimmen.
+  - Versucht, die Straße, der Sie folgen, anhand von GPS Daten zu bestimmen.
   - Zeigt **grundlegende Straßeninformationen** an, wie z. B. [Straßenname](#street-name), [Fahrspurinformationen](#lanes), [Höchstgeschwindigkeit](#speed-limit).
 
 - **Einschränkungen:**
@@ -94,7 +94,7 @@ Das Höhen-Widget zeigt ein Diagramm mit der Höhe und Steigung Ihrer Navigation
 Wenn Sie eine Route auswählen und auf die Schaltfläche **Start** drücken, öffnet sich die Karte mit Ihrem aktuellen Standort, der Route und dem Widget am unteren Bildschirmrand. Das Widget enthält das Diagramm und Informationen über *Aufstieg*, *Abstieg*, *Gefälle*, Entfernung, Höhe und Steigungswinkel. Sie können den *optimalen Maßstab* auswählen und alle möglichen Hindernisse auf Ihrer Route sehen.
 
 - Alle Werte werden entweder für die gesamte Route oder nur für das ausgewählte Intervall durch Skalierung des Diagramms angegeben.
-- Lesen Sie mehr über die [Lizenz für die DEM-Daten](../plugins/topography.md#license-for-dem-data-used-by-osmand-for-terrain-detection), die von OsmAnd zur Geländebestimmung verwendet werden.
+- Lesen Sie mehr über die [Lizenz für die DEM Daten](../plugins/topography.md#license-for-dem-data-used-by-osmand-for-terrain-detection), die von OsmAnd zur Geländebestimmung verwendet werden.
 
 |  |
 |:------------|

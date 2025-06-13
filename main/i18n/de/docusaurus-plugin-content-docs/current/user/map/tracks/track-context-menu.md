@@ -172,7 +172,7 @@ Das Menü **Optionen** ermöglicht Ihnen, den ausgewählten Track mit verschiede
 
 </Tabs>
 
-Dieser Abschnitt der Registerkarte *Übersicht* zeigt ***Tag-Daten*** und ***alle allgemeinen Informationen*** an.
+Dieser Abschnitt der Registerkarte *Übersicht* zeigt ***Tag Daten*** und ***alle allgemeinen Informationen*** an.
 
 - **Beschreibung**. Die Schaltfläche *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) wird zum Bearbeiten der Trackbeschreibung verwendet. Tag `desc`.
 
@@ -613,7 +613,7 @@ Um die Wegpunktbeschreibung zu ändern, können Sie einen der folgenden Wege geh
 
     Dann tippen Sie im [Track Kontextmenü](./track-context-menu.md) auf *Punkte*, das Feld des benötigten Ordners mit verfügbaren Wegpunkten und den gesuchten Wegpunkt. Wählen Sie das Menü *Aktionen →* **GPX-Wegpunkt bearbeiten** und nehmen Sie Änderungen vor. Sie können das Erstellungsdatum eines Punktes, den *Zeitstempel*, in der Anwendung nicht ändern.
 
-**Amenity-Tags**, die zusätzliche Informationen wie Öffnungszeiten oder Telefonnummern beschreiben, die spezifisch für den POI sind, übernehmen diese Informationen aus OpenStreetMap-Daten oder Daten, die Sie beim Erstellen des POI eingegeben haben. Sie können solche Tags und [benutzerdefinierte Tags](#display-custom-gpx-tags) nur im Code der GPX-Datei bearbeiten, die Sie mit einem beliebigen Texteditor auf Ihrem Gerät öffnen können.
+**Amenity-Tags**, die zusätzliche Informationen wie Öffnungszeiten oder Telefonnummern beschreiben, die spezifisch für den POI sind, übernehmen diese Informationen aus OpenStreetMap Daten oder Daten, die Sie beim Erstellen des POI eingegeben haben. Sie können solche Tags und [benutzerdefinierte Tags](#display-custom-gpx-tags) nur im Code der GPX-Datei bearbeiten, die Sie mit einem beliebigen Texteditor auf Ihrem Gerät öffnen können.
 
 
 ## Intervall teilen {#split-interval}

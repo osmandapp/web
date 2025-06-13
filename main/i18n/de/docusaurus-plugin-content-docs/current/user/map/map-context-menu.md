@@ -286,7 +286,7 @@ Bei der Auswahl eines [Klettergebiets oder einer Felswand](../map/routes.md#clim
 
 ![Skipisten und MTB-Trails](@site/static/img/map/ski_mtb.png) ![Skipisten und MTB-Trails](@site/static/img/map/ski_mtb_2.png)
 
-Sie können auf Kartenelemente wie **Skipisten**, **Mountainbike (MTB)-Routen** und **Dirtbike-Trails** tippen, um deren Kontextmenü mit detaillierten Informationen zu öffnen. Verfügbare Informationen umfassen: Routen- oder Pistenname (falls in OSM-Daten verfügbar), OSM-Objekt-ID oder Relations-ID, Schwierigkeitsgrad, Weglänge, Geländetyp und mehr.
+Sie können auf Kartenelemente wie **Skipisten**, **Mountainbike (MTB)-Routen** und **Dirtbike-Trails** tippen, um deren Kontextmenü mit detaillierten Informationen zu öffnen. Verfügbare Informationen umfassen: Routen- oder Pistenname (falls in OSM Daten verfügbar), OSM-Objekt-ID oder Relations-ID, Schwierigkeitsgrad, Weglänge, Geländetyp und mehr.
 
 **Unterstützte Tags:** `piste:type=*` (Skipisten), `route=mtb`, `route=atv` oder `route=dirt_bike` (Motorrad-Offroad-Trails)
 

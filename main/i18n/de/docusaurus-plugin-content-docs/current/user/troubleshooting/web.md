@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ## Wie man Absturzprotokolle in Webbrowsern findet {#how-to-find-crash-logs-in-web-browsers}
 
 :::note OsmAnd sammelt oder speichert keine persönlichen Benutzerdaten
-Absturzprotokolle werden von Ihrem Webbrowser generiert und enthalten nur technische Informationen über das Problem, wie z. B. Systemfehler und Browseraktivität zum Zeitpunkt des Absturzes. Diese Protokolle enthalten keine persönlichen Informationen oder Tracking-Daten.
+Absturzprotokolle werden von Ihrem Webbrowser generiert und enthalten nur technische Informationen über das Problem, wie z. B. Systemfehler und Browseraktivität zum Zeitpunkt des Absturzes. Diese Protokolle enthalten keine persönlichen Informationen oder Tracking Daten.
 Wenn Sie sich entscheiden, Absturzprotokolle mit dem Support zu teilen, werden diese nur zur Diagnose und Behebung technischer Probleme verwendet.
 :::
 

@@ -17,7 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Überblick {#overview}
 
-*OsmAnd Suche nach Adresse* basiert auf OpenStreetMap-Daten und ermöglicht es Ihnen, einen Ort und Wegbeschreibungen zu einer bestimmten Adresse aus einer fertig sortierten Liste zu finden, sowie nach Postleitzahl oder Koordinaten zu suchen. Dieses Werkzeug ermöglicht es Ihnen, die benötigten Adressen mit wenigen Fingertipps zu finden, was die Suchzeit verkürzt und hilft, falls Sie sich nicht an die genaue Adresse erinnern.
+*OsmAnd Suche nach Adresse* basiert auf OpenStreetMap Daten und ermöglicht es Ihnen, einen Ort und Wegbeschreibungen zu einer bestimmten Adresse aus einer fertig sortierten Liste zu finden, sowie nach Postleitzahl oder Koordinaten zu suchen. Dieses Werkzeug ermöglicht es Ihnen, die benötigten Adressen mit wenigen Fingertipps zu finden, was die Suchzeit verkürzt und hilft, falls Sie sich nicht an die genaue Adresse erinnern.
 
 OsmAnd bietet mehrere Möglichkeiten, zum *Suchwerkzeug* zu gelangen, wo sich der Abschnitt **Adresse suchen** befindet.
 
@@ -66,11 +66,11 @@ Suchabfrageliste:
 - Zusätzliche Informationen, wie z. B. der Stadtteil.
 
 
-#### US-Adresssuche und TIGER-Daten {#us-address-search-and-tiger-data}
+#### US-Adresssuche und TIGER Daten {#us-address-search-and-tiger-data}
 
-OsmAnd unterstützt die Adresssuche anhand von OpenStreetMap-Daten, aber in den Vereinigten Staaten können die Ergebnisse der Adresssuche aufgrund der Verwendung von [TIGER-Daten](https://wiki.openstreetmap.org/wiki/TIGER) unvollständig sein.
+OsmAnd unterstützt die Adresssuche anhand von OpenStreetMap Daten, aber in den Vereinigten Staaten können die Ergebnisse der Adresssuche aufgrund der Verwendung von [TIGER Daten](https://wiki.openstreetmap.org/wiki/TIGER) unvollständig sein.
 
-- **TIGER-Daten liefern Adressbereiche, keine genauen Standorte**, was bedeutet, dass einige Hausnummern möglicherweise nicht erkannt werden.
+- **TIGER Daten liefern Adressbereiche, keine genauen Standorte**, was bedeutet, dass einige Hausnummern möglicherweise nicht erkannt werden.
 - **Wenn eine Adresse nicht gefunden wird**, versuchen Sie, *nach Straßennamen* anstelle einer bestimmten Hausnummer zu suchen.
 - Verwenden Sie *alternative Standortkennungen*, wie z. B. nahegelegene Sehenswürdigkeiten oder Postleitzahlen, um Ihre Suchergebnisse zu verfeinern.
 

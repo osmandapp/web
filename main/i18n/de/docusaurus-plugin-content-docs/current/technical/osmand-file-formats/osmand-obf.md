@@ -8,9 +8,9 @@ sidebar_position: 7
 ## Einführung {#introduction}
 Sprechen Sie über *.travel.obf, *.wiki.obf, *.roads.obf, ..
 
-Viele Fragen beziehen sich auf den Inhalt und Probleme mit Kartendaten in der Anwendung. Dieses Thema enthüllt einige technische Details des internen Datenformats und der Datenverarbeitung. Es kann für Nicht-Entwickler interessant sein, die mit der OSM-Datenstruktur vertraut sind.
+Viele Fragen beziehen sich auf den Inhalt und Probleme mit Kartendaten in der Anwendung. Dieses Thema enthüllt einige technische Details des internen Datenformats und der Datenverarbeitung. Es kann für Nicht-Entwickler interessant sein, die mit der OSM Datenstruktur vertraut sind.
 
-OsmAnd Offline-Kartendaten sind in 'obf'-Dateien enthalten. 'obf'-Dateien haben eine komplexe Struktur und können aus vielen Teilen bestehen. Es wird dringend empfohlen, die Dateigrößen unter 2 GB zu halten. Derzeit können obf-Dateien viele Teile enthalten, die aus mehreren POI-Teilen, mehreren Routing-Datenteilen, mehreren Kartenteilen, mehreren Transportteilen und mehreren Adressdatenteilen bestehen. Diese Liste kann in Zukunft erweitert werden. Um Teile aus der obf-Datei zu kombinieren, zu teilen oder zu löschen, verwenden Sie das Konsolenwerkzeug 'binary\_inspector', das mit OsmAndMapCreator geliefert wird.
+OsmAnd Offline-Kartendaten sind in 'obf'-Dateien enthalten. 'obf'-Dateien haben eine komplexe Struktur und können aus vielen Teilen bestehen. Es wird dringend empfohlen, die Dateigrößen unter 2 GB zu halten. Derzeit können obf-Dateien viele Teile enthalten, die aus mehreren POI-Teilen, mehreren Routing Datenteilen, mehreren Kartenteilen, mehreren Transportteilen und mehreren Adressdatenteilen bestehen. Diese Liste kann in Zukunft erweitert werden. Um Teile aus der obf-Datei zu kombinieren, zu teilen oder zu löschen, verwenden Sie das Konsolenwerkzeug 'binary\_inspector', das mit OsmAndMapCreator geliefert wird.
 * POI, Transportteil
 * Kartenteil
 * Adressteil
@@ -19,7 +19,7 @@ OsmAnd Offline-Kartendaten sind in 'obf'-Dateien enthalten. 'obf'-Dateien haben 
 >
 > A: Alle Orte, die in OsmAnd als Städte sichtbar sind, stammen von Knoten, die das Tag "place" haben [https://wiki.openstreetmap.org/wiki/Place](https://wiki.openstreetmap.org/wiki/Place "https://wiki.openstreetmap.org/wiki/Place"). Derzeit werden city, town, suburb, village, hamlet verwendet.
 >
-> F: Wie behandelt MapCreator ein Flächenpolygon, das über eine Relation mit boundary=administrative gegeben ist? Wie ordnen Sie einen als Knoten gegebenen Ort seiner Grenze zu, wenn diese in den OSM-Daten vorhanden ist?
+> F: Wie behandelt MapCreator ein Flächenpolygon, das über eine Relation mit boundary=administrative gegeben ist? Wie ordnen Sie einen als Knoten gegebenen Ort seiner Grenze zu, wenn diese in den OSM Daten vorhanden ist?
 >
 > A: Einfach gesagt: Es funktioniert derzeit nach Namen. MapCreator versucht, alle Grenzen zu besuchen und eine geschlossene (!) Grenze aus der Relation oder aus getrennten Wegen zu erstellen und sie nur einem Namen zuzuordnen. Danach versucht es, \*place\* mit \*boundary name\* mithilfe des \*contains of\* Algorithmus abzugleichen. Es gibt auch eine zusätzliche Überprüfung, ob diese Grenze den Ort enthält. Wenn es viele Grenzen unterschiedlicher admin\_level mit demselben Namen gibt (die sich gegenseitig enthalten, wie z. B. Bezirk/Stadt/Region mit demselben Namen), wird die höchste admin\_level mit exakter Übereinstimmung ausgewählt. TODO Hier sollten weitere Details stehen (über Stadtteile ...) ...
 >

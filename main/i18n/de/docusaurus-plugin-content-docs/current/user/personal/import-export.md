@@ -95,12 +95,12 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,l
 
 ### OsmAnd Cloud {#osmand-cloud}
 
-[OsmAnd Cloud](../personal/osmand-cloud.md) ist die alternative Ressource, die Sie zum Speichern Ihrer persönlichen Einstellungen und App-Daten benötigen. Sie können diese Daten auf jedem Gerät verwenden, auf dem die OsmAnd-App installiert werden kann, oder bei Verwendung der Desktop-App. Alle von Ihnen vorgenommenen Änderungen können synchronisiert werden.
+[OsmAnd Cloud](../personal/osmand-cloud.md) ist die alternative Ressource, die Sie zum Speichern Ihrer persönlichen Einstellungen und App Daten benötigen. Sie können diese Daten auf jedem Gerät verwenden, auf dem die OsmAnd-App installiert werden kann, oder bei Verwendung der Desktop-App. Alle von Ihnen vorgenommenen Änderungen können synchronisiert werden.
 
 
 ## Datenverlust verhindern {#preventing-data-loss}
 
-In den *Android*- und *iOS*-Versionen von OsmAnd wird bei einer vollständigen **Deinstallation** der App oder der Auswahl von **Daten löschen** im Einstellungsmenü Anwendungsinfo auf Ihrem Gerät auch das Datenverzeichnis aus dem Dateimanager des Geräts gelöscht. Wenn Sie keine Vorsichtsmaßnahmen treffen, führt dies zum **Verlust aller heruntergeladenen Karten für OsmAnd-Daten, aller gespeicherten Favoriten, GPX-Tracks, Sprachansagen (TTS) und [anderer Daten](#export--import-data).**
+In den *Android*- und *iOS*-Versionen von OsmAnd wird bei einer vollständigen **Deinstallation** der App oder der Auswahl von **Daten löschen** im Einstellungsmenü Anwendungsinfo auf Ihrem Gerät auch das Datenverzeichnis aus dem Dateimanager des Geräts gelöscht. Wenn Sie keine Vorsichtsmaßnahmen treffen, führt dies zum **Verlust aller heruntergeladenen Karten für OsmAnd Daten, aller gespeicherten Favoriten, GPX-Tracks, Sprachansagen (TTS) und [anderer Daten](#export--import-data).**
 
 Es gibt zwei Möglichkeiten, Ihre Daten vor der Neuinstallation der OsmAnd-App zu speichern:
 

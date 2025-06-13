@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Willkommen bei OsmAnd (OpenStreetMap Automated Navigation Directions)!
 
-Erfahren Sie, wie Sie Karten herunterladen, die Anwendung konfigurieren, die Karte verwenden und eine Route erstellen, die Navigation starten und Points of Interest suchen. Machen Sie sich mit den wichtigsten Punkten der OsmAnd-Datenschutzrichtlinie und den erforderlichen Berechtigungen vertraut.
+Erfahren Sie, wie Sie Karten herunterladen, die Anwendung konfigurieren, die Karte verwenden und eine Route erstellen, die Navigation starten und Points of Interest suchen. Machen Sie sich mit den wichtigsten Punkten der OsmAnd Datenschutzrichtlinie und den erforderlichen Berechtigungen vertraut.
 
 <Tabs groupId="operating-systems">
 
@@ -329,7 +329,7 @@ OsmAnd ermöglicht es Ihnen, verschiedene Markierungen auf der Karte für Ihre p
 
 ### Nach Adresse suchen {#how-to-search-by-address}
 
-OsmAnd bietet viele Suchfunktionen, einschließlich der Adresssuche. Standardmäßig verwendet es [OpenStreetMap-Daten](https://nominatim.openstreetmap.org/ui/search.html) und sollte in der Lage sein, alle Adressen über die Schnellsuchleiste zu finden. Sie können auch [nach Stadt, Straße, Postleitzahl und Koordinaten suchen](../search/search-address.md).
+OsmAnd bietet viele Suchfunktionen, einschließlich der Adresssuche. Standardmäßig verwendet es [OpenStreetMap Daten](https://nominatim.openstreetmap.org/ui/search.html) und sollte in der Lage sein, alle Adressen über die Schnellsuchleiste zu finden. Sie können auch [nach Stadt, Straße, Postleitzahl und Koordinaten suchen](../search/search-address.md).
 
 <Tabs groupId="operating-systems">
 
@@ -402,7 +402,7 @@ Sie müssen die Karte herunterladen, bevor Sie dort nach einer Adresse suchen. W
 
 ### Karten bearbeiten {#how-to-edit-maps}
 
-OsmAnd wird von [OpenStreetMap](https://www.openstreetmap.org/)-Daten betrieben. Die Karten werden von freiwilligen Mitwirkenden erstellt, sodass sie je nach Umfang der Arbeit an einem bestimmten Teil der Karte mehr oder weniger Details aufweisen können. Jeder kann sich als Mitwirkender registrieren und OSM-Karten hinzufügen oder bearbeiten. OsmAnd bietet ein Bearbeitungs-Plugin, das hilft, OpenStreetMap zu verbessern.
+OsmAnd wird von [OpenStreetMap](https://www.openstreetmap.org/) Daten betrieben. Die Karten werden von freiwilligen Mitwirkenden erstellt, sodass sie je nach Umfang der Arbeit an einem bestimmten Teil der Karte mehr oder weniger Details aufweisen können. Jeder kann sich als Mitwirkender registrieren und OSM-Karten hinzufügen oder bearbeiten. OsmAnd bietet ein Bearbeitungs-Plugin, das hilft, OpenStreetMap zu verbessern.
 
 <Tabs groupId="operating-systems">
 

@@ -30,7 +30,7 @@ Der Routing-Typ *Direktpunkt* ist nicht mit einem Profil verknüpft und kann mit
 Diese Art des Routings berücksichtigt keine Hindernisse oder Barrieren, die im Gelände vorhanden sein können, wie Berge, Flüsse oder dichte Wälder. Es liefert auch keine Informationen über die Qualität des Geländes, den Schwierigkeitsgrad der Route oder andere relevante Faktoren, die die Sicherheit oder Machbarkeit der Route beeinflussen können (Abschnitt [Routendetails](../setup/route-details.md) ist leer).
 
 :::note
-Bei Verwendung der Navigationstypen Direktpunkt und Boot benötigen Sie [Tiefenlinien-Daten](../../plugins/nautical-charts.md#nautical-map-style), die in *Karte konfigurieren* aktiviert und eingestellt werden können.
+Bei Verwendung der Navigationstypen Direktpunkt und Boot benötigen Sie [Tiefenlinien Daten](../../plugins/nautical-charts.md#nautical-map-style), die in *Karte konfigurieren* aktiviert und eingestellt werden können.
 :::
 
 <Tabs groupId="operating-systems">

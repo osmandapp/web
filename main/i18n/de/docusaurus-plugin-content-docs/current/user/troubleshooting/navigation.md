@@ -62,7 +62,7 @@ Um Probleme mit falschen oder suboptimalen Routen zu verfolgen, eröffnen Sie bi
 Aufgrund der Geodaten aus dem OpenStreetMap-Projekt gibt es derzeit zwei Methoden, wie Blitzer in die Rohdaten von OSM integriert werden:
 
 - Ein Punkt (in der OSM-Terminologie "Knoten" genannt) eines Weges wird mit "highway=speed_camera" getaggt, siehe OSM-Wiki unter [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
-- Eine Gruppe von OSM-Datenelementen wird in einer sogenannten "Relation" zusammengefasst, die mehr Elemente als ein einzelner Knoten enthält, um die Richtung zu beschreiben, die von der Radarfalle abgedeckt wird. Siehe [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
+- Eine Gruppe von OSM Datenelementen wird in einer sogenannten "Relation" zusammengefasst, die mehr Elemente als ein einzelner Knoten enthält, um die Richtung zu beschreiben, die von der Radarfalle abgedeckt wird. Siehe [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
 Derzeit kann OsmAnd nur die Elemente nutzen, die aus einem einzelnen Knoten bestehen. Die Analyse von Relationen wird in einer zukünftigen Version folgen.
 

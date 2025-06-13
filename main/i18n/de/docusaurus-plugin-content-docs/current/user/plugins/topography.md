@@ -55,7 +55,7 @@ Das Topographie-Plugin bietet Zugriff auf die folgenden Kartentypen:
 
 </Tabs>
 
-#### Lizenz für DEM-Daten, die von OsmAnd zur Geländeerfassung verwendet werden {#license-for-dem-data-used-by-osmand-for-terrain-detection}
+#### Lizenz für DEM Daten, die von OsmAnd zur Geländeerfassung verwendet werden {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
 Die Höhendaten auf der Karte (zwischen 70 Grad nördlicher Breite und 70 Grad südlicher Breite) wurden aus Messungen im Rahmen der *Shuttle Radar Topography Mission (SRTM)* gewonnen. Dabei wurde das *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)* verwendet, das primäre Bildgebungswerkzeug im *NASA Earth Observation System*.
 Vollständige Informationen finden Sie in der [Lizenz](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
@@ -293,7 +293,7 @@ Die Funktion *Maßstabsstufen* ermöglicht es Ihnen, die minimalen und maximalen
 
 ### Cache-Größe {#cache-size}
 
-**Cache-Größe** ist ein Informationsbereich, der die Menge des Speichers auf Ihrem Gerät anzeigt, der derzeit für *Gelände*-Daten verwendet wird. Jedes Mal, wenn Sie *Schummerungs*- oder *Hangneigungs*-Informationen auf einer Karte anzeigen, werden all diese Daten vorübergehend im Cache gespeichert, um einen schnellen Zugriff und eine spätere Verwendung zu ermöglichen und zusätzliche Belastung des Prozessors Ihres Geräts zu vermeiden.
+**Cache-Größe** ist ein Informationsbereich, der die Menge des Speichers auf Ihrem Gerät anzeigt, der derzeit für *Gelände* Daten verwendet wird. Jedes Mal, wenn Sie *Schummerungs*- oder *Hangneigungs*-Informationen auf einer Karte anzeigen, werden all diese Daten vorübergehend im Cache gespeichert, um einen schnellen Zugriff und eine spätere Verwendung zu ermöglichen und zusätzliche Belastung des Prozessors Ihres Geräts zu vermeiden.
 
 **Das Leeren des Caches** ist manchmal notwendig, um Speicherplatz auf Ihrem Gerät freizugeben oder potenzielle Leistungsprobleme zu beheben. Um den Cache zu leeren, müssen Sie zu den *Systemeinstellungen* des Geräts gehen, dann kann der Pfad wie folgt aussehen: *Anwendungen → OsmAnd → Speicher → Cache leeren*.
 

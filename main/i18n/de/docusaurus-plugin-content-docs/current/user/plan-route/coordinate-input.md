@@ -49,7 +49,7 @@ Die Ergebnisse der Punkterstellung nach Koordinaten – ein *[GPX-Track](../pers
 
 - &nbsp;*<Translate android="true" ids="coord_input_save_as_track"/>* - öffnet ein Dialogfeld, in dem Sie den erstellten Punkt (oder die Punkte) als GPX-Track speichern können. Sie können den Namen des Tracks ändern oder ihn als Standard belassen.
 - &nbsp;*<Translate android="true" ids="use_system_keyboard"/>* - ermöglicht die Verwendung der Android-Systemtastatur zur Eingabe von Koordinaten.
-- &nbsp;*<Translate android="true" ids="use_two_digits_longitude"/>* - ermöglicht die Eingabe von Längengrad-Daten mit nur zwei Ziffern. Dies kann für Längengrade von 0° bis 99° (z. B. in Europa) nützlich sein.
+- &nbsp;*<Translate android="true" ids="use_two_digits_longitude"/>* - ermöglicht die Eingabe von Längengrad Daten mit nur zwei Ziffern. Dies kann für Längengrade von 0° bis 99° (z. B. in Europa) nützlich sein.
 - &nbsp;*<Translate android="true" ids="coordinates_format"/>* - ermöglicht die Änderung des Koordinatenformats für die Eingabe.
 
 ### Koordinatenformat {#coordinates-format}

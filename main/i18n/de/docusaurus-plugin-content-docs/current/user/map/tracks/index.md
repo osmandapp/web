@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-OsmAnd verfügt über viele leistungsstarke Funktionen zur Anzeige verschiedener Routen auf der Karte. Routen können als Teil der Navigation erstellt, über "Route planen" entworfen, als GPX-Tracks importiert, über das Plugin "Reiseaufzeichnung" aufgezeichnet oder aus OpenStreetMap-Daten durchsucht und ausgewählt werden.
+OsmAnd verfügt über viele leistungsstarke Funktionen zur Anzeige verschiedener Routen auf der Karte. Routen können als Teil der Navigation erstellt, über "Route planen" entworfen, als GPX-Tracks importiert, über das Plugin "Reiseaufzeichnung" aufgezeichnet oder aus OpenStreetMap Daten durchsucht und ausgewählt werden.
 
 
 ## Arten von Tracks {#types-of-tracks}
@@ -131,9 +131,9 @@ Gehe zu: *Tippen Sie auf den Track → Track-Tab → <Translate ios="true" ids="
 
 </Tabs>
 
-Dieses Werkzeug bietet eine detaillierte Analyse der [Track-Daten](../../map/tracks/track-context-menu.md#options) mithilfe von Diagrammen und Karten.
+Dieses Werkzeug bietet eine detaillierte Analyse der [Track Daten](../../map/tracks/track-context-menu.md#options) mithilfe von Diagrammen und Karten.
 
-- **Diagrammdaten (Y-Achse)** zeigen an: *Höhe*, *Steigung*, *Geschwindigkeit*, [*Externe Sensordaten*](../../plugins/external-sensors.md) und Kombinationen von bis zu zwei Optionen, falls in den Track-Daten enthalten.
+- **Diagrammdaten (Y-Achse)** zeigen an: *Höhe*, *Steigung*, *Geschwindigkeit*, [*Externe Sensordaten*](../../plugins/external-sensors.md) und Kombinationen von bis zu zwei Optionen, falls in den Track Daten enthalten.
 - **Diagrammdimension (X-Achse)** repräsentiert: *Entfernung*, *Zeit* und *Tageszeit*.
 - **Tipp-/Schiebe-Interaktion**. Tippen Sie auf ein Diagramm, um Informationen zu einem bestimmten Punkt auf dem Track anzuzeigen. Durch Schieben auf dem Diagramm wird die entsprechende Position auf der Karte hervorgehoben und Details in der Informationsleiste angezeigt.
 - **Skalierung**. Verwenden Sie eine [Zwei-Finger-Geste](../../map/interact-with-map.md#gestures), um das Diagramm für eine detailliertere Ansicht zu skalieren.

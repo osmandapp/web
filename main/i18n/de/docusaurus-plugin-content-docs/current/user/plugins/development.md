@@ -70,7 +70,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin Einstellungen zu öffnen:
 - **Ihre Position simulieren** (*Android* / *iOS*). [Simulieren Sie](#gpx-track-simulation) den Standort und die Bewegung anhand eines GPX-Tracks.
 - **Batteriesparmodus** (*Android* / *iOS*). Diese Einstellung reduziert [die Bildschirmaktualisierungsrate](#map-rendering-fps-widget) um 20 Bilder pro Sekunde, um beim Verwenden von Anwendungen Batteriestrom zu sparen.
 - **3D-Standortpositionssymbole verwenden** (*iOS*). Ermöglicht die Auswahl eines 3D-Symbols für das [Mein Standort-Symbol](../personal/profiles.md#my-location-appearance).
-- **OBD-Daten simulieren** (*Android*). Ermöglicht die Simulation der Verwendung eines [OBD-Scanners](./vehicle-metrics.md).
+- **OBD Daten simulieren** (*Android*). Ermöglicht die Simulation der Verwendung eines [OBD-Scanners](./vehicle-metrics.md).
 - **Leistungs-Debug-Informationen** (*Android*). Zeigt die Rendering- und Navigationsleistung an.
 - **Kartenebenen deaktivieren** (*Android*). Deaktiviert alle Kartenebenen über der Vektorkarte (Neustart erforderlich).
 - **Logcat-Puffer** (*Android*). Überprüfen und teilen Sie detaillierte Protokolle der App.
@@ -120,7 +120,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin Einstellungen zu öffnen:
 
 - **Zugewiesener Speicher**. Zeigt den zugewiesenen Systemspeicher für die OsmAnd-Anwendung an.
 - **Gesamter nativer Speicher**. Zeigt die Gesamtmenge des der Anwendung zugewiesenen nativen Speichers an, einschließlich des proportionalen Speichers.
-- **A-GPS-Info**. Zeigt an, wann A-GPS-Daten zuletzt heruntergeladen wurden.
+- **A-GPS-Info**. Zeigt an, wann A-GPS Daten zuletzt heruntergeladen wurden.
 - **Tag/Nacht-Info**. Zeigt die heutigen Sonnenauf- und Sonnenuntergangszeiten an.
 - **Energiestatistik (Durchschnitt 1 / 5 / 15 Minuten)**. Zeigt den Batteriestand pro Minute (%) und den durchschnittlichen Energieverbrauch (mAh) über Intervalle von 1, 5 und 15 Minuten an.
 - **Rendering-Statistik (Durchschnitt 1 / 5 / 15 Minuten)**. Zeigt Rendering-Statistiken an, einschließlich FPS über die letzten 1k Frames, CPU (Kacheln), CPU (Leerlaufzeit) und CPU (Standby) Durchschnittswerte über Intervalle von 1, 5 und 15 Minuten.
