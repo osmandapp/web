@@ -56,7 +56,7 @@ Führen Sie diesen Schritt auf dem **Gerät aus, auf dem Sie den Kauf getätigt 
 ### Auf einem anderen Gerät oder einer anderen Plattform aktivieren {#activate-on-another-device-or-platform}
 
 ![Maps+ cross](@site/static/img/purchases/cross_purchase.png)
-![Maps+ cross](@site/site/static/img/purchases/cross_purchase_1.png)
+![Maps+ cross](@site/static/img/purchases/cross_purchase_1.png)
 
 1. Gehen Sie zu Ihrem [OsmAnd Cloud Konto](../personal/osmand-cloud.md#login):
    *Menü → Einstellungen → OsmAnd Cloud →* ***Mit demselben Konto anmelden***
