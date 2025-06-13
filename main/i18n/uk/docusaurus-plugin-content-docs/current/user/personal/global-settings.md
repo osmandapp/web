@@ -94,11 +94,7 @@ OsmAnd використовує профіль за замовчуванням, 
 
 ![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-<<<<<<< HEAD:main/i18n/ua/docusaurus-plugin-content-docs/current/user/personal/global-settings.md
 1. **Пам'ять пристрою** показує, скільки вільного місця залишилося на вашому пристрої. Натисніть на поле, щоб отримати доступ до меню [*Карти та ресурси*](../personal/maps-resources.md#maps--resources), де ви можете переглядати та керувати детальною інформацією про ваші дані OsmAnd.
-=======
-1. **Пам'ять пристрою** показує, скільки вільного місця залишилося на вашому пристрої. Натисніть на поле, щоб отримати доступ до меню [*Мапи та ресурси*](../personal/maps-resources.md#maps-and-resources), де ви можете переглядати та керувати детальною інформацією про ваші дані OsmAnd.
->>>>>>> refs/remotes/origin/main:main/i18n/uk/docusaurus-plugin-content-docs/current/user/personal/global-settings.md
 
 2. У **<Translate android="true" ids="change_data_storage_folder"/>** ви можете вибрати папку для збереження даних OsmAnd на вашому пристрої.  
 

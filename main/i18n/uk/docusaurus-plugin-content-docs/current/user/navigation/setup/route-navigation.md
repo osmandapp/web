@@ -56,11 +56,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - Встановіть [параметри транспортного засобу](../guidance/navigation-settings.md#size-parameters) (*важливо для водіїв вантажівок*), виберіть [тип двигуна](../guidance/navigation-settings.md#fuel-used-by-motor) (*необов'язково*).
 
-<<<<<<< HEAD:main/i18n/ua/docusaurus-plugin-content-docs/current/user/navigation/setup/route-navigation.md
 - Налаштуйте [вигляд лінії маршруту](../guidance/map-during-navigation#route-line-appearance) (*необов'язково*, доступно для користувачів Pro).
-=======
-- Налаштуйте [вигляд лінії маршруту](../guidance/map-during-navigation#route-line-appearance) (*необов'язково*, доступно для [Pro користувачів](../../purchases/index.md#purchases)).
->>>>>>> refs/remotes/origin/main:main/i18n/uk/docusaurus-plugin-content-docs/current/user/navigation/setup/route-navigation.md
 
 - Налаштуйте [голосові підказки](../guidance/voice-navigation.md).
 
@@ -76,9 +72,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 2. Додаткові [*Налаштування навігації*](#settings) можуть бути використані залежно від ваших цілей (ви можете налаштувати, яких доріг уникати або віддавати перевагу, заощаджувати паливо або вибирати найшвидший маршрут тощо).
 
-3. [Почніть](#start--stop-navigation) навігацію або спочатку [симулюйте навігацію](#simulated-navigation) (за допомогою цієї функції ви можете протестувати свій маршрут перед фактичною подорожжю по ньому).
+3. [Почніть](#почати--зупинити-навігацію-start--stop-navigation) навігацію або спочатку [симулюйте навігацію](#simulated-navigation) (за допомогою цієї функції ви можете протестувати свій маршрут перед фактичною подорожжю по ньому).
 
-4. Під час руху по маршруту ви можете [*Призупинити/Відновити*](#pause--resume-navigation) навігацію та [*Зупинити*](#start--stop-navigation) її.
+4. Під час руху по маршруту ви можете [*Призупинити/Відновити*](#призупинити--відновити-навігацію-pause--resume-navigation) навігацію та [*Зупинити*](#почати--зупинити-навігацію-start--stop-navigation) її.
 
 
 :::note
@@ -124,7 +120,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Спеціальні улюблені точки [Дім / Робота](#use-home-or-work-points).
 - Попередній маршрут або [Історія](../../personal/global-settings.md#history).
 - Кнопка **Скасувати** повертає на головний екран.
-- [Кнопка Пуск](#start--stop-navigation) запускає навігацію після завершення розрахунку маршруту.
+- [Кнопка Пуск](#почати--зупинити-навігацію-start--stop-navigation) запускає навігацію після завершення розрахунку маршруту.
 
 ### Виберіть початкову точку {#select-starting-point}
 

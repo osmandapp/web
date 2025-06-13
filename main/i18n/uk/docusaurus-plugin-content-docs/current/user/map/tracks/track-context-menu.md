@@ -400,15 +400,9 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 Шляхові точки можна додати до поточного записаного треку або до будь-якого треку зі списку [*Мої місця → Треки*](../../personal/tracks/manage-tracks.md):
 
-<<<<<<< HEAD:main/i18n/ua/docusaurus-plugin-content-docs/current/user/map/tracks/track-context-menu.md
 - Використовуйте [контекстне меню карти](../../map/map-context-menu.md#-add--edit-track-waypoint).
   - Шляхові точки автоматично відображаються, якщо вибраний трек увімкнено на карті.
   - [Довге натискання](../../map/map-context-menu.md#select-any-point-long-tap) на карті в будь-якому вибраному місці для створення шляхової точки.
-=======
-- Використовуйте [контекстне меню карти](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint).
-  - Шляхові точки автоматично відображаються, якщо обраний трек увімкнено на карті.
-  - [Довге натискання](../../map/map-context-menu.md#select-any-point-long-tap) на карті в будь-якому обраному місці для створення шляхової точки.
->>>>>>> refs/remotes/origin/main:main/i18n/uk/docusaurus-plugin-content-docs/current/user/map/tracks/track-context-menu.md
   - Ви можете встановити інформацію про шляхову точку у відкритому [контекстному меню карти](../../map/map-context-menu.md#-add--edit-track-waypoint).
 
 - Використовуйте кнопку [Додати шляхову точку](#точки--шляхові-точки-points--waypoints) контекстного меню треку.
@@ -473,7 +467,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 **Дії:**
 
-- **<Translate android="true" ids="shared_string_show_on_map"/>** - Дозволяє відображати або не відображати шляхові точки групи на карті. Або ви можете використовувати [кнопку екрана](#points--waypoints) для відображення або приховування шляхових точок групи на карті.
+- **<Translate android="true" ids="shared_string_show_on_map"/>** - Дозволяє відображати або не відображати шляхові точки групи на карті. Або ви можете використовувати [кнопку екрана](#точки--шляхові-точки-points--waypoints) для відображення або приховування шляхових точок групи на карті.
 - **<Translate android="true" ids="shared_string_rename"/>** - Змінити назву групи.
 - **<Translate android="true" ids="change_default_appearance"/>** - Змінити параметри відображення для групи шляхових точок.
 - **<Translate android="true" ids="add_group_to_markers"/>** або **Видалити** (*лише Android*) - Перемістити шляхові точки групи до списку [Маркери карти](../../personal/markers.md).
@@ -685,7 +679,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 Вкладка Статистика відображає інформацію про **змінений** трек, тобто трек без відфільтрованих значень. Вона відображається в блоках статистики та даних графіка.
 
 - Частина *Дані* показує статистику, подібну до [Меню фільтра](#filter-menu).
-- Частина *Графік* відображає три типи графіків за параметрами: Огляд, Висота та Швидкість. Ця функціональність є копією [Графіка треку](#altitude--speed-graphs).
+- Частина *Графік* відображає три типи графіків за параметрами: Огляд, Висота та Швидкість. Ця функціональність є копією [Графіка треку](#графіки-висоти--швидкості-altitude--speed-graphs).
 
 ### Дії {#actions}
 

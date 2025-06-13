@@ -157,11 +157,7 @@ GPX-треки з точками можуть використовуватися
 
 </Tabs>
 
-<<<<<<< HEAD:main/i18n/ua/docusaurus-plugin-content-docs/current/user/navigation/setup/markers-navigation.md
 Натискаючи на лівий кут (Android) або правий кут (iOS) вкладки *Маркера на карті* у *[Списку маркерів на карті](../../personal/markers.md#itinerary-list)* та переміщуючи її вгору або вниз, ви можете змінити її порядок у *Списку навігації* (під час переміщення картки маркера ви побачите лінію, що вказує, куди буде розміщено маркер).
-=======
-Натискаючи на лівий кут (Android) або правий кут (iOS) вкладки *Маркер на карті* у *[Списку маркерів на карті](../../personal/markers.md#list)* та переміщуючи її вгору або вниз, ви можете змінити її порядок у *Списку навігації* (під час переміщення картки маркера ви побачите лінію, що вказує, куди буде розміщено маркер).
->>>>>>> refs/remotes/origin/main:main/i18n/uk/docusaurus-plugin-content-docs/current/user/navigation/setup/markers-navigation.md
 
 У версії OsmAnd для Android є інші опції сортування *Маркерів на карті* (*<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/> →* *Сортувати за* або *Планувати маршрут*).
 

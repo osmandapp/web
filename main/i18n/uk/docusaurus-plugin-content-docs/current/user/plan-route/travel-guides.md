@@ -47,7 +47,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - [Завантажте](#download-articles) *Путівники*.
 - Переглядайте [статті](#browse-articles) про країну, регіон, місто, визначне місце.
-<<<<<<< HEAD:main/i18n/ua/docusaurus-plugin-content-docs/current/user/plan-route/travel-guides.md
     - Альтернативно, [відображайте статті та/або точки путівників на мапі](#travel-routes) за допомогою меню Налаштувати мапу.
     - Переглядайте визначні місця на мапі, додавайте їх до *[Маркерів мапи](../personal/markers.md#add--edit-markers)* або *[Вибраного](../personal/favorites.md#favorite-group-actions)*.
     - За допомогою кнопки *[Читати повністю](#manage-as-gpx-track)* перейдіть до *[статті](#travel-article) всередині *Путівників*.
@@ -55,15 +54,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Обирайте [точки](#points) зі статей для відвідування та додавайте їх на мапу OsmAnd.
 - Отримуйте більше інформації про місця для відвідування з офлайн [статей Вікіпедії](#combine-with-wikipedia).
 - [Будуйте маршрут](../navigation/setup/route-navigation.md#set-destinations) до обраних туристичних визначних місць або вільну прогулянку між точками.
-=======
-    - Альтернативно, [відображайте статті та/або точки путівників на карті](#travel-routes) за допомогою меню Налаштувати карту.
-    - Переглядайте визначні місця на карті, додавайте їх до *[Маркерів карти](../personal/markers.md#add-marker-on-the-map)* або *[Вибраного](../personal/favorites.md#add-to-map-markers)*.
-    - За допомогою кнопки *[Читати повністю](#manage-as-gpx-track)* перейдіть до *[статті](#travel-article) в *Путівниках*.
-- [Додайте статті до закладок](#explore-and-bookmark), щоб прочитати їх пізніше.
-- Виберіть [точки](#points) зі статей для відвідування та додайте їх на карту OsmAnd.
-- Отримайте більше інформації про місця для відвідування з офлайн [статей Вікіпедії](#combine-with-wikipedia).
-- [Побудуйте маршрут](../navigation/setup/route-navigation.md#set-destinations) до обраних туристичних визначних місць або вільну прогулянку між точками.
->>>>>>> refs/remotes/origin/main:main/i18n/uk/docusaurus-plugin-content-docs/current/user/plan-route/travel-guides.md
 
 :::note
 Статті *Путівників* зберігаються в OsmAnd як GPX-треки з точками маршруту. Після додавання цих треків на карту (див. розділи *[Точки](#points)* або *[Туристичні маршрути](#travel-routes)* цієї статті), ви можете керувати ними через меню *[Мої місця](../personal/myplaces.md)*.
@@ -289,11 +279,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *Статті Путівника* часто містять туристичні пам'ятки, згруповані за темами. Одним дотиком кнопки *Точки* внизу *[Статті](#travel-article)* всі пам'ятки, пов'язані з темою (місця харчування, варіанти проживання, аеропорти, магазини, історичні пам'ятки тощо), будуть додані на карту та можуть бути *[керовані як Трек](#manage-as-gpx-track)*.
 
-<<<<<<< HEAD:main/i18n/ua/docusaurus-plugin-content-docs/current/user/plan-route/travel-guides.md
 За замовчуванням групи пам'яток позначені певними значками: категорії *Поїсти та Випити* — ножем і виделкою в червоному колі, *Зробити та Побачити* — камерою в зеленому колі, та інші. Ви можете керувати групами точок за допомогою &#8942; як *[Папкою точок маршруту](../map/tracks/track-context-menu.md#points--waypoints)*.
-=======
-За замовчуванням групи пам'яток позначаються певними значками: категорії *Їсти та пити* — ножем і виделкою в червоному колі, *Робити та бачити* — камерою в зеленому колі, та інші. Ви можете керувати групами точок за допомогою &#8942; як *[папкою точок маршруту](../map/tracks/track-context-menu.md#waypoints-folder)*.
->>>>>>> refs/remotes/origin/main:main/i18n/uk/docusaurus-plugin-content-docs/current/user/plan-route/travel-guides.md
 
 :::note
 Точки в *статтях Путівника* відносяться до точок маршруту на GPX-треку.

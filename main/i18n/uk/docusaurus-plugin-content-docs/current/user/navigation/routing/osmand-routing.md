@@ -78,13 +78,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::note
 
-<<<<<<< HEAD:main/i18n/ua/docusaurus-plugin-content-docs/current/user/navigation/routing/osmand-routing.md
 - Дорога повинна бути позначена при максимальному масштабуванні, оскільки OsmAnd може неправильно інтерпретувати натискання та заблокувати, наприклад, неправильну сторону дороги з двома проїжджими частинами або тротуар.
 - Функція "Уникати певних доріг" некоректно працює з опцією [Навігація за треком](../setup/gpx-navigation.md) і не впливає на спрощену [Навігацію за маркерами](../setup/markers-navigation.md#use-markers-in-navigation).
-=======
-- Дорога повинна бути позначена при максимальному масштабуванні, оскільки OsmAnd може неправильно інтерпретувати дотик і заблокувати, наприклад, неправильну сторону дороги з двома проїжджими частинами або тротуар.
-- Функція "Уникати певних доріг" некоректно працює з опцією [Навігація за треком](../setup/gpx-navigation.md) і не впливає на спрощену [Навігацію за маркерами](../setup/markers-navigation.md#how-to-use).
->>>>>>> refs/remotes/origin/main:main/i18n/uk/docusaurus-plugin-content-docs/current/user/navigation/routing/osmand-routing.md
 
 :::
 

@@ -185,11 +185,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | ![дані](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
 :::info
-<<<<<<< HEAD:main/i18n/ua/docusaurus-plugin-content-docs/current/user/plugins/trip-recording.md
 Для отримання додаткової інформації ви можете ознайомитися з [**Контекстним меню треків**](../map/tracks/track-context-menu.md#options), де ви можете керувати різними опціями, пов'язаними з треками, такими як перейменування, видалення або додавання шляхових точок. Щоб налаштувати вигляд треків на мапі, відвідайте розділ [**Вигляд**](../map/tracks/appearance.md). Якщо ви хочете додати конкретні шляхові точки до свого поточного треку, перегляньте посібник [**Точки треку**](../map/tracks/track-context-menu.md#points--waypoints). Для будь-яких модифікацій, таких як перейменування треку, використовуйте вкладку [**Опції**](https://osmand.net/docs/user/map/track-context-menu#options) в Контекстному меню треків.
-=======
-Для отримання додаткової інформації ви можете ознайомитися з [**Контекстним меню треків**](../map/tracks/track-context-menu.md#options), де ви можете керувати різними опціями, пов'язаними з треками, такими як перейменування, видалення або додавання проміжних точок. Щоб налаштувати вигляд треків на мапі, відвідайте розділ [**Вигляд**](../map/tracks/appearance.md). Якщо ви хочете додати конкретні проміжні точки до свого поточного треку, перегляньте посібник [**Точки треку**](../map/tracks/track-context-menu.md#waypoints-folder). Для будь-яких змін, таких як перейменування треку, використовуйте вкладку [**Опції**](https://osmand.net/docs/user/map/track-context-menu#options) в Контекстному меню треків.
->>>>>>> refs/remotes/origin/main:main/i18n/uk/docusaurus-plugin-content-docs/current/user/plugins/trip-recording.md
 :::
 
 

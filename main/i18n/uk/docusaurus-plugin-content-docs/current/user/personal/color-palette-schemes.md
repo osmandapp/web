@@ -77,11 +77,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Візуалізація лінійного градієнта використовує файли палітри (`route_<type_name>_<palette_name>.txt`) для розфарбовування GPX треків та Маршрутів:
 
 - Для [Маршрутів](../navigation/guidance/map-during-navigation.md#color): *Швидкість, Схил* та *Висота*, або *інформація із зовнішніх датчиків*.
-<<<<<<< HEAD:main/i18n/ua/docusaurus-plugin-content-docs/current/user/personal/color-palette-schemes.md
 - Для [GPX-треків](../map/tracks/appearance#track-colors-in-gpx-files): *Швидкість, Схил* та *Висота*.
-=======
-- Для [GPX треків](../map/tracks/index.md#color): *Швидкість, Схил* та *Висота*.
->>>>>>> refs/remotes/origin/main:main/i18n/uk/docusaurus-plugin-content-docs/current/user/personal/color-palette-schemes.md
 
 ### Погода {#weather}
 
@@ -103,11 +99,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </table>
 
 
-<<<<<<< HEAD:main/i18n/ua/docusaurus-plugin-content-docs/current/user/personal/color-palette-schemes.md
 Легенда надає простий спосіб перегляду та розуміння різних позначок на мапі. Додано нові колірні палітри для відображення [**швидкості** для треків](../map/tracks/appearance#track-colors-in-gpx-files), [**типу лінії** для маршрутів](../navigation/guidance/map-during-navigation.md#color), [**висоти та схилу** для рельєфу](../plugins/topography.md#default-color-scheme) та всіх колірних палітр [**шарів погоди**](../plugins/weather.md#weather-layers).
-=======
-Легенда надає простий спосіб перегляду та розуміння різних позначок на мапі. Додано нові колірні палітри для відображення [**швидкості** для треків](../map/tracks/index.md#color), [**типу лінії** для маршрутів](../navigation/guidance/map-during-navigation.md#color), [**висоти та схилу** для рельєфу](../plugins/topography.md#default-color-scheme), а також усіх колірних палітр [**шарів погоди**](../plugins/weather.md#weather-layers).
->>>>>>> refs/remotes/origin/main:main/i18n/uk/docusaurus-plugin-content-docs/current/user/personal/color-palette-schemes.md
 
 
 ## Редагувати файл палітри {#edit-palette-file}
