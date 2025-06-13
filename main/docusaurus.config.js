@@ -10,9 +10,7 @@ const config = {
   tagline: 'Offline Maps and Navigation',
   url: 'https://osmand.net',
   baseUrl: '/',
-  onBrokenLinks: !process.env.IGNORE_WARN ? 'throw' : 'ignore',
-  onBrokenMarkdownLinks: !process.env.IGNORE_WARN ? 'warn' : 'ignore',
-  onBrokenAnchors: !process.env.IGNORE_WARN ? 'warn' : 'ignore',
+  onBrokenAnchors: !process.env.IGNORE_BROKEN_ANCHORS ? 'warn' : 'ignore',
   favicon: 'img/favicon.ico',
   organizationName: 'osmandapp', // Usually your GitHub org/user name.
   projectName: 'web', // Usually your repo name.
