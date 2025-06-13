@@ -11,7 +11,7 @@ In einigen Fällen kann eine Adresssuche in OsmAnd Ergebnisse für eine andere S
 
 ### Verwandte Probleme {#related-issues}
 
-Fälle von falschen Stadtzuweisungen wurden in den folgenden GitHub-Problemen gemeldet:
+Fälle von falschen Stadtzuweisungen wurden in den folgenden GitHub Problemen gemeldet:
 [10679](https://github.com/osmandapp/OsmAnd/issues/10679), [10677](https://github.com/osmandapp/OsmAnd/issues/10677), [10699](https://github.com/osmandapp/OsmAnd/issues/10699), [10921](https://github.com/osmandapp/OsmAnd/issues/10921).
 
 
@@ -48,7 +48,7 @@ Wenn eine Nichtübereinstimmung auftritt, kann eines der folgenden Probleme auft
 - Das Haus wird der **falschen Straße zugewiesen**.
 - Die **gleiche Straße erscheint mehrmals** in verschiedenen Stadtgrenzen.  
 
-Siehe GitHub-Problem [10036](https://github.com/osmandapp/OsmAnd/issues/10036) für ein Beispiel.
+Siehe GitHub Problem [10036](https://github.com/osmandapp/OsmAnd/issues/10036) für ein Beispiel.
 
 
 ## Mögliche Ursachen für falsche Stadtzuweisungen {#possible-causes-of-incorrect-city-assignments}

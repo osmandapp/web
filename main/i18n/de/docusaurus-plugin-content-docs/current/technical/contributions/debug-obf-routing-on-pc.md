@@ -10,7 +10,7 @@ sidebar_position: 5
 - Starten Sie OsmandMapCreator über die BAT- oder SH-Datei.
 - Stellen Sie sicher, dass Sie eine Internetverbindung haben, damit Mapcreator Kartenkacheln herunterladen kann. Überprüfen Sie alle Menüs und Einstellungen in Mapcreator.
 - Stellen Sie das Arbeitsverzeichnis von Mapcreator auf den Ordner ein, in dem sich Mapcreator selbst und die OBF-Datei befinden.
-- Schwenken und zoomen Sie die Karte an die Stelle, an der Sie Routing-Probleme haben und die von der genannten OBF-Datei abgedeckt wird.
+- Schwenken und zoomen Sie die Karte an die Stelle, an der Sie Routing Probleme haben und die von der genannten OBF-Datei abgedeckt wird.
 - Klicken Sie mit der rechten Maustaste auf die Karte, um Start- und Endpunkte sowie verschiedene Routing-Engines festzulegen.
 
 Den Ortsnamen finden, dem eine Straße in Offline-OBF-Karten zugeordnet ist

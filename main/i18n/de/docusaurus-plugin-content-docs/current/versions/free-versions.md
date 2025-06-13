@@ -314,7 +314,7 @@ Veröffentlichungsdatum: 11/2019
 - Aktualisierte Anwendungs- und Profileinstellungen. Bequeme Anordnung der Einstellungen nach Typ, Möglichkeit zur Anpassung jedes Profils.
 - Neuer Karten-Download-Dialog, der beim Browsen eine Karte zum Herunterladen vorschlägt
 - Fehlerbehebungen für das Nachtthema
-- Einige Routing-Probleme weltweit behoben
+- Einige Routing Probleme weltweit behoben
 - Basiskarte mit detaillierterem Straßennetz aktualisiert
 - Überflutete Gebiete weltweit behoben
 - Ski-Routing: Höhenprofil und Routenkomplexität zu den Routendetails hinzugefügt

@@ -271,7 +271,7 @@ Ausschließen mehrerer Ebenen von der Konvertierung durch den Parameter <i>gdal_
 
 ## Häufige Probleme {#common-issues}
 
-### OutOfMemoryError-Problem {#outofmemoryerror-issue}
+### OutOfMemoryError Problem {#outofmemoryerror-issue}
 
 **Problem**: OsmAndMapCreator schlägt mit der Meldung - OutOfMemoryError fehl.
 

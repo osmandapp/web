@@ -122,7 +122,7 @@ Die frühere Strategie der Verwendung eines Doze-Modus und periodischen GPS-Wake
 - (A2) Für die *Hintergrund*-Trackaufzeichnung ohne gleichzeitige Navigation. Für die Aufzeichnung mit Intervallen von bis zu 15 Sekunden halten wir GPS ebenfalls eingeschaltet, andere Strategien sparen nicht viel Batteriestrom.
 - (A3) Für Intervalle >=30 Sekunden schalten wir GPS nur für jeden Abtastpunkt ein. Dies hat einige spürbare Auswirkungen auf die Genauigkeit der aufgezeichneten Punkte, reduziert aber den Batterieverbrauch auf eine Größenordnung von 1,2 % pro Stunde bei 30-Sekunden-Trackaufzeichnung.
 
-**<del> (B) GPS-Wake-up-Probleme</del>**
+**<del> (B) GPS-Wake-up Probleme</del>**
 
 Um das GPS-Wake-up zu erreichen, verwenden wir bisher den Android Alarm Manager, um das Gerät periodisch aufzuwecken (auch aus dem Doze-Modus, der in Android 6 eingeführt wurde). Neue Android-Versionen haben die folgenden Probleme eingeführt:
 

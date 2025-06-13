@@ -88,7 +88,7 @@ Um Daten zu sichern und wiederherzustellen, müssen Sie in Ihrem OsmAnd Cloud-Ko
 
 - Wenn Sie ein **OsmAnd Pro** Abonnement haben, können Sie nach Ablauf Ihres Abonnements für **ein weiteres Jahr** auf Ihr OsmAnd Cloud-Konto zugreifen.  
 
-:::tip Fehlerbehebung bei Login-Problemen
+:::tip Fehlerbehebung bei Login Problemen
 Wenn Sie Probleme bei der Registrierung haben:
 
 - Stellen Sie sicher, dass Sie sich auf demselben **Gerät** registrieren, auf dem der Kauf getätigt wurde.  
