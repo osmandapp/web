@@ -32,14 +32,14 @@ Das **Suchmenü** kann über das Seitenpanel oder die **linke Ecke 🔍** der Ka
 
 ## Suchleiste {#search-bar}
 
-Klicken Sie auf die **🔍 Schaltfläche**, um die Suche zu starten. Geben Sie eine Abfrage in die **Suchzeile** ein und klicken Sie auf einen POI, um das [**POI-Kontextmenü**](#explore-poi-data) zu öffnen, in dem Sie die Tag-Informationen anzeigen können.
+Klicken Sie auf die **🔍 Schaltfläche**, um die Suche zu starten. Geben Sie eine Abfrage in die **Suchzeile** ein und klicken Sie auf einen POI, um das [**POI Kontextmenü**](#explore-poi-data) zu öffnen, in dem Sie die Tag-Informationen anzeigen können.
 
 Wenn Sie nach einem **Kategoriennamen** suchen, zeigt das erste Ergebnis die Kategorie dieses POI an. Wenn Sie auf eine POI-Kategorie klicken, öffnet sich das Fenster [**Kategoriensuche**](#categories).
 
 ![Kontextmenü POI](@site/static/img/web/context_menu_poi.png)
 
 
-Durch Klicken auf den ausgewählten POI auf der Karte oder in der Ergebnisliste wird das **POI-Kontextmenü** geöffnet. Dieses Menü bietet die folgenden Daten und Links:
+Durch Klicken auf den ausgewählten POI auf der Karte oder in der Ergebnisliste wird das **POI Kontextmenü** geöffnet. Dieses Menü bietet die folgenden Daten und Links:
 
 - **Name und Symbol**. Zeigt den Namen und das Symbol des POI an.
 - **★ Schaltfläche (*Zu Favoriten hinzufügen*)**. Ermöglicht Ihnen, den ausgewählten POI als [Favoriten](../web/web-userdata.mdx#add--edit-favorite) zu speichern.
@@ -62,7 +62,7 @@ Im **Kategorienmenü** können Sie eine POI-Kategorie auswählen und auf der Kar
 
 ![Kategorien POI](@site/static/img/web/categories_poi.png)
 
-Klicken Sie auf den ausgewählten POI auf der Karte oder in der Ergebnisliste, um das **POI-Kontextmenü** zu öffnen. Dieses Menü bietet die folgenden Daten und Links:
+Klicken Sie auf den ausgewählten POI auf der Karte oder in der Ergebnisliste, um das **POI Kontextmenü** zu öffnen. Dieses Menü bietet die folgenden Daten und Links:
 
 - **Name und Symbol**. Zeigt den Namen und das Symbol des POI an.
 - **★ Schaltfläche (*Zu Favoriten hinzufügen*)**. Ermöglicht Ihnen, den ausgewählten POI als [Favoriten](../web/web-userdata.mdx#add--edit-favorite) zu speichern.

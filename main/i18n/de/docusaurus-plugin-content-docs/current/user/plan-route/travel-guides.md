@@ -326,7 +326,7 @@ Nachdem Sie *Reiseführer* zur Karte hinzugefügt haben, können *Reiseartikel* 
 
 :::info HINWEIS
 *Punkte* werden in einer [GPX-Datei](../../technical/osmand-file-formats/osmand-gpx.md) (einem häufig verwendeten Format für Tracks) als [Wegpunkte](../map/point-layers-on-map.md#track-waypoints) gespeichert. Die Anzahl der Punkte (Wegpunkte) im Track ist neben dem Symbol &#128681; im Track-Feld markiert.
-Im *[Track-Kontextmenü](../map/tracks/track-context-menu.md)* der GPX-Datei finden Sie allgemeine Informationen über den Artikel, zu dem dieser Track gehört.
+Im *[Track Kontextmenü](../map/tracks/track-context-menu.md)* der GPX-Datei finden Sie allgemeine Informationen über den Artikel, zu dem dieser Track gehört.
 :::
 
 ## Mit Wikipedia kombinieren {#combine-with-wikipedia}

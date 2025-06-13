@@ -34,7 +34,7 @@ OsmAnd kann Tracks mit 1–3 Kombinationen erstellen. [Route planen](../../plan-
 
 ## Tracks auf der Karte anzeigen {#display-tracks-on-the-map}
 
-Sie können die Sichtbarkeit von Tracks verwalten, indem Sie aus mehreren Menüs auswählen, welche angezeigt oder ausgeblendet werden sollen: dem Menü [Meine Orte](#my-places), dem Menü [Karte konfigurieren](#configure-map) und dem [Track-Kontextmenü](#track-context-menu). Diese Flexibilität ermöglicht es Ihnen, schnell zwischen verschiedenen Tracks zu wechseln und sicherzustellen, dass nur die relevanten Tracks jederzeit auf Ihrer Karte sichtbar sind.
+Sie können die Sichtbarkeit von Tracks verwalten, indem Sie aus mehreren Menüs auswählen, welche angezeigt oder ausgeblendet werden sollen: dem Menü [Meine Orte](#my-places), dem Menü [Karte konfigurieren](#configure-map) und dem [Track Kontextmenü](#track-context-menu). Diese Flexibilität ermöglicht es Ihnen, schnell zwischen verschiedenen Tracks zu wechseln und sicherzustellen, dass nur die relevanten Tracks jederzeit auf Ihrer Karte sichtbar sind.
 
 ### Karte konfigurieren {#configure-map}
 
@@ -88,7 +88,7 @@ Im Tab [Meine Orte *→* Tracks](../../personal/tracks/manage-tracks.md#manage-t
 - *iOS* – Tippen Sie lange auf den gewünschten Track in der Liste.
 
 
-### Track-Kontextmenü {#track-context-menu}
+### Track Kontextmenü {#track-context-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -106,7 +106,7 @@ Im Tab [Meine Orte *→* Tracks](../../personal/tracks/manage-tracks.md#manage-t
 
 </Tabs>
 
-Wenn Sie einen Track auf der Karte auswählen oder das [Track-Kontextmenü](./track-context-menu.md) nach dem Aufzeichnen oder Importieren eines Tracks öffnen, können Sie dessen Sichtbarkeit auf der Karte steuern. Verwenden Sie einfach die Schaltflächen *Anzeigen* oder *Ausblenden*, um den Track in der Kartenansicht anzuzeigen oder zu entfernen.
+Wenn Sie einen Track auf der Karte auswählen oder das [Track Kontextmenü](./track-context-menu.md) nach dem Aufzeichnen oder Importieren eines Tracks öffnen, können Sie dessen Sichtbarkeit auf der Karte steuern. Verwenden Sie einfach die Schaltflächen *Anzeigen* oder *Ausblenden*, um den Track in der Kartenansicht anzuzeigen oder zu entfernen.
 
 
 ## Track auf Karte analysieren {#analyze-track-on-map}
@@ -168,7 +168,7 @@ Tippen Sie auf die Schaltfläche [Mein Standort](../../map/interact-with-map.md#
 ## Verwandte Artikel {#related-articles}
 
 - [Track-Aussehen](./appearance.md)
-- [Track-Kontextmenü](./track-context-menu.md)
+- [Track Kontextmenü](./track-context-menu.md)
 - [Navigation nach Track](../../navigation/setup/gpx-navigation.md)
 - [Routen auf der Karte](https://docs.osmand.net/blog/routes) Blog-Artikel
 - [Karte konfigurieren](../../map/configure-map-menu.md)  

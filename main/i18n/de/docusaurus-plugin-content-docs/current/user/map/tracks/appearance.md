@@ -41,7 +41,7 @@ Die Funktion **Track-Darstellung** ermöglicht es Benutzern, die Anzeige von Tra
 
 Sie können die Track-Darstellung mit einer der folgenden Methoden ändern:
 
-- **Aus Meine Orte**. Öffnen Sie *Menü → Meine Orte → Tracks*, wählen Sie einen Track aus, tippen Sie auf das *Darstellungs-Symbol* im [Track-Kontextmenü](../../map/tracks/track-context-menu.md#overview).
+- **Aus Meine Orte**. Öffnen Sie *Menü → Meine Orte → Tracks*, wählen Sie einen Track aus, tippen Sie auf das *Darstellungs-Symbol* im [Track Kontextmenü](../../map/tracks/track-context-menu.md#overview).
 - **Von der Karte**. Tippen Sie direkt auf der Karte auf einen Track und dann auf das *Darstellungs-Symbol* im Abschnitt *Übersicht*.
 - **Von der Track-Aufnahme**. Ändern Sie die Darstellung des aktuell aufgezeichneten Tracks über das [Kontextmenü der Track-Aufnahme](../../plugins/trip-recording.md#сurrent-track-recording).
 - **Aus dem Menü Karte konfigurieren**. Gehen Sie zu *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* für die angezeigten Tracks.
@@ -288,11 +288,11 @@ Um eine Farbe für einen Track anzugeben, verwenden Sie das folgende Format:
 
 ## Verwandte Artikel {#related-articles}
 
-- [Karten-Kontextmenü](../map-context-menu.md)
+- [Karten Kontextmenü](../map-context-menu.md)
 - [Karte konfigurieren](../configure-map-menu.md)
 - [Punkte auf der Karte](../point-layers-on-map.md)
 - [Tracks](../tracks/index.md)
-- [Tracks-Kontextmenü](../tracks/track-context-menu.md)
+- [Tracks Kontextmenü](../tracks/track-context-menu.md)
 - [Trip-Aufnahme](../../plugins/trip-recording.md)
 
 > *Zuletzt aktualisiert: Februar 2025*

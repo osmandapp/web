@@ -68,7 +68,7 @@ Falls Sie eine einfache Punkt-zu-Punkt-Navigation benötigen, die als gerade Lin
 
 Hier sind einfache Empfehlungsschritte zur *Navigation nach Markern*:
 
-1. Marker erstellen. Suchen Sie das/die gewünschte(n) Objekt(e) auf der Karte, tippen Sie darauf und wählen Sie die *[Marker-Schaltfläche](../../personal/markers.md#add-marker-on-the-map)* im *[Karten-Kontextmenü](../../map/map-context-menu.md#add--edit-marker)*. Sie können auch Marker aus [Favoriten](#add-group-of-favorite) oder [GPX-Tracks](#add-group-of-track-waypoints) erstellen.
+1. Marker erstellen. Suchen Sie das/die gewünschte(n) Objekt(e) auf der Karte, tippen Sie darauf und wählen Sie die *[Marker-Schaltfläche](../../personal/markers.md#add-marker-on-the-map)* im *[Karten Kontextmenü](../../map/map-context-menu.md#add--edit-marker)*. Sie können auch Marker aus [Favoriten](#add-group-of-favorite) oder [GPX-Tracks](#add-group-of-track-waypoints) erstellen.
 2. [*Marker sortieren*](#sort-markers) in der bevorzugten Reihenfolge, in der Sie sie passieren möchten.
 3. Passen Sie die *Kartenmarker-Ansicht* an, wenn Sie Marker verwenden möchten, ohne die Navigation zu starten. Aktivieren Sie die Optionen **Pfeile auf der Karte** und **Richtungslinie** im Abschnitt *[Aussehen](../../personal/markers.md#appearance-on-the-map)* des *[Kartenmarker-Menüs](../../personal/markers.md#map-markers-menu)*.
 4. Fügen Sie *[Marker-Widgets](../../personal/markers.md#marker-widgets)* im *[Bildschirm konfigurieren-Menü](../../widgets/configure-screen.md)* hinzu (optional).
@@ -103,7 +103,7 @@ Die Reiseroutenliste stellt eine geordnete Liste von *passierbaren* Markern dar,
 
 ### Einzelne Marker hinzufügen {#add-single-markers}
 
-*Marker* können durch einmaliges Tippen auf den Bildschirm an der gewünschten Stelle auf der Karte hinzugefügt oder gelöscht werden. Anschließend müssen Sie die Anweisungen aus dem Artikel *[Karten-Kontextmenü](../../map/map-context-menu.md#add--edit-marker)* befolgen.
+*Marker* können durch einmaliges Tippen auf den Bildschirm an der gewünschten Stelle auf der Karte hinzugefügt oder gelöscht werden. Anschließend müssen Sie die Anweisungen aus dem Artikel *[Karten Kontextmenü](../../map/map-context-menu.md#add--edit-marker)* befolgen.
 
 
 ### Gruppe von Favoriten hinzufügen {#add-group-of-favorite}
@@ -136,7 +136,7 @@ Nur Tracks mit Wegpunkten können zur *Kartenmarkerliste* hinzugefügt werden. D
 
 ![GPX to markers 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX to markers 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
 
-- Sie können auch *Marker* aus einem Track mit Wegpunkten über das *[Track-Kontextmenü](../../map/tracks/track-context-menu.md#waypoints-folder)* erstellen: *Tippen Sie auf einen sichtbaren Track auf der Karte → wählen Sie im Track-Kontextmenü Punkte → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
+- Sie können auch *Marker* aus einem Track mit Wegpunkten über das *[Track Kontextmenü](../../map/tracks/track-context-menu.md#waypoints-folder)* erstellen: *Tippen Sie auf einen sichtbaren Track auf der Karte → wählen Sie im Track Kontextmenü Punkte → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
 
 
 ## Marker sortieren {#sort-markers}
@@ -216,7 +216,7 @@ Mit der Funktionalität des Routenplanungs-Tools in der Markerliste können Sie 
 
 Ein *Marker* kann als passiert (*Android*) oder verworfen (*iOS*) markiert werden.
 
-- Über das *[Karten-Kontextmenü](../../map/map-context-menu.md#add--edit-marker)*.
+- Über das *[Karten Kontextmenü](../../map/map-context-menu.md#add--edit-marker)*.
 - Wenn Sie sich dem *Marker* auf eine Entfernung von weniger als 40 Metern (Android) oder 50 Metern (iOS) nähern, wird ein Schalter in der *[Marker-Widgets](../../widgets/markers.md#top-bar-widget)*-Leiste aktiv.
 
 Nachdem der *Marker* passiert wurde, gelangt er in den Ordner [Verlauf](../../personal/markers.md#history), von wo er bei Bedarf wiederhergestellt werden kann. Der nächste Marker in der [Liste](#itinerary-list) wird aktiv. Abhängig von Ihren [Einstellungen](#use-markers-in-navigation) werden Sie möglicherweise mit einem Pfeil oder einer gestrichelten Linie dorthin geführt.

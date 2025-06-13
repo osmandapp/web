@@ -11,9 +11,9 @@ Die Karte ist ein Kernelement von OsmAnd. In diesem Abschnitt des Benutzerhandbu
 
 Wie Sie mit der Karte über Schaltflächen und Gesten interagieren, um die Karte zu schwenken, zu drehen und zu vergrößern/verkleinern, wie Sie die Karte manuell oder automatisch per Kompass oder Peilung drehen und wie Sie den Zoomfaktor ändern.
 
-## [Karten-Kontextmenü](./map-context-menu.md) {#map-context-menu}
+## [Karten Kontextmenü](./map-context-menu.md) {#map-context-menu}
 
-Das Karten-Kontextmenü liefert Informationen zum ausgewählten Objekt auf der Karte und ermöglicht das Teilen, Bearbeiten, Verschieben oder Navigieren zu diesem Ort.
+Das Karten Kontextmenü liefert Informationen zum ausgewählten Objekt auf der Karte und ermöglicht das Teilen, Bearbeiten, Verschieben oder Navigieren zu diesem Ort.
 
 ## [Karte konfigurieren](./configure-map-menu.md) {#configure-map}
 
@@ -35,13 +35,13 @@ Auf der Karte können Sie Punkte wie Favoriten, POIs, Marker, Wikipedia, Sucherg
 
 Mit der Tracks-Funktion können Sie Routen erstellen und speichern, damit Sie später leicht zu ihnen zurückkehren oder sie mit anderen teilen können.
 
-### [Tracks-Kontextmenü](./tracks/track-context-menu.md) {#tracks-context-menu}
+### [Tracks Kontextmenü](./tracks/track-context-menu.md) {#tracks-context-menu}
 
-Das Tracks-Kontextmenü ist ein Menü mit Aktionen und Daten eines GPX-Tracks.
+Das Tracks Kontextmenü ist ein Menü mit Aktionen und Daten eines GPX-Tracks.
 
 ### [Track-Aussehen](./tracks/appearance.md) {#track-appearance}
 
-Das Tracks-Kontextmenü ist ein Menü mit Aktionen und Daten eines GPX-Tracks.
+Das Tracks Kontextmenü ist ein Menü mit Aktionen und Daten eines GPX-Tracks.
 
 ## [Routen](./routes.md) {#routes}
 

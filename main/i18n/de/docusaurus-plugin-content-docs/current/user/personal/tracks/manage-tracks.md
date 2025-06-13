@@ -491,7 +491,7 @@ Das Importwerkzeug ermöglicht Ihnen das Hinzufügen von Tracks aus externen Dat
 
 Es gibt mehrere Möglichkeiten, eine oder mehrere Track-Dateien in einen beliebigen Messenger, E-Mail, Dateimanager oder eine App zu exportieren.  
 
-1. Über das [*Track-Kontextmenü → Teilen*](../../map/tracks/track-context-menu.md#options).
+1. Über das [*Track Kontextmenü → Teilen*](../../map/tracks/track-context-menu.md#options).
 
 2. Über das Menü *Meine Orte → Tracks → Ordner-/Track-Menü*:
 
@@ -505,7 +505,7 @@ Es gibt mehrere Möglichkeiten, eine oder mehrere Track-Dateien in einen beliebi
 
 - [Track auf Karte anzeigen](../../map/tracks/index.md)
 - [Auf Karte analysieren](../../map/tracks/index.md#analyze-track-on-map)
-- [Track-Kontextmenü](../../map/tracks/track-context-menu.md)
+- [Track Kontextmenü](../../map/tracks/track-context-menu.md)
 - [Navigation nach Track](../../navigation/setup/gpx-navigation.md)
 - [Fahrt aufzeichnen](../../plugins/trip-recording.md)
 

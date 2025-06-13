@@ -313,7 +313,7 @@ Widgets in den rechten und linken Bereichen können in **Seiten** gruppiert werd
 
 ## Anpassung der Bereiche {#panels-customization}
 
-### Widget-Kontextmenü {#widget-context-menu}
+### Widget Kontextmenü {#widget-context-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -331,7 +331,7 @@ Widgets in den rechten und linken Bereichen können in **Seiten** gruppiert werd
 
 </Tabs>
 
-Das **Widget-Kontextmenü** bietet eine schnelle Möglichkeit, Widgets direkt vom Kartenbildschirm aus zu verwalten und zu konfigurieren. Sie können darauf zugreifen, indem Sie ein beliebiges Widget ***lange antippen***, um das Layout der Widgets anzupassen, ohne die Karte zu verlassen.
+Das **Widget Kontextmenü** bietet eine schnelle Möglichkeit, Widgets direkt vom Kartenbildschirm aus zu verwalten und zu konfigurieren. Sie können darauf zugreifen, indem Sie ein beliebiges Widget ***lange antippen***, um das Layout der Widgets anzupassen, ohne die Karte zu verlassen.
 
 **Für obere und untere Bereiche**  
 

@@ -46,7 +46,7 @@ Derzeit umfasst die kuratierte Datenbank weltweit etwa **50.000 bis 150.000 erst
 
 Es werden nur POIs mit einer verknüpften **Wikidata-ID** angezeigt. Diese IDs verbinden Kartenobjekte mit verifizierten Namen, Beschreibungen und Bildern.
 
-Sie können den Wikidata-Link direkt im [Karten-Kontextmenü](../map/map-context-menu.md) anzeigen. Durch Tippen auf das Wikidata-Tag wird die vollständige Objektseite auf der Wikidata-Website geöffnet.
+Sie können den Wikidata-Link direkt im [Karten Kontextmenü](../map/map-context-menu.md) anzeigen. Durch Tippen auf das Wikidata-Tag wird die vollständige Objektseite auf der Wikidata-Website geöffnet.
 
 Erfahren Sie, wie Sie eine Wikidata-ID finden: [Wikipedia: Eine Wikidata-ID finden](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
@@ -99,7 +99,7 @@ Der Abschnitt **<Translate android="true" ids="popular_places_nearby"/>** zeigt 
 
 Tippen Sie auf **Alle anzeigen**, um die vollständige Liste anzuzeigen, oder auf **Auf Karte anzeigen**, um alle aufgelisteten POIs auf der Karte anzuzeigen.
 
-Durch Tippen auf einen Ort wird das [POI-Kontextmenü](./map-context-menu.md) geöffnet, in dem Sie Fotos in der Vorschau anzeigen und auf verwandte [Wikipedia-Inhalte](../plugins/wikipedia.md) zugreifen können.
+Durch Tippen auf einen Ort wird das [POI Kontextmenü](./map-context-menu.md) geöffnet, in dem Sie Fotos in der Vorschau anzeigen und auf verwandte [Wikipedia-Inhalte](../plugins/wikipedia.md) zugreifen können.
 
 :::tip
 Der suchbasierte Erkunden-Modus funktioniert in der kostenlosen Version **nur online**.
@@ -144,7 +144,7 @@ Nach der Aktivierung stehen die folgenden Optionen zur Verfügung:
 
 - **<Translate android="true" ids="show_image_previews"/>** – Bildminiaturen von Wikidata neben POIs anzeigen.
 
-Durch Tippen auf einen POI auf der Karte wird das [POI-Kontextmenü](./map-context-menu.md) geöffnet, in dem Sie [Online-Fotos](#online-photos) anzeigen und auf verknüpfte [Wikipedia-Artikel](../plugins/wikipedia.md) zugreifen können.
+Durch Tippen auf einen POI auf der Karte wird das [POI Kontextmenü](./map-context-menu.md) geöffnet, in dem Sie [Online-Fotos](#online-photos) anzeigen und auf verknüpfte [Wikipedia-Artikel](../plugins/wikipedia.md) zugreifen können.
 
 
 ## Online-Fotos {#online-photos}
@@ -167,7 +167,7 @@ Durch Tippen auf einen POI auf der Karte wird das [POI-Kontextmenü](./map-conte
 
 *<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
-Dies ist ein Abschnitt im [POI-Kontextmenü](./map-context-menu.md), der eine Fotovorschau des ausgewählten Beliebten Ortes (Wikipedia) anzeigt. Sie können horizontal scrollen, um die verfügbaren Fotos zu durchsuchen, oder auf ein beliebiges Bild tippen, um es im [Vollbildmodus](#gallery) zu öffnen.
+Dies ist ein Abschnitt im [POI Kontextmenü](./map-context-menu.md), der eine Fotovorschau des ausgewählten Beliebten Ortes (Wikipedia) anzeigt. Sie können horizontal scrollen, um die verfügbaren Fotos zu durchsuchen, oder auf ein beliebiges Bild tippen, um es im [Vollbildmodus](#gallery) zu öffnen.
 
 Erfahren Sie mehr über zusätzliche Optionen in den Abschnitten [Aktionen](#actions) und [Galerie](#gallery).
 
@@ -185,7 +185,7 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 ### Aktionen {#actions}
 
-Im Karten-Kontextmenü So greifen Sie zu:
+Im Karten Kontextmenü So greifen Sie zu:
 
 - Tippen Sie auf die Schaltfläche **Alle anzeigen** (Android) / **Alle anzeigen** (iOS), um die [Galerie](#gallery) im Vollbildmodus zu öffnen, in der Sie durch alle verfügbaren Fotos für den ausgewählten Ort wischen können.
 
@@ -280,7 +280,7 @@ Der Bildschirm **Details** bietet vollständige Metadaten für das ausgewählte 
 
 ## Verwandte Artikel
 
-- [Karten-Kontextmenü](./map-context-menu.md)
+- [Karten Kontextmenü](./map-context-menu.md)
 - [Karte konfigurieren](./configure-map-menu.md)
 - [POI suchen](../search/search-poi.md)
 - [Wikipedia-Plugin](../plugins/wikipedia.md)

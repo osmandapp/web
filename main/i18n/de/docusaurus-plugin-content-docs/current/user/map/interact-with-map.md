@@ -49,7 +49,7 @@ Die Schaltfläche *Mein Standort* ist ein kreisförmiges Symbol, das anzeigt, ob
   - *Graues Symbol*. Der Standort wurde noch nicht gefunden.
   - *Pfeilsymbol*. Der 3D-Modus ist aktiviert.
 
-- **Langes Tippen** (*Android*) auf die Schaltfläche *Mein Standort* öffnet das [Karten-Kontextmenü](../map/map-context-menu.md), über das Sie Ihren Standort teilen können.
+- **Langes Tippen** (*Android*) auf die Schaltfläche *Mein Standort* öffnet das [Karten Kontextmenü](../map/map-context-menu.md), über das Sie Ihren Standort teilen können.
 
 <br/>
 
@@ -321,13 +321,13 @@ Sie können mehrere unnötige Aktionen gleichzeitig mit der **Bearbeiten-Schaltf
 
 ## Verwandte Artikel {#related-articles}
 
-- [Karten-Kontextmenü](./map-context-menu.md)
+- [Karten Kontextmenü](./map-context-menu.md)
 - [Karte konfigurieren](./configure-map-menu.md)
 - [Vektorkarten (Kartenstile)](./vector-maps.md)
 - [Rasterkarten (Online / Offline)](./raster-maps.md)
 - [Punkte auf der Karte](./point-layers-on-map.md)
 - [Tracks und Routen](./tracks/index.md)
-- [Tracks-Kontextmenü](./tracks/track-context-menu.md)
+- [Tracks Kontextmenü](./tracks/track-context-menu.md)
 - [Öffentlicher Nahverkehr](./public-transport.md)
 
 

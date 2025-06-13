@@ -90,7 +90,7 @@ Der Tag `<coloring_type>` in OsmAnd ermöglicht es Benutzern, die Track-Färbung
 
 ### GPX-Tags in der Benutzeroberfläche {#gpx-tags-in-ui}
 
-GPX-Erweiterungs-Tags werden am unteren Rand des Track-Kontextmenüs angezeigt.
+GPX-Erweiterungs-Tags werden am unteren Rand des Track Kontextmenüs angezeigt.
 Sowohl `<metadata>` als auch `<gpx>` `<extensions>` werden aufgelistet.
 Erscheinungs-Tags sind von der Auflistung ausgeschlossen.
 Unterstützt seit OsmAnd Android 5.0.

@@ -185,7 +185,7 @@ To generate navigation instructions:
 
 </Tabs>  
 
-Um eine Distanz zu messen oder eine Reise zu planen, fügen Sie nacheinander Punkte an der Position des *Zeigers* hinzu und tippen Sie auf die Schaltfläche *Punkt hinzufügen*. Durch Zugriff auf die **Punkteliste** unten können Sie Punkte neu anordnen, löschen oder auf ein bestimmtes [Punkt-Kontextmenü](#point-context-menu) zugreifen.
+Um eine Distanz zu messen oder eine Reise zu planen, fügen Sie nacheinander Punkte an der Position des *Zeigers* hinzu und tippen Sie auf die Schaltfläche *Punkt hinzufügen*. Durch Zugriff auf die **Punkteliste** unten können Sie Punkte neu anordnen, löschen oder auf ein bestimmtes [Punkt Kontextmenü](#point-context-menu) zugreifen.
 
 :::note
 Sie können auch jede Aktion, die Sie in der Routenplanung vorgenommen haben, **Rückgängig**/**Wiederherstellen**.
@@ -197,7 +197,7 @@ Hinzugefügte Punkte im Editor können als gerade Linie oder als Route zwischen 
 
 1. Aus dem Menü *Optionen* *→* *Route zwischen Punkten*.
 2. Tippen Sie auf das *Profilsymbol* in der unteren linken Ecke des Kartenbildschirms. Nicht auf das obere Symbol, das öffnet das Menü Karte konfigurieren.
-3. Im *[Punkt-Kontextmenü](#point-context-menu) → Routentyp vor/nach ändern*.  
+3. Im *[Punkt Kontextmenü](#point-context-menu) → Routentyp vor/nach ändern*.  
 
 <Tabs groupId="operating-systems">
 
@@ -219,7 +219,7 @@ Sie können die Route zwischen 2 bestimmten Punkten oder zwischen mehreren Punkt
 
 - *Gesamter Track*. Der gesamte Track wird mit dem ausgewählten Profil neu berechnet.
 - *Nächstes Segment*. Nur das nächste Segment wird mit dem ausgewählten Profil neu berechnet.  
-- *Routentyp vor/nach Punkt ändern*. Im *Punkt-Kontextmenü* können Sie die Art und Weise ändern, wie die Route für den Abschnitt von diesem Punkt zum nächsten oder zum Endpunkt berechnet wird. Die Einstellung liefert Informationen über die Entfernung von diesem Punkt zum Anfang oder Ende der Route oder zum nächsten/vorherigen Punkt.
+- *Routentyp vor/nach Punkt ändern*. Im *Punkt Kontextmenü* können Sie die Art und Weise ändern, wie die Route für den Abschnitt von diesem Punkt zum nächsten oder zum Endpunkt berechnet wird. Die Einstellung liefert Informationen über die Entfernung von diesem Punkt zum Anfang oder Ende der Route oder zum nächsten/vorherigen Punkt.
 - *Routen neu berechnen*. Sie können die Routenberechnung verwenden, ohne den Profiltyp zu ändern. Das auf der geplanten Route im Werkzeug angezeigte Profilsymbol ändert sich nicht, aber der Routentyp entspricht dem ausgewählten. Dies kann erforderlich sein, um alternative Routen zu finden.  
 
 ### Segmente {#segments}
@@ -227,9 +227,9 @@ Sie können die Route zwischen 2 bestimmten Punkten oder zwischen mehreren Punkt
 Ein Tracksegment ist eine Sammlung von Punkten, die ohne **Lücken** verbunden sind. Im Routenplanungswerkzeug ist es möglich:
 
 - Segmente zusammenzuführen: Die Option [Segmente verbinden](#point-context-menu) entfernt die Lücke zu zuvor getrennten Segmenten.
-- Neue, unverbundene Abschnitte eines Tracks zu teilen oder zu erstellen. Um einen zu erstellen, verwenden Sie die Option [Neues Segment starten](#point-context-menu) oder wählen Sie die Funktion [Teilen](#point-context-menu) aus dem Punkt-Kontextmenü.
+- Neue, unverbundene Abschnitte eines Tracks zu teilen oder zu erstellen. Um einen zu erstellen, verwenden Sie die Option [Neues Segment starten](#point-context-menu) oder wählen Sie die Funktion [Teilen](#point-context-menu) aus dem Punkt Kontextmenü.
 
-### Punkt-Kontextmenü {#point-context-menu}
+### Punkt Kontextmenü {#point-context-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -388,7 +388,7 @@ Beim Berechnen einer Route für die Navigation in *Route planen* können Sie zus
 
 - [Track auf Karte anzeigen](../map/tracks/index.md)
 - [Auf Karte analysieren](../map/tracks/index.md#analyze-track-on-map)
-- [Track-Kontextmenü](../map/tracks/track-context-menu.md)
+- [Track Kontextmenü](../map/tracks/track-context-menu.md)
 - [Navigation nach Track](../navigation/setup/gpx-navigation.md)
 - [Trip Recording](../plugins/trip-recording.md)
 

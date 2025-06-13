@@ -33,7 +33,7 @@ Die OsmAnd-Webkarte ist eine globale Karte, die auf [OpenStreetMap (OSM)](https:
 ![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
 
-## Karten-Kontextmenü {#map-context-menu}
+## Karten Kontextmenü {#map-context-menu}
 
 Zum Öffnen klicken Sie mit der rechten Maustaste auf eine beliebige Stelle auf der Karte. Dieses Menü enthält die folgenden Aktionen:
 

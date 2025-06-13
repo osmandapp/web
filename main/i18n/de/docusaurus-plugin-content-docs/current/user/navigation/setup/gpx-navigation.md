@@ -68,7 +68,7 @@ Bevor Sie die Option *Navigation nach Track* verwenden, müssen Sie den [Track a
 
 </Tabs>
 
-Die Navigation auf einem Track kann über die Schnellaktion im [Track-Kontextmenü](../../map/tracks/track-context-menu.md#quick-actions) (geöffnet durch Auswahl eines der [hervorgehobenen Tracks](./route-navigation.md#history-of-previous-routes) auf der Karte oder durch Tippen auf eine Track-Datei im Abschnitt [Meine Orte](../../personal/myplaces.md) des *Hauptmenüs*) oder über das Navigationsmenü gestartet werden, das durch Tippen aufgerufen wird:
+Die Navigation auf einem Track kann über die Schnellaktion im [Track Kontextmenü](../../map/tracks/track-context-menu.md#quick-actions) (geöffnet durch Auswahl eines der [hervorgehobenen Tracks](./route-navigation.md#history-of-previous-routes) auf der Karte oder durch Tippen auf eine Track-Datei im Abschnitt [Meine Orte](../../personal/myplaces.md) des *Hauptmenüs*) oder über das Navigationsmenü gestartet werden, das durch Tippen aufgerufen wird:
 
 - [*Navigationsschaltfläche*](../../widgets/map-buttons.md#directions) auf dem Kartenbildschirm.
 - *Navigationsbereich* im *Hauptmenü* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.

@@ -1,7 +1,7 @@
 ---
 source-hash: 7e2ccc0ea2e0d19c95b956a22f974da03bc1dcae580234c1cfcce8ededbdeb06
 sidebar_position: 4
-title:  Track-Kontextmenü
+title:  Track Kontextmenü
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,19 +19,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Überblick {#overview}
 
-Das *Track-Kontextmenü* bietet Informationen über den *[Track](../../personal/tracks/index.md)* sowohl in Text- als auch in [grafischer](#altitude--speed-graphs) Form. Es ermöglicht Ihnen, Informationen hinzuzufügen, Änderungen vorzunehmen, zu bearbeiten und verschiedene andere Aktionen mit dem Track durchzuführen. Sie können auf das *Track-Kontextmenü* zugreifen, indem Sie einfach auf den benötigten Track auf der Karte tippen oder das Menü *[Meine Orte](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*) verwenden. Möglicherweise müssen Sie den Track-Ordner öffnen und den gewünschten Track durch Antippen auswählen.
+Das *Track Kontextmenü* bietet Informationen über den *[Track](../../personal/tracks/index.md)* sowohl in Text- als auch in [grafischer](#altitude--speed-graphs) Form. Es ermöglicht Ihnen, Informationen hinzuzufügen, Änderungen vorzunehmen, zu bearbeiten und verschiedene andere Aktionen mit dem Track durchzuführen. Sie können auf das *Track Kontextmenü* zugreifen, indem Sie einfach auf den benötigten Track auf der Karte tippen oder das Menü *[Meine Orte](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*) verwenden. Möglicherweise müssen Sie den Track-Ordner öffnen und den gewünschten Track durch Antippen auswählen.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Übersicht Track-Kontextmenü Android](@site/static/img/personal/tracks/track_context_overview_andr_1.png)
+![Übersicht Track Kontextmenü Android](@site/static/img/personal/tracks/track_context_overview_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Übersicht Track-Kontextmenü iOS](@site/static/img/personal/tracks/track_context_overview_2_ios.png)
+![Übersicht Track Kontextmenü iOS](@site/static/img/personal/tracks/track_context_overview_2_ios.png)
 
 </TabItem>
 
@@ -40,7 +40,7 @@ Das *Track-Kontextmenü* bietet Informationen über den *[Track](../../personal/
 
 ## Track-Übersicht {#track-overview}
 
-Wenn Sie auf einen Track tippen, öffnet sich der erste Bildschirm des *Track-Kontextmenüs* - die Registerkarte *Übersicht*. Auf dieser Registerkarte finden Sie eine Zusammenfassung über den ausgewählten Track (*[Infopanel](#info-panel)*) und können die gängigsten Aktionen mit dem Track über das *[Track-Aktionsmenü](#track-actions)* ausführen. Sie können [Beschreibung und Serviceinformationen](#description-and-info) über Ihren Track sehen, wenn Sie die Registerkarte Übersicht nach oben ziehen.
+Wenn Sie auf einen Track tippen, öffnet sich der erste Bildschirm des *Track Kontextmenüs* - die Registerkarte *Übersicht*. Auf dieser Registerkarte finden Sie eine Zusammenfassung über den ausgewählten Track (*[Infopanel](#info-panel)*) und können die gängigsten Aktionen mit dem Track über das *[Track-Aktionsmenü](#track-actions)* ausführen. Sie können [Beschreibung und Serviceinformationen](#description-and-info) über Ihren Track sehen, wenn Sie die Registerkarte Übersicht nach oben ziehen.
 
 <!--
 You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map.
@@ -82,13 +82,13 @@ Falls Ihr Track in OsmAnd oder einer anderen Tracking-App erstellt wurde (so das
 
 <TabItem value="android" label="Android">
 
-![Track-Kontextmenü Übersicht Android 3](@site/static/img/personal/tracks/track_context_actions_andr.png)
+![Track Kontextmenü Übersicht Android 3](@site/static/img/personal/tracks/track_context_actions_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track-Kontextmenü Übersicht iOS 3](@site/static/img/personal/tracks/track_context_actions_ios.png)
+![Track Kontextmenü Übersicht iOS 3](@site/static/img/personal/tracks/track_context_actions_ios.png)
 
 </TabItem>
 
@@ -359,7 +359,7 @@ Die Offline-Funktion zur Höhenberechnung ist nur für [**OsmAnd Pro Abonnenten*
 Diese Funktion ermöglicht es Ihnen, das Höhenprofil für GPX-Tracks offline für jedes Gelände zwischen 70 Grad nördlicher Breite und 70 Grad südlicher Breite zu berechnen, basierend auf [Geländekartendaten](../../plugins/topography.md#download-maps). *Geländekarten (3D) sollten zuvor heruntergeladen werden*.
 
 1. Laden Sie [Geländekarten (3D)](../../plugins/topography.md#download-maps) für die benötigte Region herunter.
-2. Wenn der Track keine Höhendaten enthält, gehen Sie zum Track-Kontextmenü (*Track-Kontextmenü → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), wählen Sie *Geländekarten verwenden*, und nach der Berechnung erhalten Sie ein Track-Diagramm basierend auf den Geländedaten.
+2. Wenn der Track keine Höhendaten enthält, gehen Sie zum Track Kontextmenü (*Track Kontextmenü → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), wählen Sie *Geländekarten verwenden*, und nach der Berechnung erhalten Sie ein Track-Diagramm basierend auf den Geländedaten.
 
     ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->
 
@@ -400,12 +400,12 @@ Auf dieser Registerkarte *Punkte*:
 
 Wegpunkte können zum aktuell aufgezeichneten Track oder zu jedem Track aus der Liste [*Meine Orte → Tracks*](../../personal/tracks/manage-tracks.md) hinzugefügt werden:
 
-- Verwenden Sie das [Karten-Kontextmenü](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint).
+- Verwenden Sie das [Karten Kontextmenü](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint).
   - Wegpunkte werden automatisch angezeigt, wenn der ausgewählte Track auf der Karte aktiviert ist.
   - [Langes Tippen](../../map/map-context-menu.md#select-any-point-long-tap) auf die Karte an einer beliebigen ausgewählten Stelle, um einen Wegpunkt zu erstellen.
-  - Sie können Informationen über den Wegpunkt im geöffneten [Karten-Kontextmenü](../../map/map-context-menu.md#-add--edit-track-waypoint) festlegen.
+  - Sie können Informationen über den Wegpunkt im geöffneten [Karten Kontextmenü](../../map/map-context-menu.md#-add--edit-track-waypoint) festlegen.
 
-- Verwenden Sie die Schaltfläche [Wegpunkt hinzufügen](#points--waypoints) im Track-Kontextmenü.
+- Verwenden Sie die Schaltfläche [Wegpunkt hinzufügen](#points--waypoints) im Track Kontextmenü.
 
 - Fügen Sie einen Wegpunkt als [Schnellaktionsschaltfläche](../../widgets/quick-action.md#my-places) hinzu.
 
@@ -427,7 +427,7 @@ Wegpunkte können zum aktuell aufgezeichneten Track oder zu jedem Track aus der 
 
 </Tabs>
 
-Tippen Sie auf die Schaltfläche *Wegpunkt hinzufügen*, um den Bildschirm zur Wegpunkterstellung zu öffnen (dieser Bildschirm ist dem [Favoriten-Kontextmenü](../../personal/favorites.md#create) ähnlich).
+Tippen Sie auf die Schaltfläche *Wegpunkt hinzufügen*, um den Bildschirm zur Wegpunkterstellung zu öffnen (dieser Bildschirm ist dem [Favoriten Kontextmenü](../../personal/favorites.md#create) ähnlich).
 
 1. **Fügen Sie** *Name* des Wegpunkts, *Adresse* des ausgewählten Ortes und *Beschreibung* hinzu (optional).
 2. **Wählen Sie** Gruppe.
@@ -611,7 +611,7 @@ Um die Wegpunktbeschreibung zu ändern, können Sie einen der folgenden Wege geh
 2. Tippen Sie auf den Track auf der Karte, wenn er in der [Liste der sichtbaren](../tracks/index.md#display-tracks-on-the-map) enthalten ist.
 3. Tippen Sie auf den benötigten Wegpunkt, wenn er auf der Karte [sichtbar](../../personal/tracks/manage-tracks.md#track-menu) ist.
 
-    Dann tippen Sie im [Track-Kontextmenü](./track-context-menu.md) auf *Punkte*, das Feld des benötigten Ordners mit verfügbaren Wegpunkten und den gesuchten Wegpunkt. Wählen Sie das Menü *Aktionen →* **GPX-Wegpunkt bearbeiten** und nehmen Sie Änderungen vor. Sie können das Erstellungsdatum eines Punktes, den *Zeitstempel*, in der Anwendung nicht ändern.
+    Dann tippen Sie im [Track Kontextmenü](./track-context-menu.md) auf *Punkte*, das Feld des benötigten Ordners mit verfügbaren Wegpunkten und den gesuchten Wegpunkt. Wählen Sie das Menü *Aktionen →* **GPX-Wegpunkt bearbeiten** und nehmen Sie Änderungen vor. Sie können das Erstellungsdatum eines Punktes, den *Zeitstempel*, in der Anwendung nicht ändern.
 
 **Amenity-Tags**, die zusätzliche Informationen wie Öffnungszeiten oder Telefonnummern beschreiben, die spezifisch für den POI sind, übernehmen diese Informationen aus OpenStreetMap-Daten oder Daten, die Sie beim Erstellen des POI eingegeben haben. Sie können solche Tags und [benutzerdefinierte Tags](#display-custom-gpx-tags) nur im Code der GPX-Datei bearbeiten, die Sie mit einem beliebigen Texteditor auf Ihrem Gerät öffnen können.
 

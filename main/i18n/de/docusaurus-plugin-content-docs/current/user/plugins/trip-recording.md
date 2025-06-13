@@ -185,7 +185,7 @@ Für eine detailliertere Ansicht können Sie das **Diagramm skalieren**:
 | ![Daten](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
 :::info
-Für weitere Details können Sie das [**Track-Kontextmenü**](../map/tracks/track-context-menu.md#options) erkunden, in dem Sie verschiedene Track-bezogene Optionen wie Umbenennen, Löschen oder Hinzufügen von Wegpunkten verwalten können. Um anzupassen, wie Tracks auf der Karte angezeigt werden, besuchen Sie den Abschnitt [**Darstellung**](../map/tracks/appearance.md). Wenn Sie bestimmte Wegpunkte zu Ihrem aktuellen Track hinzufügen möchten, lesen Sie die Anleitung [**Track-Punkte**](../map/tracks/track-context-menu.md#waypoints-folder). Für alle Änderungen, wie z. B. das Umbenennen eines Tracks, verwenden Sie die Registerkarte [**Optionen**](https://osmand.net/docs/user/map/track-context-menu#options) im Track-Kontextmenü.
+Für weitere Details können Sie das [**Track Kontextmenü**](../map/tracks/track-context-menu.md#options) erkunden, in dem Sie verschiedene Track-bezogene Optionen wie Umbenennen, Löschen oder Hinzufügen von Wegpunkten verwalten können. Um anzupassen, wie Tracks auf der Karte angezeigt werden, besuchen Sie den Abschnitt [**Darstellung**](../map/tracks/appearance.md). Wenn Sie bestimmte Wegpunkte zu Ihrem aktuellen Track hinzufügen möchten, lesen Sie die Anleitung [**Track-Punkte**](../map/tracks/track-context-menu.md#waypoints-folder). Für alle Änderungen, wie z. B. das Umbenennen eines Tracks, verwenden Sie die Registerkarte [**Optionen**](https://osmand.net/docs/user/map/track-context-menu#options) im Track Kontextmenü.
 :::
 
 
@@ -454,10 +454,10 @@ Wenn Sie mehrere Widgets ausgewählt haben – *Dauer*, *Aufstieg* oder *Abstieg
 
 ## Verwandte Artikel {#related-articles}
 
-- [Karten-Kontextmenü](../map/map-context-menu.md)
+- [Karten Kontextmenü](../map/map-context-menu.md)
 - [Track auf Karte anzeigen](../map/tracks/index.md)
 - [Auf Karte analysieren](../map/tracks/index.md#analyze-track-on-map)
-- [Track-Kontextmenü](../map/tracks/track-context-menu.md)
+- [Track Kontextmenü](../map/tracks/track-context-menu.md)
 - [Navigation nach Track](../navigation/setup/gpx-navigation.md)
 
 ### Häufige Probleme und Lösungen {#common-issues-and-solutions}

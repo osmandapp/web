@@ -376,10 +376,10 @@ Verwenden Sie die Filterschaltfläche (oben rechts), um nur die gewünschten Rou
 
 ## Verwandte Artikel {#related-articles}
 
-- [Karten-Kontextmenü](./map-context-menu.md)
+- [Karten Kontextmenü](./map-context-menu.md)
 - [Karte konfigurieren](./configure-map-menu.md)
 - [Tracks](./tracks/index.md)
-- [Tracks-Kontextmenü](./tracks/track-context-menu.md)
+- [Tracks Kontextmenü](./tracks/track-context-menu.md)
 - [Öffentlicher Nahverkehr](./public-transport.md)
 - [Aussehen der Navigationsroutenlinie](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 

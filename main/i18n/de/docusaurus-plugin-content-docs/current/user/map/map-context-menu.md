@@ -1,7 +1,7 @@
 ---
 source-hash: 3f3b85046b389da6c840d6ec98c139f32b2f5116b6d2eb8c376445af5e4cf4bf
 sidebar_position: 3
-title: Karten-Kontextmenü
+title: Karten Kontextmenü
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Das Karten-Kontextmenü liefert Informationen über das ausgewählte Objekt auf der Karte. Sie können es auch verwenden, um eine Route zum ausgewählten Ort zu erstellen. Um das Kontextmenü zu öffnen, suchen Sie zuerst den gewünschten Ort auf der Karte und wählen Sie dann das Objekt mit einem kurzen Tippen oder einem langen Tippen aus, wenn Sie einen beliebigen genauen Punkt auf der Karte auswählen.
+Das Karten Kontextmenü liefert Informationen über das ausgewählte Objekt auf der Karte. Sie können es auch verwenden, um eine Route zum ausgewählten Ort zu erstellen. Um das Kontextmenü zu öffnen, suchen Sie zuerst den gewünschten Ort auf der Karte und wählen Sie dann das Objekt mit einem kurzen Tippen oder einem langen Tippen aus, wenn Sie einen beliebigen genauen Punkt auf der Karte auswählen.
 
 
 ### Objekt auswählen (einmal tippen) {#select-an-object-single-tap}
@@ -70,7 +70,7 @@ Ausgewählte Kartenobjekte entsprechen OpenStreetMap [**Knoten**](https://wiki.o
 
 Wenn Sie **lange auf eine beliebige Stelle** auf der Karte tippen, erscheint ein **Kontextmenü**, das Informationen über den ausgewählten Ort liefert. Dazu gehören die Adresse, die Entfernung und die Richtung von Ihrer aktuellen Position.
 
-> **HINWEIS**. *Langes Tippen auf eine **Hausnummer** hebt deren Umriss hervor und öffnet das Karten-Kontextmenü.*
+> **HINWEIS**. *Langes Tippen auf eine **Hausnummer** hebt deren Umriss hervor und öffnet das Karten Kontextmenü.*
 
 
 ### Route auswählen {#select-route}
@@ -91,7 +91,7 @@ Wenn Sie **lange auf eine beliebige Stelle** auf der Karte tippen, erscheint ein
 
 </Tabs>
 
-Durch Tippen auf einen [GPX-Track](../map/tracks/index.md) auf der Karte wird das [Track-Kontextmenü](../map/tracks/track-context-menu.md) geöffnet, in dem Sie auf zusätzliche Track-bezogene Optionen zugreifen können.
+Durch Tippen auf einen [GPX-Track](../map/tracks/index.md) auf der Karte wird das [Track Kontextmenü](../map/tracks/track-context-menu.md) geöffnet, in dem Sie auf zusätzliche Track-bezogene Optionen zugreifen können.
 
 
 ### Kontextmenü ausblenden {#hide-context-menu}
@@ -166,7 +166,7 @@ Zusätzlich kann das Panel [OpenStreetMap-Details](https://wiki.openstreetmap.or
 
 </Tabs>
 
-OsmAnd zeigt **zusätzliche POI-Namen** im *Karten-Kontextmenü* an, wobei der Name in der *Anzeigesprache* oder der bevorzugten Sprache des Systems priorisiert wird. Wenn mehrere Übersetzungen verfügbar sind, werden sie in kategorisierte Tags wie *Name, Marke, Betreiber* oder *POIs in der Nähe* gruppiert.
+OsmAnd zeigt **zusätzliche POI-Namen** im *Karten Kontextmenü* an, wobei der Name in der *Anzeigesprache* oder der bevorzugten Sprache des Systems priorisiert wird. Wenn mehrere Übersetzungen verfügbar sind, werden sie in kategorisierte Tags wie *Name, Marke, Betreiber* oder *POIs in der Nähe* gruppiert.
 
 Funktionen der Anzeige alternativer Namen:
 
@@ -213,7 +213,7 @@ Die Funktion **Polygon-Informationen** liefert detaillierte Daten zu nahe gelege
 
 - Das Panel ermöglicht es Benutzern, den **Namen und die Details des Polygons zu kopieren** zur Referenz.
 
-- Um diese Informationen anzuzeigen, gehen Sie zu *Karten-Kontextmenü → Details → Innerhalb*.
+- Um diese Informationen anzuzeigen, gehen Sie zu *Karten Kontextmenü → Details → Innerhalb*.
 
 Diese Funktion hilft Ihnen, Ihren *aktuellen Standort* in Bezug auf kartierte administrative Einheiten, natürliche Gebiete oder andere wichtige geografische Merkmale zu verstehen.
 
@@ -235,7 +235,7 @@ Der OsmAnd Web Link kann von OsmAnd automatisch erkannt werden (Beispiel: `https
 
 Diese Abschnitte zeigen nahe gelegene [Wikipedia-Artikel](../plugins/wikipedia.md) oder [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois) mit *<Translate android="true" ids="shared_string_show_on_map"/>* und *<Translate android="true" ids="search_more"/>* zum Anzeigen und [Suchen](../search/search-poi.md) aller anderen POIs & Wikipedia-Artikel.
 
-Tippen auf *POIs in der Nähe / Wikipedia-Artikel* öffnet eine Punkteliste (POIs oder Wikipedia). Ein Tippen auf einen dieser Punkte aus einer Punkteliste verschiebt die Karte zu diesem Punkt (POIs oder Wikipedia) mit dem Öffnen des Karten-Kontextmenüs des Punktes.
+Tippen auf *POIs in der Nähe / Wikipedia-Artikel* öffnet eine Punkteliste (POIs oder Wikipedia). Ein Tippen auf einen dieser Punkte aus einer Punkteliste verschiebt die Karte zu diesem Punkt (POIs oder Wikipedia) mit dem Öffnen des Karten Kontextmenüs des Punktes.
 
 > **HINWEIS**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) wird nur angezeigt, wenn Sie zuvor spezielle Karten mit [Wikipedia-Artikeln für dieses Gebiet](../plugins/wikipedia.md#download-wikipedia-packages-download-wikipedia-packages) heruntergeladen haben*.
 
@@ -344,7 +344,7 @@ Der OpenStreetMap-Link bietet einen direkten Link zum OpenStreetMap-Objekt, wo S
 
 </Tabs>
 
-Wenn Sie auf einen beliebten Ort auf der Karte tippen, zeigt der Abschnitt **Online-Fotos** im *POI-Kontextmenü* Bildvorschauen an, die von [Wikipedia](https://www.wikipedia.org/) und [Wikimedia Commons](https://www.wikimedia.org/) stammen.
+Wenn Sie auf einen beliebten Ort auf der Karte tippen, zeigt der Abschnitt **Online-Fotos** im *POI Kontextmenü* Bildvorschauen an, die von [Wikipedia](https://www.wikipedia.org/) und [Wikimedia Commons](https://www.wikimedia.org/) stammen.
 
 Durch Tippen auf ein Foto wird die **Galerie**-Ansicht geöffnet, in der Sie:
 
@@ -534,7 +534,7 @@ Verfügbare Optionen zum Teilen des Standorts:
 
 Um die Navigation oder Routenplanung zu starten, müssen Sie zuerst das Ziel mit [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions) auswählen. Falls Sie bereits ein Ziel haben, schlägt das Menü vor, den Zielpunkt zu ersetzen oder ihn als weiteren Zwischen- oder Startpunkt einzufügen.
 
-Es ist auch möglich, zuerst *Von* Ziel über das Karten-Kontextmenü (<Translate android="true" ids="context_menu_item_directions_from"/>) auszuwählen.
+Es ist auch möglich, zuerst *Von* Ziel über das Karten Kontextmenü (<Translate android="true" ids="context_menu_item_directions_from"/>) auszuwählen.
 
 Lesen Sie mehr über [Navigation hier](../navigation/setup/route-navigation.md).
 
@@ -584,7 +584,7 @@ Lesen Sie mehr über die [Suchfunktion](../search/index.md).
 
 </Tabs>
 
-Über das Karten-Kontextmenü können Sie eine bestimmte Straße zur Liste der für die Routenplanung nicht verwendeten Straßen hinzufügen. Dies wirkt sich auf die [Routenvorbereitung](../navigation/setup/route-navigation.md) aus.
+Über das Karten Kontextmenü können Sie eine bestimmte Straße zur Liste der für die Routenplanung nicht verwendeten Straßen hinzufügen. Dies wirkt sich auf die [Routenvorbereitung](../navigation/setup/route-navigation.md) aus.
 Um zuvor ausgewählte Straßen aus der *[Liste der zu vermeidenden Straßen](../navigation/routing/osmand-routing.md#avoid-roads-menu)* zu löschen, tippen Sie auf ein Zeichen, wählen Sie *Entfernen* (**Android**) oder *Verwerfen* (**iOS**).
 
 :::note
@@ -621,7 +621,7 @@ Fast jedes vom Benutzer erstellte Objekt ist verschiebbar, d. h. Markierung, Fav
 
 ![Aktion Route planen Android](@site/static/img/map/action_plan_route_android.png)
 
-Sie können die Routenplanung von einem ausgewählten Punkt aus über das Objekt-Kontextmenü starten.
+Sie können die Routenplanung von einem ausgewählten Punkt aus über das Objekt Kontextmenü starten.
 
 Lesen Sie mehr über das Werkzeug [Route planen](../plan-route/create-route.md).
 
@@ -736,10 +736,10 @@ Um Trackpunkte hinzuzufügen/zu bearbeiten, aktivieren Sie das OsmAnd [**Trip Re
 
 </Tabs>
 
-Sie können Wegpunkte zu einem aufgezeichneten Track oder zur aktuellen Trackaufzeichnung über das Karten-Kontextmenü hinzufügen.
+Sie können Wegpunkte zu einem aufgezeichneten Track oder zur aktuellen Trackaufzeichnung über das Karten Kontextmenü hinzufügen.
 
 - Wählen Sie einen Ort auf der Karte mit einem [langen Tippen](../map/map-context-menu.md#select-any-point-long-tap) aus.
-- Wählen Sie im geöffneten *Karten-Kontextmenü* *Aktionen → Track-Wegpunkt hinzufügen*.
+- Wählen Sie im geöffneten *Karten Kontextmenü* *Aktionen → Track-Wegpunkt hinzufügen*.
 - Die Liste zeigt die aufgezeichneten und auf der Karte angezeigten [Tracks](../map/tracks/index.md#display-tracks-on-the-map) sowie die [aktuelle Trackaufzeichnung](../plugins/trip-recording.md), zu der Sie den ausgewählten Wegpunkt hinzufügen können.
 - Sie können Wegpunkte zu einem Track hinzufügen, der noch nicht für die Aufzeichnung aktiv ist. In diesem Fall wechselt der inaktive Track vom *Startzustand* in den *Fortsetzen-Zustand*.
 - [Füllen Sie](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) die erforderlichen Daten aus und speichern Sie den Wegpunkt.
@@ -848,9 +848,9 @@ Nimmt eine Mediennotiz an einem ausgewählten Punkt auf der Karte auf.
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,context_menu_actions"/>*
 
-![Karten-Kontextmenü Anpassen](@site/static/img/map/map_context_menu_customize_1.png) <!-- ![Karten-Kontextmenü Anpassen](@site/static/img/map/map_context_menu_customize_2.png) --> ![Karten-Kontextmenü Anpassen](@site/static/img/map/map_context_menu_customize_3.png)
+![Karten Kontextmenü Anpassen](@site/static/img/map/map_context_menu_customize_1.png) <!-- ![Karten Kontextmenü Anpassen](@site/static/img/map/map_context_menu_customize_2.png) --> ![Karten Kontextmenü Anpassen](@site/static/img/map/map_context_menu_customize_3.png)
 
-Sie können die Reihenfolge ändern oder Elemente aus dem Menü *Aktionen* im *Karten-Kontextmenü* ausblenden. Insgesamt werden 16 Aktionen vorgeschlagen.
+Sie können die Reihenfolge ändern oder Elemente aus dem Menü *Aktionen* im *Karten Kontextmenü* ausblenden. Insgesamt werden 16 Aktionen vorgeschlagen.
 
 - Sie können die drei nützlichsten Aktionen an den Anfang der Liste *Hauptaktionen* verschieben.
 - Der Rest des Menüs kann für jedes Profil separat in den Abschnitten *Zusätzliche Aktionen* und *Ausgeblendet* angepasst werden.
@@ -867,7 +867,7 @@ Verfügbare Aktionstypen:
 - [Vektorkarten (Kartenstile)](./vector-maps.md)
 - [Rasterkarten (Online / Offline)](./raster-maps.md)
 - [Punkte auf der Karte](./point-layers-on-map.md)
-- [Track-Kontextmenü](./tracks/track-context-menu.md)
+- [Track Kontextmenü](./tracks/track-context-menu.md)
 - [Öffentlicher Nahverkehr](./public-transport.md)
 - [Import / Export](../personal/import-export.md)
 - [Farbpalettenschemata](../personal/color-palette-schemes.md)
