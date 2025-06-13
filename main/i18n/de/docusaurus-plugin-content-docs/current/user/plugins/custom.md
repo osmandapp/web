@@ -21,8 +21,8 @@ In der OsmAnd-Anwendung können Sie viele Anpassungen vornehmen und diese in ein
 
 - Alle [Profileinstellungen](../personal/profiles.md) mit einem neuen Profil.
 - Spezifischer Satz von Schnellaktionen und Menülayouts für *Drawer* und *Kontextmenü*.
-- Benutzerdefinierte Offline-Karte innerhalb des Plugins oder zum Herunterladen vorgeschlagen.
-- Spezifische Online-Routing-Typen und Online-Karten.
+- Benutzerdefinierte Offline Karte innerhalb des Plugins oder zum Herunterladen vorgeschlagen.
+- Spezifische Online-Routing-Typen und Online Karten.
 
 
 ## Wie man erstellt {#how-to-create}

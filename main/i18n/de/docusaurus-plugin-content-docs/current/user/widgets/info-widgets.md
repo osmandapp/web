@@ -734,7 +734,7 @@ Das [Karten-Rendering-FPS-Widget](../plugins/development.md#map-rendering-fps-wi
 
 </Tabs>
 
-Die **Kamera-Widgets** ermöglichen es Ihnen, die Ausrichtung zwischen der OsmAnd-Karte und der Erdoberfläche zu überwachen.
+Die **Kamera-Widgets** ermöglichen es Ihnen, die Ausrichtung zwischen der OsmAnd Karte und der Erdoberfläche zu überwachen.
 
 - [Kamera-Neigung](../plugins/development.md#camera-tilt). Zeigt den Neigungswinkel der Kamera im Perspektivmodus an. Der Standardwert ist 90° (keine Neigung).
 - [Kamera-Höhe](../plugins/development.md#camera-elevation). Zeigt die Höhe der Kamera über dem Bodenniveau an.

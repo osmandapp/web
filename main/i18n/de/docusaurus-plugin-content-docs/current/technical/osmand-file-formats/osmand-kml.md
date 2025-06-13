@@ -3,7 +3,7 @@ source-hash: b83a46b082181d9f4c5b16b74c868c131e880e2aad3256067a77098bd5c9ae01
 sidebar_position: 3
 ---
 
-# KML-Tracks - .kml, .km {#kml-tracks---kml-km}
+# KML Tracks - .kml, .km {#kml-tracks---kml-km}
 
 In GoogleEarth (GE) können Sie eigene Ortsmarken auf der Karte hinzufügen und in einem Ordner sammeln. Von GE aus können Sie den Ordner im KML-Format speichern. Wenn Sie ein anderes Format haben, können Sie QGIS oder andere Open-Source-Software verwenden, um es in das KML-Format zu konvertieren. Vielleicht können Sie es direkt in OSM konvertieren. Sie können jedes Format verwenden, das Ihre POIs enthält, wenn Sie es in das OSM-Format konvertieren können. Sie können KML [hier](https://kml2gpx.com/) in GPX formatieren.
 
@@ -46,4 +46,4 @@ Jetzt sind Sie bereit für den letzten Schritt. Die Konvertierung erfolgt mit Os
 - Wählen Sie das Arbeitsverzeichnis (Datei/Arbeitsverzeichnis festlegen...)
 - Laden Sie my_places.osm (Datei/osm-Datei auswählen...)
 
-Wenn alles richtig ist, finden Sie My\_places.obf in Ihrem Arbeitsverzeichnis. Laden Sie diese Datei einfach in den OsmAnd-Tracks-Ordner Ihres Geräts hoch.
+Wenn alles richtig ist, finden Sie My\_places.obf in Ihrem Arbeitsverzeichnis. Laden Sie diese Datei einfach in den OsmAnd Tracks-Ordner Ihres Geräts hoch.

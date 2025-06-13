@@ -74,10 +74,10 @@ Geländedateien (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>
 
 ### Routen {#routes}
 
-Visualisierungen mit Linienverläufen verwenden Palettendateien (`route_<type_name>_<palette_name>.txt`), um GPX-Tracks und Routen einzufärben:
+Visualisierungen mit Linienverläufen verwenden Palettendateien (`route_<type_name>_<palette_name>.txt`), um GPX Tracks und Routen einzufärben:
 
 - Für [Routen](../navigation/guidance/map-during-navigation.md#color): *Geschwindigkeit, Hangneigung* und *Höhe*.
-- Für [GPX-Tracks](../map/tracks/index.md#color): *Geschwindigkeit, Hangneigung* und *Höhe oder Informationen von externen Sensoren*.
+- Für [GPX Tracks](../map/tracks/index.md#color): *Geschwindigkeit, Hangneigung* und *Höhe oder Informationen von externen Sensoren*.
 
 ### Wetter {#weather}
 

@@ -57,7 +57,7 @@ Tabelle:
 
 ## Karten und Rendering {#maps-and-rendering}
 
-Offline-Karten und Updates:
+Offline Karten und Updates:
 
 - Herunterladbare regionale und Länderkarten
 - Monatliche Karten-Updates
@@ -65,7 +65,7 @@ Offline-Karten und Updates:
 
 Unterstützte Kartentypen:
 
-- Standard OpenStreetMap-Karte
+- Standard OpenStreetMap Karte
 - Satellitenkarten (online)
 - 3D-Reliefkarten
 - Höhenlinien (Topographie)
@@ -82,7 +82,7 @@ Tabelle:
 
 | Funktion | OsmAnd Free | OsmAnd+ (Maps+) | OsmAnd Pro |
 |---------|------------|----------------|------------|
-| Offline-Karten | ✔ | ✔ | ✔ |
+| Offline Karten | ✔ | ✔ | ✔ |
 | Monatliche Karten-Updates | ✔ | ✔ | ✔ |
 | Stündliche Updates (OsmAnd Live) | - | - | ✔ |
 | 3D-Relief | - | - | ✔ |

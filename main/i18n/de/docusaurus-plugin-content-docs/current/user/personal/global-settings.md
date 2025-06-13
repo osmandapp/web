@@ -147,9 +147,9 @@ Gehe zu: *Dateien → Auf meinem iPhone → OsmAnd Maps*
 | 3D-Modus | Es ist möglich, die Karte in 2D anzuzeigen, und Sie können den Blickwinkel ändern, um eine [3D-Ansicht](../widgets/map-buttons.md#3d-mode) zu erhalten. | Sie können die Karte in 2D und [3D](../widgets/map-buttons.md#3d-mode) anzeigen. |
 | Kartenanzeige | Die gesamte Karte wird als Satz von Kacheln gerendert, und Marker, Linien und Text sind bereits in diesen Kacheln enthalten. | Zuerst wird das gesamte Kachelpaket gerendert, und dann werden die verfügbaren Symbole auf die Karte angewendet, [Schicht für Schicht](../../technical/algorithms/map-rendering-layers.md). |
 | Transparente Symbolüberlagerung / -unterlagerung | Unterstützt alle Einstellungen. | Unterstützt keine Rasterebene über Vektortext. |
-| [3D-Gelände](../map/raster-maps.md#3d-relief) | Nicht unterstützt. | Diese Funktion visualisiert das Gelände auf der Karte, indem sie einer normalen 2D-Karte Höheninformationen hinzufügt, wodurch ein 3D- und Tiefeneffekt entsteht. |
-| [3D-Tracks](../map/tracks/appearance.md) | Nicht unterstützt. | Diese Funktion ermöglicht die Anzeige von Tracks nach Höhe über dem Meeresspiegel. |
-| [Online-Karte](../plugins/online-map.md) | Unterstützt die Anzeige von Höhenlinien nicht, wenn die Kartenquelle eine Online-Kachelkarte ist. | Wenn die Kartenquelle eine Online-Karte ist, werden auch 3D-Karten verwendet, und die Anzeige von Höhenlinien auf der Karte wird unterstützt. |
+| [3D-Gelände](../map/raster-maps.md#3d-relief) | Nicht unterstützt. | Diese Funktion visualisiert das Gelände auf der Karte, indem sie einer normalen 2D Karte Höheninformationen hinzufügt, wodurch ein 3D- und Tiefeneffekt entsteht. |
+| [3D Tracks](../map/tracks/appearance.md) | Nicht unterstützt. | Diese Funktion ermöglicht die Anzeige von Tracks nach Höhe über dem Meeresspiegel. |
+| [Online Karte](../plugins/online-map.md) | Unterstützt die Anzeige von Höhenlinien nicht, wenn die Kartenquelle eine Online-Kachelkarte ist. | Wenn die Kartenquelle eine Online Karte ist, werden auch 3D Karten verwendet, und die Anzeige von Höhenlinien auf der Karte wird unterstützt. |
 | [Wetter-Plugin](../plugins/weather.md) | Sie können dieses Plugin nicht verwenden. | Bequem mit dem Plugin zu verwenden. |
 
 Das Bild für die 3D-Ansicht der Karte wird Kachel für Kachel geladen, dann alle Symbole. Die Rendering-Geschwindigkeit der Karte hängt von der Anzahl der 2D- und 3D-Grafikobjekte darauf und direkt von der Leistung Ihrer Hardware ab. Daher kann Version 2 (OpenGL) auf leistungsschwachen Geräten nicht verwendet werden.
@@ -209,7 +209,7 @@ Daten über Ihren Standort oder die Orte, die Sie auf der Karte anzeigen, werden
 
 Für jede Installation der OsmAnd-Anwendung wird eine **UUID** (*Unique User Identifier*) generiert und beim Laden der Karte an die Server gesendet.
 
-- Eine zufällige UUID wird verwendet, um Offline-Karten von OsmAnd-Servern herunterzuladen, um die rationale Nutzung von Serverressourcen zu kontrollieren, die Verkehrsnutzung vorherzusagen und allgemeine monatliche Berichte über Karten-Downloads bereitzustellen.
+- Eine zufällige UUID wird verwendet, um Offline Karten von OsmAnd-Servern herunterzuladen, um die rationale Nutzung von Serverressourcen zu kontrollieren, die Verkehrsnutzung vorherzusagen und allgemeine monatliche Berichte über Karten-Downloads bereitzustellen.
 - Die UUID ändert sich alle 3 Monate.
 - Ab OsmAnd Version 4.3 können Sie die Sammlung von Benutzerdaten bei der Verwendung der OsmAnd-App deaktivieren. Dann wird die UUID bei keiner Download-Anfrage gesendet.
 - Weitere Informationen finden Sie in den [Nutzungsbedingungen (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier).
@@ -334,7 +334,7 @@ OsmAnd bietet Ihnen eine Auswahl an Diensten zur Bestimmung Ihres Standorts. Es 
 
 - Android oder OsmAnd Cloud können Ihre Daten und App Einstellungen speichern.
 
-- Standardmäßig werden Ihre *OsmAnd Einstellungen* und [*Favoriten*](../personal/favorites.md#automatic-favorites-backup)-Kartenmarker automatisch vom Android-System gesichert. Dadurch können Sie sie auf neuen Geräten oder nach der Neuinstallation der App wiederherstellen.
+- Standardmäßig werden Ihre *OsmAnd Einstellungen* und [*Favoriten*](../personal/favorites.md#automatic-favorites-backup) Kartenmarker automatisch vom Android-System gesichert. Dadurch können Sie sie auf neuen Geräten oder nach der Neuinstallation der App wiederherstellen.
 
 - Bitte beachten Sie, dass die Sicherungsgröße auf *25 MB* beschränkt ist.
 
@@ -386,7 +386,7 @@ Lesen Sie mehr über Warnungen vor Radarkameras auf Ihrer Route im Artikel Navig
 
 ### Fehlerbehebung {#troubleshooting}
 
-- **Android 12+ (Speicherordner ändern)**. In Android-Versionen 11-12 wurden neue Richtlinien für den Speicherzugriff implementiert. Diese Änderungen betreffen insbesondere die Speicherung von Karten auf SD-Karten, was zu einer deutlich langsameren Dateizugriffsleistung und strengeren Zugriffsbeschränkungen auf SD-Kartenordner unter Android 11 und 12 führt. Wie Sie dieses Problem lösen können, erfahren Sie im Abschnitt [**Fehlerbehebung**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
+- **Android 12+ (Speicherordner ändern)**. In Android-Versionen 11-12 wurden neue Richtlinien für den Speicherzugriff implementiert. Diese Änderungen betreffen insbesondere die Speicherung von Karten auf SD Karten, was zu einer deutlich langsameren Dateizugriffsleistung und strengeren Zugriffsbeschränkungen auf SD Kartenordner unter Android 11 und 12 führt. Wie Sie dieses Problem lösen können, erfahren Sie im Abschnitt [**Fehlerbehebung**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 
 - **Standortquelle für Höhenprobleme**. Google Play hat seine Richtlinien geändert, und um diese einzuhalten, muss OsmAnd ab Version 3.9 Google Play Services verwenden, um Standortkorrekturen zu erhalten, während es im Hintergrund läuft. Weitere Informationen finden Sie im Abschnitt [Fehlerbehebung](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).
 

@@ -37,7 +37,7 @@ Die folgenden Profile mit ihren Routing-Typen sind in OsmAnd voreingestellt: *Au
 | Kategorie | Beschreibung | Hinweis |
 |:------------|:---------------|:---------------|
 | *OsmAnd Offline-Routing*  | Der OsmAnd Offline-Routing-Mechanismus verwendet vorab heruntergeladene Karten als Datenquelle für die Routenberechnung. | Navigationstypen: [<Translate android="true" ids="app_mode_boat"/>](./boat-navigation.md), [<Translate android="true" ids="rendering_value_bicycle_name"/>](./bicycle-based-routing.md), [<Translate android="true" ids="rendering_value_car_name"/>](./car-based-routing.md),  [<Translate android="true" ids="horseback_riding"/>](./horse-routing.md), [Moped](./moped-routing.md), [Motorrad](./car-based-routing.md#route-parameters---motorcycle), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](./pedestrian-routing.md), [<Translate android="true" ids="app_mode_public_transport"/>](./public-transport-navigation.md), [<Translate android="true" ids="routing_profile_ski"/>](./ski-routing.md), [LKW](car-based-routing#route-parameters---truck), [Zug](./train-routing.md).            |
-| *Direkt zum Punkt Routing* | Verwendet ebenfalls Offline-Karten und bietet eine geradlinige Routenführung (oder *Punkt-zu-Punkt*-Navigation).  | Navigationstypen: *[Gerade Linie](./straight-line-routing.md)*,  *[Direkt zum Punkt](./direct-to-point-routing.md)*.  |
+| *Direkt zum Punkt Routing* | Verwendet ebenfalls Offline Karten und bietet eine geradlinige Routenführung (oder *Punkt-zu-Punkt*-Navigation).  | Navigationstypen: *[Gerade Linie](./straight-line-routing.md)*,  *[Direkt zum Punkt](./direct-to-point-routing.md)*.  |
 | [*BRouter* *(offline)*](./brouter.md)  | Offline-Routing, bereitgestellt von der [BRouter-App](https://brouter.de/).  | Nur für **Android** verfügbar. Die vollständige Beschreibung finden Sie [hier](./brouter.md).   |
 | [*<Translate android="true" ids="shared_string_online"/>* (*Android*)](./online-routing.md) | Online-Routing erstellt die Route online über Serverressourcen mit Internetverbindung. | Nur für **Android** verfügbar. Sie können [Online-Routing](./online-routing.md) konfigurieren, um eine Route von verschiedenen Online-Routing-Engines wie [Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), Generic GPX zu erstellen.  |
 
@@ -107,7 +107,7 @@ Gehe zu: *Navigations-Button → Einstellungen → Straßen meiden*
 
 In diesem Menü können Sie die vorherige Auswahl der zu meidenden Straße rückgängig machen. Tippen Sie dazu auf ein Kreuz (Android) oder ein rotes **"-"** gegenüber der Straße, die Sie für die Routenberechnung verwenden möchten.
 
-Mit der Option *Auf Karte auswählen* können Sie weiterhin Straßen auf der OsmAnd-Karte als ungültig für das Routing markieren.
+Mit der Option *Auf Karte auswählen* können Sie weiterhin Straßen auf der OsmAnd Karte als ungültig für das Routing markieren.
 
 Wenn Sie eine zu meidende Straße über das *Kartenkontextmenü* oder das *Menü "Straßen meiden"* auswählen, wird die Liste der Straßen über dem Kartenbildschirm angezeigt.
 

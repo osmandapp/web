@@ -100,12 +100,12 @@ In der Liste finden Sie Informationen zu den Preisen der OsmAnd-Produkte für di
 | [Offline- und Online-Navigation](../navigation/index.md)<br/>mit Abbiegehinweisen | ✔ | ✔ | ✔ |
 | [Offline-Sofortsuche](../search/index.md) | ✔ | ✔ | ✔ |
 | [Aufzeichnung von Fahrten](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [GPX-Tracks exportieren](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
-| [GPX/KML-Tracks importieren](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [GPX Tracks exportieren](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [GPX/KML Tracks importieren](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Routenplanungstool](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
 | [Kartenmarkierungstool](../personal/markers.md) | ✔ | ✔ | ✔ |
-| [Online-Kartenquellen](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Unterstützung von SQLitedb/mbtiles-Karten](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Online Kartenquellen](../plugins/online-map.md) | ✔ | ✔ | ✔ |
+| [Unterstützung von SQLitedb/mbtiles Karten](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
 | [Favoritenpunkte](../map/point-layers-on-map.md)<br/>Lesezeichen und Wegpunkte | ✔ | ✔ | ✔ |
 | [Audio-/Bild-/Video-Punkte](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -127,7 +127,7 @@ Derzeit umfasst das Pro-Abonnement die folgenden Funktionen:
 | [Plattformübergreifend](../personal/osmand-cloud.md#cross-platform) | Möglichkeit, OsmAnd Pro und OsmAnd Start auf allen Plattformen zu nutzen (Android ← → iOS → Web). |
 | [3D-Relief](../plugins/topography.md#3d-relief) | Ermöglicht Ihnen, ein maßstabsgetreues Modell Ihrer Umgebung oder eines ganzen Kontinents zu haben und zu beobachten. |
 | [Höhen-Widgets - Höhe: Kartenmittelpunkt](../widgets/info-widgets.md#elevation-map-center) | Ermöglicht Ihnen, die Höhe des aktuellen Kartenmittelpunkts über dem Meeresspiegel herauszufinden.  |
-| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd-Karten werden alle 15 Minuten nach Verbesserungen von [OpenStreetMap](https://www.openstreetmap.org/) aktualisiert. |
+| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd Karten werden alle 15 Minuten nach Verbesserungen von [OpenStreetMap](https://www.openstreetmap.org/) aktualisiert. |
 | [Wetter-Plugin](../plugins/weather.md) | 24-Stunden-Stundenprognose für 7 Tage im Voraus auf der Karte. |
 | [Routenlinie anpassen](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Ändern der Farbe und Breite der Routenlinie während der Navigation. |
 

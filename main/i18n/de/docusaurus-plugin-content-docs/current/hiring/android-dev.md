@@ -44,7 +44,7 @@ OsmAnd sucht einen leidenschaftlichen und enthusiastischen Open-Source-Softwaree
 - Professionelles und sehr freundliches Team, das immer bereit ist zu helfen und zu unterstützen
 
 ### Was wir anbieten {#what-do-we-offer}
-- Entwicklung der besten 3D-Offline-Kartenanwendung
+- Entwicklung der besten 3D-Offline Kartenanwendung
 - Wettbewerbsfähiges Gehalt, das Ihren Fähigkeiten und Ihrer Leistung entspricht
 - Flexible Arbeitszeiten
 - 15 Tage bezahlter Urlaub + 15 Tage auf eigene Kosten

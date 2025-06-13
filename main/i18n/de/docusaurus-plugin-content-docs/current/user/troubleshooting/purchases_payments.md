@@ -86,7 +86,7 @@ Um das [Topography-Plugin](https://play.google.com/store/apps/details?id=net.osm
 
 1. Melden Sie sich mit demselben Google Play-Konto an, das Sie zum Kauf des Topography-Plugins verwendet haben, und installieren Sie [die App](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid).
 2. Wenn die Schaltfläche *Installieren* inaktiv ist, stellen Sie sicher, dass sowohl die Google Play- als auch die OsmAnd-App auf dem neuesten Stand sind. Leeren Sie den Cache, starten Sie Ihr Gerät neu und versuchen Sie erneut, das Plugin zu installieren.
-3. Nach der Installation aktivieren Sie das Topography-Plugin im *[OsmAnd-Menü → Plugins](../plugins/topography.md)*, laden die benötigten Dateien unter *[Karten und Ressourcen](../start-with/download-maps.md#maps-and-resources)* herunter und aktivieren es über das *[Karten konfigurieren-Menü](../map/configure-map-menu.md)*.
+3. Nach der Installation aktivieren Sie das Topography-Plugin im *[OsmAnd Menü → Plugins](../plugins/topography.md)*, laden die benötigten Dateien unter *[Karten und Ressourcen](../start-with/download-maps.md#maps-and-resources)* herunter und aktivieren es über das *[Karten konfigurieren Menü](../map/configure-map-menu.md)*.
 
 
 ## So erkennen Sie, ob OsmAnd Unlimited aktiv ist {#how-to-identify-if-osmand-unlimited-is-active}

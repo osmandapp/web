@@ -68,14 +68,14 @@ Falls Sie eine einfache Punkt-zu-Punkt-Navigation benötigen, die als gerade Lin
 
 Hier sind einfache Empfehlungsschritte zur *Navigation nach Markern*:
 
-1. Marker erstellen. Suchen Sie das/die gewünschte(n) Objekt(e) auf der Karte, tippen Sie darauf und wählen Sie die *[Marker-Schaltfläche](../../personal/markers.md#add-marker-on-the-map)* im *[Karten Kontextmenü](../../map/map-context-menu.md#add--edit-marker)*. Sie können auch Marker aus [Favoriten](#add-group-of-favorite) oder [GPX-Tracks](#add-group-of-track-waypoints) erstellen.
+1. Marker erstellen. Suchen Sie das/die gewünschte(n) Objekt(e) auf der Karte, tippen Sie darauf und wählen Sie die *[Marker-Schaltfläche](../../personal/markers.md#add-marker-on-the-map)* im *[Karten Kontextmenü](../../map/map-context-menu.md#add--edit-marker)*. Sie können auch Marker aus [Favoriten](#add-group-of-favorite) oder [GPX Tracks](#add-group-of-track-waypoints) erstellen.
 2. [*Marker sortieren*](#sort-markers) in der bevorzugten Reihenfolge, in der Sie sie passieren möchten.
-3. Passen Sie die *Kartenmarker-Ansicht* an, wenn Sie Marker verwenden möchten, ohne die Navigation zu starten. Aktivieren Sie die Optionen **Pfeile auf der Karte** und **Richtungslinie** im Abschnitt *[Aussehen](../../personal/markers.md#appearance-on-the-map)* des *[Kartenmarker-Menüs](../../personal/markers.md#map-markers-menu)*.
-4. Fügen Sie *[Marker-Widgets](../../personal/markers.md#marker-widgets)* im *[Bildschirm konfigurieren-Menü](../../widgets/configure-screen.md)* hinzu (optional).
+3. Passen Sie die *Kartenmarker-Ansicht* an, wenn Sie Marker verwenden möchten, ohne die Navigation zu starten. Aktivieren Sie die Optionen **Pfeile auf der Karte** und **Richtungslinie** im Abschnitt *[Aussehen](../../personal/markers.md#appearance-on-the-map)* des *[Kartenmarker Menüs](../../personal/markers.md#map-markers-menu)*.
+4. Fügen Sie *[Marker-Widgets](../../personal/markers.md#marker-widgets)* im *[Bildschirm konfigurieren Menü](../../widgets/configure-screen.md)* hinzu (optional).
 5. [*Als passiert markieren*](#pass-markers) bereits besuchte Marker oder stellen Sie sie aus dem Verlauf wieder her, wenn Sie sie erneut passieren möchten.
 
 :::note
-Wenn die Optionen **Pfeile auf der Karte** und **Richtungslinie** im Abschnitt *Aussehen* des [Kartenmarker-Menüs](../../personal/markers.md#appearance-on-the-map) aktiviert sind, sehen Sie einen Pfeil oder eine gestrichelte Linie auf der Karte. Der Pfeil zeigt die Richtung zum aktiven Marker an, wenn dieser außerhalb des aktuellen Kartenbildschirms liegt. Eine Richtungslinie wird gezeichnet, wenn sich Ihre Geolocation und der Marker beide auf demselben Bildschirm befinden.
+Wenn die Optionen **Pfeile auf der Karte** und **Richtungslinie** im Abschnitt *Aussehen* des [Kartenmarker Menüs](../../personal/markers.md#appearance-on-the-map) aktiviert sind, sehen Sie einen Pfeil oder eine gestrichelte Linie auf der Karte. Der Pfeil zeigt die Richtung zum aktiven Marker an, wenn dieser außerhalb des aktuellen Kartenbildschirms liegt. Eine Richtungslinie wird gezeichnet, wenn sich Ihre Geolocation und der Marker beide auf demselben Bildschirm befinden.
 :::
 
 
@@ -114,9 +114,9 @@ Die Reiseroutenliste stellt eine geordnete Liste von *passierbaren* Markern dar,
 
 Sie können *Kartenmarker* aus *[Favoriten](../../personal/favorites.md)* erstellen, indem Sie Folgendes verwenden:
 
-- *[Favoritengruppen-Menü](../../personal/favorites.md#add-to-map-markers)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Meine Favoriten)*.
-- &#128681; Symbol im Favoriten-In-Page-Menü *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Meine Favoriten→&#128681;)*.
-- **'+'** (Hinzufügen) Option im *[Gruppen-Tab](../../personal/markers.md#groups)* im Kartenmarker-Menü *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
+- *[Favoritengruppen Menü](../../personal/favorites.md#add-to-map-markers)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Meine Favoriten)*.
+- &#128681; Symbol im Favoriten-In-Page Menü *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Meine Favoriten→&#128681;)*.
+- **'+'** (Hinzufügen) Option im *[Gruppen-Tab](../../personal/markers.md#groups)* im Kartenmarker Menü *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
 
 
 ### Gruppe von Track-Wegpunkten hinzufügen {#add-group-of-track-waypoints}
@@ -125,10 +125,10 @@ Sie können *Kartenmarker* aus *[Favoriten](../../personal/favorites.md)* erstel
 
 ![GPX to markers 1](@site/static/img/navigation/marker/track_to_markers_andr.png)
 
-GPX-Tracks mit Wegpunkten können als *Kartenmarker* verwendet und schnell ausgeschaltet werden:
+GPX Tracks mit Wegpunkten können als *Kartenmarker* verwendet und schnell ausgeschaltet werden:
 
-- Verwenden Sie die Option **'+'** (Hinzufügen) im *[Gruppen-Tab](../../personal/markers.md#groups)* im Kartenmarker-Menü *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
-- Schalten Sie den Schalter neben dem Track im *[Gruppen-Tab](../../personal/markers.md#groups)* im Kartenmarker-Menü ein *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Verwenden Sie die Option **'+'** (Hinzufügen) im *[Gruppen-Tab](../../personal/markers.md#groups)* im Kartenmarker Menü *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Schalten Sie den Schalter neben dem Track im *[Gruppen-Tab](../../personal/markers.md#groups)* im Kartenmarker Menü ein *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
 
 :::note
 Nur Tracks mit Wegpunkten können zur *Kartenmarkerliste* hinzugefügt werden. Der Track, den Sie hinzufügen möchten, sollte auch auf der Karte sichtbar (aktiv) sein.

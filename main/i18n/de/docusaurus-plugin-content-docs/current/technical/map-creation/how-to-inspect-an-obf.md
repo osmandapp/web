@@ -10,7 +10,7 @@ Wenn Sie den Inhalt einer obf-Datei inspizieren möchten, müssen Sie [OsmAndMap
 
 Beispiel und Schritt-für-Schritt für Windows-Benutzer:
 - Java Runtime Environment installiert haben
-- eine beliebige Osmand Offline-Karte von Ihrem Gerät auf Ihren PC herunterladen oder kopieren, diese obf-Datei idealerweise in den Ordner mit allen entpackten Mapcreator-Dateien legen
+- eine beliebige Osmand Offline Karte von Ihrem Gerät auf Ihren PC herunterladen oder kopieren, diese obf-Datei idealerweise in den Ordner mit allen entpackten Mapcreator-Dateien legen
 - Windows-Befehlszeile öffnen (z.B. durch Drücken der Windows-Taste und "r", dann cmd eingeben und Return drücken)
 - mit dem Befehl cd und Ordnername in den Ordner wechseln, in dem Sie den Osmand-Mapcreator entpackt haben
 - `dir` eingeben, um zu sehen, ob Sie sich im richtigen Ordner mit der Datei inspector.bat befinden

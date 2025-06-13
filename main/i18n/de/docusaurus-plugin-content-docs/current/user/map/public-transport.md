@@ -43,7 +43,7 @@ Wählen Sie 1 oder mehr Transportkategorien zur Anzeige:
 
 ## Verkehrsrouten (Kontextmenü) {#transport-routes-context-menu}
 
-![Öffentliche Verkehrsrouten-Menü Android](@site/static/img/map/pt_routemenu_android.png) ![Öffentliche Verkehrsrouten-Menü iOS](@site/static/img/map/pt_routemenu_ios.png)
+![Öffentliche Verkehrsrouten Menü Android](@site/static/img/map/pt_routemenu_android.png) ![Öffentliche Verkehrsrouten Menü iOS](@site/static/img/map/pt_routemenu_ios.png)
 
 Um das Verkehrsmenü zu öffnen, können Sie auf das Verkehrssymbol tippen. Es zeigt an:
 

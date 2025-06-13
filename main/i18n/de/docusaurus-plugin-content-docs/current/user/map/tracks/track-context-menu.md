@@ -107,13 +107,13 @@ Falls Ihr Track in OsmAnd oder einer anderen Tracking-App erstellt wurde (so das
 
 <TabItem value="android" label="Android">
 
-![Track-Menü Optionen Android](@site/static/img/personal/tracks/track_menu_options_android.png)
+![Track Menü Optionen Android](@site/static/img/personal/tracks/track_menu_options_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track-Menü Optionen Android](@site/static/img/personal/tracks/track_menu_options_ios.png)
+![Track Menü Optionen Android](@site/static/img/personal/tracks/track_menu_options_ios.png)
 
 </TabItem>
 
@@ -147,7 +147,7 @@ Das Menü **Optionen** ermöglicht Ihnen, den ausgewählten Track mit verschiede
 
 - **<Translate android="true" ids="shared_string_gps_filter"/>** (*nur Android*) - Ermöglicht das [Filtern von Punkten des Tracks](#gps-filter), um die Genauigkeit zu verbessern.
 - **<Translate android="true" ids="altitude_correction"/>** (*nur Android*) - Um [Höhendaten zu erhalten](#calculate-missing-elevation), [hängen Sie Ihren Track an Straßen an](../../navigation/setup/gpx-navigation.md#attach-to-the-roads) oder berechnen Sie ihn offline (benötigt [Geländekarten](../../plugins/topography.md#download-maps)).
-- **<Translate android="true" ids="simulate_your_location"/>** (*nur Android*) - [Simuliert Ihre Position](../../plugins/development.md#gpx-track-simulation) anhand eines GPX-Tracks.
+- **<Translate android="true" ids="simulate_your_location"/>** (*nur Android*) - [Simuliert Ihre Position](../../plugins/development.md#gpx-track-simulation) anhand eines GPX Tracks.
 
 <br/>
 
@@ -232,10 +232,10 @@ Dieser Abschnitt der Registerkarte *Übersicht* zeigt ***Tag Daten*** und ***all
 
 ![Track-Informationen Aktivität](@site/static/img/personal/tracks/track_info_activity_andr.png)
 
-Die Funktion *Aktivität* in OsmAnd ermöglicht es Ihnen, aufgezeichnete GPX-Tracks mit spezifischen Aktivitäten zu versehen, um sie in Ordnern weiter zu analysieren und zu organisieren.
+Die Funktion *Aktivität* in OsmAnd ermöglicht es Ihnen, aufgezeichnete GPX Tracks mit spezifischen Aktivitäten zu versehen, um sie in Ordnern weiter zu analysieren und zu organisieren.
 
-- [Aktivitäts-Tags für GPX-Tracks](../../plugins/trip-recording.md#recording-settings). Beim Aufzeichnen eines GPX-Tracks können Sie einen Aktivitätstyp zuweisen. Diese Aktivitätskennzeichnung hilft Ihnen, Tracks zunächst zu kategorisieren.
-- [Aktivitätsfilter](../../personal/tracks/smart-folder.md#search-filter). Sie können die aufgezeichneten GPX-Tracks nach Aktivität filtern, wodurch Sie sich auf die Suche nach bestimmten Arten von Aufzeichnungen konzentrieren können, z. B. alle Rad- oder Wandertracks.
+- [Aktivitäts-Tags für GPX Tracks](../../plugins/trip-recording.md#recording-settings). Beim Aufzeichnen eines GPX Tracks können Sie einen Aktivitätstyp zuweisen. Diese Aktivitätskennzeichnung hilft Ihnen, Tracks zunächst zu kategorisieren.
+- [Aktivitätsfilter](../../personal/tracks/smart-folder.md#search-filter). Sie können die aufgezeichneten GPX Tracks nach Aktivität filtern, wodurch Sie sich auf die Suche nach bestimmten Arten von Aufzeichnungen konzentrieren können, z. B. alle Rad- oder Wandertracks.
 - [Aktivitätstypen verwalten](../../personal/tracks/manage-tracks.md#selection-mode). Sie können den Aktivitätstyp für ausgewählte Ordner oder Tracks im Auswahlmodus auf der Registerkarte Tracks des Menüs Meine Orte ändern.
 - **Aktivitätsliste**. Die Aktivitätskategorien und -gruppen sind in den Ressourcen von OsmAnd definiert. Für Entwickler und Mitwirkende wird die Aktivitätsliste in einem strukturierten Format unter [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json) geführt, das die verfügbaren Aktivitätsgruppen und -typen detailliert beschreibt.
 
@@ -257,13 +257,13 @@ Interaktion mit dem Diagramm:
 
 <TabItem value="android" label="Android">
 
-![Kontext Track-Menü Diagramme Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Kontext Track Menü Diagramme Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kontext Track-Menü Diagramme iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Kontext Track Menü Diagramme iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
 
 </TabItem>
 
@@ -344,7 +344,7 @@ Das **Höhendiagramm** zeigt Metriken wie:
 **Höhendaten abrufen.**
 Wenn auf der Route *keine Höheninformationen* vorhanden sind, können Sie diese auf folgende Weise hinzufügen:
 
-- *Schaltfläche Höhe berechnen → [Nahe gelegene Straßen verwenden](../../plan-route/create-route.md#get-elevation-data)*. Verwendet eine Offline-Karte, um nahe gelegene Straßen und Höhendaten zu finden. Ermöglicht die Anpassung der Geometrie des Tracks.
+- *Schaltfläche Höhe berechnen → [Nahe gelegene Straßen verwenden](../../plan-route/create-route.md#get-elevation-data)*. Verwendet eine Offline Karte, um nahe gelegene Straßen und Höhendaten zu finden. Ermöglicht die Anpassung der Geometrie des Tracks.
 - [Geländekarten verwenden](#calculate-missing-elevation). Verwendet Geländekarten, um Höhendaten zu erhalten. Die Trackgeometrie bleibt unverändert.
 
 
@@ -356,7 +356,7 @@ Die Offline-Funktion zur Höhenberechnung ist nur für [**OsmAnd Pro Abonnenten*
 
 <InfoAndroidOnly />
 
-Diese Funktion ermöglicht es Ihnen, das Höhenprofil für GPX-Tracks offline für jedes Gelände zwischen 70 Grad nördlicher Breite und 70 Grad südlicher Breite zu berechnen, basierend auf [Geländekartendaten](../../plugins/topography.md#download-maps). *Geländekarten (3D) sollten zuvor heruntergeladen werden*.
+Diese Funktion ermöglicht es Ihnen, das Höhenprofil für GPX Tracks offline für jedes Gelände zwischen 70 Grad nördlicher Breite und 70 Grad südlicher Breite zu berechnen, basierend auf [Geländekartendaten](../../plugins/topography.md#download-maps). *Geländekarten (3D) sollten zuvor heruntergeladen werden*.
 
 1. Laden Sie [Geländekarten (3D)](../../plugins/topography.md#download-maps) für die benötigte Region herunter.
 2. Wenn der Track keine Höhendaten enthält, gehen Sie zum Track Kontextmenü (*Track Kontextmenü → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), wählen Sie *Geländekarten verwenden*, und nach der Berechnung erhalten Sie ein Track-Diagramm basierend auf den Geländedaten.
@@ -378,13 +378,13 @@ Wegpunkte sind eine der Arten von Punkten, die auf der Karte verfügbar sind. Im
 
 <TabItem value="android" label="Android">
 
-![Kontext Track-Menü Punkte Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Kontext Track Menü Punkte Android](@site/static/img/personal/tracks/track_context_points_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kontext Track-Menü Punkte iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Kontext Track Menü Punkte iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
 
 </TabItem>
 
@@ -451,19 +451,19 @@ Tippen Sie auf die Schaltfläche *Wegpunkt hinzufügen*, um den Bildschirm zur W
 
 <TabItem value="android" label="Android">
 
-![Track-Menü Gruppenmenü Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![Track Menü Gruppenmenü Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track-Menü Gruppenmenü iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Track Menü Gruppenmenü iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Das *Drei-Punkte-Menü* ( &#8285; ) öffnet das Wegpunkt-*Gruppenmenü*.
+Das *Drei-Punkte Menü* ( &#8285; ) öffnet das Wegpunkt-*Gruppenmenü*.
 
 **Aktionen:**
 
@@ -482,13 +482,13 @@ Das *Drei-Punkte-Menü* ( &#8285; ) öffnet das Wegpunkt-*Gruppenmenü*.
 
 <TabItem value="android" label="Android">
 
-![Track-Menü Gruppe Karte Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Track-Menü Gruppe Karte Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
+![Track Menü Gruppe Karte Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Track Menü Gruppe Karte Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track-Menü Gruppe Karte iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Track-Menü Gruppe Karte iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
+![Track Menü Gruppe Karte iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Track Menü Gruppe Karte iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
 
 </TabItem>
 
@@ -694,7 +694,7 @@ Die Liste der Aktionen ist am unteren Rand der Registerkarte **Filter** oder **S
 
 ## Verwandte Artikel {#related-articles}
 
-- [GPX-Tracks](../../personal/tracks/manage-tracks.md)
+- [GPX Tracks](../../personal/tracks/manage-tracks.md)
 - [Tracks auf der Karte](./track-context-menu.md)
 - [Navigation nach Track](../../navigation/setup/gpx-navigation.md)
 - [Route planen](../../plan-route/index.md)

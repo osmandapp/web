@@ -103,5 +103,5 @@ Um Ihre Punkte als Track zu speichern, tippen Sie auf die Schaltfläche *Zurück
 
 ![Koordinateneingabe Punkt speichern Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Koordinateneingabe Punkt speichern Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
 
-Im Pop-up-Menü können Sie einen eigenen Tracknamen eingeben oder ihn standardmäßig speichern. Tippen Sie auf <Translate android="true" ids="shared_string_save"/>, um die hinzugefügten Punkte als neuen Track zu speichern.
+Im Pop-up Menü können Sie einen eigenen Tracknamen eingeben oder ihn standardmäßig speichern. Tippen Sie auf <Translate android="true" ids="shared_string_save"/>, um die hinzugefügten Punkte als neuen Track zu speichern.
 Sie finden Ihren Track im Menü [Meine Orte](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).

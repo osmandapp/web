@@ -370,7 +370,7 @@ Aktive Schaltflächen im Dropdown-Systemmenü für Ihre Navigation:
 
 ### Benachrichtigungen konfigurieren {#configure-notifications}
 
-Sie können die Benachrichtigungseinstellungen für die OsmAnd-App in den Systemeinstellungen Ihres Geräts ändern. Benachrichtigungen können auf dem Sperrbildschirm, dem Startbildschirm, im Dropdown-Menü oder oben in der App angezeigt werden.
+Sie können die Benachrichtigungseinstellungen für die OsmAnd-App in den Systemeinstellungen Ihres Geräts ändern. Benachrichtigungen können auf dem Sperrbildschirm, dem Startbildschirm, im Dropdown Menü oder oben in der App angezeigt werden.
 
 Lesen Sie in diesem [Artikel](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications) nach, wie die Benachrichtigungssteuerung auf Android implementiert ist. Für iOS - [hier](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
 

@@ -28,7 +28,7 @@ Wir haben das [Diskussionsthema](https://github.com/osmandapp/OsmAnd/discussions
 
 ## Überblick {#overview}
 
-Die OsmAnd-Webkarte ist eine globale Karte, die auf [OpenStreetMap (OSM)](https://www.openstreetmap.org/) Daten basiert. Sie ermöglicht es Benutzern, ihre eigenen Daten wie Tracks und Favoriten anzuzeigen, Navigationsrouten für jedes Profil zu erstellen und auf zusätzliche Funktionen wie Wetter, öffentliche GPX-Tracks, POIs und Wikimedia-Bilder zuzugreifen. Erkunden und passen Sie Ihre Datenerfahrung direkt in Ihrem Browser an.
+Die OsmAnd-Webkarte ist eine globale Karte, die auf [OpenStreetMap (OSM)](https://www.openstreetmap.org/) Daten basiert. Sie ermöglicht es Benutzern, ihre eigenen Daten wie Tracks und Favoriten anzuzeigen, Navigationsrouten für jedes Profil zu erstellen und auf zusätzliche Funktionen wie Wetter, öffentliche GPX Tracks, POIs und Wikimedia-Bilder zuzugreifen. Erkunden und passen Sie Ihre Datenerfahrung direkt in Ihrem Browser an.
 
 ![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
@@ -108,7 +108,7 @@ Um dieses Menü zu öffnen, klicken Sie auf die Schaltfläche in der **oberen li
 
 - [POI-Overlay...](#poi-overlay-section). Ermöglicht die Auswahl und Anzeige der benötigten POI-Kategorien auf der Karte.
 - [Favoriten](#favorites-section). Schaltet die Anzeige von Favoriten auf der Karte um.
-- [Tracks](#tracks-section). Enthält GPX-Tracks, die auf der Karte sichtbar sind.
+- [Tracks](#tracks-section). Enthält GPX Tracks, die auf der Karte sichtbar sind.
 - [Gelände](#terrain-section). Aktiviert oder deaktiviert das Geländefarbschema auf der Karte.
 
 ![POIs menu](@site/static/img/web/configure_map_web.png)
@@ -132,7 +132,7 @@ Mit einem Klick können Sie Favoriten auf der Karte ein- oder ausschalten. Es we
 
 ### Tracks Bereich {#tracks-section}
 
-Dieser Bereich enthält eine Liste Ihrer [**auf der Karte sichtbaren GPX-Tracks**](../web/web-userdata.mdx#visible-on-the-map) und **kürzlich sichtbaren** Tracks.
+Dieser Bereich enthält eine Liste Ihrer [**auf der Karte sichtbaren GPX Tracks**](../web/web-userdata.mdx#visible-on-the-map) und **kürzlich sichtbaren** Tracks.
 
 - Sie können Tracks direkt ein- oder ausschalten.
 - Schalten Sie Tracks aus der Liste **Kürzlich sichtbar** ein oder aus.

@@ -19,7 +19,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 Vektorkarten sind als Standard Datenquelle für OsmAnd gedacht, daher **müssen Sie sie auf Ihr Gerät herunterladen**. Vektorkarten unterstützen eine riesige Anzahl von Kartenstilen für verschiedene Aktivitäten wie Radfahren, Wandern, Autofahren oder Schneemobilfahren und andere.
 
-Jeder Kartenstil kann angepasst werden, um bestimmte Objekte hervorzuheben oder auszublenden und zwischen Tag- und Nachtmodus zu wechseln. Vektorkartendaten können durch Vektordaten erweitert und im Standard-Kartenstil angezeigt werden, z. B. Informationen zu *Höhenlinien*. Sie können *Ihren eigenen OsmAnd-Kartenstil erstellen*, um die erforderlichen Informationen anzuzeigen.
+Jeder Kartenstil kann angepasst werden, um bestimmte Objekte hervorzuheben oder auszublenden und zwischen Tag- und Nachtmodus zu wechseln. Vektorkartendaten können durch Vektordaten erweitert und im Standard Kartenstil angezeigt werden, z. B. Informationen zu *Höhenlinien*. Sie können *Ihren eigenen OsmAnd Kartenstil erstellen*, um die erforderlichen Informationen anzuzeigen.
 
 
 ## Anwendungsfälle {#use-cases}
@@ -27,7 +27,7 @@ Jeder Kartenstil kann angepasst werden, um bestimmte Objekte hervorzuheben oder 
 Anpassbare Kartenstile sind einer der Hauptvorteile von OsmAnd. Sie können die Kartenanzeige an sich und Ihre Hobbys anpassen, die Anzeige oder das Ausblenden bestimmter Kartenobjekte, die Größen und Farben dieser Objekte sowie den Maßstab der Anzeige bestimmter Objekte ändern.
 
 
-## Standard-Kartenstile {#default-map-styles}
+## Standard Kartenstile {#default-map-styles}
 
 OsmAnd bietet Ihnen viele Kartenstile und Datenebenen, die standardmäßig passen. Dieser Abschnitt beschreibt die wichtigsten für Tag- und Nachtmodi.
 
@@ -40,7 +40,7 @@ OsmAnd bietet Ihnen viele Kartenstile und Datenebenen, die standardmäßig passe
 
 ![OsmAnd map style](@site/static/img/map/map-style-osmand-with-routes.png)
 
-Der Standard-Kartenstil von OsmAnd bietet ein ausgewogenes Verhältnis zwischen Detailreichtum und Einfachheit und ist somit ideal für die Erkundung von Städten und der Natur. Er zeigt städtische Merkmale wie Straßen, Gebäude und Haltestellen des öffentlichen Nahverkehrs detailliert an, während er visuelle Unordnung reduziert, indem er Karten klarer gestaltet.
+Der Standard Kartenstil von OsmAnd bietet ein ausgewogenes Verhältnis zwischen Detailreichtum und Einfachheit und ist somit ideal für die Erkundung von Städten und der Natur. Er zeigt städtische Merkmale wie Straßen, Gebäude und Haltestellen des öffentlichen Nahverkehrs detailliert an, während er visuelle Unordnung reduziert, indem er Karten klarer gestaltet.
 
 Zu den wichtigsten Vorteilen gehören Routenplanung, Oberflächenqualität, Zugangsbeschränkungen, Straßenbeschilderung, SAC-Skala-Pfad-Darstellungen, Sportanlagen und topografische Details wie Höhenlinien.
 
@@ -101,7 +101,7 @@ Entwickelt für Wüsten und andere dünn besiedelte Regionen, bietet detailliert
 
 ![Offroad map style](@site/static/img/map/map-style-offroad.png)
 
-Dieser Stil wurde für die Offroad-Navigation entwickelt, basiert auf dem [Topo](#topo)-Kartenlayout und funktioniert gut mit Satellitenbildern als Unterlage. Er zeichnet sich durch dünnere Hauptstraßen aus, um Pfade, Wege, Radwege und andere Offroad-Strecken hervorzuheben, was ihn ideal für die Erkundung unbefestigter Routen in ländlichen oder abgelegenen Gebieten macht.
+Dieser Stil wurde für die Offroad-Navigation entwickelt, basiert auf dem [Topo](#topo) Kartenlayout und funktioniert gut mit Satellitenbildern als Unterlage. Er zeichnet sich durch dünnere Hauptstraßen aus, um Pfade, Wege, Radwege und andere Offroad-Strecken hervorzuheben, was ihn ideal für die Erkundung unbefestigter Routen in ländlichen oder abgelegenen Gebieten macht.
 
 ### Schneemobil {#snowmobile}
 
@@ -112,9 +112,9 @@ Dieser Stil ist auf die Schneemobil-Navigation zugeschnitten und hebt schneemobi
 
 ## Kartenlegende {#map-legend}
 
-Die Kartenlegende dient als Schlüssel zum Verständnis der in OsmAnd-Karten verwendeten Symbole. Sie erklärt die Bedeutung verschiedener Kartensymbole, einschließlich Punkte, Linien und Flächen. Zum Beispiel zeigen blaue gewundene Linien Flüsse an, während verschiedene Farben und Formen Gebäude, Pfade und Routen darstellen können.
+Die Kartenlegende dient als Schlüssel zum Verständnis der in OsmAnd Karten verwendeten Symbole. Sie erklärt die Bedeutung verschiedener Kartensymbole, einschließlich Punkte, Linien und Flächen. Zum Beispiel zeigen blaue gewundene Linien Flüsse an, während verschiedene Farben und Formen Gebäude, Pfade und Routen darstellen können.
 
-Die Legende hilft Benutzern, das zu interpretieren, was sie auf der Karte sehen. Sie können die vollständige OsmAnd-Kartenlegende [hier](../map-legend/index.md) aufrufen.
+Die Legende hilft Benutzern, das zu interpretieren, was sie auf der Karte sehen. Sie können die vollständige OsmAnd Kartenlegende [hier](../map-legend/index.md) aufrufen.
 
 
 ## Karten-Schriftarten (Android) {#map-fonts-android}
@@ -546,7 +546,7 @@ Diese Einstellung hilft, die Vergrößerung der Karte zu ändern. Sie ist für R
 
 ### Kartensprache {#map-language}
 
-Die Option **Kartensprache** konfiguriert die Schreibweise von Namen auf der OsmAnd-Karte für die Zoomstufen 7-20, einschließlich. Für die Zoomstufen 2-6 werden die Namen in der Sprache angezeigt, die für OsmAnd im Menü der Systemeinstellungen festgelegt ist (siehe Abschnitt *[Wie ändere ich die Anwendungssprache](../start-with/first-steps.md#how-to-change-app-language)*).
+Die Option **Kartensprache** konfiguriert die Schreibweise von Namen auf der OsmAnd Karte für die Zoomstufen 7-20, einschließlich. Für die Zoomstufen 2-6 werden die Namen in der Sprache angezeigt, die für OsmAnd im Menü der Systemeinstellungen festgelegt ist (siehe Abschnitt *[Wie ändere ich die Anwendungssprache](../start-with/first-steps.md#how-to-change-app-language)*).
 
 Wenn die Namen auf der Karte von der OSM-Community nicht in die gewünschte Sprache übersetzt wurden, können Sie [transliterierte Namen](https://en.wikipedia.org/wiki/Transliteration) verwenden: *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) oder *<Translate ios="true" ids="translit_names"/>* (iOS) Schalter.
 

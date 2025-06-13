@@ -89,7 +89,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 Alle jemals aufgezeichneten, erstellten oder importierten Tracks werden automatisch im Ordner [Meine Orte](../../personal/myplaces.md) im Tab *Tracks* angezeigt. Sie sind nach Ordnern organisiert oder werden in einer Liste darunter angezeigt.
 
 
-### Track-Menü {#track-menu}
+### Track Menü {#track-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -113,7 +113,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 Jeder Track, wie auch Ordner, hat ein Menü, mit dem Sie Tracks effizient verwalten können. So greifen Sie darauf zu:
 
-- *Android* - Tippen Sie auf das *Drei-Punkte-Menü* im Track-Feld.
+- *Android* - Tippen Sie auf das *Drei-Punkte Menü* im Track-Feld.
 - *iOS* - Tippen Sie lange auf den gewünschten Track in der Liste.
 
 Das Menü bietet folgende Aktionen:
@@ -269,7 +269,7 @@ OsmAnd bietet eine einfache Möglichkeit, Ihre Tracks zu sortieren, um Ihnen bei
 
 </Tabs>
 
-Wenn Sie [Unterordner](#folder-actions) sortieren möchten, gehen Sie zum Drei-Punkte-Menü im ausgewählten Ordner und wählen Sie die gewünschten [Optionen](#sort-by) aus.  
+Wenn Sie [Unterordner](#folder-actions) sortieren möchten, gehen Sie zum Drei-Punkte Menü im ausgewählten Ordner und wählen Sie die gewünschten [Optionen](#sort-by) aus.  
 
 Die ausgewählte Sortieroption wird nicht nur auf den aktuellen Unterordner angewendet, sondern auch auf alle verschachtelten Ordner und Tracks auf allen Ebenen. Dies gewährleistet eine konsistente Struktur Ihrer gespeicherten Daten.
 
@@ -292,11 +292,11 @@ Die ausgewählte Sortieroption wird nicht nur auf den aktuellen Unterordner ange
 
 </Tabs>
 
-Das Track-Ordner-Menü ermöglicht Ihnen das Anzeigen, Umbenennen, Exportieren und Verwalten von Ordnern.
+Das Track-Ordner Menü ermöglicht Ihnen das Anzeigen, Umbenennen, Exportieren und Verwalten von Ordnern.
 
-So öffnen Sie das Ordner-Menü:
+So öffnen Sie das Ordner Menü:
 
-- *Android* - Tippen Sie auf das *Drei-Punkte-Menü* im Ordner-Feld.
+- *Android* - Tippen Sie auf das *Drei-Punkte Menü* im Ordner-Feld.
 - *iOS* - Tippen Sie lange auf das Ordner-Feld.
 
 ***Aktionen mit einem Ordner:***
@@ -383,9 +383,9 @@ So öffnen Sie Ordneraktionen:
 
 - Öffnen Sie den Tab Tracks in Meine Orte.
 - Navigieren Sie zu dem Ordner, den Sie verwalten möchten.
-- Tippen Sie auf das *Drei-Punkte-Menü* in der oberen rechten Ecke, um das Menü der Ordneraktionen zu öffnen.
+- Tippen Sie auf das *Drei-Punkte Menü* in der oberen rechten Ecke, um das Menü der Ordneraktionen zu öffnen.
 
-***Aktionen im Ordner-Menü:***
+***Aktionen im Ordner Menü:***
 
 - [Auswählen](#selection-mode) – Tippen Sie auf die gewünschten Ordner und Tracks, um Aktionen aus dem Menü im *Auswahlmodus* anzuwenden.
 
@@ -422,7 +422,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 Sie können einen Ordner mit allen darin enthaltenen Tracks löschen. Gehen Sie dazu wie folgt vor:
 
-- Tippen Sie auf das *Drei-Punkte-Menü* im zu löschenden Ordnerfeld.
+- Tippen Sie auf das *Drei-Punkte Menü* im zu löschenden Ordnerfeld.
 - Am Ende des Menüs finden Sie die Option **Ordner löschen**.
 - ***HINWEIS: Diese Aktion ist irreversibel.***
 
@@ -493,12 +493,12 @@ Es gibt mehrere Möglichkeiten, eine oder mehrere Track-Dateien in einen beliebi
 
 1. Über das [*Track Kontextmenü → Teilen*](../../map/tracks/track-context-menu.md#options).
 
-2. Über das Menü *Meine Orte → Tracks → Ordner-/Track-Menü*:
+2. Über das Menü *Meine Orte → Tracks → Ordner-/Track Menü*:
 
     - Um [**einen einzelnen Track zu exportieren**](#track-menu), wählen Sie das Menü des Tracks aus.
     - Um [**mehrere Tracks zu exportieren**](#track-folder), wählen Sie das Menü des gewünschten Ordners aus.
 
-3. Über die [Lokale Sicherungsdatei](../../personal/import-export.md#export-to-file). Exportieren von GPX-Tracks als `.osf`-Dateien.
+3. Über die [Lokale Sicherungsdatei](../../personal/import-export.md#export-to-file). Exportieren von GPX Tracks als `.osf`-Dateien.
 
 
 ## Verwandte Artikel {#related-articles}

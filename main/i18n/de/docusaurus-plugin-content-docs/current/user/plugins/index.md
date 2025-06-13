@@ -71,13 +71,13 @@ OsmAnd-Plugins können diese Funktionsgruppen erweitern: **Ebenen**, **Widgets**
 | Plugin-Name | Funktionen |
 |:------------|:-------|
 | [Wikipedia](#wikipedia) | [Kartenebene](../plugins/wikipedia.md#download-wikipedia-packages), [Kontextmenü](../plugins/wikipedia.md#wikipedia-languages) |
-| [Online-Karten](#online-maps) |[Kartenebene](../plugins/online-map.md#configure-map-source) |
+| [Online Karten](#online-maps) |[Kartenebene](../plugins/online-map.md#configure-map-source) |
 | [Reiseaufzeichnung](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profil](../plugins/trip-recording.md#profile-settings) |
 | [Topographie](#topography) | [Kartenebene](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
 | [3D-Relief](#topography) 🤖  | [Kartenebene](../plugins/topography.md#3d-relief) |
 | [Wetter](../plugins/weather.md) | [Kartenebene](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Bildschirm](../plugins/weather.md#configure-screen) |
 | [Nautische Kartenansicht](#nautical-map-view) | [Kartenstil](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-options)  |
-| [Ski-Kartenansicht](#ski-map-view) | [Kartenstil](../plugins/ski-maps.md#set-winter-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
+| [Ski Kartenansicht](#ski-map-view) | [Kartenstil](../plugins/ski-maps.md#set-winter-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
 |[Audio-/Video-Notizen](#audiovideo-notes) 🤖  | [Kartenebene](../plugins/audio-video-notes.md#show-all-on-the-map), [Kontextmenü](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
 |[OpenStreetMap-Bearbeitung](#openstreetmap-editing)| [Kartenebene](../plugins/osm-editing.md#how-to-use) |
 |[Parkposition](#parking-position) | [Kontextmenü](../plugins/parking.md#set-a-point), [Widget](../plugins/parking.md#parking-widget) |
@@ -145,9 +145,9 @@ Die folgenden Plugins bieten eigene Einstellungen:
 
 Wikipedia auf Ihrer Reise hilft Ihnen, mehr über die Orte zu erfahren, die Sie besuchen. Es ist offline verfügbar und zeigt Wikipedia-Artikel zu den Sehenswürdigkeiten direkt auf der Karte an.
 
-### [Online-Karten](./online-map.md) {#online-maps}
+### [Online Karten](./online-map.md) {#online-maps}
 
-OsmAnd Online-Karten sind eine umfangreiche Ergänzung zur bereits in der Anwendung vorhandenen OpenStreetMap Datenbank. Mit diesem Plugin können Sie Ihrer Karte Ebenen mit Informationen aus verschiedenen Quellen hinzufügen.
+OsmAnd Online Karten sind eine umfangreiche Ergänzung zur bereits in der Anwendung vorhandenen OpenStreetMap Datenbank. Mit diesem Plugin können Sie Ihrer Karte Ebenen mit Informationen aus verschiedenen Quellen hinzufügen.
 
 ### [Reiseaufzeichnung](./trip-recording.md) {#trip-recording}
 
@@ -161,9 +161,9 @@ Topographische Informationen, wie Höhenlinien, Schattierung, Neigung, 3D-Relief
 
 Die nautische Kartenansicht bietet eine detaillierte grafische Darstellung von Ozeanen, Meeren, Küstengebieten und Flüssen, um Ihnen bei der Navigation auf dem Wasser zu helfen, beliebte Verkehrsrouten, Hindernisse im Wasserweg, Häfen, Ankerplätze und andere wichtige Referenzen anzuzeigen.
 
-### [Ski-Kartenansicht](./ski-maps.md) {#ski-map-view}
+### [Ski Kartenansicht](./ski-maps.md) {#ski-map-view}
 
-Die Ski-Kartenansicht zeigt Winterfarben und Pisten für Abfahrt oder Langlauf sowie Seilbahnen, Sessellifte, Einrichtungen und Dienstleistungen in der Nähe, was für die Navigation an Zielen wie Erholungsgebieten, Skigebieten und Geländeparks nützlich ist.
+Die Ski Kartenansicht zeigt Winterfarben und Pisten für Abfahrt oder Langlauf sowie Seilbahnen, Sessellifte, Einrichtungen und Dienstleistungen in der Nähe, was für die Navigation an Zielen wie Erholungsgebieten, Skigebieten und Geländeparks nützlich ist.
 
 ### [Audio-/Video-Notizen](./audio-video-notes.md) {#audiovideo-notes}
 

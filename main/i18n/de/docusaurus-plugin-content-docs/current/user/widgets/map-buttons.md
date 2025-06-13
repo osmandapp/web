@@ -184,7 +184,7 @@ Das [Schnellaktions-Widget](./quick-action.md) ist eine konfigurierbare Schaltfl
 Einstellungen für das Aussehen der Karten-Schaltfläche sind über die folgenden Menüs verfügbar:
 
 - *Menü → Bildschirm konfigurieren → Schaltflächen → Standardschaltflächen*
-- *Menü → Bildschirm konfigurieren → Benutzerdefinierte Schaltflächen → Schnellaktion → Drei-Punkte-Menü → Aussehen*
+- *Menü → Bildschirm konfigurieren → Benutzerdefinierte Schaltflächen → Schnellaktion → Drei-Punkte Menü → Aussehen*
 
 Durch Anpassen des Aussehens von Schaltflächen können Sie Größe, Form, Symbol und Hintergrundtransparenz sowohl für [Schnellaktion (Benutzerdefinierte Schaltflächen)](../widgets/quick-action.md#button-appearance) als auch für [Standardschaltflächen](../widgets/configure-screen.md#button-appearance) anpassen. Diese Flexibilität ermöglicht es Ihnen, die Benutzeroberfläche an Ihre Vorlieben anzupassen und die Benutzerfreundlichkeit zu verbessern.
 

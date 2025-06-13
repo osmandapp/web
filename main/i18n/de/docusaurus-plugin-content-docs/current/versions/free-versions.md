@@ -156,7 +156,7 @@ Veröffentlichungsdatum 03/2023:
 - Diagramm "Geschwindigkeit/Steigung" zur Track-Analyse hinzugefügt
 - App-Sprachauswahl auf Android 13 in die Systemeinstellungen verschoben
 - Probleme mit der Anzeige von veganen Orten behoben
-- Möglichkeit zum Herunterladen von Online-Kacheln hinzugefügt, die als "Overlay"- oder "Underlay"-Karten verwendet werden
+- Möglichkeit zum Herunterladen von Online-Kacheln hinzugefügt, die als "Overlay"- oder "Underlay" Karten verwendet werden
 - Unterstützung imperialer Maßeinheiten für "Fahrzeugparameter" hinzugefügt
 - Neues Moped-Profil
 - "Position anzeigen" hat neue Option "Automatisch" hinzugefügt
@@ -189,7 +189,7 @@ Veröffentlichungsdatum: 06/2022
 - Widget-Redesign: Neues Aussehen, Gruppierung nach Seiten, Ändern der Reihenfolge und Kombinieren nach Belieben.
 - Wander-/Rad-/Reiserouten: Tippen Sie auf das Routensymbol und erhalten Sie vollständige Informationen über die Route.
 - Favoritengruppen: Standardaussehen für neue Punkte in der Gruppe festlegen
-- Fehlerbehebungen: Automatische Aktualisierung von Online-Kartenkacheln
+- Fehlerbehebungen: Automatische Aktualisierung von Online Kartenkacheln
 
 <DownloadRelease blog="osmand-android-4-2-released" release="net.osmand-4.2.7.apk" />
 
@@ -199,7 +199,7 @@ Veröffentlichungsdatum: 12/2021
 
 - Erste Unterstützung für Android Auto hinzugefügt
 - Aktualisierung der Benutzeroberfläche für die UTM-Koordinatensuche
-- GPS-Filter für GPX-Tracks
+- GPS-Filter für GPX Tracks
 - Höhen-Widget (Pro)
 - Favoriten: Möglichkeit hinzugefügt, zuletzt verwendete Symbole anzuzeigen
 - Routenplanung: Verwendet das ausgewählte Profil nach dem Start
@@ -301,7 +301,7 @@ Veröffentlichungsdatum 02/2020:
 - Home-/Arbeitssymbole auf der Karte hinzugefügt
 - Unterstützung für mehrzeilige Beschreibungen in den Einstellungen hinzugefügt
 - Korrekte Transliteration in die Karte von Japan hinzugefügt
-- Antarktis-Karte hinzugefügt
+- Antarktis Karte hinzugefügt
 
 <DownloadRelease blog="osmand-3-6" release="net.osmand-3.6.3.apk" />
 
@@ -391,7 +391,7 @@ Veröffentlichungsdatum 08/2018:
 
 Veröffentlichungsdatum: 05/2018
   
-- Neues Reise-Menü: WikiVoyage-Artikel ohne Internetverbindung anzeigen
+- Neues Reise Menü: WikiVoyage-Artikel ohne Internetverbindung anzeigen
 - Wikipedia: neues Aussehen, aktive Links, Bilder
 - Open Track UI: Wegpunktgruppen anzeigen
 - Kartenmarkierungen: Import ausgewählter Gruppen aus GPX-Dateien, neue Optik der Koordinateneingabe
@@ -471,7 +471,7 @@ Veröffentlichungsdatum: 11/2016
 - Sehr detaillierte POI-Suche. Standorte nach mehreren Merkmalen finden
 - Kompass ausblenden. Kompass nur anzeigen, wenn Sie ihn benötigen
 - Android Wear-Kompatibilität. OsmAnd auf Ihrer Android Wear verwenden
-- Topo-Kartenstil. Ein völlig neuer Stil für Wanderer und Touristen
+- Topo Kartenstil. Ein völlig neuer Stil für Wanderer und Touristen
 - Bessere Fahrtenaufzeichnung und andere Verbesserungen
 
 <DownloadRelease blog="osmand-2-5" release="net.osmand-2.5.3.apk" />
@@ -618,7 +618,7 @@ Favoriten (Meine Orte):
 
 Navigation:
 
-- Route zwischen Routenpunkten des GPX-Tracks berechnen
+- Route zwischen Routenpunkten des GPX Tracks berechnen
 - Mehr Konfiguration für die Navigation (Schaltflächen automatisch ausblenden, im Voraus sprechen)
 - Navigation nach Verzögerung automatisch starten
 
@@ -633,7 +633,7 @@ Veröffentlichungsdatum 03/2014:
 - Vollständig aktualisiertes Routing (schnell und präzise)
 - Neuer Bildschirm mit Routenplanung (intuitiver und leistungsfähiger)
 - Schaltflächen im Navigationsmodus automatisch ausblenden
-- Offline-Route zum ersten Punkt des GPX-Tracks berechnen (Option 'gesamten Track passieren')
+- Offline-Route zum ersten Punkt des GPX Tracks berechnen (Option 'gesamten Track passieren')
 - Aktive Simulation in Tunneln
 - Einstellung der Sprachgeschwindigkeit für Barrierefreiheit
 
@@ -649,7 +649,7 @@ Veröffentlichungsdatum 10/2013:
 - Unterstützung von Full HD-Geräten
 - Unterstützung für transparenten Kartenhintergrund
 - Heruntergeladene Karten anzeigen und das Herunterladen fehlender Karten direkt aus der Kartenansicht erleichtern
-- Höhenlinien-Kartendateien jetzt für Länder/Regionen gebündelt
+- Höhenlinien Kartendateien jetzt für Länder/Regionen gebündelt
 - Neue Weltbasiskarte mit Hauptstraßen, Eisenbahnen und wichtigen Flächenmerkmalen wie Wäldern.
 - Kartenvergrößerungsfunktion (langes Klicken auf die Zoom-Schaltfläche) - Nützlich sowohl für Kachel- als auch für Vektorkarten
 - Benutzerdefinierte Online-Kachelquellen definieren/bearbeiten (und Ablaufzeit angeben)
@@ -679,9 +679,9 @@ Veröffentlichungsdatum: 05/2013
 
 - Wegpunkte optimal anordnen, um alle zu besuchen (Handlungsreisender, Tür-zu-Tür)
 - Straße nach Namen suchen (in der Nachbarschaft)
-- Planungsmodus-Plugin (GPX-Tracks laden/bearbeiten/speichern)
+- Planungsmodus-Plugin (GPX Tracks laden/bearbeiten/speichern)
 - Neuer Download-Bildschirm (Download im Hintergrund)
-- Unterstützung von GPX-Unterordnern (organisieren Sie Ihre GPX-Tracks)
+- Unterstützung von GPX-Unterordnern (organisieren Sie Ihre GPX Tracks)
 - SRTM-Dateien löschen
 - Unterstützung von OSM-Notizen
 

@@ -28,7 +28,7 @@ Dieser Abschnitt beschreibt zusätzliche Kartendaten wie Favoriten, persönliche
 
 ### [Benutzerdaten](./web-userdata.mdx) {#user-data}
 
-GPX-Tracks und Favoriten des Benutzers auf der Karte.
+GPX Tracks und Favoriten des Benutzers auf der Karte.
 
 ### [Route planen](./planner.md) {#plan-route}
 

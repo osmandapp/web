@@ -54,7 +54,7 @@ Hier sind einige hervorgehobene Beispiele aus unserer Videosammlung. Diese Video
 <iframe width="770" height="433" src="https://www.youtube.com/embed/U1g0A5ZyVHQ" title="⛰️ Best Hiking App❗️OsmAnd Trekking, travel Offline Trails📱" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-### Französisch: GPX-Tracks erstellen {#french-creating-gpx-tracks}
+### Französisch: GPX Tracks erstellen {#french-creating-gpx-tracks}
 
 - **Video**: _Tutoriel Osmand: Comment créer directement une trace GPX avec Osmand_  
 - Von [One World To Discover](https://www.youtube.com/@oneworldtodiscover9962)  

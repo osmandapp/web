@@ -21,7 +21,7 @@ Das Menü "Karte konfigurieren" ist ein wichtiger Punkt im *Hauptmenü* von OsmA
 
 ## [Vektorkarten (Kartenstile)](./vector-maps.md) {#vector-maps-map-styles}
 
-Vektorkarten sind als Standardquelle für Kartendaten für OsmAnd konzipiert und müssen daher auf das Gerät heruntergeladen werden. Vektorkarten unterstützen eine riesige Auswahl an Kartenstilen für viele Aktivitäten wie Radfahren, Wandern, Autofahren oder Schneemobilfahren usw. Jeder Kartenstil kann angepasst werden, um bestimmte Objekte hervorzuheben oder auszublenden und zwischen Tag- und Nachtmodus zu wechseln. Kartenvetordaten können durch Vektordaten erweitert und mit dem Standard-Kartenstil angezeigt werden, z. B. Höhenlinieninformationen. Sie können Ihren eigenen Kartenstil in OsmAnd erstellen, um die benötigten Informationen anzuzeigen.
+Vektorkarten sind als Standardquelle für Kartendaten für OsmAnd konzipiert und müssen daher auf das Gerät heruntergeladen werden. Vektorkarten unterstützen eine riesige Auswahl an Kartenstilen für viele Aktivitäten wie Radfahren, Wandern, Autofahren oder Schneemobilfahren usw. Jeder Kartenstil kann angepasst werden, um bestimmte Objekte hervorzuheben oder auszublenden und zwischen Tag- und Nachtmodus zu wechseln. Kartenvetordaten können durch Vektordaten erweitert und mit dem Standard Kartenstil angezeigt werden, z. B. Höhenlinieninformationen. Sie können Ihren eigenen Kartenstil in OsmAnd erstellen, um die benötigten Informationen anzuzeigen.
 
 ## [Rasterkarten (Online / Offline)](./raster-maps.md) {#raster-maps-online--offline}
 
@@ -37,11 +37,11 @@ Mit der Tracks-Funktion können Sie Routen erstellen und speichern, damit Sie sp
 
 ### [Tracks Kontextmenü](./tracks/track-context-menu.md) {#tracks-context-menu}
 
-Das Tracks Kontextmenü ist ein Menü mit Aktionen und Daten eines GPX-Tracks.
+Das Tracks Kontextmenü ist ein Menü mit Aktionen und Daten eines GPX Tracks.
 
 ### [Track-Aussehen](./tracks/appearance.md) {#track-appearance}
 
-Das Tracks Kontextmenü ist ein Menü mit Aktionen und Daten eines GPX-Tracks.
+Das Tracks Kontextmenü ist ein Menü mit Aktionen und Daten eines GPX Tracks.
 
 ## [Routen](./routes.md) {#routes}
 

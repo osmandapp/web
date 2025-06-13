@@ -75,7 +75,7 @@ oder
 
 **Bewegt sich nicht** – ermöglicht es Ihnen, die Zeit (von 1 Minute bis 1 Stunde) einzustellen, nach der der Standort eines Kontakts als veraltet gilt. Wenn ein Standort veraltet ist, wird er grau angezeigt.
 
-**Standortverlauf** – ermöglicht es Ihnen, die Zeit (von 5 Minuten bis 24 Stunden) einzustellen, nach der der Kontakt mit dem gelöschten Standort aus der Liste und der OsmAnd-Karte ausgeblendet wird.
+**Standortverlauf** – ermöglicht es Ihnen, die Zeit (von 5 Minuten bis 24 Stunden) einzustellen, nach der der Kontakt mit dem gelöschten Standort aus der Liste und der OsmAnd Karte ausgeblendet wird.
 
 **Standort senden als** – ermöglicht es Ihnen, eine Kategorie für das Senden von Nachrichten über Ihren Standort in Telegram zu wählen (3 Arten des Sendens): Text, Karte, Text und Karte.
 
@@ -153,14 +153,14 @@ Wenn Sie mit der Freigabe beginnen, sehen Sie auf dem Bildschirm *Mein Standort*
 
 ## Live jetzt Bildschirm {#live-now-screen}
 
-In diesem Menü sehen Sie alle Kontakte, die einen Standort mit Ihnen teilen. Tippen Sie auf den Kontakt und sehen Sie ihn auf der **OsmAnd-Karte**.
+In diesem Menü sehen Sie alle Kontakte, die einen Standort mit Ihnen teilen. Tippen Sie auf den Kontakt und sehen Sie ihn auf der **OsmAnd Karte**.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Live.png)
 
 
-### Aktive Markierung auf der OsmAnd-Karte {#active-marker-on-the-osmand-map}
+### Aktive Markierung auf der OsmAnd Karte {#active-marker-on-the-osmand-map}
 
-Ermöglicht es Ihnen, die Entfernung, Geschwindigkeit und Winkelbewegung Ihrer Kontakte auf der OsmAnd-Karte und im Telegram-Text zu verfolgen. Sie können verstehen, wohin und wie sich Ihr Kontakt bewegt.
+Ermöglicht es Ihnen, die Entfernung, Geschwindigkeit und Winkelbewegung Ihrer Kontakte auf der OsmAnd Karte und im Telegram-Text zu verfolgen. Sie können verstehen, wohin und wie sich Ihr Kontakt bewegt.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/6-1.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/7-1.jpg)
 
@@ -175,13 +175,13 @@ Um alle Informationen über den Standort eines Kontakts anzuzeigen, tippen Sie a
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4-1-Timeline.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Timeline_2.png)
 
-Sie können die Online-Bewegung Ihrer Kontakte auf der OsmAnd-Karte über die Online-GPS-Spur sehen. Dazu müssen Sie bei dem Kontakt in der *Zeitachse* *Live* aktivieren. Wenn zu diesem Zeitpunkt viele Kontakte gemeinsam vorhanden sind, wählt die OsmAnd-App die Farbe der Spuren zufällig aus.
+Sie können die Online-Bewegung Ihrer Kontakte auf der OsmAnd Karte über die Online-GPS-Spur sehen. Dazu müssen Sie bei dem Kontakt in der *Zeitachse* *Live* aktivieren. Wenn zu diesem Zeitpunkt viele Kontakte gemeinsam vorhanden sind, wählt die OsmAnd-App die Farbe der Spuren zufällig aus.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/1.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/2.jpg)
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/3.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4.jpg)
 
-Wenn Sie auf "In OsmAnd anzeigen" oder auf die Minikarte tippen, können Sie spezielle Einstellungen für die GPX-Verfolgung Ihres Kontakts in der OsmAnd-App auswählen und dessen Bewegung in Echtzeit auf der OsmAnd-Karte sehen.
+Wenn Sie auf "In OsmAnd anzeigen" oder auf die Minikarte tippen, können Sie spezielle Einstellungen für die GPX-Verfolgung Ihres Kontakts in der OsmAnd-App auswählen und dessen Bewegung in Echtzeit auf der OsmAnd Karte sehen.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/5.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/6.jpg)
 

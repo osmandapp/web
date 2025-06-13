@@ -7,11 +7,11 @@ sidebar_position: 1
 
 Die Dokumentation beschreibt die von OsmAnd unterstützten Dateien.
 
-### [GPX-Routen, -Tracks – .gpx](./osmand-gpx.md) {#gpx-routes-tracks---gpx}
+### [GPX-Routen,  Tracks – .gpx](./osmand-gpx.md) {#gpx-routes-tracks---gpx}
 
 OsmAnd verwendet GPX-Dateien, um Tracks aufzuzeichnen, vorab berechnete Routen zu speichern, und kann GPX-Dateien, die von anderen Quellen vorbereitet wurden, zur Anzeige oder Navigation importieren.
 
-### [KML-Tracks – .kml, .kmz](./osmand-kml.md) {#kml-tracks---kml-kmz}
+### [KML Tracks – .kml, .kmz](./osmand-kml.md) {#kml-tracks---kml-kmz}
 
 OsmAnd kann Standortinformationen im KML-Format importieren oder konvertieren.
 

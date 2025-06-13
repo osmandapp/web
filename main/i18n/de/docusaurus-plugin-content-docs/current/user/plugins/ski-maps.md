@@ -1,7 +1,7 @@
 ---
 source-hash: f14066ee1c93315ba000b7389de0d0c6a42230c90308779a1b3a10e9a16d1fc7
 sidebar_position: 13
-title:  Ski-Kartenansicht
+title:  Ski Kartenansicht
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,9 +16,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Überblick {#overview}
 
-Das OsmAnd Ski-Kartenansicht-Plugin zeigt berühmte und beliebte Pisten, offiziell genehmigte Skigebiete und Loipenkarten der meisten Skigebiete. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) Pistenkarten sind die Datenquelle für OsmAnd Ski-Karten. Durch die Kombination von Vektor- und Rasterkarten ist die OsmAnd Ski-Karte sehr genau und nützlich für Instruktoren, Kletterer und Wintersportler.
+Das OsmAnd Ski Kartenansicht-Plugin zeigt berühmte und beliebte Pisten, offiziell genehmigte Skigebiete und Loipenkarten der meisten Skigebiete. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) Pistenkarten sind die Datenquelle für OsmAnd Ski Karten. Durch die Kombination von Vektor- und Rasterkarten ist die OsmAnd Ski Karte sehr genau und nützlich für Instruktoren, Kletterer und Wintersportler.
 
-Die OsmAnd Ski-Karte ist Teil der Vektorkarten und erfordert keine zusätzlichen Downloads. Sie ist standardmäßig deaktiviert. Die OsmAnd Ski-Karte ist einer der [Kartenstile](../map/vector-maps.md), der zusätzliche Funktionen bietet, indem er einige Objekte hervorhebt und andere weniger sichtbar macht.
+Die OsmAnd Ski Karte ist Teil der Vektorkarten und erfordert keine zusätzlichen Downloads. Sie ist standardmäßig deaktiviert. Die OsmAnd Ski Karte ist einer der [Kartenstile](../map/vector-maps.md), der zusätzliche Funktionen bietet, indem er einige Objekte hervorhebt und andere weniger sichtbar macht.
 
 Unten sind zwei Profile dargestellt: das linke ist zum Skifahren und das rechte zum Autofahren. Das Skiprofil hebt Loipen, Luftwege, Winterfarben und alle Kartenobjekte hervor, die für die Navigation im Skigebiet nützlich sind.
 
@@ -41,14 +41,14 @@ Unten sind zwei Profile dargestellt: das linke ist zum Skifahren und das rechte 
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
 
-Die folgende Einstellung lässt die OsmAnd Ski-Karte auf dem Bildschirm erscheinen:
+Die folgende Einstellung lässt die OsmAnd Ski Karte auf dem Bildschirm erscheinen:
 
-1. Aktivieren Sie das [Ski-Kartenansicht-Plugin](../plugins/index.md#enable--disable).
-2. Stellen Sie den [Winter- und Ski-Kartenstil](#set-winter-and-ski-map-style) für das gewünschte [Profil](../personal/profiles.md) ein.
+1. Aktivieren Sie das [Ski Kartenansicht-Plugin](../plugins/index.md#enable--disable).
+2. Stellen Sie den [Winter- und Ski Kartenstil](#set-winter-and-ski-map-style) für das gewünschte [Profil](../personal/profiles.md) ein.
 3. Falls erforderlich, [Karten kombinieren](#combine-maps).
 
 
-### Winter- und Ski-Kartenstil einstellen {#set-winter-and-ski-map-style}
+### Winter- und Ski Kartenstil einstellen {#set-winter-and-ski-map-style}
 
 <Tabs groupId="operating-systems">
 
@@ -70,7 +70,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 
 </Tabs>
 
-Der Winter- und Ski-Kartenstil hebt Loipen, Skitourenrouten, Rodelbahnen und Informationen hervor, die mit Winter und Skifahren zusammenhängen. Um den Stil auf der Karte anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
+Der Winter- und Ski Kartenstil hebt Loipen, Skitourenrouten, Rodelbahnen und Informationen hervor, die mit Winter und Skifahren zusammenhängen. Um den Stil auf der Karte anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
 
 1. Wählen Sie das gewünschte [Profil](../personal/profiles.md) aus.
 2. Öffnen Sie [Karte konfigurieren](../map/configure-map-menu.md).
@@ -99,20 +99,20 @@ Das Skiprofil ist für die Verwendung in Kombination mit den Winter- und Skistil
 
 </Tabs>
 
-Die [Vektorkarte](../map/vector-maps.md) mit dem enthaltenen [Winter- und Ski-Kartenstil](../map/vector-maps.md#winter-and-ski) kann mit [Höhenlinien](../plugins/topography.md#show-contour-linesterrain) und [Schummerung](../plugins/topography.md#hillshade-map) ergänzt werden. Unten sind zwei Beispiele. Die Spuren auf der Standard-Vektorkarte sind links dargestellt, und die Spuren auf der Vektorkarte in Kombination mit der Rasterkarte *Höhenlinien* und *Schummerung* sind rechts dargestellt. Im zweiten Fall zeigt die Karte mehr Höhendaten, um die Schwierigkeit, das Risiko und die Entfernung besser einschätzen zu können.
+Die [Vektorkarte](../map/vector-maps.md) mit dem enthaltenen [Winter- und Ski Kartenstil](../map/vector-maps.md#winter-and-ski) kann mit [Höhenlinien](../plugins/topography.md#show-contour-linesterrain) und [Schummerung](../plugins/topography.md#hillshade-map) ergänzt werden. Unten sind zwei Beispiele. Die Spuren auf der Standard-Vektorkarte sind links dargestellt, und die Spuren auf der Vektorkarte in Kombination mit der Rasterkarte *Höhenlinien* und *Schummerung* sind rechts dargestellt. Im zweiten Fall zeigt die Karte mehr Höhendaten, um die Schwierigkeit, das Risiko und die Entfernung besser einschätzen zu können.
 
 
-### Ski-Kartenstil deaktivieren {#disable-ski-map-style}
+### Ski Kartenstil deaktivieren {#disable-ski-map-style}
 
 Wenn Sie es vorziehen, Loipen und Winterfarben von der Karte zu entfernen, oder die Skisaison vorbei ist, tun Sie eines der folgenden Dinge:
 
-- Deaktivieren Sie den [Winter- und Ski-Kartenstil](#set-winter-and-ski-map-style) für das gewünschte Profil.
+- Deaktivieren Sie den [Winter- und Ski Kartenstil](#set-winter-and-ski-map-style) für das gewünschte Profil.
 - Ändern Sie das [Skiprofil](../personal/profiles.md) in ein anderes Profil.
-- Deaktivieren Sie das [Ski-Kartenansicht-Plugin](../plugins/index.md#enable--disable).
+- Deaktivieren Sie das [Ski Kartenansicht-Plugin](../plugins/index.md#enable--disable).
 
 
 :::info Plugin deinstallieren
-Das Ski-Kartenansicht-Plugin ist eine separate Anwendung, und das Deaktivieren der Anzeige entfernt es nicht. Wenn Sie es deinstallieren müssen, gehen Sie zu den Android Einstellungen über *Einstellungen öffnen* im Plugin-Menü.
+Das Ski Kartenansicht-Plugin ist eine separate Anwendung, und das Deaktivieren der Anzeige entfernt es nicht. Wenn Sie es deinstallieren müssen, gehen Sie zu den Android Einstellungen über *Einstellungen öffnen* im Plugin Menü.
 :::
 
 
@@ -138,12 +138,12 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 </Tabs>
 
-Winter- und Ski-Kartenstile können in jedem Profil aktiviert werden. Am wertvollsten ist es jedoch im [Skiprofil](../personal/profiles.md), wo es standardmäßig eingestellt ist. Das Skiprofil ist sehr komfortabel für die [Ski-Navigation](../navigation/routing/ski-routing.md).
+Winter- und Ski Kartenstile können in jedem Profil aktiviert werden. Am wertvollsten ist es jedoch im [Skiprofil](../personal/profiles.md), wo es standardmäßig eingestellt ist. Das Skiprofil ist sehr komfortabel für die [Ski-Navigation](../navigation/routing/ski-routing.md).
 
 
-## Ski-Kartenstil {#ski-map-style}
+## Ski Kartenstil {#ski-map-style}
 
-Verwenden Sie die [Ski-Kartenlegende](../../user/map-legend/ski-map.md) als Referenz. Sie hilft, die Arten von Pisten auf der Karte zu identifizieren, sowie die Arten von Luftwegen und andere Eigenschaften, die aus der Karte gelesen werden können.
+Verwenden Sie die [Ski Kartenlegende](../../user/map-legend/ski-map.md) als Referenz. Sie hilft, die Arten von Pisten auf der Karte zu identifizieren, sowie die Arten von Luftwegen und andere Eigenschaften, die aus der Karte gelesen werden können.
 
 Durch das Lesen der Karte können Sie die für Sie wichtigen Details herausfinden, wie z. B. die Schwierigkeit einer bestimmten Loipe, die Art der Loipe, ob sie präpariert ist und ob die Loipe nachts beleuchtet ist.
 
@@ -151,7 +151,7 @@ Die hier beschriebenen Optionen sind in der [Ski-Navigation](../navigation/setup
 
 
 :::info Rendering-Stil
-Die OsmAnd Ski-Karte ist als einer der Rendering-Stile aufgebaut, der bestimmt, welche Objekte auf der Karte angezeigt werden und wie die Objekte aussehen. Alle Rendering-Stile sind in der Datei [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml) beschrieben. Die Regeln, die die interne Struktur der XML-Datei definieren, finden Sie in der [Rendering-Dokumentation](../../technical/osmand-file-formats/osmand-rendering-style.md).
+Die OsmAnd Ski Karte ist als einer der Rendering-Stile aufgebaut, der bestimmt, welche Objekte auf der Karte angezeigt werden und wie die Objekte aussehen. Alle Rendering-Stile sind in der Datei [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml) beschrieben. Die Regeln, die die interne Struktur der XML-Datei definieren, finden Sie in der [Rendering-Dokumentation](../../technical/osmand-file-formats/osmand-rendering-style.md).
 :::
 
 
@@ -238,7 +238,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 
 Um herauszufinden, welche Pisten außerhalb des Skigebiets Sie navigieren können, müssen Sie die Option **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** in der Liste **<Translate android="true" ids="rendering_category_routes"/>** aktivieren, die Sie über das Menü [Karte konfigurieren](../map/configure-map-menu.md) öffnen.
 
-Mit aktiviertem Skiprofil, Ski-Navigation und [Winter- und Ski-Kartenstil](../map/vector-maps.md#winter-and-ski) zeigen die [Skipistenrouten](../map/vector-maps.md#routes) alle Pistentypen an, die die Ski-Navigation zum Erstellen von Navigationsrouten verwenden kann. Solche Skipistenrouten sind, wenn aktiviert, meist außerhalb der Skigebietsgrenzen violett umrandet.
+Mit aktiviertem Skiprofil, Ski-Navigation und [Winter- und Ski Kartenstil](../map/vector-maps.md#winter-and-ski) zeigen die [Skipistenrouten](../map/vector-maps.md#routes) alle Pistentypen an, die die Ski-Navigation zum Erstellen von Navigationsrouten verwenden kann. Solche Skipistenrouten sind, wenn aktiviert, meist außerhalb der Skigebietsgrenzen violett umrandet.
 
 
 ### Nacht und Beleuchtung {#night-and-lighting}

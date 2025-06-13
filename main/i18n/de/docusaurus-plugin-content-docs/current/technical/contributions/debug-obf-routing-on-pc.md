@@ -13,11 +13,11 @@ sidebar_position: 5
 - Schwenken und zoomen Sie die Karte an die Stelle, an der Sie Routing Probleme haben und die von der genannten OBF-Datei abgedeckt wird.
 - Klicken Sie mit der rechten Maustaste auf die Karte, um Start- und Endpunkte sowie verschiedene Routing-Engines festzulegen.
 
-Den Ortsnamen finden, dem eine Straße in Offline-OBF-Karten zugeordnet ist
+Den Ortsnamen finden, dem eine Straße in Offline-OBF Karten zugeordnet ist
 - Installieren Sie ein Java-Framework auf Ihrem Desktop-Computer.
 - Laden Sie OsmAndMapCreator herunter, z. B. von [download.osmand.net/releases](https://download.osmand.net/releases/), und entpacken Sie es auf Ihren PC.
 - Nehmen Sie eine beliebige Kartendatei mit der Erweiterung OBF und legen Sie sie in denselben Ordner, in dem sich alle Dateien von Mapcreator befinden.
 - Starten Sie OsmAndMapCreator auf Ihrem PC, indem Sie `OsmAndMapCreator.bat` oder `OsmAndMapCreator.sh` ausführen.
 - Stellen Sie sicher, dass Sie Internetzugang auf Ihrem PC haben und die Einstellungen von Mapcreator so sind, dass Kacheln heruntergeladen werden, wenn Sie die Karte an Ihren Standort ziehen und zoomen, an dem sich Ihr Problem befindet.
-- Wenn Sie in Ihren Bereich gezoomt haben, klicken Sie mit der rechten Maustaste auf die Karte und wählen Sie "Adresse anzeigen" aus dem Popup-Menü.
+- Wenn Sie in Ihren Bereich gezoomt haben, klicken Sie mit der rechten Maustaste auf die Karte und wählen Sie "Adresse anzeigen" aus dem Popup Menü.
 - Normalerweise sollten nun alle Straßennamen aus der OBF-Datei angezeigt werden, sowie der Ortsname, dem jede Straße in OsmAnds Offline-Suche zugeordnet ist.

@@ -195,13 +195,13 @@ Für weitere Details können Sie das [**Track Kontextmenü**](../map/tracks/trac
 
 <TabItem value="android" label="Android">
 
-![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Karten-Tracks konfigurieren Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
+![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Karten Tracks konfigurieren Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Karten-Tracks konfigurieren iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Karten Tracks konfigurieren iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
@@ -241,7 +241,7 @@ OsmAnd erfasst Ihre Reise in einer strukturierten [GPX-Datei](https://en.wikiped
 | `lon` | **Längengrad** gibt die Ost-West-Position an und ergänzt den Breitengrad, um einen Punkt auf der Erde genau zu lokalisieren. Zusammen definieren Breitengrad und Längengrad Ihre genaue geografische Position.    |
 | `ele` | **Höhe** misst die Höhe eines Track-Punktes über dem Meeresspiegel, aufgezeichnet in Metern. Dies kann nützlich sein, um Höhenänderungen während Ihrer Aktivitäten, wie Wanderungen oder Radtouren, zu verfolgen.    |
 | `time` | **Zeitstempel** zeichnet das genaue Datum und die Uhrzeit auf, zu der ein Track-Punkt protokolliert wird. Dies ermöglicht es Ihnen, die Dauer und den Zeitpunkt Ihrer Aktivität präzise zu verfolgen.    |
-| `hdop` | **Horizontal Dilution of Precision (HDOP)** ist ein Maß für die GPS-Genauigkeit, das den potenziellen Fehler im Standort aufgrund der Positionen der Satelliten widerspiegelt. Im Gegensatz zum Standard-HDOP verwenden OsmAnd GPX-Tracks diesen Wert, um die horizontale Genauigkeit in Metern darzustellen. Bitte beachten Sie, dass sich diese Implementierung von typischen HDOP-Standards unterscheidet. [Erfahren Sie mehr](https://github.com/osmandapp/Osmand/issues/3445).   |
+| `hdop` | **Horizontal Dilution of Precision (HDOP)** ist ein Maß für die GPS-Genauigkeit, das den potenziellen Fehler im Standort aufgrund der Positionen der Satelliten widerspiegelt. Im Gegensatz zum Standard-HDOP verwenden OsmAnd GPX Tracks diesen Wert, um die horizontale Genauigkeit in Metern darzustellen. Bitte beachten Sie, dass sich diese Implementierung von typischen HDOP-Standards unterscheidet. [Erfahren Sie mehr](https://github.com/osmandapp/Osmand/issues/3445).   |
 | `speed` | **Geschwindigkeit** zeichnet Ihre Bewegungsrate in Metern pro Sekunde auf. Sie gibt Einblick in Ihr Tempo während verschiedener Abschnitte Ihrer Aktivität.  |
 | `heading`  | **Richtung** gibt die Richtung an, in die die Vorderseite Ihres Fahrzeugs oder Geräts zeigt, gemessen in Grad. Sie unterscheidet sich vom Kurs, der der tatsächliche Bewegungspfad ist. Unterschiede können aufgrund externer Faktoren wie Wind, Strömungen oder Straßenbedingungen auftreten. [Mehr zur Richtung](https://en.wikipedia.org/wiki/Heading_(navigation)).  |
 | `speed_sensor` | **Geschwindigkeit** von [externen Sensoren](../plugins/external-sensors.md) erfasst Daten von verbundenen Sensoren und liefert präzisere Geschwindigkeitsinformationen, besonders nützlich beim Radfahren. Weitere Details finden Sie in der [Dokumentation zum GPX-Dateiformat](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |

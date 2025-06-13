@@ -36,7 +36,7 @@ Bitte verwenden Sie Weblate wie oben beschrieben, es zeigt Ihnen alle Änderunge
 > Bitte beachten Sie Folgendes: Ich nehme gerne jede neue Sprache mit einer Übersetzungsrate von >10% in die Anzeigesprachenauswahl von OsmAnd auf (werde sie als "unvollständig" markieren, bis sie ~80% erreicht). Bitte eröffnen Sie ein Issue bei OsmAnd, wenn dies geschehen soll, ich beobachte diese Zahlen auf Weblate nur sporadisch.
 >
 > Leider scheinen Sprachen mit 3-stelligen ISO 639-2-Codes derzeit Probleme in Android zu haben, siehe z.B.* [https://code.google.com/p/android/issues/detail?id=49120](https://code.google.com/p/android/issues/detail?id=49120)* [https://code.google.com/p/android/issues/detail?id=106574](https://code.google.com/p/android/issues/detail?id=106574)
-> Dies bedeutet, dass eine solche Sprache auf Ihrem Gerät möglicherweise nicht in den OsmAnd-Menüs angezeigt wird. (Dieses Problem betrifft nur die in den App-Menüs verwendete Sprache, nicht die auf der Karte, natürlich.)
+> Dies bedeutet, dass eine solche Sprache auf Ihrem Gerät möglicherweise nicht in den OsmAnd Menüs angezeigt wird. (Dieses Problem betrifft nur die in den App Menüs verwendete Sprache, nicht die auf der Karte, natürlich.)
 >
 > Danke,
 > Dr. Hardy Müller

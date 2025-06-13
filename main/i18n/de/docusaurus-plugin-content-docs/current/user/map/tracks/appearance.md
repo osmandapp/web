@@ -138,7 +138,7 @@ Stellt alle **Einstellungen für die Track-Darstellung** auf ihre Standardwerte 
 
 </Tabs>
 
-Die Funktion **3D-Track** erzeugt eine dreidimensionale Visualisierung, indem Höhendaten in Standard-2D-Tracks integriert werden. Diese Funktionalität schafft eine tiefenverstärkte Darstellung, die eine präzise Analyse des Tracks in Bezug auf das Gelände ermöglicht. Durch die Einbeziehung von Höhendetails bietet der 3D-Track eine umfassendere Ansicht der Topographie und des geografischen Kontexts der Route.
+Die Funktion **3D-Track** erzeugt eine dreidimensionale Visualisierung, indem Höhendaten in Standard-2D Tracks integriert werden. Diese Funktionalität schafft eine tiefenverstärkte Darstellung, die eine präzise Analyse des Tracks in Bezug auf das Gelände ermöglicht. Durch die Einbeziehung von Höhendetails bietet der 3D-Track eine umfassendere Ansicht der Topographie und des geografischen Kontexts der Route.
 
 ### 3D-Track Einstellungen {#3d-track-settings}
 
@@ -169,7 +169,7 @@ Optionen umfassen: *Oben*, &nbsp;*Unten*, &nbsp;*Oben und unten*.
 Die 3D-Track-Funktion ist besonders nützlich für Aktivitäten wie Paragliding, bei denen die Visualisierung Ihres Flugpfades tiefere Einblicke bieten kann. Durch die Darstellung des Tracks in 3D können Sie Funktionen wie **Wandhöhe** und **Wandfarbe** nutzen, um wertvolle visuelle Informationen für die Analyse zu extrahieren.
 
 1. **Visualisierung nach Geschwindigkeit mit 3D**.
-Ein häufiger Anwendungsfall ist die Verwendung von 3D-Tracks zur Visualisierung von Geschwindigkeitsänderungen. Dies ermöglicht es Ihnen, bestimmte Abschnitte des Tracks zu identifizieren, an denen Sie langsamer oder schneller wurden.
+Ein häufiger Anwendungsfall ist die Verwendung von 3D Tracks zur Visualisierung von Geschwindigkeitsänderungen. Dies ermöglicht es Ihnen, bestimmte Abschnitte des Tracks zu identifizieren, an denen Sie langsamer oder schneller wurden.
 
 Mit der Wandfarbe basierend auf der Steigung können Sie beobachten, wie das Gelände, insbesondere Hügel und Steigungen, Ihre Geschwindigkeit beeinflusst hat. Diese Kombination aus Geschwindigkeits- und Steigungsvisualisierung bietet ein detailliertes Verständnis der Leistung während der gesamten Aktivität.
 
@@ -209,8 +209,8 @@ Der Tab [Tracks](../../personal/tracks/manage-tracks.md) zeigt automatisch alle 
 - **Auf Original zurücksetzen** - Stellt die Einstellungen einzelner Tracks wieder her.
 
 - [Auswahlmodus](../../personal/tracks/manage-tracks.md#selection-mode) - Ändert die Darstellung bestimmter Tracks im ausgewählten Ordner oder der gesamten Liste im Tracks-Tab.
-    - Wählen Sie das *Drei-Punkte-Menü* in der oberen rechten Ecke des Tracks-Tabs und tippen Sie auf *Auswählen*.
-    - Tippen Sie dann auf das *Drei-Punkte-Menü* oben auf dem Bildschirm und wählen Sie *Darstellung ändern*.
+    - Wählen Sie das *Drei-Punkte Menü* in der oberen rechten Ecke des Tracks-Tabs und tippen Sie auf *Auswählen*.
+    - Tippen Sie dann auf das *Drei-Punkte Menü* oben auf dem Bildschirm und wählen Sie *Darstellung ändern*.
 
 Optionen zur Massenanpassung der Darstellung:
 

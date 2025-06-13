@@ -19,7 +19,7 @@ Dieser Artikel behandelt Probleme bei der GPX-Aufzeichnung, die seit langem in v
 
 **Hinweise**:
 
-- Ab Android 11 (2020/12) gibt es nicht mehr die Systemberechtigungsoption *Immer zulassen*, um den Standort im Hintergrund zu verwenden, aber dies **schränkt die Hintergrundaufzeichnung** von OsmAnd-Tracks **nicht ein**. Laut Googles Dokumentation wird dies jetzt als **Vordergrundnutzung** betrachtet, da die Berechtigung zur Nutzung des Dienstes im Vordergrund intern verwendet wird und die Systembenachrichtigung, dass ein Track aufgezeichnet wird, immer sichtbar ist.
+- Ab Android 11 (2020/12) gibt es nicht mehr die Systemberechtigungsoption *Immer zulassen*, um den Standort im Hintergrund zu verwenden, aber dies **schränkt die Hintergrundaufzeichnung** von OsmAnd Tracks **nicht ein**. Laut Googles Dokumentation wird dies jetzt als **Vordergrundnutzung** betrachtet, da die Berechtigung zur Nutzung des Dienstes im Vordergrund intern verwendet wird und die Systembenachrichtigung, dass ein Track aufgezeichnet wird, immer sichtbar ist.
 
 - Beachten Sie, dass die neue Formulierung von Android irreführend sein kann:
 

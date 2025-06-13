@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-OsmAnd verfügt über viele leistungsstarke Funktionen zur Anzeige verschiedener Routen auf der Karte. Routen können als Teil der Navigation erstellt, über "Route planen" entworfen, als GPX-Tracks importiert, über das Plugin "Reiseaufzeichnung" aufgezeichnet oder aus OpenStreetMap Daten durchsucht und ausgewählt werden.
+OsmAnd verfügt über viele leistungsstarke Funktionen zur Anzeige verschiedener Routen auf der Karte. Routen können als Teil der Navigation erstellt, über "Route planen" entworfen, als GPX Tracks importiert, über das Plugin "Reiseaufzeichnung" aufgezeichnet oder aus OpenStreetMap Daten durchsucht und ausgewählt werden.
 
 
 ## Arten von Tracks {#types-of-tracks}
@@ -58,7 +58,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_str
 
 </Tabs>
 
-Die Option *Karte konfigurieren* ermöglicht es Ihnen, die Anzeige aller zuletzt angezeigten Tracks schnell zu verwalten, indem Sie die Sichtbarkeit für eine Gruppe von Tracks umschalten können. Die Track-Sortierung folgt der im Tab *Meine Orte → Tracks* konfigurierten Reihenfolge. Sie können das [Track-Menü](../../personal/tracks/manage-tracks.md#track-menu) durch langes Tippen auf ein Track-Element aufrufen. Zusätzlich können Sie in diesem Menü das Aussehen mehrerer ausgewählter Tracks gleichzeitig ändern.
+Die Option *Karte konfigurieren* ermöglicht es Ihnen, die Anzeige aller zuletzt angezeigten Tracks schnell zu verwalten, indem Sie die Sichtbarkeit für eine Gruppe von Tracks umschalten können. Die Track-Sortierung folgt der im Tab *Meine Orte → Tracks* konfigurierten Reihenfolge. Sie können das [Track Menü](../../personal/tracks/manage-tracks.md#track-menu) durch langes Tippen auf ein Track-Element aufrufen. Zusätzlich können Sie in diesem Menü das Aussehen mehrerer ausgewählter Tracks gleichzeitig ändern.
 
 ### Meine Orte {#my-places}
 
@@ -84,7 +84,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 Im Tab [Meine Orte *→* Tracks](../../personal/tracks/manage-tracks.md#manage-tracks) müssen Sie Folgendes tun, um den Track auf der Karte anzuzeigen:
 
-- *Android* – Tippen Sie auf das *Drei-Punkte-Menü* im Feld mit dem gewünschten Track.
+- *Android* – Tippen Sie auf das *Drei-Punkte Menü* im Feld mit dem gewünschten Track.
 - *iOS* – Tippen Sie lange auf den gewünschten Track in der Liste.
 
 
@@ -172,7 +172,7 @@ Tippen Sie auf die Schaltfläche [Mein Standort](../../map/interact-with-map.md#
 - [Navigation nach Track](../../navigation/setup/gpx-navigation.md)
 - [Routen auf der Karte](https://docs.osmand.net/blog/routes) Blog-Artikel
 - [Karte konfigurieren](../../map/configure-map-menu.md)  
-- [GPX-Tracks](../../personal/tracks/index.md)  
+- [GPX Tracks](../../personal/tracks/index.md)  
 - [Route planen](../../plan-route/index.md)  
 - [Reiseaufzeichnung](../../plugins/trip-recording.md)
 

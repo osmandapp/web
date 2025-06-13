@@ -45,9 +45,9 @@ Um Daten von externen Sensoren zu verwenden, befolgen Sie diese Schritte:
 1. [Kaufen Sie](../purchases/) ein **OsmAnd Pro Abonnement**, um das Plugin Externe Sensoren freizuschalten.
 2. [Aktivieren Sie](../plugins/#enable--disable) das Plugin unter *Menü → Plugins*.
 3. **Schalten Sie Bluetooth ein** auf Ihrem Gerät, um die Verbindung mit **BLE-Sensoren** zu ermöglichen.
-4. [Koppeln und konfigurieren Sie](#pair-new-sensor) externe Sensoren über das Plugin-Menü.
+4. [Koppeln und konfigurieren Sie](#pair-new-sensor) externe Sensoren über das Plugin Menü.
 5. (Optional) [Fügen Sie](#widgets) **Widgets für externe Sensoren** zu Ihrem Kartenbildschirm hinzu, um Echtzeitdaten wie Herzfrequenz, Trittfrequenz oder Batteriestand anzuzeigen.
-6. (Optional) Verwenden Sie das [Plugin Tourenaufzeichnung](../plugins/trip-recording.md), um Sensordaten in GPX-Tracks aufzuzeichnen.
+6. (Optional) Verwenden Sie das [Plugin Tourenaufzeichnung](../plugins/trip-recording.md), um Sensordaten in GPX Tracks aufzuzeichnen.
 7. (Optional, nur Android) Befolgen Sie [diese Tipps](https://www.thisisant.com/consumer/ant-101/ant-in-phones), um ANT+-Sensoren zu verbinden, falls Ihr Gerät diese unterstützt.
 
 

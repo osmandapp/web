@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # Rendering von Kartenebenen {#map-layers-rendering}
 
-Die OsmAnd-Karte wird schichtweise von unten nach oben gerendert. Einige Ebenen bedecken den gesamten Kartenbildschirm, während andere mit Transparenz gerendert werden. Die Reihenfolge der Ebenen ist immer gleich, daher ist es wichtig, den Überblick darüber zu behalten, was in welcher Reihenfolge angezeigt wird.
+Die OsmAnd Karte wird schichtweise von unten nach oben gerendert. Einige Ebenen bedecken den gesamten Kartenbildschirm, während andere mit Transparenz gerendert werden. Die Reihenfolge der Ebenen ist immer gleich, daher ist es wichtig, den Überblick darüber zu behalten, was in welcher Reihenfolge angezeigt wird.
 
 ## Reihenfolge der Ebenen {#order-of-layers}
 

@@ -12,7 +12,7 @@ Dokumentation der von OsmAnd unterstützten Dateien.
 
 ### [Kartenerstellung](./map-creation/index.md) {#map-creation}
 
-Wie OsmAnd Offline-Kartendaten erstellt werden und wie Sie benutzerdefinierte Kartendateien erstellen können.
+Wie OsmAnd Offline Kartendaten erstellt werden und wie Sie benutzerdefinierte Kartendateien erstellen können.
 
 ### [OsmAnd erstellen, Tools und SDK & API-Beispiele](./build-osmand/index.md) {#build-osmand-tools-and-sdk--api-samples}
 

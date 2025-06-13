@@ -18,7 +18,7 @@ Mit der OsmAnd API können Sie die installierte OsmAnd-App steuern. Die Entwickl
 * Navigation zwischen Standorten
 * Erstellen von Audio-, Video- und Fotonotizen
 * Starten und Stoppen der GPX-Track-Aufzeichnung
-* Importieren von GPX-Tracks in OsmAnd und Navigation entlang dieser
+* Importieren von GPX Tracks in OsmAnd und Navigation entlang dieser
 * Viele weitere Funktionen sind bereits vorhanden oder können auf Anfrage implementiert werden
 
 ### Entwicklung starten (API) {#start-development-api}

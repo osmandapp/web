@@ -149,7 +149,7 @@ Sie können diese Funktion über *Menü → Einstellungen → Profile → Allgem
 Mit der neuen Karten-[Rendering-Engine](../personal/global-settings.md#map-rendering-engine) können Sie die [Kameraneigung](../plugins/development.md#camera-tilt) von 90 (keine Neigung) auf 10 Grad ändern. Bei einer Kartenneigung von weniger als etwa 20-22 Grad (dieser Parameter hängt vom Zoomfaktor ab) wird die imaginäre Horizontlinie sichtbar. Im Gegensatz zur realen ist der Programmhorizont immer gerade.
 
 Unter dem Horizont sehen Sie den sogenannten *Dunst* oder *Nebel*. Dieser Bereich der Karte ist mit grauer Farbe gefüllt, nur wenige Kartendetails sind zu erkennen.
-Die Verwendung von Nebel ist notwendig, da die Anzeige entfernter Objekte auf der Karte erhebliche Rechenressourcen erfordert und aufgrund von Karten-[Verzerrungen](../plugins/development.md#comparison-with-a-satellite-imagery) bei kleinen Blickwinkeln nicht immer gerechtfertigt ist. Daher ist die sichtbare Entfernung auf der OsmAnd-Karte derzeit auf 35 Kacheln begrenzt.
+Die Verwendung von Nebel ist notwendig, da die Anzeige entfernter Objekte auf der Karte erhebliche Rechenressourcen erfordert und aufgrund von Karten-[Verzerrungen](../plugins/development.md#comparison-with-a-satellite-imagery) bei kleinen Blickwinkeln nicht immer gerechtfertigt ist. Daher ist die sichtbare Entfernung auf der OsmAnd Karte derzeit auf 35 Kacheln begrenzt.
 
 :::info
 Die Kartenneigung kann durch langes Tippen auf den Bildschirm mit zwei Fingern und Bewegen nach oben/unten geändert werden. Sie können die Neigung auch durch Tippen auf das Symbol [Mein Standort](#my-location-and-zoom) in der unteren rechten Ecke des Bildschirms ändern (nur 45- und 90-Grad-Positionen sind verfügbar).

@@ -109,11 +109,11 @@ Wir empfehlen Ihnen, OsmAnd die Berechtigung zu erteilen, Informationen über de
 
 </Tabs>
 
-Die OsmAnd-App arbeitet mit verschiedenen Kartentypen, kann aber nur vollständig mit heruntergeladenen Offline-Karten funktionieren. Daher werden Sie nach dem Bildschirm *<Translate android="true" ids="get_started"/>* aufgefordert, die [*Karte herunterzuladen*](../start-with/download-maps.md#initial-setup-screen) Ihrer Region. Sie können eine andere Region auswählen, aus [OsmAnd Cloud](../personal/osmand-cloud.md) wiederherstellen oder diesen Schritt überspringen und Karten später herunterladen.
+Die OsmAnd-App arbeitet mit verschiedenen Kartentypen, kann aber nur vollständig mit heruntergeladenen Offline Karten funktionieren. Daher werden Sie nach dem Bildschirm *<Translate android="true" ids="get_started"/>* aufgefordert, die [*Karte herunterzuladen*](../start-with/download-maps.md#initial-setup-screen) Ihrer Region. Sie können eine andere Region auswählen, aus [OsmAnd Cloud](../personal/osmand-cloud.md) wiederherstellen oder diesen Schritt überspringen und Karten später herunterladen.
 Weitere verfügbare Optionen zum Herunterladen von Karten finden Sie im [Artikel Karten herunterladen](../start-with/download-maps.md).
 
-:::note Beginnen Sie mit Offline-Karten zu arbeiten
-OsmAnd kann ohne heruntergeladene Offline-Karten nicht korrekt funktionieren. Obwohl die Anwendung [Vektor-](../map/vector-maps.md) und [Rasterkarten](../map/raster-maps.md) unterstützt, wird dringend empfohlen, mit Vektor-Offline-Karten zu beginnen, damit alle Funktionen wie [Suche](../search/index.md), [Navigation](../navigation/index.md) und [Kontextmenü](../map/map-context-menu.md) ordnungsgemäß funktionieren.
+:::note Beginnen Sie mit Offline Karten zu arbeiten
+OsmAnd kann ohne heruntergeladene Offline Karten nicht korrekt funktionieren. Obwohl die Anwendung [Vektor-](../map/vector-maps.md) und [Rasterkarten](../map/raster-maps.md) unterstützt, wird dringend empfohlen, mit Vektor-Offline Karten zu beginnen, damit alle Funktionen wie [Suche](../search/index.md), [Navigation](../navigation/index.md) und [Kontextmenü](../map/map-context-menu.md) ordnungsgemäß funktionieren.
 :::
 
 
@@ -402,7 +402,7 @@ Sie müssen die Karte herunterladen, bevor Sie dort nach einer Adresse suchen. W
 
 ### Karten bearbeiten {#how-to-edit-maps}
 
-OsmAnd wird von [OpenStreetMap](https://www.openstreetmap.org/) Daten betrieben. Die Karten werden von freiwilligen Mitwirkenden erstellt, sodass sie je nach Umfang der Arbeit an einem bestimmten Teil der Karte mehr oder weniger Details aufweisen können. Jeder kann sich als Mitwirkender registrieren und OSM-Karten hinzufügen oder bearbeiten. OsmAnd bietet ein Bearbeitungs-Plugin, das hilft, OpenStreetMap zu verbessern.
+OsmAnd wird von [OpenStreetMap](https://www.openstreetmap.org/) Daten betrieben. Die Karten werden von freiwilligen Mitwirkenden erstellt, sodass sie je nach Umfang der Arbeit an einem bestimmten Teil der Karte mehr oder weniger Details aufweisen können. Jeder kann sich als Mitwirkender registrieren und OSM Karten hinzufügen oder bearbeiten. OsmAnd bietet ein Bearbeitungs-Plugin, das hilft, OpenStreetMap zu verbessern.
 
 <Tabs groupId="operating-systems">
 
@@ -653,7 +653,7 @@ Sie können mehr über unser Team erfahren, die aktuelle Version der App und Neu
 
 ## Datenschutz {#privacy}
 
-Es handelt sich um eine [Open-Source](https://github.com/osmandapp/osmand), werbefreie / trackerfreie, auf Datenschutz ausgerichtete Anwendung. Um maximale Privatsphäre zu gewährleisten, bietet OsmAnd Offline-Karten als erste Option an, sodass keine Interaktionen oder Geo-Informationen von Ihrem Gerät nach außen gelangen. Wir achten sehr darauf, welche Daten gesammelt und welche Daten über das Netzwerk übertragen werden. Weitere Informationen finden Sie in unserer [Datenschutzrichtlinie](https://osmand.net/help-online/privacy-policy).
+Es handelt sich um eine [Open-Source](https://github.com/osmandapp/osmand), werbefreie / trackerfreie, auf Datenschutz ausgerichtete Anwendung. Um maximale Privatsphäre zu gewährleisten, bietet OsmAnd Offline Karten als erste Option an, sodass keine Interaktionen oder Geo-Informationen von Ihrem Gerät nach außen gelangen. Wir achten sehr darauf, welche Daten gesammelt und welche Daten über das Netzwerk übertragen werden. Weitere Informationen finden Sie in unserer [Datenschutzrichtlinie](https://osmand.net/help-online/privacy-policy).
 
 
 ## Berechtigungen {#permissions}
@@ -662,7 +662,7 @@ OsmAnd benötigt keine obligatorischen Berechtigungen auf der iOS-/Android-Versi
 
 **Wesentliche**:
 
-- **Internet**. Erster Download / Aktualisierung von Offline-Karten. Es kann auch erforderlich sein, auf Online-Funktionen wie [Street Level Imagery](../map/point-layers-on-map.md#-street-level-imagery), [Online-Fotos](../map/map-context-menu.md#online-photos) oder [Online-Karten](../map/raster-maps.md) zuzugreifen.
+- **Internet**. Erster Download / Aktualisierung von Offline Karten. Es kann auch erforderlich sein, auf Online-Funktionen wie [Street Level Imagery](../map/point-layers-on-map.md#-street-level-imagery), [Online-Fotos](../map/map-context-menu.md#online-photos) oder [Online Karten](../map/raster-maps.md) zuzugreifen.
 - **GPS** / **GSM-Netzwerk**. Bestimmen Sie Ihren Standort, folgen Sie Ihnen im Navigationsmodus und zeichnen Sie Ihre Reise auf (optional). Diese Berechtigung wird angefordert, wenn Sie auf die [Schaltfläche "Mein Standort"](../widgets/map-buttons.md#my-location-and-zoom) klicken oder wenn Sie [die Navigation starten](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Optional**:

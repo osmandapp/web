@@ -194,7 +194,7 @@ Alle verfügbaren [Aktionen](#action-types) sind identisch mit denen, die auf di
 
 ![Erscheinungsbild der Schnellaktionstaste](@site/static/img/widgets/qa_button_appearance_andr.png)
 
-Sie können das Erscheinungsbild der Schnellaktionstasten über *Menü → Konfigurationsbildschirm → Benutzerdefinierte Schaltflächen → Schnellaktion → Drei-Punkte-Menü → Erscheinungsbild* ändern. Diese Einstellung bietet Optionen zur Personalisierung der Größe, Form, des Symbols und der Hintergrundtransparenz der Schaltfläche, wodurch Sie mehr Kontrolle darüber haben, wie die Schaltflächen auf Ihrem Bildschirm aussehen.
+Sie können das Erscheinungsbild der Schnellaktionstasten über *Menü → Konfigurationsbildschirm → Benutzerdefinierte Schaltflächen → Schnellaktion → Drei-Punkte Menü → Erscheinungsbild* ändern. Diese Einstellung bietet Optionen zur Personalisierung der Größe, Form, des Symbols und der Hintergrundtransparenz der Schaltfläche, wodurch Sie mehr Kontrolle darüber haben, wie die Schaltflächen auf Ihrem Bildschirm aussehen.
 
 Detaillierte Anpassungseinstellungen finden Sie im Artikel [Konfigurationsbildschirm](../widgets/configure-screen.md#button-appearance), wo Sie lernen können, wie Sie das Erscheinungsbild jeder Schaltfläche an Ihre Vorlieben anpassen.
 
@@ -278,7 +278,7 @@ Detaillierte Anpassungseinstellungen finden Sie im Artikel [Konfigurationsbildsc
 | Starten/Stoppen <br/> [**Navigation**](../navigation/setup/route-navigation.md#start--stop-navigation) | Starten Sie die Navigation (wenn ein Zielpunkt vorhanden ist) oder stoppen Sie die Navigation. |
 | Pausieren / Fortsetzen <br/> [**Navigation**](../navigation/setup/route-navigation.md#pause--resume-navigation) | Navigation pausieren / fortsetzen. |
 | Entfernen <br/> [**Nächster Zielpunkt**](../navigation/setup/route-navigation.md#intermediate-destinations) | Entfernt den nächsten Zwischenpunkt, falls vorhanden, andernfalls entfernt das Ziel und zeigt den Dialog zum Beenden der Navigation an. Die Aktion ist inaktiv, wenn Sie kein Ziel haben. |
-| Simulieren <br/> [**Standort nach GPX**](../plugins/development.md#gpx-track-simulation) | Simuliert den Standort und die Bewegung Ihres Geräts anhand eines GPX-Tracks. |
+| Simulieren <br/> [**Standort nach GPX**](../plugins/development.md#gpx-track-simulation) | Simuliert den Standort und die Bewegung Ihres Geräts anhand eines GPX Tracks. |
 
 
 ### Einstellungen {#settings}

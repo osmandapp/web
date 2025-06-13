@@ -103,7 +103,7 @@ Durch Tippen auf einen Ort wird das [POI Kontextmenü](./map-context-menu.md) ge
 
 :::tip
 Der suchbasierte Erkunden-Modus funktioniert in der kostenlosen Version **nur online**.
-Um ihn **offline** zu nutzen, benötigen Sie ein [Maps+ oder OsmAnd Pro](../purchases/android.md) Abonnement und heruntergeladene [Wikipedia-Karten](../plugins/wikipedia.md).
+Um ihn **offline** zu nutzen, benötigen Sie ein [Maps+ oder OsmAnd Pro](../purchases/android.md) Abonnement und heruntergeladene [Wikipedia Karten](../plugins/wikipedia.md).
 :::
 
 
@@ -199,22 +199,22 @@ Im Karten Kontextmenü So greifen Sie zu:
 
 <TabItem value="android" label="Android">
 
-![Galerie-Menü – Android](@site/static/img/map/gallery_menu_android.png)
-![Galerie-Menü – Android](@site/static/img/map/gallery_menu_android_1.png)
+![Galerie Menü – Android](@site/static/img/map/gallery_menu_android.png)
+![Galerie Menü – Android](@site/static/img/map/gallery_menu_android_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Galerie-Menü – iOS](@site/static/img/map/gallery_menu_ios.png)
-![Galerie-Menü – iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Galerie Menü – iOS](@site/static/img/map/gallery_menu_ios.png)
+![Galerie Menü – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
 
-Das **Galerie-Menü** kann bis zu **100 Bilder** anzeigen, die sich auf den ausgewählten Punkt von Interesse beziehen. Sie können durch alle verfügbaren Fotos wischen. Durch kurzes Tippen auf ein Foto wird eine Detailansicht geöffnet, die Folgendes anzeigt: *Name*, *Hinzugefügt am*, *Autor*, *Lizenz*
+Das **Galerie Menü** kann bis zu **100 Bilder** anzeigen, die sich auf den ausgewählten Punkt von Interesse beziehen. Sie können durch alle verfügbaren Fotos wischen. Durch kurzes Tippen auf ein Foto wird eine Detailansicht geöffnet, die Folgendes anzeigt: *Name*, *Hinzugefügt am*, *Autor*, *Lizenz*
 
 Sie können auch die folgenden Aktionen für jedes Foto ausführen:
 
@@ -252,7 +252,7 @@ Unter **iOS** öffnet ein langes Drücken auf ein Foto ein Kontextmenü mit zus�
 **Schaltflächen**:
 
 - Die Schaltfläche **Teilen** ermöglicht Ihnen das schnelle Teilen des ausgewählten Bildes.
-- Das **Drei-Punkte-Menü** bietet Zugriff auf zusätzliche Aktionen, einschließlich der Anzeige von Details, des Öffnens der Quelle in einem Browser oder des Herunterladens des Bildes.
+- Das **Drei-Punkte Menü** bietet Zugriff auf zusätzliche Aktionen, einschließlich der Anzeige von Details, des Öffnens der Quelle in einem Browser oder des Herunterladens des Bildes.
 
 </TabItem>
 

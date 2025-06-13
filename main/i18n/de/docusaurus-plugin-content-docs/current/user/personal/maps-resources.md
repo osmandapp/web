@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Im Bereich **Karten und Ressourcen** können Sie *Online-* und *Offline*-Karten sowie andere in OsmAnd verwendete Ressourcen verwalten. Sie können beispielsweise die Größe überprüfen, herunterladen, löschen, umbenennen, den Cache leeren, aktualisieren und verschiedene Aktionen durchführen.
+Im Bereich **Karten und Ressourcen** können Sie *Online-* und *Offline* Karten sowie andere in OsmAnd verwendete Ressourcen verwalten. Sie können beispielsweise die Größe überprüfen, herunterladen, löschen, umbenennen, den Cache leeren, aktualisieren und verschiedene Aktionen durchführen.
 
 OsmAnd arbeitet mit zwei Kartentypen: [Vektorkarten](../map/vector-maps.md) und [Rasterkarten](../map/raster-maps.md). Der Tab [Lokal](#local) speichert alle Karten und Ressourcen. Verfügbare Kartentypen können vom Tab [Downloads](#downloads) heruntergeladen werden. Im Tab [Updates](#updates) können Sie Karten herunterladen, für die Updates verfügbar sind, und [Live-Updates](#osmand-live) verwenden. Sie können auch auf die Funktion [Zusätzliche Karten](#extra-maps) zugreifen, um eigene Kartentypen zu erstellen.
 
@@ -133,7 +133,7 @@ Der Tab **Download** ermöglicht Ihnen das Herunterladen verschiedener Kartentyp
 - **Verfügbare Karten** zeigen Download-Symbole an, für eine einzelne Karte oder für [mehrere Karten](#multiple-map-loading).
 
 - **Heruntergeladene Karten** zeigen ein grünes Symbol mit einer Menüschaltfläche:  
-    - *Android*: Drei-Punkte-Menü.  
+    - *Android*: Drei-Punkte Menü.  
     - *iOS*: Info (I) Symbol.
 
 - **Karten im Ladevorgang** haben ein Symbol, das dies visualisiert. Um den Download abzubrechen, tippen Sie auf das Symbol. Um die Liste der Karten in der Download-Warteschlange anzuzeigen und die Downloads abzubrechen, tippen Sie auf die Download-Leiste im Bereich Gerätespeicherinformationen der Tabs Downloads und Updates.
@@ -229,7 +229,7 @@ Tippen Sie auf einen beliebigen Eintrag im Tab **Lokal**, um dessen detaillierte
 ***Verfügbare Aktionen:***
 
 - **Suchen**. Finden Sie bestimmte Daten nach Namen im ausgewählten Ordner.
-- **Drei-Punkte-Menü**:  
+- **Drei-Punkte Menü**:  
     ***Auswählen***. Wählen Sie mehrere Elemente für Aktionen wie *Löschen*, *Deaktivieren* oder *Aktivieren*.  
     ***Importieren***. Greifen Sie auf den Speicher des Geräts zu, um Dateien zu importieren.
 - [Sortieroption](#sorting-options). Sortieren Sie Elemente nach Name, Land, Datum oder Größe (Verfügbarkeit hängt vom Datentyp ab).
@@ -239,7 +239,7 @@ Tippen Sie auf einen beliebigen Eintrag im Tab **Lokal**, um dessen detaillierte
 
 ![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
 
-Jedes Element in der Liste bietet ein *Drei-Punkte-Menü* mit Optionen:
+Jedes Element in der Liste bietet ein *Drei-Punkte Menü* mit Optionen:
 
 - **Info**. Detaillierte Informationen zum *[Datenelement](#local-data-item-overview)* anzeigen.
 - **Exportieren**. Daten über *Einstellungen → In Datei exportieren* in einer Datei speichern.
@@ -250,19 +250,19 @@ Jedes Element in der Liste bietet ein *Drei-Punkte-Menü* mit Optionen:
 - **Aktualisieren**. Die neueste Version der Karte herunterladen.
 - **Umbenennen**. Den Namen der Karte zur besseren Identifizierung anpassen.
 - **Entfernen**. Die Karte von Ihrem Gerät löschen.
-- **Bearbeiten** (für Online-Karten). Die Online-Kartenkonfiguration ändern.
+- **Bearbeiten** (für Online Karten). Die Online Kartenkonfiguration ändern.
 
 #### Menü für Kartenquellen-Elemente {#map-source-items-menu}
 
 ![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
 
-Jedes Element in der Liste der [Kartenquellen](../map/raster-maps.md) bietet Einstellungen zur Verwaltung von Online-Rasterkarten, die auf Ihrem Gerät gespeichert sind. Öffnen Sie das *Drei-Punkte-Menü*, um auf die verfügbaren Aktionen zuzugreifen:
+Jedes Element in der Liste der [Kartenquellen](../map/raster-maps.md) bietet Einstellungen zur Verwaltung von Online-Rasterkarten, die auf Ihrem Gerät gespeichert sind. Öffnen Sie das *Drei-Punkte Menü*, um auf die verfügbaren Aktionen zuzugreifen:
 
 - [Info](#local-data-item-overview). Zeigt allgemeine Details zur ausgewählten Kartenquelle an, einschließlich Format und Datum der letzten Aktualisierung.  
 - **Größe berechnen**. Schätzt den Speicherplatz, der von den zwischengespeicherten Kacheln dieser Kartenquelle belegt wird. Wenn der Cache *50 MB* überschreitet, kann die Größe als *≥50 MB* anstelle einer genauen Zahl angezeigt werden.
 - **Alle Kacheln löschen**. Löscht alle zwischengespeicherten Kacheln für die ausgewählte Kartenquelle, wodurch Speicherplatz freigegeben wird, während die Kartenquelle für die zukünftige Verwendung verfügbar bleibt.  
 - **Exportieren**. Speichert die Konfiguration der ausgewählten Kartenquelle zur Sicherung oder Freigabe.  
-- **Entfernen**. Löscht die ausgewählte Kartenquelle. Diese Aktion hat keine Auswirkungen auf heruntergeladene Offline-Karten, löscht jedoch den zugehörigen Cache.
+- **Entfernen**. Löscht die ausgewählte Kartenquelle. Diese Aktion hat keine Auswirkungen auf heruntergeladene Offline Karten, löscht jedoch den zugehörigen Cache.
 
 
 #### Übersicht über lokale Datenelemente {#local-data-item-overview}
@@ -311,7 +311,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab
 
 </Tabs>
 
-Der Tab **Updates** ermöglicht Ihnen, OsmAnd-Karten monatlich zu aktualisieren. Verwenden Sie die Schaltfläche *Alle aktualisieren*, um alle Karten gleichzeitig zu aktualisieren, oder aktualisieren Sie einzelne Karten nach Bedarf. Standard- und Nur-Straßen-Karten werden in der Regel zwei Wochen nach Beginn jedes Monats veröffentlicht. Für stündliche Updates überprüfen Sie den Status Ihres [OsmAnd Live](#osmand-live)-Abonnements. Wenn aktiviert, wird der Abschnitt **Live-Updates** oben im Tab unter der Gerätespeicheranzeige angezeigt.
+Der Tab **Updates** ermöglicht Ihnen, OsmAnd Karten monatlich zu aktualisieren. Verwenden Sie die Schaltfläche *Alle aktualisieren*, um alle Karten gleichzeitig zu aktualisieren, oder aktualisieren Sie einzelne Karten nach Bedarf. Standard- und Nur-Straßen Karten werden in der Regel zwei Wochen nach Beginn jedes Monats veröffentlicht. Für stündliche Updates überprüfen Sie den Status Ihres [OsmAnd Live](#osmand-live)-Abonnements. Wenn aktiviert, wird der Abschnitt **Live-Updates** oben im Tab unter der Gerätespeicheranzeige angezeigt.
 
 
 ### Zusätzliche Karten {#extra-maps}
@@ -365,7 +365,7 @@ Hauptmerkmale:
 - **&#8230; &#124;** Schaltfläche (*Android*) / **&#62;** Schaltfläche (*iOS*). Öffnen Sie die *OsmAnd Live* Einstellungen.
 - **Schalter**(*Android*) / **&#43;** Schaltfläche (*iOS*). Karten für *Live-Updates* hinzufügen.
 - **<Translate android="true" ids="update_frequency"/>**. Wählen Sie die Karten-Update-Frequenz (stündlich, täglich oder wöchentlich).
-- **<Translate android="true" ids="update_now"/>**. Starten Sie das *OsmAnd Live*-Karten-Update.
+- **<Translate android="true" ids="update_now"/>**. Starten Sie das *OsmAnd Live* Karten-Update.
 - **<Translate android="true" ids="updates_size"/>**(*Android*) / **<Translate ios="true" ids="osmand_live_updates_size"/>**(*iOS*). Größe der *Live-Updates*.
 - **Papierkorb-Schaltfläche**(*Android*). Löschen Sie alle empfangenen *Live-Updates* für die aktuelle Karte.
 - **<Translate android="true" ids="only_download_over_wifi"/>**. Verwalten Sie den Download von *Live-Updates* über eine Wi-Fi-Verbindung.

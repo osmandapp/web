@@ -79,7 +79,7 @@ Bevor Sie die Offline-Navigation verwenden, stellen Sie sicher, dass die erforde
 
 :::note
 
-**Die Route kann nicht erstellt werden, wenn *[Online-Karte](../../map/raster-maps.md#select-raster-maps)* als Kartenquelle ausgewählt ist.**
+**Die Route kann nicht erstellt werden, wenn *[Online Karte](../../map/raster-maps.md#select-raster-maps)* als Kartenquelle ausgewählt ist.**
 
 :::
 

@@ -152,7 +152,7 @@ In OsmAnd ist eine große Auswahl an Symbolen für POIs und Wegpunkte verfügbar
 
 ### Besondere Favoriten (Persönlich) {#special-favorites-personal}
 
-Der *Persönliche Ordner* enthält spezielle Punkte wie **<Translate android="true" ids="favorite_home_category"/>** und **<Translate android="true" ids="work_button"/>**, die häufig in der [Navigation](../navigation/setup/route-navigation.md#select-starting-point) verwendet werden. Dieser Ordner hat kein *Drei-Punkte-Menü*, und seine Parameter können nicht geändert werden.
+Der *Persönliche Ordner* enthält spezielle Punkte wie **<Translate android="true" ids="favorite_home_category"/>** und **<Translate android="true" ids="work_button"/>**, die häufig in der [Navigation](../navigation/setup/route-navigation.md#select-starting-point) verwendet werden. Dieser Ordner hat kein *Drei-Punkte Menü*, und seine Parameter können nicht geändert werden.
 
 
 ## Favoriten verwalten {#manage-favorites}
@@ -247,7 +247,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Gehe zu: *Drei-Punkte-Menü → Standardaussehen ändern*
+Gehe zu: *Drei-Punkte Menü → Standardaussehen ändern*
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
 
@@ -263,7 +263,7 @@ Gehe zu: *Langes Tippen auf Ordner → Aussehen ändern*
 
 </Tabs>
 
-Verwenden Sie das ***Drei-Punkte-Menü*** (*Android*) neben jedem Ordner und ***langes Tippen*** (*iOS*) auf den Ordner, um Favoritengruppen zu verwalten:
+Verwenden Sie das ***Drei-Punkte Menü*** (*Android*) neben jedem Ordner und ***langes Tippen*** (*iOS*) auf den Ordner, um Favoritengruppen zu verwalten:
 
 - **<Translate android="true" ids="shared_string_rename"/>** — Verwenden Sie diese Option, um den Namen des ausgewählten Ordners zu ändern.
 
@@ -419,7 +419,7 @@ Sie können Ihre Favoriten über die speziellen Schaltflächen am unteren Rand d
 
 </Tabs>
 
-- Tippen Sie auf das **Drei-Punkte-Menü** (*Android*) oder die Schaltfläche **Bearbeiten** (*Bleistiftsymbol unter iOS*) oder **langes Tippen** auf den Ordner (*iOS*) des ausgewählten Favoritenordners.
+- Tippen Sie auf das **Drei-Punkte Menü** (*Android*) oder die Schaltfläche **Bearbeiten** (*Bleistiftsymbol unter iOS*) oder **langes Tippen** auf den Ordner (*iOS*) des ausgewählten Favoritenordners.
 - Wählen Sie die Schaltfläche **Teilen**, um die Datei *Favorites.gpx* im Speicher Ihres Geräts zu speichern oder sie über Messaging-Apps zu teilen.
 
 

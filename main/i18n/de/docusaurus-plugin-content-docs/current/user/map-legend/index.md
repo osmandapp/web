@@ -11,7 +11,7 @@ OsmAnd Kartenlegende für alle Stile
 ### [OsmAnd Kartenstil](./osmand.md) {#osmand-map-style}
 <Translate android="yes" id="default_render_descr" />
 
-### [Ski-Kartenstil](./ski-map.md) {#ski-map-style}
+### [Ski Kartenstil](./ski-map.md) {#ski-map-style}
 <Translate android="yes" id="ski_map_render_descr" />
 
 ### [Nautischer Kartenstil](./nautical-map.md) {#nautical-map-style}

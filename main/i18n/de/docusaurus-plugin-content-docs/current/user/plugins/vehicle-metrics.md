@@ -69,7 +69,7 @@ Wählen Sie Ihr OBD-II-Gerät aus der Liste aus und stellen Sie die Verbindung h
 
 ## Scanner Einstellungen {#scanner-settings}
 
-**Android.** Gehen Sie zu: *Menü → Plugins → Fahrzeugmetriken → OBD → Drei-Punkte-Menü*
+**Android.** Gehen Sie zu: *Menü → Plugins → Fahrzeugmetriken → OBD → Drei-Punkte Menü*
 
 |  |  |
 |--|--|

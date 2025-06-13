@@ -267,10 +267,10 @@ Das **Tachometer-Widget** ist ein integriertes Oberflächenelement, das die *akt
 
 ![Car Play](@site/static/img/navigation/auto-car/car_play_3.png)
 
-Die OsmAnd-App ermöglicht Ihnen die Verwendung der 3D-Kartenansicht auf dem *CarPlay-Bildschirm*, um Ihre Route und Navigation anzuzeigen.
+Die OsmAnd-App ermöglicht Ihnen die Verwendung der 3D Kartenansicht auf dem *CarPlay-Bildschirm*, um Ihre Route und Navigation anzuzeigen.
 
 - Die Schaltfläche **3D / 2D** wird auf dem *CarPlay-Bildschirm* angezeigt.
-- Sie können durch Tippen auf diese Schaltfläche zwischen den 3D- / 2D-Kartenmodi wechseln.
+- Sie können durch Tippen auf diese Schaltfläche zwischen den 3D- / 2D Kartenmodi wechseln.
 
 
 ### Multifunktions-Dashboard {#multifunction-dashboard}

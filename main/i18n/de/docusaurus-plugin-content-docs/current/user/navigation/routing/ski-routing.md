@@ -17,7 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ## Überblick {#overview}
 
 :::note
-Das Ski-Routing und das Ski-Profil sind nur verfügbar, wenn das [Ski-Kartenansicht-Plugin](../../plugins/ski-maps.md) aktiviert ist.
+Das Ski-Routing und das Ski-Profil sind nur verfügbar, wenn das [Ski Kartenansicht-Plugin](../../plugins/ski-maps.md) aktiviert ist.
 :::
 
 *Ski-Routing* kann besonders nützlich für Tourengeher, Skibergsteiger und andere Wintersportler sein, die neue Gebiete erkunden und ihre Touren im Voraus planen möchten. Mit *Ski-Routing* können OsmAnd-Benutzer Routen planen und sicher navigieren, während sie die Schönheit der Winterlandschaften genießen.

@@ -89,7 +89,7 @@ Klicken Sie auf "Service-Modus". Aktivieren Sie dann die Kontrollkästchen für 
     </tr>
 </table>
 
-**4.** Wenn Sie zuvor Segmente geladen haben, werden diese auf der BRouter-Karte angezeigt. Die Segmente haben vier Zustände:
+**4.** Wenn Sie zuvor Segmente geladen haben, werden diese auf der BRouter Karte angezeigt. Die Segmente haben vier Zustände:
 
 - *"Grünes"* Quadrat - Ausgewähltes neues Segment zum Herunterladen.
 - *"Blaues"* Quadrat - Das Segment mit aktualisierten Daten.

@@ -10,7 +10,7 @@ Sprechen Sie über *.travel.obf, *.wiki.obf, *.roads.obf, ..
 
 Viele Fragen beziehen sich auf den Inhalt und Probleme mit Kartendaten in der Anwendung. Dieses Thema enthüllt einige technische Details des internen Datenformats und der Datenverarbeitung. Es kann für Nicht-Entwickler interessant sein, die mit der OSM Datenstruktur vertraut sind.
 
-OsmAnd Offline-Kartendaten sind in 'obf'-Dateien enthalten. 'obf'-Dateien haben eine komplexe Struktur und können aus vielen Teilen bestehen. Es wird dringend empfohlen, die Dateigrößen unter 2 GB zu halten. Derzeit können obf-Dateien viele Teile enthalten, die aus mehreren POI-Teilen, mehreren Routing Datenteilen, mehreren Kartenteilen, mehreren Transportteilen und mehreren Adressdatenteilen bestehen. Diese Liste kann in Zukunft erweitert werden. Um Teile aus der obf-Datei zu kombinieren, zu teilen oder zu löschen, verwenden Sie das Konsolenwerkzeug 'binary\_inspector', das mit OsmAndMapCreator geliefert wird.
+OsmAnd Offline Kartendaten sind in 'obf'-Dateien enthalten. 'obf'-Dateien haben eine komplexe Struktur und können aus vielen Teilen bestehen. Es wird dringend empfohlen, die Dateigrößen unter 2 GB zu halten. Derzeit können obf-Dateien viele Teile enthalten, die aus mehreren POI-Teilen, mehreren Routing Datenteilen, mehreren Kartenteilen, mehreren Transportteilen und mehreren Adressdatenteilen bestehen. Diese Liste kann in Zukunft erweitert werden. Um Teile aus der obf-Datei zu kombinieren, zu teilen oder zu löschen, verwenden Sie das Konsolenwerkzeug 'binary\_inspector', das mit OsmAndMapCreator geliefert wird.
 * POI, Transportteil
 * Kartenteil
 * Adressteil

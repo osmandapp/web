@@ -128,13 +128,13 @@ Die folgende Tabelle zeigt die Funktionen, die sowohl in den kostenlosen als auc
 | [Offline- und Online-Navigation](../navigation/index.md)<br/>mit Abbiegehinweisen | ✔ | ✔ | ✔ |
 | [Offline-Sofortsuche](../search/index.md) | ✔ | ✔ | ✔ |
 | [Aufzeichnung von Fahrten](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [GPX-Tracks exportieren](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
-| [GPX/KML-Tracks importieren](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [GPX Tracks exportieren](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
+| [GPX/KML Tracks importieren](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Routenplanungstool](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
 | [Fahrzeugmetrik-Widgets](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 Widgets kostenlos**</summary><ul><li>*Fahrzeuggeschwindigkeit*</li><li>*Motordrehzahl*</li></ul></details> | <details><summary>**2 Widgets kostenlos**</summary><ul><li>*Fahrzeuggeschwindigkeit*</li><li>*Motordrehzahl*</li></ul></details> | ✔ |
 | [Kartenmarkierungstool](../personal/markers.md) | ✔ | ✔ | ✔ |
-| [Online-Kartenquellen](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [SQLitedb-Karte](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Online Kartenquellen](../plugins/online-map.md) | ✔ | ✔ | ✔ |
+| [SQLitedb Karte](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
 | [Favoritenpunkte](../map/point-layers-on-map.md)<br/>Lesezeichen und Wegpunkte | ✔ | ✔ | ✔ |
 | [Audio-/Bild-/Video-Punkte](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -160,7 +160,7 @@ Das **Pro**-Abonnement umfasst derzeit die folgenden Funktionen:
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Sichern und Wiederherstellen Ihrer Daten, Synchronisieren von Daten mit dem [OsmAnd-Webportal](https://www.osmand.net/map). |
 | [Plattformübergreifend](../personal/osmand-cloud.md#cross-platform) | Möglichkeit, OsmAnd Pro und OsmAnd Start auf allen Plattformen (Android *←→* iOS *→* Web) zu nutzen. |
 | [3D-Relief](../plugins/topography.md#3d-relief) | Ermöglicht Ihnen, ein maßstabsgetreues Modell Ihrer Nachbarschaft oder eines ganzen Kontinents zu haben und zu beobachten. |
-| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd-Karten werden alle 15 Minuten nach Verbesserung von [OpenStreetMap](https://www.openstreetmap.org/) aktualisiert. |
+| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd Karten werden alle 15 Minuten nach Verbesserung von [OpenStreetMap](https://www.openstreetmap.org/) aktualisiert. |
 | [Wetter-Plugin](../plugins/weather.md) | 24-Stunden-Stundenprognose für 7 Tage im Voraus auf der Karte. |
 | [Fahrzeugmetrik-Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Ermöglicht den Anschluss eines OBD-II-Scanners zur Anzeige detaillierter Fahrzeugdaten in der OsmAnd-App und zur Speicherung der Informationen in Track-Aufzeichnungen. |
 | [Routenlinie anpassen](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Ändern der Farbe und Breite der Routenlinie während der Navigation. |

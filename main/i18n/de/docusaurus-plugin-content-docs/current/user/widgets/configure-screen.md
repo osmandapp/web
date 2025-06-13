@@ -362,7 +362,7 @@ Das **Widget Kontextmenü** bietet eine schnelle Möglichkeit, Widgets direkt vo
 
 ### Kopien von Widgets {#copies-of-widgets}
 
-*OsmAnd-Menü → Bildschirm konfigurieren → Widgets → Bereich*  
+*OsmAnd Menü → Bildschirm konfigurieren → Widgets → Bereich*  
 
 ![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
 
@@ -370,14 +370,14 @@ OsmAnd ermöglicht es Ihnen, mehrere Instanzen desselben Widgets zu verschiedene
 
 ***So duplizieren Sie Widgets:***
 
-- **Widget hinzufügen**. Navigieren Sie zu: *OsmAnd-Menü → Bildschirm konfigurieren → Widgets → Bereich →* **Widget hinzufügen**.
+- **Widget hinzufügen**. Navigieren Sie zu: *OsmAnd Menü → Bildschirm konfigurieren → Widgets → Bereich →* **Widget hinzufügen**.
 - **Mit dem Kontextmenü duplizieren**. Tippen Sie auf das Widget und wählen Sie **Duplizieren** aus der Liste der Aktionen.
 - **Alternative Methode**. Wählen Sie dasselbe Widget aus der Liste der *Verfügbaren Widgets* aus und tippen Sie auf *Hinzufügen*.
 
 
 ### Verschieben oder Löschen {#move-or-delete}
 
-*OsmAnd-Menü → Bildschirm konfigurieren → Widgets → Bereich*  
+*OsmAnd Menü → Bildschirm konfigurieren → Widgets → Bereich*  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)
 
@@ -385,7 +385,7 @@ Sie können Widgets mithilfe des **Bearbeitungsmodus** auf dem Anwendungsbildsch
 
 ***So verschieben Sie ein Widget:***
 
-- Gehen Sie zu: *OsmAnd-Menü → Bildschirm konfigurieren → Widgets → Bereich → Schaltfläche Bearbeiten*.
+- Gehen Sie zu: *OsmAnd Menü → Bildschirm konfigurieren → Widgets → Bereich → Schaltfläche Bearbeiten*.
 - Tippen Sie lange auf das **Symbol rechts** neben dem Widget.
 - Ziehen Sie es an die gewünschte Position in der Widget-Liste.
 
@@ -463,7 +463,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
     - [Vergrößern / Verkleinern](../widgets/map-buttons.md#my-location-and-zoom). Passt die Zoomstufe der Karte an, um mehr oder weniger Details anzuzeigen.
 
-2. Das **Drei-Punkte-Menü** auf dem Bildschirm der Standardschaltflächen enthält Aktionen wie:
+2. Das **Drei-Punkte Menü** auf dem Bildschirm der Standardschaltflächen enthält Aktionen wie:
 
     - *Auf Standard zurücksetzen*. Ermöglicht es Ihnen, die Schaltflächeneinstellungen auf ihr ursprüngliches Aussehen zurückzusetzen.
     - *Von einem anderen Profil kopieren*. Wählen Sie aus der angebotenen Liste aus, von welchem Profil Sie die Schaltflächeneinstellungen kopieren möchten.
@@ -534,7 +534,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
 
 > *Standortposition auf dem Bildschirm* ist der Name dieser Einstellung in der iOS-Version von OsmAnd.  
 
-Ermöglicht es Ihnen, die Platzierung des Cursors auf *[Mein Standort](../map/interact-with-map.md#my-location-and-zoom)* auf der OsmAnd-Karte festzulegen. Es stehen drei Optionen zur Verfügung:  
+Ermöglicht es Ihnen, die Platzierung des Cursors auf *[Mein Standort](../map/interact-with-map.md#my-location-and-zoom)* auf der OsmAnd Karte festzulegen. Es stehen drei Optionen zur Verfügung:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. Der Cursor ist immer in der Mitte des Bildschirms positioniert.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Mein Standort* wird leicht unterhalb der Bildschirmmitte platziert. Dieser Modus ermöglicht es Ihnen, mehr Karteninformationen vor Ihrer Bewegung zu sehen, was während der Navigation nützlich ist.
@@ -566,7 +566,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> 
 Zugriff auf zusätzliche Aktionen im Bildschirm "Konfigurieren" sind:
 
 - *Android*. Befindet sich im Bildschirm "Konfigurieren" am unteren Bildschirmrand im Abschnitt *Aktionen*: *Menü → Bildschirm konfigurieren → Aktionen*.
-- *Android / iOS*. Befindet sich auf den Bildschirmen jedes Bereichs im *Drei-Punkte-Menü* in der oberen rechten Ecke des Bildschirms.
+- *Android / iOS*. Befindet sich auf den Bildschirmen jedes Bereichs im *Drei-Punkte Menü* in der oberen rechten Ecke des Bildschirms.
 
 Verfügbare Aktionen:
 

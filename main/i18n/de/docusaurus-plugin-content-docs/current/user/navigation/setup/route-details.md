@@ -95,7 +95,7 @@ Abhängig von den ausgewählten [Profileinstellungen](../../personal/profiles.md
 
 </Tabs>
 
-**Höheninformationen** werden in allen Offline-Routenprofilen von OsmAnd bereitgestellt, mit Ausnahme von Profilen, die die [Luftliniennavigation](../routing/straight-line-routing.md) verwenden. Die Höhendaten sind Teil der OsmAnd Offline-Karten und werden basierend auf [öffentlichen SRTM-Quellen](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission) berechnet.
+**Höheninformationen** werden in allen Offline-Routenprofilen von OsmAnd bereitgestellt, mit Ausnahme von Profilen, die die [Luftliniennavigation](../routing/straight-line-routing.md) verwenden. Die Höhendaten sind Teil der OsmAnd Offline Karten und werden basierend auf [öffentlichen SRTM-Quellen](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission) berechnet.
 
 - *Höhenbereich*. Zeigt die minimale / maximale Höhe auf der Route an.
 - *Durchschnittliche Höhe*. Zeigt die gewichtete Durchschnittshöhe auf der Route an.

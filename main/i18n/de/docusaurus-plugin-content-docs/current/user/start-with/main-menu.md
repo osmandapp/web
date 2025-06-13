@@ -48,7 +48,7 @@ Das Symbol '&#8801;' für das [Hauptmenü](../widgets/map-buttons.md#main-menu) 
 - [Karte konfigurieren](../map/configure-map-menu.md) ist ein Menü, das die Konfiguration der Kartenansicht ermöglicht.
 - [Karten herunterladen](../start-with/download-maps.md) ist ein Menü, das alle herunterladbaren Dateien enthält.
 - [Reiseführer (Beta)](../plan-route/travel-guides.md) (*Android*) ist ein Werkzeug, das die Verwendung des Wikivoyage-Führers für Ihre Reise ermöglicht.
-- [Route planen](../plan-route/create-route.md) ist ein Werkzeug, mit dem Sie Entfernungen auf der Karte messen, GPX-Tracks erstellen oder neue Segmente zu bestehenden hinzufügen können.
+- [Route planen](../plan-route/create-route.md) ist ein Werkzeug, mit dem Sie Entfernungen auf der Karte messen, GPX Tracks erstellen oder neue Segmente zu bestehenden hinzufügen können.
 - [* Trip-Aufzeichnung](../plugins/trip-recording.md) (*Android*) ist ein Werkzeug, das die Aufzeichnung aller Bewegungen in einen Track mithilfe des GPS des Telefons ermöglicht.
 
 ### Einstellungen {#settings}
@@ -77,7 +77,7 @@ In diesem Menü können Sie das aktive Profil **wechseln**, das aktive Profil **
 
 - Die Schaltfläche *Minus* löscht ein Element aus dem *Hauptmenü* im Drawer und verschiebt es in den Abschnitt *Ausgeblendet*. Die Schaltfläche *Verschieben* ändert die Position des ausgewählten Elements in der Liste.  
 
-- Elemente, die in den Abschnitt *Ausgeblendet* verschoben wurden, werden im Drawer-Menü nicht angezeigt, aber alle Optionen, Einstellungen oder Plugins aus dieser Liste funktionieren weiterhin. Sie können Elemente wiederherstellen, indem Sie auf die grüne Schaltfläche links neben ihren Namen tippen.  
+- Elemente, die in den Abschnitt *Ausgeblendet* verschoben wurden, werden im Drawer Menü nicht angezeigt, aber alle Optionen, Einstellungen oder Plugins aus dieser Liste funktionieren weiterhin. Sie können Elemente wiederherstellen, indem Sie auf die grüne Schaltfläche links neben ihren Namen tippen.  
     ![Drawer menu hidden items ](@site/static/img/settings/drawer_menu_hidden_items.png)
 
 > *Zuletzt aktualisiert: Juli 2022*

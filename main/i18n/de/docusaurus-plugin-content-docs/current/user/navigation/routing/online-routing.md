@@ -45,7 +45,7 @@ Sie können im [OSMwiki](https://wiki.openstreetmap.org/wiki/Routing/online_rout
 
 ### Benutzerdefiniertes Online-GPX-Routing {#custom-online-gpx-routing}
 
-Der Online-Server erstellt eine Route anhand Ihres Startpunkts und Ziels. Nach Erhalt der Strecke vom Server erstellt OsmAnd eine Route mithilfe der Funktion *[An Straßen anheften](../setup/gpx-navigation.md#attach-to-the-roads)*. So werden alle benötigten Routing-Informationen aus unseren Offline-Karten entnommen und eine präzisere Führung entlang der Route bereitgestellt.
+Der Online-Server erstellt eine Route anhand Ihres Startpunkts und Ziels. Nach Erhalt der Strecke vom Server erstellt OsmAnd eine Route mithilfe der Funktion *[An Straßen anheften](../setup/gpx-navigation.md#attach-to-the-roads)*. So werden alle benötigten Routing-Informationen aus unseren Offline Karten entnommen und eine präzisere Führung entlang der Route bereitgestellt.
 
 ![Benutzerdefiniertes GPX-Routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_1.png) ![Benutzerdefiniertes GPX-Routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_2.png)
 

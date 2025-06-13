@@ -40,7 +40,7 @@ Ziel-SDK-Tools: [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/buil
 Die Gradle-Aufgabe **assembleNightlyFreeLegacyFatDebug** erstellt eine APK unter *android/OsmAnd/build/outputs/apk/* *nightlyFreeLegacyFat/debug/OsmAnd-nightlyFree-legacy-fat-debug.apk*. Der Aufgabenname *assembleNightlyFreeLegacyFatDebug* besteht aus:
 - assemble - Standardaufgabe zum Erstellen einer APK
 - nightlyFree - unten beschriebener Build-Flavor
-- legacy - legacy / opengl / opengldebug - definiert, ob die erzeugte APK native Bibliotheken zur Verwendung des OpenGL-Kartenrenderings enthält oder nicht. Weitere Informationen im OsmAnd-Entwicklungs-Plugin.
+- legacy - legacy / opengl / opengldebug - definiert, ob die erzeugte APK native Bibliotheken zur Verwendung des OpenGL Kartenrenderings enthält oder nicht. Weitere Informationen im OsmAnd-Entwicklungs-Plugin.
 - fat - fat (alle nativen Ziele) / armv7 / arm64 / x86 / armonly - wählt aus, welche nativen Bibliotheken in der APK enthalten sein werden.
 - debug - debug / release - Standardaufgabe
 

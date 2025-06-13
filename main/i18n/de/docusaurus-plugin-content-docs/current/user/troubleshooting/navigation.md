@@ -48,8 +48,8 @@ Um Abstürze bei Routen ähnlicher Distanzen zu vermeiden, sollten Sie zu andere
 Um Probleme mit falschen oder suboptimalen Routen zu verfolgen, eröffnen Sie bitte einen neuen Beitrag in den [Github-Diskussionen](https://github.com/osmandapp/OsmAnd/discussions) oder im [Github-Issue](https://github.com/osmandapp/Osmand/issues) und geben Sie so detailliert wie möglich die folgenden Informationen an:
 
 - Welche Version von OsmAnd verwenden Sie, auf welchem Gerät?
-- Verwenden Sie die Offline-Karten, die innerhalb der OsmAnd-App zum Download angeboten werden, oder Online-Karten (Kachel / Raster)?
-- Wenn Sie Offline-Karten verwenden, nennen Sie uns den genauen Namen der Kartendatei, bei der das Routing Problem auftritt, und deren Ausgabedatum.
+- Verwenden Sie die Offline Karten, die innerhalb der OsmAnd-App zum Download angeboten werden, oder Online Karten (Kachel / Raster)?
+- Wenn Sie Offline Karten verwenden, nennen Sie uns den genauen Namen der Kartendatei, bei der das Routing Problem auftritt, und deren Ausgabedatum.
 - Sagen Sie uns, ob Sie das In-App-Offline-Routing von OsmAnd oder einen Online-Routing-Anbieter wie YOURS, OpenRouteService oder OSRM verwendet haben.
 - Welches Routing-Profil ist in der OsmAnd-App ausgewählt (Auto, Fahrrad oder Fußgänger)?
 - Bitte geben Sie den Start- und Endpunkt Ihrer Route so genau wie möglich an. Wenn möglich, nennen Sie uns für jeden Ort den Stadtnamen und den Straßennamen. Auch ein [Permalink](https://wiki.openstreetmap.org/wiki/Permalink) von openstreetmap.org kann hilfreich sein.

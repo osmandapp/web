@@ -185,7 +185,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,o
 
 </Tabs>  
 
-**Letzte Synchronisierung** ist ein Dropdown-Menü, das anzeigt, wie lange es her ist, dass Daten zuletzt zwischen diesem Gerät und der Cloud synchronisiert wurden.
+**Letzte Synchronisierung** ist ein Dropdown Menü, das anzeigt, wie lange es her ist, dass Daten zuletzt zwischen diesem Gerät und der Cloud synchronisiert wurden.
 
 - *Lokale Änderungen*. Zeigt die Gesamtzahl der lokalen Änderungen an, die noch nicht in die Cloud hochgeladen wurden.
 - *Cloud-Änderungen*. Die Gesamtzahl der Änderungen, die seit der letzten Synchronisierung von anderen Geräten in die Cloud hochgeladen wurden.
@@ -243,7 +243,7 @@ Die Funktion **Papierkorb** ermöglicht es Ihnen, Dateien anzuzeigen und zu verw
 
     ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)  
 
-    Um Speicherplatz von allen aus der Cloud gelöschten Dateien freizugeben, können Sie die Funktion *Papierkorb leeren* verwenden. Sie ist über das *Drei-Punkte-Menü* in der oberen rechten Ecke des Papierkorb-Bildschirms verfügbar. Die Dateien werden dauerhaft gelöscht, ohne die Möglichkeit, sie wiederherzustellen.
+    Um Speicherplatz von allen aus der Cloud gelöschten Dateien freizugeben, können Sie die Funktion *Papierkorb leeren* verwenden. Sie ist über das *Drei-Punkte Menü* in der oberen rechten Ecke des Papierkorb-Bildschirms verfügbar. Die Dateien werden dauerhaft gelöscht, ohne die Möglichkeit, sie wiederherzustellen.
 
 - **Einzelne Dateien verwalten**.  
 
@@ -398,7 +398,7 @@ Die Aktionen, die Sie im Abschnitt **Gefahrenzone** des Einstellungsmenüs ausf�
 
 </Tabs>  
 
-Tippen Sie im Abschnitt [Letzte Synchronisierung](#last-sync) des Dropdown-Menüs auf ein beliebiges Element, um den Abschnitt Änderungen zu öffnen. Dieser Abschnitt enthält drei Tabs, die alle verfügbaren Änderungen zur Bearbeitung anzeigen. Wenn die Liste leer ist, sind seit der letzten Synchronisierung keine Änderungen aufgetreten.
+Tippen Sie im Abschnitt [Letzte Synchronisierung](#last-sync) des Dropdown Menüs auf ein beliebiges Element, um den Abschnitt Änderungen zu öffnen. Dieser Abschnitt enthält drei Tabs, die alle verfügbaren Änderungen zur Bearbeitung anzeigen. Wenn die Liste leer ist, sind seit der letzten Synchronisierung keine Änderungen aufgetreten.
 
 - Jedes Element in der Liste **Änderungen** enthält das **Datum und die genaue Uhrzeit** der letzten Synchronisierung sowie Optionen zum sofortigen Herunterladen oder Hochladen der entsprechenden Version.
 

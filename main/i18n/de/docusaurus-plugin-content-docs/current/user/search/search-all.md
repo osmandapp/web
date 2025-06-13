@@ -138,7 +138,7 @@ Sie können den benötigten Ort auf der Karte aus der Liste der Punkte finden, d
 3. Wenn Sie einen [Markennamen](../search/search-poi.md#how-to-use) eingeben, beginnt die Liste mit Ergebnissen nach diesem Namen, sortiert nach der nächstgelegenen Entfernung.
 
 :::note Einschränkungen der TIGER Daten bei Adresssuchen
-OsmAnd hat [**TIGER Daten**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) in die US-Karten integriert, um Informationen über US-Adressen bereitzustellen. Der TIGER Datensatz ist **bereichsbasiert** und enthält keine genauen Hausnummern, sodass einige Adressen fehlen oder ungenau sein können.
+OsmAnd hat [**TIGER Daten**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) in die US Karten integriert, um Informationen über US-Adressen bereitzustellen. Der TIGER Datensatz ist **bereichsbasiert** und enthält keine genauen Hausnummern, sodass einige Adressen fehlen oder ungenau sein können.
 :::
 
 

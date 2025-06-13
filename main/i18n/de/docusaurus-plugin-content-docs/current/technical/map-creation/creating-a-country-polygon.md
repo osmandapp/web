@@ -9,7 +9,7 @@ Dieser Artikel beschreibt, wie man ein Poly(gon) für ein fehlendes Land in geof
 
 ## Einführung {#introduction}
 
-OsmAnd wird mit vielen Karten für viele Länder geliefert. Die meisten Karten werden aus "Rohdaten"-Karten erstellt, die von [geofabrik.de](http://download.geofabrik.de) heruntergeladen wurden. Geofabrik stellt diese Rohdaten-Karten kostenlos zur Verfügung und bietet (kommerzielle) Dienstleistungen und Produkte auf Basis dieser Karten an.
+OsmAnd wird mit vielen Karten für viele Länder geliefert. Die meisten Karten werden aus "Rohdaten" Karten erstellt, die von [geofabrik.de](http://download.geofabrik.de) heruntergeladen wurden. Geofabrik stellt diese Rohdaten Karten kostenlos zur Verfügung und bietet (kommerzielle) Dienstleistungen und Produkte auf Basis dieser Karten an.
 
 Geofabrik.de verfolgt die Strategie, Karten für die Länder zu liefern, die von einer größeren Anzahl von Benutzern oder von ihren Kunden angefragt werden. Das bedeutet, dass einige Karten es nie auf geofabrik schaffen, da es einfach nicht genügend Anfragen gibt (oder gar keine), wie z.B. für einige exotische Länder wie die Seychellen oder Burundi, etc.
 
@@ -17,8 +17,8 @@ Geofabrik.de verfolgt die Strategie, Karten für die Länder zu liefern, die von
 Aufgrund dieser strategischen Entscheidung von geofabrik hat OsmAnd die Möglichkeit, Karten für diese Länder zu generieren, und die Tools [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) und [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) werden dafür verwendet. Für OsmAndMapCreator ist dies ein dreistufiger Prozess:
 - OsmAndMapCreator benötigt ein Polygon, das die äußere Grenze des Landes umgibt.
 - OsmAndMapCreator benötigt die "Rohdatenkarte" der nächsthöheren Ebene, die dieses Land einschließt. Für Burundi bedeutet dies, dass OsmAndMapCreator die Afrikakarte benötigt. Für Nordrhein-Westfalen bedeutet dies, dass OsmAndMapCreator die Deutschlandkarte benötigt.
-- [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) erstellt eine "Rohdaten"-Karte aus dem Poly, indem es die Kartendaten aus der "Eltern"-Karte extrahiert.
-- OsmAndMapCreator erstellt eine OsmAnd obf-Karte basierend auf der von osmconvert generierten Zwischen-"Rohdaten"-Karte.
+- [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) erstellt eine "Rohdaten" Karte aus dem Poly, indem es die Kartendaten aus der "Eltern" Karte extrahiert.
+- OsmAndMapCreator erstellt eine OsmAnd obf Karte basierend auf der von osmconvert generierten Zwischen-"Rohdaten" Karte.
 
 ## Notwendige Aktionen {#necessary-actions}
 Je nach Komplexität des (generierten) Polygons kann diese gesamte Kette von Aktionen insgesamt zwischen 10 Minuten und 2 Stunden dauern.
@@ -54,7 +54,7 @@ Um dies tun zu können, müssen Sie sich als Benutzer registrieren.
 
 Um die Kartengenerierung zu ermöglichen, sind zwei Schritte erforderlich:
 - Hinzufügen des Polygons zum Kartendatenbereich
-- Hinzufügen des Landes zur Datendatei, die zur Generierung der OsmAnd obf-Karten verwendet wird.
+- Hinzufügen des Landes zur Datendatei, die zur Generierung der OsmAnd obf Karten verwendet wird.
 
 Hinzufügen des Polygons zum Kartendatenbereich
 - Gehen Sie zur Webadresse des OsmAnd-Entwicklungsservers unter [https://github.com/osmandapp/](https://github.com/osmandapp/ "https://github.com/osmandapp/")
@@ -76,15 +76,15 @@ Kartenerstellung zur Batch-Liste hinzufügen
 
 Sie können zum Beispiel Polygone von Ländern, Landkreisen/Provinzen/Bundesstaaten, Regionen und Städten erstellen.
 
-Angenommen, Ihre Tochter fährt für ein paar Tage mit einer Freundin nach Paris. Sie ist nicht an Navigation, Wandern oder Radfahren interessiert (es sei denn, es ist absolut notwendig), aber sie möchte wissen, wo sie ist, wohin sie gehen soll und wo sie die interessanten Orte (POIs) findet. Außerdem hat sie ein kleines Telefon (Low-End-CPU, wenig Speicher) und eine kleine SD-Karte (voll mit Musik). Die Karte muss also so klein wie möglich sein: sowohl für den Speicher als auch für die Leistung. Sie können natürlich die Karte für france\_ile-de-france.obf mit Paris herunterladen, aber Sie können auch eine "maßgeschneiderte" Paris-Karte generieren.
+Angenommen, Ihre Tochter fährt für ein paar Tage mit einer Freundin nach Paris. Sie ist nicht an Navigation, Wandern oder Radfahren interessiert (es sei denn, es ist absolut notwendig), aber sie möchte wissen, wo sie ist, wohin sie gehen soll und wo sie die interessanten Orte (POIs) findet. Außerdem hat sie ein kleines Telefon (Low-End-CPU, wenig Speicher) und eine kleine SD Karte (voll mit Musik). Die Karte muss also so klein wie möglich sein: sowohl für den Speicher als auch für die Leistung. Sie können natürlich die Karte für france\_ile-de-france.obf mit Paris herunterladen, aber Sie können auch eine "maßgeschneiderte" Paris Karte generieren.
 - Lassen Sie Ihre Tochter OsmAnd herunterladen, oder noch besser: lassen Sie sie OsmAnd+ kaufen.
 - Holen Sie sich die OSM-Relations-ID für Paris von Nominatim.
 - Holen Sie sich das (vereinfachte) Poly für die Paris-ID von polygons.openstreetmap.fr.
 - Laden Sie [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) herunter oder kompilieren Sie es.
-- Laden Sie die "Rohdaten"-Karte von Ile-de-France von geofabrik.de herunter.
-- Erstellen Sie eine Rohdatenkarte von Paris aus der Ile-de-France-Karte und dem Paris-Poly wie folgt:
+- Laden Sie die "Rohdaten" Karte von Ile-de-France von geofabrik.de herunter.
+- Erstellen Sie eine Rohdatenkarte von Paris aus der Ile-de-France Karte und dem Paris-Poly wie folgt:
 <pre>
 $ osmconvert ile-de-france.osm.pbf -B=paris.poly --out-pbf > Paris.osm.pbf
 </pre>
 - Laden Sie die Anwendung OsmAndMapCreator von [download.osmand.net/latest-night-build/](http://download.osmand.net/latest-night-build/ "https://download.osmand.net/latest-night-build/") herunter.
-- Erstellen Sie Ihre OsmAnd obf-Karte aus den Paris.osm.pbf Daten mit OsmAndMapCreator.
+- Erstellen Sie Ihre OsmAnd obf Karte aus den Paris.osm.pbf Daten mit OsmAndMapCreator.

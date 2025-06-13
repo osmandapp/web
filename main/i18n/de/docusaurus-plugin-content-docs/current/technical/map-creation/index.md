@@ -6,6 +6,6 @@ sidebar_position: 1
 # Kartenerstellung {#map-creation}
 
 * [Wie man eine obf-Datei inspiziert](./how-to-inspect-an-obf.md)
-* [Offline-Karten selbst erstellen](./create-offline-maps-yourself.md) - Mit OsmAndMapCreator gibt es viele Möglichkeiten, Raster- und Vektorkarten für Ihre Bedürfnisse zu erstellen und anzupassen.
+* [Offline Karten selbst erstellen](./create-offline-maps-yourself.md) - Mit OsmAndMapCreator gibt es viele Möglichkeiten, Raster- und Vektorkarten für Ihre Bedürfnisse zu erstellen und anzupassen.
 * [Einen benutzerdefinierten Reiseführer erstellen](create_travel_guide.md)
 * [Erstellen eines Länderpolygons](./creating-a-country-polygon.md)

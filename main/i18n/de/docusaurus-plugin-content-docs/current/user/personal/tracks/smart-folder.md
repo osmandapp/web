@@ -145,7 +145,7 @@ Um einen **Intelligenten Ordner** zu erstellen, folgen Sie diesen Schritten:
 
 1. Tippen Sie auf das Symbol mit den ***drei Punkten*** in der Registerkarte *Tracks* des Menüs *Meine Orte*.
 
-2. Wählen Sie im Dropdown-Menü **Intelligenten Ordner hinzufügen**.
+2. Wählen Sie im Dropdown Menü **Intelligenten Ordner hinzufügen**.
 
 3. Konfigurieren Sie die Einstellungen:
    - **Benennen Sie den Ordner**. Geben Sie einen Namen ein, um den Ordner zu identifizieren.
@@ -186,7 +186,7 @@ Der **Intelligente Ordner** wird in der Ordnerliste in der Registerkarte Tracks 
 
 - **Details** — Zeigen Sie die vollständige Liste der im Ordner enthaltenen Tracks an.
 
-- **Alle Tracks auf der Karte anzeigen** (*nur Android*) — Zeigen Sie alle Ordner-Tracks auf der Karte an.
+- **Alle Tracks auf der Karte anzeigen** (*nur Android*) — Zeigen Sie alle Ordner Tracks auf der Karte an.
     *HINWEIS: Das Laden vieler Tracks kann die Leistung beeinträchtigen.*
 
 - **Namen bearbeiten** (*Android*) / **Umbenennen** (*iOS*) — Ändern Sie den Ordnernamen zur einfacheren Identifizierung.

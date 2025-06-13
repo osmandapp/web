@@ -9,7 +9,7 @@ OsmAnd ermöglicht es Ihnen, verschiedene Daten wie Karten, Punkte, Tracks, pers
 
 ## [Karten & Ressourcen](./maps-resources.md) {#maps--recources}
 
-Das Menü *Karten & Ressourcen* ermöglicht Ihnen grundlegende Operationen mit Online- und Offline-Karten und Daten, die in OsmAnd verwendet werden, wie z. B. Herunterladen, Entfernen, Umbenennen, Leeren des Caches für Online-Karten, Aktualisieren und Überprüfen der Kartengröße.
+Das Menü *Karten & Ressourcen* ermöglicht Ihnen grundlegende Operationen mit Online- und Offline Karten und Daten, die in OsmAnd verwendet werden, wie z. B. Herunterladen, Entfernen, Umbenennen, Leeren des Caches für Online Karten, Aktualisieren und Überprüfen der Kartengröße.
 
 ## [Globale Einstellungen](./global-settings.md) {#global-settings}
 

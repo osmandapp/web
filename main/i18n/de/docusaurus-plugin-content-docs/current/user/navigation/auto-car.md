@@ -56,7 +56,7 @@ Wenn Sie die Anwendung öffnen, wird eine Liste von Kategorien angezeigt. Für e
 
 *Android Auto* zeigt die an das Fahrzeug-Multimediasystem angepasste OsmAnd-Oberfläche an. Die Interaktion mit der Karte ist auf Schaltflächen beschränkt, wie z. B.:
 
-- [OsmAnd-Menü](#destination-points). Enthält eine Liste der verfügbaren Optionen zum Festlegen eines Routenendpunkts oder einer freien Fahrt.
+- [OsmAnd Menü](#destination-points). Enthält eine Liste der verfügbaren Optionen zum Festlegen eines Routenendpunkts oder einer freien Fahrt.
 - [Einstellungen](#voice-prompts). Diese Schaltfläche ist zuständig für: 1. Zugriff zum Ein-/Ausschalten von *Sprachansagen*, wenn Sie die ausgewählte Route navigieren; 2. Anzeigen von Routendetails (Zeit und Entfernung) für den nächsten Stopp.
 - [Suche](#search). Durch Tippen auf die Schaltfläche wird ein Bildschirm mit Zugriff auf die Suchfunktionen geöffnet.
 - [Mein Standort](../widgets/map-buttons.md#my-location-and-zoom). Verschiebt den sichtbaren Teil der Karte so, dass Ihr aktueller Standort in der Mitte des Bildschirms liegt.
@@ -250,12 +250,12 @@ Das **Tachometer-Widget** ist ein integriertes Oberflächenelement, das die *akt
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance_3d_2.png)
 
-Die OsmAnd-App ermöglicht es Ihnen, die 3D-Kartenansicht auf dem *Android Auto*-Bildschirm zu verwenden, um Ihre Route und Navigation anzuzeigen.
+Die OsmAnd-App ermöglicht es Ihnen, die 3D Kartenansicht auf dem *Android Auto*-Bildschirm zu verwenden, um Ihre Route und Navigation anzuzeigen.
 
 - Um diese Funktion zu aktivieren, müssen Sie [Kartenrendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) auswählen.
 - Öffnen Sie das Hauptmenü *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* direkt in der OsmAnd-App.
 - Nach der Konfiguration der Einstellungen wird die **3D-Schaltfläche** auf dem *Android Auto*-Bildschirm angezeigt, wenn die Kategorieliste für Ziele geschlossen ist.
-- Sie können zwischen 3D-/2D-Kartenmodi wechseln, indem Sie auf diese Schaltfläche tippen.
+- Sie können zwischen 3D-/2D Kartenmodi wechseln, indem Sie auf diese Schaltfläche tippen.
 
 
 ### Sprachansagen {#voice-prompts}

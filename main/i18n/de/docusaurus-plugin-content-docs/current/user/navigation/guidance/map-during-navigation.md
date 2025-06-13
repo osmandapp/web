@@ -204,16 +204,16 @@ Die Einstellung **Farbe** ändert die Farbtöne der Routenlinien. Ihre Gesamtfar
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>***. Färbt eine Route oder Tracklinie entsprechend der *Straßenklassifizierung*. Eine detaillierte Beschreibung finden Sie im Artikel *Vektorkarten - [Straßenstil](../../map/vector-maps.md#road-style)*.  
     ![Höhe](@site/static/img/navigation/route/Roud_type.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />***. Bietet Informationen über die physische Oberfläche der Straße oder des Weges. Eine detaillierte Beschreibung finden Sie im Artikel *OsmAnd-Kartenstil - [Oberfläche](../../map-legend/osmand.md#surface-smoothness)* im Abschnitt *Kartenlegende*.  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />***. Bietet Informationen über die physische Oberfläche der Straße oder des Weges. Eine detaillierte Beschreibung finden Sie im Artikel *OsmAnd Kartenstil - [Oberfläche](../../map-legend/osmand.md#surface-smoothness)* im Abschnitt *Kartenlegende*.  
     ![Höhe](@site/static/img/navigation/route/Surface.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Klassifizierung der Manövrierfähigkeit von Straßen oder Wegen für Radfahrzeuge, insbesondere in Bezug auf die Regelmäßigkeit und Glätte der Oberfläche. Eine detaillierte Beschreibung finden Sie im Artikel *OsmAnd-Kartenstil - [Glätte](../../map-legend/osmand.md#surface-smoothness)* im Abschnitt *Kartenlegende*.  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Klassifizierung der Manövrierfähigkeit von Straßen oder Wegen für Radfahrzeuge, insbesondere in Bezug auf die Regelmäßigkeit und Glätte der Oberfläche. Eine detaillierte Beschreibung finden Sie im Artikel *OsmAnd Kartenstil - [Glätte](../../map-legend/osmand.md#surface-smoothness)* im Abschnitt *Kartenlegende*.  
     ![Höhe](@site/static/img/navigation/route/Smoothness.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Färbt eine Route oder Tracklinie entsprechend der *Winterstraßenklassifizierung*. Eine detaillierte Beschreibung finden Sie im Artikel *Vektorkarten*, Abschnitt [Winter- und Eisstraßen](../../map/vector-maps.md#winter-and-ski).  
     ![Höhe](@site/static/img/navigation/route/Winter.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Färbung einer Route oder Weglinie nach der Zusammensetzung des Belags. Wird typischerweise verwendet, wenn das Straßennetz weitgehend unbefestigt ist. Eine detaillierte Beschreibung finden Sie im Artikel *OsmAnd-Kartenstil - [Oberflächenfestigkeit](../../map-legend/osmand.md#surface-smoothness)* im Abschnitt *Kartenlegende*.  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Färbung einer Route oder Weglinie nach der Zusammensetzung des Belags. Wird typischerweise verwendet, wenn das Straßennetz weitgehend unbefestigt ist. Eine detaillierte Beschreibung finden Sie im Artikel *OsmAnd Kartenstil - [Oberflächenfestigkeit](../../map-legend/osmand.md#surface-smoothness)* im Abschnitt *Kartenlegende*.  
     ![Höhe](@site/static/img/navigation/route/firmness.png)
 
 - ***<ProFeature/> &nbsp;Schwierigkeit von Reitwegen***. Rendert Wege entsprechend der Schwierigkeit von Reitwegen.  

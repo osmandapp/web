@@ -20,9 +20,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 OsmAnd wurde entwickelt, um OpenStreetMap (OSM) zu unterstützen, und priorisiert diesen Weg so weit wie möglich. Zusätzlich gibt es Lizenzbeschränkungen, die es OsmAnd nicht erlauben, mit Google Maps Daten vertrieben zu werden.
 
-### Karten laden langsam auf Android 11, 12 (SD-Karte) {#maps-slowly-loading-on-android-11-12-sd-card}
+### Karten laden langsam auf Android 11, 12 (SD Karte) {#maps-slowly-loading-on-android-11-12-sd-card}
 
-Aufgrund der neuen [Speicherzugriffsregeln, die in Android 11 und 12 eingeführt wurden](https://www.androidauthority.com/android-12-privacy-features-1225859/), können Benutzer eine langsamere Leistung beim Zugriff auf Karten erleben, die auf SD-Karten gespeichert sind. Diese Änderungen können auch Sichtbarkeits- und Zugriffsbeschränkungen für Dateien in SD-Kartenordnern verursachen. Weitere Diskussionen und technische Einblicke finden Sie unter den folgenden Links: [Reddit-Diskussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
+Aufgrund der neuen [Speicherzugriffsregeln, die in Android 11 und 12 eingeführt wurden](https://www.androidauthority.com/android-12-privacy-features-1225859/), können Benutzer eine langsamere Leistung beim Zugriff auf Karten erleben, die auf SD Karten gespeichert sind. Diese Änderungen können auch Sichtbarkeits- und Zugriffsbeschränkungen für Dateien in SD Kartenordnern verursachen. Weitere Diskussionen und technische Einblicke finden Sie unter den folgenden Links: [Reddit-Diskussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
 
 Derzeit stehen folgende Lösungen zur Verfügung:
 
@@ -30,13 +30,13 @@ Derzeit stehen folgende Lösungen zur Verfügung:
 
 - Sie können den Speicherordner ändern, indem Sie die Option ***Interner App-Speicher*** in *Menü → Einstellungen → OsmAnd Einstellungen → Datenspeicherordner* auswählen.
 
-- Beachten Sie jedoch, dass der interne Speicher oft begrenzt ist. Als Workaround können Sie wichtige Dateien in den internen Speicher verschieben, während Sie selten verwendete Karten auf der SD-Karte belassen. Verwenden Sie einen Dateimanager, um diese Dateien bei Bedarf manuell zu übertragen.
+- Beachten Sie jedoch, dass der interne Speicher oft begrenzt ist. Als Workaround können Sie wichtige Dateien in den internen Speicher verschieben, während Sie selten verwendete Karten auf der SD Karte belassen. Verwenden Sie einen Dateimanager, um diese Dateien bei Bedarf manuell zu übertragen.
 
-Das Entwicklungsteam sucht aktiv nach effizienteren Lösungen zur Verbesserung der SD-Kartenleistung unter den neuen Android-Speicherrichtlinien.
+Das Entwicklungsteam sucht aktiv nach effizienteren Lösungen zur Verbesserung der SD Kartenleistung unter den neuen Android-Speicherrichtlinien.
 
-#### 2. Verwenden Sie den „Download“-Ordner der SD-Karte {#2-use-the-sd-cards-download-folder}
+#### 2. Verwenden Sie den „Download“-Ordner der SD Karte {#2-use-the-sd-cards-download-folder}
 
-Sie können versuchen, das Problem des langsamen Kartenladens zu lösen, indem Sie den **Download**-Ordner der SD-Karte für die OsmAnd-Speicherung unter *Menü → Einstellungen → OsmAnd Einstellungen → Datenspeicherordner → Manuell angegeben* angeben. Folgende Pfade sind möglich:
+Sie können versuchen, das Problem des langsamen Kartenladens zu lösen, indem Sie den **Download**-Ordner der SD Karte für die OsmAnd-Speicherung unter *Menü → Einstellungen → OsmAnd Einstellungen → Datenspeicherordner → Manuell angegeben* angeben. Folgende Pfade sind möglich:
 
 - ***/storage/XXXX-XXXX/Download/osmand***  
    Dieser Pfad kann beim Zugriff auf mehrere Dateien Fehler verursachen. Zum Beispiel können Sie möglicherweise die Weltübersichtskarte herunterladen, aber andere Regionen werden möglicherweise nicht angezeigt.
@@ -44,7 +44,7 @@ Sie können versuchen, das Problem des langsamen Kartenladens zu lösen, indem S
 - ***/storage/XXXX-XXXX/Download***  
    Dieser Pfad sollte für das Herunterladen von Karten und anderen Daten konsistent funktionieren. Beachten Sie jedoch, dass OsmAnd Dateien, die von anderen Apps oder Programmen (z. B. SasPlanet) in diesen Ordner geschrieben wurden, nicht erkennt. Weitere Details finden Sie in [dieser Anleitung](../../technical/map-creation/create-offline-maps-yourself.md).
 
-Das "XXXX-XXXX" steht für die eindeutige Identifikationsnummer Ihrer SD-Karte, die manchmal im Ordnerpfad unter den Optionen *Externer Speicher 2* oder mit anderen Methoden gefunden werden kann. Weitere Forschung und Details zu dieser Lösung sind [hier](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744) verfügbar.
+Das "XXXX-XXXX" steht für die eindeutige Identifikationsnummer Ihrer SD Karte, die manchmal im Ordnerpfad unter den Optionen *Externer Speicher 2* oder mit anderen Methoden gefunden werden kann. Weitere Forschung und Details zu dieser Lösung sind [hier](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744) verfügbar.
 
 #### 3. Option „Medienspeicher“ {#3-media-storage-option}
 
@@ -82,7 +82,7 @@ Bei den OsmAnd 4.2 Android-Versionen kann die [Kartenanzeige auf Google Pixel-Ge
 
 Um dieses Problem zu lösen, wechseln Sie zur OpenGL-Anzeige:
 
-- Navigieren Sie zu *OsmAnd-Menü → Einstellungen → OsmAnd Einstellungen → Kartenanzeige-Engine → Version 2 (OpenGL)*.
+- Navigieren Sie zu *OsmAnd Menü → Einstellungen → OsmAnd Einstellungen → Kartenanzeige-Engine → Version 2 (OpenGL)*.
 - Starten Sie OsmAnd neu, um die Änderungen zu übernehmen.
 
 
@@ -107,7 +107,7 @@ Um das Problem der langsamen Kartenanzeige zu lösen, insbesondere bei der Verwe
 
 5. **Deaktivieren Sie den Auto-Zoom.** Der Auto-Zoom kann während der Navigation zu häufigem Neuzeichnen der Karte führen und Verzögerungen verursachen. Deaktivieren Sie den Auto-Zoom in *Menü → Einstellungen → Profil → Navigationseinstellungen → [Karte während der Navigation](../navigation/guidance/map-during-navigation.md)*.
 
-6. **Verwenden Sie nur Offline-Karten.** Online-Karten, insbesondere wenn sie nicht im Voraus heruntergeladen wurden, können das Laden der Karte verlangsamen. Wechseln Sie zur Verwendung nur von Offline-Karten für eine reibungslosere Leistung.
+6. **Verwenden Sie nur Offline Karten.** Online Karten, insbesondere wenn sie nicht im Voraus heruntergeladen wurden, können das Laden der Karte verlangsamen. Wechseln Sie zur Verwendung nur von Offline Karten für eine reibungslosere Leistung.
 
 Diese Änderungen sollten die Zeit reduzieren, die zum Anzeigen von Karten benötigt wird, insbesondere während der Navigation. Weitere detaillierte Konfigurationsoptionen finden Sie im [Handbuch zu den Karteneinstellungen](https://osmand.net/docs/user/map/interact-with-map#settings).
 
@@ -160,9 +160,9 @@ Sie können Notizen hinterlassen und Orte auf der Karte in verschiedenen Formen 
 
 - *[Wegpunkte](../map/tracks/index.md#types-of-tracks)*. Wegpunkte werden entlang von Routen platziert, die Sie erstellen, und helfen Ihnen, bestimmte Haltestellen oder Orte entlang Ihrer Reise zu markieren. Sie können diesen Punkten auch Beschreibungen hinzufügen. Um einen Wegpunkt hinzuzufügen, machen Sie einen *langen Tipp auf die Karte → Wegbeschreibung → als Zwischenwegpunkt hinzufügen*.
 
-- *[Audio/Video-Notizen](../plugins/audio-video-notes.md)*. Mit diesen Notizen können Sie Audio-, Video- oder Fotodateien an bestimmte Orte auf der Karte anhängen. Um dies zu aktivieren, aktivieren Sie das Audio/Video-Notizen-Plugin im *OsmAnd-Menü → Plugins*. Um eine hinzuzufügen, machen Sie einen *langen Tipp → Aktionen → wählen Sie die erforderliche Datei zum Anhängen*.
+- *[Audio/Video-Notizen](../plugins/audio-video-notes.md)*. Mit diesen Notizen können Sie Audio-, Video- oder Fotodateien an bestimmte Orte auf der Karte anhängen. Um dies zu aktivieren, aktivieren Sie das Audio/Video-Notizen-Plugin im *OsmAnd Menü → Plugins*. Um eine hinzuzufügen, machen Sie einen *langen Tipp → Aktionen → wählen Sie die erforderliche Datei zum Anhängen*.
 
-- *[OSM-Notizen](../plugins/osm-editing.md#create--modify-osm-note)*. Dies sind Berichte, die Sie erstellen können, um Fehler oder fehlende Informationen auf OpenStreetMap hervorzuheben. Aktivieren Sie das OSM-Bearbeitungs-Plugin im *OsmAnd-Menü → Plugins*. Um eine OSM-Notiz hinzuzufügen, machen Sie einen *langen Tipp → Aktionen → OSM-Notiz hinzufügen*.
+- *[OSM-Notizen](../plugins/osm-editing.md#create--modify-osm-note)*. Dies sind Berichte, die Sie erstellen können, um Fehler oder fehlende Informationen auf OpenStreetMap hervorzuheben. Aktivieren Sie das OSM-Bearbeitungs-Plugin im *OsmAnd Menü → Plugins*. Um eine OSM-Notiz hinzuzufügen, machen Sie einen *langen Tipp → Aktionen → OSM-Notiz hinzufügen*.
 
 - *[POIs (Points of Interest)](../map/point-layers-on-map.md#points-of-interest-pois)*. Dies sind vordefinierte Punkte aus der Datenquelle von OpenStreetMap, wie z. B. Restaurants, Parks oder Sehenswürdigkeiten. Sie können POIs anzeigen, indem Sie die POI-Überlagerung im Menü *Karte konfigurieren* aktivieren oder eine Kategorie auswählen.
 

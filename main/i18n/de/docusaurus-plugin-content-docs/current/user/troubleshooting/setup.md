@@ -131,6 +131,6 @@ errors (e.g. if the SD card is too full).
 
 Kartenpakete können in zwei Formaten gespeichert werden: [SQLite und Metainfo](https://osmand.net/docs/user/map/raster-maps). Nachdem Sie Ihr Kartenpaket erstellt haben, befolgen Sie diese Schritte, um es nach OsmAnd zu verschieben:
 
-- **Für Android**. Greifen Sie auf den Speicher Ihres Geräts zu und kopieren Sie die Datei(en) von Ihrem PC in den Ordner `BASE_OSMAND_STORAGE/tiles_`. Alternativ können Sie die Datei von Ihrer E-Mail, Cloud oder Messenger herunterladen und mit der OsmAnd-App öffnen. Das Kartenpaket wird automatisch zu Ihrer Online-Kartenliste hinzugefügt.
+- **Für Android**. Greifen Sie auf den Speicher Ihres Geräts zu und kopieren Sie die Datei(en) von Ihrem PC in den Ordner `BASE_OSMAND_STORAGE/tiles_`. Alternativ können Sie die Datei von Ihrer E-Mail, Cloud oder Messenger herunterladen und mit der OsmAnd-App öffnen. Das Kartenpaket wird automatisch zu Ihrer Online Kartenliste hinzugefügt.
 
-- **Für iOS**. Laden Sie die Datei von iTunes oder einem Messenger herunter und öffnen Sie sie dann mit der OsmAnd-App. Das Kartenpaket wird automatisch zu Ihrer Online-Kartenliste hinzugefügt.
+- **Für iOS**. Laden Sie die Datei von iTunes oder einem Messenger herunter und öffnen Sie sie dann mit der OsmAnd-App. Das Kartenpaket wird automatisch zu Ihrer Online Kartenliste hinzugefügt.

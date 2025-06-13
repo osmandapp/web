@@ -57,6 +57,6 @@ iOS-Beta-Builds (TestFlight) werden in der Regel wöchentlich (nach einer Team-S
 - [Einige unbenutzte, nicht erwartete Werte werden unterstützt.](https://github.com/osmandapp/OsmAnd/issues/22103)
 - [POI-Suche löschen (separate Gotteshäuser).](https://github.com/osmandapp/OsmAnd/issues/21972)
 - [waterway=flowline fehlt in den Daten, Bootsrouting kaputt.](https://github.com/osmandapp/OsmAnd/issues/22512)
-- [Schutzgebiete im Topo-Kartenstil anzeigen.](https://github.com/osmandapp/OsmAnd/issues/22168)
+- [Schutzgebiete im Topo Kartenstil anzeigen.](https://github.com/osmandapp/OsmAnd/issues/22168)
 - [Überlappende Höhenlinien in China.](https://github.com/osmandapp/OsmAnd/issues/22434)
 - [Höhenlinienfehler an Parallel-/Meridian-Grenzen.](https://github.com/osmandapp/OsmAnd/issues/21738)

@@ -7,17 +7,17 @@ intro: Mit OsmAndMapCreator gibt es viele Möglichkeiten, Raster- und Vektorkart
 
 ## OsmAndMapCreator {#osmandmapcreator}
 
-[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) kann verwendet werden, um alle von OsmAnd unterstützten Karten selbst zu erstellen. Sie können die neueste Version von der [Website](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) herunterladen. OsmAndMapCreator verfügt über UI-Funktionen zum Erstellen von Raster- und Vektorkarten. *Um eine Vektorkarte zu erstellen, benötigen Sie eine OSM-Datei (`*.pbf, *.osm.gz, *.osm.bz2`)* und *um eine Online-SQLite-Kartendatei zu erstellen, benötigen Sie eine `Basis-Kachel-URL`*.
+[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) kann verwendet werden, um alle von OsmAnd unterstützten Karten selbst zu erstellen. Sie können die neueste Version von der [Website](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) herunterladen. OsmAndMapCreator verfügt über UI-Funktionen zum Erstellen von Raster- und Vektorkarten. *Um eine Vektorkarte zu erstellen, benötigen Sie eine OSM-Datei (`*.pbf, *.osm.gz, *.osm.bz2`)* und *um eine Online-SQLite Kartendatei zu erstellen, benötigen Sie eine `Basis-Kachel-URL`*.
 
 ### Rasterkarten (einfach) {#raster-maps-simple}
 
 Sobald Sie im Menü **Source of tiles** die Kacheln ausgewählt haben, aus denen Sie eine Karte erstellen möchten, und diese erfolgreich in OsmAndMapCreator geladen wurden, können Sie mit der rechten Maustaste auf den Bereich klicken, den Sie vorladen möchten. Danach können Sie im Menü **Source of tiles** → **Create sqlite database** eine `.sqlitedb`-Datei erstellen.
 
-Um eine Vektorkarte zu erstellen, benötigen Sie eine OSM-Datei (*.pbf, *.osm.gz, *.osm.bz2) und um eine Online-SQLite-Karte zu erstellen, benötigen Sie die URL der Basiskachel.
+Um eine Vektorkarte zu erstellen, benötigen Sie eine OSM-Datei (*.pbf, *.osm.gz, *.osm.bz2) und um eine Online-SQLite Karte zu erstellen, benötigen Sie die URL der Basiskachel.
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-download-raster-maps.png').default} alt="Rasterkarten herunterladen" />
 
-<img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-raster-maps.png').default} alt="Sqlitedb-Karten erstellen" />
+<img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-raster-maps.png').default} alt="Sqlitedb Karten erstellen" />
 
 ### Vektorkarten (einfach) {#vector-maps-simple}
 
@@ -119,13 +119,13 @@ Das Rendering und die POI-Suche von OsmAnd basieren auf Informationen, die in [O
 
 OSM ist eine große Datenbank für Karten, aber sie enthält nicht immer die Informationen, die Sie benötigen (z. B. über Wüsten). Manchmal können Sie die benötigten Informationen aus anderen Quellen erhalten, z. B. aus Papierkarten oder Satellitenbildern.
 
-Es gibt spezielle Programme zur Vorbereitung, Konvertierung und Kalibrierung beliebiger Quellkarten (Karten im Bildformat, PDF-Format, Raster-Online-Karten) in OsmAnd-Online-Karten.
+Es gibt spezielle Programme zur Vorbereitung, Konvertierung und Kalibrierung beliebiger Quellkarten (Karten im Bildformat, PDF-Format, Raster-Online Karten) in OsmAnd-Online Karten.
 
 Einige davon werden im Folgenden beschrieben.
 
 ### MOBAC {#mobac}
 
-Mobile Atlas Creator (MOBAC) ist ein Open-Source-Programm (GPL) zur Erstellung von Offline-Atlanten. Mobile Atlas Creator kann eine große Anzahl verschiedener Online-Karten, wie OpenStreetMap und andere Kartenanbieter, als Quelle für die Erstellung eines Offline-Atlas verwenden.
+Mobile Atlas Creator (MOBAC) ist ein Open-Source-Programm (GPL) zur Erstellung von Offline-Atlanten. Mobile Atlas Creator kann eine große Anzahl verschiedener Online Karten, wie OpenStreetMap und andere Kartenanbieter, als Quelle für die Erstellung eines Offline-Atlas verwenden.
 
 Laden Sie einfach das Programm [herunter](https://mobac.sourceforge.io/) und führen Sie es aus.
 
@@ -139,13 +139,13 @@ Danach können Sie Ihre SQLite-Datei erstellen: 'Atlas' -> 'Create Atlas'.
 
 [MAPC2MAPC](https://www.the-thorns.org.uk/mapping/) ist ein Windows-Programm zur Bearbeitung digitaler Karten und deren Konvertierung zwischen verschiedenen Plattformen und Software.
 
-Sie können beispielsweise beliebige Bildformate und PDF-Karten in OsmAnd-Online-Karten konvertieren und kalibrieren.
+Sie können beispielsweise beliebige Bildformate und PDF Karten in OsmAnd-Online Karten konvertieren und kalibrieren.
 
 [Video-Tutorial](https://www.youtube.com/watch?v=Y_fekLfcUOc) zur Verwendung des Programms.
 
 ### SASPlanet {#sasplanet}
 
-SASPlanet ist eine kostenlose Open-Source-Navigationssoftware mit der Möglichkeit, Karten und Satellitenbilder der Erde von verschiedenen Online-Diensten anzuzeigen und herunterzuladen, um sie in OsmAnd-Online-Karten zu verwenden.
+SASPlanet ist eine kostenlose Open-Source-Navigationssoftware mit der Möglichkeit, Karten und Satellitenbilder der Erde von verschiedenen Online-Diensten anzuzeigen und herunterzuladen, um sie in OsmAnd-Online Karten zu verwenden.
 
 Laden Sie das Programm [herunter](http://www.sasgis.org/download/), [Englische Anleitung](https://www.evernote.com/shard/s100/client/snv?noteGuid=e659886a-096c-46b4-8280-b57b77373847&noteKey=dac8148d9a74ed77&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs100%2Fsh%2Fe659886a-096c-46b4-8280-b57b77373847%2Fdac8148d9a74ed77&title=How%2Bto%2Buse%2BSAS.Planet.%2BEnglish%2Bguideline).
 
@@ -222,7 +222,7 @@ Kacheln in JPEG mit Komprimierung konvertieren:
 
 5. **Die .sqlitedb-Datei nach OsmAnd kopieren**
 
-Nun sollten Sie eine .sqlitedb-Datei in Ihrem Arbeitsordner haben. Kopieren Sie sie in den entsprechenden OsmAnd-Ordner und verwenden Sie sie als Haupt-, Unter- oder Overlay-Karte. Weitere Details finden Sie im [Benutzerhandbuch](../../user/map/raster-maps.md). Fertig!
+Nun sollten Sie eine .sqlitedb-Datei in Ihrem Arbeitsordner haben. Kopieren Sie sie in den entsprechenden OsmAnd-Ordner und verwenden Sie sie als Haupt-, Unter- oder Overlay Karte. Weitere Details finden Sie im [Benutzerhandbuch](../../user/map/raster-maps.md). Fertig!
 
 6. **(OPTIONAL) Mehrere OsmAnd-Dateien zu einer einzigen Datei zusammenführen**
 

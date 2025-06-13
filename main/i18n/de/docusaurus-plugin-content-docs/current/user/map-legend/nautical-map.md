@@ -6,7 +6,7 @@ title: Nautischer Kartenstil
 import Translate from '@site/src/components/Translate.js';
 
 # Nautischer Kartenstil {#nautical-map-style}
-Standard-OsmAnd-Kartenstil, Teil des Nautik-Plugins.
+Standard-OsmAnd Kartenstil, Teil des Nautik-Plugins.
 <Translate android="yes" id="nautical_render_descr" />
 
 ## Ankerplatz und Liegeplatz {#anchorage-and-berth}

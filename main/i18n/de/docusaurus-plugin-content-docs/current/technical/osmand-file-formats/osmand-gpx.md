@@ -285,7 +285,7 @@ Jeder `<trkpt>` (Trackpunkt) in der GPX-Datei kann zusätzliche Attribute enthal
 
 ## Berechnete Route(n) {#calculated-routes}
 
-In **OsmAnd** können Sie eine Route berechnen und alle Daten in GPX speichern, sodass später alle Navigationsfunktionen als laufende GPX-Navigation verfügbar sind. OsmAnd GPX enthält dann Routensegmente, Abbiegungen, Straßennamen, Straßentypen, Einschränkungen usw. Die Route kann vollständig wiederhergestellt werden, als ob sie gerade erstellt worden wäre, selbst wenn die entsprechenden Offline-Karten nicht vorhanden sind.
+In **OsmAnd** können Sie eine Route berechnen und alle Daten in GPX speichern, sodass später alle Navigationsfunktionen als laufende GPX-Navigation verfügbar sind. OsmAnd GPX enthält dann Routensegmente, Abbiegungen, Straßennamen, Straßentypen, Einschränkungen usw. Die Route kann vollständig wiederhergestellt werden, als ob sie gerade erstellt worden wäre, selbst wenn die entsprechenden Offline Karten nicht vorhanden sind.
 
 Eine GPX-Datei kann mehrere Routen enthalten. Jede davon ist in einem spezifischen Segment unter **trkseg** / **extensions** enthalten. Eine GPX-Datei wird in dieser Form gespeichert, wenn eine konstruierte Route exportiert oder ein Track, der aus mehreren separaten Segmenten besteht, über die Funktion [**Route planen**](../../user/plan-route/create-route.md) gespeichert wird.
 
@@ -305,7 +305,7 @@ Eine GPX-Datei kann mehrere Routen enthalten. Jede davon ist in einem spezifisch
         <segment ... />
       </route>
       // Eigenschaften der in der Route enthaltenen Segmente.
-      // Diese Daten werden während der anfänglichen Konstruktion einer Route aus Offline-Karten entnommen.
+      // Diese Daten werden während der anfänglichen Konstruktion einer Route aus Offline Karten entnommen.
       <types>
         <type ... />
       </types>
@@ -426,7 +426,7 @@ Eine GPX-Datei kann mehrere Routen enthalten. Jede davon ist in einem spezifisch
 
 ## GPX-Sammlungen in OBF {#gpx-collections-in-obf}
 
-OsmAnd ermöglicht es Ihnen, mehrere GPX-Dateien in eine einzige OBF-Datei zu konvertieren. Dies ermöglicht die Speicherung von Tausenden von GPX-Tracks in einem kompakten, optimierten Format, während Funktionen wie spezielle Kartensymbole, Anpassung des Track-Erscheinungsbilds und Suchfunktionen erhalten bleiben. Dies vermeidet eine Begrenzung lokaler großer GPX-Dateien, die typischerweise nicht mehr als 500.000 Punkte insgesamt verarbeiten können, obwohl einige Funktionen von GPX-Tracks im Vergleich zur Anzeige von OBF-Dateien fehlen können.
+OsmAnd ermöglicht es Ihnen, mehrere GPX-Dateien in eine einzige OBF-Datei zu konvertieren. Dies ermöglicht die Speicherung von Tausenden von GPX Tracks in einem kompakten, optimierten Format, während Funktionen wie spezielle Kartensymbole, Anpassung des Track-Erscheinungsbilds und Suchfunktionen erhalten bleiben. Dies vermeidet eine Begrenzung lokaler großer GPX-Dateien, die typischerweise nicht mehr als 500.000 Punkte insgesamt verarbeiten können, obwohl einige Funktionen von GPX Tracks im Vergleich zur Anzeige von OBF-Dateien fehlen können.
 
 Schritte zur Konvertierung von GPX nach OBF:
 
@@ -552,7 +552,7 @@ Tracks und Wegpunkte können mithilfe einer Vielzahl von GPX-Tags gefunden werde
 
 | GPX-Tag       | Speicherort               | Zweck                                                                     |
 |:--------------|:-----------------------|:----------------------------------------------------------------------------|
-| `<name>`      | `<metadata>`           | Der primäre Name des GPX-Tracks.                                          |
+| `<name>`      | `<metadata>`           | Der primäre Name des GPX Tracks.                                          |
 | `ref`         | GPX `<extensions>`     | Ein kurzer Identifikator, oft abgeleitet vom OSM `ref`-Tag.                   |
 | `shield_text` | GPX `<extensions>`     | Text, der auf Schildern angezeigt wird (kann auch mit `ref` verwendet werden).                    |
 | `name_-_lang` | GPX/WPT `<extensions>` | Lokalisierter `name:lang` (z. B. `name_-_en` für Englisch, ersetzen Sie `:` -> `_-_`) |

@@ -84,13 +84,13 @@ Mit **Favoriten** können Sie wichtige oder häufig besuchte Orte mit Lesezeiche
 
     - **Löschen** (*unter iOS befindet sich diese Option im Menü Bearbeiten*) – Löscht Favoritenpunkte einzeln oder ausgewählte Favoritenordner und alle darin enthaltenen Punkte.
 
-2. ***Drei-Punkte-Menü*** (*Android*) und ***langes Tippen*** (*iOS*). Verwenden Sie das *Drei-Punkte*-Menü neben jedem Ordner oder *tippen Sie lange* auf den Ordner, um Favoritengruppen zu verwalten:  
+2. ***Drei-Punkte Menü*** (*Android*) und ***langes Tippen*** (*iOS*). Verwenden Sie das *Drei-Punkte* Menü neben jedem Ordner oder *tippen Sie lange* auf den Ordner, um Favoritengruppen zu verwalten:  
 
     <Tabs groupId="operating-systems">
 
     <TabItem value="android" label="Android">
 
-    ![Drei-Punkte-Menü](@site/static/img/personal/favorites_three-dot_menu.png)
+    ![Drei-Punkte Menü](@site/static/img/personal/favorites_three-dot_menu.png)
 
     </TabItem>
 
@@ -145,7 +145,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 - **Track erstellen** – Starten Sie die Aufzeichnung über den **Tracks-Tab** oder das [Plugin zur Aufzeichnung von Fahrten](../plugins/trip-recording.md).
 
-- **Anzeigen und Bearbeiten** – Greifen Sie über *Meine Orte* auf die Liste der Tracks zu und verwalten Sie sie über das *Drei-Punkte-Menü* für [Ordner](../personal/tracks/manage-tracks.md#track-folder) oder das Menü für [einzelne Tracks](../personal/tracks/manage-tracks.md#single-track-menu).
+- **Anzeigen und Bearbeiten** – Greifen Sie über *Meine Orte* auf die Liste der Tracks zu und verwalten Sie sie über das *Drei-Punkte Menü* für [Ordner](../personal/tracks/manage-tracks.md#track-folder) oder das Menü für [einzelne Tracks](../personal/tracks/manage-tracks.md#single-track-menu).
 
 - **Verwalten** – Verwenden Sie die Werkzeuge [Filter](../personal/tracks/smart-folder.md#filter) und [Smart Folder](../personal/tracks/smart-folder.md#smart-folder), um Tracks basierend auf bestimmten Parametern zu organisieren.
 
@@ -189,9 +189,9 @@ Mit der Funktion **OpenStreetMap-Bearbeitungen** von OsmAnd können Sie zur glob
     - **Löschen** – Entfernen Sie ausgewählte Elemente dauerhaft aus Ihrer Liste.
 
 
-2. ***Drei-Punkte-Menü***. Sie können bestimmte POIs oder Notizen über das *Drei-Punkte-Menü* neben jeder Notiz verwalten:  
+2. ***Drei-Punkte Menü***. Sie können bestimmte POIs oder Notizen über das *Drei-Punkte Menü* neben jeder Notiz verwalten:  
 
-    ![Drei-Punkte-Menü](@site/static/img/plugins/osm-editing/osm_plugin_three-dot_menu.png)
+    ![Drei-Punkte Menü](@site/static/img/plugins/osm-editing/osm_plugin_three-dot_menu.png)
 
     - **Bearbeitung auf OSM hochladen** – Senden Sie Ihre Änderungen oder Bearbeitungen an OpenStreetMap, damit andere sie sehen können.
 
@@ -227,9 +227,9 @@ Mit dem **Audio-/Video-Notizen-Plugin** können Sie Multimedia-Notizen erstellen
     - **<Translate android="true" ids="shared_string_delete"/>** – Zeigt nur eine Checkliste von Audio-, Foto- und Video-Notizen an. Markieren Sie zuerst die unnötigen Notizen, tippen Sie dann auf das *Löschen*-Symbol in der oberen rechten Ecke des Bildschirms, nach Bestätigung werden die ausgewählten Notizen dauerhaft gelöscht.
 
 
-2. ***Drei-Punkte-Menü***. Sie können bestimmte Audio-, Video- oder Foto-Notizen über das *Drei-Punkte-Menü* neben jeder Notiz verwalten:  
+2. ***Drei-Punkte Menü***. Sie können bestimmte Audio-, Video- oder Foto-Notizen über das *Drei-Punkte Menü* neben jeder Notiz verwalten:  
 
-    ![Drei-Punkte-Menü](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
+    ![Drei-Punkte Menü](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
 
     - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>** – Zeigt oder hört die ausgewählte Audio-, Video- oder Foto-Notiz direkt an.
 
@@ -253,9 +253,9 @@ Sie können die im Menü *Meine Orte* als Wegpunkte ausgewählten Notizen teilen
 
 ### Einzelne Notiz verwalten {#manage-single-note}
 
-![Drei-Punkte-Menü](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
+![Drei-Punkte Menü](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
 
-Sie können bestimmte Audio-, Video- oder Foto-Notizen über das **Drei-Punkte-Menü** neben jeder Notiz verwalten:
+Sie können bestimmte Audio-, Video- oder Foto-Notizen über das **Drei-Punkte Menü** neben jeder Notiz verwalten:
 
 - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Zeigt oder hört die ausgewählte Audio-, Video- oder Foto-Notiz direkt an.
 - **<Translate android="true" ids="shared_string_share"/>**. Teilt die Notiz mit anderen über verschiedene Apps oder Plattformen.

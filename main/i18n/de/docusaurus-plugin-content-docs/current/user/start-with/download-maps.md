@@ -19,11 +19,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Überblick {#overview}
 
-Das Hochladen von Karten in die OsmAnd-App ist ein wichtiger Schritt, um einen reibungslosen Betrieb und die Nutzung der Offline-Navigation zu gewährleisten. Ohne Offline-Karten kann die App nicht vollständig funktionieren. Durch das Herunterladen von Karten erhalten Sie Zugriff auf Karten verschiedener Regionen, sodass Sie ohne Internetverbindung navigieren können.
+Das Hochladen von Karten in die OsmAnd-App ist ein wichtiger Schritt, um einen reibungslosen Betrieb und die Nutzung der Offline-Navigation zu gewährleisten. Ohne Offline Karten kann die App nicht vollständig funktionieren. Durch das Herunterladen von Karten erhalten Sie Zugriff auf Karten verschiedener Regionen, sodass Sie ohne Internetverbindung navigieren können.
 
 Sie haben zwei *Hauptmöglichkeiten*, Karten herunterzuladen: **1)** [Anzeigen der Liste der Regionen im *Hauptmenü*](#maps-and-resources) oder **2)** [Auswählen der gewünschten Region direkt auf der Karte](#select-on-the-map). Dies gibt Ihnen die Flexibilität, die gewünschten Regionen auszuwählen, und stellt sicher, dass die Karten zu Ihren Plänen passen.
 
-Obwohl OsmAnd sowohl [Vektor-](../map/vector-maps.md) als auch [Rasterkarten](../map/raster-maps.md) unterstützt, wird empfohlen, mit Vektorkarten offline zu arbeiten. Dieser Kartentyp (mehr über [OsmAnd-Kartentypen](../personal/maps-resources.md#map-types) erfahren Sie hier) gewährleistet einen zuverlässigen Betrieb aller wichtigen Funktionen der Anwendung, einschließlich [Suche](../search/index.md), [Navigation](../navigation/index.md) und [Kontextmenü](../map/map-context-menu.md). Dies ist besonders wichtig, wenn Ihre Reisen Ausflüge an abgelegene Orte oder Orte mit begrenztem Internetzugang beinhalten.
+Obwohl OsmAnd sowohl [Vektor-](../map/vector-maps.md) als auch [Rasterkarten](../map/raster-maps.md) unterstützt, wird empfohlen, mit Vektorkarten offline zu arbeiten. Dieser Kartentyp (mehr über [OsmAnd Kartentypen](../personal/maps-resources.md#map-types) erfahren Sie hier) gewährleistet einen zuverlässigen Betrieb aller wichtigen Funktionen der Anwendung, einschließlich [Suche](../search/index.md), [Navigation](../navigation/index.md) und [Kontextmenü](../map/map-context-menu.md). Dies ist besonders wichtig, wenn Ihre Reisen Ausflüge an abgelegene Orte oder Orte mit begrenztem Internetzugang beinhalten.
 
 
 ## Herunterladen {#download}
@@ -54,7 +54,7 @@ Beim ersten Start der Anwendung werden Sie aufgefordert, eine Karte herunterzula
 Wenn Sie ein VPN verwenden, schlägt OsmAnd möglicherweise eine Karte vor, die auf dem virtuellen Standort des VPN basiert. In solchen Fällen können Sie manuell eine Karte auswählen, die besser zu Ihrer tatsächlichen geografischen Region passt.
 
 
-#### Drei-Punkte-Menü {#three-dot-menu}
+#### Drei-Punkte Menü {#three-dot-menu}
 
 <Tabs groupId="operating-systems">
 
@@ -107,7 +107,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 Der Bildschirm [Karten & Ressourcen](../personal/maps-resources.md) bietet Zugriff auf die folgenden Abschnitte:
 
-- [Downloads](../personal/maps-resources.md#downloads). Bietet eine umfassende Auswahl an [OsmAnd-Kartentypen](../personal/maps-resources.md#map-types).
+- [Downloads](../personal/maps-resources.md#downloads). Bietet eine umfassende Auswahl an [OsmAnd Kartentypen](../personal/maps-resources.md#map-types).
 - [Lokal](../personal/maps-resources.md#local). Zeigt alle Kartendaten an, die derzeit auf Ihrem Gerät gespeichert sind, einschließlich benutzerdefinierter und importierter Ressourcen.
 - [Updates](../personal/maps-resources.md#updates). Ermöglicht Ihnen, Karten monatlich zu aktualisieren, um Ihre Daten auf dem neuesten Stand zu halten.
 
@@ -183,6 +183,6 @@ Die Suche erleichtert das Finden einer bestimmten Karte oder Region und bietet e
 - Starten Sie eine Suche, indem Sie den Namen eines Landes oder einer Region in das Suchfeld eingeben. Wählen Sie dann die gewünschte Karte aus der angezeigten Liste aus.
 - Zum Herunterladen verfügbare Karten werden grau mit einem Download-Symbol angezeigt, heruntergeladene Karten haben eine grüne Farbe und eine Menüschaltfläche.
 - Tippen Sie auf den Namen des gewünschten Ergebnisses, und die Liste der regionalen Karten wird geöffnet.
-- Wählen Sie [Kartentypen](../personal/maps-resources.md#map-types): *Standardkarte, Nur-Straßen-Karte, Höhenlinien, Wikipedia*.
+- Wählen Sie [Kartentypen](../personal/maps-resources.md#map-types): *Standardkarte, Nur-Straßen Karte, Höhenlinien, Wikipedia*.
 
 > *Zuletzt aktualisiert: Januar 2025*

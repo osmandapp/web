@@ -47,7 +47,7 @@ OsmAnd veröffentlicht täglich mehrere gebrauchsfertige Builds, die es Ihnen er
 - [Einige unbenutzte, aber unerwartete Werte werden unterstützt.](https://github.com/osmandapp/OsmAnd/issues/22103)
 - [POI-Suche löschen (separate Gotteshäuser).](https://github.com/osmandapp/OsmAnd/issues/21972)
 - [waterway=flowline fehlt in den Daten, Bootsrouting defekt.](https://github.com/osmandapp/OsmAnd/issues/22512)
-- [Schutzgebiete im Topo-Kartenstil anzeigen.](https://github.com/osmandapp/OsmAnd/issues/22168)
+- [Schutzgebiete im Topo Kartenstil anzeigen.](https://github.com/osmandapp/OsmAnd/issues/22168)
 - [[Android Auto] 3D-Perspektiven-Mittelpunkt verschoben.](https://github.com/osmandapp/OsmAnd/issues/22304)
 - [Überlappende Höhenlinien in China.](https://github.com/osmandapp/OsmAnd/issues/22434)
 - [Höhenlinienfehler an Parallel- / Meridian-Grenzen.](https://github.com/osmandapp/OsmAnd/issues/21738)

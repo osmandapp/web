@@ -22,14 +22,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
  <ProFeature/> Das Wetter-Plugin ist eine [bezahlte Funktion](../purchases/index.md) der OsmAnd-App.
 :::
 
-Die interaktiven Wetterkarten-Ebenen in der OsmAnd-App ermöglichen es Ihnen, Temperatur, Luftdruck, Wolkenbedeckung, Windgeschwindigkeit und Niederschlag in Ihrer Stadt oder an einem anderen Ort auf einer interaktiven globalen Karte zu überwachen. Das Wetter-Plugin bietet stündliche Wettervorhersagen für 7 Tage im Voraus direkt auf der OsmAnd-Karte. Wetterinformationen können auch für die Offline-Nutzung heruntergeladen werden.
+Die interaktiven Wetterkarten-Ebenen in der OsmAnd-App ermöglichen es Ihnen, Temperatur, Luftdruck, Wolkenbedeckung, Windgeschwindigkeit und Niederschlag in Ihrer Stadt oder an einem anderen Ort auf einer interaktiven globalen Karte zu überwachen. Das Wetter-Plugin bietet stündliche Wettervorhersagen für 7 Tage im Voraus direkt auf der OsmAnd Karte. Wetterinformationen können auch für die Offline-Nutzung heruntergeladen werden.
 
 Die Datenquelle für das Wetter-Plugin ist das [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast), das vom United States National Weather Service (NWS) und dem European Centre for Medium-Range Weather Forecasts ([ECMWF](https://www.ecmwf.int/)) betrieben wird.
 
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
 
-Die folgenden Einstellungen sind *erforderlich*, um das Wetter auf der OsmAnd-Karte anzuzeigen:
+Die folgenden Einstellungen sind *erforderlich*, um das Wetter auf der OsmAnd Karte anzuzeigen:
 
 **1.** [Kaufen Sie ein **OsmAnd Pro-Abonnement**](../purchases/).
 
@@ -39,7 +39,7 @@ Die folgenden Einstellungen sind *erforderlich*, um das Wetter auf der OsmAnd-Ka
 
 **4.** [Zeigen Sie die **Wetterebenen**](#customize-weather-layers) auf der Karte an, indem Sie den Menüpunkt Wetter im Menü Karte konfigurieren verwenden (denken Sie daran, herauszuzoomen).
 
-**5.** [Zeigen Sie die **Wettervorhersage**](#weather-forecast-screen) für den ausgewählten Bereich an (dieses Menü ermöglicht es, den Hauptbildschirm der OsmAnd-Karte nicht mit Wetterebenen zu überladen).
+**5.** [Zeigen Sie die **Wettervorhersage**](#weather-forecast-screen) für den ausgewählten Bereich an (dieses Menü ermöglicht es, den Hauptbildschirm der OsmAnd Karte nicht mit Wetterebenen zu überladen).
 
 **6.** [Laden Sie](#offline-forecast) die Wettervorhersage herunter, wenn Sie sie offline verwenden möchten.
 
@@ -100,7 +100,7 @@ Gehe zu: *Aktiviertes Plugin → <Translate ios="true" ids="shared_string_menu,c
 
 </Tabs>
 
-Um Wetterebenen auf dem OsmAnd-Kartenbildschirm anzuzeigen, müssen Sie das Menü *Karte konfigurieren* verwenden. Gehen Sie zum Menü, suchen Sie den Punkt *Wetter* in der Liste (nur verfügbar, wenn das Plugin aktiviert ist) und tippen Sie darauf.
+Um Wetterebenen auf dem OsmAnd Kartenbildschirm anzuzeigen, müssen Sie das Menü *Karte konfigurieren* verwenden. Gehen Sie zum Menü, suchen Sie den Punkt *Wetter* in der Liste (nur verfügbar, wenn das Plugin aktiviert ist) und tippen Sie darauf.
 
 In diesem Menü können Sie die **Sichtbarkeit** und [Einstellungen](#weather-settings) für jede Ebene ändern, die Art der Höhenlinien auswählen und die [Offline-7-Tage-Wettervorhersage](#offline-forecast) herunterladen (*hier nur für Android verfügbar*).
 

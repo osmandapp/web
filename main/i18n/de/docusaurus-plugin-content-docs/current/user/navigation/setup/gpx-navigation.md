@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Die Option *Navigation nach Track* (GPX) ermöglicht es Ihnen, einer vordefinierten Route oder einem Track auf einer Karte zu folgen. Dies kann besonders nützlich für Outdoor-Aktivitäten wie Wandern, Radfahren oder Geländefahrten sein, bei denen eine geplante Route die Sicherheit und Effizienz verbessert. Wenn Sie in einer organisierten Gruppe unterwegs sind, hilft diese Funktion Ihnen und jedem Mitglied der Gruppe, die gleichen Routeninformationen wie die anderen zu haben.
 
-Die Option *Navigation nach Track* kann auch im Alltag verwendet werden. Sie können einen zuvor [aufgezeichneten Track](../../plugins/trip-recording.md) verwenden oder [einen Track erstellen](../../personal/tracks/manage-tracks.md#create-a-track) und ihn mit Ihrer Familie oder Freunden teilen, anstatt ihnen die Route zu erklären. Sie können auch die [Routen auf der OsmAnd-Karte](../../../../blog/routes/) zur Navigation verwenden. Wie Sie diese auf der Karte hervorheben und was ihre Farben bedeuten, wird im Abschnitt [Routen](../../map/vector-maps.md#routes) des Artikels *Vektorkarten* beschrieben.
+Die Option *Navigation nach Track* kann auch im Alltag verwendet werden. Sie können einen zuvor [aufgezeichneten Track](../../plugins/trip-recording.md) verwenden oder [einen Track erstellen](../../personal/tracks/manage-tracks.md#create-a-track) und ihn mit Ihrer Familie oder Freunden teilen, anstatt ihnen die Route zu erklären. Sie können auch die [Routen auf der OsmAnd Karte](../../../../blog/routes/) zur Navigation verwenden. Wie Sie diese auf der Karte hervorheben und was ihre Farben bedeuten, wird im Abschnitt [Routen](../../map/vector-maps.md#routes) des Artikels *Vektorkarten* beschrieben.
 
 <Tabs groupId="operating-systems">
 
@@ -181,7 +181,7 @@ Wenn der Track Wegpunkte hat, können Sie [Entlang der Route anzeigen](../guidan
 
 ### Zwischenpunkte {#intermediate-points}
 
-Beim Vorbereiten oder Navigieren eines GPX-Tracks können Sie keine Zwischenorte hinzufügen, die Sie innerhalb dieses Tracks durchfahren möchten. Sie können nur Start- und Endpunkte zusätzlich zu dem Track oder Segment zuweisen, dem Sie folgen möchten.
+Beim Vorbereiten oder Navigieren eines GPX Tracks können Sie keine Zwischenorte hinzufügen, die Sie innerhalb dieses Tracks durchfahren möchten. Sie können nur Start- und Endpunkte zusätzlich zu dem Track oder Segment zuweisen, dem Sie folgen möchten.
 
 ## Führung {#guidance}
 

@@ -79,7 +79,7 @@ Wenn Sie **lange auf eine beliebige Stelle** auf der Karte tippen, erscheint ein
 
 <TabItem value="android" label="Android">
 
-![Kontext-Track-Menü Android](@site/static/img/map/context_track_menu_Android.png)
+![Kontext-Track Menü Android](@site/static/img/map/context_track_menu_Android.png)
 
 </TabItem>
 
@@ -331,14 +331,14 @@ Der OpenStreetMap-Link bietet einen direkten Link zum OpenStreetMap-Objekt, wo S
 <TabItem value="android" label="Android">
 
 ![Online-Fotos Kontextmenü Android](@site/static/img/map/images_nearby_1_andr.png)
-![Galerie-Menü Android](@site/static/img/map/gallery_menu_andr.png)
+![Galerie Menü Android](@site/static/img/map/gallery_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Online-Fotos Kontextmenü iOS](@site/static/img/map/online_photo_ios.png)
-![Galerie-Menü iOS](@site/static/img/map/gallery_menu_2_ios.png)
+![Galerie Menü iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
 
@@ -402,13 +402,13 @@ Informationen zu [Audio-/Video-Notizen](../plugins/audio-video-notes.md) wie Dat
 
 <TabItem value="android" label="Android">
 
-![Aktionen-Menü Android](@site/static/img/map/actions_menu_android.png) ![Zusätzliches Aktionen-Menü Android](@site/static/img/map/actions_additional_menu_android.png)
+![Aktionen Menü Android](@site/static/img/map/actions_menu_android.png) ![Zusätzliches Aktionen Menü Android](@site/static/img/map/actions_additional_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Aktionen-Menü iOS](@site/static/img/map/actions_menu_ios.png) ![Zusätzliches Aktionen-Menü iOS](@site/static/img/map/actions_additional_menu_ios.png)
+![Aktionen Menü iOS](@site/static/img/map/actions_menu_ios.png) ![Zusätzliches Aktionen Menü iOS](@site/static/img/map/actions_additional_menu_ios.png)
 
 </TabItem>
 
@@ -626,25 +626,25 @@ Sie können die Routenplanung von einem ausgewählten Punkt aus über das Objekt
 Lesen Sie mehr über das Werkzeug [Route planen](../plan-route/create-route.md).
 
 
-### Online-Karten aktualisieren / herunterladen {#update--download-online-maps}
+### Online Karten aktualisieren / herunterladen {#update--download-online-maps}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Aktion Online-Karte herunterladen Android](@site/static/img/map/action_load_online_map_and.png)
+![Aktion Online Karte herunterladen Android](@site/static/img/map/action_load_online_map_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Aktion Online-Karte herunterladen iOS](@site/static/img/map/action_download_online_map_ios.png)
+![Aktion Online Karte herunterladen iOS](@site/static/img/map/action_download_online_map_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Um Online-Karten (Kacheln) an einem bestimmten Ort zu aktualisieren oder herunterzuladen, können Sie das Kontextmenü des Objekts verwenden:
+Um Online Karten (Kacheln) an einem bestimmten Ort zu aktualisieren oder herunterzuladen, können Sie das Kontextmenü des Objekts verwenden:
 
 - **Android**: *<Translate android="true" ids="shared_string_download_map"/>* und zum *Aktualisieren* gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.
 - **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* und *<Translate ios="true" ids="update_tile"/>*.
@@ -674,9 +674,9 @@ Bitte lesen Sie die [vollständige Anleitung](../map/raster-maps.md#download--up
 
 </Tabs>
 
-Falls am ausgewählten Ort keine Offline-Karte vorhanden ist, z. B. wenn das Kartenobjektmenü über die Suche oder über einen bestimmten Favoriten geöffnet wurde, wird die kleinste mögliche Offline-Karte zum [Herunterladen](../start-with/download-maps.md#select-on-the-map) vorgeschlagen.
+Falls am ausgewählten Ort keine Offline Karte vorhanden ist, z. B. wenn das Kartenobjektmenü über die Suche oder über einen bestimmten Favoriten geöffnet wurde, wird die kleinste mögliche Offline Karte zum [Herunterladen](../start-with/download-maps.md#select-on-the-map) vorgeschlagen.
 
-**iOS**. Wenn Sie bereits [OsmAnd-Karten (Vektor oder Gelände) heruntergeladen](../map/map-context-menu.md) haben, können Sie diese über das Kontextmenü aktualisieren. Sie müssen zuerst die Region auf der Karte auswählen - tippen Sie auf eine beliebige Stelle auf der Weltkarte im Zoom 3-7.
+**iOS**. Wenn Sie bereits [OsmAnd Karten (Vektor oder Gelände) heruntergeladen](../map/map-context-menu.md) haben, können Sie diese über das Kontextmenü aktualisieren. Sie müssen zuerst die Region auf der Karte auswählen - tippen Sie auf eine beliebige Stelle auf der Weltkarte im Zoom 3-7.
 
 > **HINWEIS**. *Wenn Sie das Kontextmenü für eine Kartenregion geöffnet haben (Region ist hervorgehoben), können Sie ***<Translate android="true" ids="rendering_category_details"/>*** darüber sehen: Typ und Größe einer verfügbaren Karte, Link zu einer Wikipedia-Seite, Sprache, Bevölkerung und andere.*
 

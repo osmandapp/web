@@ -4,7 +4,7 @@ source-hash: 7aea09ded358921f2251853fe554d8f51b9a110d6d8c0ced23bab4e8a044c7d3
 ---
 # Benutzerhandbuch {#user-guide}
 
-OsmAnd bietet globales Offline-Kartenbrowsing und Offline-Navigation mit vielen Spezialwerkzeugen für Android und iOS.
+OsmAnd bietet globales Offline Kartenbrowsing und Offline-Navigation mit vielen Spezialwerkzeugen für Android und iOS.
 
 
 ### [Beginnen Sie mit OsmAnd](./start-with/index.md) {#begin-with-osmand}

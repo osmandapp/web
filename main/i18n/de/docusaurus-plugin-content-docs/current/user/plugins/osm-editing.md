@@ -59,12 +59,12 @@ Die Plugin Einstellungen sind global und gelten für alle Profile.
 
 - [Bei OpenStreetMap anmelden](#authorization). Melden Sie sich an, um neue oder geänderte Änderungen hochzuladen. Verwenden Sie die sichere *OAuth 2.0-Methode* oder [melden Sie sich auf der OSM-Website an](https://www.openstreetmap.org/login). Für iOS ist die Schaltfläche für die OAuth-Methode nur für Benutzer mit einer unterstützten Version von iOS, 16.4, verfügbar.
 - **<Translate android="true" ids="offline_edition"/>**. Wenn diese Einstellung aktiviert ist, werden die Änderungen zuerst lokal gespeichert (*Speichern*-Schaltfläche) und auf Anfrage hochgeladen. Wenn die Einstellung deaktiviert ist, werden die Änderungen sofort hochgeladen (*Hochladen*-Schaltfläche).
-- **<Translate android="true" ids="use_dev_url"/>** *(nur Android)*. Ermöglicht die Aktivierung von [dev.openstreetmap.org](https://dev.openstreetmap.org/) anstelle von [openstreetmap.org](http://openstreetmap.org/), um das Hochladen von OSM-Notizen, POIs oder GPS-Tracks zu testen. Wenn diese Option aktiviert ist, werden Sie automatisch von OpenStreetMap.org abgemeldet. Diese Einstellung ist nur in der Liste verfügbar, wenn das *OsmAnd-Entwicklungs-Plugin* aktiviert ist.
+- **<Translate android="true" ids="use_dev_url"/>** *(nur Android)*. Ermöglicht die Aktivierung von [dev.openstreetmap.org](https://dev.openstreetmap.org/) anstelle von [openstreetmap.org](http://openstreetmap.org/), um das Hochladen von OSM-Notizen, POIs oder GPS Tracks zu testen. Wenn diese Option aktiviert ist, werden Sie automatisch von OpenStreetMap.org abgemeldet. Diese Einstellung ist nur in der Liste verfügbar, wenn das *OsmAnd-Entwicklungs-Plugin* aktiviert ist.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
 - **<Translate android="true" ids="layer_osm_edits"/>**. Tippen Sie darauf, um [*Menü → Meine Orte → OSM-Bearbeitungen*](../personal/myplaces.md) zu öffnen. Diese Registerkarte listet Ihre unbearbeiteten OSM-Notizen auf. Die folgenden Aktionen sind mit der Notiz verfügbar: *Hochladen*, *Auf Karte anzeigen*, *OSM-Notiz ändern*, *Löschen*. Hochgeladene oder gelöschte Notizen werden nicht mehr in der Liste angezeigt.
 
 :::note
-Wenn Sie ein [OsmAnd Pro](../purchases/android.md#pro-features)-Abonnement haben, werden Änderungen, die an OSM vorgenommen wurden, innerhalb einer Stunde auf Ihrer OsmAnd-Karte angezeigt. Stellen Sie sicher, dass [Live-Updates](../personal/maps-resources.md#osmand-live) aktiviert sind.
+Wenn Sie ein [OsmAnd Pro](../purchases/android.md#pro-features)-Abonnement haben, werden Änderungen, die an OSM vorgenommen wurden, innerhalb einer Stunde auf Ihrer OsmAnd Karte angezeigt. Stellen Sie sicher, dass [Live-Updates](../personal/maps-resources.md#osmand-live) aktiviert sind.
 :::
 
 
@@ -222,13 +222,13 @@ Um eine Notiz zu erstellen, müssen Sie sich nicht bei OpenStreetMap.org anmelde
 - Sie können Änderungen hochladen, sobald Sie online verfügbar sind. Sie können Änderungen auch rückgängig machen, bevor sie hochgeladen werden.
 
 :::info
-Die hochgeladenen OSM-Notizen sind im Offline-Modus auf OsmAnd-Karten nicht sichtbar.
+Die hochgeladenen OSM-Notizen sind im Offline-Modus auf OsmAnd Karten nicht sichtbar.
 :::
 
 
 ## GPS-Track {#gps-track}
 
-Die von Ihnen aufgezeichneten GPS-Tracks sind nützlich für:
+Die von Ihnen aufgezeichneten GPS Tracks sind nützlich für:
 
 - **Mapper**. Tracks können verwendet werden, um alle Arten von Pfaden zu kartieren.
 - **Navigation**. Basierend auf den von Ihnen hochgeladenen GPX-Dateidaten können Navigationsanwendungen und spezielle Geräte Tracks berechnen.
@@ -261,14 +261,14 @@ Ihre Tracks werden innerhalb einer Stunde zu [OSM-Spuren](https://www.openstreet
 Um den [GPS-Track hochzuladen](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks), folgen Sie den Schritten unten:
 
 - Finden Sie den gewünschten Track in der Registerkarte [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*](../personal/tracks/manage-tracks.md).
-- Tippen Sie auf das *Drei-Punkte-Menü* neben dem Tracknamen und wählen Sie *Exportieren*.
+- Tippen Sie auf das *Drei-Punkte Menü* neben dem Tracknamen und wählen Sie *Exportieren*.
 
 **Einstellungen:**
 
 - **<Translate android="true" ids="shared_string_description"/>**. Ermöglicht das Hinzufügen einer Beschreibung zum Track. Die Beschreibung gilt für alle ausgewählten Tracks. Wenn Sie nichts in das Feld eingeben, werden die Tracknamen für jeden einzelnen Track als Beschreibungen verwendet.
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Dieser Punkt im Einstellungsbereich ermöglicht das Hinzufügen von Tags zur Identifizierung des Tracks. Der Standard-Tag ist "osmand", Sie können zusätzliche Tags durch Kommas getrennt eingeben.
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Track-Sichtbarkeit für OSM-Benutzer:
-   - *Öffentlich* bedeutet, dass der Track öffentlich verfügbar ist und in Rohform in Ihren GPS-Tracks, GPS-Tracklisten und zeitgestempelten Tracklisten angezeigt wird. Die über die API übertragenen Daten werden nicht mit Ihrer Track-Seite referenziert. Zeitstempel von Trace-Punkten sind über die öffentliche GPS-API nicht verfügbar und Track-Punkte sind nicht chronologisch geordnet.
+   - *Öffentlich* bedeutet, dass der Track öffentlich verfügbar ist und in Rohform in Ihren GPS Tracks, GPS-Tracklisten und zeitgestempelten Tracklisten angezeigt wird. Die über die API übertragenen Daten werden nicht mit Ihrer Track-Seite referenziert. Zeitstempel von Trace-Punkten sind über die öffentliche GPS-API nicht verfügbar und Track-Punkte sind nicht chronologisch geordnet.
    - *Identifizierbar* bedeutet, dass der Track öffentlich in Ihren GPS-Track-Punkten und öffentlichen GPS-Tracklisten angezeigt wird, was bedeutet, dass andere Benutzer den Roh-Track herunterladen und mit Ihrem Benutzernamen verknüpfen können. Öffentliche zeitgestempelte Track-Punkt Daten aus der GPS-API, die über die Track-Punkt-API übergeben werden, verlinken zu Ihrer ursprünglichen Track-Seite.
    - *Verfolgbar* bedeutet, dass der Track nicht in öffentlichen Listen angezeigt wird, aber die verarbeiteten Track-Punkte mit Zeitstempeln daraus (die nicht direkt mit Ihnen verknüpft werden können) über die öffentliche GPS-API geladen werden.
    - *Privat* bedeutet, dass der Track nicht in öffentlichen Listen angezeigt wird, aber die Track-Punkte daraus in nicht-chronologischer Reihenfolge über die öffentliche GPS-API ohne Zeitstempel verfügbar sind.

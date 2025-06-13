@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Überblick {#overview}
 
-Das Werkzeug **Route planen** (*Menü → Route planen*) ist eine leistungsstarke Funktion der OsmAnd-Anwendung, mit der Sie [neue Routen](#create-new-route) als GPX-Tracks erstellen, bereits gespeicherte Tracks [bearbeiten und neue Segmente hinzufügen](#segments), [Distanzen auf der Karte messen](#distance-measurement) und Track-Segmente mit verschiedenen Navigationsprofilen an die nächstgelegene verfügbare Straße [anheften](#attach-track-to-roads) können. Die Funktion ist für den Betrieb im *Offline-Modus* ausgelegt.
+Das Werkzeug **Route planen** (*Menü → Route planen*) ist eine leistungsstarke Funktion der OsmAnd-Anwendung, mit der Sie [neue Routen](#create-new-route) als GPX Tracks erstellen, bereits gespeicherte Tracks [bearbeiten und neue Segmente hinzufügen](#segments), [Distanzen auf der Karte messen](#distance-measurement) und Track-Segmente mit verschiedenen Navigationsprofilen an die nächstgelegene verfügbare Straße [anheften](#attach-track-to-roads) können. Die Funktion ist für den Betrieb im *Offline-Modus* ausgelegt.
 
 Eine Route besteht aus einer Reihe von Segmenten zwischen bestimmten Punkten. Die Segmente können gerade Linien oder an das ausgewählte Profil angepasste Routen sein. Die Route kann als GPX gespeichert werden, um sie später zu importieren, zu bearbeiten und für die [Navigation](../navigation/setup/gpx-navigation.md) zu verwenden.
 
@@ -88,7 +88,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_op
 
 </Tabs>  
 
-Das Werkzeug *Route planen* ermöglicht die Änderung bestehender GPX-Tracks sowie eines [importierten Tracks](../personal/tracks/manage-tracks.md#import). Wenn Sie jedoch eine große Anzahl von Punkten basierend auf generischen Kriterien ausschließen müssen, ist [<Translate android="true" ids="shared_string_gps_filter"/>](../map/tracks/track-context-menu.md#gps-filter) möglicherweise ein besser geeignetes Werkzeug.
+Das Werkzeug *Route planen* ermöglicht die Änderung bestehender GPX Tracks sowie eines [importierten Tracks](../personal/tracks/manage-tracks.md#import). Wenn Sie jedoch eine große Anzahl von Punkten basierend auf generischen Kriterien ausschließen müssen, ist [<Translate android="true" ids="shared_string_gps_filter"/>](../map/tracks/track-context-menu.md#gps-filter) möglicherweise ein besser geeignetes Werkzeug.
 
 
 ### Distanzmessung {#distance-measurement}
@@ -114,7 +114,7 @@ Die *Gerade Linie* wird benötigt und verwendet für Bereiche, die nicht von Rou
 
 Wenn in einem bestehenden Track [Höhendaten](../map/tracks/track-context-menu.md#calculating-missing-elevation) fehlen, können diese mit den folgenden Werkzeugen hinzugefügt werden:
 
-- [Nahegelegene Straßen verwenden](#attach-track-to-roads). Dieser Modus verwendet Offline-Karten, um die nächstgelegenen Straßen zum Erstellen eines Tracks zu finden, sodass Höhendaten von angehefteten Straßen abgerufen werden. Die Geometrie des Tracks kann angepasst werden.  
+- [Nahegelegene Straßen verwenden](#attach-track-to-roads). Dieser Modus verwendet Offline Karten, um die nächstgelegenen Straßen zum Erstellen eines Tracks zu finden, sodass Höhendaten von angehefteten Straßen abgerufen werden. Die Geometrie des Tracks kann angepasst werden.  
 - [Geländekarten verwenden](../map/tracks/track-context-menu.md#calculating-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Der Modus berechnet die Höhe basierend auf Geländekartendaten (3D). Der Unterschied zwischen den von Ihrem Gerät aufgezeichneten Höhen kann zur Höhenkorrektur verwendet werden. Die Geometrie des Tracks bleibt unverändert.
 
 
@@ -136,7 +136,7 @@ Wenn in einem bestehenden Track [Höhendaten](../map/tracks/track-context-menu.m
 
 </Tabs>  
 
-Die Einstellung **An Straßen anheften** ermöglicht das Anheften eines aufgezeichneten oder importierten Tracks an die Straßen aus OsmAnd Offline-Karten, um zusätzliche Informationen zu erhalten:
+Die Einstellung **An Straßen anheften** ermöglicht das Anheften eines aufgezeichneten oder importierten Tracks an die Straßen aus OsmAnd Offline Karten, um zusätzliche Informationen zu erhalten:
 
 - Korrekte Abbiegeinformationen für [Navigation nach Track](../navigation/setup/gpx-navigation.md#how-to-follow-the-track) (insbesondere an Kreisverkehren).
 - Straßennamen und Fahrspurinformationen.

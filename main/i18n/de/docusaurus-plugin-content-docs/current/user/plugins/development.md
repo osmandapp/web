@@ -67,7 +67,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin Einstellungen zu öffnen:
 
 ### Fehlerbehebung {#troubleshotting}
 
-- **Ihre Position simulieren** (*Android* / *iOS*). [Simulieren Sie](#gpx-track-simulation) den Standort und die Bewegung anhand eines GPX-Tracks.
+- **Ihre Position simulieren** (*Android* / *iOS*). [Simulieren Sie](#gpx-track-simulation) den Standort und die Bewegung anhand eines GPX Tracks.
 - **Batteriesparmodus** (*Android* / *iOS*). Diese Einstellung reduziert [die Bildschirmaktualisierungsrate](#map-rendering-fps-widget) um 20 Bilder pro Sekunde, um beim Verwenden von Anwendungen Batteriestrom zu sparen.
 - **3D-Standortpositionssymbole verwenden** (*iOS*). Ermöglicht die Auswahl eines 3D-Symbols für das [Mein Standort-Symbol](../personal/profiles.md#my-location-appearance).
 - **OBD Daten simulieren** (*Android*). Ermöglicht die Simulation der Verwendung eines [OBD-Scanners](./vehicle-metrics.md).
@@ -187,7 +187,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map
 
 </Tabs>
 
-Sie können [Kameraposition-Widgets](../widgets/info-widgets.md#camera-widgets) verwenden, um der OsmAnd-Karte ein realistisches Aussehen zu verleihen und Fotos der Erde, die sowohl von oben als auch aus dem Weltraum aufgenommen wurden, anzupassen.
+Sie können [Kameraposition-Widgets](../widgets/info-widgets.md#camera-widgets) verwenden, um der OsmAnd Karte ein realistisches Aussehen zu verleihen und Fotos der Erde, die sowohl von oben als auch aus dem Weltraum aufgenommen wurden, anzupassen.
 
 
 ### Kameraneigung {#camera-tilt}
@@ -291,13 +291,13 @@ Das Widget "Entfernung von Kamera zum Ziel" zeigt die Entfernung zwischen der Ka
 
 ![Comparison](@site/static/img/plugins/development/comparison.png)
 
-Ein Vergleich der OsmAnd-Karte und der Erdoberfläche zeigt die folgenden Muster:
+Ein Vergleich der OsmAnd Karte und der Erdoberfläche zeigt die folgenden Muster:
 
 - Maximale Verzerrung wird bei großen Zooms beobachtet (Zoom 6-7 bei Kameraneigung 90 Grad).
 - Mit abnehmender Kameraneigung (von 90 auf 10 Grad) nimmt die Verzerrung der Karte zu.
 - Verzerrungen werden in hohen Breiten früher beobachtet.
 
-Die folgende Tabelle enthält Informationen über die Neigung der Kamera und die Entfernung zum Ziel sowie die Zoomstufe, bei der die Verzerrungen der OsmAnd-Karte sichtbar werden. Wenn sich die Kamera weiter vom Ziel entfernt, nimmt die beobachtete Verzerrung der OsmAnd-Karte zu.
+Die folgende Tabelle enthält Informationen über die Neigung der Kamera und die Entfernung zum Ziel sowie die Zoomstufe, bei der die Verzerrungen der OsmAnd Karte sichtbar werden. Wenn sich die Kamera weiter vom Ziel entfernt, nimmt die beobachtete Verzerrung der OsmAnd Karte zu.
 
 |Neigung (90) |Breitengrad |Max Zoom |Höhe, km |Verzerrung|
 |-----|-----|-----|-----|-----|
@@ -325,7 +325,7 @@ Dieses Widget wurde speziell für Sie entwickelt, um bei der Verwendung von OsmA
 
 ## GPX-Track-Simulation {#gpx-track-simulation}
 
-OsmAnd bietet die Möglichkeit, den Standort und die Bewegung Ihres Geräts anhand eines GPX-Tracks zu simulieren. Verwenden Sie zu diesem Zweck die Option *<Translate android="true" ids="simulate_location_by_gpx"/>* in den [Einstellungen](#plugin-settings) des OsmAnd Entwicklungs-Plugins:
+OsmAnd bietet die Möglichkeit, den Standort und die Bewegung Ihres Geräts anhand eines GPX Tracks zu simulieren. Verwenden Sie zu diesem Zweck die Option *<Translate android="true" ids="simulate_location_by_gpx"/>* in den [Einstellungen](#plugin-settings) des OsmAnd Entwicklungs-Plugins:
 
 - Tippen Sie auf *<Translate android="true" ids="simulate_location_by_gpx"/>*.
 - Wählen Sie einen Track aus, um den Standort und die Bewegung des Geräts zu simulieren.
@@ -353,7 +353,7 @@ Um die Simulation der Bewegung Ihres Geräts zu stoppen, kehren Sie zu den OsmAn
 
 - *<Translate android="true" ids="simulate_location_by_gpx"/>* kann auch über das **[Schnellaktionsmenü](../widgets/quick-action.md#navigation)** aufgerufen werden.
 - Die Geschwindigkeit der Standortbewegung während der Simulation kann gleich der aufgezeichneten Geschwindigkeit (1) oder schneller (x2, x3, x4) eingestellt werden.
-- Sie können die Bewegung entlang eines GPX-Tracks auch über das [Navigationsmenü](../navigation/setup/route-navigation.md#simulated-navigation) simulieren, ohne das OsmAnd Entwicklungs-Plugin zu aktivieren. In diesem Fall wird Ihr Standort nicht mit dem Track synchronisiert.
+- Sie können die Bewegung entlang eines GPX Tracks auch über das [Navigationsmenü](../navigation/setup/route-navigation.md#simulated-navigation) simulieren, ohne das OsmAnd Entwicklungs-Plugin zu aktivieren. In diesem Fall wird Ihr Standort nicht mit dem Track synchronisiert.
 
 
 ## Verwandte Artikel {#related-articles}

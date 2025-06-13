@@ -17,7 +17,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Das Plugin **Parkposition** hilft Ihnen, den Ort, an dem Sie Ihr Auto geparkt haben, zu speichern und zu verwalten. Es ermöglicht Ihnen, eine Markierung auf der Karte zu setzen, die Parkdauer zu verfolgen und optional eine Kalendererinnerung für das Ende Ihrer Parkzeit einzustellen.
 
-Dieses Plugin ist kostenlos und funktioniert offline mit heruntergeladenen OsmAnd-Karten. Sie können Ihr geparktes Fahrzeug schnell lokalisieren, die Gehdistanz zurückschätzen und bei Bedarf den Parkort teilen.
+Dieses Plugin ist kostenlos und funktioniert offline mit heruntergeladenen OsmAnd Karten. Sie können Ihr geparktes Fahrzeug schnell lokalisieren, die Gehdistanz zurückschätzen und bei Bedarf den Parkort teilen.
 
 - Sie können einen Parkplatz manuell über das Kontextmenü hinzufügen.
 - Bei zeitlich begrenztem Parken zeichnet das Plugin sowohl die Start- als auch die Endzeit auf.

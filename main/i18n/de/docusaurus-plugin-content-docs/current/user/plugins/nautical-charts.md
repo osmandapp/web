@@ -99,7 +99,7 @@ Um den aktuellen Kartenstil auf Nautisch zu ändern, müssen Sie die folgenden E
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*
 
-![Nautische Plugin-Kartenansicht Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
+![Nautische Plugin Kartenansicht Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
 
 </TabItem>
 
@@ -107,7 +107,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resour
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*
 
-![Nautische Plugin-Kartenansicht iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
+![Nautische Plugin Kartenansicht iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
 </TabItem>
 
@@ -170,7 +170,7 @@ Die Nautische Karte kann in jedes Profil aufgenommen werden. Sie ist jedoch am w
 
 ## Nautischer Kartenstil {#nautical-map-style}
 
-Das Nautische Plugin in OsmAnd erweitert die Vektor-Layer-Kartenstile um den Nautischen Kartenstil. Es ermöglicht Ihnen, Kartendaten gemäß den Regeln der Nautischen Karte anzuzeigen, z. B. gelbe Bereiche für Land und Untiefen, hellblaue Bereiche für flache Gewässer usw. Weitere Informationen finden Sie in der [Kartenlegende](../../user/map-legend/nautical-map.md).
+Das Nautische Plugin in OsmAnd erweitert die Vektor-Layer Kartenstile um den Nautischen Kartenstil. Es ermöglicht Ihnen, Kartendaten gemäß den Regeln der Nautischen Karte anzuzeigen, z. B. gelbe Bereiche für Land und Untiefen, hellblaue Bereiche für flache Gewässer usw. Weitere Informationen finden Sie in der [Kartenlegende](../../user/map-legend/nautical-map.md).
 
 
 ### Tiefenpunkte {#depth-points}

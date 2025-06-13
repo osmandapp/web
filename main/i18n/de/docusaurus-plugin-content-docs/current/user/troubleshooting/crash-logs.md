@@ -34,7 +34,7 @@ Seien Sie vorsichtig beim Senden von Logcat-Protokollen, da diese private Inform
 ### Protokolle aus der OsmAnd-App senden (Android) {#send-logs-from-osmand-app-android}
 
 1. Gehen Sie zu *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Wählen Sie je nach Situation die entsprechende Art von Protokoll aus. Details zu den Unterschieden zwischen den Protokolltypen finden Sie im Abschnitt [Absturz- und Logcat-Protokolle](#crash-and-logcat-logs).
-2. Wählen Sie im Pop-up-Menü Gmail oder Ihre bevorzugte E-Mail-App aus. Die E-Mail wird automatisch generiert.
+2. Wählen Sie im Pop-up Menü Gmail oder Ihre bevorzugte E-Mail-App aus. Die E-Mail wird automatisch generiert.
 3. Tippen Sie auf die Schaltfläche *Senden*.
 
 ![Absturzprotokolle von Android senden 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Absturzprotokolle von Android senden 2](@site/static/img/troubleshooting/send_logs_andr_2.png)

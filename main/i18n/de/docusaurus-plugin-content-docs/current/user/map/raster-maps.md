@@ -42,7 +42,7 @@ Sie können auch die Hauptquelle der Karten von Vektorkarten auf Online-Kacheln 
 
 ## Rasterkarten {#raster-maps}
 
-Online-Karten in OsmAnd bestehen aus Rasterdaten, die aus Pixeln (auch als Gitterzellen bezeichnet) bestehen – im Wesentlichen eine Reihe kleiner Bilder, die als Kacheln bekannt sind. Im Gegensatz zu Vektorkarten, die Daten wie Straßen, Punkte und Polygone mithilfe binärer Informationen darstellen, sind Rasterkartenkacheln in einem Gitter angeordnet und können bei hohen Zoomstufen pixelig erscheinen, da jedes Pixel einen festen Wert oder eine feste Klasse hat.
+Online Karten in OsmAnd bestehen aus Rasterdaten, die aus Pixeln (auch als Gitterzellen bezeichnet) bestehen – im Wesentlichen eine Reihe kleiner Bilder, die als Kacheln bekannt sind. Im Gegensatz zu Vektorkarten, die Daten wie Straßen, Punkte und Polygone mithilfe binärer Informationen darstellen, sind Rasterkartenkacheln in einem Gitter angeordnet und können bei hohen Zoomstufen pixelig erscheinen, da jedes Pixel einen festen Wert oder eine feste Klasse hat.
 
 #### Vergleich mit Standard-Vektorkarten {#comparison-to-default-vector-maps}
 
@@ -68,7 +68,7 @@ Online-Karten in OsmAnd bestehen aus Rasterdaten, die aus Pixeln (auch als Gitte
 **Plugin aktivieren**.
 
 - **iOS**. Für *iOS* funktioniert diese Funktion standardmäßig.
-- **Android**. Für *Android* müssen Sie das [Online-Karten-Plugin](../plugins/online-map.md) aktivieren, um Rasterkarten in OsmAnd zu verwenden. Gehen Sie wie folgt vor: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
+- **Android**. Für *Android* müssen Sie das [Online Karten-Plugin](../plugins/online-map.md) aktivieren, um Rasterkarten in OsmAnd zu verwenden. Gehen Sie wie folgt vor: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
 **Ebenenparameter ändern**. Um die Sichtbarkeit und Mischung von Rasterkartenebenen zu verbessern, können Sie die Ebenentransparenz mit dem Bildschirmregler anpassen. Zusätzlich können Sie den Vektorkartenstil ändern, indem Sie Polygone ausblenden, um die Unterlagenebenen besser sichtbar zu machen. Dies ist besonders nützlich beim Betrachten von Satellitenbildern.
 
@@ -264,9 +264,9 @@ Es gibt mehrere Möglichkeiten, eine neue Rasterkarte hinzuzufügen, sie von ein
 Hier sind die wichtigsten Methoden zum Hinzufügen einer neuen Rasterkartenquelle, die noch nicht in OsmAnd definiert ist:
 
 - Öffnen Sie eine gebrauchsfertige `.sqlitedb`-Datei mit OsmAnd.
-- Importieren Sie ein Paket mit vorbereiteten Online-Karten aus einer anderen OsmAnd-Anwendung als spezielles `.osf`-**Paket** über die [Import-/Exportfunktion](../personal/import-export.md).
-- Erstellen Sie eine neue Online-Kartenquelle direkt auf einem mobilen Gerät.
-- Bereiten Sie eine Magic-URL mit Online-Kartenquellenparametern vor und öffnen Sie sie mit OsmAnd.
+- Importieren Sie ein Paket mit vorbereiteten Online Karten aus einer anderen OsmAnd-Anwendung als spezielles `.osf`-**Paket** über die [Import-/Exportfunktion](../personal/import-export.md).
+- Erstellen Sie eine neue Online Kartenquelle direkt auf einem mobilen Gerät.
+- Bereiten Sie eine Magic-URL mit Online Kartenquellenparametern vor und öffnen Sie sie mit OsmAnd.
 
 
 ### Neue Online-Rasterkartenquelle hinzufügen {#add-new-online-raster-map-source}
@@ -291,11 +291,11 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 
 Um eine Rasterkartenquelle zu erstellen, müssen Sie die **URL einer Kachel** kennen, die eine spezifische URL ist, die Kartenkacheln in der Mercator-Projektion verteilt. Zum Beispiel könnte eine Kachel-URL so aussehen: `https://tile.osmand.net/hd/6/55/25.png`, wobei `tile.osmand.net/hd/` die Basis-URL ist.
 
-Hier sind die wichtigsten Parameter, die Sie beim Einrichten einer neuen Online-Kartenquelle konfigurieren müssen:
+Hier sind die wichtigsten Parameter, die Sie beim Einrichten einer neuen Online Kartenquelle konfigurieren müssen:
 
 | Parameter | Beschreibung |
 |:------------|:---------------|
-| *<Translate ios="true" ids="shared_string_name"/>* | Geben Sie einen Namen für die neue Online-Kartenquelle an. |
+| *<Translate ios="true" ids="shared_string_name"/>* | Geben Sie einen Namen für die neue Online Kartenquelle an. |
 | *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Geben Sie die URL für die Online-Kachelquelle ein oder fügen Sie sie ein. Stellen Sie sicher, dass sie dem Kachel-URL-Format entspricht. |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Dieser Parameter beeinflusst, wie die Karte angezeigt wird. <br/><ul><li>Als *Kartentyp* wird die Karte auf die ausgewählten Zoomstufen beschränkt.</li><li>Als *Überlagerung/Unterlage* wird die Karte auf den ausgewählten Zoomstufen angezeigt, wobei außerhalb dieser Stufen eine Hoch- oder Herunterskalierung angewendet wird.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | Legen Sie die Dauer (in Minuten) fest, nach der zwischengespeicherte Kacheln aktualisiert werden. Sie können dieses Feld leer lassen, wenn Sie nicht möchten, dass Kacheln automatisch neu geladen werden. <br/><ul><li>1 Tag = 1440 Minuten</li><li>1 Woche = 10.080 Minuten</li><li>30 Tage = 43.200 Minuten</li></ul> |
@@ -305,7 +305,7 @@ Hier sind die wichtigsten Parameter, die Sie beim Einrichten einer neuen Online-
 
 ### Magic-URL zur Installation der Kartenquelle {#magic-url-to-install-map-source}
 
-Online-Karten können mit einem speziellen Link zur OsmAnd-Rasterkartenliste hinzugefügt werden. Klicken Sie auf diesen Link und wählen Sie OsmAnd zum Öffnen:
+Online Karten können mit einem speziellen Link zur OsmAnd-Rasterkartenliste hinzugefügt werden. Klicken Sie auf diesen Link und wählen Sie OsmAnd zum Öffnen:
 
 `http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
 
@@ -317,7 +317,7 @@ Online-Karten können mit einem speziellen Link zur OsmAnd-Rasterkartenliste hin
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|
 |[Zoomstufen]|min_zoom=9 / max_zoom=15|
 
-Sie finden eine hinzugefügte Online-Karte in der Liste des Menüs [Haupt-/Unterlagen-/Überlagerungsebene](#select-raster-maps).
+Sie finden eine hinzugefügte Online Karte in der Liste des Menüs [Haupt-/Unterlagen-/Überlagerungsebene](#select-raster-maps).
 
 
 ## Rasterkarten verwalten {#manage-raster-maps}
@@ -327,9 +327,9 @@ Rasterkarten können einen erheblichen Speicherplatz auf der Festplatte beanspru
 - [**SQ Lite-Format**](../../technical/osmand-file-formats/osmand-sqlite.md)
 - [**Metainfo-Format**](../../technical/osmand-file-formats/osmand-metainfo.md)
 
-Um das Kachelformat zu ändern, können Sie <Translate android="true" ids="storage_format"/> im Bearbeitungsmenü der Online-Karten auswählen:
+Um das Kachelformat zu ändern, können Sie <Translate android="true" ids="storage_format"/> im Bearbeitungsmenü der Online Karten auswählen:
 
-- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → Online-Karten auswählen →
+- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → Online Karten auswählen →
 &#8942; → <Translate android="true" ids="shared_string_edit,storage_format,sqlite_db_file"/> / <Translate android="true" ids="one_image_per_tile"/>*
 - **iOS**: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit,res_source_format,sqlite_db_file"/> / <Translate ios="true" ids="one_image_per_tile"/>*
 
@@ -338,11 +338,11 @@ Um das Kachelformat zu ändern, können Sie <Translate android="true" ids="stora
 
 ![Online sources list](@site/static/img/plugins/online-maps/online-sources-list.png)
 
-Kacheln werden im Cache gespeichert, wenn Online-Rasterkarten als Haupt-/Überlagerungs-/Unterlagenebene verwendet werden. Sie können die Größe Ihrer SQ Lite-Datei unter dem Namen Ihrer Online-Karte in der Liste sehen. Manchmal ist eine regelmäßige Bereinigung erforderlich, um die Anzeige der Kacheln zu beschleunigen oder die Daten zu aktualisieren.
+Kacheln werden im Cache gespeichert, wenn Online-Rasterkarten als Haupt-/Überlagerungs-/Unterlagenebene verwendet werden. Sie können die Größe Ihrer SQ Lite-Datei unter dem Namen Ihrer Online Karte in der Liste sehen. Manchmal ist eine regelmäßige Bereinigung erforderlich, um die Anzeige der Kacheln zu beschleunigen oder die Daten zu aktualisieren.
 
 Um den Kartenkachel-Cache zu leeren, müssen Sie Folgendes tun:
 
-- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → Online-Karten auswählen →
+- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → Online Karten auswählen →
 &#8942; → <Translate android="true" ids="clear_tile_data"/>*
 - **iOS**: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
 
@@ -384,7 +384,7 @@ Damit die Karten die Kacheln nach einer Weile automatisch aktualisieren, können
 
 </Tabs>
 
-- Um Rasterkacheln herunterzuladen oder zu aktualisieren, müssen Sie die Quelle der Online-Karte als [Hauptkartenquelle](#select-raster-maps) auswählen. Sie können Online-Kacheln auch separat für die [Überlagerungs](#overlay-layer)-Karte oder für die [Unterlagen](#underlay-layer)-Karte auswählen.
+- Um Rasterkacheln herunterzuladen oder zu aktualisieren, müssen Sie die Quelle der Online Karte als [Hauptkartenquelle](#select-raster-maps) auswählen. Sie können Online-Kacheln auch separat für die [Überlagerungs](#overlay-layer) Karte oder für die [Unterlagen](#underlay-layer) Karte auswählen.
 
 - Für die **Android**-Version der OsmAnd-App müssen Sie einen Bereich entsprechend der Bildschirmgröße Ihres Geräts auswählen und lange auf die Karte tippen. Wählen Sie dann [Aktionen](../map/map-context-menu.md#customize) im Kartenkontextmenü und die Option *Karte herunterladen* oder *Karte aktualisieren*. Nehmen Sie auf dem Bildschirm Karte herunterladen die erforderlichen Einstellungen vor und tippen Sie auf Herunterladen.
 
@@ -397,7 +397,7 @@ Damit die Karten die Kacheln nach einer Weile automatisch aktualisieren, können
 
 <TabItem value="android" label="Android">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → Online-Karten auswählen → &#8942; → <Translate android="true" ids="shared_string_edit"/>*
+Gehe zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → Online Karten auswählen → &#8942; → <Translate android="true" ids="shared_string_edit"/>*
 
 </TabItem>
 

@@ -551,11 +551,11 @@ Plugins schalten zusätzliche Funktionen der Anwendung frei und können entweder
 
 - **Aufnahme von Fahrten**. Dieser Punkt öffnet die [Einstellungen zur Aufnahme von Fahrten](../plugins/trip-recording.md#recording-settings) für das ausgewählte Profil, wo Sie beliebige Parameter für die Aufnahme Ihrer Fahrten auswählen können.
 
-- **Wetter**. Interaktive [Wetter](../plugins/weather.md#weather-settings)-Kartenebenen ermöglichen es Ihnen, Temperatur, Luftdruck, Wolkenbedeckung, Windgeschwindigkeit und Niederschlag in Ihrer Stadt oder an einem anderen Ort auf einer globalen Karte zu überwachen.
+- **Wetter**. Interaktive [Wetter](../plugins/weather.md#weather-settings) Kartenebenen ermöglichen es Ihnen, Temperatur, Luftdruck, Wolkenbedeckung, Windgeschwindigkeit und Niederschlag in Ihrer Stadt oder an einem anderen Ort auf einer globalen Karte zu überwachen.
 
 - **Audio-/Video-Notizen** (*nur Android*). Dieser Punkt öffnet die [Einstellungen des Audio-/Video-Plugins](../plugins/audio-video-notes.md#plugin-settings) für das ausgewählte Profil. Das *Audio-/Video-Notizen*-Plugin erweitert die Funktionalität von OsmAnd, indem es Ihnen ermöglicht, Ihre Notizen in verschiedenen Formaten wie Foto, Video oder Audio zu erstellen und sie mit einem geografischen Standort oder dem aktuellen Standort zu verknüpfen.
 
-- **OpenStreetMap-Bearbeitung**. Dieser Punkt öffnet die [Einstellungen des OpenStreetMap-Bearbeitungs-Plugins](../plugins/osm-editing.md#settings) für das ausgewählte Profil. Mit OsmAnd und dem OSM-Bearbeitungs-Plugin können Sie zu OpenStreetMap.org beitragen, indem Sie POIs erstellen oder ändern, Notizen hinzufügen oder kommentieren und aufgezeichnete GPX-Tracks hochladen.
+- **OpenStreetMap-Bearbeitung**. Dieser Punkt öffnet die [Einstellungen des OpenStreetMap-Bearbeitungs-Plugins](../plugins/osm-editing.md#settings) für das ausgewählte Profil. Mit OsmAnd und dem OSM-Bearbeitungs-Plugin können Sie zu OpenStreetMap.org beitragen, indem Sie POIs erstellen oder ändern, Notizen hinzufügen oder kommentieren und aufgezeichnete GPX Tracks hochladen.
 
 - **Externe Sensoren**. Wenn Sie auf einen Punkt im Abschnitt *Plugin Einstellungen* tippen, werden die [Einstellungen externer Sensoren](../plugins/external-sensors.md#sensors-settings) für das ausgewählte Profil geöffnet. Das Plugin für externe Sensoren ermöglicht es Ihnen, Daten von drahtlosen externen Sensoren zu lesen und aufzuzeichnen und diese mithilfe von Widgets in der OsmAnd-Anwendung anzuzeigen.
 

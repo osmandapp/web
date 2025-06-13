@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # Berechnung von bergauf / bergab / Steigung {#calculation-of-uphill--downhill--slope}
 
-OsmAnd verwendet verschiedene Algorithmen zur Berechnung von **Steigung** und **bergauf** basierend auf SRTM-Satellitendaten, die in Offline-Karten eingebettet sind, und basierend auf aufgezeichneten GPX-Tracks.
+OsmAnd verwendet verschiedene Algorithmen zur Berechnung von **Steigung** und **bergauf** basierend auf SRTM-Satellitendaten, die in Offline Karten eingebettet sind, und basierend auf aufgezeichneten GPX Tracks.
 
 Das Hauptziel bei der Berechnung von **bergauf** ist es, relevante Informationen darüber zu liefern, wie viel **zusätzliche Energie** beim Bergauffahren verbraucht wird. Offensichtlich hängt dies von mehreren Faktoren ab, wie z. B. Fahrzeug oder Transportmittel, Untergrund, Gewicht der Person und anderen.
 Am Ende sollte **bergauf** ein Parameter sein, der bei der höhenbasierten Routenplanung berücksichtigt wird, um eine energieeffiziente Routenplanung zu ermöglichen.

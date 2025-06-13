@@ -83,15 +83,15 @@ Der Bereich **Erkunden** im Suchmenü erleichtert das Finden von Orten und das A
 
 So starten Sie:
 
-1. Klicken Sie auf das **🔍 Symbol**, um die Suchregisterkarte zu öffnen, die beliebte POI-Kategorien und das **Erkunden**-Menü darunter anzeigt.
+1. Klicken Sie auf das **🔍 Symbol**, um die Suchregisterkarte zu öffnen, die beliebte POI-Kategorien und das **Erkunden** Menü darunter anzeigt.
 2. Die **Erkunden** Daten werden automatisch auf der Karte angezeigt.
 3. Wählen Sie im Bereich Erkunden **"Alle anzeigen"**, um die vollständige Kategorienliste mit der Schaltfläche ***Filter*** oben zu öffnen.
 
-   ![Erkunden-Menü](@site/static/img/web/explore.png)
+   ![Erkunden Menü](@site/static/img/web/explore.png)
 
 4. Durch Drücken der Schaltfläche ***Filter*** wird das Kategorienmenü für "Erkunden" geöffnet. Um Ihre Suche zu verfeinern, öffnen Sie das Kategorienmenü und wählen Sie die gewünschten Elemente aus.
 
-   ![Erkunden-Menü](@site/static/img/web/explore_cat.png)
+   ![Erkunden Menü](@site/static/img/web/explore_cat.png)
 
 ### POI Daten erkunden {#explore-poi-data}
 
@@ -107,7 +107,7 @@ Durch Klicken auf einen Bild-POI wird ein neues Kontextmenü geöffnet, das Folg
 - **OSM-ID**. Zeigt die OpenStreetMap-ID des POI an.
 - **Koordinaten**. Durch Klicken auf die Koordinaten können Sie diese kopieren.
 
-![Erkunden-Menü](@site/static/img/web/poi_context.png)
+![Erkunden Menü](@site/static/img/web/poi_context.png)
 
 ### Fotogalerie {#photo-gallery}
 

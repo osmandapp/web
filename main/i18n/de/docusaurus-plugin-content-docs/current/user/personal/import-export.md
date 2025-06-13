@@ -33,7 +33,7 @@ Für den Import/Export verfügbare **Datentypen**:
 - **Meine Orte:**  
         [Favoriten](../personal/favorites.md#export--import), &nbsp;[Tracks](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM-Notizen*, *OSM-Bearbeitungen](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V-Notizen](../plugins/audio-video-notes.md), &nbsp;[Kartenmarkierungen](../personal/markers.md), &nbsp;[Markierungsverlauf*, *Suchverlauf*, *Navigationsverlauf](../personal/global-settings.md#history), &nbsp;*Reiseroute*.
 - **Ressourcen:**  
-        [Rendering-Stil](../map/vector-maps.md#custom-map-style), &nbsp;[Routing](../navigation/routing/osmand-routing.md), &nbsp;[Online-Routing-Engines](../navigation/routing/online-routing.md), &nbsp;[Kartenquellen*, *Standard-/Offline-Karten](../map/raster-maps.md), &nbsp;[Wikipedia- und Reisekarten](../plan-route/travel-guides.md), &nbsp;[Seekarten](../plugins/nautical-charts.md), &nbsp;[Straßenkarten](../map/vector-maps.md#road-style), &nbsp;[Topographische Karten](../plugins/topography.md), &nbsp;[Sprachansagen (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Sprachansagen (aufgenommen)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favoriten-Backup](../personal/favorites.md#automatic-favorites-backup).
+        [Rendering-Stil](../map/vector-maps.md#custom-map-style), &nbsp;[Routing](../navigation/routing/osmand-routing.md), &nbsp;[Online-Routing-Engines](../navigation/routing/online-routing.md), &nbsp;[Kartenquellen*, *Standard-/Offline Karten](../map/raster-maps.md), &nbsp;[Wikipedia- und Reisekarten](../plan-route/travel-guides.md), &nbsp;[Seekarten](../plugins/nautical-charts.md), &nbsp;[Straßenkarten](../map/vector-maps.md#road-style), &nbsp;[Topographische Karten](../plugins/topography.md), &nbsp;[Sprachansagen (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Sprachansagen (aufgenommen)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favoriten-Backup](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Export {#export}
@@ -58,7 +58,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,l
 
 </Tabs>
 
-Alle von Ihnen konfigurierten und erstellten Daten können über das ***Export-Menü*** exportiert werden. Das Menü besteht aus drei Gruppen: **Einstellungen**, **Meine Orte** und **Ressourcen**, die alle verfügbaren Dateiverzeichnisse enthalten. Sie können die Dateien, die Sie exportieren möchten, in jedem Verzeichnis einzeln oder alle auf einmal auswählen. **Alle exportierten Dateien werden im `.osf`-Format gespeichert**.  
+Alle von Ihnen konfigurierten und erstellten Daten können über das ***Export Menü*** exportiert werden. Das Menü besteht aus drei Gruppen: **Einstellungen**, **Meine Orte** und **Ressourcen**, die alle verfügbaren Dateiverzeichnisse enthalten. Sie können die Dateien, die Sie exportieren möchten, in jedem Verzeichnis einzeln oder alle auf einmal auswählen. **Alle exportierten Dateien werden im `.osf`-Format gespeichert**.  
 
 
 ### Import {#import}
@@ -100,7 +100,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,l
 
 ## Datenverlust verhindern {#preventing-data-loss}
 
-In den *Android*- und *iOS*-Versionen von OsmAnd wird bei einer vollständigen **Deinstallation** der App oder der Auswahl von **Daten löschen** im Einstellungsmenü Anwendungsinfo auf Ihrem Gerät auch das Datenverzeichnis aus dem Dateimanager des Geräts gelöscht. Wenn Sie keine Vorsichtsmaßnahmen treffen, führt dies zum **Verlust aller heruntergeladenen Karten für OsmAnd Daten, aller gespeicherten Favoriten, GPX-Tracks, Sprachansagen (TTS) und [anderer Daten](#export--import-data).**
+In den *Android*- und *iOS*-Versionen von OsmAnd wird bei einer vollständigen **Deinstallation** der App oder der Auswahl von **Daten löschen** im Einstellungsmenü Anwendungsinfo auf Ihrem Gerät auch das Datenverzeichnis aus dem Dateimanager des Geräts gelöscht. Wenn Sie keine Vorsichtsmaßnahmen treffen, führt dies zum **Verlust aller heruntergeladenen Karten für OsmAnd Daten, aller gespeicherten Favoriten, GPX Tracks, Sprachansagen (TTS) und [anderer Daten](#export--import-data).**
 
 Es gibt zwei Möglichkeiten, Ihre Daten vor der Neuinstallation der OsmAnd-App zu speichern:
 

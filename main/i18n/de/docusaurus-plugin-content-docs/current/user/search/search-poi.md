@@ -198,7 +198,7 @@ Ein Filter kann aus einer ganzen Reihe von Elementen bestehen, deren Vorhandense
  14. **Persönlicher Transport**. Alle [Fahrzeugtypen](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) können in Ihrem Besitz sein.
         Enthält *38* Filtertypen.
 
- 15. **Beliebte Orte (Wikipedia)**. Um in dieser Kategorie zu suchen, müssen Sie die [Wikipedia-Karte](../plugins/wikipedia.md#overview) der Region herunterladen, an der Sie interessiert sind.
+ 15. **Beliebte Orte (Wikipedia)**. Um in dieser Kategorie zu suchen, müssen Sie die [Wikipedia Karte](../plugins/wikipedia.md#overview) der Region herunterladen, an der Sie interessiert sind.
         Enthält keine Filter.
 
  16. **Privater Zugang**.
@@ -426,7 +426,7 @@ Um einen benutzerdefinierten Filter zu **speichern**, wählen Sie Filtertypen au
 
 Eine weitere Möglichkeit zum **Speichern**:
 
-- Wählen Sie *[Kategorie](#poi-search-by-categories) → [Filtersymbol](#types-of-filters) →* wählen Sie *Typen* von Merkmalen *→ Drei-Punkte-Menü → Filter speichern*.
+- Wählen Sie *[Kategorie](#poi-search-by-categories) → [Filtersymbol](#types-of-filters) →* wählen Sie *Typen* von Merkmalen *→ Drei-Punkte Menü → Filter speichern*.
 
 
 ### Einen vorhandenen Filter bearbeiten {#edit-an-existing-filter}
@@ -453,10 +453,10 @@ Vom Hauptbildschirm aus:
 - Wählen Sie die Registerkarte *Kategorien*.
 - Wählen Sie eine gespeicherte benutzerdefinierte Kategorie aus, und der Suchergebnisbildschirm wird angezeigt.
 - Tippen Sie auf das *Filtersymbol* neben *Auf der Karte anzeigen*, um den Bildschirm *Filter* zu öffnen.
-- Tippen Sie auf das *Drei-Punkte-Menü*.
-- Wählen Sie im Dropdown-Menü **Filter bearbeiten**.
+- Tippen Sie auf das *Drei-Punkte Menü*.
+- Wählen Sie im Dropdown Menü **Filter bearbeiten**.
 - Um eine benutzerdefinierte POI-Suche nach der Bearbeitung zu speichern:
-    - Wählen Sie POI-Kategorien und Filtertypen für diese aus *→* tippen Sie auf *Anzeigen → Drei-Punkte-Menü → Speichern unter →* geben Sie einen neuen Filternamen ein oder *speichern* Sie Änderungen am aktuellen.
+    - Wählen Sie POI-Kategorien und Filtertypen für diese aus *→* tippen Sie auf *Anzeigen → Drei-Punkte Menü → Speichern unter →* geben Sie einen neuen Filternamen ein oder *speichern* Sie Änderungen am aktuellen.
 
 
 ### Benutzerdefinierten POI-Filter löschen {#delete-custom-poi-filter}
@@ -481,7 +481,7 @@ Sie können nur Kategorien löschen, die mit Filtern oder benutzerdefinierter Su
 
 - Gehen Sie zur Registerkarte [Kategorien](#poi-search-by-categories) und wählen Sie die gewünschte aus.
 - Tippen Sie im Feld neben *Auf der Karte anzeigen* auf das Symbol, das den *Filter* darstellt.
-- Tippen Sie im Menü *Filter* auf das *Drei-Punkte-Menü* ( &#8285; ), das sich in der oberen rechten Ecke des Bildschirms befindet.
+- Tippen Sie im Menü *Filter* auf das *Drei-Punkte Menü* ( &#8285; ), das sich in der oberen rechten Ecke des Bildschirms befindet.
 - Wählen Sie **Filter löschen**.
 - ***Sie können das Löschen nicht rückgängig machen.***
 

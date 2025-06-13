@@ -23,7 +23,7 @@ Um schneller voranzukommen, können Sie in OsmAnd Straßenansichten Ihrer Routen
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
 
-Um Straßenbilder auf der OsmAnd-Karte anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
+Um Straßenbilder auf der OsmAnd Karte anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
 
 1. Aktivieren Sie das [Mapillary-Plugin](../plugins/#enable--disable) im Abschnitt *Plugins* des *Hauptmenüs*.
 2. Zeigen Sie die [Straßenbilder](#enable-layer) auf der Karte für das erforderliche Profil im Menü Karte konfigurieren an.
@@ -47,11 +47,11 @@ Um Straßenbilder auf der OsmAnd-Karte anzuzeigen, müssen Sie die folgenden Ein
 
 </Tabs>
 
-Der Karten-Layer mit Straßenbildern wird auf der OsmAnd-Karte als Reihen von verbundenen grünen Punkten angezeigt.
+Der Karten-Layer mit Straßenbildern wird auf der OsmAnd Karte als Reihen von verbundenen grünen Punkten angezeigt.
 
 - Die Fotos von Mapillary-Benutzern sind an diese grünen Punkte angehängt.
 - Tippen Sie auf einen grünen Punkt auf der Karte, um ein Straßenansichtsfoto zu öffnen. Fotos können auch aus einer Liste im [Kartenkontextmenü](#map-context-menu) ausgewählt werden, falls verfügbar.
-- Nach der Auswahl wird der Anwendungsbildschirm in die OsmAnd-Karte und Mapillary-Straßenbilder unterteilt.
+- Nach der Auswahl wird der Anwendungsbildschirm in die OsmAnd Karte und Mapillary-Straßenbilder unterteilt.
 - Sie können [Filter](#data-filtering) anwenden, um die Fotos auszuwählen, die auf der Karte angezeigt werden sollen.
 
 
@@ -79,7 +79,7 @@ Um Mapillary-Straßenbilder auf der Karte anzuzeigen, müssen Sie diesen Layer i
 
 :::note Mapillary Foto-Viewer
 
-- Tippen Sie auf die Schaltfläche *Drei-Punkte-Menü* (&#8285;), um das ausgewählte Bild in der [**Mapillary**](https://www.mapillary.com/mobile-apps)-Anwendung zu öffnen.
+- Tippen Sie auf die Schaltfläche *Drei-Punkte Menü* (&#8285;), um das ausgewählte Bild in der [**Mapillary**](https://www.mapillary.com/mobile-apps)-Anwendung zu öffnen.
 - Tippen Sie auf den Pfeil, um von Bild zu Bild zu wechseln.
 :::
 
