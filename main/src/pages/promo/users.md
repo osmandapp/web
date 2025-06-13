@@ -15,11 +15,11 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 
-# Get OsmAnd Pro free for 1 year
+# Get OsmAnd Pro free for 1 month
 
 Please, input your e-mail for registration:
 
-<RegisterUserPromoBlock  promoKey='user'/>
+<RegisterUserPromoBlock  promoKey='userpromo'/>
 
 **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
 
