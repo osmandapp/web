@@ -31,6 +31,7 @@ import DeleteAccountDialog from './dialogs/DeleteAccountDialog';
 import AppBarWithBtns from '../frame/components/header/AppBarWithBtns';
 import CloudInfo from './CloudInfo';
 import upperFirst from 'lodash/upperFirst';
+import DeveloperArea from './DeveloperArea';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -46,11 +47,21 @@ export default function LoginMenu() {
 
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [openCloudInfo, setOpenCloudInfo] = useState(false);
+    const [showDeveloperArea, setShowDeveloperArea] = useState(false);
+
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
             ctx.setDevelFeatures(!ctx.develFeatures);
         }
     };
+
+    useEffect(() => {
+        if (ltx.loginRoles && (ltx.loginRoles.includes('ROLE_ADMIN') || ltx.loginRoles.includes('ROLE_SUPPORT'))) {
+            setShowDeveloperArea(true);
+        } else {
+            setShowDeveloperArea(false);
+        }
+    }, [ltx.loginRoles]);
 
     useEffect(() => {
         if (location.hash === '#logout' && ltx.loginUser) {
@@ -142,6 +153,8 @@ export default function LoginMenu() {
                                 revertText={true}
                                 actions={<AccountActions />}
                             />
+                            <ThickDivider mt={'0px'} mb={'0px'} />
+                            {showDeveloperArea && <DeveloperArea />}
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SubTitleMenu text={'My data'} />
                             <SimpleItemWithRightInfo

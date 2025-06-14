@@ -7,6 +7,7 @@ const LoginContext = React.createContext();
 
 export const LoginContextProvider = ({ children }) => {
     const [loginUser, setLoginUser] = useState(INIT_LOGIN_STATE);
+    const [loginRoles, setLoginRoles] = useState(null);
     const [openLoginMenu, setOpenLoginMenu] = useState(false);
     const [loginState, setLoginState] = useState({ default: true });
     const [accountInfo, setAccountInfo] = useState(null);
@@ -39,12 +40,15 @@ export const LoginContextProvider = ({ children }) => {
                 await getAccountInfo(setAccountInfo);
             }
             const user = await response.json();
-            let newUser = user?.username;
+            const newUser = user?.username;
+            const roles = user?.roles || null;
+
             if (loginUser !== newUser) {
                 if (newUser) {
                     setEmailCookie(newUser, { days: 30, SameSite: 'Strict' });
                 }
                 setLoginUser(newUser);
+                setLoginRoles(roles);
             }
         } else {
             setLoginUser(null);
@@ -56,6 +60,8 @@ export const LoginContextProvider = ({ children }) => {
             value={{
                 loginUser,
                 setLoginUser,
+                loginRoles,
+                setLoginRoles,
                 openLoginMenu,
                 setOpenLoginMenu,
                 loginState,
