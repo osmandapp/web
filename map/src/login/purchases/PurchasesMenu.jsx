@@ -86,7 +86,7 @@ export default function PurchasesMenu() {
                                                 key={index + item.name}
                                                 name={item.name}
                                                 type={item.type}
-                                                state={getStatus(item)}
+                                                state={getStatus(item.state)}
                                                 billingDate={item.billingDate}
                                                 onClick={() => clickOnSubscription(index)}
                                             />

@@ -120,7 +120,7 @@ export default function PurchaseInfo() {
                             id={item.name}
                             name={item.name}
                             type={item.type}
-                            state={getStatus(item)}
+                            state={getStatus(item.state)}
                             billingDate={item.billingDate}
                         />
                     ) : (

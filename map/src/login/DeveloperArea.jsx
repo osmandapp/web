@@ -8,6 +8,7 @@ import { ReactComponent as InfoIcon } from '../assets/icons/ic_action_info_outli
 import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import ThickDivider from '../frame/components/dividers/ThickDivider';
 
 export default function DeveloperArea() {
     const { t } = useTranslation();
@@ -56,6 +57,7 @@ export default function DeveloperArea() {
                     });
                 }}
             />
+            <ThickDivider mt={'0px'} mb={'0px'} />
         </>
     );
 }

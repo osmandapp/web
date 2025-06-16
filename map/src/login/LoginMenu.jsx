@@ -32,6 +32,7 @@ import AppBarWithBtns from '../frame/components/header/AppBarWithBtns';
 import CloudInfo from './CloudInfo';
 import upperFirst from 'lodash/upperFirst';
 import DeveloperArea from './DeveloperArea';
+import { getStatus } from './purchases/PurchaseManager';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -86,9 +87,7 @@ export default function LoginMenu() {
         if (!ltx.accountInfo) {
             return '';
         }
-        let status;
-        status = ltx.accountInfo.state;
-        status = status ? upperFirst(status) + ' · ' : '';
+        const status = ltx.accountInfo.state ? upperFirst(getStatus(ltx.accountInfo.state)) + ' · ' : '';
         const type = getAccountType(ltx.accountInfo.name) || '';
         return status + type;
     };
@@ -155,7 +154,6 @@ export default function LoginMenu() {
                             />
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             {showDeveloperArea && <DeveloperArea />}
-                            <ThickDivider mt={'0px'} mb={'0px'} />
                             <SubTitleMenu text={'My data'} />
                             <SimpleItemWithRightInfo
                                 id={'se-login-menu-osmand-cloud-item'}

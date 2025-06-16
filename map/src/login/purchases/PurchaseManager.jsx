@@ -32,11 +32,11 @@ const storeMap = {
     },
 };
 
-export function getStatus(item) {
-    if (item.state === 'cancelled' || item.state === 'in_grace_period') {
+export function getStatus(state) {
+    if (state === 'cancelled' || state === 'in_grace_period') {
         return 'active';
     }
-    return item.state;
+    return state;
 }
 
 export default function PurchaseManager({ store }) {
