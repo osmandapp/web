@@ -21,41 +21,25 @@ export default function DeveloperArea() {
             <SimpleItemWithRightInfo
                 name={'Order Management'}
                 icon={<OrderIcon />}
-                onClick={() => {
-                    navigate({
-                        pathname: '/admin/order-mgmt',
-                    });
-                }}
+                onClick={() => window.open(`${window.location.origin}/admin/order-mgmt`, '_blank')}
             />
             <DividerWithMargin margin={'64px'} />
             <SimpleItemWithRightInfo
                 name={'Indexes'}
                 icon={<IndexesIcon />}
-                onClick={() => {
-                    navigate({
-                        pathname: '/admin/indexes',
-                    });
-                }}
+                onClick={() => window.open(`${window.location.origin}/admin/indexes`, '_blank')}
             />
             <DividerWithMargin margin={'64px'} />
             <SimpleItemWithRightInfo
                 name={'Releases'}
                 icon={<ReleasesIcon />}
-                onClick={() => {
-                    navigate({
-                        pathname: '/admin/releases',
-                    });
-                }}
+                onClick={() => window.open(`${window.location.origin}/admin/releases`, '_blank')}
             />
             <DividerWithMargin margin={'64px'} />
             <SimpleItemWithRightInfo
                 name={'Info'}
                 icon={<InfoIcon />}
-                onClick={() => {
-                    navigate({
-                        pathname: '/admin/info',
-                    });
-                }}
+                onClick={() => window.open(`${window.location.origin}/admin/info`, '_blank')}
             />
             <ThickDivider mt={'0px'} mb={'0px'} />
         </>
