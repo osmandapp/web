@@ -31,6 +31,8 @@ import DeleteAccountDialog from './dialogs/DeleteAccountDialog';
 import AppBarWithBtns from '../frame/components/header/AppBarWithBtns';
 import CloudInfo from './CloudInfo';
 import upperFirst from 'lodash/upperFirst';
+import DeveloperArea from './DeveloperArea';
+import { getStatus } from './purchases/PurchaseManager';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -46,11 +48,21 @@ export default function LoginMenu() {
 
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [openCloudInfo, setOpenCloudInfo] = useState(false);
+    const [showDeveloperArea, setShowDeveloperArea] = useState(false);
+
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
             ctx.setDevelFeatures(!ctx.develFeatures);
         }
     };
+
+    useEffect(() => {
+        if (ltx.loginRoles && (ltx.loginRoles.includes('ROLE_ADMIN') || ltx.loginRoles.includes('ROLE_SUPPORT'))) {
+            setShowDeveloperArea(true);
+        } else {
+            setShowDeveloperArea(false);
+        }
+    }, [ltx.loginRoles]);
 
     useEffect(() => {
         if (location.hash === '#logout' && ltx.loginUser) {
@@ -75,10 +87,9 @@ export default function LoginMenu() {
         if (!ltx.accountInfo) {
             return '';
         }
-        let status;
-        status = ltx.accountInfo.state;
-        status = status ? upperFirst(status) + ' · ' : '';
-        return status + getAccountType(ltx.accountInfo.name);
+        const status = ltx.accountInfo.state ? upperFirst(getStatus(ltx.accountInfo.state)) + ' · ' : '';
+        const type = getAccountType(ltx.accountInfo.name) || '';
+        return status + type;
     };
 
     function close() {
@@ -142,6 +153,7 @@ export default function LoginMenu() {
                                 actions={<AccountActions />}
                             />
                             <ThickDivider mt={'0px'} mb={'0px'} />
+                            {showDeveloperArea && <DeveloperArea />}
                             <SubTitleMenu text={'My data'} />
                             <SimpleItemWithRightInfo
                                 id={'se-login-menu-osmand-cloud-item'}
