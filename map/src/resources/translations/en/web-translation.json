@@ -157,5 +157,10 @@
   "feature_nautical_depth": "Nautical depth",
   "feature_nautical_depth_desc": "Visualize underwater relief with depth contours and numbered depth points indicating shallowest areas",
   "empty_login_prices_desc": "Your purchase or subscription needs to be linked to an account. Please log in if you already have one, or create a new account to proceed.",
-  "shared_string_save": "Save"
+  "shared_string_save": "Save",
+  "order_management": "Order Management",
+  "indexes": "Indexes",
+  "releases": "Releases",
+  "info": "Info",
+  "developer": "Developer"
 }

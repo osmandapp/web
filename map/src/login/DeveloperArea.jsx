@@ -7,37 +7,34 @@ import { ReactComponent as ReleasesIcon } from '../assets/icons/ic_action_apk.sv
 import { ReactComponent as InfoIcon } from '../assets/icons/ic_action_info_outlined.svg';
 import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import ThickDivider from '../frame/components/dividers/ThickDivider';
 
 export default function DeveloperArea() {
     const { t } = useTranslation();
 
-    const navigate = useNavigate();
-
     return (
         <>
-            <SubTitleMenu text={'Developer'} />
+            <SubTitleMenu text={t('web:developer')} />
             <SimpleItemWithRightInfo
-                name={'Order Management'}
+                name={t('web:order_management')}
                 icon={<OrderIcon />}
                 onClick={() => window.open(`${window.location.origin}/admin/order-mgmt`, '_blank')}
             />
             <DividerWithMargin margin={'64px'} />
             <SimpleItemWithRightInfo
-                name={'Indexes'}
+                name={t('web:indexes')}
                 icon={<IndexesIcon />}
                 onClick={() => window.open(`${window.location.origin}/admin/indexes`, '_blank')}
             />
             <DividerWithMargin margin={'64px'} />
             <SimpleItemWithRightInfo
-                name={'Releases'}
+                name={t('web:releases')}
                 icon={<ReleasesIcon />}
                 onClick={() => window.open(`${window.location.origin}/admin/releases`, '_blank')}
             />
             <DividerWithMargin margin={'64px'} />
             <SimpleItemWithRightInfo
-                name={'Info'}
+                name={t('web:info')}
                 icon={<InfoIcon />}
                 onClick={() => window.open(`${window.location.origin}/admin/info`, '_blank')}
             />
