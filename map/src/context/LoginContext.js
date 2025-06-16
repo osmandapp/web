@@ -52,6 +52,7 @@ export const LoginContextProvider = ({ children }) => {
             }
         } else {
             setLoginUser(null);
+            setLoginRoles(null);
         }
     }
 

@@ -51,6 +51,14 @@ export async function userLogin({ ltx, username, pwd, setError, handleClose, lan
     if (await isRequestOk(response, setError)) {
         setError('');
         ltx.setLoginUser(username);
+        const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/info`, {
+            method: 'GET',
+        });
+        if (response.data) {
+            const user = await response.json();
+            const roles = user?.roles || null;
+            ltx.setLoginRoles(roles);
+        }
         if (ltx.openLoginDialog) {
             ltx.setOpenLoginDialog((prev) => !prev);
             ltx.setCompletePurchase((prev) => !prev);
