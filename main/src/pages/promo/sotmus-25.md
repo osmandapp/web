@@ -16,15 +16,19 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 
 
-![SOTM](@site/static/img/promo/sotmus/sotmus.png)
+![SOTM](@site/static/img/promo/sotmus/sotmus25.png)
 
-# Get OsmAnd Pro free for 3 months 
+# Get OsmAnd Pro Free for 3 Months!
 
-Each participant of SotM US 2025 can receive OsmAnd Pro subscription.
+As a participant of **State of the Map US 2025**, you’re eligible for a free 3-month OsmAnd Pro subscription.
 
-Please, input your e-mail for registration:
+To claim your subscription:
 
-<RegisterUserPromoBlock  promoKey='sotmus2023'/>
+1. Enter your email in the form below.
+
+<RegisterUserPromoBlock  promoKey='sotmus2025'/>
+
+2. Submit before June 30, 2025 (offer expires).
 
 **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
 
