@@ -60,7 +60,7 @@ export default function TracksMenu() {
                 setSortFiles,
                 setSortGroups,
                 files: defGroup ? defGroup.groupFiles : [],
-                groups: defaultGroupWithFolders,
+                groups: defaultGroupWithFolders.subfolders,
             });
         }
     }, [ctx.tracksGroups]);

@@ -56,7 +56,7 @@ Avant d'utiliser la navigation hors ligne, assurez-vous que les [cartes requises
 
 - Définissez les [paramètres du véhicule](../guidance/navigation-settings.md#size-parameters) (*important pour les chauffeurs de camion*), sélectionnez le [type de moteur](../guidance/navigation-settings.md#fuel-used-by-motor) (*facultatif*).
 
-- Configurez l'[apparence de la ligne d'itinéraire](../guidance/map-during-navigation#route-line-appearance) (*facultatif*, disponible pour les [utilisateurs Pro](../../purchases/index.md#purchases)).
+- Configurez l'[apparence de la ligne d'itinéraire](../guidance/map-during-navigation#route-line-appearance) (*facultatif*, disponible pour les utilisateurs Pro).
 
 - Configurez les [invites vocales](../guidance/voice-navigation.md).
 
@@ -110,7 +110,7 @@ Il existe 3 façons d'accéder au menu de navigation :
 
 - **<Translate android="true" ids="shared_string_my_location"/>** – Définir le lieu de départ (par défaut : [*Ma position actuelle*](../../map/interact-with-map.md#my-location-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Utiliser pour [définir votre point de destination](#set-target-point).
-- **Ajouter** &nbsp;&#43; - Insérer des [points intermédiaires](../../widgets/nav-widgets.md#intermediate-destination) le long de l'itinéraire.
+- **Ajouter** &nbsp;&#43; - Insérer des [points intermédiaires](../../widgets/nav-widgets.md#distance-to-intermediate) le long de l'itinéraire.
 - **Échanger** &nbsp;&#8595;&#8593; - Inverser les points de *Départ* et d'*Arrivée*.
 - **Bouton Son** - Couper les [invites vocales](../guidance/voice-navigation.md).
 - **<Translate android="true" ids="shared_string_settings"/>** – [Ajuster](#settings) les préférences d'itinéraire et les restrictions routières.

@@ -48,11 +48,11 @@ Les informations de Wikivoyage comprennent les faits principaux sur un lieu, le 
 - [Télécharger](#download-articles) les *Guides de voyage*.
 - Parcourir les [articles](#browse-articles) sur un pays, une région, une ville, une attraction.
     - Alternativement, [afficher les articles et/ou les points des guides de voyage sur la carte](#travel-routes) en utilisant le menu Configurer la carte.
-    - Parcourir les attractions sur la carte, les ajouter aux *[Marqueurs de carte](../personal/markers.md#add-marker-on-the-map)* ou aux *[Favoris](../personal/favorites.md#add-to-map-markers)*.
-    - En utilisant le bouton *[Lire l'intégralité](#manage-as-gpx-track)*, accéder à l'[article](#travel-article) dans les *Guides de voyage*.
-- [Marquer](#explore-and-bookmark) des articles pour les lire plus tard.
-- Choisir des [points](#points) dans les articles à visiter et les ajouter à la carte OsmAnd.
-- Obtenir plus d'informations sur les lieux à visiter à partir d'articles [Wikipédia hors ligne](#combine-with-wikipedia).
+    - Parcourir les attractions sur la carte, les ajouter aux *[Marqueurs de carte](../personal/markers.md#add--edit-markers)* ou aux *[Favoris](../personal/favorites.md#favorite-group-actions)*.
+    - En utilisant le bouton *[Lire l'intégralité](#manage-as-gpx-track)*, accéder à l'*[article](#travel-article)* dans les *Guides de voyage*.
+- [Marquer](#explore-and-bookmark) les articles pour les lire plus tard.
+- Choisir les [points](#points) des articles à visiter et les ajouter à la carte OsmAnd.
+- Obtenir plus d'informations sur les lieux à visiter à partir des [articles Wikipédia](#combine-with-wikipedia) hors ligne.
 - [Construire un itinéraire](../navigation/setup/route-navigation.md#set-destinations) vers les attractions touristiques choisies ou une promenade libre entre les points.
 
 :::note
@@ -279,7 +279,7 @@ La plupart des *articles de guides de voyage* ont la même structure de contenu 
 
 Les *articles de guides de voyage* contiennent souvent des attractions touristiques regroupées par thème. En appuyant une fois sur le bouton *Points* en bas de l'*[Article](#travel-article)*, toutes les attractions liées au thème (lieux de restauration, options d'hébergement, aéroports, magasins, monuments historiques, etc.) seront ajoutées à la carte et pourront être *[gérées comme une piste](#manage-as-gpx-track)*.
 
-Par défaut, les groupes de points sont marqués par certaines icônes : les catégories *Manger et Boire* avec un couteau et une fourchette dans un cercle rouge, *Faire et Voir* avec un appareil photo dans un cercle vert, et d'autres. Vous pouvez gérer les groupes de points avec &#8942; comme un *[dossier de points de passage](../map/tracks/track-context-menu.md#waypoints-folder)*.
+Par défaut, les groupes d'attractions sont marqués par certaines icônes : les catégories *Manger et Boire* avec un couteau et une fourchette dans un cercle rouge, *Faire et Voir* avec un appareil photo dans un cercle vert, et d'autres. Vous pouvez gérer les groupes de points avec &#8942; comme un *[dossier de points de passage](../map/tracks/track-context-menu.md#points--waypoints)*.  
 
 :::note
 Les points dans les *articles de voyage* font référence aux points de passage sur une piste GPX.
@@ -363,4 +363,4 @@ Le [plugin Wikipédia](../plugins/wikipedia.md) est une [fonctionnalité payante
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *Dernière mise à jour : janvier 2025*
+> *Cet article a été mis à jour pour la dernière fois en janvier 2025*

@@ -79,7 +79,7 @@ Il existe deux façons possibles de choisir les routes à éviter lors du calcul
 :::note
 
 - La route doit être marquée au zoom maximum, car OsmAnd peut mal interpréter le toucher et bloquer, par exemple, le mauvais côté d'une route à deux voies ou un trottoir.
-- La fonction Éviter certaines routes fonctionne incorrectement avec l'option [Navigation par trace](../setup/gpx-navigation.md) et n'a pas d'impact sur la [navigation simplifiée par marqueurs](../setup/markers-navigation.md#how-to-use).
+- La fonction Éviter certaines routes fonctionne incorrectement avec l'option [Navigation par trace](../setup/gpx-navigation.md) et n'a pas d'impact sur la [navigation simplifiée par marqueurs](../setup/markers-navigation.md#use-markers-in-navigation).
 
 :::
 
@@ -188,4 +188,4 @@ Dans OpenStreetMap, ces informations sont généralement marquées avec le tag [
 La **section Développement** des paramètres *Paramètres d'itinéraire* (*Menu → Paramètres → profil d'application → Paramètres de navigation → Paramètres d'itinéraire → Développement*) n'est visible que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé. Elle comprend des paramètres tels que *Type de routage (Android) / Algorithme de routage (iOS), Approximation GPX (Android uniquement), Autozoom et données OsmAnd Live (Android uniquement)*. Lisez l'article [Paramètres de navigation](../../navigation/guidance/navigation-settings.md#development-settings) pour une description détaillée.
 
 
-> *Dernière mise à jour : juillet 2024*
+> *Cet article a été mis à jour pour la dernière fois en juillet 2024*

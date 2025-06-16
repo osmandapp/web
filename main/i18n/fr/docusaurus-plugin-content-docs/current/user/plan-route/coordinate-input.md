@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Comment utiliser {#how-to-use}
 
-Vous pouvez créer des points de passage à partir du menu *[Marqueurs de carte](../personal/markers.md#map-markers-menu)* ou de [Mes lieux](../personal/myplaces.md) (voir les captures d'écran). Veuillez suivre ces chemins pour accéder à l'option de saisie de coordonnées :
+Vous pouvez créer des points de passage à partir du menu *[Marqueurs de carte](../personal/markers.md#actions)* ou de [Mes lieux](../personal/myplaces.md) (voir les captures d'écran). Veuillez suivre ces chemins pour accéder à l'option de saisie de coordonnées :
   - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Bouton Terre en bas de l'écran*
   - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 

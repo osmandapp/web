@@ -68,7 +68,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Навігацію за треком можна розпочати за допомогою кнопки швидкої дії в [контекстному меню треку](../../map/tracks/track-context-menu.md#quick-actions) (відкривається вибором одного з [виділених треків](./route-navigation.md#history-of-previous-routes) на карті або натисканням на файл треку в розділі [Мої місця](../../personal/myplaces.md) *Головного меню*) або з меню навігації, яке відкривається натисканням:
+Навігацію за треком можна розпочати за допомогою кнопки швидкої дії в [контекстному меню треку](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (відкривається вибором одного з [виділених треків](./route-navigation.md#history-of-previous-routes) на карті або натисканням на файл треку в розділі [Мої місця](../../personal/myplaces.md) *Головного меню*) або з меню навігації, яке відкривається натисканням:
 
 - [*Кнопка навігації*](../../widgets/map-buttons.md#directions) на екрані карти.
 - *Розділ навігації* в *Головному меню* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
@@ -177,7 +177,7 @@ OsmAnd автоматично прив'язує маршрути до доріг
 
 ### Точки маршруту {#waypoints}
 
-Якщо трек має точки маршруту, ви можете використовувати [Показати вздовж маршруту](../guidance/map-during-navigation.md#show-points-along-the-route) та [Голосове керівництво](../guidance/voice-navigation.md#voice-settings), щоб отримувати сповіщення про цікаві місця. Ви можете додати **Точки маршруту** до існуючого треку за допомогою **[Контекстного меню](../../map/map-context-menu.md#-add--edit--track-waypoint)**, трек має бути видимим на карті.
+Якщо трек має точки маршруту, ви можете використовувати [Показати вздовж маршруту](../guidance/map-during-navigation.md#show-points-along-the-route) та [Голосове керівництво](../guidance/voice-navigation.md#voice-settings), щоб отримувати сповіщення про цікаві місця. Ви можете додати **Точки маршруту** до існуючого треку за допомогою **[Контекстного меню](../../map/map-context-menu.md#-add--edit-track-waypoint)**, трек має бути видимим на карті.
 
 ### Проміжні точки {#intermediate-points}
 

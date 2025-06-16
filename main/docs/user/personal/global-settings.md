@@ -93,7 +93,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 ![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Device memory** shows how much free space is left on your device. Tap a field to access the [*Maps and Resources*](../personal/maps-resources.md#maps-and-resources) menu, where you can view and manage detailed information about your OsmAnd data.
+1. **Device memory** shows how much free space is left on your device. Tap a field to access the [*Maps and Resources*](../personal/maps-resources.md#maps--resources) menu, where you can view and manage detailed information about your OsmAnd data.
 
 2. In the **<Translate android="true" ids="change_data_storage_folder"/>**, you can select a folder to save OsmAnd data on your device.  
 

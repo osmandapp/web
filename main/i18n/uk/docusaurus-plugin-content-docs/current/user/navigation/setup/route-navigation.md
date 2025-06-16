@@ -56,7 +56,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - Встановіть [параметри транспортного засобу](../guidance/navigation-settings.md#size-parameters) (*важливо для водіїв вантажівок*), виберіть [тип двигуна](../guidance/navigation-settings.md#fuel-used-by-motor) (*необов'язково*).
 
-- Налаштуйте [вигляд лінії маршруту](../guidance/map-during-navigation#route-line-appearance) (*необов'язково*, доступно для [Pro користувачів](../../purchases/index.md#purchases)).
+- Налаштуйте [вигляд лінії маршруту](../guidance/map-during-navigation#route-line-appearance) (*необов'язково*, доступно для користувачів Pro).
 
 - Налаштуйте [голосові підказки](../guidance/voice-navigation.md).
 
@@ -72,9 +72,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 2. Додаткові [*Налаштування навігації*](#settings) можуть бути використані залежно від ваших цілей (ви можете налаштувати, яких доріг уникати або віддавати перевагу, заощаджувати паливо або вибирати найшвидший маршрут тощо).
 
-3. [Почніть](#start--stop-navigation) навігацію або спочатку [симулюйте навігацію](#simulated-navigation) (за допомогою цієї функції ви можете протестувати свій маршрут перед фактичною подорожжю по ньому).
+3. [Почніть](#почати--зупинити-навігацію-start--stop-navigation) навігацію або спочатку [симулюйте навігацію](#simulated-navigation) (за допомогою цієї функції ви можете протестувати свій маршрут перед фактичною подорожжю по ньому).
 
-4. Під час руху по маршруту ви можете [*Призупинити/Відновити*](#pause--resume-navigation) навігацію та [*Зупинити*](#start--stop-navigation) її.
+4. Під час руху по маршруту ви можете [*Призупинити/Відновити*](#призупинити--відновити-навігацію-pause--resume-navigation) навігацію та [*Зупинити*](#почати--зупинити-навігацію-start--stop-navigation) її.
 
 
 :::note
@@ -110,7 +110,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **<Translate android="true" ids="shared_string_my_location"/>** – Встановити початкове місцезнаходження (за замовчуванням: [*Моє поточне місцезнаходження*](../../map/interact-with-map.md#my-location-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Використовується для [встановлення пункту призначення](#set-target-point).
-- **Додати** &nbsp;&#43; - Вставити [проміжні точки](../../widgets/nav-widgets.md#intermediate-destination) вздовж маршруту.
+- **Додати** &nbsp;&#43; - Вставити [проміжні точки](../../widgets/nav-widgets.md#distance-to-intermediate) вздовж маршруту.
 - **Поміняти** &nbsp;&#8595;&#8593; - Змінити місцями точки *Початок* та *Кінець*.
 - **Кнопка звуку** - Вимкнути [голосові підказки](../guidance/voice-navigation.md).
 - **<Translate android="true" ids="shared_string_settings"/>** – [Налаштувати](#settings) параметри маршруту та обмеження доріг.
@@ -120,7 +120,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Спеціальні улюблені точки [Дім / Робота](#use-home-or-work-points).
 - Попередній маршрут або [Історія](../../personal/global-settings.md#history).
 - Кнопка **Скасувати** повертає на головний екран.
-- [Кнопка Пуск](#start--stop-navigation) запускає навігацію після завершення розрахунку маршруту.
+- [Кнопка Пуск](#почати--зупинити-навігацію-start--stop-navigation) запускає навігацію після завершення розрахунку маршруту.
 
 ### Виберіть початкову точку {#select-starting-point}
 

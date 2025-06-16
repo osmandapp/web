@@ -77,7 +77,7 @@ Les fichiers de terrain (`height_altitude_<type_name>.txt`, `hillshade_color_<ty
 Les visualisations de dégradé de ligne utilisent des fichiers de palette (`route_<type_name>_<palette_name>.txt`) pour colorer les traces GPX et les itinéraires :
 
 - Pour les [itinéraires](../navigation/guidance/map-during-navigation.md#color) : *Vitesse, Pente* et *Altitude*.
-- Pour les [traces GPX](../map/tracks/index.md#color) : *Vitesse, Pente* et *Altitude, ou informations provenant de capteurs externes*.
+- Pour les [traces GPX](../map/tracks/appearance#track-colors-in-gpx-files) : *Vitesse, Pente* et *Altitude, ou informations provenant de capteurs externes*.
 
 ### Météo {#weather}
 
@@ -99,7 +99,7 @@ La palette de couleurs (`user_palette_default.txt`) est simplement utilisée pou
 </table>
 
 
-La légende offre un moyen simple de visualiser et de comprendre les différentes marques sur la carte. De nouvelles palettes de couleurs ont été ajoutées pour afficher la [**vitesse** des traces](../map/tracks/index.md#color), le [**type de ligne** des itinéraires](../navigation/guidance/map-during-navigation.md#color), l'[**altitude et la pente** du terrain](../plugins/topography.md#default-color-scheme), et toutes les palettes de couleurs des [**couches météo**](../plugins/weather.md#weather-layers).
+La légende offre un moyen simple de visualiser et de comprendre les différentes marques sur la carte. De nouvelles palettes de couleurs ont été ajoutées pour afficher la [**vitesse** des traces](../map/tracks/appearance#track-colors-in-gpx-files), le [**type de ligne** des itinéraires](../navigation/guidance/map-during-navigation.md#color), l'[**altitude et la pente** du terrain](../plugins/topography.md#default-color-scheme), et toutes les palettes de couleurs des [**couches météo**](../plugins/weather.md#weather-layers).
 
 
 ## Modifier le fichier de palette {#edit-palette-file}

@@ -185,7 +185,7 @@ Pour une vue plus détaillée, vous pouvez **mettre à l'échelle le graphique**
 | ![data](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
 :::info
-Pour plus de détails, vous pouvez explorer le [**Menu contextuel des traces**](../map/tracks/track-context-menu.md#options), où vous pouvez gérer diverses options liées aux traces comme renommer, supprimer ou ajouter des points de passage. Pour ajuster l'apparence des traces sur la carte, visitez la section [**Apparence**](../map/tracks/appearance.md). Si vous souhaitez ajouter des points de passage spécifiques à votre trace actuelle, consultez le guide [**Points de trace**](../map/tracks/track-context-menu.md#waypoints-folder). Pour toute modification, comme renommer une trace, utilisez l'onglet [**Options**](https://osmand.net/docs/user/map/track-context-menu#options) dans le menu contextuel des traces.
+Pour plus de détails, vous pouvez explorer le [**Menu contextuel des traces**](../map/tracks/track-context-menu.md#options), où vous pouvez gérer diverses options liées aux traces comme renommer, supprimer ou ajouter des points de passage. Pour ajuster l'apparence des traces sur la carte, visitez la section [**Apparence**](../map/tracks/appearance.md). Si vous souhaitez ajouter des points de passage spécifiques à votre trace actuelle, consultez le guide [**Points de trace**](../map/tracks/track-context-menu.md#points--waypoints). Pour toute modification, comme renommer une trace, utilisez l'onglet [**Options**](https://osmand.net/docs/user/map/track-context-menu#options) dans le menu contextuel des traces.
 :::
 
 

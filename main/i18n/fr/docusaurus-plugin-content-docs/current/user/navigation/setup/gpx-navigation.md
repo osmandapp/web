@@ -68,7 +68,7 @@ Avant d'utiliser l'option *Navigation par trace*, vous devez [afficher la trace 
 
 </Tabs>
 
-La navigation sur une trace peut être lancée à l'aide du bouton d'action rapide dans le [menu contextuel de la trace](../../map/tracks/track-context-menu.md#quick-actions) (ouvert en sélectionnant l'une des [traces mises en évidence](./route-navigation.md#history-of-previous-routes) sur la carte, ou en appuyant sur un fichier de trace dans la section [Mes lieux](../../personal/myplaces.md) du *Menu principal*) ou à partir du menu de navigation, qui s'ouvre en appuyant sur :
+La navigation sur une trace peut être lancée à l'aide du bouton d'action rapide dans le [menu contextuel de la trace](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (ouvert en sélectionnant l'une des [traces mises en évidence](./route-navigation.md#history-of-previous-routes) sur la carte, ou en appuyant sur un fichier de trace dans la section [Mes lieux](../../personal/myplaces.md) du *Menu principal*) ou à partir du menu de navigation, qui s'ouvre en appuyant sur :
 
 - [*Bouton Navigation*](../../widgets/map-buttons.md#directions) sur l'écran de la carte.
 - *Section Navigation* dans le *Menu principal* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
@@ -177,7 +177,7 @@ Dans le [menu Suivre la trace](#follow-track-options), vous pouvez choisir si vo
 
 ### Points de passage {#waypoints}
 
-Si la trace comporte des points de passage, vous pouvez utiliser [Afficher le long de l'itinéraire](../guidance/map-during-navigation.md#show-points-along-the-route) et [Guidage vocal](../guidance/voice-navigation.md#voice-settings) pour être informé des points d'intérêt. Vous pouvez ajouter des **points de passage** à une trace existante via le **[menu contextuel](../../map/map-context-menu.md#-add--edit--track-waypoint)**, la trace doit être visible sur la carte.
+Si la trace comporte des points de passage, vous pouvez utiliser [Afficher le long de l'itinéraire](../guidance/map-during-navigation.md#show-points-along-the-route) et [Guidage vocal](../guidance/voice-navigation.md#voice-settings) pour être informé des points d'intérêt. Vous pouvez ajouter des **points de passage** à une trace existante via le **[menu contextuel](../../map/map-context-menu.md#-add--edit-track-waypoint)**, la trace doit être visible sur la carte.
 
 ### Points intermédiaires {#intermediate-points}
 

@@ -68,11 +68,11 @@ Si vous avez besoin d'une navigation simple point à point affichée sous forme 
 
 Voici des étapes de recommandation simples pour *Naviguer par marqueurs* :
 
-1. Créer des marqueurs. Trouvez le(s) objet(s) souhaité(s) sur la carte, appuyez dessus et choisissez le *[bouton Marqueur](../../personal/markers.md#add-marker-on-the-map)* dans le *[menu contextuel de la carte](../../map/map-context-menu.md#add--edit-marker)*. Vous pouvez également créer des marqueurs à partir de [favoris](#add-group-of-favorite) ou de [traces GPX](#add-group-of-track-waypoints).
-2. [*Trier les marqueurs*](#sort-markers) de la manière préférée pour les passer
-3. Personnalisez la *vue des marqueurs de carte* si vous souhaitez utiliser les marqueurs sans démarrer la navigation. Activez les options **Flèches sur la carte** et **Ligne de direction** dans la section *[Apparence](../../personal/markers.md#appearance-on-the-map)* du *[menu des marqueurs de carte](../../personal/markers.md#map-markers-menu)*.
-4. Ajoutez des *[widgets de marqueurs](../../personal/markers.md#marker-widgets)* dans le *[menu Configurer l'écran](../../widgets/configure-screen.md)* (facultatif).
-5. [*Marquer comme passé*](#pass-markers) les marqueurs déjà visités ou les restaurer à partir de l'historique si vous souhaitez les repasser.
+1. Créer des marqueurs. Trouvez le(s) objet(s) souhaité(s) sur la carte, appuyez dessus et choisissez le *[bouton Marqueur](../../personal/markers.md#add--edit-markers)* dans le *[menu contextuel de la carte](../../map/map-context-menu.md#add--edit-marker)*. Vous pouvez également créer des marqueurs à partir de [favoris](#add-group-of-favorite) ou de [traces GPX](#add-group-of-track-waypoints).
+2. [*Trier les marqueurs*](#sort-markers) de la manière préférée pour les passer.
+3. Personnalisez la *vue des marqueurs de carte* si vous souhaitez utiliser les marqueurs sans démarrer la navigation. Activez les options **Flèches sur la carte** et **Ligne de direction** dans la section *[Apparence](../../personal/markers.md#appearance-on-the-map)* du *[menu Marqueurs de carte](../../personal/markers.md#actions)*.
+4. Ajoutez des *[widgets Marqueurs](../../personal/markers.md#markers)* dans le *[menu Configurer l'écran](../../widgets/configure-screen.md)* (facultatif).
+5. [*Marquer comme passés*](#pass-markers) les marqueurs déjà visités ou les restaurer à partir de l'historique si vous souhaitez les repasser.
 
 :::note
 Lorsque les options **Flèches sur la carte** et **Ligne de direction** sont activées dans la section *Apparence* du [menu des marqueurs de carte](../../personal/markers.md#appearance-on-the-map), vous verrez une flèche ou une ligne pointillée sur la carte. La flèche indique la direction du marqueur actif lorsqu'il est en dehors de l'écran de carte actuel. La ligne de direction est tracée lorsque votre géolocalisation et le marqueur sont tous deux sur le même écran.
@@ -114,9 +114,9 @@ Les *marqueurs* peuvent être ajoutés ou supprimés de la carte en appuyant une
 
 Vous pouvez créer des *marqueurs de carte* à partir de *[Favoris](../../personal/favorites.md)* en utilisant :
 
-- Le *[menu des groupes de favoris](../../personal/favorites.md#add-to-map-markers)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Mes favoris)*.
-- L'icône &#128681; dans le menu de la page Favoris *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Mes favoris→&#128681;)*.
-- L'option **'+'** (ajouter) dans l'*[onglet Groupes](../../personal/markers.md#groups)* du menu Marqueurs de carte *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
+- Le *[menu des groupes de favoris](../../personal/favorites.md#favorite-group-actions)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Mes favoris)*.
+- L'icône &#128681; dans le menu interne des favoris *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Mes favoris→&#128681;)*.
+- L'option **'+'** (ajouter) dans l'*[onglet Groupes](../../personal/markers.md#marker-groups)* du menu Marqueurs de carte *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
 
 
 ### Ajouter un groupe de points de passage de trace {#add-group-of-track-waypoints}
@@ -127,8 +127,8 @@ Vous pouvez créer des *marqueurs de carte* à partir de *[Favoris](../../person
 
 Les traces GPX avec points de passage peuvent être utilisées comme *marqueurs de carte* et rapidement désactivées :
 
-- Utilisez l'option **'+'** (ajouter) dans l'*[onglet Groupes](../../personal/markers.md#groups)* du menu Marqueurs de carte *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
-- Activez l'interrupteur près de la trace dans l'*[onglet Groupes](../../personal/markers.md#groups)* du menu Marqueurs de carte *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Utilisez l'option **'+'** (ajouter) dans l'*[onglet Groupes](../../personal/markers.md#marker-groups)* du menu Marqueurs de carte *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Activez le commutateur près de la trace dans l'*[onglet Groupes](../../personal/markers.md#marker-groups)* du menu Marqueurs de carte *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
 
 :::note
 Seules les traces avec points de passage peuvent être ajoutées à la *liste des marqueurs de carte*. La trace que vous avez l'intention d'ajouter doit également être visible (active) sur la carte.
@@ -136,7 +136,7 @@ Seules les traces avec points de passage peuvent être ajoutées à la *liste de
 
 ![GPX to markers 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX to markers 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
 
-- Vous pouvez également créer des *marqueurs* à partir d'une trace avec points de passage en utilisant le *[menu contextuel de la trace](../../map/tracks/track-context-menu.md#waypoints-folder)* : *Appuyez sur une trace visible sur la carte → dans le menu contextuel de la trace, choisissez Points → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
+- Vous pouvez également créer des *marqueurs* à partir d'une trace avec points de passage en utilisant le *[menu contextuel de la trace](../../map/tracks/track-context-menu.md#points--waypoints)* : *Appuyez sur une trace visible sur la carte → dans le menu contextuel de la trace, choisissez Points → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
 
 
 ## Trier les marqueurs {#sort-markers}
@@ -157,7 +157,7 @@ Seules les traces avec points de passage peuvent être ajoutées à la *liste de
 
 </Tabs>
 
-En appuyant sur le coin gauche (Android) ou le coin droit (iOS) d'un onglet *Marqueur de carte* dans la *[liste des marqueurs de carte](../../personal/markers.md#list)* et en le déplaçant vers le haut ou vers le bas, vous pouvez modifier son ordre dans la *liste de navigation* (lorsque vous déplacez une carte de marqueur, vous verrez une ligne indiquant où le marqueur sera placé).
+En appuyant sur le coin gauche (Android) ou le coin droit (iOS) d'un onglet *Marqueur de carte* dans la *[liste des marqueurs de carte](../../personal/markers.md#itinerary-list)* et en le déplaçant vers le haut ou vers le bas, vous pouvez modifier son ordre dans la *liste de navigation* (en déplaçant une carte de marqueur, vous verrez une ligne indiquant où le marqueur sera placé).
 
 Dans la version Android de l'application OsmAnd, il existe d'autres options de tri pour les *marqueurs de carte* (*<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/> →* *Trier par* ou *Planifier un itinéraire*).
 
@@ -237,4 +237,4 @@ __
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *Dernière mise à jour : juin 2024.*
+> *Cet article a été mis à jour pour la dernière fois en juin 2024.*

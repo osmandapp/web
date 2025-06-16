@@ -36,6 +36,12 @@ export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navig
         reset: true,
         products,
         checkout: true,
+        tags: {
+            userEmail: ltx.loginUser,
+        },
+        paymentContact: {
+            email: ltx.loginUser,
+        },
     };
 
     script.onload = () => {
