@@ -25,6 +25,8 @@ function createFastSpringBuilder(testMode) {
 export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navigate }) => {
     const script = createFastSpringBuilder(testMode);
 
+    selectedProduct = selectedProduct.includes('osmand-15-years') ? fixProductName15y(true) : selectedProduct;
+
     const products = [
         {
             path: `${testMode ? 'test-' : ''}${selectedProduct}`,
