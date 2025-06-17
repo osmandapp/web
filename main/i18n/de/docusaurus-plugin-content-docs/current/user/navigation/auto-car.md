@@ -36,7 +36,7 @@ Während Ihr Gerät mit *Android Auto* verbunden ist, ist die Karte auf dem App-
 <table class="image">
     <tr>
         <td><img src={require('@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png').default} alt="AA"/></td>
-        <td><img src={require('@site/car/android_auto_landing_screen_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_landing_screen_2.png').default} alt="AA"/></td>
     </tr>
 </table>
 

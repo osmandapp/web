@@ -114,14 +114,13 @@ OsmAnd sortiert Suchergebnisse automatisch nach drei Hauptkriterien:
 
 ![Favoritensuche Android](@site/static/img/search/favorite_search_android.png)
 
-</Tabitem>
+</TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Favoritensuche iOS](@site/static/img/search/favorite_search_ios.png)  
 
-</Tabitem>
-
+</TabItem>
 </Tabs>
 
 Sie können den gewünschten Ort auf der Karte aus der Liste der Punkte finden, die beim Eingeben einer Anfrage erscheinen.
@@ -150,13 +149,13 @@ OsmAnd hat [**TIGER-Daten**](../../technical/algorithms/trace-address-search-iss
 
 ![POI suchen Android](@site/static/img/search/poi_overlay_android.png)
 
-</Tabitem>
+</TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 ![POI suchen iOS](@site/static/img/search/poi_overlay_ios.png)
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
@@ -184,13 +183,13 @@ Sie können die Suche in der Nähe eines bestimmten Ortes verwenden. Wählen Sie
 
 ![Suchen Android](@site/static/img/search/search_address_2_andr.png)
 
-</Tabitem>
+</TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Suchen iOS](@site/static/img/search/street_search_ios.png)  
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
@@ -205,13 +204,13 @@ Die **Adresssuche** verwendet OpenStreetMap-Daten. Mit dieser Art der Suche kön
 
 ![Suchhistorie](@site/static/img/search/history_search_android.png)
 
-</Tabitem>
+</TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Suchhistorie](@site/static/img/search/history_search_ios.png)
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
@@ -226,13 +225,13 @@ Sie können die **Suchhistorie** verwenden, um zuvor gefundene Orte, Adressen od
 
 ![POI-Suche Android](@site/static/img/search/search_poi_categoties_andr.png)
 
-</Tabitem>
+</TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![POI-Suche iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
@@ -255,13 +254,13 @@ Es ist praktisch, wenn Karten der Region nicht verfügbar sind, aber eine konsta
 
 ![Koordinatensuche Android](@site/static/img/search/coordinates_search_android.png)
 
-</Tabitem>
+</TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Koordinatensuche iOS](@site/static/img/search/coordinates_search_ios.png)
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
