@@ -107,6 +107,22 @@ export default function PricingPage() {
                                     setUpdateCardPrices={setUpdateCardPrices}
                                 />
                             ))}
+                            {ltx.loginRoles && ltx.loginRoles.includes('ROLE_ADMIN') && (
+                                <ProductCard
+                                    key={'osmand-15-years'}
+                                    productId={'osmand-15-years'}
+                                    type={selectedProductType['osmand-15-years'] || ''}
+                                    setType={(type) => {
+                                        setSelectedProductType({ ['osmand-15-years']: type });
+                                        setSelectedCardId('osmand-15-years');
+                                    }}
+                                    testMode={useTestMode}
+                                    isSelected={selectedCardId === 'osmand-15-years'}
+                                    setSelectedCardId={setSelectedCardId}
+                                    updateCardPrices={updateCardPrices}
+                                    setUpdateCardPrices={setUpdateCardPrices}
+                                />
+                            )}
                         </Box>
                     )}
                     <Typography className={styles.pricingDesc}>{t('web:notice_fastspring_purchase_info')}</Typography>
