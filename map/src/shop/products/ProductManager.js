@@ -50,7 +50,7 @@ export const products = [
         show: true,
     },
     {
-        id: 'osmand-decade',
+        id: 'osmand-15-years',
         name: 'XV',
         icon: <DecadeIcon />,
         shortFeaturesList: [
@@ -116,14 +116,15 @@ export const purchase = {
             show: true,
         },
         {
-            id: 'osmand-decade',
+            id: 'osmand-15-years',
             name: PURCHASE_OSMAND_PRO,
             oldPrice: '399',
             oldPriceDisplay: '€399',
             newPrice: '249',
             display: '€249',
-            sku: 'net.osmand.fastspring.inapp.pro.15y',
+            sku: 'net.osmand.fastspring.inapp.osmand_pro_xv',
             fsName: 'osmand-15-years',
+            hasTestMode: true,
             show: true,
         },
     ],
