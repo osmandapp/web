@@ -110,5 +110,8 @@
   "sidebar.tutorialSidebar.category.Join Us": {
     "message": "Rejoignez-nous",
     "description": "The label for category Join Us in sidebar tutorialSidebar"
+  },
+  "sourceHash": {
+    "message": "67373ed91285c130a90d94564fbf8d234bf73e38e0cfd5e8ccdfb539d2ab90cb"
   }
 }

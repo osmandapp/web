@@ -1,5 +1,5 @@
 ---
-source-hash: 851e950a0b27e39926a0f665bfc68c835d3093890dde8dd7b773a42e8135aee0
+source-hash: 29a8f5ab251e5c6f65f7c49bf8692c1eb242901f939c7e25049778441938422e
 sidebar_position: 1
 title:  Покупки на Android
 ---
@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Встановлення OsmAnd (Android) {#install-osmand-android}
 
-Для пристроїв Android ви можете завантажити **безкоштовну** та **платну** версії програми з наступних магазинів:
+Для пристроїв Android ви можете завантажити **Безкоштовну** та **Платну** версії програми з наступних магазинів:
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
@@ -34,7 +34,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 | Покупка  | Google Play  | Huawei AppGallery | Програма |
 | :------------- | :------------- | :------------- | :------------- |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Maps+ у програмі | ✔ | ✔ | OsmAnd |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Внутрішньопрограмна Maps+ | ✔ | ✔ | OsmAnd |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Підписка Maps+ | ✔ | ✔ | OsmAnd |
 | ![Pro](@site/static/img/svg/pro_icon.svg) Підписка OsmAnd Pro | ✔ | ✔ | OsmAnd / OsmAnd+ |
 
@@ -56,30 +56,31 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 | План | Опис | Доступність | Примітки |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | **Безкоштовний план**, що надає доступ до [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) для *Вибраного*, *Налаштувань* та *редагування/приміток OSM*. | Доступний для всіх користувачів безкоштовної версії OsmAnd. | Обмежено базовими функціями хмари та **5 МБ** сховища. |
+| **OsmAnd Start** | **Безкоштовний план**, що надає доступ до [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) для *Вибраного*, *Налаштувань* та *редагування/приміток OSM*. | Доступний для всіх користувачів безкоштовної версії OsmAnd. | Обмежений базовими функціями хмари та **5 МБ** сховища. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | **Окрема платна програма**, що включає розширені функції. | Доступна на [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Може бути додана до [Сімейної бібліотеки Google Play](https://support.google.com/googleplay/answer/7007852?hl=en). |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Покупка в програмі** або **підписка** для безкоштовної програми OsmAnd, що розблоковує ті ж функції, що й OsmAnd+. | Доступна на [Google Play](https://play.google.com/store/apps/details?id=net.osmand) та [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Ідентична за функціями та ціною OsmAnd+. |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Внутрішньопрограмна покупка** або **підписка** для безкоштовної програми OsmAnd, що розблоковує ті ж функції, що й OsmAnd+. | Доступна на [Google Play](https://play.google.com/store/apps/details?id=net.osmand) та [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Ідентична за функціями та ціною OsmAnd+. |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **План підписки**, що розблоковує додаткові розширені та [професійні функції](#pro-features). | Доступна на [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) та [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Підтримує **кросплатформний** доступ (див. примітку нижче). |
 
 ### Важливі примітки {#important-notes}
 
-1. **OsmAnd+** та **Maps+** пропонують однакові функції. Єдина відмінність полягає в тому, що OsmAnd+ — це **окрема платна програма**, тоді як Maps+ — це **підписка або покупка в програмі**.
+1. **OsmAnd+** та **Maps+** пропонують однакові функції. Єдина відмінність полягає в тому, що OsmAnd+ є **окремою платною програмою**, тоді як Maps+ є **підпискою або внутрішньопрограмною покупкою**.
 
 2. **Android Auto** підтримується лише для OsmAnd, завантаженого з **Google Play**. Він **недоступний** для Maps+, завантаженого з *Huawei AppGallery*.
 
-3. **OsmAnd Pro — це *кросплатформна* підписка**. Це означає, що ви можете придбати її в одному магазині (наприклад, *Google Play, Huawei AppGallery, AppStore* та *osmand.net*) та відновити в іншому, [пов'язавши свою покупку з обліковим записом OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+3. **OsmAnd Pro є *кросплатформною* підпискою**. Це означає, що ви можете придбати її в одному магазині (наприклад, *Google Play, Huawei AppGallery, AppStore* та *osmand.net*) та відновити її в іншому, [пов'язавши свою покупку з обліковим записом OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
 4. Ви можете додати **OsmAnd+** до **[Сімейної бібліотеки Google Play](https://support.google.com/googleplay/answer/7007852?hl=en)**, щоб поділитися покупкою з членами сім'ї.
 
 
 ## Ціни {#prices}
 
-У списку наведено інформацію про ціни на продукти OsmAnd для регіонів США та Європи. Для інших регіонів ціни еквівалентні в місцевих валютах.
+У списку наведена інформація про ціни на продукти OsmAnd для регіонів США та Європи. Для інших регіонів ціни еквівалентні в місцевих валютах.
 
 <!--
-:::danger May Sale prices
 
-*Hurry up! This offer is only available until* **May 04 (23:00 CET)**.
+:::danger June Sale prices
+
+*Hurry up! This offer is only available until* **June 15 (23:00 CET)**.
 
 :::
 
@@ -90,8 +91,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
--->
 
+
+-->
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -105,9 +107,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Програма OsmAnd пропонує широкий спектр функцій та інструментів, багато з яких доступні безкоштовно.
 
-У таблиці нижче детально описано функції, включені як у безкоштовні, так і в платні пакети OsmAnd, а також їх відповідні ціни.
+У таблиці нижче детально описано функції, що входять як до безкоштовного, так і до платного пакетів OsmAnd, а також їх відповідні ціни.
 
-|  | OsmAnd Free | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (у програмі та підписка) | [OsmAnd Pro](#install-osmand-android) |
+|  | OsmAnd Free | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (в&#8209;програмі та підписка) | [OsmAnd Pro](#install-osmand-android) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -115,27 +117,27 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Усі функції Pro](#pro-features) | **-** | **-** | ✔ |
 | [3D рельєф](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
-| [Необмежене завантаження карт](../start-with/download-maps.md) | <details><summary>**7 завантажень карт**</summary>  - Завантаження або оновлення карти означає лише завантаження-оновлення карти країни (регіону). <br/> - **Карта світу**, **Корекція висоти світу**, **Шрифти карт** та **Голосові підказки** не враховуються як 7 можливостей для завантаження. </details> | ✔ | ✔ |
-| [Щомісячні оновлення карт](../personal/maps-resources.md#update-maps)<br/>Раз на місяць (із затримкою 2 дні) | <details><summary>**7 завантажень карт**</summary> Оновлення карти враховується як завантаження.</details> | ✔ | ✔ |
+| [Необмежене завантаження карт](../start-with/download-maps.md) | <details><summary>**7 завантажень карт**</summary>  - Завантаження або оновлення карти означає лише завантаження-оновлення карти країни (регіону). <br/> - **Оглядова карта світу**, **Корекція висоти світу**, **Шрифти карт** та **Голосові підказки** не враховуються як 7 можливостей для завантаження. </details> | ✔ | ✔ |
+| [Щомісячні оновлення карт](../personal/maps-resources.md#update-maps)<br/>Раз на місяць (із затримкою 2 дні) | <details><summary>**7 завантажень карт**</summary> Оновлення карти вважається завантаженням.</details> | ✔ | ✔ |
 | [Щогодинні оновлення карт](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (затримка 1 година) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Підтримка зовнішніх датчиків](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
-| [Топографічні дані](../plugins/topography.md#setup)<br/>(Контурні лінії та рельєф) | **-** | ✔ | ✔ |
+| [Дані топографії](../plugins/topography.md#setup)<br/>(Контурні лінії та рельєф) | **-** | ✔ | ✔ |
 | [3D візуалізація треку](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Морські глибини](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Популярні місця (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
-| [Офлайн Wikivoyage - Путівники](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Офлайн та онлайн навігація](../navigation/index.md)<br/>з покроковими вказівками | ✔ | ✔ | ✔ |
+| [Офлайн Wikivoyage - путівники](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Офлайн та онлайн навігація](../navigation/index.md)<br/>з покроковими інструкціями | ✔ | ✔ | ✔ |
 | [Офлайн миттєвий пошук](../search/index.md) | ✔ | ✔ | ✔ |
 | [Запис поїздки](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [Експорт треків GPX](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
-| [Імпорт треків GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Експорт GPX треків](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
+| [Імпорт GPX/KML треків](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Інструмент планування маршруту](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
-| [Віджети показників транспортного засобу](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 безкоштовні віджети**</summary><ul><li>*Швидкість транспортного засобу*</li><li>*Оберти двигуна*</li></ul></details> | <details><summary>**2 безкоштовні віджети**</summary><ul><li>*Швидкість транспортного засобу*</li><li>*Оберти двигуна*</li></ul></details> | ✔ |
-| [Інструмент маркерів карти](../personal/markers.md) | ✔ | ✔ | ✔ |
+| [Віджети показників транспортного засобу](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 віджети безкоштовно**</summary><ul><li>*Швидкість транспортного засобу*</li><li>*Швидкість двигуна*</li></ul></details> | <details><summary>**2 віджети безкоштовно**</summary><ul><li>*Швидкість транспортного засобу*</li><li>*Швидкість двигуна*</li></ul></details> | ✔ |
+| [Інструмент маркерів на карті](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Онлайн джерела карт](../plugins/online-map.md) | ✔ | ✔ | ✔ |
 | [Карта SQLitedb](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
-| [Вибрані точки](../map/point-layers-on-map.md)<br/>закладки та маршрутні точки | ✔ | ✔ | ✔ |
+| [Вибрані точки](../map/point-layers-on-map.md)<br/>закладки та шляхові точки | ✔ | ✔ | ✔ |
 | [Аудіо/фото/відео точки](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Експорт / Імпорт профілю програми](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
@@ -153,20 +155,20 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Функції Pro доступні за [підпискою OsmAnd Pro](#prices).
 
-Підписка **Pro** наразі має такі функції:
+Підписка **Pro** наразі має наступні функції:
 
 |  Функція Pro  | Опис   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Резервне копіювання та відновлення ваших даних, синхронізація даних з [веб-порталом OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Резервне копіювання та відновлення ваших даних, синхронізація даних з [вебпорталом OsmAnd](https://www.osmand.net/map). |
 | [Кросплатформність](../personal/osmand-cloud.md#cross-platform) | Можливість використовувати OsmAnd Pro та OsmAnd Start на всіх платформах (Android *←→* iOS *→* Web).  |
 | [3D рельєф](../plugins/topography.md#3d-relief) | Дозволяє мати та спостерігати масштабну модель вашого району або цілого континенту. |
-| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | Карти OsmAnd оновлюються кожні 15 хвилин після покращення [OpenStreetMap](https://www.openstreetmap.org/). |
+| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | Карти OsmAnd оновлюються кожні 15 хвилин після покращень на [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Плагін погоди](../plugins/weather.md) | Погодинний прогноз на 24 години на 7 днів вперед на карті. |
-| [Плагін показників транспортного засобу (OBD-II)](../plugins/vehicle-metrics.md) | Дозволяє підключити сканер OBD-II для відображення детальних даних транспортного засобу в програмі OsmAnd та зберігання інформації в записах треків.  |
+| [Плагін показників транспортного засобу (OBD-II)](../plugins/vehicle-metrics.md) | Дозволяє підключити сканер OBD-II для відображення детальних даних про транспортний засіб у програмі OsmAnd та зберігання інформації у записах треків.  |
 | [Налаштування лінії маршруту](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Зміна кольору та ширини лінії маршруту під час навігації. |
-| [Віджет висоти](../widgets/nav-widgets.md#elevation-widget) | Показує ваше місцезнаходження на графіку висоти навігаційного маршруту з додатковою інформацією.  |
+| [Віджет висоти](../widgets/nav-widgets.md#elevation-widget) | Показує ваше місцезнаходження на графіку висот навігаційного маршруту з додатковою інформацією.  |
 | [Віджети висоти - Висота: Центр карти](../widgets/info-widgets.md#elevation-map-center) | Дозволяє дізнатися висоту поточного центру карти над рівнем моря.  |
-| [Корекція висоти (офлайн)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Дозволяє розрахувати графік висоти для вашого треку (потрібна [карта рельєфу](../plugins/topography.md#download-maps) для обраного регіону). |
+| [Корекція висоти (офлайн)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Дозволяє розрахувати графік висот для вашого треку ([Карта рельєфу](../plugins/topography.md#download-maps) потрібна для обраного регіону). |
 
 
 ### Як купити {#how-to-buy}
@@ -187,7 +189,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 #### Покупка Maps+ {#maps-purchase}
 
-![Maps+](@site/static/img/svg/osmand_maps_plus.svg) План підписки / в програмі *Maps+*. Тут ви можете вибрати річну підписку або одноразовий платіж:
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) План підписки / в&#8209;програмі *Maps+*. Тут ви можете вибрати річну підписку або одноразовий платіж:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Натисніть на список функцій Maps+ → Продовжити з Maps+*
 
@@ -196,22 +198,22 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Застарілі підписки (до 4.0) {#legacy-subscriptions-prior-40}
 
-Нові підписки починаються з версії OsmAnd 4.0 (серпень 2021 року). Усі попередні підписки застаріли та технічно прирівнюються до *Підписки на карти*, хоча старіші підписки мають право на щогодинні оновлення карт. Користувачі не можуть купувати старі підписки, але старі підписки автоматично поновлюються, доки ви не скасуєте підписку (ціна може змінитися в майбутньому).
+Нові підписки починаються з версії OsmAnd 4.0 (серпень 2021 року). Усі попередні підписки є застарілими та технічно прирівнюються до *Підписки на карти*, хоча старіші підписки мають право на щогодинні оновлення карт. Користувачі не можуть придбати старі підписки, але старі підписки автоматично поновлюються, доки ви не скасуєте підписку (ціна може змінитися в майбутньому).
 
 
 ## Відновлення покупок {#restore-purchases}
 
 ### Знайдіть свою покупку {#find-your-purchase}
 
-Щоб відновити покупку, перевірте, який план OsmAnd ви купили.
+Щоб відновити покупку, будь ласка, перевірте, який план OsmAnd ви придбали.
 
 - **Google Play**: ви можете перевірити це в [історії замовлень Google Play](https://support.google.com/googleplay/answer/2850369).
-- **Huawei App Gallery**: ви можете перевірити це в [історії замовлень Huawei App Gallery](https://consumer.huawei.com/en/support/content/en-us00694318/).
+- **Huawei App Gallery**: ви можете перевірити це в [історії замовлень Huawei App Gallery](https://consumer.huawei.com/en/support/content/en-us00694318/ ).
 
 ### Встановлення програми {#install-application}
 
-- Оновіть програму Market (Google Play, Huawei AppGallery).
-- Увійдіть за допомогою **того ж облікового запису** в Market (Google Play, Huawei AppGallery), з яким у вас є покупка OsmAnd.
+- Оновіть програму магазину (Google Play, Huawei AppGallery).
+- Увійдіть за **тим самим обліковим записом** до магазину (Google Play, Huawei AppGallery), за яким ви маєте покупку OsmAnd.
 - Встановіть програму за посиланням нижче.
 
 |  Програма  | Google Play  | Huawei AppGallery |
@@ -221,12 +223,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Відновлення підписки / в програмі {#restore-subscription--in-app}
 
-**Щоб відновити *покупку в програмі* або *підписку* ([Maps+, Pro, OsmAnd Live](#difference-between-purchases-android)).**
+**Щоб відновити *внутрішньопрограмну покупку* або *підписку* ([Maps+, Pro, OsmAnd Live](#difference-between-purchases-android)).**
 
-- *Оновіть програму Market* (Google Play, Huawei AppGallery).
-- *Увійдіть* за допомогою **того ж облікового запису** в Market (Google Play, Huawei AppGallery), з яким у вас є покупка OsmAnd.
+- *Оновіть програму магазину* (Google Play, Huawei AppGallery).
+- *Увійдіть* за **тим самим обліковим записом** до магазину (Google Play, Huawei AppGallery), за яким ви маєте покупку OsmAnd.
 - *Відкрийте OsmAnd* з активним підключенням до Інтернету.
-- *Щоб відкрити Відновити покупки*, виконайте такі дії: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* і вгорі екрана має з'явитися повідомлення про активацію Maps+(Pro).
+- *Щоб відкрити Відновити покупки*, виконайте наступні кроки: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* і вгорі екрана має з'явитися повідомлення про активацію Maps+(Pro).
 - *Зареєструйте функції Pro* за підпискою OsmAnd Pro для всіх платформ (Android та iOS). Якщо у вас є обліковий запис OsmAnd Pro, вам потрібно використовувати його [для активації OsmAnd Pro](../personal/osmand-cloud.md) для вашого пристрою.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases.png)
@@ -253,6 +255,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 [Детальний посібник з придбання подарункових карток Google Play](https://support.google.com/googleplay/answer/3422734?hl=en).
 
-Ви можете придбати OsmAnd за допомогою подарункових карток Google Play, що є безпечною альтернативою наданню інформації про кредитну картку в Інтернеті. Просто придбайте подарункову картку у продавця на ваш вибір та активуйте код у Google Play.
+Ви можете придбати OsmAnd за допомогою подарункових карток Google Play, що є безпечною альтернативою обміну інформацією про кредитні картки онлайн. Просто придбайте подарункову картку у продавця на ваш вибір та активуйте код у Google Play.
 
-> *Останнє оновлення: травень 2025*
+> *Останнє оновлення: Травень 2025*
