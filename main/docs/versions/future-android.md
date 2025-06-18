@@ -35,7 +35,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - Add Temperature units for General settings
 
 
-## Optional updates {#optional-updates}
+## Bug fixes {#bug-fixes}
 
 - [Add information about Downhills / Uphills to Analyze by intervals.](https://github.com/osmandapp/OsmAnd-Issues/issues/2878)
 - [Resume button does not work as expected.](https://github.com/osmandapp/OsmAnd/issues/21842)

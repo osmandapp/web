@@ -32,11 +32,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 - Added *Coordinates grid* with geographical coordinates
 
 
-- [Optional updates](#optional-updates). Additional updates and refinements for the release.
-
-
-
-## Optional updates {#optional-updates}
+## Bug fixes {#bug-fixes}
 
 - [OsmAnd does not follow the track.](https://github.com/osmandapp/OsmAnd-iOS/issues/4412)
 - [Add Rename action for Favorite groups.](https://github.com/osmandapp/OsmAnd-iOS/issues/4516)
