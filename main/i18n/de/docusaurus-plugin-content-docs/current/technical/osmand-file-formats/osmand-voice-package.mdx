@@ -1,0 +1,61 @@
+---
+source-hash: f33e1e0ea0b176046b9f06a32f2877fe76847e29b7ba025d18f055347afadff1
+sidebar_position: 10
+---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+# Sprachpakete {#voice-packages}
+
+<IncompleteArticle/>
+
+OsmAnd unterstützt zwei Arten von Sprachpaketen:
+- **Text-To-Speech** (https://developer.android.com/reference/android/speech/tts/TextToSpeech), verfügbar in App Stores oder vorinstalliert
+- **Aufgenommene Sprachpakete**, die aufgenommene Stimmen enthalten.
+
+Wenn Sie das benötigte Sprachpaket nicht finden konnten, folgen Sie bitte den folgenden Beispielen und erstellen Sie Ihr eigenes Sprachpaket. Beispiele: https://github.com/osmandapp/OsmAnd-resources/tree/master/voice, deutsches Paket [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip), englisches Paket [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
+
+### Unterschied zwischen TTS- und aufgenommenen Paketen {#difference-between-tts-and-recorded-packages}
+
+- eine Text-To-Speech-Engine unterstützt die Aussprache von Straßennamen, Referenzen und POI-Namen
+- alle von Text-To-Speech unterstützten Pakete sind mit der Anwendung gebündelt und werden mit dieser aktualisiert
+- ein aufgenommenes Paket muss manuell installiert und aktualisiert werden (obwohl die Konfigurationsdatei mit der App-Aktualisierung aktualisiert werden könnte)
+- ein aufgenommenes Paket unterstützt möglicherweise nicht alle korrekten Formen, und die Unterstützung ist begrenzt
+- ein aufgenommenes Paket erfordert keine proprietäre TTS-Engine
+
+### Paketstruktur {#package-structure}
+
+Sprachpakete werden normalerweise als .voice.zip verteilt, wobei das Zip einen Ordner mit [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (Haupt-**Konfigurationsdatei**) und, falls vorhanden, Sounddateien enthält.
+
+Die Konfigurationsdateien sind in JavaScript geschrieben. Alle Konfigurationsdateien sind standardmäßig TTS-Pakete, auch wenn noch keine TTS zur Unterstützung der Sprache vorhanden ist. Später wird die Konfiguration erweitert, indem "Wörterbuch-Phrasen" auf "Namen aufgenommener Dateien" abgebildet werden.
+
+```
+function populateDictionary(tts) {
+	// ROUTE CALCULATED
+	dictionary["route_is1"] = tts ? "Die berechnete Strecke ist" : "route_is1.ogg";
+	dictionary["route_is2"] = tts ? "lang" : "route_is2.ogg";
+	dictionary["route_calculate"] = tts ? "Route neu berechnet" : "route_calculate.ogg";
+	dictionary["distance"] = tts ? "die Entfernung beträgt" : "distance.ogg";
+
+	// LEFT/RIGHT
+	dictionary["prepare"] = tts ? "Demnächst " : "prepare.ogg";  // Demnächst sounds better then Vorbereiten zum
+	dictionary["after"] = tts ? "nach" : "after.ogg";
+	
+	dictionary["left"] = tts ? "links abbiegen" : "left.ogg";
+  .....
+}
+
+function route_recalc(dist, seconds) {
+	return dictionary["route_calculate"] + (tts ? ", " : " ") + distance(dist, "nominativ") + (tts ? ", " : " ") + dictionary["time"] + " " + time(seconds) + (tts ? ". " : " ");
+}
+```
+
+### Erstellung eines benutzerdefinierten Pakets {#generation-custom-package}
+
+Bitte überprüfen Sie die [Projektressourcen](https://github.com/osmandapp/OsmAnd-resources/) und verwenden Sie die gleiche Ordnerstruktur wie das [deutsche Paket](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de) - kopieren Sie es einfach. Sobald dies geschehen ist, können Sie das [Generierungsskript](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) ändern und ausführen und die erforderlichen Argumente angeben. Hilfe finden Sie im Skript.
+
+### Testen des Sprachpakets (Android) {#testing-voice-package-android}
+
+Zum Testen können Sie verwenden:
+- Navigation;
+- Navigationssimulation;
+- oder eine praktische Version des [OsmAnd-Entwicklungs-Plugins](/docs/user/navigation/guidance/voice-navigation#testing-of-voice-prompts), das verschiedene Sprachbefehle zum Testen simuliert.
