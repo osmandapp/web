@@ -1,4 +1,7 @@
 {
   "label": "Juridique",
-  "position": 8
+  "position": 8,
+  "sourceHash": {
+    "message": "93bf6ffc7d814437c7befab148e4400f2e651f5560211c7c820bed85bfac1677"
+  }
 }
