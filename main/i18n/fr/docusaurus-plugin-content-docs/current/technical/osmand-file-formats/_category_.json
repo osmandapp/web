@@ -1,4 +1,7 @@
 {
-  "label": "Formats de fichiers OsmAnd",
-  "position": 1
+  "label": "Formats de fichier OsmAnd",
+  "position": 1,
+  "sourceHash": {
+    "message": "8b6364a37bdd8756145a995e8f442f1cab48e0e2aacddb72fd347c0d662ad9ce"
+  }
 }
