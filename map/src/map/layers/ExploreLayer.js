@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_EXPLORE } from '../../context/AppContext';
+import AppContext, { OBJECT_EXPLORE, OBJECT_SEARCH } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { apiGet } from '../../util/HttpApi';
 import L from 'leaflet';
@@ -157,6 +157,14 @@ export default function ExploreLayer() {
         }
 
         if (!settings.useWikiImages && ctx.currentObjectType !== OBJECT_EXPLORE && !settings.showOnMainSearch) {
+            removeLayers();
+            ctx.setWikiPlaces(null);
+        }
+        if (
+            ctx.currentObjectType &&
+            ctx.currentObjectType !== OBJECT_EXPLORE &&
+            ctx.currentObjectType !== OBJECT_SEARCH
+        ) {
             removeLayers();
             ctx.setWikiPlaces(null);
         }
