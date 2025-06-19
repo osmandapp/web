@@ -66,8 +66,8 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
                     maxWidth={ctx.infoBlockWidth}
                     sx={{ overflow: 'auto', overflowX: 'hidden' }}
                 >
-                    {changes.map((item) => (
-                        <TrashItem key={item.id} item={item} changes={changes} setChanges={setChanges} />
+                    {changes.map((item, index) => (
+                        <TrashItem key={item.id} index={index} item={item} changes={changes} setChanges={setChanges} />
                     ))}
                 </Box>
             )}

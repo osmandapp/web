@@ -12,7 +12,7 @@ import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_
 import TrashActions from '../actions/TrashActions';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 
-export default function TrashItem({ item, changes, setChanges }) {
+export default function TrashItem({ index, item, changes, setChanges }) {
     const { ref, inView } = useInView();
     const fileName = item.file ? getFileName(item.file) : null;
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
@@ -46,7 +46,11 @@ export default function TrashItem({ item, changes, setChanges }) {
                                 </>
                             ) : (
                                 <div>
-                                    <MenuItem className={trackStyles.item} disableRipple>
+                                    <MenuItem
+                                        id={`se-cloud-trash-${fileName}-${index}`}
+                                        className={trackStyles.item}
+                                        disableRipple
+                                    >
                                         <ListItemIcon className={trackStyles.icon}>
                                             {getItemIcon(item.file)}
                                         </ListItemIcon>
@@ -63,7 +67,7 @@ export default function TrashItem({ item, changes, setChanges }) {
                                         </ListItemText>
                                         <div>
                                             <IconButton
-                                                id={`se-cloud-trash-actions-${fileName}`}
+                                                id={`se-cloud-trash-actions-${fileName}-${index}`}
                                                 className={trackStyles.sortIcon}
                                                 onMouseEnter={() => setHoverIconInfo(true)}
                                                 onMouseLeave={() => setHoverIconInfo(false)}
