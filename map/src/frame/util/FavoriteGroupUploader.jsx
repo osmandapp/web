@@ -121,7 +121,7 @@ export default function FavoriteGroupUploader({ children }) {
                 <HiddenInput id="se-upload-fav-group" accept=".gpx" multiple type="file" onChange={fileSelected} />
                 {children}
             </label>
-            {openDialog && (
+            {openDialog && importFile && (
                 <ImportFavoriteDialog
                     setOpenDialog={setOpenDialog}
                     setImportFavoriteGroup={setImportFavoriteGroup}
