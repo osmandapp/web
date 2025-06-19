@@ -10,6 +10,7 @@ import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
 import { UPLOAD_SORT } from './14-sort-tracks.mjs';
 import { UPLOAD_TRACK } from './13-uploud-track-to-cloud.mjs';
 import actionDeleteTracksByPattern from '../actions/tracks/actionDeleteTracksByPattern.mjs';
+import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -33,9 +34,11 @@ export default async function test() {
     // restore track
     await openTrash();
     await waitBy(By.id('se-cloud-trash-items'));
-    await clickBy(By.id(`se-cloud-trash-actions-${trackName}`));
+    await waitBy(By.id(`se-cloud-trash-${trackName}-1`));
+    await clickBy(By.id(`se-cloud-trash-actions-${trackName}-1`));
     await waitBy(By.id('se-trash-actions'));
     await clickBy(By.id('se-trash-actions-restore'));
+    await waitByRemoved(By.id(`se-cloud-trash-${trackName}-1`));
     console.log(`Track ${trackName} restored`);
     // check track
     await clickBy(By.id('se-show-menu-tracks'));
@@ -58,16 +61,16 @@ export default async function test() {
     // check trash
     await openTrash();
     await waitBy(By.id('se-cloud-trash-items'));
-    await waitBy(By.id(`se-cloud-trash-actions-${trackName}`));
+    await waitBy(By.id(`se-cloud-trash-actions-${trackName}-1`));
     console.log(`Track ${trackName} exists in trash`);
     // delete trash track
-    await clickBy(By.id(`se-cloud-trash-actions-${trackName}`));
+    await clickBy(By.id(`se-cloud-trash-actions-${trackName}-1`));
     await waitBy(By.id('se-trash-actions'));
     await clickBy(By.id('se-trash-actions-delete'));
     await waitBy(By.id('se-delete-version-dialog'));
     await clickBy(By.id('se-delete-version-dialog-delete'));
     await waitByRemoved(By.id('se-delete-version-dialog'));
-    await waitByRemoved(By.id(`se-cloud-trash-actions-${trackName}`));
+    await waitByRemoved(By.id(`se-cloud-trash-actions-${trackName}-1`));
     console.log(`Track ${trackName} deleted from trash`);
     // clear all files
     await clickBy(By.id('se-show-menu-tracks'));
@@ -121,6 +124,7 @@ async function clearTrash() {
     await clickBy(By.id('se-empty_trash'));
     await waitBy(By.id('se-delete-trash-dialog'));
     await clickBy(By.id('se-delete-trash-dialog-delete'));
+    await actionIdleWait();
     await waitByRemoved(By.id('se-delete-trash-dialog'));
     await waitBy(By.id('se-empty-trash-page'));
 }
