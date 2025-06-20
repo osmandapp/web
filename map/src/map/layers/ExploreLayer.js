@@ -165,6 +165,9 @@ export default function ExploreLayer() {
             ctx.currentObjectType !== OBJECT_EXPLORE &&
             ctx.currentObjectType !== OBJECT_SEARCH
         ) {
+            if (ctx.searchSettings.showOnMainSearch) {
+                ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+            }
             removeLayers();
             ctx.setWikiPlaces(null);
         }

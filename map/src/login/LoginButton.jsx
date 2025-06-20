@@ -19,7 +19,7 @@ export default function LoginButton({ openMainMenu, setMenuInfo, setShowInfoBloc
     const { t } = useTranslation();
 
     const openLogin = () => {
-        ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+        clearPrevState();
         if (ltx.openLoginMenu) {
             closeLoginMenu(ltx);
             navigate({
@@ -33,6 +33,11 @@ export default function LoginButton({ openMainMenu, setMenuInfo, setShowInfoBloc
             setShowInfoBlock(false);
         }
     };
+
+    function clearPrevState() {
+        ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+        ctx.setCurrentObjectType(null);
+    }
 
     function setMenuStyles() {
         let res = [];
