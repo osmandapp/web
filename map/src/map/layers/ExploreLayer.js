@@ -86,6 +86,13 @@ export default function ExploreLayer() {
             }
         });
         removeTooltip(map, ctx.searchTooltipRef);
+
+        if (ctx.searchSettings.showOnMainSearch) {
+            ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+        }
+        if (ctx.searchPointerRef && ctx.searchPointerRef.current) {
+            ctx.searchPointerRef.current.remove();
+        }
     }
 
     useEffect(() => {
@@ -125,6 +132,12 @@ export default function ExploreLayer() {
         const settings = ctx.searchSettings;
         const setLoadingContextMenu = ctx.setLoadingContextMenu;
 
+        if (skippedObjectType()) {
+            removeLayers();
+            ctx.setWikiPlaces(null);
+            return;
+        }
+
         const onMapMoveEnd = async () => {
             if (
                 settings.useWikiImages ||
@@ -160,17 +173,6 @@ export default function ExploreLayer() {
             removeLayers();
             ctx.setWikiPlaces(null);
         }
-        if (
-            ctx.currentObjectType &&
-            ctx.currentObjectType !== OBJECT_EXPLORE &&
-            ctx.currentObjectType !== OBJECT_SEARCH
-        ) {
-            if (ctx.searchSettings.showOnMainSearch) {
-                ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
-            }
-            removeLayers();
-            ctx.setWikiPlaces(null);
-        }
 
         return () => {
             ignore = true;
@@ -184,6 +186,12 @@ export default function ExploreLayer() {
         ctx.searchSettings.showOnMainSearch,
         ctx.setLoadingContextMenu,
     ]);
+
+    function skippedObjectType() {
+        return (
+            ctx.currentObjectType && ctx.currentObjectType !== OBJECT_EXPLORE && ctx.currentObjectType !== OBJECT_SEARCH
+        );
+    }
 
     /**
      * A debounced function to fetch place data from a specified API based on map boundaries and user-selected filters.
