@@ -75,13 +75,6 @@ export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navig
     document.head.appendChild(script);
 };
 
-function fixProductName15y(toFsName = false) {
-    if (toFsName) {
-        return 'osmand-15years';
-    }
-    return 'osmand-15-years';
-}
-
 export function updatePrices(setPurchasePriceMap, testMode = false) {
     const script = createFastSpringBuilder(testMode);
     script.onload = () => {
@@ -92,12 +85,6 @@ export function updatePrices(setPurchasePriceMap, testMode = false) {
             .map((item) => {
                 if (testMode) {
                     if (item.hasTestMode) {
-                        if (item.fsName.includes('osmand-15-years')) {
-                            return {
-                                path: `test-${fixProductName15y(true)}`,
-                                quantity: 1,
-                            };
-                        }
                         return {
                             path: `test-${item.fsName}`,
                             quantity: 1,
@@ -121,10 +108,7 @@ export function updatePrices(setPurchasePriceMap, testMode = false) {
             (pricingData) => {
                 const priceMap = {};
                 pricingData.groups[0].items.forEach((item) => {
-                    let name = item.product;
-                    if (name.includes('test-osmand-15years')) {
-                        name = `test-${fixProductName15y()}`;
-                    }
+                    const name = item.product;
                     priceMap[name] = {
                         oldPrice: item.priceTotalValue,
                         oldPriceDisplay: item.priceTotal,
