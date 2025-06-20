@@ -333,13 +333,15 @@ export default function LocalClientTrackLayer() {
             } else {
                 savedFile = ctxTrack;
             }
-            saveResult(savedFile, false);
+            if (savedFile) {
+                saveResult(savedFile, false);
+            }
             ctx.setCreateTrack(null); // stop-editor (finished)
         }
     }, [ctx.createTrack]);
 
     function saveResult(file, closePrev) {
-        let ind = ctx.localTracks.findIndex((t) => t.name === file.name);
+        let ind = ctx.localTracks.findIndex((t) => t?.name === file?.name);
         if (ind !== -1) {
             ctx.localTracks[ind] = file;
             if (ctx.createTrack.clear) {
