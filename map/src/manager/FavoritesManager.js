@@ -4,10 +4,9 @@ import MarkerOptions, {
     getBackground,
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
-import Utils, { getDistance } from '../util/Utils';
+import Utils, { getDistance, quickNaNfix } from '../util/Utils';
 import _, { isEmpty } from 'lodash';
 import { apiPost } from '../util/HttpApi';
-import { quickNaNfix } from '../util/Utils';
 import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_TYPE_FAVORITE } from '../context/AppContext';
@@ -23,7 +22,7 @@ const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
 const FAV_FILE_PREFIX = 'favorites-';
 export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
-export const FAVORITE_PLACEHOLDER = '_-_';
+export const FAVORITE_PLACEHOLDER_MAP = { '_-_': ':', '_%_': '/' };
 
 export const HIDDEN_TRUE = 'true';
 export const HIDDEN_FALSE = 'false';
@@ -234,7 +233,11 @@ function getFavGroupName(pointsGroups, fileName) {
 }
 
 export function normalizeGroupNameForFile(groupName) {
-    return groupName.replaceAll(/[:\/]/g, FAVORITE_PLACEHOLDER);
+    let res = groupName;
+    for (const [placeholder, original] of Object.entries(FAVORITE_PLACEHOLDER_MAP)) {
+        res = res.replaceAll(original, placeholder);
+    }
+    return res;
 }
 
 export function extractBaseFavFileName(name) {
