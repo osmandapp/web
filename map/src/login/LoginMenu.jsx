@@ -8,6 +8,7 @@ import { ReactComponent as UserIcon } from '../assets/icons/ic_action_user_accou
 import { ReactComponent as CloudIcon } from '../assets/icons/ic_action_cloud.svg';
 import { ReactComponent as PurchasesIcon } from '../assets/icons/ic_action_purchases_outlined.svg';
 import { ReactComponent as DeleteIcon } from '../assets/icons/ic_action_user_account_delete.svg';
+import { ReactComponent as GiftIcon } from '../assets/icons/ic_action_gift_colored_red.svg';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import EmptyLogin from './EmptyLogin';
@@ -33,6 +34,7 @@ import CloudInfo from './CloudInfo';
 import upperFirst from 'lodash/upperFirst';
 import DeveloperArea from './DeveloperArea';
 import { getStatus } from './purchases/PurchaseManager';
+import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -49,12 +51,21 @@ export default function LoginMenu() {
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [openCloudInfo, setOpenCloudInfo] = useState(false);
     const [showDeveloperArea, setShowDeveloperArea] = useState(false);
+    const [showGift, setShowGift] = useState(false);
 
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
             ctx.setDevelFeatures(!ctx.develFeatures);
         }
     };
+
+    useEffect(() => {
+        const inAppPurchases = ltx.accountInfo?.inAppPurchases && JSON.parse(ltx.accountInfo.inAppPurchases);
+        if (inAppPurchases && inAppPurchases.length > 0) {
+            const hasGift = inAppPurchases.some((purchase) => purchase.sku.includes('osmand_pro_xv'));
+            setShowGift(hasGift);
+        }
+    }, [ltx.accountInfo]);
 
     useEffect(() => {
         if (ltx.loginRoles && (ltx.loginRoles.includes('ROLE_ADMIN') || ltx.loginRoles.includes('ROLE_SUPPORT'))) {
@@ -178,6 +189,21 @@ export default function LoginMenu() {
                                     });
                                 }}
                             />
+                            {showGift && (
+                                <>
+                                    <DividerWithMargin margin={'64px'} />
+                                    <DefaultItem
+                                        icon={<GiftIcon />}
+                                        name={'Receive gift'}
+                                        onClick={() => {
+                                            window.open(
+                                                'https://docs.google.com/forms/d/e/1FAIpQLSfYUM0qSsitLHwnjfYZA_PzpR9Xoij6Z1t5pJfTkGrKat9zfA/viewform',
+                                                '_blank'
+                                            );
+                                        }}
+                                    />
+                                </>
+                            )}
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SimpleItemWithRightInfo
                                 name={t('delete_account')}
