@@ -55,19 +55,17 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const attributionSize = 300;
     const marginLeft = width / 2 - attributionSize + menuMargin;
 
-    const hashRef = useRef(null);
-
     const whenReadyHandler = (event) => {
         const { target: map } = event;
-        if (map && !hashRef.current) {
-            hashRef.current = new L.Hash(map);
+        if (map) {
+            const hash = new L.Hash(map);
             mapRef.current = map;
             if (!ctx.mapMarkerListener) {
                 ctx.setMapMarkerListener(
                     () => (lat, lng) => updateMarker({ lat, lng, setHoverPoint, hoverPointRef, ctx })
                 );
             }
-            detectGeoByIp({ map, hash: hashRef.current });
+            detectGeoByIp({ map, hash });
         }
     };
 
