@@ -86,6 +86,7 @@ import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
 import { SHARE_TYPE } from './share/shareConstants';
+import {saveSortToDB} from "../context/FavoriteStorage";
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenGroups([]);
@@ -217,6 +218,12 @@ export default function MainMenu({
             setShowInfoBlock(false);
         }
     }, [location.pathname]);
+
+    useEffect(() => {
+        if (ctx.selectedSort && (ctx.selectedSort.favorites || ctx.selectedSort?.tracks)) {
+            saveSortToDB(ctx.selectedSort).then();
+        }
+    }, [ctx.selectedSort]);
 
     function selectMenuByUrl() {
         const item = items.find((item) => item.url === location.pathname);
