@@ -12,6 +12,7 @@ import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
+import {decodeGroupNameFromFile} from "../../manager/FavoritesManager";
 
 export default function ChangesItem({ item, changes, setChanges }) {
     const { t } = useTranslation();
@@ -77,7 +78,7 @@ export default function ChangesItem({ item, changes, setChanges }) {
                                             {getItemIcon(item.file)}
                                         </ListItemIcon>
                                         <ListItemText>
-                                            <MenuItemWithLines name={fileName} maxLines={2} />
+                                            <MenuItemWithLines name={decodeGroupNameFromFile(fileName)} maxLines={2} />
                                             <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
                                                 {status + ': ' + formatDate(item.file.updatetimems)}
                                             </Typography>

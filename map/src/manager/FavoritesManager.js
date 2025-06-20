@@ -240,6 +240,14 @@ export function normalizeGroupNameForFile(groupName) {
     return res;
 }
 
+export function decodeGroupNameFromFile(groupName) {
+    let res = groupName;
+    for (const [placeholder, original] of Object.entries(FAVORITE_PLACEHOLDER_MAP)) {
+        res = res.replaceAll(placeholder, original);
+    }
+    return res;
+}
+
 export function extractBaseFavFileName(name) {
     return name.replace(new RegExp(`^${FavoritesManager.FAV_FILE_PREFIX}`), '').replace(/\.gpx$/, '');
 }
