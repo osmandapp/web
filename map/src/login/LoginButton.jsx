@@ -19,6 +19,7 @@ export default function LoginButton({ openMainMenu, setMenuInfo, setShowInfoBloc
     const { t } = useTranslation();
 
     const openLogin = () => {
+        ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
         if (ltx.openLoginMenu) {
             closeLoginMenu(ltx);
             navigate({
