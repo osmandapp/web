@@ -197,7 +197,7 @@ export default function LoginMenu() {
                                         name={'Receive gift'}
                                         onClick={() => {
                                             window.open(
-                                                'https://docs.google.com/forms/d/e/1FAIpQLSfYUM0qSsitLHwnjfYZA_PzpR9Xoij6Z1t5pJfTkGrKat9zfA/viewform',
+                                                'https://forms.gle/N3ixo7uQTRD3vZ4S7',
                                                 '_blank'
                                             );
                                         }}
