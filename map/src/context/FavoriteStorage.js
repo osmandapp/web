@@ -145,32 +145,24 @@ export async function loadFavoritesFromStorage(setLoading) {
     });
 }
 
-export function saveSortToDB(value) {
-    return new Promise(async (resolve, reject) => {
-        try {
-            const db = await openDB();
-            const tx = db.transaction(SORT_STORE_NAME, 'readwrite');
-            const store = tx.objectStore(SORT_STORE_NAME);
-            const request = store.put(value, SORT_STORE_NAME);
-            request.onsuccess = () => resolve(true);
-            request.onerror = () => reject('Error saving sort to DB');
-        } catch (e) {
-            reject('Failed to open DB: ' + e);
-        }
+export async function saveSortToDB(value) {
+    const db = await openDB();
+    const tx = db.transaction(SORT_STORE_NAME, 'readwrite');
+    const store = tx.objectStore(SORT_STORE_NAME);
+    return new Promise((resolve, reject) => {
+        const request = store.put(value, SORT_STORE_NAME);
+        request.onsuccess = () => resolve(true);
+        request.onerror = () => reject('Error saving sort to DB');
     });
 }
 
-export function getSortFromDB() {
-    return new Promise(async (resolve, reject) => {
-        try {
-            const db = await openDB();
-            const tx = db.transaction(SORT_STORE_NAME, 'readonly');
-            const store = tx.objectStore(SORT_STORE_NAME);
-            const request = store.get(SORT_STORE_NAME);
-            request.onsuccess = () => resolve(request.result || null);
-            request.onerror = () => reject('Error reading sort from DB');
-        } catch (e) {
-            reject('Failed to open DB: ' + e);
-        }
+export async function getSortFromDB() {
+    const db = await openDB();
+    const tx = db.transaction(SORT_STORE_NAME, 'readonly');
+    const store = tx.objectStore(SORT_STORE_NAME);
+    return new Promise((resolve, reject) => {
+        const request = store.get(SORT_STORE_NAME);
+        request.onsuccess = () => resolve(request.result || null);
+        request.onerror = () => reject('Error reading sort from DB');
     });
 }
