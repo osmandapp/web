@@ -29,7 +29,7 @@ export default function FavoritesMenu() {
         if (sortGroups && sortGroups.length > 0) {
             groups = sortGroups;
         } else if (ctx.favorites?.groups?.length > 0) {
-            groups = byTime(ctx.favorites.groups, true, true);
+            groups = byTime(ctx.favorites.groups, true, false);
         }
         if (groups) {
             // remove shared with me groups from main list
