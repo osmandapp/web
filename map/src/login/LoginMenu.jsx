@@ -13,7 +13,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import EmptyLogin from './EmptyLogin';
 import Login from './Login';
-import { closeLoginMenu, FREE_ACCOUNT } from '../manager/LoginManager';
+import {closeLoginMenu, FREE_ACCOUNT, FREE_ACCOUNT_SUB_TYPE} from '../manager/LoginManager';
 import ChangeResetPwd from './ChangeResetPwd';
 import CreateAccount from './CreateAccount';
 import { Outlet, useLocation, useNavigate, useOutlet } from 'react-router-dom';
@@ -90,13 +90,13 @@ export default function LoginMenu() {
     };
 
     function getAccountType(type) {
-        return type === FREE_ACCOUNT ? 'OsmAnd Start' : type;
+        return type === FREE_ACCOUNT ? FREE_ACCOUNT_SUB_TYPE : type;
     }
 
     const cloudSize = `${(ctx.listFiles?.totalZipSize / 1024 / 1024.0).toFixed(1)} MB`;
     const mainSubscription = () => {
         if (!ltx.accountInfo) {
-            return '';
+            return FREE_ACCOUNT_SUB_TYPE;
         }
         const status = ltx.accountInfo.state ? upperFirst(getStatus(ltx.accountInfo.state)) + ' · ' : '';
         const type = getAccountType(ltx.accountInfo.name) || '';

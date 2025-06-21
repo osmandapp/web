@@ -2,6 +2,7 @@ import { apiGet } from '../util/HttpApi';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from './GlobalManager';
 
 export const FREE_ACCOUNT = 'Free';
+export const FREE_ACCOUNT_SUB_TYPE = 'OsmAnd Start';
 export const INIT_LOGIN_STATE = 'INIT';
 export const ERROR_EMAIL = 'error_email';
 export const ERROR_PASSWORD = 'error_password';
