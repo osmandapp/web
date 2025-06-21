@@ -18,6 +18,7 @@ import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
 import i18n from 'i18next';
 import * as locales from 'date-fns/locale';
+import {getSortFromDB} from "./FavoriteStorage";
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -447,6 +448,20 @@ export const AppContextProvider = (props) => {
         const currentLanguage = i18n.language;
         const locale = locales[currentLanguage] || locales.enUS;
         setDateLocale(locale);
+    }, []);
+
+    useEffect(() => {
+        async function loadSort() {
+            try {
+                const sort = await getSortFromDB();
+                if (sort) {
+                    setSelectedSort(sort);
+                }
+            } catch (e) {
+                console.error('Failed to load sort from DB', e);
+            }
+        }
+        loadSort().then();
     }, []);
 
     // global graph

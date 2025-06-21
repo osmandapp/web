@@ -1,15 +1,19 @@
 const DB_NAME = 'OsmAndDB';
-const STORE_NAME = 'favorites';
+const FAV_STORE_NAME = 'favorites';
+const SORT_STORE_NAME = 'sort';
 const DEBUG = false;
 
 function openDB() {
     return new Promise((resolve, reject) => {
-        const request = indexedDB.open(DB_NAME, 1);
+        const request = indexedDB.open(DB_NAME, 2);
 
         request.onupgradeneeded = function (event) {
             const db = event.target.result;
-            if (!db.objectStoreNames.contains(STORE_NAME)) {
-                db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+            if (!db.objectStoreNames.contains(FAV_STORE_NAME)) {
+                db.createObjectStore(FAV_STORE_NAME, { keyPath: 'id' });
+            }
+            if (!db.objectStoreNames.contains(SORT_STORE_NAME)) {
+                db.createObjectStore(SORT_STORE_NAME);
             }
         };
 
@@ -26,8 +30,8 @@ function openDB() {
 export function getFavoriteFromDB(id) {
     return new Promise(async (resolve, reject) => {
         const db = await openDB();
-        const transaction = db.transaction(STORE_NAME, 'readonly');
-        const store = transaction.objectStore(STORE_NAME);
+        const transaction = db.transaction(FAV_STORE_NAME, 'readonly');
+        const store = transaction.objectStore(FAV_STORE_NAME);
         const request = store.get(id);
 
         request.onsuccess = () => {
@@ -45,8 +49,8 @@ export function saveFavoriteToDB(id, data) {
     return new Promise(async (resolve, reject) => {
         const db = await openDB();
         await deleteOldFavVersions(db, id);
-        const transaction = db.transaction(STORE_NAME, 'readwrite');
-        const store = transaction.objectStore(STORE_NAME);
+        const transaction = db.transaction(FAV_STORE_NAME, 'readwrite');
+        const store = transaction.objectStore(FAV_STORE_NAME);
         const request = store.put({ id, data });
 
         request.onsuccess = () => {
@@ -61,8 +65,8 @@ export function saveFavoriteToDB(id, data) {
 }
 
 async function deleteOldFavVersions(db, currentId) {
-    const transaction = db.transaction(STORE_NAME, 'readonly');
-    const store = transaction.objectStore(STORE_NAME);
+    const transaction = db.transaction(FAV_STORE_NAME, 'readonly');
+    const store = transaction.objectStore(FAV_STORE_NAME);
     const allKeysRequest = store.getAllKeys();
 
     const allKeys = await new Promise((resolve, reject) => {
@@ -74,8 +78,8 @@ async function deleteOldFavVersions(db, currentId) {
     const keysToDelete = allKeys.filter((k) => k.startsWith(groupId + '/') && k !== currentId);
 
     if (keysToDelete.length > 0) {
-        const deleteTx = db.transaction(STORE_NAME, 'readwrite');
-        const deleteStore = deleteTx.objectStore(STORE_NAME);
+        const deleteTx = db.transaction(FAV_STORE_NAME, 'readwrite');
+        const deleteStore = deleteTx.objectStore(FAV_STORE_NAME);
         for (const key of keysToDelete) {
             deleteStore.delete(key);
         }
@@ -85,8 +89,8 @@ async function deleteOldFavVersions(db, currentId) {
 export function deleteFavoriteFromDB(id) {
     return new Promise(async (resolve, reject) => {
         const db = await openDB();
-        const transaction = db.transaction(STORE_NAME, 'readwrite');
-        const store = transaction.objectStore(STORE_NAME);
+        const transaction = db.transaction(FAV_STORE_NAME, 'readwrite');
+        const store = transaction.objectStore(FAV_STORE_NAME);
         const request = store.delete(id);
 
         request.onsuccess = () => {
@@ -103,8 +107,8 @@ export function deleteFavoriteFromDB(id) {
 export function deleteAllFavoritesFromDB() {
     return new Promise(async (resolve, reject) => {
         const db = await openDB();
-        const transaction = db.transaction(STORE_NAME, 'readwrite');
-        const store = transaction.objectStore(STORE_NAME);
+        const transaction = db.transaction(FAV_STORE_NAME, 'readwrite');
+        const store = transaction.objectStore(FAV_STORE_NAME);
         const request = store.clear();
 
         request.onsuccess = () => {
@@ -123,8 +127,8 @@ export async function loadFavoritesFromStorage(setLoading) {
     setLoading(true);
 
     const db = await openDB();
-    const transaction = db.transaction(STORE_NAME, 'readonly');
-    const store = transaction.objectStore(STORE_NAME);
+    const transaction = db.transaction(FAV_STORE_NAME, 'readonly');
+    const store = transaction.objectStore(FAV_STORE_NAME);
     const request = store.getAll();
 
     return new Promise((resolve) => {
@@ -138,5 +142,27 @@ export async function loadFavoritesFromStorage(setLoading) {
             setLoading(false);
             resolve([]);
         };
+    });
+}
+
+export async function saveSortToDB(value) {
+    const db = await openDB();
+    const tx = db.transaction(SORT_STORE_NAME, 'readwrite');
+    const store = tx.objectStore(SORT_STORE_NAME);
+    return new Promise((resolve, reject) => {
+        const request = store.put(value, SORT_STORE_NAME);
+        request.onsuccess = () => resolve(true);
+        request.onerror = () => reject('Error saving sort to DB');
+    });
+}
+
+export async function getSortFromDB() {
+    const db = await openDB();
+    const tx = db.transaction(SORT_STORE_NAME, 'readonly');
+    const store = tx.objectStore(SORT_STORE_NAME);
+    return new Promise((resolve, reject) => {
+        const request = store.get(SORT_STORE_NAME);
+        request.onsuccess = () => resolve(request.result || null);
+        request.onerror = () => reject('Error reading sort from DB');
     });
 }
