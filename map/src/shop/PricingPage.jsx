@@ -9,6 +9,7 @@ import EmptyLoginDialog from '../login/dialogs/EmptyLoginDialog';
 import { updatePrices } from '../login/fs/FastSpringHelper';
 import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
 import LoginContext from '../context/LoginContext';
+import supportedLanguages from '../resources/translations/supportedLanguages.json';
 
 const FeaturesTable = React.lazy(() => import('./features/FeaturesTable'));
 
@@ -26,11 +27,23 @@ export default function PricingPage() {
     const [show, setShow] = useState(false);
     const [updateCardPrices, setUpdateCardPrices] = useState(false);
 
+    const [availableLanguages, setAvailableLanguages] = useState([]);
+
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
             setUseTestMode(!useTestMode);
         }
     };
+
+    useEffect(() => {
+        supportedLanguages.forEach((lang) => {
+            import(`../resources/translations/${lang}/web-translation.json`)
+                .then(() => {
+                    setAvailableLanguages((old) => [...old, lang]);
+                })
+                .catch((e) => {});
+        });
+    }, []);
 
     useEffect(() => {
         if (ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE) {
