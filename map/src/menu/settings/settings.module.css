@@ -29,7 +29,23 @@
     color: var(--text-primary) !important;
 }
 .lang {
-    color: var(--text-secondary) !important;
+    .menuItem {
+        color: #1c1e21 !important;
+        font-weight: 500 !important;
+        font-size: 16px !important;
+        text-transform: none !important;
+        font-family:
+                system-ui,
+                -apple-system,
+                'Segoe UI' !important;
+        letter-spacing: 0 !important;
+        min-width: 10px !important;
+        &:hover {
+            color: var(--selected-color) !important;
+            background-color: var(--background-color-menu) !important;
+            box-shadow: none !important;
+        }
+    }
 }
 .menuButtonContainer {
     position: absolute;
