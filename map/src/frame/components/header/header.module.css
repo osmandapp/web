@@ -44,3 +44,15 @@
         box-shadow: none !important;
     }
 }
+.lang {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+.icon {
+    min-width: 24px !important;
+    max-width: 24px !important;
+    &:hover {
+        fill: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
+}

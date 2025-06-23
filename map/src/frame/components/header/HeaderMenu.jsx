@@ -1,9 +1,28 @@
-import { AppBar, Box, Button, IconButton, SvgIcon, Toolbar } from '@mui/material';
-import React from 'react';
+import {
+    AppBar,
+    Box,
+    Button,
+    IconButton,
+    ListItemIcon,
+    ListItemText,
+    MenuItem,
+    Popover,
+    SvgIcon,
+    Toolbar,
+    Typography,
+} from '@mui/material';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { ReactComponent as Logo } from '../../../assets/logo.svg';
+import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import styles from './header.module.css';
 import { HEADER_SIZE, INSTALL_BANNER_SIZE } from '../../../manager/GlobalManager';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import * as locales from 'date-fns/locale';
+import AppContext from '../../../context/AppContext';
+import enList from '../../../resources/translations/en/translation.json';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import supportedLanguages from '../../../resources/translations/supportedLanguages.json';
 
 const pages = [
     {
@@ -29,7 +48,80 @@ const pages = [
 ];
 
 export default function HeaderMenu({ showInstallBanner = null }) {
+    const ctx = useContext(AppContext);
     const location = useLocation();
+
+    const { i18n, t } = useTranslation();
+    const [currentLangLabel, setCurrentLangLabel] = useState(t(`lang_${i18n.language}`));
+    const anchorRef = useRef(null);
+    const [openLang, setOpenLang] = useState(false);
+    const [availableLanguages, setAvailableLanguages] = useState([]);
+
+    const handleOpen = () => setOpenLang(true);
+    const handleClose = () => setOpenLang(false);
+
+    useEffect(() => {
+        (async () => {
+            const available = [];
+            for (const lang of supportedLanguages) {
+                try {
+                    await import(`../../../resources/translations/${lang}/web-translation.json`);
+                    available.push(lang);
+                } catch {}
+            }
+            setAvailableLanguages(available);
+
+            const saved = localStorage.getItem('i18nextLng') || i18n.language || 'en';
+            const chosen = available.includes(saved) ? saved : 'en';
+            setCurrentLangLabel(getTransLanguage(chosen));
+        })();
+    }, []);
+
+    const languageItems = useMemo(() => {
+        const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
+        return [...availableLanguages]
+            .sort((a, b) => collator.compare(getTransLanguage(a), getTransLanguage(b)))
+            .map((lng) => (
+                <MenuItem
+                    key={lng}
+                    onClick={async () => {
+                        await handleLanguageChange(lng);
+                        setCurrentLangLabel(getTransLanguage(lng));
+                        setOpenLang(false);
+                    }}
+                >
+                    <ListItemText>{getTransLanguage(lng)}</ListItemText>
+                </MenuItem>
+            ));
+    }, [i18n, t, availableLanguages]);
+
+    function getTransLanguage(lang) {
+        const trans = t(`lang_${lang}`).toString();
+        return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
+    }
+
+    async function handleLanguageChange(lng) {
+        try {
+            const translation = await import(`../../../resources/translations/${lng}/translation.json`);
+            if (translation) {
+                i18n.addResourceBundle(lng, 'translation', translation.default, true, true);
+            }
+        } catch (error) {
+            if (process.env.NODE_ENV === 'development') console.error(`Could not load translation.json for ${lng}`);
+        }
+        try {
+            const webTranslation = await import(`../../../resources/translations/${lng}/web-translation.json`);
+            if (webTranslation) {
+                i18n.addResourceBundle(lng, 'web', webTranslation.default, true, true);
+            }
+        } catch (error) {
+            if (process.env.NODE_ENV === 'development') console.error(`Could not load web-translation.json for ${lng}`);
+        }
+        localStorage.setItem('i18nextLng', lng);
+        const locale = locales[lng] || locales.enUS;
+        ctx.setDateLocale(locale);
+        setCurrentLangLabel(t(`lang_${lng}`));
+    }
 
     return (
         <AppBar
@@ -68,6 +160,35 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                         </Button>
                     ))}
                 </Box>
+                <Box sx={{ flexGrow: 1 }} />
+                <Button
+                    ref={anchorRef}
+                    onClick={() => setOpenLang(true)}
+                    onMouseEnter={handleOpen}
+                    endIcon={<ArrowDropDownIcon />}
+                    className={styles.menuItem}
+                    sx={{ textTransform: 'none' }}
+                >
+                    <ListItemIcon className={styles.icon}>
+                        <DisplayLanguageIcon />
+                    </ListItemIcon>
+                    <Typography className={styles.lang} sx={{ ml: 1 }} noWrap>
+                        {currentLangLabel}
+                    </Typography>
+                </Button>
+                <Popover
+                    open={openLang}
+                    anchorEl={anchorRef.current}
+                    onClose={() => setOpenLang(false)}
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                    transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                    PaperProps={{
+                        onMouseEnter: handleOpen,
+                        onMouseLeave: handleClose,
+                    }}
+                >
+                    {languageItems}
+                </Popover>
             </Toolbar>
         </AppBar>
     );
