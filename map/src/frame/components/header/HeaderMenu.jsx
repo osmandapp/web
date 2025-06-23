@@ -61,6 +61,16 @@ export default function HeaderMenu({ showInstallBanner = null }) {
     const handleClose = () => setOpenLang(false);
 
     useEffect(() => {
+        // handler for when the language changes
+        const onLangChanged = (lng) => {
+            setCurrentLangLabel(getTransLanguage(lng));
+            const locale = locales[lng] || locales.enUS;
+            ctx.setDateLocale(locale);
+        };
+
+        i18n.on('languageChanged', onLangChanged);
+
+        // initialize available languages and current label on mount
         (async () => {
             const available = [];
             for (const lang of supportedLanguages) {
@@ -73,8 +83,13 @@ export default function HeaderMenu({ showInstallBanner = null }) {
 
             const saved = localStorage.getItem('i18nextLng') || i18n.language || 'en';
             const chosen = available.includes(saved) ? saved : 'en';
-            setCurrentLangLabel(getTransLanguage(chosen));
+            onLangChanged(chosen);
         })();
+
+        // cleanup subscription on unmount
+        return () => {
+            i18n.off('languageChanged', onLangChanged);
+        };
     }, []);
 
     const languageItems = useMemo(() => {
@@ -120,6 +135,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
         localStorage.setItem('i18nextLng', lng);
         const locale = locales[lng] || locales.enUS;
         ctx.setDateLocale(locale);
+
         setCurrentLangLabel(t(`lang_${lng}`));
     }
 
