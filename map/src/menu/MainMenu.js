@@ -99,6 +99,7 @@ export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }
     if (closeLogin) {
         ltx.setOpenLoginMenu(false);
     }
+    ctx.setSelectedPhotoInd(-1);
 }
 
 export default function MainMenu({
