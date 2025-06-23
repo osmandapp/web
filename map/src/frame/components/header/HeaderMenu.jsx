@@ -177,21 +177,23 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                     ))}
                 </Box>
                 <Box sx={{ flexGrow: 1 }} />
-                <Button
-                    ref={anchorRef}
-                    onClick={() => setOpenLang(true)}
-                    onMouseEnter={handleOpen}
-                    endIcon={<ArrowDropDownIcon />}
-                    className={styles.menuItem}
-                    sx={{ textTransform: 'none' }}
-                >
-                    <ListItemIcon className={styles.icon}>
-                        <DisplayLanguageIcon />
-                    </ListItemIcon>
-                    <Typography className={styles.lang} sx={{ ml: 1 }} noWrap>
-                        {currentLangLabel}
-                    </Typography>
-                </Button>
+                {location.pathname === '/pricing' && (
+                    <Button
+                        ref={anchorRef}
+                        onClick={() => setOpenLang(true)}
+                        onMouseEnter={handleOpen}
+                        endIcon={<ArrowDropDownIcon />}
+                        className={styles.menuItem}
+                        sx={{ textTransform: 'none' }}
+                    >
+                        <ListItemIcon className={styles.icon}>
+                            <DisplayLanguageIcon />
+                        </ListItemIcon>
+                        <Typography className={styles.lang} sx={{ ml: 1 }} noWrap>
+                            {currentLangLabel}
+                        </Typography>
+                    </Button>
+                )}
                 <Popover
                     open={openLang}
                     anchorEl={anchorRef.current}
