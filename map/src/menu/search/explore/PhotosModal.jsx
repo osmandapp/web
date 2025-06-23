@@ -57,12 +57,13 @@ export default function PhotosModal({ photos }) {
                     setShowInfo(false);
                 }
             });
+        } else {
+            setOpen(false);
         }
     }, [ctx.selectedPhotoInd]);
 
     const handleClose = () => {
         ctx.setSelectedPhotoInd(-1);
-        setOpen(false);
     };
 
     const handleNext = () => {
