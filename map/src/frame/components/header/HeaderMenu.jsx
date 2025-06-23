@@ -47,6 +47,8 @@ const pages = [
     },
 ];
 
+export const DEFAULT_LANG = 'en';
+
 export default function HeaderMenu({ showInstallBanner = null }) {
     const ctx = useContext(AppContext);
     const location = useLocation();
@@ -81,8 +83,8 @@ export default function HeaderMenu({ showInstallBanner = null }) {
             }
             setAvailableLanguages(available);
 
-            const saved = localStorage.getItem('i18nextLng') || i18n.language || 'en';
-            const chosen = available.includes(saved) ? saved : 'en';
+            const saved = localStorage.getItem('i18nextLng') || i18n.language || DEFAULT_LANG;
+            const chosen = available.includes(saved) ? saved : DEFAULT_LANG;
             onLangChanged(chosen);
         })();
 
@@ -184,10 +186,21 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                     <Button
                         ref={anchorRef}
                         onClick={() => setOpenLang(true)}
-                        onMouseEnter={handleOpen}
                         endIcon={<ArrowDropDownIcon />}
                         className={styles.menuItem}
-                        sx={{ textTransform: 'none' }}
+                        sx={{
+                            textTransform: 'none',
+                            '& .MuiSvgIcon-root, & .MuiListItemIcon-root, & .MuiTypography-root': {
+                                fill: openLang ? '#237bff' : 'text.primary',
+                                color: openLang ? '#237bff' : 'text.primary',
+                            },
+                            '&:hover': {
+                                '& .MuiSvgIcon-root, & .MuiListItemIcon-root, & .MuiTypography-root': {
+                                    fill: '#237bff',
+                                    color: '#237bff',
+                                },
+                            },
+                        }}
                     >
                         <ListItemIcon className={styles.icon}>
                             <DisplayLanguageIcon />
