@@ -132,6 +132,9 @@ export default function HeaderMenu({ showInstallBanner = null }) {
         } catch (error) {
             if (process.env.NODE_ENV === 'development') console.error(`Could not load web-translation.json for ${lng}`);
         }
+
+        await i18n.changeLanguage(lng);
+
         localStorage.setItem('i18nextLng', lng);
         const locale = locales[lng] || locales.enUS;
         ctx.setDateLocale(locale);
