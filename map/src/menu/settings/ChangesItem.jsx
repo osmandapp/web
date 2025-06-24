@@ -12,7 +12,7 @@ import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
-import {decodeGroupNameFromFile} from "../../manager/FavoritesManager";
+import { decodeGroupNameFromFile } from '../../manager/FavoritesManager';
 
 export default function ChangesItem({ item, changes, setChanges }) {
     const { t } = useTranslation();

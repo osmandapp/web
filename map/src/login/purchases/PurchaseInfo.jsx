@@ -5,7 +5,7 @@ import AppBarWithBtns from '../../frame/components/header/AppBarWithBtns';
 import { useLocation, useNavigate, useOutletContext, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
-import { getAccountInfo } from '../../manager/LoginManager';
+import { FREE_ACCOUNT, getAccountInfo } from '../../manager/LoginManager';
 import Loading from '../../menu/errors/Loading';
 import InAppItem from './InAppItem';
 import { format } from 'date-fns';
@@ -13,6 +13,7 @@ import ColorBlock from '../../frame/components/other/ColorBlock';
 import PurchaseManager, { getStatus } from './PurchaseManager';
 import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import AppContext from '../../context/AppContext';
+import FreeAccItem, { FreeAccountObject } from './free/FreeAccItem';
 
 export const SUBSCRIPTION = 'subscription';
 export const IN_APP = 'inApp';
@@ -45,6 +46,11 @@ export default function PurchaseInfo() {
                 const info = await getInfo();
                 if (!info) {
                     backToPurchases();
+                    return;
+                }
+                if (key.startsWith('free')) {
+                    setItem(FreeAccountObject(info?.regtime));
+                    setType(IN_APP);
                     return;
                 }
                 if (key.startsWith('sub')) {
@@ -97,6 +103,9 @@ export default function PurchaseInfo() {
         if (type === SUBSCRIPTION && item.type) {
             return t(typeMap[item.type]);
         }
+        if (type === IN_APP && item.name === FREE_ACCOUNT) {
+            return t(typeMap['free']);
+        }
         if (type === IN_APP) {
             return t(typeMap['inapp']);
         }
@@ -123,6 +132,8 @@ export default function PurchaseInfo() {
                             state={getStatus(item.state)}
                             billingDate={item.billingDate}
                         />
+                    ) : item.name === FREE_ACCOUNT ? (
+                        <FreeAccItem regTime={ltx.accountInfo.regtime} />
                     ) : (
                         <InAppItem id={item.name} name={item.name} purchaseTime={item.purchaseTime} />
                     )}

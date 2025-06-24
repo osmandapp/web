@@ -1,5 +1,5 @@
 import AppBarWithBtns from '../../frame/components/header/AppBarWithBtns';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Outlet, useLocation, useNavigate, useOutlet } from 'react-router-dom';
 import EmptyLogin from '../EmptyLogin';
@@ -14,6 +14,9 @@ import SimpleText from '../../frame/components/other/SimpleText';
 import { IN_APP, SUBSCRIPTION } from './PurchaseInfo';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { getStatus } from './PurchaseManager';
+import { getAccountType } from '../LoginMenu';
+import { FREE_ACCOUNT_SUB_TYPE } from '../../manager/LoginManager';
+import FreeAccItem, { FreeAccountObject } from './free/FreeAccItem';
 
 export default function PurchasesMenu() {
     const ltx = useContext(LoginContext);
@@ -26,6 +29,16 @@ export default function PurchasesMenu() {
     const [, height] = useWindowSize();
 
     const [selectedPurchase, setSelectedPurchase] = useState(null);
+    const [isFreeAcc, setIsFreeAcc] = useState(false);
+
+    useEffect(() => {
+        if (ltx.accountInfo?.account) {
+            const type = getAccountType({ account: ltx.accountInfo?.account, name: ltx.accountInfo?.name });
+            setIsFreeAcc(type === FREE_ACCOUNT_SUB_TYPE);
+        } else {
+            setIsFreeAcc(false);
+        }
+    }, [ltx.accountInfo?.account]);
 
     const subscriptions = ltx.accountInfo?.subscriptions && JSON.parse(ltx.accountInfo.subscriptions);
     const inAppPurchases = ltx.accountInfo?.inAppPurchases && JSON.parse(ltx.accountInfo.inAppPurchases);
@@ -56,6 +69,17 @@ export default function PurchasesMenu() {
         });
     }
 
+    function clickOnFreeAcc() {
+        setSelectedPurchase({
+            type: IN_APP,
+            object: FreeAccountObject(ltx.accountInfo?.regtime),
+        });
+        navigate({
+            pathname: `free`,
+            hash: location.hash,
+        });
+    }
+
     return (
         <>
             <Outlet context={{ selectedPurchase }} />
@@ -76,7 +100,12 @@ export default function PurchasesMenu() {
                         <EmptyLogin />
                     ) : (
                         <Box sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}>
-                            {subscriptions && inAppPurchases && !hasPurchases() && <ErrorEmptyPurchases />}
+                            {subscriptions && inAppPurchases && !hasPurchases() && !isFreeAcc && (
+                                <ErrorEmptyPurchases />
+                            )}
+                            {isFreeAcc && (
+                                <FreeAccItem regTime={ltx.accountInfo.regtime} onClick={() => clickOnFreeAcc()} />
+                            )}
                             {hasPurchases() && (
                                 <>
                                     {subscriptions?.length > 0 &&
