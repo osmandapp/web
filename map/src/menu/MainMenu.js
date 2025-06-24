@@ -86,7 +86,7 @@ import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
 import { SHARE_TYPE } from './share/shareConstants';
-import {saveSortToDB} from "../context/FavoriteStorage";
+import { saveSortToDB } from '../context/FavoriteStorage';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenGroups([]);

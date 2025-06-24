@@ -35,9 +35,9 @@
         font-size: 16px !important;
         text-transform: none !important;
         font-family:
-                system-ui,
-                -apple-system,
-                'Segoe UI' !important;
+            system-ui,
+            -apple-system,
+            'Segoe UI' !important;
         letter-spacing: 0 !important;
         min-width: 10px !important;
         &:hover {

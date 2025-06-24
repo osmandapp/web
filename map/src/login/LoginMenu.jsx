@@ -13,7 +13,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import EmptyLogin from './EmptyLogin';
 import Login from './Login';
-import {closeLoginMenu, FREE_ACCOUNT, FREE_ACCOUNT_SUB_TYPE} from '../manager/LoginManager';
+import { closeLoginMenu, FREE_ACCOUNT, FREE_ACCOUNT_SUB_TYPE } from '../manager/LoginManager';
 import ChangeResetPwd from './ChangeResetPwd';
 import CreateAccount from './CreateAccount';
 import { Outlet, useLocation, useNavigate, useOutlet } from 'react-router-dom';
@@ -35,6 +35,13 @@ import upperFirst from 'lodash/upperFirst';
 import DeveloperArea from './DeveloperArea';
 import { getStatus } from './purchases/PurchaseManager';
 import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
+
+export function getAccountType({ account = null, name = null }) {
+    if (account && account === FREE_ACCOUNT) {
+        return FREE_ACCOUNT_SUB_TYPE;
+    }
+    return name ?? FREE_ACCOUNT_SUB_TYPE;
+}
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -89,17 +96,13 @@ export default function LoginMenu() {
         ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
     };
 
-    function getAccountType(type) {
-        return type === FREE_ACCOUNT ? FREE_ACCOUNT_SUB_TYPE : type;
-    }
-
     const cloudSize = `${(ctx.listFiles?.totalZipSize / 1024 / 1024.0).toFixed(1)} MB`;
     const mainSubscription = () => {
         if (!ltx.accountInfo) {
             return FREE_ACCOUNT_SUB_TYPE;
         }
         const status = ltx.accountInfo.state ? upperFirst(getStatus(ltx.accountInfo.state)) + ' · ' : '';
-        const type = getAccountType(ltx.accountInfo.name) || '';
+        const type = getAccountType({ account: ltx.accountInfo.account, name: ltx.accountInfo.name }) || '';
         return status + type;
     };
 
@@ -196,10 +199,7 @@ export default function LoginMenu() {
                                         icon={<GiftIcon />}
                                         name={'Receive gift'}
                                         onClick={() => {
-                                            window.open(
-                                                'https://forms.gle/N3ixo7uQTRD3vZ4S7',
-                                                '_blank'
-                                            );
+                                            window.open('https://forms.gle/N3ixo7uQTRD3vZ4S7', '_blank');
                                         }}
                                     />
                                 </>

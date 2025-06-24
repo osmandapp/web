@@ -15,6 +15,7 @@ export const typeMap = {
     monthly: 'monthly_subscription',
     annual: 'annual_subscription',
     inapp: 'in_app_purchase_desc',
+    free: 'free_account',
 };
 
 const subIconMap = {
