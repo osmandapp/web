@@ -104,7 +104,7 @@ export default function PurchasesMenu() {
                                 <ErrorEmptyPurchases />
                             )}
                             {isFreeAcc && (
-                                <FreeAccItem regTime={ltx.accountInfo.regtime} onClick={() => clickOnFreeAcc()} />
+                                <FreeAccItem regTime={ltx.accountInfo?.regtime} onClick={() => clickOnFreeAcc()} />
                             )}
                             {hasPurchases() && (
                                 <>
