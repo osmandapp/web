@@ -23,7 +23,7 @@ const config = {
       fr: { label: 'Français' },
       uk: { label: 'Українська' },
       de: { label: 'Deutsch' },
-      pl: { label: 'język polski, polszczyzna' },
+      pl: { label: 'Polski' },
     },
   },
   presets: [

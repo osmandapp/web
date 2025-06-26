@@ -43,7 +43,7 @@ Trasa składa się z zestawu segmentów między określonymi punktami. Segmenty 
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*
 
-![Plan a route android](@site/static/img/plan-route/plan_route_menu_andr.png)
+![Plan a route android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
 </TabItem>
 
@@ -51,7 +51,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_menu_ios.png)
+![Plan a route ios](@site/static/img/plan-route/plan-route-menu-ios.png)
 
 </TabItem>
 
