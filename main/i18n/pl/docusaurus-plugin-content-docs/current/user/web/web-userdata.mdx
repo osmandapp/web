@@ -1,0 +1,112 @@
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+source-hash: 42031b78e29fbd1911d4dd552afcc77bc2c286dce954d90b69e5940edc79b516
+sidebar_position: 4
+sidebar_label: Dane użytkownika
+title: Dane użytkownika na mapie
+
+<InfoIncompleteArticle/>
+
+## Przegląd {#overview}
+
+W sieci użytkownicy mogą uzyskiwać dostęp, zarządzać i tworzyć swoje dane osobowe, takie jak ślady i ulubione, bezpośrednio w sieci.
+
+- Ślady: Użytkownicy mogą przesyłać, przeglądać, edytować lub tworzyć nowe ślady online. Wszystkie zmiany są automatycznie synchronizowane z OsmAnd Cloud, zapewniając dostępność danych na wszystkich podłączonych urządzeniach.
+- Ulubione: Twórz i organizuj zapisane lokalizacje w sieci, z automatyczną synchronizacją z aplikacją OsmAnd dla szybkiego dostępu i nawigacji.
+
+Integracja z OsmAnd Cloud umożliwia płynną synchronizację, pozwalając użytkownikom wygodnie zarządzać swoimi danymi z dowolnego urządzenia.
+
+## Ślady w sieci {#tracks-on-the-web}
+
+Jest to funkcja płatna <ProFeature/>. Najpierw musisz zalogować się do OsmAnd Pro:
+
+![Logowanie do śladów](@site/static/img/web/track_loggin.png)
+
+Dla sekcji Ślady:
+
+- Pokaż ślady z [OsmAnd Cloud](#users-tracks-pro).
+- Dodawanie śladów na mapie (folder **Widoczne na mapie**).
+- Przeglądanie wszystkich informacji o śladach i wykresów.
+- Modyfikowanie śladów i dodawanie ich do Chmury.
+- Pobieranie i usuwanie śladów.
+- Tworzenie nowych folderów lub ich usuwanie.
+- Pobieranie folderów jako kolekcji OSF lub OBF.
+
+### Widoczne na mapie {#visible-on-the-map}
+
+Tutaj znajduje się lista widocznych śladów na mapie.
+
+_Włącz/wyłącz_ ślady, aby pokazać lub ukryć je na mapie.
+
+![Widoczne na mapie](@site/static/img/web/visible.png)
+
+### Menu folderu śladów {#track-folder-menu}
+
+Kliknij przycisk *Trzy kropki* **⋮**, aby otworzyć menu *Folder śladów*. Tutaj możesz pobrać wszystkie ślady z wybranego folderu jako:
+
+- Pobierz jako OSF.
+- Pobierz jako Kolekcja OBF:
+  Możesz uzyskać mapę OBF z tych danych: [plik OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) lub [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+
+  - [plik OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
+
+  Możesz pobrać mapę offline OBF (OsmAnd Binary Format) i otworzyć ją za pomocą OsmAnd na urządzeniu; nadaje się do wyświetlania dużej ilości śladów, które będą widoczne na mapie.
+
+  - [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
+
+  Możesz również zaimportować mapę śladów jako książkę podróżną, co pozwoli Ci również wybrać konkretny ślad na mapie i używać go jak normalnego GPX. Książka podróżna obsługuje również funkcje takie jak wyświetlanie śladów jako punktów, filtrowanie śladów według typu aktywności i filtrowanie punktów trasy.
+
+- _Zmień nazwę_ wybranego folderu.
+- _Usuń_ wybrany folder.
+
+![Menu folderu śladów](@site/static/img/web/collection.png)
+
+### Ślady w chmurze {#cloud-tracks}
+
+Ślady GPX, które masz w [OsmAnd Cloud](../personal/osmand-cloud.md), będą dostępne do wyświetlania i edycji po zalogowaniu. Tylko dla **użytkowników Pro** <ProFeature/> i dla użytkowników [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (którzy mogą pobierać swoje dane nawet po wygaśnięciu subskrypcji Pro).
+
+Następujące funkcje są dostępne po wybraniu śladu w chmurze:
+
+- Ekrany informacyjne:
+  - *Informacje* - wyświetlanie danych śladu.
+  - *Wysokość* - wykres wysokości.
+  - *Prędkość* - wykres prędkości.
+  - *Nachylenie* - wykres nachylenia.
+  - *Ustawienia* - lista profili nawigacyjnych dla narzędzia *Utwórz trasę*.
+
+- Przyciski akcji:
+  - *Edytuj ślad* - dodawanie śladu z chmury do lokalnego w celu edycji (przycisk _Edytuj lokalizację_ na panelu).
+  - *Pobierz GPX* - pobiera ślad na komputer.
+  - *Przelicz* Wysokość (Satelita) - wyświetla wykres wysokości wybranego śladu.
+  - *Usuń ślad* - usuwa ślad.
+  - *Zamknij ślad* - zamyka ślad.
+
+![Edycja GPX w chmurze OsmAnd Web](@site/static/img/web/cloud_track.png)
+
+## Ulubione w sieci {#favorites-on-the-web}
+
+Po zarejestrowaniu [**OsmAnd Pro**](../personal/osmand-cloud.md#login) i dla [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), Twoje Ulubione są wyświetlane w menu Ulubione.
+Dostępne są następujące akcje:
+
+- *Pokaż na mapie* - pokaż ulubione punkty z wybranego folderu na mapie.
+- *Zmień nazwę* - nazwa i opis folderu ulubionych.
+- *Pobierz* - pobierz wybrany folder ulubionych.
+- *Usuń* - usuń wybrany folder ulubionych.
+
+![Edycja ulubionych w chmurze OsmAnd Web](@site/static/img/web/favorites.png)
+
+### Dodaj / Edytuj Ulubione {#add--edit-favorite}
+
+[Aby dodać](../personal/favorites.md#edit) nowy punkt ulubionych, kliknij prawym przyciskiem myszy na ekranie. Aby rozpocząć edycję, kliknij na punkt ulubionych; ekran menu edycji wygląda tak samo jak [menu w aplikacji OsmAnd](../personal/favorites.md#create).
+
+![Dodawanie ulubionych w OsmAnd Web](@site/static/img/web/web_favorites_add.png)
