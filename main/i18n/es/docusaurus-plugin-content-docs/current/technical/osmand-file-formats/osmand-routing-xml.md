@@ -27,7 +27,7 @@ La explicación dada como 3% 1:2 significa que se preferirá una ruta plana de 2
 
 **Tabla de penalizaciones de enrutamiento en bicicleta:**
 
-| **Opción** | **Inclinación:** | <1% | <3% | <7% | <13% | <25% | >=25% | **Declive:** | <17% | <35% | <60% | >=60% |
+| **Opción** | **Inclinación:** | &lt;1% | &lt;3% | &lt;7% | &lt;13% | &lt;25% | &gt;=25% | **Declive:** | &lt;17% | &lt;35% | &lt;60% | &gt;=60% |
 |:---|:---|-----|------|-----|------|------|-------|:---|------|------|------|------------|
 |**_Deshabilitado/Cualquiera_** (el más corto pero más difícil)| | - | - | - | - | - | - | | - | - | - | - |
 |**_Menos montañoso_** (predeterminado, equilibrado)| | | 1:2 | 1:8 | 1:16 | 1:32 | 1:48 | | 1:6.4| 1:25 | 1:25 | imposible |
@@ -39,7 +39,7 @@ Dependiendo del [modo seleccionado (Menos montañoso, Plano, Montañoso) de enru
 
 **Tabla de penalizaciones de enrutamiento peatonal:**
 
-| **Opción** | **Inclinación:** | <1% | <3% | <7% | <13% | <25% | >=25% | **Declive:** | <9% | <17% | <35% | <60% | >=60% |
+| **Opción** | **Inclinación:** | &lt;1% | &lt;3% | &lt;7% | &lt;13% | &lt;25% | &gt;=25% | **Declive:** | &lt;9% | &lt;17% | &lt;35% | &lt;60% | &gt;=60% |
 |:---|:---|-----|-----|-----|------|------|-------|:---|-----|------|------|------|-------|
 |**_Deshabilitado/Cualquiera_** (el más corto pero más difícil)| | - | - | - | - | - | - | | - | - | - | - | - |
 |**_Menos montañoso_** (predeterminado, equilibrado)| | | 1:1 | 1:4 | 1:8 | 1:10 | 1:15 | | 1:5 | 1:10 | 1:17 | 1:25 | 1:40 |
