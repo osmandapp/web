@@ -107,6 +107,19 @@ export const getDistance = (lat1, lon1, lat2, lon2) => {
     return 2 * R * 1000 * Math.asin(Math.sqrt(a));
 };
 
+export const getBearing = (fromLat, fromLng, toLat, toLng) => {
+    const toDeg = r => (r * 180) / Math.PI;
+    const lat1 = toRadians(fromLat),
+          lat2 = toRadians(toLat),
+          dLng = toRadians(toLng - fromLng);
+    const y = Math.sin(dLng) * Math.cos(lat2);
+    const x = 
+        Math.cos(lat1) * Math.sin(lat2) 
+        - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng);
+
+    return ((toDeg(Math.atan2(y,x)) + 360) % 360); // clockwise degrees
+}
+
 const toRadians = (angdeg) => {
     return (angdeg / 180.0) * Math.PI;
 };
@@ -359,6 +372,7 @@ const Utils = {
     getFileData,
     getFileInfo,
     getDistance,
+    getBearing,
     getPointsDist,
     hexToRgba,
     numberToRgba,
