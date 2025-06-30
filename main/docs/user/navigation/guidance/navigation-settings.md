@@ -325,7 +325,7 @@ For optimal route calculation in OsmAnd, you should consider the following vehic
 
 1. Set the [*Default Speed* or *Road Speeds*](#default-speed--road-speeds), as the [minimum and maximum speed](#road-speeds) of the vehicle. This will help the application determine the time required to complete the route and allow it to choose the best route, considering the speed limits on different road segments.
 2. Specify the [*type*](#fuel-used-by-motor) of fuel used by the motor. This will allow the app to estimate CO2 emissions.
-3. Enter the [*capacity of your tank*](#fuel-tank-capacity) (*Android*) to accurately track your fuel level and consumption.
+3. Enter the [*capacity of your tank*](#fuel-tank-capacity) to accurately track your fuel level and consumption.
 4. Define [*size and weight parameters*](#size-parameters) of your vehicle, which can help the app calculate the optimal route and avoid obstacles on the road due to restrictions.
 
 Correctly setting the parameters in the OsmAnd app will help you avoid problems when navigating a route, choose the most suitable one according to the type of vehicle and road restrictions, and calculate the time for your trip.
@@ -421,9 +421,24 @@ The **Fuel used by motor** setting is only available in vehicle-based navigation
 
 #### Fuel tank capacity {#fuel-tank-capacity}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+
+
 
 The **Fuel tank capacity** parameter allows you to track your vehicle's fuel level and consumption more accurately by providing the total volume of your tank. The unit of measurement for fuel capacity is determined by the settings configured in *Menu → Configure profile → General settings → Units & Formats → Unit of volume*. For detailed guidance on setting Units & Formats, refer to the [Profile (Settings)](https://osmand.net/docs/user/personal/profiles#units--formats) article.
 

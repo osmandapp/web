@@ -98,7 +98,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 - **Average altitude** and **Max altitude** — Find tracks with specific average or maximum altitude data.
 - **Date of creation** — Filter tracks created within a particular date range.
 - **Nearest cities** — Display tracks passing near selected cities or localities.
-- **Type of activity** (*Android only*) — Filter tracks based on the [activities](../../map/tracks/track-context-menu.md#track-information-activity) type recorded in the GPX file (e.g., cycling, hiking).
+- **Type of activity** — Filter tracks based on the [activities](../../map/tracks/track-context-menu.md#track-information-activity) type recorded in the GPX file (e.g., cycling, hiking).
 - **Country** — Filter tracks by the country or region where they were recorded.
 - **Color** and **Width** — Select tracks by assigned color or line width.
 - **Other** — Additional filters for special characteristics:
