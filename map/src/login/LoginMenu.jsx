@@ -31,7 +31,6 @@ import ChangeEmailDialog from './dialogs/ChangeEmailDialog';
 import DeleteAccountDialog from './dialogs/DeleteAccountDialog';
 import AppBarWithBtns from '../frame/components/header/AppBarWithBtns';
 import CloudInfo from './CloudInfo';
-import upperFirst from 'lodash/upperFirst';
 import DeveloperArea from './DeveloperArea';
 import { getStatus } from './purchases/PurchaseManager';
 import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
@@ -42,6 +41,17 @@ export function getAccountType({ account = null, name = null }) {
     }
     return name ?? FREE_ACCOUNT_SUB_TYPE;
 }
+
+export const sub_state_translate_map = (t) => {
+    return {
+        active: t('web:active_state'),
+        cancelled: t('web:cancelled_state'),
+        in_grace_period: t('web:in_grace_period_state'),
+        on_hold: t('web:on_hold_state'),
+        expired: t('web:expired_state'),
+        paused: t('web:paused_state'),
+    };
+};
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -101,7 +111,7 @@ export default function LoginMenu() {
         if (!ltx.accountInfo) {
             return FREE_ACCOUNT_SUB_TYPE;
         }
-        const status = ltx.accountInfo.state ? upperFirst(getStatus(ltx.accountInfo.state)) + ' · ' : '';
+        const status = ltx.accountInfo.state ? getStatus(ltx.accountInfo.state, t) + ' · ' : '';
         const type = getAccountType({ account: ltx.accountInfo.account, name: ltx.accountInfo.name }) || '';
         return status + type;
     };
@@ -168,7 +178,7 @@ export default function LoginMenu() {
                             />
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             {showDeveloperArea && <DeveloperArea />}
-                            <SubTitleMenu text={'My data'} />
+                            <SubTitleMenu text={t('web:my_data')} />
                             <SimpleItemWithRightInfo
                                 id={'se-login-menu-osmand-cloud-item'}
                                 name={t('osmand_cloud')}
@@ -197,7 +207,7 @@ export default function LoginMenu() {
                                     <DividerWithMargin margin={'64px'} />
                                     <DefaultItem
                                         icon={<GiftIcon />}
-                                        name={'Receive gift'}
+                                        name={t('web:receive_gift')}
                                         onClick={() => {
                                             window.open('https://forms.gle/N3ixo7uQTRD3vZ4S7', '_blank');
                                         }}
