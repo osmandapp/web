@@ -171,6 +171,7 @@
   "on_hold_state": "On hold",
   "expired_state": "Expired",
   "paused_state": "Paused",
+  "unknown_state": "Unknown",
   "total_files_title": "Total files",
   "total_files_desc": " %1$s (%2$s including versions)",
   "storage": "Storage",

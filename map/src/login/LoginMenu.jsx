@@ -42,17 +42,6 @@ export function getAccountType({ account = null, name = null }) {
     return name ?? FREE_ACCOUNT_SUB_TYPE;
 }
 
-export const sub_state_translate_map = (t) => {
-    return {
-        active: t('web:active_state'),
-        cancelled: t('web:cancelled_state'),
-        in_grace_period: t('web:in_grace_period_state'),
-        on_hold: t('web:on_hold_state'),
-        expired: t('web:expired_state'),
-        paused: t('web:paused_state'),
-    };
-};
-
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
