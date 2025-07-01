@@ -162,5 +162,17 @@
   "indexes": "Indexes",
   "releases": "Releases",
   "info": "Info",
-  "developer": "Developer"
+  "developer": "Developer",
+  "receive_gift": "Receive gift",
+  "my_data": "My data",
+  "active_state": "Active",
+  "cancelled_state": "Cancelled",
+  "in_grace_period_state": "In grace period",
+  "on_hold_state": "On hold",
+  "expired_state": "Expired",
+  "paused_state": "Paused",
+  "total_files_title": "Total files",
+  "total_files_desc": " %1$s (%2$s including versions)",
+  "storage": "Storage",
+  "storage_used": "Cloud storage used"
 }

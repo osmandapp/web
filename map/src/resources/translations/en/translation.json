@@ -5303,5 +5303,6 @@
   "shared_string_learn_more": "Learn more",
   "explore_osmnad_plans_to_find_suitable": "Explore OsmAnd Plans to find one suitable for you.",
   "features_menu_group": "Features",
-  "free_account": "Free account"
+  "free_account": "Free account",
+  "contact_support_description": "If you have any questions, please contact us at %1$s."
 }
