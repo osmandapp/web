@@ -129,7 +129,7 @@ export default function PurchaseInfo() {
                             id={item.name}
                             name={item.name}
                             type={item.type}
-                            state={getStatus(item.state, t)}
+                            state={getStatus(item.state)}
                             billingDate={item.billingDate}
                         />
                     ) : item.name === FREE_ACCOUNT ? (
