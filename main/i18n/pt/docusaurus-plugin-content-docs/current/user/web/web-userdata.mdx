@@ -1,0 +1,118 @@
+---
+source-hash: 42031b78e29fbd1911d4dd552afcc77bc2c286dce954d90b69e5940edc79b516
+sidebar_position: 4
+sidebar_label: Dados do usuário
+title: Dados do usuário no mapa
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoIncompleteArticle/>
+
+## Visão geral {#overview}
+
+Na web, os usuários podem acessar, gerenciar e criar seus dados pessoais, como Trilhas e Favoritos, diretamente na web.
+
+- Trilhas: os usuários podem carregar, visualizar, editar ou criar novas trilhas online. Todas as alterações são sincronizadas automaticamente com o OsmAnd Cloud, garantindo que os dados estejam disponíveis em todos os dispositivos conectados.
+- Favoritos: crie e organize locais salvos na web, com sincronização automática para seu aplicativo OsmAnd para acesso rápido e navegação.
+
+A integração com o OsmAnd Cloud permite sincronização perfeita, permitindo que os usuários gerenciem seus dados convenientemente de qualquer dispositivo.
+
+## Trilhas na web {#tracks-on-the-web}
+
+É um recurso pago <ProFeature/>. Primeiro, você precisa fazer login no seu OsmAnd Pro:
+
+![Track loggin](@site/static/img/web/track_loggin.png)
+
+Para a seção de Trilhas:
+
+- Mostrar trilhas do [OsmAnd Cloud](#users-tracks-pro).
+- Adicionar trilhas no mapa (pasta **Visível no mapa**).
+- Visualizar todas as informações e gráficos das trilhas.
+- Modificar trilhas e adicioná-las à Nuvem.
+- Baixar e excluir trilhas.
+- Criar novas pastas ou excluí-las.
+- Baixar pastas como coleção OSF ou OBF.
+
+
+### Visível no mapa {#visible-on-the-map}
+
+Aqui está uma lista de trilhas visíveis no mapa.
+
+_Ative/desative_ as trilhas para mostrá-las ou não no mapa.
+
+![Visible on the map](@site/static/img/web/visible.png)
+
+
+### Menu da pasta de trilhas {#track-folder-menu}
+
+Clique no botão *Três pontos* **⋮** para abrir o menu *Pasta de Trilhas*. Aqui você pode baixar todas as trilhas da pasta escolhida como:
+
+ - Baixar como OSF.
+ - Baixar como Coleção OBF:
+  Você pode obter o mapa OBF a partir desses dados: [arquivo OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) ou [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+
+    -  [Arquivo OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
+
+  Você pode baixar o mapa offline OBF (OsmAnd Binary Format) e abri-lo com o OsmAnd no dispositivo, é adequado para exibir uma grande quantidade de trilhas que serão visíveis no mapa.
+
+    -  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
+
+  Além disso, você pode importar o mapa de trilhas como um livro de viagens, o que também permitirá selecionar uma trilha específica no mapa e usá-la como um GPX normal. O livro de viagens também suporta recursos como exibir trilhas como pontos, filtrar trilhas por tipo de atividade e filtrar pontos de passagem.
+
+- _Renomear_ a pasta escolhida.
+- _Excluir_ a pasta escolhida.
+
+![Track folder menu](@site/static/img/web/collection.png)
+
+
+### Trilhas na Nuvem {#cloud-tracks}
+
+As trilhas GPX que você tem no [OsmAnd Cloud](../personal/osmand-cloud.md) estarão disponíveis para exibição e edição após o login. Somente para **usuários Pro** <ProFeature/> e para usuários [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (que podem baixar seus dados mesmo após o vencimento da assinatura Pro).
+
+Os seguintes recursos estão disponíveis após a escolha da trilha na nuvem:
+
+- Telas de informação:
+  - *Informação* - exibindo dados da trilha.
+  - *Elevação* - gráfico de elevação.
+  - *Velocidade* - gráfico de velocidade.
+  - *Inclinação* - gráfico de inclinação.
+  - *Configurações* - lista de perfis de navegação para a ferramenta *Criar rota*.  
+
+- Botões de ação:
+  - *Editar trilha* - adicionando trilha da nuvem ao local para edição (botão _Editar localidade_ no painel).
+  - *Baixar GPX* - baixa a trilha para o PC.
+  - *Recalcular* Elevação (Satélite) - exibe o gráfico de elevação da trilha selecionada.
+  - *Excluir trilha* - exclui a trilha.
+  - *Fechar trilha* - fecha a trilha.
+
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
+
+
+
+## Favoritos na web {#favorites-on-the-web}
+
+Após registrar um [**OsmAnd Pro**](../personal/osmand-cloud.md#login) e para [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), seus Favoritos são exibidos no menu Favoritos.  
+As seguintes ações estão disponíveis:
+
+- *Mostrar no mapa* - mostra os pontos favoritos da pasta escolhida no mapa.
+- *Renomear* - nome e descrição da pasta de favoritos.
+- *Baixar* - baixa a pasta de favoritos escolhida.
+- *Excluir* - exclui a pasta de favoritos escolhida.
+
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
+
+### Adicionar / Editar Favorito {#add--edit-favorite}
+
+Para [adicionar](../personal/favorites.md#edit) um novo ponto favorito, clique com o botão direito do mouse na tela. Para iniciar a edição, clique no ponto favorito, a tela do menu de edição é igual ao [menu no aplicativo OsmAnd](../personal/favorites.md#create).  
+
+![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
