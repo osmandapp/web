@@ -260,8 +260,6 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                                         ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY ? POI_LAYER_ID : SEARCH_LAYER_ID
                                     }
                                     setSearchValue={setSearchValue}
-                                    bearing={item.bearing}
-                                    isUserLocation={item.isUserLocation}
                                 />
                             ))}
                     </Box>

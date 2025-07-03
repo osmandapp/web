@@ -84,13 +84,13 @@ export function getPropsFromSearchResultItem(props, t) {
     return { name, type, info, city };
 }
 
-export default function SearchResultItem({ item, setSearchValue, typeItem, bearing, isUserLocation }) {
+export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
     const { ref, inView } = useInView();
 
-    const { name, info, distance, type, city, icon} = parseItem(item);
+    const { name, info, distance, bearing, isUserLocation, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
 
     const itemId = getObjIdSearch(item);
@@ -124,8 +124,10 @@ export default function SearchResultItem({ item, setSearchValue, typeItem, beari
     function parseItem(item) {
         const res = getPropsFromSearchResultItem(item.properties, t);
         const distance = item.locDist;
+        const bearing = item.bearing;
+        const isUserLocation = item.isUserLocation;
         const icon = item.icon;
-        return { ...res, icon, distance };
+        return { ...res, icon, distance, bearing, isUserLocation};
     }
 
     function addDistance() {
