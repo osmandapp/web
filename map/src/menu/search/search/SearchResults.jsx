@@ -64,11 +64,10 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     }, [lat, lon]);
 
     const centerFromHash = useMemo(() => {
-        return debouncedLatLon.lat != null && debouncedLatLon.lon != null 
-            ? { lat: debouncedLatLon.lat, lon: debouncedLatLon.lon } 
+        return debouncedLatLon.lat != null && debouncedLatLon.lon != null
+            ? { lat: debouncedLatLon.lat, lon: debouncedLatLon.lon }
             : null;
     }, [debouncedLatLon]);
-
 
     useEffect(() => {
         if (result === EMPTY_SEARCH_RESULT) {
@@ -133,7 +132,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             const lat = f?.geometry?.coordinates[1];
             const lon = f?.geometry?.coordinates[0];
             if (!lat || !lon) return f;
-            
+
             const distance = lon === 0 && lat === 0 ? null : getDistance(loc.lat, loc.lng, lat, lon);
             const bearing = lon === 0 && lat === 0 ? null : getBearing(loc.lat, loc.lng, lat, lon);
 

@@ -96,26 +96,31 @@ function byLocation(files, reverse, markers = null) {
 }
 
 export function doSort({ method, setSortFiles, setSortGroups, markers, files, groups, favoriteGroup }) {
-    let res;
-    if (setSortFiles) {
-        if (method === 'nearest' && markers) {
-            setSortFiles(allMethods[method].callback(files, allMethods[method].reverse, markers));
-        } else {
-            setSortFiles(allMethods[method].callback(files, allMethods[method].reverse));
-        }
+    let sortedFiles;
+    if (method === 'nearest' && markers) {
+        sortedFiles = allMethods[method].callback(files, allMethods[method].reverse, markers);
+    } else {
+        sortedFiles = allMethods[method].callback(files, allMethods[method].reverse);
     }
-    if (setSortGroups && groups?.length > 0) {
+    if (setSortFiles) {
+        setSortFiles(sortedFiles);
+    }
+
+    let sortedGroups;
+
+    if (groups && groups.length > 0) {
         if (method === 'time' && !favoriteGroup) {
             // sort by time for track groups
-            res = allMethods[method].callback(groups, allMethods[method].reverse, true);
-            setSortGroups(res);
+            sortedGroups = allMethods[method].callback(groups, allMethods[method].reverse, true);
         } else if (method === 'az' || method === 'za' || favoriteGroup) {
             // sort by name for track groups or all types of favorites
-            res = allMethods[method].callback(groups, allMethods[method].reverse);
-            setSortGroups(res);
+            sortedGroups = allMethods[method].callback(groups, allMethods[method].reverse);
+        }
+        if (setSortGroups) {
+            setSortGroups(sortedGroups);
         }
     }
-    return res;
+    return { files: sortedFiles, groups: sortedGroups };
 }
 
 export function updateSortList({ oldName, newName, isFavorites = false, isTracks = false, ctx }) {
