@@ -1,0 +1,118 @@
+---
+source-hash: 42031b78e29fbd1911d4dd552afcc77bc2c286dce954d90b69e5940edc79b516
+sidebar_position: 4
+sidebar_label: Dati utente
+title: Dati utente sulla mappa
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoIncompleteArticle/>
+
+## Panoramica {#overview}
+
+Sul web, gli utenti possono accedere, gestire e creare i propri dati personali, come Tracce e Preferiti, direttamente sul web.
+
+- Tracce: Gli utenti possono caricare, visualizzare, modificare o creare nuove tracce online. Tutte le modifiche vengono automaticamente sincronizzate con OsmAnd Cloud, garantendo che i dati siano disponibili su tutti i dispositivi connessi.
+- Preferiti: Crea e organizza le posizioni salvate sul web, con sincronizzazione automatica con la tua app OsmAnd per un accesso e una navigazione rapidi.
+
+L'integrazione con OsmAnd Cloud consente una sincronizzazione senza interruzioni, permettendo agli utenti di gestire i propri dati comodamente da qualsiasi dispositivo.
+
+## Tracce sul web {#tracks-on-the-web}
+
+È una funzionalità a pagamento <ProFeature/>. Per prima cosa devi accedere al tuo OsmAnd Pro:
+
+![Accesso alla traccia](@site/static/img/web/track_loggin.png)
+
+Per la sezione Tracce:
+
+- Mostra le tracce da [OsmAnd Cloud](#users-tracks-pro).
+- Aggiunta di tracce sulla mappa (cartella **Visibile sulla mappa**).
+- Visualizzazione di tutte le informazioni e il grafico delle tracce
+- Modifica delle tracce e aggiunta al Cloud.
+- Download ed eliminazione delle tracce.
+- Creazione di nuove cartelle o eliminazione.
+- Download di cartelle come raccolta OSF o OBF.
+
+
+### Visibile sulla mappa {#visible-on-the-map}
+
+Qui c'è un elenco di tracce visibili sulla mappa.
+
+_Attiva/disattiva_ le tracce per mostrarle o meno sulla mappa.
+
+![Visibile sulla mappa](@site/static/img/web/visible.png)
+
+
+### Menu cartella tracce {#track-folder-menu}
+
+Fai clic sul pulsante *Tre punti* **⋮** per aprire il menu *Cartella tracce*. Qui puoi scaricare tutte le tracce dalla cartella scelta come:
+
+ - Scarica come OSF.
+ - Scarica come raccolta OBF:
+  Puoi ottenere la mappa OBF da questi dati: [file OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) o [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+
+    -  [file OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
+
+  Puoi scaricare la mappa offline OBF (OsmAnd Binary Format) e aprirla con OsmAnd sul dispositivo, è adatta a visualizzare una grande quantità di tracce che saranno visibili sulla mappa.
+
+    -  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
+
+  Inoltre puoi importare la mappa delle tracce come libro di viaggio che ti permetterà anche di selezionare una traccia specifica sulla mappa e usarla come un normale GPX. Il libro di viaggio supporta anche funzionalità come la visualizzazione delle tracce come punti, il filtraggio delle tracce per tipo di attività e il filtraggio dei waypoint.
+
+- _Rinomina_ la cartella scelta.
+- _Elimina_ la cartella scelta.
+
+![Menu cartella tracce](@site/static/img/web/collection.png)
+
+
+### Tracce cloud {#cloud-tracks}
+
+Le tracce GPX che hai in [OsmAnd Cloud](../personal/osmand-cloud.md) saranno disponibili per la visualizzazione e la modifica dopo l'accesso. Solo per gli **utenti Pro** <ProFeature/> e per gli utenti [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (che possono scaricare i loro dati anche dopo la scadenza del loro abbonamento Pro).
+
+Le seguenti funzionalità sono disponibili dopo aver scelto la traccia cloud:
+
+- Schermate informative:
+  - *Informazioni* - visualizzazione dei dati della traccia.
+  - *Altitudine* - grafico dell'altitudine.
+  - *Velocità* - grafico della velocità.
+  - *Pendenza* - grafico della pendenza.
+  - *Impostazioni* - elenco dei profili di navigazione per lo strumento *Crea percorso*.
+
+- Pulsanti azione:
+  - *Modifica traccia* - aggiunta della traccia cloud al locale per la modifica (pulsante _Modifica località_ sul pannello).
+  - *Scarica GPX* - scarica la traccia sul PC.
+  - *Ricalcola* Altitudine (Satellite) - visualizza il grafico dell'altitudine della traccia selezionata.
+  - *Elimina traccia* - elimina la traccia.
+  - *Chiudi traccia* - chiudi la traccia.
+
+![Modifica GPX cloud OsmAnd Web](@site/static/img/web/cloud_track.png)
+
+
+
+## Preferiti sul web {#favorites-on-the-web}
+
+Dopo aver registrato un [**OsmAnd Pro**](../personal/osmand-cloud.md#login) e per [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), i tuoi Preferiti vengono visualizzati nel menu Preferiti.
+Sono disponibili le seguenti azioni:
+
+- *Mostra sulla mappa* - mostra i punti preferiti dalla cartella scelta sulla mappa.
+- *Rinomina* - nome e descrizione della cartella preferiti.
+- *Scarica* - scarica la cartella preferiti scelta.
+- *Elimina* - elimina la cartella preferiti scelta.
+
+![Modifica Preferiti cloud OsmAnd Web](@site/static/img/web/favorites.png)
+
+### Aggiungi / Modifica Preferito {#add--edit-favorite}
+
+[Per aggiungere](../personal/favorites.md#edit) un nuovo punto preferito, fai clic con il pulsante destro del mouse sullo schermo. Per iniziare la modifica, fai clic sul punto preferito, la schermata del menu di modifica è uguale a [quella del menu nell'app OsmAnd](../personal/favorites.md#create).
+
+![Aggiunta Preferiti OsmAnd Web](@site/static/img/web/web_favorites_add.png)
