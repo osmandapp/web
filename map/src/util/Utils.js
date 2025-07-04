@@ -108,17 +108,15 @@ export const getDistance = (lat1, lon1, lat2, lon2) => {
 };
 
 export const getBearing = (fromLat, fromLng, toLat, toLng) => {
-    const toDeg = r => (r * 180) / Math.PI;
+    const toDeg = (r) => (r * 180) / Math.PI;
     const lat1 = toRadians(fromLat),
-          lat2 = toRadians(toLat),
-          dLng = toRadians(toLng - fromLng);
+        lat2 = toRadians(toLat),
+        dLng = toRadians(toLng - fromLng);
     const y = Math.sin(dLng) * Math.cos(lat2);
-    const x = 
-        Math.cos(lat1) * Math.sin(lat2) 
-        - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng);
+    const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng);
 
-    return ((toDeg(Math.atan2(y,x)) + 360) % 360); // clockwise degrees
-}
+    return (toDeg(Math.atan2(y, x)) + 360) % 360; // clockwise degrees
+};
 
 const toRadians = (angdeg) => {
     return (angdeg / 180.0) * Math.PI;

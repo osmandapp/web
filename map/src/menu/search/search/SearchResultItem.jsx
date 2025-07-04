@@ -127,7 +127,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
         const bearing = item.bearing;
         const isUserLocation = item.isUserLocation;
         const icon = item.icon;
-        return { ...res, icon, distance, bearing, isUserLocation};
+        return { ...res, icon, distance, bearing, isUserLocation };
     }
 
     function addDistance() {
@@ -250,15 +250,20 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                                                     alignItems: 'center',
                                                 }}
                                             >
-                                                <DirectionIcon 
+                                                <DirectionIcon
                                                     style={{
                                                         transform: `rotate(${bearing ?? 0}deg)`,
                                                         transformOrigin: 'center',
                                                         fill: isUserLocation ? '#237bff' : '#727272',
                                                     }}
-                                                    />
+                                                />
                                             </ListItemIcon>
-                                            <Typography className={styles.placeDistance} style={{color: isUserLocation ? '#237bff' : '#727272',}}>{addDistance()}</Typography>
+                                            <Typography
+                                                className={styles.placeDistance}
+                                                style={{ color: isUserLocation ? '#237bff' : '#727272' }}
+                                            >
+                                                {addDistance()}
+                                            </Typography>
                                         </span>
                                     )}
                                 </MenuItemWithLines>
