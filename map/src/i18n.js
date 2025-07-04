@@ -2,10 +2,12 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import enTranslation from './resources/translations/en/translation.json';
+import enWebTranslation from './resources/translations/en/web-translation.json';
 
 const resources = {
     en: {
         translation: enTranslation,
+        web: enWebTranslation,
     },
 };
 
