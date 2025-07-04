@@ -97,17 +97,18 @@ function byLocation(files, reverse, markers = null) {
 
 export function doSort({ method, setSortFiles, setSortGroups, markers, files, groups, favoriteGroup }) {
     let sortedFiles;
-    if (method === 'nearest' && markers) {
-        sortedFiles = allMethods[method].callback(files, allMethods[method].reverse, markers);
-    } else {
-        sortedFiles = allMethods[method].callback(files, allMethods[method].reverse);
-    }
-    if (setSortFiles) {
-        setSortFiles(sortedFiles);
+    if (files && files.length > 0) {
+        if (method === 'nearest' && markers) {
+            sortedFiles = allMethods[method].callback(files, allMethods[method].reverse, markers);
+        } else {
+            sortedFiles = allMethods[method].callback(files, allMethods[method].reverse);
+        }
+        if (setSortFiles) {
+            setSortFiles(sortedFiles);
+        }
     }
 
     let sortedGroups;
-
     if (groups && groups.length > 0) {
         if (method === 'time' && !favoriteGroup) {
             // sort by time for track groups
