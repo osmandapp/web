@@ -80,7 +80,13 @@ export function convertMeters(value, toUnit, type = SMALL_UNIT) {
     if (!unit) {
         throw new Error(`Unsupported unit: ${toUnit}`);
     }
-    return convert(value).from('m').to(unit[type]);
+    const target = unit[type];
+
+    if (target === 'nmi') {
+        return value / 1852;
+    }
+
+    return convert(value).from('m').to(target);
 }
 
 export function getSmallLengthUnit(ctx) {
