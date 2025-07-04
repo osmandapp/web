@@ -1,0 +1,162 @@
+---
+slug: gpx
+title: Everything about GPX files in OsmAnd
+authors: eugene
+tags: [gpx, android, ios]
+draft: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+Hello everybody!
+
+In this article we collect all info about GPX file in OsmAnd.
+- what is it
+- what can you do with GPX
+
+   &#9755;  Let's go!
+
+
+<!--truncate-->
+
+## About GPX
+
+GPX, or GPS Exchange Format, is an XML schema designed as a common GPS data format for software applications.  It can be used to describe waypoints, tracks, and routes. 
+
+In OsmAnd all data like Tracks, Favorites, A/V notes have GPX format.
+
+
+<details>
+
+<summary>Code of GPX file of OsmAnd car track</summary>
+
+```
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Thu Nov 30 2023</name>
+  </metadata>
+  <rte>
+    <rtept lat="35.5112341" lon="6.7838645">
+      <extensions>
+        <osmand:profile>car</osmand:profile>
+        <osmand:trkpt_idx>0</osmand:trkpt_idx>
+      </extensions>
+    </rtept>
+    <rtept lat="35.5103608" lon="6.7824268">
+      <extensions>
+        <osmand:profile>car</osmand:profile>
+        <osmand:trkpt_idx>1</osmand:trkpt_idx>
+      </extensions>
+    </rtept>
+  </rte>
+  <trk>
+    <trkseg>
+      <trkpt lat="35.5112429" lon="6.7838645">
+        <ele>921.3</ele>
+      </trkpt>
+      <trkpt lat="35.51035" lon="6.7824369">
+        <ele>925.8</ele>
+      </trkpt>
+      <extensions>
+        <osmand:route>
+          <segment id="428107960" length="2" startTrkptIdx="0" segmentTime="36.22" speed="12.5" turnType="C" types="0,1" pointTypes=";" />
+          <segment id="-1" length="1" startTrkptIdx="1" segmentTime="0" speed="12.5" turnType="TSHR" turnAngle="127.28" types="2" />
+        </osmand:route>
+        <osmand:types>
+          <type t="highway" v="tertiary" />
+          <type t="osmand_highway_integrity_brouting" v="0" />
+          <type t="highway" v="unmatched" />
+          <type t="name" v="" />
+          <type t="ref" v="" />
+        </osmand:types>
+      </extensions>
+    </trkseg>
+  </trk>
+</gpx>
+```
+
+</details>
+
+Here you find many tags for , which contain any info (Elevation, Speed, External sensor data) for recorded points.
+
+## OsmAnd tools
+
+### Track recording
+
+
+### Track context menu
+
+
+### GPX filters
+
+### Favorites
+
+### A/V notes
+
+
+## KLM/KMZ formats
+
+Keyhole Markup Language (KML) is an XML notation for expressing geographic annotation and visualization within two-dimensional maps and three-dimensional Earth browsers. KML was developed for use with Google Earth, which was originally named Keyhole Earth Viewer. It was created by Keyhole, Inc, which was acquired by Google in 2004. KML became an international standard of the Open Geospatial Consortium in 2008. Google Earth was the first program able to view and graphically edit KML files, but other projects such as Marble have added KML support.
+
+<details>
+
+<summary>Code of KML file of Google Earth</summary>
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>road.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Placemark>
+		<name>road</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				-7.690011647539832,33.55898635646972,0 -7.689068574986532,33.55800010614296,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>
+```
+
+</details>
