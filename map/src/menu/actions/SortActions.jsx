@@ -106,6 +106,8 @@ export function doSort({ method, setSortFiles, setSortGroups, markers, files, gr
         if (setSortFiles) {
             setSortFiles(sortedFiles);
         }
+    } else if (setSortFiles) {
+        setSortFiles([]);
     }
 
     let sortedGroups;
@@ -120,6 +122,8 @@ export function doSort({ method, setSortFiles, setSortGroups, markers, files, gr
         if (setSortGroups) {
             setSortGroups(sortedGroups);
         }
+    } else if (setSortGroups) {
+        setSortGroups([]);
     }
     return { files: sortedFiles, groups: sortedGroups };
 }
