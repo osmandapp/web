@@ -270,6 +270,9 @@ function getEditablePoints(track) {
     if (track.tracks) {
         track.tracks.forEach((track) => {
             if (track.points) {
+                if (points.length > 0) {
+                    points[points.length - 1].profile = PROFILE_GAP;
+                }
                 points = points.concat(track.points);
             }
         });
