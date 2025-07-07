@@ -598,10 +598,10 @@ export function validName(name) {
 }
 
 export function isTrackExists(name, folder, folderName, tracks) {
-    const foundFolder = findGroupByName(
-        tracks,
-        folderName !== null ? folderName : folder?.title ? folder?.title : folder
-    );
+    if (!tracks) {
+        return false;
+    }
+    const foundFolder = findGroupByName(tracks, folderName !== null ? folderName : (folder?.title ?? folder));
     if (foundFolder) {
         if (foundFolder.name === DEFAULT_GROUP_NAME) {
             return foundFolder.files.some((f) => TracksManager.prepareName(f.name) === name);
@@ -1511,7 +1511,7 @@ export function getTracksArrBounds(files) {
 export function getAllGroupNames(groups, parentName = '') {
     const groupTitles = [];
 
-    groups.forEach((group) => {
+    groups?.forEach((group) => {
         if (group.fullName === DEFAULT_GROUP_NAME) {
             // skip default folder
             return;

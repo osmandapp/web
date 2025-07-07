@@ -136,7 +136,7 @@ export function createTrackFreeName(name, otherTracks, folder = null, folderName
     let occupied = null;
     let newName = name;
     for (let i = 1; i < 100; i++) {
-        if (folder !== null || folderName !== null) {
+        if ((folder !== null || folderName !== null) && otherTracks) {
             //check cloud
             occupied = isTrackExists(newName, folder, folderName, otherTracks);
         } else {
