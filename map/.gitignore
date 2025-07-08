@@ -29,6 +29,7 @@ yarn-error.log*
 /src/resources/generated/*
 
 /src/resources/translations/*
+!/src/resources/translations/*/web-translation.json
 !/src/resources/translations/gen-translations-config.json
 !/src/resources/translations/en/
 !/src/resources/translations/supportedLanguages.json
