@@ -68,7 +68,7 @@ There are two main ways to access this feature:
 
   In this mode, popular POIs appear directly on the map with thumbnail previews and Wikipedia content.
 
-You can switch between **online** and **offline** Wikipedia sources in the overlay settings. Learn more in [Enable Layer](#enable-layer).
+  You can switch between **online** and **offline** Wikipedia sources in the overlay settings. Learn more in [Enable Layer](#enable-layer).
 
 
 ## Explore in Search {#explore-in-search}
@@ -148,6 +148,8 @@ Tapping a POI on the map opens the [POI context menu](./map-context-menu.md), wh
 
 ## Online Photos {#online-photos}
 
+*<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
@@ -163,8 +165,6 @@ Tapping a POI on the map opens the [POI context menu](./map-context-menu.md), wh
 </TabItem>
 
 </Tabs>
-
-*<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
 This is a section within the [POI context menu](./map-context-menu.md) that displays a photo preview of the selected Popular Place (Wikipedia). You can scroll horizontally to browse through the available photos, or tap any image to open it in [full screen mode](#gallery).
 
@@ -285,7 +285,7 @@ The **Details** screen provides full metadata for the selected photo, including:
 - [Wikipedia plugin](../plugins/wikipedia.md)
 
 
-> *Last updated: June 2025*
+> *Last updated: July 2025*
 
 
 <!--

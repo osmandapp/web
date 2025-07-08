@@ -27,9 +27,9 @@ The search bar allows you to enter keywords related to the places you are intere
 OsmAnd provides several ways to get to the Search tool where the **Categories search** section is located.
 
 - The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use), where you can find the *Categories* tab.
-- *Android*: Go to the main *Menu → Search → Categories tab*.
+- Go to the main *Menu → Search → Categories tab*.
 - When preparing to start a route, tap [*Navigation → Set destination → Search field → Categories tab*](../navigation/setup/route-navigation.md#set-target-point).  
-- *Android*: Go to the main [*Menu → Configure map → POI overlay → Search*](../map/point-layers-on-map.md#points-of-interest-pois).
+- Go to the main [*Menu → Configure map → POI overlay → Search*](../map/point-layers-on-map.md#points-of-interest-pois).
 
 
 ## How to Use {#how-to-use}
