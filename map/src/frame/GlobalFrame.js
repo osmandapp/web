@@ -267,17 +267,16 @@ const GlobalFrame = () => {
             }
         }
     }, [ctx.openVisibleMenu]);
-
     // create track groups
     useEffect(() => {
         if (!_.isEmpty(ctx.listFiles)) {
             const files = getGpxFiles(ctx.listFiles);
-            const trackGroups = createTrackGroups(files);
+            const trackGroups = createTrackGroups({ files, ctx });
             ctx.setTracksGroups(trackGroups);
         } else {
             ctx.setTracksGroups([]);
         }
-    }, [ctx.listFiles]);
+    }, [ctx.listFiles, ctx.selectedSort]);
 
     function isOldVisibleTrack(names, file, prefix = '') {
         return names.old.some((n) => n === `${prefix}${file.name}`);

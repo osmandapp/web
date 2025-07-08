@@ -1,0 +1,123 @@
+---
+slug: routeinfo
+title: Routeinfo - full information about your trip
+authors: eugene
+tags: [ios, android]
+---
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+
+
+
+
+<h2>Routeinfo - full information about your trip</h2>
+<div class="date">October 23, 2019</div>
+
+
+<p>After the route is built, you can press the "Details" button, which hides the additional graphs. </p>
+
+<table class="blogimage">
+  <tr>
+    <th><img src={require('./1.png').default} alt="Image"/></th>
+    </tr>
+</table> 
+![routeinfo](./1.png)
+
+<!--truncate-->
+
+<p>In the 3.4.2 release, there are Road types, Surface, Smoothness, Steepness, Surface firmness (Tracktype), Winter, and ice roads available. The graphs are interactive and synchronized with one another and the route overview map.</p>
+
+<table class="blogimage">
+  <tr>
+    <th><img src={require('./2.png').default} alt="Image"/></th>
+    <th><img src={require('./3.png').default} alt="Image"/></th>
+    </tr>
+</table> 
+
+<table class="blogimage">
+  <tr>
+    <th><img src={require('./4.png').default} alt="Image"/></th>
+    <th><img src={require('./5.png').default} alt="Image"/></th>
+    <th><img src={require('./7.png').default} alt="Image"/></th>
+    </tr>
+</table> 
+
+<p>
+When you click on the graph, the cursor is displayed where you tap, and in the legend below the current chart element is highlighted in bold. You can also zoom in on the part of the graph using the pinch/pinch gesture. In this case, the other graphs will also change the display boundaries.	
+</p>
+
+<table class="blogimage">
+  <tr>
+    <th><img src={require('./6.png').default} alt="Image"/></th>
+    </tr>
+</table> 
+
+<p>
+On the overview map of the route, which is located at the very top of the screen, the scale will be changed so that the entire section of the path displayed on the graphs is currently displayed.
+</p>
+
+<p>
+If the graphic does not contain any data, it is not displayed.
+</p>
+
+
+<p>
+Here is an example of a style that depends on the standard OsmAnd style and adds a street lighting scheme:
+</p>
+
+__________________________________
+
+```
+<renderingStyle name="Depends-template" depends="default" defaultColor="#f1eae4" version="1">
+
+    <renderingProperty attr="appMode" name="Rendering mode" description="Map optimization for respective User Profile"
+   	 type="string" possibleValues="browse map,car,bicycle,pedestrian"/>
+
+    <renderingConstant name="null" value="#00000000"/>
+
+    <renderingAttribute name="litYesColor">
+   	 <case nightMode="true" attrColorValue="#99aeae00"/>
+   	 <case attrColorValue="#66ffeb00"/>
+    </renderingAttribute>
+    <renderingAttribute name="litNoColor">
+   	 <case nightMode="true" attrColorValue="#99d91500"/>
+   	 <case attrColorValue="#88ff0000"/>
+    </renderingAttribute>
+
+    <renderingAttribute name="routeInfo_street_lighting"> <!-- Used in route details info -->
+   	 <case additional="lit=yes" attrColorValue="$litYesColor" attrStringValue="lit_no"/>
+   	 <case additional="lit=no" attrColorValue="$litNoColor" attrStringValue="lit_yes"/>
+    </renderingAttribute>
+
+    <order>
+    </order>
+
+    <text>
+    </text>
+
+    <point>
+    </point>
+
+    <polygon>
+    </polygon>
+
+    <line>
+    </line>
+</renderingStyle>
+```
+
+__________________________________
+
+<p>The list of data available for display is available in the routing category of <a href="https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml#L5666">this file</a>. </p>
+
+__________________________________
+
+
+<LinksSocial/>
+<LinksTelegram/>
+
+<AndroidStore/>
+<AppleStore/>

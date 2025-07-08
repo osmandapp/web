@@ -26,7 +26,24 @@ import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 
-export const NO_HEIGHTMAP = 'none';
+export const NO_HEIGHTMAP = {
+    key: 'none',
+    name: 'shared_string_none',
+};
+
+export const heightmaps = {
+    hillshade: 'shared_string_hillshade',
+    slope: 'shared_string_slope',
+    height: 'shared_string_height',
+};
+
+export function getCurrentColorScheme(t, ctx) {
+    const key = ctx.configureMapState.terrain?.key ?? ctx.configureMapState.terrain;
+    if (heightmaps[key]) {
+        return t(heightmaps[key]);
+    }
+    return t(NO_HEIGHTMAP.name);
+}
 
 export default function TerrainConfig({ setOpenTerrainConfig }) {
     const ctx = useContext(AppContext);
@@ -39,15 +56,14 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
 
     const OPACITY_HEIGHTMAP = 'opacity_heightmap';
 
-    const heightmaps = ['hillshade', 'slope', 'height'];
-    const heightmapsLayers = heightmaps.map((item) => {
-        return {
-            key: item,
-            name: capitalize(item),
-            url: `${process.env.REACT_APP_TILES_API_SITE}/heightmap/${item}/{z}/{x}/{y}.png`,
+    function getHeightmapLayers() {
+        return Object.entries(heightmaps).map(([key, i18nKey]) => ({
+            key,
+            name: t(i18nKey),
+            url: `${process.env.REACT_APP_TILES_API_SITE}/heightmap/${key}/{z}/{x}/{y}.png`,
             opacity: 1,
-        };
-    });
+        }));
+    }
 
     useEffect(() => {
         if ((ctx.heightmap && !sameHeightmap()) || (sameHeightmap() && needUpdateOpacity())) {
@@ -112,7 +128,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                                     variant="contained"
                                     type="button"
                                     className={headerStyles.appBarIcon}
-                                    onClick={() => ctx.setHeightmap(NO_HEIGHTMAP)}
+                                    onClick={() => ctx.setHeightmap(NO_HEIGHTMAP.key)}
                                 >
                                     <ResetIcon />
                                 </IconButton>
@@ -136,12 +152,14 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                                 alignItems: 'center',
                             }}
                         >
-                            <Typography className={styles.colorSchemeTitleText}>Color scheme</Typography>
+                            <Typography className={styles.colorSchemeTitleText}>
+                                {t('web:terrain_color_scheme')}
+                            </Typography>
                             {ctx.processHeightmaps && <CircularProgress size={16} sx={{ ml: 1 }} />}
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
-                                {capitalize(ctx.configureMapState.terrain?.key ?? ctx.configureMapState.terrain)}
+                                {capitalize(getCurrentColorScheme(t, ctx))}
                             </Typography>
                             <ExpandMore sx={{ color: 'var(--text-secondary)', ml: 1 }} ref={anchorEl} />
                         </div>
@@ -158,22 +176,22 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                             <MenuItem
                                 divider
                                 onClick={() => {
-                                    ctx.setHeightmap(NO_HEIGHTMAP);
+                                    ctx.setHeightmap(NO_HEIGHTMAP.key);
                                     setOpenMenu(false);
                                 }}
                             >
-                                None
+                                {t(NO_HEIGHTMAP.name)}
                             </MenuItem>
-                            {Object.values(heightmapsLayers).map((item) => {
+                            {Object.values(getHeightmapLayers()).map((item) => {
                                 return (
                                     <MenuItem
                                         key={item.key}
                                         onClick={() => {
-                                            const selectedHeightmap = heightmapsLayers.find(
+                                            const selectedHeightmap = getHeightmapLayers().find(
                                                 (layer) => layer.key === item.key
                                             );
                                             selectedHeightmap.opacity = getOpacity(selectedHeightmap.key) / 100;
-                                            ctx.setHeightmap(selectedHeightmap ?? NO_HEIGHTMAP);
+                                            ctx.setHeightmap(selectedHeightmap ?? NO_HEIGHTMAP.key);
                                             setOpenMenu(false);
                                         }}
                                     >
@@ -197,7 +215,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                                 justifyContent: 'space-between',
                             }}
                         >
-                            <Typography className={styles.terrainSliderTitle}>Visibility</Typography>
+                            <Typography className={styles.terrainSliderTitle}>{t('web:terrain_visibility')}</Typography>
                             <Typography className={styles.terrainSliderValue}>{`${value}%`}</Typography>
                         </div>
                         {value !== undefined && (
@@ -216,9 +234,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                 </Box>
             ) : (
                 <Box sx={{ mx: 2 }}>
-                    <Typography className={styles.terrainInfo}>
-                        Select one of visualization options: Altitude, Hillshade, Slope.
-                    </Typography>
+                    <Typography className={styles.terrainInfo}>{t('web:terrain_desc')}</Typography>
                 </Box>
             )}
         </>

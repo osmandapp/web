@@ -3,9 +3,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { currentDiffHours } from '../../manager/WeatherManager';
 import AppContext from '../../context/AppContext';
 import styles from '../weather/weather.module.css';
+import { useTranslation } from 'react-i18next';
 
 export default function WeatherInfo({ dayForecast, weekForecast }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [resultText, setResultText] = useState(null);
 
@@ -53,7 +55,7 @@ export default function WeatherInfo({ dayForecast, weekForecast }) {
 
     return (
         <ListItem id="se-weather-info" className={styles.weatherInfoBlock}>
-            <Typography className={styles.weatherInfo}>{`Weather generated: ${resultText}`}</Typography>
+            <Typography className={styles.weatherInfo}>{`${t('web:weather_generated')}: ${resultText}`}</Typography>
         </ListItem>
     );
 }

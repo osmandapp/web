@@ -140,7 +140,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                 </DialogActions>
             </Dialog>
             {emailChanged && (
-                <Dialog classes={{ paper: classes.paper }} open={true} onClose={() => setOpenChangeEmailDialog(false)}>
+                <Dialog open={true} onClose={() => setOpenChangeEmailDialog(false)}>
                     <Grid container spacing={2}>
                         <Grid item xs={11} sx={{ mb: -3 }}>
                             <DialogTitle>Email changed succesfully</DialogTitle>

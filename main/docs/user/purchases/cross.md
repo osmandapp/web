@@ -22,7 +22,7 @@ The following OsmAnd products currently support use across multiple platforms (A
 - **Maps+** subscription  
 - **Maps+** one-time in-app purchase
 
-Starting with **OsmAnd version 5.0**, released in celebration of our **15th anniversary**, cross-platform access has been extended to **Maps+** (formerly known as *Unlimited*). Previously, only the [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) subscription was cross-platform.  
+Starting with **OsmAnd version 5.1**, released in celebration of our **15th anniversary**, cross-platform access has been extended to **Maps+** (formerly known as *Unlimited*). Previously, only the [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) subscription was cross-platform.  
 
 To activate cross-platform access, purchases must be linked to your [OsmAnd Cloud](../personal/osmand-cloud.md#login) account.  
 You can compare all OsmAnd products here: [difference between purchases](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)

@@ -17,12 +17,15 @@ const config = {
   staticDirectories: ['static', 'legacy-image-static'],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr', 'uk', 'de', 'pt'],
+    locales: ['en', 'fr', 'uk', 'de', 'it', 'pl', 'es', 'pt'],
     localeConfigs: {
       en: { label: 'English' },
       fr: { label: 'Français' },
       uk: { label: 'Українська' },
       de: { label: 'Deutsch' },
+      it: { label: 'Italiano' },
+      pl: { label: 'Polski' },
+      es: { label: 'Español' },
       pt: { label: 'Português' },
     },
   },

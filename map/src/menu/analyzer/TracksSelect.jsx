@@ -144,7 +144,7 @@ export default function TrackSelect({ tracksFolders, setTracksFolders }) {
                                             </ListItemIcon>
                                             <ListItemText>
                                                 <Typography variant="inherit" noWrap>
-                                                    Select tracks
+                                                    {t('web:track_analyzer_select_tracks')}
                                                 </Typography>
                                             </ListItemText>
                                         </MenuItem>

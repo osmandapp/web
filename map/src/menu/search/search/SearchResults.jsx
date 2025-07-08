@@ -10,7 +10,7 @@ import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { getCenterMapLoc } from '../../../manager/MapManager';
-import { getDistance } from '../../../util/Utils';
+import { getDistance, getBearing } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
 import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 import useHashParams from '../../../util/hooks/useHashParams';
@@ -50,8 +50,24 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const [locReady, setLocReady] = useState(false);
     const [errorZoom, setErrorZoom] = useState(null);
     const currentLoc = useGeoLocation(ctx);
+    const { zoom, lat = null, lon = null } = useHashParams();
+    const [debouncedLatLon, setDebouncedLatLon] = useState({ lat, lon });
 
-    const { zoom } = useHashParams();
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            setDebouncedLatLon({ lat, lon });
+        }, 300);
+
+        return () => {
+            clearTimeout(handler);
+        };
+    }, [lat, lon]);
+
+    const centerFromHash = useMemo(() => {
+        return debouncedLatLon.lat != null && debouncedLatLon.lon != null
+            ? { lat: debouncedLatLon.lat, lon: debouncedLatLon.lon }
+            : null;
+    }, [debouncedLatLon]);
 
     useEffect(() => {
         if (result === EMPTY_SEARCH_RESULT) {
@@ -99,7 +115,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
     const memoizedResult = useMemo(() => {
         if (!currentLoc) return null;
-        const loc = getLoc();
+        const { loc, isUser } = getLoc();
 
         if (!loc) return null;
 
@@ -116,12 +132,18 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             const lat = f?.geometry?.coordinates[1];
             const lon = f?.geometry?.coordinates[0];
             if (!lat || !lon) return f;
+
+            const distance = lon === 0 && lat === 0 ? null : getDistance(loc.lat, loc.lng, lat, lon);
+            const bearing = lon === 0 && lat === 0 ? null : getBearing(loc.lat, loc.lng, lat, lon);
+
             return {
                 ...f,
-                locDist: lon === 0 && lat === 0 ? null : getDistance(loc.lat, loc.lng, lat, lon),
+                locDist: distance,
+                bearing: bearing,
+                isUserLocation: isUser,
             };
         });
-    }, [currentLoc, ctx.searchResult]);
+    }, [currentLoc, ctx.searchResult, centerFromHash]);
 
     useEffect(() => {
         if (!memoizedResult) return;
@@ -166,15 +188,17 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     }
 
     function getLoc() {
+        let isUser = false;
         let loc = null;
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
+            isUser = true;
             loc = currentLoc;
             setLocReady(true);
         } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
             loc = getCenterMapLoc(hash);
             setLocReady(true);
         }
-        return loc;
+        return { loc, isUser };
     }
 
     useEffect(() => {
@@ -189,7 +213,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     }, [ctx.searchResult]);
 
     function searchByWord(value, baseSearch = false) {
-        const loc = getLoc();
+        const { loc } = getLoc();
 
         if (!loc) return;
 
