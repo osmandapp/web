@@ -1,0 +1,62 @@
+---
+source-hash: f33e1e0ea0b176046b9f06a32f2877fe76847e29b7ba025d18f055347afadff1
+sidebar_position: 10
+---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+# Paquetes de voz {#voice-packages}
+
+<IncompleteArticle/>
+
+OsmAnd admite dos tipos de paquetes de voz:
+- **Texto a voz** (https://developer.android.com/reference/android/speech/tts/TextToSpeech) disponible en las tiendas de aplicaciones o preinstalado
+- **Paquetes de voz grabados**, que incluyen voces grabadas.
+
+Si no pudo encontrar el paquete de voz que necesita, siga los siguientes ejemplos y cree su propio paquete de voz. Ejemplos: https://github.com/osmandapp/OsmAnd-resources/tree/master/voice, paquete alemán [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip), paquete inglés [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
+
+### Diferencia entre paquetes TTS y grabados {#difference-between-tts-and-recorded-packages}
+
+- un motor de texto a voz admite la pronunciación de nombres de calles, referencias y nombres de POI
+- todos los paquetes compatibles con texto a voz se agrupan y actualizan con una aplicación
+- un paquete grabado debe instalarse y actualizarse manualmente (aunque el archivo de configuración podría actualizarse con la actualización de la aplicación)
+- un paquete grabado puede no admitir algunas formas correctas, y el soporte es limitado
+- un paquete grabado no requiere que se instale ningún motor TTS propietario
+
+### Estructura del paquete {#package-structure}
+
+Un paquete de voz generalmente se distribuye como .voice.zip, donde el zip contiene una carpeta con [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (archivo de **configuración** principal) y archivos de sonido si están presentes.
+
+Los archivos de configuración están escritos en lenguaje JavaScript. Todos los archivos de configuración son, por defecto, paquetes TTS, incluso si aún no hay TTS presente para admitir el idioma. Y luego la configuración se extiende mapeando 'frases de diccionario' a 'nombres de archivos grabados'.
+
+```
+function populateDictionary(tts) {
+	// RUTA CALCULADA
+	dictionary["route_is1"] = tts ? "Die berechnete Strecke ist" : "route_is1.ogg";
+	dictionary["route_is2"] = tts ? "lang" : "route_is2.ogg";
+	dictionary["route_calculate"] = tts ? "Route neu berechnet" : "route_calculate.ogg";
+	dictionary["distance"] = tts ? "die Entfernung beträgt" : "distance.ogg";
+
+	// IZQUIERDA/DERECHA
+	dictionary["prepare"] = tts ? "Demnächst " : "prepare.ogg";  // Demnächst suena mejor que Vorbereiten zum
+	dictionary["after"] = tts ? "nach" : "after.ogg";
+	
+	dictionary["left"] = tts ? "links abbiegen" : "left.ogg";
+  .....
+}
+
+function route_recalc(dist, seconds) {
+	return dictionary["route_calculate"] + (tts ? ", " : " ") + distance(dist, "nominativ") + (tts ? ", " : " ") + dictionary["time"] + " " + time(seconds) + (tts ? ". " : " ");
+}
+```
+
+
+### Generación de paquete personalizado {#generation-custom-package}
+
+Consulte los [recursos del proyecto](https://github.com/osmandapp/OsmAnd-resources/) y utilice la misma estructura de carpetas que el [paquete alemán](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de); simplemente haga una copia. Una vez hecho esto, puede cambiar, ejecutar el [script de generación](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) y especificar los argumentos requeridos. La ayuda está dentro del script.
+
+### Prueba del paquete de voz (Android) {#testing-voice-package-android}
+
+Para probar, puede usar:
+- navegación;
+- simulación de navegación;
+- o una versión conveniente del [complemento de desarrollo de OsmAnd](/docs/user/navigation/guidance/voice-navigation#testing-of-voice-prompts), que simula diferentes comandos de voz para probar.
