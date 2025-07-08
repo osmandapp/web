@@ -227,9 +227,22 @@ This section of the *Overview* tab displays ***tag data*** and ***all general in
 
 ### Track Information Activity {#track-information-activity}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Track Information Activity](@site/static/img/personal/tracks/track_info_activity_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track Information Activity](@site/static/img/personal/tracks/track_info_activity_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 The *Activity* feature in OsmAnd allows you to tag recorded GPX tracks with specific activities for further analysis and organization in folders.
 

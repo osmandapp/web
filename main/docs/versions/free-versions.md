@@ -18,6 +18,20 @@ Direct links to free OsmAnd versions.
 
 ## Version 5 {#version-5}
 
+### Version 5.1 {#version-51}
+
+Release date 06/2025:
+
+- Added support for web and cross-platform purchases.
+- Moved Temperature units to General settings for easier access.
+- Added battery level indicator for BLE sensors.
+- New, more intuitive UI for point selection in Navigation.
+- Improved widget visibility with a new outline.
+- Added Uphills/Downhills analyzer.
+- Expanded Wikipedia & Wikivoyage integration for more POIs.
+
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.3-5103.apk" />
+
 ### Version 5.0 {#version-50}
 
 Release date 04/2025:

@@ -8,6 +8,7 @@ import { ReactComponent as HuaweiIcon } from '../../assets/icons/ic_logo_huawei_
 import { ReactComponent as FastSpringIcon } from '../../assets/icons/ic_action_purchases_outlined.svg';
 import styles from '../../frame/components/items/items.module.css';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
+import { statusMap } from './PurchaseStatus';
 
 const storeMap = {
     'Google Play': {
@@ -32,11 +33,14 @@ const storeMap = {
     },
 };
 
-export function getStatus(state) {
+export function getStatus(state, t = null) {
     if (state === 'cancelled' || state === 'in_grace_period') {
-        return 'active';
+        state = 'active';
     }
-    return state;
+    if (t === null) {
+        return state;
+    }
+    return t(statusMap[state].text);
 }
 
 export default function PurchaseManager({ store }) {

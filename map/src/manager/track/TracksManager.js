@@ -19,6 +19,8 @@ import { isVisibleTrack, updateVisibleCache } from '../../menu/visibletracks/Vis
 import { getFileStorage, GPX } from '../GlobalManager';
 import { closeTrack } from './DeleteTrackManager';
 import { SHARE_TYPE } from '../../menu/share/shareConstants';
+import { doSort } from '../../menu/actions/SortActions';
+import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const EMPTY_FILE_NAME = '__folder__.info';
@@ -466,7 +468,7 @@ function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
     };
 }
 
-export function createTrackGroups(files, isSmartf = false) {
+export function createTrackGroups({ files, isSmartf = false, ctx }) {
     const trackGroups = [];
     const tracks = [];
 
@@ -517,7 +519,14 @@ export function createTrackGroups(files, isSmartf = false) {
     }
 
     addFilesAndCalculateLastModified(trackGroups);
-    return trackGroups;
+
+    const sorted = doSort({
+        method: ctx.selectedSort?.tracks?.[DEFAULT_GROUP_NAME] ?? DEFAULT_SORT_METHOD,
+        files: [],
+        groups: trackGroups,
+    });
+
+    return sorted.groups;
 }
 
 function addFilesAndCalculateLastModified(groups) {

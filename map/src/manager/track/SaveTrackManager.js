@@ -374,11 +374,9 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
 
 function updateTrackGroups(listFiles, ctx) {
     if (!_.isEmpty(listFiles)) {
-        //get gpx files
-        let files = getGpxFiles(listFiles);
-        //get groups
-        let trackGroups = createTrackGroups(files);
-        ctx.setTracksGroups(trackGroups, ctx);
+        const files = getGpxFiles(listFiles);
+        const trackGroups = createTrackGroups({ files, ctx });
+        ctx.setTracksGroups(trackGroups);
     } else {
         ctx.setTracksGroups([]);
     }

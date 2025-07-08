@@ -234,9 +234,14 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** (*Android only*) | <Translate android="true" ids="litres"/> | Europe, Aisa, Latin America, Canada, Japan, India, Australia |
+| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Europe, Aisa, Latin America, Canada, Japan, India, Australia |
 |  | <Translate android="true" ids="imperial_gallons"/> | UK and similar |
 |  | <Translate android="true" ids="us_gallons"/> | United States |
+|  |  |  |
+| **<Translate android="true" ids="shared_string_temperature"/>** (*Android only*)| <Translate android="true" ids="system_default_theme"/> |  |
+|  | <Translate android="true" ids="weather_temperature_celsius"/> |  |
+|  | <Translate android="true" ids="weather_temperature_fahrenheit"/> |  |
+|  |  |  |
 | **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *For precise measurements*, choose how distance information is displayed in the navigation widgets, such as the distance to a point, the next turn, or a specific lane. |
 |          | <Translate android="true" ids="round_up"/> | *For better readability*, the numbers displayed in the navigation widgets (distance to a point, next turn, or lane) will be rounded down to have fewer digits. <br/> For examples: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
 

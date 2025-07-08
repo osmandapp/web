@@ -254,7 +254,7 @@ Go to: *Three-dot menu → Change default appearance*
 
 <TabItem value="ios" label="iOS">
 
-Go to: *Long tap folder → Change appearance*
+Go to: *Long tap folder → Default appearance*
 
 ![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 

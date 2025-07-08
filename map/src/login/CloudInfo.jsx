@@ -14,6 +14,7 @@ import loginStyles from './login.module.css';
 import ColorBlock from '../frame/components/other/ColorBlock';
 import DownloadBackupDialog from './dialogs/DownloadBackupDialog';
 import { useWindowSize } from '../util/hooks/useWindowSize';
+import { formatString } from '../manager/SettingsManager';
 
 export default function CloudInfo({ setOpenCloudInfo }) {
     const ctx = useContext(AppContext);
@@ -25,7 +26,7 @@ export default function CloudInfo({ setOpenCloudInfo }) {
     const widthDialog = width / 2 < 450 ? width * 0.75 : width / 2;
 
     function getTotalFiles() {
-        return `${ctx.listFiles.totalFiles} (${ctx.listFiles.totalFileVersions} including versions)`;
+        return formatString(t('web:total_files_desc'), [ctx.listFiles.totalFiles, ctx.listFiles.totalFileVersions]);
     }
 
     function getStorageInfo() {
@@ -52,7 +53,7 @@ export default function CloudInfo({ setOpenCloudInfo }) {
                 <DefaultItem
                     id={'cloud-info-total-files'}
                     icon={<FilesIcon />}
-                    name={'Total files'}
+                    name={t('web:total_files_title')}
                     additionalInfo={getTotalFiles()}
                     revertText={true}
                 />
@@ -60,7 +61,7 @@ export default function CloudInfo({ setOpenCloudInfo }) {
                 <DefaultItem
                     id={'cloud-info-storage'}
                     icon={<StorageIcon />}
-                    name={'Storage'}
+                    name={t('web:storage')}
                     additionalInfo={getStorageInfo()}
                     revertText={true}
                 />
@@ -68,7 +69,7 @@ export default function CloudInfo({ setOpenCloudInfo }) {
                 <DefaultItem
                     id={'cloud-info-cloud-storage'}
                     icon={<CloudIcon />}
-                    name={'Cloud storage used'}
+                    name={t('web:storage_used')}
                     additionalInfo={getCloudStorageInfo()}
                     revertText={true}
                 />
