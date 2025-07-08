@@ -1,0 +1,62 @@
+---
+source-hash: f33e1e0ea0b176046b9f06a32f2877fe76847e29b7ba025d18f055347afadff1
+sidebar_position: 10
+---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+# Pacchetti vocali {#voice-packages}
+
+<IncompleteArticle/>
+
+OsmAnd supporta due tipi di pacchetti vocali:
+- **Text-To-Speech** (https://developer.android.com/reference/android/speech/tts/TextToSpeech) disponibile negli App Store o preinstallato
+- **Pacchetti vocali registrati**, che includono voci registrate.
+
+Se non riesci a trovare il pacchetto vocale di cui hai bisogno, segui gli esempi seguenti e crea il tuo pacchetto vocale. Esempi - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice, pacchetto tedesco [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip), pacchetto inglese [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
+
+### Differenza tra pacchetti TTS e registrati {#difference-between-tts-and-recorded-packages}
+
+- un motore Text-To-Speech supporta la pronuncia di nomi di strade, riferimenti, nomi di POI
+- tutti i pacchetti supportati da Text-To-Speech sono raggruppati e aggiornati con un'applicazione
+- un pacchetto registrato deve essere installato e aggiornato manualmente (anche se il file di configurazione potrebbe essere aggiornato con l'aggiornamento dell'app)
+- un pacchetto registrato potrebbe non supportare alcune forme corrette e il supporto è limitato
+- un pacchetto registrato non richiede l'installazione di alcun motore TTS proprietario
+
+### Struttura del pacchetto {#package-structure}
+
+Il pacchetto vocale viene solitamente distribuito come .voice.zip, dove lo zip contiene una cartella con [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (file di **configurazione** principale) e file audio se presenti.
+
+I file di configurazione sono scritti in linguaggio JavaScript. Tutti i file di configurazione sono per impostazione predefinita pacchetti TTS, anche se non è ancora presente alcun TTS per supportare la lingua. E successivamente la configurazione viene estesa mappando "frasi del dizionario" a "nomi di file registrati".
+
+```
+function populateDictionary(tts) {
+	// ROUTE CALCULATED
+	dictionary["route_is1"] = tts ? "Die berechnete Strecke ist" : "route_is1.ogg";
+	dictionary["route_is2"] = tts ? "lang" : "route_is2.ogg";
+	dictionary["route_calculate"] = tts ? "Route neu berechnet" : "route_calculate.ogg";
+	dictionary["distance"] = tts ? "die Entfernung beträgt" : "distance.ogg";
+
+	// LEFT/RIGHT
+	dictionary["prepare"] = tts ? "Demnächst " : "prepare.ogg";  // Demnächst sounds better then Vorbereiten zum
+	dictionary["after"] = tts ? "nach" : "after.ogg";
+
+	dictionary["left"] = tts ? "links abbiegen" : "left.ogg";
+  .....
+}
+
+function route_recalc(dist, seconds) {
+	return dictionary["route_calculate"] + (tts ? ", " : " ") + distance(dist, "nominativ") + (tts ? ", " : " ") + dictionary["time"] + " " + time(seconds) + (tts ? ". " : " ");
+}
+```
+
+
+### Generazione di pacchetti personalizzati {#generation-custom-package}
+
+Controlla le [risorse del progetto](https://github.com/osmandapp/OsmAnd-resources/) e utilizza la stessa struttura di cartelle del [pacchetto tedesco](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de) - semplicemente copialo. Una volta fatto, puoi modificare, eseguire lo [script di generazione](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) e specificare gli argomenti richiesti. L'aiuto è all'interno dello script.
+
+### Test del pacchetto vocale (Android) {#testing-voice-package-android}
+
+Per i test, puoi utilizzare:
+- navigazione;
+- simulazione di navigazione;
+- o una comoda versione del [plugin di sviluppo OsmAnd](/docs/user/navigation/guidance/voice-navigation#testing-of-voice-prompts), che simula diversi comandi vocali per i test.
