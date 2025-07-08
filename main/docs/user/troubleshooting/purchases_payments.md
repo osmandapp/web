@@ -72,11 +72,11 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Amazon store is closing - what to do {#amazon-store-is-closing---what-to-do}
 
-We are working on a solution to transfer purchases made through Amazon to other platforms.  
-Currently, [it is possible to transfer subscriptions and in-app purchases](../purchases/cross.md).  
-The option to transfer the OsmAnd+ app is still under development.  
-
 On August 20, 2025, Amazon will close the Amazon Appstore for Android devices — details [here](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program).
+
+You need to transfer purchases made through Amazon to other platforms.  
+Currently, [it is possible to transfer subscriptions, in-app purchases amd OsmAnd+ app](../purchases/cross.md).  
+
 
 
 ## How to restore the Topography (formerly Contour lines) plugin purchase {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}

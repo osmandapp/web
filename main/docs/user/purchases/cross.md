@@ -32,12 +32,12 @@ You can compare all OsmAnd products here: [difference between purchases](https:/
 | OsmAnd Pro (subscription)   | ✔              | Works across Android, iOS, and Web via Cloud |
 | Maps+ (subscription)        | ✔              | Requires version 5.0+ and Cloud account |
 | Maps+ (one-time purchase)   | ✔              | Must be activated through OsmAnd Cloud on purchase device |
-| OsmAnd+ (standalone app)    | Coming soon    | Not transferable between stores or platforms |
+| OsmAnd+ (standalone app)    | ✔     | Must be activated through OsmAnd Cloud on purchase device |
 
 
 ## How It Works {#how-it-works}
 
-To use your **OsmAnd Pro** or **Maps+** purchase across different platforms (Android, iOS, or Web), you need to **link it to your OsmAnd Cloud account**.
+To use your **OsmAnd Pro**, **OsmAnd+** or **Maps+** purchase across different platforms (Android, iOS, or Web), you need to **link it to your OsmAnd Cloud account**.
 
 ### Link Your Purchase {#link-your-purchase}
 
