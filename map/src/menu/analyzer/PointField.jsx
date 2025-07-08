@@ -1,5 +1,4 @@
-import { TextField } from '@mui/material/';
-import { Box, InputAdornment } from '@mui/material';
+import { TextField, Box, InputAdornment } from '@mui/material';
 import { ReactComponent as PointAIcon } from '../../assets/icons/ic_action_point_a.svg';
 import { ReactComponent as PointBIcon } from '../../assets/icons/ic_action_point_b.svg';
 import { useEffect, useState } from 'react';
@@ -7,12 +6,14 @@ import styles from './trackanalyzer.module.css';
 import { formatLatLon } from '../navigate/RouteMenu';
 import { parseCoordinate } from './util/PointsManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
+import { useTranslation } from 'react-i18next';
 
 const START_POINT = 'start';
 const FINISH_POINT = 'finish';
 
 export default function PointField({ name, point, setPoint, setStartAnalysis }) {
     const [pointValue, setPointValue] = useState('');
+    const { t } = useTranslation();
 
     useEffect(() => {
         if (pointValue === '') {
@@ -53,7 +54,7 @@ export default function PointField({ name, point, setPoint, setStartAnalysis }) 
         <Box sx={{ width: '100%', mt: '-1px' }}>
             <TextField
                 variant="filled"
-                placeholder={name === START_POINT ? 'Point A' : 'Point B'}
+                placeholder={name === START_POINT ? t('web:track_analyzer_a') : t('web:track_analyzer_b')}
                 fullWidth
                 value={pointValue}
                 sx={{

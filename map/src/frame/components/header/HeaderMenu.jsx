@@ -24,7 +24,7 @@ import enList from '../../../resources/translations/en/translation.json';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import supportedLanguages from '../../../resources/translations/supportedLanguages.json';
 
-const pages = ({t}) => [
+const pages = ({ t }) => [
     {
         name: t('web:header_docs'),
         url: '/docs/intro',
@@ -165,7 +165,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                     OsmAnd
                 </IconButton>
                 <Box className={styles.menu}>
-                    {pages({t}).map((page) => (
+                    {pages({ t }).map((page) => (
                         <Button
                             component="a"
                             href={page.url}
