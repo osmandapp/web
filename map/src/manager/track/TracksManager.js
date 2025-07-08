@@ -19,6 +19,8 @@ import { isVisibleTrack, updateVisibleCache } from '../../menu/visibletracks/Vis
 import { getFileStorage, GPX } from '../GlobalManager';
 import { closeTrack } from './DeleteTrackManager';
 import { SHARE_TYPE } from '../../menu/share/shareConstants';
+import { doSort } from '../../menu/actions/SortActions';
+import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const EMPTY_FILE_NAME = '__folder__.info';
@@ -268,6 +270,9 @@ function getEditablePoints(track) {
     if (track.tracks) {
         track.tracks.forEach((track) => {
             if (track.points) {
+                if (points.length > 0) {
+                    points[points.length - 1].profile = PROFILE_GAP;
+                }
                 points = points.concat(track.points);
             }
         });
@@ -466,7 +471,7 @@ function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
     };
 }
 
-export function createTrackGroups(files, isSmartf = false) {
+export function createTrackGroups({ files, isSmartf = false, ctx }) {
     const trackGroups = [];
     const tracks = [];
 
@@ -517,7 +522,14 @@ export function createTrackGroups(files, isSmartf = false) {
     }
 
     addFilesAndCalculateLastModified(trackGroups);
-    return trackGroups;
+
+    const sorted = doSort({
+        method: ctx.selectedSort?.tracks?.[DEFAULT_GROUP_NAME] ?? DEFAULT_SORT_METHOD,
+        files: [],
+        groups: trackGroups,
+    });
+
+    return sorted.groups;
 }
 
 function addFilesAndCalculateLastModified(groups) {
@@ -589,10 +601,10 @@ export function validName(name) {
 }
 
 export function isTrackExists(name, folder, folderName, tracks) {
-    const foundFolder = findGroupByName(
-        tracks,
-        folderName !== null ? folderName : folder?.title ? folder?.title : folder
-    );
+    if (!tracks) {
+        return false;
+    }
+    const foundFolder = findGroupByName(tracks, folderName !== null ? folderName : (folder?.title ?? folder));
     if (foundFolder) {
         if (foundFolder.name === DEFAULT_GROUP_NAME) {
             return foundFolder.files.some((f) => TracksManager.prepareName(f.name) === name);
@@ -1502,7 +1514,7 @@ export function getTracksArrBounds(files) {
 export function getAllGroupNames(groups, parentName = '') {
     const groupTitles = [];
 
-    groups.forEach((group) => {
+    groups?.forEach((group) => {
         if (group.fullName === DEFAULT_GROUP_NAME) {
             // skip default folder
             return;

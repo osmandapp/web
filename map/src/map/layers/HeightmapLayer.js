@@ -19,7 +19,7 @@ export default function HeightmapLayer() {
     useEffect(() => {
         if (!map || !ltx.loginUser || ltx.loginUser === INIT_LOGIN_STATE) return;
 
-        if (ctx.heightmap === NO_HEIGHTMAP) {
+        if (ctx.heightmap === NO_HEIGHTMAP.key) {
             if (tileLayerRef.current) {
                 map.removeLayer(tileLayerRef.current);
                 tileLayerRef.current = null;

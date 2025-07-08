@@ -13,7 +13,7 @@ export default function PlanRouteMenu() {
             //get gpx files
             let files = getGpxFiles(ctx.listFiles);
             //get groups
-            let trackGroups = createTrackGroups(files);
+            let trackGroups = createTrackGroups({ files, ctx });
             ctx.setTracksGroups(trackGroups);
         } else {
             ctx.setTracksGroups([]);

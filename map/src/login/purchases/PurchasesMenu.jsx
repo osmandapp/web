@@ -17,6 +17,7 @@ import { getStatus } from './PurchaseManager';
 import { getAccountType } from '../LoginMenu';
 import { FREE_ACCOUNT_SUB_TYPE } from '../../manager/LoginManager';
 import FreeAccItem, { FreeAccountObject } from './free/FreeAccItem';
+import { formatString } from '../../manager/SettingsManager';
 
 export default function PurchasesMenu() {
     const ltx = useContext(LoginContext);
@@ -134,7 +135,7 @@ export default function PurchasesMenu() {
                             )}
                             <ThickDivider mt={'0px'} mb={'0px'} />
                             <SubTitleMenu text={t('troubleshooting')} />
-                            <SimpleText text={'If you have any questions, please contact us at support@osmand.net'} />
+                            <SimpleText text={formatString(t('contact_support_description'), ['support@osmand.net'])} />
                         </Box>
                     )}
                 </Box>

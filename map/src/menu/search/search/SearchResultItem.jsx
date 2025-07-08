@@ -90,7 +90,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     const { t } = useTranslation();
     const { ref, inView } = useInView();
 
-    const { name, info, distance, type, city, icon } = parseItem(item);
+    const { name, info, distance, bearing, isUserLocation, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
 
     const itemId = getObjIdSearch(item);
@@ -124,8 +124,10 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     function parseItem(item) {
         const res = getPropsFromSearchResultItem(item.properties, t);
         const distance = item.locDist;
+        const bearing = item.bearing;
+        const isUserLocation = item.isUserLocation;
         const icon = item.icon;
-        return { ...res, icon, distance };
+        return { ...res, icon, distance, bearing, isUserLocation };
     }
 
     function addDistance() {
@@ -244,14 +246,24 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                                             <Typography className={styles.placeDistance}>{' · '}</Typography>
                                             <ListItemIcon
                                                 sx={{
-                                                    fill: '#237bff',
                                                     mr: -2.5,
                                                     alignItems: 'center',
                                                 }}
                                             >
-                                                <DirectionIcon />
+                                                <DirectionIcon
+                                                    style={{
+                                                        transform: `rotate(${bearing ?? 0}deg)`,
+                                                        transformOrigin: 'center',
+                                                        fill: isUserLocation ? '#237bff' : '#727272',
+                                                    }}
+                                                />
                                             </ListItemIcon>
-                                            <Typography className={styles.placeDistance}>{addDistance()}</Typography>
+                                            <Typography
+                                                className={styles.placeDistance}
+                                                style={{ color: isUserLocation ? '#237bff' : '#727272' }}
+                                            >
+                                                {addDistance()}
+                                            </Typography>
                                         </span>
                                     )}
                                 </MenuItemWithLines>

@@ -144,8 +144,8 @@ export default function TracksMenu() {
                     ) : (
                         <Box id={'se-track-menu'}>
                             <Empty
-                                title={'You don’t have track files'}
-                                text={'You can import, create track files using OsmAnd.'}
+                                title={t('empty_tracks')}
+                                text={t('empty_tracks_desc')}
                                 folder={DEFAULT_GROUP_NAME}
                             />
                         </Box>

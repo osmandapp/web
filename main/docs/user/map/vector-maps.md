@@ -214,15 +214,30 @@ On Android, archived maps are shown in **Orange**. In iOS, maps that can be upda
 
 ## Coordinates Grid {#coordinates-grid}
 
-<InfoAndroidOnly />
 
 Go to: *Menu → Configure Map → Show → Coordinates Grid*  
 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
 ![Coordinates grid menu](@site/static/img/map/coordinates_grid_settings_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation.
 
-***Available coordinate formats:***
+***1. Available coordinate formats:***
 
 - **DD°MM′SS″** (Degrees, Minutes, Seconds)
 - **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
@@ -253,13 +268,20 @@ OsmAnd supports multiple **base projections** for displaying geographic grid lin
 
 
 
-***Zoom level settings:***
+***2. Zoom level settings:***
 
 - The grid lines appear based on the zoom level, between **2 – 22**.
 - The lines dynamically adjust coordinate divisions based on the zoom level.
 
 **By default, the app uses the coordinate format selected in** [General settings](../personal/profiles.md#units--formats).
 
+
+***3. Labels position:***
+- Edges
+- Center
+
+***4. Grid color:***
+- Choose your grid color for Day/Night mode.
 
 ## Configure Map Style {#configure-map-style}
 

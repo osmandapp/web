@@ -1,14 +1,16 @@
 import React, { forwardRef, useContext } from 'react';
 import AppContext from '../../context/AppContext';
-import { Box, Checkbox, FormControlLabel, MenuItem, Paper, Typography } from '@mui/material';
+import { Box, Checkbox, FormControlLabel, FormControl, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import weatherStyles from './weather.module.css';
-import { FormControl } from '@mui/material/';
 import { disableLayers } from '../../manager/WeatherManager';
 import ActionItem from '../components/ActionItem';
+import { useTranslation } from 'react-i18next';
 
 const WeatherLayersActions = forwardRef((props, ref) => {
     const ctx = useContext(AppContext);
+
+    const { t } = useTranslation();
 
     const switchLayer = (ctx, index, weatherType) => (e) => {
         let newLayers = { ...ctx.weatherLayers };
@@ -36,7 +38,7 @@ const WeatherLayersActions = forwardRef((props, ref) => {
                     <FormControl sx={{ width: '257px' }}>
                         <MenuItem className={weatherStyles.titleItem}>
                             <Typography className={weatherStyles.titleText} noWrap>
-                                Map layers
+                                {t('web:weather:map_layers')}
                             </Typography>
                         </MenuItem>
                         {ctx.weatherLayers &&

@@ -297,10 +297,10 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
     - Improves clarity and maximizes the space for important data.
     - Especially useful when displaying many widgets on the same **row**.
 
-3. **Individual size for different rows** (*for top and bottom panels*):
+3. **Individual size for different rows** (*for all panels*):
 
-    - Widgets can be individually sized by adjusting the row size.
-    - **NOTE:** Changing the size of one widget in a row will resize all widgets in that row.
+    - Widgets can be individually sized by adjusting the row and column size.
+    - **NOTE:** Changing the size of one widget in a row/column will resize all widgets in that row/column.
 
 4. **To change the widget size and icon visibility:**
 

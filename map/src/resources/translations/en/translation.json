@@ -5303,5 +5303,10 @@
   "shared_string_learn_more": "Learn more",
   "explore_osmnad_plans_to_find_suitable": "Explore OsmAnd Plans to find one suitable for you.",
   "features_menu_group": "Features",
-  "free_account": "Free account"
+  "free_account": "Free account",
+  "contact_support_description": "If you have any questions, please contact us at %1$s.",
+  "empty_tracks": "You don\\'t have track files.",
+  "empty_tracks_description": "You can import, create, or record track files using OsmAnd.",
+  "shared_string_hillshade": "Hillshade",
+  "shared_string_none": "None"
 }

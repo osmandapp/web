@@ -184,16 +184,15 @@ function deleteTracksFromGroups(trackName, ctx) {
             if (fileIndexInFiles !== -1) {
                 group.files.splice(fileIndexInFiles, 1);
             }
-            ctx.setTracksGroups([...ctx.tracksGroups]);
         }
     } else {
         const group = findGroupByName(ctx.tracksGroups, '');
         const fileIndexInFiles = group.files.findIndex((file) => file.name === trackName);
         if (fileIndexInFiles !== -1) {
             group.files.splice(fileIndexInFiles, 1);
-            ctx.setTracksGroups([...ctx.tracksGroups]);
         }
     }
+    ctx.setTracksGroups([...ctx.tracksGroups]);
 }
 
 function deleteTracksFromLastGroup(trackName, ctx, isFavorite = false) {

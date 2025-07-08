@@ -159,7 +159,7 @@ Go to: *Menu → Settings → app profile → Navigation settings → Route para
 
 The parameters in the **Development** section are mainly for advanced users and are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.  
 
-| Parameter | Description | Note |
+| Parameter | Description |
 |:------------|:---------------|
 | *Routing type* (*Android*) / *Routing algorithm* (*iOS*) | <ul><li>**A*** 2-phase (*Android*) / **A*** (*iOS*) adds an extra phase to the default algorithm to improve the quality of the calculated route. This option can be useful for finding routes in large and complex road networks, but route calculation may take longer.</li><li>**A* classic** (*Android*) / **Highway hierarchies** (*iOS*) optimize route planning by favoring main roads and motorways, minimizing the number of turns and junctions on the route. Particularly effective over long distances.</li><li>**HH (Highway Hierarchies) x Java** (*Android only*) is based on the implementation of hierarchical data structures to optimize pathfinding on a map, taking into account runtime constraints and device resource consumption, and is realized on the Java platform.</li><li>**HH (Highway Hierarchies) x C++** (*Android only*) is an algorithm that uses the C++ programming language to efficiently process road network data and build optimal routes using hierarchical data structures. It is optimized for fast processing of large amounts of data and is particularly effective for navigating maps with many road networks.</li></ul> |  
 | *GPX approximation* (*Android only*)  | <ul><li>**Routing-based** GPX approximation in **C++ and Java** uses route data to approximate GPS tracks with existing road routes, which improves track accuracy and reduces track size.</li><li>**Geometry-based** GPX approximations in **C++ and Java** work based on geometric principles to quickly and accurately approximate GPS tracks, allowing efficient processing of large amounts of data.</li></ul> |
@@ -325,7 +325,7 @@ For optimal route calculation in OsmAnd, you should consider the following vehic
 
 1. Set the [*Default Speed* or *Road Speeds*](#default-speed--road-speeds), as the [minimum and maximum speed](#road-speeds) of the vehicle. This will help the application determine the time required to complete the route and allow it to choose the best route, considering the speed limits on different road segments.
 2. Specify the [*type*](#fuel-used-by-motor) of fuel used by the motor. This will allow the app to estimate CO2 emissions.
-3. Enter the [*capacity of your tank*](#fuel-tank-capacity) (*Android*) to accurately track your fuel level and consumption.
+3. Enter the [*capacity of your tank*](#fuel-tank-capacity) to accurately track your fuel level and consumption.
 4. Define [*size and weight parameters*](#size-parameters) of your vehicle, which can help the app calculate the optimal route and avoid obstacles on the road due to restrictions.
 
 Correctly setting the parameters in the OsmAnd app will help you avoid problems when navigating a route, choose the most suitable one according to the type of vehicle and road restrictions, and calculate the time for your trip.
@@ -421,9 +421,24 @@ The **Fuel used by motor** setting is only available in vehicle-based navigation
 
 #### Fuel tank capacity {#fuel-tank-capacity}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+
+
 
 The **Fuel tank capacity** parameter allows you to track your vehicle's fuel level and consumption more accurately by providing the total volume of your tank. The unit of measurement for fuel capacity is determined by the settings configured in *Menu → Configure profile → General settings → Units & Formats → Unit of volume*. For detailed guidance on setting Units & Formats, refer to the [Profile (Settings)](https://osmand.net/docs/user/personal/profiles#units--formats) article.
 

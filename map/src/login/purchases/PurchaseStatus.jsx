@@ -1,41 +1,47 @@
 import { Box } from '@mui/material';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-const statusMap = {
+export const statusMap = {
     active: {
-        text: 'Active',
+        text: 'web:active_state',
         color: '#14CC70',
         textColor: '#FFFFFF',
     },
     cancelled: {
-        text: 'Cancelled',
+        text: 'web:cancelled_state',
         color: '#F0F0F0',
         textColor: '#E71D36',
     },
     in_grace_period: {
-        text: 'In Grace Period',
+        text: 'web:in_grace_period_state',
         color: '#F0F0F0',
         textColor: '#E71D36',
     },
     on_hold: {
-        text: 'On Hold',
+        text: 'web:on_hold_state',
         color: '#F0F0F0',
         textColor: '#E71D36',
     },
     paused: {
-        text: 'Paused',
+        text: 'web:paused_state',
         color: '#F0F0F0',
         textColor: '#E71D36',
     },
     expired: {
-        text: 'Expired',
+        text: 'web:expired_state',
         color: '#E71D36',
         textColor: '#FFFFFF',
     },
 };
 
 export default function PurchaseStatus({ id, status }) {
-    const { text, color, textColor } = statusMap[status] || { text: 'Unknown', color: '#9E9E9E', textColor: '#FFFFFF' };
+    const { t } = useTranslation();
+    const { text, color, textColor } = statusMap[status] || {
+        text: 'web:unknown_state',
+        color: '#9E9E9E',
+        textColor: '#FFFFFF',
+    };
 
     return (
         <Box
@@ -62,7 +68,7 @@ export default function PurchaseStatus({ id, status }) {
                 letterSpacing: '0.28px',
             }}
         >
-            {text}
+            {t(text)}
         </Box>
     );
 }
