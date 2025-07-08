@@ -5306,5 +5306,7 @@
   "free_account": "Free account",
   "contact_support_description": "If you have any questions, please contact us at %1$s.",
   "empty_tracks": "You don\\'t have track files.",
-  "empty_tracks_description": "You can import, create, or record track files using OsmAnd."
+  "empty_tracks_description": "You can import, create, or record track files using OsmAnd.",
+  "shared_string_hillshade": "Hillshade",
+  "shared_string_none": "None"
 }

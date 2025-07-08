@@ -44,7 +44,7 @@ export const defaultConfigureMapStateValues = {
     showFavorites: true,
     showPoi: false,
     showTracks: true,
-    terrain: NO_HEIGHTMAP,
+    terrain: NO_HEIGHTMAP.key,
 };
 
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
