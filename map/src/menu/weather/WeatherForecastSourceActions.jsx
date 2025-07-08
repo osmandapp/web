@@ -1,9 +1,8 @@
 import React, { forwardRef, useContext } from 'react';
 import AppContext from '../../context/AppContext';
-import { Box, FormControlLabel, MenuItem, Paper, Radio, RadioGroup, Typography } from '@mui/material';
+import { Box, FormControlLabel, FormControl, MenuItem, Paper, Radio, RadioGroup, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import weatherStyles from './weather.module.css';
-import { FormControl } from '@mui/material/';
 import { ReactComponent as WeatherIcon } from '../../assets/menu/ic_action_umbrella.svg';
 import {
     ECWMF_WEATHER_TYPE,
@@ -11,6 +10,7 @@ import {
     LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
 } from '../../manager/WeatherManager';
 import ActionItem from '../components/ActionItem';
+import { useTranslation } from 'react-i18next';
 
 export const weatherTypes = {
     GFS: {
@@ -25,6 +25,8 @@ export const weatherTypes = {
 
 const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref) => {
     const ctx = useContext(AppContext);
+
+    const { t } = useTranslation();
 
     const handleWeatherType = (e) => {
         const selectedType = e.target.value;
@@ -54,7 +56,7 @@ const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref)
                 <Paper id="se-weather-source-actions" className={styles.actions}>
                     <MenuItem className={weatherStyles.titleItem}>
                         <Typography className={weatherStyles.titleText} noWrap>
-                            Source
+                            {t('web:weather_source')}
                         </Typography>
                     </MenuItem>
                     <FormControl sx={{ width: '257px' }}>

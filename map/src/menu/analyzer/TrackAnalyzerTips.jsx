@@ -6,8 +6,11 @@ import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filte
 import styles from './trackanalyzer.module.css';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import React from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 
 export default function TrackAnalyzerTips() {
+    const { t } = useTranslation();
+
     return (
         <>
             <ThickDivider />
@@ -17,9 +20,7 @@ export default function TrackAnalyzerTips() {
                         <DestIcon />
                     </ListItemIcon>
                     <ListItemText>
-                        <Typography whiteSpace="normal">
-                            Select one or two points on the map to find tracks passing through them and view analytics.
-                        </Typography>
+                        <Typography whiteSpace="normal">{t('web:track_analyzer_desc')}</Typography>
                     </ListItemText>
                 </MenuItem>
             </Box>
@@ -30,7 +31,7 @@ export default function TrackAnalyzerTips() {
                         <SortIcon />
                     </ListItemIcon>
                     <ListItemText>
-                        <Typography whiteSpace="normal">Sort button allows to sort tracks by any data type</Typography>
+                        <Typography whiteSpace="normal">{t('web:track_analyzer_tips_1')}</Typography>
                     </ListItemText>
                 </MenuItem>
                 <DividerWithMargin dashed={true} />
@@ -40,7 +41,7 @@ export default function TrackAnalyzerTips() {
                     </ListItemIcon>
                     <ListItemText>
                         <Typography whiteSpace="normal">
-                            Click on <strong>Fields</strong> button to set visible data fields
+                            <Trans i18nKey="web:track_analyzer_tips_2" components={{ strong: <strong /> }} />
                         </Typography>
                     </ListItemText>
                 </MenuItem>

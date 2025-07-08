@@ -32,7 +32,7 @@ import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
 import { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
 import capitalize from 'lodash/capitalize';
-import TerrainConfig from './TerrainConfig';
+import TerrainConfig, { getCurrentColorScheme } from './TerrainConfig';
 import ButtonPro from '../../frame/pro/ButtonPro';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import TopographyProFeatures from '../../frame/pro/TopographyProFeatures';
@@ -238,10 +238,7 @@ export default function ConfigureMap() {
                                                 <ButtonPro type={<TopographyProFeatures />} />
                                             ) : (
                                                 <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
-                                                    {capitalize(
-                                                        ctx.configureMapState.terrain?.key ??
-                                                            ctx.configureMapState.terrain
-                                                    )}
+                                                    {capitalize(getCurrentColorScheme(t, ctx))}
                                                 </Typography>
                                             )}
                                         </div>

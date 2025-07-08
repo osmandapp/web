@@ -24,25 +24,25 @@ import enList from '../../../resources/translations/en/translation.json';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import supportedLanguages from '../../../resources/translations/supportedLanguages.json';
 
-const pages = [
+const pages = ({ t }) => [
     {
-        name: 'Docs',
+        name: t('web:header_docs'),
         url: '/docs/intro',
     },
     {
-        name: 'Blog',
+        name: t('web:header_blog'),
         url: '/blog',
     },
     {
-        name: '💳 Pricing',
+        name: `💳 ${t('web:header_pricing')}`,
         url: '/pricing',
     },
     {
-        name: '🌍 Map',
+        name: `🌍 ${t('web:header_map')}`,
         url: '/map',
     },
     {
-        name: '🚵‍ Join us',
+        name: `🚵‍ ${t('web:header_join_us')}`,
         url: '/docs/hiring',
     },
 ];
@@ -165,7 +165,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                     OsmAnd
                 </IconButton>
                 <Box className={styles.menu}>
-                    {pages.map((page) => (
+                    {pages({ t }).map((page) => (
                         <Button
                             component="a"
                             href={page.url}
