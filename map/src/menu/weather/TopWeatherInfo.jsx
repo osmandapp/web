@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import styles from '../weather/weather.module.css';
 import { format } from 'date-fns';
+import { useTranslation } from 'react-i18next';
 
 export default function TopWeatherInfo({
     loadingLocation,
@@ -12,6 +13,8 @@ export default function TopWeatherInfo({
     useWeatherDate = false,
 }) {
     const ctx = useContext(AppContext);
+
+    const { t } = useTranslation();
 
     function getSubInfo() {
         if (useWeatherDate) {
@@ -23,7 +26,7 @@ export default function TopWeatherInfo({
                 hour12: false,
             })}`;
         } else {
-            return 'Current location';
+            return t('web:weather_current');
         }
     }
 
