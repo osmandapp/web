@@ -239,7 +239,7 @@ const GpxGraphProvider = ({ width }) => {
                         : roadPoints[seg.ind + Number(seg.segment.ext.length) - 1].distanceTotal;
                     attributesTags.forEach((a) => (seg[a] = UNDEFINED_DATA));
                     p.segment.ext.types.split(',').forEach((t) => {
-                        const type = routeTypes[t];
+                        const type = routeTypes?.[t];
                         if (type) {
                             seg = getTags(type, seg);
                         }
