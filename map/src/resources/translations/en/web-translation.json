@@ -186,5 +186,7 @@
   "track_analyzer_tips_2": "Click on <strong>Fields</strong> button to set visible data fields",
   "track_analyzer_select_tracks": "Select tracks",
   "track_analyzer_a": "Point A",
-  "track_analyzer_b": "Point B"
+  "track_analyzer_b": "Point B",
+  "empty_favorites": "You don\\'t have favorite files",
+  "empty_favorites_description": "You can import or create favorite files using OsmAnd App."
 }

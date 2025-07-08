@@ -11,10 +11,13 @@ import Loading from '../errors/Loading';
 import { byTime, doSort } from '../actions/SortActions';
 import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
+import { useTranslation } from 'react-i18next';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
+
+    const { t } = useTranslation();
 
     const [enableGroups, setEnableGroups] = useState([]);
     const [, height] = useWindowSize();
@@ -84,8 +87,8 @@ export default function FavoritesMenu() {
                     </Box>
                 ) : (
                     <Empty
-                        title={'You don’t have favorite files'}
-                        text={'You can import or create favorite files using OsmAnd App.'}
+                        title={t('web:empty_favorites')}
+                        text={t('web:empty_favorites_description')}
                         menu={OBJECT_TYPE_FAVORITE}
                     />
                 )}
