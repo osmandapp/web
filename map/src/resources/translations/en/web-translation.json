@@ -175,5 +175,10 @@
   "total_files_title": "Total files",
   "total_files_desc": " %1$s (%2$s including versions)",
   "storage": "Storage",
-  "storage_used": "Cloud storage used"
+  "storage_used": "Cloud storage used",
+  "header_docs": "Docs",
+  "header_blog": "Blog",
+  "header_pricing": "Pricing",
+  "header_map": "Map",
+  "header_join_us": "Join us"
 }
