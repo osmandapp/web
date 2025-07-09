@@ -1,5 +1,5 @@
 ---
-source-hash: fe481c5c9b5810a2f3cb38ddb31f5928dbe7eb5814f559570b79e31779252d2f
+source-hash: 2940492b887fc393c3f0d0c70f3dc846bfb39e45115a0482ab0a76fda430a200
 sidebar_position: 3
 title: Zakupy w sieci
 ---
@@ -47,12 +47,12 @@ Poniżej przedstawiono ceny produktów OsmAnd w USA i UE. Ceny w innych regionac
 :::
 
 
-|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> €299.00   |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> $299.00   |
 
 :::note
 By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,
@@ -63,19 +63,19 @@ Starting from the third year, the full price will apply.
 
 -->
 
-|    | OsmAnd Free   | **Maps+** Jednorazowo | **Maps+** Subskrypcja | **OsmAnd Pro** |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Typ zakupu** | **Darmowy** | **Zakup jednorazowy** (dożywotnio) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
-| **Cena (EUR)** | 0 € | 39,99 € | 9,99 € | 2,99 € / 29,99 € |
-| **Cena (USD)** | 0 $ | 39,99 $ | 9,99 $ | 2,99 $ / 29,99 $ |
+| | OsmAnd Free | **Maps+** Jednorazowy | **Maps+** Subskrypcja | **OsmAnd Pro** |**OsmAnd XV** |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
+| | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
+| **Typ zakupu** | **Darmowy** | **Zakup jednorazowy** (dożywotnio) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |**Zakup jednorazowy** (15 lat Pro / Maps+ dożywotnio) |
+| **Cena (EUR)** | 0 € | 39,99 € | 9,99 € | 2,99 € / 29,99 € |<s>450 €</s> 299,00 € |
+| **Cena (USD)** | 0 $ | 39,99 $ | 9,99 $ | 2,99 $ / 29,99 $ |<s>450 $</s> 299,00 $ |
 
 
 
-### Funkcje darmowe i płatne {#free-and-paid-features}
+### Funkcje bezpłatne i płatne {#free-and-paid-features}
 
-- [Funkcje darmowe i płatne dla systemu Android.](./android.md#free-and-paid-features)
-- [Funkcje darmowe i płatne dla systemu iOS.](./ios.md#free-and-paid-features)
+- [Funkcje bezpłatne i płatne dla Androida.](./android.md#free-and-paid-features)
+- [Funkcje bezpłatne i płatne dla iOS.](./ios.md#free-and-paid-features)
 
 
 

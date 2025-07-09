@@ -1,5 +1,5 @@
 ---
-source-hash: 9f4dbbf91f34a5275efe83dee3ced74ee6fd21346d50094391417530b145a93e
+source-hash: 88145581c12f95f7e0dba74a712f88afdcbe5249c5f0e8b66b14eb7035e3d3d1
 sidebar_position: 4
 title: Zakupy międzyplatformowe
 ---
@@ -17,16 +17,16 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Obsługiwane zakupy międzyplatformowe {#supported-cross-platform-purchases}
 
-Następujące produkty OsmAnd obsługują obecnie użycie na wielu platformach (Android, iOS i Web):
+Następujące produkty OsmAnd obsługują obecnie użytkowanie na wielu platformach (Android, iOS i Web):
 
 - Subskrypcja **OsmAnd Pro**
 - Subskrypcja **Maps+**
 - Jednorazowy zakup w aplikacji **Maps+**
 
-Począwszy od **wersji OsmAnd 5.0**, wydanej z okazji naszej **15. rocznicy**, dostęp międzyplatformowy został rozszerzony na **Maps+** (wcześniej znany jako *Unlimited*). Wcześniej tylko subskrypcja [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) była międzyplatformowa.
+Począwszy od **wersji OsmAnd 5.1**, wydanej z okazji naszej **15. rocznicy**, dostęp międzyplatformowy został rozszerzony na **Maps+** (wcześniej znany jako *Unlimited*). Wcześniej tylko subskrypcja [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) była międzyplatformowa.
 
 Aby aktywować dostęp międzyplatformowy, zakupy muszą być powiązane z Twoim kontem [OsmAnd Cloud](../personal/osmand-cloud.md#login).
-Wszystkie produkty OsmAnd możesz porównać tutaj: [różnice między zakupami](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
+Możesz porównać wszystkie produkty OsmAnd tutaj: [różnica między zakupami](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
 
 | Typ produktu | Międzyplatformowy | Uwagi |
 |-----------------------------|----------------|-------|
@@ -82,7 +82,7 @@ Jeśli problem nadal występuje, skontaktuj się z **support@osmand.net** i poda
 
 ## Przykład {#example}
 
-Kupiłeś **Maps+** jako jednorazowy zakup w aplikacji w darmowej wersji OsmAnd ze [sklepu Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).
+Zakupiłeś **Maps+** jako jednorazowy zakup w aplikacji w darmowej wersji OsmAnd ze [sklepu Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).
 Później decydujesz się na przejście na iPhone'a i chcesz używać **Maps+** z [wersją OsmAnd na iOS](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 Aby aktywować zakup Maps+ na iOS:
@@ -91,19 +91,19 @@ Aby aktywować zakup Maps+ na iOS:
 2. Zaloguj się do swojego konta [OsmAnd Cloud](../personal/osmand-cloud.md#login):
    *Menu → Ustawienia → OsmAnd Cloud → Utwórz nowe konto / Mam już konto*
 3. Zainstaluj OsmAnd na swoim iPhonie ze [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
-4. Zaloguj się na **tym samym koncie OsmAnd Cloud** na swoim iPhonie.
+4. Zaloguj się na **to samo konto OsmAnd Cloud** na swoim iPhonie.
 5. Przejdź do *Menu → Ustawienia → Zakupy* i potwierdź, że **Maps+** jest wymieniony jako aktywny.
 
-To kończy międzyplatformową aktywację Twojego zakupu. Możesz teraz kontynuować używanie **Maps+** na swoim nowym urządzeniu.
+To kończy aktywację zakupu międzyplatformowego. Możesz teraz kontynuować korzystanie z **Maps+** na swoim nowym urządzeniu.
 
-Ciesz się używaniem Maps+/Pro na różnych platformach!
+Ciesz się korzystaniem z Maps+/Pro na różnych platformach!
 
 
 ## Powiązane artykuły {#related-articles}
 
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
 - [Rozwiązywanie problemów z zakupami](../troubleshooting/purchases_payments.md)
-- [Różnice między zakupami Android](./android.md#difference-between-purchases-android)
-- [Różnice między zakupami iOS](./ios.md#difference-between-purchases-ios)
+- [Różnica między zakupami Android](./android.md#difference-between-purchases-android)
+- [Różnica między zakupami iOS](./ios.md#difference-between-purchases-ios)
 
 > *Ostatnia aktualizacja: maj 2025*

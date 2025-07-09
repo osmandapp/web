@@ -1,5 +1,5 @@
 ---
-source-hash: bf7cd90ca8366333a9c3f68cad51bd9bd86dd6ed8b14a48fdd6c58dac62dff86
+source-hash: 5920278abcfe315d7fbfdbeb177097e48bdb3e0b7a6127b1def7c80cbfc2a59a
 sidebar_position: 8
 title: Popularne miejsca
 ---
@@ -19,11 +19,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Funkcja **Popularne miejsca** w OsmAnd wyróżnia godne uwagi punkty orientacyjne i atrakcje, wykorzystując otwarte, ustrukturyzowane dane z [Wikidata](https://www.wikidata.org) i [Wikipedii](https://www.wikipedia.org/). Pomaga użytkownikom odkrywać znane miejsca z wielojęzycznymi opisami i zdjęciami.
+Funkcja **Popularne miejsca** w OsmAnd wyróżnia godne uwagi punkty orientacyjne i atrakcje, wykorzystując otwarte, ustrukturyzowane dane z [Wikidata](https://www.wikidata.org) i [Wikipedii](https://www.wikipedia.org/). Pomaga użytkownikom odkrywać znane miejsca dzięki wielojęzycznym opisom i zdjęciom.
 
 Każde miejsce uwzględnione w tej funkcji jest połączone z **ID Wikidata**, co umożliwia OsmAnd wyświetlanie zweryfikowanych nazw, podglądów obrazów i linków do artykułów Wikipedii. To narzędzie **nie** pokazuje wszystkich punktów OpenStreetMap (OSM). Jest ograniczone do POI z odniesieniami do Wikidata.
 
-Obecnie, wyselekcjonowana baza danych zawiera około **50 000 do 150 000 najlepiej ocenianych miejsc** na całym świecie, wybranych spośród ponad **1 miliona** obiektów Wikidata + OSM.
+Obecnie, wyselekcjonowana baza danych zawiera około **50 000 do 150 000 najlepiej ocenianych miejsc** na świecie, wybranych z ponad **1 miliona** obiektów Wikidata + OSM.
 
 :::note
 *To jest pierwsza wersja funkcji Popularne miejsca. Opinie są mile widziane na [GitHubie](https://github.com/osmandapp/OsmAnd)*.
@@ -42,11 +42,11 @@ Obecnie, wyselekcjonowana baza danych zawiera około **50 000 do 150 000 najlepi
 
 ### Źródła danych
 
-**Popularne miejsca** są oparte na ustrukturyzowanych treściach z [Wikidata](https://www.wikidata.org) i [Wikipedii](https://www.wikipedia.org/).
+**Popularne miejsca** bazują na ustrukturyzowanych treściach z [Wikidata](https://www.wikidata.org) i [Wikipedii](https://www.wikipedia.org/).
 
-Wyświetlane są tylko POI z połączonym **ID Wikidata**. Te ID łączą obiekty mapy ze zweryfikowanymi nazwami, opisami i obrazami.
+Wyświetlane są tylko POI z połączonym **ID Wikidata**. Te identyfikatory łączą obiekty mapy ze zweryfikowanymi nazwami, opisami i obrazami.
 
-Link do Wikidata można zobaczyć bezpośrednio w [menu kontekstowym mapy](../map/map-context-menu.md). Dotknięcie tagu Wikidata otwiera pełną stronę obiektu na stronie Wikidata.
+Link do Wikidata można wyświetlić bezpośrednio w [menu kontekstowym mapy](../map/map-context-menu.md). Dotknięcie tagu Wikidata otwiera pełną stronę obiektu na stronie Wikidata.
 
 Dowiedz się, jak znaleźć ID Wikidata: [Wikipedia: Znajdowanie ID Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
@@ -60,7 +60,7 @@ Funkcja **Popularne miejsca** obejmuje zarówno wyselekcjonowaną listę poblisk
 Istnieją dwa główne sposoby dostępu do tej funkcji:
 
 - **Wersja darmowa**
-  Dostęp przez [Wyszukiwanie](#explore-in-search) do przeglądania pobliskich miejsc w widoku listy.
+  Dostęp poprzez [Wyszukiwanie](#explore-in-search), aby przeglądać pobliskie miejsca w widoku listy.
   *<Translate android="true" ids="android_button_seq"/>*. Przejdź do: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
 - **Wersje płatne** *(Maps+ i OsmAnd Pro)*
@@ -69,7 +69,7 @@ Istnieją dwa główne sposoby dostępu do tej funkcji:
 
   W tym trybie popularne POI pojawiają się bezpośrednio na mapie z podglądami miniatur i treścią z Wikipedii.
 
-Możesz przełączać się między **online** i **offline** źródłami Wikipedii w ustawieniach nakładki. Dowiedz się więcej w [Włącz warstwę](#enable-layer).
+  W ustawieniach nakładki można przełączać się między **online** i **offline** źródłami Wikipedii. Dowiedz się więcej w [Włącz warstwę](#enable-layer).
 
 
 ## Przeglądaj w wyszukiwarce {#explore-in-search}
@@ -91,11 +91,11 @@ Przejdź do: *<Translate android="true" ids="map_widget_search,shared_string_exp
 
 Sekcja **<Translate android="true" ids="popular_places_nearby"/>** wyświetla przewijaną listę najlepiej ocenianych punktów orientacyjnych w pobliżu Twojej bieżącej lokalizacji. Każdy element zawiera:
 
-- Nazwę miejsca.
+- Nazwa miejsca.
 - Krótki opis.
-- Tag kategorii POI.
+- Etykieta kategorii POI.
 - Odległość i kierunek.
-- Miniaturę obrazu (jeśli dostępna).
+- Miniatura obrazu (jeśli dostępna).
 
 Dotknij **Pokaż wszystko**, aby wyświetlić pełną listę, lub **Pokaż na mapie**, aby wyświetlić wszystkie wymienione POI na mapie.
 
@@ -103,7 +103,7 @@ Dotknięcie dowolnego miejsca otwiera [menu kontekstowe POI](./map-context-menu.
 
 :::tip
 Tryb eksploracji oparty na wyszukiwaniu działa **tylko online** w wersji darmowej.
-Aby używać go **offline**, potrzebujesz subskrypcji [Maps+ lub OsmAnd Pro](../purchases/android.md) i pobranych [map Wikipedii](../plugins/wikipedia.md).
+Aby używać go **offline**, potrzebujesz subskrypcji [Maps+ lub OsmAnd Pro](../purchases/android.md) oraz pobranych [map Wikipedii](../plugins/wikipedia.md).
 :::
 
 
@@ -138,7 +138,7 @@ Po włączeniu dostępne stają się następujące opcje:
 
 - **Źródło POI** – Przełączanie między:
   - *Tryb offline* (artykuły Wikipedii muszą być pobrane).
-  - *Tryb tylko online* (używa danych i obrazów na żywo).
+  - *Tryb tylko online* (używa danych na żywo i obrazów).
 
 - **<Translate android="true" ids="shared_string_language"/>** – Wybierz język opisów Wikipedii.
 
@@ -148,6 +148,8 @@ Dotknięcie POI na mapie otwiera [menu kontekstowe POI](./map-context-menu.md), 
 
 
 ## Zdjęcia online {#online-photos}
+
+*<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
 <Tabs groupId="operating-systems">
 
@@ -164,8 +166,6 @@ Dotknięcie POI na mapie otwiera [menu kontekstowe POI](./map-context-menu.md), 
 </TabItem>
 
 </Tabs>
-
-*<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
 Jest to sekcja w [menu kontekstowym POI](./map-context-menu.md), która wyświetla podgląd zdjęć wybranego Popularnego Miejsca (Wikipedia). Możesz przewijać poziomo, aby przeglądać dostępne zdjęcia, lub dotknąć dowolnego obrazu, aby otworzyć go w [trybie pełnoekranowym](#gallery).
 
@@ -187,9 +187,9 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 W menu kontekstowym mapy Jak uzyskać dostęp:
 
-- Dotknij przycisku **Pokaż wszystko** (Android) / **Wyświetl wszystko** (iOS), aby otworzyć [galerię](#gallery) w trybie pełnoekranowym, gdzie możesz przeglądać wszystkie dostępne zdjęcia dla wybranej lokalizacji.
+- Dotknij przycisku **Pokaż wszystko** (Android) / **Wyświetl wszystko** (iOS), aby otworzyć [galerię](#gallery) w trybie pełnoekranowym, gdzie możesz przewijać wszystkie dostępne zdjęcia dla wybranej lokalizacji.
 
-- Dotknij dowolnego zdjęcia, aby wyświetlić je w [pełnym ekranie](#gallery) i uzyskać dostęp do dostępnych działań:
+- Dotknij dowolnego zdjęcia, aby wyświetlić je w [trybie pełnoekranowym](#gallery) i uzyskać dostęp do dostępnych działań:
   **Udostępnij**, **Szczegóły**, **Otwórz w przeglądarce** i **Pobierz**.
 
 
@@ -214,18 +214,18 @@ W menu kontekstowym mapy Jak uzyskać dostęp:
 </Tabs>
 
 
-**Menu Galerii** może wyświetlać do **100 obrazów** związanych z wybranym punktem zainteresowania. Możesz przewijać wszystkie dostępne zdjęcia. Krótkie dotknięcie zdjęcia otwiera szczegółowy widok pokazujący: *Nazwę*, *Datę dodania*, *Autora*, *Licencję*
+**Menu Galerii** może wyświetlać do **100 obrazów** związanych z wybranym punktem zainteresowania. Możesz przewijać wszystkie dostępne zdjęcia. Krótkie dotknięcie zdjęcia otwiera szczegółowy widok pokazujący: *Nazwę*, *Datę dodania*, *Autora*, *Licencję*.
 
-Możesz również wykonać następujące czynności na każdym zdjęciu:
+Możesz również wykonać następujące działania na każdym zdjęciu:
 
 - **Udostępnij**
-  Udostępnij wybrane zdjęcie za pomocą dowolnej zgodnej aplikacji zainstalowanej na Twoim urządzeniu (np. komunikatory, e-mail lub media społecznościowe). Udostępniona treść zawiera obraz i link do jego źródła (jeśli dostępny).
+  Udostępnij wybrane zdjęcie za pomocą dowolnej kompatybilnej aplikacji zainstalowanej na Twoim urządzeniu (np. komunikatory, e-mail, media społecznościowe). Udostępniona treść zawiera obraz i link do jego źródła (jeśli dostępny).
 
 - **Szczegóły**
-  Otwórz szczegółowy widok pokazujący metadane obrazu, w tym: *Nazwę*, *Datę dodania*, *Autora*, *Licencję*, *Źródło* i *Bezpośredni link*
+  Otwórz szczegółowy widok pokazujący metadane obrazu, w tym: *Nazwę*, *Datę dodania*, *Autora*, *Licencję*, *Źródło* i *Bezpośredni link*.
 
 - **Otwórz w przeglądarce**
-  Uruchom stronę źródłową obrazu (zazwyczaj na [Wikimedia Commons](https://commons.wikimedia.org/)) w domyślnej przeglądarce. Pozwala to na wyświetlenie pełnego obrazu, informacji licencyjnych i powiązanych treści.
+  Uruchom stronę źródłową obrazu (zazwyczaj na [Wikimedia Commons](https://commons.wikimedia.org/)) w domyślnej przeglądarce. Pozwala to na przeglądanie pełnego obrazu, informacji licencyjnych i powiązanych treści.
 
 - **Pobierz**
   Zapisz obraz w pamięci urządzenia. Pobrany obraz można znaleźć w domyślnym folderze Pobrane na urządzeniu i uzyskać do niego dostęp offline.
@@ -243,7 +243,7 @@ Wersja Android nie zawiera dodatkowego menu dla działań na zdjęciach.
 
 ![iOS - Context Menu Options](@site/static/img/map/gallery_menu_ios_3.png)
 
-Na **iOS**, długie naciśnięcie zdjęcia otwiera menu kontekstowe z dodatkowymi działaniami:
+Na **iOS** długie naciśnięcie zdjęcia otwiera menu kontekstowe z dodatkowymi działaniami:
 
 - **Szczegóły**
 - **Otwórz w przeglądarce**
@@ -251,7 +251,7 @@ Na **iOS**, długie naciśnięcie zdjęcia otwiera menu kontekstowe z dodatkowym
 
 **Przyciski**:
 
-- Przycisk **Udostępnij** pozwala szybko udostępnić wybrane zdjęcie.
+- Przycisk **Udostępnij** umożliwia szybkie udostępnienie wybranego obrazu.
 - **Menu z trzema kropkami** zapewnia dostęp do dodatkowych działań, w tym przeglądania szczegółów, otwierania źródła w przeglądarce lub pobierania obrazu.
 
 </TabItem>
@@ -275,7 +275,7 @@ Na **iOS**, długie naciśnięcie zdjęcia otwiera menu kontekstowe z dodatkowym
 
 </Tabs>
 
-Ekran **Szczegóły** zawiera pełne metadane wybranego zdjęcia, w tym: *Nazwę*, *Datę dodania*, *Autora*, *Licencję*, *Źródło* i *Bezpośredni link*
+Ekran **Szczegóły** zawiera pełne metadane wybranego zdjęcia, w tym: *Nazwę*, *Datę dodania*, *Autora*, *Licencję*, *Źródło* i *Bezpośredni link*.
 
 
 ## Powiązane artykuły
@@ -286,7 +286,7 @@ Ekran **Szczegóły** zawiera pełne metadane wybranego zdjęcia, w tym: *Nazwę
 - [Wtyczka Wikipedia](../plugins/wikipedia.md)
 
 
-> *Ostatnia aktualizacja: czerwiec 2025*
+> *Ostatnia aktualizacja: lipiec 2025*
 
 
 <!--

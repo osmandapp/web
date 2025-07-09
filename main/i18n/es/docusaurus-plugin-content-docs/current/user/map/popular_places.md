@@ -1,5 +1,5 @@
 ---
-source-hash: bf7cd90ca8366333a9c3f68cad51bd9bd86dd6ed8b14a48fdd6c58dac62dff86
+source-hash: 5920278abcfe315d7fbfdbeb177097e48bdb3e0b7a6127b1def7c80cbfc2a59a
 sidebar_position: 8
 title: Lugares Populares
 ---
@@ -23,7 +23,7 @@ La función **Lugares Populares** en OsmAnd destaca puntos de referencia y atrac
 
 Cada lugar incluido en esta función está vinculado a un **ID de Wikidata**, lo que permite a OsmAnd mostrar nombres verificados, previsualizar imágenes y enlaces a artículos de Wikipedia. Esta herramienta **no** muestra todos los puntos de OpenStreetMap (OSM). Se limita a los PDI con referencias de Wikidata.
 
-Actualmente, la base de datos curada incluye aproximadamente entre **50.000 y 150.000 lugares mejor valorados** a nivel mundial, seleccionados entre más de **1 millón** de objetos de Wikidata + OSM.
+Actualmente, la base de datos curada incluye aproximadamente entre **50.000 y 150.000 lugares mejor valorados** a nivel mundial, seleccionados de más de **1 millón** de objetos de Wikidata + OSM.
 
 :::note
 *Esta es la primera versión de la función Lugares Populares. Los comentarios son bienvenidos en [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -48,7 +48,7 @@ Solo se muestran los PDI con un **ID de Wikidata** vinculado. Estos ID conectan 
 
 Puedes ver el enlace de Wikidata directamente en el [Menú contextual del mapa](../map/map-context-menu.md). Al tocar la etiqueta de Wikidata, se abre la página completa del objeto en el sitio web de Wikidata.
 
-Aprende a encontrar un ID de Wikidata: [Wikipedia: Encontrar un ID de Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
+Aprende a encontrar un ID de Wikidata: [Wikipedia: Cómo encontrar un ID de Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
 ## Cómo usar {#how-to-use}
@@ -60,7 +60,7 @@ La función **Lugares Populares** incluye tanto una lista curada de puntos de re
 Hay dos formas principales de acceder a esta función:
 
 - **Versión gratuita**
-  Accede a través de [Buscar](#explore-in-search) para explorar lugares cercanos en la vista de lista.
+  Acceso a través de [Buscar](#explore-in-search) para explorar lugares cercanos en vista de lista.
   *<Translate android="true" ids="android_button_seq"/>*. Ir a: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
 - **Versiones de pago** *(Maps+ y OsmAnd Pro)*
@@ -69,10 +69,10 @@ Hay dos formas principales de acceder a esta función:
 
   En este modo, los PDI populares aparecen directamente en el mapa con vistas previas en miniatura y contenido de Wikipedia.
 
-Puedes cambiar entre fuentes de Wikipedia **en línea** y **sin conexión** en la configuración de la superposición. Obtén más información en [Habilitar capa](#enable-layer).
+  Puedes cambiar entre fuentes de Wikipedia **en línea** y **sin conexión** en la configuración de la superposición. Obtén más información en [Habilitar capa](#enable-layer).
 
 
-## Explorar en la búsqueda {#explore-in-search}
+## Explorar en Buscar {#explore-in-search}
 
 <InfoAndroidOnly/>
 
@@ -99,7 +99,7 @@ La sección **<Translate android="true" ids="popular_places_nearby"/>** muestra 
 
 Toca **Mostrar todo** para ver la lista completa, o **Mostrar en el mapa** para mostrar todos los PDI listados en el mapa.
 
-Al tocar cualquier lugar, se abre el [menú contextual del PDI](./map-context-menu.md), donde puedes previsualizar fotos y acceder a [contenido de Wikipedia](../plugins/wikipedia.md) relacionado.
+Al tocar cualquier lugar, se abre el [menú contextual de PDI](./map-context-menu.md), donde puedes previsualizar fotos y acceder a [contenido de Wikipedia](../plugins/wikipedia.md) relacionado.
 
 :::tip
 El modo Explorar basado en la búsqueda funciona **solo en línea** en la versión gratuita.
@@ -123,12 +123,12 @@ Para usarlo **sin conexión**, necesitas una suscripción a [Maps+ o OsmAnd Pro]
 
 </Tabs>
 
-La función **Lugares populares (Wikipedia)** está disponible en el [menú Configurar mapa](./configure-map-menu.md). Para mostrar los lugares populares directamente en el mapa, habilita la capa de PDI con datos de Wikipedia utilizando imágenes de Wikidata.
+La función **Lugares Populares (Wikipedia)** está disponible en el [menú Configurar mapa](./configure-map-menu.md). Para mostrar lugares populares directamente en el mapa, habilita la capa de PDI con datos de Wikipedia usando imágenes de Wikidata.
 
 Antes de usar esta función:
 
 - Asegúrate de que el [complemento de Wikipedia](../plugins/wikipedia.md) esté habilitado.
-- Descarga los datos de Wikipedia para tu región si quieres usarlos sin conexión.
+- Descarga datos de Wikipedia para tu región si quieres usarlos sin conexión.
 
 ### Opciones de capa
 
@@ -137,17 +137,19 @@ Una vez habilitadas, las siguientes opciones estarán disponibles:
 - **<Translate android="true" ids="poi_osmwiki"/>** – Activa/desactiva los PDI de Wikipedia en el mapa.
 
 - **Fuente de PDI** – Cambia entre:
-  - *Modo sin conexión* (los artículos de Wikipedia deben estar descargados).
-  - *Modo solo en línea* (usa datos e imágenes en vivo).
+  - *Modo sin conexión* (los artículos de Wikipedia deben descargarse).
+  - Modo *Solo en línea* (usa datos e imágenes en vivo).
 
 - **<Translate android="true" ids="shared_string_language"/>** – Selecciona el idioma para las descripciones de Wikipedia.
 
 - **<Translate android="true" ids="show_image_previews"/>** – Muestra miniaturas de imágenes de Wikidata junto a los PDI.
 
-Al tocar un PDI en el mapa, se abre el [menú contextual del PDI](./map-context-menu.md), donde puedes ver [fotos en línea](#online-photos) y acceder a [artículos de Wikipedia](../plugins/wikipedia.md) vinculados.
+Al tocar un PDI en el mapa, se abre el [menú contextual de PDI](./map-context-menu.md), donde puedes ver [fotos en línea](#online-photos) y acceder a [artículos de Wikipedia](../plugins/wikipedia.md) vinculados.
 
 
 ## Fotos en línea {#online-photos}
+
+*<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
 <Tabs groupId="operating-systems">
 
@@ -165,19 +167,17 @@ Al tocar un PDI en el mapa, se abre el [menú contextual del PDI](./map-context-
 
 </Tabs>
 
-*<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
+Esta es una sección dentro del [menú contextual de PDI](./map-context-menu.md) que muestra una vista previa de la foto del Lugar Popular (Wikipedia) seleccionado. Puedes desplazarte horizontalmente para explorar las fotos disponibles, o tocar cualquier imagen para abrirla en [modo de pantalla completa](#gallery).
 
-Esta es una sección dentro del [menú contextual del PDI](./map-context-menu.md) que muestra una vista previa de la foto del Lugar Popular (Wikipedia) seleccionado. Puedes desplazarte horizontalmente para explorar las fotos disponibles, o tocar cualquier imagen para abrirla en [modo de pantalla completa](#gallery).
-
-Obtén más información sobre opciones adicionales en la sección [Acciones](#actions) y [Galería](#gallery).
+Obtén más información sobre las opciones adicionales en la sección [Acciones](#actions) y [Galería](#gallery).
 
 
 <!--
 
-Cuando tocas un Lugar Popular en el mapa o de la lista, el [menú contextual del PDI](./map-context-menu.md) incluye una sección de **Fotos en línea** con una vista previa horizontal de las imágenes.
+Cuando tocas un Lugar Popular en el mapa o de la lista, el [menú contextual de PDI](./map-context-menu.md) incluye una sección de **Fotos en línea** con una vista previa horizontal de las imágenes.
 
 - Toca cualquier foto para verla en pantalla completa.
-- Desliza para explorar más imágenes.
+- Desliza para ver más imágenes.
 
 Para más acciones como compartir, ver metadatos o descargar, consulta [Galería](#gallery).
 
@@ -214,15 +214,15 @@ En el menú contextual del mapa Cómo acceder:
 </Tabs>
 
 
-El **Menú de la Galería** puede mostrar hasta **100 imágenes** relacionadas con el punto de interés seleccionado. Puedes deslizarte por todas las fotos disponibles. Al tocar una foto, se abre brevemente una vista detallada que muestra: *Nombre*, *Fecha de adición*, *Autor*, *Licencia*.
+El **Menú de la Galería** puede mostrar hasta **100 imágenes** relacionadas con el punto de interés seleccionado. Puedes deslizarte por todas las fotos disponibles. Al tocar una foto, se abre brevemente una vista detallada que muestra: *Nombre*, *Fecha de adición*, *Autor*, *Licencia*
 
 También puedes realizar las siguientes acciones en cada foto:
 
 - **Compartir**
-  Comparte la imagen seleccionada utilizando cualquier aplicación compatible instalada en tu dispositivo (por ejemplo, mensajería, correo electrónico o redes sociales). El contenido compartido incluye la imagen y su enlace de origen (si está disponible).
+  Comparte la imagen seleccionada usando cualquier aplicación compatible instalada en tu dispositivo (por ejemplo, mensajería, correo electrónico o redes sociales). El contenido compartido incluye la imagen y su enlace de origen (si está disponible).
 
 - **Detalles**
-  Abre una vista detallada que muestra metadatos sobre la imagen, incluyendo: *Nombre*, *Fecha de adición*, *Autor*, *Licencia*, *Fuente* y *Enlace directo*.
+  Abre una vista detallada que muestra metadatos sobre la imagen, incluyendo: *Nombre*, *Fecha de adición*, *Autor*, *Licencia*, *Fuente* y *Enlace directo*
 
 - **Abrir en el navegador**
   Inicia la página de origen de la imagen (generalmente en [Wikimedia Commons](https://commons.wikimedia.org/)) en tu navegador predeterminado. Esto te permite ver la imagen completa, la información de licencia y el contenido relacionado.
@@ -235,7 +235,7 @@ También puedes realizar las siguientes acciones en cada foto:
 
 <TabItem value="android" label="Android">
 
-La versión de Android no incluye un menú adicional para las acciones de fotos.
+La versión de Android no incluye un menú adicional para acciones de fotos.
 
 </TabItem>
 
@@ -275,7 +275,7 @@ En **iOS**, al mantener pulsada una foto, se abre un menú contextual con accion
 
 </Tabs>
 
-La pantalla de **Detalles** proporciona metadatos completos para la foto seleccionada, incluyendo: *Nombre*, *Fecha de adición*, *Autor*, *Licencia*, *Fuente* y *Enlace directo*.
+La pantalla de **Detalles** proporciona metadatos completos para la foto seleccionada, incluyendo: *Nombre*, *Fecha de adición*, *Autor*, *Licencia*, *Fuente* y *Enlace directo*
 
 
 ## Artículos relacionados
@@ -286,7 +286,7 @@ La pantalla de **Detalles** proporciona metadatos completos para la foto selecci
 - [Complemento de Wikipedia](../plugins/wikipedia.md)
 
 
-> *Última actualización: junio de 2025*
+> *Última actualización: julio de 2025*
 
 
 <!--
@@ -339,7 +339,7 @@ En la sección **Fotos en línea** del menú contextual del mapa, puedes acceder
 </Tabs>
 
 
-La galería puede mostrar hasta 100 elementos. Puedes navegar por todas las fotos, y al tocar brevemente cualquier foto, se abrirá para ver detalles adicionales (*Nombre*, *Fecha*, *Autor*, *Licencia*) y realizar varias acciones (*Compartir*, *Detalles*, *Abrir en el navegador* y *Opciones de descarga*).
+La galería puede mostrar hasta 100 elementos. Puedes navegar por todas las fotos, y al tocar brevemente cualquier foto, se abrirá para ver detalles adicionales (*Nombre*, *Fecha*, *Autor*, *Licencia*) y realizar varias acciones (*Compartir*, *Detalles*, *Abrir en el navegador* y opciones de *Descarga*).
 
 
 <Tabs groupId="operating-systems">

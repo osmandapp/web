@@ -1,5 +1,5 @@
 ---
-source-hash: 9f4dbbf91f34a5275efe83dee3ced74ee6fd21346d50094391417530b145a93e
+source-hash: 88145581c12f95f7e0dba74a712f88afdcbe5249c5f0e8b66b14eb7035e3d3d1
 sidebar_position: 4
 title:  Acquisti multipiattaforma
 ---
@@ -23,10 +23,10 @@ I seguenti prodotti OsmAnd supportano attualmente l'utilizzo su più piattaforme
 - Abbonamento **Maps+**
 - Acquisto in-app una tantum **Maps+**
 
-A partire dalla **versione 5.0 di OsmAnd**, rilasciata per celebrare il nostro **15° anniversario**, l'accesso multipiattaforma è stato esteso a **Maps+** (precedentemente noto come *Unlimited*). In precedenza, solo l'abbonamento [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) era multipiattaforma.
+A partire da **OsmAnd versione 5.1**, rilasciata per celebrare il nostro **15° anniversario**, l'accesso multipiattaforma è stato esteso a **Maps+** (precedentemente noto come *Unlimited*). In precedenza, solo l'abbonamento [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) era multipiattaforma.
 
 Per attivare l'accesso multipiattaforma, gli acquisti devono essere collegati al tuo account [OsmAnd Cloud](../personal/osmand-cloud.md#login).
-Puoi confrontare tutti i prodotti OsmAnd qui: [differenza tra acquisti](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
+Puoi confrontare tutti i prodotti OsmAnd qui: [differenza tra gli acquisti](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
 
 | Tipo di prodotto | Multipiattaforma | Note |
 |-----------------------------|----------------|-------|
@@ -42,7 +42,7 @@ Per utilizzare il tuo acquisto **OsmAnd Pro** o **Maps+** su diverse piattaforme
 
 ### Collega il tuo acquisto {#link-your-purchase}
 
-![Collegamento Cloud](@site/static/img/purchases/cloud_activation.png)
+![Cloud link](@site/static/img/purchases/cloud_activation.png)
 
 Esegui questo passaggio sul **dispositivo in cui hai effettuato l'acquisto** (Android o iOS, versione 5.0 o successiva):
 
@@ -55,8 +55,8 @@ Esegui questo passaggio sul **dispositivo in cui hai effettuato l'acquisto** (An
 
 ### Attiva su un altro dispositivo o piattaforma {#activate-on-another-device-or-platform}
 
-![Maps+ multipiattaforma](@site/static/img/purchases/cross_purchase.png)
-![Maps+ multipiattaforma](@site/static/img/purchases/cross_purchase_1.png)
+![Maps+ cross](@site/static/img/purchases/cross_purchase.png)
+![Maps+ cross](@site/static/img/purchases/cross_purchase_1.png)
 
 1. Vai al tuo account [OsmAnd Cloud](../personal/osmand-cloud.md#login):
    *Menu → Impostazioni → OsmAnd Cloud →* ***Accedi con lo stesso account***
@@ -76,14 +76,14 @@ Se il tuo acquisto non è elencato:
 Se il problema persiste, contatta **support@osmand.net** e includi:
 
 - La tua email OsmAnd Cloud.
-- Piattaforma(e) e app store utilizzati.
-- Tipo di acquisto (Pro / Maps+ una tantum / Abbonamento Maps+).
+- Piattaforma(e) e app store(s) utilizzati.
+- Tipo di acquisto (Pro / Maps+ una tantum / abbonamento Maps+).
 
 
 ## Esempio {#example}
 
 Hai acquistato **Maps+** come acquisto in-app una tantum nella versione gratuita di OsmAnd dall'[Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).
-Successivamente, decidi di passare a un iPhone e vuoi utilizzare **Maps+** con la [versione iOS di OsmAnd](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
+Successivamente, decidi di passare a un iPhone e desideri utilizzare **Maps+** con la [versione iOS di OsmAnd](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 Per attivare il tuo acquisto Maps+ su iOS:
 
@@ -102,8 +102,8 @@ Goditi l'utilizzo di Maps+/Pro su tutte le piattaforme!
 ## Articoli correlati {#related-articles}
 
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
-- [Risoluzione dei problemi relativi agli acquisti](../troubleshooting/purchases_payments.md)
+- [Risoluzione dei problemi di acquisto](../troubleshooting/purchases_payments.md)
 - [Differenza tra acquisti Android](./android.md#difference-between-purchases-android)
 - [Differenza tra acquisti iOS](./ios.md#difference-between-purchases-ios)
 
-> *Ultimo aggiornamento: Maggio 2025*
+> *Ultimo aggiornamento: maggio 2025*

@@ -1,5 +1,5 @@
 ---
-source-hash: c0985adbdba94ee470ee92bcbdb524d31fd8c447ef8e022b63e01da8161d663e
+source-hash: 9d17185cd0fb0c54402a924ee382567681fcd8aa987351c19a39454dab303316
 sidebar_position: 5
 ---
 import Tabs from '@theme/Tabs';
@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Beta beitreten {#join-beta}
 
-iOS-Beta-Builds (TestFlight) werden normalerweise wöchentlich zur Verfügung gestellt (nach einer Team-Sprint-Demo). Sie enthalten keine Beschreibungen und können eine fortlaufende Versionsnummerierung haben. Sie gelten als stabil und einsatzbereit.
+iOS Beta-Builds (TestFlight) werden normalerweise wöchentlich (nach einer Team-Sprint-Demo) bereitgestellt. Sie enthalten keine Beschreibungen und können eine fortlaufende Versionierung aufweisen. Es wird davon ausgegangen, dass sie stabil und einsatzbereit sind.
 
 <div>
   <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">TestFlight beitreten</a>
@@ -29,34 +29,30 @@ iOS-Beta-Builds (TestFlight) werden normalerweise wöchentlich zur Verfügung ge
 ## Was ist neu {#whats-new}
 
 - Aktion zum Umbenennen von Favoritengruppen hinzugefügt
-- *Volumeneinheit* und *Tankinhalt* hinzugefügt
+- *Volumeneinheit* und *Kraftstofftankkapazität* hinzugefügt
 - *Koordinatengitter* mit geografischen Koordinaten hinzugefügt
 
 
-- [Optionale Updates](#optional-updates). Zusätzliche Updates und Verbesserungen für die Veröffentlichung.
-
-
-
-## Optionale Updates {#optional-updates}
+## Fehlerbehebungen {#bug-fixes}
 
 - [OsmAnd folgt der Spur nicht.](https://github.com/osmandapp/OsmAnd-iOS/issues/4412)
-- [Aktion zum Umbenennen von Favoritengruppen hinzufügen.](https://github.com/osmandapp/OsmAnd-iOS/issues/4516)
-- [Apple CarPlay-Navigation funktionierte nach dem Wechsel der Apps nicht mehr.](https://github.com/osmandapp/OsmAnd-iOS/issues/4442)
-- [Kaputte Adresssuche.](https://github.com/osmandapp/OsmAnd-iOS/issues/4598)
-- [Volumeneinheit und Tankinhalt.](https://github.com/osmandapp/OsmAnd-iOS/issues/4104)
+- [Aktion zum Umbenennen für Favoritengruppen hinzufügen.](https://github.com/osmandapp/OsmAnd-iOS/issues/4516)
+- [Apple CarPlay Navigation funktionierte nach dem Wechsel der Apps nicht mehr.](https://github.com/osmandapp/OsmAnd-iOS/issues/4442)
+- [Fehlerhafte Adresssuche.](https://github.com/osmandapp/OsmAnd-iOS/issues/4598)
+- [Volumeneinheit und Kraftstofftankkapazität.](https://github.com/osmandapp/OsmAnd-iOS/issues/4104)
 - [App stürzt in CarPlay beim Starten der Navigation ab.](https://github.com/osmandapp/OsmAnd-iOS/issues/4605)
-- [Ändern des Erscheinungsbilds von Favoriten.](https://github.com/osmandapp/OsmAnd-iOS/issues/4428)
-- [Möglichkeit, die Größe der Widgets im linken / rechten Bereich auszuwählen.](https://github.com/osmandapp/OsmAnd-iOS/issues/4494)
-- [Erlauben, Aktivität auf aufgezeichnete GPX mit Filter zu setzen.](https://github.com/osmandapp/OsmAnd-iOS/issues/4177)
+- [Ändern des Aussehens von Favoriten.](https://github.com/osmandapp/OsmAnd-iOS/issues/4428)
+- [Möglichkeit, die Größe der Widgets im linken/rechten Bereich auszuwählen.](https://github.com/osmandapp/OsmAnd-iOS/issues/4494)
+- [Aktivität auf aufgezeichnete GPX mit Filter setzen.](https://github.com/osmandapp/OsmAnd-iOS/issues/4177)
 - [Navigationsinfo – Widget.](https://github.com/osmandapp/OsmAnd-iOS/issues/4468)
 - [Seite in Karten und Ressourcen wird nach dem Herunterladen einer Karte nicht aktualisiert.](https://github.com/osmandapp/OsmAnd-iOS/issues/4301)
-- [Standardprofil verliert POI-Overlay-Einstellungen nach Neustart der App](https://github.com/osmandapp/OsmAnd-iOS/issues/4455)
-- [Endlose Spinner-Drehung in Karten & Ressourcen-Suche.](https://github.com/osmandapp/OsmAnd-iOS/issues/4395)
-- [Wetter: Maßeinheiten können nicht über die Plugin-Einstellungen geändert werden (außer Windanimation).](https://github.com/osmandapp/OsmAnd-iOS/issues/4413)
-- [Synchronisation der Routenlinie beim Erstellen einer Spur mit dem aktuellen Profil.](https://github.com/osmandapp/OsmAnd-iOS/issues/4392)
-- [Einige unbenutzte, unerwartete Werte werden unterstützt.](https://github.osmandapp/OsmAnd/issues/22103)
-- [POI-Suche bereinigen (separate Gotteshäuser).](https://github.osmandapp/OsmAnd/issues/21972)
-- [waterway=flowline fehlt in den Daten, Bootsrouting defekt.](https://github.osmandapp/OsmAnd/issues/22512)
-- [Schutzgebiete im Topo-Kartenstil anzeigen.](https://github.osmandapp/OsmAnd/issues/22168)
-- [Sich überlappende Höhenlinien in China.](https://github.osmandapp/OsmAnd/issues/22434)
-- [Höhenlinienfehler an Parallel- / Meridian-Grenzen.](https://github.osmandapp/OsmAnd/issues/21738)
+- [Standardprofil verliert POI-Overlay-Einstellungen nach dem Neustart der App](https://github.com/osmandapp/OsmAnd-iOS/issues/4455)
+- [Endlose Spinner-Rotation in Karten- und Ressourcen-Suche.](https://github.com/osmandapp/OsmAnd-iOS/issues/4395)
+- [Wetter: Maßeinheiten können nicht in den Plugin-Einstellungen geändert werden (außer Windanimation).](https://github.com/osmandapp/OsmAnd-iOS/issues/4413)
+- [Synchronisation der Routenlinie beim Erstellen einer Strecke mit dem aktuellen Profil.](https://github.com/osmandapp/OsmAnd-iOS/issues/4392)
+- [Einige ungenutzte, unerwartete Werte werden unterstützt.](https://github.com/osmandapp/OsmAnd/issues/22103)
+- [POI-Suche löschen (separate Kultstätten).](https://github.com/osmandapp/OsmAnd/issues/21972)
+- [waterway=flowline fehlt in den Daten, Bootsrouting defekt.](https://github.com/osmandapp/OsmAnd/issues/22512)
+- [Schutzgebiete im Topo-Kartenstil anzeigen.](https://github.com/osmandapp/OsmAnd/issues/22168)
+- [Überlappende Höhenlinien in China.](https://github.com/osmandapp/OsmAnd/issues/22434)
+- [Fehler bei Höhenlinien an Parallel-/Meridian-Grenzen.](https://github.com/osmandapp/OsmAnd/issues/21738)

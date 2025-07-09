@@ -1,11 +1,11 @@
 ---
-source-hash: 010d1952603adc3309b34701c4951ffbb0d35b8a4686df5354ac94075ddff63d
+source-hash: cde43209573c7d823140974ae514fc1b3b44f761def17a77819884c1e5147211
 sidebar_position: 2
 ---
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
 
-# Darmowe wersje — Android {#free-releases--android}
+# Bezpłatne wydania — Android {#free-releases--android}
 
 
 Najnowszą wersję OsmAnd można pobrać bezpłatnie z wymienionych sklepów z aplikacjami.
@@ -19,23 +19,37 @@ Bezpośrednie linki do bezpłatnych wersji OsmAnd.
 
 ## Wersja 5 {#version-5}
 
+### Wersja 5.1 {#version-51}
+
+Data wydania 06/2025:
+
+- Dodano obsługę zakupów internetowych i międzyplatformowych.
+- Przeniesiono jednostki temperatury do ustawień ogólnych dla łatwiejszego dostępu.
+- Dodano wskaźnik poziomu baterii dla czujników BLE.
+- Nowy, bardziej intuicyjny interfejs użytkownika do wyboru punktów w Nawigacji.
+- Poprawiono widoczność widżetu dzięki nowemu obrysowi.
+- Dodano analizator podjazdów/zjazdów.
+- Rozszerzono integrację Wikipedii i Wikivoyage o więcej POI.
+
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.3-5103.apk" />
+
 ### Wersja 5.0 {#version-50}
 
 Data wydania 04/2025:
 
-- Odkrywaj najwyżej oceniane POI dzięki nowemu trybowi Eksploruj
+- Odkryj najwyżej oceniane POI dzięki nowemu trybowi Eksploruj
 - Wszystkie trasy OSM, teraz z możliwością wyszukiwania! Piesze, rowerowe, MTB i inne
-- Nowy widżet nawigacyjny łączy strzałkę skrętu i instrukcje nawigacyjne
+- Nowy widżet nawigacji łączy strzałkę skrętu i instrukcje nawigacji
 - Widżet informacji o bieżącej trasie: wyświetla ETA, czas przybycia i odległość
-- Wybieraj trasy narciarskie i szlaki MTB na mapie, aby uzyskać szczegółowe informacje
+- Wybierz trasy narciarskie i szlaki MTB na mapie, aby uzyskać szczegółowe informacje
 - Możliwość wyboru rozmiaru widżetu dla lewego i prawego panelu
-- Dodano „Siatkę współrzędnych” z współrzędnymi geograficznymi
+- Dodano "Siatkę współrzędnych" ze współrzędnymi geograficznymi
 - Dodano możliwość dostosowania domyślnego wyglądu grup ulubionych
 - Android Auto: wyświetlanie ETA i odległości do następnego punktu trasy; nazwy miast pojawiają się teraz w wynikach wyszukiwania
-- Wybitne szczyty są teraz dostępne do odkrycia za pośrednictwem mapy i wyszukiwania
+- Widoczne szczyty górskie są teraz wykrywalne za pomocą mapy i wyszukiwania
 - Wysokości szczytów górskich w stopach
 - Dodano: Skały i obszary wspinaczkowe na mapie
-- Ulepszono wyszukiwanie adresów w USA
+- Poprawiono wyszukiwanie adresów w USA
 - Dodano hebrajski TTS do nawigacji
 
 <DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
@@ -49,7 +63,7 @@ Data wydania 11/2024:
 - Dodano pełnoekranową przeglądarkę galerii dla obrazów Wikimedia.
 - Wprowadzono nową wtyczkę „Vehicle Metrics” do monitorowania wydajności pojazdu za pomocą protokołu OBD-II.
 - Dodano możliwość przypisywania aktywności do ścieżek i filtrowania ich odpowiednio.
-- Wdrożono nowe szybkie akcje do nagrywania podróży i blokady ekranu dotykowego.
+- Zaimplementowano nowe szybkie akcje do nagrywania podróży i blokady ekranu dotykowego.
 - Wprowadzono konfigurowalny wygląd przycisku mapy i precyzyjną siatkę.
 - Dodano menu kontekstowe i akcję „Resetuj średnią prędkość” do widżetów.
 - Dodano nową warstwę trasy „Dirt Bike trails”.
@@ -58,8 +72,8 @@ Data wydania 11/2024:
 - Naprawiono brakujące dane z czujników dla aktualnie nagrywanej ścieżki.
 - Dodano informacje o otoczeniu dla wybranego punktu.
 - Dodano szybką akcję do kontrolowania widoczności edycji OSM.
-- Rozdzielono parametry widoczności dla opcji koloryzacji terenu.
-- Dodano ikonę do kliknięcia, aby wyświetlić atrybuty dostępu lub inne atrybuty drogi lub ścieżki.
+- Oddzielono parametry widoczności dla opcji kolorowania terenu.
+- Dodano ikonę do kliknięcia, aby wyświetlić dostęp lub inne atrybuty drogi lub ścieżki.
 
 <DownloadRelease blog="osmand-android-4-9-released" release="net.osmand-4.9.10.apk" />
 
@@ -68,12 +82,12 @@ Data wydania 11/2024:
 
 Data wydania 08/2024:
 
-- Nowa opcja koloryzacji terenu „Wysokość”.
+- Nowa opcja kolorowania terenu „Wysokość”.
 - Niestandardowe palety kolorów dla terenu, ścieżek i tras.
 - Wariant 3D dla ikon pozycji lokalizacji.
-- Szybkie akcje można teraz przypisywać do zewnętrznych klawiatur.
+- Szybkie akcje można teraz przypisać do zewnętrznych klawiatur.
 - Pogoda: odświeżenie interfejsu użytkownika, dodano animację wiatru.
-- Ulepszenia ścieżek 3D: nowe opcje wizualizacji i koloryzacji.
+- Ulepszenia ścieżki 3D: nowe opcje wizualizacji i kolorowania.
 - Rozszerzony wybór tras turystycznych na mapie.
 - Dodano opcję motywu aplikacji, aby podążać za trybem mapy.
 - Naprawiono statystyki ścieżek, sortowanie i wyszukiwanie.
@@ -88,13 +102,13 @@ Data wydania 04/2024:
 
 - Nowy widżet „Prędkościomierz” kompatybilny z Android Auto.
 - Skonfiguruj ekran mapy, dodając wiele przycisków „Szybka akcja”.
-- Poprawiona czytelność danych na wykresach.
-- Poprawiony wygląd i możliwość dostosowania dla grup ścieżek.
+- Poprawiono czytelność danych na wykresach.
+- Poprawiono dostosowywanie wyglądu dla grup ścieżek.
 - Dodano filtry według danych z czujników dla ścieżek.
 - Dodano obsługę dodatkowych tagów GPX.
 - Dostosuj „Odległość podczas nawigacji”: wybierz między precyzyjnymi lub zaokrąglonymi liczbami.
-- Ujednolicony interfejs użytkownika do wyboru ścieżek.
-- Logowanie OpenStreetMap przełączone na OAuth 2.0.
+- Ujednolicony interfejs użytkownika do wyboru ścieżki.
+- Logowanie OpenStreetMap przełączono na OAuth 2.0.
 
 <DownloadRelease blog="osmand-android-4-7-released" release="net.osmand-4.7.17.apk" />
 
@@ -120,15 +134,15 @@ Data wydania 12/2023:
 
 Data wydania 08/2023:
 
-- Czujniki BLE/ANT+: przerobiono połączenie, zapis i przeglądanie otrzymanych danych do GPX.
+- Czujniki BLE/ANT+: przerobiono połączenie, zapis i przeglądanie odebranych danych do GPX.
 - Bezpłatna kopia zapasowa ulubionych i ustawień w OsmAnd Cloud.
-- Nowy format map terenu z obsługą 3D Relief.
+- Nowy format map terenu z obsługą reliefu 3D.
 - Zarządzanie ścieżkami: zaktualizowany interfejs użytkownika, dodano sortowanie, obsługę zagnieżdżonych folderów.
 - Android Auto: nowe menu startowe do dostępu do ulubionych, ścieżek i kategorii POI.
 - Jedna lista widżetów dla panelu górnego/dolnego.
 - Nowy profil „Pociąg”, umożliwiający obliczanie tras kolejowych.
 - Linie konturowe działają z dowolnym „Źródłem mapy”.
-- Rozszerzona lista domyślnych działań dla zewnętrznych klawiatur.
+- Rozszerzona lista domyślnych akcji dla zewnętrznych klawiatur.
 - Niestandardowe pliki routingu, dodano opcje usuwania lub nadpisywania.
 - Dodano opcję „Ogłoś odchylenie od trasy”.
 - Ekran startowy: dodano opcję przywracania stanu OsmAnd z pliku.
@@ -152,14 +166,14 @@ Data wydania 03/2023:
 - Dodano jednostkę długości „Mile morskie/stopy”
 - Orientacja mapy dodano nowy tryb stały
 - Uproszczony ekran startowy
-- Naprawiono położenie lokalizacji w trybie podzielonego ekranu w Android Auto
+- Naprawiono pozycję lokalizacji w trybie podzielonego ekranu w Android Auto
 - Dodano wykres „Prędkość/Nachylenie” do analizy ścieżki
 - Wybór języka aplikacji przeniesiono do ustawień systemowych w Androidzie 13
 - Naprawiono problemy z wyświetlaniem miejsc wegańskich
 - Dodano możliwość pobierania kafelków online używanych jako mapy „Nakładki” lub „Podkładu”
 - Dodano obsługę imperialnych jednostek miary dla „Parametrów pojazdu”
 - Nowy profil motoroweru
-- „Wyświetl pozycję” dodano nową opcję „Automatycznie”
+- „Wyświetl pozycję” dodano nową opcję „Automatyczny”
 - Naprawiono gesty mapy dla pochylenia, powiększenia i obrotu
 
 <DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7.apk" />
@@ -187,7 +201,7 @@ Data wydania 12/2022:
 Data wydania: 06/2022
 
 - Przeprojektowanie widżetów: nowy wygląd i styl, grupowanie według stron, zmiana kolejności i łączenie według własnego uznania.
-- Trasy piesze / rowerowe / podróżne: dotknij symbolu trasy i uzyskaj pełne informacje o trasie.
+- Trasy piesze/rowerowe/podróżne: dotknij symbolu trasy i uzyskaj pełne informacje o trasie.
 - Grupy ulubionych: ustaw domyślny wygląd dla nowych punktów w grupie
 - Poprawki: automatyczna aktualizacja map kafelkowych online
 
@@ -197,12 +211,12 @@ Data wydania: 06/2022
 
 Data wydania: 12/2021
 
-- Dodano wstępne wsparcie dla Android Auto
+- Dodano wstępną obsługę Android Auto
 - Aktualizacja interfejsu użytkownika dla wyszukiwania współrzędnych UTM
 - Filtr GPS dla ścieżek GPX
 - Widżet wysokości (Pro)
 - Ulubione: dodano możliwość przeglądania ostatnio używanych ikon
-- Planowanie trasy: po uruchomieniu będzie używać wybranego profilu
+- Planowanie trasy: będzie używać wybranego profilu po uruchomieniu
 - Naprawiono warstwę Mapillary, wtyczka jest teraz domyślnie wyłączona
 - Dodano ekran do zarządzania całą historią w aplikacji
 - Orientacja mapy nie jest resetowana po ponownym uruchomieniu aplikacji
@@ -222,13 +236,13 @@ Data wydania 08/2021:
 - Ścieżki można teraz kolorować według wysokości, prędkości lub nachylenia.
 - Dodano opcję zmiany wyglądu linii trasy.
 - Zaktualizowano okno dialogowe „Nagrywanie podróży”
-- Odległość dotknięciem przeniesiono z linijki promienia do oddzielnej opcji
-- Planowanie trasy w trybie poziomym: dodano zakładki do przełączania między punktami lub wykresami
-- Planowanie trasy: dodano możliwość zmiany opcji nawigacji, dostępu do konfiguracji mapy i wyszukiwania bez opuszczania planowania trasy
+- Odległość przez dotknięcie przeniesiono z linijki promienia do osobnej opcji
+- Plan trasy poziomo: dodano zakładki do przełączania między punktami lub wykresami
+- Plan trasy: dodano możliwość zmiany opcji nawigacji, dostępu do konfiguracji mapy i wyszukiwania bez opuszczania planu trasy
 - Nowy ekran zakupu ze szczegółowymi informacjami o zakupie
-- Dodano nowe typy POI, kluby: muzyczne, społeczne, harcerskie, masońskie
-- Przeprojektowano okno dialogowe wyboru języka instrukcji nawigacyjnych
-- Moje miejsca: ostatnio otwarta zakładka jest teraz zapamiętywana i będzie otwarta następnym razem
+- Dodano nowe typy POI, kluby: muzyczne, towarzyskie, harcerskie, masońskie
+- Przeprojektowano okno dialogowe wyboru języka dla instrukcji nawigacji
+- Moje miejsca: ostatnio otwarta zakładka jest teraz zapamiętywana i zostanie otwarta następnym razem
 - Różne poprawki dla RTL
 - Naprawiono problem z jednostkami miary
 - Naprawiono problem z udostępnianiem ponad stu ulubionych punktów
@@ -247,7 +261,7 @@ Data wydania 08/2021:
 Data wydania 02/2021:
 
 - Dodano opcję eksportu i importu wszystkich danych, w tym ustawień, zasobów, moich miejsc.
-- Planowanie trasy: wykresy dla segmentów ścieżek z trasą oraz dodano możliwość tworzenia i edytowania wielu segmentów ścieżek.
+- Plan trasy: wykresy dla segmentów ścieżek z trasą oraz dodano możliwość tworzenia i edytowania wielu segmentów ścieżek.
 - Dodano metodę uwierzytelniania OAuth dla OpenStreetMap, ulepszono interfejs użytkownika okien dialogowych OSM.
 - Obsługa niestandardowych kolorów dla ulubionych i punktów trasy.
 
@@ -258,12 +272,12 @@ Data wydania 02/2021:
 
 Data wydania 09/2020:
 
-- Zaktualizowano funkcję „Planuj trasę”: umożliwia używanie różnych typów nawigacji dla każdego segmentu i włączanie ścieżek
-- Nowe menu „Wygląd” dla ścieżek: wybór koloru, grubości, wyświetlanie strzałek kierunku, ikon startu/końca
-- Poprawiona widoczność węzłów rowerowych.
+- Zaktualizowano funkcję „Zaplanuj trasę”: umożliwia używanie różnych typów nawigacji dla każdego segmentu oraz włączanie ścieżek
+- Nowe menu „Wygląd” dla ścieżek: wybierz kolor, grubość, wyświetlaj strzałki kierunku, ikony początku/końca
+- Poprawiono widoczność węzłów rowerowych.
 - Ścieżki są teraz klikalne, mają menu kontekstowe z podstawowymi informacjami.
-- Ulepszone algorytmy „Wyszukiwania”
-- Ulepszone opcje „Podążaj za ścieżką” w nawigacji
+- Ulepszono algorytmy „Wyszukiwania”
+- Ulepszono opcje „Śledź ścieżkę” w nawigacji
 - Naprawiono problemy z importem/eksportem ustawień profilu
 
 <DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3.apk" />
@@ -273,13 +287,13 @@ Data wydania 09/2020:
 
 Data wydania 05/2020:
 
-- Nowe mapy offline z nachyleniem terenu
-- Pełna personalizacja ulubionych i punktów trasy GPX – niestandardowe kolory, ikony, kształty
-- Dostosowywanie kolejności elementów w menu kontekstowym, konfiguracji mapy, szufladzie
-- Wikipedia jako oddzielna warstwa w konfiguracji mapy, wybór tylko potrzebnych języków
-- Tworzenie własnych filtrów/map POI z pełną elastycznością
+- Nowe mapy offline nachylenia
+- Pełna personalizacja ulubionych i punktów GPX – niestandardowe kolory, ikony, kształty
+- Dostosuj kolejność elementów w menu kontekstowym, konfiguracji mapy, szufladzie
+- Wikipedia jako osobna warstwa w konfiguracji mapy, wybierz tylko potrzebne języki
+- Twórz własne filtry POI/mapy z pełną elastycznością
 - Dodano opcje przywracania ustawień dla niestandardowych profili
-- Pełne trasy GPX z nawigacji obsługują pasy ruchu i kompletne instrukcje skrętu
+- Pełne trasy GPX z nawigacji obsługują pasy ruchu i pełne instrukcje skrętu
 - Naprawiono rozmiary interfejsu użytkownika na tabletach
 - Naprawiono błędy z RTL
 
@@ -290,15 +304,15 @@ Data wydania 05/2020:
 
 Data wydania 02/2020:
 
-- Profile: teraz możesz zmieniać kolejność, ustawiać ikonę dla mapy, zmieniać wszystkie ustawienia dla profili bazowych i przywracać je do domyślnych
+- Profile: teraz możesz zmieniać kolejność, ustawiać ikonę dla mapy, zmieniać wszystkie ustawienia dla profili bazowych i przywracać je do ustawień domyślnych
 - Dodano numer zjazdu w nawigacji
 - Przerobiono ustawienia wtyczek
 - Przerobiono ekran ustawień dla szybkiego dostępu do wszystkich profili
 - Dodano opcję kopiowania ustawień z innego profilu
 - Dodano możliwość zmiany kolejności lub ukrywania kategorii POI w wyszukiwaniu
-- Poprawnie wyrównano ikony POI na mapie
+- Poprawnie wyrównane ikony POI na mapie
 - Dodano dane o zachodzie/wschodzie słońca do konfiguracji mapy
-- Dodano ikony Dom/Praca na mapie
+- Dodano ikony domu/pracy na mapie
 - Dodano obsługę wieloliniowego opisu w ustawieniach
 - Dodano poprawną transliterację na mapę Japonii
 - Dodano mapę Antarktydy
@@ -315,7 +329,7 @@ Data wydania: 11/2019
 - Nowe okno dialogowe pobierania mapy, które sugeruje mapę do pobrania podczas przeglądania
 - Poprawki motywu nocnego
 - Naprawiono kilka problemów z routingiem na całym świecie
-- Zaktualizowano mapę bazową z bardziej szczegółową siecią dróg
+- Zaktualizowana mapa bazowa z bardziej szczegółową siecią drogową
 - Naprawiono zalane obszary na całym świecie
 - Routing narciarski: dodano profil wysokości i złożoność trasy do szczegółów trasy
 - Poprawki błędów
@@ -346,12 +360,12 @@ Data wydania: 07/2019
 
 Data wydania: 03/2019
 
-- Nowy ekran kierunków: wyświetla przyciski docelowe Dom i Praca, skrót do poprzedniej trasy, listę aktywnych ścieżek, historię wyszukiwania
+- Nowy ekran kierunków: wyświetla przyciski celu Dom i Praca, skrót do poprzedniej trasy, listę aktywnych ścieżek, historię wyszukiwania
 - Dodatkowe informacje w *Szczegółach trasy*: typy dróg, nawierzchnia, stromość, gładkość
 - Nawigacja transportem publicznym
 - Nowa szybka akcja do pokazywania/ukrywania ścieżek i trybów dzień/noc
 - Naprawiono zalane obszary w Niemczech, RPA, Quebecu
-- Ulepszony import dla KML i KMZ
+- Ulepszony import dla importu KML i KMZ
 - Naprawiono awarie podczas otwierania niektórych przystanków transportu publicznego
 - Usunięto analitykę Facebooka i Firebase
 
@@ -366,7 +380,7 @@ Data wydania 09/2018:
 - Naprawiono awarię podczas uruchamiania, która występowała z mapami niełacińskimi
 - Poprawiono problemy z szybkością renderowania na urządzeniach z Androidem 8.0
 - Obsługa edycji obiektów wielokątnych (nie-udogodnień)
-- Pomiar odległości: dodano przycisk Pomiar do Akcji w menu kontekstowym
+- Pomiar odległości: dodaj przycisk Pomiar do Akcji w menu kontekstowym
 
 
 <DownloadRelease blog="blog" release="net.osmand-3.2.7.apk" />
@@ -377,11 +391,11 @@ Data wydania 09/2018:
 
 Data wydania 08/2018:
 
-- Nawigacja: Naprawiono pasek postępu, szybka zamiana punktu początkowego i końcowego trasy
+- Nawigacja: naprawiono pasek postępu, szybkie zamienianie punktu początkowego i końcowego trasy
 - Znaczniki mapy: naprawiono włączanie/wyłączanie grup, możliwość ukrywania znaczników z mapy
-- Edycja OSM: Możliwość edycji tagów dla obiektów i dróg innych niż punkty, naprawiono brakujące komentarze do notatek, kopia zapasowa edycji
+- Edycja OSM: możliwość edycji tagów dla obiektów i dróg niebędących punktami, naprawiono brakujące komentarze do notatek, kopia zapasowa edycji
 - Ulepszono parsowanie Wikipedii i Wikivoyage, zaktualizowane pliki są już dostępne
-- Menu kontekstowe: naprawiono kolor tarcz transportowych w trybie nocnym, naprawiono dodatkowe rozmiary menu
+- Menu kontekstowe: naprawiono kolor tarcz transportowych w trybie nocnym, naprawiono rozmiary dodatkowego menu
 - Nawigacja łodzią: obsługa toru wodnego
 
 <DownloadRelease blog="osmand-3-1" release="net.osmand-3.1.6.apk" />
@@ -393,7 +407,7 @@ Data wydania: 05/2018
   
 - Nowe menu Podróże: przeglądaj artykuły WikiVoyage bez dostępu do internetu
 - Wikipedia: nowy wygląd, aktywne linki, obrazy
-- Otwarty interfejs użytkownika ścieżek: wyświetlanie grup punktów trasy
+- Otwarty interfejs użytkownika ścieżki: wyświetlanie grup punktów trasy
 - Znaczniki mapy: import wybranych grup z plików GPX, nowy wygląd wprowadzania współrzędnych
 - Subskrypcja OsmAnd Live obejmuje teraz wszystkie funkcje OsmAnd
 
@@ -408,12 +422,12 @@ Data wydania: 05/2018
 
 Data wydania: 02/2018
   
-- Zaktualizowano menu kontekstowe: pokazuje, kiedy POI otwiera się / zamyka
+- Zaktualizowano menu kontekstowe: pokazuj, kiedy POI otwiera się / zamyka
 - Menu transportu: wszystkie dostępne trasy są teraz na górze
 - Wikipedia: dodano przycisk do otwierania oryginalnego artykułu, zaktualizowano wygląd artykułów
 - Trasa: dodano możliwość zamiany punktów początkowego i końcowego jednym dotknięciem
 - Notatki: dodano sortowanie według typu i daty
-- Edycje OSM: wyświetlanie ikony i nazwy kategorii POI, wyświetlanie ukończonych akcji
+- Edycje OSM: pokazuj ikonę i nazwę kategorii POI, wyświetlaj ukończone akcje
 - Nowy ekran szybkiego wprowadzania współrzędnych do szybkiego tworzenia znaczników
 
 <DownloadRelease blog="osmand-2-9" release="net.osmand-2.9.3.apk" />
@@ -425,8 +439,8 @@ Data wydania: 02/2018
 
 Data wydania 10/2017:
 
-- Całkowicie przeprojektowane znaczniki mapy z wytycznymi i planowaniem trasy
-- Narzędzie do pomiaru odległości, oferujące funkcję przyciągania do drogi i zapisywania punktów jako ścieżki
+- Całkowicie przerobione znaczniki mapy z wytycznymi i planowaniem trasy
+- Narzędzie do mierzenia odległości, oferujące funkcję przyciągania do drogi i zapisywania punktów jako ścieżki
 - OsmAnd Live: poprawki błędów, świeże dane na serwerze co 15 minut, aktualizacje zaimplementowane w nawigacji
 
 <DownloadRelease blog="osmand-2-8" release="net.osmand-2.8.2.apk" />
@@ -451,9 +465,9 @@ Data wydania 07/2017:
 
 Data wydania: 04/2017
 
-- Przycisk szybkiej akcji. Dodaj wybrane funkcje do jednego paska narzędzi
+- Przycisk szybkiej akcji. Dodaj wybrane funkcje do pojedynczego paska narzędzi
 - Ulepszone menu wyszukiwania. Tradycyjne wyszukiwanie krok po kroku połączone z nowoczesnym
-- Profile wysokości i nachylenia dla tras. Wyświetl szczegóły wysokości każdej trasy
+- Profile wysokości i nachylenia dla tras. Zobacz szczegóły wysokości każdej trasy
 - Linie konturowe głębokości morskich
 - Ustawienia stylu jazdy dla rowerzystów
 - Nowy styl mapy
@@ -469,7 +483,7 @@ Data wydania: 11/2016
   
 - Klikalne ikony na mapie. Uzyskaj informacje bez warstwy POI
 - Bardzo szczegółowe wyszukiwanie POI. Znajdź lokalizacje według wielu funkcji
-- Ukrywanie kompasu. Zobacz kompas tylko wtedy, gdy go potrzebujesz
+- Ukrywanie kompasu. Widzisz kompas tylko wtedy, gdy go potrzebujesz
 - Kompatybilność z Android Wear. Używaj OsmAnd na swoim Android Wear
 - Styl mapy Topo. Zupełnie nowy styl dla turystów pieszych i turystów
 - Lepsze nagrywanie podróży i inne ulepszenia
@@ -484,7 +498,7 @@ Data wydania: 08/2016
 - Szybkie wyszukiwanie. Wszystkie typy zapytań w jednym polu wyszukiwania
 - Integracja z systemem audio samochodu. Użyj systemu audio samochodu do nawigacji głosowej
 - Lepsze informacje o transporcie publicznym. Wyświetl pełne trasy transportu publicznego połączone z przystankami
-- Inne ulepszenia. Lepsze wskazówki głosowe, nowe wskazania pasów ruchu i poprawki pamięci masowej
+- Inne ulepszenia. Lepsze wskazówki głosowe, nowa sygnalizacja pasa ruchu i poprawki pamięci
 
 <DownloadRelease blog="osmand-2-4" release="net.osmand-2.4.6.apk" />
 
@@ -494,11 +508,11 @@ Data wydania: 08/2016
 
 Data wydania: 03/2016
 
-- OSM Live beta. Nowy system zachęcający kartografów i zapewniający stałe aktualizacje
+- OSM Live beta. Nowy system zachęcający mapujących i zapewniający stałe aktualizacje
 - Całkowicie nowy interfejs znaczników mapy
 - Przerobione menu przygotowania trasy
 - Tarcze autostradowe zaprojektowane według kraju
-- Odwrotne geokodowanie pokazujące adres lokalizacji po dotknięciu mapy
+- Odwrotne geokodowanie pokazujące adres lokalizacji poprzez dotknięcie mapy
 - Lepsze informacje o transporcie
 
 <DownloadRelease blog="osmand-2-3" release="net.osmand-2.3.apk" />
@@ -511,10 +525,10 @@ Data wydania: 11/2015
 
 - Nowy, kontekstowy interfejs użytkownika do dotykania lokalizacji na mapie i na innych ekranach
 - Ekran mapy jest teraz uruchamiany bezpośrednio, chyba że wybrano opcję „Pokaż pulpit nawigacyjny przy uruchomieniu aplikacji”
-- Nowe dane Wikipedii, teraz pobierane według kraju i z znacznie bardziej kompletnymi danymi
+- Nowe dane Wikipedii, teraz pobierane dla poszczególnych krajów i z znacznie bardziej kompletnymi danymi
 - Lepsze przeliczanie trasy (po wielokrotnych próbach silnik sugeruje inną trasę)
 - Wyszukiwanie POI obsługuje teraz bardziej szczegółowe zapytania
-- Struktura i interfejs pobierania danych mapy zostały przerobione
+- Przerobiono strukturę i interfejs pobierania danych mapy
 
 <DownloadRelease blog="osmand-2-2" release="net.osmand-2.2.apk" />
 
@@ -524,9 +538,9 @@ Data wydania: 11/2015
 
 Data wydania 06/2015:
 
-- Nowe dane Wikipedii, uporządkowane według kraju i zawierające znacznie więcej punktów niż wcześniej
+- Nowe dane Wikipedii ustrukturyzowane według kraju i zawierające znacznie więcej punktów niż wcześniej
 - Lepsze przeliczanie trasy (po kilku próbach silnik sugeruje inną trasę)
-- Wyszukiwanie POI obsługuje bardziej szczegółowe zapytania (takie jak typ paliwa i zapytania dotyczące konkretnej religii)
+- Wyszukiwanie POI obsługuje bardziej szczegółowe zapytania (takie jak typ paliwa i zapytania dotyczące konkretnych religii)
 - Wyświetlanie strzałek skrętu na trasie
 - Pomarańczowy kolor dla POI, które zostaną zamknięte za 30 minut
 - Wiele poprawek w różnych obszarach
@@ -543,7 +557,7 @@ Data wydania 04/2015:
 - Material Design
 - Nowy ekran mapy
 - Pulpit nawigacyjny z różnymi kartami
-- Przeprojektowane Moje Miejsca i Ścieżki
+- Przeprojektowane Moje miejsca i Ścieżki
 - Uproszczone edycje OSM i notatki OSM do użytku offline
 
 <DownloadRelease blog="osmand-2-0" release="net.osmand-2.0.4.apk" />
@@ -558,33 +572,33 @@ Data wydania: 10/2014
 
 Nawigacja:
 
-- Wskazywanie POI wzdłuż trasy
-- Opcjonalne powiadomienia wizualne i dźwiękowe przy zbliżaniu się do punktów trasy
-- Oznaczanie dróg jako nieprzejezdnych (na sesję)
+- Wskazuj POI wzdłuż trasy
+- Opcjonalne wizualne i dźwiękowe powiadomienia o zbliżaniu się do punktów trasy
+- Oznacz drogi jako nieprzejezdne (na sesję)
 - Obsługa pasów ruchu
 - Obliczanie dłuższych tras, teraz do 500 km
-- Dodano komunikat głosowy informujący o powrocie na trasę
-- Nawigacja uwzględnia sygnalizację świetlną
+- Dodano komunikat głosowy, gdy wracasz na trasę
+- Nawigacja uwzględnia sygnały drogowe
 - Ostrzeżenia o ruchu drogowym mogą być teraz ogłaszane według typu, np. znaki stopu lub progi zwalniające (tylko głosy TTS).
 
 Renderowanie mapy:
 
 - Nowe i zaktualizowane style map, w tym OsmAnd, LightRS, UniRS
-- Więcej szczegółów i parametrów konfiguracji dla stylów map
+- Więcej szczegółów i parametrów konfiguracyjnych dla stylów map
 - Opcja wyświetlania transportu publicznego i metra
-- Opcje wyświetlania nawierzchni i gładkości drogi
-- Dostosowanie rozmiaru tekstu mapy niezależnie od powiększenia mapy
+- Opcje wyświetlania nawierzchni drogi i gładkości drogi
+- Dostosuj rozmiar tekstu mapy niezależnie od powiększenia mapy
 
 Interfejs użytkownika i inne:
 
 - Lepszy interfejs do pobierania i aktualizowania map
-- Lepszy interfejs do konfiguracji wyglądu mapy i ekranu
+- Lepszy interfejs do konfigurowania wyglądu mapy i ekranu
 - Obsługa Android Wear
-- Drukowanie planu podróży i informacji o skręcie
+- Drukuj plan podróży i informacje o zakrętach
 
 Uproszczenie nagrywania podróży w tle i nawigacji w tle:
 
-- OsmAnd automatycznie włącza usługę trybu uśpienia GPS, jeśli nawigacja lub nagrywanie podróży zostały aktywowane, tak aby działało to, gdy ekran urządzenia jest wyłączony. Tylko w razie potrzeby usługa trybu uśpienia GPS może być nadal ręcznie przerywana lub konfigurowana poprzez dotknięcie widżetu „Status GPS”.
+- OsmAnd automatycznie włącza usługę trybu uśpienia GPS, jeśli nawigacja lub nagrywanie podróży zostały aktywowane, tak aby funkcja ta działała, gdy ekran urządzenia jest wyłączony. Tylko w razie potrzeby, usługa trybu uśpienia GPS może być nadal ręcznie przerywana lub konfigurowana poprzez dotknięcie widżetu „Status GPS”.
 
 - Wtyczka OsMo
 - Funkcja logowania/wylogowania
@@ -608,7 +622,7 @@ Wtyczka OsMo:
 GPX (Moje miejsca):
 
 - Szczegółowe statystyki / podziel ścieżkę GPX według czasu lub odległości i sprawdź różnicę wysokości/prędkość
-- Obsługuje import GPX/KML (konwertuj z KML na GPX)
+- Obsługuje import GPX/KML (konwersja z KML na GPX)
 
 Ulubione (Moje miejsca):
 
@@ -619,8 +633,8 @@ Ulubione (Moje miejsca):
 Nawigacja:
 
 - Oblicz trasę między punktami trasy ścieżki GPX
-- Więcej konfiguracji dla nawigacji (automatyczne ukrywanie przycisków, mówienie z wyprzedzeniem)
-- Automatyczne uruchamianie nawigacji po opóźnieniu
+- Więcej konfiguracji nawigacji (automatyczne ukrywanie przycisków, mówienie z wyprzedzeniem)
+- Automatyczne rozpoczęcie nawigacji po opóźnieniu
 
 <DownloadRelease blog="osmand-1-8" release="net.osmand-1.8.3-183.apk" />
 
@@ -649,13 +663,13 @@ Data wydania 10/2013:
 - Obsługa urządzeń Full HD
 - Obsługa przezroczystego tła mapy
 - Wyświetlanie pobranych map i ułatwianie pobierania brakujących map bezpośrednio z widoku mapy
-- Pliki map linii konturowych są teraz dołączone dla krajów/regionów
-- Nowa mapa bazowa świata z głównymi drogami, liniami kolejowymi i głównymi obszarami, takimi jak lasy.
-- Funkcja powiększania mapy (długie kliknięcie na przycisk powiększenia) - Przydatne zarówno dla map kafelkowych, jak i wektorowych
+- Pliki mapy linii konturowych są teraz pakowane dla krajów/regionów
+- Nowa mapa bazowa świata z głównymi drogami, kolejami i głównymi cechami obszarowymi, takimi jak lasy.
+- Funkcja lupy mapy (długie kliknięcie na przycisk powiększenia) - Przydatna zarówno dla map kafelkowych, jak i wektorowych
 - Definiowanie/edycja niestandardowych źródeł kafelków online (i określanie czasu wygaśnięcia)
 - Obsługa czasowych ograniczeń prędkości (Holandia)
 - Szybsze wprowadzanie adresu wyszukiwania
-- Poprawki błędów w routingu i renderowaniu
+- Poprawki błędów z routingiem i renderowaniem
 
 <Download link="net.osmand-1.6.5%20beta-167.apk" />
 
@@ -663,9 +677,9 @@ Data wydania 10/2013:
 
 Data wydania: 07/2013
 
-- Ostrzeżenia głosowe o ograniczeniach prędkości i fotoradarach
+- Ostrzeżenia głosowe o ograniczeniach prędkości i kamerach
 - Więcej możliwości komunikatów głosowych (ogłaszane nazwy ulic)
-- Ikony map o wysokiej gęstości
+- Ikony mapy o wysokiej gęstości
 - Poprawki błędów w wyświetlaniu odległości, analizatorze GPX, obsłudze punktów trasy, widżecie planowania, przesyłaniu OSM, https.
 
 <Download link="net.osmand-1.5.2%20beta-154.apk" />
@@ -677,12 +691,12 @@ Data wydania: 07/2013
 Data wydania: 05/2013
 
 
-- Optymalne uporządkowanie punktów trasy, aby odwiedzić wszystkie (problem komiwojażera, od drzwi do drzwi)
+- Optymalne uporządkowanie punktów trasy do odwiedzenia wszystkich (Komwojażer, od drzwi do drzwi)
 - Wyszukiwanie ulicy po nazwie (w okolicy)
 - Wtyczka trybu planowania (ładowanie/edycja/zapisywanie ścieżek GPX)
 - Nowy ekran pobierania (pobieranie w tle)
-- Obsługa podfolderów GPX (organizowanie ścieżek GPX)
-- Usuwanie plików SRTM
+- Obsługa podfolderów GPX (organizuj swoje ścieżki GPX)
+- Usuń pliki SRTM
 - Obsługa notatek OSM
 
 <Download link="net.osmand-1.4%20beta-142.apk" />
@@ -693,7 +707,7 @@ Data wydania: 05/2013
 
 Data wydania 03/2013:
 
-- Ponowne wdrożenie obsługi tabletów i dużych ekranów
+- Ponowne zaimplementowanie obsługi tabletów i dużych ekranów
 - Motyw Holo (dostosowanie)
 - Dodatkowe ustawienia stabilizacji kompasu
 - Górny lewy przycisk na ekranie mapy zastępuje przycisk Menu
@@ -719,8 +733,8 @@ Data wydania 02/2013:
 
 Data wydania 12/2012:
 
-- Ulepszenia wtyczki audio/wideo (zdjęcia z informacjami EXIF)
-- Poprawiona użyteczność i zreorganizowana wtyczka linii konturowych
+- Ulepszenie wtyczki audio/wideo (zdjęcia z informacjami EXIF)
+- Użyteczność poprawiona i zrestrukturyzowana wtyczka linii konturowych
 - Pakiety cieniowania wzgórz dla wtyczki linii konturowych
 - Poprawki błędów (nieoptymalny routing)
 - Wtyczka kalkulatora odległości
@@ -738,9 +752,9 @@ Data wydania 12/2012:
 
 Data wydania 09/2012:
 
-- Ulepszone wyznaczanie tras: szybsze, precyzyjniejsze, do 250 km.
+- Ulepszony routing: szybszy, bardziej precyzyjny, do 250 km.
 - Wprowadzono mapy tylko z drogami.
-- Włącz usługę utrzymywania GPS włączonego podczas nawigacji.
+- Włącz usługę utrzymywania GPS podczas nawigacji.
 
 <Download link="net.osmand-1.0.0%20beta-101.apk" />
 
@@ -758,7 +772,7 @@ Data wydania: 07/2012
 - Przycisk blokady ekranu z usługami logowania
 - Obsługa języków arabskiego, kannada i języków RTL
 - Inteligentne przeliczanie trasy
-- Kierunek według pasów ruchu
+- Kierunek według pasów
 - Informacje o ograniczeniach prędkości, fotoradarach i progach zwalniających
 - Włączanie/wyłączanie widżetu logowania
 
@@ -772,8 +786,8 @@ Data wydania 04/2012:
 - Edycja POI offline
 - Opcja śledzenia online - okresowe wysyłanie współrzędnych do usługi internetowej
 - Wyświetlanie aktualnie nagrywanej ścieżki na mapie
-- Wykrywanie kierunku: „Zawróć” jest wskazywane i ogłaszane, gdy jedzie się w przeciwnym kierunku lub po pominięciu skrętu
-- Optyczne wskazanie zbliżającego się skrętu w promieniu 100 m poprzez zmianę koloru strzałki kierunku
+- Wykrywanie kierunku: „Zawróć” jest wskazywane i ogłaszane, gdy kierujesz się w przeciwnym kierunku lub po pominięciu zakrętu
+- Optyczne wskazanie zbliżającego się zakrętu w odległości 100 m poprzez zmianę koloru strzałki kierunku
 - Dane offline z Wikipedii z artykułami
 
 <Download link="net.osmand-0.7.3%20beta-56.apk" />
@@ -783,16 +797,16 @@ Data wydania 04/2012:
 
 Data wydania 09/2011:
 
-- Wdrożenie wyszukiwania POI według nazwy na dużych obszarach (krajach)
-- Menedżer danych offline (pobieranie, usuwanie, aktywowanie/dezaktywowanie danych offline bezpośrednio w OsmAnd)
-- Ulubione punkty i grupy (kategoryzowanie, usuwanie, zarządzanie ulubionymi)
+- Implementacja wyszukiwania POI według nazwy na dużych obszarach (krajach)
+- Menedżer danych offline (pobieranie, usuwanie, aktywacja/deaktywacja danych offline bezpośrednio w OsmAnd)
+- Punkty ulubione i grupy (kategoryzowanie, usuwanie, zarządzanie ulubionymi)
 - Informacje o wysokości
-- Eksplorator GPX w aplikacji (wyświetlanie szczegółów ścieżki, odległości, średniej prędkości, wysokości itp.)
+- Eksplorator GPX w aplikacji (przeglądanie szczegółów ścieżki, odległości, średniej prędkości, wysokości itp.)
 - Nawigacja GPX (więcej opcji, kontynuacja nawigacji po awarii, obsługa rond)
 - Funkcja zapisywania trasy jako ścieżki GPX do użytku offline
 - Ulepszone monitorowanie GPX (filtrowanie niektórych niedokładnych pozycji i zapisywanie dokładności/wysokości/prędkości)
 - [Prześlij GPX](https://download.osmand.net/gpx/) do społeczności OSM
 - Silnik Text To Speech do nawigacji głosowej
-- Mapa bazowa dla całego świata dołączona do aplikacji
+- Mapa bazowa dla całego świata spakowana z aplikacją
 - Ulepszona nawigacja offline (nadal eksperymentalna)
 - Opcje nawigacji GPX
