@@ -182,7 +182,7 @@ Para una vista más detallada, puedes **escalar el gráfico**:
 | Pestaña **Velocidad** iOS (para Android, el parámetro del eje Y es *Velocidad* y el parámetro del eje X es *Distancia*). La pestaña Velocidad destaca los datos relacionados con la velocidad a lo largo de la ruta. Para iOS, incluye información como *Velocidad promedio*, *Velocidad máxima*, *Tiempo en movimiento* y *Distancia corregida*. Las capturas de pantalla a continuación muestran cómo se muestran estos datos en ambas plataformas. |
 | ![datos](@site/static/img/plugins/trip-recording/graph_speed_andr.png) ![datos](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
 | Para **Android**, puedes crear más combinaciones de datos del eje Y y valores del eje X disponibles. |
-| ![datos](@site/static/plugins/trip-recording/graph_y-x-combinations_andr.png) |
+| ![datos](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
 :::info
 Para obtener más detalles, puedes explorar el [**Menú contextual de rutas**](../map/tracks/track-context-menu.md#options), donde puedes gestionar varias opciones relacionadas con las rutas, como renombrar, eliminar o añadir puntos de referencia. Para ajustar cómo aparecen las rutas en el mapa, visita la sección [**Apariencia**](../map/tracks/appearance.md). Si deseas añadir puntos de referencia específicos a tu ruta actual, consulta la guía [**Puntos de ruta**](../map/tracks/track-context-menu.md#points--waypoints). Para cualquier modificación, como renombrar una ruta, utiliza la pestaña [**Opciones**](https://osmand.net/docs/user/map/track-context-menu#options) dentro del Menú contextual de rutas.
