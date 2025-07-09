@@ -1,7 +1,7 @@
 ---
-source-hash: fe481c5c9b5810a2f3cb38ddb31f5928dbe7eb5814f559570b79e31779252d2f
+source-hash: 2940492b887fc393c3f0d0c70f3dc846bfb39e45115a0482ab0a76fda430a200
 sidebar_position: 3
-title:  Acquisti Web
+title: Acquisti Web
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Come acquistare {#how-to-buy}
 
-Puoi acquistare i prodotti OsmAnd sul [nostro sito ufficiale](https://osmand.net/pricing):
+È possibile acquistare i prodotti OsmAnd sul [nostro sito web ufficiale](https://osmand.net/pricing):
 
 - [**Sito web**](https://osmand.net/pricing): I pagamenti sono elaborati in modo sicuro dal nostro rivenditore autorizzato [FastSpring](https://fastspring.com/).
 
@@ -26,11 +26,11 @@ Tutti gli acquisti effettuati tramite una di queste piattaforme supportano l'[**
 
 | Piano | Descrizione | Note |
 |------------|------------|------------|
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **acquisto in-app** o un **abbonamento** che sblocca funzionalità avanzate per l'app gratuita OsmAnd. | Supporta l'**accesso multipiattaforma** |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **piano di abbonamento** che sblocca tutte le [funzionalità Pro](#pro-features), inclusi CarPlay e Rilievo 3D. | Supporta l'**accesso multipiattaforma** |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **acquisto in-app** o un **abbonamento** che sblocca funzionalità avanzate per l'app gratuita OsmAnd. | Supporta l'accesso **multipiattaforma** |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **piano di abbonamento** che sblocca tutte le [funzionalità Pro](#pro-features), inclusi CarPlay e Rilievo 3D. | Supporta l'accesso **multipiattaforma** |
 
 :::note
-L'**accesso multipiattaforma** significa che puoi acquistare OsmAnd sul nostro sito web o in uno store (ad esempio, *App Store, Google Play o osmand.net*) e utilizzarlo su un'altra piattaforma [collegando il tuo acquisto a un account OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+L'**accesso multipiattaforma** significa che puoi acquistare OsmAnd sul nostro sito web o in un negozio (ad esempio, *App Store, Google Play o osmand.net*) e usarlo su un'altra piattaforma [collegando il tuo acquisto a un account OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 :::
 
 ## Prezzi {#prices}
@@ -47,12 +47,12 @@ Di seguito sono riportati i prezzi dei prodotti OsmAnd negli Stati Uniti e nell'
 :::
 
 
-|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> €299.00   |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> $299.00   |
 
 :::note
 By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,
@@ -63,12 +63,12 @@ Starting from the third year, the full price will apply.
 
 -->
 
-|    | OsmAnd Free   | **Maps+** Acquisto singolo | **Maps+** Abbonamento | **OsmAnd Pro** |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Tipo di acquisto** | **Gratuito** | **Acquisto singolo** (a vita) | **Abbonamento** (12 mesi) | **Abbonamento** (1 mese / 12 mesi) |
-| **Prezzo (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |
-| **Prezzo (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |
+| | OsmAnd Free | **Maps+** Acquisto unico | **Maps+** Abbonamento | **OsmAnd Pro** |**OsmAnd XV** |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
+| | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
+| **Tipo di acquisto** | **Gratuito** | **Acquisto unico** (a vita) | **Abbonamento** (12 mesi) | **Abbonamento** (1 mese / 12 mesi) |**Acquisto unico** (15 anni Pro / Maps+ a vita) |
+| **Prezzo (EUR)** | €0 | €39.99 | €9.99 | €2.99 / €29.99 |<s>€450</s> €299.00 |
+| **Prezzo (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |<s>$450</s> $299.00 |
 
 
 
@@ -96,5 +96,5 @@ I tuoi acquisti sono collegati al tuo [account OsmAnd Cloud](../personal/osmand-
 
 1. Cancella la cache dell'app.
 2. Riavvia il dispositivo.
-3. Prova a ripristinare di nuovo utilizzando lo stesso account.
-4. Oppure scrivici a: support@osmand.net
+3. Prova a ripristinare di nuovo usando lo stesso account.
+4. Oppure scrivici: support@osmand.net

@@ -1,7 +1,7 @@
 ---
-source-hash: 52104063be1e1f495b5c9faaaa8cd1c009b92fb4dccba395827634a48aa85dd8
+source-hash: f590f02934d3bbad431f346fc5f01207a37246d4320a4a5025973bb5ff373b63
 sidebar_position: 3
-title: Inteligentny folder (filtr)
+title: Inteligentny folder (Filtr)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,9 +18,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Funkcja **Inteligentny folder** zapewnia potężne narzędzia do organizowania i zarządzania śladami. Jedną z kluczowych funkcji jest możliwość filtrowania plików w *zakładce Ślady* w menu *Moje miejsca* na podstawie kryteriów takich jak czas trwania, długość lub prędkość.
+Funkcja **Inteligentny folder** zapewnia potężne narzędzia do organizowania i zarządzania śladami. Jedną z kluczowych funkcji jest możliwość filtrowania plików w *zakładce Ślady* w menu *Moje miejsca* na podstawie kryteriów, takich jak czas trwania, długość lub prędkość.
 
-Ta funkcja pozwala szybko znaleźć określone ślady, które odpowiadają Twoim wymaganiom. Przefiltrowane wyniki można zapisać jako **Inteligentny folder**, oferując wygodny dostęp do dynamicznie aktualizowanych kolekcji śladów.
+Ta funkcja pozwala szybko znaleźć konkretne ślady, które odpowiadają Twoim wymaganiom. Przefiltrowane wyniki można zapisać jako **Inteligentny folder**, oferując wygodny dostęp do dynamicznie aktualizowanych kolekcji śladów.
 
 
 ## Filtr wyszukiwania {#search-filter}
@@ -47,9 +47,9 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 ***Jak zastosować filtr:***
 
-- Stuknij ikonę *Szukaj*, a następnie stuknij *Filtr* w wierszu [*Sortuj według*](./manage-tracks.md#sort-by).
+- Stuknij ikonę *Szukaj*, a następnie stuknij *Filtruj* w wierszu [*Sortuj według*](./manage-tracks.md#sort-by).
 
-- **Wybierz wymagane ustawienia filtra**, aby doprecyzować wyszukiwanie śladów.
+- **Wybierz wymagane ustawienia filtra**, aby zawęzić wyszukiwanie śladów.
 
 - Stuknij **Pokaż** w prawym dolnym rogu, aby zobaczyć przefiltrowane wyniki. Liczba pasujących śladów pojawia się w nawiasach.
 
@@ -76,30 +76,30 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-- **Nazwa** — Wyszukaj ślady według tytułu. Wprowadź pełną lub częściową nazwę, aby wyświetlić pasujące ślady.
+- **Nazwa** — Szukaj śladów według tytułu. Wprowadź pełną lub częściową nazwę, aby wyświetlić pasujące ślady.
 - **Folder** — Wybierz jeden lub więcej folderów, aby filtrować ślady według ich lokalizacji przechowywania.
 - **Czas trwania** — Filtruj ślady według zarejestrowanego czasu trwania, ustawiając zakres w godzinach i minutach.
 - **Czas w ruchu** — Określ zakres czasu spędzonego w ruchu podczas nagrywania.
 - **Długość** — Ustaw określony zakres w kilometrach lub milach, aby znaleźć ślady o określonej długości.
 - **Średnia prędkość** — Filtruj ślady według [średniej prędkości](../../widgets/info-widgets.md#average-speed).
 - **Grupa danych z czujników.**
-    Zastosuj filtry na podstawie danych z czujników zewnętrznych, w tym:
+    Zastosuj filtry na podstawie danych z zewnętrznych czujników, w tym:
     - Prędkość czujnika, średnia.
-    - Prędkość czujnika, maksymalna.
+    - Prędkość czujnika, maks.
     - Tętno, średnie.
-    - Tętno, maksymalne.
+    - Tętno, maks.
     - Kadencja rowerowa, średnia.
-    - Kadencja rowerowa, maksymalna
+    - Kadencja rowerowa, maks.
     - Moc roweru, średnia.
-    - Moc roweru, maksymalna.
+    - Moc roweru, maks.
     - Temperatura, średnia.
-    - Temperatura, maksymalna.
+    - Temperatura, maks.
 - **Maksymalna prędkość** — Wybierz ślady z określonymi zakresami maksymalnej prędkości.
 - **Pod górę** i **Z górki** — Filtruj ślady na podstawie dodatnich lub ujemnych zmian wysokości.
-- **Średnia wysokość** i **Maksymalna wysokość** — Znajdź ślady z określonymi średnimi lub maksymalnymi danymi wysokości.
+- **Średnia wysokość** i **Maksymalna wysokość** — Znajdź ślady z określonymi danymi średniej lub maksymalnej wysokości.
 - **Data utworzenia** — Filtruj ślady utworzone w określonym zakresie dat.
 - **Najbliższe miasta** — Wyświetl ślady przechodzące w pobliżu wybranych miast lub miejscowości.
-- **Typ aktywności** (*tylko Android*) — Filtruj ślady na podstawie typu [aktywności](../../map/tracks/track-context-menu.md#track-information-activity) zarejestrowanej w pliku GPX (np. jazda na rowerze, wędrówki).
+- **Typ aktywności** — Filtruj ślady na podstawie typu [aktywności](../../map/tracks/track-context-menu.md#track-information-activity) zarejestrowanej w pliku GPX (np. jazda na rowerze, wędrówki).
 - **Kraj** — Filtruj ślady według kraju lub regionu, w którym zostały zarejestrowane.
 - **Kolor** i **Szerokość** — Wybierz ślady według przypisanego koloru lub szerokości linii.
 - **Inne** — Dodatkowe filtry dla specjalnych cech:
@@ -113,7 +113,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="android" label="Android">
 
-![Moje miejsca funkcja sortowania śladów Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
+![Moje miejsca ślady funkcja sortowania Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
 
 </TabItem>
 
@@ -127,7 +127,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 **Inteligentny folder** to dynamiczna kolekcja śladów automatycznie aktualizowana na podstawie określonych kryteriów filtrowania. Oferuje zaawansowane narzędzia do efektywnego organizowania, wyszukiwania i zarządzania śladami.
 
-***Korzyści z inteligentnych folderów:***
+***Korzyści z Inteligentnych folderów:***
 
 1. **Automatyczna organizacja.**
     Automatycznie zawiera ślady, które odpowiadają zdefiniowanym regułom, takim jak data utworzenia lub zakres czasu trwania.
@@ -149,13 +149,13 @@ Aby utworzyć **Inteligentny folder**, wykonaj następujące kroki:
 
 3. Skonfiguruj ustawienia:
    - **Nazwij folder**. Wprowadź nazwę, aby zidentyfikować folder.
-   - Określ **parametry filtra śladów**. Zastosuj wymagane filtry, korzystając z dostępnych opcji [Filtr](#available-filters).
+   - Określ **parametry filtra śladów**. Zastosuj wymagane filtry, używając dostępnych opcji [Filtra](#available-filters).
 
 4. **Zapisz** ustawienia.
     - Stuknij **Pokaż**, aby wyświetlić podgląd śladów.
     - Wybierz przycisk **Zapisz**, aby sfinalizować *Inteligentny folder*.
 
-Nowo utworzony **Inteligentny folder** automatycznie zaktualizuje swoją zawartość o ślady odpowiadające wybranym kryteriom.
+Nowo utworzony **Inteligentny folder** automatycznie zaktualizuje swoją zawartość o ślady, które odpowiadają wybranym kryteriom.
 
 
 ### Zarządzanie inteligentnymi folderami {#managing-smart-folders}
@@ -180,7 +180,7 @@ Nowo utworzony **Inteligentny folder** automatycznie zaktualizuje swoją zawarto
 
 </Tabs>
 
-**Inteligentny folder** jest wyświetlany z unikalną ikoną na liście folderów w zakładce Ślady. Aby zarządzać folderem, stuknij *menu z trzema kropkami* obok niego (*Android*) i *przytrzymaj* (*iOS*) lub otwórz folder i użyj ikony w prawym górnym rogu.
+**Inteligentny folder** jest wyświetlany z unikalną ikoną na liście folderów w zakładce Ślady. Aby zarządzać folderem, stuknij *menu z trzema kropkami* obok niego (*Android*) i *długo stuknij* (*iOS*) lub otwórz folder i użyj ikony w prawym górnym rogu.
 
 ***Dostępne działania:***
 
@@ -189,22 +189,22 @@ Nowo utworzony **Inteligentny folder** automatycznie zaktualizuje swoją zawarto
 - **Pokaż wszystkie ślady na mapie** (*tylko Android*) — Wyświetl wszystkie ślady folderu na mapie.
     *UWAGA: Ładowanie wielu śladów może wpłynąć na wydajność.*
 
-- **Edytuj nazwę** (*Android*) / **Zmień nazwę** (*iOS*) — Zmień nazwę folderu, aby ułatwić identyfikację.
+- **Edytuj nazwę** (*Android*) / **Zmień nazwę** (*iOS*) — Zmień nazwę folderu dla łatwiejszej identyfikacji.
 
 - **Odśwież** — Ręcznie zaktualizuj zawartość folderu, aby upewnić się, że zawiera najnowsze ślady.
 
 - **Zmień domyślny wygląd** (*Android*) — Zmienia wygląd wyświetlania wszystkich śladów w folderze.
 
-- **Edytuj filtr** — Modyfikuj ustawienia filtra śladów dla bieżącego Inteligentnego folderu. Zobacz [Filtr wyszukiwania](#search-filter) po szczegóły.
+- **Edytuj filtr** — Modyfikuj ustawienia filtra śladów dla bieżącego Inteligentnego folderu. Szczegóły znajdziesz w [Filtr wyszukiwania](#search-filter).
 
 - **Eksportuj** — Eksportuj wszystkie ślady w Inteligentnym folderze za pomocą funkcji [Import/Eksport](../../personal/import-export.md). Zostaniesz przekierowany do *Menu → Ustawienia → zakładka Akcje*.
 
 - **Usuń folder** — Usuń Inteligentny folder bez usuwania jego śladów.
-    *OSTRZEŻENIE: Ta czynność jest nieodwracalna i wyświetli komunikat potwierdzający.*
+    *OSTRZEŻENIE: Ta akcja jest nieodwracalna i spowoduje wyświetlenie komunikatu potwierdzającego.*
 
 - **Przenieś** (*iOS*) — Umożliwia przeniesienie folderu do innego istniejącego folderu lub utworzenie nowego.
 
-- **Wybierz** — Użyj [Trybu wyboru](./manage-tracks.md#selection-mode) dla określonych działań na śladach w folderze.
+- **Wybierz** — Użyj [Trybu wyboru](./manage-tracks.md#selection-mode) dla konkretnych działań na śladach w folderze.
 
 
 ## Powiązane artykuły {#related-articles}
@@ -213,6 +213,6 @@ Nowo utworzony **Inteligentny folder** automatycznie zaktualizuje swoją zawarto
 - [Analizuj na mapie](../../map/tracks/index.md#analyze-track-on-map)
 - [Menu kontekstowe śladu](../../map/tracks/track-context-menu.md)
 - [Nawigacja po śladzie](../../navigation/setup/gpx-navigation.md)
-- [Nagrywanie podróży](../../plugins/trip-recording.md)
+- [Rejestrowanie podróży](../../plugins/trip-recording.md)
 
 > *Ostatnia aktualizacja: marzec 2025*

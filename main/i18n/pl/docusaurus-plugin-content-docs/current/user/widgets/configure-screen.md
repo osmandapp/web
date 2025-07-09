@@ -1,7 +1,7 @@
 ---
-source-hash: 1fd80d1d09f7e680cc085a34c5ed9d3971e1a94467831c5729ef1f0952117344
+source-hash: c8ab58e76333d6bb43b100fbf37d1adb3abf342632d71272ce2ebe8566c5ffc3
 sidebar_position: 1
-title: Konfiguruj ekran
+title:  Konfiguracja ekranu
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,12 +18,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Menu **Konfiguruj ekran** w OsmAnd umożliwia dostosowanie interfejsu mapy poprzez dodawanie i rozmieszczanie widżetów, przycisków i szybkich akcji na wielu panelach.
+Menu **Konfiguracja ekranu** w OsmAnd pozwala dostosować interfejs mapy poprzez dodawanie i rozmieszczanie widżetów, przycisków i szybkich akcji na wielu panelach.
 
 Możesz:
 
 - Dodawać widżety [informacyjne](../widgets/info-widgets.md), [nawigacyjne](../widgets/nav-widgets.md) i [związane z markerami](../widgets/markers.md).
-- Dodawać [szybkie akcje](../widgets/quick-action.md) i [przyciski mapy](../widgets/map-buttons.md).
+- Dodawać [Szybkie akcje](../widgets/quick-action.md) i [przyciski mapy](../widgets/map-buttons.md).
 - Organizować widżety w panelach (górny, dolny, lewy, prawy, środkowy).
 - Tworzyć wiele **stron** w panelach bocznych.
 - Wybierać wysokość wiersza i przełączać ikony widżetów.
@@ -37,7 +37,7 @@ Wszystkie widżety są [zależne od profilu](../personal/profiles.md) — każdy
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
 </TabItem>
 
@@ -45,7 +45,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_overview_ios_2.png)
+![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_overview_ios_2.png)
 
 </TabItem>
 
@@ -60,7 +60,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
-![Konfiguruj ekran](@site/static/img/widgets/configure_screen_andr.png)
+![Konfiguracja ekranu](@site/static/img/widgets/configure_screen_andr.png)
 
 </TabItem>
 
@@ -68,13 +68,13 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
-![Konfiguruj ekran](@site/static/img/widgets/configure_screen_ios.png)
+![Konfiguracja ekranu](@site/static/img/widgets/configure_screen_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd umożliwia organizowanie interfejsu mapy za pomocą konfigurowalnych paneli widżetów.  
+OsmAnd pozwala organizować interfejs mapy za pomocą konfigurowalnych paneli widżetów.  
 Możesz dodawać, zmieniać kolejność, grupować i usuwać widżety w następujących panelach:
 
 - **Panel górny**
@@ -85,7 +85,7 @@ Możesz dodawać, zmieniać kolejność, grupować i usuwać widżety w następu
 Każdy panel obsługuje różne zachowania układu:
 
 - **Panele górny i dolny** wyświetlają widżety w wierszach. Możesz umieścić jeden lub dwa widżety w wierszu i dodać wiele wierszy, jeśli to konieczne.
-- **Panele lewy i prawy** obsługują wiele stron. Możesz grupować widżety na osobnych stronach i przełączać się między nimi.
+- **Panele lewy i prawy** obsługują wiele stron. Możesz grupować widżety w oddzielne strony i przełączać się między nimi.
 
 
 ### Katalog widżetów {#widgets-catalog}
@@ -94,13 +94,13 @@ Każdy panel obsługuje różne zachowania układu:
 
 <TabItem value="android" label="Android">  
 
-![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_widgets_panels_andr.png)
+![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_widgets_panels_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_widgets_panels_ios.png)
+![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_widgets_panels_ios.png)
 
 </TabItem>
 
@@ -126,15 +126,15 @@ Każdy panel obsługuje różne zachowania układu:
     Zestaw pokazuje pozostałą odległość do celu, punktu pośredniego, czas dotarcia do punktu pośredniego lub czas podróży dla obliczonej trasy.  
     Zawiera 4 widżety: [Odległość do celu](../widgets/nav-widgets.md#distance-to-destination), [Odległość do punktu pośredniego](../widgets/nav-widgets.md#distance-to-intermediate), [Czas do punktu pośredniego](../widgets/nav-widgets.md#time-to-intermediate), [Czas do celu](../widgets/nav-widgets.md#time-to-destination).
 
-- [Manewry trasy](../widgets/nav-widgets.md#next-turn) (*Tylko panel lewy/prawy*).  
+- [Manewry na trasie](../widgets/nav-widgets.md#next-turn) (*Tylko panel lewy/prawy*).  
     Ten zestaw jest aktywowany podczas nawigacji i pokazuje odległość oraz strzałkę do następnego manewru.  
     Zawiera 3 widżety: *Następny zakręt*, *Następny zakręt (mały)*, *Drugi następny zakręt*.
 
-- [Limit prędkości](../widgets/nav-widgets.md#speed-limit).  
-    Wyświetla aktualny limit prędkości dla drogi.
+- [Ograniczenie prędkości](../widgets/nav-widgets.md#speed-limit).  
+    Wyświetla aktualne ograniczenie prędkości dla drogi.
 
 - [Prędkościomierz](../widgets/info-widgets.md#speedometer).  
-    Pokazuje aktualną prędkość na podstawie danych GPS i ograniczoną prędkość na podstawie [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+    Pokazuje aktualną prędkość na podstawie danych GPS i ograniczonej prędkości na podstawie [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
 - [Nazwa ulicy](../widgets/nav-widgets#street-name) (*Tylko góra/dół*).  
     Wyświetla aktualną lub nadchodzącą ulicę.
@@ -151,7 +151,7 @@ Każdy panel obsługuje różne zachowania układu:
     Pokazuje średnią prędkość bieżącej podróży.
 
 - [Poziom baterii](../widgets/info-widgets.md#battery-level).  
-    Wyświetla poziom naładowania baterii urządzenia.
+    Wyświetla poziom baterii urządzenia.
 
 - [Widżety współrzędnych](../widgets/info-widgets#coordinates-widget) (*Tylko góra/dół*).  
     Ten zestaw wyświetla współrzędne geograficzne bieżącej geolokalizacji.  
@@ -160,8 +160,8 @@ Każdy panel obsługuje różne zachowania układu:
 - [Bieżąca prędkość](../widgets/info-widgets.md#speed).  
     Wyświetla prędkość z czujnika GPS.
 
-- [Bieżący czas](../widgets/info-widgets.md#current-time).  
-    Wyświetla aktualny czas systemowy.
+- [Bieżąca godzina](../widgets/info-widgets.md#current-time).  
+    Wyświetla bieżącą godzinę systemową.
 
 - [Współczynnik szybowania](../widgets/info-widgets.md#glide-ratio).  
     Widżety pokazują współczynnik szybowania do celu i średni współczynnik szybowania dla bieżącego lotu.  
@@ -187,11 +187,11 @@ Każdy panel obsługuje różne zachowania układu:
 
 - [Notatki audio/wideo](../widgets/info-widgets.md#audiovideo-notes-widget).  
     Szybki dostęp do przechwytywania mediów.  
-    Zawiera 4 widżety: *Na żądanie*, *Nagrywaj audio*, *Nagrywaj wideo*, *Zrób zdjęcie*.
+    Zawiera 4 widżety: *Na żądanie*, *Nagrywanie audio*, *Nagrywanie wideo*, *Robienie zdjęcia*.
 
 - [Widżety deweloperskie](../widgets/info-widgets.md#developer-widgets).  
     Wyświetla opcjonalne informacje.  
-    Zawiera 5 widżetów: *FPS renderowania mapy*, *Pochylenie kamery*, *Wysokość kamery*, *Poziom zoomu*, *Odległość od kamery do celu*, *Dostępna pamięć RAM*.  
+    Zawiera 5 widżetów: *FPS renderowania mapy*, *Pochylenie kamery*, *Wysokość kamery*, *Poziom powiększenia*, *Odległość od kamery do celu*, *Dostępna pamięć RAM*.  
 
 - [Widżety czujników zewnętrznych](../widgets/info-widgets.md#external-sensors-widgets).  
     Zestaw pomaga śledzić dane z czujników BLE/ANT+ w czasie rzeczywistym.  
@@ -206,8 +206,8 @@ Każdy panel obsługuje różne zachowania układu:
 - [Widżet parkowania](../widgets/info-widgets.md#parking-widget).  
     Odległość od środka ekranu do zapisanej lokalizacji parkowania.
 
-- [Nagrywanie podróży](../widgets/info-widgets.md#trip-recording-widgets).  
-    Rozpoczyna i zatrzymuje nagrywanie ścieżki oraz wyświetla dane nagrywania ścieżki.  
+- [Rejestrowanie podróży](../widgets/info-widgets.md#trip-recording-widgets).  
+    Rozpoczyna i zatrzymuje rejestrowanie śladu oraz wyświetla dane rejestrowania śladu.  
     Zawiera 4 widżety: *Dystans*, *Czas trwania*, *Pod górę*, *W dół*.
 
 - [Pogoda](../widgets/info-widgets.md#weather-widgets).  
@@ -216,17 +216,17 @@ Każdy panel obsługuje różne zachowania układu:
 
 :::note Widżety zależne od panelu
 
-- Dostępne tylko w **panelach górnym i dolnym** i muszą być umieszczone w osobnych wierszach: *Widżety współrzędnych, Widżet profilu wysokościowego, Widżet pasów ruchu, Pasek markerów mapy, Widżet nazwy ulicy*.
-- Dostępne tylko w **panelach lewym i prawym**: *Manewry trasy*.
+- Dostępne tylko w **panelach górnym i dolnym** i muszą być umieszczone w oddzielnych wierszach: *Widżety współrzędnych, Widżet profilu wysokościowego, Widżet pasów ruchu, Pasek markerów mapy, Widżet nazwy ulicy*.
+- Dostępne tylko w **panelach lewym i prawym**: *Manewry na trasie*.
 
 :::
 
 
 ### Wiersze {#rows}
 
-![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
+![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
 
-Funkcja **Tryb wierszowy** umożliwia dodawanie dowolnej liczby wierszy do paneli górnego i dolnego. Możesz wyświetlać wiele widżetów w jednym wierszu, zwiększając ilość widocznych informacji.
+Funkcja **Tryb wierszy** pozwala dodawać dowolną liczbę wierszy do paneli górnego i dolnego. Możesz wyświetlać wiele widżetów w jednym wierszu, zwiększając ilość widocznych informacji.
 
 ***Jak skonfigurować wiersze:***
 
@@ -238,17 +238,17 @@ Funkcja **Tryb wierszowy** umożliwia dodawanie dowolnej liczby wierszy do panel
 
 #### Typy i ograniczenia widżetów {#widget-types-and-restrictions}
 
-Tryb umożliwia dodanie **więcej niż jednego widżetu w jednym wierszu** w panelach górnym i dolnym, aby wyświetlić tyle informacji, ile potrzeba.  
+Tryb pozwala dodać **więcej niż jeden widżet w jednym wierszu** na panelach górnym i dolnym, aby wyświetlić tyle informacji, ile potrzeba.  
 
-- **Widżety złożone**. Tylko jeden złożony widżet może być dodany do wiersza. Należą do nich:
+- **Widżety złożone**. W wierszu można dodać tylko jeden złożony widżet. Należą do nich:
     - [Pasek markerów mapy (*Tylko Android*)](../widgets/markers.md#configure-marker-widgets-android)
     - [Nazwa ulicy](../widgets/nav-widgets#street-name)
     - [Widżety współrzędnych](../widgets/info-widgets#coordinates-widget)
     - [Pasy ruchu](../widgets/nav-widgets#lanes)
     - [Profil wysokościowy (*Tylko Android*)](../widgets/nav-widgets#elevation-widget)
-    - [Manewry trasy](../widgets/nav-widgets.md#next-turn)
+    - [Manewry na trasie](../widgets/nav-widgets.md#next-turn)
 
-- **Widżety proste**. Wiele prostych widżetów można dodać do jednego wiersza. Widżety te mogą wyświetlać *Nazwę*, *Jednostki miary*, *Wartość* i *Ikonę*.
+- **Widżety proste**. Do jednego wiersza można dodać wiele prostych widżetów. Widżety te mogą wyświetlać *Nazwę*, *Jednostki miary*, *Wartość* i *Ikonę*.
 
 
 ### Strony {#pages}
@@ -273,40 +273,40 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-Widżety w panelach prawym i lewym mogą być grupowane w **Strony**. Funkcja **Tryb stron** umożliwia dodanie 5 stron do paneli lewego i prawego.
+Widżety w panelach prawym i lewym mogą być grupowane w **Strony**. Funkcja **Tryb stron** pozwala dodać 5 stron do paneli lewego i prawego.
 
 ***Jak skonfigurować wiersze:***
 
 - **Dodaj stronę**. Przejdź do ustawień panelu lewego/prawego i dotknij *Edytuj → Dodaj stronę*.
-- **Organizuj widżety według strony**. Ta funkcja jest pomocna, gdy potrzebne są różne zestawy widżetów do różnych zadań, takich jak nawigacja w porównaniu z przeglądaniem mapy.
-- Strony umożliwiają tworzenie **zestawów widżetów** dla konkretnych scenariuszy, poprawiając przepływ pracy i zmniejszając bałagan.
+- **Organizuj widżety według strony**. Ta funkcja jest przydatna, gdy potrzebne są różne zestawy widżetów do różnych zadań, takich jak nawigacja w porównaniu z przeglądaniem mapy.
+- Strony pozwalają tworzyć **zestawy widżetów** dla konkretnych scenariuszy, poprawiając przepływ pracy i zmniejszając bałagan.
 
 
 ## Ustawienia widżetów {#widget-settings}
 
-![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
+![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
 1. **Opcje rozmiaru widżetu** (*dla wszystkich paneli*):  
     Możesz dostosować rozmiar **prostych widżetów** w **panelach górnym, dolnym, lewym i prawym**:
 
-    - **Mały**. Idealny do kompaktowych wyświetlaczy, oszczędzający więcej miejsca na ekranie dla map.
-    - **Średni** (*domyślny rozmiar widżetu*). Równoważy widoczność i wykorzystanie przestrzeni.
+    - **Mały**. Idealny do kompaktowych wyświetlaczy, oszczędzający więcej miejsca na mapy.
+    - **Średni** (*domyślny rozmiar widżetu*). Równoważy widoczność i wykorzystanie miejsca.
     - **Duży**. Zapewnia większe, bardziej widoczne informacje widżetu.  
 
 2. **Ukrywanie ikon widżetów** (*dla paneli górnego i dolnego*):
 
     - Poprawia przejrzystość i maksymalizuje przestrzeń dla ważnych danych.
-    - Szczególnie przydatne podczas wyświetlania wielu widżetów w tym samym **wierszu**.
+    - Szczególnie przydatne, gdy wyświetlanych jest wiele widżetów w tym samym **wierszu**.
 
-3. **Indywidualny rozmiar dla różnych wierszy** (*dla paneli górnego i dolnego*):
+3. **Indywidualny rozmiar dla różnych wierszy** (*dla wszystkich paneli*):
 
-    - Widżety mogą być indywidualnie skalowane poprzez dostosowanie rozmiaru wiersza.
-    - **UWAGA:** Zmiana rozmiaru jednego widżetu w wierszu spowoduje zmianę rozmiaru wszystkich widżetów w tym wierszu.
+    - Widżety mogą być indywidualnie skalowane poprzez dostosowanie rozmiaru wiersza i kolumny.
+    - **UWAGA:** Zmiana rozmiaru jednego widżetu w wierszu/kolumnie spowoduje zmianę rozmiaru wszystkich widżetów w tym wierszu/kolumnie.
 
 4. **Aby zmienić rozmiar widżetu i widoczność ikony:**
 
-    - Wybierz widżet, który już dodałeś do panelu.  
-    - Dotknij ikonę *Ustawienia* po prawej stronie pola widżetu.
+    - Wybierz widżet, który został już dodany do panelu.  
+    - Dotknij ikony *Ustawienia* po prawej stronie pola widżetu.
     - Dotknij ustawienia *Rozmiar* i wybierz jeden z dostępnych rozmiarów.
     - Przełącz na pozycję Wyłączone w polu *Pokaż ikonę*.
 
@@ -335,7 +335,7 @@ Widżety w panelach prawym i lewym mogą być grupowane w **Strony**. Funkcja **
 
 **Dla paneli górnego i dolnego**  
 
-- *Dodaj widżet na prawo/lewo:*
+- *Dodaj widżet po prawej/lewej stronie:*
 
     - Wybierz pozycję dla nowego widżetu względem bieżącego.
     - Wybierz widżet z listy [Dostępne widżety](#widgets-for-all-panels).
@@ -350,50 +350,50 @@ Widżety w panelach prawym i lewym mogą być grupowane w **Strony**. Funkcja **
 **Ogólne działania dla wszystkich paneli**  
 
 - *Ustawienia*.
-    - Dostęp do ustawień widżetu (jeśli dostępne) w celu dostosowania jego wyglądu lub zachowania.
+    - Dostęp do ustawień widżetu (jeśli są dostępne) w celu dostosowania jego wyglądu lub zachowania.
 
 - *Zresetuj średnią prędkość*.
     - Dostępne dla widżetu [Średnia prędkość](../widgets/info-widgets.md#average-speed).
-    - Długie dotknięcie natychmiast resetuje wartość prędkości podczas podróży.
+    - Długie dotknięcie, aby natychmiast zresetować wartość prędkości podczas podróży.
 
 - *Usuń*.
     - Usuń widżet z panelu.
-    - Potwierdzenie zapewnia, że akcja jest zamierzona.
+    - Monit o potwierdzenie zapewnia, że działanie jest zamierzone.
 
 ### Kopie widżetów {#copies-of-widgets}
 
-*Menu OsmAnd → Konfiguruj ekran → Widżety → Panel*  
+*Menu OsmAnd → Konfiguracja ekranu → Widżety → Panel*  
 
 ![Duplikat widżetu](@site/static/img/widgets/widget_dublicate.png)  
 
-OsmAnd umożliwia dodawanie wielu instancji tego samego widżetu do różnych paneli lub stron. Ta funkcja jest szczególnie przydatna, gdy potrzebujesz spójnych informacji w różnych widokach lub profilach.  
+OsmAnd pozwala dodawać wiele instancji tego samego widżetu do różnych paneli lub stron. Ta funkcja jest szczególnie przydatna, gdy potrzebujesz spójnych informacji w różnych widokach lub profilach.  
 
 ***Jak duplikować widżety:***
 
-- **Dodaj widżet**. Przejdź do: *Menu OsmAnd → Konfiguruj ekran → Widżety → Panel →* **Dodaj** *widżet*.
+- **Dodaj widżet**. Przejdź do: *Menu OsmAnd → Konfiguracja ekranu → Widżety → Panel →* **Dodaj** *widżet*.
 - **Duplikuj za pomocą menu kontekstowego**. Dotknij widżetu i wybierz **Duplikuj** z listy akcji.
 - **Alternatywna metoda**. Wybierz ten sam widżet z listy *Dostępne widżety* i dotknij *Dodaj*.
 
 
 ### Przenieś lub usuń {#move-or-delete}
 
-*Menu OsmAnd → Konfiguruj ekran → Widżety → Panel*  
+*Menu OsmAnd → Konfiguracja ekranu → Widżety → Panel*  
 
-![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_remove_andr.png)
+![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_remove_andr.png)
 
-Możesz zmieniać kolejność lub usuwać widżety z ekranu aplikacji za pomocą trybu **Edycja**.  
+Możesz zmieniać kolejność lub usuwać widżety z ekranu aplikacji za pomocą trybu **Edycji**.  
 
 ***Jak przenieść widżet:***
 
-- Przejdź do: *Menu OsmAnd → Konfiguruj ekran → Widżety → Panel → Przycisk Edytuj*.
+- Przejdź do: *Menu OsmAnd → Konfiguracja ekranu → Widżety → Panel → Przycisk Edytuj*.
 - Długo dotknij **ikonę po prawej stronie** widżetu.
-- Przeciągnij ją do wymaganej pozycji na liście widżetów.
+- Przeciągnij go do wymaganej pozycji na liście widżetów.
 
 ***Jak usunąć widżet:***  
 
-- Postępuj zgodnie z tymi samymi krokami, co powyżej.
+- Wykonaj te same kroki, co powyżej.
 - Dotknij **ikony minusa** po lewej stronie nazwy widżetu.
-- Potwierdź usunięcie po wyświetleniu monitu.
+- Potwierdź usunięcie, gdy zostaniesz o to poproszony.
 
 
 ## Przyciski {#buttons}
@@ -420,7 +420,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-**Szybka akcja (przyciski niestandardowe)** umożliwia dodanie listy pojedynczych akcji ze wszystkich dostępnych [szybkich akcji](../widgets/quick-action.md#custom-buttons). Te akcje można przypisać do jednego lub więcej przycisków widżetów na ekranie mapy. Przyciski niestandardowe zapewniają szybki dostęp do często używanych akcji.
+**Szybka akcja (przyciski niestandardowe)** pozwala dodać listę pojedynczych akcji ze wszystkich dostępnych [Szybkich akcji](../widgets/quick-action.md#custom-buttons). Te akcje mogą być przypisane do jednego lub więcej przycisków widżetów na ekranie mapy. Przyciski niestandardowe zapewniają szybki dostęp do często używanych akcji.
 
 ### Przyciski domyślne {#default-buttons}
 
@@ -444,7 +444,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-1. **Przyciski domyślne** umożliwiają dostosowanie, które wstępnie ustawione przyciski mapy są widoczne na ekranie mapy. Możesz ukryć lub pokazać następujące przyciski:
+1. **Przyciski domyślne** pozwalają dostosować, które predefiniowane przyciski mapy są widoczne na ekranie mapy. Możesz wybrać ukrycie lub pokazanie następujących przycisków:
 
     - [Tryb 3D](../widgets/map-buttons.md#3d-mode). Dla iOS przycisk jest zawsze dostępny. Dla Androida pojawia się na liście i jest dostępny do ustawienia, jeśli wybrano silnik renderowania mapy [Wersja 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
 
@@ -453,20 +453,20 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
     - [Konfiguruj mapę](../map/configure-map-menu.md). Dostęp do opcji modyfikacji stylu mapy, warstw i dodatkowych ustawień.
 
-    - [Menu](../widgets/map-buttons.md#main-menu). Otwiera główne menu aplikacji w celu uzyskania dostępu do wszystkich funkcji.
+    - [Menu](../widgets/map-buttons.md#main-menu). Otwiera główne menu aplikacji, aby uzyskać dostęp do wszystkich funkcji.
 
     - [Moja lokalizacja](../widgets/map-buttons.md#my-location-and-zoom). Centruje mapę na Twojej bieżącej pozycji.
 
     - [Nawigacja](../widgets/map-buttons.md#directions). Niezbędne do planowania trasy i rozpoczynania nawigacji.
 
-    - [Szukaj](../widgets/map-buttons.md#search). Otwiera narzędzie wyszukiwania lokalizacji.
+    - [Szukaj](../widgets/map-buttons.md#search). Otwiera narzędzie wyszukiwania do znajdowania lokalizacji.
 
     - [Powiększ / pomniejsz](../widgets/map-buttons.md#my-location-and-zoom). Dostosowuje poziom powiększenia mapy, aby pokazać więcej lub mniej szczegółów.
 
 2. **Menu z trzema kropkami** na ekranie przycisków domyślnych zawiera takie akcje, jak:
 
-    - *Resetuj do domyślnych*. Umożliwia przywrócenie ustawień przycisków do ich pierwotnego wyglądu.
-    - *Kopiuj z innego profilu*. Wybierz z której listy profilów chcesz skopiować ustawienia przycisków.
+    - *Przywróć domyślne*. Pozwala przywrócić ustawienia przycisków do ich pierwotnego wyglądu.
+    - *Kopiuj z innego profilu*. Wybierz, z którego profilu z oferowanej listy chcesz skopiować ustawienia przycisków.
 
 3. **Domyślny wygląd przycisku** (*Tylko Android*) oferuje różnorodne opcje dostosowywania dla tego typu przycisków. Aby zmodyfikować wygląd przycisku, dotknij wymaganego przycisku z listy i wybierz opcję [Wygląd](#button-appearance).
 
@@ -481,10 +481,10 @@ Funkcja *Wygląd przycisku* umożliwia pełne dostosowanie wyglądu przycisków 
 
 ***Opcje dostosowywania***:
 
-- **Ikona**. Wybierz z listy ikon, które reprezentują dodane akcje, ułatwiając szybkie identyfikowanie funkcji.
+- **Ikona**. Wybierz z listy ikon, które reprezentują już dodane akcje, ułatwiając identyfikację funkcji na pierwszy rzut oka.
 - **Promień narożnika**. Dostosuj to ustawienie, aby zmienić kształt przycisku, od ostrych, kwadratowych narożników do gładkich, zaokrąglonych krawędzi.
-- **Rozmiar**. Wybierz rozmiar przycisku, który najlepiej pasuje do Twojego ekranu i wyróżnia się w razie potrzeby. Dla *przycisków domyślnych* rozmiary są wstępnie ustawione i nie można ich regulować.
-- **Przezroczystość tła**. Kontroluj widoczność tła przycisku. Możesz ustawić je jako w pełni widoczne lub częściowo przezroczyste, lub wyświetlać tylko cień ramki i ikonę.
+- **Rozmiar**. Wybierz rozmiar przycisku, który najlepiej pasuje do Twojego ekranu i wyróżnia się w razie potrzeby. W przypadku *przycisków domyślnych* rozmiary są predefiniowane i nie można ich regulować.
+- **Przezroczystość tła**. Kontroluj widoczność tła przycisku. Możesz ustawić je jako w pełni widoczne, częściowo przezroczyste lub wyświetlać tylko cień ramki i ikonę.
 
 
 ## Inne {#other}
@@ -511,10 +511,10 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
 - [Odległość przez dotknięcie](../widgets/radius-ruler.md#distance-by-tap). Daje możliwość zmierzenia odległości od Twojej pozycji do wybranego punktu.
-- [Prędkościomierz](../widgets/info-widgets.md#speedometer). Pokazuje aktualną prędkość na podstawie danych GPS i ograniczoną prędkość na podstawie [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). Wyświetlane dane zależą również od ustawienia [Tolerancja limitu prędkości](../navigation/guidance/voice-navigation.md#speed-limit) w OsmAnd.
+- [Prędkościomierz](../widgets/info-widgets.md#speedometer). Pokazuje aktualną prędkość na podstawie danych GPS i ograniczonej prędkości na podstawie [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). Wyświetlane dane zależą również od ustawienia [Tolerancja ograniczenia prędkości](../navigation/guidance/voice-navigation.md#speed-limit) w OsmAnd.
 
 
-### Pozycja wyświetlania (Pozycja lokalizacji na ekranie) {#display-position-location-position-on-screen}
+### Wyświetl pozycję (Pozycja lokalizacji na ekranie) {#display-position-location-position-on-screen}
 
 <Tabs groupId="operating-systems">
 
@@ -532,13 +532,13 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-> *Pozycja lokalizacji na ekranie* to nazwa tego ustawienia w wersji OsmAnd na iOS.  
+> *Pozycja lokalizacji na ekranie* to nazwa tego ustawienia w wersji iOS OsmAnd.  
 
-Umożliwia ustawienie położenia kursora [Moja lokalizacja](../map/interact-with-map.md#my-location-and-zoom) na mapie OsmAnd. Dostępne są trzy opcje:  
+Pozwala ustawić położenie kursora na *[Moja lokalizacja](../map/interact-with-map.md#my-location-and-zoom)* na mapie OsmAnd. Dostępne są trzy opcje:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. Kursor jest zawsze umieszczony na środku ekranu.
-- **<Translate android="true" ids="position_on_map_bottom"/>**. *Moja lokalizacja* jest umieszczona nieco poniżej środka ekranu. Ten tryb pozwala zobaczyć więcej informacji o mapie przed Twoim ruchem, co jest przydatne podczas nawigacji.
-- **<Translate android="true" ids="shared_string_automatic"/>**. Umieszcza *Moją lokalizację* w zależności od [Orientacji mapy](../map/interact-with-map.md#map-orientation-modes) (*Dół* - dla kierunku ruchu, *Środek* - dla wszystkich innych).
+- **<Translate android="true" ids="position_on_map_bottom"/>**. *Moja lokalizacja* jest umieszczona nieco poniżej środka ekranu. Ten tryb pozwala zobaczyć więcej informacji na mapie przed Twoim ruchem, co jest przydatne podczas nawigacji.
+- **<Translate android="true" ids="shared_string_automatic"/>**. Umieszcza *Moją lokalizację* w zależności od *[Orientacji mapy](../map/interact-with-map.md#map-orientation-modes)* (*Dół* - dla kierunku ruchu, *Środek* - dla wszystkich innych).
 
 
 ## Akcje {#actions}
@@ -563,15 +563,15 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-Dostęp do dodatkowych akcji w ekranie Konfiguruj to:
+Dostęp do dodatkowych akcji w Konfiguracji ekranu:
 
-- *Android*. Znajduje się w ekranie Konfiguruj na dole ekranu w sekcji *Akcje*: *Menu → Konfiguruj ekran → Akcje*.
+- *Android*. Znajduje się w Konfiguracji ekranu na dole ekranu w sekcji *Akcje*: *Menu → Konfiguracja ekranu → Akcje*.
 - *Android / iOS*. Znajduje się na ekranach każdego panelu w *menu z trzema kropkami* w prawym górnym rogu ekranu.
 
 Dostępne akcje:
 
-- **Resetuj do domyślnych**. Ta funkcja umożliwia zresetowanie wszystkich ustawień do wartości domyślnych, jeśli chcesz zacząć od nowa lub używać tylko wstępnie ustawionych po uruchomieniu OsmAnd.
-- **Kopiuj z innego profilu**. Ta funkcja umożliwia szybkie importowanie ustawień z innego profilu, wybieranie wymaganych z listy i kopiowanie.
+- **Przywróć domyślne**. Ta funkcja pozwala zresetować wszystkie ustawienia do wartości domyślnych, jeśli chcesz zacząć od nowa lub użyć tylko predefiniowanych ustawień podczas uruchamiania OsmAnd.
+- **Kopiuj z innego profilu**. Ta funkcja pozwala szybko importować ustawienia z innego profilu, wybrać wymagane z listy i skopiować.
 
 
 ## Zmień profil {#switch-profile}
@@ -580,20 +580,20 @@ Dostępne akcje:
 
 <TabItem value="android" label="Android">  
 
-![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_switch_2_andr.png)
+![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_switch_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu Konfiguruj ekran](@site/static/img/widgets/configure_screen_switch_ios.png)
+![Menu konfiguracji ekranu](@site/static/img/widgets/configure_screen_switch_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- W przypadku urządzeń z systemem **Android** możesz zmieniać profile u góry ekranu głównego Konfiguruj ekran za pomocą dostępnych ikon profili.  
-- Jeśli używasz urządzenia z systemem **iOS**, dotknij ikonę profilu w górnym rogu ekranu głównego Konfiguruj ekran i wybierz wymagany profil z listy, aby go aktywować.  
+- W przypadku urządzeń z **Androidem** możesz zmieniać profile na górze ekranu głównego Konfiguracji ekranu, używając dostępnych ikon profili.  
+- Jeśli używasz urządzenia z **iOS**, dotknij ikony profilu w górnym rogu ekranu głównego Konfiguracji ekranu i wybierz wymagany profil z listy, aby go aktywować.  
 
 **Zwróć uwagę**. Opcja *Zmień profil* nie wyświetla wszystkich istniejących profili, a jedynie te, które zostały *włączone* w menu Ustawienia.
 

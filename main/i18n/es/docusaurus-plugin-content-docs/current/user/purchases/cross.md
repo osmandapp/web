@@ -1,7 +1,7 @@
 ---
-source-hash: 9f4dbbf91f34a5275efe83dee3ced74ee6fd21346d50094391417530b145a93e
+source-hash: 88145581c12f95f7e0dba74a712f88afdcbe5249c5f0e8b66b14eb7035e3d3d1
 sidebar_position: 4
-title:  Compras multiplataforma
+title: Compras multiplataforma
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,86 +17,86 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Compras multiplataforma compatibles {#supported-cross-platform-purchases}
 
-Los siguientes productos de OsmAnd actualmente admiten el uso en múltiples plataformas (Android, iOS y Web):
+Los siguientes productos de OsmAnd actualmente son compatibles con el uso en múltiples plataformas (Android, iOS y Web):
 
 - Suscripción a **OsmAnd Pro**
 - Suscripción a **Maps+**
-- Compra única en la aplicación **Maps+**
+- Compra única dentro de la aplicación de **Maps+**
 
-A partir de la **versión 5.0 de OsmAnd**, lanzada en celebración de nuestro **15º aniversario**, el acceso multiplataforma se ha extendido a **Maps+** (anteriormente conocido como *Unlimited*). Anteriormente, solo la suscripción a [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) era multiplataforma.
+A partir de la **versión 5.1 de OsmAnd**, lanzada en celebración de nuestro **15.º aniversario**, el acceso multiplataforma se ha extendido a **Maps+** (anteriormente conocido como *Ilimitado*). Anteriormente, solo la suscripción a [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) era multiplataforma.
 
-Para activar el acceso multiplataforma, las compras deben vincularse a su cuenta de [OsmAnd Cloud](../personal/osmand-cloud.md#login).
-Puede comparar todos los productos de OsmAnd aquí: [diferencia entre compras](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
+Para activar el acceso multiplataforma, las compras deben estar vinculadas a tu cuenta de [OsmAnd Cloud](../personal/osmand-cloud.md#login).
+Puedes comparar todos los productos de OsmAnd aquí: [diferencia entre compras](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
 
 | Tipo de producto | Multiplataforma | Notas |
 |-----------------------------|----------------|-------|
 | OsmAnd Pro (suscripción) | ✔ | Funciona en Android, iOS y Web a través de la Nube |
-| Maps+ (suscripción) | ✔ | Requiere la versión 5.0+ y una cuenta en la Nube |
+| Maps+ (suscripción) | ✔ | Requiere la versión 5.0+ y una cuenta de Cloud |
 | Maps+ (compra única) | ✔ | Debe activarse a través de OsmAnd Cloud en el dispositivo de compra |
 | OsmAnd+ (aplicación independiente) | Próximamente | No transferible entre tiendas o plataformas |
 
 
 ## Cómo funciona {#how-it-works}
 
-Para usar su compra de **OsmAnd Pro** o **Maps+** en diferentes plataformas (Android, iOS o Web), debe **vincularla a su cuenta de OsmAnd Cloud**.
+Para usar tu compra de **OsmAnd Pro** o **Maps+** en diferentes plataformas (Android, iOS o Web), debes **vincularla a tu cuenta de OsmAnd Cloud**.
 
-### Vincular su compra {#link-your-purchase}
+### Vincula tu compra {#link-your-purchase}
 
-![Cloud link](@site/static/img/purchases/cloud_activation.png)
+![Vínculo de la nube](@site/static/img/purchases/cloud_activation.png)
 
-Realice este paso en el **dispositivo donde realizó la compra** (Android o iOS, versión 5.0 o posterior):
+Realiza este paso en el **dispositivo donde realizaste la compra** (Android o iOS, versión 5.0 o posterior):
 
-1. Vaya a su cuenta de [OsmAnd Cloud](../personal/osmand-cloud.md#login):
+1. Ve a tu cuenta de [OsmAnd Cloud](../personal/osmand-cloud.md#login):
    _Menú → Ajustes → OsmAnd Cloud → Crear nueva cuenta / Ya tengo una cuenta_
 
-2. Una vez iniciada la sesión, su compra de **Pro** o **Maps+** se vinculará automáticamente a su **cuenta de la Nube** y se marcará como **multiplataforma**, *si no estaba previamente vinculada a otra cuenta.*
+2. Una vez iniciada la sesión, tu compra de **Pro** o **Maps+** se vinculará automáticamente a tu **cuenta de Cloud** y se marcará como **multiplataforma**, *si no estaba vinculada previamente a otra cuenta.*
 
 
 
 ### Activar en otro dispositivo o plataforma {#activate-on-another-device-or-platform}
 
-![Maps+ cross](@site/static/img/purchases/cross_purchase.png)
-![Maps+ cross](@site/static/img/purchases/cross_purchase_1.png)
+![Maps+ multiplataforma](@site/static/img/purchases/cross_purchase.png)
+![Maps+ multiplataforma](@site/static/img/purchases/cross_purchase_1.png)
 
-1. Vaya a su cuenta de [OsmAnd Cloud](../personal/osmand-cloud.md#login):
+1. Ve a tu cuenta de [OsmAnd Cloud](../personal/osmand-cloud.md#login):
    *Menú → Ajustes → OsmAnd Cloud →* ***Iniciar sesión con la misma cuenta***
 
-2. Luego vaya a:
+2. Luego ve a:
    *Menú → Ajustes → Compras*
-   Su compra vinculada de **Pro o Maps+** debería estar ahora disponible.
+   Tu compra vinculada de **Pro o Maps+** debería estar ahora disponible.
 
 
 ### Solución de problemas {#troubleshooting}
 
-Si no ve su compra en la lista:
+Si no ves tu compra en la lista:
 
-1. Toque *Menú → Ajustes → Compras → Restaurar compras*
-2. Asegúrese de haber iniciado sesión en la **misma cuenta de OsmAnd Cloud** utilizada en el dispositivo original.
+1. Toca *Menú → Ajustes → Compras → Restaurar compras*
+2. Asegúrate de haber iniciado sesión en la **misma cuenta de OsmAnd Cloud** utilizada en el dispositivo original.
 
-Si el problema persiste, póngase en contacto con **support@osmand.net** e incluya:
+Si el problema persiste, ponte en contacto con **support@osmand.net** e incluye:
 
-- Su correo electrónico de OsmAnd Cloud.
+- Tu correo electrónico de OsmAnd Cloud.
 - Plataforma(s) y tienda(s) de aplicaciones utilizadas.
 - Tipo de compra (Pro / Maps+ única / suscripción a Maps+).
 
 
 ## Ejemplo {#example}
 
-Usted compró **Maps+** como una compra única en la aplicación en la versión gratuita de OsmAnd desde la [Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).
-Más tarde, decide cambiar a un iPhone y desea usar **Maps+** con la [versión de OsmAnd para iOS](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
+Compraste **Maps+** como una compra única dentro de la aplicación en la versión gratuita de OsmAnd desde la [Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).
+Más tarde, decides cambiar a un iPhone y quieres usar **Maps+** con la [versión de OsmAnd para iOS](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
-Para activar su compra de Maps+ en iOS:
+Para activar tu compra de Maps+ en iOS:
 
-1. Abra la **versión de Amazon** de la aplicación OsmAnd en su dispositivo original.
-2. Inicie sesión en su cuenta de [OsmAnd Cloud](../personal/osmand-cloud.md#login):
+1. Abre la **versión de Amazon** de la aplicación OsmAnd en tu dispositivo original.
+2. Inicia sesión en tu cuenta de [OsmAnd Cloud](../personal/osmand-cloud.md#login):
    *Menú → Ajustes → OsmAnd Cloud → Crear nueva cuenta / Ya tengo una cuenta*
-3. Instale OsmAnd en su iPhone desde la [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
-4. Inicie sesión en la **misma cuenta de OsmAnd Cloud** en su iPhone.
-5. Vaya a *Menú → Ajustes → Compras* y confirme que **Maps+** aparece como activo.
+3. Instala OsmAnd en tu iPhone desde la [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
+4. Inicia sesión en la **misma cuenta de OsmAnd Cloud** en tu iPhone.
+5. Ve a *Menú → Ajustes → Compras* y confirma que **Maps+** aparece como activo.
 
-Esto completa la activación multiplataforma de su compra. Ahora puede seguir usando **Maps+** en su nuevo dispositivo.
+Esto completa la activación multiplataforma de tu compra. Ahora puedes seguir usando **Maps+** en tu nuevo dispositivo.
 
-¡Disfrute usando Maps+/Pro en todas las plataformas!
+¡Disfruta usando Maps+/Pro en todas las plataformas!
 
 
 ## Artículos relacionados {#related-articles}
@@ -106,4 +106,4 @@ Esto completa la activación multiplataforma de su compra. Ahora puede seguir us
 - [Diferencia entre compras Android](./android.md#difference-between-purchases-android)
 - [Diferencia entre compras iOS](./ios.md#difference-between-purchases-ios)
 
-> *Última actualización: Mayo de 2025*
+> *Última actualización: mayo de 2025*

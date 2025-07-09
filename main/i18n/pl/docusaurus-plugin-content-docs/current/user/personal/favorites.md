@@ -1,7 +1,7 @@
 ---
-source-hash: 08c4a707755dc66044356c5dad82616bbd7f7add912ad819bc413a4b0e6a2766
+source-hash: 6b2c4fa700522da26fcad9168c57a7b9f010154747f3253c53cdd3c3067262a8
 sidebar_position: 7
-title:  Ulubione
+title: Ulubione
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-**Ulubione** to funkcja OsmAnd, która umożliwia tworzenie zakładek (notatek) na mapie. Te ulubione punkty są domyślnie wyświetlane jako żółte gwiazdki, ale można je w pełni dostosować za pomocą różnych kolorów, kształtów i ikon. Ulubione są pogrupowane w dedykowaną warstwę mapy, która staje się widoczna od *6. poziomu powiększenia*.
+Funkcja **Ulubione** w OsmAnd pozwala tworzyć zakładki (notatki) na mapie. Te ulubione punkty są domyślnie wyświetlane jako żółte gwiazdki, ale można je w pełni dostosować, zmieniając kolory, kształty i ikony. Ulubione są grupowane w dedykowaną warstwę mapy, która staje się widoczna od *6. poziomu powiększenia*.
 
 <Tabs groupId="operating-systems">
 
@@ -76,20 +76,20 @@ Ulubione są częścią specjalnej warstwy mapy i można je [pokazywać lub ukry
 
 </Tabs>
 
-Aby dodać ulubiony punkt:
+Aby dodać punkt ulubiony:
 
 1. Wybierz [POI](../map/point-layers-on-map.md#points-of-interest-pois) lub strukturę na mapie.
-Krótkie dotknięcie dla POI lub długie dotknięcie dla ogólnego punktu na mapie.
+   Krótkie dotknięcie dla POI lub długie dotknięcie dla ogólnego punktu na mapie.
 2. Wybierz [Dodaj (☆)](../map/map-context-menu.md#add--edit-favorite) z menu kontekstowego mapy.
 
-Podczas dodawania punktu z danych OSM, odpowiednie informacje POI są automatycznie dołączane. Możesz również utworzyć ulubiony punkt poprzez [długie dotknięcie](../map/map-context-menu.md#select-any-point-long-tap) dowolnej lokalizacji na mapie.
+Podczas dodawania punktu z danych OSM, odpowiednie informacje POI są automatycznie uwzględniane. Możesz również utworzyć ulubiony punkt poprzez [długie dotknięcie](../map/map-context-menu.md#select-any-point-long-tap) dowolnej lokalizacji na mapie.
 
-***Pola dla ulubionego punktu:***
+***Pola dla punktu ulubionego:***
 
 - **Nazwa** — Unikalna nazwa w grupie (*Wymagane*).
 - **Adres** i **Opis** (*Opcjonalne*).
 - **Grupa** — Wybierz z istniejącej [grupy ulubionych](#manage-favorites) lub utwórz nową.
-- **Dostosowanie wizualne** — Ikona, kolor, kształt mogą pasować do domyślnego [wyglądu grupy](#change-group-appearance) lub być indywidualnie dostosowane.
+- **Dostosowanie wizualne** — Ikona, kolor, kształt mogą pasować do domyślnego [wyglądu grupy](#change-group-appearance) lub być dostosowane indywidualnie.
 
 
 ### Edytuj / Zastąp / Usuń {#edit--replace--delete}
@@ -110,15 +110,15 @@ Podczas dodawania punktu z danych OSM, odpowiednie informacje POI są automatycz
 
 </Tabs>
 
-Aby zmodyfikować ulubiony punkt:
+Aby zmodyfikować punkt ulubiony:
 
-1. [Dotknij](../map/map-context-menu.md#select-an-object-single-tap) ulubionego punktu na mapie lub przejdź do [Moje ulubione](#manage-favorites).
+1. [Dotknij](../map/map-context-menu.md#select-an-object-single-tap) ulubionego punktu na mapie lub przejdź do [Moje Ulubione](#manage-favorites).
 2. Wybierz **Edytuj ulubione** z [*menu kontekstowego mapy*](../map/map-context-menu.md#add--edit-favorite).
 
 ***Dostępne opcje:***
 
 - **Edytuj szczegóły** — Nazwa, ikona, grupa, adres i opis.
-- **Zastąp lokalizację** — Zastąp inny punkt tym. Przydatne do aktualizacji konkretnego punktu (np. *Mój zaparkowany samochód*) lub tworzenia nowego.
+- **Zastąp lokalizację** — Zastąp inny punkt tym. Przydatne do aktualizowania konkretnego punktu (np. *Mój zaparkowany samochód*) lub tworzenia nowego.
 - **Usuń** — Usuń ulubiony punkt za pomocą opcji usuwania, dostępnej poprzez menu Edytuj lub za pomocą przycisku usuwania na Androidzie.
 
 
@@ -144,18 +144,18 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-W OsmAnd dostępny jest szeroki wybór ikon dla POI i punktów trasy. Możesz:
+W OsmAnd dostępna jest szeroka gama ikon dla POI i punktów trasy. Możesz:
 
-- Wybierz ikonę z listy [kategorii POI](../search/search-poi.md#categories-and-their-filters).
-- Znajdź odpowiednią ikonę za pomocą [opcji wyszukiwania](../search/search-all.md#how-to-use).
+- Wybrać ikonę z listy [kategorii POI](../search/search-poi.md#categories-and-their-filters).
+- Znaleźć odpowiednią ikonę za pomocą [opcji wyszukiwania](../search/search-all.md#how-to-use).
 
 
 ### Ulubione specjalne (osobiste) {#special-favorites-personal}
 
-Folder *Osobiste* zawiera specjalne punkty, takie jak **<Translate android="true" ids="favorite_home_category"/>** i **<Translate android="true" ids="work_button"/>**, często używane w [nawigacji](../navigation/setup/route-navigation.md#select-starting-point). Ten folder nie posiada *menu z trzema kropkami*, a jego parametry nie mogą być zmieniane.
+Folder *Osobiste* zawiera specjalne punkty, takie jak **<Translate android="true" ids="favorite_home_category"/>** i **<Translate android="true" ids="work_button"/>**, często używane w [nawigacji](../navigation/setup/route-navigation.md#select-starting-point). Ten folder nie ma *menu z trzema kropkami*, a jego parametry nie mogą być zmieniane.
 
 
-## Zarządzaj ulubionymi {#manage-favorites}
+## Zarządzanie ulubionymi {#manage-favorites}
 
 <Tabs groupId="operating-systems">
 
@@ -177,7 +177,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-Sekcja **Moje ulubione** umożliwia:
+Sekcja **Moje Ulubione** pozwala na:
 
 - [Wyszukiwanie](#order--sorting--search) konkretnych ulubionych lub grup.
 - [Operacje zbiorcze](#bulk-edit--delete) — Zmiana nazwy, przenoszenie lub usuwanie wielu ulubionych jednocześnie.
@@ -199,11 +199,11 @@ Sekcja **Moje ulubione** umożliwia:
 
 </Tabs>
 
-- **Sortowanie** — Foldery i punkty ulubionych są sortowane alfabetycznie, z [folderem osobistym](../personal/favorites.md#special-favorites-personal) na górze.
-- **Wyszukiwanie** — Użyj [wyszukiwania globalnego](../search/search-all.md) do znalezienia ulubionych według nazwy. Ulubione są sortowane według odległości od centrum mapy.
+- **Sortowanie** — Foldery i punkty ulubione są sortowane alfabetycznie, z [folderem osobistym](../personal/favorites.md#special-favorites-personal) na górze.
+- **Wyszukiwanie** — Użyj [Wyszukiwania globalnego](../search/search-all.md) do znalezienia ulubionych według nazwy. Ulubione są sortowane według odległości od centrum mapy.
 
 
-### Edycja/usuwanie zbiorcze {#bulk-edit--delete}
+### Edycja / Usuwanie zbiorcze {#bulk-edit--delete}
 
 <Tabs groupId="operating-systems">
 
@@ -255,7 +255,7 @@ Przejdź do: *Menu z trzema kropkami → Zmień domyślny wygląd*
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *Długie dotknięcie folderu → Zmień wygląd*
+Przejdź do: *Długie dotknięcie folderu → Domyślny wygląd*
 
 ![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 
@@ -267,17 +267,18 @@ Użyj ***menu z trzema kropkami*** (*Android*) obok każdego folderu i ***długi
 
 - **<Translate android="true" ids="shared_string_rename"/>** — Użyj tej opcji, aby zmienić nazwę wybranego folderu.
 
-- **<Translate android="true" ids="change_default_appearance"/>** — Dostosuj sposób wyświetlania ulubionych punktów w folderze na mapie, zmieniając ich ikony, kolory lub etykiety.
+- **<Translate android="true" ids="change_default_appearance"/>** — Dostosuj sposób wyświetlania punktów ulubionych w folderze na mapie, zmieniając ich ikony, kolory lub etykiety.
 
-- **<Translate android="true" ids="shared_string_show_on_map"/>** lub **Ukryj na mapie** — Przełącz tę opcję, aby wyświetlić lub ukryć ulubione punkty z folderu na mapie.
+- **<Translate android="true" ids="shared_string_show_on_map"/>** lub **Ukryj na mapie** — Przełącz tę opcję, aby wyświetlić lub ukryć punkty ulubione z folderu na mapie.
 
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** lub **Usuń z znaczników mapy** (*tylko Android*) — Dodaj wszystkie ulubione punkty z folderu do *listy znaczników mapy* lub usuń je w razie potrzeby, aby ułatwić odniesienie.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** lub **Usuń z znaczników mapy** (*tylko Android*) — Dodaj wszystkie punkty ulubione z folderu do *listy znaczników mapy* lub usuń je w razie potrzeby, aby ułatwić odniesienie.
 
-- **<Translate android="true" ids="shared_string_share"/>** — Udostępnij ulubione punkty w folderze, eksportując je jako plik *Favorites.gpx*, co ułatwia przesyłanie lub tworzenie kopii zapasowych danych.
+- **<Translate android="true" ids="shared_string_share"/>** — Udostępnij punkty ulubione w folderze, eksportując je jako plik *Favorites.gpx*, co ułatwia transfer lub tworzenie kopii zapasowych danych.
 
-- **<Translate android="true" ids="shared_string_delete"/>** — Trwale usuń wybrany folder ulubionych i wszystkie znajdujące się w nim punkty.
+- **<Translate android="true" ids="shared_string_delete"/>** — Trwale usuń wybrany folder ulubionych i wszystkie punkty w nim zawarte.
 
 Więcej szczegółów w artykule [Moje miejsca](../personal/myplaces.md#favorites).
+
 
 
 ### Zmień wygląd grupy {#change-group-appearance}
@@ -302,14 +303,14 @@ Ustawienia *Zmień wygląd grupy*:
 
 - **Ikona, kolor, kształt** — Ustaw domyślny styl dla wszystkich ulubionych w grupie.
 - **Spójność** — Nowe ulubione dodane do grupy automatycznie dziedziczą domyślny wygląd.
-- **Dostosowanie** — Zastąp domyślne ustawienia dla istniejących punktów w folderze, tylko dla nowych ulubionych lub zastosuj do wszystkich.
+- **Dostosowanie** — Nadpisz domyślne ustawienia dla istniejących punktów w folderze, tylko dla nowych ulubionych lub zastosuj do wszystkich.
 
 
 ## Eksport / Import {#export--import}
 
-OsmAnd udostępnia kilka metod [tworzenia kopii zapasowych](./import-export.md) i [przywracania](./import-export.md#import) ulubionych:
+OsmAnd oferuje kilka metod [tworzenia kopii zapasowych](./import-export.md) i [przywracania](./import-export.md#import) ulubionych:
 
-- **Lokalizacje kopii zapasowych** — Pamięć lokalna, [OsmAnd Cloud](../personal/osmand-cloud.md) (tylko z subskrypcją [OsmAnd Pro lub OsmAnd Start](../purchases/index.md)) lub aplikacje do przesyłania wiadomości błyskawicznych.
+- **Lokalizacje kopii zapasowych** — Pamięć lokalna, [OsmAnd Cloud](../personal/osmand-cloud.md) (tylko z subskrypcją [OsmAnd Pro lub OsmAnd Start](../purchases/index.md)) lub aplikacje do komunikacji błyskawicznej.
 
 - **Format pliku** — Ulubione są zapisywane jako pliki `.gpx` (favorites.gpx).
 
@@ -336,13 +337,13 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-[Darmowa kopia zapasowa ulubionych](../personal/osmand-cloud.md#osmand-start) to specjalny plan zakupu, który umożliwia tworzenie kopii zapasowych ulubionych punktów (lokalizacji) dla wersji **Android, iOS** lub **Web** w aplikacji OsmAnd i przywracanie ich z OsmAnd Cloud. Ten plan jest dostępny dla użytkowników [OsmAnd Free lub Maps+](../purchases/index.md).
+[Darmowa kopia zapasowa ulubionych](../personal/osmand-cloud.md#osmand-start) to specjalny plan zakupu, który umożliwia tworzenie kopii zapasowych punktów ulubionych (lokalizacji) dla wersji **Android, iOS** lub **Web** w aplikacji OsmAnd i przywracanie ich z OsmAnd Cloud. Ten plan jest dostępny dla użytkowników [OsmAnd Free lub Maps+](../purchases/index.md).
 
 *Darmowa kopia zapasowa ulubionych* oferuje następujące korzyści:
 
-- **Płatność nie jest wymagana**. Korzystaj z funkcji tworzenia kopii zapasowych bez konieczności zakupu płatnych subskrypcji.
-- **Zapisz ulubione punkty**. Regularnie zapisuj swoje ulubione punkty w OsmAnd, aby uniknąć ich utraty w przypadku awarii urządzenia lub usunięcia aplikacji.
-- **Przenieś ulubione punkty**. Importuj swoje ulubione punkty na nowe urządzenie za pomocą funkcji *Darmowa kopia zapasowa ulubionych*, jeśli używasz OsmAnd na wielu urządzeniach.
+- **Nie wymaga płatności**. Korzystaj z funkcji tworzenia kopii zapasowych bez konieczności zakupu płatnych subskrypcji.
+- **Zapisuj punkty ulubione**. Regularnie zapisuj swoje punkty ulubione w OsmAnd, aby uniknąć ich utraty w przypadku awarii urządzenia lub usunięcia aplikacji.
+- **Przenoś punkty ulubione**. Importuj swoje punkty ulubione na nowe urządzenie za pomocą funkcji *Darmowa kopia zapasowa ulubionych*, jeśli używasz OsmAnd na wielu urządzeniach.
 
 
 #### Jak utworzyć kopię zapasową {#how-to-create-a-backup}
@@ -367,12 +368,12 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-Aby korzystać z funkcji *Darmowa kopia zapasowa ustawień*, potrzebujesz konta OsmAnd Cloud. Jeśli masz konto w *OsmAnd Pro* lub aktywne konto w *OsmAnd Cloud*, baner promocyjny nie będzie widoczny.
+Aby korzystać z funkcji *Darmowa kopia zapasowa ustawień*, potrzebujesz konta OsmAnd Cloud. Jeśli masz konto w *OsmAnd Pro* lub aktywne konto w *OsmAnd Cloud*, nie zobaczysz banera promocyjnego.
 
 - *Baner darmowej kopii zapasowej ulubionych*. Dotknij tego banera, aby rozpocząć proces tworzenia kopii zapasowej.
 - *Ukończ krok rejestracji*, jeśli nie masz konta OsmAnd Cloud, postępując zgodnie z instrukcjami w [przewodniku rejestracji](../personal/osmand-cloud.md#login).
 - *Przejdź do menu Zakupy OsmAnd* (*Menu → Ustawienia → Zakupy*).
-- *[Pakiet OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Wybierz tę opcję, aby uzyskać dostęp do funkcji Darmowej kopii zapasowej ustawień.
+- *[Pakiet OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Wybierz tę opcję, aby uzyskać dostęp do funkcji Darmowa kopia zapasowa ustawień.
 - *Utwórz kopię zapasową* swoich ustawień.
 
 
@@ -394,9 +395,9 @@ Aby korzystać z funkcji *Darmowa kopia zapasowa ustawień*, potrzebujesz konta 
 
 </Tabs>
 
-Możesz eksportować i importować swoje ulubione za pomocą specjalnych przycisków na dole ekranu Ulubione. Plik [.gpx](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) może być wysłany do Dropboxa, poczty e-mail, komunikatorów i innych aplikacji zainstalowanych na Twoim urządzeniu, które obsługują tę funkcję.
+Możesz eksportować i importować swoje ulubione za pomocą specjalnych przycisków na dole ekranu Ulubione. Plik [.gpx](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) można wysłać do Dropboxa, poczty e-mail, komunikatorów i innych aplikacji zainstalowanych na Twoim urządzeniu, które obsługują tę funkcję.
 
-- Przycisk **Importuj** (*Android*) / **Importuj ulubione** (*iOS*). Umożliwia importowanie ulubionych punktów (*favorites.gpx*) jako punktów trasy z pliku *GPX* (popularny format danych GPS) z pamięci urządzenia.
+- Przycisk **Importuj** (*Android*) / **Importuj ulubione** (*iOS*). Umożliwia importowanie punktów ulubionych (*favorites.gpx*) jako punktów trasy z pliku *GPX* (popularny format danych GPS) z pamięci urządzenia.
 - Przycisk **Udostępnij** (*Android*) / **Eksportuj ulubione** (*iOS*). Umożliwia eksportowanie (udostępnianie) wszystkich ulubionych jako pliku *favorites.gpx*.
 
 
@@ -418,7 +419,7 @@ Możesz eksportować i importować swoje ulubione za pomocą specjalnych przycis
 
 </Tabs>
 
-- Dotknij **Menu z trzema kropkami** (*Android*) lub przycisku **Edytuj** (*ikona ołówka na iOS*) lub **długo dotknij** folderu (*iOS*) wybranego folderu ulubionych.
+- Dotknij **menu z trzema kropkami** (*Android*) lub przycisku **Edytuj** (*ikona ołówka na iOS*) lub **długo dotknij** folderu (*iOS*) wybranego folderu ulubionych.
 - Wybierz przycisk **Udostępnij**, aby wysłać plik *Favorites.gpx* do pamięci urządzenia lub udostępnić go za pośrednictwem aplikacji do przesyłania wiadomości.
 
 
@@ -453,16 +454,17 @@ OsmAnd tworzy **plik kopii zapasowej** za każdym razem, gdy ulubione są edytow
 **Ręczny eksport kopii zapasowej**
 
 - Przejdź do *<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>*.
-- Eksportuj plik `.osf` do pamięci lokalnej, usług w chmurze lub udostępnij go bezpośrednio.
+- Wyeksportuj plik `.osf` do pamięci lokalnej, usług w chmurze lub udostępnij go bezpośrednio.
 
 :::caution
-W najnowszych wersjach ***Androida*** dostęp do katalogów systemowych jest ograniczony. Jednak po wyodrębnieniu pliku ulubionych z archiwum nadal możliwe jest przesłanie go do komunikatorów lub usług w chmurze itp.
+W najnowszych wersjach ***Androida*** dostęp do katalogów systemowych jest ograniczony. Jednak po wyodrębnieniu pliku ulubionych z archiwum nadal możliwe jest przekazanie go do komunikatorów lub usług w chmurze itp.
 :::
 
 
 ### Ulubione w pliku GPX {#favorites-in-gpx-file}
 
-Wszystkie informacje o Ulubionym są przechowywane i opisane za pomocą tagów. Podczas tworzenia Ulubionego punktu możesz napisać własny [opis](#favorite-point) lub użyć informacji z danych OSM [punktu zainteresowania (POI)](../map/point-layers-on-map.md#points-of-interest-pois), z których Twój punkt został utworzony. Ulubione punkty, POI i punkty trasy używają tych samych **tagów** do przechowywania informacji i są zapisywane w **formacie pliku GPX**.
+Wszystkie informacje o ulubionym są przechowywane i opisywane za pomocą tagów. Podczas tworzenia punktu ulubionego możesz napisać własny [opis](#favorite-point) lub użyć informacji z danych [punktu zainteresowania (POI)](../map/point-layers-on-map.md#points-of-interest-pois) OSM, z których został utworzony Twój punkt. Punkty ulubione, POI i punkty trasy używają tych samych **tagów** do przechowywania informacji i są zapisywane w **formacie pliku GPX**.
+
 
 ```xml
 <gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -485,9 +487,10 @@ Wszystkie informacje o Ulubionym są przechowywane i opisane za pomocą tagów. 
 </gpx>
 ```
 
+
 ## Powiązane artykuły {#related-articles}
 
-- [Zarządzaj trasami](../personal/tracks/manage-tracks.md#import--export-track)
+- [Zarządzanie śladami](../personal/tracks/manage-tracks.md#import--export-track)
 - [Historia wyszukiwania](../search/search-history.md#export-and-share)
 - [Schematy palet kolorów](../personal/color-palette-schemes.md)
 

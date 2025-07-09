@@ -1,5 +1,5 @@
 ---
-source-hash: 7e2ccc0ea2e0d19c95b956a22f974da03bc1dcae580234c1cfcce8ededbdeb06
+source-hash: 8897fb3aebb172bbef2674a2dea9f5e516873f9949d5d72db7b3e2032bea15b3
 sidebar_position: 4
 title:  Контекстне меню треку
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-*Контекстне меню треку* надає інформацію про *[Трек](../../personal/tracks/index.md)* як у текстовій, так і в [графічній](#altitude--speed-graphs) формах. Воно дозволяє додавати інформацію, вносити зміни, редагувати та виконувати різні інші дії з треком. Ви можете отримати доступ до *контекстного меню треку*, просто торкнувшись потрібного треку на карті або скориставшись меню *[Мої місця](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Можливо, вам знадобиться відкрити папку треку та вибрати потрібний трек, торкнувшись його.
+*Контекстне меню треку* надає інформацію про *[трек](../../personal/tracks/index.md)* як у текстовому, так і в [графічному](#altitude--speed-graphs) вигляді. Воно дозволяє додавати інформацію, вносити зміни, редагувати та виконувати різні інші дії з треком. Доступ до *контекстного меню треку* можна отримати, просто торкнувшись потрібного треку на карті або скориставшись меню *[Мої місця](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Можливо, вам знадобиться відкрити папку треків і вибрати потрібний трек, торкнувшись його.
 
 <Tabs groupId="operating-systems">
 
@@ -40,7 +40,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд треку {#track-overview}
 
-Коли ви торкаєтеся треку, відкривається перший екран *Контекстного меню треку* - вкладка *Огляд*. На цій вкладці ви можете знайти підсумок про обраний трек (*[Інформаційна панель](#info-panel)*) та виконати найпоширеніші дії з треком за допомогою *[Меню дій з треком](#track-actions)*. Ви можете побачити [опис та службову інформацію](#description-and-info) про ваш трек, якщо потягнете вкладку Огляд вгору.
+Коли ви торкаєтеся треку, відкривається перший екран *Контекстного меню треку* — вкладка *Огляд*. На цій вкладці ви можете знайти підсумок про обраний трек (*[Інформаційна панель](#info-panel)*) та виконати найпоширеніші дії з треком за допомогою *[Меню дій з треком](#track-actions)*. Ви можете переглянути [опис та службову інформацію](#description-and-info) про ваш трек, якщо потягнете вкладку Огляд вгору.
 
 <!--
 You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map.
@@ -64,16 +64,16 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-У верхній частині інформаційної панелі ви можете побачити назву треку та символ, який використовується для його позначення (*лише Android*). Назву треку можна змінити за допомогою функції перейменування в [Меню опцій](#options). Деякі треки (переважно *[Путівники](../../plan-route/travel-guides.md#manage-as-gpx-track)*) можуть мати короткий *[опис](#description-and-info)* та (або) зображення під *Назвою треку*. Стрілка показує *Напрямок до найближчої точки треку* від [Моє місцезнаходження](../../map/interact-with-map#my-location-and-zoom).
+У верхній частині інформаційної панелі ви можете побачити назву треку та символ, що використовується для його позначення (*лише для Android*). Назву треку можна змінити за допомогою функції перейменування в [меню Параметри](#options). Деякі треки (переважно *[Путівники](../../plan-route/travel-guides.md#manage-as-gpx-track)*) можуть мати короткий *[опис](#description-and-info)* та (або) зображення під *Назвою треку*. Стрілка показує *Напрямок до найближчої точки треку* від [Моє місцезнаходження](../../map/interact-with-map#my-location-and-zoom).
 
 Інформаційна панель також надає інформацію про наступне:
 
 - *<Translate android="true" ids="distance"/>*. Показує довжину треку.
-- *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Відображає загальну суму підйомів та спусків під час поїздки.
+- *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Відображає загальну суму підйомів та спусків під час подорожі.
 - *<Translate android="true" ids="altitude_range"/>*. Вказує мінімальну та максимальну висоту на треку.
 
 :::note
-Якщо ваш трек був створений в OsmAnd або будь-якій іншій програмі для відстеження (тобто його точки мають теги [`time` та `speed`](../../plugins/trip-recording#recorded-gpx-file)), інформаційна панель також міститиме інформацію про *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) або *<Translate ios="true" ids="total_time"/>* (*iOS*) (проміжок часу між початковою та кінцевою точками треку), *<Translate android="true" ids="shared_string_time_moving"/>* (сума часу під час руху).
+Якщо ваш трек був створений в OsmAnd або будь-якому іншому додатку для відстеження (тому його точки мають теги [`time` та `speed`](../../plugins/trip-recording#recorded-gpx-file)), інформаційна панель також міститиме інформацію про *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) або *<Translate ios="true" ids="total_time"/>* (*iOS*) (тривалість часу між початковою та кінцевою точками треку), *<Translate android="true" ids="shared_string_time_moving"/>* (сума часу в русі).
 :::
 
 ### Дії з треком {#track-actions}
@@ -96,12 +96,12 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 - Кнопки **Показати / приховати**. Змінює видимість треку на карті.
 - [Вигляд](./appearance.md). Налаштуйте вигляд вашого треку.
-- **Редагувати трек** (*Android*). Відкриває трек у [Планувальнику маршрутів](../../plan-route/create-route.md).
+- **Редагувати трек** (*Android*). Відкриває трек у [інструменті Планування маршруту](../../plan-route/create-route.md).
 - **Експорт** (*iOS*). Дозволяє [експортувати трек](../../personal/tracks/manage-tracks.md#export).
 - **Напрямки**. Відкриває трек у режимі *[Навігації](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)*.
 
 
-### Опції {#options}
+### Параметри {#options}
 
 <Tabs groupId="operating-systems">
 
@@ -119,17 +119,17 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Меню **Опції** дозволяє керувати та змінювати обраний трек за допомогою різних інструментів та налаштувань.
+Меню **Параметри** дозволяє керувати та змінювати обраний трек за допомогою різних інструментів та налаштувань.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** – Керує видимістю треку на карті.
-- **<Translate android="true" ids="shared_string_appearance"/>** – Відкриває [Меню вигляду](../tracks/appearance.md) для налаштування кольору, ширини та прозорості треку.
-- **<Translate android="true" ids="follow_track"/>** (*Android*) / **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) – Запускає [навігацію за треком](../../navigation/setup/gpx-navigation.md), вирівнюючи ваш маршрут за обраним треком.
+- **<Translate android="true" ids="shared_string_appearance"/>** – Відкриває [меню Вигляд](../tracks/appearance.md) для налаштування кольору, ширини та прозорості треку.
+- **<Translate android="true" ids="follow_track"/>** (*Android*) / **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) – Запускає [навігацію за треком](../../navigation/setup/gpx-navigation.md), вирівнюючи ваш маршрут з обраним треком.
 
 <br/>
 
-- **<Translate android="true" ids="join_segments"/>** (*лише Android*) – Об'єднує сегменти треку для заповнення прогалин.
-- **<Translate android="true" ids="analyze_on_map"/>**. Відкриває інструмент [Аналіз на карті](../tracks/index.md#analyze-track-on-map-analyze-track-on-map) для перегляду висоти, швидкості та відстані треку.
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*лише Android*) - Аналізує трек за [інтервалами](./track-context-menu.md#split-interval) часу або відстані.
+- **<Translate android="true" ids="join_segments"/>** (*лише для Android*) – Об'єднує сегменти треку для заповнення прогалин.
+- **<Translate android="true" ids="analyze_on_map"/>**. Відкриває інструмент [Аналізувати на карті](../tracks/index.md#analyze-track-on-map-analyze-track-on-map) для перевірки висоти, швидкості та відстані треку.
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*лише для Android*) - Аналізує трек за часовими або дистанційними [інтервалами](./track-context-menu.md#split-interval).
 
 <br/>
 
@@ -138,16 +138,16 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <br/>
 
-- **<Translate android="true" ids="edit_track"/>** - Відкриває інструмент [Планування маршруту](../../plan-route/create-route.md) для зміни треку.
-- **Дублювати трек** (*лише iOS*) – Створює та зберігає копію треку.
+- **<Translate android="true" ids="edit_track"/>** - Відкриває інструмент [Планування маршруту](../../plan-route/create-route.md) для модифікації треку.
+- **Дублювати трек** (*лише для iOS*) – Створює та зберігає копію треку.
 - **<Translate android="true" ids="rename_track"/>** – Дозволяє змінити назву треку.
 - **<Translate android="true" ids="change_folder"/>** – Переміщує трек до іншої папки або створює нову.
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_gps_filter"/>** (*лише Android*) - Дозволяє [фільтрувати точки треку](#gps-filter) для підвищення точності.
-- **<Translate android="true" ids="altitude_correction"/>** (*лише Android*) - Щоб [отримати дані про висоту](#calculate-missing-elevation), [прив'язати трек до доріг](../../navigation/setup/gpx-navigation.md#attach-to-the-roads) або розрахувати їх офлайн (потрібні [Карти рельєфу](../../plugins/topography.md#download-maps)).
-- **<Translate android="true" ids="simulate_your_location"/>** (*лише Android*) - [Симулює ваше місцезнаходження](../../plugins/development.md#gpx-track-simulation) за допомогою треку GPX.
+- **<Translate android="true" ids="shared_string_gps_filter"/>** (*лише для Android*) - Дозволяє [фільтрувати точки треку](#gps-filter) для підвищення точності.
+- **<Translate android="true" ids="altitude_correction"/>** (*лише для Android*) - Для [отримання даних про висоту](#calculate-missing-elevation), [прив'язки треку до доріг](../../navigation/setup/gpx-navigation.md#attach-to-the-roads) або обчислення в автономному режимі (потрібні [карти рельєфу](../../plugins/topography.md#download-maps)).
+- **<Translate android="true" ids="simulate_your_location"/>** (*лише для Android*) - [Симулює ваше місцезнаходження](../../plugins/development.md#gpx-track-simulation) за допомогою GPX-треку.
 
 <br/>
 
@@ -160,7 +160,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_1_andr.png) ![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_2_andr.png)
+![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_1_andr.png)  ![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_2_andr.png)
 
 </TabItem>
 
@@ -176,7 +176,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 - **Опис**. Кнопка *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) використовується для редагування опису треку. Тег `desc`.
 
-- **Загальне**. Містить інформацію про *розмір файлу GPX*, *папку файлу* та *дату створення* з тегом `time`.
+- **Загальні**. Містить інформацію про *розмір файлу GPX*, *папку файлу* та *дату створення* з тегом `time`.
 
 - **Інформація**. Теги: *Ключові слова* - `keywords`, &nbsp;*Посилання* - `link`, &nbsp;*Діяльність* - `activities`.
 
@@ -228,26 +228,39 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Діяльність інформації про трек {#track-information-activity}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Track Information Activity](@site/static/img/personal/tracks/track_info_activity_andr.png)
 
-Функція *Діяльність* в OsmAnd дозволяє позначати записані треки GPX певними видами діяльності для подальшого аналізу та організації в папки.
+</TabItem>
 
-- [Теги діяльності для треків GPX](../../plugins/trip-recording.md#recording-settings). Під час запису треку GPX ви можете призначити тип діяльності. Це тегування діяльності допомагає спочатку класифікувати треки.
-- [Фільтр діяльності](../../personal/tracks/smart-folder.md#search-filter). Ви можете фільтрувати записані треки GPX за діяльністю, що дозволяє зосередитися на пошуку конкретних типів записів, наприклад, усіх велосипедних або пішохідних треків.
-- [Керування типами діяльності](../../personal/tracks/manage-tracks.md#selection-mode). Ви можете змінити тип діяльності для вибраних папок або треків за допомогою режиму вибору на вкладці Треки в меню Мої місця.
-- **Список діяльності**. Категорії та групи діяльності визначені в ресурсах OsmAnd. Для розробників та учасників список діяльності підтримується в структурованому форматі за адресою [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), де детально описано доступні групи та типи діяльності.
+<TabItem value="ios" label="iOS">
+
+![Track Information Activity](@site/static/img/personal/tracks/track_info_activity_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+
+Функція *Діяльність* в OsmAnd дозволяє позначати записані GPX-треки певними видами діяльності для подальшого аналізу та організації в папках.
+
+- [Теги діяльності для GPX-треків](../../plugins/trip-recording.md#recording-settings). Під час запису GPX-треку ви можете призначити тип діяльності. Це тегування діяльності допомагає вам спочатку класифікувати треки.
+- [Фільтр діяльності](../../personal/tracks/smart-folder.md#search-filter). Ви можете фільтрувати записані GPX-треки за діяльністю, що дозволяє зосередитися на пошуку конкретних типів записів, таких як усі велосипедні або пішохідні треки.
+- [Керування типами діяльності](../../personal/tracks/manage-tracks.md#selection-mode). Ви можете змінити тип діяльності для вибраних папок або треків за допомогою режиму вибору на вкладці "Треки" в меню "Мої місця".
+- **Список діяльності**. Категорії та групи діяльності визначені в ресурсах OsmAnd. Для розробників та учасників список діяльності підтримується в структурованому форматі за адресою [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), де детально описані доступні групи та типи діяльності.
 
 
 ## Графіки висоти / швидкості {#altitude--speed-graphs}
 
-На вкладці *<Translate android="true" ids="shared_string_gpx_track"/>* ви можете знайти інформацію про трек у графічній формі. За допомогою перемикача ви можете вибрати, які дані відображати на графіку: окремі дані про *[<Translate android="true" ids="altitude"/>](#altitude)*, про *[Швидкість](#speed)* (ця опція доступна лише для записаних треків) або відображати все разом (*[<Translate android="true" ids="shared_string_overview"/>](#overview-information)*).
+На вкладці *<Translate android="true" ids="shared_string_gpx_track"/>* ви можете знайти інформацію про трек у графічному вигляді. За допомогою перемикача ви можете вибрати, які дані відображати на графіку: окремі дані про *[<Translate android="true" ids="altitude"/>](#altitude)*, про *[Швидкість](#speed)* (ця опція доступна лише для записаних треків) або відображати все разом (*[<Translate android="true" ids="shared_string_overview"/>](#overview-information)*).
 
 Взаємодія з графіком:
 
-- ***Розмістити точку на графіку***. Якщо ви хочете побачити інформацію в певній точці треку, ви можете торкнутися будь-де на графіку, і з'явиться покажчик зі значеннями. Одночасно на карті з'явиться синій маркер, що вказує на це місце на треку.
-- ***Збільшити/зменшити***. Ви можете використовувати [рухи двома пальцями](../../map/interact-with-map.md#gestures) для збільшення та зменшення масштабу для більш детального перегляду. Після збільшення масштабу ви можете переміщати графік вправо та вліво, що відповідає руху вперед та назад по маршруту.
+- ***Розмістити точку на графіку***. Якщо ви хочете побачити інформацію в певній точці треку, ви можете торкнутися будь-де на графіку, і з'явиться вказівник зі значеннями. Одночасно на карті з'явиться синій маркер, що вказує на це місце на треку.
+- ***Збільшити/зменшити***. Ви можете використовувати [рухи двома пальцями](../../map/interact-with-map.md#gestures) для збільшення та зменшення масштабу для більш детального перегляду. Після збільшення масштабу ви можете переміщати графік вправо та вліво, що відповідає переміщенню вперед та назад по маршруту.
 - ***Додаткова інформація***. Права сторона графіка містить дані про найнижчу, найвищу та середню висоту, нахил та швидкість. Внизу графіка ви можете побачити позначки відстані.
 
 
@@ -271,24 +284,24 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 На вкладці **Огляд** ви можете побачити такі параметри, як:
 
-- *<Translate android="true" ids="distance"/>*. Сума загальної пройденої відстані на треку або довжина самого треку.
+- *<Translate android="true" ids="distance"/>*. Сума загальної пройденої відстані на треку, або довжина самого треку.
 - *<Translate android="true" ids="shared_string_time_span"/>*. Часовий інтервал між початковою та кінцевою точками треку.
 - *<Translate android="true" ids="shared_string_start_time"/>* Точний час початку запису треку.
 - *<Translate android="true" ids="shared_string_end_time"/>*. Час закінчення запису треку.
 
-Активні **кнопки** надають доступ до таких дій, як:
+Активні **кнопки** надають доступ до таких дій:
 
-- Кнопка **<Translate android="true" ids="analyze_on_map"/>** відкриває [Меню аналізу треку](../tracks/index.md#analyze-track-on-map) для треку.
+- Кнопка **<Translate android="true" ids="analyze_on_map"/>** відкриває [меню Аналізувати трек](../tracks/index.md#analyze-track-on-map) для треку.
 - Кнопка **<Translate android="true" ids="shared_string_options"/>** відкриває меню з:
 
-  - *Редагувати* відкриває трек у [Планувальнику маршрутів](../../plan-route/index.md).
-  - *Видалити* дозволяє видалити обраний елемент треку.
+  - *Редагувати* відкриває трек у [інструменті Планування маршруту](../../plan-route/index.md).
+  - *Видалити* дозволяє видалити вибраний елемент треку.
   - *Розділити інтервал* відкриває [функцію Розділити інтервал](#split-interval) для треку.
 
 
 ### Швидкість {#speed}
 
-:::note Лише записані треки
+:::note Тільки записані треки
 Ця вкладка може бути видимою лише на записаних треках. Точки на цьому типі треку мають теги **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**.
 :::
 
@@ -308,12 +321,12 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Графік **Швидкість** відображає такі показники, як:
+Графік **Швидкість** відображає такі показники:
 
-- *<Translate android="true" ids="average_speed"/>*. Вказує середню швидкість під час поїздки.
-- *<Translate android="true" ids="max_speed"/>*. Показує максимальну швидкість під час поїздки.
-- *<Translate android="true" ids="moving_time"/>*. Показує загальний час під час поїздки лише в русі.
-- *<Translate android="true" ids="distance_moving"/>*. Вказує скориговану відстань поїздки.
+- *<Translate android="true" ids="average_speed"/>*. Вказує середню швидкість під час подорожі.
+- *<Translate android="true" ids="max_speed"/>*. Показує максимальну швидкість під час подорожі.
+- *<Translate android="true" ids="moving_time"/>*. Показує загальний час під час подорожі лише в русі.
+- *<Translate android="true" ids="distance_moving"/>*. Вказує скориговану відстань подорожі.
 
 
 ### Висота {#altitude}
@@ -334,45 +347,45 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Графік **Висота** відображає такі показники, як:
+Графік **Висота** відображає такі показники:
 
 - *<Translate android="true" ids="average_altitude"/>*. Вказує середню висоту над рівнем моря на маршруті.
-- *<Translate android="true" ids="altitude_range"/>*. Найвища та найнижча висота, записана на маршруті.
+- *<Translate android="true" ids="altitude_range"/>*. Найвища та найнижча висота, зафіксована на маршруті.
 - *<Translate android="true" ids="altitude_ascent"/>*. Сукупний набір висоти над рівнем моря вздовж маршруту.
 - *<Translate android="true" ids="altitude_descent"/>*. Сукупна втрата висоти вздовж маршруту.
 
 **Отримати дані про висоту.**
 Якщо на маршруті *немає інформації про висоту*, ви можете додати її наступними способами:
 
-- Кнопка *Розрахувати висоту → [Використовувати найближчі дороги](../../plan-route/create-route.md#get-elevation-data)*. Використовує офлайн-карту для пошуку найближчих доріг та даних про висоту. Дозволяє налаштувати геометрію треку.
+- *Кнопка "Обчислити висоту" → [Використовувати найближчі дороги](../../plan-route/create-route.md#get-elevation-data)*. Використовує офлайн-карту для пошуку найближчих доріг та даних про висоту. Дозволяє налаштувати геометрію треку.
 - [Використовувати карти рельєфу](#calculate-missing-elevation). Використовує карти рельєфу для отримання даних про висоту. Геометрія треку залишається незмінною.
 
 
-### Розрахувати відсутню висоту {#calculate-missing-elevation}
+### Обчислити відсутню висоту {#calculate-missing-elevation}
 
 :::note Підписка OsmAnd Pro
-Функція розрахунку висоти офлайн доступна лише для [**передплатників OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
+Функція обчислення висоти в автономному режимі доступна лише для [**передплатників OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <InfoAndroidOnly />
 
-Ця функція дозволяє розрахувати профіль висоти для треку GPX офлайн для будь-якої місцевості між 70 градусами північної широти та 70 градусами південної широти, на основі [даних карт рельєфу](../../plugins/topography.md#download-maps). *Карти рельєфу (3D) повинні бути попередньо завантажені*.
+Ця функція дозволяє обчислювати профіль висот для GPX-треку в автономному режимі для будь-якої місцевості між 70 градусами північної широти та 70 градусами південної широти, на основі [даних карт рельєфу](../../plugins/topography.md#download-maps). *Карти рельєфу (3D) повинні бути попередньо завантажені*.
 
-1. Завантажте [Карти рельєфу (3D)](../../plugins/topography.md#download-maps) для потрібного регіону.
-2. Якщо трек не містить даних про висоту, перейдіть до контекстного меню треку (*Контекстне меню треку → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), виберіть *Використовувати карти рельєфу*, і після розрахунку ви отримаєте графік треку на основі даних рельєфу.
+1. Завантажте [карти рельєфу (3D)](../../plugins/topography.md#download-maps) для потрібного регіону.
+2. Якщо трек не містить даних про висоту, перейдіть до контекстного меню треку (*Контекстне меню треку → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), виберіть *Використовувати карти рельєфу*, і після обчислення ви отримаєте графік треку на основі даних рельєфу.
 
-    ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png) <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->
+    ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->
 
-3. Якщо ви створюєте маршрут за допомогою інструменту [Планування маршруту](../../plan-route/create-route.md#graph) методом *Пряма лінія* і на графіку немає даних про висоту, вам потрібно:
-    - Торкніться *Отримати дані про висоту*, потім виберіть *Використовувати карти рельєфу*.
-    - Після розрахунку ви отримаєте повний графік висоти/нахилу вашого маршруту на основі даних рельєфу.
+3. Якщо ви створюєте маршрут за допомогою інструмента [Планування маршруту](../../plan-route/create-route.md#graph) методом *Пряма лінія* і на графіку немає даних про висоту, вам потрібно:
+    - Натисніть *Отримати дані про висоту*, потім виберіть *Використовувати карти рельєфу*.
+    - Після обчислення ви отримаєте повний графік висоти/нахилу вашого маршруту на основі даних рельєфу.
 
-  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
+  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
 
 
-## Точки / Шляхові точки {#points--waypoints}
+## Точки / Маршрутні точки {#points--waypoints}
 
-Шляхові точки є одним із типів точок, доступних на карті. Загалом, це можуть бути точки треку, які є частиною файлів GPX. Детальний опис доступний у статті [точки на карті](../../map/point-layers-on-map.md).
+Маршрутні точки — це один із типів точок, доступних на карті. Загалом, це можуть бути точки треку, які є частиною файлів GPX. Детальний опис доступний у статті [точки на карті](../../map/point-layers-on-map.md).
 
 <Tabs groupId="operating-systems">
 
@@ -392,55 +405,55 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 На цій вкладці *Точки*:
 
-- [Показати дані точок треку](#display-custom-gpx-tags) та змінити точки треку (шляхові точки та точки маршруту), [видалити їх та додати](#точки--шляхові-точки-points--waypoints) шляхові точки до треку.
+- [Показати дані точок треку](#display-custom-gpx-tags) та змінити точки треку (маршрутні точки та точки маршруту), [видалити їх та додати](#points--waypoints) маршрутні точки до треку.
 - Створити та змінити [Групу (папку) точок](#waypoint-groups).
 
 
-### Додати шляхову точку до треку {#add-waypoint-to-a-track}
+### Додати маршрутну точку до треку {#add-waypoint-to-a-track}
 
-Шляхові точки можна додати до поточного записаного треку або до будь-якого треку зі списку [*Мої місця → Треки*](../../personal/tracks/manage-tracks.md):
+Маршрутні точки можна додавати до поточного записаного треку або до будь-якого треку зі списку [*Мої місця → Треки*](../../personal/tracks/manage-tracks.md):
 
-- Використовуйте [контекстне меню карти](../../map/map-context-menu.md#-add--edit-track-waypoint).
-  - Шляхові точки автоматично відображаються, якщо вибраний трек увімкнено на карті.
-  - [Довге натискання](../../map/map-context-menu.md#select-any-point-long-tap) на карті в будь-якому вибраному місці для створення шляхової точки.
-  - Ви можете встановити інформацію про шляхову точку у відкритому [контекстному меню карти](../../map/map-context-menu.md#-add--edit-track-waypoint).
+- Використовуйте [контекстне меню карти](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint).
+  - Маршрутні точки автоматично відображаються, якщо вибраний трек увімкнено на карті.
+  - [Довге натискання](../../map/map-context-menu.md#select-any-point-long-tap) на карті в будь-якому вибраному місці для створення маршрутної точки.
+  - Ви можете встановити інформацію про маршрутну точку у відкритому [контекстному меню карти](../../map/map-context-menu.md#-add--edit-track-waypoint).
 
-- Використовуйте кнопку [Додати шляхову точку](#точки--шляхові-точки-points--waypoints) контекстного меню треку.
+- Використовуйте кнопку [Додати маршрутну точку](#points--waypoints) контекстного меню треку.
 
-- Додайте шляхову точку як кнопку [Швидкої дії](../../widgets/quick-action.md#my-places).
+- Додайте маршрутну точку як кнопку [Швидка дія](../../widgets/quick-action.md#my-places).
 
-#### Створити шляхову точку {#create-waypoint}
+#### Створити маршрутну точку {#create-waypoint}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Add waypoint](@site/static/img/personal/tracks/add_waypoint_1_andr.png) ![Add waypoint](@site/static/img/personal/tracks/add_waypoint_2_andr.png)
+![Add waypoint](@site/static/img/personal/tracks/add_waypoint_1_andr.png)  ![Add waypoint](@site/static/img/personal/tracks/add_waypoint_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png) ![Add waypoint](@site/static/img/personal/tracks/add_waypoints_2_ios.png)
+![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png)  ![Add waypoint](@site/static/img/personal/tracks/add_waypoints_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Торкніться кнопки *Додати шляхову точку*, щоб відкрити екран створення шляхової точки (цей екран схожий на [Контекстне меню обраного](../../personal/favorites.md#create)).
+Торкніться кнопки *Додати маршрутну точку*, щоб відкрити екран створення маршрутної точки (цей екран схожий на [контекстне меню Обраних](../../personal/favorites.md#create)).
 
-1. **Додайте** *Назву* шляхової точки, *Адресу* обраного місця та *Опис* для неї (необов'язково).
+1. **Додайте** *Назву* маршрутної точки, *Адресу* вибраного місця та *Опис* для неї (необов'язково).
 2. **Виберіть** Групу.
 
     - Виберіть раніше створені категорії груп або створіть нову.
-    - Створіть назву та вигляд для нової групи шляхових точок. Це також називається *новою категорією* в програмі.
-    - **Іконка**, **колір іконки** та **форма** будуть використовуватися для всіх нових шляхових точок, доданих до групи.
+    - Створіть назву та вигляд для нової групи маршрутних точок. Це також називається *новою категорією* в застосунку.
+    - **Піктограма**, **колір піктограми** та **форма** будуть використовуватися для всіх нових маршрутних точок, доданих до групи.
 
-3. Налаштування **Вигляду**:
+3. **Налаштування вигляду**:
 
-    - Виберіть [**іконку**](../../personal/favorites.md#favorite-icons) зі списку іконок усіх категорій POI.
-    - Виберіть **Колір** іконки.
-    - Потім виберіть **Форму** іконки: *Коло, Восьмикутник, Квадрат*.
+    - Виберіть [**піктограму**](../../personal/favorites.md#favorite-icons) зі списку всіх піктограм категорій POI.
+    - Виберіть **Колір** піктограми.
+    - Потім виберіть **Форму** піктограми: *Коло, Восьмикутник, Квадрат*.
 
 4. **Замініть** іншу точку цією, якщо потрібно.
 
@@ -463,20 +476,20 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Меню *три крапки* ( &#8285; ) відкриває *Меню групи* шляхових точок.
+*Меню з трьома крапками* ( &#8285; ) відкриває *Меню групи* маршрутних точок.
 
 **Дії:**
 
-- **<Translate android="true" ids="shared_string_show_on_map"/>** - Дозволяє відображати або не відображати шляхові точки групи на карті. Або ви можете використовувати [кнопку екрана](#точки--шляхові-точки-points--waypoints) для відображення або приховування шляхових точок групи на карті.
+- **<Translate android="true" ids="shared_string_show_on_map"/>** - Дозволяє відображати або не відображати групові маршрутні точки на карті. Або ви можете використовувати [екранну кнопку](#points--waypoints) для відображення або приховування групових маршрутних точок на карті.
 - **<Translate android="true" ids="shared_string_rename"/>** - Змінити назву групи.
-- **<Translate android="true" ids="change_default_appearance"/>** - Змінити параметри відображення для групи шляхових точок.
-- **<Translate android="true" ids="add_group_to_markers"/>** або **Видалити** (*лише Android*) - Перемістити шляхові точки групи до списку [Маркери карти](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*лише Android*) - Перемістити шляхові точки групи до [Обраного](../../personal/favorites.md).
-- **<Translate android="true" ids="add_to_navigation"/>** (*лише Android*) - Створює маршрут між шляховими точками. Перша та остання точки стають початком та кінцем маршруту, а решта перетворюються на проміжні точки.
-- **<Translate android="true" ids="shared_string_delete"/>** - Видалити групу шляхових точок.
+- **<Translate android="true" ids="change_default_appearance"/>** - Змінити параметри відображення для групи маршрутних точок.
+- **<Translate android="true" ids="add_group_to_markers"/>** або **Видалити** (*лише для Android*) - Перемістити групові маршрутні точки до списку [Маркерів карти](../../personal/markers.md).
+- **<Translate android="true" ids="copy_to_map_favorites"/>** (*лише для Android*) - Перемістити групові маршрутні точки до [Обраних](../../personal/favorites.md).
+- **<Translate android="true" ids="add_to_navigation"/>** (*лише для Android*) - Створює маршрут між маршрутними точками. Перша та остання точки стають початком та кінцем маршруту, а решта перетворюються на проміжні точки.
+- **<Translate android="true" ids="shared_string_delete"/>** - Видалити групу маршрутних точок.
 
 
-### Групи шляхових точок {#waypoint-groups}
+### Групи маршрутних точок {#waypoint-groups}
 
 <Tabs groupId="operating-systems">
 
@@ -496,9 +509,9 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 Керуйте видимістю груп на карті: якщо ви приховаєте один трек, вся група також буде прихована.
 
-Ви можете вмикати або вимикати групи шляхових точок на карті за допомогою кнопки у верхньому правому куті контекстного меню треку на карті. Торкніться її та виберіть потрібну дію.
+Ви можете вмикати або вимикати групові маршрутні точки на карті за допомогою кнопки у верхньому правому куті контекстного меню треку на карті. Торкніться її та виберіть потрібну дію.
 
-### Відображення користувацьких тегів GPX {#display-custom-gpx-tags}
+### Відображення користувацьких GPX-тегів {#display-custom-gpx-tags}
 
 <Tabs groupId="operating-systems">
 
@@ -519,7 +532,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <details>
 
-<summary>Приклад XML-коду тегів шляхових точок</summary>
+<summary>Приклад XML-коду тегів маршрутних точок</summary>
 
 ```xml
   <wpt lat="40.123456" lon="-73.987654">
@@ -581,10 +594,10 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 | --- | --- |
 | `lat` | **Широта** — одна з географічних координат, за якою можна визначити місцезнаходження. |
 | `lon` | **Довгота** — ще одна з географічних координат, за якою можна визначити місцезнаходження. |
-| `time` | **Часова мітка** — дата та час запису точки. |
+| `time` | **Мітка часу** — дата та час запису точки. |
 | `name` | **Назва** — назва точки. Дозволені будь-які символи. |
 | `desc` | **Опис** містить додаткову інформацію про точку. |
-| `type` | **Вибрати групу** — назва папки OsmAnd, в якій збережена ця шляхова точка. |
+| `type` | **Вибрати групу** — назва папки OsmAnd, в якій збережено цю маршрутну точку. |
 | `cmt` | **Коментар** — короткий коментар до точки. |
 | `link` | **Посилання** — посилання на будь-які джерела. |
 | `ele` | **Висота** — висота точки. |
@@ -594,9 +607,9 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 | Розширення | Опис |
 | --- | --- |
-| `osmand:icon` | **Іконка** — назва вибраної вами іконки. |
+| `osmand:icon` | **Піктограма** — назва вибраної піктограми. |
 | `osmand:color` | **Колір** — колір у форматі HEX. |
-| `osmand:background` | **Фон** — форма іконки, наприклад, коло, восьмикутник або квадрат. |
+| `osmand:background` | **Фон** — форма піктограми, наприклад, коло, восьмикутник або квадрат. |
 | `osmand:country` | **Країна** — назва країни. |
 | `osmand:address` | **Адреса** — адреса. |
 | `osmand:postcode` | **Поштовий індекс** — поштовий індекс. |
@@ -604,25 +617,25 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 | `osmand:state` | **Штат** — назва штату. |
 | `osmand:start_date` | **Дата початку** — дані розкладу точки. |
 
-Шляхові точки записуються разом з треком у [файл GPX](../../../technical/osmand-file-formats/osmand-gpx.md). Кожна з цих шляхових точок має власний набір тегів для опису. Усі теги, що безпосередньо стосуються опису шляхових точок, які можна редагувати безпосередньо в програмі OsmAnd, перелічені в цьому розділі.
-Щоб змінити опис шляхової точки, ви можете піти одним із наступних шляхів:
+Маршрутні точки записуються разом з треком у [файл GPX](../../../technical/osmand-file-formats/osmand-gpx.md). Кожна з цих маршрутних точок має свій набір тегів для опису. Усі теги, що безпосередньо стосуються опису маршрутних точок, які можна редагувати безпосередньо в застосунку OsmAnd, перераховані в цьому розділі.
+Щоб змінити опис маршрутної точки, ви можете скористатися одним із наступних способів:
 
 1. Знайдіть потрібний трек у списку вкладки *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*.
 2. Торкніться треку на карті, якщо він включений до [списку видимих](../tracks/index.md#display-tracks-on-the-map).
-3. Торкніться потрібної шляхової точки, якщо вона [видима](../../personal/tracks/manage-tracks.md#track-menu) на карті.
+3. Торкніться потрібної маршрутної точки, якщо вона [видима](../../personal/tracks/manage-tracks.md#track-menu) на карті.
 
-    Потім у [Контекстному меню треків](./track-context-menu.md) торкніться *точки*, поля потрібної папки з доступними шляховими точками та шляхової точки, яку ви шукаєте. Виберіть меню *Дії →* **Редагувати шляхову точку GPX** та внесіть зміни. Ви не можете змінити дату створення точки, *часову мітку*, у програмі.
+    Потім у [Контекстному меню треків](./track-context-menu.md) торкніться *точки*, поля потрібної папки з доступними маршрутними точками та маршрутної точки, яку ви шукаєте. Виберіть меню *Дії →* **Редагувати маршрутну точку GPX** та внесіть зміни. Ви не можете змінити дату створення точки, *мітку часу*, у застосунку.
 
-**Теги зручностей**, які описують додаткову інформацію, таку як години роботи або номер телефону, специфічні для POI, беруть цю інформацію з даних OpenStreetMap або даних, які ви ввели під час створення POI. Ви можете редагувати такі теги та [користувацькі теги](#display-custom-gpx-tags) лише в коді файлу GPX, який ви можете відкрити будь-яким текстовим редактором на своєму пристрої.
+**Теги зручностей**, що описують додаткову інформацію, таку як години роботи або номер телефону, специфічні для POI, беруть цю інформацію з даних OpenStreetMap або даних, які ви ввели під час створення POI. Ви можете редагувати такі теги та [користувацькі теги](#display-custom-gpx-tags) лише в коді файлу GPX, який можна відкрити будь-яким текстовим редактором на вашому пристрої.
 
 
 ## Розділити інтервал {#split-interval}
 
 <InfoAndroidOnly />
 
-Ви можете розділити трек на інтервали, такі як відстань та час, та проаналізувати його.
+Ви можете розділити трек на інтервали, такі як відстань і час, і проаналізувати його.
 
-Розділити трек за інтервалом відстані або часу.
+Розділити трек за відстанню або часовим інтервалом.
 *<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*
 
 ![Track split interval screen Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Track split interval screen time Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)
@@ -638,7 +651,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
-Цей фільтр дозволяє покращити статистику вашого треку, виключивши непотрібні або некоректні дані. Ви можете відфільтрувати точки треку, які не відповідають параметрам вашого треку, і в результаті отримати більш точний графік та візуальну лінію маршруту без спотворень або шуму запису. Ви можете внести зміни за допомогою фільтрів, таких як *Згладжування*, *Швидкість*, *Висота* та *Точність GPS*, які приховують відфільтровані точки з поточного треку. Крім того, в меню *Статистика* ви можете перевірити, як ваші зміни відображаються на графіку, перш ніж їх зберегти. Ви також можете *Скинути до оригіналу* та *Зберегти як копію* вашого треку в цьому фільтрі, не зберігаючи оригінальний.
+Цей фільтр дозволяє покращити статистику вашого треку, виключаючи непотрібні або некоректні дані. Ви можете відфільтрувати точки треку, які не відповідають вашим параметрам треку, і в результаті отримати більш точний графік та візуальну лінію маршруту без спотворень або шуму запису. Ви можете вносити зміни за допомогою таких фільтрів, як *Згладжування*, *Швидкість*, *Висота* та *Точність GPS*, які приховують відфільтровані точки з поточного треку. Крім того, в меню *Статистика* ви можете перевірити, як ваші зміни відображаються на графіку, перш ніж їх зберегти. Ви також можете *Скинути до оригіналу* та *Зберегти як копію* свого треку в цьому фільтрі, не зберігаючи оригінал.
 
 <!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
@@ -646,7 +659,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - "&#8634;" button allows you to reset the track to the original.
 - "My track location" button allows you to move the map to your track.-->
 
-Сторінка програми GPS-фільтр для Android включає наступне:
+Сторінка додатка Android GPS Filter включає наступне:
 
 - Карта зі збереженим треком та додатковою кнопкою *Моє місцезнаходження треку* (вона вирівнює трек по центру карти).
 - Кнопки *Оновити* та *Меню* вгорі (*Меню* відкриває поле *Дія* внизу сторінки).
@@ -655,14 +668,14 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Меню фільтра {#filter-menu}
 
-У цьому меню ви можете змінити деякі параметри вашого треку, такі як *Згладжування*, *Швидкість*, *Висота* або *Точність GPS*, використовуючи фільтри. Меню розділене на *частину Точки* та *частину Дії*.
+У цьому меню ви можете змінити деякі параметри вашого треку, такі як *Згладжування*, *Швидкість*, *Висота* або *Точність GPS* за допомогою фільтрів. Меню розділене на *частину Точки* та *частину Дії*.
 
 | ***Точки*** |
 |:------------|
 |Ця частина показує кількість точок після фільтрації та загальну кількість точок на вибраному треку до застосування фільтрів.|
 |![GPS filter screen points numbers Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
 | ***Дії*** |
-|*Згладжування*. Встановлює порогову відстань між точками. Точки треку, що знаходяться на відстані, що перевищує цю відстань від останньої видимої точки, приховуються. Усі точки на треку, що знаходяться на відстані одна від одної меншій, ніж відстань, вибрана фільтром, будуть приховані. Точки треку відраховуються від останньої видимої точки. Зауважте, що високі пороги можуть надмірно спростити геометрію треку.|
+|*Згладжування*. Встановлює порогову відстань між точками. Точки треку, які знаходяться принаймні на цій відстані від останньої видимої точки, приховуються. Усі точки на треку, які знаходяться на відстані одна від одної меншій, ніж відстань, вибрана фільтром, будуть приховані. Точки треку відраховуються від останньої видимої точки. Зверніть увагу, що високі пороги можуть надмірно спростити геометрію треку.|
 |![GPS filter smoothing numbers Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
 |*Швидкість*. На графіку та карті відображаються лише точки треку, що відповідають вибраному інтервалу швидкості, інші приховуються.|
 |![GPS filter speed numbers Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) |
@@ -676,25 +689,25 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
 
-Вкладка Статистика відображає інформацію про **змінений** трек, тобто трек без відфільтрованих значень. Вона відображається в блоках статистики та даних графіка.
+Вкладка "Статистика" відображає інформацію про **змінений** трек, тобто трек без відфільтрованих значень. Вона відображається в блоках статистики та даних графіка.
 
-- Частина *Дані* показує статистику, подібну до [Меню фільтра](#filter-menu).
-- Частина *Графік* відображає три типи графіків за параметрами: Огляд, Висота та Швидкість. Ця функціональність є копією [Графіка треку](#графіки-висоти--швидкості-altitude--speed-graphs).
+- Частина *Дані* показує статистику, подібну до [меню Фільтр](#filter-menu).
+- Частина *Графік* відображає три типи графіків за параметрами: Огляд, Висота та Швидкість. Ця функція є копією [графіка треку](#altitude--speed-graphs).
 
 ### Дії {#actions}
 
 ![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)
 
-Список дій доступний внизу вкладки **Фільтр** або **Статистика**. OsmAnd застосовує всі зміни, внесені до треку, без оновлення файлу, але ви можете зберегти зміни вручну.
+Список дій доступний внизу вкладок **Фільтр** або **Статистика**. OsmAnd застосовує всі зміни, внесені до треку, без оновлення файлу, але ви можете зберегти зміни вручну.
 
-- *<Translate android="true" ids="reset_to_original"/>*. Дозволяє повернути параметри до їх початкового стану.
+- *<Translate android="true" ids="reset_to_original"/>*. Дозволяє повернути параметри до початкового стану.
 - *<Translate android="true" ids="save_as_copy"/>*. Дозволяє зберегти трек як новий.
 - *<Translate android="true" ids="save_changes_into_file"/>*. Дозволяє перезаписати трек з новими параметрами.
 
 
 ## Пов'язані статті {#related-articles}
 
-- [Треки GPX](../../personal/tracks/manage-tracks.md)
+- [GPX-треки](../../personal/tracks/manage-tracks.md)
 - [Треки на карті](./track-context-menu.md)
 - [Навігація за треком](../../navigation/setup/gpx-navigation.md)
 - [Планування маршруту](../../plan-route/index.md)

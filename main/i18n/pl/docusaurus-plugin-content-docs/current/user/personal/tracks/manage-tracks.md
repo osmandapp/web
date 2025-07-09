@@ -1,5 +1,5 @@
 ---
-source-hash: 72d37f9997601d7e49a3f431d77204a5ac209322f624590ebefae8426b2e23af
+source-hash: 61247292af1aa1532bdbb133f67761a221b4967bdccb328e710358ccdfd2084c
 sidebar_position: 2
 title: Zarządzanie śladami
 ---
@@ -18,19 +18,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Wszystkie ślady w OsmAnd są przechowywane w zakładce *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd przetwarza plik śladu w [formacie GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), ale pliki [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) i [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) mogą być importowane i konwertowane do GPX. Więcej informacji o różnych typach śladów znajdziesz w artykule [Ślady na mapie](../../map/tracks/index.md#types-of-tracks).
+Wszystkie ślady w OsmAnd są przechowywane w zakładce *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd przetwarza plik śladu w [formacie GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), ale [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) i [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) mogą być importowane i konwertowane do GPX. Więcej o różnych typach śladów przeczytasz w artykule [Ślady na mapie](../../map/tracks/index.md#types-of-tracks).
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Przegląd zarządzania śladami Android](@site/static/img/personal/tracks/track_on_map_android.png)
+![Przegląd śladów Android](@site/static/img/personal/tracks/track_on_map_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Przegląd zarządzania śladami iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+![Przegląd śladów iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
 
 </TabItem>
 
@@ -55,13 +55,13 @@ Wszystkie ślady w OsmAnd są przechowywane w zakładce *<Translate android="tru
 
 </Tabs>
 
-Ślady w OsmAnd można dodawać w następujący sposób:
+Możesz dodawać ślady w OsmAnd w następujący sposób:
 
-1. **[Importowanie](./manage-tracks.md#import--export-track)** śladu z zewnętrznego źródła.
-2. Tworzenie nowego śladu w aplikacji za pomocą narzędzia **[Planowanie trasy](../../plan-route/create-route.md)**.
-3. Nagrywanie śladu w aplikacji za pomocą wtyczki **[Nagrywanie podróży](../../plugins/trip-recording.md)**.
-4. Wprowadzanie wielu punktów za pomocą współrzędnych i zapisywanie ich jako śladu za pomocą narzędzia **[Wprowadzanie współrzędnych](../../plan-route/coordinate-input.md)**.
-5. Możesz również dodać **punkty trasy** do nowego śladu za pomocą **[menu kontekstowego](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint)**.
+1. **[Importuj](./manage-tracks.md#import--export-track)** ślad z zewnętrznego źródła.
+2. Utwórz nowy ślad w aplikacji za pomocą narzędzia **[Planuj trasę](../../plan-route/create-route.md)**.
+3. Nagraj ślad w aplikacji za pomocą wtyczki **[Nagrywanie podróży](../../plugins/trip-recording.md)**.
+4. Wprowadź wiele punktów za pomocą współrzędnych i zapisz je jako ślad za pomocą narzędzia **[Wprowadzanie współrzędnych](../../plan-route/coordinate-input.md)**.
+5. Możesz również dodać **Punkty pośrednie** do nowego śladu za pomocą **[Menu kontekstowego](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint)**.
 
 
 ## Zarządzanie śladami {#manage-tracks}
@@ -70,7 +70,7 @@ Wszystkie ślady w OsmAnd są przechowywane w zakładce *<Translate android="tru
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> zakładka*
 
 ![Moje miejsca ze śladami w Androidzie](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -78,7 +78,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> zakładka*
 
 ![Moje miejsca ze śladami w iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
 
@@ -86,7 +86,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-Wszystkie kiedykolwiek nagrane, utworzone lub zaimportowane ślady są automatycznie wyświetlane w folderze [Moje miejsca](../../personal/myplaces.md) w zakładce *Ślady*. Są one uporządkowane według folderów lub wyświetlane w postaci listy pod nimi.
+Wszystkie kiedykolwiek nagrane, utworzone lub zaimportowane ślady są automatycznie wyświetlane w folderze [Moje miejsca](../../personal/myplaces.md) w zakładce *Ślady*. Są one zorganizowane w foldery lub wyświetlane na liście pod nimi.
 
 
 ### Menu śladu {#track-menu}
@@ -95,7 +95,7 @@ Wszystkie kiedykolwiek nagrane, utworzone lub zaimportowane ślady są automatyc
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> zakładka*
 
 ![Moje miejsca ze śladami w Androidzie](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -103,7 +103,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> zakładka*
 
 ![Menu kontekstowe śladu w iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
@@ -111,7 +111,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>  
 
-Każdy ślad, podobnie jak foldery, posiada menu, które pozwala efektywnie zarządzać śladami. Oto jak uzyskać do niego dostęp:
+Każdy ślad, podobnie jak foldery, posiada menu, umożliwiające efektywne zarządzanie śladami. Oto jak uzyskać do niego dostęp:
 
 - *Android* - dotknij *menu z trzema kropkami* w polu śladu.
 - *iOS* - długo dotknij wymaganego śladu na liście.
@@ -136,13 +136,13 @@ Menu udostępnia następujące działania:
 
 - **Duplikuj** (*iOS*) — Tworzy kopię wybranego śladu.
 
-- **Zmień nazwę** — Zmień nazwę wybranego śladu w celu lepszej organizacji.
+- **Zmień nazwę** — Zmień nazwę wybranego śladu dla lepszej organizacji.
 
 - **Przenieś** — Umożliwia przeniesienie wybranego śladu do innego folderu.
 
 - **Eksportuj** (*Android*) — Przejdź do *Menu → Ustawienia → Zakładka Akcje*, aby wyeksportować wszystkie ślady z folderu.
 
-- **Usuń** — Trwale usuwa wybrany ślad, który nie jest już potrzebny.
+- **Usuń** — Trwale usuń wybrany ślad, który nie jest już potrzebny.
 
 
 ### Szukaj {#search}
@@ -168,8 +168,8 @@ Dotknij przycisku &#x1F50D; u góry ekranu urządzenia, aby otworzyć menu sorto
 Dostępne:
 
 - Wyszukiwanie według nazwy śladu.
-- [Sortowanie według](#sort-by) dla lepszego wyszukiwania, jeśli nie pamiętasz tytułu.
-- [Filtrowanie](./smart-folder.md#search-filter) (*tylko Android*), jeśli potrzebujesz konkretnych cech śladu.
+- [Sortuj według](#sort-by) dla lepszego wyszukiwania, jeśli nie pamiętasz tytułu.
+- [Filtruj](./smart-folder.md#search-filter) (*tylko Android*), jeśli potrzebujesz konkretnych cech śladu.
 
 
 ### Tryb wyboru {#selection-mode}
@@ -190,7 +190,7 @@ Dostępne:
 
 </Tabs>  
 
-Element menu **Wybierz** zawiera opcje zarządzania folderami i śladami. Ta funkcja umożliwia wybranie wielu śladów lub folderów śladów. Możesz również wybrać wszystkie ślady i foldery, dotykając specjalnego przycisku **Zaznacz wszystko**.
+Element menu **Wybierz** udostępnia opcje zarządzania folderami i śladami. Ta funkcja umożliwia wybranie wielu śladów lub folderów śladów. Możesz również wybrać wszystkie ślady i foldery, dotykając specjalnego przycisku **Zaznacz wszystko**.
 
 Po dokonaniu wyboru dostępne są następujące kroki:  
 
@@ -202,7 +202,7 @@ Po dokonaniu wyboru dostępne są następujące kroki:
 
 - **Przenieś** — Możesz organizować swoje dane, przenosząc wybrane ślady i foldery do innych folderów.
 
-- [Zmień aktywność](../../map/tracks/track-context-menu.md#track-information-activity) (*tylko Android*) — Ta akcja umożliwia zmianę typu aktywności, na przykład na *Samochód*, *Sporty motorowe*, *Wędrówki z plecakiem* lub inne, dla wybranego śladu.
+- [Zmień aktywność](../../map/tracks/track-context-menu.md#track-information-activity) — Ta akcja umożliwia zmianę typu aktywności, na przykład na *Samochód*, *Sporty motorowe przygodowe*, *Wędrówki z plecakiem* lub inne, dla wybranego śladu.
 
 - [Zmień wygląd](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Ta opcja umożliwia dostosowanie wyglądu wybranych śladów, czyniąc je bardziej widocznymi i rozpoznawalnymi na mapie.
 
@@ -233,7 +233,7 @@ OsmAnd oferuje łatwy sposób sortowania śladów, pomagając zarządzać dużą
 
 - **Najbliższe** — Pokazuje ślady najbliżej Twojej aktualnej lokalizacji.
 
-- **Ostatnio modyfikowane** — Wyświetla ślady posortowane według daty ostatniej modyfikacji.
+- **Ostatnio zmodyfikowane** — Wyświetla ślady posortowane według daty ich ostatniej modyfikacji.
 
 - **Nazwa: A - Z** — Uporządkowuje ślady alfabetycznie od A do Z.
 
@@ -271,7 +271,7 @@ OsmAnd oferuje łatwy sposób sortowania śladów, pomagając zarządzać dużą
 
 Jeśli chcesz posortować [podfoldery](#folder-actions), przejdź do menu z trzema kropkami w wybranym folderze i wybierz wymagane [opcje](#sort-by).  
 
-Wybrana opcja sortowania jest stosowana nie tylko do bieżącego podfolderu, ale także do wszystkich zagnieżdżonych folderów i śladów na wszystkich poziomach. Zapewnia to spójną strukturę w zapisanych danych.
+Wybrana opcja sortowania jest stosowana nie tylko do bieżącego podfolderu, ale także do wszystkich zagnieżdżonych folderów i śladów na wszystkich poziomach. Zapewnia to spójną strukturę zapisanych danych.
 
 
 ## Folder śladów {#track-folder}
@@ -310,7 +310,7 @@ Jak otworzyć menu folderu:
 
 - [Zmień domyślny wygląd](../../map/tracks/appearance.md) (*Android*) / **Wygląd** (*iOS*) — Zmienia wygląd wyświetlania wszystkich śladów w folderze.
 
-- [Eksportuj](../../personal/import-export.md) — Otwiera zakładkę *Menu → Ustawienia → Akcje*, aby wyeksportować wszystkie ślady w folderze jako plik [`.osf`](../../personal/import-export.md#export).
+- [Eksportuj](../../personal/import-export.md) — Otwiera *Menu → Ustawienia → Zakładka Akcje*, aby wyeksportować wszystkie ślady w folderze jako plik [`.osf`](../../personal/import-export.md#export).
 
 - [Przenieś](#track-folder) — Umożliwia przeniesienie folderu do innego istniejącego folderu lub utworzenie nowego.
 
@@ -318,13 +318,13 @@ Jak otworzyć menu folderu:
     ***UWAGA: Ta akcja jest nieodwracalna.***
 
 
-### Statystyki folderu {#folder-statistics}
+### Statystyki folderów {#folder-statistics}
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tab*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> zakładka*
 
 ![Moje miejsca ze śladami w Androidzie](@site/static/img/personal/tracks/dashboard_andr.png)
 
@@ -332,7 +332,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> zakładka*
 
 ![Moje miejsca ze śladami w iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
 
@@ -340,22 +340,22 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-Na dole listy w zakładce *Ślady* oraz pod listą śladów **w każdym z Twoich folderów** znajduje się sekcja informacyjna, która pozwala na przegląd ogólnych statystyk podsumowujących dla śladów w wybranym folderze. Wszystkie wartości są wyświetlane w wybranych [jednostkach](../../personal/profiles.md#units--formats).
+Na dole listy w zakładce *Ślady* oraz pod listą śladów **w każdym z Twoich folderów** znajduje się sekcja informacyjna, która umożliwia przeglądanie ogólnych statystyk podsumowujących dla śladów w wybranym folderze. Wszystkie wartości są wyświetlane w wybranych [jednostkach](../../personal/profiles.md#units--formats).
 
 - *Liczba **śladów** w folderze* — Wyświetla liczbę śladów zawartych w wybranym folderze.
 
-- *Całkowita suma* **dystansów** — Wyświetlana jest całkowita długość wszystkich śladów w wybranym folderze, mierzona w wybranych jednostkach.
+- *Całkowita suma* **Dystansów** — Wyświetlana jest całkowita długość wszystkich śladów w wybranym folderze, mierzona w wybranych jednostkach.
 
-- *Suma* **podjazdów** — Dane wskazują całkowity pionowy wzrost na wszystkich śladach w wybranym folderze.
+- *Suma* **Podjazdów** — Dane wskazują całkowity pionowy wzrost na wszystkich śladach w wybranym folderze.
 
-- *Suma* **zjazdów** — Ten parametr to suma pionowych zjazdów na wszystkich śladach w wybranym folderze.
+- *Suma* **Zjazdów** — Ten parametr to suma pionowych zjazdów na wszystkich śladach w wybranym folderze.
 
-- *Suma* **czasu trwania** — Wyświetla całkowity czas potrzebny na pokonanie wszystkich śladów w wybranym folderze.
+- *Suma* **Czasu trwania** — Wyświetla całkowity czas potrzebny na pokonanie wszystkich śladów w wybranym folderze.
 
 - *Całkowity **rozmiar** pobranych plików w MB* — Całkowity rozmiar pobranych plików w megabajtach pokazuje, ile miejsca zajmują wszystkie ślady w wybranym folderze na Twoim urządzeniu.
 
 
-### Akcje folderu {#folder-actions}
+### Akcje folderów {#folder-actions}
 
 <Tabs groupId="operating-systems">
 
@@ -377,7 +377,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-Akcje w folderze pomagają organizować, sortować i importować ślady, aby strukturyzować dane nawigacyjne.  
+Akcje w folderze pomagają organizować, sortować i importować ślady, aby uporządkować dane nawigacyjne.  
 
 Jak otworzyć akcje folderu:
 
@@ -387,7 +387,7 @@ Jak otworzyć akcje folderu:
 
 ***Akcje w menu folderu:***
 
-- [Wybierz](#selection-mode) — Dotknij wymaganych folderów i śladów, aby zastosować akcje z menu w *trybie wyboru*.
+- [Wybierz](#selection-mode) — Dotknij wymagane foldery i ślady, aby zastosować akcje z menu w *trybie wyboru*.
 
 - [Sortuj podfoldery](#sort-by) — Zastosuj kolejność sortowania (np. według nazwy, daty) do wszystkich podfolderów i śladów na każdym poziomie.
 
@@ -395,7 +395,7 @@ Jak otworzyć akcje folderu:
 
 - [Importuj](#import) — Prześlij pliki GPX lub inne pliki śladów z urządzenia do OsmAnd do użytku offline.
 
-- **Dodaj nowy folder** — Aby uporządkować trasy i ślady w logiczne kategorie, umieść je w różnych folderach. Pomaga to w strukturyzacji informacji nawigacyjnych.
+- **Dodaj nowy folder** — Aby uporządkować trasy i ślady w logiczne kategorie, umieść je w różnych folderach. Pomaga to uporządkować informacje nawigacyjne.
 
 
 ### Usuń folder {#delete-folder}
@@ -404,7 +404,7 @@ Jak otworzyć akcje folderu:
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> zakładka*
 
 ![Moje miejsca ze śladami w Androidzie](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
@@ -412,7 +412,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> zakładka*
 
 ![Menu kontekstowe śladu w iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
 
@@ -436,21 +436,21 @@ Narzędzie importu umożliwia dodawanie śladów z zewnętrznych plików do nawi
 1. **Bezpośredni import pliku:**
 
     - Dotknij pliku GPX, KML lub KMZ z aplikacji do przesyłania wiadomości, poczty e-mail, Google Drive lub menedżerów plików.
-    - Po wyświetleniu monitu wybierz Otwórz w OsmAnd.
-    - Zaimportowany ślad zostanie zapisany w folderze **Import** w *Moich miejscach*.
+    - Wybierz Otwórz w OsmAnd po wyświetleniu monitu.
+    - Zaimportowany ślad jest zapisywany w folderze **Import** w *Moich miejscach*.
     - Kroki: Dotknij pliku GPX → Otwórz w OsmAnd.
 
 2. **Importowanie za pomocą menu *Moje miejsca*:**
 
-    - Otwórz *menu Moje miejsca → Ślady*.
+    - Otwórz menu *Moje miejsca → Ślady*.
     - Wybierz plik GPX do zaimportowania.
 
     *Dodatkowe opcje:*
 
-    - **Jednośladowe pliki GPX** - importuj cały ślad bezpośrednio.
-    - **Wielośladowe pliki GPX** - wybierz importowanie pojedynczego pliku GPX lub wybierz konkretne ślady.
+    - **Pliki GPX z jednym śladem** - importuj cały ślad bezpośrednio.
+    - **Pliki GPX z wieloma śladami** - wybierz importowanie pojedynczego pliku GPX lub wybierz konkretne ślady.
 
-***UWAGA:*** *Ślady dodane ręcznie do folderu OsmAnd na Twoim urządzeniu są automatycznie importowane bez ponownego uruchamiania aplikacji.*  
+***UWAGA:*** *Ślady ręcznie dodane do folderu OsmAnd na Twoim urządzeniu są automatycznie importowane bez ponownego uruchamiania aplikacji.*  
 
 
 ### Eksportuj {#export}
@@ -489,7 +489,7 @@ Narzędzie importu umożliwia dodawanie śladów z zewnętrznych plików do nawi
 
 </Tabs>
 
-Istnieje kilka sposobów eksportowania jednego lub wielu plików śladów do dowolnego komunikatora, poczty e-mail, menedżera plików lub aplikacji.  
+Istnieje kilka sposobów eksportowania jednego lub więcej plików śladów do dowolnego komunikatora, poczty e-mail, menedżera plików lub aplikacji.  
 
 1. Poprzez [*Menu kontekstowe śladu → Udostępnij*](../../map/tracks/track-context-menu.md#options).
 

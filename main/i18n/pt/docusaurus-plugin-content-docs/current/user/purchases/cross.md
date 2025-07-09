@@ -1,5 +1,5 @@
 ---
-source-hash: 9f4dbbf91f34a5275efe83dee3ced74ee6fd21346d50094391417530b145a93e
+source-hash: 88145581c12f95f7e0dba74a712f88afdcbe5249c5f0e8b66b14eb7035e3d3d1
 sidebar_position: 4
 title: Compras entre plataformas
 ---
@@ -23,17 +23,17 @@ Os seguintes produtos OsmAnd atualmente suportam o uso em várias plataformas (A
 - Assinatura **Maps+**
 - Compra única no aplicativo **Maps+**
 
-A partir da **versão 5.0 do OsmAnd**, lançada em comemoração ao nosso **15º aniversário**, o acesso entre plataformas foi estendido ao **Maps+** (anteriormente conhecido como *Unlimited*). Anteriormente, apenas a assinatura [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) era multiplataforma.
+A partir da **versão 5.1 do OsmAnd**, lançada em comemoração ao nosso **15º aniversário**, o acesso entre plataformas foi estendido ao **Maps+** (anteriormente conhecido como *Ilimitado*). Anteriormente, apenas a assinatura [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) era multiplataforma.
 
 Para ativar o acesso entre plataformas, as compras devem ser vinculadas à sua conta [OsmAnd Cloud](../personal/osmand-cloud.md#login).
 Você pode comparar todos os produtos OsmAnd aqui: [diferença entre compras](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
 
-| Tipo de Produto                 | Multiplataforma | Notas                                                                 |
-| :------------------------------ | :-------------- | :-------------------------------------------------------------------- |
-| OsmAnd Pro (assinatura)         | ✔               | Funciona em Android, iOS e Web via Cloud                              |
-| Maps+ (assinatura)              | ✔               | Requer versão 5.0+ e conta Cloud                                      |
-| Maps+ (compra única)            | ✔               | Deve ser ativado através do OsmAnd Cloud no dispositivo de compra     |
-| OsmAnd+ (aplicativo autônomo)   | Em breve        | Não transferível entre lojas ou plataformas                          |
+| Tipo de produto | Multiplataforma | Notas |
+|---|---|---|
+| OsmAnd Pro (assinatura) | ✔ | Funciona em Android, iOS e Web via Nuvem |
+| Maps+ (assinatura) | ✔ | Requer versão 5.0+ e conta na Nuvem |
+| Maps+ (compra única) | ✔ | Deve ser ativado via OsmAnd Cloud no dispositivo de compra |
+| OsmAnd+ (aplicativo autônomo) | Em breve | Não transferível entre lojas ou plataformas |
 
 
 ## Como funciona {#how-it-works}
@@ -83,18 +83,18 @@ Se o problema persistir, entre em contato com **support@osmand.net** e inclua:
 ## Exemplo {#example}
 
 Você comprou o **Maps+** como uma compra única no aplicativo na versão gratuita do OsmAnd na [Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).
-Mais tarde, você decide mudar para um iPhone e deseja usar o **Maps+** com a [versão iOS do OsmAnd](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
+Mais tarde, você decide mudar para um iPhone e quer usar o **Maps+** com a [versão iOS do OsmAnd](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 Para ativar sua compra do Maps+ no iOS:
 
 1. Abra a **versão Amazon** do aplicativo OsmAnd em seu dispositivo original.
 2. Faça login em sua conta [OsmAnd Cloud](../personal/osmand-cloud.md#login):
    *Menu → Configurações → OsmAnd Cloud → Criar nova conta / Já tenho uma conta*
-3. Instale o OsmAnd em seu iPhone na [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
-4. Faça login na **mesma conta OsmAnd Cloud** em seu iPhone.
+3. Instale o OsmAnd no seu iPhone da [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
+4. Faça login na **mesma conta OsmAnd Cloud** no seu iPhone.
 5. Vá para *Menu → Configurações → Compras* e confirme se o **Maps+** está listado como ativo.
 
-Isso conclui a ativação multiplataforma de sua compra. Agora você pode continuar usando o **Maps+** em seu novo dispositivo.
+Isso completa a ativação multiplataforma da sua compra. Agora você pode continuar usando o **Maps+** em seu novo dispositivo.
 
 Aproveite o uso do Maps+/Pro em todas as plataformas!
 

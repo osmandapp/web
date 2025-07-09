@@ -1,7 +1,7 @@
 ---
-source-hash: 29a8f5ab251e5c6f65f7c49bf8692c1eb242901f939c7e25049778441938422e
+source-hash: 789844e699b8fd3d74e29ea8a31ef3fb08507195be863232131d34877baa4447
 sidebar_position: 1
-title: Zakupy Android
+title: Zakupy na Androida
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Zainstaluj OsmAnd (Android) {#install-osmand-android}
 
-W przypadku urządzeń z systemem Android, możesz pobrać **bezpłatną** i **płatną** wersję aplikacji z następujących sklepów:
+W przypadku urządzeń z systemem Android możesz pobrać **bezpłatne** i **płatne** wersje aplikacji z następujących rynków:
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
@@ -56,10 +56,10 @@ W przypadku urządzeń z systemem Android, możesz pobrać **bezpłatną** i **p
 
 | Plan | Opis | Dostępność | Uwagi |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | **Bezpłatny plan**, który zapewnia dostęp do [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) dla *Ulubionych*, *Ustawień* i *edycji/notatek OSM*. | Dostępny dla wszystkich użytkowników bezpłatnej wersji OsmAnd. | Ograniczony do podstawowych funkcji chmury i **5MB** pamięci. |
+| **OsmAnd Start** | **Bezpłatny plan**, który zapewnia dostęp do [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) dla *Ulubionych*, *Ustawień* i *edycji/notatek OSM*. | Dostępny dla wszystkich użytkowników bezpłatnej wersji OsmAnd. | Ograniczony do podstawowych funkcji chmury i **5 MB** pamięci. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | **Oddzielna płatna aplikacja**, która zawiera zaawansowane funkcje. | Dostępna w [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Może być dodana do [Biblioteki rodzinnej Google Play](https://support.google.com/googleplay/answer/7007852?hl=en). |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Mapy+** | **Zakup w aplikacji** lub **subskrypcja** dla bezpłatnej aplikacji OsmAnd, odblokowująca te same funkcje co OsmAnd+. | Dostępna w [Google Play](https://play.google.com/store/apps/details?id=net.osmand) i [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identyczna pod względem funkcji i ceny jak OsmAnd+. |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **Plan subskrypcji**, który odblokowuje dodatkowe zaawansowane i [funkcje Pro](#pro-features). | Dostępny w [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) i [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Obsługuje dostęp **międzyplatformowy** (patrz uwaga poniżej). |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Mapy+** | **Zakup w aplikacji** lub **subskrypcja** dla bezpłatnej aplikacji OsmAnd, odblokowująca te same funkcje co OsmAnd+. | Dostępna w [Google Play](https://play.google.com/store/apps/details?id=net.osmand) i [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identyczna pod względem funkcji i ceny z OsmAnd+. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **Plan subskrypcji**, który odblokowuje dodatkowe zaawansowane i [funkcje pro](#pro-features). | Dostępny w [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) i [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Obsługuje dostęp **międzyplatformowy** (patrz uwaga poniżej). |
 
 ### Ważne uwagi {#important-notes}
 
@@ -74,7 +74,7 @@ W przypadku urządzeń z systemem Android, możesz pobrać **bezpłatną** i **p
 
 ## Ceny {#prices}
 
-W liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA i Europy. Dla innych regionów ceny są równoważne w lokalnych walutach.
+W liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA i Europy. Dla innych regionów ceny są równoważne w walutach lokalnych.
 
 <!--
 
@@ -116,10 +116,10 @@ Poniższa tabela szczegółowo przedstawia funkcje zawarte zarówno w bezpłatny
 | [Dostęp bez reklam](#free-and-paid-features) | Bez reklam | Bez reklam | Bez reklam |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Wszystkie funkcje Pro](#pro-features) | **-** | **-** | ✔ |
-| [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
-| [Nieograniczone pobieranie map](../start-with/download-maps.md) | <details><summary>**7 pobrań map**</summary> - Pobieranie lub aktualizacja mapy oznacza tylko pobieranie-aktualizację mapy kraju (regionu). <br/> - **Mapa przeglądowa świata**, **Korekta wysokości świata**, **Czcionki mapy** i **Komunikaty głosowe** nie są liczone jako 7 możliwości pobrania. </details> | ✔ | ✔ |
-| [Miesięczne aktualizacje map](../personal/maps-resources.md#update-maps)<br/>Raz w miesiącu (z 2-dniowym opóźnieniem) | <details><summary>**7 pobrań map**</summary> Aktualizacja mapy liczy się jako pobranie.</details> | ✔ | ✔ |
-| [Godzinne aktualizacje map](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 godzina opóźnienia) - [**](#-map-updates) | **-** | **-** | ✔ |
+| [Rzeźba 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
+| [Nieograniczone pobieranie map](../start-with/download-maps.md) | <details><summary>**7 pobrań map**</summary> - Pobieranie lub aktualizacja mapy oznacza tylko pobieranie-aktualizację mapy kraju (regionu). <br/> - **Mapa przeglądowa świata**, **Korekta wysokości świata**, **Czcionki map** i **Komunikaty głosowe** nie są liczone jako 7 możliwości pobierania. </details> | ✔ | ✔ |
+| [Miesięczne aktualizacje map](../personal/maps-resources.md#update-maps)<br/>Raz w miesiącu (z 2-dniowym opóźnieniem) | <details><summary>**7 pobrań map**</summary> Aktualizacja mapy liczy się jako pobieranie.</details> | ✔ | ✔ |
+| [Godzinowe aktualizacje map](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 godzina opóźnienia) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Obsługa zewnętrznych czujników](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Dane topograficzne](../plugins/topography.md#setup)<br/>(Linie konturowe i Teren) | **-** | ✔ | ✔ |
@@ -127,14 +127,14 @@ Poniższa tabela szczegółowo przedstawia funkcje zawarte zarówno w bezpłatny
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Popularne miejsca (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Offline Wikivoyage - Przewodniki turystyczne](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Nawigacja offline i online](../navigation/index.md)<br/>z instrukcjami zakręt po zakręcie | ✔ | ✔ | ✔ |
+| [Nawigacja offline i online](../navigation/index.md)<br/>z wskazówkami zakręt po zakręcie | ✔ | ✔ | ✔ |
 | [Wyszukiwanie natychmiastowe offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Nagrywanie podróży](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [Eksport śladów GPX](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
-| [Import śladów GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Eksport ścieżek GPX](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
+| [Import ścieżek GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Narzędzie do planowania trasy](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
 | [Widżety metryk pojazdu](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widżety za darmo**</summary><ul><li>*Prędkość pojazdu*</li><li>*Prędkość obrotowa silnika*</li></ul></details> | <details><summary>**2 widżety za darmo**</summary><ul><li>*Prędkość pojazdu*</li><li>*Prędkość obrotowa silnika*</li></ul></details> | ✔ |
-| [Narzędzie znaczników mapy](../personal/markers.md) | ✔ | ✔ | ✔ |
+| [Narzędzie do znaczników mapy](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Źródła map online](../plugins/online-map.md) | ✔ | ✔ | ✔ |
 | [Mapa SQLitedb](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
 | [Ulubione punkty](../map/point-layers-on-map.md)<br/>zakładki i punkty trasy | ✔ | ✔ | ✔ |
@@ -159,21 +159,21 @@ Subskrypcja **Pro** obecnie obejmuje następujące funkcje:
 
 | Funkcja Pro | Opis |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Tworzenie kopii zapasowych i przywracanie danych, synchronizacja danych z [portalem internetowym OsmAnd](https://www.osmand.net/map). |
-| [Międzyplatformowe](../personal/osmand-cloud.md#cross-platform) | Możliwość korzystania z OsmAnd Pro i OsmAnd Start na wszystkich platformach (Android *←→* iOS *→* Web). |
-| [3D Relief](../plugins/topography.md#3d-relief) | Pozwala na posiadanie i obserwowanie modelu w skali Twojej okolicy lub całego kontynentu. |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Twórz kopie zapasowe i przywracaj swoje dane, synchronizuj dane z [portalem internetowym OsmAnd](https://www.osmand.net/map). |
+| [Międzyplatformowość](../personal/osmand-cloud.md#cross-platform) | Możliwość korzystania z OsmAnd Pro i OsmAnd Start na wszystkich platformach (Android *↔* iOS *↔* Web). |
+| [Rzeźba 3D](../plugins/topography.md#3d-relief) | Pozwala na posiadanie i obserwowanie modelu w skali Twojej okolicy lub całego kontynentu. |
 | [OsmAnd Live](../personal/maps-resources.md#osmand-live) | Mapy OsmAnd aktualizują się co 15 minut po ulepszeniu [OpenStreetMap](https://www.openstreetmap.org/). |
-| [Wtyczka pogodowa](../plugins/weather.md) | 24-godzinna prognoza godzinowa na 7 dni do przodu na mapie. |
-| [Wtyczka metryk pojazdu (OBD-II)](../plugins/vehicle-metrics.md) | Pozwala podłączyć skaner OBD-II w celu wyświetlania szczegółowych danych pojazdu w aplikacji OsmAnd i przechowywania informacji w rejestrach śladów. |
+| [Wtyczka Pogoda](../plugins/weather.md) | 24-godzinna prognoza godzinowa na 7 dni na mapie. |
+| [Wtyczka metryk pojazdu (OBD-II)](../plugins/vehicle-metrics.md) | Pozwala podłączyć skaner OBD-II, aby wyświetlać szczegółowe dane pojazdu w aplikacji OsmAnd i przechowywać informacje w zapisach śledzenia. |
 | [Dostosuj linię trasy](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Zmiana koloru i szerokości linii trasy podczas nawigacji. |
 | [Widżet wysokości](../widgets/nav-widgets.md#elevation-widget) | Pokazuje Twoją lokalizację na wykresie wysokości trasy nawigacyjnej z dodatkowymi informacjami. |
-| [Widżety wysokości - Wysokość: Centrum mapy](../widgets/info-widgets.md#elevation-map-center) | Pozwala sprawdzić wysokość aktualnego centrum mapy nad poziomem morza. |
-| [Korekta wysokości (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Pozwala obliczyć wykres wysokości dla Twojej trasy (wymagana [mapa terenu](../plugins/topography.md#download-maps) dla wybranego regionu). |
+| [Widżety wysokości - Wysokość: Środek mapy](../widgets/info-widgets.md#elevation-map-center) | Pozwala sprawdzić wysokość środka bieżącej mapy nad poziomem morza. |
+| [Korekta wysokości (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Pozwala obliczyć wykres wysokości dla Twojej ścieżki ([Mapa terenu](../plugins/topography.md#download-maps) wymagana dla wybranego regionu). |
 
 
 ### Jak kupić {#how-to-buy}
 
-Łatwy sposób na wybranie i zakup potrzebnego planu za pomocą menu **Zakupy**. Oczywiście, zobaczysz menu propozycji dla płatnych funkcji.
+Łatwy sposób wyboru i zakupu potrzebnego planu za pomocą menu **Zakupy**. Oczywiście, zobaczysz menu propozycji płatnych funkcji.
 
 #### Zakup OsmAnd Pro {#osmand-pro-purchase}
 
@@ -187,18 +187,18 @@ lub
 
 ![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
 
-#### Zakup Maps+ {#maps-purchase}
+#### Zakup Mapy+ {#maps-purchase}
 
-![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Plan subskrypcji / w aplikacji *Maps+*. Tutaj możesz wybrać subskrypcję roczną lub płatność jednorazową:
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Plan subskrypcji / w aplikacji *Mapy+*. Tutaj możesz wybrać subskrypcję roczną lub płatność jednorazową:
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Dotknij listy funkcji Maps+ → Kontynuuj z Maps+*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Dotknij listy funkcji Mapy+ → Kontynuuj z Mapy+*
 
 ![Maps+ Plan](@site/static/img/purchases/maps.png)
 
 
 ## Starsze subskrypcje (przed 4.0) {#legacy-subscriptions-prior-40}
 
-Nowe subskrypcje rozpoczynają się od wersji OsmAnd 4.0 (sierpień 2021). Wszystkie poprzednie subskrypcje są przestarzałe i technicznie równoważne z *Subskrypcją map*, chociaż starsze subskrypcje kwalifikują się do godzinnych aktualizacji map. Użytkownicy nie mogą kupować starych subskrypcji, ale stare subskrypcje są automatycznie odnawiane, dopóki nie zrezygnujesz z subskrypcji (cena może ulec zmianie w przyszłości).
+Nowe subskrypcje zaczynają się od wersji OsmAnd 4.0 (sierpień 2021). Wszystkie poprzednie subskrypcje są przestarzałe i technicznie odpowiadają *subskrypcji map*, chociaż starsze subskrypcje kwalifikują się do godzinowych aktualizacji map. Użytkownicy nie mogą kupować starych subskrypcji, ale stare subskrypcje są automatycznie odnawiane, dopóki nie zrezygnujesz z subskrypcji (cena może ulec zmianie w przyszłości).
 
 
 ## Przywróć zakupy {#restore-purchases}
@@ -228,7 +228,7 @@ Aby przywrócić zakup, sprawdź, jaki plan OsmAnd kupiłeś.
 - *Zaktualizuj aplikację Market* (Google Play, Huawei AppGallery).
 - *Zaloguj się* na **to samo konto** w Market (Google Play, Huawei AppGallery), na którym masz zakup OsmAnd.
 - *Otwórz OsmAnd* z aktywnym połączeniem internetowym.
-- *Aby otworzyć Przywróć zakupy*, wykonaj następujące kroki: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* i na górze ekranu powinno pojawić się, że Mapy+(Pro) są aktywowane.
+- *Aby otworzyć Przywróć zakupy*, wykonaj następujące kroki: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* i u góry ekranu powinno pojawić się, że Mapy+(Pro) jest aktywowane.
 - *Zarejestruj funkcje Pro* z subskrypcją OsmAnd Pro dla wszystkich platform (Android i iOS). Jeśli masz konto OsmAnd Pro, musisz go użyć [do aktywacji OsmAnd Pro](../personal/osmand-cloud.md) dla swojego urządzenia.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases.png)
@@ -237,8 +237,8 @@ Aby przywrócić zakup, sprawdź, jaki plan OsmAnd kupiłeś.
 
 **Jeśli żadna z metod nie zadziałała:**
 
-1. Wyczyść pamięć podręczną Google Play (Huawei AppGallery).
-2. Wyczyść pamięć podręczną OsmAnd.
+1. Wyczyść pamięć podręczną dla Google Play (Huawei AppGallery).
+2. Wyczyść pamięć podręczną dla OsmAnd.
 3. Uruchom ponownie urządzenie i spróbuj przywrócić ponownie.
 
 
@@ -255,6 +255,6 @@ Aby przywrócić zakup, sprawdź, jaki plan OsmAnd kupiłeś.
 
 [Szczegółowy przewodnik dotyczący zakupu kart podarunkowych Google Play](https://support.google.com/googleplay/answer/3422734?hl=en).
 
-Możesz kupić OsmAnd, używając kart podarunkowych Google Play, co stanowi bezpieczną alternatywę dla udostępniania informacji o karcie kredytowej online. Po prostu kup kartę podarunkową u wybranego sprzedawcy i zrealizuj kod w Google Play.
+Możesz kupić OsmAnd, używając kart podarunkowych Google Play, co stanowi bezpieczną alternatywę dla udostępniania informacji o karcie kredytowej online. Wystarczy kupić kartę podarunkową u wybranego sprzedawcy i zrealizować kod w Google Play.
 
 > *Ostatnia aktualizacja: maj 2025*

@@ -66,7 +66,9 @@ The core of OsmAnd's HH-Routing is an elegant two-level hierarchy built upon "ar
 
 This map illustrates the OsmAnd routing concept. [The route](https://osmand.net/map/navigate/?start=42.343860,-71.068550&end=42.306935,-71.082991&profile=car#14/42.3280/-71.0819) starts in the Start Area Cluster (221558), moves to the nearest Border Point, and continues through precomputed Shortcuts across intermediate clusters. It then enters the Finish Area Cluster (221536) via another border point and finishes using local roads. This method speeds up routing by combining local search with efficient inter-cluster shortcuts.
 
-![OsmAnd HH](./img/example_boston.png)
+<!-- ![OsmAnd HH](./img/example_boston.png) -->
+
+![OsmAnd HH](./img/hh-example.png)
 
 The real magic, our **Secret Sauce #1**, lies in *how* these border points are selected. Naive approaches quickly fail:
 * Randomly selecting border points or using simple geometric divisions (squares/hexagons) results in too many border points per cluster (50-80). This leads to a shortcut explosion (N*(N-1)/2 shortcuts), making the files large and and calculations slow.
