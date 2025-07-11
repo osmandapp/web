@@ -1,0 +1,118 @@
+---
+source-hash: 42031b78e29fbd1911d4dd552afcc77bc2c286dce954d90b69e5940edc79b516
+sidebar_position: 4
+sidebar_label: Kullanıcı verileri
+title: Haritadaki Kullanıcı Verileri
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+<InfoIncompleteArticle/>
+
+## Genel Bakış {#overview}
+
+Web'de kullanıcılar, Parçalar ve Favoriler gibi kişisel verilerine doğrudan web üzerinden erişebilir, bunları yönetebilir ve oluşturabilir.
+
+- Parçalar: Kullanıcılar çevrimiçi olarak yeni parçalar yükleyebilir, görüntüleyebilir, düzenleyebilir veya oluşturabilir. Tüm değişiklikler otomatik olarak OsmAnd Cloud ile senkronize edilir ve verilerin bağlı tüm cihazlarda kullanılabilir olmasını sağlar.
+- Favoriler: Kaydedilmiş konumları web'de oluşturun ve düzenleyin, OsmAnd uygulamanızla otomatik senkronizasyon sayesinde hızlı erişim ve navigasyon sağlayın.
+
+OsmAnd Cloud ile entegrasyon, sorunsuz senkronizasyona olanak tanıyarak kullanıcıların verilerini herhangi bir cihazdan rahatça yönetmelerini sağlar.
+
+## Web'deki Parçalar {#tracks-on-the-web}
+
+Bu ücretli bir özelliktir <ProFeature/>. Öncelikle OsmAnd Pro hesabınıza giriş yapmanız gerekir:
+
+![Parça girişi](@site/static/img/web/track_loggin.png)
+
+Parça bölümü için:
+
+- [OsmAnd Cloud'dan](#users-tracks-pro) parçaları göster.
+- Haritaya parça ekleme (**Haritada Görünür** klasörü).
+- Tüm parça bilgilerini ve grafiğini görüntüleme
+- Parçaları değiştirme ve Bulut'a ekleme.
+- Parçaları indirme ve silme.
+- Yeni klasörler oluşturma veya silme.
+- Klasörleri OSF veya OBF koleksiyonu olarak indirme.
+
+
+### Haritada Görünür {#visible-on-the-map}
+
+Burada haritada görünen parçaların bir listesi bulunmaktadır.
+
+Parçaları haritada göstermek veya göstermemek için açıp kapatın.
+
+![Haritada görünür](@site/static/img/web/visible.png)
+
+
+### Parça klasörü menüsü {#track-folder-menu}
+
+*Parça Klasörü* menüsünü açmak için *Üç nokta* **⋮** düğmesine tıklayın. Burada seçilen klasördeki tüm parçaları şu şekilde indirebilirsiniz:
+
+ - OSF olarak indir.
+ - OBF Koleksiyonu olarak indir:
+  Bu verilerden OBF haritası alabilirsiniz: [OBF dosyası](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) veya [Seyahat OBF](https://osmand.net/blog/routes#generated-travel-routes).
+
+    -  [OBF dosyası](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
+
+  Çevrimdışı harita OBF'yi (OsmAnd İkili Format) indirebilir ve OsmAnd ile cihazda açabilirsiniz, haritada büyük miktarda parçayı görüntülemek için uygundur.
+
+    -  [Seyahat OBF](https://osmand.net/blog/routes#generated-travel-routes):
+
+  Ayrıca, harita parçalarını Seyahat kitabı olarak içe aktarabilirsiniz, bu da haritada belirli bir parçayı seçmenize ve normal bir GPX olarak kullanmanıza olanak tanır. Seyahat kitabı ayrıca parçaları nokta olarak görüntüleme, parçaları aktivite türüne göre filtreleme ve ara noktaları filtreleme gibi özellikleri de destekler.
+
+- Seçilen klasörü _Yeniden Adlandır_.
+- Seçilen klasörü _Sil_.
+
+![Parça klasörü menüsü](@site/static/img/web/collection.png)
+
+
+### Bulut Parçaları {#cloud-tracks}
+
+[OsmAnd Cloud'da](../personal/osmand-cloud.md) sahip olduğunuz GPX parçaları, giriş yaptıktan sonra görüntüleme ve düzenleme için kullanılabilir olacaktır. Yalnızca **Pro kullanıcıları** <ProFeature/> ve [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) kullanıcıları (Pro abonelikleri sona erdikten sonra bile verilerini indirebilirler) için.
+
+Bulut parçasını seçtikten sonra aşağıdaki özellikler mevcuttur:
+
+- Bilgi ekranları:
+  - *Bilgi* - parça verilerini görüntüler.
+  - *Yükseklik* - yükseklik grafiği.
+  - *Hız* - hız grafiği.
+  - *Eğim* - eğim grafiği.
+  - *Ayarlar* - *Rota oluştur* aracı için navigasyon profilleri listesi.  
+
+- Eylem düğmeleri:
+  - *Parçayı düzenle* - bulut parçasını düzenlemek için yerel olarak ekler (paneldeki *Yerelliği düzenle* düğmesi).
+  - *GPX indir* - parçayı PC'ye indirir.
+  - *Yüksekliği Yeniden Hesapla* (Uydu) - seçilen parçanın yükseklik grafiğini görüntüler.
+  - *Parçayı Sil* - parçayı siler.
+  - *Parçayı kapat* - parçayı kapatır.
+
+![OsmAnd Web bulut GPX düzenleme](@site/static/img/web/cloud_track.png)
+
+
+
+## Web'deki Favoriler {#favorites-on-the-web}
+
+Bir [**OsmAnd Pro**](../personal/osmand-cloud.md#login) kaydettikten sonra ve [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) için, Favorileriniz Favoriler menüsünde görüntülenir.  
+Aşağıdaki eylemler mevcuttur:
+
+- *Haritada göster* - seçilen klasördeki favori noktaları haritada göster.
+- *Yeniden Adlandır* - favori klasörünün adı ve açıklaması.
+- *İndir* - seçilen favori klasörünü indir.
+- *Sil* - seçilen favori klasörünü sil.
+
+![OsmAnd Web bulut Favoriler düzenleme](@site/static/img/web/favorites.png)
+
+### Favori Ekle / Düzenle {#add--edit-favorite}
+
+Yeni bir favori nokta [eklemek için](../personal/favorites.md#edit), ekrana sağ tıklayın. Düzenlemeye başlamak için favori noktaya tıklayın, düzenleme menü ekranı [OsmAnd uygulamasındaki menüye](../personal/favorites.md#create) benzer.  
+
+![OsmAnd Web Favoriler ekle](@site/static/img/web/web_favorites_add.png)
