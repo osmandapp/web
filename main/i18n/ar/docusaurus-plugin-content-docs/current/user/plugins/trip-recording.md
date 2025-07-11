@@ -134,7 +134,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - لـ **حفظ، إيقاف مؤقت، بدء** جزء جديد، أو **إنهاء** التسجيل، استخدم أزرار [الإجراء السريع](../widgets/quick-action.md#add-and-delete-actions). انتقل إلى *القائمة → تكوين الشاشة → الأزرار المخصصة → الإجراء السريع → إضافة إجراء → [أماكني](../widgets/quick-action.md#my-places)* وأضف زرًا واحدًا أو أكثر من أزرار الإجراء السريع.
 
-- (*أندرويد فقط*) لـ **إيقاف مؤقت** أو **حفظ** مسار قيد التسجيل، استخدم [إشعار النظام](#notifications) في منطقة الإشعارات بجهازك.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop_save_pause_andr.png)
+- (*أندرويد فقط*) لـ **إيقاف مؤقت** أو **حفظ** مسار قيد التسجيل، استخدم [إشعار النظام](#notifications) في منطقة الإشعارات بجهازك.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### شاشة النظرة العامة {#overview-screen}
