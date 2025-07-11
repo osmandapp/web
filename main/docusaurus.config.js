@@ -17,7 +17,7 @@ const config = {
   staticDirectories: ['static', 'legacy-image-static'],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr', 'uk', 'de', 'it', 'pl', 'es', 'pt'],
+    locales: ['en', 'fr', 'uk', 'de', 'it', 'pl', 'es', 'pt', 'ar'],
     localeConfigs: {
       en: { label: 'English' },
       fr: { label: 'Français' },
@@ -27,6 +27,7 @@ const config = {
       pl: { label: 'Polski' },
       es: { label: 'Español' },
       pt: { label: 'Português' },
+      ar: { label: 'العربية' },
     },
   },
   presets: [
