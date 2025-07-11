@@ -48,7 +48,7 @@ Mopedin rota ayarları çok basittir ve sadece birkaç seçenekten oluşur.
 
 | Parametre | Açıklama | Not |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="impassable_road"/>* | Navigasyon sırasında kaçınmak istediğiniz yolları seçin. | <details><summary> Harita üzerinde bir yol [seçebilir](../../map/map-context-menu/#avoid-road) veya listeden yol türlerini seçebilirsiniz: </summary>![Yollardan kaçın Android](@site/static/img/navigation/routing/avoid_moped_android.png) <ul><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (araçları su kütleleri üzerinden taşıyan bir su taşımacılığı türü)</li></ul>|
+| *<Translate android="true" ids="impassable_road"/>* | Navigasyon sırasında kaçınmak istediğiniz yolları seçin. | <details><summary> Harita üzerinde bir yol [seçebilir](../../map/map-context-menu/#avoid-road) veya listeden yol türlerini seçebilirsiniz: </summary>![Yollardan kaçın Android](@site/static/img/navigation/routing/avoid_moped_android.png) </details><ul><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (araçları su kütleleri üzerinden taşıyan bir su taşımacılığı türü)</li></ul>|
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* | Rota hesaplanırken özel erişim kısıtlamaları göz ardı edilecektir. | *[private](https://wiki.openstreetmap.org/wiki/Key:access)* etiketi OSM'de otoyolların ve diğer ulaşım yollarının, binaların, girişlerin, olanakların ve eğlence mekanlarının kullanımına ilişkin kısıtlamaları tanımlamak için kullanılır. |
 
 

@@ -164,7 +164,7 @@ Aracınıza kolayca geri dönmek için park yerini bir navigasyon hedefi olarak 
 
 <TabItem value="android" label="Android">
 
-![Android'de Otopark Silme Eylemi](@site/static/plugins/parking/and_parking_info_left.png)
+![Android'de Otopark Silme Eylemi](@site/static/img/map/context_menu_limited_parking.png)
 
 </TabItem>
 

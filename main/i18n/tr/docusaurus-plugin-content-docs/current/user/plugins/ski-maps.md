@@ -108,7 +108,7 @@ Parkurları ve kış renklerini haritadan kaldırmak tercih edilirse veya kayak 
 
 - Gerekli profil için [Kış ve Kayak](#set-winter-and-ski-map-style) harita stilinin işaretini kaldırın.
 - [Kayak profilini](../personal/profiles.md) başka bir profile değiştirin.
-- [Kayak haritası görünümü eklentisini](../plugins/index.indeks.md#enable--disable) devre dışı bırakın.
+- [Kayak haritası görünümü eklentisini](../plugins/index.md#enable--disable) devre dışı bırakın.
 
 
 :::info eklentiyi kaldır

@@ -205,7 +205,7 @@ OsmAnd geliştirme eklentisi, geliştiricileri ve deneyimli kullanıcıları hed
 
 OsmAnd Takipçisi, OsmAnd'da kişilerinizin haritada nerede olduğunu görmenize yardımcı olur. Sadece Android için.  
 
-### [AIS Gemi Takipçisi](./ais-vessel-tracker.md) {#ais-vessel-tracker}
+### [AIS Gemi Takipçisi](./ais-tracker.md) {#ais-vessel-tracker}
 
 AIS konumlarını ve çevredeki gemiler hakkındaki bilgileri görüntüler. AIS verileri, harici bir AIS alıcısından ağ üzerinden alınır.
 

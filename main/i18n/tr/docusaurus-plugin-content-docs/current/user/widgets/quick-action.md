@@ -271,7 +271,7 @@ Ayrıntılı özelleştirme ayarları için, her düğmenin görünümünü terc
 |:-------------|:-------------|
 | Ekle <br/> [**<Translate android="true" ids="quick_action_first_intermediate"/>**](../navigation/setup/route-navigation.md#intermediate-destinations) | Harita ekranının merkezini ilk ara nokta olarak seçebilirsiniz. Önceki hedef aynı kalır. |
 | Aç / Kapat <br/> [**Sesli komutlar**](../navigation/guidance/voice-navigation.md) | Navigasyon sırasında sesli rehberliği sessize alın veya sesini açın. |
-| Ayarla <br/> [**Başlangıç noktası**](../navigation/setup/route-navigation.2md#set-destinations) | Seçilen (merkez) harita konumunu bir kalkış noktası olarak işaretleyin. |
+| Ayarla <br/> [**Başlangıç noktası**](../navigation/setup/route-navigation.md#set-destinations) | Seçilen (merkez) harita konumunu bir kalkış noktası olarak işaretleyin. |
 | Ayarla <br/> [**Hedef**](../navigation/setup/route-navigation.md#set-destinations) | Haritadaki seçilen (merkezi) konumu hedef olarak ekleyin. Önceki hedef son ara nokta olur. |
 | Değiştir <br/> [**Hedef**](../navigation/setup/route-navigation.md#intermediate-destinations) | Seçilen (merkez) harita konumunu hedef olarak ayarlayın / değiştirin. Önceki hedef silinir. |
 | Aç / Kapat <br/> [**Otomatik yakınlaştırma haritası**](../map/interact-with-map.md) | Navigasyon sırasında harita otomatik yakınlaştırmayı etkinleştirin veya devre dışı bırakın. |

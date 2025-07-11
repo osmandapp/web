@@ -837,8 +837,8 @@ Ses/video notları kaydetmek için OsmAnd [**Ses/Video Notları eklentisini**](.
 
 Haritada seçilen bir noktada bir medya notu kaydeder veya çeker.
 
-- &nbsp;<Translate android="true" ids="recording_context_menu_arecord"/> - seçilen noktada bir [sesli not](../map/point-layers-on_map.md#-audio--video-points-android) oluşturur (ses simgesiyle katmanda yeni bir nokta oluşturur).
-- &nbsp;<Translate android="true" ids="recording_context_menu_vrecord"/> - seçilen noktada bir [video notu](../map/point-layers-on_map.md#-audio--video-points-android) oluşturur (video simgesiyle katmanda yeni bir nokta oluşturur).
+- &nbsp;<Translate android="true" ids="recording_context_menu_arecord"/> - seçilen noktada bir [sesli not](../map/point-layers-on-map.md#-audio--video-points-android) oluşturur (ses simgesiyle katmanda yeni bir nokta oluşturur).
+- &nbsp;<Translate android="true" ids="recording_context_menu_vrecord"/> - seçilen noktada bir [video notu](../map/point-layers-on-map.md#-audio--video-points-android) oluşturur (video simgesiyle katmanda yeni bir nokta oluşturur).
 - &nbsp;<Translate android="true" ids="recording_context_menu_precord"/> - haritada bir [fotoğraf noktası](../map/point-layers-on-map.md#-audio--video-points-android) oluşturur.
 
 
