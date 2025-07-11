@@ -1,0 +1,117 @@
+{
+  "version.label": {
+    "message": "التالي",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.User Guide": {
+    "message": "دليل المستخدم",
+    "description": "The label for category User Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Begin with OsmAnd": {
+    "message": "ابدأ مع OsmAnd",
+    "description": "The label for category Begin with OsmAnd in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map": {
+    "message": "الخريطة",
+    "description": "The label for category Map in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tracks": {
+    "message": "المسارات",
+    "description": "The label for category Tracks in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map Legend": {
+    "message": "مفتاح الخريطة",
+    "description": "The label for category Map Legend in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map Widgets": {
+    "message": "عناصر واجهة مستخدم الخريطة",
+    "description": "The label for category Map Widgets in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.My Data": {
+    "message": "بياناتي",
+    "description": "The label for category My Data in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Navigation": {
+    "message": "التنقل",
+    "description": "The label for category Navigation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Setup a Route": {
+    "message": "إعداد مسار",
+    "description": "The label for category Setup a Route in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Route Parameters": {
+    "message": "معلمات المسار",
+    "description": "The label for category Route Parameters in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Navigation Guidance": {
+    "message": "إرشادات التنقل",
+    "description": "The label for category Navigation Guidance in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Plan Route": {
+    "message": "تخطيط المسار",
+    "description": "The label for category Plan Route in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Plugins": {
+    "message": "الإضافات",
+    "description": "The label for category Plugins in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Purchases": {
+    "message": "المشتريات",
+    "description": "The label for category Purchases in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Search": {
+    "message": "البحث",
+    "description": "The label for category Search in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Web Route Planner": {
+    "message": "مخطط المسار عبر الويب",
+    "description": "The label for category Web Route Planner in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Troubleshooting": {
+    "message": "استكشاف الأخطاء وإصلاحها",
+    "description": "The label for category Troubleshooting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Technical Documentation": {
+    "message": "الوثائق الفنية",
+    "description": "The label for category Technical Documentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OsmAnd File Formats": {
+    "message": "تنسيقات ملفات OsmAnd",
+    "description": "The label for category OsmAnd File Formats in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map Creation": {
+    "message": "إنشاء الخرائط",
+    "description": "The label for category Map Creation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Build OsmAnd": {
+    "message": "بناء OsmAnd",
+    "description": "The label for category Build OsmAnd in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OsmAnd API & SDK": {
+    "message": "واجهة برمجة تطبيقات ومجموعة تطوير برامج OsmAnd",
+    "description": "The label for category OsmAnd API & SDK in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Contributions are welcome!": {
+    "message": "المساهمات مرحب بها!",
+    "description": "The label for category Contributions are welcome! in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Algorithms, Testing, Internals": {
+    "message": "الخوارزميات، الاختبار، المكونات الداخلية",
+    "description": "The label for category Algorithms, Testing, Internals in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Versions": {
+    "message": "الإصدارات",
+    "description": "The label for category Versions in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Legal": {
+    "message": "قانوني",
+    "description": "The label for category Legal in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Join Us": {
+    "message": "انضم إلينا",
+    "description": "The label for category Join Us in sidebar tutorialSidebar"
+  },
+  "sourceHash": {
+    "message": "890c5ecf7030d4b24ce7c8fb59562c26ee258575bb971a469838801f42f0a44e"
+  }
+}

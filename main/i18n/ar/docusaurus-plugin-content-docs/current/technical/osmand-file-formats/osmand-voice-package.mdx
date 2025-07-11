@@ -1,0 +1,62 @@
+---
+source-hash: f33e1e0ea0b176046b9f06a32f2877fe76847e29b7ba025d18f055347afadff1
+sidebar_position: 10
+---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+# حزم الصوت {#voice-packages}
+
+<IncompleteArticle/>
+
+يدعم OsmAnd نوعين من حزم الصوت:
+- **تحويل النص إلى كلام** (https://developer.android.com/reference/android/speech/tts/TextToSpeech) متاح في متاجر التطبيقات أو مثبت مسبقًا.
+- **حزم الصوت المسجلة**، والتي تتضمن أصواتًا مسجلة.
+
+إذا لم تتمكن من العثور على حزمة الصوت التي تحتاجها، فيرجى اتباع الأمثلة التالية وإنشاء حزمة الصوت الخاصة بك. أمثلة - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice، الحزمة الألمانية [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip)، الحزمة الإنجليزية [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
+
+### الفرق بين حزم تحويل النص إلى كلام والحزم المسجلة {#difference-between-tts-and-recorded-packages}
+
+- يدعم محرك تحويل النص إلى كلام نطق أسماء الشوارع، والمراجع، وأسماء نقاط الاهتمام.
+- يتم تجميع جميع حزم تحويل النص إلى كلام المدعومة وتحديثها مع التطبيق.
+- يجب تثبيت وتحديث الحزمة المسجلة يدويًا (على الرغم من إمكانية تحديث ملف التكوين مع تحديث التطبيق).
+- قد لا تدعم الحزمة المسجلة بعض الأشكال الصحيحة، ودعمها محدود.
+- لا تتطلب الحزمة المسجلة تثبيت أي محرك تحويل نص إلى كلام خاص.
+
+### هيكل الحزمة {#package-structure}
+
+عادة ما يتم توزيع حزمة الصوت كملف .voice.zip، حيث يحتوي ملف zip على مجلد واحد به [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (ملف **التكوين** الرئيسي)، وملفات الصوت إذا كانت موجودة.
+
+ملفات التكوين مكتوبة بلغة JavaScript. جميع ملفات التكوين هي افتراضيًا حزم تحويل نص إلى كلام، حتى لو لم يكن هناك تحويل نص إلى كلام موجود بعد لدعم اللغة. ولاحقًا يتم توسيع التكوين عن طريق ربط "عبارات القاموس" بـ "أسماء الملفات المسجلة".
+
+```
+function populateDictionary(tts) {
+	// ROUTE CALCULATED
+	dictionary["route_is1"] = tts ? "Die berechnete Strecke ist" : "route_is1.ogg";
+	dictionary["route_is2"] = tts ? "lang" : "route_is2.ogg";
+	dictionary["route_calculate"] = tts ? "Route neu berechnet" : "route_calculate.ogg";
+	dictionary["distance"] = tts ? "die Entfernung beträgt" : "distance.ogg";
+
+	// LEFT/RIGHT
+	dictionary["prepare"] = tts ? "Demnächst " : "prepare.ogg";  // Demnächst sounds better then Vorbereiten zum
+	dictionary["after"] = tts ? "nach" : "after.ogg";
+	
+	dictionary["left"] = tts ? "links abbiegen" : "left.ogg";
+  .....
+}
+
+function route_recalc(dist, seconds) {
+	return dictionary["route_calculate"] + (tts ? ", " : " ") + distance(dist, "nominativ") + (tts ? ", " : " ") + dictionary["time"] + " " + time(seconds) + (tts ? ". " : " ");
+}
+```
+
+
+### إنشاء حزمة مخصصة {#generation-custom-package}
+
+يرجى التحقق من [موارد المشروع](https://github.com/osmandapp/OsmAnd-resources/) واستخدام نفس هيكل المجلد مثل [الحزمة الألمانية](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de) - ببساطة قم بالنسخ. بمجرد الانتهاء، يمكنك التغيير، وتشغيل [برنامج الإنشاء النصي](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) وتحديد الوسائط المطلوبة. المساعدة موجودة داخل البرنامج النصي.
+
+### اختبار حزمة الصوت (أندرويد) {#testing-voice-package-android}
+
+للاختبار، يمكنك استخدام:
+- الملاحة؛
+- محاكاة الملاحة؛
+- أو إصدار مناسب من [مكون OsmAnd الإضافي للتطوير](/docs/user/navigation/guidance/voice-navigation#testing-of-voice-prompts)، والذي يحاكي أوامر صوتية مختلفة للاختبار.
