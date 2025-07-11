@@ -1,0 +1,62 @@
+---
+source-hash: f33e1e0ea0b176046b9f06a32f2877fe76847e29b7ba025d18f055347afadff1
+sidebar_position: 10
+---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+# Ses paketleri {#voice-packages}
+
+<IncompleteArticle/>
+
+OsmAnd iki tür ses paketini destekler:
+- Uygulama Mağazalarında bulunan veya önceden yüklenmiş **Metin Okuma** (https://developer.android.com/reference/android/speech/tts/TextToSpeech)
+- Kaydedilmiş sesleri içeren **Kaydedilmiş Ses paketleri**.
+
+İhtiyacınız olan ses paketini bulamadıysanız, lütfen aşağıdaki örnekleri takip edin ve kendi ses paketinizi oluşturun. Örnekler - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice, Almanca paket [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip), İngilizce paket [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
+
+### TTS ve Kaydedilmiş paketler arasındaki fark {#difference-between-tts-and-recorded-packages}
+
+- Bir Metin Okuma motoru, Cadde Adı, Referanslar, POI adlarının telaffuzunu destekler
+- Tüm Metin Okuma destekli paketler bir uygulama ile birlikte gelir ve güncellenir
+- Kaydedilmiş bir Paket manuel olarak yüklenmeli ve güncellenmelidir (ancak yapılandırma dosyası uygulama güncellemesiyle güncellenebilir)
+- Kaydedilmiş bir Paket bazı doğru formları desteklemeyebilir ve destek sınırlıdır
+- Kaydedilmiş bir Paket, herhangi bir özel TTS motorunun yüklenmesini gerektirmez
+
+### Paket Yapısı {#package-structure}
+
+Ses paketi genellikle .voice.zip olarak dağıtılır; zip, [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (ana **yapılandırma** dosyası) ve varsa ses dosyalarını içeren bir klasör içerir.
+
+Yapılandırma dosyaları JavaScript dilinde yazılmıştır. Tüm yapılandırma dosyaları varsayılan olarak TTS paketleridir, henüz dili destekleyecek bir TTS olmasa bile. Ve daha sonra yapılandırma, 'sözlük ifadeleri'nin 'kaydedilmiş dosya adları' ile eşleştirilmesiyle genişletilir.
+
+```
+function populateDictionary(tts) {
+	// ROUTE CALCULATED
+	dictionary["route_is1"] = tts ? "Die berechnete Strecke ist" : "route_is1.ogg";
+	dictionary["route_is2"] = tts ? "lang" : "route_is2.ogg";
+	dictionary["route_calculate"] = tts ? "Route neu berechnet" : "route_calculate.ogg";
+	dictionary["distance"] = tts ? "die Entfernung beträgt" : "distance.ogg";
+
+	// LEFT/RIGHT
+	dictionary["prepare"] = tts ? "Demnächst " : "prepare.ogg";  // Demnächst sounds better then Vorbereiten zum
+	dictionary["after"] = tts ? "nach" : "after.ogg";
+	
+	dictionary["left"] = tts ? "links abbiegen" : "left.ogg";
+  .....
+}
+
+function route_recalc(dist, seconds) {
+	return dictionary["route_calculate"] + (tts ? ", " : " ") + distance(dist, "nominativ") + (tts ? ", " : " ") + dictionary["time"] + " " + time(seconds) + (tts ? ". " : " ");
+}
+```
+
+
+### Özel paket oluşturma {#generation-custom-package}
+
+Lütfen [proje kaynaklarını](https://github.com/osmandapp/OsmAnd-resources/) kontrol edin ve [Almanca paketindeki](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de) ile aynı klasör yapısını kullanın - sadece kopyalayın. İşlem tamamlandıktan sonra, [oluşturma betiğini](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) çalıştırabilir ve gerekli argümanları belirtebilirsiniz. Yardım betiğin içinde bulunmaktadır.
+
+### Ses paketini test etme (Android) {#testing-voice-package-android}
+
+Test için şunları kullanabilirsiniz:
+- navigasyon;
+- navigasyon simülasyonu;
+- veya test için farklı sesli komutları simüle eden [OsmAnd geliştirme eklentisinin](/docs/user/navigation/guidance/voice-navigation#testing-of-voice-prompts) uygun bir sürümü.

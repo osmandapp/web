@@ -1,0 +1,117 @@
+{
+  "version.label": {
+    "message": "Sonraki",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.User Guide": {
+    "message": "Kullanım Kılavuzu",
+    "description": "The label for category User Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Begin with OsmAnd": {
+    "message": "OsmAnd ile Başlangıç",
+    "description": "The label for category Begin with OsmAnd in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map": {
+    "message": "Harita",
+    "description": "The label for category Map in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tracks": {
+    "message": "İzler",
+    "description": "The label for category Tracks in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map Legend": {
+    "message": "Harita Lejantı",
+    "description": "The label for category Map Legend in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map Widgets": {
+    "message": "Harita Widget'ları",
+    "description": "The label for category Map Widgets in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.My Data": {
+    "message": "Verilerim",
+    "description": "The label for category My Data in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Navigation": {
+    "message": "Navigasyon",
+    "description": "The label for category Navigation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Setup a Route": {
+    "message": "Rota Oluşturma",
+    "description": "The label for category Setup a Route in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Route Parameters": {
+    "message": "Rota Parametreleri",
+    "description": "The label for category Route Parameters in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Navigation Guidance": {
+    "message": "Navigasyon Rehberliği",
+    "description": "The label for category Navigation Guidance in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Plan Route": {
+    "message": "Rota Planlama",
+    "description": "The label for category Plan Route in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Plugins": {
+    "message": "Eklentiler",
+    "description": "The label for category Plugins in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Purchases": {
+    "message": "Satın Almalar",
+    "description": "The label for category Purchases in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Search": {
+    "message": "Arama",
+    "description": "The label for category Search in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Web Route Planner": {
+    "message": "Web Rota Planlayıcı",
+    "description": "The label for category Web Route Planner in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Troubleshooting": {
+    "message": "Sorun Giderme",
+    "description": "The label for category Troubleshooting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Technical Documentation": {
+    "message": "Teknik Dokümantasyon",
+    "description": "The label for category Technical Documentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OsmAnd File Formats": {
+    "message": "OsmAnd Dosya Biçimleri",
+    "description": "The label for category OsmAnd File Formats in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map Creation": {
+    "message": "Harita Oluşturma",
+    "description": "The label for category Map Creation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Build OsmAnd": {
+    "message": "OsmAnd Oluşturma",
+    "description": "The label for category Build OsmAnd in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OsmAnd API & SDK": {
+    "message": "OsmAnd API ve SDK",
+    "description": "The label for category OsmAnd API & SDK in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Contributions are welcome!": {
+    "message": "Katkılar memnuniyetle karşılanır!",
+    "description": "The label for category Contributions are welcome! in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Algorithms, Testing, Internals": {
+    "message": "Algoritmalar, Test, Dahili Yapı",
+    "description": "The label for category Algorithms, Testing, Internals in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Versions": {
+    "message": "Sürümler",
+    "description": "The label for category Versions in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Legal": {
+    "message": "Yasal",
+    "description": "The label for category Legal in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Join Us": {
+    "message": "Bize Katılın",
+    "description": "The label for category Join Us in sidebar tutorialSidebar"
+  },
+  "sourceHash": {
+    "message": "890c5ecf7030d4b24ce7c8fb59562c26ee258575bb971a469838801f42f0a44e"
+  }
+}
