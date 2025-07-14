@@ -130,7 +130,7 @@ export default function TracksMenu() {
                                 <SmartFolder type={'share'} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
                             )}
                             {ctx.tracksGroups &&
-                                (sortGroups.length > 0 ? sortGroups : ctx.tracksGroups)
+                                (sortGroups && sortGroups.length > 0 ? sortGroups : ctx.tracksGroups)
                                     .filter((g) => g.name !== DEFAULT_GROUP_NAME)
                                     .map((group, index) => {
                                         return <CloudTrackGroup key={group.name} index={index} group={group} />;
@@ -145,7 +145,7 @@ export default function TracksMenu() {
                         <Box id={'se-track-menu'}>
                             <Empty
                                 title={t('empty_tracks')}
-                                text={t('empty_tracks_desc')}
+                                text={t('empty_tracks_description')}
                                 folder={DEFAULT_GROUP_NAME}
                             />
                         </Box>
