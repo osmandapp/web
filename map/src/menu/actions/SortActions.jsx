@@ -118,6 +118,8 @@ export function doSort({ method, setSortFiles, setSortGroups, markers, files, gr
         } else if (method === 'az' || method === 'za' || favoriteGroup) {
             // sort by name for track groups or all types of favorites
             sortedGroups = allMethods[method].callback(groups, allMethods[method].reverse);
+        } else {
+            sortedGroups = groups; // keep original
         }
         if (setSortGroups) {
             setSortGroups(sortedGroups);
