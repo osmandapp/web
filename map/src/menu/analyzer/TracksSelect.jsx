@@ -91,7 +91,7 @@ export default function TrackSelect({ tracksFolders, setTracksFolders }) {
     };
 
     function getDefaultGroup(groups) {
-        const defaultG = groups.find((group) => group.fullName === DEFAULT_GROUP_NAME);
+        const defaultG = groups && groups.find((group) => group.fullName === DEFAULT_GROUP_NAME);
         if (defaultG) {
             return {
                 title: DEFAULT_GROUP_MARKER,
