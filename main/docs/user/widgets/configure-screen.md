@@ -22,9 +22,9 @@ The **Configure screen** menu in OsmAnd allows you to customize the map interfac
 You can:
 
 - Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
-- Add [Quick Actions](../widgets/quick-action.md) and [map buttons](../widgets/map-buttons.md).
+- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
 - Organize widgets in panels (top, bottom, left, right, center).
-- Create multiple **pages** within side panels.
+- Create multiple **pages** within side panels, choose size of widgets.
 - Choose row height and toggle widget icons.
 
 All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
@@ -44,7 +44,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
 
 </TabItem>
 
@@ -223,17 +223,36 @@ Each panel supports different layout behaviors:
 
 ### Rows {#rows}
 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
 ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_ios.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
 
 The **Row mode** feature allows you to add as many rows as needed to the top and bottom panels. You can display multiple widgets per row, enhancing the amount of visible information.
 
 ***How to configure rows:***
 
-- **Add widgets**. Select from the list of *Available widgets*.
-- **Change order.** Tap the *Change order* button to arrange widgets.
-- **Add rows.** Use the *Add row* button to create new rows for widgets.
-- **Move widgets**. Move widgets between rows.
-- **Apply changes.** Tap the *Apply* button to save the configuration.
+- **Add widgets**: Tap the *Plus* button (Android) or *Add widget* (iOS), then select from the list of available widgets.
+- **Reorder widgets**: Tap the *Pencil* button (Android) or *Edit* (iOS) to rearrange the widgets.
+- **Add rows**: Tap the *Add row* button to create new rows for your widgets.
+- **Move widgets**: Drag widgets between different rows.
+- **Access widget settings**: Tap the *"i"* icon (Android) or the *">"* arrow (iOS) to open widget settings.
+- **Save changes**: Tap *Apply* (Android) or *Done* (iOS) to save the layout.
+
 
 #### Widget Types and Restrictions {#widget-types-and-restrictions}
 
@@ -378,7 +397,23 @@ OsmAnd allows you to add multiple instances of the same widget to different pane
 
 *OsmAnd menu → Configure screen → Widgets → Panel*  
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
 ![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_remove_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
 
 You can rearrange or remove widgets from the application screen using the **Edit** mode.  
 
