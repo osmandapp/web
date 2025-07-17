@@ -30,5 +30,45 @@
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
+  },
+  "localeDropdown.label.en": {
+    "message": "English",
+    "description": "Locale dropdown label for English"
+  },
+  "localeDropdown.label.fr": {
+    "message": "Français",
+    "description": "Locale dropdown label for French"
+  },
+  "localeDropdown.label.uk": {
+    "message": "Українська",
+    "description": "Locale dropdown label for Ukrainian"
+  },
+  "localeDropdown.label.de": {
+    "message": "Deutsch",
+    "description": "Locale dropdown label for German"
+  },
+  "localeDropdown.label.it": {
+    "message": "Italiano",
+    "description": "Locale dropdown label for Italian"
+  },
+  "localeDropdown.label.pl": {
+    "message": "Polski",
+    "description": "Locale dropdown label for Polish"
+  },
+  "localeDropdown.label.es": {
+    "message": "Español",
+    "description": "Locale dropdown label for Spanish"
+  },
+  "localeDropdown.label.pt": {
+    "message": "Português",
+    "description": "Locale dropdown label for Portuguese"
+  },
+  "localeDropdown.label.tr": {
+    "message": "Türkçe",
+    "description": "Locale dropdown label for Turkish"
+  },
+  "localeDropdown.label.ar": {
+    "message": "العربية",
+    "description": "Locale dropdown label for Arabic"
   }
 }
