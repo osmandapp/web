@@ -195,5 +195,6 @@
   "weather:map_layers": "Map layers",
   "terrain_color_scheme": "Color scheme",
   "terrain_desc": "Select one of visualization options: Altitude, Hillshade, Slope.",
-  "terrain_visibility": "Visibility"
+  "terrain_visibility": "Visibility",
+  "dev_issues" : "Issues"
 }

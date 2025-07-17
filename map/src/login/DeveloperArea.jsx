@@ -38,6 +38,12 @@ export default function DeveloperArea() {
                 icon={<InfoIcon />}
                 onClick={() => window.open(`${window.location.origin}/admin/info`, '_blank')}
             />
+            <DividerWithMargin margin={'64px'} />
+            <SimpleItemWithRightInfo
+                name={t('web:dev_issues')}
+                icon={<InfoIcon />}
+                onClick={() => window.open(`https://test.osmand.net/admin/issues`, '_blank')}
+            />
             <ThickDivider mt={'0px'} mb={'0px'} />
         </>
     );
