@@ -379,7 +379,7 @@ export default function TrackAnalyzerMenu() {
                             </Tooltip>
                         </Toolbar>
                     </AppBar>
-                    <Box>
+                    <Box sx = {{overflowX: 'hidden', overflowY: 'auto'}}>
                         <TracksSelect tracksFolders={tracksFolders} setTracksFolders={setTracksFolders} />
                         <Grid sx={{ mx: 2, width: '95%' }} container spacing={2}>
                             <Grid item sx={{ flexGrow: 1, mb: 2, ml: -2, mr: -1 }}>
