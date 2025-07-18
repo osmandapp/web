@@ -38,37 +38,84 @@ The Map Portal can be used without registration; however, some features are excl
 
 ## How to Start {#how-to-start}
 
-If you have [OsmAnd Pro](../personal/osmand-cloud.md#login) account or want to create [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) account you need to do next steps:
+To access OsmAnd Web features, you need an account:
 
-- Go to the [*OsmAnd Map Portal*](https://osmand.net/map).
-- Open **Account** menu.
-  - *Log in*. Enter the email you used to create your account. For Pro or Start subscriptions.
-  - *Create account*. For OsmAnd Start.
+- If you already have an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) subscription or want to create a free [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) account, follow these steps:
 
+  1. Go to the [**OsmAnd Map Portal**](https://osmand.net/map).
+  2. Open the **Account** menu.
+     - **Log in**: Enter the email address used for your Pro or Start subscription.
+     - **Create account**: Use this option to register for a free OsmAnd Start account.
 
-## How to Change Language {#how-to-change-language}
+![Web Account](@site/static/img/web/web_account.png)
 
-If you want to change the display languge:
+### How to Change Language {#how-to-change-language}
 
-- The Web version of OsmAnd uses the language from the browser settings.  
-- For Chrome, the priority is `chrome://settings/languages`.  
-- You can change the system (menu) language manually by selecting:  
-    *Menu →* ⚙ *→ Turn off language*.
+To change the display language in OsmAnd Web:
 
+- Go to **Menu → ⚙ Settings → Display language**.
+
+![Web Language](@site/static/img/web/web_language.png)
 
 ## Managing Account {#managing-account}
 
-*General Menu → Account*
+To manage your account, go to:  
+**General Menu → Account**
 
-After registering on the web, users can access their account information, download backups, log out, delete their account, or change their email address.
+After registering on the web, you can:
 
-#### Access Account {#access-account}
+- View account information
+- Download cloud backups
+- Log out of your account
+- Delete your account
+- Change your email address
+- See your payments and purchases
 
-#### Backups {#backups}
+![Web Account](@site/static/img/web/web_account_2.png)
 
-#### Log out and Delete {#log-out-and-delete}
+### My Data {#my-data}
 
-#### Change Email Address {#change-email-address}
+You can download backups that were created and synced from your mobile device via **OsmAnd Cloud**.
+
+- Go to **General Menu → Account → My data (OsmAnd Cloud) → Download all**.
+
+This section displays:
+
+- The number of files stored in your cloud
+- Total storage volume used
+- Available cloud storage space
+
+> 💡 Only backups created on devices where **OsmAnd Cloud** is enabled will appear here.
+
+### Payments and Purchases {#payments-and-purchases}
+
+- Go to **General Menu → Account → Payments and Purchases**.
+
+In this section, you can view all purchases and subscriptions linked to your account.
+
+For more details on using your purchases across different platforms, read about [cross-platform access](../purchases/cross.md).
+
+### Change Email Address {#change-email-address}
+
+To update your email address:
+
+1. Go to **General Menu → Account → Email → ⋮ → Change email**.
+2. Enter your new email address and confirm.
+
+> 🔒 A verification email will be sent to the new address before the change is finalized.
+
+### Log Out and Delete Account {#log-out-and-delete}
+
+To log out of your OsmAnd Web account:
+
+- Open **General Menu → Account**.
+- Click **Log out** button to end your current session.
+
+To permanently delete your account:
+
+- Scroll to the bottom of the **Account** menu.
+- Click **Delete account** button.
+- Confirm the deletion. This action is irreversible.
 
 
 ## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
@@ -82,6 +129,9 @@ The cross-platform capability allows you to use OsmAnd Pro on all platforms *([A
 2. How to create **OsmAnd Start** account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
 3. Register your [Pro or Start account](../troubleshooting/setup.md#cross-platform) on the OsmAnd server inside OsmAnd app.
 4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
+
+
+<!--
 
 - Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).
 
@@ -109,7 +159,7 @@ There is also a button to *logout* of the account.
 ## Cloud data {#cloud-data}
 
 [Tracks and Favorites](web-map.md#tracks).
-<!--
+
 ## Map style {#map-style}
 
 In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
@@ -126,6 +176,6 @@ In this section of the menu, you can change the map style. You can read more abo
 
 
 
-> *Last updated: September 2024*
+> *Last updated: July 2024*
 
 
