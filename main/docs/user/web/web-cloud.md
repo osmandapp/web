@@ -21,19 +21,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 The [OsmAnd Map Portal](https://osmand.net/map) is a browser-based service provided by OsmAnd, allowing users to explore maps, manage their data, plan and create trips, or simply browse the map.
 
-#### Subscription Accesses {#subscription-accesses}
-
-The Map Portal can be used without registration; however, some features are exclusively available for OsmAnd Pro and OsmAnd Start users:
-
-| Features | Versions |
-|--- |--- |
-| [Navigation Route](./planner.md) | Free |
-| [Create track](./planner.md) | Free |
-| [Weather](./web-map.md) | Free |
-| [Favorites](./web-map.md) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [OsmAnd Cloud sync](./web-cloud.md) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [Web Search](./web-search.md)|[Osmand Start](https://osmand.net/blog/start) or <ProFeature/>|
-| [Tracks](./web-map.md) | <ProFeature/> |
 
 
 ## How to Start {#how-to-start}
@@ -48,14 +35,6 @@ To access OsmAnd Web features, you need an account:
      - **Create account**: Use this option to register for a free OsmAnd Start account.
 
 ![Web Account](@site/static/img/web/web_account.png)
-
-### How to Change Language {#how-to-change-language}
-
-To change the display language in OsmAnd Web:
-
-- Go to **Menu → ⚙ Settings → Display language**.
-
-![Web Language](@site/static/img/web/web_language.png)
 
 ## Managing Account {#managing-account}
 
