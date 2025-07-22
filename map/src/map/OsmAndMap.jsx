@@ -56,6 +56,41 @@ function MapClickHandler() {
     return null;
 }
 
+function AttachClickHandlers() {
+    const map = useMap();
+    const { setOpenInfoDrawer } = useContext(AppContext);
+
+    useEffect(() => {
+        const handler = () => {
+            setOpenInfoDrawer(true);
+        };
+
+        map.eachLayer((layer) => {
+            if (layer instanceof L.Marker || layer instanceof L.Polygon) {
+                layer.on('click', handler);
+            }
+        });
+
+        map.on('layeradd', (e) => {
+            const layer = e.layer;
+            if (layer instanceof L.Marker || layer instanceof L.Polygon) {
+                layer.on('click', handler);
+            }
+        });
+
+        return () => {
+            map.eachLayer((layer) => {
+                if (layer instanceof L.Marker || layer instanceof L.Polygon) {
+                    layer.off('click', handler);
+                }
+            });
+            map.off('layeradd');
+        };
+    }, [map, setOpenInfoDrawer]);
+
+    return null;
+}
+
 const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const mapRef = useRef(null);
     const tileLayer = useRef(null);
@@ -192,6 +227,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 {routersReady && <LocalClientTrackLayer />}
                 {routersReady && <RouteLayer geocodingData={geocodingData} region={regionData} />}
                 <MapClickHandler />
+                <AttachClickHandlers />
                 <TrackAnalyzerLayer />
                 <ShareFileLayer />
                 <TravelLayer />
