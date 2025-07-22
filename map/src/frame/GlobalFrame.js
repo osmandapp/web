@@ -47,7 +47,7 @@ const GlobalFrame = () => {
 
     const MAIN_MENU_SIZE = openMainMenu ? `${MAIN_MENU_OPEN_SIZE}px` : `${MAIN_MENU_MIN_SIZE}px`;
     const MENU_INFO_SIZE =
-        menuInfo || ltx.openLoginMenu || ctx.infoBlockWidth === `${MENU_INFO_OPEN_SIZE}px`
+        (menuInfo || ltx.openLoginMenu || ctx.infoBlockWidth === `${MENU_INFO_OPEN_SIZE}px`) && ctx.openInfoDrawer
             ? `${MENU_INFO_OPEN_SIZE}px`
             : `${MENU_INFO_CLOSE_SIZE}px`;
 
