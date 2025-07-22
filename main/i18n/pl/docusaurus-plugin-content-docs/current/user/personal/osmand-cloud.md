@@ -53,7 +53,7 @@ OsmAnd obsługuje **użycie międzyplatformowe** ([Android](../purchases/android
 
 ## Logowanie {#login}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -99,7 +99,7 @@ Jeśli napotkasz problemy podczas rejestracji:
 
 ## OsmAnd Start {#osmand-start}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ Funkcje zawarte w OsmAnd Start:
 
 ### Jak aktywować OsmAnd Start {#how-to-activate-osmand-start}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -165,7 +165,7 @@ Jeśli masz już subskrypcję **OsmAnd Pro** lub **aktywne konto OsmAnd Cloud**,
 
 ## Ostatnia synchronizacja {#last-sync}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ To use this feature:
 
 ## Kosz {#trash}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ Funkcja **Kosz** umożliwia przeglądanie i zarządzanie plikami, które został
 
 ## Ustawienia {#settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -281,7 +281,7 @@ Ta sekcja służy do edycji i zarządzania Twoim OsmAnd Cloud.
 
 ### Wybierz dane do kopii zapasowej {#select-data-to-back-up}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -314,7 +314,7 @@ Wszystkie [mapy](../start-with/download-maps.md) są przechowywane na urządzeni
 
 ### Zarządzaj pamięcią {#manage-storage}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -346,7 +346,7 @@ Ta sekcja zawiera informacje o tym, które z Twoich kont jest połączone z OsmA
 
 ### Opcja usunięcia {#deletion-option}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -382,7 +382,7 @@ Działania, które można wykonać w sekcji **Strefa zagrożenia** w menu Ustawi
 
 ## Lista zmian {#list-of-changes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -409,7 +409,7 @@ W sekcji [Ostatnia synchronizacja](#last-sync) rozwijanego menu dotknij dowolneg
 
 ### Lokalnie i w chmurze {#local-and-cloud}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -438,7 +438,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 ### Konflikty {#conflicts}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

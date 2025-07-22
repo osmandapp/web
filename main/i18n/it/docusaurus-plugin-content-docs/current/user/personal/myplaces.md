@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **I miei luoghi** è l'hub centrale nell'app OsmAnd per la gestione e la personalizzazione di tutti i dati personali. Puoi utilizzare questa sezione per organizzare i [punti preferiti](#favorites) contrassegnati come importanti o visitati frequentemente. La scheda [Percorsi](#tracks) ti consente di visualizzare, importare, registrare e creare file GPX per aiutarti a conservare una cronologia dettagliata dei tuoi percorsi e viaggi. Puoi anche gestire le tue [modifiche OpenStreetMap](#openstreetmap-edits), rendendo facile contribuire ai miglioramenti e agli aggiornamenti delle mappe. Il plugin e i widget [Note audio/video](#audiovideo-notes) consentono agli utenti Android di creare e salvare note multimediali relative a posizioni specifiche, aggiungendo contesto ai loro viaggi.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu"/> → I miei luoghi*
 
 ## Preferiti {#favorites}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ I **Preferiti** ti consentono di aggiungere ai segnalibri posizioni importanti o
 
 2. ***Menu a tre puntini*** (*Android*) e ***tocco lungo*** (*iOS*). Utilizza il menu *a tre puntini* accanto a ciascuna cartella o *tocca a lungo* la cartella per gestire i gruppi di preferiti:
 
-    <Tabs groupId="operating-systems" queryString="operating-systems">
+    <Tabs groupId="operating-systems" queryString="current-os">
 
     <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ Per istruzioni più dettagliate, consulta l'articolo [Preferiti](../personal/fav
 
 ## Percorsi {#tracks}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Per una guida completa, consulta l'articolo [Gestisci percorsi](../personal/trac
 
 ## Modifiche OpenStreetMap {#openstreetmap-edits}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

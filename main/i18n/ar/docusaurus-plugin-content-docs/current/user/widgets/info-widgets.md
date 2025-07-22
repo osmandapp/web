@@ -38,7 +38,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - لمزيد من التفاصيل، قم بزيارة [الخرائط والموارد](../personal/maps-resources.md#downloads).
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -69,7 +69,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 &nbsp;<ProFeature/> للحصول على إمكانية استخدام ودجة *الارتفاع: مركز الخريطة*، اشترك في OsmAnd Pro لـ [أندرويد](../purchases/android.md#pro-features) أو [iOS](../purchases/ios.md#pro-features).
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -128,7 +128,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## متوسط السرعة {#average-speed}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -170,7 +170,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 بعد إعادة التعيين، يتم إعادة حساب متوسط السرعة من بيانات GPS الجديدة. هذه الميزة مفيدة لمراقبة السرعة في الوقت الفعلي، مثل تتبع السرعة في المناطق التي تحتوي على **كاميرات مراقبة متوسط السرعة**.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -196,7 +196,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نسبة الانزلاق {#glide-ratio}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -291,7 +291,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## ودجة الإحداثيات {#coordinates-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -342,7 +342,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## موقع الشمس {#sun-position}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -378,7 +378,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يمكنك قراءة وصف أكثر تفصيلاً هنا: **[مسطرة نصف القطر والمسطرة](../widgets/radius-ruler)**.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -413,7 +413,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## عداد السرعة {#speedometer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -459,7 +459,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يمكنك قراءة وصف أكثر تفصيلاً هنا: **[مكون <Translate android="true" ids="record_plugin_name"/> الإضافي](../plugins/trip-recording.md)**.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -491,7 +491,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 لإضافة ودجات أجهزة الاستشعار الخارجية إلى شاشة الخريطة، قم بتمكين مكون OsmAnd [أجهزة الاستشعار الخارجية الإضافي](../plugins/external-sensors.md).
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -561,7 +561,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 لإضافة ودجات الطقس إلى شاشة الخريطة، قم بتمكين مكون OsmAnd [الطقس الإضافي](../plugins/weather.md).
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -689,7 +689,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 #### إطارات عرض الخريطة في الثانية {#map-rendering-fps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -717,7 +717,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 #### ودجات الكاميرا {#camera-widgets}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

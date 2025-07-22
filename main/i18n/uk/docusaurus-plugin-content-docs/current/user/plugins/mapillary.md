@@ -31,7 +31,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Шар карти {#map-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -57,7 +57,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### Увімкнути шар {#enable-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### Фільтрування даних {#data-filtering}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -113,7 +113,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Контекстне меню карти {#map-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -134,7 +134,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Додати фотографії {#add-photos}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Віджет Mapillary {#mapillary-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

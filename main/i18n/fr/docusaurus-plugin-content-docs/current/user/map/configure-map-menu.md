@@ -17,7 +17,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Le menu **Configurer la carte** est un élément important du *Menu principal* d'OsmAnd, où vous pouvez personnaliser l'affichage de la carte en fonction de vos besoins. Vous pouvez mettre en évidence les points favoris, les marqueurs de navigation ou les points d'intérêt spéciaux sur la carte, afficher des itinéraires spécifiques ou des fichiers GPX tiers, superposer des informations sur le terrain, des images satellite ou toute autre image raster disponible, afficher des informations sur les transports publics et modifier le style de la carte.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

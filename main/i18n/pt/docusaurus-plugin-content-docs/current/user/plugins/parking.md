@@ -26,7 +26,7 @@ Este plugin é gratuito e funciona offline com mapas OsmAnd baixados. Você pode
 
 O marcador é temporário e fácil de remover quando não for mais necessário.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ Quando você marca um local de estacionamento, o OsmAnd salva suas coordenadas g
 
 Para definir um local de estacionamento no mapa, amplie para o nível desejado, toque e segure o local no mapa e, no [Menu de Contexto](../map/map-context-menu.md) que se abre, faça as configurações.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ A hora de início é sempre definida automaticamente. Se você precisar alterar 
 
 ### Mantenha-se Informado {#stay-informed}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -127,7 +127,7 @@ Detalhes adicionais são mostrados ao tocar no marcador de estacionamento:
 
 ### Navegando para um Ponto de Referência {#navigating-to-a-waypoint}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ Você pode usar o local de estacionamento como um destino de navegação para re
 
 ### Remover um Local {#remove-a-spot}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Se um lembrete de calendário foi definido, ele também será removido automatic
 
 ## Widget de Estacionamento {#parking-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

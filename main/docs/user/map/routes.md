@@ -158,7 +158,7 @@ You can customize the display of certain ***Travelbooks*** and types of ***track
 
 ## Display Routes on the Map {#display-routes-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -188,7 +188,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 ## Actions with Routes {#actions-with-routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -220,7 +220,7 @@ In the **context menu**, you can:
 
 ### Route Info and Elevation {#route-info-and-elevation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -247,7 +247,7 @@ The following information will be visible in the context menu:
 
 To view graph of the elevation, slope, or altitude details for a selected route, simply tap on any of the following values in the context menu: **Distance**, **Uphill**, **Downhill**, or **Altitude**.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -265,7 +265,7 @@ To view graph of the elevation, slope, or altitude details for a selected route,
 
 ### Save as a Track {#save-as-a-track}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -287,7 +287,7 @@ To save the route as a *GPX file*, tap the **Save (Download)** button under [Inf
 
 ### Start Navigation {#start-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -320,7 +320,7 @@ Find routes using the [Search function](../search/index.md) by name or by select
 
 To search, go to the *<Translate android="true" ids="search_button"/>* menu or *<Translate android="true" ids="search_button,search_categories"/>* and enter your activity.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -338,7 +338,7 @@ To search, go to the *<Translate android="true" ids="search_button"/>* menu or *
 
 Navigate to *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* to find desired routes. Routes include name, activity type, length, location, and distance to the nearest point.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -356,7 +356,7 @@ Navigate to *<Translate android="true" ids="search_button,search_categories,poi_
 
 Use filters button (top right corner) to display only the desired routes.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

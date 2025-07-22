@@ -120,7 +120,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ![Trip recording widget](@site/static/img/widgets/bearing.png)
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ### الوقت إلى نقطة وسيطة {#time-to-intermediate}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -257,7 +257,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ### الوقت إلى الوجهة {#time-to-destination}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -447,7 +447,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ## الاقتراب من نقاط الاهتمام / المفضلة {#approach-pois--favorites}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

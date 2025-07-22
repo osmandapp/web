@@ -53,7 +53,7 @@ O OsmAnd suporta **uso multiplataforma** entre *([Android](../purchases/android.
 
 ## Iniciar sessão {#login}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -99,7 +99,7 @@ Se tiver problemas durante o registo:
 
 ## OsmAnd Start {#osmand-start}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ Funcionalidades incluídas no OsmAnd Start:
 
 ### Como Ativar o OsmAnd Start {#how-to-activate-osmand-start}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -165,7 +165,7 @@ Se já tiver uma subscrição **OsmAnd Pro** ou uma **conta OsmAnd Cloud ativa**
 
 ## Última Sincronização {#last-sync}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ To use this feature:
 
 ## Lixo {#trash}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ A funcionalidade **Lixo** permite-lhe visualizar e gerir ficheiros que foram eli
 
 ## Definições {#settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -281,7 +281,7 @@ Esta secção é para editar e gerir o seu OsmAnd Cloud.
 
 ### Selecionar Dados para Cópia de Segurança {#select-data-to-back-up}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -314,7 +314,7 @@ Todos os [mapas](../start-with/download-maps.md) são armazenados no dispositivo
 
 ### Gerir Armazenamento {#manage-storage}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -346,7 +346,7 @@ Esta secção contém informações sobre qual das suas contas está ligada ao O
 
 ### Opção de Eliminação {#deletion-option}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -382,7 +382,7 @@ As ações que pode fazer na secção **Zona de perigo** do menu Definições s�
 
 ## Lista de Alterações {#list-of-changes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -409,7 +409,7 @@ Na secção [Última Sincronização](#last-sync) do menu suspenso, toque em qua
 
 ### Local e Nuvem {#local-and-cloud}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -438,7 +438,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 ### Conflitos {#conflicts}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

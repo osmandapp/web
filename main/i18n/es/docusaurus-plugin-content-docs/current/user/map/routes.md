@@ -159,7 +159,7 @@ Puedes personalizar la visualización de ciertas ***Guías de viaje*** y tipos d
 
 ## Mostrar rutas en el mapa {#display-routes-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Ve a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_cat
 
 ## Acciones con rutas {#actions-with-routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ En el **menú contextual**, puedes:
 
 ### Información de ruta y elevación {#route-info-and-elevation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -248,7 +248,7 @@ La siguiente información será visible en el menú contextual:
 
 Para ver el gráfico de elevación, pendiente o detalles de altitud de una ruta seleccionada, simplemente toca cualquiera de los siguientes valores en el menú contextual: **Distancia**, **Ascenso**, **Descenso** o **Altitud**.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Para ver el gráfico de elevación, pendiente o detalles de altitud de una ruta 
 
 ### Guardar como trazado {#save-as-a-track}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -287,7 +287,7 @@ Para guardar la ruta como un *archivo GPX*, toca el botón **Guardar (Descargar)
 
 ### Iniciar navegación {#start-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -320,7 +320,7 @@ Encuentra rutas usando la [función de búsqueda](../search/index.md) por nombre
 
 Para buscar, ve al menú *<Translate android="true" ids="search_button"/>* o *<Translate android="true" ids="search_button,search_categories"/>* e introduce tu actividad.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -338,7 +338,7 @@ Para buscar, ve al menú *<Translate android="true" ids="search_button"/>* o *<T
 
 Navega a *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* para encontrar las rutas deseadas. Las rutas incluyen nombre, tipo de actividad, longitud, ubicación y distancia al punto más cercano.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -356,7 +356,7 @@ Navega a *<Translate android="true" ids="search_button,search_categories,poi_rou
 
 Usa el botón de filtros (esquina superior derecha) para mostrar solo las rutas deseadas.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

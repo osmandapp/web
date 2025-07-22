@@ -36,7 +36,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 يمكن تكوين التوجيه *في خط مستقيم* وفقًا لاحتياجاتك في [قسم معلمات المسار](../guidance/navigation-settings.md#route-parameters) في إعدادات الملاحة.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

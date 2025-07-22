@@ -31,7 +31,7 @@ Il menu **Configura schermata** in OsmAnd consente di personalizzare l'interfacc
 Tutti i widget dipendono dal [profilo](../personal/profiles.md): ogni profilo ha il proprio layout, ordine, visibilità e impostazioni.
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -54,7 +54,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 ## Pannelli Widget {#widget-panels}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -90,7 +90,7 @@ Ogni pannello supporta diversi comportamenti di layout:
 
 ### Catalogo Widget {#widgets-catalog}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -253,7 +253,7 @@ La modalità consente di aggiungere **più di un widget in una singola riga** su
 
 ### Pagine {#pages}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -315,7 +315,7 @@ I widget nei pannelli destro e sinistro possono essere raggruppati in **Pagine**
 
 ### Menu contestuale del widget {#widget-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -400,7 +400,7 @@ OsmAnd consente di aggiungere più istanze dello stesso widget a pannelli o pagi
 
 ### Pulsanti personalizzati {#custom-buttons}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -424,7 +424,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 ### Pulsanti predefiniti {#default-buttons}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -489,7 +489,7 @@ La funzione *Aspetto del pulsante* consente di personalizzare completamente l'as
 
 ## Altro {#other}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -516,7 +516,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *
 
 ### Posizione visualizzazione (Posizione della posizione sullo schermo) {#display-position-location-position-on-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -543,7 +543,7 @@ Consente di impostare il posizionamento del cursore su *[La mia posizione](../ma
 
 ## Azioni {#actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -576,7 +576,7 @@ Azioni disponibili:
 
 ## Cambia profilo {#switch-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

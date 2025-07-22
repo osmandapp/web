@@ -27,7 +27,7 @@ Puedes configurar el *enrutamiento de bicicletas* en la sección [Parámetros de
 
 Las características de enrutamiento de bicicletas de OsmAnd permiten a los ciclistas introducir un punto de inicio y un punto final, y luego generar una ruta que tenga en cuenta sus preferencias y la geografía local.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -130,7 +130,7 @@ Bazı ilgili yazı tipi sorunları GitHub'da belgelenmiştir: [3911](https://git
 
 ## * Kontur Çizgileri {#-contour-lines}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Kontur çizgileri tüm harita stilleriyle uyumludur ve [Kontur çizgileri menüs
 
 ## * Deniz Derinliği {#-nautical-depth}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Deniz haritası görünümü hakkında daha fazla ayrıntı için [Deniz Haritas
 
 ## Sınırları Göster {#show-borders}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -219,7 +219,7 @@ Android'de, arşivlenmiş haritalar **Turuncu** renkte gösterilir. iOS'ta, gün
 Şuraya gidin: *Menü → Haritayı Yapılandır → Göster → Koordinat Izgarası*
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ OsmAnd, coğrafi ızgara çizgilerini görüntülemek için birden fazla **temel
 
 ### Harita Modu {#map-mode}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -323,7 +323,7 @@ Harita, seçenekler listesinden seçilen moda göre açık veya koyu bir temada 
 
 ### Detaylar {#details}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ Harita, seçenekler listesinden seçilen moda göre açık veya koyu bir temada 
 
 ### Rotalar {#routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -413,7 +413,7 @@ Rota, belirli bir hedefe ulaşmak için önceden belirlenmiş ve takip edilmesi 
 
 ### Ulaşım {#transport}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -445,7 +445,7 @@ Rota, belirli bir hedefe ulaşmak için önceden belirlenmiş ve takip edilmesi 
 
 ### Gizle {#hide}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -476,7 +476,7 @@ Harita görünürlüğünü artırmak için belirli nesneleri gizlemeniz gerekeb
 
 ### Yol Stili {#road-style}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -514,7 +514,7 @@ Yollar için özel ayarlar, yol atlasına uyacak şekilde renkleri değiştirebi
 
 ### Metin Boyutu {#text-size}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -539,7 +539,7 @@ Yollar için özel ayarlar, yol atlasına uyacak şekilde renkleri değiştirebi
 
 ### Harita Büyüteci {#map-magnifier}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -572,7 +572,7 @@ Bu ayar, haritanın büyütmesini değiştirmeye yardımcı olur. Raster ve vekt
 
 Haritadaki adlar OSM topluluğu tarafından gerekli dile çevrilmemişse, [transliterasyonlu adları](https://en.wikipedia.org/wiki/Transliteration) kullanabilirsiniz: *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) veya *<Translate ios="true" ids="translit_names"/>* (iOS) anahtarı.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

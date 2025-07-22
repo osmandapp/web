@@ -30,7 +30,7 @@ Aby uzyskać dostęp do funkcji wtyczki, należy ją najpierw [włączyć](#enab
 
 ### Włącz / Wyłącz {#enable--disable}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -100,7 +100,7 @@ Większość wtyczek zapewnia specyficzne ustawienia profilu lub globalne, do kt
 - *Menu główne → Wtyczki → Nazwa wtyczki → Ustawienia (&#x2699 dla iOS)* lub
 - *Menu główne → Ustawienia → Profil → [Ustawienia wtyczki](../personal/profiles.md#plugin-settings)*.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

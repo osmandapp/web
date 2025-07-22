@@ -26,7 +26,7 @@ A nautical map is a highly detailed topographical map to help skippers navigate 
 
 Nautical maps are important for professional sailors and amateurs who rent a boat to cruise the city's canals. The maps provide them with various information such as sailing routes, navigation lights, danger zones, zones where it is allowed or prohibited to sail or dock, etc.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ The following setup makes the Nautical map show up on the screen:
 
 ### Set Nautical Map Style {#set-nautical-map-style}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -92,7 +92,7 @@ To change the current map style to Nautical, you need to make the following sett
 
 ### Download Nautical Maps {#download-nautical-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -144,7 +144,7 @@ Disabling the Nautical plugin does not remove loaded nautical data, so even if y
 
 ## Nautical Profile {#nautical-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -174,7 +174,7 @@ The Nautical plugin in OsmAnd extends the vector layer map styles with the Nauti
 
 ### Depth Points {#depth-points}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -195,7 +195,7 @@ Depth point [packages](../start-with/download-maps.md#type-of-maps) are availabl
 
 ### Depth Contours {#depth-contours}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -227,7 +227,7 @@ You can help the OsmAnd app increase the Depth contours database by adding your 
 
 ### Seabed Details {#seabed-details}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

@@ -75,7 +75,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Вибрати растрові карти {#select-raster-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -100,7 +100,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Основна {#main}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -125,7 +125,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Шар накладання {#overlay-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -156,7 +156,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Шар підкладки {#underlay-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -215,7 +215,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Налаштувати параметри відображення {#configure-display-options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -271,7 +271,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Додати нове джерело онлайн-растрових карт {#add-new-online-raster-map-source}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -354,7 +354,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Щоб карти автоматично оновлювали плитки через деякий час, ви можете встановити [Час закінчення терміну дії](#add-new-online-raster-map-source), тоді OsmAnd перезавантажить плитки, як тільки вони будуть відображені.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -393,7 +393,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Змінити параметри растрових карт {#change-raster-map-parameters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

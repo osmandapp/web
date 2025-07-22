@@ -31,7 +31,7 @@ OsmAnd ve OSM düzenleme eklentisi ile OpenStreetMap.org'a kendi bilgilerinizi k
 
 ## Ayarlar {#settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -70,7 +70,7 @@ Eklenti ayarları geneldir ve tüm profiller için geçerlidir.
 
 ### Yetkilendirme {#authorization}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ Değişiklikleri ve GPX dosyalarını katkıda bulunmak için giriş yapın.
 
 ### Haritacılar için ücretsiz harita güncellemeleri {#free-map-updates-for-mappers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Değişiklikleri ve GPX dosyalarını katkıda bulunmak için giriş yapın.
 
 ### OSM Düzenleme Katmanı {#osm-editing-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ OpenStreetMap düzenleme eklentisi, haritada [ilgi noktaları veya POI](../map/p
 
 ### Etiket Ekle {#add-tags}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -190,7 +190,7 @@ Desteklenmeyen POI türlerini eklerken, uygulamanın doğru çalışmasını ve 
 
 ## OSM Notu Oluştur / Değiştir {#create--modify-osm-note}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -243,7 +243,7 @@ Kaydettiğiniz GPS izleri şunlar için yararlıdır:
 ### GPS izini yükle {#upload-gps-track}
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

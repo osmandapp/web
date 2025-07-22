@@ -31,7 +31,7 @@ Możesz:
 Wszystkie widżety są [zależne od profilu](../personal/profiles.md) — każdy profil ma swój własny układ, kolejność, widoczność i ustawienia.
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -54,7 +54,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 ## Panele widżetów {#widget-panels}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -90,7 +90,7 @@ Każdy panel obsługuje różne zachowania układu:
 
 ### Katalog widżetów {#widgets-catalog}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -253,7 +253,7 @@ Tryb pozwala dodać **więcej niż jeden widżet w jednym wierszu** na panelach 
 
 ### Strony {#pages}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -315,7 +315,7 @@ Widżety w panelach prawym i lewym mogą być grupowane w **Strony**. Funkcja **
 
 ### Menu kontekstowe widżetu {#widget-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -400,7 +400,7 @@ Możesz zmieniać kolejność lub usuwać widżety z ekranu aplikacji za pomocą
 
 ### Przyciski niestandardowe {#custom-buttons}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -424,7 +424,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 ### Przyciski domyślne {#default-buttons}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -489,7 +489,7 @@ Funkcja *Wygląd przycisku* umożliwia pełne dostosowanie wyglądu przycisków 
 
 ## Inne {#other}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -516,7 +516,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 ### Wyświetl pozycję (Pozycja lokalizacji na ekranie) {#display-position-location-position-on-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -543,7 +543,7 @@ Pozwala ustawić położenie kursora na *[Moja lokalizacja](../map/interact-with
 
 ## Akcje {#actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -576,7 +576,7 @@ Dostępne akcje:
 
 ## Zmień profil {#switch-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

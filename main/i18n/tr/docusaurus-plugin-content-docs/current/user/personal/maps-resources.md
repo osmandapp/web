@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd iki tür harita ile çalışır: [Vektör haritalar](../map/vector-maps.md) ve [Raster haritalar](../map/raster-maps.md). [Yerel](#local) sekmesi tüm haritaları ve kaynakları depolar. Mevcut harita türleri [İndirilenler](#downloads) sekmesinden indirilebilir. [Güncellemeler](#updates) sekmesinde, güncellemeler için mevcut olan haritaları indirebilir ve [Canlı güncellemeleri](#osmand-live) kullanabilirsiniz. Ayrıca kendi harita türlerinizi oluşturmak için [Ek harita](#extra-maps) özelliğine de erişebilirsiniz.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -45,7 +45,7 @@ OsmAnd iki tür harita ile çalışır: [Vektör haritalar](../map/vector-maps.m
 
 ## Harita Türleri {#map-types}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -104,7 +104,7 @@ Aylık harita güncellemeleri başka bir harita indirme olarak kabul edilir ve m
 
 ### İndirilenler {#downloads}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -166,7 +166,7 @@ Haritaları İndir menüsünde, uygulamanın işlevselliğini tamamlayan çeşit
 
 #### Çoklu Harita Yükleme {#multiple-map-loading}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -187,7 +187,7 @@ Haritaları İndir menüsünde, uygulamanın işlevselliğini tamamlayan çeşit
 
 ### Yerel {#local}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -291,7 +291,7 @@ Harita verilerini düzenlemek için sıralama seçeneklerini kullanın:
 
 ### Güncellemeler {#updates}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ Daha fazlasını [**Özel paket**](../plugins/custom) makalesinde okuyun.
 :::tip Satın Alma
 OsmAnd Live ücretli bir özelliktir.  
 :::
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ Silinen veya değiştirilen rota referansları hala yanlış görünebilir.
 
 ### OSM Haritacıları için Ücretsiz {#free-for-osm-mappers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

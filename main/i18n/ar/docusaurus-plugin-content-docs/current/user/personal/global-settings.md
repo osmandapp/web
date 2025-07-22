@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **الإعدادات العامة** هي [إعدادات](../personal/profiles.md) عامة لجميع الملفات الشخصية في تطبيق OsmAnd. هذه هي الإعدادات الأساسية لنظام OsmAnd، وأي تغييرات يتم إجراؤها ستؤثر على التطبيق بأكمله.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -49,7 +49,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الملف الشخصي الافتراضي {#default-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -86,7 +86,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### مجلد تخزين البيانات {#data-storage-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -173,7 +173,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### التحليلات {#analytics}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -217,7 +217,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### السجل {#history}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -246,7 +246,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **مشاركة وحذف السجل.**
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -283,7 +283,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الحوارات والإشعارات {#dialogs-and-notifications}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -351,7 +351,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إلغاء تثبيت كاميرات السرعة {#uninstall-speed-cameras}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

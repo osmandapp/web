@@ -32,7 +32,7 @@ Estas herramientas son útiles para planificar rutas, estimar la proximidad a pu
 
 ## Regla {#ruler}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Esta herramienta es útil cuando necesitas una comprensión rápida de los tama�
 
 ## Widget de regla de radio {#radius-ruler-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ El [Widget de regla de radio](../widgets/info-widgets.md#radius-ruler) muestra l
 
 Usa este widget para estimar la proximidad a puntos de interés o planificar alrededor de un área definida.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Usa este widget para estimar la proximidad a puntos de interés o planificar alr
 
 ## Brújula para regla de radio {#compass-for-radius-ruler}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Esta superposición es útil para la navegación al aire libre, permitiéndote h
 
 ## Posición central / inferior {#center--bottom-position}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -177,7 +177,7 @@ Para obtener más información sobre *la posición en la pantalla*, consulta el 
 
 ## Vista 3D {#3d-view}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -227,7 +227,7 @@ Hay dos casos de uso:
 
 Mira estos breves tutoriales para aprender a usar la Regla de radio y las herramientas relacionadas en OsmAnd:
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

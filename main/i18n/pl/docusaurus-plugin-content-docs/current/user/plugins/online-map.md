@@ -45,7 +45,7 @@ Szczegółowe informacje na temat wizualizacji i dostosowywania map rastrowych m
     - [Zmień](../map/raster-maps.md#change-raster-map-parameters) parametry mapy rastrowej.
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

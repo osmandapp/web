@@ -28,7 +28,7 @@ Schematy kolorów są używane w [koloryzacji tras](#routes), [terenie mapy](#te
 
 Dane palety kolorów są dostępne w menu [*Mapy i zasoby*](../personal/maps-resources.md#local).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -51,7 +51,7 @@ Przejdź do: *Menu → Mapy i zasoby → Lokalnie → Kolory*
 
 ## Typy schematów {#scheme-types}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Po przeniesieniu tego pliku TXT do *..Android/data/net.osmand/files/color-palete
 
 ### Szybkie akcje {#quick-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -157,7 +157,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 ### Import/Eksport kolorów {#import--export-colors}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -32,7 +32,7 @@ Sie können auch auswählen, ob ein oder zwei Marker angezeigt werden sollen. Me
 *Die Entfernung zum Marker* ist die Länge der geraden Linie zwischen Ihrer Position (oder dem Mittelpunkt der Karte / dem anfänglichen Berührungspunkt der Karte, wenn der Standort ausgeschaltet ist) und dem Marker.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ Sie können auch auswählen, ob ein oder zwei Marker angezeigt werden sollen. Me
 :::
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -140,7 +140,7 @@ Das Widget zeigt die Entfernung oder die geschätzte Ankunftszeit (ETA) für den
 
 Die Konfiguration der Darstellung von Kartenmarkern ist sowohl in der Android- als auch in der iOS-Version von OsmAnd verfügbar. Das Menü "Darstellung auf der Karte" ist eine allgemeine Einstellung für Kartenmarker und gilt unabhängig davon, ob die Widgets aktiviert sind oder nicht. Detaillierte Informationen finden Sie auf dieser [Seite](../personal/markers.md#appearance-on-the-map).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

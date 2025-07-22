@@ -30,7 +30,7 @@ O *roteamento de ciclomotores* pode ser configurado de acordo com suas necessida
 
 As configurações de roteamento do ciclomotor são muito simples e consistem em apenas algumas opções.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

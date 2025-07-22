@@ -21,7 +21,7 @@ A opção *Navegação por trajeto* (GPX) permite que você siga uma rota ou tra
 
 A opção *Navegação por trajeto* também pode ser usada no dia a dia. Você pode usar um [trajeto gravado](../../plugins/trip-recording.md) anteriormente ou [criar um trajeto](../../personal/tracks/manage-tracks.md#create-a-track) e compartilhá-lo com sua família ou amigos em vez de explicar a rota para eles. Você também pode usar as [rotas no mapa do OsmAnd](../../../../blog/routes/) para navegação. Como destacá-las no mapa e o que suas cores significam é descrito na [seção Rotas](../../map/vector-maps.md#routes) do artigo *Mapas vetoriais*.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ Antes de usar a opção *Navegação por trajeto*, você precisa [exibir o traje
 
 ### Iniciar Navegação GPX {#start-gpx-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ A navegação em um trajeto pode ser iniciada usando o botão de ação rápida 
 
 ### Escolher Segmentos {#choose-segments}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -97,7 +97,7 @@ Para navegação, se o trajeto selecionado consistir em múltiplos segmentos ou 
 
 ### Opções de Seguir Trajeto {#follow-track-options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ para o *<Translate android="true" ids="start_of_the_track"/>* ou para o *<Transl
 
 ### Anexar às Estradas {#attach-to-the-roads}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

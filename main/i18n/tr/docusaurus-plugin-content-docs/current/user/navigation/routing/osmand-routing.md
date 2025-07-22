@@ -85,7 +85,7 @@ Rota hesaplarken hangi yollardan kaçınılacağını seçmenin iki olası yolu 
 
 ### Yollardan Kaçınma Menüsü {#avoid-roads-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Bu menüde, kaçınılması gereken yolun önceki seçimini iptal edebilirsiniz.
 
 *Harita bağlam menüsü* veya *Yollardan kaçınma menüsü* kullanarak kaçınılacak bir yol seçtiğinizde, yolların listesi harita ekranının üstünde gösterilecektir.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ Bu menüde, kaçınılması gereken yolun önceki seçimini iptal edebilirsiniz.
 
 ## Dışa Aktar / İçe Aktar {#export--import}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -154,7 +154,7 @@ Cihaz ayarlarınıza ve mevcut uygulamalarınıza bağlı olarak, kaçınılacak
 
 Rota hesaplaması sırasında kaçınılacak yolları diğer kaynaklardan `.osf` dosya biçiminde [içe aktarabilirsiniz](../../personal/import-export.md#import). Ayrıca, *İçe aktarma seçeneği* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*) kullanılarak da yapılabilir. Tüm verileri veya yalnızca birkaç kaçınılacak yolu (listede bir yolu işaretleyerek) içe aktarmayı seçebilirsiniz.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

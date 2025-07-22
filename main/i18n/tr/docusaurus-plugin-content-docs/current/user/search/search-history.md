@@ -28,7 +28,7 @@ OsmAnd, arama geçmişinizi görüntülemek için çeşitli yollar sunar.
 
 ## Nasıl Kullanılır {#how-to-use}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -59,7 +59,7 @@ Arama geçmişi, önceki eylemleriniz hakkında ilgili bilgileri sağlamaya hizm
 
 ## Geçmiş Öğeleri {#history-items}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -105,7 +105,7 @@ Tüm arama geçmişinin görüntülenmesini **devre dışı bırakabilir veya et
 
 ### Sil {#delete}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Silme ekranını açmak için **listedeki herhangi bir sorgu öğesine uzun doku
 
 ### Dışa Aktar ve Paylaş {#export-and-share}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

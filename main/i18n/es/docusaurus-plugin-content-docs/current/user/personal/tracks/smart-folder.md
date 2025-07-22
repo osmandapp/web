@@ -25,7 +25,7 @@ Esta función te permite encontrar rápidamente rutas específicas que coincidan
 
 ## Filtro de búsqueda {#search-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -60,7 +60,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sha
 
 ### Filtros disponibles {#available-filters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sha
 
 ## Carpeta inteligente {#smart-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ La **Carpeta inteligente** recién creada actualizará automáticamente su conte
 
 ### Gestión de carpetas inteligentes {#managing-smart-folders}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

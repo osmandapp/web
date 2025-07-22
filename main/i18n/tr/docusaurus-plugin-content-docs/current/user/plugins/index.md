@@ -30,7 +30,7 @@ Bir eklentinin işlevselliğine erişmek için öncelikle [etkinleştirilmesi](#
 
 ### Etkinleştir / Devre Dışı Bırak {#enable--disable}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -100,7 +100,7 @@ Sadece OsmAnd geliştirme eklentisi ve OSM düzenleme eklentisi tüm profillerin
 - *Ana Menü → Eklentiler → Eklenti adı → Ayarlar (iOS için &#x2699)* veya  
 - *Ana Menü → Ayarlar → Profil → [Eklenti ayarları](../personal/profiles.md#plugin-settings)*.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

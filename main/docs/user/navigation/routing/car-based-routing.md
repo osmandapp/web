@@ -28,7 +28,7 @@ Routing can be configured according to your needs in the [Route parameters secti
 
 Car routing is designed to help drivers find the most efficient and direct routes to their destinations. It takes into account common driving restrictions, such as one-way streets, ban on turns, pedestrian zones, and also helps avoid roads that are not suitable for cars, such as narrow roads or roads with weight limitations.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -65,7 +65,7 @@ By default, *Tuck profile* is deactivated. To use this profile for routing, you 
 
 Truck routing is similar to car routing, but is designed specifically for drivers of large commercial vehicles. It considers additional factors such as vehicle [height, weight, and width restrictions](../guidance/navigation-settings.md#size-parameters) and the possibility to transport hazardous materials (check table below). All other routing settings are identical to [car routing](#route-parameters---car).  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

@@ -31,7 +31,7 @@ OsmAnd'daki **Ekranı Yapılandır** menüsü, birden fazla panelde widget'ları
 Tüm widget'lar [profile bağlıdır](../personal/profiles.md) — her profilin kendi düzeni, sırası, görünürlüğü ve ayarları vardır.
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -54,7 +54,7 @@ Tüm widget'lar [profile bağlıdır](../personal/profiles.md) — her profilin 
 
 ## Widget Panelleri {#widget-panels}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -90,7 +90,7 @@ Her panel farklı düzen davranışlarını destekler:
 
 ### Widget Kataloğu {#widgets-catalog}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -253,7 +253,7 @@ Bu mod, üst ve alt panellerde **tek bir satıra birden fazla widget** eklemeniz
 
 ### Sayfalar {#pages}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -315,7 +315,7 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
 
 ### Widget Bağlam Menüsü {#widget-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -400,7 +400,7 @@ OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalar
 
 ### Özel Düğmeler {#custom-buttons}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -424,7 +424,7 @@ OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalar
 
 ### Varsayılan Düğmeler {#default-buttons}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -489,7 +489,7 @@ OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalar
 
 ## Diğer {#other}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -516,7 +516,7 @@ OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalar
 
 ### Ekran Konumu (Ekrandaki konum) {#display-position-location-position-on-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -543,7 +543,7 @@ OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalar
 
 ## Eylemler {#actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -576,7 +576,7 @@ Mevcut eylemler:
 
 ## Profili Değiştir {#switch-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

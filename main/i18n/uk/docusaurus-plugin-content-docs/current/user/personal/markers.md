@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Маркери — це спеціальні точки, позначені на карті як прапорці, які можна швидко створити одним дотиком, не вказуючи назву та іншу інформацію, на відміну від [Обраних точок](./favorites.md). Також маркери надають додаткові функції за допомогою [віджетів](../widgets/markers.md), **стрілок** (<Translate android="true" ids="show_arrows_on_the_map"/>) та **індикації відстані** (<Translate android="true" ids="show_direction"/>).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Додати / Редагувати маркери {#add--edit-markers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### Історія {#history}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -124,7 +124,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ## Вигляд на карті {#appearance-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

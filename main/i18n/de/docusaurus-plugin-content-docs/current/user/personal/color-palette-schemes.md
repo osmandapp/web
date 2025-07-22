@@ -28,7 +28,7 @@ Farbschemata werden bei der [Routenfärbung](#routes), beim [Kartenterrain](#ter
 
 Die Daten der Farbpalette sind im Menü [*Karten & Ressourcen*](../personal/maps-resources.md#local) verfügbar.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -51,7 +51,7 @@ Gehe zu: *Menü → Karten & Ressourcen → Lokal → Farben*
 
 ## Schema-Typen {#scheme-types}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Nachdem diese TXT-Datei nach *..Android/data/net.osmand/files/color-palete/heigh
 
 ### Schnelle Aktionen {#quick-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -158,7 +158,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
 ### Farben importieren / exportieren {#import--export-colors}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

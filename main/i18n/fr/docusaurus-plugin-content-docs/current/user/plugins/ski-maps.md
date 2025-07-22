@@ -22,7 +22,7 @@ La carte de ski OsmAnd fait partie des cartes vectorielles et ne nécessite pas 
 
 Deux profils sont présentés ci-dessous : celui de gauche est pour le ski et celui de droite est pour la conduite. Le profil Ski met en évidence les pistes, les voies aériennes, les couleurs d'hiver et tous les objets cartographiques utiles pour naviguer dans le domaine skiable.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -50,7 +50,7 @@ Le paramètre suivant permet d'afficher la carte de ski OsmAnd à l'écran :
 
 ### Définir le style de carte Hiver et ski {#set-winter-and-ski-map-style}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -83,7 +83,7 @@ Le profil Ski est conçu pour être utilisé en combinaison avec les styles Hive
 
 ### Combiner les cartes {#combine-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Le plugin Vue Carte de ski est une application distincte, et la désactivation d
 
 ## Profil Ski {#skiing-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -191,7 +191,7 @@ Les types de pistes tels que les *sentiers de randonnée* ou les *pistes de luge
 
 ### Pistes damées {#grooming-trails}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ Des machines spéciales damment les pistes pour les préparer à l'activité app
 
 ### Itinéraires de pistes de ski {#ski-slope-routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -243,7 +243,7 @@ Avec le profil Ski, la navigation à ski et le [style de carte Hiver et ski](../
 
 ### Nuit et éclairage {#night-and-lighting}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

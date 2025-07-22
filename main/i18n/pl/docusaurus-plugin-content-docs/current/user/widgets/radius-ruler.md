@@ -32,7 +32,7 @@ Narzędzia te są przydatne do planowania tras, szacowania bliskości punktów o
 
 ## Linijka {#ruler}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ To narzędzie jest pomocne, gdy potrzebujesz szybkiego zrozumienia rozmiarów ob
 
 ## Widżet linijki promienia {#radius-ruler-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Użyj tego widżetu, aby oszacować bliskość punktów zainteresowania lub zaplanować wokół określonego obszaru.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Użyj tego widżetu, aby oszacować bliskość punktów zainteresowania lub zapl
 
 ## Kompas dla linijki promienia {#compass-for-radius-ruler}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Ta nakładka jest pomocna w nawigacji na zewnątrz, umożliwiając dopasowanie [
 
 ## Pozycja środkowa / dolna {#center--bottom-position}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -177,7 +177,7 @@ Więcej informacji na temat *pozycji na ekranie* znajdziesz w artykule [Konfigur
 
 ## Widok 3D {#3d-view}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -227,7 +227,7 @@ Istnieją dwa przypadki użycia:
 
 Obejrzyj te krótkie samouczki, aby dowiedzieć się, jak korzystać z linijki promienia i powiązanych narzędzi w OsmAnd:
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

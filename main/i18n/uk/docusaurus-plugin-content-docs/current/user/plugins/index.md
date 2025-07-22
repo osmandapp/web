@@ -30,7 +30,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Увімкнути / Вимкнути {#enable--disable}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -100,7 +100,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *Головне меню → Плагіни → Назва плагіна → Налаштування (&#x2699 для ios)* або
 - *Головне меню → Налаштування → Профіль → [Налаштування плагіна](../personal/profiles.md#plugin-settings)*.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

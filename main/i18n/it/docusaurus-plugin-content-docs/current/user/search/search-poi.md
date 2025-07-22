@@ -35,7 +35,7 @@ OsmAnd offre diversi modi per accedere allo strumento di ricerca dove si trova l
 
 ## Come usare {#how-to-use}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -89,7 +89,7 @@ Per eseguire alcune di queste operazioni (individuare indirizzi, POI) sarà nece
 
 ## Ricerca POI per Categorie {#poi-search-by-categories}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ Toccando il POI scelto nell'elenco si apre il [menu contestuale della mappa](../
 
 ### Tipi di filtri {#types-of-filters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Un filtro può essere composto da un numero considerevole di elementi, la cui pr
 
 ### Riorganizza le categorie {#rearrange-categories}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -310,7 +310,7 @@ Questa funzionalità è particolarmente utile in vari casi:
 
 ### Filtro POI personalizzato {#custom-poi-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -401,7 +401,7 @@ Available for search:
 
 ### Salva nuovi filtri personalizzati {#save-new-custom-filters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -431,7 +431,7 @@ Un altro modo per **salvare**:
 
 ### Modifica un filtro esistente {#edit-an-existing-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -461,7 +461,7 @@ Dalla schermata principale:
 
 ### Elimina filtro POI personalizzato {#delete-custom-poi-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

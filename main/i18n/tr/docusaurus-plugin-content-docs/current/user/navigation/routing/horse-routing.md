@@ -31,7 +31,7 @@ Varsayılan olarak, *At Binme profili* devre dışıdır. Bu profili rota oluşt
 
 Atlı rota oluşturma, binicilere at dostu patikalar, at yolları ve binicilik parkurları hakkında bilgi sağlamak üzere tasarlanmıştır.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

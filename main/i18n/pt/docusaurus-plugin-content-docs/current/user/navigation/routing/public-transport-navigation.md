@@ -25,7 +25,7 @@ Os dados sobre rotas de transporte público são retirados do projeto [OpenStree
 O roteamento de transporte público está em fase de testes. Por enquanto, você pode construir e visualizar sua rota sem a função de navegação completa.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ Para começar a navegar pela cidade de transporte público, use [o botão de nav
 
 **1.** Você precisa escolher o *perfil de navegação de transporte público*, os pontos de partida e destino.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Para começar a navegar pela cidade de transporte público, use [o botão de nav
 
 **2.** O OsmAnd oferece opções de rota com tempos de caminhada e rotas de transporte público com informações de rota: tempo, distância, baldeação e rotas públicas. Você precisa rolar a tela de navegação para selecionar a opção desejada.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ Para começar a navegar pela cidade de transporte público, use [o botão de nav
 
 **3.** Você pode visualizar todas as sugestões de rota possíveis no mapa usando o botão *Mostrar no mapa*. Deslize pelas telas para visualizar a próxima opção de rota.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Para começar a navegar pela cidade de transporte público, use [o botão de nav
 
 **4.** Toque no botão "Detalhes" para abrir uma descrição da rota selecionada com todas as paradas e baldeações.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

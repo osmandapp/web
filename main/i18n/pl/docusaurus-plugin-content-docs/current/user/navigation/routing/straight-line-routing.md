@@ -36,7 +36,7 @@ Wyznaczanie trasy w linii prostej jest powiązane z *profilem samolotu*. Domyśl
 
 *Wyznaczanie trasy w linii prostej* można skonfigurować zgodnie z własnymi potrzebami w sekcji [Parametry trasy](../guidance/navigation-settings.md#route-parameters) w ustawieniach nawigacji.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

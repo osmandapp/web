@@ -32,7 +32,7 @@ Il widget **Barra dei segnaposto mappa** (Android) / **Indicazione distanza - Ba
 *La distanza dal segnaposto* è la lunghezza della linea retta tra la tua posizione (o il punto centrale della mappa / il punto iniziale di contatto della mappa quando la Posizione è disattivata) e il segnaposto.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ La velocità media viene calcolata come la media di tutti i valori di velocità 
 :::
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -140,7 +140,7 @@ Il widget mostra la distanza o l'ora di arrivo stimata (ETA) per il primo o il s
 
 La configurazione dell'aspetto dei segnaposto mappa è disponibile sia nelle versioni Android che iOS di OsmAnd. Il menu "Aspetto sulla mappa" è un'impostazione generale per i segnaposto mappa e si applica indipendentemente dal fatto che i widget siano abilitati o meno. Puoi leggere le informazioni dettagliate in questa [pagina](../personal/markers.md#appearance-on-the-map).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

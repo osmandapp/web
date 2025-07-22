@@ -25,7 +25,7 @@ Esse recurso permite que você encontre rapidamente trilhas específicas que cor
 
 ## Filtro de Busca {#search-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -60,7 +60,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 
 ### Filtros Disponíveis {#available-filters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 
 ## Pasta Inteligente {#smart-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ A **Pasta Inteligente** recém-criada atualizará automaticamente seu conteúdo 
 
 ### Gerenciando Pastas Inteligentes {#managing-smart-folders}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

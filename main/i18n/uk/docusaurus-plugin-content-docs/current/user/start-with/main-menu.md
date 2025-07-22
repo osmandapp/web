@@ -20,7 +20,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Іконка [Головного меню](../widgets/map-buttons.md#main-menu) '&#8801;' розташована в лівому нижньому куті екрана Мапи. У режимі навігації ця кнопка за замовчуванням не відображається. Вона з'являється після короткого дотику до мапи.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

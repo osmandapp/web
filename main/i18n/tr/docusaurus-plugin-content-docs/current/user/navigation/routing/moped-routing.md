@@ -30,7 +30,7 @@ Varsayılan olarak, *Moped profili* devre dışıdır. Bu profili rota oluşturm
 
 Mopedin rota ayarları çok basittir ve sadece birkaç seçenekten oluşur.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -34,7 +34,7 @@ By default, *Skiing profile* is deactivated. To use this profile for routing, yo
 
 *Ski routing* settings allows users to plan their routes by selecting the desired difficulty level and the type of terrain they want to explore. There are various options for safe, comfortable, and enjoyable movement on pistes or during a freeride.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

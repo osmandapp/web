@@ -31,7 +31,7 @@ Per accedere alla funzionalità di un plugin, questo deve prima essere [abilitat
 
 ### Abilita / Disabilita {#enable--disable}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -101,7 +101,7 @@ La maggior parte dei plugin fornisce impostazioni specifiche per il profilo o gl
 - *Menu principale → Plugin → Nome plugin → Impostazioni (&#x2699 per ios)* o
 - *Menu principale → Impostazioni → Profilo → [Impostazioni plugin](../personal/profiles.md#plugin-settings)*.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

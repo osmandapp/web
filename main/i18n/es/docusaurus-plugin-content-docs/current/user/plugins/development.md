@@ -43,7 +43,7 @@ Utiliza una de las siguientes rutas para abrir la configuración del complemento
 - *Menú principal → Complementos → Desarrollo de OsmAnd → Configuración*.
 - *Menú principal → [Configuración global](../personal/global-settings.md) → Perfil → Configuración del complemento de desarrollo de OsmAnd*.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ Utiliza una de las siguientes rutas para abrir la configuración del complemento
 Los widgets de desarrollador de OsmAnd solo se pueden agregar a la pantalla cuando el complemento de desarrollo de OsmAnd está habilitado.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -167,7 +167,7 @@ El [Widget FPS](../widgets/info-widgets.md#map-rendering-fps) muestra la velocid
 Los widgets de desarrollador de OsmAnd solo se pueden agregar a la pantalla cuando el complemento de desarrollo de OsmAnd está habilitado.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -192,7 +192,7 @@ Puedes usar los [widgets de posición de cámara](../widgets/info-widgets.md#cam
 
 ### Inclinación de la cámara {#camera-tilt}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -218,7 +218,7 @@ Al mismo tiempo, debido al movimiento imaginario del visor, la distancia de la c
 
 ### Elevación de la cámara {#camera-elevation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -239,7 +239,7 @@ El widget de Elevación de la cámara muestra la elevación de la cámara sobre 
 
 ### Nivel de zoom {#zoom-level}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -269,7 +269,7 @@ El widget tiene dos vistas que se cambian al tocarlo:
 
 ### Distancia al objetivo {#distance-to-target}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -332,7 +332,7 @@ OsmAnd ofrece la oportunidad de simular la ubicación y el movimiento de tu disp
 - Selecciona la velocidad de simulación de movimiento.
 - Toca el botón de inicio.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

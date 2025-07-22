@@ -21,7 +21,7 @@ OsmAnd'a (OpenStreetMap Otomatik Navigasyon Yönlendirmeleri) hoş geldiniz!
 
 Haritaları nasıl indireceğinizi, uygulamayı nasıl yapılandıracağınızı, haritayı nasıl kullanacağınızı ve bir rota oluşturacağınızı, navigasyonu nasıl başlatacağınızı ve ilgi çekici yerleri nasıl arayacağınızı keşfedin. OsmAnd Gizlilik politikası ve gerekli İzinlerin temel noktaları hakkında bilgi edinin.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -72,7 +72,7 @@ OsmAnd sürümleri ve Satın Almalar hakkında [daha fazla bilgi edinin](../purc
 
 ### Konuma Erişim İzni {#permission-to-access-the-location}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ OsmAnd'a cihazınızın hassas konumu hakkında bilgi alma izni vermenizi öneri
 
 ### Haritalar nasıl indirilir {#how-to-download-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ OsmAnd, mevcut tüm bölgeler için harita indirmenize izin verirken, tüm düny
 
 *Görüntüleme dili seçeneği*, açılır pencereler, dahili metinler, mesajlar ve daha fazlası dahil olmak üzere tüm uygulamanın dilini değiştirmek için kullanılır. Android 12'ye kadar OsmAnd, görüntüleme dilini doğrudan uygulamada tercihlerinize göre özelleştirmenize olanak tanır. Android 13'ten itibaren ve iOS cihazlarda, görüntüleme dili yalnızca sistem ayarlarından değiştirilebilir ([Android](https://developer.android.com/guide/topics/resources/app-languages) ve [iOS](https://developer.apple.com/news/?id=u2cfuj88) için uygulama başına dil tercihlerini nasıl değiştireceğinizi görün).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -161,7 +161,7 @@ Bazı Android cihazlarda (Muiu 14'lü Xiaomi), sistem ayarlarında uygulama dill
 
 Uygulama ayarlarını [Genel ayarlar](../personal/global-settings.md) veya [Ana Menü](../start-with/main-menu.md) aracılığıyla [Profil yapılandırması](../personal/profiles.md) olarak yönetebilirsiniz. Uygulama, daha sonra değiştirilebilecek önceden tanımlanmış bir profil listesiyle birlikte gelir. Her profil, belirli amaçlar için özelleştirilmiş bir harita uygulaması olarak düşünülebilir. Varsayılan olarak, profiller yalnızca farklı navigasyon modları olarak hizmet vermektedir.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -187,7 +187,7 @@ Profil ayarları hakkında [daha fazla bilgi edinin](../personal/profiles.md).
 
 Eklentileri [Ana Menü](../start-with/main-menu.md) → [Eklentiler](../plugins/index.md#configure-plugin) aracılığıyla etkinleştirebilir/devre dışı bırakabilirsiniz.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ OsmAnd eklentileri hakkında [daha fazla bilgi edinin](../plugins/index.md#confi
 
 Harita, OsmAnd'ın temel bir öğesidir ve [nasıl kullanılacağını](../map/interact-with-map.md) (hareketler, düğmeler vb.) bilmek önemlidir. Haritayı ihtiyaçlarınıza göre [yapılandırabilirsiniz](../map/configure-map-menu.md): [harita stilini değiştirin](../map/configure-map-menu.md#map-style-parameters), sık kullanılanlar, İÇN, toplu taşıma, izler, kontur çizgileri, tepe gölgelendirme ve diğerleri gibi farklı [harita katmanlarını](../map/configure-map-menu.md#map-layers) yapılandırın.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -239,7 +239,7 @@ Harita yapılandırması hakkında [daha fazla bilgi edinin](../map/configure-ma
 
 [Ekranı yapılandır](../widgets/configure-screen.md), [Bilgilendirici](../widgets/info-widgets.md) (rakım, hız, geçerli saat vb.) ve [Navigasyonel](../widgets/nav-widgets.md) (hedef, yön, varış zamanı vb.) widget'ları, [Hızlı eylem](../widgets/quick-action.md) ve Harita üzerinde görüntülenecek diğer öğeleri etkinleştirmenizi sağlar.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -262,7 +262,7 @@ Ekran yapılandırması hakkında [daha fazla bilgi edinin](../widgets/configure
 
 OsmAnd, kişisel ihtiyaçlarınız için Harita üzerinde çeşitli işaretler yapmanıza olanak tanır. Örneğin, [Favori noktalar](../personal/favorites.md) - ad, simge ve kategoriye sahip kişisel noktalar, [İşaretleyiciler](../personal/markers.md) - hedef olarak hızlıca eklenen noktalar, [Sesli/Görüntülü notlar](../plugins/audio-video-notes.md) - belirli bir noktada kaydedilen medya notları, [İzler](../personal/tracks/manage-tracks.md) - kaydedilen ve içe aktarılan izler ve turlar.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -285,7 +285,7 @@ Haritadaki noktalar hakkında [daha fazla bilgi edinin](../map/point-layers-on-m
 
 [İlgi çekici noktalar (İÇN'ler)](../map/point-layers-on-map.md#points-of-interest-pois), haritada aranabilen veya vurgulanabilen olanaklardır. İlginç veya faydalı yerleri temsil ederler ve [Vektör Haritalarının](../map/vector-maps.md) bir parçası olarak dağıtılırlar. Bunları haritada [görüntülemek](../map/point-layers-on-map.md#points-of-interest-pois), [gezinmek](../navigation/index.md) ve haritadaki ilgi çekici noktaları [aramak](../search/search-poi.md) için kullanabilirsiniz.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -308,7 +308,7 @@ Haritadaki noktalar hakkında [daha fazla bilgi edinin](../map/point-layers-on-m
 
 [Rota planlama](../plan-route/create-route.md), bir gezi oluşturmanıza, mevcut bir izi düzenlemenize ve yerinde mesafeyi ölçmenize olanak tanıyan güçlü bir araçtır. Ara noktaları hızlıca yerleştirebilir ve bunları çeşitli navigasyon hatlarıyla (bisiklet, yaya, düz çizgi vb.) bağlayabilirsiniz. Sonuçlar bir GPX dosyasına kaydedilebilir, böylece [paylaşılabilir](../personal/tracks/index.md) veya daha sonra [navigasyon tarafından kullanılabilir](../navigation/setup/gpx-navigation.md).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ Rota planlama özelliği hakkında [daha fazla bilgi edinin](../plan-route/creat
 
 OsmAnd, adres araması dahil olmak üzere birçok arama yeteneği sunar. Varsayılan olarak, [OpenStreetMap verilerini](https://nominatim.openstreetmap.org/ui/search.html) kullanır ve Hızlı Arama girişi kullanılarak tüm adresleri bulabilmelidir. Ayrıca, şehir, sokak, posta kodu ve koordinatlara göre [arama yapabilirsiniz](../search/search-address.md).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -358,7 +358,7 @@ Adres araması hakkında [daha fazla bilgi edinin](../search/search-address.md).
 
 [Navigasyon](../navigation/index.md), rotayı görüntüleyerek, adım adım talimatlar sunarak, yüzey, düzgünlük vb. hakkında ek yol bilgileri ve isteğe bağlı sesli rehberlik ile hedefinize adım adım rehberlik sağlar.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -381,7 +381,7 @@ Navigasyon hakkında [daha fazla bilgi edinin](../navigation/index.md).
 
 [Gezi kaydı](../plugins/trip-recording.md), cihazın GPS'ini kullanarak iz üzerindeki tüm hareketleri kaydetmenizi sağlayan bir OsmAnd eklentisi olarak paketlenmiş özel bir araçtır.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -404,7 +404,7 @@ Gezi kaydı hakkında [daha fazla bilgi edinin](../plugins/trip-recording.md).
 
 OsmAnd, [OpenStreetMap](https://www.openstreetmap.org/) verileriyle desteklenmektedir. Haritalar gönüllü katkıda bulunanlar tarafından oluşturulur, bu nedenle haritanın belirli bir bölümünde ne kadar çalışma yapıldığına bağlı olarak daha fazla veya daha az ayrıntıya sahip olabilirler. Herkes bir katkıda bulunan olarak kaydolabilir ve OSM haritalarını ekleyebilir veya düzenleyebilir. OsmAnd, OpenStreetMap'i geliştirmeye yardımcı olan bir düzenleme eklentisi sağlar.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -425,7 +425,7 @@ OSM düzenleme hakkında [daha fazla bilgi edinin](../plugins/osm-editing.md).
 
 ### Uygulama nasıl kapatılır {#how-to-close-the-app}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -474,7 +474,7 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
 ## Çevrimdışı Yardım {#offline-help}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -496,7 +496,7 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
 ### Menü {#menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -520,7 +520,7 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
 ### En Çok Görüntülenen {#most-viewed}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -541,7 +541,7 @@ Kullanıcılarımız arasında en çok görüntülenen makaleler, uygulamada vey
 
 ### Kullanıcı Kılavuzu {#user-guide}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -562,7 +562,7 @@ Yardım menüsünün **Kullanıcı Kılavuzu** bölümü, OsmAnd web sitesinin y
 
 ### Sorun Giderme {#troubleshooting}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -590,7 +590,7 @@ Yaygın sorunları çözmek için çözümler ve ipuçları. Belirli bir sorunuz
 
 ### Bize Ulaşın {#contact-us}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -610,7 +610,7 @@ Soru sormanıza veya önerilerde bulunmanıza olanak tanır.
 
 ### Sorunları Bildir {#report-issues}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -632,7 +632,7 @@ Soru sormanıza veya önerilerde bulunmanıza olanak tanır.
 
 ### OsmAnd Hakkında {#about-osmand}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

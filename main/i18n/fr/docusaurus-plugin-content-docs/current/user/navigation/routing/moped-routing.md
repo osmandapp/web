@@ -30,7 +30,7 @@ L'*itinéraire en cyclomoteur* peut être configuré selon vos besoins dans la [
 
 Les paramètres d'itinéraire du cyclomoteur sont très simples et ne comportent que quelques options.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

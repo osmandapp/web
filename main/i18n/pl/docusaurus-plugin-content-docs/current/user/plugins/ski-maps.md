@@ -22,7 +22,7 @@ Mapa narciarska OsmAnd jest częścią map wektorowych i nie wymaga dodatkowych 
 
 Poniżej przedstawiono dwa profile: ten po lewej stronie jest do jazdy na nartach, a ten po prawej do jazdy samochodem. Profil narciarski podświetla szlaki, drogi powietrzne, zimowe kolory i wszystkie obiekty mapy przydatne do nawigacji po terenie narciarskim.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -50,7 +50,7 @@ Poniższe ustawienie sprawia, że mapa narciarska OsmAnd pojawia się na ekranie
 
 ### Ustaw styl mapy Zima i Narty {#set-winter-and-ski-map-style}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -83,7 +83,7 @@ Profil narciarski jest przeznaczony do użytku w połączeniu ze stylami Zima i 
 
 ### Połącz mapy {#combine-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Wtyczka Przeglądarka map narciarskich jest osobną aplikacją, a wyłączenie j
 
 ## Profil narciarski {#skiing-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -191,7 +191,7 @@ Typy tras, takie jak *Szlaki turystyczne* lub *Szlaki saneczkowe*, mogą być u�
 
 ### Trasy przygotowane {#grooming-trails}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -215,7 +215,7 @@ Aby sprawdzić na mapie, czy dana trasa jest przygotowana, należy włączyć op
 
 ### Trasy narciarskie {#ski-slope-routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ Z włączonym profilem narciarskim, nawigacją narciarską i stylem mapy [Zima i
 
 ### Noc i oświetlenie {#night-and-lighting}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

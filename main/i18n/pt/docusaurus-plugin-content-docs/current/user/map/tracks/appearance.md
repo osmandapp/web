@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 O recurso **Aparência da Trilha** permite aos usuários personalizar como as trilhas são exibidas no mapa. Isso inclui ajustar cor, largura, indicadores de direção e outros elementos visuais. Personalizar a aparência da trilha ajuda a diferenciar múltiplas trilhas, destacar rotas específicas e melhorar a legibilidade do mapa.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -122,7 +122,7 @@ Restaura todas as **configurações de aparência da trilha** para seus valores 
 **Trilha 3D** é um recurso pago do **OsmAnd Pro** para [iOS](../../purchases/ios.md#pro-features) e [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -185,7 +185,7 @@ O recurso de trilha 3D é altamente benéfico para atividades como parapente, on
 
 ## Alterar Aparência para Múltiplas Trilhas {#change-appearance-for-multiple-tracks}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

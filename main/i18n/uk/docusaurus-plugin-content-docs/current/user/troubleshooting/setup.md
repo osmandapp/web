@@ -113,7 +113,7 @@ errors (e.g. if the SD card is too full).
 
 ## Копіювання пакету растрових карт, створеного на ПК {#copy-raster-map-package-created-on-pc}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

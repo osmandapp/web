@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يتيح لك OsmAnd العثور على أفضل مسار واستكشاف تفاصيله. يوفر التطبيق معلومات مفصلة حول المسار مثل المسافة، [وقت السفر](#distance--time--co2)، [ونوع السطح](#road-attributes)، [واختلافات الارتفاع](#elevation-info)، [بيانات بصمة ثاني أكسيد الكربون](#distance--time--co2)، [ومعلومات الانعطاف](#turn-by-turn-information). يمكنك أيضًا [تحليل](#analyze-on-map) المسار على الخريطة، ومعرفة معلومات حول أجزاء المسار، [وطباعة](#print) خطة المسار، [وحفظ](#share--export-actions) المسار، ومشاركته مع الآخرين. باستخدام هذه الوظيفة، ستعرف دائمًا تفاصيل المسار ويمكنك التخطيط لرحلتك بشكل أكثر كفاءة.
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -52,7 +52,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## المسافة / الوقت / ثاني أكسيد الكربون {#distance--time--co2}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -79,7 +79,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## معلومات الارتفاع {#elevation-info}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -118,7 +118,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### رسم بياني للارتفاع {#elevation-graph}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -143,7 +143,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## التحليل على الخريطة {#analyze-on-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -183,7 +183,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## سمات الطريق {#road-attributes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -230,7 +230,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## معلومات الانعطافات {#turn-by-turn-information}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -253,7 +253,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### التعليمات {#instructions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -313,7 +313,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## مشاركة / تصدير (إجراءات) {#share--export-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

@@ -36,7 +36,7 @@ Die Geradlinige Routenführung ist mit dem *Flugzeugprofil* verknüpft. Standard
 
 Die Routenführung *Gerade Linie* kann in den [Routenparametern](../guidance/navigation-settings.md#route-parameters) der Navigationseinstellungen an Ihre Bedürfnisse angepasst werden.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

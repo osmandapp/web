@@ -31,7 +31,7 @@ Pour utiliser le plugin *Édition OpenStreetMap*, vous devez effectuer les régl
 
 ## Paramètres {#settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -70,7 +70,7 @@ Si vous avez un abonnement [OsmAnd Pro](../purchases/android.md#pro-features), l
 
 ### Autorisation {#authorization}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ Connectez-vous pour contribuer aux modifications et aux fichiers GPX.
 
 ### Mises à jour gratuites de la carte pour les cartographes {#free-map-updates-for-mappers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Le paramètre <Translate android="true" ids="map_updates_for_mappers"/> vous per
 
 ### Couche d'édition OSM {#osm-editing-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -149,7 +149,7 @@ Le plugin d'édition OpenStreetMap vous permet de créer de nouveaux objets sur 
 
 ### Ajouter des balises {#add-tags}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ N'oubliez pas que lors de l'ajout de types de POI non pris en charge, il est imp
 
 ## Créer / Modifier une note OSM {#create--modify-osm-note}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ Vos traces seront ajoutées aux [traces OSM](https://www.openstreetmap.org/trace
 ### Télécharger une trace GPS {#upload-gps-track}
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

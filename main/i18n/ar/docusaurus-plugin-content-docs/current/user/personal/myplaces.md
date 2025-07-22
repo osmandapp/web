@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **أماكني** هو المحور المركزي في تطبيق OsmAnd لإدارة وتخصيص جميع البيانات الشخصية. يمكنك استخدام هذا القسم لتنظيم [النقاط المفضلة](#favorites) التي تم وضع علامة عليها كمهمة أو يتم زيارتها بشكل متكرر. تتيح لك علامة التبويب [المسارات](#tracks) عرض ملفات GPX واستيرادها وتسجيلها وإنشائها لمساعدتك في الاحتفاظ بسجل مفصل لمساراتك ورحلاتك. يمكنك أيضًا إدارة [تعديلات OpenStreetMap](#openstreetmap-edits)، مما يسهل المساهمة في تحسينات وتحديثات الخريطة. تتيح المكونات الإضافية والأدوات المصغرة [ملاحظات الصوت / الفيديو](#audiovideo-notes) لمستخدمي Android إنشاء وحفظ ملاحظات الوسائط المتعددة المتعلقة بمواقع محددة، مما يضيف سياقًا لرحلاتهم.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -55,7 +55,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## المفضلة {#favorites}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -86,7 +86,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 2. ***قائمة ثلاث نقاط*** (*Android*) و***الضغط المطول*** (*iOS*). استخدم قائمة *ثلاث نقاط* بجانب كل مجلد أو *الضغط المطول* على المجلد لإدارة مجموعات المفضلة:
 
-    <Tabs groupId="operating-systems" queryString="operating-systems">
+    <Tabs groupId="operating-systems" queryString="current-os">
 
     <TabItem value="android" label="أندرويد">
 
@@ -119,7 +119,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## المسارات {#tracks}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -156,7 +156,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## تعديلات OpenStreetMap {#openstreetmap-edits}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

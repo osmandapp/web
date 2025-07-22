@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd'deki tüm parçalar *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>* içindeki bir sekmede saklanır. OsmAnd, parça dosyasını [GPX formatında](https://en.wikipedia.org/wiki/GPS_Exchange_Format) işler, ancak [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) ve [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) içe aktarılabilir ve GPX'e dönüştürülebilir. Farklı parça türleri hakkında daha fazla bilgiyi [Haritadaki Parçalar](../../map/tracks/index.md#types-of-tracks) makalesinde okuyun.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ OsmAnd'deki tüm parçalar *<Translate android="true" ids="shared_string_menu"/>
 
 ## Parça Oluştur {#create-a-track}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ OsmAnd'de aşağıdaki yollarla parça ekleyebilirsiniz:
 
 ## Parçaları Yönet {#manage-tracks}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -91,7 +91,7 @@ OsmAnd'de aşağıdaki yollarla parça ekleyebilirsiniz:
 
 ### Parça Menüsü {#track-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -147,7 +147,7 @@ Menü aşağıdaki eylemleri sağlar:
 
 ### Ara {#search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -174,7 +174,7 @@ Mevcut:
 
 ### Seçim Modu {#selection-mode}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Seçiminizi yaptıktan sonra aşağıdaki adımlar sağlanır:
 
 ### Şuna Göre Sırala {#sort-by}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ OsmAnd, parçalarınızı sıralamanın kolay bir yolunu sunar, bu da büyük bi
 
 #### Alt Klasörleri Sıralama {#sorting-subfolders}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -276,7 +276,7 @@ Seçilen sıralama seçeneği yalnızca mevcut alt klasöre değil, aynı zamand
 
 ## Parça Klasörü {#track-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -320,7 +320,7 @@ Klasör menüsü nasıl açılır:
 
 ### Klasör İstatistikleri {#folder-statistics}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ Klasör menüsü nasıl açılır:
 
 ### Klasör Eylemleri {#folder-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -400,7 +400,7 @@ Klasör eylemleri nasıl açılır:
 
 ### Klasörü Sil {#delete-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -455,7 +455,7 @@ Bir klasörü içerdiği tüm parçalarla birlikte silebilirsiniz. Bunu yapmak i
 
 ### Dışa Aktar {#export}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

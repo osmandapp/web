@@ -35,7 +35,7 @@ Par défaut, le *profil de ski* est désactivé. Pour utiliser ce profil pour l'
 
 Les paramètres d'*itinéraire de ski* permettent aux utilisateurs de planifier leurs itinéraires en sélectionnant le niveau de difficulté souhaité et le type de terrain qu'ils souhaitent explorer. Il existe diverses options pour un déplacement sûr, confortable et agréable sur les pistes ou en freeride.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

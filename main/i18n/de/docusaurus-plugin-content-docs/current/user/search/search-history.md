@@ -28,7 +28,7 @@ OsmAnd bietet verschiedene Möglichkeiten, Ihren Suchverlauf anzuzeigen.
 
 ## Verwendung {#how-to-use}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -59,7 +59,7 @@ Der Suchverlauf dient dazu, relevante Informationen über Ihre früheren Aktione
 
 ## Verlaufselemente {#history-items}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -105,7 +105,7 @@ Sie können die Anzeige des gesamten Suchverlaufs **deaktivieren oder aktivieren
 
 ### Löschen {#delete}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Sie müssen **lange auf eines der Abfrageelemente in der Liste tippen**, um den 
 
 ### Exportieren und Teilen {#export-and-share}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

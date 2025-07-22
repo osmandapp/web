@@ -49,7 +49,7 @@ Para empezar a usar los datos de los sensores externos, siga estos pasos:
 
 ### Emparejar nuevo sensor {#pair-new-sensor}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -87,7 +87,7 @@ Para emparejar un nuevo sensor, siga estos pasos:
 
 ## Ajustes del sensor {#sensor-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -127,7 +127,7 @@ Cada sensor externo emparejado que aparece en OsmAnd tiene su propia pantalla de
 
 ## Grabación de viajes {#trip-recording}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -166,7 +166,7 @@ OsmAnd utiliza la [grabación de pistas](../plugins/trip-recording.md#recorded-g
 
 ### Análisis de datos {#data-analyze}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -196,7 +196,7 @@ Esto mostrará gráficos para sus datos registrados: *Frecuencia cardíaca*, *Ve
 
 ## Widgets {#widgets}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -235,7 +235,7 @@ Tipos de widgets compatibles:
 
 ### Ajustes del widget {#widget-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

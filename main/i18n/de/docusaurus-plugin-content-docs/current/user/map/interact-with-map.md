@@ -74,7 +74,7 @@ Die *Kartenvergrößerung* ist ein Werkzeug, das die Sichtbarkeit der Karte verb
 
 ## Kartenorientierungsmodi {#map-orientation-modes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -99,7 +99,7 @@ Mit den *Kartenorientierungsmodi* können Sie auswählen, wie die Karte auf dem 
 
 ## Kompass {#compass}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -131,7 +131,7 @@ Sie können diese Funktion über *Menü → Einstellungen → Profile → Allgem
 
 ## Kartenneigung und Horizont {#map-tilt-and-horizon}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -159,7 +159,7 @@ Sie können die Kameraneigung nicht ändern, wenn die alte [Karten-Rendering-Eng
 
 ## Touchscreen-Sperre {#touch-screen-lock}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -226,7 +226,7 @@ Die Tastatur ist auch dann funktionsfähig, wenn die Option *Externe Eingabeger�
 
 ### Vorkonfiguriertes Eingabegerät {#preconfigured-input-device}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

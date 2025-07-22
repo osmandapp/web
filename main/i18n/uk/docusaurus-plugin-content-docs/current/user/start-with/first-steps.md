@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Дізнайтеся, як завантажувати карти, як налаштовувати додаток, як користуватися картою та будувати маршрут, як розпочати навігацію та як шукати об'єкти інтересу. Ознайомтеся з ключовими моментами Політики конфіденційності OsmAnd та необхідними Дозволами.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -72,7 +72,7 @@ OsmAnd — це мобільний додаток для карт та наві�
 
 ### Дозвіл на доступ до місцезнаходження {#permission-to-access-the-location}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ OsmAnd — це мобільний додаток для карт та наві�
 
 ### Як завантажити карти {#how-to-download-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ OsmAnd не може працювати коректно без завантаж
 
 Опція *Мова відображення* використовується для зміни мови всього додатка, включаючи спливаючі підказки, внутрішній текст, повідомлення тощо. До Android 12 OsmAnd дозволяє налаштовувати мову відображення відповідно до ваших уподобань безпосередньо в додатку. Починаючи з Android 13 та на пристроях iOS, мову відображення можна змінити лише в системних налаштуваннях (див. як змінити мовні налаштування для окремих додатків в [Android](https://developer.android.com/guide/topics/resources/app-languages) та [iOS](https://developer.apple.com/news/?id=u2cfuj88)).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -161,7 +161,7 @@ OsmAnd не може працювати коректно без завантаж
 
 Ви можете керувати налаштуваннями програми як [Глобальними налаштуваннями](../personal/global-settings.md) або як [Конфігурацією профілю](../personal/profiles.md) через [Головне меню](../start-with/main-menu.md). Додаток постачається з попередньо визначеним списком профілів, які можна змінити пізніше. Кожен профіль можна розглядати як налаштований додаток для карт для конкретних цілей. За замовчуванням профілі слугують лише як різні режими навігації.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -187,7 +187,7 @@ OsmAnd не може працювати коректно без завантаж
 
 Ви можете ввімкнути / вимкнути плагіни через [Головне меню](../start-with/main-menu.md) → [Плагіни](../plugins/index.md#configure-plugin).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ OsmAnd не може працювати коректно без завантаж
 
 Карта є основним елементом OsmAnd, і важливо знати, [як нею користуватися](../map/interact-with-map.md) (жести, кнопки тощо). Ви можете [налаштувати карту](../map/configure-map-menu.md) відповідно до своїх потреб: [змінити стиль карти](../map/configure-map-menu.md#map-style-parameters), налаштувати різні [шари карти](../map/configure-map-menu.md#map-layers), такі як обране, POI, громадський транспорт, треки, контурні лінії, тіньовий рельєф та інші.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -239,7 +239,7 @@ OsmAnd не може працювати коректно без завантаж
 
 [Налаштування екрана](../widgets/configure-screen.md) дозволяє ввімкнути [Інформаційні](../widgets/info-widgets.md) (висота, швидкість, поточний час тощо) та [Навігаційні](../widgets/nav-widgets.md) (пункт призначення, азимут, час прибуття тощо) віджети, [Швидку дію](../widgets/quick-action.md) та інші елементи, які відображатимуться над картою.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -262,7 +262,7 @@ OsmAnd не може працювати коректно без завантаж
 
 OsmAnd дозволяє робити різні позначки на карті для ваших особистих потреб. Наприклад, [Улюблені точки](../personal/favorites.md) - особисті точки з назвою, іконкою та категорією, [Маркери](../personal/markers.md) - швидко додані точки як ціль, [Аудіо/відео нотатки](../plugins/audio-video-notes.md) - медіа-нотатки, записані в певній точці, [Треки](../personal/tracks/manage-tracks.md) - записані та імпортовані треки та маршрути.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -285,7 +285,7 @@ OsmAnd дозволяє робити різні позначки на карті
 
 [Об'єкти інтересу (POI)](../map/point-layers-on-map.md#points-of-interest-pois) — це об'єкти, які можна шукати або виділяти на карті. Вони представляють цікаві або корисні місця і поширюються як частина [Векторних карт](../map/vector-maps.md). Ви можете використовувати їх для [відображення на карті](../map/point-layers-on-map.md#points-of-interest-pois), [навігації](../navigation/index.md) та [пошуку](../search/search-poi.md) об'єктів інтересу на карті.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -308,7 +308,7 @@ OsmAnd дозволяє робити різні позначки на карті
 
 [Планування маршруту](../plan-route/create-route.md) — це потужний інструмент, який дозволяє створювати поїздки, редагувати існуючі треки та вимірювати відстань на місці. Ви можете швидко додавати проміжні точки та з'єднувати їх різними навігаційними лініями (велосипед, пішохід, пряма лінія тощо). Результати можна зберегти у файл GPX, щоб його можна було [поділитися](../personal/tracks/index.md) або [використовувати для навігації](../navigation/setup/gpx-navigation.md) пізніше.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ OsmAnd дозволяє робити різні позначки на карті
 
 OsmAnd надає багато можливостей пошуку, включаючи пошук за адресою. За замовчуванням він використовує [дані OpenStreetMap](https://nominatim.openstreetmap.org/ui/search.html) і повинен мати можливість знайти всі адреси за допомогою швидкого пошуку. Також ви можете [шукати](../search/search-address.md) за містом, вулицею, поштовим індексом та координатами.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -358,7 +358,7 @@ OsmAnd надає багато можливостей пошуку, включа
 
 [Навігація](../navigation/index.md) надає вам покрокові вказівки до пункту призначення, відображаючи маршрут, пропонуючи покрокові інструкції, додаткову інформацію про дорогу (покриття, гладкість тощо) та опціональне голосове супроводження.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -381,7 +381,7 @@ OsmAnd надає багато можливостей пошуку, включа
 
 [Запис поїздки](../plugins/trip-recording.md) — це спеціальний інструмент, упакований як плагін OsmAnd, який дозволяє записувати всі рухи на треку за допомогою GPS пристрою.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -404,7 +404,7 @@ OsmAnd надає багато можливостей пошуку, включа
 
 OsmAnd працює на основі даних [OpenStreetMap](https://www.openstreetmap.org/). Карти створюються волонтерами, тому вони можуть мати більше або менше деталей залежно від того, скільки роботи було виконано в певній частині карти. Будь-хто може зареєструватися як учасник і додавати або редагувати карти OSM. OsmAnd надає плагін для редагування, який допомагає покращувати OpenStreetMap.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -425,7 +425,7 @@ OsmAnd працює на основі даних [OpenStreetMap](https://www.ope
 
 ### Як закрити додаток {#how-to-close-the-app}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -474,7 +474,7 @@ OsmAnd працює на основі даних [OpenStreetMap](https://www.ope
 
 ## Офлайн допомога {#offline-help}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -496,7 +496,7 @@ OsmAnd працює на основі даних [OpenStreetMap](https://www.ope
 
 ### Меню {#menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -520,7 +520,7 @@ OsmAnd працює на основі даних [OpenStreetMap](https://www.ope
 
 ### Найпопулярніші {#most-viewed}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -541,7 +541,7 @@ OsmAnd працює на основі даних [OpenStreetMap](https://www.ope
 
 ### Посібник користувача {#user-guide}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -562,7 +562,7 @@ OsmAnd працює на основі даних [OpenStreetMap](https://www.ope
 
 ### Вирішення проблем {#troubleshooting}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -590,7 +590,7 @@ OsmAnd працює на основі даних [OpenStreetMap](https://www.ope
 
 ### Зв'язатися з нами {#contact-us}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -610,7 +610,7 @@ OsmAnd працює на основі даних [OpenStreetMap](https://www.ope
 
 ### Повідомити про проблеми {#report-issues}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -632,7 +632,7 @@ OsmAnd працює на основі даних [OpenStreetMap](https://www.ope
 
 ### Про OsmAnd {#about-osmand}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

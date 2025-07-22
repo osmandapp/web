@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 All tracks in OsmAnd are stored in a tab in the *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd processes the track file in [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format), but [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) & [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) can be imported and converted to GPX. Read more about different types of tracks in the article [Tracks on map](../../map/tracks/index.md#types-of-tracks).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -38,7 +38,7 @@ All tracks in OsmAnd are stored in a tab in the *<Translate android="true" ids="
 
 ## Create a Track {#create-a-track}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -65,7 +65,7 @@ You can add tracks in OsmAnd in the following ways:
 
 ## Manage Tracks {#manage-tracks}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ All tracks ever recorded, created, or imported are automatically displayed in th
 
 ### Track Menu {#track-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -146,7 +146,7 @@ The menu provides the following actions:
 
 ### Search {#search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -173,7 +173,7 @@ Available:
 
 ### Selection Mode {#selection-mode}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -210,7 +210,7 @@ Once you have made your choice, the following steps are provided:
 
 ### Sort by {#sort-by}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -252,7 +252,7 @@ OsmAnd offers an easy way to sort your tracks, helping you manage a large collec
 
 #### Sorting Subfolders {#sorting-subfolders}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -275,7 +275,7 @@ The selected sorting option is applied not only to the current subfolder but als
 
 ## Track Folder {#track-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -319,7 +319,7 @@ How to open the folder menu:
 
 ### Folder Statistics {#folder-statistics}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -356,7 +356,7 @@ At the bottom of the list in the *Tracks* tab, and below the list of tracks **in
 
 ### Folder Actions {#folder-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -399,7 +399,7 @@ How to open folder actions:
 
 ### Delete Folder {#delete-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -454,7 +454,7 @@ Import tool allows you to add tracks from external files for offline navigation 
 
 ### Export {#export}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

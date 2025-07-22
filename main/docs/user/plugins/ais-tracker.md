@@ -46,7 +46,7 @@ AIS operates on *VHF frequencies* (161.975 MHz and 162.025 MHz) and has a limite
 
 ***AIS display on the map:***
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -65,7 +65,7 @@ When correctly set up, vessel positions will appear on the map. Key features:
 
 ### AIS Vessel Information {#ais-vessel-information}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -149,7 +149,7 @@ AIS vessels transmit three types of data:
 
 ## Plugin Settings {#plugin-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

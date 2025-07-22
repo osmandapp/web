@@ -21,7 +21,7 @@ Benvenuto in OsmAnd (OpenStreetMap Automated Navigation Directions)!
 
 Scopri come scaricare le mappe, come configurare l'applicazione, come usare la mappa e costruire un percorso, come avviare la navigazione e come cercare punti di interesse. Familiarizza con i punti chiave della politica sulla privacy di OsmAnd e le autorizzazioni richieste.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -72,7 +72,7 @@ Il nostro obiettivo è creare un'applicazione completa orientata alle mappe che 
 
 ### Autorizzazione ad accedere alla posizione {#permission-to-access-the-location}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Ti consigliamo di concedere a OsmAnd l'autorizzazione a ricevere informazioni su
 
 ### Come scaricare le mappe {#how-to-download-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ Sebbene OsmAnd ti consenta di scaricare mappe per tutte le regioni disponibili, 
 
 L'opzione *Lingua di visualizzazione* viene utilizzata per cambiare la lingua dell'intera app, inclusi i prompt a comparsa, il testo interno, i messaggi e altro ancora. Fino ad Android 12, OsmAnd ti consente di personalizzare la lingua di visualizzazione in base alle tue preferenze direttamente nell'app. A partire da Android 13 e sui dispositivi iOS, la lingua di visualizzazione può essere modificata solo nelle impostazioni di sistema (vedi come modificare le preferenze di lingua per app in [Android](https://developer.android.com/guide/topics/resources/app-languages) e [iOS](https://developer.apple.com/news/?id=u2cfuj88)).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -161,7 +161,7 @@ Su alcuni dispositivi Android (Xiaomi con Muiu 14), non è possibile impostare l
 
 Puoi gestire le impostazioni dell'applicazione come [Impostazioni globali](../personal/global-settings.md) o come [Configurazione profilo](../personal/profiles.md) tramite il [Menu principale](../start-with/main-menu.md). L'applicazione viene fornita con un elenco predefinito di profili che possono essere modificati in seguito. Ogni profilo può essere considerato come un'applicazione mappa personalizzata per scopi specifici. Per impostazione predefinita, i profili vengono utilizzati solo come diverse modalità di navigazione.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -187,7 +187,7 @@ I [Plugin](../plugins/index.md#configure-plugin) estendono notevolmente la funzi
 
 Puoi abilitare/disabilitare i plugin tramite [Menu principale](../start-with/main-menu.md) → [Plugin](../plugins/index.md#configure-plugin).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ Per abilitare/disabilitare i plugin, vai a:
 
 La mappa è un elemento centrale di OsmAnd, ed è importante sapere [come usarla](../map/interact-with-map.md) (gesti, pulsanti, ecc.). Puoi [configurare la mappa](../map/configure-map-menu.md) in base alle tue esigenze: [cambiare lo stile della mappa](../map/configure-map-menu.md#map-style-parameters), configurare diversi [livelli della mappa](../map/configure-map-menu.md#map-layers) come preferiti, POI, trasporto pubblico, tracce, curve di livello, rilievo e altri.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -239,7 +239,7 @@ La mappa è un elemento centrale di OsmAnd, ed è importante sapere [come usarla
 
 [Configura schermo](../widgets/configure-screen.md) ti consente di abilitare i widget [Informativi](../widgets/info-widgets.md) (altitudine, velocità, ora corrente, ecc.) e [Di navigazione](../widgets/nav-widgets.md) (destinazione, rilevamento, ora di arrivo, ecc.), [Azione rapida](../widgets/quick-action.md) e altri elementi che verranno visualizzati sulla mappa.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -262,7 +262,7 @@ La mappa è un elemento centrale di OsmAnd, ed è importante sapere [come usarla
 
 OsmAnd ti consente di fare varie annotazioni sulla mappa per le tue esigenze personali. Ad esempio, [Punti preferiti](../personal/favorites.md) - punti personali con nome, icona e categoria, [Segnalibri](../personal/markers.md) - punti aggiunti rapidamente come destinazione, [Note audio/video](../plugins/audio-video-notes.md) - note multimediali registrate in un punto specifico, [Tracce](../personal/tracks/manage-tracks.md) - tracce e tour registrati e importati.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -285,7 +285,7 @@ OsmAnd ti consente di fare varie annotazioni sulla mappa per le tue esigenze per
 
 I [Punti di interesse (POI)](../map/point-layers-on-map.md#points-of-interest-pois) sono servizi che possono essere cercati o evidenziati sulla mappa. Rappresentano luoghi interessanti o utili e sono distribuiti come parte delle [Mappe vettoriali](../map/vector-maps.md). Puoi usarli per [visualizzare sulla mappa](../map/point-layers-on-map.md#points-of-interest-pois), [navigare](../navigation/index.md) e [cercare](../search/search-poi.md) i punti di interesse sulla mappa.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -308,7 +308,7 @@ I [Punti di interesse (POI)](../map/point-layers-on-map.md#points-of-interest-po
 
 [Pianifica percorso](../plan-route/create-route.md) è uno strumento potente che ti consente di creare un viaggio, modificare una traccia esistente e misurare la distanza sul posto. Puoi inserire rapidamente punti intermedi e collegarli tramite varie linee di navigazione (bici, pedonale, linea retta, ecc.). I risultati possono essere salvati in un file GPX, in modo che possa essere [condiviso](../personal/tracks/index.md) o [utilizzato dalla navigazione](../navigation/setup/gpx-navigation.md) in seguito.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ I [Punti di interesse (POI)](../map/point-layers-on-map.md#points-of-interest-po
 
 OsmAnd offre molte funzionalità di ricerca, inclusa la ricerca per indirizzo. Per impostazione predefinita, utilizza i [dati OpenStreetMap](https://nominatim.openstreetmap.org/ui/search.html) e dovrebbe essere in grado di trovare tutti gli indirizzi utilizzando l'input di ricerca rapida. Inoltre, puoi [cercare](../search/search-address.md) per città, strada, codice postale e coordinate.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -358,7 +358,7 @@ Devi scaricare la mappa prima di cercare un indirizzo lì. Inoltre, se la tua po
 
 La [Navigazione](../navigation/index.md) ti fornisce una guida passo-passo verso la tua destinazione visualizzando il percorso, offrendo istruzioni dettagliate, informazioni stradali aggiuntive su superficie, scorrevolezza, ecc. e guida vocale opzionale.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -381,7 +381,7 @@ La [Navigazione](../navigation/index.md) ti fornisce una guida passo-passo verso
 
 La [Registrazione del viaggio](../plugins/trip-recording.md) è uno strumento speciale confezionato come plugin di OsmAnd che ti consente di registrare tutti i movimenti sulla traccia utilizzando il GPS del dispositivo.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -404,7 +404,7 @@ La [Registrazione del viaggio](../plugins/trip-recording.md) è uno strumento sp
 
 OsmAnd è alimentato dai [dati OpenStreetMap](https://www.openstreetmap.org/). Le mappe sono create da contributori volontari, quindi possono avere più o meno dettagli a seconda di quanto lavoro è stato fatto in una certa parte della mappa. Chiunque può registrarsi come contributore e aggiungere o modificare le mappe OSM. OsmAnd fornisce un plugin di modifica che aiuta a migliorare OpenStreetMap.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -425,7 +425,7 @@ OsmAnd è alimentato dai [dati OpenStreetMap](https://www.openstreetmap.org/). L
 
 ### Come chiudere l'app {#how-to-close-the-app}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -474,7 +474,7 @@ Tocca un'icona di azione per avviare immediatamente l'applicazione con l'azione 
 
 ## Aiuto offline {#offline-help}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -496,7 +496,7 @@ Nel *menu Aiuto*, puoi anche trovare link utili ai social network di OsmAnd, inf
 
 ### Menu {#menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -520,7 +520,7 @@ Nel *menu Aiuto*, puoi anche trovare link utili ai social network di OsmAnd, inf
 
 ### Più visualizzati {#most-viewed}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -541,7 +541,7 @@ Gli articoli più visualizzati tra i nostri utenti si riferiscono agli articoli 
 
 ### Guida utente {#user-guide}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -562,7 +562,7 @@ La sezione **Guida utente** del menu Aiuto è un manuale completo che segue la s
 
 ### Risoluzione dei problemi {#troubleshooting}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -590,7 +590,7 @@ Soluzioni e suggerimenti per risolvere problemi comuni. Se hai una domanda speci
 
 ### Contattaci {#contact-us}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -610,7 +610,7 @@ Ti consente di porre domande o fare suggerimenti.
 
 ### Segnala problemi {#report-issues}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -632,7 +632,7 @@ Ti consente di porre domande o fare suggerimenti.
 
 ### Informazioni su OsmAnd {#about-osmand}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

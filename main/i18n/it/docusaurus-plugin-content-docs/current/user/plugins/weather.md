@@ -54,7 +54,7 @@ Il plugin Meteo è disponibile solo con il motore di rendering delle mappe [Vers
 
 ### Schermata Previsioni meteo {#weather-forecast-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -80,7 +80,7 @@ Nella parte inferiore dello schermo si trova la *barra degli strumenti meteo*. P
 
 ### Personalizza livelli meteo {#customize-weather-layers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -107,7 +107,7 @@ In questo menu, puoi modificare la **visibilità** e le [impostazioni](#weather-
 
 ### Impostazioni meteo {#weather-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Tutti i dati meteo sono presentati come livelli separati della mappa. Per visual
 
 ### Combina mappe {#combine-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ Sui dispositivi Android, puoi controllare quando i dati meteo sono stati scarica
 
 ### Scarica previsioni {#download-forecast}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -234,7 +234,7 @@ OsmAnd genera una nuova previsione ogni 6 ore.
 
 ## Widget meteo {#weather-widgets}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

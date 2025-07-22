@@ -29,7 +29,7 @@ Rotalama, ilgili profilin (*Sürüş, Kamyon, Motosiklet*) Navigasyon ayarların
 
 Araç rotalama, sürücülerin varış noktalarına en verimli ve doğrudan rotaları bulmalarına yardımcı olmak için tasarlanmıştır. Tek yönlü caddeler, dönüş yasakları, yaya bölgeleri gibi yaygın sürüş kısıtlamalarını dikkate alır ve ayrıca dar yollar veya ağırlık kısıtlamaları olan yollar gibi arabalar için uygun olmayan yollardan kaçınmaya yardımcı olur.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Varsayılan olarak, *Kamyon profili* devre dışıdır. Bu profili rotalama içi
 
 Kamyon rotalaması, araç rotalamasına benzer, ancak özellikle büyük ticari araç sürücüleri için tasarlanmıştır. Araç [yüksekliği, ağırlığı ve genişlik kısıtlamaları](../guidance/navigation-settings.md#size-parameters) ve tehlikeli madde taşıma olasılığı (aşağıdaki tabloya bakın) gibi ek faktörleri dikkate alır. Diğer tüm rotalama ayarları [araç rotalaması](#route-parameters---car) ile aynıdır.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

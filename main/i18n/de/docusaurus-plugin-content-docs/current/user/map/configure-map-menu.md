@@ -17,7 +17,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Das Menü **Karte konfigurieren** ist ein wichtiger Punkt im *Hauptmenü* von OsmAnd, wo Sie die Kartenanzeige an Ihre Bedürfnisse anpassen können. Sie können bevorzugte Orte, Navigationsmarker oder spezielle Points of Interest (POIs) auf der Karte hervorheben, bestimmte Routen oder GPX-Dateien von Drittanbietern anzeigen, Geländedaten, Satellitenbilder oder andere verfügbare Rasterbilder überlagern, Informationen zu öffentlichen Verkehrsmitteln anzeigen und den Kartenstil ändern.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

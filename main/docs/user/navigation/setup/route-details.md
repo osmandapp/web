@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd allows you to find the best route and explore its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), [CO2 footprint data](#distance--time--co2),and [turn information](#turn-by-turn-information). You can also [analyze](#analyze-on-map) the route on the map, find out information about track segments, [print](#print) the route plan, [save](#share--export-actions) the route, and share it with others. With this functionality, you will always know the route details and can plan your trip more efficiently.  
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -51,7 +51,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 ## Distance / Time / CO2 {#distance--time--co2}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 ## Elevation Info {#elevation-info}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ The altitude data on the map (between 70 degrees north latitude and 70 degrees s
 
 ### Elevation Graph {#elevation-graph}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -142,7 +142,7 @@ The [graphs](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visu
 
 ## Analyze on Map {#analyze-on-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ If data is present, you can select one of the following types:
 
 ## Road Attributes {#road-attributes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Road attributes are accessible in the [Route Details](#how-to-access) and displa
 
 ## Turn-by-Turn Information {#turn-by-turn-information}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -252,7 +252,7 @@ Tap a specific section of the route in the list to view detailed information or 
 
 ### Instructions {#instructions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -312,7 +312,7 @@ The ability **to print** or **save** turn-by-turn information **in PDF format** 
 
 ## Share / Export (Actions) {#share--export-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

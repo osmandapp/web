@@ -28,7 +28,7 @@ By default, *Train profile* is deactivated. To use this profile for routing, you
 
 ## Route Parameters - Train {#route-parameters---train}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

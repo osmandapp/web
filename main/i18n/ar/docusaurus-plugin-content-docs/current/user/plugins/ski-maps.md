@@ -22,7 +22,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 يُعرض أدناه ملفان شخصيان: أحدهما على اليسار للتزلج والآخر على اليمين للقيادة. يُبرز ملف التزلج الشخصي المسارات والممرات الهوائية وألوان الشتاء وجميع كائنات الخريطة المفيدة للتنقل في منطقة التزلج.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -50,7 +50,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### تعيين نمط خريطة الشتاء والتزلج {#set-winter-and-ski-map-style}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -83,7 +83,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### دمج الخرائط {#combine-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -118,7 +118,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## ملف التزلج الشخصي {#skiing-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -191,7 +191,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### مسارات التمهيد {#grooming-trails}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -216,7 +216,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### مسارات منحدرات التزلج {#ski-slope-routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -243,7 +243,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### الليل والإضاءة {#night-and-lighting}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

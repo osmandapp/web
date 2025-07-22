@@ -24,7 +24,7 @@ Para configurar el *enrutamiento peatonal*, vaya a la sección [Parámetros de r
 
 El enrutamiento peatonal puede ser útil no solo en áreas urbanas, donde los peatones pueden encontrar varios obstáculos al intentar ir de un lugar a otro. También puede usar este tipo de enrutamiento mientras corre, camina y practica marcha nórdica fuera de la ciudad o en las montañas. Simplemente ajuste los parámetros de enrutamiento según sus necesidades.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

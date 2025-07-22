@@ -45,7 +45,7 @@ Puedes encontrar información detallada sobre la visualización y personalizaci�
     - [Cambia](../map/raster-maps.md#change-raster-map-parameters) los parámetros del mapa ráster.
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

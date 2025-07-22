@@ -24,7 +24,7 @@ Per configurare il *Percorso pedonale*, vai alla sezione [Parametri del percorso
 
 Il percorso pedonale può essere utile non solo nelle aree urbane, dove i pedoni possono incontrare vari ostacoli quando cercano di spostarsi da un luogo all'altro. Puoi anche utilizzare questo tipo di percorso durante il jogging, l'escursionismo e il nordic walking fuori città o in montagna. Basta regolare i parametri di percorso in base alle tue esigenze.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

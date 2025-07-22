@@ -27,7 +27,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Функції велосипедного маршруту OsmAnd дозволяють велосипедистам вводити початкову та кінцеву точки, а потім генерувати маршрут, який враховує їхні переваги та місцеву географію.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -20,7 +20,7 @@ The **Plan a route** (*Menu → Plan a route*) tool is a powerful feature of the
 
 A route consists of a set of segments between specified points. The segments can be straight lines or routes adapted to the selected profile. The route can be saved as GPX for later import, edit, and [navigation](../navigation/setup/gpx-navigation.md).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ A route consists of a set of segments between specified points. The segments can
 
 ## Main Use Cases {#main-use-cases}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -71,7 +71,7 @@ You can **zoom in and out** for easy placement of points when creating or editin
 
 ### Modify Existing GPX Track {#modify-existing-gpx-track}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ If [Elevation data](../map/tracks/track-context-menu.md#calculating-missing-elev
 
 ### Attach Track to Roads {#attach-track-to-roads}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -168,7 +168,7 @@ To generate navigation instructions:
 
 ### Adding Points {#adding-points}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ Added points in the editor could be connected as a straight line or as a route b
 2. Tap the *profile icon* in the bottom left corner of the map screen. Not on the top icon, will open the Configure Map menu.
 3. In the *[Point Context menu](#point-context-menu) → Change route type before/after*.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -230,7 +230,7 @@ A track segment is a collection of points connected without **gaps**. In a plan 
 
 ### Point Context Menu {#point-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -274,7 +274,7 @@ Each point on your route has its context menu. It shows the *sequence number* of
 
 ### Multimodal Routes {#multimodal-routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -297,7 +297,7 @@ Using the *Plan a Route* tool and the [Route between points](#route-between-poin
 
 ### Save Route {#save-route}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -329,7 +329,7 @@ When saving a new track, you can select the ***Simplified*** track option to mak
 
 ### Options {#options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -359,7 +359,7 @@ When saving a new track, you can select the ***Simplified*** track option to mak
 
 ### Graph {#graph}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

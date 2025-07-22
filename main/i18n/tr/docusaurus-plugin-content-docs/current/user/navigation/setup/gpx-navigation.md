@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *İz üzerinde gezinme* seçeneği günlük hayatta da kullanılabilir. Daha önce [kaydedilmiş bir izi](../../plugins/trip-recording.md) kullanabilir veya bir [iz oluşturup](../../personal/tracks/manage-tracks.md#create-a-track) rotayı onlara açıklamak yerine aileniz veya arkadaşlarınızla paylaşabilirsiniz. Ayrıca navigasyon için [OsmAnd haritasındaki rotaları](../../../../blog/routes/) da kullanabilirsiniz. Bunları haritada nasıl vurgulayacağınız ve renklerinin ne anlama geldiği, *Vektör haritaları* makalesinin [Rotalar bölümünde](../../map/vector-maps.md#routes) açıklanmıştır.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### GPX Navigasyonunu Başlatın {#start-gpx-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ Bir iz üzerinde navigasyon, [iz bağlam menüsündeki](../../map/tracks/track-c
 
 ### Segmentleri Seçin {#choose-segments}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -97,7 +97,7 @@ Navigasyon için, seçilen iz birden fazla segment veya izden oluşuyorsa, belir
 
 ### İzleme Seçeneklerini Takip Et {#follow-track-options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ Navigasyon için, seçilen iz birden fazla segment veya izden oluşuyorsa, belir
 
 ### Yollara İliştir {#attach-to-the-roads}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

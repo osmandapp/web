@@ -35,7 +35,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [3D-рельєф](#3d-relief). Це [векторна карта](../map/vector-maps.md), що надає тривимірне представлення рельєфу, доступна лише за [підпискою OsmAnd Pro](../purchases/index.md).
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Карти 3D-рельєфу {#3d-relief-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Горизонталі (метри або фути) {#contour-lines-meters-or-feet}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Горизонталі {#contour-lines}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Рельєф {#terrain}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 *Змінити колірну схему* — це платна функція **OsmAnd Pro** для [iOS](../purchases/ios.md#pro-features) та [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -328,7 +328,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 3D-рельєф — це платна функція [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -360,7 +360,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - Завантажте [Карту рельєфу (3D)](#3d-relief-maps) регіонів, якщо необхідно.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -383,7 +383,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Вертикальне перебільшення {#vertical-exaggeration}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Комбінування типів шарів {#combine-layer-types}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

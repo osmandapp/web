@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 العلامات هي نقاط خاصة يتم وضع علامة عليها على الخريطة كأعلام يمكن إنشاؤها بسرعة بنقرة واحدة دون تحديد الاسم والمعلومات الأخرى على عكس [النقاط المفضلة](./favorites.md). كما توفر العلامات وظائف إضافية مع [الودجات](../widgets/markers.md)، **الأسهم** (<Translate android="true" ids="show_arrows_on_the_map"/>) و**إشارة المسافة** (<Translate android="true" ids="show_direction"/>).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -39,7 +39,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إضافة / تعديل العلامات {#add--edit-markers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -103,7 +103,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### السجل {#history}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -124,7 +124,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ## الظهور على الخريطة {#appearance-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

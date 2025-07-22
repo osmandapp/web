@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *Контекстне меню треку* надає інформацію про *[трек](../../personal/tracks/index.md)* як у текстовому, так і в [графічному](#altitude--speed-graphs) вигляді. Воно дозволяє додавати інформацію, вносити зміни, редагувати та виконувати різні інші дії з треком. Доступ до *контекстного меню треку* можна отримати, просто торкнувшись потрібного треку на карті або скориставшись меню *[Мої місця](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Можливо, вам знадобиться відкрити папку треків і вибрати потрібний трек, торкнувшись його.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Інформаційна панель {#info-panel}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Дії з треком {#track-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Параметри {#options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Опис та інформація {#description-and-info}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Діяльність інформації про трек {#track-information-activity}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Оглядова інформація {#overview-information}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -305,7 +305,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 Ця вкладка може бути видимою лише на записаних треках. Точки на цьому типі треку мають теги **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Висота {#altitude}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -387,7 +387,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 Маршрутні точки — це один із типів точок, доступних на карті. Загалом, це можуть бути точки треку, які є частиною файлів GPX. Детальний опис доступний у статті [точки на карті](../../map/point-layers-on-map.md).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -424,7 +424,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 #### Створити маршрутну точку {#create-waypoint}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -460,7 +460,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Дії з групами {#actions-with-groups}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -491,7 +491,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Групи маршрутних точок {#waypoint-groups}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -513,7 +513,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Відображення користувацьких GPX-тегів {#display-custom-gpx-tags}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -52,7 +52,7 @@ OsmAnd supports **cross-platform usage** across *([Android](../purchases/android
 
 ## Login {#login}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -98,7 +98,7 @@ If you experience issues during registration:
 
 ## OsmAnd Start {#osmand-start}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -128,7 +128,7 @@ Features included in OsmAnd Start:
 
 ### How to Activate OsmAnd Start {#how-to-activate-osmand-start}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -164,7 +164,7 @@ If you already have an **OsmAnd Pro** subscription or an **active OsmAnd Cloud a
 
 ## Last Sync {#last-sync}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -215,7 +215,7 @@ To use this feature:
 
 ## Trash {#trash}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -255,7 +255,7 @@ The **Trash** feature allows you to view and manage files that have been deleted
 
 ## Settings {#settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -280,7 +280,7 @@ This section is for editing and managing your OsmAnd Cloud.
 
 ### Select Data to Back Up {#select-data-to-back-up}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -313,7 +313,7 @@ All [maps](../start-with/download-maps.md) are stored on the device on which the
 
 ### Manage Storage {#manage-storage}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -345,7 +345,7 @@ This section contains information about which of your accounts is connected to O
 
 ### Deletion Option {#deletion-option}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -381,7 +381,7 @@ The actions you can do in the **Danger zone** section of the Settings menu are i
 
 ## List of Changes {#list-of-changes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -408,7 +408,7 @@ In the [Last Sync](#last-sync) section of the drop-down menu, tap any item to op
 
 ### Local and Cloud {#local-and-cloud}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -437,7 +437,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 
 ### Conflicts {#conflicts}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

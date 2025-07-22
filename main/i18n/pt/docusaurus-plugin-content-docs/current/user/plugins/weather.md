@@ -54,7 +54,7 @@ O plugin Tempo está disponível apenas com o motor de renderização de mapa [V
 
 ### Tela de Previsão do Tempo {#weather-forecast-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -80,7 +80,7 @@ Na parte inferior da tela está a *barra de ferramentas do tempo*. Você pode us
 
 ### Personalizar Camadas de Tempo {#customize-weather-layers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -107,7 +107,7 @@ Neste menu, você pode alterar a **visibilidade** e [configurações](#weather-s
 
 ### Configurações de Tempo {#weather-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Todos os dados meteorológicos são apresentados como camadas de mapa separadas.
 
 ### Combinar Mapas {#combine-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ Em dispositivos Android, você pode verificar quando os dados meteorológicos fo
 
 ### Baixar Previsão {#download-forecast}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -234,7 +234,7 @@ O OsmAnd gera uma nova previsão a cada 6 horas.
 
 ## Widgets de Tempo {#weather-widgets}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

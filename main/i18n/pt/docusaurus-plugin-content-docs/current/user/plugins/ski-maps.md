@@ -20,7 +20,7 @@ O mapa de esqui do OsmAnd faz parte dos mapas vetoriais e não requer downloads 
 
 Dois perfis são mostrados abaixo: o da esquerda é para esqui e o da direita é para dirigir. O perfil de Esqui destaca trilhas, vias aéreas, cores de inverno e todos os objetos do mapa úteis para navegar na área de esqui.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -46,7 +46,7 @@ A seguinte configuração faz com que o Mapa de Esqui do OsmAnd apareça na tela
 
 ### Definir Estilo de Mapa de Inverno e Esqui {#set-winter-and-ski-map-style}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ O perfil de Esqui é projetado para uso em combinação com os estilos de Invern
 
 ### Combinar Mapas {#combine-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -110,7 +110,7 @@ O plugin Visualizador de Mapa de Esqui é um aplicativo separado, e desativar su
 
 ## Perfil de Esqui {#skiing-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -178,7 +178,7 @@ Tipos de pista como *Trilhas de Caminhada* ou *Trilhas de Trenó* podem ser usad
 
 ### Trilhas de Manutenção {#grooming-trails}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -203,7 +203,7 @@ Máquinas especiais mantêm as trilhas para prepará-las para a atividade apropr
 
 ### Rotas de Pistas de Esqui {#ski-slope-routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Com o perfil de Esqui, a navegação de esqui e o [estilo de mapa Inverno e Esqu
 
 ### Noite e Iluminação {#night-and-lighting}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

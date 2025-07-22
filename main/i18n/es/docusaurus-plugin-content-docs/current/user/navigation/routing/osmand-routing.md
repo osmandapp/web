@@ -82,7 +82,7 @@ Hay dos formas posibles de elegir qué carreteras evitar al calcular una ruta:
 
 ### Menú Evitar carreteras {#avoid-roads-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -108,7 +108,7 @@ Usando la opción *Seleccionar en el mapa* puedes seguir marcando carreteras com
 
 Cuando seleccionas una carretera para evitar usando el *menú contextual del mapa* o el *menú Evitar carreteras*, la lista de carreteras se mostrará encima de la pantalla del mapa.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -126,7 +126,7 @@ Cuando seleccionas una carretera para evitar usando el *menú contextual del map
 
 ## Exportar / Importar {#export--import}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Dependiendo de la configuración de tu dispositivo y las aplicaciones disponible
 
 Puedes [importar](../../personal/import-export.md#import) carreteras a evitar durante el cálculo de la ruta desde otras fuentes en formato de archivo `.osf`. También se puede hacer usando la *opción Importar* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). Puedes elegir importar todos los datos o solo algunas carreteras a evitar (marcando una carretera con una marca en la lista).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

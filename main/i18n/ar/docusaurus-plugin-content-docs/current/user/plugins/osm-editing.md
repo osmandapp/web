@@ -31,7 +31,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## الإعدادات {#settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -70,7 +70,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### الترخيص {#authorization}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -94,7 +94,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### تحديثات الخريطة المجانية للرسامين {#free-map-updates-for-mappers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -115,7 +115,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### طبقة تعديل OSM {#osm-editing-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -149,7 +149,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### إضافة علامات {#add-tags}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -189,7 +189,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## إنشاء / تعديل ملاحظة OSM {#create--modify-osm-note}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -242,7 +242,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ### تحميل مسار GPS {#upload-gps-track}
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

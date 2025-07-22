@@ -32,7 +32,7 @@ Bu araçlar, ister açık hava etkinlikleri ister hassas navigasyon için olsun,
 
 ## Cetvel {#ruler}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Bu araç, işaretleyici veya rota yerleştirmeden nesne boyutları veya mesafele
 
 ## Yarıçap Cetveli Widget'ı {#radius-ruler-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ Bu araç, işaretleyici veya rota yerleştirmeden nesne boyutları veya mesafele
 
 İlgi çekici noktalara yakınlığı tahmin etmek veya tanımlanmış bir alan etrafında planlama yapmak için bu widget'ı kullanın.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Bu araç, işaretleyici veya rota yerleştirmeden nesne boyutları veya mesafele
 
 ## Yarıçap Cetveli için Pusula {#compass-for-radius-ruler}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Bu katman, [harita yönünü](../map/interact-with-map.md#map-orientation--compa
 
 ## Merkez / Alt Konum {#center--bottom-position}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -177,7 +177,7 @@ Konumunuz etrafındaki görünür yarıçapı artırmak için, Merkez veya Alt s
 
 ## 3D Görünüm {#3d-view}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -227,7 +227,7 @@ Yarıçap daireleri derinlikle görünecektir, bu özellikle engebeli alanlarda 
 
 OsmAnd'da Yarıçap Cetveli ve ilgili araçları nasıl kullanacağınızı öğrenmek için bu kısa eğitimleri izleyin:
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

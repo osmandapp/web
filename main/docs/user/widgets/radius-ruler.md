@@ -31,7 +31,7 @@ These tools are useful for planning routes, estimating proximity to landmarks, a
 
 ## Ruler {#ruler}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ This tool is helpful when you need a quick understanding of object sizes or dist
 
 ## Radius Ruler Widget {#radius-ruler-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -89,7 +89,7 @@ The [Radius Ruler Widget](../widgets/info-widgets.md#radius-ruler) shows the dis
 
 Use this widget to estimate proximity to points of interest or plan around a defined area.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -114,7 +114,7 @@ Use this widget to estimate proximity to points of interest or plan around a def
 
 ## Compass for Radius Ruler {#compass-for-radius-ruler}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -149,7 +149,7 @@ This overlay is helpful for outdoor navigation, allowing you to match [map orien
 
 ## Center / Bottom Position {#center--bottom-position}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -176,7 +176,7 @@ For more information about *the position on the screen*, see the article [Config
 
 ## 3D View {#3d-view}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -226,7 +226,7 @@ There are two use cases:
 
 Watch these short tutorials to learn how to use the Radius Ruler and related tools in OsmAnd:
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

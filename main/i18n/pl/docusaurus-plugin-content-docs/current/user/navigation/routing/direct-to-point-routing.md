@@ -29,7 +29,7 @@ Ten typ nawigacji nie uwzględnia żadnych przeszkód ani barier, które mogą w
 Korzystając z typów nawigacji bezpośredniej i łodzi, będziesz potrzebować [danych o izobatach](../../plugins/nautical-charts.md#nautical-map-style), które można włączyć i ustawić w *Konfiguruj mapę*.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -31,7 +31,7 @@ Para usar el complemento *Edición de OpenStreetMap*, debes realizar las siguien
 
 ## Configuración {#settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -70,7 +70,7 @@ Si tienes una suscripción [OsmAnd Pro](../purchases/android.md#pro-features), l
 
 ### Autorización {#authorization}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ Inicia sesión para contribuir con cambios y archivos GPX.
 
 ### Actualizaciones gratuitas de mapas para mapeadores {#free-map-updates-for-mappers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ La configuración <Translate android="true" ids="map_updates_for_mappers"/> te p
 
 ### Capa de edición de OSM {#osm-editing-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -149,7 +149,7 @@ El complemento de edición de OpenStreetMap te permite crear nuevos objetos en e
 
 ### Añadir etiquetas {#add-tags}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Recuerda que al añadir tipos de PDI no compatibles, es importante asegurarse de
 
 ## Crear / Modificar nota OSM {#create--modify-osm-note}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ Tus trazas se añadirán a [trazas OSM](https://www.openstreetmap.org/traces) en
 ### Subir traza GPS {#upload-gps-track}
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

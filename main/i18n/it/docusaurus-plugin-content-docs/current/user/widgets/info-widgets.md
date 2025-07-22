@@ -38,7 +38,7 @@ Su alcuni dispositivi Android, l'altitudine potrebbe essere visualizzata in modo
 - Per maggiori dettagli, visita [Mappe e risorse](../personal/maps-resources.md#downloads).
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -69,7 +69,7 @@ Su alcuni dispositivi Android, l'altitudine potrebbe essere visualizzata in modo
 &nbsp;<ProFeature/> Per accedere all'utilizzo del widget *Elevazione: centro mappa*, abbonati a OsmAnd Pro per [Android](../purchases/android.md#pro-features) o [iOS](../purchases/ios.md#pro-features).
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -128,7 +128,7 @@ Il widget mostra la velocità attuale rilevata dal sensore GPS.
 
 ## Velocità media {#average-speed}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -170,7 +170,7 @@ Il widget **Velocità media** calcola e visualizza la tua velocità media su un 
 
 Dopo il ripristino, la velocità media viene ricalcolata dai nuovi dati GPS. Questa funzione è utile per il monitoraggio della velocità in tempo reale, ad esempio per tenere traccia della velocità in aree con **telecamere di controllo della velocità media**.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -196,7 +196,7 @@ Dopo il ripristino, la velocità media viene ricalcolata dai nuovi dati GPS. Que
 
 ## Rapporto di planata {#glide-ratio}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -291,7 +291,7 @@ Il widget **Livello batteria** visualizza la percentuale di batteria del tuo dis
 
 ## Widget coordinate {#coordinates-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -342,7 +342,7 @@ Puoi reimpostare la cache GPS attuale tramite:
 
 ## Posizione del sole {#sun-position}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -379,7 +379,7 @@ I widget posizione del sole mostrano i prossimi orari di alba e tramonto per il 
 Puoi leggere una descrizione più dettagliata qui: **[Righello raggio e Righello](../widgets/radius-ruler)**.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -414,7 +414,7 @@ Il widget Righello raggio mostra la distanza tra la tua posizione e il punto cen
 
 ## Tachimetro {#speedometer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -460,7 +460,7 @@ Questi widget sono abilitati e funzionano in combinazione con i loro plugin corr
 Puoi leggere una descrizione più dettagliata qui: **[Plugin <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md)**.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -492,7 +492,7 @@ I widget registrazione viaggio si riferiscono ai [widget del plugin <Translate a
 Per aggiungere i widget Sensori esterni alla schermata della mappa, abilita il plugin OsmAnd [Sensori esterni](../plugins/external-sensors.md).
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -562,7 +562,7 @@ I widget appartengono al [plugin Metriche veicolo](../plugins/vehicle-metrics.md
 Per aggiungere i widget Meteo alla schermata della mappa, abilita il plugin OsmAnd [Meteo](../plugins/weather.md).
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -690,7 +690,7 @@ I **widget sviluppatore** forniscono informazioni sulla [velocità di rendering 
 
 #### FPS rendering mappa {#map-rendering-fps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -718,7 +718,7 @@ Il [widget FPS rendering mappa](../plugins/development.md#map-rendering-fps-widg
 
 #### Widget telecamera {#camera-widgets}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

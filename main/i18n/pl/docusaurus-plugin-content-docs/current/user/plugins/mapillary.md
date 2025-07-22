@@ -27,7 +27,7 @@ Aby wyświetlić obrazy na poziomie ulicy na mapie OsmAnd, należy dokonać nast
 
 ## Warstwa mapy {#map-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ Warstwa mapy z obrazami ulic jest wyświetlana na mapie OsmAnd jako rzędy poł�
 
 ### Włącz warstwę {#enable-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -80,7 +80,7 @@ Aby wyświetlić obrazy Mapillary na poziomie ulicy na mapie, należy włączyć
 
 ### Filtrowanie danych {#data-filtering}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -106,7 +106,7 @@ Jeśli wybrane obrazy nie są wyświetlane, użyj opcji **Przeładuj** dla **Pam
 
 ## Menu kontekstowe mapy {#map-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -126,7 +126,7 @@ Jeśli wtyczka Mapillary jest włączona, możesz przeglądać zdjęcia ulic dos
 
 ## Dodaj zdjęcia {#add-photos}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -146,7 +146,7 @@ Aby dodać zdjęcia, musisz zarejestrować się w [aplikacji Mapillary](https://
 
 ## Widżet Mapillary {#mapillary-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

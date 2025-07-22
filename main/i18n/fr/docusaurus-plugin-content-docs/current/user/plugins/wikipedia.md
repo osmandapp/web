@@ -58,7 +58,7 @@ Vous pouvez ouvrir les données Wikipedia à télécharger par région comme sui
 2. **iOS**. Allez dans : *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 3. Sélectionnez la région requise. Une fois la région ouverte, les données Wikipedia seront parmi les autres paquets.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -96,7 +96,7 @@ Pour afficher/masquer les POI Wikipedia, procédez comme suit :
 2. Sélectionnez un profil, et recherchez la section *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* des paramètres dans le menu.
 3. Activez *<Translate android="true" ids="poi_osmwiki"/>* **pour Android** / *<Translate ios="true" ids="download_wikipedia_maps"/>* **pour iOS**.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -123,7 +123,7 @@ Lorsque vous appuyez sur le bouton Rechercher, un panneau supplémentaire appara
 - Dans la version **iOS**, pour ouvrir [Rechercher](../search/index.md), l'icône de recherche se trouve dans le coin supérieur gauche de l'écran.
 
 <!--
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Lorsque vous appuyez sur le bouton Rechercher, un panneau supplémentaire appara
 
 - Pour rechercher par [catégorie](../search/search-poi.md#poi-search) Wikipedia, sélectionnez : *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -174,7 +174,7 @@ Pour ouvrir l'article Wikipedia :
 
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -204,7 +204,7 @@ Dans les versions **Android** et **iOS** de l'application OsmAnd, vous pouvez d�
 3. Désactivez l'option *<Translate android="true" ids="shared_string_all_languages"/>*.
 4. Sélectionnez la ou les langues spécifiques dans la liste ouverte.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -232,7 +232,7 @@ Dans la version **iOS**, vous pouvez également définir la langue préférée p
 
 Si l'*article Wikipedia* est disponible en différentes langues, vous pouvez changer de langue pendant la lecture. Après avoir appuyé sur l'icône correspondante dans le coin supérieur droit de l'écran, des options vous seront proposées.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ Vous pouvez choisir de télécharger ou non les images de Wikipedia sur votre ap
 - **Android**. Ouvrez *[Article Wikipedia](#display-wikipedia-on-the-map) → &#8942; → Options*
 - **iOS**. Ouvrez *[Article Wikipedia](#display-wikipedia-on-the-map) → Icône d'image*
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

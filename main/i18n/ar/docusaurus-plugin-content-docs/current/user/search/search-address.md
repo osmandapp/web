@@ -27,7 +27,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## البحث بالنص الكامل {#full-text-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -77,7 +77,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## تحديد المدينة {#select-city}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## تحديد الشارع {#select-street}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -146,7 +146,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## البحث بالرمز البريدي {#postcode-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -180,7 +180,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## البحث بالإحداثيات {#coordinates-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

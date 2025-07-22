@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Toutes les traces dans OsmAnd sont stockées dans un onglet de *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd traite le fichier de trace au [format GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), mais les formats [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) et [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) peuvent être importés et convertis en GPX. Pour en savoir plus sur les différents types de traces, consultez l'article [Traces sur la carte](../../map/tracks/index.md#types-of-tracks).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Toutes les traces dans OsmAnd sont stockées dans un onglet de *<Translate andro
 
 ## Créer une trace {#create-a-track}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Vous pouvez ajouter des traces dans OsmAnd de la manière suivante :
 
 ## Gérer les traces {#manage-tracks}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -91,7 +91,7 @@ Toutes les traces jamais enregistrées, créées ou importées sont automatiquem
 
 ### Menu des traces {#track-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -147,7 +147,7 @@ Le menu propose les actions suivantes :
 
 ### Rechercher {#search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -174,7 +174,7 @@ Disponible :
 
 ### Mode de sélection {#selection-mode}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Une fois que vous avez fait votre choix, les étapes suivantes sont fournies :
 
 ### Trier par {#sort-by}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ OsmAnd offre un moyen facile de trier vos traces, vous aidant à gérer une gran
 
 #### Tri des sous-dossiers {#sorting-subfolders}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -276,7 +276,7 @@ L'option de tri sélectionnée est appliquée non seulement au sous-dossier actu
 
 ## Dossier de traces {#track-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -320,7 +320,7 @@ Comment ouvrir le menu du dossier :
 
 ### Statistiques du dossier {#folder-statistics}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ En bas de la liste dans l'onglet *Traces*, et en dessous de la liste des traces 
 
 ### Actions du dossier {#folder-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -400,7 +400,7 @@ Comment ouvrir les actions du dossier :
 
 ### Supprimer le dossier {#delete-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -455,7 +455,7 @@ L'outil d'importation vous permet d'ajouter des traces à partir de fichiers ext
 
 ### Exporter {#export}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -53,7 +53,7 @@ OsmAnd supporta l'**utilizzo multipiattaforma** su *([Android](../purchases/andr
 
 ## Accesso {#login}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -99,7 +99,7 @@ Se riscontri problemi durante la registrazione:
 
 ## OsmAnd Start {#osmand-start}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ Funzionalità incluse in OsmAnd Start:
 
 ### Come attivare OsmAnd Start {#how-to-activate-osmand-start}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -165,7 +165,7 @@ Se hai già un abbonamento **OsmAnd Pro** o un **account OsmAnd Cloud attivo**, 
 
 ## Ultima sincronizzazione {#last-sync}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ Per utilizzare questa funzionalità:
 
 ## Cestino {#trash}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ La funzionalità **Cestino** ti consente di visualizzare e gestire i file che so
 
 ## Impostazioni {#settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -281,7 +281,7 @@ Questa sezione serve per modificare e gestire il tuo OsmAnd Cloud.
 
 ### Seleziona dati da sottoporre a backup {#select-data-to-back-up}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -314,7 +314,7 @@ Tutte le [mappe](../start-with/download-maps.md) sono archiviate sul dispositivo
 
 ### Gestisci spazio di archiviazione {#manage-storage}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -346,7 +346,7 @@ Questa sezione contiene informazioni su quale dei tuoi account è connesso a Osm
 
 ### Opzione di eliminazione {#deletion-option}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -382,7 +382,7 @@ Le azioni che puoi eseguire nella sezione **Zona pericolosa** del menu Impostazi
 
 ## Elenco delle modifiche {#list-of-changes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -409,7 +409,7 @@ Nella sezione [Ultima sincronizzazione](#last-sync) del menu a discesa, tocca un
 
 ### Locale e Cloud {#local-and-cloud}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -438,7 +438,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 
 ### Conflitti {#conflicts}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

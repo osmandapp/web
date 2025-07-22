@@ -38,7 +38,7 @@ Narzędzia **Import** i **Eksport** w OsmAnd umożliwiają zarządzanie danymi. 
 
 ### Eksport {#export}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Wszystkie skonfigurowane i utworzone dane można wyeksportować za pomocą ***me
 
 ### Import {#import}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

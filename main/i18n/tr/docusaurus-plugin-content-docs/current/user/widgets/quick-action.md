@@ -26,7 +26,7 @@ Hızlı Eylem pencere öğesi, ek ayarları açmaya gerek kalmadan temel işlevl
 
 ## Hızlı Eylem Pencere Öğesi {#quick-action-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Hızlı Eylem düğmesini kullanmak için önce bu pencere öğesini etkinleşti
 
 ### Eylem Ekle ve Sil {#add-and-delete-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Hızlı eylem düğmesine bir veya daha fazla [eylem](#action-types) atayabilirs
 
 ### Eylem Parametreleri {#action-parameters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -163,7 +163,7 @@ Düğme, tek bir katman veya dokunulduğunda veya ara bir iletişim kutusuyla da
 
 ### Özel düğmeler {#custom-buttons}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

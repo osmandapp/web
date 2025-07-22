@@ -29,7 +29,7 @@ Araç Metrikleri eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](
 
 OBD-II tarayıcıları, modern otomotiv teşhislerinin ayrılmaz bir parçasıdır. Gerçek zamanlı veri akışı ile kullanıcılar, araç sistemleri hakkında anlık bilgiler edinerek önleyici bakımı kolaylaştırır ve onarım maliyetlerini düşürür. Bu araçlar hem kişisel kullanım hem de profesyonel otomotiv hizmetleri için hayati öneme sahiptir.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -27,7 +27,7 @@ OsmAnd ofrece varias formas de acceder a la *herramienta de búsqueda → [pesta
 
 ## Cómo usar {#how-to-use}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

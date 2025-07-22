@@ -29,7 +29,7 @@ Este tipo de ruta no considera ningún obstáculo o barrera que pueda estar pres
 Al utilizar los tipos de navegación Directa a un punto y Barco, necesitará [datos de curvas de nivel de profundidad](../../plugins/nautical-charts.md#nautical-map-style), que pueden habilitarse y configurarse en *Configurar mapa*.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

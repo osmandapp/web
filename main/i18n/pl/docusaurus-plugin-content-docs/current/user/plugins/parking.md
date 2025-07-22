@@ -24,7 +24,7 @@ Ta wtyczka jest darmowa i działa offline z pobranymi mapami OsmAnd. Możesz szy
 
 Znacznik jest tymczasowy i łatwy do usunięcia, gdy nie jest już potrzebny.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -56,7 +56,7 @@ Po zaznaczeniu miejsca parkingowego OsmAnd zapisuje jego współrzędne geografi
 
 Aby ustawić miejsce parkingowe na mapie, powiększ do wymaganego poziomu, a następnie długo naciśnij miejsce na mapie i w otwartym [menu kontekstowym](../map/map-context-menu.md) dokonaj ustawień.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -87,7 +87,7 @@ Czas rozpoczęcia jest zawsze ustawiany automatycznie. Jeśli chcesz zmienić cz
 
 ### Bądź na bieżąco {#stay-informed}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ Dodatkowe szczegóły są wyświetlane po naciśnięciu znacznika parkowania:
 
 ### Nawigacja do punktu trasy {#navigating-to-a-waypoint}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -151,7 +151,7 @@ Możesz użyć miejsca parkingowego jako celu nawigacji, aby łatwo wrócić do 
 
 ### Usuwanie miejsca {#remove-a-spot}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -179,7 +179,7 @@ Jeśli ustawiono przypomnienie w kalendarzu, zostanie ono również automatyczni
 
 ## Widżet parkowania {#parking-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

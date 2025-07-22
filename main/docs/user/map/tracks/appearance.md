@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 The **Track Appearance** feature allows users to customize how tracks are displayed on the map. This includes adjusting color, width, direction indicators, and other visual elements. Customizing track appearance helps differentiate multiple tracks, highlight specific routes, and improve map readability.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -121,7 +121,7 @@ Restores all **track appearance settings** to their default values.
 **3D Track** is an **OsmAnd Pro** paid feature for [iOS](../../purchases/ios.md#pro-features) and [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -184,7 +184,7 @@ The 3D track feature is highly beneficial for activities like paragliding, where
 
 ## Change Appearance for Multiple Tracks {#change-appearance-for-multiple-tracks}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

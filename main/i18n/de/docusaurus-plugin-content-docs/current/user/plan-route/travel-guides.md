@@ -26,7 +26,7 @@ Virtuelle Reiseführer in OsmAnd bieten Nutzern wertvolle Informationen, Empfehl
 OsmAnd Reiseführer basieren auf Daten von [Wikivoyage](https://www.wikivoyage.org/), einem Community-Projekt ähnlich wie Wikipedia, bei dem Freiwillige aktuelle Artikel erstellen.
 Wikivoyage-Informationen umfassen die wichtigsten Fakten über einen Ort, Transport, Attraktionen, Einkaufen und mehr.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ Wikivoyage-Informationen umfassen die wichtigsten Fakten über einen Ort, Transp
 
 ### Artikel herunterladen {#download-articles}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -96,7 +96,7 @@ Wenn Sie *Reiseführer* (*<Translate android="true" ids="shared_string_menu,shar
 
 ### Erkunden und Lesezeichen {#explore-and-bookmark}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -121,7 +121,7 @@ Wenn Sie auf die Schaltfläche *Lesezeichen* tippen, wird der Artikel zum späte
 
 ### Suche {#search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -151,7 +151,7 @@ Neben jedem Suchergebnis werden die ersten 3 am häufigsten verwendeten Sprachen
 
 ### Optionen {#options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -176,7 +176,7 @@ Im Menü Optionen können Sie auswählen, ob Bilder in den angezeigten Artikeln 
 
 ## Reiseartikel {#travel-article}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -208,7 +208,7 @@ Am unteren Bildschirmrand befinden sich Schaltflächen wie:
 
 ### Navigationsmenü {#navigation-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Wenn Sie auf den Pfeil in der oberen linken Ecke des Bildschirms tippen, gelange
 
 ### Inhaltsverzeichnis {#table-of-contents}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -259,7 +259,7 @@ Die meisten *Reiseführer-Artikel* haben die gleiche Inhaltsstruktur: *Einleitun
 
 ### Punkte {#points}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -329,7 +329,7 @@ Im *[Track-Kontextmenü](../map/tracks/track-context-menu.md)* der GPX-Datei fin
 
 ## Mit Wikipedia kombinieren {#combine-with-wikipedia}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

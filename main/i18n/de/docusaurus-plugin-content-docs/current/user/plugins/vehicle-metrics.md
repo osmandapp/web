@@ -29,7 +29,7 @@ Das Plugin **Fahrzeugmetriken** ermöglicht die Echtzeit-Überwachung von Fahrze
 
 OBD-II-Scanner sind ein integraler Bestandteil der modernen Fahrzeugdiagnostik. Mit Echtzeit-Datenstreaming erhalten Benutzer sofortige Einblicke in Fahrzeugsysteme, was präventive Wartung erleichtert und Reparaturkosten reduziert. Diese Werkzeuge sind sowohl für den persönlichen Gebrauch als auch für professionelle Fahrzeugdienste unerlässlich.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

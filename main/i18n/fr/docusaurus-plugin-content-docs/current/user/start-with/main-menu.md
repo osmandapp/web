@@ -20,7 +20,7 @@ Le **Menu principal** est une liste d'options principales disponibles dans l'app
 
 L'icône du [Menu principal](../widgets/map-buttons.md#main-menu) '&#8801;' est située dans le coin inférieur gauche de l'écran Carte. En mode navigation, ce bouton n'est pas visible par défaut. Il apparaît après un court appui sur la carte.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

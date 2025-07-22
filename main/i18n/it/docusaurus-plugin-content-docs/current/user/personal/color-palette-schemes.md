@@ -28,7 +28,7 @@ Le combinazioni di colori sono utilizzate nella [colorazione dei percorsi](#rout
 
 I dati della tavolozza dei colori sono disponibili nel menu [*Mappe e risorse*](../personal/maps-resources.md#local).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -51,7 +51,7 @@ Vai a: *Menu → Mappe e risorse → Locale → Colori*
 
 ## Tipi di schema {#scheme-types}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Dopo aver spostato questo file TXT in *..Android/data/net.osmand/files/color-pal
 
 ### Azioni rapide {#quick-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -158,7 +158,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 ### Importa / Esporta colori {#import--export-colors}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -22,7 +22,7 @@ Cette fonction vous permet de trouver rapidement des traces spécifiques qui cor
 
 ## Filtre de recherche {#search-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -56,7 +56,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 ### Filtres disponibles {#available-filters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -104,7 +104,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 ## Dossier intelligent {#smart-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -153,7 +153,7 @@ Le **Dossier intelligent** nouvellement créé mettra automatiquement à jour so
 
 ### Gestion des Dossiers intelligents {#managing-smart-folders}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

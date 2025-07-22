@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Para uma navegação bem-sucedida, é importante configurar corretamente as definições apropriadas de acordo com as suas necessidades e a forma como viaja - de carro, a pé, a cavalo ou de esqui. Este artigo descreve os parâmetros básicos de rota, [Instruções de voz](#voice-prompts), [Alertas no ecrã](#screen-alerts), [Comportamento do mapa durante a navegação](#map-during-navigation) e a [Aparência das linhas de rota](#customize-route-line). Também detalha as configurações do veículo, como [Velocidade padrão](#default-speed) e [Velocidade máxima/mínima](#road-speeds), [Tipo de motor](#fuel-used-by-motor) para cálculo de CO2, [Capacidade do depósito de combustível](#fuel-tank-capacity) e [Tamanho/peso](#size-parameters), que podem afetar a rota. Ajustar estas configurações irá ajudá-lo a tirar o máximo partido do OsmAnd e a atingir o seu objetivo sem atrasos desnecessários.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ O perfil predefinido *Navegar mapa* não tem definições de navegação.
 
 ## Tipo de Navegação {#navigation-type}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ O tipo de navegação determina quais as regras usadas para calcular rotas. Se p
 
 ## Parâmetros de Rota {#route-parameters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -110,7 +110,7 @@ Todos os parâmetros de rota são descritos em detalhe nas secções corresponde
 
 ### Recalcular Rota {#recalculate-route}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ O parâmetro **Cálculo de Rota** altera automaticamente a rota calculada quando
 
 ### Definições de Desenvolvimento {#development-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -178,7 +178,7 @@ Os parâmetros na secção **Desenvolvimento** destinam-se principalmente a util
 
 ## Instruções de Voz {#voice-prompts}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ As *instruções de voz* permitem-lhe concentrar-se na estrada e não se distrai
 
 ## Alertas no Ecrã {#screen-alerts}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Os tipos de avisos têm uma aparência visual diferente, que depende da região 
 
 ## Mapa Durante a Navegação {#map-during-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -277,7 +277,7 @@ Pode aprender como o comportamento do mapa muda durante a navegação no artigo 
 
 ## Personalizar Linha de Rota {#customize-route-line}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -302,7 +302,7 @@ Com a configuração **Personalizar Linha de Rota**, pode escolher a aparência 
 
 ## Parâmetros do Veículo {#vehicle-parameters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -334,7 +334,7 @@ A configuração correta dos parâmetros na aplicação OsmAnd irá ajudá-lo a 
 
 ### Parâmetros de Tamanho {#size-parameters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -396,7 +396,7 @@ Estas restrições podem ser importantes para a navegação e devem ser consider
 
 #### Combustível Usado pelo Motor {#fuel-used-by-motor}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ A definição **Combustível usado pelo motor** só está disponível em navega�
 
 #### Capacidade do depósito de combustível {#fuel-tank-capacity}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -459,7 +459,7 @@ Para garantir cálculos e sugestões de navegação precisos, verifique se a sua
 
 ### Velocidade Padrão / Velocidades de Estrada {#default-speed--road-speeds}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -498,7 +498,7 @@ A **Velocidade Padrão** é a velocidade de movimento predefinida. É usada para
 
 
 <!--
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -528,7 +528,7 @@ A definição estabelece a velocidade máxima de condução e diminui a priorida
 
 ## Orientação Detalhada da Faixa {#detailed-track-guidance}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

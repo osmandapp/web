@@ -159,7 +159,7 @@ I percorsi di viaggio fanno parte di file personalizzati di [Guide di viaggio](.
 
 ## Visualizzare i percorsi sulla mappa {#display-routes-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 ## Azioni con i percorsi {#actions-with-routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ Nel **menu contestuale**, è possibile:
 
 ### Info percorso e altitudine {#route-info-and-elevation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -248,7 +248,7 @@ Le seguenti informazioni saranno visibili nel menu contestuale:
 
 Per visualizzare il grafico dell'altitudine, della pendenza o dei dettagli dell'altitudine per un percorso selezionato, è sufficiente toccare uno dei seguenti valori nel menu contestuale: **Distanza**, **Salita**, **Discesa** o **Altitudine**.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Per visualizzare il grafico dell'altitudine, della pendenza o dei dettagli dell'
 
 ### Salva come traccia {#save-as-a-track}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ Per salvare il percorso come file *GPX*, toccare il pulsante **Salva (Download)*
 
 ### Avvia navigazione {#start-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -321,7 +321,7 @@ Trova percorsi utilizzando la [funzione di ricerca](../search/index.md) per nome
 
 Per cercare, vai al menu *<Translate android="true" ids="search_button"/>* o *<Translate android="true" ids="search_button,search_categories"/>* e inserisci la tua attività.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -339,7 +339,7 @@ Per cercare, vai al menu *<Translate android="true" ids="search_button"/>* o *<T
 
 Naviga su *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* per trovare i percorsi desiderati. I percorsi includono nome, tipo di attività, lunghezza, posizione e distanza dal punto più vicino.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ Naviga su *<Translate android="true" ids="search_button,search_categories,poi_ro
 
 Utilizza il pulsante filtri (angolo in alto a destra) per visualizzare solo i percorsi desiderati.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -31,7 +31,7 @@ Para exibir imagens ao nível da rua no mapa OsmAnd, precisa de fazer as seguint
 
 ## Camada de Mapa {#map-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -57,7 +57,7 @@ A camada do mapa com imagens de rua é exibida no mapa OsmAnd como linhas de pon
 
 ### Ativar Camada {#enable-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ Para exibir imagens ao nível da rua do Mapillary no mapa, precisa de ativar est
 
 ### Filtragem de Dados {#data-filtering}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -113,7 +113,7 @@ Se as imagens selecionadas não forem exibidas, utilize **Recarregar** para a **
 
 ## Menu de Contexto do Mapa {#map-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -134,7 +134,7 @@ Se o plugin Mapillary estiver ativado, pode ver fotos de ruas disponíveis num r
 
 ## Adicionar Fotos {#add-photos}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Para adicionar fotos, precisa de se registar na [aplicação Mapillary](https://
 
 ## Widget Mapillary {#mapillary-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

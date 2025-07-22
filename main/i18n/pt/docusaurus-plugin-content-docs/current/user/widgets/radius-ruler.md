@@ -32,7 +32,7 @@ Essas ferramentas são úteis para planejar rotas, estimar a proximidade de pont
 
 ## Régua {#ruler}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Essa ferramenta é útil quando você precisa de uma compreensão rápida dos ta
 
 ## Widget de Régua de Raio {#radius-ruler-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ O [Widget de Régua de Raio](../widgets/info-widgets.md#radius-ruler) mostra a d
 
 Use este widget para estimar a proximidade de pontos de interesse ou planejar em torno de uma área definida.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Use este widget para estimar a proximidade de pontos de interesse ou planejar em
 
 ## Bússola para Régua de Raio {#compass-for-radius-ruler}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Esta sobreposição é útil para navegação ao ar livre, permitindo que você 
 
 ## Posição Central / Inferior {#center--bottom-position}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -177,7 +177,7 @@ Para mais informações sobre *a posição na tela*, consulte o artigo [Configur
 
 ## Visualização 3D {#3d-view}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -227,7 +227,7 @@ Existem dois casos de uso:
 
 Assista a estes tutoriais curtos para aprender como usar a Régua de Raio e ferramentas relacionadas no OsmAnd:
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

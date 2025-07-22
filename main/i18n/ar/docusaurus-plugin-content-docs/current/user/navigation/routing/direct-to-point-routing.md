@@ -33,7 +33,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 عند استخدام أنواع التنقل المباشر إلى نقطة والقارب، ستحتاج إلى [بيانات خطوط عمق الكنتور](../../plugins/nautical-charts.md#nautical-map-style)، والتي يمكن تمكينها وتعيينها في *تكوين الخريطة*.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

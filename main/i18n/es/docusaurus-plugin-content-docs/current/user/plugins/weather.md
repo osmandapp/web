@@ -50,7 +50,7 @@ El complemento El tiempo solo está disponible con el motor de renderizado de ma
 
 ### Pantalla de pronóstico del tiempo {#weather-forecast-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ En la parte inferior de la pantalla se encuentra la *barra de herramientas del t
 
 ### Personalizar capas de El tiempo {#customize-weather-layers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -102,7 +102,7 @@ En este menú, puedes cambiar la **visibilidad** y los [ajustes](#weather-settin
 
 ### Ajustes de El tiempo {#weather-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Todos los datos meteorológicos se presentan como capas de mapa separadas. Para 
 
 ### Combinar mapas {#combine-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -190,7 +190,7 @@ En dispositivos Android, puedes verificar cuándo se han descargado los datos me
 
 ### Descargar pronóstico {#download-forecast}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -225,7 +225,7 @@ OsmAnd genera un nuevo pronóstico cada 6 horas.
 
 ## Widgets de El tiempo {#weather-widgets}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

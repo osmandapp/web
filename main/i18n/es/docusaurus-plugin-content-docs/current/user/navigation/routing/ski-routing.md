@@ -35,7 +35,7 @@ Por defecto, el *perfil de esquí* está desactivado. Para usar este perfil para
 
 La configuración de *rutas de esquí* permite a los usuarios planificar sus rutas seleccionando el nivel de dificultad deseado y el tipo de terreno que desean explorar. Hay varias opciones para un movimiento seguro, cómodo y agradable en pistas o durante un freeride.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

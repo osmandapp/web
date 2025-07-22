@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Eles podem ser particularmente úteis para caminhantes, ciclistas ou qualquer pessoa explorando uma nova área que queira marcar locais interessantes ou pontos de referência no mapa. A principal diferença dos [Pontos Favoritos](../../personal/favorites.md) é que os Marcadores são mais rápidos de criar, pois não exigem um nome.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -41,7 +41,7 @@ Eles podem ser particularmente úteis para caminhantes, ciclistas ou qualquer pe
 
 ## Usar Marcadores na Navegação {#use-markers-in-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -81,7 +81,7 @@ Quando as opções **Setas no mapa** e **Linha de direção** estão ativadas na
 
 ## Lista de Itinerários {#itinerary-list}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ Apenas rotas com pontos de rota podem ser adicionadas à *lista de Marcadores de
 
 ## Classificar Marcadores {#sort-markers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -164,7 +164,7 @@ Na versão Android do aplicativo OsmAnd, existem outras opções de classificaç
 
 ### Classificar por Atributos {#sort-by-attributes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ Usando a funcionalidade de planejar uma rota na ferramenta de lista de Marcadore
 
 ## Passar Marcadores {#pass-markers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

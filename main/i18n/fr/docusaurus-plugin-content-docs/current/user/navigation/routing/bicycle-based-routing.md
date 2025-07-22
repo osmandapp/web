@@ -27,7 +27,7 @@ Vous pouvez configurer l'*itinéraire à vélo* dans la section [Paramètres de 
 
 Les fonctionnalités d'itinéraire à vélo d'OsmAnd permettent aux cyclistes de saisir un point de départ et un point d'arrivée, puis de générer un itinéraire qui tient compte de leurs préférences et de la géographie locale.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

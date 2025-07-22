@@ -32,7 +32,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 *المسافة إلى العلامة* هي طول الخط المستقيم بين موقعك (أو نقطة مركز الخريطة / نقطة لمس الخريطة الأولية عندما يكون الموقع مغلقًا) والعلامة.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -82,7 +82,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 :::
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -140,7 +140,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 تتوفر تهيئة مظهر علامات الخريطة في كل من إصداري أندرويد و iOS من OsmAnd. قائمة "المظهر على الخريطة" هي إعداد عام لعلامات الخريطة وتُطبق سواء كانت الأدوات ممكّنة أم لا. يمكنك قراءة المعلومات التفصيلية في هذه [الصفحة](../personal/markers.md#appearance-on-the-map).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

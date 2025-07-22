@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd le permite encontrar la mejor ruta y explorar sus detalles. La aplicación proporciona información detallada sobre la ruta, como la distancia, el [tiempo de viaje](#distance--time--co2), el [tipo de superficie](#road-attributes), las [diferencias de elevación](#elevation-info), los [datos de la huella de CO2](#distance--time--co2) y la [información de giro](#turn-by-turn-information). También puede [analizar](#analyze-on-map) la ruta en el mapa, averiguar información sobre los segmentos de la pista, [imprimir](#print) el plan de ruta, [guardar](#share--export-actions) la ruta y compartirla con otros. Con esta funcionalidad, siempre conocerá los detalles de la ruta y podrá planificar su viaje de manera más eficiente.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ Dependiendo de la [configuración del perfil](../../personal/profiles.md) selecc
 
 ## Distancia / Tiempo / CO2 {#distance--time--co2}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -75,7 +75,7 @@ Dependiendo de la [configuración del perfil](../../personal/profiles.md) selecc
 
 ## Información de elevación {#elevation-info}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Los datos de altitud en el mapa (entre 70 grados de latitud norte y 70 grados de
 
 ### Gráfico de elevación {#elevation-graph}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -135,7 +135,7 @@ Los [gráficos](../../map/tracks/track-context-menu.md#altitude--speed-graphs) m
 
 ## Analizar en el mapa {#analyze-on-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -173,7 +173,7 @@ Si hay datos presentes, puede seleccionar uno de los siguientes tipos:
 
 ## Atributos de la carretera {#road-attributes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -219,7 +219,7 @@ Los atributos de la carretera son accesibles en los [Detalles de la ruta](#how-t
 
 ## Información giro a giro {#turn-by-turn-information}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -241,7 +241,7 @@ Toque una sección específica de la ruta en la lista para ver información deta
 
 ### Instrucciones {#instructions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -298,7 +298,7 @@ La capacidad de **imprimir** o **guardar** la información giro a giro **en form
 
 ## Compartir / Exportar (Acciones) {#share--export-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

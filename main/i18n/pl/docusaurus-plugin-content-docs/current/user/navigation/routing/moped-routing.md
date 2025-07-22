@@ -30,7 +30,7 @@ Domyślnie *profil motoroweru* jest dezaktywowany. Aby użyć tego profilu do wy
 
 Ustawienia wyznaczania trasy dla motorowerów są bardzo proste i składają się z zaledwie kilku opcji.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

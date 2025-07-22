@@ -25,7 +25,7 @@ Daten zu öffentlichen Verkehrsrouten stammen aus dem [OpenStreetMap](http://ope
 Das Routing mit öffentlichen Verkehrsmitteln befindet sich in der Testphase. Vorerst können Sie Ihre Route erstellen und anzeigen, jedoch ohne die vollständige Navigationsfunktion.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ Um mit der Navigation durch die Stadt mit öffentlichen Verkehrsmitteln zu begin
 
 **1.** Sie müssen das *Navigationsprofil für öffentliche Verkehrsmittel* sowie Start- und Zielpunkte auswählen.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Um mit der Navigation durch die Stadt mit öffentlichen Verkehrsmitteln zu begin
 
 **2.** OsmAnd bietet Routenoptionen mit Gehzeiten und öffentlichen Verkehrsrouten mit Routeninformationen: Zeit, Entfernung, Umsteigen und öffentliche Routen. Sie müssen den Navigationsbildschirm durchblättern, um die gewünschte Option auszuwählen.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ Um mit der Navigation durch die Stadt mit öffentlichen Verkehrsmitteln zu begin
 
 **3.** Sie können alle möglichen Routenvorschläge auf der Karte mit der Schaltfläche *Auf Karte anzeigen* anzeigen. Wischen Sie durch die Bildschirme, um die nächste Routenoption anzuzeigen.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Um mit der Navigation durch die Stadt mit öffentlichen Verkehrsmitteln zu begin
 
 **4.** Tippen Sie auf die Schaltfläche "Details", um eine Beschreibung der ausgewählten Route mit allen Haltestellen und Umstiegen zu öffnen.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

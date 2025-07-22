@@ -21,7 +21,7 @@ Opcja *Nawigacja po śladzie* (GPX) pozwala podążać po wcześniej zdefiniowan
 
 Opcja *Nawigacja po śladzie* może być również używana w życiu codziennym. Możesz użyć wcześniej [nagranego śladu](../../plugins/trip-recording.md) lub [utworzyć ślad](../../personal/tracks/manage-tracks.md#create-a-track) i udostępnić go rodzinie lub znajomym, zamiast wyjaśniać im trasę. Możesz również użyć [tras na mapie OsmAnd](../../../../blog/routes/) do nawigacji. Jak je wyróżnić na mapie i co oznaczają ich kolory, opisano w sekcji [Trasy](../../map/vector-maps.md#routes) artykułu *Mapy wektorowe*.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ Przed użyciem opcji *Nawigacja po śladzie* musisz [wyświetlić ślad na mapie
 
 ### Rozpocznij nawigację GPX {#start-gpx-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ Nawigację po śladzie można rozpocząć za pomocą przycisku szybkiej akcji w 
 
 ### Wybierz segmenty {#choose-segments}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -97,7 +97,7 @@ W przypadku nawigacji, jeśli wybrany ślad składa się z wielu segmentów lub 
 
 ### Opcje śledzenia {#follow-track-options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ do *<Translate android="true" ids="start_of_the_track"/>* lub do *<Translate and
 
 ### Dołącz do dróg {#attach-to-the-roads}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

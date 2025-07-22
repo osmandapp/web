@@ -57,7 +57,7 @@ You can open Wikipedia data to download by region as follows:
 2. **iOS**. Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 3. Select the required region. Once the region is opened, the Wikipedia data will be among other packages.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -95,7 +95,7 @@ To show/hide Wikipedia POIs, do the following:
 2. Select a Profile, and look for the *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* section of settings in the menu.  
 3. Toggle  *<Translate android="true" ids="poi_osmwiki"/>* **for Android** / *<Translate ios="true" ids="download_wikipedia_maps"/>* **for iOS** on.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -122,7 +122,7 @@ When you tap the Search button, an additional panel appears allowing you to [sea
 - In the **iOS** version, to open [Search](../search/index.md), the Search icon is in the upper left corner of the screen.
 
 <!--
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -142,7 +142,7 @@ When you tap the Search button, an additional panel appears allowing you to [sea
 
 - To search by the Wikipedia [category](../search/search-poi.md#poi-search), select: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -173,7 +173,7 @@ To open the Wikipedia article:
 
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -203,7 +203,7 @@ In the **Android** and **iOS** versions of the OsmAnd app, you can set your pref
 3. Disable *<Translate android="true" ids="shared_string_all_languages"/>* option.  
 4. Select specific language(-s) in the opened list.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ In the **iOS** version, you can also set the preferred language for Wikipedia ar
 
 In case the *Wikipedia article* is available in different languages, you can switch the language while reading. After tapping the corresponding icon in the upper right corner of the screen you will be offered options to choose from.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -255,7 +255,7 @@ You can choose whether to download images from Wikipedia on your device or not i
 - **Android**. Open *[Wikipedia article](#display-wikipedia-on-the-map) → &#8942; → Options*
 - **iOS**. Open *[Wikipedia article](#display-wikipedia-on-the-map) → Image icon*
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

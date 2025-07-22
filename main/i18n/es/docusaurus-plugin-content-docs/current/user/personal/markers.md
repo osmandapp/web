@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Los marcadores son puntos especiales marcados en el mapa como banderas que pueden crearse rápidamente con un solo toque sin especificar el nombre y otra información, a diferencia de los [puntos favoritos](./favorites.md). Además, los marcadores proporcionan funcionalidades adicionales con [widgets](../widgets/markers.md), **flechas** (<Translate android="true" ids="show_arrows_on_the_map"/>) e **indicación de distancia** (<Translate android="true" ids="show_direction"/>).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Los marcadores son puntos especiales marcados en el mapa como banderas que puede
 
 ### Añadir / Editar Marcadores {#add--edit-markers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Los marcadores se pueden añadir y eliminar como un grupo completo desde un grup
 
 ### Historial {#history}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -124,7 +124,7 @@ El historial es una lista de todos los marcadores desactivados (pasados). Desde 
 
 ## Apariencia en el mapa {#appearance-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

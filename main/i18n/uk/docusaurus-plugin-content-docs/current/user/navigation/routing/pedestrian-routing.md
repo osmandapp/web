@@ -24,7 +24,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Пішохідна навігація може бути корисною не тільки в міських районах, де пішоходи можуть зіткнутися з різними перешкодами, намагаючись дістатися з одного місця в інше. Ви також можете використовувати цей тип навігації під час бігу, піших прогулянок та скандинавської ходьби за містом або в горах. Просто налаштуйте параметри навігації відповідно до ваших потреб.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

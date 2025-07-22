@@ -26,7 +26,7 @@ Bu eklenti ücretsizdir ve indirilen OsmAnd haritalarıyla çevrimdışı çalı
 
 İşaretleyici geçicidir ve artık ihtiyaç duyulmadığında kolayca kaldırılabilir.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ Bir park yeri işaretlediğinizde, OsmAnd coğrafi koordinatlarını bir zaman d
 
 Haritada bir Otopark konumu ayarlamak için, gerekli seviyeye yakınlaştırın, ardından haritadaki yere uzun dokunun ve açılan [Bağlam menüsünde](../map/map-context-menu.md) ayarları yapın.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Başlangıç zamanı her zaman otomatik olarak ayarlanır. Bitiş zamanını de�
 
 ### Bilgi Alın {#stay-informed}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -127,7 +127,7 @@ Park işaretleyicisine dokunduğunuzda ek detaylar gösterilir:
 
 ### Bir Yol Noktasına Gitme {#navigating-to-a-waypoint}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ Aracınıza kolayca geri dönmek için park yerini bir navigasyon hedefi olarak 
 
 ### Bir Konumu Kaldırın {#remove-a-spot}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Bir takvim hatırlatıcısı ayarlanmışsa, o da otomatik olarak kaldırılacak
 
 ## Otopark Widget'ı {#parking-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

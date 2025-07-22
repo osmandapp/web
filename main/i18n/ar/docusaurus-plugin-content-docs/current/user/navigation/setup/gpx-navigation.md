@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكن استخدام خيار *التنقل حسب المسار* أيضًا في الحياة اليومية. يمكنك استخدام [مسار مسجل](../../plugins/trip-recording.md) مسبقًا أو [إنشاء مسار](../../personal/tracks/manage-tracks.md#create-a-track) ومشاركته مع عائلتك أو أصدقائك بدلاً من شرح المسار لهم. يمكنك أيضًا استخدام [المسارات على خريطة OsmAnd](../../../../blog/routes/) للتنقل. كيفية تمييزها على الخريطة وما تعنيه ألوانها موضح في قسم [المسارات](../../map/vector-maps.md#routes) من مقال *خرائط المتجهات*.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -52,7 +52,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### بدء التنقل بملف GPX {#start-gpx-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -76,7 +76,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### اختيار المقاطع {#choose-segments}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -97,7 +97,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### خيارات تتبع المسار {#follow-track-options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -130,7 +130,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الإرفاق بالطرق {#attach-to-the-roads}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

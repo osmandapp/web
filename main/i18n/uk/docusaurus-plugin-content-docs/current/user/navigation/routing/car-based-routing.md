@@ -29,7 +29,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Автомобільна навігація розроблена, щоб допомогти водіям знайти найефективніші та найпряміші маршрути до місця призначення. Вона враховує загальні обмеження руху, такі як вулиці з одностороннім рухом, заборона поворотів, пішохідні зони, а також допомагає уникати доріг, які не підходять для автомобілів, наприклад, вузьких доріг або доріг з обмеженнями ваги.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Навігація для вантажівок схожа на автомобільну навігацію, але розроблена спеціально для водіїв великих комерційних транспортних засобів. Вона враховує додаткові фактори, такі як [обмеження висоти, ваги та ширини транспортного засобу](../guidance/navigation-settings.md#size-parameters) та можливість перевезення небезпечних матеріалів (перегляньте таблицю нижче). Усі інші налаштування навігації ідентичні [автомобільній навігації](#route-parameters---car).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

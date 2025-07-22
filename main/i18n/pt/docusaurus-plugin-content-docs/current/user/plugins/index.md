@@ -30,7 +30,7 @@ Para acessar a funcionalidade de um plugin, ele deve primeiro ser [ativado](#ena
 
 ### Ativar / Desativar {#enable--disable}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -100,7 +100,7 @@ A maioria dos plugins fornece configurações de perfil ou globais específicas,
 - *Menu Principal → Plugins → Nome do Plugin → Configurações (&#x2699 para iOS)* ou
 - *Menu Principal → Configurações → Perfil → [Configurações do Plugin](../personal/profiles.md#plugin-settings)*.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -26,7 +26,7 @@ Dieses Plugin ist kostenlos und funktioniert offline mit heruntergeladenen OsmAn
 
 Der Marker ist temporär und leicht zu entfernen, sobald er nicht mehr benötigt wird.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ Wenn Sie einen Parkplatz markieren, speichert OsmAnd dessen geografische Koordin
 
 Um eine Parkposition auf der Karte zu setzen, zoomen Sie auf die gewünschte Ebene, tippen und halten Sie dann auf die Stelle auf der Karte und nehmen Sie im sich öffnenden [Kontextmenü](../map/map-context-menu.md) die Einstellungen vor.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Die Startzeit wird immer automatisch festgelegt. Wenn Sie die Endzeit ändern m�
 
 ### Informiert bleiben {#stay-informed}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -127,7 +127,7 @@ Zusätzliche Details werden beim Tippen auf den Parkmarker angezeigt:
 
 ### Navigation zu einem Wegpunkt {#navigating-to-a-waypoint}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ Sie können den Parkplatz als Navigationsziel verwenden, um einfach zu Ihrem Fah
 
 ### Einen Punkt entfernen {#remove-a-spot}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Wenn eine Kalendererinnerung festgelegt wurde, wird diese ebenfalls automatisch 
 
 ## Park-Widget {#parking-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

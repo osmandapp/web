@@ -21,7 +21,7 @@ The OsmAnd ski map is a part of the vector maps and does not require additional 
 
 Two profiles are shown below: the one on the left is for skiing and the one on the right is for driving. The Skiing profile highlights trails, airways, winter colors, and all map objects useful for navigating the ski area.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ The following setting makes the OsmAnd Ski Map appear on the screen:
 
 ### Set Winter and Ski Map Style {#set-winter-and-ski-map-style}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ The Skiing profile is designed for use in combination with the Winter and Ski st
 
 ### Combine Maps {#combine-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ The Ski Map Viewer plugin is a separate application, and disabling its display d
 
 ## Skiing Profile {#skiing-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -190,7 +190,7 @@ Piste types such as *Hiking Trails* or *Sledging Trails* can be used for skiing 
 
 ### Grooming Trails {#grooming-trails}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -215,7 +215,7 @@ Special machines groom the tracks to prepare them for the appropriate activity, 
 
 ### Ski Slope Routes {#ski-slope-routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ With the Skiing profile, the ski navigation and the [Winter and Ski map style](.
 
 ### Night and Lighting {#night-and-lighting}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

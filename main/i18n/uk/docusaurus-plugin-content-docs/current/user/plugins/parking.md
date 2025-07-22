@@ -26,7 +26,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Маркер тимчасовий і його легко видалити, коли він більше не потрібен.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Щоб встановити місце паркування на карті, збільште масштаб до потрібного рівня, потім довго натисніть на місце на карті та в [Контекстному меню](../map/map-context-menu.md), що відкриється, зробіть налаштування.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Будьте в курсі {#stay-informed}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -127,7 +127,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Навігація до проміжної точки {#navigating-to-a-waypoint}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Видалити місце {#remove-a-spot}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Віджет Паркування {#parking-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

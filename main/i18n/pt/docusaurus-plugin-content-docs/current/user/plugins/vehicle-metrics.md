@@ -29,7 +29,7 @@ O **plugin Métricas do Veículo** permite o monitoramento de dados do veículo 
 
 Os scanners OBD-II são parte integrante do diagnóstico automotivo moderno. Com o streaming de dados em tempo real, os usuários obtêm informações instantâneas sobre os sistemas do veículo, facilitando a manutenção preventiva e reduzindo os custos de reparo. Essas ferramentas são vitais tanto para uso pessoal quanto para serviços automotivos profissionais.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -24,7 +24,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 يمكن أن يكون توجيه المشاة مفيدًا ليس فقط في المناطق الحضرية، حيث قد يواجه المشاة عقبات مختلفة عند محاولة الانتقال من مكان إلى آخر. يمكنك أيضًا استخدام هذا النوع من التوجيه أثناء الركض والمشي لمسافات طويلة والمشي الشمالي خارج المدينة أو في الجبال. ما عليك سوى ضبط معلمات التوجيه وفقًا لاحتياجاتك.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">  
 

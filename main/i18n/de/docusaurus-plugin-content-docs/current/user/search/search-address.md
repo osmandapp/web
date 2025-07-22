@@ -28,7 +28,7 @@ OsmAnd bietet mehrere Möglichkeiten, zum *Suchwerkzeug* zu gelangen, wo sich de
 
 ## Volltextsuche {#full-text-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ Eine Liste der verfügbaren Abfragen und unterstützten Suchformate finden Sie i
 
 ## Stadt auswählen {#select-city}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -123,7 +123,7 @@ Diese Art der Suche erleichtert das Auffinden bestimmter Orte innerhalb eines au
 
 ## Straße auswählen {#select-street}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -153,7 +153,7 @@ Die Straßensuche wird in dem Ort durchgeführt, in dem Sie sich befinden, oder 
 
 ## Postleitzahlensuche {#postcode-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -188,7 +188,7 @@ Weitere Informationen finden Sie unter **[United Kingdom Postcode data](https://
 
 ## Koordinatensuche {#coordinates-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

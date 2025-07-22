@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 توفر *قائمة سياق المسار* معلومات حول *[المسار](../../personal/tracks/index.md)* في شكل نصي و[رسومي](#altitude--speed-graphs). تتيح لك إضافة معلومات وإجراء تغييرات وتحرير وتنفيذ العديد من الإجراءات الأخرى باستخدام المسار. يمكنك الوصول إلى *قائمة سياق المسار* ببساطة عن طريق النقر على المسار المطلوب على الخريطة أو باستخدام قائمة *[أماكني](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). قد تحتاج إلى فتح مجلد المسار وتحديد المسار المطلوب عن طريق النقر عليه.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -48,7 +48,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### لوحة المعلومات {#info-panel}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -78,7 +78,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### إجراءات المسار {#track-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -103,7 +103,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### الخيارات {#options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -156,7 +156,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### الوصف والمعلومات {#description-and-info}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -228,7 +228,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### نشاط معلومات المسار {#track-information-activity}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -266,7 +266,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### معلومات عامة {#overview-information}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -305,7 +305,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 يمكن أن تكون علامة التبويب هذه مرئية فقط على المسارات المسجلة. تحتوي النقاط في هذا النوع من المسارات على علامات **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -331,7 +331,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### الارتفاع {#altitude}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -387,7 +387,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 نقاط الطريق هي أحد أنواع النقاط المتاحة على الخريطة. بشكل عام، يمكن أن تكون نقاط مسار جزءًا من ملفات GPX. يتوفر وصف مفصل في مقالة [النقاط على الخريطة](../../map/point-layers-on-map.md).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -424,7 +424,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 #### إنشاء نقطة طريق {#create-waypoint}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -460,7 +460,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### إجراءات مع المجموعات {#actions-with-groups}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -491,7 +491,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### مجموعات نقاط الطريق {#waypoint-groups}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -513,7 +513,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### عرض علامات GPX المخصصة {#display-custom-gpx-tags}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

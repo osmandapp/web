@@ -31,7 +31,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Маршрутизація для верхової їзди призначена для надання вершникам інформації про зручні для коней стежки, кінні доріжки та маршрути для верхової їзди.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -47,7 +47,7 @@ AIS działa na *częstotliwościach VHF* (161,975 MHz i 162,025 MHz) i ma ograni
 
 ***Wyświetlanie AIS na mapie:***
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Po prawidłowej konfiguracji pozycje jednostek pływających pojawią się na ma
 
 ### Informacje o jednostce pływającej AIS {#ais-vessel-information}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Jednostki pływające AIS przesyłają trzy typy danych:
 
 ## Ustawienia wtyczki {#plugin-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -29,7 +29,7 @@ O OsmAnd oferece uma variedade de perfis padrão adaptados para diferentes ativi
      - Para acessar e usar esses perfis, você precisa ativá-los manualmente em *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
      - Esse método ajuda a manter uma lista organizada e relevante de perfis, ativando apenas aqueles necessários para atividades específicas.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -57,7 +57,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 Todas as configurações se aplicam exclusivamente ao perfil de aplicativo atualmente selecionado.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Esta seção contém todas as configurações relacionadas à aparência, opçõ
 
 ### Backup Gratuito na Nuvem {#free-cloud-backup}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ Esta seção contém configurações para o tema do aplicativo e botão da búss
 
 ### Aparência {#appearance}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 ### Unidades e Formatos {#units--formats}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -249,7 +249,7 @@ Na seção **Unidades e Formatos**, você pode ajustar as unidades de medida e o
 
 ### Outros {#other}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ A seção **Outros** fornece configurações de perfil adicionais para personali
 
 ## Configurações de Navegação {#navigation-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ Não há configurações de navegação no perfil *Navegar no mapa*.
 
 ## Configurar Mapa {#configure-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -371,7 +371,7 @@ Com este menu, você pode:
 
 ## Configurar Tela {#configure-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -397,7 +397,7 @@ O [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-scr
 
 ## Aparência do Perfil {#profile-appearance}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ As configurações de **Aparência do perfil** permitem personalizar o nome e a 
 
 ### Aparência da Minha Localização {#my-location-appearance}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -531,7 +531,7 @@ Com o recurso de personalização da interface do usuário, você pode ajustar o
 Para acessar as configurações do plug-in, você deve primeiro [**ativar o plug-in**](../plugins/index.md#enable--disable) na *seção Plug-in do menu principal*.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -575,7 +575,7 @@ Os plug-ins desbloqueiam recursos adicionais do aplicativo e podem ser [pagos ou
 
 ## Ações {#actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

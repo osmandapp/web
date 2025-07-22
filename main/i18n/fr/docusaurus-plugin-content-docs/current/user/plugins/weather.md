@@ -50,7 +50,7 @@ Le plugin Météo n'est disponible qu'avec le moteur de rendu de carte [Version 
 
 ### Écran des prévisions météorologiques {#weather-forecast-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ En bas de l'écran se trouve la *barre d'outils météo*. Vous pouvez utiliser l
 
 ### Personnaliser les couches météo {#customize-weather-layers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -102,7 +102,7 @@ Dans ce menu, vous pouvez modifier la **visibilité** et les [paramètres](#weat
 
 ### Paramètres météo {#weather-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Toutes les données météo sont présentées sous forme de couches de carte dis
 
 ### Combiner les cartes {#combine-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -190,7 +190,7 @@ Sur les appareils Android, vous pouvez vérifier quand les données météo ont 
 
 ### Télécharger les prévisions {#download-forecast}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -225,7 +225,7 @@ OsmAnd génère de nouvelles prévisions toutes les 6 heures.
 
 ## Widgets météo {#weather-widgets}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

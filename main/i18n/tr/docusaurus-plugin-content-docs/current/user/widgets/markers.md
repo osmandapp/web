@@ -32,7 +32,7 @@ Ayrıca bir veya iki işaretleyici görüntülemeyi de seçebilirsiniz. Widget a
 *İşaretleyiciye olan mesafe*, konumunuz (veya harita merkez noktası / Konum kapalıyken ilk harita dokunma noktası) ile işaretleyici arasındaki düz çizginin uzunluğudur.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ Ayrıca bir veya iki işaretleyici görüntülemeyi de seçebilirsiniz. Widget a
 :::
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -140,7 +140,7 @@ Widget, Harita işaretleyicileri listesindeki birinci veya ikinci işaretleyici 
 
 Harita işaretleyicilerinin görünümünü yapılandırmak OsmAnd'ın hem Android hem de iOS sürümlerinde mevcuttur. "Haritada Görünüm" menüsü, Harita işaretleyicileri için genel bir ayardır ve widget'ların etkin olup olmamasından bağımsız olarak geçerlidir. Detaylı bilgiyi bu [sayfada](../personal/markers.md#appearance-on-the-map) okuyabilirsiniz.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

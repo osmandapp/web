@@ -21,7 +21,7 @@ La opción *Navegación por ruta* (GPX) te permite seguir una ruta o un track pr
 
 La opción *Navegación por ruta* también se puede utilizar en la vida cotidiana. Puedes usar una [ruta grabada](../../plugins/trip-recording.md) previamente o [crear una ruta](../../personal/tracks/manage-tracks.md#create-a-track) y compartirla con tu familia o amigos en lugar de explicarles la ruta. También puedes usar las [rutas en el mapa de OsmAnd](../../../../blog/routes/) para la navegación. Cómo resaltarlas en el mapa y qué significan sus colores se describe en la [sección Rutas](../../map/vector-maps.md#routes) del artículo *Mapas vectoriales*.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ Antes de usar la opción *Navegación por ruta*, debes [mostrar la ruta en el ma
 
 ### Iniciar navegación GPX {#start-gpx-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ La navegación en una ruta se puede iniciar utilizando el botón de acción ráp
 
 ### Elegir segmentos {#choose-segments}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -97,7 +97,7 @@ Para la navegación, si la ruta seleccionada consta de varios segmentos o rutas,
 
 ### Opciones de seguimiento de ruta {#follow-track-options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ al *<Translate android="true" ids="start_of_the_track"/>* o al *<Translate andro
 
 ### Adjuntar a las carreteras {#attach-to-the-roads}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

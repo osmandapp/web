@@ -159,7 +159,7 @@ Belirli ***Seyahat Kitaplarının*** ve ***parkur*** türlerinin görüntülenme
 
 ## Rotaları Haritada Görüntüle {#display-routes-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Belirli ***Seyahat Kitaplarının*** ve ***parkur*** türlerinin görüntülenme
 
 ## Rotalarla İşlemler {#actions-with-routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ Harita üzerinde bir **rota sembolüne** dokunduğunuzda:
 
 ### Rota Bilgisi ve Yükseklik {#route-info-and-elevation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -248,7 +248,7 @@ Aşağıdaki bilgiler bağlam menüsünde görünür olacaktır:
 
 Seçilen bir rota için yükseklik, eğim veya rakım ayrıntılarının grafiğini görüntülemek için, bağlam menüsündeki aşağıdaki değerlerden herhangi birine dokunmanız yeterlidir: **Mesafe**, **Yokuş yukarı**, **Yokuş aşağı** veya **Rakım**.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Seçilen bir rota için yükseklik, eğim veya rakım ayrıntılarının grafiğ
 
 ### Parkur Olarak Kaydet {#save-as-a-track}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -287,7 +287,7 @@ Rotayı bir *GPX dosyası* olarak kaydetmek için, [Bilgi paneli](../map/tracks/
 
 ### Navigasyonu Başlat {#start-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -319,7 +319,7 @@ Bu, [**Parkurla Navigasyon**](../navigation/setup/gpx-navigation.md) modunu baş
 
 Arama yapmak için, *<Translate android="true" ids="search_button"/>* menüsüne veya *<Translate android="true" ids="search_button,search_categories"/>* bölümüne gidin ve etkinliğinizi girin.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -337,7 +337,7 @@ Arama yapmak için, *<Translate android="true" ids="search_button"/>* menüsüne
 
 İstenilen rotaları bulmak için *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* bölümüne gidin. Rotalar; ad, etkinlik türü, uzunluk, konum ve en yakın noktaya olan mesafeyi içerir.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -355,7 +355,7 @@ Arama yapmak için, *<Translate android="true" ids="search_button"/>* menüsüne
 
 Yalnızca istenen rotaları görüntülemek için filtreler düğmesini (sağ üst köşe) kullanın.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

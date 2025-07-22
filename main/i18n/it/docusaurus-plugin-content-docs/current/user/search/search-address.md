@@ -28,7 +28,7 @@ OsmAnd offre diversi modi per accedere allo *strumento di ricerca* dove si trova
 
 ## Ricerca a testo libero {#full-text-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ Vedi l'articolo [Cerca tutto](./search-all.md#basic-queries) per un elenco delle
 
 ## Seleziona città {#select-city}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -123,7 +123,7 @@ Questo modo di cercare rende facile trovare posizioni specifiche all'interno di 
 
 ## Seleziona via {#select-street}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -153,7 +153,7 @@ La ricerca della via viene eseguita nella località in cui ti trovi, o dove hai 
 
 ## Ricerca per codice postale {#postcode-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -188,7 +188,7 @@ Per maggiori informazioni, leggi i **[dati dei codici postali del Regno Unito](h
 
 ## Ricerca coordinate {#coordinates-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

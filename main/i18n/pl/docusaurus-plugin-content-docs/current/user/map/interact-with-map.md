@@ -68,7 +68,7 @@ Możesz dostosować ikony przycisku **Moja lokalizacja** za pomocą ustawień wy
 
 ## Tryby orientacji mapy {#map-orientation-modes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -92,7 +92,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 ## Kompas {#compass}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -122,7 +122,7 @@ Możesz aktywować tę funkcję poprzez *Menu → Ustawienia → Profile → Ust
 
 ## Pochylenie mapy i horyzont {#map-tilt-and-horizon}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Nie można zmienić pochylenia kamery, gdy włączony jest stary [silnik rendero
 
 ## Blokada ekranu dotykowego {#touch-screen-lock}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -214,7 +214,7 @@ Klawiatura pozostaje funkcjonalna nawet po wyłączeniu opcji *Zewnętrzne urzą
 
 ### Wstępnie skonfigurowane urządzenie wejściowe {#preconfigured-input-device}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

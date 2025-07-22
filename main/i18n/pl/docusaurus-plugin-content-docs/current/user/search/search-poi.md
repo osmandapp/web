@@ -35,7 +35,7 @@ OsmAnd oferuje kilka sposobów dotarcia do narzędzia Wyszukiwanie, gdzie znajdu
 
 ## Jak używać {#how-to-use}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -89,7 +89,7 @@ Aby wykonać niektóre z tych zadań (zlokalizować adresy, POI), będziesz potr
 
 ## Wyszukiwanie POI według kategorii {#poi-search-by-categories}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ Dotknięcie wybranego POI na liście otwiera [menu kontekstowe mapy](../map/map-
 
 ### Rodzaje filtrów {#types-of-filters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Filtr może składać się z dość dużej liczby elementów, których obecnoś�
 
 ### Zmień kolejność kategorii {#rearrange-categories}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -310,7 +310,7 @@ Ta funkcjonalność jest szczególnie przydatna w różnych przypadkach:
 
 ### Niestandardowy filtr POI {#custom-poi-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -401,7 +401,7 @@ Dostępne do wyszukiwania:
 
 ### Zapisz nowe niestandardowe filtry {#save-new-custom-filters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -431,7 +431,7 @@ Inny sposób na **zapisanie**:
 
 ### Edytuj istniejący filtr {#edit-an-existing-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -461,7 +461,7 @@ Z ekranu głównego:
 
 ### Usuń niestandardowy filtr POI {#delete-custom-poi-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

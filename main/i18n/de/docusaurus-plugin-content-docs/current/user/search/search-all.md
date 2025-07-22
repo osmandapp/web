@@ -24,7 +24,7 @@ Die **Suche** ist ein nützliches Werkzeug, um schnell Orte zu finden. Sie könn
 
 ## Verwendung {#how-to-use}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -108,7 +108,7 @@ OsmAnd sortiert Suchergebnisse automatisch nach drei Hauptkriterien:
 
 ### Volltextsuche {#full-text-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ OsmAnd hat [**TIGER-Daten**](../../technical/algorithms/trace-address-search-iss
 
 ### Suche auf der Karte {#search-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -177,7 +177,7 @@ Sie können die Suche in der Nähe eines bestimmten Ortes verwenden. Wählen Sie
 
 ## Adresssuche {#search-address}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ Die **Adresssuche** verwendet OpenStreetMap-Daten. Mit dieser Art der Suche kön
 
 ## Suchhistorie {#search-history}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -219,7 +219,7 @@ Sie können die **Suchhistorie** verwenden, um zuvor gefundene Orte, Adressen od
 
 ## POI-Suche {#search-poi}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -248,7 +248,7 @@ Es ist praktisch, wenn Karten der Region nicht verfügbar sind, aber eine konsta
 
 ## Koordinatensuche {#search-coordinates}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

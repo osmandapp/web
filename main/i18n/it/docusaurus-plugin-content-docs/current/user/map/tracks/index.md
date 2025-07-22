@@ -38,7 +38,7 @@ Puoi gestire la visibilità delle tracce scegliendo quali visualizzare o nascond
 
 ### Configura mappa {#configure-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ L'opzione *Configura mappa* ti consente di gestire rapidamente la visualizzazion
 
 ### I miei luoghi {#my-places}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ Nella scheda [I miei luoghi *→* Tracce](../../personal/tracks/manage-tracks.md
 
 ### Menu contestuale della traccia {#track-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Quando selezioni una traccia sulla mappa o apri il [menu contestuale della tracc
 
 ## Analizzare la traccia sulla mappa {#analyze-track-on-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ Questo strumento fornisce un'analisi dettagliata dei dati della [traccia](../../
 
 ### Segui la mia posizione {#follow-my-location}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

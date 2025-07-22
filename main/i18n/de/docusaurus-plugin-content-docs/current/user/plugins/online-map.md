@@ -46,7 +46,7 @@ Detaillierte Informationen zur Visualisierung und Anpassung von Rasterkarten fin
     - [Rasterkartenparameter ändern](../map/raster-maps.md#change-raster-map-parameters).
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

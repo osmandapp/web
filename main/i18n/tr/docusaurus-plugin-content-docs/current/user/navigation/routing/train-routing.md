@@ -29,7 +29,7 @@ OsmAnd'daki *Tren rotası*, kullanıcılara bir treni araba gibi sürüyormuş g
 
 ## Rota Parametreleri - Tren {#route-parameters---train}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

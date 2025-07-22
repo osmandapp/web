@@ -29,7 +29,7 @@ Wtyczka Dane pojazdu to [płatna funkcja](../purchases/index.md) aplikacji OsmAn
 
 Skanery OBD-II są integralną częścią nowoczesnej diagnostyki samochodowej. Dzięki strumieniowemu przesyłaniu danych w czasie rzeczywistym, użytkownicy uzyskują natychmiastowy wgląd w systemy pojazdu, co ułatwia konserwację zapobiegawczą i zmniejsza koszty napraw. Narzędzia te są niezbędne zarówno do użytku osobistego, jak i profesjonalnych usług motoryzacyjnych.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

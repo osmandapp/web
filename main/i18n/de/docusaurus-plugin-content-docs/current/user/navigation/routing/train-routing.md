@@ -29,7 +29,7 @@ Das *Zug-Routing* in OsmAnd bietet Nutzern die Möglichkeit, Eisenbahnstrecken f
 
 ## Routenparameter - Zug {#route-parameters---train}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

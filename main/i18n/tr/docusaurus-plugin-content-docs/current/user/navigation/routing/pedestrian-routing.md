@@ -22,7 +22,7 @@ Yaya rotası, bir yayanın bir yerden başka bir yere seyahat etmesi için en iy
 
 Yaya rotası, sadece yayaların bir yerden başka bir yere gitmeye çalışırken çeşitli engellerle karşılaşabileceği kentsel alanlarda değil, aynı zamanda şehir dışında veya dağlarda koşu, yürüyüş ve İskandinav yürüyüşü yaparken de faydalı olabilir. Rota parametrelerini ihtiyaçlarınıza göre ayarlamanız yeterlidir.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

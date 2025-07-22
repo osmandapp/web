@@ -20,7 +20,7 @@ The **Trip Recording plugin** is an essential tool for capturing your routes, mo
 
 With the *Trip Recording plugin*, you can create new tracks, display recorded ones directly on the map, and manage existing records. It offers valuable insights into your trips, such as speed, elevation changes, terrain details, and data from external sensors. Plugin records your route, allowing for detailed analysis and sharing after your trip.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -77,7 +77,7 @@ With the Trip Recording plugin in OsmAnd, you can easily start recording your tr
 
 ### Start a Dialog {#start-a-dialog}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ For *Stop / Save / Pause*:
 
 ### Overview Screen {#overview-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -190,7 +190,7 @@ For more details, you can explore the [**Tracks Context Menu**](../map/tracks/tr
 
 ### Show on the Map {#show-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -263,7 +263,7 @@ Before you start tracking your trips, you need to properly configure the **Trip 
 - **Global settings**. Trip Recording settings are configured per profile, which you can manage in the app’s global [settings](../personal/global-settings.md). Before you customize the Trip Recording plugin, select the profile you want to configure from the [profiles](../personal/profiles.md) section. From there, navigate to the profile’s settings to access the Trip Recording options.
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -366,7 +366,7 @@ To start using *Trip recording widgets*, you need to make all the following sett
 
 ### Add Recording Widget {#add-recording-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -393,7 +393,7 @@ To customize your interface, you can add or remove the Trip Recording widget and
 
 ### Distance (Start-Stop) {#distance-start-stop}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -427,7 +427,7 @@ In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** i
 
 ### Duration, Uphill, Downhill {#duration-uphill-downhill}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

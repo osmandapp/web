@@ -20,7 +20,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Cómo usar {#how-to-use}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -102,7 +102,7 @@ OsmAnd ordena automáticamente los resultados de búsqueda según tres criterios
 
 ### Búsqueda de texto completo {#full-text-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -137,7 +137,7 @@ OsmAnd ha integrado [**datos TIGER**](../../technical/algorithms/trace-address-s
 
 ### Búsqueda en el mapa {#search-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -169,7 +169,7 @@ Puedes usar la búsqueda en las cercanías de una ubicación específica. Para e
 
 ## Buscar dirección {#search-address}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Puedes usar la búsqueda en las cercanías de una ubicación específica. Para e
 
 ## Historial de búsqueda {#search-history}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -209,7 +209,7 @@ Puedes usar el **Historial de búsqueda** para buscar de nuevo lugares, direccio
 
 ## Buscar POI {#search-poi}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -237,7 +237,7 @@ Es conveniente usarla cuando los mapas de la región no están disponibles, pero
 
 ## Buscar coordenadas {#search-coordinates}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

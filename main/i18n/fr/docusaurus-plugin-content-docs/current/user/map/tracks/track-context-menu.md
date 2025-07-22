@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Le *menu contextuel de la trace* fournit des informations sur la *[trace](../../personal/tracks/index.md)* sous forme de texte et de [graphique](#altitude--speed-graphs). Il vous permet d'ajouter des informations, d'apporter des modifications, de modifier et d'effectuer diverses autres actions avec la trace. Vous pouvez accéder au *menu contextuel de la trace* en appuyant simplement sur la trace souhaitée sur la carte ou en utilisant le menu *[Mes lieux](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Vous devrez peut-être ouvrir le dossier de la trace et sélectionner la trace souhaitée en appuyant dessus.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Panneau d'informations {#info-panel}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Si votre trace a été créée dans OsmAnd ou toute autre application de suivi (
 
 ### Actions de la trace {#track-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Si votre trace a été créée dans OsmAnd ou toute autre application de suivi (
 
 ### Options {#options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Le menu **Options** vous permet de gérer et de modifier la trace sélectionnée
 
 ### Description et informations {#description-and-info}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Cette section de l'onglet *Vue d'ensemble* affiche les ***données de balise*** 
 
 ### Activité d'informations sur la trace {#track-information-activity}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Interaction avec le graphique :
 
 ### Informations générales {#overview-information}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -305,7 +305,7 @@ Les **boutons** actifs donnent accès à des actions telles que :
 Cet onglet n'est visible que sur les traces enregistrées. Les points de ce type de trace ont des balises **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ Le graphique **Vitesse** affiche des métriques telles que :
 
 ### Altitude {#altitude}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -387,7 +387,7 @@ Cette fonctionnalité vous permet de calculer le profil d'élévation pour une t
 
 Les waypoints sont l'un des types de points disponibles sur la carte. En général, il peut s'agir de points de trace faisant partie de fichiers GPX. Une description détaillée est disponible dans l'article [points sur la carte](../../map/point-layers-on-map.md).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -424,7 +424,7 @@ Les waypoints peuvent être ajoutés à la trace actuellement enregistrée ou à
 
 #### Créer un waypoint {#create-waypoint}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -460,7 +460,7 @@ Appuyez sur le bouton *Ajouter un waypoint* pour ouvrir l'écran de création de
 
 ### Actions avec les groupes {#actions-with-groups}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -491,7 +491,7 @@ Le *menu à trois points* ( &#8285; ) ouvre le *menu de groupe* des waypoints.
 
 ### Groupes de waypoints {#waypoint-groups}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -513,7 +513,7 @@ Vous pouvez activer ou désactiver les waypoints de groupe sur la carte à l'aid
 
 ### Afficher les balises GPX personnalisées {#display-custom-gpx-tags}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

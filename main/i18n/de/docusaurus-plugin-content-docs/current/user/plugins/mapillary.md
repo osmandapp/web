@@ -31,7 +31,7 @@ Um Straßenbilder auf der OsmAnd-Karte anzuzeigen, müssen Sie die folgenden Ein
 
 ## Kartenebene {#map-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -57,7 +57,7 @@ Die Kartenebene mit Straßenbildern wird auf der OsmAnd-Karte als Reihen von ver
 
 ### Ebene aktivieren {#enable-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ Um Mapillary-Straßenansichten auf der Karte anzuzeigen, müssen Sie diese Ebene
 
 ### Datenfilterung {#data-filtering}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -113,7 +113,7 @@ Wenn die ausgewählten Bilder nicht angezeigt werden, verwenden Sie **Neu laden*
 
 ## Kartenkontextmenü {#map-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -134,7 +134,7 @@ Wenn das Mapillary-Plugin aktiviert ist, können Sie Fotos von Straßen anzeigen
 
 ## Fotos hinzufügen {#add-photos}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Um Fotos hinzuzufügen, müssen Sie sich in der [Mapillary App](https://www.mapi
 
 ## Mapillary Widget {#mapillary-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

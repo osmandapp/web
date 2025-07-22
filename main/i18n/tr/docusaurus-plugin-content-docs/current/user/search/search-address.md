@@ -27,7 +27,7 @@ OsmAnd, **Adres Ara** bölümünün bulunduğu *Arama aracına* ulaşmak için �
 
 ## Tam metin arama {#full-text-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -77,7 +77,7 @@ Mevcut sorguların ve desteklenen arama formatlarının listesi için [Tümünü
 
 ## Şehir Seç {#select-city}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ Bu arama şekli, seçilen bir yerleşim yeri içindeki belirli konumları bulmay
 
 ## Sokak Seç {#select-street}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -146,7 +146,7 @@ Sokak araması, bulunduğunuz yerde, daha önce arama yaptığınız yerde veya 
 
 ## Posta Kodu Araması {#postcode-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -180,7 +180,7 @@ Daha fazla bilgi için **[Birleşik Krallık Posta Kodu verilerini](https://gith
 
 ## Koordinat Araması {#coordinates-search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

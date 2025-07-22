@@ -21,7 +21,7 @@ Il **plugin Registrazione del percorso** è uno strumento essenziale per acquisi
 
 Con il *plugin Registrazione del percorso*, è possibile creare nuove tracce, visualizzare quelle registrate direttamente sulla mappa e gestire i record esistenti. Offre informazioni preziose sui percorsi, come velocità, cambiamenti di altitudine, dettagli del terreno e dati provenienti da sensori esterni. Il plugin registra il percorso, consentendo un'analisi dettagliata e la condivisione dopo il viaggio.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Con il plugin Registrazione del percorso in OsmAnd, è possibile avviare facilme
 
 ### Avvia una finestra di dialogo {#start-a-dialog}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -139,7 +139,7 @@ Per *Arresta / Salva / Metti in pausa*:
 
 ### Schermata di panoramica {#overview-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -191,7 +191,7 @@ Per maggiori dettagli, puoi esplorare il [**Menu contestuale delle tracce**](../
 
 ### Mostra sulla mappa {#show-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -264,7 +264,7 @@ Prima di iniziare a tracciare i tuoi percorsi, devi configurare correttamente il
 - **Impostazioni globali**. Le impostazioni di registrazione del percorso sono configurate per profilo, che puoi gestire nelle [impostazioni](../personal/global-settings.md) globali dell'app. Prima di personalizzare il plugin Registrazione del percorso, seleziona il profilo che desideri configurare dalla sezione [profili](../personal/profiles.md). Da lì, naviga nelle impostazioni del profilo per accedere alle opzioni di registrazione del percorso.
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -367,7 +367,7 @@ Per iniziare a utilizzare i *widget di registrazione del percorso*, è necessari
 
 ### Aggiungi widget di registrazione {#add-recording-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -394,7 +394,7 @@ Per personalizzare l'interfaccia, è possibile aggiungere o rimuovere il widget 
 
 ### Distanza (Avvio-Arresto) {#distance-start-stop}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -428,7 +428,7 @@ Oltre al widget *Distanza/Avvio-Arresto*, il **plugin Registrazione del percorso
 
 ### Durata, Salita, Discesa {#duration-uphill-downhill}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

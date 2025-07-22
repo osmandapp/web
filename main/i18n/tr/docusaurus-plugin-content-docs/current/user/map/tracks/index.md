@@ -38,7 +38,7 @@ Rota görünürlüğünü, çeşitli menülerden ( [Yerlerim menüsü](#my-place
 
 ### Haritayı Yapılandır {#configure-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ Rota görünürlüğünü, çeşitli menülerden ( [Yerlerim menüsü](#my-place
 
 ### Yerlerim {#my-places}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ Rota görünürlüğünü, çeşitli menülerden ( [Yerlerim menüsü](#my-place
 
 ### Rota Bağlam Menüsü {#track-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Haritada bir rota seçtiğinizde veya bir rotayı kaydettikten veya içe aktard�
 
 ## Haritada Rotayı Analiz Et {#analyze-track-on-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ Bu araç, [rota](../../map/tracks/track-context-menu.md#options) verilerinin gra
 
 ### Konumumu Takip Et {#follow-my-location}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

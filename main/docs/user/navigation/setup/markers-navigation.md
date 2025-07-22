@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 They can be particularly helpful for hikers, bikers, or anyone exploring a new area who wants to mark interesting locations or points of reference on the map. Main difference from [Favorite points](../../personal/favorites.md), Markers are faster to create as they don't require a name.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -40,7 +40,7 @@ They can be particularly helpful for hikers, bikers, or anyone exploring a new a
 
 ## Use Markers in Navigation {#use-markers-in-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -80,7 +80,7 @@ When **Arrows on the map** and **Direction line** options are enabled in *Appear
 
 ## Itinerary List {#itinerary-list}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -140,7 +140,7 @@ Only tracks with waypoints can be added to the *Map markers list*. The track you
 
 ## Sort Markers {#sort-markers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -163,7 +163,7 @@ In Android version of the OsmAnd app, there are other sorting options for *Map m
 
 ### Sort by Attributes {#sort-by-attributes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -197,7 +197,7 @@ Using functionality of the Plan a route in Markers list tool you can sort *Marke
 
 ## Pass Markers {#pass-markers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

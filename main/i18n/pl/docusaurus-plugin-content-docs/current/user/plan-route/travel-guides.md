@@ -26,7 +26,7 @@ Wirtualne przewodniki turystyczne w OsmAnd oferują użytkownikom cenne informac
 Przewodniki turystyczne OsmAnd oparte są na danych z [Wikivoyage](https://www.wikivoyage.org/), projektu społecznościowego podobnego do Wikipedii, gdzie autorzy-wolontariusze tworzą aktualne artykuły.
 Informacje Wikivoyage obejmują główne fakty o miejscu, transporcie, atrakcjach, zakupach i wiele innych.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ Artykuły *Przewodników turystycznych* są przechowywane w OsmAnd jako ślady G
 
 ### Pobierz artykuły {#download-articles}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -96,7 +96,7 @@ Po otwarciu *Przewodników turystycznych* (*<Translate android="true" ids="share
 
 ### Eksploruj i dodaj do zakładek {#explore-and-bookmark}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -121,7 +121,7 @@ Jeśli dotkniesz *przycisku Zakładka*, artykuł zostanie zapisany do późniejs
 
 ### Szukaj {#search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -151,7 +151,7 @@ Obok każdego wyniku wyszukiwania wymienione są 3 najczęściej używane język
 
 ### Opcje {#options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -176,7 +176,7 @@ W menu Opcje możesz wybrać, czy zapisać obrazy w przeglądanych artykułach, 
 
 ## Artykuł podróżniczy {#travel-article}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -208,7 +208,7 @@ Na dole ekranu znajdują się przyciski takie jak:
 
 ### Menu nawigacyjne {#navigation-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Jeśli dotkniesz strzałki w lewym górnym rogu ekranu, przejdziesz bezpośredni
 
 ### Spis treści {#table-of-contents}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -259,7 +259,7 @@ Większość *artykułów przewodników turystycznych* ma tę samą strukturę t
 
 ### Punkty {#points}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -329,7 +329,7 @@ W *[menu kontekstowym śladu](../map/tracks/track-context-menu.md)* pliku GPX mo
 
 ## Połącz z Wikipedią {#combine-with-wikipedia}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

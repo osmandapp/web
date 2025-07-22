@@ -36,7 +36,7 @@ Il routing in linea retta è collegato al *profilo Aereo*. Per impostazione pred
 
 Il routing *in linea retta* può essere configurato in base alle tue esigenze nella sezione [Parametri del percorso](../guidance/navigation-settings.md#route-parameters) delle impostazioni di navigazione.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

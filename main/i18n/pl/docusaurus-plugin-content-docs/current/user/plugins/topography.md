@@ -35,7 +35,7 @@ Wtyczka Topografia zapewnia dostęp do następujących typów map:
 - [Rzeźba 3D](#3d-relief). Jest to [mapa wektorowa](../map/vector-maps.md), która zapewnia trójwymiarową reprezentację terenu, dostępna tylko z [subskrypcją OsmAnd Pro](../purchases/index.md).
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Dla stabilnej pracy i oszczędności zasobów, możesz pobrać mapę nie całego
 
 ### Mapy terenu 3D {#3d-relief-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Jeśli mapa wyświetlana na ekranie nie jest pobrana, to w *Menu → Konfiguruj 
 
 ### Warstwice (metry lub stopy) {#contour-lines-meters-or-feet}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Dla [**Warstwic**](#contour-lines) musisz określić, w jakich [jednostkach](../
 
 ## Warstwice {#contour-lines}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Podczas korzystania z [silnika renderowania map](../personal/global-settings.md#
 
 ## Teren {#terrain}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Mapy rastrowe **Cieniowania wzgórz**, **Nachylenia** i **Wysokości** są tworz
 *Modyfikuj schemat kolorów* to płatna funkcja **OsmAnd Pro** dla [iOS](../purchases/ios.md#pro-features) i [Androida](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -328,7 +328,7 @@ Główne ustawienia *Pokaż lub ukryj typy map* znajdują się w sekcji Topograf
 Rzeźba 3D to płatna funkcja [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -360,7 +360,7 @@ Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezen
 
 - W razie potrzeby pobierz [mapę terenu (3D)](#3d-relief-maps) dla regionów.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -383,7 +383,7 @@ Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezen
 
 ### Przesada pionowa {#vertical-exaggeration}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Gdy **Cieniowanie wzgórz** jest **włączone**, obraz z cieniami rzeźby wydaje
 
 ## Łączenie typów warstw {#combine-layer-types}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

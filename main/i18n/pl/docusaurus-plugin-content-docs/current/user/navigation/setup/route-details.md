@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd pozwala znaleźć najlepszą trasę i zbadać jej szczegóły. Aplikacja dostarcza szczegółowych informacji o trasie, takich jak odległość, [czas podróży](#distance--time--co2), [typ nawierzchni](#road-attributes), [różnice wysokości](#elevation-info), [dane dotyczące śladu CO2](#distance--time--co2) i [informacje o zakrętach](#turn-by-turn-information). Możesz także [analizować](#analyze-on-map) trasę na mapie, znajdować informacje o segmentach ścieżki, [drukować](#print) plan trasy, [zapisywać](#share--export-actions) trasę i udostępniać ją innym. Dzięki tej funkcjonalności zawsze będziesz znać szczegóły trasy i będziesz mógł efektywniej planować swoją podróż.
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ W zależności od wybranych [ustawień profilu](../../personal/profiles.md) i wy
 
 ## Odległość / Czas / CO2 {#distance--time--co2}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -79,7 +79,7 @@ W zależności od wybranych [ustawień profilu](../../personal/profiles.md) i wy
 
 ## Informacje o wysokości {#elevation-info}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Dane wysokościowe na mapie (między 70 stopniem szerokości geograficznej pół
 
 ### Wykres wysokości {#elevation-graph}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Dane wysokościowe na mapie (między 70 stopniem szerokości geograficznej pół
 
 ## Analiza na mapie {#analyze-on-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -183,7 +183,7 @@ Jeśli dane są dostępne, możesz wybrać jeden z następujących typów:
 
 ## Atrybuty drogi {#road-attributes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -230,7 +230,7 @@ Atrybuty drogi są dostępne w [Szczegółach trasy](#how-to-access) i wyświetl
 
 ## Informacje o zakrętach {#turn-by-turn-information}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Dotknij określonego odcinka trasy na liście, aby wyświetlić szczegółowe in
 
 ### Instrukcje {#instructions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -313,7 +313,7 @@ Możliwość **drukowania** lub **zapisywania** informacji o trasie krok po krok
 
 ## Udostępnij / Eksportuj (Akcje) {#share--export-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

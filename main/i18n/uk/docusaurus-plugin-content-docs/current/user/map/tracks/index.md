@@ -38,7 +38,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 ### Налаштувати карту {#configure-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 ### Мої місця {#my-places}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 ### Контекстне меню треку {#track-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 ## Аналіз треку на карті {#analyze-track-on-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 ### Слідувати за моїм місцезнаходженням {#follow-my-location}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

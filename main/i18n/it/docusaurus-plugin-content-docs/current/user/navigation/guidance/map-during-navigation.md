@@ -23,7 +23,7 @@ Questo articolo descrive come configurare l'aspetto della mappa durante la navig
 
 ## Mappa durante la navigazione {#map-during-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ L'impostazione *Mostra lungo il percorso* consente di configurare parametri di p
 
 ### Visualizza e seleziona punti {#view-and-select-points}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ Gli *Avvisi sul traffico* non vengono visualizzati direttamente sulla mappa come
 
 ## Avvisi sullo schermo {#screen-alerts}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 ## Aspetto della linea del percorso {#route-line-appearance}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

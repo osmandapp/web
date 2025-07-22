@@ -22,7 +22,7 @@ Los [marcadores de mapa](../../personal/markers.md) son puntos en el mapa marcad
 
 Pueden ser particularmente útiles para excursionistas, ciclistas o cualquier persona que explore un área nueva que quiera marcar ubicaciones o puntos de referencia interesantes en el mapa. La principal diferencia con los [puntos favoritos](../../personal/favorites.md) es que los marcadores son más rápidos de crear, ya que no requieren un nombre.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -41,7 +41,7 @@ Pueden ser particularmente útiles para excursionistas, ciclistas o cualquier pe
 
 ## Usar marcadores en la navegación {#use-markers-in-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -81,7 +81,7 @@ Cuando las opciones **Flechas en el mapa** y **Línea de dirección** están hab
 
 ## Lista de itinerarios {#itinerary-list}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ Solo las pistas con puntos de ruta se pueden agregar a la *lista de marcadores d
 
 ## Ordenar marcadores {#sort-markers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -164,7 +164,7 @@ En la versión de Android de la aplicación OsmAnd, hay otras opciones de clasif
 
 ### Ordenar por atributos {#sort-by-attributes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ Usando la funcionalidad de la herramienta Planificar una ruta en la lista de mar
 
 ## Pasar marcadores {#pass-markers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

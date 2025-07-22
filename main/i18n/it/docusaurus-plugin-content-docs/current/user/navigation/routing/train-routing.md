@@ -29,7 +29,7 @@ Il *routing treno* in OsmAnd offre agli utenti la possibilità di utilizzare le 
 
 ## Parametri del percorso - Treno {#route-parameters---train}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

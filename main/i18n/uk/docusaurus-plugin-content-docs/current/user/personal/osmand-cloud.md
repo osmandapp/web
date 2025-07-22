@@ -53,7 +53,7 @@ OsmAnd підтримує **кросплатформне використанн�
 
 ## Вхід {#login}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -99,7 +99,7 @@ OsmAnd підтримує **кросплатформне використанн�
 
 ## OsmAnd Start {#osmand-start}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ OsmAnd підтримує **кросплатформне використанн�
 
 ### Як активувати OsmAnd Start {#how-to-activate-osmand-start}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -165,7 +165,7 @@ OsmAnd підтримує **кросплатформне використанн�
 
 ## Остання синхронізація {#last-sync}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ To use this feature:
 
 ## Кошик {#trash}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ To use this feature:
 
 ## Налаштування {#settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -281,7 +281,7 @@ To use this feature:
 
 ### Виберіть дані для резервного копіювання {#select-data-to-back-up}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -314,7 +314,7 @@ To use this feature:
 
 ### Керування сховищем {#manage-storage}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -346,7 +346,7 @@ To use this feature:
 
 ### Опція видалення {#deletion-option}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -382,7 +382,7 @@ To use this feature:
 
 ## Список змін {#list-of-changes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -409,7 +409,7 @@ To use this feature:
 
 ### Локальні та Хмарні {#local-and-cloud}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -438,7 +438,7 @@ To use this feature:
 
 ### Конфлікти {#conflicts}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

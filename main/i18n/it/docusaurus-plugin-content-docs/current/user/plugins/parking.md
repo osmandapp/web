@@ -26,7 +26,7 @@ Questo plugin è gratuito e funziona offline con le mappe OsmAnd scaricate. Puoi
 
 L'indicatore è temporaneo e facile da rimuovere una volta che non è più necessario.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ Quando contrassegni un posto auto, OsmAnd salva le sue coordinate geografiche in
 
 Per impostare un posto auto sulla mappa, ingrandisci al livello desiderato, quindi tocca a lungo il punto sulla mappa e nel [Menu contestuale](../map/map-context-menu.md) che si apre, effettua le impostazioni.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ L'ora di inizio è sempre impostata automaticamente. Se devi cambiare l'ora di f
 
 ### Rimani informato {#stay-informed}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -127,7 +127,7 @@ Ulteriori dettagli vengono mostrati toccando l'indicatore di parcheggio:
 
 ### Navigazione verso un waypoint {#navigating-to-a-waypoint}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ Puoi utilizzare il posto auto come destinazione di navigazione per tornare facil
 
 ### Rimuovi un posto {#remove-a-spot}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Se è stato impostato un promemoria nel calendario, verrà rimosso automaticamen
 
 ## Widget Parcheggio {#parking-widget}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Global ayarlar**, OsmAnd uygulamasındaki tüm profiller için genel [ayarlardır](../personal/profiles.md). Bunlar OsmAnd sisteminin temel ayarlarıdır ve yapılan tüm değişiklikler uygulamanın tamamını etkiler.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ Bu bölüm, uygulama yüklendiğinde bir [profil](#default-profile) seçme, [har
 
 ### Varsayılan Profil {#default-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ Bu özellik OsmAnd uygulamasının iOS sürümü için mevcuttur.
 
 ### Veri Depolama Klasörü {#data-storage-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -173,7 +173,7 @@ Daha fazla bilgi [*OsmAnd Gizlilik ve Güvenlik Politikası*](../../legal/privac
 
 ### Analizler {#analytics}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -217,7 +217,7 @@ Her OsmAnd uygulama yüklemesi için bir **UUID** (*Benzersiz Kullanıcı Tanım
 
 ### Geçmiş {#history}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -246,7 +246,7 @@ Uygulama, daha önce girilen verilerin geçmişini (geçmiş) aşağıdaki kateg
 
 **Geçmişi paylaş ve sil.**
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -283,7 +283,7 @@ OsmAnd ayarlarının bu bölümünde, aldığınız bildirimleri, konum hizmetin
 
 ### Diyaloglar ve bildirimler {#dialogs-and-notifications}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -351,7 +351,7 @@ OsmAnd sizi [hız kameraları hakkında uyarabilir](../navigation/guidance/navig
 
 ### Hız Kameralarını Kaldır {#uninstall-speed-cameras}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

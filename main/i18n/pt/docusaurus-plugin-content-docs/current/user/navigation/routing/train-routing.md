@@ -29,7 +29,7 @@ O *roteamento de trem* no OsmAnd oferece aos usuários a possibilidade de usar l
 
 ## Parâmetros de rota - Trem {#route-parameters---train}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

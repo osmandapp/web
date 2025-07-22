@@ -31,7 +31,7 @@ You can also select to display one or two markers. Read more about widget settin
 *The distance to the marker* is the length of the straight line between your position (or the centre map point / the initial map touching point when the Location is off) and the marker.
 :::  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -81,7 +81,7 @@ You can also select to display one or two markers. Read more about widget settin
 :::  
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -139,7 +139,7 @@ The widget shows the distance or estimated time of arrival (ETA) for the first o
 
 Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on the Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not. You can read the detailed information on this [page](../personal/markers.md#appearance-on-the-map).  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

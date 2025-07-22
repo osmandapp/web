@@ -19,7 +19,7 @@ import Translate from '@site/src/components/Translate.js';
 
 The [Main Menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located on the left bottom corner of the Map screen. In navigation mode this button is not visible by default. It appears after a short tap the map.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

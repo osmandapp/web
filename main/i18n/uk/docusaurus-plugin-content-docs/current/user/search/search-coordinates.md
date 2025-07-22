@@ -27,7 +27,7 @@ OsmAnd надає кілька способів перейти до *Інстр�
 
 ## Як використовувати {#how-to-use}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

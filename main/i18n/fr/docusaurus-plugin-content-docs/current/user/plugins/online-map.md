@@ -45,7 +45,7 @@ Vous trouverez des informations détaillées sur la visualisation et la personna
     - [Modifier](../map/raster-maps.md#change-raster-map-parameters) les paramètres de la carte raster.
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

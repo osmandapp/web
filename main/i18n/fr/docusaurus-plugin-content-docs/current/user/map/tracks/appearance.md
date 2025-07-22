@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 La fonction **Apparence de la trace** permet aux utilisateurs de personnaliser la façon dont les traces sont affichées sur la carte. Cela inclut l'ajustement de la couleur, de la largeur, des indicateurs de direction et d'autres éléments visuels. La personnalisation de l'apparence des traces permet de différencier plusieurs traces, de mettre en évidence des itinéraires spécifiques et d'améliorer la lisibilité de la carte.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -122,7 +122,7 @@ Restaure tous les **paramètres d'apparence de la trace** à leurs valeurs par d
 La **Trace 3D** est une fonctionnalité payante **OsmAnd Pro** pour [iOS](../../purchases/ios.md#pro-features) et [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -185,7 +185,7 @@ La fonction de trace 3D est très bénéfique pour des activités comme le parap
 
 ## Modifier l'apparence de plusieurs traces {#change-appearance-for-multiple-tracks}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

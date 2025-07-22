@@ -22,7 +22,7 @@ OsmAnd kayak haritası vektör haritalarının bir parçasıdır ve ek indirme g
 
 Aşağıda iki profil gösterilmiştir: soldaki kayak için, sağdaki ise sürüş içindir. Kayak profili, parkurları, hava yollarını, kış renklerini ve kayak alanında gezinmek için faydalı tüm harita nesnelerini vurgular.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -50,7 +50,7 @@ Aşağıdaki ayar, OsmAnd Kayak Haritası'nın ekranda görünmesini sağlar:
 
 ### Kış ve Kayak Harita Stilini Ayarla {#set-winter-and-ski-map-style}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -83,7 +83,7 @@ Kayak profili, Kış ve Kayak stilleriyle birlikte kullanılmak üzere tasarlanm
 
 ### Haritaları Birleştir {#combine-maps}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Kayak Haritası Görüntüleyici eklentisi ayrı bir uygulamadır ve ekranının
 
 ## Kayak Profili {#skiing-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -191,7 +191,7 @@ Genellikle kayakçılar tarafından Kuzey tırmanışı ve yokuş aşağı iniş
 
 ### Bakım Parkurları {#grooming-trails}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ Haritada belirli bir pistin bakımlı olup olmadığını kontrol etmek için, [
 
 ### Kayak Pisti Rotaları {#ski-slope-routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -243,7 +243,7 @@ Kayak profili, kayak navigasyonu ve [Kış ve Kayak harita stili](../map/vector-
 
 ### Gece ve Aydınlatma {#night-and-lighting}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

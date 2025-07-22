@@ -23,7 +23,7 @@ Este artigo descreve como configurar a aparência do mapa durante a navegação.
 
 ## Mapa durante a navegação {#map-during-navigation}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ A configuração *Mostrar ao longo da rota* permite configurar parâmetros adici
 
 ### Visualizar e selecionar pontos {#view-and-select-points}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ Os *avisos de trânsito* não são exibidos diretamente no mapa como *POIs* ou *
 
 ## Alertas de tela {#screen-alerts}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 ## Aparência da linha da rota {#route-line-appearance}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

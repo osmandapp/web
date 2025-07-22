@@ -29,7 +29,7 @@ To access a plugin's functionality, it must first be [enabled](#enable--disable)
 
 ### Enable / Disable {#enable--disable}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -99,7 +99,7 @@ Most plugins provide specific profile or global settings, which can be accessed 
 - *Main Menu → Plugins → Plugin name → Settings (&#x2699 for ios)* or  
 - *Main Menu → Settings → Profile → [Plugin settings](../personal/profiles.md#plugin-settings)*.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

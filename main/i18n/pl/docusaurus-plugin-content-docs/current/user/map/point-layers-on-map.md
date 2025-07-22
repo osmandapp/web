@@ -20,7 +20,7 @@ Mapa może wyświetlać punkty, takie jak [Ulubione](#favorites), [Punkty POI](#
 
 ## Ulubione {#favorites}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ W wersji OsmAnd na Androida możesz wyświetlać tylko niektóre ulubione grupy 
 
 ## Nazwy ulubionych i POI {#favorite-and-poi-names}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -74,7 +74,7 @@ Domyślnie ulubione i punkty POI są wyświetlane bez nazw, aby nie zaśmiecać 
 
 ## Punkty POI {#points-of-interest-pois}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -112,7 +112,7 @@ Możesz wybrać jeden lub wiele ze standardowych typów POI OsmAnd, lub stworzy�
 
 ### Styl mapy POI {#map-style-poi}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -139,7 +139,7 @@ Każdy typ POI w OsmAnd ma przypisaną określoną ikonę i kolor. [Poziom powi�
 
 ## Markery {#markers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -186,7 +186,7 @@ Przeczytaj więcej o [wyszukiwaniu](../search/index.md).
 
 ## * Obrazy z poziomu ulicy {#-street-level-imagery}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -222,7 +222,7 @@ Wymaga [wtyczki Pozycja parkowania](../plugins/parking.md).
 
 ## * Wikipedia {#-wikipedia}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -249,7 +249,7 @@ OsmAnd posiada specjalne punkty POI oznaczone logo „W” i połączone z artyk
 
 ## * Punkty audio / wideo (Android) {#-audio--video-points-android}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -268,7 +268,7 @@ Wymaga [wtyczki Notatki audio/wideo](../plugins/audio-video-notes.md).
 
 ## * Punkty edycji OSM {#-osm-edit-points}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -295,7 +295,7 @@ Wymaga [wtyczki Edycja OSM](../plugins/osm-editing.md).
 
 ## * Notatki OSM {#-osm-notes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

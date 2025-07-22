@@ -17,7 +17,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Ikona [Menu głównego](../widgets/map-buttons.md#main-menu) „&#8801;” znajduje się w lewym dolnym rogu ekranu Mapy. W trybie nawigacji ten przycisk jest domyślnie niewidoczny. Pojawia się po krótkim dotknięciu mapy.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

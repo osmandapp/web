@@ -38,7 +38,7 @@ L'*Importation* et l'*Exportation* vous permettent de sauvegarder des données �
 
 ### Exporter {#export}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Toutes les données que vous avez configurées et créées peuvent être export�
 
 ### Importer {#import}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

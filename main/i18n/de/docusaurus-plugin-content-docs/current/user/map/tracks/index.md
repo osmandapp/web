@@ -38,7 +38,7 @@ Sie können die Sichtbarkeit von Tracks verwalten, indem Sie aus mehreren Menüs
 
 ### Karte konfigurieren {#configure-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ Die Option *Karte konfigurieren* ermöglicht es Ihnen, die Anzeige aller zuletzt
 
 ### Meine Orte {#my-places}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ Im Tab [Meine Orte *→* Tracks](../../personal/tracks/manage-tracks.md#manage-t
 
 ### Track-Kontextmenü {#track-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Wenn Sie einen Track auf der Karte auswählen oder das [Track-Kontextmenü](./tr
 
 ## Track auf Karte analysieren {#analyze-track-on-map}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ Dieses Tool bietet eine detaillierte Analyse von [Trackdaten](../../map/tracks/t
 
 ### Mein Standort verfolgen {#follow-my-location}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

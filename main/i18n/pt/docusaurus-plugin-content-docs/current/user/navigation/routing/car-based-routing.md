@@ -29,7 +29,7 @@ O roteamento pode ser configurado de acordo com suas necessidades na seção [Pa
 
 O roteamento de carro foi projetado para ajudar os motoristas a encontrar as rotas mais eficientes e diretas para seus destinos. Ele leva em consideração restrições comuns de direção, como ruas de mão única, proibição de curvas, zonas de pedestres, e também ajuda a evitar estradas que não são adequadas para carros, como estradas estreitas ou estradas com limitações de peso.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Por padrão, o *perfil de Caminhão* está desativado. Para usar este perfil par
 
 O roteamento de caminhão é semelhante ao roteamento de carro, mas é projetado especificamente para motoristas de veículos comerciais grandes. Ele considera fatores adicionais, como [restrições de altura, peso e largura do veículo](../guidance/navigation-settings.md#size-parameters) e a possibilidade de transportar materiais perigosos (verifique a tabela abaixo). Todas as outras configurações de roteamento são idênticas ao [roteamento de carro](#route-parameters---car).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

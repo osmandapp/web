@@ -47,7 +47,7 @@ AIS arbeitet auf *VHF-Frequenzen* (161,975 MHz und 162,025 MHz) und hat aufgrund
 
 ***AIS-Anzeige auf der Karte:***
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Bei korrekter Einrichtung erscheinen die Schiffspositionen auf der Karte. Hauptm
 
 ### AIS Schiffsinformationen {#ais-vessel-information}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ AIS-Schiffe senden drei Arten von Daten:
 
 ## Plugin-Einstellungen {#plugin-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

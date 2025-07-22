@@ -102,7 +102,7 @@ Il pulsante bussola fornisce più azioni per controllare l'orientamento della ma
 
 ### Opzioni di visualizzazione {#display-options}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -131,7 +131,7 @@ L'icona della bussola sul pulsante punta sempre a Nord. Puoi selezionare come vi
 
 ## Modalità 3D {#3d-mode}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -45,7 +45,7 @@ Raster haritaları görselleştirme ve özelleştirme hakkında ayrıntılı bil
     - Raster harita parametrelerini [değiştirin](../map/raster-maps.md#change-raster-map-parameters).
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

@@ -22,7 +22,7 @@ Dans la section **Cartes et ressources**, vous pouvez gérer les cartes *en lign
 
 OsmAnd fonctionne avec deux types de cartes : les [cartes vectorielles](../map/vector-maps.md) et les [cartes matricielles](../map/raster-maps.md). L'onglet [Local](#local) stocke toutes les cartes et ressources. Les types de cartes disponibles peuvent être téléchargés à partir de l'onglet [Téléchargements](#downloads). Dans l'onglet [Mises à jour](#updates), vous pouvez télécharger les cartes disponibles pour les mises à jour et utiliser les [mises à jour en direct](#osmand-live). Vous pouvez également accéder à la fonction [Cartes supplémentaires](#extra-maps) pour créer vos propres types de cartes.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -45,7 +45,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ## Types de cartes {#map-types}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -104,7 +104,7 @@ Veuillez noter que les mises à jour mensuelles des cartes sont considérées co
 
 ### Téléchargements {#downloads}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -166,7 +166,7 @@ Des informations sur le *menu des cartes* et les *actions* se trouvent dans l'ar
 
 #### Chargement de plusieurs cartes {#multiple-map-loading}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -187,7 +187,7 @@ Pour les pays composés de **plusieurs cartes régionales**, vous pouvez utilise
 
 ### Local {#local}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -291,7 +291,7 @@ Utilisez les options de tri pour organiser les données cartographiques :
 
 ### Mises à jour {#updates}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ En savoir plus dans l'article [**Package personnalisé**](../plugins/custom).
 :::tip Achat
 OsmAnd Live est une fonctionnalité payante.
 :::
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ Les références d'itinéraire supprimées ou modifiées peuvent toujours appara
 
 ### Gratuit pour les contributeurs OSM {#free-for-osm-mappers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

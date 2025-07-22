@@ -28,7 +28,7 @@ Vous pouvez :
 
 Tous les widgets dépendent du [profil](../personal/profiles.md) — chaque profil a sa propre disposition, son ordre, sa visibilité et ses paramètres.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -50,7 +50,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config"
 
 ## Panneaux de widgets {#widget-panels}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -85,7 +85,7 @@ Chaque panneau prend en charge différents comportements de disposition :
 
 ### Catalogue de widgets {#widgets-catalog}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -246,7 +246,7 @@ Le mode vous permet d'ajouter **plus d'un widget sur une seule ligne** sur les p
 
 ### Pages {#pages}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -306,7 +306,7 @@ Les widgets des panneaux droit et gauche peuvent être regroupés en **Pages**. 
 
 ### Menu contextuel du widget {#widget-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -389,7 +389,7 @@ Vous pouvez réorganiser ou supprimer des widgets de l'écran de l'application �
 
 ### Boutons personnalisés {#custom-buttons}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -413,7 +413,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 ### Boutons par défaut {#default-buttons}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -476,7 +476,7 @@ La fonction *Apparence du bouton* vous permet de personnaliser entièrement l'as
 
 ## Autre {#other}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -502,7 +502,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/
 
 ### Position d'affichage (position de l'emplacement à l'écran) {#display-position-location-position-on-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -528,7 +528,7 @@ Vous permet de définir le placement du curseur sur *[Ma position](../map/intera
 
 ## Actions {#actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -560,7 +560,7 @@ Actions disponibles :
 
 ## Changer de profil {#switch-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

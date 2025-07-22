@@ -35,7 +35,7 @@ OsmAnd надає кілька способів доступу до інстру
 
 ## Як використовувати {#how-to-use}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -89,7 +89,7 @@ OsmAnd надає кілька способів доступу до інстру
 
 ## Пошук POI за категоріями {#poi-search-by-categories}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 ### Типи фільтрів {#types-of-filters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 ### Перегрупувати категорії {#rearrange-categories}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -310,7 +310,7 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 ### Користувацький фільтр POI {#custom-poi-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -401,7 +401,7 @@ Available for search:
 
 ### Зберегти нові користувацькі фільтри {#save-new-custom-filters}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -431,7 +431,7 @@ Available for search:
 
 ### Редагувати існуючий фільтр {#edit-an-existing-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -461,7 +461,7 @@ Available for search:
 
 ### Видалити користувацький фільтр POI {#delete-custom-poi-filter}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

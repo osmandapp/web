@@ -45,7 +45,7 @@ Sesli komutların nasıl ve ne zaman tetiklendiği hakkında daha fazla bilgi i�
 
 ### Ses Ayarları {#voice-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ Bazı ülkelerde veya bölgelerde hız kamerası uyarı uygulamalarını kullanm
 
 ### Hız Sınırı {#speed-limit}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -241,7 +241,7 @@ Sorun giderme için şuraya bakın:
 
 ### Sesli Komut Dili {#voice-prompt-language}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

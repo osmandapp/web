@@ -29,7 +29,7 @@ Die Navigation kann entsprechend Ihren Bedürfnissen im Abschnitt [Navigationsei
 
 Die Auto‑Navigation wurde entwickelt, um Fahrern zu helfen, die effizientesten und direktesten Routen zu ihren Zielen zu finden. Sie berücksichtigt gängige Fahrbeschränkungen wie Einbahnstraßen, Abbiegeverbote, Fußgängerzonen und hilft auch, für Autos ungeeignete Straßen zu vermeiden, wie z. B. enge Straßen oder Straßen mit Gewichtsbeschränkungen.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -66,7 +66,7 @@ Standardmäßig ist das *LKW‑Profil* deaktiviert. Um dieses Profil für die Na
 
 Die LKW‑Navigation ähnelt der Auto‑Navigation, wurde jedoch speziell für Fahrer großer Nutzfahrzeuge entwickelt. Sie berücksichtigt zusätzliche Faktoren wie [Höhen-, Gewichts- und Breitenbeschränkungen](../guidance/navigation-settings.md#size-parameters) des Fahrzeugs sowie die Möglichkeit, Gefahrstoffe zu transportieren (siehe Tabelle unten). Alle anderen Navigationseinstellungen sind identisch mit der [Auto‑Navigation](#route-parameters---car).  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

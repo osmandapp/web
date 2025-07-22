@@ -47,7 +47,7 @@ O AIS opera em *frequências VHF* (161.975 MHz e 162.025 MHz) e possui um alcanc
 
 ***Exibição AIS no mapa:***
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Quando configurado corretamente, as posições das embarcações aparecerão no 
 
 ### Informações da Embarcação AIS {#ais-vessel-information}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ As embarcações AIS transmitem três tipos de dados:
 
 ## Configurações do Plugin {#plugin-settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

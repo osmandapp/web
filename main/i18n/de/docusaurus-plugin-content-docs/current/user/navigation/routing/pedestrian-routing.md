@@ -24,7 +24,7 @@ Um die *Fußgängernavigation* zu konfigurieren, gehen Sie zum Abschnitt [Routen
 
 Fußgängernavigation kann nicht nur in städtischen Gebieten nützlich sein, wo Fußgänger auf verschiedene Hindernisse stoßen können, wenn sie von einem Ort zum anderen gelangen wollen. Sie können diesen Navigationstyp auch beim Joggen, Wandern und Nordic Walking außerhalb der Stadt oder in den Bergen verwenden. Passen Sie einfach die Routenparameter an Ihre Bedürfnisse an.  
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

@@ -31,7 +31,7 @@ Um das Plugin *OpenStreetMap-Bearbeitung* zu verwenden, müssen Sie die folgende
 
 ## Einstellungen {#settings}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -70,7 +70,7 @@ Wenn Sie ein [OsmAnd Pro](../purchases/android.md#pro-features)-Abonnement haben
 
 ### Autorisierung {#authorization}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ Melden Sie sich an, um Änderungen und GPX-Dateien beizutragen.
 
 ### Kostenlose Karten-Updates für Kartografen {#free-map-updates-for-mappers}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Die Einstellung <Translate android="true" ids="map_updates_for_mappers"/> ermög
 
 ### OSM-Bearbeitungsebene {#osm-editing-layer}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -149,7 +149,7 @@ Das OpenStreetMap-Bearbeitungs-Plugin ermöglicht es Ihnen, neue Objekte auf der
 
 ### Tags hinzufügen {#add-tags}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Denken Sie daran, dass es beim Hinzufügen nicht unterstützter POI-Typen wichti
 
 ## OSM-Notiz erstellen / ändern {#create--modify-osm-note}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ Ihre Tracks werden innerhalb einer Stunde zu [OSM-Spuren](https://www.openstreet
 ### GPS-Track hochladen {#upload-gps-track}
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

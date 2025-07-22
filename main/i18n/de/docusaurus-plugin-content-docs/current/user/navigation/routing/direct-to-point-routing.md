@@ -32,7 +32,7 @@ Diese Art des Routings berücksichtigt keine Hindernisse oder Barrieren, die im 
 Bei Verwendung der Navigationstypen Direktpunkt und Boot benötigen Sie [Tiefenlinien-Daten](../../plugins/nautical-charts.md#nautical-map-style), die in *Karte konfigurieren* aktiviert und eingestellt werden können.
 :::
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

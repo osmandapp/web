@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Todos los tracks en OsmAnd se almacenan en una pestaña en *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd procesa el archivo de track en [formato GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), pero [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) y [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) pueden importarse y convertirse a GPX. Lea más sobre los diferentes tipos de tracks en el artículo [Tracks en el mapa](../../map/tracks/index.md#types-of-tracks).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Todos los tracks en OsmAnd se almacenan en una pestaña en *<Translate android="
 
 ## Crear un Track {#create-a-track}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Puedes añadir tracks en OsmAnd de las siguientes maneras:
 
 ## Administrar Tracks {#manage-tracks}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -91,7 +91,7 @@ Todos los tracks grabados, creados o importados se muestran automáticamente en 
 
 ### Menú de Track {#track-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -147,7 +147,7 @@ El menú ofrece las siguientes acciones:
 
 ### Buscar {#search}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -174,7 +174,7 @@ Disponible:
 
 ### Modo de Selección {#selection-mode}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Una vez que hayas hecho tu elección, se proporcionan los siguientes pasos:
 
 ### Ordenar por {#sort-by}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ OsmAnd ofrece una forma sencilla de ordenar tus tracks, ayudándote a gestionar 
 
 #### Ordenar Subcarpetas {#sorting-subfolders}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -276,7 +276,7 @@ La opción de ordenación seleccionada se aplica no solo a la subcarpeta actual,
 
 ## Carpeta de Tracks {#track-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -320,7 +320,7 @@ Cómo abrir el menú de la carpeta:
 
 ### Estadísticas de Carpeta {#folder-statistics}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ En la parte inferior de la lista en la pestaña *Tracks*, y debajo de la lista d
 
 ### Acciones de Carpeta {#folder-actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -400,7 +400,7 @@ Cómo abrir las acciones de la carpeta:
 
 ### Eliminar Carpeta {#delete-folder}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -455,7 +455,7 @@ La herramienta de importación te permite añadir tracks desde archivos externos
 
 ### Exportar {#export}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -31,7 +31,7 @@ Sie können:
 Alle Widgets sind [profilabhängig](../personal/profiles.md) – jedes Profil hat sein eigenes Layout, seine eigene Reihenfolge, Sichtbarkeit und Einstellungen.
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -54,7 +54,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>
 
 ## Widget-Panels {#widget-panels}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ Jedes Panel unterstützt unterschiedliche Layout-Verhaltensweisen:
 
 ### Widget-Katalog {#widgets-catalog}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Der Modus ermöglicht es Ihnen, **mehr als ein Widget in einer einzigen Zeile** 
 
 ### Seiten {#pages}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -315,7 +315,7 @@ Widgets in den rechten und linken Panels können in **Seiten** gruppiert werden.
 
 ### Widget-Kontextmenü {#widget-context-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -400,7 +400,7 @@ Sie können Widgets im **Bearbeitungsmodus** vom Anwendungsbildschirm neu anordn
 
 ### Benutzerdefinierte Schaltflächen {#custom-buttons}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -424,7 +424,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
 ### Standardschaltflächen {#default-buttons}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -489,7 +489,7 @@ Die Funktion *Schaltflächen-Aussehen* ermöglicht es Ihnen, das Aussehen der Sc
 
 ## Sonstiges {#other}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -516,7 +516,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
 
 ### Anzeigeposition (Standortposition auf dem Bildschirm) {#display-position-location-position-on-screen}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -543,7 +543,7 @@ Ermöglicht es Ihnen, die Platzierung des Cursors auf *[Mein Standort](../map/in
 
 ## Aktionen {#actions}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -576,7 +576,7 @@ Verfügbare Aktionen:
 
 ## Profil wechseln {#switch-profile}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

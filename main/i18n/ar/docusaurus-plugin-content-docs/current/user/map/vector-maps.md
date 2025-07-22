@@ -130,7 +130,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ## * خطوط الكنتور {#-contour-lines}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ## * العمق البحري {#-nautical-depth}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ## إظهار الحدود {#show-borders}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -219,7 +219,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 انتقل إلى: *القائمة ← تكوين الخريطة ← إظهار ← شبكة الإحداثيات*
 
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ### وضع الخريطة {#map-mode}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -323,7 +323,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ### التفاصيل {#details}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ### المسارات {#routes}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -413,7 +413,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ### النقل {#transport}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -445,7 +445,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ### إخفاء {#hide}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -476,7 +476,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ### نمط الطريق {#road-style}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -514,7 +514,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ### حجم النص {#text-size}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -539,7 +539,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ### مكبر الخريطة {#map-magnifier}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -572,7 +572,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 إذا لم يتم ترجمة الأسماء على الخريطة إلى اللغة المطلوبة من قبل مجتمع OSM، يمكنك استخدام [الأسماء المنقولة](https://en.wikipedia.org/wiki/Transliteration): *<Translate android="true" ids="use_latin_name_if_missing"/>* (أندرويد) أو *<Translate ios="true" ids="translit_names"/>* (iOS).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

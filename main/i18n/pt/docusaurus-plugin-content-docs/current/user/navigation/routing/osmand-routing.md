@@ -85,7 +85,7 @@ Existem duas maneiras possíveis de escolher quais estradas evitar ao calcular u
 
 ### Menu Evitar Estradas {#avoid-roads-menu}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Usando a opção *Selecionar no mapa*, você pode continuar a marcar estradas co
 
 Ao selecionar uma estrada para evitar usando o *menu de contexto do mapa* ou o *menu Evitar estradas*, a lista de estradas será exibida acima da tela do mapa.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ Ao selecionar uma estrada para evitar usando o *menu de contexto do mapa* ou o *
 
 ## Exportar / Importar {#export--import}
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -154,7 +154,7 @@ Dependendo das configurações do seu dispositivo e dos aplicativos disponíveis
 
 Você pode [importar](../../personal/import-export.md#import) estradas a evitar durante o cálculo da rota de outras fontes no formato de arquivo `.osf`. Além disso, isso pode ser feito usando a *opção Importar* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). Você pode optar por importar todos os dados ou apenas algumas estradas a evitar (marcando uma estrada com um visto na lista).
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

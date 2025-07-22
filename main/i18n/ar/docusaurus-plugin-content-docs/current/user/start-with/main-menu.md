@@ -20,7 +20,7 @@ import Translate from '@site/src/components/Translate.js';
 
 توجد أيقونة [القائمة الرئيسية](../widgets/map-buttons.md#main-menu) '&#8801;' في الزاوية السفلية اليسرى من شاشة الخريطة. في وضع الملاحة، لا يكون هذا الزر مرئيًا افتراضيًا. يظهر بعد نقرة قصيرة على الخريطة.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

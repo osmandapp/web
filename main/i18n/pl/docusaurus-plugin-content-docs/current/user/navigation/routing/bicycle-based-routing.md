@@ -27,7 +27,7 @@ Możesz skonfigurować *Wyznaczanie trasy dla roweru* w sekcji [Parametry trasy]
 
 Funkcje wyznaczania trasy dla roweru w OsmAnd pozwalają rowerzystom wprowadzić punkt początkowy i końcowy, a następnie wygenerować trasę, która uwzględnia ich preferencje i lokalną geografię.
 
-<Tabs groupId="operating-systems" queryString="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
