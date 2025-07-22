@@ -58,6 +58,9 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
+            // expose Leaflet map instance to window for tests
+            window.map = map;
+
             const hash = new L.Hash(map);
             mapRef.current = map;
             if (!ctx.mapMarkerListener) {
