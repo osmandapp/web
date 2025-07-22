@@ -260,12 +260,12 @@ const CloudTrackLayer = () => {
                 if (file.name === ctxTrack.name) {
                     ctx.setSelectedGpxFile((o) => ({ ...o, gpx: file.gpx, cloudRedrawWpts: true }));
                 }
-                //registerCleanupFileLayer(file);
+                registerCleanupFileLayer(file);
             } else if (file.url && file.zoomToTrack && file.gpx) {
-                //map.fitBounds(file.gpx.getBounds(), fitBoundsOptions(ctx));
+                map.fitBounds(file.gpx.getBounds(), fitBoundsOptions(ctx));
             } else if (!file.url && file.gpx) {
                 processed++;
-                //unregisterCleanupFileLayer(file);
+                unregisterCleanupFileLayer(file);
                 file.gpx = removeLayerFromMap(file, map);
                 file.showOnMap = false;
             } else if (file.delete) {
