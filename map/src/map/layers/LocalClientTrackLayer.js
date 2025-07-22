@@ -31,6 +31,7 @@ import {
     deleteOldLayers,
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
+import { addLayerToMap } from '../util/MapManager';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -443,13 +444,12 @@ export default function LocalClientTrackLayer() {
                 }
             });
             layer.options = { ...layer.options, type: LOCAL_TRACKS_LAYERS_ID };
-            layer.addTo(map);
+            addLayerToMap(map, layer, 'add-local-track-layer');
             localLayers[track.name] = {
                 layer: layer,
                 points: track.points ? track.points : TracksManager.getEditablePoints(track),
                 active: active,
             };
-            // setLocalLayers({ ...localLayers }); // redunant setLocalLayers - called soon by parents
         }
     }
 
@@ -581,8 +581,7 @@ export default function LocalClientTrackLayer() {
     }
 
     function createPointOnMap(newPoint, layers, track) {
-        let marker = new EditableMarker(map, ctx, newPoint, null, track).create();
-        marker.addTo(map);
+        const marker = new EditableMarker(map, ctx, newPoint, null, track).create();
         layers.addLayer(marker);
     }
 
@@ -687,8 +686,8 @@ export default function LocalClientTrackLayer() {
             ctx.setSelectedGpxFile({ ...ctxTrack });
             TracksManager.updateState(ctx);
         } else {
-            let newPoint = createNewPoint({ ctx, e, geoProfile: geoRouter.getShortGeoProfile() });
-            let points = ctxTrack.points;
+            const newPoint = createNewPoint({ ctx, e, geoProfile: geoRouter.getShortGeoProfile() });
+            const points = ctxTrack.points;
             let layers = ctxTrack.layers ?? new L.FeatureGroup();
             let prevPoint = ctxTrack.prevPoint;
             if (isNewPoint(ctxTrack, newPoint)) {

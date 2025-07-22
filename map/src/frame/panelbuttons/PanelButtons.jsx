@@ -75,11 +75,10 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
     }
 
     function getTrack(nextState) {
-        const currentLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
-        const objFromState = _.cloneDeep(nextState);
+        const objFromState = nextState;
         objFromState.syncRouting = true; // will be 1st effect
         objFromState.updateLayers = true; // will be 2nd effect
-        objFromState.layers = currentLayers; // use actual layers
+        objFromState.layers = ctx.selectedGpxFile.layers;
         ctx.setSelectedGpxFile(objFromState);
     }
 
