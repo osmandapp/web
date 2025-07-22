@@ -3,6 +3,8 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const defaultLocale = 'en';
+const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -10,7 +12,8 @@ const config = {
   tagline: 'Offline Maps and Navigation',
   url: 'https://osmand.net',
   baseUrl: '/',
-  onBrokenAnchors: !process.env.IGNORE_BROKEN_ANCHORS ? 'warn' : 'ignore',
+  onBrokenLinks: currentLocale === defaultLocale ? 'warn' : 'ignore',
+  onBrokenAnchors: currentLocale === defaultLocale ? 'warn' : 'ignore',
   favicon: 'img/favicon.ico',
   organizationName: 'osmandapp', // Usually your GitHub org/user name.
   projectName: 'web', // Usually your repo name.

@@ -21,8 +21,9 @@ sidebar_position: 7
     ```
     - In Eclipse 'Import' - 'Existing projects in workspace' select folders 'OsmAnd-java', 'OsmAndMapCreatorutilities', 'OsmAndMapCreator', 'OsmAndServer', 'OsmAndServerUtilties'.
     **Note**: don't select top folder java-tools and instead select specified above projects.    
-4. Android Studio / Idea
-    Feel free to make pull request to this documentation and describe how it could be done.
+4. **IntelliJ IDEA**
+    - 'File' > 'New' > 'Project from existing sources...' and navigate to `java-tools`
+    - Select 'Import project from existing model' and pick 'gradle' from the list
 5. Main classes to execute from IDE:
    - net.osmand.MainUtilities - represents utilities.sh and leads to all possible utilties.
    - net.osmand.obf.BinaryInspector - inspector.sh utility to read OBF files and gives information about it.
