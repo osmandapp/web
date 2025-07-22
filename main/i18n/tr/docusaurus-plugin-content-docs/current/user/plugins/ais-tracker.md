@@ -47,7 +47,7 @@ AIS, *VHF frekanslarında* (161.975 MHz ve 162.025 MHz) çalışır ve görüş 
 
 ***Haritada AIS gösterimi:***
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Doğru şekilde ayarlandığında, gemi konumları haritada görünecektir. Teme
 
 ### AIS Gemi Bilgileri {#ais-vessel-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ AIS gemileri üç tür veri iletir:
 
 ## Eklenti Ayarları {#plugin-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

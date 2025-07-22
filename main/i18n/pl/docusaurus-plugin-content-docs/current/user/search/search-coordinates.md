@@ -27,7 +27,7 @@ OsmAnd oferuje kilka sposobów dotarcia do *narzędzia wyszukiwania → [zakład
 
 ## Jak używać {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

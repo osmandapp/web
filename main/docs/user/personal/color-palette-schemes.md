@@ -27,7 +27,7 @@ Color schemes are used in [route colorization](#routes), [map terrain](#terrain)
 
 Color palette data is available in the [*Maps & Resources*](../personal/maps-resources.md#local) menu.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -50,7 +50,7 @@ Go to: *Menu → Maps & Resources → Local → Colors*
 
 ## Scheme Types {#scheme-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ After moving this TXT file to *..Android/data/net.osmand/files/color-palete/heig
 
 ### Quick actions {#quick-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -157,7 +157,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 ### Import / Export Colors {#import--export-colors}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -23,7 +23,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Виберіть об'єкт (одне натискання) {#select-an-object-single-tap}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -52,7 +52,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Виберіть будь-яку точку (довге натискання) {#select-any-point-long-tap}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -75,7 +75,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Виберіть маршрут {#select-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -104,7 +104,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Деталі {#details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -150,7 +150,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Альтернативні назви {#alternative-names}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -181,7 +181,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 ### Інформація про полігон {#polygon-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -242,7 +242,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 ### Маршрути громадського транспорту {#public-transport-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -297,7 +297,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 ### Опис статті {#article-description}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -326,7 +326,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 ### Онлайн фотографії {#online-photos}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -359,7 +359,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 ### Зображення на рівні вулиці {#street-level-imagery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -398,7 +398,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 ## Дії {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -419,7 +419,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 ### Додати / Редагувати улюблене місце {#add--edit-favorite}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -446,7 +446,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 ### Додати / Редагувати маркер {#add--edit-marker}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -475,7 +475,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 ### Поділитися {#share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -514,7 +514,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 ### Маршрути до / від {#directions-to--from}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -545,7 +545,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 ### Пошук поблизу {#search-nearby}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -568,7 +568,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 ### Уникати дороги {#avoid-road}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -594,7 +594,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 ### Змінити положення об'єкта {#change-object-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -628,7 +628,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 ### Оновити / Завантажити онлайн карти {#update--download-online-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -654,7 +654,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 ### Оновити / Завантажити векторні карти {#update--download-vector-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -687,7 +687,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 Щоб додати/видалити точки паркування, увімкніть [**плагін Позиція паркування**](../plugins/parking.md) OsmAnd.
 :::  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -716,7 +716,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 Щоб додати/редагувати точки маршруту, увімкніть [**плагін Запис поїздки**](../plugins/trip-recording.md) OsmAnd.
 :::  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -752,7 +752,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 Щоб додати створити/змінити POI, увімкніть [**плагін Редагування OSM**](../plugins/osm-editing.md) OsmAnd.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -780,7 +780,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 Щоб додати відкрити нотатку OSM, увімкніть [**плагін Редагування OSM**](../plugins/osm-editing.md) OsmAnd.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

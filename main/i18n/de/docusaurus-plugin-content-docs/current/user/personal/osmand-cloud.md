@@ -53,7 +53,7 @@ OsmAnd unterstützt die **plattformübergreifende Nutzung** über *([Android](..
 
 ## Login {#login}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -99,7 +99,7 @@ Wenn Sie Probleme bei der Registrierung haben:
 
 ## OsmAnd Start {#osmand-start}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ Im OsmAnd Start enthaltene Funktionen:
 
 ### OsmAnd Start aktivieren {#how-to-activate-osmand-start}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -165,7 +165,7 @@ Wenn Sie bereits ein **OsmAnd Pro**-Abonnement oder ein **aktives OsmAnd Cloud-K
 
 ## Letzte Synchronisierung {#last-sync}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ To use this feature:
 
 ## Papierkorb {#trash}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ Die Funktion **Papierkorb** ermöglicht Ihnen, Dateien anzuzeigen und zu verwalt
 
 ## Einstellungen {#settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -281,7 +281,7 @@ Dieser Abschnitt dient zum Bearbeiten und Verwalten Ihrer OsmAnd Cloud.
 
 ### Daten zum Sichern auswählen {#select-data-to-back-up}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -314,7 +314,7 @@ Alle [Karten](../start-with/download-maps.md) werden auf dem Gerät gespeichert,
 
 ### Speicher verwalten {#manage-storage}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -346,7 +346,7 @@ Dieser Abschnitt enthält Informationen darüber, welches Ihrer Konten mit OsmAn
 
 ### Löschoption {#deletion-option}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -382,7 +382,7 @@ Die Aktionen, die Sie im Abschnitt **Gefahrenzone** des Einstellungsmenüs durch
 
 ## Liste der Änderungen {#list-of-changes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -409,7 +409,7 @@ Tippen Sie im Dropdown-Menü im Abschnitt [Letzte Synchronisierung](#last-sync) 
 
 ### Lokal und Cloud {#local-and-cloud}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -438,7 +438,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 ### Konflikte {#conflicts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

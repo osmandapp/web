@@ -53,7 +53,7 @@ OsmAnd Cloud هي خدمة تخزين سحابي مستقلة و*غير مرتب
 
 ## تسجيل الدخول {#login}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -99,7 +99,7 @@ OsmAnd Cloud هي خدمة تخزين سحابي مستقلة و*غير مرتب
 
 ## OsmAnd Start {#osmand-start}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ OsmAnd Cloud هي خدمة تخزين سحابي مستقلة و*غير مرتب
 
 ### كيفية تفعيل OsmAnd Start {#how-to-activate-osmand-start}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -165,7 +165,7 @@ OsmAnd Cloud هي خدمة تخزين سحابي مستقلة و*غير مرتب
 
 ## آخر مزامنة {#last-sync}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ To use this feature:
 
 ## المهملات {#trash}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ To use this feature:
 
 ## الإعدادات {#settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -281,7 +281,7 @@ To use this feature:
 
 ### تحديد البيانات للنسخ الاحتياطي {#select-data-to-back-up}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -314,7 +314,7 @@ To use this feature:
 
 ### إدارة التخزين {#manage-storage}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -346,7 +346,7 @@ To use this feature:
 
 ### خيار الحذف {#deletion-option}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -382,7 +382,7 @@ To use this feature:
 
 ## قائمة التغييرات {#list-of-changes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -409,7 +409,7 @@ To use this feature:
 
 ### المحلية والسحابية {#local-and-cloud}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -438,7 +438,7 @@ To use this feature:
 
 ### التعارضات {#conflicts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

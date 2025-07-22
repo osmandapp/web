@@ -159,7 +159,7 @@ Você pode personalizar a exibição de certos ***Livros de Viagens*** e tipos d
 
 ## Exibir Rotas no Mapa {#display-routes-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering
 
 ## Ações com Rotas {#actions-with-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ No **menu de contexto**, você pode:
 
 ### Informações e Elevação da Rota {#route-info-and-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -248,7 +248,7 @@ As seguintes informações serão visíveis no menu de contexto:
 
 Para visualizar o gráfico de elevação, inclinação ou detalhes de altitude para uma rota selecionada, basta tocar em qualquer um dos seguintes valores no menu de contexto: **Distância**, **Subida**, **Descida** ou **Altitude**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Para visualizar o gráfico de elevação, inclinação ou detalhes de altitude p
 
 ### Salvar como uma Trilha {#save-as-a-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ Para salvar a rota como um *arquivo GPX*, toque no botão **Salvar (Download)** 
 
 ### Iniciar Navegação {#start-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -321,7 +321,7 @@ Encontre rotas usando a [função de Pesquisa](../search/index.md) por nome ou s
 
 Para pesquisar, vá para o menu *<Translate android="true" ids="search_button"/>* ou *<Translate android="true" ids="search_button,search_categories"/>* e digite sua atividade.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -339,7 +339,7 @@ Para pesquisar, vá para o menu *<Translate android="true" ids="search_button"/>
 
 Navegue até *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* para encontrar as rotas desejadas. As rotas incluem nome, tipo de atividade, comprimento, localização e distância até o ponto mais próximo.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ Navegue até *<Translate android="true" ids="search_button,search_categories,poi
 
 Use o botão de filtros (canto superior direito) para exibir apenas as rotas desejadas.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

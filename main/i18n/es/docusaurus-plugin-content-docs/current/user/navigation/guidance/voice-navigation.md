@@ -45,7 +45,7 @@ Para obtener más información sobre cómo y cuándo se activan los mensajes de 
 
 ### Configuración de voz {#voice-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ En algunos países o regiones, el uso de aplicaciones de advertencia de radares 
 
 ### Límite de velocidad {#speed-limit}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -241,7 +241,7 @@ Para solucionar problemas, consulte:
 
 ### Idioma de los mensajes de voz {#voice-prompt-language}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -113,7 +113,7 @@ errors (e.g. if the SD card is too full).
 
 ## Copiar Pacote de Mapa Raster Criado no PC {#copy-raster-map-package-created-on-pc}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

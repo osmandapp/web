@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Für eine erfolgreiche Navigation ist es wichtig, die entsprechenden Einstellungen richtig zu konfigurieren, je nach Ihren Bedürfnissen und Ihrer Reiseart – ob mit dem Auto, zu Fuß, zu Pferd oder auf Skiern. Dieser Artikel beschreibt die grundlegenden Routenparameter, [Sprachansagen](#voice-prompts), [Bildschirmwarnungen](#screen-alerts), das [Kartenverhalten während der Navigation](#map-during-navigation) und die [Anpassung der Routenlinien](#customize-route-line). Er enthält auch Details zu Fahrzeugeinstellungen wie [Standardgeschwindigkeit](#default-speed) und [Maximale/minimale Geschwindigkeit](#road-speeds), [Motortyp](#fuel-used-by-motor) für die CO2-Berechnung, [Tankkapazität](#fuel-tank-capacity) und [Größe/Gewicht](#size-parameters), die die Route beeinflussen können. Das Anpassen dieser Einstellungen hilft Ihnen, OsmAnd optimal zu nutzen und Ihr Ziel ohne unnötige Verzögerung zu erreichen.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ Das Standardprofil *Karte durchsuchen* hat keine Navigationseinstellungen.
 
 ## Navigationstyp {#navigation-type}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -80,7 +80,7 @@ Der Navigationstyp bestimmt, welche Regeln zur Routenberechnung verwendet werden
 
 ## Routenparameter {#route-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -105,7 +105,7 @@ Alle Routenparameter sind in den entsprechenden Abschnitten der Dokumentation de
 
 ### Route neu berechnen {#recalculate-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ Der Parameter **Routenberechnung** ändert die berechnete Route automatisch, wen
 
 ### Entwicklungseinstellungen {#development-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -171,7 +171,7 @@ Die Parameter im Abschnitt **Entwicklung** sind hauptsächlich für fortgeschrit
 
 ## Sprachansagen {#voice-prompts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -203,7 +203,7 @@ Wenn Sie einen Track als Zielpunkt auswählen, müssen Sie die Option [An Straß
 
 ## Bildschirmwarnungen {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -244,7 +244,7 @@ Die Warnungstypen haben ein unterschiedliches visuelles Erscheinungsbild, das vo
 
 ## Karte während der Navigation {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -268,7 +268,7 @@ Wie sich das Verhalten der Karte während der Navigation ändert, erfahren Sie i
 
 ## Routenlinie anpassen {#customize-route-line}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -292,7 +292,7 @@ Mit der Einstellung **Routenlinie anpassen** können Sie das Aussehen der Routen
 
 ## Fahrzeugparameter {#vehicle-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -323,7 +323,7 @@ Die korrekte Einstellung der Parameter in der OsmAnd-App hilft Ihnen, Probleme b
 
 ### Größenparameter {#size-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -384,7 +384,7 @@ Diese Einschränkungen können für die Navigation wichtig sein und sollten bei 
 
 #### Kraftstoffart des Motors {#fuel-used-by-motor}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -409,7 +409,7 @@ Die Einstellung **Kraftstoffart des Motors** ist nur in fahrzeugbasierten Naviga
 
 #### Tankkapazität {#fuel-tank-capacity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -445,7 +445,7 @@ Um genaue Berechnungen und Navigationsvorschläge zu gewährleisten, überprüfe
 
 ### Standardgeschwindigkeit / Straßengeschwindigkeiten {#default-speed--road-speeds}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -481,7 +481,7 @@ Die **Standardgeschwindigkeit** ist die voreingestellte Bewegungsgeschwindigkeit
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
 
 <!--
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -509,7 +509,7 @@ Die Einstellung legt die maximale Fahrgeschwindigkeit fest und verringert die Pr
 
 ## Detaillierte Track-Führung {#detailed-track-guidance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

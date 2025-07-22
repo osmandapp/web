@@ -28,7 +28,7 @@ OsmAnd offre diversi modi per visualizzare la cronologia delle ricerche.
 
 ## Come usare {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -59,7 +59,7 @@ La cronologia delle ricerche serve a fornire informazioni pertinenti sulle tue a
 
 ## Voci della cronologia {#history-items}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -105,7 +105,7 @@ Puoi **disabilitare o abilitare** la visualizzazione dell'intera cronologia dell
 
 ### Elimina {#delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Dopo aver utilizzato OsmAnd per molto tempo, l'elenco della *Cronologia ricerche
 
 ### Esporta e condividi {#export-and-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

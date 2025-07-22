@@ -159,7 +159,7 @@ Vous pouvez personnaliser l'affichage de certains ***Carnets de voyage*** et typ
 
 ## Afficher les itinéraires sur la carte {#display-routes-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Allez dans : *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 ## Actions avec les itinéraires {#actions-with-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ Dans le **menu contextuel**, vous pouvez :
 
 ### Informations sur l'itinéraire et l'altitude {#route-info-and-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -248,7 +248,7 @@ Les informations suivantes seront visibles dans le menu contextuel :
 
 Pour afficher le graphique de l'altitude, de la pente ou des détails d'altitude pour un itinéraire sélectionné, appuyez simplement sur l'une des valeurs suivantes dans le menu contextuel : **Distance**, **Montée**, **Descente** ou **Altitude**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Pour afficher le graphique de l'altitude, de la pente ou des détails d'altitude
 
 ### Enregistrer en tant que trace {#save-as-a-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ Pour enregistrer l'itinéraire en tant que *fichier GPX*, appuyez sur le bouton 
 
 ### Démarrer la navigation {#start-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -321,7 +321,7 @@ Trouvez des itinéraires à l'aide de la fonction [Recherche](../search/index.md
 
 Pour rechercher, allez dans le menu *<Translate android="true" ids="search_button"/>* ou *<Translate android="true" ids="search_button,search_categories"/>* et entrez votre activité.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -339,7 +339,7 @@ Pour rechercher, allez dans le menu *<Translate android="true" ids="search_butto
 
 Naviguez vers *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* pour trouver les itinéraires souhaités. Les itinéraires comprennent le nom, le type d'activité, la longueur, l'emplacement et la distance jusqu'au point le plus proche.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ Naviguez vers *<Translate android="true" ids="search_button,search_categories,po
 
 Utilisez le bouton filtres (coin supérieur droit) pour afficher uniquement les itinéraires souhaités.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

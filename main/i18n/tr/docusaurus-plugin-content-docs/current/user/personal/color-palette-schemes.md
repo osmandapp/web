@@ -28,7 +28,7 @@ Renk şemaları [rota renklendirmesinde](#routes), [harita arazisinde](#terrain)
 
 Renk paleti verileri [*Haritalar ve Kaynaklar*](../personal/maps-resources.md#local) menüsünde mevcuttur.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -51,7 +51,7 @@ Renk paleti verileri [*Haritalar ve Kaynaklar*](../personal/maps-resources.md#lo
 
 ## Şema Türleri {#scheme-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Bu TXT dosyasını *..Android/data/net.osmand/files/color-palete/height_altitude
 
 ### Hızlı eylemler {#quick-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -158,7 +158,7 @@ Arazi için paleti değiştirmek üzere **Hızlı Eylem**. Katmanlar arasında g
 
 ### Renkleri İçe/Dışa Aktar {#import--export-colors}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

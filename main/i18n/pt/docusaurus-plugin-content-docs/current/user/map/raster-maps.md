@@ -75,7 +75,7 @@ Os mapas online no OsmAnd são compostos por dados raster, que consistem em pixe
 
 ## Selecionar Mapas Raster {#select-raster-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -100,7 +100,7 @@ Você também pode ajustar a transparência do mapa base para misturá-lo com su
 
 ### Principal {#main}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -125,7 +125,7 @@ Você pode escolher um estilo de mapa da lista ou [adicionar](#add-new-online-ra
 
 ### Camada de Sobreposição {#overlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -156,7 +156,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 
 ### Camada Inferior {#underlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -215,7 +215,7 @@ A diferença da exibição do relevo no mapa ao aplicar essas configurações é
 
 ### Configurar Opções de Exibição {#configure-display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -271,7 +271,7 @@ Aqui estão os principais métodos para adicionar uma nova fonte de mapa raster 
 
 ### Adicionar Nova Fonte de Mapa Raster Online {#add-new-online-raster-map-source}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -354,7 +354,7 @@ Se você deseja acessar mapas raster offline, pode ser necessário pré-carregar
 
 Para que os mapas atualizem automaticamente os blocos após um tempo, você pode definir um [Tempo de Expiração](#add-new-online-raster-map-source), então o OsmAnd recarregará os blocos assim que forem exibidos.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -393,7 +393,7 @@ Para que os mapas atualizem automaticamente os blocos após um tempo, você pode
 
 ### Alterar Parâmetros do Mapa Raster {#change-raster-map-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

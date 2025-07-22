@@ -21,7 +21,7 @@ A ferramenta **Planejar uma rota** (*Menu → Planejar uma rota*) é um recurso 
 
 Uma rota consiste em um conjunto de segmentos entre pontos especificados. Os segmentos podem ser linhas retas ou rotas adaptadas ao perfil selecionado. A rota pode ser salva como GPX para posterior importação, edição e [navegação](../navigation/setup/gpx-navigation.md).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -40,7 +40,7 @@ Uma rota consiste em um conjunto de segmentos entre pontos especificados. Os seg
 
 ## Principais Casos de Uso {#main-use-cases}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -72,7 +72,7 @@ Você pode **aumentar e diminuir o zoom** para facilitar a colocação de pontos
 
 ### Modificar Trilhas GPX Existentes {#modify-existing-gpx-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Se os [dados de Elevação](../map/tracks/track-context-menu.md#calculating-miss
 
 ### Anexar Trilhas a Estradas {#attach-track-to-roads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -169,7 +169,7 @@ To generate navigation instructions:
 
 ### Adicionando Pontos {#adding-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -199,7 +199,7 @@ Os pontos adicionados no editor podem ser conectados como uma linha reta ou como
 2. Toque no *ícone de perfil* no canto inferior esquerdo da tela do mapa. Não no ícone superior, ele abrirá o menu Configurar Mapa.
 3. No *[menu de contexto do ponto](#point-context-menu) → Alterar tipo de rota antes/depois*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ Um segmento de trilha é uma coleção de pontos conectados sem **lacunas**. Em 
 
 ### Menu de Contexto do Ponto {#point-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -275,7 +275,7 @@ Cada ponto em sua rota tem seu menu de contexto. Ele mostra o *número de sequê
 
 ### Rotas Multimodais {#multimodal-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -298,7 +298,7 @@ Usando a ferramenta *Planejar uma Rota* e a opção [Rota entre pontos](#route-b
 
 ### Salvar Rota {#save-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -329,7 +329,7 @@ Ao salvar uma nova trilha, você pode selecionar a opção de trilha ***Simplifi
 
 ### Opções {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -359,7 +359,7 @@ Ao salvar uma nova trilha, você pode selecionar a opção de trilha ***Simplifi
 
 ### Gráfico {#graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

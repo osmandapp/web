@@ -120,7 +120,7 @@ Kerteriz, aracınızın dışındaki bir hedefe, örneğin bir varış noktasın
 
 ![Seyahat kaydı widget'ı](@site/static/img/widgets/bearing.png)
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Widget, hesaplanan rota boyunca ilk ara noktaya olan mesafeyi gösterir. Ara nok
 
 ### Ara Noktaya Kalan Süre {#time-to-intermediate}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -257,7 +257,7 @@ Widget, ilk ara noktaya *Varış zamanı* veya *Kalan süre* gösterir. Navigasy
 
 ### Hedefe Kalan Süre {#time-to-destination}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -447,7 +447,7 @@ Sokak adı widget'ı, düz bir okla **mevcut sokak adını** veya yapılacak man
 
 ## Yaklaşan POI'ler / Favoriler {#approach-pois--favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

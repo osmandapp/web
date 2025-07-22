@@ -26,7 +26,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 صُمم توجيه السيارة لمساعدة السائقين على إيجاد الطرق الأكثر كفاءة ومباشرة إلى وجهاتهم. يأخذ في الاعتبار قيود القيادة الشائعة، مثل الشوارع ذات الاتجاه الواحد، وحظر الانعطافات، ومناطق المشاة، ويساعد أيضًا على تجنب الطرق غير المناسبة للسيارات، مثل الطرق الضيقة أو الطرق ذات قيود الوزن.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -62,7 +62,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 يشبه توجيه الشاحنة توجيه السيارة، ولكنه مصمم خصيصًا لسائقي المركبات التجارية الكبيرة. يأخذ في الاعتبار عوامل إضافية مثل [ارتفاع المركبة ووزنها وعرضها](../guidance/navigation-settings.md#size-parameters) وإمكانية نقل المواد الخطرة (راجع الجدول أدناه). جميع إعدادات التوجيه الأخرى مطابقة [لتوجيه السيارة](#route-parameters---car).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

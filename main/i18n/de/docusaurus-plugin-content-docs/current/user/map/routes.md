@@ -159,7 +159,7 @@ Sie können die Anzeige bestimmter ***Reiseführer*** und ***Track-Typen*** anpa
 
 ## Routen auf der Karte anzeigen {#display-routes-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 
 ## Aktionen mit Routen {#actions-with-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ Im **Kontextmenü** können Sie:
 
 ### Routeninformationen und Höhenlagen {#route-info-and-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -248,7 +248,7 @@ Die folgenden Informationen werden im Kontextmenü angezeigt:
 
 Um den Graphen der Höhe, Steigung oder Höhendetails für eine ausgewählte Route anzuzeigen, tippen Sie einfach im Kontextmenü auf einen der folgenden Werte: **Entfernung**, **Aufstieg**, **Abstieg** oder **Höhe**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Um den Graphen der Höhe, Steigung oder Höhendetails für eine ausgewählte Rou
 
 ### Als Track speichern {#save-as-a-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ Um die Route als *GPX-Datei* zu speichern, tippen Sie auf die Schaltfläche **Sp
 
 ### Navigation starten {#start-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -321,7 +321,7 @@ Finden Sie Routen mit der [Suchfunktion](../search/index.md) nach Namen oder dur
 
 Zum Suchen gehen Sie zum Menü *<Translate android="true" ids="search_button"/>* oder *<Translate android="true" ids="search_button,search_categories"/>* und geben Sie Ihre Aktivität ein.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -339,7 +339,7 @@ Zum Suchen gehen Sie zum Menü *<Translate android="true" ids="search_button"/>*
 
 Navigieren Sie zu *<Translate android="true" ids="search_button,search_categories,poi_routes"/>*, um die gewünschten Routen zu finden. Routen enthalten Name, Aktivitätstyp, Länge, Ort und Entfernung zum nächstgelegenen Punkt.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ Navigieren Sie zu *<Translate android="true" ids="search_button,search_categorie
 
 Verwenden Sie die Filter-Schaltfläche (obere rechte Ecke), um nur die gewünschten Routen anzuzeigen.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

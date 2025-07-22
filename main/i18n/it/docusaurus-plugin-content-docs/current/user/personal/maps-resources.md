@@ -22,7 +22,7 @@ Nella sezione **Mappe e risorse**, puoi gestire le mappe *online* e *offline* e 
 
 OsmAnd funziona con due tipi di mappe: [Mappe vettoriali](../map/vector-maps.md) e [Mappe raster](../map/raster-maps.md). La scheda [Locale](#local) memorizza tutte le mappe e le risorse. I tipi di mappa disponibili possono essere scaricati dalla scheda [Download](#downloads). Nella scheda [Aggiornamenti](#updates), puoi scaricare le mappe disponibili per gli aggiornamenti e utilizzare gli [Aggiornamenti in tempo reale](#osmand-live). Puoi anche accedere alla funzione [Mappe extra](#extra-maps) per creare i tuoi tipi di mappa.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -45,7 +45,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ## Tipi di mappa {#map-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -104,7 +104,7 @@ Si noti che gli aggiornamenti mensili delle mappe sono considerati un altro down
 
 ### Download {#downloads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -166,7 +166,7 @@ Informazioni sul *menu mappe* e sulle *azioni* si trovano nell'articolo [Scarica
 
 #### Caricamento di più mappe {#multiple-map-loading}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -187,7 +187,7 @@ Per i paesi composti da **più mappe regionali**, puoi utilizzare il caricamento
 
 ### Locale {#local}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -291,7 +291,7 @@ Utilizza le opzioni di ordinamento per organizzare i dati della mappa:
 
 ### Aggiornamenti {#updates}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ Leggi di più nell'articolo [**Pacchetto personalizzato**](../plugins/custom).
 :::tip Acquisto
 OsmAnd Live è una funzione a pagamento.
 :::
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ I riferimenti di percorso eliminati o modificati potrebbero apparire ancora in m
 
 ### Gratuito per i mappatori OSM {#free-for-osm-mappers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -29,7 +29,7 @@ El **complemento Métricas del Vehículo** permite la monitorización de datos d
 
 Los escáneres OBD-II son parte integral de los diagnósticos automotrices modernos. Con la transmisión de datos en tiempo real, los usuarios obtienen información instantánea sobre los sistemas del vehículo, lo que facilita el mantenimiento preventivo y reduce los costos de reparación. Estas herramientas son vitales tanto para uso personal como para servicios automotrices profesionales.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

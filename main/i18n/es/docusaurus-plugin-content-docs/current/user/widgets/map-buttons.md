@@ -102,7 +102,7 @@ El botón de la brújula proporciona múltiples acciones para controlar la orien
 
 ### Opciones de visualización {#display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -131,7 +131,7 @@ El icono de la brújula en el botón siempre apunta al Norte. Puede seleccionar 
 
 ## Modo 3D {#3d-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

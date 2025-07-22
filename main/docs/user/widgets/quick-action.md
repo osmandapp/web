@@ -25,7 +25,7 @@ Quick Action widget is an interactive user interface element that provides fast 
 
 ## Quick Action Widget {#quick-action-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -54,7 +54,7 @@ To use the Quick Action button, you have to enable this widget first.
 
 ### Add and Delete Actions {#add-and-delete-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -92,7 +92,7 @@ You can assign one or more [actions](#action-types) to the quick action button. 
 
 ### Action Parameters {#action-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -162,7 +162,7 @@ The *Quick Action* widget appears at the bottom corner of the map screen when yo
 
 ### Custom buttons {#custom-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -35,7 +35,7 @@ Topografya eklentisi aşağıdaki harita türlerine erişim sağlar:
 - [3B Kabartma](#3d-relief). Yalnızca [OsmAnd Pro aboneliği](../purchases/index.md) ile kullanılabilen, arazinin üç boyutlu bir temsilini sağlayan bir [vektör haritasıdır](../map/vector-maps.md).
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Kararlı çalışma ve kaynak tasarrufu için, tüm ülkenin haritasını değil
 
 ### 3B Kabartma Haritaları {#3d-relief-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Ekranda görüntülenen harita indirilmemişse, *Menü → Haritayı yapılandı
 
 ### Eşyükselti Çizgileri (Metre veya Fit) {#contour-lines-meters-or-feet}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Ekranda görüntülenen harita indirilmemişse, *Menü → Haritayı yapılandı
 
 ## Eşyükselti Çizgileri {#contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Ekranda görüntülenen harita indirilmemişse, *Menü → Haritayı yapılandı
 
 ## Arazi {#terrain}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Belirli özellikler:
 *Renk Şemasını Değiştir* [iOS](../purchases/ios.md#pro-features) ve [Android](../purchases/android.md#pro-features) için **OsmAnd Pro** ücretli bir özelliktir <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -328,7 +328,7 @@ Harita ekranındaki *Hızlı Eylem* düğmelerini kullanarak [Eşyükselti Çizg
 3B Kabartma, [**OsmAnd Pro**](../purchases/index.md) ücretli bir özelliktir <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -360,7 +360,7 @@ Harita ekranındaki *Hızlı Eylem* düğmelerini kullanarak [Eşyükselti Çizg
 
 - Gerekirse bölgelerin [Arazi haritasını (3B)](#3d-relief-maps) indirin.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -383,7 +383,7 @@ Harita ekranındaki *Hızlı Eylem* düğmelerini kullanarak [Eşyükselti Çizg
 
 ### Dikey Abartı {#vertical-exaggeration}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Harita ekranındaki *Hızlı Eylem* düğmelerini kullanarak [Eşyükselti Çizg
 
 ## Katman Türlerini Birleştir {#combine-layer-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -28,7 +28,7 @@ OsmAnd oferuje kilka sposobów przeglądania historii wyszukiwania.
 
 ## Jak używać {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -59,7 +59,7 @@ Historia wyszukiwania służy do dostarczania odpowiednich informacji o Twoich p
 
 ## Elementy historii {#history-items}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -105,7 +105,7 @@ Możesz **wyłączyć lub włączyć** wyświetlanie całej historii wyszukiwani
 
 ### Usuń {#delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Aby otworzyć ekran usuwania, należy **długo dotknąć dowolnego elementu zapy
 
 ### Eksportuj i udostępnij {#export-and-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -28,7 +28,7 @@ OsmAnd offers a variety of default profiles tailored for different activities, i
      - To access and use these profiles, you need to manually enable them in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
      - This method helps maintain an organized and relevant list of profiles by activating only those required for specific activities.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -56,7 +56,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 All settings apply exclusively to the currently selected application profile.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -77,7 +77,7 @@ This section contains all settings related to appearance, navigation options, ma
 
 ### Free Cloud Backup {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -108,7 +108,7 @@ This section contains settings for the application theme and compass button, map
 
 ### Appearance {#appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -149,7 +149,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 ### Units & Formats {#units--formats}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -248,7 +248,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 
 ### Other {#other}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -287,7 +287,7 @@ The **Other** section provides additional profile settings to customize OsmAndâ€
 
 ## Navigation Settings {#navigation-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -332,7 +332,7 @@ There are no navigation settings in the *Browse map* profile.
 
 ## Configure Map {#configure-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -370,7 +370,7 @@ With this menu, you can:
 
 ## Configure Screen {#configure-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -396,7 +396,7 @@ The [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-s
 
 ## Profile Appearance {#profile-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -421,7 +421,7 @@ The **Profile appearance** settings allow you to customize your profile's name a
 
 ### My Location Appearance {#my-location-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -530,7 +530,7 @@ With the UI customization feature, you can adjust the number of items in actions
 To access the plugin's settings, you must first [**enable the plugin**](../plugins/index.md#enable--disable) in the *Plugin section of the main menu*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -574,7 +574,7 @@ Plugins unlock additional features of the application and can be either [paid or
 
 ## Actions {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

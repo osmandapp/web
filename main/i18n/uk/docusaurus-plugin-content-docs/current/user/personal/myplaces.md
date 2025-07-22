@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Мої місця** — це центральний розділ у застосунку OsmAnd для керування та налаштування всіх особистих даних. Ви можете використовувати цей розділ для організації [Обраних точок](#favorites), позначених як важливі або часто відвідувані. Вкладка [Треки](#tracks) дозволяє переглядати, імпортувати, записувати та створювати файли GPX, щоб допомогти вам вести детальну історію ваших маршрутів та подорожей. Ви також можете керувати своїми [Редагуваннями OpenStreetMap](#openstreetmap-edits), що полегшує внесення змін та оновлень до мапи. Плагін та віджети [Аудіо/Відео нотатки](#audiovideo-notes) дозволяють користувачам Android створювати та зберігати мультимедійні нотатки, пов'язані з певними місцями, додаючи контекст до їхніх подорожей.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Обрані {#favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 2. ***Меню з трьома крапками*** (*Android*) та ***довге натискання*** (*iOS*). Використовуйте *меню з трьома крапками* поруч з кожною папкою або *довго натискайте* на папку, щоб керувати групами обраних:
 
-    <Tabs groupId="operating-systems">
+    <Tabs groupId="operating-systems" queryString="current-os">
 
     <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Треки {#tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Редагування OpenStreetMap {#openstreetmap-edits}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 O *Menu de contexto da trilha* fornece informações sobre a *[Trilha](../../personal/tracks/index.md)* em formato de texto e [gráfico](#altitude--speed-graphs). Ele permite adicionar informações, fazer alterações, editar e realizar várias outras ações com a trilha. Você pode acessar o *menu de contexto da trilha* simplesmente tocando na trilha desejada no mapa ou usando o menu *[Meus locais](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Pode ser necessário abrir a pasta da trilha e selecionar a trilha desejada tocando nela.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Painel de Informações {#info-panel}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Caso sua trilha tenha sido criada no OsmAnd ou em qualquer outro aplicativo de r
 
 ### Ações da Trilha {#track-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Caso sua trilha tenha sido criada no OsmAnd ou em qualquer outro aplicativo de r
 
 ### Opções {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ O menu **Opções** permite gerenciar e modificar a trilha selecionada com vári
 
 ### Descrição e Informações {#description-and-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Esta seção da guia *Visão Geral* exibe ***dados de tags*** e ***todas as info
 
 ### Atividade de Informações da Trilha {#track-information-activity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Interação com o gráfico:
 
 ### Informações Gerais {#overview-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -305,7 +305,7 @@ Os **botões** ativos dão acesso a ações como:
 Esta guia só pode ser visível em trilhas gravadas. Os pontos neste tipo de trilha possuem tags de **[`velocidade`](../../plugins/trip-recording#recorded-gpx-file)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ O gráfico de **Velocidade** exibe métricas como:
 
 ### Altitude {#altitude}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -387,7 +387,7 @@ Este recurso permite calcular o perfil de elevação para trilhas GPX offline pa
 
 Waypoints são um dos tipos de pontos disponíveis no mapa. Em geral, eles podem ser pontos de trilha que fazem parte de arquivos GPX. Uma descrição detalhada está disponível no artigo [pontos no mapa](../../map/point-layers-on-map.md).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -424,7 +424,7 @@ Waypoints podem ser adicionados à trilha atualmente gravada ou a qualquer trilh
 
 #### Criar Waypoint {#create-waypoint}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -460,7 +460,7 @@ Toque no botão *Adicionar Waypoint* para abrir a tela de criação de waypoint 
 
 ### Ações com Grupos {#actions-with-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -491,7 +491,7 @@ O *menu de três pontos* ( &#8285; ) abre o *menu de Grupo* do waypoint.
 
 ### Grupos de Waypoints {#waypoint-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -513,7 +513,7 @@ Você pode ativar ou desativar os waypoints do grupo no mapa usando o botão no 
 
 ### Exibir Tags GPX Personalizadas {#display-custom-gpx-tags}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

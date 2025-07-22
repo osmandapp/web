@@ -32,7 +32,7 @@ Vous pouvez également choisir d'afficher un ou deux marqueurs. Pour en savoir p
 *La distance jusqu'au marqueur* est la longueur de la ligne droite entre votre position (ou le point central de la carte / le point de contact initial de la carte lorsque la localisation est désactivée) et le marqueur.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ Vous pouvez également choisir d'afficher un ou deux marqueurs. Pour en savoir p
 :::
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -140,7 +140,7 @@ Le widget affiche la distance ou l'heure d'arrivée estimée (ETA) pour le premi
 
 La configuration de l'apparence des marqueurs de carte est disponible dans les versions Android et iOS d'OsmAnd. Le menu "Apparence sur la carte" est un paramètre général pour les marqueurs de carte et s'applique que les widgets soient activés ou non. Vous pouvez lire les informations détaillées sur cette [page](../personal/markers.md#appearance-on-the-map).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

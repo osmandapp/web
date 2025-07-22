@@ -35,7 +35,7 @@ Le plugin Topographie donne accès aux types de cartes suivants :
 - [Relief 3D](#3d-relief). Il s'agit d'une [carte vectorielle](../map/vector-maps.md) qui fournit une représentation tridimensionnelle du terrain, disponible uniquement avec l'[abonnement OsmAnd Pro](../purchases/index.md).
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Pour un travail stable et pour économiser des ressources, vous pouvez télécha
 
 ### Cartes de relief 3D {#3d-relief-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Si la carte affichée à l'écran n'est pas téléchargée, alors dans *Menu →
 
 ### Courbes de niveau (mètres ou pieds) {#contour-lines-meters-or-feet}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Pour les [**courbes de niveau**](#contour-lines), vous devez déterminer dans qu
 
 ## Courbes de niveau {#contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Lors de l'utilisation du [moteur de rendu de carte](../personal/global-settings.
 
 ## Terrain {#terrain}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Les cartes raster d'**ombrage**, de **pente** et d'**altitude** sont créées à
 *Modifier le schéma de couleurs* est une fonctionnalité payante **OsmAnd Pro** pour [iOS](../purchases/ios.md#pro-features) et [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -328,7 +328,7 @@ Les principaux paramètres pour *Afficher ou masquer les types de carte* se trou
 Le relief 3D est une fonctionnalité payante [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -360,7 +360,7 @@ La fonctionnalité Relief 3D produit un relief surélevé et fournit une représ
 
 - Télécharger la [carte de terrain (3D)](#3d-relief-maps) des régions, si nécessaire.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -383,7 +383,7 @@ La fonctionnalité Relief 3D produit un relief surélevé et fournit une représ
 
 ### Exagération verticale {#vertical-exaggeration}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Lorsque l'**ombrage** est **activé**, une image avec des ombres de relief appar
 
 ## Combiner les types de couches {#combine-layer-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

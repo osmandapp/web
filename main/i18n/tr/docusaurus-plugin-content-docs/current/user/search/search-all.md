@@ -24,7 +24,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Nasıl Kullanılır {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -108,7 +108,7 @@ OsmAnd, arama sonuçlarını otomatik olarak üç ana kritere göre sıralar:
 
 ### Tam Metin Arama {#full-text-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -144,7 +144,7 @@ OsmAnd, ABD adresleri hakkında bilgi sağlamak için ABD haritalarına [**TIGER
 
 ### Haritada Ara {#search-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -178,7 +178,7 @@ Belirli bir konumun yakınında aramayı kullanabilirsiniz. Bunu yapmak için, a
 
 ## Adres Ara {#search-address}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -199,7 +199,7 @@ Belirli bir konumun yakınında aramayı kullanabilirsiniz. Bunu yapmak için, a
 
 ## Arama Geçmişi {#search-history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -220,7 +220,7 @@ Daha önce bulunan yerleri, adresleri veya sık ziyaret edilen yerleri sorguyu t
 
 ## POI Ara {#search-poi}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -249,7 +249,7 @@ Bölgenin haritaları mevcut olmadığında kullanışlıdır, ancak sürekli ve
 
 ## Koordinat Ara {#search-coordinates}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

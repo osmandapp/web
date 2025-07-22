@@ -32,7 +32,7 @@ Ces outils sont utiles pour planifier des itinéraires, estimer la proximité de
 
 ## Règle {#ruler}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Cet outil est utile lorsque vous avez besoin d'une compréhension rapide de la t
 
 ## Widget Règle de rayon {#radius-ruler-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ Le [Widget Règle de rayon](../widgets/info-widgets.md#radius-ruler) affiche la 
 
 Utilisez ce widget pour estimer la proximité de points d'intérêt ou planifier autour d'une zone définie.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Utilisez ce widget pour estimer la proximité de points d'intérêt ou planifier
 
 ## Boussole pour la règle de rayon {#compass-for-radius-ruler}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Cette superposition est utile pour la navigation en extérieur, vous permettant 
 
 ## Position centrale / inférieure {#center--bottom-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -177,7 +177,7 @@ Pour plus d'informations sur *la position à l'écran*, consultez l'article [Con
 
 ## Vue 3D {#3d-view}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -227,7 +227,7 @@ Il existe deux cas d'utilisation :
 
 Regardez ces courts tutoriels pour apprendre à utiliser la Règle de rayon et les outils associés dans OsmAnd :
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

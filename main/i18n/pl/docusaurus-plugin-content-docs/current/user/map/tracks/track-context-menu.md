@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *Menu kontekstowe śladu* dostarcza informacji o *[Śladzie](../../personal/tracks/index.md)* zarówno w formie tekstowej, jak i [graficznej](#altitude--speed-graphs). Umożliwia dodawanie informacji, dokonywanie zmian, edycję i wykonywanie różnych innych działań ze śladem. Dostęp do *menu kontekstowego śladu* można uzyskać, po prostu dotykając żądanego śladu na mapie lub używając menu *[Moje miejsca](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Może być konieczne otwarcie folderu śladu i wybranie żądanego śladu, dotykając go.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Panel informacyjny {#info-panel}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ W przypadku, gdy Twój ślad został utworzony w OsmAnd lub innej aplikacji śle
 
 ### Działania na śladzie {#track-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ W przypadku, gdy Twój ślad został utworzony w OsmAnd lub innej aplikacji śle
 
 ### Opcje {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Menu **Opcje** umożliwia zarządzanie i modyfikowanie wybranego śladu za pomoc
 
 ### Opis i informacje {#description-and-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Ta sekcja zakładki *Przegląd* wyświetla ***dane tagów*** i ***wszystkie ogó
 
 ### Aktywność informacji o śladzie {#track-information-activity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Interakcja z wykresem:
 
 ### Informacje ogólne {#overview-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -305,7 +305,7 @@ Aktywne **przyciski** dają dostęp do takich działań jak:
 Ta zakładka jest widoczna tylko dla nagranych śladów. Punkty na tego typu śladach mają tagi **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ Wykres **Prędkość** wyświetla takie metryki jak:
 
 ### Wysokość {#altitude}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -387,7 +387,7 @@ Ta funkcja umożliwia obliczenie profilu wysokości dla śladu GPX offline dla d
 
 Punkty trasy to jeden z typów punktów dostępnych na mapie. Ogólnie rzecz biorąc, mogą to być punkty śladu, które są częścią plików GPX. Szczegółowy opis dostępny jest w artykule [punkty na mapie](../../map/point-layers-on-map.md).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -424,7 +424,7 @@ Punkty trasy można dodawać do aktualnie nagrywanego śladu lub do dowolnego ś
 
 #### Utwórz punkt trasy {#create-waypoint}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -460,7 +460,7 @@ Dotknij przycisku *Dodaj punkt trasy*, aby otworzyć ekran tworzenia punktu tras
 
 ### Działania z grupami {#actions-with-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -491,7 +491,7 @@ Dotknij przycisku *Dodaj punkt trasy*, aby otworzyć ekran tworzenia punktu tras
 
 ### Grupy punktów trasy {#waypoint-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -513,7 +513,7 @@ Możesz włączać lub wyłączać punkty trasy grupy na mapie za pomocą przyci
 
 ### Wyświetl niestandardowe tagi GPX {#display-custom-gpx-tags}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -38,7 +38,7 @@ OsmAnd'daki **İçe Aktar** ve **Dışa Aktar** araçları verilerinizi yönetme
 
 ### Dışa Aktar {#export}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Yapılandırdığınız ve oluşturduğunuz tüm veriler ***Dışa Aktar menüs�
 
 ### İçe Aktar {#import}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

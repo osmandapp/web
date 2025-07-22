@@ -29,7 +29,7 @@ OsmAnd, sürüş, bisiklet, yürüyüş gibi farklı aktiviteler ve kayak ve tek
      - Bu profillere erişmek ve bunları kullanmak için, bunları *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* bölümünde manuel olarak etkinleştirmeniz gerekir.
      - Bu yöntem, yalnızca belirli aktiviteler için gereken profilleri etkinleştirerek düzenli ve ilgili bir profil listesi tutmaya yardımcı olur.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -57,7 +57,7 @@ OsmAnd, sürüş, bisiklet, yürüyüş gibi farklı aktiviteler ve kayak ve tek
 Tüm ayarlar yalnızca o anda seçili olan uygulama profiline uygulanır.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Bu bölüm, görünüm, navigasyon seçenekleri, harita gösterimi, ayarlar men�
 
 ### Ücretsiz Bulut Yedekleme {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 ### Görünüm {#appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 ### Birimler ve Biçimler {#units--formats}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -249,7 +249,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 ### Diğer {#other}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 ## Navigasyon Ayarları {#navigation-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ Navigasyon seçeneklerine ilişkin ayrıntılı bir genel bakış için, OsmAnd'
 
 ## Haritayı Yapılandır {#configure-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -371,7 +371,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 ## Ekranı Yapılandır {#configure-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -397,7 +397,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 ## Profil Görünümü {#profile-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 ### Konumum Görünümü {#my-location-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -531,7 +531,7 @@ Kullanıcı arayüzü özelleştirme özelliği ile [<Translate android="true" i
 Eklentinin ayarlarına erişmek için, önce [ana menünün Eklenti bölümünde eklentiyi etkinleştirmeniz](../plugins/index.md#enable--disable) gerekir.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -575,7 +575,7 @@ Eklentiler uygulamanın ek özelliklerini açar ve [ücretli veya ücretsiz](../
 
 ## Eylemler {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Meine Orte** ist die zentrale Anlaufstelle in der OsmAnd-App für die Verwaltung und Anpassung aller persönlichen Daten. In diesem Abschnitt können Sie als wichtig oder häufig besucht markierte [Favoritenpunkte](#favorites) organisieren. Über die Registerkarte [Tracks](#tracks) können Sie GPX-Dateien anzeigen, importieren, aufzeichnen und erstellen, um eine detaillierte Historie Ihrer Routen und Reisen zu führen. Sie können auch Ihre [OpenStreetMap-Bearbeitungen](#openstreetmap-edits) verwalten, was die Beitragserstellung zu Kartenverbesserungen und -aktualisierungen vereinfacht. Das [Audio-/Video-Notizen](#audiovideo-notes)-Plugin und die Widgets ermöglichen Android-Nutzern das Erstellen und Speichern von Multimedia-Notizen zu bestimmten Orten, um ihren Reisen Kontext hinzuzufügen.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu"/> → Meine Orte*
 
 ## Favoriten {#favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu"/> → Meine Orte*
 
 2. ***Drei-Punkte-Menü*** (*Android*) und ***langes Tippen*** (*iOS*). Verwenden Sie das *Drei-Punkte*-Menü neben jedem Ordner oder *tippen Sie lange* auf den Ordner, um Favoritengruppen zu verwalten:  
 
-    <Tabs groupId="operating-systems">
+    <Tabs groupId="operating-systems" queryString="current-os">
 
     <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ Weitere detaillierte Anweisungen finden Sie im Artikel [Favoriten](../personal/f
 
 ## Tracks {#tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Umfassende Anleitungen finden Sie im Artikel [Tracks verwalten](../personal/trac
 
 ## OpenStreetMap-Bearbeitungen {#openstreetmap-edits}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

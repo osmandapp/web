@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 For successful navigation, it's important to properly configure the appropriate settings according to your needs and how you travel - by car, on foot, on horseback, or skis. This article describes the basic route parameters, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, [Fuel tank capacity](#fuel-tank-capacity), and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -54,7 +54,7 @@ The default *Browse map* profile has no navigation settings.
 
 ## Navigation Type {#navigation-type}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -83,7 +83,7 @@ The navigation type determines which rules are used to calculate routes. If you 
 
 ## Route Parameters {#route-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ All route parameters are described in detail in the corresponding sections of th
 
 ### Recalculate Route {#recalculate-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -137,7 +137,7 @@ The **Route Calculation** parameter automatically changes the calculated route w
 
 ### Development Settings {#development-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -177,7 +177,7 @@ The parameters in the **Development** section are mainly for advanced users and 
 
 ## Voice Prompts {#voice-prompts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -210,7 +210,7 @@ If you select a track as your destination point, you need to use the [Attach to 
 
 ## Screen Alerts {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -252,7 +252,7 @@ The types of warnings have a different visual appearance, which depends on the t
 
 ## Map During Navigation {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -276,7 +276,7 @@ You can learn how the behavior of the map changes during navigation in the artic
 
 ## Customize Route Line {#customize-route-line}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -301,7 +301,7 @@ With the **Customize Route Line** setting, you can choose the appearance of the 
 
 ## Vehicle Parameters {#vehicle-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 
 ### Size Parameters {#size-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -395,7 +395,7 @@ These restrictions can be important for navigation and should be considered when
 
 #### Fuel Used by Motor {#fuel-used-by-motor}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -421,7 +421,7 @@ The **Fuel used by motor** setting is only available in vehicle-based navigation
 
 #### Fuel tank capacity {#fuel-tank-capacity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -461,7 +461,7 @@ To ensure accurate calculations and navigation suggestions, verify that your sel
 
 ### Default Speed / Road Speeds {#default-speed--road-speeds}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -500,7 +500,7 @@ The **Default speed** is the preset movement speed. It is used to calculate the 
 
 
 <!--
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -530,7 +530,7 @@ These settings in iOS are available in *Menu → Settings → app profile → Na
 
 ## Detailed Track Guidance {#detailed-track-guidance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

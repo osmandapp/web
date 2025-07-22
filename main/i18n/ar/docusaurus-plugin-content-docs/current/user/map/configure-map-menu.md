@@ -17,7 +17,7 @@ import Translate from '@site/src/components/Translate.js';
 
 تُعد قائمة **تكوين الخريطة** عنصرًا مهمًا في *القائمة الرئيسية* لتطبيق OsmAnd، حيث يمكنك تخصيص عرض الخريطة ليناسب احتياجاتك. يمكنك إبراز النقاط المفضلة، علامات التنقل، أو نقاط الاهتمام الخاصة على الخريطة، عرض مسارات محددة أو ملفات GPX من طرف ثالث، تراكب معلومات التضاريس، صور الأقمار الصناعية، أو أي صور نقطية أخرى متاحة، عرض معلومات النقل العام، وتغيير نمط الخريطة.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

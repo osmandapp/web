@@ -33,7 +33,7 @@ Haritaları [ilk kurulum ekranından](#initial-setup-screen) yüklemeye başlay�
 
 ### İlk Kurulum Ekranı {#initial-setup-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -56,7 +56,7 @@ VPN kullanıyorsanız, OsmAnd VPN'in sanal konumuna göre bir harita önerebilir
 
 #### Üç nokta menüsü {#three-dot-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -85,7 +85,7 @@ VPN kullanıyorsanız, OsmAnd VPN'in sanal konumuna göre bir harita önerebilir
 
 ### Haritalar ve Kaynaklar {#maps-and-resources}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ OsmAnd iki dünya haritası seçeneği içerir:
 
 ### Harita üzerinde seç {#select-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -162,7 +162,7 @@ Küçük ekranda, indirilmek üzere seçilen harita sarı renkle, zaten indirilm
 
 ### Arama {#search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

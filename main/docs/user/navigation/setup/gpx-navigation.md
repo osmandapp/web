@@ -20,7 +20,7 @@ The *Navigation by track* (GPX) option allows you to follow a predefined route o
 
 The *Navigation by track* option can also be used in the everyday life. You can use a previously [recorded track](../../plugins/trip-recording.md) or [create a track](../../personal/tracks/manage-tracks.md#create-a-track) and share it with your family or friends instead of explaining the route to them. You can also use the [routes on the OsmAnd map](../../../../blog/routes/) for navigation. How to highlight them on the map and what their colors mean is described in the [Routes section](../../map/vector-maps.md#routes) of the *Vector maps* article.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -51,7 +51,7 @@ Before using the *Navigation by track* option, you need to [display the track on
 
 ### Start GPX Navigation {#start-gpx-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -75,7 +75,7 @@ Navigation on a track can be started using the quick action button in the [track
 
 ### Choose Segments {#choose-segments}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -96,7 +96,7 @@ For navigation, if the selected track consists of multiple segments or tracks, y
 
 ### Follow Track options {#follow-track-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -129,7 +129,7 @@ to the *<Translate android="true" ids="start_of_the_track"/>* or to the *<Transl
 
 ### Attach to the Roads {#attach-to-the-roads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

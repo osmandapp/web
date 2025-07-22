@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd працює з двома типами карт: [Векторні карти](../map/vector-maps.md) та [Растрові карти](../map/raster-maps.md). На вкладці [Локальні](#local) зберігаються всі карти та ресурси. Доступні типи карт можна завантажити на вкладці [Завантаження](#downloads). На вкладці [Оновлення](#updates) ви можете завантажити карти, які доступні для оновлення, та використовувати [Live-оновлення](#osmand-live). Ви також можете отримати доступ до функції [Додаткові карти](#extra-maps), щоб створити власні типи карт.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -45,7 +45,7 @@ OsmAnd працює з двома типами карт: [Векторні ка�
 
 ## Типи карт {#map-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -104,7 +104,7 @@ OsmAnd працює з двома типами карт: [Векторні ка�
 
 ### Завантаження {#downloads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -166,7 +166,7 @@ OsmAnd працює з двома типами карт: [Векторні ка�
 
 #### Завантаження кількох карт {#multiple-map-loading}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -187,7 +187,7 @@ OsmAnd працює з двома типами карт: [Векторні ка�
 
 ### Локальні {#local}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -291,7 +291,7 @@ OsmAnd працює з двома типами карт: [Векторні ка�
 
 ### Оновлення {#updates}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ OsmAnd підтримує передачу налаштувань та дани�
 :::tip Придбання
 OsmAnd Live — платна функція.  
 :::
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ Each card has an independent collection of tiny updates, so **be careful** if yo
 
 ### Безкоштовно для картографів OSM {#free-for-osm-mappers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

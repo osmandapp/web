@@ -29,7 +29,7 @@ L'*itinéraire ferroviaire* dans OsmAnd offre aux utilisateurs la possibilité d
 
 ## Paramètres d'itinéraire - Train {#route-parameters---train}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

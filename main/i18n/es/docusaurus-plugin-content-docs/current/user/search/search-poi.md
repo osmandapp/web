@@ -34,7 +34,7 @@ OsmAnd ofrece varias formas de acceder a la herramienta de Búsqueda, donde se e
 
 ## Cómo usar {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -87,7 +87,7 @@ Para realizar algunas de estas tareas (localizar direcciones, PDI) necesitará t
 
 ## Búsqueda de PDI por categorías {#poi-search-by-categories}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -128,7 +128,7 @@ Al tocar el PDI elegido en la lista se abre el [menú contextual del mapa](../ma
 
 ### Tipos de filtros {#types-of-filters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -226,7 +226,7 @@ Un filtro puede constar de un número considerable de elementos, cuya presencia 
 
 ### Reorganizar categorías {#rearrange-categories}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -306,7 +306,7 @@ Esta funcionalidad es especialmente útil en varios casos:
 
 ### Filtro de PDI personalizado {#custom-poi-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -397,7 +397,7 @@ Available for search:
 
 ### Guardar nuevos filtros personalizados {#save-new-custom-filters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -425,7 +425,7 @@ Otra forma de **guardar**:
 
 ### Editar un filtro existente {#edit-an-existing-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -454,7 +454,7 @@ Desde la pantalla principal:
 
 ### Eliminar filtro de PDI personalizado {#delete-custom-poi-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

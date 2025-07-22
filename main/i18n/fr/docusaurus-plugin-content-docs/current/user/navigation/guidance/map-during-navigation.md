@@ -23,7 +23,7 @@ Cet article décrit comment configurer l'apparence de la carte pendant la naviga
 
 ## Carte pendant la navigation {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Le paramètre *Afficher le long de l'itinéraire* vous permet de configurer des 
 
 ### Afficher et sélectionner des points {#view-and-select-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ Les *avertissements de circulation* ne sont pas affichés directement sur la car
 
 ## Alertes à l'écran {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 ## Apparence de la ligne d'itinéraire {#route-line-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

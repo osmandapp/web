@@ -45,7 +45,7 @@ Więcej informacji na temat tego, jak i kiedy wyzwalane są komunikaty głosowe,
 
 ### Ustawienia głosu {#voice-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ W niektórych krajach lub regionach używanie aplikacji ostrzegających o fotora
 
 ### Ograniczenie prędkości {#speed-limit}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -241,7 +241,7 @@ W celu rozwiązywania problemów, zapoznaj się z:
 
 ### Język komunikatów głosowych {#voice-prompt-language}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

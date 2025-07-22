@@ -20,7 +20,7 @@ La mappa può visualizzare punti come [Preferiti](#favorites), [Punti di interes
 
 ## Preferiti {#favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ Nella versione Android di OsmAnd, puoi visualizzare solo alcuni gruppi di prefer
 
 ## Nomi di preferiti e POI {#favorite-and-poi-names}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -74,7 +74,7 @@ Per impostazione predefinita, i Preferiti e i punti di interesse (POI) vengono v
 
 ## Punti di interesse (POI) {#points-of-interest-pois}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -112,7 +112,7 @@ Puoi selezionare uno o più tipi di POI standard di OsmAnd, oppure creare il tuo
 
 ### POI stile mappa {#map-style-poi}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -139,7 +139,7 @@ A ogni tipo di POI in OsmAnd è assegnata un'icona e un colore specifici. Il [li
 
 ## Segnalini {#markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -186,7 +186,7 @@ Leggi di più sulla [ricerca](../search/index.md).
 
 ## * Immagini a livello stradale {#-street-level-imagery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -222,7 +222,7 @@ Richiede il [plugin Posizione parcheggio](../plugins/parking.md).
 
 ## * Wikipedia {#-wikipedia}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -249,7 +249,7 @@ OsmAnd ha punti di interesse speciali contrassegnati da un logo "W" e collegati 
 
 ## * Punti audio / video (Android) {#-audio--video-points-android}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -268,7 +268,7 @@ Richiede il [plugin Note audio/video](../plugins/audio-video-notes.md).
 
 ## * Punti di modifica OSM {#-osm-edit-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -295,7 +295,7 @@ Richiede il [plugin Modifica OSM](../plugins/osm-editing.md).
 
 ## * Note OSM {#-osm-notes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

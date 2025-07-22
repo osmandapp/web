@@ -24,7 +24,7 @@ La **recherche** est un outil utile pour trouver rapidement des lieux. Vous pouv
 
 ## Comment utiliser {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -108,7 +108,7 @@ OsmAnd trie automatiquement les résultats de recherche selon trois critères pr
 
 ### Recherche en texte intégral {#full-text-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -144,7 +144,7 @@ OsmAnd a intégré les [**données TIGER**](../../technical/algorithms/trace-add
 
 ### Rechercher sur la carte {#search-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -178,7 +178,7 @@ Vous pouvez utiliser la recherche à proximité d'un lieu spécifique. Pour ce f
 
 ## Rechercher une adresse {#search-address}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -199,7 +199,7 @@ La **recherche d'adresse** utilise les données OpenStreetMap. Ce type de recher
 
 ## Historique de recherche {#search-history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -220,7 +220,7 @@ Vous pouvez utiliser l'**historique de recherche** pour rechercher à nouveau de
 
 ## Rechercher des POI {#search-poi}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -249,7 +249,7 @@ Il est pratique à utiliser lorsque les cartes de la région ne sont pas disponi
 
 ## Rechercher des coordonnées {#search-coordinates}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

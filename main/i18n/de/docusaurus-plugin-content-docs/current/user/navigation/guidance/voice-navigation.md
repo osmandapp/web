@@ -45,7 +45,7 @@ Weitere Informationen dazu, wie und wann Sprachansagen ausgelöst werden, finden
 
 ### Spracheinstellungen {#voice-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ In einigen Ländern oder Regionen ist die Verwendung von Radarkamera-Warnapps il
 
 ### Geschwindigkeitsbegrenzung {#speed-limit}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -241,7 +241,7 @@ Für die Fehlerbehebung siehe:
 
 ### Sprache der Sprachansagen {#voice-prompt-language}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

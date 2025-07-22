@@ -24,7 +24,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Jak używać {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -108,7 +108,7 @@ OsmAnd automatycznie sortuje wyniki wyszukiwania według trzech głównych kryte
 
 ### Wyszukiwanie pełnotekstowe {#full-text-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -144,7 +144,7 @@ OsmAnd zintegrował [**dane TIGER**](../../technical/algorithms/trace-address-se
 
 ### Wyszukiwanie na mapie {#search-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -178,7 +178,7 @@ Możesz użyć wyszukiwania w pobliżu określonej lokalizacji. Aby to zrobić, 
 
 ## Wyszukaj adres {#search-address}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -199,7 +199,7 @@ Możesz użyć wyszukiwania w pobliżu określonej lokalizacji. Aby to zrobić, 
 
 ## Historia wyszukiwania {#search-history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -220,7 +220,7 @@ Możesz użyć **Historii wyszukiwania**, aby ponownie wyszukać wcześniej znal
 
 ## Wyszukaj POI {#search-poi}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -249,7 +249,7 @@ Jest to wygodne w użyciu, gdy mapy regionu są niedostępne, ale wymagane jest 
 
 ## Wyszukaj współrzędne {#search-coordinates}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -30,7 +30,7 @@ Das *Moped-Routing* kann in den [Routenparametern](../guidance/navigation-settin
 
 Die Routing-Einstellungen für Mopeds sind sehr einfach und bestehen aus nur wenigen Optionen.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

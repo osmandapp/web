@@ -26,7 +26,7 @@ Ce plugin est gratuit et fonctionne hors ligne avec les cartes OsmAnd téléchar
 
 Le marqueur est temporaire et facile à supprimer une fois qu'il n'est plus nécessaire.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ Lorsque vous marquez un emplacement de stationnement, OsmAnd enregistre ses coor
 
 Pour définir un emplacement de stationnement sur la carte, zoomez au niveau requis, puis appuyez longuement sur l'emplacement sur la carte et dans le [menu contextuel](../map/map-context-menu.md) qui s'ouvre, effectuez les réglages.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ L'heure de début est toujours définie automatiquement. Si vous devez modifier 
 
 ### Restez informé {#stay-informed}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -127,7 +127,7 @@ Des détails supplémentaires sont affichés lorsque vous appuyez sur le marqueu
 
 ### Navigation vers un point de cheminement {#navigating-to-a-waypoint}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ Vous pouvez utiliser l'emplacement de stationnement comme cible de navigation po
 
 ### Supprimer un emplacement {#remove-a-spot}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Si un rappel dans le calendrier a été défini, il sera également supprimé au
 
 ## Widget Stationnement {#parking-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

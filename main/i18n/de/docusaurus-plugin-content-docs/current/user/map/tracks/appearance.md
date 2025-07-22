@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Die Funktion **Darstellung der Tracks** ermöglicht es Nutzern, die Anzeige von Tracks auf der Karte anzupassen. Dazu gehören das Anpassen von Farbe, Breite, Richtungsanzeigern und anderen visuellen Elementen. Das Anpassen der Track-Darstellung hilft dabei, mehrere Tracks zu unterscheiden, spezifische Routen hervorzuheben und die Lesbarkeit der Karte zu verbessern.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -122,7 +122,7 @@ Stellt alle **Einstellungen für die Track-Darstellung** auf ihre Standardwerte 
 **3D-Track** ist eine **OsmAnd Pro** kostenpflichtige Funktion für [iOS](../../purchases/ios.md#pro-features) und [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -185,7 +185,7 @@ Die Funktion 3D-Track ist besonders nützlich für Aktivitäten wie Gleitschirmf
 
 ## Darstellung für mehrere Tracks ändern {#change-appearance-for-multiple-tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

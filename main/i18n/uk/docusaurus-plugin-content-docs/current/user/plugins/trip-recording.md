@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 За допомогою *плагіна "Запис поїздки"* ви можете створювати нові треки, відображати записані безпосередньо на карті та керувати існуючими записами. Він надає цінну інформацію про ваші поїздки, таку як швидкість, зміни висоти, деталі рельєфу та дані із зовнішніх датчиків. Плагін записує ваш маршрут, дозволяючи детальний аналіз та обмін після поїздки.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -73,7 +73,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Почати діалог {#start-a-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -131,7 +131,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Екран огляду {#overview-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Показати на карті {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -251,7 +251,7 @@ OsmAnd фіксує вашу подорож у структурованому [�
 
 - **Глобальні налаштування**. Налаштування запису поїздки конфігуруються для кожного профілю, яким ви можете керувати в глобальних [налаштуваннях](../personal/global-settings.md) програми. Перш ніж налаштовувати плагін "Запис поїздки", виберіть профіль, який ви хочете налаштувати, у розділі [профілів](../personal/profiles.md). Звідти перейдіть до налаштувань профілю, щоб отримати доступ до параметрів запису поїздки.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -350,7 +350,7 @@ OsmAnd фіксує вашу подорож у структурованому [�
 
 ### Додати віджет запису {#add-recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -376,7 +376,7 @@ OsmAnd фіксує вашу подорож у структурованому [�
 
 ### Відстань (Старт-Стоп) {#distance-start-stop}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -409,7 +409,7 @@ OsmAnd фіксує вашу подорож у структурованому [�
 
 ### Тривалість, Підйом, Спуск {#duration-uphill-downhill}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

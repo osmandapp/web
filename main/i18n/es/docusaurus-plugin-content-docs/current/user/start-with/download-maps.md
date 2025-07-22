@@ -33,7 +33,7 @@ Empiece a cargar mapas desde la [pantalla de configuración inicial](#initial-se
 
 ### Pantalla de configuración inicial {#initial-setup-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -56,7 +56,7 @@ Si está utilizando una VPN, OsmAnd puede sugerir un mapa basado en la ubicació
 
 #### Menú de tres puntos {#three-dot-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -85,7 +85,7 @@ Si está utilizando una VPN, OsmAnd puede sugerir un mapa basado en la ubicació
 
 ### Mapas y recursos {#maps-and-resources}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ OsmAnd incluye dos opciones de mapa mundial:
 
 ### Seleccionar en el mapa {#select-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -162,7 +162,7 @@ En la pantalla pequeña, el mapa seleccionado para descargar se resaltará en am
 
 ### Buscar {#search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

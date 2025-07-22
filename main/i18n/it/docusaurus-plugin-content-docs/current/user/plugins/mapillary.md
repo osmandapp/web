@@ -27,7 +27,7 @@ Per visualizzare le immagini a livello stradale sulla mappa OsmAnd, è necessari
 
 ## Livello della mappa {#map-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ Il livello della mappa con le immagini stradali viene visualizzato sulla mappa O
 
 ### Abilita livello {#enable-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -80,7 +80,7 @@ Per visualizzare le immagini a livello stradale di Mapillary sulla mappa, è nec
 
 ### Filtro dati {#data-filtering}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -106,7 +106,7 @@ Se le immagini selezionate non vengono visualizzate, utilizza **Ricarica** per l
 
 ## Menu contestuale della mappa {#map-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -126,7 +126,7 @@ Se il plugin Mapillary è abilitato, puoi visualizzare le foto delle strade disp
 
 ## Aggiungi foto {#add-photos}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -146,7 +146,7 @@ Per aggiungere foto, è necessario registrarsi nell'[app Mapillary](https://www.
 
 ## Widget Mapillary {#mapillary-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

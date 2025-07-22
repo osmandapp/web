@@ -23,7 +23,7 @@ I dati sui percorsi dei mezzi pubblici sono tratti dal progetto [OpenStreetMap](
 Il percorso con i mezzi pubblici è in fase di test. Per ora, puoi costruire e visualizzare il tuo percorso senza la funzione di navigazione completa.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -45,7 +45,7 @@ Per iniziare a navigare in città con i mezzi pubblici, usa [il pulsante di navi
 
 **1.** Devi scegliere il *profilo di navigazione dei mezzi pubblici*, i punti di partenza e di destinazione.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Per iniziare a navigare in città con i mezzi pubblici, usa [il pulsante di navi
 
 **2.** OsmAnd offre opzioni di percorso con tempi di percorrenza a piedi e percorsi con i mezzi pubblici con informazioni sul percorso: tempo, distanza, trasferimento e percorsi pubblici. È necessario scorrere la schermata di navigazione per selezionare l'opzione richiesta.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -81,7 +81,7 @@ Per iniziare a navigare in città con i mezzi pubblici, usa [il pulsante di navi
 
 **3.** Puoi visualizzare tutti i suggerimenti di percorso possibili sulla mappa utilizzando il pulsante *Mostra sulla mappa*. Scorri le schermate per visualizzare l'opzione di percorso successiva.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -99,7 +99,7 @@ Per iniziare a navigare in città con i mezzi pubblici, usa [il pulsante di navi
 
 **4.** Tocca il pulsante "Dettagli" per aprire una descrizione del percorso selezionato con tutte le fermate e i trasferimenti.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

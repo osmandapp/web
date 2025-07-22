@@ -53,7 +53,7 @@ OsmAnd prend en charge l'**utilisation multiplateforme** sur *([Android](../purc
 
 ## Connexion {#login}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -99,7 +99,7 @@ Si vous rencontrez des problèmes lors de l'inscription :
 
 ## OsmAnd Start {#osmand-start}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ Fonctionnalités incluses dans OsmAnd Start :
 
 ### Comment activer OsmAnd Start {#how-to-activate-osmand-start}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -165,7 +165,7 @@ Si vous avez déjà un abonnement **OsmAnd Pro** ou un **compte OsmAnd Cloud act
 
 ## Dernière synchronisation {#last-sync}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ To use this feature:
 
 ## Corbeille {#trash}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ La fonctionnalité **Corbeille** vous permet de visualiser et de gérer les fich
 
 ## Paramètres {#settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -281,7 +281,7 @@ Cette section permet de modifier et de gérer votre OsmAnd Cloud.
 
 ### Sélectionner les données à sauvegarder {#select-data-to-back-up}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -314,7 +314,7 @@ Toutes les [cartes](../start-with/download-maps.md) sont stockées sur l'apparei
 
 ### Gérer le stockage {#manage-storage}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -346,7 +346,7 @@ Cette section contient des informations sur le compte connecté à OsmAnd Cloud 
 
 ### Option de suppression {#deletion-option}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -382,7 +382,7 @@ Les actions que vous pouvez effectuer dans la section **Zone de danger** du menu
 
 ## Liste des modifications {#list-of-changes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -409,7 +409,7 @@ Dans la section [Dernière synchronisation](#last-sync) du menu déroulant, appu
 
 ### Local et Cloud {#local-and-cloud}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -438,7 +438,7 @@ Allez dans : *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 ### Conflits {#conflicts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

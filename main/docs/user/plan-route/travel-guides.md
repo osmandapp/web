@@ -25,7 +25,7 @@ Virtual travel guides in OsmAnd offer users valuable information, recommendation
 OsmAnd travel guides are based on data from [Wikivoyage](https://www.wikivoyage.org/), a community project similar to Wikipedia, where volunteer authors create up-to-date articles.  
 Wikivoyage information includes the main facts about a place, transportation, attractions, shopping, and more.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -60,7 +60,7 @@ Wikivoyage information includes the main facts about a place, transportation, at
 
 ### Download articles {#download-articles}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -95,7 +95,7 @@ When you open *Travel Guides* (*<Translate android="true" ids="shared_string_men
 
 ### Explore and Bookmark {#explore-and-bookmark}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ If you tap the *Bookmark button*, the article will be saved for later reading an
 
 ### Search {#search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Next to each search result are listed the first 3 most commonly used languages i
 
 ### Options {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -175,7 +175,7 @@ In the Options menu, you can choose whether to save images in the viewed article
 
 ## Travel Article {#travel-article}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -208,7 +208,7 @@ At the bottom of the screen are buttons such as:
 
 ### Navigation menu {#navigation-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -230,7 +230,7 @@ If you tap the arrow in the upper left corner of the screen, you will go directl
 
 ### Table of contents {#table-of-contents}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -260,7 +260,7 @@ Most *Travel guide articles* have the same content structure: *introduction* (im
 
 ### Points {#points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -330,7 +330,7 @@ In *[track context menu](../map/tracks/track-context-menu.md)* of GPX-file you c
 
 ## Combine with Wikipedia {#combine-with-wikipedia}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

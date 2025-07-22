@@ -24,7 +24,7 @@ Para configurar o *roteamento de pedestres*, vá para a seção [Parâmetros de 
 
 O roteamento de pedestres pode ser útil não apenas em áreas urbanas, onde os pedestres podem encontrar vários obstáculos ao tentar ir de um lugar para outro. Você também pode usar este tipo de roteamento ao correr, fazer trilhas e caminhada nórdica fora da cidade ou nas montanhas. Basta ajustar os parâmetros de roteamento de acordo com suas necessidades.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

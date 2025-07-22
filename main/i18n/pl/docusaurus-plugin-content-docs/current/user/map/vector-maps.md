@@ -130,7 +130,7 @@ Niektóre powiązane problemy z czcionkami zostały udokumentowane na GitHubie: 
 
 ## * Linie konturowe {#-contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Linie konturowe są kompatybilne ze wszystkimi stylami map i można je dostosowa
 
 ## * Głębokość morska {#-nautical-depth}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Więcej szczegółów na temat widoku mapy morskiej znajdziesz na stronie [Wtycz
 
 ## Pokaż granice {#show-borders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -219,7 +219,7 @@ Na Androidzie zarchiwizowane mapy są wyświetlane na **pomarańczowo**. W iOS m
 Przejdź do: *Menu → Konfiguruj mapę → Pokaż → Siatka współrzędnych*
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ OsmAnd obsługuje wiele **podstawowych projekcji** do wyświetlania linii siatki
 
 ### Tryb mapy {#map-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -323,7 +323,7 @@ Mapa może być wyświetlana w jasnym lub ciemnym motywie, w zależności od try
 
 ### Szczegóły {#details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,ma
 
 ### Trasy {#routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -413,7 +413,7 @@ Trasa to ścieżka, która jest z góry określona i którą należy podążać,
 
 ### Transport {#transport}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -445,7 +445,7 @@ Podczas nawigacji po miastach potrzebny jest bardziej kontrastowy widok transpor
 
 ### Ukryj {#hide}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -476,7 +476,7 @@ Aby poprawić widoczność mapy, możesz potrzebować ukryć niektóre obiekty. 
 
 ### Styl drogi {#road-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -514,7 +514,7 @@ Specjalne ustawienia dla dróg, gdzie można zmienić kolory, aby pasowały do a
 
 ### Rozmiar tekstu {#text-size}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -539,7 +539,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,map_wi
 
 ### Lupa mapy {#map-magnifier}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -572,7 +572,7 @@ Opcja **Język mapy** konfiguruje pisownię nazw na mapie OsmAnd dla poziomów p
 
 Jeśli nazwy na mapie nie są przetłumaczone na wymagany język przez społeczność OSM, możesz użyć [nazw transliterowanych](https://en.wikipedia.org/wiki/Transliteration): *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) lub *<Translate ios="true" ids="translit_names"/>* (iOS).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

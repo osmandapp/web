@@ -34,7 +34,7 @@ The Topography plugin provides access to the following map types:
 - [3D Relief](#3d-relief). It is a [vector map](../map/vector-maps.md) that provides a three-dimensional representation of the terrain, available only with [OsmAnd Pro subscription](../purchases/index.md).
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -92,7 +92,7 @@ For stable work and to save resources, you can download a map not of the entire 
 
 ### 3D Relief Maps {#3d-relief-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ If the map displayed on the screen is not downloaded, then in *Menu → Configur
 
 ### Contour Lines (Meters or Feet) {#contour-lines-meters-or-feet}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -142,7 +142,7 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 
 ## Contour Lines {#contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -181,7 +181,7 @@ When using the [Map rendering engine](../personal/global-settings.md#map-renderi
 
 ## Terrain {#terrain}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -252,7 +252,7 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 *Modify Color Scheme* is an **OsmAnd Pro** paid feature for [iOS](../purchases/ios.md#pro-features) and [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -327,7 +327,7 @@ The main settings for *Show or Hide map types* are in the Topography section of 
 3D Relief is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -359,7 +359,7 @@ The 3D Relief feature produces a raised relief and provides a three-dimensional 
 
 - Download the [Terrain map (3D)](#3d-relief-maps) of the regions, if necessary.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -382,7 +382,7 @@ The 3D Relief feature produces a raised relief and provides a three-dimensional 
 
 ### Vertical Exaggeration {#vertical-exaggeration}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -421,7 +421,7 @@ When **Hillshade** is **enabled**, an image with relief shadows appears more det
 
 ## Combine Layer Types {#combine-layer-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **İz Görünümü** özelliği, kullanıcıların izlerin haritada nasıl görüntülendiğini özelleştirmesine olanak tanır. Buna renk, genişlik, yön göstergeleri ve diğer görsel öğelerin ayarlanması da dahildir. İz görünümünü özelleştirmek, birden çok izi ayırt etmeye, belirli rotaları vurgulamaya ve harita okunabilirliğini iyileştirmeye yardımcı olur.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -122,7 +122,7 @@ Tüm **iz görünümü ayarlarını** varsayılan değerlerine geri yükler.
 **3B İz**, [iOS](../../purchases/ios.md#pro-features) ve [Android](../../purchases/android.md#pro-features) için **OsmAnd Pro** ücretli bir özelliktir <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -185,7 +185,7 @@ Seçenekler: *Üst*, &nbsp;*Alt*, &nbsp;*Üst ve alt*.
 
 ## Birden Çok İz İçin Görünümü Değiştirme {#change-appearance-for-multiple-tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

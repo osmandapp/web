@@ -17,7 +17,7 @@ import Translate from '@site/src/components/Translate.js';
 
 **Haritayı Yapılandır** menüsü, OsmAnd *Ana Menüsünde* önemli bir öğedir ve harita görünümünü ihtiyaçlarınıza göre özelleştirmenizi sağlar. Favori noktaları, navigasyon işaretlerini veya özel ilgi çekici noktaları haritada vurgulayabilir, belirli rotaları veya üçüncü taraf GPX dosyalarını görüntüleyebilir, arazi bilgilerini, uydu görüntülerini veya mevcut diğer raster görüntüleri üst üste bindirebilir, toplu taşıma bilgilerini görüntüleyebilir ve harita stilini değiştirebilirsiniz.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

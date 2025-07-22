@@ -56,7 +56,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 2. **iOS**. انتقل إلى: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 3. حدد المنطقة المطلوبة. بمجرد فتح المنطقة، ستكون بيانات ويكيبيديا من بين الحزم الأخرى.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -94,7 +94,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 2. حدد ملفًا شخصيًا، وابحث عن قسم إعدادات *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* في القائمة.
 3. قم بتشغيل *<Translate android="true" ids="poi_osmwiki"/>* **لأندرويد** / *<Translate ios="true" ids="download_wikipedia_maps"/>* **لـ iOS**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -121,7 +121,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - في إصدار **iOS**، لفتح [البحث](../search/index.md)، توجد أيقونة البحث في الزاوية العلوية اليسرى من الشاشة.
 
 <!--
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -141,7 +141,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 - للبحث حسب [فئة](../search/search-poi.md#poi-search) ويكيبيديا، حدد: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -172,7 +172,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -202,7 +202,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 3. قم بتعطيل خيار *<Translate android="true" ids="shared_string_all_languages"/>*.
 4. حدد لغة (لغات) معينة في القائمة المفتوحة.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -230,7 +230,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 في حال توفر *مقالة ويكيبيديا* بلغات مختلفة، يمكنك تبديل اللغة أثناء القراءة. بعد النقر على الأيقونة المقابلة في الزاوية العلوية اليمنى من الشاشة، ستُعرض عليك خيارات للاختيار من بينها.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -254,7 +254,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - **أندرويد**. افتح *[مقالة ويكيبيديا](#display-wikipedia-on-the-map) ← &#8942; ← خيارات*
 - **iOS**. افتح *[مقالة ويكيبيديا](#display-wikipedia-on-the-map) ← أيقونة الصورة*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

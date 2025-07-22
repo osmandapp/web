@@ -53,7 +53,7 @@ The Weather plugin is only available with Map rendering engine [Version 2](../pe
 
 ### Weather Forecast Screen {#weather-forecast-screen}
 
-<Tabs groupId="operating-systems">  
+<Tabs groupId="operating-systems" queryString="current-os">  
 
 <TabItem value="android" label="Android">
 
@@ -79,7 +79,7 @@ At the bottom of the screen is the *weather toolbar*. You can use the day button
 
 ### Customize Weather Layers {#customize-weather-layers}
 
-<Tabs groupId="operating-systems">  
+<Tabs groupId="operating-systems" queryString="current-os">  
 
 <TabItem value="android" label="Android">
 
@@ -106,7 +106,7 @@ In this menu, you can change the **visibility** and [settings](#weather-settings
 
 ### Weather Settings {#weather-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -155,7 +155,7 @@ All weather data is presented as separate map layers. To see the weather layers 
 
 ### Combine Maps {#combine-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -197,7 +197,7 @@ On Android devices, you can check when weather data has been downloaded by tappi
 
 ### Download Forecast {#download-forecast}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -233,7 +233,7 @@ OsmAnd generates a new forecast every 6 hours.
 
 ## Weather Widgets {#weather-widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

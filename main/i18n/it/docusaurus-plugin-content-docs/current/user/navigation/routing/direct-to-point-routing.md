@@ -32,7 +32,7 @@ Questo tipo di navigazione non considera ostacoli o barriere che potrebbero esse
 Quando si utilizzano i tipi di navigazione Punto-punto e Barca, saranno necessari i [dati delle curve di livello di profondità](../../plugins/nautical-charts.md#nautical-map-style), che possono essere abilitati e impostati in *Configura mappa*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

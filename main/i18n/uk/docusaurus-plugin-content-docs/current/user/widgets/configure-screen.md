@@ -31,7 +31,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Усі віджети [залежать від профілю](../personal/profiles.md) — кожен профіль має власне розташування, порядок, видимість та налаштування.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -54,7 +54,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Панелі віджетів {#widget-panels}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -90,7 +90,7 @@ OsmAnd дозволяє організовувати інтерфейс мапи
 
 ### Каталог віджетів {#widgets-catalog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -253,7 +253,7 @@ OsmAnd дозволяє організовувати інтерфейс мапи
 
 ### Сторінки {#pages}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -315,7 +315,7 @@ OsmAnd дозволяє організовувати інтерфейс мапи
 
 ### Контекстне меню віджета {#widget-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -400,7 +400,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 ### Спеціальні кнопки {#custom-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -424,7 +424,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 ### Кнопки за замовчуванням {#default-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -489,7 +489,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 ## Інше {#other}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -516,7 +516,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 ### Позиція відображення (Позиція місцезнаходження на екрані) {#display-position-location-position-on-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -543,7 +543,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 ## Дії {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -576,7 +576,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 ## Змінити профіль {#switch-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

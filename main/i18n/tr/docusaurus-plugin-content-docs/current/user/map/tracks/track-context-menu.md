@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *İz bağlam menüsü*, *[İz](../../personal/tracks/index.md)* hakkında hem metin hem de [grafik](#altitude--speed-graphs) biçiminde bilgi sağlar. Bilgi eklemenize, değişiklik yapmanıza, düzenlemenize ve iz ile çeşitli diğer eylemleri gerçekleştirmenize olanak tanır. *İz bağlam menüsüne* harita üzerinde gerekli ize dokunarak veya *[Yerlerim](../../personal/myplaces.md)* menüsünü (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*) kullanarak erişebilirsiniz. İz klasörünü açmanız ve istediğiniz ize dokunarak seçmeniz gerekebilir.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Bilgi Paneli {#info-panel}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Bilgi paneli ayrıca aşağıdakiler hakkında bilgi sağlar:
 
 ### İz Eylemleri {#track-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Bilgi paneli ayrıca aşağıdakiler hakkında bilgi sağlar:
 
 ### Seçenekler {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Bilgi paneli ayrıca aşağıdakiler hakkında bilgi sağlar:
 
 ### Açıklama ve Bilgi {#description-and-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Bilgi paneli ayrıca aşağıdakiler hakkında bilgi sağlar:
 
 ### İz Bilgisi Etkinliği {#track-information-activity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Grafikle etkileşim:
 
 ### Genel Bakış Bilgileri {#overview-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -305,7 +305,7 @@ Etkin **düğmeler** aşağıdaki gibi eylemlere erişim sağlar:
 Bu sekme yalnızca kaydedilen izlerde görünür olabilir. Bu tür izlerdeki noktaların **[`speed`](../../plugins/trip-recording#recorded-gpx-file)** etiketleri bulunur.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ Bu sekme yalnızca kaydedilen izlerde görünür olabilir. Bu tür izlerdeki nok
 
 ### Rakım {#altitude}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -387,7 +387,7 @@ Bu özellik, [Arazi harita verilerine](../../plugins/topography.md#download-maps
 
 Ara noktalar, harita üzerinde bulunan nokta türlerinden biridir. Genel olarak, GPX dosyalarının bir parçası olan iz noktaları olabilirler. Ayrıntılı bir açıklama [haritadaki noktalar](../../map/point-layers-on-map.md) makalesinde mevcuttur.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -424,7 +424,7 @@ Ara noktalar, o anda kaydedilen ize veya [*Yerlerim → İzler listesi*](../../p
 
 #### Ara Nokta Oluştur {#create-waypoint}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -460,7 +460,7 @@ Ara nokta oluşturma ekranını açmak için *Ara Nokta Ekle* düğmesine dokunu
 
 ### Gruplarla Eylemler {#actions-with-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -491,7 +491,7 @@ Ara nokta oluşturma ekranını açmak için *Ara Nokta Ekle* düğmesine dokunu
 
 ### Ara Nokta Grupları {#waypoint-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -513,7 +513,7 @@ Harita üzerindeki izin bağlam menüsünün sağ üst köşesindeki düğmeyi k
 
 ### Özel GPX Etiketlerini Görüntüle {#display-custom-gpx-tags}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

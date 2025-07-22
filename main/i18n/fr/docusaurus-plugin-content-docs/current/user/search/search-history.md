@@ -28,7 +28,7 @@ OsmAnd propose plusieurs façons de consulter votre historique de recherche.
 
 ## Comment utiliser {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -59,7 +59,7 @@ L'historique de recherche sert à fournir des informations pertinentes sur vos a
 
 ## Éléments de l'historique {#history-items}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -105,7 +105,7 @@ Vous pouvez **désactiver ou activer** l'affichage de l'intégralité de l'histo
 
 ### Supprimer {#delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Vous devez **appuyer longuement sur l'un des éléments de requête de la liste*
 
 ### Exporter et partager {#export-and-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

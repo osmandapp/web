@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Wszystkie ślady w OsmAnd są przechowywane w zakładce *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd przetwarza plik śladu w [formacie GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), ale [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) i [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) mogą być importowane i konwertowane do GPX. Więcej o różnych typach śladów przeczytasz w artykule [Ślady na mapie](../../map/tracks/index.md#types-of-tracks).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Wszystkie ślady w OsmAnd są przechowywane w zakładce *<Translate android="tru
 
 ## Tworzenie śladu {#create-a-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Możesz dodawać ślady w OsmAnd w następujący sposób:
 
 ## Zarządzanie śladami {#manage-tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -91,7 +91,7 @@ Wszystkie kiedykolwiek nagrane, utworzone lub zaimportowane ślady są automatyc
 
 ### Menu śladu {#track-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -147,7 +147,7 @@ Menu udostępnia następujące działania:
 
 ### Szukaj {#search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -174,7 +174,7 @@ Dostępne:
 
 ### Tryb wyboru {#selection-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Po dokonaniu wyboru dostępne są następujące kroki:
 
 ### Sortuj według {#sort-by}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ OsmAnd oferuje łatwy sposób sortowania śladów, pomagając zarządzać dużą
 
 #### Sortowanie podfolderów {#sorting-subfolders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -276,7 +276,7 @@ Wybrana opcja sortowania jest stosowana nie tylko do bieżącego podfolderu, ale
 
 ## Folder śladów {#track-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -320,7 +320,7 @@ Jak otworzyć menu folderu:
 
 ### Statystyki folderów {#folder-statistics}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ Na dole listy w zakładce *Ślady* oraz pod listą śladów **w każdym z Twoich
 
 ### Akcje folderów {#folder-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -400,7 +400,7 @@ Jak otworzyć akcje folderu:
 
 ### Usuń folder {#delete-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -455,7 +455,7 @@ Narzędzie importu umożliwia dodawanie śladów z zewnętrznych plików do nawi
 
 ### Eksportuj {#export}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

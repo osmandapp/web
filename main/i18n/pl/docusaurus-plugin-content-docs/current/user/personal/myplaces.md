@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Moje Miejsca** to centralne centrum w aplikacji OsmAnd do zarządzania i dostosowywania wszystkich danych osobistych. Możesz użyć tej sekcji do organizowania [Ulubionych punktów](#favorites) oznaczonych jako ważne lub często odwiedzane. Zakładka [Ślady](#tracks) umożliwia przeglądanie, importowanie, nagrywanie i tworzenie plików GPX, aby pomóc Ci w prowadzeniu szczegółowej historii tras i podróży. Możesz także zarządzać swoimi [Edycjami OpenStreetMap](#openstreetmap-edits), co ułatwia wkład w ulepszanie i aktualizowanie map. Wtyczka [Notatki audio/wideo](#audiovideo-notes) i widżety umożliwiają użytkownikom Androida tworzenie i zapisywanie notatek multimedialnych związanych z konkretnymi lokalizacjami, dodając kontekst do ich podróży.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu"/> → Moje Miej
 
 ## Ulubione {#favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu"/> → Moje Miej
 
 2. ***Menu z trzema kropkami*** (*Android*) i ***długie naciśnięcie*** (*iOS*). Użyj *menu z trzema kropkami* obok każdego folderu lub *długo naciśnij* folder, aby zarządzać grupami ulubionych:
 
-    <Tabs groupId="operating-systems">
+    <Tabs groupId="operating-systems" queryString="current-os">
 
     <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ Więcej szczegółowych instrukcji znajdziesz w artykule [Ulubione](../personal/
 
 ## Ślady {#tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Aby uzyskać kompleksowe wskazówki, zobacz artykuł [Zarządzaj śladami](../pe
 
 ## Edycje OpenStreetMap {#openstreetmap-edits}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

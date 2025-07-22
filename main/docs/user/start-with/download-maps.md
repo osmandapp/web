@@ -32,7 +32,7 @@ Start loading maps from the [initial setup screen](#initial-setup-screen), or go
 
 ### Initial Setup Screen {#initial-setup-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ If you are using a VPN, OsmAnd may suggest a map based on the VPN’s virtual lo
 
 #### Three-dot menu {#three-dot-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ If you are using a VPN, OsmAnd may suggest a map based on the VPN’s virtual lo
 
 ### Maps and Resources {#maps-and-resources}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -137,7 +137,7 @@ OsmAnd includes two world map options:
 
 ### Select on the map {#select-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -161,7 +161,7 @@ On the small screen, the map selected for downloading will be highlighted in yel
 
 ### Search {#search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

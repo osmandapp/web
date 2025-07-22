@@ -21,7 +21,7 @@ La herramienta **Planificar una ruta** (*Menú → Planificar una ruta*) es una 
 
 Una ruta consta de un conjunto de segmentos entre puntos especificados. Los segmentos pueden ser líneas rectas o rutas adaptadas al perfil seleccionado. La ruta se puede guardar como GPX para su posterior importación, edición y [navegación](../navigation/setup/gpx-navigation.md).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -40,7 +40,7 @@ Una ruta consta de un conjunto de segmentos entre puntos especificados. Los segm
 
 ## Casos de uso principales {#main-use-cases}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -72,7 +72,7 @@ Puede **acercar y alejar** para facilitar la colocación de puntos al crear o ed
 
 ### Modificar pista GPX existente {#modify-existing-gpx-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Si faltan [datos de elevación](../map/tracks/track-context-menu.md#calculating-
 
 ### Adjuntar pista a carreteras {#attach-track-to-roads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -169,7 +169,7 @@ To generate navigation instructions:
 
 ### Añadir puntos {#adding-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -199,7 +199,7 @@ Los puntos añadidos en el editor se pueden conectar como una línea recta o com
 2. Toque el *icono de perfil* en la esquina inferior izquierda de la pantalla del mapa. No en el icono superior, se abrirá el menú Configurar mapa.
 3. En el *[menú contextual de punto](#point-context-menu) → Cambiar tipo de ruta antes/después*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ Un segmento de pista es una colección de puntos conectados sin **huecos**. En u
 
 ### Menú contextual del punto {#point-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -275,7 +275,7 @@ Cada punto de su ruta tiene su menú contextual. Muestra el *número de secuenci
 
 ### Rutas multimodales {#multimodal-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -298,7 +298,7 @@ Utilizando la herramienta *Planificar una ruta* y la opción [Ruta entre puntos]
 
 ### Guardar ruta {#save-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -329,7 +329,7 @@ Al guardar una nueva pista, puede seleccionar la opción de pista ***Simplificad
 
 ### Opciones {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -359,7 +359,7 @@ Al guardar una nueva pista, puede seleccionar la opción de pista ***Simplificad
 
 ### Gráfico {#graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

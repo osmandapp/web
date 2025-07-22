@@ -29,7 +29,7 @@ By default, *Moped profile* is deactivated. To use this profile for routing, you
 
 The moped's rooting settings are very simple and consist of just a few options.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

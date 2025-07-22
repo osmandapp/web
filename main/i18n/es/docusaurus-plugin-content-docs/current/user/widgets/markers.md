@@ -32,7 +32,7 @@ También puede seleccionar mostrar uno o dos marcadores. Lea más sobre la confi
 *La distancia al marcador* es la longitud de la línea recta entre su posición (o el punto central del mapa / el punto inicial de contacto del mapa cuando la ubicación está desactivada) y el marcador.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ También puede seleccionar mostrar uno o dos marcadores. Lea más sobre la confi
 :::
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -140,7 +140,7 @@ El widget muestra la distancia o la hora estimada de llegada (ETA) para el prime
 
 La configuración de la apariencia de los marcadores de mapa está disponible tanto en las versiones de Android como de iOS de OsmAnd. El menú "Apariencia en el mapa" es una configuración general para los marcadores de mapa y se aplica tanto si los widgets están habilitados como si no. Puede leer la información detallada en esta [página](../personal/markers.md#appearance-on-the-map).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Das *Track-Kontextmenü* bietet Informationen über den *[Track](../../personal/tracks/index.md)* sowohl in Text- als auch in [grafischer](#altitude--speed-graphs) Form. Es ermöglicht Ihnen, Informationen hinzuzufügen, Änderungen vorzunehmen, zu bearbeiten und verschiedene andere Aktionen mit dem Track durchzuführen. Sie können das *Track-Kontextmenü* aufrufen, indem Sie einfach den gewünschten Track auf der Karte antippen oder das Menü *[Meine Orte](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*) verwenden. Möglicherweise müssen Sie den Track-Ordner öffnen und den gewünschten Track durch Antippen auswählen.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Infopanel {#info-panel}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Falls Ihr Track in OsmAnd oder einer anderen Tracking-App erstellt wurde (sodass
 
 ### Track-Aktionen {#track-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Falls Ihr Track in OsmAnd oder einer anderen Tracking-App erstellt wurde (sodass
 
 ### Optionen {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Das Menü **Optionen** ermöglicht Ihnen die Verwaltung und Änderung des ausgew
 
 ### Beschreibung und Info {#description-and-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Dieser Abschnitt des Reiters *Übersicht* zeigt ***Tag-Daten*** und ***alle allg
 
 ### Track-Informationsaktivität {#track-information-activity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Interaktion mit dem Diagramm:
 
 ### Übersichts-Informationen {#overview-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -305,7 +305,7 @@ Die aktiven **Schaltflächen** ermöglichen den Zugriff auf Aktionen wie:
 Dieser Reiter ist nur bei aufgezeichneten Tracks sichtbar. Punkte auf diesem Tracktyp haben **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**-Tags.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ Das Diagramm **Geschwindigkeit** zeigt Metriken wie:
 
 ### Höhe {#altitude}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -387,7 +387,7 @@ Diese Funktion ermöglicht es Ihnen, das Höhenprofil für GPX-Tracks offline f�
 
 Wegpunkte sind eine der auf der Karte verfügbaren Punktarten. Im Allgemeinen können es Trackpunkte sein, die Teil von GPX-Dateien sind. Eine detaillierte Beschreibung finden Sie im Artikel [Punkte auf der Karte](../../map/point-layers-on-map.md).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -424,7 +424,7 @@ Wegpunkte können zum aktuell aufgezeichneten Track oder zu jedem Track aus der 
 
 #### Wegpunkt erstellen {#create-waypoint}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -460,7 +460,7 @@ Tippen Sie auf die Schaltfläche *Wegpunkt hinzufügen*, um den Bildschirm zur W
 
 ### Aktionen mit Gruppen {#actions-with-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -491,7 +491,7 @@ Das *Drei-Punkte-Menü* ( &#8285; ) öffnet das Wegpunkt-*Gruppenmenü*.
 
 ### Wegpunktgruppen {#waypoint-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -513,7 +513,7 @@ Sie können Gruppen-Wegpunkte auf der Karte mit der Schaltfläche in der oberen 
 
 ### Benutzerdefinierte GPX-Tags anzeigen {#display-custom-gpx-tags}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -26,7 +26,7 @@ Le widget Action rapide est un élément d'interface utilisateur interactif qui 
 
 ## Widget Action rapide {#quick-action-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Pour utiliser le bouton Action rapide, vous devez d'abord activer ce widget.
 
 ### Ajouter et supprimer des actions {#add-and-delete-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Vous pouvez attribuer une ou plusieurs [actions](#action-types) au bouton d'acti
 
 ### Paramètres d'action {#action-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -163,7 +163,7 @@ Le widget *Action rapide* apparaît dans le coin inférieur de l'écran de la ca
 
 ### Boutons personnalisés {#custom-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

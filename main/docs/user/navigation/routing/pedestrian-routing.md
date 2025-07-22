@@ -23,7 +23,7 @@ To configure *Pedestrian routing* go to the [Route parameters section](../guidan
 
 Pedestrian routing can be useful not only in urban areas, where pedestrians may encounter various obstacles when trying to get from one place to another. You can also use this routing type while jogging, hiking, and Nordic walking outside the city or in the mountains. Simply adjust routing parameters according to your needs.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

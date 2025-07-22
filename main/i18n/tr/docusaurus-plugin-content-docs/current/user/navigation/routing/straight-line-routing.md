@@ -36,7 +36,7 @@ Düz hat yönlendirme, *Uçak profili* ile bağlantılıdır. Varsayılan olarak
 
 *Düz hat* yönlendirme, Navigasyon ayarlarının [Rota parametreleri bölümünde](../guidance/navigation-settings.md#route-parameters) ihtiyaçlarınıza göre yapılandırılabilir.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

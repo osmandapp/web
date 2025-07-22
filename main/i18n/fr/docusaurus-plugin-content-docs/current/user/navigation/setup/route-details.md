@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd vous permet de trouver le meilleur itinéraire et d'en explorer les détails. L'application fournit des informations détaillées sur l'itinéraire, telles que la distance, le [temps de trajet](#distance--time--co2), le [type de surface](#road-attributes), les [différences d'altitude](#elevation-info), les [données d'empreinte carbone](#distance--time--co2) et les [informations sur les virages](#turn-by-turn-information). Vous pouvez également [analyser](#analyze-on-map) l'itinéraire sur la carte, obtenir des informations sur les segments de piste, [imprimer](#print) le plan de l'itinéraire, [enregistrer](#share--export-actions) l'itinéraire et le partager avec d'autres. Grâce à cette fonctionnalité, vous connaîtrez toujours les détails de l'itinéraire et pourrez planifier votre voyage plus efficacement.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ Selon les [paramètres de profil](../../personal/profiles.md) sélectionnés et 
 
 ## Distance / Temps / CO2 {#distance--time--co2}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -79,7 +79,7 @@ Selon les [paramètres de profil](../../personal/profiles.md) sélectionnés et 
 
 ## Informations d'altitude {#elevation-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Les données d'altitude sur la carte (entre 70 degrés de latitude nord et 70 de
 
 ### Graphique d'altitude {#elevation-graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Les [graphiques](../../map/tracks/track-context-menu.md#altitude--speed-graphs) 
 
 ## Analyser sur la carte {#analyze-on-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -183,7 +183,7 @@ Si des données sont présentes, vous pouvez sélectionner l'un des types suivan
 
 ## Attributs de la route {#road-attributes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -230,7 +230,7 @@ Les attributs de la route sont accessibles dans les [Détails de l'itinéraire](
 
 ## Informations virage par virage {#turn-by-turn-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Appuyez sur une section spécifique de l'itinéraire dans la liste pour afficher
 
 ### Instructions {#instructions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -313,7 +313,7 @@ La possibilité **d'imprimer** ou **d'enregistrer** les informations virage par 
 
 ## Partager / Exporter (Actions) {#share--export-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

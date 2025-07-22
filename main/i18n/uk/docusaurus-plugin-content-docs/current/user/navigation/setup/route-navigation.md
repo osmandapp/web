@@ -27,7 +27,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -92,7 +92,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *Напрямок до/від* у [*контекстному меню карти*](../../map/map-context-menu.md#directions-to--from).  
 - Розділ навігації в [*Головному меню*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Встановити цільову точку {#set-target-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Проміжні пункти призначення {#intermediate-destinations}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -181,7 +181,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Якщо ви виберете **Сортувати** (*Android*) або **Параметри** (*iOS*) у списку пунктів призначення, ви потрапите до спеціальних параметрів для налаштування порядку навігації до проміжних точок.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Використовувати точки Дім або Робота {#use-home-or-work-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -232,7 +232,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Історія попередніх маршрутів {#history-of-previous-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -260,7 +260,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Розпочати / Зупинити навігацію {#start--stop-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -304,7 +304,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Використовуйте повідомлення від OsmAnd у панелі сповіщень.
 - Використовуйте *Меню швидких дій* або діалог, що з'являється, коли ви торкаєтеся *[Кнопки навігації](../../widgets/map-buttons.md#directions)* (див. скріншот).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -350,7 +350,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 У профілі *Перегляд карти* немає налаштувань навігації.  
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -381,7 +381,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 #### Розпочати / Зупинити симуляцію {#start--stop-simulation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -407,7 +407,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 #### Режим швидкості {#speed-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -440,7 +440,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Для побудови маршруту всі **необхідні карти** мають бути завантажені та мати однакову дату випуску. Зверніть увагу, що в деяких ситуаціях повідомлення про відсутні карти може бути приховано в меню підготовки маршруту. Якщо ви витягнете меню навігації вгору, ви побачите можливі причини, чому ваш маршрут не вдалося розрахувати.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -459,7 +459,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 У діалоговому вікні необхідних карт ви побачите пропозиції щодо завантаження або оновлення карт. Список використаних карт може бути неточним, оскільки він розраховує дуже базовий маршрут. Щоб отримати точний список карт, ви можете натиснути **Розрахувати онлайн**. Якщо ви виберете **Використовувати завантажені карти**, то розрахунок маршруту спробує використовувати вже завантажені карти та пропустить попереджувальне повідомлення.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

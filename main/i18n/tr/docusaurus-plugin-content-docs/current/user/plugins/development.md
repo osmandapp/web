@@ -43,7 +43,7 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 - *Ana Menü → Eklentiler → OsmAnd geliştirme → Ayarlar*.
 - *Ana Menü → [Genel Ayarlar](../personal/global-settings.md) → Profil → OsmAnd geliştirme eklentisi ayarları*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 OsmAnd geliştirici Widget'ları yalnızca OsmAnd geliştirme eklentisi etkinleştirildiğinde ekrana eklenebilir.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -167,7 +167,7 @@ OsmAnd geliştirici Widget'ları yalnızca OsmAnd geliştirme eklentisi etkinle�
 OsmAnd geliştirici Widget'ları yalnızca OsmAnd geliştirme eklentisi etkinleştirildiğinde ekrana eklenebilir.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -192,7 +192,7 @@ OsmAnd haritasına gerçekçi bir görünüm kazandırmak ve hem yukarıdan hem 
 
 ### Kamera Eğimi {#camera-tilt}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -218,7 +218,7 @@ Aynı zamanda, izleyicinin hayali hareketi nedeniyle, kameradan yüzeye olan mes
 
 ### Kamera Yüksekliği {#camera-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -239,7 +239,7 @@ Kamera Yüksekliği widget'ı, kameranın yüzey seviyesinin üzerindeki yüksek
 
 ### Yakınlaştırma Seviyesi {#zoom-level}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -269,7 +269,7 @@ Widget'ın üzerine dokunarak değiştirilen iki görünümü vardır:
 
 ### Hedefe Uzaklık {#distance-to-target}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -332,7 +332,7 @@ OsmAnd, GPX parkuru kullanarak cihazınızın konumunu ve hareketini simüle etm
 - Hareket simülasyon hızını seçin.
 - Başlat düğmesine dokunun.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

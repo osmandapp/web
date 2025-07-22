@@ -28,7 +28,7 @@ OsmAnd надає кілька способів перегляду історі�
 
 ## Як використовувати {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -59,7 +59,7 @@ OsmAnd надає кілька способів перегляду історі�
 
 ## Елементи історії {#history-items}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -105,7 +105,7 @@ OsmAnd надає кілька способів перегляду історі�
 
 ### Видалити {#delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ OsmAnd надає кілька способів перегляду історі�
 
 ### Експорт та поширення {#export-and-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

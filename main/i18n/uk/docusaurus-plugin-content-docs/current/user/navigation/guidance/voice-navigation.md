@@ -45,7 +45,7 @@ OsmAnd надає різні опції для керування голосов
 
 ### Налаштування голосу {#voice-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ OsmAnd надає різні опції для керування голосов
 
 ### Обмеження швидкості {#speed-limit}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -241,7 +241,7 @@ OsmAnd підтримує голоси **Text-to-Speech (TTS)**, які забе
 
 ### Мова голосових підказок {#voice-prompt-language}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

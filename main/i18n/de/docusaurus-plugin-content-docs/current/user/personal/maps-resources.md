@@ -22,7 +22,7 @@ Im Bereich **Karten & Ressourcen** können Sie *Online-* und *Offline*-Karten so
 
 OsmAnd arbeitet mit zwei Kartentypen: [Vektorkarten](../map/vector-maps.md) und [Rasterkarten](../map/raster-maps.md). Der Reiter [Lokal](#local) speichert alle Karten und Ressourcen. Verfügbare Kartentypen können vom Reiter [Downloads](#downloads) heruntergeladen werden. Auf dem Reiter [Updates](#updates) können Sie Karten herunterladen, für die Updates verfügbar sind, und [Live-Updates](#osmand-live) nutzen. Sie können auch auf die Funktion [Extra Karten](#extra-maps) zugreifen, um eigene Kartentypen zu erstellen.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -45,7 +45,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ## Kartentypen {#map-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -104,7 +104,7 @@ Bitte beachten Sie, dass monatliche Karten-Updates als ein weiterer Karten-Downl
 
 ### Downloads {#downloads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -166,7 +166,7 @@ Informationen zum *Kartenmenü* und zu *Aktionen* finden Sie im Artikel [Karten 
 
 #### Mehrere Karten gleichzeitig laden {#multiple-map-loading}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -187,7 +187,7 @@ Für Länder, die aus **mehreren Regionenkarten** bestehen, können Sie das Mass
 
 ### Lokal {#local}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -291,7 +291,7 @@ Verwenden Sie Sortieroptionen, um Kartendaten zu organisieren:
 
 ### Updates {#updates}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ Lesen Sie mehr im Artikel [**Benutzerdefiniertes Paket**](../plugins/custom).
 :::tip Kauf
 OsmAnd Live ist eine kostenpflichtige Funktion.  
 :::
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ Gelöschte oder geänderte Routenreferenzen können weiterhin falsch angezeigt w
 
 ### Kostenlos für OSM-Mapper {#free-for-osm-mappers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

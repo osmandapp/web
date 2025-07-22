@@ -28,7 +28,7 @@ OsmAnd надає кілька способів потрапити до *Інс�
 
 ## Повнотекстовий пошук {#full-text-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ OsmAnd підтримує пошук адрес за даними OpenStreetMap,
 
 ## Виберіть місто {#select-city}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -123,7 +123,7 @@ OsmAnd підтримує пошук адрес за даними OpenStreetMap,
 
 ## Виберіть вулицю {#select-street}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -153,7 +153,7 @@ OsmAnd підтримує пошук адрес за даними OpenStreetMap,
 
 ## Пошук за поштовим індексом {#postcode-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -188,7 +188,7 @@ OsmAnd підтримує пошук адрес за даними OpenStreetMap,
 
 ## Пошук за координатами {#coordinates-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

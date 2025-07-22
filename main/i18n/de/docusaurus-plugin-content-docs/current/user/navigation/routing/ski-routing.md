@@ -35,7 +35,7 @@ Standardmäßig ist das *Ski-Profil* deaktiviert. Um dieses Profil für das Rout
 
 Mit den *Ski-Routing*-Einstellungen können Benutzer ihre Routen planen, indem sie den gewünschten Schwierigkeitsgrad und die Art des Geländes auswählen, das sie erkunden möchten. Es gibt verschiedene Optionen für eine sichere, komfortable und angenehme Bewegung auf Pisten oder beim Freeriden.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

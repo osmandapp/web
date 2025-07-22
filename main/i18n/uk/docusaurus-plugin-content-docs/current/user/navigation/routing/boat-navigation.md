@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Маршрутизація для човнів може бути цінним інструментом для тих, хто любить кататися на човнах або вітрильниках по каналах, річках або фарватерах. Через відсутність більшості фарватерів у даних OpenStreetMap, маршрутизація для човнів *не рекомендується* для **навігації у відкритій воді**, замість цього пропонується використовувати **[Прямо до точки](#direct-to-point-routing-for-boat)**. З увімкненими лініями контурів глибин, це може допомогти вам залишатися в безпеці на воді, уникаючи небезпек, таких як мілководдя, скелі або інші перешкоди.
 Двигун маршрутизації OsmAnd для човнів також враховує характеристики водних шляхів та самих човнів.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -46,7 +46,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Зазвичай, *Маршрутизація для човнів* використовується з профілем човна (останній увімкнений разом з [Плагіном морських карт](../../plugins/nautical-charts.md)). Однак, можна використовувати маршрутизацію для човнів і з іншими профілями, а також різні [типи маршрутизації](#other-routing-types-for-boat) можуть бути використані в профілі човна.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

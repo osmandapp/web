@@ -26,7 +26,7 @@ Les données sur les itinéraires de transports en commun proviennent du projet 
 La navigation en transports en commun est en phase de test. Pour l'instant, vous pouvez construire et visualiser votre itinéraire sans la fonction de navigation complète.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ Pour commencer à naviguer dans la ville en transports en commun, utilisez [le b
 
 **1.** Vous devez choisir le *profil de navigation Transports en commun*, les points de départ et d'arrivée.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -67,7 +67,7 @@ Pour commencer à naviguer dans la ville en transports en commun, utilisez [le b
 
 **2.** OsmAnd propose des options d'itinéraire avec les temps de marche et les itinéraires de transports en commun avec des informations sur l'itinéraire : temps, distance, correspondance et lignes de transports en commun. Vous devez faire défiler l'écran de navigation pour sélectionner l'option requise.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -85,7 +85,7 @@ Pour commencer à naviguer dans la ville en transports en commun, utilisez [le b
 
 **3.** Vous pouvez visualiser toutes les suggestions d'itinéraire possibles sur la carte en utilisant le bouton *Afficher sur la carte*. Balayez les écrans pour afficher l'option d'itinéraire suivante.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -104,7 +104,7 @@ Pour commencer à naviguer dans la ville en transports en commun, utilisez [le b
 
 **4.** Appuyez sur le bouton "Détails" pour ouvrir une description de l'itinéraire sélectionné avec tous les arrêts et correspondances.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

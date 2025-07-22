@@ -31,7 +31,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 تم تصميم توجيه ركوب الخيل لتزويد الفرسان بمعلومات حول المسارات الصديقة للخيول، ومسارات الخيل، ومسارات الركوب.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

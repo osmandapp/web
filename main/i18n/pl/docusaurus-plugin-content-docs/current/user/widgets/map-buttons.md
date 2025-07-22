@@ -102,7 +102,7 @@ Przycisk kompasu zapewnia wiele działań do kontrolowania orientacji mapy:
 
 ### Opcje wyświetlania {#display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -131,7 +131,7 @@ Ikona kompasu na przycisku zawsze wskazuje Północ. Możesz wybrać sposób wy�
 
 ## Tryb 3D {#3d-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

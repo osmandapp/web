@@ -26,7 +26,7 @@ OsmAnd'daki sanal seyahat rehberleri, kullanıcılara değerli bilgiler, öneril
 OsmAnd seyahat rehberleri, gönüllü yazarların güncel makaleler oluşturduğu Wikipedia'ya benzer bir topluluk projesi olan [Wikivoyage](https://www.wikivoyage.org/) verilerine dayanmaktadır.
 Wikivoyage bilgileri, bir yer hakkındaki ana gerçekleri, ulaşımı, ilgi çekici yerleri, alışverişi ve daha fazlasını içerir.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ Wikivoyage bilgileri, bir yer hakkındaki ana gerçekleri, ulaşımı, ilgi çek
 
 ### Makaleleri indir {#download-articles}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -96,7 +96,7 @@ UNESCO Küresel Jeoparklar Ağı listesi veya dünyanın en büyük ve en karma�
 
 ### Keşfet ve Yer İmi Ekle {#explore-and-bookmark}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -121,7 +121,7 @@ UNESCO Küresel Jeoparklar Ağı listesi veya dünyanın en büyük ve en karma�
 
 ### Ara {#search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -151,7 +151,7 @@ Her arama sonucunun yanında, seçilen makalenin okunabileceği en yaygın kulla
 
 ### Seçenekler {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -176,7 +176,7 @@ Seçenekler menüsünde, görüntülenen makalelerdeki resimlerin çevrimdışı
 
 ## Seyahat Makalesi {#travel-article}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -209,7 +209,7 @@ Ekranın alt kısmında aşağıdaki düğmeler bulunur:
 
 ### Gezinme menüsü {#navigation-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ Ekranın sol üst köşesindeki oka dokunursanız, doğrudan *Keşfet* veya *Yer
 
 ### İçindekiler tablosu {#table-of-contents}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -261,7 +261,7 @@ Ekranın sol üst köşesindeki oka dokunursanız, doğrudan *Keşfet* veya *Yer
 
 ### Noktalar {#points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ GPX dosyasının *[iz bağlam menüsünde](../map/tracks/track-context-menu.md)*
 
 ## Wikipedia ile Birleştir {#combine-with-wikipedia}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

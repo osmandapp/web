@@ -44,7 +44,7 @@ You can find detailed information about visualizing and customizing raster maps 
     - [Change](../map/raster-maps.md#change-raster-map-parameters) raster map parameters.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

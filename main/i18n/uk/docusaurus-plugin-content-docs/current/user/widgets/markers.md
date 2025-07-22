@@ -32,7 +32,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 *Відстань до маркера* — це довжина прямої лінії між вашим місцезнаходженням (або центральною точкою мапи / початковою точкою дотику до мапи, коли місцезнаходження вимкнено) та маркером.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 :::
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -135,7 +135,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Налаштування вигляду маркерів мапи доступне як в Android, так і в iOS версіях OsmAnd. Меню "Вигляд на мапі" є загальним налаштуванням для маркерів мапи і застосовується незалежно від того, чи увімкнені віджети. Детальну інформацію можна прочитати на цій [сторінці](../personal/markers.md#appearance-on-the-map).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

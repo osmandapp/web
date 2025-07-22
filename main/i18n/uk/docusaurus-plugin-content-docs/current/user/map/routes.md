@@ -159,7 +159,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 ## Відображення маршрутів на мапі {#display-routes-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 ## Дії з маршрутами {#actions-with-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 ### Інформація про маршрут та висота {#route-info-and-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -248,7 +248,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 Щоб переглянути графік висоти, нахилу або деталі висоти для вибраного маршруту, просто натисніть на будь-яке з наступних значень у контекстному меню: **Відстань**, **Підйом**, **Спуск** або **Висота**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 ### Зберегти як трек {#save-as-a-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 ### Розпочати навігацію {#start-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -321,7 +321,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 Щоб здійснити пошук, перейдіть до меню *<Translate android="true" ids="search_button"/>* або *<Translate android="true" ids="search_button,search_categories"/>* та введіть свою активність.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -339,7 +339,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 Перейдіть до *<Translate android="true" ids="search_button,search_categories,poi_routes"/>*, щоб знайти потрібні маршрути. Маршрути включають назву, тип активності, довжину, місцезнаходження та відстань до найближчої точки.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ OsmAnd підтримує *райони для скелелазіння* (`climb
 
 Використовуйте кнопку фільтрів (у верхньому правому куті), щоб відобразити лише потрібні маршрути.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

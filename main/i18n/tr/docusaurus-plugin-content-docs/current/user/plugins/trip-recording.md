@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *Seyahat Kaydı eklentisi* ile yeni izler oluşturabilir, kaydedilenleri doğrudan harita üzerinde görüntüleyebilir ve mevcut kayıtları yönetebilirsiniz. Seyahatleriniz hakkında hız, yükseklik değişiklikleri, arazi detayları ve harici sensörlerden gelen veriler gibi değerli bilgiler sunar. Eklenti rotanızı kaydederek seyahatinizden sonra detaylı analiz ve paylaşım imkanı sunar.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ OsmAnd'daki Seyahat Kaydı eklentisi ile çeşitli uygun seçenekleri kullanarak
 
 ### Bir Diyalog Başlatın {#start-a-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -139,7 +139,7 @@ Android cihazınızın ekranından OsmAnd uygulama simgesinin bağlam menüsün�
 
 ### Genel Bakış Ekranı {#overview-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -191,7 +191,7 @@ Daha fazla ayrıntı için, yeniden adlandırma, silme veya ara noktalar ekleme 
 
 ### Haritada Göster {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -264,7 +264,7 @@ Seyahatlerinizi izlemeye başlamadan önce, optimum performans için **Seyahat K
 - **Genel ayarlar**. Seyahat Kaydı ayarları, uygulamanın genel [ayarlarında](../personal/global-settings.md) yönetebileceğiniz profil başına yapılandırılır. Seyahat Kaydı eklentisini özelleştirmeden önce, [profiller](../personal/profiles.md) bölümünden yapılandırmak istediğiniz profili seçin. Oradan, Seyahat Kaydı seçeneklerine erişmek için profilin ayarlarına gidin.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -367,7 +367,7 @@ Widget'lar, *Mesafe*, *Süre*, *Yokuş Yukarı* ve *Yokuş Aşağı* gibi iz kay
 
 ### Kayıt Widget'ı Ekle {#add-recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -394,7 +394,7 @@ Arayüzünüzü özelleştirmek için, Seyahat Kaydı widget'ını ve [diğer wi
 
 ### Mesafe (Başlat-Durdur) {#distance-start-stop}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -428,7 +428,7 @@ Widget'lar haritada görüntülendiğinde, herhangi birine dokunmak ek iz ayrın
 
 ### Süre, Yokuş Yukarı, Yokuş Aşağı {#duration-uphill-downhill}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

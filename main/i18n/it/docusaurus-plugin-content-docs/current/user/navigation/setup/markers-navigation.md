@@ -22,7 +22,7 @@ Gli [indicatori della mappa](../../personal/markers.md) sono punti sulla mappa c
 
 Possono essere particolarmente utili per escursionisti, ciclisti o chiunque esplori una nuova area che desideri contrassegnare posizioni interessanti o punti di riferimento sulla mappa. La differenza principale rispetto ai [punti preferiti](../../personal/favorites.md) è che gli indicatori sono più veloci da creare in quanto non richiedono un nome.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -41,7 +41,7 @@ Possono essere particolarmente utili per escursionisti, ciclisti o chiunque espl
 
 ## Utilizzare gli indicatori nella navigazione {#use-markers-in-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -81,7 +81,7 @@ Quando le opzioni **Frecce sulla mappa** e **Linea di direzione** sono abilitate
 
 ## Elenco itinerari {#itinerary-list}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ Solo le tracce con waypoint possono essere aggiunte all'*elenco indicatori della
 
 ## Ordina indicatori {#sort-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -164,7 +164,7 @@ Nella versione Android dell'app OsmAnd, ci sono altre opzioni di ordinamento per
 
 ### Ordina per attributi {#sort-by-attributes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ Utilizzando la funzionalità dello strumento Pianifica un percorso nell'elenco i
 
 ## Passa indicatori {#pass-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

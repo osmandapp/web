@@ -75,7 +75,7 @@ Los mapas en línea en OsmAnd se componen de datos ráster, que consisten en pí
 
 ## Seleccionar mapas ráster {#select-raster-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -100,7 +100,7 @@ También puede ajustar la transparencia del mapa base para combinarlo con sus ca
 
 ### Principal {#main}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -125,7 +125,7 @@ Puede elegir un estilo de mapa de la lista o [agregar](#add-new-online-raster-ma
 
 ### Capa de superposición {#overlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -156,7 +156,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_
 
 ### Capa inferior {#underlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -215,7 +215,7 @@ La diferencia de visualización del relieve en el mapa al aplicar estas configur
 
 ### Configurar opciones de visualización {#configure-display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -271,7 +271,7 @@ Aquí están los principales métodos para agregar una nueva fuente de mapa rás
 
 ### Agregar nueva fuente de mapa ráster en línea {#add-new-online-raster-map-source}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -354,7 +354,7 @@ Si desea acceder a mapas ráster sin conexión, es posible que deba precargar te
 
 Para que los mapas actualicen automáticamente las teselas después de un tiempo, puede establecer un [tiempo de caducidad](#add-new-online-raster-map-source), entonces OsmAnd recargará las teselas tan pronto como se muestren.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -393,7 +393,7 @@ Para que los mapas actualicen automáticamente las teselas después de un tiempo
 
 ### Cambiar parámetros del mapa ráster {#change-raster-map-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

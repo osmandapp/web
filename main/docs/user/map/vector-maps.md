@@ -129,7 +129,7 @@ Some related font issues have been documented on GitHub: [3911](https://github.c
 
 ## * Contour Lines {#-contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -154,7 +154,7 @@ Contour lines are compatible with all map styles and can be customized through t
 
 ## * Nautical Depth {#-nautical-depth}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -181,7 +181,7 @@ For further details about the Nautical map view, visit the [Nautical Map plugin 
 
 ## Show Borders {#show-borders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -218,7 +218,7 @@ On Android, archived maps are shown in **Orange**. In iOS, maps that can be upda
 Go to: *Menu → Configure Map → Show → Coordinates Grid*  
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -287,7 +287,7 @@ OsmAnd supports multiple **base projections** for displaying geographic grid lin
 
 ### Map Mode {#map-mode}
 
-<Tabs groupId="operating-systems">  
+<Tabs groupId="operating-systems" queryString="current-os">  
 
 <TabItem value="android" label="Android">
 
@@ -322,7 +322,7 @@ The map can be displayed in a light or dark theme based on the mode selected fro
 
 ### Details {#details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -389,7 +389,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 
 ### Routes {#routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -412,7 +412,7 @@ A route is a path that is predetermined and needs to be followed to reach a spec
 
 ### Transport {#transport}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -444,7 +444,7 @@ When navigating through cities, you need a more contrasting view of public trans
 
 ### Hide {#hide}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -475,7 +475,7 @@ To improve map visibility, you might need to hide certain objects. For example, 
 
 ### Road Style {#road-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -513,7 +513,7 @@ Special settings for roads, where you can change the colors to match the road at
 
 ### Text Size {#text-size}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -538,7 +538,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_r
 
 ### Map Magnifier {#map-magnifier}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -571,7 +571,7 @@ The **Map language** option configures the spelling of names on the OsmAnd map f
 
 If the names on the map are not translated into the required language by the OSM community, you can use [transliterated names](https://en.wikipedia.org/wiki/Transliteration): *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) or *<Translate ios="true" ids="translit_names"/>* (iOS) switcher.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

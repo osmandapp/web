@@ -20,7 +20,7 @@ import Translate from '@site/src/components/Translate.js';
 
 [Ana Menü](../widgets/map-buttons.md#main-menu) simgesi '&#8801;', Harita ekranının sol alt köşesinde bulunur. Navigasyon modunda bu düğme varsayılan olarak görünmez. Haritaya kısa bir dokunuştan sonra görünür.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

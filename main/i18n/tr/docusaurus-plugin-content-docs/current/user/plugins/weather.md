@@ -54,7 +54,7 @@ Hava Durumu eklentisi yalnızca Harita oluşturma motoru [Sürüm 2](../personal
 
 ### Hava Durumu Tahmin Ekranı {#weather-forecast-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -80,7 +80,7 @@ Ekranın altında *hava durumu araç çubuğu* bulunur. Hava durumu tahmininin g
 
 ### Hava Durumu Katmanlarını Özelleştirme {#customize-weather-layers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -107,7 +107,7 @@ Bu menüde, her katman için **görünürlüğü** ve [ayarları](#weather-setti
 
 ### Hava Durumu Ayarları {#weather-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Tüm hava durumu verileri ayrı harita katmanları olarak sunulur. Harita üzeri
 
 ### Haritaları Birleştir {#combine-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ Android cihazlarda, *Hava Durumu widget*'ına dokunarak hava durumu verilerinin 
 
 ### Tahmini İndir {#download-forecast}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -234,7 +234,7 @@ OsmAnd her 6 saatte bir yeni bir tahmin oluşturur.
 
 ## Hava Durumu Widget'ları {#weather-widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

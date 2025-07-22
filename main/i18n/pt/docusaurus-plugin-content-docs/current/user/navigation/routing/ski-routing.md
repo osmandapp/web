@@ -35,7 +35,7 @@ Por padrão, o *perfil de esqui* está desativado. Para usar este perfil para ro
 
 As configurações de *roteamento de esqui* permitem que os usuários planejem suas rotas selecionando o nível de dificuldade desejado e o tipo de terreno que desejam explorar. Existem várias opções para um movimento seguro, confortável e agradável em pistas ou durante um freeride.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -120,7 +120,7 @@ Namiar to kierunek do celu poza pojazdem, takiego jak cel podróży lub punkt po
 
 ![Widżet nagrywania podróży](@site/static/img/widgets/bearing.png)
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Widżet pokazuje odległość do pierwszego punktu pośredniego wzdłuż obliczo
 
 ### Czas do punktu pośredniego {#time-to-intermediate}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -257,7 +257,7 @@ Widżet pokazuje *czas przybycia* lub *czas dojazdu* do pierwszego punktu pośre
 
 ### Czas do celu {#time-to-destination}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -447,7 +447,7 @@ Widżet nazwy ulicy pokazuje **nazwę bieżącej ulicy** ze strzałką prostą l
 
 ## Zbliżanie się do POI / Ulubionych {#approach-pois--favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

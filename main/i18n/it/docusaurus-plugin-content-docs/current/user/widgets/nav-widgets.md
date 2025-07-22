@@ -120,7 +120,7 @@ Il rilevamento è la direzione verso un obiettivo al di fuori del veicolo, come 
 
 ![Trip recording widget](@site/static/img/widgets/bearing.png)
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Il widget mostra la distanza dal primo punto intermedio lungo il percorso calcol
 
 ### Tempo all'intermedio {#time-to-intermediate}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -257,7 +257,7 @@ Il widget mostra l'*Ora di arrivo* o il *Tempo rimanente* al primo punto interme
 
 ### Tempo alla destinazione {#time-to-destination}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -447,7 +447,7 @@ Il widget Nome della via mostra **il nome della via corrente** con una freccia d
 
 ## Avvicinamento a POI / Preferiti {#approach-pois--favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

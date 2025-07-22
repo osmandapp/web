@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 El menú **Configurar mapa** es un elemento importante en el *Menú principal* de OsmAnd, donde puedes personalizar la visualización del mapa para adaptarla a tus necesidades. Puedes resaltar puntos favoritos, marcadores de navegación o puntos de interés especiales en el mapa, mostrar rutas específicas o archivos GPX de terceros, superponer información del terreno, imágenes satelitales o cualquier otra imagen ráster disponible, mostrar información de transporte público y cambiar el estilo del mapa.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

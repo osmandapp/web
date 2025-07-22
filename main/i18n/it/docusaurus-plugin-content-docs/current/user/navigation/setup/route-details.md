@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd ti consente di trovare il percorso migliore ed esplorarne i dettagli. L'app fornisce informazioni dettagliate sul percorso, come distanza, [tempo di percorrenza](#distance--time--co2), [tipo di superficie](#road-attributes), [differenze di altitudine](#elevation-info), [dati sull'impronta di CO2](#distance--time--co2) e [informazioni sulle svolte](#turn-by-turn-information). Puoi anche [analizzare](#analyze-on-map) il percorso sulla mappa, trovare informazioni sui segmenti del tracciato, [stampare](#print) il piano del percorso, [salvare](#share--export-actions) il percorso e condividerlo con altri. Con questa funzionalità, conoscerai sempre i dettagli del percorso e potrai pianificare il tuo viaggio in modo più efficiente.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ A seconda delle [impostazioni del profilo](../../personal/profiles.md) seleziona
 
 ## Distanza / Tempo / CO2 {#distance--time--co2}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -79,7 +79,7 @@ A seconda delle [impostazioni del profilo](../../personal/profiles.md) seleziona
 
 ## Informazioni sull'altitudine {#elevation-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ I dati sull'altitudine sulla mappa (tra 70 gradi di latitudine nord e 70 gradi d
 
 ### Grafico altitudine {#elevation-graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ I [grafici](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visua
 
 ## Analizza sulla mappa {#analyze-on-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -183,7 +183,7 @@ Se i dati sono presenti, puoi selezionare uno dei seguenti tipi:
 
 ## Attributi stradali {#road-attributes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -230,7 +230,7 @@ Gli attributi stradali sono accessibili nei [Dettagli percorso](#how-to-access) 
 
 ## Informazioni svolta per svolta {#turn-by-turn-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Tocca una sezione specifica del percorso nell'elenco per visualizzare informazio
 
 ### Istruzioni {#instructions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -313,7 +313,7 @@ La possibilità di **stampare** o **salvare** le informazioni svolta per svolta 
 
 ## Condividi / Esporta (Azioni) {#share--export-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

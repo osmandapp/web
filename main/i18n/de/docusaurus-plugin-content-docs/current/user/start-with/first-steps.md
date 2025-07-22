@@ -21,7 +21,7 @@ Willkommen bei OsmAnd (OpenStreetMap Automated Navigation Directions)!
 
 Erfahren Sie, wie Sie Karten herunterladen, die Anwendung konfigurieren, die Karte verwenden und eine Route erstellen, die Navigation starten und interessante Orte suchen. Machen Sie sich mit den wichtigsten Punkten der OsmAnd-Datenschutzrichtlinie und den erforderlichen Berechtigungen vertraut.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -72,7 +72,7 @@ Wir wollen eine voll funktionsfähige, kartenorientierte Anwendung schaffen, die
 
 ### Berechtigung zum Zugriff auf den Standort {#permission-to-access-the-location}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Wir empfehlen Ihnen, OsmAnd die Berechtigung zu erteilen, Informationen über de
 
 ### Karten herunterladen {#how-to-download-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ OsmAnd ermöglicht es Ihnen, Karten für alle verfügbaren Regionen herunterzula
 
 Die Option *Anzeigesprache* wird verwendet, um die Sprache der gesamten App zu ändern, einschließlich Pop-up-Aufforderungen, interner Texte, Nachrichten und mehr. Bis Android 12 ermöglicht OsmAnd die Anpassung der Anzeigesprache direkt in der App. Ab Android 13 und auf iOS-Geräten kann die Anzeigesprache nur in den Systemeinstellungen geändert werden (siehe wie Sie die Spracheinstellungen pro App in [Android](https://developer.android.com/guide/topics/resources/app-languages) und [iOS](https://developer.apple.com/news/?id=u2cfuj88) ändern).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -161,7 +161,7 @@ Auf einigen Android-Geräten (Xiaomi mit Muiu 14) gibt es keine Option, einzelne
 
 Sie können die Anwendungseinstellungen als [Globale Einstellungen](../personal/global-settings.md) oder als [Profilkonfiguration](../personal/profiles.md) über das [Hauptmenü](../start-with/main-menu.md) verwalten. Die Anwendung wird mit einer vordefinierten Liste von Profilen geliefert, die später geändert werden können. Jedes Profil kann als eine angepasste Kartenanwendung für spezifische Zwecke betrachtet werden. Standardmäßig dienen Profile nur als verschiedene Navigationsmodi.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -187,7 +187,7 @@ Sie können die Anwendungseinstellungen als [Globale Einstellungen](../personal/
 
 Sie können Plugins über das [Hauptmenü](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-plugin) aktivieren/deaktivieren.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ Zum Aktivieren/Deaktivieren von Plugins gehen Sie zu:
 
 Die Karte ist ein Kernelement von OsmAnd, und es ist wichtig zu wissen, [wie man sie benutzt](../map/interact-with-map.md) (Gesten, Schaltflächen, etc.). Sie können die [Karte konfigurieren](../map/configure-map-menu.md) nach Ihren Bedürfnissen: [Kartenstil ändern](../map/configure-map-menu.md#map-style-parameters), verschiedene [Kartenebenen](../map/configure-map-menu.md#map-layers) konfigurieren wie Favoriten, POI, öffentliche Verkehrsmittel, Tracks, Höhenlinien, Geländeschattierung und andere.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -239,7 +239,7 @@ Die Karte ist ein Kernelement von OsmAnd, und es ist wichtig zu wissen, [wie man
 
 [Bildschirm konfigurieren](../widgets/configure-screen.md) ermöglicht es Ihnen, [Informations-](../widgets/info-widgets.md) (Höhe, Geschwindigkeit, aktuelle Zeit, etc.) und [Navigations-Widgets](../widgets/nav-widgets.md) (Ziel, Peilung, Ankunftszeit, etc.), [Schnellaktionen](../widgets/quick-action.md) und andere Elemente zu aktivieren, die über der Karte angezeigt werden.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -262,7 +262,7 @@ Die Karte ist ein Kernelement von OsmAnd, und es ist wichtig zu wissen, [wie man
 
 OsmAnd ermöglicht es Ihnen, verschiedene Markierungen auf der Karte für Ihre persönlichen Bedürfnisse zu setzen. Zum Beispiel [Favoritenpunkte](../personal/favorites.md) - persönliche Punkte mit Name & Symbol & Kategorie, [Marker](../personal/markers.md) - schnell hinzugefügte Punkte als Ziel, [Audio/Video-Notizen](../plugins/audio-video-notes.md) - Mediennotizen, die an einem bestimmten Punkt aufgezeichnet wurden, [Tracks](../personal/tracks/manage-tracks.md) - aufgezeichnete und importierte Tracks & Touren.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -285,7 +285,7 @@ OsmAnd ermöglicht es Ihnen, verschiedene Markierungen auf der Karte für Ihre p
 
 [Points of Interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) sind Annehmlichkeiten, die gesucht oder auf der Karte hervorgehoben werden können. Sie repräsentieren interessante oder nützliche Orte und werden als Teil von [Vektorkarten](../map/vector-maps.md) verteilt. Sie können sie verwenden, um [auf der Karte anzuzeigen](../map/point-layers-on-map.md#points-of-interest-pois), [zu navigieren](../navigation/index.md) und [interessante Orte auf der Karte zu suchen](../search/search-poi.md).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -308,7 +308,7 @@ OsmAnd ermöglicht es Ihnen, verschiedene Markierungen auf der Karte für Ihre p
 
 [Route planen](../plan-route/create-route.md) ist ein leistungsstarkes Werkzeug, mit dem Sie eine Reise erstellen, einen vorhandenen Track bearbeiten und die Entfernung vor Ort messen können. Sie können schnell Zwischenpunkte setzen und diese über verschiedene Navigationslinien (Fahrrad, Fußgänger, gerade Linie usw.) verbinden. Die Ergebnisse können in eine GPX-Datei gespeichert werden, so dass sie später [geteilt](../personal/tracks/index.md) oder [von der Navigation verwendet](../navigation/setup/gpx-navigation.md) werden können.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ OsmAnd ermöglicht es Ihnen, verschiedene Markierungen auf der Karte für Ihre p
 
 OsmAnd bietet viele Suchfunktionen, einschließlich der Adresssuche. Standardmäßig werden [OpenStreetMap-Daten](https://nominatim.openstreetmap.org/ui/search.html) verwendet und sollten in der Lage sein, alle Adressen über die Schnellsuchleiste zu finden. Sie können auch nach Stadt, Straße, Postleitzahl und Koordinaten [suchen](../search/search-address.md).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -358,7 +358,7 @@ Sie müssen die Karte herunterladen, bevor Sie dort nach einer Adresse suchen. W
 
 [Navigation](../navigation/index.md) bietet Ihnen eine Schritt-für-Schritt-Anleitung zu Ihrem Ziel, indem sie die Route anzeigt, Abbiegeanweisungen, zusätzliche Straßeninformationen zu Oberfläche, Glätte usw. und optional eine Sprachführung anbietet.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -381,7 +381,7 @@ Sie müssen die Karte herunterladen, bevor Sie dort nach einer Adresse suchen. W
 
 [Reiseaufzeichnung](../plugins/trip-recording.md) ist ein spezielles Werkzeug, das als OsmAnd-Plugin verpackt ist und es Ihnen ermöglicht, alle Bewegungen auf dem Track mithilfe des GPS des Geräts aufzuzeichnen.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -404,7 +404,7 @@ Sie müssen die Karte herunterladen, bevor Sie dort nach einer Adresse suchen. W
 
 OsmAnd basiert auf [OpenStreetMap](https://www.openstreetmap.org/)-Daten. Die Karten werden von freiwilligen Mitwirkenden erstellt, sodass sie je nach Umfang der Arbeit an einem bestimmten Teil der Karte mehr oder weniger Details aufweisen können. Jeder kann sich als Mitwirkender registrieren und OSM-Karten hinzufügen oder bearbeiten. OsmAnd bietet ein Bearbeitungs-Plugin, das hilft, OpenStreetMap zu verbessern.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -425,7 +425,7 @@ OsmAnd basiert auf [OpenStreetMap](https://www.openstreetmap.org/)-Daten. Die Ka
 
 ### App schließen {#how-to-close-the-app}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -474,7 +474,7 @@ Tippen Sie auf ein Aktionssymbol, um die Anwendung sofort mit der ausgewählten 
 
 ## Offline-Hilfe {#offline-help}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -496,7 +496,7 @@ Im *Hilfe-Menü* finden Sie auch nützliche Links zu den sozialen Netzwerken von
 
 ### Menü {#menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -520,7 +520,7 @@ Im *Hilfe-Menü* finden Sie auch nützliche Links zu den sozialen Netzwerken von
 
 ### Am häufigsten angesehen {#most-viewed}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -541,7 +541,7 @@ Die am häufigsten angesehenen Artikel unter unseren Benutzern beziehen sich auf
 
 ### Benutzerhandbuch {#user-guide}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -562,7 +562,7 @@ Der Abschnitt **Benutzerhandbuch** im Hilfe-Menü ist ein vollständiges Handbuc
 
 ### Fehlerbehebung {#troubleshooting}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -590,7 +590,7 @@ Lösungen und Tipps zur Behebung häufiger Probleme. Wenn Sie eine spezifische F
 
 ### Kontaktieren Sie uns {#contact-us}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -610,7 +610,7 @@ Ermöglicht es Ihnen, Fragen zu stellen oder Vorschläge zu machen.
 
 ### Probleme melden {#report-issues}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -632,7 +632,7 @@ Ermöglicht es Ihnen, Fragen zu stellen oder Vorschläge zu machen.
 
 ### Über OsmAnd {#about-osmand}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

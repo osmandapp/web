@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Boat routing can be a valuable tool for anyone who enjoys boating or sailing by channels, rivers or fairways. Due to lack of most Fairways in OpenStreeetMap data,  the boat routing is *not recommended* for **open water navigation**, it is suggested to use **[Direct to point](#direct-to-point-routing-for-boat)** instead. With Depth contour lines enabled, it can help you stay safe on the water by avoiding hazards such as shallow waters, rocks, or other obstacles.  
 The OsmAnd Boat routing engine also takes into account the characteristics of the waterways and the boat themselves.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -45,7 +45,7 @@ Boat routing can be configured according to your needs in the [Route parameters 
 Typically, *Boat routing* is used with boat profile (the last one enabled together with the [Nautical plugin](../../plugins/nautical-charts.md)).  However, it is possible to use boat routing with other profiles as well, and different [routing types](#other-routing-types-for-boat) can also be employed in the boat profile.  
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

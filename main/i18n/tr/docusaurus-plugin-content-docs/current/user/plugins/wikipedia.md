@@ -58,7 +58,7 @@ Wikipedia verilerini bölgeye göre indirmek için şu şekilde açabilirsiniz:
 2. **iOS**. Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 3. Gerekli bölgeyi seçin. Bölge açıldığında, Wikipedia verileri diğer paketler arasında olacaktır.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -96,7 +96,7 @@ Wikipedia İÇN'lerini göstermek/gizlemek için aşağıdakileri yapın:
 2. Bir Profil seçin ve menüdeki ayarların *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* bölümüne bakın.
 3. **Android için** *<Translate android="true" ids="poi_osmwiki"/>* / **iOS için** *<Translate ios="true" ids="download_wikipedia_maps"/>* seçeneğini açın.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -123,7 +123,7 @@ Arama düğmesine dokunduğunuzda, tüm metni ve/veya belirli bir kategoriyi [ar
 - **iOS** sürümünde, [Arama'yı](../search/index.md) açmak için Arama simgesi ekranın sol üst köşesindedir.
 
 <!--
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Arama düğmesine dokunduğunuzda, tüm metni ve/veya belirli bir kategoriyi [ar
 
 - Wikipedia [kategorisine](../search/search-poi.md#poi-search) göre arama yapmak için şunları seçin: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -174,7 +174,7 @@ Wikipedia makalesini açmak için:
 
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -204,7 +204,7 @@ OsmAnd uygulamasının **Android** ve **iOS** sürümlerinde, *Haritayı Yapıla
 3. *<Translate android="true" ids="shared_string_all_languages"/>* seçeneğini devre dışı bırakın.
 4. Açılan listeden belirli dili(-leri) seçin.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -232,7 +232,7 @@ OsmAnd uygulamasının **Android** ve **iOS** sürümlerinde, *Haritayı Yapıla
 
 *Wikipedia makalesi* farklı dillerde mevcutsa, okurken dili değiştirebilirsiniz. Ekranın sağ üst köşesindeki ilgili simgeye dokunduktan sonra, aralarından seçim yapabileceğiniz seçenekler sunulacaktır.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ OsmAnd uygulamasının **Android** ve **iOS** sürümlerinde, *Haritayı Yapıla
 - **Android**. *[Wikipedia makalesini](#display-wikipedia-on-the-map) açın → &#8942; → Seçenekler*
 - **iOS**. *[Wikipedia makalesini](#display-wikipedia-on-the-map) açın → Görsel simgesi*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

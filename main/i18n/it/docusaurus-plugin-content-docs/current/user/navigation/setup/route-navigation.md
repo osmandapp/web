@@ -27,7 +27,7 @@ La funzione **Preparazione del percorso** in OsmAnd fornisce una guida passo-pas
 
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -92,7 +92,7 @@ Ci sono 3 modi per raggiungere il menu di navigazione:
 - *Direzione da/a* in un [*menu contestuale della mappa*](../../map/map-context-menu.md#directions-to--from).  
 - Sezione Navigazione nel [*Menu principale*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ Per quanto riguarda il punto di partenza, puoi scegliere la tua posizione attual
 
 ### Imposta punto di destinazione {#set-target-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ La cosa più importante per iniziare la navigazione è determinare la tua destin
 
 ### Destinazioni intermedie {#intermediate-destinations}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -181,7 +181,7 @@ La cosa più importante per iniziare la navigazione è determinare la tua destin
 
 Se scegli **Ordina** (*Android*) o **Opzioni** (*iOS*) nell'elenco delle destinazioni, raggiungerai opzioni speciali per regolare l'ordine di navigazione verso i punti intermedi.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ In questo menu puoi trovare opzioni aggiuntive per gestire i punti di destinazio
 
 ### Usa punti Casa o Lavoro {#use-home-or-work-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -232,7 +232,7 @@ Le schede **Casa** e **Lavoro** (o [Punti speciali](../../personal/favorites.md#
 
 ### Cronologia dei percorsi precedenti {#history-of-previous-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -260,7 +260,7 @@ Se la registrazione della [Cronologia di navigazione](../../personal/global-sett
 
 ## Avvia / Interrompi navigazione {#start--stop-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -304,7 +304,7 @@ Per riprendere la navigazione:
 - Utilizza il messaggio di OsmAnd nella barra delle notifiche.
 - Utilizza il *menu Azioni rapide* o la finestra di dialogo che appare quando tocchi il *[pulsante Navigazione](../../widgets/map-buttons.md#directions)* (vedi screenshot).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -350,7 +350,7 @@ Per accedere alle impostazioni di navigazione, segui uno dei passaggi seguenti:
 Non ci sono impostazioni di navigazione nel profilo *Sfoglia mappa*.  
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -381,7 +381,7 @@ Lo strumento **Navigazione simulata** ti consente di visualizzare in anteprima u
 
 #### Avvia / Interrompi simulazione {#start--stop-simulation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -407,7 +407,7 @@ Quando viene costruito un percorso di navigazione, puoi iniziare a simulare la n
 
 #### Modalità velocità {#speed-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -440,7 +440,7 @@ Vai a: *<Translate android="true" ids="shared_string_navigation,shared_string_se
 
 Per costruire un percorso, tutte le **mappe necessarie** devono essere scaricate e avere la stessa data di rilascio. Si prega di notare che in alcune situazioni il messaggio di mappe mancanti potrebbe essere nascosto nel menu di preparazione del percorso. Se trascini il menu di navigazione verso l'alto, vedrai i possibili motivi per cui il tuo percorso non è stato calcolato.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -459,7 +459,7 @@ Per costruire un percorso, tutte le **mappe necessarie** devono essere scaricate
 
 Nella finestra di dialogo delle mappe richieste vedrai suggerimenti di mappe da scaricare o aggiornare. L'elenco delle mappe utilizzate potrebbe non essere preciso poiché calcola un percorso molto semplice; per ottenere l'elenco preciso delle mappe puoi fare clic su **Calcola online**. Se selezioni **Usa mappe scaricate**, il calcolo del percorso cercherà di utilizzare le mappe già scaricate e salterà il messaggio di avviso.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

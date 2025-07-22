@@ -35,7 +35,7 @@ El complemento Topografía proporciona acceso a los siguientes tipos de mapas:
 - [Relieve 3D](#3d-relief). Es un [mapa vectorial](../map/vector-maps.md) que proporciona una representación tridimensional del terreno, disponible solo con la [suscripción OsmAnd Pro](../purchases/index.md).
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Para un trabajo estable y para ahorrar recursos, puedes descargar un mapa no de 
 
 ### Mapas de relieve 3D {#3d-relief-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Si el mapa que se muestra en la pantalla no está descargado, entonces en *Menú
 
 ### Curvas de nivel (metros o pies) {#contour-lines-meters-or-feet}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Para las [**Curvas de nivel**](#contour-lines), debes determinar en qué [unidad
 
 ## Curvas de nivel {#contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Al utilizar el [motor de renderizado de mapas](../personal/global-settings.md#ma
 
 ## Terreno {#terrain}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Los mapas ráster de **Sombreado**, **Pendiente** y **Altitud** se crean a parti
 *Modificar esquema de color* es una función de pago de **OsmAnd Pro** para [iOS](../purchases/ios.md#pro-features) y [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -328,7 +328,7 @@ La configuración principal para *Mostrar u ocultar tipos de mapa* se encuentra 
 El Relieve 3D es una función de pago de [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -360,7 +360,7 @@ La función de Relieve 3D produce un relieve elevado y proporciona una represent
 
 - Descarga el [mapa de Terreno (3D)](#3d-relief-maps) de las regiones, si es necesario.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -383,7 +383,7 @@ La función de Relieve 3D produce un relieve elevado y proporciona una represent
 
 ### Exageración vertical {#vertical-exaggeration}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Cuando el **Sombreado** está **activado**, una imagen con sombras de relieve ap
 
 ## Combinar tipos de capas {#combine-layer-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

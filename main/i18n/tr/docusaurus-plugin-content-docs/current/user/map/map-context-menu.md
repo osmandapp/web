@@ -23,7 +23,7 @@ Harita bağlam menüsü, harita üzerinde seçilen nesne hakkında bilgi sağlar
 
 ### Bir Nesne Seçin (Tek Dokunuş) {#select-an-object-single-tap}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -52,7 +52,7 @@ Seçilen harita nesneleri OpenStreetMap [**düğümlerine**](https://wiki.openst
 
 ### Herhangi Bir Nokta Seçin (Uzun Dokunuş) {#select-any-point-long-tap}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -75,7 +75,7 @@ Haritada herhangi bir yere **uzun dokunduğunuzda**, seçilen konum hakkında bi
 
 ### Rota Seç {#select-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -104,7 +104,7 @@ Harita üzerinde bir [GPX izine](../map/tracks/index.md) dokunmak, ek izle ilgil
 
 ## Detaylar {#details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -150,7 +150,7 @@ Ek olarak, panel [OpenStreetMap Ayrıntılarını](https://wiki.openstreetmap.or
 
 ### Alternatif Adlar {#alternative-names}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -181,7 +181,7 @@ Alternatif adların görüntülenme özellikleri:
 
 ### Poligon Bilgileri {#polygon-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -242,7 +242,7 @@ Bu bölümler, yakındaki [Wikipedia makalelerini](../plugins/wikipedia.md) veya
 
 ### Toplu Taşıma Güzergahları {#public-transport-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -297,7 +297,7 @@ Daha iyi görünürlük için [Kış ve Kayak](../map/vector-maps.md#winter-and-
 
 ### Makale Açıklaması {#article-description}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -326,7 +326,7 @@ OpenStreetMap bağlantısı, hakkında tam bilgi bulabileceğiniz OpenStreetMap 
 
 ### Çevrimiçi Fotoğraflar {#online-photos}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -359,7 +359,7 @@ Daha fazlası için bkz: [Çevrimiçi Fotoğraflar](https://osmand.net/docs/user
 
 ### Sokak Seviyesi Görüntüleme {#street-level-imagery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -398,7 +398,7 @@ Mapillary görüntüleri, çekildikleri yol veya patika ile hizalanmış yönlü
 
 ## Eylemler {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -419,7 +419,7 @@ Bu, bir nokta veya nesne üzerinde gerçekleştirilebilecek belirli manipülasyo
 
 ### Favori Ekle / Düzenle {#add--edit-favorite}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -446,7 +446,7 @@ Bağlam menüsünde, seçilen noktayı / nesneyi [favoriler listesine](../person
 
 ### İşaretleyici Ekle / Düzenle {#add--edit-marker}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -475,7 +475,7 @@ Eylemler:
 
 ### Paylaş {#share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -514,7 +514,7 @@ Konumu paylaşmak için mevcut seçenekler:
 
 ### Yol Tarifi / Nereden {#directions-to--from}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -545,7 +545,7 @@ Harita bağlam menüsü (<Translate android="true" ids="context_menu_item_direct
 
 ### Yakında Ara {#search-nearby}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -568,7 +568,7 @@ Bu bağlam menüsü eylemiyle, harita üzerinde belirli bir konumun etrafında a
 
 ### Yoldan Kaçın {#avoid-road}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -594,7 +594,7 @@ Yollardan kaçınma işlevi geneldir ve tüm *[yönlendirme türlerini](../navig
 
 ### Nesne Konumunu Değiştir {#change-object-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -628,7 +628,7 @@ Seçilen bir noktadan nesne bağlam menüsü aracılığıyla rota planlamaya ba
 
 ### Çevrimiçi Haritaları Güncelle / İndir {#update--download-online-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -654,7 +654,7 @@ Lütfen [tam talimatı](../map/raster-maps.md#download--update-tiles) okuyun.
 
 ### Vektör Haritaları Güncelle / İndir {#update--download-vector-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -687,7 +687,7 @@ Seçilen konumda çevrimdışı harita bulunmuyorsa, örneğin harita nesne men�
 Park yerlerini eklemek/silmek için OsmAnd [**Park Konumu eklentisini**](../plugins/parking.md) etkinleştirin.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -716,7 +716,7 @@ Harita üzerindeki herhangi bir seçili konum [park yeri](../plugins/parking.md)
 İzleme noktalarını eklemek/düzenlemek için OsmAnd [**Seyahat Kaydı eklentisini**](../plugins/trip-recording.md) etkinleştirin.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -752,7 +752,7 @@ Harita bağlam menüsünü kullanarak kaydedilmiş bir izleme veya mevcut izleme
 İÇN'leri oluşturmak/değiştirmek için OsmAnd [**OSM Düzenleme eklentisini**](../plugins/osm-editing.md) etkinleştirin.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -780,7 +780,7 @@ OSM Düzenleme eklentisi ile [OpenStreetMap](https://www.openstreetmap.org/)'da 
 OSM notunu açmak için OsmAnd [**OSM Düzenleme eklentisini**](../plugins/osm-editing.md) etkinleştirin.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

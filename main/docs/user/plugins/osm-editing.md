@@ -30,7 +30,7 @@ To use the *OpenStreetMap editing* plugin, you have to make the following settin
 
 ## Settings {#settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -69,7 +69,7 @@ If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, 
 
 ### Authorization {#authorization}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Login to contribute changes and GPX files.
 
 ### Free map updates for mappers {#free-map-updates-for-mappers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -114,7 +114,7 @@ The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you
 
 ### OSM Editing Layer {#osm-editing-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -148,7 +148,7 @@ The OpenStreetMap editing plugin allows you to create new objects on the map cal
 
 ### Add tags {#add-tags}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -188,7 +188,7 @@ Remember that when adding unsupported POI types, it is important to make sure th
 
 ## Create / Modify OSM Note {#create--modify-osm-note}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -241,7 +241,7 @@ Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) 
 ### Upload GPS track {#upload-gps-track}
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

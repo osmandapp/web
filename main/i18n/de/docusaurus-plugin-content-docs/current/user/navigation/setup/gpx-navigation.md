@@ -21,7 +21,7 @@ Die Option *Navigation nach Track* (GPX) ermöglicht es Ihnen, einer vordefinier
 
 Die Option *Navigation nach Track* kann auch im Alltag verwendet werden. Sie können einen zuvor [aufgezeichneten Track](../../plugins/trip-recording.md) verwenden oder einen [Track erstellen](../../personal/tracks/manage-tracks.md#create-a-track) und ihn mit Ihrer Familie oder Freunden teilen, anstatt ihnen die Route zu erklären. Sie können auch die [Routen auf der OsmAnd-Karte](../../../../blog/routes/) zur Navigation verwenden. Wie Sie diese auf der Karte hervorheben und was ihre Farben bedeuten, wird im Abschnitt [Routen](../../map/vector-maps.md#routes) des Artikels *Vektorkarten* beschrieben.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ Bevor Sie die Option *Navigation nach Track* verwenden, müssen Sie den [Track a
 
 ### GPX-Navigation starten {#start-gpx-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ Die Navigation auf einem Track kann über die Schnellaktion im [Track-Kontextmen
 
 ### Segmente auswählen {#choose-segments}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -97,7 +97,7 @@ Für die Navigation können Sie, wenn der ausgewählte Track aus mehreren Segmen
 
 ### Track-Optionen folgen {#follow-track-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ zum *<Translate android="true" ids="start_of_the_track"/>* oder zum *<Translate 
 
 ### An Straßen anpassen {#attach-to-the-roads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

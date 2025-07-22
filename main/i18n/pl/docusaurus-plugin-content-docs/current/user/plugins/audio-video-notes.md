@@ -23,7 +23,7 @@ Wtyczka Notatki audio/wideo rozszerza funkcjonalność OsmAnd, umożliwiając tw
 
 Wszystkie utworzone notatki audio i wideo tworzą warstwę Nagrania. Po włączeniu na mapie zmienia ona widok nagranych danych i pojawia się więcej ustawień do zarządzania nagraniami. W warstwie Nagrania notatki audio i wideo są umieszczane jako POI na mapie, tworząc w ten sposób narrację użytkownika widoczną tylko dla właściciela urządzenia.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -43,7 +43,7 @@ Notatki audio/wideo są dostarczane z wtyczką Notatki audio/wideo i wymagają n
 
 ## Ustawienia wtyczki {#plugin-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -96,7 +96,7 @@ Możesz utworzyć notatkę zdjęciową, wideo i audio w jeden z następujących 
 
 #### 1. Tworzenie i powiązanie z bieżącą pozycją {#1-create-and-tie-to-your-current-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -112,7 +112,7 @@ Funkcje udostępniane przez widżet <Translate android="true" ids="map_widget_av
 
 #### 2. Tworzenie i powiązanie z wybraną geolokalizacją {#2-create-and-tie-to-selected-geolocation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -135,7 +135,7 @@ Aby utworzyć notatkę powiązaną z wybranym punktem na mapie, użyj [menu kont
 
 #### Okno dialogowe rejestratora {#recorder-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -159,7 +159,7 @@ Automatycznie wszystkie nagrania zdjęć, audio i wideo są zapisywane w: <Trans
 
 ### Wyświetl w Moich miejscach {#view-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -175,7 +175,7 @@ Automatycznie wszystkie nagrania zdjęć, audio i wideo są zapisywane w: <Trans
 
 ### Pokaż na mapie {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Aby wyświetlić konkretną notatkę na mapie, użyj listy notatek w Moich miejs
 
 ### Odtwórz {#play}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -209,7 +209,7 @@ Sekcja [Szczegóły](../map/map-context-menu#-audiovideo-note-android) zawiera w
 
 ### Zmień nazwę, usuń, udostępnij {#rename-delete-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Aby zarządzać notatką w Moich miejscach, dotknij pionowych trzech kropek nota
 
 ## Widżet nagrywania {#recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Dodanie widżetu do ekranu jest konieczne, jeśli wolisz uniknąć wyszukiwania 
 
 ### Zarządzanie w Moich miejscach {#manage-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -280,7 +280,7 @@ Opcje na dolnym pasku mogą być używane do zarządzania listą notatek w menu 
 
 ### Udostępnianie z punktami trasy GPX {#share-with-gpx-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -299,7 +299,7 @@ Obsługiwane formaty plików: audio - **3gp**, wideo - **mp4**, zdjęcie - **jpg
 
 ### Pokaż wszystko na mapie {#show-all-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -319,7 +319,7 @@ Użyj warstwy mapy [Nagrywanie](../map/point-layers-on-map#-audio--video-points-
 
 ## Punkty trasy utworzone z notatek {#waypoints-created-from-notes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -338,7 +338,7 @@ Jeśli ślad zostanie wyeksportowany, punkty trasy nie mogą być przeglądane a
 
 ### Tworzenie punktów trasy {#create-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

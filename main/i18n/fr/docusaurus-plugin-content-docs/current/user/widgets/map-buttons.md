@@ -102,7 +102,7 @@ Le bouton boussole offre plusieurs actions pour contrôler l'orientation de la c
 
 ### Options d'affichage {#display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -131,7 +131,7 @@ L'icône de la boussole sur le bouton pointe toujours vers le Nord. Vous pouvez 
 
 ## Mode 3D {#3d-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

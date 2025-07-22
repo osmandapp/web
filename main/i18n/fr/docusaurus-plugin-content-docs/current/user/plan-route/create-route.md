@@ -21,7 +21,7 @@ L'outil **Planifier un itinéraire** (*Menu → Planifier un itinéraire*) est u
 
 Un itinéraire se compose d'un ensemble de segments entre des points spécifiés. Les segments peuvent être des lignes droites ou des itinéraires adaptés au profil sélectionné. L'itinéraire peut être enregistré au format GPX pour une importation, une modification et une [navigation](../navigation/setup/gpx-navigation.md) ultérieures.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -40,7 +40,7 @@ Un itinéraire se compose d'un ensemble de segments entre des points spécifiés
 
 ## Principaux cas d'utilisation {#main-use-cases}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -72,7 +72,7 @@ Vous pouvez **zoomer et dézoomer** pour faciliter le placement des points lors 
 
 ### Modifier une trace GPX existante {#modify-existing-gpx-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Si les [données d'élévation](../map/tracks/track-context-menu.md#calculating-
 
 ### Joindre la trace aux routes {#attach-track-to-roads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -169,7 +169,7 @@ To generate navigation instructions:
 
 ### Ajout de points {#adding-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -199,7 +199,7 @@ Les points ajoutés dans l'éditeur peuvent être connectés en ligne droite ou 
 2. Appuyez sur l'*icône de profil* dans le coin inférieur gauche de l'écran de la carte. Pas sur l'icône du haut, cela ouvrira le menu Configurer la carte.
 3. Dans le *[menu contextuel du point](#point-context-menu) → Modifier le type d'itinéraire avant/après*.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ Un segment de trace est une collection de points connectés sans **lacunes**. Da
 
 ### Menu contextuel du point {#point-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -275,7 +275,7 @@ Chaque point de votre itinéraire possède son menu contextuel. Il affiche le *n
 
 ### Itinéraires multimodaux {#multimodal-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -298,7 +298,7 @@ En utilisant l'outil *Planifier un itinéraire* et l'option [Itinéraire entre l
 
 ### Enregistrer l'itinéraire {#save-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -330,7 +330,7 @@ Lors de l'enregistrement d'une nouvelle trace, vous pouvez sélectionner l'optio
 
 ### Options {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -360,7 +360,7 @@ Lors de l'enregistrement d'une nouvelle trace, vous pouvez sélectionner l'optio
 
 ### Graphique {#graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

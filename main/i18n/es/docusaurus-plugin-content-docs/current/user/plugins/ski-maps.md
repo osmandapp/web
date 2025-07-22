@@ -22,7 +22,7 @@ El mapa de esquí de OsmAnd es parte de los mapas vectoriales y no requiere desc
 
 A continuación se muestran dos perfiles: el de la izquierda es para esquí y el de la derecha es para conducir. El perfil de esquí resalta senderos, vías aéreas, colores de invierno y todos los objetos del mapa útiles para navegar por la zona de esquí.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -50,7 +50,7 @@ La siguiente configuración hace que el mapa de esquí de OsmAnd aparezca en la 
 
 ### Establecer estilo de mapa de invierno y esquí {#set-winter-and-ski-map-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -83,7 +83,7 @@ El perfil de esquí está diseñado para usarse en combinación con los estilos 
 
 ### Combinar mapas {#combine-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ El complemento Visor de mapas de esquí es una aplicación separada, y deshabili
 
 ## Perfil de esquí {#skiing-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -191,7 +191,7 @@ Los tipos de pistas como *Senderos para caminatas* o *Senderos para trineos* se 
 
 ### Pistas de mantenimiento {#grooming-trails}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ Máquinas especiales preparan las pistas para la actividad adecuada, como patina
 
 ### Rutas de pistas de esquí {#ski-slope-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -243,7 +243,7 @@ Con el perfil de esquí, la navegación de esquí y el [estilo de mapa de invier
 
 ### Noche e iluminación {#night-and-lighting}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

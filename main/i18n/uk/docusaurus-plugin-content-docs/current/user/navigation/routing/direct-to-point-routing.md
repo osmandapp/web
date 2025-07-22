@@ -33,7 +33,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 При використанні типів навігації Навігація за прямою та Човен вам знадобляться [Дані контурів глибин](../../plugins/nautical-charts.md#nautical-map-style), які можна увімкнути та налаштувати в *Налаштувати карту*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

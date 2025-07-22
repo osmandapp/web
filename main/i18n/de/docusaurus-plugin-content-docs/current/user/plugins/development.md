@@ -43,7 +43,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 - *Hauptmenü → Plugins → OsmAnd Entwicklung → Einstellungen*.
 - *Hauptmenü → [Globale Einstellungen](../personal/global-settings.md) → Profil → OsmAnd Entwicklungs-Plugin-Einstellungen*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 OsmAnd Entwickler-Widgets können nur zum Bildschirm hinzugefügt werden, wenn das OsmAnd Entwicklungs-Plugin aktiviert ist.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -167,7 +167,7 @@ Das [FPS-Widget](../widgets/info-widgets.md#map-rendering-fps) zeigt, wie schnel
 OsmAnd Entwickler-Widgets können nur zum Bildschirm hinzugefügt werden, wenn das OsmAnd Entwicklungs-Plugin aktiviert ist.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -192,7 +192,7 @@ Sie können [Kameraposition-Widgets](../widgets/info-widgets.md#camera-widgets) 
 
 ### Kameraneigung {#camera-tilt}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -218,7 +218,7 @@ Gleichzeitig ändert sich aufgrund der imaginären Bewegung des Betrachters die 
 
 ### Kamerahöhe {#camera-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -239,7 +239,7 @@ Das Kamerahöhe-Widget zeigt die Kamerahöhe über dem Bodenniveau an. Die Kamer
 
 ### Zoomstufe {#zoom-level}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -269,7 +269,7 @@ Das Widget hat zwei Ansichten, die durch Antippen gewechselt werden:
 
 ### Entfernung zum Ziel {#distance-to-target}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -332,7 +332,7 @@ OsmAnd bietet die Möglichkeit, den Standort und die Bewegung Ihres Geräts anha
 - Wählen Sie die Simulationsgeschwindigkeit der Bewegung.
 - Tippen Sie auf die Start-Taste.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

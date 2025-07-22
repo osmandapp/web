@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Die **Globalen Einstellungen** sind allgemeine [Einstellungen](../personal/profiles.md) für alle Profile in der OsmAnd-Anwendung. Dies sind die Grundeinstellungen für das OsmAnd-System, und alle vorgenommenen Änderungen wirken sich auf die gesamte Anwendung aus.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ Dieser Abschnitt enthält die grundlegenden OsmAnd-Einstellungen, wie die Auswah
 
 ### Standardprofil {#default-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ Das [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.m
 
 ### Ordner für Datenspeicher {#data-storage-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -173,7 +173,7 @@ Weitere Informationen finden Sie in der [*OsmAnd Datenschutzerklärung*](../../l
 
 ### Analyse {#analytics}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -217,7 +217,7 @@ Eine **UUID** (*Unique User Identifier*) wird für jede Installation der OsmAnd-
 
 ### Verlauf {#history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -246,7 +246,7 @@ Die Anwendung speichert den Verlauf zuvor eingegebener Daten (Verlauf) in den fo
 
 **Verlauf teilen und löschen.**
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -283,7 +283,7 @@ In diesem Abschnitt der OsmAnd-Einstellungen können Sie die Benachrichtigungen 
 
 ### Dialoge und Benachrichtigungen {#dialogs-and-notifications}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -351,7 +351,7 @@ OsmAnd kann Sie [vor Radarkameras warnen](../navigation/guidance/navigation-sett
 
 ### Radarkameras deinstallieren {#uninstall-speed-cameras}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

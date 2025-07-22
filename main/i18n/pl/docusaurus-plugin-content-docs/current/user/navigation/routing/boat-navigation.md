@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Wyznaczanie trasy dla łodzi może być cennym narzędziem dla każdego, kto lubi pływać łodzią lub żeglować po kanałach, rzekach lub szlakach wodnych. Ze względu na brak większości szlaków wodnych w danych OpenStreetMap, wyznaczanie trasy dla łodzi *nie jest zalecane* do **nawigacji na otwartych wodach**, zamiast tego sugeruje się użycie **[Bezpośrednio do punktu](#direct-to-point-routing-for-boat)**. Z włączonymi izobatami, może to pomóc w bezpiecznym poruszaniu się po wodzie, unikając zagrożeń, takich jak płytkie wody, skały lub inne przeszkody. Silnik wyznaczania trasy dla łodzi OsmAnd uwzględnia również charakterystykę dróg wodnych i samych łodzi.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -42,7 +42,7 @@ Wyznaczanie trasy dla łodzi można skonfigurować zgodnie z własnymi potrzebam
 
 Zazwyczaj *wyznaczanie trasy dla łodzi* jest używane z profilem łodzi (ostatni włączony wraz z [wtyczką morską](../../plugins/nautical-charts.md)). Możliwe jest jednak użycie wyznaczania trasy dla łodzi również z innymi profilami, a różne [typy wyznaczania trasy](#other-routing-types-for-boat) mogą być również używane w profilu łodzi.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

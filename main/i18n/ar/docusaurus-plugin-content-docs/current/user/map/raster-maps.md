@@ -71,7 +71,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## تحديد خرائط الراستر {#select-raster-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -95,7 +95,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### رئيسي {#main}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### طبقة التراكب {#overlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -149,7 +149,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### طبقة سفلية {#underlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -205,7 +205,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### تكوين خيارات العرض {#configure-display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -257,7 +257,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### إضافة مصدر خريطة راستر جديد عبر الإنترنت {#add-new-online-raster-map-source}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 لكي تقوم الخرائط بتحديث البلاطات تلقائيًا بعد فترة، يمكنك تعيين [وقت انتهاء الصلاحية](#add-new-online-raster-map-source)، ثم سيعيد OsmAnd تحميل البلاطات بمجرد عرضها.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -370,7 +370,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### تغيير معلمات خريطة الراستر {#change-raster-map-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

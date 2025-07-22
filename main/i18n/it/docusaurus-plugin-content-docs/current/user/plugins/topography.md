@@ -35,7 +35,7 @@ Il plugin Topografia fornisce l'accesso ai seguenti tipi di mappe:
 - [Rilievo 3D](#3d-relief). È una [mappa vettoriale](../map/vector-maps.md) che fornisce una rappresentazione tridimensionale del terreno, disponibile solo con l'[abbonamento OsmAnd Pro](../purchases/index.md).
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Per un lavoro stabile e per risparmiare risorse, è possibile scaricare una mapp
 
 ### Mappe Rilievo 3D {#3d-relief-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Se la mappa visualizzata sullo schermo non è scaricata, allora in *Menu → Con
 
 ### Curve di livello (metri o piedi) {#contour-lines-meters-or-feet}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Per le [**Curve di livello**](#contour-lines), è necessario determinare in qual
 
 ## Curve di livello {#contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Quando si utilizza il [motore di rendering della mappa](../personal/global-setti
 
 ## Terreno {#terrain}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Le mappe raster **Ombreggiatura**, **Pendenza** e **Altitudine** sono create in 
 *Modifica schema di colori* è una funzione a pagamento di **OsmAnd Pro** per [iOS](../purchases/ios.md#pro-features) e [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -328,7 +328,7 @@ Le impostazioni principali per *Mostra o Nascondi tipi di mappa* si trovano nell
 Rilievo 3D è una funzione a pagamento [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -360,7 +360,7 @@ La funzione Rilievo 3D produce un rilievo in rilievo e fornisce una rappresentaz
 
 - Scarica la [mappa del terreno (3D)](#3d-relief-maps) delle regioni, se necessario.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -383,7 +383,7 @@ La funzione Rilievo 3D produce un rilievo in rilievo e fornisce una rappresentaz
 
 ### Esagerazione verticale {#vertical-exaggeration}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Quando l'**Ombreggiatura** è **abilitata**, un'immagine con ombre del rilievo a
 
 ## Combinare tipi di livelli {#combine-layer-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -43,7 +43,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *Головне меню → Плагіни → Розробка OsmAnd → Налаштування*.
 - *Головне меню → [Глобальні налаштування](../personal/global-settings.md) → Профіль → Налаштування плагіна розробки OsmAnd*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Віджети розробника OsmAnd можна додати на екран лише тоді, коли увімкнено плагін розробки OsmAnd.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -167,7 +167,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Віджети розробника OsmAnd можна додати на екран лише тоді, коли увімкнено плагін розробки OsmAnd.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -192,7 +192,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Нахил камери {#camera-tilt}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -218,7 +218,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Висота камери {#camera-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -239,7 +239,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Рівень масштабування {#zoom-level}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -269,7 +269,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Відстань до цілі {#distance-to-target}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -332,7 +332,7 @@ OsmAnd надає можливість імітувати місцезнаход
 - Виберіть швидкість імітації руху.
 - Натисніть кнопку "Старт".
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -35,7 +35,7 @@ Per impostazione predefinita, il *profilo Sci* è disattivato. Per utilizzare qu
 
 Le impostazioni del *percorso sci* consentono agli utenti di pianificare i propri percorsi selezionando il livello di difficoltà desiderato e il tipo di terreno che desiderano esplorare. Esistono varie opzioni per un movimento sicuro, confortevole e piacevole sulle piste o durante un freeride.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

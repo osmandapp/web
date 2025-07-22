@@ -53,7 +53,7 @@ Pour commencer à utiliser les données des capteurs externes, suivez ces étape
 
 ### Associer un nouveau capteur {#pair-new-sensor}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -92,7 +92,7 @@ Pour associer un nouveau capteur, suivez ces étapes :
 
 ## Paramètres du capteur {#sensor-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Chaque capteur externe associé répertorié dans OsmAnd possède son propre éc
 
 ## Enregistrement de trajet {#trip-recording}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -173,7 +173,7 @@ OsmAnd utilise l'[enregistrement de trace](../plugins/trip-recording.md#recorded
 
 ### Analyse des données {#data-analyze}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -204,7 +204,7 @@ Cela affichera des graphiques pour vos données enregistrées : *Fréquence card
 
 ## Widgets {#widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -244,7 +244,7 @@ Types de widgets pris en charge :
 
 ### Paramètres du widget {#widget-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

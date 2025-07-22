@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تتيح لك ميزة **المفضلة** في OsmAnd إنشاء إشارات مرجعية (ملاحظات) على الخريطة. تظهر نقاط المفضلة هذه كنجوم صفراء افتراضيًا، ولكن يمكنك تخصيصها بالكامل بألوان وأشكال وأيقونات مختلفة. يتم تجميع المفضلة في طبقة خريطة مخصصة، والتي تصبح مرئية من *مستوى التكبير/التصغير السادس*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -39,7 +39,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نقطة مفضلة {#favorite-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -60,7 +60,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إنشاء {#create}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -94,7 +94,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### تعديل / استبدال / حذف {#edit--replace--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -124,7 +124,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### أيقونات المفضلة {#favorite-icons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -157,7 +157,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## إدارة المفضلة {#manage-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -184,7 +184,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الترتيب / الفرز / البحث {#order--sorting--search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -205,7 +205,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### التعديل / الحذف بالجملة {#bulk-edit--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -243,7 +243,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### إجراءات مجموعة المفضلة {#favorite-group-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -283,7 +283,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### تغيير مظهر المجموعة {#change-group-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -317,7 +317,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### النسخ الاحتياطي السحابي المجاني {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -348,7 +348,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 #### كيفية إنشاء نسخة احتياطية {#how-to-create-a-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -379,7 +379,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### جميع المفضلة {#all-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -403,7 +403,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### مجموعة المفضلة {#favorite-group}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -425,7 +425,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### النسخ الاحتياطي التلقائي للمفضلة {#automatic-favorites-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

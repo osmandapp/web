@@ -27,7 +27,7 @@ Mapa morska to bardzo szczegółowa mapa topograficzna, która pomaga skipperom 
 
 Mapy morskie są ważne dla zawodowych żeglarzy i amatorów, którzy wynajmują łódź do rejsów po kanałach miasta. Mapy dostarczają im różnych informacji, takich jak trasy żeglugowe, światła nawigacyjne, strefy niebezpieczne, strefy, w których dozwolone lub zabronione jest żeglowanie lub cumowanie itp.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ Poniższa konfiguracja sprawia, że mapa morska pojawia się na ekranie:
 
 ### Ustaw styl mapy morskiej {#set-nautical-map-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Aby zmienić bieżący styl mapy na Morski, należy dokonać następujących ust
 
 ### Pobierz mapy morskie {#download-nautical-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -145,7 +145,7 @@ Wyłączenie wtyczki morskiej nie usuwa załadowanych danych morskich, więc naw
 
 ## Profil morski {#nautical-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -175,7 +175,7 @@ Wtyczka morska w OsmAnd rozszerza style map warstw wektorowych o styl mapy morsk
 
 ### Punkty głębokości {#depth-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -196,7 +196,7 @@ Pakiety punktów głębokości są dostępne dla Europy, półkuli północnej i
 
 ### Izobaty {#depth-contours}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Możesz pomóc aplikacji OsmAnd zwiększyć bazę danych izobat, dodając swoje 
 
 ### Szczegóły dna morskiego {#seabed-details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

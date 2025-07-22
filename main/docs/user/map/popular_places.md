@@ -28,7 +28,7 @@ Currently, the curated database includes approximately **50,000 to 150,000 top-r
 *This is the first version of the Popular Places feature. Feedback is welcome on [GitHub](https://github.com/osmandapp/OsmAnd)*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -75,7 +75,7 @@ There are two main ways to access this feature:
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -110,7 +110,7 @@ To use it **offline**, you need a [Maps+ or OsmAnd Pro](../purchases/android.md)
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Tapping a POI on the map opens the [POI context menu](./map-context-menu.md), wh
 
 *<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -194,7 +194,7 @@ In the Map Context menu How to access:
 
 ### Gallery {#gallery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -230,7 +230,7 @@ You can also perform the following actions on each photo:
   Save the image to your device’s storage. The downloaded image can be found in your device’s default Downloads folder and accessed offline.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -258,7 +258,7 @@ On **iOS**, long-pressing a photo opens a context menu with additional actions:
 </Tabs>
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -291,7 +291,7 @@ The **Details** screen provides full metadata for the selected photo, including:
 <!--
 ### Online Photos 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -321,7 +321,7 @@ In the **Online photos** section of the map context menu, you can access photos 
 
 #### Gallery Menu 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -341,7 +341,7 @@ In the **Online photos** section of the map context menu, you can access photos 
 The gallery can display up to 100 items. You can browse through all the photos, and short tapping on any photo will open it to view additional details (*Name*, *Date*, *Author*, *License*) and perform various actions (*Share*, *Details*, *Open in browser*, and *Download* options).
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -364,7 +364,7 @@ Buttons:
 - The **Share** button allows you to share the selected item.  
 - The **Three dots** button opens a menu with options like *Details*, *Open in browser*, and *Download*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

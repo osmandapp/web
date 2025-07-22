@@ -30,7 +30,7 @@ Il *percorso per ciclomotori* può essere configurato in base alle tue esigenze 
 
 Le impostazioni di instradamento del ciclomotore sono molto semplici e consistono in poche opzioni.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

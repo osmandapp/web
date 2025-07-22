@@ -26,7 +26,7 @@ OsmAnd provides several ways to get to the *Search tool → [Address search tab]
 
 ## How to Use {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

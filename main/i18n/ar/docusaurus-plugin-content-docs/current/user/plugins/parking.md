@@ -26,7 +26,7 @@ import Translate from '@site/src/components/Translate.js';
 
 العلامة مؤقتة وسهلة الإزالة بمجرد عدم الحاجة إليها.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -61,7 +61,7 @@ import Translate from '@site/src/components/Translate.js';
 
 لتعيين مكان لوقوف السيارات على الخريطة، قم بالتكبير إلى المستوى المطلوب، ثم اضغط مطولاً على المكان على الخريطة، وفي [قائمة السياق](../map/map-context-menu.md) التي تفتح، قم بإجراء الإعدادات.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -93,7 +93,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### ابق على اطلاع {#stay-informed}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -127,7 +127,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### التنقل إلى نقطة طريق {#navigating-to-a-waypoint}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -160,7 +160,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### إزالة مكان {#remove-a-spot}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -189,7 +189,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## عنصر واجهة مستخدم موقف السيارة {#parking-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

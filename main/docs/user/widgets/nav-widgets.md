@@ -119,7 +119,7 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 
 ![Trip recording widget](@site/static/img/widgets/bearing.png)
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ The widget shows the distance to the first intermediate point along the calculat
 
 ### Time to Intermediate {#time-to-intermediate}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -256,7 +256,7 @@ The widget shows the *Arrival time* or *Time to go* to the first intermediate po
 
 ### Time to Destination {#time-to-destination}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -446,7 +446,7 @@ The Street name widget shows **the current street name** with a straight arrow, 
 
 ## Approach POIs / Favorites {#approach-pois--favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

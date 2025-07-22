@@ -25,7 +25,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 التنقل بالمواصلات العامة في مرحلة الاختبار. في الوقت الحالي، يمكنك بناء وعرض مسارك بدون وظيفة التنقل الكاملة.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -48,7 +48,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 **1.** تحتاج إلى اختيار *ملف تعريف التنقل بالمواصلات العامة*، ونقطتي البداية والوجهة.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -66,7 +66,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 **2.** يقدم OsmAnd خيارات مسار مع أوقات المشي ومسارات النقل العام مع معلومات المسار: الوقت، المسافة، التحويل، والمسارات العامة. تحتاج إلى التمرير عبر شاشة التنقل لتحديد الخيار المطلوب.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -84,7 +84,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 **3.** يمكنك عرض جميع اقتراحات المسارات الممكنة على الخريطة باستخدام زر *إظهار على الخريطة*. اسحب عبر الشاشات لعرض خيار المسار التالي.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -103,7 +103,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 **4.** اضغط على زر "التفاصيل" لفتح وصف المسار المحدد مع جميع المحطات والتحويلات.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

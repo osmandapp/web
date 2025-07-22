@@ -41,7 +41,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 - *Menu główne → Wtyczki → Rozwój OsmAnd → Ustawienia*.
 - *Menu główne → [Ustawienia globalne](../personal/global-settings.md) → Profil → Ustawienia wtyczki rozwojowej OsmAnd*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 Widżety deweloperskie OsmAnd można dodać do ekranu tylko wtedy, gdy wtyczka deweloperska OsmAnd jest włączona.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -157,7 +157,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 Widżety deweloperskie OsmAnd można dodać do ekranu tylko wtedy, gdy wtyczka deweloperska OsmAnd jest włączona.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -181,7 +181,7 @@ Możesz użyć [widżetów pozycji kamery](../widgets/info-widgets.md#camera-wid
 
 ### Pochylenie kamery {#camera-tilt}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -206,7 +206,7 @@ Jednocześnie, z powodu wyimaginowanego ruchu widza, zmienia się odległość o
 
 ### Wysokość kamery {#camera-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -226,7 +226,7 @@ Widżet wysokości kamery pokazuje wysokość kamery nad poziomem powierzchni. W
 
 ### Poziom powiększenia {#zoom-level}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ Widżet ma dwa widoki, które są przełączane przez dotknięcie:
 
 ### Odległość do celu {#distance-to-target}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -316,7 +316,7 @@ OsmAnd umożliwia symulację lokalizacji i ruchu Twojego urządzenia za pomocą 
 - Wybierz prędkość symulacji ruchu.
 - Dotknij przycisku Start.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

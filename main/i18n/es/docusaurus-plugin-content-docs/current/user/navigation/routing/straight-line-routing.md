@@ -36,7 +36,7 @@ El enrutamiento en línea recta está vinculado al *perfil de aeronave*. Por def
 
 El enrutamiento en *línea recta* se puede configurar según sus necesidades en la sección [Parámetros de ruta](../guidance/navigation-settings.md#route-parameters) de la configuración de navegación.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

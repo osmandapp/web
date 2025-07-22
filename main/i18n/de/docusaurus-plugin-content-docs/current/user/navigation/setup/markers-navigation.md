@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Sie können besonders hilfreich für Wanderer, Radfahrer oder alle sein, die ein neues Gebiet erkunden und interessante Orte oder Referenzpunkte auf der Karte markieren möchten. Der Hauptunterschied zu [Favoritenpunkten](../../personal/favorites.md) besteht darin, dass Marker schneller erstellt werden können, da sie keinen Namen benötigen.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -41,7 +41,7 @@ Sie können besonders hilfreich für Wanderer, Radfahrer oder alle sein, die ein
 
 ## Marker in der Navigation verwenden {#use-markers-in-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -81,7 +81,7 @@ Wenn die Optionen **Pfeile auf der Karte** und **Richtungslinie** im Bereich *Da
 
 ## Wegpunktliste {#itinerary-list}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -141,7 +141,7 @@ Nur Tracks mit Wegpunkten können zur *Kartenmarkerliste* hinzugefügt werden. D
 
 ## Marker sortieren {#sort-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -164,7 +164,7 @@ In der Android-Version der OsmAnd-App gibt es weitere Sortieroptionen für *Kart
 
 ### Nach Attributen sortieren {#sort-by-attributes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -198,7 +198,7 @@ Mit der Funktionalität der Routenplanung im Markerlistentool können Sie *Marke
 
 ## Marker passieren {#pass-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

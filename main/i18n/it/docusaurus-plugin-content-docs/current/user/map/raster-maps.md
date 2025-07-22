@@ -70,7 +70,7 @@ Le mappe online in OsmAnd sono composte da dati raster, che consistono in pixel 
 
 ## Seleziona mappe raster {#select-raster-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ Puoi anche regolare la trasparenza della mappa di base per fonderla con i tuoi l
 
 ### Principale {#main}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Puoi scegliere uno stile di mappa dall'elenco o [aggiungere](#add-new-online-ras
 
 ### Livello di sovrapposizione {#overlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -148,7 +148,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 
 ### Livello di sottofondo {#underlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -204,7 +204,7 @@ La differenza di visualizzazione del rilievo sulla mappa quando si applicano que
 
 ### Configura opzioni di visualizzazione {#configure-display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ Ecco i principali metodi per aggiungere una nuova fonte di mappe raster che non 
 
 ### Aggiungi nuova fonte di mappe raster online {#add-new-online-raster-map-source}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -334,7 +334,7 @@ Se desideri accedere alle mappe raster offline, potresti dover precaricare le te
 
 Affinché le mappe aggiornino automaticamente le tessere dopo un po', puoi impostare un [Tempo di scadenza](#add-new-online-raster-map-source), quindi OsmAnd ricaricherà le tessere non appena verranno visualizzate.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -371,7 +371,7 @@ Affinché le mappe aggiornino automaticamente le tessere dopo un po', puoi impos
 
 ### Modifica parametri mappa raster {#change-raster-map-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

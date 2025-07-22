@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 I segnalini sono punti speciali contrassegnati sulla mappa come bandierine che possono essere creati rapidamente con un solo tocco senza specificare nome e altre informazioni, a differenza dei [Punti preferiti](./favorites.md). I segnalini forniscono anche funzionalità aggiuntive con i [widget](../widgets/markers.md), le **frecce** (<Translate android="true" ids="show_arrows_on_the_map"/>) e l'**indicazione della distanza** (<Translate android="true" ids="show_direction"/>).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ I segnalini sono punti speciali contrassegnati sulla mappa come bandierine che p
 
 ### Aggiungi / Modifica segnalini {#add--edit-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ I segnalini possono essere aggiunti ed eliminati come un intero gruppo da un gru
 
 ### Cronologia {#history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -124,7 +124,7 @@ La cronologia è un elenco di tutti i segnalini disattivati (passati). Da questo
 
 ## Aspetto sulla mappa {#appearance-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

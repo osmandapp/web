@@ -27,7 +27,7 @@ OsmAnd bietet mehrere Möglichkeiten, zum *Suchwerkzeug → [Adressen-Such-Tab](
 
 ## Verwendung {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -159,7 +159,7 @@ Możesz dostosować wyświetlanie niektórych ***Przewodników*** i typów ***ś
 
 ## Wyświetlanie tras na mapie {#display-routes-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 ## Działania z trasami {#actions-with-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ W **menu kontekstowym** możesz:
 
 ### Informacje o trasie i wysokość {#route-info-and-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -248,7 +248,7 @@ W menu kontekstowym będą widoczne następujące informacje:
 
 Aby wyświetlić wykres wysokości, nachylenia lub szczegółów wysokości dla wybranej trasy, wystarczy dotknąć dowolnej z następujących wartości w menu kontekstowym: **Dystans**, **Podjazd**, **Zjazd** lub **Wysokość**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Aby wyświetlić wykres wysokości, nachylenia lub szczegółów wysokości dla 
 
 ### Zapisz jako ślad {#save-as-a-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -287,7 +287,7 @@ Aby zapisać trasę jako *plik GPX*, dotknij przycisku **Zapisz (Pobierz)** pod 
 
 ### Rozpocznij nawigację {#start-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -319,7 +319,7 @@ Znajdź trasy za pomocą funkcji [Wyszukiwanie](../search/index.md) według nazw
 
 Aby wyszukać, przejdź do menu *<Translate android="true" ids="search_button"/>* lub *<Translate android="true" ids="search_button,search_categories"/>* i wprowadź swoją aktywność.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -337,7 +337,7 @@ Aby wyszukać, przejdź do menu *<Translate android="true" ids="search_button"/>
 
 Przejdź do *<Translate android="true" ids="search_button,search_categories,poi_routes"/>*, aby znaleźć żądane trasy. Trasy zawierają nazwę, typ aktywności, długość, lokalizację i odległość do najbliższego punktu.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -355,7 +355,7 @@ Przejdź do *<Translate android="true" ids="search_button,search_categories,poi_
 
 Użyj przycisku filtrów (prawy górny róg), aby wyświetlić tylko żądane trasy.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

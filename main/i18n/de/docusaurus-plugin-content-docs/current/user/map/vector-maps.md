@@ -130,7 +130,7 @@ Einige verwandte Schriftartprobleme wurden auf GitHub dokumentiert: [3911](https
 
 ## * Höhenlinien {#-contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Höhenlinien sind mit allen Kartenstilen kompatibel und können über das [Höhe
 
 ## * Nautische Tiefe {#-nautical-depth}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Weitere Details zur Nautik-Kartenansicht finden Sie auf der [Nautik-Plugin-Seite
 
 ## Grenzen anzeigen {#show-borders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -219,7 +219,7 @@ Auf Android werden archivierte Karten in **Orange** angezeigt. In iOS werden Kar
 Gehe zu: *Menü → Karte konfigurieren → Anzeigen → Koordinatengitter*
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ OsmAnd unterstützt mehrere **Basisprojektionen** zur Anzeige geografischer Gitt
 
 ### Kartenmodus {#map-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -323,7 +323,7 @@ Die Karte kann in einem hellen oder dunklen Thema angezeigt werden, basierend au
 
 ### Details {#details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,map_wi
 
 ### Routen {#routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -413,7 +413,7 @@ Eine Route ist ein vorbestimmter Pfad, dem gefolgt werden muss, um ein bestimmte
 
 ### Transport {#transport}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -445,7 +445,7 @@ Beim Navigieren durch Städte benötigen Sie eine kontrastreichere Ansicht der �
 
 ### Ausblenden {#hide}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -476,7 +476,7 @@ Um die Kartensichtbarkeit zu verbessern, müssen Sie möglicherweise bestimmte O
 
 ### Straßenstil {#road-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -514,7 +514,7 @@ Spezielle Einstellungen für Straßen, bei denen Sie die Farben an den Straßena
 
 ### Textgröße {#text-size}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -539,7 +539,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget
 
 ### Kartenlupe {#map-magnifier}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -572,7 +572,7 @@ Die Option **Kartensprache** konfiguriert die Schreibweise von Namen auf der Osm
 
 Wenn die Namen auf der Karte von der OSM-Community nicht in die gewünschte Sprache übersetzt wurden, können Sie [transliterierte Namen](https://en.wikipedia.org/wiki/Transliteration) verwenden: *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) oder *<Translate ios="true" ids="translit_names"/>* (iOS) Umschalter.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

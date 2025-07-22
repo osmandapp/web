@@ -25,7 +25,7 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızla bulmanızı sa�
 
 ## Arama Filtresi {#search-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -60,7 +60,7 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızla bulmanızı sa�
 
 ### Mevcut Filtreler {#available-filters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızla bulmanızı sa�
 
 ## Akıllı Klasör {#smart-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ Yeni oluşturulan **Akıllı Klasör**, seçilen kriterlere uyan parkurlarla iç
 
 ### Akıllı Klasörleri Yönetme {#managing-smart-folders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

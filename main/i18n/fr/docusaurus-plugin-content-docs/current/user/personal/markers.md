@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Les marqueurs sont des points spéciaux marqués sur la carte comme des drapeaux qui peuvent être créés rapidement d'un simple toucher sans spécifier de nom ni d'autres informations, contrairement aux [points favoris](./favorites.md). Les marqueurs offrent également des fonctionnalités supplémentaires avec les [widgets](../widgets/markers.md), les **flèches** (<Translate android="true" ids="show_arrows_on_the_map"/>) et l'**indication de distance** (<Translate android="true" ids="show_direction"/>).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Les marqueurs sont des points spéciaux marqués sur la carte comme des drapeaux
 
 ### Ajouter / Modifier des marqueurs {#add--edit-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Les marqueurs peuvent être ajoutés et supprimés en tant que groupe entier à 
 
 ### Historique {#history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -124,7 +124,7 @@ L'historique est une liste de tous les marqueurs désactivés (passés). À part
 
 ## Apparence sur la carte {#appearance-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

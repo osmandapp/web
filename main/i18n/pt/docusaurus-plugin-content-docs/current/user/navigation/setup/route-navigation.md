@@ -27,7 +27,7 @@ O recurso **Preparação de Rotas** no OsmAnd oferece orientação de navegaçã
 
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -92,7 +92,7 @@ Existem 3 maneiras de acessar o menu de navegação:
 - *Direção para/de* em um [*menu de contexto do mapa*](../../map/map-context-menu.md#directions-to--from).
 - Seção de Navegação no [*Menu Principal*](../../start-with/main-menu.md) *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -128,7 +128,7 @@ Quanto ao ponto de partida, você pode escolher sua localização atual, a local
 
 ### Definir Ponto de Destino {#set-target-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -154,7 +154,7 @@ O mais importante para iniciar a navegação é determinar seu destino. O ponto 
 
 ### Destinos Intermediários {#intermediate-destinations}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -179,7 +179,7 @@ O mais importante para iniciar a navegação é determinar seu destino. O ponto 
 
 Se você escolher **Ordenar** (*Android*) ou **Opções** (*iOS*) na lista de destinos, você terá acesso a opções especiais para ajustar a ordem de navegação para pontos intermediários.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -209,7 +209,7 @@ Neste menu, você pode encontrar opções adicionais para gerenciar os pontos de
 
 ### Usar Pontos de Casa ou Trabalho {#use-home-or-work-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ As abas **Casa** e **Trabalho** (ou [Pontos Especiais](../../personal/favorites.
 
 ### Histórico de Rotas Anteriores {#history-of-previous-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -257,7 +257,7 @@ Se a gravação do [Histórico de Navegação](../../personal/global-settings.md
 
 ## Iniciar / Parar Navegação {#start--stop-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -301,7 +301,7 @@ Para retomar a navegação:
 - Use a mensagem do OsmAnd na barra de notificação.
 - Use o *menu de Ações Rápidas* ou a caixa de diálogo que aparece ao tocar no *[botão de Navegação](../../widgets/map-buttons.md#directions)* (veja a captura de tela).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -347,7 +347,7 @@ Para acessar as configurações de navegação, siga um dos passos abaixo:
 Não há configurações de navegação no perfil *Navegar no mapa*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -377,7 +377,7 @@ A ferramenta **Navegação Simulada** permite pré-visualizar uma rota antes de 
 
 #### Iniciar / Parar Simulação {#start--stop-simulation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -402,7 +402,7 @@ Quando uma rota de navegação é construída, você pode começar a simular a n
 
 #### Modo de Velocidade {#speed-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -435,7 +435,7 @@ Vá para: *<Translate android="true" ids="shared_string_navigation,shared_string
 
 Para construir uma rota, todos os **mapas necessários** precisam ser baixados e ter a mesma data de lançamento. Observe que, em algumas situações, a mensagem de mapas ausentes pode estar oculta no menu de preparação da rota. Se você puxar o menu de navegação para cima, verá os possíveis motivos pelos quais sua rota não pôde ser calculada.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -454,7 +454,7 @@ Para construir uma rota, todos os **mapas necessários** precisam ser baixados e
 
 Na caixa de diálogo de mapas necessários, você verá sugestões de mapas a serem baixados ou atualizados. A lista de mapas usados pode não ser precisa, pois calcula uma rota muito básica; para obter a lista precisa de mapas, você pode clicar em **Calcular online**. Se você selecionar **Usar mapas baixados**, o cálculo da rota tentará usar os mapas já baixados e ignorará a mensagem de aviso.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -43,7 +43,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *القائمة الرئيسية ← الملحقات ← تطوير OsmAnd ← الإعدادات*.
 - *القائمة الرئيسية ← [الإعدادات العامة](../personal/global-settings.md) ← الملف الشخصي ← إعدادات ملحق تطوير OsmAnd*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -138,7 +138,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يمكن إضافة أدوات مطور OsmAnd إلى الشاشة فقط عند تمكين ملحق تطوير OsmAnd.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -167,7 +167,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يمكن إضافة أدوات مطور OsmAnd إلى الشاشة فقط عند تمكين ملحق تطوير OsmAnd.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -192,7 +192,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إمالة الكاميرا {#camera-tilt}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -218,7 +218,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### ارتفاع الكاميرا {#camera-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -239,7 +239,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### مستوى التكبير {#zoom-level}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -269,7 +269,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### المسافة إلى الهدف {#distance-to-target}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -332,7 +332,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - اختر سرعة محاكاة الحركة.
 - انقر على زر البدء.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

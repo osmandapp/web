@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 La navigazione in barca può essere uno strumento prezioso per chiunque ami andare in barca o navigare attraverso canali, fiumi o vie navigabili. A causa della mancanza della maggior parte delle vie navigabili nei dati di OpenStreetMap, la navigazione in barca *non è consigliata* per la **navigazione in acque libere**, si suggerisce invece di utilizzare la **[navigazione diretta al punto](#direct-to-point-routing-for-boat)**. Con le linee di contorno di profondità abilitate, può aiutarti a rimanere al sicuro sull'acqua evitando pericoli come acque poco profonde, rocce o altri ostacoli.
 Il motore di navigazione in barca di OsmAnd tiene anche conto delle caratteristiche delle vie navigabili e delle barche stesse.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -46,7 +46,7 @@ La navigazione in barca può essere configurata in base alle tue esigenze nella 
 Tipicamente, la *navigazione in barca* viene utilizzata con il profilo barca (l'ultimo abilitato insieme al [plugin Nautico](../../plugins/nautical-charts.md)). Tuttavia, è possibile utilizzare la navigazione in barca anche con altri profili, e diversi [tipi di navigazione](#other-routing-types-for-boat) possono essere impiegati anche nel profilo barca.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

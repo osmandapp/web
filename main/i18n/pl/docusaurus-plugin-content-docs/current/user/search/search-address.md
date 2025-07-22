@@ -27,7 +27,7 @@ OsmAnd oferuje kilka sposobów dotarcia do *narzędzia wyszukiwania*, w którym 
 
 ## Wyszukiwanie pełnotekstowe {#full-text-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -77,7 +77,7 @@ Zobacz artykuł [Wyszukaj wszystko](./search-all.md#basic-queries), aby zapozna�
 
 ## Wybierz miasto {#select-city}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ Ten sposób wyszukiwania ułatwia znajdowanie konkretnych lokalizacji w wybranej
 
 ## Wybierz ulicę {#select-street}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -146,7 +146,7 @@ Wyszukiwanie ulic odbywa się w miejscowości, w której się znajdujesz, lub w 
 
 ## Wyszukiwanie kodu pocztowego {#postcode-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -180,7 +180,7 @@ Więcej informacji znajdziesz w **[danych kodów pocztowych Wielkiej Brytanii](h
 
 ## Wyszukiwanie współrzędnych {#coordinates-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

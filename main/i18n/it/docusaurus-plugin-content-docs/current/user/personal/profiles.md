@@ -29,7 +29,7 @@ OsmAnd offre una varietà di profili predefiniti, pensati per diverse attività,
      - Per accedere e utilizzare questi profili, è necessario abilitarli manualmente in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
      - Questo metodo aiuta a mantenere un elenco organizzato e pertinente di profili attivando solo quelli necessari per attività specifiche.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -57,7 +57,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 Tutte le impostazioni si applicano esclusivamente al profilo dell'applicazione attualmente selezionato.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Questa sezione contiene tutte le impostazioni relative all'aspetto, alle opzioni
 
 ### Backup gratuito su Cloud {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ Questa sezione contiene le impostazioni per il tema dell'applicazione e il pulsa
 
 ### Aspetto {#appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 ### Unità e Formati {#units--formats}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -249,7 +249,7 @@ Nella sezione **Unità e Formati**, puoi regolare le unità di misura e i format
 
 ### Altro {#other}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ La sezione **Altro** fornisce impostazioni aggiuntive del profilo per personaliz
 
 ## Impostazioni di navigazione {#navigation-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ Non ci sono impostazioni di navigazione nel profilo *Sfoglia mappa*.
 
 ## Configura mappa {#configure-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -371,7 +371,7 @@ Con questo menu, puoi:
 
 ## Configura schermo {#configure-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -397,7 +397,7 @@ Il [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-sc
 
 ## Aspetto del profilo {#profile-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Le impostazioni di **Aspetto del profilo** ti consentono di personalizzare il no
 
 ### Aspetto La mia posizione {#my-location-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -531,7 +531,7 @@ Con la funzione di personalizzazione dell'interfaccia utente, puoi regolare il n
 Per accedere alle impostazioni del plugin, devi prima [**abilitare il plugin**](../plugins/index.md#enable--disable) nella sezione *Plugin del menu principale*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -575,7 +575,7 @@ I plugin sbloccano funzionalità aggiuntive dell'applicazione e possono essere [
 
 ## Azioni {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -24,7 +24,7 @@ Pour configurer le *guidage piéton*, accédez à la section [Paramètres d'itin
 
 Le guidage piéton peut être utile non seulement dans les zones urbaines, où les piétons peuvent rencontrer divers obstacles pour se rendre d'un endroit à un autre. Vous pouvez également utiliser ce type de guidage pour le jogging, la randonnée et la marche nordique en dehors de la ville ou en montagne. Il suffit d'ajuster les paramètres de guidage en fonction de vos besoins.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

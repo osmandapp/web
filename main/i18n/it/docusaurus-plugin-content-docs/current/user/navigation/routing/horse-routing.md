@@ -31,7 +31,7 @@ Per impostazione predefinita, il *profilo Equitazione* è disattivato. Per utili
 
 Il percorso a cavallo è progettato per fornire agli equestri informazioni su sentieri, ippovie e percorsi di equitazione adatti ai cavalli.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

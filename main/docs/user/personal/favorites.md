@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Favorites** OsmAnd's feature allows you to create bookmarks (notes) on the map. These favorite points are displayed as yellow stars by default, but you can fully customize them with different colors, shapes, and icons. Favorites are grouped into a dedicated map layer, which becomes visible from the *6th zoom level*.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -38,7 +38,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Favorite Point {#favorite-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -59,7 +59,7 @@ Favorites are part of a special map layer, and you can [show or hide](../map/poi
 
 ### Create {#create}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ When adding a point from OSM data, the relevant POI information is automatically
 
 ### Edit / Replace / Delete {#edit--replace--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -123,7 +123,7 @@ To modify a favorite point:
 
 ### Favorite Icons {#favorite-icons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ The *Personal folder* contains special points like **<Translate android="true" i
 
 ## Manage Favorites {#manage-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -183,7 +183,7 @@ The **My Favorites** section lets you:
 
 ### Order / Sorting / Search {#order--sorting--search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -204,7 +204,7 @@ The **My Favorites** section lets you:
 
 ### Bulk Edit / Delete {#bulk-edit--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### Favorite Group Actions {#favorite-group-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -282,7 +282,7 @@ More details in the article [My Places](../personal/myplaces.md#favorites) artic
 
 ### Change Group Appearance {#change-group-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -316,7 +316,7 @@ OsmAnd provides several methods to [back up](./import-export.md) and [restore](.
 
 ### Free Cloud Backup {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -347,7 +347,7 @@ The [Free Favorites Backup](../personal/osmand-cloud.md#osmand-start) is a speci
 
 #### How to Create a Backup {#how-to-create-a-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -378,7 +378,7 @@ You need an OsmAnd Cloud account to use the *Free Settings Backup* feature. If y
 
 ### All Favorites {#all-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -402,7 +402,7 @@ You can export and import your favorites using the special buttons at the bottom
 
 ### Favorite Group {#favorite-group}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -424,7 +424,7 @@ You can export and import your favorites using the special buttons at the bottom
 
 ### Automatic Favorites Backup {#automatic-favorites-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

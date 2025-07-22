@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تتيح ميزة **مظهر المسار** للمستخدمين تخصيص كيفية عرض المسارات على الخريطة. يتضمن ذلك تعديل اللون، والعرض، ومؤشرات الاتجاه، وعناصر بصرية أخرى. يساعد تخصيص مظهر المسار في تمييز مسارات متعددة، وتسليط الضوء على مسارات محددة، وتحسين قابلية قراءة الخريطة.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">  
 
@@ -122,7 +122,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 **المسار ثلاثي الأبعاد** هو ميزة مدفوعة من **OsmAnd Pro** لـ [iOS](../../purchases/ios.md#pro-features) و [أندرويد](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
@@ -185,7 +185,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## تغيير المظهر لمسارات متعددة {#change-appearance-for-multiple-tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

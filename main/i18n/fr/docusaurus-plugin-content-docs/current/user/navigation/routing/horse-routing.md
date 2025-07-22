@@ -31,7 +31,7 @@ Par défaut, le *profil d'équitation* est désactivé. Pour utiliser ce profil 
 
 L'itinéraire à cheval est conçu pour fournir aux cavaliers des informations sur les chemins adaptés aux chevaux, les pistes cavalières et les sentiers d'équitation.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

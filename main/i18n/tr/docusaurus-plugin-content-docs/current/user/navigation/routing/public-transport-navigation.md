@@ -25,7 +25,7 @@ Toplu taşıma rotalarına ilişkin veriler [OpenStreetMap](http://openstreetmap
 Toplu taşıma yönlendirmesi test aşamasındadır. Şimdilik, tam navigasyon işlevi olmadan rotanızı oluşturabilir ve görüntüleyebilirsiniz.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ Toplu taşıma yönlendirmesi test aşamasındadır. Şimdilik, tam navigasyon i
 
 **1.** *Toplu taşıma navigasyon profilini*, başlangıç ve varış noktalarını seçmeniz gerekir.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Toplu taşıma yönlendirmesi test aşamasındadır. Şimdilik, tam navigasyon i
 
 **2.** OsmAnd, yürüme süreleri ve toplu taşıma rotaları ile rota seçenekleri sunar: süre, mesafe, aktarma ve toplu taşıma rotaları. Gerekli seçeneği belirlemek için navigasyon ekranında kaydırmanız gerekir.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ Toplu taşıma yönlendirmesi test aşamasındadır. Şimdilik, tam navigasyon i
 
 **3.** *Haritada göster* düğmesini kullanarak tüm olası rota önerilerini haritada görüntüleyebilirsiniz. Bir sonraki rota seçeneğini görüntülemek için ekranlar arasında kaydırın.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Toplu taşıma yönlendirmesi test aşamasındadır. Şimdilik, tam navigasyon i
 
 **4.** Seçilen rotanın tüm durakları ve aktarmaları ile açıklamasını açmak için "Detaylar" düğmesine dokunun.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

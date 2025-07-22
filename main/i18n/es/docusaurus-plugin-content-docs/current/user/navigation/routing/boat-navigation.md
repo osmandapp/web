@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 El enrutamiento de embarcaciones puede ser una herramienta valiosa para cualquiera que disfrute de la navegación en barco o vela por canales, ríos o vías navegables. Debido a la falta de la mayoría de las vías navegables en los datos de OpenStreetMap, el enrutamiento de embarcaciones *no se recomienda* para la **navegación en aguas abiertas**, se sugiere usar **[Directo a punto](#direct-to-point-routing-for-boat)** en su lugar. Con las líneas de contorno de profundidad habilitadas, puede ayudarle a mantenerse seguro en el agua evitando peligros como aguas poco profundas, rocas u otros obstáculos.
 El motor de enrutamiento de embarcaciones de OsmAnd también tiene en cuenta las características de las vías navegables y de las propias embarcaciones.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -46,7 +46,7 @@ El enrutamiento de embarcaciones se puede configurar según sus necesidades en l
 Normalmente, el *enrutamiento de embarcaciones* se utiliza con el perfil de embarcación (el último habilitado junto con el [complemento Náutico](../../plugins/nautical-charts.md)). Sin embargo, es posible usar el enrutamiento de embarcaciones con otros perfiles también, y diferentes [tipos de enrutamiento](#other-routing-types-for-boat) también se pueden emplear en el perfil de embarcación.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

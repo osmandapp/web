@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 La función **Apariencia de la pista** permite a los usuarios personalizar cómo se muestran las pistas en el mapa. Esto incluye ajustar el color, el ancho, los indicadores de dirección y otros elementos visuales. La personalización de la apariencia de la pista ayuda a diferenciar varias pistas, resaltar rutas específicas y mejorar la legibilidad del mapa.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Restaura todas las **configuraciones de apariencia de la pista** a sus valores p
 **Pista 3D** es una función de pago de **OsmAnd Pro** para [iOS](../../purchases/ios.md#pro-features) y [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -177,7 +177,7 @@ En este escenario, los cambios de pendiente se pueden visualizar por separado a 
 
 ## Cambiar la apariencia de varias pistas {#change-appearance-for-multiple-tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

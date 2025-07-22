@@ -75,7 +75,7 @@ Mapy online w OsmAnd składają się z danych rastrowych, które składają się
 
 ## Wybierz mapy rastrowe {#select-raster-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -100,7 +100,7 @@ Możesz również dostosować przezroczystość mapy bazowej, aby połączyć j�
 
 ### Główne {#main}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -125,7 +125,7 @@ Możesz wybrać styl mapy z listy lub [dodać](#add-new-online-raster-map-source
 
 ### Warstwa nakładki {#overlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -156,7 +156,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,map_se
 
 ### Warstwa podkładowa {#underlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -215,7 +215,7 @@ Różnica w wyświetlaniu rzeźby na mapie przy zastosowaniu tych ustawień jest
 
 ### Konfiguruj opcje wyświetlania {#configure-display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -271,7 +271,7 @@ Oto główne metody dodawania nowego źródła map rastrowych, które nie jest j
 
 ### Dodaj nowe źródło mapy rastrowej online {#add-new-online-raster-map-source}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -354,7 +354,7 @@ Jeśli chcesz uzyskać dostęp do map rastrowych offline, może być konieczne w
 
 Aby mapy automatycznie aktualizowały kafelki po pewnym czasie, możesz ustawić [czas wygaśnięcia](#add-new-online-raster-map-source), a następnie OsmAnd ponownie załaduje kafelki, gdy tylko zostaną wyświetlone.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -393,7 +393,7 @@ Aby mapy automatycznie aktualizowały kafelki po pewnym czasie, możesz ustawić
 
 ### Zmień parametry mapy rastrowej {#change-raster-map-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

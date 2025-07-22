@@ -21,7 +21,7 @@ O **plugin de Gravação de Viagem** é uma ferramenta essencial para capturar s
 
 Com o *plugin de Gravação de Viagem*, você pode criar novas trilhas, exibir as gravadas diretamente no mapa e gerenciar registros existentes. Ele oferece informações valiosas sobre suas viagens, como velocidade, mudanças de elevação, detalhes do terreno e dados de sensores externos. O plugin registra sua rota, permitindo uma análise detalhada e compartilhamento após sua viagem.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Com o plugin de Gravação de Viagem no OsmAnd, você pode facilmente iniciar a 
 
 ### Iniciar um Diálogo {#start-a-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -139,7 +139,7 @@ Para *Parar / Salvar / Pausar*:
 
 ### Tela de Visão Geral {#overview-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -191,7 +191,7 @@ Para mais detalhes, você pode explorar o [**Menu de Contexto de Trilhas**](../m
 
 ### Mostrar no Mapa {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -264,7 +264,7 @@ Antes de começar a rastrear suas viagens, você precisa configurar corretamente
 - **Configurações globais**. As configurações de Gravação de Viagem são configuradas por perfil, que você pode gerenciar nas [configurações](../personal/global-settings.md) globais do aplicativo. Antes de personalizar o plugin de Gravação de Viagem, selecione o perfil que deseja configurar na seção [perfis](../personal/profiles.md). A partir daí, navegue até as configurações do perfil para acessar as opções de Gravação de Viagem.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -367,7 +367,7 @@ Para começar a usar os *widgets de Gravação de Viagem*, você precisa fazer t
 
 ### Adicionar Widget de Gravação {#add-recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -394,7 +394,7 @@ Para personalizar sua interface, você pode adicionar ou remover o widget de Gra
 
 ### Distância (Iniciar-Parar) {#distance-start-stop}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -428,7 +428,7 @@ Além do widget *Distância/Iniciar-Parar*, o **plugin de Gravação de Viagem**
 
 ### Duração, Subida, Descida {#duration-uphill-downhill}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

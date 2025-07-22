@@ -20,7 +20,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Вибране {#favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Назви вибраного та POI {#favorite-and-poi-names}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -74,7 +74,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Цікаві місця (POI) {#points-of-interest-pois}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -112,7 +112,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Стиль карти POI {#map-style-poi}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -139,7 +139,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Маркери {#markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -186,7 +186,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## * Зображення на рівні вулиць {#-street-level-imagery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -222,7 +222,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## * Вікіпедія {#-wikipedia}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -249,7 +249,7 @@ OsmAnd має спеціальні цікаві місця, позначені �
 
 ## * Аудіо / Відео точки (Android) {#-audio--video-points-android}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -268,7 +268,7 @@ OsmAnd має спеціальні цікаві місця, позначені �
 
 ## * Точки редагування OSM {#-osm-edit-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -295,7 +295,7 @@ OsmAnd має спеціальні цікаві місця, позначені �
 
 ## * Нотатки OSM {#-osm-notes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

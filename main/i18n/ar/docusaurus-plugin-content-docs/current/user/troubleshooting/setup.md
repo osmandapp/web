@@ -113,7 +113,7 @@ errors (e.g. if the SD card is too full).
 
 ## نسخ حزمة الخرائط النقطية التي تم إنشاؤها على الكمبيوتر {#copy-raster-map-package-created-on-pc}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 

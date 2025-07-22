@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Bir rota, belirtilen noktalar arasındaki bir dizi segmentten oluşur. Segmentler düz çizgiler veya seçilen profile uyarlanmış rotalar olabilir. Rota, daha sonra içe aktarma, düzenleme ve [navigasyon](../navigation/setup/gpx-navigation.md) için GPX olarak kaydedilebilir.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -40,7 +40,7 @@ Bir rota, belirtilen noktalar arasındaki bir dizi segmentten oluşur. Segmentle
 
 ## Ana Kullanım Durumları {#main-use-cases}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -72,7 +72,7 @@ Bir parkur oluştururken veya düzenlerken noktaların kolayca yerleştirilmesi 
 
 ### Mevcut GPX Parkurunu Değiştir {#modify-existing-gpx-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Mevcut bir parkurda [Yükseklik verileri](../map/tracks/track-context-menu.md#ca
 
 ### Parkuru Yollara Ekle {#attach-track-to-roads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -169,7 +169,7 @@ To generate navigation instructions:
 
 ### Nokta Ekleme {#adding-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -199,7 +199,7 @@ Düzenleyicide eklenen noktalar düz bir çizgi olarak veya seçilen bir profili
 2. Harita ekranının sol alt köşesindeki *profil simgesine* dokunun. Üstteki simgeye değil, Haritayı Yapılandır menüsünü açacaktır.
 3. *[Nokta Bağlam menüsünde](#point-context-menu) → Rota türünü önce/sonra değiştir*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ Bir parkur segmenti, **boşluksuz** bağlı bir nokta koleksiyonudur. Bir rota p
 
 ### Nokta Bağlam Menüsü {#point-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -275,7 +275,7 @@ Rotanızdaki her noktanın kendi bağlam menüsü vardır. Noktanın *sıra numa
 
 ### Çok Modlu Rotalar {#multimodal-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -298,7 +298,7 @@ Rotanızdaki her noktanın kendi bağlam menüsü vardır. Noktanın *sıra numa
 
 ### Rotayı Kaydet {#save-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -330,7 +330,7 @@ Yeni bir parkuru kaydederken, parkuru diğer üçüncü taraf uygulamalarla uyum
 
 ### Seçenekler {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -360,7 +360,7 @@ Yeni bir parkuru kaydederken, parkuru diğer üçüncü taraf uygulamalarla uyum
 
 ### Grafik {#graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

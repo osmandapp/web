@@ -130,7 +130,7 @@ Alguns problemas de fonte relacionados foram documentados no GitHub: [3911](http
 
 ## * Linhas de Contorno {#-contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ As linhas de contorno são compatíveis com todos os estilos de mapa e podem ser
 
 ## * Profundidade Náutica {#-nautical-depth}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Para mais detalhes sobre a visualização de mapa Náutico, visite a [página do
 
 ## Mostrar Bordas {#show-borders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -219,7 +219,7 @@ No Android, os mapas arquivados são mostrados em **Laranja**. No iOS, os mapas 
 Vá para: *Menu → Configurar Mapa → Mostrar → Grade de Coordenadas*
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ O OsmAnd suporta múltiplas **projeções base** para exibir linhas de grade geo
 
 ### Modo do Mapa {#map-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -323,7 +323,7 @@ O mapa pode ser exibido em um tema claro ou escuro com base no modo selecionado 
 
 ### Detalhes {#details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_w
 
 ### Rotas {#routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -413,7 +413,7 @@ Uma rota é um caminho predeterminado que precisa ser seguido para chegar a um d
 
 ### Transporte {#transport}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -445,7 +445,7 @@ Ao navegar pelas cidades, você precisa de uma visão mais contrastante do trans
 
 ### Ocultar {#hide}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -476,7 +476,7 @@ Para melhorar a visibilidade do mapa, pode ser necessário ocultar certos objeto
 
 ### Estilo da Estrada {#road-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -514,7 +514,7 @@ Configurações especiais para estradas, onde você pode alterar as cores para c
 
 ### Tamanho do Texto {#text-size}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -539,7 +539,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widge
 
 ### Ampliador de Mapa {#map-magnifier}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -572,7 +572,7 @@ A opção **Idioma do mapa** configura a grafia dos nomes no mapa do OsmAnd para
 
 Se os nomes no mapa não forem traduzidos para o idioma desejado pela comunidade OSM, você pode usar [nomes transliterados](https://en.wikipedia.org/wiki/Transliteration): *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) ou *<Translate ios="true" ids="translit_names"/>* (iOS).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

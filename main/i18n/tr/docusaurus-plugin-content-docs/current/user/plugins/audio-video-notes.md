@@ -24,7 +24,7 @@ Sesli/Görüntülü Notlar eklentisi, fotoğraf, video veya ses gibi çeşitli f
 
 Oluşturulan tüm sesli ve görüntülü notlar Kayıt katmanını oluşturur. Haritada etkinleştirildiğinde, kaydedilen verilerin görünümünü değiştirir ve kayıtları yönetmek için daha fazla ayar bulunur. Kayıt katmanında, sesli ve görüntülü notlar haritada POI olarak yerleştirilir, böylece yalnızca cihaz sahibine görünür bir kullanıcı anlatısı oluşturulur.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -46,7 +46,7 @@ Sesli/görüntülü notlar Sesli/görüntülü notlar eklentisi ile sağlanır v
 
 ## Eklenti Ayarları {#plugin-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -102,7 +102,7 @@ Aşağıdaki yollardan herhangi birini kullanarak bir fotoğraf, video ve sesli 
 
 #### 1. Oluştur ve Mevcut Konumunuza Bağlayın {#1-create-and-tie-to-your-current-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ Aşağıdaki yollardan herhangi birini kullanarak bir fotoğraf, video ve sesli 
 
 #### 2. Oluştur ve Seçilen Coğrafi Konuma Bağlayın {#2-create-and-tie-to-selected-geolocation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Haritada seçilen bir noktaya bağlı bir not oluşturmak için noktanın [Bağl
 
 #### Kaydedici İletişim Kutusu {#recorder-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -168,7 +168,7 @@ Tüm fotoğraf, ses ve video kayıtları otomatik olarak şuraya kaydedilir: <Tr
 
 ### Yerlerim'de Görüntüle {#view-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -185,7 +185,7 @@ Tüm fotoğraf, ses ve video kayıtları otomatik olarak şuraya kaydedilir: <Tr
 
 ### Haritada Göster {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -200,7 +200,7 @@ Haritada belirli bir notu göstermek için Yerlerim'deki notlar listesini kullan
 
 ### Oynat {#play}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ Bir notu oynatmak için, not için açılan [Bağlam menüsündeki](../map/map-c
 
 ### Yeniden Adlandır, Sil, Paylaş {#rename-delete-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ Yerlerim'de bir notu yönetmek için, listedeki notun dikey üç noktasına doku
 
 ## Kayıt Widget'ı {#recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -280,7 +280,7 @@ Haritada coğrafi konum aramaktan kaçınmayı ve notları mevcut varsayılan ko
 
 ### Yerlerim'de Yönet {#manage-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -295,7 +295,7 @@ Alt çubuktaki seçenekler, [Yerlerim](../personal/myplaces.md#audiovideo-notes)
 
 ### GPX Ara Noktaları ile Paylaş {#share-with-gpx-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -315,7 +315,7 @@ Desteklenen dosya formatları: ses - **3gp**, video - **mp4**, fotoğraf -**jpg*
 
 ### Tümünü Haritada Göster {#show-all-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -336,7 +336,7 @@ Tüm notları göstermek veya gizlemek için [Kayıt](../map/point-layers-on-map
 
 ## Notlardan Oluşturulan Ara Noktalar {#waypoints-created-from-notes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -356,7 +356,7 @@ Bir rota dışa aktarılırsa, ara noktalar görüntülenemez veya oynatılamaz,
 
 ### Ara Noktalar Oluştur {#create-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -120,7 +120,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ![Trip recording widget](@site/static/img/widgets/bearing.png)
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ### Час до проміжної точки {#time-to-intermediate}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -257,7 +257,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ### Час до пункту призначення {#time-to-destination}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -447,7 +447,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ## Наближення до POI / Обраних {#approach-pois--favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

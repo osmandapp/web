@@ -35,7 +35,7 @@ Das Topographie-Plugin bietet Zugriff auf die folgenden Kartentypen:
 - [3D-Relief](#3d-relief). Dies ist eine [Vektorkarte](../map/vector-maps.md), die eine dreidimensionale Darstellung des Geländes bietet und nur mit einem [OsmAnd Pro-Abonnement](../purchases/index.md) verfügbar ist.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Für eine stabile Arbeit und zur Schonung der Ressourcen können Sie eine Karte 
 
 ### 3D-Geländekarten {#3d-relief-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Wenn die auf dem Bildschirm angezeigte Karte nicht heruntergeladen wurde, wird i
 
 ### Höhenlinien (Meter oder Fuß) {#contour-lines-meters-or-feet}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Für [**Höhenlinien**](#contour-lines) müssen Sie festlegen, in welchen [Einhe
 
 ## Höhenlinien {#contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Bei Verwendung der [Karten-Rendering-Engine](../personal/global-settings.md#map-
 
 ## Gelände {#terrain}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Das Menü **Gelände** enthält die Auswahl des [Farbschemas](#default-color-sch
 *Farbschema ändern* ist eine **OsmAnd Pro**-Bezahlfunktion für [iOS](../purchases/ios.md#pro-features) und [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -328,7 +328,7 @@ Die Haupteinstellungen zum *Anzeigen oder Ausblenden von Kartentypen* finden Sie
 3D-Relief ist eine [**OsmAnd Pro**](../purchases/index.md) Bezahlfunktion <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -360,7 +360,7 @@ Die 3D-Relief-Funktion erzeugt ein erhöhtes Relief und bietet eine dreidimensio
 
 - Laden Sie gegebenenfalls die [Geländekarte (3D)](#3d-relief-maps) der Regionen herunter.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -383,7 +383,7 @@ Die 3D-Relief-Funktion erzeugt ein erhöhtes Relief und bietet eine dreidimensio
 
 ### Vertikale Überhöhung {#vertical-exaggeration}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Wenn **Schummerung** **aktiviert** ist, erscheint ein Bild mit Reliefschatten de
 
 ## Ebenentypen kombinieren {#combine-layer-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

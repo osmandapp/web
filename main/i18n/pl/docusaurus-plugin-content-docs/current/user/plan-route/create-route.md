@@ -19,7 +19,7 @@ Narzędzie **Planowanie trasy** (*Menu → Planowanie trasy*) to potężna funkc
 
 Trasa składa się z zestawu segmentów między określonymi punktami. Segmenty mogą być liniami prostymi lub trasami dostosowanymi do wybranego profilu. Trasę można zapisać jako GPX do późniejszego importu, edycji i [nawigacji](../navigation/setup/gpx-navigation.md).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -37,7 +37,7 @@ Trasa składa się z zestawu segmentów między określonymi punktami. Segmenty 
 
 ## Główne przypadki użycia {#main-use-cases}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -67,7 +67,7 @@ Możesz **powiększać i pomniejszać** w celu łatwego umieszczania punktów po
 
 ### Modyfikowanie istniejącego śladu GPX {#modify-existing-gpx-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -112,7 +112,7 @@ Jeśli w istniejącym śladzie brakuje [danych wysokościowych](../map/tracks/tr
 
 ### Dołącz ślad do dróg {#attach-track-to-roads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ To generate navigation instructions:
 
 ### Dodawanie punktów {#adding-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -190,7 +190,7 @@ Dodane punkty w edytorze mogą być połączone jako linia prosta lub jako trasa
 2. Dotknij *ikony profilu* w lewym dolnym rogu ekranu mapy. Nie na górnej ikonie, otworzy się menu Konfiguruj mapę.
 3. W *[menu kontekstowym punktu](#point-context-menu) → Zmień typ trasy przed/po*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -222,7 +222,7 @@ Segment śladu to zbiór punktów połączonych bez **przerw**. W narzędziu do 
 
 ### Menu kontekstowe punktu {#point-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -266,7 +266,7 @@ Każdy punkt na Twojej trasie ma swoje menu kontekstowe. Pokazuje ono *numer kol
 
 ### Trasy multimodalne {#multimodal-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ Korzystając z narzędzia *Planowanie trasy* i opcji [Trasa między punktami](#r
 
 ### Zapisz trasę {#save-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -319,7 +319,7 @@ Podczas zapisywania nowego śladu możesz wybrać opcję śladu ***Uproszczony**
 
 ### Opcje {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -349,7 +349,7 @@ Podczas zapisywania nowego śladu możesz wybrać opcję śladu ***Uproszczony**
 
 ### Wykres {#graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

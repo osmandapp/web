@@ -75,7 +75,7 @@ Online-Karten in OsmAnd bestehen aus Rasterdaten, die aus Pixeln (auch als Gitte
 
 ## Rasterkarten auswählen {#select-raster-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -100,7 +100,7 @@ Sie können auch die Transparenz der Basiskarte anpassen, um sie mit Ihren Layer
 
 ### Haupt {#main}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -125,7 +125,7 @@ Sie können einen Kartenstil aus der Liste auswählen oder einen eigenen [hinzuf
 
 ### Überlagerungs-Layer {#overlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 
 ### Unterlagen-Layer {#underlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -215,7 +215,7 @@ Der Unterschied der Reliefdarstellung auf der Karte bei Anwendung dieser Einstel
 
 ### Anzeigeeinstellungen konfigurieren {#configure-display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -271,7 +271,7 @@ Hier sind die wichtigsten Methoden zum Hinzufügen einer neuen Rasterkartenquell
 
 ### Neue Online-Rasterkartenquelle hinzufügen {#add-new-online-raster-map-source}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -354,7 +354,7 @@ Wenn Sie offline auf Rasterkarten zugreifen möchten, müssen Sie möglicherweis
 
 Damit die Karten die Kacheln nach einer Weile automatisch aktualisieren, können Sie eine [Ablaufzeit](#add-new-online-raster-map-source) festlegen. Dann lädt OsmAnd die Kacheln neu, sobald sie angezeigt werden.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -393,7 +393,7 @@ Damit die Karten die Kacheln nach einer Weile automatisch aktualisieren, können
 
 ### Rasterkartenparameter ändern {#change-raster-map-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

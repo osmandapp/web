@@ -23,7 +23,7 @@ Este artículo describe cómo configurar la apariencia del mapa durante la naveg
 
 ## Mapa durante la navegación {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ La configuración *Mostrar a lo largo de la ruta* le permite configurar parámet
 
 ### Ver y seleccionar puntos {#view-and-select-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ Las *advertencias de tráfico* no se muestran directamente en el mapa como los *
 
 ## Alertas de pantalla {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 
 ## Apariencia de la línea de ruta {#route-line-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

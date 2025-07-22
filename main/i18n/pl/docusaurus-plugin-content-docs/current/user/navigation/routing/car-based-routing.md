@@ -28,7 +28,7 @@ Wyznaczanie tras można skonfigurować zgodnie z własnymi potrzebami w sekcji [
 
 Wyznaczanie tras dla samochodów ma na celu pomóc kierowcom znaleźć najbardziej efektywne i bezpośrednie trasy do ich celów. Uwzględnia ono typowe ograniczenia ruchu, takie jak ulice jednokierunkowe, zakazy skrętu, strefy dla pieszych, a także pomaga unikać dróg nieodpowiednich dla samochodów, takich jak wąskie drogi lub drogi z ograniczeniami wagowymi.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -64,7 +64,7 @@ Domyślnie *profil ciężarówki* jest dezaktywowany. Aby użyć tego profilu do
 
 Wyznaczanie tras dla ciężarówek jest podobne do wyznaczania tras dla samochodów, ale zostało zaprojektowane specjalnie dla kierowców dużych pojazdów użytkowych. Uwzględnia dodatkowe czynniki, takie jak [wysokość, waga i szerokość pojazdu](../guidance/navigation-settings.md#size-parameters) oraz możliwość przewozu materiałów niebezpiecznych (patrz tabela poniżej). Wszystkie inne ustawienia wyznaczania tras są identyczne z [wyznaczaniem tras dla samochodów](#route-parameters---car).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -29,7 +29,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 *Це перша версія функції «Популярні місця». Відгуки вітаються на [GitHub](https://github.com/osmandapp/OsmAnd)*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -151,7 +151,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -195,7 +195,7 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 ### Галерея {#gallery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -231,7 +231,7 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
   Збережіть зображення на сховище вашого пристрою. Завантажене зображення можна знайти в папці Завантаження за замовчуванням вашого пристрою та отримати до нього доступ офлайн.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -259,7 +259,7 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 </Tabs>
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -292,7 +292,7 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 <!--
 ### Online Photos 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -322,7 +322,7 @@ In the **Online photos** section of the map context menu, you can access photos 
 
 #### Gallery Menu 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -342,7 +342,7 @@ In the **Online photos** section of the map context menu, you can access photos 
 The gallery can display up to 100 items. You can browse through all the photos, and short tapping on any photo will open it to view additional details (*Name*, *Date*, *Author*, *License*) and perform various actions (*Share*, *Details*, *Open in browser*, and *Download* options).
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -365,7 +365,7 @@ Buttons:
 - The **Share** button allows you to share the selected item.  
 - The **Three dots** button opens a menu with options like *Details*, *Open in browser*, and *Download*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

@@ -25,7 +25,7 @@ Dane o trasach komunikacji miejskiej pochodzą z projektu [OpenStreetMap](http:/
 Wyznaczanie tras komunikacji miejskiej jest w fazie testów. Na razie możesz budować i przeglądać swoją trasę bez pełnej funkcji nawigacji.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ Aby rozpocząć nawigację po mieście komunikacją miejską, użyj [przycisku n
 
 **1.** Musisz wybrać *profil nawigacji komunikacji miejskiej*, punkty początkowy i docelowy.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Aby rozpocząć nawigację po mieście komunikacją miejską, użyj [przycisku n
 
 **2.** OsmAnd oferuje opcje tras z czasami przejścia pieszo oraz trasy komunikacji miejskiej z informacjami o trasie: czas, odległość, przesiadki i trasy publiczne. Musisz przewinąć ekran nawigacji, aby wybrać wymaganą opcję.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ Aby rozpocząć nawigację po mieście komunikacją miejską, użyj [przycisku n
 
 **3.** Możesz wyświetlić wszystkie możliwe sugestie tras na mapie za pomocą przycisku *Pokaż na mapie*. Przesuwaj ekrany, aby wyświetlić następną opcję trasy.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Aby rozpocząć nawigację po mieście komunikacją miejską, użyj [przycisku n
 
 **4.** Dotknij przycisku „Szczegóły”, aby otworzyć opis wybranej trasy ze wszystkimi przystankami i przesiadkami.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

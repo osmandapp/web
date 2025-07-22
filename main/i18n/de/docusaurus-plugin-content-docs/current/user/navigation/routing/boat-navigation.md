@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Bootsnavigation kann ein wertvolles Werkzeug für jeden sein, der gerne mit dem Boot oder Segelboot auf Kanälen, Flüssen oder Wasserstraßen unterwegs ist. Aufgrund des Mangels an den meisten Wasserstraßen in OpenStreetMap-Daten wird die Bootsnavigation **nicht für die Navigation auf offenem Wasser empfohlen**. Stattdessen wird die Verwendung von **[Direkt zum Punkt](#direct-to-point-routing-for-boat)** vorgeschlagen. Mit aktivierten Tiefenlinien kann sie Ihnen helfen, sicher auf dem Wasser zu bleiben, indem Sie Gefahren wie Untiefen, Felsen oder andere Hindernisse vermeiden.
 Die OsmAnd Bootsnavigation berücksichtigt auch die Eigenschaften der Wasserwege und des Bootes selbst.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -46,7 +46,7 @@ Die Bootsnavigation kann in den [Routenparametern](../../navigation/guidance/nav
 Typischerweise wird die *Bootsnavigation* mit dem Bootsprofil verwendet (das letzte, das zusammen mit dem [Nautik-Plugin](../../plugins/nautical-charts.md) aktiviert wurde). Es ist jedoch möglich, die Bootsnavigation auch mit anderen Profilen zu verwenden, und verschiedene [Routing-Typen](#other-routing-types-for-boat) können auch im Bootsprofil eingesetzt werden.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

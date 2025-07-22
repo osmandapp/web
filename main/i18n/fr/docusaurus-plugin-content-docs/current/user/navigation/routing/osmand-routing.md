@@ -85,7 +85,7 @@ Il existe deux façons possibles de choisir les routes à éviter lors du calcul
 
 ### Menu Éviter les routes {#avoid-roads-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ En utilisant l’option *Sélectionner sur la carte*, vous pouvez continuer à m
 
 Lorsque vous sélectionnez une route à éviter à l’aide du *menu contextuel de la carte* ou du *menu Éviter les routes*, la liste des routes s’affiche au-dessus de l’écran de la carte.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ Lorsque vous sélectionnez une route à éviter à l’aide du *menu contextuel 
 
 ## Exporter / Importer {#export--import}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -154,7 +154,7 @@ Selon les paramètres de votre appareil et les applications disponibles, votre l
 
 Vous pouvez [importer](../../personal/import-export.md#import) des routes à éviter lors du calcul d’itinéraire à partir d’autres sources au format de fichier `.osf`. Cela peut également être fait en utilisant l’option *Importer* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). Vous pouvez choisir d’importer toutes les données ou seulement quelques routes à éviter (en marquant une route avec une coche dans la liste).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

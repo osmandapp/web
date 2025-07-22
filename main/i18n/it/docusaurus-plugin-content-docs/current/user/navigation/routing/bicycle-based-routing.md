@@ -27,7 +27,7 @@ Puoi configurare il *Percorso in bicicletta* nella sezione [Parametri del percor
 
 Le funzionalità di percorso in bicicletta di OsmAnd consentono ai ciclisti di inserire un punto di partenza e di arrivo e quindi generare un percorso che tenga conto delle loro preferenze e della geografia locale.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

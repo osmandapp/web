@@ -33,7 +33,7 @@ Na niektórych urządzeniach z systemem Android wysokość może być wyświetla
 - Aby uzyskać więcej informacji, odwiedź [Mapy i zasoby](../personal/maps-resources.md#downloads).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Na niektórych urządzeniach z systemem Android wysokość może być wyświetla
 &nbsp;<ProFeature/> Aby uzyskać dostęp do widżetu *Wysokość: środek mapy*, wykup subskrypcję OsmAnd Pro dla [Androida](../purchases/android.md#pro-features) lub [iOS](../purchases/ios.md#pro-features).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ Widżet pokazuje bieżącą prędkość wykrytą przez czujnik GPS.
 
 ## Średnia prędkość {#average-speed}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -161,7 +161,7 @@ Widżet **Średnia prędkość** oblicza i wyświetla średnią prędkość w wy
 
 Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych danych GPS. Ta funkcja jest przydatna do monitorowania prędkości w czasie rzeczywistym, np. do śledzenia prędkości w obszarach z **kamerami do pomiaru średniej prędkości**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -186,7 +186,7 @@ Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych
 
 ## Współczynnik szybowania {#glide-ratio}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -273,7 +273,7 @@ Widżet **Poziom baterii** wyświetla procent baterii urządzenia bezpośrednio 
 
 ## Widżet współrzędnych {#coordinates-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -322,7 +322,7 @@ Możesz zresetować bieżącą pamięć podręczną GPS poprzez:
 
 ## Pozycja słońca {#sun-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ Widżety pozycji słońca pokazują czasy następnego wschodu i zachodu słońca
 Bardziej szczegółowy opis można znaleźć tutaj: **[Linijka promienia i linijka](../widgets/radius-ruler)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -391,7 +391,7 @@ Widżet Linijka promienia pokazuje odległość między Twoją lokalizacją a pu
 
 ## Prędkościomierz {#speedometer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -435,7 +435,7 @@ Te widżety są włączone i działają w połączeniu z odpowiadającymi im wty
 Bardziej szczegółowy opis można znaleźć tutaj: **[Wtyczka <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -466,7 +466,7 @@ Widżety rejestracji podróży odnoszą się do [wtyczki <Translate android="tru
 Aby dodać widżety zewnętrznych czujników do ekranu mapy, włącz wtyczkę OsmAnd [Zewnętrzne czujniki](../plugins/external-sensors.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -534,7 +534,7 @@ Widżety należą do [wtyczki Metryki pojazdu](../plugins/vehicle-metrics.md#wid
 Aby dodać widżety pogodowe do ekranu mapy, włącz wtyczkę OsmAnd [Pogoda](../plugins/weather.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -657,7 +657,7 @@ Aby dodać widżety dla programistów do ekranu mapy, włącz wtyczkę OsmAnd [R
 
 #### FPS renderowania mapy {#map-rendering-fps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -684,7 +684,7 @@ Aby dodać widżety dla programistów do ekranu mapy, włącz wtyczkę OsmAnd [R
 
 #### Widżety kamery {#camera-widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

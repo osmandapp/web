@@ -45,7 +45,7 @@ Pour plus d'informations sur la manière et le moment où les invites vocales so
 
 ### Paramètres vocaux {#voice-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ Dans certains pays ou régions, l'utilisation d'applications d'avertissement de 
 
 ### Limite de vitesse {#speed-limit}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -241,7 +241,7 @@ Pour le dépannage, consultez :
 
 ### Langue des invites vocales {#voice-prompt-language}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -28,7 +28,7 @@ Un mapa náutico es un mapa topográfico muy detallado para ayudar a los patrone
 
 Los mapas náuticos son importantes para los marineros profesionales y los aficionados que alquilan un barco para navegar por los canales de la ciudad. Los mapas les proporcionan diversa información, como rutas de navegación, luces de navegación, zonas de peligro, zonas donde está permitido o prohibido navegar o atracar, etc.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ La siguiente configuración hace que el mapa náutico aparezca en la pantalla:
 
 ### Establecer estilo de mapa náutico {#set-nautical-map-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -91,7 +91,7 @@ Para cambiar el estilo de mapa actual a Náutico, debes realizar las siguientes 
 
 ### Descargar mapas náuticos {#download-nautical-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ Deshabilitar el complemento Náutico no elimina los datos náuticos cargados, po
 
 ## Perfil náutico {#nautical-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -169,7 +169,7 @@ El complemento Náutico en OsmAnd extiende los estilos de mapa de capa vectorial
 
 ### Puntos de profundidad {#depth-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Los [paquetes](../start-with/download-maps.md#type-of-maps) de puntos de profund
 
 ### Curvas de nivel de profundidad {#depth-contours}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -220,7 +220,7 @@ Puedes ayudar a la aplicación OsmAnd a aumentar la base de datos de curvas de n
 
 ### Detalles del fondo marino {#seabed-details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

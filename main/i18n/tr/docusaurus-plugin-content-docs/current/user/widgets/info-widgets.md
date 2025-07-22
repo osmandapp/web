@@ -33,7 +33,7 @@ Bazı Android cihazlarda rakım yanlış görüntülenebilir. Bu sorunu çözmek
 - Daha fazla ayrıntı için [Haritalar ve Kaynaklar](../personal/maps-resources.md#downloads) sayfasını ziyaret edin.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Bazı Android cihazlarda rakım yanlış görüntülenebilir. Bu sorunu çözmek
 &nbsp;<ProFeature/> *Rakım: harita merkezi* widget'ını kullanmak için Android için [OsmAnd Pro](../purchases/android.md#pro-features) veya iOS için [OsmAnd Pro](../purchases/ios.md#pro-features) aboneliği edinin.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ Widget, GPS sensörü tarafından algılanan geçerli hızı gösterir.
 
 ## Ortalama Hız {#average-speed}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -161,7 +161,7 @@ Widget, GPS sensörü tarafından algılanan geçerli hızı gösterir.
 
 Sıfırlamadan sonra, ortalama hız yeni GPS verilerinden yeniden hesaplanır. Bu özellik, **ortalama hız denetim kameralarının** bulunduğu alanlarda hız takibi gibi gerçek zamanlı hız izleme için kullanışlıdır.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -186,7 +186,7 @@ Sıfırlamadan sonra, ortalama hız yeni GPS verilerinden yeniden hesaplanır. B
 
 ## Süzülme Oranı {#glide-ratio}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -273,7 +273,7 @@ Sıfırlamadan sonra, ortalama hız yeni GPS verilerinden yeniden hesaplanır. B
 
 ## Koordinatlar Widget'ı {#coordinates-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -322,7 +322,7 @@ Mevcut GPS önbelleğini şuradan sıfırlayabilirsiniz:
 
 ## Güneş Konumu {#sun-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ Güneş konumu widget'ları, haritanın merkezi için bir sonraki gün doğumu v
 Daha ayrıntılı bir açıklamayı burada okuyabilirsiniz: **[Yarıçap cetveli ve Cetvel](../widgets/radius-ruler)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -391,7 +391,7 @@ Yarıçap Cetveli widget'ı, konumunuz ile Yarıçap Cetveli'nin merkez noktası
 
 ## Hız göstergesi {#speedometer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -435,7 +435,7 @@ Bu widget'lar, ilgili eklentileriyle birlikte etkinleştirilir ve çalışır.
 Daha ayrıntılı bir açıklamayı burada okuyabilirsiniz: **[<Translate android="true" ids="record_plugin_name"/> eklentisi](../plugins/trip-recording.md)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -466,7 +466,7 @@ Seyahat kaydı widget'ları [<Translate android="true" ids="record_plugin_name"/
 Harici Sensörler widget'larını harita ekranına eklemek için OsmAnd [Harici Sensörler eklentisini](../plugins/external-sensors.md) etkinleştirin.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -534,7 +534,7 @@ Widget'lar [Araç Metrikleri eklentisine](../plugins/vehicle-metrics.md#widgets)
 Hava Durumu widget'larını harita ekranına eklemek için OsmAnd [Hava Durumu eklentisini](../plugins/weather.md) etkinleştirin.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -657,7 +657,7 @@ Geliştirici widget'larını harita ekranına eklemek için OsmAnd [OsmAnd geli�
 
 #### Harita İşleme FPS'si {#map-rendering-fps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -684,7 +684,7 @@ Geliştirici widget'larını harita ekranına eklemek için OsmAnd [OsmAnd geli�
 
 #### Kamera Widget'ları {#camera-widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

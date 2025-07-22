@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 O OsmAnd permite que você encontre a melhor rota e explore seus detalhes. O aplicativo fornece informações detalhadas sobre a rota, como distância, [tempo de viagem](#distance--time--co2), [tipo de superfície](#road-attributes), [diferenças de elevação](#elevation-info), [dados de pegada de CO2](#distance--time--co2) e [informações de curva](#turn-by-turn-information). Você também pode [analisar](#analyze-on-map) a rota no mapa, descobrir informações sobre os segmentos da trilha, [imprimir](#print) o plano da rota, [salvar](#share--export-actions) a rota e compartilhá-la com outras pessoas. Com essa funcionalidade, você sempre saberá os detalhes da rota e poderá planejar sua viagem com mais eficiência.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ Dependendo das [configurações de perfil](../../personal/profiles.md) seleciona
 
 ## Distância / Tempo / CO2 {#distance--time--co2}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -79,7 +79,7 @@ Dependendo das [configurações de perfil](../../personal/profiles.md) seleciona
 
 ## Informações de Elevação {#elevation-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Os dados de altitude no mapa (entre 70 graus de latitude norte e 70 graus de lat
 
 ### Gráfico de Elevação {#elevation-graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Os [gráficos](../../map/tracks/track-context-menu.md#altitude--speed-graphs) ex
 
 ## Analisar no Mapa {#analyze-on-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -183,7 +183,7 @@ Se houver dados, você pode selecionar um dos seguintes tipos:
 
 ## Atributos da Estrada {#road-attributes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -230,7 +230,7 @@ Os atributos da estrada são acessíveis nos [Detalhes da Rota](#how-to-access) 
 
 ## Informações Curva a Curva {#turn-by-turn-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Toque em uma seção específica da rota na lista para visualizar informações 
 
 ### Instruções {#instructions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -313,7 +313,7 @@ A capacidade **de imprimir** ou **salvar** informações curva a curva **em form
 
 ## Compartilhar / Exportar (Ações) {#share--export-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Başarılı bir navigasyon için, ihtiyaçlarınıza ve seyahat şeklinize (araba, yaya, at veya kayak) göre uygun ayarları doğru bir şekilde yapılandırmak önemlidir. Bu makale, temel rota parametrelerini, [Sesli komutları](#voice-prompts), [Ekran uyarılarını](#screen-alerts), [Navigasyon sırasında harita davranışını](#map-during-navigation) ve [Rota çizgilerinin görünümünü](#customize-route-line) açıklar. Ayrıca, rotayı etkileyebilecek [Varsayılan hız](#default-speed) ve [Maksimum/minimum hız](#road-speeds), CO2 hesaplaması için [Motor tipi](#fuel-used-by-motor), [Yakıt deposu kapasitesi](#fuel-tank-capacity) ve [Boyut/ağırlık](#size-parameters) gibi araç ayarlarını da detaylandırır. Bu ayarları yapmak, OsmAnd'ı en verimli şekilde kullanmanıza ve gereksiz gecikmeler olmadan hedefinize ulaşmanıza yardımcı olacaktır.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Varsayılan *Haritayı İncele* profilinde navigasyon ayarları bulunmamaktadır
 
 ## Navigasyon Türü {#navigation-type}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ Navigasyon türü, rotaları hesaplamak için hangi kuralların kullanılacağı
 
 ## Rota Parametreleri {#route-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -110,7 +110,7 @@ Tüm rota parametreleri, belgelemenin ilgili bölümlerinde ayrıntılı olarak 
 
 ### Rotayı Yeniden Hesapla {#recalculate-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ Tüm rota parametreleri, belgelemenin ilgili bölümlerinde ayrıntılı olarak 
 
 ### Geliştirme Ayarları {#development-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -178,7 +178,7 @@ Tüm rota parametreleri, belgelemenin ilgili bölümlerinde ayrıntılı olarak 
 
 ## Sesli Komutlar {#voice-prompts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Hedef noktanız olarak bir iz seçerseniz, sesli komutların doğru çalışmas�
 
 ## Ekran Uyarıları {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Uyarı türleri, seyahat bölgesine bağlı olarak farklı görsel görünümler
 
 ## Navigasyon Sırasında Harita {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -277,7 +277,7 @@ Navigasyon sırasında haritanın davranışının nasıl değiştiğini [Naviga
 
 ## Rota Çizgisini Özelleştir {#customize-route-line}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -302,7 +302,7 @@ Navigasyon sırasında haritanın davranışının nasıl değiştiğini [Naviga
 
 ## Araç Parametreleri {#vehicle-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -334,7 +334,7 @@ OsmAnd uygulamasında parametreleri doğru bir şekilde ayarlamak, bir rotada ge
 
 ### Boyut Parametreleri {#size-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -396,7 +396,7 @@ Bu kısıtlamalar navigasyon için önemli olabilir ve bir rota planlarken dikka
 
 #### Motor Tarafından Kullanılan Yakıt {#fuel-used-by-motor}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Altı yakıt türü mevcuttur: ***Benzin, Dizel, LPG, CNG, Elektrik*** ve ***Hib
 
 #### Yakıt deposu kapasitesi {#fuel-tank-capacity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -462,7 +462,7 @@ Doğru hesaplamalar ve navigasyon önerileri sağlamak için, seçtiğiniz birim
 
 ### Varsayılan Hız / Yol Hızları {#default-speed--road-speeds}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -501,7 +501,7 @@ Bu parametreler, hızın harita verilerinden belirlenemediği durumlarda [varı�
 
 
 <!--
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -531,7 +531,7 @@ Ayar, maksimum sürüş hızını ayarlar ve olası hızı maksimumdan daha yük
 
 ## Detaylı İz Rehberliği {#detailed-track-guidance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -29,7 +29,7 @@ Actuellement, la base de données organisée comprend environ **50 000 à 150 00
 *Ceci est la première version de la fonctionnalité Lieux populaires. Les commentaires sont les bienvenus sur [GitHub](https://github.com/osmandapp/OsmAnd)*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ Il existe deux façons principales d'accéder à cette fonctionnalité :
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Pour l'utiliser **hors ligne**, vous avez besoin d'un abonnement [Maps+ ou OsmAn
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -151,7 +151,7 @@ Taper sur un POI sur la carte ouvre le [menu contextuel du POI](./map-context-me
 
 *<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -195,7 +195,7 @@ Dans le menu contextuel de la carte Comment accéder :
 
 ### Galerie {#gallery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ Vous pouvez également effectuer les actions suivantes sur chaque photo :
   Enregistrez l'image sur le stockage de votre appareil. L'image téléchargée se trouve dans le dossier Téléchargements par défaut de votre appareil et est accessible hors ligne.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -259,7 +259,7 @@ Sur **iOS**, un appui long sur une photo ouvre un menu contextuel avec des actio
 </Tabs>
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -292,7 +292,7 @@ L'écran **Détails** fournit toutes les métadonnées de la photo sélectionné
 <!--
 ### Online Photos 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -322,7 +322,7 @@ In the **Online photos** section of the map context menu, you can access photos 
 
 #### Gallery Menu 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -342,7 +342,7 @@ In the **Online photos** section of the map context menu, you can access photos 
 The gallery can display up to 100 items. You can browse through all the photos, and short tapping on any photo will open it to view additional details (*Name*, *Date*, *Author*, *License*) and perform various actions (*Share*, *Details*, *Open in browser*, and *Download* options).
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -365,7 +365,7 @@ Buttons:
 - The **Share** button allows you to share the selected item.
 - The **Three dots** button opens a menu with options like *Details*, *Open in browser*, and *Download*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

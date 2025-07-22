@@ -31,7 +31,7 @@ Aby korzystać z wtyczki *Edycja OpenStreetMap*, należy dokonać następującyc
 
 ## Ustawienia {#settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -70,7 +70,7 @@ Jeśli masz subskrypcję [OsmAnd Pro](../purchases/android.md#pro-features), zmi
 
 ### Autoryzacja {#authorization}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ Zaloguj się, aby współtworzyć zmiany i pliki GPX.
 
 ### Darmowe aktualizacje map dla kartografów {#free-map-updates-for-mappers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Ustawienie <Translate android="true" ids="map_updates_for_mappers"/> pozwala wł
 
 ### Warstwa edycji OSM {#osm-editing-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Wtyczka do edycji OpenStreetMap umożliwia tworzenie nowych obiektów na mapie, 
 
 ### Dodaj tagi {#add-tags}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -190,7 +190,7 @@ Pamiętaj, że podczas dodawania nieobsługiwanych typów POI ważne jest, aby u
 
 ## Tworzenie / Modyfikowanie notatki OSM {#create--modify-osm-note}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -243,7 +243,7 @@ Twoje ślady zostaną dodane do [śladów OSM](https://www.openstreetmap.org/tra
 ### Prześlij ślad GPS {#upload-gps-track}
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

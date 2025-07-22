@@ -28,7 +28,7 @@ OsmAnd propose plusieurs façons d'accéder à l'*outil de recherche* où se tro
 
 ## Recherche en texte intégral {#full-text-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ Consultez l'article [Rechercher tout](./search-all.md#basic-queries) pour obteni
 
 ## Sélectionner la ville {#select-city}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -123,7 +123,7 @@ Cette façon de rechercher facilite la recherche d'emplacements spécifiques au 
 
 ## Sélectionner la rue {#select-street}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -153,7 +153,7 @@ La recherche de rue est effectuée dans la localité où vous vous trouvez, ou o
 
 ## Recherche par code postal {#postcode-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -188,7 +188,7 @@ Pour plus d'informations, lisez les **[données de code postal du Royaume-Uni](h
 
 ## Recherche par coordonnées {#coordinates-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

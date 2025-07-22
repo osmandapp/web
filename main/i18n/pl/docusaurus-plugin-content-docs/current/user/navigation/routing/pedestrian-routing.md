@@ -24,7 +24,7 @@ Aby skonfigurować *wyznaczanie trasy dla pieszych*, przejdź do sekcji [Paramet
 
 Wyznaczanie trasy dla pieszych może być przydatne nie tylko na obszarach miejskich, gdzie piesi mogą napotkać różne przeszkody, próbując dostać się z jednego miejsca do drugiego. Możesz również użyć tego typu wyznaczania trasy podczas joggingu, wędrówek i nordic walking poza miastem lub w górach. Po prostu dostosuj parametry wyznaczania trasy do swoich potrzeb.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

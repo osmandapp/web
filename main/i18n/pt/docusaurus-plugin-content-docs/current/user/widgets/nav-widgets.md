@@ -120,7 +120,7 @@ Rumo é a direção para um alvo fora do seu veículo, como um destino ou ponto 
 
 ![Widget de gravação de viagem](@site/static/img/widgets/bearing.png)
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ O widget mostra a distância até o primeiro ponto intermediário ao longo da ro
 
 ### Tempo até o Intermediário {#time-to-intermediate}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -257,7 +257,7 @@ O widget mostra o *Tempo de chegada* ou *Tempo restante* até o primeiro ponto i
 
 ### Tempo até o Destino {#time-to-destination}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -447,7 +447,7 @@ O widget Nome da Rua mostra **o nome da rua atual** com uma seta reta, ou **o no
 
 ## Aproximar POIs / Favoritos {#approach-pois--favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

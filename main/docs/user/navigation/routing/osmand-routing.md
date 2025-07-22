@@ -84,7 +84,7 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 
 ### Avoid Roads Menu {#avoid-roads-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -110,7 +110,7 @@ Using *Select on map* option you can continue to mark roads as invalid for routi
 
 When you select a road to avoid using *map context menu* or *Avoid roads menu*, the list of roads will be shown above map screen.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -129,7 +129,7 @@ When you select a road to avoid using *map context menu* or *Avoid roads menu*, 
 
 ## Export / Import {#export--import}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -153,7 +153,7 @@ Depending on your device settings and available applications, your whole list of
 
 You can [import](../../personal/import-export.md#import) roads to avoid during route calculation from other sources in `.osf` file format.  Also, it can be done using *Import option* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). You can choose to import all data or only few roads to avoid (marking a road with a tick in the list).  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

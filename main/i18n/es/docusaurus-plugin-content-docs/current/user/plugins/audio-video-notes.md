@@ -24,7 +24,7 @@ El complemento Notas de audio/vídeo amplía la funcionalidad de OsmAnd al permi
 
 Todas las notas de audio y vídeo creadas componen la capa de Grabación. Cuando se habilita en el mapa, cambia la vista de los datos grabados y hay más configuraciones para gestionar las grabaciones. En la capa de Grabación, las notas de audio y vídeo se colocan como PDI en el mapa, creando así una narrativa de usuario visible solo para el propietario del dispositivo.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -46,7 +46,7 @@ Las notas de audio/vídeo se proporcionan con el complemento Notas de audio/víd
 
 ## Configuración del complemento {#plugin-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -102,7 +102,7 @@ Puedes crear una nota de foto, vídeo y audio de cualquiera de las siguientes ma
 
 #### 1. Crear y vincular a tu posición actual {#1-create-and-tie-to-your-current-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ Las funciones proporcionadas por el widget <Translate android="true" ids="map_wi
 
 #### 2. Crear y vincular a la geolocalización seleccionada {#2-create-and-tie-to-selected-geolocation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Para crear una nota vinculada a un punto seleccionado en el mapa, utiliza el [me
 
 #### Diálogo de grabación {#recorder-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -168,7 +168,7 @@ Automáticamente, todos los registros de fotos, audio y vídeo se guardan en: <T
 
 ### Ver en Mis lugares {#view-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -185,7 +185,7 @@ Automáticamente, todos los registros de fotos, audio y vídeo se guardan en: <T
 
 ### Mostrar en el mapa {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -200,7 +200,7 @@ Para mostrar una nota específica en el mapa, utiliza la lista de notas en Mis l
 
 ### Reproducir {#play}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ La sección [Detalles](../map/map-context-menu#-audiovideo-note-android) proporc
 
 ### Renombrar, eliminar, compartir {#rename-delete-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ Para gestionar una nota en Mis lugares, toca los tres puntos verticales de la no
 
 ## Widget de grabación {#recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -280,7 +280,7 @@ Es necesario agregar un widget a la pantalla si prefieres evitar buscar la geolo
 
 ### Gestionar en Mis lugares {#manage-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -295,7 +295,7 @@ Las opciones de la barra inferior se pueden utilizar para gestionar la lista de 
 
 ### Compartir con puntos de referencia GPX {#share-with-gpx-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -315,7 +315,7 @@ Formatos de archivo compatibles: audio - **3gp**, vídeo - **mp4**, foto -**jpg*
 
 ### Mostrar todo en el mapa {#show-all-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -336,7 +336,7 @@ Utiliza la capa de mapa [Grabación](../map/point-layers-on-map#-audio--video-po
 
 ## Puntos de referencia creados a partir de notas {#waypoints-created-from-notes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -356,7 +356,7 @@ Si se exporta una pista, los puntos de referencia no se pueden ver ni reproducir
 
 ### Crear puntos de referencia {#create-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

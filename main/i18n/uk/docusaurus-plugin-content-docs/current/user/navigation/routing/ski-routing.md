@@ -35,7 +35,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Налаштування *прокладання лижних маршрутів* дозволяють користувачам планувати свої маршрути, вибираючи бажаний рівень складності та тип місцевості, яку вони хочуть дослідити. Існують різні варіанти для безпечного, комфортного та приємного пересування по трасах або під час фрірайду.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

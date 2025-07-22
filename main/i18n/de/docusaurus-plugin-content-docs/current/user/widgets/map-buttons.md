@@ -102,7 +102,7 @@ Die Kompass-Schaltfläche bietet mehrere Aktionen zur Steuerung der Kartenausric
 
 ### Anzeigeoptionen {#display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -131,7 +131,7 @@ Das Kompasssymbol auf der Schaltfläche zeigt immer nach Norden. Sie können aus
 
 ## 3D-Modus {#3d-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

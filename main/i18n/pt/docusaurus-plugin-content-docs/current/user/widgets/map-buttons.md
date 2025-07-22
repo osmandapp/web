@@ -102,7 +102,7 @@ O botão da bússola oferece várias ações para controlar a orientação do ma
 
 ### Opções de Exibição {#display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -131,7 +131,7 @@ O ícone da bússola no botão sempre aponta para o Norte. Você pode selecionar
 
 ## Modo 3D {#3d-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

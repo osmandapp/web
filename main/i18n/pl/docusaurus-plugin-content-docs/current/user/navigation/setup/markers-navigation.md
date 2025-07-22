@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Mogą być szczególnie pomocne dla turystów pieszych, rowerzystów lub każdego, kto eksploruje nowy obszar i chce zaznaczyć interesujące miejsca lub punkty odniesienia na mapie. Główna różnica w stosunku do [punktów ulubionych](../../personal/favorites.md) polega na tym, że znaczniki są szybsze w tworzeniu, ponieważ nie wymagają nazwy.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -41,7 +41,7 @@ Mogą być szczególnie pomocne dla turystów pieszych, rowerzystów lub każdeg
 
 ## Używanie znaczników w nawigacji {#use-markers-in-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -81,7 +81,7 @@ Gdy opcje **Strzałki na mapie** i **Linia kierunku** są włączone w sekcji *W
 
 ## Lista trasy {#itinerary-list}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ Tylko ścieżki z punktami trasy mogą być dodawane do *listy znaczników mapy*
 
 ## Sortuj znaczniki {#sort-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -164,7 +164,7 @@ W wersji aplikacji OsmAnd na Androida dostępne są inne opcje sortowania *znacz
 
 ### Sortuj według atrybutów {#sort-by-attributes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ Korzystając z funkcji Planuj trasę w narzędziu listy znaczników, możesz sor
 
 ## Przejdź znaczniki {#pass-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -37,7 +37,7 @@ On some Android devices, the altitude can display inaccurately. To solve this pr
 - For more details, visit [Maps & Resources](../personal/maps-resources.md#downloads).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -68,7 +68,7 @@ On some Android devices, the altitude can display inaccurately. To solve this pr
 &nbsp;<ProFeature/> To get access to use the *Elevation: map center* widget, subscribe to OsmAnd Pro for [Android](../purchases/android.md#pro-features) or [iOS](../purchases/ios.md#pro-features).  
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -127,7 +127,7 @@ The widget shows the current speed detected by the GPS sensor.
 
 ## Average Speed {#average-speed}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -169,7 +169,7 @@ The **Average Speed** widget calculates and displays your average speed over a s
 
 After reset, the average speed is recalculated from the new GPS data. This feature is useful for real-time speed monitoring, such as tracking speed in areas with **average speed enforcement cameras**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -195,7 +195,7 @@ After reset, the average speed is recalculated from the new GPS data. This featu
 
 ## Glide Ratio {#glide-ratio}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -290,7 +290,7 @@ The **Battery Level** widget displays your device's battery percentage right on 
 
 ## Coordinates Widget {#coordinates-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -341,7 +341,7 @@ You can reset the current GPS cache through:
 
 ## Sun Position {#sun-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -377,7 +377,7 @@ Sun position widgets show the next sunrise and sunset times for the center of th
 You can read a more detailed description here: **[Radius ruler and Ruler](../widgets/radius-ruler)**.  
 :::  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -412,7 +412,7 @@ The Radius Ruler widget shows the distance between your location and the center 
 
 ## Speedometer {#speedometer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -458,7 +458,7 @@ These widgets are enabled and work in combination with their corresponding plugi
 You can read a more detailed description here: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
 :::  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -490,7 +490,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 To add External Sensors widgets to the map screen, enable the OsmAnd [External Sensors plugin](../plugins/external-sensors.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -560,7 +560,7 @@ The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md
 To add Weather widgets to the map screen, enable the OsmAnd [Weather plugin](../plugins/weather.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -688,7 +688,7 @@ To add Developer widgets to the map screen, enable the OsmAnd [OsmAnd developmen
 
 #### Map Rendering FPS {#map-rendering-fps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -716,7 +716,7 @@ The [Map rendering FPS widget](../plugins/development.md#map-rendering-fps-widge
 
 #### Camera Widgets {#camera-widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

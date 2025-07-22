@@ -74,7 +74,7 @@ Online maps in OsmAnd are composed of raster data, which consists of pixels (als
 
 ## Select Raster Maps {#select-raster-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -99,7 +99,7 @@ You can also adjust the transparency of the base map to blend it with your layer
 
 ### Main {#main}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -124,7 +124,7 @@ You can choose a map style from the list or [add](#add-new-online-raster-map-sou
 
 ### Overlay Layer {#overlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -155,7 +155,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 
 ### Underlay Layer {#underlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -214,7 +214,7 @@ The difference of relief display on the map when applying these settings is desc
 
 ### Configure Display Options {#configure-display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -270,7 +270,7 @@ Here are the main methods how for adding a new raster map source which is not de
 
 ### Add New Online Raster Map Source {#add-new-online-raster-map-source}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -353,7 +353,7 @@ If you want to access raster maps offline, you may need to preload tiles. This c
 
 For the maps to automatically update the tiles after a while, you can set an [Expiry time](#add-new-online-raster-map-source), then OsmAnd will reload the tiles as soon as they are displayed.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -392,7 +392,7 @@ For the maps to automatically update the tiles after a while, you can set an [Ex
 
 ### Change Raster Map Parameters {#change-raster-map-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 

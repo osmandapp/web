@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Global settings** are general [settings](../personal/profiles.md) for all profiles in the OsmAnd application. These are the basic settings for the OsmAnd system, and any changes made will affect the entire application.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ This section contains the basic OsmAnd settings, such as selecting a [profile](#
 
 ### Default Profile {#default-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -85,7 +85,7 @@ The [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.m
 
 ### Data Storage Folder {#data-storage-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -172,7 +172,7 @@ More information can be found in [*OsmAnd Privacy and Security Policy*](../../le
 
 ### Analytics {#analytics}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ A **UUID** (*Unique User Identifier*) is generated for each installation of the 
 
 ### History {#history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -245,7 +245,7 @@ The application records the history of previously entered data (history) in the 
 
 **Share and delete history.**
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -282,7 +282,7 @@ In this section of the OsmAnd settings, you can configure the notifications you 
 
 ### Dialogs and notifications {#dialogs-and-notifications}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -350,7 +350,7 @@ OsmAnd can [warn you about speed cameras](../navigation/guidance/navigation-sett
 
 ### Uninstall Speed Cameras {#uninstall-speed-cameras}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

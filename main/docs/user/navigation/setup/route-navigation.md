@@ -26,7 +26,7 @@ The **Route preparation** feature in OsmAnd provides step-by-step navigation gui
 
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -91,7 +91,7 @@ There are 3 ways to reach the navigation menu:
 - *Direction to/from* in a [*map context menu*](../../map/map-context-menu.md#directions-to--from).  
 - Navigation section in the [*Main Menu*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -128,7 +128,7 @@ As for the starting point, you can choose your current location, the location of
 
 ### Set Target Point {#set-target-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ The most important thing to start navigation is to determine your destination. T
 
 ### Intermediate Destinations {#intermediate-destinations}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -180,7 +180,7 @@ The most important thing to start navigation is to determine your destination. T
 
 If you choose **Sort** (*Android*) or **Options** (*iOS*) in the destinations list, you will reach special options to adjust the order of navigation to intermediate points.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -210,7 +210,7 @@ In this menu you can find additional options for managing the destination points
 
 ### Use Home or Work Points {#use-home-or-work-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ In this menu you can find additional options for managing the destination points
 
 ### History of Previous Routes {#history-of-previous-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
@@ -259,7 +259,7 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 
 ## Start / Stop Navigation {#start--stop-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -303,7 +303,7 @@ To resume the navigation:
 - Use the message from OsmAnd in the notification bar.
 - Use *Quick actions menu* or dialog, that appears when you tap the *[Navigation button](../../widgets/map-buttons.md#directions)* (see screenshot).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -349,7 +349,7 @@ To access the navigation settings, follow one of the steps below:
 There are no navigation settings in *Browse map* profile.  
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -380,7 +380,7 @@ The **Simulated navigation** tool allows you to preview a route before traveling
 
 #### Start / Stop Simulation {#start--stop-simulation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -406,7 +406,7 @@ When a navigation route is built, you can start simulating navigation using the 
 
 #### Speed Mode {#speed-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -439,7 +439,7 @@ Go to: *<Translate android="true" ids="shared_string_navigation,shared_string_se
 
 To build a route all **necessary maps** need to be downloaded and have the same release date. Please note, that in some situations missing maps message could be hidden in the route preparation menu. If you pull the navigation menu up, you will see possible reasons why your route couldn't be calculated.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -458,7 +458,7 @@ To build a route all **necessary maps** need to be downloaded and have the same 
 
 In the required maps dialog you will see suggestions of maps to be downloaded or updated. The list of used maps might be not precise as it calculates a very basic route, to get the precise list of maps you can click **Calculate online**. If you select **Use downloaded maps** then routing calculation will try to use already downloaded maps and skip the warning message.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

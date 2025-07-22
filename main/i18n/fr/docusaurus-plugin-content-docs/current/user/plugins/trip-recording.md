@@ -21,7 +21,7 @@ Le **plugin d'enregistrement de trajet** est un outil essentiel pour capturer vo
 
 Avec le *plugin d'enregistrement de trajet*, vous pouvez créer de nouveaux tracés, afficher directement les tracés enregistrés sur la carte et gérer les enregistrements existants. Il offre des informations précieuses sur vos trajets, telles que la vitesse, les changements d'altitude, les détails du terrain et les données des capteurs externes. Le plugin enregistre votre itinéraire, ce qui permet une analyse détaillée et un partage après votre trajet.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Avec le plugin d'enregistrement de trajet dans OsmAnd, vous pouvez facilement co
 
 ### Démarrer une boîte de dialogue {#start-a-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -139,7 +139,7 @@ Pour *Arrêter / Enregistrer / Mettre en pause* :
 
 ### Écran d'aperçu {#overview-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -191,7 +191,7 @@ Pour plus de détails, vous pouvez explorer le [**Menu contextuel des tracés**]
 
 ### Afficher sur la carte {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -264,7 +264,7 @@ Avant de commencer à suivre vos trajets, vous devez configurer correctement le 
 - **Paramètres globaux**. Les paramètres d'enregistrement de trajet sont configurés par profil, que vous pouvez gérer dans les [paramètres](../personal/global-settings.md) globaux de l'application. Avant de personnaliser le plugin d'enregistrement de trajet, sélectionnez le profil que vous souhaitez configurer dans la section [profils](../personal/profiles.md). De là, naviguez vers les paramètres du profil pour accéder aux options d'enregistrement de trajet.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -367,7 +367,7 @@ Pour commencer à utiliser les *widgets d'enregistrement de trajet*, vous devez 
 
 ### Ajouter un widget d'enregistrement {#add-recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -394,7 +394,7 @@ Pour personnaliser votre interface, vous pouvez ajouter ou supprimer le widget d
 
 ### Distance (Démarrer-Arrêter) {#distance-start-stop}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -428,7 +428,7 @@ En plus du widget *Distance/Démarrer-Arrêter*, le **plugin d'enregistrement de
 
 ### Durée, Montée, Descente {#duration-uphill-downhill}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

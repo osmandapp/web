@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Para una navegación exitosa, es importante configurar correctamente los ajustes apropiados de acuerdo con tus necesidades y cómo viajas: en coche, a pie, a caballo o esquiando. Este artículo describe los parámetros básicos de la ruta, las [indicaciones de voz](#voice-prompts), las [alertas en pantalla](#screen-alerts), el [comportamiento del mapa durante la navegación](#map-during-navigation) y la [apariencia de las líneas de ruta](#customize-route-line). También detalla los ajustes del vehículo, como la [velocidad predeterminada](#default-speed) y la [velocidad máxima/mínima](#road-speeds), el [tipo de motor](#fuel-used-by-motor) para el cálculo de CO2, la [capacidad del depósito de combustible](#fuel-tank-capacity) y el [tamaño/peso](#size-parameters), que pueden afectar la ruta. Ajustar estos parámetros te ayudará a aprovechar al máximo OsmAnd y a llegar a tu destino sin demoras innecesarias.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ El perfil predeterminado *Explorar mapa* no tiene ajustes de navegación.
 
 ## Tipo de navegación {#navigation-type}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ El tipo de navegación determina qué reglas se utilizan para calcular las rutas
 
 ## Parámetros de ruta {#route-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -110,7 +110,7 @@ Todos los parámetros de ruta se describen en detalle en las secciones correspon
 
 ### Recalcular ruta {#recalculate-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ El parámetro **Cálculo de ruta** cambia automáticamente la ruta calculada cua
 
 ### Ajustes de desarrollo {#development-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -178,7 +178,7 @@ Los parámetros de la sección **Desarrollo** son principalmente para usuarios a
 
 ## Indicaciones de voz {#voice-prompts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Las *indicaciones de voz* te permiten concentrarte en la carretera y no distraer
 
 ## Alertas en pantalla {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Los tipos de advertencias tienen una apariencia visual diferente, que depende de
 
 ## Mapa durante la navegación {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -277,7 +277,7 @@ Puedes aprender cómo cambia el comportamiento del mapa durante la navegación e
 
 ## Personalizar línea de ruta {#customize-route-line}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -302,7 +302,7 @@ Con la configuración **Personalizar línea de ruta**, puedes elegir la aparienc
 
 ## Parámetros del vehículo {#vehicle-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -334,7 +334,7 @@ Configurar correctamente los parámetros en la aplicación OsmAnd te ayudará a 
 
 ### Parámetros de tamaño {#size-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -396,7 +396,7 @@ Estas restricciones pueden ser importantes para la navegación y deben tenerse e
 
 #### Combustible utilizado por el motor {#fuel-used-by-motor}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ La configuración **Combustible utilizado por el motor** solo está disponible e
 
 #### Capacidad del depósito de combustible {#fuel-tank-capacity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -459,7 +459,7 @@ Para garantizar cálculos y sugerencias de navegación precisos, verifica que la
 
 ### Velocidad predeterminada / Velocidades de la carretera {#default-speed--road-speeds}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -498,7 +498,7 @@ La **velocidad predeterminada** es la velocidad de movimiento preestablecida. Se
 
 
 <!--
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -528,7 +528,7 @@ La configuración establece la velocidad máxima de conducción y disminuye la p
 
 ## Guía detallada de la pista {#detailed-track-guidance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

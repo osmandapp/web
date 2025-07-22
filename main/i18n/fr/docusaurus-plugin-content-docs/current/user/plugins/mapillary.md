@@ -31,7 +31,7 @@ Pour afficher les images au niveau de la rue sur la carte OsmAnd, vous devez eff
 
 ## Couche de carte {#map-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -57,7 +57,7 @@ La couche de carte avec les images de rue est affichée sur la carte OsmAnd sous
 
 ### Activer la couche {#enable-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ Pour afficher les images au niveau de la rue de Mapillary sur la carte, vous dev
 
 ### Filtrage des données {#data-filtering}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -113,7 +113,7 @@ Si les images sélectionnées ne s'affichent pas, utilisez **Recharger** pour le
 
 ## Menu contextuel de la carte {#map-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -134,7 +134,7 @@ Si le plugin Mapillary est activé, vous pouvez afficher les photos de rues disp
 
 ## Ajouter des photos {#add-photos}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Pour ajouter des photos, vous devez vous inscrire dans l'[application Mapillary]
 
 ## Widget Mapillary {#mapillary-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

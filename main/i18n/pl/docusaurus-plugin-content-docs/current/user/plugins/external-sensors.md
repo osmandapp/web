@@ -53,7 +53,7 @@ Aby rozpocząć korzystanie z danych z czujników zewnętrznych, wykonaj następ
 
 ### Parowanie nowego czujnika {#pair-new-sensor}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -92,7 +92,7 @@ Aby sparować nowy czujnik, wykonaj następujące kroki:
 
 ## Ustawienia czujnika {#sensor-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Każdy sparowany czujnik zewnętrzny wymieniony w OsmAnd ma swój własny ekran 
 
 ## Nagrywanie trasy {#trip-recording}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -173,7 +173,7 @@ OsmAnd używa [nagrywania śladu](../plugins/trip-recording.md#recorded-gpx-file
 
 ### Analiza danych {#data-analyze}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -204,7 +204,7 @@ Spowoduje to wyświetlenie wykresów dla zarejestrowanych danych: *Tętno*, *Pr�
 
 ## Widżety {#widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -244,7 +244,7 @@ Obsługiwane typy widżetów:
 
 ### Ustawienia widżetu {#widget-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

@@ -31,7 +31,7 @@ Para usar o plugin *Edição OpenStreetMap*, você deve fazer as seguintes confi
 
 ## Configurações {#settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -70,7 +70,7 @@ Se você tiver uma assinatura [OsmAnd Pro](../purchases/android.md#pro-features)
 
 ### Autorização {#authorization}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ Faça login para contribuir com alterações e arquivos GPX.
 
 ### Atualizações gratuitas de mapas para mapeadores {#free-map-updates-for-mappers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ A configuração <Translate android="true" ids="map_updates_for_mappers"/> permi
 
 ### Camada de edição OSM {#osm-editing-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -149,7 +149,7 @@ O plugin de edição do OpenStreetMap permite criar novos objetos no mapa chamad
 
 ### Adicionar tags {#add-tags}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Lembre-se de que, ao adicionar tipos de POI não suportados, é importante garan
 
 ## Criar / Modificar Nota OSM {#create--modify-osm-note}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ Suas trilhas serão adicionadas aos [rastros do OSM](https://www.openstreetmap.o
 ### Carregar trilha GPS {#upload-gps-track}
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

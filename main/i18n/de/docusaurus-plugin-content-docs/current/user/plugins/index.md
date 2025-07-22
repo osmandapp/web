@@ -30,7 +30,7 @@ Um auf die Funktionalität eines Plugins zuzugreifen, muss es zunächst [aktivie
 
 ### Aktivieren / Deaktivieren {#enable--disable}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -100,7 +100,7 @@ Die meisten Plugins bieten spezifische Profil- oder globale Einstellungen, auf d
 - *Hauptmenü → Plugins → Plugin-Name → Einstellungen (&#x2699 für iOS)* oder
 - *Hauptmenü → Einstellungen → Profil → [Plugin-Einstellungen](../personal/profiles.md#plugin-settings)*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 

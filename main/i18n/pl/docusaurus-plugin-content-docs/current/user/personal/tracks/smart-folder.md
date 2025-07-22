@@ -25,7 +25,7 @@ Ta funkcja pozwala szybko znaleźć konkretne ślady, które odpowiadają Twoim 
 
 ## Filtr wyszukiwania {#search-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -60,7 +60,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 ### Dostępne filtry {#available-filters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 ## Inteligentny folder {#smart-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ Nowo utworzony **Inteligentny folder** automatycznie zaktualizuje swoją zawarto
 
 ### Zarządzanie inteligentnymi folderami {#managing-smart-folders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
